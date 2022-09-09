@@ -6,6 +6,7 @@ DISTNAME=	iTop-${PORTVERSION}-4463
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, web based IT Service Management tool
+WWW=		https://www.combodo.com/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKDIR}/LICENSE

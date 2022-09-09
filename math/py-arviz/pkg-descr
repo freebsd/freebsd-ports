@@ -6,5 +6,3 @@ The goal is to provide backend-agnostic tools for diagnostics and visualizations
 of Bayesian inference in Python, by first converting inference data into xarray
 objects. See here for more on xarray and ArviZ usage and here for more on
 InferenceData structure and specification.
-
-WWW: https://arviz-devs.github.io/arviz/

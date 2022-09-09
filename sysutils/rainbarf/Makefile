@@ -8,6 +8,7 @@ DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU/RAM/battery stats chart bar for tmux (and GNU screen)
+WWW=		https://github.com/creaktive/rainbarf
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

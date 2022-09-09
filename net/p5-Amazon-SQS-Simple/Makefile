@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	OO API for accessing the Amazon Simple Queue Service
+WWW=		https://metacpan.org/release/Amazon-SQS-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

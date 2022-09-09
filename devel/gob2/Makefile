@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Preprocessor for making GObjects with inline C
+WWW=		https://www.5z.com/jirka/gob.html
 
 LICENSE=	GPLv2
 

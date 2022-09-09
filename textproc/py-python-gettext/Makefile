@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python Gettext po to mo file compiler
+WWW=		https://pypi.org/project/python-gettext/
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Super-fast and clean conversions to numbers
+WWW=		https://github.com/SethMMorton/fastnumbers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

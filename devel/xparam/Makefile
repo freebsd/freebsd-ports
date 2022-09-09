@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-purpose tool for parameter handling in C++
+WWW=		http://xparam.sourceforge.net/
 
 LICENSE=	GPLv2+
 

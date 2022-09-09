@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Libraries historically supplied with Perl 4
+WWW=		https://metacpan.org/release/Perl4-CoreLibs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

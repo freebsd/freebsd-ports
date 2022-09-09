@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-1.3.0b4
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses
+WWW=		https://pear.php.net/package/Net_IPv6
 
 LICENSE=	BSD2CLAUSE
 

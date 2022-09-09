@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Load and manipulate AMPL data as Python data structures
+WWW=		https://github.com/willu47/amply
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

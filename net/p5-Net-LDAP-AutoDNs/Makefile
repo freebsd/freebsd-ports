@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Automatically make some default decisions some LDAP DNs and scopes
+WWW=		https://metacpan.org/release/Net-LDAP-AutoDNs
 
 USES=		perl5
 USE_PERL5=	configure

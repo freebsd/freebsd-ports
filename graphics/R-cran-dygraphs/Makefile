@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Interface to Dygraphs Interactive Time Series Charting Library
+WWW=		https://cran.r-project.org/web/packages/dygraphs/
 
 LICENSE=	MIT
 

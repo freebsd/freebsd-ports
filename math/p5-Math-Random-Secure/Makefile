@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Cryptographically-secure rand function
+WWW=		https://metacpan.org/release/Math-Random-Secure
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

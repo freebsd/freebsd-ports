@@ -1,11 +1,12 @@
 PORTNAME=	slack-term
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Slack client for your terminal
+WWW=		https://github.com/erroneousboat/slack-term
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

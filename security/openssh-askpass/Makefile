@@ -7,6 +7,7 @@ DISTNAME=	x11-ssh-askpass-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Graphical password applet for entering SSH passphrase
+WWW=		http://www.jmknoble.net/software/x11-ssh-askpass/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README

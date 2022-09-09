@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Command line implementation of the BLAKE3 hash function
+WWW=		https://github.com/blake3-team/blake3
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE

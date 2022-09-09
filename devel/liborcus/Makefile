@@ -6,6 +6,7 @@ MASTER_SITES=	https://kohei.us/files/orcus/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Standalone file import filter library for spreadsheet documents
+WWW=		https://gitlab.com/orcus/orcus
 
 LICENSE=	MPL20
 

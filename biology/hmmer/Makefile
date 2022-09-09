@@ -5,6 +5,7 @@ MASTER_SITES=	http://eddylab.org/software/hmmer/
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Profile hidden Markov models for biological sequence analysis
+WWW=		http://hmmer.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic Redmond theme
+WWW=		https://github.com/grassmunk/Chicago95
 
 LICENSE=	GPLv3+ MIT
 LICENSE_COMB=	multi

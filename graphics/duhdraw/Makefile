@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/duhdraw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI graphic drawing program
+WWW=		https://www.cs.helsinki.fi/u/penberg/duhdraw/
 
 USES=		ncurses
 

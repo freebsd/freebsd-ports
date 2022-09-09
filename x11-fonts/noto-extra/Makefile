@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-extra
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (Extra)
+WWW=		https://www.google.com/get/noto/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE_OFL.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Extensible template processing system
+WWW=		http://www.template-toolkit.org/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

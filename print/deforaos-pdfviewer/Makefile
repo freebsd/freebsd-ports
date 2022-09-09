@@ -8,6 +8,7 @@ DISTNAME=	PDFViewer-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop PDF viewer
+WWW=		https://www.defora.org/
 
 LICENSE=	GPLv3
 

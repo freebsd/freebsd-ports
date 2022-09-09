@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.coker.com.au/bonnie++/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
+WWW=		https://www.coker.com.au/bonnie++/
 
 LICENSE=	GPLv2
 

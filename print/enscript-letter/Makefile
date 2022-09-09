@@ -8,6 +8,7 @@ DISTNAME=	enscript-${PORTVERSION}
 
 MAINTAINER?=	mbeis@xs4all.nl
 COMMENT=	ASCII to PostScript filter
+WWW=		https://www.gnu.org/software/enscript/
 
 USES=		cpe shebangfix perl5
 GNU_CONFIGURE=	yes

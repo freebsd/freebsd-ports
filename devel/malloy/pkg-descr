@@ -1,0 +1,5 @@
+Malloy is a C++ library providing embeddable server & client components for
+both HTTP(S) and WebSocket(Secure).
+
+The library is written in C++20 and provides easy-to-use high-level interfaces
+for creating server and client applications painlessly.

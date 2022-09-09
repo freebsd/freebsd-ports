@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlSAX filter that detects ignorable whitespace
+WWW=		https://metacpan.org/release/XML-Filter-DetectWS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Filter-SAXT>=0:textproc/p5-XML-Filter-SAXT

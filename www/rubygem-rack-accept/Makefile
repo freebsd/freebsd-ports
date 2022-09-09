@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTTP Accept* for Ruby/Rack
+WWW=		https://github.com/mjackson/rack-accept
 
 LICENSE=	MIT
 

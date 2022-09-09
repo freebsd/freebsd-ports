@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Startup scripts for FreeBSD/EC2 environment
+WWW=		https://www.daemonology.net/freebsd-on-ec2/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Transport interface to talk to different backends
+WWW=		https://github.com/inspec/train
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

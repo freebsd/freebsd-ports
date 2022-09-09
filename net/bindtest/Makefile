@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Test bind() semantics of IPv6 sockets
+WWW=		https://www.kame.net/newsletter/20010504/
 
 USES=		tar:tgz
 

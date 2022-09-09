@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Wiki Application
+WWW=		https://www.horde.org/apps/wicked/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

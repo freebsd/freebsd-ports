@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple missile command clone
+WWW=		https://www.pouet.net/prod.php?which=54272
 
 LICENSE=	MIT
 

@@ -10,5 +10,3 @@ without inheritance.)
 
 	* A (currently small) library of functions and tools to import COM
 components in Caml applications, and export Caml code as COM components.
-
-WWW: http://caml.inria.fr/pub/old_caml_site/camlidl/

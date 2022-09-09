@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python wrapper around rapidjson
+WWW=		https://github.com/python-rapidjson/python-rapidjson
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

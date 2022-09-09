@@ -4,5 +4,3 @@ lightweight VM-based threads, each VM itself runs in an isolated heap
 allowing multiple VMs to run simultaneously in different OS threads.
 
 The default language is the R7RS (scheme base) library.
-
-WWW: https://github.com/ashinn/chibi-scheme

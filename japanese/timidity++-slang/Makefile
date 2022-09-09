@@ -4,6 +4,7 @@ CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
+WWW=		http://timidity.sourceforge.net/
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 

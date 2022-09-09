@@ -7,5 +7,3 @@ This module is related to, but is not part of the "Net::Twitter"
 distribution. It's API methods and API method documentation are
 generated from "Net::Twitter"'s internals. It exists for those who
 cannot, or prefer not to install Moose and its dependencies.
-
-WWW: https://metacpan.org/release/Net-Twitter-Lite

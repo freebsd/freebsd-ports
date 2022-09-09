@@ -7,5 +7,3 @@ data, can scale under extreme load, but requires no ongoing database
 administration. As a developer, you can focus on your application and
 be confident that Oracle Berkeley DB will manage your persistence
 needs.
-
-WWW: https://www.oracle.com/database/berkeley-db/

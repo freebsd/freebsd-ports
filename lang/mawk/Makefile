@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Interpreter for the AWK Programming Language
+WWW=		https://invisible-island.net/mawk/
 
 LICENSE=	GPLv2
 

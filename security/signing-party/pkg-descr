@@ -9,5 +9,3 @@ including signing scripts, party preparation scripts, etc.
  * gpglist: show who signed which of your UIDs
  * gpgsigs: annotates list of GnuPG keys with already done signatures
  * keylookup: ncurses wrapper around gpg --search
-
-WWW: http://pgp-tools.alioth.debian.org/

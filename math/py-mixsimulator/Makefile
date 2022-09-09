@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate and simulate the least cost of an energy mix under constraints
+WWW=		https://github.com/Foloso/MixSimulator
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

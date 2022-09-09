@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dispatcher Perl module for command-line programs
+WWW=		https://metacpan.org/release/App-CLI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse AWS config files
+WWW=		https://metacpan.org/dist/Config-AWS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

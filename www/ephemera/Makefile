@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Blog server
+WWW=		http://www.mammothcheese.ca/
 
 LICENSE=	BSD3CLAUSE
 

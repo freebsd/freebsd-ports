@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Media Services Management Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/management/azure_mgmt_media_services
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

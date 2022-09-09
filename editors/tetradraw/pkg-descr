@@ -4,5 +4,3 @@ mainly used in text mode interfaces. Tetradraw is the first completly usable
 ANSI art editor for Unix operating systems. Tetradraw does not just emulate
 the ANSI editors for DOS: it also allows two artists to edit the same image
 simultaneously over the Internet.
-
-WWW: http://tetradraw.sourceforge.net/

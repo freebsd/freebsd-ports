@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
+WWW=		https://www.nongnu.org/icoutils/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

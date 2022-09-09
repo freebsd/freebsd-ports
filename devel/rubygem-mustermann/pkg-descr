@@ -4,5 +4,3 @@ is fully covered with specs and documentation.
 
 Given a string pattern, Mustermann will turn it into an object that behaves like
 a regular expression and has comparable performance characteristics.
-
-WWW: https://github.com/sinatra/mustermann/tree/master/mustermann

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ahead of Time compiler for numeric kernels
+WWW=		https://github.com/serge-sans-paille/pythran
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

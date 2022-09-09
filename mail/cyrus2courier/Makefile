@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.madness.at/~mad/projects/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cyrus-IMAP to Maildir++ conversion utility
+WWW=		http://www.madness.at/projects/cyrus2courier/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

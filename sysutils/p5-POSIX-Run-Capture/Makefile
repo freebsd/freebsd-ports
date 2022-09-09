@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run command and capture its output
+WWW=		https://metacpan.org/dist/POSIX-Run-Capture
 
 LICENSE=	GPLv3+
 

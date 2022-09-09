@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${_DISTFILES:N*.txt}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line torrent viewer and hash checker
+WWW=		https://sourceforge.net/projects/torrentcheck/
 
 LICENSE=	PD
 

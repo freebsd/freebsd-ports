@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Asset management for flask
+WWW=		https://github.com/miracle2k/flask-assets
 
 LICENSE=	BSD2CLAUSE
 

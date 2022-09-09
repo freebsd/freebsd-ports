@@ -6,5 +6,3 @@ and about 50 times as fast as logresolve.c from that distribution.  It is
 5-20 times as fast as the adnslogres program that comes with the adns
 library, and about 3 times as fast as jdresolve, which is a Perl program
 that uses similar algorithms.
-
-WWW: https://BSDforge.com/projects/dns/fastresolve/

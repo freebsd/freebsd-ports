@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Table/data-grid framework for Django
+WWW=		https://github.com/jieter/django-tables2
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

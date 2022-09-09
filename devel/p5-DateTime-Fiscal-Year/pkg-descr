@@ -5,5 +5,3 @@ year begins and ends on different days than the calendar year. This module is
 based on the Gregorian calendar. Using other DT calendar objects will return
 results, but the behavior is unpredictable for calendars that have more than
 365 or 366 days.
-
-WWW: https://metacpan.org/release/DateTime-Fiscal-Year

@@ -4,6 +4,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	jailbird@fdf.net
 COMMENT=	MS-DOS Telix serial communication program "workalike"
+WWW=		https://salsa.debian.org/minicom-team/minicom/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

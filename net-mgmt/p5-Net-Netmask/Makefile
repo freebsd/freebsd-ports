@@ -1,11 +1,12 @@
 PORTNAME=	Net-Netmask
-PORTVERSION=	2.0001
+PORTVERSION=	2.0002
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse, manipulate, and lookup IP network blocks
+WWW=		https://metacpan.org/release/Net-Netmask
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

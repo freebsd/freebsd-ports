@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Perl interface to kstat.zfs
+WWW=		https://github.com/glebius/Filesys-ZFS-Stat
 
 LICENSE=	BSD2CLAUSE
 

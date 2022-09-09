@@ -11,5 +11,3 @@ Moose::Meta::TypeConstraint objects.
 This type library enables structured type constraints.  It is built on
 top of the MooseX::Types library system, so you should review the
 documentation for that if you are not familiar with it.
-
-WWW: https://metacpan.org/release/MooseX-Types-Structured

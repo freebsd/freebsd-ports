@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Capture output from external programs (with some extras)
+WWW=		https://metacpan.org/dist/Capture-Tiny-Extended
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

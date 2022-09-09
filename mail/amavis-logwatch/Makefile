@@ -6,6 +6,7 @@ MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amavisd-new log parser
+WWW=		http://logreporters.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

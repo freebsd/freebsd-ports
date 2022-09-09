@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	ClamAV ProFTPD module
+WWW=		https://github.com/jbenden/mod_clamav
 
 LICENSE=	GPLv2
 

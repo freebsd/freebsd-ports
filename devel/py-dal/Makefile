@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bamby@sippysoft.com
 COMMENT=	Database abstraction layer for Python
+WWW=		http://pydal.sourceforge.net/
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

@@ -8,5 +8,3 @@ This class provides methods to validate:
 	- EAN/UCC-14 number
 	- UCC-12 (U.P.C.) ID number
 	- SSCC (Serial Shipping Container Code)
-
-WWW: https://pear.php.net/package/Validate_ISPN

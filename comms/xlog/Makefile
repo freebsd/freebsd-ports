@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio logging application
+WWW=		https://xlog.nongnu.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

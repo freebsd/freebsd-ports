@@ -7,6 +7,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Systems integration framework. Expander
+WWW=		http://fast-xs.rubyforge.org/
 
 LICENSE=	MIT
 

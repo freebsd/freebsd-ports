@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Free library for arbitrary precision arithmetic
+WWW=		https://gmplib.org/
 
 LICENSE=	LGPL3
 

@@ -1,9 +1,10 @@
 PORTNAME=	libdnf
-DISTVERSION=	0.67.0
+DISTVERSION=	0.68.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dandified YUM, the next-generation version of YUM
+WWW=		https://github.com/rpm-software-management/libdnf
 
 LICENSE=	LGPL21 # no LICENSE tag for Version 2.1
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -32,7 +33,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++11-lang gettext gnome lua pkgconfig sqlite ssl
+USES=		cmake:testing compiler:c++11-lang gettext gnome lua pkgconfig sqlite ssl
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 
@@ -56,5 +57,7 @@ PYTHON_BUILD_DEPENDS=	swig:devel/swig \
 ZCHUNK_DESC=		With zchunk support
 ZCHUNK_CMAKE_BOOL=	WITH_ZCHUNK
 ZCHUNK_BROKEN=		Links with zchunk when WITH_ZCHUNK=OFF https://github.com/rpm-software-management/libdnf/issues/1515
+
+# Tests fail to compile: ld: error: unable to find library -ltestshared, see https://github.com/rpm-software-management/libdnf/issues/1574
 
 .include <bsd.port.mk>

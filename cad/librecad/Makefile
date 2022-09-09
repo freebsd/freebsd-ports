@@ -8,6 +8,7 @@ PATCHFILES+=	8c3b652a8813.patch:-p1 # https://github.com/LibreCAD/LibreCAD/issue
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2D CAD system
+WWW=		https://librecad.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/licenses/gpl-2.0.txt

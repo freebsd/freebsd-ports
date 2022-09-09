@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Component for handling accounts-sso user interactions
+WWW=		https://gitlab.com/accounts-sso/signon-ui
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

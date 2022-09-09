@@ -21,5 +21,3 @@ It comes with several tools:
 		Abandonware 2019-08-15 | portedit merge -i Makefile
 
   - set-version: resets PORTREVISION, sets DISTVERSION or PORTVERSION
-
-WWW: https://codeberg.org/tobik/portfmt

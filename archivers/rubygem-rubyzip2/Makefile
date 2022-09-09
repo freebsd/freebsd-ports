@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	hhyou@cs.nctu.edu.tw
 COMMENT=	Ruby compatible Zip library
+WWW=		https://github.com/postmodern/rubyzip2
 
 NO_ARCH=	yes
 

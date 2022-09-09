@@ -16,5 +16,3 @@ On the other hand, Pire has very limited functionality (compared
 to other regexp libraries). Pire does not have any Perlish conditional
 regexps, lookaheads & backtrackings, greedy/nongreedy matches;
 neither has it any capturing facilities.
-
-WWW: https://github.com/yandex/pire

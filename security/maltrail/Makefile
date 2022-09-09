@@ -4,6 +4,7 @@ CATEGORIES=	security python
 
 MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Malicious traffic detection system, utilizing public (black)lists
+WWW=		https://github.com/stamparm/maltrail
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

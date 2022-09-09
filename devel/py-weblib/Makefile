@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Set of tools for web scraping projects
+WWW=		https://pypi.org/project/weblib/
 
 LICENSE=	MIT
 

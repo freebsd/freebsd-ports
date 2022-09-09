@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		fusefs-
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	NTFS-3G plugin for reading XPRESS or LZX compressed files
+WWW=		https://github.com/ebiggers/ntfs-3g-system-compression
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

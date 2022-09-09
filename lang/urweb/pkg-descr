@@ -18,5 +18,3 @@ they not crash during particular page generations, but they also may not:
   * Attempt invalid SQL queries
   * Use improper marshaling or unmarshaling in communication with SQL databases
     or between browsers and web servers
-
-WWW: http://www.impredicative.com/ur/

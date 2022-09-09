@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for Base64 and Quoted-Printable encodings
+WWW=		https://metacpan.org/release/MIME-Base64
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

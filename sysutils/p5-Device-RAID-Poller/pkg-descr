@@ -10,5 +10,3 @@ The RAID checking is supported for the following.
 -- graid3
 -- graid
 - ZFS
-
-WWW: https://metacpan.org/dist/Device-RAID-Poller

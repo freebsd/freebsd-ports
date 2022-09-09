@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine type information for columns
+WWW=		https://metacpan.org/release/Class-DBI-Plugin-Type
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI

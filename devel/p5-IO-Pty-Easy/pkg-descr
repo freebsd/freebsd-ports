@@ -4,5 +4,3 @@ commands.
 
 IO::Pty::Easy uses IO::Pty internally, so it inherits all of the portability
 restrictions from that module.
-
-WWW: https://metacpan.org/release/IO-Pty-Easy

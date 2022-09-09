@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open Source GIS server
+WWW=		https://geoserver.org/
 
 LICENSE=	APACHE20 BSD2CLAUSE EPL GPLv2 GPLv3 MIT
 LICENSE_COMB=	multi

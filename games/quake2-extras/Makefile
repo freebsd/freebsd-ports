@@ -12,6 +12,7 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II extras (high quality textures and skins)
+WWW=		http://www-personal.umich.edu/~jimw/q2/index.htm
 
 USES=		zip
 NO_WRKSUBDIR=	yes

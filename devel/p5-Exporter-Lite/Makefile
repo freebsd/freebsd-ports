@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight exporting of functions and variables
+WWW=		https://metacpan.org/pod/Exporter::Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -3,5 +3,3 @@ does not provide a full, object-oriented interface into all the nooks
 and crannies of Atom feeds, an Atom parser, or an Atom client API, it
 should be useful for people who want to generate basic, valid Atom feeds
 of their content quickly and easily.
-
-WWW: https://metacpan.org/release/XML-Atom-SimpleFeed

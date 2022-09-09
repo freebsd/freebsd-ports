@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interpolate array references in a list
+WWW=		https://metacpan.org/pod/List::Flatten
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implements a sprockets-aware sass importer
+WWW=		https://github.com/petebrowne/sprockets-sass
 
 LICENSE=	MIT
 

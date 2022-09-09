@@ -1,11 +1,11 @@
 PORTNAME=	telepathy-glib
-PORTVERSION=	0.24.1
-PORTREVISION=	3
+PORTVERSION=	0.24.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib utility library for the Telepathy framework
+WWW=		https://telepathy.freedesktop.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

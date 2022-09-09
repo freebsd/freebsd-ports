@@ -1,11 +1,12 @@
 PORTNAME=	madonctl
 PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI client for the Mastodon social network API
+WWW=		https://github.com/McKael/madonctl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

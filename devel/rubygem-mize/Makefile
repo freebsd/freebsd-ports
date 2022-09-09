@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memoziation for methods and functions for Ruby
+WWW=		https://github.com/flori/mize
 
 LICENSE=	MIT
 

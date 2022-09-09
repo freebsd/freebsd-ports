@@ -1,10 +1,11 @@
 PORTNAME=	rapidfuzz-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rapid fuzzy string matching in C++ using the levenshtein distance
+WWW=		https://github.com/maxbachmann/rapidfuzz-cpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

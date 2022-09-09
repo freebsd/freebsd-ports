@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
+WWW=		https://www.ntop.org/products/traffic-analysis/ntop/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

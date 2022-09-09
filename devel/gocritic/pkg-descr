@@ -5,5 +5,3 @@ missing from other linters.  Features:
  - Extensible without re-compilation with dynamic rules
  - Includes #opinionated checks with very strict and specific requirements
  - Self-documented: gocritic doc <checkname> gives a checker description
-
-WWW: https://go-critic.com/

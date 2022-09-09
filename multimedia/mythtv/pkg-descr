@@ -1,13 +1,9 @@
-MythTV is a "Personal Video Recorder", i.e. a computer-based video
-recorder.  It supports pausing and rewinding live TV, multiple tuner
-cards, hardware or software video compression, onscreen program
-guides and a distributed architecture.
+MythTV is a Free Open Source software digital video recorder (DVR)
+project distributed under the terms of the GNU GPL. It has been
+under heavy development since 2002, and now contains most features
+one would expect from a good DVR (and many new ones that you soon
+won't be able to live without).
 
-MythTV requires tuner drivers which support the V4L standard.
-Currently no official FreeBSD driver does so, but the latest version
-of a beta version of the cxm driver is available from
-http://usleepless.110mb.com/pvrxxx_port-10042007.tgz.  Problems
-have been reported with this port; if you use it, you should join
-the FreeBSD-multimedia mailing list and report where appropriate.
-
-WWW: http://www.mythtv.org/
+MythTV requires tuner drivers supporting the V4L standard.
+MythTV works with HDHomeRun and V4L DVB Compatibility:
+https://wiki.freebsd.org/WebcamCompat

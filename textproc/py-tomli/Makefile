@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lil' TOML parser
+WWW=		https://github.com/hukkin/tomli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

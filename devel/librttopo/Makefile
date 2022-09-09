@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.osgeo.org/librttopo/src/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	RT Topology Library
+WWW=		https://git.osgeo.org/gitea/rttopo/librttopo
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

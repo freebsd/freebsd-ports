@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Tool to control certain aspects of USB-connected headsets
+WWW=		https://github.com/Sapd/HeadsetControl
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license

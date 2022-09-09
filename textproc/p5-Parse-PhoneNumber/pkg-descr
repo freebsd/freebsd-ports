@@ -1,4 +1,2 @@
 Parse phone numbers. Phone number have a defined syntax (to a point), so
 they can be parsed (to a point).
-
-WWW: https://metacpan.org/release/Parse-PhoneNumber

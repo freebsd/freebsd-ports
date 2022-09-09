@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Bringing loggers and listeners together
+WWW=		https://metacpan.org/release/Log-Any
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	games python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skiing simulation with curses interface in python
+WWW=		http://catb.org/~esr/ski/
 
 LICENSE=	BSD3CLAUSE
 

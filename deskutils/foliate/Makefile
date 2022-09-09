@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Simple and modern GTK eBook viewer
+WWW=		https://johnfactotum.github.io/foliate/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

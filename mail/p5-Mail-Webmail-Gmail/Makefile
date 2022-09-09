@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Google webmail service
+WWW=		https://metacpan.org/release/Mail-Webmail-Gmail
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \

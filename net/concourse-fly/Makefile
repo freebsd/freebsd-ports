@@ -1,12 +1,13 @@
 PORTNAME=	concourse
 PORTVERSION=	6.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net sysutils
 MASTER_SITES=	LOCAL/dumbbell/concourse/
 PKGNAMESUFFIX=	-fly
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	CLI for Concourse
+WWW=		https://concourse-ci.org/
 
 LICENSE=	APACHE20
 

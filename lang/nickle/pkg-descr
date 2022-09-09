@@ -10,5 +10,3 @@ form.  It is also an ideal environment for prototyping complex algorithms.
 Nickle's scripting capabilities make it a nice replacement for spreadsheets
 in some applications, and its numeric features nicely complement the limited
 numeric functionality of text-oriented languages such as AWK and Perl.
-
-WWW: http://www.nickle.org/

@@ -8,5 +8,3 @@ This is bim.
 Package for solving Diffusion Advection Reaction (DAR)
 Partial Differential Equaltions based on the Finite Volume Scharfetter-Gummel
 (FVSG) method a.k.a Box Integration Method (BIM)
-
-WWW: http://octave.sourceforge.net/

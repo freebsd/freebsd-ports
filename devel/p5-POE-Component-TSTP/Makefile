@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	POE component to correctly handle Ctrl-Z in your program
+WWW=		https://metacpan.org/release/POE-Component-TSTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

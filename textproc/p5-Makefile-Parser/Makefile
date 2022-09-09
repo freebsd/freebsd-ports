@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Perl parser for makefiles
+WWW=		https://metacpan.org/release/Makefile-Parser
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \

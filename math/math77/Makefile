@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CalTech mathematical subprogram libraries for Fortran 77
+WWW=		https://netlib.org/math/
 
 LICENSE=	BSD3CLAUSE
 

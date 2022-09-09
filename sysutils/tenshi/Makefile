@@ -8,6 +8,7 @@ PATCHFILES=	1c9c887.patch:-p1 \
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Log monitoring program, designed to watch multiple logs
+WWW=		https://inversepath.com/tenshi.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

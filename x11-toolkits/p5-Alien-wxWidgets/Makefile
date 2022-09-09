@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
+WWW=		https://metacpan.org/release/Alien-wxWidgets
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

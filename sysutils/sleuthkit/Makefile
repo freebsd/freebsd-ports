@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tools and library for filesystem forensic analysis
+WWW=		https://www.sleuthkit.org/sleuthkit/
 
 LICENSE=	CPL IBM GPLv2
 LICENSE_COMB=	multi

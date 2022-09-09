@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Dancer logger engine for Sys::Syslog
+WWW=		https://metacpan.org/release/Dancer-Logger-Syslog
 
 LICENSE=	GPLv1+
 

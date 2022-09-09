@@ -1,11 +1,11 @@
 PORTNAME=	wyrmgus
-PORTVERSION=	5.3.5
-PORTREVISION=	1
+PORTVERSION=	5.3.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modified Stratagus engine for Wyrmsun
+WWW=		https://github.com/Andrettin/Wyrmgus
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

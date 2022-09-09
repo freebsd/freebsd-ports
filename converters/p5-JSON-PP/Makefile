@@ -1,5 +1,5 @@
 PORTNAME=	JSON-PP
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ISHIGAKI
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON::XS compatible pure-Perl module
+WWW=		https://metacpan.org/release/JSON-PP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

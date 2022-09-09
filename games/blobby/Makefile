@@ -8,6 +8,7 @@ DISTNAME=	blobby2-linux-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Official continuation of the famous Blobby Volley 1.x game
+WWW=		http://blobby.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Distributed version control system
+WWW=		https://pijul.org/
 
 LICENSE=	GPLv2
 

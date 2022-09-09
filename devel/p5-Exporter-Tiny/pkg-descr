@@ -11,5 +11,3 @@ Exporter::Tiny performs most of its internal duties (including resolution of tag
 names to sub names, resolution of sub names to coderefs, and installation of
 coderefs into the target package) as method calls, which means they can be
 overridden to provide interesting behaviour.
-
-WWW: https://metacpan.org/release/Exporter-Tiny

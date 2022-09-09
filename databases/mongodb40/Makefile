@@ -10,6 +10,7 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	dev.ashevchuk@gmail.com
 COMMENT=	Distributed document-oriented "NoSQL" database (4.0.x Branch)
+WWW=		https://docs.mongodb.com/v4.0/
 
 LICENSE=	SSPLv1 APACHE20
 LICENSE_COMB=	multi

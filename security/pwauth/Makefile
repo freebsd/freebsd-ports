@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.unixpapa.com/software/ \
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Unix Web Authenticator
+WWW=		https://code.google.com/p/pwauth/
 
 LICENSE=	BSD3CLAUSE
 

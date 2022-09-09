@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RSS Abstraction Interface
+WWW=		https://metacpan.org/release/XML-RAI
 
 LICENSE=	ART10
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Babel is a bridge to the JS Babel transpiler
+WWW=		https://github.com/babel/ruby-babel-transpiler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

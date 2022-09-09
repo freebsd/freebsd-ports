@@ -9,6 +9,7 @@ DIST_SUBDIR=	${DISTNAME}-${RECDATE}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	W3C's XHTML 1.1 DTD
+WWW=		https://www.w3.org/TR/xhtml11/
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 

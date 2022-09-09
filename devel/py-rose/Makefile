@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Small library for keeping your version up-to-date easily everywhere
+WWW=		https://github.com/toastdriven/rose
 
 LICENSE=	BSD3CLAUSE
 

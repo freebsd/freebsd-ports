@@ -7,6 +7,7 @@ DISTNAME=	MechanicalSoup-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for automating interaction with websites
+WWW=		https://github.com/MechanicalSoup/MechanicalSoup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,5 +3,3 @@ validator. It's nothing to do with the W3C so pleas don't report any problems
 with it to them. Also, please use it wisely and don't abuse the W3Cs
 validator service. If you need to do a lot of validation consider
 downloading and installing the Validator on your own machine.
-
-WWW: https://metacpan.org/release/WebService-Validator-HTML-W3C

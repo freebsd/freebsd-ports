@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Screen scraper for phpBB installations
+WWW=		https://metacpan.org/release/WWW-Mechanize-Plugin-phpBB
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Ultimate music player for Unix-like systems
+WWW=		http://deadbeef.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

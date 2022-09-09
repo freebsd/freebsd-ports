@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	XSLT processor in pure Ruby
+WWW=		https://github.com/glejeune/ruby-xslt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

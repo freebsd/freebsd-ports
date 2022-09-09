@@ -1,6 +1,7 @@
 PKGNAMESUFFIX=	-saslauthd
 
 COMMENT=	SASL authentication server for cyrus-sasl2
+WWW=		https://www.cyrusimap.org/sasl/
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 

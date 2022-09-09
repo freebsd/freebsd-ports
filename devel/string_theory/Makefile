@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern C++ library for string manipulation and storage
+WWW=		https://github.com/zrax/string_theory
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

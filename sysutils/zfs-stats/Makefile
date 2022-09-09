@@ -5,6 +5,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Display human-readable ZFS statistics
+WWW=		https://www.vx.sk/zfs-stats/
 
 LICENSE=	BSD2CLAUSE
 

@@ -13,5 +13,3 @@ Features:
   * Change framerate, size and more using command line switches.
 * Adapting size
   * Automatically scales the image to fit your terminal.
-
-WWW: https://github.com/jD91mZM2/termplay

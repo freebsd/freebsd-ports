@@ -1,4 +1,2 @@
 This module is used to work with .desktop files. The format of these files is
 specified by the freedesktop "Desktop Entry" specification.
-
-WWW: https://metacpan.org/release/File-DesktopEntry

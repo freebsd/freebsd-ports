@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for Automatically Learning Decision Trees
+WWW=		https://metacpan.org/release/AI-DecisionTree
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

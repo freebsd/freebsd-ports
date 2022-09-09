@@ -4,6 +4,7 @@ CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings for xtensor # it is called "bindings" but it doesn't install python modules, it's rather a header-only library to use xtensor from python extensions
+WWW=		https://github.com/xtensor-stack/xtensor-python
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

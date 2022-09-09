@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_freebsd_${ARCH:S|amd64|amd64|:S|i386|386|}
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Jotta Cloud Daemon and Command-Line Interface
+WWW=		https://www.jottacloud.com
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	"Jottacloud Terms and Service"

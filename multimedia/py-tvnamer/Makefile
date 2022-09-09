@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Automatically names downloaded/recorded TV-episode
+WWW=		https://pypi.org/project/tvnamer/
 
 LICENSE=	GPLv2
 

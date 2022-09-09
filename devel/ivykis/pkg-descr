@@ -8,5 +8,3 @@ Programs written to the ivykis API are generally single-threaded (or
 use only a small number of threads), and never block on I/O. All
 input and output is done in a nonblocking fashion, with I/O readiness
 notification delivered via callback functions.
-
-WWW: https://github.com/buytenh/ivykis

@@ -6,6 +6,7 @@ DISTNAME=	tiff-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	X11 Tools for working with TIFF images
+WWW=		http://www.simplesystems.org/libtiff/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

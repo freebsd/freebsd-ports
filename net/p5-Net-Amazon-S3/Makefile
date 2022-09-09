@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the Amazon S3 - Simple Storage Service
+WWW=		https://metacpan.org/release/Net-Amazon-S3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

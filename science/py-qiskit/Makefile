@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qiskit meta-package: SDK for working with quantum computers
+WWW=		https://qiskit.org/
 
 LICENSE=	BSD2CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	AVX/AVX2-accelerated bulk call of math functions
+WWW=		https://github.com/yandex/fastops
 
 LICENSE=	MIT
 

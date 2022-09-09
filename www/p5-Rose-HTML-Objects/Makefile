@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented interfaces for HTML
+WWW=		https://metacpan.org/release/Rose-HTML-Objects
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

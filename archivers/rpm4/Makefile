@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Red Hat Package Manager
+WWW=		https://rpm.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

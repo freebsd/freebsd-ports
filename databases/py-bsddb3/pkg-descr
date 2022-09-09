@@ -6,5 +6,3 @@ methods, btree, hash, recno, and queue.  For the first time all of
 these are fully supported in the Python wrappers.  Please see the
 document in developers' web site for more details on the types and
 methods provided.
-
-WWW: https://www.jcea.es/programacion/pybsddb.htm

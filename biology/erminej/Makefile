@@ -6,6 +6,7 @@ DISTNAME=	ermineJ-${DISTVERSION}-generic-bundle
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analyses of gene sets such as gene expression profiling studies
+WWW=		https://erminej.msl.ubc.ca/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

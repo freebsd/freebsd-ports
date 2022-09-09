@@ -1,3 +1,1 @@
 Rack middleware to force SSL/TLS
-
-WWW: https://github.com/josh/rack-ssl

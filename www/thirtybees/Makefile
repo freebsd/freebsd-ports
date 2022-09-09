@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mature e-commerce solution
+WWW=		https://thirtybees.com
 
 LICENSE_FILE=	${WRKSRC}/LICENSES
 

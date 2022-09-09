@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Calendar files for the BSD calendar program
+WWW=		https://www.freebsd.org
 
 LICENSE=	BSD2CLAUSE
 

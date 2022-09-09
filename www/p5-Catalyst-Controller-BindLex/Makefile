@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Stash your lexical goodness
+WWW=		https://metacpan.org/release/Catalyst-Controller-BindLex
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

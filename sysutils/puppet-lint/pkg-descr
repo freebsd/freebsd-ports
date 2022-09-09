@@ -9,5 +9,3 @@ If you want to test your entire Puppet manifest directory, you can add
 require 'puppet-lint/tasks/puppet-lint' to your Rakefile and then run:
 
 	rake lint
-
-WWW: http://puppet-lint.com/

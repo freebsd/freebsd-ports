@@ -13,5 +13,3 @@ The GNU Trove library has two objectives:
    with Object-based collections. For most applications, however,
    collections which store primitives directly will require less
    space and yield significant performance gains.
-
-WWW: https://bitbucket.org/robeden/trove/

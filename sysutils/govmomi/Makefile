@@ -1,11 +1,12 @@
 PORTNAME=	govmomi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.29.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	alex@i.org.ua
 COMMENT=	vSphere CLI and vSphere API mock framework
+WWW=		https://github.com/vmware/govmomi/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

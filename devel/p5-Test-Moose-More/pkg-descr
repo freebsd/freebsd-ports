@@ -1,5 +1,3 @@
 This package contains a number of additional tests that can be employed
 against Moose classes/roles.  It is intended to replace L<Test::Moose> in your
 tests, and reexports any tests that it has and we do not, yet.
-
-WWW: https://metacpan.org/release/Test-Moose-More

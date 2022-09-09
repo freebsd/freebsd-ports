@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use other catalog formats in Locale::Maketext
+WWW=		https://metacpan.org/release/Locale-Maketext-Lexicon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

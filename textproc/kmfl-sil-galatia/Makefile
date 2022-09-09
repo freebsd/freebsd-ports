@@ -9,6 +9,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL Unicode keyboard for typesetting Ancient Greek
+WWW=		http://scripts.sil.org/KeymanKeyboardLinks #e9f80714
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 

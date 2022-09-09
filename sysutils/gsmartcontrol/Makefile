@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical user interface for smartmontools
+WWW=		https://gsmartcontrol.sourceforge.io
 
 LICENSE=	BSD3CLAUSE BSL GPLv2 GPLv3 PD ZLIB
 LICENSE_COMB=	multi

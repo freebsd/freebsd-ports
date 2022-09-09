@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	RoundCube webmail contextmenu plugin
+WWW=		https://github.com/johndoh/roundcube-contextmenu
 
 LICENSE=	GPLv3
 

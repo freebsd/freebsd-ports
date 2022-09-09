@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Easy manipulation of JSON headers for CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-JSON
 
 BUILD_DEPENDS=	p5-CGI-Application>4.01:www/p5-CGI-Application \
 		p5-JSON>=0:converters/p5-JSON \

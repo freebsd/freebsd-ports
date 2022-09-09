@@ -1,2 +1,3 @@
-SHA256 (telepathy-glib-0.24.1.tar.gz) = 9e0df1d8f857e0270cf0b32e2d1ca5a24aa7282873361785d573f72ad7f7d5eb
-SIZE (telepathy-glib-0.24.1.tar.gz) = 3898149
+TIMESTAMP = 1659085853
+SHA256 (telepathy-glib-0.24.2.tar.gz) = b0a374d771cdd081125f38c3abd079657642301c71a543d555e2bf21919273f0
+SIZE (telepathy-glib-0.24.2.tar.gz) = 3855853

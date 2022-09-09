@@ -6,6 +6,7 @@ CATEGORIES=	chinese textproc python
 
 MAINTAINER=	chihhsin@cs.nctu.edu.tw
 COMMENT=	Command line tool of Yahoo! Dictionary
+WWW=		https://github.com/iamgyz/gydict
 
 LICENSE=	MIT
 

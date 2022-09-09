@@ -11,5 +11,3 @@ files and mailboxes from the command line.  These include:
 These programs use liblockfile to perform the file locking and
 unlocking, so they are guaranteed compatible with Debian's
 file locking policies.
-
-WWW: https://tracker.debian.org/pkg/lockfile-progs

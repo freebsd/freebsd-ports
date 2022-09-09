@@ -13,5 +13,3 @@ The main features of Pexpect require the pty module in the Python standard
 library, which is only available on Unix-like systems. Some features -- waiting
 for patterns from file descriptors or subprocesses -- waiting for patterns from
 file descriptors or subprocesses.
-
-WWW: https://pexpect.readthedocs.io/

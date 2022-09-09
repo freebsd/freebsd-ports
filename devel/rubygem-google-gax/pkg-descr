@@ -6,5 +6,3 @@ Application code will rarely need to use most of the classes within this library
 directly, but code generated automatically from the API definition files in
 Google APIs can use services such as page streaming and request bundling to
 provide a more convenient and idiomatic API surface to callers.
-
-WWW: https://github.com/googleapis/gax-ruby

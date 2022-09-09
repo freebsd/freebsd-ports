@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	High speed Base32 encoding using GMP with BigInt and MD5 support
+WWW=		https://www.crockford.com/wrmg/base32.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

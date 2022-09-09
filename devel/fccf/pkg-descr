@@ -9,5 +9,3 @@ Highlights:
    enums, variables etc., that match the user's request.
  * Pretty-prints the identified snippet of source code to the terminal.
  * MIT License
-
-WWW: https://github.com/p-ranav/fccf

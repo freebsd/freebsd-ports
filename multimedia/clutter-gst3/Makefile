@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
+WWW=		https://clutter-project.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ powerful search methods, scoring, and a Bayesian junk mail filter.
 Mailx can be used as a mail batch language in nearly the same way as
 it is used interactively. It can thus act as a mailbox filter, can
 fetch mail from remote accounts, and can send files as attachments.
-
-WWW: http://heirloom.sourceforge.net/mailx.html

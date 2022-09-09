@@ -6,5 +6,3 @@ and Mac OS platforms are supported.
 
 This port represents the GNU fortran-compatible fork of Multiwfn, which is
 normally using the Intel fortran (ifort).
-
-WWW: http://sobereva.com/multiwfn/index.html

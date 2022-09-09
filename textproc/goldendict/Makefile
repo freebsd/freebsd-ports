@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Feature-rich dictionary lookup program
+WWW=		http://goldendict.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

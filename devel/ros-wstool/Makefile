@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Tool for managing a workspace of heterogenous SCM repositories
+WWW=		https://github.com/vcstools/wstool
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

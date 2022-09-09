@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ml@netfence.it
 COMMENT=	Disk-based virtual autochanger for Bacula
+WWW=		https://vchanger.sourceforge.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

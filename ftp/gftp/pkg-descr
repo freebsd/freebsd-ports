@@ -19,5 +19,3 @@ It has the following features:
   Allows for passive and non-passive file transfers
   Supports FXP file transfers (file transfer between 2 remote servers via FTP)
   Eliminates buffer overruns from malicious FTP sites
-
-WWW: http://gftp.seul.org/

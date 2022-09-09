@@ -8,6 +8,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Documentation for the Python programming language
+WWW=		https://www.python.org/doc/
 
 PORTSCOUT=	ignore:1
 

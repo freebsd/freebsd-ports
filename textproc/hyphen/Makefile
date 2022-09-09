@@ -6,6 +6,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for high quality hyphenation and justification
+WWW=		https://github.com/hunspell/hyphen
 
 LICENSE=	LGPL21+ MPL11
 LICENSE_COMB=	dual

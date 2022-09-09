@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Client for the distributed event system Riemann
+WWW=		https://github.com/riemann/riemann-ruby-client
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

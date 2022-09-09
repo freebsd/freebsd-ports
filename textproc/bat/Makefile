@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Clone of cat with syntax highlighting
+WWW=		https://github.com/sharkdp/bat
 
 LICENSE=	APACHE20
 

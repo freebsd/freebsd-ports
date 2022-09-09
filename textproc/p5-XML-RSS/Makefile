@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to manage RDF Site Summary (RSS) files
+WWW=		https://metacpan.org/release/XML-RSS
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

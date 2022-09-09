@@ -4,5 +4,3 @@ It is based on the ideas in DSDV, AODV and
 Cisco's EIGRP, but uses a variant of ETX
 link cost estimation rather than a simple
 hop-count metric.
-
-WWW: https://www.irif.fr/~jch/software/babel/

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	steve@energistic.com
 COMMENT=	Python implementation of RADIUS client
+WWW=		https://pypi.org/project/pyrad/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

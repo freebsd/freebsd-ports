@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mose@mose.com
 COMMENT=	Env aware lib for CLI prompt
+WWW=		https://github.com/mose/clipromopt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

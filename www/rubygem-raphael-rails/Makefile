@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Raphael JS as a Rubygem for use in the Rails asset pipeline
+WWW=		https://github.com/mockdeep/raphael-rails
 
 LICENSE=	MIT
 

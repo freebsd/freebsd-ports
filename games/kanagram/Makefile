@@ -4,6 +4,7 @@ CATEGORIES=	games education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Letter order game for KDE
+WWW=		https://www.kde.org/applications/education/kanagram
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	attica auth codecs config configwidgets coreaddons crash \

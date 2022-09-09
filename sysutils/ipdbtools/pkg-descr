@@ -18,5 +18,3 @@ maintained Geo-location database is indispensable in the given respect.
 The System's own routing and filtering tables can be configured to do
 these tasks if there is a source of the appropriate data. The ipdbtools(1)
 are designed to provide this data and to assist managing and using it.
-
-WWW: https://cyclaero.github.io/ipdb/

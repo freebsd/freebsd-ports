@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Tool for generating function wrappers for Guile
+WWW=		https://www.nongnu.org/g-wrap/
 
 LICENSE=	LGPL21+
 

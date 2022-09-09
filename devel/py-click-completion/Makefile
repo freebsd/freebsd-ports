@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Enhanced completion for Click
+WWW=		https://github.com/click-contrib/click-completion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

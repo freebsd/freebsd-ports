@@ -1,5 +1,3 @@
 A port from the CLD (Compact Language Detector) library embedded in
 Google's Chromium browser.  The library detects the language from
 provided UTF8 text (plain text or HTML).  This is python bindings.
-
-WWW: https://code.google.com/p/chromium-compact-language-detector/

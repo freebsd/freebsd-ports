@@ -9,5 +9,3 @@ Baikal does not start a daemon or open any ports. It must
 run at the root of a VirtualHost or subdomain. See the included
 sample Apache and Nginx configurations, and INSTALL.md for all
 the gory details.
-
-WWW: https://sabre.io/baikal/

@@ -5,6 +5,7 @@ CATEGORIES=	security net
 
 MAINTAINER=	jmg@FreeBSD.org
 COMMENT=	TCPCrypt userland divert daemon
+WWW=		http://www.tcpcrypt.org/
 
 LICENSE=	BSD2CLAUSE
 

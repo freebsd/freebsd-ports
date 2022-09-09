@@ -1,10 +1,11 @@
 PORTNAME=	jp
 DISTVERSION=	1.1.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Terminal charts, plots, histograms and maps from JSON and CSV
+WWW=		https://github.com/sgreben/jp
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	multi

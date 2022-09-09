@@ -6,6 +6,7 @@ MASTER_SITES=	http://starplot.org/wmapp/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DockApp Graphics Library
+WWW=		http://starplot.org/wmapp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

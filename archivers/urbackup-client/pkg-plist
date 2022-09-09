@@ -10,10 +10,12 @@ sbin/urbackupclientbackend
 @sample etc/urbackup/postgresqldump.conf.sample
 @mode 0700
 share/urbackup/scripts/list
+share/urbackup/scripts/list_incr
 share/urbackup/scripts/mariadbdump
 share/urbackup/scripts/mariadbpostbackup
 share/urbackup/scripts/mariadbprebackup
 share/urbackup/scripts/mariadbxtrabackup
+share/urbackup/scripts/mariadbxtrabackup_incr
 share/urbackup/scripts/postgresbase
 share/urbackup/scripts/postgresqldump
 share/urbackup/scripts/postgresqlpostbackup

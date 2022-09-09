@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flatten NetCDF files while preserving references
+WWW=		https://gitlab.eumetsat.int/open-source/netcdf-flattener
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

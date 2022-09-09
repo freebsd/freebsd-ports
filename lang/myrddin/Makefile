@@ -6,6 +6,7 @@ MASTER_SITES=	http://myrlang.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Myrddin Compiler
+WWW=		https://myrlang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

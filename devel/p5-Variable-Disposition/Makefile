@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helper functions for disposing of variables
+WWW=		https://metacpan.org/release/Variable-Disposition
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

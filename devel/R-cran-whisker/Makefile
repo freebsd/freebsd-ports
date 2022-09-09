@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Logicless Mustache Templating for R
+WWW=		https://github.com/edwindj/whisker
 
 LICENSE=	GPLv3
 

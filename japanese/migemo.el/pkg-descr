@@ -16,5 +16,3 @@ To use migemo.el, please set the following elisp to your own
 (setq migemo-coding-system 'utf-8-unix)
 (load-library "migemo")
 (migemo-init)
-
-WWW: https://github.com/emacs-jp/migemo

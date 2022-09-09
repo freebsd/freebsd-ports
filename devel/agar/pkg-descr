@@ -11,5 +11,3 @@ Agar's functionality can be extended using simple C/C++ class
 registration interfaces. Separate libraries which also extend
 Agar's capabilities include FreeSG (http://FreeSG.org) and
 Edacious (http://edacious.org).
-
-WWW: http://libagar.org/

@@ -4,6 +4,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional completion definitions for Zsh
+WWW=		https://github.com/zsh-users/zsh-completions
 
 LICENSE=	ZSH
 LICENSE_NAME=	ZSH license

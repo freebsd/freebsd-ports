@@ -1,5 +1,3 @@
 HTMLEntities is a simple library to facilitate encoding and decoding of
 named (&yacute; and so on) or numerical (&#123; or &#x12a;) entities
 in HTML and XHTML documents.
-
-WWW: https://rubygems.org/gems/htmlentities

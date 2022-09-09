@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.cpp.gpl.zip
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical analysis and data processing library
+WWW=		https://www.alglib.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl3.txt

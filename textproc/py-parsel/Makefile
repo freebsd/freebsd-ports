@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Library to extract data from HTML and XML using XPath and CSS selectors
+WWW=		https://github.com/scrapy/parsel
 
 LICENSE=	BSD3CLAUSE
 

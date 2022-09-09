@@ -19,5 +19,3 @@ first preprocessed by m4. That means that you need an m4 macro
 processor in order to hack on the sources. This is of no concern
 for you if you only want to use the module, the preprocessed
 output is always included in the distribution.
-
-WWW: https://metacpan.org/release/Crypt-DES_PP

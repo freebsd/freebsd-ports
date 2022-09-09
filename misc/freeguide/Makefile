@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive TV guide which will create personalized TV listings
+WWW=		http://freeguide-tv.sf.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

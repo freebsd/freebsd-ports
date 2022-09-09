@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Cross-platform Git client, done the Sublime Text way
+WWW=		https://www.sublimemerge.com/
 
 LICENSE=	SUBLIMEHQ
 LICENSE_NAME=	End User License Agreement

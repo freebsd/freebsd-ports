@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	CFFI-based Cairo bindings for Python
+WWW=		https://github.com/SimonSapin/cairocffi
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

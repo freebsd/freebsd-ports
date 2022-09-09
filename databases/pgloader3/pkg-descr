@@ -7,5 +7,3 @@ Thanks to being able to load data directly from a database source, pgloader
 also supports migrations from other productions to PostgreSQL. In this mode of
 operation, pgloader handles both the schema and data parts of the migration in a
 single unmanned command, allowing to implement Continuous Migration.
-
-WWW: https://pgloader.io

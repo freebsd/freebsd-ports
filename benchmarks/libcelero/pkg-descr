@@ -4,5 +4,3 @@ compare among individual runs, developers, or projects. Celero uses a framework
 similar to that of GoogleTest to make its API easier to use and integrate into a
 project. Make automated benchmarking as much a part of your development process
 as automated testing.
-
-WWW: https://github.com/DigitalInBlue/Celero

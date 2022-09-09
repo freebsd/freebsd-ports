@@ -5,6 +5,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR DNSBL Checker
+WWW=		https://pear.php.net/package/Net_DNSBL
 
 LICENSE=	PHP30
 

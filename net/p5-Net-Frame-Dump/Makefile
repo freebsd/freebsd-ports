@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tcpdump like perl implementation
+WWW=		https://metacpan.org/release/Net-Frame-Dump
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic

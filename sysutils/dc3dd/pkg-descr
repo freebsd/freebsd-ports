@@ -14,5 +14,3 @@ were rewritten for dc3dd.
 - Ability to split the output into chunks with numerical or alphabetic
   extensions.
 - Ability to write multiple output files simultaneuously.
-
-WWW: http://dc3dd.sourceforge.net/

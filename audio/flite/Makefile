@@ -4,8 +4,9 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.festvox.org/flite/packed/${PORTNAME}-2.1/
 DISTNAME=	${PORTNAME}-${PORTVERSION:}-release
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small run-time speech synthesis engine
+WWW=		http://www.festvox.org/flite/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

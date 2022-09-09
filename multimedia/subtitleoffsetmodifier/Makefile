@@ -7,6 +7,7 @@ DISTFILES=	subtitle-offset-modificator.pl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle offset modificator
+WWW=		http://thomas.enix.org/SubtitleOffsetModificator
 
 LICENSE=	GPLv2+
 

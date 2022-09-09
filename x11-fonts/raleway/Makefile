@@ -10,6 +10,7 @@ DISTNAME=	Raleway-${DISTVERSION}
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Elegant sans-serif font, designed in a single thin weight
+WWW=		https://www.theleagueofmoveabletype.com/raleway
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.md

@@ -4,6 +4,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Essential files for building up your Rime configuration
+WWW=		https://github.com/rime/rime-prelude
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

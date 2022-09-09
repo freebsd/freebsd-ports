@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading PhotoCD images
+WWW=		https://www.kraxel.org/blog/linux/libpcd/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Filter to compile SASS files using libsass
+WWW=		https://github.com/torchbox/django-libsass
 
 LICENSE=	BSD3CLAUSE
 

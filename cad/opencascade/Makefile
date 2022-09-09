@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
+WWW=		https://www.opencascade.org/
 
 LICENSE=	OCTPL
 LICENSE_NAME=	LGPL21 with exception

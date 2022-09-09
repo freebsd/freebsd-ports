@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple, elegant HTML, XHTML and XML generation
+WWW=		https://pypi.org/project/html3/
 
 LICENSE=	BSD3CLAUSE
 

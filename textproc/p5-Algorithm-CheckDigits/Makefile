@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to generate and test check digits
+WWW=		https://metacpan.org/release/Algorithm-CheckDigits
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

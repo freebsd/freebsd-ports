@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	OpenType Unicode fonts for Scientific, Technical, and Math texts
+WWW=		https://www.stixfonts.org/
 
 LICENSE=	OFL11
 

@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Simulation of VT100 terminal hardware
+WWW=		https://github.com/larsbrinkhoff/terminal-simulator
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC:H}/LICENSE

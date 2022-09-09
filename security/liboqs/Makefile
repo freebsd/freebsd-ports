@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for quantum-resistant cryptography
+WWW=		https://openquantumsafe.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

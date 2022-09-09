@@ -7,6 +7,7 @@ DISTNAME=	ibo-view.20150427
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Program for analyzing molecular electronic structure
+WWW=		http://www.iboview.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

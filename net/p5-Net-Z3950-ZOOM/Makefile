@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl interface to the Z39.50 Object-Orientation Model (ZOOM)
+WWW=		https://metacpan.org/release/Net-Z3950-ZOOM
 
 LIB_DEPENDS=	libyaz.so:net/yaz
 BUILD_DEPENDS=	p5-MARC-Record>=1.38:textproc/p5-MARC-Record

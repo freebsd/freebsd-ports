@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game of musical skill and fast fingers
+WWW=		http://fretsonfire.sf.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/copying.txt

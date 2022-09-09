@@ -9,5 +9,3 @@ proprietary implementations of DB-Library.
 The current version does not yet support JOIN push-down, or write operations.
 
 It does support WHERE and column pushdowns when match_column_names is enabled.
-
-WWW: https://github.com/tds-fdw/tds_fdw

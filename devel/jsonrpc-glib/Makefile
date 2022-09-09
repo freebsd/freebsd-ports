@@ -5,14 +5,14 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to communicate using the JSON-RPC 2.0 specification
+WWW=		https://gitlab.gnome.org/GNOME/jsonrpc-glib
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
-USES=		compiler:c11 gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
 
 .include <bsd.port.mk>

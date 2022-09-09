@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible whois client and proxy
+WWW=		https://julijane.de/gwhois/
 
 LICENSE=	GPLv2
 

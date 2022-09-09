@@ -8,5 +8,3 @@ generated lexer to a particular environment and input model, avoiding the
 overhead on unnecessary checks and buffers. Re2c is based on the lookahead
 TDFA algorithm that allows it to perform fast and lightweight submatch
 extraction.
-
-WWW: https://re2c.org/

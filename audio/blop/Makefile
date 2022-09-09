@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bandlimited oscillator plugins for LADSPA-aware audio applications
+WWW=		https://sourceforge.net/projects/blop/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 

@@ -6,5 +6,3 @@ O(1) time complexity for searching.  Comparably as efficient as hashing,
 trie also provides flexibility on incremental matching and key spelling
 manipulation.  This makes it ideal for lexical analyzers, as well as
 spelling dictionaries.
-
-WWW: https://linux.thai.net/projects/datrie/

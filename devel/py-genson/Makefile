@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Powerful, user-friendly JSON Schema generator
+WWW=		https://pypi.org/project/genson/
 
 LICENSE=	MIT
 

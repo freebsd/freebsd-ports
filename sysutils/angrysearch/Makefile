@@ -6,6 +6,7 @@ CATEGORIES=	sysutils python
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quick search GUI tool for Unix-like systems
+WWW=		https://github.com/DoTheEvo/ANGRYsearch
 
 LICENSE=	GPLv2
 

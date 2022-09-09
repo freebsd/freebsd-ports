@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Zulu hunspell dictionaries
+WWW=		https://addons.mozilla.org/en-US/firefox/addon/zulu-spell-checker/
 
 NO_ARCH=	yes
 NO_BUILD=	yes

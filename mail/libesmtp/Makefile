@@ -13,6 +13,7 @@ PATCHFILES=	libesmtp-1.0.6-openssl-1.1-api-compatibility.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for posting electronic mail
+WWW=		http://www.stafford.uklinux.net/libesmtp/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

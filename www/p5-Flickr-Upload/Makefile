@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Upload images to flickr.com
+WWW=		https://metacpan.org/release/Flickr-Upload
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

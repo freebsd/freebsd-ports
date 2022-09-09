@@ -1,4 +1,2 @@
 genjsbind is a tool to generate javascript to dom bindings from w3c webidl
 files, and a binding configuration file.
-
-WWW: http://www.netsurf-browser.org/

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lemke-it.com/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ XML library, used for databases/cego
+WWW=		https://www.lemke-it.com/
 
 LICENSE=	GPLv3
 

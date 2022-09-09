@@ -3,5 +3,3 @@ components like a Dynamic Symbolic Execution (DSE) engine, a dynamic taint
 engine, AST representations of the x86, x86-64 and AArch64 Instructions Set
 Architecture (ISA), SMT simplification passes, an SMT solver interface. Triton
 is mainly used to provide help during reverse-engineering.
-
-WWW: https://triton.quarkslab.com/

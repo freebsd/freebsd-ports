@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Robust log colorizer
+WWW=		https://github.com/raszi/colorize
 
 LICENSE=	GPLv2+
 

@@ -8,6 +8,7 @@ DISTFILES=	# none
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	X11 client library for Common Lisp
+WWW=		https://www.cliki.net/CLX
 
 LICENSE=	MIT
 

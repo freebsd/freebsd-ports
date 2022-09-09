@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic memory debugging and profiling library
+WWW=		http://mpatrol.sourceforge.net/
 
 ONLY_FOR_ARCHS=	amd64 i386
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld

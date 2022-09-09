@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	Implement an RPC::ExtDirect gateway using Plack
+WWW=		https://metacpan.org/release/Plack-Middleware-ExtDirect
 
 LICENSE=	ART10
 

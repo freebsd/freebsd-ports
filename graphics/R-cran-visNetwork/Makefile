@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Network Visualization using 'vis.js' Library
+WWW=		https://cran.r-project.org/web/packages/visNetwork/
 
 LICENSE=	MIT
 

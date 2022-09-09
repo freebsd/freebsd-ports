@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Adjust Time::Moment with time zone objects
+WWW=		https://metacpan.org/release/Time-Moment-Role-TimeZone
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

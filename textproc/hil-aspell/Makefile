@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Hiligaynon dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	hil
 

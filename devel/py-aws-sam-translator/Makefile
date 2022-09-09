@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	Library that transform SAM templates into AWS CloudFormation templates
+WWW=		https://pypi.org/project/aws-sam-translator/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

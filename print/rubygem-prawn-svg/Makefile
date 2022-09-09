@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SVG renderer for Prawn PDF library
+WWW=		https://github.com/mogest/prawn-svg
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	http://smog.com/chem/babel/files/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts among various molecular file formats
+WWW=		http://smog.com/chem/babel/
 
 CONFLICTS_INSTALL=	openbabel
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
+WWW=		http://openprinting.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 

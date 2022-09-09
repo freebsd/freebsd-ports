@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Warlords II clone
+WWW=		https://www.nongnu.org/lordsawar/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

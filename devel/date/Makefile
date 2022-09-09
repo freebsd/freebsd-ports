@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Date and time library based on the C++11/14/17 <chrono> header
+WWW=		https://github.com/HowardHinnant/date
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver and development framework for mixed-integer linear programs
+WWW=		https://github.com/coin-or/SYMPHONY
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/SYMPHONY/LICENSE

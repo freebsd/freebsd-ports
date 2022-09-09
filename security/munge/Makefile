@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/dun/${PORTNAME}/releases/download/${PORTNAME}-$
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Authentication service for creating and validating credentials
+WWW=		https://dun.github.io/munge/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

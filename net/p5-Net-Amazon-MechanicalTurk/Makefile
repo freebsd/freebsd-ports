@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl interface to the Amazon Mechanical Turk
+WWW=		https://metacpan.org/release/Net-Amazon-MechanicalTurk
 
 LICENSE=	APACHE20
 

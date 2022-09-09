@@ -1,5 +1,5 @@
 PORTNAME=	jupyterlab-widgets
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	jupyterlab_widgets-${DISTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	JupyterLab extension for Jupyter/IPython widgets
+WWW=		https://pypi.python.org/pypi/jupyterlab-widgets
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ale_sagra@hotmail.com
 COMMENT=	Command Line Interface for Oracle Cloud Infrastructure
+WWW=		https://github.com/oracle/oci-cli/
 
 LICENSE=	APACHE20 UPL
 LICENSE_COMB=	dual

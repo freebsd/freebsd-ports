@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.r
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serious Sam: The First Encounter
+WWW=		https://www.croteam.com/
 
 # Converted from RESTRICTED
 LICENSE=	ssam

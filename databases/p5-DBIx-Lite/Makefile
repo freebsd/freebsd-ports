@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Chained and minimal ORM
+WWW=		https://metacpan.org/release/DBIx-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

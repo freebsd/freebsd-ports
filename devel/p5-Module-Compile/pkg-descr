@@ -7,5 +7,3 @@ altered form the first time they are run. The result is cached into
 
 Perl has native support for ".pmc" files. It always checks for them,
 before loading a ".pm" file.
-
-WWW: https://metacpan.org/release/Module-Compile

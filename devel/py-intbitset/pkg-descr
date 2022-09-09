@@ -15,5 +15,3 @@ integer and the last element [-1] is also the max() integer in the set.
 When compared to the standard library set class, intbitset set operations such
 as intersection, union and difference can be up to 5000 faster for dense integer
 sets.
-
-WWW: https://github.com/inveniosoftware/intbitset/

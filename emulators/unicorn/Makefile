@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Unicorn CPU emulator framework
+WWW=		https://www.unicorn-engine.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

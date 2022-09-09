@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nmingotti@gmail.com
 COMMENT=	Ruby interface to TclTk-8.6
+WWW=		https://github.com/ruby/tk
 
 LICENSE=	BSD2CLAUSE
 

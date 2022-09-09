@@ -1,11 +1,12 @@
 PORTNAME=	asyncssh
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous SSHv2 client and server library
+WWW=		https://github.com/ronf/asyncssh
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

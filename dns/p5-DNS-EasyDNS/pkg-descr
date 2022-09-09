@@ -1,5 +1,3 @@
 This module allows you to update your EasyDNS ( http://www.easydns.com/ )
 dynamic DNS records. This is done via an http get using the libwww-perl
 modules.
-
-WWW: https://metacpan.org/release/DNS-EasyDNS

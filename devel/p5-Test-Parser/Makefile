@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parsing log files from test runs, and displays in an XML syntax
+WWW=		https://metacpan.org/release/Test-Parser
 
 RUN_DEPENDS=	p5-Chart-Graph>=0:graphics/p5-Chart-Graph \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \

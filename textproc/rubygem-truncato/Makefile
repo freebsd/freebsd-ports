@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Truncating HTML strings keeping a valid HTML markup
+WWW=		https://github.com/jorgemanrubia/truncato
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

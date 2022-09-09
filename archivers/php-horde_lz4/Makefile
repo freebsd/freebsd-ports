@@ -8,6 +8,7 @@ DIST_SUBDIR=	PECL
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde LZ4 Compression Extension for php
+WWW=		https://pear.horde.org
 
 LICENSE=	MIT
 

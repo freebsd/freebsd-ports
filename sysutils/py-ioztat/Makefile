@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Storage load analysis tool for OpenZFS
+WWW=		https://github.com/jimsalterjrs/ioztat
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	terraform-provider-gridscale
 PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Terraform provider for gridscale
+WWW=		https://github.com/terraform-providers/terraform-provider-gridscale
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

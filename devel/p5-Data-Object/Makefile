@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data Type Objects for Perl 5
+WWW=		https://metacpan.org/release/Data-Object
 
 LICENSE=	APACHE20
 

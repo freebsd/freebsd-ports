@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy-to-use class for error objects
+WWW=		https://metacpan.org/release/Throwable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

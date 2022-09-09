@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Convert hash to xml and xml to hash using LibXML
+WWW=		https://metacpan.org/release/XML-Hash-LX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

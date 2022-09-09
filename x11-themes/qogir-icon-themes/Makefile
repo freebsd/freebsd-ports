@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Flat colorful design icon theme for linux desktops
+WWW=		https://github.com/vinceliuice/Qogir-icon-theme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

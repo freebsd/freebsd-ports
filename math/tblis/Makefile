@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Framework for performing tensor operations
+WWW=		https://github.com/devinamatthews/tblis
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

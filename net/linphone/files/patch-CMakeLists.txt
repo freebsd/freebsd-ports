@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-08-24 10:17:10 UTC
++++ CMakeLists.txt
+@@ -487,7 +487,7 @@ if(APPLE)
+ 		set(MSPLUGINS_DIR "Frameworks/mediastreamer2.framework/Versions/A/Libraries")
+ 	endif()
+ else()
+-	set(MSPLUGINS_DIR "plugins/mediastreamer")
++	set(MSPLUGINS_DIR "lib/mediastreamer/plugins")
+ endif()
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/src/config.h.cmake" "${CMAKE_CURRENT_BINARY_DIR}/config.h")
+ # ------------------------------------------------------------------------------

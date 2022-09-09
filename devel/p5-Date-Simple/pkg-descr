@@ -12,5 +12,3 @@ Day-of-week calculation:
     What day of the week is a given date?
 
 It does NOT deal with hours, minutes, seconds, and time zones.
-
-WWW: https://metacpan.org/release/Date-Simple

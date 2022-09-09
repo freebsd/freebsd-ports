@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Aid for installing and using miniconda
+WWW=		https://github.com/outpaddling/miniconda-installer
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

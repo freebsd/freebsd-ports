@@ -1,4 +1,2 @@
 Test::Warn provides a few convenience methods for testing warning based
 code.
-
-WWW: https://metacpan.org/release/Test-Warn

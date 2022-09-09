@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Qt based archiving solution with libarchive backend
+WWW=		https://gitlab.com/marcusbritanicus/libarchive-qt
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

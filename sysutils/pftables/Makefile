@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Minimal rc script to save and restore pf tables upon reboots
+WWW=		https://github.com/riggs-/pftables
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

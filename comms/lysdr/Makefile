@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Lysdr SDR program for Unix
+WWW=		https://github.com/gordonjcp/lysdr
 
 LICENSE=	GPLv2
 

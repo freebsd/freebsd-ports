@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Display ZFS dataset I/O in real time
+WWW=		https://github.com/asomers/ztop
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

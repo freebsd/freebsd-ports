@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	Automating Telnet and SSH
+WWW=		https://github.com/knipknap/exscript
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ MASTER_SITES=	SF/justjournal/JustJournal%20UNIX%20Client/${PORTVERSION} \
 
 MAINTAINER=	luke@justjournal.com
 COMMENT=	Command line client for posting JustJournal entries
+WWW=		https://www.justjournal.com/
 
 LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 

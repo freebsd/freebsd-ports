@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Starlink PAL positional astronomy library
+WWW=		https://metacpan.org/release/Astro-PAL
 
 LICENSE=	GPLv3
 

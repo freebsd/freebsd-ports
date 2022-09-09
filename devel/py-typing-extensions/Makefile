@@ -7,6 +7,7 @@ DISTNAME=	typing_extensions-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Backported and Experimental Type Hints for Python 3.5+
+WWW=		https://github.com/python/typing_extensions
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	MutableSet that remembers its order, so that every entry has an index
+WWW=		https://github.com/LuminosoInsight/ordered-set
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

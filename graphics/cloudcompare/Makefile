@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	3D point cloud processing software
+WWW=		https://www.cloudcompare.org/
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

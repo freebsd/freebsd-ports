@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Quadratic programming package
+WWW=		https://pypi.org/project/quadprog/
 
 LICENSE=	GPLv2+
 

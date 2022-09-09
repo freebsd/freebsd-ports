@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Software::License pack for Creative Commons licenses
+WWW=		https://metacpan.org/release/Software-License-CCpack
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	biology science devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	NCBI C++ Toolkit
+WWW=		https://ncbi.github.io/cxx-toolkit/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE

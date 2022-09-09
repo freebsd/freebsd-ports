@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Tool for statically checking sourcecode for security vulnerabilities
+WWW=		https://www.splint.org/
 
 LICENSE=	GPLv2+
 

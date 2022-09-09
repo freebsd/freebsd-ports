@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Powerful field extraction tool
+WWW=		https://semicomplete.com/projects/fex/
 
 LICENSE=	APACHE20
 

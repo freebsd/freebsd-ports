@@ -6,6 +6,7 @@ MASTER_SITES=	SF/jdictionary/Plugins%20for%20jDictionary/Smart%20French-Hungaria
 DISTNAME=	Smart_French_Hungarian-1_0.jar
 
 COMMENT=	JDictionary plugin: French-Hungarian dictionary
+WWW=		http://jdictionary.info/
 
 MASTERDIR=	${.CURDIR}/../../textproc/jdictionary
 

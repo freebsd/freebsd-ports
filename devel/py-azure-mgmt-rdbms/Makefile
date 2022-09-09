@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure RDBMS Management Client Library for Python
+WWW=		https://pypi.org/project/azure-mgmt-rdbms/
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Internal sysctl object to implement an improved sysctlbyname(3)
+WWW=		https://gitlab.com/alfix/sysctlbyname-improved/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

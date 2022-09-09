@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Working (require Class::Name) and more
+WWW=		https://metacpan.org/pod/Class::Load
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

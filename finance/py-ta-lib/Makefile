@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper for ta-lib (tools for market analysis)
+WWW=		https://mrjbq7.github.io/ta-lib/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Corruptor of innocent text
+WWW=		https://metacpan.org/release/Text-Bastardize
 
 USES=		perl5
 USE_PERL5=	configure

@@ -2,5 +2,3 @@ The Ruby Holidays Gem allows you to look up holidays in
 multiple regions based on customisable definition lists.
 
 It also extends Ruby's built-in Date class.
-
-WWW: https://github.com/holidays/holidays

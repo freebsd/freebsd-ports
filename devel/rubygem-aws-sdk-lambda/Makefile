@@ -1,10 +1,11 @@
 PORTNAME=	aws-sdk-lambda
-PORTVERSION=	1.84.0
+PORTVERSION=	1.85.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for AWS Lambda
+WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-lambda
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

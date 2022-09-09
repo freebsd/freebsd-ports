@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	HTTP interface for Redis
+WWW=		https://webd.is/
 
 LICENSE=	BSD2CLAUSE
 

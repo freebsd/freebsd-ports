@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parser extension for dealing with numeric errors
+WWW=		https://metacpan.org/release/Math-SymbolicX-Error
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic \

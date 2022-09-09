@@ -11,5 +11,3 @@ Utility to get and set the kernel state at runtime, features:
  * some string value is parsed to show structured output,
  * avoid non-primitive data types hardcode via libnv,
  * debug without recompiling the kernel with SYSCTL_DEBUG.
-
-WWW: https://gitlab.com/alfix/nsysctl/

@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Yiddish dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	yi
 

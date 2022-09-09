@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface principally for the GAMESS program
+WWW=		https://brettbode.github.io/wxmacmolplt/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

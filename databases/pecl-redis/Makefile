@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Extension to access Redis
+WWW=		https://pecl.php.net/package/redis
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/COPYING

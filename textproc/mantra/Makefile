@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	CLI for previewing mandoc manual pages with live auto-reload in a pager
+WWW=		https://github.com/0mp/mantra
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

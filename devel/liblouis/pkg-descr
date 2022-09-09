@@ -6,5 +6,3 @@ through tables that support a rule- or dictionary based approach.
 Included are also tools for testing and debugging tables. Liblouis
 also supports math braille (Nemeth and Marburg). The formatting of
 braille is provided by the companion project liblouisxml.
-
-WWW: http://www.liblouis.org/

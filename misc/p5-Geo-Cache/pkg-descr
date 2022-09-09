@@ -3,5 +3,3 @@ using the Groundspeak GPX file as the reference for what fields are valid.
 
 Methods are provide for various of the fields that require special
 treatment.
-
-WWW: https://metacpan.org/release/Geo-Cache

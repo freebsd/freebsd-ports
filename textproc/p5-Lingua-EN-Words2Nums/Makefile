@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert English text to numbers
+WWW=		https://metacpan.org/release/Lingua-EN-Words2Nums
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

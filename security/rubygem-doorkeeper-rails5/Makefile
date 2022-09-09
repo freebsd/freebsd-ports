@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OAuth2 provider for Rails and Grape
+WWW=		https://github.com/doorkeeper-gem/doorkeeper
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

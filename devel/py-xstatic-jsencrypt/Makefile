@@ -8,6 +8,7 @@ DISTNAME=	XStatic-JSEncrypt-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSEncrypt (XStatic packaging standard)
+WWW=		https://travistidwell.com/jsencrypt/
 
 LICENSE=	MIT
 

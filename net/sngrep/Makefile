@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/irontec/${PORTNAME}/releases/download/v${DISTVE
 
 MAINTAINER=	tad@vif.com
 COMMENT=	SIP Packet display and capture
+WWW=		https://github.com/irontec/sngrep
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

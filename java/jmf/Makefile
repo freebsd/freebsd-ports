@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Media Framework
+WWW=		https://www.oracle.com/java/technologies/javase/java-media-framework.html
 
 # Converted from RESTRICTED
 LICENSE=	jmf

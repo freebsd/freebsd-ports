@@ -6,6 +6,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	moritzwarning@web.de
 COMMENT=	P2P name resolution daemon
+WWW=		https://github.com/mwarning/KadNode
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

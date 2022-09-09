@@ -20,5 +20,3 @@ Physics:
 * Revolute, prismatic, distance, pulley, gear, mouse joint, other joint types
 * Joint limits, motors, and friction
 * Momentum decoupled position correction
-
-WWW: https://box2d.org/

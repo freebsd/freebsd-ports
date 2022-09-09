@@ -12,5 +12,3 @@ A simple file manager written in Bash.
 - Works as a file picker in vim/neovim!
 - Display images with w3m-img!
 - Supports $CDPATH.
-
-WWW: https://github.com/dylanaraps/fff

@@ -6,5 +6,3 @@ common desktop platforms, and small-scale parallel runs on Unix-like
 systems. In addition to analog electronic simulation, Xyce has also
 been used to investigate more general network systems, such as neural
 networks and power grids. Read more about Xyce.
-
-WWW: https://xyce.sandia.gov/

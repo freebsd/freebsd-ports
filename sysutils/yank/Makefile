@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/mptre/yank/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yank terminal output to clipboard
+WWW=		https://github.com/mptre/yank
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

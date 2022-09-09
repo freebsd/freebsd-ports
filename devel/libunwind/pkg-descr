@@ -20,5 +20,3 @@ applications. Some examples include:
   With libunwind, it is possible to implement an extremely efficient version of
   setjmp(). Effectively, the only context that needs to be saved consists of the
   stack-pointer(s).
-
-WWW: https://www.nongnu.org/libunwind/

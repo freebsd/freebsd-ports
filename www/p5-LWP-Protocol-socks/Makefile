@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Adds support for the socks protocol and proxy facility in LWP
+WWW=		https://metacpan.org/release/LWP-Protocol-socks
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \

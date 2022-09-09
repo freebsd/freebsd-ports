@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Seamlessly enable SVG output from scripts written using GD
+WWW=		https://metacpan.org/release/GD-SVG
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

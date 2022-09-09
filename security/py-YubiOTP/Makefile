@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Library for verifying YubiKey OTP tokens
+WWW=		https://pypi.org/project/YubiOTP/
 
 LICENSE=	BSD2CLAUSE
 

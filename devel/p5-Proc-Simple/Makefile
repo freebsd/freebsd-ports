@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module to launch and control background processes
+WWW=		https://metacpan.org/release/Proc-Simple
 
 USES=		perl5
 USE_PERL5=	configure

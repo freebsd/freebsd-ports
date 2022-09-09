@@ -2,8 +2,9 @@ PORTNAME=	libretro-beetle_wswan
 PORTVERSION=	0.20220221
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port of Mednafen WonderSwan to libretro
+WWW=		https://github.com/libretro/beetle-wswan-libretro
 
 LICENSE=	GPLv2
 

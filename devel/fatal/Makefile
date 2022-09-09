@@ -1,10 +1,11 @@
 PORTNAME=	fatal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.08.22.00
+DISTVERSION=	2022.09.05.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for fast software prototyping in modern C++
+WWW=		https://github.com/facebook/fatal
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	unittest subTest() support and subtests fixture
+WWW=		https://github.com/pytest-dev/pytest-subtests
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Roman serif with blackletter elements
+WWW=		https://www.theleagueofmoveabletype.com/prociono
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/Open\ Font\ License.markdown

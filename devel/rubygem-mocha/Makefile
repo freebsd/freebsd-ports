@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for mocking and stubbing syntax like JMock and SchMock
+WWW=		https://mocha.jamesmead.org/
 
 LICENSE=	BSD2CLAUSE RUBY MIT
 LICENSE_COMB=	dual

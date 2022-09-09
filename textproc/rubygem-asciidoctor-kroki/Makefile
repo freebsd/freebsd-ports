@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Asciidoctor convert diagrams to images extension
+WWW=		https://github.com/Mogztter/asciidoctor-kroki
 
 LICENSE=	MIT
 

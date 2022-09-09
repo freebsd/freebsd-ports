@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	plcmaechler@gmail.com
 COMMENT=	Binary configuration file encoder/decoder
+WWW=		https://github.com/rlaager/docsis
 
 LICENSE=	GPLv2+
 

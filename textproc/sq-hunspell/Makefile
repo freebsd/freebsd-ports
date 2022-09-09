@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Albanian hunspell dictionaries
+WWW=		https://www.shkenca.org/k6i/albanian_dictionary_for_myspell_en.html
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

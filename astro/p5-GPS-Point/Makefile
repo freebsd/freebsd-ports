@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bscott@bunyatech.com.au
 COMMENT=	Provides an object interface for a GPS point
+WWW=		https://metacpan.org/release/GPS-Point
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

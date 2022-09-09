@@ -3,5 +3,3 @@ KArchive provides classes for easy reading, creation and manipulation of
 
 It also provides transparent compression and decompression of data, like
 the GZip format, via a subclass of QIODevice.
-
-WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/karchive/html/index.html

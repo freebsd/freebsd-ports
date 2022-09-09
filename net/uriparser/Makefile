@@ -7,6 +7,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	URI parsing library
+WWW=		https://github.com/uriparser/uriparser
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

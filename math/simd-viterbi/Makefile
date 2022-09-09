@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ka9q.net/code/fec/
 
 MAINTAINER=	freebsduser@paradisegreen.co.uk
 COMMENT=	Fast Viterbi CODEC library
+WWW=		http://www.ka9q.net/code/fec/
 
 GNU_CONFIGURE=	yes
 USES=		gmake

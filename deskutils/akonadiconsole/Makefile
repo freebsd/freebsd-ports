@@ -15,7 +15,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan  \
 		libical.so:devel/libical \
 		libxapian.so:databases/xapian-core
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kdelibs4support kio \

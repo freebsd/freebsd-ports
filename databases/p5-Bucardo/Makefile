@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Asynchronous PostgreSQL replication system
+WWW=		https://bucardo.org/Bucardo/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

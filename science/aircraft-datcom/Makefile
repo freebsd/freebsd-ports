@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modified USAF Aircraft Stability and Control Data Compendium
+WWW=		https://www.pdas.com/datcom.html
 
 LICENSE=	GPLv3
 

@@ -9,5 +9,3 @@ example multimember .tar.lz archives.
 
 Lziprecover provides random access to the data in multimember files; it
 only decompresses the members containing the desired data.
-
-WWW: http://www.nongnu.org/lzip/lziprecover.html

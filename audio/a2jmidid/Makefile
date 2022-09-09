@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	ALSA to JACK MIDI bridge
+WWW=		https://github.com/jackaudio/a2jmidid
 
 LICENSE=	GPLv2+
 

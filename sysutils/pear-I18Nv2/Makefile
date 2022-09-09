@@ -4,6 +4,7 @@ CATEGORIES=	sysutils devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Internationalization
+WWW=		https://pear.php.net/package/I18Nv2
 
 LICENSE=	PHP30
 

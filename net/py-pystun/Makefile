@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python STUN client for getting NAT type and external IP
+WWW=		https://pypi.org/project/pystun/
 
 LICENSE=	MIT
 

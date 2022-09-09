@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Your Own URL Shortener
+WWW=		https://yourls.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

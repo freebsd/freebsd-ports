@@ -6,6 +6,7 @@ CATEGORIES=	graphics converters
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xfig files to the OpenOffice draw format
+WWW=		https://gitlab.com/acfbuerger/fig2sxd
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

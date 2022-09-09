@@ -6,5 +6,3 @@ When a tag is encountered, HTML::Scrubber allows/denies the tag using the
 explicit rule if one exists. If no explicit rule exists, Scrubber applies
 the default rule. If an explicit rule exists, but it's a simple rule(1),
 the default attribute rule is applied.
-
-WWW: https://metacpan.org/release/HTML-Scrubber

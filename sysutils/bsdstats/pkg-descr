@@ -11,5 +11,3 @@ Meant to be run monthly or during bootup, this script submits
 statistics anonymously to a central server (http://bsdstats.org).
 Potentially sensitive details like IP addresses and hostnames are not
 stored by or relayed through the BSDstats server.
-
-WWW: https://www.bsdstats.org/

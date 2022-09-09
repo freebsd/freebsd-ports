@@ -6,6 +6,7 @@ CATEGORIES=	science # quantum-computing
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform header-only library for simulating quantum circuits
+WWW=		https://github.com/XanaduAI/jet
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

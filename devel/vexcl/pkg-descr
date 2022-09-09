@@ -4,5 +4,3 @@ of boilerplate code needed to develop GPGPU applications. The library provides
 convenient and intuitive notation for vector arithmetic, reduction, sparse
 matrix-vector products, etc. Multi-device and even multi-platform computations
 are supported.
-
-WWW: https://github.com/ddemidov/vexcl

@@ -7,6 +7,7 @@ DISTNAME=	fontParts-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API for interacting with the parts of fonts during the font development process
+WWW=		https://github.com/robotools/fontParts
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

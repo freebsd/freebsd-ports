@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python library to produce and consume STIX 2 JSON content
+WWW=		https://github.com/oasis-open/cti-python-stix2
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

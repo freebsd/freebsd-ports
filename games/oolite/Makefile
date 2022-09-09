@@ -8,6 +8,7 @@ DIST_SUBDIR=		oolite
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Trade and combat space simulator, clone of Elite
+WWW=		http://www.oolite.org
 
 LICENSE=		CC-BY-NC-SA-3.0 GPLv2 ZLIB
 LICENSE_COMB=		multi

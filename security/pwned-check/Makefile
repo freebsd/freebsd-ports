@@ -8,6 +8,7 @@ DISTFILES=	#
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Check whether password is known to have been exposed in a data breach
+WWW=		https://haveibeenpwned.com/
 
 LICENSE=	BSD2CLAUSE
 

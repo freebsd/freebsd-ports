@@ -8,5 +8,3 @@ and it up.
 The default install dir is /usr/local/share/infobot-0.xx.x since it
 doesn't really belong in the Perl tree, by default. If you want
 it installed elsewhere,use the -p option to change the PREFIX.
-
-WWW: http://www.infobot.org/

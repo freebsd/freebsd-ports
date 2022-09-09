@@ -7,6 +7,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Ncurses file manager written in C with vim-like keybindings
+WWW=		https://github.com/mananapr/cfiles
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Numeric tests for perl scalars
+WWW=		https://metacpan.org/release/Scalar-Util-Numeric
 
 USES=		perl5
 USE_PERL5=	configure

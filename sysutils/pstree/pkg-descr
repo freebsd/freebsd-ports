@@ -3,5 +3,3 @@ listing as a tree (as the name implies...). It has several options
 to make selection criteria and to change the output style.
 
 For that it uses the output of /bin/ps.
-
-WWW: http://www.thp.uni-due.de/pstree/

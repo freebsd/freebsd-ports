@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	GNU Mailing List Management System, Core
+WWW=		https://www.list.org/
 
 LICENSE=	GPLv3+
 

@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic command-line automation tool (no X!)
+WWW=		https://github.com/ReimuNotMoe/ydotool
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

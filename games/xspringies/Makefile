@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mass and spring simulation system
+WWW=		http://www.cs.rutgers.edu/~decarlo/software.html
 
 LICENSE=	GPLv1+
 LICENSE_FILE=	${WRKSRC}/COPYING

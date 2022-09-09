@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	FreeBSD send-pr command line tool for Bugzilla system
+WWW=		https://github.com/pct/mothra
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handy utility to show codepoint information of given characters
+WWW=		https://www.irori.org/tool/kcode.html
 
 USES=		shebangfix perl5
 USE_PERL5=	extract run

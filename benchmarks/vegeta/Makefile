@@ -1,11 +1,12 @@
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	HTTP load testing tool and library
+WWW=		https://github.com/tsenart/vegeta
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

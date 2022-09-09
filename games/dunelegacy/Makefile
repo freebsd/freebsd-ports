@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Open source clone of Dune II
+WWW=		http://dunelegacy.sourceforge.net/website/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

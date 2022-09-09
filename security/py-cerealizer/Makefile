@@ -9,6 +9,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Secure pickle-like module
+WWW=		http://home.gna.org/oomadness/en/cerealizer/index.html
 
 USES=		python:3.6+ tar:bzip2
 USE_PYTHON=	distutils autoplist

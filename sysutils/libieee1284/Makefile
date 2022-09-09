@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IEEE 1284 communication library
+WWW=		http://cyberelk.net/tim/libieee1284/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

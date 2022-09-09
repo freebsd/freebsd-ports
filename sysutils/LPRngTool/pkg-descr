@@ -8,5 +8,3 @@ Graphical User Interface that allows users to:
     enable and disable spooling to print queues
 - configure print filters such as IFHP and the RedHat
     print filters
-
-WWW: http://lprng.sourceforge.net/

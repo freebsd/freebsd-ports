@@ -11,6 +11,7 @@ MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
 # discretion.
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
+WWW=		https://git.sr.ht/~kaniini/pkgconf
 
 LICENSE=	ISCL
 

@@ -9,5 +9,3 @@ and linked to produce an executable. When the executable is run, it
 analyzes its input for occurrences of text matching the regular
 expressions for each rule. Whenever it finds a match, it executes the
 corresponding C code.
-
-WWW: https://github.com/westes/flex

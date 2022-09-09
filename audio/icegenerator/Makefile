@@ -6,6 +6,7 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.5.5-pre2
 
 MAINTAINER=		funkblaster@mail.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast
+WWW=		http://www.becrux.com
 
 LIB_DEPENDS=		libshout.so:audio/libshout
 

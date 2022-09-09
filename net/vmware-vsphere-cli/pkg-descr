@@ -10,5 +10,3 @@ that vCenter Server system manages.
 
 vSphere CLI commands are especially useful for ESXi hosts because ESXi does
 not include a service console.
-
-WWW: http://communities.vmware.com/community/vmtn/server/vsphere/automationtools/vsphere_cli

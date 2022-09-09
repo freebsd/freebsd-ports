@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	List modules and versions loaded if tests fail
+WWW=		https://metacpan.org/release/Test-DiagINC
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

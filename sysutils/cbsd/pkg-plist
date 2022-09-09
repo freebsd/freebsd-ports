@@ -232,6 +232,7 @@ cbsd/etc/defaults/vm-linux-Tails-5.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-13.conf
 cbsd/etc/defaults/vm-linux-TrueNAS-Scale-22.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-Arch-x86-2022.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
@@ -247,7 +248,7 @@ cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-9-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-kubernetes-24.conf
+cbsd/etc/defaults/vm-linux-cloud-kubernetes-25.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntudesktop-amd64-22.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-22.04.conf
@@ -390,6 +391,21 @@ cbsd/modules/bsdconf.d/cloud-tpl/centos7/40-user-data-chpasswd-root
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/40-user-data-chpasswd-user
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/50-user-data-chpasswd
 cbsd/modules/bsdconf.d/cloud-tpl/centos7/meta-data
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/10-network-config
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/10-user-data
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/20-network-config-interface
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/20-user-data-root-lockpassword
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/20-user-data-root-password
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/20-user-data-user-lockpassword
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/20-user-data-user-password
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/30-network-config-dhcp4
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/30-network-config-static
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/30-user-data-chpasswd
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/40-network-config
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/40-user-data-chpasswd-root
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/40-user-data-chpasswd-user
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/50-user-data-chpasswd
+cbsd/modules/bsdconf.d/cloud-tpl/centos9/meta-data
 cbsd/modules/bsdconf.d/cloud-tpl/windows/meta_data.json
 cbsd/modules/bsdconf.d/cloud-tpl/windows/meta_data.json-uid
 cbsd/modules/bsdconf.d/cloud-tpl/windows/network_data.json
@@ -1064,6 +1080,7 @@ cbsd/tools/zfs-migrator
 cbsd/upgrade/patch/BHYVE_UEFI_VARS.fd
 cbsd/upgrade/patch/bhyve-vesa-fb-13.0/patch-13x-usr.sbin-bhyve-pci_fbuf.c
 cbsd/upgrade/patch/efi.fd
+%%BHYVE_GOP%%cbsd/upgrade/patch/efigop.fd
 cbsd/upgrade/patch/efirefd.fd
 cbsd/upgrade/patch/efirefn.fd
 cbsd/upgrade/patch/iov-13.0/README.md

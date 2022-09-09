@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Some utility functions around iArea
+WWW=		https://metacpan.org/release/Geo-Coordinates-Converter-iArea
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

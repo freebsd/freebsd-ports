@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	miki@ceti.pl
 COMMENT=	Tool to decode yEnc encoded files
+WWW=		http://yydecode.sf.net/
 
 USES=		gmake
 GNU_CONFIGURE=	yes

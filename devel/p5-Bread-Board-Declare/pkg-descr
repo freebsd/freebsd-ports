@@ -2,5 +2,3 @@ Bread::Board::Declare is a Moose extension which allows for declaring
 Bread::Board container classes in a more straightforward and natural way. It
 sets up Bread::Board::Container as the superclass, and creates services
 associated with each attribute that you create.
-
-WWW: https://metacpan.org/release/Bread-Board-Declare

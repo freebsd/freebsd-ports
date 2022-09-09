@@ -6,5 +6,3 @@ This module helps when you want to bootstrap your Perl application with a
 portable, dependency-free Perl script. In a vanilla Perl installation (having
 only core modules), you can use App::FatPacker to include non-core pure-Perl
 dependencies to your script.
-
-WWW: https://metacpan.org/release/Function-Fallback-CoreOrPP

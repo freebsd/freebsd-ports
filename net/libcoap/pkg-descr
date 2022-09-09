@@ -5,5 +5,3 @@ IETF as RFC 7252. For further information related to CoAP, see
 http://coap.technology.
 
 You might want to check out libcoap-minimal for usage examples.
-
-WWW: https://github.com/obgm/libcoap

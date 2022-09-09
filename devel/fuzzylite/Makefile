@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Fuzzy logic control library in C++
+WWW=		https://fuzzylite.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

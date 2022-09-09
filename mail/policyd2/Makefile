@@ -7,6 +7,7 @@ DISTNAME=	cluebringer-v${PORTVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
+WWW=		https://wiki.policyd.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/shlomif/${PORTNAME}/releases/download/${DISTVER
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	C11 / gnu11 utilities C library
+WWW=		https://github.com/shlomif/rinutils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

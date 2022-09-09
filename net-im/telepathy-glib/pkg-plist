@@ -160,7 +160,6 @@ include/telepathy-1.0/telepathy-glib/tls-certificate-rejection.h
 include/telepathy-1.0/telepathy-glib/tls-certificate.h
 include/telepathy-1.0/telepathy-glib/util.h
 include/telepathy-1.0/telepathy-glib/variant-util.h
-include/telepathy-1.0/telepathy-glib/verify.h
 include/telepathy-1.0/telepathy-glib/version.h
 lib/girepository-1.0/TelepathyGLib-0.12.typelib
 lib/libtelepathy-glib.a
@@ -207,9 +206,10 @@ share/gtk-doc/html/telepathy-glib/ch-service-handles.html
 share/gtk-doc/html/telepathy-glib/ch-utilities.html
 share/gtk-doc/html/telepathy-glib/home.png
 share/gtk-doc/html/telepathy-glib/index.html
-share/gtk-doc/html/telepathy-glib/index.sgml
 share/gtk-doc/html/telepathy-glib/left.png
+share/gtk-doc/html/telepathy-glib/left-insensitive.png
 share/gtk-doc/html/telepathy-glib/right.png
+share/gtk-doc/html/telepathy-glib/right-insensitive.png
 share/gtk-doc/html/telepathy-glib/style.css
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpContactsMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpGroupMixin.html
@@ -353,5 +353,6 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-variant-util.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-version.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp2
 share/gtk-doc/html/telepathy-glib/up.png
+share/gtk-doc/html/telepathy-glib/up-insensitive.png
 share/vala/vapi/telepathy-glib.deps
 share/vala/vapi/telepathy-glib.vapi

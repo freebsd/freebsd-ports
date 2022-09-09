@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Checks playbooks for sub-optimal practices and behaviour
+WWW=		https://github.com/willthames/ansible-lint
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

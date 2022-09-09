@@ -4,5 +4,3 @@ particular:
 - RuboCop::AST::NodePattern (doc)
 
 This gem may be used independently from the main RuboCop gem.
-
-WWW: https://github.com/rubocop/rubocop-ast

@@ -2,11 +2,12 @@ PORTNAME=	markdownfmt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1-67
 DISTVERSIONSUFFIX=	-g3438a10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Tool for linting and formatting Markdown in-place (similar to gofmt)
+WWW=		https://github.com/shurcooL/markdownfmt
 
 LICENSE=	MIT
 # License file is not included.

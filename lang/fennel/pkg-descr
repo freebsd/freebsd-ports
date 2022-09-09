@@ -16,5 +16,3 @@ macro system.
   extensibility and interactive development.
 
 Anywhere you can run Lua code, you can run Fennel code.
-
-WWW: https://fennel-lang.org/

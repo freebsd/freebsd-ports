@@ -1,4 +1,2 @@
 KDBusAddons provides convenience classes on top of QtDBus,
 as well as an API to create KDED modules.
-
-WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kdbusaddons/html/index.html

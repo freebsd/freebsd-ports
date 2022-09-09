@@ -10,5 +10,3 @@ and server using very few lines of code.  There is no need to pack
 complicated data structures into CGI form parameteres or XML strings.
 The coding time can be spent on better things - data preparation and
 graphical presentation, not data delivery.
-
-WWW: https://metacpan.org/release/Flash-FLAP

@@ -14,5 +14,3 @@ Kyua is able to execute test programs written with a plethora of testing
 libraries and languages.  The library of choice is ATF, for which Kyua
 was originally designed, but simple, framework-less test programs and
 TAP-compliant test programs can also be executed through Kyua.
-
-WWW: https://github.com/jmmv/kyua/

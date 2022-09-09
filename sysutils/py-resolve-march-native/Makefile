@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Command line tool to resolve -march=native into explicit flags
+WWW=		https://github.com/hartwork/resolve-march-native
 
 LICENSE=	GPLv2+
 

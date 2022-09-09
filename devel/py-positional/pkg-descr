@@ -4,5 +4,3 @@ of the google-api client.
 
 The decorator makes it easy to support Python 3 style key-word only
 parameters.
-
-WWW: https://github.com/morganfainberg/positional

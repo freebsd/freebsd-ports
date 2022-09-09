@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	PostGIS spatial data structures for JDBC
+WWW=		http://postgis.refractions.net
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

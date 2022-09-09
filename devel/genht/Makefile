@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.repo.hu/projects/genht/releases/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Simple generic hash table implementation in C
+WWW=		http://www.repo.hu/projects/genht/
 
 LICENSE=	PD
 

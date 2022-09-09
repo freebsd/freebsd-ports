@@ -5,6 +5,7 @@ MASTER_SITES=	https://mmonit.com/monit/dist/
 
 MAINTAINER=	martinp@tildeslash.com
 COMMENT=	Unix system management and proactive monitoring
+WWW=		https://mmonit.com/monit/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

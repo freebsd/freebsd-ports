@@ -10,5 +10,3 @@ A Stomp frame consists of a command, a series of headers and a body -
 see Net::Stomp::Frame for more details.
 
 For details on the protocol see http://stomp.codehaus.org/Protocol.
-
-WWW: https://metacpan.org/release/Net-Stomp

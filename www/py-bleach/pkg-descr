@@ -13,5 +13,3 @@ don't.
 Because it relies on html5lib, Bleach is as good as modern browsers at dealing
 with weird, quirky HTML fragments. And any of Bleach's methods will fix
 unbalanced or mis-nested tags.
-
-WWW: https://github.com/mozilla/bleach

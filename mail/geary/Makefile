@@ -5,14 +5,18 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/geary/-/commit/
+PATCHFILES=	0f75e7a84a39492d0748cec2ba6028e08cae3644.diff:-p1 \
+		9bd4c82952a0a2c3308c5cc86c0b85650c1fb484.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mail client for GNOME
+WWW=		https://wiki.gnome.org/Apps/Geary
 
 LICENSE=	BSD2CLAUSE CC-BY-3.0 LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	itstool:textproc/itstool \
-		vapigen:lang/vala
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libcanberra.so:audio/libcanberra \
 		libenchant-2.so:textproc/enchant2 \
@@ -35,7 +39,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libytnef.so:converters/ytnef
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome meson pkgconfig \
-		python:3.5+,build shebangfix sqlite tar:xz
+		python:3.5+,build shebangfix sqlite tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gsound gtk30 libxml2
 GLIB_SCHEMAS=	org.gnome.Geary.gschema.xml

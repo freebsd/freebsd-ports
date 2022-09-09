@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Package to parse, edit and create multiple vCards (RFC 2426)
+WWW=		https://metacpan.org/release/Text-vCard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

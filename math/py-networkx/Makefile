@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Tools for complex networks
+WWW=		https://networkx.github.io/
 
 LICENSE=	BSD3CLAUSE
 

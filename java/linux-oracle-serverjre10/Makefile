@@ -8,6 +8,7 @@ DISTNAME=	serverjre-${JRE_VERSION}.${JRE_UPDATE_VERSION}.${JRE_PATCH_VERSION}_li
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Server Runtime Environment for Linux
+WWW=		https://www.oracle.com/java/
 
 # Converted from RESTRICTED
 LICENSE=	serverjre

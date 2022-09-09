@@ -6,6 +6,7 @@ MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Couple of command line utilities for working with desktop entries
+WWW=		https://www.freedesktop.org/wiki/Software/desktop-file-utils/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

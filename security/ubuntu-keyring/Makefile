@@ -1,19 +1,20 @@
 PORTNAME=	ubuntu-keyring
-PORTVERSION=	2020.06.17.1
+PORTVERSION=	2021.03.26
 CATEGORIES=	security
-MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/u/${PORTNAME}/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mia-rain@tuta.io
 COMMENT=	GPG keys for Ubuntu package signature verification
+WWW=		https://bugs.launchpad.net/ubuntu/+filebug
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/debian/copyright
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/keyrings
 	${INSTALL_DATA} ${WRKSRC}/keyrings/* ${STAGEDIR}${PREFIX}/share/keyrings/

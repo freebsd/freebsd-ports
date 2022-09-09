@@ -1,11 +1,12 @@
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple and easy way to embed static files into Go binaries
+WWW=		https://github.com/gobuffalo/packr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

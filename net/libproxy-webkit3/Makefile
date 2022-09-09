@@ -3,6 +3,7 @@ CATEGORIES=	net www
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	WebKit JavaScript plug-in for libproxy
+WWW=		https://libproxy.github.io/libproxy/
 
 LIB_DEPENDS=	libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
 

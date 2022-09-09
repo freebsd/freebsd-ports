@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	gimp-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gimp plug-in for texture synthesis
+WWW=		https://www.logarithmic.net/pfh/resynthesizer
 
 LICENSE=	GPLv2+ # though COPYING has GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

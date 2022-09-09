@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python utility/library to sort Python imports
+WWW=		https://github.com/PyCQA/isort
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

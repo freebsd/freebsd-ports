@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension for accessing a PostgreSQL server (PGTCL-NG)
+WWW=		https://sourceforge.net/projects/pgtclng/
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

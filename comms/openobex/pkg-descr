@@ -2,5 +2,3 @@ The overall goal of this project is to make an open source
 implementation of the Object Exchange (OBEX) protocol. OBEX is a
 session protocol and can best be described as a binary HTTP protocol.
 It's used mainly for Infrared and Bluetooth communication.
-
-WWW: http://dev.zuckschwerdt.org/openobex/

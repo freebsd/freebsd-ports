@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	@deprecat decorator to deprecate python classes, functions, methods
+WWW=		https://github.com/mjhajharia/deprecat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

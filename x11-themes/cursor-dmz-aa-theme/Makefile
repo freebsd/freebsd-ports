@@ -6,6 +6,7 @@ DISTNAME=	dmz-cursor-theme_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DMZ AA style neutral scalable cursor theme
+WWW=		http://jimmac.musichall.cz/
 
 LICENSE=	CC-BY-SA-3.0
 

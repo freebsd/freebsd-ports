@@ -5,5 +5,3 @@ concurrently, if required. Alternatively, as the interface is entirely
 based on Future objects, it can be operated synchronously in a
 blocking fashion by simply awaiting each individual operation by
 calling the get method.
-
-WWW: https://metacpan.org/release/Net-Async-CassandraCQL

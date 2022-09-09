@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	meta@FreeBSD.org
 COMMENT?=	Programming fonts with Japanese support
+WWW=		https://rictyfonts.github.io
 
 LICENSE=	OFL11 IPAFONTLICv1.0
 LICENSE_COMB=	multi

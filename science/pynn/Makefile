@@ -7,6 +7,7 @@ DISTNAME=	PyNN-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Simulator-independent language for building neuronal network models
+WWW=		https://neuralensemble.org/PyNN
 
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL Free Software License Version 2.0

@@ -1,5 +1,5 @@
 PORTNAME=	recursor
-DISTVERSION=	4.7.1
+DISTVERSION=	4.7.2
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -7,6 +7,7 @@ DISTNAME=	pdns-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
+WWW=		https://www.PowerDNS.com/recursor.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

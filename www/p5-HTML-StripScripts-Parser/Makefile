@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	XSS filter using HTML::Parser
+WWW=		https://metacpan.org/release/HTML-StripScripts-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

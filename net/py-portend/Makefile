@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Monitors TCP ports for bound or unbound states
+WWW=		https://github.com/jaraco/portend
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

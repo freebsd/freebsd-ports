@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
+WWW=		http://mumble.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

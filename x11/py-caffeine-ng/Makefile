@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Tray bar app to temporarily inhibit screensaver and sleep mode
+WWW=		https://codeberg.org/WhyNotHugo/caffeine-ng
 
 LICENSE=	GPLv3+ LGPL3+
 LICENSE_COMB=	multi

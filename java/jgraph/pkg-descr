@@ -7,5 +7,3 @@ With the JGraph zoomable component, you can display objects and relations
 (networks) in any Swing UI. JGraph can also be used on the server-side, for
 example to read a GXL graph, apply a custom layout algorithm, and return the
 result as a HTML image map.
-
-WWW: http://www.jgraph.com/

@@ -17,5 +17,3 @@ Version 0.4.2 of sock supports IPv6, SCTP and those socket options:
   o don't fragment
 - IPv4:
   o don't fragment
-
-WWW: http://www-cs-students.stanford.edu/~sjac/sock_info.html

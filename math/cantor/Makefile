@@ -4,6 +4,7 @@ CATEGORIES=	math kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mathematical software frontend by KDE
+WWW=		https://edu.kde.org/cantor
 
 LIB_DEPENDS=	libAnalitza.so:math/analitza \
 		libcln.so:math/cln \
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 		docbook-xml>0:textproc/docbook-xml
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
-		pkgconfig python:3.4+ qt:5 shared-mime-info tar:xz
+		pkgconfig python:3.7+ qt:5 shared-mime-info tar:xz xorg
 USE_KDE=	attica auth archive bookmarks codecs completion config \
 		configwidgets coreaddons crash emoticons i18n iconthemes \
 		itemmodels itemviews init jobwidgets kdelibs4support kio \
@@ -26,6 +27,7 @@ USE_QT=		concurrent core dbus declarative gui help location network \
 		printsupport sql svg webchannel webengine \
 		widgets xml xmlpatterns \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	LUAJIT MAXIMA OCTAVE R SAGE SCILAB DOCS

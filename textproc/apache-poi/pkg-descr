@@ -4,5 +4,3 @@ can read and write MS Excel files using Java. Soon, you'll be able to read and
 write Word files using Java. POI is your Java Excel solution as well as your
 Word Excel solution. However, we have a complete API for porting other OLE 2
 Compound Document formats and welcome others to participate.
-
-WWW: https://poi.apache.org/

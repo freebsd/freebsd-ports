@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of TT2 Variable Method Clone for Text::Xslate
+WWW=		https://metacpan.org/release/Text-Xslate-Bridge-TT2Like
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

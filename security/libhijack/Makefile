@@ -7,6 +7,7 @@ CATEGORIES=	security
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
 COMMENT=	Runtime process infection made easy
+WWW=		https://github.com/SoldierX/libhijack
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

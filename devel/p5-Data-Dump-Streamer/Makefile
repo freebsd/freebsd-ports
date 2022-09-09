@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stream a highly accurate breadth first data dump in Perl code
+WWW=		https://metacpan.org/release/Data-Dump-Streamer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

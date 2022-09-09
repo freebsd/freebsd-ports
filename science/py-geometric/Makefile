@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Geometry optimization for quantum chemistry
+WWW=		https://github.com/leeping/geomeTRIC
 
 LICENSE=	BSD3CLAUSE
 

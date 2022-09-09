@@ -6,5 +6,3 @@ features:
 * control the parameters of the analysis that affect latency and precision
 * have zoom functionality and smooth interpolation
 * identify the value under cursor and the peaks
-
-WWW: https://github.com/jpcima/spectacle

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to compute Voronoi diagrams from sets of points
+WWW=		https://metacpan.org/release/Math-Geometry-Voronoi
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \

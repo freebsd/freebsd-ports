@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mock Object library for PHPUnit
+WWW=		https://github.com/sebastianbergmann/phpunit-mock-objects
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

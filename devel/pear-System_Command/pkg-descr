@@ -8,5 +8,3 @@ error handling as results on failure. It is important to note that this class,
 unlike other implementations, distinguishes between output to stderr and output
 to stdout. It also reports the exit status of the command. So in every sense of
 the word, it gives php shell capabilities.
-
-WWW: https://pear.php.net/package/System_Command

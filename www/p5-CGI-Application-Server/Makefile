@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple HTTP server for developing with CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Server
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

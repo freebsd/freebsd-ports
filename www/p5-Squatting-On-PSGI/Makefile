@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to run Squatting app on PSGI
+WWW=		https://metacpan.org/release/Squatting-On-PSGI
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

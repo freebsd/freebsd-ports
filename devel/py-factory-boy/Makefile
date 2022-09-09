@@ -7,6 +7,7 @@ DISTNAME=	factory_boy-${DISTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Create comlex objects for testing purposes
+WWW=		https://github.com/FactoryBoy/factory_boy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

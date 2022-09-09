@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for fixing lens geometry distortions
+WWW=		https://lensfun.github.io/
 
 LICENSE=	GPLv3 LGPL3 CC-BY-SA-3.0 PD
 LICENSE_COMB=	multi

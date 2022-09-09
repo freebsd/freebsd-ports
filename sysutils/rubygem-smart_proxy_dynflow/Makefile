@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Plugin to use Dynflow in Foreman Smart Proxy
+WWW=		https://github.com/theforeman/smart_proxy_dynflow
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

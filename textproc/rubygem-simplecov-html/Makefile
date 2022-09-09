@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Default HTML formatter for SimpleCov
+WWW=		https://github.com/simplecov-ruby/simplecov-html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

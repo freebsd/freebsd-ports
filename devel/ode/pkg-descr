@@ -3,5 +3,3 @@ rigid body dynamics - for example ground vehicles, legged creatures,
 and moving objects in VR environments. It is fast, flexible, robust
 and platform independent, with advanced joints, contact with friction,
 and built-in collision detection.
-
-WWW: http://www.ode.org/

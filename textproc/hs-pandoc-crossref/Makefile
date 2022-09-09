@@ -4,8 +4,7 @@ CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Pandoc filter for numbering figures and tables
-
-BROKEN_aarch64=	Causes compiler to crash
+WWW=		https://github.com/lierdakil/pandoc-crossref/
 
 LICENSE=	BSD3CLAUSE
 

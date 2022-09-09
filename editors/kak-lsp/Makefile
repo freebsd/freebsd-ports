@@ -6,6 +6,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Kakoune Language Server Protocol Client
+WWW=		https://github.com/ul/kak-lsp
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE

@@ -18,5 +18,3 @@ or FTDI hardware supported by comms/lirc natively via libftdi, see:
 	http://wiki.freebsd.org/WebcamCompat
 
 and the comms/lirc port's pkg-message.
-
-WWW: http://forums.freebsd.org/viewtopic.php?t=31610

@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Archive manager for zip files, tar, etc
+WWW=		https://wiki.gnome.org/Apps/FileRoller
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

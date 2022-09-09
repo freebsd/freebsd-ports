@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generative software that evolves images/textures/patterns
+WWW=		http://www.bottlenose.demon.co.uk/share/evolvotron/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

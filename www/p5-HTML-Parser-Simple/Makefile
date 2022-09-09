@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse nice HTML files without needing a compiler
+WWW=		https://metacpan.org/release/HTML-Parser-Simple
 
 LICENSE=	ART20
 

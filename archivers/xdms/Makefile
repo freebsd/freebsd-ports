@@ -5,6 +5,7 @@ MASTER_SITES=	http://zakalwe.fi/~shd/foss/xdms/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for decompressing Amiga DMS files
+WWW=		https://zakalwe.fi/~shd/foss/xdms/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

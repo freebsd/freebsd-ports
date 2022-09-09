@@ -1,11 +1,12 @@
 PORTNAME=	alertmanager
 PORTVERSION=	0.23.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	michal@hanu.la
 COMMENT=	Alert routing for Prometheus
+WWW=		https://prometheus.io/docs/alerting/alertmanager/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

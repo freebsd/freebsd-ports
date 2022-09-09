@@ -10,5 +10,3 @@ decoder.
 
 The library is production quality. It is used in OpenLiteSpeed, LiteSpeed Web
 Server, and LiteSpeed Web ADC.
-
-WWW: https://github.com/litespeedtech/ls-qpack

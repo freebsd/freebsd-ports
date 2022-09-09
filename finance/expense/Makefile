@@ -7,6 +7,7 @@ DISTNAME=	Expense-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to track your expense under GNUstep
+WWW=		https://www.eskimo.com/~pburns/Expense/
 
 LICENSE=	GPLv2
 

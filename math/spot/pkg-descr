@@ -20,5 +20,3 @@ It has the following notable features:
   command-line tools, and via Python bindings.
 * One command-line tool, called ltlcross, is a rewrite of LBTT, but with support
   for PSL and automata with arbitrary acceptance conditions.
-
-WWW: https://spot.lrde.epita.fr

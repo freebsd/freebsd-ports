@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	06
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
+WWW=		https://live.gnome.org/Libgee
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/wmsystemtray/wmsystemtray
 
 MAINTAINER=	iluxa@ex.ua
 COMMENT=	System tray dockapp that uses freedesktop.org system tray protocol
+WWW=		https://wmsystemtray.sourceforge.io
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

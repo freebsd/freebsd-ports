@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	Content management system built with the Django framework
+WWW=		https://django-cms.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

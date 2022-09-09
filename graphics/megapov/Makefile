@@ -6,6 +6,7 @@ MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
+WWW=		http://megapov.inetart.net/
 
 DEPRECATED=	Abandoned upstream. graphics/povray37 is the recommended replacement.
 EXPIRATION_DATE=	2022-10-01

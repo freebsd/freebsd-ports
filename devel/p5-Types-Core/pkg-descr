@@ -8,5 +8,3 @@ false, undef is returned, of true, the ref, itself is returned.
 
 For no args, they return literals of themselves, allowing the named strings to
 be used as Literals without quotes.
-
-WWW: https://metacpan.org/release/Types-Core

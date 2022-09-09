@@ -15,5 +15,3 @@ Features:
   specific error codes.
 * Fully opaque library, inclusion will not completely pollute your global
   namespace.
-
-WWW: https://github.com/uNetworking/uSockets

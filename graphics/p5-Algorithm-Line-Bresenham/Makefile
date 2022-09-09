@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Simple pixellated line-drawing algorithm
+WWW=		https://metacpan.org/release/Algorithm-Line-Bresenham
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

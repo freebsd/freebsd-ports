@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/comms/comserv/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Access local serial ports via network connections
+WWW=		https://BSDforge.com/projects/comms/comserv/
 
 LICENSE=	BSD2CLAUSE
 

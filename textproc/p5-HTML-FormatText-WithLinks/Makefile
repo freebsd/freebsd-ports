@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Perl5 module to convert HTML to text with links as footnotes
+WWW=		https://metacpan.org/release/HTML-FormatText-WithLinks
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

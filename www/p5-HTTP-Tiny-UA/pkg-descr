@@ -1,3 +1,1 @@
 HTTP::Tiny::UA extends HTTP::Tiny with higher-level convenience features.
-
-WWW: https://metacpan.org/release/HTTP-Tiny-UA

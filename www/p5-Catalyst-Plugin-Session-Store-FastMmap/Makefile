@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FastMmap session storage backend
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-Store-FastMmap
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cache-FastMmap>=1.29:devel/p5-Cache-FastMmap \

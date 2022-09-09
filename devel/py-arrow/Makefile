@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Better dates and times for Python
+WWW=		https://github.com/arrow-py/arrow
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Fast, customizable, pure-shell, asynchronous Git prompt for Zsh
+WWW=		https://github.com/woefe/git-prompt.zsh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

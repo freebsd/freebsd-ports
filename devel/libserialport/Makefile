@@ -6,6 +6,7 @@ MASTER_SITES=	http://sigrok.org/download/source/libserialport/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, serial port support library
+WWW=		https://sigrok.org/
 
 LICENSE=	LGPL3
 

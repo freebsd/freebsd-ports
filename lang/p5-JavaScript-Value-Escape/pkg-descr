@@ -6,5 +6,3 @@ escaping to avoid XSS with JavaScript values.
 The escaping routine JavaScript::Value::Escape provides escapes q!"!,
 q!'!, q!&!, q!=!, q!-!, q!+!, q!;!, q!<!, q!>!, q!/!, q!\! and control
 characters to JavaScript unicode entities like "\u0026".
-
-WWW: https://metacpan.org/release/JavaScript-Value-Escape

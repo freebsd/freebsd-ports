@@ -12,5 +12,3 @@ them together to make a portable Common Lisp window system.  There
 are also many applications where users might want to define their
 own filter streams for doing things like printer device control,
 report formatting, character code translation, or encryption/decryption."
-
-WWW: http://www.cliki.net/trivial-gray-streams

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Advanced, stable IRC daemon, used widely on EFnet ('testing' release)
+WWW=		http://www.ircd-ratbox.org/
 
 LICENSE=	GPLv2
 

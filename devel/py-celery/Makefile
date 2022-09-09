@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Asynchronous task queue/job queue
+WWW=		https://pypi.org/project/celery/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

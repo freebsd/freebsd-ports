@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Formatting library for C++
+WWW=		https://fmt.dev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

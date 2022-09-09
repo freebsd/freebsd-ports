@@ -3,5 +3,3 @@ Each of these buttons can be configured via a configuration file to
 run just about any application you'd like to.  Basically, if you can
 type it in a shell command, wmbutton can run it.  It is based on wmcp,
 by Ben Cohen.
-
-WWW: http://greek0.net/wmbutton.html

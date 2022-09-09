@@ -6,5 +6,3 @@ The library is useful for any Python application that needs to translate between
 HDF5 objects and JSON serializations. In addition to the utilities provided in
 this repository, the library is used by HDF Server (a RESTful web service for
 HDF5), and HDF Product Designer (an application for creating product designs).
-
-WWW: https://github.com/HDFGroup/hdf5-json

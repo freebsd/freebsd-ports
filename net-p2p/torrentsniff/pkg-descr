@@ -4,5 +4,3 @@ torrent.
 
 TorrentSniff is based on an early version of TorrentSpy. Reporting seed and
 leech numbers works only with some tracker implementations.
-
-WWW: http://www.highprogrammer.com/alan/perl/torrentsniff.html

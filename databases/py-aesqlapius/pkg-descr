@@ -15,5 +15,3 @@ output types and patterns (you may specify whether a method returns
 iterator, list, dict of rows, or a single row, where row may
 be represented as a tuple, list, dict, single value or a custom
 type such as a dataclass).
-
-WWW: https://pypi.org/project/aesqlapius/

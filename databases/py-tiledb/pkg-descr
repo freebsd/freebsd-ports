@@ -5,5 +5,3 @@ efficient parallel I/O system for high scalability, and high-level APIs
 including Python, R, Golang and more.
 
 TileDB-Py is the official Python interface to TileDB.
-
-WWW: https://github.com/TileDB-Inc/TileDB-Py

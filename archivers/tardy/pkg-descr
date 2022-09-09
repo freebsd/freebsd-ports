@@ -13,5 +13,3 @@ of files after they have been included in the tar file. Among them are:
    * change file protections (e.g. from 600 to 644)
 
 Note that all of these affect ALL files in the archive.
-
-WWW: http://tardy.sourceforge.net/

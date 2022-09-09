@@ -17,5 +17,3 @@ gateways.  Among other features, it includes:
  * Configurable logging
  * Efficient multiplexing software enables small memory footprint and
    very high performance
-
-WWW: http://www.indexdata.dk/yazproxy/

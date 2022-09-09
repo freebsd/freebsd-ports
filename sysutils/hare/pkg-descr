@@ -5,5 +5,3 @@ useful to alert on machines which are seldom visited or otherwise monitored.
 This client works in conjunction with the server sysutils/py-hared
 
 This will form part of a centralized message distribution system.
-
-WWW: https://github.com/jpmens/hared-hare

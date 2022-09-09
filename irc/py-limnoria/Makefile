@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modified version of Supybot (IRC bot and framework)
+WWW=		https://github.com/ProgVal/Limnoria
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

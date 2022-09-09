@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python interface for fplll
+WWW=		https://github.com/fplll/fpylll
 
 LICENSE=	GPLv2
 

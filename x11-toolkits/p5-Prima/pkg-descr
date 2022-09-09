@@ -18,5 +18,3 @@ A 'hello world' code is as simple as follows:
       onClick  => sub { $::application-> close },
    );
    run Prima;
-
-WWW: https://metacpan.org/release/Prima

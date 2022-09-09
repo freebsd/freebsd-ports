@@ -7,5 +7,3 @@ direct user input. It is intended for use with Python 2.6 or greater.
 This is a fork of python-gnupg-0.3.2, patched to fix a potential vulnerability
 which could result in remote code execution, do to unsanitised inputs being
 passed to subprocess.Popen([...], shell=True).
-
-WWW: https://github.com/isislovecruft/python-gnupg

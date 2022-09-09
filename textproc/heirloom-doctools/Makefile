@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
+WWW=		https://n-t-roff.github.io/heirloom/doctools.html
 
 LICENSE=	CDDL
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	PostgreSQL migrations made easy
+WWW=		https://github.com/yandex/pgmigrate
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE

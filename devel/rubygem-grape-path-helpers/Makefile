@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Route path helpers for Grape
+WWW=		https://gitlab.com/gitlab-org/grape-path-helpers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

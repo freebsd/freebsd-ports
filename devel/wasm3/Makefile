@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	High performance WebAssembly interpreter
+WWW=		https://github.com/wasm3/wasm3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,7 +4,5 @@ This is a tool to manage NFSv4/ZFS (also known as Extended on MacOS) ACLs.
 That is listing, creating, editing, searching, stripping, sorting and
 removing redundant entries and more.
 
-WWW: https://github.com/ptrrkssn/acltool
-
 - Peter Eriksson
 pen@lysator.liu.se

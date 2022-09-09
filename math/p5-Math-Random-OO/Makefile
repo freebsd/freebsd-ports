@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Consistent object-oriented interface for generating random numbers
+WWW=		https://metacpan.org/release/Math-Random-OO
 
 LICENSE=	APACHE20
 

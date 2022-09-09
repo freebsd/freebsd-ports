@@ -4,5 +4,3 @@ directory. Files with same content will also be hard-linked but in a way that
 storage space is saved. This is useful if you have many files on a read-only
 partition, or if you plan to put many files on a CD/DVD, but the whole tree is
 just too big to fit on the media.
-
-WWW: http://perli.net/projekte/highlnk/

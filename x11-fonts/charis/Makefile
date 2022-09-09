@@ -5,6 +5,7 @@ MASTER_SITES=	https://software.sil.org/downloads/r/charis/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Charis SIL TrueType font collection
+WWW=		https://software.sil.org/charis/
 
 LICENSE=	OFL11
 

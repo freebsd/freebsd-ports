@@ -6,6 +6,7 @@ MASTER_SITES=	http://alt-ergo.ocamlpro.com/http/alt-ergo-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic solver of mathematical formulas for program verification
+WWW=		https://alt-ergo.lri.fr
 
 LICENSE=	CeCILL-C
 LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] C license, version 1

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.stolk.org/stormbaancoureur/download/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulated obstacle course for automobiles
+WWW=		https://www.stolk.org/stormbaancoureur/
 
 LICENSE=	GPLv3
 

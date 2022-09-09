@@ -1,10 +1,12 @@
 PORTNAME=	kubectl
 PORTVERSION=	1.24.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Kubernetes command-line tool
+WWW=		https://github.com/kubernetes/kubectl
 
 LICENSE=	APACHE20
 

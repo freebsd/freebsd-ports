@@ -9,6 +9,7 @@ PATCHFILES+=	8bdb1459bc2.patch:-p1 # https://github.com/libvips/nip2/pull/96
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
+WWW=		https://github.com/jcupitt/nip2
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	This gem implements bcrypt_pdkfd
+WWW=		https://github.com/net-ssh/bcrypt_pbkdf-ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

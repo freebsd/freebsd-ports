@@ -3,10 +3,11 @@ PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	devel
-#MASTER_SITES=	
+#MASTER_SITES=
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ implementation of Mustache
+WWW=		https://github.com/jbboehr/libmustache
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

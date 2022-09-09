@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V.${PORTVERSION}
 
 MAINTAINER=	kmatsui@t3.rim.or.jp
 COMMENT=	Alternative C/C++ preprocessor
+WWW=		http://mcpp.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

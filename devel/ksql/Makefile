@@ -5,6 +5,7 @@ MASTER_SITES=	http://kristaps.bsd.lv/ksql/snapshots/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lazy man's wrapper for the SQLite C API
+WWW=		https://kristaps.bsd.lv/ksql/
 
 LICENSE=	ISCL
 

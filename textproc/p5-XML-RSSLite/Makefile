@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight, relaxed RSS (and XML-ish) parser
+WWW=		https://metacpan.org/release/XML-RSSLite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

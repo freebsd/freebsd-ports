@@ -5,5 +5,3 @@ This simple file search crawls available disks creating a database that
 can be searched using quick and responsive graphical interface.
 Notable difference is that by default, the entire paths are searched,
 not just file and folder names.
-
-WWW: https://github.com/DoTheEvo/ANGRYsearch

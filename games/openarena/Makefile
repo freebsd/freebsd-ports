@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar.bz2 # override master port
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
+WWW=		http://openarena.ws/
 
 LICENSE?=	GPLv2
 

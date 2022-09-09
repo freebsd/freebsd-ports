@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Effective fragment potential method in quantum chemistry
+WWW=		https://libefp.github.io
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

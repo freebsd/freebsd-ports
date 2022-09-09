@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Makes entry_points specified in setup.py load more quickly
+WWW=		https://github.com/ninjaaron/fast-entry_points
 
 LICENSE=	BSD2CLAUSE
 

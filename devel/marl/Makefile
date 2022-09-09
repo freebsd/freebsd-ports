@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hybrid thread / fiber task scheduler written in C++11
+WWW=		https://github.com/google/marl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

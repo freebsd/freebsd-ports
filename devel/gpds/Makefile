@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	General purpose data serializer library written in modern C++
+WWW=		https://gpds.simulton.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

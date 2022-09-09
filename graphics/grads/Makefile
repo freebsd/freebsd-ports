@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
+WWW=		http://grads.iges.org/grads/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:science/udunits \
 		${LOCALBASE}/lib/libsx.a:x11/libsx

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/nzjrs/${PORTNAME}/releases/download/${PORTVERSI
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	Gtk+ 3.0 mapping widget
+WWW=		https://nzjrs.github.io/osm-gps-map/
 
 LICENSE=	GPLv2
 

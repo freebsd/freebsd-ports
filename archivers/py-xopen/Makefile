@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open compressed files transparently
+WWW=		https://pypi.org/project/xopen/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

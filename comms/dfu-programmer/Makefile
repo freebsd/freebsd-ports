@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Device Firmware Update based USB programmer for Atmel chips
+WWW=		https://dfu-programmer.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

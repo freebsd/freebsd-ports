@@ -7,6 +7,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Git tag semantic version bumper
+WWW=		https://github.com/nbari/gbump
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

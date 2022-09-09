@@ -1,5 +1,5 @@
 PORTNAME=	Filter
-PORTVERSION=	1.61
+PORTVERSION=	1.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RURBAN
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Number of source filters for perl5 programs
+WWW=		https://metacpan.org/release/Filter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

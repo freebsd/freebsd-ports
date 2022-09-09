@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	snar@snar.spb.ru
 COMMENT=	Lightweight prefix-list generator for various routers
+WWW=		https://github.com/snar/bgpq3
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

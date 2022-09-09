@@ -5,5 +5,3 @@ Ptex applies a separate texture to each face of a polygon mesh.
 
 Its file format can efficiently store hundreds of thousands of
 texture images in a single file.
-
-WWW: http://ptex.us

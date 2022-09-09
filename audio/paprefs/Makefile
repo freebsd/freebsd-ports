@@ -6,6 +6,7 @@ MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK configuration dialog for PulseAudio
+WWW=		https://freedesktop.org/software/pulseaudio/paprefs/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

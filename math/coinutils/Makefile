@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utilities for COIN-OR project
+WWW=		https://projects.coin-or.org/CoinUtils
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/CoinUtils/LICENSE

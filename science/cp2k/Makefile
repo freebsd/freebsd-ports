@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum chemistry and solid state physics software package
+WWW=		https://www.cp2k.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

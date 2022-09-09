@@ -4,5 +4,3 @@ and offers basic painting and palette manipulation tools. It also has
 several other more powerful features such as channels, layers and
 animation. Due to its simplicity and lack of dependencies it runs well on
 GNU/Linux, Windows and older PC hardware.
-
-WWW: http://mtpaint.sourceforge.net/

@@ -8,6 +8,7 @@ DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pyside2 development tools
+WWW=		https://wiki.qt.io/Qt_for_Python
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi

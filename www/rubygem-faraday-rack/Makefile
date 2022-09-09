@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faraday adapter for Rack
+WWW=		https://github.com/lostisland/faraday-rack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

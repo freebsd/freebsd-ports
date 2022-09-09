@@ -5,6 +5,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=		pen@lysator.liu.se
 COMMENT=		Peter's Wake-on-LAN Tool
+WWW=		https://github.com/ptrrkssn/pwol
 
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

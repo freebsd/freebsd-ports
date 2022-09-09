@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for yet another DarkPAN manager
+WWW=		https://metacpan.org/release/OrePAN2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

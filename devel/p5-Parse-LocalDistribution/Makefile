@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to parses local .pm files as PAUSE does
+WWW=		https://metacpan.org/release/Parse-LocalDistribution
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

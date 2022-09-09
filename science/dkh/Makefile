@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wolf, Reiher, and Hess's Douglas-Kroll-Hess relativistic correction
+WWW=		http://www.reiher.ethz.ch/software/dkh-x2c.html
 
 LICENSE=	GPLv3
 

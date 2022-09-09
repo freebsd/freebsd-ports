@@ -4,6 +4,7 @@ CATEGORIES=	editors www
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Host application for Browser's Exernal Editor extension
+WWW=		https://github.com/rosmanov/bee-host
 
 LICENSE=	MIT
 

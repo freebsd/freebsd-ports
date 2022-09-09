@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}app-${PORTVERSION}
 
 MAINTAINER=	apesternikov@page2rss.com
 COMMENT=	Code Generator for any language
+WWW=		https://www.nedbatchelder.com/code/cog/index.html
 
 LICENSE=	MIT
 

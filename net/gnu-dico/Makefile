@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	gnu-
 
 MAINTAINER=	info@dikt.tv
 COMMENT=	Flexible modular implementation of DICT server
+WWW=		https://www.gnu.org/software/dico/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

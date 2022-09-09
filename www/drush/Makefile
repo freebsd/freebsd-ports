@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.phar
 
 MAINTAINER=	me@skylord.ru
 COMMENT=	Drupal command line and scripting interface
+WWW=		https://github.com/drush-ops/drush
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Generates C++ and Python from ISO10303 files
+WWW=		https://github.com/stepcode/stepcode/wiki
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	games java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Leela Zero Interface: GUI for the Go game
+WWW=		https://github.com/featurecat/lizzie
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

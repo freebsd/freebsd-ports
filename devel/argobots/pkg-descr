@@ -3,5 +3,3 @@ computation and data movement with massive concurrency. It will
 directly leverage the lowest-level constructs in the hardware and
 OS: lightweight notification mechanisms, data movement engines,
 memory mapping, and data placement strategies.
-
-WWW: https://www.argobots.org/

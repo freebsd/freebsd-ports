@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension dealing with mathematic series
+WWW=		https://metacpan.org/release/Math-Series
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

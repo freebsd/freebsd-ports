@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Symbolic framework for numeric optimization
+WWW=		https://web.casadi.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

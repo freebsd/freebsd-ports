@@ -1,4 +1,2 @@
 PHP extension that implements the LZ4 compression algorithm - an extremely
 fast lossless compression algorithm.
-
-WWW: http://pear.horde.org

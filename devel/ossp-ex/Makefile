@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small exception handling library for use in C
+WWW=		http://www.ossp.org/pkg/lib/ex/
 
 USES=		libtool
 GNU_CONFIGURE=	yes

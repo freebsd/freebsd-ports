@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Client Core Library for Ruby SDK
+WWW=		https://github.com/Azure/azure-ruby-asm-core
 
 LICENSE=	APACHE20
 

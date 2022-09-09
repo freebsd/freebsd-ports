@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Universal interface for FTP-like modules (FTP, SFTP, SCP)
+WWW=		https://metacpan.org/release/Net-uFTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

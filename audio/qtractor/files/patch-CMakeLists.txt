@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2022-05-08 05:23:35 UTC
+--- CMakeLists.txt.orig	2022-09-01 16:15:02 UTC
 +++ CMakeLists.txt
-@@ -378,7 +378,7 @@ endif ()
+@@ -201,7 +201,7 @@ endif ()
+ 
+ # Check for Qt...
+ if (CONFIG_QT6)
+-  find_package (Qt6 QUIET)
++  find_package (Qt6 REQUIRED QUIET)
+   if (NOT Qt6_FOUND)
+     set (CONFIG_QT6 0)
+   endif ()
+@@ -385,7 +385,7 @@ endif ()
  
  # Check for MAD libraries.
  if (CONFIG_LIBMAD)

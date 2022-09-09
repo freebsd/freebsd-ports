@@ -11,6 +11,7 @@ USE_PKG64=	1
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
+WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 

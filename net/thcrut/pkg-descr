@@ -7,5 +7,3 @@ It offers a wide range of _local_ network discovery features like arp
 lookup on all hosts on a network with vendor-string, spoofed DHCP
 request, RARP, BOOTP, ICMP-ping and address mask request and some
 other features.
-
-WWW: http://thc.org.segfault.net/

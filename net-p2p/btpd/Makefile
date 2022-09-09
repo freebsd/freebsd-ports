@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Bittorrent client consisting of a daemon and client commands
+WWW=		https://github.com/btpd/btpd/wiki
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi

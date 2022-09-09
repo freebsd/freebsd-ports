@@ -1,11 +1,12 @@
 PORTNAME=	oc
 PORTVERSION=	4.9
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	OpenShift Command Line
+WWW=		https://github.com/openshift/oc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

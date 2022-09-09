@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight C library for storing RDF data in memory
+WWW=		https://drobilla.net/category/sord/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

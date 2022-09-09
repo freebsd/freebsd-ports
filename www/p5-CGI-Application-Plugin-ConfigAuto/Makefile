@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plugin that adds Config::Auto support to CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-ConfigAuto
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \

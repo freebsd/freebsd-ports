@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Standalone version of xkcd 1608 "Hoverboard" game
+WWW=		https://github.com/AMDmi3/hoverboard-sdl
 
 LICENSE=	GPLv3+ CC-BY-NC-2.5
 LICENSE_COMB=	multi

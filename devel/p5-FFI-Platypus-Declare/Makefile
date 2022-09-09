@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Declarative interface to FFI::Platypus
+WWW=		https://metacpan.org/release/FFI-Platypus-Declare
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

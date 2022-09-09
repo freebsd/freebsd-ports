@@ -10,6 +10,7 @@ PYQT_DIST=	yes
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtWebEngine module
+WWW=		https://riverbankcomputing.com/software/pyqt
 
 LICENSE=	GPLv3
 

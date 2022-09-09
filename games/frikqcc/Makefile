@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/qcc//}${PORTVERSION:S/.//g}src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Advanced QuakeC compiler/decompiler
+WWW=		http://www.inside3d.com/frikbot/frikqcc/
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for creating an authentication system
+WWW=		https://pear.php.net/package/Auth
 
 USES=		pear
 

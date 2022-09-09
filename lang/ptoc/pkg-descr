@@ -15,5 +15,3 @@ extensions are supported only for C++ language.
 Also emulation libraries  of  Borland Graphics Interface (BGI) for
 X Window System  included in this  distribution (BGI emulators can
 be also used without converter for C programs using BGI).
-
-WWW: http://www.garret.ru/~knizhnik/

@@ -11,8 +11,9 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgmepp.so:security/gpgme-cpp \
 		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 \
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:5 \
 		qt:5 shared-mime-info tar:xz
+USE_GL=		gl
 USE_KDE=	attica auth codecs config configwidgets coreaddons crash \
 		dbusaddons i18n itemmodels itemviews kcmutils kio kross \
 		newstuff notifications notifyconfig service texteditor wallet \

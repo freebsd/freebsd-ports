@@ -6,5 +6,3 @@ way for external/independent Graphical User Interfaces (GUIs) like kdar.
 This API relies on the libdar library, which is the core part of DAR
 programs; as such, the API is released under the GPL. Consequently, to use
 the API, your program must be released under the GPL as well.
-
-WWW: http://dar.linux.free.fr/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stl@koffein.net
 COMMENT=	Python library for parsing and manipulating GPX files
+WWW=		https://pypi.org/project/gpxpy/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

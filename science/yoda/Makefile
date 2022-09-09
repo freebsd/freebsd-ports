@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Particle physics package with classes for data analysis, histogramming
+WWW=		https://yoda.hepforge.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

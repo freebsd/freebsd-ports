@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Union filesystem for the FUSE driver
+WWW=		http://funionfs.apiou.org/
 
 LICENSE=	GPLv2+
 

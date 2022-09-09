@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Moose role that adds serialization support to any class
+WWW=		https://metacpan.org/release/Data-Serializable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

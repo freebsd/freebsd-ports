@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Indexing search engine for use on small websites
+WWW=		http://computers.douglasthrift.net/searchengine/
 
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE

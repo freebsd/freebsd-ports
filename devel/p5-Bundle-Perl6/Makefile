@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Bundle to install Perl6-related modules
+WWW=		https://metacpan.org/release/Bundle-Perl6
 
 USES=		perl5
 USE_PERL5=	configure

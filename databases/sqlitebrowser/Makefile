@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Visual tool to manage SQLite databases
+WWW=		https://sqlitebrowser.org/
 
 LICENSE=	MPL20 GPLv3
 LICENSE_COMB=	dual

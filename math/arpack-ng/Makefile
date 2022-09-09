@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
+WWW=		https://forge.scilab.org/index.php/p/arpack-ng/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

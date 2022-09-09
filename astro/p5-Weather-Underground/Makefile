@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve weather information from wunderground.com
+WWW=		https://metacpan.org/release/Weather-Underground
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

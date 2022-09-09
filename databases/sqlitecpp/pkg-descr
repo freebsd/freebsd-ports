@@ -1,4 +1,2 @@
 SQLiteC++ offers an encapsulation layer around the native C APIs of SQLite, with
 a few intuitive and well documented C++ classes.
-
-WWW: https://github.com/SRombauts/SQLiteCpp

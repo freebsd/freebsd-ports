@@ -11,5 +11,3 @@ include:
   - Encapsulation of Rules into RuleSets that can be easily and conveniently
     reused in more than one application that requires the same type of
     processing
-
-WWW: https://commons.apache.org/proper/commons-digester/

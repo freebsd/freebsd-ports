@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write filesystems in Perl using FUSE
+WWW=		https://metacpan.org/release/Fuse
 
 LICENSE=	LGPL21
 

@@ -1,11 +1,12 @@
 PORTNAME=	modules2tuple
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Generate GH_TUPLE from modules.txt
+WWW=		https://github.com/dmgk/modules2tuple
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

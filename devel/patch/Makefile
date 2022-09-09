@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU patch utility
+WWW=		https://savannah.gnu.org/projects/patch/
 
 LICENSE=	GPLv3+
 

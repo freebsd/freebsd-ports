@@ -7,6 +7,7 @@ DISTNAME=	XStatic-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XStatic base package with minimal support code
+WWW=		https://github.com/xstatic-py/xstatic
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Gandi command line interface
+WWW=		https://github.com/Gandi/gandi.cli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

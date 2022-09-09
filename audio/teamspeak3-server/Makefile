@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Server side of the TeamSpeak group voice chat system
+WWW=		https://www.teamspeak.com
 
 LICENSE=	teamspeak
 LICENSE_NAME=	TeamSpeak 3.x End User License Agreement

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tie::RefHash subclass with weakened references in the keys
+WWW=		https://metacpan.org/release/Tie-RefHash-Weak
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

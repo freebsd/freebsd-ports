@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	peter@pean.org
 COMMENT=	Simple way of maintaining zfs snapshots using the periodic system
+WWW=		https://github.com/ross/zfs-periodic
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ross

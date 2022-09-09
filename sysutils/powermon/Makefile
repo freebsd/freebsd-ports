@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Displays the CPUs current power consumption
+WWW=		https://github.com/Yamagi/powermon
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	admins@perceptyx.com
 COMMENT=	Use Cassandra databases with IO::Async using CQL
+WWW=		https://metacpan.org/release/Net-Async-CassandraCQL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

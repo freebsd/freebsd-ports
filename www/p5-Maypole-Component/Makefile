@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run Maypole sub-requests as components
+WWW=		https://metacpan.org/release/Maypole-Component
 
 USES=		perl5
 USE_PERL5=	configure patch

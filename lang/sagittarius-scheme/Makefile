@@ -1,6 +1,5 @@
 PORTNAME=	sagittarius
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish
@@ -8,6 +7,7 @@ PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	R6RS/R7RS Scheme system
+WWW=		https://bitbucket.org/ktakashi/sagittarius-scheme/wiki/Home
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,3 @@
 R3 is an URL router library with high performance implemented in C. It
 compiles route paths into a prefix trie.  By using the constructed prefix
 trie in the start-up time, you can dispatch routes with efficiency.
-
-WWW: https://github.com/c9s/r3

@@ -6,6 +6,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	freebsd@toyingwithfate.com
 COMMENT=	Adds dnscrypt support to any name resolver
+WWW=		https://github.com/cofyc/dnscrypt-wrapper
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

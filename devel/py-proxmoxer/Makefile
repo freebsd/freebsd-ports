@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	david@isnic.is
 COMMENT=	Wrapper around the Proxmox REST API v2
+WWW=		https://github.com/proxmoxer/proxmoxer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

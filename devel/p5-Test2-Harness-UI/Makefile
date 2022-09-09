@@ -1,5 +1,5 @@
 PORTNAME=	Test2-Harness-UI
-PORTVERSION=	0.000124
+PORTVERSION=	0.000125
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web interface for viewing and inspecting yath test logs
+WWW=		https://metacpan.org/dist/Test2-Harness-UI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

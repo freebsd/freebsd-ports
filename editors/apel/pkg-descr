@@ -16,5 +16,3 @@ APEL stands for "A Portable Emacs Library" and contains these modules:
      - poe: emulation module for basic functions and special forms/macros
      - poem: provide basic functions to write portable MULE programs
      - static: utility for static evaluation
-
-WWW: https://github.com/wanderlust/apel

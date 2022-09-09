@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Lightweight xcb based bar
+WWW=		https://github.com/LemonBoy/bar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

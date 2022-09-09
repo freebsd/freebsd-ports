@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolset to deeply merge python dictionaries
+WWW=		https://github.com/toumorokoshi/deepmerge
 
 LICENSE=	MIT
 

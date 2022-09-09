@@ -5,5 +5,3 @@ information to applications and libraries that do. If used with XML documents
 produced by SXML or SDOM, SCSS can accommodate the full range of selector types
 described in the W3C recommendation; it can also match simple selectors against
 strings when structured document information is not available.
-
-WWW: http://www.nongnu.org/scss/

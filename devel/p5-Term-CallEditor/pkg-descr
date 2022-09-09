@@ -1,5 +1,3 @@
 This module calls an external editor with an optional text message and
 returns what was input as a file handle. By default, the EDITOR
 environment variable will be used, otherwise vi.
-
-WWW: https://metacpan.org/release/Term-CallEditor

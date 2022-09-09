@@ -5,7 +5,5 @@ Methods are provided for creating and modifying windows, for obtaining
 information about windows, and for performing some simple set operations
 on windows.
 
-WWW: https://metacpan.org/release/Set-Window
-
 -Anton
 <tobez@FreeBSD.org>

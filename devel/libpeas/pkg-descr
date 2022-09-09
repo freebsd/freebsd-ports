@@ -2,5 +2,3 @@ libpeas is the next evolution of the Gedit plugins engine, and is targetted at
 giving every application the chance to assume its own extensibility. It also
 has a set of enhanced features with regard to what Gedit used to provide,
 mirroring the desiderata of your favourite text editor's developpers.
-
-WWW: http://live.gnome.org/libpeas

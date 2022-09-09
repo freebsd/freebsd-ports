@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem-authoring framework
+WWW=		https://github.com/apotonick/uber
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

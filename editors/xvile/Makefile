@@ -11,6 +11,7 @@ PATCHFILES=	# none
 
 MAINTAINER=	dickey@invisible-island.net
 COMMENT=	VI Like Emacs -- X11 version
+WWW=		https://invisible-island.net/vile/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

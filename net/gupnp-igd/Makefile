@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to handle UPnP IGD port mapping
+WWW=		https://wiki.gnome.org/Projects/GUPnP
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

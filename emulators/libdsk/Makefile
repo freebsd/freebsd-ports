@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.seasip.info/Unix/LibDsk/
 
 MAINTAINER=	pixel@hugbox.org
 COMMENT=	Enables access to disks and disk images; also via serial line
+WWW=		https://www.seasip.info/Unix/LibDsk/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

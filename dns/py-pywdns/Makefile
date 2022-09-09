@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Python wrapper for dns/wdns
+WWW=		https://github.com/farsightsec/pywdns
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

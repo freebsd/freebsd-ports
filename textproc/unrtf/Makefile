@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Converter from RTF to several formats, including HTML and LaTeX
+WWW=		https://www.gnu.org/software/unrtf/unrtf.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

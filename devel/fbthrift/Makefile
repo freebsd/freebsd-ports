@@ -1,10 +1,11 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.08.22.00
+DISTVERSION=	2022.09.05.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Facebook's branch of Apache Thrift, including a new C++ server
+WWW=		https://github.com/facebook/fbthrift
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

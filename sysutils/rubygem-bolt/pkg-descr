@@ -6,5 +6,3 @@ remote systems using SSH and WinRM.
   - Scales to more than 1000 concurrent connections.
   - Supports industry standard protocols (SSH/SCP, WinRM/PSRP) and
     authentication methods (password, publickey).
-
-WWW: https://github.com/puppetlabs/bolt

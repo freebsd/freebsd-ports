@@ -5,5 +5,3 @@ by, etc.  You can also add and override clause info in the query as
 well,  on both a permanent and temporary basis. With the to_string()
 function, you can create a query string from a hash, query object or
 string.
-
-WWW: http://www.gaf3.com/

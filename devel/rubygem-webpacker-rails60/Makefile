@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails60
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use Webpack to manage app-like JavaScript modules in Rails
+WWW=		https://github.com/rails/webpacker
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

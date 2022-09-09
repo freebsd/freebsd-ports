@@ -13,5 +13,3 @@ and Python3, but the accompanying training tools are still Python2-only, hence
 not installed by this port.
 
 See also the port textproc/py-langdetect for a similar program.
-
-WWW: https://github.com/saffsd/langid.py

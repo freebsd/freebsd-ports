@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Curses based OO user interface framework
+WWW=		https://metacpan.org/release/Curses-UI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

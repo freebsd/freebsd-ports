@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	netsurf-
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	NetSurf project build system
+WWW=		https://www.netsurf-browser.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

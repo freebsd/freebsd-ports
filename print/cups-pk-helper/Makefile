@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Helper that makes system-config-printer use PolicyKit
+WWW=		https://www.freedesktop.org/software/cups-pk-helper
 
 LICENSE=	GPLv2
 

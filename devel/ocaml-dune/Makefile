@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Composable build system for OCaml (formerly jbuilder)
+WWW=		https://dune.build/
 
 LICENSE=	MIT
 

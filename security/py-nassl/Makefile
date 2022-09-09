@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Experimental OpenSSL wrapper for SSLyze
+WWW=		https://github.com/nabla-c0d3/nassl
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

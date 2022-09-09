@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang documentation
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

@@ -16,5 +16,3 @@ runtime flexibility, resource requirements, the approach of automatic
 generation permits to create a set of coherent implementations addressing
 such issues separately, ultimately allowing the developer to choose the
 library which fits best her needs.
-
-WWW: http://gmetadom.sourceforge.net/

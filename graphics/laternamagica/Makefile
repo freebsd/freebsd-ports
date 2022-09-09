@@ -7,6 +7,7 @@ DISTNAME=	LaternaMagica-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer and slideshow application
+WWW=		https://gap.nongnu.org/
 
 LICENSE=	GPLv2+
 

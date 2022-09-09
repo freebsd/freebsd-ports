@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Asynchronous RESTful functionality to C++11 applications
+WWW=		https://github.com/Corvusoft/restbed
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

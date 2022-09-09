@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Core proxy (SOCKS4, SOCKS5, HTTP tunneling) functionality for Python
+WWW=		https://pypi.org/project/python-socks/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

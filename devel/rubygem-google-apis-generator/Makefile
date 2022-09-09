@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Code generator for legacy Google REST clients
+WWW=		https://github.com/googleapis/google-api-ruby-client/tree/master/google-apis-generator
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

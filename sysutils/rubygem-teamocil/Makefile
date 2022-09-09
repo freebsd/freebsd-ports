@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helps you to set up window and splits layouts for tmux
+WWW=		https://github.com/remiprev/teamocil
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

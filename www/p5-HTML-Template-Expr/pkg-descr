@@ -6,5 +6,3 @@ work.  See HTML::Template for details.
 Expression support includes comparisons, math operations, string
 operations and a mechanism to allow you add your own functions at
 runtime.
-
-WWW: https://metacpan.org/release/HTML-Template-Expr

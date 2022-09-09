@@ -6,5 +6,3 @@ new custom items such as wires, nodes, connectors and similar.
 
 Drawn diagrams/schematics can be easily serialized to and from XML. A built-in
 netlist generator is provided to build a netlist form a drawn diagram/schematic.
-
-WWW: https://github.com/simulton/qschematic

@@ -8,5 +8,3 @@ known spam sources which is definitely spam, and other mail which is
 probably spam, but might also be legitimate. It then tags this email
 with appropriate headers giving the spam classification, and responds
 according to the parameters you have set.
-
-WWW: http://www.spambouncer.org/

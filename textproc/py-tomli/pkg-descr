@@ -1,4 +1,2 @@
 Tomli is a Python library for parsing TOML. Tomli is fully compatible with TOML
 v1.0.0.
-
-WWW: https://github.com/hukkin/tomli

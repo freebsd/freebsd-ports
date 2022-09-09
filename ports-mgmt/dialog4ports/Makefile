@@ -10,6 +10,7 @@ MASTER_SITES=	https://files.etoilebsd.net/dialog4ports/ \
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT?=	Console Interface to configure ports
+WWW=		https://bitbucket.org/m1cro/d4p/
 
 LICENSE=	BSD2CLAUSE
 

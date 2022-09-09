@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of scoreboard for monitoring status of many workers
+WWW=		https://metacpan.org/release/Parallel-Scoreboard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

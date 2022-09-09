@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for in-place editing of files
+WWW=		https://metacpan.org/release/File-Inplace
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

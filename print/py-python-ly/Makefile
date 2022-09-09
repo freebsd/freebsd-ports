@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Python package to manipulate LilyPond files
+WWW=		https://github.com/wbsoft/python-ly
 
 LICENSE=	GPLv3
 

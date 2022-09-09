@@ -7,6 +7,7 @@ DISTNAME=	gnome-mplayer_1.0.9.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for MPlayer
+WWW=		http://kdekorte.googlepages.com/gnomemplayer
 
 LICENSE=	GPLv2
 

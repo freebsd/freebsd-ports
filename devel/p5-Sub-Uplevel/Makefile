@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Appear to run a function in a higher stack frame
+WWW=		https://metacpan.org/release/Sub-Uplevel
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

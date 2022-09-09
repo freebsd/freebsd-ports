@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP extension for minifying JavaScript
+WWW=		https://pecl.php.net/package/jsmin
 
 LICENSE=	PHP301
 

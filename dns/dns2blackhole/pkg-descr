@@ -12,5 +12,3 @@ devices from being compromised or bothered seeing things of no interest.
 The base built-in version of unbound titled "local_unbound" can also be
 configured to work using the dns2blackhole method. This black hole method
 is another layer of protection that you can customize to your needs.
-
-WWW: http://dns2blackhole.sourceforge.net/

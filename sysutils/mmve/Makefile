@@ -5,6 +5,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	Mass MV Editor: move files with your text editor
+WWW=		https://rubygems.org/gems/mmve
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

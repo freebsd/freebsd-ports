@@ -5,6 +5,7 @@ CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Websearch
+WWW=		https://www.squirrelmail.org
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide the stuff missing in List::Util
+WWW=		https://metacpan.org/release/List-MoreUtils
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Commonly shared Python utility subclasses and functions
+WWW=		https://github.com/marrow/util
 
 LICENSE=	MIT
 

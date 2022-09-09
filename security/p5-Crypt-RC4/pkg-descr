@@ -13,6 +13,4 @@ have scrutinized the algorithm and it is considered secure.
 Based substantially on the "RC4 in 3 lines of perl" found at
 http://www.cypherspace.org
 
-WWW: https://metacpan.org/release/Crypt-RC4
-
 Seamus Venasse <svenasse@polaris.ca>

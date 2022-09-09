@@ -6,5 +6,3 @@ Some of its features:
   - Tests to find SQL injection and XSS vulnerabilities
   - Options to load ANTI-CSRF token for each request
   - Options to use random proxy per request
-
-WWW: https://github.com/CoolerVoid/0d1n

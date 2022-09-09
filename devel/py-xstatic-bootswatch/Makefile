@@ -8,6 +8,7 @@ DISTNAME=	XStatic-bootswatch-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	bootswatch (themes for Bootstrap) (XStatic packaging standard)
+WWW=		https://bootswatch.com/
 
 LICENSE=	MIT
 

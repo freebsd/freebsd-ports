@@ -1,11 +1,12 @@
 PORTNAME=	age
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple, modern and secure file encryption tool
+WWW=		https://github.com/FiloSottile/age
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

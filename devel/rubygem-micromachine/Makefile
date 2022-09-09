@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Minimal Finite State Machine
+WWW=		https://github.com/soveran/micromachine
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

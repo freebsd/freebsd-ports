@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Command Line Interface API
+WWW=		https://pear.horde.org
 
 USES=	horde
 USE_HORDE_RUN=	Horde_Support Horde_Translation

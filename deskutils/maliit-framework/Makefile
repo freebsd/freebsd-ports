@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	maliit-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Core libraries of Maliit and server
+WWW=		https://maliit.github.io/
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols

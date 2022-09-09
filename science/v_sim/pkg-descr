@@ -5,5 +5,3 @@ sphere to represent the atoms. The user can interact through many functions to
 choose the view, the size of the atoms, their color, the background color, the
 type of fog... Much of it is detailled in the user guide. Moreover V_Sim allows
 to export the view as image in GIF, PS or more formats.
-
-WWW: https://gitlab.com/l_sim/v_sim

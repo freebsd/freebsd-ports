@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/icl/blaspp/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ API for the Basic Linear Algebra Subroutines
+WWW=		https://bitbucket.org/icl/blaspp/src/master/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

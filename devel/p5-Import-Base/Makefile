@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Import a set of modules into the calling module
+WWW=		https://metacpan.org/pod/Import::Base
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

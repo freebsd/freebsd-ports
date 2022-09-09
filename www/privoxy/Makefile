@@ -7,6 +7,7 @@ DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Web proxy with advanced filtering capabilities
+WWW=		https://www.privoxy.org/
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 

@@ -1,11 +1,12 @@
 PORTNAME=	fusefs-libs3
-DISTVERSION=	3.11.0
+DISTVERSION=	3.12.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 DISTNAME=	fuse-${DISTVERSION}
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	FUSE library version 3 for filesystems implemented in userspace
+WWW=		https://github.com/libfuse/libfuse
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

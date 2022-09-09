@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	loic-freebsd@loicp.eu
 COMMENT=	Command-line utilities to work with AMQP-compliant queues
+WWW=		https://github.com/dougbarth/amqp-utils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

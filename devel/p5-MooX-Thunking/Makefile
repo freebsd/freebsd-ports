@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Allow Moo attributes to be thunked
+WWW=		https://metacpan.org/release/MooX-Thunking
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

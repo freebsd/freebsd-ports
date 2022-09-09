@@ -10,5 +10,3 @@ performance, safety, or portability in general, Module::Metadata may
 be a better and handier option (Parse::PMFile (and thus
 Parse::LocalDistribution) actually evaluates code in the $VERSION line
 (in a Safe compartment), which may be problematic in some cases).
-
-WWW: https://metacpan.org/release/Parse-LocalDistribution

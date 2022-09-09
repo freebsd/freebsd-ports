@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Initial tagging script for Notmuch mail
+WWW=		https://github.com/afewmail/afew
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

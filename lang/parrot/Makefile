@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Virtual machine for dynamic languages
+WWW=		https://www.parrotcode.org/
 
 LICENSE=	ART20
 

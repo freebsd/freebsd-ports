@@ -1,10 +1,11 @@
 PORTNAME=	vim
-PORTVERSION=	9.0.0129
+PORTVERSION=	9.0.0379
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Improved version of the vi editor (${FLAVOR:U} flavor)
+WWW=		https://www.vim.org/
 
 LICENSE=	VIM
 LICENSE_NAME=	VIM License
@@ -90,23 +91,22 @@ USE_XORG=	ice sm x11 xmu xpm xt
 # Options {{{1
 # The bulk of the OPTIONS are for normal (non-tiny) vim
 ### Make sure any new options are excluded below in CONSOLE/TINY
-OPTIONS_DEFAULT=	CTAGS_BASE DEFAULT_VIMRC PYTHON
-OPTIONS_DEFINE=		DEFAULT_VIMRC MAKE_JOBS NLS XTERM_SAVE
+OPTIONS_DEFAULT=	CTAGS_BASE PYTHON
+OPTIONS_DEFINE=		MAKE_JOBS NLS XTERM_SAVE
 OPTIONS_SINGLE=		CTAGS
 OPTIONS_SINGLE_CTAGS=	CTAGS_BASE CTAGS_EXUBERANT CTAGS_UNIVERSAL
 OPTIONS_GROUP=		LANGBIND
 OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY SCHEME TCL
 OPTIONS_SUB=		yes
 
-# vim-tiny excludes everything except CONSOLE, DEFAULT_VIMRC, MAKE_JOBS
+# vim-tiny excludes everything except CONSOLE, MAKE_JOBS
 .if ${FLAVOR:U} == tiny
-OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC:NMAKE_JOBS} \
+OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NMAKE_JOBS} \
 			${OPTIONS_SINGLE_UI:NCONSOLE} \
 			${OPTIONS_GROUP_LANGBIND} \
 			${OPTIONS_SINGLE_CTAGS}
 .endif
 
-DEFAULT_VIMRC_DESC=	Install bundled vimrc as default setting
 MAKE_JOBS_DESC=		Enable parallel build
 XTERM_SAVE_DESC=	Restore xterm screen after exit
 
@@ -161,8 +161,7 @@ post-extract:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
 
 post-patch:
-	${ECHO_CMD} '#define SYS_VIMRC_FILE "'${ETCDIR}'/vimrc"' >> ${WRKSRC}/src/feature.h
-	${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
+	${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/src/feature.h
 	${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g; s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/auto/configure
 
@@ -170,19 +169,17 @@ post-configure:
 # Needed when devel/libsysinfo is installed:
 	${REINPLACE_CMD} -e '/^#define HAVE_SYSINFO/ d' ${WRKSRC}/src/auto/config.h
 
-post-install-DEFAULT_VIMRC-on:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/vimrc.sample
-
 .if ${FLAVOR:U} == tiny
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/vim ${STAGEDIR}${PREFIX}/bin
-	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/defaults.vim
+	${INSTALL_DATA} ${WRKSRC}/runtime/defaults.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
+	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${INSTALL_MAN} ${WRKSRC}/runtime/doc/vim.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .else  # flavor != tiny
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${RM} ${STAGEDIR}${PREFIX}/bin/ex
 	${RM} ${STAGEDIR}${PREFIX}/bin/view
 .  for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff

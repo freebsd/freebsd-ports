@@ -1,11 +1,12 @@
 PORTNAME=	tflint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.38.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Terraform Linter
+WWW=		https://github.com/terraform-linters/tflint
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

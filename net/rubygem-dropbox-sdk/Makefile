@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library of the Dropbox API web endpoints
+WWW=		https://www.dropbox.com/developers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

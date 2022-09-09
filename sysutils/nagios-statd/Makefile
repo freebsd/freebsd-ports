@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.twoevils.org/files/netsaint_statd/
 
 MAINTAINER=	jims@bluenotch.com
 COMMENT=	Daemon/client to check remote host information for Nagios
+WWW=		http://www.twoevils.org/files/netsaint_statd/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/share/doc/LICENSE

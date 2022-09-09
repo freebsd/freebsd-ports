@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Manipulate X cut buffers from the commandline
+WWW=		http://xcut.sourceforge.net/
 
 USES=		imake xorg
 USE_XORG=	x11

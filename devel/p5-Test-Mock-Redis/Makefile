@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Use in place of Redis for unit testing
+WWW=		https://metacpan.org/release/Test-Mock-Redis
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

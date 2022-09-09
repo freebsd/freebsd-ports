@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Modular web application framework for office
+WWW=		https://www.group-office.com/
 
 LICENSE=	AGPLv3 PERSONAL
 LICENSE_COMB=	multi

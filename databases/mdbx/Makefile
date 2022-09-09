@@ -7,6 +7,7 @@ DISTNAME=	libmdbx-amalgamated-${DISTVERSION}
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	Lightning Memory-Mapped Database (Extended)
+WWW=		https://github.com/erthink/libmdbx
 
 LICENSE=	OPENLDAP
 LICENSE_NAME=	OpenLDAP Public License

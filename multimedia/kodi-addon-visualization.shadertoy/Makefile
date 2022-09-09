@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Shadertoy visualizer for Kodi
+WWW=		https://github.com/xbmc/visualization.shadertoy
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ MASTER_SITES=	http://myspace.voo.be/pcoupard/cwirc/download/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	X-Chat Morse plugin
+WWW=		http://myspace.voo.be/pcoupard/cwirc
 
 LICENSE=	GPLv2
 

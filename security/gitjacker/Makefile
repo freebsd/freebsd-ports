@@ -1,11 +1,12 @@
 PORTNAME=	gitjacker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Leak git repositories from misconfigured websites
+WWW=		https://github.com/liamg/gitjacker
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

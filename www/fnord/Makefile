@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.fefe.de/fnord/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast webserver with CGI-capability
+WWW=		https://www.fefe.de/fnord/
 
 LICENSE=	GPLv2
 

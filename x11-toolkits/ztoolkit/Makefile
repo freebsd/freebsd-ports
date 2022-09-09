@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI toolkit heavily inspired by GTK
+WWW=		https://git.zrythm.org/zrythm/ztoolkit
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test JavaScript without any framework dependencies
+WWW=		https://jasmine.github.io/
 
 LICENSE=	MIT
 

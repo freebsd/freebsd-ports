@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Growl Notification Transport Protocol for Python
+WWW=		https://github.com/kfdm/gntp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Slugify application that handles unicode
+WWW=		https://github.com/un33k/python-slugify
 
 LICENSE=	MIT
 

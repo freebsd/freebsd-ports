@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parser and builder for package URLs (aka purl)
+WWW=		https://github.com/package-url/packageurl-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/mit.LICENSE

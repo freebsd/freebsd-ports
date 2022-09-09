@@ -3,5 +3,3 @@ programmers and technical users. Its centerpiece is libplot, a powerful
 C/C++ function library for exporting 2-D vector graphics in many file
 formats, both vector and raster. It can also do vector graphics
 animations.
-
-WWW: http://www.gnu.org/software/plotutils/plotutils.html

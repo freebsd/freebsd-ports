@@ -5,17 +5,17 @@ PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Extensions of GTK 4.0 toolkit
+WWW=		https://github.com/elementary/granite
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 RUN_DEPENDS=	contractor:sysutils/contractor \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
-USES=		gettext gnome meson pkgconfig python:3.6+,build tar:xz
+USES=		gettext gnome meson pkgconfig python:3.6+,build tar:xz vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	cairo glib20 gtk40 gdkpixbuf2 introspection:build

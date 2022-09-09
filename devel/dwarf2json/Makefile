@@ -1,9 +1,11 @@
 PORTNAME=	dwarf2json
 DISTVERSION=	g20220807
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Convert ELF/DWARF symbol and type information into JSON
+WWW=		https://github.com/volatilityfoundation/dwarf2json
 
 LICENSE=	VSL
 LICENSE_NAME=	Volatility Software License

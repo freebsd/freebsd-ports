@@ -6,6 +6,7 @@ CATEGORIES=	devel geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	GeoHashTree library for storing and accessing multi-dimensional point clouds
+WWW=		https://github.com/pramsey/libght
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}stable
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D city simulator
+WWW=		http://www.opencity.info/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

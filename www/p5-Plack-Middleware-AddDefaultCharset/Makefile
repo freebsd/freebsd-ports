@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to port Apache2 AddDefaultCharset for Plack
+WWW=		https://metacpan.org/release/Plack-Middleware-AddDefaultCharset
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

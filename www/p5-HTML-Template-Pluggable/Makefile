@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extends HTML::Template with plugin support
+WWW=		https://metacpan.org/release/HTML-Template-Pluggable
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI>=3.06:www/p5-CGI \

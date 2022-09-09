@@ -6,6 +6,7 @@ MASTER_SITES=	http://mirex.mypage.sk/FILES/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Extract game archives such as wad, dar, mea exe's, and many more
+WWW=		http://mirex.mypage.sk/index.php?selected=1 #Unmass
 
 LICENSE=	GPLv2
 

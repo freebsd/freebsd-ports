@@ -7,6 +7,7 @@ EXTRACT_SUFX=	_r3.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but flexible FTP/NFS backup script
+WWW=		https://sourceforge.net/projects/reoback/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE

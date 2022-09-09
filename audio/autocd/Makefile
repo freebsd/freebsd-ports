@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 
 MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
+WWW=		http://kot.spb.ru/projects/autocd/ # in Russian
 
 USES=		libedit ncurses
 GNU_CONFIGURE=	yes

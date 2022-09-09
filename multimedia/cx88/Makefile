@@ -5,6 +5,7 @@ MASTER_SITES=	https://corona.homeunix.net/distfiles/ports/cx88/
 
 MAINTAINER=	jah@FreeBSD.org
 COMMENT=	Drivers for Conexant CX23880x-based PCI(e) TV/radio capture cards
+WWW=		https://corona.homeunix.net/cx88wiki
 
 LICENSE=	BSD2CLAUSE
 

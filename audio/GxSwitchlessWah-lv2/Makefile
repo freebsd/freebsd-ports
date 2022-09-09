@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Analog wah emulation with switchless activation
+WWW=		https://github.com/brummer10/GxSwitchlessWah.lv2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

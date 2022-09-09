@@ -10,5 +10,3 @@ background and acts as the backend component controlling the wireless
 connection. wpa_supplicant supports separate frontend programs and a
 text-based frontend (wpa_cli) and a GUI (wpa_gui) are included with
 wpa_supplicant.
-
-WWW: http://w1.fi/wpa_supplicant/

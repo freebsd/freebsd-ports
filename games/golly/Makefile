@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conway's Game of Life and other cellular automata
+WWW=		http://golly.sourceforge.net/
 
 LICENSE=	GPLv2+
 

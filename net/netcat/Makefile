@@ -12,6 +12,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple utility which reads and writes data across network connections
+WWW=		http://nc110.sourceforge.net/
 
 USES=		tar:tgz
 NO_WRKSUBDIR=	yes

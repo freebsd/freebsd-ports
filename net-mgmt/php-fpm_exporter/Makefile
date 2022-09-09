@@ -1,11 +1,12 @@
 PORTNAME=	php-fpm_exporter
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	freebsd.org@neant.ro
 COMMENT=	Export php-fpm metrics in Prometheus format
+WWW=		https://github.com/hipages/php-fpm_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

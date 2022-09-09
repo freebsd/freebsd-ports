@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	X Amateur Station Tracking and Information Reporting
+WWW=		http://www.xastir.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

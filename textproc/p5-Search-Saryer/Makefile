@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Sary library
+WWW=		http://sary.namazu.org/index.html.en
 
 LIB_DEPENDS=	libsary.so:textproc/sary
 

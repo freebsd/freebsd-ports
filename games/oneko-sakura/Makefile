@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-sakura
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cat, Sakura or Tomoyo chasing a mouse all over the screen
+WWW=		http://www.daidouji.com/oneko/
 
 # Converted from NO_CDROM
 LICENSE=	oneko

@@ -1,4 +1,2 @@
 GRequests allows you to use Requests with Gevent to make asyncronous HTTP
 Requests easily.
-
-WWW: https://github.com/kennethreitz/grequests

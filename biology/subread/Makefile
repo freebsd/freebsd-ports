@@ -6,6 +6,7 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-performance read alignment, quantification and mutation discovery
+WWW=		http://bioinf.wehi.edu.au/subread-package/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE

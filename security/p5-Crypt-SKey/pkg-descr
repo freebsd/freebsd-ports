@@ -8,5 +8,3 @@ variable, assigning it the value of `MD4' or `MD5'. You can access any
 of these functions by exporting them in the same manner as `compute' in
 the above example.
 Most S/Key systems use MD4 hashing, but a few (notably OPIE) use MD5.
-
-WWW: https://metacpan.org/release/Crypt-SKey

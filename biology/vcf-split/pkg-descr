@@ -4,5 +4,3 @@ with bcftools takes two days, so extracting the 137,977 samples one at a time
 or using thousands of parallel readers of the same file is impractical.
 Vcf-split solves this by generating thousands of single-sample outputs during
 a single sweep through the multi-sample input.
-
-WWW: https://github.com/auerlab/vcf-split

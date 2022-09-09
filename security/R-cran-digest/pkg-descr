@@ -14,5 +14,3 @@ Collet is used. For murmurhash, an implementation by Shane Day is
 used. Please note that this package is not meant to be deployed for
 cryptographic purposes for which more comprehensive (and widely
 tested) libraries such as OpenSSL should be used.
-
-WWW: https://cran.r-project.org/web/packages/digest/

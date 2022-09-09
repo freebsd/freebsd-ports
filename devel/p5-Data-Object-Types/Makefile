@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data-Object Type Constraints for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Types
 
 LICENSE=	APACHE20
 

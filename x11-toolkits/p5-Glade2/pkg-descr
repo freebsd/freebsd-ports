@@ -8,5 +8,3 @@ user interfaces in Perl code in conjunction with Gtk2 and even Gnome2. Better
 yet you can load a file's contents into a PERL scalar do a few magical regular
 expressions to customize things and the load up the app.
 It doesn't get any easier.
-
-WWW: http://gtk2-perl.sourceforge.net/

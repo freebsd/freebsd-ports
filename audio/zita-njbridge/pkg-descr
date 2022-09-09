@@ -7,5 +7,3 @@ can be transmitted, receivers can select any combination of these. On a lightly
 loaded or dedicated network zita-njbridge can provide low latency (same as for
 an analog connection). Additional buffering can be specified in case there is
 significant network delay jitter. IPv6 is fully supported.
-
-WWW: https://kokkinizita.linuxaudio.org/linuxaudio/

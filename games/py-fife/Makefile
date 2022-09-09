@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Flexible Isometric Free Engine
+WWW=		https://www.fifengine.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

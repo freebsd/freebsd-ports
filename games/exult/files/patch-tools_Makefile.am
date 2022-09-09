@@ -1,4 +1,4 @@
---- tools/Makefile.am.orig	2016-05-14 01:04:00 UTC
+--- tools/Makefile.am.orig	2022-04-12 16:34:45 UTC
 +++ tools/Makefile.am
 @@ -56,11 +56,11 @@ if BUILD_GTHUMB
  ## Does not work:
@@ -14,7 +14,7 @@
  
  # Rule to make the service file with bindir expanded
  $(thumbnailer_DATA): $(thumbnailer_in_files)
-@@ -99,10 +99,10 @@ cmanip_LDADD = \
+@@ -105,10 +105,10 @@ install-data-hook:
  
  if BUILD_GTHUMB
  install-data-hook:

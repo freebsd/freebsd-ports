@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interoperate R with Python
+WWW=		https://github.com/randy3k/rchitect
 
 LICENSE=	MIT
 

@@ -9,6 +9,7 @@ DISTNAME=	Chipmunk-${PORTVERSION}
 
 MAINTAINER=	ports@stdrand.com
 COMMENT=	2D physics engine written in C
+WWW=		https://chipmunk-physics.net/
 
 LICENSE=	MIT
 

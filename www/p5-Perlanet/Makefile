@@ -1,5 +1,5 @@
 PORTNAME=	Perlanet
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Program for creating programs that aggregate web feeds
+WWW=		https://metacpan.org/release/Perlanet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

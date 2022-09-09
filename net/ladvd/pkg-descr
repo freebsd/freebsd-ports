@@ -1,4 +1,2 @@
 ladvd is a minimal link layer advertisement daemon which supports
 sending LLDP, CDP, EDP, FDP and NDP advertisements.
-
-WWW: https://github.com/sspans/ladvd

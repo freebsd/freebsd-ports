@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	FreeBSD guest tools for use with SmartOS
+WWW=		https://github.com/joyent/freebsd-kvm-image-builder/tree/master/triton-freebsd-guesttools
 
 RUN_DEPENDS=	bash:shells/bash \
 		mdata-client>0:net-mgmt/mdata-client

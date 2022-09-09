@@ -1,12 +1,13 @@
 PORTNAME=	doggo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern command-line DNS client (like dig)
+WWW=		https://github.com/mr-karan/doggo
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	High speed Base58 encoding using GMP with BigInt and MD5 support
+WWW=		https://github.com/grokify/base58-gmp-perl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

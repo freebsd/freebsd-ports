@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight job scheduler extension for Sidekiq
+WWW=		https://sidekiq-scheduler.github.io/sidekiq-scheduler/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

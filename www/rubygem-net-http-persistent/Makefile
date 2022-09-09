@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manages persistent connections using Net::HTTP
+WWW=		https://github.com/drbrain/net-http-persistent
 
 LICENSE=	MIT
 

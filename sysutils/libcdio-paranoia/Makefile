@@ -5,6 +5,7 @@ MASTER_SITES=	GNU/libcdio
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Read audio from the CDROM directly as data
+WWW=		https://www.gnu.org/software/libcdio/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

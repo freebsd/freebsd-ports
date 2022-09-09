@@ -6,5 +6,3 @@ where the final classification is done. It also offers an extension
 to functional data and routines for calculating certain notions of
 statistical depth functions. 50 multivariate and 5 functional
 classification problems are included.
-
-WWW: https://cran.r-project.org/web/packages/ddalpha/

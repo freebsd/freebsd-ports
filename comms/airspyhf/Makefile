@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	User mode driver for Airspy HF+ SDR
+WWW=		https://github.com/airspy/airspyhf
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

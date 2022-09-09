@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of fast, primitive HTTP request parser
+WWW=		https://metacpan.org/release/HTTP-Parser-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

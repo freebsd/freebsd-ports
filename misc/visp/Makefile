@@ -1,6 +1,6 @@
 PORTNAME=	visp
 DISTVERSION=	3.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
@@ -9,6 +9,7 @@ PATCHFILES=	ff554ca8be5f43a3470e1cb20150d8171a66b463.patch:-p1 # fix https://git
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular library for visual tracking and visual servoing
+WWW=		https://visp.inria.fr/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

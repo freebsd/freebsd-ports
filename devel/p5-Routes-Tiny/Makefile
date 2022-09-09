@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight routes implementation
+WWW=		https://metacpan.org/release/Routes-Tiny
 
 LICENSE=	ART20
 

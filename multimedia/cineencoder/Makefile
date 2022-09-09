@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	HDR-aware multimedia file converter
+WWW=		https://github.com/CineEncoder/cine-encoder
 
 LICENSE=	GPLv3
 

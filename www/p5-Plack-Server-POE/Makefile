@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Plack Server implementation for POE
+WWW=		https://metacpan.org/release/FRODWITH/Plack-Server-POE-0.4
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

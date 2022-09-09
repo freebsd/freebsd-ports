@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Core functions exposed as methods in primitive types
+WWW=		https://metacpan.org/release/autobox-Core
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

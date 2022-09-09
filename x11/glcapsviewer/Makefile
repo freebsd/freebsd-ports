@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OpenGL hardware capability viewer
+WWW=		https://github.com/SaschaWillems/glCapsViewer
 
 LICENSE=	LGPL3
 

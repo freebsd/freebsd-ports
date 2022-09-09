@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caching proxy server for HTTP and FTP designed for dial-up hosts
+WWW=		https://www.gedanken.org.uk/software/wwwoffle/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

@@ -12,5 +12,3 @@ This distinction is particularly important to understand because Vale
 does not offer any of its own advice. Instead, it offers a framework for
 creating and enforcing custom rules. Its approach is much more similar
 to code linters than it is to traditional grammar checkers.
-
-WWW: https://vale.sh/

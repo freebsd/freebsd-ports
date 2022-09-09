@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Python module to bypass Cloudflare's anti-bot page
+WWW=		https://github.com/Anorov/cloudflare-scrape
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

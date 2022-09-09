@@ -6,5 +6,3 @@ Simply give it the question you want to ask, optionally with choices the
 user can pick from and a default and Term::UI will DWYM.
 
 For asking a yes or no question, there's even a shortcut.
-
-WWW: https://metacpan.org/release/Term-UI

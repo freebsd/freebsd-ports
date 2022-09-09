@@ -7,6 +7,7 @@ DISTNAME=	PackterAgent-${PORTVERSION}
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Agent of the tool for graphical Internet traffic visualization
+WWW=		http://www.packter.jp
 
 LICENSE=	BSD2CLAUSE
 

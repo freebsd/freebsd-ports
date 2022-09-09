@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse a query into a structure suitable for external search engines
+WWW=		https://metacpan.org/release/Search-QueryParser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

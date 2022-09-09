@@ -9,5 +9,3 @@ These extensions consist of the following subclasses:
 * django_rich.test.RichRunner:
   Subclass of Django's DiscoverRunner with colorized outputs and nice
   traceback rendering.
-
-WWW: https://github.com/adamchainz/django-rich

@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	PHP-based Pastebin, with a simple and easy to use user interface
+WWW=		https://github.com/claudehohl/Stikked
 
 USES=		php:web
 

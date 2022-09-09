@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
+WWW=		https://www.gnu.org/software/guile/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

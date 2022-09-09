@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	amzo1337@gmail.com
 COMMENT=	Computation using data flow graphs for scalable machine learning
+WWW=		https://www.tensorflow.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

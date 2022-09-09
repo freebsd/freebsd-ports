@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
+WWW=		http://www.apcupsd.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

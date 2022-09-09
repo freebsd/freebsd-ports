@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2022-07-22 17:30:31 UTC
+--- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2022-08-31 12:19:35 UTC
 +++ components/viz/service/display_embedder/skia_output_surface_impl.cc
-@@ -1142,7 +1142,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
+@@ -1156,7 +1156,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
                                            ->GetDeviceQueue()
                                            ->GetVulkanPhysicalDevice(),
                                        VK_IMAGE_TILING_OPTIMAL, ycbcr_info);

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Beautiful logging for Ruby
+WWW=		https://github.com/socketry/console
 
 LICENSE=	MIT
 

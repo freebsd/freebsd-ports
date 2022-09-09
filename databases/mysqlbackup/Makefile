@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates MySQL backups on a periodic basis
+WWW=		https://code.google.com/archive/p/mysqlbackup/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

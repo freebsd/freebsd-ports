@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graph experimentation and drawing algorithms framework
+WWW=		https://github.com/bdcht/grandalf
 
 LICENSE=	MIT
 

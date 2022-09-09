@@ -6,5 +6,3 @@ It uses POE::Component::Client::DNS to do non-blocking DNS queries. By
 default the plugin attempts to use POE::Component::IRC's internal
 PoCo-Client-DNS resolver object, but will spawn its own copy. You can
 supply your own resolver object via the constructor.
-
-WWW: https://metacpan.org/release/POE-Component-IRC-Plugin-QueryDNS

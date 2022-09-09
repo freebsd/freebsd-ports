@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Console_Table Renderer for pear-Structures_DataGrid
+WWW=		https://pear.php.net/package/Structures_DataGrid_Renderer_Console
 
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \
 		${PEARDIR}/Console/Table.php:devel/pear-Console_Table@${PHP_FLAVOR}

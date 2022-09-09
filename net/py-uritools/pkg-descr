@@ -10,5 +10,3 @@ support, but the other issues still remain.
 This module aims to provide fully RFC 3986 compliant replacements for some
 commonly used functions found in urlparse and urllib.parse, plus additional
 functions for conveniently composing URIs from their individual components.
-
-WWW: https://github.com/tkem/uritools

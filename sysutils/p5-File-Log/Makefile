@@ -7,6 +7,7 @@ PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Simple Object Orientated Logger
+WWW=		https://metacpan.org/release/File-Log
 
 USES=		perl5
 USE_PERL5=	configure

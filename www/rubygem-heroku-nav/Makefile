@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Heroku Rack middleware
+WWW=		https://github.com/heroku/heroku-nav
 
 LICENSE=	MIT
 

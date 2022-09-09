@@ -5,6 +5,7 @@ CATEGORIES=	devel ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manage multiple versions of ruby
+WWW=		https://github.com/rbenv/rbenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

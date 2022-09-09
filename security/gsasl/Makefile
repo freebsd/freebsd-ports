@@ -1,10 +1,11 @@
 PORTNAME=	gsasl
-PORTVERSION=	2.0.1
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GNU SASL command-line utility
+WWW=		https://www.gnu.org/software/gsasl/
 
 LICENSE=	LGPL21
 

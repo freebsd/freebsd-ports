@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Python implementation of subunit test streaming protocol
+WWW=		https://launchpad.net/subunit
 
 LICENSE=	BSD3CLAUSE APACHE20
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Interactive tool for performing search and replace operations
+WWW=		http://regexxer.sourceforge.net/
 
 USES=		compiler:c++11-lang gettext gmake gnome localbase pathfix \
 		pkgconfig tar:xz

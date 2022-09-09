@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Python client for nomad
+WWW=		https://github.com/jrxFive/python-nomad
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

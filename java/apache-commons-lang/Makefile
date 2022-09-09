@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache library with helper utilities for the java.lang API
+WWW=		https://commons.apache.org/proper/commons-lang/
 
 LICENSE=	APACHE20
 

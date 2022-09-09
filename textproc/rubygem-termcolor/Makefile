@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for ANSII color formatting like HTML for output in terminal
+WWW=		https://github.com/jugyo/termcolor
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Calculator that accepts C-like syntax as input
+WWW=		http://www.cyth.net/moo/
 
 LICENSE=	PD
 

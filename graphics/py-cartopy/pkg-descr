@@ -8,5 +8,3 @@ It features:
   intuitive interface
 - powerful vector data handling by integrating shapefile reading with Shapely
   capabilities
-
-WWW: https://github.com/SciTools/cartopy

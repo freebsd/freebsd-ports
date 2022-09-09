@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Powerful network monitoring system
+WWW=		https://www.nagios.org/
 
 LICENSE=	GPLv2
 

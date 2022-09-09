@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Support reading Excel files for agate
+WWW=		https://agate-excel.rtfd.org/
 
 LICENSE=	MIT
 

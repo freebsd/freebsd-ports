@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GDSII manipulation library
+WWW=		https://pythonhosted.org/python-gdsii/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LGPL-3

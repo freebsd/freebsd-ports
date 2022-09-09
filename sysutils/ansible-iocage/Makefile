@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Ansible module for iocage
+WWW=		https://github.com/fractalcells/ansible-iocage
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

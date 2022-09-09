@@ -1,5 +1,3 @@
 luckyBackup is a Qt application that backs-up and synchronizes directories
 using the power of rsync. It is simple to use, fast (only transfers changes
 made), safe, reliable, and fully customizable.
-
-WWW: http://luckybackup.sourceforge.net/

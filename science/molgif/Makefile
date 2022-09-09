@@ -1,10 +1,11 @@
 PORTNAME=	molgif
 DISTVERSION=	g20180108
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool to create GIF animations of molecules
+WWW=		https://github.com/ilyak/molgif
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

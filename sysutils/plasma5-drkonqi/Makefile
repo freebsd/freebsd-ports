@@ -1,11 +1,13 @@
 PORTNAME=	drkonqi
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 crash handler
+WWW=		https://www.kde.org/plasma-desktop
 
-USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		i18n idletime jobwidgets kio notifications service \
 		syntaxhighlighting wallet widgetsaddons windowsystem \
@@ -13,5 +15,6 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		ecm_build
 USE_QT=		concurrent core dbus gui network widgets x11extras xml \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Server and user space API to deal with multimedia pipelines
+WWW=		https://pipewire.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

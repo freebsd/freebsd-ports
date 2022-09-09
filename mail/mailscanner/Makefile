@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/MailScanner/v5/releases/download/${DISTVERSION}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
+WWW=		https://www.mailscanner.info
 
 LICENSE=	GPLv2
 

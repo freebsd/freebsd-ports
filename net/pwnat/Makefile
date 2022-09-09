@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	NAT punching tool based on udptunnel
+WWW=		https://samy.pl/pwnat
 
 LICENSE=	GPLv3
 

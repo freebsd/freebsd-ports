@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper around Getopt::Long
+WWW=		https://metacpan.org/release/Getopt-GUI-Long
 
 USES=		perl5
 USE_PERL5=	configure

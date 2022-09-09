@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	nsonack@outlook.com
 COMMENT=	Open source implementation of OPC UA
+WWW=		https://open62541.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,4 +1,2 @@
 Postgrey is a program which implements greylisting and is
 designed to work with the Postfix MTA.
-
-WWW: http://postgrey.schweikert.ch/

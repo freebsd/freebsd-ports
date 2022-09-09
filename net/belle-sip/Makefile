@@ -5,6 +5,7 @@ CATEGORIES=	net java
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP (RFC 3261) implementation written in C
+WWW=		https://www.linphone.org/technical-corner/belle-sip.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

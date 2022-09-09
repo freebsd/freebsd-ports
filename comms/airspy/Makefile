@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	AirSpy's usemode driver and associated tools
+WWW=		https://airspy.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/airspy-tools/LICENSE.md

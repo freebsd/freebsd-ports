@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ale@biancalanas.net
 COMMENT=	Convert ASCII strings to hex and reverse
+WWW=		https://metacpan.org/release/String-HexConvert
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 

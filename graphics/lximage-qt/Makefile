@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Image viewer
+WWW=		https://github.com/lxde/lximage-qt
 
 LICENSE=	GPLv2
 

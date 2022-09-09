@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS implementation for List::SomeUtils
+WWW=		https://metacpan.org/release/List-SomeUtils-XS
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

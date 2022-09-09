@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast Python phonetic algorithms
+WWW=		https://pypi.org/project/Fuzzy/
 
 LICENSE=	MIT ART20
 LICENSE_COMB=	multi

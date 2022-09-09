@@ -1,11 +1,12 @@
 PORTNAME=	coloredlogs
-PORTVERSION=	15.0
+PORTVERSION=	15.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Colored terminal output for Python logging module
+WWW=		https://coloredlogs.readthedocs.io/en/latest/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

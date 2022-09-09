@@ -12,5 +12,3 @@ handle the overall model selection process. The implementations of
 the Cochran's Q test with permutations and the sequential testing
 framework of Wald are generic and can therefore also be used in
 other contexts.
-
-WWW: https://cran.r-project.org/web/packages/CVST/

@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands data, sound, and music files
+WWW=		https://www.eternal-lands.com/
 
 NO_ARCH=	yes
 NO_BUILD=	yes

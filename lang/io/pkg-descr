@@ -3,5 +3,3 @@ are mostly inspired by Smalltalk (all values are objects), Self
 (prototype-based), NewtonScript (differential inheritance), Act1
 (actors and futures for concurrency), LISP (code is a runtime
 inspectable/modifiable tree) and Lua (small, embeddable).
-
-WWW: https://iolanguage.org

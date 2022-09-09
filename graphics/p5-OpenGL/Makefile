@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
+WWW=		https://metacpan.org/release/OpenGL
 
 MANUAL_PACKAGE_BUILD=	needs the X server it will be used with to build
 

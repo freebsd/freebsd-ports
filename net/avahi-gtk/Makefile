@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ tools and bindings to the Avahi mDNS system
+WWW=		https://www.avahi.org/
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libfontconfig.so:x11-fonts/fontconfig \

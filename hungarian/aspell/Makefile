@@ -6,6 +6,7 @@ CATEGORIES=	hungarian textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Hungarian dictionaries
+WWW=		http://aspell.net/
 
 DICT=	 	hu
 

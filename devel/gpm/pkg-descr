@@ -9,5 +9,3 @@ dependencies and supports Git, Bazaar and Mercurial
 hosted Go packages, for a smoother workflow be sure to
 check out gvp - the Go Versioning Packager which provides
 dependency isolation for your projects.
-
-WWW: https://github.com/pote/gpm

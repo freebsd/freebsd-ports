@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support ProfitBricks
+WWW=		https://github.com/fog/fog-profitbricks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ MASTER_SITES=	http://duncanthrax.net/exilog/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to centralize and visualize Exim logs with a web front end
+WWW=		https://duncanthrax.net/exilog/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

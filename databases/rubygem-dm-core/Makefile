@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object/Relational Mapper for Ruby
+WWW=		https://github.com/datamapper/dm-core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

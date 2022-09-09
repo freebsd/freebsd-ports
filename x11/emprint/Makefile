@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/gblach/e17/extra/
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Utility for taking screenshots for E17
+WWW=		https://www.enlightenment.org/
 
 LIB_DEPENDS=	libefl.so:devel/efl
 

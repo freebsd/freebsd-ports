@@ -7,5 +7,3 @@ following:
 
 It operates on certificate specs, which are JSON files containing the
 information needed to generate a certificate.
-
-WWW: https://github.com/cloudflare/certmgr

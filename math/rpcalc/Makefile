@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Simple RPN calculator
+WWW=		https://rpcalc.bellz.org/index.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

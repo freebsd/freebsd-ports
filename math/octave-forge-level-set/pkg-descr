@@ -7,5 +7,3 @@ This is level-set.
 
  Routines for calculating the time-evolution of the level-set equation and
  extracting geometric information from the level-set function.
-
-WWW: http://octave.sourceforge.net/

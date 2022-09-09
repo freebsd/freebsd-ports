@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sdalu@sdalu.com
 COMMENT=	Deploying functionality for Nanoc
+WWW=		https://nanoc.ws/
 
 LICENSE=	MIT
 

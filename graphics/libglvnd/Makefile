@@ -10,6 +10,7 @@ PATCHFILES=	28da9963e52ee2d2e1501351eb26b77cec89f886.diff:-p1 \
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	GL Vendor-Neutral Dispatch library
+WWW=		https://gitlab.freedesktop.org/glvnd/libglvnd
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

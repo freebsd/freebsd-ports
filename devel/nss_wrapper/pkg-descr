@@ -13,5 +13,3 @@ with socket_wrapper.
 - Provides information for user and group accounts.
 - Network name resolution using a hosts file.
 - Loading and testing of NSS modules.
-
-WWW: https://cwrap.org/nss_wrapper.html

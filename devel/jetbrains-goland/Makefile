@@ -7,6 +7,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	JetBrains GoLand IDE
+WWW=		https://www.jetbrains.com/go/
 
 LICENSE=	IntelliJ-GoLand
 LICENSE_NAME=	Subscription license agreement for business and organizations

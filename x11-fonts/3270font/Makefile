@@ -7,6 +7,7 @@ DISTNAME=	3270_fonts_3b8f2fb
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	IBM 3270 font for the nostalgic
+WWW=		https://github.com/rbanffy/3270font
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

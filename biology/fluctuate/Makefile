@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}1.4.src.doc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to fit population models
+WWW=		https://evolution.genetics.washington.edu/lamarc/fluctuate.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}1.4
 ALL_TARGET=	${PORTNAME}

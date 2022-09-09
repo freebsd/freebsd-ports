@@ -6,6 +6,7 @@ DISTNAME=	imap_tools_V${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tools and scripts to use with IMAP servers
+WWW=		http://www.athensfbc.com/imap_tools/
 
 LICENSE=	ISCL
 

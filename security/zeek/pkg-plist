@@ -1249,6 +1249,14 @@ lib/libparaglob.a
 %%SPICY%%lib/zeek-spicy/spicy/zeek.spicy
 %%SPICY%%lib/zeek-spicy/spicy/zeek_file.spicy
 %%SPICY%%lib/zeek-spicy/spicy/zeek_rt.hlt
+%%SPICY%%lib/zeek-spicy/tests/Scripts/canonify-zeek-log
+%%SPICY%%lib/zeek-spicy/tests/Scripts/canonify-zeek-log-sorted
+%%SPICY%%lib/zeek-spicy/tests/Scripts/diff-remove-abspath
+%%SPICY%%lib/zeek-spicy/tests/Scripts/diff-remove-timestamps
+%%SPICY%%lib/zeek-spicy/tests/Scripts/diff-sort
+%%SPICY%%lib/zeek-spicy/tests/Scripts/spicy-version
+%%SPICY%%lib/zeek-spicy/tests/Scripts/zeek-version
+%%SPICY%%lib/zeek-spicy/tests/random.seed
 %%NETMAP%%lib/zeek/plugins/Zeek_Netmap/COPYING
 %%NETMAP%%lib/zeek/plugins/Zeek_Netmap/__bro_plugin__
 %%NETMAP%%lib/zeek/plugins/Zeek_Netmap/lib/Zeek-Netmap.%%LCASE_OPSYS%%-%%ARCH%%.so

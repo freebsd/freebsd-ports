@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write Perl subroutines in Tcl
+WWW=		https://metacpan.org/release/Inline-Tcl
 
 LICENSE=	ARTPERL10
 

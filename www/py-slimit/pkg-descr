@@ -3,5 +3,3 @@ JavaScript into more compact code so that it downloads and runs faster.
 
 SlimIt also provides a library that includes a JavaScript parser, lexer,
 pretty printer and a tree visitor.
-
-WWW: http://slimit.readthedocs.org

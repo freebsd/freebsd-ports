@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Template Linear Algebra PACKage
+WWW=		https://github.com/tlapack/tlapack
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

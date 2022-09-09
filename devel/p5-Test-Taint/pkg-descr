@@ -1,4 +1,2 @@
 Tools to test taintedness: "Test::More"-style
 and helper functions.
-
-WWW: https://metacpan.org/release/Test-Taint

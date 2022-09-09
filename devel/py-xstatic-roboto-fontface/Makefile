@@ -8,6 +8,7 @@ DISTNAME=	XStatic-roboto-fontface-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	roboto-fontface (XStatic packaging standard)
+WWW=		https://github.com/choffmeister/roboto-fontface-bower
 
 LICENSE=	APACHE20
 

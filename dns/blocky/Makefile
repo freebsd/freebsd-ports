@@ -1,13 +1,14 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast and lightweight DNS proxy as ad-blocker
+WWW=		https://0xerr0r.github.io/blocky/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	SLY support for ASDF
+WWW=		https://github.com/mmgeorge/sly-asdf
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Rocinante is a lightweight configuration management software
+WWW=		https://github.com/bastillebsd/rocinante
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

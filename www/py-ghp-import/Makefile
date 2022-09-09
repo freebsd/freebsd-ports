@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Copy your docs directly to the gh-pages branch
+WWW=		https://github.com/c-w/ghp-import
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

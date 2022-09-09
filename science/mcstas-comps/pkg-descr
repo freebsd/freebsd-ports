@@ -5,5 +5,3 @@ using a ray-tracing formalism. Currently the main use of McStas is in the
 field of instrument design.
 
 This port contains the McStas component library.
-
-WWW: http://www.mcstas.org

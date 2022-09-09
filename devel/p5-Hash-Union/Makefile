@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Smart hashes merging
+WWW=		https://metacpan.org/release/Hash-Union
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,10 +1,11 @@
 PORTNAME=	phpmustache
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	marc@bumblingdork.com
 COMMENT=	PHP5 code for Mustache
+WWW=		https://github.com/bobthecow/mustache.php
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

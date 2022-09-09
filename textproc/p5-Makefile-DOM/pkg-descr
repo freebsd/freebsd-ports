@@ -6,5 +6,3 @@ makefile comments. That means it's possible to reproduce the original makefiles
 from the DOM trees.  In addition, each node of the DOM trees is modifiable and
 so is the whole tree, just like the PPI module used for Perl source parsing and
 the HTML::TreeBuilder module used for parsing HTML source.
-
-WWW: https://metacpan.org/release/Makefile-DOM

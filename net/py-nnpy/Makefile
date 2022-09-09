@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for nanomsg (cffi-based)
+WWW=		https://github.com/nanomsg/nnpy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

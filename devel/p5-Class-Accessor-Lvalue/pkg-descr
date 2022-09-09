@@ -1,4 +1,2 @@
 This module subclasses Class::Accessor and Class::Accessor::Fast
 in order to provide lvalue accessor makers.
-
-WWW: https://metacpan.org/release/Class-Accessor-Lvalue

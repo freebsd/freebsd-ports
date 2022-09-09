@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic dynamo implementation for different k-v storage engines
+WWW=		https://github.com/Netflix/dynomite
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System (SNES) Emulator
+WWW=		https://github.com/snes9xgit/snes9x
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	Snes9x

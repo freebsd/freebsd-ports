@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Python wrapper for the GNU Privacy Guard (GPG or GnuPG)
+WWW=		https://docs.red-dove.com/python-gnupg/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

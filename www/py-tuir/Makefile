@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Browse Reddit from your terminal
+WWW=		https://gitlab.com/ajak/tuir
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

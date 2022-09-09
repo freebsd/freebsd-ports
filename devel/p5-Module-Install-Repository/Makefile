@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to set repository URL from svn/svk/Git checkout
+WWW=		https://metacpan.org/release/Module-Install-Repository
 
 USES=		perl5
 USE_PERL5=	configure

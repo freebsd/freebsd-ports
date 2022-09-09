@@ -54,7 +54,8 @@ ttrssd_start() {
 	fi
 
 	echo "Starting $long_name"
-	daemon -P "$ppidfile" -p "$pidfile" -u "$ttrssd_user" -o "$ttrssd_log" \
+	daemon -H -P "$ppidfile" -p "$pidfile" \
+		  -u "$ttrssd_user" -o "$ttrssd_log" \
 		sh -c "${initdb_php} --update-schema=force-yes; $phpupd"
 }
 

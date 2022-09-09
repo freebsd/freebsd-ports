@@ -1,6 +1,7 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.1
+DISTVERSION=	9.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -10,6 +11,7 @@ DISTFILES=	${GRAFANA_PREBUILT}:public \
 
 MAINTAINER=	drtr0jan@yandex.ru
 COMMENT=	Dashboard and graph editor for multiple data stores
+WWW=		https://github.com/grafana/grafana
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,7 +26,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		9e60a1b
+TAG=		3c13120
 
 GO_MODULE=	github.com/grafana/grafana
 GO_TARGET=	./pkg/cmd/grafana-server \
@@ -92,7 +94,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}/conf
 	${MKDIR} ${STAGEDIR}${GRAFANA_DATADIR}
 	${MKDIR} ${STAGEDIR}${GRAFANA_PLUGINDIR}
-.for dir in access-control dashboards datasources notifiers plugins
+.for dir in access-control alerting dashboards datasources notifiers plugins
 	${MKDIR} ${STAGEDIR}${GRAFANA_PROVISIONINGDIR}/${dir}
 .endfor
 	${MKDIR} ${STAGEDIR}${GRAFANA_LOGDIR}

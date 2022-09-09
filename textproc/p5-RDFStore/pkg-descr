@@ -6,5 +6,3 @@ University DataBase Group by Sergey Melnik.  A set of companion modules
 RDFStore::Parser::SiRPAC(3) RDFStore::Parser::OpenHealth(3) and
 Data::MagicTie(3) the suite allow a user to fetch, parse, process, store
 and query RDF models.
-
-WWW: https://metacpan.org/release/RDFStore

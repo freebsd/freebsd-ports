@@ -5,6 +5,7 @@ MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Keyboard-driven notification daemon for wlroots-based compositors
+WWW=		https://codeberg.org/dnkl/fnott
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

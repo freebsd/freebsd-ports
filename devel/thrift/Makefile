@@ -7,6 +7,7 @@ MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Framework for scalable cross-language services development
+WWW=		https://thrift.apache.org/
 
 LICENSE=	APACHE20
 

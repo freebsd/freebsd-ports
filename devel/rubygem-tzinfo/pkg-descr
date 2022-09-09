@@ -10,5 +10,3 @@ TZInfo requires a source of timezone data. There are two built-in options:
 
 By default, TZInfo::Data will be used. If TZInfo::Data is not available, then
 TZInfo will search for a zoneinfo directory instead.
-
-WWW: https://tzinfo.github.io/

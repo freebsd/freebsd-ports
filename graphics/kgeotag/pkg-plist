@@ -1,5 +1,8 @@
 bin/kgeotag
 share/applications/org.kde.kgeotag.desktop
+share/doc/HTML/en/kgeotag/index.cache.bz2
+share/doc/HTML/en/kgeotag/index.docbook
+share/doc/HTML/en/kgeotag/overview.docbook
 share/icons/hicolor/128x128/apps/kgeotag.png
 share/icons/hicolor/16x16/apps/kgeotag.png
 share/icons/hicolor/22x22/apps/kgeotag.png
@@ -33,4 +36,3 @@ share/locale/tr/LC_MESSAGES/kgeotag.mo
 share/locale/uk/LC_MESSAGES/kgeotag.mo
 share/locale/zh_CN/LC_MESSAGES/kgeotag.mo
 share/metainfo/org.kde.kgeotag.appdata.xml
-

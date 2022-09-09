@@ -7,6 +7,7 @@ DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ZenLib used by MediaInfo and its library
+WWW=		https://mediaarea.net/en/MediaInfo
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../../../License.txt

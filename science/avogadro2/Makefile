@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemical editor and visualization application
+WWW=		https://www.openchemistry.org/projects/avogadro2/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

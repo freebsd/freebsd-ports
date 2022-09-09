@@ -8,6 +8,7 @@ DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	LIVE.COM Streaming Media
+WWW=		http://www.live555.com/liveMedia/
 
 LICENSE=	LGPL21 MAT
 LICENSE_COMB=	multi

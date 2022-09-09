@@ -5,6 +5,7 @@ CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Refinement and de-refinement mesh tool
+WWW=		https://www.code-aster.org/outils/homard
 
 # Converted from RESTRICTED
 LICENSE=	homard

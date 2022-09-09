@@ -8,6 +8,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	FreeBSD wallpapers designed by KDE artwork team
+WWW=		https://www.kde.org
 
 USES=		tar:bzip2
 

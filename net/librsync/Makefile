@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/librsync/librsync/releases/download/v${PORTVERS
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for delta compression of streams
+WWW=		https://github.com/librsync/librsync
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

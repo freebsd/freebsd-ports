@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scale and denoise images using convolutional neural networks
+WWW=		https://github.com/nihui/waifu2x-ncnn-vulkan
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

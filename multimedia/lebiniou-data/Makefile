@@ -1,9 +1,10 @@
 PORTNAME=	lebiniou-data
 DISTVERSION=	3.66.0
-CATEGORIES=	multimedia graphics 
+CATEGORIES=	multimedia graphics
 
 MAINTAINER=	olivier@biniou.info
 COMMENT=	Data for lebiniou
+WWW=		https://gitlab.com/lebiniou/lebiniou-data
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

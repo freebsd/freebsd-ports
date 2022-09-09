@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library for receiving certificate transparency list updates
+WWW=		https://github.com/CaliDog/certstream-python
 
 LICENSE=	MIT
 

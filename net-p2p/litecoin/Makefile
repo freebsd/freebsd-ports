@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p finance
 
 MAINTAINER=	hsw@bitmark.com
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
+WWW=		https://www.litecoin.org/
 
 LICENSE=	MIT
 

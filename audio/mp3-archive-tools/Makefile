@@ -7,6 +7,7 @@ MASTER_SITES=	https://erislabs.net/ianb/projects/mp3-archive-tools/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of tools to ease organising a collection of audio files
+WWW=		https://erislabs.net/ianb/projects/mp3-archive-tools/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

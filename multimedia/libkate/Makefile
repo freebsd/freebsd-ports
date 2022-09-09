@@ -7,6 +7,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/kate/ \
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
+WWW=		https://wiki.xiph.org/index.php/OggKate
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

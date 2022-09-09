@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Template-toolkit renderer for Mojolicious
+WWW=		https://metacpan.org/release/Mojolicious-Plugin-TtRenderer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

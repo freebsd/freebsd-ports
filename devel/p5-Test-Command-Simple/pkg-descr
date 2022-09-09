@@ -10,5 +10,3 @@ framework, which plays nice with Test::More.
 As compared to Test::Command, this module is simpler, relying on the
 user to feed rc, stdout, and stderr to the appropriate other tests,
 presumably in Test::More, but not necessarily.
-
-WWW: https://metacpan.org/release/Test-Command-Simple

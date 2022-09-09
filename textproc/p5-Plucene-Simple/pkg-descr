@@ -4,5 +4,3 @@ pieces together to suit their own needs. Plucene::Simple is, therefore,
 just one way to use Plucene. It's not expected that it will do exactly
 what *you* want, but you can always use it as an example of how to
 build your own interface.
-
-WWW: https://metacpan.org/release/PluceneSimple

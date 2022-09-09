@@ -7,5 +7,3 @@ recommended however. For more information about the subject:
   https://en.wikipedia.org/wiki/File_locking
   http://stackoverflow.com/questions/39292051/portalocker-does-not-seem-to-lock
   https://stackoverflow.com/questions/12062466/mandatory-file-lock-on-linux
-
-WWW: https://pypi.org/project/portalocker/

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.ginac.de/CLN/ \
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Class Library for Numbers
+WWW=		https://www.ginac.de/CLN/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

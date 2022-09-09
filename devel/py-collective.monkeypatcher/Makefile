@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Applying monkey patches on startup using ZCML configuration
+WWW=		https://pypi.org/project/collective.monkeypatcher/
 
 LICENSE=	ZPL21
 

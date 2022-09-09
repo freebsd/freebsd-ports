@@ -13,5 +13,3 @@ use in user interface to host communications.  The DSSI specification
 consists of an RFC which describes the background for the proposal
 and defines the OSC part of the specification, and a documented
 header file which defines the C API.
-
-WWW: http://dssi.sourceforge.net/

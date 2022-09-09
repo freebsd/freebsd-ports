@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create a version4 signature for Amazon Web Services
+WWW=		https://metacpan.org/release/AWS-Signature4
 
 LICENSE=	ART20 GPLv1+
 LICENSE_COMB=	dual

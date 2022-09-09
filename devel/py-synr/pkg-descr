@@ -7,5 +7,3 @@ Features:
   module).
 * Support for returning multiple errors at once.
 * Support for custom error reporting.
-
-WWW: https://github.com/octoml/synr

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python bindings for the Sleuthkit
+WWW=		https://github.com/py4n6/pytsk
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

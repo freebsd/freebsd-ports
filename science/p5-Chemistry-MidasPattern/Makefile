@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Select atoms in macromolecules
+WWW=		https://metacpan.org/release/Chemistry-MidasPattern
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-File-PDB>=0:science/p5-Chemistry-File-PDB \

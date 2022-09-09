@@ -6,6 +6,7 @@ CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Viewer and editor of files in both PyTables format and HDF5 format
+WWW=		https://github.com/uvemas/ViTables
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

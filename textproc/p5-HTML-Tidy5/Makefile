@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTML validation in a Perl object
+WWW=		https://metacpan.org/release/HTML-Tidy5
 
 LICENSE=	ART20
 

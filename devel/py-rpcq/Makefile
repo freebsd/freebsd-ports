@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	RPC framework and message specification for Rigetti QCS
+WWW=		https://github.com/rigetti/rpcq
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

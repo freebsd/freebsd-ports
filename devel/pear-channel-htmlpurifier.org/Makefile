@@ -6,6 +6,7 @@ MASTER_SITES=	#
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		http://htmlpurifier.org/
 
 PEAR_CHANNEL_HOST=	htmlpurifier.org
 PEAR_CHANNEL_ALIAS=	hp

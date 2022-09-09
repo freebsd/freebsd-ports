@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for ICalendar date objects
+WWW=		https://metacpan.org/release/Date-ICal
 
 BUILD_DEPENDS=	p5-Date-Leapyear>=1.03:devel/p5-Date-Leapyear
 RUN_DEPENDS=	p5-Date-Leapyear>=1.03:devel/p5-Date-Leapyear

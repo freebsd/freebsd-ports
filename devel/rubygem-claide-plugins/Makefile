@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Plugins system for claide
+WWW=		https://github.com/cocoapods/claide-plugins
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

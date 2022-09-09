@@ -6,5 +6,3 @@ must be run with sufficient  permissions  to  monitor  all
 network  traffic  on  the  interface; see pcap(3) for more
 information, but on most systems this means that  it  must
 be run as root.
-
-WWW: http://www.ex-parrot.com/~pdw/iftop/

@@ -5,5 +5,3 @@ aacgain normalizes the volume of digital music files using the Replay Gain
 algorithm, by modifying the global_gain fields in the AAC samples.  Free-
 form metadata tags are added to the file to save undo information, making
 the normalization process reversible.
-
-WWW: http://aacgain.altosdesign.com/

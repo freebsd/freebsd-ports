@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Php interface to the OAuth Protocol
+WWW=		https://pecl.php.net/package/oauth
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,10 +1,11 @@
 PORTNAME=	bugzilla2atom
 PORTVERSION=	g20190711
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Bugzilla bugs into Atom feeds
+WWW=		https://github.com/t6/bugzilla2atom
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Ruby Exploitation(Rex) library for parsing offline registry files
+WWW=		https://github.com/rapid7/rex-registry
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

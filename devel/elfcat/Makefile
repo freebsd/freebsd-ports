@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	ELF visualizer, generates HTML files from ELF binaries
+WWW=		https://crates.io/crates/elfcat
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license

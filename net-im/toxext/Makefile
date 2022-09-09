@@ -5,6 +5,7 @@ CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extension library for tox
+WWW=		https://github.com/toxext/toxext
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

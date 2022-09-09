@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Simple terminal image viewer written in Rust
+WWW=		https://github.com/atanunq/viu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT

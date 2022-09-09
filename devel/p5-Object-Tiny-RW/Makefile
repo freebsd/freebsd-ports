@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class building as simple as it gets (with RW accessors)
+WWW=		https://metacpan.org/dist/Object-Tiny-RW
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

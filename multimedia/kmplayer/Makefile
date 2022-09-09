@@ -7,6 +7,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE frontend to Phonon / KDE5
+WWW=		https://kmplayer.kde.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

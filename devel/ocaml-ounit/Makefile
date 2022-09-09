@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml unit test framework
+WWW=		http://home.wanadoo.nl/maas/ocaml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

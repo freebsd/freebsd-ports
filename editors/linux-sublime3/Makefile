@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	matias@pizarro.net
 COMMENT=	Sophisticated text editor for code, markup and prose
+WWW=		https://www.sublimetext.com
 
 LICENSE=	SUBLIMEHQ
 LICENSE_NAME=	End User License Agreement

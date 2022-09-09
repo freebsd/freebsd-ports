@@ -6,5 +6,3 @@ be walked manually and the nodes examined, printed or otherwise
 manipulated.  In addition, Pod::POM supports and provides view objects
 which can automatically traverse the tree, or section thereof, and
 generate an output representation in one form or another.
-
-WWW: https://metacpan.org/release/Pod-POM

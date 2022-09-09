@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=1643/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source distributed computing resource manager based on PBS
+WWW=		http://www.adaptivecomputing.com/products/open-source/torque/
 
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_riscv64=		fails to link: missing sbrk

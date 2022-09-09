@@ -4,5 +4,3 @@ specification. The styles are in BorderStyle::* modules. Try installing and
 using the border style modules to see what they look like.
 
 Interface, options, and format variables are the same as in Text::Table::Tiny.
-
-WWW: https://metacpan.org/release/Text-Table-TinyBorderStyle

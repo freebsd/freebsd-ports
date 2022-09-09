@@ -6,6 +6,7 @@ MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of Ruby Interpreter in Pure Java
+WWW=		http://jruby.org/
 
 LICENSE=	EPL GPLv2 LGPL21
 LICENSE_COMB=	dual

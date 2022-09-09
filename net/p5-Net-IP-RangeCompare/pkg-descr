@@ -8,5 +8,3 @@ the somewhat organic nature of IP-Ranges.
 
 If you have a large number of ipv4 ranges and need to inventory lists of ranges
 for intersections, this is the Module for you!
-
-WWW: https://metacpan.org/release/Net-IP-RangeCompare

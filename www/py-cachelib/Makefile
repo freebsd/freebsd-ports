@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Collection of cache libraries in the same API interface
+WWW=		https://pypi.org/project/cachelib/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

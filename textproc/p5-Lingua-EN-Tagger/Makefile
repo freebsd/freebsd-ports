@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Part-of-speech tagger for English natural language processing
+WWW=		https://metacpan.org/release/Lingua-EN-Tagger
 
 LICENSE=	GPLv3
 

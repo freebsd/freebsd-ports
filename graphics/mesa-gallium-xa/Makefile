@@ -3,6 +3,7 @@ PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium XA state tracker
+WWW=		https://www.mesa3d.org/
 
 USES=		xorg
 USE_XORG=	xorgproto

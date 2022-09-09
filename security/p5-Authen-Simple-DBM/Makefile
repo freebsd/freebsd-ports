@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple DBM authentication
+WWW=		https://metacpan.org/release/Authen-Simple-DBM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

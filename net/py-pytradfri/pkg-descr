@@ -14,5 +14,3 @@ Some of the features include:
  * Restart and reset the gateway
  * List smart tasks (wake up, on/off and not home) and their attributes
  * Alter values in smart tasks (some of these features not available in app yet)
-
-WWW: https://github.com/ggravlingen/pytradfri

@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to build and query a full text inverted index
+WWW=		https://www.gnu.org/software/mifluz/
 
 LICENSE=	GPLv3
 

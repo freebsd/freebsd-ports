@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Perl interface to the LongURL API
+WWW=		https://metacpan.org/release/WWW-LongURL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

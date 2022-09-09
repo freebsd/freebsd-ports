@@ -6,5 +6,3 @@ emails with alternative plain-text part, attachments and inline
 images. The MIME-Type of the attachments can either be guessed
 automatically or alternatively set on the command line, separately
 for each attachment if required.
-
-WWW: http://www.logix.cz/michal/devel/smtp-cli/

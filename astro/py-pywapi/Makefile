@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper around different weather APIs
+WWW=		https://code.google.com/archive/p/python-weather-api/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

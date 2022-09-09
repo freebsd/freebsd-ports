@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	toranktto@gmail.com
 COMMENT=	Traditional plotting utilities
+WWW=		https://github.com/Toranktto/bsd-plotutils
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

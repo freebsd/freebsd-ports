@@ -93,7 +93,7 @@ libexec/pyenv-plugins/python-build/share/python-build/3.10.4
 libexec/pyenv-plugins/python-build/share/python-build/3.10.5
 libexec/pyenv-plugins/python-build/share/python-build/3.10.6
 libexec/pyenv-plugins/python-build/share/python-build/3.11-dev
-libexec/pyenv-plugins/python-build/share/python-build/3.11.0b5
+libexec/pyenv-plugins/python-build/share/python-build/3.11.0rc1
 libexec/pyenv-plugins/python-build/share/python-build/3.12-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.2.0
 libexec/pyenv-plugins/python-build/share/python-build/3.2.1
@@ -267,6 +267,7 @@ libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.1.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.2.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.3.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.3.1
+libexec/pyenv-plugins/python-build/share/python-build/cinder-3.8-dev
 libexec/pyenv-plugins/python-build/share/python-build/graalpython-20.1.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpython-20.2.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpython-20.3.0
@@ -305,6 +306,8 @@ libexec/pyenv-plugins/python-build/share/python-build/micropython-1.14
 libexec/pyenv-plugins/python-build/share/python-build/micropython-1.15
 libexec/pyenv-plugins/python-build/share/python-build/micropython-1.16
 libexec/pyenv-plugins/python-build/share/python-build/micropython-1.17
+libexec/pyenv-plugins/python-build/share/python-build/micropython-1.18
+libexec/pyenv-plugins/python-build/share/python-build/micropython-1.19.1
 libexec/pyenv-plugins/python-build/share/python-build/micropython-1.9.3
 libexec/pyenv-plugins/python-build/share/python-build/micropython-1.9.4
 libexec/pyenv-plugins/python-build/share/python-build/micropython-dev

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	tony.li@tony.li
 COMMENT=	Threaded Intel AMT/vPro mass management tool
+WWW=		https://github.com/schnoddelbotz/amtc
 
 LICENSE=	CC-BY-3.0
 

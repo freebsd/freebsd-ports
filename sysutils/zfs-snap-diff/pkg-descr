@@ -4,5 +4,3 @@ from an older version, or select single changes to revert in the 'diff' view.
 
 zfs-snap-diff has a web frontend, so it can run on your local work machine or
 on your remote file / backup server (no Xserver necessary).
-
-WWW: https://github.com/j-keck/zfs-snap-diff

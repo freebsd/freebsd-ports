@@ -7,6 +7,7 @@ DISTNAME=	PyRSS2Gen-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for generating RSS 2.0 feeds
+WWW=		http://www.dalkescientific.com/Python/PyRSS2Gen.html
 
 LICENSE=	BSD3CLAUSE
 

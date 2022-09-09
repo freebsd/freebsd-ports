@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv4 addresses
+WWW=		https://metacpan.org/release/Net-IPv4Addr
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

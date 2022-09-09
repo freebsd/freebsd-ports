@@ -15,6 +15,7 @@ EXTRA_PATCHES=	\
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	HTTP/HTTPS reverse-proxy and load-balancer
+WWW=		https://www.apsis.ch/pound.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt

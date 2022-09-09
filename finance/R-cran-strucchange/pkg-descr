@@ -8,5 +8,3 @@ data online using fluctuation processes. Finally, the breakpoints
 in regression models with structural changes can be estimated
 together with confidence intervals. Emphasis is always given to
 methods for visualizing the data.
-
-WWW: https://cran.r-project.org/web/packages/strucchange/

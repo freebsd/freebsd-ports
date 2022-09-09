@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	CalDAV-based calendar
+WWW=		https://lostpackets.de/khal/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

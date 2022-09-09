@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test and report on use strict/warnings coverage
+WWW=		https://metacpan.org/release/Test-Strict
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

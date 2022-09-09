@@ -9,6 +9,7 @@ DISTNAME=	pyla${PORTVERSION}
 
 MAINTAINER=	mike@Reifenberger.com
 COMMENT=	Hylafax client written in Python
+WWW=		http://www.teamsw.it/pyla/
 
 #LIB_DEPENDS=	lirc_client.0:comms/lirc
 

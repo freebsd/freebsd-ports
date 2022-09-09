@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library for symbolic mathematics
+WWW=		https://github.com/diofant/diofant
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
@@ -32,6 +33,5 @@ pre-configure:
 		${ECHO} "from setuptools import setup" && \
 		${ECHO} "setup()" \
 	) > ${WRKSRC}/setup.py
-
 
 .include <bsd.port.mk>

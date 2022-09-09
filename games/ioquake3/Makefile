@@ -8,6 +8,7 @@ EXTRACT_SUFX?=	.zip
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
+WWW=		https://ioquake3.org/
 
 LICENSE?=	GPLv2
 LICENSE_FILE?=	${WRKSRC}/COPYING.txt

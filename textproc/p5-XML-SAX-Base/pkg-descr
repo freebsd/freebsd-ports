@@ -8,5 +8,3 @@ way (ie it takes care for you of checking that the handler has implemented that
 method, or has defined an AUTOLOAD), and the guarantee that filters will pass
 along events that they aren't implementing to handlers downstream that might
 nevertheless be interested in them.
-
-WWW: https://metacpan.org/release/XML-SAX-Base

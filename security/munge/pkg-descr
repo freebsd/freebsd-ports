@@ -6,5 +6,3 @@ groups. These hosts form a security realm that is defined by a shared
 cryptographic key. Clients within this security realm can create and validate
 credentials without the use of root privileges, reserved ports, or
 platform-specific methods.
-
-WWW: https://dun.github.io/munge/

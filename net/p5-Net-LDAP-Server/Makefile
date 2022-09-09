@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module for LDAP server side protocol handling
+WWW=		https://metacpan.org/release/Net-LDAP-Server
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Convert-ASN1>=0.22:converters/p5-Convert-ASN1 \

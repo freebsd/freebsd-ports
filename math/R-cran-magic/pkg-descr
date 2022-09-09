@@ -9,5 +9,3 @@ of magic squares (such as recent results on the determinant of
 odd-ordered semimagic squares). Some antimagic functionality is
 included. The package also serves as a rebuttal to the often-heard
 comment "I thought R was just for statistics".
-
-WWW: https://cran.r-project.org/web/packages/magic/

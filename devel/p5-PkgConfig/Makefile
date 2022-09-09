@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure-Perl Core-Only replacement for pkg-config
+WWW=		https://metacpan.org/release/PkgConfig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

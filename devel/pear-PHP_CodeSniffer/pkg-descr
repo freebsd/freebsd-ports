@@ -3,5 +3,3 @@ tokenizes PHP, JavaScript and CSS files to detect violations of a defined coding
 standard, and a second phpcbf script to automatically correct coding standard
 violations. PHP_CodeSniffer is an essential development tool that ensures your
 code remains clean and consistent.
-
-WWW: https://pear.php.net/package/PHP_CodeSniffer

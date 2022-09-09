@@ -8,6 +8,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python XCAP client library
+WWW=		http://openxcap.org/clients/
 
 LICENSE=	LGPL20+
 

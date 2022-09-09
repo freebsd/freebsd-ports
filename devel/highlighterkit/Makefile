@@ -7,6 +7,7 @@ DISTNAME=	HighlighterKit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework needed by Project Manager
+WWW=		http://home.gna.org/pmanager/
 
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build

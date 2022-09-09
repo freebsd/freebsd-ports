@@ -18,5 +18,3 @@ member:
 The modules are loaded at run-time by the module loader (that is a high level
 layer of the module manager): you can load your modules, simply, coping theirs
 paths into the .spar_modules (or any other file, with the -c option).
-
-WWW: http://spar.sourceforge.net/

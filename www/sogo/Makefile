@@ -7,6 +7,7 @@ DISTNAME=		SOGo-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Groupware server with a focus on scalability and open standards
+WWW=		https://sogo.nu/
 
 LICENSE=		GPLv2
 

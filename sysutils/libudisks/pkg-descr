@@ -8,5 +8,3 @@ Python.
 
 This port provides the libudisks library only and is meant for use with
 sysutils/bsdisks.
-
-WWW: https://www.freedesktop.org/wiki/Software/udisks/

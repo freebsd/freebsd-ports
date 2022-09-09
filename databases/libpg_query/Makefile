@@ -4,6 +4,7 @@ CATEGORIES=	databases devel
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	C library for accessing the PostgreSQL parser outside of the server
+WWW=		https://github.com/lfittl/libpg_query
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

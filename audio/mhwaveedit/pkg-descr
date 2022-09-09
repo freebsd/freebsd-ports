@@ -10,5 +10,3 @@ Features
    - Convert between sample rates, sample sizes, stereo and mono
    - You can always undo, all the way back to the original state of the file
      (even when editing large files.)
-
-WWW: https://github.com/magnush/mhwaveedit/

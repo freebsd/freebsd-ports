@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Make common modules IPv6 ready by hotpatching
+WWW=		https://metacpan.org/release/Net-INET6Glue
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6

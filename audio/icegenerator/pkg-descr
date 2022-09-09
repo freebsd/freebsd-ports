@@ -5,5 +5,3 @@ automation on a Icecast/Shoutcast server. If you have many server processes and
 CPU saving is your priority, u can use IceGenerator. Obviously mp3s/oggs will
 be already resampled to allow their streaming on your bandwidth capability.
 For more information see share/doc/icegenerator/README.
-
-WWW: http://www.becrux.com

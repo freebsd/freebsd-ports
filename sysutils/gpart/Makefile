@@ -7,6 +7,7 @@ MASTER_SITES=	SUNSITE/system/filesystems \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tries to recover lost partition tables and file systems
+WWW=		https://github.com/baruch/gpart/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

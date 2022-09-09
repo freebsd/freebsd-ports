@@ -8,6 +8,7 @@ DIST_SUBDIR=	cut
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Testing Framework for C, C++, and Objective-C
+WWW=		https://bitbucket.org/kc5tja/cut/
 
 LICENSE=	BSD3CLAUSE
 

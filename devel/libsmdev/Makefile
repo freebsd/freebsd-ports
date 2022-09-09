@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libyal/libsmdev/releases/download/${PORTVERSION
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library to access to storage media devices
+WWW=		https://github.com/libyal/libsmdev
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

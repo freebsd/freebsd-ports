@@ -20,5 +20,3 @@ envinronments like MATE (used by default in Ubuntu MATE), XFCE
 The Lomiri Operating Environment (UI of the Ubuntu Touch OS, formerly known as
 Unity8) uses Ayatana Indicators for rendering its notification area and the
 UBports project is a core contributor to the Ayatana Indicators project.
-
-WWW: https://github.com/AyatanaIndicators/ayatana-ido

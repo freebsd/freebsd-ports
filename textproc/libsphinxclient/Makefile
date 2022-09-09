@@ -7,6 +7,7 @@ DISTNAME=	sphinx-${PORTVERSION}-release
 
 MAINTAINER=	mephius@gmail.com
 COMMENT=	Sphinx Full-Text Search Engine C++ client library
+WWW=		https://www.sphinxsearch.com/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

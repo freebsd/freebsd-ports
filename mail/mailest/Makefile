@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Hyper Estraier backend for Mew
+WWW=		https://github.com/yasuoka/mailest
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE ISCL LGPL21
 LICENSE_COMB=	multi

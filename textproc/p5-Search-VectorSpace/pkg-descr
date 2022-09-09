@@ -7,5 +7,3 @@ stop list to filter out very common words, and uses a
 cosine measure to calculate document similarity.
 All documents above a user-configurable similarity
 threshold are returned.
-
-WWW: https://metacpan.org/release/Search-VectorSpace

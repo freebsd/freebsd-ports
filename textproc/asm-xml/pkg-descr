@@ -14,5 +14,3 @@ into databases.
 This is not an all-purpose library, it is not designed to be used with
 DOM, SAX, XPath and so on.  Here, XML is just considered as an
 interchange format, not as a working format.
-
-WWW: http://mkerbiquet.free.fr/asm-xml/

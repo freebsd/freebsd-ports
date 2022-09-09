@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explore, test, and check regular expressions in the terminal
+WWW=		https://octobanana.com/software/crex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC:H}/LICENSE

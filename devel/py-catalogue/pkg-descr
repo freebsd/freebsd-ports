@@ -6,5 +6,3 @@ identifier name, which the object can use to lookup the function from the
 registry. This makes the object easy to serialize, because the name is a simple
 string. If you instead saved the function, you'd have to use Pickle for
 serialization, which has many drawbacks.
-
-WWW: https://github.com/explosion/catalogue

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform backup operations on remote and local environment
+WWW=		https://github.com/backup/backup
 
 LICENSE=	MIT
 

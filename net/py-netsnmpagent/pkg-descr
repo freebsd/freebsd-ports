@@ -6,5 +6,3 @@ They implement custom Management Information Base (MIB) modules that extend
 the local node MIB tree. Usually, this requires writing a MIB as well, ie.
 a text file that specifies the structure, names and data types of the
 information within the MIB module.
-
-WWW: https://pypi.org/project/netsnmpagent/

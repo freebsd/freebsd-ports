@@ -8,6 +8,7 @@ PATCHFILES+=	2fc2ea51f2b6.patch:-p1 # https://github.com/master-of-zen/Av1an/pul
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Command-line encoding framework with per scene quality
+WWW=		https://github.com/master-of-zen/Av1an
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

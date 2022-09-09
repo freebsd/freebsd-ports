@@ -4,5 +4,3 @@ It includes PDF manipulating library based on xpdf, GUI,
 set of command line tools and a pdf editor.
 
 This package does not include GUI for technical reason.
-
-WWW: http://pdfedit.cz/

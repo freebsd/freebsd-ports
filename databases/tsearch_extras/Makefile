@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Functions for getting lower-level data about full text search
+WWW=		https://github.com/zulip/tsearch_extras
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

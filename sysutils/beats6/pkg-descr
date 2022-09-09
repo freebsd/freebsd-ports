@@ -16,5 +16,3 @@ and service statistics.
 
 Packetbeat is a lightweight network packet analyzer that sends data to Logstash
 or Elasticsearch.
-
-WWW: https://www.elastic.co/products/beats/

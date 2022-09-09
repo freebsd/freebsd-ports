@@ -8,6 +8,7 @@ DISTNAME=	Flask-Babel-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Adds i18n/l10n support to Flask applications
+WWW=		https://pypi.org/project/Flask-Babel/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

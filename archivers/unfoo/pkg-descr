@@ -1,4 +1,2 @@
 Unfoo is a tiny sh(1) wrapper to simplify decompression of files.
 Supported archive types: tar, gzip, bzip2, ace, rar, zip, 7z.
-
-WWW: https://github.com/vitaminmoo/unfoo

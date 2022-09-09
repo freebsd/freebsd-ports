@@ -1,11 +1,12 @@
 PORTNAME=	totp-cli
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Authy/Google Authenticator like TOTP CLI tool
+WWW=		https://github.com/yitsushi/totp-cli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

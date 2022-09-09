@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mail@derzinn.de
 COMMENT=	JSON library wrapper for Python
+WWW=		https://bitbucket.org/runeh/anyjson/wiki/Home
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

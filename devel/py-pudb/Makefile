@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full-screen, console-based Python debugger
+WWW=		https://github.com/inducer/pudb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

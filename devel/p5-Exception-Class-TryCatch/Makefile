@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syntactic try/catch sugar for use with Exception::Class
+WWW=		https://metacpan.org/release/Exception-Class-TryCatch
 
 LICENSE=	APACHE20
 

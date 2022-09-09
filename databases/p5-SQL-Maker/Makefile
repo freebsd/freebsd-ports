@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for yet another SQL builder
+WWW=		https://metacpan.org/release/SQL-Maker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

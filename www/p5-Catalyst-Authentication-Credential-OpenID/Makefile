@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenID credential for Catalyst::Plugin::Authentication framework
+WWW=		https://metacpan.org/release/Catalyst-Authentication-Credential-OpenID
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

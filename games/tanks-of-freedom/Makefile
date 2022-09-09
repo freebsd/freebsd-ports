@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Indie Turn Based Strategy in Isometric Pixel Art
+WWW=		https://tof.p1x.in/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

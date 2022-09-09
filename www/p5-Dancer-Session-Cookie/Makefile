@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for encrypted cookie-based session backend for Dancer
+WWW=		https://metacpan.org/release/Dancer-Session-Cookie
 
 RUN_DEPENDS=	\
 	p5-Crypt-CBC>0:security/p5-Crypt-CBC \

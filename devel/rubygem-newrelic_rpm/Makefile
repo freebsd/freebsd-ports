@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Performance management system for Rails applications
+WWW=		https://github.com/newrelic/rpm
 
 LICENSE=	MIT NEWRELIC RUBY
 LICENSE_COMB=	multi

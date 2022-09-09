@@ -1,11 +1,12 @@
 PORTNAME=	certmgr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Automated certificate management using a CFSSL CA
+WWW=		https://github.com/cloudflare/certmgr
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

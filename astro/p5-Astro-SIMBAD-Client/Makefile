@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO interface to SIMBAD4
+WWW=		https://metacpan.org/release/Astro-SIMBAD-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C/C++ package manager
+WWW=		https://conan.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

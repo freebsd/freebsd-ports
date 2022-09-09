@@ -7,6 +7,7 @@ DISTNAME=	Pyqtree-${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Pure Python quad tree spatial index for GIS or rendering usage
+WWW=		https://github.com/karimbahgat/Pyqtree
 
 LICENSE=	MIT
 

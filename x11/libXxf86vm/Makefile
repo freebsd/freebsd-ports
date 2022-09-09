@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Vidmode Extension
+WWW=		https://www.freedesktop.org/Software/xorg
 
 LICENSE=	MIT
 

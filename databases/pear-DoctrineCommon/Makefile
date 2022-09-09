@@ -5,6 +5,7 @@ MASTER_SITES=	http://pear.doctrine-project.org/get/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Shared code for Doctrine PHP object relational mapper
+WWW=		https://www.doctrine-project.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

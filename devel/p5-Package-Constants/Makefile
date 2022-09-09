@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	List all constants declared in a package
+WWW=		https://metacpan.org/release/Package-Constants
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

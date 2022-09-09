@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to automate reads from CSV formatted text files
+WWW=		https://metacpan.org/release/IO-CSVHeaderFile
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2
-		
+
 USES=		motif xorg
 USE_XORG=	x11 xt xaw xmu xt xext sm ice xft xau xcb xdmcp xrender
 

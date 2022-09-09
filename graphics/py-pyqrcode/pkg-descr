@@ -13,5 +13,3 @@ The pyqrcode module attempts to follow the QR code standard as closely as
 possible. The terminology and the encodings used in pyqrcode come directly
 from the standard. This module also follows the algorithm laid out in the
 standard.
-
-WWW: https://github.com/mnooner256/pyqrcode

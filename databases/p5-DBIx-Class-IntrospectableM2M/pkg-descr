@@ -11,5 +11,3 @@ solution for whatever it is you are trying to do. Please be advised
 that compatibility is not guaranteed for DBIx::Class 0.09000+. We
 will try to mantain all compatibility, but internal changes might
 make it impossible.
-
-WWW: https://metacpan.org/release/DBIx-Class-IntrospectableM2M

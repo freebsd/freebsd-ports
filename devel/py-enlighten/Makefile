@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Console progress bar module for Python
+WWW=		https://github.com/Rockhopper-Technologies/enlighten
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

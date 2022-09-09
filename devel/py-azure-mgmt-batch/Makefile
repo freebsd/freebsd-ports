@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Batch Management Client Library for Python
+WWW=		https://pypi.org/project/azure-mgmt-batch/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Check whether hosts are reachable on certain ports
+WWW=		https://github.com/svenstaro/proby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

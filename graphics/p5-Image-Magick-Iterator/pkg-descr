@@ -7,5 +7,3 @@ Iteration functionality is not present in Image::Magick itself as of version
 "stack" of images which would all be manipulated in parallel by any
 Image::Magick calls. Calls to Write() either output an animated series of image
 (a la animated GIFs), or the first image in the series.
-
-WWW: https://metacpan.org/release/Image-Magick-Iterator

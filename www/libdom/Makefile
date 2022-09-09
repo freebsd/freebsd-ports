@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Document Object Model library
+WWW=		https://www.netsurf-browser.org/projects/libdom/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,5 +6,3 @@ applications requiring authentication that is secure against passive attacks
 based on replaying captured reusable passwords. OTP evolved from the S/KEY
 (S/KEY is a trademark of Bellcore) One-Time Password System that was released
 by Bellcore."
-
-WWW: https://github.com/blackm0re/pyotp2289

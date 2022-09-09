@@ -6,5 +6,3 @@ utilities, and toggle-able system status notifications for both the GNU
 Screen window manager and the more modern Tmux terminal multiplexer.
 The Python newt library is only needed if you wish to use the menu-
 based config editor.
-
-WWW: https://byobu.org

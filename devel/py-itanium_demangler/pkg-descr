@@ -7,5 +7,3 @@ to interpret the C++ source code corresponding to the demangled symbol.
 
 There is also a built-in AST stringifier, so the demangler can be used
 as a replacement for c++filt or for formatting backtraces.
-
-WWW: https://github.com/whitequark/python-itanium_demangler

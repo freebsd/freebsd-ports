@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	NetBox API client library
+WWW=		https://github.com/netbox-community/pynetbox
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

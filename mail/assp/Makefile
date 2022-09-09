@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}_${PORTVERSION}_Install
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Spam SMTP Proxy
+WWW=		http://opal.com/jr/freebsd/ports/mail/assp/
 
 RUN_DEPENDS=	p5-Net-DNS>=0.68:dns/p5-Net-DNS \
 		p5-libwww>=6.04:www/p5-libwww \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Module for mouse and keyboard control
+WWW=		https://github.com/PyUserInput/PyUserInput
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library and tool to work with symmetric polyhedra
+WWW=		https://www.math.uni-rostock.de/~rehn/software/sympol.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
+WWW=		https://pear.php.net/package/DB
 
 LICENSE=	PHP301
 

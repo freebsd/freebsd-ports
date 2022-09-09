@@ -8,5 +8,3 @@ and in Jupyter notebooks.
 
 This module patches asyncio to allow nested use of asyncio.run and
 loop.run_until_complete.
-
-WWW: https://github.com/erdewit/nest_asyncio

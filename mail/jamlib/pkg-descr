@@ -3,5 +3,3 @@ format-specific and tedious details of the JAM message base format.
 The idea is that application programmers by using these routines can
 concentrate on the more high-level issues of their programs instead
 of worrying about their JAM routines.
-
-WWW: https://sourceforge.net/projects/jamlib/

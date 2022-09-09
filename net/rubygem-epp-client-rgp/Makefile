@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	RGP EPP client library
+WWW=		https://github.com/Absolight/epp-client
 
 LICENSE=	MIT
 

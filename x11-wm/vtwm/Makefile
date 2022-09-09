@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
+WWW=		http://www.vtwm.org/
 
 LICENSE=	MIT
 

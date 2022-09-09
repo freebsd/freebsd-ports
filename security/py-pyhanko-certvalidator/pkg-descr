@@ -4,5 +4,3 @@ in time, whitelisting and revocation checks.
 
 This library started as a fork of wbond/certvalidator with patches for pyHanko,
 but has since diverged considerably from its parent repository.
-
-WWW: https://github.com/MatthiasValvekens/certvalidator

@@ -1,10 +1,11 @@
 PORTNAME=	libssh
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10.2
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh.org/files/${PORTVERSION:R}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
+WWW=		https://www.libssh.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

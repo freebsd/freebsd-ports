@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extensible Time Series
+WWW=		https://r-forge.r-project.org/projects/xts/
 
 LICENSE=	GPLv2+
 

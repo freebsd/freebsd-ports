@@ -3,6 +3,7 @@ PORTVERSION=	2.2.6
 CATEGORIES=	math
 
 COMMENT=	Read/write sparse matrices
+WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	GPLv2+
 

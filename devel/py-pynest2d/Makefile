@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	CPython bindings for libnest2d by Ultimaker
+WWW=		https://github.com/Ultimaker/libnest2d
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

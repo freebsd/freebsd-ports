@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	The GNU Privacy Guard (minimalist "classic" version)
+WWW=		https://www.gnupg.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -19,5 +19,3 @@ Features
     -  Fine-grained configuration with hot update support
     -  Regex based message render and filter mechanisms
     -  IPC based plugin system (TODO)
-
-WWW: https://srain.im/

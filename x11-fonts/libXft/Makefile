@@ -1,9 +1,10 @@
 PORTNAME=	libXft
-DISTVERSION=	2.3.4
+DISTVERSION=	2.3.5
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Client-sided font API for X applications
+WWW=		https://www.freedesktop.org/wiki/Software/Xft/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		xorg xorg-cat:lib
+USES=		tar:xz xorg xorg-cat:lib
 USE_XORG=	x11 xorgproto xrender
 INSTALL_TARGET=	install-strip
 

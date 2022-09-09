@@ -7,6 +7,7 @@ DISTNAME=	XStatic-jQuery-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	jQuery (XStatic packaging standard)
+WWW=		https://jquery.com/
 
 LICENSE=	MIT
 

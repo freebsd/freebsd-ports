@@ -3,5 +3,3 @@ repository that resides on a remote server. All data is dumped in
 the format that can be read an written by svnadmin dump, so the
 data which is produced can easily be imported into a new Subversion
 repository.
-
-WWW: http://rsvndump.sourceforge.net/

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Clone of the classic game Galaga for X11
+WWW=		http://rumsey.org/xgal.html
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.benzedrine.ch/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Proxy IRC client and ICB server
+WWW=		https://www.benzedrine.ch/icbirc.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${FILESDIR}/COPYING

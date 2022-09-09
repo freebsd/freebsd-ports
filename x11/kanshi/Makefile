@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic display configuration for Wayland
+WWW=		https://sr.ht/~emersion/kanshi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

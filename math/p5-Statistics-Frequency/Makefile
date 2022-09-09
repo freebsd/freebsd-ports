@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Simple counting of elements
+WWW=		https://metacpan.org/release/Statistics-Frequency
 
 USES=		perl5
 USE_PERL5=	configure

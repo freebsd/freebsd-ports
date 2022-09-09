@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient probabilistic 3D mapping framework based on octrees
+WWW=		https://octomap.github.io/
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

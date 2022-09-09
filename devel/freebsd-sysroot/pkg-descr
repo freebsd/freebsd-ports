@@ -4,5 +4,3 @@ provides the necessary sysroots to cross-compile the bootstraps.
 The sysroots provide target architecture base headers, base libraries,
 and convenient cc and c++ wrapper scripts.  Always for the lowest
 supported FreeBSD version.
-
-WWW: https://www.FreeBSD.org/

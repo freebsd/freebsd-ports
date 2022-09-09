@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Art navigation mesh construction toolset for games
+WWW=		https://github.com/recastnavigation/recastnavigation/
 
 USES=		cmake compiler:c++17-lang gl openal pkgconfig sdl xorg
 USE_GL=		gl

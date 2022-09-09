@@ -6,6 +6,7 @@ DISTNAME=	apache-maven-${DISTVERSION}-bin
 
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Java project management tool
+WWW=		https://maven.apache.org/
 
 LICENSE=	APACHE20
 

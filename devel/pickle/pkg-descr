@@ -1,5 +1,3 @@
 Pickle has been written to allow programming of PICMicro devices in FreeBSD,
 NetBSD, Linux, Cygwin (Windows) and MACOS/X or any UNIX/POSIX based system,
 which includes the Raspberry Pi and embedded devices running OpenWRT.
-
-WWW: https://wiki.kewl.org/dokuwiki/projects:pickle

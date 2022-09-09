@@ -6,6 +6,7 @@ MASTER_SITES=	https://dl.hexchat.net/hexchat/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
+WWW=		https://hexchat.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

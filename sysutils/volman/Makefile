@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD specific volume manager
+WWW=		https://forums.freebsd.org/showthread.php?t=27233
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uffejakobsen

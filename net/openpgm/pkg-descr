@@ -20,5 +20,3 @@ promotes multicast to be a part of the core functionality of IP but may still
 be disabled on core routers. Support of Source-Specific Multicast (SSM) allows
 for improved WAN deployment by allowing end-point router filtering of unwanted
 source traffic
-
-WWW: http://code.google.com/p/openpgm/

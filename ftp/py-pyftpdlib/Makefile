@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python FTP server library
+WWW=		https://github.com/giampaolo/pyftpdlib
 
 LICENSE=	MIT
 

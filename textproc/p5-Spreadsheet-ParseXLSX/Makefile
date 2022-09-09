@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing XLSX files
+WWW=		https://metacpan.org/release/Spreadsheet-ParseXLSX
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CryptX>=0:security/p5-CryptX \

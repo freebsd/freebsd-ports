@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 4 (RTM version)
+WWW=		https://www.softether.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

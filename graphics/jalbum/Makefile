@@ -6,6 +6,7 @@ DISTNAME=	jAlbum${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Web photo album generator
+WWW=		http://jalbum.net/
 
 WRKSRC=		${WRKDIR}/jAlbum
 

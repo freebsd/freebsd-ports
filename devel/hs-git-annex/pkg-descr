@@ -15,5 +15,3 @@ git-annex can also be used to keep a folder in sync between computers,
 noticing when files are changed, and automatically committing them to
 git and transferring them to other computers.  The git-annex webapp
 makes it easy to set up and use git-annex this way.
-
-WWW: http://git-annex.branchable.com/

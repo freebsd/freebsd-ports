@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Creates users interfaces directly from Glade XML files
+WWW=		https://metacpan.org/release/Gtk2-GladeXML
 
 LICENSE=	LGPL20
 

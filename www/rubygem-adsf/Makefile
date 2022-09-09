@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Web server that can be spawned in any directory
+WWW=		https://github.com/ddfreyne/adsf
 
 LICENSE=	MIT
 

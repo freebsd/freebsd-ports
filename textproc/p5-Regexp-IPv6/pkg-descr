@@ -2,5 +2,3 @@ This module exports the $IPv6_re regular expression that matches
 any valid IPv6 address as described in "RFC 2373 - 2.2 Text
 Representation of Addresses" but ::. Any string not compliant with
 such RFC will be rejected.
-
-WWW: https://metacpan.org/release/Regexp-IPv6

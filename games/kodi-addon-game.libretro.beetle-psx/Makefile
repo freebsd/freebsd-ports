@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sony - PlayStation (Beetle PSX)
+WWW=		https://github.com/libretro/beetle-psx-libretro
 
 LICENSE=	GPLv2+
 

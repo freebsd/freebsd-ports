@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The QtiPlot Handbook
+WWW=		http://soft.proindependent.com/qtiplot.html
 
 BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \
 		docbook-xml>0:textproc/docbook-xml \

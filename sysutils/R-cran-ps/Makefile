@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	List, Query, Manipulate System Processes
+WWW=		https://github.com/r-lib/ps #readme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

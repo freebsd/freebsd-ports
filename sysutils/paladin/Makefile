@@ -1,10 +1,11 @@
 PORTNAME=	paladin
 PORTVERSION=	2.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	rwestlun@gmail.com
 COMMENT=	Simple process supervisor
+WWW=		https://github.com/rwestlund/paladin
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

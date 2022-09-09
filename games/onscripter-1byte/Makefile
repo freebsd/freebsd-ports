@@ -1,6 +1,7 @@
 PKGNAMESUFFIX=	-1byte
 
 COMMENT=	ONScripter with ${ENGLISH_DESC:tl} support
+WWW=		https://onscripter.osdn.jp/onscripter.html
 
 PLIST_FILES=	bin/${PKGBASE}
 

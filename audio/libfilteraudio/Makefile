@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight audio filtering library made from webrtc code
+WWW=		https://github.com/irungentoo/filter_audio
 
 LICENSE=	BSD3CLAUSE
 

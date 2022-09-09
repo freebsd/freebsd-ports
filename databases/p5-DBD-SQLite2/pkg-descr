@@ -11,5 +11,3 @@ DBD::SQLite2 may be just what you need.
 It supports quite a lot of features, such as transactions (atomic
 commit and rollback), indexes, DBA-free operation, a large subset
 of SQL92 supported, and more.
-
-WWW: http://www.sqlite.org/

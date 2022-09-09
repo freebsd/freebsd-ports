@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for handling numpy arrays with units
+WWW=		https://github.com/yt-project/unyt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

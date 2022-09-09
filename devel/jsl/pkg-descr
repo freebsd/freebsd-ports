@@ -13,5 +13,3 @@ based on the JavaScript engine for the Firefox browser. This provides
 a robust framework that can not only check JavaScript syntax but also
 examine the coding techniques used in the script and warn against
 questionable practices.
-
-WWW: http://www.javascriptlint.com/

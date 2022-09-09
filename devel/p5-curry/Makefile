@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create automatic curried method call closures for any class or object
+WWW=		https://metacpan.org/release/curry
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

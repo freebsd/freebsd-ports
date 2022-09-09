@@ -5,4 +5,5 @@ choice. CMake is quite sophisticated: it is possible to support complex
 environments requiring system configuration, pre-processor generation, code
 generation, and template instantiation.
 
-WWW: http://www.cmake.org/
+This port a Meta-port to connect all related ports to CMake's distribution
+such as CMake itself, documentation and frontends.

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	jQuery, bundled up so apps can depend upon it
+WWW=		https://pypi.org/project/django-jquery-js/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

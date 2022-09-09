@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	7
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Relational Algebra for Ruby
+WWW=		https://github.com/rails/arel
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt

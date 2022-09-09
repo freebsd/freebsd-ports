@@ -13,5 +13,3 @@ Constructions" extended by a modular development system for
 theories.
 
 CoqIde is installed if the x11-toolkits/ocaml-lablgtk2 port is installed.
-
-WWW: http://coq.inria.fr/

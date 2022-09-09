@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.2ndpoint.fi/projektit.xml/shootingstar/files/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL/OpenGL top-down shooter
+WWW=		http://www.2ndpoint.fi/ss
 
 GNU_CONFIGURE=	yes
 USES=		gl gmake sdl

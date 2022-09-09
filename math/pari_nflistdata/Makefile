@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	List fields of small discriminant for nflist() in PARI/GP
+WWW=		https://pari.math.u-bordeaux.fr/packages.html
 
 LICENSE=	ART20
 

@@ -9,5 +9,3 @@ Rewrite of getopt(1) with the following features:
   scripts.
 * It can report parse errors as coming from the shell script.
 * It compiles cleanly with both libc-5 and glibc-2.
-
-WWW: http://software.frodo.looijaard.name/getopt/

@@ -8,6 +8,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Image similarity comparison simulating human perception
+WWW=		https://kornel.ski/dssim
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

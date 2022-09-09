@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Generic connection to a hierarchical-structured data set
+WWW=		https://github.com/mrscotty/connector
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

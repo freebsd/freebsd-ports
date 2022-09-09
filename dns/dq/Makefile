@@ -4,6 +4,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Recursive DNS/DNSCurve server
+WWW=		https://mojzis.com/software/dq/
 
 LICENSE=	PD
 

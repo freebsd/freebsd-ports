@@ -6,6 +6,7 @@ MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert docbook document to Oasis Open Document
+WWW=		http://open.comsultia.com/docbook2odf/
 
 LICENSE=	GPLv2
 

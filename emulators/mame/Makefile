@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Multi Arcade Machine Emulator
+WWW=		https://mamedev.org/
 
 LICENSE=	GPLv2
 

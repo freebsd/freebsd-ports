@@ -9,6 +9,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
+WWW=		https://www.nongnu.org/libsqlfs/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

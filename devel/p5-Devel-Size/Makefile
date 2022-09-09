@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for finding the memory usage of Perl variables
+WWW=		https://metacpan.org/release/Devel-Size
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

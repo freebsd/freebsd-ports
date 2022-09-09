@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 abstraction to system policy and authentication features
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kauth/html/index.html
 
 LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 

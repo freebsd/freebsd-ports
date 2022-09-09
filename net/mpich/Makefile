@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable implementation of MPI-1, MPI-2 and MPI-3
+WWW=		https://www.mpich.org/
 
 LICENSE=	MPICH
 LICENSE_NAME=	MPICH

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XMPP client library based on Qt and C++
+WWW=		https://github.com/qxmpp-project/qxmpp/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL

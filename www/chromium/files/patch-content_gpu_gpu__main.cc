@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2022-07-22 17:30:31 UTC
+--- content/gpu/gpu_main.cc.orig	2022-09-02 10:45:05 UTC
 +++ content/gpu/gpu_main.cc
 @@ -86,7 +86,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -404,17 +404,19 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -396,7 +396,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -45,29 +45,3 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-   TRACE_EVENT0("gpu,startup", "Initialize sandbox");
- 
-+#if !BUILDFLAG(IS_BSD)
-   if (watchdog_thread) {
-     // SandboxLinux needs to be able to ensure that the thread
-     // has really been stopped.
-     sandbox::policy::SandboxLinux::GetInstance()->StopThread(watchdog_thread);
-   }
-+#endif
- 
-   // SandboxLinux::InitializeSandbox() must always be called
-   // with only one thread.
-@@ -449,11 +451,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
-           *base::CommandLine::ForCurrentProcess()),
-       base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
- 
-+#if !BUILDFLAG(IS_BSD)
-   if (watchdog_thread) {
-     base::Thread::Options thread_options;
-     thread_options.timer_slack = base::TIMER_SLACK_MAXIMUM;
-     watchdog_thread->StartWithOptions(std::move(thread_options));
-   }
-+#endif
- 
-   return res;
- }

@@ -7,6 +7,7 @@ DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Calligra project management application
+WWW=		https://www.calligra.org/plan/
 
 LIB_DEPENDS=	libKChart.so:graphics/kdiagram
 

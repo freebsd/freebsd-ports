@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Package for creating Cisco IPPhone XML objects
+WWW=		https://metacpan.org/release/Cisco-IPPhone
 
 USES=		perl5
 USE_PERL5=	configure

@@ -7,6 +7,7 @@ DISTNAME=	Libphk.${PORTVERSION:C/0.3.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHK's utilities functions
+WWW=		http://phk.freebsd.dk/phkrel/
 
 USES=		uidfix tar:tgz
 

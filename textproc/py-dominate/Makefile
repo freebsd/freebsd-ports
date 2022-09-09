@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create and manipulate HTML documents using DOM API
+WWW=		https://github.com/Knio/dominate
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

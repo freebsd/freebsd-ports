@@ -4,5 +4,3 @@ blocks depending on the value of its controlling expression.
 
 This is similar to C's switch/case syntax (copied into many other languages), or
 syntax provided by Switch::Plain.
-
-WWW: https://metacpan.org/dist/Syntax-Keyword-Match

@@ -2,5 +2,3 @@ Module::Setup is very simply module start kit.
 
 When the module-setup command is executed first, a necessary template
 for ~/.module-setup directory is copied.
-
-WWW: https://metacpan.org/release/Module-Setup

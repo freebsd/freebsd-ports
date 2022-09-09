@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Learn quantum spin and entanglement
+WWW=		https://bitbucket.org/donald_gavel/qspin
 
 LICENSE=	MIT
 

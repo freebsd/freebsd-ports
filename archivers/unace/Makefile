@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/utils/compress
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Extract, view & test ACE archives
+WWW=		http://www.winace.com/
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send system commands to a group of remote servers simultaneously
+WWW=		https://massadmin.darold.net/
 
 LICENSE=	GPLv3
 

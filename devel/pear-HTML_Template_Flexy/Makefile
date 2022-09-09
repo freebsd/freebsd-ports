@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely powerful Tokenizer driven Template engine
+WWW=		https://pear.php.net/package/HTML_Template_Flexy
 
 LICENSE=	PHP202
 

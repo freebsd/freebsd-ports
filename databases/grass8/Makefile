@@ -18,6 +18,7 @@ PKGNAMESUFFIX=	8
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open source Geographical Information System (GIS)
+WWW=		https://grass.osgeo.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT

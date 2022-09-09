@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Powerful image management and gallery application for Django
+WWW=		https://github.com/jdriscoll/django-photologue
 
 LICENSE=	BSD3CLAUSE
 

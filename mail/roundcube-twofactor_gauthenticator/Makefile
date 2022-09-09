@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Roundcube TOTP auth plugin
+WWW=		https://github.com/alexandregz/twofactor_gauthenticator
 
 LICENSE=	GPLv2
 

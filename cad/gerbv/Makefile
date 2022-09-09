@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Gerber file viewer
+WWW=		http://gerbv.geda-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

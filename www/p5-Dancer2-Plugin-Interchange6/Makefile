@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dancer2 Plugin for Interchange6 Open Source Shop Machine
+WWW=		https://metacpan.org/release/Dancer2-Plugin-Interchange6
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,5 +5,3 @@ even post the message to a newsgroup.  It is also possible to process
 messages containing some commands.  The mailagent is not usually
 invoked manually but is rather called via the filter program, which is
 in turn invoked by sendmail.
-
-WWW: https://github.com/rmanfredi/mailagent

@@ -7,5 +7,3 @@ of the standards developed by IETF Javascript Object Signing and Encryption
 - JSON Web Signature (JWS)
 
 Originally developed as part of the ACME protocol implementation.
-
-WWW: https://josepy.readthedocs.io/en/latest/

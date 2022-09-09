@@ -16,6 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	HTML5 Clientless Remote Desktop
+WWW=		https://guacamole.incubator.apache.org
 
 LICENSE=	APACHE20
 

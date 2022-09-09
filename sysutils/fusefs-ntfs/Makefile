@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-3g_ntfsprogs-${PORTVERSION}
 
 MAINTAINER=	freebsd@dussan.org
 COMMENT=	Mount NTFS partitions (read/write) and disk images
+WWW=		https://github.com/tuxera/ntfs-3g
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

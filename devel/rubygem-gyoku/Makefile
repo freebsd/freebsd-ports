@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for translating Ruby hashes to XML
+WWW=		https://github.com/savonrb/gyoku
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

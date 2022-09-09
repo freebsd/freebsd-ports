@@ -5,5 +5,3 @@ lines, wait for a given interval before sending next alert, and auto- discovery
 of log rotation. It can be run from the command line without configuration, or
 be controlled from a central configuration file with multiple instances
 monitoring different log files/sending alerts to different people.
-
-WWW: http://www.bsdconsulting.no/tools/

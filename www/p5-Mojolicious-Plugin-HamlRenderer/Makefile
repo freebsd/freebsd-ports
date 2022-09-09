@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Haml renderer for Mojolicious
+WWW=		https://metacpan.org/release/Mojolicious-Plugin-HamlRenderer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

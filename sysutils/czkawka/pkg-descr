@@ -32,5 +32,3 @@ Features:
     non-existent files/directories
   - Broken Files - Finds files with an invalid extension or that are
     corrupted
-
-WWW: https://github.com/qarmin/czkawka

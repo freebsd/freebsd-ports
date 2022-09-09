@@ -1,11 +1,12 @@
 PORTNAME=	Carp-Assert-More
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convenience wrappers around Carp::Assert
+WWW=		https://metacpan.org/release/Carp-Assert-More
 
 LICENSE=	ART20
 

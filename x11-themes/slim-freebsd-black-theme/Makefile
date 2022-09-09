@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme/g
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple FreeBSD SLiM theme inspired on the FreeBSD SLiM theme
+WWW=		https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme
 
 LICENSE=	CC-BY-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING

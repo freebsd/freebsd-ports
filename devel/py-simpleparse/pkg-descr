@@ -15,5 +15,3 @@ mxTextTools tagging library with the non-recursive rewrite of the core parsing
 loop.  This means that you will need to build the extension module to use
 SimpleParse, but the effect is to provide a uniform parsing platform where all
 of the features of a give SimpleParse version are always available.
-
-WWW: http://simpleparse.sourceforge.net/

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, secure, and extensible implementation of eRuby
+WWW=		http://www.kuwata-lab.com/erubis/
 
 LICENSE=	MIT
 

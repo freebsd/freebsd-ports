@@ -10,5 +10,3 @@ requested glyph, the user configured fallback fonts (if any) are
 considered. If none of the user configured fallback fonts has the
 requested glyph, the FontConfig generated list of fallback fonts are
 checked.
-
-WWW: https://codeberg.org/dnkl/fcft

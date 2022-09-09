@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Brotli extension for PHP
+WWW=		https://github.com/kjdev/php-ext-brotli
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Expose PL_dirty, the flag which marks global destruction
+WWW=		https://metacpan.org/release/Devel-GlobalDestruction
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

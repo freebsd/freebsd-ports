@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for a Mouse role to process command line options
+WWW=		https://metacpan.org/release/MouseX-Getopt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

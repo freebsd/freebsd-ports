@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 multimedia player
+WWW=		https://www.xine-project.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

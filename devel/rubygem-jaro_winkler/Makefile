@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jaro-Winkler distance algorithm implementation
+WWW=		https://github.com/tonytonyjan/jaro_winkler
 
 LICENSE=	MIT
 

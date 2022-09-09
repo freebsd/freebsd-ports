@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Small, expressive Python ORM
+WWW=		https://peewee.readthedocs.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

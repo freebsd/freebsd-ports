@@ -6,11 +6,11 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated LaTeX environment
+WWW=		https://wiki.gnome.org/Apps/LaTeXila
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:lang/vala \
-		itstool:textproc/itstool \
+BUILD_DEPENDS=	itstool:textproc/itstool \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libfribidi.so:converters/fribidi \
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgspell-1.so:textproc/gspell
 
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
-		pkgconfig tar:xz
+		pkgconfig tar:xz vala:build
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo dconf intltool gtksourceview4
 USE_TEX=	latex dvipsk

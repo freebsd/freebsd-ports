@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: meta grid for subdomains spanning parts of host grid
+WWW=		https://www.dune-project.org/
 
 LICENSE=	GPLv2+
 

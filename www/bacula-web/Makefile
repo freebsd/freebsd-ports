@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
+WWW=		https://www.bacula-web.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

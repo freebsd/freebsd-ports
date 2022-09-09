@@ -9,6 +9,7 @@ DISTNAME=	Chameleon-DarkSkyBlue-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chameleon Xcursors theme
+WWW=		http://kde-look.org/content/show.php/Chameleon+Xcursors?content=38459
 
 LICENSE=	GPLv2
 

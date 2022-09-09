@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	7
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
+WWW=		https://www.openbgpd.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/COPYING

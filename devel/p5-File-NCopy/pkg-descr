@@ -12,5 +12,3 @@ same that we are copying to, since by opening the file in write mode it
 gets pooched.  To avoid this use file names instead, if at all possible,
 especially for the to file.  If passed a file handle, it is not closed
 when copy returns, files opened by copy are closed.
-
-WWW: https://metacpan.org/release/File-NCopy

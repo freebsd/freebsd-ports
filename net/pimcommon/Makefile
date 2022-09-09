@@ -9,7 +9,7 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz xorg
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons dbusaddons emoticons i18n init iconthemes itemmodels itemviews \
 		jobwidgets kcmutils kio newstuff service solid sonnet textwidgets \
@@ -21,6 +21,7 @@ USE_KDE+=	akonadi akonadicontacts akonadisearch contacts grantleetheme imap ldap
 USE_QT=		concurrent core dbus designer gui network printsupport script testlib \
 		uiplugin uitools webkit widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

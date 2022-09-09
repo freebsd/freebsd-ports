@@ -6,6 +6,7 @@ CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Higher-order logic programming language Lambda Prolog
+WWW=		http://teyjus.cs.umn.edu/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

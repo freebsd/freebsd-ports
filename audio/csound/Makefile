@@ -5,6 +5,7 @@ CATEGORIES=	audio lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sound synthesizer
+WWW=		https://csound.com/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

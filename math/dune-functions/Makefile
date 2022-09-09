@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: Abstraction layer for global finite element functions
+WWW=		https://www.dune-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

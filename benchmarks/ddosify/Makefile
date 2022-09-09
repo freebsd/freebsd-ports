@@ -1,11 +1,12 @@
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	2
+DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	High-performance load testing tool
+WWW=		https://github.com/ddosify/ddosify
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

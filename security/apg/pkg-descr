@@ -7,5 +7,3 @@ distributions are abondoning the tool, I was looking for an alternative.
 Since FIPS-181 (pronouncable passwords) has been withdrawn in 2015, I didn't
 see any use in replicating that feature. Therfore apg.go does not support
 pronouncable passwords.
-
-WWW: https://github.com/wneessen/apg-go

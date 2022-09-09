@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	XMPP gateway to IRC
+WWW=		https://biboumi.louiz.org/
 
 LICENSE=	ZLIB
 

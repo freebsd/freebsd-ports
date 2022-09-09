@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/apps/graphics/hacks/svgalib
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SVGAlib demo which displays trippy mathematical images in cycling colors
+WWW=		http://www.noah.org/acidwarp/index.html
 
 LIB_DEPENDS=	libvga.so:graphics/svgalib
 

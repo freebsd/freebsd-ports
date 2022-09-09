@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for centralized input validation for Dancer
+WWW=		https://metacpan.org/release/AWNCORP/Dancer-Plugin-ValidationClass-0.120490
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

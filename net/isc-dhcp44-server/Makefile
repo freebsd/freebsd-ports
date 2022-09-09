@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT?=	ISC Dynamic Host Configuration Protocol server
+WWW=		https://www.isc.org/dhcp/
 
 LICENSE=	MPL20
 

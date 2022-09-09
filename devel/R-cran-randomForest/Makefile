@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Classification based on a forest of trees using random inputs
+WWW=		https://cran.r-project.org/web/packages/randomForest/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

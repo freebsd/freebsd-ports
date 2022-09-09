@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple query interface for tabular data
+WWW=		https://github.com/shawnbrown/squint
 
 LICENSE=	APACHE20
 

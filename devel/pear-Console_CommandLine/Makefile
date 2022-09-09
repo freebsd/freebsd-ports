@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Full featured command line options and arguments parser
+WWW=		https://pear.php.net/package/Console_CommandLine
 
 LICENSE=	MIT
 

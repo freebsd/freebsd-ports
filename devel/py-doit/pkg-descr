@@ -7,5 +7,3 @@ extra meta-data. Actions:
   * can be external programs (executed as shell commands) or python
     functions.
   * a single task may define more than one action.
-
-WWW: https://pydoit.org/

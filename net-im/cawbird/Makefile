@@ -5,17 +5,17 @@ CATEGORIES=	net-im
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Fork of Corebird GTK Twitter client
+WWW=		https://github.com/IBBoard/cawbird
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		liboauth.so:net/liboauth \
 		librest-0.7.so:devel/librest \
 		libsoup-gnome-2.4.so:devel/libsoup
 
-USES=		gettext gnome meson pkgconfig sqlite:3
+USES=		gettext gnome meson pkgconfig sqlite:3 vala:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	IBBoard

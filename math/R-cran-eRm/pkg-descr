@@ -6,5 +6,3 @@ Andersen's LR-test, item-specific Wald test, Martin-Loef-Test, nonparametric
 Monte-Carlo Tests, itemfit and personfit statistics including infit and outfit
 measures, ICC and other plots, automated stepwise item elimination, simulation
 module for various binary data matrices.
-
-WWW: https://cran.r-project.org/package=eRm

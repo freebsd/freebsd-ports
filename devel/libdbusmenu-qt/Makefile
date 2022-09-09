@@ -1,6 +1,6 @@
 PORTNAME=	libdbusmenu-qt
 PORTVERSION=	${MAJOR_VER}.${SNAPSHOT_VER:S/.//g}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel
 MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/libd/${PORTNAME}/ \
 		LOCAL/tcberner/${PORTNAME}/${PORTVERSION}
@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${MAJOR_VER}+${SNAPSHOT_VER}.orig
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 implementation of the DBusMenu protocol
+WWW=		https://launchpad.net/libdbusmenu-qt
 
 LICENSE=	LGPL20
 

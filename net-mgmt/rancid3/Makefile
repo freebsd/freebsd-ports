@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Really Awesome New Cisco confIg Differ
+WWW=		https://www.shrubbery.net/rancid/
 
 LICENSE=	BSD3CLAUSE
 

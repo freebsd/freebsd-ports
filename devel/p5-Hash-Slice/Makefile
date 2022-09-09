@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Make a hash from a deep slice of another hash
+WWW=		https://metacpan.org/release/Hash-Slice
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \

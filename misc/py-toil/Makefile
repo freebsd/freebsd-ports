@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pipeline management software for clusters
+WWW=		https://github.com/DataBiosphere/toil
 
 LICENSE=	APACHE20
 

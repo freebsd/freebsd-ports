@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	GTK+-based quake-like terminal emulator
+WWW=		https://github.com/stjerm/stjerm
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

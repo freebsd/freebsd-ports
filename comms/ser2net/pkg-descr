@@ -4,5 +4,3 @@ ports.  See the man page for information about using the program.
 Note that ser2net supports RFC 2217 (remote control of serial port
 parameters), but you must have a compliant client.  The only one I
 know if is kermit (http://www.columbia.edu/kermit).
-
-WWW: http://www.sourceforge.net/projects/ser2net/

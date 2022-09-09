@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extremely fast configuration file parser
+WWW=		https://metacpan.org/release/Config-Fast
 
 USES=		perl5
 USE_PERL5=	configure

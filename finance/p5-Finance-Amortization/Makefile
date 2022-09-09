@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple amortization schedules
+WWW=		https://metacpan.org/release/Finance-Amortization
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,5 +6,3 @@ developed without access to Apple's QD3D implementation.
 QD3D supports both retained and immediate mode rendering, an extensible file
 format, plug-in renderers, a wide range of high level geometries, hierarchical
 models, and a consistent and object-orientated API.
-
-WWW: http://quesa.sourceforge.net/

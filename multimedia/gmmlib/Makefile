@@ -1,6 +1,6 @@
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	22.1.7
+DISTVERSION=	22.1.8
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -16,6 +16,7 @@ PATCHFILES+=	4ae2fd0de966.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
+WWW=		https://01.org/intel-media-for-linux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

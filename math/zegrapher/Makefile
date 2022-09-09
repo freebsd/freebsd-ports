@@ -6,6 +6,7 @@ CATEGORIES=	math graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software for plotting mathematical objects
+WWW=		https://zegrapher.com/en/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH/gta
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Portable library that implements the GTA file format
+WWW=		https://gta.nongnu.org/libgta.html
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

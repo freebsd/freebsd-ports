@@ -8,6 +8,7 @@ DISTNAME=	CursesApplication-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Curses application development framework
+WWW=		https://metacpan.org/release/CursesApplication
 
 LICENSE=	GPLv2
 

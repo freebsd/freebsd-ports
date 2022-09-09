@@ -16,5 +16,3 @@ The implementation mainly conforms to the following standards:
 Note that the current implementation does not support temporary
 IPv6 address allocation by DHCPv6, and there is no plan to
 implement that feature at the moment.
-
-WWW: http://wide-dhcpv6.sourceforge.net/

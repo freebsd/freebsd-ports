@@ -9,5 +9,3 @@ network-management scripts easier. Other key features are:
 - Keeping XML out of the way unless really needed.
 - Extensible. New transport mappings and capabilities/operations
   can be easily added.
-
-WWW: https://github.com/ncclient/ncclient

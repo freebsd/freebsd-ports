@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	WebP image loader plugin for GdkPixbuf2
+WWW=		https://github.com/aruiz/webp-pixbuf-loader
 
 LICENSE=	LGPL20+
 

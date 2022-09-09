@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Classic Tomb Raider open-source engine
+WWW=		https://github.com/XProger/OpenLara
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

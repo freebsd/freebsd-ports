@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Updates the serial number in one or more zonefiles
+WWW=		https://www.netswarm.net/
 
 USES=		shebangfix perl5
 USE_PERL5=	run

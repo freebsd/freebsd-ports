@@ -1,4 +1,2 @@
 Make available a magic caller() which can ignore namespaces that you tell it
 about.
-
-WWW: https://metacpan.org/release/Devel-Caller-IgnoreNamespaces

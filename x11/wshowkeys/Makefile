@@ -8,6 +8,7 @@ PATCHFILES+=	35b6f15bd088.patch:-p1 # https://old.reddit.com/r/swaywm/comments/o
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display keystrokes for screencasts on wlroots compositors
+WWW=		https://git.sr.ht/~sircmpwn/wshowkeys
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

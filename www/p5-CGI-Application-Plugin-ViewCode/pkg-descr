@@ -1,4 +1,2 @@
 CGI::Application::Plugin::ViewCode - View the source of the running
 application.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-ViewCode

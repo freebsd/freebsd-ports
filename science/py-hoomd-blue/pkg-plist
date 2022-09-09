@@ -1,10 +1,6 @@
 lib/cmake/hoomd/FindCUDALibs.cmake
-lib/cmake/hoomd/FindHIP.cmake
-lib/cmake/hoomd/FindHIP/run_hipcc.cmake
-lib/cmake/hoomd/FindHIP/run_make2cmake.cmake
 lib/cmake/hoomd/FindTBB.cmake
 lib/cmake/hoomd/HOOMDHIPSetup.cmake
-lib/cmake/hoomd/hipcc.cmake
 lib/cmake/hoomd/hoomd-config-version.cmake
 lib/cmake/hoomd/hoomd-config.cmake
 lib/cmake/hoomd/hoomd-macros.cmake
@@ -90,6 +86,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/HOOMDVersion.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/AABB.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/AABBTree.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Action.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Analyzer.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ArrayView.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Autotuner.h
@@ -135,11 +132,11 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/LoadBalancerGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/LoadBalancerGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MPIConfiguration.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ManagedArray.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MemoryTraceback.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshDefinition.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshGroupData.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshGroupData.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ManagedArray.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MemoryTraceback.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Messenger.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ParticleData.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ParticleData.h
@@ -400,7 +397,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/dfft_cuda.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/dfft_cuda.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/dfft_host.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/dfft_lib_config.h
+%%NO_NOMPI%%%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/dfft_lib_config.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/dfft_local_fft_config.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/dfftlib/src/mkl_single_interface.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/gsd.h
@@ -811,6 +808,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/external/field.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/external/wall.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/force.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/half_step_hook.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/improper.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/long_range/__init__.py
@@ -847,8 +845,10 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_filter_md.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_flags.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_gsd.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_half_step_hook.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_improper.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_integrate.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_kernel_parameters.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_lj_equation_of_state.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_manifolds.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_meshbond.py
@@ -856,6 +856,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_methods.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_minimize_fire.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_nlist.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_nlist_tuner.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_potential.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_pppm_coulomb.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_reverse_perturbation_flow.py
@@ -869,6 +870,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_wall_potential.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_zero_momentum.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/special_pair.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/tune/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/tune/nlist_buffer.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/mesh.py
 %%PYTHON_SITELIBDIR%%/hoomd/metal/__init__.py
@@ -915,6 +918,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_syncedlist.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_table.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_trigger.py
+%%PYTHON_SITELIBDIR%%/hoomd/pytest/test_tune_solve.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_type_parameter_dict.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_typeparam.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_variant.py
@@ -927,6 +931,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/tune/attr_tuner.py
 %%PYTHON_SITELIBDIR%%/hoomd/tune/balance.py
 %%PYTHON_SITELIBDIR%%/hoomd/tune/custom_tuner.py
+%%PYTHON_SITELIBDIR%%/hoomd/tune/solve.py
 %%PYTHON_SITELIBDIR%%/hoomd/tune/sorter.py
 %%PYTHON_SITELIBDIR%%/hoomd/update/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/update/box_resize.py

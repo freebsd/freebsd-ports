@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Open Source Spotify client library
+WWW=		https://github.com/librespot-org/librespot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

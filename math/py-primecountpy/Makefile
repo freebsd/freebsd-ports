@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Primecount Cython interface
+WWW=		https://pypi.org/project/primecountpy/
 
 LICENSE=	GPLv3
 

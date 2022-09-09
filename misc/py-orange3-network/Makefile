@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Network analysis add-on for Orange data mining suite
+WWW=		https://github.com/biolab/orange3-network
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

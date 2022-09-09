@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	hrr_rb_ssh extension that supports ED25519
+WWW=		https://github.com/hirura/hrr_rb_ssh-ed25519
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

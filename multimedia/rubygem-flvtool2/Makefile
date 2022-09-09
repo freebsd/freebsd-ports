@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Flash video (FLV) manipulation tool
+WWW=		https://github.com/unnu/flvtool2
 
 LICENSE=	BSD3CLAUSE
 

@@ -9,6 +9,7 @@ GH_PROJECT=	yaws
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Web server for dynamic content written in Erlang
+WWW=		http://yaws.hyber.org/
 
 LICENSE=	BSD3CLAUSE
 

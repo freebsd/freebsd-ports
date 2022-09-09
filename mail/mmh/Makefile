@@ -5,6 +5,7 @@ MASTER_SITES=	http://marmaro.de/prog/mmh/files/
 
 MAINTAINER=	satanist+freebsd@bureaucracy.de
 COMMENT=	CLI mail user agent, fork from nmh
+WWW=		http://marmaro.de/prog/mmh/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

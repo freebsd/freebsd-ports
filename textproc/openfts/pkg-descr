@@ -3,5 +3,3 @@ PostgreSQL-based search engine that provides online indexing of data
 and relevance ranking for database searching.
 Close integration with database allows use of metadata to restrict
 search results.
-
-WWW: http://openfts.sourceforge.net/

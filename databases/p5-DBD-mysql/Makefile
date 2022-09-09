@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MySQL driver for the Perl5 Database Interface (DBI)
+WWW=		https://metacpan.org/release/DBD-mysql
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

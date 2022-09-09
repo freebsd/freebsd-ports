@@ -4,6 +4,7 @@ CATEGORIES=	net security pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR wrapper classes for the RADIUS PECL
+WWW=		https://pear.php.net/package/Auth_RADIUS
 
 LICENSE=	BSD3CLAUSE
 

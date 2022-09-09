@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Duo two-factor authentication for OpenVPN
+WWW=		https://github.com/duosecurity/duo_openvpn
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Byte-sized, Xlib-based window manager
+WWW=		https://berrywm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

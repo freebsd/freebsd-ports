@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	User-friendlier way to use Harfbuzz in Python
+WWW=		https://github.com/simoncozens/vharfbuzz
 
 LICENSE=	MIT
 

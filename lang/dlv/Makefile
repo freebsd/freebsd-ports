@@ -7,6 +7,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disjunctive Datalog System
+WWW=		https://www.dlvsystem.com/dlv/
 
 # Converted from RESTRICTED
 LICENSE=	dlv

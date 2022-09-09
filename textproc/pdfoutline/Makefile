@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add outlines to PDF files
+WWW=		https://github.com/eugmes/fntsample
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

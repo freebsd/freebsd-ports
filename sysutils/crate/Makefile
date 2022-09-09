@@ -5,6 +5,7 @@ CATEGORIES=	sysutils emulators
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Containerizer for FreeBSD (alpha-software, expect bugs)
+WWW=		https://github.com/yurivict/crate
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

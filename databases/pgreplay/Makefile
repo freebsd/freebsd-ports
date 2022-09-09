@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Replay SQL statements from a Postgresql Log
+WWW=		https://github.com/laurenz/pgreplay
 
 LICENSE=	PostgreSQL
 

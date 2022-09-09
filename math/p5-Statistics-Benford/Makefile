@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Calculate the deviation from Benford's Law
+WWW=		https://metacpan.org/release/Statistics-Benford
 
 USES=		perl5
 USE_PERL5=	configure

@@ -8,6 +8,7 @@ DISTNAME=	Preview-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
+WWW=		http://home.gna.org/gsimageapps/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

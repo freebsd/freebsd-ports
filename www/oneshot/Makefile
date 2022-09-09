@@ -1,11 +1,12 @@
 PORTNAME=	oneshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	First-come-first-serve single-fire HTTP server
+WWW=		https://github.com/raphaelreyna/oneshot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

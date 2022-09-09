@@ -1,4 +1,2 @@
 With this Perl module, you can specify subroutine signatures and have
 variables automatically defined within the subroutine.
-
-WWW: https://metacpan.org/release/signatures

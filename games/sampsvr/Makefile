@@ -7,6 +7,7 @@ DISTNAME=	samp${PORTVERSION:S,.,,}svr
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
+WWW=		https://www.sa-mp.com/
 
 USES=		dos2unix linux
 NO_BUILD=	yes

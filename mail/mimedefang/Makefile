@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.mimedefang.org/static/ \
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Milter based anti-spam and anti-virus filtering program
+WWW=		https://www.mimedefang.org/
 
 LICENSE=	GPLv2
 

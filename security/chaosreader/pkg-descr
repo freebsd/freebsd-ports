@@ -8,5 +8,3 @@ sessions extracted by chaosreader by estimating what commands
 may have been typed.
 
 Both scripts are installed in ${PREFIX}/bin
-
-WWW: https://sourceforge.net/projects/chaosreader/

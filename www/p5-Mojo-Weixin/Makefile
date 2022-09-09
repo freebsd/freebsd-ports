@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Weixin Client Framework base on Mojolicious
+WWW=		https://metacpan.org/release/Mojo-Weixin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

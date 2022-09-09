@@ -1,5 +1,6 @@
 bin/labplot2
 man/ca/man1/labplot2.1.gz
+man/de/man1/labplot2.1.gz
 man/es/man1/labplot2.1.gz
 man/it/man1/labplot2.1.gz
 man/man1/labplot2.1.gz
@@ -133,6 +134,26 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/color-schemes/WontonSoup.colors
 %%DATADIR%%/color-schemes/Zion.colors
 %%DATADIR%%/color-schemes/ZionReversed.colors
+%%DATADIR%%/colormaps/ColorBrewer (Diverging).json
+%%DATADIR%%/colormaps/ColorBrewer (Qualitative).json
+%%DATADIR%%/colormaps/ColorBrewer (Sequential).json
+%%DATADIR%%/colormaps/ColorCET (Colour Blind).json
+%%DATADIR%%/colormaps/ColorCET (Cyclic).json
+%%DATADIR%%/colormaps/ColorCET (Diverging).json
+%%DATADIR%%/colormaps/ColorCET (Isoluminant).json
+%%DATADIR%%/colormaps/ColorCET (Linear).json
+%%DATADIR%%/colormaps/ColorCET (Rainbow).json
+%%DATADIR%%/colormaps/ColormapCollections.json
+%%DATADIR%%/colormaps/Diverging Color Maps for Scientific Visualization.json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Cyclic).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Diverging).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Multi-sequential).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Sequential).json
+%%DATADIR%%/colormaps/cmocean (Circular).json
+%%DATADIR%%/colormaps/cmocean (Diverging).json
+%%DATADIR%%/colormaps/cmocean (Multi-sequential).json
+%%DATADIR%%/colormaps/cmocean (Sequential).json
+%%DATADIR%%/colormaps/viridis (Sequential).json
 %%DATADIR%%/datasets/DASL.json
 %%DATADIR%%/datasets/DatasetCategories.json
 %%DATADIR%%/datasets/DatasetCollections.json
@@ -141,107 +162,113 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/datasets/README.md
 %%DATADIR%%/datasets/Rdatasets.json
 %%DATADIR%%/datasets/StatLib.json
-%%DATADIR%%/example_projects/Big-city-pop.lml
-%%DATADIR%%/example_projects/Rainfall.lml
-%%DATADIR%%/example_projects/acc-deaths.lml
-%%DATADIR%%/example_projects/alcohol-cons.lml
-%%DATADIR%%/example_projects/cat-weight.lml
-%%DATADIR%%/example_projects/cooling-water.lml
-%%DATADIR%%/example_projects/example_projects.json
-%%DATADIR%%/example_projects/fit (Anscombe's quartet).lml
-%%DATADIR%%/example_projects/lake-level.lml
-%%DATADIR%%/example_projects/log_scales.lml
-%%DATADIR%%/example_projects/magnitude_plot.lml
-%%DATADIR%%/example_projects/mathematical_functions.lml
-%%DATADIR%%/example_projects/weight-height.lml
-%%DATADIR%%/example_projects/weight-speed.lml
+%%DATADIR%%/examples/Analysis/Fit/ENSO.lml
+%%DATADIR%%/examples/Analysis/Fourier Filter/SOS Morse Signal.lml
+%%DATADIR%%/examples/Analysis/Hilbert Transformation/Time response of a super regenerative receiver.lml
+%%DATADIR%%/examples/Analysis/Smooth/Data = Smooth + Rough.lml
+%%DATADIR%%/examples/Computing/Maxima/Duffing Oscillator in Maxima.lml
+%%DATADIR%%/examples/Computing/Maxima/Maxima Tutorial for Beginners.lml
+%%DATADIR%%/examples/ExampleCollections.json
+%%DATADIR%%/examples/General/Anatomy of a Box Plot.lml
+%%DATADIR%%/examples/General/Basic Plots.lml
+%%DATADIR%%/examples/General/Helium Rydberg Spectrum.lml
+%%DATADIR%%/examples/General/Hertzsprung-Russel Diagram.lml
+%%DATADIR%%/examples/General/Logarithmic Scales.lml
+%%DATADIR%%/examples/General/Mathematical Functions.lml
+%%DATADIR%%/examples/General/Multi-Ranges.lml
+%%DATADIR%%/examples/General/Multicopter.lml
+%%DATADIR%%/examples/General/SLOC History.lml
+%%DATADIR%%/examples/General/Space Debris.lml
+%%DATADIR%%/examples/General/Tufte's Minimal Ink Design.lml
+%%DATADIR%%/examples/Statistics/Same Data, Different Boxplots.lml
+%%DATADIR%%/examples/Statistics/SameStats.lml
 %%DATADIR%%/labplot2.ico
 %%DATADIR%%/latex/preview.sty
 %%DATADIR%%/pics/colorchooser/colorchooser_hue.xpm
 %%DATADIR%%/pics/colorchooser/colorchooser_saturation.xpm
 %%DATADIR%%/pics/colorchooser/colorchooser_value.xpm
-%%DATADIR%%/pics/fit_models/alg_sigmoid.png
-%%DATADIR%%/pics/fit_models/atan.png
-%%DATADIR%%/pics/fit_models/cauchy_lorentz1.png
-%%DATADIR%%/pics/fit_models/cauchy_lorentz2.png
-%%DATADIR%%/pics/fit_models/cauchy_lorentz3.png
-%%DATADIR%%/pics/fit_models/cauchy_lorentz4.png
-%%DATADIR%%/pics/fit_models/erf.png
-%%DATADIR%%/pics/fit_models/exponential1.png
-%%DATADIR%%/pics/fit_models/exponential2.png
-%%DATADIR%%/pics/fit_models/exponential3.png
-%%DATADIR%%/pics/fit_models/exponential4.png
-%%DATADIR%%/pics/fit_models/fourier1.png
-%%DATADIR%%/pics/fit_models/fourier2.png
-%%DATADIR%%/pics/fit_models/fourier3.png
-%%DATADIR%%/pics/fit_models/fourier4.png
-%%DATADIR%%/pics/fit_models/gaussian1.png
-%%DATADIR%%/pics/fit_models/gaussian2.png
-%%DATADIR%%/pics/fit_models/gaussian3.png
-%%DATADIR%%/pics/fit_models/gaussian4.png
-%%DATADIR%%/pics/fit_models/gd.png
-%%DATADIR%%/pics/fit_models/gompertz.png
-%%DATADIR%%/pics/fit_models/hill.png
-%%DATADIR%%/pics/fit_models/inv_exponential1.png
-%%DATADIR%%/pics/fit_models/logistic1.png
-%%DATADIR%%/pics/fit_models/logistic2.png
-%%DATADIR%%/pics/fit_models/logistic3.png
-%%DATADIR%%/pics/fit_models/logistic4.png
-%%DATADIR%%/pics/fit_models/logistic_function.png
-%%DATADIR%%/pics/fit_models/polynom1.png
-%%DATADIR%%/pics/fit_models/polynom2.png
-%%DATADIR%%/pics/fit_models/polynom3.png
-%%DATADIR%%/pics/fit_models/polynom4.png
-%%DATADIR%%/pics/fit_models/power1.png
-%%DATADIR%%/pics/fit_models/power2.png
-%%DATADIR%%/pics/fit_models/pseudovoigt11.png
-%%DATADIR%%/pics/fit_models/pseudovoigt12.png
-%%DATADIR%%/pics/fit_models/pseudovoigt13.png
-%%DATADIR%%/pics/fit_models/pseudovoigt14.png
-%%DATADIR%%/pics/fit_models/sech1.png
-%%DATADIR%%/pics/fit_models/sech2.png
-%%DATADIR%%/pics/fit_models/sech3.png
-%%DATADIR%%/pics/fit_models/sech4.png
-%%DATADIR%%/pics/fit_models/tanh.png
-%%DATADIR%%/pics/fit_models/voigt1.png
-%%DATADIR%%/pics/fit_models/voigt2.png
-%%DATADIR%%/pics/fit_models/voigt3.png
-%%DATADIR%%/pics/fit_models/voigt4.png
-%%DATADIR%%/pics/gsl_distributions/bernoulli.png
-%%DATADIR%%/pics/gsl_distributions/beta.png
-%%DATADIR%%/pics/gsl_distributions/binomial.png
-%%DATADIR%%/pics/gsl_distributions/cauchy_lorentz.png
-%%DATADIR%%/pics/gsl_distributions/chi_squared.png
-%%DATADIR%%/pics/gsl_distributions/exponential.png
-%%DATADIR%%/pics/gsl_distributions/exponential_power.png
-%%DATADIR%%/pics/gsl_distributions/fdist.png
-%%DATADIR%%/pics/gsl_distributions/flat.png
-%%DATADIR%%/pics/gsl_distributions/frechet.png
-%%DATADIR%%/pics/gsl_distributions/gamma.png
-%%DATADIR%%/pics/gsl_distributions/gaussian.png
-%%DATADIR%%/pics/gsl_distributions/gaussian_tail.png
-%%DATADIR%%/pics/gsl_distributions/geometric.png
-%%DATADIR%%/pics/gsl_distributions/gumbel1.png
-%%DATADIR%%/pics/gsl_distributions/gumbel2.png
-%%DATADIR%%/pics/gsl_distributions/hypergeometric.png
-%%DATADIR%%/pics/gsl_distributions/landau.png
-%%DATADIR%%/pics/gsl_distributions/laplace.png
-%%DATADIR%%/pics/gsl_distributions/levy.png
-%%DATADIR%%/pics/gsl_distributions/levy_alpha_stable.png
-%%DATADIR%%/pics/gsl_distributions/levy_skew_alpha_stable.png
-%%DATADIR%%/pics/gsl_distributions/logarithmic.png
-%%DATADIR%%/pics/gsl_distributions/logistic.png
-%%DATADIR%%/pics/gsl_distributions/lognormal.png
-%%DATADIR%%/pics/gsl_distributions/maxwell_boltzmann.png
-%%DATADIR%%/pics/gsl_distributions/negative_binomial.png
-%%DATADIR%%/pics/gsl_distributions/pareto.png
-%%DATADIR%%/pics/gsl_distributions/pascal.png
-%%DATADIR%%/pics/gsl_distributions/poisson.png
-%%DATADIR%%/pics/gsl_distributions/rayleigh.png
-%%DATADIR%%/pics/gsl_distributions/rayleigh_tail.png
-%%DATADIR%%/pics/gsl_distributions/sech.png
-%%DATADIR%%/pics/gsl_distributions/students_t.png
-%%DATADIR%%/pics/gsl_distributions/weibull.png
+%%DATADIR%%/pics/fit_models/alg_sigmoid.pdf
+%%DATADIR%%/pics/fit_models/atan.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz1.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz2.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz3.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz4.pdf
+%%DATADIR%%/pics/fit_models/erf.pdf
+%%DATADIR%%/pics/fit_models/exponential1.pdf
+%%DATADIR%%/pics/fit_models/exponential2.pdf
+%%DATADIR%%/pics/fit_models/exponential3.pdf
+%%DATADIR%%/pics/fit_models/exponential4.pdf
+%%DATADIR%%/pics/fit_models/fourier1.pdf
+%%DATADIR%%/pics/fit_models/fourier2.pdf
+%%DATADIR%%/pics/fit_models/fourier3.pdf
+%%DATADIR%%/pics/fit_models/fourier4.pdf
+%%DATADIR%%/pics/fit_models/gaussian1.pdf
+%%DATADIR%%/pics/fit_models/gaussian2.pdf
+%%DATADIR%%/pics/fit_models/gaussian3.pdf
+%%DATADIR%%/pics/fit_models/gaussian4.pdf
+%%DATADIR%%/pics/fit_models/gd.pdf
+%%DATADIR%%/pics/fit_models/gompertz.pdf
+%%DATADIR%%/pics/fit_models/hill.pdf
+%%DATADIR%%/pics/fit_models/inv_exponential1.pdf
+%%DATADIR%%/pics/fit_models/logistic1.pdf
+%%DATADIR%%/pics/fit_models/logistic2.pdf
+%%DATADIR%%/pics/fit_models/logistic3.pdf
+%%DATADIR%%/pics/fit_models/logistic4.pdf
+%%DATADIR%%/pics/fit_models/logistic_function.pdf
+%%DATADIR%%/pics/fit_models/polynom1.pdf
+%%DATADIR%%/pics/fit_models/polynom2.pdf
+%%DATADIR%%/pics/fit_models/polynom3.pdf
+%%DATADIR%%/pics/fit_models/polynom4.pdf
+%%DATADIR%%/pics/fit_models/power1.pdf
+%%DATADIR%%/pics/fit_models/power2.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt11.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt12.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt13.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt14.pdf
+%%DATADIR%%/pics/fit_models/sech1.pdf
+%%DATADIR%%/pics/fit_models/sech2.pdf
+%%DATADIR%%/pics/fit_models/sech3.pdf
+%%DATADIR%%/pics/fit_models/sech4.pdf
+%%DATADIR%%/pics/fit_models/tanh.pdf
+%%DATADIR%%/pics/fit_models/voigt1.pdf
+%%DATADIR%%/pics/fit_models/voigt2.pdf
+%%DATADIR%%/pics/fit_models/voigt3.pdf
+%%DATADIR%%/pics/fit_models/voigt4.pdf
+%%DATADIR%%/pics/gsl_distributions/bernoulli.pdf
+%%DATADIR%%/pics/gsl_distributions/beta.pdf
+%%DATADIR%%/pics/gsl_distributions/binomial.pdf
+%%DATADIR%%/pics/gsl_distributions/cauchy_lorentz.pdf
+%%DATADIR%%/pics/gsl_distributions/chi_squared.pdf
+%%DATADIR%%/pics/gsl_distributions/exponential.pdf
+%%DATADIR%%/pics/gsl_distributions/exponential_power.pdf
+%%DATADIR%%/pics/gsl_distributions/fdist.pdf
+%%DATADIR%%/pics/gsl_distributions/flat.pdf
+%%DATADIR%%/pics/gsl_distributions/frechet.pdf
+%%DATADIR%%/pics/gsl_distributions/gamma.pdf
+%%DATADIR%%/pics/gsl_distributions/gaussian.pdf
+%%DATADIR%%/pics/gsl_distributions/gaussian_tail.pdf
+%%DATADIR%%/pics/gsl_distributions/geometric.pdf
+%%DATADIR%%/pics/gsl_distributions/gumbel1.pdf
+%%DATADIR%%/pics/gsl_distributions/gumbel2.pdf
+%%DATADIR%%/pics/gsl_distributions/hypergeometric.pdf
+%%DATADIR%%/pics/gsl_distributions/landau.pdf
+%%DATADIR%%/pics/gsl_distributions/laplace.pdf
+%%DATADIR%%/pics/gsl_distributions/levy.pdf
+%%DATADIR%%/pics/gsl_distributions/levy_alpha_stable.pdf
+%%DATADIR%%/pics/gsl_distributions/levy_skew_alpha_stable.pdf
+%%DATADIR%%/pics/gsl_distributions/logarithmic.pdf
+%%DATADIR%%/pics/gsl_distributions/logistic.pdf
+%%DATADIR%%/pics/gsl_distributions/lognormal.pdf
+%%DATADIR%%/pics/gsl_distributions/maxwell_boltzmann.pdf
+%%DATADIR%%/pics/gsl_distributions/negative_binomial.pdf
+%%DATADIR%%/pics/gsl_distributions/pareto.pdf
+%%DATADIR%%/pics/gsl_distributions/pascal.pdf
+%%DATADIR%%/pics/gsl_distributions/poisson.pdf
+%%DATADIR%%/pics/gsl_distributions/rayleigh.pdf
+%%DATADIR%%/pics/gsl_distributions/rayleigh_tail.pdf
+%%DATADIR%%/pics/gsl_distributions/sech.pdf
+%%DATADIR%%/pics/gsl_distributions/students_t.pdf
+%%DATADIR%%/pics/gsl_distributions/weibull.pdf
 %%DATADIR%%/splash.png
 %%DATADIR%%/themes/BlackOnLightYellow
 %%DATADIR%%/themes/BlackOnWhite
@@ -251,12 +278,16 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/Dark
 %%DATADIR%%/themes/DarkPastels
 %%DATADIR%%/themes/Default
+%%DATADIR%%/themes/GgplotDark
+%%DATADIR%%/themes/GgplotGrey
 %%DATADIR%%/themes/GreenOnBlack
 %%DATADIR%%/themes/GreyOnBlack
 %%DATADIR%%/themes/GreySlate
+%%DATADIR%%/themes/Monokai
 %%DATADIR%%/themes/RedOnBlack
 %%DATADIR%%/themes/Solarized
 %%DATADIR%%/themes/SolarizedLight
+%%DATADIR%%/themes/Tufte
 %%DATADIR%%/themes/screenshots/BlackOnLightYellow.png
 %%DATADIR%%/themes/screenshots/BlackOnWhite.png
 %%DATADIR%%/themes/screenshots/BlueOnBlack.png
@@ -265,13 +296,18 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/screenshots/Dark.png
 %%DATADIR%%/themes/screenshots/DarkPastels.png
 %%DATADIR%%/themes/screenshots/Default.png
+%%DATADIR%%/themes/screenshots/GgplotDark.png
+%%DATADIR%%/themes/screenshots/GgplotGrey.png
 %%DATADIR%%/themes/screenshots/GreenOnBlack.png
 %%DATADIR%%/themes/screenshots/GreyOnBlack.png
 %%DATADIR%%/themes/screenshots/GreySlate.png
+%%DATADIR%%/themes/screenshots/Monokai.png
 %%DATADIR%%/themes/screenshots/RedOnBlack.png
 %%DATADIR%%/themes/screenshots/Solarized.png
 %%DATADIR%%/themes/screenshots/SolarizedLight.png
+%%DATADIR%%/themes/screenshots/Tufte.png
 %%DATADIR%%/themes/screenshots/Unavailable.png
+share/locale/ar/LC_MESSAGES/labplot2.mo
 share/locale/bs/LC_MESSAGES/labplot2.mo
 share/locale/ca/LC_MESSAGES/labplot2.mo
 share/locale/ca@valencia/LC_MESSAGES/labplot2.mo
@@ -294,6 +330,7 @@ share/locale/pt/LC_MESSAGES/labplot2.mo
 share/locale/pt_BR/LC_MESSAGES/labplot2.mo
 share/locale/ru/LC_MESSAGES/labplot2.mo
 share/locale/sk/LC_MESSAGES/labplot2.mo
+share/locale/sl/LC_MESSAGES/labplot2.mo
 share/locale/sv/LC_MESSAGES/labplot2.mo
 share/locale/tr/LC_MESSAGES/labplot2.mo
 share/locale/uk/LC_MESSAGES/labplot2.mo

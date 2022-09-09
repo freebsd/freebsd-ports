@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mail@derzinn.de
 COMMENT=	Minimal database Model management for MongoDB
+WWW=		https://github.com/slacy/minimongo
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=1.9:databases/pymongo@${PY_FLAVOR}
 

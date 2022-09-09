@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Create SQLite3 database from ODS spreadsheet
+WWW=		https://gitlab.com/zetok/ods2sql
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

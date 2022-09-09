@@ -8,6 +8,3 @@ any supported browser. It works by using Selenium Core, a pure-HTML+JS
 library that performs automated tasks in JavaScript; the Selenium
 Server communicates directly with the browser using AJAX
 (XmlHttpRequest).
-
-
-WWW: https://pear.php.net/package/Testing_Selenium

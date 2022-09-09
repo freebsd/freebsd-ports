@@ -8,6 +8,7 @@ DISTNAME=	Autodia-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic Dia XML - from Source Code and Data
+WWW=		https://metacpan.org/release/Autodia
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

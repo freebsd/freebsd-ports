@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reverse-proxy load balancer and webserver
+WWW=		https://metacpan.org/release/Perlbal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

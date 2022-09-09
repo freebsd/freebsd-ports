@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	C/C++/ObjC language server
+WWW=		https://github.com/MaskRay/ccls
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

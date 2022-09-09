@@ -3,5 +3,3 @@ It is not anywhere near as feature complete as diff(1), but it is better
 integrated with Perl and available on all platforms.  It is often faster
 than shelling out to a system's diff(1) executable for small files, and
 generally slower on larger files.
-
-WWW: https://metacpan.org/release/Text-Diff

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Method-ordered multimethod dispatch
+WWW=		https://metacpan.org/release/Class-Multimethods-Pure
 
 USES=		perl5
 USE_PERL5=	configure

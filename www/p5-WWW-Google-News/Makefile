@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Access to Google's News Service (Not Usenet)
+WWW=		https://metacpan.org/release/WWW-Google-News
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI>=0:net/p5-URI \

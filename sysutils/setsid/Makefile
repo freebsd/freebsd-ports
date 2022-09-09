@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run a command in a new session
+WWW=		https://github.com/t6/setsid
 
 LICENSE=	PD
 

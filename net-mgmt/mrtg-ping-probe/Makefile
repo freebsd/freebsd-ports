@@ -6,6 +6,7 @@ MASTER_SITES=	https://opsec.eu/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Round Trip Time and Packet Loss Probe for MRTG
+WWW=		http://pwo.de/projects/mrtg/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

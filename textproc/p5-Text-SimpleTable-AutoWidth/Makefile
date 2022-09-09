@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for ASCII tables auto-width selection
+WWW=		https://metacpan.org/release/Text-SimpleTable-AutoWidth
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GetoptLong for Ruby
+WWW=		https://github.com/ruby/getoptlong
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

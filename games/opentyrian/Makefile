@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style vertical scrolling shooter
+WWW=		https://github.com/opentyrian/opentyrian
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

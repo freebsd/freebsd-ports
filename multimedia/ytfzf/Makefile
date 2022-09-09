@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Find and watch YouTube videos from the terminal
+WWW=		https://github.com/pystardust/ytfzf
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

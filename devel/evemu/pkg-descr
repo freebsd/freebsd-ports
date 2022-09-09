@@ -4,5 +4,3 @@ and replay.
 Evemu provides a programmatic API to access the kernel input event devices.
 The original and intended purpose is for supporting multi-touch input,
 especially with regard to the Ubuntu touch and gesture stack.
-
-WWW: https://www.freedesktop.org/wiki/Evemu/

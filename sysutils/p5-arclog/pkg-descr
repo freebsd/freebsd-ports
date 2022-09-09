@@ -8,5 +8,3 @@ and gzip and bzip2 compression methods. Several software projects log (or
 can log) in a format compatible with the Apache access log, like CUPS,
 ProFTPD, Pure-FTPd... etc., and arclog can archive their Apache-like log
 files, too.
-
-WWW: https://metacpan.org/release/IMACAT/arclog-3.04

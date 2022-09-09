@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Dooble Web Browser
+WWW=		https://textbrowser.github.io/dooble/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

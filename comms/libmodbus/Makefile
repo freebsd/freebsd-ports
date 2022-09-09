@@ -5,6 +5,7 @@ MASTER_SITES=	https://libmodbus.org/releases/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modbus library
+WWW=		https://libmodbus.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

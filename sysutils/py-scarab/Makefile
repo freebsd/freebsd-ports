@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	CLI interface for FreeBSD Bugzilla
+WWW=		https://github.com/gonzoua/scarab
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

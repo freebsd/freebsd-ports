@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	X11 library for Python
+WWW=		https://github.com/python-xlib/python-xlib
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Number of fonts which are useful for TV applications
+WWW=		http://linux.bytesex.org/xawtv/tvfonts.html
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale>=0:x11-fonts/mkfontscale

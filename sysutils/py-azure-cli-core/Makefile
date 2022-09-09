@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Command-Line Tools Core Module
+WWW=		https://pypi.org/project/azure-cli-core/
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extraction of the JSON parsing tools between providers
+WWW=		https://github.com/fog/fog-json
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

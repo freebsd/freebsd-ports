@@ -550,6 +550,7 @@
     SUBDIR += percona57-client
     SUBDIR += percona57-pam-for-mysql
     SUBDIR += percona57-server
+    SUBDIR += pg-gvm
     SUBDIR += pg.el
     SUBDIR += pgFormatter
     SUBDIR += pg_activity
@@ -577,7 +578,6 @@
     SUBDIR += pglogical
     SUBDIR += pgmetrics
     SUBDIR += pgmodeler
-    SUBDIR += pg-gvm
     SUBDIR += pgpool-II-37
     SUBDIR += pgpool-II-40
     SUBDIR += pgpool-II-41
@@ -833,6 +833,7 @@
     SUBDIR += py-sqlalchemy12
     SUBDIR += py-sqlalchemy13
     SUBDIR += py-sqlalchemy14
+    SUBDIR += py-sqlglot
     SUBDIR += py-sqlite-fts4
     SUBDIR += py-sqlite-utils
     SUBDIR += py-sqlite3
@@ -985,7 +986,12 @@
     SUBDIR += rubygem-redis-actionpack-rails60
     SUBDIR += rubygem-redis-actionpack-rails61
     SUBDIR += rubygem-redis-actionpack52-rails61
+    SUBDIR += rubygem-redis-client
+    SUBDIR += rubygem-redis-cluster-client
+    SUBDIR += rubygem-redis-clustering
     SUBDIR += rubygem-redis-namespace
+    SUBDIR += rubygem-redis-namespace18
+    SUBDIR += rubygem-redis4
     SUBDIR += rubygem-redis44
     SUBDIR += rubygem-sdbm
     SUBDIR += rubygem-seed-fu

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Creates Net::Connection objects using lsof
+WWW=		https://metacpan.org/release/Net-Connection-lsof
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

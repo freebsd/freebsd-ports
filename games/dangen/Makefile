@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Shoot'em up game where accurate shooting matters
+WWW=		http://www.interq.or.jp/libra/oohara/dangen/index.html
 
 LICENSE=	GPLv2 ART20
 LICENSE_COMB=	dual

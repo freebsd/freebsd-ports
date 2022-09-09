@@ -12,6 +12,7 @@ EXTRACT_ONLY=	HP3000-source-release-${DISTVERSION:E}.zip
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Emulates classic HP 3000 computers
+WWW=		http://simh.trailing-edge.com/hp/
 
 LICENSE=	SIMHv1
 LICENSE_NAME=	SIMH License

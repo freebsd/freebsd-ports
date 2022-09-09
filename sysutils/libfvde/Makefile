@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libfvde/releases/download/${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools for reading FileVault (FVDE) encrypted volumes
+WWW=		https://github.com/libyal/libfvde
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

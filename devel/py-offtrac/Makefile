@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Trac XMLRPC library
+WWW=		https://fedorahosted.org/offtrac
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

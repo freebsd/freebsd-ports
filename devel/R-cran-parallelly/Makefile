@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Enhancing the 'parallel' Package
+WWW=		https://cran.r-project.org/web/packages/parallelly/
 
 LICENSE=	LGPL21+
 

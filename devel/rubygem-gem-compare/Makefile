@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RubyGems plugin for comparing gem versions
+WWW=		https://github.com/fedora-ruby/gem-compare
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test strings and data structures for differences
+WWW=		https://metacpan.org/release/Test-Differences
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

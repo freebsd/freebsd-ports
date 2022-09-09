@@ -10,5 +10,3 @@ networks, and infer the presence of nonbeaconing networks via data traffic.
 Capture sources that are known to be supported: Atheros, Prism2, WSP100,
 Drone, wtapfile, pcapfile.  Kismet also supports radiotap headers and
 should work with current FreeBSD systems.
-
-WWW: http://www.kismetwireless.net/

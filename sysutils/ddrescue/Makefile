@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Data recovery tool
+WWW=		https://www.gnu.org/software/ddrescue/ddrescue.html
 
 LICENSE=	GPLv2
 

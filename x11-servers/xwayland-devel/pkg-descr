@@ -6,5 +6,3 @@ root window or individual top-level windows as wayland surfaces. The
 server still runs the same 2D driver with the same acceleration code
 as it does when it runs natively. The main difference is that wayland
 handles presentation of the windows instead of KMS.
-
-WWW: https://wayland.freedesktop.org/xserver.html

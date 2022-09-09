@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xrandr clone for wlroots compositors
+WWW=		https://sr.ht/~emersion/wlr-randr/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

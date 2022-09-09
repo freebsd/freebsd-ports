@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.eonet.ne.jp/~showtime/quasi88/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
+WWW=		https://www.eonet.ne.jp/~showtime/quasi88/
 
 USES=		gmake tar:tgz xorg
 USE_XORG=	x11 xext

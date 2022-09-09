@@ -8,6 +8,7 @@ DIST_SUBDIR=	vdr
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - picture-in-picture plugin
+WWW=		https://projects.vdr-developer.org/projects/plg-osdpip
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

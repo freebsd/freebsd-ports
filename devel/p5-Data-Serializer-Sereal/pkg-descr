@@ -1,3 +1,1 @@
 Allows you to use Sereal as the serializer backend in Data::Serializer.
-
-WWW: https://metacpan.org/pod/Data::Serializer::Sereal

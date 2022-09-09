@@ -9,5 +9,3 @@ memory, plain files, memory mapped files, memcached, and DBI.
 CHI is intended as an evolution of DeWitt Clinton's Cache::Cache
 package, adhering to the basic Cache API but adding new features and
 addressing limitations in the Cache::Cache implementation.
-
-WWW: https://metacpan.org/release/CHI

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Filter for parsing XML
+WWW=		https://metacpan.org/release/POE-Filter-XML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

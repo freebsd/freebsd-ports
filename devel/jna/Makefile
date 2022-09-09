@@ -5,6 +5,7 @@ CATEGORIES=	devel java
 
 MAINTAINER=	ports@markdixon.name
 COMMENT=	Java access to native shared libraries
+WWW=		https://github.com/twall/jna
 
 LICENSE=	LGPL21+ APACHE20
 LICENSE_COMB=	dual

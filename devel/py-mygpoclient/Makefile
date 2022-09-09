@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	gpodder.net API client library for Python
+WWW=		https://thp.io/2010/mygpoclient/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -12,5 +12,3 @@ Why do we need MyDumper?
   and slave log positions, etc
 - Manageability - supports PCRE for specifying database and tables inclusions
   and exclusions
-
-WWW: https://github.com/mydumper/mydumper

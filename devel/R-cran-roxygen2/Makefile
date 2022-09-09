@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	In-Line Documentation for R
+WWW=		https://roxygen2.r-lib.org
 
 LICENSE=	MIT
 

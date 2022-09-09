@@ -16,5 +16,3 @@ template meta-programming.
 Useful for conversion of research code into production environments, or
 if C++ has been decided as the language of choice, due to speed and/or
 integration capabilities.
-
-WWW: http://arma.sourceforge.net/

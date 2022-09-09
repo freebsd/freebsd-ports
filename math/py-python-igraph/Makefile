@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High performance graph data structures and algorithms
+WWW=		https://igraph.org/python/
 
 LICENSE=	GPLv2
 

@@ -1,4 +1,2 @@
 This module provides several functions to assist in testing whether a value
 is an object, and if so asking about its class.
-
-WWW: https://metacpan.org/release/Check-ISA

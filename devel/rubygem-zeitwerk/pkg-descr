@@ -21,5 +21,3 @@ so there are no costly file system lookups in $LOAD_PATH. Technically, the
 directories managed by Zeitwerk do not even need to be in $LOAD_PATH.
 Furthermore, Zeitwerk does only one single scan of the project tree, and it
 descends into subdirectories lazily, only if their namespaces are used.
-
-WWW: https://github.com/fxn/zeitwerk

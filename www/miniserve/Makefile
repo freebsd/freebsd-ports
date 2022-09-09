@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Ad-hoc HTTP server for file sharing
+WWW=		https://github.com/svenstaro/miniserve
 
 LICENSE=	APACHE20 BSD3CLAUSE CC0-1.0 ISCL MIT MPL20 UNLICENSE
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Text mode progressbar library for Python
+WWW=		https://pypi.org/project/progressbar2/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

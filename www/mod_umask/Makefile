@@ -7,6 +7,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Apache 2.x module to set umask of created files
+WWW=		http://www.outoforder.cc/projects/httpd/mod_umask/
 
 LICENSE=	APACHE20
 

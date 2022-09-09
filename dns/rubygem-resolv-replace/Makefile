@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replace Socket DNS with Resolv
+WWW=		https://github.com/ruby/resolv-replace
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

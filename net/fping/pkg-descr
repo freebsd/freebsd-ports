@@ -12,5 +12,3 @@ without flooding the network.
 
      Unlike ping, fping is meant to be used in scripts and its
      output is easy to parse.
-
-WWW: http://www.fping.org/

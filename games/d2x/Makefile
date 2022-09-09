@@ -6,6 +6,7 @@ MASTER_SITES=	http://icculus.org/d2x/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix port of Descent 2 Game
+WWW=		https://www.icculus.org/d2x/
 
 GNU_CONFIGURE=	yes
 USES=		gmake sdl

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Git repository summary on your terminal
+WWW=		https://github.com/o2sh/onefetch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

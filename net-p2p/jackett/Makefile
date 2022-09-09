@@ -6,6 +6,7 @@ DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Torznab proxy implementation of the Newznab API
+WWW=		https://github.com/Jackett/Jackett
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

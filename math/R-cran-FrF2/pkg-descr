@@ -6,5 +6,3 @@ with 2-level factors are offered (main effects and interaction plots for
 all factors simultaneously, cube plot for looking at the simultaneous
 effects of three factors, full or half normal plot, alias structure in a
 more readable format than with the built-in function alias).
-
-WWW: https://CRAN.R-project.org/package=FrF2

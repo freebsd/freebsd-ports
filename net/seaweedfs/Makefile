@@ -1,11 +1,13 @@
 PORTNAME=	seaweedfs
 DISTVERSION=	3.20
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Distributed Object Store and Filesystem
+WWW=		https://github.com/chrislusf/seaweedfs/wiki
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,5 +7,3 @@ This package includes the following major components:
  * -llber - a lightweight BER/DER encoding/decoding library
  * LDAP tools - A collection of command line LDAP utilities
  * documentation - man pages for all components
-
-WWW: https://www.OpenLDAP.org/

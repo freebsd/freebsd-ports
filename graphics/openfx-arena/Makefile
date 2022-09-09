@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Extra OpenFX plugins for Natron
+WWW=		https://github.com/NatronGitHub/openfx-arena
 
 LICENSE=	GPLv2
 

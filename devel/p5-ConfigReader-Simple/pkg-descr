@@ -1,5 +1,3 @@
 ConfigReader::Simple reads and parses simple configuration files. It is designed
 to be smaller and simpler than the ConfigReader module and is more suited to
 simple configuration files.
-
-WWW: https://metacpan.org/release/ConfigReader-Simple

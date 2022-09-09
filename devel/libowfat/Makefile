@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.fefe.de/libowfat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose library based on code by D. J. Bernstein
+WWW=		https://www.fefe.de/libowfat/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

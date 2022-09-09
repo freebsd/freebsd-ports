@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Hierarchical database for Python
+WWW=		https://www.pytables.org/
 
 LICENSE=	BSD3CLAUSE
 

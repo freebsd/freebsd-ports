@@ -1,11 +1,12 @@
 PORTNAME=	magia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	GBA emulator written in golang
+WWW=		https://github.com/pokemium/magia
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	CLI for saving and restoring Grafana dashboards via HTTP API
+WWW=		https://github.com/Beam-Connectivity/grafana-dashboard-manager
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

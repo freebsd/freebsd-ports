@@ -1,10 +1,11 @@
 PORTNAME=	fb303
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.08.22.00
+DISTVERSION=	2022.09.05.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Base Thrift service and a common set of functionality
+WWW=		https://github.com/facebook/fb303
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

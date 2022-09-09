@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for the DHL online tracking service
+WWW=		https://metacpan.org/release/SEPP/WWW-DHL-0.03
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Stable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor activity on a CVS Repository
+WWW=		https://sourceforge.net/projects/cvsmonitor/
 
 BUILD_DEPENDS=	p5-Time-Duration>=0:devel/p5-Time-Duration \
 		p5-Class-Autouse>=0:devel/p5-Class-Autouse \

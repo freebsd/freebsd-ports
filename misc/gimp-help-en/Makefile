@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	-html
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT?=	GIMP User Manual in English
+WWW=		https://docs.gimp.org/
 
 LICENSE=	GFDL
 

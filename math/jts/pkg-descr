@@ -8,5 +8,3 @@ the following design goals:
     * JTS is fast enough for production use
     * JTS is written in 100% pure Java(TM)
     * JTS is open source (under the LGPL license)
-
-WWW: https://github.com/locationtech/jts

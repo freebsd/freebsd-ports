@@ -5,6 +5,7 @@ CATEGORIES=	games net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line program to query game servers on the net
+WWW=		https://github.com/multiplay/qstat
 
 LICENSE=	ART20
 

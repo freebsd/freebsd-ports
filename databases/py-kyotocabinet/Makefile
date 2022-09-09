@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of kyotocabinet
+WWW=		https://dbmx.net/kyotocabinet/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

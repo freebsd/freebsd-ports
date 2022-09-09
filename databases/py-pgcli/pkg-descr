@@ -1,5 +1,4 @@
 pgcli is a command line interface for Postgres with auto-completion and syntax
 highlighting.
 
-WWW: https://www.pgcli.com/
-WWW: https://github.com/dbcli/pgcli
+See also: https://github.com/dbcli/pgcli

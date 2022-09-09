@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Wraps Rack/Sinatra applications
+WWW=		https://code.quirkey.com/vegas/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility and library for computing and checking of file hashes
+WWW=		http://rhash.sourceforge.net/
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

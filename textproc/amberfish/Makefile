@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software
+WWW=		http://www.etymon.com/tr.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

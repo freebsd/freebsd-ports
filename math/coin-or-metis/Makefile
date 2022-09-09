@@ -8,6 +8,7 @@ DISTFILES=	metis-${METIS_VERSION}.tar.gz:metis
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR autotools harness to build Metis
+WWW=		https://github.com/coin-or-tools/ThirdParty-Mumps
 
 LICENSE=	EPL
 

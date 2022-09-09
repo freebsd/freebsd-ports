@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Differential Evolution Optimization in Pure R
+WWW=		https://cran.r-project.org/web/packages/DEoptimR/
 
 LICENSE=	GPLv2+
 

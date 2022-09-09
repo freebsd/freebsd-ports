@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR MySQL MDB2 driver
+WWW=		https://pear.php.net/package/MDB2_Driver_mysqli
 
 LICENSE=	BSD3CLAUSE
 

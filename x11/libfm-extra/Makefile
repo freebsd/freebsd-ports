@@ -3,6 +3,7 @@ PKGNAMESUFFIX=	-extra
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LibFM-Extra library
+WWW=		https://wiki.lxde.org/en/Libfm
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

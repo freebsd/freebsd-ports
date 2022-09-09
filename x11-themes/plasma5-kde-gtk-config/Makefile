@@ -1,9 +1,11 @@
 PORTNAME=	kde-gtk-config
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 GTK2 and GTK3 configurator
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -21,6 +23,6 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 		ecm_build
 USE_QT=		concurrent core dbus gui network svg widgets xml \
 		buildtools_build qmake_build testlib_build
-USE_XORG=	xcursor
+USE_XORG=	x11 xcursor
 
 .include <bsd.port.mk>

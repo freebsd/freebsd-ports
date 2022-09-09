@@ -6,6 +6,7 @@ DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Fcitx IM framework configuration tool
+WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv2
 

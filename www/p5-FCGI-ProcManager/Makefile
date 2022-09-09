@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Functions for managing FastCGI applications
+WWW=		https://metacpan.org/release/FCGI-ProcManager
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

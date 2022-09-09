@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Ruby interface to thrift
+WWW=		https://thrift.apache.org/
 
 LICENSE=	APACHE20
 

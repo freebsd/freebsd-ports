@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
+WWW=		http://netatalk.sourceforge.net/
 
 LICENSE=	GPLv2
 

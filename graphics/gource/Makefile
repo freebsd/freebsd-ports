@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/acaudwell/Gource/releases/download/${PORTNAME}-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	OpenGL-based 3D visualisation tool for source control repositories
+WWW=		https://gource.io/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

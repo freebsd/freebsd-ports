@@ -6,5 +6,3 @@ acronyms or different parts of the path. fzy is designed to be used both as an
 editor plugin and on the command line. Rather than clearing the screen, fzy
 displays its interface directly below the current cursor position, scrolling
 the screen if necessary.
-
-WWW: https://github.com/jhawthorn/fzy

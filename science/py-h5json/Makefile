@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools and library for representing HDF5 in JSON
+WWW=		https://github.com/HDFGroup/hdf5-json
 
 LICENSE=	BSD3CLAUSE
 

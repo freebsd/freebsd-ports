@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure OCaml regular expressions
+WWW=		https://github.com/ocaml/ocaml-re
 
 LICENSE=	LGPL21
 

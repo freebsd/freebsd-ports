@@ -8,5 +8,4 @@ care  about  the  application  protocol.  It  can  tunnel  FTP
 TCP  communication.  Application-level  SSL/TLS  encryption is
 also no problem.
 
-WWW: http://duncanthrax.net/pbnc/
-WWW: http://freshmeat.net/projects/pbnc/
+See also: https://duncanthrax.net/pbnc/

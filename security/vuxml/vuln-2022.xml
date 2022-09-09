@@ -1,3 +1,426 @@
+  <vuln vid="80e057e7-2f0a-11ed-978f-fcaa147e860e">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python37</name>
+	<range><lt>3.7.14</lt></range>
+      </package>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.14</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.14</lt></range>
+      </package>
+      <package>
+	<name>python310</name>
+	<range><lt>3.10.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/release/3.7.14/whatsnew/changelog.html#changelog">
+	  <p>gh-95778: Converting between int and str in bases other than 2 (binary), 4, 8 (octal),
+	    16 (hexadecimal), or 32 such as base 10 (decimal) now raises a ValueError if the number
+	    of digits in string form is above a limit to avoid potential denial of service attacks
+	    due to the algorithmic complexity.</p>
+	  <p>gh-87389: http.server: Fix an open redirection vulnerability in the HTTP server when
+	    an URI path starts with //. Vulnerability discovered, and initial fix proposed, by
+	    Hamza Avvan.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-10735</cvename>
+      <url>https://docs.python.org/release/3.7.14/whatsnew/changelog.html#changelog</url>
+    </references>
+    <dates>
+      <discovery>2020-03-20</discovery>
+      <entry>2022-09-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6fea7103-2ea4-11ed-b403-3dae8ac60d3e">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.6</lt></range>
+      </package>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/54658">
+	  <p>net/http: handle server errors after sending GOAWAY</p>
+	  <p>A closing HTTP/2 server connection could hang forever
+	    waiting for a clean shutdown that was preempted by a
+	    subsequent fatal error. This failure mode could be
+	    exploited to cause a denial of service.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/54385">
+	  <p>net/url: JoinPath does not strip relative path components
+	    in all circumstances</p>
+	  <p>JoinPath and URL.JoinPath would not remove ../ path
+	    components appended to a relative path.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-27664</cvename>
+      <cvename>CVE-2022-32190</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/x49AQzIVX-s/m/0tgO0pjiBQAJ</url>
+    </references>
+    <dates>
+      <discovery>2022-09-06</discovery>
+      <entry>2022-09-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f38d25ac-2b7a-11ed-a1ef-3065ec8fd3ec">
+    <topic>chromium -- insufficient data validation in Mojo</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>105.0.5195.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop.html">
+	  <p>This release contains 1 security fix:</p>
+	  <ul>
+	    <li>[1358134] High CVE-2022-3075: Insufficient data validation in Mojo. Reported by Anonymous on 2022-08-30</li>
+	  </ul>
+	  <p>Google is aware that an exploit of CVE-2022-3075 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3075</cvename>
+      <url>https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-09-02</discovery>
+      <entry>2022-09-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5418b360-29cc-11ed-a6d4-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>4.7.2</lt></range>
+	<range><lt>4.6.3</lt></range>
+	<range><lt>4.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://www.powerdns.com/news.html#20220823">
+	  <p>PowerDNS Security Advisory 2022-02: incomplete exception handling related to protobuf message generation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-37428</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2022-02.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-23</discovery>
+      <entry>2022-09-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="827b95ff-290e-11ed-a2e7-6c3be5272acd">
+    <topic>Grafana -- Unauthorized file disclosure</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>5.2.0</ge><lt>8.3.11</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.11</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.11</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.8</lt></range>
+	<range><ge>9.1.0</ge><lt>9.1.2</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.3.0</ge><lt>8.3.11</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.11</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.11</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.0.8</lt></range>
+	<range><ge>9.1.0</ge><lt>9.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/08/30/security-release-new-versions-of-grafana-and-grafana-image-renderer-with-a-high-severity-security-fix-for-cve-2022-31176/">
+	  <p>On July 21, an internal security review identified an unauthorized file disclosure vulnerability in the <a href="https://grafana.com/grafana/plugins/grafana-image-renderer/">Grafana Image Renderer plugin</a> when HTTP remote rendering is used. The Chromium browser embedded in the Grafana Image Renderer allows for “printing” of unauthorized files in a PNG file. This makes it possible for a malicious user to retrieve unauthorized files under some network conditions or via a fake data source (this applies if the user has admin permissions in Grafana).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31176</cvename>
+      <url>https://github.com/grafana/grafana-image-renderer/security/advisories/GHSA-2cfh-233g-m4c5</url>
+    </references>
+    <dates>
+      <discovery>2022-07-21</discovery>
+      <entry>2022-09-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e4d93d07-297a-11ed-95f8-901b0e9408dc">
+    <topic>Matrix clients -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cinny</name>
+	<range><lt>2.1.3</lt></range>
+      </package>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2022/08/31/security-releases-matrix-js-sdk-19-4-0-and-matrix-react-sdk-3-53-0">
+	  <p>The vulnerabilities give an adversary who you share a
+	  room with the ability to carry out a denial-of-service
+	  attack against the affected clients, making it not show all
+	  of a user's rooms or spaces and/or causing minor temporary
+	  corruption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-36059</cvename>
+      <cvename>CVE-2022-36060</cvename>
+      <url>https://matrix.org/blog/2022/08/31/security-releases-matrix-js-sdk-19-4-0-and-matrix-react-sdk-3-53-0</url>
+    </references>
+    <dates>
+      <discovery>2022-08-31</discovery>
+      <entry>2022-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f2043ff6-2916-11ed-a1ef-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>105.0.5195.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop_30.html">
+	  <p>This release contains 24 security fixes, including:</p>
+	  <ul>
+	    <li>[1340253] Critical CVE-2022-3038: Use after free in Network Service. Reported by Sergei Glazunov of Google Project Zero on 2022-06-28</li>
+	    <li>[1343348] High CVE-2022-3039: Use after free in WebSQL. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Vulnerability Research Institute on 2022-07-11</li>
+	    <li>[1341539] High CVE-2022-3040: Use after free in Layout. Reported by Anonymous on 2022-07-03</li>
+	    <li>[1345947] High CVE-2022-3041: Use after free in WebSQL. Reported by Ziling Chen and Nan Wang(@eternalsakura13) of 360 Vulnerability Research Institute on 2022-07-20</li>
+	    <li>[1338553] High CVE-2022-3042: Use after free in PhoneHub. Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability Research Institute on 2022-06-22</li>
+	    <li>[1336979] High CVE-2022-3043: Heap buffer overflow in Screen Capture. Reported by @ginggilBesel on 2022-06-16</li>
+	    <li>[1051198] High CVE-2022-3044: Inappropriate implementation in Site Isolation. Reported by Lucas Pinheiro, Microsoft Browser Vulnerability Research on 2020-02-12</li>
+	    <li>[1339648] High CVE-2022-3045: Insufficient validation of untrusted input in V8. Reported by Ben Noordhuis &lt;info@bnoordhuis.nl&gt; on 2022-06-26</li>
+	    <li>[1346245] High CVE-2022-3046: Use after free in Browser Tag. Reported by Rong Jian of VRI on 2022-07-21</li>
+	    <li>[1342586] Medium CVE-2022-3047: Insufficient policy enforcement in Extensions API. Reported by Maurice Dauer on 2022-07-07</li>
+	    <li>[1303308] Medium CVE-2022-3048: Inappropriate implementation in Chrome OS lockscreen. Reported by Andr.Ess on 2022-03-06</li>
+	    <li>[1316892] Medium CVE-2022-3049: Use after free in SplitScreen. Reported by @ginggilBesel on 2022-04-17</li>
+	    <li>[1337132] Medium CVE-2022-3050: Heap buffer overflow in WebUI. Reported by Zhihua Yao of KunLun Lab on 2022-06-17</li>
+	    <li>[1345245] Medium CVE-2022-3051: Heap buffer overflow in Exosphere. Reported by @ginggilBesel on 2022-07-18</li>
+	    <li>[1346154] Medium CVE-2022-3052: Heap buffer overflow in Window Manager. Reported by Khalil Zhani on 2022-07-21</li>
+	    <li>[1267867] Medium CVE-2022-3053: Inappropriate implementation in Pointer Lock. Reported by Jesper van den Ende (Pelican Party Studios) on 2021-11-08</li>
+	    <li>[1290236] Medium CVE-2022-3054: Insufficient policy enforcement in DevTools. Reported by Kuilin Li on 2022-01-24</li>
+	    <li>[1351969] Medium CVE-2022-3055: Use after free in Passwords. Reported by Weipeng Jiang (@Krace) and Guang Gong of 360 Vulnerability Research Institute on 2022-08-11</li>
+	    <li>[1329460] Low CVE-2022-3056: Insufficient policy enforcement in Content Security Policy. Reported by Anonymous on 2022-05-26</li>
+	    <li>[1336904] Low CVE-2022-3057: Inappropriate implementation in iframe Sandbox. Reported by Gareth Heyes on 2022-06-16</li>
+	    <li>[1337676] Low CVE-2022-3058: Use after free in Sign-In Flow. Reported by raven at KunLun lab on 2022-06-20</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3038</cvename>
+      <cvename>CVE-2022-3039</cvename>
+      <cvename>CVE-2022-3040</cvename>
+      <cvename>CVE-2022-3041</cvename>
+      <cvename>CVE-2022-3042</cvename>
+      <cvename>CVE-2022-3043</cvename>
+      <cvename>CVE-2022-3044</cvename>
+      <cvename>CVE-2022-3045</cvename>
+      <cvename>CVE-2022-3046</cvename>
+      <cvename>CVE-2022-3047</cvename>
+      <cvename>CVE-2022-3048</cvename>
+      <cvename>CVE-2022-3049</cvename>
+      <cvename>CVE-2022-3050</cvename>
+      <cvename>CVE-2022-3051</cvename>
+      <cvename>CVE-2022-3052</cvename>
+      <cvename>CVE-2022-3053</cvename>
+      <cvename>CVE-2022-3054</cvename>
+      <cvename>CVE-2022-3055</cvename>
+      <cvename>CVE-2022-3056</cvename>
+      <cvename>CVE-2022-3057</cvename>
+      <cvename>CVE-2022-3058</cvename>
+      <url>https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-30</discovery>
+      <entry>2022-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a1323a76-28f1-11ed-a72a-002590c1f29c">
+    <topic>FreeBSD -- zlib heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_2</lt></range>
+	<range><ge>13.0</ge><lt>13.0_13</lt></range>
+	<range><ge>12.3</ge><lt>12.3_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>zlib through 1.2.12 has a heap-based buffer over-read or buffer
+	overflow in inflate in inflate.c via a large gzip header extra
+	field.</p>
+	<h1>Impact:</h1>
+	<p>Applications that call inflateGetHeader may be vulnerable to a
+	buffer overflow.  Note that inflateGetHeader is not used by anything
+	in the FreeBSD base system, but may be used by third party
+	software.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-37434</cvename>
+      <freebsdsa>SA-22:13.zlib</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-30</discovery>
+      <entry>2022-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e6b994e2-2891-11ed-9be7-454b1dd82c64">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.3.0</ge><lt>15.3.2</lt></range>
+	<range><ge>15.2.0</ge><lt>15.2.4</lt></range>
+	<range><ge>10.0.0</ge><lt>15.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/08/30/critical-security-release-gitlab-15-3-2-released/">
+	  <p>Remote Command Execution via GitHub import</p>
+	  <p>Stored XSS via labels color</p>
+	  <p>Content injection via Incidents Timeline description</p>
+	  <p>Lack of length validation in Snippets leads to Denial of Service</p>
+	  <p>Group IP allow-list not fully respected by the Package Registry</p>
+	  <p>Abusing Gitaly.GetTreeEntries calls leads to denial of service</p>
+	  <p>Arbitrary HTTP Requests Possible in .ipynb Notebook with Malicious Form Tags</p>
+	  <p>Regular Expression Denial of Service via special crafted input</p>
+	  <p>Information Disclosure via Arbitrary GFM references rendered in Incident Timeline Events</p>
+	  <p>Regex backtracking through the Commit message field</p>
+	  <p>Read repository content via LivePreview feature</p>
+	  <p>Denial of Service via the Create branch API</p>
+	  <p>Denial of Service via Issue preview</p>
+	  <p>IDOR in Zentao integration leaked issue details</p>
+	  <p>Brute force attack may guess a password even when 2FA is enabled</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2992</cvename>
+      <cvename>CVE-2022-2865</cvename>
+      <cvename>CVE-2022-2527</cvename>
+      <cvename>CVE-2022-2592</cvename>
+      <cvename>CVE-2022-2533</cvename>
+      <cvename>CVE-2022-2455</cvename>
+      <cvename>CVE-2022-2428</cvename>
+      <cvename>CVE-2022-2908</cvename>
+      <cvename>CVE-2022-2630</cvename>
+      <cvename>CVE-2022-2931</cvename>
+      <cvename>CVE-2022-2907</cvename>
+      <cvename>CVE-2022-3031</cvename>
+      <url>https://about.gitlab.com/releases/2022/08/30/critical-security-release-gitlab-15-3-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-30</discovery>
+      <entry>2022-08-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3110b29e-c82d-4287-9f6c-db82bb883b1e">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.1">
+	<p> Fix a possible overflow and crash in the ARP analyzer
+	when receiving a specially crafted packet. Due to the
+	possibility of this happening with packets received from
+	the network, this is a potential DoS vulnerability. </p>
+	<p> Fix a possible overflow and crash in the Modbus analyzer
+	when receiving a specially crafted packet. Due to the
+	possibility of this happening with packets received from
+	the network, this is a potential DoS vulnerability. </p>
+	<p> Fix two possible crashes when converting IP headers for
+	output via the raw_packet event. Due to the possibility of
+	this happening with packets received from the network, this
+	is a potential DoS vulnerability. Note that the raw_packet
+	event is not enabled by default so these are likely
+	low-severity issues. </p>
+	<p> Fix an abort related to an error related to the ordering
+	of record fields when processing DNS EDNS headers via events.
+	Due to the possibility of this happening with packets
+	received from the network, this is a potential DoS
+	vulnerability.  Note that the dns_EDNS events are not
+	implemented by default so this is likely a low-severity
+	issue. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.1</url>
+    </references>
+    <dates>
+      <discovery>2022-08-23</discovery>
+      <entry>2022-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36d10af7-248d-11ed-856e-d4c9ef517024">
     <topic>MariaDB -- Multiple vulnerabilities</topic>
     <affects>

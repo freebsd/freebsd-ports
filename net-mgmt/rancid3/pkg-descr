@@ -12,5 +12,3 @@ A looking glass is also included with rancid, based on Ed Kern's in use on
 http://nitrous.digex.net/. Rancid version has added functions, supports Cisco,
 Juniper, and Foundry and uses the login scripts that come with rancid;
 so it can use rsh, telnet, or ssh to connect to your router(s).
-
-WWW: http://www.shrubbery.net/rancid/

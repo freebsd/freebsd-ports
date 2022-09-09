@@ -8,6 +8,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Client interface for Apple's iTunes Connect service
+WWW=		https://metacpan.org/release/p5-WWW-iTunesConnect
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Tree>=0:www/p5-HTML-Tree \

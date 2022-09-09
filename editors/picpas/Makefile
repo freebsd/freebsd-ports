@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Multi-platform Pascal for Microchip PIC16F microcontrollers
+WWW=		https://github.com/t-edson/PicPas
 
 LICENSE=	GPLv2
 

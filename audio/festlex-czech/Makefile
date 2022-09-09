@@ -7,6 +7,7 @@ DIST_SUBDIR=	festival
 
 MAINTAINER=	valtri@civ.zcu.cz
 COMMENT=	Czech language support for Festival
+WWW=		https://www.freebsoft.org/festival-czech
 
 FHOME=		${PREFIX}/share/festival
 NO_BUILD=	yes

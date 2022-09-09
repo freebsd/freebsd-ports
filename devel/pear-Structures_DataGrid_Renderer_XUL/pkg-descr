@@ -1,4 +1,2 @@
 Renderer driver for pear-Structures_DataGrid that generates the XML string
 for a XUL listbox.
-
-WWW: https://pear.php.net/package/Structures_DataGrid_Renderer_XUL

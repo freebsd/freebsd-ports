@@ -13,5 +13,3 @@ possible, it mirrors the standard Python JSON API package for ease of use.
 There is one notable difference from the JSON api: the load() and loads()
 methods support optionally checking for (and rejecting) duplicate object keys;
 pass allow_duplicate_keys=False to do so (duplicates are allowed by default).
-
-WWW: https://github.com/dpranke/pyjson5

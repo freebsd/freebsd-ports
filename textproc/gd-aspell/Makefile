@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Scottish Gaelic dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	gd
 

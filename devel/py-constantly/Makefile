@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Provides symbolic constant support to Python projects
+WWW=		https://pypi.org/project/constantly/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

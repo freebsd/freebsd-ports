@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	john@jnielsen.net
 COMMENT=	Kernel module enabling iSCSI/IBFT boot
+WWW=		https://github.com/jnielsendotnet/isboot
 
 LICENSE=	BSD2CLAUSE
 

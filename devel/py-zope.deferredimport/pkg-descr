@@ -1,4 +1,2 @@
 zope.deferredimport allows you to perform imports names
 that will only be resolved when used in the code.
-
-WWW: https://pypi.org/project/zope.deferredimport/

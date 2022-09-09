@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Define your own method resolution order
+WWW=		https://metacpan.org/release/MRO-Define
 
 TEST_DEPENDS=	p5-Variable-Magic>=0:devel/p5-Variable-Magic
 

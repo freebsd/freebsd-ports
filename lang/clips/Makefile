@@ -6,6 +6,7 @@ DISTNAME=	clips_core_source_630
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Tool for Building Expert Systems
+WWW=		https://sourceforge.net/projects/clipsrules/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/readme.txt

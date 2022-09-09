@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for simple and extensible job queue manager
+WWW=		https://metacpan.org/release/Qudo
 
 RUN_DEPENDS=	\
 	p5-Class-Data-Inheritable>0:devel/p5-Class-Data-Inheritable \

@@ -5,6 +5,7 @@ MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 
 MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Simple and efficient multicast and transport stream manipulation
+WWW=		https://www.videolan.org/projects/multicat.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/grembo
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Commodore Amiga emulator
+WWW=		http://www.amigaemulator.org/
 
 LICENSE=	GPLv2
 

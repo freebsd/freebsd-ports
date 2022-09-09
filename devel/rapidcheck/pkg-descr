@@ -9,5 +9,3 @@ hold. If such a case is found, RapidCheck tries to find the smallest case (for
 some definition of smallest) for which the property is still false and then
 displays this as a counterexample. For example, if the input is an integer,
 RapidCheck tries to find the smallest integer for which the property is false.
-
-WWW: https://github.com/emil-e/rapidcheck

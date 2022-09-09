@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Lightweight logging library for Ruby
+WWW=		https://github.com/sethvargo/logify
 
 LICENSE=	APACHE20
 

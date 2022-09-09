@@ -1,5 +1,3 @@
 CGI::Application::Plugin::HTDot - Enable "magic dot" notation in
 CGI::Application-derived applications that use HTML::Template for their
 templating mechanism.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-HTDot

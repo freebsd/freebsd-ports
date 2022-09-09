@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Spectrum visualizer for Kodi
+WWW=		https://github.com/xbmc/visualization.spectrum
 
 LICENSE=	GPLv2+
 

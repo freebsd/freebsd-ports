@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inflate HASH Object from Values in Database
+WWW=		https://metacpan.org/release/Class-Inflate
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

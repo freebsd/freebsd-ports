@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Reports (Ruport) is an extensible reporting system
+WWW=		https://github.com/ruport/ruport
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

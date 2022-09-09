@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Compiler-callable math intrinsics library
+WWW=		https://github.com/flang-compiler/flang
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

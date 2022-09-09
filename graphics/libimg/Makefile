@@ -6,6 +6,7 @@ DISTNAME=	Img-${PORTVERSION}-Source
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
+WWW=		http://members1.chello.nl/~j.nijtmans/img.html
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

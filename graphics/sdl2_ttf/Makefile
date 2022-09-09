@@ -1,10 +1,11 @@
 PORTNAME=	sdl2_ttf
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	2.20.0
+DISTVERSION=	2.20.1
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to use TrueType fonts to render text in SDL applications
+WWW=		https://github.com/libsdl-org/SDL_ttf
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -17,6 +18,7 @@ GH_ACCOUNT=	libsdl-org
 GH_PROJECT=	SDL_ttf
 USE_SDL=	sdl2
 CMAKE_OFF=	SDL2TTF_SAMPLES
+CMAKE_ARGS=	-DSDL2TTF_DEBUG_POSTFIX:STRING=
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

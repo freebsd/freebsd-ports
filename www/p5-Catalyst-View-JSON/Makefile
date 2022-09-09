@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst View handler that returns stash data in JSON format
+WWW=		https://metacpan.org/release/Catalyst-View-JSON
 
 LICENSE=	ART10
 

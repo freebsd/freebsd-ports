@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented wrapper around Perl's vec()
+WWW=		https://metacpan.org/release/Bit-Vector-Minimal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

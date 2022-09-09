@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Python refactoring library
+WWW=		http://rope.sourceforge.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

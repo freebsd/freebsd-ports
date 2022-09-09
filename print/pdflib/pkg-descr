@@ -8,5 +8,3 @@ format and arrange your text and graphical objects, PDFlib frees
 you from the internals and intricacies of PDF. Although being far
 from complete, PDFlib already offers many useful functions for
 creating text, graphics, images and hypertext elements in PDF files.
-
-WWW: http://www.pdflib.de/

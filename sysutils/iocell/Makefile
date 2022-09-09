@@ -9,6 +9,7 @@ PATCHFILES+=	37.patch:-p1 # https://github.com/bartekrutkowski/iocell/pull/37
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Feature rich Jail containers manager (iocage fork)
+WWW=		https://github.com/bartekrutkowski/iocell
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

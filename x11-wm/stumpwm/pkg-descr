@@ -4,5 +4,3 @@ Common Lisp.
 StumpWM attempts to be customizable yet visually minimal. There are no window
 decorations, no icons, and no buttons.  It does have various hooks to attach
 your personal customizations, and variables to tweak.
-
-WWW: http://www.nongnu.org/stumpwm/

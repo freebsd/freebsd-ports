@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	TCP dump file analysis tool
+WWW=		http://www.tcptrace.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

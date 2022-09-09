@@ -5,5 +5,3 @@ into other software.
 libde265 supports WPP and tile-based multithreading and includes SSE
 optimizations. The decoder includes all features of the Main profile
 and correctly decodes almost all conformance streams.
-
-WWW: http://www.libde265.org

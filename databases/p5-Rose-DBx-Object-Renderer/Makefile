@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web UI Rendering for Rose::DB::Object
+WWW=		https://metacpan.org/release/Rose-DBx-Object-Renderer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Rose-DBx-Object-MoreHelpers>=0:databases/p5-Rose-DBx-Object-MoreHelpers \

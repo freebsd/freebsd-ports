@@ -1,10 +1,8 @@
-Cppcheck is a tool for static C/C++ code analysis, and it tries to
-detect bugs that your compiler do not see.  Checks for: memory leaks,
-mismatching allocation-deallocation, buffer overrun, and many more.
+Cppcheck is a tool for static C/C++ code analysis. It tries to
+detect bugs that your compiler does not see. It checks for: memory leaks,
+mismatching allocations-deallocations, buffer overruns, and many more.
 
-Cppcheck is versatile.  You can check non-standard code that includes
+Cppcheck is versatile. You can check non-standard code that includes
 various compiler extensions, inline assembly code, etc.
 
-The goal is no false positives.
-
-WWW: https://cppcheck.sourceforge.io/
+The goal is to have no false positives.

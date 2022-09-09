@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Template language whose goal is reduce the syntax to essential parts
+WWW=		http://slim-lang.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

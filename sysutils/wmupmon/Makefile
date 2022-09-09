@@ -7,6 +7,7 @@ MASTER_SITES=	http://j-z-s.com/projects/downloads/
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Uptime showing dockapp with a similar look to wmcpuload
+WWW=		http://freecode.com/projects/wmupmon
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf tar:bzip2 xorg

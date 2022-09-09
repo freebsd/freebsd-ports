@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org 75dpi bitmap fonts
+WWW=		https://www.x.org/
 
 RUN_DEPENDS=	font-adobe-75dpi>0:x11-fonts/font-adobe-75dpi \
 		font-adobe-utopia-75dpi>0:x11-fonts/font-adobe-utopia-75dpi \

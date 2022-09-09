@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Rename multiple files
+WWW=		https://metacpan.org/release/File-Rename
 
 LICENSE=	ART10
 

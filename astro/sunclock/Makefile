@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
+WWW=		https://github.com/nongiach/Sunclock
 
 LICENSE=	GPLv2
 

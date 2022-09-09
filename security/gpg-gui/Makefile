@@ -5,14 +5,14 @@ CATEGORIES=	security
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	GUI wrapper for symmetric GPG file encryption
+WWW=		https://github.com/AnsgarKlein/GPG-Gui
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	gpg2:security/gnupg
 
-USES=		gnome meson pkgconfig
+USES=		gnome meson pkgconfig vala:build
 USE_GNOME=	glib20 gtk30
 
 USE_GITHUB=	yes

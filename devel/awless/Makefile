@@ -1,11 +1,12 @@
 PORTNAME=	awless
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Fast, powerful and easy-to-use CLI for AWS
+WWW=		https://github.com/wallix/awless
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

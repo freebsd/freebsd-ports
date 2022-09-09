@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	All components to run Jitsi Meet video conferencing
+WWW=		https://jitsi.org/jitsi-meet/
 
 USES=		metaport
 

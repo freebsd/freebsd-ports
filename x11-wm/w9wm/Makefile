@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.drieu.org/code/w9wm/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hack of 9wm to give virtual screens
+WWW=		http://www.grassouille.org/code/w9wm.en.html
 
 WRKSRC=		${WRKDIR}/${DISTNAME}.orig
 

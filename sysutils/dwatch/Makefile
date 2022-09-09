@@ -6,6 +6,7 @@ MASTER_SITES=	http://siag.nu/pub/dwatch/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon Watcher
+WWW=		https://siag.nu/dwatch/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

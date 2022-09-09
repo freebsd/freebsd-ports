@@ -1,5 +1,3 @@
 PacketFu is a mid-level packet manipulation library for Ruby.  With it, users
 can read, parse, and write network packets with the level of ease and fun they
 expect from Ruby.
-
-WWW: https://github.com/packetfu/packetfu

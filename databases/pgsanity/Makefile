@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Check syntax of PostgreSQL SQL files
+WWW=		https://github.com/markdrago/pgsanity
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

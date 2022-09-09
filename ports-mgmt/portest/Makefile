@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Patch file automation for FreeBSD-ports
+WWW=		https://github.com/Ultima1252/portest
 
 LICENSE=	BSD2CLAUSE
 

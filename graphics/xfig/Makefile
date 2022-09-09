@@ -5,6 +5,7 @@ MASTER_SITES=	SF/mcj/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Drawing program for X11
+WWW=		https://www.xfig.org/
 
 LICENSE=	xfig
 LICENSE_NAME=	xfig public license

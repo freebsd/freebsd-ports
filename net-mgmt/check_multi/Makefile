@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose wrapper plugin for Nagios
+WWW=		http://www.my-plugin.de/wiki/projects/check_multi/start
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

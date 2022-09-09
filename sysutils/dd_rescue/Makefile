@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/ \
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	dd tool suitable for rescuing data from a medium with errors
+WWW=		http://www.garloff.de/kurt/linux/ddrescue/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

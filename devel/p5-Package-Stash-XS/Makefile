@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faster and more correct implementation of the Package::Stash API
+WWW=		https://metacpan.org/release/Package-Stash-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

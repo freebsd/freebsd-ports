@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fine-grained html-filter, xss-blocker and mailto-obfuscator
+WWW=		https://metacpan.org/release/HTML-TagFilter
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI>=0:net/p5-URI \

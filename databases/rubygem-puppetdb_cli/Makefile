@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	PuppetDB CLI Tooling
+WWW=		https://github.com/puppetlabs/puppetdb-cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

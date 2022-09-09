@@ -6,5 +6,3 @@ because it doesn't actually parse any packets, it simply uses tshark's
 (wireshark command-line utility) ability to export XMLs to use its parsing. This
 package allows parsing from a capture file or a live capture, using all
 wireshark dissectors you have installed.
-
-WWW: https://github.com/KimiNewt/pyshark

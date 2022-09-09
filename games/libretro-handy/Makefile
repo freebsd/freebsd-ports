@@ -2,8 +2,9 @@ PORTNAME=	libretro-handy
 PORTVERSION=	0.20220215
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari Lynx emulator Handy for Libretro
+WWW=		https://github.com/libretro/libretro-handy
 
 LICENSE=	ZLIB
 
@@ -19,5 +20,5 @@ PLIST_FILES=	lib/libretro/handy_libretro.so
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
 	${INSTALL_LIB} ${WRKSRC}/handy_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
-	
+
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File alteration monitor
+WWW=		http://oss.sgi.com/projects/fam/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

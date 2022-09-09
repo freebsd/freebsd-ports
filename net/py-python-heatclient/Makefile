@@ -1,11 +1,12 @@
 PORTNAME=	python-heatclient
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Orchestration API Client Library
+WWW=		https://docs.openstack.org/python-heatclient/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

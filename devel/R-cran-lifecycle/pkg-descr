@@ -6,5 +6,3 @@ stages (soft-deprecated, deprecated, and defunct). It makes it easy
 to insert badges corresponding to these stages in your documentation.
 Usage of deprecated functions are signalled with increasing levels
 of non-invasive verbosity.
-
-WWW: https://cran.r-project.org/web/packages/lifecycle/

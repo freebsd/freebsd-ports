@@ -15,5 +15,3 @@ The CGAL library contains:
       circle, and multidimensional query structures.
     * the Support Library which offers interfaces to other packages, e.g., for
       visualisation, and I/O, and other support facilities.
-
-WWW: http://www.cgal.org/

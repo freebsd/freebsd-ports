@@ -4,5 +4,3 @@ This is a meta port to the Python interpreter and provides symbolic links
 to bin/python, bin/pydoc, bin/idle and so on to allow compatibility with
 version agnostic python scripts.
 Do not depend on this port.
-
-WWW: https://www.python.org/

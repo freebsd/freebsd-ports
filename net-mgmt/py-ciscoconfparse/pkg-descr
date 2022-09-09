@@ -20,5 +20,3 @@ The module handles anything that has a Cisco IOS style of configuration, e.g.:
 - Force 10 Switches
 - Dell PowerConnect Switches
 - Enterasys, Extreme Networks, Screenos
-
-WWW: http://www.pennington.net/py/ciscoconfparse/

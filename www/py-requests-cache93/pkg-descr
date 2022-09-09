@@ -15,5 +15,3 @@ Features:
   everything for long-term storage, use URL patterns for selective caching, or
   any combination of strategies
 - Compatibility: Can be combined with other popular libraries based on requests
-
-WWW: https://github.com/requests-cache/requests-cache

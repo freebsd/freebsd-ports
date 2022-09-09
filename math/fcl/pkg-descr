@@ -13,5 +13,3 @@ It performs:
 * Contact information: for collision detection and continuous collision
   detection, the contact information (including contact normals and contact
   points) can be returned optionally.
-
-WWW: https://github.com/flexible-collision-library/fcl

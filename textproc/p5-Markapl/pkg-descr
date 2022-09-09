@@ -2,5 +2,3 @@ This is a new try to use Devel::Declare to change the Perl5
 language. It learns pretty much everything from Template::Declare,
 and has similar interface. With only one difference: how element
 attributes are defined.
-
-WWW: https://metacpan.org/release/Markapl

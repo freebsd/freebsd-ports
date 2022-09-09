@@ -1,4 +1,2 @@
 Devel::PackagePath is a Perl module to inspect and manipulate a Path based on
 a Package name.
-
-WWW: https://metacpan.org/release/Devel-PackagePath

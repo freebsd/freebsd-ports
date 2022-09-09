@@ -4,5 +4,3 @@ system. The webcam daemon is basically an application which is a port
 of Linux USB device drivers into userspace on FreeBSD. The daemon
 currently depends on libc, pthreads, libusb and the CUSE kernel
 module.
-
-WWW: https://github.com/hselasky/webcamd

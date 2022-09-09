@@ -17,5 +17,3 @@ Various icons are built into the Tk::ToolBar widget. Those icons can be used as
 images for ToolButtons (see "SYNOPSIS"). A demo program is bundled with the
 module that should be available under the 'User Contributed Demonstrations' when
 you run the widget program. Run it to see a list of the available images.
-
-WWW: https://metacpan.org/release/Tk-ToolBar

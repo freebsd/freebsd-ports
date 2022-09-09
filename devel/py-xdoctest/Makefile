@@ -1,12 +1,12 @@
 PORTNAME=	xdoctest
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP # has no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python package for executing tests in documentation strings
+WWW=		https://github.com/Erotemic/xdoctest
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

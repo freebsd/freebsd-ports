@@ -19,5 +19,3 @@ System III, 4.3BSD-Reno, Ultrix 3.1 and ``home made'' fixes and enhancements :
   error recovery (sysIII/reno).  better restricted shell (sysIII) and
   IFS protection (reno).
 * functions aren't supported and command line input is not 8 bit clean.
-
-WWW: http://minnie.tuhs.org/UnixTree/V7/

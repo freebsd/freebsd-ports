@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Display 3D molecules in schematic and detailed representations
+WWW=		https://kraulis.se/MolScript/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt

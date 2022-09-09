@@ -10,6 +10,7 @@ DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets \
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Powerful, fast, and an easy to use search engine
+WWW=		https://www.meilisearch.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

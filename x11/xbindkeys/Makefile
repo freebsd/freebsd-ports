@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.nongnu.org/xbindkeys/
 
 MAINTAINER=	guru@unixarea.de
 COMMENT=	Allows you to launch shell commands under X with your keyboard
+WWW=		https://www.nongnu.org/xbindkeys/xbindkeys.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

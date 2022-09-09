@@ -7,6 +7,7 @@ DISTNAME=	iwidgets${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Iwidgets - [incr Widgets] companion to [incr Tk]
+WWW=		https://sourceforge.net/projects/incrtcl/
 
 LIB_DEPENDS=	libitk.so:x11-toolkits/itk
 

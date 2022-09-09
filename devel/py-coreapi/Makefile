@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Python client library for Core API
+WWW=		https://github.com/core-api/python-client
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Class for discovering the local system's IP address
+WWW=		https://metacpan.org/release/Net-Address-IPv4-Local
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,5 +7,3 @@ configured parsers.
 Feed normalizer is useful when the representation of the data of
 an underlying RSS/Atom feed should be the same regardless of the underlying
 format and its terminology.
-
-WWW: https://github.com/aasmith/feed-normalizer

@@ -19,5 +19,3 @@ eXosip2 does not contain:
  * sdp negotiation.
 
 This allow you to write any kind of SIP endpoint/gateway.
-
-WWW: https://savannah.nongnu.org/projects/exosip

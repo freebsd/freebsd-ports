@@ -3,5 +3,3 @@ given string.
 
 This class uses GD function because this the generated graphic can be any of
 GD supported image types.
-
-WWW: https://pear.php.net/package/Image_Barcode

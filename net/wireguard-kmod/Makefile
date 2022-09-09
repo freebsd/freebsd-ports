@@ -6,6 +6,7 @@ DISTNAME=	wireguard-freebsd-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	WireGuard implementation for the FreeBSD kernel
+WWW=		https://git.zx2c4.com/wireguard-freebsd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../COPYING

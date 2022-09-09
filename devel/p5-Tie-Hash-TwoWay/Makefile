@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Two-way mapping between disjoint sets in Perl
+WWW=		https://metacpan.org/release/Tie-Hash-TwoWay
 
 USES=		perl5
 USE_PERL5=	configure

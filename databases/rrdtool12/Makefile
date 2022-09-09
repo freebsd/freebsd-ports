@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	12
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Round Robin Database Tools v1.2
+WWW=		https://www.rrdtool.org/
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libart_lgpl_2.so:graphics/libart_lgpl \

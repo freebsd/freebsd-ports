@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage multiple plack apps with a directory of config files
+WWW=		https://metacpan.org/release/DROLSKY/Emplacken-0.01
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/chinsan \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates Matrix terminal's "green tears" effect
+WWW=		http://lightless.org/other/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

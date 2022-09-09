@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connect to Pry remotely using DRb
+WWW=		https://github.com/Mon-Ouie/pry-remote
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

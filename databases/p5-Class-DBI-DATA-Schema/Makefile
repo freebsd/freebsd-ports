@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Execute Class::DBI SQL from DATA sections
+WWW=		https://metacpan.org/release/Class-DBI-DATA-Schema
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Test-Simple>=0:devel/p5-Test-Simple

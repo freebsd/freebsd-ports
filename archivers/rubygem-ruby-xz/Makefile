@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for the liblzma library
+WWW=		https://github.com/win93/ruby-xz
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

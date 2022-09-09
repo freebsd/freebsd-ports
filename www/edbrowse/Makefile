@@ -6,6 +6,7 @@ CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Line-oriented web browser and text editor
+WWW=		https://edbrowse.org/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ DISTNAME=	RackTables-${DISTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Server room asset management suite
+WWW=		https://www.racktables.org/
 
 LICENSE=	GPLv2
 

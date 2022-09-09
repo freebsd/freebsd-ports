@@ -10,5 +10,3 @@ by default.
 For both functions, if a salt value is not supplied, a random salt will be
 generated, using the function random_md5_salt(). This function is not exported
 by default.
-
-WWW: https://metacpan.org/release/Crypt-PasswdMD5

@@ -5,6 +5,7 @@ MASTER_SITES=	http://members.tripod.com/professor_tom/archives/
 
 MAINTAINER=	freebsd@omnilan.de
 COMMENT=	ECC wrapper using Vandermonde matrices based FEC
+WWW=		https://members.tripod.com/professor_tom/archives/
 
 LICENSE=	GPLv2
 

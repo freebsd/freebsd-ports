@@ -2,6 +2,3 @@ This module adds suspend and resume operations for threads.
 
 Suspensions are cumulative, and need to be matched by an equal number of resume
 calls.
-
-
-WWW: https://metacpan.org/release/Thread-Suspend

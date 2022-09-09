@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically set and update fields
+WWW=		https://metacpan.org/release/DBIx-Class-DynamicDefault
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

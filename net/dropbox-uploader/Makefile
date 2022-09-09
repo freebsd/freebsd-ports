@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	BASH script for the Dropbox backup service
+WWW=		https://github.com/andreafabrizi/Dropbox-Uploader
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

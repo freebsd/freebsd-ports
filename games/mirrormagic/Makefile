@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.artsoft.org/RELEASES/unix/mirrormagic/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade style game with stereo sound for X Window System
+WWW=		https://www.artsoft.org/mirrormagic/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

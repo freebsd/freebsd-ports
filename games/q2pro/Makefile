@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/alepulver
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II engine modification compatible with R1Q2
+WWW=		http://q2pro.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gnu.txt

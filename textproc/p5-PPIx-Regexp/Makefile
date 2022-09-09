@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	PPI regular expression parser
+WWW=		https://metacpan.org/release/PPIx-Regexp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

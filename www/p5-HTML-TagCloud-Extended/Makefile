@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML::TagCloud extension for time-stamp based coloring of tags
+WWW=		https://metacpan.org/release/HTML-TagCloud-Extended
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

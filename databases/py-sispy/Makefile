@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vrwmiller@gmail.com
 COMMENT=	Python client library for interacting with the SIS RESTful API
+WWW=		https://github.com/sis-cmdb/sis-python
 
 LICENSE=	BSD3CLAUSE
 

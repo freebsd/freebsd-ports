@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONF
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Digital analog clock for Wayland desktops
+WWW=		https://git.sr.ht/~leon_plickat/wlclock
 
 LICENSE=	GPLv3
 

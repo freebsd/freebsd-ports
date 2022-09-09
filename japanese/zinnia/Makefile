@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Simple, customizable, and portable online handwriting recognition system
+WWW=		http://zinnia.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

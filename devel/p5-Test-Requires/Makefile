@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for checking to see if the module can be loaded
+WWW=		https://metacpan.org/release/Test-Requires
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

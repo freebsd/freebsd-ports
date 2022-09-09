@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper for OGR
+WWW=		https://github.com/pramsey/pgsql-ogr-fdw
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

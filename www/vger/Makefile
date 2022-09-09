@@ -1,11 +1,12 @@
 PORTNAME=	vger
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www
 MASTER_SITES=	https://tildegit.org/solene/vger/archive/
 DISTFILES=	${PORTVERSION}.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Simplistic and secure Gemini server
+WWW=		https://tildegit.org/solene/vger
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Text Renderer Framework
+WWW=		https://pypi.org/project/zope.app.renderer/
 
 LICENSE=	ZPL21
 

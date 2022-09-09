@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}.${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to clone harddisks/partitions over a fast switched network
+WWW=		http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly.html
 
 OPTIONS_DEFINE=	BZIP2 HIGHEST_COMPRESSION DOCS
 OPTIONS_DEFAULT=	BZIP2 HIGHEST_COMPRESSION

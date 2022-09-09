@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Couchbase Server PHP extension
+WWW=		https://pecl.php.net/package/couchbase
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

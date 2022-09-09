@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient compressor for XML
+WWW=		https://sourceforge.net/projects/xmill/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

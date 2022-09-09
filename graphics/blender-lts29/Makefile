@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-lts29
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	3D modeling/rendering/animation package - LTS
+WWW=		https://www.blender.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt

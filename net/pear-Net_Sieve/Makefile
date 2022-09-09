@@ -4,6 +4,7 @@ CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to handle talking to timsieved
+WWW=		https://pear.php.net/package/Net_Sieve
 
 LICENSE=	BSD3CLAUSE
 

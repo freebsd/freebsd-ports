@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pauamma@gundo.com
 COMMENT=	Library to manipulate storage devices, from udisks
+WWW=		https://www.freedesktop.org/wiki/Software/udisks/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

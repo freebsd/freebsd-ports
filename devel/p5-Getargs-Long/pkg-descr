@@ -4,6 +4,4 @@ easy way to get at the parameters within the routine, and yields
 concise descriptions for the common cases of all-mandatory and
 all-optional parameter lists.
 
-WWW: https://metacpan.org/release/Getargs-Long
-
 Seamus Venasse <svenasse@polaris.ca>

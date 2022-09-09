@@ -5,6 +5,7 @@ MASTER_SITES=	http://hinterbergen.de/mala/min12xxw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print driver for the Minolta PagePro 1(2/3/4)xxW printers
+WWW=		http://hinterbergen.de/mala/min12xxw/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

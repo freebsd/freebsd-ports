@@ -10,5 +10,3 @@ refresh_token, device_code
 
 Supported client authentication methods: client_secret_basic,
 client_secret_post, client_secret_jwt, private_key_jwt
-
-WWW: https://github.com/babelouest/iddawc

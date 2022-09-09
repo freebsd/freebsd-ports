@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/lippe
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMB/CIFS shares mounting scripts to do it at login
+WWW=		http://www.granch.ru/~shelton
 
 RUN_DEPENDS=	nbtscan:net-mgmt/nbtscan \
 		sudo:security/sudo

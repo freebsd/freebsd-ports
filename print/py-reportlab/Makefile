@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
+WWW=		https://www.reportlab.com/
 
 LICENSE=	BSD3CLAUSE
 

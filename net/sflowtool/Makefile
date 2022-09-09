@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	sFlow capture and sFlow-to-NetFlow conversion tool
+WWW=		https://github.com/sflow/sflowtool/
 
 LICENSE=	InMon
 LICENSE_NAME=	InMon Corp

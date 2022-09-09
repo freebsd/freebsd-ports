@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USB/serial userspace driver for the Canon PowerShot digital cameras
+WWW=		http://www.reynoldsnet.org/s10sh/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 addons to QtCore
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kcoreaddons/html/index.html
 
 LICENSE=	LGPL21+ BSD3CLAUSE
 LICENSE_COMB=	multi

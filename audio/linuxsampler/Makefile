@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.linuxsampler.org/packages/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular MIDI sampler
+WWW=		https://www.linuxsampler.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

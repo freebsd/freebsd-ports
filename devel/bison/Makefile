@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser generator from FSF, (mostly) compatible with Yacc
+WWW=		https://savannah.gnu.org/projects/bison/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

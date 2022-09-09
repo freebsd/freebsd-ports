@@ -8,6 +8,7 @@ DIST_SUBDIR=	spambnc-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Set of procmail recipes which handle known/suspected spam
+WWW=		http://www.spambouncer.org/
 
 LICENSE=	GPLv2
 

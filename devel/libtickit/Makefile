@@ -1,10 +1,11 @@
 PORTNAME=	libtickit
-PORTVERSION=	0.4.2a
+PORTVERSION=	0.4.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtickit/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Terminal Interface Construction Kit
+WWW=		https://www.leonerd.org.uk/code/libtickit/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

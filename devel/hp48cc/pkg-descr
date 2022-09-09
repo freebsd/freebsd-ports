@@ -5,5 +5,3 @@ write complex programs simply.
 
 Note that GCC-based `devel/hp48xgcc' port exists which directly translates C
 code into Saturn (HP48 processor) opcodes.
-
-WWW: http://www.sigala.it/sandro/software.php#hp48cc

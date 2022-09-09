@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for the snappy compression algorithm
+WWW=		https://github.com/kjdev/php-ext-snappy
 
 LICENSE=	BSD3CLAUSE PHP301
 LICENSE_COMB=	multi

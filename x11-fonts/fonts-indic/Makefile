@@ -6,6 +6,7 @@ MASTER_SITES=	http://gentoo.osuosl.org/distfiles/
 
 MAINTAINER=	nareshov@gmail.com
 COMMENT=	The Lohit family of Indic fonts
+WWW=		https://fedoraproject.org/wiki/Lohit
 
 USES=		fonts
 

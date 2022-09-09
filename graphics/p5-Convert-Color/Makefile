@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for color space conversions and named lookups
+WWW=		https://metacpan.org/release/Convert-Color
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

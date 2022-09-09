@@ -5,5 +5,3 @@ environment. It provides you with an elegant DSL in Ruby for modeling
 storage protocols/services, syncers, compressors, encryptors and notifiers which
 you can mix and match. It was built with modularity, extensibility and
 simplicity in mind.
-
-WWW: https://github.com/backup/backup

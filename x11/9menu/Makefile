@@ -5,6 +5,7 @@ CATEGORIES=	x11 plan9
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple menu patterned after Plan9
+WWW=		https://github.com/arnoldrobbins/9menu
 
 LICENSE=	9MENU
 LICENSE_NAME=	9menu License

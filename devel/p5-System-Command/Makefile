@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object for running system commands
+WWW=		https://metacpan.org/release/System-Command
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

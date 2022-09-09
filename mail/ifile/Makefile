@@ -5,6 +5,7 @@ MASTER_SITES=	http://people.csail.mit.edu/jrennie/ifile/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application of machine learning to e-mail filtering
+WWW=		https://people.csail.mit.edu/jrennie/ifile/
 
 LICENSE=	GPLv2
 

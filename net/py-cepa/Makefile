@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Python controller library for Tor, with v3 onion client auth support
+WWW=		https://github.com/onionshare/cepa
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

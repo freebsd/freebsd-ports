@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lxde/LXAppearance
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Desktop-independent theme switcher for GTK+
+WWW=		https://lxde.org/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	rodrigc@FreeBSD.org
 COMMENT=	Generate DNS and DHCP config files from single source
+WWW=		https://everythingsysadmin.com/hostdb
 
 LICENSE=	GPLv2
 

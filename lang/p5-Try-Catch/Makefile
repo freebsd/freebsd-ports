@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Try/Catch exception handler based on Try::Tiny, but faster
+WWW=		https://metacpan.org/release/Try-Catch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

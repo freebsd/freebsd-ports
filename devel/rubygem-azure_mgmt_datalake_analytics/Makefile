@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Resource Provider DataLake Analytics Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/management/azure_mgmt_datalake_analytics
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

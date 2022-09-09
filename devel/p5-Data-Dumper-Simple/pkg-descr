@@ -13,5 +13,3 @@ dumping variables for debugging a trivial task.
 
 Note that this is primarily a debugging tool. Data::Dumper offers a
 bit more than that, so don't expect this module to be more than it is.
-
-WWW: https://metacpan.org/release/Data-Dumper-Simple

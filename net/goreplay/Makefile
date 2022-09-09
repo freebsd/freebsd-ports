@@ -1,11 +1,12 @@
 PORTNAME=	goreplay
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for capturing and replaying live HTTP traffic
+WWW=		https://goreplay.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pure-Python, bring-your-own-I/O implementation of HTTP/1.1
+WWW=		https://pypi.org/project/h11/
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pthread-based thread pool for C/C++ for arrays parallelization
+WWW=		https://github.com/Maratyszcza/pthreadpool
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

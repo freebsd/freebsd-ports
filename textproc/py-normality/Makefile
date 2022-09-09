@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Micro-library to normalize text strings
+WWW=		https://github.com/pudo/normality
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

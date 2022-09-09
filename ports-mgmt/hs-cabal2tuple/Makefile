@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Generate USE_CABAL and GH_TUPLE knobs for Haskell ports
+WWW=		https://foss.heptapod.net/bsdutils/cabal2tuple
 
 LICENSE=	BSD3CLAUSE
 

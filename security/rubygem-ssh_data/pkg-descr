@@ -8,5 +8,3 @@ does not offer or intend to offer functionality for SSH connectivity, processing
 protocol data, or processing of other key formats or types.
 
 Project Status: Used by @github in production
-
-WWW: https://github.com/github/ssh_data

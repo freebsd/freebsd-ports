@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather application for GNOME
+WWW=		https://wiki.gnome.org/Design/Apps/Weather
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.md

@@ -5,6 +5,7 @@ MASTER_SITES=	https://sites.math.rutgers.edu/~asbuch/lrcalc/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Littlewood-Richardson Calculator
+WWW=		https://sites.math.rutgers.edu/~asbuch/lrcalc/
 
 LICENSE=	GPLv2+
 

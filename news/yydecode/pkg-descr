@@ -4,5 +4,3 @@ uudecode program. Version 0.2.8 and onwards contains a superset of uudecode's
 functionality, (ie. decodes standard uuencoded files, as well as Base64
 [RFC2045] encoded files produced by uuencode) and hence can be used as a
 drop-in replacement in all circumstances.
-
-WWW: http://yydecode.sf.net/

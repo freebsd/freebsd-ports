@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for file locking with flock
+WWW=		https://metacpan.org/release/File-BasicFlock
 
 USES=		perl5
 USE_PERL5=	configure

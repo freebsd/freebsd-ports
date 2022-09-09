@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Session management system for JACK audio applications
+WWW=		https://www.nongnu.org/lash/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

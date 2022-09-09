@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/libmbd/libmbd/releases/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Many-body dispersion library
+WWW=		https://github.com/libmbd/libmbd
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,5 +3,3 @@ at the level of pulses, circuits, and application modules.
 
 qiskit-ibmq-provider is a Qiskit Provider for accessing the quantum devices and
 simulators.
-
-WWW: https://qiskit.org/

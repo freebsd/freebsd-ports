@@ -4,6 +4,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	End-to-end digital synthesis flow for ASIC designs
+WWW=		http://opencircuitdesign.com/qflow/
 
 LICENSE=	GPLv2
 

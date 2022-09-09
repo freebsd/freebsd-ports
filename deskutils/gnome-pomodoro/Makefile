@@ -4,18 +4,18 @@ CATEGORIES=	deskutils gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Time management utility for GNOME
+WWW=		https://gnomepomodoro.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		valac:lang/vala
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgom-1.0.so:databases/gom \
 		libpeas-1.0.so:devel/libpeas
 
 USES=		desktop-file-utils gettext-tools gmake gnome gstreamer libtool meson \
-		pkgconfig sqlite
+		pkgconfig sqlite vala:build
 
 USE_GITHUB=	yes
 

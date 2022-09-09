@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Creates JUnit XML documents used by tools such as Jenkins
+WWW=		https://github.com/kyrus/python-junit-xml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

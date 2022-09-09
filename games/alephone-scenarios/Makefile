@@ -15,6 +15,7 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free scenarios for the Aleph One engine
+WWW=		http://source.bungie.org/get/
 
 RUN_DEPENDS=	alephone:games/alephone
 

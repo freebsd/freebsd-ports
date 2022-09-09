@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Gaussian Mixture Modelling for Model-Based Clustering, Classification, and Density Estimation
+WWW=		https://cran.r-project.org/package=mclust
 
 LICENSE=	GPLv2+
 

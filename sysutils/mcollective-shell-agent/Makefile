@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	MCollective shell agent plugin
+WWW=		https://github.com/puppetlabs/mcollective-shell-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

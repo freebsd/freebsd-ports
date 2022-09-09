@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-bin.zip
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Project automation tool
+WWW=		https://www.gradle.org/
 
 LICENSE=	APACHE20 BSD3CLAUSE CDDL EPL LGPL21+ MIT MPL20
 LICENSE_COMB=	multi

@@ -7,5 +7,3 @@ qualified subroutine name.  Each ring buffer also includes additional
 headers and fields to support diagnostic interfaces, e.g., watched
 expressions, command/response interfaces to the monitored applications,
 etc.
-
-WWW: https://metacpan.org/release/Devel-RingBuffer

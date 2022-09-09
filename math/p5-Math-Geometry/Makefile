@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geometry related functions
+WWW=		https://metacpan.org/release/Math-Geometry
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Fork of Mupen64 Nintendo 64 emulator
+WWW=		https://www.mupen64plus.org/
 
 USES+=		gl gmake pkgconfig sdl
 USE_GL?=	yes

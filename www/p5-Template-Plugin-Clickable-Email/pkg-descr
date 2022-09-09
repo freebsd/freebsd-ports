@@ -1,4 +1,2 @@
 Template::Plugin::Clickable::Email converts any e-mail addresses
 found in the filtered text into HTML mailto: links.
-
-WWW: https://metacpan.org/release/Template-Plugin-Clickable-Email

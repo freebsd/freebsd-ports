@@ -1,4 +1,2 @@
 This Gem contains all of the Ruby Exploitation(Rex) library for parsing offline
 registry files from a Windows machine.
-
-WWW: https://github.com/rapid7/rex-registry

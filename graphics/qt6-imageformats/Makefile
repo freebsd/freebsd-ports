@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt6 plugins for additional image formats: TIFF, MNG, TGA, WBMP
+WWW=		https://qt-project.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libjasper.so:graphics/jasper \

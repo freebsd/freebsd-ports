@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake data files
+WWW=		http://www.idsoftware.com/games/quake/quake/
 
 DATADIR=	${Q1DIR}
 NO_BUILD=	yes

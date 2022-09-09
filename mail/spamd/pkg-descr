@@ -15,5 +15,3 @@ spamd considers sending hosts to be of three types:
  greylisted hosts are redirected to spamd, but spamd has not yet decided if
  they are likely spammers. They are given a temporary failure message by spamd
  when they try to deliver mail.
-
-WWW: http://freebsdspamd.sourceforge.net/

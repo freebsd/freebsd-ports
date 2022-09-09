@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${PORTVER
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Terminal based log file navigator
+WWW=		https://lnav.org/
 
 LICENSE=	BSD2CLAUSE
 

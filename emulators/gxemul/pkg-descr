@@ -16,5 +16,3 @@ emulated well enough to run at least one "guest OS":
    MacPPC (generic "G4" Macintosh) (NetBSD/macppc)
  * SuperH: Sega Dreamcast (NetBSD/dreamcast, Linux/dreamcast),
    Landisk (OpenBSD/landisk)
-
-WWW: http://gavare.se/gxemul/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dropbox API interface
+WWW=		https://metacpan.org/release/Net-Dropbox-API
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Random>=0:devel/p5-Data-Random \

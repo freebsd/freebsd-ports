@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
+WWW=		https://mpb.readthedocs.io/en/latest/
 
 LICENSE=	GPLv2
 

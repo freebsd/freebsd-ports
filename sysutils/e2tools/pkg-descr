@@ -15,5 +15,3 @@ Supported functionality:
  - create hard links: e2ln
  - list files/directories: e2ls
  - output the last part of a file: e2tail
-
-WWW: https://e2tools.github.io/

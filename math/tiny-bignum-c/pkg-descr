@@ -3,5 +3,3 @@ arithmetic in C, for calculating with large numbers.
 
 Uses an array of uint8_t, uint16_t or uint32_t as underlying data-type utilizing
 all bits in each word.
-
-WWW: https://github.com/kokke/tiny-bignum-c

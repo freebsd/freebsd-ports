@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Compresses linked and inline JavaScript/CSS into a single cached file
+WWW=		https://github.com/jezdez/django_compressor
 
 LICENSE=	MIT
 

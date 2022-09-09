@@ -5,6 +5,7 @@ CATEGORIES=	misc devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Advanced delta creator, patcher, and library
+WWW=		https://github.com/jjwhitney/BDelta
 
 LICENSE=	MPL20
 

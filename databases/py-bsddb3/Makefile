@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python extension module for BerkeleyDB 4.7, 4.8, 5.1, 5.3, 6.1 and 6.2
+WWW=		https://www.jcea.es/programacion/pybsddb.htm
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

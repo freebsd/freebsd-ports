@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interface to Graphviz's Dot language
+WWW=		https://github.com/carlos-jenkins/pydotplus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

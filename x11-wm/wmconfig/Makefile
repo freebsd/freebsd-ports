@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.arrishq.net/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
+WWW=		https://www.arrishq.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -10,5 +10,3 @@ What is ODBC?
 ODBC is an open specification for providing application developers with
 a predictable API with which to access Data Sources. Data Sources include
 SQL Servers and any Data Source with an ODBC Driver.
-
-WWW: http://www.unixodbc.org/

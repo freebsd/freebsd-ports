@@ -6,6 +6,7 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM Chinese Smart Pinyin input method
+WWW=		https://github.com/scim-im/scim
 
 BUILD_DEPENDS=	scim>=1.2.0:textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}

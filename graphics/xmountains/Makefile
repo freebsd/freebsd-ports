@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	X11 based fractal landscape generator
+WWW=		https://spbooth.github.io/xmountains/
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

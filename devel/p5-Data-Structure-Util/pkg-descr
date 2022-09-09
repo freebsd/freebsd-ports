@@ -10,5 +10,3 @@ It can remove the blessing on any reference. It can collect all
 the objects or detect if there is a circular reference.
 
 It is written in C for decent speed.
-
-WWW: https://metacpan.org/release/Data-Structure-Util

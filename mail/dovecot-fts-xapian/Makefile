@@ -9,6 +9,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Dovecot FTS plugin based on Xapian
+WWW=		https://github.com/grosjo/fts-xapian
 
 LICENSE=	LGPL21
 

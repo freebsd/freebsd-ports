@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Simple Unicode-aware console and X11-based word processor
+WWW=		https://cowlark.com/wordgrinder/
 
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
 

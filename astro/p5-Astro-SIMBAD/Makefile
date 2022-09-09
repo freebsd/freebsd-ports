@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO Perl interface to the SIMBAD astronomical database
+WWW=		http://www.estar.org.uk/
 
 LICENSE=	GPLv2+
 

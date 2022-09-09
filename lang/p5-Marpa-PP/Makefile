@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Perl version of Marpa
+WWW=		https://metacpan.org/release/JKEGL/Marpa-PP-0.014000
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

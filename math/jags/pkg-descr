@@ -8,5 +8,3 @@ manual that describes the differences between JAGS and BUGS.
 
 Some of the BUGS examples have been modified to run with JAGS, and have
 been turned into a test suite.
-
-WWW: http://mcmc-jags.sourceforge.net/

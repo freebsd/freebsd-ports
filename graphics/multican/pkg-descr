@@ -6,5 +6,3 @@ Multican communicates with camera directly, without generic library such as
 provided by gPhoto2, and currently has no GUI, which makes it no replacement
 for Canon's EOS Utility, but it can be useful nonetheless in various setups,
 e.g. for astrophotography.
-
-WWW: http://multican.sourceforge.net/

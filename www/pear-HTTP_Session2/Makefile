@@ -4,6 +4,7 @@ CATEGORIES=	www devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP5 Session Handler
+WWW=		https://pear.php.net/package/HTTP_Session2
 
 LICENSE=	BSD3CLAUSE
 

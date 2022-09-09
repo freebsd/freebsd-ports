@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
+WWW=		https://www.cs.cmu.edu/~quake/triangle.html
 
 # Converted from NO_CDROM
 LICENSE=	triangle

@@ -8,5 +8,3 @@ them - all other arrays remain unaffected.arrays with
 keyword access require much less memory when compared
 to hashes/objects and yet still provide fast lookup and
 preserve data order.
-
-WWW: https://github.com/ahoward/arrayfields

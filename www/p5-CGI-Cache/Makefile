@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to cache output of time-intensive CGI scripts
+WWW=		https://metacpan.org/release/CGI-Cache
 
 LICENSE=	GPLv2
 

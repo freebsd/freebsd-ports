@@ -20,5 +20,3 @@ can also be used directly, for example for use in shellscripts.
 
 This means a program such as a MUA doesn't need to be setgid mail anymore
 to be able to lock the mailbox.
-
-WWW: https://github.com/miquels/liblockfile

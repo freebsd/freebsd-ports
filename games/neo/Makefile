@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	cmatrix clone with 32-bit color and Unicode support
+WWW=		https://github.com/st3w/neo
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

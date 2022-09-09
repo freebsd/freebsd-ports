@@ -8,6 +8,7 @@ DISTNAME=	tyrian${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Data files for opentyrian
+WWW=		https://bitbucket.org/opentyrian/opentyrian/wiki/Home
 
 # From opentyrian FAQ:
 # "Tyrian was, however, released as freeware (under no specific

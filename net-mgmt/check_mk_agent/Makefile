@@ -12,6 +12,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Nagios-compatible agent for the Checkmk monitoring
+WWW=		https://checkmk.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

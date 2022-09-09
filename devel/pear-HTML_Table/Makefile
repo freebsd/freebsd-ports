@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Makes design of HTML tables easy, flexible, reusable, and efficient
+WWW=		https://pear.php.net/package/HTML_Table
 
 LICENSE=	BSD3CLAUSE
 

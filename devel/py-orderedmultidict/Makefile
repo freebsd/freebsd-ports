@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ordered multivalue dictionary
+WWW=		https://github.com/gruns/orderedmultidict
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

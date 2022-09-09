@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plack::Middleware::Debug extension Perl module
+WWW=		https://metacpan.org/release/Dancer-Debug
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

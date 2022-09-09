@@ -4,5 +4,3 @@ and more clean way. It provides the same features, but you
 can easily adjust it or extend for your needs. For example,
 you can change how it loads included files or add another
 ways how to select portions of the document to include.
-
-WWW: https://github.com/jirutka/asciidoctor-include-ext

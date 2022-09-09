@@ -5,6 +5,7 @@ MASTER_SITES?=	https://unit.nginx.org/download/
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT?=	Dynamic web application server
+WWW=		https://unit.nginx.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

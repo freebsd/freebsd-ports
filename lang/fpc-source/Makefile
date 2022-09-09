@@ -15,6 +15,7 @@ DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler with Turbo and Delphi compatibility (source)
+WWW=		https://www.freepascal.org/
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes

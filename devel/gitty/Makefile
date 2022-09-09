@@ -1,11 +1,12 @@
 PORTNAME=	gitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Smart terminal helper for git projects
+WWW=		https://github.com/muesli/gitty
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Custmomize WWW::Mechanize via plugins
+WWW=		https://metacpan.org/release/WWW-Mechanize-Pluggable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

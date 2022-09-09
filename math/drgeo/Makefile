@@ -6,6 +6,7 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK interactive geometry software
+WWW=		http://www.ofset.org/drgeo/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

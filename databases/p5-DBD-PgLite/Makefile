@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PostgreSQL emulation mode for SQLite
+WWW=		https://metacpan.org/release/DBD-PgLite
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBD-SQLite>=1.0:databases/p5-DBD-SQLite \

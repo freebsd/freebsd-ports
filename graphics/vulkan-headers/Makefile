@@ -1,10 +1,11 @@
 PORTNAME=	vulkan-headers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.225
+DISTVERSION=	1.3.227
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-Headers
 
 LICENSE=	APACHE20
 

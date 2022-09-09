@@ -14,5 +14,3 @@ Features:
     Full command line interface.
     Leader / follower replication.
     In-memory database that persists on disk.
-
-WWW: https://tile38.com/

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Compiler infrastructure and toolchain library for WebAssembly
+WWW=		https://github.com/WebAssembly/binaryen
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

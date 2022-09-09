@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Numeric, textual, and statistical operations on text files
+WWW=		https://www.gnu.org/software/datamash/
 
 LICENSE=	GPLv3+
 

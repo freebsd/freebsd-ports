@@ -2,5 +2,3 @@ Log::Dispatch::FileWriteRotate functions similarly to Log::Dispatch::FileRotate,
 but uses File::Write::Rotate as backend, thus interoperates more easily with
 other modules which use File::Write::Rotate as backend, e.g.
 Tie::Handle::FileWriteRotate or Process::Govern.
-
-WWW: https://metacpan.org/release/Log-Dispatch-FileWriteRotate

@@ -1,11 +1,12 @@
 PORTNAME=	fonttools
-PORTVERSION=	4.34.4
+PORTVERSION=	4.37.1
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source library for manipulating fonts, written in Python
+WWW=		https://github.com/fonttools/fonttools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

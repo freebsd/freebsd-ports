@@ -1,10 +1,11 @@
 PORTNAME=	scales
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Scale functions for graphics
+WWW=		https://cran.r-project.org/web/packages/scales/
 
 LICENSE=	MIT
 

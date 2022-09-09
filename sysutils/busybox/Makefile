@@ -5,6 +5,7 @@ MASTER_SITES=	https://busybox.net/downloads/
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Set of common utilities built as single binary
+WWW=		https://www.busybox.net/
 
 LICENSE=	GPLv2
 

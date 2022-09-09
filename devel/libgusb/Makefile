@@ -4,14 +4,14 @@ CATEGORIES=	devel
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GUsb is a GObject wrapper for libusb1
+WWW=		https://github.com/hughsie/libgusb
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc \
-		vapigen:lang/vala
+BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
-USES=		gnome meson pkgconfig
+USES=		gnome meson pkgconfig vala:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hughsie

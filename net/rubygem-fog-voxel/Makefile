@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support Voxel
+WWW=		https://github.com/fog/fog-voxel
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

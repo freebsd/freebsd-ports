@@ -7,5 +7,3 @@ unittest.mock in Python 3.3 onwards.
 
 This package contains a rolling backport of the standard library mock code
 compatible with Python 2.7 and 3.4 and up.
-
-WWW: https://mock.readthedocs.org/en/latest/

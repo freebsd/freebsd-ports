@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class::DBI Swiss Army Knife (SAK)
+WWW=		https://metacpan.org/release/Class-DBI-SAK
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-mixin>=0:devel/p5-mixin

@@ -7,6 +7,7 @@ DISTNAME=	EasyProcess-${PORTVERSION}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Easy to use python subprocess interface
+WWW=		https://github.com/ponty/EasyProcess
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

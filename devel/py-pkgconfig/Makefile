@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface Python with pkg-config
+WWW=		https://github.com/matze/pkgconfig
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Random assortment of WSGI servers
+WWW=		https://bitbucket.org/denisenkom/flup
 
 LICENSE=	BSD2CLAUSE
 

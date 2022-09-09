@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	ASCII Monitor for system resources and process activity
+WWW=		https://github.com/samm-git/atop-freebsd
 
 LICENSE=	GPLv2
 

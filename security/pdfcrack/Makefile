@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cracking tool for password-protected PDF-files
+WWW=		https://sourceforge.net/projects/pdfcrack/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

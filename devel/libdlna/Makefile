@@ -7,6 +7,7 @@ MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 
 MAINTAINER=	malus.x@gmail.com
 COMMENT=	Reference DLNA open-source implementation
+WWW=		https://libdlna.geexbox.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

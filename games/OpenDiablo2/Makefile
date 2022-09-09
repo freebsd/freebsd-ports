@@ -1,11 +1,12 @@
 PORTNAME=	OpenDiablo2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1-g20210514
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Open source re-implementation of Diablo 2
+WWW=		https://opendiablo2.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,6 +1,7 @@
 PKGNAMESUFFIX=	-netdump
 
 COMMENT=	MooseFS network packet dump utility
+WWW=		https://moosefs.com/
 
 MFS_COMPONENT=	netdump
 

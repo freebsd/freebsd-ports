@@ -7,6 +7,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command to print the date in Discordian date format
+WWW=		https://github.com/bo0ts/ddate/
 
 LICENSE=	GPLv2
 

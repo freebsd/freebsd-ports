@@ -4,5 +4,3 @@ The frontend is completely PHP driven. Along with being able to maintain
 Graphs, Data Sources, and Round Robin Archives in a database, cacti handles
 the data gathering. There is also SNMP support for those used to creating
 traffic graphs with MRTG.
-
-WWW: https://www.cacti.net/

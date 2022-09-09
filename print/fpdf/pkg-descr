@@ -19,5 +19,3 @@ Here is a list of its main features:
 Of course, the generation speed of the document is less than with PDFlib.
 However, the performance penalty keeps very reasonable and suits in most
 cases, unless your documents are particularly complex or heavy.
-
-WWW: http://www.fpdf.org/

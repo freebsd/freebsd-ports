@@ -11,5 +11,3 @@ as well as more advanced sub-table extraction, table sorting, record matching
 via keywords or patterns, table merging, and web publishing. Data::Table class
 also provides a straightforward interface to other popular Perl modules such as
 DBI and GD::Graph.
-
-WWW: https://metacpan.org/release/Data-Table

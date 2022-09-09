@@ -5,5 +5,3 @@ specification:
    Specification / Version 1.3 WBXML (15th May 2000 Approved)
 
 The binary format was designed to preserve the element structure of XML.
-
-WWW: https://metacpan.org/release/WAP-wbxml

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Daemon-less notifications without D-Bus
+WWW=		https://github.com/dudik/herbe
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

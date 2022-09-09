@@ -1,5 +1,3 @@
 This software adds POP3 functionality to Email::Folder.
 Its interface is identical to the other
 Email::Folder::Reader subclasses.
-
-WWW: https://metacpan.org/release/Email-Folder-POP3

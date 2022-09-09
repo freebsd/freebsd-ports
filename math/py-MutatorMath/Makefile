@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Piecewise linear interpolation in multiple dimensions
+WWW=		https://github.com/LettError/MutatorMath
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

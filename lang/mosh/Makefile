@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	mjt@cltn.org
 COMMENT=	Fast R6RS Scheme interpreter
+WWW=		https://mosh.monaos.org/
 
 LICENSE=	BSD2CLAUSE
 

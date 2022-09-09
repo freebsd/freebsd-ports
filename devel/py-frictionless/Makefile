@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework to describe, extract, validate, and transform tabular data
+WWW=		https://github.com/frictionlessdata/frictionless-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

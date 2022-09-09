@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	System V IPC for Python
+WWW=		https://semanchuk.com/philip/sysv_ipc/
 
 LICENSE=	BSD2CLAUSE
 

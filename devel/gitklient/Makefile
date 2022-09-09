@@ -1,10 +1,11 @@
 PORTNAME=	gitklient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1
+DISTVERSION=	0.3
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Git gui client for KDE
+WWW=		https://github.com/HamedMasafi/GitKlient
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Tomoe
+WWW=		http://scim-imengine.sourceforge.jp/index.cgi?cmd=view;name=SCIMTomoe
 
 BUILD_DEPENDS=	scim:textproc/scim
 LIB_DEPENDS=	libtomoe.so:japanese/tomoe \

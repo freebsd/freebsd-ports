@@ -1,9 +1,10 @@
 PORTNAME=	cpplint
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Static code checker for C++
+WWW=		https://github.com/cpplint/cpplint
 
 LICENSE=	BSD3CLAUSE
 

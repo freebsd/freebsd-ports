@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Multi-service chat bot with extendable behavior
+WWW=		https://github.com/litaio/lita
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

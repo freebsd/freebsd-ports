@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Simple image editor for QtQuick applications
+WWW=		https://invent.kde.org/libraries/kquickimageeditor
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt

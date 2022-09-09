@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Minimalist Object Orientation (with Moose compatibility)
+WWW=		https://metacpan.org/release/Moo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use WebKit to Generate PDFs from HTML
+WWW=		https://metacpan.org/release/PDF-WebKit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

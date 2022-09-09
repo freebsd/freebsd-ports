@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program allowing to quickly pick a file in a large project
+WWW=		https://savannah.nongnu.org/projects/gpicker
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

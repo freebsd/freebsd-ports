@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Symbolic Manipulation System
+WWW=		https://www.nikhef.nl/~form/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

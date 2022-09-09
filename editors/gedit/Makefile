@@ -6,12 +6,12 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for the GNOME Desktop Environment
+WWW=		https://www.gnome.org/projects/gedit/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
-		vala:lang/vala \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
@@ -28,7 +28,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase meson \
-		pkgconfig python:3.4+ tar:xz xorg
+		pkgconfig python:3.4+ tar:xz vala:build xorg
 USE_CSTD=	c11
 USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 intlhack introspection \
 		libxml2 pygobject3

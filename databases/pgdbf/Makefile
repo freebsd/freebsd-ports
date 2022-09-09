@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	kirk@strauser.com
 COMMENT=	Convert XBase / FoxPro tables to PostgreSQL
+WWW=		http://pgdbf.sourceforge.net/
 
 LICENSE=	GPLv3
 

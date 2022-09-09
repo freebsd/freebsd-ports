@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IPv6 Address Manipulation Library
+WWW=		https://metacpan.org/release/IPv6-Address
 
 LICENSE=	ART20
 

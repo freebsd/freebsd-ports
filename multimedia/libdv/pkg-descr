@@ -7,5 +7,3 @@ video: IEC 61834 and SMPTE 314M.
 Please note that this software is only concerned with the DV video
 compression format, which is different from capturing the data from
 a camcorder.
-
-WWW: http://libdv.sourceforge.net/

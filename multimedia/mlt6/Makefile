@@ -1,6 +1,6 @@
 PORTNAME=		${_MLT_PORTNAME}
 DISTVERSION=		${_MLT_VERSION}
-PORTREVISION?=		6
+PORTREVISION?=		7
 CATEGORIES?=		multimedia
 # Don't use GitHub "fake" downloads that are auto-generated from a
 # tag; the project uploads tarballs for each release.
@@ -11,6 +11,7 @@ WRKSRC=			${WRKDIR}/mlt-${DISTVERSION}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT?=		Multimedia framework for TV broadcasting
+WWW=		https://www.mltframework.org/
 
 LICENSE?=		GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=		multi

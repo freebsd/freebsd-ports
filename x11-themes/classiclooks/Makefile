@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Retro theme providing a consistent look for all standard GUI toolkits
+WWW=		http://www.itgroup.ro/classiclooks
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

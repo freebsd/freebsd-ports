@@ -8,6 +8,7 @@ DISTNAME=	Net_TCLink.pm-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to for connecting to the TrustCommerce payment gateway
+WWW=		https://metacpan.org/release/Net_TCLink
 
 LICENSE=	LGPL21
 

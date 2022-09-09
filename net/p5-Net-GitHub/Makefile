@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to github.com
+WWW=		https://metacpan.org/release/Net-GitHub
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

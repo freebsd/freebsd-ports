@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Stack trace visualizer
+WWW=		https://github.com/brendangregg/FlameGraph
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/docs/cddl1.txt

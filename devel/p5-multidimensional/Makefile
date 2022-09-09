@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Disables multidimensional array emulation
+WWW=		https://metacpan.org/release/multidimensional
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

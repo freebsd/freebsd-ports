@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for computing the sunrise/sunset on a given day
+WWW=		https://metacpan.org/release/Astro-Sunrise
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

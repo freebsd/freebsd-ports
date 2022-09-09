@@ -1,11 +1,12 @@
 PORTNAME=	horcrux
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Split files into encrypted fragments
+WWW=		https://github.com/jesseduffield/horcrux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

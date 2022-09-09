@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create constructors, accessor, update methods for objects from Tangram
+WWW=		https://metacpan.org/release/Class-Tangram
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Set-Object>=0:devel/p5-Set-Object \

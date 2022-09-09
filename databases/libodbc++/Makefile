@@ -6,6 +6,7 @@ MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library and toolset for ODBC access to data sources
+WWW=		http://orcane.net/freeodbc++/
 
 LICENSE=	GPLv2
 

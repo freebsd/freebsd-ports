@@ -1,11 +1,12 @@
 PORTNAME=	oslo.messaging
-PORTVERSION=	13.0.0
+PORTVERSION=	14.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Messaging API
+WWW=		https://docs.openstack.org/oslo.messaging/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

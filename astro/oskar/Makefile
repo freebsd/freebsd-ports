@@ -5,6 +5,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SKA Radio telescope simulator
+WWW=		https://github.com/OxfordSKA/OSKAR
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

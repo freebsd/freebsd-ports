@@ -5,12 +5,12 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interface provider to access the user's online accounts
+WWW=		https://wiki.gnome.org/Projects/GnomeOnlineAccounts/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
-		valac:lang/vala
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsecret-1.so:security/libsecret \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib gettext gmake gnome libtool \
-		localbase pathfix pkgconfig tar:xz
+		localbase pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gtk30 introspection:build libxml2 libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

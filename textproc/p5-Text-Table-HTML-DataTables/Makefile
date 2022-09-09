@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate HTML table with jQuery and DataTables plugin
+WWW=		https://metacpan.org/release/Text-Table-HTML-DataTables
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

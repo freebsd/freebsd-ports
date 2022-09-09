@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl objects to represent Nagios configuration
+WWW=		https://metacpan.org/release/Nagios-Object
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-Exception>=0.31:devel/p5-Test-Exception \

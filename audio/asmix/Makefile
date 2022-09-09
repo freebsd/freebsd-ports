@@ -7,6 +7,7 @@ MASTER_SITES=	http://tigr.net/afterstep/download/asmix/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Volume control dock-app for the AfterStep Window Manager
+WWW=		https://tigr.net/afterstep/
 
 LICENSE=	GPLv2
 

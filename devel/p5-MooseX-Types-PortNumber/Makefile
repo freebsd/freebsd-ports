@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Port number type for Moose classes by the IANA
+WWW=		https://metacpan.org/release/MooseX-Types-PortNumber
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Line-by-line profiler for Python
+WWW=		https://github.com/pyutils/line_profiler
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

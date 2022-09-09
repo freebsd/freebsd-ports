@@ -3,5 +3,3 @@ DBI columns that only inflate to an object when it is required.
 When a row is fetched, columns specified via has_lazy() is wrapped
 by Data::Lazy, such that it is inflated only when the column is
 actually used.
-
-WWW: https://metacpan.org/release/Class-DBI-LazyInflate

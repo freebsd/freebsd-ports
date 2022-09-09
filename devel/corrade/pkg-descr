@@ -11,5 +11,3 @@ Features:
 * Plugin management library with static and dynamic plugins, dependency handling
   and hot code reload
 * Signal/slot connection library with full type safety
-
-WWW: https://magnum.graphics/corrade/

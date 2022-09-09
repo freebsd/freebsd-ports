@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	API for Xena Hub to access genetic information shared through the hub
+WWW=		https://github.com/ucscXena/xenaPython
 
 LICENSE=	APACHE20
 

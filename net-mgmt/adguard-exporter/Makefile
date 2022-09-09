@@ -1,11 +1,12 @@
 PORTNAME=		adguard-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		christer.edwards@gmail.com
 COMMENT=		Prometheus metrics exporter for AdGuard Home DNS
+WWW=		https://github.com/ebrianne/adguard-exporter
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE

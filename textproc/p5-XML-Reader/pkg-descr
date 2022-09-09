@@ -3,5 +3,3 @@ sequentially parsing XML files (so called "pull-mode" parsing)
 and at the same time keeps track of the complete XML-path.
 
 It was developped as a wrapper on top of XML::Parser.
-
-WWW: https://metacpan.org/release/XML-Reader

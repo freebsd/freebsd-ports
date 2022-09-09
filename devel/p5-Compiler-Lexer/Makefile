@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for lexical analyzer
+WWW=		https://metacpan.org/release/Compiler-Lexer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

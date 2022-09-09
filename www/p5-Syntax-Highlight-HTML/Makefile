@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for HTML syntax highlighting
+WWW=		https://metacpan.org/release/Syntax-Highlight-HTML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

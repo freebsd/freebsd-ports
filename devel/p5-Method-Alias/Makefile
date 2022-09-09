@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create method aliases (and do it safely)
+WWW=		https://metacpan.org/release/Method-Alias
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

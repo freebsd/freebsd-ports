@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extraction of the key_transform abilities of ActiveModelSerializers
+WWW=		https://github.com/NullVoxPopuli/case_transform
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Basic Quicklisp support for SLY
+WWW=		https://github.com/joaotavora/sly-quicklisp
 
 LICENSE=	PD
 

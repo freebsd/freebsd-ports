@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	OpenBMP Server Collector
+WWW=		https://github.com/OpenBMP/openbmp
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

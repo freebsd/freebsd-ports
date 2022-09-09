@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Pixmap library
+WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 

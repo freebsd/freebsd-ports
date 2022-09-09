@@ -1,17 +1,18 @@
 PORTNAME=	freeipmi
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware
+WWW=		https://savannah.gnu.org/projects/freeipmi/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64 powerpc64le
-BROKEN_aarch64=		fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined reference to inb (also outb)
-BROKEN_armv7=		fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined reference to inb (also outb)
+BROKEN_aarch64=	fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined reference to inb (also outb)
+BROKEN_armv7=	fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined reference to inb (also outb)
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libgcrypt.so:security/libgcrypt

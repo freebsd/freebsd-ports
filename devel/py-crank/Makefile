@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generalization of dispatch mechanism for use across frameworks
+WWW=		https://github.com/TurboGears/crank
 
 LICENSE=	MIT
 

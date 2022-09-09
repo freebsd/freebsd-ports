@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Visualize your data in Scalable Vector Graphics (SVG) format
+WWW=		https://metacpan.org/release/SVG-Graph
 
 LICENSE=	ART20
 

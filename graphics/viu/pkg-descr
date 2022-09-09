@@ -6,5 +6,3 @@ accordingly.
 When run, viu will check the value of $COLORTERM. If it contains
 either truecolor or 24bit, truecolor (16 million colors) will be
 used. If not, it will fallback to using only ansi256.
-
-WWW: https://github.com/atanunq/viu

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework SIP (Voice Over IP, RFC3261)
+WWW=		https://metacpan.org/release/Net-SIP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

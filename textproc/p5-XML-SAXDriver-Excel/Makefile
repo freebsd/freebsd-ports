@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX driver for converting Excel files to XML
+WWW=		https://metacpan.org/release/XML-SAXDriver-Excel
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Spreadsheet-ParseExcel>=0.2603:textproc/p5-Spreadsheet-ParseExcel \

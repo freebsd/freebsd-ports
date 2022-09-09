@@ -12,6 +12,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable troff translator with backend for HTML
+WWW=		https://www-rn.informatik.uni-bremen.de/software/unroff/
 
 LICENSE=	UNROFF
 LICENSE_NAME=	unroff license

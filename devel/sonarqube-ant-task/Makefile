@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	SonarQube Plugin for analysis projects with an Apache Ant
+WWW=		https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-ant/
 
 LICENSE=	LGPL3
 

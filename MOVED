@@ -3648,7 +3648,6 @@ www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versi
 net/fping+ipv6|net/fping|2012-09-24|IPv6 support has been merged
 textproc/aspell-without-dicten|textproc/aspell|2012-09-24|The dictionary is no longer installed with textproc/aspell
 www/jakarta-jmeter|www/jmeter|2012-09-25|Former Jakarta projects now live on their own
-www/smarty|www/smarty2|2012-09-26|Renamed to prepare for addition of Smarty 3.x to the tree
 devel/p5-Devel-Mallinfo||2012-10-08|Has expired: Does not work on FreeBSD, mallinfo() is a GNU libc function and is not available on FreeBSD
 multimedia/vdpau-video|multimedia/libva-vdpau-driver|2012-10-09|Project renamed
 mail/enigmail||2012-10-10|Enigmail is now an option in the thunderbird/seamonkey port
@@ -10506,7 +10505,6 @@ security/ossec-hids-client|security/ossec-hids-agent|2018-11-09|Agent is the nam
 graphics/ImageMagick|graphics/ImageMagick6|2018-11-10|Port renamed
 graphics/ImageMagick-nox11|graphics/ImageMagick6-nox11|2018-11-10|Port renamed
 lang/gcc6-devel|lang/gcc6|2018-11-11|The GCC 6 branch has been closed, use the final release instead (or a later major version)
-mail/py-email-reply-parser|mail/py-email_reply_parser|2018-11-15|Rename to match upstream naming
 net-mgmt/vidalia||2018-11-16|Has expired: outdated and unmaintained
 german/selfhtml||2018-11-16|Has expired: Project migrated to a Wiki
 sysutils/fastest_cvsup||2018-11-16|Has expired: Obsolete, FreeBSD and OpenBSD switched from cvsup to svn and cvsync, NetBSD only have 2 servers left
@@ -13290,7 +13288,6 @@ x11-themes/cursor-grounation-theme||2019-10-16|Has expired: Unfetchable, unmaint
 x11-themes/cursor-neutral-theme||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-themes/cursor-polar-theme||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-themes/gtk-envy-theme||2019-10-16|Has expired: Unfetchable, unmaintained
-x11-themes/gtk-equinox-engine||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-themes/gtk-qnxtheme||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-themes/plank-theme-moka||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-toolkits/swt-devel||2019-10-16|Has expired: Obsolete. Superseded by x11-toolkits/swt
@@ -17536,3 +17533,23 @@ science/openkim|science/openkim-models|2022-08-07|Retire obsolete science/openki
 net/zeroconf-ioslave|net/kio-zeroconf|2022-08-18|Renamed upstream
 japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
 x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6
+net/gstreamer1-plugins-libmms||2022-08-26|Microsoft deprecated MMS in 2003
+mail/py-email_reply_parser|mail/py-email-reply-parser|2022-08-27|Rename to match upstream naming
+print/py-pdf2|print/py-pypdf2|2022-08-27|Rename to match upstream naming
+textproc/py-Chameleon|textproc/py-chameleon|2022-08-27|Rename to match upstream naming
+print/py-pdf|print/py-pypdf|2022-08-27|Rename to match upstream naming
+shells/ksh93-devel|shells/ksh-devel|2022-08-28|Development has resumed under a new GH account
+devel/boehm-gc-redirect||2022-08-29|No consumer in ports tree
+devel/libthreader|devel/libthreadar|2022-08-29|Fix directory name
+mail/rainloop-community|mail/rainloop|2022-09-01|Only one edition "legacy" is provided now
+java/openjdk7||2022-09-03|Has expired: EOLed since 31 July 2022
+java/openjdk7-jre||2022-09-03|Has expired: EOLed since 31 July 2022
+devel/py-logfury0|devel/py-logfury|2022-09-04|Remove obsoleted port. Use devel/py-logfury instead
+www/py-beautifulsoup449|www/py-beautifulsoup|2022-09-04|Remove obsoleted port. Use www/py-beautifulsoup instead
+x11-drivers/xf86-video-trident||2022-09-04|Has expired: Broken with recent xorg, no fixes upstream
+x11-drivers/xf86-video-s3||2022-09-04|Has expired: Broken with recent xorg, no fixes upstream
+x11-drivers/xf86-video-glint||2022-09-04|Has expired: Broken with recent xorg, no fixes upstream
+www/mediawiki136||2022-09-04|Has expired: Upstream no longer maintained
+games/sopwith|games/sdl-sopwith|2022-09-04|Moved to match upstream name
+graphics/drm-fbsd13-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
+graphics/drm-54-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod

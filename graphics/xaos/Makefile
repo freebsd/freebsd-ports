@@ -6,6 +6,7 @@ CATEGORIES=	graphics math
 
 MAINTAINER=	joerg.preiss@slesa.de
 COMMENT=	Real-time interactive fractal browser
+WWW=		https://xaos-project.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

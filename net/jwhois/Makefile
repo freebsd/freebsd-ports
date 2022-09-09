@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved WHOIS client capable of selecting server to query
+WWW=		https://www.gnu.org/software/jwhois/
 
 LICENSE=	GPLv3
 

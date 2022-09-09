@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Cross-platform clipboard module for Python
+WWW=		https://github.com/asweigart/pyperclip
 
 LICENSE=	BSD3CLAUSE
 

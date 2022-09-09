@@ -1,10 +1,12 @@
 PORTNAME=	grpcui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive web UI for gRPC, along the lines of postman
+WWW=		https://github.com/fullstorydev/grpcui
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

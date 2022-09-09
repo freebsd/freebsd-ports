@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
+WWW=		https://www.wagner.pp.ru/~vitus/software/catdoc/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

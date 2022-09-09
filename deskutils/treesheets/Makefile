@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free form data organizer
+WWW=		http://treesheets.com
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt

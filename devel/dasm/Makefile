@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Macro assembler with support for several 8-bit microprocessors
+WWW=		https://dasm-assembler.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

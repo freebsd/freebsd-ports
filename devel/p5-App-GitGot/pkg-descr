@@ -3,5 +3,3 @@ controlled repositories you have on all the computers you use. It can
 operate on all, some, or just one repo at a time, to both check the
 status of the repo (up to date, pending changes, dirty, etc.) and
 sync it with any upstream master.
-
-WWW: https://metacpan.org/release/App-GitGot

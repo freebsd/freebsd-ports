@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple Web Discovery Client Library
+WWW=		https://github.com/nov/swd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

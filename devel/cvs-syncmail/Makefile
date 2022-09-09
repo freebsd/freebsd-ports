@@ -7,6 +7,7 @@ EXTRACT_SUFX=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS notification tool
+WWW=		https://sourceforge.net/projects/cvs-syncmail/
 
 LICENSE=	BSD3CLAUSE  # see CVS repository on SourceForge
 

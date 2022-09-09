@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Ensures consistent *FEATURES* in Common Lisp
+WWW=		https://www.cliki.net/trivial-features
 
 NO_BUILD=	yes
 

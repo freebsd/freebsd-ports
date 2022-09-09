@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Textile markup generator written in Python
+WWW=		https://github.com/textile/python-textile/releases
 
 LICENSE=	BSD2CLAUSE
 

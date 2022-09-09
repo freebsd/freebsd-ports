@@ -1,10 +1,11 @@
 PORTNAME=	terraform-switcher
 DISTVERSION=	0.13.1250
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Tool to switch between different versions of terraform
+WWW=		https://tfswitch.warrensbox.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

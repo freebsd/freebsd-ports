@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extension for handling ESRI GIS Shapefiles
+WWW=		https://metacpan.org/pod/Geo::ShapeFile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

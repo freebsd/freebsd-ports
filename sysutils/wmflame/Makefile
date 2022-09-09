@@ -7,6 +7,7 @@ MASTER_SITES=	AFTERSTEP/stable/rpms/misc-tarballs \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that shows the load average as a flame
+WWW=		http://web.novalis.org/
 
 LICENSE=	GPLv2
 

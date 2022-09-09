@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	DOSBox fork
+WWW=		https://dosbox-x.com/
 
 LICENSE=	GPLv2
 

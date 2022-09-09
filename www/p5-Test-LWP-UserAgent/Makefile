@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	LWP::UserAgent suitable for simulating and testing network calls
+WWW=		https://metacpan.org/release/Test-LWP-UserAgent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -11,6 +11,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use powerful bridge between C and FORTRAN
+WWW=		http://www-zeus.desy.de/~burow/cfortran/
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

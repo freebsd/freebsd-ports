@@ -17,5 +17,3 @@ Reads the netflow data from the files stored by nfcapd and sends it over
 the network to another host.
 
 ft2nfdump - flow-tools to nfdump - optional component.
-
-WWW: https://github.com/phaag/nfdump

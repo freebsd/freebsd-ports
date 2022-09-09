@@ -4,7 +4,5 @@ GECOS field in /etc/passwd) and creates Unix accounts and (if desired)
 Samba accounts as well. If the script stumbles upon duplicate user names
 it can append random characters to the username until it fits.
 
-WWW: http://btw23.de/johannes/userneu/userneu.html
-
 -Andreas Fehlner
 fehlner@gmx.de

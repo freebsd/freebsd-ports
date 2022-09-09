@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	State tracking and event firing utility
+WWW=		https://github.com/ttilley/fssm
 
 LICENSE=	MIT
 

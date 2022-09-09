@@ -3,5 +3,3 @@ interface with databases. It automatically exports the keyword `schema`
 which returns a DBIx::Class::Schema object. You just need to configure
 your database connection information. For performance, schema objects
 are cached in memory and are lazy loaded the first time they are accessed.
-
-WWW: https://github.com/ironcamel/Dancer2-Plugin-DBIC

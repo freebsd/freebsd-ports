@@ -1,12 +1,12 @@
 PORTNAME=	kphotoalbum
-DISTVERSION=	5.8.1
-PORTREVISION=	1
+DISTVERSION=	5.9.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
+WWW=		https://www.kphotoalbum.org/
 
 LICENSE=	GPLv2+
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libKF5Kipi.so:graphics/libkipi
 
 USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
-		pkgconfig qt:5 shebangfix tar:xz
+		pkgconfig qt:5 shebangfix tar:xz xorg
 USE_KDE=	archive auth codecs completion config \
 		configwidgets coreaddons ecm i18n \
 		iconthemes jobwidgets kio marble purpose service \
@@ -24,6 +24,7 @@ USE_KDE=	archive auth codecs completion config \
 USE_QT=		concurrent core dbus declarative gui location network phonon4 \
 		printsupport sql webchannel widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 
 OPTIONS_DEFINE=	WEBENGINE

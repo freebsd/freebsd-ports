@@ -14,5 +14,3 @@ conflicts with other packages.
 You can also install conda packages on FreeBSD.  For details, see
 
 	/usr/ports/sysutils/linux-miniconda-installer/pkg-descr
-
-WWW: https://www.biostarhandbook.com

@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.kar
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Addons for openhab2
+WWW=		https://www.openhab.org/
 
 LICENSE=	EPL
 

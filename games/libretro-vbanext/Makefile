@@ -2,8 +2,9 @@ PORTNAME=	libretro-vbanext
 PORTVERSION=	0.20220327
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimized port of VBA-M to Libretro, a Game Boy Advance emulator
+WWW=		https://github.com/libretro/vba-next
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	hare
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Hare compiler written in C11
+WWW=		https://harelang.org/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

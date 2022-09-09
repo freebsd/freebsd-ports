@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multifunctional wavefunction analysis for quantum chemistry
+WWW=		http://sobereva.com/multiwfn/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

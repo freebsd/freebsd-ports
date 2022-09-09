@@ -7,6 +7,7 @@ DISTFILES=	boost_${BOOST_VERSION_UNDER}.tar.gz:boost
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	High-performance multiple regex matching library
+WWW=		https://www.hyperscan.io/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ DISTNAME=	sfk-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	One hundred command-line tools in one binary
+WWW=		http://stahlworks.com/dev/swiss-file-knife.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

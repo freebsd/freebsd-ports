@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%200.1.x/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight desktop-independent task manager
+WWW=		https://wiki.lxde.org/en/LXTask
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

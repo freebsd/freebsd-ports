@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Tabu solver for QUBO/Ising problems
+WWW=		https://github.com/dwavesystems/dwave-tabu
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

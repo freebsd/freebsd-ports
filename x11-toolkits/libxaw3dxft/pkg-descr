@@ -12,6 +12,3 @@ The main advantage of using libxaw3dxft over libxaw3d or libxaw is
 that all text will appear nicely antialiasedd when using truetype fonts
 in the menu widgets. Also, the use of UTF8 makes it easier to
 internationalize applications in arbitrary languages.
-
-
-WWW: http://sf-xpaint.sourceforge.net/

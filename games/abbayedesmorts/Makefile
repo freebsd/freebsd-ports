@@ -5,6 +5,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform port of l'Abbaye des Morts by Locomalito
+WWW=		https://locomalito.com/abbaye_des_morts.php \
+		https://github.com/nevat/abbayedesmorts-gpl
 
 LICENSE=	GPLv3 CC-BY-3.0
 LICENSE_COMB=	multi

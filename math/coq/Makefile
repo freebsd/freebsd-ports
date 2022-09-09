@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
+WWW=		https://coq.inria.fr/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

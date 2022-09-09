@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-footprints-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad Footprint Libraries
+WWW=		https://gitlab.com/kicad/libraries/kicad-footprints
 
 LICENSE=	GPLv2
 

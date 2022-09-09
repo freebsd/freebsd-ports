@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tool that generates a compilation database for clang tooling
+WWW=		https://github.com/rizsotto/Bear
 
 LICENSE=	GPLv3+
 

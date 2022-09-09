@@ -11,5 +11,3 @@ any process model with only a few configuration changes and no application
 code changes. Servlet applications are insulated from changes in vendor or
 platform and are able to portably take advantage of standard web
 infrastructure services offered by any servlet container.
-
-WWW: http://libservlet.sourceforge.net/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Technorati web services interface
+WWW=		https://metacpan.org/release/WebService-Technorati
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-XPath>=0:textproc/p5-XML-XPath \

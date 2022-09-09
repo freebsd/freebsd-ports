@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SoapySDR Red Pitaya module
+WWW=		https://github.com/pothosware/SoapyRedPitaya/wiki
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

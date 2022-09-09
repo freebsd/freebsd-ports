@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, thread-safe, object-relational mapper
+WWW=		http://datamapper.org
 
 LICENSE=	MIT
 

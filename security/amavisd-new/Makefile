@@ -8,6 +8,7 @@ DISTNAME=	amavis-v${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Mail scanner interface between mailer and content checkers
+WWW=		https://www.ijs.si/software/amavisd/
 
 LICENSE=	GPLv2
 

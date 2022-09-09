@@ -4,6 +4,7 @@ CATEGORIES=	x11-clocks windowmaker
 
 MAINTAINER=	logix@foobar.franken.de
 COMMENT=	Binary clock in a windowmaker applet
+WWW=		http://www.inxsoft.net/wmbinclock/
 
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual

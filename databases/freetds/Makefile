@@ -1,5 +1,5 @@
 PORTNAME=	freetds
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.freetds.org/files/stable/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
+WWW=		http://www.freetds.org/
 
 LICENSE=	GPLv2
 

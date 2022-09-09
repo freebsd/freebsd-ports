@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	uros@gruber.si
 COMMENT=	Datadog Agent Integrations
+WWW=		https://www.datadoghq.com/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

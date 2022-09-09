@@ -6,14 +6,15 @@ MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT?=	Core library of PCManFM file manager
+WWW=		https://wiki.lxde.org/en/Libfm
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 .if ! defined(EXTRA_ONLY)
-BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
-		valac:lang/vala
+USES+=		vala:build
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 		libexif.so:graphics/libexif \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -31,7 +32,7 @@ gtk3_CONFLICTS_INSTALL=	libfm
 
 SLAVEDIRS=	${CATEGORIES}/${PORTNAME}-extra
 
-USES=		gettext-tools gmake gnome libtool localbase \
+USES+=		gettext-tools gmake gnome libtool localbase \
 		pkgconfig tar:xz
 USE_GNOME=	intltool
 USE_LDCONFIG=	yes

@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTFILES:M*[12]:C|:.*||}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Just Another Gibbs Sampler
+WWW=		http://mcmc-jags.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

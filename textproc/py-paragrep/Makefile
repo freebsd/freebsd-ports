@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Paragraph Grep Utility
+WWW=		http://bmc.github.com/paragrep/
 
 LICENSE=	BSD3CLAUSE
 

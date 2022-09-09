@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Faust implementation of a 1969-designed Yamaha combo organ, the YC-20
+WWW=		https://github.com/sampov2/foo-yc20
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

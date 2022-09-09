@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sophisticated exporter for custom-built routines
+WWW=		https://metacpan.org/release/Sub-Exporter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

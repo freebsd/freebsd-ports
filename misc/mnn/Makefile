@@ -5,6 +5,7 @@ CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight deep neural network inference engine
+WWW=		https://github.com/alibaba/MNN
 
 LICENSE=	APACHE20
 

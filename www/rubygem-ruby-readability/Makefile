@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Readability for Ruby
+WWW=		https://github.com/cantino/ruby-readability
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

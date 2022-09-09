@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Client/server-based asynchronous worker pool
+WWW=		https://metacpan.org/release/AnyEvent-Task
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

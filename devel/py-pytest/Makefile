@@ -1,5 +1,5 @@
 PORTNAME=	pytest
-PORTVERSION=	7.1.2
+PORTVERSION=	7.1.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simple powerful testing with Python
+WWW=		https://docs.pytest.org/en/latest/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

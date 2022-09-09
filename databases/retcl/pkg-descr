@@ -1,5 +1,3 @@
 Retcl is an event-driven, object-oriented, Redis client library targetting the
 Tcl scripting language. The library consists of a single Tcl Module file, which
 makes it extremely easy to deploy or integrate into existing projects.
-
-WWW: https://github.com/gahr/retcl

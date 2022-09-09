@@ -8,6 +8,7 @@ PATCHFILES+=	26.patch:-p1
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	NAT-PMP lightweight library
+WWW=		https://github.com/miniupnp/libnatpmp
 
 LICENSE=	BSD3CLAUSE
 

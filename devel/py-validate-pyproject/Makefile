@@ -1,11 +1,12 @@
 PORTNAME=	validate-pyproject
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validation library and CLI tool for checking on pyproject.toml files using JSON schema
+WWW=		https://github.com/abravalheri/validate-pyproject
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -33,5 +34,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-me
 .if ${PORT_OPTIONS:MALL} && ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.2.1:textproc/py-tomli@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 .include <bsd.port.post.mk>

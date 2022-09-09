@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	CalDAV (RFC4791) client library
+WWW=		https://github.com/python-caldav/caldav
 
 LICENSE=	APACHE20 GPLv3
 LICENSE_COMB=	dual

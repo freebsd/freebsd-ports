@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Simple Perl Object Persistence with Security
+WWW=		https://metacpan.org/release/SPOPS
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

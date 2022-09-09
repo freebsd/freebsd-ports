@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Barcode generator (library and utilities)
+WWW=		https://www.zint.org.uk/
 
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi

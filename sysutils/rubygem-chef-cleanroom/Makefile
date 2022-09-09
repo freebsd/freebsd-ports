@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Safely evaluate Ruby DSLs with cleanroom
+WWW=		https://github.com/chef/cleanroom
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

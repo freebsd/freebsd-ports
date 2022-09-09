@@ -6,6 +6,7 @@ MASTER_SITES=	https://invisible-mirror.net/archives/reflex/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Relocalizable fast lexical scanner
+WWW=		https://invisible-island.net/reflex/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

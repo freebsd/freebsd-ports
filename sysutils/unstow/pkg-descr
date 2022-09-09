@@ -2,5 +2,3 @@ unstow
 ------
 
 This is a script to unstow packages much faster than stow -D.
-
-WWW: https://github.com/knu/stow-utils

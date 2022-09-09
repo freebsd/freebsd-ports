@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to strip unwanted HTML tags and attributes
+WWW=		https://metacpan.org/release/HTML-Restrict
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

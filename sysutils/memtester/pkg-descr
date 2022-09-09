@@ -9,5 +9,3 @@ been rewritten by Charles Cazabon and many additional tests were added to
 help catch borderline memory.  He also rewrote the original tests (which
 catch mainly memory bits which are stuck permanently high or low) so that
 they run approximately an order of magnitude faster.
-
-WWW: http://pyropus.ca/software/memtester/

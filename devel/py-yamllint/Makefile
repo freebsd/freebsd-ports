@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Linter for YAML files
+WWW=		https://github.com/adrienverge/yamllint
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

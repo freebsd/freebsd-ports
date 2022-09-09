@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	AWK implementation of gron, a JSON-to-greppable-text transformer
+WWW=		https://github.com/xonixx/gron.awk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

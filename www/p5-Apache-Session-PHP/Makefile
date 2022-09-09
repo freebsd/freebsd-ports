@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Glue Apache::Session with PHP::Session
+WWW=		https://metacpan.org/release/Apache-Session-PHP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PHP-Session>=0:www/p5-PHP-Session \

@@ -4,5 +4,3 @@ resuming multi-line commands, more advanced embedded replacement strings.
 
 These features make rush suitable for easy and flexibe parallelization of
 complex workflows in fields like Bioinformatics.
-
-WWW: https://github.com/shenwei356/rush

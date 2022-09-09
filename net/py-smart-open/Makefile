@@ -1,5 +1,5 @@
 PORTNAME=	smart-open
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	smart_open-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utils for streaming large files
+WWW=		https://github.com/RaRe-Technologies/smart_open
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	Digital photo gallery tool
+WWW=		http://www.edwinh.org/imageindex/
 
 RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		p5-Image-Info>=0:graphics/p5-Image-Info

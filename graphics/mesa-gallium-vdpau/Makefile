@@ -3,6 +3,7 @@ PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VDPAU drivers
+WWW=		https://www.mesa3d.org/
 
 LIB_DEPENDS=	libva.so:multimedia/libva \
 		libvdpau.so:multimedia/libvdpau \

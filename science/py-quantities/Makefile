@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Support for physical quantities with units, based on numpy
+WWW=		https://github.com/python-quantities/python-quantities
 
 LICENSE=	BSD3CLAUSE
 

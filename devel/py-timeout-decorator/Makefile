@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Timeout decorator
+WWW=		https://github.com/pnpnpn/timeout-decorator
 
 LICENSE=	MIT
 

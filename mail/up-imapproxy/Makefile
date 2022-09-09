@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	up-
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Caching IMAP proxy server
+WWW=		http://www.imapproxy.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl6 style Junction operators in Perl5
+WWW=		https://metacpan.org/release/Syntax-Keyword-Junction
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

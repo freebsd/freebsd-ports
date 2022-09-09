@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check the validity and consistency of PO and POT files
+WWW=		http://gettext-lint.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

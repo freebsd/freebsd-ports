@@ -6,6 +6,7 @@ DISTNAME=	C531_C331_C321_Linux_110_31034
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPDs for the Oki C321dn, C331dn, and C531dn printers
+WWW=		https://www.oki.com/de/printing/support/drivers-and-utilities/colour/44951534/
 
 LICENSE=	GPLv2
 

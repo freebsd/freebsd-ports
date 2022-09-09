@@ -3,5 +3,3 @@ simple, reliable, and efficient software.
 
 This is a meta port for the default version of Go, it provides symbolic links
 called go and gofmt.
-
-WWW: https://golang.org

@@ -5,5 +5,3 @@ information parameters of the current tuned channel on OSD. You can zap
 through all your channels and the plugin should be monitoring always the
 right frontend. The transponder and stream information are also available
 in advanced display modes.
-
-WWW: http://www.saunalahti.fi/~rahrenbe/vdr/femon/

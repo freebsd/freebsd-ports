@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt (C++) widgets to manage color inputs
+WWW=		https://gitlab.com/mattia.basaglia/Qt-Color-Widgets
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

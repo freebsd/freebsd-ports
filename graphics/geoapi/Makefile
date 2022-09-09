@@ -6,6 +6,7 @@ DISTNAME=	GeoAPI-3_0_0
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Java interface API based upon OGC Standards
+WWW=		http://geoapi.sf.net
 
 USES=		zip
 NO_BUILD=	yes

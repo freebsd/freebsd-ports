@@ -1,11 +1,12 @@
 PORTNAME=	aptly
 PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Debian repository management tool
+WWW=		https://www.aptly.info/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

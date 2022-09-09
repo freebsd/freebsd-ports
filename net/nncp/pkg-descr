@@ -13,5 +13,3 @@ push and poll behaviour model. Also there is multicasting areas support.
 Out-of-box offline sneakernet/floppynet, dead drops, sequential and
 append-only CD-ROM/tape storages, air-gapped computers support. But
 online TCP daemon with full-duplex resumable data transmission exists.
-
-WWW: http://www.nncpgo.org/

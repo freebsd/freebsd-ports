@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud Spanner API
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-spanner
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ PATCHFILES=	f49e2475f7eba50d3d5c.patch:-p1 c99fbdb382250828d974.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of FAR v2 to Unix-like systems
+WWW=		https://github.com/elfmz/far2l
 
 LICENSE=	GPLv2
 

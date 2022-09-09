@@ -8,6 +8,7 @@ USE_PKG64=	1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
+WWW=		https://mesonbuild.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

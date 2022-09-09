@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Gtk client and libraries for SPICE remote desktop servers
+WWW=		https://www.spice-space.org/
 
 LICENSE=	GPLv2
 

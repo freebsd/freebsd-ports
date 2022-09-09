@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Protobuf messages and functions for robot applications
+WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 

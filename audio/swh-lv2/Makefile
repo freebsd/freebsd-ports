@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SWH Plugins in LV2 format
+WWW=		http://plugin.org.uk/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

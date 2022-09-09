@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Last.fm and AudioScrobbler
+WWW=		https://devel.ringlet.net/audio/Audio-Scrobbler/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

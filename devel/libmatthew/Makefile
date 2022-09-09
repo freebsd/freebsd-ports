@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-java-${DISTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Selection of Java libraries by Matthew Johnson
+WWW=		http://www.matthew.ath.cx/projects/java/
 
 LICENSE=	EXPAT
 LICENSE_NAME=	Expat License

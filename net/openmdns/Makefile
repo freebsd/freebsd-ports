@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multicast DNS and Service Discovery daemon
+WWW=		http://www.haesbaert.org/openmdns/
 
 LICENSE=	ISCL
 

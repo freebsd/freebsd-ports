@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Database migration tool for SQLAlchemy (1.4.X branch)
+WWW=		https://alembic.zzzcomputing.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils 
+USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	py*-alembic* # lib/python3.8/site-packages/alembic/__init__.py'
 

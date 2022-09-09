@@ -10,17 +10,17 @@ PATCHFILES=	b08275d549bb12a09a420ef9ccaeb0974e00008a.patch:-p1 \
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Inspect and build Windows Installer (.MSI) files
+WWW=		https://wiki.gnome.org/msitools
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copyright
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgcab-1.0.so:archivers/gcab \
 		libgsf-1.so:devel/libgsf \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		bison gnome libtool meson perl5 pkgconfig shebangfix tar:xz
+USES=		bison gnome libtool meson perl5 pkgconfig shebangfix tar:xz vala:build
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection libxml2
 SHEBANG_FILES=	tools/msidiff.in \

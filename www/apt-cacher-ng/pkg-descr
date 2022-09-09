@@ -4,5 +4,3 @@ to cache package retrieval for other distributions as well.
 
 The port includes support to add FreeBSD distribution specifics
 to apt-cacher-ng.
-
-WWW: https://www.unix-ag.uni-kl.de/~bloch/acng/

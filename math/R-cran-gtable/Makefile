@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Arrange grobs in tables
+WWW=		https://cran.r-project.org/web/packages/gtable/
 
 LICENSE=	GPLv2
 

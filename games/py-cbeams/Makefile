@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Draw pretty animated colored circles in the terminal
+WWW=		https://github.com/tartley/cbeams
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

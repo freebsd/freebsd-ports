@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ken.mcglothlen@gmail.com
 COMMENT=	Fast templating module
+WWW=		https://metacpan.org/release/Template-Simple
 
 LICENSE=	ART20
 

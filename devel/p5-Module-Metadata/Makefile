@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gather package and POD information from perl module files
+WWW=		https://metacpan.org/release/Module-Metadata
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

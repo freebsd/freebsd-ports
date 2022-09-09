@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Arc Openbox theme
+WWW=		https://github.com/dglava/arc-openbox
 
 LICENSE=	GPLv3
 

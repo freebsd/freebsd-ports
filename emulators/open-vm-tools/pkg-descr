@@ -9,5 +9,3 @@ are tied to a specific virtualization platform.
 
 This port replaces the VMware guest ports and the binary-only VMware
 tools ports in the ports tree.
-
-WWW: https://github.com/vmware/open-vm-tools

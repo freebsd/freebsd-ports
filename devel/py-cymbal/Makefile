@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Easily add functionality missing from libclang Python bindings
+WWW=		https://github.com/CadQuery/cymbal
 
 LICENSE=	MIT
 

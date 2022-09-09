@@ -16,6 +16,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff jue
+WWW=		https://www.jb-line.de/rnd/rnd_start_e.html
 
 LICENSE=	GPLv2
 

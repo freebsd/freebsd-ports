@@ -1,4 +1,4 @@
---- base/system/sys_info_openbsd.cc.orig	2022-04-21 18:48:31 UTC
+--- base/system/sys_info_openbsd.cc.orig	2022-08-31 12:19:35 UTC
 +++ base/system/sys_info_openbsd.cc
 @@ -11,6 +11,7 @@
  #include <sys/sysctl.h>
@@ -8,7 +8,7 @@
  
  namespace {
  
-@@ -28,9 +29,15 @@ int64_t AmountOfMemory(int pages_name) {
+@@ -26,9 +27,15 @@ uint64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
@@ -25,10 +25,10 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -42,10 +49,26 @@ int SysInfo::NumberOfProcessors() {
+@@ -40,10 +47,26 @@ int SysInfo::NumberOfProcessors() {
  
  // static
- int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
+ uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
 -  return AmountOfMemory(_SC_PHYS_PAGES);
 +  // pledge(2)
 +  if (!aofpmem)
@@ -50,10 +50,10 @@
 +}
 +
 +// static
- int64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
+ uint64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
    // We should add inactive file-backed memory also but there is no such
    // information from OpenBSD unfortunately.
-@@ -57,23 +80,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -55,23 +78,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);

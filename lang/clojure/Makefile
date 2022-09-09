@@ -6,6 +6,7 @@ DISTNAME=	clojure-tools-${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Dynamic programming language for the JVM
+WWW=		http://clojure.sourceforge.net/
 
 LICENSE=	EPL
 

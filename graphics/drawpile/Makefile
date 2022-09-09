@@ -5,6 +5,7 @@ CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collaborative drawing program
+WWW=		https://drawpile.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

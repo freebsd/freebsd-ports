@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python nearest neighbor descent for approximate nearest neighbors
+WWW=		https://github.com/lmcinnes/pynndescent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

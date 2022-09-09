@@ -1,10 +1,11 @@
 PORTNAME=	aws-sdk-databasemigrationservice
-PORTVERSION=	1.71.0
+PORTVERSION=	1.72.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for AWS Database Migration Service
+WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-databasemigrationservice
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

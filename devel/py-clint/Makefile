@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python command-line application tools
+WWW=		https://github.com/kennethreitz/clint
 
 LICENSE=	ISCL
 

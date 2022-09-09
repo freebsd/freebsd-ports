@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	STDOUT text formatting
+WWW=		https://github.com/geemus/formatador
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use Cpanel::JSON::XS with a fallback to JSON::PP
+WWW=		https://metacpan.org/release/JSON-MaybeXS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

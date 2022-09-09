@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|00$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DHCP set of classes designed to handle basic DHCP handling
+WWW=		https://metacpan.org/release/Net-DHCP
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

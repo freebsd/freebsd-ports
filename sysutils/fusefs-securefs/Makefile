@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Filesystem in userspace with transparent encryption and decryption
+WWW=		https://github.com/netheril96/securefs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

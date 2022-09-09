@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	INI style configuration file parser
+WWW=		https://pypi.org/project/configparser/
 
 LICENSE=	MIT
 

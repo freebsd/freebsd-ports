@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tipecaml@gmail.com
 COMMENT=	PyPI frontend for upt
+WWW=		https://framagit.org/upt/upt-pypi
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

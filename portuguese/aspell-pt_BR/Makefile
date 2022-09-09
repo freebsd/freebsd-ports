@@ -5,6 +5,7 @@ PKGNAMEPREFIX?=	pt_BR-
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Brazilian Portuguese dictionary
+WWW=		http://broffice.org/verortografico/
 
 PORTSCOUT=	skipv:6-pt_BR-20070206,6-pt_BR-20070411-0,6-pt_BR-20080221-0,6-pt_BR-20080221-1,6-pt_BR-20080707-0
 

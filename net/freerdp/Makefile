@@ -8,6 +8,7 @@ MASTER_SITES=	https://pub.freerdp.com/releases/ \
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
+WWW=		https://www.freerdp.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

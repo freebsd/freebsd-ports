@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Predicate logic with rule composition
+WWW=		https://github.com/dry-rb/dry-logic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

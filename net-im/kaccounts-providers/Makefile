@@ -4,6 +4,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	System to administer web accounts for the KDE desktop
+WWW=		https://projects.kde.org/projects/kdereview/kaccounts-providers
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libkaccounts.so:net-im/kaccounts-integration \
@@ -14,7 +15,8 @@ USES=		cmake compiler:c++11-lang gettext gnome kde:5 \
 		pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
 USE_KDE=	config coreaddons i18n kdeclarative kio package service
-USE_QT=		concurrent core dbus declarative gui network xml webengine \
+USE_QT=		concurrent core dbus declarative gui location network \
+		xml webchannel webengine \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

@@ -7,5 +7,3 @@ This module is primarily for reading human written files, and anything
 we write shouldn't need to have documentation/comments.  If you need
 something with more power, move up to Config::Simple, Config::General or
 one of the many other Config:: modules.
-
-WWW: https://metacpan.org/release/Config-Tiny

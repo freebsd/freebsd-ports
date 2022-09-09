@@ -7,6 +7,7 @@ DISTNAME=	Radicale-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Python based CalDAV/CardDAV server
+WWW=		https://radicale.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

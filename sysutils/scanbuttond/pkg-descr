@@ -6,5 +6,3 @@ libusb and if it detects that a button is pressed it runs a shell script with
 the button number as an argument.
 
 The supported scanner backends currently are: epson, niash, plustek, snapscan
-
-WWW: http://scanbuttond.sourceforge.net/

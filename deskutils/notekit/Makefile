@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Hierarchical markdown note-taking application
+WWW=		https://github.com/blackhole89/notekit
 
 LICENSE=	GPLv3+
 

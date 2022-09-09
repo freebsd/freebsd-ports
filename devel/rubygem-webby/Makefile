@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Small website management system
+WWW=		https://rubygems.org/gems/webby
 
 LICENSE=	MIT
 

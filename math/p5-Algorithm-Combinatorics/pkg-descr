@@ -5,5 +5,3 @@ sequences, where efficient means:
     * Memory: No recursion and no stacks are used.
 
 Tuples are generated in lexicographic order.
-
-WWW: https://metacpan.org/release/Algorithm-Combinatorics

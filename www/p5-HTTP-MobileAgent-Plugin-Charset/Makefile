@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to plugin Encode::JP::Mobile for HTTP::MobileAgent
+WWW=		https://metacpan.org/release/HTTP-MobileAgent-Plugin-Charset
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

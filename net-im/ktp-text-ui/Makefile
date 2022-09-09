@@ -4,6 +4,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE chat window application
+WWW=		https://community.kde.org/KTp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 		libKTpCommonInternals.so:net-im/ktp-common-internals
 RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		dbusaddons emoticons i18n iconthemes itemviews jobwidgets \
 		kcmutils kdewebkit kio notifications notifyconfig people \
@@ -23,6 +24,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport speech webchannel webengine widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

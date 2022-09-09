@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Human readable Jupyter Notebook diffs
+WWW=		https://gitlab.com/gitlab-org/incubation-engineering/mlops/rb-ipynbdiff
 
 LICENSE=	MIT
 

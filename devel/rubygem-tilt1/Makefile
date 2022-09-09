@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generic interface to multiple Ruby template engines
+WWW=		https://github.com/rtomayko/tilt
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/Artelnics/opennn/archive/refs/tags/v${DISTVERSI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open neural networks library
+WWW=		https://www.opennn.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

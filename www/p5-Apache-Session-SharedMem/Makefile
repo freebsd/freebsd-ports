@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Apache::Session extension that store session in shared memory
+WWW=		https://metacpan.org/release/Apache-Session-SharedMem
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

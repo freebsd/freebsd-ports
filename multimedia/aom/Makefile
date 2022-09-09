@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AV1 reference encoder/decoder
+WWW=		https://aomedia.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

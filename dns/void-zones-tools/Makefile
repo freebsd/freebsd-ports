@@ -6,6 +6,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Prepare a list of void zones that can be readily fed into Unbound
+WWW=		https://github.com/cyclaero/void-zones-tools
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

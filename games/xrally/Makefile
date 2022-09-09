@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-1.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the classic Rally X arcade game
+WWW=		http://www.linuxgames.com/xrally/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

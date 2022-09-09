@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Cyrus folders to Dovecot
+WWW=		http://www.cyrus2dovecot.sw.fu-berlin.de/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

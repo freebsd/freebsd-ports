@@ -1,5 +1,5 @@
 PORTNAME=	calendar
-PORTVERSION=	3.4.3
+PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Calendar app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/calendar
 
 LICENSE=	AGPLv3
 

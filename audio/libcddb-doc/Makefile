@@ -5,6 +5,7 @@ MASTER_SITES=	SF/libcddb/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libcddb documentation
+WWW=		http://libcddb.sf.net/
 
 USES=		tar:bzip2
 NO_BUILD=	yes

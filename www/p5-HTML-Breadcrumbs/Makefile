@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to produce HTML 'breadcrumb trails'
+WWW=		https://metacpan.org/release/HTML-Breadcrumbs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

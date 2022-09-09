@@ -6,5 +6,3 @@ to copied to and from a remote server.
 * Can preserve file attributes across transfers
 * Can download files in-memory, or direct-to-disk
 * Support for SCP URI's, and OpenURI
-
-WWW: https://github.com/net-ssh/net-scp

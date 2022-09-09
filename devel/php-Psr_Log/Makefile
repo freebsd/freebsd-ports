@@ -6,6 +6,7 @@ DIST_SUBDIR=	PSR
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PSR-3 logger interface
+WWW=		https://github.com/php-fig/log
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

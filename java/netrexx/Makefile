@@ -7,6 +7,7 @@ DISTNAME=	NetRexx
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Human-oriented programming language for writing/using Java classes
+WWW=		http://www-306.ibm.com/software/awdtools/netrexx/
 
 NO_BUILD=	yes
 USES=		zip

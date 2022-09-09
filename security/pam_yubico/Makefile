@@ -5,6 +5,7 @@ MASTER_SITES=	https://developers.yubico.com/yubico-pam/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	PAM module for authenticating with a Yubico YubiKey
+WWW=		https://developers.yubico.com/yubico-pam/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

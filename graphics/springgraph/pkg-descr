@@ -9,5 +9,3 @@ Springgraph was written as an alternative to neato, which is part of graphviz.
 It attempts to read the same .dot files used by graphviz, but currently only
 supports a limited number of node attributes (label and fillcolor). I am open
 to requests for support for more graph/node/edge attributes.
-
-WWW: http://www.chaosreigns.com/code/springgraph/

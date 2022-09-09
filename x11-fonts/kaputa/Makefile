@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free Unicode font for Sinhala script
+WWW=		http://www.kaputa.com/slword/kaputaunicode.htm
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown

@@ -2,11 +2,12 @@ PORTNAME=	gomacro
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7-304
 DISTVERSIONSUFFIX=	-g2f4dc7c
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Interactive Go interpreter and debugger with REPL, generics and macros
+WWW=		https://github.com/cosmos72/gomacro
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ EXTRACT_SUFX=		.tar
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Seagate's SeaTools for Linux
+WWW=		https://www.seagate.com
 
 # Converted from RESTRICTED
 LICENSE=	seatools

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Removes unused imports and unused variables from Python code
+WWW=		https://github.com/myint/autoflake
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

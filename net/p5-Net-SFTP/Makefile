@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 module implementing Secure File Transfer Protocol client
+WWW=		https://metacpan.org/release/Net-SFTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

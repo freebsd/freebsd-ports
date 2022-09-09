@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON formatter for SimpleCov
+WWW=		https://github.com/codeclimate-community/simplecov_json_formatter
 
 LICENSE=	MIT
 

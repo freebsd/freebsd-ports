@@ -1,5 +1,5 @@
 PORTNAME=	libxml2
-DISTVERSION=	2.9.14
+DISTVERSION=	2.10.2
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
+WWW=		http://xmlsoft.org/
 
 LICENSE=	MIT
 
@@ -31,13 +32,12 @@ TEST_TARGET=	check
 PLIST_SUB+=	LIBVERSION=${DISTVERSION}
 
 # Don't build with Python support unless requested
-CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
-			--with-html-subdir=${PORTNAME} \
+CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/share/ \
 			--with-lzma=/usr \
 			--${LIBXML2_SLAVE:Dwith:Uwithout}-python${LIBXML2_SLAVE:D=${PYTHON_CMD}:U}
 
-OPTIONS_DEFINE=	DOCS ICU MEM_DEBUG READLINE THREAD_ALLOC
-OPTIONS_DEFAULT=	READLINE
+OPTIONS_DEFINE=	DOCS ICU MEM_DEBUG READLINE STATIC THREAD_ALLOC
+OPTIONS_DEFAULT=	READLINE STATIC
 OPTIONS_SUB=		yes
 
 MEM_DEBUG_DESC=		Memory debugging (DEVELOPERS ONLY!)
@@ -50,6 +50,7 @@ MEM_DEBUG_CONFIGURE_WITH=	mem-debug
 READLINE_LIB_DEPENDS=		libreadline.so:devel/readline
 READLINE_CONFIGURE_WITH=	history \
 				readline
+STATIC_CONFIGURE_ENABLE=	static
 THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
 
 post-patch:

@@ -7,6 +7,7 @@ DISTNAME=	breezy-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system based on bzr
+WWW=		https://www.breezy-vcs.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

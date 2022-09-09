@@ -5,6 +5,7 @@ MASTER_SITES=	http://untroubled.org/ucspi-proxy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy program for UCSPI servers and clients
+WWW=		https://untroubled.org/ucspi-proxy/
 
 LICENSE=	GPLv2
 

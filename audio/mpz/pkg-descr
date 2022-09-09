@@ -14,5 +14,3 @@ Supports radio streams in .pls and .m3u playlsts.  Supports CUE.  Has a
 playback log which is helpful for radio stream -- never miss a track you
 liked.  Supports MPRIS -- ability to control playback remotely, for
 example, via KDE Connect.
-
-WWW: https://mpz-player.org/

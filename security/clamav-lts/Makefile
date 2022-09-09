@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Open-source (GPL) anti-virus engine (LTS Feature Release)
+WWW=		https://www.clamav.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

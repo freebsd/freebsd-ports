@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Implements the TransformPath concept
+WWW=		https://metacpan.org/release/Digest-TransformPath
 
 USES=		perl5
 USE_PERL5=	configure

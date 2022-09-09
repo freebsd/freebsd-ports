@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${VERSION}
 
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Assembler for a variety of microcontrollers/-processors
+WWW=		http://john.ccac.rwth-aachen.de:8000/as/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

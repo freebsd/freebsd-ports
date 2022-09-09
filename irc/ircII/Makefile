@@ -5,6 +5,7 @@ MASTER_SITES=	http://ircii.warped.com/
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Small and high extensible IRC client
+WWW=		http://www.eterna.com.au/ircii/
 
 LICENSE=	BSD3CLAUSE
 

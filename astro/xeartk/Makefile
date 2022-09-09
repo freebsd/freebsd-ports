@@ -6,6 +6,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small demo for tkgeomap
+WWW=		http://www.tkgeomap.org/xeartk.html
 
 LIB_DEPENDS=	libtkgeomap.so:astro/tkgeomap
 

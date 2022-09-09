@@ -7,6 +7,7 @@ DISTNAME=	Waiho-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple FTP client for GNUstep
+WWW=		http://www.roard.com/waiho/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

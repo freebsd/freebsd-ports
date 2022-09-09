@@ -7,5 +7,3 @@ The program functions by scanning and parsing comments in a specific
 format (described directly below), then displaying them in a one-layer
 categorized list view. The program stores the state of which sections
 are expanded, allowing for use on screens with limited resolution.
-
-WWW: https://github.com/regolith-linux/remontoire

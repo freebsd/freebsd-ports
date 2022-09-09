@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Emacs major mode for editing Caml code
+WWW=		http://tuareg.forge.ocamlcore.org/
 
 LICENSE=	GPLv2
 

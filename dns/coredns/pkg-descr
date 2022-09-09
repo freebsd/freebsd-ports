@@ -3,5 +3,3 @@ environments because of its flexibility.
 
 CoreDNS chains plugins. Each plugin performs a DNS function, such as Kubernetes
 service discovery, Prometheus metrics or rewriting queries.
-
-WWW: https://coredns.io/

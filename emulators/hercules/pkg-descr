@@ -6,5 +6,3 @@ Hercules was created by Roger Bowler and is maintained by Jay Maynard. Jan
 Jaeger designed and implemented many of the advanced features of Hercules,
 including dynamic reconfiguration, integrated console, interpretive execution
 and z/Architecture support.
-
-WWW: http://www.hercules-390.eu/

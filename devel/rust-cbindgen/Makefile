@@ -9,6 +9,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Generate C bindings from Rust code
+WWW=		https://github.com/eqrion/cbindgen
 
 LICENSE=	MPL20
 

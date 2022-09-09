@@ -17,5 +17,3 @@ Referent, conveys information about the referenced item. It must always be
 included in a ContextObject. The other five entities - ReferringEntity,
 Requester, Resolver, ServiceType and Referrer - hold information about the
 context of the reference and are optional.
-
-WWW: https://metacpan.org/release/URI-OpenURL

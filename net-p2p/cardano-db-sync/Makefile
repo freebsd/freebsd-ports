@@ -7,6 +7,7 @@ PATCHFILES=	1210.patch:freebsd_compat
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	PostgreSQL-driven Cardano blockchain data tool
+WWW=		https://cardano.org/
 
 LICENSE=	APACHE20
 

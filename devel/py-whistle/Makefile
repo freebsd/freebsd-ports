@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Event dispatcher
+WWW=		https://python-whistle.github.io/
 
 LICENSE=	APACHE20
 

@@ -37,7 +37,6 @@ BAD_GST_ALL_PLUGINS+= \
 		kms \
 		ladspa \
 		libde265 \
-		libmms \
 		lv2 \
 		modplug \
 		mpeg2enc \
@@ -322,10 +321,6 @@ gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so
 # libde265
 gst_libde265_LIB_DEPENDS=	libde265.so:multimedia/libde265
 gst_libde265_PLIST_FILES=	${GST_LIB_DIR}/libgstde265.so
-
-# libmms
-gst_libmms_LIB_DEPENDS=	libmms.so:net/libmms
-gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 
 # librfb
 gst_librfb_USES=	xorg

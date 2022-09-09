@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Allow calling of class methods on arbitrary classes
+WWW=		https://metacpan.org/release/Template-Plugin-Class
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit

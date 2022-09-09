@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
+WWW=		https://mybboard.net/
 
 LICENSE=	GPLv3
 

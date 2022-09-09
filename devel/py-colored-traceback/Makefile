@@ -5,7 +5,8 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Automatically color Python’s uncaught exception tracebacks
+COMMENT=	Automatically color Python's uncaught exception tracebacks
+WWW=		https://pypi.org/project/colored-traceback/
 
 LICENSE=	ISCL
 

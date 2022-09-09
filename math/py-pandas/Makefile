@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Flexible, high-performance data analysis in Python
+WWW=		https://pandas.pydata.org/
 
 LICENSE=	BSD3CLAUSE
 

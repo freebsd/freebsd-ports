@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Faster Nmap Scanning with Rust
+WWW=		https://rustscan.github.io/RustScan/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	Lidarr.master.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Music collection manager for Usenet and BitTorrent users
+WWW=		https://lidarr.audio
 
 LICENSE=	GPLv3
 

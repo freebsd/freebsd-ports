@@ -6,6 +6,7 @@ DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	w.schwarzenfeld@utanet.at
 COMMENT=	Apache module that implements the client side of the SCGI protocol
+WWW=		https://python.ca/scgi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE.txt

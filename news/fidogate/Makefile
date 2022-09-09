@@ -6,9 +6,12 @@ CATEGORIES=	news mail
 
 MAINTAINER=	admin@5034.ru
 COMMENT=	Fido-Internet Gateway and Tosser
+WWW=		https://github.com/ykaliuta/fidogate
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		does not configure: error: use --with-newsbindir=DIR or --without-news option
 
 USES=		autoreconf perl5 iconv
 USE_GITHUB=	yes

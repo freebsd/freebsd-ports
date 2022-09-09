@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	The main game for the Minetest game engine
+WWW=		https://www.minetest.net/
 
 LICENSE=	LGPL21+ CC-BY-SA-3.0
 LICENSE_COMB=	multi

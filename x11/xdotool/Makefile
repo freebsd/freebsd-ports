@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/jordansissel/xdotool/releases/download/v${DISTV
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Programmatically simulate keyboard input or mouse activity
+WWW=		https://www.semicomplete.com/projects/xdotool/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

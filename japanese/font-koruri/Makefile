@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ja-font-
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Koruri Japanese TrueType fonts
+WWW=		https://koruri.github.io/
 
 LICENSE=	APACHE20
 

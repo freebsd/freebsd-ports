@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.bzflag.org/bzflag/source/${PORTVERSION}/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT?=	Multiplayer 3D tank battle game
+WWW=		https://bzflag.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

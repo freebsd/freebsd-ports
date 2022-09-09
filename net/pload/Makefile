@@ -6,6 +6,7 @@ MASTER_SITES=	http://opal.com/src/pload/ LOCAL/pav
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	X11 program to display network traffic graphs
+WWW=		https://opal.com/src/pload/
 
 USES=		imake:env xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

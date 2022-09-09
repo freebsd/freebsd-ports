@@ -18,5 +18,3 @@ Features:
    be enabled (e.g. for Unix) with a #define in the source code.
  * Commandline-compatible with Unix `cal' command, but with several
    enhanced switch settings.
-
-WWW: http://unicorn.us.com/cal.html

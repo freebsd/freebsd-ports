@@ -1,5 +1,3 @@
 Elfutils provides a set of binutils-replacement tools,
 prefixed with eu-, as well as a set of libraries for
 manipulating ELF and DWARF data.
-
-WWW: https://sourceware.org/elfutils/

@@ -7,6 +7,7 @@ DISTNAME=	ini-files-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ini configuration file reader and manipulator package for Ada
+WWW=		https://sourceforge.net/projects/ini-files/
 
 LICENSE=	MIT
 

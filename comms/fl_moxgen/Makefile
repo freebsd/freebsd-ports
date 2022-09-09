@@ -7,6 +7,7 @@ DISTNAME=	Fl_MoxGen-${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Compute the dimensions of a Moxon Rectangle antenna
+WWW=		http://home.comcast.net/~andystewart/moxon_sw.html
 
 LICENSE=	GPLv3
 

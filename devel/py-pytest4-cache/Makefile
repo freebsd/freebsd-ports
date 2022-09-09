@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Pytest plugin with mechanisms for caching across test runs (legacy version for pytest 4)
+WWW=		https://bitbucket.org/hpk42/pytest-cache/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

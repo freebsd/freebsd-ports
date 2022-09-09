@@ -8,6 +8,7 @@ DISTFILES=	# not applicable
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Meta-port for the default version of the LLVM Toolchain
+WWW=		https://llvm.org/
 
 # To the extent that anything in this port is copyrightable, it is the
 # list of files in the chosen LLVM version which is under the ports

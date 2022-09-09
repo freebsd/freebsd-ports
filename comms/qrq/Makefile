@@ -5,6 +5,7 @@ MASTER_SITES=	http://fkurz.net/ham/qrq/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Morse telegraphy trainer similar to the classic DOS version by DL4MM
+WWW=		https://fkurz.net/ham/qrq.html
 
 LICENSE=	GPLv2
 

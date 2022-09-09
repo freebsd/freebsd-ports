@@ -1,12 +1,13 @@
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.20.0
+DISTVERSION=	3.22.0
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-i18n
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter software for PKI: i18n tools
+WWW=		https://www.openxpki.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE

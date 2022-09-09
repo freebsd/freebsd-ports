@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
+WWW=		https://github.com/skreuzer/porttools/
 
 LICENSE=	BSD2CLAUSE
 

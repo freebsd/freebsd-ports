@@ -4,5 +4,3 @@ Provides a mapping between Munsell's original notation (e.g. "5R
 graphics. Also provides utilities to explore slices through the
 Munsell colour tree, to transform Munsell colours and display colour
 palettes.
-
-WWW: https://cran.r-project.org/web/packages/munsell/

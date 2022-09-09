@@ -7,5 +7,3 @@ The animation in XSpringies is done using an off-screen Pixmap.  The next
 frame is drawn on this pixmap, then is blitted onto the screen.  Since the
 frame rate is about 30 frames per second, slower machines (or machines which
 have poorly written bit-blitting code) will be deathly slow and blinky.
-
-WWW: http://www.cs.rutgers.edu/~decarlo/software.html

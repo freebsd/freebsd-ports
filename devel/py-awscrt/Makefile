@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common runtime for AWS Python projects
+WWW=		https://github.com/awslabs/aws-crt-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

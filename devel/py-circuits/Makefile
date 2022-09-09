@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Asynchronous Component-based Event Application Framework
+WWW=		https://bitbucket.org/prologic/circuits/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

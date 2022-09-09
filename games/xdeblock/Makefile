@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block action game
+WWW=		https://www.vector.co.jp/soft/unix/game/se037694.html
 
 WRKSRC=		${WRKDIR}/xdeblo_v1.0
 

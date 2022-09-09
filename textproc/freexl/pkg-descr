@@ -11,5 +11,3 @@ Note that the final goal means that FreeXL ignores at all fonts, sizes and
 alignments, and most formats. It ignores Pivot Table, Charts, Formulas, Visual
 Basic macros and so on. FreeXL is structurally simple and quite light-weight
 (typically 40-80K of object code, stripped).
-
-WWW: https://www.gaia-gis.it/fossil/freexl/index

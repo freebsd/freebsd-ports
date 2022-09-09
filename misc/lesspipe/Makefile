@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Preprocessor for less
+WWW=		https://www.zeuthen.desy.de/~friebel/unix/lesspipe.html
 
 LICENSE=	GPLv2
 

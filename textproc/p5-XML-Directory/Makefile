@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Returns a content of directory as XML
+WWW=		https://metacpan.org/release/XML-Directory
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-RDF-Notation3>=0:textproc/p5-RDF-Notation3 \

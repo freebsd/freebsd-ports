@@ -8,6 +8,7 @@ DISTNAME=	qet-${DISTVERSION}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Application to design electric diagrams
+WWW=		https://qelectrotech.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

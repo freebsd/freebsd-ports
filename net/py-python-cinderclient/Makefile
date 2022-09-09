@@ -1,11 +1,12 @@
 PORTNAME=	python-cinderclient
-PORTVERSION=	9.0.0
+PORTVERSION=	9.1.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Block Storage API Client Library
+WWW=		https://docs.openstack.org/python-cinderclient/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

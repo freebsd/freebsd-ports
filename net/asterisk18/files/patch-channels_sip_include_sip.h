@@ -1,6 +1,6 @@
---- channels/sip/include/sip.h.orig	2020-07-09 15:39:17 UTC
+--- channels/sip/include/sip.h.orig	2022-06-23 15:26:13 UTC
 +++ channels/sip/include/sip.h
-@@ -192,7 +192,7 @@
+@@ -193,7 +193,7 @@
  #define DEFAULT_MOHINTERPRET   "default"  /*!< The default music class */
  #define DEFAULT_MOHSUGGEST     ""
  #define DEFAULT_VMEXTEN        "asterisk" /*!< Default voicemail extension */

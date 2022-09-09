@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rouslan@rshell.net
 COMMENT=	Utility functions to deal with signals in Perl
+WWW=		https://metacpan.org/release/IPC-Signal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

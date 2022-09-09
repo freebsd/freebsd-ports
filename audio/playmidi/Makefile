@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI player
+WWW=		https://sourceforge.net/projects/playmidi/
 
 LICENSE=	GPLv2
 

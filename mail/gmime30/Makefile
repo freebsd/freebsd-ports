@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	30
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
+WWW=		http://spruce.sourceforge.net/gmime/
 
 LICENSE=	LGPL21
 
@@ -26,7 +27,7 @@ OPTIONS_DEFINE=	VALA
 OPTIONS_DEFAULT=	VALA
 OPTIONS_SUB=	yes
 VALA_DESC=	Install vala binding
-VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
+VALA_USES=		vala:build
 VALA_CONFIGURE_ENABLE=	vala
 
 # www.freebsd.org/cgi/query-pr.cgi?pr=118092

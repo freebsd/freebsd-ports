@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Adds encoding() to HTTP::Response
+WWW=		https://metacpan.org/release/HTTP-Response-Encoding
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

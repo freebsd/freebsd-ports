@@ -6,5 +6,3 @@ Features:
 - Returning the result in a convenient way.
 - Detecting if a shell is needed (though incomplete/primitive implementation).
 - Prevents running the same command multiple times.
-
-WWW: https://github.com/guard/shellany

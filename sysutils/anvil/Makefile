@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Tools for distributing ssl certificates
+WWW=		https://github.com/dlangille/anvil
 
 LICENSE=	BSD2CLAUSE
 

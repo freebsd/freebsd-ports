@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of postgresql runner for tests
+WWW=		https://metacpan.org/release/SYSPETE/Test-postgresql-0.091
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

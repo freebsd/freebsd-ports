@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python bindings for the simdjson project
+WWW=		https://pysimdjson.tkte.ch/
 
 LICENSE=	MIT
 

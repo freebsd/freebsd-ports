@@ -10,5 +10,3 @@ Another unique concept is the strict tagging: unlike other tiling window
 managers, subtle does not allow weak tagging and always maps windows to
 virtual desktops (called views) with matching tags, regardless of the
 current active view.
-
-WWW: https://subtle.subforge.org/

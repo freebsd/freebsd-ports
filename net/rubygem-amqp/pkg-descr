@@ -2,5 +2,3 @@ Ruby amqp gem is a feature-rich, EventMachine-based RabbitMQ client with
 batteries included.
 
 It implement AMQP 0.9.1 and support RabbitMQ extensions to AMQP 0.9.1.
-
-WWW: http://rubyamqp.info/

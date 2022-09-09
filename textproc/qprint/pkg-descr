@@ -4,5 +4,3 @@ primarily of printable ASCII characters, but which may contain characters
 (for example, accented letters in the ISO 8859 Latin-1 character set) which
 cannot be encoded as 7-bit ASCII or are non-printable characters which may
 confuse mail transfer agents.
-
-WWW: http://www.fourmilab.ch/webtools/qprint/

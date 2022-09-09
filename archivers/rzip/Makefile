@@ -6,6 +6,7 @@ MASTER_SITES=	SAMBA/rzip
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compression program similar to gzip or bzip2
+WWW=		https://rzip.samba.org/
 
 LICENSE=	GPLv2
 

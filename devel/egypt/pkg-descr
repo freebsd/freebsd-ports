@@ -4,5 +4,3 @@ the source code analysis to GCC and the graph layout to Graphviz, both
 of which are better at their respective jobs than egypt itself could
 ever hope to be. Egypt is simply a very small Perl script that glues
 these existing tools together.
-
-WWW: http://www.gson.org/egypt/

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.kim-minh.com/pub/greyfix/ \
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Greylisting policy daemon for Postfix
+WWW=		https://www.kim-minh.com/pub/greyfix/
 
 SUB_FILES=	pkg-message
 

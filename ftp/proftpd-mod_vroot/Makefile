@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Virtual Chroot ProFTPD module
+WWW=		http://www.castaglia.org/proftpd/modules/mod_vroot.html
 
 LICENSE=	GPLv2
 

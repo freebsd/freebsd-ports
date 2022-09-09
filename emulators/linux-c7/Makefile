@@ -4,6 +4,7 @@ CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Meta-port for all things CentOS ${LINUX_DIST_VER}
+WWW=		https://centos.org
 
 RUN_DEPENDS=	linux-c7-libasyncns>0:dns/linux-c7-libasyncns \
 		linux-c7-tk85>0:x11-toolkits/linux-c7-tk85 \

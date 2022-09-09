@@ -1,11 +1,12 @@
 PORTNAME=	ov
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Feature rich terminal pager
+WWW=		https://github.com/noborus/ov
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

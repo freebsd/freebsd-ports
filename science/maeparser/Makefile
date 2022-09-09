@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Parser for Schrodinger Maestro files
+WWW=		https://github.com/schrodinger/maeparser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

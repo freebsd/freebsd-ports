@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Soapy SDR module for Hack RF
+WWW=		https://github.com/pothosware/SoapySDR
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

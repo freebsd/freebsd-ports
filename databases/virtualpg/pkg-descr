@@ -4,5 +4,3 @@ dynamic extension module for both SQLite and SpatiaLite.
 The intended scope of VirtualPG is supporting direct data exchange form/to
 PostgreSQL / PostGIS targets and SQLite simply using basic,
 plain SQL statements.
-
-WWW: https://www.gaia-gis.it/fossil/virtualpg/index

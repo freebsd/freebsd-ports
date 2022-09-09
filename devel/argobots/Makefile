@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight, low-level threading and tasking framework
+WWW=		https://www.argobots.org/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

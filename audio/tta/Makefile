@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}enc-${PORTVERSION}-src
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	The True Audio Encoder, lossless (de)compressor
+WWW=		http://www.true-audio.com/
 
 LICENSE=	GPLv2
 

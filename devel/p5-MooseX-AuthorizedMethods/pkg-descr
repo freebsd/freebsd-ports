@@ -2,5 +2,3 @@ MooseX::AuthorizedMethods exports the "authorized" declarator that makes a
 verification if the user has the required permissions before the acual
 invocation. The default verification method will take the "user" method result
 and call "roles" to list the roles given to that user.
-
-WWW: https://metacpan.org/release/MooseX-AuthorizedMethods

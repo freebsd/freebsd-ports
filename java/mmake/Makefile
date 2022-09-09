@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.tildeslash.com/mmake/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a Makefile for Your Java files, ready to compile
+WWW=		https://www.tildeslash.com/mmake/
 
 BUILD_DEPENDS=	jikes:java/jikes
 RUN_DEPENDS:=	${BUILD_DEPENDS}

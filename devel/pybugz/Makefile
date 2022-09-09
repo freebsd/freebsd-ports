@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bugmeister@FreeBSD.org
 COMMENT=	Python command-line interface to bugzilla
+WWW=		https://github.com/williamh/pybugz
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

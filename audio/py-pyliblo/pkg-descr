@@ -4,5 +4,4 @@ using a nice and simple Python API.
 
 Also included are the command line utilities send_osc and dump_osc.
 
-WWW: http://das.nasophon.de/pyliblo/
-WWW: https://github.com/dsacre/pyliblo
+See also: https://github.com/dsacre/pyliblo

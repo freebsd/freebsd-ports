@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for asynchronous non-blocking DBI calls in POE
+WWW=		https://metacpan.org/release/POE-Component-LaDBI
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-POE>=0:devel/p5-POE \

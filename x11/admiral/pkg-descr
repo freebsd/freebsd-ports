@@ -17,5 +17,3 @@ for a clear separation of different sections, which simplifies configuration.
 Each program is run in its own thread. This means that each section is updated
 independently of the other sections. It also means that if something fails, it
 fails independently of the other sections.
-
-WWW: https://github.com/sector-f/admiral

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Python based Zabbix API utility with helper functions
+WWW=		https://pypi.org/project/pybix/
 
 LICENSE=	MIT
 

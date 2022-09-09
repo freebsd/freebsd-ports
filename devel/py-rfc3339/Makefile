@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Format dates according to the RFC 3339
+WWW=		https://pypi.org/project/rfc3339/
 
 USES=		python
 USE_PYTHON=	distutils autoplist

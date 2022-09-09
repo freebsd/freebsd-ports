@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Sphinx Full-Text Search Engine
+WWW=		https://sphinxsearch.com/
 
 LICENSE=	GPLv2
 

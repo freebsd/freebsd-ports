@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Printer Spooler
+WWW=		http://lprng.sourceforge.net/
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

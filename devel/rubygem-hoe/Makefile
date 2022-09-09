@@ -1,10 +1,11 @@
 PORTNAME=	hoe
-PORTVERSION=	3.24.0
+PORTVERSION=	3.25.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple rake/rubygems helper for project Rakefiles
+WWW=		https://github.com/seattlerb/hoe
 
 LICENSE=	MIT
 

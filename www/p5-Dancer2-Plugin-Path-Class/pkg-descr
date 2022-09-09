@@ -6,5 +6,3 @@ The 'ls' keyword also sets some 'vars'.
 - ls_cdup: The parent of the request path
 - ls_dirs: A list of subdirectories if the path is a directory object
 - ls_files: A list of files or just one file if the path is a file object
-
-WWW: https://metacpan.org/release/HVOERS/Dancer2-Plugin-Path-Class-0.08

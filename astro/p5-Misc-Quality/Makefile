@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class for handling quality flags for astronomical objects
+WWW=		https://metacpan.org/release/Misc-Quality
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ single header library to create a CLI from a function signature
+WWW=		https://github.com/kongaskristjan/fire-hpp
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENCE

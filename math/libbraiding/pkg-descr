@@ -4,5 +4,4 @@ but it can be used in any other c++ program.
 
 It allows various computations on braid groups, such as normal forms.
 
-WWW: https://github.com/miguelmarco/libbraiding
-WWW: https://github.com/jeanluct/braidlab
+See also: https://github.com/miguelmarco/libbraiding

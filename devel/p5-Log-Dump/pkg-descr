@@ -6,5 +6,3 @@ will be dumped (and concatenated if necessary) to stderr, and to a
 file if you prefer. Also, you can use these logging methods as class
 methods or object methods (though usually you don't want to mix them,
 especially when you're doing something special).
-
-WWW: https://metacpan.org/release/Log-Dump

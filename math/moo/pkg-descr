@@ -5,5 +5,3 @@ Numbers can be entered in hexadecimal (0xbeef), decimal (1984), octal (007),
 and binary (0b1001). All numerical operators (+, -, *, /, %), bit operators
 (|, ^, &, ~, <<, >>), and logical operators (==, !=, <, >, <=, >=, !, &&, ||)
 are supported.
-
-WWW: http://www.cyth.net/moo/

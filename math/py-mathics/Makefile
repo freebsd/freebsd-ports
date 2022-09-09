@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	General-purpose computer algebra system (CAS)
+WWW=		https://mathics.org/
 
 LICENSE=	GPLv3
 

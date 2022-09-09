@@ -16,5 +16,3 @@ The following relayd functionality is not (yet) implemented in FreeBSD:
 - snmp traps
 
 The relayctl program controls the relayd(8) daemon.
-
-WWW: https://github.com/mmatuska/relayd

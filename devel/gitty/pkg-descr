@@ -4,5 +4,3 @@ currently only supports the GitHub API.
 
 It requires you to set a GitHub Token as an environment variable called
 either GITHUB_TOKEN or GITTY_TOKEN.
-
-WWW: https://github.com/muesli/gitty

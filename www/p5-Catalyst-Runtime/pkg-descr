@@ -4,5 +4,3 @@ cols used for the web. Catalyst is designed to make it easy to manage
 the various tasks you need to do to run an application on the web,
 either by doing them itself, or by letting you "plug in" existing Perl
 modules that do what you need.
-
-WWW: https://metacpan.org/release/Catalyst-Runtime

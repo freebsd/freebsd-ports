@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Logging library for C applications
+WWW=		https://github.com/babelouest/yder
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

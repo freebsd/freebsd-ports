@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Tool for clone HDD on FreeBSD
+WWW=		https://sourceforge.net/projects/clonehdd/
 
 LICENSE=	GPLv2
 

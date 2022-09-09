@@ -6,6 +6,7 @@ MASTER_SITES=	https://kib.kiev.ua/kib/${PORTNAME}/ \
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Retrieve process stack traces
+WWW=		https://www.kib.kiev.ua/git/gitweb.cgi?p=pstacku.git;a=tree
 
 LICENSE=	BSD2CLAUSE
 

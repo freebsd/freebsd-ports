@@ -8,5 +8,3 @@ Features:
 - Detect if a benchmark result seems unstable.
 - JSON format to store benchmark results.
 - Support multiple units: seconds, bytes and integer.
-
-WWW: https://github.com/psf/pyperf

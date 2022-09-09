@@ -7,5 +7,3 @@ The main interface is the VM::EC2 object, which provides methods for
 interrogating the Amazon EC2, launching instances, and managing instance
 lifecycle. These methods return major object classes which act as specialized
 interfaces to AWS.
-
-WWW: https://metacpan.org/release/VM-EC2

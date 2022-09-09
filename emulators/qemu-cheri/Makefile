@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-cheri
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	QEMU emulator with CHERI CPU support
+WWW=		https://github.com/CTSRD-CHERI/qemu
 
 # XXX: disabling gnutls doesn't work so depend on it to avoid breakage.
 BUILD_DEPENDS=	bash:shells/bash \

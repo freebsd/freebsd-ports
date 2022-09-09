@@ -1,5 +1,3 @@
 Yac is a shared memory user data cache for PHP
 
 it can be used to replace APC or local memcached.
-
-WWW: https://github.com/laruence/yac/wiki

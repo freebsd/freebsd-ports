@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automated REST Method Dispatching for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Action-REST
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

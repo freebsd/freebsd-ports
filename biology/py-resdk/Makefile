@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Resolwe SDK to interact with Resolwe server and Resolwe Bioinformatics
+WWW=		https://github.com/genialis/resolwe-bio-py
 
 LICENSE=	BSD3CLAUSE
 

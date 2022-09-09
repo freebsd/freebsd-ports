@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/jkim
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for LSI Logic's MegaRAID RAID controllers
+WWW=		https://lists.freebsd.org/pipermail/freebsd-scsi/2006-February/002294.html
 
 LICENSE=	BSD2CLAUSE
 

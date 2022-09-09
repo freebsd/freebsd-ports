@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Periodic command scheduler
+WWW=		http://fcron.free.fr/
 
 LICENSE=	GPLv2
 

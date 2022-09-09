@@ -11,5 +11,3 @@ files over 4GB on a 32-bit machine.
 If torrentcheck returns "torrent is good" at the end of its output, every
 byte of every file in the torrent is present and correct, to a high degree
 of certainty (as explained in the README file).
-
-WWW: https://sourceforge.net/projects/torrentcheck/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module::Build subclass for building Alien:: modules and libraries
+WWW=		https://metacpan.org/release/Alien-Base-ModuleBuild
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

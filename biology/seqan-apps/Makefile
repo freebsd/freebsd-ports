@@ -6,6 +6,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Official bioinformatic applications based on the SeqAn library
+WWW=		https://www.seqan.de/
 
 LICENSE=	BSD3CLAUSE LGPL3 GPLv3
 LICENSE_COMB=	multi

@@ -1,11 +1,12 @@
 PORTNAME=	docker-credential-pass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Helper to use sysutils/password-store as Docker credentials store
+WWW=		https://github.com/docker/docker-credential-helpers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

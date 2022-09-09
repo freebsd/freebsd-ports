@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	TCP/UDP network testing tool
+WWW=		https://nuttcp.net/
 
 LICENSE=	GPLv2
 

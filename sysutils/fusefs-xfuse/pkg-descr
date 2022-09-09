@@ -9,5 +9,3 @@ This project runs in userland through the use of the FUSE kernel module. This is
 the only run-time requirement.
 
 This project was done as part of Google Summer of Code 2021.
-
-WWW: https://github.com/KhaledEmaraDev/xfuse

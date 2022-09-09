@@ -2,5 +2,3 @@ This is not C-code interface (like `Digest::MD5') but a Perl-only
 implementation of MD4 (like `Digest::Perl::MD5'). Because of this, it is
 slow but avoids platform specific complications. For efficiency you
 should use `Digest::MD4' instead of this module if it is available.
-
-WWW: https://metacpan.org/release/Digest-Perl-MD4

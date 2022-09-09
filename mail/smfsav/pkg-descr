@@ -7,5 +7,3 @@ domains or if your machine forwards all e-Mail messages as a relay host for your
 domains to another internal or external e-Mail servers.
   It's a lite alternative for the spamilter, milter-sender and milter-ahead
 milters.
-
-WWW: http://smfs.sourceforge.net/

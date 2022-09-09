@@ -4,5 +4,3 @@ transcodes them to another SHOUTcast, Icecast, or Peercast server in MP3 or
 Ogg Vorbis format. It can transcode the input audio by resampling or
 re-encoding, as well as changing the format from MP3 to Ogg Vorbis (or vice
 versa).
-
-WWW: https://BSDforge.com/projects/audio/streamTranscoder/

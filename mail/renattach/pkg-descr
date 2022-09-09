@@ -16,5 +16,3 @@ Features
 - Simple pipe/stream operation; can be used within many filtering systems
 - Can be used directly as a content_filter for Postfix MTA
 - Can be installed as a local delivery agent for Sendmail MTA
-
-WWW: http://www.pc-tools.net/unix/renattach/

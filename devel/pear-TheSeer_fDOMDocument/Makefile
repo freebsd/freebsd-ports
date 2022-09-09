@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}TheSeer_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extension to PHP standard DOM
+WWW=		https://github.com/theseer/fDOMDocument/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

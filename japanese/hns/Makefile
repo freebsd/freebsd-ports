@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/h14m
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyper NIKKI System, a CGI system for Electric Diary Interchange
+WWW=		http://www.h14m.org/
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	contrib/isystem-0.9.10/index.cgi.in \

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Implementation of interior-point method for semidefinite programming
+WWW=		https://www.mcs.anl.gov/hs/software/DSDP/
 
 LICENSE=	DSDP_LICENSE
 LICENSE_NAME=	DSDP License

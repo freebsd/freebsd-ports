@@ -14,5 +14,3 @@ pass-by-value to pass-by-reference. In a typical use case (processing AUR
 search results for 'python') by-ref is twice as fast and uses one sixth the
 memory. If you are editing JSON, by-ref also makes your life a lot easier as
 modifications do not need to be manually inserted through the entire stack.
-
-WWW: http://kmkeen.com/jshon/

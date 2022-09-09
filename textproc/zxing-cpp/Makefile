@@ -1,10 +1,12 @@
 PORTNAME=	zxing-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	ZXing C++ Library for QR code recognition
+WWW=		https://github.com/nu-book/zxing-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

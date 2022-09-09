@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR=	. Attic
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Clone of the terminal emulator rxvt modified to support Unicode
+WWW=		http://software.schmorp.de/pkg/rxvt-unicode.html
 
 LICENSE=	GPLv2
 

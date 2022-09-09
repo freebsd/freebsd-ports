@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Signal dispatching mechanism
+WWW=		https://pypi.org/project/Louie/
 
 LICENSE=	BSD2CLAUSE
 

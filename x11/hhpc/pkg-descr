@@ -9,5 +9,3 @@ the pointer and hide it again.
 Should hhpc not work out for you, unclutter is a good alternative. hhpc was
 created because unclutter doesn't seem to interoperate properly with
 hardware accelerated surfaces like those of video players using VAAPI.
-
-WWW: https://github.com/aktau/hhpc

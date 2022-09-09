@@ -1,4 +1,2 @@
 Matrix client in Go and GTK4 implementing a large part of the feature
 set the Matrix protocol supports.
-
-WWW: https://github.com/diamondburned/gotktrix

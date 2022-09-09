@@ -2,5 +2,3 @@ Recog is a framework for identifying products, services, operating systems, and
 hardware by matching fingerprints against data returned from various network
 probes.  Recog makes it simply to extract useful information from web server
 banners, snmp system description fields, and a whole lot more.
-
-WWW: https://github.com/rapid7/recog

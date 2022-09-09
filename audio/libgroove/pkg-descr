@@ -3,5 +3,3 @@ intended to be used as a backend for music player applications.  That said,
 it is also generic enough to be used as a backend for any streaming audio
 processing utility.  It provides decoding, encoding, resampling, and gain
 adjustment.
-
-WWW: https://github.com/andrewrk/libgroove

@@ -20,4 +20,3 @@ checkpointing, downed host backoffs, independent message retry
 schedules, a drop-in sendmail replacement, and more!
 
 http://pobox.com/~djb/qmail.html
-WWW: https://cr.yp.to/qmail.html

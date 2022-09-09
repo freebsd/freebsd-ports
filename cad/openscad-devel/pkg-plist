@@ -1,11 +1,11 @@
 bin/openscad
-man/man1/openscad.1.gz
 share/applications/openscad.desktop
 share/icons/hicolor/128x128/apps/openscad.png
 share/icons/hicolor/256x256/apps/openscad.png
 share/icons/hicolor/48x48/apps/openscad.png
 share/icons/hicolor/512x512/apps/openscad.png
 share/icons/hicolor/64x64/apps/openscad.png
+share/man/man1/openscad.1.gz
 share/metainfo/org.openscad.OpenSCAD.appdata.xml
 share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/editor/dark-background.json

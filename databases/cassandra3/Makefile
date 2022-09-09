@@ -8,6 +8,7 @@ DISTFILES=	apache-${PORTNAME}-${DISTVERSION}-repo.tar.gz:repo
 
 MAINTAINER=	language.devel@gmail.com
 COMMENT=	Highly scalable distributed database
+WWW=		https://cassandra.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

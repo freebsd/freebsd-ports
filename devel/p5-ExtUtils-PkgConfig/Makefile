@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simplistic interface to pkg-config
+WWW=		https://metacpan.org/release/ExtUtils-PkgConfig
 
 LICENSE=	LGPL3
 

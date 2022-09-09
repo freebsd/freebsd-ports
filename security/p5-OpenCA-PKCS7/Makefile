@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for basic handling PKCS\#7 Signatures
+WWW=		https://metacpan.org/release/OpenCA-PKCS7
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-OpenCA-OpenSSL>=0:security/p5-OpenCA-OpenSSL \

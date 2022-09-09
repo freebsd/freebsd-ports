@@ -1,5 +1,3 @@
 A Python package for support of the "Virtual Instrument Software Architecture"
 (VISA), in order to control measurement devices and test equipment via GPIB,
 RS232, Ethernet or USB.
-
-WWW: https://github.com/pyvisa/pyvisa

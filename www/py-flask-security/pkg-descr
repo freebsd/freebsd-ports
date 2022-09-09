@@ -11,5 +11,3 @@ Flask application. They include:
   - User registration (optional)
   - Login tracking (optional)
   - JSON/Ajax Support
-
-WWW: https://github.com/mattupstate/flask-security

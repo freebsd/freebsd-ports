@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Tied hash interface to IPC::ShareLite
+WWW=		https://metacpan.org/release/Tie-ShareLite
 
 RUN_DEPENDS=	p5-IPC-ShareLite>=0:devel/p5-IPC-ShareLite
 

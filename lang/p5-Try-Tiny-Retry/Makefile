@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extends Try::Tiny to allow retries
+WWW=		https://metacpan.org/release/Try-Tiny-Retry
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Try-Tiny>0:lang/p5-Try-Tiny

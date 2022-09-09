@@ -1,10 +1,11 @@
 PORTNAME=	asana
-PORTVERSION=	0.10.13
+PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for the Asana REST API
+WWW=		https://github.com/Asana/ruby-asana
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -1,5 +1,3 @@
 This integer benchmark solves positions in the game of connect-4,
 as played on a vertical 7x6 board.  This takes about 10 minutes
 on contemporary PCs.
-
-WWW: http://tromp.github.io/c4/fhour.html

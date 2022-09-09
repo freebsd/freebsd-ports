@@ -1,11 +1,12 @@
 PORTNAME=	brename
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for batch renaming files/directories via regular expressions
+WWW=		https://github.com/shenwei356/brename
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

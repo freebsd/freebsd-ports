@@ -5,6 +5,7 @@ MASTER_SITES=	http://tibleiz.net/download/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Very fast XML parser and decoder written in pure assembler
+WWW=		http://mkerbiquet.free.fr/asm-xml/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

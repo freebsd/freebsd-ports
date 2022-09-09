@@ -1,4 +1,2 @@
 Object::Pad provides a simple syntax for creating object classes, which uses
 private variables that look like lexicals as object member fields.
-
-WWW: https://metacpan.org/dist/Object-Pad

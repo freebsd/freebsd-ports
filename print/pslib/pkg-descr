@@ -4,5 +4,3 @@ text rendering including hyphenation, kerning and ligatures. It can read
 external Type1 fonts and embed them into the output file. It supports pdfmarks
 which makes it in combination with ghostscript's pdfwriter an alternative for
 libraries creating PDF.
-
-WWW: http://pslib.sourceforge.net/

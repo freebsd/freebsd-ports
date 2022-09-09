@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Metadata tools for use within guests of the SmartOS
+WWW=		https://github.com/joyent/mdata-client
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

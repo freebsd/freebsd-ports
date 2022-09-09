@@ -12,5 +12,3 @@ Features:
  * Native support for Windows & *nix (including MacOSX, Linux, *BSD & Solaris)
  * Thread-safe by design
  * Distributed under the open source BSD license
-
-WWW: http://capstone-engine.org/

@@ -19,5 +19,3 @@ For extra security, unused features can be excluded when you build the port:
     o SSL/TLS for HTTPS requests (-Z, -z)
     o Lua scripts for dynamic content (-L)
     o Optional /~user transformation (-e, -p, -u)
-
-WWW: http://www.eterna.com.au/bozohttpd/

@@ -2,5 +2,3 @@ Reddit::Client provides methods and simple object wrappers for objects exposed
 by the Reddit API. This module handles HTTP communication, basic session
 management (e.g. storing an active login session), and communication with
 Reddit's external API.
-
-WWW: https://metacpan.org/pod/Reddit::Client

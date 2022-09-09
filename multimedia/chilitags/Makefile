@@ -1,11 +1,12 @@
 PORTNAME=	chilitags
 DISTVERSION=	2.0.0-169
 DISTVERSIONSUFFIX=	-g0d9854f
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Robust fiducial markers for augmented reality and robotics
+WWW=		https://chili.epfl.ch/software
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Takes a PNG image and transforms it into HTML
+WWW=		http://www.engr.mun.ca/~holden/png2html.html
 
 LICENSE=	GPLv2+
 

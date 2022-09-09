@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for simplifying FTP file operations
+WWW=		https://metacpan.org/release/Net-FTP-File
 
 USES=		perl5
 USE_PERL5=	configure

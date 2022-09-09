@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	RPG Maker 2000/2003 and EasyRPG games interpreter
+WWW=		https://easyrpg.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multi-format document reader
+WWW=		https://github.com/linuxmint/xreader
 
 LICENSE=	GPLv2+
 

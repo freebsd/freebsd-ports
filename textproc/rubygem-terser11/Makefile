@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	11
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Minify JavaScript files by wrapping TerserJS to be accessible in Ruby
+WWW=		https://github.com/ahorek/terser-ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

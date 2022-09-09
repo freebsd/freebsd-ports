@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi channel MIDI step sequencer LV2 plugin
+WWW=		https://github.com/sjaehn/BSEQuencer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

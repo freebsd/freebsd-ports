@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs and Automata Simplified in TeX
+WWW=		https://www.lsv.ens-cachan.fr/~gastin/gastex/
 
 NO_ARCH=	yes
 USE_TEX=	latex:run

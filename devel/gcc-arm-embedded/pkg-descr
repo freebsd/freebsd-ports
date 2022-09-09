@@ -18,5 +18,3 @@ armv7-m and armv7e-m targets, armv7e-m with and without
 FPU support and armv8-m too.
  This port gives bit-to-bit compatibility with "official"
 embedded ARM toolchain for MacOS X, Linux and Windows.
-
-WWW: https://launchpad.net/gcc-arm-embedded

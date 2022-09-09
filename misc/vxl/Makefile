@@ -5,6 +5,7 @@ CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ libraries for computer vision and image understanding
+WWW=		https://vxl.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/core/vxl_copyright.h

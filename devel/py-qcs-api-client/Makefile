@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Client library for accessing the Rigetti QCS API
+WWW=		https://github.com/rigetti/pyquil
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

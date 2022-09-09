@@ -6,6 +6,7 @@ MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Lemmings-like game
+WWW=		https://pingus.seul.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Core schema for the Core API
+WWW=		https://github.com/core-api/python-coreschema
 
 LICENSE=	BSD2CLAUSE
 

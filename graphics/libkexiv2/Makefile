@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Exiv2 library interface for KDE
+WWW=		https://www.digikam.org/
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 

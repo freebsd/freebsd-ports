@@ -15,5 +15,3 @@ Features:
   x.dm.slick-greeter.
 - Users can create and modify /etc/lightdm/slick-greeter.conf, settings in this
   files take priority and overwrite dconf settings.
-
-WWW: https://github.com/linuxmint/slick-greeter

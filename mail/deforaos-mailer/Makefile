@@ -7,6 +7,7 @@ DISTNAME=	Mailer-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop mail client
+WWW=		https://www.defora.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

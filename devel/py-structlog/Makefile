@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Structured Logging for Python
+WWW=		https://www.structlog.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

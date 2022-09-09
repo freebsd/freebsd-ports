@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple hexadecimal dumper
+WWW=		https://metacpan.org/release/Data-HexDump
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

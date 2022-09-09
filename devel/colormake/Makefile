@@ -6,6 +6,7 @@ MASTER_SITES=	http://bre.klaki.net/programs/colormake/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper to color gmake output
+WWW=		https://bre.klaki.net/programs/colormake/
 
 RUN_DEPENDS=	gmake:devel/gmake \
 		bash:shells/bash

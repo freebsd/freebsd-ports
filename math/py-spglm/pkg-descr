@@ -14,5 +14,3 @@ generates estimates by directly solves the least squares normal equations rather
 than using a more robust method like the pseudo inverse. For more robust
 estimation of ill conditioned data and a fuller GLM framework we suggest using
 the original GLM functionality from Statsmodels.
-
-WWW: https://github.com/pysal/spglm

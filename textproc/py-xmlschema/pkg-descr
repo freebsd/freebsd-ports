@@ -9,5 +9,3 @@ XML data validation, in order to put the produced data under control. The lack
 of a suitable alternative for Python in the schema-based decoding of XML data
 has led to build this library. Obviously this library can be useful for other
 cases related to XML Schema based processing, not only for the original scope.
-
-WWW: https://pypi.org/project/xmlschema/

@@ -1,10 +1,12 @@
 PORTNAME=	grpcurl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.7
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Command-line tool that lets you interact with gRPC servers
+WWW=		https://github.com/fullstorydev/grpcurl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

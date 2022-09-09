@@ -5,9 +5,9 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 DISTNAME=	django_js_asset-${DISTVERSION}
 
-
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Insert script tags with additional attributes for django.forms.Media
+WWW=		https://github.com/matthiask/django-js-asset
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

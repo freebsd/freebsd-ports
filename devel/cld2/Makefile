@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Compact language detector library
+WWW=		https://code.google.com/p/cld2/
 
 LICENSE=	APACHE20
 

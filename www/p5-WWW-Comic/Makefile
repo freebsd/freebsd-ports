@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve comic strip images
+WWW=		https://metacpan.org/release/WWW-Comic
 
 LICENSE=	APACHE20
 

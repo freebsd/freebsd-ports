@@ -6,6 +6,7 @@ MASTER_SITES=	BERLIOS
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple image viewer
+WWW=		https://sourceforge.net/projects/gimmage.berlios/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Model-airplane flight simulation program
+WWW=		https://sourceforge.net/projects/crrcsim/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

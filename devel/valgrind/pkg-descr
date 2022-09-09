@@ -15,5 +15,3 @@ The Valgrind distribution includes 10 tools:
  - exp-bbv, and experimental profiling tool using sampling
 
 Valgrind was initially ported to FreeBSD by Doug Rabson.
-
-WWW: http://www.valgrind.org/

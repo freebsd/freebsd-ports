@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
+WWW=		https://smart-pattern.com.ua/en/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt

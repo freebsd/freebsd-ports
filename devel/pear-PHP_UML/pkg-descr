@@ -5,5 +5,3 @@ Rational Rose or Argouml, with a UML representation of existing PHP source code.
 This way, you get an instant overview of a PHP application, with all the usual
 functions of a software design tool (such as class diagrams exportation,
 refactoring of object-oriented applications, or automatic code generation).
-
-WWW: https://pear.php.net/package/PHP_UML

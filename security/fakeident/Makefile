@@ -7,6 +7,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Tool that replies with a standard answer to incoming identd requests
+WWW=		http://www.guru-group.fi/~too/sw/identd.readme
 
 LICENSE=	GPLv2+
 

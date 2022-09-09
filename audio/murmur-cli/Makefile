@@ -1,10 +1,11 @@
 PORTNAME=	murmur-cli
 PORTVERSION=	0.0.0.20200528
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	GRPC client for Murmur server
+WWW=		https://github.com/layeh/murmur-cli
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

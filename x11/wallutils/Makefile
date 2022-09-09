@@ -1,10 +1,11 @@
 PORTNAME=	wallutils
 DISTVERSION=	5.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Utilities for handling monitors, resolutions, wallpapers and timed wallpapers
+WWW=		https://github.com/xyproto/wallutils
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

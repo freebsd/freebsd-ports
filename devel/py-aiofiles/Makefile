@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File support for asyncio
+WWW=		https://github.com/Tinche/aiofiles
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

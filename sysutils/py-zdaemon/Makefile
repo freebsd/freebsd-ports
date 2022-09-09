@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
+WWW=		https://pypi.org/project/zdaemon/
 
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

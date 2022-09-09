@@ -2,5 +2,3 @@ Html2Wml converts HTML pages to WML pages, suitable for being viewed
 on a Wap device. The conversion can be done either on the command line
 to create static WML pages or on-the-fly by calling this program as a
 CGI.
-
-WWW: http://htmlwml.sourceforge.net/

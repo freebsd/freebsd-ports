@@ -3,5 +3,3 @@ in totalmem and freemem variables.
 
 Total amount of free and user swap memory are also returned in totalswap and
 freeswap variables.
-
-WWW: https://metacpan.org/release/Sys-MemInfo

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of basic statistics modules
+WWW=		https://metacpan.org/release/Statistics-Basic
 
 LICENSE=	LGPL20
 

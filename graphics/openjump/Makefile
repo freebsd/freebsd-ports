@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}[a56ff6d]-PLUS
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Open source GIS software written in Java
+WWW=		https://sourceforge.net/projects/jump-pilot/files/OpenJUMP_plugins/
 
 LICENSE=	BSD3CLAUSE CLEARTHOUGHT CPL ECW GPLv2 GPLv3 JAIDL JDOM JYTHON LGPL21 LGPL3
 LICENSE_COMB=	multi

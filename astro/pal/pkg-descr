@@ -8,5 +8,3 @@ Routines calling SOFA use modern notation and precession models so will return
 slightly different answers than native SLALIB. PAL functions not available in
 SOFA were ported from the Fortran version of SLALIB that ships as part of the
 Starlink software and uses a GPL licence.
-
-WWW: https://github.com/Starlink/pal

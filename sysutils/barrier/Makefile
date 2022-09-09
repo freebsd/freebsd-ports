@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Mouse and keyboard sharing utility
+WWW=		https://github.com/debauchee/barrier
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

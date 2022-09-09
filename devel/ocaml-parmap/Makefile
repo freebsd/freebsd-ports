@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	Minimalistic library allowing to exploit multicore architecture
+WWW=		https://github.com/rdicosmo/parmap
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

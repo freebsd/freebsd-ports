@@ -6,6 +6,7 @@ CATEGORIES=	devel emulators
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Simulator for several Atmel AVR chips
+WWW=		https://github.com/buserror/simavr
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.lns.com/papers/tuneradio/ \
 
 MAINTAINER=	pozar@lns.com
 COMMENT=	Command line method of tuning a Brooktree FM tuner card
+WWW=		https://www.lns.com/papers/tuneradio/
 
 .if !exists(/usr/include/dev/bktr/ioctl_bt848.h)
 IGNORE=	needs bktr(4) which is no longer available on your FreeBSD version

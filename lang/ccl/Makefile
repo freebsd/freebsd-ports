@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Clozure CL is a free Common Lisp implementation
+WWW=		https://www.clozure.com/ccl
 
 LICENSE=	APACHE20
 

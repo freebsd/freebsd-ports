@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of the Porter word stemming algorithm
+WWW=		https://rubygems.org/gems/stemmer
 
 USES=		gem
 USE_RUBY=	yes

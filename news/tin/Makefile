@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 
 MAINTAINER?=	kbowling@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
+WWW=		http://www.tin.org/
 
 LICENSE=	BSD3CLAUSE
 

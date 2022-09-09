@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.freebsd-support.de/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based network interface monitoring tool
+WWW=		http://www.freebsd-support.de/misc/
 
 USES=		ncurses
 MAKE_ARGS=	LDADD="-lncurses"

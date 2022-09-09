@@ -9,6 +9,7 @@ DISTFILES=	tcetest049.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern tactical Enemy Territory modification
+WWW=		http://www.truecombat.com/intro.php
 
 # Converted from RESTRICTED
 LICENSE=	tcetest-license

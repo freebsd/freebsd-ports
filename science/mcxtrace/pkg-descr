@@ -5,5 +5,3 @@ ray-tracing formalism. Currently the main use of McXtrace is in the field of
 synchrotron beamline instrumentation design, but various other uses have been
 found, such as designing X-ray telescopes or for laboratory source-based
 equipment.
-
-WWW: http://www.mcxtrace.org

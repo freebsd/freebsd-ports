@@ -11,5 +11,3 @@ The following formats are supported:
 - .TND - TundraDraw format, supporting 24-bit color mode
 - .XB - The eXtended Binary XBin format, supporting custom character
         sets and palettes
-
-WWW: https://www.ansilove.org/

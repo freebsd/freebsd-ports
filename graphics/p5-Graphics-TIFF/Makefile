@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Perl extension for the libtiff library
+WWW=		https://metacpan.org/pod/Graphics::TIFF
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -11,8 +11,5 @@
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.py
 %%PYTHON_SITELIBDIR%%/lz4/frame/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/lz4/frame/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/lz4/frame/__pycache__/_compression.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/lz4/frame/__pycache__/_compression.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/lz4/frame/_compression.py
 %%PYTHON_SITELIBDIR%%/lz4/frame/_frame%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/lz4/version.py

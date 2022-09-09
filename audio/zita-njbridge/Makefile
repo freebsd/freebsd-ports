@@ -6,6 +6,7 @@ MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line client to transmit audio over a local IP network
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING

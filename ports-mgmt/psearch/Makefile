@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	mail@maxlor.com
 COMMENT=	Utility for searching the FreeBSD Ports Collection
+WWW=		https://github.com/maxlor/psearch
 
 LICENSE=	BSD2CLAUSE
 

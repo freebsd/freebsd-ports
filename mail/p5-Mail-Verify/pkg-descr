@@ -5,5 +5,3 @@ email for the domain.  Using the Net::DNS module and the IO::Socket
 module a list of MX records (or, falling back on a hosts A record)
 are checked to make sure at least one SMTP server is accepting
 connections.
-
-WWW: https://metacpan.org/release/Mail-Verify

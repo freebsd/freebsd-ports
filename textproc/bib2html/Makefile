@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BibTeX to HTML Translator
+WWW=		https://www.arakhne.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING

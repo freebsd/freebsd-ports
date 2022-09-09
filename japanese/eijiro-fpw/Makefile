@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EIJIRO English - Japanese Dictionary (EPWING V1 format)
+WWW=		http://openlab.ring.gr.jp/edict/fpw/
 
 # Converted from RESTRICTED
 LICENSE=	eijiro-fpw

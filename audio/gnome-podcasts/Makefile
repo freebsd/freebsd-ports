@@ -9,6 +9,7 @@ PATCHFILES+=	6614bb62ecbe.patch:-p1 # https://gitlab.gnome.org/World/podcasts/-/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Podcast app for GNOME
+WWW=		https://gitlab.gnome.org/World/podcasts
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.xach.com/multisort/ \
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Small program to take multiple httpd logfiles into one
+WWW=		https://www.xach.com/multisort/
 
 LICENSE=	GPLv2+
 

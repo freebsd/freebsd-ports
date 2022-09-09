@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python module to read and work with PE files
+WWW=		https://github.com/erocarrera/pefile
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

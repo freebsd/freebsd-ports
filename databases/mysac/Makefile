@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.arpalert.org/src/ \
 
 MAINTAINER=	jake@xz.cx
 COMMENT=	MySQL Simple Asynchronous Client
+WWW=		https://www.arpalert.org/mysac.html
 
 LICENSE=	LGPL3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	dmitryluhtionov@gmail.com
 COMMENT=	On-Screen-Display for hotkeys of IBM ThinkPads
+WWW=		https://www.nongnu.org/tpb/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

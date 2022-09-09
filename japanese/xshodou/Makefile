@@ -6,6 +6,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese shodou program for X based on Tcl/Tk
+WWW=		https://kozos.jp/myfreesoft/
 
 USES=		tk
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Let's Encrypt API interfacing module
+WWW=		https://metacpan.org/release/Crypt-LE
 
 LICENSE=	ART20
 

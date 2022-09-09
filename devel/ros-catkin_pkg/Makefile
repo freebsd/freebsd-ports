@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Standard Python library for the catkin build system
+WWW=		https://github.com/ros/catkin
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

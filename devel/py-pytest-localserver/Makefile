@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Py.test Plugin to test server connections locally
+WWW=		https://github.com/pytest-dev/pytest-localserver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

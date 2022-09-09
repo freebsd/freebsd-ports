@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jonaspalm@posteo.de
 COMMENT=	Library to convert numbers to words in multiple languages
+WWW=		https://github.com/savoirfairelinux/num2words
 
 LICENSE=	LGPL21
 

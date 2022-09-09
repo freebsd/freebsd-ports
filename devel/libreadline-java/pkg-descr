@@ -13,5 +13,3 @@ ReadlineLibrary.Getline
 
 Note that all programs using GnuReadline will fall under the GPL,
 since Gnu-Readline is GPL software!
-
-WWW: https://sourceforge.net/projects/java-readline/

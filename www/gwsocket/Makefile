@@ -5,6 +5,7 @@ MASTER_SITES=	http://tar.gwsocket.io/
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	RFC6455 compliant WebSocket Server
+WWW=		https://gwsocket.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

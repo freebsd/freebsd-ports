@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/textproc/${PORTNAME}/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple Markdown Interpreter / filter for simplified markup dialect
+WWW=		https://BSDforge.com/projects/textproc/smi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

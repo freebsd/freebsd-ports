@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Ephemerides computation
+WWW=		https://rhodesmill.org/skyfield/
 
 LICENSE=	MIT
 

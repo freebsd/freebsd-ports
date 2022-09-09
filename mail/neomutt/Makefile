@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Bringing together all the Mutt Code
+WWW=		https://neomutt.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

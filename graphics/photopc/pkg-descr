@@ -12,5 +12,3 @@ description of the protocol.  With this tool, they are managable from a
 UNIX box.  Bruce D. Lightner <lightner@lightner.net> has added support
 for Win32 and DOS platforms.  Note that the program does not have any
 GUI, it is plain command-line even on Windows.
-
-WWW: http://photopc.sourceforge.net/

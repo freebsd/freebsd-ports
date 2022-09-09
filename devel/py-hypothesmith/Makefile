@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Hypothesis strategies for generating Python programs
+WWW=		https://github.com/Zac-HD/hypothesmith
 
 LICENSE=	MPL20
 

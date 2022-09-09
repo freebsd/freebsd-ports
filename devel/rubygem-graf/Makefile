@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple git log analyzer gem
+WWW=		https://github.com/abhshkdz/graf
 
 LICENSE=	MIT
 

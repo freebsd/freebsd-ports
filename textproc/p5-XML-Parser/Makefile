@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension interface to James Clark's XML parser, expat
+WWW=		https://metacpan.org/release/XML-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

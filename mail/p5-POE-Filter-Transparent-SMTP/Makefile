@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SMTP transparency POE filter
+WWW=		https://metacpan.org/release/POE-Filter-Transparent-SMTP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-POE>=0:devel/p5-POE

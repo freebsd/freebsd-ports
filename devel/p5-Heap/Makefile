@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl extensions for keeping data partially sorted
+WWW=		https://metacpan.org/release/Heap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

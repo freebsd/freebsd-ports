@@ -6,6 +6,7 @@ DIST_SUBDIR=		Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Engine of slicing solution for RepRap 3D printers
+WWW=		http://wiki.ultimaker.com/Cura
 
 LICENSE=	AGPLv3
 

@@ -18,5 +18,3 @@ This version of LibAiff supports the following features:
     * Getting and setting all the AIFF Attributes.
     * Reading and writing markers to positions on the sound.
     * Reading instrument data from AIFF files.
-
-WWW: http://aifftools.sourceforge.net/libaiff/

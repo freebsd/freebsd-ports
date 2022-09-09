@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Just-in-Time compilation of bpf
+WWW=		https://github.com/rmind/bpfjit
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENCE

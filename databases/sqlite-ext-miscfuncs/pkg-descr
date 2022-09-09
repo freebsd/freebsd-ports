@@ -15,5 +15,3 @@ String functions:
 Aggregate functions:
 
   stdev, variance, mode, median, lower_quartile, upper_quartile
-
-WWW: https://www.sqlite.org/contrib

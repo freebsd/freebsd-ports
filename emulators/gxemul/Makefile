@@ -5,6 +5,7 @@ MASTER_SITES=	http://gavare.se/gxemul/src/
 
 MAINTAINER=	mclay@astate.edu
 COMMENT=	Instruction-level machine emulator
+WWW=		http://gavare.se/gxemul/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

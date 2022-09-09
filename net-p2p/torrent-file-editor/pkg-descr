@@ -9,5 +9,3 @@ design and extra features:
   - Edit .torrent file in JSON format or as a binary tree
   - Support for different encodings
   - Translated to many languages; has command line mode
-
-WWW: https://torrent-file-editor.github.io/

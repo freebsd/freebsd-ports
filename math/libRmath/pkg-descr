@@ -8,5 +8,3 @@ To use the routines in your own C or C++ programs, include
 #include <Rmath.h>
 
 and link against -lRmath.
-
-WWW: http://www.R-project.org/

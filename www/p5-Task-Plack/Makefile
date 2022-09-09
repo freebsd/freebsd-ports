@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module bundle for Plack
+WWW=		https://metacpan.org/release/Task-Plack
 
 USES=		perl5
 USE_PERL5=	configure

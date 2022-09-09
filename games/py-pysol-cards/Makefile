@@ -7,6 +7,7 @@ DISTNAME=	pysol_cards-${PORTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Deal PySol FC Cards
+WWW=		https://pypi.org/project/pysol-cards/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

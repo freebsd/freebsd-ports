@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for checking Puppet daemon availability
+WWW=		http://renatasystems.org/freebsd/check_puppet.html
 
 NO_BUILD=	yes
 

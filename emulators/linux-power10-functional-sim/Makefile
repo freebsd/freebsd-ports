@@ -6,6 +6,7 @@ MASTER_SITES=	http://public.dhe.ibm.com/software/server/powerfuncsim/p10/package
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	IBM POWER10 Functional Simulator (mambo) (CentOS ${LINUX_DIST_VER})
+WWW=		https://www14.software.ibm.com/webapp/set2/sas/f/pwrfs/pwr10/home.html
 
 LICENSE=	IBMFUNCTIONALSIM
 LICENSE_NAME=	IBM Functional Simulator License

@@ -1,18 +1,20 @@
 PORTNAME=	klatexformula
 PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX formula to image
+WWW=		https://klatexformula.sourceforge.io
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		cmake compiler:c++11-lang desktop-file-utils ghostscript:run \
-		qt:5 shared-mime-info tar:bzip2 localbase
+		gl qt:5 shared-mime-info tar:bzip2 localbase
+USE_GL=		gl
 USE_QT=		core dbus gui sql svg widgets x11extras xml \
 		buildtools_build designer_build linguisttools_build \
 		qmake_build uitools_build

@@ -9,5 +9,3 @@ quick-plotting function based on Qt (or matplotlib) which allows you view
 the state of any GDS object, useful when scripting geometry-making
 functions. It also has a very thorough tutorial as well which will walk you
 through the process of getting acquainted with PHIDL.
-
-WWW: https://github.com/amccaugh/phidl

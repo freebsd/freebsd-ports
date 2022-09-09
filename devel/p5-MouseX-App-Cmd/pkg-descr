@@ -7,5 +7,3 @@ App::Cmd::Command for MouseX::App::Cmd::Command.
 Then you can write your Mouse commands as Mouse classes, with MouseX::Getopt
 defining the options for you instead of opt_spec returning a
 Getopt::Long::Descriptive spec.
-
-WWW: https://metacpan.org/release/MouseX-App-Cmd

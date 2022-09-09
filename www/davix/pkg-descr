@@ -3,5 +3,3 @@ The focus is on high-performance remote I/O and data management of large
 collections of files. Currently, there is support for the WebDav (link is
 external), Amazon S3 (link is external), Microsoft Azure (link is external), and
 HTTP (link is external) protocols.
-
-WWW: https://dmc-docs.web.cern.ch/dmc-docs/davix.html

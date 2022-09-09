@@ -6,5 +6,3 @@ Javascript package. emoji-regex is cleverly assembled based upon data from the
 Unicode Consortium.
 
 The regular expressions provided herein are derived from that pacakge.
-
-WWW: https://github.com/ticky/ruby-emoji-regex

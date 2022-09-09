@@ -1,4 +1,2 @@
 This module handles the simple but common problem of long strings
 and finite terminal width.
-
-WWW: https://metacpan.org/release/String-Truncate

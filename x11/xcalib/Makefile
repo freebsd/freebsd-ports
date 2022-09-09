@@ -5,6 +5,7 @@ CATEGORIES=	x11 graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for X11 display calibration with ICC profiles
+WWW=		http://xcalib.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,3 +1,4 @@
+@ -1,9 +0,0 @@
 --- examples/regionator/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
 +++ examples/regionator/CMakeLists.txt
 @@ -10,5 +10,5 @@ if(INSTALL_EXAMPLES)

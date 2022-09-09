@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${PORTVERSION}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Set of plugins for the libvisual framework
+WWW=		http://localhost.nl/~synap/libvisual/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: _oink_table_cos
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: _oink_table_cos

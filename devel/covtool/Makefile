@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/rel_2.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ test coverage analyzer
+WWW=		https://sourceforge.net/projects/covtool/
 
 USES=		gmake zip
 USE_GCC=	yes

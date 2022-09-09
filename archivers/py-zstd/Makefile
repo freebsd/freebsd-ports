@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Zstandard compression library
+WWW=		https://github.com/sergey-dryabzhinsky/python-zstd
 
 LICENSE=	BSD2CLAUSE
 

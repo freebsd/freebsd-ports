@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Biobjective Archive class with hypervolume indicator and uncrowded hypervolume improvement computation
+WWW=		https://github.com/CMA-ES/moarchiving
 
 LICENSE=	BSD3CLAUSE
 

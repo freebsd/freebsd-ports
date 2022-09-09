@@ -16,5 +16,3 @@ of rand.
 
 Alternatively, this module can be used to generate objects, with each object
 maintaining its own distinct seed array.
-
-WWW: https://metacpan.org/release/Test-MockRandom

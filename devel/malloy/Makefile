@@ -1,0 +1,64 @@
+PORTNAME=	malloy
+DISTVERSION=	0.5.1
+CATEGORIES=	devel
+
+MAINTAINER=	jbo@insane.engineer
+COMMENT=	Embeddable HTTP(S) and WS(S) client/server components for C++
+WWW=		https://github.com/tectu/malloy
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.txt
+
+BROKEN_FreeBSD_12=	some C++20 STL headers are missing on 12.3,\
+			see https://bugs.freebsd.org/255374
+
+BUILD_DEPENDS=	boost-libs>1.74.0:devel/boost-libs
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libspdlog.so:devel/spdlog
+
+USES=		cmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	tectu
+
+CMAKE_ON=	MALLOY_BUILD_SHARED
+CMAKE_OFF=	MALLOY_BUILD_EXAMPLES \
+		MALLOY_DEPENDENCY_FMT_DOWNLOAD \
+		MALLOY_DEPENDENCY_SPDLOG_DOWNLOAD
+
+OPTIONS_DEFINE=		DOCS EXAMPLES HTML TEST TLS
+OPTIONS_DEFAULT=	CLIENT DOCS EXAMPLES HTML SERVER TLS
+OPTIONS_MULTI=		HTTP
+OPTIONS_MULTI_HTTP=	CLIENT SERVER
+OPTIONS_SUB=		yes
+CLIENT_DESC=		HTTP client support
+HTML_DESC=		HTML features
+SERVER_DESC=		HTTP server support
+
+CLIENT_CMAKE_BOOL=	MALLOY_FEATURE_CLIENT
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_PORTDOCS=		*
+HTML_CMAKE_BOOL=	MALLOY_FEATURE_HTML
+SERVER_CMAKE_BOOL=	MALLOY_FEATURE_SERVER
+TEST_IMPLIES=		CLIENT HTML SERVER
+TEST_CMAKE_BOOL=	MALLOY_BUILD_TESTS
+TLS_USES=		ssl
+TLS_CMAKE_BOOL=		MALLOY_FEATURE_TLS
+
+post-build-DOCS-on:
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/doxygen)
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.md ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/doxygen && \
+		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+do-test-TEST-on:
+	${TEST_WRKSRC}/bin/malloy-tests
+
+.include <bsd.port.mk>

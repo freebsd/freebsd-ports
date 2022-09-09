@@ -14,5 +14,3 @@ supported netlink families and protocols:
   - VFS_DQUOT --- disk quota events monitoring
 
 Starting with 0.5.2 the library supports also PF_ROUTE sockets on BSD systems.
-
-WWW: https://github.com/svinota/pyroute2

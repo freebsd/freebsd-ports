@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python implementation of the Socket.IO realtime client and server
+WWW=		https://github.com/miguelgrinberg/python-socketio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

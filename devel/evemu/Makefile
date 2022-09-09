@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
 MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Records and replays EVDEV descriptions and events
+WWW=		https://www.freedesktop.org/wiki/Evemu/
 
 LICENSE=	GPLv3
 

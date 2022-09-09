@@ -6,6 +6,7 @@ CATEGORIES=	sysutils deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utility for sending notifications on-demand, and when commands finish
+WWW=		https://ntfy.readthedocs.io/en/latest/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,5 +6,3 @@ As this is the n-th-something JSON module on CPAN, what was the reason to write
 yet another JSON module? While it seems there are many JSON modules, none of
 them correctly handle all corner cases, and in most cases their maintainers are
 unresponsive, gone missing, or not listening to bug reports for other reasons.
-
-WWW: https://metacpan.org/release/Cpanel-JSON-XS

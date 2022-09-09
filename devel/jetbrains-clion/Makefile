@@ -8,6 +8,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	JetBrains CLion IDE
+WWW=		https://www.jetbrains.com/clion/
 
 LICENSE=	IntelliJ-CLion
 LICENSE_NAME=	Subscription license agreement for business and organizations

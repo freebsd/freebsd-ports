@@ -3,5 +3,3 @@ and executes symbolic/algebraic transformations upon them. The answers are
 returned in a textual mathematical representation. As its landmark feature, the
 size of the considered expressions in FORM is only limited by the available disk
 space and not by the available RAM.
-
-WWW: https://www.nikhef.nl/~form/

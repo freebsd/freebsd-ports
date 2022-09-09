@@ -8,6 +8,7 @@ DISTNAME=		${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
+WWW=		http://www.genome.umd.edu/jellyfish.html
 
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	dual

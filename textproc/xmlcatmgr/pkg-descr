@@ -7,5 +7,3 @@ A catalog is a lookup mechanism used to translate entities into other
 different entities.  They can, for example, map public identifiers to
 local files or URIs.  This allows you to tell the parser where to look
 for entities without having to modify the original document source.
-
-WWW: http://xmlcatmgr.sourceforge.net/

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Rally car racing game
+WWW=		http://trigger-rally.sourceforge.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WORKINGSRC}/doc/COPYING.txt

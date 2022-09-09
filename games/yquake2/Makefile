@@ -6,6 +6,7 @@ DISTNAME=	quake2-${PORTVERSION}
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Improved version of Icculus Quake II
+WWW=		https://www.yamagi.org/quake2/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

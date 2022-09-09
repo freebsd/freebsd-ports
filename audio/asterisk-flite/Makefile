@@ -4,8 +4,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	audio
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flite dialplan application for Asterisk
+WWW=		https://zaf.github.io/Asterisk-Flite/
 
 LICENSE=	GPLv2
 
@@ -18,7 +19,7 @@ asterisk16_PKGNAMEPREFIX=	asterisk16-
 asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
 asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 
-asterisk18_PKGNAMEPREFIX=       asterisk18- 
+asterisk18_PKGNAMEPREFIX=       asterisk18-
 asterisk18_BUILD_DEPENDS=       asterisk:net/asterisk18
 asterisk18_RUN_DEPENDS=         asterisk:net/asterisk18
 

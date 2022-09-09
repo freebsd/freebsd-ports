@@ -7,6 +7,7 @@ MASTER_SITES=	https://rfc1149.net/download/${PORTNAME}/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral
+WWW=		https://rfc1149.net/devel/recoverjpeg.html
 
 LICENSE=	GPLv2
 

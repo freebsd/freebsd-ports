@@ -7,6 +7,7 @@ DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER?=	joneum@FreeBSD.org
 COMMENT?=	Nagios / Icinga performance data collector and grapher
+WWW=		https://www.pnp4nagios.org/
 
 LICENSE=	GPLv2
 

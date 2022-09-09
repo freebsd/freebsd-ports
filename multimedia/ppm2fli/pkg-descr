@@ -15,5 +15,3 @@ and not totally tested. I made tests on SUN sparc-stations (various versions
 of SUN-OS), on PC running LINUX and under MSDOS using the DJGPP DOS-extender.
 In all cases the GCC compiler was used. Under MSDOS I used a modified
 makefile. Anyway, in some environments changes in the makefile are necessary.
-
-WWW: http://vento.pi.tu-berlin.de/ppm2fli/main.html

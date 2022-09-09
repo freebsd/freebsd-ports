@@ -8,6 +8,7 @@ PATCHFILES+=	657d77406161.patch:-p1 # https://github.com/intel/libva/pull/292
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
+WWW=		https://github.com/intel/libva
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

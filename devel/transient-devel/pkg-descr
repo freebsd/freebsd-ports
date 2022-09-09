@@ -17,5 +17,3 @@ reading a new value in the minibuffer.
 
 Calling a suffix command usually causes the transient to be exited but
 suffix commands can also be configured to not exit the transient.
-
-WWW: https://github.com/magit/transient

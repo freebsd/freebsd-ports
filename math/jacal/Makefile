@@ -5,6 +5,7 @@ MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Symbolic mathematics program written in Scheme
+WWW=		https://swissnet.ai.mit.edu/~jaffer/JACAL.html
 
 LICENSE=	GPLv3
 

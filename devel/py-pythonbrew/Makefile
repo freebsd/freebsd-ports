@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Python Environment manager
+WWW=		https://github.com/utahta/pythonbrew
 
 LICENSE=	MIT
 

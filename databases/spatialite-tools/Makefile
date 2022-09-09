@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Collection of CLI tools supporting SpatiaLite
+WWW=		http://www.gaia-gis.it/fossil/spatialite-tools/index
 
 LICENSE=	GPLv3
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML Based Presentations
+WWW=		https://metacpan.org/release/XML-Handler-AxPoint
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

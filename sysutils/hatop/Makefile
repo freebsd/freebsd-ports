@@ -5,6 +5,7 @@ CATEGORIES=	sysutils net
 
 MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
+WWW=		https://github.com/jhunt/hatop
 
 LICENSE=	GPLv3+
 

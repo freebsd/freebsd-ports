@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for Calculate Japanese Holiday
+WWW=		https://metacpan.org/release/Date-Japanese-Holiday
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Date-Calc>5.3:devel/p5-Date-Calc \

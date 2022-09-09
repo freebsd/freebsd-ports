@@ -1,11 +1,12 @@
 PORTNAME=	libaccounts-qt5
 DISTVERSION=	1.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 wrapper for SSO framework
+WWW=		https://code.google.com/p/accounts-sso/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

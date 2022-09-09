@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
+WWW=		https://www.libmng.com/
 
 LIB_DEPENDS=	liblcms.so:graphics/lcms
 

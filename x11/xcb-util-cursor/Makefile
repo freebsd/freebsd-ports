@@ -5,6 +5,7 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XCB cursor library
+WWW=		https://xcb.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

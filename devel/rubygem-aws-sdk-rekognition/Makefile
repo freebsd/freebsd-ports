@@ -1,10 +1,11 @@
 PORTNAME=	aws-sdk-rekognition
-PORTVERSION=	1.69.0
+PORTVERSION=	1.70.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for Amazon Rekognition
+WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-rekognition
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

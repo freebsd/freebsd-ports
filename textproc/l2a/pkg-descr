@@ -1,4 +1,2 @@
 L2A is a simple filter to remove most LaTeX commands from marked-up
 documents, leaving only the body of text.
-
-WWW: http://hannemyr.com/enjoy/l2a.html

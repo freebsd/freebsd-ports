@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faster Thrift binary protocol encoding and decoding
+WWW=		https://metacpan.org/release/Thrift-XS
 
 LICENSE=	APACHE20
 

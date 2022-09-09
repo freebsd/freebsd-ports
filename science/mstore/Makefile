@@ -6,6 +6,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular structure store for testing
+WWW=		https://github.com/grimme-lab/mstore
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

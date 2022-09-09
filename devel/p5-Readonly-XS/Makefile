@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Companion module for Readonly.pm, to speed up read-only scalar variables
+WWW=		https://metacpan.org/release/Readonly-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

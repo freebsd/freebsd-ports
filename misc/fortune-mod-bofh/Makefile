@@ -8,6 +8,7 @@ DISTFILES=	bofh-fortune-mod${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"
+WWW=		http://www.void.irq.org/
 
 WRKSRC=		${WRKDIR}/bofh-fortune-mod2.0
 

@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source clone of Theme Hospital
+WWW=		https://github.com/CorsixTH/CorsixTH
 
 LICENSE=	MIT
 

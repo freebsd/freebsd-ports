@@ -7,6 +7,7 @@ MASTER_SITES=	http://pulkomandy.tk/projects/GrafX2/downloads/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pixelart-oriented bitmap painting program
+WWW=		https://pulkomandy.tk/projects/GrafX2
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python library to identify devices using User-Agent string
+WWW=		https://github.com/selwin/python-user-agents
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ua_parser/__init__.py:devel/py-ua_parser@${PY_FLAVOR}
 

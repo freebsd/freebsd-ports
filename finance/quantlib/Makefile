@@ -7,6 +7,7 @@ DISTNAME=	QuantLib-${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	C++ library for quantitative finance
+WWW=		https://www.quantlib.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

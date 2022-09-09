@@ -8,5 +8,3 @@ It differs from Archive::Tar in two ways:
   disk.
 - Archive::Tar::Wrapper is 100% compliant with the platform's tar utility,
   because it uses it internally.
-
-WWW: https://metacpan.org/release/Archive-Tar-Wrapper

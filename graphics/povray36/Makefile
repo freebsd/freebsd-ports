@@ -10,6 +10,7 @@ DIST_SUBDIR=	povray36
 
 MAINTAINER=	bsd@philippost.de
 COMMENT=	Persistence of Vision Ray Tracer
+WWW=		https://www.povray.org/
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff

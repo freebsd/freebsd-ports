@@ -2,5 +2,3 @@ Unicode string manipulation library for Ruby.  This library is based on UTR #15
 Unicode Normalization Forms[1].
 
 [1] http://www.unicode.org/unicode/reports/tr15/
-
-WWW: http://www.yoshidam.net/Ruby.html#unicode

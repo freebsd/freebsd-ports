@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Application toolkit for POSIX-compliant shell scripts
+WWW=		https://github.com/jmmv/shtk/
 
 LICENSE=	BSD3CLAUSE
 

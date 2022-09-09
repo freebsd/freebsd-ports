@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	jake@xz.cx
 COMMENT=	PHP IP Address Management IPv4/IPv6
+WWW=		https://phpipam.net/
 
 LICENSE=	GPLv3
 

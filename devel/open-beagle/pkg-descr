@@ -8,5 +8,3 @@ programming, where abstractions are represented by loosely coupled objects and
 where it is common and easy to reuse code. Open BEAGLE is designed to provide
 an EC environment that is generic, user friendly, portable, efficient, robust,
 elegant and free.
-
-WWW: http://beagle.sourceforge.net/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE directory watcher
+WWW=		https://metacpan.org/release/POE-Component-DirWatch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

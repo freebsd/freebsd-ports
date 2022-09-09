@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Converts HTML to PDF and/or PostScript
+WWW=		https://michaelrsweet.github.io/htmldoc
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

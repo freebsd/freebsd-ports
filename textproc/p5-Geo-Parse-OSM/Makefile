@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenStreetMap XML file regexp parser
+WWW=		https://metacpan.org/release/Geo-Parse-OSM
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenID library written in pure Ruby
+WWW=		https://github.com/openid/ruby-openid
 
 LICENSE=	APACHE20 RUBY
 LICENSE_COMB=	dual

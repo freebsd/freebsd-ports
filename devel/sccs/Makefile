@@ -2,6 +2,7 @@ PORTNAME=	sccs
 CATEGORIES=	devel
 
 COMMENT=	Source Code Control System (SCCS)
+WWW=		https://codeberg.org/schilytools/schilytools
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	patch \

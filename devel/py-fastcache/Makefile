@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C implementation of Python 3 functools.lru_cache
+WWW=		https://github.com/pbrady/fastcache
 
 LICENSE=	MIT
 

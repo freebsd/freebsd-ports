@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	File alteration monitoring service
+WWW=		https://facebook.github.io/watchman/
 
 LICENSE=	APACHE20
 

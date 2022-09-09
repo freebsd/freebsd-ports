@@ -3,5 +3,3 @@ duplicate a directory hierarchy between the machine it is run on and a
 remote host.  It avoids copying files unnecessarily by comparing the
 file timestamps and sizes before transferring.  Amongst other things
 Mirror can optionally compress, gzip, and split files.
-
-WWW: http://ry.ca/mirror/mirror/

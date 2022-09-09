@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/openupsd/
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	UPS daemon for some Belkin UPS's
+WWW=		https://BSDforge.com/projects/sysutils/openupsd/
 
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes

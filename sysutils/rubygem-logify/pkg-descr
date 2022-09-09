@@ -1,5 +1,3 @@
 Logify is an incredibly light-weight Ruby logger with a developer-friendly API
 and no dependencies. It is intentionally very opinionated and is optimized
 for speed. This combination makes it perfect for command line applications.
-
-WWW: https://github.com/sethvargo/logify

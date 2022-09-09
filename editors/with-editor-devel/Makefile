@@ -1,12 +1,13 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0-23
-DISTVERSIONSUFFIX=	-gcfcbc27
+DISTVERSION=	3.2.0-26
+DISTVERSIONSUFFIX=	-g1d5860c
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
+WWW=		https://github.com/magit/with-editor
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

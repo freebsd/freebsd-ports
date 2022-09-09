@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tomek@cedro.info
 COMMENT=	Mkfs equivalent for romfs filesystem
+WWW=		https://github.com/chexum/genromfs
 
 LICENSE=	GPLv2
 

@@ -1,10 +1,11 @@
 PORTNAME=	haven
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Import and Export 'SPSS', 'Stata' and 'SAS' Files
+WWW=		https://haven.tidyverse.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

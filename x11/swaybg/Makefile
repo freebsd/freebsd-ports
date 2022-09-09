@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wallpaper tool for Wayland compositors
+WWW=		https://github.com/swaywm/swaybg
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

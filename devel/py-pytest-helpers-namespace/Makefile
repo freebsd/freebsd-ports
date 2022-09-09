@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Provide a helpers namespace in pytest
+WWW=		https://pypi.org/project/pytest-helpers-namespace/
 
 LICENSE=	APACHE20
 

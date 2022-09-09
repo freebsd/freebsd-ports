@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.and.org/vstr/${PORTVERSION}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
+WWW=		http://www.and.org/vstr/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -11,5 +11,3 @@ This need for virtual screens motivated this about 50 lines hack.
 w9wm brings support for virtual screens (provided you use the second
 button, aka middle button to select one virtual screen) as well as for
 key bindings (to switch from one window to another).
-
-WWW: http://www.grassouille.org/code/w9wm.en.html

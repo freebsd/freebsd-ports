@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-packages3D-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad 3D model libraries for rendering and MCAD integration
+WWW=		https://gitlab.com/kicad/libraries/kicad-packages3D
 
 LICENSE=	GPLv2
 

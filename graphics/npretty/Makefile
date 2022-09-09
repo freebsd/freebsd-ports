@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	peter@pean.org
 COMMENT=	Simple web-gallery generator written in perl
+WWW=		http://www.pulia.nu/coding.html
 
 LICENSE=	GPLv2
 

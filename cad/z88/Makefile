@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact Finite Element Analysis System
+WWW=		https://en.z88.de/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

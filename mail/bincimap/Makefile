@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}final
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight IMAP server for Maildir
+WWW=		https://sourceforge.net/projects/bincimap/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

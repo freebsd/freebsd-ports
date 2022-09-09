@@ -4,5 +4,3 @@ This is a python client for the Swift API. There's a Python API (the
 This code is based on the original client previously included with
 OpenStack's swift -- a highly available, distributed, eventually
 consistent object/blob store.
-
-WWW: https://launchpad.net/python-swiftclient

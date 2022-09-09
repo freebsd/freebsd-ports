@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for keyword extraction
+WWW=		https://www.gnu.org/software/libextractor/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

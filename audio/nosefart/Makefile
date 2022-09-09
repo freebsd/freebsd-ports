@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-mls
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Player for NES Sound Format (NSF)
+WWW=		http://nosefart.sourceforge.net/
 
 LICENSE=	GPLv2
 

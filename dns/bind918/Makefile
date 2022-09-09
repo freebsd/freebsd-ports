@@ -19,6 +19,7 @@ PKGNAMESUFFIX=	918
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
+WWW=		https://www.isc.org/bind/
 .if defined(BIND_TOOLS_SLAVE)
 COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
 .else

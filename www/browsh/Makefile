@@ -8,6 +8,7 @@ EXTRACT_SUFX=	# none
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Text-based browser supporting HTML5, CSS3, JS, video and WebGL
+WWW=		https://www.brow.sh/
 
 LICENSE=	LGPL21
 

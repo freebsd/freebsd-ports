@@ -1,11 +1,12 @@
 PORTNAME=	uvicorn
-PORTVERSION=	0.18.2
+PORTVERSION=	0.18.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightning-fast ASGI server
+WWW=		https://www.uvicorn.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -35,5 +36,9 @@ STANDARD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httptools>=0.4.0:www/py-httptools@$
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/pyproject.toml
+	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>

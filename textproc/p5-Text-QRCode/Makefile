@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate text based QR Code
+WWW=		https://metacpan.org/release/Text-QRCode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

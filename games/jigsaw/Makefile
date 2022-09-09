@@ -7,6 +7,7 @@ DISTNAME=	Jigsaw-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulates a jigsaw puzzle and illustrates the use of clipping paths
+WWW=		https://gap.nongnu.org/jigsaw/
 
 LICENSE=	GPLv2+
 

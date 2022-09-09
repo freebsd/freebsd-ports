@@ -18,5 +18,3 @@ canvas terminal drivers.
 
 This is the lite version of the package, which doesn't support rendering
 directly on graphical terminals and other graphical feaures.
-
-WWW: http://www.gnuplot.info/

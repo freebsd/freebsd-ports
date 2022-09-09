@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gmt gmt/legacy
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Global Self-consistent, Hierarchical, High-resolution Geography
+WWW=		https://www.soest.hawaii.edu/wessel/gshhg/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

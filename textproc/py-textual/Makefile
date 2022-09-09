@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Text User Interface using Rich
+WWW=		https://github.com/Textualize/textual
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

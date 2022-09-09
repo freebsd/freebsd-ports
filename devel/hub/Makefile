@@ -1,11 +1,12 @@
 PORTNAME=	hub
 PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Introduces git to GitHub
+WWW=		https://hub.github.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

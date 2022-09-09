@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Removes non-standard characters from filenames
+WWW=		https://github.com/dharple/detox
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

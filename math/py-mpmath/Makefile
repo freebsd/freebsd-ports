@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Library for Arbitrary-precision Floating-point Arithmetic
+WWW=		https://www.mpmath.org/
 
 LICENSE=	BSD3CLAUSE
 

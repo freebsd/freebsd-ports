@@ -8,14 +8,14 @@ PATCHFILES+=	442bcebcc00e.patch:-p1 # meson >= 0.60
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	GTK module for putting application menubar in a global menubar
+WWW=		https://gitlab.com/vala-panel-project/vala-panel-appmenu/-/tree/master/subprojects/appmenu-gtk-module
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/subprojects/appmenu-gtk-module/LICENSE
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf
 
-USES=	meson gnome pkgconfig
+USES=	meson gnome pkgconfig vala:build
 
 MESON_ARGS=	-Dappmenu-gtk-module=enabled \
 		-Dbudgie=disabled \

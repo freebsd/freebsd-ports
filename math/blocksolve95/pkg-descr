@@ -11,5 +11,3 @@ dimensional Poisson problem.
 BlockSolve95 is general purpose; we do not require that the matrices have any
 particular structure other than being sparse and being symmetric in structure
 (but not necessarily in value).
-
-WWW: http://ftp.mcs.anl.gov/pub/BlockSolve95/

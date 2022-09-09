@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster conversions to/from Bencode format
+WWW=		https://metacpan.org/release/Convert-Bencode_XS
 
 RUN_DEPENDS=	p5-Convert-Bencode>=0:converters/p5-Convert-Bencode
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get directories of configuration files
+WWW=		https://metacpan.org/release/File-ConfigDir
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

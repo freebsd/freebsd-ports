@@ -7,6 +7,7 @@ MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
+WWW=		http://www.uku.fi/~thassine/projects/ghemical/
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

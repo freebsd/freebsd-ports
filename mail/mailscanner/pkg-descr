@@ -19,5 +19,3 @@ MailScanner itself is entirely open source, but it uses widely known commercial
 virus scanning packages at its core. The other software it uses is all high
 quality open source software, leading to a system that can be trusted for
 performance and reliability.
-
-WWW: http://www.mailscanner.info

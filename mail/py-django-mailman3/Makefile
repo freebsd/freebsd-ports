@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Libraries and templates for Django-based interfaces interacting with Mailman
+WWW=		https://gitlab.com/mailman/django-mailman3
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

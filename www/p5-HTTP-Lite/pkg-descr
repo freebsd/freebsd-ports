@@ -12,5 +12,3 @@ are necessary.
 If you require more functionality, such as FTP or HTTPS, please see libwwwperl
 (LWP).  LWP is a significantly better and more comprehensive package than
 HTTP::Lite, and should be used instead of HTTP::Lite whenever possible.
-
-WWW: https://metacpan.org/release/HTTP-Lite

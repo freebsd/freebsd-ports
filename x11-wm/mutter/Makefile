@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window and compositing manager based on Clutter
+WWW=		https://gitlab.gnome.org/GNOME/mutter
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

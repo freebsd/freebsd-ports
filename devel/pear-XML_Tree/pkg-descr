@@ -1,4 +1,2 @@
 Allows for the building of XML data structures using a tree representation,
 without the need for an extension like DOMXML.
-
-WWW: https://pear.php.net/package/XML_Tree

@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Generic Monitor Xfce4 panel plugin
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-genmon-plugin
 
 LICENSE=	LGPL21
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Sphinx extension which outputs Devhelp document
+WWW=		https://www.sphinx-doc.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

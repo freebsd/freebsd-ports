@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Ncurses client for musicpd with vi-like key bindings
+WWW=		https://github.com/boysetsfrog/vimpc
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ attribute or constructor argument, or defining a _default that warns
 if your object receives an event that it does not have.
 
 This role exposes your class' methods as POE events.
-
-WWW: https://metacpan.org/release/NPEREZ/POEx-Role-SessionInstantiation-1.102610

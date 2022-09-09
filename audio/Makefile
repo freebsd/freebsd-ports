@@ -15,6 +15,7 @@
     SUBDIR += afsp
     SUBDIR += aften
     SUBDIR += alac
+    SUBDIR += alacenc
     SUBDIR += alienwah
     SUBDIR += alo-lv2
     SUBDIR += alsa-lib
@@ -734,6 +735,8 @@
     SUBDIR += somafm-cli
     SUBDIR += sonata
     SUBDIR += sonic-visualiser
+    SUBDIR += sonivox
+    SUBDIR += sonivox-eas
     SUBDIR += sorcer-lv2
     SUBDIR += sound-juicer
     SUBDIR += soundgrab

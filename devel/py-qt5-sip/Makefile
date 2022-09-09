@@ -7,6 +7,7 @@ DISTNAME=	${PYQTSIP_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
+WWW=		http://www.riverbankcomputing.co.uk/software/sip/
 
 LICENSE=		SIP GPLv2 GPLv3
 LICENSE_COMB=		multi

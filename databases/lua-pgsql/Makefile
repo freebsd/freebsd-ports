@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Lua binding for PostgreSQL
+WWW=		https://github.com/arcapos/luapgsql
 
 LICENSE=	BSD3CLAUSE
 

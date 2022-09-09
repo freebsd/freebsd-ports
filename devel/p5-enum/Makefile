@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Defines symbolic constants with ordered numeric values, like C enums
+WWW=		https://metacpan.org/release/enum
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

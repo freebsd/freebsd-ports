@@ -13,5 +13,3 @@ media files (avi/mp3/divx/jpeg/...), DVDs and radio/video streams
 FreeBSD Note:  If you want to use VAAPI/VDPAU make sure the ffmpeg
 and libxine ports are (re)built with the corresponding knobs turned on!
 (make config in their port dirs.)
-
-WWW: https://sourceforge.net/projects/xineliboutput/

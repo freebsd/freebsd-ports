@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Datafiles for the tokenizer 'ucto'
+WWW=		https://languagemachines.github.io/ucto/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

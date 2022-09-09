@@ -14,5 +14,3 @@ or manually selected with the `LIBSEAT_BACKEND` environment variable.
 
 Which backend is in use is transparent to the application, providing a
 simple common interface.
-
-WWW: https://git.sr.ht/~kennylevinsen/seatd

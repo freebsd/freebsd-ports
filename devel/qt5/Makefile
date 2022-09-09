@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (metaport)
+WWW=		https://www.qt.io/
 
 # * phonon4 is not part of Qt itself.
 # * we don't want to pull in wayland just yet.

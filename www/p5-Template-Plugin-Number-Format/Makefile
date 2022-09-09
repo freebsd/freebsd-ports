@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plugin/filter interface to Number::Format
+WWW=		https://metacpan.org/release/Template-Plugin-Number-Format
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Number-Format>0:textproc/p5-Number-Format \

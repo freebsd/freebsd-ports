@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Parsing gigabytes of JSON per second
+WWW=		https://simdjson.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	termshark
 PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Terminal UI for tshark, inspired by Wireshark
+WWW=		https://termshark.io/
 
 LICENSE=	MIT
 

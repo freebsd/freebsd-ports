@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Sphinx extension for rendering tables written in markdown
+WWW=		https://github.com/ryanfox/sphinx-markdown-tables
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

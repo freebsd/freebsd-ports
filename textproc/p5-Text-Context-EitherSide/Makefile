@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get n words either side of search keywords
+WWW=		https://metacpan.org/release/Text-Context-EitherSide
 
 USES=		perl5
 USE_PERL5=	configure

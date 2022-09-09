@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECDSA cryptographic signature library (pure python)
+WWW=		https://github.com/tlsfuzzer/python-ecdsa
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

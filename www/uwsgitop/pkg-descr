@@ -6,5 +6,3 @@ uwsgi --module myapp --socket :3030 --stats /tmp/stats.socket
 Then connect uwsgitop to the stats socket
 
 uwsgitop /tmp/stats.socket
-
-WWW: https://pypi.org/project/uwsgitop/

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Tools for Generating and Handling of UUIDs
+WWW=		https://www.rforge.net/uuid
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

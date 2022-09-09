@@ -5,6 +5,7 @@ DISTFILES=	# none
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Common startup and shutdown subroutines used by GNOME scripts
+WWW=		https://www.FreeBSD.org/gnome/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${PORTSDIR}/COPYRIGHT

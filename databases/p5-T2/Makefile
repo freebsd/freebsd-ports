@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object Relational mapping system
+WWW=		https://metacpan.org/release/SAMV/T2-0.10
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

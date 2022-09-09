@@ -6,6 +6,7 @@ MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/co
 
 MAINTAINER=	rddeblois@gmail.com
 COMMENT=	Open source DXT compression library
+WWW=		https://code.google.com/p/libsquish/
 
 LICENSE=	MIT
 

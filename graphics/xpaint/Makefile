@@ -6,6 +6,7 @@ MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple paint program
+WWW=		http://sf-xpaint.sourceforge.net/
 
 LICENSE=	GPLv3
 

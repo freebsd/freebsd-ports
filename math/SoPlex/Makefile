@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Optimization package for solving linear programming problems (LPs)
+WWW=		https://soplex.zib.de
 
 LICENSE=	ZIB
 LICENSE_NAME=	ZIB ACADEMIC LICENSE

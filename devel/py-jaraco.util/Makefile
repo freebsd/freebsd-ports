@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	General utility modules that supply commonly-used functionality
+WWW=		https://github.com/jaraco/jaraco.util
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing simple file locking
+WWW=		https://metacpan.org/release/LockFile-Simple
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video stabilization library
+WWW=		http://public.hronopik.de/vid.stab/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

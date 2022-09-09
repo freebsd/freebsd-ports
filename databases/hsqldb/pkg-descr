@@ -7,5 +7,3 @@ for applets), fast database engine which offers both in-memory and disk-based
 tables and supports embedded and server modes. Additionally, it includes tools
 such as a minimal web server, in-memory query and management tools (can be run
 as applets) and a number of demonstration examples.
-
-WWW: http://hsqldb.org/

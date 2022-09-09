@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Syntax highlighting for Perl code
+WWW=		https://metacpan.org/release/Syntax-Highlight-Perl-Improved
 
 USES=		perl5
 USE_PERL5=	configure

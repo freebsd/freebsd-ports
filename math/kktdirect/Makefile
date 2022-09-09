@@ -7,6 +7,7 @@ DISTNAME=	KKTDirect${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Direct solver package for saddle-point (KKT) matrices
+WWW=		https://www.cs.ubc.ca/~rbridson/kktdirect/
 
 USES=		fortran
 USE_LDCONFIG=	yes

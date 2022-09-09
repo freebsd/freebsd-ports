@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Improved search capacities of ripgrep
+WWW=		https://github.com/phiresky/ripgrep-all/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Database Interface R driver for SQLite
+WWW=		https://cran.r-project.org/web/packages/RSQLite/
 
 LICENSE=	LGPL20
 

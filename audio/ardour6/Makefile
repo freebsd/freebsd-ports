@@ -11,6 +11,7 @@ DISTNAME=	Ardour-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multichannel digital audio workstation
+WWW=		https://ardour.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

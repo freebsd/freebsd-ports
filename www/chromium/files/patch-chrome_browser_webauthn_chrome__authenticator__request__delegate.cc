@@ -1,6 +1,6 @@
---- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2022-07-22 17:30:31 UTC
+--- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2022-08-31 12:19:35 UTC
 +++ chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
-@@ -673,7 +673,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureCabl
+@@ -662,7 +662,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureCabl
      }
    }
  

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write Perl subroutines and classes in C++
+WWW=		https://metacpan.org/release/Inline-CPP
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

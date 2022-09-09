@@ -3,5 +3,3 @@ Yahtzee. Open Yahtzee is built to be OS portable, that means you can run
 it on many kinds of different operating systems and platforms. The
 portability is mainly achived via wxWidgets which also gives Open
 Yahtzee a native look on each platform.
-
-WWW: http://www.openyahtzee.org/

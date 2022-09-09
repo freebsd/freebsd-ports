@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Maximum Likelihood Estimation and Related Tools
+WWW=		http://www.maxlik.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

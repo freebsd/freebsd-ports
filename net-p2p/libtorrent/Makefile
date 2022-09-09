@@ -5,6 +5,7 @@ MASTER_SITES=	https://rtorrent.net/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
+WWW=		https://github.com/rakshasa/libtorrent
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

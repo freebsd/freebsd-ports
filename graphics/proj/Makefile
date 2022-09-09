@@ -7,6 +7,7 @@ MASTER_SITES=	https://download.osgeo.org/proj/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Cartographic Projections library
+WWW=		https://github.com/OSGeo/PROJ
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

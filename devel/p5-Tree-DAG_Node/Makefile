@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Super class for representing nodes in a tree
+WWW=		https://metacpan.org/release/Tree-DAG_Node
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

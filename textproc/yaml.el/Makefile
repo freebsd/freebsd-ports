@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	YAML parser in Elisp
+WWW=		https://github.com/zkry/yaml.el
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

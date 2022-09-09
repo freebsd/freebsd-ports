@@ -6,6 +6,7 @@ MASTER_SITES=	http://pear.horde.org/get/
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Native Language Support
+WWW=		https://pear.horde.org
 
 USES=		horde
 USE_HORDE_RUN=	Horde_Translation \

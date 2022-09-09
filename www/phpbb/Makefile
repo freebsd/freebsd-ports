@@ -6,6 +6,7 @@ DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	liukang@cn.freebsd.org
 COMMENT=	PHP-based bulletin board / discussion forum system
+WWW=		https://www.phpbb.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

@@ -407,6 +407,7 @@
     SUBDIR += libxdiff
     SUBDIR += libxml++
     SUBDIR += libxml++26
+    SUBDIR += libxml++30
     SUBDIR += libxml2
     SUBDIR += libxmlb
     SUBDIR += libxmlbird
@@ -1052,6 +1053,7 @@
     SUBDIR += p5-XML-Driver-HTML
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Elemental
+    SUBDIR += p5-XML-Enc
     SUBDIR += p5-XML-Encoding
     SUBDIR += p5-XML-Entities
     SUBDIR += p5-XML-FOAF
@@ -1131,6 +1133,7 @@
     SUBDIR += p5-XML-STX
     SUBDIR += p5-XML-Schematron
     SUBDIR += p5-XML-SemanticDiff
+    SUBDIR += p5-XML-Sig
     SUBDIR += p5-XML-Simple
     SUBDIR += p5-XML-SimpleObject
     SUBDIR += p5-XML-SimpleObject-LibXML
@@ -1262,7 +1265,6 @@
     SUBDIR += print-n-times
     SUBDIR += pugixml
     SUBDIR += pup
-    SUBDIR += py-Chameleon
     SUBDIR += py-CommonMark
     SUBDIR += py-Morfessor
     SUBDIR += py-QDarkStyle
@@ -1283,6 +1285,7 @@
     SUBDIR += py-bibtexparser
     SUBDIR += py-bracex
     SUBDIR += py-cchardet
+    SUBDIR += py-chameleon
     SUBDIR += py-chardet
     SUBDIR += py-charset-normalizer
     SUBDIR += py-citeproc-py
@@ -1463,6 +1466,7 @@
     SUBDIR += py-pytkdocs
     SUBDIR += py-pytoml
     SUBDIR += py-pyx12
+    SUBDIR += py-pyxlsb2
     SUBDIR += py-qrcode
     SUBDIR += py-rdflib
     SUBDIR += py-readchar
@@ -1552,6 +1556,7 @@
     SUBDIR += py-typogrify
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
+    SUBDIR += py-untangle
     SUBDIR += py-wcmatch
     SUBDIR += py-whatthepatch
     SUBDIR += py-whoosh
@@ -1561,7 +1566,9 @@
     SUBDIR += py-wtf-peewee
     SUBDIR += py-wtforms
     SUBDIR += py-xhtml2pdf
+    SUBDIR += py-xlmmacrodeobfuscator
     SUBDIR += py-xlrd
+    SUBDIR += py-xlrd2
     SUBDIR += py-xlsxwriter
     SUBDIR += py-xlutils
     SUBDIR += py-xlwt
@@ -1658,6 +1665,7 @@
     SUBDIR += rubygem-cucumber-gherkin
     SUBDIR += rubygem-cucumber-gherkin23
     SUBDIR += rubygem-cucumber-html-formatter
+    SUBDIR += rubygem-cucumber-html-formatter19
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diff_match_patch
     SUBDIR += rubygem-diffy

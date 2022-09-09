@@ -9,6 +9,7 @@ DISTNAME=	arbitrum-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrum Virtual Machine
+WWW=		https://arbitrum.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

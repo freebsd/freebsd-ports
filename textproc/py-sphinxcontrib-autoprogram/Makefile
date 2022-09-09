@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Sphinx Autoprogram Extension
+WWW=		https://github.com/sphinx-contrib/autoprogram
 
 LICENSE=	BSD2CLAUSE
 

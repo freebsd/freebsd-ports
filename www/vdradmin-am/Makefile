@@ -5,6 +5,7 @@ MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - webinterface
+WWW=		http://andreas.vdr-developer.org/vdradmin-am/
 
 BUILD_DEPENDS=	bash:shells/bash \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \

@@ -4,5 +4,3 @@ pass it the binary contents of a JPEG file, and it parses several of the most
 important EXIF fields for you.
 
 Why use this library? Include one .h file, compile one .cc file, and that's it.
-
-WWW: https://github.com/mayanklahiri/easyexif

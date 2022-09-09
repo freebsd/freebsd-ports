@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Linear mixed-effects models using Eigen and S4
+WWW=		https://github.com/lme4/lme4
 
 LICENSE=	GPLv2+
 

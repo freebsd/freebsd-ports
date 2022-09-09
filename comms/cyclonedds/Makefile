@@ -4,6 +4,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	flo@purplekraken.com
 COMMENT=	Eclipse Cyclone DDS middleware
+WWW=		https://cyclonedds.io/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

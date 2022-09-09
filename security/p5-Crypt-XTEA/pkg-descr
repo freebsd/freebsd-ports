@@ -9,5 +9,3 @@ suggested 64 Feistel rounds (i.e 32 cycles). Crypt::XTEA uses the recommended
 value of 32 cycles by default.
 
 This module implements XTEA encryption. It supports the Crypt::CBC interface.
-
-WWW: https://metacpan.org/pod/Crypt::XTEA

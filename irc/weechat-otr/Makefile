@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	WeeChat script for Off-the-Record (OTR) messaging
+WWW=		https://github.com/mmb/weechat-otr
 
 LICENSE=	GPLv3
 

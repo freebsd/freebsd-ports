@@ -10,5 +10,3 @@ Peter de Jong map equations:
 
    x' = sin(a * y) - cos(b * x)
    y' = sin(c * x) - cos(d * y)
-
-WWW: http://fyre.navi.cx/

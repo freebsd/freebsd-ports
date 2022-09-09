@@ -9,6 +9,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Cargo C-ABI helpers
+WWW=		https://github.com/lu-zero/cargo-c
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

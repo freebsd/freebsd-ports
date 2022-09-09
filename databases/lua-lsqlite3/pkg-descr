@@ -10,5 +10,3 @@ dynamically, the other statically.
 The module `lsqlite3` links SQLite3 dynamically.
 
 The module `lsqlite3complete` links SQLite3 statically.
-
-WWW: http://Lua.SQLite.org/index.cgi/doc/tip/doc/lsqlite3.wiki

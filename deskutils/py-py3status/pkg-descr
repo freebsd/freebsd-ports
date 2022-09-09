@@ -6,5 +6,3 @@ Using py3status, you can take control of your i3bar easily by:
 - writing your own modules and have their output displayed on your bar
 - handling click events on your i3bar and play with them in no time
 - seeing your clock tick every second whatever your i3status interval
-
-WWW: https://github.com/ultrabug/py3status

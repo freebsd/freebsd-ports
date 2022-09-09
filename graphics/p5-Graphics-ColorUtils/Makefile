@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy-to-use color space conversions and more
+WWW=		https://metacpan.org/release/Graphics-ColorUtils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

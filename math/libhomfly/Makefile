@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library to compute the homfly polynomial of knots and link
+WWW=		https://github.com/miguelmarco/libhomfly
 
 LICENSE=	PD
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
 MAINTAINER=	mp39590@gmail.com
 COMMENT=	X11 file manager based on Directory Opus of AmigaOS
+WWW=		http://www.boomerangsworld.de/cms/worker/
 
 LICENSE=	GPLv2+
 

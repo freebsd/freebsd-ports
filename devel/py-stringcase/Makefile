@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	String case converter
+WWW=		https://github.com/okunishinishi/python-stringcase
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

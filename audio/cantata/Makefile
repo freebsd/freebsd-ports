@@ -5,6 +5,7 @@ CATEGORIES=		audio kde
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Graphical client for MPD using Qt5
+WWW=		https://github.com/CDrummond/cantata
 
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE

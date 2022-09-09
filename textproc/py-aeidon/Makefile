@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reading, write and manipulate text-based subtitle files
+WWW=		https://github.com/otsaloma/gaupol
 
 LICENSE=	GPLv3+
 

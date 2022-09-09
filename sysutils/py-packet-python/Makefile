@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Python client for Packet.net API
+WWW=		https://pypi.org/project/packet-python/
 
 LICENSE=	LGPL3+
 

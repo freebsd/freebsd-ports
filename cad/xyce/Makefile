@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Xyce electronic simulator
+WWW=		https://xyce.sandia.gov/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

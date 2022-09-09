@@ -6,5 +6,3 @@ XML data from a scan, or parse XML data from an object
 via its read() method.  This information is presented
 in an easy-to-use and intuitive fashion for storage
 and manipulation.
-
-WWW: http://rubynmap.sourceforge.net

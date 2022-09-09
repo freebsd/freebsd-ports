@@ -9,5 +9,3 @@ This is useful if
 1. Your web server crashed and you didn't have complete backups
 2. A site (such as a valuable reference source) changed or went away and you
   want to restore an old version of the site to your local disk
-
-WWW: https://metacpan.org/release/WWW-WebArchive

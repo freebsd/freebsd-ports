@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pseudopotentials for use with Quantum Espresso
+WWW=		https://www.quantum-espresso.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License

@@ -7,5 +7,3 @@ gmrun is a very featureful GTK+-2 Run box. Its features include:
 	  which can be copied to ~/.gmrunrc
 	* Can spawn commands in a terminal
 	* Intelligent URL handling
-
-WWW: https://sourceforge.net/projects/gmrun/

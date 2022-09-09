@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Interpreted String Literals
+WWW=		https://cran.r-project.org/web/packages/glue/
 
 LICENSE=	MIT
 

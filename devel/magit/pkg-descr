@@ -5,5 +5,3 @@ Unlike Emacs' native Version Control package which strives to provide
 a unified interface to various version control systems, Magit only
 supports Git and can therefore better take advantage of its native
 features.
-
-WWW: https://magit.vc/

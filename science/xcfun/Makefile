@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Exchange-correlation functionals with arbitrary-order derivatives
+WWW=		https://xcfun.readthedocs.io/en/latest/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -1,10 +1,11 @@
 PORTNAME=	rabl
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	General ruby templating with json, bson, xml and msgpack support
+WWW=		https://github.com/nesquena/rabl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

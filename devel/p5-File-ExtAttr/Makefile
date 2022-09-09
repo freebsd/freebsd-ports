@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Access to extended attributes of the files
+WWW=		https://metacpan.org/release/File-ExtAttr
 
 USES=		perl5
 USE_PERL5=	configure

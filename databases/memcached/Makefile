@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.memcached.org/files/ \
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
+WWW=		https://memcached.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

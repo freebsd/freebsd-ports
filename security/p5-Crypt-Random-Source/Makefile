@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Get weak or strong random data from pluggable sources
+WWW=		https://metacpan.org/release/Crypt-Random-Source
 
 LICENSE=	ART20
 

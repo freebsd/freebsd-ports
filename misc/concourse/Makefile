@@ -1,11 +1,12 @@
 PORTNAME=	concourse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automation system written in Go
+WWW=		https://concourse-ci.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

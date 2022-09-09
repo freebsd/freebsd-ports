@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Table of the isotopes exact mass data
+WWW=		https://metacpan.org/release/Chemistry-Isotope
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for libpoly
+WWW=		https://github.com/SRI-CSL/libpoly
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE

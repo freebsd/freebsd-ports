@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Produce pretty and readable YAML-serialized data
+WWW=		https://github.com/mk-fg/pretty-yaml
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/COPYING

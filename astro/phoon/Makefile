@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION}
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Displays the phase of the moon
+WWW=		https://www.acme.com/software/phoon/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

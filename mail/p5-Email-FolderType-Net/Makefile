@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Recognize folder types for network based message protocols
+WWW=		https://metacpan.org/release/Email-FolderType-Net
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

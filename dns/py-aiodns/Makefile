@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	Simple DNS resolver for asyncio
+WWW=		https://pypi.org/project/aiodns/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

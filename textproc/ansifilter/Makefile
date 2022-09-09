@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.andre-simon.de/zip/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Customizable ANSI Code Converter
+WWW=		http://www.andre-simon.de/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

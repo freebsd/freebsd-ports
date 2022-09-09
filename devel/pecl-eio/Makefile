@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Provides interface to the libeio library
+WWW=		https://pecl.php.net/package/eio
 
 LICENSE=	PHP301
 

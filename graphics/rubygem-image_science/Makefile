@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that generates thumbnails
+WWW=		https://github.com/seattlerb/image_science
 
 LICENSE=	MIT
 

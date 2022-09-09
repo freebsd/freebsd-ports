@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Commodore 64 emulator
+WWW=		https://github.com/ThKattanek/emu64
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

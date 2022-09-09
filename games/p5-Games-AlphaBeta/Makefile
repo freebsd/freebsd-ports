@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Game-tree search with object oriented interface
+WWW=		https://metacpan.org/release/Games-AlphaBeta
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to parse OPML document with LibXML parser
+WWW=		https://metacpan.org/release/XML-OPML-LibXML
 
 RUN_DEPENDS=	p5-XML-LibXML>1.60:textproc/p5-XML-LibXML
 

@@ -6,6 +6,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	QoS for Apache
+WWW=		http://opensource.adnovum.ch/mod_qos/
 
 LICENSE=	APACHE20
 

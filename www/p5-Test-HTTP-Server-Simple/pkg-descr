@@ -1,4 +1,2 @@
 This mixin class provides methods to test an HTTP::Server::Simple-based web
 server.  Currently, it provides only one such method: started_ok.
-
-WWW: https://metacpan.org/release/Test-HTTP-Server-Simple

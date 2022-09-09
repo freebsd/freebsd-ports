@@ -6,5 +6,3 @@ Like most other malloc debuggers, LMDBG allows detecting memory leaks
 and double frees. However, unlike others, LMDBG generates full
 stacktraces and separates the logging process from analysis, thus
 allowing you to analyze an application on a per-module basis.
-
-WWW: https://sourceforge.net/projects/lmdbg/

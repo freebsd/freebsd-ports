@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/kuriyama \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Look up the AS and network prefix of IP address
+WWW=		https://mirrorbrain.org/mod_asn/
 
 LICENSE=	APACHE20
 

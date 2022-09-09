@@ -20,5 +20,3 @@ Main changes from w_scan to w_scan2:
   https://stefantalpalaru.wordpress.com/2016/02/04/scan-all-the-things/
   The old behaviour can be enabled with -d (--delete-duplicate-transponders).
 * re-enable VHF band III in Europe
-
-WWW: https://github.com/stefantalpalaru/w_scan2

@@ -5,6 +5,7 @@ MASTER_SITES=	http://hur.st/k8temp/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Athlon 64 and Opteron on-die temperature reader
+WWW=		https://hur.st/k8temp/
 
 LICENSE=	MIT
 

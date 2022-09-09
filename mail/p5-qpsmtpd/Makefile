@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	noc-ports@biglist.com
 COMMENT=	Flexible SMTP daemon written in Perl and featuring a plugin API
+WWW=		https://smtpd.develooper.com/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	spamd:mail/spamassassin \

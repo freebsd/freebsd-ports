@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end of Egg V4
+WWW=		https://www.gcd.org/sengoku/boiling-egg/
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

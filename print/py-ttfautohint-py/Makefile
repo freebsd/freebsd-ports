@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python wrapper for ttfautohint
+WWW=		https://github.com/fonttools/ttfautohint-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

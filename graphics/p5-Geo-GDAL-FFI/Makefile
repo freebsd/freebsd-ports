@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Foreign function interface to GDAL
+WWW=		https://metacpan.org/release/Geo-GDAL-FFI
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE

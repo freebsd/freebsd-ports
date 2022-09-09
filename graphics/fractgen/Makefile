@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.uni-due.de/~be0001/fractalgenerator/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Fractal Generator
+WWW=		https://www.uni-due.de/~be0001/fractalgenerator/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

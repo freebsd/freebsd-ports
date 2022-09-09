@@ -1,11 +1,12 @@
 PORTNAME=	grpcox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web based GUI client for gRPC
+WWW=		https://github.com/gusaul/grpcox
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

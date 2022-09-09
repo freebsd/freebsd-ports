@@ -7,6 +7,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	Roboto typeface family
+WWW=		https://developer.android.com/design/style/typography.html
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

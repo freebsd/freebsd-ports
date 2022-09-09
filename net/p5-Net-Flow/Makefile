@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Decode and encode NetFlow/IPFIX datagrams
+WWW=		https://metacpan.org/release/Net-Flow
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

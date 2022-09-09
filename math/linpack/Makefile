@@ -7,6 +7,7 @@ DISTFILES=	${SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Algebra package
+WWW=		https://www.netlib.org/linpack/
 
 LIB_DEPENDS=	libblas.so:math/blas
 

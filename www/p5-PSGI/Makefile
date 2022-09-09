@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pod documentation for Perl Web Server Gateway Interface Specification
+WWW=		https://metacpan.org/release/PSGI
 
 USES=	perl5
 USE_PERL5=	configure

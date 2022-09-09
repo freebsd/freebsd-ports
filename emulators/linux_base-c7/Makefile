@@ -136,23 +136,10 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 		etc/passwd etc/printcap etc/protocols etc/services etc/shadow \
 		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300077)
-GLIBC_VER=	2.17-292.el7
-MASTER_SITE_SUBDIR+=	altarch/7.7.1908/os/aarch64/Packages/:DEFAULT,aarch64 \
-			altarch/7.7.1908/updates/aarch64/Packages/:DEFAULT,aarch64 \
-			centos/7.7.1908/os/x86_64/Packages/:DEFAULT,amd64 \
-			centos/7.7.1908/updates/x86_64/Packages/:DEFAULT,amd64 \
-			altarch/7.7.1908/os/i386/Packages/:DEFAULT,i386 \
-			altarch/7.7.1908/updates/i386/Packages/:DEFAULT,i386 \
-			centos/7.7.1908/os/Source/SPackages/:SOURCE \
-			centos/7.7.1908/updates/Source/SPackages/:SOURCE
-PLIST_SUB+=	NEWGLIBC="@comment "
-.else
 GLIBC_VER=	2.17-323.el7_9
 PLIST_SUB+=	NEWGLIBC=""
-.endif
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64
 SYSCTLMIB=	kern.features.linux64
@@ -200,4 +187,4 @@ post-install:
 	${LN} -sf /var/run ${STAGEDIR}${PREFIX}/run
 	${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

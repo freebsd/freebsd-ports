@@ -11,5 +11,3 @@ algorithms, as well as providing a high-level interface which hides most of
 the implementation details and provides an operating-system-independent
 encoding method which makes it easy to transfer secured data from one operating
 environment to another.
-
-WWW: http://www.cs.auckland.ac.nz/~pgut001/cryptlib/

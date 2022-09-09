@@ -5,6 +5,7 @@ CATEGORIES=	math databases java
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	JTS Topology Suite
+WWW=		https://github.com/locationtech/jts
 
 LICENSE=	EPL
 #LICENSE_COMB=	dual
@@ -46,7 +47,7 @@ pre-build:
 	cd ${WRKDIR}/.m2 && rm -Rf repository
 	cd ${WRKDIR}/.m2 && git checkout master
 	cd ${WRKDIR}/.m2 && rm -Rf repository
-	
+
 post-build:
 	@${ECHO} "(!!!) Please upload the maven repo using: make pushToGH"
 .else

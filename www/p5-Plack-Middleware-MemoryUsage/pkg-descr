@@ -5,5 +5,3 @@ Enabling Plack::Middleware::MemoryUsage causes huge performance
 penalty.  So I HIGHLY RECOMMEND to enable this middleware only on
 development env or not processing every request on production using
 Plack::Middleware::Conditional.
-
-WWW: https://metacpan.org/release/Plack-Middleware-MemoryUsage

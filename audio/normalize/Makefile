@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	alex@fafula.com
 COMMENT=	Tool for adjusting the volume of wave/MP3 files to a standard level
+WWW=		https://normalize.nongnu.org/
 
 LIB_DEPENDS=	libmad.so:audio/libmad
 

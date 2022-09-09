@@ -19,5 +19,3 @@ libssh features:
 - RSA and DSS server public key supported
 - Compression support (with zlib)
 - Public key (RSA and DSS), password and keyboard-interactive authentication
-
-WWW: https://www.libssh.org/

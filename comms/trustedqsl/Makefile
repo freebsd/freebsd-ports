@@ -8,6 +8,7 @@ DISTNAME=	tqsl-${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
+WWW=		https://lotw.arrl.org/lotw-help/
 
 LICENSE=	ARRL
 LICENSE_NAME=	American Radio Relay League, Inc. All rights reserved.

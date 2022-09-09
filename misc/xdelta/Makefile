@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mirrorservice.org/sites/vectorlinux.com/veclinux-6.0/so
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Diff/patch utility for binary files
+WWW=		https://github.com/jmacd/xdelta
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

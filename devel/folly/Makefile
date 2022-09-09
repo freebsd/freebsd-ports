@@ -1,10 +1,11 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.08.22.00
+DISTVERSION=	2022.09.05.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library developed and used at Facebook
+WWW=		https://github.com/facebook/folly
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

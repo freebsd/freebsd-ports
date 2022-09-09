@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast C++ library for parsing XML
+WWW=		http://rapidxml.sourceforge.net/
 
 LICENSE=	BSL
 

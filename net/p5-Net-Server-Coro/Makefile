@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for co-operative multithreaded server using Coro
+WWW=		https://metacpan.org/release/Net-Server-Coro
 
 LICENSE=	MIT
 

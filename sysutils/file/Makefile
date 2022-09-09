@@ -8,6 +8,7 @@ MASTER_SITES=	https://astron.com/pub/file/ \
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
+WWW=		https://darwinsys.com/file/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Hierarchical NoteBook a data organizer
+WWW=		http://hnb.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

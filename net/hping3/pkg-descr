@@ -17,5 +17,3 @@ networks and hosts. A subset of the stuff you can do using hping:
 	- Firewalk like usage.
 	- Remote OS fingerprint.
 	- TCP/IP stack auditing.
-
-WWW: http://www.hping.org/

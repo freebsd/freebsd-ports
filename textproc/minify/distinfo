@@ -1,6 +1,6 @@
-TIMESTAMP = 1657555627
-SHA256 (tdewolff-minify-v2.12.0_GH0.tar.gz) = 19a970bcab727e9c0582c3b1a411cafb9ea0d806c24789d31f9b35cf7912a10e
-SIZE (tdewolff-minify-v2.12.0_GH0.tar.gz) = 7012596
+TIMESTAMP = 1661950832
+SHA256 (tdewolff-minify-v2.12.1_GH0.tar.gz) = 0b72140fc491198f132ac65b324fab219c972f729a2a7cbce1906550cb479d88
+SIZE (tdewolff-minify-v2.12.1_GH0.tar.gz) = 7013463
 SHA256 (djherbis-atime-v1.1.0_GH0.tar.gz) = 30c7b31f47371a8f5af3d573d096200218cfcb39234306ce8ef999c7ba1fda2a
 SIZE (djherbis-atime-v1.1.0_GH0.tar.gz) = 3140
 SHA256 (dustin-go-humanize-v1.0.0_GH0.tar.gz) = e4540bd50ac855143b4f2e509313079c50cf5d8774f09cc10dbca5ae9803d8ba
@@ -13,5 +13,5 @@ SHA256 (matryer-try-9ac251b_GH0.tar.gz) = 6eec844ce4fc732db6fc59a12a9bbdc7544894
 SIZE (matryer-try-9ac251b_GH0.tar.gz) = 3039
 SHA256 (spf13-pflag-d5e0c06_GH0.tar.gz) = 2f81b27f5758683d5b657bab4193f7948bbe41c03fcbf2090093e4f0e50affbf
 SIZE (spf13-pflag-d5e0c06_GH0.tar.gz) = 52029
-SHA256 (tdewolff-parse-v2.6.1_GH0.tar.gz) = 3500f73e2b1b4e03c122953c354f769aa9376004fc900941389e244583cf580c
-SIZE (tdewolff-parse-v2.6.1_GH0.tar.gz) = 102260
+SHA256 (tdewolff-parse-v2.6.3_GH0.tar.gz) = edc03896f33fa4ccf018f976ff49edd3758f30a34545f040ec3f593cab9fcba4
+SIZE (tdewolff-parse-v2.6.3_GH0.tar.gz) = 102349

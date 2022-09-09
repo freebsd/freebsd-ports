@@ -1,11 +1,12 @@
 PORTNAME=	fallout
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Download and search pkg-fallout logs
+WWW=		https://github.com/dmgk/fallout
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

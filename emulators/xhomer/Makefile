@@ -7,6 +7,7 @@ MASTER_SITES=	http://xhomer.isani.org/xhomer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulator for the DEC Pro 350 computer
+WWW=		https://xhomer.isani.org/
 
 USES=		gmake tar:tgz xorg
 USE_XORG=	xt sm ice xext x11

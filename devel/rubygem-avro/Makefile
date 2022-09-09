@@ -1,10 +1,11 @@
 PORTNAME=	avro
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library for Apache Avro
+WWW=		https://avro.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

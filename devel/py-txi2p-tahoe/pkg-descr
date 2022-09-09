@@ -4,5 +4,3 @@ porting efforts.
 txi2p is a set of I2P bindings for Twisted.
 
 txi2p supports both the SAM and BOB APIs for I2P. The default API is SAM.
-
-WWW: https://github.com/str4d/txi2p

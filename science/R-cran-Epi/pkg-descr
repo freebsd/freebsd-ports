@@ -3,5 +3,3 @@ diagram, i.e. register and cohort follow-up data, including interval
 censored data and representation of multistate data. Also some
 useful functions for tabulation and plotting. Contains some
 epidemiological datasets.
-
-WWW: https://cran.r-project.org/web/packages/Epi/

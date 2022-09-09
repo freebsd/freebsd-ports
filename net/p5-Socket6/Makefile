@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IPv6 related part of the C socket.h defines and structure manipulators
+WWW=		https://metacpan.org/release/Socket6
 
 LICENSE=	BSD3CLAUSE
 

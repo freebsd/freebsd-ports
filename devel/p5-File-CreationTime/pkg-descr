@@ -5,5 +5,3 @@ such information.
 
     my $file = '/path/to/file';
     print "$file was created: ". creation_time($file). "\n";
-
-WWW: https://metacpan.org/release/File-CreationTime

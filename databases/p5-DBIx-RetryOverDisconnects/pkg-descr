@@ -1,3 +1,1 @@
 DBI wrapper that helps to deal with databases connection problems
-
-WWW: https://metacpan.org/release/DBIx-RetryOverDisconnects

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Midi clock generator LV2 plugin
+WWW=		https://github.com/x42/mclk.lv2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

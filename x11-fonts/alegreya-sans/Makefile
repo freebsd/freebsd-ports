@@ -7,6 +7,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Humanist sans serif font with a calligraphic feeling
+WWW=		https://www.huertatipografica.com/fonts/alegreya-sans-ht
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

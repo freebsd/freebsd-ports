@@ -17,5 +17,3 @@ At Home.Wash Car
 Then do this:
 
     genericseq.pl UML::Sequence::SimpleSeq inputfile | seq2svg.pl > output.svg
-
-WWW: https://metacpan.org/release/UML-Sequence

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde IMAP abstraction interface
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_PHP=	hash

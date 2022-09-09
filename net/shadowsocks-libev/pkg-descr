@@ -3,5 +3,3 @@ firewalls.
 
 Shadowsocks-libev is a C implentment based on libev. It targets mainly on
 embedded devices and low end boxes.
-
-WWW: https://github.com/shadowsocks/shadowsocks-libev

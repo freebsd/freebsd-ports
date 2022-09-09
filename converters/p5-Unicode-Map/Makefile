@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class that converts strings to/from 2-byte Unicode UCS2 format
+WWW=		https://metacpan.org/release/Unicode-Map
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

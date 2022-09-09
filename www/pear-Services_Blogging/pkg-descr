@@ -3,5 +3,3 @@ independent of the API supported by the server software hosting the blog.
 It uses a driver-based approach to communicate with different APIs out there.
 If a new blogging API is invented, someone just needs to write a driver for
 the Services_Blogging package, and everyone can access also this blogs.
-
-WWW: https://pear.php.net/package/Services_Blogging

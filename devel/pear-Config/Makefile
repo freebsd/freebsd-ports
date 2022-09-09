@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Your configurations swiss-army knife
+WWW=		https://pear.php.net/package/Config
 
 LICENSE=	PHP301
 

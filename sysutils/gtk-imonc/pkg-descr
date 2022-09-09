@@ -1,5 +1,3 @@
 GTK-Imonc is a GTK2-based imond-client to control an on(e) disc fli4l
 router. You can dial/hangup the connection, show status information
 (traffic, cpu), shutdown/reboot and even remotely update the router.
-
-WWW: http://stefan-strigler.de/gtkimonc/

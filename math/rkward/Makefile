@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
+WWW=		https://rkward.kde.org/
 
 LICENSE=	GPLv2
 

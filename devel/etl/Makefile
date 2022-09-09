@@ -5,6 +5,7 @@ CATEGORIES=	devel lang
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Voria Extended Class and Template Library
+WWW=		https://www.synfig.org/
 
 LICENSE=	GPLv2+
 

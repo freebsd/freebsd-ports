@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML/XHTML template library for PHP
+WWW=		https://phptal.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

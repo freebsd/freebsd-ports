@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Deal with RFC 2047 encoded words (improved)
+WWW=		https://metacpan.org/release/MIME-EncWords
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

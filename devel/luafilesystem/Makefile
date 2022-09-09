@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Library to access directory structure and file attributes
+WWW=		http://www.keplerproject.org/luafilesystem/index.html
 
 LICENSE=	MIT
 

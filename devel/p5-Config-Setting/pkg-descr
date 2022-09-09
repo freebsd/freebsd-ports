@@ -9,5 +9,3 @@ be overridden and an XML based configuration is also included. The
 access mechanism can also be overridden, the setting don't have to
 come from a file, but (maybe) from a web site. You'll have to write
 your own there, though.
-
-WWW: https://metacpan.org/release/Config-Setting

@@ -5,6 +5,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Versatile open-source tool for metagenomics
+WWW=		https://github.com/torognes/vsearch
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

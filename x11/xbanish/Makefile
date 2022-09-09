@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Banish the mouse cursor when typing
+WWW=		https://github.com/jcs/xbanish/
 
 LICENSE=	BSD3CLAUSE
 

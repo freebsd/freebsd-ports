@@ -6,6 +6,7 @@ MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tetrahedral microphone processor for ambisonic recording
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/tetra-pict.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

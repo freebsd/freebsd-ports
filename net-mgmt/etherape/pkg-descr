@@ -5,5 +5,3 @@ protocols display.  It supports Ethernet, FDDI, Token Ring, ISDN, PPP,
 SLIP, and WLAN devices, plus several encapsulation formats.  It can
 filter traffic to be shown, and can read packets from a file as well as
 live from the network.  Node statistics can be exported.
-
-WWW: http://etherape.sourceforge.net/

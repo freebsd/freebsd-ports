@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Extracts information about the Python environment easily
+WWW=		https://pypi.org/project/helpdev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

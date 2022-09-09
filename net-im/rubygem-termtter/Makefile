@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Terminal based Twitter client
+WWW=		https://termtter.github.io/
 
 LICENSE=	MIT
 

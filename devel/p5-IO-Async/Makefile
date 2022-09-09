@@ -1,5 +1,5 @@
 PORTNAME=	IO-Async
-PORTVERSION=	0.801
+PORTVERSION=	0.802
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl modules that implement asynchronous filehandle IO
+WWW=		https://metacpan.org/release/IO-Async
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

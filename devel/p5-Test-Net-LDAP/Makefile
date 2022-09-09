@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of Net::LDAP subclass for testing
+WWW=		https://metacpan.org/release/Test-Net-LDAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Improved Python library to control i3wm and sway
+WWW=		https://i3ipc-python.readthedocs.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,4 +1,2 @@
 pytest-django allows you to test your Django project/applications with the
 pytest testing tool.
-
-WWW: https://github.com/pytest-dev/pytest-django

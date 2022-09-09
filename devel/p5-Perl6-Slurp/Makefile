@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implements the Perl6 'slurp' built-in
+WWW=		https://metacpan.org/release/Perl6-Slurp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

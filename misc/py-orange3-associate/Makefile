@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Orange 3 add-on: Frequent itemsets and association rules mining
+WWW=		https://github.com/biolab/orange3-associate
 
 LICENSE=	GPLv3+
 

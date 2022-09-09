@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for translating Wiki formatted text into other formats
+WWW=		https://metacpan.org/release/Text-WikiFormat
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/ \
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Program for experimenting with simple audio DSP algorithms
+WWW=		https://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/
 
 LICENSE=	GPLv2
 

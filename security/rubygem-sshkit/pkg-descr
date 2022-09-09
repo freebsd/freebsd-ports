@@ -1,4 +1,2 @@
 SSHKit is a comprehensive toolkit for remotely running commands in a structured
 manner on groups of servers.
-
-WWW: https://github.com/capistrano/sshkit

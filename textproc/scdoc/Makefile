@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small man page generator
+WWW=		https://git.sr.ht/~sircmpwn/scdoc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

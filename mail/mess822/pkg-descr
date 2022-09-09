@@ -19,5 +19,3 @@ easy-to-use string, with a separate string for the accompanying comment.
 mess822 converts RFC 822 dates into libtai's struct caltime format. It
 supports numeric time zones, the standard old-fashioned time zones, and
 many nonstandard time zones.
-
-WWW: http://cr.yp.to/mess822.html

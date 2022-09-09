@@ -4,6 +4,7 @@ CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Plugins for Picard tagger
+WWW=		https://picard.musicbrainz.org/plugins/
 
 LICENSE=	GPLv2+ GPLv3+ MIT WTFPL
 LICENSE_COMB=	multi

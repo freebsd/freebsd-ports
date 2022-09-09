@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Python package for writing and deploying cron jobs
+WWW=		https://github.com/fengsp/plan
 
 LICENSE=	BSD3CLAUSE
 

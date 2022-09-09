@@ -1,4 +1,2 @@
 Crypt::MySQL emulates MySQL PASSWORD() SQL function, without libmysqlclient.
 You can compare encrypted passwords, without real MySQL environment.
-
-WWW: https://metacpan.org/release/Crypt-MySQL

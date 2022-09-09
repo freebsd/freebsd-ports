@@ -7,6 +7,7 @@ MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility to provide current weather conditions and forecasts
+WWW=		http://fungi.yuggoth.org/weather/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

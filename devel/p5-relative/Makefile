@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Load modules with relative names
+WWW=		https://metacpan.org/release/relative
 
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0.11:devel/p5-UNIVERSAL-require
 

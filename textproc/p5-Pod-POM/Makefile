@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POD Object Model
+WWW=		https://metacpan.org/release/Pod-POM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

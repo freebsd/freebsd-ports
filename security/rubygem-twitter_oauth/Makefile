@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter OAuth REST API client library for Ruby
+WWW=		https://github.com/moomerman/twitter_oauth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

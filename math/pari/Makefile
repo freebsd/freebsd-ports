@@ -6,6 +6,7 @@ MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
+WWW=		https://pari.math.u-bordeaux.fr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.jwz.org/dadadodo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processor which analyses text and generates random sentences
+WWW=		https://www.jwz.org/dadadodo/
 
 LICENSE=	MIT  # -like
 

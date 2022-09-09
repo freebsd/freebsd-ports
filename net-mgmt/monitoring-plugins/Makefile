@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Monitoring Plugins for Nagios
+WWW=		https://www.monitoring-plugins.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

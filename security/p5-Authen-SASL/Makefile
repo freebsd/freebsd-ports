@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for SASL authentication
+WWW=		https://metacpan.org/release/Authen-SASL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

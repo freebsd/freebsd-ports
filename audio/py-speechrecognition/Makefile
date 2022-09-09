@@ -5,11 +5,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Library for performing speech recognition
+WWW=		https://github.com/Uberi/speech_recognition
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_GITHUB=	yes 
+USE_GITHUB=	yes
 GH_ACCOUNT=	Uberi
 GH_PROJECT=	speech_recognition
 
@@ -20,7 +21,7 @@ NO_ARCH=	yes
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
-post-extract:       
+post-extract:
 	@cd ${WRKSRC}/speech_recognition && ${RM} flac-*
 
 .include <bsd.port.mk>

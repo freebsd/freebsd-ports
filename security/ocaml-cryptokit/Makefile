@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Variety of cryptographic primitives for Objective Caml
+WWW=		http://cristal.inria.fr/~xleroy/software.html
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/zarith/META:math/ocaml-zarith

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Enthought traits-capable user interfaces
+WWW=		https://docs.enthought.com/traitsui/
 
 LICENSE=	BSD3CLAUSE EPL LGPL21
 LICENSE_COMB=	multi

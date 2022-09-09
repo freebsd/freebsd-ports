@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extended crypt library for descrypt, md5crypt, bcrypt, and others
+WWW=		https://github.com/besser82/libxcrypt
 
 LICENSE=	LGPL21
 

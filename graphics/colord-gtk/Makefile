@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
+WWW=		https://www.freedesktop.org/software/colord
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

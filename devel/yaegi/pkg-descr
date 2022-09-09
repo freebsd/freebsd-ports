@@ -5,5 +5,3 @@ Note that you can use rlwrap, and alias the yaegi command via:
   alias yaegi='rlwrap yaegi'
 
 in your shell, to have history and command line editing.
-
-WWW: https://github.com/traefik/yaegi

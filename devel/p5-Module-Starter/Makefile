@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple starter kit for any Perl module
+WWW=		https://metacpan.org/release/Module-Starter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

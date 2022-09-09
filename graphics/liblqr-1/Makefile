@@ -6,6 +6,7 @@ MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Easy to use C/C++ seam carving library
+WWW=		https://liblqr.wikidot.com/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

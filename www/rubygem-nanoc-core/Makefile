@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sdalu@sdalu.com
 COMMENT=	Contains the core of Nanoc
+WWW=		https://nanoc.ws/
 
 LICENSE=	MIT
 

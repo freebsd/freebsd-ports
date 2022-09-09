@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Monospaced TrueType font with Cyrillic glyphs
+WWW=		https://github.com/DeLaGuardo/Inconsolata-LGC
 
 LICENSE=	OFL11
 

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple Features for R
+WWW=		https://cran.r-project.org/web/packages/sf/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual

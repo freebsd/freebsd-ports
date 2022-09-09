@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Frontend for the MRTG system monitoring software
+WWW=		https://www.steveshipway.org/software/
 
 BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD
 RUN_DEPENDS=	p5-Convert-ASN1>=0:converters/p5-Convert-ASN1 \

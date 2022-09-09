@@ -9,5 +9,3 @@ Perl 6 Form.pm module. The only differences are:
 lexically scoped;
     User-defined line-breaking subroutines are passed their data
 source as a reference to a scalar;
-
-WWW: https://metacpan.org/release/Perl6-Form

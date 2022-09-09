@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Offline radio signal analyser
+WWW=		https://github.com/miek/inspectrum
 
 LICENSE=	GPLv3
 

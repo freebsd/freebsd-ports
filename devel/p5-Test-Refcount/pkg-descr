@@ -12,5 +12,3 @@ If the assertion fails; that is, if the actual reference count is different to
 what was expected, a trace of references to the object can be printed, if Marc
 Lehmann's Devel::FindRef module is installed. This may assist the developer in
 finding where the references are.
-
-WWW: https://metacpan.org/release/Test-Refcount

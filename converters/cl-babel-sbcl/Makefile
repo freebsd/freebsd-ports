@@ -7,6 +7,7 @@ DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Charset encoding/decoding library written in Common Lisp
+WWW=		https://www.cliki.net/Babel
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/alexandria-1/arrays.fasl:devel/cl-alexandria-sbcl \

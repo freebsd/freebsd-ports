@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/danger \
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Utility used to gather system configuration information
+WWW=		https://forums.freebsd.org/showthread.php?t=3282
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE

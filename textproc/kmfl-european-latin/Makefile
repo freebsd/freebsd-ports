@@ -9,6 +9,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Paneuropean Latin KMFL keyboard covering 120 languages
+WWW=		http://eurolatin.keymankeyboards.com/
 
 BUILD_DEPENDS=	base64:converters/base64
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp

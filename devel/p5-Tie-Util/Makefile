@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utility functions for fiddling with tied variables
+WWW=		https://metacpan.org/release/Tie-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

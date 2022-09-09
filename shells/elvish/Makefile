@@ -1,11 +1,12 @@
 PORTNAME=	elvish
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	shells
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Elvish = Expressive Programming Language + Versatile Interactive Shell
+WWW=		https://elv.sh/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

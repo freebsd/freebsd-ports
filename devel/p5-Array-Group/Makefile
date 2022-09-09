@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert an array into array of arrayrefs of uniform size N
+WWW=		https://metacpan.org/release/Array-Group
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

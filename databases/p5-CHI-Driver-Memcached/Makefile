@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Memcached Driver to use with the Cache Handling Interface CHI
+WWW=		https://metacpan.org/pod/CHI::Driver::Memcached
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

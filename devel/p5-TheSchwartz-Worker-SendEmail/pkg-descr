@@ -1,4 +1,2 @@
 TheSchwartz is a reliable job queue system. This module can pull
 jobs from the queue to send email out via SMTP.
-
-WWW: https://metacpan.org/release/TheSchwartz-Worker-SendEmail

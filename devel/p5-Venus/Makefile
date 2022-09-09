@@ -1,0 +1,20 @@
+PORTNAME=	Venus
+PORTVERSION=	1.30
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:AWNCORP
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	OO Library
+WWW=		https://metacpan.org/dist/Venus
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Fat jail creation script
+WWW=		https://github.com/mkjail/mkjail
 
 LICENSE=	BSD2CLAUSE
 

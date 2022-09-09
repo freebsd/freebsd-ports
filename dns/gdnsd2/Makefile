@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Authoritative-only GeoIP-aware DNS server
+WWW=		https://github.com/blblack/gdnsd
 
 LICENSE=	GPLv3
 

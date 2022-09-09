@@ -8,6 +8,7 @@ DISTNAME=	Ark-0.001000_001
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl web application framework
+WWW=		http://opensource.kayac.com/en/projects/ark/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

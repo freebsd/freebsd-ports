@@ -1,10 +1,11 @@
 PORTNAME=	gstreamer
-PORTVERSION=	3.5.1
+PORTVERSION=	4.0.1
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding of GStreamer
+WWW=		https://ruby-gnome.github.io/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

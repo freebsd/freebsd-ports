@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reverse-resolve IP in Apache log files
+WWW=		https://metacpan.org/release/IMACAT/reslog-3.16
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

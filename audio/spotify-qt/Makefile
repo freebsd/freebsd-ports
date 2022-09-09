@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight Spotify client using Qt
+WWW=		https://github.com/kraxarn/spotify-qt
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license

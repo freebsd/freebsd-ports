@@ -6,6 +6,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Basic SQL-frontend to PCAP-files
+WWW=		https://www.dns-oarc.net/tools/packetq
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

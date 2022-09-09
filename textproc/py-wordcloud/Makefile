@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Little word cloud generator in Python
+WWW=		https://amueller.github.io/word_cloud/
 
 LICENSE=	MIT
 

@@ -7,5 +7,3 @@ over a single connection:
 * request/stream (finite stream of many)
 * fire-and-forget (no response)
 * channel (bi-directional streams)
-
-WWW: https://rsocket.io/

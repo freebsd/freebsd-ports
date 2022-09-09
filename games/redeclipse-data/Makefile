@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Data files for Red Eclipse first-person shooter
+WWW=		https://www.redeclipse.net/
 
 CONFLICTS_INSTALL=redeclipse-data16
 

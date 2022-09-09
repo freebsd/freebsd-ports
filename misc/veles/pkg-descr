@@ -19,5 +19,3 @@ Features:
   architecture, where each analyser can run in a separate process. All you need
   to do is get the data from the server, implement a Python function to parse it
   and return the results.
-
-WWW: https://codisec.com/veles/

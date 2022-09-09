@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-src-${DISTVERSIONFULL}${EXTRACT_SUFX}
 
 MAINTAINER=	enriquefynn@gmail.com
 COMMENT=	Traffic simulation suite for road vehicles, public transportation, etc
+WWW=		http://sumo-sim.org
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libFOX-1.6.so:x11-toolkits/fox16 \
@@ -25,7 +26,7 @@ SHEBANG_FILES=	tools/*.py tools/*/*.py \
 		tools/game/rebuild_networks.sh \
 		tools/build/rebuild_cscope.sh \
 		tools/build/dailyUpdateMakeGCC.sh
-		
+
 python_OLD_CMD+="/usr/bin/env python"
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xfixes xft xi xrandr xrender

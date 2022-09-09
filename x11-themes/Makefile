@@ -71,6 +71,7 @@
     SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-digital-harmony-theme
     SUBDIR += gtk-engines2
+    SUBDIR += gtk-equinox-engine
     SUBDIR += gtk-gray-theme
     SUBDIR += gtk-lila-theme
     SUBDIR += gtk-lila-theme-extras

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Return the difference between two hashes as a hash
+WWW=		https://metacpan.org/release/Hash-Diff
 
 RUN_DEPENDS=	p5-Hash-Merge>=0.12:textproc/p5-Hash-Merge
 BUILD_DEPENDS=	p5-Hash-Merge>=0.12:textproc/p5-Hash-Merge

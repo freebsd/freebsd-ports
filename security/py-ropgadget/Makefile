@@ -1,5 +1,5 @@
 PORTNAME=	ropgadget
-PORTVERSION=	6.9
+PORTVERSION=	7.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	ROPGadget-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to search gadgets to facilitate ROP exploitation
+WWW=		https://pypi.org/project/ropgadget/
 
 LICENSE=	BSD3CLAUSE
 

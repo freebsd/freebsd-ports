@@ -6,6 +6,7 @@ MASTER_SITES=	https://mlpack.org/files/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, flexible machine learning library
+WWW=		https://www.mlpack.org/
 
 LICENSE=	BSD3CLAUSE
 

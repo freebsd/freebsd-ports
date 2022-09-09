@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Advanced graphical application launcher
+WWW=		https://ulauncher.io/
 
 LICENSE=	GPLv3
 

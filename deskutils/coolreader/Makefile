@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	mistresssilvara@hotmail.com
 COMMENT=	E-book reader
+WWW=		https://github.com/buggins/coolreader
 
 LICENSE=	GPLv2 LGPL21+ BSD2CLAUSE
 LICENSE_COMB=	multi

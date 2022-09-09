@@ -4,6 +4,7 @@ CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Certificate manager for KDE
+WWW=		https://www.kde.org/applications/utilities/kleopatra/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 LIB_DEPENDS=	libassuan.so:security/libassuan \
@@ -14,10 +15,9 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 RUN_DEPENDS=	${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	codecs completion config coreaddons i18n itemmodels \
-		widgetsaddons windowsystem \
-		pimtextedit
-USE_QT=		core gui widgets \
+USE_KDE=	auth codecs completion config configwidgets coreaddons \
+		i18n itemmodels pimtextedit widgetsaddons windowsystem
+USE_QT=		core gui widgets xml \
 		buildtools_build qmake_build
 
 _CORETOOLS=	md5sum sha1sum sha256sum sha512sum

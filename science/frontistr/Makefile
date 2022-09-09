@@ -5,6 +5,7 @@ CATEGORIES=	science cad
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Large-Scale Parallel FEM Program for Nonlinear Structural Analysis
+WWW=		https://gitlab.com/FrontISTR-Commons/FrontISTR
 
 LICENSE=	MIT
 

@@ -3,5 +3,3 @@ Lua binding for the fast libYAML C library for converting between
 and save YAML documents.
 
 Works with Lua 5.1 (including LuaJIT), 5.2, 5.3 and 5.4.
-
-WWW: https://GVVaughan.GitHub.io/lyaml/

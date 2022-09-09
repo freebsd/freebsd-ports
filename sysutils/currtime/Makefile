@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Enhanced command-line operated real time clock
+WWW=		https://github.com/neelchauhan/currtime
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

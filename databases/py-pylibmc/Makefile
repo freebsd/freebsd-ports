@@ -1,11 +1,12 @@
 PORTNAME=	pylibmc
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Quick and small memcached client for Python
+WWW=		https://sendapatch.se/projects/pylibmc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,8 +3,9 @@ PORTVERSION=	0.20220327
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vectrex emulator for libretro
+WWW=		https://github.com/libretro/libretro-vecx
 
 LICENSE=	GPLv3
 

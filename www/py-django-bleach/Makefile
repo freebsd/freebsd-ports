@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easily use bleach with Django models and templates
+WWW=		https://github.com/marksweb/django-bleach
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

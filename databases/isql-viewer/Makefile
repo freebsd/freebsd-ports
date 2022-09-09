@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDBC 2.x compliant database front end
+WWW=		https://www.isqlviewer.com/
 
 RUN_DEPENDS=	${JYTHON_PREFIX}/${JYTHON_JAR}:lang/jython \
 		${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc \

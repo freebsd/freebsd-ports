@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
 MAINTAINER=	crest@rlwinm.de
 COMMENT=	Lightweight non-interactive sh(1)-like scripting language
+WWW=		https://www.skarnet.org/software/execline/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

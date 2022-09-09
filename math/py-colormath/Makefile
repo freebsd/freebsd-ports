@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Module that spares the user from directly dealing with color math
+WWW=		https://pypi.org/project/colormath/
 
 LICENSE=	BSD2CLAUSE
 
@@ -15,5 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2,1:math/py-numpy@${PY_FLAVOR} \
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

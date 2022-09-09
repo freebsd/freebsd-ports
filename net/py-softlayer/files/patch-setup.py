@@ -10,8 +10,8 @@
          'prompt_toolkit >= 2',
          'pygments >= 2.0.0',
          'urllib3 >= 1.24',
--        'rich == 12.3.0'
-+        'rich >= 12.3.0'
+-        'rich == 12.5.1'
++        'rich >= 12.5.1'
      ],
      keywords=['softlayer', 'cloud', 'slcli'],
      classifiers=[

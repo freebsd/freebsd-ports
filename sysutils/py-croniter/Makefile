@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Iteration support for datetime objects with cron like format
+WWW=		https://pypi.org/project/croniter/
 
 LICENSE=	MIT
 

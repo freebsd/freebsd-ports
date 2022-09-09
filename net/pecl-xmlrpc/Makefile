@@ -6,6 +6,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	PHP extension for XML-RPC servers and clients
+WWW=		https://pecl.php.net/package/xmlrpc
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

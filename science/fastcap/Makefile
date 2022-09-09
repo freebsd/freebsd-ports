@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional capacitance extraction program
+WWW=		https://www.rle.mit.edu/cpg/research_codes.htm
 
 LICENSE=	FASTCAP
 LICENSE_NAME=	fastcap license

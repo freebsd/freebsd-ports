@@ -6,6 +6,7 @@ CATEGORIES=	biology java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DNA sequence viewer and annotation tool
+WWW=		https://www.sanger.ac.uk/science/tools/artemis
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

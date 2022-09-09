@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Decode BBR log dumps generated with tcplog_dumper
+WWW=		https://github.com/Netflix/read_bbrlog
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

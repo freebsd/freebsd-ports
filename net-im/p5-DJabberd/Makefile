@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Scalable, extensible Jabber/XMPP server framework
+WWW=		https://metacpan.org/release/DJabberd
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Danga-Socket>=0:devel/p5-Danga-Socket \

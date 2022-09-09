@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript calendar program
+WWW=		http://pcal.sourceforge.net/
 
 USES=		cpe shebangfix gmake tar:tgz
 

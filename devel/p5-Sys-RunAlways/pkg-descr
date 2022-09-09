@@ -1,4 +1,2 @@
 Provide a simple way to make sure the script from which this module is
 loaded, is always running on the server.
-
-WWW: https://metacpan.org/release/Sys-RunAlways

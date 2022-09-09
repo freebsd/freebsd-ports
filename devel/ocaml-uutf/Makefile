@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Non-blocking streaming Unicode codec for OCaml
+WWW=		https://erratique.ch/software/uutf
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

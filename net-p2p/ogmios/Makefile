@@ -5,6 +5,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	WebSockets API to Cardano Ouroboros' mini-protocols
+WWW=		https://ogmios.dev/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	More tools for testing Moose packages
+WWW=		https://metacpan.org/release/Test-Moose-More
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

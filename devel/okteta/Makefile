@@ -1,15 +1,16 @@
 PORTNAME=	okteta
 DISTVERSION=	0.26.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE hex editor
+WWW=		https://www.kde.org/applications/utilities/okteta/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 \
-		shared-mime-info tar:xz
+		shared-mime-info tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion crash \
 		config configwidgets coreaddons dbusaddons doctools \
 		ecm i18n iconthemes itemviews jobwidgets kcmutils kio \
@@ -18,6 +19,7 @@ USE_KDE=	attica auth bookmarks codecs completion crash \
 USE_QT=		concurrent core dbus declarative designer gui network printsupport  \
 		script scripttools widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -10,6 +10,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
+WWW=		https://llvm.org/
 
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 LICENSE+=	LLVM2
@@ -299,7 +300,7 @@ _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
-_BE_LIBS_BPF=		AsmParser Disassembler 
+_BE_LIBS_BPF=		AsmParser Disassembler
 _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser Disassembler
 _BE_LIBS_MSP430=	AsmParser Disassembler

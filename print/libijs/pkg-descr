@@ -4,5 +4,3 @@ new drivers, or upgrade existing ones, without recompiling Ghostscript.
 All driver authors are encouraged to adapt their drivers for IJS,
 and if there is an IJS driver available for your printer, it should
 be your first choice.
-
-WWW: http://www.linuxprinting.org/ijs/

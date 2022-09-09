@@ -9,6 +9,7 @@ PKGNAMESUFFIX=		-sc-otf
 
 MAINTAINER=		hyun@caffeinated.codes
 COMMENT=		Simplified Chinese font by Adobe designed for user interfaces
+WWW=		https://github.com/adobe-fonts/source-han-sans
 
 LICENSE=		OFL11
 LICENSE_FILE=		${WRKSRC}/LICENSE.txt

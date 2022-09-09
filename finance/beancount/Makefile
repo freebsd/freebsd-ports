@@ -5,6 +5,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Double-Entry Accounting from Text Files
+WWW=		https://github.com/beancount/beancount
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

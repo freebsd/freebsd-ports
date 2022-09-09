@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IRC protocol client library for Python
+WWW=		https://github.com/jaraco/irc
 
 LICENSE=	MIT
 

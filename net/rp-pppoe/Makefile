@@ -6,6 +6,7 @@ MASTER_SITES=	https://dianne.skoll.ca/projects/rp-pppoe/download/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Roaring Penguin's PPPoE software
+WWW=		https://dianne.skoll.ca/projects/rp-pppoe/
 
 LICENSE=	GPLv2+
 

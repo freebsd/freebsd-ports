@@ -7,6 +7,7 @@ DISTNAME=	Pebble-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Threading and multiprocessing eye-candy
+WWW=		https://github.com/noxdafox/pebble
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

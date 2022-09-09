@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse text into an array of tokens or array of arrays
+WWW=		https://metacpan.org/release/Text-ParseWords
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

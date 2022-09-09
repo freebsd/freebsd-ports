@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for Consul
+WWW=		https://github.com/poppyred/python-consul2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

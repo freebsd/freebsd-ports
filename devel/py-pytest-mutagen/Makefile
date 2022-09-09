@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Add the mutation testing feature to pytest
+WWW=		https://pypi.org/project/pytest-mutagen/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

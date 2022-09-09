@@ -8,6 +8,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-bin-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cypress FX2 firmware for hardware logic analyzers
+WWW=		https://www.sigrok.org/wiki/Fx2lafw
 
 LICENSE=	GPLv2
 

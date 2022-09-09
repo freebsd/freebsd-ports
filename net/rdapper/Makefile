@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Command-line Registration Data Access Protocol (RDAP) client
+WWW=		https://github.com/jodrell/rdapper
 
 LICENSE=	GPLv2
 

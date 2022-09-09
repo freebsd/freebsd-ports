@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Custom markdown processor GitHubs HTML Pipeline
+WWW=		https://rubygems.org/gems/extended-markdown-filter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

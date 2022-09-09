@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for shell-like regular expressions
+WWW=		https://metacpan.org/release/Regexp-Shellish
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

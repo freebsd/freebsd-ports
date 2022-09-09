@@ -1,12 +1,13 @@
 PORTNAME=		apg
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=		1
 CATEGORIES=		security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Automated Password Generator written in Go
+WWW=		https://github.com/wneessen/apg-go
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

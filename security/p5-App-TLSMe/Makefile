@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0000$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for TLS/SSL tunnel
+WWW=		https://metacpan.org/release/App-TLSMe
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

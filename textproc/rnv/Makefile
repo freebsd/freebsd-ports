@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relax NG Compact Syntax validator
+WWW=		http://www.davidashen.net/rnv.html
 
 LICENSE=	BSD3CLAUSE
 

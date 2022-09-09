@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Preserve error handlers and "local" variables across callbacks
+WWW=		https://metacpan.org/release/Callback-Frame
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

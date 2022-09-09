@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.andre-simon.de/zip/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
+WWW=		http://www.andre-simon.de/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

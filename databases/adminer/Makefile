@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Full-featured database management tool written in PHP
+WWW=		https://www.adminer.org
 
 LICENSE=	APACHE20
 

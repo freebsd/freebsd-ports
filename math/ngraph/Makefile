@@ -8,6 +8,7 @@ DISTNAME=	Ngraph-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XY plotting tool for students, scientists, and engineers
+WWW=		http://www2e.biglobe.ne.jp/~isizaka/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt

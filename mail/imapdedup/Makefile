@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Duplicate email message remover
+WWW=		https://quentinsf.com/software/imapdedup/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Calculations for the position of the sun and moon
+WWW=		https://github.com/sffjunkie/astral
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

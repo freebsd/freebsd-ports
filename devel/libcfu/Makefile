@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Simple library of tools for developing multithreaded software
+WWW=		http://libcfu.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Open Sound System from 4Front Technologies
+WWW=		http://opensound.com/
 
 LICENSE=	BSD2CLAUSE
 

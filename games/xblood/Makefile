@@ -6,6 +6,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes the root window bloody
+WWW=		https://kozos.jp/myfreesoft/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

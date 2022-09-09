@@ -5,6 +5,7 @@ CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE RSS feed handling library
+WWW=		https://api.kde.org/stable/kdepimlibs-apidocs/syndication/html/index.html
 
 LICENSE=	LGPL21
 

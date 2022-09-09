@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Interface extension for defining data schemas
+WWW=		https://pypi.org/project/zope.schema/
 
 LICENSE=	ZPL21
 

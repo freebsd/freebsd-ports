@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	martin.sugioarto@udo.edu
 COMMENT=	Thumb viewer application
+WWW=		https://sourceforge.net/projects/iiview/
 
 LICENSE=	BSD2CLAUSE
 

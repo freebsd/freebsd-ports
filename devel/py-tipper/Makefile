@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Tracebacks for python via SIGUSR1
+WWW=		https://pypi.org/project/tipper/
 
 LICENSE=	MIT
 

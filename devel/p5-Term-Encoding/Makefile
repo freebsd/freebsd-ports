@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Detect encoding of the current terminal
+WWW=		https://metacpan.org/release/Term-Encoding
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

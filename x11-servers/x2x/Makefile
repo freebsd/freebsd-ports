@@ -4,6 +4,7 @@ CATEGORIES=	x11-servers
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to link multiple X servers together
+WWW=		https://github.com/dottedmag/x2x
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

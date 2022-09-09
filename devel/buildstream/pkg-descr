@@ -12,5 +12,3 @@ runtimes, system images) for multiple platforms and chipsets.
 BuildStream's core users are application developers and system integrators who
 create production-ready software systems that need to be maintained efficiently
 and reliably in the long term.
-
-WWW: https://buildstream.build/

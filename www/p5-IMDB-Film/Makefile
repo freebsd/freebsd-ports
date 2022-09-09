@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO Perl interface to the movies database IMDB
+WWW=		https://metacpan.org/release/IMDB-Film
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \

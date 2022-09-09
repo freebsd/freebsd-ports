@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Fast implementation of the Cassowary constraint solver
+WWW=		https://github.com/nucleic/kiwi
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,8 +5,9 @@ CATEGORIES=	net
 MASTER_SITES=	SF/radiusclient-ng.berlios
 DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client library and basic utilities for RADIUS AAA
+WWW=		http://developer.berlios.de/projects/radiusclient-ng/
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

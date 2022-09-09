@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic MediaWiki OAuth handshake helper
+WWW=		https://github.com/mediawiki-utilities/python-mwoauth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

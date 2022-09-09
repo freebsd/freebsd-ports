@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic module to run web-applications
+WWW=		https://metacpan.org/release/RunApp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

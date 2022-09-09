@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Czech dictionary
+WWW=		http://aspell.sourceforge.net/
 
 DICT=	 	cs
 

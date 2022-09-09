@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Python colour representations manipulation library
+WWW=		https://github.com/vaab/colour
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -16,6 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sghctoma@gmail.com
 COMMENT=	Software reverse engineering (SRE) framework
+WWW=		https://ghidra-sre.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

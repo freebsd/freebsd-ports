@@ -1,11 +1,11 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
-PORTREVISION=	3
+DISTVERSION=	0.8.4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simplified data exchange for HPC simulations
+WWW=		https://github.com/LLNL/conduit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

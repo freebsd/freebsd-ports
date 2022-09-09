@@ -1,6 +1,6 @@
 PORTNAME=	gmic
 PORTVERSION=	1.6.9
-PORTREVISION=	35
+PORTREVISION=	36
 CATEGORIES=	graphics
 MASTER_SITES=	http://gmic.eu/files/source/
 PKGNAMEPREFIX=	gimp-
@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
+WWW=		https://gmic.eu/
 
 BROKEN=		OpenCV4 no longer ships OpencCV-1.0 headers
 

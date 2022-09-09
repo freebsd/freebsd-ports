@@ -6,6 +6,7 @@ MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Fast validating XML editor
+WWW=		http://xml-copy-editor.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 4 for Linux
+WWW=		http://www.quake4game.com/
 
 # Converted from NO_CDROM
 LICENSE=	IDSOFTWARE

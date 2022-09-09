@@ -5,6 +5,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class that validates and formats MAC addresses
+WWW=		https://pear.php.net/package/Net_MAC
 
 USES=		pear
 

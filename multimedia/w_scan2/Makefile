@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Perform frequency scans for DVB and ATSC transmissions
+WWW=		https://github.com/stefantalpalaru/w_scan2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

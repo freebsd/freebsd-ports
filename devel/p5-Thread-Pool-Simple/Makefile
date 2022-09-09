@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple thread-pool implementation
+WWW=		https://metacpan.org/release/Thread-Pool-Simple
 
 USES=		perl5
 USE_PERL5=	configure

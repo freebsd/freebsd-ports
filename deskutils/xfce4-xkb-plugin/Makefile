@@ -5,6 +5,7 @@ MASTER_SITES=	XFCE/panel-plugins
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Keyboard layout switching plugin for the Xfce panel
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,7 @@ PATCHFILES=	4942189cf7b1a45b23d62f4ae92a940721ec4009.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal Scene Description is a scene description management system
+WWW=		http://www.openusd.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -4,5 +4,3 @@ including in Samba[www.samba.org] and Trac[trac.edgewall.org]. This
 gem has one goal: make INI file, structure, and stream manipulation
 as fast, safe, and simple as possible. We take a modal approach
 with a pluggable parser class.
-
-WWW: https://rubygems.org/gems/ini

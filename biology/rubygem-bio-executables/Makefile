@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of miscellaneous utilities for bioinformatics
+WWW=		https://github.com/bioruby/bioruby-executables
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

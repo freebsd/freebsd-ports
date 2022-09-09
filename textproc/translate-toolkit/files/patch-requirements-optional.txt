@@ -35,7 +35,7 @@
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
 -ruamel.yaml==0.17.21 # YAML
-+ruamel.yaml>=0.16.12 # YAML
++ruamel.yaml>=0.17.21 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal
 +vobject>=0.9.6.1     # iCal

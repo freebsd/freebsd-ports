@@ -8,6 +8,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
+WWW=		https://www.heuer.org/mod_auth_mysql/
 
 LICENSE=	APACHE20
 

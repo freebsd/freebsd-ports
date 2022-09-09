@@ -4,5 +4,3 @@ cdrom methods to generate a cddbid and get the
 required disc information required for a FreeDB
 query call.  These cdrom-based methods are provided
 as both static and method calls.
-
-WWW: https://metacpan.org/release/Net-FreeDB

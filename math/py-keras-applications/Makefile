@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Reference implementations of popular deep learning models
+WWW=		https://github.com/keras-team/keras-applications
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

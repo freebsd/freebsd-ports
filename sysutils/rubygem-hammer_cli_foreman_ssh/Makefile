@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SSH host commands for Hammer CLI
+WWW=		https://github.com/theforeman/hammer-cli-foreman-ssh
 
 LICENSE=	GPLv3+
 

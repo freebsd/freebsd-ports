@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	ismail.yenigul@endersys.com.tr
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
+WWW=		https://fuzzyocr.own-hero.net/
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

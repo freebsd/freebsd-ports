@@ -6,6 +6,7 @@ DISTNAME=	FlightGear-${PORTVERSION}-data
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear scenery, textures, and aircraft models
+WWW=		https://www.flightgear.org/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Nonlinear optimization library
+WWW=		https://github.com/DanielBok/nlopt-python
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi

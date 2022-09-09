@@ -1,9 +1,10 @@
 PORTNAME=	egl-wayland
-DISTVERSION=	1.1.10
+DISTVERSION=	1.1.11
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	EGLStream-based Wayland external platform
+WWW=		https://github.com/NVIDIA/egl-wayland
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

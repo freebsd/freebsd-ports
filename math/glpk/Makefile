@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	GNU Linear Programming Kit
+WWW=		https://www.gnu.org/software/glpk/glpk.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

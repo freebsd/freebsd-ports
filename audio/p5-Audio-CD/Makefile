@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to libcdaudio (cd + cddb)
+WWW=		https://metacpan.org/release/Audio-CD
 
 LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio
 

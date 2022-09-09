@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Perl module to find user\'s location
+WWW=		https://www.ip2location.com/development-libraries/ip2location/perl
 
 LICENSE=	LGPL3
 

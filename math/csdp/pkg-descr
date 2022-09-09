@@ -6,5 +6,3 @@ parallel on shared memory multi-processor systems, and it makes effective use of
 sparsity in the constraint matrices. CSDP has been compiled on many different
 systems. The code should work on any system with an ANSI C Compiler and
 BLAS/LAPACK libraries.
-
-WWW: https://github.com/coin-or/Csdp

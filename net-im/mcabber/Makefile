@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small Jabber console client
+WWW=		https://www.lilotux.net/~mikael/mcabber/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

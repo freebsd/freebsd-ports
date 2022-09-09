@@ -1,6 +1,7 @@
 PORTNAME=	att_remover
 
 COMMENT=	Attachments removing plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugins.php
 
 CLAWS_PLUGINS_BUILD=	${PORTNAME}
 

@@ -12,5 +12,3 @@ ACME protocol client written in shell
 - DOES NOT require root/sudoer access.
 - Docker friendly.
 - IPv6 support.
-
-WWW: https://github.com/Neilpang/acme.sh/

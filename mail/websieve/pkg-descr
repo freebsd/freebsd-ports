@@ -2,5 +2,3 @@ A web based easy to use interface for creating Sieve scripts on an Cyrus
 IMAP mail server as well as allowing users to set access controls, create
 new mailboxes and view their mail quota. Also give administrators full
 administrative capabilities.
-
-WWW: https://sourceforge.net/projects/websieve/

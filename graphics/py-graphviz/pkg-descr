@@ -9,5 +9,3 @@ Use the view option/method to directly inspect the resulting (PDF, PNG, SVG,
 etc.) file with its default application. Graphs can also be rendered and
 displayed within Jupyter notebooks (a.k.a. IPython notebooks, example) as well
 as the Jupyter Qt Console.
-
-WWW: https://github.com/xflr6/graphviz

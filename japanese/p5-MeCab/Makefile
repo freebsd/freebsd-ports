@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
+WWW=		https://code.google.com/p/mecab/
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	dual

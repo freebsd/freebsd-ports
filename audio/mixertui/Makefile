@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Audio Mixer with a Terminal User Interface
+WWW=		https://gitlab.com/alfix/mixertui/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

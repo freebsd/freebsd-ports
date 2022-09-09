@@ -5,5 +5,3 @@ performance tends to be proportional to the number of distinct ranges.
 This is fine for small sets but suffers compared to other possible set
 representations (bit vectors, hash keys) when the number of ranges grows
 large.  Set::IntSpan::Fast tries to fix that.
-
-WWW: https://metacpan.org/release/Set-IntSpan-Fast

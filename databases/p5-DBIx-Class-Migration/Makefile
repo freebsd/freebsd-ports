@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to make migrating your DBIx::Class databases easier
+WWW=		https://metacpan.org/release/DBIx-Class-Migration
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

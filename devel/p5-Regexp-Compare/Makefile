@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Partial ordering for regular expressions
+WWW=		https://metacpan.org/release/Regexp-Compare
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

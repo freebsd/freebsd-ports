@@ -3,5 +3,3 @@ modifications.
 With the goal to be able to safely migrate code from one api to another.
 Refectory code to enfore a certain style and to facilitate moving or renaming
 python modules by rewriting import statements.
-
-WWW: https://github.com/google/pasta

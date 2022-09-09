@@ -9,6 +9,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Exciting Cite for any Mail/News reading modes on Emacs
+WWW=		https://www.gentei.org/~yuuji/software/
 
 USES=		emacs
 

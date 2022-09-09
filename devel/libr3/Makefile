@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	URL router library with high performance
+WWW=		https://github.com/c9s/r3
 
 LICENSE=	MIT
 

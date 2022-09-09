@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Intelligent C-like Maker
+WWW=		https://fbb-git.gitlab.io/icmake/
 
 LICENSE=	GPLv3
 

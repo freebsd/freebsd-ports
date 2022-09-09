@@ -5,5 +5,3 @@ The quality of the elements of the coarse grids is optimized using a
 multilevel framework.
 The parallel library is based on MPI and is portable to
 a wide range of architectures.
-
-WWW: http://www.mgnet.org/mgnet-codes-parmgridgen.html

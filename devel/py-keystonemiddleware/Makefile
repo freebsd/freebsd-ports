@@ -1,11 +1,12 @@
 PORTNAME=	keystonemiddleware
-PORTVERSION=	10.0.0
+PORTVERSION=	10.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Middleware for OpenStack Identity
+WWW=		https://docs.openstack.org/keystonemiddleware/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

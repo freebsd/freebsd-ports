@@ -6,5 +6,3 @@ tv-like bar over other windows. It then vanishes after a configurable amount
 of time. A value followed by a bang '!' is displayed using an alternate color
 to account for special states (e.g. muted audio). There is also support for
 overflows (when the value exceeds the maximum).
-
-WWW: https://github.com/florentc/xob

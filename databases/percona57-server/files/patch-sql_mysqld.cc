@@ -1,6 +1,6 @@
---- sql/mysqld.cc.orig	2016-11-27 19:44:54 UTC
+--- sql/mysqld.cc.orig	2022-08-05 18:25:13 UTC
 +++ sql/mysqld.cc
-@@ -1517,6 +1517,16 @@ static void clean_up_mutexes()
+@@ -1531,6 +1531,16 @@ static void clean_up_mutexes()
  ****************************************************************************/
  
  /* Initialise proxy protocol. */
@@ -17,17 +17,17 @@
  static void set_proxy()
  {
    const char *p;
-@@ -3678,6 +3688,7 @@ static int init_ssl()
+@@ -3706,6 +3716,7 @@ static int init_ssl()
+ static int init_ssl()
  {
  #ifdef HAVE_OPENSSL
 +#ifndef LIBRESSL_VERSION_NUMBER
-   int fips_mode= FIPS_mode();
-   if (fips_mode != 0)
-   {
-     /* FIPS is enabled, Log warning and Disable it now */
-@@ -3687,7 +3698,9 @@ static int init_ssl()
-         " Disabling FIPS.");
+ 
+ #if OPENSSL_VERSION_NUMBER >= 0x30000000L
+   int fips_mode= EVP_default_properties_is_fips_enabled(NULL) &&
+@@ -3726,7 +3737,9 @@ static int init_ssl()
      FIPS_mode_set(0);
+ #endif
    }
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
 +#endif

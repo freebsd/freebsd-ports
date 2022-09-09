@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.opendap.org/pub/source/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 4.0
+WWW=		https://www.opendap.org/software/libdap
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

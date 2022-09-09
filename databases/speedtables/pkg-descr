@@ -6,5 +6,3 @@ corresponding structures, generating a custom C language Tcl extension to
 create, access and manipulate those tables and building a native code package
 in a shared library that is loadable on demand via Tcl's "package require"
 mechanism.
-
-WWW: http://flightaware.github.io/speedtables/

@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Internet Storage Name Service (iSNS)
+WWW=		https://github.com/open-iscsi/open-isns/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Timer for your personal activities
+WWW=		https://www.k5n.us/gtimer.php
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance interior-point-method QP solvers
+WWW=		https://github.com/giaf/hpipm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

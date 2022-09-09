@@ -5,5 +5,3 @@ Connect protocol which makes it show up as a device that can be
 controlled from the official clients.
 
 Spotifyd requires a Spotify Premium account.
-
-WWW: https://github.com/Spotifyd/spotifyd

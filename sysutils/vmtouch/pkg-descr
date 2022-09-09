@@ -2,5 +2,3 @@ Virtual Memory Toucher
 
 vmtouch is a tool for learning about and controlling the file system
 cache of Unix and Unix-like systems.
-
-WWW: http://hoytech.com/vmtouch/

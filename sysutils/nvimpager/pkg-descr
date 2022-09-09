@@ -13,5 +13,3 @@ all of neovim's command line options. Use nvimpager -h to see the help text.
 The configuration is separated from the users config for neovim. The main
 config file is ~/.config/nvimpager/init.vim. See the manpage for further
 explanation.
-
-WWW: https://github.com/lucc/nvimpager

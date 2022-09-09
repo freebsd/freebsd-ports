@@ -7,6 +7,7 @@ DISTNAME=	Cython-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compiler for Writing C Extensions for the Python Language
+WWW=		https://cython.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

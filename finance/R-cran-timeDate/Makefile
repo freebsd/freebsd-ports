@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rmetrics - Chronological and Calendar Objects
+WWW=		https://www.rmetrics.org
 
 LICENSE=	GPLv2+
 

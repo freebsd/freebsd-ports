@@ -5,6 +5,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension to require core and ticket custom fields on status changes
+WWW=		https://metacpan.org/release/RT-Extension-MandatoryOnTransition
 
 LICENSE=	GPLv2
 

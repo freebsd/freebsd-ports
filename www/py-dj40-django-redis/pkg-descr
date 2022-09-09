@@ -13,5 +13,3 @@ Why use django-redis?
    example).
  * Unix sockets supported by default.
  * Pluggable parsers.
-
-WWW: https://github.com/jazzband/django-redis

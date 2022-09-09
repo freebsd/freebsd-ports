@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Solving nonlinear equations and nonlinear least squares problems
+WWW=		http://devernay.free.fr/hacks/cminpack/
 
 LICENSE_FILE=	${WRKSRC}/CopyrightMINPACK.txt
 

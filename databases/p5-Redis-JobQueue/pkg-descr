@@ -8,5 +8,3 @@ a simple job queue based on Redis server capabilities.
 * Provides an object oriented API.
 * Support of storing arbitrary job-related data structures.
 * Simple methods for organizing producer, worker, and consumer clients.
-
-WWW: https://metacpan.org/release/Redis-JobQueue

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deprecated finder APIs from Active Record
+WWW=		https://github.com/rails/activerecord-deprecated_finders
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

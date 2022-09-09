@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Pretty-print tabular data in Python
+WWW=		https://github.com/astanin/python-tabulate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

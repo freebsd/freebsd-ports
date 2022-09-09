@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lists hosts/users in a netgroup group
+WWW=		https://metacpan.org/release/Net-NIS-Listgroup
 
 LICENSE=	GPLv2
 

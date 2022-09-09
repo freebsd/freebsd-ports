@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Font for programmers and command-line users
+WWW=		https://www.kutilek.de/sudo-font
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

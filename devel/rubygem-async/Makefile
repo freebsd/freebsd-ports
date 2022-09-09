@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modern asynchronous I/O framework for Ruby
+WWW=		https://github.com/socketry/async
 
 LICENSE=	MIT
 

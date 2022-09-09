@@ -1,6 +1,5 @@
 PORTNAME=	ospd-openvas
-DISTVERSION=	22.4.0
-PORTREVISION=	2
+DISTVERSION=	22.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 #MASTER_SITES=	CHEESESHOP
@@ -8,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Scanner wrapper for OSP (Open Scanner Protocol)
+WWW=		https://github.com/greenbone/ospd-openvas
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

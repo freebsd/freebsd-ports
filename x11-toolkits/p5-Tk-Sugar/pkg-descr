@@ -11,5 +11,3 @@ Benefits are obvious:
 - No string worries: Strings are often problematic, since they aren't checked at
   compile-time. Sometimes it makes spotting an error a difficult task. Using
   this alleviates that worry.
-
-WWW: https://metacpan.org/release/Tk-Sugar

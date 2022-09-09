@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multidict implementation
+WWW=		https://github.com/aio-libs/multidict
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

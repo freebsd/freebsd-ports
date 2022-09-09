@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dissociated Press algorithm and filter
+WWW=		https://metacpan.org/release/Games-Dissociate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

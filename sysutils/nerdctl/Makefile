@@ -1,11 +1,12 @@
 PORTNAME=	nerdctl
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.22.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Docker-compatible CLI for containerd
+WWW=		https://github.com/containerd/nerdctl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

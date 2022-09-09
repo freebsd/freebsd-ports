@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Areal Interpolation
+WWW=		https://pysal.org/tobler/
 
 LICENSE=	BSD3CLAUSE
 

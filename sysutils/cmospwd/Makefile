@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cgsecurity.org/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BIOS password recovery tool
+WWW=		https://www.cgsecurity.org/wiki/CmosPwd
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

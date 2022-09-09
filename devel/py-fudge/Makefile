@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yhchan@csie.nctu.edu.tw
 COMMENT=	Python module for using fake objects to test real ones
+WWW=		http://farmdev.com/projects/fudge/
 
 LICENSE=	MIT
 

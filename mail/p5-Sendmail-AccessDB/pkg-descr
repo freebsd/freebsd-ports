@@ -3,5 +3,3 @@ Sendmail programmers) can ascertain if a user has elected to whitelist
 themselves as a "spam friend" (where there should be no spam filtering on mail
 to them) or, where spam-filtering is not the default, but an option, where
 certain receipients have been labeled as "spam haters".
-
-WWW: https://metacpan.org/release/Sendmail-AccessDB

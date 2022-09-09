@@ -8,6 +8,7 @@ DISTNAME=	hdr_src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line tools for creating and manipulating HDR images
+WWW=		https://ttic.uchicago.edu/~cotter/projects/hdr_tools/
 
 LICENSE=	GPLv3
 

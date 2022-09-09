@@ -7,6 +7,7 @@ DISTNAME=	SDL_image-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple library to load images of various formats as SDL surfaces
+WWW=		https://www.libsdl.org/projects/SDL_image/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

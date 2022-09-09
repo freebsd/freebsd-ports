@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: A structured, parallel DUNE grid implementation
+WWW=		https://www.dune-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

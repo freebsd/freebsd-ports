@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible, full-featured, and fast variable expansion library
+WWW=		http://www.ossp.org/pkg/lib/var/
 
 USES=		libtool
 GNU_CONFIGURE=	yes

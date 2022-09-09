@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Debugging functionality for Ruby
+WWW=		https://rubygems.org/gems/debug
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

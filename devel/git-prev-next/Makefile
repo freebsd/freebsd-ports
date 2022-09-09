@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Git commands for navigating and editing Git commit history
+WWW=		https://github.com/ridiculousfish/git-prev-next
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

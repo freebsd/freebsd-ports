@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Type system for Ruby supporting coercions, constraints and complex types
+WWW=		https://github.com/dry-rb/dry-types
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

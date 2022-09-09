@@ -6,6 +6,7 @@ CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Anonymous peer-to-peer instant messenger
+WWW=		https://github.com/ricochet-im/ricochet
 
 LICENSE=	RICOCHET
 LICENSE_NAME=	Ricochet

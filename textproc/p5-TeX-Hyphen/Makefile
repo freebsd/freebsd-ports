@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hyphenate words using TeX's patterns
+WWW=		https://metacpan.org/release/TeX-Hyphen
 
 USES=		perl5
 USE_PERL5=	configure

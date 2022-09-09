@@ -4,5 +4,3 @@ compressed data and allows the interleaving of audio and video data
 inside a single convient format.  Ogg is a stream oriented container
 and provides packet framing, error detection, and periodic timestamps
 for seeking.
-
-WWW: https://www.xiph.org/ogg/

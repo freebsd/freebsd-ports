@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Compute Lunar Events
+WWW=		https://metacpan.org/release/DateTime-Event-Lunar
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \

@@ -1,4 +1,2 @@
 Time::Crontab is a parser for crontab date and time field.  And it
 provides simple matcher.
-
-WWW: https://metacpan.org/release/Time-Crontab

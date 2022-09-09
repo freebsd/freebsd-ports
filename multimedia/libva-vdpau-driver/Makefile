@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VDPAU-based backend for VAAPI
+WWW=		https://cgit.freedesktop.org/vaapi/vdpau-driver/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

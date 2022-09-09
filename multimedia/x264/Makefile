@@ -24,6 +24,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT?=	H.264/MPEG-4 AVC Video Encoding (Front End CLI)
+WWW=		https://www.videolan.org/x264.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

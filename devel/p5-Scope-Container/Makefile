@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Container object for temporary scoped items like database connections
+WWW=		https://metacpan.org/release/Scope-Container
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

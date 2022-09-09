@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Provides a role-based system of OOP (emulates Perl6)
+WWW=		https://metacpan.org/release/Class-Roles
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
+WWW=		https://ngsolve.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

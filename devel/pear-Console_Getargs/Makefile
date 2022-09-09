@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR command-line arguments parser
+WWW=		https://pear.php.net/package/Console_Getargs
 
 LICENSE=	PHP301
 

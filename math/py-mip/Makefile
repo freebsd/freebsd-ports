@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python MIP (Mixed-Integer Linear Programming) Tools
+WWW=		https://python-mip.com/
 
 LICENSE=	EPL
 

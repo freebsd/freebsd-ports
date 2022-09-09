@@ -1,11 +1,12 @@
 PORTNAME=	audioread
-PORTVERSION=	2.1.9
+PORTVERSION=	3.0.0
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Multi-library, cross-platform audio decoding
+WWW=		https://github.com/beetbox/audioread
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

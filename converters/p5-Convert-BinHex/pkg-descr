@@ -2,5 +2,3 @@ BinHex is a format used by Macintosh for transporting Mac files safely through
 electronic mail, as short-lined, 7-bit, semi-compressed data streams.
 Convert::BinHex provides a means of converting those data streams back into into
 binary data.
-
-WWW: https://metacpan.org/release/Convert-BinHex

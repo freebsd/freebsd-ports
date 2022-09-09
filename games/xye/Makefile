@@ -19,6 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle games like sokoban or boulderdash
+WWW=		http://xye.sourceforge.net/
 
 LICENSE=	ZLIB
 

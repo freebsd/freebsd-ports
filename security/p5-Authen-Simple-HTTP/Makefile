@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple HTTP authentication
+WWW=		https://metacpan.org/release/Authen-Simple-HTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,10 +1,11 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.5.2
-PORTREVISION=	4
+DISTVERSION=	100.5.4
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Tools for MongoDB 4.4.x and up
+WWW=		https://docs.mongodb.com/database-tools/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

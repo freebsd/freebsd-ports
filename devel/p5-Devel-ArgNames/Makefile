@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Figure out the names of variables passed into subroutines
+WWW=		https://metacpan.org/release/Devel-ArgNames
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

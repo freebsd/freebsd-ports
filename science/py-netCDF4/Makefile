@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python Interface to the NetCDF Library (versions 3 and 4)
+WWW=		https://unidata.github.io/netcdf4-python/
 
 LICENSE=	MIT
 

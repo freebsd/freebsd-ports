@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/tessus/${PORTNAME}/releases/download/${DISTVERS
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache realtime log stats
+WWW=		https://github.com/tessus/apachetop
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

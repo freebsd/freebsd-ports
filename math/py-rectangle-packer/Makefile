@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rectangle packing library
+WWW=		https://github.com/Penlect/rectangle-packer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

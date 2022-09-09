@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Poker game written in C++/Qt
+WWW=		https://www.pokerth.net/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

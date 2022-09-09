@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.pldaniels.com/ripmime/ \
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
+WWW=		https://pldaniels.com/ripmime/
 
 MAKE_JOBS_UNSAFE=	yes
 

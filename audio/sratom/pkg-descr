@@ -1,4 +1,2 @@
 Sratom is a library for serialising LV2 atoms to/from RDF,
 particularly the Turtle syntax.
-
-WWW: http://drobilla.net/software/sratom

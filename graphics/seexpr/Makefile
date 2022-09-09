@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.kde.org/stable/${PORTNAME}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Embeddable expression evaluation language
+WWW=		https://wdas.github.io/SeExpr/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

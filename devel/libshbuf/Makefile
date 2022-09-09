@@ -5,6 +5,7 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/libshbuf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Shared Buffer IPC
+WWW=		https://0pointer.de/lennart/projects/libshbuf/
 
 LICENSE=	GPLv2 # though COPYING says LGPL21
 

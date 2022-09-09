@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Logging library based on Java's log4j #'
+WWW=		https://github.com/TwP/logging
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

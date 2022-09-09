@@ -7,6 +7,7 @@ DISTNAME=	uudeview-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for uu/xx/Base64/BinHex/yEnc de-/encoding
+WWW=		http://www.fpx.de/fp/Software/UUDeview/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,6 +9,7 @@ DISTNAME=	regmath${PORTVERSION:S/.//}
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Two mathematics libraries for Rexx
+WWW=		http://pages.interlog.com/~pjtm/
 
 LICENSE=	MPL10
 

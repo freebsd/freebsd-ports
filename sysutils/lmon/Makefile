@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/lmon/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Near-realtime log monitoring tool, sends alerts on hits and misses
+WWW=		http://www.bsdconsulting.no/tools/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

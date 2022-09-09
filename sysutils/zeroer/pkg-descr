@@ -6,5 +6,3 @@ cannot be restored after processing a certain partition with zeroer.
 The utility's principle consists in writing huge zero-padded memory blocks to a
 file. To a certain extent this works similar to dd, however zeroer dynamically
 reduces the blockwriter's buffer size when the filesystem is going to be full.
-
-WWW: https://critical.ch/zeroer/

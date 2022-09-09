@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compact many CSS files into one big file
+WWW=		https://metacpan.org/release/CSS-Squish
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Test-LongString>=0:devel/p5-Test-LongString

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Track calls to subs, classes, and object instances
+WWW=		https://metacpan.org/release/Devel-TraceCalls
 
 USES=		perl5
 USE_PERL5=	configure

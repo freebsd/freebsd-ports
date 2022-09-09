@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JavaScript whitespace/comment eliminator
+WWW=		https://metacpan.org/release/JavaScript-Minifier
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

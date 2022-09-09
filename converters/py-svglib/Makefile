@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Pure-Python library for reading and converting SVG
+WWW=		https://github.com/deeplook/svglib
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

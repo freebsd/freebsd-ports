@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client interface for AtomStream
+WWW=		https://metacpan.org/release/XML-Atom-Stream
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \

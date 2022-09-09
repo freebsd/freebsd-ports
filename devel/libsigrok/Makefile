@@ -6,6 +6,7 @@ MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, core library
+WWW=		https://sigrok.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

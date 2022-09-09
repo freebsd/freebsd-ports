@@ -3,5 +3,3 @@ highlighted HTML, ANSI-coloured text, etc.
 
 Chroma is based heavily on Pygments, and includes translators for Pygments
 lexers and styles.
-
-WWW: https://github.com/alecthomas/chroma

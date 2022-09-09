@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cache response content to memcached
+WWW=		https://metacpan.org/release/Dancer-Plugin-Memcached
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dancer>0:www/p5-Dancer

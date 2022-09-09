@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Subexec spawns a subprocess with an optional timeout
+WWW=		https://github.com/nulayer/subexec
 
 LICENSE=	MIT
 

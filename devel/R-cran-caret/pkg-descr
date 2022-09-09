@@ -8,5 +8,3 @@ creating predictive models. The package contains tools for:
  * variable importance estimation
 
 as well as other functionality.
-
-WWW: https://topepo.github.io/caret/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build.PL install path logic made easy
+WWW=		https://metacpan.org/release/ExtUtils-InstallPaths
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

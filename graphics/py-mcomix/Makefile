@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	GTK3 comic book viewer
+WWW=		https://github.com/multiSnow/mcomix3
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

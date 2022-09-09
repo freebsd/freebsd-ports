@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Artist for matplotlib to display a scale bar
+WWW=		https://github.com/ppinard/matplotlib-scalebar
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

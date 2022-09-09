@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ken@FreeBSD.org
 COMMENT=	Self Encrypting Drive utility
+WWW=		https://github.com/Drive-Trust-Alliance/sedutil
 
 LICENSE=	GPLv3+
 

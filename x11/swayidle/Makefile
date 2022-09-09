@@ -10,6 +10,7 @@ PATCHFILES+=	e81d40fca753.patch:-p1 # https://github.com/swaywm/swayidle/pull/11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Idle management daemon for Wayland
+WWW=		https://github.com/swaywm/swayidle
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

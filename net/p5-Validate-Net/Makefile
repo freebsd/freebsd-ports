@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format validation and more for Net:: related strings
+WWW=		https://metacpan.org/release/Validate-Net
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Default>=0:devel/p5-Class-Default

@@ -4,5 +4,3 @@ with the maximum features available while keeping a simple, clean and
 modern design. It is a Qt-based client as beautiful as Electron apps
 (e.g. Riot.im Web) while using far less resources and still being
 considered as "native".
-
-WWW: https://gitlab.com/spectral-im/spectral

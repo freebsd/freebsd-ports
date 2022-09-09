@@ -4,6 +4,7 @@ CATEGORIES=	security net net-vpn
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Dead Simple VPN
+WWW=		https://github.com/jedisct1/dsvpn
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

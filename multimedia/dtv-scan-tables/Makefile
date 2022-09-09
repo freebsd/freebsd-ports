@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/decke
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Digital TV scan tables from linuxtv.org
+WWW=		https://linuxtv.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -11,5 +11,3 @@ Features:
 - Request pipelining
 - Trailers
 - HTTP proxy connections
-
-WWW: https://github.com/ledgetech/lua-resty-http

@@ -3,5 +3,3 @@ separated to a separate project. This is that project.
 
 This framework can be used to attach comments to any model, so you can use
 it for comments on blog entries, photos, book chapters, or anything else.
-
-WWW: https://github.com/django/django-contrib-comments

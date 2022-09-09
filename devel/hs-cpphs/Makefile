@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Liberalised re-implementation of cpp, the C pre-processor
+WWW=		https://projects.haskell.org/cpphs/
 
 LICENSE=	LGPL21
 

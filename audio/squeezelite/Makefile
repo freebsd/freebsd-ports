@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	jockl@pianojockl.org
 COMMENT=	Lightweight headless squeezebox player for Logitech Media Server
+WWW=		https://github.com/ralph-irving/squeezelite
 
 LICENSE=	GPLv3
 

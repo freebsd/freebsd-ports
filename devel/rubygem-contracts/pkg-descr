@@ -1,5 +1,3 @@
 This library provides contracts for Ruby.
 Contracts let you clearly express how your code behaves, and free
 you from writing tons of boilerplate, defensive code.
-
-WWW: https://github.com/egonSchiele/contracts.ruby

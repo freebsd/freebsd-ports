@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quadratic Sieve integer factorization algorithm
+WWW=		http://www.friedspace.com/QS/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

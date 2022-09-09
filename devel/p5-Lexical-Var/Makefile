@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for static variables without namespace pollution
+WWW=		https://metacpan.org/release/Lexical-Var
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

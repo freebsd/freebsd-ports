@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Provides tools for the cross-platform Qt shader pipeline
+WWW=		https://qt-project.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

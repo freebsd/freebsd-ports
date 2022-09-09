@@ -8,6 +8,7 @@ DISTNAME=	Pushmi-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion repository replication tool
+WWW=		https://metacpan.org/release/Pushmi
 
 LICENSE=	APACHE20
 

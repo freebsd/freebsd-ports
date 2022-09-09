@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Side-by-side diff viewer for ANSI terminal
+WWW=		https://github.com/kaz-utashiro/sdif
 
 LICENSE=	GREPLE
 LICENSE_NAME=	GREPLE License

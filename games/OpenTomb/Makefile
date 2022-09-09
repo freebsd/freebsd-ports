@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open-source Tomb Raider 1-5 engine remake
+WWW=		https://opentomb.github.io/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

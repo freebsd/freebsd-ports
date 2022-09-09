@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTV
 
 MAINTAINER=	graahnul.grom@gmail.com
 COMMENT=	Lepton Electronic Design Automation
+WWW=		https://github.com/lepton-eda/lepton-eda
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ DISTNAME=	Cartopy-${DISTVERSIONFULL}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cartographic library with Matplotlib support for visualisation
+WWW=		https://github.com/SciTools/cartopy
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

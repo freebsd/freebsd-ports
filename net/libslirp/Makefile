@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	General purpose TCP-IP emulator library
+WWW=		https://gitlab.freedesktop.org/slirp/libslirp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

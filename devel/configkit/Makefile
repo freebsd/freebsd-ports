@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Somewhat prototypical facility for generating CLI interfaces
+WWW=		http://phk.freebsd.dk/phkrel/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:devel/libphk
 

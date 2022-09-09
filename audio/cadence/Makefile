@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of tools useful for audio production
+WWW=		https://kxstudio.linuxaudio.org/Applications:Cadence
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,5 +4,3 @@ Scam-backscatter prevents spam backscatter (accept and bounce) on
 mail servers which don't host mailboxes locally. It validates
 mailboxes by verifying the recipient addresses hosted on a different
 mail server.
-
-WWW: http://www.elandsys.com/scam/scam-backscatter/

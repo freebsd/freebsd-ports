@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/bofh
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
+WWW=		http://www.canonware.com/onyx/
 
 LICENSE=	BSD2CLAUSE
 

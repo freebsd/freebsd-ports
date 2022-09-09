@@ -6,5 +6,3 @@ as indexing, part-of-speech tagging, or machine translation.
 Ucto comes with tokenisation rules for several languages and can be easily
 extended to suit other languages. It has been incorporated for tokenizing Dutch
 text in Frog, our Dutch morpho-syntactic processor.
-
-WWW: https://languagemachines.github.io/ucto/

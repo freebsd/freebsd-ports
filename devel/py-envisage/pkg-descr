@@ -11,5 +11,3 @@ Each plug-in is able to:
  * Create and share the objects that perform the real work of the application
    ("services").
 The Envisage project provides the basic machinery of the Envisage framework.
-
-WWW: http://code.enthought.com/projects/envisage

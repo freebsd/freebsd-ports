@@ -1,5 +1,3 @@
 This package offers basic LDAP services for TWiki and offers
 authentication of TWiki users by binding to an LDAP server as well as
 incorporate LDAP user groups into TWiki's access control.
-
-WWW: http://twiki.org/cgi-bin/view/Plugins/LdapContrib

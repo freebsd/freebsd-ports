@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	Fast SSL port scanner
+WWW=		https://github.com/rbsec/sslscan/
 
 LICENSE=	GPLv3
 

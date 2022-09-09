@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Full-featured asynchronous I/O library for C
+WWW=		http://software.schmorp.de/pkg/libeio.html
 
 # lib/libeio.so.1
 CONFLICTS_INSTALL=	efl

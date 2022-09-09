@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	General-purpose award-winning SAT solver
+WWW=		https://github.com/msoos/cryptominisat
 
 LICENSE=	MIT LGPL21
 LICENSE_COMB=	multi

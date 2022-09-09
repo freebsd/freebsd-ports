@@ -6,6 +6,7 @@ DISTNAME=	dpkg_${PORTVERSION}
 
 MAINTAINER=	ndowens04@gmail.com
 COMMENT=	Debian package maintenance system
+WWW=		https://packages.debian.org/dpkg
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

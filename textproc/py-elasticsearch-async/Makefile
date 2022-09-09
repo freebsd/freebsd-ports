@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Elasticsearch Async Client
+WWW=		https://github.com/elastic/elasticsearch-py-async
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

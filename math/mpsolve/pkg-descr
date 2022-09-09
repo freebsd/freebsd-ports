@@ -10,5 +10,3 @@ Among its features you can find:
 * It can be specialized for specific classes of polynomials. As an example,
   see the roots of the Mandelbrot polynomial of degree 2.097.151 computed in
   about 10 days on a dual Xeon server.
-
-WWW: https://numpi.dm.unipi.it/software/mpsolve

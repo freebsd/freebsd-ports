@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Compiled Runtime in Tcl
+WWW=		https://andreas-kupries.github.io/critcl/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

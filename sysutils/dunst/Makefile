@@ -5,6 +5,7 @@ CATEGORIES=	sysutils wayland
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Lightweight notification daemon
+WWW=		https://dunst-project.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

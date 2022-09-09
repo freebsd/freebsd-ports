@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.xmailserver.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create file differences/patches to both binary and text files
+WWW=		http://www.xmailserver.org/xdiff-lib.html
 
 LICENSE=	LGPL3
 

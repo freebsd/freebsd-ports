@@ -13,5 +13,3 @@ pod documentation via the command
   perldoc Sort::Tree
 or, after installation, view the man pages with
   man Sort::Tree
-
-WWW: https://metacpan.org/release/Sort-Tree

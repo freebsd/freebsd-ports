@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	7.14
+DISTVERSION=	7.15
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/7.x/
@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	Microsoft Windows compatibility environment
+WWW=		https://www.winehq.org
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

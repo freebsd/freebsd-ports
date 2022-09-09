@@ -6,6 +6,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ultimate outdoor aficionado's tool
+WWW=		https://github.com/Maproom/qmapshack/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous Gearman client/worker module for AnyEvent applications
+WWW=		https://metacpan.org/release/AnyEvent-Gearman
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,5 +6,4 @@ documentation, a VRML proposal, Makefiles, and full source code and
 header files. It uses the OpenGL (TM) programming API to perform the
 actual drawing of the tubing and extrusions.
 
-WWW: https://linas.org/gle/
      https://sourceforge.net/projects/gle/

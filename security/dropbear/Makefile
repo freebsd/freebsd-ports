@@ -5,6 +5,7 @@ MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	SSH 2 server, designed to be usable in small memory environments
+WWW=		https://matt.ucc.asn.au/dropbear/dropbear.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

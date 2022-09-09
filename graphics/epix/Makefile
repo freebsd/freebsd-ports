@@ -5,6 +5,7 @@ MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/${PORTNAME}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Creates math plots and line figures using easy-to-learn syntax
+WWW=		https://mathcs.holycross.edu/~ahwang/epix/ePiX.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

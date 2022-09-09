@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Portable and small webserver written in C
+WWW=		https://sourceforge.net/projects/pserv/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

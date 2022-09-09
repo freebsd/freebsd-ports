@@ -9,6 +9,7 @@ PATCHFILES+=	c765bb30b5f5.patch:-p1 # https://github.com/libuvc/libuvc/pull/163
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform library for USB video devices
+WWW=		https://int80k.com/libuvc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

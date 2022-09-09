@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Modules to streamline writing Nagios plugins
+WWW=		https://metacpan.org/release/Nagios-Plugin
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \

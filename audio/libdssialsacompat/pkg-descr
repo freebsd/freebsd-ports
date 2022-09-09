@@ -2,5 +2,4 @@ libdssialsacompat is simply an extraction from and repackaging of
 the code from alsa-lib 1.0.8, necessary to support DSSI on non-ALSA
 systems.
 
-WWW: http://www.smbolton.com/linux.html
-WWW: http://dssi.sourceforge.net/
+See also: http://dssi.sourceforge.net/

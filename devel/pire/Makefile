@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Perl Incompatible Regular Expressions library
+WWW=		https://github.com/yandex/pire
 
 LICENSE=	LGPL3+ MIT
 LICENSE_COMB=	dual

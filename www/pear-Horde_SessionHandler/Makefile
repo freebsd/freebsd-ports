@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Session Handler API
+WWW=		https://pear.horde.org
 
 USES=		horde cpe
 USE_HORDE_RUN=	Horde_Exception \

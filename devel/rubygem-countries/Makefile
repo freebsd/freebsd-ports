@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	All sorts of useful information about every country
+WWW=		https://github.com/hexorx/countries
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

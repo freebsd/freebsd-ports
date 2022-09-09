@@ -7,6 +7,7 @@ MASTER_SITES=	http://erislabs.net/ianb/projects/libmp3-archive-perl/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to manipulate filenames containing music metadata
+WWW=		https://erislabs.net/ianb/projects/libmp3-archive-perl/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

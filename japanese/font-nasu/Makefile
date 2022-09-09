@@ -8,6 +8,7 @@ DISTNAME=	NasuFont-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Nasu Japanese TrueType fonts
+WWW=		https://itouhiro.hatenablog.com/entry/20140917/font
 
 LICENSE=	APACHE20
 

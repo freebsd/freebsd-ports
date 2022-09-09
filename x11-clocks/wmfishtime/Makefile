@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/date applet for WindowMaker with fishes swimming around
+WWW=		http://www.ne.jp/asahi/linux/timecop/ #wmfishtime
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

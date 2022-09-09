@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Linux Event Device library
+WWW=		https://www.freedesktop.org/wiki/Software/libevdev/
 
 LICENSE=	MIT # without linux/*.h
 LICENSE_FILE=	${WRKSRC}/COPYING

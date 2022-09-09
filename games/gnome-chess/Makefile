@@ -6,19 +6,19 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome chess
+WWW=		https://wiki.gnome.org/Apps/Chess
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		itstool:textproc/itstool \
-		vala:lang/vala
+		itstool:textproc/itstool
 LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita
 
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gl gnome localbase meson pkgconfig \
-		python:3.6+,build tar:xz
+		python:3.6+,build tar:xz vala:build
 USE_GNOME=	cairo gtk40 librsvg2 libxml2:build
 USE_GL=		egl gl
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

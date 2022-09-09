@@ -8,6 +8,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python MSRP client library
+WWW=		http://mediaproxy.ag-projects.com/projects/msrp/wiki
 
 LICENSE=	LGPL21+
 

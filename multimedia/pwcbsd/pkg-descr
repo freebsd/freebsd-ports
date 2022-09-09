@@ -2,5 +2,3 @@ This port provides a FreeBSD kernel module that
 video4linux enabled applications and applications
 that can handle raw YUV420P data can use to access
 several USB based webcams.
-
-WWW: http://raaf.atspace.org/

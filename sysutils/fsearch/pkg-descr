@@ -7,5 +7,3 @@ Engine.  It is written in plain C and based on GTK 3.  It features:
   - Include and exclude specific folders to be indexed
   - Fast sort by file name, path, size, or modification time
   - Customizable user interface
-
-WWW: http://cboxdoerfer.github.io/fsearch/

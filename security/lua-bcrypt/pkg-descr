@@ -1,4 +1,2 @@
 Lua-bcrypt is a library providing OpenBSD's bcrypt hash function for the Lua
 programming language.
-
-WWW: https://github.com/mikejsavage/lua-bcrypt/

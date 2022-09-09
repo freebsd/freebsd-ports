@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module to handle WorldPay Junior for payment services
+WWW=		https://metacpan.org/release/Business-WorldPay-Junior
 
 LICENSE=	GPLv2
 

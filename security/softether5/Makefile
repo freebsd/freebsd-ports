@@ -11,6 +11,7 @@ PATCHFILES=	f4baf91.patch:-p1 5890ce9.patch:-p1 ddaffd5.patch:-p1 \
 		57aa471.patch:-p1
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 5 (Developer Edition)
+WWW=		https://www.softether.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

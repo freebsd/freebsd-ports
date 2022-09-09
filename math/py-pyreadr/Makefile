@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read/write R RData and Rds files into/from pandas data frames
+WWW=		https://github.com/ofajardo/pyreadr
 
 LICENSE=	AGPLv3+
 

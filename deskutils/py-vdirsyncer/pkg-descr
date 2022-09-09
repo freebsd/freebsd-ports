@@ -2,5 +2,3 @@ Vdirsyncer synchronizes your calendars and addressbooks between two storages.
 The most popular purpose is to synchronize CalDAV and CardDAV with a local
 folder or file. The local data can then be accessed via a variety of programs,
 none of which have to know or worry about syncing to a server.
-
-WWW: https://vdirsyncer.readthedocs.org/

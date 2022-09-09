@@ -1,4 +1,2 @@
 This provides LED tools for flashing the built-on LEDs found on many
 ARM boards, such as the BeagleBone Black.
-
-WWW: https://github.com/RaspBSD/raspbsd-led

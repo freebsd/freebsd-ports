@@ -13,5 +13,3 @@ message is scanned by default)
 folders
 * support for basic and extended POSIX regular expressions, and, optionally,
 Perl-complatible regular expressions (if linked with the PCRE library)
-
-WWW: http://mboxgrep.sourceforge.net/

@@ -5,6 +5,7 @@ MASTER_SITES=	http://icculus.org/${PORTNAME}/downloads/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Library to provide abstract access to various archives
+WWW=		https://icculus.org/physfs/
 
 CONFLICTS_INSTALL=	physfs-devel
 

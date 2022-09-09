@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy aliasing of methods and attributes in Moo
+WWW=		https://metacpan.org/release/MooX-Aliases
 
 LICENSE=	ARTPERL10
 

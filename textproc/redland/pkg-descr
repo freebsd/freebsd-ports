@@ -4,5 +4,3 @@ implements each of the RDF model concepts in its own class and
 provides an object based API for them. Some of the classes providing
 the parsers, storage mechanisms and other elements are built as
 modules that can be added or removed as required.
-
-WWW: http://librdf.org

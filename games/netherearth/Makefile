@@ -6,6 +6,7 @@ MASTER_SITES=	http://move.kirishi.ru/soft/netherearth/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of the first real time strategy game on the SPECTRUM
+WWW=		http://www.braingames.getput.com/nether/default.asp
 
 GNU_CONFIGURE=	yes
 

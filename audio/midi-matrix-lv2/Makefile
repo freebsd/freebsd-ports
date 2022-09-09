@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 'Midi Matrix' plugin bundle: 'Channel Filter'
+WWW=		https://open-music-kontrollers.ch/lv2/midi_matrix/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING

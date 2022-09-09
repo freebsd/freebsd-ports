@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
 COMMENT=	Rime Soutzoe schema support
+WWW=		https://github.com/rime/rime-soutzoe
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

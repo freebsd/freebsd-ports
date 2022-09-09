@@ -6,5 +6,3 @@ appropriate arguments.  Furthermore it helps maintaining your installed
 software by creating library dependencies and checksums, and providing
 various search functions. It is also possible to create tar-archives out
 of your installed packages.
-
-WWW: http://os.inf.tu-dresden.de/~adam/stowES/

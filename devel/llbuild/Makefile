@@ -6,6 +6,7 @@ CATEGORIES=		devel
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Low-level build system, used by the Swift Package Manager
+WWW=		https://github.com/apple/swift-llbuild
 
 LICENSE=	APACHE20 BSD3CLAUSE NCSA
 LICENSE_COMB=	multi

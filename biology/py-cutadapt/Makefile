@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Trim adapters from high-throughput sequencing reads
+WWW=		https://pypi.org/project/cutadapt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

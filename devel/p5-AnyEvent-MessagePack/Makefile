@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of AnyEvent for MessagePack
+WWW=		https://metacpan.org/release/AnyEvent-MessagePack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

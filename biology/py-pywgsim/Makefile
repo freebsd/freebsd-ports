@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Modified wgsim genomic data simulator
+WWW=		https://pypi.python.org/pypi/pywgsim
 
 LICENSE=	MIT
 

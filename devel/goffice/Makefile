@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GTK+ set of document centric objects and utilities
+WWW=		http://live.gnome.org/libgoffice
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

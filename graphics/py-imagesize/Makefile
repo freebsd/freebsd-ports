@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get image size from png/jpeg/jpeg2000/gif file
+WWW=		https://github.com/shibukawa/imagesize_py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

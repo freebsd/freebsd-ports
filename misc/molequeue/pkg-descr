@@ -13,5 +13,3 @@ remote batch scheduling systems with support for Open Grid Scheduler (formerly
 Sun Grid Engine) and PBS. The backend communication is abstracted, and support
 is currently being added for UIT (a SOAP protocol for communicating with
 military HPC resources using ezHPC).
-
-WWW: https://www.openchemistry.org/projects/molequeue

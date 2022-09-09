@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Dark GTK & KDE theme created using the Nord color palette
+WWW=		https://github.com/EliverLara/Nordic
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

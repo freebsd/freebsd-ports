@@ -4,6 +4,7 @@ CATEGORIES=	multimedia devel
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Compact, C++-based Remote Procedure Call (RPC) library
+WWW=		https://github.com/MayaPosch/NymphRPC
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

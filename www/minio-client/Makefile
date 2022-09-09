@@ -1,10 +1,11 @@
 PORTNAME=	minio-client
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Replacement for ls, cp, mkdir, diff and rsync commands for filesystems
+WWW=		https://minio.io/downloads/ #minio-client
 
 LICENSE=	APACHE20
 

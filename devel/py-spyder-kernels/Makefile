@@ -1,11 +1,12 @@
 PORTNAME=	spyder-kernels
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Jupyter kernels for the Spyder console
+WWW=		https://github.com/spyder-ide/spyder-kernels
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

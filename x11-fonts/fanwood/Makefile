@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Serif based on the work of a famous Czech-American type designer
+WWW=		https://www.theleagueofmoveabletype.com/fanwood
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/Open\ Font\ License.markdown

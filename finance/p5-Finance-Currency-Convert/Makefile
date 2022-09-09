@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert currencies and fetch their exchange rates
+WWW=		https://metacpan.org/release/Finance-Currency-Convert
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

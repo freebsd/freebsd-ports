@@ -6,6 +6,7 @@ DISTNAME=	HyperSpec-7-0
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Common Lisp reference in HTML format, from LispWorks Ltd
+WWW=		https://www.lispworks.com/documentation/HyperSpec/index.html
 
 # Converted from NO_CDROM
 LICENSE=	HyperSpec

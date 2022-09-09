@@ -15,5 +15,3 @@ JWasm Features:
 - As far as programming for Windows is concerned, JWasm can be used with
   both Win32Inc and Masm32.
 - C header files can be converted to include files for JWasm with h2incX.
-
-WWW: https://github.com/Baron-von-Riedesel/JWasm

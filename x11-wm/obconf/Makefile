@@ -6,6 +6,7 @@ MASTER_SITES=	http://openbox.org/dist/obconf/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
+WWW=		http://openbox.org/wiki/Obconf
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libobrender.so:x11-wm/openbox

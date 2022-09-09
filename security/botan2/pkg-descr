@@ -10,5 +10,3 @@ PowerPC, offers further speedups for critical tasks such as SHA-1
 hashing and multiple precision integer operations.
 
 Botan is licensed under the same permissive terms as FreeBSD itself.
-
-WWW: https://botan.randombit.net/

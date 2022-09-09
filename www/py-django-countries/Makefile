@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Provides country choices for use with django
+WWW=		https://pypi.org/project/django-countries/
 
 LICENSE=	BSD2CLAUSE
 

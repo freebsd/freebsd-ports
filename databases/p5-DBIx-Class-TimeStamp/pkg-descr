@@ -1,4 +1,2 @@
 Works in conjunction with InflateColumn::DateTime to automatically set update
 and create date and time based fields in a table.
-
-WWW: https://metacpan.org/release/DBIx-Class-TimeStamp

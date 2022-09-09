@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Read Write And Modify MARC Bibliographic Data
+WWW=		https://github.com/edsu/pymarc
 
 LICENSE=	BSD2CLAUSE
 

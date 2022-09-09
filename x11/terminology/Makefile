@@ -6,6 +6,7 @@ DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	EFL Terminal Emulator
+WWW=		https://www.enlightenment.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medium interaction ssh honeypot
+WWW=		https://github.com/desaster/kippo
 
 LICENSE=	BSD3CLAUSE
 

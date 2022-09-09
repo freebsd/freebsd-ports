@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript engine by Google
+WWW=		https://v8.dev/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

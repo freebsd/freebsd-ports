@@ -1,4 +1,2 @@
 pyexcel-ods3 is a tiny wrapper library to read, manipulate and write data in ods
 format. You are likely to use pyexcel together with this library.
-
-WWW: https://github.com/pyexcel/pyexcel-ods3

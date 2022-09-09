@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zhoutao@laocius.org
 COMMENT=	HAProxy control tool
+WWW=		https://github.com/neurogeek/haproxyctl
 
 LICENSE=	GPLv3
 

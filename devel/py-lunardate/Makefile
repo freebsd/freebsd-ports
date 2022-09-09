@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Chinese Calendar Library in Pure Python
+WWW=		https://pypi.org/project/lunardate/
 
 LICENSE=	MIT
 

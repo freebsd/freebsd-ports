@@ -6,5 +6,3 @@ one would either have to specify the mail class required, or to
 build a new object from scratch, Email::Abstract can be used to
 perform certain simple operations on an object regardless of its
 underlying representation.
-
-WWW: https://metacpan.org/release/Email-Abstract

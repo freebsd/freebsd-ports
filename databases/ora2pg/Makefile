@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Oracle to PostgreSQL database schema converter
+WWW=		https://github.com/darold/ora2pg
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

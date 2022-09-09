@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DIS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog modelling software synth
+WWW=		https://amsynth.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

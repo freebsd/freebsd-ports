@@ -12,7 +12,5 @@ sending a tiny amount of data over the link, preserving the connection.
 Thus (for search engines) Spinner is an anti-dle, timeout preventing,
 background daemon process for Unix variants including Linux.
 
-WWW: http://www.laffeycomputer.com/spinner.html
-
 	- Michael L. Hostbaek
 	mich@FreeBSD.org

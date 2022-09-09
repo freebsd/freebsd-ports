@@ -7,6 +7,7 @@ DISTNAME=	Readarr.develop.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Book Manager and Automation (Sonarr for Ebooks)
+WWW=		https://readarr.com
 
 LICENSE=	GPLv3
 

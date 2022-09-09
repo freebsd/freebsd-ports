@@ -9,5 +9,3 @@ for computation tasks sending Provisional/Intermediate Results or
 Transferring Files to the client). If communication/cooperation
 among tasks is needed, Distributed Communicating Processes module
 of pycos framework could be used.
-
-WWW: http://dispy.sourceforge.net/

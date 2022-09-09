@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.antlr2.org/download/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
+WWW=		https://www.antlr2.org/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

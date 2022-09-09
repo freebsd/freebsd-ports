@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Create patchset information from CVS
+WWW=		http://cvsps.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

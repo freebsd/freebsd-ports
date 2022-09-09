@@ -1,3 +1,1 @@
 Fog::Local is a module for the 'fog' gem to support local filesystem storage.
-
-WWW: https://github.com/fog/fog-local

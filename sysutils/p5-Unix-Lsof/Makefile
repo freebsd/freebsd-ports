@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gjvc@gjvc.com
 COMMENT=	Perl wrapper for Unix lsof(8) utility
+WWW=		https://metacpan.org/release/Unix-Lsof
 
 BUILD_DEPENDS=	p5-IPC-Run3>=0:devel/p5-IPC-Run3
 RUN_DEPENDS=	p5-IPC-Run3>=0:devel/p5-IPC-Run3

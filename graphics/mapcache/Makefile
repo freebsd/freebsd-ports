@@ -6,6 +6,7 @@ MASTER_SITES=		http://download.osgeo.org/mapserver/
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		Server that implements tile caching to speed up access to WMS layers
+WWW=		https://www.mapserver.org/mapcache/
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE

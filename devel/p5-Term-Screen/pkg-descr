@@ -5,5 +5,3 @@ create a child module implementing Screen with MS-DOS, ioctl, or other
 means to get raw and unblocked input. This is not a replacement for
 Curses -- it has no memory.  This was written so that it could be easily
 changed to fit nasty systems, and to be available first thing.
-
-WWW: https://metacpan.org/release/Term-Screen

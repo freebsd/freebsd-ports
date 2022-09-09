@@ -6,5 +6,3 @@ portable applications.
 For generate same result strings on any locale,
 POSIX::strftime::Compiler wraps POSIX::strftime and converts some
 format characters to perl code.
-
-WWW: https://metacpan.org/release/POSIX-strftime-Compiler

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Text Editor written in Python
+WWW=		https://github.com/asottile/babi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

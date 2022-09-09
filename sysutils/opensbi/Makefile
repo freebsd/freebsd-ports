@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mhorne@FreeBSD.org
 COMMENT=	RISC-V SBI bootloader and firmware
+WWW=		https://github.com/riscv/opensbi
 
 LICENSE=	BSD2CLAUSE
 

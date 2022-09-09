@@ -8,5 +8,3 @@ provides:
   checking which are defined.
 - Higher-level functions which install the build dependencies into a temporary
   environment and build a wheel/sdist using them.
-
-WWW: https://github.com/pypa/pep517

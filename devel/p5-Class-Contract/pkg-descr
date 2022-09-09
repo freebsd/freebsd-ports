@@ -4,5 +4,3 @@ object-oriented Perl.  The module provides a declarative syntax for
 attribute, method, constructor, and destructor definitions at both the
 object and class level.  Pre-conditions, post-conditions, and class
 invariants are also fully supported.
-
-WWW: https://metacpan.org/release/Class-Contract

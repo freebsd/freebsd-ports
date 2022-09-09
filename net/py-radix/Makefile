@@ -7,6 +7,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lerik@nolink.net
 COMMENT=	Python radix-tree implementation
+WWW=		https://github.com/mjschultz/py-radix
 
 LICENSE=	ISCL BSD4CLAUSE
 LICENSE_COMB=	dual

@@ -6,5 +6,3 @@ differently on different platforms.
 Note that you cannot use regular expressions or split in callbacks. This
 is due to a limitation of perl's regular expression implementation
 (which is not re-entrant).
-
-WWW: https://metacpan.org/release/XML-Parser-Lite

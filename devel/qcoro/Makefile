@@ -5,6 +5,7 @@ CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Coroutines for Qt
+WWW=		https://github.com/danvratil/qcoro
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt

@@ -7,5 +7,3 @@ environments. Unlike other packages which grow over time proto has
 become smaller over time as it was successively polished to reduce
 it to its essentials. Despite its small size prototype-based systems
 can be more powerful than more complex class-based systems.
-
-WWW: https://github.com/hadley/proto

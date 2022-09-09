@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Modern replacement for ls
+WWW=		https://the.exa.website/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

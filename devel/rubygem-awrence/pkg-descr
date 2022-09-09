@@ -5,5 +5,3 @@ Awrence to the rescue.
 
 This gem recursively converts all snake_case keys in a hash structure
 to camelBack or CamelCase.
-
-WWW: https://github.com/futurechimp/awrence

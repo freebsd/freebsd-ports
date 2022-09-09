@@ -1,5 +1,3 @@
 Yaconf is a configurations container, it parses ini files, store the result in
 PHP when PHP is started, configurations live in the whole PHP lifecycle, which
 makes it very fast.
-
-WWW: https://pecl.php.net/package/yaconf

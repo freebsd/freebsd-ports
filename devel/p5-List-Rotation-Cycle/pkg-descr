@@ -5,5 +5,3 @@ List::Rotation::Cycle is implemented as a Singleton Pattern. You always just
 get 1 (the very same) Cycle object even if you use the new method several
 times. This is done by using Memoize on the new method. It returns the same
 object for every use of new that comes with the same List of parameters.
-
-WWW: https://metacpan.org/release/List-Rotation-Cycle

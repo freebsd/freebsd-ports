@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 6 player software for a certain json-based for 2d animations
+WWW=		https://qt.io
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon

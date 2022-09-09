@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/rockdaboot/libpsl/releases/download/${PORTVERSI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library to handle the Public Suffix List
+WWW=		https://github.com/rockdaboot/libpsl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

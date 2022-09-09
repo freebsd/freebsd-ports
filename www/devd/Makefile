@@ -1,11 +1,12 @@
 PORTNAME=	devd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Local webserver for developers
+WWW=		https://github.com/cortesi/devd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

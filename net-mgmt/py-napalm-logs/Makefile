@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Cross-vendor normalisation for network syslog messages
+WWW=		https://github.com/napalm-automation/napalm-logs
 
 LICENSE=	APACHE20
 

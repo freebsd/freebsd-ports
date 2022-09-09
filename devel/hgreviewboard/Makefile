@@ -9,6 +9,7 @@ DIST_SUBDIR=	hgreviewboard
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mercurial reviewboard extension
+WWW=		http://www.review-board.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

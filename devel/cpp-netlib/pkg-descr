@@ -15,5 +15,3 @@ offers the following implementations:
 * Network protocol client and server implementations -- A collection of
   network protocol implementations that include embeddable client and server
   types.
-
-WWW: https://github.com/cpp-netlib/cpp-netlib/

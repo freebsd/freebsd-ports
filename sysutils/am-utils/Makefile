@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Berkeley Automounter Suite of Utilities
+WWW=		https://www.am-utils.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

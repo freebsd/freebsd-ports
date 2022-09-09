@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Shell front end for the duplicity backup tool
+WWW=		https://duply.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt

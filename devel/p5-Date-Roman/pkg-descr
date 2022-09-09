@@ -1,5 +1,3 @@
 This Perl module deals with Roman dates.  Very useful for generating custom
 headers for e-mail messages, or just to dazzle and confuse friends, relatives
 and complete strangers.
-
-WWW: https://metacpan.org/release/Date-Roman

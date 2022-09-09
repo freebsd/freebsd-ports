@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.gropp.org/bwm-ng/
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Small and simple bandwidth monitor
+WWW=		https://www.gropp.org/?id=projects&sub=bwm-ng
 
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 

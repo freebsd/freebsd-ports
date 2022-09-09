@@ -3,5 +3,3 @@ with database schema changes in SQLAlchemy projects. Migrate extends
 SQLAlchemy to have database changeset handling. It provides a database
 change repository mechanism which can be used from the command line as
 well as from inside python code.
-
-WWW: https://opendev.org/x/sqlalchemy-migrate

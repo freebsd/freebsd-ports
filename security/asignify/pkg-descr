@@ -19,5 +19,3 @@ Key features:
 - All keys, signatures and encrypted files contain version information allowing
   to change cryptographical primitives in the future without loosing of
   backward compatibility.
-
-WWW: https://github.com/vstakhov/asignify/

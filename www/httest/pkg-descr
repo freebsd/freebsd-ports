@@ -11,5 +11,3 @@ implementing all kinds of HTTP-based tests:
 - Execution of external commandline tools, using their output as request
   or response data, or for validation purposes.
 - Copying stream data (e.g. from a response) and re-using it in variables.
-
-WWW: http://htt.sourceforge.net/

@@ -6,6 +6,7 @@ MASTER_SITES=	http://libcello.org/static/
 
 MAINTAINER=	matthew.closson@gmail.com
 COMMENT=	Higher level programming in C
+WWW=		https://libcello.org
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

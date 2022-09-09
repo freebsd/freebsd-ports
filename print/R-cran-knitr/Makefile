@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	General-Purpose Package for Dynamic Report Generation in R
+WWW=		https://cran.r-project.org/web/packages/knitr/
 
 LICENSE=	GPLv2+
 

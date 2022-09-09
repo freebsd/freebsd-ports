@@ -12,5 +12,3 @@ The padding is stripped before being returned to the user so you shouldn't
 need to worry about it (except truncated keys). Read the doc that comes
 with crypt function to get an idea of what these sizes are. If keysize
 or blocksize returns a zero the default is set to 8 bytes (64 bits).
-
-WWW: https://metacpan.org/release/Crypt-xDBM_File

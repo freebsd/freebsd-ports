@@ -11,6 +11,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Random password generator
+WWW=		https://packages.debian.org/stable/makepasswd
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING-2.0

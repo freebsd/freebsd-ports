@@ -3,5 +3,3 @@ original 'World of Sand' (and later 'Hell of Sand') game implemented in JAVA.
 SDL Sand uses the SDL (Simple DirectMedia Library - http://www.libsdl.org/)
 library for screen output. Therefore the implementation can possibly run on
 every platform supported by SDL.
-
-WWW: https://sourceforge.net/projects/sdlsand/

@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	me@int19h.org
 COMMENT=	Command-line Kiwix tools
+WWW=		https://www.kiwix.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

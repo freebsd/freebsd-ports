@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Python binding of ptrace library
+WWW=		https://github.com/vstinner/python-ptrace
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ DIST_SUBDIR=	3dm2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3ware storage controllers management CLI
+WWW=		http://3ware.com/support/download.asp
 
 LICENSE=	tw_cli
 LICENSE_NAME=	BROADCOM

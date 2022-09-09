@@ -11,5 +11,3 @@ XML::DOM2 is yet _another_ perl XML module.
   * Element and Attribute serialisation overiding.
 * Parsing with SAX (use XML::SAX::PurePerl for low dependancy installs)
 * Internal serialisation
-
-WWW: https://metacpan.org/release/XML-DOM2

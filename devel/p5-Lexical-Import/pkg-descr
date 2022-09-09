@@ -20,5 +20,3 @@ possible on earlier Perls, but because this is such a critical kind of usage in
 most code, this module will ensure that it works, for convenience. If the
 limited lexical importing is desired on earlier Perls, use Lexical::Var
 directly.
-
-WWW: https://metacpan.org/release/Lexical-Import

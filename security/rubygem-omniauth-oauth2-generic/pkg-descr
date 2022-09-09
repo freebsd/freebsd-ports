@@ -14,5 +14,3 @@ requirements/features of some providers not covered by this gem's options, but
 it was designed primarily so that if you are implementing your own OAuth2
 provider for your service, you don't need to write an OmniAuth strategy as long
 as it is compatible with the basic options provided by this gem.
-
-WWW: https://gitlab.com/satorix/omniauth-oauth2-generic

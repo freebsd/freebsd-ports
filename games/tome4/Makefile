@@ -10,6 +10,7 @@ EXTRACT_ONLY=	t-engine4-src-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Epic tactical turn-based roguelike adventure
+WWW=		https://te4.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

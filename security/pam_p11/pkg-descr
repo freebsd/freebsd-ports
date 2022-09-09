@@ -17,5 +17,3 @@ other than the PKCS#11 module file, does not know about
 certificate chains, certificate authorities, revocation
 lists or OCSP. Perfect for the small installation with no
 frills.
-
-WWW: https://github.com/OpenSC/pam_p11

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modify Extensions, Kextcache and Packages on InstallESD
+WWW=		https://github.com/ntkme/iesd
 
 LICENSE=	BSD2CLAUSE
 

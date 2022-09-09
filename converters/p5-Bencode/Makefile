@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	BitTorrent bencode serialisation format
+WWW=		https://metacpan.org/release/Bencode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	https://gitlab.com/rmnvgr/metadata-cleaner/-/archive/v${DISTVERSIO
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Python GTK application to view and clean metadata in files, using mat2
+WWW=		https://gitlab.com/rmnvgr/metadata-cleaner
 
 LICENSE=	CC-BY-SA-4.0 GPLv3+
 LICENSE_COMB=	multi

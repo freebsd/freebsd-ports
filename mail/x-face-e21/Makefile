@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	X-Face utilities for Emacs
+WWW=		https://www.jpl.org/elips/
 
 RUN_DEPENDS=	uncompface:mail/faces
 

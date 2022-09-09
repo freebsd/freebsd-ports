@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.creytiv.com/pub/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Library for real-time comms with async IO support
+WWW=		http://www.creytiv.com/re.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

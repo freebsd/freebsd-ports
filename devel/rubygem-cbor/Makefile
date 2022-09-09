@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Library for CBOR binary object representation
+WWW=		https://cbor.io/
 
 LICENSE=	APACHE20
 

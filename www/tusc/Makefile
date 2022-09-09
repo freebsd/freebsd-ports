@@ -1,10 +1,11 @@
 PORTNAME=	tusc
 DISTVERSION=	0.4.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	TUS Command line client and server
+WWW=		https://github.com/jackhftang/tusc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

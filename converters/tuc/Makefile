@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to Unix Conversion
+WWW=		http://www.whizkidtech.redprince.net/
 
 # Converted from NO_CDROM
 LICENSE=	TUC

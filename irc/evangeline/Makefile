@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-b1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Bot based on Eggdrop
+WWW=		http://www.averse.piasta.pl/
 
 LICENSE=	GPLv2
 

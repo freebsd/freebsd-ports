@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line arguments parser for python
+WWW=		https://github.com/ialbert/plac
 
 LICENSE=	BSD3CLAUSE
 

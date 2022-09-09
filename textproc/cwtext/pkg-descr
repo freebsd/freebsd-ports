@@ -12,5 +12,3 @@ International Morse Code
 
 Supported character set includes [A-Za-z] (all downcased as Morse is not case
 sensitive), [0-9], ",-.?/" plus a few procedural characters (SK, AR, BT etc).
-
-WWW: http://cwtext.sourceforge.net/

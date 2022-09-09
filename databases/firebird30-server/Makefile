@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-3 relational database (server)
+WWW=		https://www.firebirdsql.org/
 
 LICENSE=	IDPL IPL
 LICENSE_COMB=	multi

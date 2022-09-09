@@ -8,5 +8,3 @@ rgbasm(1) (assembler)
 rgblink(1) (linker)
 rgbfix(1) (checksum/header fixer)
 rgbgfx(1) (PNG-to-Game Boy graphics converter)
-
-WWW: https://rgbds.gbdev.io/

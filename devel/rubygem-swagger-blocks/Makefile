@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Define and serve live-updating Swagger JSON for Ruby apps
+WWW=		https://github.com/fotinakis/swagger-blocks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

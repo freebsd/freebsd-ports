@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Yet another Basic for Unix and Windows
+WWW=		http://www.yabasic.de/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

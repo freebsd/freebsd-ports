@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Integration testing tool for rack based web applications
+WWW=		https://github.com/teamcapybara/capybara
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

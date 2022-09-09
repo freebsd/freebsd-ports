@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Utility functions for Hangul in Unicode
+WWW=		https://metacpan.org/release/Lingua-KO-Hangul-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

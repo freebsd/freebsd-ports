@@ -1,5 +1,3 @@
 Jnettop is a traffic visualiser, which captures traffic going through
 the host it is running from and displays streams sorted by bandwidth
 they use.
-
-WWW: https://sourceforge.net/projects/jnettop/

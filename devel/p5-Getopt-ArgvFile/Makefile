@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for processing argument vectors
+WWW=		https://metacpan.org/release/Getopt-ArgvFile
 
 LICENSE=	ART10
 

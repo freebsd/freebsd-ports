@@ -1,9 +1,10 @@
 PORTNAME=	ortp
-PORTVERSION=	5.1.32
+DISTVERSION=	5.1.55
 CATEGORIES=	net
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
+WWW=		https://www.linphone.org/technical-corner/ortp.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -14,7 +15,7 @@ USES=		cmake compiler:c11
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	23439fba3b800c2fdb105af748ca018f51146d57
+GL_COMMIT=	d5505bf226f8c81e5742d854ef559e201fdc2ee9
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_DOC=NO -DENABLE_STATIC=NO -DENABLE_STRICT=NO \

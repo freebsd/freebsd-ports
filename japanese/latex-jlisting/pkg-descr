@@ -3,5 +3,3 @@ handling Japanese text.
 
 Use this package with listings.sty as:
 \usepackage{listings,jlisting}
-
-WWW: http://sourceforge.jp/projects/mytexpert/

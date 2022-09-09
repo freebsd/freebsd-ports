@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, modular, transport and protocol neutral RPC library
+WWW=		https://github.com/mbr/tinyrpc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

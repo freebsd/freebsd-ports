@@ -5,5 +5,3 @@ The charm of XXX-debugging is that it is easy to type, rarely requires parens
 and stands out visually so that you remember to remove it.
 
 XXX.pm also exports WWW, YYY and ZZZ which do similar debugging things.
-
-WWW: https://metacpan.org/release/XXX

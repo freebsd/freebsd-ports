@@ -3,5 +3,3 @@ under the CeCILL free software licenses (LGPL-like and/or GPL-compatible). It
 provides several different user interfaces to convert / manipulate / filter /
 visualize generic image datasets, ranging from 1d scalar signals to 3d+t
 sequences of multi-spectral volumetric images, hence including 2d color images.
-
-WWW: https://gmic.eu/

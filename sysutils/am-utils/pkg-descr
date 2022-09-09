@@ -8,5 +8,3 @@ are mounted on demand when they are first referenced, and unmounted
 after a period of inactivity. This helps to centralize all file system
 access, provide a uniform site-wide namespace, and minimize downtimes
 for clients.
-
-WWW: http://www.am-utils.org/

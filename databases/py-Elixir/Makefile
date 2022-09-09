@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Declarative Mapper for SQLAlchemy
+WWW=		http://elixir.ematia.de/
 
 LICENSE=	MIT
 

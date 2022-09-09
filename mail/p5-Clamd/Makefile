@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Connect to local clamd(8) service and send commands
+WWW=		https://metacpan.org/release/Clamd
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	clamd:security/clamav

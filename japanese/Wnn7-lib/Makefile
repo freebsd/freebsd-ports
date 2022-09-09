@@ -8,6 +8,7 @@ DISTNAME=	Wnn7SDK
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
+WWW=		https://www.omronsoft.co.jp/
 
 USES=		imake tar:tgz
 USE_LDCONFIG=	yes

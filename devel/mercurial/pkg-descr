@@ -11,5 +11,3 @@ efficient handling of very large distributed projects. Features include:
     * Integrated stand-alone web interface
     * Small Python codebase
     * GPL license
-
-WWW: https://www.mercurial-scm.org/

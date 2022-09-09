@@ -4,5 +4,3 @@ scalar. In that case, the Storable module is used to freeze and thaw the
 value automatically going in and out of the memcached.
 
 The Python API, while tested, has not experienced real-world production use.
-
-WWW: https://github.com/linsomniac/python-memcached

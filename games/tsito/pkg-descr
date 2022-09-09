@@ -4,5 +4,3 @@ pipes to a GUI frontend. If used in a console it uses ASCII characters to
 display the board on the screen.
 
 'tsito', stands for "The Secret Inside The Orange".
-
-WWW: http://xiangqi-engine.sourceforge.net/

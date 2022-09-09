@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to support app to run as a reverse proxy backend
+WWW=		https://metacpan.org/release/Plack-Middleware-ReverseProxy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

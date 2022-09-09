@@ -6,6 +6,7 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
+WWW=		https://wiki.qemu.org/Main_Page
 
 LICENSE=	GPLv2
 
@@ -130,8 +131,12 @@ MAKE_ARGS+=	ARCH=ppc
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == "powerpc64"
+.if ${ARCH:Mpowerpc64*}
+CONFIGURE_ARGS+=	--disable-bsd-user
 MAKE_ARGS+=	ARCH=ppc64
+PLIST_SUB+=	BSDUSER="@comment "
+.else
+PLIST_SUB+=	BSDUSER=""
 .endif
 
 .if ${ARCH} == "sparc64"

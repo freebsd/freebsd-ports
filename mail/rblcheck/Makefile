@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	moro@remus.dti.ne.jp
 COMMENT=	Command-line interface to Paul Vixie's RBL filter
+WWW=		http://rblcheck.sourceforge.net/
 
 LICENSE=	GPLv2
 

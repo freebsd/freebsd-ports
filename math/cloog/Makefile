@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Code generator in the polyhedral model
+WWW=		http://www.cloog.org/
 
 LICENSE=	LGPL21
 

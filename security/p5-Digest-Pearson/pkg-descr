@@ -6,5 +6,3 @@ data load balancing.
 The implementation is in C, so it is fast. If you prefer a pure Perl version
 and can tolerate slower speed, you might want to consider
 Digest::Pearson::PurePerl instead.
-
-WWW: https://metacpan.org/release/Digest-Pearson

@@ -5,6 +5,7 @@ CATEGORIES=	astro windowmaker
 
 MAINTAINER=	tkuiper@inxsoft.net
 COMMENT=	Dockapp that displays information on Jupiter
+WWW=		http://www.inxsoft.net/wmjupiter/
 
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual

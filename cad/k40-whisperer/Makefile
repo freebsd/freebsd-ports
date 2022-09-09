@@ -6,6 +6,7 @@ DISTNAME=	K40_Whisperer-${DISTVERSION}_src
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	GUI control software for the stock K40 laser cutter controller
+WWW=		https://www.scorchworks.com/K40whisperer/k40whisperer.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt

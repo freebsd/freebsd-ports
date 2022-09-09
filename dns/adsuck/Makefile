@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	phil@philpep.org
 COMMENT=	DNS relay for ad blocking
+WWW=		http://opensource.conformal.com/wiki/Adsuck
 
 LICENSE=	ISCL
 

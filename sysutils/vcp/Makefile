@@ -5,6 +5,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Copy files in curses interface
+WWW=		http://members.iinet.net.au/~lynx/vcp
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: logw
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: logw

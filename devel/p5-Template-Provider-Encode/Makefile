@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Encode templates for Template Toolkit
+WWW=		https://metacpan.org/release/Template-Provider-Encode
 
 RUN_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 

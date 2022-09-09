@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone Vulnerability Manager central management service
+WWW=		https://github.com/greenbone/gvmd
 
 LICENSE=	AGPLv3+
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Slicing application for 3D printers
+WWW=		https://github.com/Ultimaker/Cura/wiki
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

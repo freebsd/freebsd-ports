@@ -8,6 +8,7 @@ DISTNAME=	vsFTPd-${UPSTREAMVERSION}-ext${EXTVERSION}
 
 MAINTAINER=	xjflyttp@gmail.com
 COMMENT=	FTP daemon that aims to be "very secure". Extended build
+WWW=		https://vsftpd.devnet.ru/eng/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

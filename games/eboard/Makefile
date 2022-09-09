@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
+WWW=		https://www.bergo.eng.br/eboard/
 
 LICENSE=	GPLv2
 

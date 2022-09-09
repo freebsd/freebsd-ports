@@ -7,6 +7,7 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Module with libxcb/libX11 extension/replacement libraries
+WWW=		https://xcb.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

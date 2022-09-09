@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	61
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rails internals bootup, plugins, generators, and rake tasks
+WWW=		https://github.com/rails/rails/tree/master/railties
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

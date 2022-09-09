@@ -6,6 +6,7 @@ MASTER_SITES=	https://aklv.github.io/distfiles/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Allows files to be extracted from ARJ archives
+WWW=		http://www.arjsoftware.com/
 
 USES=	tar:tgz
 

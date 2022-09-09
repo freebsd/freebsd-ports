@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Library for uniform random number generation in OpenCL
+WWW=		https://github.com/clMathLibraries/clRNG
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

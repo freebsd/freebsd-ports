@@ -6,6 +6,7 @@ CATEGORIES=	math # neural-networks
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chainer module for numpy-like API and DNN acceleration using MKL-DNN
+WWW=		https://github.com/intel/ideep
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

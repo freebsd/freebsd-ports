@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	atkin901@gmail.com
 COMMENT=	Perl module for fast, high-quality fixed-point image resizing
+WWW=		https://metacpan.org/release/Image-Scale
 
 LICENSE=	GPLv2
 

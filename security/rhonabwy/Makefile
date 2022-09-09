@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Javascript Object Signing and Encryption (JOSE) library
+WWW=		https://github.com/babelouest/rhonabwy
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

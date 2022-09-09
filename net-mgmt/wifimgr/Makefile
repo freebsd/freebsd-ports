@@ -5,6 +5,7 @@ MASTER_SITES=	https://opal.com/src/wifimgr/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
+WWW=		https://opal.com/src/wifimgr/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

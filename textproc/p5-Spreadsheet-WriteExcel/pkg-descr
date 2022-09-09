@@ -7,5 +7,3 @@ The Excel file produced by this module is compatible with Excel 5, 95,
 97, 2000, 2002 and 2003, also Gnumeric and OpenOffice.
 
 This module cannot be used to write to an existing Excel file.
-
-WWW: https://metacpan.org/release/Spreadsheet-WriteExcel

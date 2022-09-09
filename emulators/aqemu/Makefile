@@ -6,6 +6,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt5 based QEMU frontend
+WWW=		https://github.com/tobimensch/aqemu
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

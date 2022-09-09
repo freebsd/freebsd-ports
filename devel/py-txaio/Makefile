@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Compatibility API between asyncio/Twisted/Trollius
+WWW=		https://github.com/crossbario/txaio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

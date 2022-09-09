@@ -4,5 +4,3 @@ or _is.
 
 Test::Net::LDAP is a subclass of Net::LDAP, so all the methods defined
 for Net::LDAP are available in addition to search_ok, add_is, etc.
-
-WWW: https://metacpan.org/release/Test-Net-LDAP

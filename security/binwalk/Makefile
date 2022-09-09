@@ -6,6 +6,7 @@ CATEGORIES=	security python
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Search binary images for embedded files and executable code
+WWW=		http://www.binwalk.org
 
 LICENSE=	MIT
 

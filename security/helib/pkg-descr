@@ -6,5 +6,3 @@ optimizations to make homomorphic evaluation run faster, focusing mostly
 on effective use of the Smart-Vercauteren ciphertext packing techniques
 and the Gentry-Halevi-Smart optimizations. See this report for a
 description of a few of the algorithms using in this library.
-
-WWW: https://github.com/homenc/HElib

@@ -6,6 +6,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
+WWW=		http://www.zangband.org/
 
 # Converted from NO_CDROM
 LICENSE=	Zangband

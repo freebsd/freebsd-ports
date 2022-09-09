@@ -2,5 +2,3 @@ A JSX lexer for Pygments. Supports:
 
  * Sphinx
  * mkdocs
-
-WWW: https://github.com/fcurella/jsx-lexer

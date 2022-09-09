@@ -1,10 +1,11 @@
 PORTNAME=	runj
 DISTVERSION=	g20211119
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Experimental, proof-of-concept OCI-compatible runtime for jails
+WWW=		https://github.com/samuelkarp/runj
 
 LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi

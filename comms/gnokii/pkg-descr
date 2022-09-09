@@ -4,5 +4,3 @@ The library handles SMS, phonebook, calendar, phone calls, and other
 mobile phone capabilities. It supports most of the GSM phones: Nokia
 ones using Nokia proprietary protocol and AT-capable ones -- using
 standard AT commands.
-
-WWW: https://www.gnokii.org/

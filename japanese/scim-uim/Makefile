@@ -7,6 +7,7 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 
 MAINTAINER=	s_yanagita@ybb.ne.jp
 COMMENT=	SCIM IMEngine module using UIM input method library
+WWW=		https://sourceforge.net/projects/scim/files/scim-uim/
 
 BUILD_DEPENDS=	scim:textproc/scim
 LIB_DEPENDS=	libuim.so:textproc/uim

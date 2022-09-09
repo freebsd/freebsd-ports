@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.shiftygames.com/torrent/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Score points without letting the tiles touch the top of the board
+WWW=		http://www.shiftygames.com/torrent/torrent.html
 
 GNU_CONFIGURE=	yes
 USES=		gmake sdl

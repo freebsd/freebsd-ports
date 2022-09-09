@@ -4,8 +4,9 @@ CATEGORIES=	net
 MASTER_SITES=	SF/stun/stun/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_Aug13
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple STUN (RFC 3489) server and client
+WWW=		http://www.vovida.org/applications/downloads/stun/
 
 USES=		gmake tar:tgz
 USE_RC_SUBR=	stund

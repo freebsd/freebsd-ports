@@ -5,6 +5,7 @@ CATEGORIES=	mail www pear
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	PEAR class that provides multiple interfaces for sending emails
+WWW=		https://pear.php.net/package/Mail
 
 LICENSE=	BSD3CLAUSE
 

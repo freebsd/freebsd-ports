@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Control SCSI media changer devices
+WWW=		http://mtx.badtux.net/
 
 LICENSE=	GPLv2
 

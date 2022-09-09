@@ -7,5 +7,3 @@ is reused to achieve higher efficiency and faster responses. When the chain is
 set up, cntlm should be used as a proxy in your applications. Cntlm also
 integrates transparent TCP/IP port forwarding (tunneling) through the parent
 (incl. authentication).
-
-WWW: http://cntlm.sourceforge.net/

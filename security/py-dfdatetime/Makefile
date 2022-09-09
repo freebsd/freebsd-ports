@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Digital Forensics Date and Time
+WWW=		https://github.com/log2timeline/dfdatetime
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

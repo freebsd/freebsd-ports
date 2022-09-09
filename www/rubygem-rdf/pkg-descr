@@ -20,5 +20,4 @@ Features:
   cannot be determined from file characteristics.
 - Provisional support for RDF*.
 
-WWW: https://ruby-rdf.github.io/rdf/
-WWW: https://github.com/ruby-rdf/rdf
+See also: https://github.com/ruby-rdf/rdf

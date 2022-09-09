@@ -6,6 +6,7 @@ MASTER_SITES=	http://sarrazip.com/dev/
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator
+WWW=		http://sarrazip.com/dev/verbiste.html
 
 LICENSE=	GPLv2
 

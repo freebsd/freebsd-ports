@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Web interface for Beancount
+WWW=		https://beancount.github.io/fava/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

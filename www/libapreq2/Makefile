@@ -6,6 +6,7 @@ MASTER_SITES=	APACHE_HTTPD/libapreq
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
+WWW=		https://metacpan.org/dist/libapreq2
 
 LICENSE=	APACHE20
 

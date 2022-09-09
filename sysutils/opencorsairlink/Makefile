@@ -7,6 +7,7 @@ PATCHFILES=	d600c7ff032a3911d30b039844a31f0b3acfe26a.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support for CorsairLink Devices
+WWW=		https://github.com/audiohacked/OpenCorsairLink
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

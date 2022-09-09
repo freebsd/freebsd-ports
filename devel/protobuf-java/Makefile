@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Core Protocol Buffers library
+WWW=		https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
 
 LICENSE=	BSD3CLAUSE
 

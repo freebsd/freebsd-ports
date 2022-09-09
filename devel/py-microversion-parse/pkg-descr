@@ -4,5 +4,3 @@ effectively manage microversions.
 
 Also included, in the middleware module, is a MicroversionMiddleware that will
 process incoming microversion headers.
-
-WWW: https://github.com/openstack/microversion-parse

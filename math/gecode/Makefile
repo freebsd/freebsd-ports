@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic Constraint Development Environment
+WWW=		https://www.gecode.org/
 
 LICENSE=	BSL MIT
 LICENSE_COMB=	multi

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovak thesaurus
+WWW=		https://www.sk-spell.sk.cx/thesaurus/
 
 LICENSE=	MIT
 

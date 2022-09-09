@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Simple serialization library based on ast.literal_eval
+WWW=		https://pypi.org/project/serpent/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,5 +9,3 @@ simulators. It is intended as an abstraction isolating both sides of the API:
 any simulator can use a given connection generator and a given simulator can use
 any library providing the ConnectionGenerator interface. It was initially
 developed to support the use of libcsa from NEST.
-
-WWW: https://github.com/INCF/libneurosim

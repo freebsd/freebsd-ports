@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R package for flexibly restructuring and aggregating data
+WWW=		http://had.co.nz/reshape/
 
 LICENSE=	MIT
 

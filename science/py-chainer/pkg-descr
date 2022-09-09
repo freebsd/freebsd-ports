@@ -7,5 +7,3 @@ Chainer is a powerful, flexible and intuitive deep learning framework.
 * Forward computation can include any control flow statements of Python without
   lacking the ability of backpropagation. It makes code intuitive and easy to
   debug.
-
-WWW: https://chainer.org/

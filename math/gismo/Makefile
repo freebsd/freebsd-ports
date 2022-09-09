@@ -5,6 +5,7 @@ CATEGORIES=	math # geometry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for isogeometric analysis (IGA)
+WWW=		https://gismo.github.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

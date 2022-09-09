@@ -1,10 +1,11 @@
---- src/membergroup.cpp.orig	2021-08-02 18:54:15 UTC
+--- src/membergroup.cpp.orig	2022-08-11 20:14:32 UTC
 +++ src/membergroup.cpp
-@@ -27,6 +27,7 @@
- #include "doxygen.h"
- #include "docparser.h"
- #include "entry.h"
-+#include <sys/types.h>
- #include "md5.h"
+@@ -15,6 +15,8 @@
+  *
+  */
  
- MemberGroup::MemberGroup(const Definition *container,int id,const QCString &hdr,
++#include <sys/types.h>
++
+ #include "membergroup.h"
+ #include "memberlist.h"
+ #include "outputlist.h"

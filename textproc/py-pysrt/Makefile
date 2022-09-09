@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SubRip (.srt) subtitle parser and writer
+WWW=		https://github.com/byroot/pysrt/
 
 LICENSE=	GPLv3
 

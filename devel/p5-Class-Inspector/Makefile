@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides information about classes
+WWW=		https://metacpan.org/release/Class-Inspector
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

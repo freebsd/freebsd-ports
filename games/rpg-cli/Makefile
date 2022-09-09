@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Your filesystem as a dungeon
+WWW=		https://github.com/facundoolano/rpg-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

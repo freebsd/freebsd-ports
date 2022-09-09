@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Send and receive RTP packets (RFC3550)
+WWW=		https://metacpan.org/release/Net-RTP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Socket-Multicast6>=0.02:net/p5-IO-Socket-Multicast6 \

@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Parallel, indexing version of XZ
+WWW=		https://github.com/vasi/pixz
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

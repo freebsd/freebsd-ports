@@ -7,6 +7,7 @@ DISTNAME=	RubyMine-${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Ruby on Rails IDE by JetBrains
+WWW=		https://www.jetbrains.com/ruby/
 
 LICENSE=	IntelliJ-Rubymine
 LICENSE_NAME=	Subscription license agreement for business and organizations

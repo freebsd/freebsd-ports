@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility methods and base class for manipulating Perl via PPI
+WWW=		https://metacpan.org/release/PPIx-EditorTools
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

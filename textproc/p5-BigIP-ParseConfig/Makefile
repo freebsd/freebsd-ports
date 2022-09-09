@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	F5 BigIP configuration parser
+WWW=		https://metacpan.org/release/BigIP-ParseConfig
 
 LICENSE=	GPLv2
 

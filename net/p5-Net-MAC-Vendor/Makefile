@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Look up the vendor for a MAC
+WWW=		https://metacpan.org/release/Net-MAC-Vendor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

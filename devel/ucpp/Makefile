@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	C preprocessor and lexer
+WWW=		https://code.google.com/archive/p/ucpp/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

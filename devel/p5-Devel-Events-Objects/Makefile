@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module providing object tracking support for Devel::Events
+WWW=		https://metacpan.org/release/Devel-Events-Objects
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Events>=0:devel/p5-Devel-Events \

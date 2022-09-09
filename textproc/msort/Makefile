@@ -6,6 +6,7 @@ MASTER_SITES=	http://billposer.org/Software/Downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sorting files in sophisticated ways
+WWW=		https://billposer.org/Software/msort.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

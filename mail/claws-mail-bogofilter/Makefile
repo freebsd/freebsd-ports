@@ -1,6 +1,7 @@
 PORTNAME=	bogofilter
 
 COMMENT=	Spam filtering plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugin.php?plugin=bogofilter
 
 CLAWS_PLUGINS_BUILD=	${PORTNAME}
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	papowell@astart.com
 COMMENT=	Dump Compiled XML Translators
+WWW=		https://metacpan.org/release/XML-Compile-Dumper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -10,5 +10,3 @@ send messages to each other. The main features include:
 * Detection and removal of crashed members
 * Sending and receiving of member-to-group messages (point-to-multipoint)
 * Sending and receiving of member-to-member messages (point-to-point)
-
-WWW: http://www.jgroups.org/

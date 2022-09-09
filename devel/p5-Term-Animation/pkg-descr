@@ -8,5 +8,3 @@ If the constructor is passed no arguments, it assumes that it is
 running full screen, and behaves accordingly. Alternatively, it can
 accept a curses window (created with the Curses newwin call) as an
 argument, and will draw into that window.
-
-WWW: https://metacpan.org/release/Term-Animation

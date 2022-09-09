@@ -7,6 +7,7 @@ DISTNAME=	p7zip_${DISTVERSION}_src_all
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio PPMD compressor
+WWW=		https://www.7-zip.org/sdk.html
 
 LICENSE=	LGPL21+ UNRAR
 LICENSE_COMB=	multi

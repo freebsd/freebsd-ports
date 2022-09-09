@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQLAlchemy integration with the marshmallow serialization library
+WWW=		https://github.com/marshmallow-code/marshmallow-sqlalchemy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

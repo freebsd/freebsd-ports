@@ -5,5 +5,3 @@ reference to a OpenCA::OpenSSL instance.
 This module provides an interface to PKCS#7 structures, no specific
 crypto functions are performed (see the OpenCA::OpenSSL module for
 this).
-
-WWW: https://metacpan.org/release/OpenCA-PKCS7

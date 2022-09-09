@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for easily overriding subroutines
+WWW=		https://metacpan.org/release/Sub-Override
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for writing C++ tests on a variety of platforms
+WWW=		https://github.com/google/googletest
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

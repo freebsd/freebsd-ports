@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	2D puzzle-platformer game
+WWW=		https://kiwisauce.com/beret/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/lgpl-3.0.txt

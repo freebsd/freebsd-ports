@@ -7,6 +7,7 @@ CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	NTT-based fast lattice cryptography library
+WWW=		https://github.com/quarkslab/NFLlib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_LICENSE.txt

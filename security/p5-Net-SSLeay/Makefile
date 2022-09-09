@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to SSL
+WWW=		https://metacpan.org/release/Net-SSLeay
 
 LICENSE=	OpenSSL
 

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}+-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMYK plugin for The GIMP
+WWW=		https://cue.yellowmagic.info/softwares/separate.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

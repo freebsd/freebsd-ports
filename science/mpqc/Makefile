@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Massively Parallel Quantum Chemistry Program
+WWW=		https://mpqc.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

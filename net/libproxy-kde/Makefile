@@ -3,6 +3,7 @@ CATEGORIES=	net devel
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	KDE plug-in for libproxy
+WWW=		https://libproxy.github.io/libproxy/
 
 USES=		kde:5
 USE_KDE=	config

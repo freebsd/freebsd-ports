@@ -2,11 +2,12 @@ PORTNAME=	cayley
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.5-2
 DISTVERSIONSUFFIX=	-gcf576ba
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source graph database
+WWW=		https://github.com/cayleygraph/cayley
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

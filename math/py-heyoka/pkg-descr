@@ -10,5 +10,3 @@ equations (ODEs) via Taylor's method. Notable features include:
 * interoperability with SymPy,
 * a high-performance implementation of Taylor's method based on automatic
   differentiation techniques and aggressive just-in-time compilation via LLVM.
-
-WWW: https://bluescarni.github.io/heyoka.py/

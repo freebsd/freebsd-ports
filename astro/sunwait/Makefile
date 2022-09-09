@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.risacher.org/sunwait/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Calculate sunrise and sunset
+WWW=		http://www.risacher.org/sunwait/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

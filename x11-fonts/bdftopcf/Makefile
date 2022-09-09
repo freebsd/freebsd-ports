@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Convert X font from BDF to PCF
+WWW=		https://www.x.org/archive/X11R6.8.1/doc/bdftopcf.1.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

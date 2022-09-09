@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-Quake3-${PORTVERSION}_full
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: OSP Tourney DM/CA/CTF
+WWW=		https://www.orangesmoothie.org/tourneyQ3A/
 
 USES=		zip
 NO_BUILD=	yes

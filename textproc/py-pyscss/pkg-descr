@@ -1,4 +1,2 @@
 pyScss is a compiler for SCSS flavor of the Sass language, a superset of CSS3
 that adds programming capabilities and some other syntactic sugar.
-
-WWW: https://github.com/Kronuz/pyScss

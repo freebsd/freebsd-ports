@@ -4,6 +4,7 @@ CATEGORIES=	archivers www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to manipulate tar, gz, tgz, bz2, tbz, zip, ar (deb) files
+WWW=		https://pear.php.net/package/File_Archive
 
 LICENSE=	LGPL3
 

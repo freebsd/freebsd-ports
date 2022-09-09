@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	QR Code image generator
+WWW=		https://github.com/lincolnloop/python-qrcode
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
+WWW=		http://www.weitz.de/cl-ppcre/
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:textproc/cl-ppcre
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:textproc/cl-ppcre

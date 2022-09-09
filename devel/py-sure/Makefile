@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility belt for automated testing in Python for Python
+WWW=		https://github.com/gabrielfalcao/sure
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	lang tcl
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Small footprint implementation of the Tcl programming language
+WWW=		http://jim.tcl.tk
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

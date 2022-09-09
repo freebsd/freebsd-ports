@@ -5,5 +5,3 @@ for programming this family of devices.
 This port is based on original fxload(8) program available from Linux
 Hotplug Project. Libusb support has been provided to correctly work on
 FreeBSD and patches for the FX3 have been merged in.
-
-WWW: https://bitbucket.org/DJOConnor/fxload

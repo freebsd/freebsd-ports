@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atomix-like game of moving marbles in puzzles
+WWW=		http://lgames.sourceforge.net/index.php?project=LMarbles
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

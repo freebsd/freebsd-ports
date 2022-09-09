@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtualenv fixture for py.test
+WWW=		https://github.com/manahl/pytest-plugins/tree/master/pytest-virtualenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

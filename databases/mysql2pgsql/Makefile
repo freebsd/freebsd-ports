@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.perl
 
 MAINTAINER=	klossalex@gmail.com
 COMMENT=	Convert a MySQL dump to a PostgreSQL dump
+WWW=		http://pgfoundry.org/projects/mysql2pgsql/
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

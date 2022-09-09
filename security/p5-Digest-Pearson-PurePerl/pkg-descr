@@ -5,5 +5,3 @@ for variable length input strings on the range 0-255, and thus, it is well
 suited for data load balancing.
 If you prefer a fast implementation, you might want to
 consider Digest::Pearson instead.
-
-WWW: https://metacpan.org/release/Digest-Pearson-PurePerl

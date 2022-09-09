@@ -3,5 +3,3 @@ and bar' will retrieve rows containing the words foo and bar. It does it
 by generating the appropriate SQL request.
 
 Text-Query-SQL is derived from the Text-Query module.
-
-WWW: https://metacpan.org/release/Text-Query-SQL

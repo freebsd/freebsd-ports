@@ -14,5 +14,3 @@ format; elemental format.
 - Several orderings interfaced : AMD, AMF, PORD, METIS
 
 When MPI is disabled, libseq is installed.
-
-WWW: http://graal.ens-lyon.fr/MUMPS/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Django REST framework
+WWW=		https://github.com/mjumbewu/django-rest-framework-csv
 
 LICENSE=	BSD2CLAUSE
 

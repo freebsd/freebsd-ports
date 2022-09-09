@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
+WWW=		https://sillycycle.com/xlockmore.html
 
 LICENSE=	BSD2CLAUSE
 

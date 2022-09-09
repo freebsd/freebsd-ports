@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Implementation of lxml.xmlfile for the standard library
+WWW=		https://bitbucket.org/openpyxl/et_xmlfile
 
 LICENSE=	MIT
 

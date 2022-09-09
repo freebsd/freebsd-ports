@@ -5,5 +5,3 @@ the years -- has been extracted into a separate YAML file so as to be reusable
 as is by implementations in other programming languages.
 
 ua-parser is just a small wrapper around this data.
-
-WWW: https://github.com/ua-parser/uap-python

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Utilities meant for Robot Frameworks usage
+WWW=		https://franz-see.github.io/Robotframework-Database-Library/
 
 LICENSE=	APACHE20
 

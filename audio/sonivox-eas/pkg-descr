@@ -1,0 +1,5 @@
+The Sonivox EAS project is a MIDI Synth library based on the Sonivox EAS
+Synthesizer published by Google on the Android Open Source Project. It is a
+real time GM synthesizer without needing external soundfonts, using embedded
+samples instead. It consumes very little resources, so it may be indicated in
+Linux projects for small embedded devices.

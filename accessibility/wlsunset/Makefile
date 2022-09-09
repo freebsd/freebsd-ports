@@ -8,6 +8,7 @@ PATCHFILES+=	601dfc87ff6e.patch:-p1 # https://lists.sr.ht/~kennylevinsen/wlsunse
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Day/night gamma adjustments for Wayland
+WWW=		https://sr.ht/~kennylevinsen/wlsunset
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

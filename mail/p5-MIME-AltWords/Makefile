@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dliakh@ukr.net
 COMMENT=	Perl module for encoding and decoding MIME words
+WWW=		https://metacpan.org/release/MIME-AltWords
 
 USES=		perl5
 USE_PERL5=	configure

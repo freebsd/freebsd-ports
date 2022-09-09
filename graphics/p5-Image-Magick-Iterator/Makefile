@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sequentially read Image::Magick object from a filehandle
+WWW=		https://metacpan.org/release/Image-Magick-Iterator
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Image-PBMlib>=1.05:graphics/p5-Image-PBMlib

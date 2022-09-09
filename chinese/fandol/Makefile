@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CTAN Fandol: Four GNU GPLv3-licensed Chinese OpenType fonts
+WWW=		https://ctan.org/pkg/fandol
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/fandol/COPYING

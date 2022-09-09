@@ -8,5 +8,3 @@ better.
 This formula is widely used in geographic information systems (GIS) and is much
 more accurate than methods for computing the great-circle distance (which assume
 a spherical Earth).
-
-WWW: https://github.com/maurycyp/vincenty

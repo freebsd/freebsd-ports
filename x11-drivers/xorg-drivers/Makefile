@@ -5,6 +5,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
+WWW=		https://www.x.org/
 
 VIDEODIR=	${LOCALBASE}/lib/xorg/modules/drivers
 INPUTDIR=	${LOCALBASE}/lib/xorg/modules/input
@@ -69,7 +70,7 @@ OPTIONS_DEFINE_sparc64=	SUNFFB
 OPTIONS_DEFAULT_sparc64=SUNFFB
 
 AMDGPU_DESC=		Install amdgpu video driver
-ATI_DESC=		Install ati (radeon) video driver 
+ATI_DESC=		Install ati (radeon) video driver
 GEODE_DESC=		Install geode video driver
 INTEL_DESC=		Install intel video driver
 SUNFFB_DESC=		Install sunffb video driver

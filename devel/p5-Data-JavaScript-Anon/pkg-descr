@@ -1,5 +1,3 @@
 Data::JavaScript::Anon provides the ability to dump large
 simple data structures to JavaScript. That is, things that
 don't need to be a class, or have special methods or whatever.
-
-WWW: https://metacpan.org/release/Data-JavaScript-Anon

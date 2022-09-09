@@ -619,10 +619,6 @@ include/postgresql/server/regex/regerrs.h
 include/postgresql/server/regex/regex.h
 include/postgresql/server/regex/regexport.h
 include/postgresql/server/regex/regguts.h
-include/postgresql/server/replication/backup_manifest.h
-include/postgresql/server/replication/basebackup.h
-include/postgresql/server/replication/basebackup_sink.h
-include/postgresql/server/replication/basebackup_target.h
 include/postgresql/server/replication/decode.h
 include/postgresql/server/replication/logical.h
 include/postgresql/server/replication/logicallauncher.h
@@ -1260,6 +1256,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ka/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/pg_dump-15.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/psql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo

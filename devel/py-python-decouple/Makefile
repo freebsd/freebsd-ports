@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Strict separation of settings from code
+WWW=		https://github.com/henriquebastos/python-decouple/
 
 LICENSE=	MIT
 

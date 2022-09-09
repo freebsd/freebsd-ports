@@ -9,6 +9,7 @@ DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	NLS translations for Squirrelmail (mail/squirrelmail)
+WWW=		https://www.squirrelmail.org/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool for use with clang to analyze \#includes in C and C++ source files
+WWW=		https://include-what-you-use.org
 
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

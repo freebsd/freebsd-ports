@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Project management tool for Emacs
+WWW=		https://github.com/cask/cask
 
 LICENSE=	GPLv3
 

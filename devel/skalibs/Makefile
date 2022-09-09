@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
 MAINTAINER=	crest@rlwinm.de
 COMMENT=	General purpose C libraries used by skarnet.org software
+WWW=		https://www.skarnet.org/software/skalibs/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

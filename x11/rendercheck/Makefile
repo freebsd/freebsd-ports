@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Small program for testing basic Render extension conformance
+WWW=		https://www.freedesktop.org/wiki/Software/xapps/
 
 USES=		xorg xorg-cat:app
 USE_XORG=	xrender

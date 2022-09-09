@@ -3,5 +3,3 @@ and/or the estimated completion time. They work in terminals, in 'Emacs'
 'ESS', 'RStudio', 'Windows' 'Rgui' and the 'macOS' 'R.app'.
 
 The package also provides a 'C++' 'API', that works with or without 'Rcpp'.
-
-WWW: https://cran.r-project.org/web/packages/progress/

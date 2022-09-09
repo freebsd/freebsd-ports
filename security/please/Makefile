@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Execute a command as root
+WWW=		https://github.com/MagikBSD/please
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

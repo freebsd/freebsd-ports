@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	List of Python Standard Libraries
+WWW=		https://github.com/jackmaney/python-stdlib-list
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

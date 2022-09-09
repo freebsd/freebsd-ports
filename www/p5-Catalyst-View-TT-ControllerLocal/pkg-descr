@@ -18,5 +18,3 @@ In addition, since there is no file "edit.html" except in the Frobniz
 directory, C::V::TT::ControllerLocal will default to looking for
 "edit.html" in ./root/ and ./root/base (or whatever you set MyApp->con-
 fig->{INCLUDE_PATH} to).
-
-WWW: https://metacpan.org/release/Catalyst-View-TT-ControllerLocal

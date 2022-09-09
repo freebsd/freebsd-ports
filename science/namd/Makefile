@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:tu}_${DISTVERSION}_Source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer software for molecular dynamics simulation
+WWW=		https://www.ks.uiuc.edu/Research/namd/
 
 LICENSE=	NAMD_MOLECULAR_DYNAMICS_LICENSE
 LICENSE_NAME=	NAMD Molecular Dynamics Software

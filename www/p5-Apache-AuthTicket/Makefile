@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules that implement a cookie-based authentication system
+WWW=		https://metacpan.org/release/Apache-AuthTicket
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

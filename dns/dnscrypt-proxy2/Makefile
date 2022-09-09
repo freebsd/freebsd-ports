@@ -1,11 +1,12 @@
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns security
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Flexible DNS proxy with support for encrypted protocols
+WWW=		https://github.com/jedisct1/dnscrypt-proxy
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,5 +5,3 @@ hashing ring is built using the same algorithm as libketama.
 Consistent hashing is a scheme that provides a hash table functionality
 in a way that the adding or removing of one slot does not significantly
 change the mapping of keys to slots.
-
-WWW: https://pypi.org/project/hash_ring/

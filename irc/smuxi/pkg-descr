@@ -10,5 +10,3 @@ of screen and irssi served as example for this architecture.
 Smuxi also supports the regular single application mode. This behaves like a
 typical IRC client; it doesn't need separate core management and utilizes a
 local engine that is used by the local frontend client.
-
-WWW: https://smuxi.im/

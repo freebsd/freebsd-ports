@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for n-gram analysis
+WWW=		https://metacpan.org/release/Text-Ngram
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

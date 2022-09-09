@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Uptime daemon
+WWW=		https://github.com/rpodgorny/uptimed
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING

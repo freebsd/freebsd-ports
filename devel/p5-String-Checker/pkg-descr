@@ -5,5 +5,3 @@ isn't.  However, if you're checking a bunch of strings (say, for
 example, CGI input parameters) against a set of expectations, this
 comes in pretty handy.  As a matter of fact, the CGI::ArgChecker
 module is a simple, CGI.pm aware wrapper for this library.
-
-WWW: https://metacpan.org/release/String-Checker

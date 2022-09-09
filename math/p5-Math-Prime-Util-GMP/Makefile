@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities related to prime numbers and factoring, using GMP
+WWW=		https://metacpan.org/release/Math-Prime-Util-GMP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

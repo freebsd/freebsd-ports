@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
+WWW=		http://pupnp.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

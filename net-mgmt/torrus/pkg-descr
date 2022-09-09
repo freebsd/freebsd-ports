@@ -19,5 +19,3 @@ data series of any nature. Tobi Oetiker's RRDtool is used for data storage.
       monitored according to the user-defined rules. The rules can also include
       the datasource-specific parameters, e.g. boundary values etc. The
       thresholds are specified by RPN expressions.
-
-WWW: http://torrus.org

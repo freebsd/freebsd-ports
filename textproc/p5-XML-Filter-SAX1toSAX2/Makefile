@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert SAX1 events to SAX2
+WWW=		https://metacpan.org/release/XML-Filter-SAX1toSAX2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX \

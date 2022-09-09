@@ -8,5 +8,3 @@ data. The message ID is automatically added as a query parameter to redirection
 requests. It's sort of like a session within a session, but tied to a request
 rather than global to the browser. (It will even chain across multiple
 redirects.)
-
-WWW: https://metacpan.org/release/Dancer2-Plugin-Deferred

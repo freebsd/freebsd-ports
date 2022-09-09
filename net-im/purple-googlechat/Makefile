@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Google Chat Plugin for libpurple
+WWW=		https://github.com/EionRobb/purple-googlechat
 
 LICENSE=	GPLv3+
 

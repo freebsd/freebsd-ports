@@ -1,4 +1,2 @@
 This module extracts keywords from Chinese text,
 which requires Lingua::ZH::TaBE.
-
-WWW: https://metacpan.org/release/Lingua-ZH-Keywords

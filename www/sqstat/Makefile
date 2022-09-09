@@ -7,6 +7,7 @@ MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script which allows to look through active squid users connections
+WWW=		https://samm.kiev.ua/sqstat/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE

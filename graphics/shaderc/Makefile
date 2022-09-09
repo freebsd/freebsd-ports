@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GLSL/HLSL to SPIR-V shader compiler
+WWW=		https://github.com/google/shaderc
 
 LICENSE=	APACHE20
 

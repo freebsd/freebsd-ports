@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Zopfli module for python
+WWW=		https://github.com/fonttools/py-zopfli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

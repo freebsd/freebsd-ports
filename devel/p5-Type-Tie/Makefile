@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tie a variable to a type constraint
+WWW=		https://metacpan.org/release/Type-Tie
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

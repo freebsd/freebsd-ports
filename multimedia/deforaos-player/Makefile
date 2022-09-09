@@ -8,6 +8,7 @@ DISTNAME=	Player-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop media player
+WWW=		https://www.defora.org/
 
 LICENSE=	GPLv3
 

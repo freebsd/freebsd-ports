@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Persistent key-value database engine
+WWW=		https://iowow.io/
 
 LICENSE=	MIT
 

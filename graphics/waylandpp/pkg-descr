@@ -6,5 +6,3 @@ Wayland protocol a perfect candidate for a C++ binding.
 The goal of this library is to create such a C++ binding for Wayland
 using the most modern C++ technology currently available, providing an
 easy to use C++ API to Wayland.
-
-WWW: https://github.com/NilsBrause/waylandpp

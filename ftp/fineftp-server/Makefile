@@ -6,6 +6,7 @@ CATEGORIES=	ftp
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ minimal FTP server library
+WWW=		https://github.com/continental/fineftp-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

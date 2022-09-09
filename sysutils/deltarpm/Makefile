@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/deltarpm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that generates delta RPMs
+WWW=		http://freecode.com/projects/deltarpm/
 
 LICENSE=	BSD3CLAUSE
 

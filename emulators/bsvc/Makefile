@@ -5,6 +5,7 @@ CATEGORIES=	emulators tk
 
 MAINTAINER=	cross@gajendra.net
 COMMENT=	Extensible hardware simulation framework with MC68K support
+WWW=		https://github.com/BSVC/bsvc
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt

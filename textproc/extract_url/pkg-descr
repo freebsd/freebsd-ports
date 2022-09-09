@@ -16,5 +16,3 @@ Main features:
       format=flowed delsp=yes email messages
     - Handles quoted-printable email messages
     - Sanitizes URLs so that they can't break out of the command shell
-
-WWW: http://www.memoryhole.net/~kyle/extract_url/

@@ -1,11 +1,12 @@
 PORTNAME=	kraft
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Manage invoices and documents for small companies
+WWW=		https://volle-kraft-voraus.de/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 USES=		cmake compiler:c++11-lang grantlee:5 kde:5 qt:5 shebangfix
 USE_KDE=	akonadi akonadicontacts \
 		auth codecs config configwidgets contacts coreaddons \
-		i18n itemmodels widgetsaddons
+		grantleetheme i18n itemmodels widgetsaddons
 USE_QT=		core dbus gui sql widgets xml \
 		buildtools_build qmake_build
 

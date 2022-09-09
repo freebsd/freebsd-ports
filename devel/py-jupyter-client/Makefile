@@ -8,6 +8,7 @@ DISTNAME=	jupyter_client-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Jupyter protocol implementation and client libraries
+WWW=		https://jupyter.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md

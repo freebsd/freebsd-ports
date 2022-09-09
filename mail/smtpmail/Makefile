@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to send e-mail via a remote smtp server
+WWW=		https://savannah.nongnu.org/projects/smtpmail
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

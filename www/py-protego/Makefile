@@ -7,6 +7,7 @@ DISTNAME=	Protego-${DISTVERSION}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Pure-Python robots.txt parser
+WWW=		https://pypi.org/project/Protego/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@ storage/search query functionality.
 This driver supports match scoring and substring matches (on by
 default), which means it is RFC 3501 (IMAP4rev1) compliant.
 This driver does not support fuzzy searches.
-
-WWW: https://github.com/slusarz/dovecot-fts-flatcurve

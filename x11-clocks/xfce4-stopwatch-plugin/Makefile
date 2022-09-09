@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFCE panel plugin to keep track of elapsed time
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-stopwatch-plugin
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

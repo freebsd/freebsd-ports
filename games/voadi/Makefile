@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Vegan on a Desert Island, 2D top-down adventure game
+WWW=		https://www.voadi.com/
 
 LICENSE=	GPLv3 CC-BY-SA-4.0
 LICENSE_COMB=	multi

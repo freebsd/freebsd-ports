@@ -5,6 +5,7 @@ CATEGORIES=	korean
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Library for Hangul processing
+WWW=		https://github.com/libhangul/libhangul
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.openzim.org/release/libzim/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Reference implementation of the ZIM specification
+WWW=		https://www.openzim.org/wiki/OpenZIM
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

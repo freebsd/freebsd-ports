@@ -19,5 +19,3 @@ per second.
 Portability - most of the code is written in C, and when we use
 platform-specific optimizations we always have a generic C routine
 to fall back on.
-
-WWW: http://libmpeg2.sourceforge.net/

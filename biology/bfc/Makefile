@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Correct sequencing errors from Illumina sequencing data
+WWW=		https://github.com/lh3/bfc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

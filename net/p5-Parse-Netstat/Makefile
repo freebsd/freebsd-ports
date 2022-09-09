@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Parse the output of netstat command
+WWW=		https://metacpan.org/release/Parse-Netstat
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

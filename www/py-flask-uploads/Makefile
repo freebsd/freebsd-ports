@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Flexible and efficient upload handling for Flask
+WWW=		https://pypi.org/project/Flask-Uploads/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run command-line sessions to network appliances
+WWW=		https://metacpan.org/release/Net-Appliance-Session
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

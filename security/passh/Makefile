@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Non-interactive password inputting CLI
+WWW=		https://github.com/clarkwang/passh
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

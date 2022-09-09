@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Perl interface to libev, a high performance full-featured event loop
+WWW=		https://metacpan.org/release/EV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

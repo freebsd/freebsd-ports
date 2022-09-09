@@ -7,5 +7,3 @@ that channel will get it on their next "get" or "get_all" call.
 Currently, it offers three backends: "DBM_Deep" for on-disk storage,
 "Memcached" for possibly multi-host storage, and "PlainHash" for
 single-process storage.
-
-WWW: https://metacpan.org/release/IPC-PubSub

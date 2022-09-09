@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type conversion routines for OCaml
+WWW=		https://janestreet.github.io/
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	multi

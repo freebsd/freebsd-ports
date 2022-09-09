@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Partial dumping of data structures, optimized for argument printing
+WWW=		https://metacpan.org/release/Devel-PartialDump
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Modern bcrypt implementation
+WWW=		https://metacpan.org/module/Crypt::Bcrypt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

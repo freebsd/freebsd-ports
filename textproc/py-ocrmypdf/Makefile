@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Adds an OCR text layer to scanned PDF files
+WWW=		https://github.com/ocrmypdf/OCRmyPDF
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

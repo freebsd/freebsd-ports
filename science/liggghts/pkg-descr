@@ -17,5 +17,3 @@ comprise:
 * Improved particle insertion based on surface and volume meshes
 * A "template" mechanism to account for particle non-uniformity
 * More features added in the meantime and upcoming, see here.
-
-WWW: https://www.cfdem.com/liggghts-open-source-discrete-element-method-particle-simulation-code

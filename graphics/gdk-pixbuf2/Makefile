@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Graphic library for GTK+
+WWW=		https://developer.gnome.org/gdk-pixbuf/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,3 @@
 serdisplib is as a library to drive serial LC- or OLED-displays with
 built-in controllers. Some displays connected to the parallel port
 are also supported.
-
-WWW: http://serdisplib.sourceforge.net/

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Python binding for Coin
+WWW=		https://github.com/coin3d/pivy
 
 LICENSE=	MIT
 

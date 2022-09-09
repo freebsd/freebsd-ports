@@ -1,5 +1,3 @@
 MooseX-Attribute-ENV is a Moose attribute trait that you use when
 you want the default value for an attribute to be populated from
 the %ENV hash.
-
-WWW: https://metacpan.org/release/MooseX-Attribute-ENV

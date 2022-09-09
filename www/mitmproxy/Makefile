@@ -6,6 +6,7 @@ CATEGORIES=	www python
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	SSL-capable man-in-the-middle proxy
+WWW=		https://mitmproxy.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

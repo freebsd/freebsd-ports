@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	OCF Compliant Resource Agents
+WWW=		http://www.linux-ha.org/wiki/Resource_agents
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -53,7 +54,7 @@ post-patch:
 	${REINPLACE_CMD} 's|/etc/redis|${LOCALBASE}/etc/redis|g' \
 	  ${WRKSRC}/heartbeat/redis.in
 	${REINPLACE_CMD} 's|/usr/bin/redis|${LOCALBASE}/bin/redis|g' \
-	  ${WRKSRC}/heartbeat/redis.in	
+	  ${WRKSRC}/heartbeat/redis.in
 
 post-install:
 	${RM} ${STAGEDIR}/${LOCALBASE}/resource-agents.conf

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
+WWW=		https://github.com/evaleev/libint
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

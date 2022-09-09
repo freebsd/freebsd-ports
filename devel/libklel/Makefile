@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	klm@uidzero.org
 COMMENT=	KoreLogic Expression Language library
+WWW=		https://sourceforge.net/projects/libklel/
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 

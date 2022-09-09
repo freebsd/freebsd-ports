@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.flashrom.org/releases/
 
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
+WWW=		https://www.flashrom.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

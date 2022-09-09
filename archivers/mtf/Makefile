@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/system/backup
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix reader for the Microsoft Tape Format used by NT Backup
+WWW=		http://layton-graphics.com/mtf/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

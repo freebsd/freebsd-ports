@@ -6,6 +6,7 @@ MASTER_SITES=	http://marcin.studio4plus.com/files/
 
 MAINTAINER=	johntdarrah@gmail.com
 COMMENT=	Automatic ZFS snapshot management tool
+WWW=		http://marcin.studio4plus.com/en/zfs-file-history/howto.html
 
 USE_RUBY=	yes
 USES=		shebangfix

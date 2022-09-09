@@ -4,5 +4,3 @@ results in a payload bit rate of 13.33 kbit/s with an encoding frame length
 of 30 ms and 15.20 kbps with an encoding length of 20 ms. The iLBC codec
 enables graceful speech quality degradation in the case of lost frames,
 which occurs in connection with lost or delayed IP packets.
-
-WWW: https://github.com/TimothyGu/libilbc

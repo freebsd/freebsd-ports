@@ -5,6 +5,7 @@ CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Modelisation et Echanges de Donnees
+WWW=		https://www.salome-platform.org/user-section/about/med
 
 LICENSE=	GPLv3
 

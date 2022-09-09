@@ -5,6 +5,7 @@ MASTER_SITES=	https://developers.yubico.com/yubico-c/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	Library for decrypting and parsing YubiKey One-Time Passwords
+WWW=		https://developers.yubico.com/yubico-c/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

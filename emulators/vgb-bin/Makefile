@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
+WWW=		https://fms.komkon.org/VGB/
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	required i386 dependencies

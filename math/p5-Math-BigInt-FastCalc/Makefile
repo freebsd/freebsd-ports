@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Math::BigInt::Calc with some XS for more speed
+WWW=		https://metacpan.org/release/Math-BigInt-FastCalc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

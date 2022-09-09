@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Qt file archiver
+WWW=		https://github.com/lxqt/lxqt-archiver
 
 LICENSE=	GPLv2
 

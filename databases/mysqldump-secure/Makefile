@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	jsmith@resonatingmedia.com
 COMMENT=	Simple tool for dumping/backing up MySQL and MariaDB databases
+WWW=		https://mysqldump-secure.org/
 
 LICENSE=	MIT
 

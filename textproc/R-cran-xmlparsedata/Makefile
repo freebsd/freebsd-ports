@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Parse Data of 'R' Code as an 'XML' Tree
+WWW=		https://github.com/r-lib/xmlparsedata #readme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

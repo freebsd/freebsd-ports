@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ mathematical expression library
+WWW=		https://www.partow.net/programming/exprtk/index.html
 
 LICENSE=	MIT
 

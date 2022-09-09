@@ -7,6 +7,7 @@ DISTNAME=	Twisted-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Asynchronous networking framework written in Python
+WWW=		https://twistedmatrix.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

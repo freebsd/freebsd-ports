@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian hunspell dictionaries
+WWW=		http://code.google.com/p/hunspell-ru/
 
 LICENSE=	LGPL3
 

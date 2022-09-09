@@ -1,11 +1,12 @@
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.21.0
-PORTREVISION=	2
+DISTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
 COMMENT=	Smallstep step-ca command line client
+WWW=		https://smallstep.com/cli/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +15,7 @@ USES=		go:modules shebangfix
 
 SHEBANG_FILES=	autocomplete/bash_autocomplete
 
-GO_MODULE= 	github.com/smallstep/cli
+GO_MODULE=	github.com/smallstep/cli
 GO_TARGET=	./cmd/step
 GO_BUILDFLAGS=	-ldflags "-w -X main.Version=${PORTVERSION}"
 

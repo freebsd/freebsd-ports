@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Communicate Ruby state changes to systemd
+WWW=		https://github.com/agis/ruby-sdnotify
 
 LICENSE=	MIT
 

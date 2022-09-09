@@ -6,6 +6,7 @@ CATEGORIES=	net-im perl5
 
 MAINTAINER=	mek@mek.uz.ua
 COMMENT=	Perl script to send XMPP (Jabber) messages
+WWW=		https://sendxmpp.hostname.sk/
 
 LICENSE=	GPLv2
 

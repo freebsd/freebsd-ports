@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Table widget with support for scrolling/paging
+WWW=		https://metacpan.org/release/Tickit-Widget-Table
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

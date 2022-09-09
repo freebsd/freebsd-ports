@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simulation Description Format (SDF) parser and description files
+WWW=		https://bitbucket.org/osrf/sdformat/src/default/
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for AnyEvent interface to DBD::Pg async interface
+WWW=		https://metacpan.org/release/AnyEvent-DBD-Pg
 
 BUILD_DEPENDS=	p5-AnyEvent>=5:devel/p5-AnyEvent \
 		p5-DBD-Pg>0:databases/p5-DBD-Pg \

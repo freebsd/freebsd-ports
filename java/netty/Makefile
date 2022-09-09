@@ -6,6 +6,7 @@ MASTER_SITES=	http://dl.bintray.com/netty/downloads/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java NIO client server framework
+WWW=		https://netty.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

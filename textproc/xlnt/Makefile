@@ -6,6 +6,7 @@ CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ xlsx library for reading/writing/manipulating spreadsheets
+WWW=		https://github.com/tfussell/xlnt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

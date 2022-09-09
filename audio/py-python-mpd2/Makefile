@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python MPD client library
+WWW=		https://github.com/Mic92/python-mpd2
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

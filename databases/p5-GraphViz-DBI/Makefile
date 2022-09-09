@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for graph database tables and relations
+WWW=		https://metacpan.org/release/GraphViz-DBI
 
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-GraphViz>=0:graphics/p5-GraphViz

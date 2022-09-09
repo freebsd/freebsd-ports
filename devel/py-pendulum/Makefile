@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Python package to ease datetimes manipulation
+WWW=		https://pendulum.eustace.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

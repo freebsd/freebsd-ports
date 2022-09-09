@@ -10,6 +10,7 @@ DIST_SUBDIR=	java
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
+WWW=		https://robo-code.blogspot.com.br
 
 LICENSE=	EPL
 

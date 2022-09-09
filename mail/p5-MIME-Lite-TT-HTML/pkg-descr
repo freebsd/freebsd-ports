@@ -1,4 +1,2 @@
 This module provide easy interface to make MIME::Lite object with html
     formatted mail.
-
-WWW: https://metacpan.org/release/MIME-Lite-TT-HTML

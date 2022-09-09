@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load class configuration data from a number of file formats
+WWW=		https://metacpan.org/release/Config-Any
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/cddlib/cddlib/releases/download/${DISTVERSION}/
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	C-library implementation of the Double Description Method
+WWW=		https://github.com/cddlib/cddlib
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

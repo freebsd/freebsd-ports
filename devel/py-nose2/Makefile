@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Next generations of nicer testing for Python
+WWW=		https://nose2.readthedocs.io
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

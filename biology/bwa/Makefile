@@ -9,6 +9,7 @@ PATCHFILES=	2a1ae7b6f34a96ea25be007ac9d91e57e9d32284.patch:-p1
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Burrows-Wheeler sequence aligner
+WWW=		https://sourceforge.net/projects/bio-bwa/
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde CSS Minification
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 

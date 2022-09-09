@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Catalyst XML View Class
+WWW=		http://catalyst.g.hatena.ne.jp/ikasam_a/20071202/1196581882 # Japanese
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,5 +5,3 @@ embedded in most of our open source projects, and Abseil aims to bring them
 together into one comprehensive project. Abseil encompasses the most basic
 building blocks of Googles codebase: code that is production-tested and will be
 fully maintained for years to come.
-
-WWW: https://github.com/abseil/abseil-py

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS for C++ in Perl
+WWW=		https://metacpan.org/release/ExtUtils-XSpp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

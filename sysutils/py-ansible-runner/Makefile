@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Extensible embeddable ansible job runner
+WWW=		https://ansible-runner.readthedocs.io/
 
 LICENSE=	APACHE20
 

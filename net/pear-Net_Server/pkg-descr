@@ -1,3 +1,1 @@
 Generic server class based on ext/sockets, used to develop any kind of server.
-
-WWW: https://pear.php.net/package/Net_Server

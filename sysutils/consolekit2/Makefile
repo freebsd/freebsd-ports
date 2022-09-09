@@ -13,6 +13,7 @@ PATCHFILES=	03eaa9779f2c9c7b0acf0521a5547036bdec2245.patch:-p1 \
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Framework for defining and tracking users
+WWW=		https://github.com/ConsoleKit2/ConsoleKit2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

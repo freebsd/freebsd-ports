@@ -6,6 +6,7 @@ DISTNAME=	tads23-unix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TADS compiler/interpreter for interactive fiction
+WWW=		https://www.tads.org/
 
 LICENSE=	TADS
 LICENSE_NAME=	TADS FREEWARE SOURCE CODE LICENSE

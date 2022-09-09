@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Python dict that provides attribute-style access (a la JavaScript)
+WWW=		https://pypi.org/project/munch/
 
 LICENSE=	MIT
 

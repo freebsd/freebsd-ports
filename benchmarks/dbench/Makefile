@@ -6,6 +6,7 @@ MASTER_SITES=	SAMBA/tridge/dbench
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of the Ziff-Davis netbench benchmark
+WWW=		https://dbench.samba.org/
 
 LICENSE=	GPLv3
 

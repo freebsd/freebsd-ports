@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	PaStiX: a sparse direct solver
+WWW=		https://solverstack.gitlabpages.inria.fr/pastix/
 
 LICENSE=	LGPL3
 

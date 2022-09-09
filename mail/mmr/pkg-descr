@@ -17,5 +17,3 @@ then be merged with the current message listing.
    Automatically uncompresses and recompresses gzipped mailfiles
 
    Searchable message listings, including search through message text
-
-WWW: http://slouken.libsdl.org/projects/mmr/

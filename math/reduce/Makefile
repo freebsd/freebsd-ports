@@ -6,6 +6,7 @@ DISTNAME=	Reduce-svn6339-src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Codemist Standard Lisp REDUCE general-purpose computer system
+WWW=		http://www.reduce-algebra.com/
 
 LICENSE=	BSD2CLAUSE
 

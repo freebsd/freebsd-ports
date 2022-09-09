@@ -6,5 +6,3 @@ simple UTF8 to-from other character set string conversions.
 As such, it wraps the Unicode::String, Unicode::Map8,
 Unicode::Map and Jcode modules in a standardized and simple
 API.
-
-WWW: https://metacpan.org/release/Unicode-MapUTF8

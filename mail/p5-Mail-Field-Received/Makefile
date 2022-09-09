@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for parsing of `Received' headers in e-mails
+WWW=		https://metacpan.org/release/Mail-Field-Received
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

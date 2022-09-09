@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GTK renderer for Data::TreeDumper
+WWW=		https://metacpan.org/release/Data-TreeDumper-Renderer-GTK
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-TreeDumper>=0:devel/p5-Data-TreeDumper \

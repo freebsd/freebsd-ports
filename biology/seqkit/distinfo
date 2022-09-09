@@ -1,5 +1,5 @@
-TIMESTAMP = 1650426203
-SHA256 (go/biology_seqkit/seqkit-v2.2.0/v2.2.0.mod) = 700478329f988834e8ec39b5c2b91d52728d1279e1d84dd1fcd0670647653fa8
-SIZE (go/biology_seqkit/seqkit-v2.2.0/v2.2.0.mod) = 2321
-SHA256 (go/biology_seqkit/seqkit-v2.2.0/v2.2.0.zip) = 6bc951e10393c9c8a0c771bba96227f78e50b07b7a93f61bba534f9a35aa8cbc
-SIZE (go/biology_seqkit/seqkit-v2.2.0/v2.2.0.zip) = 33907530
+TIMESTAMP = 1662328942
+SHA256 (go/biology_seqkit/seqkit-v2.3.0/v2.3.0.mod) = 28d4827b0ffa9caef025381e6487b312d08a643aba15929a6fa53b30fc63cb75
+SIZE (go/biology_seqkit/seqkit-v2.3.0/v2.3.0.mod) = 2321
+SHA256 (go/biology_seqkit/seqkit-v2.3.0/v2.3.0.zip) = ff2f395089317f50dc89a3f3b1cd537113740ee2b7737a08ccf14c1dffdbad97
+SIZE (go/biology_seqkit/seqkit-v2.3.0/v2.3.0.zip) = 33892555

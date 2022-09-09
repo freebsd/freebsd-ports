@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/gnuspeech
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line, or application-based speech output module of gnuspeech
+WWW=		https://www.gnu.org/software/gnuspeech/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

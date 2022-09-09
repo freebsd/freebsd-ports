@@ -7,6 +7,7 @@ PATCH_SITES=	LOCAL/danfe
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight NetWM-compliant panel (taskbar) for X11
+WWW=		https://code.google.com/archive/p/bmpanel2/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

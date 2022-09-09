@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Reference implementation of LTFS for stand-alone tape drive
+WWW=		https://github.com/LinearTapeFileSystem/ltfs
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

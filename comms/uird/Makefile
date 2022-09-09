@@ -6,6 +6,7 @@ MASTER_SITES=	http://kbinstuff.googlepages.com/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Universal IR Receiver Daemon
+WWW=		http://kbinstuff.googlepages.com/uirduniversalirreceiverdaemon
 
 USES=		perl5 gmake tar:tgz
 

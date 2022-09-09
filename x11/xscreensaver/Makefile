@@ -1,23 +1,26 @@
 PORTNAME=	xscreensaver
-PORTVERSION=	6.02
-PORTREVISION=	2
+PORTVERSION=	6.04
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
+WWW=		https://www.jwz.org/xscreensaver/
 
 LICENSE=	MIT
 
 RUN_DEPENDS=	giftopnm:graphics/netpbm \
-		p5-libwww>0:www/p5-libwww
+		p5-libwww>0:www/p5-libwww \
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
+		unix-selfauth-helper>0:security/unix-selfauth-helper
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgle.so:graphics/gle \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
-		pkgconfig xorg
+USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags \
+		perl5 pkgconfig xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gdkpixbuf2xlib gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
@@ -35,6 +38,7 @@ CONFIGURE_ARGS=	--enable-locking \
 		--with-gtk \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-jpeg=${LOCALBASE} \
+		--with-pam \
 		--with-pixbuf \
 		--with-randr-ext \
 		--with-xdbe-ext \
@@ -43,17 +47,14 @@ CONFIGURE_ARGS=	--enable-locking \
 		--with-xft \
 		--with-xinerama-ext \
 		--with-xshm-ext \
-		--without-kerberos
+		--without-kerberos \
+		--without-shadow
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		FIREF NLS NSFW PAM SETUID_HACKS XAOS1 XDALI XEARTH \
+OPTIONS_DEFINE=		FIREF NLS NSFW SETUID_HACKS XAOS1 XDALI XEARTH \
 			XMOUN XPLANET XSNOW
-OPTIONS_DEFAULT=	PAM
 OPTIONS_SUB=		yes
-
-PAM_CONFIGURE_WITH=	passwd-helper=${PREFIX}/bin/pam_helper
-PAM_RUN_DEPENDS=	pam_helper:security/pam_helper
 
 SETUID_HACKS_DESC=	Install sonar hack suid so it can ping
 SETUID_HACKS_CONFIGURE_WITH=	setuid-hacks
@@ -85,7 +86,8 @@ XSNOW_DESC=		Add extra port x11/xsnow
 XSNOW_RUN_DEPENDS=	xsnow:x11/xsnow
 
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
-		xscreensaver-start.desktop xscreensaver-stop.desktop
+		xscreensaver-start.desktop xscreensaver-stop.desktop \
+		xscreensaver.pam
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
@@ -103,8 +105,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/x*.xml ${STAGEDIR}${DATADIR}/config/
 	${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver.pam
-
-post-install-PAM-on:
-	${INSTALL_DATA} ${FILESDIR}/xscreensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
+	${INSTALL_DATA} ${WRKDIR}/xscreensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
 
 .include <bsd.port.mk>

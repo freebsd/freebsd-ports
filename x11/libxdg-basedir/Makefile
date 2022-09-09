@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Implementation of the XDG Base Directory specification
+WWW=		http://n.ethz.ch/student/nevillm/download/libxdg-basedir/
 
 USES=		autoreconf gmake libtool pathfix
 USE_GITHUB=	yes

@@ -16,5 +16,3 @@ crontab entries like ranges  including 'steps', specification of month
 and days of the week by name or coexistence of lists and ranges in the
 same field. And  even a bit more (like lists  and ranges with symbolic
 names).
-
-WWW: https://metacpan.org/release/Schedule-Cron

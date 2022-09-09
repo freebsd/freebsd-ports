@@ -1,4 +1,2 @@
 Python module for fast, simple packet creation / parsing, with definitions for
 the basic TCP/IP protocols.
-
-WWW: https://github.com/kbandla/dpkt

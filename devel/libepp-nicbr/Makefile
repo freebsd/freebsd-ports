@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Partial Extensible Provisioning Protocol to .br domains
+WWW=		https://registro.br/epp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

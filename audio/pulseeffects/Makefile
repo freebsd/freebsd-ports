@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Audio effects for Pulseaudio applications
+WWW=		https://github.com/wwmm/pulseeffects
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

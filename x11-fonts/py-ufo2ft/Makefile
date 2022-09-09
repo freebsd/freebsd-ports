@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Bridge between UFOs and FontTools
+WWW=		https://github.com/googlei18n/ufo2ft
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

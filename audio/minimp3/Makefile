@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ single-header, minimalistic library for decoding MP3
+WWW=		https://github.com/lieff/minimp3
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

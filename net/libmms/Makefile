@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
+WWW=		https://sourceforge.net/projects/libmms/
 
 LICENSE=	LGPL21
 

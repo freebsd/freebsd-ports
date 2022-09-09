@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Tools and libraries to access human-editable, plain text databases
+WWW=		https://www.gnu.org/software/recutils/
 
 LICENSE=	GPLv3+
 

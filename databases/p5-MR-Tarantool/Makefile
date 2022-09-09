@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Driver for an efficient Tarantool/Box NoSQL in-memory storage
+WWW=		https://metacpan.org/release/MR-Tarantool
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

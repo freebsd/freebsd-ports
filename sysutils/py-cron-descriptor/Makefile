@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Converts cron expressions into human readable strings
+WWW=		https://github.com/Salamek/cron-descriptor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

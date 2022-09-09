@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK frontend to various archiving tools
+WWW=		https://github.com/ib/xarchiver
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

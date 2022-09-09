@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Tool for visually comparing two PDFs
+WWW=		https://vslavik.github.io/diff-pdf/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

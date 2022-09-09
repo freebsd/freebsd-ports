@@ -1,13 +1,16 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.60
+DISTVERSION=	2.62
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interpreter and compiler compatible with ISLisp standard
+WWW=		https://github.com/sasagawa888/eisl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/documents/license.txt
+
+BROKEN_i386=	stage breaks: data segment of more than 500GB is required, see https://github.com/sasagawa888/eisl/issues/218
 
 TEST_DEPENDS=	cppcheck:devel/cppcheck
 
@@ -22,9 +25,6 @@ TEST_TARGET=	check # tests print some errors and warnings, see https://github.co
 MAKEFILE=	makefile
 
 LDFLAGS+=	-lncursesw
-
-PLIST_FILES=	bin/edlis \
-		bin/eisl
 
 .include <bsd.port.options.mk>
 

@@ -1,10 +1,11 @@
 PORTNAME=	gruff
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Beautiful graphing library for Ruby using RMagick
+WWW=		https://github.com/topfunky/gruff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

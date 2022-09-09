@@ -11,5 +11,3 @@ have a really fast implementation. See some numbers:
 
 With this library you can gain big improvements as fastjsonschema takes only
 about 25 milliseconds for valid inputs and 2 milliseconds for invalid ones.
-
-WWW: https://horejsek.github.io/python-fastjsonschema/

@@ -7,5 +7,3 @@ other APIs. Other features include mouse manipulated frames, interpolated
 keyFrames, object selection, stereo display, screenshot saving and much more.
 It can be used by OpenGL beginners as well as to create complex applications,
 being fully customizable and easy to extend.
-
-WWW: http://libqglviewer.com/index.html

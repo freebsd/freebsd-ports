@@ -9,5 +9,3 @@ megabytes; hence, this CPAN module tries to provide the rest of them.
 If you are using perl 5.8 or later, Encode::CN and Encode::TW will
 automatically load the extra encodings for you, so there's no need to
 explicitly write use Encode::HanExtra if you are using one of them already.
-
-WWW: https://metacpan.org/release/Encode-HanExtra

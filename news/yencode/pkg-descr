@@ -15,5 +15,3 @@ Features:
      encoded archives in specified directories or recursively.
    - Supports SFV file creation for multiple-file archives.
    - Fully compliant with the current yEnc specifications.
-
-WWW: http://www.yencode.org/

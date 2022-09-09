@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Integrate Elasticsearch into Icinga Web 2
+WWW=		https://github.com/Icinga/icingaweb2-module-elasticsearch
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

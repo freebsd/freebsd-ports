@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	713
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby integrations for Elasticsearch
+WWW=		https://github.com/elastic/elasticsearch-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

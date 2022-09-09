@@ -6,6 +6,7 @@ MASTER_SITES=	https://kiza.eu/media/software/tornado/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ccurses-based game of weather destruction
+WWW=		https://kiza.eu/software/tornado/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

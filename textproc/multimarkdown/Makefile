@@ -5,6 +5,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Extended Markdown processor with more features, written in C
+WWW=		https://www.fletcherpenney.net/multimarkdown/
 
 LICENSE=	BSD3CLAUSE MIT GPLv2+ ZLIB
 LICENSE_COMB=	multi

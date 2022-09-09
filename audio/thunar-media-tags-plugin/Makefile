@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Media tags plugin
+WWW=		https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

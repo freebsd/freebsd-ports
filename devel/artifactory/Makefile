@@ -6,6 +6,7 @@ DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}
 
 MAINTAINER=	dharrigan@gmail.com
 COMMENT=	Universal Artifact Repository Manager
+WWW=		https://www.jfrog.com/artifactory
 
 LICENSE=	GPLv3 APACHE20
 LICENSE_COMB=	multi

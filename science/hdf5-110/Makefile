@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-110
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA) 1.10.x
+WWW=		https://www.hdfgroup.org/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

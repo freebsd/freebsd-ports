@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
+WWW=		https://www.mahoroba.org/~ume/dtcp/
 
 LICENSE=	BSD3CLAUSE
 

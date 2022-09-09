@@ -18,5 +18,3 @@ Future projects for LibOFX include:
 - QIF import
 - QIF export (integrated inside the library)
 - OFX export
-
-WWW: http://libofx.sourceforge.net/

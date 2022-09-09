@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python wrappers for various BSD libc and system calls
+WWW=		https://github.com/freenas/py-bsd
 
 LICENSE=	BSD3CLAUSE
 

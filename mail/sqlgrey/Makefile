@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
+WWW=		http://sqlgrey.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

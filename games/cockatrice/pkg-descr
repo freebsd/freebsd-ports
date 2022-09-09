@@ -4,5 +4,3 @@ kind of client modifications to gain an unfair advantage in a game. The client
 also has a built in single-player mode where you can brew without being
 connected to a server. This project is written in C++/Qt with support for both
 Qt4 and Qt5.
-
-WWW: http://www.woogerworks.com

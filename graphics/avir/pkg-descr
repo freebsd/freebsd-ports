@@ -5,5 +5,3 @@ This library features routines for both down- and upsizing of 8- and 16-bit,
 multi-platform C++ code, and have a high level of optimality. Beside resizing,
 this library offers a sub-pixel shift operation. Built-in sRGB gamma correction
 is available.
-
-WWW: https://github.com/avaneev/avir

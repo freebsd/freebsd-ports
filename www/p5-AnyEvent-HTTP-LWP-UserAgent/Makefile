@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for LWP::UserAgent interface using AnyEvent::HTTP
+WWW=		https://metacpan.org/release/AnyEvent-HTTP-LWP-UserAgent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

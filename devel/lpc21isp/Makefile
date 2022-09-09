@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISP programmer tool for flashing NXP and Analog Devices ARM7 CPUs
+WWW=		http://tech.groups.yahoo.com/group/lpc21isp/
 
 LICENSE=	LGPL3+
 

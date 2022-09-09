@@ -3,5 +3,3 @@ library can have SQL database access without running a separate RDBMS process.
 The distribution comes with a standalone command-line access program (sqlite)
 that can be used to administer an SQLite database and which serves as an
 example of how to use the SQLite library.
-
-WWW: http://www.sqlite.org/

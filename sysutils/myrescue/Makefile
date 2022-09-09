@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Rescue still-readable data from a damaged harddisk
+WWW=		https://sourceforge.net/projects/myrescue
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

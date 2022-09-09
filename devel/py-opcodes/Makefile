@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Database of processor instructions/opcodes
+WWW=		https://github.com/Maratyszcza/Opcodes
 
 LICENSE=	BSD2CLAUSE
 

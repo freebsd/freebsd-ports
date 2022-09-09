@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SIMD Vector Classes for C++
+WWW=		https://github.com/VcDevel/Vc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

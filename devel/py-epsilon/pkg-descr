@@ -11,5 +11,3 @@ Currently included:
 - A metaclass which helps you define classes with explicit states.
 - A featureful Version class.
 - A formal system for application of monkey-patches.
-
-WWW: https://github.com/twisted/epsilon

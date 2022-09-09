@@ -11,5 +11,3 @@ Twiggy:
   * Loosely couples loggers and outputs for configuration
   * Supports asynchronous logging using the multiprocessing module
   * Solves Your Problems. Pets Your Puppy.
-
-WWW: https://github.com/wearpants/twiggy/

@@ -1,4 +1,2 @@
 A python library for performing multi queries in elasticsearch,
 a distributed RESTful search engine.
-
-WWW: https://pypi.org/project/gambit/

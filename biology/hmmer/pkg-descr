@@ -6,5 +6,3 @@ Given a multiple sequence alignment as input, HMMER builds a statistical
 model called a "hidden Markov model" which can then be used as a query into
 a sequence database to find (and/or align) additional homologues of the
 sequence family.
-
-WWW: http://hmmer.org/

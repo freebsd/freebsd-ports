@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to fill test names from caller line
+WWW=		https://metacpan.org/release/Test-Name-FromLine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

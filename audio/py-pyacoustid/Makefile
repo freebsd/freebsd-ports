@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bindings for Chromaprint acoustic fingerprinting and the Acoustid API
+WWW=		https://github.com/beetbox/pyacoustid
 
 LICENSE=	MIT
 

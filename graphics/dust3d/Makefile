@@ -8,6 +8,7 @@ PATCHFILES=	f8339d25ddb79f893413.diff:-p1 821285de824baf01ae99.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open-source 3D modeling software
+WWW=		https://dust3d.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

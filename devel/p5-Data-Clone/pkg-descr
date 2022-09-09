@@ -7,5 +7,3 @@ the object. That is, this module does polymorphic data cloning.
 Although there are several modules on CPAN which can clone data, this module has
 a different cloning policy from almost all of them. See "Cloning policy" and
 "Comparison to other cloning modules" for details.
-
-WWW: https://metacpan.org/release/Data-Clone

@@ -9,5 +9,3 @@ tools, located at tools/ directory. It is also possible to monitor
 GstPipelines from any application by using the LD_PRELOAD gstvalidate
 lib. The third way of using it is to write your own application that
 links and uses libgstvalidate.
-
-WWW: https://gstreamer.freedesktop.org/

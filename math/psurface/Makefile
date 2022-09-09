@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Piecewise linear bijections between triangulated surfaces
+WWW=		https://github.com/psurface/psurface
 
 LICENSE=	GPLv3+
 

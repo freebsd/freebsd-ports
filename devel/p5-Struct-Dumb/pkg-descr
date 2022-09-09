@@ -15,5 +15,3 @@ nicer way to store data structures, where otherwise you might be tempted to
 abuse a hash, complete with the risk of typoing key names. The constructor will
 croak if passed the wrong number of arguments, as will attempts to refer to
 fields that don't exist.
-
-WWW: https://metacpan.org/release/Struct-Dumb

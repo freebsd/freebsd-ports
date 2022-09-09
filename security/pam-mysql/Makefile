@@ -5,6 +5,7 @@ CATEGORIES=	security databases
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	PAM module for authenticating with MySQL
+WWW=		https://github.com/NigelCunningham/pam-MySQL
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

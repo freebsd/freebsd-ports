@@ -7,5 +7,3 @@ The idea has been inspired from pngcrush, and is explained in detail in
 the PNG-Tech article "A guide to PNG optimization". The implementation
 is carried forward in OptiPNG, which offers a faster execution per
 trial, and a wider search space.
-
-WWW: http://optipng.sourceforge.net/

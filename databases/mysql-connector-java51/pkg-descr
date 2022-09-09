@@ -9,5 +9,3 @@ complete JDBC feature set that supports the capabilities of MySQL.
 
 This port is derived from the original databases/mysql-jdbc-mm port of
 the mm.mysql JDBC connector by dglo@ssec.wisc.edu.
-
-WWW: https://dev.mysql.com/downloads/connector/j/

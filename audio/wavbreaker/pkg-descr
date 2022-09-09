@@ -21,5 +21,3 @@ you can merge them together with wavmerge and then break them back up
 with wavbreaker. The wavmerge tool will only work on files that have
 the same format (for example, 44.100 Hz sample rate, 16-bit sample
 size, etc.).
-
-WWW: https://github.com/thp/wavbreaker

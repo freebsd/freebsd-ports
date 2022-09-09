@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenURI with transparent disk caching
+WWW=		https://github.com/tigris/open-uri-cached
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

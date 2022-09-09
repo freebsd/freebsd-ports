@@ -1,12 +1,12 @@
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.1.4
-PORTREVISION=	1
+DISTVERSION=	3.1.6
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C++ Template Image Processing Library
+WWW=		https://cimg.eu/
 
 LICENSE=	CeCILL_C CeCILL
 LICENSE_COMB=	dual

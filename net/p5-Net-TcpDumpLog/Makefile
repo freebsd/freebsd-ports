@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Read tcpdump/libpcap network packet logs
+WWW=		https://metacpan.org/release/Net-TcpDumpLog
 
 USES=		perl5
 USE_PERL5=	configure

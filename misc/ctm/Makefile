@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Generate, receive and apply FreeBSD source updates per mail
+WWW=		https://github.com/freebsd/ctm
 
 LICENSE=	Beerware BSD2CLAUSE
 LICENSE_COMB=	multi

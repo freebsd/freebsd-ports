@@ -1,4 +1,2 @@
 SVN::Log retrieves and parses the commit logs from Subversion
 repositories.
-
-WWW: https://metacpan.org/release/SVN-Log

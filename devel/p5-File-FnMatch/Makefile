@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple filename and pathname matching
+WWW=		https://metacpan.org/release/File-FnMatch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

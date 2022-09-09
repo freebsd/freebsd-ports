@@ -4,5 +4,3 @@ which represent config data as simple variables, Config::Objective
 represents config data as perl objects.  This allows for a much more
 flexible configuration language, since new classes can be easily written
 to add methods to the config syntax.
-
-WWW: https://metacpan.org/release/Config-Objective

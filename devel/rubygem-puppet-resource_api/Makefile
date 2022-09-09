@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Simple way to write new native resources for puppet
+WWW=		https://github.com/puppetlabs/puppet-resource_api
 
 LICENSE=	APACHE20
 

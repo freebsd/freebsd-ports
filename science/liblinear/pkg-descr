@@ -16,5 +16,3 @@ Main features of LIBLINEAR include:
 - Probability estimates (logistic regression only)
 - Weights for unbalanced data
 - MATLAB/Octave, Java, Python, Ruby interfaces
-
-WWW: https://www.csie.ntu.edu.tw/~cjlin/liblinear/

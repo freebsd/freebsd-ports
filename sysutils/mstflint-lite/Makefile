@@ -2,6 +2,7 @@ PORTREVISION=	1
 PKGNAMESUFFIX=	-lite
 
 COMMENT=	Firmware Burning and Diagnostics Tools for Mellanox devices (lite version)
+WWW=		https://www.mellanox.com/page/management_tools
 
 CONFLICTS_INSTALL=	mstflint
 

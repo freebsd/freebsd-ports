@@ -6,6 +6,7 @@ MASTER_SITES=	SF/naspro/naspro/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple command line effect processor using LV2 plugins
+WWW=		https://sourceforge.net/projects/naspro/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

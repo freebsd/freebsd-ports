@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	New FFI-based Lua API for OpenResty NGINX Lua modules
+WWW=		https://github.com/openresty/lua-resty-core
 
 LICENSE=	BSD2CLAUSE
 

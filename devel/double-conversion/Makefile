@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles
+WWW=		https://github.com/google/double-conversion
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

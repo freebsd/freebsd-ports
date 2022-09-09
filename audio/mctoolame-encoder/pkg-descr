@@ -18,5 +18,3 @@ using mode 3/2 plus an LFE channel.
 A multi-channel MPEG file should decode OK on any MPEG decoder.  If the
 decoder doesn't recognize the multi-channel extensions, then you'll just
 get a stereo file containing a down mix of the 5 channels.
-
-WWW: http://mctoolame.sourceforge.net/

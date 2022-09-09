@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	OpenID Connect Server & Client Library
+WWW=		https://github.com/nov/openid_connect
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

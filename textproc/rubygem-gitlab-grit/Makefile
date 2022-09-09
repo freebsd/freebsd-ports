@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for extracting information from a git repository
+WWW=		https://github.com/gitlabhq/grit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

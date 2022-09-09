@@ -6,6 +6,7 @@ CATEGORIES=	hebrew textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Hebrew dictionaries
+WWW=		http://aspell.net/
 
 DICT=	 	he
 

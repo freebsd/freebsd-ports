@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Binary Data Conversion using C Types
+WWW=		https://metacpan.org/release/Convert-Binary-C
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

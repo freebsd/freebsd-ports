@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows to run callbacks after transaction is committed
+WWW=		https://github.com/shellycloud/after_commit_queue
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

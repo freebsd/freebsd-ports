@@ -1,10 +1,11 @@
 PORTNAME=	loccount
 DISTVERSION=	2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Count source lines of code in a project
+WWW=		http://www.catb.org/esr/loccount/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

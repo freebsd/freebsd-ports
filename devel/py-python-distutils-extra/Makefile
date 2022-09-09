@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add support for i18n, documentation, and icons to distutils
+WWW=		https://salsa.debian.org/python-team/packages/python-distutils-extra
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

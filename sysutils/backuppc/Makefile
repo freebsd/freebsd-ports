@@ -8,6 +8,7 @@ DISTNAME=	BackupPC-${PORTVERSION}
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Multi-platform backup to disk-based storage
+WWW=		https://backuppc.github.io/backuppc/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

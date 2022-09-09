@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symmetric cryptographic algorithms package for OCaml
+WWW=		https://www.ocaml-programming.de/packages/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

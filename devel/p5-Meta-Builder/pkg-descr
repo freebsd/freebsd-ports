@@ -3,5 +3,3 @@ objects. Unlike specialized tools, Meta::Builder makes no assumptions
 about what metrics you will care about. Meta::Builder also mkaes it
 simple for others to extend your meta-object based tools by providing
 hooks for other packages to add metrics to your meta object.
-
-WWW: https://metacpan.org/release/Meta-Builder

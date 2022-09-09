@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.ghostgum.com.au/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
+WWW=		http://www.ghostgum.com.au/software/epstool.htm
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE

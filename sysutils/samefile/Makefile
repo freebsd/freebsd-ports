@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.schweikhardt.net/
 
 MAINTAINER=	schweikh@FreeBSD.org
 COMMENT=	Find files with identical contents
+WWW=		http://www.schweikhardt.net/samefile/
 
 CONFLICTS=	samesame
 

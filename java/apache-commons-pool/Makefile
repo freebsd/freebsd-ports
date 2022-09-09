@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}2-${PORTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache Commons Object-pooling API
+WWW=		https://commons.apache.org/proper/commons-pool/
 
 LICENSE=	APACHE20
 

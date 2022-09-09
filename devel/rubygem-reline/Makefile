@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Alternative GNU Readline or Editline implementation by pure Ruby
+WWW=		https://rubygems.org/gems/reline
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

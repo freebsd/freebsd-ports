@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE interface to Round Robin Database Tools
+WWW=		https://metacpan.org/release/TCAINE/POE-Component-RRDTool-0.18
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

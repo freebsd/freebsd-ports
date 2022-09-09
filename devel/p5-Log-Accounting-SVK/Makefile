@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Perl module for accounting SVK repository
+WWW=		https://metacpan.org/release/GUGOD/Log-Accounting-SVK-0.05
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

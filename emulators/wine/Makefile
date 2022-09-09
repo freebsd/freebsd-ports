@@ -8,6 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source \
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
+WWW=		https://www.winehq.org
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

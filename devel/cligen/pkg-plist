@@ -17,5 +17,5 @@ include/cligen/cligen_result.h
 include/cligen/cligen_syntax.h
 include/cligen/cligen_util.h
 lib/libcligen.so
-lib/libcligen.so.5
-lib/libcligen.so.5.6
+lib/libcligen.so.%%LIBMAJORVERSION%%
+lib/libcligen.so.%%LIBVERSION%%

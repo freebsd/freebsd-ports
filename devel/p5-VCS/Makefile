@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for generic Version Control System access in Perl
+WWW=		https://metacpan.org/release/VCS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

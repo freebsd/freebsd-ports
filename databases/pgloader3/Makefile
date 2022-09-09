@@ -127,6 +127,7 @@ DIST_SUBDIR=	pgloader
 
 MAINTAINER=	freebsd-washroom@duhanic.com
 COMMENT=	Data loading and migration tool for PostgreSQL using the COPY command
+WWW=		https://pgloader.io
 
 LICENSE=	PostgreSQL
 

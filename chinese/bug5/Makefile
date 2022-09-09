@@ -4,6 +4,7 @@ CATEGORIES=	chinese converters
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Big5/GBK <-> UTF-8 translating layer in terminal
+WWW=		https://github.com/buganini/bug5
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi

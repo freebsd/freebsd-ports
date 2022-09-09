@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software for counting lattice points/integration over convex polytopes
+WWW=		https://www.math.ucdavis.edu/~latte/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

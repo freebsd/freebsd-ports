@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	API to extract contents from HTML and XML documents
+WWW=		https://pypi.org/project/selection/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Prawn Extension to Provides Table Support and Other Layout
+WWW=		https://github.com/practicingruby/prawn-layout
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

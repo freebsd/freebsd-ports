@@ -5,6 +5,7 @@ MASTER_SITES=	http://comicneue.com/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free Comic Sans alternative
+WWW=		http://comicneue.com/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

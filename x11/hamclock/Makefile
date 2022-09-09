@@ -6,6 +6,7 @@ DISTNAME=	ESPHamClock
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Handy clock with features for amateur radio operators
+WWW=		https://www.clearskyinstitute.com/ham/HamClock/
 
 LICENSE=        MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

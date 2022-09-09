@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Add Kerberos authentication capabilities to Net::SSH
+WWW=		https://rubygems.org/gems/net-ssh-krb
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,6 +10,7 @@ PATCHFILES=	9fbedd0db42305c904fc28deb9c69c7fc8f3d870.patch:-p1 \
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	C library providing BLAKE2b, BLAKE2s, BLAKE2bp, BLAKE2sp
+WWW=		https://blake2.net/
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tied interface to TinyURL.com
+WWW=		https://metacpan.org/release/Tie-TinyURL
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww

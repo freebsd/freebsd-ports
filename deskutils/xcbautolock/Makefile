@@ -4,6 +4,7 @@ CATEGORIES=	deskutils x11
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	XCB base autolocker
+WWW=		https://github.com/bapt/xcbautolock
 
 LICENSE=	BSD2CLAUSE
 

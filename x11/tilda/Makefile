@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Drop down x11 terminal with transparency support
+WWW=		https://github.com/lanoxx/tilda
 
 LICENSE=	GPLv2
 

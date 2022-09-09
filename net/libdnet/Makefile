@@ -6,6 +6,7 @@ CATEGORIES?=	net
 
 MAINTAINER?=	onatan@gmail.com
 COMMENT=	Simple interface to low level networking routines
+WWW=		https://github.com/5u623l20/libdnet/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

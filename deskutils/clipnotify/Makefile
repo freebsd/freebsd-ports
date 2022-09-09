@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Program to notify on new X clipboard events
+WWW=		https://github.com/cdown/clipnotify
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

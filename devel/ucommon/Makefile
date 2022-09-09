@@ -1,11 +1,12 @@
 PORTNAME=	ucommon
 PORTVERSION=	7.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	GNU/commoncpp
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very lightweight C++ design pattern library
+WWW=		https://www.gnu.org/software/commoncpp/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

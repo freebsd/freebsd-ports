@@ -5,6 +5,7 @@ CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Xorg libraries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://x.org
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

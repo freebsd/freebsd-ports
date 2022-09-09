@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby distributed lock using Redis, with emphasis in transparency
+WWW=		https://github.com/marioizquierdo/mario-redis-lock
 
 LICENSE=	MIT
 

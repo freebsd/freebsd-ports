@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		http://pear.doctrine-project.org/
 
 PEAR_CHANNEL_HOST=	pear.doctrine-project.org
 

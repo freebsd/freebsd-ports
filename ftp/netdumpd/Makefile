@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/markj
 
 MAINTAINER=	markj@FreeBSD.org
 COMMENT=	UDP server capable of handling netdump transfers
+WWW=		https://github.com/markjdb/netdumpd
 
 LICENSE=	BSD2CLAUSE
 

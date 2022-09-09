@@ -6,6 +6,7 @@ MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
+WWW=		http://gtkballs.antex.ru/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

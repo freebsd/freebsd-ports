@@ -5,6 +5,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	PinYin engine for IBus
+WWW=		http://code.google.com/p/ibus
 
 LICENSE=	GPLv2
 

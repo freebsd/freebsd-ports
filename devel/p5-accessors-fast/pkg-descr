@@ -11,5 +11,3 @@ you will not suffer from autovivification. Public interface
 recommended to be documented as accessors.
 
 Uses Class::C3
-
-WWW: https://metacpan.org/release/accessors-fast

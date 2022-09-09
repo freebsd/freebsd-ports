@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	SDK yandex money API
+WWW=		https://pypi.org/project/yandex-money-sdk/
 
 LICENSE=	MIT
 

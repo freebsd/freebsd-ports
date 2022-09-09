@@ -11,5 +11,3 @@ Adjust ~/.proxychains/proxychains.conf for your Proxy and use ProxyChains NG
 with
 
     proxychains application
-
-WWW: https://github.com/rofl0r/proxychains-ng

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${WEBFPW_VER}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webster's Revised Unabridged Dictionary (1913) (EPWING V1 format)
+WWW=		http://openlab.ring.gr.jp/edict/fpw/
 
 USES=		zip
 NO_BUILD=	yes

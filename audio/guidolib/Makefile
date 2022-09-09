@@ -5,6 +5,7 @@ CATEGORIES=	audio graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for graphic rendering of music scores
+WWW=		https://guido.grame.fr/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

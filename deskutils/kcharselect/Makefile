@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Character selector for KDE
+WWW=		https://utils.kde.org/projects/kcharselect/
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml

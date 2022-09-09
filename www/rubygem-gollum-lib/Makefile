@@ -1,11 +1,11 @@
 PORTNAME=	gollum-lib
-PORTVERSION=	5.1.3
-PORTREVISION=	2
+PORTVERSION=	5.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
+WWW=		https://github.com/gollum/gollum-lib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,5 +9,3 @@ we must have reliable results. We usually balance correctness over performance.
 And, if necessary, we should be able to trace this program's detection of HTML
 errors back to documented best practices or standards, such as W3
 specifications.
-
-WWW: https://github.com/gjtorikian/html-proofer

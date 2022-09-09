@@ -2,11 +2,12 @@ PORTNAME=	morty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0-12
 DISTVERSIONSUFFIX=	-gfe94d9a
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Privacy-aware web content sanitizer proxy as a service
+WWW=		https://github.com/asciimoo/morty
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

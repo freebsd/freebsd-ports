@@ -11,5 +11,3 @@ the user at build time.
 
 librsb implements the Sparse BLAS standard, as specified in the BLAS Forum
 documents.
-
-WWW: http://librsb.sourceforge.net/

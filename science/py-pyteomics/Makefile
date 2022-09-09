@@ -1,11 +1,12 @@
 PORTNAME=	pyteomics
-PORTVERSION=	4.5.4
+PORTVERSION=	4.5.5
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python modules for proteomics data analysis
+WWW=		https://pyteomics.readthedocs.io/
 
 LICENSE=	APACHE20
 

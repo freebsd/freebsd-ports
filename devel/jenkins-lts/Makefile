@@ -1,5 +1,5 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.346.3
+PORTVERSION=	2.361.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://get.jenkins.io/war-stable/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
@@ -10,12 +10,13 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open-source continuous integration server
+WWW=		https://jenkins.io/
 
 LICENSE=	MIT
 
 USES=		cpe
 CPE_EDITION=	lts
-USE_JAVA=	yes
+USE_JAVA=	11+
 USE_RC_SUBR=	jenkins
 
 CONFLICTS=	jenkins

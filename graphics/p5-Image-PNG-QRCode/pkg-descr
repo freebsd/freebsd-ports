@@ -13,5 +13,3 @@ my $u = URI->new ('data:');
 $u->media_type ('image/png');
 $u->data (qrpng (text => $data));
 print "<img src='$u'>\n";
-
-WWW: https://metacpan.org/pod/Image::PNG::QRCode

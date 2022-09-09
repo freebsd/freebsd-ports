@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module for Gtk+ 2.x graphical user interface library
+WWW=		http://gtk2-perl.sourceforge.net/
 
 LICENSE=	LGPL21
 

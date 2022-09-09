@@ -7,5 +7,3 @@ accept it after some time has elapsed.
 
 milter-greylist is a stand-alone milter written in C that implement grey
 listing.
-
-WWW: http://hcpnet.free.fr/milter-greylist/

@@ -7,6 +7,7 @@ PATCHFILES+=	129d50b3ba09.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Open source port of Cannon Fodder
+WWW=		http://openfodder.com/
 
 LICENSE=	BSD3CLAUSE GPLv3+ LGPL21+ MIT ZLIB
 LICENSE_COMB=	multi

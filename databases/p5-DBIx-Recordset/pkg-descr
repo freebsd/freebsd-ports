@@ -7,5 +7,3 @@ underlying DBMS.  Special attention is made on web applications to make
 it possible to handle the state-less access and to process the posted
 data of formfields, but DBIx::Recordset is not limited to web
 applications.
-
-WWW: https://metacpan.org/release/DBIx-Recordset

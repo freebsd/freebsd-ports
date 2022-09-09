@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FastCGI library for Ruby
+WWW=		https://github.com/alphallc/ruby-fcgi-ng
 
 LICENSE=	MIT
 

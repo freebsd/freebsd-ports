@@ -7,5 +7,3 @@ Pod formatters can use Pod::Simple to parse Pod documents into produce
 renderings of them in plain ASCII, in HTML, or in any number of other formats.
 Typically, such formatters will be subclasses of Pod::Simple, and so they will
 inherit its methods, like parse_file.
-
-WWW: https://metacpan.org/release/Pod-Simple

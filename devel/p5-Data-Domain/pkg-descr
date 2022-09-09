@@ -12,5 +12,3 @@ a database through DBIx::DataModel, or from postprocessing an HTML form through
 CGI::Expand. Data::Domain is a kind of tree parser on that structure, with some
 facilities for dealing with dependencies within the structure, and with several
 options to finely tune the error messages returned to the user.
-
-WWW: https://metacpan.org/release/Data-Domain

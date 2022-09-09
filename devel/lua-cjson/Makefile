@@ -8,6 +8,7 @@ DISTNAME=	lua-cjson-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fast JSON parsing and encoding support for Lua
+WWW=		https://www.kyne.com.au/~mark/software/lua-cjson.php
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

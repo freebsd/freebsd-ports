@@ -10,5 +10,3 @@ Moreover, FLIF supports a form of progressive interlacing (essentially a
 generalization/improvement of PNG's Adam7) which means that any prefix
 (e.g. partial download) of a compressed file can be used as a reasonable lossy
 encoding of the entire image.
-
-WWW: https://flif.info/

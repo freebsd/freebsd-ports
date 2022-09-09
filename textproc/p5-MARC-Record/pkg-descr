@@ -2,5 +2,3 @@ The MARC::* series of modules create a simple object-oriented abstraction
 of MARC record handling.
 
 MARC::Record is the core class for representing a single MARC record.
-
-WWW: https://metacpan.org/release/MARC-Record

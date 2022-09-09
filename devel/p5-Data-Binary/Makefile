@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple detection of binary versus text in strings
+WWW=		https://metacpan.org/release/Data-Binary
 
 LICENSE=	ART20
 

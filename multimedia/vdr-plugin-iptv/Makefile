@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - IP television plugin
+WWW=		http://www.saunalahti.fi/~rahrenbe/vdr/iptv/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

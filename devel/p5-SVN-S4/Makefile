@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gary@hayers.org
 COMMENT=	Wrapper for subversion program
+WWW=		https://metacpan.org/release/SVN-S4
 
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual

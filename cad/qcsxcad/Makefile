@@ -7,6 +7,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt-GUI for CSXCAD
+WWW=		https://github.com/thliebig/QCSXCAD
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

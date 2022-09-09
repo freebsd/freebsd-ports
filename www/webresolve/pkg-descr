@@ -13,5 +13,3 @@ resolution processes in parallel. This is done by the script splitwr:
 
 By default, splitwr runs 20 parallel resolution processes. The number can be
 changed by editing the script.
-
-WWW: http://siag.nu/webresolve/

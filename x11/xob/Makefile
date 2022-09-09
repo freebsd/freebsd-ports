@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Lightweight overlay volume (or anything) bar for the X Window System
+WWW=		https://github.com/florentc/xob
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

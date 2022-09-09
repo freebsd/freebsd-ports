@@ -5,5 +5,3 @@ solved with central or non-central cameras, and embedded into a random sample
 consensus or nonlinear optimization context. Matlab and Python interfaces are
 implemented as well. The link to the above pages also shows links to precompiled
 Matlab mex-libraries.  Please consult the documentation for more information.
-
-WWW: http://laurentkneip.github.io/opengv/

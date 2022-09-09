@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bioinformatics framework
+WWW=		http://bioinformatics.org/biococoa/
 
 LICENSE=	LGPL21
 

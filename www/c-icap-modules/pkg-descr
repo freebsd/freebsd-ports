@@ -6,5 +6,3 @@ clamav antivirus.
 
 srv_url_check:
 This is an URL blacklist/whitelist icap service
-
-WWW: http://c-icap.sourceforge.net/

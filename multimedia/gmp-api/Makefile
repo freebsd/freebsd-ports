@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Gecko Media Plugins API extracted from Firefox
+WWW=		https://wiki.mozilla.org/GeckoMediaPlugins
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	multi

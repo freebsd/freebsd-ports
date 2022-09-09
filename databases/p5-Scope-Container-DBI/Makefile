@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	DB connection manager with Scope::Container
+WWW=		https://metacpan.org/release/Scope-Container-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -3,6 +3,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	games education kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		https://www.kde.org/applications/games/katomic/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 \
 		shebangfix tar:xz

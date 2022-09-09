@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Apache ZooKeeper
+WWW=		https://metacpan.org/release/Net-ZooKeeper
 
 BROKEN=		No longer compiles with newer versions of ZooKeeper
 

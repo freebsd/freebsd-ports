@@ -1,12 +1,13 @@
 PORTNAME=	evince
 DISTVERSION=	42.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME multi-format document viewer
+WWW=		https://wiki.gnome.org/Apps/Evince
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -30,7 +31,7 @@ SLAVEPORT?=	no
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer libarchive \
 		localbase:ldflags meson pkgconfig tar:xz xorg
-USE_GNOME=	cairo gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 USE_XORG=	ice
 CPE_VENDOR=	gnome

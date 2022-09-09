@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module which implements the Null Class design pattern
+WWW=		https://metacpan.org/release/Class-Null
 
 USES=		perl5
 USE_PERL5=	configure

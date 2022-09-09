@@ -5,6 +5,7 @@ MASTER_SITES=	https://xcb.freedesktop.org/dist/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The X protocol C-language Binding (XCB) library
+WWW=		https://xcb.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

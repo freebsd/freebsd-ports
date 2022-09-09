@@ -10,6 +10,7 @@ THEMEVERSION=	0.8.4
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script to create slideshow-style DVD with some simple menus
+WWW=		http://dvd-slideshow.sourceforge.net/
 
 RUN_DEPENDS=	bash:shells/bash \
 		mpeg2enc:multimedia/mjpegtools \

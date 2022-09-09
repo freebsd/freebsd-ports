@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Seamless Polymorphic Inheritance for Django Models
+WWW=		https://github.com/django-polymorphic/django-polymorphic
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

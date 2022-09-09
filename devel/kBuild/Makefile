@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}r3127-src
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
+WWW=		https://svn.netlabs.org/kbuild
 
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi

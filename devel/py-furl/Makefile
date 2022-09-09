@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Small Python library that makes parsing and manipulating URLs easy
+WWW=		https://github.com/gruns/furl
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

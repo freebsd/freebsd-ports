@@ -1,5 +1,3 @@
 Oleo is a light-weight spreadsheet that'll work in almost any
 environment.  Oleo features a curses based interface (character mode),
 and also a LessTif (Motif) based graphical user interface.
-
-WWW: https://www.gnu.org/software/oleo/oleo.html

@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Lisp Flavored Erlang
+WWW=		https://lfe.io
 
 LICENSE=	APACHE20
 
@@ -29,7 +30,7 @@ post-install:
 .endfor
 .for FILE in lfe.1 lfescript.1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/${FILE} \
-		${STAGEDIR}${MAN1PREFIX}/man/man1             
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 .for FILE in lfe_lib.3 lfe_doc.3 lfe_clj.3 lfe_cl.3 lfe_gen.3 \
 	lfe_io.3 lfe_macro.3 lfe_comp.3 lfe_bits.3

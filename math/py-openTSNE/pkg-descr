@@ -5,5 +5,3 @@ t-SNE algorithm, including the ability to add new data points to existing
 embeddings, massive speed improvements, enabling t-SNE to scale to millions of
 data points and various tricks to improve global alignment of the resulting
 visualizations.
-
-WWW: https://github.com/pavlin-policar/openTSNE

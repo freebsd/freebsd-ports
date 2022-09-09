@@ -4,5 +4,3 @@ inspired by, and is similar in function to, 9menu and ratmenu but is muchly
 improved. It includes: User settings in X resources, long and short option
 names (using getopts), scrollable menus (if they do not fit on screen), both
 mouse and keyboard support, exiting on unfocus, and a decent manpage.
-
-WWW: http://www.update.uu.se/~zrajm/programs/

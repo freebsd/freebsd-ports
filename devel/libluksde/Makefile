@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libluksde/releases/download/${PORTVERSIO
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access LUKS Disk Encryption encrypted volumes
+WWW=		https://github.com/libyal/libluksde
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

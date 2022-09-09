@@ -6,6 +6,7 @@ PORTNAME=	gettext-tools
 PORTREVISION=	1
 
 COMMENT=	GNU gettext development and translation tools
+WWW=		https://www.gnu.org/software/gettext/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING

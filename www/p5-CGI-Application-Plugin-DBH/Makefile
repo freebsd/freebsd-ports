@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy DBI access from CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-DBH
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

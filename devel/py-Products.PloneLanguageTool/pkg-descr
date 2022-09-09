@@ -1,5 +1,3 @@
 PloneLanguageTool allows you to set the available languages in your Plone site,
 select various fallback mechanisms, and control the use of flags for language
 selection and translations.
-
-WWW: https://pypi.org/project/Products.PloneLanguageTool/

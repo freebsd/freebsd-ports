@@ -6,6 +6,7 @@ CATEGORIES=	ukrainian textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Ukrainian dictionaries
+WWW=		https://sourceforge.net/projects/ispell-uk/
 
 DICT=	 	uk
 

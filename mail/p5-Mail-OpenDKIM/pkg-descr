@@ -1,5 +1,3 @@
 Mail::OpenDKIM is a perl interface to the OpenDKIM C library. It also
 implements a drop-in replacement for the Mail::DKIM::Signer object which is up
 to four times faster than the pure perl Mail::DKIM implementation.
-
-WWW: https://metacpan.org/release/Mail-OpenDKIM

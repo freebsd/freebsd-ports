@@ -1,11 +1,12 @@
 PORTNAME=	psycopg-c
-PORTVERSION=	3.0.16
+PORTVERSION=	3.0.17
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL database adapter for Python - C optimization distribution
+WWW=		https://www.psycopg.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

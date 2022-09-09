@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JavaScript bindings based on gobject-introspection
+WWW=		http://cinnamon.linuxmint.com
 
 LICENSE=		MIT LGPL20+
 LICENSE_COMB=		dual

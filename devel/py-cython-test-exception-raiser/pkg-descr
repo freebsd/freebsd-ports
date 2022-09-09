@@ -1,4 +1,2 @@
 cython-test-exception-raiser provides a trivial extension that just raises an
 exception.
-
-WWW: https://github.com/twisted/cython-test-exception-raiser

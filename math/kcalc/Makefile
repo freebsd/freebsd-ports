@@ -4,6 +4,7 @@ CATEGORIES=	math kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Scientific calculator for KDE
+WWW=		https://utils.kde.org/projects/kcalc/
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr

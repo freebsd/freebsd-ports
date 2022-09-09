@@ -7,6 +7,7 @@ DISTNAME=	yazpp-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ toolkit for development of Z39.50v3 clients and servers
+WWW=		https://www.indexdata.dk/yazplusplus/
 
 LIB_DEPENDS=	libyaz.so:net/yaz
 

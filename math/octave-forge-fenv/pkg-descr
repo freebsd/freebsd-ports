@@ -9,5 +9,3 @@ On supported architectures, change the rounding mode of the floating point
 arithmetics (to nearest, up, down, to zero) or change the precision of the
 arithmetical operations (single, double, double extended). Experimentally
 test the properties of the floating point arithmetics.
-
-WWW: http://octave.sourceforge.net/

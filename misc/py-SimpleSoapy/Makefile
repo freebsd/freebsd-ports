@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple pythonic wrapper for SoapySDR library
+WWW=		https://github.com/xmikos/simplesoapy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

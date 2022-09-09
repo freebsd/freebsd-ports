@@ -2,5 +2,3 @@ phpGroupWare is a web based GroupWare system. It comes with several core
 apps for email, calendar, to-do list, address book, file manager, and a
 notepad.  It also provides a framework for add-on applications to integrate
 seamlessly in phpGroupWare.
-
-WWW: http://phpgroupware.org/

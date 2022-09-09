@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Prepare hostname for URBL domain lookup
+WWW=		https://metacpan.org/release/URBL-Prepare
 
 USES=		perl5
 USE_PERL5=	configure

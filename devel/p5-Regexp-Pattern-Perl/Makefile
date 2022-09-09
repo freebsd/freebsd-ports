@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Regexp patterns related to Perl
+WWW=		https://metacpan.org/release/Regexp-Pattern-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

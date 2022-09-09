@@ -7,6 +7,7 @@ DISTNAME=	avl-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for balanced binary trees
+WWW=		https://adtinfo.org/
 
 GNU_CONFIGURE=	yes
 

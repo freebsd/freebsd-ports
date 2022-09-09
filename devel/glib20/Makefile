@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
+WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL20
 

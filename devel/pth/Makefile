@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	# empty
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	GNU Portable Threads
+WWW=		https://www.gnu.org/software/pth/
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	13
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library
+WWW=		https://github.com/ged/ruby-pg
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

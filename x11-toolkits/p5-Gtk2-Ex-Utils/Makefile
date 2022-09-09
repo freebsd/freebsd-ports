@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extra Gtk2 utilities for Gtk2 in perl
+WWW=		https://metacpan.org/release/Gtk2-Ex-Utils
 
 LICENSE=	LGPL21
 

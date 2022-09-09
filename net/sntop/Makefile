@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor status of network nodes using fping
+WWW=		http://sntop.sourceforge.net/
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING

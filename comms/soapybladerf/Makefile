@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Soapy SDR plugin for the Blade RF
+WWW=		https://github.com/pothosware/SoapyBladeRF/wiki
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPLv2.1

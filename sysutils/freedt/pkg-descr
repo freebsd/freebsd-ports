@@ -16,5 +16,3 @@ different, and the error messages (and a few of the options) aren't
 quite the same. It's also still somewhat experimental, so I'd recommend
 sticking with daemontools on production systems until there's a stable
 release of freedt.
-
-WWW: http://offog.org/code/freedt.html

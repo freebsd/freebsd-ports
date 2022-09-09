@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings for FFmpeg - with complex filtering support
+WWW=		https://github.com/kkroening/ffmpeg-python
 
 LICENSE=	APACHE20
 

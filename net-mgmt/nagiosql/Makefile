@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Web based administration tool for Nagios
+WWW=		https://gitlab.com/wizonet/nagiosql
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

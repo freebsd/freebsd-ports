@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	High performance Chinese word segmentation utility
+WWW=		http://rmmseg-cpp.rubyforge.org
 
 LICENSE=	MIT
 

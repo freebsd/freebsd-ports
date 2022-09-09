@@ -5,5 +5,3 @@ TeX/LaTeX/OmegaLambda (HLaTeX [1]) by UN Koaunghi in the late 1990's.
 Recently, PARK Won-kyu converted them to truetype fonts and added
 GSUB tables to one of them (UnBatang) for the full support of
 Korean script with Korean letters (Hangul Jamos : U+1100).
-
-WWW: http://kldp.net/projects/unfonts/

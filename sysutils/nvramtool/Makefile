@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 
 MAINTAINER=	zont@FreeBSD.org
 COMMENT=	Utility for reading, writing the contents of CMOS memory
+WWW=		https://www.coreboot.org/Nvramtool
 
 USES=		gmake tar:bzip2
 

@@ -21,6 +21,7 @@ include/tiledb/object.h
 include/tiledb/object_iter.h
 include/tiledb/query.h
 include/tiledb/query_condition.h
+include/tiledb/query_experimental.h
 include/tiledb/schema_base.h
 include/tiledb/stats.h
 include/tiledb/subarray.h

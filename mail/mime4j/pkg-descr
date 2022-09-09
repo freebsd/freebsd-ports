@@ -15,5 +15,3 @@ mime4j can also be used to build a tree representation of an e-mail
 message using the Message class. Using this facility mime4j
 automatically handles the decoding of fields and bodies and uses
 temporary files for large attachments.
-
-WWW: https://james.apache.org/mime4j/

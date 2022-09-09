@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python Simulator for Cellular Systems
+WWW=		http://pysces.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt

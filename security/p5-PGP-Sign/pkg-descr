@@ -3,5 +3,3 @@ signatures for data. It's mainly intended to be used for things like
 reimplementing PGPMoose, signcontrol and pgpverify.
 
 It can use Gnu Privacy Guard.
-
-WWW: https://metacpan.org/release/PGP-Sign

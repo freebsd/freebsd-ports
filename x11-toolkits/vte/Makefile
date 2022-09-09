@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Gtk 2 based terminal widget with accessibility and I18N support
+WWW=		https://www.gnome.org/
 
 USES+=		tar:xz
 

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tiny command-line interface library
+WWW=		https://github.com/cloudhead/mutter
 
 NO_ARCH=	yes
 

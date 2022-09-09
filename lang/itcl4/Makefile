@@ -7,6 +7,7 @@ DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
+WWW=		https://core.tcl.tk/itcl
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms

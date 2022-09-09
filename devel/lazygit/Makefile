@@ -1,10 +1,12 @@
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Simple terminal UI for git commands
+WWW=		https://github.com/jesseduffield/lazygit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

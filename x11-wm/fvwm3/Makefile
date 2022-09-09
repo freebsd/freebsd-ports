@@ -1,12 +1,13 @@
 PORTNAME=	fvwm3
 PORTVERSION=	1.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	F? Virtual Window Manager
+WWW=		https://www.fvwm.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

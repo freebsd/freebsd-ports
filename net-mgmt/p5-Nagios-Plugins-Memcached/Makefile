@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to check memcached via nagios
+WWW=		https://metacpan.org/release/Nagios-Plugins-Memcached
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

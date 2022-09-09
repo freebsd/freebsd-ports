@@ -5,5 +5,3 @@ designed to scrape from a single source. Because we found that different
 sources had different information available on different books, we designed
 a basic interface that could be implemented in whatever ways necessary to
 retrieve the desired information.
-
-WWW: https://metacpan.org/release/WWW-Scraper-ISBN

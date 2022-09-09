@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
 MAINTAINER=	jcfyecrayz@liamekaens.com
 COMMENT=	XML API for C++
+WWW=		http://libxmlplusplus.sourceforge.net/
 
 LICENSE=	LGPL21+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Simplified, fast RSS parser
+WWW=		https://github.com/gpodder/podcastparser
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

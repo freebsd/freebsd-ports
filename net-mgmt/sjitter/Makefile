@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.18.1/
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Client/server jitter measurement utility
+WWW=		http://www.nicolargo.com/dev/sjitter/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes

@@ -5,11 +5,11 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject library for playing system sounds
+WWW=		https://wiki.gnome.org/Projects/GSound
 
-BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 
-USES=		gnome meson pathfix pkgconfig tar:xz
+USES=		gnome meson pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
 
 .include <bsd.port.mk>

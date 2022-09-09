@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Displays free memory as a bargraph
+WWW=		https://www.rkeene.org/oss/freecolor/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

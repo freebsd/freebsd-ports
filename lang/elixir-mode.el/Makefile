@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Emacs major mode for Elixir
+WWW=		https://github.com/elixir-lang/emacs-elixir
 
 LICENSE=	GPLv3
 

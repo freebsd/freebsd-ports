@@ -1,13 +1,14 @@
 PORTNAME=	kgeotag
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Photo geotagging manually or from GPX files
+WWW=		https://invent.kde.org/graphics/kgeotag/
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
+LICENSE_FILE=	${WRKSRC}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt
 
 USES=		cmake compiler:c++17-lang kde:5 pkgconfig qt:5 tar:xz
 USE_QT=		core gui widgets \

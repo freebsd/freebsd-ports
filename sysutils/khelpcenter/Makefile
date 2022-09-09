@@ -4,11 +4,12 @@ CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 application to show KDE application documentation
+WWW=		https://projects.kde.org/projects/kde/workspace/khelpcenter
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gnome \
-		grantlee:5 kde:5 qt:5 shebangfix tar:xz
+		grantlee:5 kde:5 qt:5 shebangfix tar:xz xorg
 USE_GNOME=	libxml2
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons emoticons i18n init \
@@ -22,6 +23,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 USE_KDE+=	doctools
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 SHEBANG_FILES=	searchhandlers/khc_mansearch.pl
 
 OPTIONS_DEFINE=	DOCS

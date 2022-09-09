@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitLab-patched Git Post-Receive hook for Flowdock
+WWW=		https://github.com/flowdock/flowdock-git-hook
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

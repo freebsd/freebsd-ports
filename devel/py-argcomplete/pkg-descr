@@ -11,5 +11,4 @@ subparsers, and if your program can dynamically suggest completions for your
 argument/option values (for example, if the user is browsing resources over the
 network).
 
-WWW: https://pypi.org/project/argcomplete/
-WWW: https://github.com/kislyuk/argcomplete
+See also: https://github.com/kislyuk/argcomplete

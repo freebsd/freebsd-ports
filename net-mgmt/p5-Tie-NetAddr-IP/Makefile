@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl hash implementation with subnets as keys
+WWW=		https://metacpan.org/release/Tie-NetAddr-IP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-NetAddr-IP>0:net-mgmt/p5-NetAddr-IP

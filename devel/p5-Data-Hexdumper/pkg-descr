@@ -4,5 +4,3 @@ gives the programmer a considerable degree of flexibility in how the data is
 formatted, with sensible defaults. It is envisaged that it will primarily be
 of use for those wrestling alligators in the swamp of binary file formats,
 which is why it was written in the first place.
-
-WWW: https://metacpan.org/release/Data-Hexdumper

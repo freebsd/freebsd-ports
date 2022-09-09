@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.fefe.de/gatling/
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	High performance webserver with scalability benchmark tools
+WWW=		https://www.fefe.de/gatling/
 
 LICENSE=	GPLv2
 

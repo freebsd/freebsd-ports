@@ -8,5 +8,4 @@ CGIWrap works with NCSA httpd, Apache, CERN httpd, NetSite Commerce
 and Communications servers, and probably any other Unix-based Web
 server software that supports CGI.
 
-WWW: http://cgiwrap.sourceforge.net/
-WWW: http://cgiwrap.unixtools.org/
+See also: http://cgiwrap.sourceforge.net/

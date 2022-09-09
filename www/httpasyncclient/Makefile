@@ -6,6 +6,7 @@ DISTNAME=	httpcomponents-asyncclient-${DISTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing an asynchronous HTTP client
+WWW=		https://hc.apache.org/httpcomponents-asyncclient-4.1.x/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

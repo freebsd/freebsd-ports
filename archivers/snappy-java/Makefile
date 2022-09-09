@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
 
 MAINTAINER=	language.devel@gmail.com
 COMMENT=	Fast compressor/decompressor library
+WWW=		https://github.com/xerial/snappy-java
 
 LICENSE=	APACHE20
 

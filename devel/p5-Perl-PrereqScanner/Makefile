@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Tool to scan your Perl code for its prerequisites
+WWW=		https://metacpan.org/release/Perl-PrereqScanner
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

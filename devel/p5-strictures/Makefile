@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Turn on strict and make all warnings fatal
+WWW=		https://metacpan.org/release/strictures
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

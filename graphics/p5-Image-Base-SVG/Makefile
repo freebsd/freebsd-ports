@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SVG image file output
+WWW=		https://metacpan.org/release/Image-Base-SVG
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

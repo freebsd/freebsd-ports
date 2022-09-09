@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Battle-tested Apache Storm Multi-Lang implementation for Python
+WWW=		https://github.com/pystorm/pystorm
 
 LICENSE=	APACHE20
 

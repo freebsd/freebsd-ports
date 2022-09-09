@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Streaming Text Orientated Messaging Protocol Client
+WWW=		https://metacpan.org/release/Net-STOMP-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

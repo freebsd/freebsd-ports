@@ -7,6 +7,7 @@ MASTER_SITES=	http://get.bitlbee.org/src/ \
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	IRC to other chat networks gateway
+WWW=		https://www.bitlbee.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

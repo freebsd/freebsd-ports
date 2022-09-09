@@ -18,5 +18,3 @@ about UEFI, to boot.
 
 This CSM port provides an older version of EDK2 for use with VMs
 running operating systems which don't have UEFI support.
-
-WWW: https://github.com/freebsd/uefi-edk2/tree/bhyve/UDK2014.SP1

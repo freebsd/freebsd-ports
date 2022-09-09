@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-client
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
+WWW=		http://www.code-aster.org/
 
 LICENSE=	GPLv2
 

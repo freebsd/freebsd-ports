@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OCaml arithmetic library for arbitrary precision integers
+WWW=		https://forge.ocamlcore.org/projects/zarith
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

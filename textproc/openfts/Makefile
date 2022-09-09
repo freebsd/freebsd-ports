@@ -7,6 +7,7 @@ DISTNAME=	Search-OpenFTS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Full Text Search engine
+WWW=		http://openfts.sourceforge.net/
 
 RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 

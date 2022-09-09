@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
+WWW=		https://www.mozilla.com/thunderbird/
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.68:security/nss \

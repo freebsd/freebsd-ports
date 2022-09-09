@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	FUSE Interface for KIO
+WWW=		https://invent.kde.org/system/kio-fuse
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt

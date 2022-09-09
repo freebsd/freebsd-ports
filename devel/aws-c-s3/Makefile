@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 library implementation for communicating with the S3 service
+WWW=		https://github.com/awslabs/aws-c-s3
 
 LICENSE=	APACHE20
 

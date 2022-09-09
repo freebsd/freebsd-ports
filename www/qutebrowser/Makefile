@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Keyboard-focused browser with a minimal GUI
+WWW=		https://www.qutebrowser.org/
 
 LICENSE=	GPLv3
 

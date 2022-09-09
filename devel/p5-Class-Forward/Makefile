@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for class dispatcher that handles namespaces like paths
+WWW=		https://metacpan.org/release/AWNCORP/Class-Forward-0.100006
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

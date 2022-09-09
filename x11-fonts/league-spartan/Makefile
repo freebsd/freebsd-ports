@@ -10,6 +10,7 @@ DISTNAME=	LeagueSpartan-${DISTVERSION}
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Revival of ATF\'s classic Spartan
+WWW=		https://www.theleagueofmoveabletype.com/league-spartan
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.md

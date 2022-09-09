@@ -9,6 +9,7 @@ DISTNAME=	text-highlight-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syntax highlighting framework
+WWW=		https://metacpan.org/release/ICRF/text-highlight-0.04
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

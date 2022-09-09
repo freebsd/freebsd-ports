@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Conic problem solver interface extending OSI to conic problems
+WWW=		https://github.com/aykutbulut/OSI-CONIC
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faraday adapter for Excon
+WWW=		https://github.com/lostisland/faraday-excon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

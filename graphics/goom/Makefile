@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual effects library
+WWW=		https://sourceforge.net/projects/goom/
 
 LICENSE=	LGPL20
 

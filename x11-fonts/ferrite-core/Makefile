@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Geometric shaped font lending it a futurist look
+WWW=		https://github.com/froyotam/ferrite-core
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

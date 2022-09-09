@@ -2,8 +2,9 @@ PORTNAME=	libretro-a5200
 PORTVERSION=	0.20220327
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of Atari 5200 emulator for GCW0
+WWW=		https://github.com/libretro/a5200
 
 LICENSE=	GPLv2
 

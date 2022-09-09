@@ -7,6 +7,7 @@ DISTNAME=	fontPens-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of classes implementing the pen protocol for manipulating glyphs
+WWW=		https://github.com/robotools/fontPens
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

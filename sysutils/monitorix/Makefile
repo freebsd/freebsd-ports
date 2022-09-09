@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.monitorix.org/ \
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Web based monitoring system
+WWW=		https://www.monitorix.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

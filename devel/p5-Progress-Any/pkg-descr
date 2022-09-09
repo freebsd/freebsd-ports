@@ -6,5 +6,3 @@ to Log::Any, except Adapter is called Output and category is called task.
 Progress::Any records position/target and calculates elapsed time, estimated
 remaining time, and percentage of completion. One or more output modules
 (Progress::Any::Output::*) display this information.
-
-WWW: https://metacpan.org/release/Progress-Any

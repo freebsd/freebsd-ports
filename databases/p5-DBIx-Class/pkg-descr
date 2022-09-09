@@ -19,5 +19,3 @@ This project is still under rapid development, so large new features may be
 marked EXPERIMENTAL - such APIs are still usable but may have edge bugs.
 Failing test cases are *always* welcome and point releases are put out rapidly
 as bugs are found and fixed.
-
-WWW: https://metacpan.org/release/DBIx-Class

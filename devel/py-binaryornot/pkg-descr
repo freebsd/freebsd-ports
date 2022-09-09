@@ -8,5 +8,3 @@ these file types:
 		  .woff, .rgb
 
 It has also tests for numerous encodings.
-
-WWW: https://github.com/audreyr/binaryornot

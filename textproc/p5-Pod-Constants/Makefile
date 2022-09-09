@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Include constants from POD
+WWW=		https://metacpan.org/release/Pod-Constants
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

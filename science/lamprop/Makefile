@@ -4,6 +4,7 @@ CATEGORIES=	science python
 
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Calculates properties of fiber reinforced composites
+WWW=		https://rsmith.home.xs4all.nl/software/lamprop.html
 
 LICENSE=	BSD2CLAUSE
 

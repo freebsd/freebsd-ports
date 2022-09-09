@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	00
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asciidoctor PlantUML extension
+WWW=		https://github.com/hsanson/asciidoctor-plantuml
 
 LICENSE=	MIT
 

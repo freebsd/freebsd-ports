@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Convenience methods for using Data::ICal with DateTime
+WWW=		https://metacpan.org/release/Data-ICal-DateTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

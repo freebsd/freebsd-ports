@@ -1,5 +1,3 @@
 Libmodbus is a C library designed to provide a fast and robust
 implementation of the Modbus protocol. It runs on Linux, Mac OS X,
 FreeBSD, QNX and Windows.
-
-WWW: https://libmodbus.org/

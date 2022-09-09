@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of Moose role for turning objects into POE sessions
+WWW=		https://metacpan.org/release/NPEREZ/POEx-Role-SessionInstantiation-1.102610
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

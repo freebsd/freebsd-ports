@@ -25,5 +25,3 @@ of internet subscribers.
  * Ability to continue serving data from cache for non-responsive backends
  * Smart rate limiting per user, per subnet, per domain
  * Capable of writing dynamic rules to block harmful traffic
-
-WWW: https://dnsdist.org/

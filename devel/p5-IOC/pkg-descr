@@ -3,5 +3,3 @@ Inversion of Control, sometimes called Dependency Injection, is a
 component management style which aims to clean up component
 configuration and provide a cleaner, more flexible means of configuring
 a large application.
-
-WWW: https://metacpan.org/release/IOC

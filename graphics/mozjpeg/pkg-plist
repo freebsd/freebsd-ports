@@ -9,6 +9,10 @@ include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
 include/turbojpeg.h
+lib/cmake/mozjpeg/mozjpegConfig.cmake
+lib/cmake/mozjpeg/mozjpegConfigVersion.cmake
+lib/cmake/mozjpeg/mozjpegTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mozjpeg/mozjpegTargets.cmake
 lib/libjpeg.a
 lib/libjpeg.so
 lib/libjpeg.so.8

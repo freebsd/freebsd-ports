@@ -7,6 +7,7 @@ DISTNAME=	DNSCheck-1.1
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	DNS checker from the folks that run the .SE top level domain
+WWW=		https://dnscheck.iis.se/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

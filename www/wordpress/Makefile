@@ -6,6 +6,7 @@ MASTER_SITES=	https://wordpress.org/
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
+WWW=		https://wordpress.org/
 
 LICENSE=	GPLv2
 

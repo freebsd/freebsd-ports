@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Element for PEAR::HTML_QuickForm to enable a suggest search
+WWW=		https://pear.php.net/package/HTML_QuickForm_Livesearch
 
 LICENSE=	PHP30
 

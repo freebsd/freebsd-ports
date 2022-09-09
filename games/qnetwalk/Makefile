@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Game for system administrators
+WWW=		https://github.com/AMDmi3/qnetwalk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

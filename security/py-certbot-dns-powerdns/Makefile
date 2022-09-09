@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	PowerDNS DNS Authenticator plugin for Certbot
+WWW=		https://github.com/pan-net-security/certbot-dns-powerdns
 
 LICENSE=	APACHE20
 

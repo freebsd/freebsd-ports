@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Produces ctags "tags" and etags "TAGS" files for Haskell programs
+WWW=		https://github.com/MarcWeber/hasktags
 
 LICENSE=	BSD3CLAUSE
 

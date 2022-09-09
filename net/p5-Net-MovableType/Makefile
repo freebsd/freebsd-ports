@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight MovableType client Perl module
+WWW=		https://metacpan.org/release/Net-MovableType
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite

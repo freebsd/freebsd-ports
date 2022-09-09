@@ -1,11 +1,12 @@
 PORTNAME=	siegfried
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	File identification tool
+WWW=		https://github.com/richardlehane/siegfried
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

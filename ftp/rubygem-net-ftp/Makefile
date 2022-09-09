@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Support for the File Transfer Protocol
+WWW=		https://github.com/ruby/net-ftp
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

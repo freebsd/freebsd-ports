@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Key Vault Client Library for Python
+WWW=		https://pypi.org/project/azure-keyvault/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source implementation of the OBEX protocol
+WWW=		http://dev.zuckschwerdt.org/openobex/
 
 USE_LDCONFIG=	yes
 USES=		cmake:insource cpe dos2unix

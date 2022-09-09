@@ -7,6 +7,7 @@ MASTER_SITES=	http://komquats.com/distfiles/ \
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Print lines with IP addresses matching a pattern in CIDR format
+WWW=		https://www.lexa.ru/lexa/
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 

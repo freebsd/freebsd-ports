@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.slf4j.org/dist/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simple facade or abstraction for various logging frameworks
+WWW=		https://www.slf4j.org/
 
 LICENSE=	MIT
 

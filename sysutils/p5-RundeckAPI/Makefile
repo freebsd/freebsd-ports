@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	xavier@groumpf.org
 COMMENT=	Easily queries Rundeck's REST API
+WWW=		https://metacpan.org/dist/RundeckAPI
 
 LICENSE=	GPLv2
 

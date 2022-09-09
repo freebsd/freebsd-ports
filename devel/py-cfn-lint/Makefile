@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	AWS CloudFormation Linter
+WWW=		https://pypi.org/project/cfn-lint/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

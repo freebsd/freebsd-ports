@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::NodeFilter is an object that know how to "filter out" nodes
+WWW=		https://metacpan.org/release/XML-NodeFilter
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML

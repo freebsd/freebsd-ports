@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Scour SVG Optimizer
+WWW=		https://github.com/scour-project/scour
 
 LICENSE=	APACHE20
 

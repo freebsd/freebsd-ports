@@ -5,6 +5,7 @@ MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check various parameters of a MySQL database
+WWW=		https://labs.consol.de/de/nagios/check_mysql_health/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

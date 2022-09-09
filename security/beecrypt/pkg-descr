@@ -19,5 +19,3 @@ The BeeCrypt library currently includes:
    - DHAES encryption scheme
    - ElGamal signature scheme (two variants)
    - Basic RSA primitives and key pair generation
-
-WWW: https://sourceforge.net/projects/beecrypt/

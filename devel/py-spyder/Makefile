@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific PYthon Development EnviRonment, an alternative to IDLE
+WWW=		https://github.com/spyder-ide/spyder/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

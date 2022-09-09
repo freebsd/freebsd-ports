@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugin to monitor MySQL replication on a slave
+WWW=		http://buhacoff.net/software/check_mysql_slave
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

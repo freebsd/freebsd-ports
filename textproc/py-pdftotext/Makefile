@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Simple PDF text extraction
+WWW=		https://github.com/jalan/pdftotext
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

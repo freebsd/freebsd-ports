@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
+WWW=		http://libdmtx.sourceforge.net
 
 LICENSE=	LGPL21+
 

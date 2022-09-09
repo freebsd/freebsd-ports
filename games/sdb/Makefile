@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic overhead shooter
+WWW=		http://www.gamecreation.org/games/shotgun-debugger
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

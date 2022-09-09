@@ -5,6 +5,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	Openstreetmap mapping program
+WWW=		http://merkaartor.be/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

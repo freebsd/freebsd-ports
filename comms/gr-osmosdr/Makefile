@@ -7,6 +7,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	GNU Radio OsmoSDR module
+WWW=		http://sdr.osmocom.org/trac
 
 LICENSE=	GPLv3
 

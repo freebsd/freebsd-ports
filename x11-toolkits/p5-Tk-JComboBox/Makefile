@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Contains a Label or Entry, a Button, and a Listbox
+WWW=		https://metacpan.org/release/Tk-JComboBox
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tk>=804.027:x11-toolkits/p5-Tk

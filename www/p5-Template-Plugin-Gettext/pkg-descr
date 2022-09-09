@@ -5,5 +5,3 @@ xgettext-tt2 that extracts translatable strings from templates and writes them
 to PO files (or rather a .pot file in PO format). The string extractor
 xgettext-tt2 is fully customizable and also usable for other i18n plugins or
 frameworks for the Template Toolkit.
-
-WWW: https://metacpan.org/release/Template-Plugin-Gettext

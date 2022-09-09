@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.src
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Epson Scan 2 scanner driver
+WWW=		https://download.ebz.epson.net/man/linux/epsonscan2_e.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/textproc/asm2html/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Converts NASM syntax assembly code to HTML code
+WWW=		https://bsdforge.com/projects/textproc/asm2html/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

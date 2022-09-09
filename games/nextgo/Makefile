@@ -7,6 +7,7 @@ DISTNAME=	NeXTGo-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic Go game for OPENSTEP/GNUstep
+WWW=		https://www.nongnu.org/gap/nextgo/index.html
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING

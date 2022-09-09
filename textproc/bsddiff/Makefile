@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	bsd-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD-licensed version of diff from OpenBSD
+WWW=		https://www.freebsd.org/projects/ideas/ #p-bsdtexttools
 
 USES=		uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}

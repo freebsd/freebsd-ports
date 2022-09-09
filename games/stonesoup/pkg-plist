@@ -121,6 +121,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/serial/column_ruins.des
 %%DATADIR%%/dat/des/serial/corridors.des
 %%DATADIR%%/dat/des/serial/curves.des
+%%DATADIR%%/dat/des/serial/demonic.des
 %%DATADIR%%/dat/des/serial/forest.des
 %%DATADIR%%/dat/des/serial/glass.des
 %%DATADIR%%/dat/des/serial/gnoll_camp.des
@@ -650,6 +651,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_nibiki_octopode.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_peileppe_bloax_eye.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_philosopheropposite_palentonga_paladin.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_ploomutoo_ijyb.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_pooryurik_knight.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_psiweapon_kiku.png

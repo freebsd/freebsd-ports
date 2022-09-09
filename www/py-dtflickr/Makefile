@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Spiffy Flickr API library using JSON
+WWW=		https://code.douglasthrift.net/trac/dtflickr
 
 LICENSE=	APACHE20
 

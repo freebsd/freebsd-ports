@@ -9,5 +9,3 @@ with different datasets or purposes.
 csvtk is convenient for rapid data investigation and also easy to integrate
 into analysis pipelines. It could save you lots of time in (not) writing
 Python/R scripts.
-
-WWW: https://bioinf.shenwei.me/csvtk/

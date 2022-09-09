@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/ofiwg/${PORTNAME}/releases/download/v${DISTVERS
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Fabric Interfaces
+WWW=		https://ofiwg.github.io/libfabric/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

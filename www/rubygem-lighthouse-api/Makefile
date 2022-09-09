@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface for lighthouse ticketing system
+WWW=		https://lighthouseapp.com/api
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

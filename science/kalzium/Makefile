@@ -4,6 +4,7 @@ CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Periodic table of elements for KDE
+WWW=		https://www.kde.org/applications/education/kalzium
 
 LICENSE=	GPLv2 LGPL20 GFDL
 LICENSE_COMB=	multi
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:math/facile \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl kde:5 \
-		pkgconfig qt:5 tar:xz
+		pkgconfig qt:5 tar:xz xorg
 USE_GL=		gl glew glu
 USE_KDE=	auth archive attica bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools emoticons guiaddons i18n \
@@ -29,7 +30,7 @@ NO_OCAML_RUNDEPENDS=	yes
 USE_QT=		concurrent core dbus declarative gui network opengl printsupport script svg \
 		widgets xml \
 		buildtools_build qmake_build
-
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

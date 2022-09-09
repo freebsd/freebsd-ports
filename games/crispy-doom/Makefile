@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Enhanced-resolution Doom source port based on Chocolate Doom
+WWW=		https://github.com/fabiangreffrath/crispy-doom
 
 LICENSE=	GPLv2
 

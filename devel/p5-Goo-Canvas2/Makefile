@@ -10,6 +10,7 @@ DISTNAME=	GooCanvas2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl binding for GooCanvas2
+WWW=		https://metacpan.org/release/GooCanvas2
 
 LICENSE=	GPLv2
 

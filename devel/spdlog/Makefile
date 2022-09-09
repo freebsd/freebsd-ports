@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Super fast C++ logging library
+WWW=		https://github.com/gabime/spdlog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

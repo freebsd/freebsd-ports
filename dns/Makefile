@@ -184,6 +184,7 @@
     SUBDIR += py-cloudflare
     SUBDIR += py-dns-crawler
     SUBDIR += py-dns-lexicon
+    SUBDIR += py-dnslib
     SUBDIR += py-dnspython
     SUBDIR += py-dnspython1
     SUBDIR += py-easyzone

@@ -11,6 +11,7 @@ DISTNAME=	postfixadmin
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users
+WWW=		http://www.postfixadmin.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT

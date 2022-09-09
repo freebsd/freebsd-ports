@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Arbitrary precision library for arithmetic of univariate polynomials
+WWW=		https://www.multiprecision.org/mpfrcx/home.html
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

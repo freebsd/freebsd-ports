@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XSL wrapper / extension to the PHP 5.x XSLTProcessor
+WWW=		https://github.com/theseer/fXSL/
 
 LICENSE=	BSD3CLAUSE
 

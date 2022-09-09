@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Simple interface to SFTP
+WWW=		https://bitbucket.org/dundeemt/pysftp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

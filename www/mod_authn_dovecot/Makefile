@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	florian@wagner-flo.net
 COMMENT=	Apache authentication against Dovecot
+WWW=		https://github.com/bmanojlovic/mod_authn_dovecot
 
 LICENSE=	APACHE20
 

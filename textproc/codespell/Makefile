@@ -1,10 +1,11 @@
 PORTNAME=	codespell
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Source code spelling checker
+WWW=		https://github.com/codespell-project/codespell
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

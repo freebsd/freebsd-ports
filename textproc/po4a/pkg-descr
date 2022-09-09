@@ -11,5 +11,3 @@ po4a currently supports the following formats:
 * text (simple text files with some formatting, markdown, or AsciiDoc)
 * INI
 * KernelHelp
-
-WWW: https://po4a.org/

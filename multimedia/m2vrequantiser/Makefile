@@ -6,6 +6,7 @@ DISTNAME=	M2VRequantiser-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Requantize MPEG-2 streams without recompressing
+WWW=		https://launchpad.net/m2vrequantiser
 
 CFLAGS=		-Duint=unsigned
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}"

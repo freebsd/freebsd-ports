@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Icinga Web 2 ReactPHP-based 3rd party libraries
+WWW=		https://github.com/Icinga/icingaweb2-module-reactbundle
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

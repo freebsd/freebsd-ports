@@ -3,5 +3,3 @@ various configuration files.  It does not implement parser for any existing
 configuration file format.  Instead, it provides an API that can be used by
 parsers to build internal representation for the particular configuration
 file format.
-
-WWW: https://metacpan.org/release/Config-AST

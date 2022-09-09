@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular patch bay for Jack
+WWW=		https://drobilla.net/software/patchage.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

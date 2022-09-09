@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Comprehensive validation tool for webmasters and web developers
+WWW=		https://www.w3.org/QA/Tools/LogValidator/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \

@@ -7,5 +7,3 @@ empty list is returned.
 
 If read_entity_body() did not see new entity data in its read the value -1 is
 returned.
-
-WWW: https://metacpan.org/release/Net-HTTPS-NB

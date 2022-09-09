@@ -4,5 +4,3 @@ was designed to be used in bash scripts, Perl programs, and web sites, but it
 is also quite useful in many other contexts. SendEmail is written in Perl and
 is unique in that it requires no special modules. It has a straight forward
 interface, making it very easy to use. It can send atttachements.
-
-WWW: http://caspian.dotconf.net/menu/Software/SendEmail/

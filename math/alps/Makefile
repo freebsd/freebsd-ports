@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Abstract Library for Parallel Search (ALPS)
+WWW=		https://github.com/coin-or/CHiPPS-ALPS
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Alps/LICENSE

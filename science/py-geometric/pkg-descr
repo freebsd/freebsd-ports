@@ -5,5 +5,3 @@ quantum chemistry codes through the command line interface. The PySCF and
 QCArchive packages also provide interfaces to geomeTRIC for optimization.
 MM optimizations using OpenMM and Gromacs are also supported through the
 command line interface.
-
-WWW: https://github.com/leeping/geomeTRIC

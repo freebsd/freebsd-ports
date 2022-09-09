@@ -6,6 +6,7 @@ DISTNAME=	fr-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tcl/Tk-based filemanager with FTP capabilities
+WWW=		https://sourceforge.net/projects/filerunner/
 
 LICENSE=	GPLv2
 

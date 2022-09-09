@@ -12,5 +12,3 @@ Graphene will fall back to a naive scalar implementation
 Graphene can, optionally, provide types for integrating with GObject
 properties and signals, as well as introspection information for its
 use with other languages through introspection-based bindings.
-
-WWW: http://ebassi.github.io/graphene/

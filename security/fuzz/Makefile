@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for testing software by bombarding the program with random data
+WWW=		http://fuzz.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 

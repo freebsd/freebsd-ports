@@ -7,6 +7,7 @@ DISTNAME=	KitchenSink-${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Example programs for Copperspice
+WWW=		https://www.copperspice.com/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

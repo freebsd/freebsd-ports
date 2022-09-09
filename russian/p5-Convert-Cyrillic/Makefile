@@ -8,6 +8,7 @@ DISTNAME=	cyrillic-${PORTVERSION}
 
 MAINTAINER=	pluknet@gmail.com
 COMMENT=	Routines for converting from one Cyrillic charset to another
+WWW=		https://metacpan.org/release/cyrillic
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Unicode-Map8>=0:converters/p5-Unicode-Map8

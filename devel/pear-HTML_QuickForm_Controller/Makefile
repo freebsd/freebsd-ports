@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	The add-on to HTML_QuickForm that allows building of multipage forms
+WWW=		https://pear.php.net/package/HTML_QuickForm_Controller
 
 LICENSE=	PHP301
 

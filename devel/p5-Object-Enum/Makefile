@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Replacement for if ($$foo eq 'bar')
+WWW=		https://metacpan.org/release/Object-Enum
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

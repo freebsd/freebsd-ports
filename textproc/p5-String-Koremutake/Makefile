@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert to/from Koremutake Memorable Random Strings
+WWW=		https://metacpan.org/release/String-Koremutake
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

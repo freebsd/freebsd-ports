@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	otaviof@gmail.com
 COMMENT=	Perl front end for the Gearman C library
+WWW=		http://www.gearman.org/
 
 LIB_DEPENDS=	libgearman.so:devel/gearmand
 

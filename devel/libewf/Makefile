@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libyal/libewf-legacy/releases/download/${PORTVE
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library for support of the Expert Witness Compression Format (EWF)
+WWW=		https://github.com/libyal/libewf-legacy
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
 MAINTAINER=	lukas.slebodnik@intrak.sk
 COMMENT=	System Security Services Daemon
+WWW=		https://pagure.io/SSSD/sssd
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

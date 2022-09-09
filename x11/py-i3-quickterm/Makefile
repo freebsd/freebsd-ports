@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Drop-down "quake style" terminal for i3 and sway
+WWW=		https://github.com/lbonn/i3-quickterm
 
 LICENSE=	MIT
 

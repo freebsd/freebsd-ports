@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JMX access for Perl
+WWW=		https://metacpan.org/release/jmx4perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \

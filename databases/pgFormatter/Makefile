@@ -1,10 +1,11 @@
 PORTNAME=	pgFormatter
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL SQL syntax beautifier
+WWW=		https://github.com/darold/pgFormatter
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Prototype object-based programming
+WWW=		https://github.com/hadley/proto
 
 LICENSE=	GPLv2
 

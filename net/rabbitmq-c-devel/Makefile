@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	RabbitMQ C AMQP client library
+WWW=		https://www.rabbitmq.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT

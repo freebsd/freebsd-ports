@@ -4,6 +4,7 @@ CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	ANSI / ASCII art to PNG converter
+WWW=		https://github.com/ansilove/ansilove
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

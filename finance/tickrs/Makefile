@@ -1,11 +1,11 @@
 PORTNAME=	tickrs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.4
-PORTREVISION=	14
+DISTVERSION=	0.14.6
 CATEGORIES=	finance
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Realtime ticker data in your terminal
+WWW=		https://github.com/tarkah/tickrs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,173 +16,183 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	tarkah
 
-CARGO_CRATES=	addr2line-0.14.1 \
-		adler-0.2.3 \
-		ansi_term-0.11.0 \
-		anyhow-1.0.38 \
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		android_system_properties-0.1.4 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.62 \
 		async-attributes-1.1.2 \
-		async-channel-1.5.1 \
-		async-executor-1.4.0 \
-		async-global-executor-2.0.2 \
-		async-io-1.3.1 \
-		async-lock-2.3.0 \
-		async-mutex-1.4.0 \
-		async-std-1.9.0 \
-		async-task-4.0.3 \
+		async-channel-1.7.1 \
+		async-executor-1.4.1 \
+		async-global-executor-2.2.0 \
+		async-io-1.7.0 \
+		async-lock-2.5.0 \
+		async-std-1.12.0 \
+		async-task-4.3.0 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
-		backtrace-0.3.56 \
+		autocfg-1.1.0 \
+		backtrace-0.3.66 \
 		better-panic-0.2.0 \
-		bitflags-1.2.1 \
-		blocking-1.0.2 \
-		bumpalo-3.6.0 \
-		byteorder-1.4.2 \
+		bitflags-1.3.2 \
+		blocking-1.2.0 \
+		bumpalo-3.10.0 \
+		byteorder-1.4.3 \
 		bytes-0.4.12 \
-		cache-padded-1.1.1 \
+		cache-padded-1.2.0 \
 		cassowary-0.3.0 \
-		cc-1.0.66 \
+		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
+		chrono-0.4.22 \
 		chrono-tz-0.5.3 \
-		clap-2.33.3 \
+		clap-2.34.0 \
 		clicolors-control-1.0.1 \
-		concurrent-queue-1.2.2 \
+		concurrent-queue-1.2.4 \
 		console-0.9.2 \
+		core-foundation-sys-0.8.3 \
 		crossbeam-channel-0.4.4 \
 		crossbeam-utils-0.7.2 \
-		crossbeam-utils-0.8.1 \
+		crossbeam-utils-0.8.11 \
 		crossterm-0.18.2 \
 		crossterm-0.19.0 \
 		crossterm_winapi-0.6.2 \
 		crossterm_winapi-0.7.0 \
-		ctor-0.1.19 \
-		curl-0.4.34 \
-		curl-sys-0.4.40+curl-7.75.0 \
+		ctor-0.1.23 \
+		curl-0.4.44 \
+		curl-sys-0.4.56+curl-7.83.1 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		dtoa-0.4.7 \
-		either-1.6.1 \
+		dtoa-0.4.8 \
+		either-1.7.0 \
 		encode_unicode-0.3.6 \
-		event-listener-2.5.1 \
-		fastrand-1.4.0 \
+		event-listener-2.5.3 \
+		fastrand-1.8.0 \
 		fnv-1.0.7 \
-		form_urlencoded-1.0.0 \
-		futures-0.3.12 \
-		futures-channel-0.3.12 \
-		futures-core-0.3.12 \
-		futures-executor-0.3.12 \
-		futures-io-0.3.12 \
-		futures-lite-1.11.3 \
-		futures-macro-0.3.12 \
-		futures-sink-0.3.12 \
-		futures-task-0.3.12 \
-		futures-util-0.3.12 \
-		getrandom-0.2.2 \
-		gimli-0.23.0 \
-		gloo-timers-0.2.1 \
-		heck-0.3.2 \
-		hermit-abi-0.1.18 \
+		form_urlencoded-1.0.1 \
+		futures-0.3.23 \
+		futures-channel-0.3.23 \
+		futures-core-0.3.23 \
+		futures-executor-0.3.23 \
+		futures-io-0.3.23 \
+		futures-lite-1.12.0 \
+		futures-macro-0.3.23 \
+		futures-sink-0.3.23 \
+		futures-task-0.3.23 \
+		futures-util-0.3.23 \
+		getrandom-0.2.7 \
+		gimli-0.26.2 \
+		gloo-timers-0.2.4 \
+		hashbrown-0.12.3 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
 		http-0.1.21 \
-		idna-0.2.1 \
-		instant-0.1.9 \
+		iana-time-zone-0.1.45 \
+		idna-0.2.3 \
+		indexmap-1.9.1 \
+		instant-0.1.12 \
 		iovec-0.1.4 \
 		isahc-0.8.2 \
 		itertools-0.9.0 \
-		itoa-0.4.7 \
-		js-sys-0.3.47 \
+		itoa-0.4.8 \
+		itoa-1.0.3 \
+		js-sys-0.3.59 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.86 \
-		libnghttp2-sys-0.1.6+1.43.0 \
-		libz-sys-1.1.2 \
-		linked-hash-map-0.5.4 \
-		lock_api-0.4.2 \
-		log-0.4.14 \
-		matches-0.1.8 \
+		libc-0.2.132 \
+		libnghttp2-sys-0.1.7+1.45.0 \
+		libz-sys-1.1.8 \
+		linked-hash-map-0.5.6 \
+		lock_api-0.4.7 \
+		log-0.4.17 \
+		matches-0.1.9 \
 		maybe-uninit-2.0.0 \
-		memchr-2.3.4 \
-		miniz_oxide-0.4.3 \
-		mio-0.7.7 \
-		miow-0.3.6 \
-		nb-connect-1.0.3 \
-		ntapi-0.3.6 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		object-0.23.0 \
-		once_cell-1.5.2 \
-		openssl-probe-0.1.2 \
-		openssl-sys-0.9.60 \
+		memchr-2.5.0 \
+		miniz_oxide-0.5.3 \
+		mio-0.7.14 \
+		miow-0.3.7 \
+		ntapi-0.3.7 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.13.1 \
+		object-0.29.0 \
+		once_cell-1.13.1 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.75 \
 		parking-2.0.0 \
-		parking_lot-0.11.1 \
-		parking_lot_core-0.8.3 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
 		parse-zoneinfo-0.3.0 \
 		percent-encoding-2.1.0 \
-		pin-project-lite-0.2.4 \
+		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.19 \
-		polling-2.0.2 \
+		pkg-config-0.3.25 \
+		polling-2.2.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.24 \
-		quote-1.0.9 \
-		redox_syscall-0.2.5 \
-		redox_users-0.4.0 \
-		regex-1.4.3 \
-		regex-syntax-0.6.22 \
-		rustc-demangle-0.1.18 \
-		ryu-1.0.5 \
-		schannel-0.1.19 \
+		proc-macro2-1.0.43 \
+		quote-1.0.21 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.6.0 \
+		regex-syntax-0.6.27 \
+		rustc-demangle-0.1.21 \
+		ryu-1.0.11 \
+		schannel-0.1.20 \
 		scopeguard-1.1.0 \
-		serde-1.0.123 \
-		serde_derive-1.0.123 \
-		serde_json-1.0.62 \
+		serde-1.0.143 \
+		serde_derive-1.0.143 \
+		serde_json-1.0.83 \
 		serde_urlencoded-0.6.1 \
-		serde_yaml-0.8.17 \
+		serde_yaml-0.8.26 \
 		signal-hook-0.1.17 \
-		signal-hook-registry-1.3.0 \
-		slab-0.4.2 \
-		sluice-0.5.4 \
-		smallvec-1.6.1 \
-		socket2-0.3.19 \
+		signal-hook-registry-1.4.0 \
+		slab-0.4.7 \
+		sluice-0.5.5 \
+		smallvec-1.9.0 \
+		socket2-0.4.4 \
 		strsim-0.8.0 \
-		structopt-0.3.21 \
-		structopt-derive-0.4.14 \
-		syn-1.0.60 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.99 \
 		termios-0.3.3 \
 		textwrap-0.11.0 \
-		time-0.1.43 \
-		tinyvec-1.1.1 \
+		thiserror-1.0.32 \
+		thiserror-impl-1.0.32 \
+		time-0.1.44 \
+		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		tui-0.14.0 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.17 \
-		unicode-segmentation-1.7.1 \
-		unicode-width-0.1.8 \
-		unicode-xid-0.2.1 \
-		url-2.2.0 \
-		value-bag-1.0.0-alpha.6 \
-		vcpkg-0.2.11 \
-		vec-arena-1.0.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.3 \
+		unicode-normalization-0.1.21 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
+		url-2.2.2 \
+		value-bag-1.0.0-alpha.9 \
+		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
-		version_check-0.9.2 \
+		version_check-0.9.4 \
 		waker-fn-1.1.0 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.70 \
-		wasm-bindgen-backend-0.2.70 \
-		wasm-bindgen-futures-0.4.20 \
-		wasm-bindgen-macro-0.2.70 \
-		wasm-bindgen-macro-support-0.2.70 \
-		wasm-bindgen-shared-0.2.70 \
-		web-sys-0.3.47 \
-		wepoll-sys-3.0.1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.82 \
+		wasm-bindgen-backend-0.2.82 \
+		wasm-bindgen-futures-0.4.32 \
+		wasm-bindgen-macro-0.2.82 \
+		wasm-bindgen-macro-support-0.2.82 \
+		wasm-bindgen-shared-0.2.82 \
+		web-sys-0.3.59 \
+		wepoll-ffi-0.1.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
 		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}

@@ -1,4 +1,2 @@
 This tool allows one to monitor I/O latency in real time.  It shows disk
 latency in the same way as ping(8) shows network latency.
-
-WWW: https://github.com/koct9i/ioping

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Praise Users
+WWW=		https://cran.r-project.org/web/packages/praise/
 
 LICENSE=	MIT
 

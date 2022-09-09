@@ -1,4 +1,2 @@
 This is the PHP extension for zstandard,
 or zstd a fast lossless compression algorithm.
-
-WWW: https://github.com/kjdev/php-ext-zstd

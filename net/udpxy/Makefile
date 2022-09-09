@@ -1,9 +1,10 @@
 PORTNAME=	udpxy
-DISTVERSION=	1.0-24.1
+DISTVERSION=	1.0-25.1
 CATEGORIES=	net
 
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	UDP-to-HTTP multicast traffic relay daemon
+WWW=		http://udpxy.sourceforge.net/
 
 LICENSE=	GPLv3
 
@@ -12,20 +13,21 @@ USE_RC_SUBR=	udpxy
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcherenkov
-WRKSRC_SUBDIR=	chipmunk
 
-OPTIONS_SINGLE=	CONF
-OPTIONS_SINGLE_CONF=	RELEASE LEAN
-RELEASE_DESC=	No asserts, no debug symbols, verbose on
-LEAN_DESC=	No asserts, no debug symbols, verbose off
-OPTIONS_DEFAULT=	RELEASE
+CFLAGS+=	-Wno-error
+
+WRKSRC_SUBDIR=	chipmunk
 
 PLIST_FILES=	sbin/udpxy \
 		sbin/udpxrec \
 		man/man1/udpxy.1.gz \
 		man/man1/udpxrec.1.gz
 
-CFLAGS+=	-Wno-error
+OPTIONS_DEFAULT=	RELEASE
+OPTIONS_SINGLE=	CONF
+OPTIONS_SINGLE_CONF=	RELEASE LEAN
+RELEASE_DESC=	No asserts, no debug symbols, verbose on
+LEAN_DESC=	No asserts, no debug symbols, verbose off
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${STAGEDIR}${PREFIX}/sbin

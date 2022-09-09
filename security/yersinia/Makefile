@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
+WWW=		http://www.yersinia.net/
 
 LICENSE=	GPLv2
 

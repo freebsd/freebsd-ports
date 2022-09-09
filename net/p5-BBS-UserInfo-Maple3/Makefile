@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get user information of Maple3-style BBS
+WWW=		https://metacpan.org/release/BBS-UserInfo-Maple3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

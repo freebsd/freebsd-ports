@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPAmj Mincho Japanese fonts
+WWW=		https://moji.or.jp/mojikiban/font/
 
 LICENSE=	IPAFONTLICv1.0
 LICENSE_NAME=	IPA Font License Agreement v1.0

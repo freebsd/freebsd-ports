@@ -8,6 +8,3 @@ In contrast to other similar tools, this unittest2pytest
 * uses context-handlers where appropriate.
 
 This is done by using lib2to3 and Python's mighty inspect module.
-
-WWW: https://pypi.org/project/unittest2pytest/
-WWW: https://github.com/pytest-dev/unittest2pytest

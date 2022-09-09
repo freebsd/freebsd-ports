@@ -1,4 +1,2 @@
 This module provides a convenient interface to timing functions
 through tied scalars.
-
-WWW: https://metacpan.org/release/Time-Stopwatch

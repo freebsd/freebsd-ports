@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	FreeNAS common Python modules
+WWW=		https://github.com/freenas/middleware
 
 LICENSE=	BSD3CLAUSE
 

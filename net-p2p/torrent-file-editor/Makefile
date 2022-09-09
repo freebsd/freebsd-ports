@@ -5,6 +5,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI tool for creating and editing .torrent files
+WWW=		https://torrent-file-editor.github.io/
 
 LICENSE=	GPLv3+
 

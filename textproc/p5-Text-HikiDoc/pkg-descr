@@ -3,5 +3,3 @@ original 'HikiDoc' is Ruby implementation.
 
 This library is pure perl implementation of 'HikiDoc', and has
 interchangeability with the original.
-
-WWW: https://metacpan.org/release/Text-HikiDoc

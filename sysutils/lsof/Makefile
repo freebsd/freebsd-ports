@@ -8,6 +8,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Lists information about open files (similar to fstat(1))
+WWW=		https://github.com/lsof-org/lsof
 
 LICENSE=	lsof
 LICENSE_NAME=	lsof

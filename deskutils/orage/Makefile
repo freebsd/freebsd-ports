@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Calendar application for the Xfce Desktop
+WWW=		https://git.xfce.org/apps/orage/about/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

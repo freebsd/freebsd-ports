@@ -9,6 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERS
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Fantasy turn-based strategy game
+WWW=		https://www.wesnoth.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

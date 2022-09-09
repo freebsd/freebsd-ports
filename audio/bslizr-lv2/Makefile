@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sequenced audio slicing effect LV2 plugin ("step sequencer effect")
+WWW=		https://github.com/sjaehn/BSlizr
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

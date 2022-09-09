@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Eyecandy ASCII Tables
+WWW=		https://metacpan.org/release/Text-SimpleTable
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

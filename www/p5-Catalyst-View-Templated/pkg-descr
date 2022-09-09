@@ -1,4 +1,2 @@
 View::Templated makes all (template-based) Catalyst views work
 the same way.
-
-WWW: https://metacpan.org/release/Catalyst-View-Templated

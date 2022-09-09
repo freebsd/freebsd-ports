@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Light, single-file, minimalist window manager for X11
+WWW=		https://github.com/vardy/aphelia
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-timezone clock
+WWW=		http://www.peterverthez.net/projects/intclock/
 
 BUILD_DEPENDS=	p5-Gtk2>=1.144:x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}

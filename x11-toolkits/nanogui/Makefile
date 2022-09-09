@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimalistic GUI library for OpenGL
+WWW=		https://github.com/wjakob/nanogui
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

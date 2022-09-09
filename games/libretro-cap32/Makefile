@@ -2,8 +2,9 @@ PORTNAME=	libretro-cap32
 PORTVERSION=	0.20220402
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amstrad CPC computers emulator core for libretro API
+WWW=		https://github.com/libretro/libretro-cap32
 
 LICENSE=	GPLv2
 

@@ -8,5 +8,3 @@ Example of enabling all exe related audit events performed by a command and its
 child processes:
 
   # setaudit -m ex command
-
-WWW: https://github.com/csjayp/setaudit

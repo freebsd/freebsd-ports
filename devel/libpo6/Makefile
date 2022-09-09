@@ -5,6 +5,7 @@ MASTER_SITES=	http://hyperdex.org/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX wrappers for C++
+WWW=		https://github.com/rescrv/po6
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

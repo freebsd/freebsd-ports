@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cryptographic operations using the OS crypto libraries
+WWW=		https://github.com/wbond/oscrypto
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	os-win
-PORTVERSION=	5.7.0
+PORTVERSION=	5.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Windows / Hyper-V library for OpenStack projects
+WWW=		https://github.com/openstack/os-win
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

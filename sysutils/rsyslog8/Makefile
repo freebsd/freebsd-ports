@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
+WWW=		https://www.rsyslog.com/
 
 LICENSE=	GPLv3 LGPL3 APACHE20
 LICENSE_COMB=	multi

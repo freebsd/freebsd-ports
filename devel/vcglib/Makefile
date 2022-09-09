@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Library for manipulation of triangle meshes
+WWW=		https://github.com/cnr-isti-vclab/vcglib
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

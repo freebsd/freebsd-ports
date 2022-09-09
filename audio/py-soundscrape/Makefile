@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SoundCloud downloader in python
+WWW=		https://github.com/Miserlou/SoundScrape
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

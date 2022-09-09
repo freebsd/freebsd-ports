@@ -1,5 +1,5 @@
 PORTNAME=	qcad
-PORTVERSION=	3.27.6.0
+PORTVERSION=	3.27.6.7
 DISTVERSIONPREFIX=	v
 #PORTREVISION=	1
 CATEGORIES=	cad
@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
+WWW=		https://www.ribbonsoft.com/qcad.html
 
 LICENSE=	GPLv3
 

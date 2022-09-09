@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Construct absolute paths and full URLs for a Sinatra application
+WWW=		https://github.com/emk/sinatra-url-for
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

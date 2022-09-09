@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Model checker, a formal verification tool for state machines
+WWW=		https://github.com/Smattr/rumur
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

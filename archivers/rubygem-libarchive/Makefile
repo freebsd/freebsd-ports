@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libarchive
+WWW=		https://bitbucket.org/winebarrel/libarchive-ruby
 
 LICENSE=	BSD3CLAUSE
 

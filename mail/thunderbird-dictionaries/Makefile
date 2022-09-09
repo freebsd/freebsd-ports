@@ -8,6 +8,7 @@ DIST_SUBDIR=	thunderbird
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Dictionaries for Mozilla Thunderbird
+WWW=		http://www.mozilla.com/thunderbird/dictionaries.html
 
 RUN_DEPENDS=	thunderbird>=6.0:mail/thunderbird
 

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Basic testing plugin for using BWidgets for LV2
+WWW=		https://github.com/sjaehn/BAmp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

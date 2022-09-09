@@ -6,5 +6,3 @@ and with single input parameters like socket path and processes number.
 Another thing to mention is that it is able to execute any file pointed
 by Web server. So we have the daemon that is hot ready for hosting
 providing.
-
-WWW: https://metacpan.org/release/FCGI-Spawn

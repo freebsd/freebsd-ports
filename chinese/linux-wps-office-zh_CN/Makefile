@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Complete office suite with PDF editor
+WWW=		https://www.wps.cn/
 
 LICENSE=	commercial
 LICENSE_NAME=	End User License Agreement

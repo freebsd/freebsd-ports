@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Alternate Python keyring implementations
+WWW=		https://pypi.org/project/keyrings.alt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

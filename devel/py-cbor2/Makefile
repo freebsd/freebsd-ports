@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Pure Python CBOR (de)serializer with extensive tag support
+WWW=		https://pypi.org/project/cbor2/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -9,6 +9,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math, string, and aggregate function library for SQLite
+WWW=		https://www.sqlite.org/contrib
 
 USES=		localbase sqlite
 DIST_SUBDIR=	sqlite-ext

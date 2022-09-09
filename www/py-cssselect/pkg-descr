@@ -4,5 +4,3 @@ to find the matching elements in an XML or HTML document.
 
 This module used to live inside of lxml as ``lxml.cssselect`` before it was
 extracted as a stand-alone project.
-
-WWW: https://github.com/scrapy/cssselect

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	penzin.dev@gmail.com
 COMMENT=	CMake modules needed to build WebOS components
+WWW=		https://freewebos.github.io/
 
 LICENSE=	APACHE20
 

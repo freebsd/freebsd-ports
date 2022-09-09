@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test Runner for the Moose test suite
+WWW=		https://metacpan.org/release/Moose-Test
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mouse>=0:devel/p5-Mouse \

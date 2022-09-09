@@ -17,5 +17,3 @@ key differences are:
   of information, use iostat(8) instead.
 * gstat-rs does not display GEOM consumers (`-c`), but it can easily be
   added if there's any demand for that feature.
-
-WWW: https://github.com/asomers/gstat-rs

@@ -5,6 +5,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Functional and object-oriented language for the .NET platform
+WWW=		https://fsharp.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

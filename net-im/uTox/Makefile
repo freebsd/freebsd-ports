@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/uTox/uTox/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Tox client
+WWW=		https://utox.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

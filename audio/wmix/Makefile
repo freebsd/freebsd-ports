@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer for the WindowMaker dock with TV-like OSD
+WWW=		https://www.ne.jp/asahi/linux/timecop/
 
 OPTIONS_DEFINE=	DOCS
 

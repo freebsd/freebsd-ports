@@ -15,5 +15,3 @@ It uses Parse::RecDescent to parse the PETALES expressions which makes it
 a bit slow to load the module but this won't matter much unless you have
 turned off caching. It won't matter at all for something like Apache's
 mod_perl.
-
-WWW: https://metacpan.org/release/Petal-CodePerl

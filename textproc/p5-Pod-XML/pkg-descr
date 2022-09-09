@@ -1,4 +1,2 @@
 This module uses Pod::Parser to parse POD and generates XML from the
 resulting parse stream.
-
-WWW: https://metacpan.org/release/Pod-XML

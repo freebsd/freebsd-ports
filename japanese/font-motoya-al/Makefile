@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-fonts-${PORTVERSION:S,^0.0.,,}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Free Japanese fonts by MOTOYA
+WWW=		https://android.googlesource.com/platform/frameworks/base/+/76d3b0f1bdf31b7315b636834f7da7211ca907e0
 
 LICENSE=	APACHE20
 

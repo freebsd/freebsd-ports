@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reimplementation of Notepad++
+WWW=		https://github.com/dail8859/NotepadNext
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

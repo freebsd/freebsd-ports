@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Determine positions for hyphens inside words
+WWW=		https://metacpan.org/release/Text-Hyphen
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

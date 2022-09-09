@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7/
 
 MAINTAINER=	berend@pobox.com
 COMMENT=	PAM module for authenticating with PostgreSQL
+WWW=		https://sourceforge.net/projects/pam-pgsql/
 
 LICENSE=	GPLv2
 

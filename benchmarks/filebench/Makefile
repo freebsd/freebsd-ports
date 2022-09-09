@@ -5,6 +5,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	File system and storage benchmark
+WWW=		https://github.com/filebench/filebench/wiki
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE

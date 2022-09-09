@@ -9,6 +9,7 @@ DISTNAME=	normaliz-${PORTVERSION}
 # MAINTAINER block
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Compute Hilbert bases and enumerative data of rational polyhedra
+WWW=		https://www.normaliz.uni-osnabrueck.de
 
 CONFLICTS_BUILD=	e-antic # math/e-antic should be a dependency but it fails: https://github.com/Normaliz/Normaliz/issues/380
 

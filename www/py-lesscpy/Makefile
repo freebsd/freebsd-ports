@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Python LESS compiler
+WWW=		https://github.com/lesscpy/lesscpy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

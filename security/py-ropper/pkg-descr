@@ -18,5 +18,3 @@ the awesome Capstone Framework.
 
 Now you can generate rop chain automatically (auto-roper) for execve
 and mprotect syscall.
-
-WWW: https://scoding.de/ropper/

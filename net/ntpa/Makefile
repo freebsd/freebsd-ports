@@ -7,6 +7,7 @@ MASTER_SITES=	http://dist1.innolan.net/ \
 
 MAINTAINER=	cs@innolan.net
 COMMENT=	NTP data collection and charting
+WWW=		http://ntpa.innolan.net/
 
 LICENSE=	MIT BSD3CLAUSE PostgreSQL GPLv2
 LICENSE_COMB=	multi

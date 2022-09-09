@@ -9,5 +9,3 @@ administrator to have a full knowledge of what features are allowed/enabled on
 the server. Motsognir supports server-side CGI applications and PHP scripts, is
 plainly compatible with UTF-8 filesystems, and is entirely written in ANSI C
 without external dependencies.
-
-WWW: https://sourceforge.net/projects/motsognir/

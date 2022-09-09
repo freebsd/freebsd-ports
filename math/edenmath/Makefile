@@ -7,6 +7,7 @@ DISTNAME=	EdenMath_GNUstep-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific calculator for GNUstep
+WWW=		https://www.eskimo.com/~pburns/EdenMath/
 
 LICENSE=	GPLv2
 

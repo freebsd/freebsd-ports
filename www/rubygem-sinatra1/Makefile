@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Classy web development framework in ruby
+WWW=		http://www.sinatrarb.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

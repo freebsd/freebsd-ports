@@ -8,5 +8,3 @@ Xwrits hides itself until you should take another break.
 The typetime option changes the amount of time between breaks, and the
 breaktime option changes the length of a break. The defaults are 55
 minutes and 5 minutes, respectively.
-
-WWW: http://www.lcdf.org/xwrits/

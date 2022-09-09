@@ -4,5 +4,3 @@ work such as POEx::Role::TCPServer which provides basic TCP socket
 multiplexing via POE::Wheel::SocketFactory and POE::Wheel::ReadWrite,
 and POEx::Role::SessionInstantiation which transforms plain Moose
 objects into POE sessions.
-
-WWW: https://metacpan.org/release/POEx-Role-PSGIServer

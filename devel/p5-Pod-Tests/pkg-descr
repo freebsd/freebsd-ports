@@ -10,5 +10,3 @@ object.
 Once extracted, the tests can be built into stand-alone testing code using
 the build_tests() and build_examples() methods. However, it is recommended
 that you first look at the pod2test program before embarking on this.
-
-WWW: https://metacpan.org/release/Pod-Tests

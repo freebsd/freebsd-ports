@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Trace SAX events
+WWW=		https://metacpan.org/release/Devel-TraceSAX
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-TraceCalls>=0.03:devel/p5-Devel-TraceCalls \

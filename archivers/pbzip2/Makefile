@@ -5,6 +5,7 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.1/${PORTVERSION}/+download/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Parallel BZIP2
+WWW=		http://compression.ca/pbzip2/
 
 LICENSE=	BSD4CLAUSE
 

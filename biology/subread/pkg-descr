@@ -16,5 +16,3 @@ next-gen sequencing read data including:
 
     exactSNP: a SNP caller that discovers SNPs by testing signals against local
     background noises.
-
-WWW: http://bioinf.wehi.edu.au/subread-package/

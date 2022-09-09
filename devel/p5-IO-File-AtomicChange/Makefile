@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to change content of a file atomically
+WWW=		https://metacpan.org/release/IO-File-AtomicChange
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

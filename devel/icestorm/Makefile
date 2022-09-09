@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	IceStorm tools for Lattice iCE40 FPGAs
+WWW=		https://www.clifford.at/icestorm
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

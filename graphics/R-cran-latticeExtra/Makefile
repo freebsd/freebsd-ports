@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Extra graphical utilities based on lattice
+WWW=		https://cran.r-project.org/web/packages/latticeExtra/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

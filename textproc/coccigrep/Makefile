@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semantic grep for the C language
+WWW=		https://home.regit.org/software/coccigrep/
 
 LICENSE=	GPLv3
 

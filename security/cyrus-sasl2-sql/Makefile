@@ -1,6 +1,7 @@
 PKGNAMESUFFIX=	-sql
 
 COMMENT=	SASL SQL plugins
+WWW=		https://www.cyrusimap.org/sasl/
 
 OPTIONS_DEFINE=	MYSQL PGSQL
 OPTIONS_RADIO=	SQLITE

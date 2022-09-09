@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
+WWW=		https://fkurz.net/ham/yfklog.html
 
 LICENSE=	GPLv2
 

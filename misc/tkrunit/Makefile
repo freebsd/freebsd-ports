@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GUI app launcher with completion and history
+WWW=		https://thaumaturgy.net/~etgold/software/tkRunIt/
 
 OPTIONS_DEFINE=	EXAMPLES
 

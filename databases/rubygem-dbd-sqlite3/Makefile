@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SQLite3 driver for DBI-for-Ruby
+WWW=		http://ruby-dbi.sourceforge.net
 
 LICENSE=	BSD3CLAUSE
 

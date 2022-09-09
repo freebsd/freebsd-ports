@@ -1,11 +1,12 @@
 PORTNAME=	ytdl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	YouTube downloader written in Go
+WWW=		https://github.com/rylio/ytdl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

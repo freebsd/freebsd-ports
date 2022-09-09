@@ -1,5 +1,3 @@
 cddlib is a C library implementation of the Double Description Method. Given a
 convex polyhedron P in R^n, it can be used to change between the V- and
 H-representation and to solve linear programming problems over P.
-
-WWW: https://github.com/cddlib/cddlib

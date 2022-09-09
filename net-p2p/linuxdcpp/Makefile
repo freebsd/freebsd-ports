@@ -6,6 +6,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/69733951/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of the DC++ Direct Connect client to Unix-like systems
+WWW=		https://launchpad.net/linuxdcpp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt

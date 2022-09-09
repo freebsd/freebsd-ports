@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moniker for classes
+WWW=		https://metacpan.org/release/UNIVERSAL-moniker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

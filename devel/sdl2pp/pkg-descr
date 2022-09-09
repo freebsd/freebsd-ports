@@ -6,5 +6,3 @@ functions with extra features proided with modern C++ such as:
   fails. Exception itself allows to retrieve SDL error string
 * C++11 move semantics support, which allow you to store SDL objects
   in containers and pass/return them by value with no overhead
-
-WWW: https://github.com/libSDL2pp/libSDL2pp

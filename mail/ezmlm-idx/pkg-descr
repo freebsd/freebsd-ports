@@ -16,5 +16,3 @@ ezmlm-idx adds the following features:
 - distributed lists (main + sublist transparent to the subscriber)
 - SQL support (MySQL or PostgreSQL) for centrally administered
   distributed lists
-
-WWW: http://www.untroubled.org/ezmlm/

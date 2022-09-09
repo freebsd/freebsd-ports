@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DMX extension library
+WWW=		https://www.freedesktop.org/Software/xorg
 
 USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto

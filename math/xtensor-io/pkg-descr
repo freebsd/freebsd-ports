@@ -5,5 +5,3 @@ data structures:
 * NumPy's compressed storage format (NPZ)
 * HDF5 files
 * Blosc
-
-WWW: https://github.com/xtensor-stack/xtensor-io

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
 COMMENT=	File duplicate detection CLI utility
+WWW=		https://www.virkki.com/dupd/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

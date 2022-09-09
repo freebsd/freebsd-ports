@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Set of window manipulation tools
+WWW=		https://github.com/wmutils/core
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

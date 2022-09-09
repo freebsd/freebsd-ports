@@ -1,7 +1,40 @@
-etc/dwatch-json-net.conf.sample
+etc/cron.d/grafio
+etc/cron.d/grafnet
+@sample etc/dwatch-json-io.conf.sample
+@sample etc/dwatch-json-net.conf.sample
+@sample etc/grafio/grafio.conf.sample
+@sample etc/grafio/grafio.subr.sample
+@sample etc/grafio/stats.conf.sample
+@sample etc/grafnet/grafnet.conf.sample
+@sample etc/grafnet/grafnet.subr.sample
+@sample etc/grafnet/stats.conf.sample
+etc/rc.d/grafio
+etc/rc.d/grafio_stats
+etc/rc.d/grafnet
+etc/rc.d/grafnet_stats
+libexec/dwatch/json-io
+libexec/dwatch/json-io-config
+libexec/dwatch/json-io-config-raw
+libexec/dwatch/json-io-raw
+libexec/dwatch/json-io-top
+libexec/dwatch/json-io-top-raw
 libexec/dwatch/json-net
 libexec/dwatch/json-net-config
 libexec/dwatch/json-net-config-raw
 libexec/dwatch/json-net-raw
 libexec/dwatch/json-net-top
 libexec/dwatch/json-net-top-raw
+sbin/gio
+sbin/gn
+sbin/grafio
+sbin/grafio-logs
+sbin/grafio-rotate
+sbin/grafio_stats
+sbin/grafnet
+sbin/grafnet-logs
+sbin/grafnet-rotate
+sbin/grafnet_stats
+share/examples/grafio/dashboards/block-i-o.json
+share/examples/grafnet/dashboards/device-i-o-rates-b-s.json
+share/examples/grafnet/dashboards/device-i-o-rates-bps.json
+share/examples/grafnet/dashboards/device-i-o.json

@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Network Load plugin for Xfce4
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

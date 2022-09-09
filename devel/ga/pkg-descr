@@ -7,5 +7,3 @@ Information about the actual data distribution and locality can be easily
 obtained and taken advantage of whenever data locality is important. The
 primary target architectures for which GA was developed are massively-parallel
 distributed-memory and scalable shared-memory systems.
-
-WWW: https://hpc.pnl.gov//globalarrays/

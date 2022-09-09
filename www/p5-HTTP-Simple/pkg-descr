@@ -15,5 +15,3 @@ a compatible object like HTTP::Tinyish).
 
 The JSON encoder used by the JSON functions defaults to a JSON::PP instance, and
 can be accessed as $HTTP::Simple::JSON.
-
-WWW: https://metacpan.org/release/HTTP-Simple

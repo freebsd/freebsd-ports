@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to create new projects from code skeleton
+WWW=		https://github.com/TwP/bones
 
 LICENSE=	MIT
 

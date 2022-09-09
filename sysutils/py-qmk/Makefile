@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	CLI program for working with QMK firmware
+WWW=		https://github.com/qmk/qmk_cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

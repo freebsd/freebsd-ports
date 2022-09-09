@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically build HTML_QuickForm objects using DB_DataObject
+WWW=		https://pear.php.net/package/DB_DataObject_FormBuilder
 
 LICENSE=	LGPL3
 

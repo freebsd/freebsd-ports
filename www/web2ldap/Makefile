@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
+WWW=		https://web2ldap.de/
 
 LICENSE=	APACHE20
 

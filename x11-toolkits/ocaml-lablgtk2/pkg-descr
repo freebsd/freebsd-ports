@@ -5,5 +5,3 @@ available, along with many examples.
 
 Objective Caml threads are supported, including for the toplevel, which
 allows for interactive use of the library.
-
-WWW: https://garrigue.github.io/lablgtk/

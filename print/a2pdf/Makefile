@@ -7,6 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:JONALLEN
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Text to PDF converter
+WWW=		http://perl.jonallen.info/projects/a2pdf
 
 LICENSE=	ART20
 

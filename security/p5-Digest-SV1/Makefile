@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for SV1 hash algorithm
+WWW=		https://metacpan.org/release/SAMV/Digest-SV1-0.01
 
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Digest-Haval256>=0:security/p5-Digest-Haval256

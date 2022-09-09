@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	felix@userspace.com.au
 COMMENT=	High-performance, zero maintenance encrypted DNS proxy
+WWW=		https://github.com/jedisct1/encrypted-dns-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

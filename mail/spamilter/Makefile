@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sendmail LibMilter filter to block spam
+WWW=		https://www.wanlink.com/spamilter/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

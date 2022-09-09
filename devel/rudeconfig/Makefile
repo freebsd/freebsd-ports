@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.rudeserver.com/config/download/
 
 MAINTAINER=	lowmaster@web.de
 COMMENT=	Library for handling configuration files, written in C++
+WWW=		http://www.rudeserver.com/
 
 USES=		dos2unix libtool
 DOS2UNIX_GLOB=	*

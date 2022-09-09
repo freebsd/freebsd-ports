@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	oneAPI Video Processing Library dispatcher, tools, and examples
+WWW=		https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onevpl.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

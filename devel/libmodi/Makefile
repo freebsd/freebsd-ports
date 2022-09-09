@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libmodi/releases/download/${PORTVERSION:
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Mac OS disk image formats
+WWW=		https://github.com/libyal/libmodi
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

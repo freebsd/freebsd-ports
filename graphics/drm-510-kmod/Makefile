@@ -1,10 +1,11 @@
 PORTNAME=	drm-510-kmod
 PORTVERSION=	5.10.113
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRM drivers modules
+WWW=		https://github.com/freebsd/drm-kmod/
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
@@ -19,7 +20,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.10.113_4
+GH_TAGNAME=	drm_v5.10.113_5
 
 .include <bsd.port.options.mk>
 

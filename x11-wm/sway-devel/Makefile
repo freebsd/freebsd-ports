@@ -1,6 +1,6 @@
 PORTNAME=	sway
-DISTVERSION=	1.7-118
-DISTVERSIONSUFFIX=	-g6e023257
+DISTVERSION=	1.7-120
+DISTVERSIONSUFFIX=	-g07bfeb2a
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	-devel
 
@@ -10,6 +10,7 @@ PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor (development snapshot)
+WWW=		https://swaywm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

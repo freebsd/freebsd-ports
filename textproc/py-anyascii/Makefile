@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unicode to ASCII transliteration
+WWW=		https://github.com/anyascii/anyascii
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

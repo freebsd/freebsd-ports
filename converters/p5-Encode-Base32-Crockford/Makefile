@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Encode/Decode numbers using Douglas Crockford's Base32 Encoding #'
+WWW=		https://github.com/gbarr/Encode-Base32-Crockford
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

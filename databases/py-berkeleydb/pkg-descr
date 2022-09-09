@@ -10,5 +10,3 @@ Please see the documents in the docs directory of the source distribution or at
 the website for more details on the types and methods provided. The goal is to
 mirror most of the real Oracle Berkeley DB API so fall back to the Oracle
 Berkeley DB documentation as appropriate.
-
-WWW: https://www.jcea.es/programacion/pybsddb.htm

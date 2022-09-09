@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Experimental Rust compiler front-end for IDEs
+WWW=		https://rust-analyzer.github.io/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

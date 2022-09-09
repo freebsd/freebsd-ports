@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR dispatch notifications using PHP callbacks
+WWW=		https://pear.php.net/package/Event_Dispatcher
 
 LICENSE=	BSD2CLAUSE
 

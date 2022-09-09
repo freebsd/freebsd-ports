@@ -6,5 +6,3 @@ any javascript, except for having to associate an exported method
 with a document-defined event (such as onClick, onKeyUp, etc). Only
 in the more advanced implementations of a exported perl method would
 a user need to write any javascript.
-
-WWW: https://metacpan.org/release/CGI-Ajax

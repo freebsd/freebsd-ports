@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Scaling math used in image size constraining (such as thumbnails)
+WWW=		https://metacpan.org/release/Image-Math-Constrain
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PathTools>=3.25:devel/p5-PathTools

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	MTP device filesystem
+WWW=		https://www.adebenham.com/mtpfs/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

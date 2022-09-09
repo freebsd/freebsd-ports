@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.dymo.com/Software/Linux/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Open source DYMO CUPS driver
+WWW=		http://www.dymo.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

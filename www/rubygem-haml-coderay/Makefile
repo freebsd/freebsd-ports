@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Adds a CodeRay syntax highlighting filter to Haml
+WWW=		https://github.com/blom/haml-coderay
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

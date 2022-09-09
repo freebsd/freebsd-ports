@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check for HTML errors in string or file with Perl
+WWW=		https://metacpan.org/release/HTML-Lint
 
 LICENSE=	ART20
 

@@ -10,5 +10,3 @@ So the approach that PgSanity takes is to take a file that has a list
 of bare SQL in it, make that file look like a C file with embedded
 SQL, run it through ecpg and let ecpg report on the syntax errors of
 the SQL.
-
-WWW: https://github.com/markdrago/pgsanity

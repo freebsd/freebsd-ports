@@ -4,6 +4,7 @@ CATEGORIES=	accessibility
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Utility to change screen temperature
+WWW=		https://github.com/0mp/sct
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

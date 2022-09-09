@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test HTTP interactions
+WWW=		https://metacpan.org/release/Test-HTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

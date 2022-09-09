@@ -7,6 +7,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility utilities
+WWW=		https://www.alsa-project.org/
 
 LICENSE=	GPLv2+
 

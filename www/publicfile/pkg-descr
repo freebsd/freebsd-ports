@@ -18,5 +18,3 @@ FTP features:
        publicfile provides EPLF LIST responses.
        publicfile supports restarted transfers.
        publicfile supports pipelining.
-
-WWW: http://cr.yp.to/publicfile.html

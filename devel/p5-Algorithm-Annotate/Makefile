@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Represent a series of changes in annotate form
+WWW=		https://metacpan.org/release/Algorithm-Annotate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

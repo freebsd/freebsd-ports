@@ -4,5 +4,3 @@ Provides a lightweight Least Recently Used cache of data via
 either an object or tied interface. Keys and data are both
 allowed to be references and objects as well as scalars. Requires
 'Digest::SHA1' to be installed.
-
-WWW: https://metacpan.org/release/Tie-FileLRUCache

@@ -3,5 +3,3 @@ vulnerabilities and coding mistakes. With minimal effort, Splint
 can be used as a better lint. If additional effort is invested
 adding annotations to programs, Splint can perform stronger checking
 than can be done by any standard lint.
-
-WWW: http://www.splint.org/

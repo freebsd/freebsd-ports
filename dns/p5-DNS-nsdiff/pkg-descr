@@ -9,5 +9,3 @@ The nspatch script is a wrapper around nsdiff | nsupdate that checks
 and reports errors in a manner suitable for running from cron.
 
 The nsvi script makes it easy to edit a dynamic zone.
-
-WWW: https://dotat.at/prog/nsdiff/

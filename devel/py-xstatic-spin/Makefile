@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Spin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spin (XStatic packaging standard)
+WWW=		https://spin.js.org/
 
 LICENSE=	MIT
 

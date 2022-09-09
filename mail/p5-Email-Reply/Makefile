@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for replying to email
+WWW=		https://metacpan.org/release/Email-Reply
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

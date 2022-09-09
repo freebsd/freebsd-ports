@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C-API of RapidFuzz
+WWW=		https://github.com/maxbachmann/rapidfuzz_capi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

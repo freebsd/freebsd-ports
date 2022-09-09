@@ -5,5 +5,3 @@ It scans the range and classifies its findings into 4 categories:
     - Missing PTR records
     - Mismatched A/PTR records
     - Stale PTR records
-
-WWW: http://mark.foster.cc/wiki/index.php/Scavenge

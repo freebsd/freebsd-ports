@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of a finger client
+WWW=		https://metacpan.org/release/Net-Finger
 
 USES=		perl5
 USE_PERL5=	configure

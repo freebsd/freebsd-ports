@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Non-curses, KISS file manager for the terminal
+WWW=		https://github.com/leo-arch/clifm
 
 LICENSE=	GPLv2+
 

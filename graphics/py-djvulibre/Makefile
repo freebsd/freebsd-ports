@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python support for the DjVu image format
+WWW=		https://jwilk.net/software/python-djvulibre
 
 LICENSE=	GPLv2
 

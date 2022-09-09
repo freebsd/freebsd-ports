@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web terminal based on websocket and tornado
+WWW=		https://pypi.org/project/butterfly/
 
 LICENSE=	GPLv3
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kurt.lidl@cello.com
 COMMENT=	Declarative syntactic sugar for Test::Mini
+WWW=		https://metacpan.org/release/Test-Mini-Unit
 
 BUILD_DEPENDS=	p5-Devel-Declare>=0.6.0:devel/p5-Devel-Declare \
 		p5-Test-Mini>=v1.1.3:devel/p5-Test-Mini

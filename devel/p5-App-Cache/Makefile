@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy application-level caching
+WWW=		https://metacpan.org/release/App-Cache
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

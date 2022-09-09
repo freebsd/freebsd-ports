@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-25
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Common Desktop Environment
+WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 
 LICENSE=	LGPL21
 
@@ -115,6 +116,5 @@ post-install:
 	@cd ${STAGEDIR}/${DT_PREFIX}; ${LN} -s share/examples
 	# Only a problem on armv7 so far
 	${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -name 'ecp.*' -delete
-
 
 .include <bsd.port.mk>

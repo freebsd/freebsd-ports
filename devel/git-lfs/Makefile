@@ -1,12 +1,13 @@
 PORTNAME=	git-lfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Git extension for versioning large files
+WWW=		https://git-lfs.github.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get stock quotes from Yahoo! Finance
+WWW=		https://metacpan.org/release/Finance-YahooQuote
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ DISTNAME=	tls_parser-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small library to parse TLS records
+WWW=		https://github.com/nabla-c0d3/tls_parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

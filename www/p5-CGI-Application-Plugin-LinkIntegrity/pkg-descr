@@ -1,4 +1,2 @@
 CGI::Application::Plugin::LinkIntegrity - Make tamper-resisistent
 links in CGI::Application.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-LinkIntegrity

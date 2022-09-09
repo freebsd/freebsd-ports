@@ -8,6 +8,7 @@ MASTER_SITES=	http://fossies.org/unix/misc/old/	\
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
+WWW=		http://freecode.com/projects/rlpr
 
 LICENSE=	GPLv2
 

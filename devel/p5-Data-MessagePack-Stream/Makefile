@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for yet another messagepack streaming deserializer
+WWW=		https://metacpan.org/release/Data-MessagePack-Stream
 
 BROKEN_mips=	fails to build: atomic operations are not found
 BROKEN_mips64=	fails to build: atomic operations are not found

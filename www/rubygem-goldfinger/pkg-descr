@@ -2,5 +2,3 @@ Goldfinger is a Webfinger client for Ruby.  It supports application/xrd+xml and
 application/jrd+json responses. It raises Goldfinger::NotFoundError on failure
 to fetch the Webfinger or XRD data, or Goldfinger::SSLError if something is
 wrong with the HTTPS connection.
-
-WWW: https://github.com/tootsuite/goldfinger

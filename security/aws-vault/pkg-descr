@@ -5,5 +5,3 @@ AWS Vault stores IAM credentials in your operating system's secure keystore and
 then generates temporary credentials from those to expose to your shell and
 applications. It's designed to be complementary to the AWS CLI tools, and is
 aware of your profiles and configuration in ~/.aws/config.
-
-WWW: https://github.com/99designs/aws-vault

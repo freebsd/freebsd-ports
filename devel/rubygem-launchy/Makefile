@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Helper class for launching cross-platform applications
+WWW=		https://github.com/copiousfreetime/launchy
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

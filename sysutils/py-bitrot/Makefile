@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fixer@bsdmail.com
 COMMENT=	Utility to detect data corruption and bit rot
+WWW=		https://github.com/ambv/bitrot
 
 LICENSE=	MIT
 

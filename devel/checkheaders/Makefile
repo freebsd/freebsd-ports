@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Checks headers in C/C++ programs
+WWW=		https://code.google.com/p/checkheaders/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

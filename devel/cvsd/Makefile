@@ -6,6 +6,7 @@ MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	CVS pserver daemon
+WWW=		https://arthurdejong.org/cvsd
 
 LICENSE=	GPLv2
 

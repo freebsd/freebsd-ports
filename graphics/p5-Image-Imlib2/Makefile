@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Imlib2 image library
+WWW=		https://metacpan.org/release/Image-Imlib2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 

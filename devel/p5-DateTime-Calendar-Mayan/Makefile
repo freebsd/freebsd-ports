@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mayan Long Count, Haab, and Tzolkin calendars
+WWW=		https://metacpan.org/release/DateTime-Calendar-Mayan
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

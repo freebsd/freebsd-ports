@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amontalban@gmail.com
 COMMENT=	Perl extension for Rest Client Role
+WWW=		https://metacpan.org/release/Role-REST-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	https://os.ghalkes.nl/dist/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Delimited word diff program
+WWW=		https://os.ghalkes.nl/dwdiff.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

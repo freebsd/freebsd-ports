@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Datasource plugin for KPeople to read vCard files
+WWW=		https://github.com/KDE/kpeoplevcard
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Download Files over HTTP and HTTPS
+WWW=		https://cran.r-project.org/web/packages/downloader/
 
 LICENSE=	GPLv2
 

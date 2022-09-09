@@ -1,10 +1,11 @@
 PORTNAME=	mercurial
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, lightweight source control management system
+WWW=		https://www.mercurial-scm.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

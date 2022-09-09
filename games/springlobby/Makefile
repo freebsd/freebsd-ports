@@ -6,6 +6,7 @@ MASTER_SITES=	https://springlobby.springrts.com/dl/stable/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform lobby client for the Spring RTS project
+WWW=		https://springlobby.info/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

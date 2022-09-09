@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library/CLI tool to interface with Google Translate text-to-speech API
+WWW=		https://github.com/pndurette/gTTS
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

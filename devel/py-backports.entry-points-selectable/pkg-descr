@@ -9,5 +9,3 @@ cases, this shim is unnecessary and the easiest thing to do is simply require
 importlib_metadata >= 3.6 on all Pythons (or only those prior to 3.10a7). In
 some environments, a library may be constrained on which versions of
 importlib_metadata can be required, so this library bridges that gap.
-
-WWW: https://github.com/jaraco/backports.entry_points_selectable

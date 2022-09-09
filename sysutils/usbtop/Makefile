@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utility that shows an estimated instantaneous USB bandwidth
+WWW=		https://github.com/aguinet/usbtop
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

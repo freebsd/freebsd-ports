@@ -1,4 +1,2 @@
 Implementation of the ruby-openid Store interface that stores information in
 Redis
-
-WWW: https://github.com/dekart/openid-redis-store

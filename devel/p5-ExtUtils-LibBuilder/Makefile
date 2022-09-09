@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to build C libraries
+WWW=		https://metacpan.org/release/ExtUtils-LibBuilder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

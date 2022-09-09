@@ -5,5 +5,3 @@ This program allows you to play the familiar Battleships game against
 the computer on a 10x10 board. The interface is visual and largely
 self-explanatory; you place your ships and pick your shots by moving
 the cursor around the `sea' with the rogue/hack motion keys hjklyubn.
-
-WWW: http://www.catb.org/~esr/bs/

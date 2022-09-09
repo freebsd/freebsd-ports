@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Fork of django-formset-js that adds support for reordering and nested formsets
+WWW=		https://github.com/pretix/django-formset-js
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

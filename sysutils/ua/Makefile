@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds sets of identical files
+WWW=		https://github.com/euedge/ua/wiki
 
 LICENSE=	MPL11
 

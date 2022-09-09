@@ -3,5 +3,3 @@ providing Unicode support (ex. character set conversions, locales,
 normalization, transliteration, etc.).
 
 More information on ICU can be found on the homepage
-
-WWW: http://site.icu-project.org/

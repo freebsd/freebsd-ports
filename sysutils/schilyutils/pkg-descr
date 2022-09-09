@@ -3,5 +3,3 @@ a variety of shells (bosh, bsh, and obosh), a traditional K&R-style
 preprocessor (krcpp), improved versions of standard UNIX utilities
 (scal, sod, sprintf, scut, sdd, sfind, spatch), a C/C++ style checker
 (cstyle.js, Cstyle) as well as various others.
-
-WWW: https://codeberg.org/schilytools/schilytools

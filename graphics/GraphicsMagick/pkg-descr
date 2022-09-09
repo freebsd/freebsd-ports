@@ -13,5 +13,3 @@ the same or different image format. Image processing operations are available
 from the command line, as well as through C, C++, Lua, Perl, PHP, Python, Tcl,
 Ruby, Windows .NET, or Windows COM programming interfaces. With some
 modification, language extensions for ImageMagick may be used.
-
-WWW: http://www.graphicsmagick.org/

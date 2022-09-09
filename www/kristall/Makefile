@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mistresssilvara@hotmail.com
 COMMENT=	Minimalistic Gemini/HTTP(S) browser
+WWW=		https://kristall.random-projects.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

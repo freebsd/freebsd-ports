@@ -2,6 +2,7 @@ PORTNAME=	libltdl
 PORTREVISION=	0
 
 COMMENT=	System independent dlopen wrapper
+WWW=		https://www.gnu.org/software/libtool/
 
 .include "${.CURDIR}/../libtool/Makefile.common"
 

@@ -10,6 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Character Database
+WWW=		https://unicode.org/ucd/
 
 LICENSE=	Unicode_License_Agreement
 LICENSE_NAME=	Unicode License Agreement

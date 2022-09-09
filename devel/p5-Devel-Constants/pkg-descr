@@ -8,5 +8,3 @@ Devel::Constants makes this much more manageable.
 It silently wraps around the constant module, intercepting all constant
 declarations.  It builds a hash, associating the values to their names.
 The names can then be retrieved as necessary.
-
-WWW: https://metacpan.org/release/Devel-Constants

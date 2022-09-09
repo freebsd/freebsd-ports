@@ -18,5 +18,3 @@ Features:
 - PHPUnit-based tests to define correct behaviour
 - Usage examples for most of the features are available, look in the docs/
   directory
-
-WWW: https://pear.php.net/package/HTML_Template_Sigma

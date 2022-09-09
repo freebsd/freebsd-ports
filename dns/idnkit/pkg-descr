@@ -13,5 +13,3 @@ are as follows.
       Dynamic link resolver library for UNIX / Windows.
     * BIND 9 patch
       IDN enhancements for BIND 9 DNS lookup tools.
-
-WWW: https://www.nic.ad.jp/ja/idn/idnkit/download/

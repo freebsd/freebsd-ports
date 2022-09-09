@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python library that creates call graphs for Python programs
+WWW=		https://pycallgraph.slowchop.com/
 
 LICENSE=	GPLv2
 

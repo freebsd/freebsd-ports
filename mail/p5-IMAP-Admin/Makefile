@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for basic IMAP server administration
+WWW=		https://metacpan.org/release/IMAP-Admin
 
 LICENSE=	ART10
 

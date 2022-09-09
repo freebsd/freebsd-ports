@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Perl interface to OpenDKIM C library
+WWW=		https://metacpan.org/release/Mail-OpenDKIM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

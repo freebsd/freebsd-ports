@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Base class for working with Perl distributions
+WWW=		https://metacpan.org/release/Module-Extract
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

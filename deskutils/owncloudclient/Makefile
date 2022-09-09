@@ -1,6 +1,7 @@
 PORTNAME=	owncloudclient
 DISTVERSION=	2.8.2
 DISTVERSIONSUFFIX=	.4246
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://download.owncloud.com/desktop/ownCloud/stable/${DISTVERSION}${DISTVERSIONSUFFIX}/source/
 DISTNAME=	ownCloud-${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -10,12 +11,13 @@ PATCHFILES=	ff43c9394b45dd78106069ba89ae92f25abba158.patch:-p1
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	OwnCloud Desktop Syncing Client
+WWW=		https://github.com/owncloud/client
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
 USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gmake \
 		iconv kde:5 localbase:ldflags pkgconfig qt:5 shared-mime-info \

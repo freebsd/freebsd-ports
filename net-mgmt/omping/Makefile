@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Tool to test IP multicast functionality
+WWW=		https://github.com/jfriesse/omping
 
 LICENSE=	MIT
 

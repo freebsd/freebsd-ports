@@ -7,6 +7,7 @@ DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decoders to display extra character sets in SquirrelMail
+WWW=		https://www.squirrelmail.org/
 
 LICENSE=	GPLv2
 

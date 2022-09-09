@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tile-removing puzzle game for the X Window system
+WWW=		https://www.asahi-net.or.jp/~fj9y-ynym/works.html
 
 USES=		imake xorg
 USE_XORG=	xpm

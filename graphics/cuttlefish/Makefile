@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plots diurnal and geographical patterns of supplied data
+WWW=		https://www.caida.org/tools/visualization/cuttlefish/
 
 RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
 		gifsicle:graphics/gifsicle

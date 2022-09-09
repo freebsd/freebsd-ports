@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Utility to get and set kernel state at runtime
+WWW=		https://gitlab.com/alfix/nsysctl/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

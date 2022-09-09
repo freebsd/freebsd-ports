@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code complexity estimator
+WWW=		http://www.parisc-linux.org/~bame/pmccabe/
 
 LICENSE=	GPLv2
 

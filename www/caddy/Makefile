@@ -1,12 +1,13 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Fast, cross-platform HTTP/2 web server with automatic HTTPS
+WWW=		https://caddyserver.com
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

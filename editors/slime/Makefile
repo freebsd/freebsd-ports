@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Superior Lisp Interaction Mode for Emacs
+WWW=		https://common-lisp.net/project/slime/
 
 LICENSE=	PD
 

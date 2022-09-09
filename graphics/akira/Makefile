@@ -6,17 +6,17 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical UI/UX design tool
+WWW=		http://akiraux.org/
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgoocanvas-3.0.so:graphics/goocanvas3 \
 		libgranite.so:x11-toolkits/granite \
 		libjson-glib-1.0.so:devel/json-glib
 
 USES=		desktop-file-utils gettext gnome libarchive meson pkgconfig \
-		python:build shared-mime-info shebangfix
+		python:build shared-mime-info shebangfix vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_GITHUB=	yes
 GH_ACCOUNT=	akiraux

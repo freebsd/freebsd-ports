@@ -1,6 +1,6 @@
 PORTNAME=	openscad
-PORTVERSION=	2022.05.20
-PORTREVISION=	2
+PORTVERSION=	2022.09.03
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -9,13 +9,13 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
-
-BROKEN=		fails to configure: The imported target "Qt5::Core" references the file "/usr/local/lib/qt5/bin/qmake" but this file does not exist.
+WWW=		https://www.openscad.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cgal>0:math/cgal
+BUILD_DEPENDS=	cgal>0:math/cgal \
+		evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
@@ -35,19 +35,25 @@ USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools_build core concurrent_build dbus gui multimedia widgets
+USE_QT=		buildtools_build core concurrent_build dbus gui multimedia qmake_build svg widgets
 USE_XORG=	x11
 GH_ACCOUNT=	microsoft:mimalloc
 GH_PROJECT=	MCAD:mcad mimalloc:mimalloc
-GH_TAGNAME=	6aae7963498675dfb5bedaaef2cb8e56bdcddcab bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
+GH_TAGNAME=	ea8950bd3cd7f06da333c15463492e484098e591 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
 GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc
 #QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
 
 #post-patch:
 #	@${REINPLACE_CMD} 's/-libusb//' ${WRKSRC}/features/hidapi.prf
 #	@${REINPLACE_CMD} -e 's,share/man,man,' \
 #		${WRKSRC}/openscad.pro
 
-.include <bsd.port.mk>
+do-install:
+	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}
+
+.include <bsd.port.post.mk>

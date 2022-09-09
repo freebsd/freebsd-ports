@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/_/-/}_${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regular Expression Graphing Program
+WWW=		http://www.oualline.com/sw/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}
 
 MAINTAINER=	v.a.popov@gmail.com
 COMMENT=	PAM module to search arbitrary file for user
+WWW=		https://sourceforge.net/projects/pam-search-list/
 
 USES=		tar:xz uidfix
 

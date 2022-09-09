@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Dockapp that displays the rise and set times of the Sun
+WWW=		https://www.dockapps.net/wmsun/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

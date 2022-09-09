@@ -1,5 +1,3 @@
 busybox is a set of common utilities built as a single
 crunched binary, and sometimes stripped down in features
 to fit the needs of embedded systems.
-
-WWW: https://www.busybox.net/

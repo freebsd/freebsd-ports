@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quick, simple but powerful cross-platform image editor
+WWW=		https://photoflare.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

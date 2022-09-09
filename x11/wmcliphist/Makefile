@@ -7,6 +7,7 @@ MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/ \
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
+WWW=		http://linux.nawebu.cz/wmcliphist/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

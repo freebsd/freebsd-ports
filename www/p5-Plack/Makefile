@@ -1,5 +1,5 @@
 PORTNAME=	Plack
-PORTVERSION=	1.0048
+PORTVERSION=	1.0049
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of PSGI reference implementation and utilities
+WWW=		https://metacpan.org/release/Plack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

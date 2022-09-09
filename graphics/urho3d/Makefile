@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Cross-platform 2D and 3D game engine
+WWW=		https://urho3d.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

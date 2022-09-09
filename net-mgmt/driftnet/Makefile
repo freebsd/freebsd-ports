@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to grab images out of (your) TCP connections
+WWW=		https://www.ex-parrot.com/~chris/driftnet/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

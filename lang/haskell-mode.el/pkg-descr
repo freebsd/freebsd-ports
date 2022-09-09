@@ -5,5 +5,3 @@ loop such as the one of Hugs or GHCi.
 
 Note that if you want to use haskell-mode under XEmacs, you should
 install editors/xemacs-packages instead.
-
-WWW: http://projects.haskell.org/haskellmode-emacs/

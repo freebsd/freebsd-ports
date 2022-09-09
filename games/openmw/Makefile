@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Unofficial open source engine reimplementation of the game Morrowind
+WWW=		https://openmw.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

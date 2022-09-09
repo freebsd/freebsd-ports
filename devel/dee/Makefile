@@ -7,17 +7,17 @@ MASTER_SITES=	https://launchpadlibrarian.net/151383425/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Model to synchronize multiple instances over DBus
+WWW=		https://launchpad.net/dee
 
 LICENSE=	GPLv3
 
 EXTRA_PATCHES=	${FILESDIR}/dee-1.2.7-deprecated-g_type_class_add_private.patch:-p1 \
 		${FILESDIR}/vapi-skip-properties.patch:-p1
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libicutu.so:devel/icu
 
 USES=		compiler:c11 gmake gnome libtool localbase pathfix pkgconfig \
-		python:3.5+
+		python:3.5+ vala:build
 USE_GNOME=	glib20 introspection:build pygobject3
 
 CONFIGURE_ARGS=	--disable-gcov \

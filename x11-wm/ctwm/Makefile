@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.ctwm.org/dist/ \
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extension to twm, with support for multiple virtual screens
+WWW=		https://www.ctwm.org/
 
 LICENSE=	MIT
 

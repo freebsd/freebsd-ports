@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object-oriented interface to backup SQLite databases
+WWW=		https://pear.php.net/package/DB_Sqlite_Tools
 
 LICENSE=	BSD2CLAUSE
 

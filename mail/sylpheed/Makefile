@@ -7,6 +7,7 @@ MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/ 
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight, featureful, and fast GTK+ based e-mail client
+WWW=		https://sylpheed.sraoss.jp/en/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ DISTNAME=	nexus-${PORTVERSION}-${DISTVERSIONSUFFIX}-bundle
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Maven (and others) artifacts repository manager
+WWW=		https://www.sonatype.com/products/repository-oss
 
 LICENSE=	EPL
 

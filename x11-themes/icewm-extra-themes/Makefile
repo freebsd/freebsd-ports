@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/bbidulock/${PORTNAME}/releases/download/${PORTV
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Big collection of IceWM window manager themes
+WWW=		https://github.com/bbidulock/icewm-extra-themes
 
 LICENSE=	GPLv2
 

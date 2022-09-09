@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2 protocol implementation
+WWW=		https://metacpan.org/release/Protocol-HTTP2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

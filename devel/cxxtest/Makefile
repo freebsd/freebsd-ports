@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Simple and powerful JUnit/CppUnit/xUnit-like framework for C++
+WWW=		http://cxxtest.sourceforge.net/
 
 LICENSE=	LGPL3+
 

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Smart pointers for the (GNU) C programming language
+WWW=		https://github.com/Snaipe/libcsptr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

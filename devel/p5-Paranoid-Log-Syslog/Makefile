@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syslog support for Paranoid::Log
+WWW=		https://metacpan.org/release/Paranoid-Log-Syslog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

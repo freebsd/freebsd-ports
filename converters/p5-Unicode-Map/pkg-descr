@@ -11,5 +11,3 @@ Practically this module will disappear from earth sooner or later as
 Unicode mapping support needs somehow to get into perl's core. If you
 like to work on this field please don't hesitate contacting Gisle Aas
 and check out the mailing list perl-unicode!
-
-WWW: https://metacpan.org/release/Unicode-Map

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple email handling for Dancer applications
+WWW=		https://metacpan.org/release/Dancer-Plugin-Email
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

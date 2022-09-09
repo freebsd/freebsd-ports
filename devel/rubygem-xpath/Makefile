@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DSL for generating XPath Expressions
+WWW=		https://github.com/teamcapybara/xpath
 
 LICENSE=	MIT
 

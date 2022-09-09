@@ -6,6 +6,7 @@ MASTER_SITES=	GNUSTEP/usr-apps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free clone of KlipFolio for GNUstep
+WWW=		http://www.collaboration-world.com/cgi-bin/project/index.cgi?pid=7
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

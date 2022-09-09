@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of Brotli
+WWW=		https://metacpan.org/release/IO-Compress-Brotli
 
 LICENSE=	MIT
 

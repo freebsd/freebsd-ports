@@ -17,6 +17,7 @@ DIST_SUBDIR=	lapack-${PORTVERSION}
 
 MAINTAINER?=	fortran@FreeBSD.org
 COMMENT?=	Linear Algebra PACKage
+WWW=		https://www.netlib.org/lapack/
 
 LICENSE?=	BSD3CLAUSE
 

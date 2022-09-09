@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple configuration file class
+WWW=		https://metacpan.org/release/Config-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

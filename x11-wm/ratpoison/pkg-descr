@@ -6,5 +6,3 @@ terminal market.
 All interaction with the window manager is done through keystrokes.
 ratpoison has a prefix map to minimize the key clobbering that cripples
 EMACS and other quality pieces of software.
-
-WWW: http://www.nongnu.org/ratpoison/

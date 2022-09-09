@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	740
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
+WWW=		https://www.opencascade.org/
 
 LICENSE=	OCTPL
 LICENSE_NAME=	LGPL21 with exception
@@ -138,6 +139,5 @@ regression-test:	install
 	CSF_TestDataPath=${OCCROOT}/data		\
 	DRAWEXE -f ${FILESDIR}/regtest "
 .endif
-
 
 .include <bsd.port.mk>

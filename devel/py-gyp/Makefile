@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Build System That Generates Other Build Systems
+WWW=		https://gyp.gsrc.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-community
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
+WWW=		https://github.com/GNS3/dynamips
 
 LICENSE=	GPLv2
 

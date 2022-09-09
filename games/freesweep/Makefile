@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Minesweeper-style game for text-mode terminals
+WWW=		https://github.com/rwestlund/freesweep
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

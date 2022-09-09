@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for multiple HTTP requests with Coro
+WWW=		https://metacpan.org/release/FurlX-Coro
 
 RUN_DEPENDS=	\
 	p5-Coro>0:devel/p5-Coro \

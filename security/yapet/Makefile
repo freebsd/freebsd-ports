@@ -6,6 +6,7 @@ MASTER_SITES=	https://yapet.guengel.ch/downloads/
 
 MAINTAINER=	rafi@guengel.ch
 COMMENT=	Curses based password manager
+WWW=		https://yapet.guengel.ch/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

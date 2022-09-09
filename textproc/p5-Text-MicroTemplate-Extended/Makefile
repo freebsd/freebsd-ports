@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for extended MicroTemplate
+WWW=		https://metacpan.org/release/Text-MicroTemplate-Extended
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

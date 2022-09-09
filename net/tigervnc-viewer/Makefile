@@ -2,6 +2,7 @@ PKGNAMESUFFIX=	-viewer
 CATEGORIES=	net
 
 COMMENT=	TigerVNC Viewer
+WWW=		https://tigervnc.org/
 
 USES+=		gnome iconv jpeg magick:7,build xorg
 USE_XORG+=	ice pixman sm x11 xcursor xext xfixes xft xi xinerama xrender xrandr

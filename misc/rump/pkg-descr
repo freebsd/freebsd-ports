@@ -6,5 +6,3 @@ userspace shared library from the kernel sources instead of being rewritten,
 so services imitate the same services being provided by the kernel. Select
 architectures such as i386 and amd64 also support directly linking binary
 kernel modules against rump programs.
-
-WWW: http://www.rumpkernel.org

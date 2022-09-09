@@ -6,6 +6,7 @@ DISTNAME=	whois3-${PORTVERSION}
 
 MAINTAINER=	lerik@nolink.net
 COMMENT=	The RIPE whois client version 3
+WWW=		http://whois.sf.net
 
 USES=		perl5 gmake
 USE_PERL5=	build

@@ -14,5 +14,3 @@ out the URI/URL into chunks.
 
 Right now the module focuses on HTTP URIs, since they're arguably the most
 common.
-
-WWW: https://metacpan.org/release/Data-Validate-URI

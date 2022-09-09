@@ -1,6 +1,0 @@
-@shell bin/ksh%%93%%
-man/man1/ksh%%93%%.1.gz
-share/examples/ksh93/dirs
-share/examples/ksh93/popd
-share/examples/ksh93/pushd
-

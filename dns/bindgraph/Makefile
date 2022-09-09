@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.linux.it/~md/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for BIND statistics
+WWW=		https://www.linux.it/~md/software/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

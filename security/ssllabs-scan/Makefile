@@ -1,11 +1,12 @@
 PORTNAME=		ssllabs-scan
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.5.0
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		security net
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Command-line tool to use the SSL Labs API
+WWW=		https://www.ssllabs.com/projects/ssllabs-apis/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

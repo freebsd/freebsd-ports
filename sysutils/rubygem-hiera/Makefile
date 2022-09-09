@@ -1,10 +1,11 @@
 PORTNAME=	hiera
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pluggable data store for hierarchical data
+WWW=		https://github.com/puppetlabs/hiera
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

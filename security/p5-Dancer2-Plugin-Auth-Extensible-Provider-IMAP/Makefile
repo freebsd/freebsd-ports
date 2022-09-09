@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible authentication for D2 apps using Net::IMAP::Simple
+WWW=		https://metacpan.org/release/Dancer2-Plugin-Auth-Extensible-Provider-IMAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

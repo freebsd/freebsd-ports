@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Prosody Community modules repository snapshot
+WWW=		https://modules.prosody.im/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

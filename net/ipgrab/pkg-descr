@@ -1,4 +1,2 @@
 A verbose packet sniffer that displays a great amount of detail
 on each packet it reads, including application layer fields.
-
-WWW: http://ipgrab.sourceforge.net/

@@ -6,6 +6,7 @@ DISTNAME=	gst-rtsp-server-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer library for building a RTSP server
+WWW=		https://gstreamer.freedesktop.org/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

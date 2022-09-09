@@ -5,5 +5,3 @@ that hosts their genomic data in order to share it with others. Using this
 Python API and other browsers that are part of the UC Santa Cruz Xena project,
 it is possible to easily access a wide variety of genomic information shared by
 a large number of researchers.
-
-WWW: https://github.com/ucscXena/xenaPython

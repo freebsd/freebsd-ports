@@ -1,5 +1,5 @@
 PORTNAME=	php81
-DISTVERSION=	8.1.9
+DISTVERSION=	8.1.10
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -7,6 +7,7 @@ DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PHP Scripting Language (8.1.X branch)
+WWW=		https://www.php.net/
 
 LICENSE=	PHP301
 

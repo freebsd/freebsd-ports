@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Verify requirements in a CPAN::Meta object
+WWW=		https://metacpan.org/release/CPAN-Meta-Check
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

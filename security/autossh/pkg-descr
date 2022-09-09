@@ -6,5 +6,3 @@ Tunnel). With this version the method changes: autossh uses ssh to
 construct a loop of ssh forwardings (one from local to remote, one
 from remote to local), and then sends test data that it expects to
 get back. (The idea is thanks to Terrence Martin.)
-
-WWW: https://www.harding.motd.ca/autossh/

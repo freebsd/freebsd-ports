@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Multicast traceroute program for IPv4
+WWW=		https://sourceforge.net/projects/mtrace/
 
 ALL_TARGET=	mtrace
 PLIST_FILES=	sbin/mtrace man/man8/mtrace.8.gz

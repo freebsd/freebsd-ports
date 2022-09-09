@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	tom@hur.st
 COMMENT=	LastPass command line interface tool
+WWW=		https://lastpass.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

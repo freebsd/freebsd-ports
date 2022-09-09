@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Display and control your Android device
+WWW=		https://github.com/Genymobile/scrcpy
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

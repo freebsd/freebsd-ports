@@ -4,5 +4,3 @@ window but a desktop-widget.
 
 A Wayland compositor must implement the Layer-Shell and XDG-Output for
 wlclock to work.
-
-WWW: https://git.sr.ht/~leon_plickat/wlclock

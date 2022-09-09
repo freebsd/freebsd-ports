@@ -6,5 +6,3 @@ There are value classes provided for many tasks - fixed values, values
 to be queried interactively from the user, values taken randomly from a
 list of values and values specified through a callback to some Perl
 code.
-
-WWW: https://metacpan.org/release/WWW-Mechanize-FormFiller

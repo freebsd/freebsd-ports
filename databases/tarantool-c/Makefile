@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	balaev@tarantool.org
 COMMENT=	C client for Tarantool 1.6+
+WWW=		https://github.com/tarantool/tarantool-c
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

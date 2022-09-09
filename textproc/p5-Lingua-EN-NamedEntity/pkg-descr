@@ -12,5 +12,3 @@ hash references looking like this:
 
 The additional "scores" hash reference in there breaks down the various
 possible classes for this entity in an open-ended scale.
-
-WWW: https://metacpan.org/release/Lingua-EN-NamedEntity

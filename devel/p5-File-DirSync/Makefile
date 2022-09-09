@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	Perl5 module for synchronizing two directories rapidly
+WWW=		http://freeware.roobik.com/filedirsync/
 
 USES=		perl5
 USE_PERL5=	configure

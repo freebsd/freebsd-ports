@@ -5,6 +5,7 @@ DISTNAME=	apcu-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	APC User Caching
+WWW=		https://pecl.php.net/package/apcu
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

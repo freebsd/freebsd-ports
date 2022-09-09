@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Django app to add star ratings to models
+WWW=		https://github.com/wildfish/django-star-ratings
 
 LICENSE=	BSD3CLAUSE
 

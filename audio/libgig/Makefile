@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.linuxsampler.org/packages/ # dead?: SF/qsampler/${
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Gigasampler file loader library
+WWW=		https://www.linuxsampler.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

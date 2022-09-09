@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
+WWW=		http://www.pstoedit.net/
 
 LICENSE=	GPLv2+
 

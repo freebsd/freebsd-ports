@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Add Config::YAML support to CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-Config-YAML
 
 BUILD_DEPENDS=	p5-CGI-Application>4.01:www/p5-CGI-Application \
 		p5-Config-YAML>=0:devel/p5-Config-YAML

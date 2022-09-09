@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_2_0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation kit of an RTSP proxy
+WWW=		https://sourceforge.net/projects/rtsp/
 
 HAS_CONFIGURE=	yes
 

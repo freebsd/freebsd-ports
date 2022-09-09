@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and format baby-style time
+WWW=		https://metacpan.org/release/DateTime-Format-Baby
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

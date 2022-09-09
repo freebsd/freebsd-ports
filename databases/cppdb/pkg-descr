@@ -6,5 +6,3 @@ RDBMSs as possible via cppdb-odbc bridge.
 It was written with performance, simplicity in use and locale safety as the
 primary goals in mind. It also provides both explicit verbose API and brief
 and nice syntactic sugar.
-
-WWW: http://cppcms.com/sql/cppdb/

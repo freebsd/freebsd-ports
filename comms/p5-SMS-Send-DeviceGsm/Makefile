@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for Device::Gsm
+WWW=		https://metacpan.org/release/SMS-Send-DeviceGsm
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SMS-Send>=0.04:comms/p5-SMS-Send \

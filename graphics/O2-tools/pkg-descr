@@ -14,5 +14,3 @@ Huge image processing tools and libraries.
     prlst2ps - produce  PostScript  data  from  rectangle/line-
                segment data
     lpsmooth - smooth an image preserving thin lines
-
-WWW: http://www.imglab.org/p/O2/

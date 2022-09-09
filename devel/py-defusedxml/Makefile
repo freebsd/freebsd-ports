@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	XML bomb protection for Python stdlib modules
+WWW=		https://github.com/tiran/defusedxml
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GTK Tag editor for audio files
+WWW=		http://easytag.sourceforge.net
 
 LICENSE=	GPLv2
 

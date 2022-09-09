@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	HTTP request/response parser for python in C
+WWW=		https://github.com/benoitc/http-parser/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

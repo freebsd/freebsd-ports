@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Tiling window manager based on binary space partitioning
+WWW=		https://github.com/baskerville/bspwm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

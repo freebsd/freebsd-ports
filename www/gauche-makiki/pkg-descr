@@ -10,5 +10,3 @@ You'll get the idea by looking at the minimal server:
     (define (main args) (start-http-server :port 6789))
     (define-http-handler "/"
       (^[req app] (respond/ok req "<h1>It worked!</h1>")))
-
-WWW: https://github.com/shirok/Gauche-makiki

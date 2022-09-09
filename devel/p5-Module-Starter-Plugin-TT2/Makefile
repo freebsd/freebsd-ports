@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	TT2 templates for Module::Starter::Template
+WWW=		https://metacpan.org/release/Module-Starter-Plugin-TT2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

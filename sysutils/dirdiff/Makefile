@@ -6,6 +6,7 @@ MASTER_SITES=	https://ftp.samba.org/pub/paulus/
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical diff tool
+WWW=		http://freecode.com/projects/dirdiff/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

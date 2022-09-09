@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides an interface to the GMP library
+WWW=		https://metacpan.org/release/Math-GMP
 
 LICENSE=	LGPL20+
 

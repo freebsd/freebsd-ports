@@ -5,8 +5,11 @@ CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The OWASP zed attack proxy
+WWW=		https://www.zaproxy.org/
 
 LICENSE=	APACHE20
+
+BROKEN=		does not build: could not resolve plugin artifact 'org.gradle.kotlin.kotlin-dsl:...'
 
 BUILD_DEPENDS=	gradle:devel/gradle
 

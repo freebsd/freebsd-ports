@@ -6,6 +6,7 @@ MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesised pipe organ emulator
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/aeolus/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Tcl interface to the Lightning Memory-Mapped Database
+WWW=		https://sites.google.com/site/ray2501/tcl-lmdb
 
 LICENSE=	BSD2CLAUSE
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Extensible network forensic analysis framework
+WWW=		https://github.com/USArmyResearchLab/Dshell
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

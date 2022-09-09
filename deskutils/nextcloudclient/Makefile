@@ -1,17 +1,18 @@
 PORTNAME=	nextcloudclient
 PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	NextCloud Desktop Syncing Client
+WWW=		https://github.com/nextcloud/desktop
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	inkscape:graphics/inkscape
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
 USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gmake \
 		gnome iconv localbase:ldflags pkgconfig qt:5 shared-mime-info \

@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Lightweight calendar applet written in C++ using GTK
+WWW=		https://github.com/dmedvinsky/gsimplecal
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

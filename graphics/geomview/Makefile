@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive viewer for 3- and 4-D geometric objects
+WWW=		http://www.geomview.org/
 
 LICENSE=	LGPL21+ # COPYING mentions LGPL21, source files LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

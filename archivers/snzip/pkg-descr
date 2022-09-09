@@ -6,5 +6,3 @@ file formats:
   snappy-java format
   and snappy-in-java format.
 The default format is framing-format.
-
-WWW: https://github.com/kubo/snzip

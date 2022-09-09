@@ -8,6 +8,7 @@ DISTNAME=	mpc8xx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone library to control various mpc8xx boards
+WWW=		https://sourceforge.net/projects/libmpc8xx/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

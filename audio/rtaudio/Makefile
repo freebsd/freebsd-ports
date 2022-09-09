@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ classes that provide a common API for realtime audio input/output
+WWW=		https://github.com/thestk/rtaudio
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple HTTP server class
+WWW=		https://metacpan.org/release/HTTP-Daemon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

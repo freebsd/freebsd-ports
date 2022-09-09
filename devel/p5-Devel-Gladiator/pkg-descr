@@ -2,5 +2,3 @@ The Perl 5 module Devel::Gladiator iterate's Perl's internal memory
 structures and can be used to enumerate all the currently live SVs.
 
 This can be used to hunt leaks and to profile memory usage.
-
-WWW: https://metacpan.org/release/Devel-Gladiator

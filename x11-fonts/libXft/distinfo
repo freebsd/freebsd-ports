@@ -1,3 +1,3 @@
-TIMESTAMP = 1638820710
-SHA256 (xorg/lib/libXft-2.3.4.tar.bz2) = 57dedaab20914002146bdae0cb0c769ba3f75214c4c91bd2613d6ef79fc9abdd
-SIZE (xorg/lib/libXft-2.3.4.tar.bz2) = 359088
+TIMESTAMP = 1662529089
+SHA256 (xorg/lib/libXft-2.3.5.tar.xz) = 684fd6ec83db80b391b8111f604d9225772b26bb78bba261d77a5eaddab6a1ee
+SIZE (xorg/lib/libXft-2.3.5.tar.xz) = 303772

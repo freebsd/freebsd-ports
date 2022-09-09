@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Kaminari Active Record adapter
+WWW=		https://github.com/kaminari/kaminari/tree/master/kaminari-activerecord
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

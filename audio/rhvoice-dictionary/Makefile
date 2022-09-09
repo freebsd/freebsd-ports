@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Russian dictionary for RHVoice to improve the tone of speech
+WWW=		https://github.com/vantu5z/RHVoice-dictionary
 
 RUN_DEPENDS=	RHVoice>0:audio/rhvoice
 

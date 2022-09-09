@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	eclipse-
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Eclipse Jakarta EE Platform
+WWW=		https://projects.eclipse.org/projects/ee4j.glassfish
 
 LICENSE=	EPL
 

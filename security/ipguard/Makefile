@@ -6,6 +6,7 @@ MASTER_SITES=	http://ipguard.deep.perm.ru/files/ http://deep.perm.ru/files/ipgua
 
 MAINTAINER=	sead@deep.perm.ru
 COMMENT=	Tool designed to protect LAN IP address space by ARP spoofing
+WWW=		http://ipguard.deep.perm.ru/
 
 LICENSE=	BSD2CLAUSE
 

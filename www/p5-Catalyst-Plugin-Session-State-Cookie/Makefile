@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stores a Catalyst Session in a Cookie
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-State-Cookie
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

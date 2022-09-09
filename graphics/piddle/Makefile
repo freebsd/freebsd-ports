@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Drawing library for Python
+WWW=		http://piddle.sourceforge.net/
 
 LICENSE=	GPLv2+
 

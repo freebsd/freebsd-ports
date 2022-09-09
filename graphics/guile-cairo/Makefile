@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Wrapper for using the Cairo graphics library from Guile
+WWW=		https://www.nongnu.org/guile-cairo/
 
 LICENSE=	LGPL3+
 

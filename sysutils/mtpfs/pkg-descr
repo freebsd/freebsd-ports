@@ -1,4 +1,2 @@
 MTPFS is a FUSE filesystem that supports reading and writing from any
 MTP device (as supported by libmtp)
-
-WWW: https://www.adebenham.com/mtpfs/

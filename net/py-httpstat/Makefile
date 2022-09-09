@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Curl statistics made simple
+WWW=		https://github.com/reorx/httpstat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

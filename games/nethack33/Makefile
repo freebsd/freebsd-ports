@@ -7,6 +7,7 @@ DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
+WWW=		https://www.nethack.org/
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 

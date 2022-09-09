@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-libgpac
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gpac MPEG-4 Systems library and headers
+WWW=		http://gpac.sourceforge.net/
 
 LICENSE=	LGPL21
 

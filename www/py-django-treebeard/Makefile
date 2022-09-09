@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Efficient tree implementations for Django
+WWW=		https://github.com/django-treebeard/django-treebeard
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

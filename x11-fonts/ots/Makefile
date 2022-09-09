@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSIO
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenType Sanitizer
+WWW=		https://github.com/khaledhosny/ots
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

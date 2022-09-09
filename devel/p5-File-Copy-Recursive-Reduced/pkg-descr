@@ -3,5 +3,3 @@ for certain functionality provided by CPAN distribution File-Copy-Recursive. The
 library provides methods similar enough to that distribution's fcopy(),
 dircopy() and rcopy() functions to be usable in those CPAN distributions often
 described as being part of the Perl toolchain.
-
-WWW: https://metacpan.org/release/File-Copy-Recursive-Reduced

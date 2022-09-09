@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lists of reserved barewords and symbol names
+WWW=		https://metacpan.org/release/B-Keywords
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

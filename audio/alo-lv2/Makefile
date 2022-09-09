@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Looper LV2 plugin
+WWW=		https://github.com/devcurmudgeon/alo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

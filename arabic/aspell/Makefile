@@ -6,6 +6,7 @@ CATEGORIES=	arabic textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Arabic dictionaries
+WWW=		https://sourceforge.net/projects/arabic-spell/
 
 DICT=		ar
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of RFC 2617 - Digest Access Authentication
+WWW=		https://github.com/drbrain/net-http-digest_auth
 
 LICENSE=	MIT
 

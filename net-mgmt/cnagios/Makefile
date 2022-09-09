@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Curses-based interface for nagios
+WWW=		https://github.com/dannywarren/cnagios
 
 LICENSE=	ISCL
 

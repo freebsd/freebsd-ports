@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt dns
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Client-side java script to render graphs w/o depending on graphite
+WWW=		https://github.com/ahupowerdns/metronome
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

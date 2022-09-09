@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Soapy SDR plugin for PlutoSDR
+WWW=		https://github.com/pothosware/SoapyPlutoSDR/wiki
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PostgreSQL Adapter for DataMapper
+WWW=		https://github.com/datamapper/dm-postgres-adapter
 
 LICENSE=	MIT
 

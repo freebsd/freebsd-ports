@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Opensource MPEG-4 codec, based on OpenDivx
+WWW=		http://www.xvid.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKDIR}/xvidcore/LICENSE

@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	${SMTP_AFTER_POP3_SUFFIX}${STANDALONE_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, performance, tiny POP3 daemon
+WWW=		https://www.openwall.com/popa3d/
 
 ALL_TARGET=	popa3d
 PLIST=		${WRKDIR}/.PLIST.more

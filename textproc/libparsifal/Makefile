@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
+WWW=		http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
 LICENSE=	PARSIFAL
 LICENSE_NAME=	Parsifal license

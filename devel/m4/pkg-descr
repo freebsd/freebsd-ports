@@ -11,5 +11,3 @@ arithmetic, manipulating text in various ways, recursion etc... m4 can be used
 either as a front-end to a compiler or as a macro processor in its own right.
 
 One of the biggest users of GNU M4 is the GNU Autoconf project.
-
-WWW: https://www.gnu.org/software/m4/m4.html

@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	System administration tool for the LXQt desktop
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 

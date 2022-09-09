@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Tetum dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	tet
 

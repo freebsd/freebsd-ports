@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	For generating mixed columnar formatted reports and report templates
+WWW=		https://metacpan.org/release/Text-Report
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple

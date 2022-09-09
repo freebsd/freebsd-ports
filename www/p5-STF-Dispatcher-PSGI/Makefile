@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for pluggable STF dispatcher interface
+WWW=		https://metacpan.org/release/STF-Dispatcher-PSGI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

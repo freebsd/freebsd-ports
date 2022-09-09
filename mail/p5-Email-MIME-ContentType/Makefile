@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse a MIME Content-Type Header
+WWW=		https://metacpan.org/release/Email-MIME-ContentType
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

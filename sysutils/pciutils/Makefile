@@ -6,6 +6,7 @@ MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration utilities
+WWW=		https://mj.ucw.cz/sw/pciutils/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

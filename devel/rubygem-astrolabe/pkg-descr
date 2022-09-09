@@ -1,4 +1,2 @@
 Astrolabe is an AST node library that provides an object-oriented
 way to handle AST by extending Parser's node class.
-
-WWW: https://github.com/yujinakayama/astrolabe

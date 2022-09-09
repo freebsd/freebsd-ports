@@ -1,4 +1,2 @@
 Data::Object::Role::Immutable provides a mechanism for making any derived object
 immutable.
-
-WWW: https://metacpan.org/release/Data-Object-Role-Immutable

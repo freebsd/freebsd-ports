@@ -19,5 +19,3 @@ Stone has following features:
 4.  POP -> APOP conversion.
         With stone and a mailer that does not support APOP, you can
         access to an APOP server.
-
-WWW: http://www.gcd.org/sengoku/stone/

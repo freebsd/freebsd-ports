@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for multi DNSBL prioritization
+WWW=		https://metacpan.org/release/Net-DNSBL-MultiDaemon
 
 LICENSE=	ART10 GPLv1 GPLv2 GPLv3
 LICENSE_COMB=	dual

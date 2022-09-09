@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	Big Brother Database
+WWW=		https://savannah.nongnu.org/projects/bbdb/
 
 LICENSE=	GPLv3+
 

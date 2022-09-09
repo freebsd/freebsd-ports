@@ -17,5 +17,3 @@ There are currently two user interfaces to Devel::debug, ebug and
 ebug_http. ebug is a console-based interface to debugging programs,
 much like perl5db.pl. ebug_http is an innovative web-based interface
 to debugging programs.
-
-WWW: https://metacpan.org/release/Devel-ebug

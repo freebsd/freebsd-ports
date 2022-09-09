@@ -1,11 +1,12 @@
 PORTNAME=	colorlog
-PORTVERSION=	6.6.0
+PORTVERSION=	6.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add colours to the output of Python logging module
+WWW=		https://github.com/borntyping/python-colorlog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

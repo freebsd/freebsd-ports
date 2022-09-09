@@ -6,6 +6,7 @@ MASTER_SITES=	http://0xcc.net/ttyrec/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tty recorder
+WWW=		http://0xcc.net/ttyrec/index.html
 
 LICENSE=	BSD4CLAUSE
 

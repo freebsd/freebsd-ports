@@ -10,5 +10,3 @@ IMO, more intuitive. The underlying idea is for this module to do what you mean,
 based on the data structures you provide it. The big advantage is that you don't
 have to modify your code every time your data changes, as this module figures it
 out.
-
-WWW: https://metacpan.org/release/SQL-Abstract-Classic

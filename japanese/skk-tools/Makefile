@@ -8,6 +8,7 @@ DISTNAME=	skktools-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jisyo-tools for the SKK Japanese-input software
+WWW=		http://openlab.ring.gr.jp/skk/
 
 LICENSE=	GPLv2
 

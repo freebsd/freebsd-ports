@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.fourmilab.ch/webtools/qprint/
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Encode and decode Quoted-Printable files
+WWW=		https://www.fourmilab.ch/webtools/qprint/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

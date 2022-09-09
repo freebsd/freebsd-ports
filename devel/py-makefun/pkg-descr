@@ -16,5 +16,3 @@ The typical use cases are:
   * more generally, creating functions with a signature derived from a reference
   signature, or even creating functions with a signature completely defined at
   runtime.
-
-WWW: https://github.com/smarie/python-makefun

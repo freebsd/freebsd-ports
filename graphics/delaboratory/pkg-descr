@@ -20,5 +20,3 @@ It features:
    darken, lighten), color/luminosity blending for RGB and CMYK
  - RAW support (via dcraw), up to 5 color samplers, histograms and color
    matrices, etc.
-
-WWW: https://bsdforge.com/projects/graphics/delaboratory/

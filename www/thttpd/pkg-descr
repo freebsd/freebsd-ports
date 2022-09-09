@@ -16,5 +16,3 @@ thttpd is a simple, small, portable, fast, and secure HTTP server.
 
 It also has one extremely useful feature (URL-traffic-based throttling) that
 no other server currently has.
-
-WWW: http://www.acme.com/software/thttpd/

@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	CLI tool to extract, manipulate and transform JSON
+WWW=		https://github.com/ldn-softdev/jtc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

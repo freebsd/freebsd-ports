@@ -10,5 +10,3 @@ OS specific capabilities, or simply roll out their own solutions.
 In order to easily handle UTF-8 encoded Unicode strings, I came up with
 a small generic library. For anybody used to work with STL algorithms
 and iterators, it should be easy and natural to use.
-
-WWW: http://utfcpp.sourceforge.net/

@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospace font
+WWW=		https://bok.net/MonteCarlo/
 
 USES=		fonts xorg
 USE_XORG=	x11

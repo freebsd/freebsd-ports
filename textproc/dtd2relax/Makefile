@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DTD to RELAX converter for Java
+WWW=		https://www.horobi.com/Projects/RELAX/Archive/DTD2RELAX.html
 
 USES=		zip
 USE_JAVA=	yes

@@ -11,6 +11,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Initial effort to Python code metrics
+WWW=		http://python.net/~gherman/pycount.html
 
 USES=		dos2unix python
 NO_BUILD=	yes

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/libxosd/libxosd/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 on-screen-display program and library
+WWW=		https://sourceforge.net/projects/libxosd/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

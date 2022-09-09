@@ -1,4 +1,1 @@
 This is a daemon that converts a GuitarHero device into a JACK MIDI device.
-
-WWW: https://github.com/hselasky/jack_ghero
-

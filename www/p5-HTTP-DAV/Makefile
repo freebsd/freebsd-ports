@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	WebDAV client library
+WWW=		https://metacpan.org/release/HTTP-DAV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

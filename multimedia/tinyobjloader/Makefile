@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ single file wavefront obj loader
+WWW=		https://github.com/tinyobjloader/tinyobjloader
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

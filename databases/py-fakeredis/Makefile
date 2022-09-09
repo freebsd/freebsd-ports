@@ -1,11 +1,12 @@
 PORTNAME=	fakeredis
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fake version of databases/py-redis for unit testing
+WWW=		https://github.com/cunla/fakeredis-py
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

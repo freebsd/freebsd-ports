@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	30
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
+WWW=		https://www.mono-project.com/Gtk
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

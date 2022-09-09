@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	Wifibox guest based on Alpine Linux
+WWW=		https://github.com/pgj/freebsd-wifibox-alpine
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC_scripts}/LICENSE

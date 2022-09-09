@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Look up country from an IP Address
+WWW=		https://metacpan.org/release/Geo-IPfree
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

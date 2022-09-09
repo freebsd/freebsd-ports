@@ -8,6 +8,7 @@ DISTFILES=	${LDOUBLE_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Long double math precision functions
+WWW=		http://www.moshier.net/
 
 BUILD_DEPENDS=	as:devel/binutils
 

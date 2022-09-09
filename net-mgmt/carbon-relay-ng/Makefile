@@ -1,11 +1,12 @@
 PORTNAME=		carbon-relay-ng
 DISTVERSION=		0.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTREVISION=		1
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		a.andersson.thn@gmail.com
 COMMENT=		Go implementation of carbonapi
+WWW=		https://github.com/graphite-ng/carbon-relay-ng
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

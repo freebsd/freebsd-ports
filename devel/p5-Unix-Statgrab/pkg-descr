@@ -3,5 +3,3 @@ http://www.i-scream.org/libstatgrab/. It is a reasonably portable
 attempt to query interesting stats about your computer. It covers
 information on the operating system, CPU, memory usage, network
 interfaces, hard-disks etc.
-
-WWW: https://metacpan.org/release/Unix-Statgrab

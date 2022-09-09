@@ -6,5 +6,3 @@ problem, objects representing direct (Sims-Flanagan), indirect (Pontryagin) and
 hybrid methods to represent low-thrust optimization problems, efficient
 keplerian propagators, Taylor-integrators, a SGP4 propagator, TLE and SATCAT
 support and more.
-
-WWW: https://github.com/esa/pykep

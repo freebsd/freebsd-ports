@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing XML DTD strings
+WWW=		https://metacpan.org/release/XML-DTDParser
 
 USES=		perl5
 USE_PERL5=	configure

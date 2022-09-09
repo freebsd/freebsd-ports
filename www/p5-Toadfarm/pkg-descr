@@ -13,6 +13,3 @@ Core features:
   * Hijacking log messages to a common log file. There's also plugin,
     Toadfarm::Plugin::AccessLog, that allows you to log the requests
     sent to your server.
-
-
-WWW: https://metacpan.org/pod/Toadfarm

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 clone of Media Player Classic based on libmpv
+WWW=		https://github.com/mpc-qt/mpc-qt
 
 LICENSE=	GPLv2
 

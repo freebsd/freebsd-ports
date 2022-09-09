@@ -1,11 +1,12 @@
 PORTNAME=	wuzz
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive cli tool for HTTP inspection
+WWW=		https://github.com/asciimoo/wuzz
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

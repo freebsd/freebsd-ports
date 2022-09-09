@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line flag parser inspired by Python's optparse
+WWW=		https://cran.r-project.org/web/packages/optparse/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

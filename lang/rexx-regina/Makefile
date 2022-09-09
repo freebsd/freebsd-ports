@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Rexx interpreter
+WWW=		http://regina-rexx.sourceforge.net/
 
 LICENSE=	LGPL21+
 

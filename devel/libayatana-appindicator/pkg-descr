@@ -7,5 +7,3 @@ fallback to generic Systray support if none of those are available.
 This code project was originally started by Canonical Ltd. and has been
 adapted by various authors with the purpose of making this Application
 Indicators available on Ubuntu and non-Ubuntu systems alike.
-
-WWW: https://github.com/AyatanaIndicators/libayatana-appindicator

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	SafetyNet attestation response verification
+WWW=		https://github.com/bdewater/safety_net_attestation
 
 LICENSE=	MIT
 

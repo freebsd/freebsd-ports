@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hashes with accessors/mutators
+WWW=		https://metacpan.org/release/Hash-AsObject
 
 USES=		perl5
 USE_PERL5=	configure

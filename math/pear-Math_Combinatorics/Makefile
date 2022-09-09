@@ -5,6 +5,7 @@ CATEGORIES=	math pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Package that produces combinations and permutations
+WWW=		https://pear.php.net/package/Math_Combinatorics
 
 USES=		pear
 

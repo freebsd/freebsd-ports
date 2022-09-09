@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Graphically display output of du
+WWW=		https://sd.wareonearth.com/~phil/xdu/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vlasovskikh

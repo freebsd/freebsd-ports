@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically remove unwanted files
+WWW=		https://sourceforge.net/projects/clean/
 
 USES=	tar:bzip2
 

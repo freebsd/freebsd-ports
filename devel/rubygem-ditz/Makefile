@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple lightweight distributed issue tracker
+WWW=		https://rubygems.org/gems/ditz
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

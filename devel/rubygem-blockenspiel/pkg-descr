@@ -2,5 +2,3 @@ Blockenspiel is a helper library designed to make it easy to implement DSL
 blocks. It is designed to be comprehensive and robust, supporting most common
 usage patterns, and working correctly in the presence of nested blocks and
 multithreading.
-
-WWW: http://dazuma.github.io/blockenspiel/

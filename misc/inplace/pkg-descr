@@ -9,5 +9,3 @@ Examples:
 
     # Process image files preserving time and taking backup files:
     inplace -t -b.orig 'convert -rotate 270 -resize 50%% %1 %2' *.jpg
-
-WWW: http://akinori.org/#inplace

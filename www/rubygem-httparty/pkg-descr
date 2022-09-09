@@ -7,5 +7,3 @@ Its features:
   each request)
 * Automatic parsing of JSON and XML into ruby hashes based on response
   content-type
-
-WWW: https://johnnunemaker.com/httparty/

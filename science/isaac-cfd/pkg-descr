@@ -9,5 +9,3 @@ ISAAC was designed to test turbulence models. Various two equation
 turbulence models, explicit algebraic Reynolds stress models, and full
 differential Reynolds stress models are implemented in ISAAC. Several test
 cases are documented in the User's Guide.
-
-WWW: http://isaac-cfd.sourceforge.net/

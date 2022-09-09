@@ -5,5 +5,3 @@ Mono.Addins has been designed to be easy to use and useful for a wide
 range of applications: from simple applications with small extensibility
 needs, to complex applications which need support for large add-in
 structures.
-
-WWW: http://www.mono-project.com/Mono.Addins

@@ -9,6 +9,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-oriented interpreted scripting language
+WWW=		https://www.ruby-lang.org/en/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

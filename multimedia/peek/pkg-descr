@@ -11,5 +11,3 @@ the screen for creating GIF animations or silent WebM or MP4 videos.
 
 Peek runs on X11 or inside a GNOME Shell Wayland session using XWayland. Support
 for more Wayland desktops might be added in the future (see FAQs below).
-
-WWW: https://github.com/phw/peek

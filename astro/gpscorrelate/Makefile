@@ -5,6 +5,7 @@ CATEGORIES=	astro geography
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correlate digital camera photos with GPS data in GPX format
+WWW=		http://freefoote.dview.net/linux_gpscorr.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

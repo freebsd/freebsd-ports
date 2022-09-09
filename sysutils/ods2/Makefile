@@ -7,6 +7,7 @@ DISTNAME=	ods2
 
 MAINTAINER=	pzn.unixbsd@gmail.com
 COMMENT=	Utility for manipulating ODS-2 filesystems
+WWW=		https://www.goatley.com/hunter/
 
 USES=		zip
 NO_WRKSUBDIR=	yes

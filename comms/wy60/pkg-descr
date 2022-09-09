@@ -7,5 +7,3 @@ launches a shell to run within this emulated environment.
 The current set of supported escape sequences is limited, but should
 suffice to run many existing legacy applications without requiring
 any changes.
-
-WWW: http://code.google.com/p/wy60/

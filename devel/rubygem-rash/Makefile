@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple extension to Hashie::Mash for rubyfied keys
+WWW=		https://github.com/tcocca/rash
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

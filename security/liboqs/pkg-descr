@@ -10,5 +10,3 @@ Michele Mosca, which aims to develop and integrate into applications
 quantum-safe cryptography to facilitate deployment and testing in real world
 contexts. In particular, OQS provides prototype integrations of liboqs into TLS
 and SSH, through OpenSSL and OpenSSH.
-
-WWW: https://openquantumsafe.org/

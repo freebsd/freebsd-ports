@@ -8,6 +8,7 @@ DISTNAME=	iroffer-dinoex-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IRC "bot" that makes sharing files via DCC extremely easy
+WWW=		https://iroffer.net/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Useful middlewares and filters for wsgi as well as scgi servers
+WWW=		https://subdivi.de/~helmut/wsgitools/
 
 LICENSE=	GPLv2+
 

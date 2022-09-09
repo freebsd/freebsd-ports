@@ -8,6 +8,7 @@ MASTER_SITES=	https://mirrors.dotsrc.org/mirrors/exherbo/	\
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
+WWW=		http://www.dcc.fc.up.pt/~vsc/Yap/
 
 LICENSE=		ART20 LGPL20
 LICENSE_COMB=		dual

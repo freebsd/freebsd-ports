@@ -5,6 +5,7 @@ MASTER_SITES=	http://packages.couchbase.com/clients/c/
 
 MAINTAINER=	sergey@couchbase.com
 COMMENT=	Multithreaded noSQL database (client and library)
+WWW=		https://developer.couchbase.com/documentation/server/current/sdk/c/start-using-sdk.html
 
 LICENSE=	APACHE20
 

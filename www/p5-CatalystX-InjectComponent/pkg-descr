@@ -2,5 +2,3 @@ CatalystX::InjectComponent will inject Controller, Model, and View components
 into your Catalyst application at setup (run)time. It does this by creating a
 new package on-the-fly, having that package extend the given component, and
 then having Catalyst setup the new component (via ->setup_component)
-
-WWW: https://metacpan.org/release/CatalystX-InjectComponent

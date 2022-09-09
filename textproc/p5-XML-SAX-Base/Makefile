@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base class SAX Drivers and Filters
+WWW=		https://metacpan.org/release/XML-SAX-Base
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtQuick plugin to render interactive charts
+WWW=		https://github.com/KDE/kqtquickcharts
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,5 +4,3 @@ booleans, strings, lists, tuples, integers, floats, and dicts.
 If you need environment variables for your settings but need an easy way
 of using Python objects instead of just strings. For example, if you
 need a list of strings.
-
-WWW: https://github.com/capless/envs

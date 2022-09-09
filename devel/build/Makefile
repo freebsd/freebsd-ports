@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Massively-parallel build system implemented on top of GNU make
+WWW=		https://www.codesynthesis.com/projects/build/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

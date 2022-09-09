@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
+WWW=		https://github.com/linsomniac/python-memcached
 
 LICENSE=	PSFL
 

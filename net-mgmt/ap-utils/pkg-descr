@@ -4,7 +4,5 @@ allow access restrictions, MAC authorization and WEP encryption
 for access points and "wireless gateways" by Linksys, Netgear,
 SMC, and D-Link.
 
-WWW: http://ap-utils.polesye.net/
-
  -- Dan Pelleg
 daniel+aputils@pelleg.org

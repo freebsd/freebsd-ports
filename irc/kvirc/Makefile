@@ -5,6 +5,7 @@ CATEGORIES=	irc kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	IRC client for KDE
+WWW=		http://www.kvirc.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/ABOUT-LICENSE

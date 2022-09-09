@@ -1,4 +1,2 @@
 httptools is a Python binding for nodejs HTTP parser. It's still in a very early
 development stage, expect APIs to break.
-
-WWW: https://github.com/MagicStack/httptools

@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	kennedy.greg@gmail.com
 COMMENT=	Stub code generator for using C/C++ libraries from OCaml
+WWW=		https://caml.inria.fr/pub/old_caml_site/camlidl/
 
 LICENSE=	LGPL20 LGPL21
 LICENSE_COMB=	dual

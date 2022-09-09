@@ -5,6 +5,7 @@ MASTER_SITES=	http://freedesktop.org/software/farstream/releases/farstream/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
+WWW=		https://www.freedesktop.org/wiki/Software/Farstream/
 
 LICENSE=	LGPL21+
 

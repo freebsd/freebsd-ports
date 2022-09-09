@@ -1,11 +1,12 @@
 PORTNAME=	prototool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Swiss army knife for protocol buffers (ProtoBuf)
+WWW=		https://github.com/uber/prototool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

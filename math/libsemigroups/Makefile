@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C++ library for semigroups and monoids
+WWW=		https://libsemigroups.readthedocs.io/en/latest/
 
 LICENSE=	GPLv3
 

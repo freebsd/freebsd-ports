@@ -1,5 +1,3 @@
 bmake is a portable version of NetBSD's make(1) utility,
 conveniently packaged using a configure script, for other environments
 which may lack NetBSD's libraries, regular expression code, etc.
-
-WWW: http://www.crufty.net/help/sjg/bmake.html

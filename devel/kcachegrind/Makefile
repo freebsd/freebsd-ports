@@ -4,15 +4,17 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Profiler frontend for KDE
+WWW=		https://www.kde.org
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 python:run qt:5 \
-		shebangfix tar:xz
+		shebangfix tar:xz xorg
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons i18n itemviews jobwidgets kio service solid \
 		widgetsaddons windowsystem xmlgui \
 		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 SHEBANG_FILES=	converters/dprof2calltree \
 		converters/hotshot2calltree.in \

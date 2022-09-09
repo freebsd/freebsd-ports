@@ -6,6 +6,7 @@ MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
 MAINTAINER=	nacho319+freebsdZilla@gmail.com
 COMMENT=	IPFIX mediator by CMU CERT generally used with YAF
+WWW=		https://tools.netsa.cert.org/super_mediator/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

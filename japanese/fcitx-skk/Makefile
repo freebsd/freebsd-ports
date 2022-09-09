@@ -7,6 +7,7 @@ DIST_SUBDIR=	fcitx
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	SKK support for Fcitx
+WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv3
 

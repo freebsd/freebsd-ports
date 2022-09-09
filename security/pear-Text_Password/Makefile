@@ -5,6 +5,7 @@ DISTNAME=	Text_password-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR random password creator
+WWW=		https://pear.php.net/package/Text_Password
 
 USES=		pear
 

@@ -2,5 +2,3 @@ BoCA is the component framework behind the fre:ac audio converter.
 It provides unified interfaces for audio components like encoders,
 decoders, taggers, and extensions as well as the code to support
 communication between the application and its components.
-
-WWW: https://github.com/enzo1982/BoCA

@@ -2,5 +2,3 @@ Use GnuPG::Interface to process and/or create PGP signed or encrypted
 email.
 
 Please send all bugs/issues/patches to bug-Mail-GnuPG@rt.cpan.org
-
-WWW: https://metacpan.org/release/Mail-GnuPG

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities for the visualization, and visual analysis, of financial data
+WWW=		https://github.com/matplotlib/mplfinance
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

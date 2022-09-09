@@ -3,5 +3,3 @@ HTML::FillInForm using regexp-based parser, not using HTML::Parser.
 
 The difference in the parsers makes HTML::FillInForm::Lite about 2
 times faster than HTML::FillInForm.
-
-WWW: https://metacpan.org/release/HTML-FillInForm-Lite

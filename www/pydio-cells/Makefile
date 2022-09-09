@@ -1,11 +1,13 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Nextgen file sharing platform for organizations
+WWW=		https://github.com/pydio/cells
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
+WWW=		https://www.freedesktop.org/software/colord
 
 LICENSE=	GPLv2
 
@@ -51,7 +52,7 @@ MANPAGES_BUILD_DEPENDS=		docbook2html:textproc/docbook-utils \
 				docbook-sgml>0:textproc/docbook-sgml
 PPROFILES_CONFIGURE_ENABLE=	print-profiles
 VALA_CONFIGURE_ENABLE=		vala
-VALA_BUILD_DEPENDS=		vapigen:lang/vala
+VALA_USES=			vala:build
 MAKE_ENV=		PYTHONDONTWRITEBYTECODE=1
 
 .include <bsd.port.options.mk>

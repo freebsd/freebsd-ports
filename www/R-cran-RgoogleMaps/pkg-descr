@@ -3,5 +3,3 @@ This package serves two purposes:
       for static maps.
  (ii) Use the map as a background image to overlay plots within R.
 This requires proper coordinate scaling.
-
-WWW: https://cran.r-project.org/web/packages/RgoogleMaps/

@@ -7,6 +7,7 @@ DISTNAME=	SABnzbd-${DISTVERSION}-src
 
 MAINTAINER=	james@french.id.au
 COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
+WWW=		https://sabnzbd.org/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+ ISCL MIT PSFL
 LICENSE_COMB=	multi

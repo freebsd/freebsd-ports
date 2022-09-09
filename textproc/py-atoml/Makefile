@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet another style preserving TOML library
+WWW=		https://github.com/frostming/atoml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

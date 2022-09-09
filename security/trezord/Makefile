@@ -1,11 +1,12 @@
 PORTNAME=	trezord
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.31
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	TREZOR Communication Daemon aka TREZOR Bridge
+WWW=		https://github.com/trezor/trezord-go
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

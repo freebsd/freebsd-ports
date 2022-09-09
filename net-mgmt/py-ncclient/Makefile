@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Python library for NETCONF clients
+WWW=		https://github.com/ncclient/ncclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

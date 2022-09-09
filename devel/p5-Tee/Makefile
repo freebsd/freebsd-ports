@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Pure Perl emulation of GNU tee
+WWW=		https://metacpan.org/release/Tee
 
 BUILD_DEPENDS=	p5-IO-CaptureOutput>0:devel/p5-IO-CaptureOutput \
 		p5-Probe-Perl>=0:sysutils/p5-Probe-Perl

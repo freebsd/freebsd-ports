@@ -7,6 +7,7 @@ MASTER_SITES=	http://anchois.free.fr/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that simply prints the current clock speed
+WWW=		http://anchois.free.fr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

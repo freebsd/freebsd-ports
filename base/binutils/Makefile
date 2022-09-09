@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${OPSYS:tl}-
 VALID_CATEGORIES=	base
 
 COMMENT=	GNU binary tools for base
+WWW=		https://www.gnu.org/software/binutils/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
@@ -59,7 +60,7 @@ BUREMOVE=	addr2line \
 		windmc \
 		windres
 
-OPTIONS_DEFINE=	RELRO STATIC 
+OPTIONS_DEFINE=	RELRO STATIC
 RELRO_DESC=	enable -z relro in ELF linker by default
 
 RELRO_CONFIGURE_ON=	--enable-relro

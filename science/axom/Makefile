@@ -1,12 +1,11 @@
 PORTNAME=	axom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1-1671
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g88cac2607
+DISTVERSION=	0.7.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Infrastructure for development of multi-physics applications and tools
+WWW=		https://github.com/LLNL/axom
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -25,9 +24,9 @@ USES=		cmake:testing compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TUPLE=	LLNL:axom_data:b3d8e6f:axom_data/../data \
-		LLNL:blt:ddd5a0c:blt/cmake/blt \
-		LLNL:uberenv:a121a45:uberenv/scripts/uberenv
+GH_TUPLE=	LLNL:axom_data:185f28f:axom_data/../data \
+		LLNL:blt:7c8ac7e:blt/cmake/blt \
+		LLNL:uberenv:f46566f:uberenv/../scripts/uberenv
 
 CMAKE_OFF=	AXOM_ENABLE_DOCS AXOM_ENABLE_EXAMPLES AXOM_ENABLE_TESTS AXOM_ENABLE_EXAMPLES
 CMAKE_ON=	BUILD_SHARED_LIBS

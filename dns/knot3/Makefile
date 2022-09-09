@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	3
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	High performance authoritative-only DNS server
+WWW=		https://www.knot-dns.cz/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	visualvm_${PORTVERSION:S/.//g}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	GUI tool combining CLI JDK tools and profiling capabilities
+WWW=		https://visualvm.github.io/
 
 LICENSE=	VISUALVM
 LICENSE_NAME=	VISUALVM with ClassPath Exception

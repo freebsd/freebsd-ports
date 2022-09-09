@@ -11,6 +11,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library for multiple-precision floating-point computations
+WWW=		https://www.mpfr.org/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

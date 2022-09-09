@@ -4,5 +4,3 @@ engine is based in the WAM (Warren Abstract Machine), with several
 optimizations for better performance. YAP follows the Edinburgh
 tradition, and is largely compatible with the ISO-Prolog standard and
 with Quintus and SICStus Prolog.
-
-WWW: http://www.dcc.fc.up.pt/~vsc/Yap/

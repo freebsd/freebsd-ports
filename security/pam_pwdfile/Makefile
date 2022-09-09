@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Pam module for authenticating with flat passwd files
+WWW=		http://www.cpbotha.net/pam_pwdfile.html
 
 USES=		uidfix
 USE_GITHUB=	yes

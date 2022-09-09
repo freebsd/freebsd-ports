@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for FastCGI Toolkit
+WWW=		https://metacpan.org/release/Net-FastCGI
 
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-HexString>=0:devel/p5-Test-HexString

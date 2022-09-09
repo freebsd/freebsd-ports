@@ -9,5 +9,3 @@ With Net_LDAP you have:
 - Support for schema handling.
 
 Net_LDAP layers itself on top of PHP's existing ldap extensions.
-
-WWW: https://pear.php.net/package/Net_LDAP

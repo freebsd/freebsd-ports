@@ -1,5 +1,3 @@
 Ruby-bdb is an interface to Sleepycat's Berkeley DB revision 2 or
 later.  DB >= 2 is required. (some functionalities like join are not
 available with DB < 2.6)
-
-WWW: https://github.com/knu/ruby-bdb

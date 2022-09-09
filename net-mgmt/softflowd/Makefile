@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Flow-based network traffic analyzer and exporter
+WWW=		http://www.mindrot.org/softflowd.html
 
 LICENSE=	BSD2CLAUSE
 

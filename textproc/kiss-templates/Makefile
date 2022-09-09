@@ -5,6 +5,7 @@ CATEGORIES=		textproc
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Type safe "Keep it simple, stupid" text templates for C++
+WWW=		https://github.com/rbock/kiss-templates
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

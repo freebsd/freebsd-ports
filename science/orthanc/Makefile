@@ -7,6 +7,7 @@ DISTNAME=	Orthanc-${PORTVERSION}
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Lightweight DICOM server for healthcare and medical research
+WWW=		https://www.orthanc-server.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

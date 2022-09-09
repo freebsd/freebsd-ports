@@ -8,5 +8,3 @@ This tool allows you to view metadata in your files and to get rid of
 them, as much as possible.
 
 Under the hood, it relies on mat2 to parse and remove the metadata.
-
-WWW: https://gitlab.com/rmnvgr/metadata-cleaner

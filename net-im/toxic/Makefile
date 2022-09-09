@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Console client for Tox
+WWW=		https://tox.chat/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

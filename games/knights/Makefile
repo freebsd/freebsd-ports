@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE chess interface
+WWW=		https://github.com/KDE/knights
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:games/gnuchess
 

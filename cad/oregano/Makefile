@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Schematic capture and circuit simulator
+WWW=		https://ahoi.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

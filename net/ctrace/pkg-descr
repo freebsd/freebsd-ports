@@ -15,5 +15,3 @@ some additional nifty features:
   that would be normally wasted tracerouting your own network.
 * Fine-grained control over trace packet headers, assisting in
   bypassing burdensome packet filters.
-
-WWW: http://www.pratyeka.org/ctrace/

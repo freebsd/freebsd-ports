@@ -6,5 +6,3 @@ The interface is designed to deliver the familiar GDB text interface,
 with a split screen showing the source as it executes. The UI is modeled
 on the classic Unix text editor, vi. Those familiar with vi should feel
 right at home using CGDB.
-
-WWW: https://cgdb.github.io/

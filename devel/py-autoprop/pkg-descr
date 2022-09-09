@@ -7,5 +7,3 @@ Unfortunately, making a property requires an annoying amount of boilerplate
 code. There are a few ways to do it, but the most common and most succinct
 requires you to decorate two functions (with two different decorators) and
 to type the name of the attribute three times:
-
-WWW: https://pypi.org/project/autoprop/

@@ -14,5 +14,3 @@ features:
 - Diagnostics and code actions (clang FixIts)
 - Semantic highlighting and preprocessor skipped regions
 - Semantic navigation: $ccls/navigate
-
-WWW: https://github.com/MaskRay/ccls

@@ -12,5 +12,3 @@ Netwib is a network library providing :
     + portable threads
     + etc.
 Using all these functions, a network program can be quickly created.
-
-WWW: http://www.laurentconstantin.com/en/netw/netwib/

@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Plucene
+WWW=		https://metacpan.org/release/PluceneSimple
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Time-Piece-Range>=1.0:devel/p5-Time-Piece-Range \

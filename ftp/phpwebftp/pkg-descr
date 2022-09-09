@@ -5,5 +5,3 @@ issue by making a FTP connection from your webserver to your FTP server
 and transfering the files from this web server to your webclient over
 the standard http protocol. phpWebFTP is free software and the source
 is available under GNU license.
-
-WWW: http://www.phpwebftp.com/

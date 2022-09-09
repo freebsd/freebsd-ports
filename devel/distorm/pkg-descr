@@ -5,5 +5,3 @@ diStorm was written to decode every instruction quickly and accurately, with
 robust handling of valid and unused prefixes. The output is a special structure
 that can describe any x86 instruction, and later be formatted into text for
 display.
-
-WWW: https://github.com/gdabah/distorm

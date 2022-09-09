@@ -4,5 +4,3 @@ pure-Python, and compatible with Django.
 The cloud-based computing of 2021 puts a premium on memory. Gigabytes of empty
 space is left on disks as processes vie for memory. Among these processes is
 Memcached (and sometimes Redis) which is used as a cache.
-
-WWW: https://grantjenks.com/docs/diskcache/

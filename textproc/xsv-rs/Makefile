@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rs
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast CSV toolkit
+WWW=		https://github.com/BurntSushi/xsv
 
 LICENSE=	MIT UNLICENSE
 LICENSE_COMB=	dual

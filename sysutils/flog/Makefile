@@ -6,6 +6,7 @@ MASTER_SITES=	http://oss.ezic.com/flog/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small STDIN-to-file logger with support for log rotation
+WWW=		http://oss.ezic.com/
 
 LICENSE=	GPLv2 # version is not specified actually
 

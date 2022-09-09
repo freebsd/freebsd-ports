@@ -7,5 +7,3 @@ a larger set of patterns as time goes on. The desired output of these
 patterns is to apply the warnings module to emit DeprecationWarning or
 PendingDeprecationWarning or similar derivative to developers using
 libraries (or potentially applications) about future deprecations.
-
-WWW: https://docs.openstack.org/debtcollector/latest/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Load subroutines only on demand
+WWW=		https://metacpan.org/release/AutoLoader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

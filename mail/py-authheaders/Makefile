@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Generate email authentication headers
+WWW=		https://github.com/ValiMail/authentication-headers
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/MPL-2.0

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Rewrite strings based on a set of known prefixes
+WWW=		https://metacpan.org/release/String-RewritePrefix
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

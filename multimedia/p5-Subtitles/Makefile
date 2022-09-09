@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Perl5 backend for fix subtitles timing
+WWW=		https://metacpan.org/release/Subtitles
 
 NO_ARCH=	yes
 USES=		perl5

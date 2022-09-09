@@ -5,6 +5,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	morrand276@gmail.com
 COMMENT=	Lightweight command-line FM-RDS decoder
+WWW=		https://github.com/windytan/redsea/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

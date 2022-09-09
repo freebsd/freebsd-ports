@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules to convert and parse POD (Plain Old Documentation)
+WWW=		https://metacpan.org/release/podlators
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

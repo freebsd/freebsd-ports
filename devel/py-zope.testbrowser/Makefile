@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Programmable browser for functional black-box tests
+WWW=		https://pypi.org/project/zope.testbrowser/
 
 LICENSE=	ZPL21
 

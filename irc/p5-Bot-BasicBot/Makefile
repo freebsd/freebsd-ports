@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple irc bot baseclass
+WWW=		https://metacpan.org/release/Bot-BasicBot
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

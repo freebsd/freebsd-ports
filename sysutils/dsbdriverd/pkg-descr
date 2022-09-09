@@ -1,4 +1,2 @@
 DSBDriverd is a daemon that automatically tries to find and load the suitable
 driver(s) for your PCI and USB hardware.
-
-WWW: https://github.com/mrclksr/DSBDriverd

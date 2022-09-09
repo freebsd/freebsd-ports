@@ -7,6 +7,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL FreeType fonts rendering library
+WWW=		https://github.com/frankheckenbach/ftgl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,5 +9,3 @@ Additionally the package contains Python modules:
   - LDAPv3 extended operations and controls
   - automatic tests with OpenLDAP server This package is a non-compatible for
     of python-ldap and therefore uses the separate module name-space 'ldap0'.
-
-WWW: https://gitlab.com/ae-dir/python-ldap0

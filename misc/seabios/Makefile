@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.seabios.org/downloads/
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Open source implementation of a 16bit X86 BIOS
+WWW=		http://www.seabios.org
 
 LICENSE=	LGPL3
 

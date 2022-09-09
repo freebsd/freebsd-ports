@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides an API to create a HTML tree
+WWW=		https://pear.php.net/package/HTML_TreeMenu
 
 LICENSE=	BSD2CLAUSE
 

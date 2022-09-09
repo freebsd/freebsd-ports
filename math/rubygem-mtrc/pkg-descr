@@ -3,5 +3,3 @@ extract basic statistics, such as histograms and percentiles, from them.
 It takes samples, and provides tick counters, percentiles, and sorted
 datasets. This can be used for profiling repeated events such as
 application requests or message queue arrival rates.
-
-WWW: https://github.com/aphyr/mtrc

@@ -8,5 +8,3 @@ protein from/to a pdb file (which must have only one chain, but can have
 multiple models). The second, through the PDB class can handle pdb files with
 multiple models and herogens (although these are just passed through and not
 currently interpreted).
-
-WWW: https://graphics.stanford.edu/~drussel/pdb/

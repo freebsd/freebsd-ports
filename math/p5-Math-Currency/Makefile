@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for exact currency math with formatting and rounding
+WWW=		https://metacpan.org/release/Math-Currency
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

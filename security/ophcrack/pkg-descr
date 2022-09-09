@@ -11,5 +11,3 @@ seconds and offers the following features:
   - Real-time graphs to analyze passwords (optional)
   - Loads hashes from local SAM, remote SAM, encrypted SAM
     recovered from a Windows partition
-
-WWW: http://ophcrack.sourceforge.net/

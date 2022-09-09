@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Miscellaneous Utilities libraries
+WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

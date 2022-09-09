@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's panel multiple layouts manager
+WWW=		https://git.xfce.org/apps/xfce4-panel-profiles/about/
 
 LICENSE=	GPLv3
 

@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Version control system
+WWW=		https://www.gnu.org/software/rcs/
 
 LICENSE=	GPLv3
 

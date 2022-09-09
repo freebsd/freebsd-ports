@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ headers-only library for big integer and floating point numbers
+WWW=		https://ttmath.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

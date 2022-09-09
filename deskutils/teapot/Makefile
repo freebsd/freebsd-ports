@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses based spread sheet program
+WWW=		http://www.syntax-k.de/projekte/teapot
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

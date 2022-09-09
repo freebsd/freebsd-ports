@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Clean customizable Sphinx documentation theme
+WWW=		https://github.com/pradyunsg/furo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

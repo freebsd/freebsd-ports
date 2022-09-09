@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Adaptive Compression Tool
+WWW=		https://www.rkeene.org/oss/dact/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

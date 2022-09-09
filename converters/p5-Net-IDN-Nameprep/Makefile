@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Normalization of domain names (Nameprep, RFC 3491)
+WWW=		https://metacpan.org/release/Net-IDN-Nameprep
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings

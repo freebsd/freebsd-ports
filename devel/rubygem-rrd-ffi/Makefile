@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Ruby bindings for RRD functions
+WWW=		https://github.com/morellon/rrd-ffi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -9,6 +9,7 @@ DIST_SUBDIR=	suxus
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 font designed to be small yet easily read
+WWW=		http://www.goof.com/pcg/marc/suxus.html
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 

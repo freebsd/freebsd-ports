@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hunspell dictionaries
+WWW=		https://natura.di.uminho.pt/wiki/doku.php?id=dicionarios:main #hunspell
 
 # We pick the common one among:
 # - pt_PT is licensed under GPLv2, LGPL21 and MPL11.

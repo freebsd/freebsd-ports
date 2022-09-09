@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
+WWW=		https://github.com/iocage/iocage
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

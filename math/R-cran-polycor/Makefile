@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Polychoric and Polyserial Correlations
+WWW=		https://cran.r-project.org/package=polycor
 
 LICENSE=	GPLv2+
 

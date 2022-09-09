@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Generates random, valid User-Agent values
+WWW=		https://pypi.org/project/user_agent/
 
 LICENSE=	MIT
 

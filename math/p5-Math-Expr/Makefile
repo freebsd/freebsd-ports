@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing mathematical expressions into a tree structure
+WWW=		https://metacpan.org/release/HAKANARDO/Math-Expr-0.4
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

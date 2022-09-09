@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Notification system for tiling window managers
+WWW=		https://github.com/sboli/twmn
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

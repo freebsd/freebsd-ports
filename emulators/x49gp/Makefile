@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	HP 49g+/50g graphics calculator emulator
+WWW=		https://sourceforge.net/projects/x49gp/
 
 BROKEN_i386=		does not build on i386 (error: frame pointer required, but reserved)
 BROKEN_powerpc64=	fails to build: qemu/qemu-git/arm-softmmu/i386-dis.o: No such file or directory

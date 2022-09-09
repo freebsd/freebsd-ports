@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Modern Linker
+WWW=		https://github.com/rui314/mold
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

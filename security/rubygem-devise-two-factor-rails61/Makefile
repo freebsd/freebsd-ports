@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails61
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Barebones two-factor authentication with Devise
+WWW=		https://github.com/tinfoil/devise-two-factor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

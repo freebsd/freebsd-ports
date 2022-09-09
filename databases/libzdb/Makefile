@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.tildeslash.com/libzdb/dist/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
+WWW=		https://www.tildeslash.com/libzdb/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,15 +32,15 @@ SQLITE_CONFIGURE_WITH=	sqlite=${LOCALBASE}
 SQLITE_USES=		sqlite
 SSL_USES=		ssl
 
-.include <bsd.port.options.mk> 	 
+.include <bsd.port.options.mk>
 
 # See PR/237200 for details
-.if ${PORT_OPTIONS:MSSL} 	 
-.if ${SSL_DEFAULT} == base 	 
-CONFIGURE_ARGS+=        --enable-openssl 	 
-.else 	 
-CONFIGURE_ARGS+=        --enable-openssl=${OPENSSLBASE} 	 
-.endif 	 
+.if ${PORT_OPTIONS:MSSL}
+.if ${SSL_DEFAULT} == base
+CONFIGURE_ARGS+=        --enable-openssl
+.else
+CONFIGURE_ARGS+=        --enable-openssl=${OPENSSLBASE}
+.endif
 .endif
 
 .include <bsd.port.mk>

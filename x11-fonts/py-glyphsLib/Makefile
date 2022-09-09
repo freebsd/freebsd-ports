@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Bridge from Glyphs source files (.glyphs) to UFOs
+WWW=		https://github.com/googlei18n/glyphsLib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

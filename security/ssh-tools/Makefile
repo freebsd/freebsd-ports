@@ -8,6 +8,7 @@ PATCHFILES=	0bf5771fe3fafcb60ebf4541b8d382eb0ec9f7bc.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	CLI tools that make SSH more convenient
+WWW=		https://github.com/vaporup/ssh-tools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

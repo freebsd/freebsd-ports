@@ -6,6 +6,7 @@ MASTER_SITES=	http://core.tcl.tk/tcltls/uv/ \
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dynamically loadable SSL extensions for TCL
+WWW=		https://core.tcl.tk/tcltls
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

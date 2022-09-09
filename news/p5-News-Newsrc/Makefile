@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage newsrc files
+WWW=		https://metacpan.org/release/News-Newsrc
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Set-IntSpan>=0:math/p5-Set-IntSpan

@@ -1,4 +1,2 @@
 This module allows you to execute code when perl finished compiling the
 surrounding scope.
-
-WWW: https://metacpan.org/release/B-Hooks-EndOfScope

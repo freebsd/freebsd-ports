@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Interface to system call tracing interfaces
+WWW=		https://metacpan.org/release/Sys-Trace
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/README

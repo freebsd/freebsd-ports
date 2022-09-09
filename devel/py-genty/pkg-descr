@@ -1,5 +1,3 @@
 Genty, pronounced "gen-tee", stands for "generate tests". It promotes generative
 testing, where a single test can execute over a variety of input. Genty makes
 this a breeze.
-
-WWW: https://github.com/box/genty

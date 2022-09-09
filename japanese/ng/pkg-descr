@@ -7,5 +7,3 @@ Ng(Nihongo Micro Gnu Emacs) is a Mg(Micro Gnu Emacs)'s japanese port.
 Ng supports EUC, JIS and SJIS code. Ng also have (rather simple) C-mode.
 
 It is also very useful even if you don't need Japanese support.
-
-WWW: http://tt.sakura.ne.jp/~amura/ng/

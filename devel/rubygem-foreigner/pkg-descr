@@ -5,5 +5,3 @@ The following adapters are supported:
 - mysql2
 - postgres
 - sqlite (foreign key methods are a no-op)
-
-WWW: https://github.com/matthuhiggins/foreigner

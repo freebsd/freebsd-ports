@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.routino.org/download/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Router for OpenStreetMap Data
+WWW=		https://www.routino.org/
 
 LICENSE=	AGPLv3
 

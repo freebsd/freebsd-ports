@@ -9,5 +9,3 @@ for naive HTTP Basic (password-based) authentication, this module
 MUST be used in conjunction with an encryption-capable Web server
 (e.g. Apache) to keep that exchange private. There is no documentation
 provided; see the Web site for more details.
-
-WWW: http://modauthkerb.sourceforge.net/

@@ -7,5 +7,3 @@ texts.
 
 It also guesses whether content end in the block or continue to the next
 block.
-
-WWW: https://metacpan.org/release/HTML-ExtractContent

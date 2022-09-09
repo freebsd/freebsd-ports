@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OPAL
+WWW=		http://www.opalvoip.org
 
 LICENSE=	MPL10
 

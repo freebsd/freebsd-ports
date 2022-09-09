@@ -5,6 +5,7 @@ CATEGORIES=	print
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Split, Merge, Rotate and Reorder PDF Files
+WWW=		https://github.com/pdfarranger/pdfarranger
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-gh
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Threema Web application
+WWW=		https://threema.ch/en/faq/web_info
 
 LICENSE=	AGPLv3
 

@@ -20,6 +20,7 @@ PATCHFILES+=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
+WWW=		https://pointclouds.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -70,7 +71,7 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 QHULL_DESC=		Include convex-hull operations
 QHULL_CMAKE_BOOL=	WITH_QHULL
-QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull8
+QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull
 
 QT5_CMAKE_ON=		-DWITH_QT=QT5
 QT5_CMAKE_OFF=		-DWITH_QT=NO

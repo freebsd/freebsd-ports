@@ -7,6 +7,7 @@ DISTFILES+=	${PORTNAME}_${DISTVERSION}-20220112.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bcftools plugin for mosaic chromosomal alteration analysis
+WWW=		https://software.broadinstitute.org/software/mocha/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Authentication handler for using CredSSP with Python Requests
+WWW=		https://github.com/jborean93/requests-credssp
 
 LICENSE=	MIT
 

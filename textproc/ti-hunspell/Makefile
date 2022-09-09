@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tigrigna hunspell dictionaries
+WWW=		https://www.cs.ru.nl/~biniam/geez/index.php
 
 USES=		zip
 NO_ARCH=	yes

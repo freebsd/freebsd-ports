@@ -10,5 +10,3 @@ The "ctl" in "libctl" stands for Control Language (by convention, libctl
 control files end with ".ctl" and are referred to as ctl files). Thus,
 libctl is the Control Language Library (where the "lib" prefix follows the
 Unix idiom).
-
-WWW: https://libctl.readthedocs.io/en/latest/

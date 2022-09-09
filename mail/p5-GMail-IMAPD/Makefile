@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mashtizadeh@gmail.com
 COMMENT=	Perl IMAP4 gateway to Google's webmail service
+WWW=		https://metacpan.org/release/GMail-IMAPD
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mail-Webmail-Gmail>=0:mail/p5-Mail-Webmail-Gmail

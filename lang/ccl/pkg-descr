@@ -19,5 +19,3 @@ implementation. Features include:
   * Many extensions including: files mapped to Common Lisp vectors
     for fast file I/O; thread local hash tables and streams to
     eliminate locking overhead; cons hashing support.
-
-WWW: https://www.clozure.com/ccl

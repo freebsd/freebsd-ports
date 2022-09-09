@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parses, normalizes and compares license expressions
+WWW=		https://github.com/nexB/license-expression
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/NOTICE

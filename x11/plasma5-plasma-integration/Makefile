@@ -1,9 +1,11 @@
 PORTNAME=	plasma-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Platform Theme integration plugins for the Plasma workspaces
+WWW=		https://www.kde.org/plasma-desktop
 
 RUN_DEPENDS=	hack-font>=0:x11-fonts/hack-font
 
@@ -17,7 +19,7 @@ USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		widgets x11extras xml \
 		buildtools_build qmake_build
-USE_XORG=	xcb xcursor
+USE_XORG=	x11 xcb xcursor
 
 SHEBANG_FILES=	src/platformtheme/fonts_akregator.pl \
 		src/platformtheme/fonts_global.pl \

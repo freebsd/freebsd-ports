@@ -1,4 +1,2 @@
 SortedContainers is an Apache2 licensed containers library, written in
 pure-Python, and fast as C-extensions.
-
-WWW: http://www.grantjenks.com/docs/sortedcontainers/

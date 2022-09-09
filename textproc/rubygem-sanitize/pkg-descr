@@ -7,5 +7,3 @@ allow certain elements, certain attributes within those elements,
 and even certain URL protocols within attributes that contain URLs.
 Any HTML elements or attributes that you don't explicitly allow
 will be removed.
-
-WWW: https://github.com/rgrove/sanitize

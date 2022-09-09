@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX driver for converting CSV files to XML
+WWW=		https://metacpan.org/release/XML-SAXDriver-CSV
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-CSV_XS>=0.22:textproc/p5-Text-CSV_XS \

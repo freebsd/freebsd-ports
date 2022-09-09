@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Archive FreeBSD kernel crash files
+WWW=		https://code.google.com/archive/p/bsdcrashtar/
 
 LICENSE=	BSD3CLAUSE
 

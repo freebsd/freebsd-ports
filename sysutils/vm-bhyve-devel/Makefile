@@ -7,6 +7,7 @@ PKGNAMESUFFIX=		-devel
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Management system for bhyve virtual machines
+WWW=		https://github.com/churchers/vm-bhyve
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

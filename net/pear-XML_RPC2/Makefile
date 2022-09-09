@@ -4,6 +4,7 @@ CATEGORIES=	net devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML-RPC client/server library
+WWW=		https://pear.php.net/package/XML_RPC2
 
 LICENSE=	PHP301
 

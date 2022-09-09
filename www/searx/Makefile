@@ -5,6 +5,7 @@ CATEGORIES=	www python
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Privacy-respecting, hackable metasearch engine
+WWW=		https://asciimoo.github.io/searx/
 
 LICENSE=	AGPLv3
 

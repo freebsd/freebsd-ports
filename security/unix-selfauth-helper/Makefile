@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Local self-authentication for pam_exec
+WWW=		https://github.com/Zirias/unix-selfauth-helper
 
 LICENSE=	BSD2CLAUSE
 

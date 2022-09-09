@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Show information about local users
+WWW=		http://bjk.sourceforge.net/userinfo/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

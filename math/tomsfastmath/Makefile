@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable fixed precision math library for fast exponentiations
+WWW=		https://libtom.net/
 
 LICENSE=	PD WTFPL
 LICENSE_COMB=	dual

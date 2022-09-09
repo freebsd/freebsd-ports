@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse nmap scan data with perl
+WWW=		https://metacpan.org/release/Nmap-Parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

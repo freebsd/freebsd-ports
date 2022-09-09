@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}	# Upstream aren't versioned :(
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Small footprint implementation of the Scheme programming language
+WWW=		https://people.delphiforums.com/gjc/siod.html
 
 LICENSE=	LGPL21	# Declared inside slib.c
 

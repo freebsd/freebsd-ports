@@ -10,5 +10,3 @@ Key features:
 - Supports internationalized domain names and (optionally) internationalized
   local parts.
 - Normalizes email addresses (super important for internationalized addresses!)
-
-WWW: https://github.com/JoshData/python-email-validator

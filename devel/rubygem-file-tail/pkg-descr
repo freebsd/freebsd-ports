@@ -5,5 +5,3 @@ command 'tail -f' can.
 This Library is similar to Perl's File::Tail. It can be used to
 extend Ruby's File-objects, for File-derived classes, or by
 using the included simple File::Tail::Logfile class.
-
-WWW: https://github.com/flori/file-tail

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SQL Portability layer for LIMIT emulation
+WWW=		https://metacpan.org/release/SQL-Abstract-Limit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

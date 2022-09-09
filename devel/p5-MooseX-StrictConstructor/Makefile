@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Make your MooseX object constructors blow up on unknown attributes
+WWW=		https://metacpan.org/release/MooseX-StrictConstructor
 
 LICENSE=	ART20
 

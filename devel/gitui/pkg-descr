@@ -10,5 +10,3 @@ Features:
 * Scalable terminal UI layout
 * Async input polling
 * Async git API for fluid control
-
-WWW: https://github.com/extrawurst/gitui

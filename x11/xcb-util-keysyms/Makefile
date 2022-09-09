@@ -6,6 +6,7 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Standard X key constants and conversion to/from keycodes
+WWW=		https://xcb.freedesktop.org/
 
 LICENSE=	MIT
 

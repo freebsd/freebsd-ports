@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Client side SCEP library w/o clients
+WWW=		https://github.com/openxpki/libscep
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/README.md

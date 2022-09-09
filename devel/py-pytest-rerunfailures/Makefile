@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Re-run tests to eliminate flaky failures
+WWW=		https://github.com/pytest-dev/pytest-rerunfailures
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

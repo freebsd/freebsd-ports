@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Apple Filing Protocol client library
+WWW=		https://sourceforge.net/projects/afpfs-ng/
 
 LICENSE=	GPLv2
 

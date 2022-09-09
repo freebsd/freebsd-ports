@@ -7,5 +7,3 @@ This library is only useful when used as part of an application that relies on
 Event Machine's event loop. It implements an EM-based client protocol, which
 leverages the non-blocking nature of the EM interface to achieve significant
 parallelization without threads.
-
-WWW: https://github.com/portertech/em-redis

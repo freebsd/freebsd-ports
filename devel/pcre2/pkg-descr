@@ -6,5 +6,3 @@ original PCRE before they appeared in Perl are also available using the
 Python syntax. There is also some support for one or two .NET and
 Oniguruma syntax items, and there are options for requesting some minor
 changes that give better ECMAScript (aka JavaScript) compatibility.
-
-WWW: https://www.pcre.org/

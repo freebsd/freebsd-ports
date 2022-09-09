@@ -9,6 +9,7 @@ DISTNAME=	LuaBitOp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bitwise operations on numbers
+WWW=		https://bitop.luajit.org/
 
 LICENSE=	MIT
 

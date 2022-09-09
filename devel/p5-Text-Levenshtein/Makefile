@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the Levenshtein edit distance
+WWW=		https://metacpan.org/release/Text-Levenshtein
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

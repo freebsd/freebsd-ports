@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that provides an interface roughly equivalent to Xlib
+WWW=		https://metacpan.org/release/X11-Protocol
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

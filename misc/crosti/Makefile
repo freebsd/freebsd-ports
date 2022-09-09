@@ -8,6 +8,7 @@ MASTER_SITES=	https://managedway.dl.sourceforge.net/project/crosti/crosti%201.14
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convert custom image to cross stitch design, edit stitch designs
+WWW=		https://sourceforge.net/projects/crosti
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Module to read Mozilla URL history files
+WWW=		https://metacpan.org/release/File-Mork
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser

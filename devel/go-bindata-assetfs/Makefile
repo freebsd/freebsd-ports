@@ -1,11 +1,12 @@
 PORTNAME=	go-bindata-assetfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel www
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Serves embedded files from go-bindata with Go's net/http support
+WWW=		https://github.com/elazarl/go-bindata-assetfs
 
 LICENSE=	BSD2CLAUSE
 

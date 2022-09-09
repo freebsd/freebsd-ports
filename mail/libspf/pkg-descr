@@ -3,5 +3,3 @@ SPF is a standard under development for email envelope sender
 verification. Domain owners can specify who is qualified to send
 mail for the domain by publishing SPF TXT records in DNS.
 Read all about SPF at http://spf.pobox.com/
-
-WWW: http://software.schmorp.de/pkg/libspf.html

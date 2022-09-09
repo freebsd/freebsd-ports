@@ -12,5 +12,3 @@ The modules present in this package are:
 	readable text.
 
   HTML::FormatPS - Formatter that outputs PostScript code.
-
-WWW: https://metacpan.org/release/NIGELM/HTML-Format-2.12

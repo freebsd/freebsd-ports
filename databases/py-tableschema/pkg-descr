@@ -13,5 +13,3 @@ Features:
 - built-in command-line interface to validate and infer schemas
 - storage/plugins system to connect tables to different storage backends like
   SQL Database
-
-WWW: https://github.com/frictionlessdata/tableschema-py

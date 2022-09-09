@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Package manager for Lua modules
+WWW=		https://luarocks.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

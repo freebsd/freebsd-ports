@@ -13,5 +13,3 @@ run-time options.
 Some options may seem strange but they're there for a reason. For example, block
 size. It's there because if the header of block 0 is corrupt, you need a method
 of forcing a block size.
-
-WWW: https://github.com/df7cb/pg_filedump

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Smaller fork of py-textfsm, a parser for semi-structured text
+WWW=		https://github.com/jonathanslenders/textfsm
 
 LICENSE=	APACHE20
 

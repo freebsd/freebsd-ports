@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Archive Toolkit
+WWW=		https://metacpan.org/release/PAR
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

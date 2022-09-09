@@ -8,5 +8,3 @@ etc) and reused, saving much time if the IP ranges don't change too
 often.  The match can optionally report a value (e.g. a network name)
 instead of just a boolean, which makes module useful for mapping IP
 ranges to names or codes or anything else.
-
-WWW: https://metacpan.org/release/Net-IP-Match-Regexp

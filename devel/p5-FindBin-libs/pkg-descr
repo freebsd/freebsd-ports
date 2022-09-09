@@ -3,5 +3,3 @@ automate locating modules.
 
 Uses File::Spec and Cwd's abs_path to accomodate multiple O/S and
 redundant symlinks.
-
-WWW: https://metacpan.org/release/FindBin-libs

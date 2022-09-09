@@ -3,6 +3,3 @@ TIMESTAMP, and INTERVAL data types. It can be used to parse these formats in
 order to create DateTime or DateTime::Duration objects, and it can take a
 DateTime or DateTime::Duration object and produce a string representing it in a
 format accepted by PostgreSQL.
-
-WWW: https://metacpan.org/release/DateTime-Format-Pg
-WWW: https://metacpan.org/release/DateTime-Format-Pg

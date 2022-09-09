@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Py.test plugin to capture log messages
+WWW=		https://bitbucket.org/memedough/pytest-capturelog/overview
 
 LICENSE=	MIT
 

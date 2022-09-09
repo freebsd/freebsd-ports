@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl crypto extension to OpenSSL
+WWW=		https://metacpan.org/release/OpenCA-OpenSSL
 
 BROKEN_SSL=	base openssl
 BROKEN_SSL_REASON_openssl=	incomplete definition of type 'struct x509_st'

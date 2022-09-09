@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Documentation generator for GObject-based libraries
+WWW=		https://gitlab.gnome.org/GNOME/gi-docgen
 
 LICENSE=	APACHE20 GPLv3
 LICENSE_COMB=	dual

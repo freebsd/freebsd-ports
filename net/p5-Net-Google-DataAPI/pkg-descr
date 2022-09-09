@@ -1,4 +1,2 @@
 Net::Google::DataAPI is base implementations for modules to negotiate
 with Google Data APIs.
-
-WWW: https://metacpan.org/release/Net-Google-DataAPI

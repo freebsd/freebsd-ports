@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multipart HTML Email builder
+WWW=		https://metacpan.org/release/Email-MIME-CreateHTML
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -10,5 +10,3 @@ Thus this module.
 We simply provide a little wrapper around Text::CSV_XS to streamline
 the common case scenario. (Or at least my common case scenario; feel
 free to write your own wrapper if this one doesn't do what you want).
-
-WWW: https://metacpan.org/release/Text-CSV-Simple

@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/audio/mp3stat/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Read information about an MP3's, or OGG's bitstream
+WWW=		https://BSDforge.com/projects/audio/mp3stat/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

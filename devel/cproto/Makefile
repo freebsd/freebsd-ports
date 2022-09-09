@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://invisible-island.net/cproto/
 
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Generate C function prototypes and convert function definitions
+WWW=		https://invisible-island.net/cproto/
 
 LICENSE=	PD
 

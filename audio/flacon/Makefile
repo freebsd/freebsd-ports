@@ -1,16 +1,22 @@
 PORTNAME=	flacon
-PORTVERSION=	9.1.0
+PORTVERSION=	9.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file extractor and encoder
+WWW=		https://flacon.github.io/
 
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libuchardet.so:textproc/uchardet
-TEST_DEPENDS=	flac:audio/flac mac:audio/mac mediainfo:multimedia/mediainfo \
+TEST_DEPENDS=	alacenc:audio/alacenc \
+		faac:audio/faac flac:audio/flac \
+		lame:audio/lame mac:audio/mac \
+		mediainfo:multimedia/mediainfo \
+		oggenc:audio/vorbis-tools \
+		opusenc:audio/opus-tools \
 		ttaenc:audio/tta wavpack:audio/wavpack
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5

@@ -1,4 +1,2 @@
 This extension adds dynamically loadable signal handling to
 Tcl/Tk scripts.
-
-WWW: http://www.nyx.net/~mschwart/signal_ext.html

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use DBI for CHI unified cache interface storage
+WWW=		https://metacpan.org/release/CHI-Driver-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

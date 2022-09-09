@@ -4,5 +4,3 @@ It is implemented by using raw sockets to act just like the regular
 traceroute.
 
 You must also be root to use the raw sockets.
-
-WWW: https://metacpan.org/release/Net-Traceroute-PurePerl

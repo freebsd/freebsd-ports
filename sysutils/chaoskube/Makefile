@@ -1,11 +1,12 @@
 PORTNAME=	chaoskube
 PORTVERSION=	0.24.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Chaoskube periodically kills random pods in your Kubernetes cluster
+WWW=		https://github.com/linki/chaoskube
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

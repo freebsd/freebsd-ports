@@ -7,5 +7,4 @@ to threading, but provide the benefits of non-blocking I/O. The event dispatch
 is implicit, which means you can easily use Eventlet from the Python
 interpreter, or as a small part of a larger application.
 
-WWW: https://eventlet.net/
-WWW: https://github.com/eventlet/eventlet
+See also: https://github.com/eventlet/eventlet

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Natively copying Perl data structures
+WWW=		https://metacpan.org/release/WAZZUTEKE/Clone-Fast-0.97
 
 LICENSE=	ART20
 

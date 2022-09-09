@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Scatter Plot
+WWW=		https://cran.r-project.org/package=scatterplot3d
 
 LICENSE=	GPLv2
 

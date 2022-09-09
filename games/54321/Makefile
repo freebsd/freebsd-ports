@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five games in four-, three-, or two-dimensions for one player
+WWW=		https://old.nklein.com/products/54321/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

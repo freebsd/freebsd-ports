@@ -5,6 +5,7 @@ CATEGORIES=	games emulators wayland
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Cross-platform entertainment system based on libretro API
+WWW=		https://github.com/libretro/RetroArch
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

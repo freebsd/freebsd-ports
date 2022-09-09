@@ -9,6 +9,7 @@ EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	Compiler and tools for Standard ML (SML '97)
+WWW=		https://www.smlnj.org/
 
 LICENSE=	SMLNJ
 LICENSE_NAME=	Standard ML of New Jersey License

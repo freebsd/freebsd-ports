@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pure perl implementation of the Heap::Simple interface
+WWW=		https://metacpan.org/release/Heap-Simple-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

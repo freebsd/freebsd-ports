@@ -1,11 +1,12 @@
 PORTNAME=	HTML-Form
-PORTVERSION=	6.07
+PORTVERSION=	6.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class that represents an HTML form element
+WWW=		https://metacpan.org/release/HTML-Form
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

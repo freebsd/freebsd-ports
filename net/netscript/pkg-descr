@@ -9,5 +9,3 @@ card support, character replacement, random replacement, argument inclusion,
 server timeout, initial send, display altering, multiple character dump forma-
 ts, telnet protocol support, logging, program to socket dumping, executable
 ruleset support, reverse binding, and module support among other things.
-
-WWW: http://netscript.sourceforge.net/

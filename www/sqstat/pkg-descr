@@ -1,5 +1,3 @@
 SqStat is a script which allows to look through active squid users
 connections. It uses cachemgr protocol to get information from
 squid proxy server.
-
-WWW: http://samm.kiev.ua/sqstat/

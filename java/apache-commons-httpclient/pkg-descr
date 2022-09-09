@@ -7,5 +7,3 @@ protocol, the HttpClient component may be of interest to anyone building
 HTTP-aware client applications such as web browsers, web service clients,
 or systems that leverage or extend the HTTP protocol for distributed
 communication.
-
-WWW: https://hc.apache.org/httpclient-3.x/

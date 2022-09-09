@@ -1,4 +1,2 @@
 This aims to provide similar features to access to Bugzilla through
 WebService APIs in Ruby.
-
-WWW: https://bitbucket.org/tagoh/ruby-bugzilla

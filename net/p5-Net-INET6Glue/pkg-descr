@@ -7,5 +7,3 @@ Net::FTP, Net::SMTP, LWP,...) do not support IPv6 even if the modules
 for IPv6 sockets Socket6, IO::Socket::INET6 are available.
 
 This module tries to mitigate this by hotpatching.
-
-WWW: https://metacpan.org/release/Net-INET6Glue

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
+WWW=		http://www.hydrogen-music.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

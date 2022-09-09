@@ -5,6 +5,7 @@ CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal-based music player, audio engine, metadata indexer, server
+WWW=		https://musikcube.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

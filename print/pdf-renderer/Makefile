@@ -7,6 +7,7 @@ DISTNAME=	PDFRenderer-full-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	100% Java PDF renderer and viewer
+WWW=		https://pdf-renderer.dev.java.net/
 
 LICENSE=	LGPL21
 

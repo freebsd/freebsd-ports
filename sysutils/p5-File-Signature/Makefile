@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Detect changes to a file's content or attributes
+WWW=		https://metacpan.org/release/File-Signature
 
 USES=		perl5
 USE_PERL5=	configure

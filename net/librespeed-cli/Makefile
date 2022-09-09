@@ -1,11 +1,12 @@
 PORTNAME=	librespeed-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net www
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	CLI interface to run librespeed speedtests
+WWW=		https://github.com/librespeed/speedtest-cli
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

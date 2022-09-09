@@ -1,11 +1,12 @@
 PORTNAME=	trove-classifiers
-PORTVERSION=	2022.6.26
+PORTVERSION=	2022.8.24
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Canonical source for classifiers on PyPI
+WWW=		https://github.com/pypa/trove-classifiers
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

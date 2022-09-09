@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ implementation of Ethash and ProgPoW
+WWW=		https://github.com/chfast/ethash
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

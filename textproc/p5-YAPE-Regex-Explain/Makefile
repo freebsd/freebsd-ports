@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Explanation of a Regular Expression
+WWW=		https://metacpan.org/release/YAPE-Regex-Explain
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-YAPE-Regex>=0:textproc/p5-YAPE-Regex

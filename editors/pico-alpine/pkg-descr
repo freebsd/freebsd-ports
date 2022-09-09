@@ -10,5 +10,3 @@ Delete, Rename, Copy, View, Launch, and Edit.  The "View" and "Edit"
 commands operate on text files only.  The "Edit" command invokes "pico."
 The "Launch" command provides a convenient way to either execute the selected
 file or to run an application on it.
-
-WWW: http://www.washington.edu/alpine/

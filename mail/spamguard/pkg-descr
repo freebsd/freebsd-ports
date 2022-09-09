@@ -6,5 +6,3 @@ your mail server logs.
 spamGuard is written purely in C, to stop spammers hanging around.
 The program supports nearly all mostly used MTAs; qmail (both
 multilog and splogger), sendmail and Postfix.
-
-WWW: http://www.enderunix.org/spamguard

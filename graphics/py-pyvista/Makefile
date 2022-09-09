@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pythonic interface to VTK
+WWW=		https://github.com/pyvista/pyvista
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

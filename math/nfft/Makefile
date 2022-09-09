@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/NFFT/${PORTNAME}/releases/download/${DISTVERSIO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nonequispaced fast Fourier transform
+WWW=		https://www-user.tu-chemnitz.de/~potts/nfft
 
 LICENSE=	GPLv2
 

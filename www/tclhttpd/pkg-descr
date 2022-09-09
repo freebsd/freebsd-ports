@@ -20,5 +20,3 @@ interface between the web server and the hosting application is defined,
 it  is  possible to  manage  the  web  server, upload  Safe-Tcl  control
 scripts, download logging information, and  otherwise debug the Tcl part
 of the application without restarting the hosting application.
-
-WWW: https://www.tcl.tk/software/tclhttpd/

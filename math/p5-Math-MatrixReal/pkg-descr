@@ -14,5 +14,3 @@ keyboard or your code, solving linear equations, etc.
 
 It also has an implementation of Kleene's algorithm for finding minimal
 costs for paths in a graph.
-
-WWW: https://metacpan.org/release/Math-MatrixReal

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.superscript.com/ucspi-ipc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UCSPI tools for building local-domain client-server applications
+WWW=		http://www.superscript.com/ucspi-ipc/
 
 USES=		perl5
 

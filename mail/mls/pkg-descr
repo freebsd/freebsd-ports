@@ -9,5 +9,3 @@ be used for automatic mailing of produced output).
 It also supports cache file for faster re-generation of stats from the
 same input file. It is useful when you want to show statistics on web
 - you can use HTML output & PHP wrapper.
-
-WWW: http://www.marki-online.net/MLS/

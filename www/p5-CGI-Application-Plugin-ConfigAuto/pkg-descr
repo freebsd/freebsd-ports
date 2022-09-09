@@ -7,5 +7,3 @@ The format is detected automatically using Config::Auto. It is known to
 support the following formats: colon separated, space separated, equals
 separated, XML, Perl code, and Windows INI. See that modules
 documentation for complete details.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-ConfigAuto

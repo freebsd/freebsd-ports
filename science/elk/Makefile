@@ -1,5 +1,5 @@
 PORTNAME=	elk
-DISTVERSION=	8.4.30
+DISTVERSION=	8.5.2
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-chemistry
@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	All-electron full-potential linearised augmented-planewave code
+WWW=		http://elk.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -62,7 +63,7 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-do-test:
+do-test: # several tests fail, see https://sourceforge.net/p/elk/discussion/897822/thread/5d7862dd8b/
 	@cd ${WRKSRC}/tests && ./test.sh
 
 .include <bsd.port.post.mk>

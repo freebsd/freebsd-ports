@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Converts flat ASCII text to man page format
+WWW=		https://github.com/mvertes/txt2man
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*/pre/}-0-g${GITHASH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - extended EPG plugin
+WWW=		https://projects.vdr-developer.org/projects/plg-eepg
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

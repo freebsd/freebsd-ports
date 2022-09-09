@@ -4,6 +4,7 @@ CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Portable SCTP userland stack
+WWW=		https://github.com/sctplab/usrsctp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

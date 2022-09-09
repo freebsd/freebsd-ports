@@ -11,6 +11,7 @@ EXTRACT_ONLY=	Cyberbit.ZIP
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Bitstream Cyberbit TrueType font that covers Unicode 2.0
+WWW=		http://www.bitstream.com/
 
 # Converted from RESTRICTED
 LICENSE=	CYBERBIT

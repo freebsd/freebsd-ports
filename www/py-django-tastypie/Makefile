@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Create REST API for Django apps
+WWW=		https://github.com/django-tastypie/django-tastypie
 
 LICENSE=	BSD3CLAUSE
 

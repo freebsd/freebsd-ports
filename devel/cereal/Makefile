@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	teodor@sigaev.ru
 COMMENT=	C++11 library for serialization
+WWW=		https://github.com/USCiLab/cereal
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

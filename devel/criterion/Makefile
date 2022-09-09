@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C and C++ unit testing framework for the 21st century
+WWW=		https://github.com/Snaipe/Criterion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

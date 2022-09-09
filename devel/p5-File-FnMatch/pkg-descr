@@ -2,5 +2,3 @@ File::FnMatch::fnmatch() provides simple, shell-like pattern matching.
 
 Though considerably less powerful than regular expressions, shell patterns
 are nonetheless useful and familiar to a large audience of end-users.
-
-WWW: https://metacpan.org/release/File-FnMatch

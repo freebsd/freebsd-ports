@@ -5,5 +5,3 @@ so is 'FreeBSD'.
 
 This module provides a mapping between an operating system name as given
 by $^O and a more generic type.
-
-WWW: https://metacpan.org/release/Perl-OSType

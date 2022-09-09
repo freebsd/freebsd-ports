@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	conall@conall.net
 COMMENT=	Python library to control Sonos speakers
+WWW=		https://github.com/SoCo/SoCo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

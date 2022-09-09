@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Very fast and configurable open source SIP proxy
+WWW=		https://www.kamailio.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

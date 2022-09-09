@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.filezilla-project.org/${PORTNAME}/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ library for building platform-independent programs
+WWW=		https://lib.filezilla-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

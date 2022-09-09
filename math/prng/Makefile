@@ -6,6 +6,7 @@ MASTER_SITES=	http://statistik.wu-wien.ac.at/software/prng/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, high-performance ANSI-C pseudorandom number generators
+WWW=		http://statistik.wu-wien.ac.at/software/prng/index.html
 
 LICENSE=	GPLv2
 

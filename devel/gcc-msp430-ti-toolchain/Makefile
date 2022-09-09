@@ -26,6 +26,7 @@ EXTRACT_ONLY=	gcc-${GCC_REL_VERSION}.tar.xz \
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Complete gcc-based toolcahin for TI MSP430 uC
+WWW=		http://www.ti.com/tool/msp430-gcc-opensource
 
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
@@ -187,7 +188,7 @@ do-build:
 		${STRIP_CMD} $${bin} ; \
 	done
 .endif
-		
+
 do-install:
 	@${TAR} -cf - -C ${INTERIM_WORLD} ${PORTNAME}-${TI_VERSION} | ${TAR} -xf - -C ${STAGEDIR}${PREFIX}
 	@${ECHO_MSG} "Remove unneeded host files..."

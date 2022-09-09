@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Build sprintf-like functions of your own
+WWW=		https://metacpan.org/release/String-Formatter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

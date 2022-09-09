@@ -5,6 +5,7 @@ CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ SED-ML library
+WWW=		https://github.com/fbergmann/libSEDML
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

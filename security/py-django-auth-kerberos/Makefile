@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Kerberos authentication backend for Django
+WWW=		https://github.com/02strich/django-auth-kerberos
 
 LICENSE=	MIT
 

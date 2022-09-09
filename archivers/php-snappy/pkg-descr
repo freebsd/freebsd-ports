@@ -1,4 +1,2 @@
 Provides the API to PHP for the snappy compression algorithm by
 Google.
-
-WWW: https://github.com/kjdev/php-ext-snappy

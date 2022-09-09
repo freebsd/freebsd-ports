@@ -2,5 +2,3 @@ nanoc is a simple but very flexible static site generator written in Ruby.
 It operates on local files, and therefore does not run on the server.
 nanoc "compiles" the local source files into HTML (usually), by evaluating
 eRuby, Markdown, etc.
-
-WWW: https://nanoc.ws/

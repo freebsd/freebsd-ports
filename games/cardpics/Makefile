@@ -5,6 +5,7 @@ MASTER_SITES=		SAVANNAH
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Free cards for your free card games!
+WWW=		https://www.nongnu.org/cardpics/
 
 LICENSE=		GPLv2
 

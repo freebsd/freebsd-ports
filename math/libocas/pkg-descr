@@ -6,5 +6,3 @@ SVM solvers.
 
 libocas also implements the COFFIN framework for efficient training of
 translation invariant image classifiers from virtual examples.
-
-WWW: http://cmp.felk.cvut.cz/~xfrancv/ocas/html/index.html

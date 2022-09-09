@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Install read-only data files from a distribution
+WWW=		https://metacpan.org/release/File-ShareDir-Install
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

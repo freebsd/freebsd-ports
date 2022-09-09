@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML Parser for SVG documents
+WWW=		https://metacpan.org/release/SVG-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

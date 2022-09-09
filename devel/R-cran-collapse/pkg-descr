@@ -6,5 +6,3 @@ integrated with base R, 'dplyr' / (grouped) 'tibble', 'data.table',
 non-destructively handles other matrix or data frame based classes
 (such as 'ts', 'xts' / 'zoo', 'timeSeries', 'tsibble', 'tibbletime'
 etc.)
-
-WWW: https://cran.r-project.org/web/packages/collapse/

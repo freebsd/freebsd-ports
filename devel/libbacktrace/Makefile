@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library that produces symbolic backtraces in C/C++ programs
+WWW=		https://github.com/ianlancetaylor/libbacktrace
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

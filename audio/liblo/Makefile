@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight Open Sound Control implementation
+WWW=		https://github.com/radarsat1/liblo
 
 LICENSE=	LGPL21
 

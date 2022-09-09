@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	OpenGL acceleration code for PyOpenGL
+WWW=		http://pyopengl.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

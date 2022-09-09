@@ -14,7 +14,7 @@ USE_KDE=	auth archive codecs config configwidgets coreaddons i18n itemmodels \
 		kio service widgetsaddons \
 		ecm_build
 # pim components
-USE_KDE+=	akonadi akonadimime libkdepim mime pimcommon
+USE_KDE+=	akonadi akonadimime libkdepim mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus gui network uitools widgets xml \
 		buildtools_build qmake_build testlib_build
 USE_LDCONFIG=	yes

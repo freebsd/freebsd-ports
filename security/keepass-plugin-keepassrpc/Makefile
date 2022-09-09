@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	keepass-plugin-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KeePass plugin which facilitates the Kee Firefox plugin
+WWW=		https://www.kee.pm/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

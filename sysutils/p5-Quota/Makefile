@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides access to filesystem quotas
+WWW=		https://metacpan.org/release/Quota
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

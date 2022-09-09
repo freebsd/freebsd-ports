@@ -5,5 +5,3 @@ popular photo management applications.  The library provides routines for
 parsing, viewing, modifying, and saving this metadata.  The libiptcdata
 package also includes a command-line utility, iptc, for editing IPTC data in
 JPEG files.
-
-WWW: http://libiptcdata.sourceforge.net/

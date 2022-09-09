@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Clojure language
+WWW=		https://github.com/clojure-emacs/clojure-mode
 
 LICENSE=	GPLv3+
 

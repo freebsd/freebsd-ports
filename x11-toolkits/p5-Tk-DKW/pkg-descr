@@ -17,5 +17,3 @@ Tk::Signals     - A publish and subscribe object signalling method like
 		  that found in QT. Very useful when widgets that are not
 		  in the same hierarchy need to alert each other to various
 		  application level events.
-
-WWW: https://metacpan.org/release/Tk-DKW

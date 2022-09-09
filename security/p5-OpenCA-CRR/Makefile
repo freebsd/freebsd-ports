@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to handle CRR objects
+WWW=		https://metacpan.org/release/OpenCA-CRR
 
 USES=		perl5
 USE_PERL5=	configure

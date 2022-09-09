@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl test module to test/assert response times
+WWW=		https://metacpan.org/release/Test-Timer
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

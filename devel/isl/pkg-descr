@@ -6,5 +6,3 @@ minimum using parametric integer programming, coalescing and parametric
 vertex enumeration. It also includes an ILP solver based on generalized
 basis reduction, transitive closures on maps (which may encode infinite
 graphs), dependence analysis and bounds on piecewise step-polynomials.
-
-WWW: https://libisl.sourceforge.io/

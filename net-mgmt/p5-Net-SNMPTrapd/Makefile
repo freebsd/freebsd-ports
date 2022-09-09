@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	SNMP Trap Listener in Perl
+WWW=		https://metacpan.org/release/Net-SNMPTrapd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

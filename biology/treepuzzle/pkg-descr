@@ -14,5 +14,3 @@ TREE-PUZZLE are TN, HKY, F84, SH for nucleotides, Dayhoff, JTT, mtREV24, VT,
 WAG, BLOSUM 62 for amino acids, and F81 for two-state data. Rate heterogeneity
 is modeled by a discrete Gamma distribution and by allowing invariable sites.
 The corresponding parameters can be inferred from the data set.
-
-WWW: http://www.tree-puzzle.de

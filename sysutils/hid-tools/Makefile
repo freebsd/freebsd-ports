@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.freedesktop.org/libevdev/${PORTNAME}/-/archive/${DI
 
 MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Python scripts to manipulate HID data
+WWW=		https://gitlab.freedesktop.org/libevdev/hid-tools
 
 LICENSE=	GPLv2
 

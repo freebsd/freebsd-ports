@@ -2,5 +2,3 @@ Classs::DBI::Replication extends Class::DBI's persistence for replicated
 databases.
 
 The idea is very simple. SELECT from slaves, INSERT/UPDATE/DELETE to master.
-
-WWW: https://metacpan.org/release/Class-DBI-Replication

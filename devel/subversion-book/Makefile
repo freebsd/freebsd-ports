@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Subversion Documentation HTML/PDF
+WWW=		https://svnbook.red-bean.com/
 
 # Creative Commons Legal Code
 # http://svnbook.red-bean.com/en/1.7/svn.copyright.html

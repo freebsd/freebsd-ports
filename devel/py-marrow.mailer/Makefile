@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Python library to ease sending emails
+WWW=		https://github.com/marrow/mailer
 
 LICENSE=	MIT
 

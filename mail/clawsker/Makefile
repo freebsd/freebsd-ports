@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.claws-mail.org/tools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Applet to edit Claws Mail's hidden preferences
+WWW=		https://www.claws-mail.org/clawsker.php
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

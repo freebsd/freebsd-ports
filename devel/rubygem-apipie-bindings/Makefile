@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for API calls that are documented with Apipie
+WWW=		https://github.com/Apipie/apipie-bindings
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

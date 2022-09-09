@@ -1,11 +1,14 @@
 PORTNAME=	mythweb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	31.0
+DISTVERSION=	32.0-40
+DISTVERSIONSUFFIX=	-gb05906a6
+
 CATEGORIES=	www
 PKGNAMEPREFIX=	mythplugin-
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
+WWW=		https://www.mythtv.org/wiki/MythWeb
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@ in your configure.in. This package also includes the "aclocal"
 program. aclocal is a program to generate an 'aclocal.m4' based on the
 contents of 'configure.in'. It is useful as an extensible, maintainable
 mechanism for augmenting autoconf.
-
-WWW: https://www.gnu.org/software/automake/

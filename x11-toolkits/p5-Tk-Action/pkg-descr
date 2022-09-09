@@ -5,5 +5,3 @@ update everywhere this action is allowed.
 This module helps managing actions in a Tk GUI: just create a new object,
 associate some widgets and bindings with add_widget() and then de/activate the
 whole action at once with enable() or disable().
-
-WWW: https://metacpan.org/release/Tk-Action

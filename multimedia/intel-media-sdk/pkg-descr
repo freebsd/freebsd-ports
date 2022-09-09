@@ -8,5 +8,3 @@ Supported video decoders: HEVC, AVC, VP8, VP9, MPEG-2, VC1, JPEG, AV1
 
 Supported video pre-processing filters: Color Conversion, Deinterlace,
 Denoise, Resize, Rotate, Composition
-
-WWW: http://mediasdk.intel.com/

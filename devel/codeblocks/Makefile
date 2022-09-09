@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
+WWW=		https://www.codeblocks.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

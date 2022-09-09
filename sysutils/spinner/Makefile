@@ -5,6 +5,7 @@ MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/spinner/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep ssh and telnet connections from dropping due to inactivity
+WWW=		http://www.laffeycomputer.com/spinner.html
 
 GNU_CONFIGURE=	yes
 

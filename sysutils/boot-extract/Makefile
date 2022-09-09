@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Android Boot image extraction tool
+WWW=		https://github.com/csimmonds/boot-extract
 
 LICENSE=	GPLv2
 

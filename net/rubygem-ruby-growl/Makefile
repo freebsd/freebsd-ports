@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure-ruby growl notifier
+WWW=		https://github.com/drbrain/ruby-growl
 
 LICENSE=	BSD3CLAUSE
 

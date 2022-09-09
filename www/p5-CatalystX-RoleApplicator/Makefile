@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Apply roles to your Catalyst application-related classes
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Browser
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MooseX-RelatedClassRoles>=0.003:devel/p5-MooseX-RelatedClassRoles \

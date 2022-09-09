@@ -12,6 +12,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mailing list manager with user-friendly web front-end
+WWW=		https://www.list.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
@@ -215,7 +216,6 @@ post-install:
 	    -d ${MAILMANDIR}/${dir} ${dir})
 .endfor
 	@${RM} ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
-	@# mm_cfg.py is handled by pkg-plist, no need to archive a copy:
 	@${RM} ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.py
 	@${RM} ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}

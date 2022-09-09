@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension interface to convert Japanese text
+WWW=		https://metacpan.org/release/Jcode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

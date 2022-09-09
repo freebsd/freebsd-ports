@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.xs4all.nl/~suelette/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
+WWW=		http://iq.org/~proff/nntpcache.org/
 
 # Converted from NO_CDROM
 LICENSE=	nttpcache

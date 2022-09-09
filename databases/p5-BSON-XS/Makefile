@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS implementation of MongoDB BSON serialization
+WWW=		https://metacpan.org/release/BSON-XS
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

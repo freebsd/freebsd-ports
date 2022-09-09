@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	2D vector and rectangle classes
+WWW=		https://pypi.org/project/vecrec
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

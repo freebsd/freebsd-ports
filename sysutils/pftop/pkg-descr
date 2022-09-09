@@ -1,4 +1,2 @@
 Pftop is a small, curses-based utility for real-time display of active
 states and rule statistics for pf, the packet filter (for OpenBSD)
-
-WWW: https://github.com/araujobsd/pftop/

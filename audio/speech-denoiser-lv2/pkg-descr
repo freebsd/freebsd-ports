@@ -3,5 +3,3 @@ by GregorR.
 
 RNNoise is a library that uses deep learning to apply noise supression to audio
 sources with voice presence.
-
-WWW: https://github.com/lucianodato/speech-denoiser

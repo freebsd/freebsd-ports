@@ -7,6 +7,7 @@ MASTER_SITES=	http://oldhome.schmorp.de/data/marc/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Portable, fast, and featureful ZIP password cracker
+WWW=		http://home.schmorp.de/marc/fcrackzip.html
 
 LICENSE=	GPLv2
 

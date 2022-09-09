@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
+WWW=		https://hackmysql.com/mysqlsla
 
 LICENSE=	GPLv2+
 

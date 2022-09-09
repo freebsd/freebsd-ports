@@ -4,5 +4,3 @@ LightDM is a display manager that:
 * Supports different display technologies
 * Is lightweight - low memory usage and fast performance
 * Has a comprehensive test suite
-
-WWW: https://github.com/canonical/lightdm

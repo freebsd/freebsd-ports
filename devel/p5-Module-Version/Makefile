@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get module versions
+WWW=		https://metacpan.org/release/Module-Version
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

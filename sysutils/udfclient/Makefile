@@ -6,6 +6,7 @@ DISTFILES=	UDFclient.${PORTVERSION}.tgz
 
 MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Tools for UDF filesystem
+WWW=		http://www.13thmonkey.org/udfclient/
 
 LICENSE=	ClArtistic
 

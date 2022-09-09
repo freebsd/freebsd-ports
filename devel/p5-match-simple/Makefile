@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified clone of smartmatch operator
+WWW=		https://metacpan.org/release/match-simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

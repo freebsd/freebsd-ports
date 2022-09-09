@@ -12,5 +12,3 @@ interpreted code during runtime. This can cause severe performance impacts
 to applications in a number of scenarios, and is not enabled by default for
 that reason. When used in high risk environments such as shared hosting,
 it is strongly recommended to enable this option.
-
-WWW: http://www.mono-project.com/

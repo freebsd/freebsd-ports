@@ -6,6 +6,7 @@ DISTNAME=	ecFlow-${DISTVERSION}-Source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Workflow package that enables users to run a large number of programs
+WWW=		https://confluence.ecmwf.int/display/ECFLOW/ecflow+home
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,6 +23,8 @@ USE_QT=		charts core gui network svg widgets buildtools_build qmake_build
 SHEBANG_GLOB=	*.sh *.in *.py
 
 CMAKE_OFF=	ENABLE_STATIC_BOOST_LIBS ENABLE_TESTS ENABLE_ALL_TESTS
+
+CXXFLAGS_i386=	-fPIC # attempt to work around compilation failure, see https://jira.ecmwf.int/browse/SUP-3688
 
 CONFLICTS_BUILD=	python27 # build attempts to find python-2.7 and use it
 

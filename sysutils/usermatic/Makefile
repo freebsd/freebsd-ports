@@ -7,6 +7,7 @@ MASTER_SITES=	http://btw23.de/johannes/usermatic/\
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Scripts to automate the maintenance of accounts
+WWW=		http://btw23.de/johannes/usermatic/
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/userneu.pl:sysutils/userneu
 

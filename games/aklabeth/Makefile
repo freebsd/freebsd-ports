@@ -5,6 +5,7 @@ MASTER_SITES=	http://reconstruction.voyd.net/zips/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of Richard Garriott's Ultima prequel
+WWW=		https://reconstruction.voyd.net/index.php?event=project&typeKeyword=remakes
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Emacs frontend for Mu
+WWW=		http://www.djcbsoftware.nl/code/mu/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Low-level client for Crossref search API
+WWW=		https://github.com/sckott/habanero
 
 LICENSE=	MIT
 

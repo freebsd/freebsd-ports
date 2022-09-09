@@ -1,3 +1,1 @@
 ExtUtils::Config is an abstraction around the %Config hash.
-
-WWW: https://metacpan.org/release/ExtUtils-Config

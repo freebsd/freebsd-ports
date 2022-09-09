@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl library for making email objects from a filehandle
+WWW=		https://github.com/rjbs/Email-Simple-FromHandle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	YANG data modeling language library
+WWW=		https://github.com/CESNET/libyang
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

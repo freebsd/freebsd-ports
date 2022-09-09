@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Metasploit Model Mixins and Validators
+WWW=		https://github.com/rapid7/metasploit-model
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

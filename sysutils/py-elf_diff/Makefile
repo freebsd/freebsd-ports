@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Tool to Compare Elf Binaries
+WWW=		https://github.com/noseglasses/elf_diff
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

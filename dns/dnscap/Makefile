@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DNS network traffic capture utility
+WWW=		https://www.dns-oarc.net/tools/dnscap
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

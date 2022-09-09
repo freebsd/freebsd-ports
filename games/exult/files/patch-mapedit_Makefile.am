@@ -1,6 +1,6 @@
---- mapedit/Makefile.am.orig	2016-05-14 01:04:00 UTC
+--- mapedit/Makefile.am.orig	2022-04-12 16:34:45 UTC
 +++ mapedit/Makefile.am
-@@ -92,8 +92,8 @@ EXTRA_DIST=	\
+@@ -101,8 +101,8 @@ install-exec-local:
  
  if GIMP_PLUGIN
  install-exec-local:

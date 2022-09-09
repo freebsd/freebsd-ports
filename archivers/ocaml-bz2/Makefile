@@ -8,6 +8,7 @@ DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library to manipulate bz2 files
+WWW=		http://camlbz2.forge.ocamlcore.org
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

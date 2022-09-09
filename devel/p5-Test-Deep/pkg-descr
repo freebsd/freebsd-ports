@@ -4,5 +4,3 @@ structures by going through each level, ensuring that the values
 match, that arrays and hashes have the same elements and that
 references are blessed into the correct class. It also handles
 circular data structures without getting caught in an infinite loop.
-
-WWW: https://metacpan.org/release/Test-Deep

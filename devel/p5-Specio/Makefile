@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Type constraints and coercions for Perl
+WWW=		https://metacpan.org/release/Specio
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,5 +6,3 @@ codes by essentially taking over the parallel programming: it handles both, the
 parallelization itself and parameter tuning. This enables scientists to focus on
 their simulation code, rather than the technical details of the parallel
 computer.
-
-WWW: http://www.libgeodecomp.org/

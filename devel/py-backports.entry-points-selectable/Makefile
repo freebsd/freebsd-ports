@@ -7,6 +7,7 @@ DISTNAME=	backports.entry_points_selectable-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compatibility shim providing selectable entry points for older implementations
+WWW=		https://github.com/jaraco/backports.entry_points_selectable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

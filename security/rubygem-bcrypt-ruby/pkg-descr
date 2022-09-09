@@ -1,5 +1,3 @@
 bcrypt() is a sophisticated and secure hash algorithm designed by The OpenBSD
 project for hashing passwords. bcrypt-ruby provides a simple, humane wrapper
 for safely handling passwords.
-
-WWW: https://github.com/codahale/bcrypt-ruby

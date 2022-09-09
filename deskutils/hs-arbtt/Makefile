@@ -4,6 +4,7 @@ CATEGORIES=		deskutils haskell
 
 MAINTAINER=		mail@dbalan.in
 COMMENT=		Completely automatic time tracker for X11 desktop
+WWW=		https://arbtt.nomeata.de/
 
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/LICENSE

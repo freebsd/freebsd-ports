@@ -8,6 +8,7 @@ MASTER_SITES=	https://www.yadifa.eu/sites/default/files/releases/ \
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Authoritative nameserver with DNSSEC capabilities
+WWW=		https://www.yadifa.eu/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control X from the command line for scripts
+WWW=		https://hoopajoo.net/projects/xautomation.html
 
 LICENSE=	GPLv2
 

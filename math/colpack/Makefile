@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graph Coloring Algorithm Package
+WWW=		https://github.com/CSCsw/ColPack
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,0 +1,11 @@
+--- dependency-check/Rakefile.orig	2022-09-02 14:02:46 UTC
++++ dependency-check/Rakefile
+@@ -29,7 +29,7 @@ end
+ namespace :dependency do
+   desc "Check dependency"
+   task :check do
+-    package_id = "gtksourceview-4.0"
++    package_id = "gtksourceview-4"
+     unless PKGConfig.check_version?(package_id)
+       unless NativePackageInstaller.install(:alt_linux => "libgtksourceview4-devel",
+                                             :debian => "libgtksourceview-4-dev",

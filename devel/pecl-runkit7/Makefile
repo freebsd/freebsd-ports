@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	vikashb@where-ever.za.net
 COMMENT=	Extension to replace, rename, and remove user functions and classes
+WWW=		https://github.com/runkit7/runkit7
 
 LICENSE=	PHP301
 

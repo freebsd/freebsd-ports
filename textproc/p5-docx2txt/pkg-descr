@@ -12,5 +12,3 @@ following features during text extraction.
 *	Indicating hyperlinked text along with the hyperlink. (configurable)
 *	Handling (bullet, decimal, letter, roman) lists along with (attempt at)
 	indentation.
-
-WWW: https://sourceforge.net/projects/docx2txt/

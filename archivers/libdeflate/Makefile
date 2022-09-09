@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, whole-buffer DEFLATE-based compression library
+WWW=		https://github.com/ebiggers/libdeflate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

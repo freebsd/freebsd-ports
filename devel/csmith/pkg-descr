@@ -4,5 +4,3 @@ stress-testing compilers, static analyzers, and other tools that
 process C code. Csmith has found bugs in every tool that it has
 tested, and over the last several years we have used it to find
 and report more than 350 previously-unknown compiler bugs.
-
-WWW: http://embed.cs.utah.edu/csmith/

@@ -3,5 +3,3 @@ computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
 other numerical experiments.  It may also be used as a batch-oriented
 language.
-
-WWW: http://www.octave.org/

@@ -9,5 +9,3 @@ pymemcache supports the following features:
  * Flexible, modular and simple approach to serialization and deserialization.
  * The (optional) ability to treat network and memcached errors as cache
    misses.
-
-WWW: https://github.com/pinterest/pymemcache

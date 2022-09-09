@@ -1,10 +1,11 @@
 PORTNAME=	googleapis-common-protos-types
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common protocol buffer types used by Google APIs
+WWW=		https://github.com/googleapis/common-protos-ruby/tree/master/googleapis-common-protos-types
 
 LICENSE=	APACHE20
 

@@ -11,5 +11,3 @@ LV to pick a particular implementation using:
 
 The tie implementation is the slowest, but will work on Perl 5.6 with only core
 modules.
-
-WWW: https://metacpan.org/release/LV

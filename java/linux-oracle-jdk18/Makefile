@@ -7,6 +7,7 @@ DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-${JAVA_DISTFILE_ARCH}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
+WWW=		https://www.oracle.com/java/
 
 # Converted from RESTRICTED
 LICENSE=	jdk

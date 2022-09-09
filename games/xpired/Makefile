@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action-puzzle maze escape game
+WWW=		http://xpired.sourceforge.net/
 
 LICENSE=	GPLv2+
 

@@ -14,5 +14,3 @@ dynamic libraries.
 This plugin implements "smart" mode.  Rather than switching between
 "paren" mode and "indent" mode, parinfer uses information about how
 the user is changing the file to decide what to do.
-
-WWW: https://github.com/eraserhd/parinfer-rust

@@ -7,6 +7,7 @@ DISTNAME=	xalan_c-${PORTVERSION}
 
 MAINTAINER=	rleigh@apache.org
 COMMENT=	XSLT processor from the Apache XML Project
+WWW=		https://apache.github.io/xalan-c/
 
 LICENSE=	APACHE20
 

@@ -1,5 +1,3 @@
 KadNode is a small decentralized DNS resolver that can use existing
 public key infrastructures. It utilizes the BitTorrent P2P network
 and mbedtls for TLS/crypto support.
-
-WWW: https://github.com/mwarning/KadNode

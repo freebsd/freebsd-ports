@@ -87,6 +87,10 @@ fi
 
 # Copy the pkg-descr file
 cp ${dp_DESCR} ${dp_METADIR}/+DESC
+if [ -n "${dp_WWW}" ] && ! grep -q '^WWW: ' ${dp_DESCR}; then
+	echo >> ${dp_METADIR}/+DESC
+	echo "WWW: ${dp_WWW}" >> ${dp_METADIR}/+DESC
+fi
 
 # Concatenate all the scripts
 output_files=

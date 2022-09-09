@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative sounds for OpenTTD game engine
+WWW=		https://github.com/OpenTTD/OpenSFX
 
 LICENSE=	CC-BY-SA-3.0 CDDL GPLv2
 LICENSE_COMB=	multi

@@ -19,5 +19,3 @@ while the condition is a single function that tests that condition. The
 condition is executed automatically and passed certain arguments (which vary
 depending on the type of contract), and must return a boolean value: True if the
 condition has been met, and False otherwise.
-
-WWW: https://github.com/deadpixi/contracts

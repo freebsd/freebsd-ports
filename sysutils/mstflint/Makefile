@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT?=	Firmware Burning and Diagnostics Tools for Mellanox devices
+WWW=		https://www.mellanox.com/page/management_tools
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual

@@ -14,5 +14,3 @@ create a JSON parsing object and run it on text. See "METHODS".
 
 JSON::Parse accepts only UTF-8 as input. See "UTF-8 only" and "Handling of
 Unicode".
-
-WWW: https://metacpan.org/release/JSON-Parse

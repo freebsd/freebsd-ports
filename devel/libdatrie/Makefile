@@ -5,6 +5,7 @@ MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Double-array trie implementation library
+WWW=		https://linux.thai.net/projects/datrie/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

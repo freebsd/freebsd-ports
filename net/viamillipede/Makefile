@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ash_ports@aeria.net
 COMMENT=	Parallel TCP for pipe transport
+WWW=		https://github.com/agokhale/viamillipede
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

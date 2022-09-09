@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Profiles loading speed for rack applications
+WWW=		https://miniprofiler.com/
 
 LICENSE=	MIT
 

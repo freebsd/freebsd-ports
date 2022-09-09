@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library and tools for the MusicXML format
+WWW=		https://github.com/grame-cncm/libmusicxml
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/license.txt

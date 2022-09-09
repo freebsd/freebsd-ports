@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Attempts to guess and then force encoding of HTML documents
+WWW=		https://github.com/cantino/guess_html_encoding
 
 LICENSE=	MIT
 

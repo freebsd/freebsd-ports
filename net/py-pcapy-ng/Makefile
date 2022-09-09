@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Python pcap extension
+WWW=		http://www.coresecurity.com/corelabs-research/open-source-tools/pcapy
 
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE

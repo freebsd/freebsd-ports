@@ -18,5 +18,3 @@ very simple to add support for additional services.
 Furthermore the package includes a wrapper for updatedd
 called `updatedd-wrapper'.  It provides support for
 configuration files and IP adddress caching.
-
-WWW: http://updatedd.philipp-benner.de

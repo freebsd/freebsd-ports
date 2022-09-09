@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	BBD test tool inspired by Cucumber
+WWW=		https://metacpan.org/release/Test-Cukes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose \

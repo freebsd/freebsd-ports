@@ -1,4 +1,2 @@
 Amazon::SimpleDB provides a "low-level" perlish interface for working with
 Amazon's SimpleDB (SMB) service.
-
-WWW: https://metacpan.org/release/Amazon-SimpleDB

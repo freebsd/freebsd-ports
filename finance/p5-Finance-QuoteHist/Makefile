@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for fetching historical stock quotes
+WWW=		https://metacpan.org/release/Finance-QuoteHist
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

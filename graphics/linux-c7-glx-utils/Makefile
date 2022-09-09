@@ -6,6 +6,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Mesa GLX utilities (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.centos.org/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

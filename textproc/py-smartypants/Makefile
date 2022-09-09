@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Translate plain ASCII punctuation into smart typographic HTML
+WWW=		https://github.com/leohemsted/smartypants.py
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

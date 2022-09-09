@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.openssl.org/source/ \
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
+WWW=		https://www.openssl.org/
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

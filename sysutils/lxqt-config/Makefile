@@ -6,6 +6,7 @@ DIST_SUBDIR=	lxqt
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt system settings center
+WWW=		https://lxqt-project.org
 
 LICENSE=	GPLv2 LGPL21+
 LICENSE_COMB=	multi

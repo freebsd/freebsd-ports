@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-extensions
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
+WWW=		https://www.php.net/
 
 USES=		metaport php
 PHP_VER=	80

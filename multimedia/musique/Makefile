@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Music player built for speed, simplicity and style
+WWW=		https://flavio.tordini.org/musique
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

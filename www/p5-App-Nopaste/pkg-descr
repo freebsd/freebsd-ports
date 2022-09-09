@@ -1,4 +1,2 @@
 This module aims to smooth out the differences between pastebins, and provides
 redundancy: if one site doesn't work, it just tries a different one.
-
-WWW: https://metacpan.org/release/App-Nopaste

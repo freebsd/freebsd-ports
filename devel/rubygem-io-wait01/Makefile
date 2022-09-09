@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	01
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Wait until IO is readable or writable without blocking
+WWW=		https://github.com/ruby/io-wait
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

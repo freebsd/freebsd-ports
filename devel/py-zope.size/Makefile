@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Interfaces and simple adapter that give the size of an object
+WWW=		https://pypi.org/project/zope.size/
 
 LICENSE=	ZPL21
 

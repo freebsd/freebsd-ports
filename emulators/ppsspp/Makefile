@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
+WWW=		https://www.ppsspp.org/
 
 LICENSE=	GPLv2+
 

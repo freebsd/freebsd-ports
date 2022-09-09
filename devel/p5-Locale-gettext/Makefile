@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:C/.*-//}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Message handling functions
+WWW=		https://metacpan.org/release/gettext
 
 LICENSE=	ARTPERL10 GPLv2
 LICENSE_COMB=	dual

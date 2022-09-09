@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple DNS forwarder
+WWW=		https://github.com/holmium/dnsforwarder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

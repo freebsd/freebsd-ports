@@ -5,5 +5,4 @@ compatibility.
 
 Python runtime library for use with the Flatbuffers serialization format.
 
-WWW: https://google.github.io/flatbuffers/
-WWW: https://github.com/google/flatbuffers
+See also: https://github.com/google/flatbuffers

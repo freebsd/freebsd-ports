@@ -20,5 +20,3 @@ Some of the features zxfer has:
       source and destination, and zfs send/receive won't work.
 
 LICENSE: BSD
-
-WWW: https://github.com/allanjude/zxfer

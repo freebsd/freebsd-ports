@@ -8,5 +8,3 @@ order to support multiple drivers and the instance-level functionality
 that works across these drivers. Additionally, the loader manages
 inserting Vulkan layer libraries, such as validation layers, between
 an application and the drivers.
-
-WWW: https://github.com/KhronosGroup/Vulkan-Loader

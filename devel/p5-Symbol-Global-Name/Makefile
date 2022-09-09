@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Finds name and type of a global variable
+WWW=		https://metacpan.org/release/Symbol-Global-Name
 
 NO_ARCH=	yes
 

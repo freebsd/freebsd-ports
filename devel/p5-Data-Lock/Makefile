@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make variables (im)?mutable
+WWW=		https://metacpan.org/pod/Data::Lock
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

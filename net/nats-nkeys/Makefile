@@ -1,12 +1,13 @@
 PORTNAME=	nkeys
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Public-key signature system based on Ed25519 for the NATS ecosystem
+WWW=		https://github.com/nats-io/nkeys
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

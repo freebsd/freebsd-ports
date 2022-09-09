@@ -5,6 +5,7 @@ CATEGORIES=	print
 
 MAINTAINER=	svvord@soft-wizard.ru
 COMMENT=	Multi-platform C++ report generator library written using Qt framework
+WWW=		https://limereport.ru
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

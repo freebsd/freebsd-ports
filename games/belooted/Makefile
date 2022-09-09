@@ -7,6 +7,7 @@ MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/ \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Popular 32-card trick-taking game played in France
+WWW=		https://gnomefiles.org/content/show.php/Belooted?content=131848
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

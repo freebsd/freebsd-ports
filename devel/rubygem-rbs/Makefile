@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Language for type signatures for Ruby and standard library definitions
+WWW=		https://github.com/ruby/rbs
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

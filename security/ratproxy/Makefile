@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.bit.nl/openbsd/distfiles/ \
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Semi-automated, largely passive web application security audit tool
+WWW=		https://github.com/codenote/ratproxy
 
 USES=		shebangfix ssl
 CFLAGS+=	-I${OPENSSLINC} -fcommon

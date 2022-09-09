@@ -10,5 +10,3 @@ Features:
 * Rack and Patchbay engine modes, plus Single and Multi-Client if using JACK
 * Native audio drivers (ALSA, DirectSound, CoreAudio, etc)
   and low-latency (ASIO and JACK)
-
-WWW: https://kx.studio/Applications:Carla

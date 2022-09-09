@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Checks if the documentation of a module is comprehensive
+WWW=		https://metacpan.org/release/Pod-Coverage
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

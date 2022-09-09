@@ -9,5 +9,3 @@ direction to make a word, so as long as the letters are next to
 each other on the board. However, you cannot reuse the same letter
 cells in a single word. Also, each word must be at least three
 letters on a normal board, and four letters on a large board.
-
-WWW: https://gottcode.org/tanglet/

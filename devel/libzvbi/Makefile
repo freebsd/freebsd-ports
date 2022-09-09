@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Routines to access raw VBI capture devices
+WWW=		http://zapping.sourceforge.net/doc/libzvbi/
 
 LICENSE=	GPLv2+
 

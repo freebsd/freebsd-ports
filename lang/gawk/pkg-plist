@@ -1,5 +1,6 @@
 bin/gawk
 bin/gawk-%%VERSION%%
+bin/gawkbug
 etc/profile.d/gawk.csh
 etc/profile.d/gawk.sh
 include/gawkapi.h
@@ -18,6 +19,8 @@ lib/gawk/time.so
 libexec/awk/grcat
 libexec/awk/pwcat
 man/man1/gawk.1.gz
+man/man1/gawkbug.1.gz
+man/man1/pm-gawk.1.gz
 man/man3/filefuncs.3am.gz
 man/man3/fnmatch.3am.gz
 man/man3/fork.3am.gz
@@ -73,6 +76,7 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Org mode parser written in Ruby
+WWW=		https://github.com/wallyqs/org-ruby
 
 LICENSE=	MIT
 

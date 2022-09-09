@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Tiny system info for Unix-like operating systems
+WWW=		https://gitlab.com/jschx/ufetch/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

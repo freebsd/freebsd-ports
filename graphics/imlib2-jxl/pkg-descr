@@ -6,5 +6,3 @@ All JPEG XL files are supported, with the following limitations:
 * All images are internally converted to ARGB with 8 bits per sample,
   in an sRGB colorspace - this is a limitation of imlib2.
 * For animated JXLs, only the first frame is decoded.
-
-WWW: https://github.com/alistair7/imlib2-jxl

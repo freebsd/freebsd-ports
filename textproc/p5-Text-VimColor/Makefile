@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Syntax color text in HTML or XML using Vim
+WWW=		https://metacpan.org/release/Text-VimColor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

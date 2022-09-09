@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.causal.agency/pounce/snapshot/
 
 MAINTAINER=	june@causal.agency
 COMMENT=	Multi-client IRC bouncer
+WWW=		https://git.causal.agency/pounce/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 abstraction for system notifications
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/knotifications/html/index.html
 
 LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libcanberra.so:audio/libcanberra

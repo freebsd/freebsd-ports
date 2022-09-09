@@ -9,6 +9,7 @@ DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	RT into HTML and plain text converter
+WWW=		http://www.rubyist.net/~rubikitch/computer/rttool/index.en.html
 
 LICENSE=	RUBY
 

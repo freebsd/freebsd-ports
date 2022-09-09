@@ -15,5 +15,3 @@ Main features:
 * Uses Tesseract OCR engine to recognize more than 100 languages
 * Scales properly to handle files with thousands of pages
 * Battle-tested on millions of PDFs
-
-WWW: https://github.com/ocrmypdf/OCRmyPDF

@@ -10,6 +10,7 @@ PATCHFILES+=	4302ec05ed9f.patch:-p1 # https://github.com/Tlf/tlf/pull/268
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
+WWW=		https://github.com/Tlf/tlf
 
 LICENSE=	GPLv2
 

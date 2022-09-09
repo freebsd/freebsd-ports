@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/dinoex
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy authentication module against an SMB server
+WWW=		http://web.archive.org/web/20050320094310/http://www.hacom.nl/~richard/software/smb_auth.html
 
 .if !defined(WITHOUT_REGISTER_SAMBA)
 USES=		samba:run # smbclient

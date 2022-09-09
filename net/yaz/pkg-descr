@@ -1,5 +1,3 @@
 YAZ is a compact toolkit that provides access to the Z39.50/SR
 protocol, as well as a set of higher-level tools for implementing the
 server and client roles, respectively.
-
-WWW: https://www.indexdata.com/resources/software/yaz/

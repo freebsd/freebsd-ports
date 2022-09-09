@@ -1,11 +1,12 @@
 PORTNAME=	curl
-PORTVERSION=	7.84.0
+PORTVERSION=	7.85.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool and library for transferring data with URLs
+WWW=		https://curl.se/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

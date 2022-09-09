@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Unit testing framework for handling automated tests in C++
+WWW=		http://cpptest.sourceforge.net/
 
 LICENSE=	LGPL3
 

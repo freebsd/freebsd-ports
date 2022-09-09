@@ -1,4 +1,2 @@
 pyfasta is a python module for fast, memory-efficient, pythonic
 access to fasta sequence files.
-
-WWW: https://bitbucket.org/brentp/biostuff/src/

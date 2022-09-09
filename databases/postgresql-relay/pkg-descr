@@ -6,5 +6,3 @@ machine and the name of the database. The postgresql-relay will
 then forward the connection to the proper database on the proper
 port of the proper server. No more changes in the hundreds of clients
 and scripts!
-
-WWW: http://www.mavetju.org/unix/general.php

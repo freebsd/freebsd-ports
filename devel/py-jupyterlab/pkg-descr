@@ -10,5 +10,4 @@ Notebook.
 The current JupyterLab releases are suitable for general usage, and the
 extension APIs will continue to evolve for JupyterLab extension developers.
 
-WWW: https://jupyter.org/
-WWW: https://github.com/jupyterlab/jupyterlab
+See also: https://github.com/jupyterlab/jupyterlab

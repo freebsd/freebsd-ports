@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	fork+exec, or spawn, a subprocess as quickly as possible
+WWW=		https://metacpan.org/dist/Proc-FastSpawn
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

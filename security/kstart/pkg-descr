@@ -6,5 +6,3 @@ credentials until the command exits.
 It is commonly used to maintain Kerberos tickets for services that need to
 authenticate to minimize the amount of Kerberos-related logic that must be
 in the service itself.
-
-WWW: http://www.eyrie.org/~eagle/software/kstart/

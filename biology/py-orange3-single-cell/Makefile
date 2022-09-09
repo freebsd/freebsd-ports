@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Orange add-on for gene expression of single cell data
+WWW=		https://singlecell.biolab.si/
 
 LICENSE=	AGPLv3+
 

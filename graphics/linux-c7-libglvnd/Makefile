@@ -5,6 +5,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GL Vendor-Neutral Dispatch library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://github.com/NVIDIA/libglvnd
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

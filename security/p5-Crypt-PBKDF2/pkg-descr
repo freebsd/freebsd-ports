@@ -8,5 +8,3 @@ hash). The hash is salted, as any password hash should be, and the salt may
 also be of arbitrary size.
 
 See also: RFC2898, PKCS#5 version 2.0: http://tools.ietf.org/html/rfc2898
-
-WWW: https://metacpan.org/release/Crypt-PBKDF2

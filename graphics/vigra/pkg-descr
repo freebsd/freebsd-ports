@@ -4,5 +4,3 @@ and data structures. By using template techniques similar to those in
 the C++ Standard Template Library, you can easily adapt any VIGRA
 component to the needs of your application, without thereby giving up
 execution speed.
-
-WWW: http://ukoethe.github.io/vigra/

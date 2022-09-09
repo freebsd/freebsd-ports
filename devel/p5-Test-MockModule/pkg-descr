@@ -1,4 +1,2 @@
 Test::MockModule lets you temporarily redefine subroutines in other
 packages for the purposes of unit testing.
-
-WWW: https://metacpan.org/release/Test-MockModule

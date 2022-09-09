@@ -4,5 +4,3 @@ The newer the tag is, the deeper its color will be; older tags will have
 a lighter color.The main goal of "HTML_TagCloud" is to provide an easy to
 implement and configureable Tag Cloud solution that is suitable for any
 PHP-based webapp.
-
-WWW: https://pear.php.net/package/HTML_TagCloud

@@ -7,6 +7,7 @@ DISTNAME=	gltext-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable font rendering library for C++
+WWW=		http://gltext.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

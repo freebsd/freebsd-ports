@@ -6,6 +6,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator
+WWW=		https://github.com/jwilm/alacritty
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE

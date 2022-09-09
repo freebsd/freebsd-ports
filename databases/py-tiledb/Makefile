@@ -1,11 +1,12 @@
 PORTNAME=	tiledb
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the TileDB array storage manager
+WWW=		https://github.com/TileDB-Inc/TileDB-Py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.27:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.19.2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=2.6.2:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.5.4:devel/py-setuptools_scm@${PY_FLAVOR} \
-		tiledb>=2.10.2:databases/tiledb
+		tiledb>=2.11.1:databases/tiledb
 LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}

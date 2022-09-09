@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Drop any files to any devices on your LAN
+WWW=		https://landrop.app
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

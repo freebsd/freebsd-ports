@@ -1,11 +1,12 @@
 PORTNAME=	Flask-Moment
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Format dates and times in Flask templates using moment.js
+WWW=		https://github.com/miguelgrinberg/Flask-Moment
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

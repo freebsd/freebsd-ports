@@ -1,11 +1,12 @@
 PORTNAME=	python-gitlab
-DISTVERSION=	3.8.1
+DISTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Interact with GitLab API
+WWW=		https://github.com/python-gitlab/python-gitlab
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

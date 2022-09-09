@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Collection of GLSL shaders for libretro
+WWW=		https://github.com/libretro/glsl-shaders
 
 LICENSE=	GPLv3
 

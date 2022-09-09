@@ -6,6 +6,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Whole genome association analysis toolset
+WWW=		https://www.cog-genomics.org/plink/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

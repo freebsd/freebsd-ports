@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt/C++ library wrapping libwayland
+WWW=		https://gitlab.com/kwinft/wrapland
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

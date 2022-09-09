@@ -7,6 +7,7 @@ DISTNAME=	Grr-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rss reader for GNUstep
+WWW=		https://gap.nongnu.org/grr/index.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

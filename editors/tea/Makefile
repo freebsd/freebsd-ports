@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple and powerful Qt-based text editor
+WWW=		http://semiletov.org/tea/
 
 LICENSE=	GPLv3
 

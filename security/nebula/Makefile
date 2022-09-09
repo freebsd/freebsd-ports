@@ -1,11 +1,12 @@
 PORTNAME=	nebula
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Scalable overlay networking tool
+WWW=		https://github.com/slackhq/nebula
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

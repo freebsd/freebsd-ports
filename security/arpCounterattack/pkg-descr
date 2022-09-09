@@ -9,5 +9,3 @@ the "correct" Ethernet/IP address pair in an attempt to reset the ARP tables
 of hosts on the local network segment. The corrective gratuitous ARP request
 and corrective gratuitous ARP reply can be sent from an Ethernet interface
 other than the one that the attack was seen on.
-
-WWW: http://acm.poly.edu/wiki/ARP_Counterattack

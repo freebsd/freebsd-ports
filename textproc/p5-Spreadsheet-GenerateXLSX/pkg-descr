@@ -8,5 +8,3 @@ is an arrayref. The first row is treated as a header row.
 
 The generated spreadsheet can have any numbers of sheets. If you just pass
 arrayrefs, the sheets will be named Sheet1, Sheet2, etc.
-
-WWW: https://metacpan.org/release/Spreadsheet-GenerateXLSX

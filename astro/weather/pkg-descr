@@ -8,5 +8,3 @@ line informational utilities like cal(1), calendar(1) and dict(1). It can
 retrieve arbitrary weather data via specific command-line switches (station ID,
 city, state), or aliases can be configured system wide and on a per-user basis.
 It can be freely used and redistributed under the terms of a BSD-like License.
-
-WWW: http://fungi.yuggoth.org/weather/

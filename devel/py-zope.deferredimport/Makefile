@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Allows to import names that will be resolved when used in the code
+WWW=		https://pypi.org/project/zope.deferredimport/
 
 LICENSE=	ZPL21
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Details of the native integer data type
+WWW=		https://metacpan.org/release/Data-Integer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

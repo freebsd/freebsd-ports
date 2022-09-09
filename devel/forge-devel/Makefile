@@ -1,12 +1,13 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1-65
-DISTVERSIONSUFFIX=	-ged8abda
+DISTVERSION=	0.3.1-69
+DISTVERSIONSUFFIX=	-g6a820a4
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Work with Git forges from the comfort of Magit (Development Version)
+WWW=		https://github.com/magit/forge
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

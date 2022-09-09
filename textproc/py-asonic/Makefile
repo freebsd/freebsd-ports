@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Async Python client for the Sonic search backend
+WWW=		https://github.com/moshe/asonic
 
 LICENSE=	MPL20
 

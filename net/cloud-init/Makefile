@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andrey@bsdnir.info
 COMMENT=	Init scripts for use on cloud images
+WWW=		https://cloud-init.io/
 
 LICENSE=	APACHE20 GPLv3
 LICENSE_COMB=	dual

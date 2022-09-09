@@ -1,5 +1,3 @@
 bmf is an extremely efficient Bayesian mail filter based on
 Paul Graham's article, "A Plan for Spam."  It's fast, small,
 efficient, and more versatile than other Bayesian filters.
-
-WWW: https://sourceforge.net/projects/bmf/

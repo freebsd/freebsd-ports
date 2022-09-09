@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Awesome Django authorization, without the database
+WWW=		https://github.com/dfunckt/django-rules
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

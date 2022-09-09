@@ -9,5 +9,3 @@ Features:
 * Generate SALCs of real spherical harmonics with any angular momentum for
   point groups with real characters (Ci, Cs, Cnv, Dn, Dnh, Dnd, Td, O, Oh,
   I and Ih), as well as symmetrize orbitals, determine partner functions etc.
-
-WWW: https://github.com/mcodev31/libmsym

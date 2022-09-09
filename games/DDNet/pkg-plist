@@ -9,10 +9,12 @@ lib/ddnet/map_convert_07
 lib/ddnet/map_diff
 lib/ddnet/map_extract
 lib/ddnet/map_optimize
+lib/ddnet/map_replace_area
 lib/ddnet/map_replace_image
 lib/ddnet/map_resave
 lib/ddnet/packetgen
 lib/ddnet/stun
+lib/ddnet/twping
 lib/ddnet/unicode_confusables
 lib/ddnet/uuid
 %%CLIENT%%share/applications/ddnet.desktop

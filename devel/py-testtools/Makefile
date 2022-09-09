@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensions to the Python standard library unit testing framework
+WWW=		https://github.com/testing-cabal/testtools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

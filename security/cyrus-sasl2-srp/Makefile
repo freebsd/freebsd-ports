@@ -1,6 +1,7 @@
 PKGNAMESUFFIX=	-srp
 
 COMMENT=	SASL SRP authentication plugin
+WWW=		https://www.cyrusimap.org/sasl/
 
 CYRUS_CONFIGURE_ARGS=	--enable-srp
 

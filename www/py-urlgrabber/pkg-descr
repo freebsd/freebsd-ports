@@ -5,5 +5,3 @@ It is extremely simple to drop into an existing program and provides
 a clean interface to protocol-independant file-access. Best of all,
 urlgrabber takes care of all those pesky file-fetching details, and
 lets you focus on whatever it is that your program is written to do!
-
-WWW: http://urlgrabber.baseurl.org/

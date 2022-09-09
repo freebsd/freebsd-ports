@@ -10,5 +10,3 @@ the others. Benchmark scripts typically don't depend on those
 side-effects, so in most cases you can simply use or require this
 module at the top of your existing code without having to change
 anything else.
-
-WWW: https://metacpan.org/release/Benchmark-Forking

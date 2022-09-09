@@ -5,6 +5,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Berkely-style database abstraction class
+WWW=		https://pear.php.net/package/DBA_Relational
 
 LICENSE=	LGPL3
 

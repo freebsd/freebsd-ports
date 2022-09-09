@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate the great-circle distance
+WWW=		https://github.com/jirapong/haversine_distance
 
 LICENSE=	MIT
 

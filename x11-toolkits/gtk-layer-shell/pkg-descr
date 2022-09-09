@@ -6,5 +6,3 @@ or edge of the output, or stretch them across the entire output.
 This library only makes sense on Wayland compositors that support Layer Shell,
 and will not work on X11. It supports all Layer Shell features including
 popups and popovers (GTK popups Just Work).
-
-WWW: https://github.com/wmww/gtk-layer-shell

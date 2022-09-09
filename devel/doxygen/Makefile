@@ -1,5 +1,5 @@
 PORTNAME=	doxygen
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Documentation system for C, C++, and other languages
+WWW=		https://www.doxygen.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

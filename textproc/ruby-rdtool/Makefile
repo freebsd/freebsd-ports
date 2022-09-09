@@ -7,6 +7,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
+WWW=		https://github.com/uwabami/rdtool
 
 BUILD_DEPENDS=	racc:devel/rubygem-racc
 

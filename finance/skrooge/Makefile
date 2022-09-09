@@ -1,12 +1,13 @@
 PORTNAME=	skrooge
 DISTVERSION=	2.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal finance manager
+WWW=		https://skrooge.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libofx.so:finance/libofx \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext grantlee:5 kde:5 pkgconfig python:3.4+ qca qt:5 shared-mime-info \
-		shebangfix sqlite:3 tar:xz
+		shebangfix sqlite:3 tar:xz xorg
 USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		config configwidgets coreaddons crash dbusaddons \
 		emoticons guiaddons i18n \
@@ -30,9 +31,10 @@ USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 # designerplugin is weird: it's defined as a _run dependency, but
 # skrooge checks for it at build-time.
 USE_KDE+=	designerplugin_build
-USE_QT=		concurrent core dbus declarative gui network printsupport \
-		script sql svg webkit widgets xml \
+USE_QT=		concurrent core dbus declarative designer gui network \
+		printsupport script sql svg webkit widgets xml \
 		buildtools_build designer_build qmake_build testlib_build
+USE_XORG=	x11
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \
 		skgbankmodeler/skrooge-coinmarketcap.py \
 		skgbankmodeler/skrooge-cryptocompare.py \

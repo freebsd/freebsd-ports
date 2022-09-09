@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}.tgz
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GUI for managing and running ssh and related utilities
+WWW=		http://themediahost.de/secpanel/
 
 LICENSE=	GPLv2
 

@@ -5,5 +5,3 @@ functionality like XML stencils support, various import/export and layouting
 (automatically node/edge positioning).
 
 Note: JGraphX is not actively developed nowadays.
-
-WWW: https://github.com/jgraph/jgraphx

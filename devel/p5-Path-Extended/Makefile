@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for yet another Path class
+WWW=		https://metacpan.org/release/Path-Extended
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

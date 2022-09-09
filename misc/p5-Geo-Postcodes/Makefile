@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for the Geo::Postcodes::XX modules
+WWW=		https://metacpan.org/release/Geo-Postcodes
 
 USES=		perl5
 USE_PERL5=	configure

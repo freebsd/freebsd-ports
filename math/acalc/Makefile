@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	andrey.nik.ponomarenko@gmail.com
 COMMENT=	Simple and pretty Qt5-based expression calculator
+WWW=		https://github.com/anpp/acalc
 
 LICENSE=	BSD4CLAUSE
 

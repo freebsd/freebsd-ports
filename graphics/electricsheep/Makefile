@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Infinite evolving crowdsourced artwork
+WWW=		https://electricsheep.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

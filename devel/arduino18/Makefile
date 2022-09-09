@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Open-source electronics prototyping platform
+WWW=		https://arduino.cc/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt

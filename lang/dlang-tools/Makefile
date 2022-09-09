@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	dlang-
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Ancillary tools for the D programming language compiler
+WWW=		https://github.com/dlang/tools
 
 LICENSE=	BSL
 

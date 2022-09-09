@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Click-based argument and option decorators for Python GIS cli
+WWW=		https://pypi.org/project/cligj/
 
 LICENSE=	BSD3CLAUSE
 

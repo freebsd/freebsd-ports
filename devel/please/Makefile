@@ -1,12 +1,13 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15.17.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 PKGNAMESUFFIX=	.build
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance extensible build system for reproducible builds
+WWW=		https://please.build/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

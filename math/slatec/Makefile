@@ -12,6 +12,7 @@ EXTRACT_ONLY=	slatec_src.tgz slatec_chk.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLATEC Common Mathematical Library
+WWW=		https://www.netlib.org/slatec/
 
 USES=		fortran uidfix
 USE_LDCONFIG=	yes

@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	CommonMark parsing and rendering library and program in C
+WWW=		https://github.com/commonmark/cmark
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

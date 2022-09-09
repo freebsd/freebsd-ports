@@ -6,6 +6,7 @@ DISTNAME=	vasm1_8c
 
 MAINTAINER=	cs@innolan.net
 COMMENT=	Portable 6502 6800 arm c16x jagrisc m68k ppc vidcore x86 z80 assembler
+WWW=		http://sun.hasenbraten.de/vasm/
 
 LICENSE=	VASMBSD
 LICENSE_NAME=	vasm license for FreeBSD

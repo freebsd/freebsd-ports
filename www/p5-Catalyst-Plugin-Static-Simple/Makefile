@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make serving static pages painless
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Static-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

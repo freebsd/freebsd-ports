@@ -6,6 +6,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplement file for lookup to use "Random House"
+WWW=		http://openlab.ring.gr.jp/edict/srd-fpw/
 
 # Your PC does not have an audio card always.
 #		realplay:multimedia/linux-realplayer

@@ -1,11 +1,12 @@
 PORTNAME=	gemrb
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	GemRB (Game engine made with preRendered Background)
+WWW=		https://www.gemrb.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

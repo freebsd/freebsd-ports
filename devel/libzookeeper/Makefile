@@ -7,6 +7,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	C client interface to Zookeeper server
+WWW=		https://zookeeper.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

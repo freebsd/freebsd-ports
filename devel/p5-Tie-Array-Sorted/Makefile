@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl array which is kept sorted
+WWW=		https://metacpan.org/release/Tie-Array-Sorted
 
 LICENSE=	GPLv2+
 

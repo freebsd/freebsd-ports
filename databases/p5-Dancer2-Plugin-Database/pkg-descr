@@ -7,5 +7,3 @@ subclass of DBI's DBI::db connection handle object, so it does
 everything you'd expect to do with DBI, but also adds a few convenience
 methods. See the documentation for Dancer2::Plugin::Database::Handle
 for full details of those.
-
-WWW: https://metacpan.org/release/Dancer2-Plugin-Database

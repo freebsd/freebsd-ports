@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Data Tables Client Library for Python
+WWW=		https://pypi.org/project/azure-data-tables/
 
 LICENSE=	MIT
 

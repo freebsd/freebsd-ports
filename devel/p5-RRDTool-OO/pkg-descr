@@ -7,5 +7,3 @@ whipuptitude Perl programmers take for granted. Using RRDTool::OO abstracts
 away implementation details of the RRD engine, uses easy to memorize named
 parameters and sets meaningful defaults for parameters not needed in simple
 cases.
-
-WWW: https://metacpan.org/release/RRDTool-OO

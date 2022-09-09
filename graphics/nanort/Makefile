@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ single header modern ray tracing kernel
+WWW=		https://github.com/lighttransport/nanort
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

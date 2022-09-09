@@ -1,10 +1,11 @@
 PORTNAME=	beanstalkd
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
+WWW=		http://xph.us/software/beanstalkd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +15,7 @@ USE_GITHUB=	yes
 USE_RC_SUBR=	beanstalkd
 TEST_TARGET=	check
 
-GH_ACCOUNT=	kr
+GH_ACCOUNT=	beanstalkd
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 

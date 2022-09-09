@@ -1,4 +1,2 @@
 Test::NoTabs scans your project/distribution for any perl files (scripts,
 modules, etc) for the presence of tabs.
-
-WWW: https://metacpan.org/release/Test-NoTabs

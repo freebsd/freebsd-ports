@@ -5,6 +5,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org openChrome display driver
+WWW=		https://www.x.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

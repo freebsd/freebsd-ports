@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	High-level compound graphics widgets for Python
+WWW=		https://pypi.org/project/Pmw/
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}

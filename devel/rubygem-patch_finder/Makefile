@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generic Patch Finder
+WWW=		https://github.com/wchen-r7/Patch-Finder
 
 LICENSE=	BSD3CLAUSE
 

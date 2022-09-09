@@ -7,6 +7,7 @@ DISTNAME=	WSME-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplify the writing of REST APIs
+WWW=		https://opendev.org/x/wsme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	esbuild
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel www
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Extremely fast JavaScript bundler and minifier
+WWW=		https://esbuild.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

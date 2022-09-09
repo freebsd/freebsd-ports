@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-shell
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Modern system shell written in Rust
+WWW=		https://gitlab.redox-os.org/redox-os/ion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

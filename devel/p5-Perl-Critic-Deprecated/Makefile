@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Policies that are no longer included with Perl::Critic
+WWW=		https://metacpan.org/release/Perl-Critic-Deprecated
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Collection of text algorithms
+WWW=		https://github.com/threedaymonk/text
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

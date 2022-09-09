@@ -5,6 +5,7 @@ CATEGORIES=	sysutils devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for multilingual applications management
+WWW=		https://pear.php.net/package/Translation2
 
 USES=		pear shebangfix
 

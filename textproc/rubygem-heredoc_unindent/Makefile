@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	loic-freebsd@loicp.eu
 COMMENT=	Removes common margin from indented strings
+WWW=		https://github.com/adrianomitre/heredoc_unindent
 
 LICENSE=	MIT
 

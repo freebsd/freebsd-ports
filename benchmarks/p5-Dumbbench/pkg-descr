@@ -19,5 +19,3 @@ compared.
 
 Please note that Dumbbench works entirely with wallclock time as reported by
 Time::HiRes' time() function.
-
-WWW: https://metacpan.org/release/Dumbbench

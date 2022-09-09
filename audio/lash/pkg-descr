@@ -7,5 +7,3 @@ runs programs, deals with saving/loading (arbitrary) data and connects
 different kinds of virtual audio ports together (currently JACK and ALSA
 sequencer ports).  It can also be used to move entire sessions between
 computers, or post sessions on the Internet for download.
-
-WWW: http://www.nongnu.org/lash/

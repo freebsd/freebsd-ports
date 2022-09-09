@@ -6,5 +6,3 @@ used to a client.
 
 Note that you must set a environment variable CSERVER or TSERVER if
 you use a client of Wnn.
-
-WWW: http://www.freewnn.org/

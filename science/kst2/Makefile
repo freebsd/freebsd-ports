@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
+WWW=		https://kst-plot.kde.org
 
 LICENSE=	GPLv2 GFDL LGPL20
 LICENSE_COMB=	multi

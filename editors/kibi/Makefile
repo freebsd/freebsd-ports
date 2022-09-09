@@ -6,6 +6,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Tiny text editor written in Rust
+WWW=		https://github.com/ilai-deutel/kibi
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

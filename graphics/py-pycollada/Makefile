@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	Python library for reading and writing collada documents
+WWW=		https://pycollada.readthedocs.org/
 
 LICENSE=	BSD3CLAUSE
 

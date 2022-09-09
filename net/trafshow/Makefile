@@ -9,6 +9,7 @@ MASTER_SITES=	https://src.fedoraproject.org/rpms/trafshow/blob/f32/f/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Full screen visualization of network traffic
+WWW=		https://BSDforge.com/projects/net/trafshow
 
 LICENSE=	BSD2CLAUSE
 

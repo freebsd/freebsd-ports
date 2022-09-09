@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Symbolic computation with Python objects, Sage Math support library
+WWW=		http://pynac.org/
 
 LICENSE=	GPLv2
 

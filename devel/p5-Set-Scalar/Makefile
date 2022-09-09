@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module containing a set of scalars, including references
+WWW=		https://metacpan.org/release/Set-Scalar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

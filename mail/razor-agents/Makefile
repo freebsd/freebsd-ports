@@ -6,6 +6,7 @@ MASTER_SITES=	SF/razor/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Distributed, collaborative, spam detection and filtering network
+WWW=		http://razor.sourceforge.net/
 
 LICENSE=	ART10
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the VCG graphing tool
+WWW=		https://metacpan.org/release/VCG
 
 BUILD_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS} \

@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Coordination Service for Distributed Applications
+WWW=		https://zookeeper.apache.org/
 
 LICENSE=	APACHE20
 

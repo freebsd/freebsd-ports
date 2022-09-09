@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTV
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	User friendly command line shell
+WWW=		https://fishshell.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

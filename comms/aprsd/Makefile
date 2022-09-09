@@ -7,6 +7,7 @@ DISTNAME=	aprsd-2.2.5-15
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Server daemon providing Internet access to APRS packet data
+WWW=		https://sourceforge.net/projects/aprsd/
 
 LICENSE=	GPLv2
 

@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SParse Object Oriented Linear Equations Solver
+WWW=		https://www.netlib.org/linalg/spooles/spooles.2.2.html
 
 LICENSE=	PD
 

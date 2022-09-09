@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Moments, Cumulants, Skewness, Kurtosis and Related Tests
+WWW=		https://cran.r-project.org/package=moments
 
 LICENSE=	GPLv2+
 

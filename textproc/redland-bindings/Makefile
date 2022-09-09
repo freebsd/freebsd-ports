@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Language bindings for the Redland package
+WWW=		https://librdf.org/bindings/
 
 # Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
 # of its licenses is "GPLv2 or newer", which includes GPLv3.

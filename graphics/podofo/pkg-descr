@@ -9,5 +9,3 @@ from a PDF file (for example the parser could be used in a PDF viewer). Besides
 parsing PoDoFo includes also very simple classes to create your own PDF files.
 All classes are documented so it is easy to start writing your own application
 using PoDoFo.
-
-WWW: http://podofo.sourceforge.net/

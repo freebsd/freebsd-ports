@@ -61,13 +61,13 @@ CMAKE_CMD_RUN=		cmake
 _CMAKE_PORT=		/nonexistent
 .else
 CMAKE_CMD=		${CMAKE_CMD_RUN}
-_CMAKE_PORT=		devel/cmake
+_CMAKE_PORT=		devel/cmake-core
 .endif
 BUILD_DEPENDS+=		${CMAKE_CMD}:${_CMAKE_PORT}
 CMAKE_BIN=		${CMAKE_CMD}
 
 .  if ${cmake_ARGS:Mrun}
-RUN_DEPENDS+=		${CMAKE_CMD_RUN}:devel/cmake
+RUN_DEPENDS+=		${CMAKE_CMD_RUN}:devel/cmake-core
 .  endif
 
 .  if defined(WITH_DEBUG)

@@ -9,5 +9,3 @@ Windows desktops. You can also connect to virtual machines.
 
 Connections uses the widely supported VNC and RDP protocols, and one of these
 must be enabled on the desktop that you want to connect to.
-
-WWW: https://apps.gnome.org/app/org.gnome.Connections/

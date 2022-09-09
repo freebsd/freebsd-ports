@@ -6,6 +6,7 @@ MASTER_SITES=	https://ftp.barfooze.de/pub/sabotage/tarballs/ \
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Replacements for tools typically used from the GNU gettext suite
+WWW=		https://github.com/sabotage-linux/gettext-tiny
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

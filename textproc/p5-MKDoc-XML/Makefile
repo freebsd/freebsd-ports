@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The MKDoc XML Toolkit
+WWW=		https://metacpan.org/release/MKDoc-XML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

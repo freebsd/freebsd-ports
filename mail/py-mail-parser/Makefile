@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for email standard library
+WWW=		https://github.com/SpamScope/mail-parser
 
 LICENSE=	APACHE20
 

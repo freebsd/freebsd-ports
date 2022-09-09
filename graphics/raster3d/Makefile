@@ -6,6 +6,7 @@ DISTNAME=	Raster3D_${DISTVERSION:R}-${DISTVERSION:E}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of tools for generating raster images of proteins and molecules
+WWW=		http://skuld.bmsc.washington.edu/raster3d/
 
 LICENSE=	ART20
 

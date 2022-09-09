@@ -14,11 +14,11 @@ releases.  In 2008, renewed interest in Ical led to new features
 such as timezone support, link support, key bindings and per-calendar
 colors.  This is the v3.0.x series of releases.
 
-WWW: http://opal.com/jr/ical/
-WWW: https://launchpad.net/ical-tcl/
-WWW: https://blog.tcl.tk/1861
-WWW: http://www.isi.edu/~johnh/SOFTWARE/ICAL/
 #WWW: http://www.annexia.org/freeware/ical/
 #WWW: ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
 #WWW: http://clef.lcs.mit.edu/%7Esanjay/ical.html
 #WWW: http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/doc.html
+
+See also: http://opal.com/jr/ical/
+See also: https://launchpad.net/ical-tcl/
+See also: https://blog.tcl.tk/1861

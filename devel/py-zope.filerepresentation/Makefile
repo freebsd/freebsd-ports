@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	File-system Representation Interfaces
+WWW=		https://pypi.org/project/zope.filerepresentation/
 
 LICENSE=	ZPL21
 

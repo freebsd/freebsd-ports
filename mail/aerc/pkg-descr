@@ -23,5 +23,3 @@ Some of its more interesting features include:
 - Efficient network usage - aerc only downloads the information
   which is necessary to present the UI, making for a snappy and
   bandwidth-efficient experience
-
-WWW: https://aerc-mail.org/

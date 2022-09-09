@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}.tar.bz2:snapshot \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - Enigma-NG skin plugin
+WWW=		http://andreas.vdr-developer.org/enigmang/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

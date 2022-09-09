@@ -1,6 +1,12 @@
 include/SDL2/SDL_image.h
+lib/cmake/SDL2_image/Findlibjxl.cmake
+lib/cmake/SDL2_image/Findwebp.cmake
+lib/cmake/SDL2_image/SDL2_image-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL2_image/SDL2_image-shared-targets.cmake
+lib/cmake/SDL2_image/SDL2_imageConfig.cmake
+lib/cmake/SDL2_image/SDL2_imageConfigVersion.cmake
+lib/libSDL2_image-2.0.so
 lib/libSDL2_image-2.0.so.0
-lib/libSDL2_image-2.0.so.0.2.3
-lib/libSDL2_image.a
+lib/libSDL2_image-2.0.so.0.600.2
 lib/libSDL2_image.so
 libdata/pkgconfig/SDL2_image.pc

@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Game exploring how changes to city affect drivers/cyclists/pedestrians
+WWW=		https://github.com/dabreegster/abstreet
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

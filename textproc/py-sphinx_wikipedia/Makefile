@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Sphinx extension which adds role to create links to Wikipedia articles
+WWW=		https://github.com/quiver/sphinx-ext-wikipedia
 
 LICENSE=	BSD3CLAUSE
 

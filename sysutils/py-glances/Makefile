@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	CLI curses based monitoring tool for GNU/Linux and BSD OS
+WWW=		https://nicolargo.github.io/glances/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

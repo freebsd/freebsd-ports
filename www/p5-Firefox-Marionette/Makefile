@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Automate the Firefox browser with the Marionette protocol
+WWW=		https://metacpan.org/release/Firefox-Marionette
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

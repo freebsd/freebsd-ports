@@ -1,17 +1,18 @@
 PORTNAME=	sidekiq
-PORTVERSION=	6.5.1
+PORTVERSION=	6.5.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, efficient background processing for Ruby
+WWW=		https://sidekiq.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-connection_pool>=2.2.2:net/rubygem-connection_pool \
+RUN_DEPENDS=	rubygem-connection_pool>=2.2.5:net/rubygem-connection_pool \
 		rubygem-rack>=2.0,3<3,3:www/rubygem-rack \
-		rubygem-redis>=4.2.0:databases/rubygem-redis
+		rubygem-redis4>=4.5.0<5:databases/rubygem-redis4
 
 USES=		cpe gem
 USE_RUBY=	yes

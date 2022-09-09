@@ -7,6 +7,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter
+WWW=		https://www.palfrader.org/code2html/
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

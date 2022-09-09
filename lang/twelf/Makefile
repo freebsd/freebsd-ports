@@ -8,6 +8,7 @@ MASTER_SITES=	http://twelf.plparty.org/releases/ \
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Meta-logical framework for deductive systems
+WWW=		http://www.cs.cmu.edu/~twelf
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

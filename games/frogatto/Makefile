@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Old-school 2D classic adventure platformer game
+WWW=		https://www.frogatto.com/
 
 LICENSE=	FROGATTO GPLv3
 LICENSE_COMB=	multi

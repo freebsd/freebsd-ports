@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plugin Class for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Plugin
 
 LICENSE=	APACHE20
 

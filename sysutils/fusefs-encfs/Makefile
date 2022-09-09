@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Encrypted pass-through FUSE filesystem
+WWW=		http://www.arg0.net/encfs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

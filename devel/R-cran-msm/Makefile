@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Multi-State Markov and Hidden Markov Models in Continuous Time
+WWW=		https://cran.r-project.org/package=msm
 
 LICENSE=	GPLv2+
 

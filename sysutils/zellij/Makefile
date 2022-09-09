@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Versatile, extensible terminal multiplexer
+WWW=		https://zellij.dev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

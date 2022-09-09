@@ -8,5 +8,3 @@ on failure; use the error method to get extended error information.
 The typical order is to create the SSH2 object, set up the connection methods
 you want to use, call connect, authenticate with one of the auth methods, then
 create channels on the connection to perform commands.
-
-WWW: https://metacpan.org/release/Net-SSH2

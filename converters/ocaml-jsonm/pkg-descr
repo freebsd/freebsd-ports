@@ -4,5 +4,3 @@ without a complete in-memory representation of the data.
 
 The uncut codec also processes whitespace and (non-standard) JSON with
 JavaScript comments.
-
-WWW: http://erratique.ch/software/jsonm

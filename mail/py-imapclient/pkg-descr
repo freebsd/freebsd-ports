@@ -11,5 +11,3 @@ Features
    are in different zones.
  * Convenience methods are provided for commonly used functionality.
  * Exceptions are raised when errors occur.
-
-WWW: https://github.com/mjs/imapclient

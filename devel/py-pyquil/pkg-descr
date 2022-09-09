@@ -7,5 +7,3 @@ functions:
   Quantum Virtual Machine (QVM)
 * Executing Quil programs on real quantum processors (QPUs) using Quantum Cloud
   Services (QCS)
-
-WWW: https://github.com/rigetti/pyquil

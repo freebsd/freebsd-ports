@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating random data
+WWW=		https://metacpan.org/release/Data-Random
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	http://i3wm.org/i3status/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Small program for generating a status bar
+WWW=		https://i3wm.org/i3status/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

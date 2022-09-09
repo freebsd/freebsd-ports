@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/jasper-software/jasper/releases/download/versio
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
+WWW=		https://www.ece.uvic.ca/~frodo/jasper/
 
 LICENSE=	JASPER
 LICENSE_NAME=	JasPer License Version 2.0

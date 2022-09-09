@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JavaScript Archive Network (JSAN) Shell
+WWW=		https://metacpan.org/release/JSAN
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \

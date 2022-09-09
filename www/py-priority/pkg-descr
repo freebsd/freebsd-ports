@@ -15,5 +15,3 @@ HTTP/2 stack directly.
 While priority information in HTTP/2 is only a suggestion, rather than an
 enforceable constraint, where possible servers should respect the priority
 requests of their clients.
-
-WWW: https://github.com/python-hyper/priority

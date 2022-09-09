@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Git extensions to provide high-level repository operations
+WWW=		https://github.com/petervanderdoes/gitflow-avh
 
 LICENSE=	BSD2CLAUSE LGPL21
 LICENSE_COMB=	multi

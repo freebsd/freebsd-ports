@@ -2,5 +2,3 @@ A header-only library for parsing TOML configuration files with support for the
 new DateTime format, inline tables, multi-line basic and raw strings, digit
 separators, hexadecimal integers, octal integers, binary integers, and float
 special values.
-
-WWW: https://github.com/skystrife/cpptoml/

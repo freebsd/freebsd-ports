@@ -1,10 +1,11 @@
 PORTNAME=	immortal
 PORTVERSION=	0.24.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Unix cross-platform (OS agnostic) supervisor
+WWW=		https://immortal.run
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Bootstrap-Datepicker-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Datepicker for Bootstrap (bootstrap-datepicker)
+WWW=		https://github.com/uxsolutions/bootstrap-datepicker
 
 LICENSE=	APACHE20
 

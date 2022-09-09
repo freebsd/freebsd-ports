@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast prefix searching
+WWW=		https://metacpan.org/release/Text-Prefix-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

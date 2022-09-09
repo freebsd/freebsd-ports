@@ -1,4 +1,2 @@
 This module provides convenience methods that let you easily create
 DateTime::Set, DateTime, or DateTime::Duration objects with random values.
-
-WWW: https://metacpan.org/release/DateTime-Event-Random

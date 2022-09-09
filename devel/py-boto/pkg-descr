@@ -20,5 +20,3 @@ offered by Amazon Web Services. Currently, this includes:
   * Simple Email Service (SES)
   * Flexible Payment Service (FPS)
   * CloudFormation
-
-WWW: https://github.com/boto/boto/

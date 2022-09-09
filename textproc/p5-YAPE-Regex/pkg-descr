@@ -2,5 +2,3 @@ This module is yet another (?) parser and tree-builder for Perl regular
 expressions. It builds a tree out of a regex, but at the moment, the extent of
 the extraction tool for the tree is quite limited. However, the tree can be
 useful to extension modules.
-
-WWW: https://metacpan.org/release/YAPE-Regex

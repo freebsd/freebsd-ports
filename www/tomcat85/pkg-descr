@@ -5,5 +5,3 @@ Java Unified Expression Language 3.0 and Java WebSocket 1.1 specifications
 from the Java Community Process, JASPIC 1.1 specification, and includes many
 additional features that make it a useful platform for developing and deploying
 web applications and web services. Tomcat 8.5 is aligned with Java EE 7.
-
-WWW: https://tomcat.apache.org/

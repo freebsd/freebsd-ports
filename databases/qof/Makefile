@@ -7,6 +7,7 @@ DISTNAME=	qof_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Query Object Framework
+WWW=		https://alioth.debian.org/projects/qof/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

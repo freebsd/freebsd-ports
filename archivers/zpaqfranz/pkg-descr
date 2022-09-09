@@ -12,5 +12,3 @@ Features:
 * Specific zfs handling functions, full multiplatform interoperability.
 * Particularly suitable for minimal space storage of virtual machines.
 * Full backwards compatibility with ZPAQ [archivers/paq].
-
-WWW: https://github.com/fcorbelli/zpaqfranz

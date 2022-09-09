@@ -6,6 +6,7 @@ DISTNAME=	luna19s
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
+WWW=		https://www.vector.co.jp/soft/dos/edu/se004823.html
 
 USES=		dos2unix lha
 NO_WRKSUBDIR=	yes

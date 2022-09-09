@@ -7,5 +7,3 @@ Put the expression below into your ~/.emacs.
 (autoload 'boiling-rhkR-trans "boiling-egg" "romaji-kana conversion" t)
 (global-set-key "\C-o" 'boiling-rK-trans)
 (global-set-key "\eo" 'boiling-rhkR-trans)
-
-WWW: http://www.gcd.org/sengoku/boiling-egg/

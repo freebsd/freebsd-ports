@@ -5,6 +5,7 @@ CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Unlambda interpreter
+WWW=		https://hackage.haskell.org/package/unlambda
 
 LICENSE=	GPLv2
 

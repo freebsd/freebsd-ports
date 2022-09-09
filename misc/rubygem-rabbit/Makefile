@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	RD-document-based presentation application
+WWW=		https://rabbit-shocker.org/en/
 
 LICENSE=	GPLv2+
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/GPL

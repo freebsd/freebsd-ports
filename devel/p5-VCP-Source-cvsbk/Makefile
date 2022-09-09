@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VCP source driver for bk exported cvs repository
+WWW=		https://metacpan.org/release/CLKAO/VCP-Source-cvsbk-0.11
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

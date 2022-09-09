@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Powerful and flexible message logging mechanism
+WWW=		https://metacpan.org/release/Log-Message
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end for cscope and cscope clones
+WWW=		https://sourceforge.net/projects/cbrowser/
 
 RUN_DEPENDS=	cscope:devel/cscope
 

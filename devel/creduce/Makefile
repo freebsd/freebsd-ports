@@ -5,6 +5,7 @@ MASTER_SITES=	http://embed.cs.utah.edu/creduce/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Produces small test cases
+WWW=		https://embed.cs.utah.edu/creduce/
 
 LLVM_VER=	80
 BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}

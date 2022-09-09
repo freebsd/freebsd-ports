@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Higher Order Perl Streams
+WWW=		https://metacpan.org/release/HOP-Stream
 
 USES=		perl5
 USE_PERL5=	modbuild

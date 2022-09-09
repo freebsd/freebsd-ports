@@ -4,5 +4,3 @@ provide packaging and distribution with pip and setuptools, support for python
 provide mechanisms for the parallel execution of python code on SMP (systems
 with multiple processors or cores) and clusters (computers connected via
 network).
-
-WWW: https://github.com/uqfoundation/ppft

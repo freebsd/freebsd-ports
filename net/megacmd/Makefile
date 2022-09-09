@@ -3,8 +3,9 @@ DISTVERSION=	1.5.0
 DISTVERSIONSUFFIX=	_Linux
 CATEGORIES=	net
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Interactive and Scriptable Application to access MEGA
+WWW=		https://mega.nz/cm
 
 LICENSE=	GPLv3 BSD2CLAUSE
 LICENSE_COMB=	multi

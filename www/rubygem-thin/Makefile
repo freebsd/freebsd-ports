@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast and simple Ruby web server
+WWW=		https://github.com/macournoyer/thin
 
 LICENSE=	GPLv2+ RUBY
 LICENSE_COMB=	dual

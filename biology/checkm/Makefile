@@ -5,6 +5,7 @@ CATEGORIES=	biology python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quality assessment tool for the microbial genomes
+WWW=		https://ecogenomics.github.io/CheckM/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

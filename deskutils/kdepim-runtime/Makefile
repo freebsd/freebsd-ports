@@ -1,10 +1,10 @@
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM tools and services
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
@@ -13,10 +13,10 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libkolabxml.so:textproc/libkolabxml \
 		libsasl2.so:security/cyrus-sasl2 \
 		libxerces-c-3.2.so:textproc/xerces-c3 \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake:noninja compiler:c++11-lib gettext kde:5 qca qt:5 \
-		shared-mime-info tar:xz
+USES=		cmake:noninja compiler:c++11-lib gettext grantlee:5 \
+		kde:5 qca qt:5 shared-mime-info tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons holidays i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdav kdelibs4support kio \
@@ -32,6 +32,7 @@ USE_KDE+=	akonadi akonadicontacts akonadimime akonadinotes \
 USE_QT=		concurrent core dbus declarative gui location network networkauth printsupport speech \
 		script webchannel webengine widgets xml xmlpatterns \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

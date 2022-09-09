@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	OCaml package manager
+WWW=		http://projects.camlcity.org/projects/findlib.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

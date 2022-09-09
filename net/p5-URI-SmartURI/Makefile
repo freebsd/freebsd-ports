@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Subclassable and hostless URIs
+WWW=		https://metacpan.org/release/URI-SmartURI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Synchronize calendars and contacts
+WWW=		https://vdirsyncer.readthedocs.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

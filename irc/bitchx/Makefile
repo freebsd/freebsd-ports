@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	freebsd@bitchx.org
 COMMENT=	Feature-rich scriptable IRC client
+WWW=		http://www.bitchx.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

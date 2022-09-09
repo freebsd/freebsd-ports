@@ -11,12 +11,14 @@
 %%SITE_PERL%%/Alien/Build/Log/Abbreviate.pm
 %%SITE_PERL%%/Alien/Build/Log/Default.pm
 %%SITE_PERL%%/Alien/Build/MM.pm
+%%SITE_PERL%%/Alien/Build/Manual.pod
 %%SITE_PERL%%/Alien/Build/Manual/Alien.pod
 %%SITE_PERL%%/Alien/Build/Manual/AlienAuthor.pod
 %%SITE_PERL%%/Alien/Build/Manual/AlienUser.pod
 %%SITE_PERL%%/Alien/Build/Manual/Contributing.pod
 %%SITE_PERL%%/Alien/Build/Manual/FAQ.pod
 %%SITE_PERL%%/Alien/Build/Manual/PluginAuthor.pod
+%%SITE_PERL%%/Alien/Build/Manual/Security.pod
 %%SITE_PERL%%/Alien/Build/Plugin.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Build.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Build/Autoconf.pm
@@ -39,6 +41,10 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/DirListingFtpcopy.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/HTML.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/Mojo.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Digest.pod
+%%SITE_PERL%%/Alien/Build/Plugin/Digest/Negotiate.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Digest/SHA.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Digest/SHAPP.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Download.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Download/Negotiate.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Extract.pod
@@ -55,7 +61,9 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Fetch/LocalDir.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Fetch/NetFTP.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Fetch/Wget.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Gather.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Gather/IsolateDynamic.pm
+%%SITE_PERL%%/Alien/Build/Plugin/PkgConfig.pod
 %%SITE_PERL%%/Alien/Build/Plugin/PkgConfig/CommandLine.pm
 %%SITE_PERL%%/Alien/Build/Plugin/PkgConfig/LibPkgConf.pm
 %%SITE_PERL%%/Alien/Build/Plugin/PkgConfig/MakeStatic.pm
@@ -69,6 +77,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Probe/CBuilder.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Probe/CommandLine.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Probe/Vcpkg.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Test.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Test/Mock.pm
 %%SITE_PERL%%/Alien/Build/Temp.pm
 %%SITE_PERL%%/Alien/Build/Util.pm
@@ -97,12 +106,14 @@
 %%PERL5_MAN3%%/Alien::Build::Log::Abbreviate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Log::Default.3.gz
 %%PERL5_MAN3%%/Alien::Build::MM.3.gz
+%%PERL5_MAN3%%/Alien::Build::Manual.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::Alien.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::AlienAuthor.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::AlienUser.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::Contributing.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::FAQ.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::PluginAuthor.3.gz
+%%PERL5_MAN3%%/Alien::Build::Manual::Security.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::Autoconf.3.gz
@@ -125,6 +136,10 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::DirListingFtpcopy.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::HTML.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::Mojo.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest::Negotiate.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest::SHA.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest::SHAPP.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Download.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Download::Negotiate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract.3.gz
@@ -141,7 +156,9 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Fetch::LocalDir.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Fetch::NetFTP.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Fetch::Wget.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Gather.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Gather::IsolateDynamic.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::PkgConfig.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::PkgConfig::CommandLine.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::PkgConfig::LibPkgConf.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::PkgConfig::MakeStatic.3.gz
@@ -155,6 +172,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Probe::CBuilder.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Probe::CommandLine.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Probe::Vcpkg.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Test.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Test::Mock.3.gz
 %%PERL5_MAN3%%/Alien::Build::Temp.3.gz
 %%PERL5_MAN3%%/Alien::Build::Util.3.gz

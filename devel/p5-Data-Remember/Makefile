@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Remember complex information without giving yourself a headache
+WWW=		https://metacpan.org/release/Data-Remember
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

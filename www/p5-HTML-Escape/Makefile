@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely fast HTML escaping
+WWW=		https://metacpan.org/dist/HTML-Escape
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

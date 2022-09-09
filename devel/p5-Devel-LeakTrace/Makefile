@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Indicate where leaked variables are coming from
+WWW=		https://metacpan.org/release/Devel-LeakTrace
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

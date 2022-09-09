@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
+WWW=		http://net.doit.wisc.edu/~plonka/Cflow/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:net-mgmt/flow-tools
 RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:net-mgmt/flow-tools

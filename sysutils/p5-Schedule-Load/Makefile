@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load distribution and status across multiple host machines
+WWW=		https://metacpan.org/release/WSNYDER/Schedule-Load-3.064
 
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual

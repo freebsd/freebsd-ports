@@ -7,6 +7,7 @@ MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Sophisticated calendar and alarm program
+WWW=		https://dianne.skoll.ca/projects/remind/
 
 LICENSE=	GPLv2
 

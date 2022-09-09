@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sampler that can load and play .sfz files, includes the LV2 pugin
+WWW=		https://github.com/swesterfeld/liquidsfz
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

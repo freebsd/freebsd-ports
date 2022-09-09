@@ -6,6 +6,7 @@ DISTNAME=	id3-${PORTVERSION}
 
 MAINTAINER=	squell@alumina.nl
 COMMENT=	Mass tagging utility for audio files
+WWW=		https://squell.github.io/id3
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

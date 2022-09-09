@@ -8,5 +8,3 @@ The algorithm is absolutely division free after the setup and it requires no
 assumptions on problem data (the problem only needs to be convex).
 
 OSQP is self-contained and requires no external library to run.
-
-WWW: https://osqp.org/

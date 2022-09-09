@@ -17,5 +17,4 @@ library to handle rich text content; and Active Support, a collection of utility
 classes and standard library extensions that are useful for Rails, and may also
 be used independently outside Rails.
 
-WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails
+See also: https://rubyonrails.org/

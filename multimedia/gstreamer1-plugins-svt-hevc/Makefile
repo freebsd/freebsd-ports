@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	gstreamer1-plugins-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GStreamer (svt-hevc) plugin
+WWW=		https://01.org/svt
 
 LICENSE=	LGPL21+ # based on SPDX header
 LICENSE_FILE=	${_LICENSE_STORE}/LGPL21

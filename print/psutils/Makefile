@@ -9,6 +9,7 @@ DISTNAME=	psutils-p17
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Utilities for manipulating PostScript documents
+WWW=		http://gershwin.ens.fr/vdaniel/Doc-Locale/Outils-Gnu-Linux/PsUtils/
 
 LIB_DEPENDS=	libpaper.so:print/libpaper
 

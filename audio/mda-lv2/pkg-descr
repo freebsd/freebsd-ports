@@ -6,5 +6,3 @@ plugins. The only functional difference in code is to support LV2-style
 toggle ports (> 0.0 is on, rather than 0.5). All the plugins have been
 tested, and thanks to several bug fixes this collection should be more
 reliable than the original.
-
-WWW: https://drobilla.net/software/mda-lv2

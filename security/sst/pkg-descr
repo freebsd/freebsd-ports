@@ -19,5 +19,3 @@ encrypted data is read from (or written to) stdout (fildes
 1).  In embedded server mode ("-s"), SSL-encrypted data is
 read  from  (or written to) stdin and clear data read from
 (or written to) stdout.
-
-WWW: http://utcc.utoronto.ca/~pkern/stuff/sst/

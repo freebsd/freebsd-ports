@@ -7,5 +7,3 @@ htmlhelp, javahelp, man, pdf, ps, txt, xhtml, xhtml-nochunks.
 
 Currently the only XSL-T processor supported is xsltproc (textproc/libxslt).
 For DVI, PDF and PostScript output, PassiveTeX (print/passivetex) is required.
-
-WWW: https://pagure.io/xmlto/

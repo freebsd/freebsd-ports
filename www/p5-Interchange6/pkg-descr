@@ -3,5 +3,3 @@ is the Modern Perl ecosystem for online business.
 It uses the DBIx::Class database schema Interchange6::Schema.
 
 This is a small module, implementing an API, used in Dancer plugins.
-
-WWW: https://metacpan.org/release/Interchange6

@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combinatorial Optimization package
+WWW=		http://www.tsp.gatech.edu/concorde.html
 
 WRKSRC=		${WRKDIR}/concorde
 

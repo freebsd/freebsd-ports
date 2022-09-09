@@ -14,6 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of TeX/LaTeX
+WWW=		https://miktex.org
 
 LICENSE=	MULTIPLE
 LICENSE_NAME=	Multiple

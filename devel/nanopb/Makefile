@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Protocol Buffers with small code size
+WWW=		https://jpa.kapsi.fi/nanopb/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

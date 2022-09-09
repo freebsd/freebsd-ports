@@ -5,5 +5,3 @@ capabilities. Instead of introducing its own expression syntax, it uses Python
 expressions in its preprocessor directives, offering the consistency and
 versatility of Python when formulating metaprogramming tasks. It puts strong
 emphasis on robustness and on neat integration into developing toolchains.
-
-WWW: https://github.com/aradi/fypp

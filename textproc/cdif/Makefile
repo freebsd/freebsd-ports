@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Word context visualizer of DIFF output
+WWW=		https://github.com/kaz-utashiro/cdif
 
 LICENSE=	GREPLE
 LICENSE_NAME=	GREPLE License

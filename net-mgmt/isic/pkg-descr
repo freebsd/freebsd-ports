@@ -6,5 +6,3 @@ desired protocol. The packets can have tendencies. ie by default all packets
 have a 50% chance of having IP Options. The packets are then sent against the
 target machine to either penetrate its firewall rules or find bugs in the IP
 stack.
-
-WWW: https://sourceforge.net/projects/isic/

@@ -8,6 +8,7 @@ DISTNAME=	XStatic-smart-table-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	smart-table (XStatic packaging standard)
+WWW=		https://github.com/lorenzofox3/Smart-Table
 
 LICENSE=	MIT
 

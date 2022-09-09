@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	JSON data templating language
+WWW=		https://jsonnet.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

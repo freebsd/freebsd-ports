@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Natural language date/time parser written in pure Ruby
+WWW=		https://github.com/mojombo/chronic
 
 LICENSE=	MIT
 

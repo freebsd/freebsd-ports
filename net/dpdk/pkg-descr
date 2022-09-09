@@ -13,5 +13,3 @@ amongst others.
 Applications written using the DPDK run in userspace. The devices used by a
 DPDK application are removed from kernel control and are instead managed
 directly by that application.
-
-WWW: http://dpdk.org/

@@ -1,27 +1,28 @@
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	31.0
+DISTVERSION=	32.0-60
+DISTVERSIONSUFFIX=	-ge5c974e402
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ahicks@p-o.co.uk
 COMMENT=	Music playing plugin for MythTV
+WWW=		https://www.mythtv.org/wiki/MythMusic
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libmyth-31.so:multimedia/mythtv
+		libmyth-32.so:multimedia/mythtv
 
 USES=		gmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build core gui qmake_build sql xml
+USE_QT=		buildtools_build core gui qmake_build sql widgets xml
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" \

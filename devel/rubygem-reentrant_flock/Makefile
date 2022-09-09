@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reentrant/recursive flock for Ruby
+WWW=		https://github.com/sonots/reentrant_flock
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

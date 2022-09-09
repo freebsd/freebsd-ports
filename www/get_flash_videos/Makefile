@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download videos from various Flash-based video hosting sites
+WWW=		http://code.google.com/p/get-flash-videos/
 
 LICENSE=	APACHE20
 

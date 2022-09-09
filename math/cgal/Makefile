@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Computational geometry library
+WWW=		https://www.cgal.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

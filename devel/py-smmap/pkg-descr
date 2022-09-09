@@ -7,5 +7,3 @@ To allow processing large files even on 32 bit systems, it allows only portions
 of the file to be mapped. Once the user reads beyond the mapped region, smmap
 will automatically map the next required region, unloading unused regions using
 a LRU algorithm.
-
-WWW: https://github.com/gitpython-developers/smmap

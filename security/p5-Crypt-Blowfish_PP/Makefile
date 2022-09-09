@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Blowfish encryption algorithm implemented purely in Perl
+WWW=		https://metacpan.org/release/Crypt-Blowfish_PP
 
 USES=		perl5
 USE_PERL5=	configure

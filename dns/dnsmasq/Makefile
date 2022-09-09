@@ -9,6 +9,7 @@ MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
+WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 LICENSE=	GPLv2
 

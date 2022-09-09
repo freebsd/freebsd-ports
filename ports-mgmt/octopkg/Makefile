@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front-end to the FreeBSD pkg-ng package manager
+WWW=		https://tintaescura.com/projects/octopkg/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

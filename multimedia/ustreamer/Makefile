@@ -1,10 +1,11 @@
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.20
+DISTVERSION=	5.21
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and fast MJPG-HTTP streamer
+WWW=		https://github.com/pikvm/ustreamer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

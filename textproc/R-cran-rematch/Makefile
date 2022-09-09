@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Match Regular Expressions with a Nicer 'API'
+WWW=		https://github.com/MangoTheCat/rematch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

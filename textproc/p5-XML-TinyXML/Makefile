@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	info@rickvanderzwet.nl
 COMMENT=	Little and efficient Perl module to manage xml data
+WWW=		https://metacpan.org/release/XML-TinyXML
 
 USES=		iconv perl5
 USE_PERL5=	configure

@@ -8,5 +8,3 @@ logic for both Module::Inspector and Module::P4P and to allow additional
 features to be added in the future without having to modify both of them,
 because the general problem of "locate, download, and expand a distribution"
 is one that is almost ideal for adding additional features down the line.
-
-WWW: https://metacpan.org/release/Module-Extract

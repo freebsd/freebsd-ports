@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jkeenan@cpan.org
 COMMENT=	Common class for CPAN::Testers clients
+WWW=		https://metacpan.org/release/CPAN-Testers-Common-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

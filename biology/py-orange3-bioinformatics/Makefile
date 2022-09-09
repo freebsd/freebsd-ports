@@ -7,6 +7,7 @@ DISTNAME=	Orange3-Bioinformatics-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Orange add-on providing common functionality for bioinformatics
+WWW=		https://github.com/biolab/orange3-bioinformatics
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

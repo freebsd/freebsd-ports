@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR::HTML_Common is a base class for other HTML classes
+WWW=		https://pear.php.net/package/HTML_Common
 
 LICENSE=	PHP301
 

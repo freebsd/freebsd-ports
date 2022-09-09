@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimalistic DHCP, UDP proxy, etc server implementations
+WWW=		https://github.com/yurivict/tiny-network-utilities
 
 LICENSE=	BSD4CLAUSE
 

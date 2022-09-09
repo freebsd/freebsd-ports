@@ -1,4 +1,2 @@
 This module enables you to generate DateTime objects that represent the current
 time with sub-second resolution.
-
-WWW: https://metacpan.org/release/DateTime-HiRes

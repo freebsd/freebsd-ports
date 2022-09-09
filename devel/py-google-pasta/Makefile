@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amzo1337@gmail.com
 COMMENT=	Library to refactor python code through AST manipulation
+WWW=		https://github.com/google/pasta
 
 LICENSE=	APACHE20
 

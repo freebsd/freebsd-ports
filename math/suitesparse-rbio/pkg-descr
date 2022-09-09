@@ -1,5 +1,3 @@
 This port installs the module RBio of SuiteSparse.
 
 RBio can be used to read and write sparse matrices.
-
-WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

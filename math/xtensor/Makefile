@@ -1,9 +1,10 @@
 PORTNAME=	xtensor
-DISTVERSION=	0.24.2
+DISTVERSION=	0.24.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-dimensional arrays with broadcasting and lazy computing
+WWW=		https://github.com/xtensor-stack/xtensor
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

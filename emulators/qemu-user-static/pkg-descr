@@ -18,5 +18,3 @@ still being experimental, people have already built many armv6/mips/mips64 ports
 using these and, e.g., poudriere.  Some notes are also here:
 
 	http://wiki.freebsd.org/QemuUserModeHowTo
-
-WWW: http://wiki.qemu.org/Main_Page

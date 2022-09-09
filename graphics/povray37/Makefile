@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	37
 
 MAINTAINER=	bsd@philippost.de
 COMMENT=	Persistence of Vision Ray Tracer
+WWW=		https://www.povray.org/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

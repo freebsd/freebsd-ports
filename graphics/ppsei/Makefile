@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	PowerPoint images extractor
+WWW=		https://sourceforge.net/projects/ppsei/
 
 PLIST_FILES=	bin/ppsei
 WRKSRC=		${WRKDIR}/${PORTNAME}

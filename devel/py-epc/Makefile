@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	RPC Stack for Emacs Lisp for Python
+WWW=		https://pypi.python.org/pypi/epc
 
 LICENSE=	GPLv3
 

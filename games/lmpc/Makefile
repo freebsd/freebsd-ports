@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tools to manipulate some FPS games demo recordings
+WWW=		http://demospecs.half-empty.de/lmpc-alpha/
 
 LICENSE=	GPLv2+
 

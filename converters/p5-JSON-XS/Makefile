@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
+WWW=		https://metacpan.org/release/JSON-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

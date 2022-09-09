@@ -11,6 +11,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
+WWW=		https://minecraft.net/
 
 RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:games/lwjgl \
 		xrandr:x11/xrandr

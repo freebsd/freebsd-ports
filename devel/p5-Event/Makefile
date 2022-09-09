@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic Perl Event Loop
+WWW=		https://metacpan.org/release/Event
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

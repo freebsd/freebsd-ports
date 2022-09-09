@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simulate SSL and TLD handshake
+WWW=		https://github.com/arlimus/sslshake
 
 LICENSE=	MPL20
 

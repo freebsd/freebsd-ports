@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl base class for non-Moose roles
+WWW=		https://metacpan.org/release/TOBYINK/Object-Role-0.001
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

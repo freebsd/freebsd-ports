@@ -10,5 +10,3 @@ Due to Cloudflare continually changing and hardening their protection page,
 cloudscraper requires a JavaScript Engine/interpreter to solve Javascript
 challenges. This allows the script to easily impersonate a regular web browser
 without explicitly deobfuscating and parsing Cloudflare's Javascript.
-
-WWW: https://pypi.org/project/cloudscraper/

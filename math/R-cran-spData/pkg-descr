@@ -7,5 +7,3 @@ ESRI Shapefile and GeoPackage. Some of the datasets are designed
 to illustrate specific analysis techniques. cycle_hire and
 cycle_hire_osm, for example, is designed to illustrate point pattern
 analysis techniques.
-
-WWW: https://cran.r-project.org/web/packages/spData/

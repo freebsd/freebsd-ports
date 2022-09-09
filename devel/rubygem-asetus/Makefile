@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Ruby configuration library with YAML/JSON/TOML backends
+WWW=		https://github.com/ytti/asetus
 
 LICENSE=	APACHE20
 

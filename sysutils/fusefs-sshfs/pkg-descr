@@ -1,3 +1,1 @@
 SSHFS allows you to mount a remote directory over a normal ssh connection.
-
-WWW: https://github.com/libfuse/sshfs

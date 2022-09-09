@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.shiftygames.com/hangman/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenge your spelling skills in the old western style
+WWW=		http://www.shiftygames.com/hangman/hangman.html
 
 CONFLICTS=	bsdgames
 

@@ -6,5 +6,3 @@ interval between the ticks be.
 The terms top and bottom are used throughout this module, as it's
 primary use is for determining the Y axis.  For calculating the X axis,
 you should think of 'top' as 'right', and 'bottom' as 'left'.
-
-WWW: https://metacpan.org/release/Chart-Math-Axis

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Getopt::Long with usage text
+WWW=		https://metacpan.org/release/Getopt-Long-Descriptive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Lightweight selfhosted speedtest
+WWW=		https://github.com/librespeed/speedtest
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

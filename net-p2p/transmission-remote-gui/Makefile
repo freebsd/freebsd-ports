@@ -1,6 +1,6 @@
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.18.0
-PORTREVISION=	11
+PORTREVISION=	12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -10,13 +10,16 @@ GH_PROJECT=	transgui
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
+WWW=		https://github.com/transmission-remote-gui/transgui
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		desktop-file-utils fpc iconv lazarus:flavors
+USES=		desktop-file-utils fpc gnome iconv lazarus:flavors xorg
 USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-net fcl-xml pasjpeg \
 		rtl-objpas rtl-extra x11
+USE_GNOME=	cairo
+USE_XORG=	x11
 
 DESKTOP_ENTRIES="Transmission Remote GUI" \
                 "Remote GUI for transmission daemon" \

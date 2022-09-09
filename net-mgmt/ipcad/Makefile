@@ -1,6 +1,6 @@
 PORTNAME=	ipcad
 PORTVERSION=	3.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://ipcad.sourceforge.net/ \
@@ -8,6 +8,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export
+WWW=		http://ipcad.sourceforge.net/
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	ipcad
 SUB_FILES=	pkg-message

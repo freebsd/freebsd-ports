@@ -1,11 +1,12 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	4.0.19
+PORTVERSION=	4.0.20
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	40
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
+WWW=		https://pgpool.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

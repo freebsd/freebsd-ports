@@ -4,5 +4,3 @@ Django's staticfiles or opaque wrappers.
 Django webpack loader consumes the output generated
 by webpack-bundle-tracker and lets you use the
 generated bundles in Django.
-
-WWW: https://pypi.org/project/django-webpack-loader

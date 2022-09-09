@@ -5,6 +5,7 @@ MASTER_SITES=	http://fwlogwatch.inside-security.de/sw/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Packet filter and firewall log analyzer
+WWW=		http://fwlogwatch.inside-security.de/
 
 USES=		gettext tar:bzip2
 MAKE_ENV=	MKDIR="${MKDIR}"

@@ -1,11 +1,12 @@
 PORTNAME=	hostctl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command-line tool to manage your hosts file
+WWW=		https://guumaster.github.io/hostctl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

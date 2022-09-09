@@ -5,5 +5,3 @@ distributed computing, where each launcher contains the syntactic logic to
 configure and launch jobs in an execution environment. Examples of launchers
 that plug into pathos are: a queue-less MPI-based launcher (in pyina), a
 ssh-based launcher (in pathos), and a multi-process launcher (in multiprocess).
-
-WWW: https://github.com/uqfoundation/pathos

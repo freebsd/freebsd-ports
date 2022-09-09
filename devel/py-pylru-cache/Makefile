@@ -7,6 +7,7 @@ DISTNAME=	py_lru_cache-${PORTVERSION}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	LRU cache for Python
+WWW=		https://pypi.org/project/py_lru_cache/
 
 LICENSE=	BSD3CLAUSE GPLv3
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
+WWW=		http://pgp-tools.alioth.debian.org/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2 GPLv2+ GPLv3+ MIT
 LICENSE_COMB=	multi

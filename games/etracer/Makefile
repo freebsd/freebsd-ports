@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	acer
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Extreme Tux Racer
+WWW=		https://sourceforge.net/projects/extremetuxracer/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

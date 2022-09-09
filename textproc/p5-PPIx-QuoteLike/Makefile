@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse Perl string literals and string-literal-like things
+WWW=		https://metacpan.org/release/PPIx-QuoteLike
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert binary octets into ASCII armoured messages
+WWW=		https://metacpan.org/release/Convert-ASCII-Armour
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

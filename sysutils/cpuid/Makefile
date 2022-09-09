@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${CPUID_SUFFIX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Tool to dump x86 CPUID information about the CPU(s)
+WWW=		https://www.etallen.com/cpuid.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

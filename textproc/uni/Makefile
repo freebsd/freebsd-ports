@@ -1,11 +1,12 @@
 PORTNAME=	uni
 PORTVERSION=	2.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Query the Unicode database from the commandline
+WWW=		https://github.com/arp242/uni
 
 LICENSE=	MIT
 

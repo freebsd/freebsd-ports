@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.gson.org/egypt/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create call graphs of C programs
+WWW=		https://www.gson.org/egypt/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

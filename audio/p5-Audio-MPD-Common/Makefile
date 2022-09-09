@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Bunch of common helper classes for mpd
+WWW=		https://metacpan.org/release/Audio-MPD-Common
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

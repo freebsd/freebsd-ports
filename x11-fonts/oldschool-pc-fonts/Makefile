@@ -7,6 +7,7 @@ DISTNAME=	oldschool_pc_font_pack_v${DISTVERSION}_linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate Oldschool PC Font Pack
+WWW=		https://int10h.org/oldschool-pc-fonts/
 
 LICENSE=	CC-BY-SA-4.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

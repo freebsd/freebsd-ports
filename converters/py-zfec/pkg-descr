@@ -14,5 +14,3 @@ package makes several changes from the original "fec" package, including
 addition of the Python API, refactoring of the C API to support zero-copy
 operation, a few clean-ups and optimizations of the core code itself, and the
 addition of a command-line tool named "zfec".
-
-WWW: https://github.com/tahoe-lafs/zfec

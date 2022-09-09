@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	monsieurp@gentoo.org
 COMMENT=	Terminal string styling done right in Python
+WWW=		https://pypi.org/project/colorful/
 
 LICENSE=	MIT
 

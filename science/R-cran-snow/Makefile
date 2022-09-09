@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Support for simple parallel computing in R
+WWW=		https://cran.r-project.org/web/packages/snow/
 
 LICENSE=	GPLv2+
 

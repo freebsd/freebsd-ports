@@ -1,4 +1,2 @@
 Python library for decoding time units and variable values in a netCDF
 file conforming to the Climate and Forecasting (CF) netCDF conventions.
-
-WWW: https://github.com/Unidata/cftime

@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-DPI graphics for Endless Sky
+WWW=		https://github.com/endless-sky/endless-sky-high-dpi
 
 LICENSE=	CC-BY-3.0 CC-BY-SA-3.0 CC-BY-SA-4.0 PD
 LICENSE_COMB=	multi

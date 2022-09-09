@@ -3,5 +3,3 @@ which can be used by realtime and non-realtime applications to load,
 save, modify and playback MIDI files.  The umidi20 library supports
 direct playback and recording via JACK, ALSA, FIFOs and character
 device nodes.
-
-WWW: https://github.com/hselasky/libumidi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rebuild Sphinx documentation on changes, with live-reload in the browser
+WWW=		https://github.com/executablebooks/sphinx-autobuild
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

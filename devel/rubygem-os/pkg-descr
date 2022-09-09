@@ -1,4 +1,2 @@
 The OS gem allows for some easy telling if you're on windows or not, as well as
 some other helper utilities.
-
-WWW: https://github.com/rdp/os

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parser, schema validator, and data binding tool for YAML and JSON
+WWW=		http://www.kuwata-lab.com/kwalify/
 
 LICENSE=	MIT
 

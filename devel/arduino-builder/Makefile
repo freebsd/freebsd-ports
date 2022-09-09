@@ -1,10 +1,11 @@
 PORTNAME=	arduino-builder
 PORTVERSION=	1.3.25
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Command line tool for building Arduino sketches
+WWW=		https://github.com/arduino/arduino-builder
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

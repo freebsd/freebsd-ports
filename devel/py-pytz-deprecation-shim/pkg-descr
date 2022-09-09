@@ -11,5 +11,3 @@ and many libraries have built pytz zones into their standard time zone interface
 (and thus may have users relying on the existence of the localize and normalize
 methods); this library provides shim classes that are compatible with both PEP
 495 and pytz's interface, to make it easier for libraries to deprecate pytz.
-
-WWW: https://github.com/pganssle/pytz-deprecation-shim

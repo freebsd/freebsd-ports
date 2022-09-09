@@ -7,6 +7,7 @@ DISTNAME=	Treekin-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient computation of RNA folding dynamics
+WWW=		https://www.tbi.univie.ac.at/RNA/Treekin/
 
 LICENSE=	LatticeLib
 LICENSE_NAME=	LatticeLib Disclaimer and Copyright

@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	FoundationDB client in Erlang via FDB C bindings
+WWW=		https://github.com/apache/couchdb-erlfdb
 
 LICENSE=	APACHE20
 

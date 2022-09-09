@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/latest
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reversi/Othello clone
+WWW=		http://asturio.gmxhome.de/software/hinversi/i.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

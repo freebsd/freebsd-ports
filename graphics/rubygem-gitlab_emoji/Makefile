@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides Gitlab Emoji assets
+WWW=		https://gitlab.com/gitlab-org/gitlab_emoji
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

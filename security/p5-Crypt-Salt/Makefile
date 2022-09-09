@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension to generate a salt to be fed into crypt
+WWW=		https://metacpan.org/release/Crypt-Salt
 
 USES=		perl5
 USE_PERL5=	configure

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rouslan@rshell.net
 COMMENT=	Perl class for null file handles
+WWW=		https://metacpan.org/release/IO-Null
 
 USES=		perl5
 USE_PERL5=	configure

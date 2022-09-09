@@ -7,6 +7,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Demystify and debug sed scripts from the comfort of your terminal
+WWW=		https://github.com/SoptikHa2/desed
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

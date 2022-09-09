@@ -1,12 +1,13 @@
 PORTNAME=	beats
 PORTVERSION=	6.8.16
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Collect logs locally and send to remote logstash
+WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 

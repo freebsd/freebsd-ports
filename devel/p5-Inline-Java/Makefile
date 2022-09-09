@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write Perl subroutines and classes in Java
+WWW=		https://metacpan.org/release/Inline-Java
 
 LICENSE=	ARTPERL10
 

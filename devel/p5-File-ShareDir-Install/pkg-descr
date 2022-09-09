@@ -5,5 +5,3 @@ locate these files after installation.
 It is a port Module::Install::Share to ExtUtils::MakeMaker with the improvement
 of only installing the files you want; .svn and other source-control junk will
 be ignored.
-
-WWW: https://metacpan.org/release/File-ShareDir-Install

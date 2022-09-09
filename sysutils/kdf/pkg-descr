@@ -6,5 +6,3 @@ mount and unmount drives and view them in a file manager.
 KDiskFree is similar to the Systemsettings Partitions module, but
 takes up less screen space. It is useful if you want to keep a
 KDiskFree window available at all times.
-
-WWW: https://utils.kde.org/projects/kdf/

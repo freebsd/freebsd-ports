@@ -7,5 +7,3 @@ time. By default a simple dialog pops up at the end of the countdown. The user
 can choose an external command to be run as the alarm and may also choose to
 have this repeated a specified number of times with a given interval between
 repetitions.
-
-WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-timer-plugin

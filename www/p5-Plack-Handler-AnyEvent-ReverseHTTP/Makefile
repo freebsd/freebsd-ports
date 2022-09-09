@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to reversehttp gateway for PSGI application
+WWW=		https://metacpan.org/release/Plack-Handler-AnyEvent-ReverseHTTP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

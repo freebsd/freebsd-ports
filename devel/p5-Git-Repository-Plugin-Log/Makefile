@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add a log() method to Git::Repository
+WWW=		https://metacpan.org/release/Git-Repository-Plugin-Log
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

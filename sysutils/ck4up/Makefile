@@ -6,6 +6,7 @@ MASTER_SITES=	http://jue.li/crux/ck4up/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check HTTP and FTP sites for updates
+WWW=		http://jue.li/crux/ck4up/
 
 RUN_DEPENDS=	rubygem-gdbm>=2.0.0,2:databases/rubygem-gdbm
 

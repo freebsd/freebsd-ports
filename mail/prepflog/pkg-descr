@@ -3,5 +3,3 @@ or awstats disregarding the lines relating to the re-injection of
 messages into postfix.
 
 It is very useful for a postfix setup which uses amavis for virus filtering.
-
-WWW: https://github.com/johnfawcett/prepflog

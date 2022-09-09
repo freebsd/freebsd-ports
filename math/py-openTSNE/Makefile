@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, parallel implementations of t-SNE
+WWW=		https://github.com/pavlin-policar/openTSNE
 
 LICENSE=	BSD3CLAUSE
 

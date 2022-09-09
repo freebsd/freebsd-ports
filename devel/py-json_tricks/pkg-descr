@@ -8,5 +8,3 @@ handling of json files:
 * Allow for comments in json files by starting lines with #.
 * Sets, complex numbers, Decimal, Fraction, enums, compression,
   duplicate keys, etc.
-
-WWW: https://github.com/mverleg/pyjson_tricks

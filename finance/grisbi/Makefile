@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/${PORTVERSI
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal accounting application
+WWW=		https://www.grisbi.org/
 
 LICENSE=	GPLv2
 

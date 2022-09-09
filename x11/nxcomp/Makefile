@@ -7,6 +7,7 @@ DISTNAME=	nx-libs-${PORTVERSION}-lite
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NX X11 protocol compression libraries
+WWW=		https://wiki.x2go.org/doku.php
 
 WRKSRC=		${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
 

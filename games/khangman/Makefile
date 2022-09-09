@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Hangman game for KDE 4
+WWW=		https://edu.kde.org/khangman
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
+WWW=		http://icpld.northernmost.org/
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

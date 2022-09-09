@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Interface for providing metadata about installed software packages
+WWW=		https://metacpan.org/release/App-Info
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

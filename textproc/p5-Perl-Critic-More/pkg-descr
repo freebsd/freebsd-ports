@@ -25,6 +25,3 @@ Perl::Critic core for a variety of reasons:
     For example, policies like CodeLayout::RequireASCII designed to scratch
     itches not felt by most of the community. These will always remain in a
     Perl::Critic supplement instead of in the core.
-
-
-WWW: https://metacpan.org/release/Perl-Critic-More

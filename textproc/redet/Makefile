@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.billposer.org/Software/Downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual regexp development and execution
+WWW=		https://www.billposer.org/Software/redet.html
 
 RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
 

@@ -1,12 +1,12 @@
 PORTNAME=	cdo
-PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTVERSION=	2.0.6
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/26823/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/27276/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
+WWW=		https://code.mpimet.mpg.de/projects/cdo
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,7 +22,7 @@ UUID_DESC=	UUID support
 
 PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
 
-USES=		compiler:c++14-lang gmake libtool localbase pathfix
+USES=		compiler:c++17-lang gmake libtool localbase pathfix
 
 CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
@@ -37,7 +37,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
 CGRIBEX_CONFIGURE_WITH=	cgribex

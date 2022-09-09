@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlIO layer for creating an MD5 digest of a file
+WWW=		https://metacpan.org/release/PerlIO-via-MD5
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

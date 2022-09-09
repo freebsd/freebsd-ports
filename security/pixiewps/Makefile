@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	franz@bett.ag
 COMMENT=	Offline WPS bruteforce utility
+WWW=		https://github.com/wiire/pixiewps
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE.md

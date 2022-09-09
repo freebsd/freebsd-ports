@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities to deal with geospatial links
+WWW=		https://github.com/geopython/geolinks
 
 LICENSE=	MIT
 

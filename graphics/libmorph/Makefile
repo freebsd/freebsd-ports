@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for loading (and saving) 3D modeller object files
+WWW=		http://www.winnicki.net/morpheus/
 
 CONFLICTS=	xmorph*
 

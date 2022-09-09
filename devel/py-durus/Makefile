@@ -9,6 +9,7 @@ DISTNAME=	Durus-${PORTVERSION}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Persistent object storage system for Python
+WWW=		https://www.mems-exchange.org/software/durus/
 
 LICENSE=	MIT
 

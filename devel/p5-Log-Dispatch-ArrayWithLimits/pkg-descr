@@ -11,5 +11,3 @@ a few differences:
 Logging to an in-process array can be useful when debugging/testing, or when you
 want to let users of your program connect to your program to request viewing the
 ogs being produced.
-
-WWW: https://metacpan.org/release/Log-Dispatch-ArrayWithLimits

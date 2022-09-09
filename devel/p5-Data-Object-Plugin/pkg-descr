@@ -1,4 +1,2 @@
 Data::Object::Plugin provides an abstract base class for defining plugin
 classes.
-
-WWW: https://metacpan.org/release/Data-Object-Plugin

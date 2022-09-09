@@ -7,5 +7,3 @@ This module should be especially useful to anyone who wants to do
 processing of LaTeX documents that requires extraction of plain-text
 information, or altering of the plain-text components (or
 alternatively, the math-text components).
-
-WWW: https://metacpan.org/release/LaTeX-TOM

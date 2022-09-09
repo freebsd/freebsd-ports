@@ -3,5 +3,3 @@ maintain makefiles for software projects. It is especially useful if
 you develop for more than one platform or use more than one
 compiler. tmake automates and streamlines this process and lets you
 spend your valuable time on writing code, not makefiles.
-
-WWW: http://tmake.sourceforge.net/

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/farsi-fonts/
 
 MAINTAINER=	javad.kouhi@gmail.com
 COMMENT=	Standard set of Unicode Persian fonts
+WWW=		http://www.farsiweb.ir/wiki/Persian_fonts
 
 USES=		fonts zip
 

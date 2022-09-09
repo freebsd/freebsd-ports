@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Platform game where you have to jump up to survive
+WWW=		http://gnujump.es.gnu.org/index.php/Main_Page
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

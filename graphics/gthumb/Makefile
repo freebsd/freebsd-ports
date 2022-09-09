@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME environment
+WWW=		https://wiki.gnome.org/Apps/gthumb/
 
 LICENSE=	GPLv2+
 

@@ -7,12 +7,12 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clocks for GNOME
+WWW=		https://wiki.gnome.org/Apps/Clocks
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	itstool:textproc/itstool \
-		vala:lang/vala
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
 		libgeocode-glib.so:net/geocode-glib \
 		libgweather-3.so:net/libgweather \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:3.4+,build shebangfix tar:xz
+		python:3.4+,build shebangfix tar:xz vala:build
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gnomedesktop3 gsound
 SHEBANG_FILES=	build-aux/post-install.py

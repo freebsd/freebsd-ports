@@ -10,5 +10,3 @@ CheckSV is passed argument which holds a pointer to a table created by
 NoteSV.  It re-walks the perl-internals and calls sv_dump() for any
 "things" which did not exist when NoteSV was called.  It returns a count
 of the number of "things" now allocated.
-
-WWW: https://metacpan.org/release/Devel-Leak

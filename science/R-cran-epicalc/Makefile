@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Epidemiological calculator
+WWW=		https://cran.r-project.org/web/packages/epicalc/
 
 USES=	cran:auto-plist
 

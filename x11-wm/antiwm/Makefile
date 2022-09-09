@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalist window manager inspired by Ratpoison
+WWW=		https://sourceforge.net/projects/antiwm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

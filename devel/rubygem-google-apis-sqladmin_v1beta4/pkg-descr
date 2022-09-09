@@ -6,5 +6,4 @@ It provides:
   and service accounts.
 - Control of retry, pagination, and timeouts.
 
-WWW: https://github.com/googleapis/google-api-ruby-client
-WWW: https://github.com/googleapis/google-api-ruby-client/tree/master/generated/google-apis-sqladmin_v1beta4
+See also: https://github.com/googleapis/google-api-ruby-client

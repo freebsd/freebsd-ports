@@ -7,5 +7,3 @@ using the exact same common classes to represent the various mpd states and
 information.
 
 Therefore, those common classes have been outsourced to Audio::MPD::Common.
-
-WWW: https://metacpan.org/release/Audio-MPD-Common

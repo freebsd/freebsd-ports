@@ -7,5 +7,3 @@ assembled on the fly into linear or cyclical pipelines. Steps typically interact
 with a central data store that persists in memory while the pipeline runs.
 Derived tables and columns can be updated automatically as base data changes,
 and pipeline components are evaluated lazily to reduce unnecessary overhead.
-
-WWW: https://github.com/UDST/orca

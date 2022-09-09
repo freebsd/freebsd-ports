@@ -11,5 +11,3 @@ the folder and filename structure.
 The integrated CD ripper supports the CDDB/GNUdb online CD database.
 It will automatically query song information and write it to ID3v2 or
 other title information tags.
-
-WWW: https://www.freac.org/

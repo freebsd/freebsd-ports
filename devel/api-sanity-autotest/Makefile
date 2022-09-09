@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/bf/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
+WWW=		https://ispras.linux-foundation.org/index.php/API_Sanity_Autotest
 
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual

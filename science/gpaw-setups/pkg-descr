@@ -6,5 +6,3 @@ files.
 This package installs the setups into the default location,
 $(PREFIX)/share/gpaw-setups. You can use the GPAW_SETUP_PATH environment
 variable with py-gpaw to override this default location.
-
-WWW: https://wiki.fysik.dtu.dk/gpaw/setups/setups.html

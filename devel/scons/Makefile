@@ -7,6 +7,7 @@ DISTNAME=	SCons-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build tool alternative to make
+WWW=		https://scons.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

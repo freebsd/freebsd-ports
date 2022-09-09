@@ -7,6 +7,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Fork of libqtelegram by Aseman Team
+WWW=		https://github.com/Aseman-Land/libqtelegram-aseman-edition
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

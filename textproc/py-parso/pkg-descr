@@ -6,5 +6,3 @@ Parso has been battle-tested by jedi. It was pulled out of jedi to be
 useful for other projects as well.
 
 Parso consists of a small API to parse Python and analyse the syntax tree.
-
-WWW: https://github.com/davidhalter/parso

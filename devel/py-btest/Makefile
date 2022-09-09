@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mshirk@daemon-security.com
 COMMENT=	Simple driver for basic unit tests
+WWW=		https://github.com/zeek/btest/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

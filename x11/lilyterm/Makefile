@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightweight, but functional terminal emulator
+WWW=		https://github.com/Tetralet/LilyTerm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

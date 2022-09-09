@@ -8,6 +8,7 @@ DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit 17
+WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 

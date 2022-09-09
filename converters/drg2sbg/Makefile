@@ -5,6 +5,7 @@ CATEGORIES=	converters audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert proprietary .drg file format into SBaGen format
+WWW=		https://github.com/manuel-arguelles/drg2sbg
 
 LICENSE=	GPLv2
 

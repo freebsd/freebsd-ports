@@ -12,6 +12,7 @@ EXTRACT_ONLY=	all-${DISTVERSION}.tar.bz2
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
+WWW=		http://www.mplayerhq.hu/MPlayer/releases/codecs/
 
 # Converted from RESTRICTED
 LICENSE=	win32-codec

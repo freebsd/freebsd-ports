@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Portable replacement for popen4
+WWW=		https://github.com/ahoward/systemu
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

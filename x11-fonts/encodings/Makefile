@@ -6,6 +6,7 @@ MASTER_SITES=	XORG/individual/font
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Encoding fonts
+WWW=		https://www.x.org/
 
 LICENSE=	PD
 

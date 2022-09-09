@@ -6,6 +6,7 @@ MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ wrapper library around the POSIX threads API
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../COPYING

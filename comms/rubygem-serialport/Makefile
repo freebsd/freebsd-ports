@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	Library for using RS-232 serial ports
+WWW=		https://rubygems.org/gems/serialport
 
 LICENSE=	GPLv2
 

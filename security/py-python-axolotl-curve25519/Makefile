@@ -7,6 +7,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Python wrapper for curve25519 with ed25519 signatures
+WWW=		https://github.com/tgalal/python-axolotl-curve25519
 
 LICENSE=	GPLv3
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	20
 
 MAINTAINER=	freebsd-ports@misc.ark-ict.nl
 COMMENT=	Online genealogy viewer (for PHP 7.1-7.4)
+WWW=		https://webtrees.net/
 
 LICENSE=	GPLv3+
 

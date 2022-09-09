@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	james.wright@digital-chaos.com
 COMMENT=	Cluster manager providing resource isolation and sharing
+WWW=		https://mesos.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

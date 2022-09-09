@@ -2,5 +2,3 @@ Perl Web application framework for Apache/mod_perl. Object Oriented
 design for a pragmatic, modular approach to URL dispatching. Supports
 MVC (or VC, MC, C, take your pick) and initiates rapid development.
 This project offers an orgainized coding scheme for web applications.
-
-WWW: https://metacpan.org/release/Gantry

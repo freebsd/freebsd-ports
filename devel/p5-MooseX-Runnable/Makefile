@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tag a class as a runnable application
+WWW=		https://metacpan.org/release/MooseX-Runnable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

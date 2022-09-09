@@ -1,5 +1,5 @@
 PORTNAME=	Tickit
-PORTVERSION=	0.72
+PORTVERSION=	0.73
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -7,12 +7,13 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Terminal Interface Construction KIT
+WWW=		https://metacpan.org/release/Tickit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libtickit>=0.4.2:devel/libtickit \
+BUILD_DEPENDS=	libtickit>=0.4.3:devel/libtickit \
 		p5-Module-Build-Using-PkgConfig>=0:devel/p5-Module-Build-Using-PkgConfig \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libtickit.so:devel/libtickit

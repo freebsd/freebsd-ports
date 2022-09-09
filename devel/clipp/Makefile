@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line interfaces for modern C++
+WWW=		https://github.com/muellan/clipp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

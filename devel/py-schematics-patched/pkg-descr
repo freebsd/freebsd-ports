@@ -19,5 +19,3 @@ Some common use cases:
 
 Note: This is the patched version from the 1.1.x branch that can pickle with
       multiprocessing using the old API.
-
-WWW: https://github.com/pombredanne/schematics

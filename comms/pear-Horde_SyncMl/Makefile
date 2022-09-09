@@ -4,6 +4,7 @@ CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for processing SyncML requests
+WWW=		https://pear.horde.org
 
 USES=		horde cpe
 USE_HORDE_RUN=	Horde_Date \

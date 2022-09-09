@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Optparse-inspired command-line parsing library
+WWW=		https://code.google.com/p/argparse/
 
 LICENSE=	PSFL
 

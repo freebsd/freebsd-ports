@@ -7,6 +7,7 @@ MASTER_SITES=	http://homepage.mac.com/pclwillmott/GAL/ \
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	General Astrodynamics Library
+WWW=		http://homepage.mac.com/pclwillmott/GAL/
 
 USES=		libtool
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calendar extension module for the RT ticketing system
+WWW=		https://metacpan.org/release/RTx-Calendar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

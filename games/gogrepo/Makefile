@@ -5,6 +5,7 @@ CATEGORIES=	games net
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Batch downloader for (linux,mac,windows) games distributed by GOG.com
+WWW=		https://github.com/eddie3/gogrepo
 
 LICENSE=	GPLv3+
 

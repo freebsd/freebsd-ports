@@ -12,5 +12,3 @@ Fontconfig does the following:
       minimzing memory usage.
     * be used in concert with the X Render Extension and FreeType to implement
       high quality, anti-aliased and subpixel rendered text on a display.
-
-WWW: https://www.freedesktop.org/wiki/Software/fontconfig/

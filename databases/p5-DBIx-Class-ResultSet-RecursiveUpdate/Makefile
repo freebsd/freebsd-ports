@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Like update_or_create - but recursive
+WWW=		https://metacpan.org/release/DBIx-Class-ResultSet-RecursiveUpdate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

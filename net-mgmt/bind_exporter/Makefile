@@ -1,11 +1,12 @@
 PORTNAME=	bind_exporter
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt dns
 
 MAINTAINER=	matt@mattmoriarity.com
 COMMENT=	Prometheus exporter for BIND server statistics
+WWW=		https://github.com/prometheus-community/bind_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

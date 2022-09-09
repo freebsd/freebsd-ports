@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Subclass to emulate boundless DEC VT102 terminal
+WWW=		https://metacpan.org/release/Term-VT102-Boundless
 
 LICENSE=	ART10 GPLv1+ MIT
 LICENSE_COMB=	dual

@@ -1,5 +1,3 @@
 Encode::JP::Emoji - Emoji encodings and cross-mapping tables in pure Perl.
 
 This module provides encodings which support emoji picture characters.
-
-WWW: https://metacpan.org/release/Encode-JP-Emoji

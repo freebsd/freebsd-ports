@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Petanque static python bindings
+WWW=		https://github.com/quarkslab/arybo/tree/master/petanque
 
 LICENSE=	BSD3CLAUSE
 

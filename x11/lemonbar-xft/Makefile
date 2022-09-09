@@ -2,8 +2,9 @@ PORTNAME=	lemonbar-xft
 DISTVERSION=	g20201213
 CATEGORIES=	x11
 
-MAINTAINER=	DtxdF@riseup.net
+MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Fork of lemonbar with support for Xft (fontconfig typefaces)
+WWW=		https://gitlab.com/protesilaos/lemonbar-xft
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

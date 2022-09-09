@@ -5,6 +5,3 @@ if software behaves the same way as it did before introduced changes.
 
 pytest-regtest allows capturing selected output which then can be
 compared to the captured output from former runs.
-
-WWW: https://pypi.org/project/pytest-regtest/
-WWW: https://gitlab.com/uweschmitt/pytest-regtest

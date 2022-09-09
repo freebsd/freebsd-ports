@@ -5,6 +5,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Network performance benchmarking package
+WWW=		https://hewlettpackard.github.io/netperf/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	HewlettPackard

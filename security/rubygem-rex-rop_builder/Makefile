@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Ruby Exploitation(Rex) library for building ROP chains
+WWW=		https://github.com/rapid7/rex-rop_builder
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

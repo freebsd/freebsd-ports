@@ -24,5 +24,3 @@ implement given the base on which it is built. Implemented default features:
 - Various Wayland protocols
 - XWayland support as provided by wlroots (can be enabled in config.mk)
 - Zero flickering - Wayland users naturally expect "every frame is perfect"
-
-WWW: https://github.com/djpohly/dwl

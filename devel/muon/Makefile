@@ -7,6 +7,7 @@ DISTNAME=	b44e90f
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Build system compatible with meson
+WWW=		https://muon.build/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

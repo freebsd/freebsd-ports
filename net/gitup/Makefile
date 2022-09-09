@@ -8,6 +8,7 @@ PATCHFILES=	dfbe3f0f847cb09225b5d09c4a09d654356bab68.patch:-p1
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Minimalist, dependency-free program to clone/pull git repositories
+WWW=		https://github.com/johnmehr/gitup
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

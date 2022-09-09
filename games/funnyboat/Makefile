@@ -4,6 +4,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Side scrolling shooter game starring a steamboat on the sea
+WWW=		https://github.com/AMDmi3/funnyboat \
+		https://funnyboat.sourceforge.net/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi

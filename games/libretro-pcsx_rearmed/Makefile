@@ -3,8 +3,9 @@ PORTVERSION=	0.20220405
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of PCSX with ARM optimizations
+WWW=		https://github.com/libretro/pcsx_rearmed
 
 LICENSE=	GPLv2
 

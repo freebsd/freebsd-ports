@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rapid creation of command line applications
+WWW=		https://metacpan.org/release/App-Rad
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

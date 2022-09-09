@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Command-Line Tools ACR Command Module
+WWW=		https://pypi.org/project/azure-cli-acr/
 
 LICENSE=	MIT
 

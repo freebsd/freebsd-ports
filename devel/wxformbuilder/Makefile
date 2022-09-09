@@ -7,6 +7,7 @@ DISTNAME=	wxFormBuilder_v${DISTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG GUI Designer and Code Generator for wxWidgets
+WWW=		http://wxformbuilder.org/
 
 LICENSE=	GPLv2
 

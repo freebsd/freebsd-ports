@@ -2,8 +2,9 @@ PORTNAME=	libretro-fmsx
 PORTVERSION=	0.20220309
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of fMSX to the libretro API
+WWW=		https://github.com/libretro/fmsx-libretro
 
 LICENSE=	FMSX
 LICENSE_NAME=	FMSX

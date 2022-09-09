@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	vCard support library
+WWW=		https://www.linphone.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

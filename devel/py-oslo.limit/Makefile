@@ -1,11 +1,12 @@
 PORTNAME=	oslo.limit
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Limit enforcement library to assist with quota calculation
+WWW=		https://docs.openstack.org/oslo.limit/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

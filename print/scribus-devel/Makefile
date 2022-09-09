@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program (development version)
+WWW=		https://www.scribus.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -45,7 +46,7 @@ USE_GNOME=	libxml2
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES \
 		-DWANT_CPP17=YES \
-		-DCMAKE_COLOR_MAKEFILE:BOOL=ON 
+		-DCMAKE_COLOR_MAKEFILE:BOOL=ON
 
 OPTIONS_DEFINE=	DOCS
 

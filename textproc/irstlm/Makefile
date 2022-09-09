@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-5.80
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The IRST Language Modeling Toolkit
+WWW=		https://hlt-mt.fbk.eu/technologies/irstlm
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 

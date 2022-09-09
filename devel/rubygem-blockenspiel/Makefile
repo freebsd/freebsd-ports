@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library designed to make it easy to implement DSL blocks in Ruby
+WWW=		https://dazuma.github.io/blockenspiel/
 
 LICENSE=	BSD3CLAUSE
 

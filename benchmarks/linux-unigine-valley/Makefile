@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Unigine Valley benchmark (basic version for GNU/Linux)
+WWW=		https://benchmark.unigine.com/valley
 
 LICENSE=	Proprietary
 LICENSE_NAME=	Unigine "Basic" License

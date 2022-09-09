@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.mpcdf.mpg.de/bbramas/${PORTNAME}/repository/${DISTV
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library to use SIMD vectorization
+WWW=		https://gitlab.mpcdf.mpg.de/bbramas/inastemp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

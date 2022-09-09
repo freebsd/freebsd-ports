@@ -9,5 +9,3 @@ co-processes and JSON API’s.
 
 Multiple backends can be enabled in the configuration by using the launch
 option. Each backend can be configured separately.
-
-WWW: https://www.powerdns.com/auth.html

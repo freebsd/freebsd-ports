@@ -1,11 +1,12 @@
 PORTNAME=	mdurl
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Markdown URL utilities
+WWW=		https://github.com/executablebooks/mdurl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

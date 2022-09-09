@@ -7,6 +7,7 @@ DISTNAME=	vanessa_adt-${PORTVERSION}
 
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides ADTs (queues, dynamic arrays, and more)
+WWW=		https://horms.net/projects/vanessa/
 
 LIB_DEPENDS=	libvanessa_logger.so:devel/libvanessa_logger
 

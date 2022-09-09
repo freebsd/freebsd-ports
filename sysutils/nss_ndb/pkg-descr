@@ -16,7 +16,5 @@ To activate and use this you must (after installation):
    passwd: files ndb
    group:  files ndb
 
-WWW: https://github.com/ptrrkssn/nss_ndb
-
 - Peter Eriksson
 pen@lysator.liu.se

@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bit-accurate C port of Fasttracker's XM replayer
+WWW=		https://github.com/8bitbubsy/ft2play
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Provides database and form fields for pytz timezone objects for Django
+WWW=		https://github.com/mfogel/django-timezone-field
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

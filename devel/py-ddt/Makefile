@@ -1,11 +1,12 @@
 PORTNAME=	ddt
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Data-Driven Tests for Python Unittest
+WWW=		https://readthedocs.org/projects/ddt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for parsing, formatting, and validating intl phone numbers
+WWW=		https://github.com/daviddrysdale/python-phonenumbers
 
 LICENSE=	APACHE20
 

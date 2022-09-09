@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for measuring process memory
+WWW=		https://metacpan.org/release/Plack-Middleware-MemoryUsage
 
 RUN_DEPENDS=	\
 	p5-B-Size2>=2.01:devel/p5-B-Size2 \

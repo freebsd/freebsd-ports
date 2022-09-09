@@ -6,6 +6,7 @@ MASTER_SITES=	XCONTRIB/games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cube puzzle for X11
+WWW=		http://www.tux.org/~bagleyd/puzzles.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake xorg

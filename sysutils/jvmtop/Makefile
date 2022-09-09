@@ -8,6 +8,7 @@ DISTFILES=	jvmtop-maven-repository-${BUILD}.tar.gz:source2
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Lightweight console application to monitor running jvms
+WWW=		https://github.com/patric-r/jvmtop
 
 LICENSE=	GPLv2
 

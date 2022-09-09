@@ -3,8 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0-rc1
 CATEGORIES=	audio
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Espeak dialplan application for Asterisk
+WWW=		https://zaf.github.io/Asterisk-eSpeak/
 
 LICENSE=	GPLv2
 

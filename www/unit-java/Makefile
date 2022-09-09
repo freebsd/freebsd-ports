@@ -31,7 +31,7 @@ DISTFILES=	unit-${UNIT_VERSION}.tar.gz:unit \
 	tomcat-util-scan-${TOMCAT_VERSION}.jar:utilscan
 EXTRACT_ONLY=	unit-${UNIT_VERSION}.tar.gz
 
-DISTINFO_FILE=	${.CURDIR}/distinfo	
+DISTINFO_FILE=	${.CURDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
 
 COMMENT=	Java module for NGINX Unit
@@ -64,7 +64,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
 
 USE_JAVA=	yes
 JAVA_VERSION=	8+
-#JAVA_VERSION=	8 11 12 13 14 15 
+#JAVA_VERSION=	8 11 12 13 14 15
 
 USE_RC_SUBR?=	# reset to empty
 

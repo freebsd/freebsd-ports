@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Authentiq OAuth2 Strategy for OmniAuth
+WWW=		https://github.com/AuthentiqID/omniauth-authentiq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

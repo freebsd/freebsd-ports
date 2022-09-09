@@ -6,5 +6,3 @@ session in the same state as you left it in (plus whatever happened
 while you were gone), and this even when you re-attach from a
 different location.  An optional Beginner's Mode completely hides
 this feature, so Quassel IRC can be used like a traditional client.
-
-WWW: https://www.quassel-irc.org/

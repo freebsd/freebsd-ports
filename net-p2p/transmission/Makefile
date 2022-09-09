@@ -5,6 +5,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Meta-port for Transmission BitTorrent client
+WWW=		https://www.transmissionbt.com/
 
 USES=		metaport
 

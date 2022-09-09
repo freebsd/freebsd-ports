@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for Sawfish window manager
+WWW=		https://packages.qa.debian.org/s/sawfish-themes.html
 
 LICENSE=	GPLv2
 

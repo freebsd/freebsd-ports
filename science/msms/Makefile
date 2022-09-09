@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${ARCH_MSMS_DIST}Linux2_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program to efficiently compute molecular surfaces
+WWW=		http://mgltools.scripps.edu/downloads #msms
 
 LICENSE=	MSMS_LICENSE
 LICENSE_NAME=	MSMS License

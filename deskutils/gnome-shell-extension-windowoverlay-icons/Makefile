@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Show application icons on the windows overview
+WWW=		https://github.com/sustmi/gnome-shell-extensions-sustmi
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

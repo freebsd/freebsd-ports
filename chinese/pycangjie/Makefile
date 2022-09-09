@@ -5,6 +5,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	Python wrapper to libcangjie
+WWW=		https://cangjians.github.io/projects/pycangjie/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

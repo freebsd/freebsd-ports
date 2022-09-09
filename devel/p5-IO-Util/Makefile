@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Selection of general-utility IO function
+WWW=		https://metacpan.org/release/IO-Util
 
 PORTSCOUT=	skipv:1.48
 

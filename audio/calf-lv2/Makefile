@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of LV2 plugins
+WWW=		https://calf-studio-gear.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -52,7 +53,7 @@ PORTDOCS=	*
 .if ${ARCH} == powerpc64le
 USES+=		compiler:gcc-c++11-lib
 .else
-USES+=		compiler:c++11-lang 
+USES+=		compiler:c++11-lang
 .endif
 
 .include <bsd.port.pre.mk>

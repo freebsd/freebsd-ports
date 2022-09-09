@@ -1,3 +1,4 @@
+WWW=		https://www.denx.de/wiki/U-Boot
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		cubox-hummingboard

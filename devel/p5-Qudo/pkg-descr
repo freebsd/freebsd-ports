@@ -7,5 +7,3 @@ corresponds to deal with DB as MySQL and SQLite.
 If you add Hook Point around job's working method, you can add it
 easily and many point of work milestone.  Qudo is consided about
 adding Hook Point Flexibility.
-
-WWW: https://metacpan.org/release/Qudo

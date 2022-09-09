@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Handles server headers required for Cross-Origin Resource Sharing
+WWW=		https://github.com/adamchainz/django-cors-headers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

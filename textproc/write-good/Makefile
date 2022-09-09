@@ -7,6 +7,7 @@ DISTFILES=	${_NPM_DISTFILES}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Naive linter for English prose
+WWW=		https://github.com/btford/write-good
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

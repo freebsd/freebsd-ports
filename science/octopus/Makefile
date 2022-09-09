@@ -5,6 +5,7 @@ MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific program aimed at the ab initio virtual experimentation
+WWW=		https://octopus-code.org/wiki/Main_Page
 
 LICENSE=	GPLv2
 

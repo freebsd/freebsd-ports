@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple parallel processing fork manager
+WWW=		https://metacpan.org/release/Parallel-ForkManager
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

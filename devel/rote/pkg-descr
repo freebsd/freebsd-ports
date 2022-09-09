@@ -4,5 +4,3 @@ screens will emulate the behavior of a VT102 terminal, interpreting escape
 sequences, control characters and such.  The library supports ncurses as
 well so that you may render the virtual screen to the real screen when you
 need to.
-
-WWW: http://rote.sourceforge.net/

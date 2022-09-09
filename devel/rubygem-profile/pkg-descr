@@ -6,5 +6,3 @@ possible bottlenecks.
 
 Profiling your program will slow down your execution time considerably, so
 activate it only when you need it. Don't confuse benchmarking with profiling.
-
-WWW: https://github.com/ruby/profile

@@ -10,5 +10,3 @@ profile to:
      memory allocation calls
   *  find temporary allocations, which are allocations that are directly
      followed by their deallocation
-
-WWW: https://github.com/KDE/heaptrack

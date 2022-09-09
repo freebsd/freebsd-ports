@@ -1,4 +1,4 @@
---- configure.orig	2022-05-05 14:21:18 UTC
+--- configure.orig	2022-06-23 15:21:01 UTC
 +++ configure
 @@ -5148,8 +5148,6 @@ case "${host_os}" in
       ;;
@@ -9,7 +9,15 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -22951,6 +22949,8 @@ printf %s "checking for getifaddrs() support... " >&6;
+@@ -21309,7 +21307,6 @@ then :
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+-printf "%s\n" "#define HAVE_SYSINFO 1" >>confdefs.h
+ 
+ else $as_nop
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+@@ -22951,6 +22948,8 @@ printf %s "checking for getifaddrs() support... " >&6;
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -18,7 +26,7 @@
   #include <ifaddrs.h>
  int
  main (void)
-@@ -32266,6 +32266,8 @@ for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
+@@ -32266,6 +32265,8 @@ fi
  
  for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
  
@@ -27,7 +35,7 @@
  if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no"; then
     pbxlibdir=""
     # if --with-LUA=DIR has been specified, use it.
-@@ -32280,14 +32282,14 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
+@@ -32280,14 +32281,14 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`printf "%s\n" "ac_cv_lib_lua${ver}""_luaL_newstate" | $as_tr_sh`
@@ -45,7 +53,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -32328,7 +32330,7 @@ fi
+@@ -32328,7 +32329,7 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -54,7 +62,7 @@
        # if --with-LUA=DIR has been specified, use it.
        if test "x${LUA_DIR}" != "x"; then
           LUA_INCLUDE="-I${LUA_DIR}/include"
-@@ -32338,8 +32340,8 @@ fi
+@@ -32338,8 +32339,8 @@ fi
           # check for the header
           ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
           CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
@@ -65,7 +73,7 @@
  if eval test \"x\$"$as_ac_Header"\" = x"yes"
  then :
    LUA_HEADER_FOUND=1
-@@ -32366,9 +32368,9 @@ fi
+@@ -32366,9 +32367,9 @@ fi
  
  	if test "x${PBX_LUA}" = "x1" ; then
  		if test x"${LUA_DIR}" = x; then

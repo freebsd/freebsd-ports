@@ -1,3 +1,1 @@
 Invoke callbacks on construction of entersub OPs for certain CVs.
-
-WWW: https://metacpan.org/release/B-Hooks-OP-Check-EntersubForCV

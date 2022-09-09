@@ -16,5 +16,3 @@ made since the late 90s. The main features compared to Avisynth are:
 * Support for video with format changes - Some video just can't stick to one
   format or frame size. VapourSynth can handle any kind of change
 * Compatible with a large number of already existing Avisynth plugins
-
-WWW: http://www.vapoursynth.com/

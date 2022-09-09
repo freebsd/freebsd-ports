@@ -3,5 +3,3 @@ the parsing and creation of filenames containing music metadata (artist, album,
 etc).
 
 It is used by mp3-archive-tools and mp3lint.
-
-WWW: https://erislabs.net/ianb/projects/libmp3-archive-perl/

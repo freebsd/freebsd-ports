@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	POE chat component for twitter.com
+WWW=		https://metacpan.org/release/POE-Component-Client-Twitter
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \

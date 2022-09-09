@@ -4,6 +4,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	V Programming Language
+WWW=		https://vlang.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

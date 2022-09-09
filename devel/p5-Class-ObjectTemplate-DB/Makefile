@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Optimized template builder base class with lookup capability
+WWW=		https://metacpan.org/release/Class-ObjectTemplate-DB
 
 RUN_DEPENDS=	p5-Class-ObjectTemplate>=0:devel/p5-Class-ObjectTemplate
 

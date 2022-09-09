@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library to help create and query binary XML blobs
+WWW=		https://github.com/hughsie/libxmlb
 
 LICENSE=	LGPL21
 

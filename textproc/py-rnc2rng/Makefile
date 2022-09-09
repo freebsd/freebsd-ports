@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	RELAX NG Compact to regular syntax conversion library
+WWW=		https://github.com/djc/rnc2rng
 
 LICENSE=	MIT
 

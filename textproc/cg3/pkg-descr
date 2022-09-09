@@ -13,5 +13,3 @@ into syntactic tree structures by specially designed Phrase Structure
 Grammars (PSG's), using syntactic functions, not words, as terminals.
 Other, hybrid combinations are, however, feasible. Thus, the French
 system uses PoS information from a probabilistic tagger.
-
-WWW: https://visl.sdu.dk/constraint_grammar.html

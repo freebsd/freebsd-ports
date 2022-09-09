@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Interface to GSL for the Objective Caml language
+WWW=		http://oandrieu.nerim.net/ocaml/gsl/
 
 LICENSE=	GPLv3
 

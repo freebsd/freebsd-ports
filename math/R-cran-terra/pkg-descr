@@ -8,5 +8,3 @@ large files is supported. See the manual and tutorials on
 <https://rspatial.org/terra/> to get started. 'terra' is very similar
 to the 'raster' package; but 'terra' can do more, is easier to use,
 and it is faster.
-
-WWW: https://cran.r-project.org/web/packages/terra/

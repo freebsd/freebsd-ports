@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MySQL DataStore implementation for GeoServer
+WWW=		http://geoserver.org/display/GEOSDOC/MySQL+DataStore
 
 LICENSE=	LGPL21
 

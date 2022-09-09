@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Yet another URL library
+WWW=		https://github.com/aio-libs/yarl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple GTK+ frontend for mpv
+WWW=		https://celluloid-player.github.io/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

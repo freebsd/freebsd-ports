@@ -7,5 +7,3 @@ that will improve your code by
 * minimizing the need for local variables and function
   definitions, and
 * making it easy to add steps anywhere in the sequence of operations.
-
-WWW: http://cran.r-project.org/web/magrittr/

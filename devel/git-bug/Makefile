@@ -1,11 +1,12 @@
 PORTNAME=	git-bug
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Distributed, offline-first bug tracker embedded in git, with bridges
+WWW=		https://github.com/MichaelMure/git-bug
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

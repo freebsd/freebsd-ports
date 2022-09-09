@@ -5,6 +5,7 @@ CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to support reading and writing of Rich Molecular Format files
+WWW=		https://integrativemodeling.org/rmf/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

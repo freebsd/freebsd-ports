@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Moo eXtension for File::ConfigDir
+WWW=		https://metacpan.org/release/MooX-File-ConfigDir
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

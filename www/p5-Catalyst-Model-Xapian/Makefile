@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst model for Search::Xapian
+WWW=		https://metacpan.org/release/Catalyst-Model-Xapian
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

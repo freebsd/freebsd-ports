@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Abstract types for logic programming in Ruby
+WWW=		https://github.com/dkubb/axiom-types
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

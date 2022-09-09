@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Support XML::Compile Related Regression Testing
+WWW=		https://metacpan.org/release/XML-Compile-Tester
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

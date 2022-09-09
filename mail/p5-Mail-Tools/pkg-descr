@@ -6,5 +6,3 @@ parsing e-mail addresses, parsing mailcap files, manipulating
 message header fields and bodies, sending messages via SMTP or the
 Unix mail and sendmail commands, reading mbox mail boxes, and
 message filtering through Perl subroutines.
-
-WWW: https://metacpan.org/release/MailTools

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool for creating configuration options for pop projects
+WWW=		https://gitlab.com/saltstack/pop/pop-config
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Support for forwarding requests in CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-Forward
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \

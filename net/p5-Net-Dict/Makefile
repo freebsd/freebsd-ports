@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple client API for the DICT protocol
+WWW=		https://metacpan.org/release/Net-Dict
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

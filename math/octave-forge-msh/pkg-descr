@@ -8,5 +8,3 @@ This is msh.
  Package for creating and managing triangular and tetrahedral meshes for
 Finite Element or Finite Volume PDE solvers. Uses a mesh data structure
 compatible with pdetool. Relies on gmsh for unstructured mesh generation.
-
-WWW: http://octave.sourceforge.net/

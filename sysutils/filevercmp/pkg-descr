@@ -12,5 +12,3 @@ This function compares strings S1 and S2:
     S2 are identical.
 
 It returns number >0 for S1 > S2, 0 for S1 == S2 and number <0 for S1 < S2.
-
-WWW: https://github.com/ekg/filevercmp

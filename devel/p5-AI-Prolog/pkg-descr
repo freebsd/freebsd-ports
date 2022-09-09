@@ -1,5 +1,3 @@
 AI::Prolog is merely a convenient wrapper for a pure Perl Prolog compiler.
 Regrettably, at the current time, this requires you to know Prolog. That will
 change in the future.
-
-WWW: https://metacpan.org/release/AI-Prolog

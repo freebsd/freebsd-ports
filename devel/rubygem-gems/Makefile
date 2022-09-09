@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper for the RubyGems.org API
+WWW=		https://github.com/rubygems/gems
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

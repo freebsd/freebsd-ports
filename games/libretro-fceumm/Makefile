@@ -2,8 +2,9 @@ PORTNAME=	libretro-fceumm
 PORTVERSION=	0.20220406
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial build of FCEU Ultra by CaH4e3
+WWW=		https://github.com/libretro/libretro-fceumm
 
 LICENSE=	GPLv2
 

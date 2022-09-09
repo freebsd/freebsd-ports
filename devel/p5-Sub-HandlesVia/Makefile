@@ -1,11 +1,12 @@
 PORTNAME=	Sub-HandlesVia
-PORTVERSION=	0.032
+PORTVERSION=	0.036
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative handles_via implementation
+WWW=		https://metacpan.org/dist/Sub-HandlesVia
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

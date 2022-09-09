@@ -1,12 +1,14 @@
 PORTNAME=	openfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.1
+DISTVERSION=	4.7.3
 PORTEPOCH=	1
 CATEGORIES=	net-im java
+
 MASTER_SITES=	LOCAL/fernape:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
+WWW=		https://www.igniterealtime.org/projects/openfire/index.jsp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -22,11 +24,11 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 
 USE_RC_SUBR=	${PORTNAME}
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes
 SUB_FILES+=	pkg-message
 
 INSTALL_WRKSRC=	${WRKSRC}/distribution/target/distribution-base/
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 VARLOG=		/var/log/${PORTNAME}
 VARDB=		/var/db/${PORTNAME}
 USERS=		${PORTNAME}

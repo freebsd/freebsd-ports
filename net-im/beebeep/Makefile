@@ -9,6 +9,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-code-r$(SVNREVISION)
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Secure office (Local-area-network) chat
+WWW=		https://www.beebeep.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

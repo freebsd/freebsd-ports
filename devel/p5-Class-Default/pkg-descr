@@ -8,5 +8,3 @@ that you want to be used in either a single use or a persistent
 environment.  In a CGI like environment, you want the simplicity of a
 static interface.  You can call Class-method> directly, without having
 to pass an instantiation around constantly.
-
-WWW: https://metacpan.org/release/Class-Default

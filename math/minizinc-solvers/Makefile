@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Metaport for MiniZinc solvers
+WWW=		https://www.minizinc.org/
 
 USES=		metaport
 

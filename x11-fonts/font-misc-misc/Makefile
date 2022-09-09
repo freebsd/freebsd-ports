@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Misc fonts
+WWW=		https://www.x.org/
 
 USES=		xorg xorg-cat:font
 USE_XORG=	fontutil

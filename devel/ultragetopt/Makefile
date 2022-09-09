@@ -6,6 +6,7 @@ MASTER_SITES=	http://kevinlocke.name/programs/
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Versatile and customizable implementation of getopt()
+WWW=		https://kevinlocke.name/programs/ultragetopt.php
 
 LICENSE=	MIT
 

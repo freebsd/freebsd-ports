@@ -5,6 +5,7 @@ MASTER_SITES=	https://packages.millistream.com/source/
 
 MAINTAINER=	henrik.holst@millistream.com
 COMMENT=	Millistream Data Feed API library
+WWW=		https://millistream.com
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tiny C library for managing SOM (Self-Organizing Maps) neural networks
+WWW=		https://github.com/ekg/fsom
 
 LICENSE=	GPLv3
 

@@ -1,11 +1,12 @@
 PORTNAME=	grok_exporter
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.0.0.RC4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Export Prometheus metrics from arbitrary unstructured log data
+WWW=		https://github.com/fstab/grok_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

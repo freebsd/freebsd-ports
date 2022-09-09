@@ -7,5 +7,3 @@ on a common static library.  The library contains all of the implementation
 details, and is used in the standalone tools whilst also enabling integration
 into other code bases directly.  The optimizer implementation resides in its own
 library, which depends on the core library.
-
-WWW: https://github.com/KhronosGroup/SPIRV-Tools

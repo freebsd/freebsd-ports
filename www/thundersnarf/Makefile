@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Web reporting and trending analysis for Thunder Cache Pro
+WWW=		http://www.thundercache.com.br
 
 OPTIONS_DEFINE=	APACHE PHP PGSQL DOCS
 OPTIONS_DEFAULT=APACHE PHP PGSQL

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMB/CIFS password generation utility for Python
+WWW=		https://barryp.org/software/py-smbpasswd
 
 LICENSE=	GPLv2
 

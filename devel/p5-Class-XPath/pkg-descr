@@ -7,5 +7,3 @@ NOTE: This module is not yet a complete XPath implementation. Over
 time I expect the subset of XPath supported to grow. See the SYNTAX
 documentation in the module POD for details on the current level of
 support.
-
-WWW: https://metacpan.org/release/Class-XPath

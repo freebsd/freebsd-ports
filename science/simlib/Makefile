@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.fit.vutbr.cz/~peringer/SIMLIB/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIMulation LIBrary for C++ programming language
+WWW=		https://www.fit.vutbr.cz/~peringer/SIMLIB/index.html.en
 
 LICENSE=	LGPL20
 

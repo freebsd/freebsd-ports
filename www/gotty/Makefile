@@ -1,11 +1,12 @@
 PORTNAME=	gotty
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www net
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command line tool that turns your CLI tools into web applications
+WWW=		https://github.com/yudai/gotty
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

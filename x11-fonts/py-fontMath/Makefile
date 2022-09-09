@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Set of objects for performing math operations on font data
+WWW=		https://github.com/typesupply/fontMath
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

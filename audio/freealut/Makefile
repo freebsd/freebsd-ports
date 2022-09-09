@@ -7,6 +7,7 @@ DISTNAME=	freealut_${PORTVERSION}.orig
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The OpenAL Utility Toolkit
+WWW=		http://connect.creativelabs.com/openal/default.aspx
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

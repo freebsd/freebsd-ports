@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Autobox methods to transform Arrays and Hashes
+WWW=		https://metacpan.org/release/autobox-Transform
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

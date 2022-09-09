@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Xtensor plugin to read/write images, audio files, numpy npz and HDF5
+WWW=		https://github.com/xtensor-stack/xtensor-io
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

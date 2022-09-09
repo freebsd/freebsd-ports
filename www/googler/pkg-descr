@@ -3,5 +3,3 @@ from the command-line. It shows the title, URL and abstract for each result,
 which can be directly opened in a browser from the terminal. Results are
 fetched in pages (with page navigation). Supports sequential searches
 in a single googler instance.
-
-WWW: https://github.com/jarun/googler

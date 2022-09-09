@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Is a tool that searches for credit card numbers (PAN) and track data
+WWW=		http://ccsrch.sourceforge.net/
 
 LICENSE=	GPLv2
 

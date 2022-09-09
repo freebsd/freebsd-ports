@@ -1,4 +1,2 @@
 CGI::Tiny provides a modern interface to write CGI scripts to
 dynamically respond to HTTP requests as defined in RFC 3875.
-
-WWW: https://metacpan.org/release/CGI-Tiny

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Pass extension that provides an easy flow for updating passwords
+WWW=		https://github.com/roddhjav/pass-update
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

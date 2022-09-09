@@ -13,5 +13,3 @@ Grandalf does only two not-so-simple things:
 * computing the nodes (x,y) coordinates (based on provided nodes dimensions, and
   a chosen layout)
 * routing the edges with lines or nurbs
-
-WWW: https://github.com/bdcht/grandalf

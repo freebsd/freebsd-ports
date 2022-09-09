@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Filtering extension to Django REST Framework
+WWW=		https://github.com/philipn/django-rest-framework-filters
 
 LICENSE=	BSD2CLAUSE
 

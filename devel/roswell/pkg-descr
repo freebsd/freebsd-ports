@@ -5,5 +5,3 @@ Common Lisp implementations really simple and easy.
 Roswell has now evolved into a full-stack environment for Common Lisp
 development, and has many features that makes it easy to test, share, and
 distribute your Lisp applications.
-
-WWW: https://roswell.github.io/

@@ -5,6 +5,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The PEAR::Net_DIME class implements DIME encoding
+WWW=		https://pear.php.net/package/Net_DIME
 
 USES=		pear
 

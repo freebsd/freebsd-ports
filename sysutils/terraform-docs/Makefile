@@ -1,11 +1,12 @@
 PORTNAME=	terraform-docs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils textproc
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Generate documentation from Terraform modules
+WWW=		https://github.com/terraform-docs/terraform-docs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

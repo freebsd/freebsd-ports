@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/MX4J%20Binary/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
+WWW=		http://mx4j.sourceforge.net
 
 USE_JAVA=	yes
 NO_BUILD=	yes

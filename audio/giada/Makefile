@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hardcore loop machine
+WWW=		https://www.giadamusic.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

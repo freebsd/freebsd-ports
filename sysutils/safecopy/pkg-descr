@@ -7,5 +7,3 @@ issue device resets and other helpful low level operations on a number of other
 device classes.
 The project also includes a device simulator which can be used to simulate bad
 media for testing and benchmarking safecopy as well as other data rescue tools.
-
-WWW: http://safecopy.sourceforge.net/

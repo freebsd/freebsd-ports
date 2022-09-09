@@ -9,6 +9,7 @@ DISTFILES=	mcstas-tools-perl-${PORTVERSION}-src.tar.gz \
 
 MAINTAINER=	erkn@fysik.dtu.dk
 COMMENT=	Perl based tools for the McStas neutron ray tracing package
+WWW=		https://www.mcstas.org
 
 LICENSE=	GPLv2
 

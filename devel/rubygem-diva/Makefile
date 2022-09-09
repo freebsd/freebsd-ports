@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Implementation of expression for handling things
+WWW=		https://rubygems.org/gems/diva
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

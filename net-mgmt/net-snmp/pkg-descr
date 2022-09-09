@@ -8,5 +8,3 @@ Various tools relating to the Simple Network Management Protocol including:
     tools to generate and handle SNMP traps
     a version of the Unix 'netstat' command using SNMP
     a graphical Perl/Tk/SNMP based mib browser
-
-WWW: http://net-snmp.sourceforge.net/

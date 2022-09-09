@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate convex hulls using Graham's scan (n*log(n))
+WWW=		https://metacpan.org/release/Math-ConvexHull
 
 USES=		perl5
 USE_PERL5=	configure

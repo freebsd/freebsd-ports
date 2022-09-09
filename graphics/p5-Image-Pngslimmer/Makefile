@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Slims (dynamically created) PNGs
+WWW=		https://metacpan.org/release/Image-Pngslimmer
 
 USES=		perl5
 USE_PERL5=	configure

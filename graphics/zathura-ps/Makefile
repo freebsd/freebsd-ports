@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript support for Zathura PDF viewer
+WWW=		https://pwmt.org/projects/zathura-ps/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ch-werner.de/sqliteodbc/
 
 MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	ODBC driver for SQLite 3
+WWW=		http://www.ch-werner.de/sqliteodbc/
 
 LICENSE=	SQLITEODBC
 LICENSE_NAME=	sqliteodbc own licensing terms (BSD style)

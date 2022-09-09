@@ -7,5 +7,3 @@ alike, fit for many different circumstances.
 
 This package does not contain anything by itself - it is a "meta-port" that
 depends on other wireguard packages.
-
-WWW: https://www.wireguard.com

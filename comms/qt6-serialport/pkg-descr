@@ -7,5 +7,3 @@ The following items are not supported by this module:
   *  Text mode.
   *  Configuring timeouts and delays while reading or writing.
   *  Pinout signal change notification.
-
-WWW: https://qt.io

@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Program for assembling shotgun DNA sequence data
+WWW=		http://www.phrap.org/phredphrapconsed.html
 
 # Converted from RESTRICTED
 LICENSE=	PHRAP

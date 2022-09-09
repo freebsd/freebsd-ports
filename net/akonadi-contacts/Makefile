@@ -13,7 +13,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libqgpgme.so:security/gpgme-qt5
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 \
-		qt:5 tar:xz
+		qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		dbusaddons i18n iconthemes itemmodels jobwidgets kcmutils kio \
 		prison service solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
@@ -22,6 +22,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 USE_KDE+=	akonadi akonadimime calendarcore contacts grantleetheme libkleo mime
 USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

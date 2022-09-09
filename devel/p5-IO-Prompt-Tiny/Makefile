@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Prompt for user input with a default option
+WWW=		https://metacpan.org/release/IO-Prompt-Tiny
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

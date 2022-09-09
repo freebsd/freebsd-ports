@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for processing named parameter lists for method calls
+WWW=		https://metacpan.org/release/Class-ParmList
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

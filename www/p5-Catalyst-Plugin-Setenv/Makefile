@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set up the environment from Catalyst's config file
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Setenv
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

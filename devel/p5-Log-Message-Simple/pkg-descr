@@ -1,4 +1,2 @@
 This module provides standardized logging facilities using the
 Log::Message module.
-
-WWW: https://metacpan.org/release/Log-Message-Simple

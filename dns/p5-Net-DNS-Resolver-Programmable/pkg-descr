@@ -4,5 +4,3 @@ instead of querying the real DNS.  A set of static DNS
 records may be supplied, or arbitrary code may be specified
 as a means for retrieving DNS records, or even generating
 them on the fly.
-
-WWW: https://metacpan.org/release/Net-DNS-Resolver-Programmable

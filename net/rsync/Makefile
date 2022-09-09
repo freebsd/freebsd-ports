@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
+WWW=		https://rsync.samba.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Simple software midi player and core softsynth library
+WWW=		https://www.mindwerks.net/projects/wildmidi/
 
 # player: GPLv3, library: LGPL3
 LICENSE=	LGPL3

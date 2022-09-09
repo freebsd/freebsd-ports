@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sprockets Rails integration
+WWW=		https://github.com/rails/sprockets-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

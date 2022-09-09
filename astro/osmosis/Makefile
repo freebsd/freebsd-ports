@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/openstreetmap/osmosis/releases/download/${PORTV
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line Java app for processing OpenStreetMap data
+WWW=		https://wiki.openstreetmap.org/wiki/Osmosis
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/copying.txt

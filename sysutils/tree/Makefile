@@ -6,6 +6,7 @@ MASTER_SITES=	http://mama.indstate.edu/users/ice/tree/src/ \
 
 MAINTAINER=	gb@unistra.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
+WWW=		https://mama.indstate.edu/users/ice/tree/
 
 LICENSE=	GPLv2+
 

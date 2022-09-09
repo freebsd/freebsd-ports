@@ -1,4 +1,4 @@
---- chrome/common/pref_names.h.orig	2022-07-22 17:30:31 UTC
+--- chrome/common/pref_names.h.orig	2022-08-31 12:19:35 UTC
 +++ chrome/common/pref_names.h
 @@ -382,7 +382,7 @@ extern const char kUseAshProxy[];
  #endif  //  BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -27,7 +27,7 @@
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -707,7 +707,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -706,7 +706,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -36,7 +36,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -846,7 +846,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -840,7 +840,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -45,7 +45,7 @@
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -1111,7 +1111,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1109,7 +1109,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
  extern const char kSandboxExternalProtocolBlocked[];
  

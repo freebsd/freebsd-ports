@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Static content management system written in Python
+WWW=		https://www.getlektor.com/
 
 LICENSE=	BSD3CLAUSE
 

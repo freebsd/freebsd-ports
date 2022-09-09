@@ -6,5 +6,3 @@ sfm is a simple file manager for Unix-like systems.  It features:
   - open files by extension
   - bookmarks, filters
   - vim-like key bindings
-
-WWW: https://git.afify.dev/sfm/

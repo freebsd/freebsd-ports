@@ -9,6 +9,7 @@ DISTNAME=	Net--RabbitMQ-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module to interact with RabbitMQ over AMQP using librabbitmq
+WWW=		https://metacpan.org/release/Net--RabbitMQ
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/rabbitmqctl:net/rabbitmq
 RUN_DEPENDS=	${LOCALBASE}/sbin/rabbitmqctl:net/rabbitmq

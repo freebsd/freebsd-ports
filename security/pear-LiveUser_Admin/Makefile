@@ -5,6 +5,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
+WWW=		https://pear.php.net/package/LiveUser_Admin
 
 BUILD_DEPENDS=	${PEARDIR}/LiveUser.php:security/pear-LiveUser@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/LiveUser.php:security/pear-LiveUser@${PHP_FLAVOR}

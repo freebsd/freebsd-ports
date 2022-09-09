@@ -5,6 +5,7 @@ CATEGORIES=	devel science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Blitz++ Multi-Dimensional Array Library for C++
+WWW=		https://github.com/blitzpp/blitz
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

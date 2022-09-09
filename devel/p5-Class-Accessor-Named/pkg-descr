@@ -8,5 +8,3 @@ which uses Hook::LexWrap and Sub::Name to talk your accessors into
 identifying themselves. While it shouldn't add much additional runtime
 overhead (as it acts only Class::Accessor's generator functions), it
 has not been designed for production deployment.
-
-WWW: https://metacpan.org/release/Class-Accessor-Named

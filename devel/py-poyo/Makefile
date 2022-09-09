@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Lightweight YAML Parser
+WWW=		https://pypi.org/project/poyo/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

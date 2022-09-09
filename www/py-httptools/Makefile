@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of framework independent HTTP protocol utils
+WWW=		https://github.com/MagicStack/httptools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

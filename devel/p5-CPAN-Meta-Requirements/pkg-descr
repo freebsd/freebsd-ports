@@ -5,5 +5,3 @@ simplest representation.
 
 Logically impossible constraints will be identified immediately by thrown
 exceptions.
-
-WWW: https://metacpan.org/release/CPAN-Meta-Requirements

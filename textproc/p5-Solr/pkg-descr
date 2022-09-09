@@ -1,4 +1,2 @@
 This module provides a set of methods for adding (updating) and deleting entries
 in an existing solr server.
-
-WWW: https://metacpan.org/release/Solr

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	uros@gruber.si
 COMMENT=	Python NTP library
+WWW=		https://pypi.org/project/ntplib/
 
 LICENSE=	MIT
 

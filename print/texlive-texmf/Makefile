@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
+WWW=		https://tug.org/texlive/
 
 USES=		cpe python:run shebangfix tar:xz
 CPE_VENDOR=	tug
@@ -325,7 +326,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/*/*.py
 	@${REINPLACE_CMD} -i '' -E -e '/ec\.tex/d' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pinyin.tex \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex 
-
+		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	C library implementing the Cangjie input method
+WWW=		https://github.com/Cangjians/libcangjie
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

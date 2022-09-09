@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python package for statistical models and design matrices
+WWW=		https://github.com/pydata/patsy
 
 LICENSE=	BSD2CLAUSE PSFL
 LICENSE_COMB=	multi

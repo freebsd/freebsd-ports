@@ -1,11 +1,12 @@
 PORTNAME=	debugpy
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the Debug Adapter Protocol for Python
+WWW=		https://github.com/microsoft/debugpy
 
 LICENSE=	EPL MIT
 LICENSE_COMB=	dual

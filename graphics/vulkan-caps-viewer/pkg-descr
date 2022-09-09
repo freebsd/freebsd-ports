@@ -4,5 +4,3 @@ supporting the new Vulkan API by Khronos.
 The hardware reports can be submitted to a public online database that
 allows comparing different devices, browsing available features,
 extensions, formats, etc.
-
-WWW: https://vulkan.gpuinfo.org/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library that versions your Python projects
+WWW=		https://pypi.org/project/incremental/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

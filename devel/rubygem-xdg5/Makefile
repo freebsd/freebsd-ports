@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XDG Base Directory Standard Library for Ruby
+WWW=		https://github.com/bkuhlmann/xdg
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.adoc

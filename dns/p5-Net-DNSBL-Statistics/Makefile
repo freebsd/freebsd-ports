@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gather DNSBL Statistics
+WWW=		https://metacpan.org/release/Net-DNSBL-Statistics
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

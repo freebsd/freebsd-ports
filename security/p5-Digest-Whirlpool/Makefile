@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Whirlpool hash algorithm
+WWW=		https://metacpan.org/release/Digest-Whirlpool
 
 LICENSE=	GPLv2
 

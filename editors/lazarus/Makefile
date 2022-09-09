@@ -10,6 +10,7 @@ DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
+WWW=		https://www.lazarus-ide.org/
 
 CONFLICTS?=	${PORTNAME}-qt5
 

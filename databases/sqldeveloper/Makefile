@@ -8,6 +8,7 @@ DIST_SUBDIR=	oracle
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Graphical tool for database development
+WWW=		https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html
 
 # https://www.oracle.com/downloads/licenses/sqldev-license.html
 LICENSE_NAME=	OTN

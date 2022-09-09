@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implement arbitrary string interpolation semantics for Perl
+WWW=		https://metacpan.org/release/Interpolation
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser

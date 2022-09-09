@@ -4,5 +4,3 @@ Directory monitoring is made easy with
 
     * A cross-platform API.
     * A shell tool to run commands in response to directory changes.
-
-WWW: https://github.com/gorakhargosh/watchdog

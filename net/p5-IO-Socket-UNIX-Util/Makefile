@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unix domain socket utilities
+WWW=		https://metacpan.org/release/IO-Socket-UNIX-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

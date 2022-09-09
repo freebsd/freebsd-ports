@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	shadowbq@gmail.com
 COMMENT=	Network sniffer that logs DNS replies for use in passive DNS setups
+WWW=		https://github.com/gamelinux/passivedns
 
 LICENSE=	GPLv2
 

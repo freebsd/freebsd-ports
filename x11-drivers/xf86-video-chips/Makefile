@@ -5,6 +5,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org chips display driver
+WWW=		https://www.x.org/
 
 USES=		xorg-cat:driver
 

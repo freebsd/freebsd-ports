@@ -3,5 +3,3 @@ fixed-size bit-vectors, arrays and uninterpreted functions. It supports the
 SMT-LIB logics BV, QF_ABV, QF_AUFBV, QF_BV and QF_UFBV. Boolector provides a
 rich C and Python API and supports incremental solving, both with the SMT-LIB
 commands push and pop, and solving under assumptions.
-
-WWW: https://boolector.github.io/

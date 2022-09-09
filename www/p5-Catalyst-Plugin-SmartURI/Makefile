@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Configurable URIs for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Plugin-SmartURI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

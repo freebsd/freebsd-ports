@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Simple but flexible static site generator
+WWW=		https://nanoc.ws/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

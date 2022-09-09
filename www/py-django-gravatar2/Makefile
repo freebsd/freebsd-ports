@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Lightweight app for interacting with gravatars
+WWW=		https://github.com/twaddington/django-gravatar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

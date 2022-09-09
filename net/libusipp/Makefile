@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unix socket interface for C++ raw IP/IP6/UDP/TCP, layer 2 framework
+WWW=		https://github.com/stealth/libusipp
 
 LICENSE=	GPLv3+
 

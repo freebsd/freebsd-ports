@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compresssor and decompressor for HTTP 2.0 HPACK
+WWW=		https://github.com/socketry/protocol-hpack
 
 LICENSE=	MIT
 

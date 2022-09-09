@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Client for the Bugzilla web services API
+WWW=		https://metacpan.org/release/BZ-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

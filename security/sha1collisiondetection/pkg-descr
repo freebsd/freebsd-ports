@@ -12,5 +12,3 @@ documented at https://shattered.io/. The second program,
 sha1dcsum_partialcoll, will detect and warn for files that were
 generated with a cryptanalytic collision attack against reduced-
 round SHA-1 (of which there are a few examples so far).
-
-WWW: https://github.com/cr-marcstevens/sha1collisiondetection

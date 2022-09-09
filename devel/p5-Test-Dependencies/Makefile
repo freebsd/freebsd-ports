@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ensure that your Makefile.PL specifies all module dependencies
+WWW=		https://metacpan.org/release/Test-Dependencies
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

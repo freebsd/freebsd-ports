@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Collection of tests and utilities for VAAPI
+WWW=		https://github.com/intel/libva-utils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

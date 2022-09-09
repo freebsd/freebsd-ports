@@ -6,6 +6,7 @@ MASTER_SITES=	https://zimpl.zib.de/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language to translate the LP models into .lp or .mps
+WWW=		https://zimpl.zib.de
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

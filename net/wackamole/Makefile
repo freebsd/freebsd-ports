@@ -7,6 +7,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/net/wackamole/ \
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Peer-to-peer high availability cluster
+WWW=		https://BSDforge.com/projects/net/wackamole/
 
 # same as the net/spread license really
 LICENSE=	CNDS_OPEN-SOURCE_LICENSE

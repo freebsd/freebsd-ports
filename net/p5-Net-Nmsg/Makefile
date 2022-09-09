@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Perl bindings to libnmsg
+WWW=		https://tools.netsa.cert.org/confluence/display/tt/Net-Nmsg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

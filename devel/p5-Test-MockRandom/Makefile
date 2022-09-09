@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Replaces random number generation with non-random number generation
+WWW=		https://metacpan.org/release/Test-MockRandom
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin for observing Resources
+WWW=		https://github.com/datamapper/dm-observer
 
 LICENSE=	MIT
 

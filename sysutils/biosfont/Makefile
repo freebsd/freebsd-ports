@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
+WWW=		https://github.com/rene0/biosfont
 
 LICENSE=	BSD2CLAUSE
 

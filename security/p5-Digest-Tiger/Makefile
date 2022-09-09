@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Tiger hash algorithm
+WWW=		https://metacpan.org/release/Digest-Tiger
 
 USES=		perl5
 USE_PERL5=	configure

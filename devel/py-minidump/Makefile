@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Python library to parse Windows minidump file format
+WWW=		https://github.com/skelsec/minidump
 
 LICENSE=	MIT
 

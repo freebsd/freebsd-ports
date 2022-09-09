@@ -4,8 +4,9 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@riseup.net
+MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Instant coding answers via the command line
+WWW=		https://github.com/gleitz/howdoi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

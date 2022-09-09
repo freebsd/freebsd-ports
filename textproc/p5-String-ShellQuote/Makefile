@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for quote strings for passing through the shell
+WWW=		https://metacpan.org/release/String-ShellQuote
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

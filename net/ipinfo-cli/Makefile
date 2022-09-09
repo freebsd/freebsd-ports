@@ -1,11 +1,12 @@
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
-DISTVERSION=	2.8.1
-PORTREVISION=	3
+DISTVERSION=	2.9.0
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Official Command Line Interface for the IPinfo API
+WWW=		https://github.com/ipinfo/cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,7 +25,7 @@ GH_TUPLE=	\
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		ipinfo:go:v2.7.0:ipinfo_go_v2/vendor/github.com/ipinfo/go/v2 \
+		ipinfo:go:v2.8.0:ipinfo_go_v2/vendor/github.com/ipinfo/go/v2 \
 		jszwec:csvutil:v1.4.0:jszwec_csvutil/vendor/github.com/jszwec/csvutil \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \

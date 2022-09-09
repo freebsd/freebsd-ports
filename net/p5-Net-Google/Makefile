@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple OOP-ish interface to the Google SOAP API
+WWW=		https://metacpan.org/release/Net-Google
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite

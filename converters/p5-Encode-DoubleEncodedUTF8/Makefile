@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fix double encoded UTF-8 bytes to the correct ones
+WWW=		https://metacpan.org/release/Encode-DoubleEncodedUTF8
 
 USES=		perl5
 USE_PERL5=	configure

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby FFI library
+WWW=		https://github.com/ffi/ffi-compiler
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

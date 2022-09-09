@@ -19,5 +19,3 @@ my $uri = URI->new('HTTPS://www.Example.com:443/../test/../foo/index.html');
 
 say normalize_uri($uri);       #> https://www.example.com/foo/index.html
 say remove_dot_segments($uri); #> HTTPS://www.Example.com:443/foo/index.html
-
-WWW: https://metacpan.org/pod/URI::Normalize

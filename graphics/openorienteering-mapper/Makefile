@@ -6,6 +6,7 @@ CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
 COMMENT=	Map drawing program from OpenOrienteering
+WWW=		https://www.openorienteering.org/apps/mapper/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

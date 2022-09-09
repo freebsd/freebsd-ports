@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	OpenCC shared extension for php
+WWW=		https://github.com/NauxLiu/opencc4php
 
 LICENSE=	PHP301
 

@@ -4,6 +4,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese input tables for IBus
+WWW=		https://github.com/definite/ibus-table-chinese
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

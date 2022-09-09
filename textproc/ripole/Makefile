@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.pldaniels.com/ripole/
 
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	Small program designed to pull attachments out of OLE2 documents
+WWW=		https://www.pldaniels.com/ripole/
 
 ALL_TARGET=	default
 

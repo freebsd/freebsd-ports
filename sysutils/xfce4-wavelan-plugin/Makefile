@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-wavelan-plugin
 
 LICENSE=	BSD3CLAUSE
 

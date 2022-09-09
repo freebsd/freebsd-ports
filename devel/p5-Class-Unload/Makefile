@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for unloading classes
+WWW=		https://metacpan.org/release/Class-Unload
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Highly scalable, fault-tolerant distributed file system
+WWW=		https://leo-project.net/
 
 LICENSE=	APACHE20
 

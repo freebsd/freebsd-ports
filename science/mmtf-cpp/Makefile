@@ -6,6 +6,7 @@ CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ MMTF format API, decoder and encoder, for molecular structures
+WWW=		https://mmtf.rcsb.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

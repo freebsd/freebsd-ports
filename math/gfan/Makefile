@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Software for computing Groebner fans and tropical varieties
+WWW=		https://users-math.au.dk/jensen/software/gfan/gfan.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

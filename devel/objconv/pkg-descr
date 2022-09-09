@@ -5,5 +5,3 @@ function libraries across platforms.  Can dump object files and
 executable files.  Also includes a very good disassembler supporting the
 SSE4, AVX, AVX2, AVX512, FMA3, FMA4, XOP and Knights Corner instruction
 sets.
-
-WWW: https://www.agner.org/optimize

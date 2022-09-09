@@ -1,10 +1,10 @@
 PORTNAME=	opencv
-DISTVERSION=	4.5.5
-PORTREVISION=	9
+DISTVERSION=	4.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
+WWW=		https://www.opencv.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

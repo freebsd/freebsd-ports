@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to integrate your apps with Facebook
+WWW=		https://metacpan.org/release/Facebook-Graph
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

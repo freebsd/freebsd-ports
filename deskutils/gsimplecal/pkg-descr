@@ -10,5 +10,3 @@ integrate anywhere. No need to write some wrapper scripts or whatever.
 Also, you can configure it to not only show the calendar, but also display
 multiple clocks for different world timezones. Read the manual page for the
 details (there is info about keyboard controls as well!).
-
-WWW: https://github.com/dmedvinsky/gsimplecal

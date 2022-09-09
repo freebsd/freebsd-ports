@@ -3,5 +3,3 @@ handling automated tests in C++. The focus lies on usability and extendability.
 
 Several output formats, including simple text output, compiler-like output and
 HTML, are supported and new ones are easily added.
-
-WWW: http://cpptest.sourceforge.net/

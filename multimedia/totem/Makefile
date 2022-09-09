@@ -10,6 +10,7 @@ PATCHFILES+=	61e3a957cb73.patch:-p1 # https://gitlab.gnome.org/GNOME/totem/-/mer
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop
+WWW=		https://www.gnome.org/projects/totem/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

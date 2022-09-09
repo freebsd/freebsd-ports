@@ -8,6 +8,7 @@ MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Free timetabling software
+WWW=		https://lalescu.ro/liviu/fet/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

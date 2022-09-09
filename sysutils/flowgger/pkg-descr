@@ -17,5 +17,3 @@ as well as multiple input formats: JSON (GELF), LTSV, Cap'n Proto and
 RFC5424.  Normalized messages can be sent to Kafka, Graylog, to
 downstream Flowgger servers, or to other log collectors for further
 processing.
-
-WWW: https://github.com/awslabs/flowgger

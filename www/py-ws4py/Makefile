@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	WebSocket package for Python
+WWW=		https://github.com/Lawouach/WebSocket-for-Python
 
 LICENSE=	BSD3CLAUSE
 

@@ -19,5 +19,3 @@ When reading query parameters from $c->req you can now access all the
 items starting with "foo" as one entity using $c->req->param('foo');.
 Each subitem, denoted by either the dot or the square brackets, will be
 returned as a further deeper hashref.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Params-Nested

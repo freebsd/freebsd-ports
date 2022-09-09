@@ -1,10 +1,10 @@
 PORTNAME=	yacreader
-DISTVERSION=	9.8.2
-PORTREVISION=	12
+DISTVERSION=	9.9.1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Yet another comic reader
+WWW=		https://www.yacreader.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
@@ -14,7 +14,8 @@ LIB_DEPENDS=	libunarr.so:archivers/unarr
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:5
 USE_GITHUB=	yes
 USE_QT=		qmake_build buildtools_build core concurrent_build declarative \
-		gui multimedia network sql sql-sqlite3_run svg widgets
+		gui multimedia network quickcontrols2 sql sql-sqlite3_run svg \
+		testlib_build widgets
 
 OPTIONS_DEFINE=	OPENGL POPPLER
 OPTIONS_DEFAULT=OPENGL POPPLER

@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Library used to query system info and statistics
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

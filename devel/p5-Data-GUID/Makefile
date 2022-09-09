@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate globally unique identifiers
+WWW=		https://metacpan.org/release/Data-GUID
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

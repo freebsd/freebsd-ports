@@ -6,6 +6,7 @@ MASTER_SITES=	http://www-unix.mcs.anl.gov/AR/otter/dist33/
 
 MAINTAINER=	wollman@FreeBSD.org
 COMMENT=	Theorem prover and finite model searcher
+WWW=		https://www-unix.mcs.anl.gov/AR/otter/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/Legal

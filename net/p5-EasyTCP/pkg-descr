@@ -7,6 +7,4 @@ Net::EasyTCP - Easily create TCP/IP clients and servers
 * Transparent encryption
 * Transparent compression
 
-WWW: https://metacpan.org/release/EasyTCP
-
 Seamus Venasse <svenasse@polaris.ca>

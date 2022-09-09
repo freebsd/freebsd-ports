@@ -1,4 +1,2 @@
 This module formats and parses DateTime::Duration objects as well as other
 durations representations.
-
-WWW: https://metacpan.org/release/DateTime-Format-Duration

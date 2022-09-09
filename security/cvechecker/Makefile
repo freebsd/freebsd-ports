@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Check CVE database for vulnerabilities affecting installed packages
+WWW=		https://github.com/sjvermeu/cvechecker/wiki
 
 LICENSE=	GPLv3
 

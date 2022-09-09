@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract puzzle game
+WWW=		http://www.level7.org.uk/chroma/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

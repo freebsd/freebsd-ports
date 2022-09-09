@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.linklint.org/download/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl script that checks links on web sites
+WWW=		http://www.linklint.org/
 
 USES=		shebangfix perl5
 USE_PERL5=	run

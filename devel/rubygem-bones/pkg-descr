@@ -3,5 +3,3 @@ The skeleton contains some starter code and a collection of rake tasks to ease
 the management and deployment of your source code. Several Mr Bones plugins are
 available for creating git repositories, creating GitHub projects, running
 various test suites and source code analysis tools.
-
-WWW: https://github.com/TwP/bones

@@ -8,5 +8,3 @@ all of the changes made will be saved to the file, or none will.
 It also offers functionality such as backup creation, automatic
 field splitting per-line, automatic chomping/unchomping, and aborting
 edits partially through without affecting the original file.
-
-WWW: https://metacpan.org/release/File-Inplace

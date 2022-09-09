@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web-based interface for system administration for Unix
+WWW=		https://www.webmin.com/
 
 LICENSE=	BSD3CLAUSE
 

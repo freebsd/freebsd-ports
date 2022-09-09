@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Virtual browser that retries errors
+WWW=		https://metacpan.org/release/LWP-UserAgent-Determined
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

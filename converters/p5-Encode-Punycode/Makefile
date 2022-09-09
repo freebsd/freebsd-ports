@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Encode plugin for Punycode
+WWW=		https://metacpan.org/release/Encode-Punycode
 
 LICENSE=	GPLv1
 

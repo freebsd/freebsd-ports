@@ -1,4 +1,2 @@
 This port provides simple finite state machines with integrated Celluloid
 timeout support.
-
-WWW: https://github.com/celluloid/celluloid-fsm

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of roles for terminal-based application
+WWW=		https://metacpan.org/release/Term-App-Roles
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

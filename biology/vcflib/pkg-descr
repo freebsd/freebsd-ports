@@ -17,5 +17,3 @@ The API itself provides a quick and extremely permissive method to read and
 write VCF files. Extensions and applications of the library provided in the
 included utilities (*.cpp) comprise the vast bulk of the library's utility for
 most users.
-
-WWW: https://github.com/vcflib/vcflib

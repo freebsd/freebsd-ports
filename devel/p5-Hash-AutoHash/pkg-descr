@@ -6,5 +6,3 @@ main difference between this module and its forebears is that it
 supports tied hashes, in addition to regular hashes. This allows a
 modular division of labor: this class is generic and treats all hashes
 the same; any special semantics come from the tied hash.
-
-WWW: https://metacpan.org/release/Hash-AutoHash

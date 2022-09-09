@@ -6,6 +6,7 @@ MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Caching full resolver implementation
+WWW=		https://www.knot-resolver.cz/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

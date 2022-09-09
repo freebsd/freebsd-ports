@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perlish interface to SQL databases
+WWW=		https://metacpan.org/release/DBIx-Perlish
 
 LICENSE=	BSD2CLAUSE
 

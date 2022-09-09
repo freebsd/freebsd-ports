@@ -1,9 +1,10 @@
 PORTNAME=	cpr
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.2
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ Requests: Curl for People
+WWW=		https://github.com/libcpr/cpr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

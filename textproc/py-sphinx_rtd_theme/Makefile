@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Mobile-friendly py-sphinx theme
+WWW=		https://github.com/readthedocs/sphinx_rtd_theme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,5 +6,3 @@ range as double width. Now you will be happy with UTF8 terminal and
 Big5 fonts :)
 
 This port fixes the zh_TW.UTF-8 locale for wcwidth(3) and wcswidth(3).
-
-WWW: http://www.csie.ntu.edu.tw/~r92030/project/big5width/

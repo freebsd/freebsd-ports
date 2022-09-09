@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Dump strings of characters or bytes for printing and debugging
+WWW=		https://metacpan.org/release/String-Dump
 
 BUILD_DEPENDS=	p5-Getopt-Lucid>=0:textproc/p5-Getopt-Lucid
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Communication interface library for usbmuxd
+WWW=		https://www.libimobiledevice.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

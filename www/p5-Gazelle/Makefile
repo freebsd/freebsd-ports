@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Preforked Plack Handler for performance freaks
+WWW=		https://metacpan.org/release/Gazelle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Set of flexible objects for representing UFO data
+WWW=		https://github.com/typesupply/defcon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

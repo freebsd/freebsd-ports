@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a method to get the resolution for a X11 screen
+WWW=		https://metacpan.org/release/X11-Resolution
 
 RUN_DEPENDS=	p5-X11-Protocol>=0:x11/p5-X11-Protocol
 

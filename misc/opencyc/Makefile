@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General knowledge base and commonsense reasoning engine
+WWW=		http://www.opencyc.org
 
 USES=		linux
 USE_LINUX=	xorglibs

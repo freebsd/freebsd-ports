@@ -7,6 +7,7 @@ DISTNAME=	arabic_reshaper-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reconstruct Arabic sentences to be used in applications that do not support Arabic
+WWW=		https://github.com/mpcabd/python-arabic-reshaper
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

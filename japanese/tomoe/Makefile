@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Tegaki Online MOji-ninshiki Engine
+WWW=		http://tomoe.sourceforge.jp/
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Drop in replacement for the "dialog" or "cdialog" programs
+WWW=		http://xdialog.free.fr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

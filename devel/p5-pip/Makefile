@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl Installation Program
+WWW=		https://metacpan.org/release/pip
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

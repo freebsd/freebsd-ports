@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	Resource library for Python developers to create daemon processes
+WWW=		https://pypi.org/project/daemons/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

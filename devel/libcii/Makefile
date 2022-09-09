@@ -6,6 +6,7 @@ DISTNAME=	cii11
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library from "C Interfaces and Implementations" by David Hanson
+WWW=		http://www.cs.princeton.edu/software/cii/
 
 NO_WRKSUBDIR=	yes
 

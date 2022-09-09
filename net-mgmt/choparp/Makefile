@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
+WWW=		https://github.com/quinot/choparp
 
 LICENSE=	BSD3CLAUSE
 

@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DataSource driver using CSV files
+WWW=		https://pear.php.net/package/Structures_DataGrid_DataSource_CSV
 
 LICENSE=	BSD2CLAUSE
 

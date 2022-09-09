@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.teuniz.net/RS-232/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple serial library
+WWW=		https://www.teuniz.net/RS-232/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt

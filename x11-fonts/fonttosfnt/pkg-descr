@@ -1,4 +1,2 @@
 This package contains fonttosfnt, an application used for wrapping a bitmap
 font in a sfnt (TrueType) wrapper.
-
-WWW: https://www.x.org/

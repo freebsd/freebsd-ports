@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Readline library based on prompt_toolkit which supports multiple modes
+WWW=		https://github.com/randy3k/lineedit
 
 LICENSE=	MIT
 

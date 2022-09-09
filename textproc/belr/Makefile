@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.linphone.org/BC/public/${PORTNAME}/-/archive/${PORT
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Language recognition library
+WWW=		https://www.linphone.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

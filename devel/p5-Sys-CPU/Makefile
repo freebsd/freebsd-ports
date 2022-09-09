@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for getting CPU information
+WWW=		https://metacpan.org/release/MZSANFORD/Sys-CPU-0.61
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

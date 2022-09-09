@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Unit Testing Framework for C and C++
+WWW=		http://cutter.sourceforge.net/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/license/lgpl-3.txt

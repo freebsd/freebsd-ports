@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fast and functional image viewer
+WWW=		https://github.com/linuxmint/xviewer
 
 LICENSE=	GPLv2+
 

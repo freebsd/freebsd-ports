@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive binary star application
+WWW=		http://www.hs.uni-hamburg.de/DE/Ins/Per/Wichmann/Nightfall.html
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

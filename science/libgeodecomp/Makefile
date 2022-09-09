@@ -6,6 +6,7 @@ MASTER_SITES=		http://www.libgeodecomp.org/archive/
 
 MAINTAINER=		kurt@kmk-computers.de
 COMMENT=		Auto-parallelizing library for computer simulations
+WWW=		http://www.libgeodecomp.org/
 
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE

@@ -15,5 +15,3 @@ for performance.
 Note this is only alpha-quality proof-of-concept code: for example,
 out-of-memory errors are not handled gracefully, and the provided Minimum
 Degree routine is not yet competitive with other packages.
-
-WWW: http://www.cs.ubc.ca/~rbridson/kktdirect/

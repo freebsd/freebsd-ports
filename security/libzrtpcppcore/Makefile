@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU ZRTP library
+WWW=		https://github.com/wernerd/ZRTPCPP
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

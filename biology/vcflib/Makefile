@@ -5,6 +5,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
+WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 

@@ -9,5 +9,3 @@ features, and a nicer plugin scheme. His main features include:
     * Powerful plugin architecture, comes with plugins for many functions.
     * Multi-language support - comes with english definition only so far -
       translations welcome
-
-WWW: https://ruby-rbot.org/

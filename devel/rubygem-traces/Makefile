@@ -1,10 +1,11 @@
 PORTNAME=	traces
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Application instrumentation and tracing
+WWW=		https://github.com/socketry/traces
 
 LICENSE=	MIT
 

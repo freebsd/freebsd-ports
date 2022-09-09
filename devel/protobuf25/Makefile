@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	25
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Data interchange format library
+WWW=		https://github.com/google/protobuf
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Fast and simple WSGI-framework for small web-applications
+WWW=		https://bottlepy.org/
 
 LICENSE=	MIT
 

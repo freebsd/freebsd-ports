@@ -7,6 +7,7 @@ CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	RealLive virtual machine clone
+WWW=		http://www.rlvm.net/
 
 LICENSE=	GPLv2 GPLv3 MIT
 LICENSE_COMB=	multi

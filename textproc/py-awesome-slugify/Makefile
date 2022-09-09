@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Flexible slugify function
+WWW=		https://pypi.org/project/awesome-slugify/
 
 LICENSE=	GPLv3
 

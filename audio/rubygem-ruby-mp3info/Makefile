@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to access information on mp3 files
+WWW=		https://github.com/moumar/ruby-mp3info
 
 LICENSE=	MIT
 

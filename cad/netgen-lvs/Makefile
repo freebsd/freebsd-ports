@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lvs
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for comparing netlists (a process known as LVS)
+WWW=		http://opencircuitdesign.com/netgen/
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/Copying

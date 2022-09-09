@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low level implementation of the HTTP/2 protocol
+WWW=		https://github.com/socketry/protocol-http2
 
 LICENSE=	MIT
 

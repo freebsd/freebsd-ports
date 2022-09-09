@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python EventEmitter implementation
+WWW=		https://github.com/jfhbrook/pyee
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

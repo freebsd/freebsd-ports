@@ -6,6 +6,7 @@ MASTER_SITES=	XORG/individual/data/${PORTNAME}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Keyboard Configuration Database
+WWW=		https://freedesktop.org/wiki/Software/XKeyboardConfig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

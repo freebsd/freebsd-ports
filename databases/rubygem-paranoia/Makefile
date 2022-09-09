@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Soft deletion mapper for activerecord
+WWW=		https://github.com/rubysherpas/paranoia
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

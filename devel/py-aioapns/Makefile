@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bofh@FreeBSD.org
 
 COMMENT=	Efficient APNs Client Library for Python
+WWW=		https://github.com/Fatal1ty/aioapns
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

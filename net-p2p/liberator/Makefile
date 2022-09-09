@@ -7,6 +7,7 @@ DISTNAME=	ofcp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client to FreeNet Network
+WWW=		https://sourceforge.net/projects/liberator/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

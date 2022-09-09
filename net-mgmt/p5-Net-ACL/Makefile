@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class representing a generic access-list/route-map
+WWW=		https://metacpan.org/release/Net-ACL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

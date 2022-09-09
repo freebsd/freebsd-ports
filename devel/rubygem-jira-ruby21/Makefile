@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	21
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API for JIRA
+WWW=		https://github.com/sumoheavy/jira-ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

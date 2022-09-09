@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Install packages and run Python with them
+WWW=		https://github.com/jaraco/pip-run
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

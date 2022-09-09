@@ -6,5 +6,3 @@ pugixml is a light-weight C++ XML processing library. It features:
 * XPath 1.0 implementation for complex data-driven tree queries
 * Full Unicode support with Unicode interface variants and automatic encoding
   conversions
-
-WWW: https://pugixml.org/

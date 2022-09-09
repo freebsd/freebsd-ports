@@ -1,11 +1,12 @@
 PORTNAME=	jc
-DISTVERSION=	1.20.4
+DISTVERSION=	1.21.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Converts output of popular command-line tools and file-types to JSON
+WWW=		https://pypi.python.org/pypi/jc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

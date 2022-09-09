@@ -2,5 +2,3 @@ MDF2ISO is a simple utility to convert an Alcohol 120% bin image into standard
 ISO-9660 format, cue sheets, or a TOC file
 
 Also available on Gitlab: https://gitlab.com/bsdforge/mdf2iso
-
-WWW: https://BSDforge.com/projects/sysutils/mdf2iso/

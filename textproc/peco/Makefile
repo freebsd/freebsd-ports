@@ -1,12 +1,13 @@
 PORTNAME=	peco
 PORTVERSION=	0.4.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/knu
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic interactive filtering tool
+WWW=		https://github.com/peco/peco
 
 LICENSE=	MIT
 

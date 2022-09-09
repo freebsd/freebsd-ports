@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard API Library
+WWW=		http://www.citi.umich.edu/projects/smartcard/sectok.html
 
 USE_LDCONFIG=	yes
 

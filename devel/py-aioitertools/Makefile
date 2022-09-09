@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Itertools and builtins for AsyncIO and mixed iterables
+WWW=		https://github.com/omnilib/aioitertools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

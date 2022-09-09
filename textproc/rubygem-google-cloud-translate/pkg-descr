@@ -9,5 +9,4 @@ versioned client gems, with names of the form google-cloud-translate-v*. The gem
 google-cloud-translate is the main client library that brings the verisoned gems
 in as dependencies, and provides high-level methods for constructing clients.
 
-WWW: https://github.com/googleapis/google-cloud-ruby
-WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-translate
+See also: https://github.com/googleapis/google-cloud-ruby

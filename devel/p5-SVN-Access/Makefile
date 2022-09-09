@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension to manipulate SVN Access files
+WWW=		https://metacpan.org/release/SVN-Access
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

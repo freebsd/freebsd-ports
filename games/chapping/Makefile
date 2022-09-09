@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turn based board football game
+WWW=		https://chapping.wordpress.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-runner
 PORTVERSION=	14.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${ALLFILES:Nprebuilt*:}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
+WWW=		https://gitlab.com/gitlab-org/gitlab-runner
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

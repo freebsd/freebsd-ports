@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	COLLADA Document Object Model (DOM) C++ Library
+WWW=		https://github.com/rdiankov/collada-dom
 
 LICENSE=	MIT
 

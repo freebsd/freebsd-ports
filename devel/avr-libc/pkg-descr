@@ -6,5 +6,3 @@ EEPROM etc.), as well as a 32-bit floating point math library (-lm).
 
 Everything is designed and implemented to cooperate with avr-gcc and
 avr-binutils.
-
-WWW: http://savannah.nongnu.org/projects/avr-libc

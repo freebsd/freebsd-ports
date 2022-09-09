@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	HTTP server for Qt applications
+WWW=		https://github.com/nitroshare/qhttpengine
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

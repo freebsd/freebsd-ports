@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	STM32 ST-Link JTAG variant tools
+WWW=		https://github.com/texane/stlink
 
 LICENSE=	BSD3CLAUSE
 

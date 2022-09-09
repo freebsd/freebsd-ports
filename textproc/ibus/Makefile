@@ -1,10 +1,10 @@
 PORTNAME=	ibus
-PORTVERSION=	1.5.24
-PORTREVISION=	1
+PORTVERSION=	1.5.27
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Intelligent Input Bus for Unix-like systems
+WWW=		https://github.com/ibus/ibus
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -30,7 +30,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
 		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
 		--disable-python2 --disable-python-library \
-		--disable-gtk4
+		--disable-gtk4 --disable-systemd --disable-systemd-services
 
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	install-strip
@@ -74,20 +74,21 @@ GTK2_CONFIGURE_ENABLE=	gtk2
 GTK3_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libnotify.so:devel/libnotify
 GTK3_USES=		xorg
-GTK3_USE=		GNOME=cairo,gtk30 XORG=x11,xi
+GTK3_USE=		GNOME=cairo,gtk30,pango XORG=x11,xi
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
 GTK3_LIBS=		-lX11
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 VALA_IMPLIES=		GINTRO
-VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
+VALA_USES=		vala:build
 VALA_CONFIGURE_ENABLE=	vala
 WAYLAND_BUILD_DEPENDS=	wayland>1.14:graphics/wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 WAYLAND_CONFIGURE_ENABLE=	wayland
 XIM_CONFIGURE_ENABLE=	xim
+XIM_USE=		XORG=x11,xfixes
 
 EMOJIONE_TAG=		ba845a7e24aac26cf3cf22abc19bea215d94fbf3 # 2.2.7
 

@@ -6,5 +6,3 @@ ssh and pvesh utility.
 
 Like Proxmoxia it dynamically creates attributes which responds to
 the attributes you've attempted to reach.
-
-WWW: https://github.com/proxmoxer/proxmoxer

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Customized VPN split-tunnel
+WWW=		https://github.com/dlenski/vpn-slice
 
 LICENSE=	GPLv3
 

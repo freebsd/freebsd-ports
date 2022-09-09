@@ -32,5 +32,3 @@ Extended features
     * Functions for calling Scilab from C, C++, Fortran and Java
     * LabVIEW Gateway
     * A large number of modules available via ATOMS
-
-WWW: https://www.scilab.org

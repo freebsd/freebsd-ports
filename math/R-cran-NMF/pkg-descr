@@ -4,5 +4,3 @@ and seeding methods, and provides a framework to test, develop and
 plug new/custom algorithms. Most of the built-in algorithms have
 been optimized in C++, and the main interface function provides an
 easy way of performing parallel computations on multicore machines.
-
-WWW: https://cran.r-project.org/web/packages/NMF/

@@ -5,5 +5,3 @@ All other calls are passt to the underlying socket.
 
 For more info of tinydtls see
 https://projects.eclipse.org/projects/iot.tinydtls
-
-WWW: https://git.fslab.de/jkonra2m/tinydtls-cython

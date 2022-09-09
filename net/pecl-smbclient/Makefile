@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Smbclient wrapper extension
+WWW=		https://pecl.php.net/package/smbclient
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

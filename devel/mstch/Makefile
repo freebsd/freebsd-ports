@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Complete implementation of {{mustache}} templates using modern C++
+WWW=		https://github.com/no1msd/mstch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

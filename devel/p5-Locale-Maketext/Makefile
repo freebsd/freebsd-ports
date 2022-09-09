@@ -1,11 +1,12 @@
 PORTNAME=	Locale-Maketext
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for software localization and inheritance-based lexicons
+WWW=		https://metacpan.org/release/Locale-Maketext
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

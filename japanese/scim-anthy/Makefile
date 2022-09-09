@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/scim-imengine
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Anthy
+WWW=		https://sourceforge.jp/projects/scim-imengine/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

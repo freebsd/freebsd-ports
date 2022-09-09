@@ -4,6 +4,7 @@ CATEGORIES=	textproc perl5
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Reformat LaTeX documents suitable for version control
+WWW=		https://github.com/loopspace/fmtlatex
 
 LICENSE=	GPLv2+
 

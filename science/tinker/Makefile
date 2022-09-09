@@ -6,6 +6,7 @@ MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General purpose molecular modelling package
+WWW=		https://dasher.wustl.edu/tinker/
 
 LICENSE=	TINKER
 LICENSE_NAME=	TINKER license agreement

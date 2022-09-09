@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.litech.org/spook/dist/
 
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	Embedded RTP/RTSP/HTTP video streamer
+WWW=		http://www.litech.org/spook/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool that dumps binary input in a variety of formats
+WWW=		https://bitbucket.org/delan/xd/src/default/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

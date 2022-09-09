@@ -1,6 +1,7 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.5.10
+DISTVERSION=	8.5.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public
 PKGNAMESUFFIX=	${DISTVERSION:C/([0-9]).*/\1/1}
@@ -9,6 +10,7 @@ EXTRACT_ONLY=	${ALLFILES:N${GRAFANA_PREBUILT}:}
 
 MAINTAINER=	drtr0jan@yandex.ru
 COMMENT=	Dashboard and graph editor for multiple data stores
+WWW=		https://github.com/grafana/grafana
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,7 +24,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		9bdf1b6
+TAG=		e93eafb
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility functions for PPI
+WWW=		https://metacpan.org/release/PPIx-Utils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of bash scripts to ease working with patch files
+WWW=		https://savannah.nongnu.org/projects/quilt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

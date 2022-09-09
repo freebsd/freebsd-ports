@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Dirt-simple terminal-colour library for python
+WWW=		https://github.com/gfxmonk/termstyle
 
 LICENSE=	BSD3CLAUSE
 

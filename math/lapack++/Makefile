@@ -11,6 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
+WWW=		https://sourceforge.net/projects/lapackpp/
 
 USES=		fortran gmake pathfix libtool
 

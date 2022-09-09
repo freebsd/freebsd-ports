@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Easy comparing and cross-referencing of companies and people
+WWW=		https://github.com/alephdata/fingerprints
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

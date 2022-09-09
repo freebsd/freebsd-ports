@@ -1,11 +1,12 @@
 PORTNAME=	openshift-install
 PORTVERSION=	4.9
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift installer
+WWW=		https://github.com/openshift/installer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
@@ -19,7 +20,7 @@ USES=		go:modules
 PLIST_FILES=	bin/${PORTNAME}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	jhixson74	
+GH_ACCOUNT=	jhixson74
 GH_PROJECT=	installer
 GH_SUBDIR=	src/github.com/openshift/installer
 GH_TAGNAME=	6fb15ac10a00e762a9934c8b5d9f559b130dd485

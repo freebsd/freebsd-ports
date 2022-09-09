@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use the freedesktop basedir spec
+WWW=		https://metacpan.org/release/File-BaseDir
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

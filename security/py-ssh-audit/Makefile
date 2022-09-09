@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	SSH server auditing
+WWW=		https://github.com/jtesta/ssh-audit
 
 LICENSE=	MIT
 

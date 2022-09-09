@@ -5,5 +5,3 @@ other parts of the server to make decisions about actions to be taken,
 e.g. by using mod_qos or to propagate supplemental information to the
 appliaction via HTTP header data. mod_setenvifplus is derived from the
 standard Apache modules mod_setenvif and mod_headers.
-
-WWW: http://modsetenvifplus.sourceforge.net/

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	16
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server
+WWW=		https://nodejs.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

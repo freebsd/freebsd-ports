@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the EggTrayIcon library
+WWW=		https://metacpan.org/release/Gtk2-TrayIcon
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \

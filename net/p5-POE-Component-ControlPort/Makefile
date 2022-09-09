@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Network control port for POE applications
+WWW=		https://metacpan.org/release/SUNGO/POE-Component-ControlPort-0.01
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	py${PORTNAME}-2.1.0-for-renpy-${DISTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reimplementation of portions of the pygame API using SDL2
+WWW=		https://github.com/renpy/pygame_sdl2
 
 LICENSE=	LGPL21+ ZLIB
 LICENSE_COMB=	multi

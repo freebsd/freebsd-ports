@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Powerful configuration library and automatic merging of coverage across test suites
+WWW=		https://github.com/simplecov-ruby/simplecov
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

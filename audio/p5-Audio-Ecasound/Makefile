@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for ecasound sampler, recorder, fx-processor
+WWW=		https://metacpan.org/release/Audio-Ecasound
 
 BUILD_DEPENDS=	libecasoundc-config:audio/ecasound
 

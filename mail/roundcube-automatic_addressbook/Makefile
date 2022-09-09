@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	andrej@ebert.su
 COMMENT=	Roundcube webmail automatic addressbook plugin
+WWW=		https://github.com/sblaisot/automatic_addressbook
 
 LICENSE=	GPLv3
 

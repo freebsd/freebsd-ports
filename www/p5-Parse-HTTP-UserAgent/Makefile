@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser for the User Agent string
+WWW=		https://metacpan.org/release/Parse-HTTP-UserAgent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

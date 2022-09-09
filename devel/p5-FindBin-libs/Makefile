@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to locate and use lib directories
+WWW=		https://metacpan.org/release/FindBin-libs
 
 USES=		perl5
 USE_PERL5=	configure

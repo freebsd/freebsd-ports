@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Enables serving assets in production
+WWW=		https://github.com/heroku/rails_serve_static_assets/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

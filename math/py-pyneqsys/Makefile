@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver of symbolically defined systems of non-linear equations
+WWW=		https://github.com/bjodah/pyneqsys
 
 LICENSE=	BSD2CLAUSE
 

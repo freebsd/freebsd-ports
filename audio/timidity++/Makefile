@@ -6,6 +6,7 @@ DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER?=	fuz@fuz.su
 COMMENT?=	Software MIDI player
+WWW=		http://timidity.sourceforge.net/
 
 LICENSE=	GPLv2+
 

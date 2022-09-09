@@ -6,6 +6,7 @@ DISTNAME=	ViennaRNA-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Alignment tools for the structural analysis of RNA
+WWW=		https://github.com/s-will/LocARNA
 
 LICENSE=	ViennaRNALicense
 LICENSE_NAME=	Vienna RNA License

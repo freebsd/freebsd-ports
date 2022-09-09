@@ -8,5 +8,3 @@ The real work is done by five programs:
 count.pl statistic.pl rank.pl combig.pl kocos.pl
 
 These are not modules, and are run from the command line.
-
-WWW: https://metacpan.org/release/Text-NSP

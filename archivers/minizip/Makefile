@@ -6,6 +6,7 @@ DISTNAME=	zlib-${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Zip library and programs from Zlib distribution
+WWW=		https://www.winimage.com/zLibDll/minizip.html
 
 LICENSE=	ZLIB
 

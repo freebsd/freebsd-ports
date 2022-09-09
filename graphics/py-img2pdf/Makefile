@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Convert images to PDF via direct JPEG inclusion
+WWW=		https://gitlab.mister-muffin.de/josch/img2pdf
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

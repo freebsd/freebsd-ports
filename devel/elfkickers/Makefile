@@ -6,6 +6,7 @@ DISTNAME=	ELFkickers-${PORTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Collection of programs to manipulate ELF files
+WWW=		https://www.muppetlabs.com/~breadbox/software/elfkickers.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

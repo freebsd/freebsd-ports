@@ -6,6 +6,7 @@ MASTER_SITES=	http://mailtools.anomy.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sanitize and clean incoming/outgoing mail
+WWW=		http://mailtools.anomy.net/
 
 LICENSE=	GPLv2+
 

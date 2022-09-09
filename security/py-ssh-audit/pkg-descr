@@ -15,5 +15,3 @@ Features:
 * analyze SSH version compatibility based on algorithm information;
 * historical information from OpenSSH, Dropbear SSH and libssh;
 * no dependencies, compatible with Python 2.6+, Python 3.x and PyPy.
-
-WWW: https://github.com/jtesta/ssh-audit

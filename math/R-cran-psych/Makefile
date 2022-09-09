@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	drue@therub.org
 COMMENT=	Psych package for the R project
+WWW=		https://cran.r-project.org/web/packages/psych/index.html
 
 USES=	cran:auto-plist
 

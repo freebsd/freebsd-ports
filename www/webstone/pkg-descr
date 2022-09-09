@@ -15,5 +15,3 @@ This FreeBSD port rely on rsh and rcp being allowed for the user proces
 running webstone between the web server and web clients. This is not
 enable per default in FreeBSD, and root is never allowed to do it without
 entering password for each operation.
-
-WWW: http://www.mindcraft.com/webstone/

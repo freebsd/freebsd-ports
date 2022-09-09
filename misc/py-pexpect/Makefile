@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module for controlling interactive programs in pseudo-terminal
+WWW=		https://pexpect.readthedocs.io/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	me@int19h.org
 COMMENT=	Common code base for all Kiwix ports
+WWW=		https://www.kiwix.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

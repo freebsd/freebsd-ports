@@ -4,5 +4,3 @@ the following features:
 - Connect to multiple database systems
 - Zero runtime configuration, connect using a URL scheme
 - Supports MySQL, PostgreSQL, SQLite and Oracle
-
-WWW: https://www.tildeslash.com/libzdb/

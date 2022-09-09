@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Four-dimensional analog of Rubik's cube
+WWW=		https://www.superliminal.com/cube/cube.htm
 
 USES=		xorg
 USE_XORG=	x11 xext xt sm ice xaw

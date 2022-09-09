@@ -19,5 +19,4 @@ test and debug one's UPnP devices and control points:
 - Upload: a simple commandline utility that uploads files to known MediaServers.
   Use Universal Control Point for discovering the MediaServers.
 
-WWW: https://wiki.gnome.org/Projects/GUPnP
-WWW: https://gitlab.gnome.org/GNOME/gupnp-tools
+See also: https://wiki.gnome.org/Projects/GUPnP

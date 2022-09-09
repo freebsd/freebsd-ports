@@ -9,5 +9,3 @@ The goals of ShellCheck are:
  * To point out subtle caveats, corner cases and pitfalls, that may cause
    an advanced user's otherwise working script to fail under future
    circumstances.
-
-WWW: https://www.shellcheck.net/

@@ -1,7 +1,7 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-266
-DISTVERSIONSUFFIX=	-gf0b2eeaf2
+DISTVERSION=	21.0.99.1-272
+DISTVERSIONSUFFIX=	-g79c572fbd
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -13,6 +13,7 @@ PATCHFILES+=	74813b4c09ca.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserve
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)
+WWW=		https://wayland.freedesktop.org/xserver.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

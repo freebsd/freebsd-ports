@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Software framework for high-performance BLAS-like libraries
+WWW=		https://github.com/flame/blis
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

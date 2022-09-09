@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst & DBIx::Class powered Wiki
+WWW=		https://metacpan.org/release/MojoMojo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

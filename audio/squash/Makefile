@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player
+WWW=		https://savannah.nongnu.org/projects/squash/
 
 LICENSE=	GPLv2+
 

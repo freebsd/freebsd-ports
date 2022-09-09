@@ -15,5 +15,3 @@ Both interfaces allow you to munge the path in various ways, to set
 labels either explicitly via a hashref or via a callback subroutine,
 and to control the formatting of elements via sprintf patterns or a
 callback subroutine.
-
-WWW: https://metacpan.org/release/HTML-Breadcrumbs

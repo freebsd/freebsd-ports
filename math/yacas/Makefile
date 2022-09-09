@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
+WWW=		https://www.yacas.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

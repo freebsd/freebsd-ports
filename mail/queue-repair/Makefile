@@ -6,6 +6,7 @@ MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail queue diagnostic and repair tool
+WWW=		http://pyropus.ca/software/queue-repair/
 
 LICENSE=	GPLv2
 

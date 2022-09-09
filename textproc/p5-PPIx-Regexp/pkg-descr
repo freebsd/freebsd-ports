@@ -1,4 +1,2 @@
 The purpose of the PPIx-Regexp package is to parse regular expressions
 in a manner similar to the way the PPI package parses Perl.
-
-WWW: https://metacpan.org/release/PPIx-Regexp

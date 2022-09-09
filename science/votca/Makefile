@@ -9,6 +9,7 @@ PATCHFILES=	078c6814797749cd1b92a2b19f0302265ccf6463.patch:-p1 # fix testsuite b
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CSG and XTP: libraries for atomistic simulations
+WWW=		https://github.com/votca/votca
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Prompt string formatter
+WWW=		https://metacpan.org/release/Env-PS1
 
 USES=		perl5
 USE_PERL5=	modbuild

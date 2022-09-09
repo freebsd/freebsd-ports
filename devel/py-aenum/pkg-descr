@@ -17,5 +17,3 @@ index notation.
 
 A NamedConstant is a class whose members cannot be rebound; it lacks all other
 Enum capabilities, however; consequently, it can have duplicate values.
-
-WWW: https://bitbucket.org/stoneleaf/aenum

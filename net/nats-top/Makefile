@@ -1,11 +1,12 @@
 PORTNAME=	nats-top
 PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Top like program monitor for NATS
+WWW=		https://github.com/nats-io/nats-top
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete regular expressions C++ solution
+WWW=		https://sourceforge.net/projects/regexx/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cpanfile support for ExtUtils::MakeMaker
+WWW=		https://metacpan.org/release/ExtUtils-MakeMaker-CPANfile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

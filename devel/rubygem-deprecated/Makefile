@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library intended to aid developers working with deprecated code
+WWW=		https://github.com/erikh/deprecated
 
 LICENSE=	MIT
 

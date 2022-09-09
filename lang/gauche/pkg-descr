@@ -6,5 +6,3 @@ its own pre-R7RS module system. Gauche is designed for the rapid
 development of scipts to assist daily work in system administration,
 text processing, and other fields. It can handle UTF-8, EUC-JP, and
 Shift JIS character strings natively.
-
-WWW: https://practical-scheme.net/gauche/

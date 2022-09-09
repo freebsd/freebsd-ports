@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual machine LV2 plugin bundle
+WWW=		https://open-music-kontrollers.ch/lv2/vm/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING

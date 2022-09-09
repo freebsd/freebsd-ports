@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	info@babaei.net
 COMMENT=	One Script to back them all up
+WWW=		https://github.com/NuLL3rr0r/omnibackup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

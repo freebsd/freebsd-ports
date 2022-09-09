@@ -1,11 +1,12 @@
 PORTNAME=	litestream
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Standalone streaming replication tool for SQLite
+WWW=		https://litestream.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

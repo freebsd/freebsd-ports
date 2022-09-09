@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph tool for Collectd
+WWW=		https://rubygems.org/gems/visage-app
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

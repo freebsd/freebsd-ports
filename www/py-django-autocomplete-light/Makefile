@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Fresh approach to autocomplete implementations
+WWW=		https://github.com/yourlabs/django-autocomplete-light
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,5 +6,3 @@ Ark. The program can handle various formats such as tar, gzip, bzip2,
 zip, rar and lha (if appropriate command-line programs are
 installed). Ark can work closely with Konqueror and Dolphin in
 a KDE Plasma environment to handle archives.
-
-WWW: https://utils.kde.org/projects/ark/

@@ -2,5 +2,3 @@ This module was mainly written for Net::XMPP2, Net::IRC3 and BS to provide a
 consistent API for registering and emitting events. Even though I originally
 wrote it for those modules I released it separately in case anyone may find this
 module useful.
-
-WWW: https://metacpan.org/release/ELMEX/BS-Event-0.3

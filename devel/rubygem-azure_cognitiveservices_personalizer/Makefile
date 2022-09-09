@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Cognitiveservices Personalizer Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/data/azure_cognitiveservices_personalizer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

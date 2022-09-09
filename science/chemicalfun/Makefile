@@ -6,6 +6,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for working with chemical reactions and formulas
+WWW=		https://bitbucket.org/gems4/chemicalfun/src/master/
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		spdlog>0:devel/spdlog

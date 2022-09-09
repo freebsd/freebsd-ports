@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Spherical Geometry Operators Using the S2 Geometry Library
+WWW=		https://cran.r-project.org/web/packages/s2/
 
 LICENSE=	APACHE20
 

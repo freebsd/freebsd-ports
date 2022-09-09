@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool to automatically build configurations for BGP route servers
+WWW=		https://github.com/pierky/arouteserver
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

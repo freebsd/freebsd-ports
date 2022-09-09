@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CMake modules to be used by the Ignition projects
+WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 

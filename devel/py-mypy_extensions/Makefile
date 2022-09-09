@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Experimental type system extensions for programs
+WWW=		http://www.mypy-lang.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -12,5 +12,3 @@ Here are some common reasons for tastypie:
       YAML is there too).
     * You want to support my perceived NIH syndrome, which is less about
       NIH and more about trying to help out friends/coworkers.
-
-WWW: https://github.com/django-tastypie/django-tastypie

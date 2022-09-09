@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Class for fast check if point is inside polygon
+WWW=		https://metacpan.org/release/Math-Polygon-Tree
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple \

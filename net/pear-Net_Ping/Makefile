@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to execute ping
+WWW=		https://pear.php.net/package/Net_Ping
 
 USES=		pear
 

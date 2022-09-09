@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Detect outdated CPAN modules
+WWW=		https://metacpan.org/release/TOKUHIROM/App-cpanoutdated-0.24
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

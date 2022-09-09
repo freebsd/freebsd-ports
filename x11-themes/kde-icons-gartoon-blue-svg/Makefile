@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-blue-svg
 DISTNAME=	ICONS-Gartoon.Blue-SVG-v${PORTVERSION}
 
 COMMENT=	KDE Gartoon Blue SVG iconset
+WWW=		http://www.kde-look.org/content/show.php?content=17362
 
 USES=		tar:bzip2
 

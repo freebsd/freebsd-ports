@@ -6,6 +6,7 @@ MASTER_SITES=	http://archives.eyrie.org/software/kerberos/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Automated Kerberos ticket cache and keytab management utilities
+WWW=		https://www.eyrie.org/~eagle/software/kstart/
 
 USE_RC_SUBR=	${PORTNAME}
 HAS_CONFIGURE=	yes

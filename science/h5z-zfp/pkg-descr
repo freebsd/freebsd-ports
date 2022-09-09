@@ -6,5 +6,3 @@ data chunked in 1, 2 or 3 dimensions. The filter will function on datasets of
 more than 3 dimensions, albiet at the probable expense of compression
 performance, as long as the chunking is such that no more than 3 dimensions of a
 chunk are non-unity.
-
-WWW: https://h5z-zfp.readthedocs.io/en/latest/

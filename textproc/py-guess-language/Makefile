@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Guess the natural language of a text in Python
+WWW=		https://pypi.org/project/guess-language/
 
 LICENSE=	LGPL21+
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple plaintext presentation tool
+WWW=		https://tools.suckless.org/sent/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

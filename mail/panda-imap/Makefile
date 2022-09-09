@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IMAP4rev1/POP2/POP3 mail servers forked from imap-uw
+WWW=		https://github.com/jonabbey/panda-imap
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

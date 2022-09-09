@@ -1,10 +1,11 @@
 PORTNAME=	aws-crt
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AWS SDK for Ruby - Common Run Time
+WWW=		https://github.com/awslabs/aws-crt-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

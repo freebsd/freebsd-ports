@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Display hosts on OpenStreetMap
+WWW=		https://github.com/nbuchwitz/icingaweb2-module-map
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

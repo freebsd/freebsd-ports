@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.seasip.info/Unix/PSF/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converters for simple fixed-width bitmap fonts
+WWW=		https://www.seasip.info/Unix/PSF/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

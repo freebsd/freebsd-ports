@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GraphQL Framework for Python
+WWW=		https://github.com/graphql-python/graphene
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

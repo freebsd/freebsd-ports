@@ -6,6 +6,7 @@ DISTNAME=	libLASi-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
+WWW=		https://www.unifont.org/lasi/
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 

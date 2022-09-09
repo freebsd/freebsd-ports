@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Surge Synthesizer (XT) LV2 and VST plug-in
+WWW=		https://surge-synthesizer.github.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

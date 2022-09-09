@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/mail/mbox2imap/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Upload email stored in mbox file format to an IMAP server
+WWW=		https://BSDforge.com/projects/mail/mbox2imap/
 
 LICENSE=	NONE
 

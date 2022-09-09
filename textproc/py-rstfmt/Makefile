@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Formatter for reStructuredText
+WWW=		https://github.com/dzhu/rstfmt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	gpc${PORTVERSION:S/.//}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Generic Polygon Clipper
+WWW=		http://www.cs.man.ac.uk/~toby/alan/software/
 
 # Converted from NO_CDROM
 LICENSE=	libgpc

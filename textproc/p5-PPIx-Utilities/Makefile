@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensions to PPI
+WWW=		https://metacpan.org/release/PPIx-Utilities
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Exception-Class>=1.23:devel/p5-Exception-Class \

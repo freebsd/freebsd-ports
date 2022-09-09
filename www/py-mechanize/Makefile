@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Stateful programmatic web browsing in Python
+WWW=		https://github.com/python-mechanize/mechanize
 
 LICENSE=	BSD3CLAUSE
 

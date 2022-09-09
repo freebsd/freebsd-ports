@@ -9,6 +9,7 @@ DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Traditional Chinese version of phpBB3
+WWW=		https://www.phpbb.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

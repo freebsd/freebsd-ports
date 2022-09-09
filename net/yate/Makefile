@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Yet Another Telephony Engine
+WWW=		http://yate.null.ro
 
 LICENSE=	GPLv2
 

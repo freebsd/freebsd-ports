@@ -9,6 +9,7 @@ DISTNAME=	osTicket-v${DISTVERSION}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Widely-used open source support ticket system
+WWW=		https://osticket.com/
 
 LICENSE=	GPLv2
 

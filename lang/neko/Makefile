@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	penzin.dev@gmail.com
 COMMENT=	Neko programming languages and virtual machine
+WWW=		https://nekovm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

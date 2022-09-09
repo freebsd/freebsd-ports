@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Neat and easy to start form validation plugin for Dancer2
+WWW=		https://metacpan.org/pod/Dancer2::Plugin::FormValidator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,9 +1,10 @@
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.10.1
+PORTVERSION=	3.10.2
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
+WWW=		https://github.com/trizen/youtube-viewer
 
 LICENSE=	ART10 GPLv3
 LICENSE_COMB=	dual

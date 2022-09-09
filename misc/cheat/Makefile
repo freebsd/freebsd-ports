@@ -1,10 +1,11 @@
 PORTNAME=	cheat
 DISTVERSION=	4.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Create and view interactive cheatsheets on the command-line
+WWW=		https://github.com/cheat/cheat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

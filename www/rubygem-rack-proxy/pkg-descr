@@ -1,4 +1,2 @@
 A request/response rewriting HTTP proxy. A Rack app. Subclass Rack::Proxy and
 provide your rewrite_env and rewrite_response methods.
-
-WWW: https://github.com/ncr/rack-proxy

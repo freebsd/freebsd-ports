@@ -8,6 +8,7 @@ DISTNAME=	roundcubemail-plugins-kolab-${DISTVERSION}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Roundcube Calendar plugin from Kolab
+WWW=		https://docs.kolab.org/webmail-user-guide/roundcubemail/_plugins/calendar/index.html
 
 LICENSE=	AGPLv3
 

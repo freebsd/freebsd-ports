@@ -4,6 +4,7 @@ CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Yesod helper executable
+WWW=		https://www.yesodweb.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

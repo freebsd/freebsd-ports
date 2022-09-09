@@ -18,5 +18,3 @@ to produce a DVI file, run
 To produce a PDF file, run
 
    pdftex "&pdfjadetex" <file>.tex
-
-WWW: http://jadetex.sourceforge.net/

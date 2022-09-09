@@ -8,6 +8,7 @@ DISTNAME=	SQLObject-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python object for manipulation with SQL table row
+WWW=		http://www.sqlobject.org
 
 LICENSE=	LGPL21
 

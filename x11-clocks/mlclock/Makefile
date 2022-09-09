@@ -6,6 +6,7 @@ MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock for mlvwm window manager
+WWW=		http://www2u.biglobe.ne.jp/~y-miyata/mlvwm.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

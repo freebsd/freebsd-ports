@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	pcTA@cs.nctu.edu.tw
 COMMENT=	Utility to create Samba password hashes
+WWW=		https://sourceforge.net/projects/ldaputils/
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mkntpwd

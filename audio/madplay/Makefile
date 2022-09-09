@@ -7,6 +7,7 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Madplay MP3 player (part of MAD project)
+WWW=		https://www.underbit.com/products/mad/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

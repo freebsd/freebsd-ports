@@ -1,11 +1,12 @@
 PORTNAME=	yafaray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Montecarlo raytracing engine
+WWW=		http://www.yafaray.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

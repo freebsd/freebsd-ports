@@ -1,11 +1,13 @@
 PORTNAME=	gnome-builder
 PORTVERSION=	42.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IDE for writing software for GNOME
+WWW=		https://wiki.gnome.org/Apps/Builder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,7 +29,6 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libportal.so:deskutils/libportal \
 		libsoup-2.4.so:devel/libsoup \
 		libtemplate_glib-1.0.so:devel/template-glib \
-		libvala-0.48.so:lang/vala \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 PORTSCOUT=	limitw:1,even
@@ -37,7 +38,7 @@ CONFLICTS_BUILD=	gnome-builder-3.16.*
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
 		localbase:lfdlags meson pkgconfig python:3.6+,build shebangfix \
-		tar:xz
+		tar:xz vala:lib
 USE_GNOME=	cairo gtksourceview4 introspection libxml2 vte3
 SHEBANG_FILES=	${WRKSRC}/src/plugins/gradle/gradle_plugin.py \
 		${WRKSRC}/src/plugins/maven/maven_plugin.py

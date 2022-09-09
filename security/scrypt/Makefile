@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.tarsnap.com/scrypt/
 
 MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Key Derivation Function
+WWW=		http://www.tarsnap.com/scrypt/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

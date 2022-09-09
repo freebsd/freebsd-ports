@@ -6,5 +6,3 @@ complex code in Bash.
 Ammonite lets you use the Scala language for scripting purposes: in a
 Read-Evaluate-Print-Loop (REPL), as scripts, as a library to use
 in existing projects, or as a standalone systems shell.
-
-WWW: https://ammonite.io/

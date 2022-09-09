@@ -18,5 +18,3 @@ needs to know which method to call when it is done processing. Or what default
 value to use for its C<url> attribute.
 
 Parameterized roles offer a solution to these (and other) kinds of problems.
-
-WWW: https://metacpan.org/release/MooseX-Role-Parameterized

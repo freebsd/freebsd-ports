@@ -7,5 +7,3 @@ ELF Dissector is useful if you need to do one or more of the following:
 - Identifying load-time performance bottlenecks such as expensive
   static constructors or excessive relocations.
 - Size profiling of ELF files.
-
-WWW: https://invent.kde.org/sdk/elf-dissector

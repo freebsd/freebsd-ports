@@ -6,6 +6,7 @@ DISTNAME=	xport
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	The xport Transport Stream Demuxer
+WWW=		https://www.w6rz.net/
 
 USES=		zip
 NO_WRKSUBDIR=	yes

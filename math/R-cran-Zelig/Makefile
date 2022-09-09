@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Everyone's Statistical Software
+WWW=		https://gking.harvard.edu/zelig
 
 LICENSE=	GPLv3+
 

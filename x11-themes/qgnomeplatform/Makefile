@@ -6,6 +6,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Qt 5 Platform Theme designed to fit into GNOME
+WWW=		https://github.com/FedoraQt/QGnomePlatform
 
 LICENSE=	LGPL21
 

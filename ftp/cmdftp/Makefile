@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line shell-like FTP client
+WWW=		https://www.nongnu.org/cmdftp/
 
 LICENSE=	GPLv3
 

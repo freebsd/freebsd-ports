@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Read, manipulate, and write RIFF files
+WWW=		https://metacpan.org/release/File-Format-RIFF
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

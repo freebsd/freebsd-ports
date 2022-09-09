@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	S2 Geometry Library
+WWW=		https://s2geometry.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

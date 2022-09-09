@@ -8,6 +8,7 @@ DISTNAME=	websieve-063a
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to edit Sieve scripts on an Cyrus IMAP server
+WWW=		https://sourceforge.net/projects/websieve/
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 

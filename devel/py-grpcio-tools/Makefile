@@ -1,11 +1,12 @@
 PORTNAME=	grpcio-tools
-PORTVERSION=	1.48.0
+PORTVERSION=	1.48.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Protobuf code generator for gRPC
+WWW=		https://pypi.org/project/grpcio-tools/
 
 LICENSE=	BSD3CLAUSE
 

@@ -10,6 +10,7 @@ DISTNAME=	dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/:S/powerpc64/powerpc/}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Distributed.net distributed computing project client
+WWW=		https://www.distributed.net/
 
 # These are architecture dependent
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/:S/powerpc64/powerpc/}-elf

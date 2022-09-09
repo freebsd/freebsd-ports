@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Java library of self-contained mathematics and statistics components
+WWW=		https://commons.apache.org/proper/commons-math/
 
 LICENSE=	APACHE20
 

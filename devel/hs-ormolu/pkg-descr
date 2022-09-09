@@ -4,5 +4,3 @@ formatting style which admits no configuration, result in minimal
 diffs and is compatible with modern dialects of Haskell.  Ormolu is
 well-tested and robust so that the formatter can be used in large
 projects.
-
-WWW: https://github.com/tweag/ormolu

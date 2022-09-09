@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Driver for FTDI based JTAG probes, to program ECP5 FPGAs
+WWW=		https://github.com/gregdavill/ecpprog
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/../COPYING

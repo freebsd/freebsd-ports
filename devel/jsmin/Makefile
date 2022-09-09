@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	The JavaScript Minifier
+WWW=		https://crockford.com/javascript/jsmin.html
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	douglascrockford

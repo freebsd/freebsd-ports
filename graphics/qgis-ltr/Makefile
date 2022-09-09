@@ -1,12 +1,13 @@
 PORTNAME=	qgis
 DISTVERSION=	3.22.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Free and Open Source Geographic Information System
+WWW=		https://qgis.org/en/site/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
@@ -47,7 +48,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libprotobuf-lite.so:devel/protobuf \
 		libqjson-qt5.so:devel/qjson \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
-		libqt5keychain.so:security/qtkeychain \
+		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt6.so:x11-toolkits/qwt6 \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
@@ -105,7 +106,7 @@ USES=		bison cmake compiler:features desktop-file-utils \
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	pyqt5 qscintilla2 pysip sip 
+USE_PYQT=	pyqt5 qscintilla2 pysip sip
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer_build qdoc_build gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \

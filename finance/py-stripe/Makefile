@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Stripe Python bindings
+WWW=		https://github.com/stripe/stripe-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

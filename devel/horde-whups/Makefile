@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde bug tracking/ticketing system
+WWW=		https://www.horde.org/apps/whups/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

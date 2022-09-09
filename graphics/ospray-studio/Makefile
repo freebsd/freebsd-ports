@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Application to showcase OSPRay's rendering capabilities
+WWW=		https://www.ospray.org/ospray_studio/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

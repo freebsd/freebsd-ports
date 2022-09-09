@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Joystick support for Kodi
+WWW=		https://github.com/xbmc/peripheral.joystick
 
 LICENSE=	GPLv2+
 

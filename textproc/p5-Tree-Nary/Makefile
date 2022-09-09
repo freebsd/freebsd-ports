@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C|0$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of N-ary search trees
+WWW=		https://metacpan.org/release/Tree-Nary
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

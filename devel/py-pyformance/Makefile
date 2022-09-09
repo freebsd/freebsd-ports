@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Toolset for performance measurement and statistics
+WWW=		https://pypi.org/project/pyformance/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

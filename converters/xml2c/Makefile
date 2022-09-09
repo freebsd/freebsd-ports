@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_19Oct2015
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert an XML file into C struct/string declarations
+WWW=		https://acme.com/software/xml2c/
 
 LICENSE=	BSD2CLAUSE
 

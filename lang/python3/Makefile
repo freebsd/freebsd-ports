@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Meta-port for the Python interpreter 3.x
+WWW=		https://www.python.org/
 
 USES=		python:3.6+,run
 

@@ -1,11 +1,12 @@
 PORTNAME=	fenics-ffcx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5.0.post0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FEniCS Form Compiler for finite element forms
+WWW=		https://github.com/FEniCS/ffcx
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

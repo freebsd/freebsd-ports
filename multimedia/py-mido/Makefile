@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MIDI Objects for Python
+WWW=		https://github.com/olemb/mido
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

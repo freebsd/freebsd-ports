@@ -6,6 +6,7 @@ MASTER_SITES=	https://roy.marples.name/downloads/openresolv/
 
 MAINTAINER=	roy@marples.name
 COMMENT=	Resolvconf compatible framework for managing resolv.conf
+WWW=		https://roy.marples.name/projects/openresolv/
 
 USES=		cpe tar:xz
 CPE_VENDOR=	${PORTNAME}_project

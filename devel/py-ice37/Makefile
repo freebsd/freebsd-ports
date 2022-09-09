@@ -3,6 +3,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Ice (Internet Communications Engine) language mapping for Python
+WWW=		http://www.zeroc.com/
 
 LICENSE=	GPLv2
 

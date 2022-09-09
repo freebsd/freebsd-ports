@@ -5,5 +5,3 @@ HTML::Prototype is a JavaScript code generator for the prototype.js
 JavaScript library, and the script.aculo.us extensions to
 prototype.js.  It allows you to easily add AJAX calls and dynamic
 elements to your website.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-HTMLPrototype

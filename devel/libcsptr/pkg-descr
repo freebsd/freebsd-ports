@@ -7,5 +7,3 @@ Features:
 * Custom variable metadata on allocation
 * Cross-platform: tested under linux 3.18.6-1, Mac OS X Yosemite
   10.10, and Windows 7 (with MinGW and the Cygwin port of GCC)
-
-WWW: https://github.com/Snaipe/libcsptr

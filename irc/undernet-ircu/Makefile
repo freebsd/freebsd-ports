@@ -7,6 +7,7 @@ DISTNAME=	ircu${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Undernet IRCU irc daemon
+WWW=		https://coder-com.undernet.org
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE

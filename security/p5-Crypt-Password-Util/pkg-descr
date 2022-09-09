@@ -12,5 +12,3 @@ SHA512), and PLAIN-MD5.
 
 See also Authen::Passphrase which recognizes more encodings (but currently not
 SSHA256 and SSHA512).
-
-WWW: https://metacpan.org/release/Crypt-Password-Util

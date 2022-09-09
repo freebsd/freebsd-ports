@@ -7,6 +7,7 @@ CATEGORIES=	security
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Scan a list of domains for TLS-related compliance stats
+WWW=		https://github.com/tls-check/TLS-Check
 
 LICENSE=	ART20
 

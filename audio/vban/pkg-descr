@@ -8,5 +8,3 @@ the VBAN protocol (vban_sendtext).
 ALSA, Jack, and PulseAudio audio backends have been implemented.  FIFO
 (pipe) output is also available, to allow chaining command-line tools,
 and a file output too (for writing raw PCM data).
-
-WWW: https://github.com/quiniouben/vban

@@ -5,6 +5,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR driver based class to calculate holidays
+WWW=		https://pear.php.net/package/Date_Holidays
 
 LICENSE=	PHP301
 

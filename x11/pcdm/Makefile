@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jt@ixsystems.com
 COMMENT=	QT5 based display manager for FreeBSD
+WWW=		https://github.com/trueos/pcdm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/diskinfo-di
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Disk Information Utility
+WWW=		https://diskinfo-di.sourceforge.io/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

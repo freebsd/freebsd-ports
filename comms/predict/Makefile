@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.qsl.net/kd2bd/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Satellite tracking program for amateur radio satellites
+WWW=		https://www.qsl.net/kd2bd/predict.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

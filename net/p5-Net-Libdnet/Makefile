@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Libdnet interface
+WWW=		https://metacpan.org/release/Net-Libdnet
 
 LICENSE=	BSD3CLAUSE
 

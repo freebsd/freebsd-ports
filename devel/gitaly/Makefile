@@ -1,11 +1,12 @@
 PORTNAME=	gitaly
 DISTVERSION=	15.2.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
+WWW=		https://gitlab.com/gitlab-org/gitaly
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

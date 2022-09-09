@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Desktop wiki editor
+WWW=		https://www.zim-wiki.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

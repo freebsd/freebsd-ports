@@ -4,6 +4,7 @@ CATEGORIES=	ftp
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	High performance distributed file system (DFS)
+WWW=		https://github.com/happyfish100/fastdfs
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING-3_0.txt

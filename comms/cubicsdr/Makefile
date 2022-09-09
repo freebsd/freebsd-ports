@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	SDR receiver using liquidsdr
+WWW=		https://cubicsdr.readthedocs.io/en/latest/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,5 +5,3 @@ Features:
  - Files may be copied to disk or to stdout.
  - Supports "text" and "image" transfer modes.
  - Produces directory listings for VMS file systems.
-
-WWW: http://vms.process.com/scripts/fileserv/fileserv.com?ODS-2-READER

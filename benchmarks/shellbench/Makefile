@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Benchmark utility for POSIX shell comparison
+WWW=		https://github.com/shellspec/shellbench
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

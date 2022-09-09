@@ -15,5 +15,3 @@ Platform Independent:	SpecTcl runs on all major platforms:
 Constraint Based	Alignment and resizing of widgets (buttons,
 Geometry Manager:	check boxes, etc.) is automatic. This makes
 			creating dynamic UIs and cross platform UIs a snap!
-
-WWW: http://spectcl.sourceforge.net/

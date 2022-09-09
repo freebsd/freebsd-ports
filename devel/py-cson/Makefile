@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Coffescript Object Notation (CSON) parser for Python 2 and Python 3
+WWW=		https://github.com/avakar/pycson
 
 LICENSE=	MIT
 

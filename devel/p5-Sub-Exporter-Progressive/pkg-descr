@@ -9,5 +9,3 @@ Note that this module will export @EXPORT and @EXPORT_OK package variables for
 Exporter to work. Additionally, if your package uses advanced Sub::Exporter
 features like currying, this module will only ever use Sub::Exporter, so you
 might as well use it directly.
-
-WWW: https://metacpan.org/release/Sub-Exporter-Progressive

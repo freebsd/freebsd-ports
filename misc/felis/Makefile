@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays one or more files as a single line of text
+WWW=		http://www.whizkidtech.redprince.net/fports/
 
 PLIST_FILES=	bin/felis man/man1/felis.1.gz
 

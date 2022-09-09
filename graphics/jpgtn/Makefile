@@ -6,6 +6,7 @@ MASTER_SITES=	SF SUNSITE/apps/graphics/misc
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Creates thumbnails of JPEG images
+WWW=		http://jpgtn.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

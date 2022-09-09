@@ -6,6 +6,7 @@ CATEGORIES=	www net
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Link checker
+WWW=		https://github.com/lycheeverse/lychee
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

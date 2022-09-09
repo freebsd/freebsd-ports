@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to access RBL-style host verification services
+WWW=		https://metacpan.org/release/Mail-RBL
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \

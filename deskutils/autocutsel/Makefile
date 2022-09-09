@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	john@jnielsen.net
 COMMENT=	Synchronizes the two copy/paste buffers used by X applications
+WWW=		https://www.nongnu.org/autocutsel/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Memory mapping made simple and safe
+WWW=		https://metacpan.org/release/File-Map
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

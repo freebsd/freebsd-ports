@@ -6,12 +6,12 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Audio player for GNOME
+WWW=		https://wiki.gnome.org/Apps/Rhythmbox
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
-		valac:lang/vala \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libtotem-plparser.so:multimedia/totem-pl-parser \
 		libdbus-1.so:devel/dbus \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libtotem-plparser.so:multimedia/totem-pl-parser \
 		libtdb.so:databases/tdb
 
 USES=		desktop-file-utils gettext gnome gstreamer localbase:ldflags meson \
-		pkgconfig tar:xz xorg
+		pkgconfig tar:xz vala:build xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection libxml2
 USE_XORG=	ice x11 xorgproto
 USE_GSTREAMER=	flac lame jpeg cdparanoia vorbis

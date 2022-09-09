@@ -6,6 +6,7 @@ MASTER_SITES=		http://hitch-tls.org/source/ \
 
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		TLS proxy to forward connections to an unencrypted backend
+WWW=		https://github.com/varnish/hitch/
 
 LICENSE=		BSD2CLAUSE
 

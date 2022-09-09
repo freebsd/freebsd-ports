@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Tools to talk to GSM cellular phones
+WWW=		https://www.gnokii.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

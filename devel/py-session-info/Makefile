@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Print version information for loaded modules, Python, and the OS
+WWW=		https://gitlab.com/joelostblom/session_info
 
 LICENSE=	BSD3CLAUSE
 

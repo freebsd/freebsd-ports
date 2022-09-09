@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Graphical interface to git repositories
+WWW=		https://francescmm.github.io/GitQlient/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

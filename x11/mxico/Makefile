@@ -9,6 +9,7 @@ MASTER_SITES=	https://people.freebsd.org/~maho/mxico/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
+WWW=		https://people.freebsd.org/~maho/mxico/
 
 LICENSE=	MIT
 

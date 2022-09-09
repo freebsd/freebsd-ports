@@ -7,6 +7,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=	ecronin@gizmolabs.org
 COMMENT=	Nagios plugin for checking SSL server certificate expiration
+WWW=		https://www.jhweiss.de/software/nagios.html
 
 LICENSE=	GPLv2+
 

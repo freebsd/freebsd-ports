@@ -6,6 +6,7 @@ CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE music player
+WWW=		https://amarok.kde.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

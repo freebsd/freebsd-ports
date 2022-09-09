@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Python bindings for LMDB
+WWW=		https://github.com/jnwatson/py-lmdb
 
 LICENSE=	OPENLDAP
 LICENSE_NAME=	OpenLDAP Public LIcense

@@ -4,6 +4,7 @@ PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	ODBC ProFTPD module
+WWW=		http://www.proftpd.org/docs/contrib/mod_sql.html
 
 LICENSE=	GPLv2
 

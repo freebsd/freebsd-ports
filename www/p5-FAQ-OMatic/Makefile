@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl API to manipulate FAQ-O-Matics
+WWW=		https://metacpan.org/release/FAQ-OMatic
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 API to WordPress XML-RPC services
+WWW=		https://metacpan.org/release/WordPress-XMLRPC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

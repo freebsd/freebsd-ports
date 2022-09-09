@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	RFC 2307 NSS module
+WWW=		https://www.padl.com/OSS/nss_ldap.html
 
 LICENSE=	GPLv2
 

@@ -8,5 +8,3 @@ author is aware of....)
 hexter operates as a plugin for the DSSI Soft Synth Interface.
 DSSI is a plugin API for software instruments (soft synths) with user
 interfaces, permitting them to be hosted in-process by audio applications.
-
-WWW: http://dssi.sourceforge.net/hexter.html

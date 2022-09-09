@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.badgers-in-foil.co.uk/projects/cvsspam/releases/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Sends diffs when a change is committed to your CVS repository
+WWW=		http://www.badgers-in-foil.co.uk/projects/cvsspam/
 
 LICENSE=	GPLv2
 

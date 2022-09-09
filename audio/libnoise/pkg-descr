@@ -14,5 +14,3 @@ called noise modules. There are many different types of noise
 modules. Some noise modules can combine or modify the outputs of
 other noise modules in various ways; you can join these modules
 together to generate very complex coherent noise.
-
-WWW: http://libnoise.sourceforge.net/

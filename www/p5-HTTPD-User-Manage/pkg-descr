@@ -7,5 +7,3 @@ change their Web access passwords.  Web administrators can use it to
 remotely add, edit and delete users and their groups.  You can also use
 it from the command line as a nice all-in-one interface to access
 control databases based on text files, DBM files, and SQL databases.
-
-WWW: https://metacpan.org/release/HTTPD-User-Manage

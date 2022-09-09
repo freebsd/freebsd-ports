@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Python module for Transmission bittorent client JSON-RPC protocol
+WWW=		https://pypi.org/project/transmission-rpc/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

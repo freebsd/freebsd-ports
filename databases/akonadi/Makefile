@@ -4,6 +4,7 @@ CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for KDE-Pim
+WWW=		https://community.kde.org/KDE_PIM/Akonadi
 
 LICENSE=	LGPL21
 
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt
 CONFLICTS=	akonadi akonadi-kf5-git
 
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 \
-		shared-mime-info tar:xz
+		shared-mime-info tar:xz xorg
 USE_GNOME=	libxml2
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons guiaddons i18n iconthemes itemmodels itemviews \
@@ -23,6 +24,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		designerplugin_run
 USE_QT=		concurrent core dbus designer gui network sql testlib widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
 USE_LDCONFIG=	yes

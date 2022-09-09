@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Stats, linear algebra and einops for xarray
+WWW=		https://github.com/arviz-devs/xarray-einstats
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

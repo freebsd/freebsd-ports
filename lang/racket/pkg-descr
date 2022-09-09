@@ -6,5 +6,3 @@ modules, a GUI library, TCP/IP, and much more. It includes an
 extensive, hyper-linked help system called Help Desk, available
 from the Help menu, the plt-help command line tool, or through a
 web browser.
-
-WWW: https://racket-lang.org/

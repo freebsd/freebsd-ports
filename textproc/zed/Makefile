@@ -1,11 +1,12 @@
 PORTNAME?=	zed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Command-line tool to manage and query Zed data lakes
+WWW=		https://zed.brimdata.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

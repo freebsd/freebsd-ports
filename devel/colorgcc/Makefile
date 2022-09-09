@@ -4,6 +4,7 @@ CATEGORIES=	devel misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script to colorize the terminal output of GCC
+WWW=		https://github.com/colorgcc/colorgcc
 
 LICENSE=	GPLv2
 

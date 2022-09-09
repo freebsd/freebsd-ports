@@ -111,6 +111,7 @@ share/doc/HTML/fr/kphotoalbum/plugins.docbook
 share/doc/HTML/fr/kphotoalbum/setting-properties.docbook
 share/doc/HTML/fr/kphotoalbum/thumbnail-view.docbook
 share/doc/HTML/fr/kphotoalbum/viewer.docbook
+share/doc/HTML/fr/kphotoalbum/workflows.docbook
 share/doc/HTML/it/kphotoalbum/browsing.docbook
 share/doc/HTML/it/kphotoalbum/datebar.docbook
 share/doc/HTML/it/kphotoalbum/generating-html.docbook
@@ -222,7 +223,6 @@ share/doc/HTML/uk/kphotoalbum/viewer.docbook
 share/doc/HTML/uk/kphotoalbum/viewer.png
 share/doc/HTML/uk/kphotoalbum/workflows.docbook
 share/doc/HTML/uk/kphotoalbum/zoomed-view.png
-share/icons/hicolor/128x128/apps/kphotoalbum.png
 share/icons/hicolor/16x16/actions/open-raw.png
 share/icons/hicolor/16x16/apps/kphotoalbum.png
 share/icons/hicolor/22x22/actions/open-raw.png
@@ -232,6 +232,7 @@ share/icons/hicolor/48x48/actions/open-raw.png
 share/icons/hicolor/48x48/apps/kphotoalbum.png
 share/icons/hicolor/64x64/actions/open-raw.png
 share/icons/hicolor/64x64/apps/kphotoalbum.png
+share/icons/hicolor/scalable/apps/kphotoalbum.svg
 %%DATADIR%%/default-setup
 %%DATADIR%%/demo/CategoryImages/Keywords-scenic.jpg
 %%DATADIR%%/demo/CategoryImages/People-Anne_Helene.jpg
@@ -274,12 +275,10 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%DATADIR%%/pics/search.jpg
 %%DATADIR%%/pics/splash-large.png
 %%DATADIR%%/pics/splash.png
-%%DATADIR%%/themes/blue/download.png
 %%DATADIR%%/themes/blue/imagepage.html
 %%DATADIR%%/themes/blue/kphotoalbum.theme
 %%DATADIR%%/themes/blue/mainpage.css
 %%DATADIR%%/themes/blue/mainpage.html
-%%DATADIR%%/themes/dark/download.png
 %%DATADIR%%/themes/dark/imagepage.html
 %%DATADIR%%/themes/dark/kphotoalbum.theme
 %%DATADIR%%/themes/dark/mainpage.html
@@ -300,7 +299,6 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%DATADIR%%/themes/darkJS/slideshow.gif
 %%DATADIR%%/themes/darkJS/slideshow2.gif
 %%DATADIR%%/themes/darkJS/style.css
-%%DATADIR%%/themes/grey/download.png
 %%DATADIR%%/themes/grey/imagepage.html
 %%DATADIR%%/themes/grey/kphotoalbum.theme
 %%DATADIR%%/themes/grey/mainpage.css
@@ -312,7 +310,6 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%DATADIR%%/themes/picBelow/style.css
 %%DATADIR%%/themes/rounded/downbar.png
 %%DATADIR%%/themes/rounded/downleft.png
-%%DATADIR%%/themes/rounded/download.png
 %%DATADIR%%/themes/rounded/downright.png
 %%DATADIR%%/themes/rounded/imagepage.html
 %%DATADIR%%/themes/rounded/kphotoalbum.theme
@@ -323,7 +320,6 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%DATADIR%%/themes/rounded/upbar.png
 %%DATADIR%%/themes/rounded/upleft.png
 %%DATADIR%%/themes/rounded/upright.png
-%%DATADIR%%/tips
 share/kxmlgui5/kphotoalbum/kphotoalbumui.rc
 share/locale/ar/LC_MESSAGES/kphotoalbum.mo
 share/locale/be/LC_MESSAGES/kphotoalbum.mo
@@ -368,6 +364,7 @@ share/locale/ro/LC_MESSAGES/kphotoalbum.mo
 share/locale/ru/LC_MESSAGES/kphotoalbum.mo
 share/locale/se/LC_MESSAGES/kphotoalbum.mo
 share/locale/sk/LC_MESSAGES/kphotoalbum.mo
+share/locale/sl/LC_MESSAGES/kphotoalbum.mo
 share/locale/sv/LC_MESSAGES/kphotoalbum.mo
 share/locale/tr/LC_MESSAGES/kphotoalbum.mo
 share/locale/ug/LC_MESSAGES/kphotoalbum.mo

@@ -6,6 +6,7 @@ CATEGORIES=	astro geography
 
 MAINTAINER=	ml@netfence.it
 COMMENT=	Concise ChartPlotter/Navigator
+WWW=		https://opencpn.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.gplv2

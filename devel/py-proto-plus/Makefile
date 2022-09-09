@@ -1,11 +1,12 @@
 PORTNAME=	proto-plus
-PORTVERSION=	1.20.6
+PORTVERSION=	1.22.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Beautiful, Pythonic protocol buffers
+WWW=		https://github.com/googleapis/proto-plus-python
 
 LICENSE=	APACHE20
 

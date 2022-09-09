@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Oryx model component for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Model-Oryx
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Oryx>=0:databases/p5-Oryx \

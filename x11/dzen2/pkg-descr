@@ -2,5 +2,3 @@ Dzen is a general purpose messaging, notification and menuing program
 for X11. It was desigend to be scriptable in any language and
 integrate well with window managers like dwm, wmii and xmonad though
 it will work with any windowmanger.
-
-WWW: https://github.com/robm/dzen

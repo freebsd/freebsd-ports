@@ -7,6 +7,7 @@ CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Waveshaper plugin with a graph editor
+WWW=		https://github.com/wolf-plugins/wolf-shaper/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

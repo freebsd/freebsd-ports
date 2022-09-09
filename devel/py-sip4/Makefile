@@ -7,6 +7,7 @@ DISTNAME=	${SIP4_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
+WWW=		http://www.riverbankcomputing.co.uk/software/sip/
 
 USES=		python pyqt:sip
 USE_PYTHON=	concurrent py3kplist flavors

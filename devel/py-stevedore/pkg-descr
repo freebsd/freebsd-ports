@@ -4,5 +4,3 @@ and extend your application by discovering and loading extensions
 for doing this, using __import__ or importlib. Stevedore avoids
 creating yet another extension mechanism by building on top of setuptools
 entry points.
-
-WWW: https://docs.openstack.org/stevedore/latest/

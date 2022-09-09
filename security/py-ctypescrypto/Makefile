@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CTypes-based interface for some OpenSSL libcrypto features
+WWW=		https://github.com/vbwagner/ctypescrypto
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

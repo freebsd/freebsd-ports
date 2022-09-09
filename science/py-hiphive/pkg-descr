@@ -3,5 +3,3 @@ atomistic simulations, most commonly density functional theory calculations.
 It has been implemented in the form of a Python library, which allows it to be
 readily integrated with many first-principles codes and analysis tools
 accessible in Python.
-
-WWW: https://hiphive.materialsmodeling.org/

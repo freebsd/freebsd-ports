@@ -11,5 +11,3 @@ documentation has several links on the topic.
 
 Besides the simple techniques shown above, The SQL-Interpolate
 distribution includes the optional DBIx::Interp module.
-
-WWW: https://metacpan.org/release/SQL-Interp

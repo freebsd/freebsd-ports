@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Class diagrams generator for Ruby on Rails applications
+WWW=		http://railroad.rubyforge.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

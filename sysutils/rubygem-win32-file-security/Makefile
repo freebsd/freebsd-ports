@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	File security methods for the File class on MS Windows
+WWW=		https://github.com/chef/win32-file-security/
 
 LICENSE=	ART20
 

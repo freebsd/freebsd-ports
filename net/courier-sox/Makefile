@@ -5,6 +5,7 @@ MASTER_SITES=	SF/courier/sox/${DISTVERSION}
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Courier Socks 5 Proxy client library and wrapper
+WWW=		https://www.Courier-MTA.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

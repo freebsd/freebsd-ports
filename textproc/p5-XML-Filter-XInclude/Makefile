@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XInclude as a SAX Filter
+WWW=		https://metacpan.org/release/XML-Filter-XInclude
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI>=0:net/p5-URI \

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/bf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast x86 and x86-64 disassembler library
+WWW=		https://github.com/gdabah/distorm
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -2,5 +2,3 @@ libvanessa_socket is a library that provides a simple layer for TCP/IP socket
 operations. It includes code to open a socket to a server as a client, to
 listen on sockets for clients as a server and to pipe information between
 sockets.
-
-WWW: http://horms.net/projects/vanessa/

@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime pinyin-simp schema support
+WWW=		https://github.com/rime/rime-pinyin-simp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

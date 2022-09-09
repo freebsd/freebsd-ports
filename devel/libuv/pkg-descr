@@ -13,5 +13,3 @@ Feature highlights:
  + Signal handling
  + High resolution clock
  + Threading and synchronization primitives
-
-WWW: https://github.com/libuv/libuv

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	Firmware for RaspberryPi Single Board Computer
+WWW=		https://github.com/raspberrypi/firmware
 
 LICENSE=	BROADCOM
 LICENSE_NAME=	Broadcom Corporation

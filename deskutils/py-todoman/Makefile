@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andreas@bilke.org
 COMMENT=	Simple CalDAV-based todo manager
+WWW=		https://github.com/pimutils/todoman/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE

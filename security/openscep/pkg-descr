@@ -4,5 +4,3 @@ draft specification.
 
 OpenSCEP includes a client and a server implementation, as well as some CGI
 programs to simplify certificate and revocation list management.
-
-WWW: http://openscep.othello.ch/

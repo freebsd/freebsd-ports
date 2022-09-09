@@ -1,5 +1,3 @@
 This is a Rails gem for conveniently manage multiple nested models
 in a single form. It does so in an unobtrusive way through jQuery
 or Prototype.
-
-WWW: https://github.com/ryanb/nested_form

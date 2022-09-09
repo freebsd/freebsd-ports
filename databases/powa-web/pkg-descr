@@ -5,5 +5,3 @@ worker.
 
 Install databases/powa-archivist on your database servers, and this port
 on any machine with psql access to the databases.
-
-WWW: http://powa.readthedocs.org/

@@ -5,5 +5,3 @@ verification and documentation generation.
 
 GObject Introspection contains tools to generate and handle the introspection
 data.
-
-WWW: https://gi.readthedocs.io/en/latest/

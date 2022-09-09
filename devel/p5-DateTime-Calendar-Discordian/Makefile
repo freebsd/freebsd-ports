@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl extension for the Discordian Calendar
+WWW=		https://metacpan.org/release/DateTime-Calendar-Discordian
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the LZ4 (de)compressor
+WWW=		https://metacpan.org/release/Compress-LZ4
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

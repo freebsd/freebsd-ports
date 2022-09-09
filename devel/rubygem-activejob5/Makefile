@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Job class declarations for a variety of queueing backends
+WWW=		https://github.com/rails/rails/tree/main/activejob
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

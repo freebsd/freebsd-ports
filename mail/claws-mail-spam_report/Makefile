@@ -1,6 +1,7 @@
 PORTNAME=	spam_report
 
 COMMENT=	Spam report plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugins.php
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

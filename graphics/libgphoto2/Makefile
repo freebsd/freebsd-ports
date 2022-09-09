@@ -6,6 +6,7 @@ MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Universal digital camera control library
+WWW=		http://www.gphoto.org/proj/libgphoto2/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

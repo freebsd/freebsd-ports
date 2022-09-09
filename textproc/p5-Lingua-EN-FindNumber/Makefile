@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Locate (written) numbers in English text
+WWW=		https://metacpan.org/release/Lingua-EN-FindNumber
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

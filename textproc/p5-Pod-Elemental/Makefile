@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Treating a Pod document as a tree of elements
+WWW=		https://metacpan.org/release/Pod-Elemental
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

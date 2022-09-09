@@ -7,6 +7,7 @@ DISTNAME=	ufs-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Fast copy utility for UFS filesystem
+WWW=		https://people.freebsd.org/~simokawa/ufs/
 
 LICENSE=	BSD4CLAUSE
 

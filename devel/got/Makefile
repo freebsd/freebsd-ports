@@ -1,10 +1,11 @@
 PORTNAME=	got
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Game of Trees version control system
+WWW=		https://gameoftrees.org
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pure Python QR code generator with SVG, EPS, PNG and terminal output
+WWW=		https://github.com/mnooner256/pyqrcode
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License

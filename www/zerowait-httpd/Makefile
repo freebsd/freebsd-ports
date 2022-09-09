@@ -8,6 +8,7 @@ DISTNAME=	0W-httpd-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight and fast http server
+WWW=		https://www.0w.ru/httpd/
 
 LICENSE=	BSD3CLAUSE
 

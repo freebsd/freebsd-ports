@@ -3,5 +3,3 @@ CPUs using MSR.  Also allows to alter power limits and temperature
 limit using MSR and MCHBAR registers.
 
 Use at your own risk.
-
-WWW: https://github.com/kitsunyan/intel-undervolt

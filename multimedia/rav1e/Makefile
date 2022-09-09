@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast and safe AV1 encoder
+WWW=		https://github.com/xiph/rav1e
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

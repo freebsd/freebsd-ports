@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Paste to http://pastebin.com from Perl
+WWW=		https://metacpan.org/release/WWW-Pastebin-PastebinCom-Create
 
 LICENSE=	ART20
 

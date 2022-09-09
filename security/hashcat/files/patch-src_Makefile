@@ -1,17 +1,26 @@
---- src/Makefile.orig	2021-05-14 17:08:08 UTC
+--- src/Makefile.orig	2022-09-02 14:58:13 UTC
 +++ src/Makefile
-@@ -80,7 +80,9 @@ endif
- ifeq ($(UNAME),FreeBSD)
+@@ -82,7 +82,9 @@ CXX                     := c++
+ ifneq (,$(filter $(UNAME),FreeBSD NetBSD))
  CC                      := cc
  CXX                     := c++
 -SED                     := gsed
-+CXXLIB			:= -lc++
++CXXLIB                  := -lc++
 +SED                     := /usr/bin/sed
 +SED_IN_PLACE            := -i ""
  endif
  
  ##
-@@ -586,10 +588,10 @@ endif
+@@ -213,7 +215,7 @@ ifneq ($(CC),clang)
+ ifeq ($(ENABLE_UNRAR),1)
+ ifeq ($(USE_SYSTEM_UNRAR),0)
+ ifneq ($(CC),clang)
+-CFLAGS_UNRAR            += -Wno-class-memaccess
++#CFLAGS_UNRAR            += -Wno-class-memaccess
+ CFLAGS_UNRAR            += -Wno-misleading-indentation
+ endif
+ CFLAGS_UNRAR            += -Wno-missing-braces
+@@ -651,10 +653,10 @@ $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
  
  ifeq ($(SHARED),1)
  $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
@@ -20,7 +29,7 @@
  else
  $(HASHCAT_FRONTEND): src/main.c obj/combined.NATIVE.a
 -	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
-+	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) ${CXXLIB} -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\" -lc++
++	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) ${CXXLIB} -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
  endif
  
  ##

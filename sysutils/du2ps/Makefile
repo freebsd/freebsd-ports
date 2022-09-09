@@ -5,6 +5,7 @@ MASTER_SITES=	http://line.to/mac/soft/du2ps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter for converting output of du to PostScript file
+WWW=		https://line.to/mac/soft/du2ps/
 
 LICENSE=	MIT
 

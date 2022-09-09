@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	LGPLv3 Cortex-M0/M3/M4 runtime library
+WWW=		https://github.com/libopencm3/libopencm3
 
 LICENSE=	LGPL3
 

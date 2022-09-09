@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Distributed database system
+WWW=		https://metacpan.org/release/Prophet
 
 LICENSE=	MIT
 

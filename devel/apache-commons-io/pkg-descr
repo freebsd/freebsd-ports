@@ -5,5 +5,3 @@ There are three main areas included:
     * Utility classes - with static methods to perform common tasks
     * Filters - various implementations of file filters
     * Streams - useful stream, reader and writer implementations
-
-WWW: https://commons.apache.org/proper/commons-io/

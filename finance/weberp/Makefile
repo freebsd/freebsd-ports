@@ -6,6 +6,7 @@ DISTNAME=	webERP_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source Web-Based ERP System
+WWW=		https://www.weberp.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt

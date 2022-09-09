@@ -6,5 +6,3 @@ development easier.  It also offers a level of performance that
 exceeds that of Dash, when taking advantage of Ion's features.
 While it is developed alongside, and primarily for, RedoxOS, it is
 a fully capable on other *nix platforms.
-
-WWW: https://gitlab.redox-os.org/redox-os/ion

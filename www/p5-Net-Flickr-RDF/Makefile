@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Describe Flickr photos as RDF
+WWW=		https://metacpan.org/release/Net-Flickr-RDF
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

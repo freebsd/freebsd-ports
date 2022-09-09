@@ -5,6 +5,7 @@ MASTER_SITES=	http://phrat.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal wrapper for creating drop-down consoles
+WWW=		http://phrat.de/yeahtools.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

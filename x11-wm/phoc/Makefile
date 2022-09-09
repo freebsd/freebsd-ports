@@ -1,10 +1,11 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.21.1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
+WWW=		https://gitlab.gnome.org/World/Phosh/phoc
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,7 +26,7 @@ USE_GNOME=	gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	1a58a2363b686241647138a8822beac4f761f3fb
+GL_COMMIT=	0bcb87984fc08f7417baf9aa25a1707126620a6e
 SHEBANG_FILES=	build-aux/post_install.py
 CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}

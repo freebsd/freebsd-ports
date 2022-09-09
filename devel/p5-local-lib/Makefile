@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create and use a local lib/ for perl modules with PERL5LIB
+WWW=		https://metacpan.org/release/local-lib
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

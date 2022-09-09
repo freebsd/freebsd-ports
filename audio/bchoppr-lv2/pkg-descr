@@ -4,5 +4,3 @@ audio signal, it needs a playback running (Jack transport).
 
 In addition to the global controllers, the interface is divided into three
 parts: step controls, monitor and step shape.
-
-WWW: https://github.com/sjaehn/BChoppr

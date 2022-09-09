@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	CAN bus reverse engineering and capture tool
+WWW=		https://www.savvycan.com/
 
 LICENSE=	MIT
 

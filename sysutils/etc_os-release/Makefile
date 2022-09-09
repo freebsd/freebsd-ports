@@ -8,6 +8,7 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Operating system identification file
+WWW=		https://www.freedesktop.org/software/systemd/man/os-release.html
 
 NO_ARCH=	yes
 NO_BUILD=	yes

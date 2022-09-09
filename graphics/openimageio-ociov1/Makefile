@@ -1,7 +1,7 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.21.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics multimedia
 PKGNAMESUFFIX=	-ociov1
 # special port to link oiio libs with ociov1
@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-ociov1
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	OpenImageIO graphics library linked to ocio v1
+WWW=		https://www.openimageio.org/
 
 LICENSE=	BSD3CLAUSE
 

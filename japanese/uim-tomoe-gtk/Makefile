@@ -6,6 +6,7 @@ MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UIM helper program for Tomoe
+WWW=		https://sourceforge.jp/projects/tomoe/
 
 LIB_DEPENDS=	libtomoe.so:japanese/tomoe \
 		libtomoe-gtk.so:japanese/libtomoe-gtk \

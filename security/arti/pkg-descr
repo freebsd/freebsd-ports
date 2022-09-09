@@ -1,5 +1,3 @@
 Arti is a project to produce an embeddable, production-quality implementation
 of the Tor anonymity protocols in the Rust programming language.
 Arti is not ready for production use!!!
-
-WWW: https://gitlab.torproject.org/tpo/core/arti/

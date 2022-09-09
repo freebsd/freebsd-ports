@@ -16,5 +16,3 @@ tools:
 
 All CP/M file system features are supported. Password protection is ignored,
 but a pseudo file [passwd] contains them decrypted.
-
-WWW: http://www.moria.de/~michael/cpmtools/

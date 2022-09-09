@@ -11,6 +11,7 @@ EXTRACT_ONLY=	puzzle-${DISTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle from the old C64 Impossible Mission game
+WWW=		http://www.linuxmotors.com/puzzle
 
 LICENSE=	GPLv2
 

@@ -1,3 +1,1 @@
 iostruct provides a struct that can read/write itself from/to IO-like objects.
-
-WWW: https://github.com/zed-0xff/iostruct

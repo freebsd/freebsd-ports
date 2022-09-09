@@ -8,5 +8,3 @@ PortAudio provides a very simple API for recording and/or playing sound using
 a simple callback function or a blocking read/write interface.
 Example programs are included that play sine waves, process audio input
 (guitar fuzz), record and playback audio, list available audio devices, etc.
-
-WWW: http://www.portaudio.com/

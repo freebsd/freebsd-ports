@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Fast javascript parser
+WWW=		https://github.com/PiotrDabkowski/pyjsparser
 
 LICENSE=	MIT
 

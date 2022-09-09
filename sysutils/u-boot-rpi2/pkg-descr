@@ -12,6 +12,4 @@ This version is patched so that:
    not found, it falls back on ubldr
 
 For information about running FreeBSD on RaspberryPi, see
-WWW: https://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi
-
 For general information about U-Boot see WWW: https://www.denx.de/wiki/U-Boot

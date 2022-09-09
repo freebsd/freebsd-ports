@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Create JavaScript/CSS assets for Jekyll sites
+WWW=		http://jekyll-assets.github.io/jekyll-assets/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Client for Sentry
+WWW=		https://pypi.org/project/raven/
 
 LICENSE=	BSD2CLAUSE
 

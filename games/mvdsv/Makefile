@@ -5,6 +5,7 @@ CATEGORIES?=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
+WWW=		https://github.com/deurk/mvdsv
 
 LICENSE=	GPLv2
 

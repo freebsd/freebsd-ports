@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	ARIB STD-B24 library
+WWW=		https://github.com/nkoriyama/aribb24
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

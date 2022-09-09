@@ -1,11 +1,11 @@
---- ui/gl/gl_image_glx_native_pixmap.cc.orig	2022-06-17 14:20:10 UTC
+--- ui/gl/gl_image_glx_native_pixmap.cc.orig	2022-08-31 12:19:35 UTC
 +++ ui/gl/gl_image_glx_native_pixmap.cc
-@@ -17,6 +17,8 @@
+@@ -12,6 +12,8 @@
  #include "ui/gl/buffer_format_utils.h"
- #include "ui/gl/gl_bindings.h"
+ #include "ui/gl/glx_util.h"
  
 +#include <unistd.h>
 +
  namespace gl {
  
- namespace {
+ GLImageGLXNativePixmap::GLImageGLXNativePixmap(const gfx::Size& size,

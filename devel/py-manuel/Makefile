@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Lets you build tested documentation
+WWW=		https://pypi.org/project/manuel/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

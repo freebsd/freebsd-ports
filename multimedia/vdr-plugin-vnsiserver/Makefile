@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - VNSI server plugin
+WWW=		https://www.vdr-portal.de/board/thread.php?threadid=95292
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

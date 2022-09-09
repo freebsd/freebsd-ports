@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, intuitive linear algebra library for C++
+WWW=		https://github.com/rmjarvis/tmv
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/TMV_LICENSE

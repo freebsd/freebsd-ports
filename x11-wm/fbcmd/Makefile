@@ -6,6 +6,7 @@ MASTER_SITES=	http://darkshed.net/files/c_cpp/fbcmd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline utility for controlling fluxbox
+WWW=		https://darkshed.net/files/c_cpp/fbcmd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

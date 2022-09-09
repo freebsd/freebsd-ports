@@ -8,5 +8,3 @@ It is similar to Python’s [construct] and [Construct3], but it is
 language-agnostic. The format description is done in YAML-based .ksy
 format, which then can be compiled into a wide range of target
 languages.
-
-WWW: http://kaitai.io/

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source system for electronic exams
+WWW=		https://www.tcexam.org/
 
 LICENSE=	GPLv3
 

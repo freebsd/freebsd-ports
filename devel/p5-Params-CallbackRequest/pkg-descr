@@ -5,5 +5,3 @@ This approach allows you to carry out logical processing of data submitted
 from a form, to affect the contents of the request parameters before they're
 passed to the templating system for processing, and even to redirect or abort
 the request before the templating system handles it.
-
-WWW: https://metacpan.org/release/Params-CallbackRequest

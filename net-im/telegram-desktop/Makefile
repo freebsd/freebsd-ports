@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Telegram Desktop messaging app
+WWW=		https://desktop.telegram.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

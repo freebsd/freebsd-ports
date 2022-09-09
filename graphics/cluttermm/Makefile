@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for clutter
+WWW=		https://developer.gnome.org/cluttermm/
 
 LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter
 

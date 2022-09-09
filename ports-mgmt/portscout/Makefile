@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool to scan for new versions of FreeBSD ports
+WWW=		https://www.inerd.com/software/portscout/
 
 LICENSE=	BSD2CLAUSE
 

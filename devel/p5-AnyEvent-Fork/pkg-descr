@@ -7,5 +7,3 @@ for short- and long-running jobs, process pools (e.g. for use in pre-forked
 servers) but also to spawn new external processes (such as CGI scripts from a
 web server), which can be faster (and more well behaved) than using fork+exec in
 big processes.
-
-WWW: https://metacpan.org/dist/AnyEvent-Fork

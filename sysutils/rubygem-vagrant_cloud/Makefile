@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Vagrant Cloud API wrapper for Ruby
+WWW=		https://www.vagrantup.com/docs/cli/cloud.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	Authlib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ultimate Python library in building OAuth and OpenID Connect servers
+WWW=		https://authlib.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Building newsfiles for your project
+WWW=		https://github.com/twisted/towncrier
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -14,5 +14,3 @@ the available width automatically.
 If the option table_expand is enabled and a row is selected with Return, each
 column of that row is output in its own line preceded by the column name. This
 might be useful if the columns were cut due to the too low terminal width.
-
-WWW: https://metacpan.org/release/Term-TablePrint

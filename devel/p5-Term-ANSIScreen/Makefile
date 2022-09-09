@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Term::ANSIColor clone with screen mode support
+WWW=		https://metacpan.org/release/Term-ANSIScreen
 
 LICENSE=	CC0-1.0
 

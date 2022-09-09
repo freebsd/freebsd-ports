@@ -5,6 +5,7 @@ MASTER_SITES=	SF/opennms/JICMP/stable-1.4/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to ICMP (ping)
+WWW=		https://www.opennms.org/index.php/Jicmp
 
 WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}
 

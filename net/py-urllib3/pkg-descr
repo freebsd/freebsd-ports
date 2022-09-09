@@ -9,5 +9,3 @@ critical features that are missing from the Python standard libraries:
 - Support for gzip and deflate encoding.
 - Proxy support for HTTP and SOCKS.
 - 100% test coverage.
-
-WWW: https://pypi.org/project/urllib3/

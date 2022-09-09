@@ -3,5 +3,3 @@ to Amazon EC2, Amazon S3, Amazon SQS, and Amazon SDB. The gems use
 Amazon's REST and query interfaces to provide full programmatic
 control. An optional robust HTTP layer retries and clears transient
 errors.
-
-WWW: https://github.com/rightscale/right_http_connection

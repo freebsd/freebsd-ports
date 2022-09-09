@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Inotify bindings for PHP
+WWW=		https://pecl.php.net/package/inotify
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

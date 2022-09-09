@@ -1,6 +1,14 @@
-DTrace module for FreeBSD dwatch(1) to produce JSON logs. JSON (JavaScript
-Object Notation) is easily consumed by log aggregators such as Kafka and
-Telegraf and visualizers like Vizceral. With these modules you can get
-data out of the kernel/userland for use in such aggregators/visualizers.
+DTrace suite for FreeBSD dwatch(1) to produce JSON stats.
+JSON (JavaScript Object Notation) is easily consumed by log aggregators such as
+Kafka and Telegraf and visualizers like Grafana and Vizceral. It is also easily
+parsed, filtered, and transformed with jq.
 
-WWW: https://fraubsd.org/dwatch-json/
+With this package you can get data out of the kernel for use in such tools,
+aggregators, and visualizers.
+
+Included in this package are service suites which help automate the collection
+of statistics for time-series graphing (with Grafana for example). The suites
+consist of general daemons, sample configs, statistics-gathering daemons
+(utilizing telegraf), log-rotation tools, default cron.d entries for calling
+said tools, and many convenience features including full service(8) integration
+and rc.conf(5) support.

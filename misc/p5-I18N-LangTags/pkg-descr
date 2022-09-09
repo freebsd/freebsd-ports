@@ -6,5 +6,3 @@ This library provides functions for common tasks involving language
 tags (notably the extraction of them, comparing them, and testing the
 formal validity of them) as is needed in a variety of protocols and
 applications.
-
-WWW: https://metacpan.org/release/SBURKE/I18N-LangTags-0.35

@@ -7,6 +7,7 @@ MASTER_SITES=	http://dl.bintray.com/nfc-tools/sources/ \
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
+WWW=		http://www.libnfc.org
 
 LICENSE=	LGPL3+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Visualize XML as a graph
+WWW=		https://metacpan.org/release/GraphViz2-Parse-XML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

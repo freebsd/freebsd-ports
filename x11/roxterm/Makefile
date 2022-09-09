@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	GTK+ terminal emulator with tabs
+WWW=		https://github.com/realh/roxterm
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert fractions into Unicode chars
+WWW=		https://metacpan.org/release/String-Fraction
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

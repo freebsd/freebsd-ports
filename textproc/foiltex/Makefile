@@ -7,6 +7,7 @@ DISTFILES=	foiltex.dtx foiltex.ins
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of LaTeX files for making foils
+WWW=		https://ctan.org/pkg/foiltex
 
 # Converted from NO_CDROM
 LICENSE=	foiltex

@@ -7,6 +7,7 @@ DISTNAME=	swipl-${DISTVERSION}
 
 MAINTAINER=	mailinglist@diamondbox.dk
 COMMENT=	Edinburgh-style Prolog compiler
+WWW=		https://www.swi-prolog.org/
 
 LICENSE=	BSD2CLAUSE
 

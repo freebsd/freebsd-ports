@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Set of PHP-scripts to manage MySQL over the web
+WWW=		https://www.phpmyadmin.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

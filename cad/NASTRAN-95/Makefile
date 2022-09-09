@@ -5,6 +5,7 @@ CATEGORIES=	cad science
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	NASA Structural Analysis System
+WWW=		https://github.com/nasa/NASTRAN-95
 
 LICENSE=	NOSA
 LICENSE_NAME=	NASA OPEN SOURCE AGREEMENT VERSION 1.3

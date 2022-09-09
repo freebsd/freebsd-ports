@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse BIND Config files
+WWW=		https://metacpan.org/release/BIND-Config-Parser
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent

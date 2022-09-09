@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ebook management application
+WWW=		https://calibre-ebook.com/
 
 LICENSE=	GPLv3
 

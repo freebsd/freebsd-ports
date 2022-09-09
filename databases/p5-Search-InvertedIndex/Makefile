@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manager for inverted index maps
+WWW=		https://metacpan.org/release/Search-InvertedIndex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test for valid YAML
+WWW=		https://metacpan.org/release/Test-YAML-Valid
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

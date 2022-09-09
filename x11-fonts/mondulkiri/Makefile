@@ -7,6 +7,7 @@ DISTNAME=	Mondulkiri_Unicode_fonts_V2E3s
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Mondulkiri Khmer fonts
+WWW=		https://sourceforge.net/projects/khmer/
 
 USES=		fonts zip
 NO_BUILD=	yes

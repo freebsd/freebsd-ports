@@ -2,5 +2,3 @@ Sary is a suffix array library and tools.  It provides fast full-text
 search facilities for text files on the order of 10 to 100 MB using a
 data structure called a suffix array.  It can also search specific
 fields in a text file by assigning index points to those fields.
-
-WWW: http://sary.sourceforge.net/index.html.en

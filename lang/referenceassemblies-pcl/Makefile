@@ -9,6 +9,7 @@ DISTFILES=	NetFx_PortableLibraryReferenceAssemblies46.exe:ms \
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Microsoft .Net Portable Class Library Reference Assemblies
+WWW=		https://blogs.msdn.microsoft.com/dotnet/2013/10/14/portable-class-library-pcl-now-available-on-all-platforms/
 
 LICENSE=	EULA
 LICENSE_NAME=	Microsoft software license terms for Microsoft .Net Portable Class Library Reference Assemblies - 4.6

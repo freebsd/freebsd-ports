@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for comparing arrays
+WWW=		https://metacpan.org/release/Array-Compare
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

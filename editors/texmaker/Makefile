@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.xm1math.net/texmaker/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	LaTeX Development Environment
+WWW=		https://www.xm1math.net/texmaker/
 
 LICENSE=	GPLv2+
 

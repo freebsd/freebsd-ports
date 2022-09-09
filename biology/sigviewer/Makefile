@@ -7,6 +7,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Viewing application for biosignals
+WWW=		https://github.com/cbrnr/sigviewer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

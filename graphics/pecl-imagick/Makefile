@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	000.fbsd@quip.cz
 COMMENT?=	PHP wrapper to the ImageMagick/GraphicsMagick library version 6
+WWW=		https://pecl.php.net/package/imagick
 
 LICENSE=	PHP301
 

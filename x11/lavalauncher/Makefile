@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONF
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple launcher panel for Wayland desktops
+WWW=		https://git.sr.ht/~leon_plickat/lavalauncher
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

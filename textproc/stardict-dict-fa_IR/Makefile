@@ -6,6 +6,7 @@ DISTNAME=	Open%20Dictionary%20aka%20QueerDick-2010-09-28-rich
 
 MAINTAINER=	javad.kouhi@gmail.com
 COMMENT=	English-Persian dictionary for stardict
+WWW=		http://pyglossary.sourceforge.net
 
 WRKSRC=		"${WRKDIR}/Open Dictionary aka QueerDick-2010-09-28-rich"
 

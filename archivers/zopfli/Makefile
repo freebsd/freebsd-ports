@@ -6,6 +6,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Zopfli Compression Algorithm
+WWW=		https://github.com/google/zopfli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

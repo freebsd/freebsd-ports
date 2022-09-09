@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Logging via Facebook's Scribe server software #'
+WWW=		https://metacpan.org/release/Log-Dispatch-Scribe
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

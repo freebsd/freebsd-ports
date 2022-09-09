@@ -1,5 +1,3 @@
 DMG2IMG is a tool which allows converting Apple compressed dmg archives to
 standard (hfsplus) image disk files. This tool handles zlib and bzip2 compressed
 dmg images.
-
-WWW: http://vu1tur.eu.org/tools/

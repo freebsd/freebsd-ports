@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop
+WWW=		https://projects.gnome.org/gnome-power-manager/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

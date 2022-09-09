@@ -3,5 +3,3 @@ MySQL-style configuration files.  Although deceptively similar to
 standard .INI files, they can include bare boolean options with no
 value assignment and additional features like !include and
 !includedir.
-
-WWW: https://metacpan.org/release/Config-MySQL

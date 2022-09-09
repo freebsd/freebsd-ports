@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Perl 5 module for easy to use interface for Nginx Perl Module
+WWW=		https://metacpan.org/release/Nginx-Simple
 
 USES=		perl5
 USE_PERL5=	configure

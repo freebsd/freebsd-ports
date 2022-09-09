@@ -1,12 +1,13 @@
 PORTNAME=	obfs4proxy
 DISTVERSION=	0.0.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-tor
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Pluggable transport proxy for Tor (obfs4, The Obfuscator)
+WWW=		https://gitlab.com/yawning/obfs4
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,5 +5,3 @@ applications difficult.  Two major abstractions handled by PyDal are
 paramstyles and datetime objects.  PyDal makes it possible to use the same
 paramstyle and datetime types with any module that conforms to DBAPI 2.0.
 In addition, paramstyles and datetime types are configurable.
-
-WWW: http://pydal.sourceforge.net/

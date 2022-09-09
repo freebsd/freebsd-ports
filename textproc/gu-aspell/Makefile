@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Gujarati dictionary
+WWW=		https://sourceforge.net/projects/aspell-gu/
 
 DICT=	 	gu
 

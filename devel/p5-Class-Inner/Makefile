@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perlish implementation of Java like inner classes
+WWW=		https://metacpan.org/release/Class-Inner
 
 USES=		perl5
 USE_PERL5=	configure

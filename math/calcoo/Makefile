@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	RPN and algebraic scientific calculator
+WWW=		http://calcoo.sourceforge.net/
 
 USES=		gnome pkgconfig
 USE_GNOME=	gtk20

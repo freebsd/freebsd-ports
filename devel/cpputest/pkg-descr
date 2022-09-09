@@ -7,5 +7,3 @@ CppUTest's core design principles:
 * Simple to use and small
 * Portable to old and new platforms
 * Build with Test-driven Development in mind
-
-WWW: https://cpputest.github.io/

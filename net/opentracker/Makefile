@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Free lightweight bittorrent tracker using libowfat
+WWW=		https://erdgeist.org/arts/software/opentracker/
 
 BROKEN=		fails to link: duplicate symbol: first_deferred, known libowfat issue
 

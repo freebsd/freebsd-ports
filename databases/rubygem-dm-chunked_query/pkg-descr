@@ -1,3 +1,1 @@
 Allows performing chunked queries on DataMapper Models or Collections.
-
-WWW: https://github.com/postmodern/dm-chunked_query

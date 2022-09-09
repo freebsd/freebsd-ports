@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Send your RabbitMQ metrics to Riemann
+WWW=		https://github.com/riemann/riemann-tools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

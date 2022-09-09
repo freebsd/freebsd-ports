@@ -16,5 +16,3 @@ other algorithms. Its features include:
     optimization, and general nonlinear inequality/equality constraints.
   - Free/open-source software under the GNU LGPL
     (and looser licenses for some portions of NLopt).
-
-WWW: https://nlopt.readthedocs.io/en/latest/

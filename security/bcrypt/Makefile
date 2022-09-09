@@ -6,6 +6,7 @@ MASTER_SITES=	http://bcrypt.sourceforge.net/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cross-platform blowfish encryption utility
+WWW=		http://bcrypt.sourceforge.net/
 
 ALL_TARGET=	${PORTNAME}
 

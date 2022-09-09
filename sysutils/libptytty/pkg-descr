@@ -12,5 +12,3 @@ the program there is less to gain, as only the helper process runs with
 privileges (e.g. setuid/setgid), which reduces the area of attack immensely.
 
 Libptytty is written in C++, but it also offers a C-only API.
-
-WWW: http://software.schmorp.de/pkg/libptytty.html

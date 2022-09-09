@@ -1,10 +1,11 @@
 PORTNAME=	automuteus
 DISTVERSION=	7.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Discord Bot to automute Among Us players at round transitions
+WWW=		https://automute.us/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

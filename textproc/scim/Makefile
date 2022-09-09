@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smart Common Input Method platform
+WWW=		https://github.com/scim-im/scim
 
 LICENSE=	LGPL21
 

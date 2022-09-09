@@ -19,5 +19,3 @@ wsgi_intercept.WSGI_HTTPConnection. This class then redirects specific
 server/port combinations into a WSGI application by emulating a socket. If no
 intercept is registered for the host and port requested, those requests are
 passed on to the standard handler.
-
-WWW: https://github.com/cdent/wsgi-intercept

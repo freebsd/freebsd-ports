@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt power management
+WWW=		https://github.com/lxqt/lxqt-powermanagement
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

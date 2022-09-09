@@ -5,6 +5,7 @@ MASTER_SITES=	http://ftp.math.utah.edu/pub//bibclean/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Prettyprinter, portability verifier, and syntax checker for BibTeX
+WWW=		https://ftp.math.utah.edu/pub//bibclean/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides scripts to dynamically configure amd
+WWW=		https://sf.net/projects/bsdadminscripts/
 
 LICENSE=	BSD2CLAUSE
 

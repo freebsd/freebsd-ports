@@ -1,10 +1,11 @@
 PORTNAME=	webmock
-PORTVERSION=	3.14.0
+PORTVERSION=	3.18.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Allows stubbing HTTP requests and setting expectations on the requests
+WWW=		https://github.com/bblimke/webmock
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

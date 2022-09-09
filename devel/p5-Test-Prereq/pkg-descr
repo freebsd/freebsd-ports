@@ -1,4 +1,2 @@
 Perl module for checking if Makefile.PL has the right
 pre-requisites.
-
-WWW: https://github.com/briandfoy/test-prereq

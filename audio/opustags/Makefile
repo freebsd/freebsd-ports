@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	View and edit Ogg Opus comments
+WWW=		https://github.com/fmang/opustags
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

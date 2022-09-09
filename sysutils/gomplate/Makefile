@@ -1,10 +1,12 @@
 PORTNAME=	gomplate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.11.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Command-line tool for rendering templates before executing binaries
+WWW=		https://github.com/hairyhenderson/gomplate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

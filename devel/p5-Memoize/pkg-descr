@@ -3,5 +3,3 @@ does this by caching the return values of the function in a table.  If
 you call the function again with the same arguments, memoize jumps in
 and gives you the value out of the table, instead of letting the
 function compute the value all over again.
-
-WWW: https://metacpan.org/release/Memoize

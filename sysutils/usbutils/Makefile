@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility for listing USB devices
+WWW=		https://github.com/gregkh/usbutils
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

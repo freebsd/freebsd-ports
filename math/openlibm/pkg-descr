@@ -5,5 +5,3 @@ programming language implementations.
 The project was born out of a need to have a good libm for the Julia
 programming langage that worked consistently across compilers and operating
 systems, and in 32-bit and 64-bit environments.
-
-WWW: http://julialang.org/openlibm/

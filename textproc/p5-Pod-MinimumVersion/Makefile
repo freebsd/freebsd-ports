@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Report minimum Perl version for given POD
+WWW=		https://metacpan.org/release/Pod-MinimumVersion
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,5 +5,3 @@ language, or it may be used for stand-alone scripts.
 
 The Lisp dialect was originally inspired by Emacs Lisp, but with the
 worst features removed. It also borrows many ideas from Scheme.
-
-WWW: http://sawfish.tuxfamily.org/

@@ -1,11 +1,12 @@
 PORTNAME=		ooni-probe-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=		3.15.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Next generation OONI Probe CLI
+WWW=		https://ooni.org/about/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,6 +10,7 @@ DIST_SUBDIR=	luola
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D multiplayer cave-flying game
+WWW=		https://www.luolamies.org/software/luola/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

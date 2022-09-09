@@ -19,5 +19,3 @@ number of seconds (or minutes, hours, days) left till the Year 2000.
 
 Gracula is written in C and highly optimized for speed which makes it work
 reliably even on the busiest web sites.
-
-WWW: http://www.whizkidtech.redprince.net/gcl/

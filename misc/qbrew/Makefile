@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.usermode.org/code/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Homebrewer's recipe calculator
+WWW=		http://www.usermode.org/code.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

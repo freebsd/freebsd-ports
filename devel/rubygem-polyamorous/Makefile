@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extraction of shared code from the Active Record Hackery gems
+WWW=		https://github.com/activerecord-hackery/ransack/tree/master/polyamorous
 
 LICENSE=	MIT
 

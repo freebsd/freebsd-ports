@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content management system written in PHP
+WWW=		https://www.e107.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

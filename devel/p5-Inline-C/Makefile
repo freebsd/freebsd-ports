@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write Perl Subroutines in C
+WWW=		https://metacpan.org/release/Inline-C
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

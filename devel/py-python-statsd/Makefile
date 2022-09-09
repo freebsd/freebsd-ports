@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	Client for Etsy's node-js statsd server
+WWW=		https://github.com/WoLpH/python-statsd
 
 LICENSE=	BSD3CLAUSE
 

@@ -10,5 +10,3 @@ be handled by the colorsys module in the Python standard library):
 * Three-digit hexadecimal
 * Integer rgb() triplet
 * Percentage rgb() triplet
-
-WWW: https://github.com/ubernostrum/webcolors

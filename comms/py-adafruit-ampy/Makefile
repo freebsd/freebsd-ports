@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Adafruit MicroPython tool
+WWW=		https://github.com/adafruit/ampy
 
 LICENSE=	MIT
 

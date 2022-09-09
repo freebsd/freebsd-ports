@@ -15,5 +15,3 @@ The goal was to produce a fully open source codec that could replace
 the partially closed source TurboJPEG/IPP codec used by VirtualGL and TurboVNC.
 libjpeg-turbo generally achieves 80-120% of the performance of TurboJPEG/IPP.
 It is faster in some areas but slower in others.
-
-WWW: http://libjpeg-turbo.virtualgl.org/

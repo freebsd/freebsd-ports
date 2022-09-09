@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Intuitive find and replace tool
+WWW=		https://github.com/chmln/sd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -2,6 +2,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system
+WWW=		https://subversion.apache.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/py3c.h:devel/py3c
 

@@ -3,8 +3,9 @@ DISTVERSION=	3.0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for control of LCD and the extra keys on Logitech keyboards
+WWW=		https://sourceforge.net/projects/g15tools
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

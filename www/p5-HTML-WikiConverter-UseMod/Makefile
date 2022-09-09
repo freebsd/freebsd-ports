@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert HTML to UseMod markup
+WWW=		https://metacpan.org/release/HTML-WikiConverter-UseMod
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

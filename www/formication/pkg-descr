@@ -4,5 +4,3 @@ a custom-formatted response.  Formication is also able to require that
 certain fields be filled in.  All configuration is done with simple
 templates, all of the templates for a given form being within the same
 file.
-
-WWW: http://www.villainy.com/developers.html

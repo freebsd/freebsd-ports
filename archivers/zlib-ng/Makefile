@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Fork of the zlib data compression library
+WWW=		https://github.com/zlib-ng/zlib-ng
 
 LICENSE=	ZLIB
 

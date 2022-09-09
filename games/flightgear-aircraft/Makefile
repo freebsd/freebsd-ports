@@ -46,6 +46,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Selection of additional aircraft for the FlightGear flight simulator
+WWW=		https://www.flightgear.org/
 
 LICENSE=	GPLv2
 

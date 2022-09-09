@@ -6,6 +6,7 @@ CATEGORIES=	graphics math
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	C++ library for particle I/O and manipulation
+WWW=		http://partio.us/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

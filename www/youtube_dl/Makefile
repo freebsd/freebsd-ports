@@ -8,6 +8,7 @@ DISTNAME=	youtube-dl-${DISTVERSION}
 # Implicit approval to commit trivial version updates.
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Program for downloading videos from various services
+WWW=		https://yt-dl.org/
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

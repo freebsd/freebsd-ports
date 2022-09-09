@@ -1,3 +1,1 @@
 Lua-land LRU cache based on the LuaJIT FFI
-
-WWW: https://github.com/openresty/lua-resty-lrucache

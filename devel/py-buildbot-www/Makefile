@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Buildbot UI
+WWW=		https://buildbot.net
 
 LICENSE=	GPLv2
 #LICENSE_FILE=	Not packaged in sdist

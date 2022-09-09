@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Natural sorting for python
+WWW=		https://github.com/SethMMorton/natsort
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -12,5 +12,3 @@ What it does
 - Updates maxp table values
 - Updates head table bit flags
 - Displays file sizes of the hinted and dehinted versions of the fonts
-
-WWW: https://github.com/source-foundry/dehinter

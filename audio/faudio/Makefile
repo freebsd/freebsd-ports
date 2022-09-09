@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Accuracy-focused XAudio reimplementation
+WWW=		https://fna-xna.github.io/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	bsdconv-
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	OpenCC conversion module for bsdconv
+WWW=		https://github.com/buganini/bsdconv-opencc
 
 LICENSE=	BSD2CLAUSE
 

@@ -11,5 +11,3 @@ exceptions, and hygienic macro expansion.
 Chez Scheme also includes extensive support for interfacing with C
 and other languages, support for multiple threads possibly running
 on multiple cores, non-blocking I/O, and many other features.
-
-WWW: https://cisco.github.io/ChezScheme

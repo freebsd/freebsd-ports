@@ -7,6 +7,7 @@ MASTER_SITES=	http://thewalter.net/stef/software/proxsmtp/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Flexible SMTP filter which can act also as transparent proxy
+WWW=		http://thewalter.net/stef/software/proxsmtp/
 
 LICENSE=	BSD3CLAUSE
 

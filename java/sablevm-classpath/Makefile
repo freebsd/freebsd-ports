@@ -6,6 +6,7 @@ MASTER_SITES=	SF/sablevm/sablevm/${PORTVERSION}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Classpath of SableVM
+WWW=		http://www.sablevm.org/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenID Authentication
+WWW=		https://metacpan.org/release/BTROTT/Catalyst-Plugin-Authentication-OpenID-0.02
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

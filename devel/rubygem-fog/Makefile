@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby cloud services library
+WWW=		https://github.com/fog/fog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

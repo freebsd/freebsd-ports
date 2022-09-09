@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/linux/apps/sound/convert/
 
 MAINTAINER=	martin.kraft@fal.de
 COMMENT=	Frontend to rip, convert, and name MP3/Ogg
+WWW=		http://userpage.fu-berlin.de/~mbayer/tools/dekagen.html
 
 # The only reason for installing xmcd is, that dekagen uses cda
 # for CDDB inquiries. You can safely 'make -DWITHOUT_XMCD', if you

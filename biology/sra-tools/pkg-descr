@@ -14,5 +14,3 @@ from/to other formats that the 'next-gen' sequenecers generate including:
 
 The toolkit uses NCBI-VDB back-end enabling seamless access to remote SRA data
 and local SRA files.
-
-WWW: https://github.com/ncbi/sra-tools/wiki

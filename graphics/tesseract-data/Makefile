@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Trained language data for the Tesseract OCR engine
+WWW=		https://github.com/tesseract-ocr/tessdata
 
 LICENSE=	APACHE20
 

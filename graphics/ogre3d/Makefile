@@ -1,11 +1,12 @@
 PORTNAME=	ogre3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.11.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics devel
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Scene-oriented, flexible 3D engine written in C++
+WWW=		https://www.ogre3d.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

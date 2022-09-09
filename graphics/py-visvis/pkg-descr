@@ -9,5 +9,3 @@ objects to a scene (or axes). These world objects can be anything from plots
 (lines with markers), to images, 3D rendered volumes, shaded meshes, or you can
 program your own world object class. If required, these data can also be moved
 in time.
-
-WWW: https://github.com/almarklein/visvis

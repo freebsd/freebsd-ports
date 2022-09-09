@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform geographical queries using GeoNames Web Services
+WWW=		https://metacpan.org/release/Geo-GeoNames
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

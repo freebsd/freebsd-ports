@@ -3,5 +3,3 @@ developed by Bob Jenkins from within Perl programs. The algorithm takes as
 input a message of arbitrary length and produces as output a 32-bit
 "message digest" of the input in the form of an unsigned long integer.
 See http://burtleburtle.net/bob/hash/doobs.html for more information.
-
-WWW: https://metacpan.org/release/Digest-JHash

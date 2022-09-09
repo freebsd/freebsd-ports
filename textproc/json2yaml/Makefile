@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert JSON to YAML or vice versa
+WWW=		https://github.com/drbild/json2yaml
 
 LICENSE=	APACHE20
 

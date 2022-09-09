@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers
+WWW=		https://computation.llnl.gov/projects/sundials
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	BioGenesis screensaver for Kodi
+WWW=		https://github.com/xbmc/screensaver.biogenesis
 
 LICENSE=	GPLv2+
 

@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic date/time handling class for PEAR
+WWW=		https://pear.php.net/package/Date
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE

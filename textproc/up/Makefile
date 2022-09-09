@@ -1,11 +1,12 @@
 PORTNAME=	up
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Ultimate plumber, a tool for writing pipes with instant live preview
+WWW=		https://github.com/akavel/up
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

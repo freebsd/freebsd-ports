@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/MarcNo/lifelines/releases/download/${PORTVERSIO
 
 MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	Advanced genealogical system
+WWW=		http://marcno.github.io/lifelines/
 
 LICENSE=	MIT
 

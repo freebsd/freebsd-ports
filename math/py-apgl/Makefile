@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Fast python graph library with some machine learning features
+WWW=		http://packages.python.org/apgl/
 
 LICENSE=	GPLv3
 

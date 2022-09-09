@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.netmeister.org/apps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compilation of quotes from the TV series "Futurama"
+WWW=		https://www.netmeister.org/
 
 USES=		tar:bzip2
 SUB_FILES=	pkg-message

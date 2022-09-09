@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Python source code obfuscator
+WWW=		https://github.com/astrand/pyobfuscate
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

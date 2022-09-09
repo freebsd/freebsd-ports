@@ -7,6 +7,7 @@ DISTFILES=	ecw_jpeg_2000_sdk_3_3_source.zip
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Erdas ECW and JPEG2000 support library
+WWW=		http://www.erdas.com/products/ERDASECWJPEG2000SDK/Details.aspx
 
 # Converted from RESTRICTED
 LICENSE=	libecwj2

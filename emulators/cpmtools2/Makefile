@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:C/2$//}-${PORTVERSION}
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Tools to access CP/M disks and disk images
+WWW=		http://www.moria.de/~michael/cpmtools/
 
 LICENSE=	GPLv3
 

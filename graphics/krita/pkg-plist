@@ -43,7 +43,13 @@ lib/kritaplugins/kritadodgeburn.so
 lib/kritaplugins/kritaedgedetection.so
 lib/kritaplugins/kritaembossfilter.so
 lib/kritaplugins/kritaexample.so
+lib/kritaplugins/kritaexif.so
 lib/kritaplugins/kritaexperimentpaintop.so
+lib/kritaplugins/kritaiptc.so
+lib/kritaplugins/kritajxlexport.so
+lib/kritaplugins/kritajxlimport.so
+lib/kritaplugins/kritatoolencloseandfill.so
+lib/kritaplugins/kritaxmp.so
 %%OPENEXR%%lib/kritaplugins/kritaexrexport.so
 %%OPENEXR%%lib/kritaplugins/kritaexrimport.so
 lib/kritaplugins/kritaextensioncolorsfilters.so
@@ -203,6 +209,9 @@ lib/libkritaplugin.so.%%SHLIB_VER%%
 lib/libkritapsd.so
 lib/libkritapsd.so.%%SHLIB_SHVER%%
 lib/libkritapsd.so.%%SHLIB_VER%%
+lib/libkritapsdutils.so
+lib/libkritapsdutils.so.18
+lib/libkritapsdutils.so.%%SHLIB_VER%%
 lib/libkritaqmicinterface.so
 lib/libkritaqmicinterface.so.%%SHLIB_SHVER%%
 lib/libkritaqmicinterface.so.%%SHLIB_VER%%
@@ -221,6 +230,7 @@ lib/libkritastore.so.%%SHLIB_VER%%
 lib/libkritaui.so
 lib/libkritaui.so.%%SHLIB_SHVER%%
 lib/libkritaui.so.%%SHLIB_VER%%
+lib/libkritatiffpsd.so
 lib/libkritaversion.so
 lib/libkritaversion.so.%%SHLIB_SHVER%%
 lib/libkritaversion.so.%%SHLIB_VER%%
@@ -272,6 +282,7 @@ share/applications/krita_gif.desktop
 share/applications/krita_heif.desktop
 share/applications/krita_heightmap.desktop
 share/applications/krita_jpeg.desktop
+share/applications/krita_jxl.desktop
 share/applications/krita_kra.desktop
 share/applications/krita_krz.desktop
 share/applications/krita_ora.desktop
@@ -290,6 +301,7 @@ share/applications/org.kde.krita.desktop
 share/color-schemes/KritaBlender.colors
 share/color-schemes/KritaBright.colors
 share/color-schemes/KritaDark.colors
+share/color-schemes/KritaDarkOrange.colors
 share/color-schemes/KritaDarker.colors
 share/color-schemes/KritaNeutral.colors
 share/color/icc/krita/ACEScg-elle-V4-g10.icc
@@ -315,6 +327,14 @@ share/color/icc/krita/README
 share/color/icc/krita/Rec2020-elle-V4-g10.icc
 share/color/icc/krita/WideRGB-elle-V2-g22.icc
 share/color/icc/krita/XYZ-D50-Identity-elle-V4.icc
+share/color/icc/krita/bt601-7_bt1886_ycbcr_v2.icc
+share/color/icc/krita/bt601-7_bt1886_ycbcr_v4.icc
+share/color/icc/krita/bt601-7_ycbcr_v2.icc
+share/color/icc/krita/bt601-7_ycbcr_v4.icc
+share/color/icc/krita/bt709-6_bt1886_ycbcr_v2.icc
+share/color/icc/krita/bt709-6_bt1886_ycbcr_v4.icc
+share/color/icc/krita/bt709-6_ycbcr_v2.icc
+share/color/icc/krita/bt709-6_ycbcr_v4.icc
 share/color/icc/krita/cmyk.icm
 share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
 share/color/icc/krita/sRGB-elle-V2-g10.icc
@@ -343,6 +363,7 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/actions/KarbonCalligraphyTool.action
 %%DATADIR%%/actions/KisAssistantTool.action
 %%DATADIR%%/actions/KisToolCrop.action
+%%DATADIR%%/actions/KisToolEncloseAndFill.action
 %%DATADIR%%/actions/KisToolPath.action
 %%DATADIR%%/actions/KisToolPencil.action
 %%DATADIR%%/actions/KisToolPolygon.action
@@ -910,6 +931,7 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/shortcuts/paint_tool_sai_compatible.shortcuts
 %%DATADIR%%/shortcuts/photoshop_compatible.shortcuts
 %%DATADIR%%/shortcuts/tablet_pro.shortcuts
+%%DATADIR%%/storyboard_templates/storyboard_extemp_default.svg
 %%DATADIR%%/styles/markers.svg
 %%DATADIR%%/symbols/BalloonSymbols.svg
 %%DATADIR%%/symbols/pepper_carrot_speech_bubbles.svg

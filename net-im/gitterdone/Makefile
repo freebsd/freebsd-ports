@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	jt@ixsystems.com
 COMMENT=	Gitter Client based on Qt5
+WWW=		https://github.com/trueos/gitterdone
 
 LICENSE=	BSD2CLAUSE
 

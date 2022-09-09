@@ -8,5 +8,3 @@ communications protocol. Implementations of several standard network protocols
 are provided with the package, primarily to serve as examples. The real goal
 of EventMachine is to enable programs to easily interface with other programs
 using TCP/IP, especially if custom protocols are required.
-
-WWW: http://rubyeventmachine.com

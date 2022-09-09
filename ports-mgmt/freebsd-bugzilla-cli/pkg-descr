@@ -16,5 +16,3 @@ ports.  Provides a consistent API which can have pluggable backends.
 - bz overto
 - bz timeout
 - bz top
-
-WWW: https://github.com/pgollucci/freebsd-bugzilla-cli

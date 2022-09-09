@@ -9,5 +9,3 @@ Customizable speech-specific sentence tokenizer that allows for unlimited
 lengths of text to be read, all while keeping proper intonation, abbreviations,
 decimals and more; Customizable text pre-processors which can, for example,
 provide pronunciation corrections; Automatic retrieval of supported languages.
-
-WWW: https://github.com/pndurette/gTTS

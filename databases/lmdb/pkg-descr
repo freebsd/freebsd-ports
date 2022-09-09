@@ -9,5 +9,3 @@ virtual address space, (it is not limited to the
 size of physical RAM). LMDB was originally called
 MDB, but was renamed to avoid confusion with other
 software associated with the name MDB.
-
-WWW: https://symas.com/lmdb/

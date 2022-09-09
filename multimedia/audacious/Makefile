@@ -5,6 +5,7 @@ MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight and versatile audio player
+WWW=		https://audacious-media-player.org/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi

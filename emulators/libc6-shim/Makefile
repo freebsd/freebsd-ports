@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	iwtcex@gmail.com
 COMMENT=	ABI-compatible glibc shim library
+WWW=		https://github.com/shkhln/libc6-shim
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

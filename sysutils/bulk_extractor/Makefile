@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program that scans a disk image and extracts useful information
+WWW=		https://github.com/simsong/bulk_extractor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

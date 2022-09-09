@@ -7,5 +7,3 @@ In essence, TTP can help to:
 - Combine match results in a structure with arbitrary hierarchy
 - Transform results in desired format to ease consumption by humans or machines
 - Return results to various destinations for storage or further processing
-
-WWW: https://github.com/dmulyalin/ttp

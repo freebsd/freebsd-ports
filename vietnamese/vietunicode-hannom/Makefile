@@ -7,6 +7,7 @@ DISTNAME=	hannom
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNICODE Han Nom Font Set
+WWW=		http://vietunicode.sourceforge.net/
 
 USES=		zip
 DIST_SUBDIR=	VietUnicode

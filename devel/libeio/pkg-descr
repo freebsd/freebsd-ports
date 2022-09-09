@@ -7,5 +7,3 @@ fdatasync, mknod, readdir etc. (basically the full POSIX API), sendfile
 read-ahead (emulated where not available).  It is fully event-library
 agnostic and can easily be integrated into any event-library (or used
 standalone, even in polling mode).
-
-WWW: http://software.schmorp.de/pkg/libeio.html

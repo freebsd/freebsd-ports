@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FTP over SSL/TLS class
+WWW=		https://metacpan.org/release/Net-FTPSSL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

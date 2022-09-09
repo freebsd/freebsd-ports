@@ -5,6 +5,7 @@ MASTER_SITES=	http://devel.ringlet.net/files/sys/pslist/
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Utility to view or send signals to processes with all their children
+WWW=		https://devel.ringlet.net/sysutils/pslist/
 
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	${WRKSRC}/README # License on 4th paragraph

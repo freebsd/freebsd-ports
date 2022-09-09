@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Fast javascript minifier for Python
+WWW=		https://github.com/ndparker/rjsmin
 
 LICENSE=	APACHE20
 

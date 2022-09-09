@@ -4,6 +4,7 @@ CATEGORIES=	sysutils devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to read and write fstab files
+WWW=		https://pear.php.net/package/File_Fstab
 
 NO_ARCH=	yes
 USES=		pear

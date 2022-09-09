@@ -5,6 +5,7 @@ CATEGORIES=	www net
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Gist pastebin posting command
+WWW=		https://github.com/defunkt/gist/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.MIT

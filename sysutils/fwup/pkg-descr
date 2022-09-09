@@ -6,5 +6,3 @@ recovery partitions, and various trial update/failback scenarios. All
 software update information is combined into a ZIP archive that may
 optionally be cryptographically signed. fwup has minimal dependencies
 and runtime requirements.
-
-WWW: https://github.com/fhunleth/fwup

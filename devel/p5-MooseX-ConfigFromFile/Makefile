@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to abstract Moose role attribute setting from file
+WWW=		https://metacpan.org/release/MooseX-ConfigFromFile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

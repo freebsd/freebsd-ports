@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQL / SQLI tokenizer parser analyzer
+WWW=		https://github.com/libinjection/libinjection
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -3,5 +3,3 @@ corresponding to applicable columns. Columns may also be
 defined to specify their nature, such as columns representing a
 creation time (set at time of insertion) or a modification time
 (set at time of every update).
-
-WWW: https://metacpan.org/release/DBIx-Class-DateTime-Epoch

@@ -5,6 +5,7 @@ CATEGORIES=	databases devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone Library for helper functions in PostgreSQL
+WWW=		https://github.com/greenbone/pg-gvm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

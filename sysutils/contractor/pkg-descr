@@ -1,5 +1,3 @@
 Contractor is an extension service that allows applications to use the
 exposed functionnality of registered apps. This way, applications don't have
 to have the functions hard coded into them.
-
-WWW: https://github.com/elementary/contractor

@@ -6,5 +6,3 @@ options, creating static and shared libraries, making executables,
 and other chores -- whether you're using gcc, msvc, or a dozen
 more supported C++ compilers -- on Windows, OSX, Linux and
 commercial UNIX systems.
-
-WWW: https://boostorg.github.io/build/index.html

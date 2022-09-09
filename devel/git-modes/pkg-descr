@@ -9,5 +9,3 @@ GNU Emacs modes for Git-related files.
 * gitignore-mode - A 'conf-mode'-derived major mode for editing
   .gitignore files.
 * gitattributes-mode - A major mode for editing .gitattributes files.
-
-WWW: https://github.com/magit/git-modes

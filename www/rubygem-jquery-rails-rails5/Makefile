@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a Rails generator for jQuery
+WWW=		https://github.com/rails/jquery-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

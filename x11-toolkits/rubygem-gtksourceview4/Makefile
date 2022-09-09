@@ -1,11 +1,11 @@
 PORTNAME=	gtksourceview4
-PORTVERSION=	3.5.1
-PORTREVISION=	2
+PORTVERSION=	4.0.1
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding of gtksourceview 4.x
+WWW=		https://ruby-gnome.github.io/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

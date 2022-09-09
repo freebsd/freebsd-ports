@@ -1,12 +1,13 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/0mp:tencentcloud_tencentcloud_sdk_go
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
+WWW=		https://terraform.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
 COMMENT=	Synchronous multi-master replication engine
+WWW=		https://galeracluster.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

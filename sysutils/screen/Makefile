@@ -13,6 +13,7 @@ MASTER_SITES=	GNU \
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
+WWW=		https://www.gnu.org/software/screen/
 
 LICENSE=	GPLv3
 
@@ -83,7 +84,6 @@ CONFIGURE_ARGS+=	--disable-socket-dir
 .if defined(SCREEN_SOCKET_DIR)
 CONFIGURE_ARGS+=	--with-socket-dir=${SCREEN_SOCKET_DIR}
 .endif
-
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*

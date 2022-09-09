@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.pl
 
 MAINTAINER=	koj@ofug.net
 COMMENT=	Perl-based LDAP log statistics generator
+WWW=		https://sourceforge.net/projects/lla/
 
 RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \

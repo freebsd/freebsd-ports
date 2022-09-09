@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-dist-${DISTVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library of Unicode annotation data
+WWW=		https://github.com/fontforge/libuninameslist
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

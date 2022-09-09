@@ -5,6 +5,7 @@ CATEGORIES=	security python
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Python-based GDB extension for exploit development and debugging
+WWW=		http://ropshell.com/peda/
 
 LICENSE=	CC-BY-NC-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

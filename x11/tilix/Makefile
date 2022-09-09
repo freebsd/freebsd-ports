@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Tiling terminal emulator using GTK+ 3
+WWW=		https://gnunn1.github.io/tilix-web/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

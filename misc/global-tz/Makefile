@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Fork of the IANA Time Zone Database with expanded pre-1970 data
+WWW=		https://github.com/JodaOrg/global-tz
 
 LICENSE=	PD
 
@@ -22,7 +23,6 @@ NO_ARCH=	yes
 TZFILES=	africa antarctica asia australasia etcetera europe \
 		factory northamerica southamerica backward
 POSIXRULES=	America/New_York
-
 
 # XXX The global-tz distribution omits the zone1970.tab file, precluding
 # it from being a drop-in replacement for the IANA Time Zone Database.

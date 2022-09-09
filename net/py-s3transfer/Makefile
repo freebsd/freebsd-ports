@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	Amazon S3 Transfer Manager for Python
+WWW=		https://github.com/boto/s3transfer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

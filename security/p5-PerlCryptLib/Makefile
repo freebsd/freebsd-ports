@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Peter Guttman cryptlib API
+WWW=		https://metacpan.org/release/PerlCryptLib
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

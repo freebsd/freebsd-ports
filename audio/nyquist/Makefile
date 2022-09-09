@@ -6,6 +6,7 @@ DISTNAME=	nyqsrc${DISTVERSION:S/.//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for sound synthesis and music composition (sound is broken) # likely caused by outdated bundled PortAudio, reported to upstream Apr 18, 2021
+WWW=		https://www.cs.cmu.edu/~music/music.software.html
 
 LICENSE=	BSD3CLAUSE
 

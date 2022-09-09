@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fiddle around with pointers
+WWW=		https://metacpan.org/release/Devel-Pointer
 
 USES=		perl5
 USE_PERL5=	configure

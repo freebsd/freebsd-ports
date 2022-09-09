@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Free/Libre and Open Source Software Qt based Minesweeper
+WWW=		https://github.com/Bollos00/LibreMines
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

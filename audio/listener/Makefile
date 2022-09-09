@@ -7,6 +7,7 @@ MASTER_SITES=	PACKETSTORM/linux/security \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to listen for and record sound activity
+WWW=		https://www.vanheusden.com/listener/
 
 LICENSE=	GPLv2
 

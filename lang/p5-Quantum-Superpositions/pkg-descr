@@ -17,5 +17,3 @@ Superpositions are scalar values and hence can participate in arithmetic
 and logical operations just like any other type of scalar. However, when
 an operation is applied to a superposition, it is applied (notionally) in
 parallel to each of the states in that superposition.
-
-WWW: https://metacpan.org/release/Quantum-Superpositions

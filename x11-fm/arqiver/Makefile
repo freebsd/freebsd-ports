@@ -6,6 +6,7 @@ DISTNAME=	Arqiver-${PORTVERSION}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple Qt archive manager
+WWW=		https://github.com/tsujan/Arqiver
 
 LICENSE=	GPLv3
 

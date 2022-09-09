@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Optimized HTTP/2 server including support for TLS 1.3 and HTTP/1.x
+WWW=		https://github.com/h2o/h2o
 
 LICENSE=	MIT BSD2CLAUSE
 LICENSE_COMB=	multi

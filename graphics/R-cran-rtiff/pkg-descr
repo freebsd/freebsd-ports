@@ -9,5 +9,3 @@ By using libtiff's highlevel TIFFReadRGBAImage function, this package
 inherently support a wide range of image formats and compression
 schemes. This package also provides an implementation of the Ridler
 Autothresholding algorithm for easy generation of binary masks.
-
-WWW: https://cran.r-project.org/web/packages/rtiff/

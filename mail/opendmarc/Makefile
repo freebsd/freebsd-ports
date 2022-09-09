@@ -5,6 +5,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	freebsd@gushi.org
 COMMENT=	DMARC library and milter implementation
+WWW=		http://www.trusteddomain.org/opendmarc.html
 
 LICENSE=	BSD3CLAUSE SENDMAIL
 LICENSE_COMB=	multi

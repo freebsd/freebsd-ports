@@ -3,5 +3,3 @@ DOM recommendation.
 
 The CSS::DOM class itself implements the StyleSheet and CSSStyleSheet
 DOM interfaces.
-
-WWW: https://metacpan.org/release/CSS-DOM

@@ -4,5 +4,3 @@ some ways more limited) substitute for the perl functions pack and
 unpack, but it's the author's belief that this module helps in the
 maintainability of working with fixed length formats as the number of
 fields in a format grows.
-
-WWW: https://metacpan.org/release/Parse-FixedLength

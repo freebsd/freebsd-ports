@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for minimal-effort oriented web application framework
+WWW=		https://metacpan.org/release/Dancer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

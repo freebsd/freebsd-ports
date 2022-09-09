@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast IP-in-subnet matcher for IPv4 and IPv6, CIDR or mask
+WWW=		https://metacpan.org/release/Net-Subnet
 
 LICENSE=	ART10
 

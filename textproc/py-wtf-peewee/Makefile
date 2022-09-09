@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Bridge between peewee models and wtforms
+WWW=		https://github.com/coleifer/wtf-peewee
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

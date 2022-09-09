@@ -7,6 +7,7 @@ DISTNAME=	Paver-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy build, distribution and deployment scripting
+WWW=		https://pythonhosted.org/Paver/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

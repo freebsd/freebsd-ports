@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightening fast sequence read trimmer
+WWW=		https://github.com/outpaddling/Fastq-trim
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

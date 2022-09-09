@@ -2,5 +2,3 @@ Class Format in module FormatR provides Perl like formats for Ruby.
 
 These are used to create output with a similar format but with
 changing values.
-
-WWW: http://formatr.sourceforge.net/

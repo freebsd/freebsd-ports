@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Snowball stemmer library for C
+WWW=		https://snowballstem.org/
 
 LICENSE=	BSD3CLAUSE
 

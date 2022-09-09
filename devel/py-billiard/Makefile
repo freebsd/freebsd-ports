@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python multiprocessing fork with improvements and bugfixes
+WWW=		https://github.com/celery/billiard
 
 LICENSE=	BSD3CLAUSE
 

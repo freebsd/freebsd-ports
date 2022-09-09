@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	NetSurf GIF Decoder
+WWW=		https://www.netsurf-browser.org/projects/libnsgif/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

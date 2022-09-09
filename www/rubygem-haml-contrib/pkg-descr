@@ -5,5 +5,3 @@ not widely used or on-topic enough to belong in Haml proper.
 This gives the Haml project a reasonable way to both demote current
 functionality, such as the Textile and Maruku filters, and add new experimental
 functionality that may later be added to the core.
-
-WWW: https://github.com/haml/haml-contrib

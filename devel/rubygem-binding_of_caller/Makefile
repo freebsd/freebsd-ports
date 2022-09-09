@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Retrieve the binding of a methods caller
+WWW=		https://github.com/banister/binding_of_caller
 
 LICENSE=	MIT
 

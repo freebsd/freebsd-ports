@@ -5,5 +5,3 @@ Test check for:
  - Consistency of mo files
  - Obsolete translations
  - Fuzzy translations
-
-WWW: https://github.com/Thermondo/pytest-translations

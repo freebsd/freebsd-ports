@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract OpenOffice 1.x spreadsheet data
+WWW=		https://metacpan.org/release/Spreadsheet-ReadSXC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

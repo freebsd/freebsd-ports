@@ -4,5 +4,3 @@ class structure.  It produces a hash table that can be converted to XML
 
 An XSL stylesheet is included that converts the XML class diagram into
 HTML.
-
-WWW: https://metacpan.org/release/Devel-Diagram

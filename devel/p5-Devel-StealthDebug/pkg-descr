@@ -13,5 +13,3 @@ like comments and do nothing unless you 'use' this module.
 	sub func1 {                    #!emit(Entering func1)!
 	#...
 	}
-
-WWW: https://metacpan.org/release/Devel-StealthDebug

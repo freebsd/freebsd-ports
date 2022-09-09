@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Testing, Monitoring, and Dating Structural Changes
+WWW=		https://cran.r-project.org/web/packages/strucchange/
 
 LICENSE=	GPLv2+
 

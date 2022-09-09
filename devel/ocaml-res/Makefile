@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OCaml library for resizable arrays and strings
+WWW=		https://mmottl.github.io/res/
 
 LICENSE=	LGPL21+ # with a special exception to clause 6
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

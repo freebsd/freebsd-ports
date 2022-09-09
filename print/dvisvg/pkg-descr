@@ -6,5 +6,3 @@ SVG Document produced by DVISVG uses external SVG Fonts so there is
 a problem with using Adobe's SVG Viewer which doesn't currently support it.
 Solution is using embeded fonts which can to be easily inserted in svg file
 from the external fonts file.
-
-WWW: http://dvisvg.sourceforge.net/

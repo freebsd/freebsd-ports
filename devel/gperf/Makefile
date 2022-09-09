@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generates perfect hash functions for sets of keywords
+WWW=		https://www.gnu.org/software/gperf/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

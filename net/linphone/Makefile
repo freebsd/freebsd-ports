@@ -1,11 +1,12 @@
 PORTNAME=	linphone
 PORTVERSION=	4.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	SIP client supporting voice/video calls and text messaging
+WWW=		https://www.linphone.org/
 
 LICENSE=	GPLv3
 

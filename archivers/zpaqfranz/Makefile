@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.francocorbelli.it/zpaqfranz/freebsd/
 
 MAINTAINER=	franco@francocorbelli.com
 COMMENT=	Swiss army knife for the serious backup manager
+WWW=		https://github.com/fcorbelli/zpaqfranz
 
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	dual

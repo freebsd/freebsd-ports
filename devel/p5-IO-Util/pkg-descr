@@ -2,5 +2,3 @@ IO::Util - A selection of general-utility IO function
 
 This is a micro-weight module that exports just a couple of
 functions of general utility in IO operations.
-
-WWW: https://metacpan.org/release/IO-Util

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	UCL parser and emmitter
+WWW=		https://github.com/vstakhov/libucl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/libucl-${PORTVERSION}/COPYING

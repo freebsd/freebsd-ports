@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Encryption utilities for Web Push payload
+WWW=		https://github.com/zaru/webpush
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

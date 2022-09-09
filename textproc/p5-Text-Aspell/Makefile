@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the GNU Aspell library
+WWW=		https://metacpan.org/release/Text-Aspell
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell
 

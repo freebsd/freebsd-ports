@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu
 COMMENT=	Graphical processor simulator and assembly editor for the RISC-V ISA
+WWW=		https://github.com/mortbopet/ripes
 
 LICENSE=	MIT
 

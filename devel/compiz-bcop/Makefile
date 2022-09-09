@@ -7,6 +7,7 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/ \
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Code generator for Compiz Fusion Plugins
+WWW=		https://forum.compiz-fusion.org/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/getopt:misc/getopt

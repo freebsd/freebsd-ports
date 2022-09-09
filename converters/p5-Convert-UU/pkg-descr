@@ -20,5 +20,3 @@ DESCRIPTION
        first begin/end pair. In array context it returns an array
        whose first element is the uudecoded string, the second is
        the filename and the third is the mode.
-
-WWW: https://metacpan.org/release/Convert-UU

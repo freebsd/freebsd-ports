@@ -9,19 +9,19 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to access online weather information
+WWW=		https://www.gnome.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen \
-		vala:lang/vala
+BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
 		libsoup-2.4.so:devel/libsoup
 
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig python:3.6+,build \
-		shebangfix tar:xz
+		shebangfix tar:xz vala:build
 USE_GNOME=	gtk30 libxml2 pygobject3 introspection:build
 USE_LDCONFIG=	yes
 

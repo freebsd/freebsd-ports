@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic utility functions for Core Chef Infra development
+WWW=		https://github.com/chef/chef/tree/main/chef-utils
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Tensor product of arrays
+WWW=		https://CRAN.R-project.org/package=tensor
 
 LICENSE=	GPLv2+
 

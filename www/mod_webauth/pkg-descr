@@ -16,5 +16,3 @@ the SSO provider for a Shibboleth IdP and supports SPNEGO authentication
 as well as username/password over TLS/SSL. See the page on WebAuth features
 for more major features and a brief comparison with other web
 authentication systems.
-
-WWW: http://webauth.stanford.edu/

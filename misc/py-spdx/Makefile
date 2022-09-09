@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SPDX license list database
+WWW=		https://github.com/bbqsrc/spdx-python
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

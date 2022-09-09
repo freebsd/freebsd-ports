@@ -6,6 +6,7 @@ DISTNAME=	XoopsCore25-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Dynamic Web CMS
+WWW=		https://www.xoops.org/
 
 LICENSE=	GPLv2
 

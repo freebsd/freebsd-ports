@@ -4,5 +4,3 @@ that file.
 
 It also spits out the complete ed2k:// link in the end and appends
 it to the file 'ed2k_links.txt' for easier copy-and-paste later on.
-
-WWW: http://ed2k-tools.sourceforge.net/

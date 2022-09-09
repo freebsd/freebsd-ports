@@ -5,5 +5,3 @@ It is certainly possible to use your Operating System's wcwidth() and
 wcswidth() calls if it is POSIX-conforming, but this would not be possible on
 non-POSIX platforms, such as Windows, or for alternative Python
 implementations, such as jython.
-
-WWW: https://github.com/jquast/wcwidth

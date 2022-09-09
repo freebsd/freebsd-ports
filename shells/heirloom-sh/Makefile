@@ -6,6 +6,7 @@ MASTER_SITES=	SF/heirloom/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable version of OpenSolaris' Bourne Shell
+WWW=		http://heirloom.sourceforge.net/sh.html
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_riscv64=	Fails to link: missing sbrk

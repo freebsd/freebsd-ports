@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	contact@evilham.com
 COMMENT=	Requests-like API built on top of twisted.web's Agent
+WWW=		https://github.com/twisted/treq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

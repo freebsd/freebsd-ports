@@ -1,11 +1,12 @@
 PORTNAME=	vale
 PORTVERSION=	2.20.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command-line tool that brings editorial style guide to life
+WWW=		https://vale.sh/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,5 +7,3 @@ over many base rings, including:
 * p-adic numbers
 * Finite fields (prime and non-prime order)
 * Real and complex numbers (via the Arb extension library)
-
-WWW: http://www.flintlib.org/

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	GNU music typesetter
+WWW=		https://lilypond.org/
 
 LICENSE=	GPLv3
 

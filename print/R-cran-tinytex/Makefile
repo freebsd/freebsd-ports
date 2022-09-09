@@ -1,10 +1,11 @@
 PORTNAME=	tinytex
-DISTVERSION=	0.40
+DISTVERSION=	0.41
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Helper functions to maintain LaTeX distribution
+WWW=		https://cran.r-project.org/web/packages/tinytex/
 
 LICENSE=	MIT
 

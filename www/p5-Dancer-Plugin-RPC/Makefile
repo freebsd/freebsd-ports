@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Configure endpoints for XMLRPC and JSONRPC procedures
+WWW=		https://metacpan.org/release/Dancer-Plugin-RPC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Enhanced Inscript keyboard layouts for Indic languages
+WWW=		https://pagure.io/inscript2
 
 LICENSE=	LGPL21
 

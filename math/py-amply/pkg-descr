@@ -5,5 +5,3 @@ Amply only supports a specific subset of the AMPL syntax:
 * set data statements
 * parameter declarations
 * parameter data statements
-
-WWW: https://github.com/willu47/amply

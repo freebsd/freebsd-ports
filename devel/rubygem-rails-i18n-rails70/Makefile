@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of common locale data and translations for Rails
+WWW=		https://github.com/svenfuchs/rails-i18n
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt

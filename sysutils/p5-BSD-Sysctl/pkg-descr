@@ -6,5 +6,3 @@ This module handles the conversion of symbolic sysctl variable names to the
 internal numeric format, and this information, along with the details of how
 to format the results, are cached. Hence, the first call to sysctl requires
 three system calls, however, subsequent calls require only one call.
-
-WWW: https://metacpan.org/release/BSD-Sysctl

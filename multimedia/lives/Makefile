@@ -1,12 +1,13 @@
 PORTNAME=	lives
 DISTVERSION=	3.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Video editing system
+WWW=		http://lives-video.com/
 
 LICENSE=		GPLv3+ LGPL3+
 LICENSE_COMB=		multi

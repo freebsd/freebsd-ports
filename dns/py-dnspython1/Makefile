@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	DNS toolkit for Python - 1.x release
+WWW=		https://www.dnspython.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,5 +1,5 @@
 PORTNAME=	mail
-PORTVERSION=	1.13.6
+PORTVERSION=	1.13.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Mail app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/mail
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

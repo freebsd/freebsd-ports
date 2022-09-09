@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	GUI for per-user configuration of m17n-lib input methods
+WWW=		https://www.m17n.org
 
 LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 

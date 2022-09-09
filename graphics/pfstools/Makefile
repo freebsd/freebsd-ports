@@ -1,11 +1,12 @@
 PORTNAME=	pfstools
 DISTVERSION=	2.1.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	fbsd@any.com.ru
 COMMENT=	Tools for manipulating HDR images and video frames
+WWW=		http://pfstools.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

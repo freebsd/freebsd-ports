@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Complete text editor for your terminal
+WWW=		https://amp.rs/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

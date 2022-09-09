@@ -11,5 +11,3 @@ can be installed in the FreeBSD guest machine.
 5.2.x is no longer supported by Oracle.
 
 Additions are not intended for use on Host machines.
-
-WWW: https://www.virtualbox.org/

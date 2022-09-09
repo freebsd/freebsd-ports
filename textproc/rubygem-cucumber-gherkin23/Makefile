@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	23
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast Gherkin lexer/parser based on the Ragel State Machine Compiler
+WWW=		https://github.com/cucumber/common/tree/main/gherkin/ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

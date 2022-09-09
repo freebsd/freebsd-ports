@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Decision Procedure for Bitvectors and Arrays
+WWW=		https://stp.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

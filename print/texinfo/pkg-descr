@@ -9,5 +9,3 @@ writing different documents for online information and another for a printed
 manual, you need write only one document. And when the work is revised, you need
 revise only that one document. The Texinfo system is well-integrated with GNU
 Emacs.
-
-WWW: https://www.gnu.org/software/texinfo/

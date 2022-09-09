@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/jwsmtp%20version%201.32.15%20bugfix/
 
 MAINTAINER=	info@babaei.net
 COMMENT=	C++ library for sending email
+WWW=		https://talk.mumbleface.net/jwsmtp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

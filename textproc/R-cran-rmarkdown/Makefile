@@ -1,16 +1,17 @@
 PORTNAME=	rmarkdown
-PORTVERSION=	2.14
+PORTVERSION=	2.16
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Dynamic Documents for R
+WWW=		https://cran.r-project.org/web/packages/rmarkdown/
 
 LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-bslib>=0.2.5.1:www/R-cran-bslib \
 		R-cran-evaluate>=0.13:devel/R-cran-evaluate \
-		R-cran-htmltools>=0.3.5:textproc/R-cran-htmltools \
+		R-cran-htmltools>=0.5.1:textproc/R-cran-htmltools \
 		R-cran-jquerylib>0:www/R-cran-jquerylib \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-knitr>=1.22:print/R-cran-knitr \

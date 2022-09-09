@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O
+WWW=		https://www.iozone.org/
 
 LICENSE=	IOZONE
 LICENSE_NAME=	Iozone license

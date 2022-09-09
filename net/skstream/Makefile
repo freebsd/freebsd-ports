@@ -6,6 +6,7 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28network%20lib%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	iostream based C++ socket library
+WWW=		http://www.worldforge.org/dev/eng/libraries/skstream/
 
 USES=		libtool pathfix pkgconfig compiler:c++11-lib gmake
 GNU_CONFIGURE=	yes

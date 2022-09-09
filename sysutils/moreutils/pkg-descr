@@ -19,5 +19,3 @@ Currently it consists of these tools:
 - zrun: automatically uncompress arguments to command
 
 Note that parallel and ts utilities are installed with "moreutils-" prefix.
-
-WWW: https://joeyh.name/code/moreutils/

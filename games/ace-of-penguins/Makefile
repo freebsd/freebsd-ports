@@ -6,6 +6,7 @@ DISTNAME=	ace-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Set of Unix/X solitaire games
+WWW=		https://www.delorie.com/store/ace/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

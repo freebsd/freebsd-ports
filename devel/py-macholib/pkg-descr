@@ -7,5 +7,3 @@ also to rewrite dylib references in Mach-O headers to be
 
 Though this tool targets a platform specific file format,
 it is pure python code that is platform and endian independent.
-
-WWW: https://pypi.org/project/macholib/

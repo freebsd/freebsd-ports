@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a nicer CLI interface to Net::WhitePages
+WWW=		https://metacpan.org/release/Phone-Info
 
 RUN_DEPENDS=	p5-Net-WhitePages>=0:net/p5-Net-WhitePages
 

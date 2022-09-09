@@ -16,5 +16,3 @@ complicated) can be justified for limited memory environments and in
 applications requiring bundled parser. If you need higher level tools, for
 example library supporting DTD validation or dom/xpath processing, you should
 look for other libs of course.
-
-WWW: http://www.saunalahti.fi/~samiuus/toni/xmlproc/

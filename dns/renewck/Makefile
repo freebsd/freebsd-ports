@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.gnu.org.ua/pub/release/dnstools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check for expiring domains and send email notifications
+WWW=		https://man.gnu.org.ua/manpage/?1+renewck
 
 LICENSE=	GPLv3+
 

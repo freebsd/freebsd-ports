@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Append data to files using a temporary copy
+WWW=		https://metacpan.org/release/File-Append-TempFile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

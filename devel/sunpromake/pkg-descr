@@ -4,5 +4,3 @@ OpenSolaris.  While the distributed make functionality has
 never been open-sourced and is missing from this version of
 SunPro Make, the parallel make functionality was succesfully
 reconstructed from the present source.
-
-WWW: https://codeberg.org/schilytools/schilytools

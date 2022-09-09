@@ -7,5 +7,3 @@ extremely fast in many databases and this provides a shared cache that can be
 used when less reliable storage like memcached is not appropriate. Also, the
 speed of simple lookups on MySQL when accessed over a local socket is very hard
 to beat. DBI is fast.
-
-WWW: https://metacpan.org/release/CHI-Driver-DBI

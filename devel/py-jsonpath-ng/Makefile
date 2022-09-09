@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	michael.boehm@markt.de
 COMMENT=	JSONPath implementation based on jsonpath-rw and jsonpath-rw-ext
+WWW=		https://github.com/h2non/jsonpath-ng
 
 LICENSE=	APACHE20
 

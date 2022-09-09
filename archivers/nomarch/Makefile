@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/utils/compress
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old '.arc' archive format
+WWW=		http://rus.members.beeb.net/nomarch.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -13,5 +13,3 @@ if necessary.  Example of usage to search for a package:
  Desc : RFC 2222 SASL (Simple Authentication and Security Layer)
  URL  : http://cyrusimap.web.cmu.edu/
  Deps :
-
-WWW: http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/

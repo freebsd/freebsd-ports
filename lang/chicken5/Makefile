@@ -6,6 +6,10 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Scheme-to-C compiler
+WWW=		https://www.call-cc.org/
+
+DEPRECATED=	Please use lang/chicken instead
+EXPIRATION_DATE=2022-10-30
 
 LICENSE=	BSD3CLAUSE PD
 LICENSE_COMB=	multi

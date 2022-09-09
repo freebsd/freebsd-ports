@@ -5,5 +5,3 @@ programs is also supported. The libmilter interface is used and must be
 supported by the MTA for ArchiveSMTP to work.
 
 Version: 1.2
-
-WWW: http://www.dancingfortune.com/projects/archivesmtp/index.php

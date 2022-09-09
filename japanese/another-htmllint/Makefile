@@ -7,6 +7,7 @@ DISTNAME=	htmllint
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Another HTML-lint (all messages are written in Japanese)
+WWW=		http://openlab.ring.gr.jp/k16/htmllint/
 
 LICENSE=	AnotherHTMLlint
 LICENSE_NAME=	Another HTML-lint License

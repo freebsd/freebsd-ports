@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Wrap tests with fixtures in freeze_time
+WWW=		https://github.com/ktosiek/pytest-freezegun
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

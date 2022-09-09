@@ -1,9 +1,10 @@
 PORTNAME=	xdiff
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to create/apply binary and text patches
+WWW=		https://pecl.php.net/package/xdiff
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

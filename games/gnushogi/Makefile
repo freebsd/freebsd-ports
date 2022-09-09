@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of Shogi
+WWW=		http://www.cs.caltech.edu/~mvanier/hacking/gnushogi/gnushogi.html
 
 USES=		makeinfo
 GNU_CONFIGURE=		yes

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allow Keyword Access to Array Instances
+WWW=		https://github.com/ahoward/arrayfields
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny asymmetric-coroutine library
+WWW=		https://github.com/sharow/libconcurrent/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

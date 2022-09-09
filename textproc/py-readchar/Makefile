@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Python library to read characters and key strokes
+WWW=		https://github.com/magmax/python-readchar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README.rst

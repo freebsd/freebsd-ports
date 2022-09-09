@@ -1,4 +1,2 @@
 Sysadm::Install executes shell-like commands performing typical installation
 tasks: Copying files, extracting tarballs, calling make.
-
-WWW: https://metacpan.org/release/Sysadm-Install

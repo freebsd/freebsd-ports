@@ -1,9 +1,10 @@
 PORTNAME=	ocsinventory-server
-PORTVERSION=	2.9.2
+PORTVERSION=	2.10.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Open Computer and Software Inventory Next Generation
+WWW=		https://www.ocsinventory-ng.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,7 +28,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USE_GITHUB=	YES
-GH_TAGNAME=	f19e7606b91fe240a31eb4823310bea5ebbda40a
+GH_TAGNAME=	246e3525944d10893b1380d4c63f4538d1eb6a6d
 GH_ACCOUNT=	OCSInventory-NG
 GH_PROJECT=	OCSInventory-Server
 

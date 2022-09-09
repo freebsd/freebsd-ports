@@ -7,5 +7,3 @@ hardware. The Management Information Model for the UCSM is organised into a
 structured hierarchy of both physical and virtual objects. Accessing objects
 within the hierarchy is done through a number of high level calls to hierarchy
 search and traversal methods.
-
-WWW: https://metacpan.org/release/Cisco-UCS

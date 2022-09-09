@@ -6,5 +6,3 @@ the server and reporting by moving (or copying) the message to a designated
 folder are all supported. Any number of custom buttons may also be added, where
 the associated action is completely customizable (for instance, adding the
 message sender to a whitelist or blacklist).
-
-WWW: http://www.squirrelmail.org/plugin_view.php?id=242

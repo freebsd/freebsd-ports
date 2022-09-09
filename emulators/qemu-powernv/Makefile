@@ -6,6 +6,7 @@ MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Fork of QEMU with experimental PowerNV emulation support
+WWW=		https://github.com/ozbenh/qemu/tree/power9
 
 LICENSE=	GPLv2
 

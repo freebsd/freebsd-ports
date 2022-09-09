@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client for the standard Perl debugger
+WWW=		https://metacpan.org/release/Debug-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

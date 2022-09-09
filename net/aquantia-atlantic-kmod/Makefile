@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Aquantia AQtion (Atlantic) Network Driver (Development Preview)
+WWW=		https://github.com/Aquantia/aqtion-freebsd
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

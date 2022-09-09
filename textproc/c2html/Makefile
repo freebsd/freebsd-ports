@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/apps/www/converters
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	C-language sources to HTML converter
+WWW=		http://user.cs.tu-berlin.de/~schintke/x2html/
 
 LICENSE=	GPLv2
 

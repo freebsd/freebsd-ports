@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classical molecular dynamics code with a focus on materials modeling
+WWW=		https://lammps.sandia.gov/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

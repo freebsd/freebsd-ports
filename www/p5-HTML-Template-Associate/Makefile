@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Bridges gap between HTML::Template and other modules
+WWW=		https://metacpan.org/release/HTML-Template-Associate
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template \

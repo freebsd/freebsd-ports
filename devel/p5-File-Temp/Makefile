@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate temporary files or directories safely
+WWW=		https://metacpan.org/release/File-Temp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

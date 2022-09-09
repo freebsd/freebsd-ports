@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module for window manager related functions for use by client programs
+WWW=		https://metacpan.org/release/X11-Protocol-Other
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

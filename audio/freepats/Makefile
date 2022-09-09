@@ -5,6 +5,7 @@ MASTER_SITES=	http://freepats.zenvoid.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and open set of instrument patches
+WWW=		https://freepats.zenvoid.org/
 
 USES=		tar:bzip2
 

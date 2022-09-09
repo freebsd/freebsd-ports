@@ -1,3 +1,1 @@
 A bridge that supports Glib's event loop from POE.
-
-WWW: https://metacpan.org/release/POE-Loop-Glib

@@ -10,5 +10,3 @@ version that can build and run on several systems, including:
 * MacOSX
 
 This port packages the development snapshots released by OpenSMTPD team.
-
-WWW: https://github.com/OpenSMTPD/libasr

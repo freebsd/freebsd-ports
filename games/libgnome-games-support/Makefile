@@ -1,21 +1,21 @@
 PORTNAME=	libgnome-games-support
-PORTVERSION=	1.8.0
+DISTVERSION=	1.8.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small library intended for internal use by GNOME Games
+WWW=		https://git.gnome.org/browse/libgnome-games-support
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome meson pkgconfig tar:xz
+USES=		gettext gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 .include <bsd.port.mk>

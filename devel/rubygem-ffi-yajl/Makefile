@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Ruby FFI wrapper around YAJL 2.x
+WWW=		https://github.com/opscode/ffi-yajl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

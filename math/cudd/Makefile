@@ -5,6 +5,7 @@ MASTER_SITES=	https://davidkebo.com/source/cudd_versions/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for the manipulation of Binary Decision Diagrams (BDDs), etc
+WWW=		https://davidkebo.com/cudd
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

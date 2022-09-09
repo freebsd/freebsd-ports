@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to make XML document trees
+WWW=		https://metacpan.org/release/XML-TreeBuilder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

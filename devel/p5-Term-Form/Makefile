@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read lines from STDIN
+WWW=		https://metacpan.org/release/Term-Form
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

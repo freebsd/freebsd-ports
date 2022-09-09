@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Provides an infrastructure for the management of survey data
+WWW=		https://www.martin-elff.net/software/ #memisc
 
 LICENSE=	GPLv2
 

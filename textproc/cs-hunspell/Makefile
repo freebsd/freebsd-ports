@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Czech hunspell dictionaries
+WWW=		https://extensions.services.openoffice.org/en/project/czech-dictionary-pack-ceske-slovniky-cs-cz
 
 NO_ARCH=	yes
 NO_BUILD=	yes

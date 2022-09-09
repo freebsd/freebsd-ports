@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Standards-compliant WebSocket server and client
+WWW=		https://github.com/faye/faye-websocket-ruby
 
 LICENSE=	APACHE20
 

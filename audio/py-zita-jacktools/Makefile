@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio tools running as a Jack client
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Safe concurrent access to MLDBM databases from Perl
+WWW=		https://metacpan.org/release/MLDBM-Sync
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MLDBM>=0:databases/p5-MLDBM

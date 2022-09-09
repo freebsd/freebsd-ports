@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	JDB manipulates flat-ASCII databases from shell scripts
+WWW=		https://www.isi.edu/~johnh/SOFTWARE/JDB/index.html
 
 USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes

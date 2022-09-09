@@ -6,6 +6,7 @@ DISTNAME=	Twig-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flexible, fast, and secure template engine for PHP
+WWW=		https://twig.symfony.com
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

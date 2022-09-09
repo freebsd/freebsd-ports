@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Modernized version of the original Colossal Cave Adventure game
+WWW=		http://www.catb.org/~esr/open-adventure/
 
 LICENSE=	BSD2CLAUSE
 

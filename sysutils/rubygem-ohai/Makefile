@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ohai profiles your system and emits JSON
+WWW=		https://github.com/chef/ohai
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

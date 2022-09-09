@@ -8,5 +8,3 @@ it to the original format.
 The main purpose of this filter is to help POE::Component::Client::SMTP
 create transparent messages when comunicating with an SMTP server.
 However the filter can be used by any Perl SMTP client or server.
-
-WWW: https://metacpan.org/release/POE-Filter-Transparent-SMTP

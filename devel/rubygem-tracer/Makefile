@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Output a source level execution trace of a Ruby program
+WWW=		https://github.com/ruby/tracer
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

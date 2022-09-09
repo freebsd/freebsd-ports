@@ -5,5 +5,3 @@ highlighting overloaded system resources by using colors, etc.
 At regular intervals, it shows system-level activity related to the CPU, memory,
 swap, disks, and network layers, and for every active process it shows the CPU
 utilization, the memory growth, priority, username, state, and exit code.
-
-WWW: https://github.com/samm-git/atop-freebsd

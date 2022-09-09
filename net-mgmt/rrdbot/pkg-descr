@@ -12,5 +12,3 @@ query the traffic on your router based on the 'xl0' interface name.
 
 RRDBot also contains tools to simplify the creation of RRD files, and the
 various archives contained in them.
-
-WWW: https://github.com/REANNZ/rrdbot/

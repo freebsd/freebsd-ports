@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Find parents of a process (up to the root)
+WWW=		https://metacpan.org/release/Proc-Find-Parents
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

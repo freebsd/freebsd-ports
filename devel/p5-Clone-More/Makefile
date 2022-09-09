@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for natively copying Perl data structures
+WWW=		https://metacpan.org/release/WAZZUTEKE/Clone-More-0.90.2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

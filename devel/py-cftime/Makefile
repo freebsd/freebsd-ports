@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Time-handling functionality from netcdf4-python
+WWW=		https://github.com/Unidata/cftime
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

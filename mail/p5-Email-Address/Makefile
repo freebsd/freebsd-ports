@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RFC 2822 Address Parsing and Creation
+WWW=		https://metacpan.org/release/Email-Address
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simple, fast, extensible JSON encoder/decoder
+WWW=		https://github.com/simplejson/simplejson
 
 # dual-licensed under MIT and Academic Free License version 2.1
 LICENSE=	MIT

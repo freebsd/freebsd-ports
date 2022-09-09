@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/abelcheung/rifiuti2/releases/download/${PORTVER
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tool for analyzing Windows recycle bin
+WWW=		https://github.com/abelcheung/rifiuti2
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.md

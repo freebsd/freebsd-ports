@@ -5,6 +5,7 @@ MASTER_SITES=	http://krapplets.cream.org/linux/
 
 MAINTAINER=	ip@unixway.org
 COMMENT=	System monitoring dockapp for Window Maker
+WWW=		http://freshmeat.sourceforge.net/projects/wmscript
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

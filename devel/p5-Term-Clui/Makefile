@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module offering a Command-Line User Interface
+WWW=		https://metacpan.org/release/Term-Clui
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 version of the C* Audio Plugin Suite
+WWW=		https://github.com/moddevices/caps-lv2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-shell Numlock and Capslock indicator
+WWW=		https://github.com/kazysmaster/gnome-shell-extension-lockkeys
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/lockkeys@vaina.lt/LICENSE

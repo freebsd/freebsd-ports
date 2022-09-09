@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Soapy SDR plugin for the Airspy
+WWW=		https://github.com/pothosware/SoapyAirspy/wiki
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

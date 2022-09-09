@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-posix-${PORTVERSION}
 
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
+WWW=		http://upp.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/uppsrc/Core/Copying

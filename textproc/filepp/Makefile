@@ -5,6 +5,7 @@ MASTER_SITES=	http://www-users.york.ac.uk/~dm26/filepp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic file preprocessor
+WWW=		https://www-users.york.ac.uk/~dm26/filepp/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

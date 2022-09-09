@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Source code suggestions
+WWW=		http://community.haskell.org/~ndm/hlint/
 
 LICENSE=	BSD3CLAUSE
 

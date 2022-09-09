@@ -4,5 +4,3 @@ understand various program file formats and version control histories like
 Mercurial, Git, SCCS, RCS, CVS, Subversion, Teamware, ClearCase, Perforce
 and Bazaar.  In other words it lets you grok (profoundly understand) the
 open source, hence the name OpenGrok.  It is written in Java.
-
-WWW: https://opengrok.github.io/OpenGrok/

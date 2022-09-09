@@ -4,5 +4,3 @@ stored as PGP encrypted files with directories funtioning as (sub)groups.
 spm reads/writes passwords via standard input/output allowing you to build
 flexible and powerful management tools. Refer to the manual page for
 various examples or read its source code to see how it works.
-
-WWW: https://notabug.org/kl3/spm

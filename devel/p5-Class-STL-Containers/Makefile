@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension for STL-like object management
+WWW=		https://metacpan.org/release/Class-STL-Containers
 
 LICENSE=	GPLv2
 

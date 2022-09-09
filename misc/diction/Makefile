@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diction and style
+WWW=		https://www.gnu.org/software/diction/diction.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

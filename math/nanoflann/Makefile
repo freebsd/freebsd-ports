@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only library for Nearest Neighbor (NN) search with KD-trees
+WWW=		https://github.com/jlblancoc/nanoflann
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,11 +1,12 @@
 PORTNAME=	opentoonz
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Open-source full-featured 2D animation creation software
+WWW=		https://opentoonz.github.io/e/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Command line utility for streaming to icecast servers
+WWW=		http://www.icecast.org/ezstream.php
 
 LIB_DEPENDS=	libshout.so:audio/libshout \
 		libvorbis.so:audio/libvorbis

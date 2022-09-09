@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
+WWW=		https://www.postgresql.org/
 
 MASTERDIR=	${.CURDIR}/../postgresql11-server
 

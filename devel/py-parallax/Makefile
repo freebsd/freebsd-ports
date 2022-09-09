@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		egypcio@FreeBSD.org
 COMMENT=		Python API for SSH
+WWW=		https://github.com/krig/parallax
 
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/COPYING

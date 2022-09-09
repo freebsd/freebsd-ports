@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for consumers of OpenID identities
+WWW=		https://metacpan.org/release/Net-OpenID-Consumer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

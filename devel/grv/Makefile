@@ -1,11 +1,12 @@
 PORTNAME=	grv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Terminal interface for viewing git repositories
+WWW=		https://github.com/rgburke/grv
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

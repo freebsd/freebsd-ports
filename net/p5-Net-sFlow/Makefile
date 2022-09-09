@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Decode sFlow datagrams
+WWW=		https://metacpan.org/release/Net-sFlow
 
 LICENSE=	ART10
 

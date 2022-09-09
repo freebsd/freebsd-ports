@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Executable comments like the ANSI C library assert.h
+WWW=		https://metacpan.org/release/Carp-Assert
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

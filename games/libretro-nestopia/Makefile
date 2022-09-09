@@ -2,8 +2,9 @@ PORTNAME=	libretro-nestopia
 PORTVERSION=	0.20220322
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NEStopia emulator for libretro
+WWW=		https://github.com/libretro/nestopia
 
 LICENSE=	GPLv2
 

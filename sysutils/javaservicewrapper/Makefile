@@ -6,6 +6,7 @@ DISTNAME=	wrapper_${PORTVERSION}_src
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	JSW enables a Java application to be run as a Unix daemon
+WWW=		https://wrapper.tanukisoftware.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -1,11 +1,12 @@
 PORTNAME=	mpg123
-PORTVERSION=	1.29.3
+DISTVERSION=	1.30.2
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		https://www.mpg123.de/download/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
+WWW=		https://www.mpg123.de/
 
 LICENSE=	LGPL21
 

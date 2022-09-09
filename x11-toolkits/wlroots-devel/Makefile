@@ -1,5 +1,5 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.15.0-359
+DISTVERSION=	0.15.0-388
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
@@ -12,6 +12,7 @@ PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlr
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (development snapshot)
+WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -29,7 +30,7 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	4c1afb126b9a49aee367276f634f8686428d6147
+GL_COMMIT=	4cc5bdc4d1c23177532d9d075bd9896b7fe4b5a6
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
 .ifdef PKGNAMESUFFIX

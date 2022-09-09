@@ -10,9 +10,9 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
 		libqgpgme.so:security/gpgme-qt5 \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons i18n itemmodels kio service wallet \
 		widgetsaddons xmlgui \

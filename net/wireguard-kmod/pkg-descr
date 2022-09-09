@@ -5,5 +5,3 @@ considered "experimental". It might contain security issues. We gladly
 welcome your testing and bug reports, but do keep in mind that this code
 is new, so some caution should be exercised at the moment for using it
 in mission critical environments.
-
-WWW: https://git.zx2c4.com/wireguard-freebsd/

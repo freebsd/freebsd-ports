@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Library for accessing the Amazon Web Services APIs
+WWW=		https://github.com/grempe/amazon-ec2
 
 RUN_DEPENDS=	rubygem-xml-simple>=1.0.12:textproc/rubygem-xml-simple
 

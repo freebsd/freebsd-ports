@@ -4,5 +4,3 @@ the performance of advanced compilers in 10% of the code.
 Its small size serves both its aspirations of correctness and
 our ability to understand, fix, and improve it. It also serves
 its users by providing trivial integration and great flexibility.
-
-WWW: https://c9x.me/compile/

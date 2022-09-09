@@ -5,6 +5,7 @@ CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Advanced Linux Sound Architecture libraries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.alsa-project.org/
 
 LICENSE=	GPLv3
 

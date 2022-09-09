@@ -5,6 +5,7 @@ MASTER_SITES=	https://opsec.eu/src/
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Sunrise and sunset time calculator
+WWW=		http://www.icehouse.net/kew/
 
 OPTIONS_DEFINE=	DOCS
 

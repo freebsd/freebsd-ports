@@ -1,5 +1,4 @@
 Fast templating system using the same syntax as HTML::Template but
 which compiles templates to perl code.
 
-WWW: https://metacpan.org/release/HTML-Template-Compiled
-WWW: http://www.tinita.de/projects/perl/en
+See also: http://www.tinita.de/projects/perl/en

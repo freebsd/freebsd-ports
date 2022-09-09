@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries tcp wrappers (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.centos.org
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

@@ -6,6 +6,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of themes and icons for MATE
+WWW=		https://mate-desktop.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,3 @@
 Fog::Radosgw is a fog backend for provisioning Ceph Radosgw - the Swift and S3
 compatible REST API for Ceph. Currently, the gem only supports the S3 API, not
 Swift.
-
-WWW: https://github.com/fog/fog-radosgw

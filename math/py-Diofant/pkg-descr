@@ -3,5 +3,3 @@ It is able to symbolically differentiate, integrate functions, solve
 algebraic equations and a lot more.
 
 It can present results in a very cool pseudographics in your terminal.
-
-WWW: https://github.com/diofant/diofant

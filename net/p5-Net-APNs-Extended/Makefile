@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for APNs that support the extended format
+WWW=		https://metacpan.org/release/Net-APNs-Extended
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

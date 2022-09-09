@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Run tests in isolated forked subprocesses
+WWW=		https://github.com/pytest-dev/pytest-forked
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

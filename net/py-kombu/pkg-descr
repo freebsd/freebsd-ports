@@ -17,5 +17,3 @@ Features:
     * Several annoyances with amqplib has been fixed, like
       supporting timeouts and the ability to wait for events on
       more than one channel.
-
-WWW: https://kombu.readthedocs.org/

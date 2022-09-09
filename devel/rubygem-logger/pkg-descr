@@ -6,5 +6,3 @@ Logger has the following features:
 - Auto-rolling of log files
 - Setting the format of log messages
 - Specifying a program name in conjunction with the message
-
-WWW: https://github.com/ruby/logger

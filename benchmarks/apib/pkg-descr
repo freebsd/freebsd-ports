@@ -11,5 +11,3 @@ intended as a more modern replacement.  In particular, it offers:
   - Ability to output results to a file so they may be automated
   - Remote CPU monitoring
   - Simple command-line interface
-
-WWW: https://github.com/apigee/apib

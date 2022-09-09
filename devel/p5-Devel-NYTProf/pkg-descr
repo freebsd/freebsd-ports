@@ -17,5 +17,3 @@ Devel::NYTProf is a powerful feature-rich perl source code profiler.
  * Trivial to use with mod_perl - add one line to httpd.conf
  * Includes an extensive test suite
  * Tested on very large codebases
-
-WWW: https://metacpan.org/release/Devel-NYTProf

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-0.6
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module to tie together multiple Geo::Coder modules
+WWW=		https://metacpan.org/release/FRIFFIN/Geo-Coder-Multiple-0.61
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

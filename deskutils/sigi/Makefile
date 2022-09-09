@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	hiljusti@so.dang.cool
 COMMENT=	Organizing tool for terminal lovers who hate organizing
+WWW=		https://github.com/hiljusti/sigi
 
 LICENSE=	GPLv2
 

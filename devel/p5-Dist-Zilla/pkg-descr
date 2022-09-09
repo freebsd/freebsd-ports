@@ -6,5 +6,3 @@ Since it's only run by authors, and is meant to be run on a repository
 checkout rather than on published, released code, it can do much
 more than those tools, and is free to make much more ludicrous
 demands in terms of prerequisites.
-
-WWW: https://metacpan.org/release/Dist-Zilla

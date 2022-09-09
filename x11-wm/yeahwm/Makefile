@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Minimal X11 window manager with BeOS-like tabbed titles
+WWW=		http://phrat.de/
 
 USES=		xorg
 USE_XORG=	x11 xext xinerama

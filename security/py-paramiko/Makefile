@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python SSH2 protocol library
+WWW=		https://www.paramiko.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

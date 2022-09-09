@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	geier@lostpackets.de
 COMMENT=	Tree widgets for py-urwid
+WWW=		https://github.com/pazz/urwidtrees
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

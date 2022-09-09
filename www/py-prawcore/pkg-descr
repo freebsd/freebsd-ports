@@ -7,5 +7,3 @@ Features:
   * Authorization URL generation
   * Retrieval of access and refresh tokens from authorization grants
   * Access and refresh token revocation
-
-WWW: https://github.com/praw-dev/prawcore

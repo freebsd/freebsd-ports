@@ -3,5 +3,3 @@ for the Eclipse platform in an operating system independent manner.
 
 This port provides SWT without requiring a full download and build of
 Eclipse.
-
-WWW: https://www.eclipse.org/swt/

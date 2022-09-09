@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for desktop notifications
+WWW=		https://gitlab.gnome.org/GNOME/libnotify
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Replacement for gstat(8)
+WWW=		https://github.com/asomers/gstat-rs
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

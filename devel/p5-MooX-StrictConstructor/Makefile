@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Make your Moo-based object constructors blow up on unknown attributes
+WWW=		https://metacpan.org/release/MooX-StrictConstructor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

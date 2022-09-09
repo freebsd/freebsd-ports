@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovak hunspell dictionaries
+WWW=		https://www.sk-spell.sk.cx/
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual

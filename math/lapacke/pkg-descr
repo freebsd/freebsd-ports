@@ -8,5 +8,3 @@ the following features[1]:
 - error code as a return value instead of the INFO parameter.
 
 [1] Intel Corporation. "C Interface to LAPACK" README. 2010.
-
-WWW: http://www.netlib.org/lapack/

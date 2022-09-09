@@ -7,6 +7,7 @@ DISTFILES=	sol.pl sol-test.txt
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of the Solitaire encryption algorithm
+WWW=		http://www.counterpane.com/solitaire.html
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	sol.pl

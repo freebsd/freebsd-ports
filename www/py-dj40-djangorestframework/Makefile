@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Django REST framework
+WWW=		https://www.django-rest-framework.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

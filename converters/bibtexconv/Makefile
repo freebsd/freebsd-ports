@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.uni-due.de/~be0001/bibtexconv/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	BibTeX Converter
+WWW=		https://www.uni-due.de/~be0001/bibtexconv/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

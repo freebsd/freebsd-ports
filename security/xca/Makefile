@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/xca/releases/download/RELEASE.${P
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Graphical certification authority
+WWW=		https://hohnstaedt.de/xca
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

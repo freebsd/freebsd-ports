@@ -1,11 +1,12 @@
 PORTNAME=	nginx-prometheus-exporter
 PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Prometheus exporter for NGINX and NGINX Plus stats
+WWW=		https://github.com/nginxinc/nginx-prometheus-exporter
 
 LICENSE=	APACHE20
 

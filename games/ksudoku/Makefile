@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		https://www.kde.org/applications/games/ksudoku/
 
 USES=		cmake compiler:c++11-lang gl kde:5 qt:5 tar:xz
 USE_GL=		gl glu

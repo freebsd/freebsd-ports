@@ -8,6 +8,7 @@ DISTNAME=	App-Asciio-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl/GTK application that lets you draw ASCII charts using a GUI
+WWW=		https://metacpan.org/release/App-Asciio
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

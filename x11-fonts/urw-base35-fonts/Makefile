@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	URW core35 fonts in various formats
+WWW=		https://www.ghostscript.com
 
 LICENSE=	AGPLv3
 

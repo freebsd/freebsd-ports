@@ -1,4 +1,4 @@
---- base/message_loop/message_pump_glib.cc.orig	2022-02-28 16:54:41 UTC
+--- base/message_loop/message_pump_glib.cc.orig	2022-08-31 12:19:35 UTC
 +++ base/message_loop/message_pump_glib.cc
 @@ -8,6 +8,11 @@
  #include <glib.h>
@@ -10,9 +10,9 @@
 +#endif
 +
  #include "base/logging.h"
+ #include "base/memory/raw_ptr.h"
  #include "base/notreached.h"
- #include "base/numerics/safe_conversions.h"
-@@ -50,9 +55,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
+@@ -51,9 +56,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
  }
  
  bool RunningOnMainThread() {

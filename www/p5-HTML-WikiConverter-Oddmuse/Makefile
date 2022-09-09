@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert HTML to Oddmuse markup
+WWW=		https://metacpan.org/release/HTML-WikiConverter-Oddmuse
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-WikiConverter>=0.60:www/p5-HTML-WikiConverter \

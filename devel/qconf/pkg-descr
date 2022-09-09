@@ -3,5 +3,3 @@ project. It is intended for developers who don't need (or want) to
 use the more complex GNU autotools. With qconf/qmake, it is easy
 to maintain a cross-platform project that uses a familiar configuration
 interface on Unix.
-
-WWW: https://github.com/psi-im/qconf

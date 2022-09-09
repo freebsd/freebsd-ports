@@ -2,8 +2,9 @@ PORTNAME=	libretro-bluemsx
 PORTVERSION=	0.20220213
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of blueMSX to the libretro API
+WWW=		https://github.com/libretro/blueMSX-libretro
 
 LICENSE=	GPLv3
 

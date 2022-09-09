@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Game engine for Return to Castle Wolfenstein
+WWW=		https://github.com/iortcw/iortcw
 
 LICENSE=	GPLv3
 

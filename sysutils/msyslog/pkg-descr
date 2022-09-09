@@ -5,5 +5,3 @@ om_peo (an implementation of PEO-1 and L-PEO, two algorithmic protocols for
 integrity checking), om_mysql and om_pgsql (modules that sends output to a
 MySQL and PostgreSQL database, respectively) and om_regex (a module that allows
 output redirection using regular expressions).
-
-WWW: http://oss.coresecurity.com/projects/msyslog.html

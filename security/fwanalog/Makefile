@@ -6,6 +6,7 @@ MASTER_SITES=	http://tud.at/programm/fwanalog/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall log summarizer that uses Analog
+WWW=		http://tud.at/programm/fwanalog/
 
 RUN_DEPENDS=	analog:www/analog
 

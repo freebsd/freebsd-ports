@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple tool to mock external modules
+WWW=		https://metacpan.org/release/Test-TinyMocker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

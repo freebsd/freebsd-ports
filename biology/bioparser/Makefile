@@ -4,6 +4,7 @@ CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only parsing library for several formats in bioinformatics
+WWW=		https://github.com/rvaser/bioparser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

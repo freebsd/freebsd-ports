@@ -5,6 +5,7 @@ CATEGORIES=	net devel
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The uTorrent Transport Protocol library and sample utilities
+WWW=		https://github.com/bittorrent/libutp
 
 LICENSE=	MIT
 

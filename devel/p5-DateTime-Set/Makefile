@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Datetime sets and set math
+WWW=		https://metacpan.org/release/DateTime-Set
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

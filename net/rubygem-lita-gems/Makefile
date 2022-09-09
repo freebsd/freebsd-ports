@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Lita handler for rubygems.org querying
+WWW=		https://github.com/marsz/lita-gems
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -14,6 +14,7 @@ DISTFILES_i386=		${DISTNAME}.${DIST_SUFX}${EXTRACT_SUFX}:i386
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Epson Scan 2 network interface non-free-plugin
+WWW=		https://support.epson.net/linux/en/epsonscan2.php
 
 LICENSE=	EPSON
 LICENSE_NAME=	EPSON END USER SOFTWARE LICENSE AGREEMENT

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mike@urgle.com
 COMMENT=	Simplified interface to XML::Parser
+WWW=		https://metacpan.org/release/XML-TokeParser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

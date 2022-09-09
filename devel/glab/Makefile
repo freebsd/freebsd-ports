@@ -1,11 +1,12 @@
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Open-source GitLab command line tool
+WWW=		https://glab.readthedocs.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

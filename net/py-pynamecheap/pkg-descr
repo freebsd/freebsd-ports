@@ -7,5 +7,3 @@ This client supports:
 - Getting contact information for a domain
 - Setting DNS info to default values
 - Set DNS host records
-
-WWW: https://github.com/Bemmu/PyNamecheap

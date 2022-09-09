@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension to provide anonymous IP addresses
+WWW=		https://metacpan.org/release/IP-Anonymous
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

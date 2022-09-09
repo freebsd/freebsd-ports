@@ -1,11 +1,12 @@
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.99036
+PORTVERSION=	2.99037
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Very simple Perl interface to query raw whois data
+WWW=		https://metacpan.org/release/Net-Whois-Raw
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -3,5 +3,3 @@ at http://bitworking.org/projects/URI-Templates/.
 
 This module supports draft-gregorio-uritemplate-03 except -opt and
 -neg operators.
-
-WWW: https://metacpan.org/release/URI-Template-Restrict

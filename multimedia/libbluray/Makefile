@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSI
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blu-Ray discs playback library for media players
+WWW=		https://www.videolan.org/developers/libbluray.html
 
 LICENSE=	LGPL21
 

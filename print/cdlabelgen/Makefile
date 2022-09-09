@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.aczoom.com/pub/tools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate postscript for frontcards and traycards for CDs
+WWW=		https://www.aczoom.com/tools/cdinsert/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

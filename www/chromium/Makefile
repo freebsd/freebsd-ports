@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	104.0.5112.101
+PORTVERSION=	105.0.5195.102
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
+WWW=		https://www.chromium.org/Home
 
 LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
@@ -110,6 +111,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_freetype=false \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
+		use_system_libwayland=true \
 		use_system_wayland_scanner=true \
 		use_udev=false \
 		extra_cxxflags="${CXXFLAGS}" \

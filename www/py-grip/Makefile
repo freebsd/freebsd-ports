@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Preview GitHub Markdown files locally before committing
+WWW=		https://github.com/joeyespo/grip
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

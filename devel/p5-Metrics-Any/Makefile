@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Abstract collection of monitoring metrics
+WWW=		https://metacpan.org/release/Metrics-Any
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

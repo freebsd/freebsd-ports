@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Rapid DSL prototyping in Ruby
+WWW=		https://github.com/delano/caesars
 
 NO_ARCH=	yes
 

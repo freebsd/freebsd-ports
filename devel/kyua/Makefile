@@ -8,6 +8,7 @@ MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTV
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Testing framework for infrastructure software
+WWW=		https://github.com/jmmv/kyua/
 
 LICENSE=	BSD3CLAUSE
 

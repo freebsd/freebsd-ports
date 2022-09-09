@@ -9,6 +9,7 @@ DISTFILES=	ukrmol-out-${DISTVERSION}${EXTRACT_SUFX}:out \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code to compute electron and positron scattering from molecules
+WWW=		https://zenodo.org/record/5799134 #.Yo1lCknMKV4
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution Microsoft Exchange plugin through Exchange Web Services
+WWW=		https://wiki.gnome.org/Apps/Evolution
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

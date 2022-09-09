@@ -6,5 +6,3 @@ about 100 graphics formats.
 Examples of supported image manipulations: Shrinking an image by 10%;
 Cutting the top half off of an image; Making a mirror image; Creating
 a sequence of images that fade from one image to another.
-
-WWW: http://netpbm.sourceforge.net/

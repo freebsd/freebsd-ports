@@ -7,6 +7,7 @@ DISTNAME=	cli_helpers-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helpers for building command-line apps
+WWW=		https://github.com/dbcli/cli_helpers
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@ Vuls' features include:
 - scan middleware that are not included in OS package management;
 - nondestructive testing;
 - email and slack notification.
-
-WWW: https://vuls.io

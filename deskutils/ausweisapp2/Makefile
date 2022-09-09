@@ -4,6 +4,7 @@ CATEGORIES=	deskutils security
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Official authentication app for German ID cards and residence permits
+WWW=		https://www.ausweisapp.bund.de/ausweisapp2/
 
 LICENSE=	EUPLv1.2
 LICENSE_NAME=	European Union Public Licence V. 1.2

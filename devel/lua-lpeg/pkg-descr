@@ -11,5 +11,3 @@ typically are not regular expressions in the formal sense). On the other hand,
 first-class patterns allow much better documentation (as it is easy to comment
 the code, to break complex definitions in smaller parts, etc.) and are
 extensible, as we can define new functions to create and compose patterns.
-
-WWW: http://www.inf.puc-rio.br/~roberto/lpeg/

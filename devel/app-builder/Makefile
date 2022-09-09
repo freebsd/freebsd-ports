@@ -1,11 +1,12 @@
 PORTNAME=	app-builder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Generic helper tool to build app in a distributable format
+WWW=		https://github.com/develar/app-builder
 
 LICENSE=	MIT
 

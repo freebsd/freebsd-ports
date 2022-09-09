@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.hasw.net/linux/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Overclocking utility for ATI Radeon video cards
+WWW=		http://www.hasw.net/linux/
 
 LICENSE=	GPLv2
 

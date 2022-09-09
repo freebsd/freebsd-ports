@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
+WWW=		https://launchpad.net/admesh
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

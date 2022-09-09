@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PSGI handler for HTML::Mason
+WWW=		https://metacpan.org/release/HTML-Mason-PSGIHandler
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI-PSGI>0:www/p5-CGI-PSGI \

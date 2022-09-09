@@ -7,5 +7,3 @@ concurrent operations while maintaining an easy to use interface.
 aiocoap is originally based on txThings. If you want to use CoAP in your
 existing Twisted application, or can not migrate to Python 3 yet, that is
 probably more useful to you than aiocoap.
-
-WWW: https://github.com/chrysn/aiocoap

@@ -10,5 +10,3 @@ instance, the library also provides a number of helper functions that can be
 used to manage callbacks and timers, as well as UDP sockets for simple IPC.
 Furthermore, SCTPLIB provides support for UDP encapsulation, making it possible
 to co-exist with kernel SCTP implementations.
-
-WWW: https://www.uni-due.de/~be0001/sctplib/

@@ -17,5 +17,3 @@ Notable features:
 - Ensures links to dashboards folders in a dashlist Panel are consistent with
   the Folder IDs - useful for deploying one set of dashboards across mulitple
   Grafana instances, e.g., for dev, test, prod environments.
-
-WWW: https://github.com/Beam-Connectivity/grafana-dashboard-manager

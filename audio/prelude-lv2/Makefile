@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple wavetable-based church organ as an LV2 plugin
+WWW=		https://github.com/sfztools/prelude.lv2
 
 LICENSE=	LGPL3
 

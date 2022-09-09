@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Extended functionality for plotting timedelta values with Matplotlib
+WWW=		https://github.com/theOehrly/Timple
 
 LICENSE=	MIT
 

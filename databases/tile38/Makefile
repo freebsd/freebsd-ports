@@ -1,10 +1,11 @@
 PORTNAME=	tile38
 DISTVERSION=	1.12.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 
 MAINTAINER=	a.andersson.thn@gmail.com
 COMMENT=	In-memory geolocation data store, spatial index, and realtime geofence
+WWW=		https://tile38.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Converts account names to email address based on a flat-file database
+WWW=		https://metacpan.org/release/SVN-Notify-Filter-EmailFlatFileDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

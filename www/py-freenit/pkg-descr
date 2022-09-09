@@ -1,4 +1,2 @@
 Freenit is well suited for REST API development, providing Swagger and ReDoc
 interface, while dealing with database connections and models in an easy way.
-
-WWW: https://github.com/freenit-framework/backend

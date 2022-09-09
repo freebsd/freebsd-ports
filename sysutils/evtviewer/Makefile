@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Ms event log viewer
+WWW=		https://contribs.martymac.org
 
 LICENSE=	GPLv2
 

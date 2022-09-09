@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Storage Queue Client Library for Ruby
+WWW=		https://github.com/Azure/azure-storage-ruby/tree/master/queue
 
 LICENSE=	MIT
 

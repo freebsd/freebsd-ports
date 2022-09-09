@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Non-strict parsing, composition, and wildcard-matching of URLs in Ruby
+WWW=		https://github.com/gamache/fuzzyurl.rb
 
 LICENSE=	MIT
 

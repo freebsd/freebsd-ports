@@ -8,5 +8,3 @@ and where no very sophisticated features are needed. In order to be able to
 process equally efficiently text files or source code in a variety of
 languages, the syntax used by gpp is fully customizable. The handling of
 comments and strings is especially advanced.
-
-WWW: http://www.nothingisreal.com/gpp/

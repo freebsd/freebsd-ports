@@ -9,5 +9,3 @@ network socket.
 
 Multiple copies of the program can run on the same computer at the same time
 assuming each is using a different network port and device.
-
-WWW: http://lpccomp.bc.ca/remserial/

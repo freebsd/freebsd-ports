@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C|00$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for portably manipulating file specifications
+WWW=		https://metacpan.org/release/PathTools
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

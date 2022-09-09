@@ -1,5 +1,3 @@
 Methods and tools for displaying and analysing univariate time
 series forecasts including exponential smoothing via state space
 models and automatic ARIMA modelling.
-
-WWW: https://cran.r-project.org/web/packages/forecast/

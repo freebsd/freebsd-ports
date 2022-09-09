@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	UNIX crypt(3) algorithm using DES, MD5, SHA256 and SHA512
+WWW=		https://github.com/mogest/unix-crypt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to compute the exchange and correlation energy and potentials
+WWW=		https://gitlab.com/siesta-project/libraries/libgridxc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	math devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ math parser library with array and string support
+WWW=		https://beltoforion.de/en/muparserx/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

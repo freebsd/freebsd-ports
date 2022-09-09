@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Determine the locale encoding
+WWW=		https://metacpan.org/release/Encode-Locale
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

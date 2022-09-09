@@ -2,6 +2,7 @@ bin/perlanet
 %%SITE_PERL%%/Perlanet.pm
 %%SITE_PERL%%/Perlanet/Entry.pm
 %%SITE_PERL%%/Perlanet/Feed.pm
+%%SITE_PERL%%/Perlanet/Role/Config.pm
 %%SITE_PERL%%/Perlanet/Simple.pm
 %%SITE_PERL%%/Perlanet/Trait/Cache.pm
 %%SITE_PERL%%/Perlanet/Trait/FeedFile.pm
@@ -15,6 +16,7 @@ bin/perlanet
 %%PERL5_MAN3%%/Perlanet.3.gz
 %%PERL5_MAN3%%/Perlanet::Entry.3.gz
 %%PERL5_MAN3%%/Perlanet::Feed.3.gz
+%%PERL5_MAN3%%/Perlanet::Role::Config.3.gz
 %%PERL5_MAN3%%/Perlanet::Simple.3.gz
 %%PERL5_MAN3%%/Perlanet::Trait::Cache.3.gz
 %%PERL5_MAN3%%/Perlanet::Trait::FeedFile.3.gz

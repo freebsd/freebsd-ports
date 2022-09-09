@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Testing tools for data validation and analysis
+WWW=		https://github.com/shawnbrown/datatest
 
 LICENSE=	APACHE20
 

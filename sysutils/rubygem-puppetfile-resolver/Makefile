@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Dependency resolver for Puppetfiles as a gem
+WWW=		https://rubygems.org/gems/puppetfile-resolver
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

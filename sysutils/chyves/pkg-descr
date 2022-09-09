@@ -14,5 +14,3 @@ reverted states on boot/reboot to name a few of the advanced features.
 The name 'chyves' is the pluralized, big endian alphabetic increment of bhyve.
 'chyves' is pronounced like 'chives', part of the Allium genus. The onion is
 also in the Allium genus.
-
-WWW: http://chyves.org

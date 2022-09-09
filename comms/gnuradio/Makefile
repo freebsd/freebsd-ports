@@ -6,6 +6,7 @@ CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
+WWW=		https://www.gnuradio.org/
 
 LICENSE=	GPLv3
 

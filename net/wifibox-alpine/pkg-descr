@@ -5,5 +5,3 @@ to meet the requirements, this has to be a system with a low resource
 footprint and easy to manage.  This is derived from Alpine Linux,
 which is an actively maintained, security-oriented, lightweight
 distribution, based on musl libc and BusyBox.
-
-WWW: https://github.com/pgj/freebsd-wifibox-alpine

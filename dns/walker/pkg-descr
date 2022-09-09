@@ -3,5 +3,3 @@ transfers but use DNSSEC.
 
 Fetch NXT record on zone name, walk the NXT chain until all records are
 fetched. Requires Bind version 9.x program `dig' located in path.
-
-WWW: https://josefsson.org/walker/

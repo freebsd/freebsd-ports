@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sstring buffers with value tags on extents
+WWW=		https://metacpan.org/release/String-Tagged
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

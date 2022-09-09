@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl Camellia 128-bit block cipher module
+WWW=		https://metacpan.org/release/Crypt-Camellia_PP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

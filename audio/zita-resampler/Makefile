@@ -5,6 +5,7 @@ MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	C++ library for resampling audio signals
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/zita-resampler/resampler.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

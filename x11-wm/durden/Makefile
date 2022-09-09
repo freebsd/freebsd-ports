@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Desktop Environment for Arcan
+WWW=		https://durden.arcan-fe.com/
 
 LICENSE=	BSD3CLAUSE # without fonts
 LICENSE_FILE=	${WRKSRC}/LICENSE

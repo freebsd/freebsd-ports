@@ -1,11 +1,12 @@
 PORTNAME=	croc
 PORTVERSION=	9.6.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tool to simply and securely transfer files and folders
+WWW=		https://github.com/schollz/croc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

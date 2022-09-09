@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast, extensible progress bar for Python
+WWW=		https://github.com/tqdm/tqdm
 
 LICENSE=	MIT MPL20
 LICENSE_COMB=	multi

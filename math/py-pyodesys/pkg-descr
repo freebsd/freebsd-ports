@@ -11,5 +11,3 @@ The numerical integration is performed using either:
 * pygslodeiv2
 * pyodeint
 * pycvodes
-
-WWW: https://github.com/bjodah/pyodesys

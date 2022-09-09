@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/system/admin/time
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Synchronise computer clock to CHU radio station
+WWW=		https://www.rossi.com/chu/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

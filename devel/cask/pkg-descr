@@ -4,5 +4,3 @@ more.
 
 Cask can also be used to manage dependencies for your local Emacs
 configuration.
-
-WWW: https://github.com/cask/cask

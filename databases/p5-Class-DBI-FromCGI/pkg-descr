@@ -14,5 +14,3 @@ It so happens that CGI::Untaint also plays well with Class::DBI. All you need
 to do is to 'use Class::DBI::FromCGI' in your class (or in your local
 Class::DBI subclass that all your other classes inherit from. You do do that,
 don't you?).
-
-WWW: https://metacpan.org/release/Class-DBI-FromCGI

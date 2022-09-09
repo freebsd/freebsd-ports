@@ -1,5 +1,3 @@
 Border::Style specifies a structure for border styles. The distribution also
 comes with utility routines and roles for managing border styles in
 applications.
-
-WWW: https://metacpan.org/release/Border-Style

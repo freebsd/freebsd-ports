@@ -3,5 +3,3 @@ menu. Rolo strives to be a well-constructed tool for complementing text-based
 email programs-such as mutt. It utilizes the vCard version 3.0 format for
 storing its contacts and it interfaces with the end-user through a NCurses
 front-end.
-
-WWW: http://rolo.sf.net/

@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsdports@xorcara.com
 COMMENT=	Splits SHOUTcast stream into tracks
+WWW=		http://streamripper.sourceforge.net
 
 LICENSE=	GPLv2
 

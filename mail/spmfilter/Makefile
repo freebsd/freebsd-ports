@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.${PORTNAME}.org/files/
 
 MAINTAINER=	ast@treibsand.com
 COMMENT=	High-performance mail filtering framework written in C
+WWW=		https://www.spmfilter.org/
 
 LICENSE=	LGPL3
 

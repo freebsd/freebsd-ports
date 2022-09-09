@@ -5,6 +5,7 @@ MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	TV viewing application and a few TV utilities
+WWW=		https://linuxtv.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

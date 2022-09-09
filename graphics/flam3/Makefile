@@ -7,6 +7,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	Algorithmically generated fractal flames images and animations
+WWW=		http://flam3.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

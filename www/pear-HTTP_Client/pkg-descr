@@ -7,5 +7,3 @@ Features:
 * Has methods to set default headers and request parameters
 * Implements the Subject-Observer design pattern: the base class sends
   events to listeners that do the response processing.
-
-WWW: https://pear.php.net/package/HTTP_Client

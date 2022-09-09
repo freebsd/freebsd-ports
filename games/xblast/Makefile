@@ -16,6 +16,7 @@ DIST_SUBDIR=	xblast
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player real-time strategy game for X11
+WWW=		http://xblast.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	CPU, RAM, and load monitor for use with tmux
+WWW=		https://github.com/thewtex/tmux-mem-cpu-load
 
 LICENSE=	APACHE20
 

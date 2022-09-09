@@ -6,5 +6,3 @@ ERFA is intended to replicate the functionality of SOFA (aside from possible
 bugfixes in ERFA that have not yet been included in SOFA), but is licensed under
 a three-clause BSD license to enable its compatibility with a wide range of open
 source licenses.
-
-WWW: https://github.com/liberfa/erfa

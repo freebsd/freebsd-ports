@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Cross-platform program for developing Haskell programs
+WWW=		https://www.haskellstack.org/
 
 LICENSE=	BSD3CLAUSE
 

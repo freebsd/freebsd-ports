@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.spamdyke.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail filter for monitoring and intercepting SMTP connections
+WWW=		https://www.spamdyke.org/
 
 LICENSE=	GPLv2
 

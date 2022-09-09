@@ -5,5 +5,3 @@ fields into a CSV string and parse a CSV string into fields.
 The module accepts either strings or files as input and can utilize any
 user-specified characters as delimiters, separators, and escapes so it is
 perhaps better called ASV (anything separated values) rather than just CSV.
-
-WWW: https://metacpan.org/release/Text-CSV_XS

@@ -4,6 +4,7 @@ CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Library to learn videogames programming
+WWW=		https://www.raylib.com/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

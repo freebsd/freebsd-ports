@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Tool to collect static files in one command
+WWW=		https://github.com/coleifer/flask-peewee/
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

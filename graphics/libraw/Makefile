@@ -7,6 +7,7 @@ DISTNAME=	LibRaw-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for manipulating raw images
+WWW=		https://www.libraw.org/
 
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual

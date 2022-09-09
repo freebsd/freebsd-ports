@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Put GPX track on Google Map or OpenStreetMap
+WWW=		https://github.com/sd2k9/gpx2map
 
 LICENSE=	GPLv3
 

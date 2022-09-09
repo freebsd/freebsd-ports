@@ -10,5 +10,3 @@ From the aescrypt README.html:
       used within scripts as part of a complete solution. Keychain
       management, public key signatures, etc. are all expected to be
       done external to this program.
-
-WWW: http://aescrypt.sourceforge.net/

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to trim replies from plain text email
+WWW=		https://github.com/discourse/email_reply_trimmer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
+WWW=		https://www.xine-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

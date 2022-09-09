@@ -11,5 +11,4 @@ The design principles of Algorithm::Evolutionary are:
       could make Algorithm::Evolutionary interoperable with other EA libraries,
       such as EO or JEO.
 
-WWW: https://metacpan.org/release/Algorithm-Evolutionary
-WWW: http://opeal.sourceforge.net/
+See also: http://opeal.sourceforge.net/

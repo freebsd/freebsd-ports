@@ -1,17 +1,18 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.87test9
+DISTVERSION=	2.87rc1
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	4 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
-#MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
-#		LOCAL/mandree/
-MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/test-releases/ \
+MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
 		LOCAL/mandree/
+#MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/test-releases/ \
+#		LOCAL/mandree/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
+WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 #IGNORE=		please use dns/dnsmasq, which is newer # re-enable after 2.87 release
 DEPRECATED=	Short-lived test branch, to be removed after v2.87 release

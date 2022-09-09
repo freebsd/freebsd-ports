@@ -8,5 +8,3 @@ font format. This module was written to support the use of TTF in Pastel
 module: first, I required a fast module to access TTF file. Second, all
 the access required was read-only. Last, I wanted a user friendly, higher
 level API to access TTF file.
-
-WWW: https://metacpan.org/release/Font-TTFMetrics

@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Cascading Style Sheets library
+WWW=		https://www.netsurf-browser.org/projects/libcss/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

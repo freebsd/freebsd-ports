@@ -8,6 +8,7 @@ DISTNAME=	OpenSPC-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line player for .spc and .zst files
+WWW=		http://membres.lycos.fr/pixels/OpenSPC.html
 
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
 GNU_CONFIGURE=	yes

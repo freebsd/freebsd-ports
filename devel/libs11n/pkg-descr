@@ -11,5 +11,3 @@ of standard containers out of the box. libs11n is 100% data-format
 agnostic, and currently includes support for many formats, including 3 XML
 flavours. (As far as i am aware, this exceeds support provided by any
 other serialization framework, regardless of the implementation language!)
-
-WWW: http://s11n.net

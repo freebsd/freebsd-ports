@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous DNS helper for high volume applications
+WWW=		https://metacpan.org/release/Net-DNS-Async
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

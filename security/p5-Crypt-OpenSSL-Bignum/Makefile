@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenSSL's multiprecision integer arithmetic #'
+WWW=		https://metacpan.org/release/Crypt-OpenSSL-Bignum
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -3,5 +3,3 @@ provides unified interface and library dealing with
 Chinese words, phrases, sentences, and phonetic symbols.
 It is intended to be used as the foundation of Chinese
 text processing.
-
-WWW: http://libtabe.sourceforge.net/

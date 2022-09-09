@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD/DVD mastering tool for the GNOME desktop
+WWW=		https://projects.gnome.org/brasero/
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libnotify.so:devel/libnotify \

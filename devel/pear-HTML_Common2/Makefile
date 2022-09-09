@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR::HTML_Common2 is a base class for other HTML classes
+WWW=		https://pear.php.net/package/HTML_Common2
 
 LICENSE=	BSD2CLAUSE
 

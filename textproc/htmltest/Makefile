@@ -1,11 +1,12 @@
 PORTNAME=	htmltest
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	HTML validator written in Go
+WWW=		https://github.com/wjdp/htmltest
 
 LICENSE=	MIT
 

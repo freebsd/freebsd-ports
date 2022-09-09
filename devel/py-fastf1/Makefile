@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Python module to accessing and analyzing Formula 1 data
+WWW=		https://github.com/theOehrly/Fast-F1
 
 LICENSE=	GPLv3
 

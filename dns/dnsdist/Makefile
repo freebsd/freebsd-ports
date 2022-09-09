@@ -6,6 +6,7 @@ MASTER_SITES=	https://downloads.powerdns.com/releases/
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
+WWW=		https://dnsdist.org/
 
 LICENSE=	GPLv2 ISCL MIT
 LICENSE_COMB=	multi

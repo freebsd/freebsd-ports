@@ -6,6 +6,7 @@ DISTNAME=	g${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL Error Message Decryptor for C++
+WWW=		https://www.bdsoft.com/tools/stlfilt.html
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ MASTER_SITES=	GNU/aspell
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
+WWW=		http://aspell.net/
 
 LICENSE=	LGPL21
 

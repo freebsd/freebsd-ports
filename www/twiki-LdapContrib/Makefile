@@ -5,6 +5,7 @@ MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		LOCAL/skv
 
 COMMENT=	LDAP services for TWiki
+WWW=		https://twiki.org/cgi-bin/view/Plugins/LdapContrib
 
 RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 

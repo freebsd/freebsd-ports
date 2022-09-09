@@ -4,6 +4,7 @@ CATEGORIES=	security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to manipulate many kinds of password files
+WWW=		https://pear.php.net/package/File_Passwd
 
 USES=		pear
 

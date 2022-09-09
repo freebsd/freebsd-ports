@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library (using libusb) to talk to FTDI chips
+WWW=		https://www.intra2net.com/en/developer/libftdi/
 
 LICENSE=		GPLv2 LGPL21
 LICENSE_COMB=		multi

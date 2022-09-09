@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to write logs to Firebug or Webkit Inspector
+WWW=		https://metacpan.org/release/Plack-Middleware-ConsoleLogger
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/stable/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tron clone in 3D
+WWW=		http://www.armagetronad.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

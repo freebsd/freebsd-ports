@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
+WWW=		https://luakit.github.io
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
+WWW=		https://metacpan.org/release/DBIx-Class-Schema-Loader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

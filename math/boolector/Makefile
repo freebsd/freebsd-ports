@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Satisfiability Modulo Theories (SMT) solver
+WWW=		https://boolector.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

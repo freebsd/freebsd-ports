@@ -6,5 +6,3 @@ may already be in progress rather than creating its own X server for clients
 to connect to.
 
 LICENSE: GPL2 or later
-
-WWW: https://github.com/LibVNC/x11vnc

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	i@levsha.me
 COMMENT=	Parallel Distributed Shell
+WWW=		https://github.com/chaos/pdsh
 
 LICENSE=	GPLv2
 

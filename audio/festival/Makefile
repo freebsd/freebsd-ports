@@ -22,6 +22,7 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
+WWW=		https://www.cstr.ed.ac.uk/projects/festival/
 
 OPTIONS_DEFINE=	NAS
 OPTIONS_DEFAULT=NAS

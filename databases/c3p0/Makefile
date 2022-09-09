@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.bin
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Library for augmenting JDBC drivers with JNDI-bindable DataSources
+WWW=		https://www.mchange.com/projects/c3p0/
 
 LICENSE=	LGPL21 EPL
 LICENSE_COMB=	dual

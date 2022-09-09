@@ -1,10 +1,11 @@
 PORTNAME=	intel-snap
 PORTVERSION=	0.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel's open telemetry framework
+WWW=		https://github.com/intelsdi-x/snap
 
 #LICENSE=	APACHE2
 

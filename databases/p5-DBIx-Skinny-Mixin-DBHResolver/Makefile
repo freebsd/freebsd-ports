@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of DBIx::DBHResolver mixin for DBIx::Skinny
+WWW=		https://metacpan.org/release/DBIx-Skinny-Mixin-DBHResolver
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

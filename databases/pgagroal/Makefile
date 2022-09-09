@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/agroal/${PORTNAME}/releases/download/${PORTVERS
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance protocol-native connection pool for PostgreSQL
+WWW=		https://agroal.github.io/pgagroal/
 
 LICENSE=	BSD3CLAUSE
 

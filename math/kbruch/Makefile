@@ -4,6 +4,7 @@ CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 application to exercise fractions
+WWW=		https://www.kde.org/applications/education/kbruch
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml

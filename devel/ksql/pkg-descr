@@ -4,5 +4,3 @@ inconsistent (transactions and statements open on exit and certain
 signals).  Specifically, it exits on any database errors; and upon
 exit (or signal), cleans up open statements, transactions, and
 databases.
-
-WWW: https://kristaps.bsd.lv/ksql/

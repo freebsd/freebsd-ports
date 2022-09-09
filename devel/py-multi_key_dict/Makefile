@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Multi key dictionary implementation
+WWW=		https://github.com/formiaczek/multi_key_dict
 
 LICENSE=	MIT
 

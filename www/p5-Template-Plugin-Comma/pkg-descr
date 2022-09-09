@@ -1,5 +1,3 @@
 Template::Plugin::Comma is a plugin for TT, which allows you to
 commify your numbers in templates.  This would be especially useful
 for prices.
-
-WWW: https://metacpan.org/release/Template-Plugin-Comma

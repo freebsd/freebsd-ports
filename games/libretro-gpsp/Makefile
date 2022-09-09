@@ -2,8 +2,9 @@ PORTNAME=	libretro-gpsp
 PORTVERSION=	0.20220403
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gameboy emulator for libretro
+WWW=		https://github.com/libretro/gpsp
 
 LICENSE=	GPLv2
 

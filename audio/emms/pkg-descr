@@ -3,5 +3,3 @@ application to play multimedia files from Emacs using external
 players. Many of it's ideas are derived from MpthreePlayer
 (http://www.nongnu.org/mp3player), but it tries to be more general and
 more clean.
-
-WWW: http://www.gnu.org/software/emms/index.html

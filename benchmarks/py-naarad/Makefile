@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for performance analysis
+WWW=		https://github.com/linkedin/naarad
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

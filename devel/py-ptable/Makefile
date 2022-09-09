@@ -8,6 +8,7 @@ DISTNAME=	PTable-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Display tabular data in an ASCII table format
+WWW=		https://github.com/kxxoling/PTable
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

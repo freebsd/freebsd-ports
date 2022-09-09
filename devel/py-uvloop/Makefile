@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fast drop-in replacement of asyncio event loop based on libuv
+WWW=		https://github.com/MagicStack/uvloop
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

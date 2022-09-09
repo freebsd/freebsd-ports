@@ -6,6 +6,7 @@ MASTER_SITES=	GENTOO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
+WWW=		http://www.xinetd.org/
 
 LICENSE=	XINETD
 LICENSE_NAME=	xinetd license

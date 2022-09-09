@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for translating German into the Schwaebisch dialect
+WWW=		http://unimut.fsk.uni-heidelberg.de/schwob.html
 
 MAKE_JOBS_UNSAFE=	yes
 

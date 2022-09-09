@@ -7,6 +7,7 @@ MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/ \
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Jigsaw puzzle program
+WWW=		http://kornelix.squarespace.com/picpuz/
 
 BROKEN_armv6=		fails to compile: use of undeclared identifier __NR_SYSCALL_BASE
 BROKEN_armv7=		fails to compile: use of undeclared identifier __NR_SYSCALL_BASE

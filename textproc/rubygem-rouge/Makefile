@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, easy-to-extend drop-in replacement for pygments
+WWW=		https://github.com/jneen/rouge
 
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	dual

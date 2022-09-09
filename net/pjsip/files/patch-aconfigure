@@ -14,7 +14,7 @@
  			ac_webrtc_cflags="-msse2"
  			;;
 -		     *win32* | *w32* | *darwin* | *linux*)
-+		     *win32* | *w32* | *darwin* | *linux* | *amd64*freebsd*)
++		     *win32* | *w32* | *darwin* | *linux* | *amd64*freebsd* | *x86_64*freebsd*)
                           case $target in
                               armv7l*gnueabihf)
                                   ac_webrtc_instset=neon

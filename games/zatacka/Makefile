@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Nibbles-like multiplayer game
+WWW=		http://zatacka.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		gmake sdl

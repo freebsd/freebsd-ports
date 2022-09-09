@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	devnull@apt322.org
 COMMENT=	Perl module for getting EXIF data from image files
+WWW=		https://exiftool.org
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

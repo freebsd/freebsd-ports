@@ -1,10 +1,11 @@
 PORTNAME=	strong_migrations
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Catch unsafe migrations at dev time
+WWW=		https://github.com/ankane/strong_migrations
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

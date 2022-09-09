@@ -1,18 +1,20 @@
 PORTNAME=	tzlocal
-DISTVERSION=	1.5.1
+DISTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rob.kruus@gmail.com
 COMMENT=	Returns the tzinfo object for the local timezone
+WWW=		https://github.com/regebro/tzlocal
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz-deprecation-shim>0:devel/py-pytz-deprecation-shim@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

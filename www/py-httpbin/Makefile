@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	contact@evilham.com
 COMMENT=	HTTP Request & Response Service
+WWW=		https://github.com/postmanlabs/httpbin
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

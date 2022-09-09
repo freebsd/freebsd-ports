@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Signal Protocol C Library
+WWW=		https://github.com/signalapp/libsignal-protocol-c
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

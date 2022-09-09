@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple tool for summarizing bodies of English text
+WWW=		https://metacpan.org/release/Lingua-EN-Summarize
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Summary>=0:www/p5-HTML-Summary \

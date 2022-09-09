@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verbose packet sniffer for Unix hosts
+WWW=		http://ipgrab.sourceforge.net/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:net/libpcap
 

@@ -9,6 +9,7 @@ MASTER_SITES=	http://btw23.de/johannes/userneu/ \
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Account management and creation tool
+WWW=		http://btw23.de/johannes/userneu/userneu.html
 
 LICENSE=	GPLv2
 

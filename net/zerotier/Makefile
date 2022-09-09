@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere
+WWW=		https://www.zerotier.com/
 
 # No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/master/LICENSE.txt
 LICENSE=		BUSINESS MIT PD

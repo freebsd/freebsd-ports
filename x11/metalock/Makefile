@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Enhanced X11 screen locker
+WWW=		http://chiselapp.com/user/beyert/repository/metalock/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE

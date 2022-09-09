@@ -7,5 +7,3 @@
     documentation as a tutorial on session management. But if you are
     already familiar with "CGI::Session" go to the methods section for the
     list of all the methods available.
-
-WWW: https://metacpan.org/release/CGI-Session

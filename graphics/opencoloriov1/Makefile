@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	v1
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
 COMMENT?=	Complete color management solution v1
+WWW=		https://www.opencolorio.org
 
 LICENSE=	BSD3CLAUSE
 

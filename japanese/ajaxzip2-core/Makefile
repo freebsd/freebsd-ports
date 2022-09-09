@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ajaxzip2 (Japanese ZIP code utility) core scripts
+WWW=		https://www.kawa.net/works/ajax/ajaxzip2/ajaxzip2.html
 
 USES=		dos2unix shebangfix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}

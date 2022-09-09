@@ -3,5 +3,3 @@ and help you do it in a much more elegant way. FEAR::API combines many strong
 and powerful features from various CPAN modules, such as LWP::UserAgent,
 WWW::Mechanize, Template::Extract, Encode, HTML::Parser, etc. and digests them
 into a deeper Zen.
-
-WWW: https://metacpan.org/release/XERN/FEAR-API-0.489

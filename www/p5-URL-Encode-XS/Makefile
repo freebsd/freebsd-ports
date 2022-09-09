@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS implementation of application/x-www-form-urlencoded encoding
+WWW=		https://metacpan.org/pod/URL::Encode::XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

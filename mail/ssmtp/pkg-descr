@@ -6,5 +6,3 @@ to the configured mailhost. Extremely easy configuration.
 WARNING: the above is all it does; it does not receive mail, expand
 aliases or manage a queue. That belongs on a mail hub with a system
 administrator.
-
-WWW: https://wiki.debian.org/sSMTP

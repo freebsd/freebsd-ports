@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolkit for storing files and attachments in web applications
+WWW=		https://github.com/amol-/depot
 
 LICENSE=	MIT
 

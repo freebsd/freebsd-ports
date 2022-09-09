@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Hamcrest matchers for Python
+WWW=		https://github.com/hamcrest/PyHamcrest
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

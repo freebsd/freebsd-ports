@@ -7,5 +7,3 @@ or when you want to create custom types with restricted, immutable interfaces.
 
 For an alternative implementation designed for performance, please see
 "pyrsistent".
-
-WWW: https://github.com/tomchristie/itypes

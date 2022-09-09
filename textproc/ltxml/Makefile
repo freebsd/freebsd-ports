@@ -7,6 +7,7 @@ MASTER_SITES=	GENTOO \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Toolkit
+WWW=		https://www.ltg.ed.ac.uk/software/ltxml/
 
 LICENSE=	GPLv2
 

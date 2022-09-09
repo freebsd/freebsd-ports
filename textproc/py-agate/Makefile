@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Data analysis library optimized for humans
+WWW=		https://agate.rtfd.org/
 
 LICENSE=	MIT
 

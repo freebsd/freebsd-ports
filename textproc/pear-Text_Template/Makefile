@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple template engine
+WWW=		https://pear.phpunit.de/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

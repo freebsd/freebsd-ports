@@ -11,5 +11,4 @@ GPT-partitioned disks. Specific advantages of gdisk, cgdisk and sgdisk include:
 - The ability to specify sector-exact partition sizes
 - Clear identification of the number of unallocated sectors on a disk
 
-WWW: https://www.rodsbooks.com/gdisk/
-WWW: https://www.rodsbooks.com/fixparts/
+See also: https://www.rodsbooks.com/gdisk/

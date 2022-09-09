@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple iterator with lookahead and unget
+WWW=		https://metacpan.org/dist/Iterator-Simple-Lookahead
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

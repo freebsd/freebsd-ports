@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits a unified diff into pieces which patch one file each
+WWW=		https://www.pathname.com/~quinlan/software/diffsplit/
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

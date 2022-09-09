@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight but robust filesystem based persistent LRU cache
+WWW=		https://metacpan.org/release/Tie-FileLRUCache
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

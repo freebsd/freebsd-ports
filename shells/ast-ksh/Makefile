@@ -16,6 +16,7 @@ DIST_SUBDIR=	ksh93
 
 MAINTAINER=	saper@saper.info
 COMMENT=	KornShell 93
+WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 

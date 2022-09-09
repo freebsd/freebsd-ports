@@ -10,6 +10,7 @@ GH_TAGNAME=	04554d2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller
+WWW=		http://www.gnustep.org/experience/Gorm.html
 
 LICENSE=	GPLv3
 

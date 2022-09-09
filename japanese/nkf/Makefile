@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Network Kanji code conversion Filter
+WWW=		https://sourceforge.jp/projects/nkf/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/nkf.c

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data Structures for PHP
+WWW=		https://pecl.php.net/package/ds
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

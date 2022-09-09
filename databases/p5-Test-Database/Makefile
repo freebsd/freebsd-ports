@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database handles ready for testing
+WWW=		https://metacpan.org/release/Test-Database
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

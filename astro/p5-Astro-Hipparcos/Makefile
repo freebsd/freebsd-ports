@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for reading the Hipparcos star catalog
+WWW=		https://metacpan.org/release/Astro-Hipparcos
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

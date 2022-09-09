@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source video engine of FreeSpace 2
+WWW=		http://scp.indiegames.us
 
 LICENSE=	VOLITION
 LICENSE_NAME=	Volition Copyright

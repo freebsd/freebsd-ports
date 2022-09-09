@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fork of defunct project CUnit, with several fixes and patches applied
+WWW=		https://gitlab.linphone.org/BC/public/bcunit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

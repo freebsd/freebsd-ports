@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Touchtyping trainer
+WWW=		http://klavaro.sourceforge.net/
 
 LICENSE=	GPLv3
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asciidoctor PlantUML extension
+WWW=		https://github.com/hsanson/asciidoctor-plantuml
 
 LICENSE=	MIT
 

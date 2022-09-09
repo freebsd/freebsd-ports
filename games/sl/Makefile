@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
 COMMENT=	Steam locomotive runs across the screen if you type "sl"
+WWW=		https://www.tkl.iis.u-tokyo.ac.jp/~toyoda/index_e.html
 
 LICENSE=	SL_CUSTOM
 LICENSE_NAME=	sl Program License

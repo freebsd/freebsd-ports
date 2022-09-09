@@ -6,6 +6,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Make your windows transparent
+WWW=		https://forchheimer.se/transset-df/
 
 USES=		xorg xorg-cat:app
 USE_XORG=	x11 xorgproto

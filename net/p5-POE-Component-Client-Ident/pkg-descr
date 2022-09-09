@@ -5,5 +5,3 @@ The component takes requests in the form of events, spawns
 POE::Component::Client::Ident::Agent sessions to perform the Ident
 queries and returns the appropriate responses to the requesting
 session.
-
-WWW: https://metacpan.org/release/POE-Component-Client-Ident

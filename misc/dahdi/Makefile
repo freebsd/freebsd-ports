@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-freebsd-complete-${DAHDI_VERSION}+${DAHDI_TOOLS_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DAHDI userland utilities and libraries
+WWW=		http://www.asterisk.org/dahdi/
 
 LIB_DEPENDS=	libnewt.so:devel/newt
 

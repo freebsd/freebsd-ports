@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Python wrapper for devel/mtbl
+WWW=		https://github.com/farsightsec/pymtbl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

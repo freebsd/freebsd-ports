@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.sr.ht/~technomancy/${PORTNAME}/archive/${DISTVERSION}$
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Lisp that compiles to Lua
+WWW=		https://fennel-lang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pytest plugin for efficiently checking python source with pyflakes (legacy version for pytest4)
+WWW=		https://github.com/fschulze/pytest-flakes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

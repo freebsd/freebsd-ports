@@ -6,5 +6,3 @@ with a self-sufficient client for obtaining SSL certificates -
 le.pl.
 
 The client supports 'http' and 'dns' domain verification out of the box.
-
-WWW: https://metacpan.org/release/Crypt-LE

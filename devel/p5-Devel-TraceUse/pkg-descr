@@ -4,5 +4,3 @@ An apparently simple program may load a lot of modules. That's useful, but
 sometimes you may wonder exactly which part of your program loads which module.
 
 Devel::TraceUse can analyze a program to see which part used which module.
-
-WWW: https://metacpan.org/release/Devel-TraceUse

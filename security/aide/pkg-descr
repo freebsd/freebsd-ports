@@ -7,5 +7,3 @@ used to verify the integrity of the files. It has several message
 digest algorithms (see below) that are used to check the integrity of
 the file. All of the usual file attributes can also be checked for
 inconsistencies. It can read databases from older or newer versions.
-
-WWW: https://aide.github.io/

@@ -5,5 +5,3 @@ secret and the reconstruction of a secret using user provided shares.
 The software was written in 2006 by B. Poettering, it links against
 the GNU libgmp  multiprecision library (version 4.1.4 works well)
 and requires the /dev/random entropy source.
-
-WWW: http://point-at-infinity.org/ssss/

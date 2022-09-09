@@ -7,6 +7,7 @@ MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator
+WWW=		https://zakalwe.fi/uade/
 
 LICENSE=	GPLv2
 

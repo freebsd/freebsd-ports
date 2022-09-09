@@ -5,5 +5,3 @@ DataObject performs 2 tasks:
 The core class is designed to be extended for each of your tables so that you
 put the data logic inside the data classes. A generator is included to make your
 configuration files and your base classes.
-
-WWW: https://pear.php.net/package/DB_DataObject

@@ -10,5 +10,3 @@ mouse-based editing!
 This port requires a Motif library to build and run.  It is
 recommended that you use OpenMotif as Nedit has font aliasing
 issues when using LessTif.
-
-WWW: http://www.nedit.org/

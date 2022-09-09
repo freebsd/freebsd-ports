@@ -1,5 +1,3 @@
 An utility that accesses files on a HTTP server and stores them locally
 for reuse. It caches remote content locally so that subsequent invocations
 return it from the local cache.
-
-WWW: https://pypi.org/project/serverfiles/

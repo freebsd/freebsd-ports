@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/HebrewEditor/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for editing (primarily LaTeX) Hebrew files
+WWW=		https://www.sourceforge.net/projects/he2/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

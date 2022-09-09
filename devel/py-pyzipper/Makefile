@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmii@gmail.com
 COMMENT=	Read and write AES encrypted zip files
+WWW=		https://github.com/danifus/pyzipper
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

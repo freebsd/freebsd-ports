@@ -7,5 +7,3 @@ Gamma, Normal, Poisson and T-distribution) and for two discrete distributions
 available for the Chi-square, F and T-distributions. Cumulative probabilities
 are available for all 9 distributions and quantile functions are available for
 the 7 continuous distributions.
-
-WWW: https://metacpan.org/release/Math-CDF

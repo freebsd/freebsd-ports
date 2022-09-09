@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		stefan@gronke.net
 COMMENT=		Native Python wrapper for FreeBSD sysctls using libc
+WWW=		https://github.com/gronke/py-freebsd_sysctl
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

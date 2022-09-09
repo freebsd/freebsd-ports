@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Python library for ISO 639 standard
+WWW=		https://github.com/noumar/iso639
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

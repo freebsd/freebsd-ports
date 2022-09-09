@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Easily tidy data with spread and gather functions
+WWW=		https://cran.r-project.org/web/packages/tidyr/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT?=	Command-line driven graphing utility
+WWW=		http://www.gnuplot.info/
 
 LICENSE=	Gnuplot
 LICENSE_NAME=	Gnuplot license

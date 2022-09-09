@@ -1,0 +1,6 @@
+Client lib for libsignal-c, implementing the needed database and crypto
+interfaces using SQLite and gcrypt.
+
+Additionally it provides utility functions for common use cases like
+encrypting and decrypting, ultimately making direct use of libsignal
+unnecessary.

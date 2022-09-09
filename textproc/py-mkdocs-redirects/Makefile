@@ -1,11 +1,12 @@
 PORTNAME=	mkdocs-redirects
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	MkDocs plugin for dynamic page redirects to prevent broken links
+WWW=		https://github.com/mkdocs/mkdocs-redirects
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

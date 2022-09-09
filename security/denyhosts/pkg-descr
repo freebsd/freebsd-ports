@@ -17,5 +17,3 @@ Denyhosts helps you:
 - Appends /etc/hosts.allow
 - Optionally sends an email of newly banned hosts and suspicious logins.
 - Resolves IP addresses to hostnames, if you want
-
-WWW: https://github.com/denyhosts/denyhosts

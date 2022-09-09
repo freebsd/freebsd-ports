@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Some collection of Tk Widgets
+WWW=		https://metacpan.org/release/Tk-GBARR
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk

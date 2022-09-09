@@ -1,12 +1,12 @@
 PORTNAME=	qiskit-terra
-DISTVERSION=	0.21.1
-PORTREVISION=	2
+DISTVERSION=	0.21.2
 CATEGORIES=	science python # quantum-computing
 #MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terra submodule of the Quiskit framework for quantum computing
+WWW=		https://qiskit.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -37,10 +37,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
-		crossbeam-channel-0.5.5 \
-		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.9 \
-		crossbeam-utils-0.8.10 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.10 \
+		crossbeam-utils-0.8.11 \
 		either-1.7.0 \
 		getrandom-0.2.7 \
 		hashbrown-0.12.3 \
@@ -63,7 +63,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.3 \
 		ppv-lite86-0.2.16 \
-		proc-macro2-1.0.40 \
+		proc-macro2-1.0.41 \
 		pyo3-0.16.5 \
 		pyo3-build-config-0.16.5 \
 		pyo3-ffi-0.16.5 \
@@ -78,7 +78,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rawpointer-0.2.1 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
-		redox_syscall-0.2.13 \
+		redox_syscall-0.2.15 \
 		scopeguard-1.1.0 \
 		smallvec-1.9.0 \
 		syn-1.0.98 \

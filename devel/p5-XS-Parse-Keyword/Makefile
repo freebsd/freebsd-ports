@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS functions to assist in parsing keyword syntax
+WWW=		https://metacpan.org/dist/XS-Parse-Keyword
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

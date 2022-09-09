@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl script to convert text files to PDF files
+WWW=		https://metacpan.org/release/PDF-Create
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -18,5 +18,3 @@ RANK    RULE NAME                       COUNT  %OFMAIL %OFSPAM  %OFHAM
    2    ALL_TRUSTED                     34534    49.42   50.61   48.70
    3    SPF_PASS                        10880    17.43   20.82   15.35
 ----------------------------------------------------------------------
-
-WWW: http://www.rulesemporium.com/programs/

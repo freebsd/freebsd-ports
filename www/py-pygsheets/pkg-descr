@@ -10,5 +10,3 @@ Features:
 - Data validation support. checkboxes, drop-downs etc.
 - Conditional formatting support
 - get multiple ranges with get_values_batch and update wit update_values_batch
-
-WWW: https://github.com/nithinmurali/pygsheets

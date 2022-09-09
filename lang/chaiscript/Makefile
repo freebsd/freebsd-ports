@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embedded scripting language designed for C++
+WWW=		https://chaiscript.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,5 +7,3 @@ In contrast to GNU Pth, it is based on the system's standard threads
 implementation.  This allows the use of libraries which are not compatible to
 GNU Pth.  Experience with a Windows Pth emulation showed that this is a solid
 way to provide a co-routine based framework.
-
-WWW: https://www.gnupg.org/software/npth/index.html

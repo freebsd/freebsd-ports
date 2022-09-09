@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Terminal Image and Video Viewer
+WWW=		https://github.com/hzeller/timg
 
 LICENSE=	GPLv2
 

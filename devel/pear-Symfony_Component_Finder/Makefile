@@ -7,6 +7,7 @@ DIST_SUBDIR=	Symfony2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Symfony2 Finder Component
+WWW=		http://pear.symfony.com/
 
 LICENSE=	MIT
 

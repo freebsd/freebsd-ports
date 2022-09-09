@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.3.4.3
+DISTVERSION=	24.3.4.4
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-java
@@ -8,6 +8,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang interface for Java
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

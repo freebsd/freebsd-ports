@@ -10,6 +10,7 @@ PATCHFILES=	ed643f0b4ac587204a5243451cda181ee1405d62.diff:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI client that supports various hardware logic analyzers
+WWW=		https://sigrok.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

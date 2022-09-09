@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel LZMA compressor using liblzma
+WWW=		https://jnovy.fedorapeople.org/pxz/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

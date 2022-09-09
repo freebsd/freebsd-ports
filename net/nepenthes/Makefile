@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the malware activity on a network
+WWW=		http://nepenthes.carnivore.it/
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libadns.so:dns/adns \

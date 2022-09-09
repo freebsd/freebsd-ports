@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	C++ binding generator for python
+WWW=		https://github.com/CadQuery/pywrap
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

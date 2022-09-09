@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}.tar.bz2 \
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Handling Mode-Switching USB Devices
+WWW=		https://www.draisberghof.de/usb_modeswitch/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

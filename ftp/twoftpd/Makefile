@@ -6,6 +6,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, secure, efficient FTP server
+WWW=		https://untroubled.org/twoftpd/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

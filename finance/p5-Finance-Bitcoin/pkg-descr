@@ -3,5 +3,3 @@ Bitcoin is a peer-to-peer network based digital currency.
 Finance::Bitcoin provides a perl interface to the high
 and low level APIs for managing a running bitcoin
 instance over JSON-RPC.
-
-WWW: https://metacpan.org/release/Finance-Bitcoin

@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Fast and lightweight PHP-powered discussion board
+WWW=		http://www.punbb.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

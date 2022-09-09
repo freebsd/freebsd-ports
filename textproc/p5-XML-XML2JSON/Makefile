@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert XML into JSON (and back again) using XML::LibXML
+WWW=		https://metacpan.org/release/XML-XML2JSON
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

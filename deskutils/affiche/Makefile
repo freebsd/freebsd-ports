@@ -7,6 +7,7 @@ DISTNAME=	Affiche-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Affiche allows people to stick notes
+WWW=		http://www.collaboration-world.com/cgi-bin/project/index.cgi?pid=5
 
 LICENSE=	GPLv2
 

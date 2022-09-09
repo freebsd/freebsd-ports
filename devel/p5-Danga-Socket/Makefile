@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event loop and event-driven async socket base class
+WWW=		https://metacpan.org/release/Danga-Socket
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

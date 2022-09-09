@@ -1,11 +1,12 @@
 PORTNAME=	rpy2
-PORTVERSION=	3.5.3
+PORTVERSION=	3.5.4
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
+WWW=		https://rpy2.bitbucket.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
@@ -33,7 +34,7 @@ OPTIONS_DEFAULT=NUMPY PANDAS
 NUMPY_DESC=	NumPy support
 PANDAS_DESC=	Pandas support
 
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0,1:math/py-pandas@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>=0,1:math/py-pandas@${PY_FLAVOR}
 

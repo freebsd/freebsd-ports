@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for the emulation of reduced-precision floating point types
+WWW=		https://github.com/oprecomp/flexfloat
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

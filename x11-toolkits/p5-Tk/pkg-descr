@@ -6,5 +6,3 @@ been verified as compliant.
 
 It also includes all the C code parts of Tix8.1.4 from SourceForge.
 The perl code corresponding to Tix's Tcl code is not fully implemented.
-
-WWW: https://metacpan.org/release/Tk

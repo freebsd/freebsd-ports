@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Python library for the Docker Engine API
+WWW=		https://github.com/docker/docker-py
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

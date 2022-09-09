@@ -8,6 +8,7 @@ CATEGORIES=	lang math
 
 MAINTAINER=	sevenjp@gmail.com
 COMMENT=	J programming language
+WWW=		https://www.jsoftware.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/jsource-${JVERSION}/license.txt

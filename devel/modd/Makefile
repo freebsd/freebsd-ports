@@ -1,11 +1,12 @@
 PORTNAME=	modd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Developer tool that runs processes and responds to filesystem changes
+WWW=		https://github.com/cortesi/modd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

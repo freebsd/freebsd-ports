@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML Procedure Call (XPC)
+WWW=		https://metacpan.org/release/XPC
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Dump SCTE-35 data from a Transport Stream
+WWW=		https://github.com/m2amedia/scte35dump
 
 LICENSE=	MIT
 

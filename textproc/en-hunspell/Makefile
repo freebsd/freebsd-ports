@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	English hunspell dictionaries
+WWW=		http://wordlist.aspell.net/
 
 LICENSE=	BSD3CLAUSE
 

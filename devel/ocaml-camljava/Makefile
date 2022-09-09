@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml-Java library interface
+WWW=		https://caml.inria.fr/
 
 USE_OCAML=	yes
 USE_JAVA=	yes

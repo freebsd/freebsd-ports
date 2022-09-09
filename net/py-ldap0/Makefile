@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Module package for implementing LDAP clients
+WWW=		https://gitlab.com/ae-dir/python-ldap0
 
 LICENSE=	PSFL
 

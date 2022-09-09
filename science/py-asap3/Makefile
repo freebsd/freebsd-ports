@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classical potentials for MD with ASE
+WWW=		https://wiki.fysik.dtu.dk/asap
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

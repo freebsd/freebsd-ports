@@ -1,4 +1,2 @@
 Access the RStudio API (if available) and provide informative error
 messages when it's not.
-
-WWW: https://cran.r-project.org/web/packages/rstudioapi/

@@ -4,6 +4,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight overlay volume (or anything) bar for Wayland
+WWW=		https://github.com/francma/wob
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

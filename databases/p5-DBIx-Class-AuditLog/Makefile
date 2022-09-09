@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Simple activity audit logging for DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-AuditLog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

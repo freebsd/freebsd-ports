@@ -4,6 +4,7 @@ CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: WebSockets API
+WWW=		https://github.com/Palakis/obs-websocket
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

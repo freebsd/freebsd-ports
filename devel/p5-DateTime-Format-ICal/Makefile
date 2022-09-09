@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and format ICal datetime and duration strings
+WWW=		https://metacpan.org/release/DateTime-Format-ICal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

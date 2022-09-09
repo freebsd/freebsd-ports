@@ -32,6 +32,8 @@ include/wine/iaccessible2.h
 include/wine/iaccessible2.idl
 include/wine/itss.h
 include/wine/itss.idl
+include/wine/mfinternal.h
+include/wine/mfinternal.idl
 include/wine/svcctl.h
 include/wine/svcctl.idl
 include/wine/msvcrt/assert.h

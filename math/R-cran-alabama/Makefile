@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Constrained Nonlinear Optimization
+WWW=		https://cran.r-project.org/web/packages/alabama/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Tool for converting, exporting, merging and transforming DSC data
+WWW=		https://www.dns-oarc.net/tools/dsc/
 
 LICENSE=	BSD3CLAUSE
 

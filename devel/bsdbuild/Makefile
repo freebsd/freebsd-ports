@@ -5,6 +5,7 @@ MASTER_SITES=	http://stable.hypertriton.com/bsdbuild/
 
 MAINTAINER=	vedge@hypertriton.com
 COMMENT=	Portable BSD-style build system
+WWW=		https://bsdbuild.hypertriton.com/
 
 LICENSE=	BSD2CLAUSE
 

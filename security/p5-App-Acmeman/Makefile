@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatic management of ACME (Let's Encrypt) SSL certificates
+WWW=		https://metacpan.org/release/App-Acmeman
 
 LICENSE=	GPLv3+
 

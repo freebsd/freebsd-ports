@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
 COMMENT=	Command line search tool
+WWW=		https://blog.burntsushi.net/ripgrep/
 
 LICENSE=	MIT UNLICENSE
 LICENSE_COMB=	dual

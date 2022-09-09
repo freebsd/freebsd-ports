@@ -7,6 +7,7 @@ DIST_SUBDIR=	drupal
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Database driven web content management system (CMS)
+WWW=		https://www.drupal.org/
 
 LICENSE=	GPLv2+
 

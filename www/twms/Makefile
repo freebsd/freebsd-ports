@@ -5,6 +5,7 @@ CATEGORIES=	www astro
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny WMS server
+WWW=		https://github.com/Komzpa/twms
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

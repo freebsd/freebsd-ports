@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Comprehensive HTTP client library
+WWW=		https://github.com/httplib2/httplib2
 
 LICENSE=	MIT
 

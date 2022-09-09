@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create accessor methods in caller's package #'
+WWW=		https://metacpan.org/release/accessors
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

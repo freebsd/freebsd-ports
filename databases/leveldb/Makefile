@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and lightweight key/value database library by Google
+WWW=		https://github.com/google/leveldb
 
 LICENSE=	BSD3CLAUSE
 

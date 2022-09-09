@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/scim-imengine
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module like SKK
+WWW=		https://sourceforge.jp/projects/scim-imengine/
 
 BUILD_DEPENDS=	scim:textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}

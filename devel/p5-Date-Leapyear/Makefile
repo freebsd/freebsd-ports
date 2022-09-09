@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to determine if a particular year a leap year
+WWW=		https://metacpan.org/release/Date-Leapyear
 
 USES=		perl5
 USE_PERL5=	configure

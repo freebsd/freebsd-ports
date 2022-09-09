@@ -19,5 +19,3 @@ Orthanc also features a plugin mechanism to add new modules that extends the
 core capabilities of its REST API. A Web viewer, a PostgreSQL database
 back-end, a MySQL database back-end, and a reference implementation of
 DICOMweb are currently freely available as plugins.
-
-WWW: https://www.orthanc-server.com/

@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	CLI tools for manipulating high-throughput sequencing (HTS) data
+WWW=		https://broadinstitute.github.io/picard/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test framework for Config::Model
+WWW=		https://metacpan.org/release/Config-Model-Tester
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

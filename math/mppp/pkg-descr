@@ -14,5 +14,3 @@ Eventually, a multiprecision rational class and two multiprecision
 floating-point classes were added, and today a secondary objective of mp++ is to
 provide a modern, consistent and unified C++ interface to several lower-level
 multiprecision libraries.
-
-WWW: https://github.com/bluescarni/mppp

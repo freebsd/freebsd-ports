@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Component for communicating over Jabber
+WWW=		https://metacpan.org/release/POE-Component-Jabber
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \

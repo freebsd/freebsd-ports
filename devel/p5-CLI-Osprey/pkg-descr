@@ -6,5 +6,3 @@ help messages as well as complete manual pages are automatically generated. An
 app can be a single command with options, or have sub-commands (like git).
 Sub-commands can be defined as modules (with options of their own) or as simple
 coderefs.
-
-WWW: https://metacpan.org/release/CLI-Osprey

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ex-parrot.com/~chris/stuff/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Formats plain text as HTML
+WWW=		https://www.ex-parrot.com/~chris/software.html
 
 TABSIZE?=	8
 

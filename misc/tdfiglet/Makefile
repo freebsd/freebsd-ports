@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Figlet for TDF ANSI fonts
+WWW=		https://github.com/tat3r/tdfiglet
 
 USES=		gmake
 ALL_TARGET=	default

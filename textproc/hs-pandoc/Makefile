@@ -5,8 +5,7 @@ CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Conversion between markup formats
-
-BROKEN_aarch64=	Causes compiler to crash
+WWW=		https://pandoc.org
 
 LICENSE=	GPLv2
 

@@ -2,5 +2,3 @@ A simple Ruby API for command-line interaction. Provides a novel 'rewinding'
 feature, allowing users to go back in time and re-enter a botched answer.
 Supports multiple-choice, password prompting, overriding input events,
 defaults, etc.
-
-WWW: https://github.com/vito/interact

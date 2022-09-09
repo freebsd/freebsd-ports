@@ -6,5 +6,3 @@ the valid use of certain identifiers in the message.
 OpenARC is an initiative of TDP (The Trusted Domain Project), and is primarily
 community effort to develop and maintain an open source library for producing
 ARC-aware applications, and a "milter"-based filter for providing ARC service.
-
-WWW: https://github.com/trusteddomainproject/OpenARC

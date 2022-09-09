@@ -1,5 +1,6 @@
 PORTNAME=	willow
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +8,7 @@ DISTNAME=	Willow-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper that combines multiple Python image libraries into one API
+WWW=		https://github.com/wagtail/Willow
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library provide swappable XML backends
+WWW=		https://github.com/sferik/multi_xml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

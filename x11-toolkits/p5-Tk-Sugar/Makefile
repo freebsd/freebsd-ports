@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sugar syntax for Tk
+WWW=		https://metacpan.org/release/Tk-Sugar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

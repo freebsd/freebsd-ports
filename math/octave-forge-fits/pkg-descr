@@ -8,5 +8,3 @@ This is fits.
 The Octave-FITS package provides functions for reading, and writing FITS
 (Flexible Image Transport System) files. The package supports uses the
 libcfitsio library.
-
-WWW: http://octave.sourceforge.net/

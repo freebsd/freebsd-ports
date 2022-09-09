@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}.src_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of the 8 bit classic game 'The Goonies'
+WWW=		https://goonies.jorito.net/
 
 LICENSE=	NONE
 

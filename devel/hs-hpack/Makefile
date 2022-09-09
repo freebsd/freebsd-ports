@@ -4,6 +4,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Modern format for Haskell packages
+WWW=		https://github.com/sol/hpack
 
 LICENSE=	BSD3CLAUSE
 

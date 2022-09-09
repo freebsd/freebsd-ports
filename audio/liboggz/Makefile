@@ -7,6 +7,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/liboggz/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Ogg API
+WWW=		https://www.annodex.net/software/liboggz/html/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

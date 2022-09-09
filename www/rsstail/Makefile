@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.vanheusden.com/rsstail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple RSS monitor
+WWW=		https://www.vanheusden.com/rsstail/
 
 LICENSE=	GPLv2
 

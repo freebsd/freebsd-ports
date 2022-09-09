@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Simple Log::Dispatch replacement of Mojo::Log
+WWW=		https://metacpan.org/release/MojoX-Log-Dispatch-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

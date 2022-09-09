@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.19
-PORTREVISION=	1
+DISTVERSION=	4.2.22
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -14,6 +13,7 @@ PATCHFILES+=	edf4ab0f8174.patch:-p1 # https://jira.mongodb.org/browse/SERVER-439
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database (4.2.x Branch)
+WWW=		https://docs.mongodb.com/v4.2/
 
 LICENSE=	SSPLv1 APACHE20 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi

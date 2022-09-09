@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extend the Time class with methods for parsing and conversion
+WWW=		https://github.com/ruby/time
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

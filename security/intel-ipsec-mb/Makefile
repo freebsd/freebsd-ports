@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Intel(R) Multi-Buffer Crypto for IPsec Library
+WWW=		https://github.com/intel/intel-ipsec-mb
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

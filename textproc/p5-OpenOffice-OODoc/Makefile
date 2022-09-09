@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	meyser@xenet.de
 COMMENT=	Perl Open OpenDocument Connector
+WWW=		https://metacpan.org/release/OpenOffice-OODoc
 
 LICENSE=	LGPL21
 

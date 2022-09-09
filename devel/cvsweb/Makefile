@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/scop http://people.FreeBSD.org/~scop/cvsweb/
 # the <freebsd-cvsweb@FreeBSD.org> mailing list.
 MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees
+WWW=		https://www.FreeBSD.org/projects/cvsweb.html
 
 CONFLICTS=	cvsweb-3.*
 

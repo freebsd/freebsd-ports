@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Autonomous Emacs major-mode for editing web templates
+WWW=		https://web-mode.org
 
 LICENSE=	GPLv2
 

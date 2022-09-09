@@ -7,6 +7,7 @@ MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Gui front end for ebooks2cw
+WWW=		http://fkurz.net/ham/ebook2cw.html #graphicaluserinterface
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

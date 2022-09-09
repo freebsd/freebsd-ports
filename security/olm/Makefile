@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.matrix.org/matrix-org/olm/-/archive/${DISTVERSION}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Double Ratchet cryptographic ratchet in C++
+WWW=		https://gitlab.matrix.org/matrix-org/olm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

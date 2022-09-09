@@ -17,5 +17,3 @@ Normally the ipsv daemons are run by a supervisor process, such as runsv
 from the runit package, or supervise from the daemontools package.
 
 ipsvd can be used to run services normally run by inetd, xinetd, or tcpserver.
-
-WWW: http://smarden.org/ipsvd/

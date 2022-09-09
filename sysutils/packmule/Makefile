@@ -5,6 +5,7 @@ CATEGORIES=	sysutils perl5
 
 MAINTAINER=	ashafer@badland.io
 COMMENT=	Creates and packs custom FreeBSD installation images
+WWW=		http://badland.io/packmule.md
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright

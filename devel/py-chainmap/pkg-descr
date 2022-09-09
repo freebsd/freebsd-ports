@@ -8,5 +8,3 @@ The code for this package is closely derived from the Python 3.5 source code at
 hg.python.org, (especially the collections and reprlib modules). Several changes
 have been made to ensure Python 2.6 compatibility, and tests and packaging have
 been added.
-
-WWW: https://bitbucket.org/jeunice/chainmap

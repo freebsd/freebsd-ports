@@ -12,5 +12,3 @@ MozJPEG is meant to be used as a library in graphics programs and image
 processing tools. We include a demo cjpeg tool, but it's not intended for
 serious use. We encourage authors of graphics programs to use MozJPEG's C API
 instead.
-
-WWW: https://github.com/mozilla/mozjpeg

@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Bitstream Vera TrueType font collection
+WWW=		https://www.gnome.org/fonts/
 
 LICENSE=	BITSTREAM_VERA
 LICENSE_NAME=	Bitstream Vera Fonts Copyright

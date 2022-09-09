@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Easily ingest messages from POP3, IMAP, or local mailboxes
+WWW=		https://github.com/coddingtonbear/django-mailbox/
 
 LICENSE=	MIT
 

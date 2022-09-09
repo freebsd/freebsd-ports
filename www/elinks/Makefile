@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	jailbird@fdf.net
 COMMENT=	Links text WWW browser with enhancements
+WWW=		https://github.com/rkd77/elinks/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

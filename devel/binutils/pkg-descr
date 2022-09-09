@@ -11,5 +11,3 @@ This port may be used as a replacement for the system binutils and support
 features from the latest versions of GCC.
 
 For cross-compilation, see the devel/cross-binutils port.
-
-WWW: https://www.gnu.org/software/binutils/

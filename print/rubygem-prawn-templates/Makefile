@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Include other pdfs or combine several pdf documents into one
+WWW=		https://github.com/prawnpdf/prawn-templates
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

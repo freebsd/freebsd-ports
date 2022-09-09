@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module providing a DBIx::Class::Schema fixture data loader
+WWW=		https://metacpan.org/release/Test-Fixture-DBIC-Schema
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBIx-Class>=0.07005:databases/p5-DBIx-Class \

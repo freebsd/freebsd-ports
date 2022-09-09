@@ -5,6 +5,3 @@ special Show instances for IO, threads, processes, changes of directory,
 and so on to sandbox the Haskell code. It is, in short, intended to be a
 standalone version of Lambdabot's famous evaluation functionality. For
 examples and explanations, please see the README file. Mueval is POSIX-only.
-
-WWW: https://github.com/gwern/mueval
-

@@ -6,6 +6,7 @@ DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Web service, SOA, and SOAP testing tool
+WWW=		https://www.soapui.org
 
 LICENSE=	EUPL LGPL21 LGPL3 APACHE11 APACHE20 BSD3CLAUSE MPL11 MIT CPL
 LICENSE_COMB=	multi

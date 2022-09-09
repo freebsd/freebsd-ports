@@ -2,5 +2,3 @@ Slumber is a python library that provides a convenient yet powerful object
 orientated interface to ReSTful APIs. It acts as a wrapper around the
 excellent requests_ library and abstracts away the handling of urls,
 serialization, and processing requests.
-
-WWW: https://github.com/samgiles/slumber

@@ -7,5 +7,3 @@ Clients can push metrics via MQTT to an MQTT Broker.
 This exporter subscribes to the broker and expose the received messages
 as prometheus metrics.
 Currently, the exporter supports only MQTT 3.1.
-
-WWW: https://github.com/hikhvar/mqtt2prometheus/

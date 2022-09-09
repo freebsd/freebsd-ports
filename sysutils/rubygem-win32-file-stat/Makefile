@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	File::Stat class tailored to MS Windows
+WWW=		https://github.com/chef/win32-file-stat/
 
 LICENSE=	ART20
 

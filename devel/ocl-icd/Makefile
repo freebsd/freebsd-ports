@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
 COMMENT=	OpenCL Installable Client Driver
+WWW=		https://github.com/OCL-dev/ocl-icd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

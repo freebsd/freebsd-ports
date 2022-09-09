@@ -1,11 +1,12 @@
 PORTNAME=	choria
 PORTVERSION=	0.26.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Server to host Choria agents, networks, federations and discovery
+WWW=		https://choria.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

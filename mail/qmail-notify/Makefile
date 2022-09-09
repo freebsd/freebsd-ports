@@ -6,6 +6,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Delayed delivery notification for qmail
+WWW=		https://untroubled.org/qmail-notify/
 
 CFLAGS+=	-DHAVE_SRANDOM
 

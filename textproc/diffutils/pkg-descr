@@ -7,5 +7,3 @@ versions have added functionality that is sometimes useful.
 Note that this port will install these utilities with a 'g' prefix,
 for example gdiff, gdiff3, gcmp, but the texinfo documentation
 will refer to these utilities without the 'g' prefix.
-
-WWW: http://www.gnu.org/software/diffutils/diffutils.html

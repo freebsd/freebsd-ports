@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-sdl${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic single screen vertical shoot em up SDL
+WWW=		https://sourceforge.net/projects/xgalaga-sdl/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

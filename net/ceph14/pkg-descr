@@ -17,5 +17,3 @@ This FreeBSD build will build most of the tools in Ceph:
 * ceph-disk {prepare, activate}
 With these tools one can build a multi server, multi osd cluster fully
 running on FreeBSD and do some testing...
-
-WWW: https://ceph.com/

@@ -23,5 +23,3 @@ GameNetworkingSockets is a basic transport layer for games. The features are:
   per-packet IV are based on the design used by Google's QUIC
   protocol.  Tools for simulating packet latency/loss, and detailed
   stats measurement IPv6 support Peer-to-peer networking:
-
-WWW: https://github.com/ValveSoftware/GameNetworkingSockets

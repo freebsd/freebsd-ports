@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python API and Tools to Manipulate OpenDocument Files
+WWW=		https://github.com/eea/odfpy
 
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	dual

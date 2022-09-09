@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-0.5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically logs a user out if they're idle for a set amount of time
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=38
 
 LICENSE=	GPLv2
 

@@ -14,5 +14,3 @@ well.
    4. It follows the paradigm of Perl name spaces, objects, and general
 good practice much better and in a way that is more intuitive and
 expandable.
-
-WWW: https://metacpan.org/release/Net-FTP-File

@@ -5,5 +5,3 @@ is the fastest known method of finding the convex hull of an arbitrary
 set of points.  There are some methods of eliminating points that cannot
 be part of the convex hull. These may or may not be implemented in a
 future version.
-
-WWW: https://metacpan.org/release/Math-ConvexHull

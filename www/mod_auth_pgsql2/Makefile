@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
+WWW=		http://www.giuseppetanzilli.it/mod_auth_pgsql2/
 
 USES=		apache:2.2+ pgsql
 

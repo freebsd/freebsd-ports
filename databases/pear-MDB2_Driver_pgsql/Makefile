@@ -5,6 +5,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR pgsql MDB2 driver
+WWW=		https://pear.php.net/package/MDB2_Driver_pgsql
 
 LICENSE=	BSD3CLAUSE
 

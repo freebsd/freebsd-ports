@@ -16,6 +16,7 @@ EXTRACT_ONLY=	HP2100-source-release-29.zip \
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Documentation for emulators of classic HP 2100 and HP 3000 computers
+WWW=		http://simh.trailing-edge.com/hp/
 
 LICENSE=	SIMHv1
 LICENSE_NAME=	SIMH License

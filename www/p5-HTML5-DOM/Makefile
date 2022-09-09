@@ -7,6 +7,7 @@ PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		Super fast html5 DOM library with css selectors
+WWW=		https://metacpan.org/release/HTML5-DOM
 
 LICENSE=		MIT
 

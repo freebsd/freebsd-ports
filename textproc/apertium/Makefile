@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Toolbox to build shallow-transfer machine translation systems
+WWW=		https://www.apertium.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

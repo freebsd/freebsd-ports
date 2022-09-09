@@ -1,10 +1,11 @@
 PORTNAME=		sensu-go
 DISTVERSION=		5.11.1
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		sysutils
 
 MAINTAINER=		jp+ports@supplntr.io
 COMMENT=		Ephemeral infrastructure and distributed applications monitoring
+WWW=		https://github.com/sensu/sensu-go/
 
 LICENSE=		APACHE20
 

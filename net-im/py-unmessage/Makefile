@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Privacy enhanced instant messenger
+WWW=		https://github.com/AnemoneLabs/unmessage
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

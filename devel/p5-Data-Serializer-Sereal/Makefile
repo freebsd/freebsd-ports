@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creates bridge between Data::Serializer and Sereal
+WWW=		https://metacpan.org/pod/Data::Serializer::Sereal
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Serializer>=0:devel/p5-Data-Serializer \

@@ -5,5 +5,3 @@ instant messaging. Erlang's runtime system has built-in support for
 concurrency, distribution and fault tolerance.
 
 This package contains the Erlang documentation in HTML and PDF formats.
-
-WWW: https://www.erlang.org/

@@ -9,5 +9,3 @@ is makeClusterPSOCK(), which is backward compatible with
 parallel::makePSOCKcluster() while doing a better job in setting
 up remote cluster workers without the need for configuring the
 firewall to do port-forwarding to your local computer.
-
-WWW: https://cran.r-project.org/web/packages/parallelly/

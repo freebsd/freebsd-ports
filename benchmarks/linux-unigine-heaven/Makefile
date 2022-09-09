@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Unigine Heaven benchmark (basic version for GNU/Linux)
+WWW=		https://benchmark.unigine.com/heaven
 
 LICENSE=	Proprietary
 LICENSE_NAME=	Unigine "Basic" License

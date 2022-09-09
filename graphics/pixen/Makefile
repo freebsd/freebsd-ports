@@ -7,6 +7,7 @@ DISTNAME=	Pixen-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics editing software for small-scale pictures for GNUstep
+WWW=		https://www.opensword.org/Pixen/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	cristianorolim@outlook.com
 COMMENT=	Tool for verification of C++ source code
+WWW=		https://bitbucket.org/verateam/vera/wiki/Home
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

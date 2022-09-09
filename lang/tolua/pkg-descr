@@ -5,5 +5,3 @@ Lua-5.0 API and tag method facilities, the current version automatically
 maps C/C++ constants, external variables, functions, namespace,
 classes, and methods to Lua. It also provides facilities to create
 Lua modules.
-
-WWW: http://www.tecgraf.puc-rio.br/~celes/tolua/

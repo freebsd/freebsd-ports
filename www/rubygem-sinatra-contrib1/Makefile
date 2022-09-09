@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Collection of useful Sinatra extensions
+WWW=		https://github.com/sinatra/sinatra-contrib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

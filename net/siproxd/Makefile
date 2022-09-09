@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	Proxy/masquerading daemon for the SIP protocol
+WWW=		http://siproxd.sourceforge.net/
 
 LICENSE=	GPLv2
 

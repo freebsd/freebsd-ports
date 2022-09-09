@@ -14,5 +14,3 @@ to type the same information repeatedly.
  * Export tags as CSV, HTML, playlists, Kover XML and other formats
  * Edit synchronized lyrics and event timing codes, import/export LRC files
  * Automate tasks using QML/JavaScript, D-Bus or the command-line interface
-
-WWW: https://kid3.kde.org/

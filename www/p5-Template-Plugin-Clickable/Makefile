@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT plugin to make URLs clickable in HTML
+WWW=		https://metacpan.org/release/Template-Plugin-Clickable
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI-Find>=0.13:textproc/p5-URI-Find \

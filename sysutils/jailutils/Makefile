@@ -6,6 +6,7 @@ MASTER_SITES=	http://thewalter.net/stef/freebsd/jails/jailutils/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Several utilities for managing jails
+WWW=		http://thewalter.net/stef/freebsd/jails/jailutils/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

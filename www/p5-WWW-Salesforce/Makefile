@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Simple abstraction layer between SOAP::Lite and Salesforce.com
+WWW=		https://metacpan.org/release/WWW-Salesforce
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

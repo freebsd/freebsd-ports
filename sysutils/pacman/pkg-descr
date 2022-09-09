@@ -8,5 +8,3 @@ upgrade packages in the system, and it will allow you to query the
 package database for installed packages, files and owners. It also
 attempts to handle dependencies automatically and can download
 packages from a remote server.
-
-WWW: https://www.archlinux.org/pacman/

@@ -7,6 +7,7 @@ DISTNAME=	gkleds-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM Leds for CapsLock, NumLock, and ScrollLock
+WWW=		http://heim.ifi.uio.no/~oyvinha/gkleds/
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ of perl. The module does not implement the functionality of a RIB (Routing
 Information Base) nor does it modify the kernel routing table of the host
 system. However, such operations could be implemented using the API provided by
 the module.
-
-WWW: https://metacpan.org/release/Net-BGP

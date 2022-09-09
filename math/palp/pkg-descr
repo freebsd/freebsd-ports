@@ -14,5 +14,3 @@ and manipulation of very large lists of 5-dimensional polyhedra.
 While originally intended for low-dimensional applications, the algorithms work
 in any dimension and our key routine for vertex and facet enumeration compares
 well with existing packages.
-
-WWW: http://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html

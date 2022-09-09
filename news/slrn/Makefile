@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.jedsoft.org/releases/slrn/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang-based newsreader
+WWW=		http://slrn.sourceforge.net/
 
 LICENSE=	GPLv2+
 

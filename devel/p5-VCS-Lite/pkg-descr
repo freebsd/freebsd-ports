@@ -5,5 +5,3 @@ management.
 
 It makes use of the module Algorithm::Diff. It provides the facility for basic
 diffing, patching and merging.
-
-WWW: https://metacpan.org/release/VCS-Lite

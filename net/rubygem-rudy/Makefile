@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	EC2 deployment tool
+WWW=		http://solutious.com/projects/rudy/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

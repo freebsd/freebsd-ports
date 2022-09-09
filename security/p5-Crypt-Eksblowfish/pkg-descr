@@ -14,5 +14,3 @@ an encryption function in the usual way.
 
 This distribution also includes an implementation of "bcrypt", the
 Unix crypt() password hashing algorithm based on Eksblowfish.
-
-WWW: https://metacpan.org/release/Crypt-Eksblowfish

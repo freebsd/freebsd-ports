@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Nice wrapper for libmagic
+WWW=		https://metacpan.org/release/File-LibMagic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

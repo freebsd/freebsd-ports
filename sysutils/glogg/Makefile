@@ -6,6 +6,7 @@ MASTER_SITES=	http://glogg.bonnefon.org/files/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI application to browse and search through long or complex log files
+WWW=		https://glogg.bonnefon.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

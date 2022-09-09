@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${PORTNAME}src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Assembly
+WWW=		http://webster.cs.ucr.edu/AsmTools/HLA/
 
 BUILD_DEPENDS=	as:devel/binutils
 

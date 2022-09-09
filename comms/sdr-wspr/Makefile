@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	jeff@baitis.net
 COMMENT=	WSPR receiver/decoder using libsdr
+WWW=		https://github.com/hmatuschek/sdr-wspr
 
 LICENSE=	GPLv3
 

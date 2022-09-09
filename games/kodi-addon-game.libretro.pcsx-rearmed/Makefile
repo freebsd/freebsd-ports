@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sony - PlayStation (PCSX ReARMed)
+WWW=		https://github.com/libretro/pcsx_rearmed
 
 LICENSE=	GPLv2+
 

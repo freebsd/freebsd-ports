@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME spreadsheet program
+WWW=		http://www.gnumeric.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

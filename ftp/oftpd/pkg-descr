@@ -5,5 +5,3 @@ into them even if the server is totally compromised! It contains its own
 directory change code, so that it can run efficiently as a threaded server, and
 its own directory listing code (most FTP servers execute the system "ls"
 command to list files).
-
-WWW: https://www.time-travellers.org/oftpd/

@@ -21,6 +21,7 @@ PKGNAMESUFFIX=		24-server
 .endif
 
 MAINTAINER=		delphij@FreeBSD.org
+WWW=		https://www.OpenLDAP.org/
 .if defined(CLIENT_ONLY)
 COMMENT=		Open source LDAP client implementation
 .else

@@ -4,5 +4,3 @@ comments and other unneeded characters without breaking the content
 structure.  As a result pages become smaller in size and load faster.
 
 A command-line version of the compressor is also included.
-
-WWW: https://github.com/serg472/htmlcompressor

@@ -6,5 +6,3 @@ shFlags is simply a library that you include into an existing shell script that
 gives you some additional functions that can be called. The power behind those
 functions though is somewhat amazing though, and you will hopefully be amazed
 with the simplicity with which you can handle command-line arguments in shell.
-
-WWW: https://github.com/kward/shflags

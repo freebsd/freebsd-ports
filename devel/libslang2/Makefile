@@ -6,6 +6,7 @@ DISTNAME=	slang-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
+WWW=		https://www.jedsoft.org/slang/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	surajravi@gmail.com
 COMMENT=	Python client library for Net-SNMP pass persist backend
+WWW=		https://github.com/nagius/snmp_passpersist
 
 LICENSE=	GPLv3
 

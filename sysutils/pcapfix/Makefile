@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Tool to repair damaged or corrupted pcap and pcapng files
+WWW=		https://f00l.de/pcapfix/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

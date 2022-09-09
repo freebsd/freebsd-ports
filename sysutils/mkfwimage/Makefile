@@ -7,6 +7,7 @@ DISTNAME=	ubnt-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Ubiquiti Embedded Board Image Generator
+WWW=		https://people.freebsd.org/~adrian/mkfwimage/
 
 LICENSE=	GPLv2+
 

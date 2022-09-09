@@ -1,10 +1,12 @@
 PORTNAME=	storj
 PORTVERSION=	1.62.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Decentralized cloud object storage
+WWW=		https://storj.io/
 
 LICENSE=	AGPLv3
 

@@ -5,5 +5,3 @@ query string passed.
 
 If no guess can be made it will connect to whois.internic.net for domains,
 whois.arin.net for IPv4 addresses and whois.6bone.net for IPv6 addresses.
-
-WWW: https://metacpan.org/release/POE-Component-Client-Whois

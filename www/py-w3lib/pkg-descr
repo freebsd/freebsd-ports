@@ -10,5 +10,3 @@ This is a Python library of web-related functions, such as:
   - RFC-compliant url joining
   - sanitize urls (like browsers do)
   - extract arguments from urls
-
-WWW: https://github.com/scrapy/w3lib/

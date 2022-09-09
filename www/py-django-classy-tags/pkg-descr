@@ -9,5 +9,3 @@ Features:
 * Declarative way to define arguments.
 * Supports (theoretically infinite) parse-until blocks.
 * Extensible!
-
-WWW: https://github.com/ojii/django-classy-tags

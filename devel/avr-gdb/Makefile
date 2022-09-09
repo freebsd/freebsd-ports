@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	avr-
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	GNU GDB for the AVR target
+WWW=		https://www.gnu.org/software/gdb/
 
 LICENSE=	GPLv3
 

@@ -6,5 +6,3 @@ using neighbor discovery messages behave properly. When it detects
 a suspicious Neighbor Discovery message, it notifies the administrator
 by writing in the syslog and in some cases by sending an email
 report.
-
-WWW: http://ndpmon.sourceforge.net

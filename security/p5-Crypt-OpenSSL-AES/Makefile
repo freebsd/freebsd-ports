@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jdferrell3@yahoo.com
 COMMENT=	Perl wrapper around OpenSSL's AES library
+WWW=		https://metacpan.org/release/Crypt-OpenSSL-AES
 
 USES=		perl5 ssl
 USE_PERL5=	configure

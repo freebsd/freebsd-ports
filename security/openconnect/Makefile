@@ -1,12 +1,13 @@
 PORTNAME=	openconnect
-PORTVERSION=	8.20
-PORTREVISION=	2
+PORTVERSION=	9.01
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Client for Cisco's AnyConnect SSL VPN
+WWW=		https://www.infradead.org/openconnect/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

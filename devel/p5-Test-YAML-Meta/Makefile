@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validation of the META.yml file in a distribution
+WWW=		https://metacpan.org/release/Test-YAML-Meta
 
 LICENSE=	ART20
 

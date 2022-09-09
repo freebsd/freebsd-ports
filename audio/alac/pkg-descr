@@ -8,5 +8,3 @@ The Apple Lossless Audio Codec project contains the sources for the ALAC
 encoder and decoder. Also included is an example command line utility, called
 alacconvert, to read and write audio data to/from Core Audio Format (CAF) and
 WAVE files.
-
-WWW: https://github.com/mikebrady/alac

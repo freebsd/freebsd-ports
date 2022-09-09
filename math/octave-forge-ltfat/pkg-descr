@@ -11,5 +11,3 @@ This is ltfat.
  provides a large number of linear transforms including Gabor and wavelet
  transforms along with routines for constructing windows (filter prototypes)
  and routines for manipulating coefficients.
-
-WWW: http://octave.sourceforge.net/

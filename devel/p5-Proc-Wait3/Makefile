@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for wait3 system call
+WWW=		https://metacpan.org/release/Proc-Wait3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	gnu-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
+WWW=		https://gitlab.com/procps-ng/procps/
 
 LICENSE=	GPLv2
 

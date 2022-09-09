@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pytest plugin for efficiently checking python source with pyflakes
+WWW=		https://github.com/fschulze/pytest-flakes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

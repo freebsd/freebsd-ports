@@ -6,6 +6,7 @@ MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client including xterm emulator
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/putty/
 # test plan: test ALL 4 GSSAPI_* options, GTK3 yes/no, WITH_DEBUG=yes build.
 
 LICENSE=	MIT
@@ -69,7 +70,7 @@ DESKTOP_ENTRIES=	"PuTTY" \
 # skip all version comparisons for GTK in cmake/gtk.cmake:
 CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=OFF
 # this is standard stuff:
-CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=TRUE 
+CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=TRUE
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
@@ -83,7 +84,7 @@ CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
 .elif ${PORT_OPTIONS:MGSSAPI_DYNAMIC}
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=DYNAMIC
 .else
-# XXX FIXME buglet in putty 0.77: PUTTY_GSSAPI=OFF 
+# XXX FIXME buglet in putty 0.77: PUTTY_GSSAPI=OFF
 # does not appear to get NO_GSSAPI into .build/CMakeFiles/cmake.h,
 # so we shove it down explicitly:
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=OFF -DNO_GSSAPI=ON

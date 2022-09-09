@@ -3,5 +3,3 @@ algorithms to simulate fermionic systems, including quantum chemistry.
 Among other functionalities, the current version features data structures
 and tools for obtaining and manipulating representations of fermionic and
 qubit Hamiltonians.
-
-WWW: https://github.com/quantumlib/OpenFermion

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/pdfsandwich%20${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line tool generating "sandwich" OCR pdf files
+WWW=		https://sourceforge.net/projects/pdfsandwich
 
 LICENSE=	GPLv2
 

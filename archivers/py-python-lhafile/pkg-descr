@@ -2,5 +2,3 @@ Lhafile is python C extension to extract lha file(.lzh). The interface
 is like zipfile extension included in regular python distribution. It
 does not need external program for extract. It has only extract function,
 not archive function.
-
-WWW: https://fengestad.no/python-lhafile/

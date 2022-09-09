@@ -4,5 +4,3 @@ lightweight, fast and minimal.
 
 Due to a missing libexec/w3m/w3mimgdisplay, not installed by www/w3m by default,
 the image display feature is broken.
-
-WWW: https://github.com/mananapr/cfiles

@@ -5,5 +5,3 @@ are not separated by spaces,so word segmentation is an important step for
 Chinese language process.SCWS is written in C without other dependencies and
 accept GBK and UTF-8 encoding for both the Simple Chinese (zh_CN) and the
 Traditional Chinese (such as zh_TW).
-
-WWW: http://www.xunsearch.com/scws/index.php

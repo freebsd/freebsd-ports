@@ -8,6 +8,7 @@ DISTNAME=	PyAudio-${PORTVERSION}
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Portaudio toolkit bindings for Python
+WWW=		https://people.csail.mit.edu/hubert/pyaudio/
 
 LICENSE=	MIT
 

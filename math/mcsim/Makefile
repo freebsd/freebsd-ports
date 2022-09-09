@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ale_sagra@hotmail.com
 COMMENT=	Monte Carlo stochastic simulations and Bayesian inference
+WWW=		https://www.gnu.org/software/mcsim/
 
 LICENSE=	GPLv3+
 

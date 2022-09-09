@@ -8,5 +8,3 @@ discussions (or individuals on manually doing formatting, for that matter).
 Currently, rstfmt is in a very early stage of development. Not all reST
 constructs are covered and the interface or formatting may change at any time
 without warning.
-
-WWW: https://github.com/dzhu/rstfmt

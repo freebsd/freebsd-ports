@@ -5,5 +5,3 @@ way (thanks to libdvdread) and merges them into 2 GB files (or
 larger) with the name extracted from the DVD. It checks for enough
 free space on the destination drive and compares the copied size
 to the size on DVD (in case something went wrong during the copying).
-
-WWW: http://vobcopy.org/projects/c/c.shtml

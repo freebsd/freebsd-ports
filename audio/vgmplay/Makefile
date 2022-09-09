@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/vgmp/VGMP/}_${PORTVERSION:S/.//:S/./-/}_src
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Command-line player for VGM (video game music) files
+WWW=		https://github.com/vgmrips/vgmplay
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/licenses/GPL.txt

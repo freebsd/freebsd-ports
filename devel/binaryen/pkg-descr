@@ -17,5 +17,3 @@ WebAssembly, is to make compiling to WebAssembly easy, fast, and effective.
   do), which you can think of as wasm minification, similar to minification for
   JavaScript, CSS, etc., all of which are language-specific (an example of such
   an optimization is block return value generation in SimplifyLocals).
-
-WWW: https://github.com/WebAssembly/binaryen

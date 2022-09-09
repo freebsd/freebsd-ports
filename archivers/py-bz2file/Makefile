@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Read and write bzip2-compressed files
+WWW=		https://github.com/nvawda/bz2file
 
 LICENSE=	APACHE20
 

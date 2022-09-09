@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VDPAU wrapper and tracing library
+WWW=		https://freedesktop.org/wiki/Software/VDPAU
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

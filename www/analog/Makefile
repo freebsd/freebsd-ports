@@ -8,6 +8,7 @@ MASTER_SITES=	http://analog.gsp.com/ \
 
 MAINTAINER=	john@essenz.com
 COMMENT=	Fast program for analysing WWW logfiles
+WWW=		https://analog.gsp.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Licence.txt

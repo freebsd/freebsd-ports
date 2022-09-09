@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Forecasting time series data based on an additive model
+WWW=		https://github.com/facebook/prophet
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

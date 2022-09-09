@@ -6,12 +6,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stdin@niklaas.eu
 COMMENT=	Python bindings for low-level FUSE API
+WWW=		https://bitbucket.org/nikratio/python-llfuse
 
 LICENSE=	LGPL20+
 
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang fuse pkgconfig python:3.6+
+USES=		compiler:c++11-lang fuse pkgconfig python:3.7-3.10 # 3.11 fails because llfuse.c includes longintrepr.h directly, see https://docs.python.org/3.11/whatsnew/3.11.html
 USE_PYTHON=	distutils autoplist
 
 post-install:

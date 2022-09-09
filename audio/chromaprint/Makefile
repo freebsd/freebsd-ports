@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${PORTV
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	AcoustID audio fingerprinting library
+WWW=		https://acoustid.org/chromaprint
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi

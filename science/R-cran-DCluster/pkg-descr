@@ -1,5 +1,3 @@
 A set of functions for the detection of spatial clusters of disease
 using count data. Bootstrap is used to estimate sampling distributions
 of statistics.
-
-WWW: http://cran.r-project.org/web/packages/DCluster/

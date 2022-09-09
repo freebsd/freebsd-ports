@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module with simple string truncating routine
+WWW=		https://metacpan.org/release/Text-Truncate
 
 LICENSE=	PD
 

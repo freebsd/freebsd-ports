@@ -11,6 +11,7 @@ DISTFILES=	${PORTNAME}-v${DISTVERSION}-${BB_COMMIT}${EXTRACT_SUFX} \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-quality circular representations of taxonomic, phylogenetic trees
+WWW=		https://bitbucket.org/nsegata/graphlan/wiki/Home
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

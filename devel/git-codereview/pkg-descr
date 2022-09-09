@@ -1,3 +1,1 @@
 The git-codereview tool is a command-line tool for working with Gerrit.
-
-WWW: https://godoc.org/golang.org/x/review/git-codereview

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
+WWW=		https://www.bunkus.org/videotools/mkvtoolnix/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

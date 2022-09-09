@@ -11,5 +11,3 @@ the following features:
   (command line options -Tw) and use strict;
 * Debugging facilities
 * Good starting point for migration to more sophisticated libraries
-
-WWW: http://cgi-lib.berkeley.edu/

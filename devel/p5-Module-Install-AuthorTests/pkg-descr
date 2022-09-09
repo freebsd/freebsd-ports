@@ -1,4 +1,2 @@
 Module::Install::AuthorTests designate tests only run by module
 authors.
-
-WWW: https://metacpan.org/release/Module-Install-AuthorTests

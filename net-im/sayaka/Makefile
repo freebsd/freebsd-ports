@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Twitter client for sixel-capable terminals
+WWW=		https://github.com/isaki68k/sayaka
 
 LICENSE=	BSD2CLAUSE
 

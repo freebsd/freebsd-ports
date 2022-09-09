@@ -1,11 +1,12 @@
 PORTNAME=	seqkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	3
+DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform and ultrafast toolkit for FASTA/Q file manipulation
+WWW=		https://bioinf.shenwei.me/seqkit/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

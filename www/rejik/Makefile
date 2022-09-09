@@ -6,6 +6,7 @@ DISTNAME=	redirector-${PORTVERSION}_squid_3.4
 
 MAINTAINER=	roma.a.g@gmail.com
 COMMENT=	Squid redirector used for blocking unwanted content
+WWW=		https://www.rejik.ru/
 
 LICENSE=	BSD4CLAUSE
 

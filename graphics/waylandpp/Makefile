@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Wayland C++ bindings
+WWW=		https://github.com/NilsBrause/waylandpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

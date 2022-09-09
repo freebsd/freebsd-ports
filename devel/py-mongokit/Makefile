@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mail@derzinn.de
 COMMENT=	Python ORM-like layer on top of pymongo
+WWW=		http://namlook.github.com/mongokit/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

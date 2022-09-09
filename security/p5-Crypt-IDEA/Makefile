@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to IDEA block cipher
+WWW=		https://metacpan.org/release/Crypt-IDEA
 
 USES=		perl5
 USE_PERL5=	configure

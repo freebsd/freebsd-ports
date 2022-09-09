@@ -6,6 +6,7 @@ MASTER_SITES=	SF/lprng/lprngtool/LRPngTool-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
+WWW=		http://lprng.sourceforge.net/
 
 LICENSE=	GPLv2
 

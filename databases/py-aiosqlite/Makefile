@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	AsyncIO bridge to the standard sqlite3 module for Python 3.5+
+WWW=		https://pypi.python.org/pypi/aiosqlite
 
 LICENSE=	MIT
 

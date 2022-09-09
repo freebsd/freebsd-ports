@@ -1,5 +1,3 @@
 Checks whether the Manifest file matches the distro or not. To match a
 distro the Manifest has to name all files that come along with the
 distribution
-
-WWW: https://metacpan.org/release/Test-CheckManifest

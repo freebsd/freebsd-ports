@@ -1,10 +1,11 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.08.22.00
+DISTVERSION=	2022.09.05.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of C++ HTTP libraries including easy way to use HTTP server
+WWW=		https://github.com/facebook/proxygen
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

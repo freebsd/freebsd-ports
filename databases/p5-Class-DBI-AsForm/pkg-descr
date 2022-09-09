@@ -4,5 +4,3 @@ table to HTML form elements which fit the schema. Large text fields
 are turned into textareas, and fields with a has-a relationship to
 other Class::DBI tables are turned into select drop-downs populated
 with objects from the joined class.
-
-WWW: https://metacpan.org/release/Class-DBI-AsForm

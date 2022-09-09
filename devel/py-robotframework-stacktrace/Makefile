@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Listener that prints a Stack Trace to console to faster find the code section where the failure appears
+WWW=		https://github.com/MarketSquare/robotframework-stacktrace
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

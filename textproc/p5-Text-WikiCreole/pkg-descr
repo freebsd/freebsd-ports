@@ -5,6 +5,3 @@ markup and returns XHTML.
 In addition to the official Creole 1.0 markup elements, it also supports
 several extensions, such as plugins, superscript, subscript, underline,
 definition lists, indented paragraphs, plugins, etc.
-
-
-WWW: https://metacpan.org/release/Text-WikiCreole

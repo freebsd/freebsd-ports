@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	igor.ostapenko@pm.me
 COMMENT=	Splits stdin of unknown size onto chunks packed as a TAR to stdout
+WWW=		https://github.com/ihoro/tar-stream-chunker/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

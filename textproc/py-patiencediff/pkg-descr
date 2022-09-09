@@ -5,5 +5,3 @@ algorithm, as first described by Bram Cohen.
 and implementation simplicity.
 
 The code in this package was extracted from the Bazaar code base.
-
-WWW: https://pypi.org/project/patiencediff/

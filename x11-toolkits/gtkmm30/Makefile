@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+3
+WWW=		http://gtkmm.sourceforge.net/
 
 LICENSE=	LGPL21
 

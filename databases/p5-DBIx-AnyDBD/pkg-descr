@@ -4,5 +4,3 @@ that works on multiple database platforms. The idea isn't to take
 away the responsibility for coding different SQL on different
 platforms, but to simply provide a platform that uses the right
 class at the right time for whatever DB is currently in use.
-
-WWW: https://metacpan.org/release/DBIx-AnyDBD

@@ -1,11 +1,12 @@
 PORTNAME=	sniffio
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sniff out which async library your code is running under
+WWW=		https://github.com/python-trio/sniffio
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -14,5 +14,3 @@ checking PDF files for structural errors, inspecting stream contents,
 or extracting objects from PDF files.  QPDF is not PDF content
 creation or viewing software -- it does not have the capability to
 create PDF files from scratch or to display PDF files.
-
-WWW: http://qpdf.sourceforge.net

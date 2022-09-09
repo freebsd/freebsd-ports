@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	40
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
+WWW=		https://www.darktable.org/
 
 LICENSE=	GPLv3
 

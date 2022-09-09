@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Atomic reference implementation
+WWW=		https://github.com/ruby-concurrency/atomic
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

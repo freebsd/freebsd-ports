@@ -6,6 +6,7 @@ DISTNAME=	gku100
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer utility using the kermit protocol
+WWW=		http://www.columbia.edu/kermit/gkermit.html
 
 NO_WRKSUBDIR=	yes
 

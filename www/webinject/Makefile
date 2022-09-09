@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for automated testing of web applications
+WWW=		http://www.webinject.org/
 
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Error>=0:lang/p5-Error \

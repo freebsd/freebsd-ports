@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT plugin to make email addresses into HTML links
+WWW=		https://metacpan.org/release/Template-Plugin-Clickable-Email
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Find>=0:mail/p5-Email-Find \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parses, validates and creates SPDX documents
+WWW=		https://github.com/spdx/tools-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Runs a stack of checks to match Net::Connection objects
+WWW=		https://metacpan.org/release/Net-Connection-Match
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

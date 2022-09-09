@@ -5,6 +5,7 @@ CATEGORIES=	multimedia graphics
 
 MAINTAINER=	olivier@biniou.info
 COMMENT=	User-friendly, powerful music visualization / VJing tool
+WWW=		https://biniou.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

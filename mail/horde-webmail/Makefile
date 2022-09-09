@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware Webmail Edition
+WWW=		https://www.horde.org/apps/webmail/
 
 CONFLICTS=	horde-groupware-[456]*
 

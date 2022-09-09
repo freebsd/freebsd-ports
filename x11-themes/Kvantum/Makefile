@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	SVG-based theme engine for Qt, KDE and LXQt
+WWW=		https://github.com/tsujan/Kvantum
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

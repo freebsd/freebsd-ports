@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	BHyVe with unofficial extensions
+WWW=		https://github.com/pgj/freebsd-bhyve-plus-port
 
 LICENSE=	BSD2CLAUSE
 
@@ -36,8 +37,6 @@ USE_LDCONFIG=	yes
 
 .if 1200000 <= ${OSVERSION} && ${OSVERSION} < 1300000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-12 ${PATCHDIR}/freebsd-12/3
-.elif 1300000 <= ${OSVERSION} && ${OSVERSION} < 1301000
-EXTRA_PATCHES=	${PATCHDIR}/freebsd-13/0
 .elif 1301000 <= ${OSVERSION} && ${OSVERSION} < 1400000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-13/1
 .elif 1400000 <= ${OSVERSION} && ${OSVERSION} < 1500000

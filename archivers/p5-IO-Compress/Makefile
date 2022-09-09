@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl5 compression modules (bzip2, deflate, gzip, zlib, zip)
+WWW=		https://metacpan.org/release/IO-Compress
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

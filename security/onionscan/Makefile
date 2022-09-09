@@ -1,11 +1,12 @@
 PORTNAME=	onionscan
 DISTVERSIONPREFIX=	OnionScan-
 DISTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security net
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Free and open source tool for investigating Onion Services
+WWW=		https://onionscan.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

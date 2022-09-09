@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Perl version of Python's URL-safe base64 codec
+WWW=		https://metacpan.org/release/MIME-Base64-URLSafe
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

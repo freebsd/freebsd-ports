@@ -5,6 +5,7 @@ MASTER_SITES=	https://dl.suckless.org/tools/
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Simple tool to retrieve the X screensaver state
+WWW=		https://tools.suckless.org/x/xssstate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

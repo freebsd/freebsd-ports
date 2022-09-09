@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Truncated normal distribution
+WWW=		https://cran.r-project.org/package=truncnorm
 
 LICENSE=	GPLv2
 

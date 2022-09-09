@@ -7,6 +7,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and simple 4D image viewer
+WWW=		https://www.creatis.insa-lyon.fr/rio/vv/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

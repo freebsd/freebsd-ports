@@ -2,5 +2,3 @@ The sys-proctable library provides an interface for gathering information about
 processes on your system, i.e. the process table.  Most major platforms are
 supported and, while different platforms may return different information, the
 external interface is identical across platforms.
-
-WWW: https://github.com/djberg96/sys-proctable

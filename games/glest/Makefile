@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free 3D real-time customizable strategy game
+WWW=		https://www.glest.org/
 
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libvorbis.so:audio/libvorbis \

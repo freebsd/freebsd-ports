@@ -7,6 +7,7 @@ DISTNAME=	LapisPuzzle-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris-like game for GNUstep
+WWW=		https://www.nongnu.org/gap/lapispuzzle/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

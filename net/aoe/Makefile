@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
+WWW=		http://www.coraid.com/support/freebsd/
 
 BROKEN_aarch64=		fails to compile: redefinition of frame
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99

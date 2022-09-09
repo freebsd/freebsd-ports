@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.svgalib.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low level console graphics library
+WWW=		https://www.svgalib.org/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

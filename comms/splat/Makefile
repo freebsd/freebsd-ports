@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.qsl.net/kd2bd/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used in calculating path losses, useful to ham radio and others
+WWW=		https://www.qsl.net/kd2bd/splat.html
 
 LICENSE=	GPLv2
 

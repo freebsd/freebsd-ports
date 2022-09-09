@@ -5,6 +5,7 @@ CATEGORIES=		devel
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	High-performance messaging layer
+WWW=		https://github.com/rescrv/busybee
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

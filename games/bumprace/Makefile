@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple arcade racing game
+WWW=		https://www.linux-games.com/bumprace/
 
 LICENSE=	GPLv2+ CC-BY-2.0 CC-BY-3.0
 LICENSE_COMB=	multi

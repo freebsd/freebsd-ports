@@ -7,6 +7,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Push notification service module for ZNC
+WWW=		https://github.com/jreese/znc-push
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

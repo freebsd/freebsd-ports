@@ -6,6 +6,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Typeface designed for source code
+WWW=		https://sourcefoundry.org/hack/
 
 LICENSE=		BITSTREAM MIT
 LICENSE_COMB=		multi

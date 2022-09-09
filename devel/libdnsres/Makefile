@@ -6,6 +6,7 @@ MASTER_SITES=	http://monkey.org/~provos/
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Provides a non-blocking thread-safe API for resolving DNS names
+WWW=		https://www.monkey.org/~provos/libdnsres/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

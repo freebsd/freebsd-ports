@@ -5,5 +5,3 @@ and create each of the fields in the session description.
 
 The classes Net::SDP::Time and Net::SDP::Media are automatically
 instantiated for each Time Description (t=) and Media Description (m=).
-
-WWW: https://metacpan.org/release/Net-SDP

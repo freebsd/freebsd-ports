@@ -1,4 +1,2 @@
 This Perl module implements a Subversion property to control
 SVN::Notify commit message subscriptions.
-
-WWW: https://metacpan.org/release/SVN-Notify-Filter-Watchers

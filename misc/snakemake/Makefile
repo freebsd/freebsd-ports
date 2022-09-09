@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Workflow management system
+WWW=		https://github.com/snakemake/snakemake
 
 LICENSE=	MIT
 

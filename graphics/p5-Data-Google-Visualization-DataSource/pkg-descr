@@ -8,5 +8,3 @@ Data::Google::Visualization::DataTable takes care of preparing data for the API,
 but this module implements the Google Chart Tools Datasource Protocol, or Google
 Visualization API wire protocol, or whatever it is they've decided to call it
 this week.
-
-WWW: https://metacpan.org/release/Data-Google-Visualization-DataSource

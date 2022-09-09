@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.lost.org.uk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple news server for hosts with one or two users
+WWW=		https://www.lost.org.uk/snews.html
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 

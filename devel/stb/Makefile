@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Stb single-file public domain libraries for C/C++
+WWW=		https://github.com/nothings/stb
 
 LICENSE=	PD
 

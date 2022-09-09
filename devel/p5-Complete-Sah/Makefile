@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sah-related completion Perl routines
+WWW=		https://metacpan.org/release/Complete-Sah
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Complete-Common>=0.22:devel/p5-Complete-Common \

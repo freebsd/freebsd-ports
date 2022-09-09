@@ -10,5 +10,3 @@ interface it helps data scientists:
 It aims to replace tools like Excel and Docs that are being commonly used as a
 knowledge repo and a ledger for the team, ad-hoc scripts to track and move
 deploy different model versions, ad-hoc data file suffixes and prefixes.
-
-WWW: https://dvc.org/

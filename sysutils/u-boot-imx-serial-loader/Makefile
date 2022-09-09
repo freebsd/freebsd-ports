@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Load u-boot via USB or UART on i.MX5, i.MX6, i.MX7, and Vybrid
+WWW=		https://github.com/boundarydevices/imx_usb_loader
 
 LICENSE=	LGPL21
 

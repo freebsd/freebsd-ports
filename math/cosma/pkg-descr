@@ -13,5 +13,3 @@ mechanisms such as RDMA. COSMA allows to not utilize some processors
 in order to optimize the processor grid, which reduces the
 communication volume even further and increases the computation volume
 per processor.
-
-WWW: https://github.com/eth-cscs/COSMA

@@ -6,6 +6,7 @@ MASTER_SITES=	https://openal-soft.org/openal-releases/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Software implementation of the OpenAL specification
+WWW=		https://openal-soft.org/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

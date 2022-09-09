@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command-line tool collection to assist development
+WWW=		https://github.com/guoxbin/dtool
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

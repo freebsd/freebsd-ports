@@ -17,5 +17,3 @@ The library has the following capabilities:
 * Simple nearest colour match from set of colours
 * Wavelength to RGB approximations
 * Single header file solution requires no installation or building
-
-WWW: http://www.partow.net/programming/bitmap/index.html

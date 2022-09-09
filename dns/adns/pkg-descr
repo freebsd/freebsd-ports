@@ -11,5 +11,3 @@ Technical note: adns requires a real nameserver like BIND or
 Dents running on the same system or a nearby one, which must be
 willing to provide `recursive service'. I.e., adns is a `stub
 resolver'.
-
-WWW: http://www.chiark.greenend.org.uk/~ian/adns/

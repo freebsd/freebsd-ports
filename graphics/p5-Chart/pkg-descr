@@ -6,5 +6,3 @@ that I needed, most notably legends. So I decided to write a new module
 from scratch, and I've designed it from the bottom up to be easy to
 modify. Like GIFgraph, Chart::* uses Lincoln Stein's GD module for all
 of its graphics primitives calls.
-
-WWW: https://metacpan.org/release/Chart

@@ -3,5 +3,3 @@ Protocol, written in Go.
 
 RDAP is a replacement for WHOIS, which provides domain name & IP
 address registration information in JSON format over HTTP.
-
-WWW: https://www.openrdap.org/

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another Parser/Extractor for Regular Expressions
+WWW=		https://metacpan.org/release/YAPE-Regex
 
 USES=		perl5
 USE_PERL5=	configure

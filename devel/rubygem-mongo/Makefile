@@ -1,10 +1,11 @@
 PORTNAME=	mongo
-PORTVERSION=	2.18.0
+PORTVERSION=	2.18.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby driver for MongoDB
+WWW=		https://github.com/mongodb/mongo-ruby-driver
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

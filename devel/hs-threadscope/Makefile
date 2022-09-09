@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Graphical tool for profiling parallel Haskell programs
+WWW=		https://www.haskell.org/haskellwiki/ThreadScope
 
 LICENSE=	BSD3CLAUSE
 

@@ -1,4 +1,2 @@
 Handle passing of status (success and error) messages between screens of
 a web application.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-StatusMessage

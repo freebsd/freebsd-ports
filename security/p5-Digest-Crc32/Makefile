@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for calculating 32-bit CRC checksums
+WWW=		https://metacpan.org/release/Digest-Crc32
 
 USES=		perl5
 USE_PERL5=	configure

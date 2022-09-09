@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generate 3D coordinates from a connection table
+WWW=		https://metacpan.org/release/Chemistry-3DBuilder
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-File-SMILES>=0:science/p5-Chemistry-File-SMILES \

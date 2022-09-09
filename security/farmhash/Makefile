@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hash functions for strings and other data
+WWW=		https://github.com/google/farmhash
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

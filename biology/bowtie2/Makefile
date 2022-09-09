@@ -5,6 +5,7 @@ CATEGORIES=		biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
+WWW=		https://github.com/BenLangmead/bowtie2
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

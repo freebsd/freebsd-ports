@@ -1,11 +1,12 @@
 PORTNAME=	2fa
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Two-factor authentication on the command line
+WWW=		https://github.com/rsc/2fa
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

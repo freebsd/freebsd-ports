@@ -1,4 +1,2 @@
 Provides an R interface to the 'vis.js' JavaScript charting library.
 It allows an interactive visualization of networks.
-
-WWW: https://cran.r-project.org/web/packages/visNetwork/

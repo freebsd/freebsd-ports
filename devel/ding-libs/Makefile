@@ -16,6 +16,7 @@ PATCHFILES=	8fc522605a90e670fe76dc1b44669230c121a96e.patch:-p1 \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful libraries for developers
+WWW=		https://pagure.io/SSSD/ding-libs/
 
 LICENSE=	GPLv3+ LGPL3+
 LICENSE_COMB=	multi

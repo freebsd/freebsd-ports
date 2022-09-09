@@ -12,5 +12,3 @@ G-Kermit is command-line only (no interactive commands or scripting) and
 remote-mode only (no making connections).  It has an extremely simple
 user interface, and implements a large subset of the Kermit protocol in
 a small amount of highly portable code.
-
-WWW: http://www.columbia.edu/kermit/gkermit.html

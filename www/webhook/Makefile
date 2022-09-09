@@ -1,10 +1,11 @@
 PORTNAME=	webhook
 PORTVERSION=	2.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Easily create HTTP endpoints (hooks) to execute shell commands
+WWW=		https://github.com/adnanh/webhook
 
 LICENSE=	APACHE20 BSD3CLAUSE MIT
 LICENSE_COMB=	multi

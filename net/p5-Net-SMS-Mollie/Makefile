@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	b.smeelen@ose.nl
 COMMENT=	Send SMS messages via the mollie.nl service
+WWW=		https://metacpan.org/release/Net-SMS-Mollie
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

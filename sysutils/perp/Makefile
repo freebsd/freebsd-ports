@@ -5,6 +5,7 @@ MASTER_SITES =	http://b0llix.net/perp/distfiles/
 
 MAINTAINER=	ports@jpmens.net
 COMMENT=	Persistent process supervisor and service management framework
+WWW=		http://b0llix.net/perp/
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown

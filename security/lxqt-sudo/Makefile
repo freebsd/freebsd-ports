@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	GUI frontend to su/sudo for LXQt desktop
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
+WWW=		https://github.com/cheusov/libmaa
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

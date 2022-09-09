@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to increase the functionality of KIO
+WWW=		https://projects.kde.org/projects/kde/workspace/kio-extras
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libImath.so:math/Imath \
@@ -21,7 +22,7 @@ USE_KDE=	activities archive auth bookmarks codecs completion config \
 USE_QT=		concurrent core dbus declarative gui location network phonon4 printsupport \
 		sql svg testlib webchannel widgets xml \
 		buildtools_build qmake_build
-USE_XORG=	xcursor
+USE_XORG=	x11 xcursor
 SHEBANG_FILES=	info/kde-info2html
 
 # CVE-2018-19120

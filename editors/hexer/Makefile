@@ -7,6 +7,7 @@ MASTER_SITES=	http://devel.ringlet.net/files/editors/hexer/ \
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Multi buffer editor for binary files
+WWW=		https://gitlab.com/hexer/hexer
 
 LICENSE=	DEMETRIO
 LICENSE_NAME=	Sascha Demetrio Custom License

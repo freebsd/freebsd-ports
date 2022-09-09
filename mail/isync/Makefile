@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
+WWW=		http://isync.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

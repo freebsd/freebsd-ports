@@ -10,5 +10,3 @@ to sacrifice performance to benefit from simplicity.
 
 WhiteNoise works with any WSGI-compatible app but has some special auto-
 configuration features for Django.
-
-WWW: http://whitenoise.evans.io/

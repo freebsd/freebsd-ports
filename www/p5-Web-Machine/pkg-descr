@@ -9,5 +9,4 @@ running the request through that state machine.
 Web::Machine is built on top of Plack, but it handles the full request and
 response cycle.
 
-WWW: https://metacpan.org/pod/Web::Machine
-WWW: https://github.com/sartak/webmachine-perl
+See also: https://github.com/sartak/webmachine-perl

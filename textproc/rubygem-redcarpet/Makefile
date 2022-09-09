@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, safe and extensible Markdown to (X)HTML parser
+WWW=		https://github.com/vmg/redcarpet
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

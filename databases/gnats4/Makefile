@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNATS, the GNU Problem Report Management System
+WWW=		https://www.gnu.org/software/gnats/
 
 BROKEN_mips=		Does not build: error: conflicting types for yy_scan_string
 BROKEN_mips64=		Does not build: error: conflicting types for yy_scan_string

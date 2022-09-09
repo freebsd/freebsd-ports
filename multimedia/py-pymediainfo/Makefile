@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Python wrapper for the mediainfo library
+WWW=		https://github.com/sbraz/pymediainfo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

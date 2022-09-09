@@ -14,5 +14,3 @@ users environment, for example allowing access to an ssh-agent for
 password-less  sshfs  mounts,  or  allowing access to a  graphical
 environment to get user input to complete a mount (i.e. popping up
 a window asking for a password).
-
-WWW: https://github.com/pcarrier/afuse

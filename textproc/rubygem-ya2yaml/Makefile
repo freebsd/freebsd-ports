@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Yet another YAML converter, includes complete UTF8 support
+WWW=		https://github.com/afunai/ya2yaml
 
 LICENSE=	MIT
 

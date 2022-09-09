@@ -16,5 +16,3 @@ The design philosophy behind super is two-fold:
 	a good setuid-root wrapper around a sensible non-setuid script
 	can be hard to break, and super provides that wrapper so that
 	even a non-trusted user can use the scripts.
-
-WWW: http://www.ucolick.org/~will/#super

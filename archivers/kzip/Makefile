@@ -7,6 +7,7 @@ DISTNAME=	kzipmix-${DISTVERSION}-bsd-static
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	PKZIP-compatible compressor focusing on space over speed
+WWW=		http://www.advsys.net/ken/
 
 LICENSE=	KZIP
 LICENSE_NAME=	KZIP License

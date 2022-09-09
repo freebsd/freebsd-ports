@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Project management tool based on the Work breakdown structure
+WWW=		https://wiki.gnome.org/Apps/Planner
 
 LICENSE=	GPLv3
 

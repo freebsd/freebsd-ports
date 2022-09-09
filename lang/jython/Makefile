@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Implementation of Python Interpreter in Pure Java
+WWW=		https://www.jython.org/
 
 LICENSE=	PSFL APACHE20
 LICENSE_COMB=	multi

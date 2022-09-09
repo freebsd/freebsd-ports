@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ORM that maps REST resources to Ruby objects
+WWW=		https://github.com/remi/her
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

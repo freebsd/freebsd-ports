@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Python wrapper for GnuPG
+WWW=		https://github.com/isislovecruft/python-gnupg
 
 LICENSE=	GPLv3
 

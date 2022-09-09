@@ -3,5 +3,3 @@ database, deploys your DBIC schema, and then connects to it. This
 lets you easily test your DBIC schema. Since you have a fresh
 database for every test, you don't have to worry about cleaning up
 after your tests, ordering of tests affecting failure, etc.
-
-WWW: https://metacpan.org/release/DBICx-TestDatabase

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Declarative sax parsing library backed by Nokogiri
+WWW=		https://github.com/pauldix/sax-machine
 
 LICENSE=	MIT
 

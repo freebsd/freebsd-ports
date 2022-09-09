@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	16
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single-player and multi-player first-person ego-shooter
+WWW=		https://www.redeclipse.net/
 
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi

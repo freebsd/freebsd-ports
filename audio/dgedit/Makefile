@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.drumgizmo.org/releases/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	DrumGizmo drumkit editor
+WWW=		https://www.drumgizmo.org/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

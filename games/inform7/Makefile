@@ -6,6 +6,7 @@ DISTNAME=	I7_6L38_FreeBSD
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Inform 7 programming language (CLI edition)
+WWW=		http://www.inform7.com/
 
 RUN_DEPENDS=	frotz:games/frotz
 

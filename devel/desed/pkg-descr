@@ -13,5 +13,3 @@ Some of the notable features include:
 desed currently only supports GNU sed (gsed) because BSD sed doesn't support
 the execution annotation feature (the --debug argument of gsed) that desed
 depends on.
-
-WWW: https://github.com/SoptikHa2/desed

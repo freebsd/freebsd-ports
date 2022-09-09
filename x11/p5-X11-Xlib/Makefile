@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Low-level access to the X11 library
+WWW=		https://metacpan.org/release/X11-Xlib
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

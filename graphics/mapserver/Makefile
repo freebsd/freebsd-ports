@@ -6,6 +6,7 @@ MASTER_SITES=		https://download.osgeo.org/mapserver/
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
+WWW=		https://mapserver.org/
 
 LICENSE=		MIT
 

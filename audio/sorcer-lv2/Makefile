@@ -10,6 +10,7 @@ PATCHFILES+=	0c06a2f89a44a8e275f0a592c3ac946eff7b7020.patch:-p1 # Fixing build w
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wavetable LV2 plugin synth targeted at the electronic/dubstep genre
+WWW=		http://openavproductions.com/sorcer/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

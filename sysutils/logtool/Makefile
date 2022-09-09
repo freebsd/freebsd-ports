@@ -6,6 +6,7 @@ MASTER_SITES=	http://xjack.org/logtool/download/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
+WWW=		http://xjack.org/logtool/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ EXTRACT_SUFX=	-nogdb.tar.gz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
+WWW=		http://lpg.ticalc.org/prj_tiemu/
 
 LICENSE=	GPLv2
 

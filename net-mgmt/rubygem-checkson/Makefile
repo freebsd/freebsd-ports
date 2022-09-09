@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	florian@fsrv.xyz
 COMMENT=	Simple checking tool for easy os checks
+WWW=		https://gitlab.fsrv.xyz
 
 LICENSE=	BSD3CLAUSE
 

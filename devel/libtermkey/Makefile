@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.leonerd.org.uk/code/libtermkey/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Easy processing of keyboard entry from terminal-based programs
+WWW=		https://www.leonerd.org.uk/code/libtermkey/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

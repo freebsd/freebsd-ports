@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
 MAINTAINER=	lacey.leanne@gmail.com
 COMMENT=	Tool to locally check for signs of a rootkit
+WWW=		http://www.chkrootkit.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

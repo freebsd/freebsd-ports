@@ -13,6 +13,7 @@ DIST_SUBDIR=	u-boot
 
 MAINTAINER?=	uboot@FreeBSD.org
 COMMENT=	Cross-build das u-boot for model ${MODEL}
+WWW=		https://www.denx.de/wiki/U-Boot
 
 LICENSE=	GPLv2
 

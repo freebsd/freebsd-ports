@@ -3,6 +3,7 @@ PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system, long-time-support version
+WWW=		https://subversion.apache.org/
 
 CONFLICTS_INSTALL=	subversion
 

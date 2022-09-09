@@ -10,6 +10,7 @@ PATCHFILES+=	46b3935959c0afd4d2128279912ee86f69e81048.patch:-p1 \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
+WWW=		https://obsproject.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

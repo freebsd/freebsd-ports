@@ -1,3 +1,1 @@
 pytest plugin with mechanisms for caching across test runs.
-
-WWW: https://bitbucket.org/hpk42/pytest-cache/

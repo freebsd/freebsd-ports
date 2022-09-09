@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Top clone for MySQL
+WWW=		https://jeremy.zawodny.com/mysql/mytop/
 
 LICENSE=	GPLv2
 

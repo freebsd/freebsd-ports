@@ -6,6 +6,7 @@ MASTER_SITES=	SF/htmlcxx/v${PORTVERSION} \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTML and CSS APIs for C++
+WWW=		https://github.com/bonitao/htmlcxx
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LGPL_V2

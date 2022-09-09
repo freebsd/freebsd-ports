@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Paranoia support for safer programs
+WWW=		https://metacpan.org/release/Paranoid
 
 LICENSE=	ART20 GPLv1+
 LICENSE_COMB=	dual

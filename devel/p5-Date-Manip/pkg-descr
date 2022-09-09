@@ -2,5 +2,3 @@ Date::Manip is a series of modules designed to make any common date/time
 operation easy to do. Operations such as comparing two times, calculating a
 time a given amount of time from another, or parsing international times are
 all easily done.
-
-WWW: https://metacpan.org/release/Date-Manip

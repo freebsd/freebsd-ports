@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Streaming multipart parser for Python
+WWW=		https://github.com/andrew-d/python-multipart
 
 LICENSE=	APACHE20
 

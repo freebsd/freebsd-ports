@@ -4,5 +4,3 @@ Tie::Array). You save a lot of memory, because the file's content is read
 only on demand, i.e. in the case you access an element of the array. The
 offset and length of all the lines is hold in memory as long as you tie your
 array.
-
-WWW: https://metacpan.org/release/Array-LineReader

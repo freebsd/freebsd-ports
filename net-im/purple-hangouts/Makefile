@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Hangouts plugin for libpurple
+WWW=		https://github.com/EionRobb/purple-hangouts
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl3.txt

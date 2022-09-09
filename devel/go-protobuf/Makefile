@@ -1,6 +1,6 @@
 PORTNAME=	protobuf
 DISTVERSION=	1.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	go-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Protocol Buffers for Go with Gadgets
+WWW=		https://github.com/gogo/protobuf
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

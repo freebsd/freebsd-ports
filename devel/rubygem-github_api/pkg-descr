@@ -5,5 +5,4 @@ instantiate the whole API wrapper Github.new or use parts of it i.e.
 Github::Client::Repos.new if working solely with repositories is your main
 concern. Intuitive query methods allow you easily call API endpoints.
 
-WWW: https://piotrmurach.github.io/github/
-WWW: https://github.com/piotrmurach/github
+See also: https://github.com/piotrmurach/github

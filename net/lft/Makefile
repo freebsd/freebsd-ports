@@ -6,6 +6,7 @@ MASTER_SITES=	http://pwhois.org/get/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
+WWW=		https://pwhois.org/lft/
 
 LICENSE=	VOSTROM
 LICENSE_NAME=	VOSTROM

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Time Series Analysis and Computational Finance
+WWW=		https://CRAN.R-project.org/package=tseries
 
 LICENSE=	GPLv2
 

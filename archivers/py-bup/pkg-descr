@@ -14,5 +14,3 @@ multiple versions.
 
 -It uses the packfile format from git (the open source version control system),
 so you can access the stored data even if you don't like bup's user interface.
-
-WWW: https://bup.github.io

@@ -2,5 +2,3 @@ Pngrewrite is command-line utility that reduces the unnecessarily large palettes
 that some programs write into PNG files. It also optimizes transparency data,
 and reduces the bits-per-pixel if possible. Handy for post-processing PNG files
 before putting them on a web site.
-
-WWW: http://entropymine.com/jason/pngrewrite/

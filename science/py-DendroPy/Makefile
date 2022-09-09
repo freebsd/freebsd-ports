@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Phylogenetic computing library
+WWW=		http://packages.python.org/DendroPy/
 
 LICENSE=	BSD3CLAUSE
 

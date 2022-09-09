@@ -11,6 +11,7 @@ PATCHFILES+=	2d30762e546b.patch:-p1 # https://source.puri.sm/Librem5/virtboard/-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Basic keyboard, blazing the path of modern Wayland keyboards
+WWW=		https://source.puri.sm/Librem5/virtboard
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

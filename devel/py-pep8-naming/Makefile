@@ -1,11 +1,12 @@
 PORTNAME=	pep8-naming
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Check PEP-8 naming conventions, plugin for flake8
+WWW=		https://pypi.org/project/pep8-naming/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode and decode numbers as n-ary strings
+WWW=		https://metacpan.org/release/Number-Nary
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

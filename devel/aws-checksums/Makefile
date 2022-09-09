@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Cross-Platform HW accelerated CRC32c and CRC32
+WWW=		https://github.com/awslabs/aws-checksums
 
 LICENSE=	APACHE20
 

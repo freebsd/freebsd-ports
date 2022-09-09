@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Port 9100+n printer daemon
+WWW=		http://p910nd.sourceforge.net/
 
 LICENSE=	GPLv2
 

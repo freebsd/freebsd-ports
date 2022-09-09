@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to validate RFC822 conformance of email addresses
+WWW=		https://metacpan.org/release/Mail-RFC822-Address
 
 LICENSE=	MIT
 

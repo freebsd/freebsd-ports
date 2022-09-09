@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	C++ bindings for 0MQ
+WWW=		https://github.com/zeromq/cppzmq
 
 LICENSE=	MIT
 

@@ -6,5 +6,3 @@ the servers which know the data.
 
 Its behaviour is similar to ntptrace(8), which does it for the
 NTP protocol.
-
-WWW: http://www.mavetju.org/unix/general.php

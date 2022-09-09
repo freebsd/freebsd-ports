@@ -1,11 +1,12 @@
 PORTNAME=	os-brick
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Cinder brick library for managing local volume attaches
+WWW=		https://docs.openstack.org/os-brick/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

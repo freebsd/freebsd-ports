@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.ttf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old German blackletter handwriting (Suetterlin)
+WWW=		https://www.bryld.dk/hent-filer/
 
 # Converted from RESTRICTED
 LICENSE=	manu-gothica

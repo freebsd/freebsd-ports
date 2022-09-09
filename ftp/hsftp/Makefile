@@ -7,6 +7,7 @@ MASTER_SITES=	http://la-samhna.de/hsftp/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP emulator that uses ssh to transport commands/data
+WWW=		http://la-samhna.de/hsftp/
 
 LICENSE=	GPLv2
 

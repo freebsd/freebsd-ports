@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Dictionary for ChaSen
+WWW=		https://sourceforge.jp/projects/ipadic/devel/
 
 BUILD_DEPENDS=	chasen:japanese/chasen-base
 RUN_DEPENDS=	chasen:japanese/chasen-base

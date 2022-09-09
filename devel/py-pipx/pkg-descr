@@ -19,5 +19,3 @@ pipx enables you to:
   the run command)
 
 Best of all, pipx runs with regular user permissions.
-
-WWW: https://github.com/pypa/pipx

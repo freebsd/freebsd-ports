@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.sdaoden.eu/downloads/
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Send and receive Internet mail
+WWW=		https://www.sdaoden.eu/code.html #s-mailx
 
 LICENSE=	BSD3CLAUSE BSD4CLAUSE ISCL MIT RFC2104 RSA
 LICENSE_COMB=	multi

@@ -1,4 +1,2 @@
 This package allows to read/write entries in the Kolab user database
 stored in LDAP.
-
-WWW: http://pear.horde.org

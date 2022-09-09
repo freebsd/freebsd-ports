@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based RSS/RDF/ATOM news aggregator
+WWW=		http://gregarius.net/
 
 LICENSE=	GPLv2
 

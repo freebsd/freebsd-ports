@@ -5,5 +5,3 @@ blocking functions.  libfiredns functions have much lower
 timeouts than the stock functions and tend to be faster
 because they send requests to all configured system
 nameservers at the same time.
-
-WWW: http://www.firestuff.org/

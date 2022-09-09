@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugin bundle to handle expressive events
+WWW=		https://github.com/OpenMusicKontrollers/espressivo.lv2
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING

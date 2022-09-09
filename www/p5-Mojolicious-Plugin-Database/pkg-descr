@@ -1,4 +1,2 @@
 Mojolicious::Plugin::Database provides "sane" handling of DBI connections so
 problems with pre-forking (Hypnotoad, etc.) will not occur.
-
-WWW: https://metacpan.org/release/Mojolicious-Plugin-Database

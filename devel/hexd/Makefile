@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mail@dbalan.in
 COMMENT=	Colourful, human-friendly hexdump tool
+WWW=		https://github.com/FireyFly/hexd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

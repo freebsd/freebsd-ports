@@ -4,5 +4,3 @@ The Dynamic Host Configuration Protocol (DHCP) is a standardized
 network protocol used on Internet Protocol (IP) networks for dynamically
 distributing network configuration parameters, such as IP addresses for
 interfaces and services.
-
-WWW: https://github.com/koue/dhcpd

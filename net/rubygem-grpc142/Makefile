@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	142
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby implementation of gRPC
+WWW=		https://github.com/grpc/grpc/tree/master/src/ruby
 
 LICENSE=	BSD3CLAUSE
 

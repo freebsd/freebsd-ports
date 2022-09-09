@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl interface to the ISAAC PRNG Algorithm
+WWW=		https://metacpan.org/release/Math-Random-ISAAC
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Random-ISAAC-XS>0:math/p5-Math-Random-ISAAC-XS

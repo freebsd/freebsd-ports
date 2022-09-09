@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	me@skylord.ru
 COMMENT=	IIP (Internet Imaging Protocol) FastCGI server
+WWW=		https://iipimage.sourceforge.io
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

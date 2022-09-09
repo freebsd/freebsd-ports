@@ -7,6 +7,7 @@ DIST_SUBDIR=	python-gphoto2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Python bindings for libgphoto2
+WWW=		https://pypi.org/project/gphoto2/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

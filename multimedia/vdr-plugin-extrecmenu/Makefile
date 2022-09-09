@@ -7,6 +7,7 @@ DISTNAME=	vdr-${PLUGIN}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - extended recordings menu
+WWW=		https://projects.vdr-developer.org/projects/plg-extrecmenu
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

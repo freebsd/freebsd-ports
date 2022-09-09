@@ -3,5 +3,3 @@ libfolks is a library that aggregates people from multiple sources
 Facebook, etc.) to create metacontacts. It's written in Vala (in part to
 evaluate Vala). The initial goal is for GObject/C support, though the Vala
 bindings should basically automatic.
-
-WWW: https://wiki.gnome.org/Projects/Folks

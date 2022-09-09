@@ -6,5 +6,3 @@ support for tree construction, tree walking, translation, error
 recovery, and error reporting.
 
 This package provides the ANTLR v3 C runtime library.
-
-WWW: http://www.antlr3.org/

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
+WWW=		https://fontforge.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

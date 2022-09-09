@@ -9,5 +9,3 @@ containing OpenGL contexts on a wide range of platforms and also read the
 mouse, keyboard and joystick functions.
 
 freeglut is released under the X-Consortium license.
-
-WWW: http://freeglut.sourceforge.net/

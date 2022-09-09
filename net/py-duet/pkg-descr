@@ -16,5 +16,3 @@ from trio in two major ways:
   found that this can simplify the process of refactoring code to be
   asynchronous because you don't have to completely separate the sync and async
   parts of your codebase all at once.
-
-WWW: https://github.com/google/duet

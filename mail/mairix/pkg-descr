@@ -11,5 +11,3 @@ Features:
 * Indexing and searching works on the basis of words. The index file tabulates
   which words occur in which parts (particular headers + body) of which
   messages.
-
-WWW: http://www.rc0.org.uk/mairix/

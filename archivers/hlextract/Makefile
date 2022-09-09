@@ -6,6 +6,7 @@ DISTNAME=	hllib${PORTVERSION:S/.//g}
 
 MAINTAINER=	kpedersen@disroot.org
 COMMENT=	Utility to extract data from various Half-Life file formats
+WWW=		https://developer.valvesoftware.com/wiki/HLLib
 
 LICENSE=	GPLv2
 

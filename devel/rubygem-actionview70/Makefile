@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, battle-tested conventions and helpers for building web pages
+WWW=		https://github.com/rails/rails/tree/main/actionview
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of list manipulation routines
+WWW=		https://metacpan.org/release/Array-Utils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

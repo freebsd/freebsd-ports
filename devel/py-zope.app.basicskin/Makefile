@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope ZMI Basic Skin
+WWW=		https://pypi.org/project/zope.app.basicskin/
 
 LICENSE=	ZPL21
 

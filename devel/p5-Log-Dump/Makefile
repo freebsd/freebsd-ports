@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of simple logger mainly for debugging
+WWW=		https://metacpan.org/release/Log-Dump
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

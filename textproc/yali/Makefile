@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	tsparks@appliedops.net
 COMMENT=	YALI: Yet Another LOLCODE Interpreter
+WWW=		https://1.618034.com/yali-yet-another-lolcode-interpreter/index.php
 
 LICENSE=	BSD
 

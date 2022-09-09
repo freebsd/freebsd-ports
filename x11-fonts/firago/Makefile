@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Expanded version of Fira Sans with support for additional languages
+WWW=		https://bboxtype.com/typefaces/FiraGO/
 
 LICENSE=	OFL11
 

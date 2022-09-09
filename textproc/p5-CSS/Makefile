@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object oriented access to Cascading Style Sheets (CSS)
+WWW=		https://metacpan.org/release/CSS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

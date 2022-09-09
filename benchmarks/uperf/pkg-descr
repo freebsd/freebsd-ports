@@ -20,5 +20,3 @@ Some of the questions you could answer using uperf are:
  * Is sendfilev(3EXT) (with one file) equivalent to sendfilev(3EXT)?
  * Understand TCP, UDP, SCTP, SSL performance under a variety of conditions
  * Test various TCP Congestion control algorithms
-
-WWW: http://uperf.org/

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
+WWW=		https://qt-project.org
 
 USES=		compiler:c++11-lang gl python:build qmake:norecursive \
 		qt-dist:5

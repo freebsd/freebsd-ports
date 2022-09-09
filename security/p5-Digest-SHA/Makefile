@@ -1,11 +1,12 @@
 PORTNAME=	Digest-SHA
-PORTVERSION=	6.02
+PORTVERSION=	6.03
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for SHA-1/224/256/384/512
+WWW=		https://metacpan.org/release/Digest-SHA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mose@mose.com
 COMMENT=	CLI for some remote hackpad operations
+WWW=		https://github.com/mose/hackpad-cli/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

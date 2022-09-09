@@ -6,5 +6,3 @@ Capturing stacks can be done with Linux perf_events, FreeBSD pmcstat (hwpmc),
 DTrace, SystemTap, and many other profilers. See stackcollapse-*
 converters. These stackcollapse scripts are used to fold the stacks.
 Flamegraph SVGs are created using the flamegraph.pl script.
-
-WWW: https://github.com/brendangregg/FlameGraph

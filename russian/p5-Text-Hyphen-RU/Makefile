@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Determine positions for hyphens inside Russian words
+WWW=		https://metacpan.org/release/Text-Hyphen-RU
 
 LICENSE=	BSD3CLAUSE
 

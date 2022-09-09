@@ -2,5 +2,3 @@ BOSSA is a flash programming utility for Atmel's SAM family of flash-based ARM
 microcontrollers designed as a replacement for Atmel's SAM-BA software.
 This version is a fork of the original project with some Arduino-specific
 patches applied that are unlikely to be accepted upstream.
-
-WWW: https://github.com/shumatech/BOSSA

@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Physics simulation program for educational use
+WWW=		https://www.nongnu.org/fisicalab/
 
 LICENSE=	GPLv3
 

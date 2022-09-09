@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for asynchronous remote procedure stack
+WWW=		https://metacpan.org/release/RPC-EPC-Service
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -17,5 +17,3 @@ Fmtconv is focussed primarily on quality and exactness rather than
 execution speed.  This does not mean it is slow or unoptimized, but
 fmtconv is clearly not on par with the fastest equivalent 8-bit
 filters.
-
-WWW: https://github.com/EleonoreMizo/fmtconv

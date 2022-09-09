@@ -9,6 +9,7 @@ DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	C++ interface to Thrift
+WWW=		https://thrift.apache.org/
 
 BROKEN_i386=	undefined reference to 'boost::atomics::detail::lockpool::scoped_lock::scoped_lock(void const volatile*)'
 

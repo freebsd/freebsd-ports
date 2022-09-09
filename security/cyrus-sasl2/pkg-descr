@@ -7,5 +7,3 @@ authenticating a user to a server and for optionally negotiating
 protection of subsequent protocol interactions. If its use is
 negotiated, a security layer is inserted between the protocol
 and the connection.
-
-WWW: https://www.cyrusimap.org/sasl/

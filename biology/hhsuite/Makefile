@@ -6,6 +6,7 @@ CATEGORIES=	biology science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Remote protein homology detection suite
+WWW=		https://github.com/soedinglab/hh-suite
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

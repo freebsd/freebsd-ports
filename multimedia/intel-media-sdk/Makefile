@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hardware video decoding/encoding/filtering on Intel GPUs
+WWW=		http://mediasdk.intel.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

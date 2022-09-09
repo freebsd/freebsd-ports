@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Discovery-based unittest extension
+WWW=		https://nose.readthedocs.io/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl.txt

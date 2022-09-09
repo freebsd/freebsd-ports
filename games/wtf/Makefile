@@ -5,6 +5,7 @@ MASTER_SITES=	SF/bsdwtf
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
+WWW=		https://sourceforge.net/projects/bsdwtf/
 
 LICENSE=	PD
 

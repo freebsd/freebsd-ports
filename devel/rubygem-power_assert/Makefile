@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Power Assert for Ruby
+WWW=		https://github.com/ruby/power_assert
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -10,5 +10,3 @@ features:
     * Ships with Perl interface for reading and parsing the
       on-disk record format
     * Is licensed under a liberal BSD-like license
-
-WWW: https://www.mindrot.org/projects/flowd/

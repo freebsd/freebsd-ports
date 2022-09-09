@@ -6,5 +6,3 @@ Language (WML). Users can either describe desired workloads from scratch or use
 (e.g., mail-, web-, file-, and database-server workloads). Filebench is equally
 good for micro- and macro-benchmarking, quick to setup, and relatively easy to
 use.
-
-WWW: https://github.com/filebench/filebench/wiki

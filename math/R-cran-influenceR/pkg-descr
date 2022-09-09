@@ -9,5 +9,3 @@ Borgatti's algorithm to identify key players, and Valente's bridging
 metric. On Unix systems, the betweenness, Key Players, and bridging
 implementations are parallelized with OpenMP, which may run faster
 on systems which have OpenMP configured.
-
-WWW: https://cran.r-project.org/web/packages/influenceR/

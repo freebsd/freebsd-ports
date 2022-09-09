@@ -7,6 +7,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=	dharrigan@gmail.com
 COMMENT=	Shell script that handles cron error detection
+WWW=		https://habilis.net/cronic
 
 LICENSE=	CC0-1.0
 

@@ -1,11 +1,12 @@
 PORTNAME=	atlantis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Terraform Pull Requests Automation
+WWW=		https://www.runatlantis.io
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

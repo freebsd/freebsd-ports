@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Graphical viewer for GHC profile files
+WWW=		https://github.com/portnov/ghcprofview-hs
 
 LICENSE=	BSD3CLAUSE
 

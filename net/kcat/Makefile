@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Generic command line non-JVM Apache Kafka producer and consumer
+WWW=		https://github.com/edenhill/kcat/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

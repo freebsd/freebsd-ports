@@ -153,6 +153,7 @@ include/wolfssl/openssl/x509.h
 include/wolfssl/openssl/x509_vfy.h
 include/wolfssl/openssl/x509v3.h
 include/wolfssl/options.h
+include/wolfssl/quic.h
 include/wolfssl/sniffer.h
 include/wolfssl/sniffer_error.h
 include/wolfssl/ssl.h
@@ -177,6 +178,7 @@ include/wolfssl/wolfcrypt/curve25519.h
 include/wolfssl/wolfcrypt/curve448.h
 include/wolfssl/wolfcrypt/des3.h
 include/wolfssl/wolfcrypt/dh.h
+include/wolfssl/wolfcrypt/dilithium.h
 include/wolfssl/wolfcrypt/dsa.h
 include/wolfssl/wolfcrypt/ecc.h
 include/wolfssl/wolfcrypt/eccsi.h
@@ -230,9 +232,10 @@ include/wolfssl/wolfcrypt/wolfmath.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.34
-lib/libwolfssl.so.34.0.0
+lib/libwolfssl.so.35
+lib/libwolfssl.so.35.0.0
 libdata/pkgconfig/wolfssl.pc
+%%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/example/client.c
 %%PORTDOCS%%%%DOCSDIR%%/example/echoclient.c

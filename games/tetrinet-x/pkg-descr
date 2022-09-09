@@ -11,5 +11,3 @@ the "/kick" and "/ban" keywords.
 Please note, this server in no way encompasses the whole game. The clients
 are the ones that do most of the work, with the server just passing suitable
 packets between each client, and of course adding some of it's own.
-
-WWW: ftp://ftp.dementia.nu/tetrinet/servers/tetrix

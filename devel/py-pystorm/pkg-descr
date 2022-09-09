@@ -4,5 +4,3 @@ Python without having to write a single line of Java. It is meant to be
 used under-the-hood by Storm Python libraries that will provide the
 command-line tools for actually building/submitting the topologies
 (e.g., streamparse and pyleus).
-
-WWW: https://github.com/pystorm/pystorm

@@ -5,5 +5,3 @@ your high-level application or system daemon.
 
 Not everything you can do in libusb1 is wrapped, although we'll accept feature
 requests (with patches) if it makes sense.
-
-WWW: https://github.com/hughsie/libgusb

@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Editor API
+WWW=		https://pear.horde.org
 
 CONFLICTS=	horde-3*
 

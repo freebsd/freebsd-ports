@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland output mirror client
+WWW=		https://github.com/Ferdi265/wl-mirror
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

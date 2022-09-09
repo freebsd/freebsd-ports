@@ -78,6 +78,7 @@ include/mediastreamer2/x11_helper.h
 include/mediastreamer2/zrtp.h
 lib/libmediastreamer.so
 lib/libmediastreamer.so.11
+%%QTGL%%lib/mediastreamer/plugins/libmsqogl.so
 share/Mediastreamer2/cmake/Mediastreamer2Config.cmake
 share/Mediastreamer2/cmake/Mediastreamer2ConfigVersion.cmake
 share/Mediastreamer2/cmake/Mediastreamer2Targets-%%CMAKE_BUILD_TYPE%%.cmake

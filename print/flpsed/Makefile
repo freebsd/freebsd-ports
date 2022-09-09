@@ -5,6 +5,7 @@ MASTER_SITES=	http://flpsed.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG Postscript annotator
+WWW=		https://flpsed.org/flpsed.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

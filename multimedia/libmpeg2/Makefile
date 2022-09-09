@@ -6,6 +6,7 @@ MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free library for decoding MPEG-2 and MPEG-1 video streams
+WWW=		http://libmpeg2.sourceforge.net/
 
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes

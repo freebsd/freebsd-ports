@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Perl5 module to telnet to Cisco routers
+WWW=		https://metacpan.org/release/Net-Telnet-Cisco
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

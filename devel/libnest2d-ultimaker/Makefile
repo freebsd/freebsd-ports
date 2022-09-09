@@ -7,6 +7,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	2D irregular bin packaging and nesting library
+WWW=		https://github.com/Ultimaker/libnest2d
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

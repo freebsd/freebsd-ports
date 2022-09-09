@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Access lexical underscore of your caller
+WWW=		https://metacpan.org/release/lexical-underscore
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

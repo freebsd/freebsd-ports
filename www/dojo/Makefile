@@ -6,6 +6,7 @@ DISTNAME=		dojo-release-${PORTVERSION}
 
 MAINTAINER=		bofh@FreeBSD.org
 COMMENT=		Open-source DHTML toolkit written in JavaScript
+WWW=		https://dojotoolkit.org/
 
 USES=			cpe
 CPE_VENDOR=		linuxfoundation

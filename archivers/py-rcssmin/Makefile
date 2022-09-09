@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Fast CSS minifier for Python
+WWW=		https://github.com/ndparker/rcssmin
 
 LICENSE=	APACHE20
 

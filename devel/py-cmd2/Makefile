@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build interactive command line applications in Python
+WWW=		https://github.com/python-cmd2/cmd2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

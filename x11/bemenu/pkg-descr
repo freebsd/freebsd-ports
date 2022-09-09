@@ -5,5 +5,3 @@ user selects one item or types any text and presses Enter, their
 choice is printed to stdout.
 
 Bemenu comes with Ncurses, Wayland, and X11 backends.
-
-WWW: https://github.com/Cloudef/bemenu

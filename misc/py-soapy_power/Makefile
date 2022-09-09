@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Obtain power spectrum from SoapySDR devices
+WWW=		https://github.com/xmikos/soapy_power
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

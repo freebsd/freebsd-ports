@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+2 widget to display large amounts of numerical data
+WWW=		https://sourceforge.net/projects/gtkdatabox/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

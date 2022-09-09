@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple and fast XML to hash conversion
+WWW=		https://metacpan.org/release/XML-Fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

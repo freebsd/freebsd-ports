@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Identity management for flask
+WWW=		https://packages.python.org/Flask-Principal/
 
 LICENSE=	MIT
 

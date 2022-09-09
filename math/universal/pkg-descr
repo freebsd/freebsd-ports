@@ -12,5 +12,3 @@ to three orders of magnitude.
 The Universal library is a ready-to-use header-only library that provides
 plug-in replacement for native types, and provides a low-friction environment
 to start exploring alternatives to IEEE floating-point in your own algorithms.
-
-WWW: https://github.com/stillwater-sc/universal

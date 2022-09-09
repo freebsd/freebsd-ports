@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-aarch64
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada FreeBSD cross-compiler (aarch64)
+WWW=		http://www.dragonlace.net
 
 BRANCH2=	# Assume aarch64 will always be only CPU for FreeBSD/ARM64
 XCCTARGET=	aarch64-aux-freebsd11.3

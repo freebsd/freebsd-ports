@@ -1,11 +1,12 @@
 PORTNAME=	mod_auth_gssapi
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	chris@chrullrich.net
 COMMENT=	Apache module for authenticating users with GSSAPI
+WWW=		https://github.com/gssapi/mod_auth_gssapi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -13,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf apache:2.4+ bison gssapi:mit,flags libtool ssl
 USES+=		pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	modauthgssapi
+GH_ACCOUNT=	gssapi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	KRB5_CONFIG=${KRB5CONFIG}
 CONFIGURE_ARGS+=	OPENSSL_CFLAGS=-I${OPENSSLINC}
 CONFIGURE_ARGS+=	OPENSSL_LIBS=-lcrypto
 
-PLIST_FILES=	@sample\ ${APACHEETCDIR}/modules.d/%%APMOD_FILE%% \
+PLIST_FILES=	@sample\ ${APACHEETCDIR}/modules.d/${APMOD_FILE} \
 		${APACHEMODDIR}/mod_auth_gssapi.so
 
 SUB_FILES=	${APMOD_FILE}

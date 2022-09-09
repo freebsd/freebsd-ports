@@ -1,10 +1,11 @@
 PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for extracting file metadata
+WWW=		https://projects.kde.org/projects/kde/workspace/kfilemetadata
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libepub.so:textproc/ebook-tools \
@@ -18,7 +19,7 @@ USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	archive config coreaddons i18n \
 		ecm_build
-USE_QT=		core xml \
+USE_QT=		core gui xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

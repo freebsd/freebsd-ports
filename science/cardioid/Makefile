@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cardiac simulation toolkit
+WWW=		https://github.com/LLNL/cardioid
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

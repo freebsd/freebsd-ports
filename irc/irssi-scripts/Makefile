@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	zachary.crownover@gmail.com
 COMMENT=	Collection of useful scripts for the irssi IRC-client
+WWW=		https://scripts.irssi.org/
 
 RUN_DEPENDS=	irssi:irc/irssi
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OAuthlib authentication support for Requests
+WWW=		https://github.com/requests/requests-oauthlib
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

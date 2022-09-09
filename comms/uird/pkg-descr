@@ -11,5 +11,3 @@ Features:
     particular button
   * Network mode sends IR-data encapsulated in UDP-packets over the network to a
     remote host
-
-WWW: http://kbinstuff.googlepages.com/uirduniversalirreceiverdaemon

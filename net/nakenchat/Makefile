@@ -5,6 +5,7 @@ MASTER_SITES=	http://downloads.mikekohn.net/nakenchat/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Small (under 50k) chat server with many features
+WWW=		http://nakenchat.naken.cc/
 
 LICENSE=	GPLv2
 

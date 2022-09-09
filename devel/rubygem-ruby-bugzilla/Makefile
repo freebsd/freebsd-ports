@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Access to Bugzilla through WebService APIs in Ruby
+WWW=		https://bitbucket.org/tagoh/ruby-bugzilla
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

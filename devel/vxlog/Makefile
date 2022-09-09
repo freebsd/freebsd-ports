@@ -7,6 +7,9 @@ MASTER_SITES=	http://bitbucket.org/klepa/vxlog/downloads/ \
 
 MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ logging library
+WWW=		https://sourceforge.net/projects/vxlog/
+
+BROKEN=		does not build: fatal error: 'tr1/memory' file not found
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt

@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Manx Gaelic dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	gv
 

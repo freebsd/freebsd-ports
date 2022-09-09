@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Sphinx extension that provides emoji codes
+WWW=		https://sphinxemojicodes.readthedocs.io/en/stable/
 
 LICENSE=	BSD3CLAUSE
 

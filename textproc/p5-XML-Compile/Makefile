@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compilation based XML processing
+WWW=		https://metacpan.org/release/XML-Compile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

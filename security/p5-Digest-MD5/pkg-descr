@@ -8,5 +8,3 @@ use, as well as an object oriented interface that can handle messages
 of arbitrary length and which can read files directly.
 
 Further documentation is embedded in the individual modules.
-
-WWW: https://metacpan.org/release/Digest-MD5

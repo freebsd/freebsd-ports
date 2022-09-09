@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension for manipulating a RADIUS users file
+WWW=		https://metacpan.org/release/RADIUS-UserFile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

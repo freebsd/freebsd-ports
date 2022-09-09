@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to sieve ZFS snapshots as per given spec a la 'pdumpfs-clean'
+WWW=		https://github.com/knu/zfs-snapshot-clean
 
 LICENSE=	BSD2CLAUSE
 

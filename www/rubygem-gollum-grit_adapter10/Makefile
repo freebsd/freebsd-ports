@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	10
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Adapter for Gollum to use Grit at the backend
+WWW=		https://github.com/gollum/grit_adapter
 
 LICENSE=	MIT
 

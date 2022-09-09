@@ -1,5 +1,5 @@
 PORTNAME=	astlib
-PORTVERSION=	0.11.7
+PORTVERSION=	0.11.8
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	astLib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Astronomy modules for Python
+WWW=		https://astlib.readthedocs.io/en/latest/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

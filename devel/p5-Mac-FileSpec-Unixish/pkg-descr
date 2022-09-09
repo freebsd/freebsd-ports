@@ -6,5 +6,3 @@ It currently assumes that if you are not running under MacOS (as
 reported in `$^O'), you must be on a Unix box.  If you want better, use
 File::Spec -- in essence, Mac::FileSpec::Unixish is a cheap hack to get
 around using File::Spec.
-
-WWW: https://metacpan.org/release/Mac-FileSpec-Unixish

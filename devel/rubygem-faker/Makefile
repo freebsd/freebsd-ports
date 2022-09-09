@@ -1,10 +1,11 @@
 PORTNAME=	faker
-PORTVERSION=	2.22.0
+PORTVERSION=	2.23.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for generating fake data: names, addresses, phone numbers
+WWW=		https://github.com/faker-ruby/faker
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

@@ -14,5 +14,3 @@ have enough hardware ...).
 
 Tsung is developed in Erlang, an open-source language made by Ericsson for
 building robust fault-tolerant distributed applications.
-
-WWW: http://tsung.erlang-projects.org/

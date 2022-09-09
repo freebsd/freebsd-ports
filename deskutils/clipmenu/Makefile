@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Clipboard management using dmenu, rofi or fzf
+WWW=		https://github.com/cdown/clipmenu
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

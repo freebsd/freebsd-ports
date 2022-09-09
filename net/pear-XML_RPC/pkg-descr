@@ -1,5 +1,3 @@
 A PEAR-ified version of Useful Inc's XML-RPC for PHP.
 
 It has support for HTTP/HTTPS transport, proxies and authentication.
-
-WWW: https://pear.php.net/package/XML_RPC

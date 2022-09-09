@@ -31,6 +31,7 @@ etc/fonts/conf.avail/35-lang-normalize.conf
 etc/fonts/conf.avail/40-nonlatin.conf
 etc/fonts/conf.avail/45-generic.conf
 etc/fonts/conf.avail/45-latin.conf
+etc/fonts/conf.avail/48-spacing.conf
 etc/fonts/conf.avail/49-sansserif.conf
 etc/fonts/conf.avail/50-user.conf
 etc/fonts/conf.avail/51-local.conf
@@ -46,11 +47,13 @@ etc/fonts/conf.avail/80-delicious.conf
 etc/fonts/conf.avail/90-synthetic.conf
 etc/fonts/conf.d/10-hinting-%%PREFERRED_HINTING%%.conf
 etc/fonts/conf.d/10-scale-bitmap-fonts.conf
+etc/fonts/conf.d/11-lcdfilter-default.conf
 etc/fonts/conf.d/20-unhint-small-vera.conf
 etc/fonts/conf.d/30-metric-aliases.conf
 etc/fonts/conf.d/40-nonlatin.conf
 etc/fonts/conf.d/45-generic.conf
 etc/fonts/conf.d/45-latin.conf
+etc/fonts/conf.d/48-spacing.conf
 etc/fonts/conf.d/49-sansserif.conf
 etc/fonts/conf.d/50-user.conf
 etc/fonts/conf.d/51-local.conf
@@ -72,7 +75,7 @@ include/fontconfig/fontconfig.h
 lib/libfontconfig.a
 lib/libfontconfig.so
 lib/libfontconfig.so.1
-lib/libfontconfig.so.1.12.0
+lib/libfontconfig.so.1.13.0
 libdata/pkgconfig/fontconfig.pc
 man/man1/fc-cache.1.gz
 man/man1/fc-cat.1.gz

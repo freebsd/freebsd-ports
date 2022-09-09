@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	System for managing development buildouts
+WWW=		https://pypi.org/project/zc.buildout/
 
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

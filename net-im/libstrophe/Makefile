@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Lightweight XMPP library
+WWW=		https://strophe.im/libstrophe/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt

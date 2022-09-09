@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library that preprocesses and concatenates JavaScript files
+WWW=		https://github.com/rails/sprockets
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

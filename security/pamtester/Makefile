@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line pam authentication tester
+WWW=		http://pamtester.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CFLAGS}

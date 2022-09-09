@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.claws-mail.org/themes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Claws Mail icon themes
+WWW=		https://www.claws-mail.org/themes.php
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	@${LICENSE_TEXT}

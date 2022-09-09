@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.bayofrum.net/dist/rclint/	\
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Checks rc scripts for style and common errors
+WWW=		https://github.com/crees/rclint
 
 LICENSE=	BSD2CLAUSE
 

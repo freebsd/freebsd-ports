@@ -4,5 +4,4 @@ global definitions, functions called by a function, functions calling a
 function, arbitrary regexp patterns and much more. cscope can be used for
 projects of all sizes. Vim and Emacs integration is available.
 
-WWW: http://cscope.sourceforge.net/
 https://sourceforge.net/projects/cscope/

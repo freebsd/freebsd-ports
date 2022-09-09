@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Minimal Train with a backends for ssh and winrm
+WWW=		https://github.com/inspec/train
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

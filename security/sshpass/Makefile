@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/sshpass/${PORTVERSION}
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Non-interactive ssh password auth tool
+WWW=		https://sourceforge.net/projects/sshpass/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

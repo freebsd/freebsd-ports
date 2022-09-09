@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Markdown Rendering for R
+WWW=		https://cran.r-project.org/web/packages/markdown/
 
 LICENSE=	GPLv2
 

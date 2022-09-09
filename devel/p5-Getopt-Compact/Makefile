@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Getopt processing in a compact statement with long and short options
+WWW=		https://metacpan.org/release/Getopt-Compact
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-Table>=0:textproc/p5-Text-Table \

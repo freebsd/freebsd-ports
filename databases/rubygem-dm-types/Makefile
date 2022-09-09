@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin providing extra data types
+WWW=		https://github.com/datamapper/dm-types
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

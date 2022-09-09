@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Multiplatform tool to save Touchstone files from the NanoVNA
+WWW=		https://github.com/NanoVNA-Saver/nanovna-saver
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

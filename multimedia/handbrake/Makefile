@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Versatile DVD ripper and video transcoder
+WWW=		https://handbrake.fr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

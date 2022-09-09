@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage sets of objects
+WWW=		https://metacpan.org/release/Set-Object
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

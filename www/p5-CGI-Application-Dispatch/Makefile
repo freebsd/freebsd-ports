@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dispatch requests to CGI::Application based objects
+WWW=		https://metacpan.org/release/CGI-Application-Dispatch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

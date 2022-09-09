@@ -6,6 +6,7 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM table based Chinese input methods
+WWW=		https://github.com/scim-im/scim
 
 BUILD_DEPENDS=	scim:textproc/scim \
 		scim-make-table:textproc/scim-table-imengine

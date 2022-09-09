@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Retrieve information from SourceForge site
+WWW=		https://metacpan.org/release/WWW-SourceForge
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \

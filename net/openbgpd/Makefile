@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
+WWW=		https://www.openbgpd.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${FILESDIR}/COPYING

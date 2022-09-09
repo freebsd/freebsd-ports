@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface to the CUPS API
+WWW=		https://metacpan.org/release/Net-CUPS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

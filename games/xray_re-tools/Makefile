@@ -4,6 +4,7 @@ CATEGORIES=	games converters
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	X-Ray engine game asset converter (unofficial)
+WWW=		https://github.com/abramcumner/xray_re-tools
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libvorbisfile.so:audio/libvorbis \

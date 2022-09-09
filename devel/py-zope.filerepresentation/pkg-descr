@@ -2,5 +2,3 @@ zope.filerepresentation is a File-system Representation Interfaces.
 The interfaces defined here are used for file-system and
 file-system-like representations of objects, such as file-system
 synchronization, FTP, PUT, and WebDAV.
-
-WWW: https://pypi.org/project/zope.filerepresentation/

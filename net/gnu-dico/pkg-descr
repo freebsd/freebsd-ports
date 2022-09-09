@@ -5,5 +5,3 @@ modules for interfacing with various database formats, among them a
 module for dict.org databases. New modules can be written in C, Guile or
 Python. The package also includes a console client program for querying
 remote dictionary servers.
-
-WWW: http://www.gnu.org/software/dico/

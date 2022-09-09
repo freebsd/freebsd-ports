@@ -7,6 +7,7 @@ DISTNAME=	Deprecated-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	@deprecated decorator to deprecate old python classes, functions or methods
+WWW=		https://github.com/tantale/deprecated
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

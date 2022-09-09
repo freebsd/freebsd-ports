@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for persistent properties
+WWW=		https://metacpan.org/release/Data-Properties
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Management tool for accessing dxcluster nodes
+WWW=		http://www.w1hkj.com/flcluster-help
 
 LICENSE=	GPLv3
 

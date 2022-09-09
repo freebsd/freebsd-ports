@@ -5,5 +5,3 @@ content among a swarm of peers.
 Given a root hash, the data is received from whatever source available
 and data integrity is checked cryptographically with Merkle hash
 trees.
-
-WWW: https://github.com/skunkwerks/libswift

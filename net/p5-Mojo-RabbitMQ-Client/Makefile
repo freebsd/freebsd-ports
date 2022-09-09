@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Mojo::IOLoop based RabbitMQ client
+WWW=		https://metacpan.org/release/Mojo-RabbitMQ-Client
 
 LICENSE=	ART20
 

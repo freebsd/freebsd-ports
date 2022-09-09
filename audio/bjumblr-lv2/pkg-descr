@@ -9,5 +9,3 @@ delayed playback of the respective piece of the audio input stream. Each pad
 
 In addidion, the user can control the playback progession using the playback
 buttons or the speed dial. This is facilitated via the progression delay.
-
-WWW: https://github.com/sjaehn/BJumblr

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Dependency injection framework for Qt
+WWW=		https://github.com/vogel/injeqt/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

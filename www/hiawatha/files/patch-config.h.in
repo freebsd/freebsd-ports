@@ -1,6 +1,6 @@
---- config.h.in.orig	2017-03-13 19:58:34 UTC
+--- config.h.in.orig	2022-01-23 19:44:44 UTC
 +++ config.h.in
-@@ -46,6 +46,7 @@
+@@ -43,6 +43,7 @@
  /* Functions
   */
  #cmakedefine HAVE_CRYPT_R ${HAVE_CRYPT_R}

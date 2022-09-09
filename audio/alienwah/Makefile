@@ -6,6 +6,7 @@ MASTER_SITES=	http://plugin.org.uk/releases/alienwah/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Paul Nasca's AlienWah LADSPA plugin
+WWW=		http://plugin.org.uk/releases/alienwah/
 
 LICENSE=	GPLv2
 

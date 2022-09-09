@@ -6,6 +6,7 @@ MASTER_SITES=	http://tetrinet.or.cz/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console tetrinet client
+WWW=		http://tetrinet.or.cz/
 
 LICENSE=	PD
 

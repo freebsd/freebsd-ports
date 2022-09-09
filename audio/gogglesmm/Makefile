@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Music collection manager and player
+WWW=		https://gogglesmm.github.io/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

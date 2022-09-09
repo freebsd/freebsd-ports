@@ -6,5 +6,3 @@ and to supply a sub to replace it with.
   # which is equivalent to:
   my $override = Sub::Override->new;
   $override->replace('Some::sub', sub { 'new data' });
-
-WWW: https://metacpan.org/release/Sub-Override

@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
+WWW=		https://www.gnu.org/software/ccrtp/
 
 LIB_DEPENDS=	libcommoncpp.so:devel/ucommon \
 		libgcrypt.so:security/libgcrypt

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allow building easy-to-use command-line interfaces
+WWW=		https://github.com/ddfreyne/cri
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

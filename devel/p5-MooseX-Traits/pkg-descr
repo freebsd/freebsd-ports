@@ -7,5 +7,3 @@ constructor.  This role will then apply the roles in one go, cache the
 resulting class (for efficiency), and return a new instance.  Arguments
 meant to initialize the applied roles' attributes can also be passed to
 the constructor.
-
-WWW: https://metacpan.org/release/MooseX-Traits

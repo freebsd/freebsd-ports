@@ -6,6 +6,7 @@ MASTER_SITES=	http://untroubled.org/ezmlm/archive/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
+WWW=		https://www.untroubled.org/ezmlm/
 
 LICENSE=	GPLv2
 

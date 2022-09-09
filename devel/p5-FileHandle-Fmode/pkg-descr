@@ -1,4 +1,2 @@
 Use this module to check whether a filehandle is readable, writable, or
 readable/writable.
-
-WWW: https://metacpan.org/release/FileHandle-Fmode

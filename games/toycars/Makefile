@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based 2D racing game
+WWW=		https://sourceforge.net/projects/toycars/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

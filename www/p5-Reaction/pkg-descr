@@ -18,6 +18,3 @@ Widget
 
 Renderer
 	MyApp::View:: classes, renders viewports.
-
-
-WWW: https://metacpan.org/release/Reaction

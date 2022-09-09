@@ -10,5 +10,3 @@ Razor Filtering Agents (end-users and MTAs) check their incoming mail against
 a Catalogue Server and filter out or deny transport in case of a signature
 match. Catalogued spam, once identified and reported by a Reporting Agent,
 can be blocked out by the rest of the Filtering Agents on the network.
-
-WWW: http://razor.sourceforge.net/

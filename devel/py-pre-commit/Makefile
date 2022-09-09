@@ -7,6 +7,7 @@ DISTNAME=	pre_commit-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Framework for managing and maintaining multi-language pre-commit hooks
+WWW=		https://pre-commit.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

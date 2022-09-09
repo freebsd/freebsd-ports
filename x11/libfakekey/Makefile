@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.yoctoproject.org/cgit/cgit.cgi/${PORTNAME}/snapshot/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	X virtual keyboard library
+WWW=		https://www.yoctoproject.org/tools-resources/projects/matchbox
 
 LICENSE=	LGPL20+
 

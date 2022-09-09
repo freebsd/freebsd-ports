@@ -5,5 +5,3 @@ Package to validate various data. It includes:
 * date (min, max) (With the Date module installed)
 * uri (RFC2396)
 * possibility valid multiple data with a single method call (::multiple)
-
-WWW: https://pear.php.net/package/Validate

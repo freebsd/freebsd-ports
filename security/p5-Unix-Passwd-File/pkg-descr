@@ -10,5 +10,3 @@ read+write mode and also read the files in the first pass, then seek to the
 beginning and write back the files.
 
 No caching is done so you should do your own if you need to.
-
-WWW: https://metacpan.org/release/Unix-Passwd-File

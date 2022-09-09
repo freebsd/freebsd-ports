@@ -6,5 +6,3 @@ preconditioning to accelerate convergence. It is especially optimized for large,
 difficult problems, and can be a useful tool for both non-experts and experts.
 PRIMME is written in C99, but complete interfaces are provided for Fortran 77,
 MATLAB, Python, and R.
-
-WWW: http://www.cs.wm.edu/~andreas/software/

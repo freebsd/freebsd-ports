@@ -3,5 +3,3 @@ audio file formats.
 
 All the functions, structures, and datatypes are the same as in the C++
 implementation, except for some that could not be translated.
-
-WWW: https://pypi.org/project/PyOgg/

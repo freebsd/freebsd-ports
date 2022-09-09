@@ -6,6 +6,7 @@ CATEGORIES=	accessibility
 
 MAINTAINER=	me@igalic.co
 COMMENT=	Adaptive screen brightness and temperature for Windows and Unix
+WWW=		https://getgammy.com/
 
 LICENSE=	GPLv3
 

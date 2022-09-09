@@ -1,0 +1,22 @@
+--- configure.orig	2022-07-30 04:13:00 UTC
++++ configure
+@@ -5797,15 +5797,15 @@ if test ! -z "$with_psrc" ; then
+ 	PSRC="$withval"
+ elif test -c /dev/bpf0 ; then
+ 	PSRC=bpf
+-elif test -a /usr/include/pcap.h; then
++elif test -f /usr/include/pcap.h; then
+ 	PSRC=pcap
+-elif test -a /usr/include/pcap/pcap.h; then
++elif test -f /usr/include/pcap/pcap.h; then
+ 	PSRC=pcap
+ 	CFLAGS="$CFLAGS -I/usr/include/pcap"
+ 	CPPFLAGS="$CPPFLAGS -I/usr/include/pcap"
+-elif test -a ${ac_default_prefix}/include/pcap.h; then
++elif test -f ${ac_default_prefix}/include/pcap.h; then
+ 	PSRC=pcap
+-elif test -a ${ac_default_prefix}/include/pcap/pcap.h; then
++elif test -f ${ac_default_prefix}/include/pcap/pcap.h; then
+ 	CFLAGS="$CFLAGS -I${ac_default_prefix}/include/pcap"
+ 	CPPFLAGS="$CPPFLAGS -I${ac_default_prefix}/include/pcap"
+ 	PSRC=pcap

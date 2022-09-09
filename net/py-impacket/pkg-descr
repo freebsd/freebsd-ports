@@ -8,5 +8,4 @@ as Pcapy. Packets can be constructed from scratch, as well as parsed
 from raw data. Furthermore, the object oriented API makes it simple to
 work with deep protocol hierarchies.
 
-WWW: https://www.coresecurity.com/corelabs-research/open-source-tools/impacket
-WWW: https://github.com/CoreSecurity/impacket
+See also: https://github.com/CoreSecurity/impacket

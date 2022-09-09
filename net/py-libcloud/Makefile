@@ -7,6 +7,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Standard client library for many popular cloud providers
+WWW=		https://libcloud.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

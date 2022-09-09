@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	MTP device filesystem
+WWW=		https://github.com/kiorky/jmtpfs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

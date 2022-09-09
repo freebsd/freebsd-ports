@@ -7,5 +7,3 @@ just as well under CGI and any other web server.
 Apache::Session is Copyright(c) 1998, 1999 Jeffrey William Baker
 <jeffrey@kathyandjeffrey.net>.  Distribute under the same terms as
 Perl itself.
-
-WWW: https://metacpan.org/release/Apache-Session

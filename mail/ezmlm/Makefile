@@ -12,6 +12,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use, high-speed mailing list manager for qmail
+WWW=		https://cr.yp.to/ezmlm.html
 
 # Converted from LEGAL_TEXT
 LICENSE=	djb

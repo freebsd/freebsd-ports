@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSI
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
+WWW=		https://github.com/saitoha/libsixel
 
 LICENSE=	MIT
 

@@ -4,5 +4,3 @@ commonly used for this task, and is optimized specifically for an accurate and
 sensitive detection, and automatic annotation, of potential problems and
 security-relevant design patterns based on the observation of existing,
 user-initiated traffic in complex web 2.0 environments.
-
-WWW: https://github.com/codenote/ratproxy

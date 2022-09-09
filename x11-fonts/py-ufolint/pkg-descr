@@ -11,5 +11,3 @@ ufolint application. ufolint catches exceptions raised in the ufoLib public read
 methods for all *.plist file types and all ufoLib validations performed on
 *.glif files. These are returned to users with informative error messages that
 indicate the filepath(s) of concern and exit status code 1.
-
-WWW: https://github.com/source-foundry/ufolint

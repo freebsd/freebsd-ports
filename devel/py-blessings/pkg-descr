@@ -8,5 +8,3 @@ command-line app should.  Get rid of all those noisy, C-like calls to
 tigetstr and tparm, so your code doesn't get crowded out by terminal
 bookkeeping.  Act intelligently when somebody redirects your output to a
 file, omitting the terminal control codes the user doesn't want to see.
-
-WWW: https://github.com/erikrose/blessings

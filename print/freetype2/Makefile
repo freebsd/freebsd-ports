@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
+WWW=		https://www.freetype.org/
 
 LICENSE=	FTL GPLv2+
 LICENSE_COMB=	dual

@@ -1,17 +1,18 @@
 PORTNAME=	pyenv
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Manage multiple versions of Python
+WWW=		https://github.com/pyenv/pyenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe shebangfix
+USES=		cpe python shebangfix
 
 USE_GITHUB=	yes
 
@@ -24,7 +25,7 @@ CPE_VENDOR=	pyenv_project
 SHEBANG_FILES=	plugins/python-build/scripts/add_miniconda.py
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|\$${root}/completions|${DATADIR}/completions|g" \
+	@${REINPLACE_CMD} ${REINPLACE_ARGS} -e "s|\$${root}/completions|${DATADIR}/completions|g" \
 		${WRKSRC}/libexec/pyenv-init
 
 do-install:

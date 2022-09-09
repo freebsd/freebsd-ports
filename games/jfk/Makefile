@@ -6,6 +6,7 @@ MASTER_SITES=	http://hop.at/jfk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer 2D shoot'em up game
+WWW=		https://hop.at/jfk/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

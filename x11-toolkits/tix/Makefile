@@ -7,6 +7,7 @@ DISTNAME=	Tix${DISTVERSION}-src${DISTVERSIONSUFFIX}
 
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Extension to the Tk toolkit
+WWW=		http://tix.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/Tix${DISTVERSION}
 USE_LDCONFIG=	yes

@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Component Architecture
+WWW=		https://pypi.org/project/zope.component/
 
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

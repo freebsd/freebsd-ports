@@ -14,5 +14,3 @@ representations with this extension. This brings:
 	- Statistics collection. PostgreSQL's query optimizer uses these stats to
 	  evaluate different query plans and pick the best one.
 	- Simple setup. Create foreign table and copy data. Run SQL.
-
-WWW: https://github.com/citusdata/cstore_fdw

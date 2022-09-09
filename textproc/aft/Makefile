@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.maplefish.com/todd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document preparation system using an Almost Free Text input format
+WWW=		http://www.maplefish.com/todd/aft.html
 
 LICENSE=	CART
 LICENSE_GROUPS=	FSF GPL OSI

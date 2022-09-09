@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Much-loved minimalist roguelike game (community edition)
+WWW=		https://sites.google.com/site/broguegame/
 
 LICENSE=	AGPLv3+ CC-BY-SA-4.0
 LICENSE_COMB=	multi

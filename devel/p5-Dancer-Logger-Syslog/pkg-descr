@@ -11,5 +11,3 @@ You can also specify the other configuration via the 'syslog' config key, e.g.
     syslog:
       facility: 'local0'
       ident: 'my_app'
-
-WWW: https://metacpan.org/release/Dancer-Logger-Syslog

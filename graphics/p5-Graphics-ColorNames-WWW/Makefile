@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	WWW color names and equivalent RGB values
+WWW=		https://metacpan.org/release/Graphics-ColorNames-WWW
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

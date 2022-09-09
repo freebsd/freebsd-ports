@@ -8,6 +8,7 @@ DISTNAME=	IMDbPY-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Retrieve and manage the data of the IMDb movie database
+WWW=		http://imdbpy.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

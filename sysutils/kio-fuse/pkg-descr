@@ -5,5 +5,3 @@ applications such as Firefox, OpenOffice, GNOME apps, shell utilities and more.
 
 KIO-Fuse works by acting as a bridge between KDE's KIO filesystem design and
 FUSE.
-
-WWW: https://invent.kde.org/system/kio-fuse

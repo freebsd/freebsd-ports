@@ -9,5 +9,3 @@ Encodings supported are as follows:
   x-iso2022jp-ascii                            7-bit counterpart
                qr/\b(x-)?iso-?2022-?jp-?ascii$/i
   --------------------------------------------------------------
-
-WWW: https://metacpan.org/release/Unicode-Japanese

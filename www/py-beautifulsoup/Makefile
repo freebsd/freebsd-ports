@@ -7,6 +7,7 @@ DISTNAME=	beautifulsoup4-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	HTML/XML Parser for Python
+WWW=		https://www.crummy.com/software/BeautifulSoup/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

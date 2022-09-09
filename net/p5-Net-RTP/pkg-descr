@@ -1,5 +1,3 @@
 The Net::RTP module subclasses IO::Socket::Multicast6 to enable you to
 manipulate multicast groups. The multicast additions are optional, so you
 may also send and recieve unicast packets.
-
-WWW: https://metacpan.org/release/Net-RTP

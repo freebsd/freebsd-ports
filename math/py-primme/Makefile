@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PRIMME wrapper for Python
+WWW=		https://www.cs.wm.edu/~andreas/software/
 
 LICENSE=	BSD3CLAUSE
 

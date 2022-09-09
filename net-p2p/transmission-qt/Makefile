@@ -1,6 +1,8 @@
 PKGNAMESUFFIX=	-qt
 PORTREVISION=	4
 
+WWW=		https://www.transmissionbt.com/
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 

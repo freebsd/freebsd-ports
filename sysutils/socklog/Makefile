@@ -6,6 +6,7 @@ MASTER_SITES=	http://smarden.org/socklog/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and secure replacement for syslogd
+WWW=		http://smarden.org/socklog/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/package/COPYING

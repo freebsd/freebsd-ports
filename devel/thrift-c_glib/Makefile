@@ -7,6 +7,7 @@ DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
+WWW=		https://thrift.apache.org/
 
 PKGNAMESUFFIX=	-c_glib
 

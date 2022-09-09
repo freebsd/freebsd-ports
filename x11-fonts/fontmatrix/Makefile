@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Graphical font manager
+WWW=		https://github.com/fcoiffie/fontmatrix
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

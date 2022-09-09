@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Monitors distributed systems
+WWW=		https://riemann.io/
 
 LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE CDDL EPL GPLv2+ LGPL20+ MIT
 LICENSE_COMB=	multi

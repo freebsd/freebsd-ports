@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Add HTML::Tidy support to CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-HtmlTidy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

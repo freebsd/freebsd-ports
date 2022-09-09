@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.aelius.com/primateplunge/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Primate Plunge is an arcade game
+WWW=		https://www.aelius.com/primateplunge/
 
 LICENSE=	UDEVGAME
 LICENSE_NAME=	uDevGame license

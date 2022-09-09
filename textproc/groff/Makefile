@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Software typesetting package
+WWW=		https://www.gnu.org/software/groff/
 
 LICENSE=	GPLv3
 

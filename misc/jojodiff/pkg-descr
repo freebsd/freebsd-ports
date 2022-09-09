@@ -10,5 +10,3 @@ a heuristic algorithm with constant space and linear time complexity.
 This means that accuracy is traded over speed.  JDIFF will therefore, in
 general, not always find the smallest set of differences, but will try
 to be fast and will use a fixed amount of memory.
-
-WWW: http://jojodiff.sourceforge.net/

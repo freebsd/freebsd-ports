@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.dwheeler.com/flawfinder/ \
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Examines source code looking for security weaknesses
+WWW=		https://dwheeler.com/flawfinder/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,4 +1,2 @@
 Small, self-contained, headers-only low-precision GEMM (general matrix
 multiplication) library.
-
-WWW: https://github.com/google/gemmlowp

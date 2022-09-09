@@ -8,5 +8,3 @@ A set of utilities to inspect other plugins:
 * The OSC Inspector is meant as a monitor/debug tool for LV2 plugin and
   host authors. It captures all OSC events sent to its event input port
   and presents them on its user interface for convenient nested browsing.
-
-WWW: https://open-music-kontrollers.ch/lv2/sherlock/

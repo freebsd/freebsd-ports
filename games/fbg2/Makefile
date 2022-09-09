@@ -6,6 +6,7 @@ MASTER_SITES=	SF/fbg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic block-stacking arcade game
+WWW=		http://fbg.sourceforge.net/
 
 LICENSE=	GPLv2+ CC-BY-SA-3.0
 LICENSE_COMB=	multi

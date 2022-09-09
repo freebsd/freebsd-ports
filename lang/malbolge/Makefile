@@ -5,6 +5,7 @@ MASTER_SITES=	http://cdn.bitbucket.org/dereckson/${PORTNAME}/downloads/
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Esoteric language
+WWW=		https://www.dereckson.be/software/Malbolge/
 
 PLIST_FILES=	bin/malbolge
 OPTIONS_DEFINE=	DOCS

@@ -1,4 +1,2 @@
 This module provides an easy interface for getting various metadata
 about a Perl module distribution.
-
-WWW: https://metacpan.org/release/Dist-Metadata

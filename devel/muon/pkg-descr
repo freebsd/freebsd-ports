@@ -14,5 +14,3 @@ dependencies.
 * muon fmt_unstable - a meson.build code formatter
 * An interactive stepping debugger with the dbg() function.
 * Fast
-
-WWW: https://muon.build/

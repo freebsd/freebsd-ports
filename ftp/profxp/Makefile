@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/p/-pre/}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FXP (server-to-server FTP) client
+WWW=		https://duncanthrax.net/profxp/
 
 RUN_DEPENDS=	p5-SOCKS>=0:net/p5-Socks \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \

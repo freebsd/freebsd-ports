@@ -10,6 +10,7 @@ EXTRACT_ONLY=	Edge-${PORTVERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM style engine aimed at the Total Conversion developer
+WWW=		http://edge.sourceforge.net/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

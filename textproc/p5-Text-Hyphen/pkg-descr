@@ -1,5 +1,3 @@
 Determine positions for hyphens inside words
 This module implements Knuth-Liang algorithm to find positions
 inside words where it is possible to insert hyphens to break a line.
-
-WWW: https://metacpan.org/release/Text-Hyphen

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Concrete syntax tree with AST-like properties
+WWW=		https://github.com/Instagram/LibCST
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

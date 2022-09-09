@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-synth
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DX7 FM multi plaform/multi format plugin
+WWW=		https://asb2m10.github.io/dexed/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

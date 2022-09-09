@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Add test failures if warnings are caught
+WWW=		https://metacpan.org/release/Test-FailWarnings
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable scheme library
+WWW=		https://people.csail.mit.edu/jaffer/SLIB.html
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

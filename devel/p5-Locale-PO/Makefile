@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for manipulating .po entries from GNU gettext
+WWW=		https://metacpan.org/release/Locale-PO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

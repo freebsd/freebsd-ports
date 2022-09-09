@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-robotics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular OpenRobots Simulation Engine
+WWW=		https://morse-simulator.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

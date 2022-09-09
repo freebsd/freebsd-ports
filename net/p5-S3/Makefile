@@ -8,6 +8,7 @@ DISTNAME=	s3-example-perl-library
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library in Perl for working with the Amazon S3 REST interface
+WWW=		http://developer.amazonwebservices.com/connect/entry!default.jspa?externalID=133
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-URI>=0:net/p5-URI \

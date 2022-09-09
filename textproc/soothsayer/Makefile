@@ -6,6 +6,7 @@ MASTER_SITES=	SF/presage/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform
+WWW=		http://presage.sourceforge.net/
 
 LICENSE=	GPLv2+
 

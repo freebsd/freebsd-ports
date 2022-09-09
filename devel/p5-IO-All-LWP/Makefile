@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IO::All interface to LWP
+WWW=		https://metacpan.org/release/IO-All-LWP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

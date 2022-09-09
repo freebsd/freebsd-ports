@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time magnifying glass for X11
+WWW=		http://www2s.biglobe.ne.jp/~yav/soft/indexe.html
 
 OPTIONS_DEFINE=	DOCS
 

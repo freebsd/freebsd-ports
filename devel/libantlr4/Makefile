@@ -8,6 +8,7 @@ PKGNAMEPREFIX=		lib
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition (C runtime)
+WWW=		https://www.antlr.org/
 
 LICENSE=	BSD3CLAUSE
 

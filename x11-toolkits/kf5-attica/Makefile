@@ -4,6 +4,7 @@ CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Open Collaboration Services API library KDE5 version
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/attica/html/index.html
 
 # The sources are LGPL21 or LGPL3 or later-version-approved-by-KDE,
 # so use the OR of existing license versions. COPYING is LGPL21.
@@ -13,6 +14,6 @@ LICENSE_COMB=	dual
 USES=		cmake compiler:c++11-lib kde:5 pathfix qt:5 tar:xz
 USE_KDE=	ecm_build
 USE_QT=		core network \
-		buildtools_build qmake_build testlib_build 
+		buildtools_build qmake_build testlib_build
 
 .include <bsd.port.mk>

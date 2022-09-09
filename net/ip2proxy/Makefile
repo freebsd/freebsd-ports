@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	C library to lookup proxies
+WWW=		https://ip2location.com/development-libraries/ip2proxy/c
 
 LICENSE=	MIT
 

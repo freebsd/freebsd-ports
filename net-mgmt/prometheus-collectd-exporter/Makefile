@@ -1,11 +1,12 @@
 PORTNAME=	prometheus-collectd-exporter
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dsp@php.net
 COMMENT=	Collectd exporter for Prometheus
+WWW=		https://github.com/prometheus/collectd_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

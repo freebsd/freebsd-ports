@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library for solving large sparse linear systems
+WWW=		https://github.com/ddemidov/amgcl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

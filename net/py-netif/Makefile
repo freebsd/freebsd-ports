@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python network configuration library for FreeBSD
+WWW=		https://github.com/freenas/py-netif
 
 LICENSE=	BSD2CLAUSE
 

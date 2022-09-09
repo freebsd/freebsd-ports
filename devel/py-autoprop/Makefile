@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Infer properties from accessor methods
+WWW=		https://pypi.org/project/autoprop/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -9,5 +9,3 @@ input data stream.
 
 The following real case could be an example:
 $ pg_dump ... | tar_stream_chunker ... | tarsnap -c ... @-
-
-WWW: https://github.com/ihoro/tar-stream-chunker/

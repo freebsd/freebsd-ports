@@ -1,5 +1,3 @@
 POE::Component::Server::XMLRPC adds asynchronous, event driven
 XMLRPC over HTTP to your POE applications.  It works very well
 with synchronous XMLRPC::Lite clients, even.
-
-WWW: https://metacpan.org/release/POE-Component-Server-XMLRPC

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose role for setting attributes from a simple configfile
+WWW=		https://metacpan.org/release/MooseX-SimpleConfig
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0.35:devel/p5-Moose \

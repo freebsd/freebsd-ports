@@ -15,5 +15,3 @@ between two instances of qgit.
   like push/pop and apply/format patches. You can also create new patches or
   refresh current top one using the same semantics of git commit,
   i.e. cherry picking single modified files.
-
-WWW: https://github.com/tibirna/qgit

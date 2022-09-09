@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Produce PostScript files from Perl
+WWW=		https://metacpan.org/release/PostScript-Simple
 
 LICENSE=	GPLv2
 

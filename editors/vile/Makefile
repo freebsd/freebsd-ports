@@ -10,6 +10,7 @@ PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
 
 MAINTAINER=	dickey@invisible-island.net
 COMMENT=	VI Like Emacs -- console version
+WWW=		https://invisible-island.net/vile/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

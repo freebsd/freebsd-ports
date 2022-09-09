@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converts file stat(2) mode to/from string representation
+WWW=		https://metacpan.org/release/File-Stat-ModeString
 
 LICENSE=	GPLv2
 

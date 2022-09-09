@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Collection of C++ functions which match python's string class
+WWW=		https://github.com/imageworks/pystring
 
 USES=		libtool:build
 USE_GITHUB=	yes

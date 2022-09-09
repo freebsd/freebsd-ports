@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Library for communicating with Redis servers
+WWW=		https://code.google.com/p/credis/
 
 LICENSE=	BSD3CLAUSE
 

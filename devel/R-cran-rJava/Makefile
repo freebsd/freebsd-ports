@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	R to Java interface
+WWW=		https://cran.r-project.org/package=rJava
 
 LICENSE=	LGPL21
 

@@ -13,5 +13,3 @@ classes. Google Mock:
     * handles unordered, partially ordered, or completely ordered expectations,
     * is extensible by users, and
     * works on Linux, Windows, and Mac OS X.
-
-WWW: https://github.com/google/googletest

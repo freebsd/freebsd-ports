@@ -1,7 +1,7 @@
 PORTNAME=	pipe-viewer
 PKGNAMEPREFIX=	gtk-
 
-MAINTAINER=	DtxdF@riseup.net
+MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Application for searching and playing videos from YouTube (gtk)
 
 MASTERDIR=	${.CURDIR}/../pipe-viewer

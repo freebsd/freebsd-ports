@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python version of 3D collision detection library Bullet
+WWW=		https://pybullet.org/wordpress/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

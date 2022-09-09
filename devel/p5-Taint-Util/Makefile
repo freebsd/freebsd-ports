@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test for and flip the taint flag without regex matches or eval
+WWW=		https://metacpan.org/release/Taint-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails60
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Improve the rendering of HTML emails
+WWW=		https://github.com/fphilipe/premailer-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

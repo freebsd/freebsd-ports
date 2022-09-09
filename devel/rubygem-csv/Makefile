@@ -1,10 +1,11 @@
 PORTNAME=	csv
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface to CSV files and data
+WWW=		https://github.com/ruby/csv
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

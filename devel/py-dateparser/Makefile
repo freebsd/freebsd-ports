@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Provides modules to easily parse localized dates
+WWW=		https://github.com/scrapinghub/dateparser
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@ IDNA Compatibility Processing.
 This acts as a suitable replacement for the "encodings.idna" module that comes
 with the Python standard library, but which only supports the older superseded
 IDNA specification (RFC 3490).
-
-WWW: https://github.com/kjd/idna

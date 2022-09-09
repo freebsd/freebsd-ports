@@ -1,5 +1,3 @@
 This module provides an interface between Perl and the MediaWiki API
 allowing creation of scripts to automate editing and extraction of data
 from MediaWiki driven sites like Wikipedia.
-
-WWW: https://metacpan.org/release/MediaWiki-API

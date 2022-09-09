@@ -6,6 +6,7 @@ DISTNAME=	RemoteBox-${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Open Source VirtualBox Client with Remote Management
+WWW=		https://remotebox.knobgoblin.org.uk/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

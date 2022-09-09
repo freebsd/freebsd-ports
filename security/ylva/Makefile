@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line password manager and file encryption program
+WWW=		https://www.nrosvall.name/ylva/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

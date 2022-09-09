@@ -9,6 +9,7 @@ DISTFILES=	lpcnet_191005_v1.0.tgz:main \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Neural Net speech coding
+WWW=		https://freedv.org/
 
 LICENSE=	LGPL21
 

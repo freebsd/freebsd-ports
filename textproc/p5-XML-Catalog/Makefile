@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Resolve public identifiers and remap system identifiers
+WWW=		https://metacpan.org/release/XML-Catalog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

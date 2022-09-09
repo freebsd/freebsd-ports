@@ -4,5 +4,3 @@ corresponding entities.  More sophisticated transformations,
 such as splitting the text into paragraphs or marking up
 bulleted lists, can be carried out by setting the
 appropriate options.
-
-WWW: https://metacpan.org/release/HTML-FromText

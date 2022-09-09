@@ -1,11 +1,12 @@
 PORTNAME=	dive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for exploring each layer in a docker image
+WWW=		https://github.com/wagoodman/dive
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

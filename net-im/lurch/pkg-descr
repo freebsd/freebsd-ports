@@ -1,0 +1,2 @@
+This plugin brings Axolotl, by now renamed to double ratchet, to libpurple
+applications such as Pidgin by implementing the XEP-0384: OMEMO Encryption.

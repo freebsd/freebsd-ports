@@ -4,5 +4,3 @@ system (CAS) while keeping the code as simple as
 possible in order to be comprehensible and easily
 extensible. SymPy is written entirely in Python and
 does not require any external libraries.
-
-WWW: http://sympy.org/

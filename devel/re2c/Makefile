@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/skvadrik/${PORTNAME}/releases/download/${DISTVE
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Lexer generator for C, C++ and Go with a focus on generating fast code
+WWW=		https://re2c.org/
 
 LICENSE=	PD
 

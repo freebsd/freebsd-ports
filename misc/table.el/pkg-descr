@@ -11,5 +11,3 @@ means that typing and deleting characters inside a cell do not affect
 any outside text but introduces appropriate formatting only to the
 cell contents. If necessary for accommodating added text in the cell,
 the cell automatically grows vertically and/or horizontally.
-
-WWW: http://table.sourceforge.net/

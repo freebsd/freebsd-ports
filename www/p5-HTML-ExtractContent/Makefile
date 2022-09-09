@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for HTML content extractor with scoring heuristics
+WWW=		https://metacpan.org/release/HTML-ExtractContent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

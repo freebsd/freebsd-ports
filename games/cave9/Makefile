@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gravity cave-exploration game
+WWW=		https://github.com/bart9h/cave9
 
 LICENSE=	GPLv3+ CC-BY-SA-3.0 CC-BY-2.5
 LICENSE_COMB=	multi

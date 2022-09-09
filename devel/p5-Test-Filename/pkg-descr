@@ -5,5 +5,3 @@ to hard-coded file paths being used in comparison tests.
 
 This simple module provides some handy functions to convert all those
 path separators automatically so filename tests will just DWIM.
-
-WWW: https://metacpan.org/release/Test-Filename

@@ -10,5 +10,3 @@ people.
 + Zlib, BZIP2, LZMA, and ZSTD compression methods.
 + Password protection through Traditional PKWARE and WinZIP AES encryption.
 + Buffered streaming for improved I/O performance.
-
-WWW: https://github.com/zlib-ng/minizip-ng

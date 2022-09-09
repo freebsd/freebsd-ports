@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/OpenSC/pam_p11/releases/download/pam_p11-${PORT
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PAM module using crypto tokens for auth
+WWW=		https://github.com/OpenSC/pam_p11
 
 LICENSE=	LGPL21
 

@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QML Box2D plugin
+WWW=		https://github.com/qml-box2d/qml-box2d
 
 USES=		compiler:c++11-lang gl qmake:outsource qt:5
 USE_GITHUB=	yes

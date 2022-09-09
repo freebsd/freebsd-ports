@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	sepulkarium45@yahoo.com
 COMMENT=	Plugin to use Skype chat from Pidgin(without Skype running)
+WWW=		https://github.com/EionRobb/skype4pidgin/tree/master/skypeweb
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl3.txt

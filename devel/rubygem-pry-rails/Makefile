@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use Pry as your rails console
+WWW=		https://github.com/rweng/pry-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -5,5 +5,3 @@ VV is designed for qualitative evaluation of image registration and deformation
 field visualization. It contains several tools for superimposing images using
 complementary colors or transparency, visualizing vector fields and defining
 landmarks.
-
-WWW: https://www.creatis.insa-lyon.fr/rio/vv/

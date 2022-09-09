@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	User/password authentication using Kerberose 5
+WWW=		https://metacpan.org/release/Authen-Simple-Kerberos
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${SOURCETARB}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
+WWW=		https://www.ljll.math.upmc.fr/frey/software.html #scivis
 
 LICENSE=	None
 LICENSE_NAME=	Special grant

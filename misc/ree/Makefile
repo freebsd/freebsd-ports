@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to dump your ROM extensions
+WWW=		https://github.com/alexmyczko/ree
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

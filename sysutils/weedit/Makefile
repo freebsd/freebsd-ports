@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File duplicate scanner with database support
+WWW=		http://freecode.com/projects/weedit
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	ftp
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Free multithreaded GTK-based FTP and SFTP client
+WWW=		http://gftp.seul.org/
 
 LICENSE=	GPLv2
 

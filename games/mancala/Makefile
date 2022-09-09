@@ -5,6 +5,7 @@ MASTER_SITES=	https://shh.thathost.com/pub-unix/files/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Implementation of the simple board game called Mancala
+WWW=		https://shh.thathost.com/pub-unix
 
 LICENSE=	ART10
 

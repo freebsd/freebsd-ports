@@ -4,5 +4,3 @@ for protocol analysis and debugging.  Each TCP flow is stored in its
 own file. Thus, the typical TCP flow will be stored in two files, one
 for each direction. tcpflow can also process stored 'tcpdump' packet
 flows.
-
-WWW: https://github.com/simsong/tcpflow

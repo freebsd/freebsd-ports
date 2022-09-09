@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guest Environment for Google Compute Engine
+WWW=		https://github.com/GoogleCloudPlatform/compute-image-packages
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

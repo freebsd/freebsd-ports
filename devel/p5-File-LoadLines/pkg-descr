@@ -7,5 +7,3 @@ it handles UTF-8, UTF-16 LE and BE, and UTF-32 LE and BE.
 
 Recognized line terminators are NL (Unix, Linux), CRLF (DOS, Windows) and CR
 (Mac)
-
-WWW: https://metacpan.org/dist/File-LoadLines

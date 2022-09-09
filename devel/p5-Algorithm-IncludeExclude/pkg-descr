@@ -1,4 +1,2 @@
 Algorithm::IncludeExclude lets you define a tree of include / exclude
 rules and then allows you to determine the best rule for a given path.
-
-WWW: https://metacpan.org/release/Algorithm-IncludeExclude

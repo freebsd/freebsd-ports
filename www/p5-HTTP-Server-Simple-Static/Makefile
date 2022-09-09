@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Serve static files with HTTP::Server::Simple
+WWW=		https://metacpan.org/release/HTTP-Server-Simple-Static
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,5 +4,3 @@ Transparency means that when you look at your code months later, it is obvious
 what the code does, making it easier to debug. Fast means the execution time of
 the code should be as fast as possible - this is mostly algorithm dependent, so
 we want the underlying library code to use the fastest algorithms possible.
-
-WWW: https://github.com/rmjarvis/tmv

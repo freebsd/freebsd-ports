@@ -5,5 +5,3 @@ It is designed to measure the effect of changes in operating system kernel
 design or system configuration changes such as CPU, I/O scheduler and file
 system changes and options.  With careful benchmarking, different hardware
 can be compared.
-
-WWW: http://users.on.net/~ckolivas/interbench/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manipulate RADIUS packets
+WWW=		https://metacpan.org/release/Net-Radius
 
 TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 

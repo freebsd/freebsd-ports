@@ -6,5 +6,3 @@ detection and animated GIF support. New operations and library integrations can
 also be easily implemented.
 
 It is written in pure-Python.
-
-WWW: https://github.com/wagtail/Willow

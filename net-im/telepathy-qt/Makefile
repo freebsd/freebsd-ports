@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	High-level Qt binding for Telepathy
+WWW=		https://telepathy.freedesktop.org/doc/telepathy-qt
 
 LICENSE=	LGPL21
 

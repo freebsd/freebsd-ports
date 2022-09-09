@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Microsoft Publisher file format
+WWW=		https://wiki.documentfoundation.org/DLP/Libraries/libmspub
 
 LICENSE=	MPL20
 

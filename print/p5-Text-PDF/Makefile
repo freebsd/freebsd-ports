@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PDF manipulation module
+WWW=		https://metacpan.org/release/Text-PDF
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

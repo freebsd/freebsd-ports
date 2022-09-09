@@ -1,34 +1,47 @@
 PORTNAME=	sdl2_image
-PORTVERSION=	2.0.5
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	https://www.libsdl.org/projects/SDL_image/release/
-DISTNAME=	SDL2_image-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple library to load images of various formats as SDL surfaces
+WWW=		https://github.com/libsdl-org/SDL_image
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake libtool localbase pkgconfig pathfix sdl
+USES=		cmake sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	libsdl-org
+GH_PROJECT=	SDL_image
 USE_SDL=	sdl2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-jpg-shared --disable-png-shared \
-		--disable-tif-shared --disable-webp-shared
-INSTALL_TARGET=	install-strip
+CMAKE_OFF=	SDL2IMAGE_DEPS_SHARED \
+		SDL2IMAGE_SAMPLES \
+		SDL2IMAGE_BACKEND_STB
+CMAKE_ARGS=	-DSDL2IMAGE_DEBUG_POSTFIX:STRING=
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	JPEG PNG TIFF WEBP
-OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
+OPTIONS_DEFINE=	AVIF JPEG JXL PNG TIFF WEBP TEST
+OPTIONS_DEFAULT=AVIF JPEG JXL PNG
 
 JPEG_USES=		jpeg
-JPEG_CONFIGURE_ENABLE=	jpg
+JPEG_CMAKE_BOOL=	SDL2IMAGE_JPG
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_CONFIGURE_ENABLE=	png
+PNG_CMAKE_BOOL=		SDL2IMAGE_PNG
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_CONFIGURE_ENABLE=	tif
+TIFF_CMAKE_BOOL=	SDL2IMAGE_TIF
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-WEBP_CONFIGURE_ENABLE=	webp
+WEBP_CMAKE_BOOL=	SDL2IMAGE_WEBP
+AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
+AVIF_CMAKE_BOOL=	SDL2IMAGE_AVIF
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_CMAKE_BOOL=		SDL2IMAGE_JXL
+TEST_CMAKE_BOOL=	SDL2IMAGE_TESTS
+TEST_CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
+TEST_LIB_DEPENDS=	libunwind.so:devel/libunwind
+TEST_TEST_TARGET=	test
+TEST_IMPLIES=		PNG JPEG  # does not build otherwise
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/external

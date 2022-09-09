@@ -7,6 +7,7 @@ DISTFILES=	#
 
 MAINTAINER=	re@FreeBSD.org
 COMMENT=	FreeBSD release manifests
+WWW=		https://www.FreeBSD.org
 
 LICENSE=	BSD2CLAUSE
 

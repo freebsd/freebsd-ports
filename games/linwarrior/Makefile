@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Navigate a mech through a 3D world and fire at enemies
+WWW=		https://www.hackcraft.de/games/linwarrior_3d/index.htm
 
 USES=		compiler:c++11-lang gl gmake openal:al,alut sdl
 USE_GL=		gl glu

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Simple async ORM with fastapi in mind and pydantic validation
+WWW=		https://github.com/collerek/ormar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

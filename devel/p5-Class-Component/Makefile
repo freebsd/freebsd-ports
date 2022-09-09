@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pluggable component framework
+WWW=		https://metacpan.org/release/Class-Component
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Carp-Clan>0:devel/p5-Carp-Clan \

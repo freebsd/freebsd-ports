@@ -7,5 +7,3 @@ name it.
 Note: The port uses the java version by default. You can select the .NET
       version via WITH_MONO=yes, and disable installation of the
       java parts with WITHOUT_JAVA=yes.
-
-WWW: http://www.harukizaemon.com/simian/

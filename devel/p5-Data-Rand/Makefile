@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating random strings or arrays
+WWW=		https://metacpan.org/release/Data-Rand
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

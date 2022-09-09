@@ -1,7 +1,7 @@
 PORTNAME=	chronograf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://nodejs.org/download/release/v${NODEJS_VERSION}/:node
 DISTFILES=	yarn-cache-${PKGNAME}.tar.xz:prefetch \
@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open source monitoring and visualization UI for the TICK stack
+WWW=		https://www.influxdata.com/time-series-platform/chronograf/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

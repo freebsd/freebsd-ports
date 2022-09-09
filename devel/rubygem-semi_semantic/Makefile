@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for parsing/formatting/comparing semi-semantic versions
+WWW=		https://github.com/pivotal-cf-experimental/semi_semantic
 
 LICENSE=	APACHE20
 

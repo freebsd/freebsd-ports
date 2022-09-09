@@ -5,5 +5,3 @@ $ heroku logs --tail
 
 or from enabled addons like papertrail.  By using Heroku's logplex, you can
 treat logs as event streams.
-
-WWW: https://github.com/heroku/rails_stdout_logging/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to hiveminder.com
+WWW=		https://metacpan.org/release/Net-Hiveminder
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Simple>=0:mail/p5-Email-Simple \

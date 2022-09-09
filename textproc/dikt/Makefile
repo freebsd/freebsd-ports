@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	info@dikt.tv
 COMMENT=	Dictionary for KDE
+WWW=		https://dikt.tv/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

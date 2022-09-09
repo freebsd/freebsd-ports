@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	IPv4/6 and 128 bit number utilities
+WWW=		https://metacpan.org/release/MIKER/NetAddr-IP-Lite-1.01
 
 LICENSE=	ART10
 

@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast authenticated encryption CLI tool
+WWW=		https://github.com/vstakhov/hpenc/
 
 LICENSE=	BSD2CLAUSE
 

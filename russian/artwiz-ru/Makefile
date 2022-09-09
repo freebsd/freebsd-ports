@@ -8,6 +8,7 @@ DISTNAME=	artwiz_ru
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian Artwiz fonts
+WWW=		http://dev.gentoo.org/~sergey/artwiz.html
 
 USES=		fonts tar:bzip2
 NO_BUILD=	yes

@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processing tools to generate documentation from source files
+WWW=		http://web.engr.illinois.edu/~wgropp/projects/software/sowing/
 
 BUILD_DEPENDS=	ppmtogif:graphics/netpbm
 RUN_DEPENDS=	ppmtogif:graphics/netpbm

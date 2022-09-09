@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libstatgrab/libstatgrab/releases/download/LIBST
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
+WWW=		https://libstatgrab.org/
 
 LICENSE=	LGPL21
 

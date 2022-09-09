@@ -1,4 +1,2 @@
 Filesys::DfPortable module provides a portable way to obtain filesystem disk
 space information.
-
-WWW: https://metacpan.org/release/Filesys-DfPortable

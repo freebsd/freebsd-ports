@@ -4,5 +4,3 @@ Koka and Lean languages.
 
 It is a drop-in replacement for malloc and can be used in other programs without
 code changes.
-
-WWW: https://github.com/microsoft/mimalloc

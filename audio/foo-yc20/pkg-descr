@@ -7,5 +7,3 @@ horizontal movement of the keys. As there very few (almost none) midi keyboards
 which produce such information, this feature has been left out of the emulation.
 Instead of the touch vibrato control, the control panel hosts a "realism"
 switch.
-
-WWW: https://github.com/sampov2/foo-yc20

@@ -8,6 +8,7 @@ DISTNAME=	XStatic-tv4-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	tv4 (XStatic packaging standard)
+WWW=		https://geraintluff.github.io/tv4/
 
 LICENSE=	MIT PD
 LICENSE_COMB=	dual

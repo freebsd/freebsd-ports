@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creates colorful matrix of Test::Harness test run results
+WWW=		https://metacpan.org/release/Test-TAP-HTMLMatrix
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-TAP-Model>=0:devel/p5-Test-TAP-Model \

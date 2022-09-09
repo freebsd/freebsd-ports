@@ -1,11 +1,12 @@
 PORTNAME=	minio
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 DIST_SUBDIR=	minio
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Amazon S3 compatible object storage server
+WWW=		https://minio.io/
 
 LICENSE=	APACHE20
 

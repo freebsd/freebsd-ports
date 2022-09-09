@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Zulu dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	zu
 

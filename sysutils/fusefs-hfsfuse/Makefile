@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	me@cameronkatri.com
 COMMENT=	FUSE driver for HFS+ filesystems
+WWW=		https://github.com/0x09/hfsfuse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/src/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Uncertainty treatment library
+WWW=		https://openturns.github.io/www/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

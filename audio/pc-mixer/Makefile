@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	jmaloney@ixsystems.com
 COMMENT=	QT5 based audio mixer for FreeBSD
+WWW=		https://github.com/trueos/pc-mixer
 
 LICENSE=	BSD2CLAUSE
 

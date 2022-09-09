@@ -7,6 +7,7 @@ DISTNAME=	lila-gtk-extras-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.0 Lila additional themes
+WWW=		https://lila-center.info/
 
 WRKSRC=		${WRKDIR}/lila-gtk-extras
 NO_BUILD=	yes

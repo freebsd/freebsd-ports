@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OmniAuth Shibboleth strategies for OmniAuth 1.x
+WWW=		https://github.com/toyokazu/omniauth-shibboleth
 
 LICENSE=	MIT
 

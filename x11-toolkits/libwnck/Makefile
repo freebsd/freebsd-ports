@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library used for writing pagers and taskslists
+WWW=		https://www.gnome.org/
 
 USES=		tar:xz
 

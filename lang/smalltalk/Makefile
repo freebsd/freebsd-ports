@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU Smalltalk
+WWW=		https://smalltalk.gnu.org/
 
 BROKEN_aarch64=		Fails to link: undefined reference to sbrk
 BROKEN_powerpc64=	Fails to build: gst-package: did not understand #~

@@ -7,6 +7,7 @@ DISTNAME=	scriptNugget-ruby-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Script Nugget Ruby
+WWW=		http://razorbacktm.sourceforge.net/
 
 NO_ARCH=	yes
 USE_RUBY=		yes

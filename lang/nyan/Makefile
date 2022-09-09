@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lang
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Data description language designed for openage
+WWW=		https://github.com/SFTtech/nyan
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/legal/LGPLv3

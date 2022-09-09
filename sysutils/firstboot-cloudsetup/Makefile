@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	firstboot-
 
 MAINTAINER=	jornane@icloud.com
 COMMENT=	Configure network and user when the system first boots
+WWW=		https://git.sr.ht/~jornane/cloudsetup
 
 LICENSE=	BSD3CLAUSE
 

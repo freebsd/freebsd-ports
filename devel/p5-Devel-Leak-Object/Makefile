@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Detect leaks of objects
+WWW=		https://metacpan.org/release/Devel-Leak-Object
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hashes (and objects based on hashes) with encrypting fields
+WWW=		https://metacpan.org/release/Tie-EncryptedHash
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

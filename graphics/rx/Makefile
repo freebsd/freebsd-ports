@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-editor
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern and minimalist pixel editor implemented in rust
+WWW=		https://rx.cloudhead.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

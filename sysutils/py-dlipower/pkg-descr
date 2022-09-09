@@ -6,5 +6,3 @@ managing the web power switch from python programs.
 
 When run as a script this acts as a command line utility to manage the
 DLI Power switch.
-
-WWW: https://github.com/dwighthubbard/python-dlipower

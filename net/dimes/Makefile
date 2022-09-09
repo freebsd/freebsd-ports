@@ -7,6 +7,7 @@ DISTNAME=	Dimes_Agent_052_Linux
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Distributed research project for measurement topology of the Internet
+WWW=		http://netdimes.org
 
 NO_PACKAGE=	There is the string in properties.xml which system-depends
 

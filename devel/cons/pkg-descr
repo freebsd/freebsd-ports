@@ -9,5 +9,3 @@ of software spread over multiple source directories. Cons makes it
 easy to create build scripts that are simple, understandable and
 maintainable. Cons ensures that complex software is easily and
 accurately reproducible.
-
-WWW: http://www.dsmit.com/cons/

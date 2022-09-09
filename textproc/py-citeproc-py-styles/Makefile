@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Static resources package for citeproc-py
+WWW=		https://github.com/inveniosoftware/citeproc-py-styles
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for merging hierarchies using the C3 algorithm
+WWW=		https://metacpan.org/release/Algorithm-C3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

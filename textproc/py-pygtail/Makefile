@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python module which reads log file lines that have not been read
+WWW=		https://pypi.org/project/pygtail/
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

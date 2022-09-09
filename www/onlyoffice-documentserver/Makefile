@@ -16,6 +16,7 @@ DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Secure office and productivity apps
+WWW=		https://www.onlyoffice.com/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME:S,-,_,}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AacPlus v2 command-line encoder
+WWW=		https://teknoraver.net/software/mp4tools/
 
 USES=		cpe gmake
 

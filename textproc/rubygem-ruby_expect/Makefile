@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple expect implementation
+WWW=		https://github.com/abates/ruby_expect
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

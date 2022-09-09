@@ -1,11 +1,11 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.7.0-23
-DISTVERSIONSUFFIX=	-g265f2800
+DISTVERSION=	1.7.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	VHDL compiler and simulator
+WWW=		https://github.com/nickg/nvc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -33,7 +33,8 @@ LDFLAGS+=	-lexecinfo
 
 CONFIGURE_ARGS=	--with-llvm=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
 
-TEST_TARGET=	check # one test fails
+TEST_TARGET=	check # several tests fail, see https://github.com/nickg/nvc/issues/530
+TEST_WRKSRC=	${WRKSRC}/.build
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" # only for tests
 

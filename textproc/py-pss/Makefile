@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for grepping through source code
+WWW=		https://github.com/eliben/pss
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

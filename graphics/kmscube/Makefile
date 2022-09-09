@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Example KMS/GBM/EGL application
+WWW=		https://gitlab.freedesktop.org/mesa/kmscube
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

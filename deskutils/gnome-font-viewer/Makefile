@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME font viewer utility
+WWW=		https://github.com/GNOME/gnome-font-viewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Asynchronous Python HTTP for Humans
+WWW=		https://github.com/tardyp/txrequests
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

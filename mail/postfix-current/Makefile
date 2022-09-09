@@ -16,6 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Experimental Postfix version ${COMMENT_${FLAVOR}}
+WWW=		https://www.postfix.org/
 
 LICENSE=	EPL IPL10
 LICENSE_COMB=	multi

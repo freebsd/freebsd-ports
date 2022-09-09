@@ -4,6 +4,7 @@ CATEGORIES=	www devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy and secure management of files submitted via HTML Forms
+WWW=		https://pear.php.net/package/HTTP_Upload
 
 LICENSE=	LGPL3
 

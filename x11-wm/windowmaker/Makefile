@@ -7,6 +7,7 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GNUstep-compliant NeXTstep window manager clone
+WWW=		https://windowmaker.org/
 
 LICENSE=	GPLv2
 

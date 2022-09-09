@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP Grammar Parser
+WWW=		https://pear.php.net/package/PHP_Parser
 
 USES=		pear
 

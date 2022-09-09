@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Django based pastebin for text and code
+WWW=		https://github.com/DarrenOfficial/dpaste
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

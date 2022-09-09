@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the strategy board game 'Blokus'
+WWW=		http://blokish.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

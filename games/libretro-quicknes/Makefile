@@ -2,8 +2,9 @@ PORTNAME=	libretro-quicknes
 PORTVERSION=	0.20220228
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NES emulator core for libretro
+WWW=		https://github.com/libretro/QuickNES_Core
 
 LICENSE=	GPLv2
 

@@ -1,11 +1,12 @@
 PORTNAME=	fenics-basix
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2.post1
+DISTVERSION=	0.5.0.post0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FEniCS finite element basis evaluation library
+WWW=		https://github.com/FEniCS/basix
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libbasix.so:math/fenics-basix
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		localbase python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # pytest doesn't find any tests, see https://github.com/FEniCS/basix/issues/590
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FEniCS

@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	henning.matyschok@outlook.com
 COMMENT=	Virtual Ethernet Interface
+WWW=		https://github.com/hmatyschok/if_vether
 
 LICENSE=	BSD2CLAUSE ISCL
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reading XML and providing path information based on a pull-parser
+WWW=		https://metacpan.org/release/XML-Reader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

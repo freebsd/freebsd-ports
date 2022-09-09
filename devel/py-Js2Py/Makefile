@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	JavaScript to Python translator and interpreter
+WWW=		https://pypi.org/project/Js2Py/
 
 LICENSE=	MIT
 

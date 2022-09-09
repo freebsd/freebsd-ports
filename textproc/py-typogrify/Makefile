@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Filters to enhance web typography
+WWW=		https://github.com/mintchaos/typogrify/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

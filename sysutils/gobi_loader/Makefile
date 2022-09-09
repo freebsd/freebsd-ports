@@ -4,6 +4,7 @@ CATEGORIES=	sysutils net
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
 COMMENT=	Firmware Loader for Qualcomm Gobi USB Chipsets
+WWW=		https://github.com/kicer/gobi_loader
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

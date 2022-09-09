@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/libinotify-kqueue/libinotify-kqueue/releases/do
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Kevent based inotify compatible library
+WWW=		https://github.com/libinotify-kqueue/libinotify-kqueue
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

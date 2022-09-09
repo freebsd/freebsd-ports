@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Moose minus the antlers
+WWW=		https://metacpan.org/release/Mouse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

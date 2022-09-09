@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform multipart-post requests using Faraday
+WWW=		https://github.com/lostisland/faraday-multipart
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

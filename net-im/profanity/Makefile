@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Console based XMPP client
+WWW=		http://www.profanity.im/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

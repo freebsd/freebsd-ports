@@ -1,0 +1,7 @@
+Python tail is a simple implementation of GNU tail and head.
+
+It provides 3 main functions that can be performed on any file-like object that
+supports seek() and tell().
+- tail: read lines from the end of a file
+- head: read lines from the top of a file
+- follow: read lines as a file grows

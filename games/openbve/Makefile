@@ -1,9 +1,10 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.8.4.0
+PORTVERSION=	1.8.4.1
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Realistic 3D train/railway simulator
+WWW=		https://openbve-project.net/
 
 LICENSE=	PD
 
@@ -75,8 +76,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/debian/openbve.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
-	@${REINPLACE_CMD} -e 's,linux,${OPSYS:tl},' \
-		${STAGEDIR}${DATADIR}/OpenTK.dll.config
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

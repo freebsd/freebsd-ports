@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Containers backed on dlang by std.experimental.allocator
+WWW=		https://github.com/dlang-community/stdx-allocator
 
 LICENSE=	BSL
 

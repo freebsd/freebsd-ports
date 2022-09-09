@@ -8,6 +8,7 @@ DISTNAME=	libdbiwrapper-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for generic DBI database access
+WWW=		http://dbiwrapper.sourceforge.net/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

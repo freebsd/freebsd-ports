@@ -11,5 +11,3 @@ filters on the path from A to B.
 Currently NetSPoC generates ACLs and static routing entries for Cisco routers
 and PIX firewalls. Support for network address translation and IPSec has not
 been implemented yet.
-
-WWW: http://netspoc.berlios.de/

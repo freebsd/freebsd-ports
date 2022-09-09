@@ -6,6 +6,7 @@ PKGNAMEPREFIX=
 
 MAINTAINER=	pavel@ext.by
 COMMENT=	Shutdowns a running jail and all its processes
+WWW=		http://ext.by/jkill/
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

@@ -14,5 +14,3 @@ main.rb features the following:
 
   In short main.rb aims to drastically lower the barrier to writing
   uniform command line applications.
-
-WWW: https://github.com/ahoward/main

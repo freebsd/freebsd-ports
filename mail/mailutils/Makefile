@@ -5,6 +5,7 @@ MASTER_SITES=	GNU GNU_ALPHA
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Utilities, daemons, and filters for processing e-mail
+WWW=		https://mailutils.org/
 
 LICENSE=	GPLv3+
 

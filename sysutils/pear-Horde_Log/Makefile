@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Logging library
+WWW=		https://pear.horde.org
 
 OPTIONS_DEFINE=	SCRIBE
 SCRIBE_DESC=	Enable scribe support

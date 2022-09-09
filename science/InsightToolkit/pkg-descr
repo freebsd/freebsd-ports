@@ -6,5 +6,3 @@ CT or MRI scanners. Registration is the task of aligning or developing
 correspondences between data. For example, in the medical environment,
 a CT scan may be aligned with a MRI scan in order to combine the
 information contained in both.
-
-WWW: http://www.itk.org

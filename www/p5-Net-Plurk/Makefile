@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Plurk API
+WWW=		https://metacpan.org/release/Net-Plurk
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

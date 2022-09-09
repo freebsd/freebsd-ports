@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to manage the OS Services
+WWW=		https://github.com/puppetlabs/mcollective-service-agent
 
 LICENSE=	APACHE20
 

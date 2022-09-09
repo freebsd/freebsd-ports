@@ -11,6 +11,7 @@ MASTER_SITES=	LOCAL/bf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doulos SIL TrueType font collection, compact variant
+WWW=		https://scripts.sil.org/cms/scripts/page.php?item_id=DoulosSILfont
 
 LICENSE=	OFL11
 

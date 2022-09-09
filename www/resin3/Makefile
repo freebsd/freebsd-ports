@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.caucho.com/download/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Java-based Application Server, 3.x branch
+WWW=		https://www.caucho.com/
 
 LICENSE=	GPLv2
 

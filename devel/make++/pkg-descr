@@ -9,5 +9,3 @@ called makepp (or make++) because
 
 For backward compatibility, it will work with input files designed
 for make, but there are much better ways to do things.
-
-WWW: http://makepp.sourceforge.net/

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Mock D-Bus objects for tests
+WWW=		https://pypi.org/project/python-dbusmock
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

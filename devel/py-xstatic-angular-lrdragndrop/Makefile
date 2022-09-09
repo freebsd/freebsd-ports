@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Angular-lrdragndrop-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular-lrdragndrop (XStatic packaging standard)
+WWW=		https://github.com/lorenzofox3/lrDragNDrop
 
 LICENSE=	MIT
 

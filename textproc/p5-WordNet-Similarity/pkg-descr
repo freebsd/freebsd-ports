@@ -19,5 +19,3 @@ likely to have higher precision and recall values.
 A command line interface to these modules is also present in the package. The
 simple, user-friendly interface returns the relatedness measure of two given
 words.
-
-WWW: https://metacpan.org/release/WordNet-Similarity

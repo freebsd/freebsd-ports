@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libfsntfs/releases/download/${PORTVERSIO
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the New Technology File System (NTFS)
+WWW=		https://github.com/libyal/libfsntfs
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

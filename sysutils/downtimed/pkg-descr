@@ -11,5 +11,3 @@ a time stamp file on the disk.
 
 downtimes(1) is a command-line tool which can be used to inspect previous
 downtime records.
-
-WWW: https://dist.epipe.com/downtimed/

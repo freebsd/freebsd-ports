@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Python library for DKIM email signing and verification
+WWW=		https://launchpad.net/dkimpy
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Remove the need to call super().get_context_data(**kwargs) in nearly every view
+WWW=		https://github.com/rixx/django-context-decorator
 
 LICENSE=	BSD3CLAUSE
 

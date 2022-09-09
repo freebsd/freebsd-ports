@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Shared library for LXQt applications
+WWW=		https://github.com/lxqt/liblxqt
 
 LICENSE=	LGPL21+
 

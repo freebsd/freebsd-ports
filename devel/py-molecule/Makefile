@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Aid for the development and testing of Ansible roles
+WWW=		https://molecule.readthedocs.io/en/latest/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Postfix Log Entry Summarizer
+WWW=		https://jimsun.LinxNet.com/postfix_contrib.html
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://people.FreeBSD.org/~seanc/libmemcache/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for accessing a memcache cluster
+WWW=		https://people.FreeBSD.org/~seanc/libmemcache/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

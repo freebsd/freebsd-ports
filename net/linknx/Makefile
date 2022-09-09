@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Rule-based event handling in a KNX installation
+WWW=		http://linknx.sourceforge.net/
 
 LICENSE=	GPLv2
 

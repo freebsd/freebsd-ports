@@ -5,6 +5,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	IBus engine for users of the Cangjie and Quick
+WWW=		https://cangjians.github.io/projects/ibus-cangjie/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

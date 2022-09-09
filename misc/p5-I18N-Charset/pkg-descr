@@ -6,5 +6,3 @@ Set names to the names officially registered with IANA.  For example,
 It also maps character set names to Unicode::Map8 conversion scheme
 names (if Unicode::Map8 is installed).  For example, the Unicode::Map8
 scheme name for 'windows-1251' is 'cp1251'.
-
-WWW: https://metacpan.org/release/I18N-Charset

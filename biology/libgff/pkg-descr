@@ -7,5 +7,3 @@ This library draws directly from the code in GFFRead and GCLib, and
 exists primarily to remove functionality (and hence code) that is
 unnecessary for our downstream purposes. In the future, it may be
 appropriate to just replace this library wholesale with GCLib.
-
-WWW: https://github.com/COMBINE-lab/libgff

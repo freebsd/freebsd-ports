@@ -4,6 +4,7 @@ CATEGORIES=	games java
 
 MAINTAINER=	freebsd@skinc.ru
 COMMENT=	Lightweight Java Game Library
+WWW=		https://legacy.lwjgl.org
 
 LICENSE=	BSD3CLAUSE
 

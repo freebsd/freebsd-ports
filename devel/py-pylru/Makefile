@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Least recently used (lru) cache implementation
+WWW=		https://github.com/jlhutch/pylru
 
 LICENSE=	GPLv2
 

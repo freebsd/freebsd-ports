@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${_MAIN_DISTFILE}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Reference management for bibliographic data and research materials
+WWW=		https://www.zotero.org/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKDIR}/COPYING

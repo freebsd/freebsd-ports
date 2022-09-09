@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SaltStack Plug-In for Foreman's Smart Proxy
+WWW=		https://github.com/theforeman/smart_proxy_salt
 
 LICENSE=	GPLv3
 

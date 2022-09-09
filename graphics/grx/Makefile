@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2D graphics library
+WWW=		http://grx.gnu.de/
 
 LICENSE=	LGPL20 MIT
 LICENSE_COMB=	multi

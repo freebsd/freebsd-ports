@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
+WWW=		https://clutter-project.org/
 
 LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter
 

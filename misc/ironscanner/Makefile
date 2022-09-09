@@ -4,6 +4,7 @@ CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collect as much information as possible on image scanners
+WWW=		https://openpaper.work/en-us/scanner_db/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

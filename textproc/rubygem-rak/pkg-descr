@@ -2,5 +2,3 @@ Rak is a grep replacement in pure Ruby. It accepts Ruby syntax regular
 expressions and automatically recurses directories, skipping .svn/,
 .cvs/, pkg/ and more things you don't care about. It is based on the Perl
 tool.
-
-WWW: https://github.com/danlucraft/rak

@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	RIME support for Fcitx5
+WWW=		https://github.com/fcitx/fcitx5-rime
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt

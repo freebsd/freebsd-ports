@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Ralf Engelschall's mm library
+WWW=		https://metacpan.org/release/IPC-MM
 
 LIB_DEPENDS=	libmm.so:devel/mm
 

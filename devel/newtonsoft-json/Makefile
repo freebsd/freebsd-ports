@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular high-performance JSON framework for .NET
+WWW=		http://james.newtonking.com/json
 
 LICENSE=	MIT
 

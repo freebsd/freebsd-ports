@@ -3,5 +3,3 @@ sophisticated methods to fight spam with very low false positive rate.  Client
 software for various MTA is provided.
 
 This package installs hand compiled spamtest library.
-
-WWW: http://kaspersky.com

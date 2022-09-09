@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Meta-commands handler for Postgres Database
+WWW=		https://github.com/dbcli/pgspecial
 
 LICENSE=	BSD3CLAUSE
 

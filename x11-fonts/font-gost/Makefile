@@ -9,6 +9,7 @@ DISTNAME=	TTF_FON
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GOST TrueType fonts
+WWW=		http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/
 
 USES=		fonts zip
 NO_BUILD=	yes

@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ implementation of RSocket
+WWW=		https://rsocket.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

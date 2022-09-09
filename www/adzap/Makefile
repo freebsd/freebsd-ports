@@ -6,6 +6,7 @@ MASTER_SITES=	http://adzapper.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter out animated ad banners from web pages
+WWW=		http://adzapper.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/jdictionary/jDictionary/jDictionary%20version%20${PORTVERSION}
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Platform independent, plugin based dictionary
+WWW=		http://jdictionary.info/
 
 USE_JAVA=	yes
 

@@ -7,6 +7,7 @@ MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
+WWW=		http://home.gna.org/blackshadeselite/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

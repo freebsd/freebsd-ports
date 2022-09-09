@@ -7,6 +7,7 @@ DISTNAME=	php-weathermap-${PORTVERSION}
 
 MAINTAINER=	hhyou@cs.nctu.edu.tw
 COMMENT=	Network visualisation tool with web editor
+WWW=		https://www.network-weathermap.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

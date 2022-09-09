@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of Perl sort subroutines
+WWW=		https://metacpan.org/release/Sort-Sub
 
 RUN_DEPENDS=	p5-Complete-Sah>=0.005:devel/p5-Complete-Sah \
 		p5-Complete-Sequence>=0.002:devel/p5-Complete-Sequence \

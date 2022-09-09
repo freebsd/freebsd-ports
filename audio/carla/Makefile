@@ -8,6 +8,7 @@ PATCHFILES=	5aba957f3cf0fb4dcef4d2add679603e6c048fb4.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio plugin host for Jack and PulseAudio
+WWW=		https://kx.studio/Applications:Carla
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt

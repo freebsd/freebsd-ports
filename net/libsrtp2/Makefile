@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Secure RTP (SRTP) Reference Implementation
+WWW=		https://github.com/cisco/libsrtp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

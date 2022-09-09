@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tools for managing/searching Python related files
+WWW=		https://pypi.org/project/pycmd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

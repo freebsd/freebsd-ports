@@ -4,5 +4,3 @@ Consumer support. It was designed with message delivery
 reliability and high performance in mind, current figures
 exceed 800000 msgs/second for the producer and 3 million
 msgs/second for the consumer.
-
-WWW: https://github.com/edenhill/librdkafka/

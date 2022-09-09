@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides jQUery scrollTo for Rails 3 applications
+WWW=		https://github.com/JohnColvin/jquery-scrollto-rails
 
 LICENSE=	MIT
 

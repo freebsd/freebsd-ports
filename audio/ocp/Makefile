@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/mywave82/opencubicplayer/releases/download/v${P
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Legendary Open Cubic Player
+WWW=		https://stian.cubic.org/project-ocp.php
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

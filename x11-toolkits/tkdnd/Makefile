@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Native drag and drop capabilities for Tk
+WWW=		http://www.iit.demokritos.gr/~petasis/Tcl/tkDND/tkDND.html
 
 USES+=		tk:tea xorg
 USE_XORG=	x11 xext

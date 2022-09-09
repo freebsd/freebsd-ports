@@ -15,5 +15,3 @@ as ARM), hpenc provides portable and fast chacha20 cipher.
 generator. In a set of standard tests (diehard) on the generated sequences
 hpenc generates secure sequences of pseudo-random numbers on a very high
 speed (gigabytes per second).
-
-WWW: https://github.com/vstakhov/hpenc/

@@ -9,6 +9,7 @@ DISTFILES?=	go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-${BOOTSTRAP_TAG}.ta
 
 MAINTAINER=	go@FreeBSD.org
 COMMENT?=	Go programming language (development version)
+WWW=		https://golang.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

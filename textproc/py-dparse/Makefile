@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parser for Python dependency files
+WWW=		https://github.com/pyupio/dparse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

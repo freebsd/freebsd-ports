@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Video understanding deep learning library
+WWW=		https://github.com/facebookresearch/pytorchvideo
 
 LICENSE=	APACHE20
 

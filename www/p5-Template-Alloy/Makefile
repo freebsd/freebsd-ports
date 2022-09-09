@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mixing of all of the major template systems
+WWW=		https://metacpan.org/release/Template-Alloy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

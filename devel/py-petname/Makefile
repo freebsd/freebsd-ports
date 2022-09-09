@@ -1,12 +1,12 @@
 PORTNAME=	petname
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Generate human-readable, random object names
+WWW=		https://github.com/dustinkirkland/python-petname
 
 LICENSE=	APACHE20
 

@@ -5,5 +5,3 @@ plugins, and then loading one or more of them.
 This module was inspired by Mojo::Loader, which I have used in a number of
 projects. But some people were wary of requiring Mojolicious just to get a
 module loader, which prompted me to create Module::Loader.
-
-WWW: https://metacpan.org/release/Module-Loader

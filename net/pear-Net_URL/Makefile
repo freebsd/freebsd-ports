@@ -4,6 +4,7 @@ CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy parsing of URLs
+WWW=		https://pear.php.net/package/Net_URL
 
 LICENSE=	BSD3CLAUSE
 

@@ -1,5 +1,3 @@
 This project provides Vulkan tools and utilities that can assist
 development by enabling developers to verify their applications
 correct use of the Vulkan API.
-
-WWW: https://github.com/KhronosGroup/Vulkan-Tools

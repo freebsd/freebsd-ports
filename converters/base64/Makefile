@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Utility to encode and decode base64 files
+WWW=		https://www.fourmilab.ch/webtools/base64/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

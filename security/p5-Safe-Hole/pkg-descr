@@ -7,5 +7,3 @@ the package name, such as class methods.
 
 	Through Safe::Hole, we can execute outside defined subroutines
 in the original main compartment from the Safe compartment.
-
-WWW: https://metacpan.org/release/Safe-Hole

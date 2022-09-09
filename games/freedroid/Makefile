@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}Classic/FreedroidClassic-${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Clone of the Commodore game Paradroid
+WWW=		https://www.freedroid.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

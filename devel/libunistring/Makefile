@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Unicode string library
+WWW=		https://www.gnu.org/software/libunistring/
 
 LICENSE=	GFDL GPLv2 LGPL3+
 LICENSE_COMB=	multi

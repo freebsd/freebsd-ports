@@ -1,11 +1,12 @@
 PORTNAME=	semaphore
 PORTVERSION=	2.8.53
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Open Source alternative to Ansible Tower
+WWW=		https://ansible-semaphore.github.io/semaphore/
 
 LICENSE=	MIT
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

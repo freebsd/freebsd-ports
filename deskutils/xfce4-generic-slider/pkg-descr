@@ -6,5 +6,3 @@ normalization factor) to the command. You get the value of the "variable" by
 setting a sychronize command. The command should return a numeric value and this
 value will be regarded as a fraction of a second adjustable normalization
 factor.
-
-WWW: https://gitlab.xfce.org/panel-plugins/xfce4-generic-slider

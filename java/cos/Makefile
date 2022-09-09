@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-05Nov2002
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	The O'Reilly package of utility classes for servlet developers
+WWW=		http://www.servlets.com/cos/index.html
 
 # Converted from RESTRICTED
 LICENSE=	cos

@@ -6,6 +6,7 @@ MASTER_SITES=	https://xse.com/leres/arduino/arduino-bsd-mk/ \
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Build Arduino sketches from the command line on FreeBSD
+WWW=		https://xse.com/leres/arduino/arduino-bsd-mk/
 
 LICENSE=	BSD2CLAUSE
 

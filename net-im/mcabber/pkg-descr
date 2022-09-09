@@ -12,5 +12,3 @@ Here are some of the features of mcabber:
  o   External actions: Some events (like receiving a message) can trig-
      ger an external action, for example a  shell  script  (you  need  to
      enable  it  in  your  configuration  file).
-
-WWW: http://www.lilotux.net/~mikael/mcabber/

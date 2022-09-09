@@ -6,5 +6,3 @@ as time progresses.
 
 The ZnapZend configuration is stored as properties in
 the ZFS filesystem itself.
-
-WWW: https://www.znapzend.org/

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin constraining relationships
+WWW=		https://github.com/datamapper/dm-constraints
 
 LICENSE=	MIT
 

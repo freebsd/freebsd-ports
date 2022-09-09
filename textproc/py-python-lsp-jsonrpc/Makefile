@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Python JSON RPC Server
+WWW=		https://github.com/python-lsp/python-lsp-jsonrpc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	GNOME \
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
+WWW=		https://www.jirka.org/genius.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

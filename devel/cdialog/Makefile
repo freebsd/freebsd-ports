@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	jcpierri@gmail.com
 COMMENT=	Enhanced version of 'dialog' to work with ncurses
+WWW=		https://invisible-island.net/dialog/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
+WWW=		https://perl.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

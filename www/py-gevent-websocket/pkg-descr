@@ -3,5 +3,3 @@ Features include:
 Integration on both socket level or using an abstract interface.
 RPC and PubSub framework using WAMP (WebSocket Application Messaging Protocol).
 Easily extendible using a simple WebSocket protocol plugin API
-
-WWW: https://www.gitlab.com/noppo/gevent-websocket

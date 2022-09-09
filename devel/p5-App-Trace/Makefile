@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded debug statements, including call/return tracing
+WWW=		https://metacpan.org/release/App-Trace
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

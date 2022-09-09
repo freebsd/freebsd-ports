@@ -6,5 +6,3 @@ effects, on-screen move lists using SAN notation, undo functionality, and
 savegames in PGN format. It comes with its own engine called Dreamer.
 
 DreamChess can be controlled with the mouse and/or the keyboard.
-
-WWW: https://www.dreamchess.org

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pytest plugin to enable format checking with black
+WWW=		https://github.com/shopkeep/pytest-black
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

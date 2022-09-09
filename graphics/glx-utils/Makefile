@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	List GLX capabilities and simple renderer
+WWW=		https://www.mesa3d.org/
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	math textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension with routines for statistical computation
+WWW=		https://pecl.php.net/package/stats
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

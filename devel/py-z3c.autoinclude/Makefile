@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Automatically include ZCML
+WWW=		https://pypi.org/project/z3c.autoinclude/
 
 LICENSE=	ZPL21
 

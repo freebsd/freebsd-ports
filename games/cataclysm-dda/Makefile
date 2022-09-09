@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Roguelike set in a post-apocalyptic world
+WWW=		https://cataclysmdda.org
 
 LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

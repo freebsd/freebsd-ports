@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight, extensible REPL for Perl
+WWW=		https://metacpan.org/pod/Reply
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Make a hash out of the return from a search using Net::LDAP::Search
+WWW=		https://metacpan.org/release/Net-LDAP-LDAPhash
 
 BUILD_DEPENDS=	p5-perl-ldap>=0.39:net/p5-perl-ldap
 RUN_DEPENDS=	p5-perl-ldap>=0.39:net/p5-perl-ldap

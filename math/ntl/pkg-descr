@@ -9,5 +9,3 @@ by Victor Shoup.  It provides objects and methods for
 	- finite rings
 
 Unless you define WITHOUT_GMP, NTL requires libgmp4.
-
-WWW: http://www.shoup.net/

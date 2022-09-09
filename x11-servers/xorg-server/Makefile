@@ -1,6 +1,6 @@
 PORTNAME=	xorg
 PORTVERSION=	21.1.4
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -8,6 +8,7 @@ DISTNAME=	xorg-server-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
+WWW=		https://www.freedesktop.org/Software/xorg
 
 LICENSE=	MIT
 

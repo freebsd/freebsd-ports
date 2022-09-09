@@ -17,5 +17,3 @@ What's missing:
     * While local changes are uploaded right away, remote changes are delayed
       until next sync when using --monitor
     * No GUI
-
-WWW: https://github.com/abraunegg/onedrive

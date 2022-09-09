@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library with a collection of routines for combinatorial mathematics
+WWW=		https://gitlab.com/sagemath/symmetrica
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

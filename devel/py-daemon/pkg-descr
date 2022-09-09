@@ -7,5 +7,3 @@ A well-behaved Unix daemon process is tricky to get right, but the required
 steps are much the same for every daemon program. A DaemonContext instance holds
 the behaviour and configured process environment for the program; use the
 instance as a context manager to enter a daemon state.
-
-WWW: https://pypi.org/project/python-daemon/

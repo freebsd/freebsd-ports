@@ -4,5 +4,3 @@ bytes vs. text difference between 2 and 3 and stick to the newer unicode-based
 interface.
 
 It uses utf-8 as default encoding everywhere.
-
-WWW: https://github.com/xflr6/csv23

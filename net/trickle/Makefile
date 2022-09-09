@@ -6,6 +6,7 @@ MASTER_SITES=	https://monkey.org/~marius/trickle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
+WWW=		https://monkey.org/~marius/trickle/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

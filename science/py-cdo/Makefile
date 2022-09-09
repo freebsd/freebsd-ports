@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding to CDO (Climate Data Operators)
+WWW=		https://code.mpimet.mpg.de/projects/cdo/wiki/Cdo%7Brbpy%7D
 
 LICENSE=	GPLv2
 

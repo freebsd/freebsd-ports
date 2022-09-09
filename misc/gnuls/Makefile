@@ -1,5 +1,5 @@
 PORTNAME=	gnuls
-PORTVERSION=	8.30
+PORTVERSION=	9.1
 CATEGORIES=	misc
 MASTER_SITES=	GNU/coreutils
 DISTNAME=	coreutils-${PORTVERSION}
@@ -7,20 +7,14 @@ DISTNAME=	coreutils-${PORTVERSION}
 MAINTAINER=	bmc@clapper.org
 COMMENT=	GNU colorized 'ls'
 
-OPTIONS_DEFINE=		NLS
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
+USES=		gmake localbase perl5 tar:xz
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	opendircolors # bin/dircolors
-
-USES=		gmake perl5 tar:xz
-USE_LDCONFIG=	yes
-USE_PERL5=	build
 
 PLIST_FILES=	bin/dir \
 		bin/dircolors \
@@ -30,6 +24,10 @@ PLIST_FILES=	bin/dir \
 		man/man1/dircolors.1.gz \
 		man/man1/gnuls.1.gz \
 		man/man1/vdir.1.gz
+
+OPTIONS_DEFINE=		NLS
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dir ${STAGEDIR}${PREFIX}/bin

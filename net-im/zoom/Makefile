@@ -8,6 +8,7 @@ DISTNAME=	zoom_x86_64.pkg
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Zoom videoconferencing client (CAVEAT: Sound doesn't yet work)
+WWW=		https://zoom.us/
 
 RUN_DEPENDS=	linux-c7-xcb-util-image>0:x11/linux-c7-xcb-util-image \
 		linux-c7-xcb-util-keysyms>0:x11/linux-c7-xcb-util-keysyms \

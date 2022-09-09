@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-source-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Advanced shutdown utility
+WWW=		http://kshutdown.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

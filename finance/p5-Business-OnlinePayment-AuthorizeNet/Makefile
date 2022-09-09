@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Business::OnlinePayment backend module for Authorize.Net
+WWW=		https://metacpan.org/release/Business-OnlinePayment-AuthorizeNet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

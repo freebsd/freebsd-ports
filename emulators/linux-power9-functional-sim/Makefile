@@ -7,6 +7,7 @@ MASTER_SITES=	http://public.dhe.ibm.com/software/server/powerfuncsim/p9/packages
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	IBM POWER9 Functional Simulator (mambo) (CentOS ${LINUX_DIST_VER})
+WWW=		https://www14.software.ibm.com/support/customercare/sas/f/pwrfs/pwr9/home.html
 
 LICENSE=	IBMFUNCTIONALSIM
 LICENSE_NAME=	IBM Functional Simulator License

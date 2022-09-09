@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight implementation of Standard ML
+WWW=		https://mosml.org/
 
 # Converted from RESTRICTED
 LICENSE=	mosml

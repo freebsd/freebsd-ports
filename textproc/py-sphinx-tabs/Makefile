@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tabbed views for Sphinx
+WWW=		https://github.com/executablebooks/sphinx-tabs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

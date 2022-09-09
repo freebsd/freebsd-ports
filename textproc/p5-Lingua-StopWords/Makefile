@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stop words for several languages
+WWW=		https://metacpan.org/release/Lingua-StopWords
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

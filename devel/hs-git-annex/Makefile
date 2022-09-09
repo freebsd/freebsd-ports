@@ -5,8 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Manage files with git, without checking their contents into git
-
-BROKEN_aarch64=	Causes compiler to crash
+WWW=		https://git-annex.branchable.com/
 
 LICENSE=	GPLv3
 

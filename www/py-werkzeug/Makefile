@@ -1,5 +1,5 @@
 PORTNAME=	werkzeug
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	Werkzeug-${DISTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python utilities collection for building WSGI applications
+WWW=		https://palletsprojects.com/p/werkzeug/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

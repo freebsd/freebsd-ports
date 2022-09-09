@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
+WWW=		https://commons.apache.org/proper/commons-collections/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

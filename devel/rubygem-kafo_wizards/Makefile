@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create wizard like interfaces in terminal applications
+WWW=		https://github.com/theforeman/kafo_wizards
 
 LICENSE=	GPLv3+
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/amadvance/advancecomp/releases/download/v${DIST
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG, and .GZ files
+WWW=		http://advancemame.sourceforge.net/comp-readme.html
 
 LICENSE=	GPLv3
 

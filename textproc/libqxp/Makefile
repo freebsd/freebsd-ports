@@ -6,6 +6,7 @@ MASTER_SITES=	https://dev-www.libreoffice.org/src/${PORTNAME}/
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Library for parsing QuarkXPress documents
+WWW=		https://wiki.documentfoundation.org/DLP/Libraries/libqxp
 
 LICENSE=	MPL20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.prelude-siem.org/attachments/download/1395/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sensor support library from Prelude SIEM
+WWW=		https://www.prelude-siem.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

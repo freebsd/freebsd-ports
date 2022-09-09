@@ -10,5 +10,3 @@ The aim of the decorator module it to simplify the usage of decorators
 for the average programmer, and to popularize decorators usage giving
 examples of useful decorators, such as memoize, tracing,
 redirecting_stdout, locked, etc.
-
-WWW: https://github.com/micheles/decorator

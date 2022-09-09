@@ -5,5 +5,3 @@ solutions by providing generic algorithms and data structures for:
 * full-text indexing and efficient search
 * sequence alignment
 * input/output of common file formats
-
-WWW: https://github.com/seqan/seqan3

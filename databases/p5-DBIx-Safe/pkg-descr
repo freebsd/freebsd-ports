@@ -20,5 +20,3 @@ specify a regular expression that is NOT allowed to run (e.g. qr(UPDATE xxx}).
 Finally, you can indicate which database attributes are allowed to be read and
 changed (e.g. 'PrintError'). For all of the above, there are matching methods to
 remove them as well.
-
-WWW: https://metacpan.org/release/DBIx-Safe

@@ -19,5 +19,3 @@ external preprocessor.
   misspelled typenames
 * compiler driver compatible with GCC (-fxxx, -Wxxx, -M, ...)
 * uses libFIRM for optimization and code generation (devel/libfirm)
-
-WWW: https://sourceforge.net/projects/cparser/

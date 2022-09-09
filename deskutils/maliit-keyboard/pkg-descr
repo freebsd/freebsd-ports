@@ -2,5 +2,3 @@ Maliit provides a flexible and cross-platform input method framework for mobile
 and embedded text input, including a virtual keyboard. It has a plugin-based
 client-server architecture where applications act as clients and communicate
 with the Maliit server via input context plugins.
-
-WWW: http://maliit.github.io/

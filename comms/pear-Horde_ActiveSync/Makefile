@@ -4,6 +4,7 @@ CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde ActiveSync Server Library
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_PHP=	ctype

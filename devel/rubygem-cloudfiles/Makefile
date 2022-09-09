@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby version of the Rackspace Cloud Files API
+WWW=		http://www.rackspacecloud.com/cloud_hosting_products/files
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

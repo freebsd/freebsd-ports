@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-m17nlib
 .endif
 
 COMMENT=	Uim plugin using m17n library input method
+WWW=		https://github.com/uim/uim
 
 BUILD_DEPENDS=	m17n-db:devel/m17n-db
 LIB_DEPENDS=	libm17n.so:devel/m17n-lib \

@@ -7,5 +7,3 @@ Draft.js is a rich text editor framework for React. Its approach is different
 from most rich text editors because it does not store data as HTML, but rather
 in its own representation called ContentState. This exporter is useful when the
 ContentState to HTML conversion has to be done in a Python ecosystem.
-
-WWW: https://github.com/springload/draftjs_exporter

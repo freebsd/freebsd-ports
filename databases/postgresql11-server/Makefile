@@ -4,6 +4,7 @@ DISTVERSION?=	11.17
 PORTREVISION?=	0
 
 MAINTAINER?=	pgsql@FreeBSD.org
+WWW=		https://www.postgresql.org/
 
 INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/utils/mb/conversion_procs \

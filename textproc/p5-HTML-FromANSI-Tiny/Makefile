@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily convert colored command line output to HTML
+WWW=		https://metacpan.org/release/HTML-FromANSI-Tiny
 
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Parse-ANSIColor-Tiny>=0.600:textproc/p5-Parse-ANSIColor-Tiny

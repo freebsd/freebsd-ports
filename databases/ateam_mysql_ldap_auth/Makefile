@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ganbold@FreeBSD.org
 COMMENT=	A-Team MySQL LDAP authentication plugin
+WWW=		https://github.com/ateamsystems/ateam_mysql_ldap_auth
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

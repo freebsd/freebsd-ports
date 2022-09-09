@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use SSL/TLS with IO::Async
+WWW=		https://metacpan.org/release/IO-Async-SSL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

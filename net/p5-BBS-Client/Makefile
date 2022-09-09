@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client Module For BBS Systems
+WWW=		https://metacpan.org/release/CORNELIUS/BBS-Client-0.03
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

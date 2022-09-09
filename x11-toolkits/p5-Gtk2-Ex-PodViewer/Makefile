@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Displays plain old documentation
+WWW=		https://metacpan.org/release/Gtk2-Ex-PodViewer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Sophisticated text editor for code, markup and prose
+WWW=		https://www.sublimetext.com
 
 LICENSE=	SUBLIMEHQ
 LICENSE_NAME=	End User License Agreement

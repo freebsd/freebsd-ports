@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		HTTP MultiPart Parser
+WWW=		https://search.mcpan.org/dist/HTTP-MultiPartParser/
 
 LICENSE=		ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Terminal based replica of the digital rain from The Matrix
+WWW=		https://github.com/M4444/TMatrix
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Aws Crypto Abstraction Layer
+WWW=		https://github.com/awslabs/aws-c-cal
 
 LICENSE=	APACHE20
 

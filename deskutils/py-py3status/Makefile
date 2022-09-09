@@ -1,11 +1,12 @@
 PORTNAME=	py3status
-PORTVERSION=	3.45
+PORTVERSION=	3.46
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensible i3status wrapper written in python
+WWW=		https://github.com/ultrabug/py3status
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	traceFunc-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 module to trace function calls as they happen
+WWW=		https://metacpan.org/release/traceFunc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

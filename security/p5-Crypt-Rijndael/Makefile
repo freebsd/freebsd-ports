@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl module that implements the Rijndael cipher
+WWW=		https://metacpan.org/release/Crypt-Rijndael
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

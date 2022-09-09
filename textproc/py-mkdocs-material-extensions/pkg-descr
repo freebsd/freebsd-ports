@@ -9,5 +9,3 @@ easy insertion of MkDocs Material's SVG assets using simple :emoji-syntax:.
 
 This is done by creating our own emoji index and emoji generator.  The custom
 index provides a modified version of the Emoji extensions Twemoji index.
-
-WWW: https://github.com/facelessuser/mkdocs-material-extensions

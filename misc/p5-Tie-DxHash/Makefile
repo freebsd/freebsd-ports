@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing ordered hashes with duplicate keys
+WWW=		https://metacpan.org/release/Tie-DxHash
 
 USES=		perl5
 USE_PERL5=	configure

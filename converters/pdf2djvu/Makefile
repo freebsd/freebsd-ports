@@ -11,6 +11,7 @@ PATCHFILES=	e170ad557d5f13daeeac047dfaa79347bbe5062f.diff:-p1 \
 
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Creates DjVu files from PDF files
+WWW=		https://jwilk.net/software/pdf2djvu
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

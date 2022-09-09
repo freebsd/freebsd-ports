@@ -1,11 +1,12 @@
 PORTNAME=	gobuffalo
 PORTVERSION=	0.16.27
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Go web development eco-system, designed to make the life easier
+WWW=		https://gobuffalo.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

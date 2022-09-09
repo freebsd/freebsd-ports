@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	MySQL database connector for Python
+WWW=		https://pypi.org/project/mysqlclient
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

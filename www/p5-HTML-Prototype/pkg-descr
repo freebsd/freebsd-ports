@@ -7,5 +7,3 @@ Prototype library.
 
 This is mostly a port of the Ruby on Rails helper tags for JavaScript
 for use in Catalyst.
-
-WWW: https://metacpan.org/release/HTML-Prototype

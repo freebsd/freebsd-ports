@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Perl implementation of the "Adapter" Design Pattern
+WWW=		https://metacpan.org/release/Class-Adapter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

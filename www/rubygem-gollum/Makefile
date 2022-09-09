@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sirl33tname@gmail.com
 COMMENT=	Simple wiki system built on top of Git
+WWW=		https://github.com/gollum/gollum
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

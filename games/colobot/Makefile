@@ -10,6 +10,7 @@ DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz:music
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Educational game aiming to teach programming to kids
+WWW=		https://colobot.info/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

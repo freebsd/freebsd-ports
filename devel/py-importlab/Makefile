@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate python dependency graphs
+WWW=		https://github.com/google/importlab
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

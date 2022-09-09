@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	View for Pod::POM that outputs reStructuredText
+WWW=		https://metacpan.org/release/Pod-POM-View-Restructured
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

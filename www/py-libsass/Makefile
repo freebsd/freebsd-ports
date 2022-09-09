@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Straightforward binding of libsass for Python
+WWW=		https://pypi.org/project/libsass/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

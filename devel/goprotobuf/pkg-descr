@@ -1,4 +1,2 @@
 Go support, in the form of a library and protocol compiler plugin, for Google's
 protocol buffers.
-
-WWW: https://github.com/golang/protobuf/

@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Securely execute PHP scripts under Apache
+WWW=		https://www.suphp.org/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Session manager component for LXQt
+WWW=		https://github.com/lxqt/lxqt-session/
 
 LICENSE=	LGPL21+
 

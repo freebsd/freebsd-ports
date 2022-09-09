@@ -8,6 +8,7 @@ MASTER_SITES=	http://raaf.atspace.org/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
+WWW=		http://raaf.atspace.org/
 
 LICENSE=	GPLv2
 
@@ -24,7 +25,7 @@ OPTIONS_DEFAULT=	PROGRAMS
 PROGRAMS_DESC=	Build the programs
 MMAP_DESC=	Enable mmap support (MAY CRASH YOUR SYSTEM)
 
-CFLAGS+=	-Wno-unused-but-set-variable
+CFLAGS+=	-Wno-error
 
 .include <bsd.port.options.mk>
 

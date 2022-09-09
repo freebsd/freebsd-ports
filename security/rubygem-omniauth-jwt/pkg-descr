@@ -6,5 +6,3 @@ claim and log the user in. This is how Zendesk does SSO, for example.
 OmniAuth::JWT provides a clean, simple wrapper on top of JWT so that you can
 easily implement this kind of SSO either between your own applications or allow
 third parties to delegate authentication.
-
-WWW: https://github.com/mbleigh/omniauth-jwt

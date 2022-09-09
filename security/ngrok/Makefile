@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Secure tunnels to localhost
+WWW=		https://ngrok.com/
 
 # run 'ngrok credits' for details
 LICENSE=	NONE APACHE20 BSD3CLAUSE CC0-1.0 LGPL3+ MIT

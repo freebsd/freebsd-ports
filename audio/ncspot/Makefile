@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Ncurses Spotify client
+WWW=		https://github.com/hrkfdn/ncspot
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

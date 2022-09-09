@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Pod data to DocBook SGML
+WWW=		https://metacpan.org/release/Pod-DocBook
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-podlators>=0:textproc/p5-podlators \

@@ -5,6 +5,7 @@ MASTER_SITES=	https://nim-lang.org/download/
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Nim programming language
+WWW=		https://nim-lang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copying.txt

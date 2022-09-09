@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Abseil Common Libraries (C++)
+WWW=		https://abseil.io/
 
 LICENSE=	APACHE20
 

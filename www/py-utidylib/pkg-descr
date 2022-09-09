@@ -4,5 +4,3 @@ compatibility with recent html-tidy versions and works with Python 3.
 
 This is uTidylib, the Python wrapper for the HTML cleaning library named
 TidyLib. It supports both original Tidy and new HTML5 enabled Tidy.
-
-WWW: https://github.com/nijel/utidylib

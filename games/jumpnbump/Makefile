@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.com/LibreGames/jumpnbump/repository/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play cute bunnies jumping on each other's heads #'
+WWW=		https://gitlab.com/LibreGames/jumpnbump
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

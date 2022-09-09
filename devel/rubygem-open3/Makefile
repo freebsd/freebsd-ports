@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Popen, but with stderr, too
+WWW=		https://github.com/ruby/open3
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

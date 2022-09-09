@@ -4,5 +4,3 @@ XLSX format. The XLSX format is the Office Open XML (OOXML) format used by Excel
 can be applied to cells. Text, numbers, and formulas can be written to the
 cells. This module cannot, as yet, be used to write to an existing Excel XLSX
 file.
-
-WWW: https://metacpan.org/release/Excel-Writer-XLSX

@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL performance tuning primer script
+WWW=		https://launchpad.net/mysql-tuning-primer
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/hackerschoice/gsocket/releases/download/v${PORT
 
 MAINTAINER=	arr@watson.org
 COMMENT=	Connect two users behind NAT/firewall via TCP/IP
+WWW=		https://github.com/hackerschoice/gsocket
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

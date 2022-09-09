@@ -5,5 +5,3 @@ py-fastnumbers provides:
   and provides easy, concise, powerful, fast and flexible error handling
 * a set of functions that can be used to rapidly identify if an input could be
   converted to int or float
-
-WWW: https://github.com/SethMMorton/fastnumbers

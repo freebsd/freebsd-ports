@@ -8,6 +8,7 @@ DISTFILES=	vim-3.0.tar.gz jvim.2.1b.tar.gz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanized Vim-3.0
+WWW=		https://hp.vector.co.jp/authors/VA003457/vim/
 
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}.diff
 WRKSRC=		${WRKDIR}/vim

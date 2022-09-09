@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Resty-DBD-Stream (RDS) parser for Lua written in C
+WWW=		https://github.com/agentzh/lua-rds-parser/
 
 LICENSE=	BSD2CLAUSE
 

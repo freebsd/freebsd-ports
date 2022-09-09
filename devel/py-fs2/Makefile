@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Python Filesystem abstraction layer, version 2.x
+WWW=		https://www.pyfilesystem.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

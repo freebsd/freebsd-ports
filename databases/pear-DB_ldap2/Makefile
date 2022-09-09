@@ -5,6 +5,7 @@ CATEGORIES=	databases net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR DB compliant interface to LDAP v2 and v3 database
+WWW=		https://pear.php.net/package/DB_ldap2
 
 LICENSE=	LGPL3
 

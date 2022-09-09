@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.8
+WWW=		https://gcc.gnu.org
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

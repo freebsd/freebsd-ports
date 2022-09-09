@@ -2,5 +2,3 @@ Date::Japanese::Holiday is-a Date::Simple, and calculates Japanese
 Holiday. this module supports from 1948-04-20 to now.
 
 is_holiday method return true value when the day is Holiday.
-
-WWW: https://metacpan.org/release/Date-Japanese-Holiday

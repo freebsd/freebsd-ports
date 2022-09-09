@@ -9,5 +9,3 @@ width, height, colour, padding, and margin. When in auto size mode, the clock
 becomes responsive, filling up the full size of the terminal. The clock can also
 be set to conform to a specific aspect ratio, allowing the clock to auto resize
 without becoming stretched.
-
-WWW: https://github.com/octobanana/peaclock

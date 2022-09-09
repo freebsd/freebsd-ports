@@ -4,5 +4,3 @@ HTTP::Body's urlencoded parser.
 
 This module try to use WWW::Form::UrlEncoded::XS by default and fail to it, use
 WWW::Form::UrlEncoded::PP instead
-
-WWW: https://metacpan.org/release/WWW-Form-UrlEncoded

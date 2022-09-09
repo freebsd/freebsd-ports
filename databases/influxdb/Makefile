@@ -1,11 +1,12 @@
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Open-source distributed time series database
+WWW=		https://influxdata.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

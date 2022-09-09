@@ -11,5 +11,3 @@ Main features:
 - Full support for streams & incremental processing
 - Extensive documentation and test suite
 - No runtime dependencies, small footprint
-
-WWW: https://github.com/PJK/libcbor

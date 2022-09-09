@@ -18,5 +18,3 @@ Most methods return an HTTP::Response object. See the individual
 method document for details. Methods which return orbital data on
 success add a 'Pragma: spacetrack-type = orbit' header to the
 HTTP::Response object if the request succeeds.
-
-WWW: https://metacpan.org/release/Astro-SpaceTrack

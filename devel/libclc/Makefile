@@ -6,6 +6,7 @@ DISTNAME=	libclc-${DISTVERSION}.src
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Required library functions for OpenCL C programming language
+WWW=		https://libclc.llvm.org/
 
 LICENSE=	LLVM
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	BitTorrent data checker and torrent file content viewer
+WWW=		https://sourceforge.net/projects/btcheck/
 
 LICENSE=	GPLv3
 

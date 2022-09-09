@@ -7,6 +7,7 @@ DISTNAME=	pooler-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	CPU miner for Litecoin and Bitcoin
+WWW=		https://sourceforge.net/projects/cpuminer/
 
 LICENSE=	GPLv2
 

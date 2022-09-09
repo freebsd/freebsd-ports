@@ -9,6 +9,7 @@ MASTER_SITES=	https://cschubert.com/distfiles/plan/ \
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X/Motif schedule planner with calendar
+WWW=		https://www.bitrot.de/plan.html
 
 FETCH_ARGS=	-Fr --no-passive
 USES=		motif

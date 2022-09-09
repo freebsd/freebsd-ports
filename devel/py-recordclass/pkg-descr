@@ -5,5 +5,4 @@ in order to create record-like classes with the same API as
 collection.namedtuple. It was evolved further in order to provide more memory
 saving, fast and flexible types.
 
-WWW: https://bitbucket.org/intellimath/recordclass/
-WWW: https://pypi.org/project/recordclass/
+See also: https://bitbucket.org/intellimath/recordclass/

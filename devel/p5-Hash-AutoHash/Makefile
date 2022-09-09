@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented access to real and tied hashes
+WWW=		https://metacpan.org/release/Hash-AutoHash
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	R Version of GENetic Optimization Using Derivatives
+WWW=		https://sekhon.berkeley.edu/rgenoud/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

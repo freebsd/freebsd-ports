@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML parameters parser for Action Pack
+WWW=		https://github.com/rails/actionpack-xml_parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

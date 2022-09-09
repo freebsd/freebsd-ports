@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Drop-in LWP::UserAgent replacement in POE environments
+WWW=		https://metacpan.org/release/LWP-UserAgent-POE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-POE>=0.9999:devel/p5-POE \

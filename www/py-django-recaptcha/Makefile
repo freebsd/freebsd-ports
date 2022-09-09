@@ -8,6 +8,7 @@ DISTNAME=	django-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Django reCAPTCHA form field/widget integration app
+WWW=		https://github.com/torchbox/django-recaptcha
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde SMTP Client
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 USE_HORDE_RUN=	Horde_Exception \

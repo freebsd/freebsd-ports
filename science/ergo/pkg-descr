@@ -18,5 +18,3 @@ Key features of the Ergo program:
   memory utilization.
 * The time consuming parts of the code are currently parallelized
   using the shared-memory paradigm.
-
-WWW: http://www.ergoscf.org/

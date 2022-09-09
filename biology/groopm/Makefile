@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Metagenomic binning suite
+WWW=		https://ecogenomics.github.io/GroopM/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

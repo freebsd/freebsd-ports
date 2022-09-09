@@ -15,5 +15,3 @@ kernels, or another that is instrumented to provide debugging
 information. By specifying only the interface, applications codes may
 utilize such algorithms, while giving library developers the greatest
 flexibility in employing optimization or portability strategies.
-
-WWW: http://math.nist.gov/tnt/

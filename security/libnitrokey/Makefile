@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/Nitrokey/${PORTNAME}/releases/download/${DISTVE
 
 MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Libnitrokey is a project to communicate with Nitrokey devices
+WWW=		https://github.com/Nitrokey/libnitrokey
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

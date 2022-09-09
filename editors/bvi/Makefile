@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Vi-like binary file (hex)editor
+WWW=		http://bvi.sourceforge.net/
 
 USES=		ncurses
 GNU_CONFIGURE=	yes

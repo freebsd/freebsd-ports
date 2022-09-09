@@ -5,5 +5,3 @@ a server can support.  The target bandwidth per client is set at 28.8
 kilobits/second to model dialup users; this is important for servers on the
 real Internet, which often serve thousands of clients on only 10 MBits/sec of
 bandwidth.
-
-WWW: http://www.kegel.com/dkftpbench/

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Screenshot utility with performance improvements over scrot
+WWW=		https://github.com/naelstrof/maim
 
 LICENSE=	GPLv3
 

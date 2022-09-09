@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Moose types that check against Perl syntax
+WWW=		https://metacpan.org/release/MooseX-Types-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

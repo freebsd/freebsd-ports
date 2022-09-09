@@ -1,4 +1,2 @@
 This is a Renderer driver for Structures_DataGrid that generates a XLS
 string.
-
-WWW: https://pear.php.net/package/Structures_DataGrid_Renderer_XLS

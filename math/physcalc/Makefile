@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible calculator that behaves much like units(1)
+WWW=		https://www.lightlink.com/vulcan/physcalc.htm
 
 EXTRACT_BEFORE_ARGS=	-aq
 EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKSRC}

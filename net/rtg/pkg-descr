@@ -15,5 +15,3 @@ The unique features of RTG are:
 	may be generated
  * Performs no data averaging in order to support billing, etc.
  * Can poll at sub-one-minute intervals
-
-WWW: http://rtg.sourceforge.net

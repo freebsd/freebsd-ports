@@ -14,5 +14,3 @@ Subdomain brute-forcing is another technique that
 should be used in the enumeration stage, as it's
 especially useful when other domain enumeration
 techniques such as zone transfers don't work.
-
-WWW: https://tools.kali.org/information-gathering/dnsmap

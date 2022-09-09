@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STAnd-aLONE system tray
+WWW=		http://stalonetray.sourceforge.net
 
 LICENSE=	GPLv2
 

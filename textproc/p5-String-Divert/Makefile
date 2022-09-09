@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	String Perl object supporting folding and diversion
+WWW=		https://metacpan.org/release/String-Divert
 
 USES=		perl5
 USE_PERL5=	configure

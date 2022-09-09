@@ -1,11 +1,12 @@
 PORTNAME=	gojq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	Pure Go implementation of jq
+WWW=		https://github.com/itchyny/gojq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Brushes used by MyPaint and other software using libmypaint
+WWW=		https://github.com/mypaint/mypaint-brushes
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://mlmmj.org/releases/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple and slim mailing list manager
+WWW=		http://mlmmj.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

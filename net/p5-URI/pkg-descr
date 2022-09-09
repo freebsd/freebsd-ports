@@ -13,5 +13,3 @@ The URI class replaces the URI::URL class that used to be distributed
 with libwww-perl.  This package contains an emulation of the old
 URI::URL interface.  The emulated URI::URL implements both the old and
 the new interface.
-
-WWW: https://metacpan.org/release/URI

@@ -6,5 +6,3 @@ It is a front-end to several other modules:
    * Pugs::Emitter::Rule::Perl5 converts parsed Rules to Perl 5 code.
    * Pugs::Runtime::Rule provides the runtime engine for Rules.
    * Pugs::Runtime::Match represents a Match object.
-
-WWW: https://metacpan.org/release/Pugs-Compiler-Rule

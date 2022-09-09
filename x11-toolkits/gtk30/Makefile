@@ -11,6 +11,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
+WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL20
 

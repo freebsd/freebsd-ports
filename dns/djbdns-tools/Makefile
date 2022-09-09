@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolver tools from djbdns package
+WWW=		https://cr.yp.to/djbdns.html
 
 CONFLICTS=	djbdns
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	gnu-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Modern network address calculation tool for IPv4 and IPv6
+WWW=		https://gitlab.com/ipcalc/ipcalc/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

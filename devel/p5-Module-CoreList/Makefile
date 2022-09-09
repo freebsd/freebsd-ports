@@ -1,11 +1,12 @@
 PORTNAME=	Module-CoreList
-PORTVERSION=	5.20220720
+PORTVERSION=	5.20220820
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	See what modules shipped with versions of Perl
+WWW=		https://metacpan.org/release/Module-CoreList
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

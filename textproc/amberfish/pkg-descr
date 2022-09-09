@@ -14,8 +14,6 @@ file, incremental indexing, and easy integration with other UNIX tools,
 The architecture is also designed to permit proximity queries; however,
 they are not fully implemented at present.
 
-WWW: http://www.etymon.com/tr.html
-
 This port also includes the Porter stemming algorithm for suffix
 stripping, available at:
      http://www.tartarus.org/~martin/PorterStemmer

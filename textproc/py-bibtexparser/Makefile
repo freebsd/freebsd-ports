@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bibtex parser
+WWW=		https://github.com/sciunto-org/python-bibtexparser
 
 LICENSE=	BSD3CLAUSE LGPL3
 LICENSE_COMB=	dual

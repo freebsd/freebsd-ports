@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to load fixture data into database
+WWW=		https://metacpan.org/release/Test-Fixture-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

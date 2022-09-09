@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Django Markdown editor with image uploads and live preview
+WWW=		https://github.com/neutronX/django-markdownx
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

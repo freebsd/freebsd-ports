@@ -1,4 +1,2 @@
 Lens is a mail filter written in Ruby.  Lens can filter an
 incoming mail when it is received and filter mails in a Maildir.
-
-WWW: http://www.pitecan.com/Lens/

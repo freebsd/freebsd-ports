@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Utility to collect DSL line stats from Westell DSL modems
+WWW=		http://wdiag.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

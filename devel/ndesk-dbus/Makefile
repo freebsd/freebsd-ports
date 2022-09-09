@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C\# implementation of D-Bus
+WWW=		http://www.ndesk.org/DBusSharp
 
 USES=		gmake mono pathfix pkgconfig
 GNU_CONFIGURE=	yes

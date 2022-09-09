@@ -5,6 +5,7 @@ CATEGORIES=	security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Abstraction of various SASL mechanism responses
+WWW=		https://pear.php.net/package/Auth_SASL
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose eXtension to automatically apply roles at object creation time
+WWW=		https://metacpan.org/release/MooseX-Traits
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

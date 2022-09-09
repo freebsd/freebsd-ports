@@ -4,5 +4,3 @@ internationalization at the same time; this set of modules tries to simplify
 this. Log::Report combines gettext features with Log::Dispatch-like features.
 However, you can also use this module to do only translations or only message
 dispatching.
-
-WWW: https://metacpan.org/release/Log-Report

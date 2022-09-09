@@ -1,10 +1,11 @@
 PORTNAME=	shelxle
-DISTVERSION=	1.0.1406
+DISTVERSION=	1.0.1421
 CATEGORIES=	science # chemistry
 MASTER_SITES=	SF/${PORTNAME}/code/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for small-molecule structure refinement
+WWW=		https://www.shelxle.org/shelx/eingabe.php
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

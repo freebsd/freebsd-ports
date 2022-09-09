@@ -6,6 +6,7 @@ MASTER_SITES=	https://distfiles.dereferenced.org/envsubst/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Perform variable substitutions on input
+WWW=		https://github.com/kaniini/envsubst
 
 LICENSE=	ISCL
 

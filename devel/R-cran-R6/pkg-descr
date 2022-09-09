@@ -5,5 +5,3 @@ they are not built on S4 classes so they do not require the methods
 package. These classes allow public and private members, and they
 support inheritance, even when the classes are defined in different
 packages.
-
-WWW: https://cran.r-project.org/web/packages/R6/

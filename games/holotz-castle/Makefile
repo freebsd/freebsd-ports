@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform game with high doses of mystery
+WWW=		https://web.archive.org/web/20130606213511/http://mainreactor.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

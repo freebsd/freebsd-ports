@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cleans temporal files for KDE
+WWW=		https://utils.kde.org/projects/sweeper/
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	activities-stats auth bookmarks codecs config configwidgets \

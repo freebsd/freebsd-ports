@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	LDAP strategy for OmniAuth
+WWW=		https://gitlab.com/gitlab-org/omniauth-ldap
 
 LICENSE=	MIT
 

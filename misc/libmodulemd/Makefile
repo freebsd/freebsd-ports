@@ -6,6 +6,7 @@ DISTNAME=	modulemd-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C Library for manipulating module metadata files
+WWW=		https://github.com/fedora-modularity/libmodulemd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

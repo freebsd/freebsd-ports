@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-language way to cryptographically hash JSON objects
+WWW=		https://github.com/benlaurie/objecthash
 
 LICENSE=	APACHE20
 

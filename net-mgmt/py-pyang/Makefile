@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Validator and code generator for YANG (RFC 4741)
+WWW=		https://github.com/mbj4668/pyang/
 
 LICENSE=	MIT
 

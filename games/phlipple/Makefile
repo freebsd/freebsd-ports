@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flipping squares will never be the same
+WWW=		http://phuzzboxmedia.com/games/phlipple
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

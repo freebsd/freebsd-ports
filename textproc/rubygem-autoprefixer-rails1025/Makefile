@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1025
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Parse CSS and add vendor prefixes to CSS rules
+WWW=		https://github.com/ai/autoprefixer-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

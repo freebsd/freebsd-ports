@@ -5,6 +5,7 @@ MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Companion utility for fldigi
+WWW=		http://www.w1hkj.com/Flwrap/
 
 LICENSE=	GPLv2
 

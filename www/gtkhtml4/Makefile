@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
+WWW=		http://www.ximian.com/
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	D implementation of the DDoc macro system
+WWW=		https://github.com/dlang-community/libddoc
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	msl0000023508@gmail.com
 COMMENT=	Instant-messaging service based on SSH
+WWW=		https://sourceforge.net/projects/sshout/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

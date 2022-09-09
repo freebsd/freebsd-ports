@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test routines for external commands
+WWW=		https://metacpan.org/release/Test-Command
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

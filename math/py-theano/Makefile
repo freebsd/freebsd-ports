@@ -8,6 +8,7 @@ DISTNAME=	Theano-${DISTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Optimizing compiler for evaluating math expressions on CPUs and GPUs
+WWW=		http://deeplearning.net/software/theano/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

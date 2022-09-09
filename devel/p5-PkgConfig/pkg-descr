@@ -9,5 +9,3 @@ has no such requirement, and will run wherever Perl ( >= 5.6 ) does.
 
 The main supported options are the common --libs, --cflags, --static, --exists
 and --modversion.
-
-WWW: https://metacpan.org/release/PkgConfig

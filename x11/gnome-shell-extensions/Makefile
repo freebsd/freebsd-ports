@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME desktop shell extensions
+WWW=		https://live.gnome.org/GnomeShell
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

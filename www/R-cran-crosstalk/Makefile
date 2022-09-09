@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Inter-Widget Interactivity for HTML Widgets
+WWW=		https://cran.r-project.org/web/packages/crosstalk/
 
 LICENSE=	MIT
 

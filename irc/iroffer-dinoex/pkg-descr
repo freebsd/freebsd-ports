@@ -6,5 +6,3 @@ This is a major rewrite of Iroffer with extended features.
 It does support mutiple IRC networks, SSL and IPv6.
 
 LICENSE: GPL2
-
-WWW: https://iroffer.net/

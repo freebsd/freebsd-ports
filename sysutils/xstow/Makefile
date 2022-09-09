@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Enhanced replacement for GNU stow written in C++
+WWW=		http://xstow.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extension of Data.frame
+WWW=		https://cran.r-project.org/web/packages/data.table/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -11,5 +11,3 @@ joins/relationships
 optional custom classes for results and resultsets with custom methods
 SQL::Abstract syntax
 paging features (with Data::Page)
-
-WWW: https://metacpan.org/release/DBIx-Lite

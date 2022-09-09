@@ -4,6 +4,7 @@ CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple WebRTC DataChannels library
+WWW=		https://github.com/chadnickbok/librtcdcpp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

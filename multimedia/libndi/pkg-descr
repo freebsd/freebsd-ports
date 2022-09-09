@@ -9,5 +9,3 @@ solution for decoding NDI video streams.
 
 Libndi is cross-platform and aims to provide a means of interacting with NDI
 video streams without relying upon any closed-source components.
-
-WWW: https://code.videolan.org/jbk/libndi

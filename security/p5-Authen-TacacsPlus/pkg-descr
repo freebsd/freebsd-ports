@@ -1,4 +1,2 @@
 Authen::TacacsPlus is a perl module that provides authentication using a
 tacacs+ server.
-
-WWW: https://metacpan.org/release/Authen-TacacsPlus

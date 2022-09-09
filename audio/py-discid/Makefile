@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Python libdiscid bindings
+WWW=		https://python-discid.readthedocs.io/en/latest/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

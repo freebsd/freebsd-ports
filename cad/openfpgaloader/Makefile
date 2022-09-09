@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal utility for programming FPGA
+WWW=		https://github.com/trabucayre/openFPGALoader
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

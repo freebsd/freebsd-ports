@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI wrapper and abstraction layer
+WWW=		https://metacpan.org/release/Rose-DB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

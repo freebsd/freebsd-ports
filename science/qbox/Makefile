@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	First-principles molecular dynamics code
+WWW=		http://qboxcode.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING

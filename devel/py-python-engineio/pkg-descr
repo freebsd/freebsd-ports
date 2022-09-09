@@ -12,5 +12,3 @@ The Engine.IO protocol is extremely simple. Once a connection between a client
 and a server is established, either side can send "messages" to the other side.
 Event handlers provided by the applications on both ends are invoked when a
 message is received, or when a connection is established or dropped.
-
-WWW: https://github.com/miguelgrinberg/python-engineio

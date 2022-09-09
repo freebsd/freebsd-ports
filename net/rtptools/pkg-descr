@@ -11,5 +11,3 @@ rtpdump
      rtpplay and rtpsend
 rtptrans
      RTP translator between unicast and multicast networks
-
-WWW: http://www.cs.columbia.edu/irt/software/rtptools/

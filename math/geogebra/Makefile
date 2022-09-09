@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
+WWW=		https://www.geogebra.org/
 
 LICENSE=	GEOGEBRA
 LICENSE_NAME=	GeoGebra Non-Commercial License Agreement

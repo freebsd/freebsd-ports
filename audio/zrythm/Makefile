@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern music production system, also known as DAW
+WWW=		https://www.zrythm.org/en/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,3 @@
 sexp_processor branches from ParseTree bringing all the generic sexp
 processing tools with it. Sexp, SexpProcessor, Environment, etc... all
 for your language processing pleasure
-
-WWW: https://github.com/seattlerb/sexp_processor

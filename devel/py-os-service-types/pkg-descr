@@ -7,5 +7,3 @@ The data is in JSON and the latest data should always be used. This simple
 library exists to allow for easy consumption of the data, along with a built-in
 version of the data to use in case network access is for some reason not
 possible and local caching of the fetched data.
-
-WWW: https://pypi.org/project/os-service-types/

@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ansible connector for remote jails
+WWW=		https://github.com/austinhyde/ansible-sshjail
 
 LICENSE=	MIT
 

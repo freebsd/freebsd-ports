@@ -7,5 +7,3 @@ also tend to be sparser than that of A'*A.  CSYMAMD is a symmetric minimum
 degree ordering method based on CCOLAMD, also available as a MATLAB-callable
 function. It constructs a matrix M such that M'*M has the same pattern as A, and
 then uses CCOLAMD to compute a column ordering of M.
-
-WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

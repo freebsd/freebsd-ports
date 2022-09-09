@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fast Python bindings for the UnQLite embedded NoSQL database
+WWW=		https://github.com/coleifer/unqlite-python
 
 LICENSE=	MIT
 

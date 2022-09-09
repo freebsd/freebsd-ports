@@ -1,11 +1,12 @@
 PORTNAME=	ctop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Top-like interface for Docker container metrics
+WWW=		https://ctop.sh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

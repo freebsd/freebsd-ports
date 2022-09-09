@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Audio and video source for a television or powered speakers
+WWW=		http://nyanko.ws/nymphcast.php
 
 # The LICENSE_FILE lives outside the top-of-the-tree because
 # WRKSRC_SUBDIR is set.

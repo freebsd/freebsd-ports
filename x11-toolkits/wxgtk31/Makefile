@@ -9,6 +9,7 @@ DISTNAME=	wxWidgets-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with ${FLAVOR:S/k/&+/:tu} bindings
+WWW=		https://www.wxwidgets.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/gpl.txt

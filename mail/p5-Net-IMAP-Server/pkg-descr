@@ -2,5 +2,3 @@ Net::IMAP::Server provides a complete implementation of the RFC 3501
 specification, along with several IMAP4rev1 extensions. It provides
 separation of the mailbox and message store from the client interaction
 loop.
-
-WWW: https://metacpan.org/release/Net-IMAP-Server

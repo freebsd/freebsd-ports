@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.iks-jena.de/pub/mitarb/lutz/parpd/
 
 MAINTAINER=	lutz@donnerhacke.de
 COMMENT=	Proxy-ARP daemon
+WWW=		https://lutz.donnerhacke.de/Projekte/parpd
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

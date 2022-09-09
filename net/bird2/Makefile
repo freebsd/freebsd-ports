@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Dynamic IP routing daemon
+WWW=		https://bird.network.cz/
 
 LICENSE=	GPLv2
 

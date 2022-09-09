@@ -5,5 +5,3 @@ internal element ordering, and makes them accessible and editable via an
 intuitive API.
 
 You can also create new TOML documents from scratch using the provided helpers.
-
-WWW: https://github.com/sdispater/tomlkit

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adobe Font Development Kit for OpenType
+WWW=		https://github.com/adobe-type-tools/afdko
 
 LICENSE=	APACHE20
 

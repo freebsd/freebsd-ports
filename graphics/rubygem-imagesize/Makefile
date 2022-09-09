@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RubyGem for finding the size of an image
+WWW=		http://imagesize.rubyforge.org/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

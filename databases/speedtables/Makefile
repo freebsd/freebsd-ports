@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-performance memory-resident database
+WWW=		https://flightaware.github.io/speedtables/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

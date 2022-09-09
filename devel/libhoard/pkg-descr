@@ -11,5 +11,3 @@ may not know it, but you are making a lot of use of the heap.)
 
 Hoard is a fast allocator that solves this problem. In addition, it
 has very reasonable bounds on memory consumption.
-
-WWW: http://www.hoard.org/

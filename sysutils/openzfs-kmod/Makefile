@@ -1,11 +1,12 @@
 PORTNAME=	openzfs
-PORTVERSION=	2022060100
+PORTVERSION=	2022082900
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-kmod
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS kernel module for FreeBSD
+WWW=		https://github.com/zfsonfreebsd/ZoF
 
 LICENSE=	CDDL
 
@@ -14,7 +15,7 @@ BROKEN_i386=	build fails
 USES=		cpe kmod
 USE_GITHUB=	yes
 GH_PROJECT=	zfs
-GH_TAGNAME=	bc8192cd5
+GH_TAGNAME=	2d5622f5b
 KMODTARGET?=	openzfs.ko
 
 PLIST_FILES=	${KMODDIR}/${KMODTARGET}
@@ -27,11 +28,7 @@ GCOV_DESC=	Build kernel module with GCOV support (Requires gcc)
 INVARIANTS_DESC=	Build kernel module with INVARIANTS
 INVARIANTS_IMPLIES=	DEBUG
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013
-IGNORE=	needs FreeBSD 12/13 with AES-CCM support
-.endif
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1300000
 OPTIONS_DEFAULT=	DEBUG INVARIANTS
@@ -71,4 +68,4 @@ do-install:
 	${INSTALL} ${WRKSRC}/module/openzfs.ko.debug ${STAGEDIR}${KMODDIR}/${KMODTARGET}.debug
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

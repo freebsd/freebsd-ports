@@ -1,5 +1,5 @@
 PORTNAME=	ninja
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -9,6 +9,7 @@ USE_PKG64=	1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Small build system closest in spirit to Make
+WWW=		https://ninja-build.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

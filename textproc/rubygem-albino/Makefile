@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper for pygmentize
+WWW=		https://github.com/github/albino
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

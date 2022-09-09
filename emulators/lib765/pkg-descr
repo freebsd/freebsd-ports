@@ -5,5 +5,3 @@ DMA; multisector reads/writes; multitrack mode) are either left unimplemented
 or incomplete.
 
 lib765 is released under the GNU Library GPL.
-
-WWW: http://www.seasip.demon.co.uk/Unix/LibDsk/

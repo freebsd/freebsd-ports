@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Library to communicate with Apple iOS devices
+WWW=		https://www.libimobiledevice.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

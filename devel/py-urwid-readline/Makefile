@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Textbox edit widget for Urwid that supports readline shortcuts
+WWW=		https://github.com/rr-/urwid_readline
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTML Markup as Ruby
+WWW=		https://markaby.github.io/
 
 LICENSE=	MIT
 

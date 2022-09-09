@@ -9,5 +9,3 @@ attribute.  It is used as a fallback if you omit the format for 'now'.
 
 jinja2-time implements a convenient interface to modify 'now' by a
 relative time offset.
-
-WWW: https://pypi.org/project/jinja2-time/

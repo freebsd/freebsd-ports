@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Grammar-based, user-friendly config parser
+WWW=		https://metacpan.org/release/Config-Grammar
 
 USES=		perl5
 USE_PERL5=	configure

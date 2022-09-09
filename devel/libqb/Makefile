@@ -6,6 +6,7 @@ MASTER_SITES=		https://github.com/ClusterLabs/${PORTNAME}/releases/download/v${D
 
 MAINTAINER=		egypcio@FreeBSD.org
 COMMENT=		High performance logging, tracing, ipc, and polling library
+WWW=		https://github.com/ClusterLabs/libqb/wiki
 
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING

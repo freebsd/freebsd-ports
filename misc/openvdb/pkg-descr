@@ -4,5 +4,3 @@ manipulation of sparse volumetric data discretized on three-dimensional grids.
 It was developed by DreamWorks Animation for use in volumetric applications
 typically encountered in feature film production and is now maintained by the
 Academy Software Foundation (ASWF).
-
-WWW: https://www.openvdb.org/

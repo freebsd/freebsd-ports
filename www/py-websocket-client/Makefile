@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Websocket client for python
+WWW=		https://github.com/websocket-client/websocket-client
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

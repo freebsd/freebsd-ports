@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Function Identification and Recovery Signature Tool
+WWW=		https://github.com/vrtadmin/FIRST-server
 
 LICENSE=	GPLv2
 

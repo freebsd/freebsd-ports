@@ -10,5 +10,3 @@ the following goals:
 - Rewrite core parts of mpv's GPU-accelerated video renderer on top of
   redesigned abstractions. (Basically, I wanted to eliminate stateful APIs like
   shader_cache.c and totally redesign gpu/video.c)
-
-WWW: https://code.videolan.org/videolan/libplacebo

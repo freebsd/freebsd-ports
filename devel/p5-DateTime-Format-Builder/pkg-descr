@@ -7,5 +7,3 @@ Builder provides a number of methods, most of which you'll never need, or at
 least rarely need. They're provided more for exposing of the module's innards
 to any subclasses, or for when you need to do something slightly beyond what I
 expected.
-
-WWW: https://metacpan.org/release/DateTime-Format-Builder

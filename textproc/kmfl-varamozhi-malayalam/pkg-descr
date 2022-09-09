@@ -13,5 +13,3 @@ functionality with comas and numerals.
 
 This port installs the keyboard so that it can be used through SCIM or
 IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
-
-WWW: http://varamozhi.sourceforge.net/

@@ -2,5 +2,3 @@ The class allows you to:
 * check if an addresse is an IPv6 addresse
 * compress/uncompress IPv6 addresses
 * check for an IPv4 compatible ending in an IPv6 adresse
-
-WWW: https://pear.php.net/package/Net_IPv6

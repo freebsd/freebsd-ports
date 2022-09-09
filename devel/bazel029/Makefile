@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	029
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Fast and correct build system
+WWW=		https://bazel.build/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

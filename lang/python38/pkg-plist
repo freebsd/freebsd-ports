@@ -65,6 +65,7 @@ include/python%%XYDOT%%%%ABI%%/internal/pycore_getopt.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_gil.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_hamt.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_initconfig.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_long.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_object.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pathconfig.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pyerrors.h

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Test network connectivity before functional tests
+WWW=		https://metacpan.org/release/Test-RequiresInternet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

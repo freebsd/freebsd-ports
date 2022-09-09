@@ -7,6 +7,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python binding to the StackExchange website APIs
+WWW=		https://github.com/lucjon/Py-StackExchange
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

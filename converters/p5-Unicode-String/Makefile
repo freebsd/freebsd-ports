@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules to handle various Unicode issues
+WWW=		https://metacpan.org/release/Unicode-String
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

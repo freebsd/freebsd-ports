@@ -7,5 +7,3 @@ protection for both control and data channels.
 This package contains the secure FTP server, the command-line TLS/SSL-aware FTP
 client utility, an essential documentation, and also script programs for a
 basic X.509 certificate management.
-
-WWW: http://bsdftpd-ssl.sc.ru

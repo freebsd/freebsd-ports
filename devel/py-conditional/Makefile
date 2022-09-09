@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Conditionally enter a context manager
+WWW=		https://pypi.org/project/conditional/
 
 LICENSE=	BSD2CLAUSE
 

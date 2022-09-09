@@ -6,6 +6,7 @@ MASTER_SITES=	https://lab.burn.capital/chaz/3omns/uploads/6ec547a14fec72a72f9fa5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old-school bomb-dropping Deathmatch
+WWW=		https://chaz.human.codes/3omns/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,5 +8,3 @@ and the second for Clear Sky and Call of Pripyat:
 
   $ xr_converter -unpack /path/to/gamedata.db0 -2947ru -dir ./put_it_here
   $ xr_converter -unpack /path/to/resources.db0 -xdb -dir ./put_it_here
-
-WWW: https://github.com/abramcumner/xray_re-tools

@@ -3,5 +3,3 @@ is used to monitor network components. It is capable of interrogating
 interface statistics, hardware (CPU, memory, fans, power modules,
 etc.), firewall policies, HSRP, load balancer pools, processor and
 memory usage.
-
-WWW: https://labs.consol.de/nagios/check_nwc_health

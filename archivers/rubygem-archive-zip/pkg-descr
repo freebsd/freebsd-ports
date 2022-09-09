@@ -6,5 +6,3 @@ More complex operations involving the manipulation of existing archives in place
 (adding, removing, and modifying entries) are also possible with a little more
 work.  Even adding advanced features such as new compression codecs are
 supported with a moderate amount of effort.
-
-WWW: https://github.com/javanthropus/archive-zip

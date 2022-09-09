@@ -20,5 +20,3 @@ Features:
   format supports full colour 3D printing (on Shapeways.com, at least). These
   meshes are defect free: watertight, manifold, with no self intersections,
   degenerate triangles, or flipped triangles.
-
-WWW: https://github.com/curv3d/curv/

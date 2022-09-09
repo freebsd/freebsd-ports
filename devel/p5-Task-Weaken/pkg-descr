@@ -19,5 +19,3 @@ time you write a module.
 It should also help make the package auto-generators for the various
 operating systems play more nicely, because it introduces a dependency that
 they have to have a proper weaken in order to work.
-
-WWW: https://metacpan.org/release/Task-Weaken

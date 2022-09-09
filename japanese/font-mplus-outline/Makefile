@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-TESTFLIGHT-063a
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	M+ Outline Fonts
+WWW=		https://mplus-fonts.osdn.jp/mplus-outline-fonts/index-en.html
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE_E

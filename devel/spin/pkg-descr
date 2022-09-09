@@ -7,4 +7,3 @@ including all correctness requirements expressible in linear
 time temporal logic.
 Spin uses a high level language to specify systems descriptions,
 called PROMELA (PROcess MEta LAnguage).
-WWW: http://spinroot.com

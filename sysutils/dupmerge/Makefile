@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Searches for files with equal content
+WWW=		https://sourceforge.net/projects/dupmerge/
 
 USES=		zip
 MAKE_FLAGS=	# empty

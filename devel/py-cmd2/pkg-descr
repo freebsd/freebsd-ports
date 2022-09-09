@@ -4,5 +4,3 @@ user-friendly interactive command line applications. It provides a simple API
 which is an extension of Python's built-in cmd module. cmd2 provides a wealth of
 features on top of cmd to make your life easier and eliminates much of the
 boilerplate code which would be necessary when using cmd.
-
-WWW: https://github.com/python-cmd2/cmd2

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast, lightweight YAML and JSON loader and dumper
+WWW=		https://metacpan.org/release/YAML-Syck
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

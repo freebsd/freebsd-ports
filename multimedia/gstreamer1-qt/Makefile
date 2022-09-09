@@ -8,6 +8,7 @@ DISTNAME=	qt-gstreamer-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt ${FLAVOR:C/qt//} bindings for GStreamer 1.x multimedia library
+WWW=		https://gstreamer.freedesktop.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

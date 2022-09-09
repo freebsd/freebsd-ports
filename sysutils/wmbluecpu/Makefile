@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/X11/xutils
 
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	CPU monitoring dockapp
+WWW=		http://misuceldestept.go.ro/wmbluecpu/
 
 USES=		tar:bzip2 xorg
 USE_XORG=	xpm

@@ -5,6 +5,7 @@ MASTER_SITES=	https://s3.openkim.org/kim-api/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for reliable, reproducible, portable molecular simulations
+WWW=		https://openkim.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL

@@ -5,6 +5,7 @@ MASTER_SITES=	https://ftp.margiolis.net/${PORTNAME}/
 
 MAINTAINER=	christos@freebsd.org
 COMMENT=	Minimal and daemonless notification program for X
+WWW=		https://margiolis.net/w/nfy-a-daemonless-notification-program.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

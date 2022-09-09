@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
+WWW=		https://www.viewvc.org/
 
 LICENSE=	BSD2CLAUSE
 

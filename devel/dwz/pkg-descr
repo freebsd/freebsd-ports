@@ -5,5 +5,3 @@ representation where possible and by reducing the amount of duplication
 using techniques from DWARF standard appendix E - creating
 DW_TAG_partial_unit compilation units (CUs) for duplicated information
 and using DW_TAG_imported_unit to import it into each CU that needs it.
-
-WWW: https://sourceware.org/dwz/

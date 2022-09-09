@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load Apache configuration files
+WWW=		https://metacpan.org/release/Apache-ConfigParser
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-FnMatch>=0:devel/p5-File-FnMatch \

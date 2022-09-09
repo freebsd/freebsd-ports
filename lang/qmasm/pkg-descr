@@ -5,5 +5,3 @@ level of abstraction. It is therefore analogous to a conventional macro
 assembler and can be used in much the same way: as a target either for
 programmers who want a great deal of control over the hardware or for compilers
 that implement higher-level languages.
-
-WWW: https://github.com/lanl/qmasm

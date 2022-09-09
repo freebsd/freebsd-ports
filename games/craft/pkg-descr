@@ -5,5 +5,3 @@ Online multiplayer support is included using a Python-based server.
 This version is adapted to build, install and run on FreeBSD.
 
 Craft was created by Michael Fogleman.
-
-WWW: http://www.michaelfogleman.com/craft/

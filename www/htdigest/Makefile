@@ -8,6 +8,7 @@ DIST_SUBDIR=	apache24
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Utility from the Apache distribution for creating htdigest files
+WWW=		https://httpd.apache.org/
 
 LICENSE=	APACHE20
 

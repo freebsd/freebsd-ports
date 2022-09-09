@@ -5,5 +5,3 @@ chklinks differs from linkchecker in that chklinks is non- threaded. It does
 not raises many simultaneously connections for its job. It won't run out of
 the resources and crash your system in a moment. This is certainly more
 desirable for most webmasters and users.
-
-WWW: https://metacpan.org/release/IMACAT/chklinks-3.09

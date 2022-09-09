@@ -16,5 +16,3 @@ the cart, register itself as user and enter a test address etc.
 The test script could also include the administration part of the
 interaction, by explicitely logging in as site admin, reviewing and
 processing the order, nuking the test user etc.
-
-WWW: http://tclwebtest.sourceforge.net

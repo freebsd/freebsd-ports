@@ -4,5 +4,3 @@ ordering of sections and key/value-pairs as wells as their cases are kept as in
 the original file. Thus ConfigUpdater provides complementary functionality to
 Python's ConfigParser which is primarily meant for reading config files and
 writing new ones.
-
-WWW: https://github.com/pyscaffold/configupdater

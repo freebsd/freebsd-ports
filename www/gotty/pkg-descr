@@ -8,5 +8,3 @@ process with multiple clients.
 
 For additional security, SSL/TLS client certificate authentication and
 session encryption should be used.
-
-WWW: https://github.com/yudai/gotty

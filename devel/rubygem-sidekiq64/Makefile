@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	64
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple, efficient background processing for Ruby
+WWW=		https://sidekiq.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

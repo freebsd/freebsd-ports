@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module with magic merger of runtime values with templates
+WWW=		https://metacpan.org/release/Template-Magic
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Util>=0:devel/p5-IO-Util \

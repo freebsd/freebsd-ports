@@ -5,6 +5,7 @@ MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Preboot Execution Environment server
+WWW=		https://github.com/frsyuki/pxe-pdhcp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README.md

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Format terminal output using String::Tagged
+WWW=		https://metacpan.org/release/String-Tagged-Terminal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

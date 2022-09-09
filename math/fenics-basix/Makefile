@@ -1,10 +1,11 @@
 PORTNAME=	fenics-basix
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5.0.post0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FEniCS finite element basis evaluation library
+WWW=		https://github.com/FEniCS/basix
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -21,4 +22,10 @@ GH_PROJECT=	basix
 
 WRKSRC_SUBDIR=	cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/c++/v1/concepts) # true only on FreeBSD_12
+BROKEN=		system is missing a required C++ feature std::concepts
+.endif
+
+.include <bsd.port.post.mk>

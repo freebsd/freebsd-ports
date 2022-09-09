@@ -1,4 +1,2 @@
 pure_eval is a Python package that lets you safely evaluate certain AST nodes
 without triggering arbitrary code that may have unwanted side effects.
-
-WWW: https://github.com/alexmojaki/pure_eval

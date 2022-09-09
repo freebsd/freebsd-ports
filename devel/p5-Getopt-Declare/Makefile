@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declaratively Expressed Command-Line Arguments via Regular Expressions
+WWW=		https://metacpan.org/release/Getopt-Declare
 
 USES=		perl5
 USE_PERL5=	configure

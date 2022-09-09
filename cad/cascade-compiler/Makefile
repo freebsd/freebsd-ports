@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-compiler
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Verilog from VMware Research
+WWW=		https://github.com/vmware/cascade
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

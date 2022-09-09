@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Connect to Pry remotely using EventMachine
+WWW=		https://github.com/gruis/pry-remote-em
 
 LICENSE=	MIT
 

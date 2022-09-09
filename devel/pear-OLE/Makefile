@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for reading and writing OLE containers
+WWW=		https://pear.php.net/package/OLE
 
 USES=		pear
 

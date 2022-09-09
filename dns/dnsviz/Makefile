@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Analysis and visualization of DNS/DNSSEC behavior
+WWW=		https://dnsviz.net/
 
 LICENSE=	GPLv2
 

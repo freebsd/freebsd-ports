@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C++ library for arithmetic on elliptic curves
+WWW=		https://homepages.warwick.ac.uk/staff/J.E.Cremona/mwrank/
 
 LICENSE=	GPLv2
 

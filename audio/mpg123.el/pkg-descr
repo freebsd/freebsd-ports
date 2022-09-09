@@ -7,5 +7,3 @@ preserve portability, it must run on almost all variant of Emacs, especially
 recent one. Here is the list of environment where mpg123.el is reported to be
 available. If you find mpg123 running on other platforms than below, please
 tell me your environment.
-
-WWW: http://www.gentei.org/~yuuji/software/mpg123el/

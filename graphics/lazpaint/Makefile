@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Image editor written in Lazarus
+WWW=		https://wiki.freepascal.org/LazPaint
 
 LICENSE=	GPLv3
 

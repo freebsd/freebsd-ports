@@ -1,11 +1,12 @@
 PORTNAME=	goawk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	AWK interpreter written in Go
+WWW=		https://github.com/benhoyt/goawk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

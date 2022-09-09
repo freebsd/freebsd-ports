@@ -1,5 +1,3 @@
 ImageScience is a clean and happy Ruby library that generates thumbnails -- and
 kicks the living crap out of RMagick. Oh, and it doesn't leak memory like a
 sieve.
-
-WWW: https://github.com/seattlerb/image_science

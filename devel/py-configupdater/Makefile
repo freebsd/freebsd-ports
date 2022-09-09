@@ -7,6 +7,7 @@ DISTNAME=	ConfigUpdater-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser like ConfigParser but for updating configuration files
+WWW=		https://github.com/pyscaffold/configupdater
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

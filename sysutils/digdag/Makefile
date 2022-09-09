@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Workload Automation System
+WWW=		https://www.digdag.io/
 
 LICENSE=	APACHE20
 

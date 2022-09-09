@@ -5,6 +5,7 @@ CATEGORIES=	audio multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	OpenShot Audio Library
+WWW=		https://www.openshot.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	filip@parag.rs
 COMMENT=	Offline interactive documentation search
+WWW=		https://github.com/filiparag/wikiman
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

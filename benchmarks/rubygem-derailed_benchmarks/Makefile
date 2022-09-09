@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Benchmarks for your whole Rails app
+WWW=		https://github.com/schneems/derailed_benchmarks
 
 LICENSE=	MIT
 

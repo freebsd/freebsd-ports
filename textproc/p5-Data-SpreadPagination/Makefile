@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Page numbering and spread pagination
+WWW=		https://metacpan.org/release/Data-SpreadPagination
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

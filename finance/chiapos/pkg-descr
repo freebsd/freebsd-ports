@@ -6,5 +6,3 @@ Notes:
 i386 is not supported, and would be too slow for practical use if supported.
 
 This port is for the cmake build (binaries).
-
-WWW: https://github.com/Chia-Network/chiapos

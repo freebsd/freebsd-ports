@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Audio CD ripper with command-line interface and focus on accuracy
+WWW=		https://github.com/cyanreg/cyanrip
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

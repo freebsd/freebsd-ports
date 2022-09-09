@@ -5,6 +5,7 @@ MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open source framework for solving Freecell
+WWW=		https://fc-solve.shlomifish.org/
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Near-infinite-world block sandbox game
+WWW=		https://www.minetest.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/doc/lgpl-2.1.txt

@@ -1,10 +1,11 @@
 PORTNAME=	Nasdaq-Data-Link
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	finance
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for Nasdaq Data Link API access
+WWW=		https://github.com/Nasdaq/data-link-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

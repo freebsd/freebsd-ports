@@ -1,5 +1,3 @@
 HTTP::MobileAgent::Plugin::Charset is a plugin of HTTP::MobileAgent.
 
 You can detect encoding.  The result can use with Encode::JP::Mobile.
-
-WWW: https://metacpan.org/release/HTTP-MobileAgent-Plugin-Charset

@@ -9,5 +9,3 @@ than methods such as density functional theory, but at a trade-off of much
 greater computational expense. Distinct from many other correlated many-body
 methods, QMC methods are readily applicable to both bulk (periodic) and isolated
 molecular systems.
-
-WWW: https://www.qmcpack.org/

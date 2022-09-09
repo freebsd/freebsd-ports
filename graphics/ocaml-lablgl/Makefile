@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
+WWW=		https://forge.ocamlcore.org/projects/lablgl/
 
 LICENSE=	BSD3CLAUSE
 

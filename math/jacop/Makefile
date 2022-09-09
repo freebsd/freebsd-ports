@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/yuri/:maven \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Java Constraint Programming solver
+WWW=		https://github.com/radsz/jacop
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

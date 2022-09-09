@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DIST
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Usenet meta search
+WWW=		https://github.com/theotherp/nzbhydra2
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

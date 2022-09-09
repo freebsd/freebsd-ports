@@ -5,6 +5,7 @@ CATEGORIES=	net games
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Animated telnet server that renders a loop of the nyan cat animation
+WWW=		https://github.com/klange/nyancat
 
 LICENSE=	NCSA
 

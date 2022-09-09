@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Secure and anonymous file sharing via Tor (CLI version)
+WWW=		https://onionshare.org
 
 LICENSE=	GPLv3
 

@@ -8,5 +8,3 @@ with no extension and a shell shebang.
 
 If any EditorConfig files are found, they will be used to apply formatting
 options.
-
-WWW: https://github.com/mvdan/sh

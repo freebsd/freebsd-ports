@@ -19,5 +19,3 @@ Without actually executing a Perl 5 program, you can walk its optree:
     	op_sibling	0x55d152041538    COP [OP_NEXTSTATE]
     	op_targ		0
     	...
-
-WWW: https://metacpan.org/release/B-Debug

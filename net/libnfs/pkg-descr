@@ -4,5 +4,3 @@ LIBNFS offers three different APIs, for different use :
 1, RAW : A fully async low level RPC library for NFS protocols
 2, NFS ASYNC : A fully asynchronous library for high level vfs functions
 3, NFS SYNC : A synchronous library for high level vfs functions
-
-WWW: https://github.com/sahlberg/libnfs

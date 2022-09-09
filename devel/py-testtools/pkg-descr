@@ -1,5 +1,3 @@
 testtools is a set of extensions to the Python standard library's unit testing
 framework. These extensions have been derived from years of experience with unit
 testing in Python and come from many different sources.
-
-WWW: https://github.com/testing-cabal/testtools

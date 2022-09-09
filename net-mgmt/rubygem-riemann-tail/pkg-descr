@@ -1,5 +1,3 @@
 Allow streaming in real-time monitoring events from your distributed
 systems, using the Riemann streaming event monitoring system, to your
 terminal console.
-
-WWW: https://github.com/wkf/riemann-tail

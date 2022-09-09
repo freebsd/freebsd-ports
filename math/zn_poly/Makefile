@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/sagemath/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C library for polynomial arithmetic
+WWW=		https://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/
 
 LICENSE=		GPLv2 GPLv3
 LICENSE_COMB=		dual

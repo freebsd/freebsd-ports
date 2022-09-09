@@ -5,6 +5,7 @@ CATEGORIES=	net news pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR implementation of the NNTP protocol
+WWW=		https://pear.php.net/package/Net_NNTP
 
 LICENSE=	W3C
 LICENSE_NAME=	W3C IPR SOFTWARE NOTICE

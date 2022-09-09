@@ -7,5 +7,3 @@ It uses a simple framework for building test structures, and provides a rich set
 of assertions for testing common data types. In addition, several different
 interfaces are provided for running tests and reporting results. These
 interfaces currently include: Automated, Basic, Console and Curses.
-
-WWW: http://cunit.sourceforge.net/

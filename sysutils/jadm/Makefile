@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jadm@dachev.info
 COMMENT=	FreeBSD jail framework with zfs, vnet and jail.conf support
+WWW=		https://github.com/NikolayDachev/jadm
 
 LICENSE=	BSD3CLAUSE
 

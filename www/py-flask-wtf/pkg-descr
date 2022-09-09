@@ -1,4 +1,2 @@
 Simple integration of Flask and WTForms, including CSRF, file upload
 and Recaptcha integration.
-
-WWW: https://flask-wtf.readthedocs.org/en/latest/

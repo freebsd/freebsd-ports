@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crawler for getting info about DNS domains and services
+WWW=		https://gitlab.nic.cz/adam/dns-crawler
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of LV2 plugins designed for modular/eurorack style use
+WWW=		https://github.com/polyeffects/PolyLV2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

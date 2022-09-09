@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure-Perl OpenPGP-compatible PGP implementation
+WWW=		https://metacpan.org/release/Crypt-OpenPGP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Alt-Crypt-RSA-BigInt>=0:security/p5-Alt-Crypt-RSA-BigInt \

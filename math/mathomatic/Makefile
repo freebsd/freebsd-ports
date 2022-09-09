@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
+WWW=		https://github.com/mfillpot/mathomatic
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

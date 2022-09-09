@@ -5,5 +5,3 @@ as SIP, SDP, RTP, STUN, TURN, and ICE. It combines signaling protocol
 into high level API that is portable and suitable for almost any
 type of systems ranging from desktops, embedded systems, to mobile
 handsets.
-
-WWW: https://www.pjsip.org/

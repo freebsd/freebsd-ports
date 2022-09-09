@@ -1,0 +1,4 @@
+redis-client is a simple, low-level, client for Redis 6+.
+
+Contrary to the redis gem, redis-client doesn't try to map all Redis commands to
+Ruby constructs, it merely is a thin wrapper on top of the RESP3 protocol.

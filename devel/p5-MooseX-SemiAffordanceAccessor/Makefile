@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Name your accessors foo() and set_foo()
+WWW=		https://metacpan.org/release/MooseX-SemiAffordanceAccessor
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

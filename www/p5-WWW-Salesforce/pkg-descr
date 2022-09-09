@@ -3,5 +3,3 @@ Salesforce.com. Because SOAP::Lite does not support complexTypes, and
 document/literal encoding is limited, this module works around those
 limitations and provides a more intuitive interface a developer can
 interact with.
-
-WWW: https://metacpan.org/release/WWW-Salesforce

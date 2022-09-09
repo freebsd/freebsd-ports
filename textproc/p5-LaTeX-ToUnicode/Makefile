@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Convert LaTeX commands to Unicode
+WWW=		https://metacpan.org/release/LaTeX-ToUnicode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

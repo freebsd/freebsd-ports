@@ -8,6 +8,7 @@ CATEGORIES=	multimedia
 # Maintainer block
 MAINTAINER=	ports@blievers.net
 COMMENT=	Motion detection application
+WWW=		https://motion-project.github.io/
 
 # License block
 LICENSE=	GPLv2+

@@ -2,5 +2,3 @@ The staticReflection component can be used as a drop-in replacement for PHP's
 internal reflection api. This component provides a generic reflection stack so
 that applications can switch between the internal and/or static reflection
 implementation.
-
-WWW: http://pear.pdepend.org/

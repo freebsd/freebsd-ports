@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library providing logic to interface scanners
+WWW=		http://www.kipi-plugins.org
 
 LIB_DEPENDS=	libsane.so:graphics/sane-backends
 

@@ -15,5 +15,3 @@ whole waveform.
 SDL_sound can also handle sample rate, audio format, and channel
 conversion on-the-fly and behind-the-scenes, if the programmer
 desires.
-
-WWW: http://www.icculus.org/SDL_sound/

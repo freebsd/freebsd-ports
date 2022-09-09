@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	earl@eeg3.net
 COMMENT=	Manipulation tool for Adobe Flash Video files (FLV)
+WWW=		http://code.google.com/p/flvmeta/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

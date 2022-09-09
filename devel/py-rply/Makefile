@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dave@dal.ca
 COMMENT=	Pure python parser generator, that also works with RPython
+WWW=		https://github.com/alex/rply
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

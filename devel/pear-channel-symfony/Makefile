@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		https://pear.symfony-project.com/
 
 PEAR_CHANNEL_HOST=	pear.symfony-project.com
 

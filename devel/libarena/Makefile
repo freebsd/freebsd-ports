@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Custom Memory Allocator Interface
+WWW=		https://www.25thandclement.com/~william/projects/libarena.html
 
 LICENSE=	MIT
 

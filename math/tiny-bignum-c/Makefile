@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Small portable multiple-precision unsigned integer arithmetic in C
+WWW=		https://github.com/kokke/tiny-bignum-c
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

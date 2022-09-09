@@ -1,4 +1,4 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2022-07-22 17:30:31 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2022-08-31 12:19:35 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
 @@ -27,7 +27,7 @@
            <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
@@ -18,10 +18,10 @@
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                    prefs.extensions.theme.id.value, useSystemTheme_)]]"
-@@ -109,7 +109,7 @@
-             pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
-             label="$i18n{showBookmarksBar}">
-         </settings-toggle-button>
+@@ -135,7 +135,7 @@
+           </div>
+         </template>
+ 
 -<if expr="is_linux">
 +<if expr="is_posix">
          <div class="hr" hidden="[[!pageVisibility.bookmarksBar]]"></div>

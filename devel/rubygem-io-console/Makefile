@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Add console capabilities to IO instances
+WWW=		https://github.com/ruby/io-console
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

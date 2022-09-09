@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Convert a ttyrec record into a gif animation directly
+WWW=		https://saitoha.github.io/seq2gif/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

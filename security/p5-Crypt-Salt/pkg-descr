@@ -1,4 +1,2 @@
 The single exported subroutine in this module is for generating a salt
 suitable for being fed to crypt() and other similar functions.
-
-WWW: https://metacpan.org/release/Crypt-Salt

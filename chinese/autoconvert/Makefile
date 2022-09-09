@@ -7,6 +7,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent Chinese encoding converter
+WWW=		http://banyan.dlut.edu.cn/~ygh/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High-level API for Python internationalization
+WWW=		https://flufli18n.readthedocs.io
 
 LICENSE=	APACHE20
 

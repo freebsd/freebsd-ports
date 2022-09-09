@@ -2,5 +2,3 @@ Test::utf8 is a collection of tests useful for dealing with utf8 strings in
 Perl. It has two types of tests: The validity tests check if a string is valid
 and not corrupt, whereas the characteristics tests will check that string has a
 given set of characteristics.
-
-WWW: https://metacpan.org/release/Test-utf8

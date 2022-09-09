@@ -7,6 +7,7 @@ DISTNAME=	locustio-${PORTVERSION}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Python utility for doing easy, distributed load testing
+WWW=		https://locust.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

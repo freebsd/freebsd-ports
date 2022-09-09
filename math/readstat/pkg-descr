@@ -15,5 +15,3 @@ Supported metadata formats include:
 There is also write support for all the data formats, but not the metadata
 formats. The produced SAS7BDAT files still cannot be read by SAS, but feel free
 to contribute your binary-format expertise here.
-
-WWW: https://github.com/WizardMac/ReadStat

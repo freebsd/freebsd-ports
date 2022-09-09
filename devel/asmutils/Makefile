@@ -6,6 +6,7 @@ MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of Unix utilities written in x86 assembly language
+WWW=		http://asm.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Java alternative to RRDTool
+WWW=		http://www.jrobin.org/
 
 USE_JAVA=	yes
 NO_BUILD=	yes

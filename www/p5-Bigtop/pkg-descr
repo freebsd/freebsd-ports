@@ -11,5 +11,3 @@ If you need to alter the data model in the future, you can change your
 original description to match the new reality, then regenerate the
 application without fear of losing hand written code (though you may
 have to modify some of it to reflect the new reality).
-
-WWW: https://metacpan.org/release/Bigtop

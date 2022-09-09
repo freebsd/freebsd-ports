@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Algorithm for aligning expressed DNA with genomic sequences
+WWW=		http://globin.cse.psu.edu/
 
 LICENSE=	GPLv2
 

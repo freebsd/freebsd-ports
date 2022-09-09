@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to control Pulse-Eight's HDMI-CEC adapter
+WWW=		http://libcec.pulse-eight.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

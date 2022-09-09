@@ -8,6 +8,7 @@ DISTNAME=	MailZu_${DISTVERSION:S/rc/RC/}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Simple and intuitive web interface to manage amavisd-new quarantine
+WWW=		https://sourceforge.net/projects/mailzu/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

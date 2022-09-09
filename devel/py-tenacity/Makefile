@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Retry code until it succeeds
+WWW=		https://github.com/jd/tenacity
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

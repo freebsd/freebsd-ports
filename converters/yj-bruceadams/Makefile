@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command line tool that converts YAML to JSON
+WWW=		https://github.com/bruceadams/yj
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,5 +3,3 @@ raw scancode mode and show scancodes of keys pressed and released.
 
 Five seconds of inactivity resets the console to the original mode
 and quits the program.
-
-WWW: https://hack.org/mc/hacks/kbdscan/

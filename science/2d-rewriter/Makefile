@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cellular automata simulator
+WWW=		https://github.com/iserikov/2d-rewriter
 
 USES=		imake xorg
 USE_XORG=	x11 xext

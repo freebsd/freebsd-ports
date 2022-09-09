@@ -1,11 +1,13 @@
 PORTNAME=	owncast
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.12
+PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	de-freebsd@ctseuro.com
 COMMENT=	Self-hosted streaming service written in Go
+WWW=		https://owncast.online
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

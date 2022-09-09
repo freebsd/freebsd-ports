@@ -6,6 +6,7 @@ MASTER_SITES=	https://bolt.cm/distribution/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated, lightweight & simple CMS
+WWW=		https://bolt.cm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

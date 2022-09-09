@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Approximately-maximum-likelihood phylogenetic trees from alignments
+WWW=		http://www.microbesonline.org/fasttree/
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Many-Core Engine for Perl providing parallel processing capabilities
+WWW=		https://metacpan.org/release/MCE
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

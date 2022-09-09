@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	PostgreSQL extension for generates short, unique, non-sequential ids from numbers
+WWW=		https://github.com/iCyberon/pg_hashids
 
 LICENSE=	MIT
 

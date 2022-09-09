@@ -5,5 +5,3 @@ With this module, you can define and register Perl callbacks with the Milter
 engine. This module calls your perl callbacks using interpreters from a
 threaded persistent interpreter pool. Milter contexts are presented using an
 object-oriented style interface for performing operations on a Milter context.
-
-WWW: https://sourceforge.net/projects/sendmail-milter/

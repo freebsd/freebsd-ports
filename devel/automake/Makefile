@@ -8,6 +8,7 @@ USE_PKG64=	1
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
+WWW=		https://www.gnu.org/software/automake/
 
 LICENSE=	GPLv2+ GFDL
 LICENSE_COMB=	multi

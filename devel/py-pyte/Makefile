@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simple VTXXX-compatible terminal emulator
+WWW=		https://github.com/selectel/pyte
 
 LICENSE=	LGPL3
 

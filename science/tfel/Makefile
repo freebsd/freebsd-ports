@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-mfront
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code generation tool dedicated to material knowledge
+WWW=		https://github.com/thelfer/tfel
 
 LICENSE=	GPLv3
 

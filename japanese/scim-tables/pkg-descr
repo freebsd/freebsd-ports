@@ -3,5 +3,3 @@ SCIM table based Japanese input method: HIRAGANA, KATAKANA, Nippon
 Smart Common Input Method platform, in short SCIM, is a development platform to
 make Input Method developers live easier. It has very clear architecture and
 very simple programming interface.
-
-WWW: https://github.com/scim-im/scim

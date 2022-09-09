@@ -4,6 +4,7 @@ CATEGORIES=	archivers pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create and Use PHP Archive files
+WWW=		https://pear.php.net/package/PHP_Archive
 
 LICENSE=	PHP301
 

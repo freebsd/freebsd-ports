@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Packet manipulation library for Python
+WWW=		https://gitlab.com/mike01/pypacker
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

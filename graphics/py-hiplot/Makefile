@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High dimensional Interactive Plotting tool
+WWW=		https://github.com/facebookresearch/hiplot
 
 LICENSE=	MIT
 

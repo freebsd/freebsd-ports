@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Tabbed Qt mixer for FreeBSD
+WWW=		https://github.com/mrclksr/DSBMixer
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

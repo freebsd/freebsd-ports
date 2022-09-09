@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Object oriented simple interface to fork()
+WWW=		https://metacpan.org/release/Child
 
 USES=		perl5
 USE_PERL5=	modbuild

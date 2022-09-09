@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Use NeoVim as a pager, with full syntax highlighting
+WWW=		https://github.com/lucc/nvimpager
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

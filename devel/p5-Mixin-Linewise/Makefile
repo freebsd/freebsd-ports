@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write your linewise code for handles; this does the rest
+WWW=		https://metacpan.org/release/Mixin-Linewise
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

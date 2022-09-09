@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-oauth2
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	CAS 3.0 Strategy for OmniAuth
+WWW=		https://github.com/tduehr/omniauth-cas3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

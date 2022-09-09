@@ -12,5 +12,3 @@ This package contains a number of different tools:
   - C library for low-level access to volumes
 
 Support for Apple's new Extended Format (HFS+) is currently not available.
-
-WWW: https://www.mars.org/home/rob/proj/hfs/

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ZFS-centric backup tool
+WWW=		https://www.znapzend.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

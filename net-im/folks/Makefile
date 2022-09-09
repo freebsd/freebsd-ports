@@ -5,11 +5,11 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to aggregates people from multiple sources
+WWW=		https://wiki.gnome.org/Projects/Folks
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgcr-base-3.so:security/gcr \
 		libzeitgeist-2.0.so:sysutils/zeitgeist \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libdbus-1.so:devel/dbus
 
 USES=		gettext gnome localbase meson python:3.5+,build pkgconfig \
-		readline sqlite tar:xz
+		readline sqlite tar:xz vala:build
 USE_GNOME=	evolutiondataserver3 intlhack introspection:build
 USE_LDCONFIG=	yes
 

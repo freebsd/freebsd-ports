@@ -8,6 +8,7 @@ DISTNAME=	libSystem-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS core system library
+WWW=		https://www.defora.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

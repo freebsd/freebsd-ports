@@ -10,5 +10,3 @@ Our efforts have mostly targeted the SSH2 protocol in relation to
 X window system and X11 forwarding. Of course, we are also interested
 in adding other functionality - port forward, file transfer, terminal
 emulation, etc.
-
-WWW: http://www.jcraft.com/jsch

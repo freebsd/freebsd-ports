@@ -4,5 +4,3 @@ Programmable Infrastructure.
 This is a daemon and related tools written in Go that hosts services,
 autonomous agents and generally provide a secure hosting environment for
 callable logic that you can interact with from code.
-
-WWW: https://choria.io/

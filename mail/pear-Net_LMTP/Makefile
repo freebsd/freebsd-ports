@@ -4,6 +4,7 @@ CATEGORIES=	mail www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR implementation of the RFC2033 LMTP protocol
+WWW=		https://pear.php.net/package/Net_LMTP
 
 LICENSE=	PHP301
 

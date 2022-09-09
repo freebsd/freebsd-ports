@@ -11,6 +11,4 @@ a bibliography in HTML format. Here are some features:
  o Extract from one or several BibTeX files the set of entries satisfying
    a given criterion.
 
-WWW: https://www.lri.fr/~filliatr/bibtex2html/
-
 Gerald Pfeifer <gerald@FreeBSD.org>

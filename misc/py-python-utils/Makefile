@@ -1,11 +1,12 @@
 PORTNAME=	python-utils
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.3
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Collection of small functions and classes
+WWW=		https://pypi.org/project/python-utils/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

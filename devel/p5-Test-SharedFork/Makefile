@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fork test
+WWW=		https://metacpan.org/release/Test-SharedFork
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

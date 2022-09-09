@@ -6,6 +6,7 @@ MASTER_SITES=	https://changeling.ixionstudios.com/xlogical/downloads/ \
 
 MAINTAINER=	aaron@baugher.biz
 COMMENT=	Remake of the classic puzzle game Logical
+WWW=		https://changeling.ixionstudios.com/xlogical/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

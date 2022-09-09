@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-gtk3-${PORTVERSION}
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Oxygen GTK+ 3 engine and theme
+WWW=		http://kde-look.org/content/show.php/?content=136216
 
 LICENSE=	LGPL21
 

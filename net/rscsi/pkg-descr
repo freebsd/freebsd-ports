@@ -9,5 +9,3 @@ the remote user.
 
 The rscsi command must be installed setuid root for full functionality.
 For this reason it is provided as a separate package to cdrtools.
-
-WWW: https://codeberg.org/schilytools/schilytools

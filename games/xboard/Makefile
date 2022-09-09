@@ -7,6 +7,7 @@ MASTER_SITES?=	GNU
 
 MAINTAINER?=	mbeis@xs4all.nl
 COMMENT?=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
+WWW=		https://www.gnu.org/software/xboard/
 
 LICENSE?=	GPLv3
 

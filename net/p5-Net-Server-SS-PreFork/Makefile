@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hot-deployable variant of Net::Server::PreFork
+WWW=		https://metacpan.org/release/Net-Server-SS-PreFork
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

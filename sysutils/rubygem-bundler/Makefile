@@ -1,11 +1,12 @@
 PORTNAME=	bundler
-PORTVERSION=	2.3.19
+PORTVERSION=	2.3.21
 PORTEPOCH=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool that manages gem dependencies for Ruby applications
+WWW=		https://bundler.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

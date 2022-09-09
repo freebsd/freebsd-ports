@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to test ICMP and TCP connectivity
+WWW=		https://github.com/puppetlabs/mcollective-nettest-agent
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade 2D shoot-em-up
+WWW=		https://linux.tlk.fr/games/Powermanga/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

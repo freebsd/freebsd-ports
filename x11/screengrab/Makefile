@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Screen dump utility
+WWW=		https://github.com/lxqt/screengrab
 
 LICENSE=	LGPL21+
 

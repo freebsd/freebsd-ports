@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	ZODB undo support for Zope2
+WWW=		https://pypi.org/project/ZopeUndo/
 
 LICENSE=	ZPL21
 

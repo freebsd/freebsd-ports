@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Elegant Python library for XMPP (aka Jabber, Google Talk, etc.)
+WWW=		https://lab.louiz.org/poezio/slixmpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

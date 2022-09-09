@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules to perform SNMP set,get,walk,next,walk_hash etc
+WWW=		https://metacpan.org/release/SNMP-Util
 
 RUN_DEPENDS=	net-snmp>=0:net-mgmt/net-snmp
 

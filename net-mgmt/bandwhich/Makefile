@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	petteri.valkonen@iki.fi
 COMMENT=	Terminal bandwidth utilization tool
+WWW=		https://github.com/imsnif/bandwhich
 
 LICENSE=	MIT
 

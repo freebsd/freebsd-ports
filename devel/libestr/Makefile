@@ -6,6 +6,7 @@ MASTER_SITES=	https://libestr.adiscon.com/files/download/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Library for some string essentials
+WWW=		https://libestr.adiscon.com/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

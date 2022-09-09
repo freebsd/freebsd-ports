@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding to the Ed25519 (RFC 8032)
+WWW=		https://github.com/RubyCrypto/ed25519
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

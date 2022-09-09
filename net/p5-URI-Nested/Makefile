@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	henrik@hodne.io
 COMMENT=	Perl5 interface for nested URIs
+WWW=		https://metacpan.org/release/URI-Nested
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

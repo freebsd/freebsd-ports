@@ -24,5 +24,3 @@ in GNU libc.  This version is also but *not* exclusively LGPL:
 This package comes with no documentation beyond a README, which isn't
 worth installing.  It appears that the GNU libc man page malloc(3)
 applies, but it's not included here for copyright reasons.
-
-WWW: http://www.malloc.de/en/

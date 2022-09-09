@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Library for lossless LAS compression
+WWW=		https://laszip.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

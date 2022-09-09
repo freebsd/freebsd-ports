@@ -16,5 +16,3 @@ very useful in practice (global variables, OS interface, sockets,...).
 GNU Prolog also includes an efficient constraint solver over Finite Domains
 (FD). This opens contraint logic pogramming to the user combining the power
 of constraint programming to the declarativity of logic programming.
-
-WWW: http://www.gprolog.org/

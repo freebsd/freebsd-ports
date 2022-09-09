@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library used for writing pagers and taskslists
+WWW=		https://www.gnome.org/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

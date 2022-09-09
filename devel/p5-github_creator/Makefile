@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a Github repository for your Perl module
+WWW=		https://metacpan.org/release/BDFOY/github_creator-0.15
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-IniFiles>0:devel/p5-Config-IniFiles	\

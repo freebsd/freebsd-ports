@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Add flag to ignore unicode literal prefixes in doctests
+WWW=		https://pypi.python.org/pypi/doctest-ignore-unicode
 
 LICENSE=	APACHE20
 

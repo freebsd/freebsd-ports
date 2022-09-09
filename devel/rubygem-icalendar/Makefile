@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for working with iCalendar files
+WWW=		https://github.com/icalendar/icalendar
 
 LICENSE=	BSD2CLAUSE GPLv3
 LICENSE_COMB=	dual

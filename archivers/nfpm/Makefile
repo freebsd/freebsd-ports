@@ -1,10 +1,12 @@
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.0
+DISTVERSION=	2.18.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple deb, rpm and apk packager written in Go
+WWW=		https://github.com/goreleaser/nfpm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -1,3 +1,3 @@
-TIMESTAMP = 1660628504
-SHA256 (KDE/release-service/22.08.0/kio-extras-22.08.0.tar.xz) = d65b5e7ef956b0f7941323114d2cfaff40b5d895f324868496a261a1af50f63f
-SIZE (KDE/release-service/22.08.0/kio-extras-22.08.0.tar.xz) = 643376
+TIMESTAMP = 1662479902
+SHA256 (KDE/release-service/22.08.1/kio-extras-22.08.1.tar.xz) = 89e140e1e6668754b8cb688b5375108d1dfafe0fad65600dd13694fe6ca53038
+SIZE (KDE/release-service/22.08.1/kio-extras-22.08.1.tar.xz) = 643828

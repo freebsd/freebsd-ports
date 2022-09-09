@@ -1,6 +1,6 @@
 PORTNAME=	gdrive
 DISTVERSION=	2.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -12,6 +12,7 @@ PATCHFILES=	3c060f4d33530866496515b45fcfaa3fd2da5f32.patch:-p1 \
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Google Drive CLI Client
+WWW=		https://github.com/prasmussen/gdrive
 
 LICENSE=	MIT
 

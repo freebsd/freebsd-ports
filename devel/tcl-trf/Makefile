@@ -8,6 +8,7 @@ DISTNAME=	trf${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
+WWW=		https://wiki.tcl-lang.org/479
 
 LICENSE=	Tcl_Trf_License
 LICENSE_NAME=	Tcl Trf License

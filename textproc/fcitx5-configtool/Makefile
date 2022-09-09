@@ -4,6 +4,7 @@ CATEGORIES=	textproc x11
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Fcitx5 IM framework configuration tool
+WWW=		https://github.com/fcitx/fcitx5-configtool
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Utilities to process FCODE, OpenFirmware's byte code
+WWW=		https://www.openfirmware.info/FCODE_suite
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

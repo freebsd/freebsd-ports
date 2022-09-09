@@ -1,11 +1,12 @@
 PORTNAME=	gscloud
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Official command-line interface for gridscale's API written in Go
+WWW=		https://github.com/gridscale/gscloud
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

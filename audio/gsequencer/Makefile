@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Advanced Gtk+ sequencer
+WWW=		https://nongnu.org/gsequencer/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

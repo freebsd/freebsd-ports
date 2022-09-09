@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
+WWW=		https://github.com/virtualsquare/vde-2
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi

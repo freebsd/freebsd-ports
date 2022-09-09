@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}${DISTVERSION}.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Implementation of JavaScript written in Java
+WWW=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino
 
 LICENSE=	MPL20
 

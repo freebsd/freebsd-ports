@@ -4,6 +4,7 @@ CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Server side focus component used in Jitsi Meet conferences
+WWW=		https://github.com/jitsi/jicofo/
 
 LICENSE=	APACHE20
 
@@ -55,5 +56,5 @@ do-install:
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-1.1-SNAPSHOT-jar-with-dependencies.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
- 	
+
 .include <bsd.port.mk>

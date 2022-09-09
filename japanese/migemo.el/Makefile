@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Japanese incremental search tool for Emacs
+WWW=		https://github.com/emacs-jp/migemo
 
 LICENSE=	GPLv2
 

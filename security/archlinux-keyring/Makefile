@@ -5,6 +5,7 @@ MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/
 
 MAINTAINER=	vishwin@vishwin.info
 COMMENT=	Arch Linux PGP keyring
+WWW=		https://gitlab.archlinux.org/archlinux/archlinux-keyring/
 
 LICENSE=	GPLv2+
 

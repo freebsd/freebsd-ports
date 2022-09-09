@@ -8,6 +8,7 @@ DISTNAME=	PyDrive-${PORTVERSION}
 
 MAINTAINER=	paul@gromit.dlib.vt.edu
 COMMENT=	Google drive api made easy
+WWW=		https://github.com/googledrive/PyDrive
 
 LICENSE=	APACHE20
 

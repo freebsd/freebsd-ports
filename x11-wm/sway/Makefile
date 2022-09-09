@@ -8,6 +8,7 @@ PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
+WWW=		https://swaywm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

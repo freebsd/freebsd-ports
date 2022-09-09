@@ -7,6 +7,7 @@ MASTER_SITES=	http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Control a ribbon to avoid hitting walls
+WWW=		http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/
 
 USES=		gl tar:bzip2
 USE_GL=		glut

@@ -5,5 +5,3 @@ as the source code for standalone encoding and decoding executables.
 Base64 uses a subset of displayable ASCII characters, and is therefore a
 useful encoding for storing binary data in a text file, such as XML, or
 sending binary data over text-only communication channels.
-
-WWW: http://libb64.sourceforge.net/

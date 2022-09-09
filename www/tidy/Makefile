@@ -7,6 +7,7 @@ DISTNAME=	tidy4aug00
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
+WWW=		https://www.w3.org/People/Raggett/tidy/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT

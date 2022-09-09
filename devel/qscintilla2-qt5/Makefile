@@ -7,6 +7,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 port of the Scintilla C++ editor class
+WWW=		http://www.riverbankcomputing.co.uk/software/qscintilla/
 
 USES=		compiler:c++11-lang gl qmake pyqt:5 qt:5
 USE_GL=		gl

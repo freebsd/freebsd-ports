@@ -8,5 +8,3 @@ it, decrease the COWREFCNT counter. One SV can then drop the COW flag when it's
 the only one holding a pointer to the PV. The COWREFCNT is stored at the end of
 the PV, after the the "\0". That value is limited to 255, when we reach 255, a
 new PV would be created,
-
-WWW: https://metacpan.org/release/B-COW

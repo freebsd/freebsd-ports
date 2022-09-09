@@ -8,6 +8,7 @@ DISTNAME=	UDEVGothic_v${DISTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UDEV Gothic
+WWW=		https://github.com/yuru7/udev-gothic
 
 LICENSE=	OFL11
 

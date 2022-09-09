@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	HTML entity encoding and decoding for Ruby
+WWW=		https://rubygems.org/gems/htmlentities
 
 LICENSE=	MIT
 

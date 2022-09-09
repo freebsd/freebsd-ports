@@ -3,5 +3,3 @@ Terminal interface for Stack Overflow
 Interface to the StackExchange network.
 One thing that differentiates it from similar tools is that you can
 simultaneously search any number of sites in the StackExchange network.
-
-WWW: https://github.com/samtay/so

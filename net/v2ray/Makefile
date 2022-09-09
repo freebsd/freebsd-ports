@@ -1,11 +1,12 @@
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.36.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Platform for building proxies to bypass network restrictions
+WWW=		https://www.v2ray.com
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

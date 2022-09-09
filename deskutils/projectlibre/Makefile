@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Open source desktop alternative to Microsoft Project
+WWW=		https://www.projectlibre.com/product/1-alternative-microsoft-project-open-source
 
 LICENSE=	CPAL-1.0
 

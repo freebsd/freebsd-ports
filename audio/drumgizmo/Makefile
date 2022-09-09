@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.drumgizmo.org/releases/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Multichannel drum sampler
+WWW=		https://www.drumgizmo.org/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

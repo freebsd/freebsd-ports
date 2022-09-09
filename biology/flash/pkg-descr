@@ -5,5 +5,3 @@ the original DNA fragments are shorter than twice the length of reads.
 The resulting longer reads can significantly improve genome assemblies.
 They can also improve transcriptome assembly when FLASH is used to
 merge RNA-seq data.
-
-WWW: http://ccb.jhu.edu/software/FLASH/

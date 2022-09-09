@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Open source network boot firmware
+WWW=		https://ipxe.org
 
 LICENSE=	GPLv2
 

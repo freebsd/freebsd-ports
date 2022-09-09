@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Thin wrapper around the shellwords.pl package
+WWW=		https://metacpan.org/release/Text-Shellwords
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,11 +1,11 @@
 PORTNAME=	addressable
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Replacement for the URI implementation
+WWW=		https://github.com/sporkmonger/addressable
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

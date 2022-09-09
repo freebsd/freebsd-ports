@@ -5,5 +5,3 @@ the core Perl distribution and thus not necessarily installed.
 
 Best.pm attempts to load modules from a list, stopping at the first
 successful load and failing only if no alternative was found.
-
-WWW: https://metacpan.org/release/Best

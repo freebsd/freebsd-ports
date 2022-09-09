@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Watches the current directory for file/dir additions or removals
+WWW=		https://metacpan.org/release/Dir-Watch
 
 USES=		perl5
 USE_PERL5=	configure

@@ -7,6 +7,7 @@ DISTNAME=	PyDev.${PORTVERSION}
 
 MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	Eclipse plugin for Python and Jython development
+WWW=		https://www.pydev.org/
 
 LICENSE=	EPL
 

@@ -4,5 +4,3 @@ A command-line shell that focuses on productivity and swiftness featuring:
 - Bash completion support (by internally invoking the genuine Bash).
 - Builtin zero configration features.
 - Written in Rust :crab:
-
-WWW: https://github.com/nuta/nsh

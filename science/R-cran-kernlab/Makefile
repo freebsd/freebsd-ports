@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Kernel-Based Machine Learning Lab
+WWW=		https://cran.r-project.org/web/packages/kernlab/
 
 LICENSE=	GPLv2
 

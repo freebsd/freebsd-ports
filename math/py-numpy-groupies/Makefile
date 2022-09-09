@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Optimised tools for group-indexing operations: aggregated sum and more
+WWW=		https://github.com/ml31415/numpy-groupies
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

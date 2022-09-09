@@ -7,6 +7,7 @@ DISTNAME=	ctypes-sh-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Foreign function interface for bash
+WWW=		https://github.com/taviso/ctypes.sh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

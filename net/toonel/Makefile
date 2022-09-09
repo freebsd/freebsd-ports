@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunneling with data compression
+WWW=		https://toonel.net
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -7,5 +7,3 @@ of a 3D landscape.
 Geomorph generates square images and shows a 3D preview of the
 resulting landscape.  The resulting 2D image can be processed with
 a tool like Povray for rendering the landscape.
-
-WWW: http://geomorph.sourceforge.net/

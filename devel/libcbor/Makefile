@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CBOR protocol implementation for C and others
+WWW=		https://github.com/PJK/libcbor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

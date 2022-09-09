@@ -4,6 +4,7 @@ CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	WAI application for static serving
+WWW=		https://www.yesodweb.com/book/web-application-interface
 
 LICENSE=	MIT
 

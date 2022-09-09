@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Require module recursively
+WWW=		https://metacpan.org/release/Module-Recursive-Require
 
 BUILD_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require

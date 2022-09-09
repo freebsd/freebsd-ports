@@ -21,5 +21,3 @@ Despite the name, the crawler gets info for more services than just DNS:
   - everything of the above is saved for each step in the redirect history --
     the crawler follows redirects until it gets a non-redirecting status or hits
     a configurable limit
-
-WWW: https://gitlab.nic.cz/adam/dns-crawler

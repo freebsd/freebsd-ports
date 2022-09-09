@@ -6,6 +6,7 @@ MASTER_SITES=	http://launchpad.net/alarm-clock/trunk/0.3.4/+download/
 
 MAINTAINER=	iluxa@ex.ua
 COMMENT=	Fully-featured alarm clock
+WWW=		http://alarm-clock.pseudoberries.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

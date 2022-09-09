@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH/m17n
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Library for handling OpenType fonts
+WWW=		https://www.nongnu.org/m17n/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

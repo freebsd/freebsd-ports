@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Regular expression validator against ECMA-262
+WWW=		https://github.com/gjtorikian/ecma-re-validator
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

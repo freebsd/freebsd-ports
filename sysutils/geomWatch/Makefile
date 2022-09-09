@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	spawk@acm.poly.edu
 COMMENT=	Watches for and e-mails admins about GEOM/ZFS state changes
+WWW=		http://acm.poly.edu/wiki/GEOM_Watch
 
 LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 

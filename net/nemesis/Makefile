@@ -8,6 +8,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command-line network packet crafting and injection utility
+WWW=		https://troglobit.com/projects/nemesis/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

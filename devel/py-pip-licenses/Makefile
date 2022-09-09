@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dump the software license list of Python packages installed with pip
+WWW=		https://github.com/raimon49/pip-licenses
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

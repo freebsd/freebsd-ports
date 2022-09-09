@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ie-
 
 MAINTAINER=	mistresssilvara@hotmail.com
 COMMENT=	Interlingue Hunspell dictionaries
+WWW=		https://github.com/Carmina16/hunspell-ie
 
 LICENSE=	APACHE20
 

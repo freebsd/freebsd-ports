@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules for perl5, for enabling FastCGI support in CGI scripts
+WWW=		https://metacpan.org/release/FCGI
 
 LICENSE=	OpenMarket
 LICENSE_NAME=	Open Market License

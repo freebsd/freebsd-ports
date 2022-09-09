@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy to use but powerful document formatting/preparation language
+WWW=		https://fbb-git.gitlab.io/yodl/
 
 LICENSE=	GPLv3
 

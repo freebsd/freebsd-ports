@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses
+WWW=		https://github.com/drkjam/netaddr/
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

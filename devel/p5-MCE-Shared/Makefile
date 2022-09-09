@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MCE extension for sharing data supporting threads and processes
+WWW=		https://metacpan.org/release/MCE-Shared
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

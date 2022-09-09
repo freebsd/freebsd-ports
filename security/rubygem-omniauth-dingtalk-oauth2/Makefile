@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Wrapper the DingTalk Oauth2 API
+WWW=		https://gitlab.com/gitlab-jh/jh-team/omniauth-dingtalk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

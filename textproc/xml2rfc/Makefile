@@ -5,6 +5,7 @@ MASTER_SITES=	http://tools.ietf.org/tools/xml2rfc2/cli/
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Tool to create RFCs and related documents from XML
+WWW=		https://xml2rfc.tools.ietf.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

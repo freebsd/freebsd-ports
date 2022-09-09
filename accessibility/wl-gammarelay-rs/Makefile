@@ -6,6 +6,7 @@ CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Adjust color temperature/brightness under Wayland via DBus
+WWW=		https://github.com/MaxVerevkin/wl-gammarelay-rs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE

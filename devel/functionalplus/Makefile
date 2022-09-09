@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library that helps write concise and readable C++ code
+WWW=		https://github.com/Dobiasd/FunctionalPlus
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

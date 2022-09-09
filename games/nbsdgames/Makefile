@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	17 text-based modern games
+WWW=		https://github.com/abakh/nbsdgames
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

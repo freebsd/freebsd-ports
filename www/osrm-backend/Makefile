@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	freebsd@mosedal.net
 COMMENT=	Open Source Routing Machine (Backend)
+WWW=		https://project-osrm.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

@@ -5,6 +5,7 @@ MASTER_SITES=	http://sigrok.org/download/source/libsigrokdecode/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, protocol decoders library
+WWW=		https://sigrok.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

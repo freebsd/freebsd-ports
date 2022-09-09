@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}	\
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc
+WWW=		https://sourceforge.net/projects/libstrfunc/
 
 USES=		autoreconf compiler:c11 libtool
 GNU_CONFIGURE=	yes

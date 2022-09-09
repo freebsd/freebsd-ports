@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides access to Amazon EC2, S3, SQS, and SDB web services
+WWW=		https://github.com/rightscale/right_aws
 
 LICENSE=	MIT
 

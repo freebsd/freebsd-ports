@@ -1,5 +1,5 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.31
+DISTVERSION=	6.4.33
 PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
@@ -8,6 +8,7 @@ MASTER_SITES=	SF/fetchmail/branch_6.4/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
+WWW=		https://www.fetchmail.info/
 
 LICENSE=	GPLv2+
 

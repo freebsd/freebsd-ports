@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/alonbl/${PORTNAME}/releases/download/${DISTNAME
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	PKCS\#11 enabled gnupg scd
+WWW=		https://github.com/alonbl/gnupg-pkcs11-scd
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

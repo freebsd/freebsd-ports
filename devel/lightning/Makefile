@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generates assembly language code at run-time
+WWW=		https://www.gnu.org/software/lightning/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

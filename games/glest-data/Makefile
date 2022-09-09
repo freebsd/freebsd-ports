@@ -8,6 +8,7 @@ DIST_SUBDIR=	glest
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Glest data files
+WWW=		https://www.glest.org/
 
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.log *.ini *.html *.txt *.lng

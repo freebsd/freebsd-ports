@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/siesta-project/libraries/xmlf90/-/archive/1.5.5
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Suite of light-weight libraries to work with XML in Fortran
+WWW=		https://launchpad.net/xmlf90
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read a POD document as a series of trivial events
+WWW=		https://metacpan.org/release/Pod-Eventual
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

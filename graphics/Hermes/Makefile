@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.su.se/pub/lunar/source-archive/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
+WWW=		http://web.archive.org/web/20061005045333/http://www.clanlib.org/hermes/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

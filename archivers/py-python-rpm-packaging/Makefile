@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Python rpm packaging
+WWW=		https://github.com/rpm-software-management/python-rpm-packaging
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure python implementation of SSL and TLS
+WWW=		https://github.com/tlsfuzzer/tlslite-ng
 
 LICENSE=	BSD3CLAUSE LGPL21 PD
 LICENSE_COMB=	multi

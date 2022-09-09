@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Ruby framework for writing bundlers
+WWW=		https://github.com/applicationsonline/librarian
 
 LICENSE=	MIT
 

@@ -1,11 +1,12 @@
 PORTNAME=	mergestat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Query git repositories with SQL
+WWW=		https://www.mergestat.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

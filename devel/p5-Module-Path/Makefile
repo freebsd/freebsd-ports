@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get the full path to a locally installed module
+WWW=		https://metacpan.org/release/Module-Path
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

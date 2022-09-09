@@ -1,5 +1,5 @@
 PORTNAME=	MetaCPAN-Client
-PORTVERSION=	2.029000
+PORTVERSION=	2.030000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MICKEY
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Comprehensive, DWIM-featured client to the MetaCPAN API
+WWW=		https://metacpan.org/release/MetaCPAN-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,5 +5,3 @@ for fields and to see absolute paths of those.
 
 It is reasonably fast with Gawk/Mawk/GoAWK even on large-ish files. Slow with
 BWK on big JSON files (100K+).
-
-WWW: https://github.com/xonixx/gron.awk

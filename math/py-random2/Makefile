@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Python 3 compatible Python 2 random module
+WWW=		https://pypi.org/project/random2/
 
 LICENSE=	PSFL
 

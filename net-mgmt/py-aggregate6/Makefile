@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Compress an unsorted list of IPv4 and IPv6 prefixes
+WWW=		https://github.com/job/aggregate6
 
 LICENSE=	BSD2CLAUSE
 

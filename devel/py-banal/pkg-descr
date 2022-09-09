@@ -14,5 +14,3 @@ Functions:
 - clean_dict: remove null values from a dict, recursively
 - decode_path: decode a path name to be unicode
 - hash_data: generate a SHA1 from a dict of reasonable objects
-
-WWW: https://github.com/pudo/banal

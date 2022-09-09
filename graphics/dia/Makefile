@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
+WWW=		https://live.gnome.org/Dia
 
 OPTIONS_DEFINE=	DOCS
 

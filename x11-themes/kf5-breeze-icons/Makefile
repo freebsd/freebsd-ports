@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Breeze icon theme for KDE
+WWW=		https://www.kde.org
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING-ICONS

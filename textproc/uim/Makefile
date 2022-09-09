@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
+WWW=		https://github.com/uim/uim
 
 LICENSE=	BSD3CLAUSE GPLv2+ GPLv3+ LGPL21+ PD
 LICENSE_COMB=	multi

@@ -17,5 +17,3 @@ if it is red, round, and about 10 cm in diameter. A naive Bayes classifier
 considers each of these features to contribute independently to the probability
 that this fruit is an apple, regardless of any possible correlations between
 the color, roundness, and diameter features.
-
-WWW: https://pypi.org/project/naiveBayesClassifier/

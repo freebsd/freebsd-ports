@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Disk and file backed persistent cache
+WWW=		https://grantjenks.com/docs/diskcache/
 
 LICENSE=	APACHE20
 

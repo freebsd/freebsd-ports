@@ -4,5 +4,3 @@ Most of maxima functions are accessible through menus, some have
 dialogs. The input line has command history (up-key, down-key) and
 completion based on previous input (tab-key).
 wxMaxima provides 2d formated display of maxima output.
-
-WWW: https://wxmaxima-developers.github.io/wxmaxima/

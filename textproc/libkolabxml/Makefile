@@ -6,6 +6,7 @@ MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kolab XML Format Schema Definitions Library
+WWW=		http://www.kolab.org/about/libkolabxml
 
 # The XSD schemas in schemas/ are APACHE20-licensed, and some files
 # are in public domain. The library itself and the installed headers

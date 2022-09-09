@@ -5,6 +5,7 @@ MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	C header file only implementation of a typed linked list
+WWW=		https://codeberg.org/dnkl/tllist
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,5 +5,3 @@ complexity, they were moved to this gem.
 This code has historically been part of the BioRuby gem, but has been split into
 its own gem as part of an effort to modularize BioRuby. bio-executables and many
 more plugins are available at biogems.info.
-
-WWW: https://github.com/bioruby/bioruby-executables

@@ -6,6 +6,7 @@ MASTER_SITES=	https://fnc.bsdbox.org/tarball/${DISTVERSION}/ \
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Interactive ncurses browser for Fossil repositories
+WWW=		https://fnc.bsdbox.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

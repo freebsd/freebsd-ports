@@ -7,5 +7,4 @@ opposite direction - calling R from Java. JRI is now shipped as a part of the
 rJava package, although it still can be used as a separate entity (especially
 for development).
 
-WWW: https://cran.r-project.org/package=rJava
-WWW: https://rforge.net/rJava/
+See also: https://rforge.net/rJava/

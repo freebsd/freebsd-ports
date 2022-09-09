@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Upload things to the CPAN
+WWW=		https://metacpan.org/release/CPAN-Uploader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

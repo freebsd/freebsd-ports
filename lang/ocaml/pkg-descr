@@ -15,5 +15,3 @@ The other compiler generates high-performance native code for a number
 of processors. Compilation takes longer and generates bigger code, but
 the generated programs deliver excellent performance, while retaining
 the moderate memory requirements of the bytecode compiler.
-
-WWW: https://ocaml.org/

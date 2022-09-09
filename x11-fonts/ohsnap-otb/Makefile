@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/rigoletto/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Monospaced font based on Artwiz Snap
+WWW=		https://gitlab.com/rigoletto/ohsnap-otb
 
 LICENSE=	GPLv2
 

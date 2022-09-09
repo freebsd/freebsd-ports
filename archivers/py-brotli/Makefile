@@ -7,6 +7,7 @@ DISTNAME=	Brotli-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic-purpose lossless compression algorithm
+WWW=		https://github.com/google/brotli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

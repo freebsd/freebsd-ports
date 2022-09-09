@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-level audio API
+WWW=		http://audiere.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/license.txt

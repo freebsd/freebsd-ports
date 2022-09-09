@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Language Server Protocol for LaTeX
+WWW=		https://texlab.netlify.app/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

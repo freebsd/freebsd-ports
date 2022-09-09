@@ -4,6 +4,7 @@ CATEGORIES=	irc www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for communication with IRC networks
+WWW=		https://pear.php.net/package/Net_SmartIRC
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

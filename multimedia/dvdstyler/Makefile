@@ -7,6 +7,7 @@ DISTNAME=	DVDStyler-${PORTVERSION}
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
+WWW=		https://www.dvdstyler.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

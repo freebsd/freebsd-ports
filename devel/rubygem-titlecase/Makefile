@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby string extensions to add title case support
+WWW=		https://github.com/samsouder/titlecase
 
 LICENSE=	MIT
 

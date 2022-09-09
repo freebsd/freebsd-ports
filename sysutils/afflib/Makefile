@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Advanced Forensics Format library and utilities
+WWW=		https://github.com/sshock/AFFLIBv3
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

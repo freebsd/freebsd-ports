@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Non-blocking wrapper around Hailo
+WWW=		https://metacpan.org/release/POE-Component-Hailo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,12 +1,12 @@
 PORTNAME=	faraday
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.10.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/REST API client library in Ruby
+WWW=		https://github.com/lostisland/faraday
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

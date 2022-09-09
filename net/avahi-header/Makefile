@@ -3,6 +3,7 @@ CATEGORIES=	net
 PKGNAMESUFFIX=	-header
 
 COMMENT=	Install an avahi-gtk* header to avoid conflict
+WWW=		https://www.avahi.org/
 
 CONFLICTS=	avahi-gtk-0.7.[0-2]*
 

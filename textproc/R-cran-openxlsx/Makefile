@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read, Write and Edit XLSX Files
+WWW=		https://github.com/awalker89/openxlsx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

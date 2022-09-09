@@ -7,6 +7,7 @@ DISTNAME=	djbdns-pd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Public domain DNS client library
+WWW=		https://cr.yp.to/djbdns/dns.html
 
 USES=		gmake
 

@@ -1,5 +1,3 @@
 zope.testing is a package provides a number of testing
 frameworks. It includes a flexible test runner, and
 supports both doctest and unittest.
-
-WWW: https://pypi.org/project/zope.testing/

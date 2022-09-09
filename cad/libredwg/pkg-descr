@@ -11,5 +11,3 @@ XML, etc.) and a SaveAs functionality, to convert between the various
 DWG versions.  It can read r13-r2018 DWG, write r13-r2000 DWG, write
 r11-r2018 DXF ASCII and binary.  Much more object types than any other
 free DWG library.
-
-WWW: https://www.gnu.org/software/libredwg/

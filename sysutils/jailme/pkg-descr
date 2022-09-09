@@ -3,5 +3,3 @@ jailme is a modified version of FreeBSD's jexec.
 This version is installed setuid and does some sanity checking
 to ensure the username and UID match between the jail and the
 host system.
-
-WWW: https://github.com/Intermedix/jailme

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to write a CHECKSUMS file for a directory as on CPAN
+WWW=		https://metacpan.org/release/CPAN-Checksums
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

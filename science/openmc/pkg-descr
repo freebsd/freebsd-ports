@@ -6,5 +6,3 @@ continuous-energy and multigroup transport. The continuous-energy particle
 interaction data is based on a native HDF5 format that can be generated from
 ACE files produced by NJOY. Parallelism is enabled via a hybrid MPI and OpenMP
 programming model.
-
-WWW: https://openmc.org/

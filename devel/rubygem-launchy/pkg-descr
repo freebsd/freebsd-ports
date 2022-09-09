@@ -3,5 +3,3 @@ forget manner. There are application concepts (browser, email client, etc) that
 are common across all platforms, and they may be launched differently on each
 platform. Launchy is here to make a common approach to launching external
 application from within ruby programs.
-
-WWW: https://github.com/copiousfreetime/launchy

@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Decompilation of 3D Pinball for Windows
+WWW=		https://github.com/k4zmu2a/SpaceCadetPinball
 
 LICENSE=	MIT
 

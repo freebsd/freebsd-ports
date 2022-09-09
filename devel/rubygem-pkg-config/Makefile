@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pkg-config implementation for Ruby
+WWW=		https://github.com/ruby-gnome/pkg-config
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LGPL-2.1

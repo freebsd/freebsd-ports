@@ -17,5 +17,3 @@ FEATURES
 	# For large structures the new iteration solver is recommended.
 	# The import of COSMOS and NASTRAN files from Pro/ENGINEER (with
 	option Pro/MECHANICA) is possible.
-
-WWW: https://en.z88.de/

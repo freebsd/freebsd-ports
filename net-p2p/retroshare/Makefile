@@ -1,7 +1,7 @@
 PORTNAME=	retroshare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-p2p
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -9,6 +9,7 @@ PATCHFILES=	428b331d8efe.patch:-p1
 
 MAINTAINER=	peter@netkey.at
 COMMENT=	Private and secure decentralised communication platform
+WWW=		https://retroshare.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

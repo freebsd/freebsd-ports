@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Internet Relay Chat (IRC) client designed for GNOME
+WWW=		https://wiki.gnome.org/Apps/Polari
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

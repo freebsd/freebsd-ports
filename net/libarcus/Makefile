@@ -6,6 +6,7 @@ DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Communication library between internal components for Ultimaker
+WWW=		https://github.com/Ultimaker/libArcus
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

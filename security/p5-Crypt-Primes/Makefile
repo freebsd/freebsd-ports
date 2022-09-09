@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provable Prime Number Generator suitable for Cryptographic Applications
+WWW=		https://metacpan.org/release/Crypt-Primes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

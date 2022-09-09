@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Vector-Optimized Library of Kernels
+WWW=		https://github.com/gnuradio/volk
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

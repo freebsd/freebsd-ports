@@ -4,6 +4,7 @@ CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Constraint modeling language
+WWW=		https://www.minizinc.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

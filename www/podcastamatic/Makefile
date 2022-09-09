@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Automates creation of webpage and RSS feed for a podcast
+WWW=		http://kenwardtown.com/projects/podcastamatic/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt

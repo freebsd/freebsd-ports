@@ -5,6 +5,7 @@ MASTER_SITES=	SF/a-s-k/${PORTNAME}-beta/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti Spam Killer content filtering
+WWW=		https://sourceforge.net/projects/a-s-k/
 
 USES=		python
 NO_BUILD=	yes

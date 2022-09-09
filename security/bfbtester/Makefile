@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Security tool for testing binaries for overflows
+WWW=		http://bfbtester.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/bfbtester

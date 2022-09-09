@@ -48,5 +48,3 @@ in the Rust programming language:
 
   - togglerecord: Element to enable starting and stopping multiple
     streams together.
-
-WWW: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs

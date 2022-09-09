@@ -8,5 +8,3 @@ Supported stream types include video streams from AVIs or Ogg files
 and Vorbis audio from Ogg files. The resulting files can be played
 back with mplayer or with the OggDS Direct Show filters under
 Windows.
-
-WWW: http://www.bunkus.org/videotools/ogmtools/

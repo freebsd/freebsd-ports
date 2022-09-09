@@ -3,5 +3,3 @@ Ruby bindings for Libarchive.
 Libarchive is a programming library that can create and read several
 different streaming archive formats, including most popular tar
 variants, several cpio formats, and both BSD and GNU ar variants.
-
-WWW: https://bitbucket.org/winebarrel/libarchive-ruby

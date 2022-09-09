@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE based library to access google services
+WWW=		https://progdan.cz/category/akonadi-google/
 
 LICENSE=	LGPL21
 

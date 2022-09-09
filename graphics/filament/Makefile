@@ -1,15 +1,16 @@
 PORTNAME=	filament
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.6
+DISTVERSION=	1.26.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Real-time physically based rendering engine
+WWW=		https://google.github.io/filament/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	compilation breaks: register %r11 is only available in 64-bit mode
+BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
 
 BUILD_DEPENDS=	bash:shells/bash \
 		evdev-proto>0:devel/evdev-proto

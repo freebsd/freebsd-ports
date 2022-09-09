@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Combines List::Util and List::MoreUtils in one bite-sized package
+WWW=		https://metacpan.org/release/List-AllUtils
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

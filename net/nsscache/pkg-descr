@@ -3,5 +3,3 @@ cache files.
 
 On FreeBSD, it is intended to be used with the net/libnss-cache port but it
 can also output BDB files for use by other operating systems.
-
-WWW: https://github.com/google/nsscache

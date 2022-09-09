@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	63
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
+WWW=		https://ruby.github.io/rdoc/
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
@@ -25,6 +26,6 @@ PORTSCOUT=	limit:^6\.3\.
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/rdoc
 	${RM} ${STAGEDIR}${PREFIX}/bin/ri
-	${RM} ${STAGEDIR}${PREFIX}/share/man/man1/ri.1 
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man1/ri.1
 
 .include <bsd.port.post.mk>

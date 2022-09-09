@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Convert your source code to syntax highlighted HTML
+WWW=		http://webcpp.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

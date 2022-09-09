@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tool to make it easier to manage multiple git repositories
+WWW=		https://metacpan.org/release/App-GitGot
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

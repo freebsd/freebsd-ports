@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cs.virginia.edu/~weimer/atris/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
+WWW=		http://www.cs.virginia.edu/~weimer/atris/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

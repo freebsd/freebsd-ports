@@ -7,6 +7,7 @@ DISTNAME=	PyMySQL-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Pure Python MySQL Driver
+WWW=		https://github.com/PyMySQL/PyMySQL
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

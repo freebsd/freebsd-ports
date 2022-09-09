@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Parsing Expression Grammar (PEG) parser for Python
+WWW=		https://fdik.org/pyPEG/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

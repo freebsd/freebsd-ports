@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Passphrases and Passwords as objects for Dancer
+WWW=		https://metacpan.org/release/Dancer-Plugin-Passphrase
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

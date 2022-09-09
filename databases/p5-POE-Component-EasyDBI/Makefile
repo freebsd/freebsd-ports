@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Component for simplified DBI usage
+WWW=		https://metacpan.org/release/POE-Component-EasyDBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

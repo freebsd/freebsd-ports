@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tsucchi@cpan.org
 COMMENT=	Test your SYNOPSIS code in CPAN module
+WWW=		https://metacpan.org/release/Test-Synopsis
 
 BUILD_DEPENDS=	p5-Filter>=1.35:devel/p5-Filter \
 		p5-Test-Simple>=0.88:devel/p5-Test-Simple

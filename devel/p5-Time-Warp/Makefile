@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Control over the flow of time
+WWW=		https://metacpan.org/release/Time-Warp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

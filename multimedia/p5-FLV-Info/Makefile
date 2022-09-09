@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract metadata from Flash Video files
+WWW=		https://metacpan.org/release/FLV-Info
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AMF-Perl>=0.15:www/p5-AMF-Perl \

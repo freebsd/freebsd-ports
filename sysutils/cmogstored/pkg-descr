@@ -2,5 +2,3 @@ cmogstored is an alternative implementation of the "mogstored" storage
 component of MogileFS.  cmogstored is implemented in C and does not
 use Perl at runtime.  cmogstored is the only component you need to
 install on a MogileFS storage node.
-
-WWW: https://yhbt.net/cmogstored/

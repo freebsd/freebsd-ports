@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Interactive Web Plotting for Python
+WWW=		https://bokeh.pydata.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

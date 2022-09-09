@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Convert amongst many different IPv4 notations
+WWW=		https://pypi.org/project/iplib/
 
 LICENSE=	BSD3CLAUSE
 

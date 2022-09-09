@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Thin wrapper for pandoc
+WWW=		https://github.com/bebraw/pypandoc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

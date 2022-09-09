@@ -1,10 +1,11 @@
 PORTNAME=	ssh-vault
 PORTVERSION=	0.12.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Encrypt/decrypt using ssh keys
+WWW=		https://ssh-vault.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

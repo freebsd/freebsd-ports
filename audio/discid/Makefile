@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify audio cd in your drive
+WWW=		https://jeremy.zawodny.com/c/discid/
 
 WRKSRC=		${WRKDIR}/freebsd
 

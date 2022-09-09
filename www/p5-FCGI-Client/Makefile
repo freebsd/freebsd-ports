@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fastcgi protocol client library
+WWW=		https://metacpan.org/release/FCGI-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

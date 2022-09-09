@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generators for creating BOSH releases
+WWW=		https://github.com/cloudfoundry-community/bosh-gen
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

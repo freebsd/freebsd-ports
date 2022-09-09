@@ -6,6 +6,7 @@ MASTER_SITES=	http://checkmate.gissen.nl/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for checking mp3 files for errors
+WWW=		https://checkmate.gissen.nl/
 
 LICENSE=	GPLv2
 

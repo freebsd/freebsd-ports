@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that produce UML sequence diagrams
+WWW=		https://metacpan.org/release/UML-Sequence
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-DOM>=1.25:textproc/p5-XML-DOM \

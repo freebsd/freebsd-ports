@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}_bitmap_fonts-2.2.4
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	M+ Bitmap fonts
+WWW=		https://mplus-fonts.osdn.jp/mplus-bitmap-fonts/index.html
 
 LICENSE=	PD
 

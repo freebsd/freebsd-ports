@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src1 \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
+WWW=		https://invisible-island.net/xterm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

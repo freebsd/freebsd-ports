@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Module for getting CPU info with pure Python
+WWW=		https://github.com/workhorsy/py-cpuinfo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

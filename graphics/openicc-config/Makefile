@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color configuration data base management
+WWW=		https://github.com/OpenICC/config
 
 LICENSE=	MIT
 

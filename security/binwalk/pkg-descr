@@ -9,5 +9,3 @@ improved signatures for files that are commonly found in firmware
 images such as compressed/archived files, firmware headers, Linux
 kernels, bootloaders, filesystems, etc.
 More details are available at:
-
-WWW: http://www.binwalk.org

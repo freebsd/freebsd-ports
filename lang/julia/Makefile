@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${DISTVERSIO
 
 MAINTAINER=	rizor.reardon@yahoo.com
 COMMENT=	Implementation of Julia, a language for technical computing
+WWW=		https://julialang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

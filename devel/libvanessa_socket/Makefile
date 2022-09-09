@@ -7,6 +7,7 @@ DISTNAME=	vanessa_socket-${PORTVERSION}
 
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides a simple layer for TCP/IP socket operations
+WWW=		https://horms.net/projects/vanessa/
 
 LIB_DEPENDS=	libvanessa_logger.so:devel/libvanessa_logger \
 		libpopt.so:devel/popt

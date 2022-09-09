@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 documentation generation from docbook
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kdoctools/html/index.html
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml \

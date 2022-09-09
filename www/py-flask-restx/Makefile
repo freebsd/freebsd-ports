@@ -11,6 +11,7 @@ PATCHFILES+=	09e57b8af6ca.patch:-p1 # https://github.com/python-restx/flask-rest
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Extension for Flask that adds support for quickly building REST APIs
+WWW=		https://pypi.org/project/flask-restx/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

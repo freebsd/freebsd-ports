@@ -9,6 +9,7 @@ DISTNAME=		${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		Graphics server for the guifi.net meshnet
+WWW=		http://es.wiki.guifi.net/wiki/SNPservices
 
 RUN_DEPENDS=		mrtg:net-mgmt/mrtg \
 			rrdtool:databases/rrdtool

@@ -5,5 +5,3 @@ immediately after authentication. The name &quot;twoftpd&quot; comes from
 the fact that there are two parts to the server: an authenticating front
 end, which contains no file or data transfer code, and one of two back ends,
 which contain all the data transfer code.
-
-WWW: http://untroubled.org/twoftpd/

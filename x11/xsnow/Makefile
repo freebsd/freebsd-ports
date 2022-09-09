@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
+WWW=		https://www.ratrabbit.nl/ratrabbit/xsnow/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

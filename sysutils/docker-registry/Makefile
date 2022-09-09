@@ -1,11 +1,12 @@
 PORTNAME=	docker-registry
 PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@yapsoft.it
 COMMENT=	Docker implementation of the OCI Distribution Specification
+WWW=		https://github.com/docker/distribution/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

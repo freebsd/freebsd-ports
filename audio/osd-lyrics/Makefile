@@ -6,6 +6,7 @@ MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/co
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	On-screen lyrics display program for various media players
+WWW=		https://code.google.com/archive/p/osd-lyrics/
 
 LICENSE=	GPLv3
 

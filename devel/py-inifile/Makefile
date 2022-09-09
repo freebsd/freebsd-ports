@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Small INI library for Python
+WWW=		https://pypi.org/project/inifile/
 
 LICENSE=	BSD3CLAUSE
 

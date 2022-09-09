@@ -5,5 +5,3 @@ deleted, and changed. It filters project changes by using .cvsignore
 files, both system-wide and locally.
 
 Requires ruby.
-
-WWW: http://cvsdelta.sourceforge.net/

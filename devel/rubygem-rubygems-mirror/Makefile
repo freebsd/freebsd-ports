@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mirror rubygems
+WWW=		https://github.com/rubygems/rubygems-mirror
 
 LICENSE=	MIT
 

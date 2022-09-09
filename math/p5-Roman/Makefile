@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl module to convert between Arabic and Roman numerals
+WWW=		https://metacpan.org/release/Roman
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

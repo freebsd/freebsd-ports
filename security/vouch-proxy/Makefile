@@ -1,10 +1,12 @@
 PORTNAME=	vouch-proxy
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.37.3
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	SSO solution for Nginx using the auth_request module
+WWW=		https://github.com/vouch/vouch-proxy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

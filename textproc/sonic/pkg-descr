@@ -13,5 +13,3 @@ to refer to the matched documents in an external database.
 A strong attention to performance and code cleanliness has been
 given when designing Sonic.  It aims at being crash-free, super-fast
 and puts minimum strain on server resources.
-
-WWW: https://github.com/valeriansaliou/sonic

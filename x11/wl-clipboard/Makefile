@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Command-line copy/paste utilities for Wayland
+WWW=		https://github.com/bugaevc/wl-clipboard
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

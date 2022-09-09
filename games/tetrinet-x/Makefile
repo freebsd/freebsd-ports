@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Addictive 6 player tetr*s game
+WWW=		https://servers.tetrinet.fr/
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 SUB_FILES=	pkg-message

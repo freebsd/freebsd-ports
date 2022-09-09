@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.c-s.li/ports/ \
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Tic tac toe game playable over the network
+WWW=		http://nettoe.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -15,5 +15,3 @@ Features of Ruby are shown below.
   + Dynamic Loading of Object files(on some architecture)
   + Highly Portable(works on many UNIX machines, and on DOS,
     Windows, Mac, BeOS etc.)
-
-WWW: https://www.ruby-lang.org/en/

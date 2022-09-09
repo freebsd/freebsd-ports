@@ -16,5 +16,4 @@ Some of Whoosh's features include:
 - Powerful query language.
 - Pure Python spell-checker (as far as I know, the only one).
 
-WWW: https://pypi.org/project/Whoosh/
-WWW: http://bitbucket.org/mchaput/whoosh
+See also: https://pypi.org/project/Whoosh/

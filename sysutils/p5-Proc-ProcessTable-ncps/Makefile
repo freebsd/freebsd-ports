@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Searches the process table and displays the results
+WWW=		https://metacpan.org/release/Proc-ProcessTable-ncps
 
 LICENSE=	ART20
 

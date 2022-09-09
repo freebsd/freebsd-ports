@@ -6,5 +6,3 @@ The prefork.pm is intended to serve as a central and optional
 marshalling point for state detection (are we running in procedural or
 pre-forking mode) and to act as a relatively light-weight module
 loader.
-
-WWW: https://metacpan.org/release/prefork

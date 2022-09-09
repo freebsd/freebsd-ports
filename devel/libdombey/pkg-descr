@@ -1,5 +1,3 @@
 Libdombey provides multi-process and multi-threaded TCP or UNIX-domain SCGI
 application servers.  The libraries handle network and concurrency tasks.
 You write code to service connections.
-
-WWW: http://mammothcheese.ca/

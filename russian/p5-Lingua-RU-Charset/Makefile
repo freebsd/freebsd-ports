@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for detecting and converting Russian character sets
+WWW=		https://metacpan.org/release/Lingua-RU-Charset
 
 USES=		perl5
 USE_PERL5=	configure

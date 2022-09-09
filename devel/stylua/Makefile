@@ -1,11 +1,11 @@
 PORTNAME=	stylua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.2
-PORTREVISION=	1
+DISTVERSION=	0.14.3
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Opinionated Lua code formatter
+WWW=		https://github.com/JohnnyMorganz/StyLua
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

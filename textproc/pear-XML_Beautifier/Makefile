@@ -4,6 +4,7 @@ CATEGORIES=	textproc devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to format XML documents
+WWW=		https://pear.php.net/package/XML_Beautifier
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR} \
 		${PEARDIR}/XML/Util.php:devel/pear-XML_Util@${PHP_FLAVOR}

@@ -6,6 +6,7 @@ DISTNAME=	samhain_signed-${PORTVERSION}
 
 MAINTAINER=	freebsd@gregv.net
 COMMENT=	Samhain Intrusion Detection System
+WWW=		https://la-samhna.de/samhain/
 
 LICENSE=	GPLv2
 

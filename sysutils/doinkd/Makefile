@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Daemon that logs out idle users and those users hogging resources
+WWW=		https://sourceforge.net/projects/idled/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber

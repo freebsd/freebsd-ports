@@ -1,4 +1,2 @@
 An alternate R console that differs from rpy2 in that it doesn't require too
 many dependencies and a toolchain.
-
-WWW: https://github.com/randy3k/rchitect

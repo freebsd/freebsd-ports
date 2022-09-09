@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to optimize jpeg files
+WWW=		http://www.kokkonen.net/tjko/projects.html #jpegoptim
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

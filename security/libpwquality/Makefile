@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for generating random passwords and quality checking
+WWW=		https://github.com/libpwquality/libpwquality
 
 LICENSE=	GPLv2+ LIBPWQUALITY
 LICENSE_COMB=	dual

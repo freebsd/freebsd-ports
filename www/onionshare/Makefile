@@ -6,6 +6,7 @@ CATEGORIES=	www python security
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Secure and anonymous file sharing via Tor
+WWW=		https://onionshare.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

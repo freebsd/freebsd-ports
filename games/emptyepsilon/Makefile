@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Spaceship bridge simulator game
+WWW=		https://daid.github.io/EmptyEpsilon/
 
 LICENSE=					GPLv2 AngryFly-Royalty-Free-License
 LICENSE_COMB=					multi

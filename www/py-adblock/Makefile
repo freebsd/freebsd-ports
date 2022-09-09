@@ -1,11 +1,12 @@
 PORTNAME=	adblock
 DISTVERSION=	0.5.0
-PORTREVISION=	24
+PORTREVISION=	26
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Brave's adblock library in Python
+WWW=		https://pypi.org/project/adblock/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

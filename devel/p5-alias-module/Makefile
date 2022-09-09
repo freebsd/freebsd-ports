@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alias one module as another
+WWW=		https://metacpan.org/dist/alias-module
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

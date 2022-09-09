@@ -12,5 +12,3 @@ scroll and advanced history management. Selected tools provided:
 
 Written in pure Zsh, with use of curses module. Can be configured from
 zshrc. Binds n-history to Ctrl-R. Provides widgets for n-cd and n-kill.
-
-WWW: https://github.com/psprint/zsh-navigation-tools

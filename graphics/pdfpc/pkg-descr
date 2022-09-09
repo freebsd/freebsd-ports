@@ -6,5 +6,3 @@ one providing information like a picture of the next slide, as well as
 the left over time till the end of the presentation. The input files
 processed by pdfpc are PDF documents, which can be created using nearly
 any of today's presentation software.
-
-WWW: https://pdfpc.github.io/

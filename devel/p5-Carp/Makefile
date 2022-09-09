@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative warn and die for modules
+WWW=		https://metacpan.org/release/Carp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

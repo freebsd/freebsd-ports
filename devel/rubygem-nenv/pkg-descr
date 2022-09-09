@@ -13,5 +13,3 @@ The benefits over using ENV directly:
 - and there's more to come...
 - it's designed to be as lightweight and as fast as possible compared to ENV
 - designed to be both hackable and convenient
-
-WWW: https://github.com/e2/nenv

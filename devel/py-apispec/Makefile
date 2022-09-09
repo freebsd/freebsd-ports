@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Pluggable API specification generator
+WWW=		https://github.com/marshmallow-code/apispec
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

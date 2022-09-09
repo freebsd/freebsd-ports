@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for libinotify, using ffi
+WWW=		https://github.com/guard/rb-inotify
 
 LICENSE=	MIT
 

@@ -4,5 +4,3 @@ git-brunch is a git branch checkout command-line tool featuring:
  - Searching for a branch
  - Deleting a branch
  - Performing a fetch and update operations
-
-WWW: https://github.com/andys8/git-brunch

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Command-line hex viewer
+WWW=		https://github.com/sharkdp/hexyl
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -5,5 +5,3 @@ MESS can currently emulate over 250 systems from the last 5 decades.
 MESS emulates the hardware of the systems and sometimes utilizes ROM
 images to load programs and games. Therefore, these systems are NOT
 simulations, but the actual emulations of the hardware.
-
-WWW: http://www.mess.org/

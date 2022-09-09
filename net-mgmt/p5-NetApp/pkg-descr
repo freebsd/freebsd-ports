@@ -17,5 +17,3 @@ compatible with the previous 1.1.* releases.
 There is no guarantee that 1.2.0 will be 100% backwards compatible,
 although such changes will be made only when justified.  The author
 does not believe in infinite backwards compatibility.
-
-WWW: https://metacpan.org/release/NetApp

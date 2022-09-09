@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Complete solution for Ruby command-line executables
+WWW=		https://github.com/commander-rb/commander
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

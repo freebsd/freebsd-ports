@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.augeas.net/
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration editing tool
+WWW=		https://augeas.net/
 
 LICENSE=	LGPL21
 

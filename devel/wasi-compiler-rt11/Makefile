@@ -13,6 +13,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Clang builtins library for WebAssembly System Interface
+WWW=		https://llvm.org/
 
 LICENSE=	LLVM2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

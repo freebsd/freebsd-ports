@@ -9,6 +9,7 @@ MASTER_SITES=	https://github.com/crosswire/${PORTNAME}/releases/download/${DISTV
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bible interface utilizing the sword framework
+WWW=		https://xiphos.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

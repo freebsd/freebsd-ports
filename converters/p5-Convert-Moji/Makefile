@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to convert objects to alphabets
+WWW=		https://metacpan.org/release/Convert-Moji
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

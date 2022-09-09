@@ -17,5 +17,3 @@ md5crypt.c - copyright Poul-Henning Kamp
 md5crypt.h - copyright Poul-Henning Kamp
 sha256crypt.c - public domain reference implementation by Ulrich Drepper
 sha512crypt.c - public domain reference implementation by Ulrich Drepper
-
-WWW: https://metacpan.org/release/Crypt-Passwd-XS

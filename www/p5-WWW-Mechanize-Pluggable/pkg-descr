@@ -16,5 +16,3 @@ methods received, plus a reference to the actvive Mech object.
 
 All other extensions to WWW::Mechanize::Pluggable are handled by the
 plugins.
-
-WWW: https://metacpan.org/release/WWW-Mechanize-Pluggable

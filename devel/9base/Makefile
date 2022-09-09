@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-6
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Port of various original plan9 tools
+WWW=		https://tools.suckless.org/9base
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,5 +10,3 @@ The functions provide merge strategies as well:
 * Additive
 * Typesafe replace
 * Typesafe additive
-
-WWW: https://github.com/clarketm/mergedeep

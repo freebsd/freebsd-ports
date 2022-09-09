@@ -10,5 +10,3 @@ theory captures most expressions from languages like C/C++/Java and Verilog),
 and the output of STP is a single bit of information that indicates whether
 the formula is satisfiable or not. If the input is satisfiable, then it also
 generates a variable assignment to satisfy the input formula.
-
-WWW: https://stp.github.io/

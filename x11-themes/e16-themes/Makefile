@@ -5,6 +5,7 @@ MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Set of themes for the e16 window manager
+WWW=		https://www.enlightenment.org/
 
 DATADIR=	${PREFIX}/share/e16
 GNU_CONFIGURE=	yes

@@ -1,4 +1,2 @@
 Node exporter is a Prometheus exporter for hardware and OS metrics, written in
 Go with pluggable metric collectors.
-
-WWW: https://github.com/prometheus/node_exporter

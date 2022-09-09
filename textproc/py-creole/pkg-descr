@@ -5,5 +5,3 @@ python-creole is an markup converter in pure Python:
     * reStructuredText -> html
     * html -> reStructuredText markup
     * html -> textile markup
-
-WWW: https://pypi.org/project/python-creole/

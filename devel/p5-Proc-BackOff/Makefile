@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides methods to backoff on failures
+WWW=		https://metacpan.org/release/Proc-BackOff
 
 RUN_DEPENDS+=	p5-Class-Accessor>0:devel/p5-Class-Accessor
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	DBIx::Class::Schema Model Class
+WWW=		https://metacpan.org/release/Catalyst-Model-DBIC-Schema
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

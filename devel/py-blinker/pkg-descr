@@ -11,5 +11,4 @@ The core of Blinker is quite small but provides powerful features:
 - collecting return values from signal receivers
 - thread safety
 
-WWW: https://pythonhosted.org/blinker/
-WWW: https://github.com/pallets-eco/blinker
+See also: https://github.com/pallets-eco/blinker

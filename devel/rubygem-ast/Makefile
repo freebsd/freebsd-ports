@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for working with Abstract Syntax Trees
+WWW=		https://github.com/whitequark/ast
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.MIT

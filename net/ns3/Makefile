@@ -7,6 +7,7 @@ DISTNAME=	ns-allinone-${PORTVERSION}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Network simulator for Internet systems
+WWW=		https://www.nsnam.org/
 
 LICENSE=	GPLv2
 

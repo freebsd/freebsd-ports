@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Wikipedia API for Python
+WWW=		https://github.com/goldsmith/Wikipedia
 
 LICENSE=	MIT
 

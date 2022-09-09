@@ -1,4 +1,2 @@
 SVGMath is a command-line utility to convert MathML expressions
 to SVG, written entirely in Python.
-
-WWW: http://svgmath.sf.net

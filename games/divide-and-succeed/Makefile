@@ -6,6 +6,7 @@ MASTER_SITES=	http://projects.haxx.es/media/upload/${PORTNAME}/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Divide polygons into the rigth number of equal parts
+WWW=		http://projects.haxx.es/p/divide-and-succeed/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Multithreaded FFT library written in pure Java
+WWW=		http://sites.google.com/site/piotrwendykier/software/jtransforms
 
 LICENSE=	GPLv2 LGPL20 MPL11
 LICENSE_COMB=	multi

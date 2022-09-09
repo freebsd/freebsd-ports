@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regression testing utility for use with the Java(TM) Language
+WWW=		https://www.junit.org/
 
 RUN_DEPENDS=	${JAVALIBDIR}/hamcrest.jar:java/hamcrest
 

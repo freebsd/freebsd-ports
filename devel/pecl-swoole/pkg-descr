@@ -10,5 +10,3 @@ Asynchronous & concurrent & distributed networking framework for PHP.
 * async read/write file system
 * async dns lookup
 * support IPv4/IPv6/UnixSocket/TCP/UDP
-
-WWW: https://pecl.php.net/package/swoole

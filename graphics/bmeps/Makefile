@@ -6,6 +6,7 @@ DISTNAME=	dktools-${PORTVERSION}
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
+WWW=		https://sourceforge.net/p/dktools/wiki/bmpp%20manual/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO-interface to database schemas
+WWW=		https://metacpan.org/release/DBIx-DBSchema
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

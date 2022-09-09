@@ -5,6 +5,7 @@ MASTER_SITES=	https://waf.io/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mind mapping tool
+WWW=		https://waf.io/semantik.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

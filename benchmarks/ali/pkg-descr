@@ -4,5 +4,3 @@ by vegeta and jplot.
 ali comes with a simple terminal based UI, lets you generate HTTP
 requests and plot the results in real-time. With it, real-time
 analysis can be done on the terminal.
-
-WWW: https://github.com/nakabonne/ali

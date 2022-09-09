@@ -6,6 +6,7 @@ MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3 bitrate plot tool
+WWW=		https://p.outlyer.net/mp3plot/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OOP-ish interface for accessing a weblog via the XML-RPC API
+WWW=		https://metacpan.org/release/Net-Blogger
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

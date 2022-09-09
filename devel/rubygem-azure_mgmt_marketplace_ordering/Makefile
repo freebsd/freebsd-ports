@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Microsoft Azure Marketplace Ordering Library for Ruby Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/management/azure_mgmt_marketplace_ordering
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

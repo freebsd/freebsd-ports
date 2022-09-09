@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Read AFM files and use the data conveniently
+WWW=		https://github.com/halfbyte/afm
 
 LICENSE=	MIT
 

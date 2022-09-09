@@ -7,5 +7,3 @@ The canonical source of up-to-date command options are the help output when
 using $ yath help and $ yath help COMMAND.
 
 yath can be thought of as a more powerful alternative to prove (Test::Harness).
-
-WWW: https://metacpan.org/release/Test2-Harness

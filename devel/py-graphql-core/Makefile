@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GraphQL implementation for Python
+WWW=		https://github.com/graphql-python/graphql-core-next
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

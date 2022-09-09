@@ -1,4 +1,2 @@
 This module defines a set of symbolic constants with ordered numeric
 values ala C enum types.
-
-WWW: https://metacpan.org/release/enum

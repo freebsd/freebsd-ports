@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT plugin for HTML::FillInForm Perl module
+WWW=		https://metacpan.org/release/Template-Plugin-FillInForm
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTNAME=	rvi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple interface to RCS
+WWW=		https://www.cs.ru.ac.za/research/g98t4414/static/home/rvi/index.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

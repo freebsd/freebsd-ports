@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Reimplementation of Captain Claw (1997) platformer
+WWW=		https://github.com/pjasicek/OpenClaw
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

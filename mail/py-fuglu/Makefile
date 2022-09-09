@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Mail scanning daemon for Postfix written in Python
+WWW=		https://fuglu.org/
 
 LICENSE=	APACHE20
 

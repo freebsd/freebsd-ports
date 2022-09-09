@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Waveform seekbar plugin for DeaDBeeF audio player
+WWW=		https://github.com/cboxdoerfer/ddb_waveform_seekbar
 
 BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 RUN_DEPENDS:=	${BUILD_DEPENDS}

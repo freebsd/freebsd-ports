@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Take animated screenshots on wlroots compositors
+WWW=		https://hg.sr.ht/~scoopta/taiga
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian hunspell dictionaries
+WWW=		https://sourceforge.net/projects/ispell-uk/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

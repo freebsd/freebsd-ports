@@ -18,5 +18,3 @@ respond to :to_str, e.g. String.
       include Term::ANSIColor
     end
     print "red bold".red.bold, "\n"
-
-WWW: https://flori.github.io/term-ansicolor/

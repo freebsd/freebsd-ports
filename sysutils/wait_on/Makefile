@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jcpierri@gmail.com
 COMMENT=	Enable shell scripts to monitor for changes on directories and files
+WWW=		https://github.com/jcpierri/wait_on
 
 LICENSE=	BSD3CLAUSE
 

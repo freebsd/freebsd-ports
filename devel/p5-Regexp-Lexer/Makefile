@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lexer for Perl regular expressions
+WWW=		https://metacpan.org/pod/Regexp::Lexer
 
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 

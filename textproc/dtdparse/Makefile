@@ -7,6 +7,7 @@ DISTNAME=	SGML-DTDParse-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse a DTD and produce an XML document that represents it
+WWW=		https://sourceforge.net/projects/dtdparse/
 
 RUN_DEPENDS=	p5-DelimMatch>=0:textproc/p5-DelimMatch \
 		p5-XML-DOM>=0:textproc/p5-XML-DOM

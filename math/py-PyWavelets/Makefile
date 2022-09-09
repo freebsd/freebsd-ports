@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Discrete Wavelet Transforms in Python
+WWW=		https://github.com/PyWavelets/pywt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

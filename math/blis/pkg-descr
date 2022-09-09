@@ -5,5 +5,3 @@ BLAS-like dense linear algebra libraries. The framework was designed
 to isolate essential kernels of computation that, when optimized,
 immediately enable optimized implementations of most of its commonly
 used and computationally intensive operations.
-
-WWW: https://github.com/flame/blis

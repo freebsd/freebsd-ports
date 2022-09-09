@@ -6,6 +6,7 @@ MASTER_SITES=	GNUPG
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	General purpose cryptographic library based on the code from GnuPG
+WWW=		https://www.gnupg.org/software/libgcrypt/index.html
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

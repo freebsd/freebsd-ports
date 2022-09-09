@@ -7,5 +7,3 @@ with their given arguments in the reverse order of registration (last
 one registered is invoked first).  Registering the same subroutine more
 than once will cause that subroutine to be invoked once for each
 registration.
-
-WWW: https://metacpan.org/release/AtExit

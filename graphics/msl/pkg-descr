@@ -20,5 +20,3 @@ The primary goals are:
 * Pipeline is linked when compiling the shader modules, allowing for
   earlier checks and easier loading of shaders in the final
   application.
-
-WWW: https://github.com/akb825/ModularShaderLanguage

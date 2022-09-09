@@ -1,11 +1,12 @@
 PORTNAME=	CPAN-Perl-Releases
-PORTVERSION=	5.20220720
+PORTVERSION=	5.20220820
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Map Perl releases to the location of the tarballs
+WWW=		https://metacpan.org/release/CPAN-Perl-Releases
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

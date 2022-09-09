@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mail+freebsd@gerritbeine.de
 COMMENT=	Implementation in C of the Smart Message Language (SML) protocol
+WWW=		https://github.com/volkszaehler/libsml
 
 LICENSE=	GPLv3
 

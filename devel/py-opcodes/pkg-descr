@@ -6,5 +6,3 @@ An instruction set is represented by three files:
 * An XSD file that describes the structure of the XML file
 * A Python module that reads the XML file and represents it as a set of Python
   objects
-
-WWW: https://github.com/Maratyszcza/Opcodes

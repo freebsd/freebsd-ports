@@ -5,6 +5,7 @@ MASTER_SITES=	http://oav.net/projects/syslogger/
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Logger(1) like tool that sends file or pipe througth syslog
+WWW=		https://oav.net/projects/syslogger/
 
 PLIST_FILES=		bin/syslogger
 

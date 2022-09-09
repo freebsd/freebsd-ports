@@ -7,5 +7,3 @@ the data over to another daemon. This daemon timestamps the data and stores
 it in a log file which is /var/log/sudoscript. This daemon also keeps an eye
 on the size of log files, and forks a rotator/compressor when it exceeds 2
 MBytes.
-
-WWW: http://www.egbok.com/sudoscript

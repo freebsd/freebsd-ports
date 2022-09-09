@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load templates from your __DATA__ section
+WWW=		https://metacpan.org/release/Template-Provider-FromDATA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

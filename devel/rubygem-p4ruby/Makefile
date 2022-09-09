@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby bindings for the Perforce API
+WWW=		http://www.perforce.com/perforce/loadsupp.html
 
 LICENSE=	BSD2CLAUSE
 

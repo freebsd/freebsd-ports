@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Musical spectrum plugin for DeaDBeeF audio player
+WWW=		https://github.com/cboxdoerfer/ddb_musical_spectrum
 
 BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 LIB_DEPENDS=	libfftw3.so:math/fftw3

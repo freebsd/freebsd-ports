@@ -7,5 +7,3 @@ mimicking most of the behavior of qmail-smtpd, with the addition of
 support for SMTP AUTH.  The other rejects all SMTP commands if
 $SMTPREJECT is set, and execs its command line otherwise (in order to
 run the above program).
-
-WWW: http://untroubled.org/mailfront/

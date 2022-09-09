@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deconstructs APNG files into individual frames
+WWW=		https://sourceforge.net/projects/apngdis/
 
 LICENSE=	ZLIB
 

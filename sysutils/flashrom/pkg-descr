@@ -6,5 +6,3 @@ program flash chips.
 
 It supports a wide range of DIP32, PLCC32, DIP8, SO8/SOIC8, TSOP32, and TSOP40
 chips, which use various protocols such as LPC, FWH, parallel flash, or SPI.
-
-WWW: http://www.flashrom.org/

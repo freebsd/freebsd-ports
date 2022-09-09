@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for creation and manipulation of tar files
+WWW=		https://metacpan.org/release/Archive-Tar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

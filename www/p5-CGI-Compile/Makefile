@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to compile .cgi scripts to a code reference
+WWW=		https://metacpan.org/release/CGI-Compile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

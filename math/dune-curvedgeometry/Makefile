@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: curved dune geometries by Lagrange parameterization
+WWW=		https://www.dune-project.org/
 
 LICENSE=	GPLv2
 

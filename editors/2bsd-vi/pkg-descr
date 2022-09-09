@@ -7,5 +7,3 @@ typical Unix program that does exactly what it should and nothing more.
 I intend to preserve this style in maintaining my port, except for
 changes to achieve POSIX.2 standards compliance, features in the SVR4
 versions of vi, and, of course, bug fixes.
-
-WWW: http://ex-vi.sourceforge.net/

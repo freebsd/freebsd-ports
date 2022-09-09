@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validates user input (usually from an HTML form) based
+WWW=		https://metacpan.org/release/Data-FormValidator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

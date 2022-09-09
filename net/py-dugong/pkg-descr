@@ -20,5 +20,3 @@ httplib) module. In contrast to http.client, Dugong:
 All request and response headers are represented as str, but must be encodable
 in latin1. Request and response body must be bytes-like objects or binary
 streams.
-
-WWW: https://github.com/python-dugong/python-dugong/

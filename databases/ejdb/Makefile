@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Embeddable JSON database engine library
+WWW=		https://ejdb.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

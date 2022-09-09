@@ -16,5 +16,3 @@ Compared to Text::ASCIITable, it uses lower_case method/attr names instead of
 CamelCase, and it uses arrayref for columns and add_row. When specifying border
 styles, the order of characters are slightly different. More fine-grained
 options to customize appearance.
-
-WWW: https://metacpan.org/release/Text-ANSITable

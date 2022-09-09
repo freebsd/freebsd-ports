@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt www
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Latency logging and graphing system
+WWW=		https://oss.oetiker.ch/smokeping/
 
 LICENSE=	GPLv2
 

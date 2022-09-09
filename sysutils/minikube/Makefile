@@ -1,11 +1,12 @@
 PORTNAME=	minikube
 PORTVERSION=	1.25.2
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Run Kubernetes locally
+WWW=		https://github.com/kubernetes/minikube
 
 LICENSE=	APACHE20
 

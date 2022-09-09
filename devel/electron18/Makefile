@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
+WWW=		https://electronjs.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
@@ -152,7 +153,7 @@ REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 # See ${WRKSRC}/electron/DEPS for MANTLE_VER
 MANTLE_VER=			78d3966b3c331292ea29ec38661b25df0a245948
 
-YARN_TIMESTAMP=	1660898656
+YARN_TIMESTAMP=	1662105378
 
 GN_ARGS+=		clang_use_chrome_plugins=false \
 			enable_hangout_services_extension=true \

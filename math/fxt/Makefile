@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.jjj.de/fxt/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Llibrary of low-level algorithms
+WWW=		https://www.jjj.de/fxt/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

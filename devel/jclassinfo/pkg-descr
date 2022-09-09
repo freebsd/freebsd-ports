@@ -1,4 +1,2 @@
 jclassinfo reads java class files and provides information about the class,
 dependencies and more. It is a pure C implementation.
-
-WWW: http://jclassinfo.sourceforge.net/

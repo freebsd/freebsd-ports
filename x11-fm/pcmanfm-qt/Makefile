@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt file manager
+WWW=		https://github.com/lxde/pcmanfm-qt
 
 LICENSE=	GPLv2
 

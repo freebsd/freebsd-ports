@@ -6,6 +6,7 @@ MASTER_SITES=	http://hathawaymix.org/Software/TCPWatch/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP monitoring and logging tool with support for HTTP 1.1
+WWW=		https://web.archive.org/web/20111102010334/http://hathawaymix.org/Software/TCPWatch/
 
 LICENSE=	ZPL20
 LICENSE_NAME=	Zope Public License version 2.0

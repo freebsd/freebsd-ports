@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Application agent for working with File::KeePass objects
+WWW=		https://metacpan.org/release/File-KeePass-Agent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

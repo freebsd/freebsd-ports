@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Bingo game Perl implementation
+WWW=		https://metacpan.org/release/Games-Bingo
 
 USES=		perl5
 USE_PERL5=	modbuild

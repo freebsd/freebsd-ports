@@ -14,7 +14,7 @@ LIB_DEPENDS=	libphonenumber.so:devel/libphonenumber \
 USES=		compiler:c++11-lang cmake gettext gnome kde:5 pkgconfig qt:5 \
 		shared-mime-info ssl tar:xz
 USE_GNOME=	libxml2
-USE_KDE=	archive coreaddons i18n \
+USE_KDE=	archive codecs coreaddons i18n \
 		ecm_build
 # Pim components
 USE_KDE+=	calendarcore contacts kpkpass mime

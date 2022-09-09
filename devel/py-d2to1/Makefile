@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Distutils2-like setup.cfg files with setuptools setup.py
+WWW=		https://github.com/iguananaut/d2to1
 
 LICENSE=	BSD3CLAUSE
 

@@ -18,5 +18,3 @@ The provided widgets are:
   separated by hue
 * GradientListModel, A QAbstractListModel used to list gradients (useful for
   comboboxes, list views and the like)
-
-WWW: https://gitlab.com/mattia.basaglia/Qt-Color-Widgets

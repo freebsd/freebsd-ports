@@ -7,6 +7,7 @@ MASTER_SITES=	http://fping.org/dist/ \
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping multiple hosts without flooding the network
+WWW=		https://www.fping.org/
 
 LICENSE=	PreviousBSD
 LICENSE_GROUPS=	FSF

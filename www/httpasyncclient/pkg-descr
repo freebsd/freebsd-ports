@@ -3,5 +3,3 @@ on HttpCore NIO and HttpClient components. It is a complementary module
 to Apache HttpClient intended for special cases where ability to handle a
 great number of concurrent connections is more important than performance
 in terms of a raw data throughput.
-
-WWW: https://hc.apache.org/httpcomponents-asyncclient-4.1.x/

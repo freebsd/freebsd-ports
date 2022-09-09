@@ -7,6 +7,7 @@ DIST_SUBDIR=		${PORTNAME}
 
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
+WWW=		http://kicad-pcb.org/
 
 LICENSE=	GPLv3
 

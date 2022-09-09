@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for minimalist Fennec, the commonly used bits
+WWW=		https://metacpan.org/release/Fennec-Lite
 
 USES=		perl5
 USE_PERL5=	modbuild

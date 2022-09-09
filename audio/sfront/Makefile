@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Translator that converts MP4-SA files into efficient C programs
+WWW=		https://john-lazzaro.github.io/sa/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Text box drawing using the Unicode box symbols
+WWW=		https://metacpan.org/release/Text-UnicodeBox
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

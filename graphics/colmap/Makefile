@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Structure from motion and multi-view stereo
+WWW=		https://colmap.github.io/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE CC-BY-3.0 GPLv3+ MIT SIFTGPU
 LICENSE_COMB=	multi

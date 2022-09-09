@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/IBM/plex/releases/download/v${DISTVERSION}/True
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	IBM's signature typeface
+WWW=		https://github.com/IBM/plex
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/TrueType/IBM-Plex-Mono/license.txt

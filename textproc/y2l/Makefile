@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yacc-to-Latex pretty printer/converter
+WWW=		http://www.alchar.org/~aedil/Projects/y2l.html
 
 NO_BUILD=	yes
 

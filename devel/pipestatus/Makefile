@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX/POSIX shell helper for running pipes safely
+WWW=		https://sourceforge.net/projects/pipestatus/
 
 LICENSE=	PD
 

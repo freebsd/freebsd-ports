@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility library for mocking out the requests Python library
+WWW=		https://github.com/getsentry/responses
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

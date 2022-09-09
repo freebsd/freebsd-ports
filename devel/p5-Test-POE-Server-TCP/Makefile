@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Component providing TCP server services for test cases
+WWW=		https://metacpan.org/release/Test-POE-Server-TCP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

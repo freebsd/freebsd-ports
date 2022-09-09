@@ -7,5 +7,3 @@ hashes (including nested) that have camelCased keys
 
 You will now be able to access those keys through underscored key names
 (camelCase still available).
-
-WWW: https://github.com/tcocca/rash

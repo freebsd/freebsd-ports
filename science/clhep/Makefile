@@ -6,6 +6,7 @@ MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
+WWW=		http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/index.html
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

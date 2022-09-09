@@ -5,5 +5,3 @@ default, a list of all the files affected by the commit will be assem-
 bled and listed in a single message.  An additional option allows diffs
 to be calculated for the changes and either appended to the message or
 added as an attachment.
-
-WWW: https://metacpan.org/release/SVN-Notify

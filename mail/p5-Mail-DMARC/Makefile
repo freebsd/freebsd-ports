@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Perl5 module to process and/or create DKIM email
+WWW=		https://github.com/msimerson/mail-dmarc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

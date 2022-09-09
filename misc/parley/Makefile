@@ -4,6 +4,7 @@ CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Vocabulary trainer for KDE
+WWW=		https://edu.kde.org/applications/all/parley
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
@@ -19,7 +20,7 @@ USE_KDE=	attica auth codecs completion configwidgets coreaddons config \
 USE_QT=		concurrent core dbus declarative gui location network multimedia \
 		printsupport script svg webchannel webengine widgets xml \
 		buildtools_build qmake_build
-USE_XORG=	x11 xrender
+USE_XORG=	ice sm x11 xext xrender
 
 OPTIONS_DEFINE=	DOCS
 

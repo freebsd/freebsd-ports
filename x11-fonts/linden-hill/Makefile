@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Digital version of Frederic Goudy's Deepdene
+WWW=		https://www.theleagueofmoveabletype.com/linden-hill
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/Open\ Font\ License.markdown

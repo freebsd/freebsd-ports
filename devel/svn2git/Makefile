@@ -4,6 +4,7 @@ CATEGORIES=	devel kde
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Imports svn repositories into git
+WWW=		http://gitorious.org/svn2git/svn2git
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

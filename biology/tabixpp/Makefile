@@ -7,6 +7,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ wrapper to tabix indexer
+WWW=		https://github.com/ekg/tabixpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

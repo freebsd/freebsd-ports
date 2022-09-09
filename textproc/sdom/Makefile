@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the W3C DOM recommendation in Scheme
+WWW=		https://www.nongnu.org/sdom/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

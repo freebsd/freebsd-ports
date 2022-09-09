@@ -1,11 +1,12 @@
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
 COMMENT=		Prometheus metrics exporter for the Unbound DNS resolver
+WWW=		https://github.com/kumina/unbound_exporter
 
 LICENSE=		APACHE20
 

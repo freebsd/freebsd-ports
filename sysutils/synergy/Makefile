@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
+WWW=		https://symless.com/synergy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

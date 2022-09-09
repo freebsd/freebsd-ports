@@ -5,6 +5,7 @@ MASTER_SITES=	SF/matroska/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to verify Matroska and WebM files
+WWW=		https://www.matroska.org/downloads/mkvalidator.html
 
 LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi

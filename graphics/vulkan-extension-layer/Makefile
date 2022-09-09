@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Layer providing Vulkan features when native support is unavailable
+WWW=		https://github.com/KhronosGroup/Vulkan-ExtensionLayer
 
 LICENSE=	APACHE20
 

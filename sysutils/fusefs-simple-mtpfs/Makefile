@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple MTP fuse filesystem driver
+WWW=		https://github.com/phatina/simple-mtpfs
 
 LICENSE=	GPLv2+
 

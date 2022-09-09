@@ -8,5 +8,3 @@ interior-point method, parallel direct search, generating set search, a trust
 region - parallel direct search hybrid, and a wrapper to NPSOL. Between these
 methods, a wide range of problems can be solved, e.g. with or without
 constraints, with or without analytic gradients, simulation based, etc.
-
-WWW: https://software.sandia.gov/opt++/

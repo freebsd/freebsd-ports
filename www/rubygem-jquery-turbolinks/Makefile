@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	jQuery plugin for drop-in fix binded events problem caused by Turbolinks
+WWW=		https://github.com/kossnocorp/jquery.turbolinks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

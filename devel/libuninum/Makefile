@@ -6,6 +6,7 @@ MASTER_SITES=	http://billposer.org/Software/Downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for converting Unicode strings to numbers
+WWW=		https://billposer.org/Software/libuninum.html
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

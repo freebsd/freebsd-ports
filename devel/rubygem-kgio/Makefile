@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides non-blocking I/O methods
+WWW=		https://yhbt.net/kgio/
 
 LICENSE=	LGPL21+
 

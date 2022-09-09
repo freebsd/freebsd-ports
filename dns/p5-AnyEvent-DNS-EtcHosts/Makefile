@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Use /etc/hosts before DNS in Perl
+WWW=		https://metacpan.org/pod/URL::Encode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -13,6 +13,7 @@ PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	The Public Domain Korn Shell
+WWW=		http://www.cs.mun.ca/~michael/pdksh/
 
 LICENSE=	BSD3CLAUSE
 

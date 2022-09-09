@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
+WWW=		http://www.cs.unc.edu/~rademach/glui/
 
 USES=		gl gmake tar:tgz xorg
 USE_GL=		glut

@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Writes any log live onto the background
+WWW=		https://sourceforge.net/projects/xrootconsole/
 
 USES=		gmake xorg
 USE_XORG=	x11

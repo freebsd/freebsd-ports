@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.3.4.3
+DISTVERSION=	24.3.4.4
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
@@ -9,6 +9,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang bindings for wxWindows
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

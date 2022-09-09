@@ -4,7 +4,5 @@ same user attempts to log in again, the proxy will use the cached
 username/password pair to authenticate the client, and tie the new client to
 the old server connection (which was kept alive).
 
-WWW: http://www.kuleuven.net/projects/imapproxy/
-
 	Lasse L. Johnsen
 	lasse@freebsdcluster.org

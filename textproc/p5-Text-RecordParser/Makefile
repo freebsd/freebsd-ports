@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read record-oriented files
+WWW=		https://metacpan.org/release/Text-RecordParser
 
 LICENSE=	GPLv2
 

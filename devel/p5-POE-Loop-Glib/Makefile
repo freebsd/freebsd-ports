@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Bridge that supports Glib event loop from POE
+WWW=		https://metacpan.org/release/POE-Loop-Glib
 
 LICENSE=	GPLv2
 

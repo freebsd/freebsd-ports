@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Bayesian Mail Filter compatible with maildrop and procmail
+WWW=		https://sourceforge.net/projects/bmf/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

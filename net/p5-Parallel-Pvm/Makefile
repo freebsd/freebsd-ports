@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the Parallel Virtual Machine (PVM)
+WWW=		https://metacpan.org/release/Parallel-Pvm
 
 LIB_DEPENDS=	libpvm3.so:net/pvm
 

@@ -7,6 +7,7 @@ DISTNAME=	Preferences-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep workspace manager
+WWW=		https://www.nongnu.org/backbone/
 
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21

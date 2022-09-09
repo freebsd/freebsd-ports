@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate programming font
+WWW=		https://tobiasjung.name/profont/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Utilities for implementing Modified Preorder Tree Traversal in Django
+WWW=		https://github.com/django-mptt/django-mptt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

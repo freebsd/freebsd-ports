@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Various portability utilities for module builders
+WWW=		https://metacpan.org/release/ExtUtils-Helpers
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

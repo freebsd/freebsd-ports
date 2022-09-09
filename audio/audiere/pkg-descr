@@ -13,5 +13,3 @@ Audiere is portable. It is tested on Windows, Linux-i386, Cygwin,
 and IRIX with at least three major compilers. Most of Audiere is
 endian-independent, so I expect it would work with few modifications
 on other architectures.
-
-WWW: http://audiere.sourceforge.net/

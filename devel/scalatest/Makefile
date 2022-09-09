@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.artima.com/downloadScalaTest/ \
 
 MAINTAINER=	mitsururike@gmail.com
 COMMENT=	Regression testing utility for use with the Scala Language
+WWW=		https://www.scalatest.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

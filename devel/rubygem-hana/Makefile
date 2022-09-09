@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby JSON-Patch and JSON-Pointer implementation
+WWW=		https://github.com/tenderlove/hana
 
 LICENSE=	MIT
 

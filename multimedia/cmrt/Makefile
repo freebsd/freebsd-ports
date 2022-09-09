@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Legacy C for Metal Runtime
+WWW=		https://01.org/linuxmedia
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

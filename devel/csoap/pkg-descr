@@ -5,5 +5,3 @@ csoap comes with the following features:
 - client/server HTTP engine
 - Attachments via MIME
 - https (SSL) with OpenSSL
-
-WWW: http://csoap.sourceforge.net/

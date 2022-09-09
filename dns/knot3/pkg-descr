@@ -10,5 +10,3 @@ AXFR and IXFR, DDNS and DNSSEC.  Its key features:
    - Full and incremental zone transfers
    - EDNS0 and DNSSEC extensions, including NSEC3
    - NSID
-
-WWW: https://www.knot-dns.cz/

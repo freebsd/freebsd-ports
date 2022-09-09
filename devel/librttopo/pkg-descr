@@ -5,5 +5,3 @@ GNU GPL license (version 2 or later).
 The code is derived from PostGIS liblwgeom library enhanced to provide
 thread-safety, have less dependencies and be independent from PostGIS release
 cycles.
-
-WWW: https://git.osgeo.org/gitea/rttopo/librttopo

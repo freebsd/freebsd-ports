@@ -1,12 +1,12 @@
 PORTNAME=	fontconfig
-DISTVERSION=	2.13.94
-PORTREVISION=	2
+DISTVERSION=	2.14.0
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows
+WWW=		https://www.freedesktop.org/wiki/Software/fontconfig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -32,7 +32,7 @@ FCADDFONTS=	${LOCALBASE}/lib/X11/fonts
 
 # To avoid circular dependency rebuild of docs (including manpages) needs to be
 # disabled as they depend on textproc/docbook-utils which requires fontconfig
-MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled -Dfc-cache=disabled
+MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled -Dcache-build=disabled
 
 PLIST_SUB=	PREFERRED_HINTING=${PREFERRED_HINTING}
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt

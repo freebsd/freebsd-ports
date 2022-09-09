@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Scripting level thread extension for Tcl
+WWW=		https://wiki.tcl.tk/2770
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms

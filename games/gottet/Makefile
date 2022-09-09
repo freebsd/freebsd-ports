@@ -6,6 +6,7 @@ MASTER_SITES=	https://gottcode.org/gottet/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Tetris clone
+WWW=		https://gottcode.org/gottet/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modern parsing library
+WWW=		https://github.com/lark-parser/lark
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

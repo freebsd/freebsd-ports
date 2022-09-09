@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	BioPerl cluster modules
+WWW=		https://metacpan.org/release/Bio-Cluster
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

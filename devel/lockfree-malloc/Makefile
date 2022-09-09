@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable drop-in replacement for malloc/free
+WWW=		https://github.com/Begun/lockfree-malloc
 
 LICENSE=	LGPL3
 

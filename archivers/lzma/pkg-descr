@@ -3,5 +3,3 @@ from the LZMA SDK. It uses a raw LZMA format instead of the xz or 7z container
 formats, and produces compression ratios that are usually about 25-30% better
 than bzip2, and decompression speeds that are about twice as fast. The
 disadvantages are higher CPU and RAM requirements for compression.
-
-WWW: https://www.7-zip.org/sdk.html

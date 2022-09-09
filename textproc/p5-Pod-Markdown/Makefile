@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to convert POD to Markdown
+WWW=		https://metacpan.org/release/Pod-Markdown
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

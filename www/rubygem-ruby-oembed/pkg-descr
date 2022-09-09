@@ -1,5 +1,3 @@
 An oEmbed consumer library written in Ruby, letting you easily get embeddable
 HTML representations of supported web pages, based on their URLs. See oembed.com
 for more about the protocol.
-
-WWW: https://github.com/ruby-oembed/ruby-oembed

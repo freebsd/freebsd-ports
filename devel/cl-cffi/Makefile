@@ -17,6 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable foreign function interface for Common Lisp
+WWW=		https://common-lisp.net/project/cffi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

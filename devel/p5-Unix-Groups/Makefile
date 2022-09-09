@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl support for getgroups and setgroups syscalls
+WWW=		https://metacpan.org/pod/Unix::Groups
 
 USES=		perl5
 USE_PERL5=	configure

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test that freed memory objects were, indeed, freed
+WWW=		https://metacpan.org/release/Test-Weaken
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -9,6 +9,7 @@ DISTFILES=	pydata_sphinx_theme-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bootstrap-based Sphinx theme from the PyData community
+WWW=		https://github.com/pydata/pydata-sphinx-theme
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

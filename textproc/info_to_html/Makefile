@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mons.net/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into HTML pages
+WWW=		https://www.mons.net/info_to_html
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

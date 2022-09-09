@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl API for MaxMind GeoIP2 web services and databases
+WWW=		https://metacpan.org/release/GeoIP2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

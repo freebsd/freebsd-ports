@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Fork of OpenWatcom x86 assembler with AMD64 support
+WWW=		https://github.com/Baron-von-Riedesel/JWasm
 
 LICENSE=	OpenWatcom
 LICENSE_NAME=	Sybase Open Watcom Public License version 1.0

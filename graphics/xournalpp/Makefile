@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Handwriting notetaking software with PDF annotation support
+WWW=		https://github.com/xournalpp/xournalpp
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@ subdirectories.
 
 Use the make generate script from the root of the repository to regenerate the
 client libraries after updating .proto files.
-
-WWW: https://gitlab.com/gitlab-org/gitaly-proto

@@ -8,6 +8,7 @@ EXTRA_PATCHES=	${FILESDIR}/git-30e77e2:-p1
 
 MAINTAINER?=	danfe@FreeBSD.org
 COMMENT?=	Multi-protocol peer-to-peer client written in OCaml
+WWW=		http://mldonkey.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt

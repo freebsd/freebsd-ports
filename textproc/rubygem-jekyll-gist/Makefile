@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Liquid tag for displaying GitHub Gists in Jekyll sites
+WWW=		https://github.com/jekyll/jekyll-gist
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

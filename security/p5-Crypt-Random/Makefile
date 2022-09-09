@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cryptographically Secure, True Random Number Generator
+WWW=		https://metacpan.org/release/Crypt-Random
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

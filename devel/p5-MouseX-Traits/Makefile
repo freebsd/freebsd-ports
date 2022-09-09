@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically apply roles at object creation time
+WWW=		https://metacpan.org/release/MouseX-Traits
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

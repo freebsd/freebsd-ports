@@ -9,5 +9,3 @@ called minidump. This tool has the following modes of operation:
 - Shell, where a user may use an interactive command shell to get all info
   (modules, threads, exceptions etc) and browse the virtual memory of the
   process dumped (read/read int/read uint/move/peek/tell)
-
-WWW: https://github.com/skelsec/minidump

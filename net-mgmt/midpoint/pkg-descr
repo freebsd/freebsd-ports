@@ -6,5 +6,3 @@ on. It allows very complex transformation and replication rules
 including support for advanced RBAC and scripting. Its internal
 mechanisms are based on state-of-the art concepts that are still
 not yet widely used in the fieldof Identity Management.
-
-WWW: https://evolveum.com/midpoint/

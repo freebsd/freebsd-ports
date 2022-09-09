@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for building DOM Level 1 compliant document structures
+WWW=		https://metacpan.org/release/XML-DOM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

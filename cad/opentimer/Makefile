@@ -4,6 +4,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance timing analysis tool for VLSI systems
+WWW=		https://github.com/OpenTimer/OpenTimer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

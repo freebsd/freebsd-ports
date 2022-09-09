@@ -5,5 +5,3 @@ order to force a debug screen, while in debug mode.
 
 If you have more than one view, you can specify which one to use with
 the "default_view" config setting (see ""$c->view($name)" in "Catalyst".)
-
-WWW: https://metacpan.org/release/Catalyst-Action-RenderView

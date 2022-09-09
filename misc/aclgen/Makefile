@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimize Cisco routers IP access lists
+WWW=		http://gatling.ikk.sztaki.hu/~kissg/pd/
 
 NO_WRKSUBDIR=	yes
 

@@ -16,5 +16,3 @@ lexalias( $where, $name, $variable )
     $name is the name of the lexical within that subroutine
 
     $variable is a reference to the variable to install at that location
-
-WWW: https://metacpan.org/release/Devel-LexAlias

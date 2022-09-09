@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, simple, correct HTTP/1.1 client
+WWW=		https://metacpan.org/release/HTTP-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

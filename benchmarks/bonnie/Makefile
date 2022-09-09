@@ -7,6 +7,7 @@ DISTNAME=	bonnie
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
+WWW=		https://www.textuality.com/bonnie/
 
 NO_WRKSUBDIR=	yes
 MAKE_ARGS+=	-e CFLAGS="${CFLAGS}"

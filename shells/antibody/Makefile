@@ -1,11 +1,12 @@
 PORTNAME=	antibody
 PORTVERSION=	6.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	shells
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance zsh plugin manager
+WWW=		https://getantibody.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

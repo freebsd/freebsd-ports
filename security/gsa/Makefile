@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone Security Assistant webpage written in React
+WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 

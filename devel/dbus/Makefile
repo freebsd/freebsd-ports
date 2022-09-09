@@ -6,6 +6,7 @@ MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Message bus system for inter-application communication
+WWW=		https://www.freedesktop.org/Software/dbus
 
 LICENSE=	GPLv2
 

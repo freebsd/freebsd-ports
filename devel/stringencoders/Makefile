@@ -7,6 +7,7 @@ MASTER_SITES=	http://people.freebsd.org/~skreuzer/distfiles/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of high performance C-string transformations
+WWW=		https://github.com/client9/stringencoders
 
 LICENSE=	MIT
 

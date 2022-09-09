@@ -4,5 +4,3 @@ mpg123-mode's (ports/audio/mpg123.el) buffer on Emacsen.
 Put the expression below into your ~/.emacs.
 
 (load "id3.el")
-
-WWW: http://www.gentei.org/~yuuji/software/mpg123el/

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_c-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of algorithms and procedures used in fundamental astronomy
+WWW=		https://www.iausofa.org/
 
 LICENSE=	SOFA
 LICENSE_NAME=	SOFA Software License

@@ -9,5 +9,3 @@ mutual authentication. Basic GET usage:
 >>> r = requests.get("http://example.org", auth=HTTPKerberosAuth())
 ...
 The entire requests.api should be supported.
-
-WWW: https://github.com/requests/requests-kerberos

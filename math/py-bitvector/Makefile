@@ -8,6 +8,7 @@ DISTNAME=	BitVector-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Pure-Python memory-efficient packed representation for bit arrays
+WWW=		https://engineering.purdue.edu/kak/dist/
 
 LICENSE=	PSFL
 

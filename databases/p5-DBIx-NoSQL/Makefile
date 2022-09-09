@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	NoSQL-ish overlay for an SQL database
+WWW=		https://metacpan.org/release/DBIx-NoSQL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

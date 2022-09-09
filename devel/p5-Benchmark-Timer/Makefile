@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Code benchmarking tool
+WWW=		https://metacpan.org/release/Benchmark-Timer
 
 LICENSE=	GPLv2
 

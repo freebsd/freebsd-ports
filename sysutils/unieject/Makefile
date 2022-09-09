@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eject(1) replacement
+WWW=		http://flameeyes.is-a-geek.org/projects #unieject
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

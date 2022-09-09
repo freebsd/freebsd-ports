@@ -10,5 +10,3 @@ Put lipsf entry to /etc/printcap file:
 
 lipsf|lipsf printer:\
 	:lp=/dev/lpt0:sd=/var/spool/output/lpd:lf=/var/log/lpd-errs:sh:
-
-WWW: http://hp.vector.co.jp/authors/VA012337/soft/lipsf/

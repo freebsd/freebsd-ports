@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check for uncleaned imports
+WWW=		https://metacpan.org/release/Test-CleanNamespaces
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

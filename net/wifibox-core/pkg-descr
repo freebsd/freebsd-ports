@@ -1,4 +1,2 @@
 Core routines of Wifibox that are responsible for implementing the
 orchestration of bhyve and other utilities.
-
-WWW: https://github.com/pgj/freebsd-wifibox

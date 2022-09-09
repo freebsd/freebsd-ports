@@ -1,10 +1,11 @@
 PORTNAME=	aerc
 DISTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email client for your terminal
+WWW=		https://aerc-mail.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

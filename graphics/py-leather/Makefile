@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Charting library for those who need charts now
+WWW=		https://leather.readthedocs.io/
 
 LICENSE=	MIT
 

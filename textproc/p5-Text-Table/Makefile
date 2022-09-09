@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Organize Data in Tables
+WWW=		https://metacpan.org/release/Text-Table
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

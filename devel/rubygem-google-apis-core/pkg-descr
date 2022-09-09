@@ -4,5 +4,4 @@ Google-managed clients for publicly-available APIs are maintained using this
 tool, and users may also use it to generate clients for private or early-access
 APIs.
 
-WWW: https://github.com/googleapis/google-api-ruby-client
-WWW: https://github.com/googleapis/google-api-ruby-client/tree/master/google-apis-core
+See also: https://github.com/googleapis/google-api-ruby-client

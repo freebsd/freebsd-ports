@@ -4,5 +4,3 @@ parsing and modification of a URI.
 URI is an excellent module; it is battle-tested, robust, and handles many edge
 cases. As a result, it is rather slower than it would otherwise be for more
 trivial cases, such as inspecting the path or updating a single query parameter.
-
-WWW: https://metacpan.org/release/URI-Fast

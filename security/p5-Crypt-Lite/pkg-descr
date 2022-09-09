@@ -10,5 +10,3 @@ re-encrypt the same data with the same secret string. Nevertheless you
 are able to make double or tripple-encryption with any data to increase
 the security. Decryption works also on hashes that have been encrypted
 on a foreign host (try this with an unpatched IDEA installation ;-).
-
-WWW: https://metacpan.org/release/Crypt-Lite

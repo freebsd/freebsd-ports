@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Character String Processing Facilities
+WWW=		http://www.gagolewski.com/software/stringi/
 
 LICENSE=	BSD3CLAUSE
 

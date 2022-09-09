@@ -2,5 +2,3 @@ Fuse lets you write filesystems in Perl. Fuse::Simple makes this REALLY Simple,
 as you just need a hash for your root directory, containing strings for files,
 more hashes for subdirs, or functions to be called for magical functionality a
 bit like /proc.
-
-WWW: https://metacpan.org/release/Fuse-Simple

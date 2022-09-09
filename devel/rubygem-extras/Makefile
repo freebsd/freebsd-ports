@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides patches to stdlib that provide extra functions
+WWW=		https://github.com/envygeeks/extras
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

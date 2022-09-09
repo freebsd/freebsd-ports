@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Tool to specify audit configurations on a process
+WWW=		https://github.com/csjayp/setaudit
 
 LICENSE=	BSD2CLAUSE
 

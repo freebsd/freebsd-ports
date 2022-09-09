@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Vim script manager
+WWW=		https://metacpan.org/release/Vimana
 
 BUILD_DEPENDS=	vim:editors/vim
 RUN_DEPENDS=	vim:editors/vim \

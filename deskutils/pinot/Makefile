@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal search and metasearch for the Free Desktop
+WWW=		https://github.com/FabriceColin/pinot/
 
 LICENSE=	GPLv2
 

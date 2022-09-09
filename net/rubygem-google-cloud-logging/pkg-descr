@@ -6,5 +6,3 @@ supports ingestion of any custom log data from any source. Stackdriver Logging
 is a fully-managed service that performs at scale and can ingest application and
 system log data from thousands of VMs. Even better, you can analyze all that log
 data in real-time.
-
-WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-logging

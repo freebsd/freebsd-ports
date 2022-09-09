@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Asciidoctor diagramming extension
+WWW=		https://rubygems.org/gems/asciidoctor-diagram/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

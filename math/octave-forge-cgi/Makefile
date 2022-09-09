@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+WWW=		http://octave.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING

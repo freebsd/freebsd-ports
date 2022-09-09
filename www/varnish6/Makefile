@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	High-performance HTTP accelerator
+WWW=		https://www.varnish-cache.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

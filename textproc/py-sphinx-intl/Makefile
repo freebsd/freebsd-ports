@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx utility that make it easy to translate and to apply translation
+WWW=		https://github.com/sphinx-doc/sphinx-intl
 
 LICENSE=	BSD2CLAUSE
 

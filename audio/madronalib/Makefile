@@ -7,6 +7,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ framework for DSP applications
+WWW=		https://www.madronalabs.com/
 
 LICENSE=	MIT
 

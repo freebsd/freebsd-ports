@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.pl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPG/PGP Keyring Graph Generator
+WWW=		http://www.chaosreigns.com/code/sig2dot/
 
 CONFLICTS_INSTALL=signing-party
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/jflex-de/jflex/releases/download/v${PORTVERSION
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Fast Lexical Analyser Generator for Java[tm]
+WWW=		https://www.jflex.de/
 
 LICENSE=	BSD3CLAUSE
 

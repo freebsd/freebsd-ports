@@ -6,6 +6,7 @@ MASTER_SITES=	http://mirror.roe.ch/rel/sslsplit/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Transparent and scalable SSL/TLS interception
+WWW=		https://www.roe.ch/SSLsplit
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

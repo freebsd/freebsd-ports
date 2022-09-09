@@ -12,5 +12,3 @@ Rainbow adds following methods to String class:
  * blink
  * inverse
  * hide.
-
-WWW: https://github.com/sickill/rainbow

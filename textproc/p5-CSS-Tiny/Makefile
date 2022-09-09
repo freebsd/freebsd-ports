@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read/Write .css files with as little code as possible
+WWW=		https://metacpan.org/release/CSS-Tiny
 
 LICENSE=	ARTPERL10
 

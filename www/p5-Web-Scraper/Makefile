@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Toolkit inspired by Scrapi
+WWW=		https://metacpan.org/release/Web-Scraper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

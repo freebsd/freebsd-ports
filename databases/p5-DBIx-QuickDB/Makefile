@@ -1,11 +1,12 @@
 PORTNAME=	DBIx-QuickDB
-PORTVERSION=	0.000022
+PORTVERSION=	0.000023
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Quickly start a db server
+WWW=		https://metacpan.org/dist/DBIx-QuickDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

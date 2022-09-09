@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate a DocBook documentation from a DTD
+WWW=		https://metacpan.org/release/XML-Handler-Dtd2DocBook
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libxml>=0:textproc/p5-libxml \

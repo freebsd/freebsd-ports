@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python wrapper around libusb
+WWW=		https://pyusb.github.io/pyusb/
 
 LICENSE=	BSD3CLAUSE
 

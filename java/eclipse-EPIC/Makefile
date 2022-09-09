@@ -8,6 +8,7 @@ DISTNAME=	${EPIC}_${PORTVERSION}_20090521
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EPIC adds Perl support to the Eclipse IDE Framework
+WWW=		http://e-p-i-c.sourceforge.net/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 

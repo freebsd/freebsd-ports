@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pika connection pooling
+WWW=		https://github.com/bninja/pika-pool
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pika>=0.9.0:devel/py-pika@${PY_FLAVOR}
 

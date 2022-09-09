@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make Petal go faster by compiling the expressions
+WWW=		https://metacpan.org/release/Petal-CodePerl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Petal>=0:textproc/p5-Petal \

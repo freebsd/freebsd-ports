@@ -6,5 +6,3 @@ and Qt data types). The underlying TCP socket and the XMPP RFCs
 functions. Therefore the user would not be bothered with these
 details. But it is always recommended to the advanced users to read
 and enjoy the low level details.
-
-WWW: https://github.com/qxmpp-project/qxmpp/

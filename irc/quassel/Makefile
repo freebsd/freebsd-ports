@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/$
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
+WWW=		https://www.quassel-irc.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

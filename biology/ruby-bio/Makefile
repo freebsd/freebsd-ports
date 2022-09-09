@@ -8,6 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
+WWW=		http://bioruby.org/
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

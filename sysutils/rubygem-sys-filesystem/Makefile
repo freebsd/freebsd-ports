@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface for getting filesystem information
+WWW=		https://github.com/djberg96/sys-filesystem
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

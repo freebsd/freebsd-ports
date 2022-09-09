@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Portable File Locking
+WWW=		https://github.com/r-lib/filelock #readme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library for converting ANSI, ASCII, and other formats to PNG
+WWW=		https://www.ansilove.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

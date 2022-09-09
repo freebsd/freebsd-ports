@@ -7,6 +7,7 @@ DISTNAME=	SimpleAgenda-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple calendar and agenda application
+WWW=		http://wiki.gnustep.org/index.php/SimpleAgenda.app
 
 LIB_DEPENDS+=	libical.so:devel/libical \
 		libuuid.so:misc/e2fsprogs-libuuid

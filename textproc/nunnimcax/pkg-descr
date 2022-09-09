@@ -6,5 +6,3 @@ parser to be used in environment with limited resources.  A minimal
 (only well-formed check) executable linked statically against the
 library with all symbols stripped away on FreeBSD has a size below
 19 KByte.
-
-WWW: https://sourceforge.net/projects/nunnimcax/

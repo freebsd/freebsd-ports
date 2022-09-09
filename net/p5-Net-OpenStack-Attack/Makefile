@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools for stress testing an OpenStack deployment
+WWW=		https://metacpan.org/release/Net-OpenStack-Attack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

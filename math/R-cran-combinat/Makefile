@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for combinatorics
+WWW=		https://cran.r-project.org/package=combinat
 
 LICENSE=	GPLv2
 

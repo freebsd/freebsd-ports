@@ -8,6 +8,7 @@ DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
+WWW=		https://tomcat.apache.org/connectors-doc/
 
 LICENSE=	APACHE20
 

@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Library to support Jyutping through libime
+WWW=		https://github.com/fcitx/libime-jyutping
 
 LICENSE=	LGPL21+ GPLv3+
 LICENSE_COMB=	multi

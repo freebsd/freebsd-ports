@@ -11,5 +11,3 @@ As input IQ-TREE accepts all common sequence alignment formats including PHYLIP,
 FASTA, Nexus, Clustal and MSF. As output IQ-TREE will write a self-readable
 report file (name suffix .iqtree), a NEWICK tree file (.treefile) which can be
 visualized by tree viewer programs such as FigTree, Dendroscope or iTOL.
-
-WWW: http://www.iqtree.org/

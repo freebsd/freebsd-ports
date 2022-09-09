@@ -6,5 +6,3 @@ be modified.  The program also has limited MIDI functionality: you
 can write MIDI files, and there is a MIDI to lilypond conversion
 tool, midi2ly.  Conversion tools for PMX, MUP, ABC, Finale and
 Musedata are also included.
-
-WWW: https://lilypond.org/

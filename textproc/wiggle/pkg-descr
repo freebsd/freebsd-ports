@@ -11,5 +11,3 @@ wise) in the patch are applied to the file as best as possible.
 Also, wiggle will (in some cases) detect changes that have already been
 applied, and will ignore them.
 							-- Neil Brown
-
-WWW: https://github.com/neilbrown/wiggle

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Official Ruby library for Google BigQuery
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-bigquery
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

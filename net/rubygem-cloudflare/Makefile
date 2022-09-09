@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for the Cloudflare API
+WWW=		https://github.com/socketry/cloudflare
 
 LICENSE=	MIT
 

@@ -9,5 +9,3 @@ bar diagram (ncurses-based).
 
 Total GPU utilization is also valid for OpenCL loads; other values are only
 useful in GL loads.
-
-WWW: https://github.com/clbr/radeontop

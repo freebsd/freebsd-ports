@@ -6,6 +6,7 @@ MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Open source implementation of SAML2
+WWW=		https://wiki.shibboleth.net/confluence/display/OpenSAML/Home
 
 LICENSE=	APACHE20
 

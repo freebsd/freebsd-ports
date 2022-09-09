@@ -7,6 +7,7 @@ DISTNAME=	GxPlugins_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of LV2 plugins from the guitarix project
+WWW=		https://github.com/brummer10/GxPlugins.lv2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

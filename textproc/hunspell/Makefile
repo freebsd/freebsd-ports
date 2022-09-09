@@ -6,6 +6,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Improved spell-checker for Hungarian and other languages
+WWW=		https://hunspell.github.io/
 
 LICENSE=	GPLv2+ LGPL21+ MPL11
 LICENSE_COMB=	dual

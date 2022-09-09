@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	EventMachine based, async HTTP Request client
+WWW=		https://github.com/igrigorik/em-http-request
 
 LICENSE=	MIT
 

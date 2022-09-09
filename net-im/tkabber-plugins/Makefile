@@ -7,6 +7,7 @@ MASTER_SITES=	http://files.jabber.ru/tkabber/
 
 MAINTAINER=	mp39590@gmail.com
 COMMENT=	External Plugins for Tkabber
+WWW=		http://tkabber.jabber.ru/tkabber-plugins
 
 LICENSE=	GPLv2
 

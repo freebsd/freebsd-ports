@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}src
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Java benchmark for scientific and numerical computing
+WWW=		https://math.nist.gov/scimark2/index.html
 
 LICENSE=	PD
 

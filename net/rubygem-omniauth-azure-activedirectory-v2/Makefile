@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	OAuth 2 authentication with the Azure ActiveDirectory V2 API
+WWW=		https://github.com/RIPGlobal/omniauth-azure-activedirectory-v2
 
 LICENSE=	MIT
 

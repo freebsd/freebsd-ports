@@ -10,6 +10,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Online meeting app for Nextcloud
+WWW=		https://nextcloud.com/talk/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

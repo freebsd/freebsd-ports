@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Factory class for Yahoo! and MSN emoticons
+WWW=		https://metacpan.org/release/Text-Emoticon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

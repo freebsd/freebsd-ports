@@ -4,6 +4,7 @@ CATEGORIES=	www kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Web browser based on Webengine and Qt Framework
+WWW=		https://www.falkon.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,7 +15,7 @@ USE_KDE=	archive i18n \
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		sql webchannel webengine widgets x11extras sql-sqlite3_run \
 		buildtools_build qmake_build
-USE_XORG=	xcb
+USE_XORG=	x11 xcb
 
 USE_LDCONFIG=	yes
 

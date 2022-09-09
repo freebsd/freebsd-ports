@@ -4,5 +4,3 @@ StyLua is inspired by the likes of prettier,
 it parses your Lua codebase, and prints it
 back out from scratch, enforcing a consistent
 code style.
-
-WWW: https://github.com/JohnnyMorganz/StyLua

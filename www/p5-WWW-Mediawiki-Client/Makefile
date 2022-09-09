@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Very simple cvs-like interface for Mediawiki websites
+WWW=		https://metacpan.org/release/WWW-Mediawiki-Client
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-VCS-Lite>0:devel/p5-VCS-Lite \

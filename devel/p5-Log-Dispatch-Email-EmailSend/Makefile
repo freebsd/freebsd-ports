@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Subclass of Log-Dispatch-Email that uses Email-Send
+WWW=		https://metacpan.org/release/Log-Dispatch-Email-EmailSend
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

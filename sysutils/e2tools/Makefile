@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DI
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Utilities to manipulate files in an ext2/ext3 filesystem
+WWW=		https://e2tools.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

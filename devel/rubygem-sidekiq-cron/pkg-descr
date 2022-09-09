@@ -7,5 +7,3 @@ It also checks for new jobs to schedule every 10 seconds and doesn't schedule
 the same job multiple times when more than one Sidekiq worker is running.
 
 Scheduling jobs are added only when at least one Sidekiq process is running.
-
-WWW: https://github.com/ondrejbartas/sidekiq-cron

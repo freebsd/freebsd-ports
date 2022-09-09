@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Convert localtime() format to "speaking clock" time
+WWW=		https://metacpan.org/release/Time-Human
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

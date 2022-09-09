@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Time execution of blocks of code
+WWW=		https://github.com/hector-sab/ttictoc
 
 LICENSE=	MIT
 

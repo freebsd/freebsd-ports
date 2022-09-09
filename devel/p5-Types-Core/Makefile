@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Core types defined as tests and literals
+WWW=		https://metacpan.org/release/Types-Core
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

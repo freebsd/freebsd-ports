@@ -6,6 +6,7 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Plugins for Compiz Composite Window Manager
+WWW=		https://gitlab.com/compiz/compiz-plugins-extra
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

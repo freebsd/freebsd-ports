@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Define and run multi-container applications with Docker
+WWW=		https://github.com/docker/compose/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

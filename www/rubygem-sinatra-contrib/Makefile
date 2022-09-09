@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of useful Sinatra extensions
+WWW=		https://github.com/sinatra/sinatra-contrib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

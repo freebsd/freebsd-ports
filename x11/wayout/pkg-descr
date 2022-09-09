@@ -11,5 +11,3 @@ Features:
 - Allow updating from standard input at a regular interval; custom delimiters
 - Configurable colours/border/position/fonts
 - Supports the pango markup language for text markup/colours.
-
-WWW: https://git.sr.ht/~proycon/wayout

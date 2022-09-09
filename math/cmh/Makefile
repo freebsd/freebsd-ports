@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute Igusa class polynomials
+WWW=		https://www.multiprecision.org/cmh/home.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

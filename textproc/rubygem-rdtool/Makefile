@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
+WWW=		https://github.com/uwabami/rdtool
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual

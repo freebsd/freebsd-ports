@@ -8,5 +8,3 @@ The goals of this package are to provide:
   of continuous and discrete variables.
 - functions on which to test the optimization algorithms.
 - benchmark routines in order to compare algorithms easily.
-
-WWW: https://github.com/facebookresearch/nevergrad

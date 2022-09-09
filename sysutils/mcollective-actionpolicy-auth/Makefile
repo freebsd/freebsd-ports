@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	MCollective Authorization plugin allowing fine grained ACLs
+WWW=		https://github.com/puppetlabs/mcollective-actionpolicy-auth
 
 LICENSE=	APACHE20
 

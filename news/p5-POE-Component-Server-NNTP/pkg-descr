@@ -10,5 +10,3 @@ responses.
 
 This component doesn't implement the news database and as such is not by itself
 a complete NNTP daemon implementation.
-
-WWW: https://metacpan.org/release/POE-Component-Server-NNTP

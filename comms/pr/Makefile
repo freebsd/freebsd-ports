@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/comms/pr/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Daemon that connects local terminal device to a terminal server
+WWW=		https://BSDforge.com/projects/comms/pr/
 
 LICENSE=	ARTPERL10
 

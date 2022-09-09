@@ -5,5 +5,3 @@ compressed texture formats, etc. and displays them in an easy to browse way.
 This data can then be uploaded to online database that developers can use to
 check on OpenGL features and support for different graphics cards available
 on the market.
-
-WWW: https://github.com/SaschaWillems/glCapsViewer

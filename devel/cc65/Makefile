@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Cross-compiler for 6502-based systems
+WWW=		https://cc65.github.io/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

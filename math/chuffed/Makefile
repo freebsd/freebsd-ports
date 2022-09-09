@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lazy clause generation CP solver for MiniZinc
+WWW=		https://github.com/chuffed/chuffed
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

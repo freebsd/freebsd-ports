@@ -7,6 +7,7 @@ DISTNAME=	xhtml-modularization
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	W3C's Modularization of XHTML DTDs and docs
+WWW=		https://www.w3.org/TR/xhtml-modularization/
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 

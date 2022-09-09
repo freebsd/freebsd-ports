@@ -6,6 +6,7 @@ MASTER_SITES=	http://seehuhn.de/media/programs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drive a buggy across the moons surface
+WWW=		https://www.seehuhn.de/comp/moon-buggy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

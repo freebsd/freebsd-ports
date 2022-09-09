@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to deal with IMAP UTF-7
+WWW=		https://metacpan.org/release/FABPOT/Unicode-IMAPUtf7-2.01
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

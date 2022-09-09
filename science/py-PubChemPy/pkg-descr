@@ -2,5 +2,3 @@ PubChemPy provides a way to interact with PubChem in Python. It allows chemical
 searches by name, substructure and similarity, chemical standardization,
 conversion between chemical file formats, depiction and retrieval of chemical
 properties.
-
-WWW: https://github.com/mcs07/PubChemPy

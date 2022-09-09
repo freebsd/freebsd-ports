@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 
 MAINTAINER=	rv@gnu.org
 COMMENT=	Perl-based Make Replacement
+WWW=		http://www.dsmit.com/cons/
 
 USES=		perl5 tar:tgz
 NO_BUILD=	yes

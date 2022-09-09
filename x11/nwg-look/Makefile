@@ -1,11 +1,12 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK3 settings editor for sway and other wlroots compositors
+WWW=		https://github.com/nwg-piotr/nwg-look
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

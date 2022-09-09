@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Roles with composition parameters
+WWW=		https://metacpan.org/pod/MooX::Role::Parameterized
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,5 +7,3 @@ but also as a coding-system translation filter.
 lv can recognize multi-bytes patterns as regular expressions, and lv
 also provides multilingual grep (1) functionality by giving it another
 name, lgrep.
-
-WWW: https://github.com/ttdoda/lv

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	gnu
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU bc/dc calculator
+WWW=		https://www.gnu.org/software/bc/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical audio covert and filter tool
+WWW=		https://github.com/Bleuzen/FFaudioConverter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

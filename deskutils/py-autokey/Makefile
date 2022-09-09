@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Desktop automation utility for FreeBSD and X11
+WWW=		https://github.com/autokey/autokey
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

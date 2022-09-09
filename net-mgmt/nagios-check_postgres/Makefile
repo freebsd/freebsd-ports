@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Monitor various attributes of your PostgreSQL database
+WWW=		https://bucardo.org/check_postgres/
 
 LICENSE=	BSD2CLAUSE
 

@@ -2,8 +2,9 @@ PORTNAME=	libretro-mame2000
 PORTVERSION=	0.20220405
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MAME (0.37b5) for libretro
+WWW=		https://github.com/libretro/mame2000-libretro
 
 LICENSE=	GPLv2
 

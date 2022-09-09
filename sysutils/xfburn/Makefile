@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	CD/DVD burning tool for Xfce
+WWW=		https://goodies.xfce.org/projects/applications/xfburn
 
 LICENSE=	GPLv2
 

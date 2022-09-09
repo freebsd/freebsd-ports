@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
+WWW=		https://github.com/gollum/gollum-lib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

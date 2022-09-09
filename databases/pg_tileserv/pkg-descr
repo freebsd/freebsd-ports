@@ -13,6 +13,3 @@ sources.
 using standard database access control. This means you can also use advanced
 access control techniques, like row-level security to dynamically filter
 access based on the login role.
-
-
-WWW: https://github.com/crunchydata/pg_tileserv/issues

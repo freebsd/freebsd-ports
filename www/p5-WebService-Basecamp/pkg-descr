@@ -17,5 +17,3 @@ XML directly (see new()).
 The documentation for this module is based on the Basecamp API docs
 available at http://www.basecamphq.com/api. It is recommended you read
 the official docs to become familiar with the data reference.
-
-WWW: https://metacpan.org/release/WebService-Basecamp

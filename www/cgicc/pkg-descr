@@ -12,5 +12,3 @@ cgicc performs the following functions:
      cookies.
    - Supports HTTP file upload.
    - Compatible with FastCGI.
-
-WWW: http://www.gnu.org/software/cgicc/

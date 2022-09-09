@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse BIND8/9 zone files
+WWW=		https://metacpan.org/release/Net-DNS-ZoneFile-Fast
 
 LICENSE=	BSD3CLAUSE
 

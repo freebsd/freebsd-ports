@@ -1,10 +1,12 @@
 PORTNAME=	crowdsec
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
 COMMENT=	CrowdSec lightweight and collaborative security engine
+WWW=		https://github.com/crowdsecurity/crowdsec
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

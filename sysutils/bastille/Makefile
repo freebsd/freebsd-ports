@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Jail automation framework
+WWW=		https://bastillebsd.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

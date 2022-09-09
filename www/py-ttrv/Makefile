@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Tilde Terminal Reddit Viewer
+WWW=		https://pypi.org/project/ttrv/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

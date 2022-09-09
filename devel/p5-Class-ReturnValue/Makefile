@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Return-value object that can be treated as a boolean, array, or object
+WWW=		https://metacpan.org/release/Class-ReturnValue
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace

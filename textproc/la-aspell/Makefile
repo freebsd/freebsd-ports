@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Latin dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	la
 

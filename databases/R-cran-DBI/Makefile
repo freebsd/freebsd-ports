@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R Database Interface
+WWW=		https://cran.r-project.org/web/packages/DBI/
 
 LICENSE=	LGPL21+
 

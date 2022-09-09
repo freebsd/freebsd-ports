@@ -3,6 +3,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	math
 
 COMMENT=	Sparse Left-looking Integer-Preserving LU Factorization
+WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	GPLv2+ LGPL3+
 LICENSE_COMB=	dual

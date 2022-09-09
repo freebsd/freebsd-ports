@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic classes for simplistic and perlish handling of XML data
+WWW=		https://metacpan.org/release/XML-Entities
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \

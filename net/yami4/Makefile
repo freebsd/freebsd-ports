@@ -7,6 +7,7 @@ DISTNAME=	yami4-gpl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Messaging library for distributed systems
+WWW=		http://www.inspirel.com/yami4/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt

@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://libvirt.org/libvirt/dbus/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Libvirt D-Bus API binding
+WWW=		https://libvirt.org/dbus.html
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

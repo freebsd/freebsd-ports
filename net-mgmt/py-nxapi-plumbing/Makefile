@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:C/-/_/}-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Manage Cisco devices through NX-API using XML/JSON-RPC
+WWW=		https://github.com/ktbyers/nxapi-plumbing
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

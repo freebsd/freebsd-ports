@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of Gstreamer effects
+WWW=		https://wiki.gnome.org/Projects/GnomeVideoEffects
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

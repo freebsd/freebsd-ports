@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.ergoscf.org/source/tarfiles/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum chemistry program for large-scale atomic calculations
+WWW=		http://www.ergoscf.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

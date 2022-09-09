@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libyal/libcreg/releases/download/${PORTVERSION:
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Windows 9x/Me Registry File format
+WWW=		https://github.com/libyal/libcreg
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

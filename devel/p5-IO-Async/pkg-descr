@@ -5,5 +5,3 @@ number of IO::Async::Notifier objects (or subclasses thereof). The set itself is
 responsible for checking read- or write-readiness, and informing the notifiers
 of these conditions. The notifiers then perform whatever work is required on
 these conditions, by using subclass methods or callback functions.
-
-WWW: https://metacpan.org/release/IO-Async

@@ -6,5 +6,3 @@ the package like its version, a description, and the like.  There
 is also a related API ("Application Program Interface"), permitting
 advanced developers to bypass 'shelling out' to a command line, and
 to manage such transactions from within a native coding language.
-
-WWW: https://rpm.org/

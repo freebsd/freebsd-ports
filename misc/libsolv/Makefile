@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package dependency solver using a satisfiability algorithm
+WWW=		https://github.com/openSUSE/libsolv
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.BSD

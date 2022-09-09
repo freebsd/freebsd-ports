@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Depth-Based Classification and Calculation of Data Depth
+WWW=		https://cran.r-project.org/web/packages/ddalpha/
 
 LICENSE=	GPLv2
 

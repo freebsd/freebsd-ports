@@ -5,5 +5,4 @@ data. A subpackage of PySAL (Python Spatial Analysis Library), it is under
 active development and includes methods for global and local spatial
 autocorrelation analysis.
 
-WWW: https://pysal.org/esda/
-WWW: https://github.com/pysal/esda
+See also: https://github.com/pysal/esda

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library to write SQL queries
+WWW=		https://python-sql.tryton.org/
 
 LICENSE=	BSD3CLAUSE
 

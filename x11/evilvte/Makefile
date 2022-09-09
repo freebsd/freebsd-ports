@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.calno.com/${PORTNAME}/
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	VTE based, super lightweight terminal emulator
+WWW=		https://www.calno.com/evilvte/
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 

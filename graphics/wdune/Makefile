@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.ourproject.org/pub/wdune/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Graphical VRML97 editor and animation tool
+WWW=		https://wdune.ourproject.org/
 
 LICENSE=	GPLv2
 

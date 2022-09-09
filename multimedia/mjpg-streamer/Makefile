@@ -5,6 +5,7 @@ CATEGORIES=	multimedia net
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	HTTP video streaming daemon
+WWW=		https://github.com/jacksonliam/mjpg-streamer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

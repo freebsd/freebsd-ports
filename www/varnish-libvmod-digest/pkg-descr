@@ -3,5 +3,3 @@ with base64.
 
 All HMAC- and hash-functionality is provided by libmhash, while
 base64 is implemented locally.
-
-WWW: https://github.com/varnish/libvmod-digest

@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make use of LV2 plugins as simple as possible
+WWW=		https://drobilla.net/software/lilv
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

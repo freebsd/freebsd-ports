@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry.dussuet@protonmail.com
 COMMENT=	Python library for interacting with taskwarrior databases
+WWW=		https://pypi.org/project/tasklib/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

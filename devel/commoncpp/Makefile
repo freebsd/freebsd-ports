@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
+WWW=		https://www.gnu.org/software/commoncpp/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd-ports@t-b-o-h.net
 COMMENT=	Common data validation methods for URIs
+WWW=		https://metacpan.org/release/Data-Validate-URI
 
 BUILD_DEPENDS=	p5-Data-Validate-Domain>=0:dns/p5-Data-Validate-Domain \
 		p5-Data-Validate-IP>=0:net-mgmt/p5-Data-Validate-IP

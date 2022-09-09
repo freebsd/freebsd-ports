@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Clone of the classic Eliza program
+WWW=		https://metacpan.org/release/Chatbot-Eliza
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

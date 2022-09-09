@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-18
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA) 1.8
+WWW=		https://www.hdfgroup.org/HDF5/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

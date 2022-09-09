@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing a simple, platform-independent mailer
+WWW=		https://metacpan.org/release/Mail-Sendmail
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

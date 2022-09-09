@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Unix time to formatted time and date filter
+WWW=		https://ee.lbl.gov/
 
 LICENSE=	BSD3CLAUSE
 

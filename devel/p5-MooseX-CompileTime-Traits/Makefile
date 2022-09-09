@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to allow compile time traits for classes/roles
+WWW=		https://metacpan.org/release/MooseX-CompileTime-Traits
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

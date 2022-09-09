@@ -1,5 +1,3 @@
 p5-POD2-Base is an abstraction of the code in POD2::IT and
 POD2::FR. These modules belong to the Italian and the French
 translation projects of core Perl pods.
-
-WWW: https://metacpan.org/release/POD2-Base

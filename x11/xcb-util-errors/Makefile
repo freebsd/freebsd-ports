@@ -5,6 +5,7 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Pretty-print XCB codes
+WWW=		https://xcb.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

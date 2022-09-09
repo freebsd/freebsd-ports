@@ -14,5 +14,3 @@ Some things HTTP Core does do:
 - Async backend support for asyncio and trio.
 - Automatic connection pooling.
 - HTTP(S) proxy support.
-
-WWW: https://github.com/encode/httpcore

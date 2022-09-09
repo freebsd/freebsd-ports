@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Align text in columns
+WWW=		https://metacpan.org/release/Text-Aligner
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

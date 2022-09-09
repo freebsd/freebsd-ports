@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.23.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	osa@FreeBSD.org
 COMMENT?=	Robust and small WWW server
+WWW=		https://nginx.com/
 
 LICENSE?=	BSD2CLAUSE
 LICENSE_FILE?=	${WRKSRC}/LICENSE

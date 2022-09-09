@@ -1,12 +1,13 @@
 PORTNAME=	ccache
 PORTVERSION=	3.7.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tool to minimize the compile time of C/C++ programs
+WWW=		https://ccache.samba.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt

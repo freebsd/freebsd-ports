@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal Histogram Interface
+WWW=		https://uhi.readthedocs.io/en/latest/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

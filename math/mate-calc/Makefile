@@ -7,6 +7,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE calculator tool based on the old calctool for OpenWindows
+WWW=		https://mate-desktop.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

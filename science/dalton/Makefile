@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Powerful molecular electronic structure program for quantum chemistry
+WWW=		https://daltonprogram.org/
 
 LICENSE=	LGPL21
 

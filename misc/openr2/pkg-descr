@@ -6,5 +6,3 @@ to use his own MF R2 tone generation and detection so the library will use
 them when needed, that's why this library does not depend directly on spandsp,
 libteletone or zaptel for tone generation and detection (depends on zaptel
 for CAS bits and general media transmission though)
-
-WWW: https://libopenr2.org/

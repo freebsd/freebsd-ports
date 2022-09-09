@@ -16,6 +16,7 @@ LICENSE_PERMS=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Support Vector Machines (SVMs) in C
+WWW=		https://svmlight.joachims.org/
 
 CFLAGS+=	-fPIC -fcommon
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"

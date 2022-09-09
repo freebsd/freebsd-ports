@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mstucchi@ripe.net
 COMMENT=	Official command-line client for RIPE Atlas
+WWW=		https://github.com/RIPE-NCC/ripe-atlas-tools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

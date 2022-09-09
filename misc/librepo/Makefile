@@ -1,9 +1,10 @@
 PORTNAME=	librepo
-DISTVERSION=	1.14.3
+DISTVERSION=	1.14.4
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library downloading repository metadata
+WWW=		https://github.com/rpm-software-management/librepo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Take Screenshots of Web Pages
+WWW=		https://wch.github.io/webshot/
 
 LICENSE=	GPLv2
 

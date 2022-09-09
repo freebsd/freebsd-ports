@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mike@urgle.com
 COMMENT=	Recursive descent XML parsing
+WWW=		https://metacpan.org/release/XML-Descent
 
 BUILD_DEPENDS=	p5-XML-TokeParser>=0:textproc/p5-XML-TokeParser \
 		p5-Test-Differences>=0:devel/p5-Test-Differences

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically run your features
+WWW=		https://github.com/guard/guard-cucumber
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

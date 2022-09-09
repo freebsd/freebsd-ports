@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX} # Bindings name is different from https:/
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Python interface to RRDTool, the graphing and logging utility
+WWW=		https://github.com/commx/python-rrdtool
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

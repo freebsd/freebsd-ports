@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games
+WWW=		https://www.renpy.org/
 
 LICENSE=	APACHE20 BSD3CLAUSE DejaVu LGPL21+ MIT OFL11 ZLIB
 LICENSE_COMB=	multi

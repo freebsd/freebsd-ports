@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Measure the similarity of text documents
+WWW=		https://metacpan.org/release/Text-Similarity
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt

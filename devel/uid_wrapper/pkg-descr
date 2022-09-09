@@ -13,5 +13,3 @@ Some projects like a file server need privilege separation to be able to switch
 to the connection user and do file operations. uid_wrapper convincingly lies to
 the application letting it believe it is operating as root and even switching
 between UIDs and GIDs as needed.
-
-WWW: https://cwrap.org/uid_wrapper.html

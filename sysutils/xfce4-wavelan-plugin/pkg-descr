@@ -5,5 +5,3 @@ Displays various information about a WaveLAN device:
 * Signal state (tells if a carrier signal was detected)
 * Signal quality (current quality of the carrier signal)
 * Network name (current SSID of the WaveLAN network)
-
-WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-wavelan-plugin

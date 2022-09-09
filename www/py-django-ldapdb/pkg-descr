@@ -5,5 +5,3 @@ Declaring models using the LDAP backend is very staightforward, one simply
 inherit from ldapdb.models.Model and declare the fields in the same way as for
 regular models. One can even edit the LDAP entries using Django's admin
 interface.
-
-WWW: https://github.com/django-ldapdb/django-ldapdb

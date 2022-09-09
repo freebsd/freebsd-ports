@@ -3,5 +3,3 @@ This library provides a pure python interface for the Twitter API.
 Twitter provides a service that allows people to connect via the web, IM, and
 SMS. Twitter exposes a web services API and this library is intended to make it
 even easier for python programmers to use.
-
-WWW: https://github.com/bear/python-twitter

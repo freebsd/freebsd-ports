@@ -6,6 +6,7 @@ DISTNAME=	Duncan-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English to Thai dictionary for GNUstep
+WWW=		https://www.eskimo.com/~pburns/Dictionaries/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

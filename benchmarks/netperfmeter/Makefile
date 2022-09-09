@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.uni-due.de/~be0001/netperfmeter/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Network Performance Meter
+WWW=		https://www.uni-due.de/~be0001/netperfmeter/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

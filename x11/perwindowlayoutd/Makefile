@@ -5,6 +5,7 @@ MASTER_SITES=	SF/perwindowlayout
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Keeps per-window keyboard layout under X11
+WWW=		https://sourceforge.net/projects/perwindowlayout/
 
 LICENSE=	GPLv3
 

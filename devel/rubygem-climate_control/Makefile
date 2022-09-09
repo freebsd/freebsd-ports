@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Modify your ENV
+WWW=		https://github.com/thoughtbot/climate_control
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

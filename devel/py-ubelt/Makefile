@@ -1,11 +1,12 @@
 PORTNAME=	ubelt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python utility belt containing simple tools
+WWW=		https://github.com/Erotemic/ubelt
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.0.15:devel/py-codecov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}xxhash>0:devel/py-xxhash@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/Erotemic/ubelt/issues/127#issuecomment-1238953686
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Erotemic

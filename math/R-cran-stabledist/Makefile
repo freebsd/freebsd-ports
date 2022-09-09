@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stable Distribution Functions
+WWW=		https://cran.r-project.org/web/packages/stabledist/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

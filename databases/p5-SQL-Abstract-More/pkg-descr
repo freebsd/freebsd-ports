@@ -7,5 +7,3 @@ identified.
 This module was designed for the specific needs of DBIx::DataModel, but is
 published as a standalone distribution, because it may possibly be useful for
 other needs.
-
-WWW: https://metacpan.org/release/SQL-Abstract-More

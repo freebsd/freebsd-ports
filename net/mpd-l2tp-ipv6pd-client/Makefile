@@ -7,6 +7,7 @@ DISTFILES=	# none
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Sample implementation set of "L2TP-IPv6PD" client using mpd
+WWW=		http://www.ocn.ne.jp/ipv6/service/pdf/ocnipv6uni_ver1.0.pdf
 
 LICENSE=	BSD2CLAUSE
 

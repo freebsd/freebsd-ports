@@ -2,5 +2,3 @@ Very small utility that converts TTF fonts to EOT fonts
 especially suited for Internet Explorer.
 EOT fonts are used by Internet Explorer to support the
 css @font-face declarations.
-
-WWW: https://github.com/wget/ttf2eot

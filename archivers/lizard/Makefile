@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Efficient compressor with very fast decompression
+WWW=		https://github.com/inikep/lizard
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi

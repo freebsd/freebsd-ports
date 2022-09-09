@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Renderer driver using PEAR::Pager
+WWW=		https://pear.php.net/package/Structures_DataGrid_Renderer_Pager
 
 LICENSE=	BSD3CLAUSE
 

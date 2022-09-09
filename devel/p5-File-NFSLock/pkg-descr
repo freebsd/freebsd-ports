@@ -8,5 +8,3 @@ file, hard linking a common file to the local file, and then checking
 the nlink status. Some ideologies were not complete (uncache mechanism,
 shared locking) and some coding was even incorrect (wrong stat index).
 File::NFSLock was written to be light, generic, and fast.
-
-WWW: https://metacpan.org/release/File-NFSLock

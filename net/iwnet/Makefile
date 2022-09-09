@@ -4,6 +4,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Asynchronous HTTP library with websockets, SSL, routing
+WWW=		https://github.com/Softmotions/iwnet
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

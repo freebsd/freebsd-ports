@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of plugins for markdown-it-py
+WWW=		https://github.com/executablebooks/mdit-py-plugins
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

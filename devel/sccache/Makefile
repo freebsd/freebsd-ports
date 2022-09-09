@@ -7,6 +7,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Like ccache with cloud storage support
+WWW=		https://github.com/mozilla/sccache
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

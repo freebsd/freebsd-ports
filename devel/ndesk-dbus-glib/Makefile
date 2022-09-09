@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib main loop integration for Managed D-Bus
+WWW=		http://www.ndesk.org/DBusSharp
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus

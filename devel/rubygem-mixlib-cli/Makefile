@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Simple mixin for CLI interfaces, including option parsing
+WWW=		https://www.chef.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

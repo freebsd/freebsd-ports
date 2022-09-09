@@ -19,5 +19,3 @@ memrm - Remove a key(s) from the serrver.
 memcp - Copy files to a memached server.
 memstat - Dump the stats of your servers to standard output
 memslap - Generate testing loads on a memcached cluster
-
-WWW: https://libmemcached.org/

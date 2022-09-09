@@ -1,5 +1,3 @@
 BOINC is a software platform for distributed computing using volunteer
 computer resources.  This port contains BOINC API, libraries, client and
 manager GUI.
-
-WWW: https://boinc.berkeley.edu/

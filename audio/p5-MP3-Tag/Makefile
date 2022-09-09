@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for reading tags of MP3 audio files
+WWW=		https://metacpan.org/release/MP3-Tag
 
 USES=		perl5 zip
 USE_PERL5=	configure

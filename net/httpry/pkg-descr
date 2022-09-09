@@ -4,5 +4,3 @@ parse, and log the traffic for later analysis. It can be run in real-time
 displaying the traffic as it is parsed, or as a daemon process that logs to an
 output file. It is written to be as lightweight and flexible as possible, so
 that it can be easily adaptable to different applications."
-
-WWW: http://dumpsterventures.com/jason/httpry/

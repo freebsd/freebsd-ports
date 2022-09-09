@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/thefish/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
+WWW=		https://BSDforge.com/projects/sysutils/thefish
 
 LICENSE=	BSD2CLAUSE
 

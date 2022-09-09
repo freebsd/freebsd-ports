@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Hide data (badly) in Png images
+WWW=		https://metacpan.org/release/Acme-Steganography-Image-Png
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Imager>=0:graphics/p5-Imager \

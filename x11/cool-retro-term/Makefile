@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Terminal emulator which mimics old cathode displays
+WWW=		https://github.com/Swordfish90/cool-retro-term
 
 LICENSE=	GPLv3
 

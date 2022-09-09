@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	GNU Portable Threads with semaphores
+WWW=		https://www.auto.tuwien.ac.at/~mkoegler/index.php/pth
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

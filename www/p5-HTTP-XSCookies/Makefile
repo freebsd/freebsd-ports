@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast XS cookie mangling for Perl
+WWW=		https://metacpan.org/release/HTTP-XSCookies
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

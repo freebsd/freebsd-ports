@@ -1,3 +1,1 @@
 This library provides an httplib2 transport for google-auth.
-
-WWW: https://github.com/googleapis/google-auth-library-python-httplib2

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy aliasing of methods and attributes in Moose
+WWW=		https://metacpan.org/release/MooseX-Aliases
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

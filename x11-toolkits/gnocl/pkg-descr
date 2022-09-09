@@ -5,5 +5,3 @@ provides a robust alternative to Tk for those developers which wish to develop
 applications that seamlessly integrated into the Gnome desktop environment
 without having to first familiarize themselves with the intricacies of the Gtk+
 libraries and its dependencies.
-
-WWW: http://gnocl.org/

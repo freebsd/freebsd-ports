@@ -6,6 +6,7 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Shakespeare programming language
+WWW=		http://shakespearelang.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

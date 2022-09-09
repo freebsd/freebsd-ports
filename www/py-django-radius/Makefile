@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Django authentication backend for RADIUS
+WWW=		https://github.com/robgolding/django-radius
 
 LICENSE=	BSD3CLAUSE
 

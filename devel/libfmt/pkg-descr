@@ -1,5 +1,4 @@
 fmt is an open-source formatting library providing a fast and safe alternative
 to C stdio and C++ iostreams.
 
-WWW: https://fmt.dev/
-WWW: https://github.com/fmtlib/fmt
+See also: https://github.com/fmtlib/fmt

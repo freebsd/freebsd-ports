@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Asynchronous Python 3 Bindings for Qt 5
+WWW=		https://thp.io/2011/pyotherside/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

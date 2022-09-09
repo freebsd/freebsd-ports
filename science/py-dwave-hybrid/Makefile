@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Hybrid asynchronous decomposition sampler prototype framework
+WWW=		https://docs.ocean.dwavesys.com/projects/hybrid/en/stable/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simplified object oriented interface to Perl DBI
+WWW=		https://metacpan.org/release/DBIx-Simple
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=1.21:databases/p5-DBI ${TEST_DEPENDS}

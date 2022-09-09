@@ -4,6 +4,7 @@ CATEGORIES=	chinese converters
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Auto chinese encoding converter
+WWW=		https://github.com/buganini/chiconv
 
 LICENSE=	ISCL
 

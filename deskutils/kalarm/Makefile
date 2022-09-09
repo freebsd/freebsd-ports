@@ -7,7 +7,8 @@ COMMENT=	Personal alarm scheduler
 
 LIB_DEPENDS=	libical.so:devel/libical
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shebangfix tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 \
+		shebangfix tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdelibs4support kio \

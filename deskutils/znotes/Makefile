@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple notes managment application based on Qt
+WWW=		http://znotes.sourceforge.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

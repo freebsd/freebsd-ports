@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Unit Testing for R
+WWW=		https://testthat.r-lib.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

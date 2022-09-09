@@ -15,5 +15,3 @@ not compatible with either of them; there are several important differences:
 
   - Lemon includes the concept of a non-terminal destructor, which makes
     it much easier to write a parser that does not leak memory
-
-WWW: http://www.hwaci.com/sw/lemon/

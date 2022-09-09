@@ -1,10 +1,11 @@
 PORTNAME=	aws-sdk-ec2
-PORTVERSION=	1.326.0
+PORTVERSION=	1.329.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for Amazon Elastic Compute Cloud (Amazon EC2)
+WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-ec2
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

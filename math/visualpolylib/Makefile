@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}.${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualization program for PolyLib
+WWW=		https://icps.u-strasbg.fr/polylib/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

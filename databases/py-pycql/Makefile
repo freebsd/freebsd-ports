@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python parser implementation of the OGC CQL standard
+WWW=		https://github.com/geopython/pycql
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

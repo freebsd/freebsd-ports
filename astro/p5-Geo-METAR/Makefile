@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that processes METAR information from NOAA sources
+WWW=		https://jeremy.zawodny.com/perl/Geo-METAR/
 
 LICENSE=	GPLv2+
 

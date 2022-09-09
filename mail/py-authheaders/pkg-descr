@@ -9,5 +9,3 @@ authenticate_message(message, "example.com", ip='192.168.50.81',
 
 Authentication-Results: example.com; spf=none smtp.helo=domain.of.sender.net smtp.mailfrom=test.com;
     dkim=pass header.d=valimail.com; dmarc=pass header.from=valimail.com
-
-WWW: https://github.com/ValiMail/authentication-headers

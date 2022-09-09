@@ -11,5 +11,3 @@ situations by giving suitable arguments for some methods:
 There are several candidate uses:
 - text formatting using proportional fonts
 - multibyte characters which has columns different to number of bytes
-
-WWW: https://github.com/ruby/prettyprint

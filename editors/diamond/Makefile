@@ -7,6 +7,7 @@ DISTNAME=	Diamond-${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Compact programmers editor
+WWW=		https://github.com/copperspice/diamond
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

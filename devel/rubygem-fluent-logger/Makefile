@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Structured event logger for Ruby
+WWW=		https://github.com/fluent/fluent-logger-ruby
 
 LICENSE=	APACHE20
 

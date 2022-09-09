@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Suite of OO modules for logging messages to multiple outputs
+WWW=		https://metacpan.org/release/Log-Dispatch
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

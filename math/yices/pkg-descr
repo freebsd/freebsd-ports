@@ -7,5 +7,3 @@ Yices 2 can process input written in the SMT-LIB notation (both versions 2.0 and
 1.2 are supported). Alternatively, you can write specifications using Yices 2's
 own specification language, which includes tuples and scalar types. You can also
 use Yices 2 as a library in your software.
-
-WWW: https://yices.csl.sri.com/

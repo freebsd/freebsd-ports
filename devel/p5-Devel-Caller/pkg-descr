@@ -9,5 +9,3 @@ SYNOPSIS
  use Devel::Caller qw(called_with);
  sub foo { print called_with(0,1); }
  foo( my @foo ); # should print '@foo'
-
-WWW: https://metacpan.org/release/Devel-Caller

@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Realtime modular synthesizer and/or effects processor
+WWW=		https://drobilla.net/software/raul.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

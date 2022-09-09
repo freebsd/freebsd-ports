@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight prefix-list generator for various routers v4
+WWW=		https://github.com/bgp/bgpq4
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

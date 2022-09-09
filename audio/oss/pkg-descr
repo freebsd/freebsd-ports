@@ -4,5 +4,3 @@ consumer and professional PCI and USB audio devices.
 
 Not to be confused with sound(4) which is a different implementation
 with the same API.
-
-WWW: http://opensound.com/

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/liquibase/liquibase/releases/download/v${PORTVE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Change Management
+WWW=		https://www.liquibase.org/
 
 LICENSE=	APACHE20
 

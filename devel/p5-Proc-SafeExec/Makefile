@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Convenient utility for executing external commands in various ways
+WWW=		https://metacpan.org/release/Proc-SafeExec
 
 LICENSE=	BSD2CLAUSE GPLv1
 LICENSE_COMB=	dual

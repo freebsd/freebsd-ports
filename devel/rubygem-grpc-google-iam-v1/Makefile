@@ -1,10 +1,11 @@
 PORTNAME=	grpc-google-iam-v1
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google IAM gRPC client library
+WWW=		https://github.com/googleapis/common-protos-ruby/tree/master/grpc-google-iam-v1
 
 LICENSE=	BSD3CLAUSE
 

@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free real-time Worms game
+WWW=		http://wormsofprey.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,5 +9,3 @@ It supports:
 * Automatic Document Feeder
 * While scanning, can provide chunks of the image for on-the-fly preview
   (see Paperwork for instance)
-
-WWW: https://gitlab.gnome.org/World/OpenPaperwork/pyinsane/

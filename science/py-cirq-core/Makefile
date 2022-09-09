@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for Noisy Intermediate Scale Quantum (NISQ) circuits
+WWW=		https://github.com/quantumlib/cirq
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

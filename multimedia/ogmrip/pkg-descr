@@ -4,5 +4,3 @@ mencoder, ogmtools, oggenc and lame to perform its tasks.
 
 The GUI features a clean HIG-compliant GNOME 2 interface and tries to minimize
 as much as possible esoteric settings.
-
-WWW: http://ogmrip.sourceforge.net/

@@ -6,6 +6,7 @@ MASTER_SITES?=	LOCAL/chinsan/fonts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ming and Kai face of OpenDesktop fonts
+WWW=		http://opendesktop.org.tw
 
 CONFLICTS=	zh-fireflyttf
 DIST_SUBDIR=	OpenFonts

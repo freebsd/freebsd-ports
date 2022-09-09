@@ -10,5 +10,3 @@ trees. This is useful for developing software on multi-developer systems, such
 as robots, where there may be multiple versions of a library in use, and code
 is being contributed from multiple sources. It is also design to support
 modular code that is easily shared with other developers.
-
-WWW: http://wiki.ros.org/rospkg

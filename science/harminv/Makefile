@@ -6,6 +6,7 @@ MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Solver of harmonic inversion
+WWW=		http://ab-initio.mit.edu/wiki/index.php/Harminv
 
 LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 

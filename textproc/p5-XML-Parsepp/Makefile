@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified pure Perl parser for XML
+WWW=		https://metacpan.org/release/XML-Parsepp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

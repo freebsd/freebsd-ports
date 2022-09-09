@@ -5,5 +5,3 @@ tool. As in Expect::Simple, the Expect object is made available for
 tweaking.
 
 Test::Expect is intended for use in a test script.
-
-WWW: https://metacpan.org/release/Test-Expect

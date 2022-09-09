@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides a method to daemonify a Perl script
+WWW=		https://metacpan.org/release/Proc-Daemon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

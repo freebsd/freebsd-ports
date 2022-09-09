@@ -8,6 +8,7 @@ DISTNAME=	PyInstaller-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Program to create standalone executables from Python scripts
+WWW=		https://www.pyinstaller.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

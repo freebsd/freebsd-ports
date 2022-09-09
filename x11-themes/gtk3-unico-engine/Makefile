@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-engine
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ 3.0 engine
+WWW=		https://launchpad.net/unico
 
 LICENSE=	LGPL3
 

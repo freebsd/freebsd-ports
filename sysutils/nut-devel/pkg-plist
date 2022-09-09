@@ -18,6 +18,7 @@
 @sample %%ETCDIR%%/upsmon.conf.sample
 @sample %%ETCDIR%%/upssched.conf.sample
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/nut.conf
+@sample %%EXAMPLESDIR%%/nut_upslog.sample
 @sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/nut
 %%USB%%etc/devd/nut-usb.conf
 bin/nut-scanner

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	PDF file reader/writer library
+WWW=		https://github.com/pmaupin/pdfrw
 
 LICENSE=	MIT
 

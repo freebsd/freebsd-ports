@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cyclaero@gmail.com
 COMMENT=	File tree cloning tool
+WWW=		https://cyclaero.github.io/clone/
 
 LICENSE=	BSD2CLAUSE
 

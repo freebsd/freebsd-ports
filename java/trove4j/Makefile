@@ -6,6 +6,7 @@ DISTNAME=	trove-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance collections API for Java
+WWW=		https://bitbucket.org/robeden/trove/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

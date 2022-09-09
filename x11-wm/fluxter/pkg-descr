@@ -16,5 +16,3 @@ The major changes to bbpager are:
     fluxter.workspace0.rootCommand: Esetroot /usr/share/pixmaps/bg1.png
     fluxter.workspace1.rootCommand: Esetroot /usr/share/pixmaps/bg2.png
     fluxter.workspace2.rootCommand: Esetroot /usr/share/pixmaps/bg3.png
-
-WWW: http://www.hydrus.org.uk/

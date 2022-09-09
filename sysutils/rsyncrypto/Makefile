@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	Rsync Friendly File Encryption
+WWW=		https://rsyncrypto.lingnu.com/
 
 LICENSE=	GPLv2+
 

@@ -12,5 +12,3 @@ stylesheets.
 
 (3) Post-processing is done by Python, to make publication faster,
 convert the images if needed, and do the whole compilation.
-
-WWW: http://dblatex.sourceforge.net/

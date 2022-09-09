@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Twitter REST API library for Perl
+WWW=		https://metacpan.org/release/Twitter-API
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

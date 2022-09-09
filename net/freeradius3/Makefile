@@ -11,6 +11,7 @@ DISTNAME=	freeradius-server-${DISTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Free RADIUS server implementation
+WWW=		https://www.freeradius.org/
 
 LICENSE=	GPLv2
 

@@ -11,6 +11,7 @@ PATCHFILES=	0ec1144117ae.patch:-p2 1c78ad1dbca8.patch:-p2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Performant SOCKS5/HTTP1.1 proxy server
+WWW=		https://github.com/Stiffstream/arataga
 
 LICENSE=	AGPLv3
 

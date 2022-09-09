@@ -6,5 +6,3 @@ top-down manner.  Next, along a guide tree, it iteratively merges sibling
 leaves in a bottom-up manner if they are similar enough.  Finally, Rainbow uses
 a greedy algorithm to locally assemble merged reads into contigs.  Both optimal
 and suboptimal assembly results are output.
-
-WWW: https://sourceforge.net/projects/bio-rainbow/

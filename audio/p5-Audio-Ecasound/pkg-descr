@@ -8,5 +8,3 @@ processing. It can be used for audio playback, recording, format
 conversions, effects processing, mixing, as a LADSPA plugin host and
 JACK node. Version >= 2.2.X must be installed to use this
 package. "SEE ALSO" for more info.
-
-WWW: https://metacpan.org/release/Audio-Ecasound

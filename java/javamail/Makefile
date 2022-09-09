@@ -5,6 +5,7 @@ CATEGORIES=	java mail
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Reference Implementation of JSR 919
+WWW=		https://javaee.github.io/javamail/
 
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual

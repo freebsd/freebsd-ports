@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby FFI binding to libarchive
+WWW=		https://github.com/chef/ffi-libarchive
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

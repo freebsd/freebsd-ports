@@ -4,6 +4,7 @@ CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Collection of multiple types of lists used during security assessments
+WWW=		https://github.com/danielmiessler/SecLists
 
 LICENSE=	GPLv2 GPLv2+ MIT
 LICENSE_COMB=	multi

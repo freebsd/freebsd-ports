@@ -1,4 +1,4 @@
---- content/zygote/zygote_linux.cc.orig	2022-05-19 14:06:27 UTC
+--- content/zygote/zygote_linux.cc.orig	2022-08-31 12:19:35 UTC
 +++ content/zygote/zygote_linux.cc
 @@ -1,6 +1,7 @@
  // Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -8,7 +8,7 @@
  
  #include "content/zygote/zygote_linux.h"
  
-@@ -654,3 +655,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
+@@ -653,3 +654,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
  }
  
  }  // namespace content

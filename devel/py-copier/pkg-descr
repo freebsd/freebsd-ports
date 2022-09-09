@@ -4,5 +4,3 @@ Copier is a library and CLI app for rendering project templates.
   any kind of text file.
 - It generates a beautiful output and takes care of not overwrite existing files
   unless instructed to do so.
-
-WWW: https://github.com/copier-org/copier

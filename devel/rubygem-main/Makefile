@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Class Factory and Dsl for Generating Command Line Programs
+WWW=		https://github.com/ahoward/main
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

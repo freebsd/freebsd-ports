@@ -13,5 +13,3 @@ The GLPK package includes the following main components:
 * application program interface (API);
 * GNU MathProg modeling language (a subset of AMPL);
 * GLPSOL, a stand-alone LP/MIP solver.
-
-WWW: http://www.gnu.org/software/glpk/glpk.html

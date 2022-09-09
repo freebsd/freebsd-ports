@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bayesian Optimization package
+WWW=		https://github.com/fmfn/BayesianOptimization
 
 LICENSE=	MIT
 

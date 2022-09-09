@@ -1,11 +1,12 @@
 PORTNAME=	Flask-Compress
-PORTVERSION=	1.10.1
+PORTVERSION=	1.12
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andrej@ebert.su
 COMMENT=	Extension for Flask that compresses responses with gzip
+WWW=		https://pypi.org/project/Flask-Compress/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

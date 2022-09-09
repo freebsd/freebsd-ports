@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.colordiff.org/ LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to colorize diff output
+WWW=		https://www.colordiff.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

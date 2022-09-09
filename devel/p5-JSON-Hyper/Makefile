@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract links from JSON objects
+WWW=		https://metacpan.org/release/JSON-Hyper
 
 LICENSE=	MIT
 

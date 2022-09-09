@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Adaptor to integrate Net::SNMP into AnyEvent
+WWW=		https://metacpan.org/release/AnyEvent-SNMP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Kanban app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/deck
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

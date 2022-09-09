@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to enable CGI.pm applications to adapt PSGI
+WWW=		https://metacpan.org/release/CGI-PSGI
 
 USES=		perl5
 USE_PERL5=	configure

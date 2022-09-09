@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/lofi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic data for the HPIJS printer drivers
+WWW=		https://www.linuxprinting.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

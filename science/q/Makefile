@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular Dynamics (MD) tools
+WWW=		https://github.com/qusers/Q6
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE

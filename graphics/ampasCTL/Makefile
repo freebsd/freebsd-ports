@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color Transformation Language interpreter
+WWW=		https://github.com/ampas/CTL
 
 LICENSE=	AMPAS
 LICENSE_NAME=	AMPAS

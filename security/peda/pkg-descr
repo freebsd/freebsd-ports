@@ -9,5 +9,3 @@ Its key features are:
 - Enhance the display of GDB: colorize and display disassembly codes,
   registers, memory information during debugging.
 - Add commands to support debugging and exploit development.
-
-WWW: http://ropshell.com/peda/

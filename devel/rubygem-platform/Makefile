@@ -6,6 +6,7 @@ DISTNAME=	Platform-${PORTVERSION}
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Hopefully robust platform sensing
+WWW=		https://github.com/berk/platform
 
 NO_ARCH=	yes
 USE_RUBY=	yes

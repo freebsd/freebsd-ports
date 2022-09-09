@@ -10,6 +10,7 @@ DISTNAME=	clocc-${PORTNAME}_2002-10-02-1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
+WWW=		http://clocc.sourceforge.net
 
 WRKSRC=		${WRKDIR}/clocc-${PORTNAME}
 NO_BUILD=	yes

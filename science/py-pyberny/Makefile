@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Optimizer of molecular geometries with respect to the total energy
+WWW=		https://github.com/jhrmnn/pyberny
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

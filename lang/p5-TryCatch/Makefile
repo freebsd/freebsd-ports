@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	First class try catch semantics for Perl, without source filters
+WWW=		https://metacpan.org/release/TryCatch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DISTNAME=	RubyInline-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
+WWW=		https://www.zenspider.com/projects/rubyinline.html
 
 LICENSE=	MIT
 

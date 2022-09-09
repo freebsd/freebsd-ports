@@ -8,6 +8,7 @@ CATEGORIES=	security net-vpn
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Graphical OpenConnect client
+WWW=		https://github.com/openconnect/openconnect-gui
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

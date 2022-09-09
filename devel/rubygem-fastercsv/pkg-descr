@@ -5,5 +5,3 @@ primary goals:
    2. Use a smaller and easier to maintain code base. (We're about even now,
       but not if you compare the features!)
    3. Improve on the CSV interface.
-
-WWW: http://fastercsv.rubyforge.org/

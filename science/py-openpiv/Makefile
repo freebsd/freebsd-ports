@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Python module for Particle Image Velocimetry
+WWW=		http://www.openpiv.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

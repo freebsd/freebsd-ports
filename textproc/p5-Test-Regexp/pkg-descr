@@ -8,5 +8,3 @@ performs the tests again, if necessary.
 Furthermore, given a pattern with capturing parenthesis, it checks whether all
 captures are present, and in the right order. Both named and unnamed captures
 are checked.
-
-WWW: https://metacpan.org/release/Test-Regexp

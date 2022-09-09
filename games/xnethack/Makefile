@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Experimental features and improvements applied to NetHack 3.7-dev
+WWW=		https://nethackwiki.com/wiki/XNetHack
 
 LICENSE=	nethack
 LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE

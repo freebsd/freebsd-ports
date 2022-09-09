@@ -17,5 +17,3 @@ What is Trac?
 At the core of Trac lies an integrated wiki and issue/bug database. Using
 wiki markup, all objects managed by Trac can directly link to other
 issues/bug reports, code changesets, documentation and files.
-
-WWW: https://trac.edgewall.org/

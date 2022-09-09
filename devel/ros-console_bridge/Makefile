@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	ROS-independent logging that pipes into ROS packages
+WWW=		https://github.com/ros/console_bridge
 
 LICENSE=	BSD3CLAUSE
 

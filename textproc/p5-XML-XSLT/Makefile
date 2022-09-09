@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for processing XSLT
+WWW=		https://metacpan.org/release/XML-XSLT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

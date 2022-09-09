@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry data like element and isotope properties, atomic radii, etc
+WWW=		https://sourceforge.net/projects/bodr/
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING

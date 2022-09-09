@@ -7,6 +7,7 @@ MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	RRDtool frontend for Postfix statistics
+WWW=		https://mailgraph.schweikert.ch/
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool	\
 		p5-File-Tail>=0:devel/p5-File-Tail

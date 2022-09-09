@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast sorting of version strings
+WWW=		https://github.com/github/version_sorter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

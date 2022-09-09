@@ -1,9 +1,11 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 window manager
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2
 
@@ -29,11 +31,11 @@ RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 CONFLICTS_INSTALL=	kwinft # bin/kwin_wayland
 
 USES=		cmake compiler:c++11-lib gettext gl gnome kde:5 pkgconfig \
-		python:3.5+,run qt:5 shebangfix tar:xz xorg
-USE_GL=		egl
+		python:3.7+,run qt:5 shebangfix tar:xz xorg
+USE_GL=		egl gbm
 USE_GNOME=	glib20
 USE_KDE=	activities attica auth breeze codecs completion config \
-		configwidgets coreaddons crash decoration globalaccel i18n \
+		configwidgets coreaddons crash dbusaddons decoration globalaccel i18n \
 		iconthemes idletime init jobwidgets kcmutils kdeclarative kio \
 		kscreenlocker kwayland-integration kwayland-server newstuff \
 		notifications package plasma-framework \

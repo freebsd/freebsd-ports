@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Kaminari Action View adapter
+WWW=		https://github.com/kaminari/kaminari/tree/master/kaminari-actionview
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

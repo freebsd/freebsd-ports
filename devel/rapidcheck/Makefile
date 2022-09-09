@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	QuickCheck clone for C++
+WWW=		https://github.com/emil-e/rapidcheck
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

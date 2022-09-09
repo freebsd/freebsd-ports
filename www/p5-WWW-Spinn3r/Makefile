@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the Spinn3r API
+WWW=		https://metacpan.org/release/WWW-Spinn3r
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \

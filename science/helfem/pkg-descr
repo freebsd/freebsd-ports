@@ -3,5 +3,3 @@ diatomic molecules at the Hartree-Fock or density-functional levels of theory.
 Hundreds of functionals at the local spin density approximation (LDA),
 generalized gradient approximation (GGA), and meta-GGA levels of theory are
 supported.
-
-WWW: https://github.com/susilehtola/HelFEM

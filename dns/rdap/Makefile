@@ -1,11 +1,12 @@
 PORTNAME=	rdap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	CLI for the Registration Data Access Protocol, RDAP
+WWW=		https://www.openrdap.org/
 
 LICENSE=	MIT
 

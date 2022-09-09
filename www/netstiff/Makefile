@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful web page update checker
+WWW=		http://pkqs.net/~sbeyer/ #netstiff
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

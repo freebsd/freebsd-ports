@@ -12,6 +12,7 @@ PATCHFILES=	236bacbe13739414e919de868283b0caf2df5d8a.diff:-p1 \
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE office suite
+WWW=		https://calligra.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

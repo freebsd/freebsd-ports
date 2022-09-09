@@ -14,5 +14,3 @@ cached version, we would have to take the original image, reapply the
 transforms, and then compare to the result the first time around.
 
 Further documentation is found within the module.
-
-WWW: https://metacpan.org/release/Digest-TransformPath

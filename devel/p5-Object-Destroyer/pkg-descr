@@ -6,5 +6,3 @@ structure it is attached to be destroyed as well. Object::Destroyer
 can call a specified release method on an object (or method DESTROY by
 default). Alternatively, it can execute an arbitrary user code passed
 to constructor as a code reference.
-
-WWW: https://metacpan.org/release/Object-Destroyer

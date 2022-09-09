@@ -10,6 +10,7 @@ DISTFILES+=	boost_1_59_0${EXTRACT_SUFX}:boost
 
 MAINTAINER=	devel@galeracluster.com
 COMMENT=	MySQL database enhanced with Galera replication (server package)
+WWW=		https://galeracluster.com/
 
 LICENSE=	GPLv2
 

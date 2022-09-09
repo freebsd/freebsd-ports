@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:tl}${PORTVERSION:R}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Scalable Parallel Pseudo Random Number Generators Library
+WWW=		http://www.sprng.org/
 
 LICENSE=	CC-BY-NC-SA-4.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

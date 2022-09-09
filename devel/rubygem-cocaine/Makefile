@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Small library for doing (command) lines
+WWW=		https://github.com/thoughtbot/cocaine
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

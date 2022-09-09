@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides access to the Yahoo! Web Services
+WWW=		https://pear.php.net/package/Services_Yahoo
 
 USES=		pear
 

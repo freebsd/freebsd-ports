@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Define TRUE and FALSE constants
+WWW=		https://metacpan.org/release/constant-boolean
 
 TEST_DEPENDS=	p5-Symol-Util>=0:devel/p5-Symbol-Util
 

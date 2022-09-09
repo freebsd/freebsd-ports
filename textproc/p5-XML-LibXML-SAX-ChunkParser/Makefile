@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse XML chunks via LibXML SAX
+WWW=		https://metacpan.org/release/XML-LibXML-SAX-ChunkParser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PoCo-IRC plugin that keeps track of karma
+WWW=		https://metacpan.org/release/POE-Component-IRC-Plugin-Karma
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

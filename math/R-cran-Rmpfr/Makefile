@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R wrapper for the mpfr multiple precision library
+WWW=		https://cran.r-project.org/web/packages/Rmpfr/
 
 LICENSE=	GPLv2+
 

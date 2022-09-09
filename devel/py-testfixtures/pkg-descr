@@ -7,5 +7,3 @@ people while others will suit other styles. This library contains common test
 fixtures the author found himself repeating from package to package and so
 decided to extract them into their own library and give them some tests of
 their own!
-
-WWW: https://github.com/Simplistix/testfixtures

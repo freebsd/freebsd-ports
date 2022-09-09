@@ -1,10 +1,12 @@
 PORTNAME=	smtprelay
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Simple Go SMTP relay/proxy server
+WWW=		https://github.com/decke/smtprelay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

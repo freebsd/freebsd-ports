@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	CadQuery GUI editor based on PyQT
+WWW=		https://github.com/CadQuery/CQ-editor/
 
 LICENSE=	APACHE20
 

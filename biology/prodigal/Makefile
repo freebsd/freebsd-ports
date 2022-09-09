@@ -6,6 +6,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Protein-coding gene prediction for prokaryotic genomes
+WWW=		https://github.com/hyattpd/Prodigal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

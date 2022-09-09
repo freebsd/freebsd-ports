@@ -4,6 +4,7 @@ CATEGORIES=	audio kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma pulse audio mixer
+WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpulse.so:audio/pulseaudio

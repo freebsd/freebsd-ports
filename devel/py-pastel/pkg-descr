@@ -5,5 +5,3 @@ It comes bundled with predefined styles:
 - comment: yellow
 - question: black on cyan
 - error: white on red
-
-WWW: https://github.com/sdispater/pastel

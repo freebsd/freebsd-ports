@@ -8,6 +8,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against MySQL database via secure cookie
+WWW=		http://home.digithi.de/digithi/dev/mod_auth_cookie_mysql/
 
 USES=		apache:2.2+ mysql
 

@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish hyphenation rules
+WWW=		https://extensions.openoffice.org/en/project/es_ANY-dicts
 
 LICENSE=	GPLv3 LGPL3 MPL11
 LICENSE_COMB=	dual

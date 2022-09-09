@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.monkey.org/~dugsong/${PORTNAME}/beta/ \
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
+WWW=		https://www.monkey.org/~dugsong/dsniff/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VoIP abstraction library
+WWW=		http://opalvoip.org/
 
 LICENSE=	MPL10
 

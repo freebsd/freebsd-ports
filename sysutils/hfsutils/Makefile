@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for accessing Apple's HFS volumes
+WWW=		https://www.mars.org/home/rob/proj/hfs/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

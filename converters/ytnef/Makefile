@@ -6,6 +6,7 @@ CATEGORIES=	converters mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
+WWW=		https://github.com/Yeraze/ytnef
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

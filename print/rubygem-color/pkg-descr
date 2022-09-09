@@ -5,5 +5,3 @@ RGB and HSL colours, this won't matter. However, some colour models (like CIE
 L*a*b*) are not supported because Color does not yet support colour profiles,
 giving no meaningful way to convert colours in absolute colour spaces (like
 L*a*b*, XYZ) to non-absolute colour spaces (like RGB).
-
-WWW: https://github.com/halostatue/color

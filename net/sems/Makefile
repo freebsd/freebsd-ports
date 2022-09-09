@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	nwhitehorn@FreeBSD.org
 COMMENT=	SIP Express Media Server
+WWW=		https://github.com/sems-server
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

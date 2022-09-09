@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rapid fuzzy string matching in Python
+WWW=		https://github.com/maxbachmann/RapidFuzz
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

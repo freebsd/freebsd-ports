@@ -13,5 +13,3 @@ Features include:
 * workload tests are specified in percents against a total request count
 * supported database drivers: tarantool, leveldb (redis, memcached planned).
 * plotter tool (CSV to GNU Plot generation)
-
-WWW: https://github.com/tarantool/nosqlbench

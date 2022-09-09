@@ -17,5 +17,3 @@ variety of factors. Nonetheless, with some restrictive assumptions on the
 interconnection network, the algorithm described here and its attached
 implementation are scalable in the sense that their parallel efficiency is
 maintained constant with respect to the per processor memory usage.
-
-WWW: http://www.netlib.org/benchmark/hpl/

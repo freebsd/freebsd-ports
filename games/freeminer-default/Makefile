@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	freeminer-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The main game for the Freeminer game engine
+WWW=		https://freeminer.org/
 
 LICENSE=	LGPL21
 

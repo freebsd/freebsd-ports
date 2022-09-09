@@ -6,6 +6,7 @@ MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
+WWW=		https://sjeng.org/vorbisgain.html
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

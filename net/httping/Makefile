@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.vanheusden.com/httping/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
+WWW=		https://www.vanheusden.com/httping/
 
 LICENSE=	GPLv2
 

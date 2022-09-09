@@ -4,5 +4,3 @@ with resource control, file security and user management, and offers basic
 functionality in the form of events.  The library is designed to be fully
 configurable, and should not have to be modified for use on any system.  It
 can be used for both persistent and non-persistent systems.
-
-WWW: http://ftp.dworkin.nl/kernellib/

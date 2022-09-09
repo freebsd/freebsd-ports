@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.smoldyn.org/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Biochemical simulator for molecular diffusion, surface interactions
+WWW=		https://www.smoldyn.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/License.txt

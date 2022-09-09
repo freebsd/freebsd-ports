@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript minifier written in Python
+WWW=		https://slimit.readthedocs.org
 
 LICENSE=	MIT
 

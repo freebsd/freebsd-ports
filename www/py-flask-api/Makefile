@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Browsable Web APIs for Flask
+WWW=		https://flask-api.github.io/flask-api/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

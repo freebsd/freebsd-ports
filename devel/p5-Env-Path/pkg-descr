@@ -2,5 +2,3 @@ Env::Path presents an object-oriented interface to path variables,
 defined as that subclass of environment variables which name an
 ordered list of filesystem elements separated by a platform-standard
 separator (typically ':' on UNIX and ';' on Windows).
-
-WWW: https://metacpan.org/release/Env-Path

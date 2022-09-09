@@ -1,5 +1,3 @@
 ezodf is a Python package to create new or open existing OpenDocument (ODF)
 files to extract, add, modify or delete document data. pyexcel-ezodf is a fork
 maintained by pyexcel.
-
-WWW: https://github.com/pyexcel/pyexcel-ezodf

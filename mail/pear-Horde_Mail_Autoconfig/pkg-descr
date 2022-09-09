@@ -1,4 +1,2 @@
 Horde class that attempts to automatically determine configuration options
 for various remote mail services (IMAP/POP3/SMTP).
-
-WWW: http://pear.horde.org

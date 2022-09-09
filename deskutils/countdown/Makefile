@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_06jun2015
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Counts down a specified time interval, beeps, then exits
+WWW=		https://acme.com/software/countdown/
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full featured Redis cache/session backend for Django
+WWW=		https://github.com/jazzband/django-redis
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

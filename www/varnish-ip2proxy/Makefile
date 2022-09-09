@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	varnish-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for ip2proxy
+WWW=		https://github.com/ip2location/IP2Proxy-Varnish
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

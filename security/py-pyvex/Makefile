@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to libVEX and VEX IR
+WWW=		https://github.com/angr/pyvex
 
 LICENSE=	BSD2CLAUSE GPLv2+ GPLv3
 LICENSE_COMB=	multi

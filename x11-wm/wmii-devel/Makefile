@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}+ixp-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Dynamic, minimalist window manager for X11
+WWW=		https://code.google.com/p/wmii/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

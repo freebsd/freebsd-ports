@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Complete yet simple CSS parser for Python
+WWW=		https://pypi.org/project/tinycss/
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

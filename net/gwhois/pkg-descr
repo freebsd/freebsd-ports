@@ -8,5 +8,3 @@ gwhois can also be used as a whois server. You can call it from the
 inetd and make it accessable via a normal standard whois client. This
 allows for example using a Windows client and still make use of the
 enhanced features of gwhois.
-
-WWW: https://julijane.de/gwhois/

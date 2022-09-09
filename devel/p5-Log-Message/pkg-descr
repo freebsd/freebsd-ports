@@ -7,5 +7,3 @@ the message (for example, log it, or die with it)
 
 Log::Message also provides a powerful way of searching through items by
 regexes on messages, tags and level.
-
-WWW: https://metacpan.org/release/Log-Message

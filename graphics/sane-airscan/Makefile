@@ -5,6 +5,7 @@ CATEGORIES=		graphics
 
 MAINTAINER=		henry.hu.sh@gmail.com
 COMMENT=		SANE backend for AirScan (eSCL) and WSD document scanners
+WWW=		https://github.com/alexpevzner/sane-airscan
 
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/LICENSE

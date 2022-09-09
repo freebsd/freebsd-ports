@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to set the password and edit registry on Microsoft NT system
+WWW=		http://pogostick.net/~pnh/ntpasswd/
 
 LICENSE=	GPLv2
 

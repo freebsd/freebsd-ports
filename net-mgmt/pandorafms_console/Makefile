@@ -3,6 +3,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
 COMMENT=	Pandora FMS console
+WWW=		https://pandorafms.com/
 
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}

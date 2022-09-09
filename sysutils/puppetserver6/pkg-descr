@@ -9,5 +9,3 @@ application. It mostly does this by running the existing Puppet
 master code in several JRuby interpreters, but it replaces some
 parts of the classic application with new services written in
 Clojure.
-
-WWW: https://docs.puppetlabs.com/puppetserver/latest/services_master_puppetserver.html

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Easily and reliably transfer ZFS filesystems
+WWW=		https://github.com/allanjude/zxfer
 
 LICENSE=	BSD2CLAUSE
 

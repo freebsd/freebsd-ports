@@ -7,6 +7,7 @@ DISTNAME=	FreeDoko_${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
+WWW=		http://free-doko.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../doc/GPL

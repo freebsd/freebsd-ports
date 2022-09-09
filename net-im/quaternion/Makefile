@@ -1,15 +1,16 @@
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.95-beta3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM client based on Qt technologies
+WWW=		https://github.com/QMatrixClient/Quaternion
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libsecret-1.so:security/libsecret
 BUILD_DEPENDS=	libquotient>=0.6.11:net-im/libquotient
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS

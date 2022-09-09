@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde tagging application
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_PHP=	gettext json

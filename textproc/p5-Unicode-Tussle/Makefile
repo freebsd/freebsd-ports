@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Tom's Unicode Scripts So Life is Easier
+WWW=		https://metacpan.org/release/Unicode-Tussle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to handle HTTP Cookies
+WWW=		https://github.com/sparklemotion/http-cookie
 
 LICENSE=	MIT
 

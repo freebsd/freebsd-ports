@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Data Management Protocol daemon
+WWW=		https://github.com/iXsystems/ndmpd
 
 LICENSE=	BSD3CLAUSE
 

@@ -9,5 +9,3 @@ other POE components. Now they can all inherit from this module instead.
 The component provides an event queue, which can be managed with the methods
 documented below. It handles delivery of events to the object itself, all
 interested plugins, and all interested sessions.
-
-WWW: https://metacpan.org/release/POE-Component-Syndicator

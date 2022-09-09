@@ -6,6 +6,7 @@ MASTER_SITES=	http://libdisorder.freshdefense.net/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple C library for entropy measurement
+WWW=		http://libdisorder.freshdefense.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

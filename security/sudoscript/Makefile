@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%202.1%20release/${PORTNAME}%20${PORTVER
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audited shells in Perl with sudo(8) and script(1)
+WWW=		https://www.egbok.com/sudoscript
 
 USES=		perl5 gmake
 MAKE_ARGS=	PERLPATH=${PERL}

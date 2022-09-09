@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl interface to the Mosso CloudFiles service
+WWW=		https://metacpan.org/release/CKRAS/Net-Mosso-CloudFiles-0.44
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

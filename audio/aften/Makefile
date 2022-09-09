@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	Gabor@Zahemszky.HU
 COMMENT=	ATSC A/52 audio encoder
+WWW=		http://aften.sourceforge.net/
 
 USES=		tar:bzip2 cmake
 

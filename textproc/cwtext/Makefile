@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Morse Code Generator
+WWW=		http://cwtext.sourceforge.net/
 
 LICENSE=	GPLv2
 

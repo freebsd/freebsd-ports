@@ -7,5 +7,3 @@ Script are written on Shell. Uses nbtscan and host utilites to locate Windows
 boxes when generated .nsmbrc file in semi-automated mode with smb2nsmbrc helper
 script. Also uses their own file .mssmbrc to describe any share, mounted with
 mountsmb2.
-
-WWW: http://www.granch.ru/~shelton

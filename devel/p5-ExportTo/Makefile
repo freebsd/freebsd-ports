@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Export any function/method to any namespace
+WWW=		https://github.com/ktat/ExportTo
 
 LICENSE=	ARTPERL10
 

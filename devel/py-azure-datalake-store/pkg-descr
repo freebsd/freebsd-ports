@@ -8,5 +8,3 @@ optimized for analytics workloads. Store data once and access it via existing
 Blob Storage and HDFS-compliant file system interfaces with no programming
 changes or data copying. Data Lake Storage Gen2 is the most comprehensive data
 lake available.
-
-WWW: https://pypi.org/project/azure-datalake-store/

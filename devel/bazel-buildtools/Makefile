@@ -1,10 +1,11 @@
 PORTNAME=	bazel-buildtools
 DISTVERSION=	3.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bazel BUILD file formatter and editor
+WWW=		https://github.com/bazelbuild/buildtools
 
 LICENSE=	APACHE20
 

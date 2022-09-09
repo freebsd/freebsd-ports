@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	CLI tools for Short-Reads FASTA/FASTQ files preprocessing
+WWW=		http://hannonlab.cshl.edu/fastx_toolkit/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

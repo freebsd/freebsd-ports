@@ -1,3 +1,1 @@
 Check for python builtins being used as variables or parameters
-
-WWW: https://pypi.org/project/flake8-builtins/

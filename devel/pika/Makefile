@@ -8,6 +8,7 @@ PATCHFILES=	b3f72acf5d4f90ed3dfb9092efe351a9e76fa6e8.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for concurrency and parallelism
+WWW=		https://github.com/pika-org/pika
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

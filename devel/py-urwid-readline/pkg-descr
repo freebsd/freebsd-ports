@@ -1,4 +1,2 @@
 Text input widget for urwid, a curses-based user interface library,
 that supports readline shortcuts.
-
-WWW: https://github.com/rr-/urwid_readline

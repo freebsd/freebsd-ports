@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK patchbay for PipeWire
+WWW=		https://gitlab.freedesktop.org/ryuukyu/helvum
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

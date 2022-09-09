@@ -3,5 +3,3 @@ larger data sets.
 
 This abstraction should allow access to larger datasets than would fit in
 available memory, such as a database table or procedurally-generated data.
-
-WWW: https://metacpan.org/release/Tickit-Widget-Table

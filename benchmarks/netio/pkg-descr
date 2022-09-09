@@ -6,5 +6,3 @@ packet sizes.
 One instance has to run on one machine as a server process, another
 instance is used on another machine to perform the benchmark. When
 executed without arguments, the program will explain its usage.
-
-WWW: https://web.ars.de/netio/

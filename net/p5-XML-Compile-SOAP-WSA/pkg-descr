@@ -6,5 +6,3 @@ The basic SOAP design uses the URI and the "soapAction" header of HTTP
 However, when the server is hidden behind firewalls and proxies, these
 fields are rewritten or replaced.  This means that the definitions by
 the WSDL for the client can differ from the configuration of the
-
-WWW: https://metacpan.org/release/MARKOV/XML-Compile-SOAP-WSA-0.13

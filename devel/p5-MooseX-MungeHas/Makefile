@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Munge your "has" (works with Moo, Moose and Mouse)
+WWW=		https://metacpan.org/pod/MooseX::MungeHas
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP-based ARP watcher
+WWW=		http://www.raccoon.kiev.ua/projects/remarp/
 
 RUN_DEPENDS=	p5-AppConfig>=0:devel/p5-AppConfig \
 		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP

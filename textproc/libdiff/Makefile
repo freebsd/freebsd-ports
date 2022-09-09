@@ -5,6 +5,7 @@ MASTER_SITES=	http://kristaps.bsd.lv/libdiff/snapshots/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Library to generate arbitrary sequence diffs
+WWW=		https://github.com/kristapsdz/libdiff
 
 LICENSE=	MIT
 

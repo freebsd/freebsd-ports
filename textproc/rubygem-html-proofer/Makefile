@@ -1,10 +1,11 @@
 PORTNAME=	html-proofer
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test your rendered HTML files
+WWW=		https://github.com/gjtorikian/html-proofer
 
 LICENSE=	MIT
 

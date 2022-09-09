@@ -5,6 +5,7 @@ MASTER_SITES=	http://cr.yp.to/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fastforward handles qmail forwarding according to a cdb database
+WWW=		https://cr.yp.to/fastforward.html
 
 USES=		gmake groff
 

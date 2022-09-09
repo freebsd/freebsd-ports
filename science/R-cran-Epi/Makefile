@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Package for statistical analysis in epidemiology
+WWW=		https://cran.r-project.org/web/packages/Epi/
 
 LICENSE=	GPLv2
 

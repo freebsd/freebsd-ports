@@ -2,5 +2,3 @@ Most encoding conversion tools take input in one encoding and produce
 output in another encoding.  This module takes input which may contain
 characters in more than one encoding and makes a best effort to convert
 them all to UTF-8 output.
-
-WWW: https://metacpan.org/release/Encoding-FixLatin

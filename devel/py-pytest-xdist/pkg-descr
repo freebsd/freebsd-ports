@@ -11,5 +11,3 @@ The pytest-xdist plugin extends py.test with some unique test execution modes:
     which again a full run is performed.
   * Multi-Platform coverage: you can specify different Python interpreters
     or different platforms and run tests in parallel on all of them.
-
-WWW: https://github.com/pytest-dev/pytest-xdist

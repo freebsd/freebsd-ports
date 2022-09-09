@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
+WWW=		https://www.tcl.tk/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

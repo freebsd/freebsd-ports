@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lexically disable autovivification
+WWW=		https://metacpan.org/release/autovivification
 
 LICENSE=	MIT
 

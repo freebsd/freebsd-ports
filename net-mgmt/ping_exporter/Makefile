@@ -1,12 +1,13 @@
 PORTNAME=	ping_exporter
 DISTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/czerwonk/ping_exporter/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
 
 MAINTAINER=	jp+ports@supplntr.io
 COMMENT=	Prometheus exporter for ICMP echo requests
+WWW=		https://github.com/czerwonk/ping_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

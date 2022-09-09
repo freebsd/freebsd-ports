@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
+WWW=		https://www.numpy.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

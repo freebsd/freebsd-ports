@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	user@unknown.nu
 COMMENT=	Extremely small web server
+WWW=		https://www.acme.com/software/micro_httpd/
 
 LICENSE=	BSD2CLAUSE
 

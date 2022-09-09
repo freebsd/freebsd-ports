@@ -4,5 +4,3 @@ abbreviations and the values are the full strings.
 
 Thus, given words is "car" and "cone", the keys pointing to "car" would be "ca"
 and "car", while those pointing to "cone" would be "co", "con", and "cone".
-
-WWW: https://github.com/ruby/abbrev

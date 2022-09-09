@@ -8,5 +8,3 @@ With a few lines of code, your application can produce
 
 - a screenshot thumbnail with the requested dimensions regardless of the aspect
   ratio.
-
-WWW: https://github.com/ruby-av/paperclip-av-transcoder/

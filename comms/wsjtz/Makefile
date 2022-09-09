@@ -6,6 +6,7 @@ MASTER_SITES=	SF/wsjt-z/Source
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Clone of WSJT-X software with additional features
+WWW=		https://sourceforge.net/projects/wsjt-z/
 
 CONFLICTS=	wsjtx
 

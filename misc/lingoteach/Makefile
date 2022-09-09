@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz:src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language teaching program with sound
+WWW=		http://www.lingoteach.org
 
 LIB_DEPENDS=	liblingoteach.so:textproc/liblingoteach
 

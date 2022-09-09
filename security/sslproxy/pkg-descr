@@ -11,5 +11,3 @@ in the first packet the address and port it is expecting to receive the packets
 back from the program. Upon receiving the packets back, SSLproxy re-encrypts and
 sends them to their original destination. The return traffic follows the same
 path back to the client in reverse order.
-
-WWW: https://github.com/sonertari/SSLproxy

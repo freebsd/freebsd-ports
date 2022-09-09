@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Force set environment variables for testing
+WWW=		https://metacpan.org/release/Plack-Middleware-ForceEnv
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -16,5 +16,3 @@ These options are very similar to the core message filters plugin. A message
 field (To, From, CC, Subject) can be matched either against a regular
 expression, or simply searched to see if the given string is within the field.
 If a match is found then unsafe images are always shown for this source.
-
-WWW: http://www.squirrelmail.org/plugin_view.php?id=98

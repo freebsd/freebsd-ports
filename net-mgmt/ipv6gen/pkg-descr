@@ -3,6 +3,3 @@ IPv6 prefix generator
 ipv6gen features:
     - generates prefix list of certain length from given prefix
       via one of the 3 methods described in RFC 3531
-
-
-WWW: https://github.com/vladak/ipv6gen/wiki/IPv6-prefix-generator

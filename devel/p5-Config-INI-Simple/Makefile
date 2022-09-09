@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple reading and writing from an INI file
+WWW=		https://metacpan.org/release/TORG/Config-INI-Simple-1.00
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

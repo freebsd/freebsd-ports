@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moo types for numbers
+WWW=		https://metacpan.org/release/MooX-Types-MooseLike-Numeric
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

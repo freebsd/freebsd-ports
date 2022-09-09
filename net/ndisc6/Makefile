@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.remlab.net/files/ndisc6/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv6 network diagnostic tools
+WWW=		https://www.remlab.net/ndisc6/
 
 LICENSE=	GPLv2
 

@@ -1,5 +1,3 @@
 XML::Filter::GenericChunk is a base class for SAX filters that are able to
 parse wellballanced chunks from SAX events and transforms this chunk
 into a sequence of SAX events.
-
-WWW: https://metacpan.org/release/XML-Filter-GenericChunk

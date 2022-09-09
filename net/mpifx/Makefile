@@ -4,6 +4,7 @@ CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern Fortran wrappers around MPI routines
+WWW=		https://github.com/dftbplus/mpifx
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

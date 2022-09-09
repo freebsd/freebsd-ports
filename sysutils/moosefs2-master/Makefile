@@ -7,6 +7,7 @@ DISTNAME=		moosefs-${PORTVERSION}-1
 
 MAINTAINER=		freebsd@moosefs.com
 COMMENT?=		Fault-tolerant distributed filesystem
+WWW=		https://moosefs.com/
 
 LICENSE=		GPLv2
 

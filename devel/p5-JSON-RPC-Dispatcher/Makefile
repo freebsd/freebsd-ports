@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JSON-RPC 2.0 server
+WWW=		https://metacpan.org/release/JSON-RPC-Dispatcher
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

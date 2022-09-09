@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Like parent, but with version checks
+WWW=		https://metacpan.org/release/superclass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

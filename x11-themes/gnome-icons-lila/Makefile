@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-gnome_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lila Icons for Gnome
+WWW=		https://lila-center.info/
 
 # Converted from RESTRICTED
 LICENSE=	GPLv2+ icons

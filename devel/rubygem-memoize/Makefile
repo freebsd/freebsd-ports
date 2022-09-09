@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Speeds up methods at the cost of memory (or disk space)
+WWW=		https://github.com/djberg96/memoize
 
 LICENSE=	ART20
 

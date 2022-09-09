@@ -5,5 +5,3 @@ any way you want to.
 
 This module is built on top of Net::Jifty. Consult that module's
 documentation for the lower-level interface.
-
-WWW: https://metacpan.org/release/Net-Hiveminder

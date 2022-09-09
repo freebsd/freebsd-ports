@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interface to CLP, CBC, and CGL to solve LPs and MIPs
+WWW=		https://github.com/coin-or/CyLP
 
 LICENSE=	CPL10
 LICENSE_NAME=	Common Public License Version 1.0

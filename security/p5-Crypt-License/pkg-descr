@@ -9,5 +9,3 @@ License file is successfully opened, and the contents validated then the
 attached encrypted module is loaded and the seconds remaining until License
 expiration are returned or now() in the case of no expiration. Undef is
 returned for an expired license (module fails to load).
-
-WWW: https://metacpan.org/release/Crypt-License

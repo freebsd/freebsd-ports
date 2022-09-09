@@ -4,6 +4,7 @@ CATEGORIES=	security pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libssh2 library
+WWW=		https://pecl.php.net/package/ssh2
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

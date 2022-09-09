@@ -1,9 +1,10 @@
 PORTNAME=	njs
-DISTVERSION=	0.7.6
+DISTVERSION=	0.7.7
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	NGINX JavaScript command line utility
+WWW=		https://nginx.org/en/docs/njs/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

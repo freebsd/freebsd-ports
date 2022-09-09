@@ -12,6 +12,3 @@ Its main advantages are:
     Modular C++ API from the ground up.
     Separate parser and execution engine.
     C++ 11 support through clang.
-
-
-WWW: https://root.cern.ch/cling

@@ -7,6 +7,7 @@ DISTNAME=	pyobd_${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBD-II compliant car diagnostic tool
+WWW=		http://www.obdtester.com/pyobd
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,11 +1,12 @@
 PORTNAME=	reproxy
 PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple edge HTTP(S) server and reverse proxy
+WWW=		https://reproxy.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

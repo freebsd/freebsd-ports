@@ -1,6 +1,6 @@
---- main/term.c.orig	2022-04-14 21:53:34 UTC
+--- main/term.c.orig	2022-06-23 15:26:13 UTC
 +++ main/term.c
-@@ -46,6 +46,7 @@ static const char * const termpath[] = {
+@@ -46,6 +46,7 @@ static char enddata[80] = "";
  static char quitdata[80] = "";
  
  static const char * const termpath[] = {

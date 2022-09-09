@@ -4,6 +4,7 @@ CATEGORIES=	games graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Generate an overview image of a minetest map
+WWW=		https://github.com/minetest/minetestmapper
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

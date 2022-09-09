@@ -2,5 +2,3 @@ It monitors files in a given directory (or set of directories), such as
 Apache log files in /var/log/httpd, and as the log files are written to,
 takes the changes and sends them to a running instance of the Scribe
 logging system.
-
-WWW: https://metacpan.org/release/File-Tail-Scribe

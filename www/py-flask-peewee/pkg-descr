@@ -3,5 +3,3 @@ and the peewee orm. Batteries included:
  - admin interface
  - authentication
  - rest api
-
-WWW: https://github.com/coleifer/flask-peewee/

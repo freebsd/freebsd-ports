@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the type of a mail folder
+WWW=		https://metacpan.org/release/Email-FolderType
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

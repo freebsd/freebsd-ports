@@ -1,4 +1,2 @@
 IPC::Cache implements an object store where data is persisted across
 processes.
-
-WWW: https://metacpan.org/release/IPC-Cache

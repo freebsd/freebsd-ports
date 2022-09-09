@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI and Python module for accessing the CKAN Action API
+WWW=		https://github.com/ckan/ckanapi
 
 LICENSE=	MIT
 

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Worms-like turn based strategy game
+WWW=		https://www.hedgewars.org
 
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
@@ -57,6 +58,10 @@ VIDEOREC_CMAKE_OFF=	-DNOVIDEOREC=1
 .if ${ARCH} == i386
 BUILD_DEPENDS+=	ghc:lang/ghc
 .endif
+
+post-extract:
+	# Remove included CMakeFile, which is incompatible with >= cmake-3.24
+	${RM} ${WRKSRC}/cmake_modules/CMakeSystemSpecificInformation.cmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake

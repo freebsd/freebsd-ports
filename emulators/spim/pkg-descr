@@ -11,5 +11,3 @@ an instruction and data cache.
 This simulator is useful in CS and EE classes, including providing a
 target machine for compilers courses, lower division assembly language
 programming, microprocessor design courses, etc...
-
-WWW: http://pages.cs.wisc.edu/~larus/spim.html

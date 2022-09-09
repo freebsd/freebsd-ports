@@ -15,5 +15,3 @@ the specified relative error for q that is not too small (or large). Concretely,
 the q-quantile will be accurate up to the specified relative error as long as it
 belongs to one of the m bins kept by the sketch. If the data is time in seconds,
 the default of m = 2048 covers 80 microseconds to 1 year.
-
-WWW: https://github.com/DataDog/sketches-py

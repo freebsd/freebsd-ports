@@ -14,5 +14,3 @@ features:
   style tags. See the Library Reference for details.
 - Command Line Interface: In addition to being a Python Library, a command line
   script is available for your convenience.
-
-WWW: https://github.com/Python-Markdown/markdown

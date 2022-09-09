@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sinatra plugin to provide async responses
+WWW=		https://github.com/raggi/async_sinatra
 
 LICENSE=	MIT
 

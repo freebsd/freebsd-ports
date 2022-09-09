@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Daemon that converts a raw MIDI device into a JACK MIDI device
+WWW=		https://github.com/hselasky/jack_umidi
 
 LICENSE=	BSD2CLAUSE
 

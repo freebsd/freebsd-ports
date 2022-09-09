@@ -13,5 +13,3 @@ Some reasons you might want to use REST framework:
   don't need the more powerful features.
 
 * Extensive documentation, and great community support.
-
-WWW: https://www.django-rest-framework.org/

@@ -7,6 +7,7 @@ DISTNAME=	vanessa_logger-${PORTVERSION}
 
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides a generic logging layer
+WWW=		https://horms.net/projects/vanessa/
 
 USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes

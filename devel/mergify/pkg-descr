@@ -3,5 +3,3 @@ This is most useful when merging changes to a highly diverged fork
 of a project.
 
 It only supports Git.
-
-WWW: https://github.com/brooksdavis/mergify

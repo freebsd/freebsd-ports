@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Addons for the Ruby implementation of the Haml template language
+WWW=		https://github.com/haml/haml-contrib
 
 LICENSE=	MIT
 

@@ -8,6 +8,7 @@ DISTNAME=	KoboDeluxe-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL port of the scrolling game XKobo
+WWW=		http://www.olofson.net/kobodl/
 
 USES=		sdl tar:bzip2
 USE_SDL=	image sdl

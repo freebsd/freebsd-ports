@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml bindings to sqlite3 library
+WWW=		https://mmottl.github.io/sqlite3-ocaml/
 
 LICENSE=	OCSQLT3
 LICENSE_NAME=	OCaml-SQLite3 unique permissive license

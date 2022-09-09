@@ -7,5 +7,3 @@ start logging events to the console without writing anything to disk.
 All discovered ethernet/ip address pairings will be printed to stdout.
 All debug, warning, and err messages will be sent to syslog and printed
 to stderr.
-
-WWW: https://github.com/fln/addrwatch

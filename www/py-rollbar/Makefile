@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Easy and powerful exception tracking with Rollbar
+WWW=		https://github.com/rollbar/pyrollbar
 
 LICENSE=	MIT
 

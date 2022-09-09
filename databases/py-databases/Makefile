@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Async database support for Python
+WWW=		https://github.com/encode/databases
 
 LICENSE=	BSD3CLAUSE
 

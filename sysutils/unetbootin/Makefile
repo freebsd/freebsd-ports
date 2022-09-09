@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Bootable Live USB creator for various Linux distributions
+WWW=		https://unetbootin.github.io/
 
 LICENSE=	GPLv2+
 

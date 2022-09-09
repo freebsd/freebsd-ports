@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	FTP client/server for asyncio
+WWW=		https://aioftp.readthedocs.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/license.txt

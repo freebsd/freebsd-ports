@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fatter Attr for Ruby
+WWW=		https://github.com/ahoward/fattr
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

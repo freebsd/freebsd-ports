@@ -7,6 +7,7 @@ DISTNAME=	Pint-Pandas-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Physical quantities module
+WWW=		https://github.com/hgrecco/pint-pandas
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

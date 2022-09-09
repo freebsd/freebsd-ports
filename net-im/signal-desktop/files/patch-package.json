@@ -1,14 +1,14 @@
 --- package.json.orig	2022-08-05 12:53:58 UTC
 +++ package.json
-@@ -190,7 +190,6 @@
+@@ -191,7 +191,6 @@
      "@babel/preset-typescript": "7.17.12",
      "@electron/fuses": "1.5.0",
      "@mixer/parallel-prettier": "2.0.1",
--    "@signalapp/mock-server": "2.4.1",
+-    "@signalapp/mock-server": "2.8.0",
      "@storybook/addon-a11y": "6.5.6",
      "@storybook/addon-actions": "6.5.6",
      "@storybook/addon-controls": "6.5.6",
-@@ -318,7 +317,7 @@
+@@ -319,7 +318,7 @@
      "sharp/color/color-string": "1.9.0"
    },
    "engines": {

@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/fjoe \
 
 MAINTAINER=	bonkor@gmail.com
 COMMENT=	Oracle 8 client
+WWW=		http://www.grosbein.net/freebsd/oracle/
 
 USES=		tar:bzip2
 ONLY_FOR_ARCHS=	i386

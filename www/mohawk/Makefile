@@ -5,6 +5,7 @@ MASTER_SITES=	https://fossil.bsdsx.fr/mohawk/tarball/?r=${DISTVERSION}&name=/
 
 MAINTAINER=	dsx+mohawk@bsdsx.fr
 COMMENT=	Simple and lightweight HTTP daemon
+WWW=		http://fossil.etoilebsd.net/mohawk
 
 LICENSE=	BSD2CLAUSE
 

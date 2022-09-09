@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.freedesktop.org/sbose/adcli//uploads/30880d967e79ce
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tool for performing actions on an Active Directory domain
+WWW=		https://www.freedesktop.org/software/realmd/adcli/adcli.html
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_2_1/movingmotiv-2.3.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display scientific data as dynamic plot
+WWW=		https://sourceforge.net/projects/movingmotif/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

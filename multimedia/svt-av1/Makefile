@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable AV1 encoder
+WWW=		https://01.org/svt
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi

@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Gordon's text utilities
+WWW=		https://github.com/agordon/libgtextutils
 
 LICENSE=	AGPLv3
 

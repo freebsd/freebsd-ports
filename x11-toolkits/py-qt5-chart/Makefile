@@ -10,6 +10,7 @@ PYQT_DIST=	yes
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtChart module
+WWW=		https://riverbankcomputing.com/software/pyqtchart
 
 LICENSE=	${PYQT5_LICENSE}
 

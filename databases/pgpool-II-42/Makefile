@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	42
 
 MAINTAINER=	mike.jakubik@swiftsmsgateway.com
 COMMENT=	Connection pool server for PostgreSQL
+WWW=		https://pgpool.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

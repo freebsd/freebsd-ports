@@ -5,6 +5,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	ssb22@cam.ac.uk
 COMMENT=	Optimise DNA sequencing primer-set combinations
+WWW=		https://ssb22.user.srcf.net/pooler/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/LICENSE

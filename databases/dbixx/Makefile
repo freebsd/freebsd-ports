@@ -6,6 +6,7 @@ MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	info@babaei.net
 COMMENT=	Tiny C++ wrapper around libdbi for database and SQL connectivity
+WWW=		http://cppcms.com/wikipp/en/page/ref_dbixx
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

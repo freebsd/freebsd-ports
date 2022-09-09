@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GObject wrapper for the Skydrive and Hotmail API
+WWW=		https://github.com/GNOME/libzapojit
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \

@@ -15,5 +15,3 @@ appdirs will help the application to choose an appropriate:
 - site data dir (site_data_dir)
 - site config dir (site_config_dir)
 - user log dir (user_log_dir)
-
-WWW: https://github.com/ActiveState/appdirs

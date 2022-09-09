@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mysqlreport makes a friendly report of important MySQL status values
+WWW=		https://hackmysql.com/mysqlreport
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

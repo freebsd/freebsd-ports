@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Term::Screen based screen positioning and coloring module
+WWW=		https://metacpan.org/release/Term-ScreenColor
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

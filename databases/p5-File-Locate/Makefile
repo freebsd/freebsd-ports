@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Search the locate(1)-database from Perl
+WWW=		https://metacpan.org/release/File-Locate
 
 LICENSE=	GPLv2+
 

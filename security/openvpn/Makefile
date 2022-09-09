@@ -8,6 +8,7 @@ MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon
+WWW=		https://openvpn.net/community/
 
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL

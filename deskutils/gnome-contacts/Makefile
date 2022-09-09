@@ -6,11 +6,11 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Contacts manager for gnome
+WWW=		https://wiki.gnome.org/Apps/Contacts
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala>=0.14.0:lang/vala
 LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libclutter-1.0.so:graphics/clutter \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
@@ -37,7 +37,7 @@ USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk30 \
 		intlhack introspection:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USES=		compiler:c11 gettext gl gnome localbase meson perl5 pkgconfig \
-		python:3.4+,build sqlite tar:xz xorg
+		python:3.4+,build sqlite tar:xz vala:build xorg
 
 GLIB_SCHEMAS=	org.gnome.Contacts.gschema.xml
 

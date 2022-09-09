@@ -1,12 +1,13 @@
 PORTNAME=	goprotobuf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Go support for Google's protocol buffers
+WWW=		https://github.com/golang/protobuf/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,5 +7,3 @@ various things with jails.
   - jkill: shutdown or restart a jail
   - jps: lists processes running in a jail
   - jstart: secure replacement for the jail command
-
-WWW: http://thewalter.net/stef/freebsd/jails/jailutils/

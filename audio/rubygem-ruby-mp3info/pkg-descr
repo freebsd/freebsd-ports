@@ -1,5 +1,3 @@
 This library gives you access to low level informations on mp3 files
 (bitrate, length, samplerate, etc...).  It can read, write, remove
 id3v1 tag and read id3v2.  It is written in pure ruby.
-
-WWW: https://github.com/moumar/ruby-mp3info

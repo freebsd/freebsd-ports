@@ -12,5 +12,3 @@ do not have to reverse-engineer each other.
 
 This module has encoding labels and BOM detection, but the actual
 implementation for encoders and decoders is Python's.
-
-WWW: https://github.com/SimonSapin/python-webencodings

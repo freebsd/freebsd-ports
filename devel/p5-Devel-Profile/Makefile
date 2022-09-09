@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tell me why my perl program runs so slowly
+WWW=		https://metacpan.org/release/Devel-Profile
 
 USES=		perl5
 USE_PERL5=	configure

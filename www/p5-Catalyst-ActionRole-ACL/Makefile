@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	User role-based authorization action class
+WWW=		https://metacpan.org/release/Catalyst-ActionRole-ACL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

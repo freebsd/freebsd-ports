@@ -1,11 +1,12 @@
 PORTNAME=	findpython
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility to find python versions on your system
+WWW=		https://github.com/frostming/findpython
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

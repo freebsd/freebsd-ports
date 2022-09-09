@@ -5,6 +5,7 @@ CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Component-based data mining software
+WWW=		https://orange.biolab.si/
 
 LICENSE=	GPLv3
 

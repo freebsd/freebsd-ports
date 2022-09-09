@@ -7,5 +7,3 @@ The Config package provides methods for configuration manipulation.
 * Allows manipulation of sections, comments, directives...
 * Parses configurations into a tree structure
 * Provides XPath like access to directives
-
-WWW: https://pear.php.net/package/Config

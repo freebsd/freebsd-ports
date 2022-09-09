@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL pl/pgsql Debugger API
+WWW=		https://github.com/EnterpriseDB/pldebugger
 
 LICENSE=	ART20
 

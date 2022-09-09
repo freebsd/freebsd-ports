@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for serializing C data
+WWW=		https://troydhanson.github.io/tpl/
 
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi

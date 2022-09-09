@@ -4,5 +4,3 @@ Firmware Loader for Qualcomm Gobi USB Chipsets.
 - fix CDMA firmware download failed issue
 - add openwrt big-endian platform support
 - trimming and initial FreeBSD port support
-
-WWW: https://github.com/kicer/gobi_loader

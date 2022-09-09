@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension to encrypt and decrypt Imail passwords
+WWW=		https://metacpan.org/release/Crypt-Imail
 
 USES=		perl5
 USE_PERL5=	configure

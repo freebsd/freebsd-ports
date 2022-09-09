@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Functions for manipulating mainframe data
+WWW=		https://metacpan.org/release/Convert-IBM390
 
 USES=		perl5
 USE_PERL5=	configure

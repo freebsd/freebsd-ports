@@ -7,6 +7,7 @@ DISTNAME=	wxHexEditor-v${PORTVERSION}-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical hex editor for big files with x86 disassembly support
+WWW=		https://www.wxhexeditor.org/
 
 LICENSE=	GPLv2
 

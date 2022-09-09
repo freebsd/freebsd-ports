@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	JavaBeans utility library
+WWW=		https://commons.apache.org/proper/commons-beanutils/
 
 LICENSE=	APACHE20
 

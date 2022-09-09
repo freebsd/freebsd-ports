@@ -1,4 +1,2 @@
 Test::EOL lets you check the presence of Windows line endings in your
 perl code. It report its results in standard Test::Simple fashion.
-
-WWW: https://metacpan.org/release/Test-EOL

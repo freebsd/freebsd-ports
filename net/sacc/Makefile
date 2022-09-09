@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://bitreich.org/releases/sacc/
 
 MAINTAINER=	sh@codevoid.de
 COMMENT=	Simple console Gopher client
+WWW=		https://git.fifth.space/sacc/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

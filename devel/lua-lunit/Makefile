@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Unit Testing Framework for Lua
+WWW=		https://www.mroth.net/lunit/
 
 LICENSE=	MIT
 

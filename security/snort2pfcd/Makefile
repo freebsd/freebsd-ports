@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.tworoutes.com/oss/
 
 MAINTAINER=	onestsam@gmail.com
 COMMENT=	Snort alert to pf blocker
+WWW=		https://github.com/onestsam/snort2pfcd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

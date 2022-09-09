@@ -9,6 +9,7 @@ PATCHFILES+=	b60dad3c2536.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-scree
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME utility for making pictures of your screen
+WWW=		https://gitlab.gnome.org/GNOME/gnome-screenshot
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

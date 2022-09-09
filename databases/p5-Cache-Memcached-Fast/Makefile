@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast Perl client for memcached, a distributed memory cache daemon
+WWW=		https://metacpan.org/release/Cache-Memcached-Fast
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

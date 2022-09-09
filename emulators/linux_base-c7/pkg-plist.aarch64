@@ -496,7 +496,7 @@ usr/lib64/gconv/IBM852.so
 usr/lib64/gconv/IBM855.so
 usr/lib64/gconv/IBM856.so
 usr/lib64/gconv/IBM857.so
-%%NEWGLIBC%%usr/lib64/gconv/IBM858.so
+usr/lib64/gconv/IBM858.so
 usr/lib64/gconv/IBM860.so
 usr/lib64/gconv/IBM861.so
 usr/lib64/gconv/IBM862.so
@@ -1316,7 +1316,7 @@ usr/share/i18n/charmaps/IBM852.gz
 usr/share/i18n/charmaps/IBM855.gz
 usr/share/i18n/charmaps/IBM856.gz
 usr/share/i18n/charmaps/IBM857.gz
-%%NEWGLIBC%%usr/share/i18n/charmaps/IBM858.gz
+usr/share/i18n/charmaps/IBM858.gz
 usr/share/i18n/charmaps/IBM860.gz
 usr/share/i18n/charmaps/IBM861.gz
 usr/share/i18n/charmaps/IBM862.gz

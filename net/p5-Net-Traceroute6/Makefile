@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module to parse traceroute6(8) output
+WWW=		https://metacpan.org/release/Net-Traceroute6
 
 LICENSE=	MIT
 

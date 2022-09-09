@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl-style XML objects
+WWW=		https://metacpan.org/release/XML-Grove
 
 LICENSE=	ART10
 

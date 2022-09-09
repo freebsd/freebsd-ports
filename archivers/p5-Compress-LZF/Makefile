@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extremely lightweight Lempel-Ziv-Free compression
+WWW=		https://metacpan.org/release/Compress-LZF
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for faster implementation of HTTP::Headers
+WWW=		https://metacpan.org/release/HTTP-Headers-Fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

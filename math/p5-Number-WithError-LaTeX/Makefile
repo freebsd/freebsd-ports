@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	LaTeX output for Number::WithError
+WWW=		https://metacpan.org/release/Number-WithError-LaTeX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

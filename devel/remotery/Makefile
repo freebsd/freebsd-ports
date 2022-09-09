@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Single file, realtime CPU/GPU profiler library with remote web viewer
+WWW=		https://github.com/Celtoys/Remotery
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

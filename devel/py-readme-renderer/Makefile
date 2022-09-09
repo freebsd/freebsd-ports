@@ -1,5 +1,5 @@
 PORTNAME=	readme-renderer
-PORTVERSION=	35.0
+PORTVERSION=	37.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	readme_renderer-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for rendering "readme" descriptions
+WWW=		https://github.com/pypa/readme_renderer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

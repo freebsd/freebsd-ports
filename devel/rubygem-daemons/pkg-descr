@@ -9,5 +9,3 @@ Besides this basic functionality, daemons offers many advanced features
 like exception backtracing and logging (in case your ruby script
 crashes) and monitoring and automatic restarting of your processes if
 they crash.
-
-WWW: https://github.com/thuehlinger/daemons

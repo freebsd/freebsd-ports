@@ -5,5 +5,3 @@ provides the methods for making linkages that can be used to build up
 a tree, while preventing you from ever making any kinds of linkages
 which are not allowed in a tree (such as having a node be its own
 mother or ancestor, or having a node have two mothers).
-
-WWW: https://metacpan.org/release/Tree-DAG_Node

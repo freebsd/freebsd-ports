@@ -1,4 +1,2 @@
 Template::Plugin::Markdown acts as a filter passing all content to
 Text::Markdown for conversion of plain text to HTML.
-
-WWW: https://metacpan.org/release/Template-Plugin-Markdown

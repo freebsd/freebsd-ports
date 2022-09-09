@@ -20,5 +20,3 @@ So If you want to write a cross-version assembler, or an bytecode-level
 optimizer this package may also be useful. In addition to the kinds of
 instruction categorization that dis offers, we have additional categories for
 things that would be useful in such a bytecode optimizer.
-
-WWW: https://github.com/rocky/python-xdis

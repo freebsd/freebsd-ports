@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	FLAME dense linear algebra library
+WWW=		https://github.com/flame/libflame
 
 LICENSE=	BSD3CLAUSE
 

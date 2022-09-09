@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Decode and diagnose sniffed DHCP packets
+WWW=		https://www.mavetju.org/unix/general.php
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

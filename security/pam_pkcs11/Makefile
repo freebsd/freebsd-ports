@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	PAM module using crypto tokens for auth
+WWW=		https://github.com/OpenSC/pam_pkcs11
 
 LICENSE=	LGPL21
 

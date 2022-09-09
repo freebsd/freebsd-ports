@@ -4,6 +4,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	BladeRF USB 3.0 Superspeed software defined radio
+WWW=		https://www.nuand.com/
 
 LICENSE=	MIT LGPL20 GPLv2
 LICENSE_COMB=	multi

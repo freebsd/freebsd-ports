@@ -6,6 +6,7 @@ MASTER_SITES=	https://fs-uae.net/stable/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI launcher for the FS-UAE Amiga emulator
+WWW=		http://fs-uae.net/launcher
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

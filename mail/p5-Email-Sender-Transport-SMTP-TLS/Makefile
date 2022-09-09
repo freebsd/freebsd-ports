@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ale@biancalanas.net
 COMMENT=	Email::Sender with Net::SMTP::TLS (Eg. Gmail)
+WWW=		https://metacpan.org/release/Email-Sender-Transport-SMTP-TLS
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE

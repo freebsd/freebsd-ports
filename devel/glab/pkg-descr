@@ -12,5 +12,3 @@ self-hosted GitLab Instances. glab supports multiple
 authenticated GitLab instances and automatically detects the
 authenticated hostname from the remotes available in
 the working git directory.
-
-WWW: https://glab.readthedocs.io/

@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	Dotz0cat@gmail.com
 COMMENT=	Wallpaper daemon
+WWW=		https://github.com/Dotz0cat/walld
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -3,5 +3,3 @@ falling letters into words to score points. It has support for
 multiple languages and dictionaries. The package contains English
 and French dictionaries, but needs a French gettext translation
 for the in game text.
-
-WWW: http://www.kyne.com.au/~mark/software/lexter.php

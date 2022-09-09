@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate random genomic data in FASTA/FASTQ, SAM, or VCF format
+WWW=		https://github.com/auerlab/generand
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

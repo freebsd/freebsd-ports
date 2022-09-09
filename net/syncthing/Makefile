@@ -1,6 +1,6 @@
 PORTNAME=	syncthing
 PORTVERSION=	1.20.1
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/
@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Encrypted file sync tool
+WWW=		https://syncthing.net/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE

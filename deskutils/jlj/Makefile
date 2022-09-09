@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jerry's command-line LiveJournal.com entry system
+WWW=		http://umlautllama.com/projects/perl/ #jlj
 
 USES=		shebangfix perl5
 USE_PERL5=	run

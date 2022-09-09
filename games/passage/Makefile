@@ -7,6 +7,7 @@ DISTNAME=	Passage_v${PORTVERSION}_UnixSource
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Experimental video game by Jason Rohrer
+WWW=		http://hcsoftware.sourceforge.net/passage/
 
 USES=		sdl
 USE_SDL=	sdl

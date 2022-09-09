@@ -7,5 +7,3 @@ paho-mqtt3as - asynchronous with SSL (MQTTAsync)
 paho-mqtt3c - "classic" / synchronous (MQTTClient)
 paho-mqtt3cs - "classic" / synchronous with SSL (MQTTClient)
 Which Paho C API to use, with some history, for context
-
-WWW: https://github.com/eclipse/paho.mqtt.c

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Swiss-army knife for D source code
+WWW=		https://github.com/dlang-community/D-Scanner
 
 LICENSE=	BSL
 

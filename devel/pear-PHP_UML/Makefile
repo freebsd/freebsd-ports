@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Class to Create UML Representation of PHP Code
+WWW=		https://pear.php.net/package/PHP_UML
 
 LICENSE=	LGPL3
 

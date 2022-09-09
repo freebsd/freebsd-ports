@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.padl.com/download/ \
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	PAM module for authenticating with LDAP
+WWW=		https://www.padl.com/OSS/pam_ldap.html
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

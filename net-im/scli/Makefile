@@ -5,6 +5,7 @@ CATEGORIES=	net-im python
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple terminal user interface for the Signal messenger (using signal-cli)
+WWW=		https://github.com/isamert/scli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

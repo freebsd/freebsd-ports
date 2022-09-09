@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Patches to make Jekyll less insane and easier
+WWW=		https://github.com/envygeeks/jekyll-sanity
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast asyncio MySQL driver
+WWW=		https://github.com/long2ice/asyncmy
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

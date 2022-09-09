@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	"Array/Hash/Struct#dig backfill for ruby"
+WWW=		https://github.com/jrochkind/dig_rb
 
 LICENSE=	MIT
 

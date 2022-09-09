@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of Path::Tiny types and coercions for Moose
+WWW=		https://metacpan.org/release/MooseX-Types-Path-Tiny
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENCE

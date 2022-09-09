@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight rapid development library for managing OpenGL display
+WWW=		https://github.com/stevenlovegrove/Pangolin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

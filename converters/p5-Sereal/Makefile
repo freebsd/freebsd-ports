@@ -1,5 +1,5 @@
 PORTNAME=	Sereal
-PORTVERSION=	4.025
+PORTVERSION=	5.001
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:YVES
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fast, compact, powerful binary (de-)serialization
+WWW=		https://metacpan.org/pod/Sereal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
@@ -24,5 +25,7 @@ USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Simple Git Client for R
+WWW=		https://docs.ropensci.org/gert/
 
 LICENSE=	MIT
 

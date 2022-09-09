@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Terminal-based Tetris clone in vein of Nintendo Tetris
+WWW=		http://victornils.net/tetris/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/licence.txt

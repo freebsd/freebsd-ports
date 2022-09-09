@@ -10,6 +10,7 @@ MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Sound server for UNIX
+WWW=		https://pulseaudio.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL

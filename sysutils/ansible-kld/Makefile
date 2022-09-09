@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-${_LIBRARY}
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT?=	Ansible module to load kernel modules or update /boot/loader.conf
+WWW=		https://github.com/dlundgren/ansible-freebsd-modules/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

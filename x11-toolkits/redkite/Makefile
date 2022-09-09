@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI toolkit
+WWW=		https://github.com/iurie-sw/redkite
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Probabilistic data structure
+WWW=		https://github.com/joseph-fox/python-bloomfilter
 
 LICENSE=	MIT
 

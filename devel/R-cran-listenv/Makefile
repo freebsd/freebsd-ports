@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Environments Behaving (Almost) as Lists
+WWW=		https://cran.r-project.org/web/packages/listenv/
 
 LICENSE=	LGPL21+
 

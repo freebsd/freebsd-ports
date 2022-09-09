@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only library for parallel tasks in modern C++
+WWW=		https://github.com/taskflow/taskflow
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

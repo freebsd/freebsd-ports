@@ -6,5 +6,3 @@ Features:
 * Uses XML configuration file to select road types and classes to import.
 * Creates types and classes tables, which can help to create sophisticated
   cost functions.
-
-WWW: http://pgrouting.org/docs/tools/osm2pgrouting.html

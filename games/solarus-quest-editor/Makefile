@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	GUI to create and modify quests for the Solarus engine
+WWW=		http://www.solarus-games.org/engine/solarus-quest-editor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license_gpl.txt

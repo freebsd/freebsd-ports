@@ -5,5 +5,3 @@ It provides an optionally persistent data store to keep track of
 what happened before and offers a simple yes/no interface to an application,
 which can then focus on performing the actual task (like sending email)
 or suppressing/postponing it.
-
-WWW: https://metacpan.org/release/Data-Throttler

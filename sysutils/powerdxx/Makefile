@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	CPU clock speed/frequency daemon
+WWW=		https://github.com/lonkamikaze/powerdxx
 
 LICENSE=	ISCL
 

@@ -16,5 +16,3 @@ news.individual.net, but it can be a bit slow at times, and using external
 servers uses more bandwidth. Therefore I wanted a program which could fetch
 whatever articles my ISP has available, but use the foreign server to avoid
 missing posts or getting them very late, and to do it as fast as possible.
-
-WWW: http://newsstar.sourceforge.net/

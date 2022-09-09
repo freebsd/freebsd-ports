@@ -1,4 +1,2 @@
 This plugin writes a msg header summary to a log file (Default: ~/Mail/NewLog)
 on arrival of new mail *after* sorting.
-
-WWW: https://www.claws-mail.org/plugins.php

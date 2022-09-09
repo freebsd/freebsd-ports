@@ -1,4 +1,2 @@
 This module provides a formatter which turns byte counts to usual
 readable format.
-
-WWW: https://metacpan.org/release/Number-Bytes-Human

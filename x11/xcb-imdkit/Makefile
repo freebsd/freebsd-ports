@@ -4,6 +4,7 @@ CATEGORIES=	x11 textproc
 
 MAINTAINER=	khng300@gmail.com
 COMMENT=	Input method development support for XCB
+WWW=		https://github.com/fcitx/xcb-imdkit
 
 LICENSE=	LGPL21+
 

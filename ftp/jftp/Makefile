@@ -6,6 +6,7 @@ DISTNAME=	j-ftp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Network Browser
+WWW=		http://j-ftp.sourceforge.net/
 
 LICENSE=	GPLv2
 

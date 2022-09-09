@@ -6,5 +6,3 @@ All return values have been replaced by callbacks instead.
 The code borrows heavily from the BSD resolver library. In fact, it is an
 extremely ugly hack to make the BSD resolver library non-blocking and
 thread-safe without changing the API too much.
-
-WWW: https://www.monkey.org/~provos/libdnsres/

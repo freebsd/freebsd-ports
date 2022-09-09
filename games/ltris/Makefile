@@ -6,6 +6,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	marcel@herrbischoff.com
 COMMENT=	Tetris clone but a good one with bunch of cool features
+WWW=		http://lgames.sourceforge.net/index.php?project=LTris
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

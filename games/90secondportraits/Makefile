@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Silly speed painting game
+WWW=		https://tangramgames.dk/games/90secondportraits/
 
 LICENSE=	ZLIB MIT CC-BY-SA-4.0 CC-BY-3.0
 LICENSE_COMB=	multi
@@ -20,6 +21,8 @@ GH_TUPLE=	vrld:hump:537ca76:hump/hump \
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+PORTSCOUT=	skipv:1.01
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png

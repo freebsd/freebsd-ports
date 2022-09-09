@@ -10,5 +10,4 @@ functions from package 'QCA'. Users are encouraged to install that package
 despite not being listed in the Imports field, due to circular dependency
 issues.
 
-WWW: https://cran.r-project.org/package=admisc
-WWW: https://github.com/dusadrian/admisc
+See also: https://github.com/dusadrian/admisc

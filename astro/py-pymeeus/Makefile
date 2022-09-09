@@ -7,6 +7,7 @@ DISTNAME=	PyMeeus-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python implementation of Jean Meeus astronomical routines
+WWW=		https://github.com/architest/pymeeus
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	probono@puredarwin.org
 COMMENT=	USB floppy disk interface for reading and writing non-PC disk formats
+WWW=		https://cowlark.com/fluxengine/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.md

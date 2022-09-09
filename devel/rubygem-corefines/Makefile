@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Refinements for extending Rubys built-in classes
+WWW=		https://github.com/jirutka/corefines
 
 LICENSE=	MIT
 

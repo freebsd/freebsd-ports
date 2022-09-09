@@ -1,4 +1,2 @@
 This library provides Moose types for checking things (mostly strings) against
 syntax that is, or is a reasonable subset of, Perl syntax.
-
-WWW: https://metacpan.org/release/MooseX-Types-Perl

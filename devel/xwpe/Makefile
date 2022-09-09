@@ -7,6 +7,7 @@ MASTER_SITES=	SUNSITE/apps/editors/X \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Borland-like IDE programming environment
+WWW=		http://www.identicalsoftware.com/xwpe/
 
 USES=		desthack ncurses xorg
 DESTDIRNAME=	STAGEDIR

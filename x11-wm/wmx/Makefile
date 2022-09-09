@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.all-day-breakfast.com/wmx/
 
 MAINTAINER=	kwhite@site.uottawa.ca
 COMMENT=	Simple window manager based on wm2
+WWW=		https://www.all-day-breakfast.com/wmx/
 
 USES=		pkgconfig xorg
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test XML and HTML content and structure with XPath expressions
+WWW=		https://metacpan.org/release/Test-XPath
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

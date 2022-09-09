@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool to check whether the system is affected by various attacks
+WWW=		https://github.com/vusec/ridl
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

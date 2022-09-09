@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional and Performance Test Framework
+WWW=		https://github.com/linkedin/Zopkio
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

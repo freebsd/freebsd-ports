@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for calculating time differences
+WWW=		https://metacpan.org/release/Date-Handler
 
 USES=		perl5
 USE_PERL5=	configure patch

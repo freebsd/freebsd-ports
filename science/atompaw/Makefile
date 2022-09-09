@@ -5,6 +5,7 @@ MASTER_SITES=	http://users.wfu.edu/natalie/papers/pwpaw/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for projector augmented wave functions for molecular simulations
+WWW=		https://users.wfu.edu/natalie/papers/pwpaw/
 
 LICENSE=	BSD3CLAUSE
 

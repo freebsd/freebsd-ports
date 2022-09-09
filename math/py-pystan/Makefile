@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Python interface for Stan
+WWW=		https://github.com/stan-dev/pystan
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

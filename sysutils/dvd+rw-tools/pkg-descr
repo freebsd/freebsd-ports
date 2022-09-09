@@ -10,5 +10,3 @@ multi-session DVD media such as DVD+R and DVD-R/-RW.  In addition growisofs
 supports first-/single-session recording of arbitrary pre-mastered image
 (formatted as UDF, ISO9660, or any other file system, if formatted at all)
 to all supported DVD media types.
-
-WWW: http://fy.chalmers.se/~appro/linux/DVD+RW/

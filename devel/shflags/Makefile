@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command-line flags module for Unix shell scripts
+WWW=		https://github.com/kward/shflags
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

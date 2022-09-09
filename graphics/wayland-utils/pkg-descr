@@ -7,5 +7,3 @@ by the Wayland compositor.
 wayland-info also provides additional information for a subset of Wayland
 protocols it knows about, namely Linux DMABUF, presentation time, tablet and
 XDG output protocols.
-
-WWW: https://gitlab.freedesktop.org/wayland/wayland-utils

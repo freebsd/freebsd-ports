@@ -4,5 +4,3 @@ generate a human-readable and exploitable XML file.
 
 Using an XSLT processor you can convert this XML file to any other
 format (HTML, CSV, SQL, ...).
-
-WWW: http://akldev.free.fr/pflogx/

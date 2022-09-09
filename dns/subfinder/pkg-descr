@@ -7,5 +7,3 @@ permutations and resolve them quickly using a powerful bruteforcing engine. It
 can also perform plain bruteforce if needed. The tool is highly customizable,
 and the code is built with a modular approach in mind making it easy to add
 functionalities and remove errors.
-
-WWW: https://github.com/projectdiscovery/subfinder

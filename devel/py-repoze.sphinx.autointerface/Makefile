@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Auto-generates API docs from Zope interfaces
+WWW=		http://www.repoze.org
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

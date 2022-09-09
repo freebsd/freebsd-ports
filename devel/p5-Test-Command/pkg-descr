@@ -20,5 +20,3 @@ failing test, but you may always specify your own $name if desired.
 Any of the test functions can be used as instance methods on a Test::Command
 object. This is done by dropping the initial $cmd argument and instead using
 arrow notation.
-
-WWW: https://metacpan.org/release/Test-Command

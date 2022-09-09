@@ -5,5 +5,3 @@ glyph codes in visual order.
 
 Clients can use this to break a paragraph into lines, and to display the
 glyphs in each line.
-
-WWW: http://site.icu-project.org/

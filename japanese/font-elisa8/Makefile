@@ -8,6 +8,7 @@ DISTNAME=	elisat10
 
 MAINTAINER=	toshi@tea.forus.or.jp
 COMMENT=	8-dot Kanji font 'elisa'
+WWW=		http://hp.vector.co.jp/authors/VA002310/family.htm
 
 LICENSE=	NOTPARTIAL-NOTCOMMERCIAL
 LICENSE_NAME=	Whole, not partial, and not commercial

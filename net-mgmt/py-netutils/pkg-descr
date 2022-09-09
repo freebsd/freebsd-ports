@@ -11,5 +11,3 @@ It intends to keep the following tenets:
 * Shall leverage docstrings as the primary documentation mechanism.
 * Must provide examples in every public function.
 * Shall retain a high test coverage.
-
-WWW: https://github.com/networktocode/netutils

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate Spreadsheet Cell Ranges to Rows and Columns
+WWW=		https://github.com/rsheets/cellranger
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 BackGround Setter using Imlib2
+WWW=		https://github.com/Gottox/bgs
 
 LICENSE=	MIT
 

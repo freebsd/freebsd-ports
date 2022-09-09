@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Complete Doom-based game IWAD that is Free Software
+WWW=		https://freedoom.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

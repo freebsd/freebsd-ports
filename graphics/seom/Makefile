@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/bms
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time capture library for OpenGL applications
+WWW=		https://github.com/wereHamster/yukon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

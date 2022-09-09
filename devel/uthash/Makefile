@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Hash table for C structures
+WWW=		http://uthash.sourceforge.net/
 
 LICENSE=	BSD1CLAUSE
 LICENSE_NAME=	BSD 1-Clause License

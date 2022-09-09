@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of configuration scripts for the TCSH shell
+WWW=		http://tcshrc.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

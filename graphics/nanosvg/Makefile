@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple C++ header-only SVG parser
+WWW=		https://github.com/memononen/nanosvg
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

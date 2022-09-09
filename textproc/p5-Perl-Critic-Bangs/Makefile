@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ivan@serezhkin.com
 COMMENT=	Collection of handy Perl::Critic policies
+WWW=		https://metacpan.org/release/Perl-Critic-Bangs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

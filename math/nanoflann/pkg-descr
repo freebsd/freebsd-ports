@@ -7,5 +7,3 @@ This library is a fork of the flann library by Marius Muja and David G. Lowe,
 and born as a child project of MRPT. Following the original license terms,
 nanoflann is distributed under the BSD license. Please, for bugs use the issues
 button or fork and open a pull request.
-
-WWW: https://github.com/jlblancoc/nanoflann

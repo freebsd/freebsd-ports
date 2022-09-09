@@ -7,6 +7,7 @@ DISTNAME=	MonkeyType-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate type annotations from sampled production types
+WWW=		https://github.com/Instagram/MonkeyType
 
 LICENSE=	BSD3CLAUSE
 

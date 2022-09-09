@@ -1,4 +1,2 @@
 Geo::Coder::TomTom provides an interface to the geocoding service of the TomTom
 route planner through the unofficial (as-yet unpublished) REST API.
-
-WWW: https://metacpan.org/release/Geo-Coder-TomTom

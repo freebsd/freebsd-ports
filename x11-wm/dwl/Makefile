@@ -8,6 +8,7 @@ PATCHFILES+=	cba259e9bf4a.patch:-p1 # https://github.com/djpohly/dwl/pull/212
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	dwm for Wayland
+WWW=		https://github.com/djpohly/dwl
 
 LICENSE=	CC0-1.0 GPLv3+ MIT
 LICENSE_COMB=	multi

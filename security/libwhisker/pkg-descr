@@ -7,5 +7,3 @@ Libwhisker has a few design principles:
 - Flexible: designed with a 'no rules' approach
 - Contained: designed to not require external modules when possible
 - Localized: does not require installation to use
-
-WWW: https://sourceforge.net/projects/whisker/

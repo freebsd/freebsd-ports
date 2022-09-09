@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.zeograd.com/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC Engine (TurboGrafx 16) emulator
+WWW=		https://www.zeograd.com/
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi

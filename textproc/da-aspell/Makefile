@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Danish dictionary
+WWW=		http://da.speling.org/
 
 DICT=	 	da
 

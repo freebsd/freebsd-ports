@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	NTOP-maintained superset of the popular OpenDPI library
+WWW=		https://www.ntop.org/products/deep-packet-inspection/ndpi/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

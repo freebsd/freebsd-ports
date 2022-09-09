@@ -1,10 +1,11 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT, GBM)
+WWW=		https://xgboost.ai/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

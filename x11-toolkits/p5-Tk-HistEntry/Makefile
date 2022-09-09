@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Entry widget with history support in Perl
+WWW=		https://metacpan.org/release/Tk-HistEntry
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -2,6 +2,7 @@ PORTNAME=	husky-smapi
 PORTEPOCH=	1
 
 COMMENT=	Husky FTN MSGAPI library
+WWW=		http://husky.sourceforge.net/
 
 LICENSE=	LGPL21
 

@@ -5,5 +5,3 @@ must close. Passive popups can automatically disappear after a short period
 of time.
 
 This port contains the daemon.
-
-WWW: https://gitlab.gnome.org/GNOME/notification-daemon

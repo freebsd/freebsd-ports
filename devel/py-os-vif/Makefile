@@ -7,6 +7,7 @@ DISTNAME=	os_vif-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for plugging and unplugging virtual interfaces in OpenStack
+WWW=		https://docs.openstack.org/os-vif/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

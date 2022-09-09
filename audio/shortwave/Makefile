@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Listen to internet radio
+WWW=		https://gitlab.gnome.org/World/Shortwave
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

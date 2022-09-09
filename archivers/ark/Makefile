@@ -4,11 +4,12 @@ CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
+WWW=		https://utils.kde.org/projects/ark/
 
 LICENSE=	GPLv2+
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext libarchive kde:5 \
-		cpe qt:5 tar:xz
+		cpe qt:5 tar:xz xorg
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n iconthemes \
 		itemmodels itemviews jobwidgets khtml kio parts pty service \
@@ -16,7 +17,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
-
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PATCH_STRIP=	-p1

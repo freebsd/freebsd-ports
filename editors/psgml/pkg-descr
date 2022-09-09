@@ -13,5 +13,4 @@ To use psgml, put the following setup into your ~/.emacs:
 Ports of PSGML are initially created by shige <shige@FreeBSD.org> and
 kuriyama@FreeBSD.ORG.
 
-WWW: http://www.lysator.liu.se/~lenst/about_psgml/
-WWW: https://sourceforge.net/projects/psgml/
+See also: https://sourceforge.net/projects/psgml/

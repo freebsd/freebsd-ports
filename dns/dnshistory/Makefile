@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.stedee.id.au/files/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Store DNS lookups to a DB
+WWW=		http://www.stedee.id.au/dnshistory
 
 LICENSE=	GPLv2
 

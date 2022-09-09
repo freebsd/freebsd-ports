@@ -6,6 +6,7 @@ CATEGORIES=	emulators games
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Enhanced OutRun Engine
+WWW=		https://github.com/djyt/cannonball/wiki
 
 LICENSE=	MAME-LICENSE
 LICENSE_NAME=	MAME license

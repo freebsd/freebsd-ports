@@ -7,6 +7,7 @@ DISTNAME=	PyJWT-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in Python
+WWW=		https://github.com/jpadilla/pyjwt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

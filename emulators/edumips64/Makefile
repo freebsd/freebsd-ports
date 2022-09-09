@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free, cross-platform, educational, visual MIPS64 CPU simulator
+WWW=		https://www.edumips.org/
 
 LICENSE=	GPLv2
 

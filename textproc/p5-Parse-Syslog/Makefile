@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 routines that present a simple interface to parse syslog files
+WWW=		https://metacpan.org/release/Parse-Syslog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

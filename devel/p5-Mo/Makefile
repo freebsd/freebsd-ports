@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Micro Objects. Mo is less
+WWW=		https://metacpan.org/release/Mo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

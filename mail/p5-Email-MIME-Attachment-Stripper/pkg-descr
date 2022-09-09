@@ -1,3 +1,1 @@
 Given a Email::MIME object, detach all attachments from the message.
-
-WWW: https://metacpan.org/release/Email-MIME-Attachment-Stripper

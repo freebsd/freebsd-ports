@@ -7,6 +7,7 @@ MASTER_SITES=	http://sites.e-advies.nl/openradius/download/ \
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	RADIUS server with some actual documentation
+WWW=		http://sites.e-advies.nl/openradius/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

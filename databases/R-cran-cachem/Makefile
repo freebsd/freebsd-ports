@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Cache R Objects with Automatic Pruning
+WWW=		https://cran.r-project.org/web/packages/cachem/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a CGI application by subclassing
+WWW=		https://metacpan.org/release/CGI-Prototype
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

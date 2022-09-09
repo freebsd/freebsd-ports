@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for simulating simple Nameservers
+WWW=		https://metacpan.org/release/Net-DNS-TestNS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0.64:dns/p5-Net-DNS \

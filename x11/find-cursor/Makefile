@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple XLib program to highlight the cursor position
+WWW=		https://github.com/Carpetsmoker/find-cursor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

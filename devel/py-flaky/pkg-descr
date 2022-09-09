@@ -3,5 +3,3 @@ components that aren't 100% reliable.
 
 With flaky, instead of removing those tests or marking them to skip, they can
 be automatically retried.
-
-WWW: https://github.com/box/flaky

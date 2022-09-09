@@ -4,5 +4,3 @@ Features:
   Fast compared to similar tools.
   Supports filtering based on fize size, regex
   Multiple ouput formats including csv, json, ldjson etc.
-
-WWW: https://github.com/jrimbault/yadf

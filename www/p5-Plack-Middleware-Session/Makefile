@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for session management middleware for Plack
+WWW=		https://metacpan.org/release/Plack-Middleware-Session
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

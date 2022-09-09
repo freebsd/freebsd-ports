@@ -13,5 +13,3 @@ Guiding principles:
 	is used to support multiple implementations.
  * Limited dependencies. No external dependencies beyond Commons components
 	and the core Java platform.
-
-WWW: https://commons.apache.org/proper/commons-math/

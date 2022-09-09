@@ -12,5 +12,3 @@ It has the following features:
 - Manage running programs on large batches of Jpegs and restoring Exif header
   information afterwards.
 - Display embedded GPS info (if present)
-
-WWW: https://github.com/Matthias-Wandel/jhead

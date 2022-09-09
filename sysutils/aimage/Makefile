@@ -6,6 +6,7 @@ MASTER_SITES=	http://digitalcorpora.org/downloads/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Advanced Disk Imager
+WWW=		https://BSDforge.com/projects/sysutils/aimage/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

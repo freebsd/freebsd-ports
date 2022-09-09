@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-gui-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt-based GUI for CMake
+WWW=		https://www.cmake.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
@@ -44,7 +45,7 @@ CXXFLAGS+=	-D__BSD_VISIBLE
 
 INSTALL_WRKSRC=	${WRKSRC}/Source/QtDialog
 
-DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
+DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
 
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \

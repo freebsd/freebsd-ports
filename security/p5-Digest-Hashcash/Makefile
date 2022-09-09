@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Hashcash hash algorithm
+WWW=		https://metacpan.org/release/Digest-Hashcash
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

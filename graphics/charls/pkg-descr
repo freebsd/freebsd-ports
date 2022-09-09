@@ -8,5 +8,3 @@ Features:
 - Supports Windows, Linux and Solaris in 32 bit and 64 bit.
 - Includes an adapter assembly for .NET based languages.
 - Excellent compression and decompression performance.
-
-WWW: https://github.com/team-charls/charls

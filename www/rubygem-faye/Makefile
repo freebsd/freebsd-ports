@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple pub/sub messaging for the web
+WWW=		https://faye.jcoglan.com/
 
 LICENSE=	MIT
 

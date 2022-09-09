@@ -1,10 +1,11 @@
 PORTNAME=	parser
-PORTVERSION=	3.1.2.0
+PORTVERSION=	3.1.2.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby parser written in pure Ruby
+WWW=		https://github.com/whitequark/parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

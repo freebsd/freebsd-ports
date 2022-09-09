@@ -3,6 +3,7 @@ CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python interface for XML parser library for GNOME
+WWW=		http://xmlsoft.org/
 MASTERDIR=	${.CURDIR}/../libxml2
 
 USES+=		gettext-runtime gnome python shebangfix
@@ -26,6 +27,6 @@ PLIST=
 DOCSDIR=	${PREFIX}/share/doc/py-libxml2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxml2
 
-do-configure:
+#do-configure:
 
 .include "${MASTERDIR}/Makefile"

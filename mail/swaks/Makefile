@@ -5,6 +5,7 @@ MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Swiss Army Knife SMTP transaction tester
+WWW=		http://jetmore.org/john/code/ #swaks
 
 LICENSE=	GPLv2
 

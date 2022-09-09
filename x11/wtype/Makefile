@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Programmatically simulate keyboard input on Wayland
+WWW=		https://github.com/atx/wtype
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

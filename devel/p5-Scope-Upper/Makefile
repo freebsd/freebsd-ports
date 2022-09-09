@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Act on upper scopes
+WWW=		https://metacpan.org/release/Scope-Upper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

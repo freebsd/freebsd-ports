@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 extension for dynamically building snort rules
+WWW=		https://metacpan.org/release/Snort-Rule
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

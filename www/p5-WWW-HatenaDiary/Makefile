@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	CRUD interface to Hatena::Diary
+WWW=		https://metacpan.org/release/WWW-HatenaDiary
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-YAML-Syck>=0:textproc/p5-YAML-Syck \

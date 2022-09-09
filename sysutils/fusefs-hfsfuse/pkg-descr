@@ -6,5 +6,3 @@ filesystem in any way.
 
 hfsfuse also includes a standalone tool, hfsdump, to inspect the
 contents of an HFS+ volume without FUSE.
-
-WWW: https://github.com/0x09/hfsfuse

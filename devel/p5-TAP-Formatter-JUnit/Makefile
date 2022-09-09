@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Harness output delegate for JUnit output
+WWW=		https://metacpan.org/release/TAP-Formatter-JUnit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

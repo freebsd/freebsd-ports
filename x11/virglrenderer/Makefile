@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VirGL virtual OpenGL renderer
+WWW=		https://virgil3d.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

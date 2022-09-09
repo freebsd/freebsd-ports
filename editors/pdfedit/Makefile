@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PDF document manipulating library
+WWW=		http://pdfedit.cz/
 
 LICENSE=	GPLv2
 

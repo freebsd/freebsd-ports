@@ -5,6 +5,7 @@ MASTER_SITES=	http://elgg.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blogging and social networking platform
+WWW=		https://www.elgg.org/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quickly configure a FreeBSD desktop system
+WWW=		https://acadix.biz/desktop-installer.php
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

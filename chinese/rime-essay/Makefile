@@ -4,6 +4,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Essay - the shared vocabulary and language model for Rime
+WWW=		https://github.com/rime/rime-essay
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compare two things, give hex dumps if they differ
+WWW=		https://metacpan.org/release/Test-BinaryData
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

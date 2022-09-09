@@ -3,5 +3,3 @@ requiring the use of another web server.  It's goals are
 high-performance, HTTP/1.1 compliance, and robustness.  It is also
 suitable for use as a faster development server with support for
 automatic restarting.
-
-WWW: https://metacpan.org/release/Catalyst-Engine-HTTP-Prefork

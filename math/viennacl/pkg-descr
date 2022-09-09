@@ -10,5 +10,3 @@ The highlights of the latest 1.7.x release family are:
     Phis, and GPUs.
 * Fine-grained parallel incomplete LU factorization preconditioners for
     CPUs, Xeon Phis, and GPUs.
-
-WWW: http://viennacl.sourceforge.net/

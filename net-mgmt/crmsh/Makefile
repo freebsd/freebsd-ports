@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt python
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Command-line interface for High-Availability cluster management
+WWW=		https://crmsh.github.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

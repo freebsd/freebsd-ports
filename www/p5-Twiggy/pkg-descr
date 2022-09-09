@@ -1,3 +1,1 @@
 AnyEvent HTTP server for PSGI (like Thin).
-
-WWW: https://metacpan.org/release/Twiggy

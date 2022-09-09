@@ -4,5 +4,3 @@ server.
 
 This plugin stores the session ID on the client using the cookie
 mechanism.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Session-State-Cookie

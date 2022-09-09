@@ -1,4 +1,2 @@
 Ruby-SerialPort is a Ruby library that provides a class for using
 RS-232 serial ports.
-
-WWW: https://rubygems.org/gems/serialport

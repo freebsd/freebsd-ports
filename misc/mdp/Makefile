@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command-line based markdown presentation tool
+WWW=		https://github.com/visit1985/mdp
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

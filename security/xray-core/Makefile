@@ -1,11 +1,12 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Set of network penetration tools
+WWW=		https://github.com/XTLS/Xray-core
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

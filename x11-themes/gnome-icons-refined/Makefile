@@ -11,6 +11,7 @@ DISTNAME=	ICON-Gnome-RH8
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Refined Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	JSON parser for the shell
+WWW=		http://kmkeen.com/jshon/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

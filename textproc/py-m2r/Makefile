@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Convert markdown formatted file with reST markup to reST format
+WWW=		https://github.com/miyakogi/m2r
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

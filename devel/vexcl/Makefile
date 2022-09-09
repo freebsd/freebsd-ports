@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ vector expression template library for OpenCL/CUDA
+WWW=		https://github.com/ddemidov/vexcl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

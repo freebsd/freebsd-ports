@@ -1,5 +1,3 @@
 Density, distribution function, quantile function, random generation
 and expected value function for the truncated normal distribution
 with mean equal to 'mean' and standard deviation equal to 'sd'.
-
-WWW: https://cran.r-project.org/package=truncnorm

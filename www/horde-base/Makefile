@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Application Framework
+WWW=		https://www.horde.org/apps/horde/
 
 RUN_DEPENDS=	${PEARDIR}/Net/DNS2.php:dns/pear-Net_DNS2@${PHP_FLAVOR}
 

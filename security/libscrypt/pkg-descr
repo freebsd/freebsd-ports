@@ -4,5 +4,3 @@ implement it. Therefore, I've written my adaptation, which quite simply pulls
 the relevant parts from the original implementation, then adds a number of
 harnesses and simplified interfaces. The hope is that through this, any
 developer can utilise scrypt.
-
-WWW: http://www.lolware.net/libscrypt.html

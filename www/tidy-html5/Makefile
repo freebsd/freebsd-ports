@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tidy tidies HTML and XML documents
+WWW=		https://www.html-tidy.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README/LICENSE.md

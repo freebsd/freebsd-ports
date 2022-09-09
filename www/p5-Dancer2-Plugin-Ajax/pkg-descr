@@ -1,4 +1,2 @@
 The ajax keyword which is exported by this plugin allow you to
 define a route handler optimized for Ajax queries.
-
-WWW: https://metacpan.org/pod/Dancer2::Plugin::Ajax

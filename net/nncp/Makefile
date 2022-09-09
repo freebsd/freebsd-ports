@@ -1,16 +1,17 @@
 PORTNAME=	nncp
-DISTVERSION=	8.7.1
-PORTREVISION=	4
+DISTVERSION=	8.8.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
 MAINTAINER=	stargrave@stargrave.org
 COMMENT=	Utilities for secure store-and-forward files, mail, command exchanging
+WWW=		http://www.nncpgo.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:1.18,modules,no_targets tar:xz
+USES=		go:modules,no_targets tar:xz
 
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 

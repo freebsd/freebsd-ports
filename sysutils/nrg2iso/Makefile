@@ -5,6 +5,7 @@ MASTER_SITES=	http://gregory.kokanosky.free.fr/v4/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Nero .nrg CD-Image format to ISO
+WWW=		http://gregory.kokanosky.free.fr/v4/linux/nrg2iso.en.html
 
 USES=		gmake
 

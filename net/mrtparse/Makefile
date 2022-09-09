@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	MRT format data parser
+WWW=		https://github.com/t2mune/mrtparse
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

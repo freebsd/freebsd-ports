@@ -8,5 +8,3 @@ ACT (Artemis Comparison Tool) is a DNA sequence comparison viewer based
 on Artemis. It can open two or more sequences (and their
 annotations/features) together with their comparisons (usually the
 result of running blastn or tblastx searches).
-
-WWW: https://www.sanger.ac.uk/science/tools/artemis

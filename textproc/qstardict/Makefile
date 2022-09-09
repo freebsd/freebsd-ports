@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt based dictionary program (stardict clone)
+WWW=		http://qstardict.ylsoftware.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

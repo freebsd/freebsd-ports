@@ -8,6 +8,7 @@ DISTNAME=	fec-${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
+WWW=		http://www.ka9q.net/code/fec/
 
 LICENSE=	LGPL21
 

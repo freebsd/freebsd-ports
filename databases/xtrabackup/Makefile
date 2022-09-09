@@ -8,6 +8,7 @@ DISTFILES=	percona-${PORTNAME}-${PORTVERSION}.tar.gz:xtrabackup \
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
+WWW=		https://www.percona.com/doc/percona-xtrabackup/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

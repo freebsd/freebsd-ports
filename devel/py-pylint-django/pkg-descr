@@ -1,4 +1,2 @@
 pylint-django is a Pylint plugin for improving code analysis when analysing code
 using Django. It is also used by the Prospector tool.
-
-WWW: https://github.com/PyCQA/pylint-django

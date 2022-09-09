@@ -5,5 +5,3 @@ It includes iSCSI protocol processor and SPC-3 (SCSI Primary Commands - 3)
 based logical unit emulation.  You can easily create over 2TB storage for
 iSCSI target.  If necessary, you can configure to use multipath failover or
 MCS failover.
-
-WWW: http://shell.peach.ne.jp/aoyama/

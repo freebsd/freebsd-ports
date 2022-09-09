@@ -4,5 +4,3 @@ expressions easily. Some of the features of PyQUBO:
 * fully integrated with Ocean SDK
 * automatic validation of constraints
 * placeholder for parameter tuning
-
-WWW: https://pyqubo.readthedocs.io/en/latest/

@@ -1,1 +1,1 @@
-WWW: https://metacpan.org/release/Catalyst-Authentication-Credential-HTTP
+HTTP plain and digest authentication plugin for Catalyst.

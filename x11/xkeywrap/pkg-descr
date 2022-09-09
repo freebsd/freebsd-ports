@@ -12,5 +12,3 @@ If you want to see a demonstration of XKeyWrap, type
     % cp /usr/local/share/examples/xkeywrap/demo.dat .
     % cp /usr/local/share/examples/xkeywrap/xkeywrap_demo.c .
     % xkeywrap -p -s 2 -f demo.dat -x emacs -geometry 80x25 xkeywrap_demo.c
-
-WWW: http://kozos.jp/myfreesoft/

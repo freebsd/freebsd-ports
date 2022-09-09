@@ -16,5 +16,3 @@ functionality for commands that are already defined (sort, assoc,
 ...). It might be possible to transform these into advised functions
 later on, so that the modified functionality is accessible without a
 prefix. Feedback on this point is appreciated.
-
-WWW: https://sr.ht/~pkal/compat/

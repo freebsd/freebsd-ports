@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mail@dbalan.in
 COMMENT=	Terminal MUA using Notmuch mail
+WWW=		https://github.com/pazz/alot
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -22,6 +22,7 @@ MAINTAINER=	office@FreeBSD.org
 #de facto maintainer is truckman@FreeBSD.org
 #Frequent Patch submitters should (optionally) sign the Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser (developer version)
+WWW=		https://openoffice.apache.org/
 
 LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL10 \
 			MPL11 PSFL TWAIN W3C
@@ -231,7 +232,6 @@ WITH=	SDK
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( \
-    (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
     (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
     (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
 BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility

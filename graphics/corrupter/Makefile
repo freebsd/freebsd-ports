@@ -1,11 +1,12 @@
 PORTNAME=	corrupter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple image glitcher for screen lockers
+WWW=		https://github.com/r00tman/corrupter
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

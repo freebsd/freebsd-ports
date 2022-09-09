@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.mikekohn.net/downloads/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create/convert/listen to ringtones and logos for mobile phones
+WWW=		https://www.mikekohn.net/file_formats/ringtonetools.php
 
 # Converted from RESTRICTED
 LICENSE=	ringtonetools

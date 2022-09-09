@@ -4,5 +4,3 @@ client, and works in conjunction with mod_proxy_add_forward (which sets
 the X-Forwarded-For header). When an X-Host header exists rpaf will take
 the hostname found here, put it into Apache, and update the virtualhost
 settings so that you can serve virtualhosts on the backend.
-
-WWW: https://github.com/gnif/mod_rpaf/

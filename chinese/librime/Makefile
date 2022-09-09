@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Input Method Engine, the core library
+WWW=		https://rime.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

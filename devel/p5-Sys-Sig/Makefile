@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Return signal constants for this host
+WWW=		https://metacpan.org/release/Sys-Sig
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/aria2/aria2/releases/download/release-${PORTVER
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet another download tool
+WWW=		https://aria2.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

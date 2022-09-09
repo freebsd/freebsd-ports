@@ -3,8 +3,9 @@ PORTVERSION=	0.20220406
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved Nintendo 64 core for libretro
+WWW=		https://github.com/libretro/parallel-n64
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	BITSTREAM_VERA CC0-1.0 GFDL GPLv2 GPLv3 LGPL3 MIT ZLIB

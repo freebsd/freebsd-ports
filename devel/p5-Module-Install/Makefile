@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Standalone, extensible Perl module installer
+WWW=		https://metacpan.org/release/Module-Install
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

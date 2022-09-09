@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-tray
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp with support for GNOME2 and KDE3 tray icons
+WWW=		https://icculus.org/openbox/2/docker/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

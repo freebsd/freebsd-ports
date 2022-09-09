@@ -13,5 +13,3 @@ with the most recent discoveries in what works and what doesn't.
 
 inlinestyler takes (most) of the functionality of Premailer, and makes it
 available locally, accessible without having call a remote service.
-
-WWW: https://github.com/dlanger/inlinestyler

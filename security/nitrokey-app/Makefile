@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Nitrokey App is an application created to manage Nitrokey devices
+WWW=		https://github.com/Nitrokey/nitrokey-app
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPLv3

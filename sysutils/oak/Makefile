@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.ktools.org/dist/oak/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	System Log Reporting Tool
+WWW=		https://www.ktools.org/oak/
 
 USE_RC_SUBR=	oak
 

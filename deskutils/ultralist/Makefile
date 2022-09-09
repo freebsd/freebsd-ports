@@ -1,10 +1,11 @@
 PORTNAME=	ultralist
 DISTVERSION=	1.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Simple, powerful, task management system for the command line
+WWW=		https://ultralist.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

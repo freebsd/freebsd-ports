@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Sequence assembler for very short reads
+WWW=		http://www.ebi.ac.uk/~zerbino/velvet/
 
 ALL_TARGET=	default
 

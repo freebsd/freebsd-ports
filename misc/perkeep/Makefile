@@ -1,10 +1,11 @@
 PORTNAME=	perkeep
 DISTVERSION=	0.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Storage system: Storing, syncing, sharing, modelling, backing up files
+WWW=		https://perkeep.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

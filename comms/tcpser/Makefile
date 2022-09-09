@@ -5,6 +5,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	TCPSER turns serial port into an emulated Hayes compatible modem
+WWW=		https://github.com/FozzTexx/tcpser
 
 LICENSE=	GPLv2+
 

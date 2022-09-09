@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
+WWW=		https://savannah.nongnu.org/projects/tpop3d/
 
 LICENSE=	GPLv2
 

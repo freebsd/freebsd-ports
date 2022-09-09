@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolkit of support libraries and Ruby core extensions extracted from the Rails framework
+WWW=		https://github.com/rails/rails/tree/main/activesupport
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

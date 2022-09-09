@@ -5,5 +5,3 @@ It provides a common API for all supported RDBMS. The main difference to most
 other DB abstraction packages is that MDB2 goes much further to ensure
 portability. MDB2 provides most of its many features optionally that can be used
 to construct portable SQL statements.
-
-WWW: https://pear.php.net/package/MDB2

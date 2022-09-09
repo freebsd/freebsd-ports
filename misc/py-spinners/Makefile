@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Spinners for terminal
+WWW=		https://github.com/manrajgrover/py-spinners.
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

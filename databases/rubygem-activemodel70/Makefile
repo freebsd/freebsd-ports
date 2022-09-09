@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolkit for building modeling frameworks like Active Record
+WWW=		https://github.com/rails/rails/tree/main/activemodel
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

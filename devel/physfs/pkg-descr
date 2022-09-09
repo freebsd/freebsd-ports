@@ -15,5 +15,3 @@ previous archive on a per-file basis. Finally, PhysicsFS gives you
 platform-abstracted means to determine if CD-ROMs are available, the
 user's home directory, where in the real filesystem your program is
 running, etc.
-
-WWW: http://icculus.org/physfs/

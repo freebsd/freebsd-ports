@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kirigami component gallery application
+WWW=		https://invent.kde.org/sdk/kirigami-gallery
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL-2

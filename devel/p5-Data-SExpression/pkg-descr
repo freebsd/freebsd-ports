@@ -1,4 +1,2 @@
 Data::SExpression -- Parse Lisp S-Expressions into perl data
 structures.
-
-WWW: https://metacpan.org/release/Data-SExpression

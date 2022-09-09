@@ -6,6 +6,7 @@ CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Decentralized websites using Bitcoin crypto and BitTorrent network
+WWW=		https://zeronet.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer of hdr/pfm images
+WWW=		http://www.eaflux.com/fv/
 
 LICENSE=	GPLv2+
 

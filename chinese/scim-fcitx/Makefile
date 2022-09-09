@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module for fcitx
+WWW=		http://www.fcitx.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

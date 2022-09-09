@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of http://sass-lang.com/
+WWW=		https://metacpan.org/release/Text-Sass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

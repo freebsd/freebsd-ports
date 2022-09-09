@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the Twitter API
+WWW=		https://metacpan.org/release/Net-Twitter-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

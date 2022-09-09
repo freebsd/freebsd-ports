@@ -10,5 +10,3 @@ Every other scalar value is true.
 
 This module provides basic Boolean support, by defining two special
 objects: "true" and "false".
-
-WWW: https://metacpan.org/release/boolean

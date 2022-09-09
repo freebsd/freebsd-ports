@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to print a statement of Suica
+WWW=		https://www.imfj.net/people/nomura/soft/PaSoRi/SuicaValue.html
 
 LIB_DEPENDS=	libpasori.so:devel/libpasori
 

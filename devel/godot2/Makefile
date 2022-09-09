@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	2
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Game runtime engine
+WWW=		https://www.godotengine.org/
 
 LICENSE=		MIT CC-BY-3.0
 LICENSE_COMB=		multi

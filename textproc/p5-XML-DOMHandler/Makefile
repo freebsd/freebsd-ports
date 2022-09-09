@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Call-back interface to DOM
+WWW=		https://metacpan.org/release/XML-DOMHandler
 
 USES=		perl5
 USE_PERL5=	configure

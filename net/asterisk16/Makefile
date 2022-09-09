@@ -9,8 +9,9 @@ PKGNAMESUFFIX=	16
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
+WWW=		https://www.asterisk.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -62,8 +63,9 @@ OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MACRO MP3PLAYER NEWT ODBC OPUS MYSQL PGSQ
 				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP URIPARSER \
 				VORBIS XMLDOC
 
-OPTIONS_DEFINE_i386=		DAHDI
-OPTIONS_DEFINE_amd64=		DAHDI
+OPTIONS_DEFINE_i386=		DAHDI GEOLOCATION
+OPTIONS_DEFINE_amd64=		DAHDI GEOLOCATION
+OPTIONS_DEFINE_aarch64=		GEOLOCATION
 OPTIONS_DEFINE_sparc64=		DAHDI
 OPTIONS_DEFINE_powerpc=		DAHDI
 OPTIONS_DEFINE_powerpc64=	DAHDI
@@ -99,6 +101,7 @@ BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
 DAHDI_DESC?=	DAHDI support
 EXCHANGE_DESC?=	Exchange calendar support
 G729_DESC?=	Install G.729 format sounds for Music-on-Hold (MoH)
+GEOLOCATION_DESC?= Enable SIP Geolocation support
 MACRO_DESC?=	Enable app_macro (deprecated)
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
 NEWG711_DESC?=	New G711 Codec
@@ -133,6 +136,8 @@ EXCHANGE_USES=		gettext-runtime
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
 FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
+
+GEOLOCATION_USE=	GNOME=libxslt
 
 GSM_CONFIGURE_WITH=	gsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
@@ -212,6 +217,7 @@ ASTERISK_GROUP?=	asterisk
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
@@ -229,6 +235,16 @@ SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
 PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER} \
 		ASTERISK_GROUP=${ASTERISK_GROUP} \
 		VARDIR=${VARDIR}
+
+.if ${PORT_OPTIONS:MGEOLOCATION}
+.if ${ARCH} == i386
+LLD_EMULATION= elf_i386
+.elif ${ARCH} == amd64
+LLD_EMULATION= elf_x86_64
+.elif ${ARCH} == aarch64
+LLD_EMULATION= aarch64elf
+.endif
+.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.d' -delete
@@ -250,6 +266,9 @@ post-patch:
 	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
 .endif
 
+post-patch-GEOLOCATION-on:
+	@${REINPLACE_CMD} -e 's/%%LLD_EMULATION%%/${LLD_EMULATION}/' ${WRKSRC}/Makefile.rules
+
 post-patch-SYSINFO-on:
 	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
 
@@ -262,6 +281,12 @@ post-configure:
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
+
+post-configure-GEOLOCATION-on:
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_geolocation menuselect.makeopts
+
+post-configure-GEOLOCATION-off:
+	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_geolocation menuselect.makeopts
 
 post-configure-MACRO-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_macro menuselect.makeopts

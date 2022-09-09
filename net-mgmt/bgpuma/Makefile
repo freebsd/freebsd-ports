@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Searching BGP update files
+WWW=		https://github.com/cmu-sei/bgpuma
 
 LICENSE=	BSD2CLAUSE
 

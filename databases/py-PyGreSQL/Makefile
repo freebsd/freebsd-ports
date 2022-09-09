@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python interface to PostgreSQL, both classic and DP-API 2.0
+WWW=		http://www.pygresql.org/
 
 LICENSE=	PSFL
 

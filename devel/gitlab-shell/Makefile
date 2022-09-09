@@ -1,10 +1,11 @@
 PORTNAME=	gitlab-shell
 PORTVERSION=	14.10.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	GitLab Shell handles git commands for GitLab
+WWW=		https://gitlab.com/gitlab-org/gitlab-shell
 
 LICENSE=	MIT
 

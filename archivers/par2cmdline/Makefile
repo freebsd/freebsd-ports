@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tools for using Parity v2 Archive files
+WWW=		https://github.com/Parchive/par2cmdline
 
 LICENSE=	GPLv2
 

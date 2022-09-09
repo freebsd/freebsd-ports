@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Call isa, can, does and DOES safely on things that may not be objects
+WWW=		https://metacpan.org/release/Safe-Isa
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

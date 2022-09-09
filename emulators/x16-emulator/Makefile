@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Emulator for the Commander X16 8-bit computer
+WWW=		https://github.com/commanderx16
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

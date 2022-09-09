@@ -2,5 +2,3 @@ SnortSam is an intelligent agent that allows the popular
 open-source Intrusion Detection System called Snort to block
 intruding connections by reconfiguration of many firewalls
 and Cisco devices.
-
-WWW: http://www.snortsam.net

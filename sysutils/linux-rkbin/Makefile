@@ -4,6 +4,7 @@ CATEGORIES=	sysutils linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firmware and tools for RockChip SoCs
+WWW=		https://github.com/rockchip-linux/rkbin
 
 ONLY_FOR_ARCHS=	amd64
 

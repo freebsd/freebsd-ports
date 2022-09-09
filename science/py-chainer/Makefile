@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep learning framework
+WWW=		https://chainer.org/
 
 LICENSE=	MIT
 

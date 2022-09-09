@@ -5,5 +5,3 @@ E.g. for prefetching many related objects to resultset with paging.
 Also you can use this module to create cross-database prefetches.
 
 This module provides other logic for prefetching data to resultsets.
-
-WWW: https://metacpan.org/release/DBIx-Class-CustomPrefetch

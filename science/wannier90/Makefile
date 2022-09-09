@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Maximally-localized Wannier functions (MLWFs) and Wannier90
+WWW=		http://www.wannier.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

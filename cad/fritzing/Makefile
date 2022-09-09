@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	lenzi.sergio@gmail.com
 COMMENT=	CAD for printed circuit boards
+WWW=		https://fritzing.org/
 
 LICENSE=	GPLv2+
 

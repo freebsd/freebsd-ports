@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Roundcube plugin to manage SpamAssassin prefs
+WWW=		http://www.tehinterweb.co.uk/roundcube/
 
 LICENSE=	GPLv3
 

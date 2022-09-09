@@ -7,6 +7,7 @@ DISTNAME=	parse_type-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplify to build parse types based on the parse module
+WWW=		https://github.com/jenisys/parse_type
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IRC plugin that provides CoreList goodness
+WWW=		https://metacpan.org/release/POE-Component-IRC-Plugin-CoreList
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute a command with safely quoted arguments
+WWW=		https://devel.ringlet.net/misc/unquote/
 
 USES=		uidfix
 

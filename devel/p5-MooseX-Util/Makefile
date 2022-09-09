@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Moose::Util extensions
+WWW=		https://metacpan.org/release/MooseX-Util
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

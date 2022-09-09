@@ -20,5 +20,3 @@
   (x,y) pairs. To do the interpolation, it first calculates some
   reasonable derivatives at the (x,y) pairs. The robust interpolator
   can also use derivative information supplied by the user.
-
-WWW: https://metacpan.org/release/Math-Interpolate

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Write output slowly, emulating physical serial terminal
+WWW=		http://artscene.textfiles.com/viewers/
 
 LICENSE=	PD
 

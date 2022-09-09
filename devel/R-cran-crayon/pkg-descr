@@ -3,5 +3,3 @@ codes. It also works in 'Emacs' 'ESS'. 'ANSI' color support is automatically
 detected. Colors and highlighting can be combined and nested. New styles can
 also be created easily. This package was inspired by the 'chalk' 'JavaScript'
 project.
-
-WWW: https://github.com/r-lib/crayon#readme

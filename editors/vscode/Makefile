@@ -1,6 +1,6 @@
 PORTNAME=	vscode
 DISTVERSION=	1.70.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
+WWW=		https://code.visualstudio.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

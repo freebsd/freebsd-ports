@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	List a directory using Path::Class
+WWW=		https://metacpan.org/release/HVOERS/Dancer2-Plugin-Path-Class-0.08
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

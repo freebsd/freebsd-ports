@@ -7,6 +7,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Facebook plugin for bitlbee
+WWW=		https://wiki.bitlbee.org/HowtoFacebookMQTT
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

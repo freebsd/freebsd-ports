@@ -6,6 +6,7 @@ CATEGORIES=	finance devel
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Free FIX Protocol Implementation
+WWW=		https://www.quickfixengine.org/
 
 LICENSE=	GPLv3+
 

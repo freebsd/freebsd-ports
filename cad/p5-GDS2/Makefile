@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GDS2 stream module
+WWW=		https://metacpan.org/release/GDS2
 
 LICENSE=	ART10
 

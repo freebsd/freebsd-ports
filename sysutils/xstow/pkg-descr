@@ -5,5 +5,3 @@ XStow as GNU Stow, are programs for managing the installation of software
 packages, keeping them separate (/usr/local/stow/emacs
 vs. /usr/local/stow/perl, for example) while making them appear to be
 installed in the same place (/usr/local).
-
-WWW: http://xstow.sourceforge.net/

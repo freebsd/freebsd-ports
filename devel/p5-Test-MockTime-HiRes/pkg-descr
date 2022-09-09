@@ -3,5 +3,3 @@ can wait milliseconds in simulated time.
 
 It also provides mock_time to restrict the effect of the simulation in a code
 block.
-
-WWW: https://metacpan.org/release/Test-MockTime-HiRes

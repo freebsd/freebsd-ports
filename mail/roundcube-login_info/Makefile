@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}_rc0.5_v${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Roundcube login info plugin
+WWW=		https://www.std-soft.com/bfaq/52-cat-webmail/107-text-auf-der-login-seite-einblenden.html
 
 LICENSE=	GPLv2
 

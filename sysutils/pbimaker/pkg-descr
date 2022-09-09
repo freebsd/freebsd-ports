@@ -3,5 +3,3 @@ creates from it a PBI module. This module can then be used to create PBI
 packages. Make-A-PBI automates most aspects of the module creating process,
 setting up the required files and directories and collecting information
 from the port.
-
-WWW: http://makeapbi.sourceforge.net/

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display notebook battery status in tray
+WWW=		https://github.com/arp242/battray
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

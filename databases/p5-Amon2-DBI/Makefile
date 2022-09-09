@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of simple DBI wrapper
+WWW=		https://metacpan.org/release/Amon2-DBI
 
 RUN_DEPENDS=	\
 	p5-Carp-Clan>0:devel/p5-Carp-Clan \

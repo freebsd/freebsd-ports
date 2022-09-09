@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OmniAuth provider for Atlassian Crowds REST API
+WWW=		https://github.com/robdimarco/omniauth_crowd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

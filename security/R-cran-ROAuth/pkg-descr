@@ -1,5 +1,3 @@
 This package provides an interface to the OAuth 1.0 specification,
 allowing users to authenticate via OAuth to the server of their
 choice.
-
-WWW: http://cran.r-project.org/web/packages/ROAuth/

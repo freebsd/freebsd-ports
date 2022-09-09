@@ -6,6 +6,7 @@ CATEGORIES=	textproc devel
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Pairwise Independent Combinatorial Testing tool
+WWW=		https://github.com/Microsoft/pict
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

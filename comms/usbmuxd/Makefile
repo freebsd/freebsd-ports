@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
+WWW=		https://www.libimobiledevice.org
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

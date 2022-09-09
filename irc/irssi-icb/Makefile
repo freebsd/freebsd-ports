@@ -5,6 +5,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Irssi plugin for connecting to ICB network
+WWW=		https://github.com/mglocker/irssi-icb
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

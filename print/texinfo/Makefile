@@ -14,6 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typeset documentation system with multiple format output
+WWW=		https://www.gnu.org/software/texinfo/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

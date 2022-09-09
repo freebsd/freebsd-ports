@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CMake common files used to build all Kurento C/C++ projects
+WWW=		https://github.com/Kurento/kms-cmake-utils
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

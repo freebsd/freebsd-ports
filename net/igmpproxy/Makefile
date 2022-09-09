@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Multicast forwarding IGMP proxy
+WWW=		https://github.com/pali/igmpproxy
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

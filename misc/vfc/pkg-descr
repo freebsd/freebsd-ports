@@ -5,5 +5,3 @@ COLLADA), into formats that are suitable for usage at runtime. This
 may include interleaving vertex data, re-mapping indices (e.g. from
 separate indices to a single combined index), and converting to packed
 formats.
-
-WWW: https://github.com/akb825/VertexFormatConvert

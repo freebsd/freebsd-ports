@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Protect your site from robots
+WWW=		https://metacpan.org/release/Catalyst-Controller-RateLimit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

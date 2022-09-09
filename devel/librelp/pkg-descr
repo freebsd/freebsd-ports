@@ -9,5 +9,3 @@ duplication after a session has been broken due to network problems.
 In this case, a few messages may be duplicated (a problem that also
 exists with plain TCP syslog). Future versions of RELP will address
 this shortcoming.
-
-WWW: https://www.rsyslog.com/librelp/

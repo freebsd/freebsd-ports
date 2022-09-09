@@ -6,6 +6,7 @@ DISTNAME=	man2html-${DISTVERSION:E}
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Convert nroff(1) man pages to HTML
+WWW=		https://dickey.his.com/scripts/man2html.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

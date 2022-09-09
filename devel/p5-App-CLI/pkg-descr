@@ -1,4 +1,2 @@
 App::CLI dispatches CLI (command line interface) based commands into
 command classes.  It also supports subcommand and per-command options.
-
-WWW: https://metacpan.org/release/App-CLI

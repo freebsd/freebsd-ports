@@ -11,5 +11,3 @@ document written in HTML.
 The basic idea of Hyperlatex is to make it possible to write a
 document that will look like a flawless LaTeX document when printed
 and like a handwritten HTML document when viewed with an HTML browser.
-
-WWW: http://hyperlatex.sourceforge.net/

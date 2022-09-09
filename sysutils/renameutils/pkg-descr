@@ -6,5 +6,3 @@ of files faster and less cumbersome:
 - qcp and icp are similar to qmv and imv but copy files instead of moving them;
 - deurlname removes URL encoded characters (such as %20 representing space) from
   file names.
-
-WWW: http://www.nongnu.org/renameutils/

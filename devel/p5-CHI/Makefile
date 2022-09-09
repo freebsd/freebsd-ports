@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-0.60
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
+WWW=		https://metacpan.org/release/CHI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

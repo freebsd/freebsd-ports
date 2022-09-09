@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Access control layer on top of git
+WWW=		https://github.com/sitaramc/gitolite
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

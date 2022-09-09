@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Console-based web browser (current/development version)
+WWW=		https://lynx.invisible-island.net/current/
 
 LICENSE=	GPLv2
 

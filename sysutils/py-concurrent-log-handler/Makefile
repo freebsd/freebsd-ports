@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	risner@stdio.com
 COMMENT=	RotatingFileHandler replacement with concurrency, gzip
+WWW=		https://pypi.org/project/concurrent-log-handler/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

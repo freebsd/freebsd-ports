@@ -15,5 +15,3 @@ There's also a rudimentary Python module.  Use it like this:
 
 	import laserhammer
 	mdoc = laserhammer.laserhammer(file_path) print(mdoc)
-
-WWW: https://github.com/trasz/laserhammer

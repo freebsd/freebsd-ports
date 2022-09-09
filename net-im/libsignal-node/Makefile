@@ -9,6 +9,7 @@ DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz:yarn
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
+WWW=		https://github.com/signalapp/libsignal
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -237,7 +238,7 @@ MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron18 \
 		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		HOME=${WRKDIR} \
 		PYTHON=${PYTHON_CMD} \
-		XDG_CACHE_HOME=${WRKDIR}/.cache 
+		XDG_CACHE_HOME=${WRKDIR}/.cache
 
 MAKE_ENV+=	RUSTC_BOOTSTRAP=aes,polyval
 

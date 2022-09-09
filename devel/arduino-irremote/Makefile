@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Multi-protocol infrared remote library for the Arduino
+WWW=		https://arduino-irremote.github.io/Arduino-IRremote/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl helper class for the Google Chart Tools Datasource Protocol
+WWW=		https://metacpan.org/release/Data-Google-Visualization-DataSource
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

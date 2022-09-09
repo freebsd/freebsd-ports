@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Rickshaw-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rickshaw (XStatic packaging standard)
+WWW=		https://tech.shutterstock.com/rickshaw/
 
 LICENSE=	MIT
 

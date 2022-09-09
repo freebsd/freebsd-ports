@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/rpkrawczyk/rockdodger/downloads/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
+WWW=		https://bitbucket.org/rpkrawczyk/rockdodger/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

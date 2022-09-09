@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API Client library for Google Cloud: Core Helpers
+WWW=		https://github.com/googleapis/python-cloud-core
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

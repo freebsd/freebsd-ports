@@ -6,6 +6,7 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28OpenGL%20helper%20lib%29/${PORTVERS
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	OpenGL extension library
+WWW=		http://www.worldforge.org/dev/eng/libraries/sage
 
 CONFIGURE_ARGS=	--program-transform-name=
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to access isbndb.com
+WWW=		https://metacpan.org/release/WebService-ISBNDB
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Business-ISBN>=1.80:misc/p5-Business-ISBN \

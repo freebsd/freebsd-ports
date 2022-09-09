@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Analyze and manipulate Perl code without using perl itself
+WWW=		https://metacpan.org/release/PPI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

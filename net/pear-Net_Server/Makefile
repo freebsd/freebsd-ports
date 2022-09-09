@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic server class
+WWW=		https://pear.php.net/package/Net_Server
 
 USES=		pear php
 USE_PHP=	sockets pcntl

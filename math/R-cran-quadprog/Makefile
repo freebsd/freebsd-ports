@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions to solve Quadratic Programming Problems
+WWW=		https://cran.r-project.org/web/packages/quadprog/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

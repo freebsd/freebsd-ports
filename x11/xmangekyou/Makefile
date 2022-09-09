@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.vector.co.jp/16/65/1309/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaleidoscope on X
+WWW=		https://www.vector.co.jp/soft/unix/art/se077243.html
 
 USES=		xorg
 USE_XORG=	x11 xpm xaw

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Audio component collection and framework
+WWW=		https://github.com/enzo1982/BoCA
 
 LICENSE=	GPLv2+
 

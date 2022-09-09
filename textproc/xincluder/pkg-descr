@@ -1,4 +1,2 @@
 Java-based XInclude processors. This package contains 3 different
 XInclude processor implementations, based on SAX, DOM and JDOM.
-
-WWW: http://xincluder.sourceforge.net/

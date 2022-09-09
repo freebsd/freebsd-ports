@@ -4,5 +4,3 @@ processed with that function, instead of the built-in shell glob.
 
 Support for qx<...> overriding for multiline XML literals is planned
 for Perl 5.10.
-
-WWW: https://metacpan.org/release/XML-Literal

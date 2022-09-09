@@ -1,11 +1,12 @@
 PORTNAME=	gomi
 PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix rm(1) command that can restore deleted files
+WWW=		https://github.com/b4b4r07/gomi
 
 LICENSE=	MIT
 

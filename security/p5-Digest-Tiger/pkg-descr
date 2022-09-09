@@ -1,4 +1,2 @@
 A perl module that implements the tiger hash, which is believed to be secure
 and runs quickly on 64-bit processors.
-
-WWW: https://metacpan.org/release/Digest-Tiger

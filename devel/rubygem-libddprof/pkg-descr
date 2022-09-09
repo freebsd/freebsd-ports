@@ -3,5 +3,3 @@ implementation of Datadog's libraries, including Continuous Profilers.
 
 (In a past life, libdatadog was known as libddprof but it was renamed when we
 decided to increase its scope).
-
-WWW: https://github.com/datadog/libdatadog

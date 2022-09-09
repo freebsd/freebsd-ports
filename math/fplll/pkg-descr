@@ -12,5 +12,3 @@ It includes an implementation of the BKZ reduction algorithm, including the
 BKZ-2.0 improvements (extreme enumeration pruning, pre-processing of blocks,
 early termination). Additionally, Slide reduction and self dual BKZ are
 supported.
-
-WWW: https://github.com/fplll/fplll

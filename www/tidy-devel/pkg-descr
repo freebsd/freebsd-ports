@@ -13,5 +13,3 @@ listed with the line number and column so that you can see where the
 problem lies in your markup. Tidy won't generate a cleaned up version
 when there are problems that it can't be sure of how to handle. These
 are logged as "errors" rather than "warnings".
-
-WWW: http://tidy.sourceforge.net/

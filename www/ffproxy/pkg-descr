@@ -5,5 +5,3 @@ chroot() to some directory. Logging to syslog() is supported,
 as is using another auxiliary proxy server. Contacting IPv6
 servers is supported and allows transparent IPv6 over IPv4
 browsing.
-
-WWW: http://ffproxy.sourceforge.net

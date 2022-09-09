@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Slim ruby wrapper for posting to slack webhooks
+WWW=		https://rubygems.org/gems/slack-messenger
 
 LICENSE=	MIT
 

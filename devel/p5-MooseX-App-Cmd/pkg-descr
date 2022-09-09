@@ -6,5 +6,3 @@ swapping App::Cmd::Command for MooseX::App::Cmd::Command.
 Then you can write your moose commands as moose classes, with
 MooseX::Getopt defining the options for you instead of opt_spec
 returning a Getopt::Long::Descriptive spec.
-
-WWW: https://metacpan.org/release/MooseX-App-Cmd

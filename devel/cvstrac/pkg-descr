@@ -4,5 +4,3 @@ CVSTrac is designed for low-ceremony development - it provides
 mechanisms for tracking changes and bugs without unnecessary
 restrictions. It has a built-in Wiki and ticketing system. Both
 of these functions can be linked to the CVS tree.
-
-WWW: http://www.cvstrac.org/

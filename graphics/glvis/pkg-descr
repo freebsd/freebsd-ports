@@ -7,5 +7,3 @@ Features:
 * Desktop, Web and Jupyter versions from the same code base.
 * Server mode accepting multiple socket connections.
 * Visualization of parallel meshes and solutions.
-
-WWW: https://glvis.org/

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
+WWW=		https://www.love2d.org/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt

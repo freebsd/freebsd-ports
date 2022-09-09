@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/font-//:S/-//:S/-//}-${DISTVERSION:S/.//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Math companion for the TeX Gyre Schola family
+WWW=		https://www.gust.org.pl/projects/e-foundry/tg-math
 
 LICENSE=	GFL
 LICENSE_NAME=	GUST Font License

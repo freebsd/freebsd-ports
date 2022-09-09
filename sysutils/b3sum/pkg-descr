@@ -11,6 +11,3 @@ BLAKE3 is a cryptographic hash function that is:
 - A PRF, MAC, KDF, and XOF, as well as a regular hash.
 - One algorithm with no variants, which is fast on x86-64 and
   also on smaller architectures.
-
-
-WWW: https://github.com/blake3-team/blake3

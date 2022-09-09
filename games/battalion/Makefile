@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monsters, explosions, destruction game for X Window System
+WWW=		https://www.evl.uic.edu/aej/AndyBattalion.html
 
 LICENSE=	batallion
 LICENSE_NAME=	batallion license

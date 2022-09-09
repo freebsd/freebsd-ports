@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Toolkit for computer-aided musical analysis
+WWW=		https://web.mit.edu/music21/
 
 LICENSE=	BSD3CLAUSE LGPL3
 LICENSE_COMB=	multi

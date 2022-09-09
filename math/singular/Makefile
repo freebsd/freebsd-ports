@@ -7,6 +7,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system for polynomial computations
+WWW=		https://www.singular.uni-kl.de/
 
 LICENSE=	GPLv3RLE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Interface to the GraphViz Graphing Tool
+WWW=		https://github.com/glejeune/Ruby-Graphviz
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.md

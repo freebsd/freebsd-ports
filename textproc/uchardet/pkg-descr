@@ -6,5 +6,3 @@ Returned encoding names are iconv-compatible.
 It started as a C language binding of the original C++ implementation
 of the universal charset detection library by Mozilla. It can now
 detect more charsets, and more reliably than the original implementation.
-
-WWW: https://www.freedesktop.org/wiki/Software/uchardet/

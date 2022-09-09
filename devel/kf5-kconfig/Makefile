@@ -1,9 +1,11 @@
 PORTNAME=	kconfig
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 widgets for configuration dialogs
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kconfigwidgets/html/index.html
 
 # Sources say LGPL20+, KDE policy says LGPL21+, license file is LGPL21
 LICENSE=	LGPL21+
@@ -11,7 +13,7 @@ LICENSE=	LGPL21+
 USES=		cmake compiler:c++11-lib cpe kde:5 qt:5 tar:xz
 CPE_VENDOR=	kde
 USE_KDE=	ecm_build
-USE_QT=		core dbus declarative gui linguisttools xml \
+USE_QT=		core dbus declarative gui linguisttools network xml \
 		buildtools_build qmake_build testlib_build
 
 .include <bsd.port.mk>

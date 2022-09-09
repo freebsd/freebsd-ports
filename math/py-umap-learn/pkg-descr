@@ -5,5 +5,3 @@ assumptions about the data:
 * The data is uniformly distributed on a Riemannian manifold;
 * The Riemannian metric is locally constant (or can be approximated as such);
 * The manifold is locally connected.
-
-WWW: https://github.com/lmcinnes/umap

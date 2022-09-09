@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Implements a variant of Set
+WWW=		https://github.com/knu/sorted_set
 
 LICENSE=	MIT
 

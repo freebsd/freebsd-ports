@@ -8,6 +8,7 @@ DISTNAME=	Togl${DISTVERSIONFULL}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk OpenGL widget
+WWW=		http://togl.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

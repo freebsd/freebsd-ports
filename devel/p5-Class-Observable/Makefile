@@ -1,11 +1,12 @@
 PORTNAME=	Class-Observable
-PORTVERSION=	2.002
+PORTVERSION=	2.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Allow other classes and objects to respond to events in yours
+WWW=		https://metacpan.org/release/Class-Observable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

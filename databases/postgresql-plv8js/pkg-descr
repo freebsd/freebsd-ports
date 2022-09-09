@@ -3,5 +3,3 @@ V8 Engine.  It can be used for stored procedures, triggers, etc.
 
 PLV8 works with most versions of Postgres, but works best with 9.1 and above,
 including 10.0 and 10.1.
-
-WWW: https://plv8.github.io/

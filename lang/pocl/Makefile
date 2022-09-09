@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	ohartmann@freebsd-de.org
 COMMENT=	POrtable Computing Language (POCL)
+WWW=		http://portablecl.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@ compiled for pyu2f to work.
 By default pyu2f will use its own U2F stack implementation to sign requests. If
 desired, pyu2f can offload signing to a pluggable command line tool. Offloading
 is not yet supported for U2F registration.
-
-WWW: https://github.com/google/pyu2f

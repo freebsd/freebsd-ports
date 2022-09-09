@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools for working with iterables
+WWW=		https://github.com/jaraco/jaraco.itertools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

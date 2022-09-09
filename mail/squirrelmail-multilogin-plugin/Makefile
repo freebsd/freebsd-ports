@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.9
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows manual selection of login server on login page
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=148
 
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes

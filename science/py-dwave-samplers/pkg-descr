@@ -13,5 +13,3 @@ quadratic models (BQM):
 * Tabu: a heuristic that employs local search with methods to escape local
   minima.
 * Tree Decomposition: an exact solver for problems with low treewidth.
-
-WWW: https://github.com/dwavesystems/dwave-samplers

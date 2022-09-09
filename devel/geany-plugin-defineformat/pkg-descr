@@ -1,4 +1,2 @@
 Define formatter plugin provides support for on-the-fly formatting
 for multiline #define macros.
-
-WWW: https://plugins.geany.org/defineformat.html

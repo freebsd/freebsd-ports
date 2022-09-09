@@ -6,6 +6,7 @@ CATEGORIES=	polish net-im
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instant messaging library for Gadu-Gadu protocol
+WWW=		https://libgadu.net
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

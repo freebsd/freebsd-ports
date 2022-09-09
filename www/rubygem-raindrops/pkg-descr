@@ -3,5 +3,3 @@ servers. It is designed for preforking servers such as Rainbows! and Unicorn,
 but should support any Rack HTTP server under Ruby 1.9, 1.8 and Rubinius on
 platforms supporting POSIX shared memory. It may also be used as a generic
 scoreboard for sharing atomic counters across multiple processes.
-
-WWW: https://yhbt.net/raindrops/

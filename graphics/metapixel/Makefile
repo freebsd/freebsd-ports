@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Photomosaic generator
+WWW=		https://www.complang.tuwien.ac.at/~schani/metapixel/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	FrodoV4_1b.Src
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
+WWW=		https://frodo.cebix.net/
 
 USES=		shebangfix tk:run xorg
 USE_CXXSTD=	gnu++98

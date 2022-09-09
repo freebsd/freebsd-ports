@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/apps/math/fractals
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for computing/exploring Mandelbrot set
+WWW=		https://www.ibiblio.org/pub/Linux/apps/math/fractals/
 
 LICENSE=	GPLv2
 

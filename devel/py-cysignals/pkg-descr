@@ -9,5 +9,4 @@ while True:
 The cysignals package provides mechanisms to handle interrupts (and other
 signals and errors) in Cython code.
 
-WWW: https://github.com/sagemath/cysignals
-WWW: https://pypi.org/project/cysignals/
+See also: https://github.com/sagemath/cysignals

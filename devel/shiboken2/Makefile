@@ -8,6 +8,7 @@ DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python binding generator for C++ libraries
+WWW=		https://wiki.qt.io/PySide2
 
 LICENSE=	GPLv2 LGPL21 LGPL3
 LICENSE_COMB=	multi

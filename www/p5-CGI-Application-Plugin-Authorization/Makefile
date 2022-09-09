@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Support for authorization of requests in CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-Authorization
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

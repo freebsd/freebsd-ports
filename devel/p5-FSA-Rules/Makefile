@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build simple rules-based state machines in Perl
+WWW=		https://metacpan.org/release/FSA-Rules
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

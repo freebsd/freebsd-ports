@@ -11,6 +11,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z80 assembly code assembler and disassembler
+WWW=		https://wwwhomes.uni-bielefeld.de/achim/z80-asm.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Prometheus exporter for NFS statistics
+WWW=		https://github.com/Axcient/freebsd-nfs-exporter
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

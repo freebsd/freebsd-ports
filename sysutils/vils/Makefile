@@ -7,6 +7,7 @@ DISTFILES=	vils
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
+WWW=		http://www.secnetix.de/~olli/
 
 LICENSE=	BSD2CLAUSE
 

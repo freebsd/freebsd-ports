@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Template Application Language (TAL)
+WWW=		https://pypi.org/project/zope.tal/
 
 LICENSE=	ZPL21
 

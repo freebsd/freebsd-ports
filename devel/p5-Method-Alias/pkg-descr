@@ -10,5 +10,3 @@ welcome to shoot yourself in the foot.
     use Method::Alias 'a' => 'b',
     'c' => 'd',
     'e' => 'f';
-
-WWW: https://metacpan.org/release/Method-Alias

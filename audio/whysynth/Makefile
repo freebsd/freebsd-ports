@@ -6,6 +6,7 @@ MASTER_SITES=	http://smbolton.com/whysynth/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile softsynth implemented as a DSSI plugin
+WWW=		http://smbolton.com/whysynth.html
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -1,4 +1,2 @@
 Minipot is a set of configuration files and dependency that makes easy
 to run a single-node nomad-pot cluster in a VM or on your laptop.
-
-WWW: https://github.com/pizzamig/minipot

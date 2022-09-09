@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
+WWW=		https://www.ntp.org/
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 

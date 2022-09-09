@@ -11,5 +11,3 @@ new ones, but preserving any custom changes contained in the old versions.
 For more information on sysconftool, and why applications need it, see
 the installed manual pages: sysconftool(1) and sysconftool(7).  With most
 versions of the man command: "man 1 sysconftool" and "man 7 sysconftool".
-
-WWW: http://www.Courier-MTA.org/sysconftool/

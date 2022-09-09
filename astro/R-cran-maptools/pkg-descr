@@ -4,5 +4,3 @@ binary access to GSHHS shoreline files. The package also provides
 interface wrappers for exchanging spatial objects with packages
 such as PBSmapping, spatstat, maps, RArcInfo, Stata tmap, WinBUGS,
 Mondrian, and others.
-
-WWW: https://cran.r-project.org/web/packages/maptools/

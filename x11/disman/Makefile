@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt/C++ display management library
+WWW=		https://gitlab.com/kwinft/disman
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

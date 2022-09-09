@@ -6,5 +6,3 @@ or custom implementations, thanks to the Storer interface.
 
 It's being actively developed since 2015 and is being used extensively
 by Keybase, Gitea or Pulumi, and by many other libraries and tools.
-
-WWW: https://github.com/go-git/go-git

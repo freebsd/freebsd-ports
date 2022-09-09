@@ -14,5 +14,3 @@ PyCXX integrates Python with C++ in these ways:
    - The optional CXX_Extensions facility allows you to replace the clumsy
      C tables with objects and method calls that define your modules and
      extension objects.
-
-WWW: http://cxx.sourceforge.net/

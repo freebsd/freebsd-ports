@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Authentication broker supporting different identity providers
+WWW=		https://github.com/auth0/omniauth-auth0
 
 LICENSE=	MIT
 

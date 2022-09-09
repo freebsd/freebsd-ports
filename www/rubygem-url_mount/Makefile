@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	rodnic@gmail.com
 COMMENT=	Glue to allow mounted rack applications to know where they're mounted
+WWW=		https://github.com/hassox/url_mount
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,5 +6,3 @@ just to prompt for input.
 It doesn't do any validation, coloring, menus, timeouts, or any of the wild,
 crazy, cool stuff that other prompting modules do. It just prompts with a
 default. That's it!
-
-WWW: https://metacpan.org/release/IO-Prompt-Tiny

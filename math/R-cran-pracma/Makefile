@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Practical Numerical Math Functions
+WWW=		https://cran.r-project.org/package=pracma
 
 LICENSE=	GPLv3+
 

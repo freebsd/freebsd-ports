@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	reinier@skoef.nl
 COMMENT=	Utility for administrating rc.conf
+WWW=		https://github.com/skoef/rcadm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	skoef

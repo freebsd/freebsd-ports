@@ -7,6 +7,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SoundFonts as LV2 plugins via FluidSynth
+WWW=		https://github.com/falkTX/FluidPlug
 
 LICENSE=	LGPL20
 

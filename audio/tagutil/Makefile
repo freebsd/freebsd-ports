@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	alex@kaworu.ch
 COMMENT=	Command line interface tool to manage tags in music files
+WWW=		https://github.com/kAworu/tagutil
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

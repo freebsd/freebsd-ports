@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/jmmv/lutok/releases/download/${PORTNAME}-${PORT
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Lightweight C++ API for Lua
+WWW=		https://github.com/jmmv/lutok/
 
 LICENSE=	BSD3CLAUSE
 

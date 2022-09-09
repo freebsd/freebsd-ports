@@ -13,5 +13,3 @@ main advantages are:
  - Lossless compression is supported.
  - Various metadata (such as EXIF, ICC profile, XMP) can be included.
  - Animation support.
-
-WWW: https://bellard.org/bpg/

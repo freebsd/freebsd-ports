@@ -7,6 +7,7 @@ DISTNAME=	bk-${PORTVERSION}.src
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Scalable Distributed Source Management System
+WWW=		https://www.bitkeeper.org/
 
 LICENSE=	APACHE20
 

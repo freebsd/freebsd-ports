@@ -7,5 +7,3 @@ features of Unix epoch time (ease of date difference calculation and date
 comparison, strict ordering) are preserved, and elements such as
 human-legibility are added. The library handles fractional seconds and some
 date/time manipulations used for the Global Positioning Satellite system.
-
-WWW: https://metacpan.org/release/DateTime-Precise

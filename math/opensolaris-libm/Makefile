@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 Math and vector libraries from OpenSolaris snv_33
+WWW=		https://docs.oracle.com/cd/E19422-01/819-3693/ncg_lib.html
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/usr/src/OPENSOLARIS.LICENSE

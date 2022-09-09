@@ -1,4 +1,2 @@
 A stable, documented, asynchronous API library for interfacing MPD in
 the C, C++ & Objective C languages.
-
-WWW: https://www.musicpd.org/libs/libmpdclient/

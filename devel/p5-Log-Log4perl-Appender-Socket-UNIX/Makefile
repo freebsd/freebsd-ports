@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module which allows logging to a unix domain socket
+WWW=		https://metacpan.org/release/Log-Log4perl-Appender-Socket-UNIX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

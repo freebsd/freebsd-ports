@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Web-based Audio file manager
+WWW=		https://ampache.org/
 
 LICENSE=	AGPLv3+
 

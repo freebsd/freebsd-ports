@@ -5,5 +5,3 @@ PassiveDNS sniffs traffic from an interface or reads a pcap-file and outputs
 the DNS-server answers to a log file. PassiveDNS can cache/aggregate duplicate
 DNS answers in-memory, limiting the amount of data in the logfile without
 losing the essense in the DNS answer.
-
-WWW: https://github.com/gamelinux/passivedns

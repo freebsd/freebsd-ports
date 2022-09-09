@@ -7,6 +7,7 @@ DISTFILES=	jlisting.sty.bz2
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Support for Japanese text within lstlisting environment
+WWW=		https://sourceforge.jp/projects/mytexpert/
 
 NO_BUILD=	yes
 USE_TEX=	latex texhash

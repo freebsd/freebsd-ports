@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple subroutine alias
+WWW=		https://metacpan.org/release/Sub-Alias
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

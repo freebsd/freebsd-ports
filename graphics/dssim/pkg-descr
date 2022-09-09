@@ -17,5 +17,3 @@ Features:
 - Takes advantage of multi-core CPUs.
 - Can be used as a library in C, Rust, and WASM.
 - No OpenCV or MATLAB needed.
-
-WWW: https://kornel.ski/dssim

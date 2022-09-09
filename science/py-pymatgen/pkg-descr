@@ -10,5 +10,3 @@ for materials analysis. These are some of the main features:
 * Electronic structure analyses, such as density of states and band structure.
 * Integration with the Materials Project REST API, Crystallography Open
   Database.
-
-WWW: https://pymatgen.org/

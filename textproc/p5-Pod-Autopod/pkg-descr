@@ -7,5 +7,3 @@ represents a class.
 Of course it cannot understand every kind of syntax, parameters,
 etc. But the plan is to improve this library in the future to
 understand more and more automatically.
-
-WWW: https://metacpan.org/release/Pod-Autopod

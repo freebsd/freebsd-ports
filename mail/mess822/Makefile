@@ -9,6 +9,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 822 mail message parsing library and rewriting utilities
+WWW=		https://cr.yp.to/mess822.html
 
 USES=		groff qmail:vars
 

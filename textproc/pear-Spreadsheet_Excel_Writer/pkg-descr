@@ -4,5 +4,3 @@ spreadsheets without the need for COM objects.  It supports formulas, images
 (BMP) and all kinds of formatting for text and cells.  It currently supports
 the BIFF5 format (Excel 5.0), so functionality appeared in the latest Excel
 versions is not yet available.
-
-WWW: https://pear.php.net/package/Spreadsheet_Excel_Writer

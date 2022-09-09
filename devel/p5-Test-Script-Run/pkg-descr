@@ -4,5 +4,3 @@ dist's bin/ directory, if the script path is not absolute.
 Nearly all the essential code is stolen from Prophet::Test, we think subs
 like those should live below Test:: namespace, that's why we packed them
 and created this module.
-
-WWW: https://metacpan.org/release/Test-Script-Run

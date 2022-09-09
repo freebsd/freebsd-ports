@@ -6,6 +6,7 @@ MAINTAINER=	jmg@FreeBSD.org
 # The maintainer says, if you're actively using this you are free to
 # take this port.
 COMMENT=	Library to interface with PRUs
+WWW=		https://bitbucket.org/rpaulo/libpru
 
 LICENSE=	BSD2CLAUSE
 

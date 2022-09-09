@@ -6,6 +6,7 @@ MASTER_SITES=	http://openbox.org/dist/openbox/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small, fast, standards compliant, extensible window manager
+WWW=		http://openbox.org/
 
 LICENSE=	GPLv2
 

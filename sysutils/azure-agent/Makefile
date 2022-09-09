@@ -8,6 +8,7 @@ PATCH_SITES=	https://github.com/Azure/WALinuxAgent/commit/
 
 MAINTAINER=	weh@microsoft.com
 COMMENT=	Microsoft Azure Linux Agent
+WWW=		https://github.com/Azure/WALinuxAgent/
 
 LICENSE=	APACHE20
 

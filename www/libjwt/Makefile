@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in C
+WWW=		https://github.com/benmcollins/libjwt
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

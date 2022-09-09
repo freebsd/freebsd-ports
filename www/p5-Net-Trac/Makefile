@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interact with a remote Trac instance
+WWW=		https://metacpan.org/release/Net-Trac
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

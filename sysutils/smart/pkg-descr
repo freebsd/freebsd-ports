@@ -10,5 +10,3 @@ for each selected attribute.
 
 See the shell scripts atasmart, nvmesmart, and scsismart for examples of parsing
 the output.
-
-WWW: https://github.com/ctuffli/smart

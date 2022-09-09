@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Weather reporting program using openweathermap.org
+WWW=		https://www.bobeager.uk/software.html
 
 LICENSE=	BSD3CLAUSE
 

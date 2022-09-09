@@ -11,5 +11,3 @@ A collection of some tests commonly used for identifying outliers:
   - Interpolate tabularized distribution
   - Remove the value(s) most differing from the mean
   - Calculate scores of the sample
-
-WWW: https://cran.r-project.org/web/packages/outliers/

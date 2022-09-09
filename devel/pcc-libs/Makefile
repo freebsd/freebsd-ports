@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Libraries for the Portable C Compiler
+WWW=		http://pcc.ludd.ltu.se/
 
 LICENSE=	BSDCOMPATIBLE BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
@@ -22,12 +23,4 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/lib/pcc
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -e '/targmach=amd64/s/x86_64/amd64/' \
-		${WRKSRC}/configure
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

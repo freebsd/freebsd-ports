@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/games/textrpg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic role-playing game from the 1980s
+WWW=		https://www.ibiblio.org/pub/linux/games/textrpg/taipan-0.9.lsm
 
 LICENSE=	NONE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate HTML based QR Code
+WWW=		https://metacpan.org/release/HTML-QRCode
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-QRCode>0:textproc/p5-Text-QRCode

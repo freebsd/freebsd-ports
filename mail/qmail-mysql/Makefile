@@ -5,6 +5,7 @@ CATEGORIES=	mail
 PKGNAMESUFFIX=	-mysql
 
 COMMENT=	Secure, reliable, and fast MTA for UNIX systems with MySQL support
+WWW=		https://iain.cx/unix/qmail/mysql.php
 
 CONFLICTS=	*qmail qmail-ldap qmail-spamcontrol *qmail-tls
 

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Optimizer for PNG files
+WWW=		http://optipng.sourceforge.net/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

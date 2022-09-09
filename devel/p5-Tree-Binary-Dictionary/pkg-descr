@@ -2,5 +2,3 @@ A simple class to provide a dictionary style API to a binary tree of data.
 
 This can provide a useful alternative to a long-lived hash in long running
 daemons and processes.
-
-WWW: https://metacpan.org/release/Tree-Binary-Dictionary

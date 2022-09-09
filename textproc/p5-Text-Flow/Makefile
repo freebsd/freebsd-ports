@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible text flowing and word wrapping for not just ASCII output
+WWW=		https://metacpan.org/release/Text-Flow
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0.45:devel/p5-Moose

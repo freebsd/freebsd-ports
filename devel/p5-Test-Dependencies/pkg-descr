@@ -1,4 +1,2 @@
 Makes sure that all of the modules that are 'use'd are listed
 in the Makefile.PL as dependencies.
-
-WWW: https://metacpan.org/release/Test-Dependencies

@@ -7,6 +7,7 @@ DISTNAME=	RANDLIB_V90
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
+WWW=		https://biostatistics.mdanderson.org/SoftwareDownload/SingleSoftware.aspx?Software_Id=27
 
 USES=		uidfix
 USE_LDCONFIG=	yes

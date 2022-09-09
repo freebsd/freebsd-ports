@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to convert SQLite3 schema files into documentation
+WWW=		https://kristaps.bsd.lv/sqliteconvert/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

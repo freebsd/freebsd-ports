@@ -7,5 +7,3 @@ open a bind a socket on the UDP port 1900.
 MiniSSDPd can also provide a history of the SSDP NOTIFY packets sent on the
 network during a period of a few minutes and it keeps track of all UPnP devices
 that announced themselves on the network through SSDP NOTIFY packets.
-
-WWW: http://miniupnp.free.fr/minissdpd.html

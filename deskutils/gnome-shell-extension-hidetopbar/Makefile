@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Hide the topbar except in overview mode
+WWW=		https://github.com/mlutfy/hidetopbar
 
 LICENSE=	GPLv2
 

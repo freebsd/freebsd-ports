@@ -10,5 +10,3 @@ can be computed within the Many-Body Perturbation Theory (the GW approximation
 and the Bethe-Salpeter equation), and Time-Dependent Density Functional Theory
 (for molecules). In addition to the main ABINIT code, different utility programs
 are provided.
-
-WWW: https://www.abinit.org

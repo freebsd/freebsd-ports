@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Software speech synthesizer
+WWW=		https://github.com/espeak-ng/espeak-ng/
 
 LICENSE=	GPLv3
 

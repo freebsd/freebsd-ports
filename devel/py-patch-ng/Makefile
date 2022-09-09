@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to parse and apply unified diffs
+WWW=		https://github.com/conan-io/python-patch-ng
 
 LICENSE=	MIT
 

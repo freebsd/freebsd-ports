@@ -12,5 +12,3 @@ The concept behind Bear is: to execute the original build command
 and intercept the exec calls issued by the build tool. To achieve
 that, Bear uses the LD_PRELOAD or DYLD_INSERT_LIBRARIES mechanisms
 provided by the dynamic linker.
-
-WWW: https://github.com/rizsotto/Bear

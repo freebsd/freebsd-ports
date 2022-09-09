@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/
 
 MAINTAINER=	torres.g.alex@gmail.com
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
+WWW=		https://www.escape.de/~tolot/mutt/
 
 LICENSE=	BSD4CLAUSE
 

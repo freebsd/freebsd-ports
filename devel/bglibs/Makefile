@@ -8,6 +8,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
+WWW=		https://untroubled.org/bglibs/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

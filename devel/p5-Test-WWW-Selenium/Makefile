@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl driver and test library for Selenium Remote Control (SRC)
+WWW=		https://metacpan.org/release/Test-WWW-Selenium
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	lang devel gnustep
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Foundation library
+WWW=		http://www.gnustep.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

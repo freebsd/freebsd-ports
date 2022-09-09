@@ -1,4 +1,2 @@
 Async::Pool provides support for connection pooling both singleplex and
 multiplex resources.
-
-WWW: https://github.com/socketry/async-pool

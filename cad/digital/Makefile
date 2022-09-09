@@ -5,6 +5,7 @@ CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Digital logic designer and circuit simulator
+WWW=		https://github.com/hneemann/Digital
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

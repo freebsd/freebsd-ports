@@ -4,6 +4,7 @@ CATEGORIES=	finance pear
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to create and handle DTA files used in Germany
+WWW=		https://pear.php.net/package/Payment_DTA
 
 USES=	pear
 

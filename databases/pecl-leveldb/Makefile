@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP bindings for Google LevelDB
+WWW=		https://pecl.php.net/package/leveldb
 
 LICENSE=	PHP301
 

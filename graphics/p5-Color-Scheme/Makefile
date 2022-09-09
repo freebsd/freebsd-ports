@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate pleasant color schemes
+WWW=		https://metacpan.org/release/Color-Scheme
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

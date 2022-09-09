@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compile .scss and .sass files using LibSass
+WWW=		https://metacpan.org/release/OCBNET/CSS-Sass-3.4.12
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

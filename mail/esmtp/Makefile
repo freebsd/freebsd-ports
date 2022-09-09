@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
+WWW=		http://esmtp.sourceforge.net
 
 LICENSE=	GPLv2
 

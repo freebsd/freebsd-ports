@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search driver for O'Reilly & Associates's online catalog
+WWW=		https://metacpan.org/release/WWW-Scraper-ISBN-ORA_Driver
 
 LICENSE=	ART20
 

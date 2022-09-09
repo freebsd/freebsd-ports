@@ -5,6 +5,7 @@ MASTER_SITES=	http://echat.deep.perm.ru/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAN chat program over the TCP/IP networks
+WWW=		http://echat.deep.perm.ru/
 
 USES=		ncurses
 MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use GMP library for Math::BigInt routines
+WWW=		https://metacpan.org/release/Math-BigInt-GMP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

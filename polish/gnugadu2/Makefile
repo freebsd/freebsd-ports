@@ -7,6 +7,7 @@ DISTNAME=	gg2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gadu-Gadu IM network client
+WWW=		https://www.gnugadu.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

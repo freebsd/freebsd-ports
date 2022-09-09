@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create aliases for DateTime timezones
+WWW=		https://metacpan.org/release/DateTime-TimeZone-Alias
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \

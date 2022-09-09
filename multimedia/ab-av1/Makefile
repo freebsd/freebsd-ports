@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AV1 re-encoding using ffmpeg, svt-av1 & vmaf
+WWW=		https://github.com/alexheretic/ab-av1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

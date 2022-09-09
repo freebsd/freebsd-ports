@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for calendar holidays
+WWW=		https://api.kde.org/frameworks/kholidays/html/index.html
 
 LICENSE=	LGPL21
 

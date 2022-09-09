@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nistor@snickers.org
 COMMENT=	Simple SQL92 ID generator in Perl
+WWW=		https://metacpan.org/release/DBIx-Sequence
 
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI

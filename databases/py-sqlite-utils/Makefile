@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Python CLI utility and library for manipulating SQLite databases
+WWW=		https://github.com/simonw/sqlite-utils
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -11,6 +11,7 @@ DISTNAME=		SpoqaHanSans_all
 
 MAINTAINER=		hyun@caffeinated.codes
 COMMENT=		Japanese custom font based on Noto Sans and Lato
+WWW=		https://github.com/spoqa/spoqa-han-sans
 
 LICENSE=		OFL11
 LICENSE_FILE=		${WRKSRC}/LICENSE

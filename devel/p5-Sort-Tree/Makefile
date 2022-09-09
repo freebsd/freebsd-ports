@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for sorting a objects into a tree structure
+WWW=		https://metacpan.org/release/Sort-Tree
 
 USES=		perl5
 USE_PERL5=	configure

@@ -9,6 +9,7 @@ PATCHFILES=     b83c40c5086010eda3ad810e7332aa68799aad65.patch:-p1 \
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt tool used to launch programs quickly
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

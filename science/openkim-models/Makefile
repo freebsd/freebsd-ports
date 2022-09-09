@@ -5,6 +5,7 @@ MASTER_SITES=	https://s3.openkim.org/archives/collection/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Knowledgebase of Interatomic Models
+WWW=		https://openkim.org/
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE

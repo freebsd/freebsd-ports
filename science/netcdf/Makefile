@@ -8,6 +8,7 @@ MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-c/${PORTVERSION}/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for machine-independent, array-oriented data access
+WWW=		https://www.unidata.ucar.edu/software/netcdf/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

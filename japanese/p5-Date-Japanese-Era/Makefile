@@ -5,6 +5,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Conversion between Japanese Era / Gregorian calendar
+WWW=		https://metacpan.org/release/Date-Japanese-Era
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

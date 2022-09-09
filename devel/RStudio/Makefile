@@ -15,6 +15,7 @@ DISTFILES=	core-dictionaries.zip:dictionaries \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R
+WWW=		https://rstudio.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

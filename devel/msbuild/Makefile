@@ -7,6 +7,7 @@ DISTFILES=	mono_msbuild_xplat-master-3c930fa8.zip:bootstrap
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Build platform for .NET and Visual Studio
+WWW=		https://github.com/Microsoft/msbuild
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

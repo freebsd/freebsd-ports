@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic method declarations with signatures, without source filters
+WWW=		https://metacpan.org/release/Method-Signatures-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

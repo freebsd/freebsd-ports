@@ -12,6 +12,7 @@ DISTFILES=	${DISTNAME}.tar.bz2\
 
 MAINTAINER=	dgilbert@eicat.ca
 COMMENT=	Digium/Asterisk Hardware Device Interface
+WWW=		https://svn.digium.com/svn/dahdi/freebsd/
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:misc/dahdi
 

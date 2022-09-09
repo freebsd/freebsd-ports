@@ -9,5 +9,3 @@ and servers.
   (*) Secure. The key is generated on the YubiKey and can't be
 extracted. Every session requires the PIN, every login requires a
 touch. Setup takes care of PUK and management key.
-
-WWW: https://filippo.io/yubikey-agent

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PID file management utilities
+WWW=		https://metacpan.org/release/Proc-PidUtil
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

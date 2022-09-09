@@ -6,6 +6,7 @@ MASTER_SITES=	SOURCEWARE/valgrind
 
 MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
+WWW=		https://www.valgrind.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

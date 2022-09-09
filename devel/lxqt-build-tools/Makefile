@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Helpers CMake modules for LXQt
+WWW=		https://github.com/lxde/lxqt-build-tools
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-3-Clause

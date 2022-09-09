@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mandree@FreeBSD.org
 # Implicit approval for port changes granted to Guido Falsi <madpilot@FreeBSD.org>
 COMMENT=	User-level file synchronization tool
+WWW=		https://www.cis.upenn.edu/~bcpierce/unison/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

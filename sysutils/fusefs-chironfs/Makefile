@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	FUSE based filesystem with replication at the filesystem level
+WWW=		https://BSDforge.com/projects/sysutils/fusefs-chironfs/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/copyright

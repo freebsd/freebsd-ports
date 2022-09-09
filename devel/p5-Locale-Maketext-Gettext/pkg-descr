@@ -1,5 +1,3 @@
 Locale::Maketext::Gettext brings GNU gettext and Maketext together.  It is a
 subclass of Locale::Maketext(3) that follows the way GNU gettext works.  It
 works seamlessly, both in the sense of GNU gettext and Maketext.
-
-WWW: https://metacpan.org/release/Locale-Maketext-Gettext

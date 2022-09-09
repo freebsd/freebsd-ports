@@ -5,5 +5,3 @@ It currently does not validate the object in any way, it just tries
 text presented and place it in a Parse Tree (that can be passed to other
 objects from the RPSL namespace for validation and more RFC2622 related
 functionality).
-
-WWW: https://metacpan.org/release/RPSL-Parser

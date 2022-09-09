@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone Security Assistant HTTP server
+WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 

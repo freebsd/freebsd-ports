@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bayesian learning and inference for state space models
+WWW=		https://github.com/lindermanlab/ssm
 
 LICENSE=	MIT
 

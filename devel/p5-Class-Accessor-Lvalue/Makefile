@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create Lvalue accessors
+WWW=		https://metacpan.org/release/Class-Accessor-Lvalue
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Want>=0:devel/p5-Want \

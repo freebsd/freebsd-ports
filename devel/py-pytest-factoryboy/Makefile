@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Factory approach to testing with the dependency injection
+WWW=		https://github.com/pytest-dev/pytest-factoryboy
 
 LICENSE=	MIT
 

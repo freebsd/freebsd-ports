@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Light PostgreSQL: use PostgreSQL as a simple SQLite database
+WWW=		https://github.com/Oslandia/pglite
 
 LICENSE=	LGPL20+
 

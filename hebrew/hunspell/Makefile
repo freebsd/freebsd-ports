@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hebrew hunspell dictionaries
+WWW=		http://hspell.ivrix.org.il/
 
 LICENSE=	AGPLv3
 

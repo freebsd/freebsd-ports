@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling Window Manager for X
+WWW=		https://sourceforge.net/projects/larswm/
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xext xmu xt

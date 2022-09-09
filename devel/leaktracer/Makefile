@@ -7,6 +7,7 @@ DISTNAME=	LeakTracer
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trace and analyze memory leaks in C++ programs
+WWW=		https://www.andreasen.org/LeakTracer/
 
 LICENSE=	PD
 

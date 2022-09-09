@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	DBI driver for Oracle RDBMS server
+WWW=		https://metacpan.org/release/DBD-Oracle
 
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI

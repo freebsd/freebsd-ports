@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.samiam.org/slump/old/slump/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of SLIGE that is optimized for making FreeDoom maps
+WWW=		https://www.samiam.org/slump.html
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Pure-Python implementation of AES block-cipher
+WWW=		https://github.com/ricmoo/pyaes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

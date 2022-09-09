@@ -5,6 +5,7 @@ MASTER_SITES=	http://releases.malikania.fr/nsnake/${PORTVERSION}/
 
 MAINTAINER=	markand@malikania.fr
 COMMENT=	Snake game written in C and ncurses
+WWW=		https://projects.malikania.fr/nsnake/
 
 LICENSE=	ISCL
 

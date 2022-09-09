@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for iterative, recursive file finder
+WWW=		https://metacpan.org/release/Path-Iterator-Rule
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

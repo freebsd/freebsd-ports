@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with Apache ZooKeeper
+WWW=		https://pecl.php.net/package/zookeeper
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

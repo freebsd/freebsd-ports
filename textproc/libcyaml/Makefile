@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for reading and writing YAML
+WWW=		https://github.com/tlsa/libcyaml
 
 LICENSE=	ISCL
 

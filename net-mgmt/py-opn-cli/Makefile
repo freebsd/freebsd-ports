@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd@moov.de
 COMMENT=	OPNsense CLI written in Python
+WWW=		https://github.com/andeman/opn-cli
 
 LICENSE=	BSD2CLAUSE
 

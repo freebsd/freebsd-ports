@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handling of DBI based connections in Mojolicious
+WWW=		https://metacpan.org/release/Mojolicious-Plugin-Database
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

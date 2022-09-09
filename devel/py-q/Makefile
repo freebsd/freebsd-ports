@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Quick-and-dirty debugging output for tired programmers
+WWW=		https://github.com/zestyping/q
 
 LICENSE=	APACHE20
 

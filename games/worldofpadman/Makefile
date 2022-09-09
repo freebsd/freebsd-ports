@@ -12,6 +12,7 @@ EXTRACT_ONLY=	worldofpadman.run \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source FPS game inspired by the Padman comic strip
+WWW=		http://www.worldofpadman.com/
 
 USES=		gmake makeself
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="-lpthread"

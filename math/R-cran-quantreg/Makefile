@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Quantile Regression
+WWW=		https://cran.r-project.org/web/packages/quantreg/
 
 LICENSE=	GPLv2+
 

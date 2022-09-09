@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient tools for LiDAR processing
+WWW=		https://rapidlasso.com/lastools/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

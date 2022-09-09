@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Share your Carp::Clan settings with your whole Clan
+WWW=		https://metacpan.org/release/Carp-Clan-Share
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Local mail delivery agent
+WWW=		https://www.procmail.org/
 
 LICENSE=	GPLv2
 

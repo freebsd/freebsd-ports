@@ -19,5 +19,3 @@ Currently, the following decorators are provided:
 - Lang (resort to fallback languages for empty strings)
 - SpecialChars (replace html entities with their hex codes)
 - UTF-8 (to convert UTF-8 strings to ISO-8859-1)
-
-WWW: https://pear.php.net/package/Translation2

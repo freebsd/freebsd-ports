@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python API for the D-BUS based SPI framework
+WWW=		https://gitlab.gnome.org/GNOME/pyatspi2
 
 LICENSE=	LGPL20
 

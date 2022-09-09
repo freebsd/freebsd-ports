@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Bindings for the Geospatial Data Abstraction Library
+WWW=		https://cran.r-project.org/web/packages/rgdal/
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C implementation of GIS::Distance formulas
+WWW=		https://metacpan.org/release/GIS-Distance-Fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

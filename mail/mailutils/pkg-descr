@@ -6,5 +6,3 @@ All Mailutils programs are able to operate on mailboxes of any existing
 format, ranging from standard Unix maildrops, through maildir and up to
 remote mailboxes, which are transparently accessed using IMAP4, POP3,
 and SMTP.
-
-WWW: https://mailutils.org/

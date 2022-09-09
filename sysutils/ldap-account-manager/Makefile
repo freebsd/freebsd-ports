@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
 MAINTAINER=	basil@vpm.net.ua
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
+WWW=		https://www.ldap-account-manager.org/lamcms/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

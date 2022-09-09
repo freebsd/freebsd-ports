@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
+WWW=		https://portmaster.github.io/
 
 LICENSE=	BSD2CLAUSE
 

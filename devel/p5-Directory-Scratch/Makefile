@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy-to-use self-cleaning scratch space
+WWW=		https://metacpan.org/release/Directory-Scratch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

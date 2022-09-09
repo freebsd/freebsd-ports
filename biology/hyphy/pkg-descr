@@ -5,5 +5,3 @@ analyses. Additionally, HyPhy features support for parallel computing
 environments via message passing interface, MPI and it can be compiled as a
 shared library and called from other programming environments such as Python and
 R.
-
-WWW: http://www.hyphy.org/

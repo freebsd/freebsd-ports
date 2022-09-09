@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 
 MAINTAINER=	epic@dsllsn.net
 COMMENT=	Enhanced Programmable IRC-II Client
+WWW=		http://www.epicsol.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

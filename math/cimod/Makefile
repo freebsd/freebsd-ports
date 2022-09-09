@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library for a binary quadratic models
+WWW=		https://github.com/OpenJij/cimod
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

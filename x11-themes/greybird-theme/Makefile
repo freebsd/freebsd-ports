@@ -1,11 +1,12 @@
 PORTNAME=	greybird
-PORTVERSION=	3.23.1
+PORTVERSION=	3.23.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
+WWW=		https://github.com/shimmerproject/Greybird
 
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	dual

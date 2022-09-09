@@ -1,11 +1,12 @@
 PORTNAME=	vultr-cli
 PORTVERSION=	2.14.2
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Official command line tool for Vultr services
+WWW=		https://github.com/vultr/vultr-cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

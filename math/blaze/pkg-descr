@@ -14,5 +14,3 @@ The Blaze library offers:
 * unified arithmetic with dense and sparse vectors and matrices
 * thoroughly tested matrix and vector arithmetic
 * completely portable, high quality C++ source code
-
-WWW: https://bitbucket.org/blaze-lib/blaze/src/master/

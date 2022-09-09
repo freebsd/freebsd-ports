@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	The Fastest Lexer in the West
+WWW=		https://metacpan.org/release/Parse-Flex
 
 LICENSE=	GPLv3
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Digital Forensics Windows Registry
+WWW=		https://github.com/log2timeline/dfwinreg
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

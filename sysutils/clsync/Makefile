@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dyokunev@ut.mephi.ru
 COMMENT=	Live file sync daemon based on inotify, written in GNU C
+WWW=		https://github.com/xaionaro/clsync
 
 LICENSE=	GPLv3
 

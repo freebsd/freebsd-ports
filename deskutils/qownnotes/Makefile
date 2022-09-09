@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.tuxfamily.org/qownnotes/src/
 
 MAINTAINER=	stobbsm@gmail.com
 COMMENT=	Markdown note taking program with cloud integration
+WWW=		https://www.qownnotes.org/
 
 LICENSE=	GPLv2
 

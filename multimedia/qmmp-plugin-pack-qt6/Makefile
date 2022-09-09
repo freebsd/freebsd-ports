@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-qt6
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Additional plug-ins for QMMP (Qt6)
+WWW=		https://qmmp.ylsoftware.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

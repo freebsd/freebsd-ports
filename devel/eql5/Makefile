@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embedded Qt Lisp
+WWW=		https://gitlab.com/eql/EQL5
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE-1.MIT

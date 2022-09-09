@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.libgeodecomp.org/archive/
 
 MAINTAINER=	kurt@kmk-computers.de
 COMMENT=	Struct of arrays library with object oriented interface for C++
+WWW=		http://www.libgeodecomp.org/libflatarray.html
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

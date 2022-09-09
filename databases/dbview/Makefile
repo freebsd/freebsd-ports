@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/apps/database/proprietary
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View dBase III files
+WWW=		https://www.infodrom.org/projects/dbview/
 
 LICENSE=	GPLv2+
 

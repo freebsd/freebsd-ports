@@ -3,5 +3,3 @@ for the storage and retrieval of IPv4 and IPv6 network prefixes.
 The radix tree is the data structure most commonly used for
 routing table lookups. It efficiently stores network prefixes of
 varying lengths and allows fast lookups of containing networks.
-
-WWW: https://github.com/mjschultz/py-radix

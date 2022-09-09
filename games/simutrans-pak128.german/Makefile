@@ -4,5 +4,6 @@ MASTER_SITES=	SF/simutrans/PAK128.german/PAK128.german_${DISTVERSION}_for_ST_123
 DISTNAME=	PAK128.german_${DISTVERSION}_for_ST_123.0
 
 COMMENT=	German graphics set for Simutrans
+WWW=		https://www.simutrans.com/
 
 .include "${.CURDIR}/../simutrans/Makefile.pak"

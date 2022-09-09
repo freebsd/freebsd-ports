@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-08-22 09:29:31 UTC
+--- CMakeLists.txt.orig	2022-08-26 12:57:31 UTC
 +++ CMakeLists.txt
 @@ -96,8 +96,8 @@ message(STATUS "***** SYSTEM PROCESSOR ${CMAKE_SYSTEM_
  set(i86 FALSE)
@@ -11,28 +11,38 @@
  	  set(i86 TRUE)
    endif()
  elseif(WIN32)
-@@ -558,24 +558,6 @@ install(FILES Sansation_Regular.ttf Sansation_1.31_Rea
+@@ -268,7 +268,7 @@ set(AVX2_FLAGS "${RENDERING_FLAGS} \
+ # about it and I don't have an AVX512 machine.
  
- find_program(LUX_GITVERSION git)
- set(LUX_PACKAGE_RELEASE "UNDEFINED")
--if(LUX_GITVERSION)
--  message(STATUS "${LUX_GITVERSION} describe --match ${pv_major}.${pv_minor}.${pv_patch} --tags")
--  message(STATUS "WORKING_DIRECTORY = ${CMAKE_SOURCE_DIR}")
--  execute_process(COMMAND ${LUX_GITVERSION} describe --match ${pv_major}.${pv_minor}.${pv_patch} --tags
--    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
--    RESULT_VARIABLE tmp_GIT_RESULT
--    OUTPUT_VARIABLE tmp_LUX_PACKAGE_RELEASE
--    ERROR_VARIABLE tmp_GIT_ERROR
--    OUTPUT_STRIP_TRAILING_WHITESPACE)
--  if (tmp_GIT_RESULT EQUAL 0)
--    if (tmp_LUX_PACKAGE_RELEASE MATCHES "^${pv_major}.${pv_minor}.${pv_patch}-\([0-9]+\)")
--      set(LUX_PACKAGE_RELEASE ${CMAKE_MATCH_1})
--    elseif(tmp_LUX_PACKAGE_RELEASE MATCHES "^${pv_major}.${pv_minor}.${pv_patch}")
--      set(LUX_PACKAGE_RELEASE 0)
--    endif()
--  endif()
--  message(STATUS "LUX_PACKAGE_RELEASE = ${LUX_PACKAGE_RELEASE}")
--endif()
+ set(AVX512f_FLAGS "${RENDERING_FLAGS} \
+-  -mavx512f -march=skx \
++  -mavx512f -march=skylake-avx512 \
+   -D hn=hn_avx512 -D PV_ARCH=PV_AVX512f \
+   -D PV_ARCHNAME=\\\"avx512f\\\" \
+   -D PV_PRIORITY=0 -D PV_VIABILITY=has_avx512f -D FLV_AVX512f")
+@@ -553,9 +553,6 @@ install(TARGETS ${_project_name} DESTINATION bin)
+ # Copy the NotoSans-Regular font and the readme (as required by the license)
+ # to the platform-specific font directory
  
- set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CMAKE_INSTALL_PREFIX})
- set(CPACK_SET_DESTDIR "ON")
+-install(FILES NotoSans-Regular.ttf noto_font_license.txt DESTINATION
+- "${DataDir}/fonts")
+-
+ # KFJ 2022-08-24 simplified package versioning, only using a.b.c
+ 
+ set(LUX_PACKAGE_RELEASE "${pv_major}.${pv_minor}.${pv_patch}")
+@@ -618,15 +615,6 @@ install(FILES scripts/512X512/lux.png 
+ 
+ install(FILES scripts/1024X1024/lux.png
+         DESTINATION share/icons/hicolor/1024x1024/apps)
+-
+-install(FILES scripts/256X256/lux.png
+-        DESTINATION share/icons/gnome/256x256/apps)
+-
+-install(FILES scripts/512X512/lux.png 
+-        DESTINATION share/icons/gnome/512x512/apps)
+-
+-install(FILES scripts/1024X1024/lux.png
+-        DESTINATION share/icons/gnome/1024x1024/apps)
+ 
+ install(FILES scripts/lux.desktop 
+         DESTINATION share/applications)

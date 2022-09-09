@@ -1,5 +1,3 @@
 Lingua::DetectCyrillic. The package detects 7 Cyrillic codings as well as the
 language - Russian or Ukrainian. Uses embedded frequency dictionaries; usually
 one word is enough for correct detection.
-
-WWW: https://metacpan.org/release/Lingua-DetectCyrillic

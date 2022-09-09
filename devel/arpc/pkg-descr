@@ -6,5 +6,3 @@ as an input. Where ARPC differs from GRPC is that messages may contain
 file descriptors. These file descriptors are passed on to the remote
 side transparently. This makes ARPC useful for implementing privilege
 separation between processes.
-
-WWW: https://github.com/NuxiNL/arpc

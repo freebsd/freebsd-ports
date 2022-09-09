@@ -1,4 +1,2 @@
 The modul bindings wrap libxcb, a C library to speak with X11. It
 provides an object oriented interface to the libxcb methods using Mouse.
-
-WWW: https://metacpan.org/release/X11-XCB

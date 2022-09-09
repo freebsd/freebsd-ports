@@ -13,5 +13,3 @@ The following protocols are supported:
 - Fasttrack		(http://en.wikipedia.org/wiki/Fasttrack)
 - FileTP [http/ftp/ssh]	(http://mldonkey.sourceforge.net/FileTP)
 - Kademlia		(http://en.wikipedia.org/wiki/Kad_Network)
-
-WWW: http://mldonkey.sourceforge.net/

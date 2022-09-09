@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to manage the Puppet Agent
+WWW=		https://github.com/puppetlabs/mcollective-puppet-agent
 
 LICENSE=	APACHE20
 

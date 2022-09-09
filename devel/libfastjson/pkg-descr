@@ -7,5 +7,3 @@ It's aim is to provide
 
 In order to reach these goals, we reduce the features of json-c. For
 similarities and differences, see the file DIFFERENCES.
-
-WWW: https://github.com/rsyslog/libfastjson

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python package that provides useful locks
+WWW=		https://github.com/harlowja/fasteners
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

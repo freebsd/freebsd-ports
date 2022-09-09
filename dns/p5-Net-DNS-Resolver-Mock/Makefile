@@ -1,11 +1,12 @@
 PORTNAME=	Net-DNS-Resolver-Mock
-PORTVERSION=	1.20200215
+PORTVERSION=	1.20220817
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mock a DNS Resolver object for testing
+WWW=		https://metacpan.org/release/Net-DNS-Resolver-Mock
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

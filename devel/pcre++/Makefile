@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.daemon.de/idisk/Apps/pcre++/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper class around the pcre library
+WWW=		https://www.daemon.de/PCRE
 
 LICENSE=	LGPL21
 

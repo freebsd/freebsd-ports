@@ -8,5 +8,3 @@ Ruby on Rails application (demo source code here). If you're looking for
 something that simplifies query generation at the model or controller layer,
 you're probably not looking for Ransack (or MetaSearch, for that matter). Try
 Squeel instead.
-
-WWW: https://github.com/activerecord-hackery/ransack

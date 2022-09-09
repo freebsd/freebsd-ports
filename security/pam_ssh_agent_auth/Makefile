@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
+WWW=		http://pamsshagentauth.sourceforge.net/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeverly

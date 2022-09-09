@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert MARC-8 encoded strings to UTF-8
+WWW=		https://metacpan.org/release/MARC-Charset
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

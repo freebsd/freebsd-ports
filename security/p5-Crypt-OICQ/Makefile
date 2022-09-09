@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cryptographic algorithm used by OICQ protocol
+WWW=		https://metacpan.org/release/Crypt-OICQ
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

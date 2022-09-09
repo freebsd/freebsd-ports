@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@jpmens.net
 COMMENT=	Subscribe to different MQTT brokers and topics simultaneously
+WWW=		https://github.com/jpmens/msoak
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

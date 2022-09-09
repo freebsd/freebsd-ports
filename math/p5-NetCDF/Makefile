@@ -8,6 +8,7 @@ DISTNAME=	netcdf-perl-${PORTVERSION}
 
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Perl5 module to read and write netCDF files
+WWW=		http://www.unidata.ucar.edu/packages/netcdf-perl/
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 

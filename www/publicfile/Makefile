@@ -6,6 +6,7 @@ MASTER_SITES=	http://cr.yp.to/publicfile/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, read-only, anonymous HTTP/FTP server
+WWW=		https://cr.yp.to/publicfile.html
 
 # Converted from LEGAL_TEXT
 LICENSE=	djb

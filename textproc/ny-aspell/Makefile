@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Nyanja dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	ny
 

@@ -7,5 +7,3 @@ This is multicore.
 
  An Octave-forge package providing functions for
  parallel processing on multiple cores.
-
-WWW: http://octave.sourceforge.net/

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia python
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Subtitle editor
+WWW=		https://otsaloma.io/gaupol/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

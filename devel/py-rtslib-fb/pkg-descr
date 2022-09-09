@@ -1,4 +1,2 @@
 rtslib-fb is an object-based Python library for configuring the LIO generic SCSI
 target, present in 3.x Linux kernel versions.
-
-WWW: https://github.com/open-iscsi/rtslib-fb

@@ -14,5 +14,3 @@ compiler-independent performance (matrix multiplications, matrix transpose/copy,
 sparse functionality, and small convolutions). LIBXSMM is suitable for "build
 once and deploy everywhere" i.e., no special target flags are needed to exploit
 the available performance.
-
-WWW: https://github.com/hfp/libxsmm

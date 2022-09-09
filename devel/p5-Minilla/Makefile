@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oklaspec@gmail.com
 COMMENT=	CPAN module authoring tool
+WWW=		https://metacpan.org/release/Minilla
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

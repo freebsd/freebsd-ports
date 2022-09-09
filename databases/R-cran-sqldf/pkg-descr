@@ -6,5 +6,3 @@ heuristic to determine which class to assign to each column of the returned
 data frame. The sqldf() or read.csv.sql() functions can also be used to read
 filtered files into R even if the original files are larger than R itself can
 handle. 'RSQLite', 'RH2', 'RMySQL' and 'RPostgreSQL' backends are supported.
-
-WWW: https://cran.r-project.org/web/packages/sqldf/

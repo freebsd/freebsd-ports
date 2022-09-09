@@ -8,6 +8,7 @@ MASTER_SITES=	http://fossies.org/unix/privat/ \
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	General purpose TCP/IP relay
+WWW=		http://quozl.us.netrek.org/tcpxd/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

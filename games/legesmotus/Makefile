@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Team-based, networked, 2D shooter set in zero-gravity
+WWW=		http://legesmotus.cs.brown.edu/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual  # not GPLv2+

@@ -8,6 +8,7 @@ DISTNAME=	dmj${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Dungeon Master Java is a remake of the classic Dungeon Master by FTL
+WWW=		http://homepage.mac.com/aberfield/dmj/
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 

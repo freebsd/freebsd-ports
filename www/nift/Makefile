@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
 COMMENT=	Cross-platform open source website generator
+WWW=		https://www.nift.cc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PXE daemon, set up a boot menu for netbooting PXE enabled clients
+WWW=		http://www.kano.org.uk/projects/pxe/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE

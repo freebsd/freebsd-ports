@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to generate bollocks straight from middle management
+WWW=		https://metacpan.org/release/Dev-Bollocks
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-String>=0:math/p5-Math-String

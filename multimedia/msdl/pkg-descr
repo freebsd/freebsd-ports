@@ -7,5 +7,3 @@ Currently it supports following protocols.
 * real-rtsp (Real Time Streaming Protocol / Real/helix)
 * wms-rtsp  (Real Time Streaming Protocol / WMServer)
 * ftp       (File Transfer Protocol)
-
-WWW: http://msdl.sourceforge.net/

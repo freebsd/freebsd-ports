@@ -5,6 +5,7 @@ CATEGORIES=	devel python
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	C-Vise is a super-parallel Python port of the C-Reduce
+WWW=		https://github.com/marxin/cvise
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

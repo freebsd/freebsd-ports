@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python framework for seismological observatories
+WWW=		https://www.obspy.org/
 
 LICENSE=	LGPL3
 

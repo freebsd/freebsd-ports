@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Support for creating state machines for attributes on any Ruby class
+WWW=		https://www.pluginaweek.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real People TTS for StarDict
+WWW=		http://www.stardict.org
 
 NO_BUILD=	yes
 USES=		tar:bzip2

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
+WWW=		https://www.modwsgi.org/
 
 LICENSE=	APACHE20
 

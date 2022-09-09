@@ -14,5 +14,3 @@ tagging for all the files, cda is used for CDDB lookups. To label the MP3
 files with ID3 tags, id3ed, id3tag, id3tool, or mp3info, or the built-in
 capabilities of some encoders (lame, notlame) are used. Ogg-Vorbis files can
 be labelled with oggenc.
-
-WWW: http://userpage.fu-berlin.de/~mbayer/tools/dekagen.html

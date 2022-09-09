@@ -3,5 +3,3 @@ portable graymap (PGM), and portable pixmap (PPM) files. These image
 formats are only the barest step up from raw data, and have a very
 simple format which is the key to be "portable". Writing out images in
 these formats is very easy.
-
-WWW: https://metacpan.org/release/Image-PBMlib

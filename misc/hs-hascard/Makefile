@@ -4,6 +4,7 @@ CATEGORIES=	misc haskell
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimal command line utility for reviewing notes
+WWW=		https://github.com/Yvee1/hascard
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

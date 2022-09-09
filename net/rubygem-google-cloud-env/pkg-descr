@@ -1,4 +1,2 @@
 This library provides information on the application hosting environment for
 apps running on Google Cloud Platform.
-
-WWW: https://github.com/googleapis/ruby-cloud-env

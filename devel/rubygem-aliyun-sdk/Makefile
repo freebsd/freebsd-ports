@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby program to facilitate accessing Aliyun Object Storage Service
+WWW=		https://github.com/aliyun/aliyun-oss-ruby-sdk
 
 LICENSE=	MIT
 

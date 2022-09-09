@@ -1,5 +1,3 @@
 Python tool and library to interact with ansible directly, or as an
 importable python module, to support integration and embedding into
 other systems.
-
-WWW: https://ansible-runner.readthedocs.io/

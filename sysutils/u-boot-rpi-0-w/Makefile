@@ -2,6 +2,8 @@ MASTERDIR=	${.CURDIR}/../u-boot-master
 
 PATCHFILES+=	939129/raw
 
+WWW=		https://www.denx.de/wiki/U-Boot
+
 MODEL=		rpi-0-w
 BOARD_CONFIG=	rpi_0_w_defconfig
 FAMILY=		rpi

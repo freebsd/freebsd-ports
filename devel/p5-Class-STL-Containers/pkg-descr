@@ -3,5 +3,3 @@ application development. It consists of a number of base classes that are
 similar to the C++/STL framework, plus a number of helper classes which
 provide the glue to transparently generate common functions, and will
 enable you to put your Perl application together very quickly.
-
-WWW: https://metacpan.org/release/Class-STL-Containers

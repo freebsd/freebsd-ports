@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Take snapshots from Subversion activity
+WWW=		https://metacpan.org/release/SVN-Notify-Snapshot
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

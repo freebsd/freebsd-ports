@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for AT&T Graphviz
+WWW=		https://metacpan.org/release/GraphViz2
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

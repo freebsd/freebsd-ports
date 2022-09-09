@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Powerful and Lightweight Python Tree Data Structure
+WWW=		https://github.com/c0fec0de/anytree
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Microbenchmark support library
+WWW=		https://github.com/google/benchmark
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

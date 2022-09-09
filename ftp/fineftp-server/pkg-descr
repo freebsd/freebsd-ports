@@ -11,5 +11,3 @@ Features:
 * User authentication (and anonymous user without authentication)
 * Individual local home path for each user
 * Access control on a per-user-basis
-
-WWW: https://github.com/continental/fineftp-server

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to measure size of Perl OPs and SVs
+WWW=		https://metacpan.org/release/B-Size2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

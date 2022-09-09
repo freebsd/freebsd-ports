@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Web-based News Reader
+WWW=		http://pnews.sourceforge.net/
 
 LICENSE=	GPLv2+
 

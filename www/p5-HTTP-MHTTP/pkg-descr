@@ -10,5 +10,3 @@ enables negotiation of TLS, but does not validate the certificates.
 
 A way faster http access library that uses C extension based on mhttp to
 do the calls.
-
-WWW: https://metacpan.org/release/HTTP-MHTTP

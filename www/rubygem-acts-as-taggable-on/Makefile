@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tag a single model on several contexts
+WWW=		https://rubygems.org/gems/acts-as-taggable-on
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

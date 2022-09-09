@@ -13,5 +13,3 @@ This library provides a modular implementation of XML-RPC for C and C++.
    - Extensive test suites to help verify correct behavior and correct
      error handling.
    - Passes the official XML-RPC validator1 test suite.
-
-WWW: http://xmlrpc-c.sourceforge.net/

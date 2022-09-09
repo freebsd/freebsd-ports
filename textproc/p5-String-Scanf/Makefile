@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Emulates the sscanf() of the C stdio library
+WWW=		https://metacpan.org/release/String-Scanf
 
 USES=		perl5
 USE_PERL5=	configure

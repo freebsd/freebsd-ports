@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Generic Transparent Proxies
+WWW=		https://pypi.org/project/zope.proxy/
 
 LICENSE=	ZPL21
 

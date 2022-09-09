@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for patching LDAP directories using LDIF files
+WWW=		https://launchpad.net/ldapdiff
 
 LICENSE=	GPLv3+
 

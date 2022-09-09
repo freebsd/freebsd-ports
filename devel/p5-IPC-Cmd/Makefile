@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Finding and running system commands made easy
+WWW=		https://metacpan.org/release/IPC-Cmd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

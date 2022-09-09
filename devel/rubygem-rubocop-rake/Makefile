@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RuboCop plugin for Rake
+WWW=		https://github.com/rubocop/rubocop-rake
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

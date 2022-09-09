@@ -5,6 +5,7 @@ MASTER_SITES=	http://freeshell.de/~mk/download/
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Changes variable=value pairs in sysctl.conf, or adds them
+WWW=		https://freeshell.de/~mk/projects/dsbwrtsysctl.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

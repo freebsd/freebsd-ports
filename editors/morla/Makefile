@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.morlardf.net/src/ \
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	RDF editor
+WWW=		http://www.morlardf.net/
 
 LIB_DEPENDS=	libnxml.so:textproc/libnxml \
 		librdf.so:textproc/redland \

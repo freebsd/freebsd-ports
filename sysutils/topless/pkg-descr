@@ -4,5 +4,3 @@ TOPLESS reads various command output, displays it on the whole screen
 TOPLESS can be used with almost every sort of command,
 but is particularly useful when used with the command
 to monitor the system, such as "ps", "netstat" or "fstat".
-
-WWW: https://people.freebsd.org/~daichi/

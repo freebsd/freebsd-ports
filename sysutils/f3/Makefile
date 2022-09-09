@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Fight Flash Fraud or Fight Fake Flash test tool
+WWW=		https://oss.digirati.com.br/f3
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

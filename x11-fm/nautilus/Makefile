@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	File manager for the GNOME desktop
+WWW=		https://wiki.gnome.org/Apps/Nautilus
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

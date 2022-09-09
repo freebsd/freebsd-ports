@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool to prepare simulations of molecules, complex molecular assemblies
+WWW=		https://www.moltemplate.org/
 
 LICENSE=	MIT
 

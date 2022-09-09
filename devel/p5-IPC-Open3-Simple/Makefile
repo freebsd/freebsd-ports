@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple alternative to IPC::Open3
+WWW=		https://metacpan.org/release/IPC-Open3-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

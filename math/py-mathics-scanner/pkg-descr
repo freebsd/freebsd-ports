@@ -8,5 +8,4 @@ tokenizing and formatting Wolfram Language code. This library is also quite
 usefull if you need to work with Wolfram Language named character and convert
 them to various formats.
 
-WWW: https://mathics.org/
-WWW: https://github.com/Mathics3/mathics-scanner
+See also: https://github.com/Mathics3/mathics-scanner

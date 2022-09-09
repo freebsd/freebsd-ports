@@ -6,6 +6,7 @@ MASTER_SITES=	https://people.freebsd.org/~rse/dist/
 
 MAINTAINER=	gtodd@bellanet.org
 COMMENT=	Convenience frontend tools for the management of UFS2/ZFS snapshots
+WWW=		https://people.freebsd.org/~rse/snapshot/
 
 LICENSE=	BSD2CLAUSE
 

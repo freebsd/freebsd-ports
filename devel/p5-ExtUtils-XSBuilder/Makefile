@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Autogenerating XS-glue Code
+WWW=		https://metacpan.org/release/ExtUtils-XSBuilder
 
 RUN_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 BUILD_DEPENDS=	${RUN_DEPENDS}

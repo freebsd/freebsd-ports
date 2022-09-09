@@ -8,5 +8,3 @@ but the idea was good.  I started making a version that would work and
 would also be somewhat portable.  It currently compiles on Linux and FreeBSD,
 but requires `libstatgrab' (http://www.i-scream.org/libstatgrab/) to work on
 platforms that don't have /proc/meminfo (i.e., platforms that aren't Linux).
-
-WWW: http://www.rkeene.org/oss/swapd/

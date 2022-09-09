@@ -7,6 +7,7 @@ DISTNAME=	AppWrapper.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep application wrapper
+WWW=		http://appwrapper.sourceforge.net/
 
 LICENSE=	GPLv2
 

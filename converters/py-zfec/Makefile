@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Efficient, portable erasure coding tool
+WWW=		https://github.com/tahoe-lafs/zfec
 
 LICENSE=	GPLv2+ TGGPL
 LICENSE_COMB=	dual

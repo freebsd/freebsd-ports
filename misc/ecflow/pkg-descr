@@ -9,5 +9,3 @@ they change status and when they send events, using child commands embedded in
 your scripts. ecFlow stores the relationships between tasks, and is able to
 submit tasks dependant on triggers, such as when a given task changes its
 status, for example when it finishes.
-
-WWW: https://confluence.ecmwf.int/display/ECFLOW/ecflow+home

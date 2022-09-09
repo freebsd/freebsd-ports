@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	pg_
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Horizontally scale Postgresql using sharding and replication
+WWW=		https://www.citusdata.com/
 
 LICENSE=	AGPLv3
 

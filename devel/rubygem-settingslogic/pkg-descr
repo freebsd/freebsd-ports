@@ -1,4 +1,2 @@
 A simple and straightforward settings solution that uses an ERB enabled YAML
 file and a singleton design pattern.
-
-WWW: https://github.com/binarylogic/settingslogic

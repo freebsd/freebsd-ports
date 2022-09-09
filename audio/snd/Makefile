@@ -7,6 +7,7 @@ MASTER_SITES=	https://ccrma.stanford.edu/software/snd/ \
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Multitracking sound editor and utilities
+WWW=		https://ccrma.stanford.edu/software/snd/
 
 LICENSE=	snd
 LICENSE_NAME=	snd license

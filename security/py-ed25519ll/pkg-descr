@@ -7,5 +7,3 @@ platform, reusing its shared library across Python versions.
 This wrapper also contains a reasonably performat pure-Python
 fallback. Unlike the reference implementation, the Python implementation
 does not contain protection against timing attacks.
-
-WWW: https://bitbucket.org/dholth/ed25519ll

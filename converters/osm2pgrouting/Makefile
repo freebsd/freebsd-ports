@@ -6,6 +6,7 @@ CATEGORIES=	converters databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Import OSM data into pgRouting database
+WWW=		https://pgrouting.org/docs/tools/osm2pgrouting.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

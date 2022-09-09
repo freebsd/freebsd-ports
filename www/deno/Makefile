@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Secure JavaScript and TypeScript runtime
+WWW=		https://github.com/denoland
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Turbolinks JavaScript assets
+WWW=		https://github.com/turbolinks/turbolinks-source-gem
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

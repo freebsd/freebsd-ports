@@ -7,5 +7,3 @@ supports the following features:
    the remote host, and from the remote host to the local host.
  - Execute processes on the remote machine, both interactively and
    non-interactively ("batch").
-
-WWW: https://github.com/net-ssh/net-ssh

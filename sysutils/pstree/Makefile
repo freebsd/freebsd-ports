@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.thp.uni-due.de/pub/source/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	List processes as a tree
+WWW=		http://www.thp.uni-due.de/pstree/
 
 USES=		alias
 

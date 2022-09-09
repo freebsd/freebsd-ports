@@ -9,5 +9,3 @@ Features:
     - Allow/disallow anonymous access
     - Add collaborators with SSH public keys
     - Repos can be public or private
-
-WWW: https://github.com/charmbracelet/soft-serve

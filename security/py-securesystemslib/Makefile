@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cryptographic and general-purpose routines
+WWW=		https://github.com/secure-systems-lab/securesystemslib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

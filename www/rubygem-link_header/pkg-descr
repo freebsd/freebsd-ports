@@ -5,5 +5,3 @@ the equivalent HTML link elements.
 Converts conforming link headers to and from text, LinkHeader objects
 and corresponding (JSON-friendly) Array representations, also HTML
 link elements.
-
-WWW: https://github.com/asplake/link_header

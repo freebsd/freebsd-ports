@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple sequence-diagram image generator
+WWW=		http://blockdiag.com/en/seqdiag/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

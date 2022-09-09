@@ -1,12 +1,13 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.17.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Send logs, network, metrics and heartbeat to elasticsearch or logstash
+WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 

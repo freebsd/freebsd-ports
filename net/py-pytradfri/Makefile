@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Python IKEA Tradfri API controller
+WWW=		https://github.com/ggravlingen/pytradfri
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

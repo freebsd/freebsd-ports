@@ -18,5 +18,3 @@ various phones. Generally following features are supported:
     * Access to phone file system (note that some phones work also
       as USB storage devices and those are not accessible through
       Gammu).
-
-WWW: https://wammu.eu/gammu/

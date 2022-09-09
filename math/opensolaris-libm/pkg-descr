@@ -18,5 +18,3 @@ using GCC or clang and the GNU assembler.  All fixes introduced by Nexenta
 and Illumos projects have also been incorporated.  Missing x86_64 variants
 of lrint and lround have added.  The floating-point exception logging
 including address->symbol translation has also been implemented.
-
-WWW: https://docs.oracle.com/cd/E19422-01/819-3693/ncg_lib.html

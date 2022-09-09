@@ -16,5 +16,3 @@ to define their own custom elements.
 
 Basix is one of the components of FEniCSx, alongside UFL, FFCx, and
 DOLFINx.
-
-WWW: https://github.com/FEniCS/basix

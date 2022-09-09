@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Takes you to your most used directories, based on "frecency"
+WWW=		https://github.com/rupa/z/
 
 LICENSE=	WTFPL
 

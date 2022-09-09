@@ -8,5 +8,3 @@ streaming via the callback or connection interfaces. Some knowledge
 of 'libcurl' is recommended; for a more-user-friendly web client
 see the 'httr' package which builds on this package with HTTP
 specific tools and logic.
-
-WWW: https://cran.r-project.org/web/packages/curl/

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Integrate Cairo into the Glib type system
+WWW=		https://metacpan.org/release/Cairo-GObject
 
 LICENSE=	LGPL21
 

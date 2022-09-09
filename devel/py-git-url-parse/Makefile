@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Simple git URL parser
+WWW=		https://pypi.org/project/git-url-parse/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

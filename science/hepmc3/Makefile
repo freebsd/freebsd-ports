@@ -6,6 +6,7 @@ DISTNAME=	HepMC3-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Event record for High Energy Physics Monte Carlo generators/simulation
+WWW=		https://hepmc.web.cern.ch/hepmc/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

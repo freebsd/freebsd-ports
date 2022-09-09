@@ -1,5 +1,3 @@
 This module provides three utility subroutines that simplify the creation of
 "inside-out" classes. See Chapters 15 and 16 of "Perl Best Practices" (O'Reilly,
 2005) for details.
-
-WWW: https://metacpan.org/release/Class-Std-Utils

@@ -6,5 +6,3 @@ allowed to perform.
 
 This port installs a full toolchain that can be used to compile C and
 C++ software against CloudABI.
-
-WWW: https://github.com/NuxiNL/cloudlibc

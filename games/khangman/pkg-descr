@@ -6,5 +6,3 @@ random, the letters are hidden, and you must guess the word by trying
 one letter after another. Each time you guess a wrong letter, part of
 a picture of a hangman is drawn. You must guess the word before being
 hanged! You have 10 tries.
-
-WWW: http://edu.kde.org/khangman

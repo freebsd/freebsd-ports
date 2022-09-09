@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style, top-scrolling space shooter
+WWW=		http://chromium-bsu.sourceforge.net/
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/COPYING

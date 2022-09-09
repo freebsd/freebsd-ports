@@ -13,5 +13,3 @@ STARTTLS and STLS.
 sslclient requests a connection to either a IPv6 or IPv4 TCP sockets,
 and runs a program. The program environment includes the same variables
 as for sslserver.
-
-WWW: http://www.fehcom.de/ipnet/ucspi-ssl.html

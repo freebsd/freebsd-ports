@@ -4,5 +4,3 @@ application backend.
 
 The original purpose of this program was to defend searx, but it can be used to
 guard any web application.
-
-WWW: https://github.com/asciimoo/filtron

@@ -8,5 +8,3 @@ Set of modules:
 * Pod::Checker - check pod documents for syntax errors
 * Pod::ParseUtils - helpers for POD parsing and conversion
 * Pod::Find - find POD documents in directory trees
-
-WWW: https://metacpan.org/release/Pod-Parser

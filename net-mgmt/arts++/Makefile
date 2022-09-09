@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.caida.org/tools/utilities/arts/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network data storage and analysis library from CAIDA
+WWW=		http://www.caida.org/tools/utilities/arts/
 
 LICENSE=	LGPL21
 

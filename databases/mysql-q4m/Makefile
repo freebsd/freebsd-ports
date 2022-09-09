@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message queue that works as a pluggable storage engine of MySQL
+WWW=		http://q4m.github.com/
 
 FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:fetch
 BUILD_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build

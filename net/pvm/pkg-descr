@@ -8,5 +8,3 @@ of any number of separate processes, or components, written in a mixture
 of C, C++, and Fortran.  The system is portable to a wide variety of
 architectures, including workstations, multiprocessors, supercomputers,
 and PCs.
-
-WWW: http://www.csm.ornl.gov/pvm/

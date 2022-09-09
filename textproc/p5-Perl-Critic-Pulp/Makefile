@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of add-on policies for Perl::Critic
+WWW=		https://metacpan.org/release/Perl-Critic-Pulp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

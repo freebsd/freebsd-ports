@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The State Machine Compiler
+WWW=		http://smc.sourceforge.net/
 
 USE_JAVA=	yes
 NO_BUILD=	yes

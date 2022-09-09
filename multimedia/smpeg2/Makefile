@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.libsdl.org/projects/smpeg/release/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support
+WWW=		https://icculus.org/smpeg/
 
 LICENSE=	MIT LGPL20+
 LICENSE_COMB=	multi

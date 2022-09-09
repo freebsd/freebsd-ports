@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical dungeon crawling game
+WWW=		http://www.zincland.com/powder/
 
 LICENSE=	POWDER
 LICENSE_NAME=	THE POWDER LICENSE

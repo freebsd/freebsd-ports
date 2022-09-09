@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to assign new names to Perl subroutines
+WWW=		https://metacpan.org/release/Sub-Name
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

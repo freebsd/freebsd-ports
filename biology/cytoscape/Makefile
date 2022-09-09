@@ -7,6 +7,7 @@ DISTFILES=	FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software to visualize molecular interaction networks, gene expression
+WWW=		https://www.cytoscape.org
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/api/LICENSE

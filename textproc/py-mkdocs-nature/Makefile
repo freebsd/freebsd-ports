@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	MkDocs theme, a clone of the "greenish" Sphinx theme of the same name
+WWW=		https://waylan.github.io/mkdocs-nature
 
 LICENSE=	BSD2CLAUSE
 

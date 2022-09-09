@@ -1,3 +1,4 @@
+@ -1,9 +0,0 @@
 --- examples/gpx/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
 +++ examples/gpx/CMakeLists.txt
 @@ -9,5 +9,5 @@ build_example(

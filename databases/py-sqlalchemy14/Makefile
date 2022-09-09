@@ -1,5 +1,5 @@
 PORTNAME=	sqlalchemy
-PORTVERSION=	1.4.39
+PORTVERSION=	1.4.40
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,6 +8,7 @@ DISTNAME=	SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python SQL toolkit and Object Relational Mapper 1.4.x
+WWW=		https://www.sqlalchemy.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

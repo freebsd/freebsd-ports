@@ -8,6 +8,7 @@ DIST_SUBDIR=	KDE/Qt/addons
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Additional Styles for Qt 5 and KDE
+WWW=		https://qt-project.org
 
 LICENSE=	LGPL21
 

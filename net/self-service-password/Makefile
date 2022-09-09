@@ -1,5 +1,5 @@
 PORTNAME=	self-service-password
-DISTVERSION=	1.4.5
+DISTVERSION=	1.5.0
 CATEGORIES=	net www
 MASTER_SITES=	http://ltb-project.org/archives/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -7,6 +7,7 @@ DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Set of PHP-scripts to change LDAP password over the web
+WWW=		https://ltb-project.org/documentation/self-service-password.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE

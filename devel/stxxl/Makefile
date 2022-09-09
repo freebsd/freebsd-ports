@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Standard Template Library for Extra Large Data Sets
+WWW=		http://stxxl.sourceforge.net/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

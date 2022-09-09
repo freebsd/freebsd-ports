@@ -9,6 +9,7 @@ PATCHFILES=	b282ed9482e335439ccc429d4cd1dba517ba0c4d.patch:-p1
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
+WWW=		http://www.leptonica.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/leptonica-license.txt

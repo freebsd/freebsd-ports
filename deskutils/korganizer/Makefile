@@ -7,7 +7,8 @@ COMMENT=	Calendar and scheduling Program
 
 LIB_DEPENDS=	libical.so:devel/libical
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl grantlee:5 \
+		kde:5 qt:5 tar:xz xorg
 USE_GL=		gl
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
@@ -24,6 +25,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		kdepim-runtime5_run
 USE_QT=		concurrent core dbus gui multimedia network phonon4 printsupport widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

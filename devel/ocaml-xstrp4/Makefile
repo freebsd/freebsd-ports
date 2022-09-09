@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml extension to expands brace expansions
+WWW=		https://www.ocaml-programming.de/packages/
 
 LICENSE=	MIT
 

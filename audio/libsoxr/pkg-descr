@@ -8,5 +8,3 @@ This library aims to give fast and high quality results  for any constant
 bandwidth, aliasing, and rejection level parameters are all configurable;
 alternatively,  simple  `preset'  configurations may be selected.      An
 experimental, variable-rate resampling mode of operation is also included.
-
-WWW: https://sourceforge.net/projects/soxr/

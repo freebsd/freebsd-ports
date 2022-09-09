@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Little language that compiles into JavaScript
+WWW=		https://github.com/jashkenas/coffeescript
 
 LICENSE=	MIT
 

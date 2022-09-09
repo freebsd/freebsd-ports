@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of tools for manipulating MS-DOS files
+WWW=		https://www.gnu.org/software/mtools/intro.html
 
 LICENSE=	GPLv3
 

@@ -7,6 +7,7 @@ DISTNAME=	CalDavZAP_${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	CalDAV web client implementation
+WWW=		https://www.inf-it.com/open-source/clients/caldavzap/
 
 LICENSE=	AGPLv3
 

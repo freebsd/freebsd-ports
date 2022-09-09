@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to submit songs to last.fm from MPD
+WWW=		https://metacpan.org/release/Music-Audioscrobbler-MPD
 
 BUILD_DEPENDS=	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
 		p5-Music-Audioscrobbler-Submit>=0.05:audio/p5-Music-Audioscrobbler-Submit

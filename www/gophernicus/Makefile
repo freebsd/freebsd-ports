@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern full-featured and secure Gopher daemon
+WWW=		https://gophernicus.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

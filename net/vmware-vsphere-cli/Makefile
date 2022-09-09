@@ -6,6 +6,7 @@ DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
 
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		VMware vSphere SDK for Perl with CLI tools
+WWW=		http://communities.vmware.com/community/vmtn/server/vsphere/automationtools/vsphere_cli
 
 # Converted from RESTRICTED
 LICENSE=	VMware

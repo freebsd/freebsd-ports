@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enhance unittest for testing asyncio libraries
+WWW=		https://github.com/Martiusweb/asynctest
 
 LICENSE=	APACHE20
 

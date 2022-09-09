@@ -8,5 +8,3 @@ computationally efficient, and unified accessibility calculation framework by
 linking tools for: 1) network data acquisition, validation, and processing; 2)
 computing an integrated pedestrian and transit weighted network graph; and 3)
 network analysis using Pandana.
-
-WWW: https://github.com/UDST/urbanaccess

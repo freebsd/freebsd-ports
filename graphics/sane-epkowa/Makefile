@@ -46,6 +46,7 @@ DISTNAME=	iscan_${PORTVERSION}-1
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The sane-epkowa driver for FreeBSD
+WWW=		http://avasys.jp/english/
 
 # use the following two lines for 2.15.0
 # MASTER_SITES=http://linux.avasys.jp/drivers/iscan/${PORTVERSION}/

@@ -5,5 +5,4 @@ used pattern and has a multitude of various usages. Some of the usages for this
 library include providing state & transition validation and
 running/scheduling/analyzing the execution of tasks.
 
-WWW: https://docs.openstack.org/automaton/latest/
-WWW: https://github.com/openstack/automaton
+See also: https://github.com/openstack/automaton

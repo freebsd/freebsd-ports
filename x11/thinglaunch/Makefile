@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Very fast launcher program for X
+WWW=		http://unix.freecode.com/projects/thinglaunch/
 
 LICENSE=	MIT
 

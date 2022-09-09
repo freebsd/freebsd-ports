@@ -1,22 +1,23 @@
 PORTNAME=	wagtail
-PORTVERSION=	3.0.1
+PORTVERSION=	4.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Django content management system
+WWW=		https://wagtail.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup449>=4.8<4.10:www/py-beautifulsoup449@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.1:www/py-django32@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-filter>=2.2<22:www/py-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.12:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.2:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-filter>=2.2<23:www/py-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=6.0<7.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-permissionedforms>=0.1<1.0:www/py-django-permissionedforms@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-taggit>=2.0<3.0:www/py-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-taggit>=2.0<4.0:www/py-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1<5.0:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5:www/py-draftjs-exporter@${PY_FLAVOR} \

@@ -10,5 +10,3 @@ instead of newline ("\n") as the record separator, ASV uses "\x1e" (ASCII Record
 Separator). There is currently no quoting or escaping mechanism provided.
 "\x1c", "\x1d", "\x1e", and "\x1f" characters in cell will be replaced by
 spaces.
-
-WWW: https://metacpan.org/release/Text-Table-ASV

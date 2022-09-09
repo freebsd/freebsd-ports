@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast XS implementation of MaxMind DB reader
+WWW=		https://metacpan.org/release/MaxMind-DB-Reader-XS
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

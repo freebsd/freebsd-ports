@@ -3,5 +3,3 @@ tool is provided for most texture conversion needs, such as running
 manually or part of an asset conversion pipeline. The library may be
 used to integrate more advanced texture generation within other
 software.
-
-WWW: https://github.com/akb825/Cuttlefish

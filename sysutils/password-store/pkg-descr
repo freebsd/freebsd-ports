@@ -14,5 +14,3 @@ clipboard and tracking password changes using git.
 You can edit the password store using ordinary Unix shell commands alongside the
 pass command. There are no funky file formats or new paradigms to learn. There
 is bash completion so that you can simply hit tab to fill in names.
-
-WWW: https://www.passwordstore.org/

@@ -2,5 +2,3 @@ Syncmail is a CVS notification tool which can provide a diff for every
 change to a CVS repository, mailed to specified email addresses.
 This tool is useful for large communities to monitor activity,
 and is used for Python and many other active projects.
-
-WWW: https://sourceforge.net/projects/cvs-syncmail/

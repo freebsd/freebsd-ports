@@ -10,5 +10,3 @@ And so LWP::Online is intended to do as good a job as possible, without
 having to resort to asking any human questions (who may well get it
 wrong anyway), and limiting itself to a finite amount of programming
 work and a reasonable level of memory overhead to load the code.
-
-WWW: https://metacpan.org/release/LWP-Online

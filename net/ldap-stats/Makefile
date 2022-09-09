@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to generate OpenLDAP statistics reports
+WWW=		https://prefetch.net/code/index.html
 
 NO_ARCH=	yes
 NO_BUILD=	yes

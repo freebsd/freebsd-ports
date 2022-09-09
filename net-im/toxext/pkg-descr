@@ -6,5 +6,3 @@ network layer have to be very strong.
 
 An extension library with negotiation allows more experimentation with less risk
 resulting in more features for tox clients.
-
-WWW: https://github.com/toxext/toxext

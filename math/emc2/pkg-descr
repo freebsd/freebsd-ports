@@ -6,5 +6,3 @@ meshes composed of triangles or quadrilaterals can be regularized, rotated,
 and modified via the addition, removal, or moving of vertices.
 
 It is suggested that users also install the math/bamg port.
-
-WWW: https://www.ljll.math.upmc.fr/~hecht/

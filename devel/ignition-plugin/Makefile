@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for registering plugins and dynamically loading them
+WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

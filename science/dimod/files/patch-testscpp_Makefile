@@ -1,0 +1,18 @@
+--- testscpp/Makefile.orig	2022-08-16 14:45:27 UTC
++++ testscpp/Makefile
+@@ -13,12 +13,12 @@ coverage:
+ 	rm baseline.info test.info
+ 	lcov --remove coverage.info '/usr/*' --output-file coverage.info
+ 
+-tests: test_main.out
++tests: test_main
+ 	./test_main 
+ 
+ test_main: test_main.cpp
+-	g++ -std=c++11 -Wall -Werror -c test_main.cpp
+-	g++ -std=c++11 -Wall -Werror test_main.o tests/*.cpp -o test_main -I $(SRC)
++	g++ $(CXXFLAGS) `pkg-config --cflags catch2` -std=c++11 -Wall -c test_main.cpp
++	g++ $(CXXFLAGS) `pkg-config --cflags --libs catch2` -std=c++11 -Wall test_main.o tests/*.cpp -o test_main -I $(SRC)
+ 
+ catch2:
+ 	git submodule init

@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR=	. Attic
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	OS independent and secure pseudo-tty management
+WWW=		http://software.schmorp.de/pkg/libptytty.html
 
 LICENSE=	GPLv2
 

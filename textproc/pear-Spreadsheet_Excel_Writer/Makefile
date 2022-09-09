@@ -4,6 +4,7 @@ CATEGORIES=	textproc www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for writing Microsoft Excel files
+WWW=		https://pear.php.net/package/Spreadsheet_Excel_Writer
 
 LICENSE=	LGPL3
 

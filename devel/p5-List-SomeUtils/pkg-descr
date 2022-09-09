@@ -6,5 +6,3 @@ code. Using the functions from this module however should give slightly better
 performance as everything is implemented in C. The pure-Perl implementation of
 these functions only serves as a fallback in case the C portions of this module
 couldn't be compiled on this machine.
-
-WWW: https://metacpan.org/release/List-SomeUtils

@@ -5,5 +5,3 @@ provides the same functions as wcwidth and its behavior is compatible.
 
 On systems not conforming to POSIX.1-2001 and POSIX.1-2008, Markus Kuhn's
 implementation is used to provide the functionality.
-
-WWW: https://github.com/sebastinas/cwcwidth

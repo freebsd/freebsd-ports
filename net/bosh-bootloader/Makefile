@@ -1,10 +1,11 @@
 PORTNAME=	bosh-bootloader
 PORTVERSION=	7.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	CLI for standing up CloudFoundry or Concourse on an IAAS
+WWW=		https://github.com/cloudfoundry/bosh-bootloader
 
 LICENSE=	APACHE20
 

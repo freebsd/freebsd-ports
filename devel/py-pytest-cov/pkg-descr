@@ -4,5 +4,3 @@ subprocesses.
 
 All features offered by the coverage package should be available, either through
 pytest-cov or through coverage's config file.
-
-WWW: https://github.com/pytest-dev/pytest-cov

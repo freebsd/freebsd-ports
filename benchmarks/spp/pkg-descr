@@ -4,5 +4,3 @@ points without requiring precise time synchronisation between each
 point. SPP accurately estimates the RTT experienced by any application's
 traffic without needing modifications to the application itself
 or the routers along the path.
-
-WWW: https://bitbucket.org/caia-swin/spp

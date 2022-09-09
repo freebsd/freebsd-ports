@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Direct3D 12 to Vulkan translation
+WWW=		https://www.winehq.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of Faenza and Faience icons for the MATE desktop
+WWW=		https://mate-desktop.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

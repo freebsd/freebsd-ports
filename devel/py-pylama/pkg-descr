@@ -10,5 +10,3 @@ Code audit tool for Python and JavaScript. Pylama wraps these tools:
   module);
 - eradicate (c) Steven Myint;
 - Mypy (c) Jukka Lehtosalo and contributors;
-
-WWW: https://github.com/klen/pylama

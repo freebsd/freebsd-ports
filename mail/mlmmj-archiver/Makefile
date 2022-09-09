@@ -5,6 +5,7 @@ MASTER_SITES=	https://fossil.nours.eu/${PORTNAME}/tarball/?r=${DISTVERSION}&name
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple mailing archiver designed for mlmmj
+WWW=		https://fossil.nours.eu/mlmmj-archiver
 
 LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver

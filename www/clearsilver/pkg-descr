@@ -11,5 +11,3 @@ mix-and-match multiple programming languages with the same templates, even
 on the same page.  This allows you to optimize your website by writing
 C-modules to handle speed-sensitive sections, while leaving the majority of
 your site in easy to write script code.
-
-WWW: http://www.clearsilver.net/

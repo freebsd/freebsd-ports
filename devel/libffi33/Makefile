@@ -13,6 +13,7 @@ PATCHFILES+=	01a75ed76ea7e57f1b7a5c183e2b1e890e6aa0fd.diff:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign Function Interface (stripped down compat version)
+WWW=		https://sourceware.org/libffi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

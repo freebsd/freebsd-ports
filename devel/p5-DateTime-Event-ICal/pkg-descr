@@ -1,4 +1,2 @@
 This module provides convenience methods that let you easily create
 DateTime::Set objects for rfc2445 style recurrences.
-
-WWW: https://metacpan.org/release/DateTime-Event-ICal

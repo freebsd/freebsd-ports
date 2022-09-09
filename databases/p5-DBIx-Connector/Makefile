@@ -1,15 +1,19 @@
 PORTNAME=	DBIx-Connector
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fast, safe DBI connection management
+WWW=		https://metacpan.org/release/DBIx-Connector
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=1.605:databases/p5-DBI
-TEST_DEPENDS=	p5-Test-MockModule>=0:devel/p5-Test-MockModule
 
 USES=		perl5
 USE_PERL5=	configure

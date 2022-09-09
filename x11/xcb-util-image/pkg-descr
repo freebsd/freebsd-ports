@@ -6,5 +6,3 @@ libraries also provide client-side code which is not strictly part of
 the X protocol but which have traditionally been provided by Xlib.
 
 Image module is a port o Xlib's XImage and XShmImage functions.
-
-WWW: https://xcb.freedesktop.org/

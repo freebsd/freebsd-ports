@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional embeddable lisp with C interop, & performant data types
+WWW=		https://janet-lang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

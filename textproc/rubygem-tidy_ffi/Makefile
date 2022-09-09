@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tidy library interface via FFI
+WWW=		https://github.com/libc/tidy_ffi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

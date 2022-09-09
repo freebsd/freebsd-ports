@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S!.!_!g}-${REVISION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Java/UML Object-Oriented Design Tool
+WWW=		https://astah.net/editions/community
 
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement

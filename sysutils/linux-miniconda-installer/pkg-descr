@@ -13,5 +13,3 @@ require a complete Linux environment for full functionality.
 Typical Conda users do not know how to configure this environment on FreeBSD.
 Miniconda-installer ensures a proper environment for installing and using
 Miniconda and the packages it provides.
-
-WWW: https://github.com/outpaddling/miniconda-installer

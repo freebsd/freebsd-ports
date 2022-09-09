@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl compiler's C backend #'
+WWW=		https://metacpan.org/release/B-C
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

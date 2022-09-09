@@ -9,6 +9,7 @@ DISTNAME=	IPAfont${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese fonts, UIGothic
+WWW=		https://moji.or.jp/ipafont/
 
 LICENSE=	IPAFONTLICOLD
 LICENSE_NAME=	IPA Font License Agreement (old)

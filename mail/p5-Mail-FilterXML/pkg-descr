@@ -1,4 +1,2 @@
 Mail::FilterXML is a module that builds upon Mail::Audit, in such a
 manner that filter rules can be written in XML form.
-
-WWW: https://metacpan.org/release/Mail-FilterXML

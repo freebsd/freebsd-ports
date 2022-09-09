@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Yet Another Configuration System
+WWW=		https://github.com/rbgirshick/yacs
 
 LICENSE=	APACHE20
 

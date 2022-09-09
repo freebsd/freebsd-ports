@@ -5,5 +5,4 @@ finished document, we plan to clarify and enhance the protocol definition as we
 gain more experience with large dictionary database servers. By default, the
 DICT protocol uses TCP port 2628.
 
-WWW: http://www.dict.org/
-WWW: https://sourceforge.net/projects/dict/
+See also: https://sourceforge.net/projects/dict/

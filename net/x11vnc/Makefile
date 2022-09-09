@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VNC server for use with real X displays
+WWW=		https://github.com/LibVNC/x11vnc
 
 LICENSE=	GPLv2
 

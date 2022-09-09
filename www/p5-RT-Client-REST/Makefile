@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl modules designed to talk to RT installation using REST protocol
+WWW=		https://metacpan.org/release/RT-Client-REST
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

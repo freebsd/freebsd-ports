@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Bigelow Holmes Lucida TypeWriter 75dpi font
+WWW=		https://www.x.org/
 
 USES=		xorg xorg-cat:font
 USE_XORG=	fontutil

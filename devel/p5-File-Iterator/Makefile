@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for iterating across files in a directory tree
+WWW=		https://metacpan.org/release/File-Iterator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

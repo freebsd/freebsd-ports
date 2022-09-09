@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 implementation of compression algorithms
+WWW=		https://github.com/awslabs/aws-c-compression
 
 LICENSE=	APACHE20
 

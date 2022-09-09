@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Another CSS minifier
+WWW=		https://metacpan.org/release/CSS-Packer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

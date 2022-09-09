@@ -12,5 +12,3 @@ scalable data access, which can serve natively any kind of data, organized as a
 hierarchical filesystem-like namespace, based on the concept of directory. As a
 general rule, particular emphasis has been put in the quality of the core
 software parts.
-
-WWW: http://xrootd.org/

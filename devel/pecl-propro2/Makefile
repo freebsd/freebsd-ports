@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Facility to manage extension object properties
+WWW=		https://pecl.php.net/package/propro
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

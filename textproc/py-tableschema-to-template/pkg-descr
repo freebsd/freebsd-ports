@@ -5,5 +5,3 @@ Features:
 - Enum constraints transformed into pull-downs.
 - Field descriptions transformed into comments in header.
 - Float, integer, and boolean type validation, with range checks on numbers.
-
-WWW: https://github.com/hubmapconsortium/tableschema-to-template

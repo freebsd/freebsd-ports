@@ -1,11 +1,12 @@
 PORTNAME=	libtmux
-PORTVERSION=	0.11.0
+PORTVERSION=	0.14.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Library for interfacing with tmux
+COMMENT=	Typed scripting library / ORM / API wrapper for tmux
+WWW=		https://github.com/tmux-python/libtmux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

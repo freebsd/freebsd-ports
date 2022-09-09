@@ -5,5 +5,3 @@ focus on biological data. The library is licensed under the
 
 This port only contains the header library and API documentation.
 The apps are installed by biology/seqan-apps.
-
-WWW: https://www.seqan.de/

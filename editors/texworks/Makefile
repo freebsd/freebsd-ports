@@ -6,6 +6,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple TeX front-end program
+WWW=		https://www.tug.org/texworks/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

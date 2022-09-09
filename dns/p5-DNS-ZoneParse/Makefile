@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and manipulate DNS Zone Files
+WWW=		https://metacpan.org/release/DNS-ZoneParse
 
 USES=		perl5
 USE_PERL5=	configure

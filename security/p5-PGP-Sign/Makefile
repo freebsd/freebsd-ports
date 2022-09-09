@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Create detached PGP signatures for data
+WWW=		https://metacpan.org/release/PGP-Sign
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

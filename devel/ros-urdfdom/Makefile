@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Unified Robot Description Format (URDF) parsers
+WWW=		https://wiki.ros.org/urdf
 
 LICENSE=	BSD3CLAUSE
 

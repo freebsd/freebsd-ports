@@ -5,5 +5,3 @@ library". It supports Python 3.6+ and PyPy3 7.2+.
 cryptography includes both high level recipes and low level interfaces to common
 cryptographic algorithms such as symmetric ciphers, message digests, and key
 derivation functions.
-
-WWW: https://github.com/pyca/cryptography

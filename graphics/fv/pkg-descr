@@ -10,5 +10,3 @@ gzip or bzip2. The file may also change after fv is invoked, except
 its header part. fv checks whether the file changes and updates the
 display if necessary. This feature is useful for checking intermediate
 outputs from renderers.
-
-WWW: http://www.eaflux.com/fv/

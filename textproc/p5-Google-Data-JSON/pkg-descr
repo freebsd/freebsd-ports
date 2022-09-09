@@ -1,5 +1,3 @@
 Google::Data::JSON provides several methods to convert an XML feed into a
 JSON feed, and vice versa. The JSON format is defined in Google Data APIs,
 http://code.google.com/apis/gdata/json.html .
-
-WWW: https://metacpan.org/release/Google-Data-JSON

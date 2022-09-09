@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Securely execute Web CGI scripts
+WWW=		https://cgiwrap.unixtools.org/
 
 LICENSE=	GPLv2
 

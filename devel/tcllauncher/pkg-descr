@@ -7,5 +7,3 @@ a single executable that contains all the code and support files within a
 built-in virtual filesystem wrapped inside the executable. Tcllauncher keeps
 the support files distinct, typically in a subdirectory of /usr/local/lib
 that's named after the application.
-
-WWW: https://github.com/flightaware/tcllauncher/

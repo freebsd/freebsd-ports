@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	munin-
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Contributed plugins and other for munin
+WWW=		https://github.com/munin-monitoring/contrib
 
 LICENSE=	GPLv2
 

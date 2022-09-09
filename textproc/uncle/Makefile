@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert UCL config file to desired format
+WWW=		https://github.com/MagikBSD/uncle
 
 LICENSE=	BSD2CLAUSE
 

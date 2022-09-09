@@ -7,6 +7,7 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Window Maker raster graphics library
+WWW=		https://www.windowmaker.org/
 
 LICENSE=	LGPL21
 

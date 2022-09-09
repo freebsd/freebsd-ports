@@ -7,6 +7,7 @@ PATCHFILES+=	d25278f710a4.patch:-p1 # https://github.com/Alexays/Waybar/pull/156
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
+WWW=		https://github.com/Alexays/Waybar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

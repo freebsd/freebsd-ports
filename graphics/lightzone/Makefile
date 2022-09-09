@@ -10,6 +10,7 @@ PATCHFILES=	376ec67ddfb1.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Professional-level digital darkroom and photo editor
+WWW=		http://lightzoneproject.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../COPYING

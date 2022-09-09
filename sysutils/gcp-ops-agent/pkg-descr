@@ -4,5 +4,3 @@ agent, the Ops Agent uses Fluent Bit for logs, which supports
 high-throughput logging, and the OpenTelemetry Collector for metrics.
 You can configure the Ops Agent to support parsing of log files from
 third-party applications.
-
-WWW: https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent

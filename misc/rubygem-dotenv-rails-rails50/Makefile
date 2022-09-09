@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Autoload dotenv in Rails
+WWW=		https://github.com/bkeepers/dotenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

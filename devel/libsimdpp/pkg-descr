@@ -4,5 +4,3 @@ The library presents a single interface over several instruction sets in
 such a way that the same source code may be compiled for different instruction
 sets. The resulting object files then may be hooked into internal dynamic
 dispatch mechanism.
-
-WWW: https://github.com/p12tic/libsimdpp

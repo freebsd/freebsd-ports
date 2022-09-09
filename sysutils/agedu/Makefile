@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/agedu/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unix utility for tracking down wasted disk space
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/agedu/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

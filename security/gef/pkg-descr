@@ -17,5 +17,3 @@ Some of GEF features include:
   GDB-supported architecture such as x86-32/64, ARMv5/6/7, AARCH64, SPARC,
   MIPS, PowerPC, etc.
 - Suited for real-life apps debugging, exploit development, just as much as CTF.
-
-WWW: https://gef.rtfd.io

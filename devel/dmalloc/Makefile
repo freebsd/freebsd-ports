@@ -5,6 +5,7 @@ MASTER_SITES=	http://dmalloc.com/releases/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Portable debug memory allocation library
+WWW=		https://dmalloc.com/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

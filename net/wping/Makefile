@@ -6,6 +6,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based graphical ping log
+WWW=		http://www.x-router.com/
 
 RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD
 

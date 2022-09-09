@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for liblo Lightweight OSC library
+WWW=		https://metacpan.org/release/Net-LibLO
 
 LIB_DEPENDS=	liblo.so:audio/liblo
 

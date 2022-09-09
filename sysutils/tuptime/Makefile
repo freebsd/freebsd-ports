@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
 COMMENT=	Historical and statistical system running time report tool
+WWW=		https://github.com/rfrail3/tuptime
 
 LICENSE=	GPLv2
 

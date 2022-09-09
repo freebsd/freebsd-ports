@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Loads environment variables from .env
+WWW=		https://github.com/bkeepers/dotenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

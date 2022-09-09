@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tiny SVG fremebuffer abstraction library, written in C
+WWW=		https://www.netsurf-browser.org/projects/libsvgtiny/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

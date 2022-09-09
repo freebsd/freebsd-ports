@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	S3 Infrastructure for Regular and Irregular Time Series
+WWW=		https://cran.r-project.org/web/packages/zoo/
 
 LICENSE=	GPLv2+
 

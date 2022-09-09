@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert HTML documents to PDF
+WWW=		https://metacpan.org/release/PDF-FromHTML
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Graphics-ColorNames>=0:graphics/p5-Graphics-ColorNames \

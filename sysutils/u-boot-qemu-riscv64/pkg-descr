@@ -8,5 +8,3 @@ qemu-system-riscv64 -machine virt -m 2048m -smp 2 -nographic \
     -kernel /usr/local/share/u-boot/u-boot-qemu-riscv64/u-boot.bin \
     -drive file=/path/to/freebsd.img,format=raw,id=hd0 \
     -device virtio-blk-device,drive=hd0
-
-WWW: https://www.denx.de/wiki/U-Boot

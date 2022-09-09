@@ -11,5 +11,3 @@ changes take place.
 
 Use shell expansion features such as 192.168.0.{1..254} to quickly scan for
 unused IP addresses (if applicable).
-
-WWW: https://fraubsd.org/mping/

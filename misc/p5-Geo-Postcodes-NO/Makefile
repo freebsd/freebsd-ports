@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Norwegian postcodes with associated information
+WWW=		https://metacpan.org/release/Geo-Postcodes-NO
 
 BUILD_DEPENDS=	p5-Geo-Postcodes>=0.31:misc/p5-Geo-Postcodes
 RUN_DEPENDS=	p5-Geo-Postcodes>=0.31:misc/p5-Geo-Postcodes

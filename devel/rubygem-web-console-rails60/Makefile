@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails60
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Debugging tool for your Ruby on Rails applications
+WWW=		https://github.com/rails/web-console
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

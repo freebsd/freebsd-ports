@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Library for QML-based Graph Visualisation
+WWW=		https://cneben.github.io/QuickQanava/index.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/licence.txt

@@ -4,5 +4,3 @@ Features:
 - Asynchronous HTTP/2 client and server
 - Multiplexing streams of data with managed flow and priority control
 - Optional tickless health check
-
-WWW: https://github.com/decentfox/aioh2

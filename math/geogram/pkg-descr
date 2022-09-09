@@ -8,5 +8,3 @@ geometric predicates, intersection between a Voronoi diagram and a triangular or
 tetrahedral mesh embedded in n dimensions). The latter is used by FWD/WarpDrive,
 the first algorithm that computes semi-discrete Optimal Transport in 3d that
 scales up to 1 million Dirac masses (see compute_OTM in example programs).
-
-WWW: http://alice.loria.fr/software/geogram/doc/html/index.html

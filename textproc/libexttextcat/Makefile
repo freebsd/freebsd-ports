@@ -5,6 +5,7 @@ MASTER_SITES=	https://dev-www.libreoffice.org/src/libexttextcat/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Language guessing by N-Gram-Based Text Categorization
+WWW=		https://wiki.documentfoundation.org/Libexttextcat
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

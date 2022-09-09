@@ -6,5 +6,3 @@ been evaluated for its security. Do not use runj on a production
 system. Do not run workloads inside runj that rely on a secure
 configuration. This is a personal project, not backed by the
 author's employer.
-
-WWW: https://github.com/samuelkarp/runj

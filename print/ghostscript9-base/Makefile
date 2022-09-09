@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter, base part
+WWW=		https://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
 
 LICENSE=	GPLv3
 

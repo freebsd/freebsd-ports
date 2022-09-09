@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to a fingerprint in "bubble babble" format
+WWW=		https://metacpan.org/release/Digest-BubbleBabble
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

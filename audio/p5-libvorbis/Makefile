@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Ogg Vorbis streams
+WWW=		https://synthcode.com/code/vorbis
 
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 

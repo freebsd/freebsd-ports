@@ -1,10 +1,11 @@
 PORTNAME=	foot
-DISTVERSION=	1.13.0
+DISTVERSION=	1.13.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator
+WWW=		https://codeberg.org/dnkl/foot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

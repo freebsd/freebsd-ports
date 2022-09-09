@@ -5,9 +5,13 @@ CATEGORIES=	www converters
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Convert TTF font file to EOT web embeddable file
+WWW=		https://github.com/wget/ttf2eot
 
 LICENSE=	BSD2CLAUSE LGPL20
 LICENSE_COMB=	multi
+
+DEPRECATED=	Obsolete font format that's been superseded by OTF/TTF/WOFF/WOFF2
+EXPIRATION_DATE=2022-09-30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wget

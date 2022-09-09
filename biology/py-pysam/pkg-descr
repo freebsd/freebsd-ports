@@ -6,5 +6,3 @@ module supports compression and random access through indexing.
 This module provides a low-level wrapper around the htslib C-API as using
 cython and a high-level API for convenient access to the data within standard
 genomic file formats.
-
-WWW: https://github.com/pysam-developers/pysam

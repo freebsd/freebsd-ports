@@ -1,11 +1,12 @@
 PORTNAME=	aminal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Golang terminal emulator from scratch
+WWW=		https://github.com/liamg/aminal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

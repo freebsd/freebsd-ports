@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Stream JSON parser for Python
+WWW=		https://pypi.org/project/jsonslicer/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

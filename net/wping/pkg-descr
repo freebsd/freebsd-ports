@@ -2,5 +2,3 @@ wping is a Web-based graphical ping log. It logs ping response times to a
 user-defined list of hosts and produces a Web page that contains a current
 ping graph and a historic ping graph over a specified time period. Ping
 response times are averaged in order to give a smooth reading.
-
-WWW: http://www.x-router.com/

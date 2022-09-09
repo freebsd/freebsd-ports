@@ -1,4 +1,2 @@
 pyGLFW provides Python bindings for GLFW.  It is a ctypes wrapper
 which aims to be very close to the original GLFW API.
-
-WWW: https://github.com/FlorianRhiem/pyGLFW

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Perl extension that implements PayPal IPN v1.5
+WWW=		https://metacpan.org/release/Business-PayPal-IPN
 
 BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.56:security/p5-Crypt-SSLeay \
 		p5-libwww>=5.805:www/p5-libwww

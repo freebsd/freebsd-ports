@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	py
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool designed to enumerate subdomains on a target domain
+WWW=		https://github.com/guelfoweb/knock
 
 LICENSE=	GPLv2
 

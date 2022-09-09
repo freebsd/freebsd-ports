@@ -4,5 +4,3 @@ on top of the library.
 
 prompt_toolkit could be a replacement for readline, but it can be much more
 than that.
-
-WWW: https://github.com/prompt-toolkit/python-prompt-toolkit

@@ -9,5 +9,3 @@ Communications with the shell subprocess may be done via standard IPC (via
 a pipe), or may be done via the Perl Expect module (necessary if proper
 execution of the shell script requires the shell to be attached to a "real"
 terminal).
-
-WWW: https://metacpan.org/release/Shell-GetEnv

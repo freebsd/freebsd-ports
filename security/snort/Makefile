@@ -8,6 +8,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
+WWW=		https://www.snort.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

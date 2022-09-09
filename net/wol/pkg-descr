@@ -17,5 +17,3 @@ Features:
   - LevelOne FNC-0107TX
 - Wake up from file (same as /etc/ethers and an enhanced format)
 - Sleeping between two wake ups (measured in milliseconds)
-
-WWW: http://ahh.sourceforge.net/wol/

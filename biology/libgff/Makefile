@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	GFF/GTF parsing library based on GCLib
+WWW=		https://github.com/COMBINE-lab/libgff
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/BoostLicense.txt

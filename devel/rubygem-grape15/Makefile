@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	15
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for rapid API development with great conventions
+WWW=		https://github.com/ruby-grape/grape
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

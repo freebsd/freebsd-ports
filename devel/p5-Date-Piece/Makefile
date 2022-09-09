@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
+WWW=		https://metacpan.org/release/Date-Piece
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

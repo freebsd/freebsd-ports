@@ -10,6 +10,7 @@ PATCHFILES=	064c8024395a15024fd590bd90f55f918e15545f.patch:-p1 # backport of sym
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading, manipulating and writing genomic data sets
+WWW=		https://github.com/pysam-developers/pysam
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

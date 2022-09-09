@@ -11,6 +11,7 @@ DISTFILES=	scintilla${SCI_VER}.tgz:sci \
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, minimalist, extensible cross-platform text editor
+WWW=		https://orbitalquark.github.io/textadept/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,5 +10,3 @@ the default compiled in configuration of "pkgconf". For a more powerful, but
 complicated interface see PkgConfig::LibPkgConf::Client. In addition,
 PkgConfig::LibPkgConf::Util provides some useful utility functions that are also
 provided by "pkgconf".
-
-WWW: https://metacpan.org/release/PkgConfig-LibPkgConf

@@ -2,5 +2,3 @@ DataMapper is a Object Relational Mapper written in Ruby. The goal
 is to create an ORM which is fast, thread-safe and feature-rich.
 
 The core portion
-
-WWW: https://github.com/datamapper/dm-core

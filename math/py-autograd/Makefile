@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Efficiently computes derivatives of numpy code
+WWW=		https://github.com/HIPS/autograd
 
 LICENSE=	MIT
 

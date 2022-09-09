@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Module for easy domain name checking
+WWW=		https://metacpan.org/release/Net-DNS-Check
 
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 

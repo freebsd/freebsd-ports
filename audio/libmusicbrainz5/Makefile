@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	MusicBrainz client library for audio metadata lookup
+WWW=		https://musicbrainz.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

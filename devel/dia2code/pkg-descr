@@ -11,5 +11,3 @@ Dia is a program to make diagrams (ports/graphics/dia)
      diagram.
    - Support for JavaBeans(tm): will create automagically methods to access
      and modify each attribute.
-
-WWW: http://dia2code.sourceforge.net/

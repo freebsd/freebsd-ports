@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only library for SIMD intrinsics
+WWW=		https://github.com/simd-everywhere/simde
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

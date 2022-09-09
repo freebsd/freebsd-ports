@@ -5,6 +5,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code for calculating thermodynamic properties of materials
+WWW=		https://github.com/thermohub/thermofun
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

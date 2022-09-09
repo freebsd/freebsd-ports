@@ -5,6 +5,7 @@ CATEGORIES=		sysutils security
 
 MAINTAINER=		pen@lysator.liu.se
 COMMENT=		BerkeleyDB-based nsswitch backend for passwd & groups
+WWW=		https://github.com/ptrrkssn/nss_ndb
 
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

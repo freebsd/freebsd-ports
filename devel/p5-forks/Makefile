@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Drop-in replacement for Perl threads using fork()
+WWW=		https://metacpan.org/release/forks
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Utilities for running CloudABI programs
+WWW=		https://github.com/NuxiNL/cloudabi-utils
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

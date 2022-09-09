@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
+WWW=		https://sourceforge.net/projects/xineliboutput/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

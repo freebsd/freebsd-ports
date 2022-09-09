@@ -1,6 +1,7 @@
 PORTNAME=	husky-hpt
 
 COMMENT=	Husky FTN tosser
+WWW=		http://husky.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBIx::Class interface for Dancer2 applications
+WWW=		https://github.com/ironcamel/Dancer2-Plugin-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

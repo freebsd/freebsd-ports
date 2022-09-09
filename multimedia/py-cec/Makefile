@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for libcec
+WWW=		https://github.com/trainman419/python-cec
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

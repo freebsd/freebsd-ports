@@ -2,6 +2,7 @@ bin/ibus
 bin/ibus-daemon
 bin/ibus-setup
 etc/xdg/autostart/ibus.desktop
+etc/xdg/Xwayland-session.d/10-ibus-x11
 %%DCONF%%etc/dconf/db/ibus.d/00-upstream-settings
 %%DCONF%%man/man5/00-upstream-settings.5.gz
 %%DCONF%%@postunexec rm -f %D/etc/dconf/db/ibus
@@ -56,7 +57,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.524
+lib/libibus-1.0.so.5.0.527
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -278,6 +279,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/mr/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/or/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ibus10.mo

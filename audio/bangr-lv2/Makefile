@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-dimensional dynamicly distorted staggered multi-bandpass
+WWW=		https://github.com/sjaehn/BAngr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	crypto-${DVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
+WWW=		https://www.bouncycastle.org/
 
 # APACHE20 is used by pg/src/main/java/org/bouncycastle/apache/bzip2/*.
 LICENSE=	APACHE20 MIT

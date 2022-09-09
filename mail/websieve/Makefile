@@ -7,6 +7,7 @@ DISTNAME?=	${PORTNAME}-${SIEVEVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based Cyrus IMAP user admin client
+WWW=		https://sourceforge.net/projects/websieve/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL

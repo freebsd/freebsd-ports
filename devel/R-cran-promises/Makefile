@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Abstractions for Promise-Based Asynchronous Programming
+WWW=		https://cran.r-project.org/web/packages/promises/
 
 LICENSE=	MIT
 

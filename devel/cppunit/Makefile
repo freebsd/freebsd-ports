@@ -5,6 +5,7 @@ MASTER_SITES=	https://dev-www.libreoffice.org/src/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
+WWW=		https://freedesktop.org/wiki/Software/cppunit
 
 LICENSE=	LGPL21
 

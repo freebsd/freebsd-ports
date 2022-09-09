@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
+WWW=		https://sourceforge.net/projects/gscan2pdf/
 
 LICENSE=	GPLv3
 

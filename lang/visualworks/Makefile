@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		High performance Smalltalk environment
+WWW=		https://smalltalk.cincom.com/
 
 # Converted from RESTRICTED
 LICENSE=	VISUALWORKS

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Provider of IANA time zone data
+WWW=		https://github.com/python/tzdata
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

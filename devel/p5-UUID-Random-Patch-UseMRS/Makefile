@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make UUID::Random use Math::Random::Secure::rand()
+WWW=		https://metacpan.org/release/UUID-Random-Patch-UseMRS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

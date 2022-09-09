@@ -1,4 +1,2 @@
 Command line visualizer. Supports mpd, with experimental support for alsa and
 pulseaudio.
-
-WWW: https://github.com/dpayne/cli-visualizer

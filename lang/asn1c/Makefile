@@ -5,6 +5,7 @@ CATEGORIES=	lang converters security
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	Modern ASN.1 to C compiler
+WWW=		https://lionet.info/asn1c
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vlm

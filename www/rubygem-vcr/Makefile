@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Record test suite HTTP interactions and replay
+WWW=		https://github.com/vcr/vcr
 
 LICENSE=	HIPPOCRATIC-2.1 MIT
 LICENSE_COMB=	multi

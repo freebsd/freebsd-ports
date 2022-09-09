@@ -3,5 +3,3 @@ Moose type constraints.
 
 Subtypes will be checked before their parents, meaning that the order of
 the declaration does not matter.
-
-WWW: https://metacpan.org/release/MooseX-Types-VariantTable

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declare version conflicts for your dist
+WWW=		https://metacpan.org/release/Dist-CheckConflicts
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

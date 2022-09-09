@@ -19,5 +19,3 @@ a relatively small, high-quality lossy file that can be used all by itself,
 and a "correction" file that (when combined with the lossy file) provides
 full lossless restoration.  For some users this means never having to choose
 between lossless and lossy compression!
-
-WWW: http://www.wavpack.com/

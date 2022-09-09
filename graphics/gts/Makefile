@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	GNU Triangulated Surface Library
+WWW=		http://gts.sourceforge.net/
 
 LICENSE=	LGPL20
 

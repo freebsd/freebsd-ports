@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Form handler written in Moose
+WWW=		https://metacpan.org/release/HTML-FormHandler
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

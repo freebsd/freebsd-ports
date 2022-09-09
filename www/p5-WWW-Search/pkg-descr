@@ -7,5 +7,3 @@ and Lycos.
 
 Search results are limited and there is a pause between each request for results
 to avoid overloading either the client or the server.
-
-WWW: https://metacpan.org/release/WWW-Search

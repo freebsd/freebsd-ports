@@ -20,5 +20,3 @@ want to get a quick answers to questions like:
 - How many RHEL 6 variants (6.1, 6.2, 6.3...) do we use?
 - Who is running the oldest ones? In production?
 - Which projects are still using physical servers in which environment?
-
-WWW: https://github.com/Icinga/icingaweb2-module-cube

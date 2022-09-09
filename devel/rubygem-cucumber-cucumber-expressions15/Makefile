@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	15
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cucumber Expressions for Ruby
+WWW=		https://github.com/cucumber/cucumber-expressions/tree/main/ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

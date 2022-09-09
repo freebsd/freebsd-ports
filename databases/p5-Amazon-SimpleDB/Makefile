@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level perlish interface for working with Amazon SimpleDB service
+WWW=		https://metacpan.org/release/Amazon-SimpleDB
 
 LICENSE=	ART10
 

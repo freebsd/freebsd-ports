@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Finding and loading modules in a given namespace
+WWW=		https://metacpan.org/release/Module-Loader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

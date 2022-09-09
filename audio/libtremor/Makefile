@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/lib//}-${GIT_COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
+WWW=		https://xiph.org/vorbis/
 
 LICENSE=	BSD3CLAUSE
 

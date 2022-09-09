@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ctypes bindings for FUSE
+WWW=		https://pypi.org/project/fusepy/
 
 LICENSE=	ISCL
 

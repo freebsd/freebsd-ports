@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Heroku API
+WWW=		https://www.heroku.com
 
 LICENSE=	MIT
 

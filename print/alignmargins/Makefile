@@ -8,6 +8,7 @@ DISTFILES=	alignmargins align.ps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility script to generate custom margins in PPDs for CUPS
+WWW=		https://www.linuxprinting.org
 
 NO_BUILD=	yes
 USES=		perl5

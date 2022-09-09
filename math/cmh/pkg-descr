@@ -3,5 +3,3 @@ parameterise the CM points in the moduli space of 2-dimensional abelian
 varieties, i.e. Jacobians of hyperelliptic curves.
 
 This program is also able to compute theta constants at arbitrary precision.
-
-WWW: http://www.multiprecision.org/cmh/home.html

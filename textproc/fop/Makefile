@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
+WWW=		https://xmlgraphics.apache.org/fop/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

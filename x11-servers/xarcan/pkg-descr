@@ -6,5 +6,3 @@ window manager and so on, and use the X side as normal. Some Arcan
 features will be lost, particularly any customizations done to the
 keybindings - normal X controls for defining keyboard maps and
 overrides are needed.
-
-WWW: https://arcan-fe.com/

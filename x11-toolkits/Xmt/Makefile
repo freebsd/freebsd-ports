@@ -7,6 +7,7 @@ DISTNAME=	xmt400
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif Tools library
+WWW=		http://motiftools.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

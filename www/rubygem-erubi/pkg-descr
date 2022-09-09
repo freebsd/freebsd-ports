@@ -15,5 +15,3 @@ using the same basic algorithm, with the following differences:
 - Has an open development model (Erubis doesn't have a public source control
   repository or bug tracker)
 - Is not dead (Erubis hasn't been updated since 2011)
-
-WWW: https://github.com/jeremyevans/erubi

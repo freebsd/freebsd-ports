@@ -8,6 +8,7 @@ EXTRACT_ONLY=	STJr-SRB2-SRB2_release_${PORTVERSION}_GH0.tar.gz
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	3D Sonic the Hedgehog fangame
+WWW=		https://www.srb2.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

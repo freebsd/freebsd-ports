@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network trace anonymizer
+WWW=		https://www.tm.uka.de/software/pktanon/
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libxerces-c.so.3:textproc/xerces-c3

@@ -6,6 +6,7 @@ DISTNAME=	wildfly-${WILDFLY_VERSION}
 
 MAINTAINER=	reig.simeo@gmail.com
 COMMENT=	Replacement for JBoss Application Server
+WWW=		https://wildfly.org/
 
 LICENSE=	GPLv2
 

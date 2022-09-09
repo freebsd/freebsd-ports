@@ -15,5 +15,3 @@ In addition to the main components, there are also utilities for packaging and
 installing these components:
 
 - bin contains a shell script for (de)activating the package components.
-
-WWW: https://github.com/GoogleCloudPlatform/guest-oslogin

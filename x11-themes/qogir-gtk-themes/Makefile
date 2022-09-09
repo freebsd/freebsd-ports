@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Qogir is a flat Design theme for GTK
+WWW=		https://github.com/vinceliuice/Qogir-theme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

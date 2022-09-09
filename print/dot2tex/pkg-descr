@@ -5,6 +5,3 @@ Graphviz to a series of PSTricks or PGF/TikZ commands. This approach allows:
   - Typesetting labels with LaTeX, allowing mathematical notation.
   - Using native PSTricks and PGF/TikZ commands for drawing arrows (optional).
   - Using backend specific styles to customize the output
-
-
-WWW: https://github.com/kjellmf/dot2tex

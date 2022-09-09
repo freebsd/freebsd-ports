@@ -9,6 +9,7 @@ PATCHFILES=	db80ca605a952e6a8ccd42eba3fcc5b40fba5640.patch:-p1 # https://github.
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimalistic library manipulating 24-bit per pixel bitmap images
+WWW=		https://www.partow.net/programming/bitmap/index.html
 
 LICENSE=	MIT
 

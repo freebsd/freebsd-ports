@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Glib bindings for Libvirt virtualization API
+WWW=		https://www.libvirt.org
 
 LICENSE=	GPLv2
 
@@ -21,7 +22,7 @@ DOCS_MESON_ENABLED=	docs
 DOCS_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
 VALA_DESC=	Vala binding
 VALA_MESON_ENABLED=	vapi
-VALA_BUILD_DEPENDS=	valac:lang/vala
+VALA_USES=		vala:build
 
 MESON_ARGS+=	-Dintrospection=enabled
 USE_LDCONFIG=	yes

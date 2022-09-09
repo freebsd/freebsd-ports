@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python port of markdown-it
+WWW=		https://github.com/executablebooks/markdown-it-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

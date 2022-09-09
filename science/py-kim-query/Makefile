@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Helper routines for querying the OpenKIM repository
+WWW=		https://github.com/openkim/kim-query
 
 LICENSE=	CDDL
 

@@ -6,6 +6,7 @@ DISTNAME=	xblas
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra Precise Basic Linear Algebra Subroutines (BLAS)
+WWW=		https://www.netlib.org/xblas/
 
 LICENSE=	BSD3CLAUSE
 

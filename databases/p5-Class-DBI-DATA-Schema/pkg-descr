@@ -1,5 +1,3 @@
 This is an extension to Class::DBI which injects a method into your
 class to find and execute all SQL statements in the DATA section
 of the package.
-
-WWW: https://metacpan.org/release/Class-DBI-DATA-Schema

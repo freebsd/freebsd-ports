@@ -1,4 +1,2 @@
 FuzzyMatch finds a needle in a haystack based on string similarity and regular
 expression rules.
-
-WWW: https://github.com/seamusabshere/fuzzy_match

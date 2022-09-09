@@ -1,4 +1,2 @@
 mod_dnssd is an Apache HTTPD module which adds Zeroconf support via DNS-SD
 using Avahi.
-
-WWW: http://0pointer.de/lennart/projects/mod_dnssd/

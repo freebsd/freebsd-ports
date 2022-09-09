@@ -5,6 +5,7 @@ MASTER_SITES=	http://repo.hu/projects/${PORTNAME}/releases/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Flexible, modular two-dimensional CAD engine
+WWW=		http://www.repo.hu/projects/librnd/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

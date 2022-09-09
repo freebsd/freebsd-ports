@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse error messages from the Perl interpreter
+WWW=		https://github.com/PadreIDE/Parse-ErrorString-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	delgod@portaone.com
 COMMENT=	Simple http server class with SSL support
+WWW=		https://metacpan.org/release/HTTP-Daemon-SSL
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-libwww>=0:www/p5-libwww

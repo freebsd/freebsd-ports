@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Progressive Graphics Format (PGF) library
+WWW=		https://www.libpgf.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

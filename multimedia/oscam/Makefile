@@ -5,6 +5,7 @@ MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/ef7f844739120f6119d7197e7be9
 
 MAINTAINER=	franz@bett.ag
 COMMENT=	Softcam software to decrypt digital TV channels
+WWW=		https://www.streamboard.tv/oscam/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

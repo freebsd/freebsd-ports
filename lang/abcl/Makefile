@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Implementation of ANSI Common Lisp in Java
+WWW=		https://common-lisp.net/project/armedbear/
 
 BROKEN_armv6=		fails to build: build.xml: Java returned: 1
 BROKEN_armv7=		fails to build: build.xml: Java returned: 1

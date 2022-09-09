@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Making wrapper scripts for cron tasks
+WWW=		https://metacpan.org/release/App-RunCron
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

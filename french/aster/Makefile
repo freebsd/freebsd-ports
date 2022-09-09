@@ -5,6 +5,7 @@ CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
+WWW=		http://www.code-aster.org/
 
 LICENSE=	GPLv2
 

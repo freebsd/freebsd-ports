@@ -5,6 +5,7 @@ MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
 MAINTAINER=	beastieboy@beastieboy.net
 COMMENT=	Boot loader for the Linux operating system
+WWW=		https://www.syslinux.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

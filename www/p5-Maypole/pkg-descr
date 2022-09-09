@@ -2,5 +2,3 @@ Maypole is a Perl framework for MVC-oriented web applications,
 similar to Jakarta's Struts. Maypole is designed to minimize coding
 requirements for creating simple web interfaces to databases, while
 remaining flexible enough to support enterprise web applications.
-
-WWW: https://metacpan.org/release/Maypole

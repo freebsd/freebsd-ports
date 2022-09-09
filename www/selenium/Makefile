@@ -1,5 +1,5 @@
 PORTNAME=	selenium
-PORTVERSION=	4.1.3	
+PORTVERSION=	4.1.3
 PORTREVISION=	1
 CATEGORIES=	www devel java
 MASTER_SITES=	https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.1.0/
@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Selenium Standalone Server, allows browser testing
+WWW=		https://www.seleniumhq.org
 
 LICENSE=	APACHE20
 

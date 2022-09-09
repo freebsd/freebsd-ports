@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game
+WWW=		http://scourge.sourceforge.net/
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/config/scourge.cfg:games/scourge-data

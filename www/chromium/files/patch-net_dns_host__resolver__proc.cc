@@ -1,4 +1,4 @@
---- net/dns/host_resolver_proc.cc.orig	2022-03-25 21:59:56 UTC
+--- net/dns/host_resolver_proc.cc.orig	2022-08-31 12:19:35 UTC
 +++ net/dns/host_resolver_proc.cc
 @@ -19,10 +19,6 @@
  #include "net/dns/dns_util.h"
@@ -11,7 +11,7 @@
  namespace net {
  
  HostResolverProc* HostResolverProc::default_proc_ = nullptr;
-@@ -192,7 +188,7 @@ int SystemHostResolverCall(const std::string& host,
+@@ -193,7 +189,7 @@ int SystemHostResolverCall(const std::string& host,
                                                  base::BlockingType::WILL_BLOCK);
  
  #if BUILDFLAG(IS_POSIX) && \

@@ -3,5 +3,3 @@ result interface.  The main goal is to get as much version
 informations as possible about a module or module list with a simple
 call interface and an absolutely flexible result interface.
 Module::Versions handles *loaded* and *loadable* modules.
-
-WWW: https://metacpan.org/release/Module-Versions

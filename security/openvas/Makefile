@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open vulnerability assessment scanner
+WWW=		https://github.com/greenbone/openvas
 
 LICENSE=	GPLv2+
 

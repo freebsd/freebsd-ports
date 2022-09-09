@@ -5,5 +5,3 @@ daemon.
 Features:
 - Support for starting multiple OpenConnect services.
 - Support for running arbitrary commands for OTP-based authentication.
-
-WWW: https://github.com/0mp/openconnect-freebsd-daemon

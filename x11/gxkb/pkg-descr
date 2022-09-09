@@ -5,5 +5,3 @@ the active layout is shown in the system tray area.
 The applet is written in C and uses just the GTK+ library, not any other
 GNOME components, and can maintain separate per-window, per-application,
 or global layout states.
-
-WWW: https://zen-tools.github.io/gxkb/

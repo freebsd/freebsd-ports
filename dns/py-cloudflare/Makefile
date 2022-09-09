@@ -1,11 +1,12 @@
 PORTNAME=	cloudflare
-PORTVERSION=	2.8.15
+PORTVERSION=	2.9.12
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Wrapper for the Cloudflare v4 API
+WWW=		https://github.com/cloudflare/python-cloudflare
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

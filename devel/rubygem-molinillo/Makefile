@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides support for dependency resolution
+WWW=		https://github.com/CocoaPods/Molinillo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Console client for the BitTorrent client Transmission
+WWW=		https://github.com/tremc/tremc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

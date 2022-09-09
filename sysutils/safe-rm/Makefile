@@ -5,6 +5,7 @@ MASTER_SITES=	http://launchpad.net/safe-rm/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the rm command to prevent accidental deletions
+WWW=		https://launchpad.net/safe-rm
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

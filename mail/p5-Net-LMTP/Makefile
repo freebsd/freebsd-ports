@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Local Mail Transfer Protocol Client
+WWW=		https://metacpan.org/release/Net-LMTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

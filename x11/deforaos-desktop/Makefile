@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	deforaos-
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Deforaos distribution metaport
+WWW=		https://www.defora.org/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:x11/deforaos-keyboard \
 		${LOCALBASE}/bin/panel:x11/deforaos-panel \

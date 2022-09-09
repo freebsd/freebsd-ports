@@ -4,6 +4,7 @@ CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image
+WWW=		https://github.com/wkhtmltopdf/wkhtmltopdf
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

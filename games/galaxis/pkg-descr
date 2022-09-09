@@ -11,5 +11,3 @@ This is a UNIX-hosted, curses-based clone of the nifty little
 Macintosh freeware game Galaxis. It doesn't have the super-simple,
 point-and-click interface of the original, but compensates by
 automating away some of the game's simpler deductions.
-
-WWW: http://www.catb.org/~esr/galaxis/

@@ -4,5 +4,3 @@ features such as input completion and history and a powerful locals
 facility, and it even has a manual. Gforth employs traditional
 implementation techniques: its inner innerpreter is indirect or
 direct threaded.
-
-WWW: http://www.gnu.org/software/gforth/gforth.html

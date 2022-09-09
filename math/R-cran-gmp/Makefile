@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Multiple Precision Arithmetic
+WWW=		https://cran.r-project.org/web/packages/gmp/
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ DISTNAME=	tecoclinux${PORTVERSION}
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Powerful and compact editor with nongraphical user interface
+WWW=		https://almy.us/teco.html
 
 LICENSE=	BSD3CLAUSE
 

@@ -1,4 +1,2 @@
 MooseX::Types::Set::Object provides Moose type constraints
 (see Moose::Util::TypeConstraints, MooseX::Types).
-
-WWW: https://metacpan.org/release/MooseX-Types-Set-Object

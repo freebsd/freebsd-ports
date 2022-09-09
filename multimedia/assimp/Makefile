@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to import various 3D model formats in a uniform manner
+WWW=		https://www.assimp.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

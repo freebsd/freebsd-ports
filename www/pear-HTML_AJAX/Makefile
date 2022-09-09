@@ -4,6 +4,7 @@ CATEGORIES=	www devel pear
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	PHP and JavaScript AJAX library
+WWW=		https://pear.php.net/package/HTML_AJAX
 
 LICENSE=	LGPL21+
 

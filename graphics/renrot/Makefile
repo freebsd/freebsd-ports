@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/${PORTNAME}/
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Program to rename and rotate image files according to EXIF tags
+WWW=		https://puszcza.gnu.org.ua/projects/renrot/
 
 LICENSE=	ART20
 

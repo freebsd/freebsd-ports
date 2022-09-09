@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faraday adapter for NetHttpPersistent
+WWW=		https://github.com/lostisland/faraday-net_http_persistent
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

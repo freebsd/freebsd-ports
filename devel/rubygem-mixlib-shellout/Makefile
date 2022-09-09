@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nickdewing@gmail.com
 COMMENT=	Shell interface that also collects stdout and stderr
+WWW=		https://www.chef.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

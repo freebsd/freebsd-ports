@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Debug print command and other development tools
+WWW=		https://github.com/samuelcolvin/python-devtools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

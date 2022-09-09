@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	checo1705@secmail.pro
 COMMENT=	libuv bindings for lua
+WWW=		https://github.com/luvit/luv
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

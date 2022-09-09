@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover files and discs with damaged sectors
+WWW=		http://www.vanheusden.com/recoverdm/
 
 LICENSE=	AGPLv3
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI related functions
+WWW=		https://metacpan.org/release/Term-Choose-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

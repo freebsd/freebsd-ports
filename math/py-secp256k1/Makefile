@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	FFI bindings to libsecp256k1
+WWW=		https://github.com/rustyrussell/secp256k1-py
 
 LICENSE=	MIT
 

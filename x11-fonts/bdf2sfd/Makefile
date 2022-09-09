@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BDF to SFD converter
+WWW=		https://github.com/fcambus/bdf2sfd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -11,5 +11,3 @@ covering the following major areas:
  - path manipulation
  - UTC, universal time constants, english to numerical month and DotW
    conversion, and date field range constants
-
-WWW: https://github.com/marrow/util

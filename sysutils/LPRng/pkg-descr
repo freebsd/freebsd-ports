@@ -7,5 +7,3 @@ redirection of print queues; automatic job holding; highly verbose
 diagnostics; multiple printers serving a single queue; client programs
 do not need to run SUID root; greatly enhanced security checks; and a
 greatly improved permission and authorization mechanism.
-
-WWW: http://lprng.sourceforge.net/

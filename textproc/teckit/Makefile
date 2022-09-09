@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/silnrsi/${PORTNAME}/releases/download/v${DISTVE
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Toolkit for converting data between 8-bit legacy encodings and Unicode
+WWW=		https://scripts.sil.org/TECkit
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/license/LICENSING.txt

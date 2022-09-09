@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to handle 3D Vector Mathematics
+WWW=		https://metacpan.org/release/Math-VectorReal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

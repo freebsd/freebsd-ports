@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Overrides Rails' built in logger to send all logs to stdout
+WWW=		https://github.com/heroku/rails_stdout_logging/
 
 LICENSE=	MIT
 

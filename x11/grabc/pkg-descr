@@ -7,5 +7,3 @@ When this program is run, the mouse pointer is grabbed and changed to a cross
 hair and when the mouse is clicked, the color of the clicked pixel is written
 to stdout in hex prefixed with #. It will the R, G, B component also in the
 stderr.
-
-WWW: http://www.muquit.com/muquit/software/grabc/grabc.html

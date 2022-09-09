@@ -16,5 +16,3 @@ to work around these bugs when using such modules. On versions of Perl that
 require such a workaround, this module globally changes the behaviour of
 require, including use and the implicit require performed in Unicode regular
 expression matching, so that it no longer exhibits these bugs.
-
-WWW: https://metacpan.org/release/Lexical-SealRequireHints

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Scriptable screen reader
+WWW=		https://live.gnome.org/Orca
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

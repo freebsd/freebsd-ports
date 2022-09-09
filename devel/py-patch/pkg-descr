@@ -17,5 +17,3 @@ Things that don't work out of the box:
 - Directory tree operations
 - Version control specific properties
 - Non-unified diff formats
-
-WWW: https://github.com/techtonik/python-patch

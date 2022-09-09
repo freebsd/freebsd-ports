@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/olgeni
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Swank/SLIME support for Clojure
+WWW=		https://github.com/technomancy/swank-clojure
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	technomancy

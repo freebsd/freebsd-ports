@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	65
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disassembler for MOS 6502 and compatible CPUs
+WWW=		http://www.floodgap.com/retrotech/xa #dxa
 
 LICENSE=	GPLv2+
 

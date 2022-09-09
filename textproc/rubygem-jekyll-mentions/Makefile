@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	At-mention support for Jekyll sites
+WWW=		https://github.com/jekyll/jekyll-mentions
 
 LICENSE=	MIT
 

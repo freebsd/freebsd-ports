@@ -7,6 +7,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	All-in-one sequencer, drum machine, sampler, and more
+WWW=		https://lmms.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lillian.lynn.lemmer@gmail.com
 COMMENT=	Game engine for 2D top-down, tile-based action RPGs
+WWW=		http://hypatia-engine.github.io/
 
 LICENSE=	MIT
 

@@ -12,5 +12,3 @@ stack for the elements.
 Furthermore its now possible to split the parser from the handler
 object, so you do not have to extend XML_Parser anymore in order
 to parse a document with it.
-
-WWW: https://pear.php.net/package/XML_Parser

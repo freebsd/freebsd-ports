@@ -6,6 +6,7 @@ MASTER_SITES=	SF/niftilib/nifticlib/nifticlib_2_0_0
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Neuroimaging Informatics Technology Initiative data format
+WWW=		https://nifti.nimh.nih.gov/
 
 LICENSE=	PD
 

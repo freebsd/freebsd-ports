@@ -5,6 +5,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to find out the minimum version and extensions required
+WWW=		https://pear.php.net/package/PHP_CompatInfo
 
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_Getargs>=1.3.3:devel/pear-Console_Getargs@${PHP_FLAVOR} \
 		${PEAR_PKGNAMEPREFIX}Console_Table>=1.1.1:devel/pear-Console_Table@${PHP_FLAVOR} \

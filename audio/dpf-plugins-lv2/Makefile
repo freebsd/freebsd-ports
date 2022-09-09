@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of DPF-based LV2 plugins
+WWW=		https://github.com/DISTRHO/DPF-Plugins
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

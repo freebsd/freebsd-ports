@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Real time simulation game
+WWW=		https://www.unknown-horizons.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/licenses/GPL

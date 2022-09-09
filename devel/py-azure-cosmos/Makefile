@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Azure Cosmos Python SDK
+WWW=		https://pypi.org/project/azure-cosmos/
 
 LICENSE=	MIT
 

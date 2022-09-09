@@ -5,6 +5,7 @@ CATEGORIES=	x11 graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirects commands from an OpenGL app to another X server
+WWW=		https://www.virtualgl.org
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 

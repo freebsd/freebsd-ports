@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Qt utility that sums up disk usage for directory trees
+WWW=		https://github.com/shundhammer/qdirstat
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

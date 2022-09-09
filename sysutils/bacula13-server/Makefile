@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	13-server
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
+WWW=		https://www.bacula.org/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage flow of control in Continuation-Passing Style
+WWW=		https://metacpan.org/release/CPS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

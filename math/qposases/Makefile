@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for online active set strategy quadratic programming problems
+WWW=		https://projects.coin-or.org/qpOASES
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

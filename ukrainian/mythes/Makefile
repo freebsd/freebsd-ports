@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian thesaurus
+WWW=		http://code.google.com/p/spell-uk
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual

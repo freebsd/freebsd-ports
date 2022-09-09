@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Command line version of 2048
+WWW=		https://github.com/Tiehuis/2048-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

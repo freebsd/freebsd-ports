@@ -10,5 +10,3 @@ nature of a NAT device that sits between the STUN client and STUN server.
 
 The current version of the code supports most of RFC 3489 except the ability
 to get OTPs from the server.
-
-WWW: http://www.vovida.org/applications/downloads/stun/

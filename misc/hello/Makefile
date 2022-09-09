@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility for saying hello to the world and reading email
+WWW=		https://www.gnu.org/software/hello/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

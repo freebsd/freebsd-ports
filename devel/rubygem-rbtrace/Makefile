@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Shows method calls inside another ruby process in real time
+WWW=		https://github.com/tmm1/rbtrace
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

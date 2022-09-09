@@ -4,5 +4,3 @@ milter using pymilter. The goal is to provide a common back-end for common
 features for support SPF integration with Postfix and Sendmail using both
 the Postfix policy service and the Sendmail milter protocol (also available
 with Postfix).
-
-WWW: https://launchpad.net/spf-engine

@@ -6,5 +6,3 @@ to mix your extension files all throughout the core code directories.
 With modman, you can specify in a text file where you want your
 directories and files to be mapped to, and it will maintain symlinks
 for you so that your code is easy to hack and deploy.
-
-WWW: https://github.com/colinmollenhour/modman

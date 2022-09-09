@@ -17,5 +17,3 @@ The primary goal of HTTP::AnyUA is to make it easy for module developers to
 write HTTP code once that can work with any HTTP client the end user may decide
 to plug in. A secondary goal is to make it easy for anyone to add support for
 new or yet-unsupported user agents.
-
-WWW: https://metacpan.org/release/HTTP-AnyUA

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Arbitrary big rational numbers
+WWW=		https://metacpan.org/release/Math-BigRat
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

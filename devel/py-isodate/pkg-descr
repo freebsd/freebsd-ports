@@ -15,5 +15,3 @@ ISO 8601 dates/times. For instance, dates before 0001-01-01 are not allowed by
 the Python date and datetime classes. Additionally fractional seconds are
 limited to microseconds. That means if the parser finds for instance nanoseconds
 it will round it to microseconds.
-
-WWW: https://github.com/gweis/isodate

@@ -9,5 +9,3 @@ Mathworks and NIST, into C++
 * Eigenvalue solver
 
 Based on NIST's Template Numerical Toolkit.
-
-WWW: https://math.nist.gov/tnt/

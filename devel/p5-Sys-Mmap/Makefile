@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Map in a file as a Perl variable using mmap(2)
+WWW=		https://metacpan.org/release/Sys-Mmap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

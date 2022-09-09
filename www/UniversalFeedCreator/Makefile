@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	RSS and Atom feed generator by Kai Blankenhorn
+WWW=		https://github.com/flack/UniversalFeedCreator
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

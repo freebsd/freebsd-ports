@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby implementation of the RC4 algorithm
+WWW=		https://github.com/caiges/Ruby-RC4
 
 LICENSE=	MIT
 

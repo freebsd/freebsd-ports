@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extended utility to work with JTAG-aware boards
+WWW=		http://urjtag.org/
 
 LICENSE=	GPLv2
 

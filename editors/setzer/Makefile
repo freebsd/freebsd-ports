@@ -6,6 +6,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	LaTeX editor written in Python with Gtk
+WWW=		https://www.cvfosammmm.org/setzer/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

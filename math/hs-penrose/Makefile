@@ -7,6 +7,7 @@ CATEGORIES=	math haskell
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Create diagrams by typing mathematical notation in plain text
+WWW=		https://penrose.ink/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

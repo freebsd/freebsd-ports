@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for extracting IPTC image meta-data
+WWW=		https://metacpan.org/release/Image-IPTCInfo
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

@@ -8,5 +8,3 @@ Net::TCP::Server   - TCP sockets interface module for listeners and servers
 Net::UDP	   - UDP sockets interface module
 Net::UNIX	   - UNIX-domain sockets interface module
 Net::UNIX::Server  - UNIX-domain sockets interface module for listeners
-
-WWW: https://metacpan.org/release/Net-ext

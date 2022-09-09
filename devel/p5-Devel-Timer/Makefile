@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Track and report execution time for parts of code
+WWW=		https://metacpan.org/release/Devel-Timer
 
 USES=		perl5
 USE_PERL5=	configure

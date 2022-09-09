@@ -6,6 +6,7 @@ MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mail reader for the GNOME desktop
+WWW=		https://pawsa.fedorapeople.org/balsa/
 
 BUILD_DEPENDS=	gnome-keyring:security/gnome-keyring \
 		itstool:textproc/itstool \

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Configurable websocket/javascript based dashboard for net-mgmt/riemann
+WWW=		https://github.com/riemann/riemann-dash
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

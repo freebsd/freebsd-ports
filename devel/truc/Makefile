@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based tool for requirement and use case tracking
+WWW=		https://sourceforge.net/projects/truc/
 
 NO_BUILD=	yes
 USE_PHP=	mysqli gd

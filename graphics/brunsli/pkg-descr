@@ -6,5 +6,3 @@ to be recovered byte-by-byte.
 It is possible to try how much Brunsli will save on your images on the site
 brunsli.dev. Images are transcoded in browser, no data is transmitted or stored.
 Codec is powered by WASM technology.
-
-WWW: https://github.com/google/brunsli

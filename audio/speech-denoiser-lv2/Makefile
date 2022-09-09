@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Speech denoise LV2 plugin based on RNNoise library
+WWW=		https://github.com/lucianodato/speech-denoiser
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

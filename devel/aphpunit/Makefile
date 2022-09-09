@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.phar
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Testing framework for unit tests
+WWW=		https://gitlab.toco-domains.de/tocOS/APHPUnit
 
 LICENSE=	BSD2CLAUSE
 

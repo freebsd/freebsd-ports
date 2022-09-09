@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for encoding QR Codes
+WWW=		https://whomwah.github.io/rqrcode/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

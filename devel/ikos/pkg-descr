@@ -9,5 +9,3 @@ of a particular programming language.
 IKOS also provides a C and C++ static analyzer based on LLVM. It implements
 scalable analyses for detecting and proving the absence of runtime errors in C
 and C++ programs.
-
-WWW: https://github.com/NASA-SW-VnV/ikos

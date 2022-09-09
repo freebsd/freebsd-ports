@@ -7,5 +7,3 @@ type libraries. A $registry variable is made available to the caller to be used
 to access registry objects. The variable is a callback (i.e. coderef) which
 should be called with a single argument, the namespace whose registry object you
 want, otherwise the argument defaults to main.
-
-WWW: https://metacpan.org/release/routines

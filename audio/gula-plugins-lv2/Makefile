@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of guitar effect LV2 plugins
+WWW=		https://github.com/steveb/gula-plugins
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/relaxbsd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of text menu based utilities for configuring RelaxBSD LiveCD
+WWW=		https://sourceforge.net/projects/relaxbsd/
 
 BUILD_DEPENDS=	cdialog:devel/cdialog
 RUN_DEPENDS=	cdialog:devel/cdialog \

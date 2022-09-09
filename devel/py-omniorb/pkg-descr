@@ -19,5 +19,3 @@ Some features of omniORB4:
 - Flexible thread management.
 - Interceptors.
 - Fully interoperable with other CORBA ORBs.
-
-WWW: http://omniorb.sourceforge.net

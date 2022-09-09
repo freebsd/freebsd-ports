@@ -7,5 +7,3 @@ ExtUtils::MakeMaker in some time (part of the Perl core as of 5.10?)
 The transition takes place slowly, as the converting process manually
 achieved is yet an uncommon practice. The Module::Build::Convert
 Makefile.PL parser is intended to ease the transition process.
-
-WWW: https://metacpan.org/release/Module-Build-Convert

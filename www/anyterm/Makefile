@@ -8,6 +8,7 @@ MASTER_SITES=	http://anyterm.org/download/ \
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Terminal emulator on a Web page
+WWW=		https://anyterm.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

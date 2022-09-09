@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.opbyte.it/release/ \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	GTK frontend for rsync
+WWW=		https://www.opbyte.it/grsync
 
 LICENSE=	GPLv2
 

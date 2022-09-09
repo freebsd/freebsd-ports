@@ -4,5 +4,3 @@ operations between rational numbers. The approximate error depends on some
 parameters and almost same with floating point operation errors. The scheme in
 this library is on the paper "Homomorphic Encryption for Arithmetic of
 Approximate Numbers".
-
-WWW: https://github.com/snucrypto/HEAAN

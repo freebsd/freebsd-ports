@@ -9,6 +9,7 @@ PATCHFILES+=	0be512fb7058.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland event viewer
+WWW=		https://git.sr.ht/~sircmpwn/wev
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

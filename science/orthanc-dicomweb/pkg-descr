@@ -8,5 +8,3 @@ CRUD operations (create, read, update and delete) on the set of DICOM
 resources that Orthanc stores, together with commands that trigger calls to
 the DICOM protocol (C-Echo SCU/SCP, C-Store SCU/SCP, C-Find SCU/SCP, C-Move
 SCU/SCP).
-
-WWW: https://www.orthanc-server.com/static.php?page=dicomweb

@@ -141,9 +141,7 @@
     SUBDIR += drawing
     SUBDIR += drawpile
     SUBDIR += drm-510-kmod
-    SUBDIR += drm-54-kmod
     SUBDIR += drm-fbsd12.0-kmod
-    SUBDIR += drm-fbsd13-kmod
     SUBDIR += drm-kmod
     SUBDIR += drm_info
     SUBDIR += dspdfviewer
@@ -859,6 +857,7 @@
     SUBDIR += py-glfw
     SUBDIR += py-glooey
     SUBDIR += py-gphoto2
+    SUBDIR += py-gprof2dot
     SUBDIR += py-graphlib-backport
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
@@ -870,6 +869,7 @@
     SUBDIR += py-imagesize
     SUBDIR += py-img2pdf
     SUBDIR += py-leather
+    SUBDIR += py-lerc
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
     SUBDIR += py-mcomix
@@ -883,6 +883,7 @@
     SUBDIR += py-opencolorio
     SUBDIR += py-openimageio
     SUBDIR += py-openshadinglanguage
+    SUBDIR += py-optimize-images
     SUBDIR += py-osmnet
     SUBDIR += py-pandana
     SUBDIR += py-photocollage

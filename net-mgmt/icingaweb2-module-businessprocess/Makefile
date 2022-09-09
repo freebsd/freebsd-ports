@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Manage Business Processes in Icinga Web 2
+WWW=		https://github.com/Icinga/icingaweb2-module-businessprocess
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

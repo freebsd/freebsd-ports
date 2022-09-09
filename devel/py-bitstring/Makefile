@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple construction, analysis, and modification of binary data
+WWW=		https://pypi.org/project/bitstring/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,5 +3,3 @@ This package supplies variables that are "tied" to environment variables like
 string like the ones bash(1) uses to format the prompt.
 
 It is intended to be used in combination with the various ReadLine packages.
-
-WWW: https://metacpan.org/release/Env-PS1

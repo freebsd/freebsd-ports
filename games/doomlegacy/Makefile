@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Improved and extended version of Doom
+WWW=		http://doomlegacy.sourceforge.net/
 
 LICENSE=	GPLv2
 

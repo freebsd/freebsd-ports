@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby standard library package 'xmlrpc'
+WWW=		https://github.com/ruby/xmlrpc
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

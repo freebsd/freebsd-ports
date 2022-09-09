@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/liberationfonts/liberation-fonts/files/7261482/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
+WWW=		https://github.com/liberationfonts/liberation-fonts
 
 LICENSE=	OFL11
 

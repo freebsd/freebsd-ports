@@ -8,5 +8,3 @@ bindings module for rrdtool by Hye-Shik Chang and are now
 shipped with the RRDtool distribution. This project is
 maintained separately to provide a more pythonic way to
 install those bindings via PyPI.
-
-WWW: https://github.com/commx/python-rrdtool

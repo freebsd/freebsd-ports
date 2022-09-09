@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tracker for making C64/NES/Amiga-style chiptunes
+WWW=		https://kometbomb.github.io/klystrack/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

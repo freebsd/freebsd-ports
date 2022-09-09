@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
 MAINTAINER=	mayo@oyam.ca
 COMMENT=	Linear Programming Solver
+WWW=		http://tech.groups.yahoo.com/group/lp_solve/
 
 LICENSE=	LGPL21
 

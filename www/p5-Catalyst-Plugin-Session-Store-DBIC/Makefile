@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Store your sessions via DBIx::Class
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-Store-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

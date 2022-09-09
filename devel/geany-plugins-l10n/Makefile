@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Localization messages for Geany plugins
+WWW=		https://plugins.geany.org
 
 NO_ARCH=	yes
 

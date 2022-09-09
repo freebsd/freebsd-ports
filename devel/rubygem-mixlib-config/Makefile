@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Class based config mixin, similar to the one found in Chef
+WWW=		https://www.chef.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

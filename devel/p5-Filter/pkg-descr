@@ -18,5 +18,3 @@ Filter::cpp
 
        This source filter pipes the current source file through
        the C pre-processor (cpp) if it is available.
-
-WWW: https://metacpan.org/release/Filter

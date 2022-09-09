@@ -6,6 +6,7 @@ MASTER_SITES=	OSSP/tool/iselect
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Selection Tool
+WWW=		http://www.ossp.org/pkg/tool/iselect/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ DNS resolution where getdns is available.
 While standard varnish backends defined in VCL may also be defined in terms of
 host names, changes of the name service information will only be picked up
 with a VCL reload.
-
-WWW: https://github.com/nigoroll/libvmod-dynamic

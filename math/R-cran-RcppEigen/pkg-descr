@@ -12,5 +12,3 @@ License (version 2); earlier version were licensed under the GNU
 LGPL version 3 or later. RcppEigen (the Rcpp bindings/bridge to
 Eigen) is licensed under the GNU GPL version 2 or later, as is the
 rest of Rcpp.
-
-WWW: https://cran.r-project.org/web/packages/RcppEigen/

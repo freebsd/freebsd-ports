@@ -5,6 +5,7 @@ MASTER_SITES=	http://files.libburnia-project.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia library to read/write optical discs
+WWW=		https://dev.lovelyhq.com/libburnia/web/wikis/home
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

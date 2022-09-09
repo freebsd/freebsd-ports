@@ -8,5 +8,3 @@ symbols crop up frequently. This is just a font rendering feature:
 underlying code remains ASCII-compatible. This helps to read and
 understand code faster. For some frequent sequences like .. or //,
 ligatures allow us to correct spacing.
-
-WWW: https://github.com/tonsky/FiraCode

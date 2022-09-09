@@ -10,6 +10,7 @@ DIST_SUBDIR=	openblas
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
+WWW=		https://github.com/xianyi/OpenBLAS
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

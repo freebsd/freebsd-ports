@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/WizardMac/ReadStat/releases/download/v${DISTVER
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Read (and write) data sets from SAS, Stata, and SPSS
+WWW=		https://github.com/WizardMac/ReadStat
 
 LICENSE=	MIT
 

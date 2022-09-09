@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	MVP config reader for .ini files
+WWW=		https://metacpan.org/release/Config-MVP-Reader-INI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

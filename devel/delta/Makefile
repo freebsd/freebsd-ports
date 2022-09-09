@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/eadler/delta
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Heuristically minimizes interesting files
+WWW=		http://delta.tigris.org/
 
 LICENSE=	BSD2CLAUSE
 

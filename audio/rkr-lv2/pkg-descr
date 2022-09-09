@@ -6,5 +6,3 @@ the user.
 The state of rack can be saved as 'presets'. Sets of presets can be stored as
 'banks'. The rack also has an integrated tuner and can receive MIDI control
 orders and can send MIDI notes to MIDI devices like synthesizers.
-
-WWW: https://github.com/ssj71/rkrlv2

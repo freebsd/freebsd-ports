@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Portable Hardware Locality software package
+WWW=		https://www.open-mpi.org/projects/hwloc/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,5 +6,3 @@ the file or string, saving memory, and concurrently making changes to
 portions of the file or string.  When not used with a file, it is an
 alternative to SysV shared memory that places no arbitrary size limits
 on the shared memory area, and efficiently handles sparse memory usage.
-
-WWW: https://metacpan.org/release/Sys-Mmap

@@ -8,6 +8,7 @@ DISTNAME=	Flask-Security-${DISTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Simple security for Flask apps
+WWW=		https://github.com/mattupstate/flask-security
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

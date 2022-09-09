@@ -11,5 +11,3 @@ It has all the features you'd expect from an ML derived language,
 including algebraic data-types, immutable data structures, full type
 inference, fast compilation, generics, no nulls nor exceptions, and a
 few bonus features such as helpful error messages.
-
-WWW: https://gleam.run/

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/adobe-type-tools/afdko/releases/download/${PORT
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adobe Font Development Kit for OpenType (AFDKO)
+WWW=		https://github.com/adobe-type-tools/afdko
 
 LICENSE=	APACHE20
 

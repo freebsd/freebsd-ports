@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Tor network bandwidth scanner
+WWW=		https://sbws.readthedocs.io/
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

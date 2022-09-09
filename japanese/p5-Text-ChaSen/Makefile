@@ -7,6 +7,7 @@ DISTNAME=	chasen-${CHASEN_VERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ChaSen library module for Perl5
+WWW=		http://www.daionet.gr.jp/~knok/chasen/
 
 LIB_DEPENDS=	libchasen.so:japanese/chasen-base
 

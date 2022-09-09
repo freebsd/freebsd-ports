@@ -3,5 +3,3 @@ Notable features include: full Unicode support, syntax highlighting,
 scriptable rc file, macros, search and replace (PCRE), window
 splitting, multiple cursors, and integration with various shell
 commands.
-
-WWW: https://github.com/adsr/mle

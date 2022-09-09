@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Lightweight clipboard history applet
+WWW=		https://github.com/pvanek/qlipper
 
 LICENSE=	GPLv2
 

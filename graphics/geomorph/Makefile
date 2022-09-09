@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Height field generator and editor
+WWW=		http://geomorph.sourceforge.net/
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libpng.so:graphics/png

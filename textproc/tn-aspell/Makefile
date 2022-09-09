@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Tswana dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	tn
 

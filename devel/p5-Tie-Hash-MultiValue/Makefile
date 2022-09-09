@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Store multiple values per key
+WWW=		https://metacpan.org/release/Tie-Hash-MultiValue
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

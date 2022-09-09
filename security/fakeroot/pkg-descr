@@ -3,5 +3,3 @@ root privileges for file manipulation, by setting LD_PRELOAD to a
 library with alternative versions of getuid(), stat(), etc. This
 is useful for allowing users to create archives (tar, ar, .deb .rpm
 etc.) with files in them with root permissions/ownership.
-
-WWW: http://freshmeat.net/projects/fakeroot

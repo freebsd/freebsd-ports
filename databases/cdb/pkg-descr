@@ -20,5 +20,3 @@ to pause during a rewrite.
 Note for developers:  packages that need to read cdb files should
 incorporate the necessary portions of the cdb library rather than
 relying on an external cdb library. (See WWW)
-
-WWW: http://cr.yp.to/cdb.html

@@ -6,6 +6,7 @@ DISTNAME=	cflow-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool to chart control flow within the C program
+WWW=		https://www.gnu.org/software/cflow/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

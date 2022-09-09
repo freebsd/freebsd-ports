@@ -11,5 +11,3 @@ regular sed might take a few mins, super-sed can take only seconds
 this is not true in all cases, and sometimes you have modify your
 regexp syntax, however for the speed increase, it might be worth
 it.
-
-WWW: http://sed.sourceforge.net/grabbag/ssed/

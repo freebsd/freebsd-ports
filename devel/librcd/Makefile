@@ -7,6 +7,7 @@ MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used by rusxmms for autodetection of Russian charset
+WWW=		http://rusxmms.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

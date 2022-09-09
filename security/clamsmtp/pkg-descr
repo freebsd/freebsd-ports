@@ -7,5 +7,3 @@ ClamSMTP aims to be lightweight, reliable, and simple rather than have a
 myriad of options. It's written in C without major dependencies. If you
 need more options then you could use something big like AMaViS which is
 written in PERL and can do almost anything.
-
-WWW: http://thewalter.net/stef/software/clamsmtp/

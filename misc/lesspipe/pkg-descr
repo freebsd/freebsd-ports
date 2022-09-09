@@ -6,5 +6,3 @@ lesspipe is a powerful preprocessor for less(1). The features include
 * Transparent handling of compressed files (gzip, bzip2, zip)
 
 * Optional syntax highlightning of source files
-
-WWW: https://www.zeuthen.desy.de/~friebel/unix/lesspipe.html

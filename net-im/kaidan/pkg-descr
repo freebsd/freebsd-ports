@@ -1,5 +1,3 @@
 Kaidan is a simple, user-friendly Jabber/XMPP client providing a modern
 user interface using Kirigami and QtQuick. The back-end of Kaidan is
 written in C++ using the QXmpp XMPP client library and Qt 5.
-
-WWW: https://www.kaidan.im/

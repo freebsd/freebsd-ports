@@ -18,5 +18,3 @@ commands move both of them, except when extending selection where the
 anchor character stays fixed and the cursor one moves around.
 
 See https://vimeo.com/82711574 for a short demo video.
-
-WWW: http://kakoune.org

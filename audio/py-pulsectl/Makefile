@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Python high-level interface and ctypes-based bindings for PulseAudio
+WWW=		https://pypi.python.org/pypi/pulsectl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

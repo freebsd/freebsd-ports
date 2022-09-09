@@ -12,5 +12,3 @@ inspecting variables, and stepping through code.
 * Debugging of core dumps, attaching to running processes is
   possible.
 * Conditional breakpoints.
-
-WWW: http://www.kdbg.org/

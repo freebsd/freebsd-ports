@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
+WWW=		https://libproxy.github.io/libproxy/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

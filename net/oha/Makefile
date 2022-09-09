@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Web load generator
+WWW=		https://github.com/hatoo/oha
 
 LICENSE=	MIT
 

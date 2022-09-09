@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Domain Name manipulation library for ruby
+WWW=		https://github.com/knu/ruby-domain_name
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MPL20
 LICENSE_COMB=	multi

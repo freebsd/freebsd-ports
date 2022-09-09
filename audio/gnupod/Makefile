@@ -7,6 +7,7 @@ MASTER_SITES=	SAVANNAH \
 
 MAINTAINER=	steve.roome@gmail.com
 COMMENT=	Set of Perl scripts for using an Apple iPod
+WWW=		https://www.gnu.org/software/gnupod/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

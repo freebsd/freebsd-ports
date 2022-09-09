@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl bindings for libxcb
+WWW=		https://metacpan.org/release/X11-XCB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

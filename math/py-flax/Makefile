@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Neural network library for JAX designed for flexibility
+WWW=		https://github.com/google/flax
 
 LICENSE=	APACHE20
 

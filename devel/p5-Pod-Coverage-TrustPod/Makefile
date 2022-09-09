@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declare trusted symbol names in POD
+WWW=		https://metacpan.org/release/Pod-Coverage-TrustPod
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

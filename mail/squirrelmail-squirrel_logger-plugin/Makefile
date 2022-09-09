@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.7
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logging functionality for your webmail interface
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=52
 
 USE_SM_COMPAT=	yes
 

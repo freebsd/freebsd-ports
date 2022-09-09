@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Name your accessors get_foo() and set_foo()
+WWW=		https://metacpan.org/release/MooseX-FollowPBP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=1.16:devel/p5-Moose

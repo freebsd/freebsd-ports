@@ -3,5 +3,3 @@ from Qt Designer.
 
 It is useful in applications such as IDEs where large amounts of properties
 are available for the user to edit.
-
-WWW: http://www.kexi-project.org/

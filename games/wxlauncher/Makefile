@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform launcher for the Freespace 2 Source Code Project
+WWW=		https://github.com/scp-fs2open/wxLauncher
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPLv2.txt

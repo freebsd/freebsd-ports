@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Merge changes from a branch one commit at a time
+WWW=		https://github.com/brooksdavis/mergify
 
 LICENSE=	BSD2CLAUSE
 

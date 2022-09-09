@@ -17,5 +17,3 @@ The actual guts of squashfs-tools-ng are encapsulated in a library
 with a generic API designed to make SquashFS available to other
 applications as an embeddable, extensible archive format (or simply
 to read, write, or manipulate SquashFS file systems).
-
-WWW: https://infraroot.at/projects/squashfs-tools-ng/

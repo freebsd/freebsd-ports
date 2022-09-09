@@ -9,17 +9,17 @@ PATCHFILES+=	80912d06f5e5.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-tetra
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome tetravex
+WWW=		https://wiki.gnome.org/Apps/Tetravex
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala:lang/vala \
-		itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome localbase meson pathfix pkgconfig \
-		python:3.7+ tar:xz
+		python:3.7+ tar:xz vala:build
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

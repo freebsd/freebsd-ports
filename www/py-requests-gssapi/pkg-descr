@@ -1,0 +1,10 @@
+Requests is an HTTP library, written in Python, for human beings. This
+library adds optional GSSAPI authentication support and supports mutual
+authentication.
+
+It provides a fully backward-compatible shim for the old
+python-requests-kerberos library.
+
+A more powerful interface is provided by the HTTPSPNEGOAuth component,
+but this is of course not guaranteed to be compatible. Documentation
+below is written toward the new interface.

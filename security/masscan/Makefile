@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	taguchi.ch@gmail.com
 COMMENT=	Very fast port scanner
+WWW=		https://github.com/robertdavidgraham/masscan
 
 LICENSE=	GPLv3
 

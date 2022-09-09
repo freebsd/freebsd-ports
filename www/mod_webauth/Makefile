@@ -7,6 +7,7 @@ DISTNAME=	webauth-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for authenticating users with Kerberos v5
+WWW=		http://webauth.stanford.edu/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsasl2.so:security/cyrus-sasl2

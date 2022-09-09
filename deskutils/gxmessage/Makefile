@@ -7,6 +7,7 @@ MASTER_SITES=	GNU \
 
 MAINTAINER=	avg@FreeBSD.org
 COMMENT=	GTK3 substitute for xmessage
+WWW=		http://homepages.ihug.co.nz/~trmusson/programs.html #gxmessage
 
 USE_GNOME=	gtk30 gnomeprefix intltool
 USES=		gmake gnome pkgconfig

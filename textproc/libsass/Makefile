@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	C/C++ implementation of a Sass compiler
+WWW=		https://libsass.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

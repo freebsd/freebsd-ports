@@ -1,10 +1,11 @@
 PORTNAME=	fugit
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Time tools for flor and the floraison project
+WWW=		https://github.com/floraison/fugit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

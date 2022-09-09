@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client library for REST API of Amazon SES
+WWW=		https://github.com/drewblas/aws-ses
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

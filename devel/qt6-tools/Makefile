@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
+WWW=		https://qt-project.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}

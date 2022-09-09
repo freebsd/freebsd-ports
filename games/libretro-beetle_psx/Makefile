@@ -3,8 +3,9 @@ PORTVERSION=	0.20220211
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port/fork of Mednafen PSX to the Libretro API
+WWW=		https://github.com/libretro/beetle-psx-libretro
 
 LICENSE=	GPLv2
 

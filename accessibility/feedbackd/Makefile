@@ -4,6 +4,7 @@ CATEGORIES=	accessibility
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Haptic/visual/audio feedback for GNOME
+WWW=		https://source.puri.sm/Librem5/feedbackd
 
 LICENSE=	GPLv3+ LGPL21+
 LICENSE_COMB=	multi
@@ -42,7 +43,7 @@ GIR_MESON_ENABLED=	introspection
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt
 MANPAGES_MESON_TRUE=	man
 
-VAPI_BUILD_DEPENDS=	vapigen:lang/vala
+VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
 VAPI_IMPLIES=		GIR
 

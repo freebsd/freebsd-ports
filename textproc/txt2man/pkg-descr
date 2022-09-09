@@ -3,5 +3,3 @@ man pages. Smart argument processing is available either for commands using
 "-" sign for flags (including long options used in GNU tools). If ifile is
 omitted, standard input is taken as argument. Result is displayed on standard
 output.
-
-WWW: https://github.com/mvertes/txt2man

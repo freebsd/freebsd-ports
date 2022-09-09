@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	The GNU Portable Shell Tool
+WWW=		https://www.gnu.org/software/shtool/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -11,5 +11,3 @@ Paraphrasing the README:
   interested in.  Additionally, you can register a variable instead of a
   callback function.  The corresponding string found in an XML file will be
   automatically appended to your variable.
-
-WWW: https://metacpan.org/release/XML-Node

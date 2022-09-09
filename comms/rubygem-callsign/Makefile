@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a Ruby-Frontend to callook.info ham Radio Callsign Lookup
+WWW=		https://github.com/codeblock/callsign-gem
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-prosody-plugins
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Prosody plugins for Jitsi Meet
+WWW=		https://github.com/jitsi/jitsi-meet/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

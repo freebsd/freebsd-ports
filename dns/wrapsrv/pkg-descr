@@ -7,5 +7,3 @@ implements the weighted priority client connection algorithm in RFC 2782.
 The specified command line will be invoked one or more times with %h and %p
 sequences in the command line substituted for the hostname and port elements
 of the selected SRV record.
-
-WWW: https://github.com/farsightsec/wrapsrv

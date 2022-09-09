@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple image viewer using raw XLib convert from ImageMagick
+WWW=		https://www.johnhawthorn.com/meh/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

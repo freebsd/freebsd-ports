@@ -14,5 +14,3 @@ GConf provides:
 
     * Proper locking so that configuration data doesn't get corrupted
       when accessed by multiple applications at the same time.
-
-WWW: https://wiki.gnome.org/Projects/dconf

@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Little app to select lv2 plugins to run with jalv
+WWW=		https://github.com/brummer10/jalv_select
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced cross-platform text editor
+WWW=		https://github.com/yetanothergeek/fxite
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

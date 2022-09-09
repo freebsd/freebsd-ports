@@ -3,5 +3,3 @@ optimization, and related tools. It includes a unified way to
 call different optimizers, and classes and methods to handle the
 results from the ML viewpoint. It also includes a number of
 convenience tools for testing and developing your own models.
-
-WWW: http://www.maxlik.org/

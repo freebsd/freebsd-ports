@@ -8,5 +8,3 @@ over untrusted networks.
 
 This package has been successfully used with the free tac_plus TACACS+
 server on a variety of operating systems.
-
-WWW: https://github.com/ansible/tacacs_plus

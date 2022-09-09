@@ -1,12 +1,13 @@
 PORTNAME=	kdeplasma-addons
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 addons to improve the Plasma experience
+WWW=		https://www.kde.org/plasma-desktop
 
-USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		config configwidgets coreaddons crash emoticons guiaddons \
 		holidays i18n iconthemes init itemmodels itemviews jobwidgets \
@@ -18,6 +19,7 @@ USE_KDE=	activities archive attica auth bookmarks codecs completion \
 USE_QT=		concurrent core dbus declarative graphicaleffects gui location \
 		network printsupport script webchannel widgets x11extras xml \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	PURPOSE QTWEBENGINE
 OPTIONS_DEFAULT=	PURPOSE

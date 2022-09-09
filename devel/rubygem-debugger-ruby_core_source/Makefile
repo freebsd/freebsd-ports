@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Provide Ruby core source files for C extensions that need them
+WWW=		https://github.com/cldwalker/debugger-ruby_core_source
 
 LICENSE=	MIT
 

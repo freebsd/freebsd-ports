@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Messaging in the Emacs World for emacs (Development Version)
+WWW=		https://www.Mew.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/00copyright

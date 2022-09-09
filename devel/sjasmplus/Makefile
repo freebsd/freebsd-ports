@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Command-line cross-compiler of assembly language for Z80 CPU
+WWW=		https://github.com/z00m128/sjasmplus
 
 LICENSE=	BSD3CLAUSE
 

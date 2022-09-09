@@ -5,5 +5,3 @@ remove unused instructions. Finally, it can rename the
 remaining classes, fields, and methods using short
 meaningless names. The resulting jars are smaller and harder
 to reverse-engineer.
-
-WWW: https://www.guardsquare.com/en/products/proguard

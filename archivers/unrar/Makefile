@@ -7,6 +7,7 @@ DISTNAME=	unrarsrc-6.1.7
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
+WWW=		https://www.rarlab.com/
 
 LICENSE=	UNRAR
 LICENSE_FILE=	${WRKSRC}/license.txt

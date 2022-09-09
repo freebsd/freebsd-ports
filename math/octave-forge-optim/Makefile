@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+WWW=		http://octave.sourceforge.net/
 
 LICENSE=	Parts
 LICENSE_NAME=	See individual files for licenses

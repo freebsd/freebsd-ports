@@ -4,6 +4,7 @@ CATEGORIES=	x11-fm www kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE web browser and file manager
+WWW=		https://konqueror.org/
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
 		localbase:ldflags kde:5 pkgconfig qt:5 tar:xz xorg

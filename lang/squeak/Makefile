@@ -14,6 +14,7 @@ EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	takeshi.mutoh@gmail.com
 COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
+WWW=		https://www.squeak.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
@@ -33,7 +34,7 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 USES=		gl gnome iconv pkgconfig xorg
 USE_GL=		gl
 USE_GNOME=	cairo pango
-USE_XORG=	ice sm x11 xext xrender 
+USE_XORG=	ice sm x11 xext xrender
 
 VM_VERSION=	${PORTVERSION}.${SVN_VERSION}
 SVN_VERSION=	2614

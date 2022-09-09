@@ -10,6 +10,7 @@ PKGNAMESUFFIX=		-otf
 
 MAINTAINER=		hyun@caffeinated.codes
 COMMENT=		Korean font by Adobe designed for user interfaces
+WWW=		https://github.com/adobe-fonts/source-han-serif
 
 LICENSE=		OFL11
 LICENSE_FILE=		${WRKSRC}/LICENSE.txt

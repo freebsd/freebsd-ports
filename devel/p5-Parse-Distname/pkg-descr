@@ -10,5 +10,3 @@ name such as "AUTHOR/v1.0.tar.gz", it says the name is empty and the version is
 See test files in this distribution if you need more details. As of this
 writing, Parse::Distname returns a different result for about 200+ distributions
 among about 320000 BackPan distributions.
-
-WWW: https://metacpan.org/dist/Parse-Distname

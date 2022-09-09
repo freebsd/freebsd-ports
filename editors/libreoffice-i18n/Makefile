@@ -4,6 +4,7 @@ PORTREVISION=	0
 PKGNAMESUFFIX=	-i18n
 
 COMMENT=	Localized interface for libreoffice
+WWW=		https://www.libreoffice.org/
 
 USES=		metaport
 

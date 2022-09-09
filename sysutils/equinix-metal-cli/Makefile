@@ -1,11 +1,12 @@
 PORTNAME=	equinix-metal-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Command line tool for Equinix Metal services
+WWW=		https://github.com/equinix/metal-cli/blob/main/docs/metal.md
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

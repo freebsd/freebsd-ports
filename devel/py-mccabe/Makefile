@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ned's script to check McCabe complexity
+WWW=		https://pypi.org/project/mccabe/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

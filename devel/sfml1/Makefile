@@ -8,6 +8,7 @@ DISTNAME=	SFML-${PORTVERSION}-sdk-linux-32
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
+WWW=		https://www.sfml-dev.org/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt

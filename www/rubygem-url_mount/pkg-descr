@@ -3,5 +3,3 @@ It provides a simple way to pass a url mounting point to the mounted application
 
 This means that when you mount an application in the url space, it's a simple call to url to get the mount point of where
 the application is.
-
-WWW: https://github.com/hassox/url_mount

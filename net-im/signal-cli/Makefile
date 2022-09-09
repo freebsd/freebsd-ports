@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:jars
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line and D-Bus interface for Signal and libsignal-service-java
+WWW=		https://github.com/AsamK/signal-cli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

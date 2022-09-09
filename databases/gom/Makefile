@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject Data Mapper
+WWW=		https://wiki.gnome.org/Projects/Gom
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

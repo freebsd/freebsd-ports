@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform C++ actor framework
+WWW=		https://stiffstream.com/en/products/sobjectizer.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

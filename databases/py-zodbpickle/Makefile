@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python pickling interface for ZODB
+WWW=		https://github.com/zopefoundation/zodbpickle
 
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	multi

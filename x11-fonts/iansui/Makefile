@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open source Chinese font derived from Klee One (Fontworks)
+WWW=		https://github.com/ButTaiwan/iansui
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

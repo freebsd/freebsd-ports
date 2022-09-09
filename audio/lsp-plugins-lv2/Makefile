@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-src-${DISTVERSION}.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of free LV2 plugins
+WWW=		https://lsp-plug.in/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,5 +4,3 @@ on speeding up the stackcollapse-* tools that process output from various
 profiling tools into the "folded" format expected by the flamegraph plotting
 tool. So far, the focus has been on parsing profiling results from perf and
 DTrace.
-
-WWW: https://github.com/jonhoo/inferno

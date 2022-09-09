@@ -6,6 +6,7 @@ MASTER_SITES=	http://hansmi.ch/download/pmt/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small collection of filters which can be added to UNIX pipes
+WWW=		https://hansmi.ch/software/pipe-magic-tools
 
 USES=		gmake tar:bzip2
 

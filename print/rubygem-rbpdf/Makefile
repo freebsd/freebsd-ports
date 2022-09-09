@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library for creating ERB enabled PDF templates
+WWW=		https://github.com/naitoh/rbpdf
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

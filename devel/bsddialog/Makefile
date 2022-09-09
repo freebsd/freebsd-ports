@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Text User Interface Widgets
+WWW=		https://gitlab.com/alfix/bsddialog
 
 LICENSE=	BSD2CLAUSE
 

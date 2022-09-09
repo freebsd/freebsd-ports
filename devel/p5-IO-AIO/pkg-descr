@@ -19,5 +19,3 @@ itself.
 In addition to asynchronous I/O, this module also exports some rather arcane
 interfaces, such as madvise or linux's splice system call, which is why the A in
 AIO can also mean advanced.
-
-WWW: https://metacpan.org/release/IO-AIO

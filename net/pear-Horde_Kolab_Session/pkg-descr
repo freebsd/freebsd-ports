@@ -1,4 +1,2 @@
 This Horde package handles a Kolab session. It allows to authenticate
 against LDAP and provides the users storage locations.
-
-WWW: http://pear.horde.org

@@ -3,5 +3,3 @@ It's often hard enough to ensure you validate all your input at all, without
 having to worry about doing it in a consistent manner. If any of the validation
 rules change, you often have to alter them in many different places. And, if
 you want to operate taint-safe, then you're just adding even more headaches.
-
-WWW: https://metacpan.org/release/CGI-Untaint

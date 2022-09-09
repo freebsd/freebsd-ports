@@ -7,7 +7,7 @@ COMMENT=	KDE pim identities
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		emoticons i18n init itemmodels itemviews jobwidgets \
 		kdelibs4support kio service solid widgetsaddons windowsystem xmlgui \
@@ -16,6 +16,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 USE_KDE+=	pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

@@ -1,5 +1,3 @@
 SANE ("Scanner Access Now Easy") is a universal scanner interface.
 This package contains the SANE libraries (this means backends and
 network scanning parts) and the command line frontend scanimage.
-
-WWW: http://www.sane-project.org/

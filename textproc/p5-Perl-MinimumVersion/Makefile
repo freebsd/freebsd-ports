@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find a minimum required version of perl for Perl code
+WWW=		https://metacpan.org/release/Perl-MinimumVersion
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

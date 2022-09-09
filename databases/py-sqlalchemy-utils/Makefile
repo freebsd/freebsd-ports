@@ -7,6 +7,7 @@ DISTNAME=	SQLAlchemy-Utils-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Various utility functions for SQLAlchemy
+WWW=		https://github.com/kvesteri/sqlalchemy-utils
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

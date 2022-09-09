@@ -9,5 +9,4 @@ This library includes a C implementation which runs 3-5 times faster than the
 Python standard library's C-accelerated implementanion of JSON. This is also
 includes a 100% Python implementation.
 
-WWW: https://pypi.org/project/cbor/
-WWW: https://bitbucket.org/bodhisnarkva/cbor
+See also: https://pypi.org/project/cbor/

@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tool to compile and run C programs like a shell script
+WWW=		https://github.com/ryanmjacobs/c
 
 LICENSE=	MIT
 

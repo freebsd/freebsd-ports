@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Blog & Forum SPAM Detection
+WWW=		https://metacpan.org/release/SKX/Blog-Spam-1.0.2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

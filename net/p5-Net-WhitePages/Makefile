@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides access to the XML API for WhitePages.com
+WWW=		https://metacpan.org/release/Net-WhitePages
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \

@@ -4,5 +4,3 @@ network connections, using the TCP/IP protocol. It is designed to be a reliable
 scripts. At the same time, it is a feature-rich network debugging and
 exploration tool, since it can create almost any kind of connection you
 would need and has several interesting built-in capabilities.
-
-WWW: http://netcat.sourceforge.net/

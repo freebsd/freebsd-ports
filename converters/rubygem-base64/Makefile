@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Encode and decode binary data using a Base64 representation
+WWW=		https://github.com/ruby/base64
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

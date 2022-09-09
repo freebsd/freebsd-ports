@@ -18,5 +18,3 @@ With this module, you can do things like this:
                 $p->kill(9);
         }
     }
-
-WWW: https://metacpan.org/release/Proc-ProcessTable

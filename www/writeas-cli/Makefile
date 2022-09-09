@@ -1,7 +1,7 @@
 PORTNAME=	writeas-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-wf
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www textproc
 MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks
 DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks
@@ -9,6 +9,7 @@ DIST_SUBDIR=	writeas
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Command line client for Write.as / WriteFreely
+WWW=		https://write.as/apps/cli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/cvschangelogb/CVSChangelogBuilder/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to generate changelogs and reports from a CVS repository
+WWW=		http://cvschangelogb.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.TXT

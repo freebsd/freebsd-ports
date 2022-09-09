@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Splitting conic solver for Python
+WWW=		https://github.com/cvxgrp/scs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://deviousfish.com/Downloads/pianod2/Devel/
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Free, multi-source, network-controlled music player daemon
+WWW=		https://deviousfish.com/Pianod2/index.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

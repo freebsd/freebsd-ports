@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Web Mirroring Program
+WWW=		http://www.alumnos.inf.utfsm.cl/~vparada/webcopy.html
 
 # Converted from RESTRICTED
 LICENSE=	webcopy

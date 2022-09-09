@@ -9,15 +9,15 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
+WWW=		https://git.gnome.org/browse/libgit2-glib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		compiler:c11 gnome localbase \
-		meson pkgconfig python:3.4+,build tar:xz
+		meson pkgconfig python:3.4+,build tar:xz vala:build
 USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpython=false

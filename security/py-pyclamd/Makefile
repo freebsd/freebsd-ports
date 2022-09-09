@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bsd@dino.sk
 COMMENT=	Python ClamD interface module
+WWW=		https://xael.org/pages/pyclamd-en.html
 
 LICENSE=	LGPL3+
 

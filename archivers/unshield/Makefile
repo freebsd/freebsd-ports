@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extract data from InstallShield CAB files
+WWW=		https://github.com/twogood/unshield
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

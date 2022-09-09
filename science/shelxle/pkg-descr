@@ -9,5 +9,3 @@ and stereo modes, and a novel way of displaying disorder extending over special
 positions. ShelXle is completely compatible with all features of SHELXL and is
 written entirely in C++ using the Qt and FFTW libraries. It is available at no
 cost for Windows, Linux and Mac-OS X and as source code.
-
-WWW: https://www.shelxle.org/shelx/eingabe.php

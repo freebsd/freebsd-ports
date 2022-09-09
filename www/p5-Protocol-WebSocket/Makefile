@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sec@42.org
 COMMENT=	Client/server WebSocket message and frame parser/constructor
+WWW=		https://metacpan.org/release/Protocol-WebSocket
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

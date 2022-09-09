@@ -4,5 +4,3 @@ throwing away horrible interfaces. Exporter::Declare also provides
 hooks that allow you to add options and arguments for import. Finally,
 Exporter::Declare's meta-driven system allows for top-notch
 introspection.
-
-WWW: https://metacpan.org/release/Exporter-Declare

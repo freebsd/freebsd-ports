@@ -11,5 +11,3 @@ A deferred constant is generally not inlined or folded (see "Constant Folding"
 in perlop) since it's not a single scalar value. In the current implementation a
 deferred constant becomes a plain constant after the first use, so may inline
 etc in code compiled after that (see "IMPLEMENTATION" below).
-
-WWW: https://metacpan.org/release/constant-defer

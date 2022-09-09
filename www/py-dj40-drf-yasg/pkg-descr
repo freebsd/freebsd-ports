@@ -16,5 +16,3 @@ Features:
 - supports Django REST Framework API versioning with URLPathVersioning
   and NamespaceVersioning (other DRF or custom versioning schemes are
   not currently supported)
-
-WWW: https://github.com/axnsan12/drf-yasg

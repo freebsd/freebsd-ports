@@ -5,6 +5,7 @@ MASTER_SITES=	GNU/libidn
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of IDNA2008 internationalized domain names
+WWW=		https://www.gnu.org/software/libidn/ #libidn2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

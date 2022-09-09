@@ -7,6 +7,3 @@ Features:
     * Minimal lib dependency: Only pure GTK+ is used
     * Desktop independent: Doesn't require any specific desktop environment
     * Open source, licensed under GNU GPL
-
-
-WWW: http://lxde.sourceforge.net/gpicview/

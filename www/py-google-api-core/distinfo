@@ -1,3 +1,3 @@
-TIMESTAMP = 1655398686
-SHA256 (google-api-core-2.8.2.tar.gz) = 06f7244c640322b508b125903bb5701bebabce8832f85aba9335ec00b3d02edc
-SIZE (google-api-core-2.8.2.tar.gz) = 121768
+TIMESTAMP = 1662280652
+SHA256 (google-api-core-2.10.0.tar.gz) = 1d053734f14591939e7764e99c31253fed46bf2578da0dcd82821f17a6dd991c
+SIZE (google-api-core-2.10.0.tar.gz) = 123385

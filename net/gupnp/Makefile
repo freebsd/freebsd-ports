@@ -1,10 +1,14 @@
 PORTNAME=	gupnp
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gupnp/-/commit/
+PATCHFILES=	1296d10eda308792d2924f141d72b8b6818878bd.diff:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
+WWW=		https://wiki.gnome.org/Projects/GUPnP
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -33,8 +37,8 @@ SHEBANG_FILES=	tools/gupnp-binding-tool
 OPTIONS_DEFINE=	VAPI
 OPTIONS_SUB=	yes
 
-VAPI_BUILD_DEPENDS=	vala>=0.20:lang/vala
 VAPI_MESON_TRUE=	vapi
+VAPI_USES=		vala:build
 
 .include <bsd.port.pre.mk>
 

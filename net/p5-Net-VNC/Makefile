@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple VNC client
+WWW=		https://metacpan.org/release/Net-VNC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

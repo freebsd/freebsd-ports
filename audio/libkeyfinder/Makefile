@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Small C++11 library for estimating the musical key of digital audio
+WWW=		https://github.com/mixxxdj/libkeyfinder
 
 LICENSE=	GPLv3
 

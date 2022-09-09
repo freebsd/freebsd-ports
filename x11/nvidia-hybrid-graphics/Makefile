@@ -6,6 +6,7 @@ DISTFILES=	# none
 
 MAINTAINER=	theron.tarigo@gmail.com
 COMMENT=	NVIDIA secondary GPU configuration - Optimus Technology support
+WWW=		https://github.com/therontarigo/freebsd-gpu-headless
 
 LICENSE=	BSD2CLAUSE
 

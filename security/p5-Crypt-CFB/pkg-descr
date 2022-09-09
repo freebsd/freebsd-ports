@@ -4,5 +4,3 @@ and returns it as an object. Any block cipher in the Crypt:: class can be
 used, as long as it supports the blocksize and keysize methods. Any hash
 function in the Digest:: class can be used, as long as it supports the
 add method.
-
-WWW: https://metacpan.org/release/Crypt-CFB

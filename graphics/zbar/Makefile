@@ -5,6 +5,7 @@ MASTER_SITES=	https://linuxtv.org/downloads/zbar/
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	ZBar barcode reader
+WWW=		https://github.com/mchehab/zbar/
 
 LICENSE=	LGPL21
 

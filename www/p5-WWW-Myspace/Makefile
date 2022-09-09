@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access MySpace.com profile information from Perl
+WWW=		https://metacpan.org/release/WWW-Myspace
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class to interface generic modems (AT-compliant)
+WWW=		https://metacpan.org/release/Device-Modem
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

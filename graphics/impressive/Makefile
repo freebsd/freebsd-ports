@@ -7,6 +7,7 @@ DISTNAME=	Impressive-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Stylish way of giving presentations
+WWW=		http://impressive.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

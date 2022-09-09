@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class to communicate with sockets
+WWW=		https://metacpan.org/release/Socket-Class
 
 USES=		perl5 ssl
 USE_PERL5=	configure

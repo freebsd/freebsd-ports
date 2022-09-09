@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.panix.com/~mbh/icontact/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combines multiples images to create a single customisable image
+WWW=		https://www.panix.com/~mbh/projects.html
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:graphics/netpbm
 

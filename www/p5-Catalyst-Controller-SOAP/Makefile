@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst SOAP Controller
+WWW=		https://metacpan.org/release/Catalyst-Controller-SOAP
 
 LICENSE=	ARTPERL10
 

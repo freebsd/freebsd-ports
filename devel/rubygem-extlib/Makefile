@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	General Ruby extensions
+WWW=		https://github.com/datamapper/extlib
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Modern effects
+WWW=		https://github.com/Xaymar/obs-StreamFX
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

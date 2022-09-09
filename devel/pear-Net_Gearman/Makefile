@@ -5,6 +5,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP interface to Gearman
+WWW=		https://pear.php.net/package/Net_Gearman
 
 LICENSE=	BSD2CLAUSE
 

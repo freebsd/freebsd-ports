@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.3-4
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
+WWW=		http://subtitleripper.sourceforge.net/
 
 LICENSE=	GPLv2
 

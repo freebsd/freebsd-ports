@@ -1,11 +1,12 @@
 PORTNAME=	nsq
 PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Realtime distributed messaging platform
+WWW=		https://nsq.io
 
 LICENSE=	MIT
 

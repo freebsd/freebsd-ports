@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Dictionary management tool for anthy
+WWW=		http://kasumi.sourceforge.jp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

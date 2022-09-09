@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library for creating NFS safe lockfiles
+WWW=		https://github.com/ahoward/lockfile
 
 LICENSE=	RUBY
 

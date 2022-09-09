@@ -4,5 +4,3 @@ FreeBSD Port Tools includes the following commands:
 - port fetch: fetch distfile(s) of a new version of the port
 - port help: display usage summary for port(1) commands
 - port test: automate testing a new port or a port update
-
-WWW: https://github.com/skreuzer/porttools/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Parse a configuration file in the same syntax as the Apache web server
+WWW=		https://metacpan.org/release/Config-ApacheFormat
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

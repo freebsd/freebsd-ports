@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem enabling ANSI code based colorization and stylization of output
+WWW=		https://rubyworks.github.io/ansi/
 
 LICENSE=	BSD2CLAUSE
 

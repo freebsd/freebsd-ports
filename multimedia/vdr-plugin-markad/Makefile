@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - MarkAd plugin
+WWW=		https://projects.vdr-developer.org/projects/plg-markad
 
 LICENSE=	GPLv2+ LOGOS
 LICENSE_COMB=	multi

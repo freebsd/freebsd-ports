@@ -11,6 +11,7 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Natural language translation library
+WWW=		https://www.nongnu.org/libtranslate/
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20 intlhack

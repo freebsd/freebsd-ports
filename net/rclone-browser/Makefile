@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Simple cross platform GUI for rclone
+WWW=		https://github.com/kapitainsky/RcloneBrowser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

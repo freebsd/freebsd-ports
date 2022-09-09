@@ -12,5 +12,3 @@ logs and draw plots of these using Tobias Oetiker's RRDTool.
 Currently devices by Brocade, Cisco, Compaq/HP and Network Appliance
 as well as computers running Microsoft Windows or Net-SNMP
 and uninterruptable power supplies are supported.
-
-WWW: http://snmp4nagios.sourceforge.net/

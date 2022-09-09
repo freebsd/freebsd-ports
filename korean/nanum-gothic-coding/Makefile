@@ -8,6 +8,7 @@ DISTNAME=	NanumGothicCoding-${DISTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	NanumGothicCoding Hangul font (TrueType)
+WWW=		https://github.com/naver/nanumfont
 
 LICENSE=	OFL11
 LICENSE_FILE=	${FILESDIR}/LICENSE

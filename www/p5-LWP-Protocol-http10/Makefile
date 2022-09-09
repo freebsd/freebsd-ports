@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Legacy HTTP/1.0 support for LWP
+WWW=		https://metacpan.org/release/LWP-Protocol-http10
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

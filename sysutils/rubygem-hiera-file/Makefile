@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Data backend for Hiera that returns whole files
+WWW=		https://github.com/adrienthebo/hiera-file
 
 NO_ARCH=	yes
 

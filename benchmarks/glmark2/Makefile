@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks wayland
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Benchmark for OpenGL (ES) 2.0
+WWW=		https://launchpad.net/glmark2
 
 LICENSE=	GPLv3
 

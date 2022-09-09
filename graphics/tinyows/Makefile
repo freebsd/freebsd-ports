@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.osgeo.org/mapserver/
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	High Performance WFS-T server
+WWW=		https://mapserver.org/tinyows/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

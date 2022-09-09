@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to implement Devel::Caller with Perl only
+WWW=		https://metacpan.org/release/Devel-Caller-Perl
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -1,5 +1,3 @@
 This controller automatically generates and validates unique tokens across
 multiple HTTP requests (form submits).  You can use it to prevent duplicate
 submits, or to protect against CSRF attacks.
-
-WWW: https://metacpan.org/release/Catalyst-Controller-RequestToken

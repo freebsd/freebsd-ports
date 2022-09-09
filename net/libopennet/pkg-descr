@@ -1,4 +1,2 @@
 Libopennet allows you to open_net() remote files as easily as you open()
 local files.
-
-WWW: http://www.rkeene.org/oss/libopennet/

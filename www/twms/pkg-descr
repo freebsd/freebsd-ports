@@ -1,4 +1,2 @@
 tWMS is a tiny WMS server written in Python and using tiles as a
 backend storage
-
-WWW: https://github.com/Komzpa/twms

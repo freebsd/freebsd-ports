@@ -14,5 +14,3 @@ knowledge sharing and auditing purposes. Collaboratively troubleshoot issues
 through session sharing. Connect to clusters located behind firewalls without
 direct Internet access via SSH bastions. Teleport is built on top of the
 high-quality Golang SSH implementation and it is compatible with OpenSSH.
-
-WWW: http://gravitational.com/teleport/

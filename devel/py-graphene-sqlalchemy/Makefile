@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Graphene SQLAlchemy integration
+WWW=		https://github.com/graphql-python/graphene-sqlalchemy
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Listen to SomaFM in your terminal
+WWW=		https://github.com/rockymadden/somafm-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README.md

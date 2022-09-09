@@ -1,4 +1,2 @@
 devstat is a small program that displays device statistics
 available via kernel devstat(9) interface.
-
-WWW: http://devstat.googlecode.com/

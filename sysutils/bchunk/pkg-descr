@@ -12,5 +12,3 @@ using cdrecord. The .cdr tracks are in the native CD audio format. (pcm)
 They can be either written on a CD-R using cdrecord -audio, or
 converted to WAV (or any other sound format for that matter)
 using sox.
-
-WWW: http://he.fi/bchunk/

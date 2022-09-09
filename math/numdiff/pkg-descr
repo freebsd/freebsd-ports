@@ -6,5 +6,3 @@ Equivalently, Numdiff is a program with the capability to appropriately
 compare files containing numerical fields (and not only).
 
 % numdiff file1 file2
-
-WWW: http://www.nongnu.org/numdiff/

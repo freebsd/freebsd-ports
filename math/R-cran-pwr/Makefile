@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Basic Functions for Power Analysis
+WWW=		https://cran.r-project.org/package=pwr
 
 LICENSE=	GPLv3+
 

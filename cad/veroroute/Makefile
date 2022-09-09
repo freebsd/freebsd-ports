@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PCB (printed circuit board) design software
+WWW=		https://sourceforge.net/projects/veroroute/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../licenses/license_GPLv3.txt

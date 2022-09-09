@@ -20,5 +20,3 @@ Details
 * Works out of the box with Cloud databases like Amazon RDS or Google cloud.
 * Lazy database connection. Connect only when needed.
 * PSR-0 compliance.
-
-WWW: http://docs.dalmp.com/

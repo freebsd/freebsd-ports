@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Customized version of the Source Code Pro font
+WWW=		https://github.com/nathco/Office-Code-Pro
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ DISTNAME=	svg.path-${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	SVG path objects and parser
+WWW=		https://pypi.org/project/svg.path/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

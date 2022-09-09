@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DHTML renderer for Data::TreeDumper
+WWW=		https://metacpan.org/release/Data-TreeDumper-Renderer-DHTML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -10,5 +10,3 @@ rest of the system to ensure that their results are deterministic and that
 they cannot affect the running system.  The runtime engine is also
 responsible for gathering the results of all tests and composing reports.
 The current runtime of choice is Kyua.
-
-WWW: https://github.com/jmmv/atf/

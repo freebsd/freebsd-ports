@@ -18,5 +18,3 @@ included in the code, and if you're familiar with the site you're porting to, it
 takes about 15 minutes. If you get sendSMS working with any other providers' web
 sites, please email Paul Kreiner [deacon at thedeacon.org] and/or the port
 maintainer a patch so it can be added to the next release.
-
-WWW: http://caspian.dotconf.net/menu/Software/SendSMS/

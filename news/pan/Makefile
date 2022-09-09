@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
+WWW=		https://pan.rebelbase.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

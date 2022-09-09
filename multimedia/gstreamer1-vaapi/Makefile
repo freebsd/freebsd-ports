@@ -7,6 +7,7 @@ DISTNAME=	gstreamer-vaapi-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer hardware video decoding via VA-API plug-in
+WWW=		https://github.com/GStreamer/gstreamer-vaapi
 
 LICENSE=	LGPL21
 

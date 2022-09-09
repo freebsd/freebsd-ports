@@ -5,6 +5,7 @@ CATEGORIES=	sysutils security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast secure hashing
+WWW=		https://blake2.net/
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/../COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Thing with a list of tags
+WWW=		https://metacpan.org/release/Role-Identifiable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

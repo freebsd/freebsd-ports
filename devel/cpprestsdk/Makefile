@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	projects@phess.net
 COMMENT=	Microsoft C++ REST SDK
+WWW=		https://github.com/Microsoft/cpprestsdk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt

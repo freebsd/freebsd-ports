@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Mount PTP camera as a file system
+WWW=		http://gphoto.sourceforge.net/proj/gphotofs/
 
 LICENSE=	GPLv2
 

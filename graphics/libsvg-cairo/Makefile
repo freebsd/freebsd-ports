@@ -6,6 +6,7 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SVG rendering library
+WWW=		https://cairographics.org
 
 LIB_DEPENDS=	libsvg.so:graphics/libsvg \
 		libcairo.so:graphics/cairo

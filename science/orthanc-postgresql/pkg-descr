@@ -1,4 +1,2 @@
 Orthanc-postgresql is an Orthanc plugin that replaces the default
 SQLite engine of Orthanc with a PostgreSQL back-end.
-
-WWW: https://www.orthanc-server.com/static.php?page=postgresql

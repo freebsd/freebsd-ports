@@ -8,6 +8,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Computing benchmark for integer operations
+WWW=		https://www.netlib.org/benchmark/
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	For writing RSS files
+WWW=		https://metacpan.org/release/XML-RSS-SimpleGen
 
 USES=		perl5
 USE_PERL5=	configure

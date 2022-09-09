@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
+WWW=		https://www.open-mpi.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

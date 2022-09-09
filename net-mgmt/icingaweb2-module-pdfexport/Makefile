@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Icinga PDF Export
+WWW=		https://github.com/Icinga/icingaweb2-module-pdfexport
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

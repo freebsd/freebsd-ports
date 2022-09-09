@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
+WWW=		https://www.glfw.org/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

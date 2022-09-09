@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module to convert SVN::Notify log messages from Markdown to HTML
+WWW=		https://metacpan.org/release/SVN-Notify-Filter-Markdown
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

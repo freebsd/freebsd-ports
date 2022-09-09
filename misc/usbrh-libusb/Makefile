@@ -8,6 +8,7 @@ DISTNAME=	usbrh-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another reads temperatures and humidity from a Strawberry Linux USB-RH
+WWW=		http://www2.strawberry-linux.com/products/usbrh/
 
 LICENSE=	GPLv2
 

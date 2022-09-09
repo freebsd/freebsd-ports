@@ -22,5 +22,3 @@ QuesoGLC is a free (as in free speech) implementation of the GLC.
 QuesoGLC is based on the FreeType library, provides Unicode support
 and is designed to be easily ported to any platform that supports
 both FreeType and the OpenGL API.
-
-WWW: http://quesoglc.sourceforge.net/

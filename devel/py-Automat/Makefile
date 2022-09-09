@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Finite-state machines in Python
+WWW=		https://github.com/glyph/Automat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

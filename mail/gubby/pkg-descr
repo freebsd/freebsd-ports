@@ -3,5 +3,3 @@ new email. It runs both in commandline and in an ncurses environment with
 colors, and will update the overview in real time, while using very low
 resources. Users can launch a specified mailreader by selecting a folder
 and pressing enter.
-
-WWW: http://gubby.sourceforge.net

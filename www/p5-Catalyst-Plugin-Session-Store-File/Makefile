@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	File storage backend for session data
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-Store-File
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

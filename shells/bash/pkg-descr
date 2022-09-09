@@ -3,5 +3,3 @@ a complete implementation of the POSIX.2 shell spec, but also
 with interactive command line editing, job control on architectures
 that support it, csh-like features such as history substitution and
 brace expansion, and a slew of other features.
-
-WWW: https://www.gnu.org/software/bash/

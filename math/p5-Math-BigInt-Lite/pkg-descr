@@ -11,5 +11,3 @@ difference. Since Math::BigInt::Lite is designed with speed in mind, there are
 certain limitations build-in. In praxis, however, you will not feel them,
 because everytime something gets to big to pass as Lite (literally), it will
 upgrade the objects and operation in question to Math::BigInt.
-
-WWW: https://metacpan.org/release/Math-BigInt-Lite

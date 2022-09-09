@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Handle column encodings
+WWW=		https://metacpan.org/release/DBIx-Class-EncodeColumns
 
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:databases/p5-DBIx-Class
 BUILD_DEPENDS=	p5-DBIx-Class>=0.06002:databases/p5-DBIx-Class

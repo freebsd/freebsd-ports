@@ -9,6 +9,7 @@ DISTNAME=	subsonic-${PORTVERSION}-standalone
 
 MAINTAINER=	jlh@FreeBSD.org
 COMMENT=	Subsonic streaming media server, standalone version
+WWW=		http://www.subsonic.org
 
 # Subsonic 6 onwards has become proprietary.  License is unclear.
 # http://forum.subsonic.org/forum/viewtopic.php?f=4&t=16604#p71128

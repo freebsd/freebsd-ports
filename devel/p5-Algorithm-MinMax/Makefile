@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules to find the minimum and maximum of an array
+WWW=		https://metacpan.org/release/Algorithm-MinMax
 
 USES=		perl5
 USE_PERL5=	configure

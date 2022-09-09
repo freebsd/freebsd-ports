@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Netlink library: minimal installation
+WWW=		https://github.com/svinota/pyroute2/tree/master/pyroute2.minimal
 
 LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual

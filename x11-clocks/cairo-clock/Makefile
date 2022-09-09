@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Analog clock displaying the system-time
+WWW=		https://launchpad.net/cairo-clock
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Efficient search for many strings
+WWW=		https://metacpan.org/release/Text-Match-FastAlternatives
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

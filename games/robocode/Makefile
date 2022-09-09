@@ -8,6 +8,7 @@ DIST_SUBDIR=	java
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
+WWW=		https://robocode.sourceforge.io/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/license/epl-v10.html

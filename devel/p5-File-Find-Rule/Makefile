@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Alternative interface to File::Find
+WWW=		https://metacpan.org/release/File-Find-Rule
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

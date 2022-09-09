@@ -1,9 +1,10 @@
 PORTNAME=	yt-dlp
-DISTVERSION=	2022.08.19
+DISTVERSION=	2022.09.01
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command-line program for downloading videos from various platforms
+WWW=		https://github.com/yt-dlp/yt-dlp
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

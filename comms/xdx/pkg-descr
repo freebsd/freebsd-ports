@@ -4,5 +4,3 @@ displayed in a list, announcements will go to a text widget.
 As well as the usual functions, if you have hamlib installed
 it can control the radio and set the frequency simply by double
 clicking a DX-spot (using rigctl).
-
-WWW: http://pg4i.chronos.org.uk/linux/xdx.html

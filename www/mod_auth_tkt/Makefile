@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/kuriyama \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight single-sign-on authentication module for apache
+WWW=		http://www.openfusion.com.au/labs/mod_auth_tkt/
 
 USES=		apache:2.2+ shebangfix
 SHEBANG_FILES=	../cgi/login.cgi \

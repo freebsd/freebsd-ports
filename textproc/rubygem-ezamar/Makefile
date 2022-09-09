@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Lightweight and simple templating engine for Ruby
+WWW=		https://github.com/manveru/ezamar
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/misc/skyutils/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Library required by smssend (same author)
+WWW=		https://BSDforge.com/projects/misc/skyutils/
 
 USES=		autoreconf libtool ssl tar:txz
 GNU_CONFIGURE=	yes

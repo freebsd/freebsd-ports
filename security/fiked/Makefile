@@ -6,6 +6,7 @@ MASTER_SITES=	https://mirror.roe.ch/rel/fiked/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fake IKE PSK+XAUTH daemon based on VPNC
+WWW=		https://www.roe.ch/FakeIKEd
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

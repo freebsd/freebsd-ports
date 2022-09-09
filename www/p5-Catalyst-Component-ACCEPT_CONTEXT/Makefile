@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make the Catalyst request context available in Models and Views
+WWW=		https://metacpan.org/release/Catalyst-Component-ACCEPT_CONTEXT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

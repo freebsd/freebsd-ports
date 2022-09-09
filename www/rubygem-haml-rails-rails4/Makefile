@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Haml generator for Rails
+WWW=		https://github.com/indirect/haml-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

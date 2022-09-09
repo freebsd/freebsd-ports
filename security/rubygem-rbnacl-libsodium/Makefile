@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Port rbnacl with bundled libsodium
+WWW=		https://github.com/cryptosphere/rbnacl-libsodium
 
 LICENSE=	MIT
 

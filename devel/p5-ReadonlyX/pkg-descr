@@ -6,5 +6,3 @@ The author says: "ReadonlyX is the best of recent versions of Readonly
 without the old API and without the speed penalty of tie(...). It's what
 I'd like to do with Readonly if resolving bugs in it wouldn't break 16
 years of code out there in Darkpan."
-
-WWW: https://metacpan.org/pod/ReadonlyX

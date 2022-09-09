@@ -14,6 +14,7 @@ CATEGORIES=	www
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Browser based on Qt 5
+WWW=		https://otter-browser.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

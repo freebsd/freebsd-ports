@@ -5,6 +5,7 @@ MASTER_SITES=	http://nekohako.xware.cx/id3tool/
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	Utility for manipulating mp3 ID3 Tags
+WWW=		http://nekohako.xware.cx/id3tool/
 
 GNU_CONFIGURE=	yes
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	milter-
 
 MAINTAINER=	victor@bsdes.net
 COMMENT=	Simple sendmail milter to interface bogofilter
+WWW=		https://www.usebox.net/jjm/bogom/
 
 RUN_DEPENDS=	bogofilter:mail/bogofilter
 

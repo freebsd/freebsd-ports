@@ -8,5 +8,3 @@ cddb/cue splitpoints. You can extract tracks from Mp3Wrap or AlbumWrap files in
 few seconds. For mp3 files, both ID3v1 & ID3v2 tags are supported.
 
 Mp3splt-project is split in 3 parts : libmp3splt, mp3splt and mp3splt-gtk.
-
-WWW: http://mp3splt.sourceforge.net/

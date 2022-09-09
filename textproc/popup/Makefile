@@ -7,6 +7,7 @@ DISTNAME=	Popup-${PORTVERSION}pre1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive learning aid for pairs of words
+WWW=		http://popup.sourceforge.net/
 
 LICENSE=	GPLv2+
 

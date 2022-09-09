@@ -7,5 +7,3 @@ Thus, the program can be used to monitor Internet usage on a networked site.
 But please note squid has to be running first and this program is not a
 proactive resource controller. What it can do is tell you who and which sites
 are consuming the most bandwidth.
-
-WWW: http://www.rillion.net/squidview

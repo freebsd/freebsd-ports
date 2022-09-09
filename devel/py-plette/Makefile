@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Structured Pipfile and Pipfile.lock models
+WWW=		https://github.com/sarugaku/plette
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

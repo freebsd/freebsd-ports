@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE filter wrapped around Compress::LZO
+WWW=		https://metacpan.org/release/POE-Filter-LZO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-gtk3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts
+WWW=		https://github.com/engla/keybinder
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

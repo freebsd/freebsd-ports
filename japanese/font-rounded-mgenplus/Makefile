@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ja-font-
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Rounded Mgen+ Japanese TrueType fonts
+WWW=		http://jikasei.me/font/rounded-mgenplus/
 
 LICENSE=	OFL11
 

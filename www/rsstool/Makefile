@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, parse, merge and write RSS and Atom feeds
+WWW=		http://rsstool.berlios.de/
 
 LICENSE=	GPLv2+
 

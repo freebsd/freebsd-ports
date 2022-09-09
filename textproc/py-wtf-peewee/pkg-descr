@@ -1,4 +1,2 @@
 Flask-WTF-Peewee, based on the code found in wtforms.ext, provides a bridge
 between peewee models and wtforms, mapping model fields to form fields.
-
-WWW: https://github.com/coleifer/wtf-peewee

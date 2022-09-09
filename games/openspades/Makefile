@@ -8,6 +8,7 @@ DISTFILES=	OpenSpadesDevPackage-r33.zip:data
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Compatible client of Ace of Spades
+WWW=		https://openspades.yvt.jp/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

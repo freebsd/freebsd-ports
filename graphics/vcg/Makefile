@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}.20050204
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualization Tool for compiler graphs
+WWW=		http://rw4.cs.uni-sb.de/users/sander/html/gsvcg1.html
 
 LICENSE=	GPLv2+
 

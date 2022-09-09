@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Higher Level API to Zookeeper for Python
+WWW=		https://pypi.org/project/kazoo/
 
 LICENSE=	APACHE20
 

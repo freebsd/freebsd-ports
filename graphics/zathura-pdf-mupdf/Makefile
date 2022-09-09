@@ -7,6 +7,7 @@ MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/ \
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	MuPDF render PDF plugin for Zathura PDF viewer
+WWW=		https://pwmt.org/projects/zathura-pdf-mupdf/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

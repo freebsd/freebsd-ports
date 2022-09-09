@@ -7,5 +7,3 @@ Quick2.
 File discovery is done using Baloo when available and enabled, and otherwise
 through a simple file system digger. The Baloo method is both faster and more
 featureful, and you should be using that whenever possible.
-
-WWW: https://peruse.kde.org/

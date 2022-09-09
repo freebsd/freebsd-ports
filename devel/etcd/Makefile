@@ -1,12 +1,13 @@
 PORTNAME=	etcd
 PORTVERSION=	2.3.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
+WWW=		https://github.com/etcd-io/etcd
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

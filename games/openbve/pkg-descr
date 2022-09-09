@@ -22,5 +22,3 @@ OpenBVE uses OpenGL for 3D graphics rendering, OpenAL for positional
 surround sound, and is written in the C# language.  Note that binary
 train extension plugins are not currently supported on Unix, because
 these would require Win32 emulation.
-
-WWW: https://openbve-project.net/

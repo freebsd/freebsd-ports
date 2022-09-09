@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot frozen bubbles to build groups of the same color
+WWW=		http://www.frozen-bubble.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

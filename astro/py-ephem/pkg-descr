@@ -6,5 +6,4 @@ use in PyEphem. The name ephem is short for the word ephemeris, which is
 the traditional term for a table giving the position of a planet, asteroid,
 or comet for a series of dates.
 
-WWW: https://rhodesmill.org/pyephem/
-WWW: https://pypi.org/project/ephem/
+See also: https://rhodesmill.org/pyephem/

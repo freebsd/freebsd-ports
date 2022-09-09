@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/hyperrealm/${PORTNAME}/releases/download/v${POR
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Simple library for processing structured configuration files
+WWW=		https://www.hyperrealm.com/libconfig/libconfig.html
 
 LICENSE=	LGPL21
 

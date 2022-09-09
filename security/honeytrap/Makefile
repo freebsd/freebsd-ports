@@ -1,10 +1,11 @@
 PORTNAME=	honeytrap
 DISTVERSION=	g20210510
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	ezri.mudde@dutchsec.com
 COMMENT=	Framework for running, monitoring and managing honeypots
+WWW=		https://docs.honeytrap.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

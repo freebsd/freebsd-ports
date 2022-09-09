@@ -15,5 +15,3 @@ In the future, a higher-level, strongly-typed interface will be
 provided, whereas Java classes are mapped directly to Caml classes.
 This raises fairly delicate type mapping issues, though, so don't hold
 your breath.
-
-WWW: http://caml.inria.fr/

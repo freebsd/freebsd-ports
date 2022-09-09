@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	S.M.A.R.T. disk monitoring tools
+WWW=		https://www.smartmontools.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

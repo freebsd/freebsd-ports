@@ -1,4 +1,2 @@
 Provides an easy way to fill an environment with active
 bindings that call a C++ function.
-
-WWW: https://github.com/krlmlr/bindrcpp

@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Another World engine reimplementation
+WWW=		https://github.com/cyxx/rawgl
 
 LICENSE=	NONE
 

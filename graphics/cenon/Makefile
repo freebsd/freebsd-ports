@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector graphics tool for GNUstep
+WWW=		https://www.cenon.info/dLinux_gb.html
 
 USES=		gnustep tar:bzip2
 USE_GNUSTEP=	gui base build

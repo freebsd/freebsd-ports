@@ -5,5 +5,3 @@ It uses one of the following extensions for math calculations:
 - PECL big_int extension version greater than or equal to 1.0.3
 - PHP GMP extension
 - PHP BCMath extension for both PHP4 and PHP5
-
-WWW: https://pear.php.net/package/Crypt_RSA

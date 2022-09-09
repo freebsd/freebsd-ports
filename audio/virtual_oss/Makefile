@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Virtual OSS multi device mixer application
+WWW=		https://github.com/hselasky/virtual_oss
 
 LICENSE=	BSD2CLAUSE
 

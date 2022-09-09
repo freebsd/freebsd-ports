@@ -11,5 +11,3 @@ Typical usage is as follows:
   done
 
 Run `zfs-snapshot-clean -h' for details.
-
-WWW: https://github.com/knu/zfs-snapshot-clean

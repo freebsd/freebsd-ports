@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OmniAuth strategy using different password strategies
+WWW=		https://github.com/jgraichen/omniauth-multipassword
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	NetComponents-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library with common network protocol implementations
+WWW=		http://www.savarese.org/oro/downloads/index.html #NetComponents
 
 # Converted from RESTRICTED
 LICENSE=	NetComponents

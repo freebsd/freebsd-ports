@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Apache Commons Byte Code Engineering Library
+WWW=		https://commons.apache.org/proper/commons-bcel/
 
 LICENSE=	APACHE20
 

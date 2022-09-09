@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.muhri.net/
 
 MAINTAINER=	oleg@bsdpower.com
 COMMENT=	Command line tool for switching GTK+ 2.0 themes
+WWW=		http://www.muhri.net/nav.php3?node=gts
 
 USES=		gmake gnome pkgconfig xorg
 USE_XORG=	x11

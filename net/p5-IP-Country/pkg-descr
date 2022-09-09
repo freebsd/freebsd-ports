@@ -10,5 +10,3 @@ probably be the country associated with a large ISP rather than the
 client herself, this is probably good enough for most log analysis
 applications, and under test has proved to be as accurate as
 reverse-DNS and WHOIS lookup.
-
-WWW: https://metacpan.org/release/IP-Country

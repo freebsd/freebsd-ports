@@ -3,5 +3,3 @@ libmsocket is a socket abstraction library for C programmers.
 In addition to simple TCP sockets, it is moving towards transparent
 support for additional abstractions in a seamless manner, such as
 SSL and Socks5 proxies.
-
-WWW: https://sourceforge.net/projects/kageki/

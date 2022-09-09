@@ -1,11 +1,12 @@
 PORTNAME=	tuf
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for securing software update systems
+WWW=		https://www.updateframework.com
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

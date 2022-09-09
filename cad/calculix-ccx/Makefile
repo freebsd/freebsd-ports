@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DIST_SOURCES}
 
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Three-Dimensional Structural Finite Element Program
+WWW=		http://www.calculix.de/
 
 LICENSE=	GPLv2
 

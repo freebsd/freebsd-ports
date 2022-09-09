@@ -9,5 +9,3 @@ interface to the health and performance of your network. Its design
 goals include collecting as much historical data about devices as
 possible, being completely autodiscovered with little or no manual
 intervention, and having a very intuitive interface.
-
-WWW: http://www.librenms.org

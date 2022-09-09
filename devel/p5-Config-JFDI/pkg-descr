@@ -5,5 +5,3 @@ Essentially, Config::JFDI will scan a directory for files matching a
 certain name. If such a file is found which also matches an extension
 that Config::Any can read, then the configuration from that file will
 be loaded.
-
-WWW: https://metacpan.org/release/Config-JFDI

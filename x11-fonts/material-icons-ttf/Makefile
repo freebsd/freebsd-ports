@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-ttf
 
 MAINTAINER=	voidanix@420blaze.it
 COMMENT=	Material Design icon set from Google
+WWW=		https://jossef.github.io/material-design-icons-iconfont
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

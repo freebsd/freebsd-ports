@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/guile
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Guile modules for WWW interaction
+WWW=		https://www.gnu.org/software/guile/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

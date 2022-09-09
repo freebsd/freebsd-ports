@@ -7,6 +7,7 @@ MASTER_SITES=	https://rawtherapee.com/shared/source/ \
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Powerful RAW image processing application
+WWW=		https://www.rawtherapee.com/
 
 LICENSE=	GPLv3
 
@@ -33,7 +34,7 @@ USE_BINUTILS=	yes
 # As of 2019-09-29, this port is known to be miscompiled by clang90
 # (SIGSEGV or SIBGUS).
 # So we shall stick to a modern GCC for now,
-# XXX FIXME note that rawtherapee is somewhat sensitive 
+# XXX FIXME note that rawtherapee is somewhat sensitive
 # versus compiler details so we may need to pin GCC 9.x
 # or a version range.
 USE_GCC=	yes

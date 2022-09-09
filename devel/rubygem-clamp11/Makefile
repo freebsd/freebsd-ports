@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	11
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command-line utility framework for Ruby
+WWW=		https://github.com/mdub/clamp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

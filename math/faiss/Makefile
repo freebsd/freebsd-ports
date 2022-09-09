@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for efficient similarity search & clustering of dense vectors
+WWW=		https://github.com/facebookresearch/faiss
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

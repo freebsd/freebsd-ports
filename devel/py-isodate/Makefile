@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ISO 8601 date/time/duration parser and formater
+WWW=		https://github.com/gweis/isodate
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/mptre/pick/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for choosing one option from a set of choices with an interface
+WWW=		https://github.com/mptre/pick
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

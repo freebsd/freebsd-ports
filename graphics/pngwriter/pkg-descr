@@ -5,5 +5,3 @@ functions for plotting simple geometric shapes (circle, rect, line), reading
 the colour of a pixel, reading in a whole PNG file (great for image analysis),
 plotting and reading in HSV colourspace, and many others that might come in
 handy.
-
-WWW: http://pngwriter.sourceforge.net/

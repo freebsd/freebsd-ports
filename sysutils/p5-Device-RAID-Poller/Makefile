@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	RAID poller providing LibreNMS JSON app and Nagios style checks
+WWW=		https://metacpan.org/dist/Device-RAID-Poller
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

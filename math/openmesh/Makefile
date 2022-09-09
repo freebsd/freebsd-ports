@@ -7,6 +7,7 @@ DISTNAME=	OpenMesh-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic data structure for manipulating polygonal meshes
+WWW=		https://www.openmesh.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

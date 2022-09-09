@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	hsw@bitmark.com
 COMMENT=	Multi tabbed terminal for rxvt/xterm/emacs
+WWW=		https://github.com/hxw/conlecterm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

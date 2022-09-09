@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Perl extension for parsing Mac OS X property lists
+WWW=		https://metacpan.org/release/Mac-PropertyList
 
 LICENSE=	ART20
 

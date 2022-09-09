@@ -6,6 +6,7 @@ MASTER_SITES=	http://dist.codehaus.org/grails/ \
 
 MAINTAINER=	mjs@bur.st
 COMMENT=	Web framework built on Groovy
+WWW=		https://grails.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

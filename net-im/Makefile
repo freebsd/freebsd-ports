@@ -14,6 +14,7 @@
     SUBDIR += cutegram
     SUBDIR += dendrite
     SUBDIR += dino
+    SUBDIR += discordo
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += farstream
@@ -67,6 +68,7 @@
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
     SUBDIR += loudmouth
+    SUBDIR += lurch
     SUBDIR += matterbridge
     SUBDIR += matterhorn
     SUBDIR += matterircd

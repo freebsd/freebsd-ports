@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Quake 1 port using Vulkan instead of OpenGL, based on QuakeSpasm
+WWW=		https://github.com/Novum/vkQuake
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt

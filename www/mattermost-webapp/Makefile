@@ -7,6 +7,7 @@ DISTNAME=	mattermost-${PORTVERSION}-linux-amd64
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Webapp of Mattermost server
+WWW=		https://mattermost.org/
 
 LICENSE=	APACHE20
 

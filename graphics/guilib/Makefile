@@ -7,6 +7,7 @@ DISTNAME=	GUIlib-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Simple GUI framework for use with SDL
+WWW=		https://www.libsdl.org/projects/GUIlib/index.html
 
 USE_SDL=	sdl
 USES=		gmake libtool sdl

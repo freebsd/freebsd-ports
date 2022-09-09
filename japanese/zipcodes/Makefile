@@ -6,6 +6,7 @@ DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
+WWW=		https://www.post.japanpost.jp/zipcode/
 
 BUILD_DEPENDS=	nkf:japanese/nkf
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Non-blocking Redis client written in Perl
+WWW=		https://metacpan.org/release/AnyEvent-Redis
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny \

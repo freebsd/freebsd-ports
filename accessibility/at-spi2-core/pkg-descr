@@ -6,5 +6,3 @@ to each other.
 This version of at-spi is a major break from previous versions.
 It has been completely rewritten to use D-Bus rather than
 ORBIT / CORBA for its transport protocol.
-
-WWW: https://gitlab.gnome.org/GNOME/at-spi2-core

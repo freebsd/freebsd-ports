@@ -1,10 +1,10 @@
 PORTNAME=	avro
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data serialization system
+WWW=		https://avro.apache.org/
 
 LICENSE=	APACHE20
 

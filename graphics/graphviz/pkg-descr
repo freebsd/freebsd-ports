@@ -10,5 +10,3 @@ The package contains:
     dot    - batch program for drawing directed graphs as hierarchies
     neato  - batch program for drawing undirected graphs using Kamada-Kawai
              spring models
-
-WWW: http://www.graphviz.org/

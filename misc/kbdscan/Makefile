@@ -5,6 +5,7 @@ MASTER_SITES=	https://hack.org/mc/hacks/kbdscan/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Show scancodes of keys pressed and released
+WWW=		https://hack.org/mc/hacks/kbdscan/
 
 LICENSE=	ISCL
 

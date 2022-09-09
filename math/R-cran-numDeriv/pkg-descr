@@ -5,5 +5,3 @@ derivative is available. A simple difference method is also provided.
 Simple difference is (usually) less accurate but is much quicker
 than 'Richardson"s' extrapolation and provides a useful cross-check.
 Methods are provided for real scalar and vector valued functions.
-
-WWW: https://cran.r-project.org/web/packages/numDeriv/

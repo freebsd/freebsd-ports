@@ -3,5 +3,3 @@ compressor based on the LZMA algorithm, with very safe integrity
 checking and a user interface similar to the one of gzip or bzip2.
 Plzip uses the lzip file format; the files produced by plzip are
 fully compatible with lzip-1.4 or newer.
-
-WWW: http://www.nongnu.org/lzip/plzip.html

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Term::ANSIColor for Ruby
+WWW=		https://flori.github.io/term-ansicolor/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

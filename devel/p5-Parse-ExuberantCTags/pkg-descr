@@ -4,5 +4,3 @@ ctags.
 
 The module is implemented as a wrapper around the readtags library
 that normally ships with Exuberant ctags.
-
-WWW: https://metacpan.org/release/Parse-ExuberantCTags

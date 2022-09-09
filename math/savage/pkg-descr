@@ -13,5 +13,3 @@ Features:
  - Macro-based system for defining functions with metadata and
    automatic type checking
  - Usable as a library from any Rust program
-
-WWW: https://github.com/p-e-w/savage

@@ -1,5 +1,3 @@
 JavaScript Object Notation (JSON) is a lightweight data interchange
 format.  Test::JSON makes it easy to verify that you have built
 valid JSON and that it matches your expected output.
-
-WWW: https://metacpan.org/release/Test-JSON

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby DNS library
+WWW=		https://github.com/bluemonk/net-dns
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

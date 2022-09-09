@@ -4,6 +4,7 @@ CATEGORIES=	java devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty4J's native library
+WWW=		https://github.com/traff/pty4j
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

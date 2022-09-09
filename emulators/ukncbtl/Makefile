@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	UKNC (Elektronika MS-0511) emulator
+WWW=		https://github.com/nzeemin/ukncbtl-doc/wiki
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

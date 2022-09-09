@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS wrapper and C library plug-in for Date::Calc
+WWW=		https://metacpan.org/release/Date-Calc-XS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Date-Calc>=6.4:devel/p5-Date-Calc \

@@ -30,5 +30,3 @@ lib/libdvben50221- Complete implementation of a Cenelec EN 50221 CAM stack.
 lib/libdvbmisc	- Miscellaneous utilities used by the other libraries.
 
 Various testing applications also live in test.
-
-WWW: https://linuxtv.org/hg/dvb-apps/

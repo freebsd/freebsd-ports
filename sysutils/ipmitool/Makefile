@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	CLI to manage IPMI systems
+WWW=		https://sourceforge.net/projects/ipmitool/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

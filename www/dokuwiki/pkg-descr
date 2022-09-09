@@ -4,5 +4,3 @@ workgroups and small companies. It has a simple but powerful syntax which
 makes sure the datafiles remain readable outside the Wiki and eases the
 creation of structured texts.
 All data is stored in plain text files - no database is required.
-
-WWW: https://www.dokuwiki.org/

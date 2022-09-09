@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for SHA-1/224/256/384/512 in pure Perl
+WWW=		https://metacpan.org/release/Digest-SHA-PurePerl
 
 # same license terms as Perl itself
 LICENSE=	ART10 GPLv1+

@@ -6,5 +6,3 @@ The result was FrikQCC 2.0, which has been updated many times since then.
 
 It currently supports: goto, labels, static variables, new optimizations,
 compiler warnings, and many other features.
-
-WWW: http://www.inside3d.com/frikbot/frikqcc/

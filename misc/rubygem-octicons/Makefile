@@ -1,10 +1,11 @@
 PORTNAME=	octicons
-PORTVERSION=	17.4.0
+PORTVERSION=	17.5.0
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Package that distributes Octicons in a gem
+WWW=		https://github.com/primer/octicons
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

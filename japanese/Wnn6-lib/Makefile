@@ -7,6 +7,7 @@ DISTNAME=	Wnn6-SDK
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn6 client library
+WWW=		https://www.omronsoft.co.jp/
 
 OPTIONS_DEFINE=	DOCS
 

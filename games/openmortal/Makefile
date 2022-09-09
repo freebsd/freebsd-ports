@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Parody of the once popular coin-up fighting game, Mortal Kombat
+WWW=		http://apocalypse.rulez.org/~upi/Mortal/
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 

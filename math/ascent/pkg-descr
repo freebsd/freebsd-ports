@@ -16,5 +16,3 @@ Features:
 * Use boost's odeint library as the numerical integration engine
 * Scripting Interface: Optional ChaiScript interface to easily script
   simulations
-
-WWW: https://github.com/AnyarInc/Ascent

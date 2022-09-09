@@ -9,5 +9,3 @@ use. You can also create a link directly to any saved report definition.
 
 Webfwlog requires a web server with PHP support and a MySQL, mariadb or
 PostgresSQL database server.
-
-WWW: http://www.webfwlog.net/

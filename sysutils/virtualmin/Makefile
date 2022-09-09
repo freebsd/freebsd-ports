@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.wbm.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Virtual hosting management system based on webmin
+WWW=		https://www.webmin.com/virtualmin.html
 
 LICENSE=	GPLv2
 

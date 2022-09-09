@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Use a plain class as a Catalyst model
+WWW=		https://metacpan.org/release/Catalyst-Model-Adaptor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

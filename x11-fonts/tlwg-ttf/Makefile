@@ -7,6 +7,7 @@ DISTNAME=	ttf-tlwg-${PORTVERSION}
 
 MAINTAINER=	antumdeluge@gmail.com
 COMMENT=	Collection of Thai TrueType fonts
+WWW=		https://linux.thai.net/projects/fonts-tlwg
 
 LICENSE=	GPLv2
 

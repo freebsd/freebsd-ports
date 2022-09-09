@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide package versions with version control data
+WWW=		https://github.com/toumorokoshi/vcver-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

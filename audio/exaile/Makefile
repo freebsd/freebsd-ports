@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Full featured python-based music player for GTK+
+WWW=		https://www.exaile.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

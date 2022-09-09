@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	XML::Hash::LX serializer for Catalyst::Action::Serialize
+WWW=		https://metacpan.org/release/Catalyst-Action-Serialize-XML-Hash-LX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Portably generate config for any shell
+WWW=		https://metacpan.org/release/Shell-Config-Generate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

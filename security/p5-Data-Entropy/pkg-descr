@@ -16,5 +16,3 @@ entropy of the rand seed. Within a single run it is cryptographically
 difficult to detect the correlation between parts of the
 pseudo-entropy stream. If more true entropy is required then it is
 necessary to configure a different entropy source.
-
-WWW: https://metacpan.org/release/Data-Entropy

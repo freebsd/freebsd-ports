@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	TokyoTyrant Driver to use with the Cache Handling Interface CHI
+WWW=		https://metacpan.org/release/CHI-Driver-TokyoTyrant
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

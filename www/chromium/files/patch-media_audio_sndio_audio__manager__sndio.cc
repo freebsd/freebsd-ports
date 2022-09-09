@@ -1,6 +1,6 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2022-07-22 17:30:31 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2022-08-31 12:19:35 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,177 @@
+@@ -0,0 +1,181 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -70,9 +70,13 @@
 +    const std::string& device_id) {
 +  static const int kDefaultInputBufferSize = 1024;
 +
++  int user_buffer_size = GetUserBufferSize();
++  int buffer_size = user_buffer_size ?
++      user_buffer_size : kDefaultInputBufferSize;
++
 +  return AudioParameters(
 +      AudioParameters::AUDIO_PCM_LOW_LATENCY, CHANNEL_LAYOUT_STEREO,
-+      kDefaultSampleRate, kDefaultInputBufferSize);
++      kDefaultSampleRate, buffer_size);
 +}
 +
 +AudioManagerSndio::AudioManagerSndio(std::unique_ptr<AudioThread> audio_thread,

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${LUA_VER_STR}
 
 MAINTAINER=	russ.haley@gmail.com
 COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
+WWW=		https://www.lua.org/
 
 LICENSE=	MIT
 

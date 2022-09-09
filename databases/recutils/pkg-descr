@@ -13,5 +13,3 @@ and to manipulate automatically.  Obviously they are not suitable for many
 tasks (for example, it can be difficult to manage hierarchies in recfiles)
 and performance is somewhat sacrificed in favor of readability, but they are
 quite handy to store small to medium simple databases.
-
-WWW: http://www.gnu.org/software/recutils/

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MVC web application framework
+WWW=		https://metacpan.org/release/Maypole
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

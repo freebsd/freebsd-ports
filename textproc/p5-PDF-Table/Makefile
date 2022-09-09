@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility class for building table layouts in a PDF::API2 object
+WWW=		https://metacpan.org/release/PDF-Table
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PDF-API2>=0:textproc/p5-PDF-API2

@@ -6,6 +6,7 @@ CATEGORIES=		biology java perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bash pipeline for RAD sequencing
+WWW=		http://ddocent.com
 
 LICENSE=	MIT
 

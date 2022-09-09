@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	D-Bus for .NET: GLib integration module
+WWW=		http://mono.github.com/dbus-sharp/
 
 LICENSE=	MIT
 

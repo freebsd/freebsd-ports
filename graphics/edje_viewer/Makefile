@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/gblach/e17/extra/
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple viewer for .edj files
+WWW=		https://www.enlightenment.org/
 
 LIB_DEPENDS=	libefl.so:devel/efl
 

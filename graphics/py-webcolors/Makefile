@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Library working with the sRGB color space as used in the HTML and CSS
+WWW=		https://github.com/ubernostrum/webcolors
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

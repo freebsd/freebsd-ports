@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Python library for accessing seafile data model
+WWW=		https://github.com/haiwen/seafobj
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

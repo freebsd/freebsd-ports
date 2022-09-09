@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GDS-based CAD tool for photonic and superconducting circuits
+WWW=		https://github.com/amccaugh/phidl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

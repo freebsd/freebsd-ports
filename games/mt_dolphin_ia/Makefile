@@ -6,6 +6,7 @@ MASTER_SITES=		SAVANNAH/maitretarot
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Basic AI for MaitreTarot, a Tarot card game
+WWW=		https://www.nongnu.org/maitretarot/
 
 LICENSE=		GPLv2
 

@@ -7,6 +7,7 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generic IP network transaction auditing tool
+WWW=		https://www.qosient.com/argus/
 
 LICENSE=	GPLv3
 

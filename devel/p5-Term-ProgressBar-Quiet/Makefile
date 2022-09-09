@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to display a progress bar, if interactive
+WWW=		https://metacpan.org/release/Term-ProgressBar-Quiet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

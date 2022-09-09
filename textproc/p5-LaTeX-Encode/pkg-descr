@@ -1,5 +1,3 @@
 p5-LaTeX-Encode provides a function to encode text that is to
 be formatted with LaTeX. It encodes characters that are special
 to LaTeX or that are represented in LaTeX by LaTeX commands.
-
-WWW: https://metacpan.org/release/LaTeX-Encode

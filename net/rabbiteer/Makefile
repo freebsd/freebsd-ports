@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	AMQP & RabbitMQ command-line tool
+WWW=		https://github.com/algesten/rabbiteer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE-MIT

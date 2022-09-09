@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Minimalistic platform game
+WWW=		http://jvgs.sourceforge.net/
 
 # Converted from NO_CDROM
 LICENSE=	jvgs

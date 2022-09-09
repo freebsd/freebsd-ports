@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Abstract Base Class for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Kind
 
 LICENSE=	APACHE20
 

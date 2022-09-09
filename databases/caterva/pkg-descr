@@ -6,5 +6,3 @@ machinery for retrieving arbitrary multi-dimensional slices (aka hyper-slices)
 out of the multi-dimensional containers in the most efficient way. Hence,
 Caterva brings the convenience of multi-dimensional and compressed containers to
 your application very easily.
-
-WWW: https://github.com/Blosc/caterva

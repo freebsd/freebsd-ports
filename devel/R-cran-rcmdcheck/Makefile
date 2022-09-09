@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Run 'R CMD check' from 'R' and Capture Results
+WWW=		https://CRAN.R-project.org/package=rcmdcheck
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

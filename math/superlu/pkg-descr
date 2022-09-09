@@ -12,5 +12,3 @@ precision iterative refinement subroutines are provided for improved
 backward stability. Routines are also provided to equilibrate the
 system, estimate the condition number, calculate the relative backward
 error, and estimate error bounds for the refined solutions.
-
-WWW: https://portal.nersc.gov/project/sparse/superlu/

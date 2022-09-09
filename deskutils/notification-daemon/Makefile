@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
+WWW=		https://gitlab.gnome.org/GNOME/notification-daemon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

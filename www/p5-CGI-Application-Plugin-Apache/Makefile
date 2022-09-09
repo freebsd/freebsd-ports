@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides easy access to Apache::* modules for CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-Apache
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI-Application>=3.22:www/p5-CGI-Application \

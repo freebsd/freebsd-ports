@@ -4,6 +4,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Set of IRC services for IRC networks
+WWW=		https://www.anope.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

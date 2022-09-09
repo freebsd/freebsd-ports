@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to Last.fm and Libre.fm
+WWW=		https://github.com/pylast/pylast
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

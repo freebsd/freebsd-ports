@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Spectrum analyzer for multiple SDR platforms
+WWW=		https://github.com/xmikos/qspectrumanalyzer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

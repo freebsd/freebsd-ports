@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backend utility to retrieve CDDB discid information
+WWW=		http://lly.org/~rcw/cd-discid/
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 

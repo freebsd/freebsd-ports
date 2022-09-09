@@ -5,6 +5,7 @@ MASTER_SITES=	https://fedorapeople.org/~acme/dwarves/
 
 MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Debugging Information Manipulation Tools (pahole & friends)
+WWW=		https://acmel.wordpress.com
 
 LICENSE=	BSD2CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi

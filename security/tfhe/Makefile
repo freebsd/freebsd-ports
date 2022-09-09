@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast Fully Homomorphic Encryption (FHE) library over the Torus
+WWW=		https://github.com/tfhe/tfhe
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

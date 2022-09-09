@@ -7,6 +7,7 @@ DISTNAME=	mathml${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MathML XML Schema
+WWW=		https://www.w3.org/Math/XMLSchema/
 
 USES=		tar:tgz
 NO_BUILD=	yes

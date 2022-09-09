@@ -7,6 +7,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Play, encode, and manage Ogg Vorbis files
+WWW=		https://xiph.org/vorbis/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

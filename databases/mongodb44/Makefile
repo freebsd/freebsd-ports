@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.4.13
+DISTVERSION=	4.4.16
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -9,6 +9,7 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database (4.4.x Branch)
+WWW=		https://docs.mongodb.com/v4.4/
 
 LICENSE=	SSPLv1 APACHE20 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi

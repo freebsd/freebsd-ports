@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Constructors and constants for IPv4/IPv6 multicast socket operations
+WWW=		https://metacpan.org/release/Socket-Multicast6
 
 RUN_DEPENDS=	p5-Socket6>=0.19:net/p5-Socket6
 

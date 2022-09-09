@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python version of NASA DE4xx ephemerides
+WWW=		https://github.com/brandon-rhodes/python-jplephem
 
 LICENSE=	MIT
 

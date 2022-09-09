@@ -12,5 +12,3 @@ original, has many new features.
 In 2000 it was ported to several Unix-like architectures by Maxim Sobolev.
 Currently it supports FreeBSD, using either VGL or SDL library, and Linux using
 SDL library.
-
-WWW: http://www.digger.org/

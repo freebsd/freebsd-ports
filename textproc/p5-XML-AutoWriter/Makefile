@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-0.4
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for DOCTYPE based XML output
+WWW=		https://metacpan.org/release/XML-AutoWriter
 
 LICENSE=	ART10 GPLv1 BSD4CLAUSE
 LICENSE_COMB=	dual

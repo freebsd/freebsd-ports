@@ -8,6 +8,7 @@ DISTNAME=	lua-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Iconv binding for Lua 5
+WWW=		https://ittner.github.io/lua-iconv/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

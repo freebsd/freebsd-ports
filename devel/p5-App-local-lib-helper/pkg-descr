@@ -8,5 +8,3 @@ a command under the local::lib which it was built against.
 For example, assume you build a local::lib like so:
 
   cpanm --local-lib ~/mylib App::local::lib::helper
-
-WWW: https://metacpan.org/release/App-local-lib-helper

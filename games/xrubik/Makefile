@@ -6,6 +6,7 @@ MASTER_SITES=	XCONTRIB/games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X-based rubik's cube(tm)
+WWW=		http://www.tux.org/~bagleyd/puzzles.html
 
 WRKSRC=		${WRKDIR}/xrubik
 USES=		imake xorg

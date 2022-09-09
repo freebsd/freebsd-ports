@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.kegel.com/dkftpbench/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP benchmark program
+WWW=		http://www.kegel.com/dkftpbench/
 
 LICENSE=	GPLv2
 

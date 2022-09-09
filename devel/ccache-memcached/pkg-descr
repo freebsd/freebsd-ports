@@ -4,5 +4,3 @@ compilation can be satisfied from cache.  This often results in a 5 to 10
 times speedup in common compilations.
 
 ccache-memcached is an older fork with memcached support.
-
-WWW: https://ccache.samba.org/

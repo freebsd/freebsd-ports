@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Atomic file writes library
+WWW=		https://github.com/untitaker/python-atomicwrites
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

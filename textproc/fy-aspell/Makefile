@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Frisian (Frysk) dictionary
+WWW=		http://borel.slu.edu/crubadan/
 
 DICT=	 	fy
 

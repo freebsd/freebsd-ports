@@ -12,5 +12,3 @@ well as immersive applications like 360 degree video and augmented reality (AR).
 The Fraunhofer Versatile Video Decoder (VVdeC) is a fast VVC x86 software
 decoder implementation. The decoder supports most standard features available in
 the Main10 profile, with support for some high-level features still pending.
-
-WWW: https://github.com/fraunhoferhhi/vvdec

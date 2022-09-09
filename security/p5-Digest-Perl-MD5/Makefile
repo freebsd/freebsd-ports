@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for MD5 hash algorithm in pure Perl
+WWW=		https://metacpan.org/release/Digest-Perl-MD5
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

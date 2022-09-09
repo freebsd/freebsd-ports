@@ -14,5 +14,3 @@ Cube is a 3D First Person Shooter that uses OpenGL and SDL.  It features:
     experience
   - Doom/Quake-style singleplayer and multiplayer game with some
     uncompromising brutal old-school gameplay
-
-WWW: http://www.cubeengine.com/

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	16
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Database migration tool for SQLAlchemy (1.6.x)
+WWW=		https://alembic.zzzcomputing.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

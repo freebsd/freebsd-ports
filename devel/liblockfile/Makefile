@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Standard lockfile library
+WWW=		https://github.com/miquels/liblockfile
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

@@ -4,5 +4,3 @@ interfaces physical or VLAN.
 
 It is used where devices such as Sonos or Sky are spread accross
 different subnets and are not able to detect the servers or devices.
-
-WWW: https://github.com/marjohn56/udpbroadcastrelay

@@ -6,6 +6,7 @@ PATCHFILES=	2bc71d562765e2023b26a31c485769612e3eb91e.patch:-p1 # PR 282
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Auto-detect displays and configure them with xrandr
+WWW=		https://github.com/phillipberndt/autorandr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt

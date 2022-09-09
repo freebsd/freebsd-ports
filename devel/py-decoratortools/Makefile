@@ -8,6 +8,7 @@ DISTNAME=	DecoratorTools-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class, function, and metaclass decorators
+WWW=		https://pypi.org/project/DecoratorTools/
 
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual

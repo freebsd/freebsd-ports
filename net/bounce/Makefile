@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	matt@efs.org
 COMMENT=	Bounce TCP connections to another machine/port
+WWW=		http://www.iagora.com/~espel/hacks.html
 
 USE_RC_SUBR=	bounce
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

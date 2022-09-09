@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	2D tank game with large, cartoonish weapons
+WWW=		http://atanks.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

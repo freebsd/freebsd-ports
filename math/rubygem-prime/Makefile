@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Prime numbers and factorization library
+WWW=		https://github.com/ruby/prime
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

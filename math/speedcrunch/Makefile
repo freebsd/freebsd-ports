@@ -7,6 +7,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Keyboard-oriented desktop scientific calculator
+WWW=		https://speedcrunch.org/
 
 LICENSE=	GPLv2+
 

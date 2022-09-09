@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP mode for GNU Emacs
+WWW=		https://github.com/emacs-php/php-mode
 
 LICENSE=	GPLv3
 

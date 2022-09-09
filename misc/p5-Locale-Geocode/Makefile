@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find codes and information on geographical location
+WWW=		https://metacpan.org/release/Locale-Geocode
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-SAX-Expat>=0.39:textproc/p5-XML-SAX-Expat \

@@ -7,5 +7,3 @@ following features:
 - an extended parser that supports the CardinalityField naming schema
   and creates missing type variants (0..1, 0..*, 1..*) from the primary type
   converter
-
-WWW: https://github.com/jenisys/parse_type

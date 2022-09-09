@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Experimental interface to the W3C CSS Validation online service
+WWW=		https://metacpan.org/release/WebService-Validator-CSS-W3C
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \

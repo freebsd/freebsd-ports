@@ -6,6 +6,7 @@ DISTNAME=	httpcomponents-core-${DISTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing the base HTTP protocol
+WWW=		https://hc.apache.org/httpcomponents-core-4.4.x/
 
 LICENSE=	APACHE20
 

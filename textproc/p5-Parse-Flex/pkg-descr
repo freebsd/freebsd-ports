@@ -13,5 +13,3 @@ Flex01.pm - since Flex01.pm will automatically load Flex01.so.
 The grammar.l file requires the same syntax as flex(1); that is, the
 actions are written in C . See the flex(1) documentation to learn the
 syntax, or fetch the sample t/grammar.l file inside this package.
-
-WWW: https://metacpan.org/release/Parse-Flex

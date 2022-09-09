@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	App and framework for all things about ISBN
+WWW=		https://github.com/xlcnd/isbntools
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL-3.0.txt

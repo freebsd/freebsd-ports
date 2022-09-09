@@ -1,5 +1,3 @@
 fastforward handles qmail forwarding according to a cdb database.
 It can create forwarding databases from a sendmail-style
 /etc/aliases or from user-oriented virtual-domain tables.
-
-WWW: http://cr.yp.to/fastforward.html

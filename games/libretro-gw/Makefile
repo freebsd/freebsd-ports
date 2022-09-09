@@ -2,8 +2,9 @@ PORTNAME=	libretro-gw
 PORTVERSION=	0.20220213
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libretro core for Game & Watch simulators
+WWW=		https://github.com/libretro/gw-libretro
 
 LICENSE=	GPLv2
 

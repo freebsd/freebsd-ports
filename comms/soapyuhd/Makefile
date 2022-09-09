@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Soapy SDR plugin for the Airspy
+WWW=		https://github.com/pothosware/SoapyUHD/wiki
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

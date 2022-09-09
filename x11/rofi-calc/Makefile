@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Do live calculations in rofi
+WWW=		https://github.com/svenstaro/rofi-calc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

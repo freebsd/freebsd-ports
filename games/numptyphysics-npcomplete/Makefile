@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	numptyphysics-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Level pack for Numpty Physics
+WWW=		http://numptyphysics.garage.maemo.org/levels/
 
 RUN_DEPENDS=	numptyphysics:games/numptyphysics
 

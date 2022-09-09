@@ -10,5 +10,3 @@ python files as arguments, and generates an import graph, typically used to
 process files in dependency order.
 
 This is not an official Google product.
-
-WWW: https://github.com/google/importlab

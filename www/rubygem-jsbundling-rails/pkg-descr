@@ -10,5 +10,3 @@ terminal with yarn build --watch (and your Rails server in another, if you're
 not using something like puma-dev). You can also use ./bin/dev, which will start
 both the Rails server and the JS build watcher (along with a CSS build watcher,
 if you're also using cssbundling-rails).
-
-WWW: https://github.com/rails/jsbundling-rails

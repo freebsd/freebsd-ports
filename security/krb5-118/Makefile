@@ -14,6 +14,7 @@ PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
+WWW=			https://web.mit.edu/kerberos/
 
 LICENSE=		MIT
 

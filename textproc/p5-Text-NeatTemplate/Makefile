@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast, middleweight template engine
+WWW=		https://metacpan.org/release/Text-NeatTemplate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

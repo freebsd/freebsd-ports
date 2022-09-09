@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	SMS::Send driver for Socket2Air
+WWW=		https://metacpan.org/release/SMS-Send-TW-Socket2Air
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SMS-Send>=0:comms/p5-SMS-Send \

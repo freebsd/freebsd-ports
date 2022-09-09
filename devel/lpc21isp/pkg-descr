@@ -2,5 +2,3 @@ Lpc21isp is an in-circuit programming (ISP) tool for the NXP (Philips)
 LPC1100/LPC1300/LPC1700/LPC2000 series ARM7/Cortex-M0/Cortex-M3 micro-
 controllers flash on NXP & Analog Devices ARM7 CPUs over the serial
 bootloader.
-
-WWW: http://tech.groups.yahoo.com/group/lpc21isp/

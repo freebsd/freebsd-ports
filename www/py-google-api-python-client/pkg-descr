@@ -9,5 +9,3 @@ urlshortener, webfonts, youtube, youtubeAnalytics APIs.
 
 If you wish to use a Google API that is not in that list then you should
 look at the Google Data APIs Python Client Library (devel/py-gdata).
-
-WWW: https://github.com/googleapis/google-api-python-client

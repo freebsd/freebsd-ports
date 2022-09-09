@@ -5,6 +5,7 @@ MASTER_SITES=	http://ccb.jhu.edu/software/stringtie/dl/
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Transcript assembly and quantification for RNA-seq
+WWW=		http://www.ccb.jhu.edu/software/stringtie/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

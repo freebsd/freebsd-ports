@@ -5,6 +5,7 @@ MASTER_SITES=	https://codemadness.org/releases/stagit/
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Static Git page generator
+WWW=		https://codemadness.org/git/stagit/log.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,5 +9,3 @@ Like CloudABI, Flower makes use of a capability-based security model.
 This makes it easy to spawn applications in such a way that they can
 only have a limited view of the network, without requiring separate
 users or complex access control policies.
-
-WWW: https://github.com/NuxiNL/flower

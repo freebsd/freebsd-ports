@@ -5,5 +5,3 @@ static files extremely easy.
 Internally, every time a request is made the extension will check if
 it matches one of the compressible MIME types and will automatically
 attach the appropriate headers.
-
-WWW: https://pypi.org/project/Flask-Compress/

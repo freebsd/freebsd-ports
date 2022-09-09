@@ -5,6 +5,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to handle many kinds of Japanese characters
+WWW=		https://metacpan.org/release/Lingua-JA-Moji
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

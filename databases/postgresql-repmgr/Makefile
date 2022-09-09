@@ -7,6 +7,7 @@ DISTNAME=	repmgr-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PostgreSQL replication manager
+WWW=		https://repmgr.org/
 
 LICENSE=	GPLv3
 

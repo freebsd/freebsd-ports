@@ -11,6 +11,7 @@ DISTNAME=	ICON-Gentoo-Test
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gentoo-Test Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Objective Caml compiler and programming environment
+WWW=		https://ocaml.org/
 
 LICENSE=		QPL10 LGPL20
 LICENSE_COMB=		multi

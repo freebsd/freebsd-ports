@@ -7,6 +7,7 @@ DISTNAME=	sarif_om-${DISTVERSION}
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	Python classes for the SARIF 2.1.0 object model
+WWW=		https://pypi.org/project/sarif-om/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

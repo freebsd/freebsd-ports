@@ -5,5 +5,3 @@ Australian Charity.
 The package is organised so that it contains a light-weight API suitable for
 use in any environment (including the J2ME) with the additional infrastructure
 to conform the algorithms to the JCE framework.
-
-WWW: https://www.bouncycastle.org/

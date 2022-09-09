@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Google OAuth2 strategy for OmniAuth 1.x
+WWW=		https://github.com/zquestz/omniauth-google-oauth2
 
 LICENSE=	MIT
 

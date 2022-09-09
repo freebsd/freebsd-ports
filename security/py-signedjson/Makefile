@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sign JSON with Ed25519 signatures
+WWW=		https://github.com/matrix-org/python-signedjson
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,5 +8,3 @@
 sets and defining patterns using variables.
 - Required run time environment is a minimal X window system installation
 on a POSIX-compatible system (*BSD/Linux/Mac OS X/Cygwin/...).
-
-WWW: https://github.com/iserikov/2d-rewriter

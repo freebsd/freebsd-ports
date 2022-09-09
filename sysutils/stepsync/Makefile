@@ -7,6 +7,7 @@ DISTNAME=	StepSync-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File and folder synchronization tool
+WWW=		https://gap.nongnu.org/stepsync/
 
 LICENSE=	GPLv2+
 

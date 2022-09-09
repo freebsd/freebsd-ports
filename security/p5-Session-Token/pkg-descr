@@ -3,5 +3,3 @@ creating session tokens, password reset codes, temporary passwords,
 random identifiers, and anything else you can think of.
 
 Like this: my $token = Session::Token->new->get; # 128 bits
-
-WWW: https://metacpan.org/release/Session-Token

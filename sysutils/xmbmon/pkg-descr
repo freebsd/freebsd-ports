@@ -9,5 +9,3 @@ Run "mbmon -h" or "xmbmon -help" to see the usage.
 These programs access to the SMBus or the ISA-IO port directly under
 the superuser privilege, so it may cause a system crash.  Please test
 "mbmon -d" or "xmbmon -debug" first.
-
-WWW: http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/download.html

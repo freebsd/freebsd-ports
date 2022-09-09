@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for enabling X-WSSE authentication in LWP
+WWW=		https://metacpan.org/release/LWP-Authen-Wsse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

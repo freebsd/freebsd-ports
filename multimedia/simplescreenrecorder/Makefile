@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Screen video recorder
+WWW=		https://www.maartenbaert.be/simplescreenrecorder/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

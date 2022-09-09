@@ -5,6 +5,7 @@ MASTER_SITES=	http://eddylab.org/infernal/
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Search sequence databases for structural RNA homologs
+WWW=		http://eddylab.org/infernal/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

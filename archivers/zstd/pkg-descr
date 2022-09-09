@@ -5,5 +5,4 @@ dictionary compression. The reference library offers a very wide range of speed
 library is provided as open source software using a BSD license. Its format is
 stable and published as IETF RFC 8878.
 
-WWW: https://facebook.github.io/zstd/
-WWW: https://github.com/facebook/zstd
+See also: https://github.com/facebook/zstd

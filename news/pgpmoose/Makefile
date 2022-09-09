@@ -9,6 +9,7 @@ DISTNAME=	PGPMoose
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PGP Moose - signatures for moderated newsgroups
+WWW=		http://seer-grog.net/pgpmoose.html
 
 USES=		tar:Z shebangfix
 NO_WRKSUBDIR=	yes

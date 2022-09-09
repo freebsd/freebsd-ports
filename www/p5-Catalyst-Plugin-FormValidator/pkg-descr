@@ -1,5 +1,3 @@
 This Catalyst plugin uses Data::FormValidator to validate and set
 up form data from your request parameters. It's a quite thin wrapper
 around that module.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-FormValidator

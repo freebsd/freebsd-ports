@@ -1,4 +1,2 @@
 This module implements a PerlIO layer that can only read files and
 return an MD5 digest of the contents of the file.
-
-WWW: https://metacpan.org/release/PerlIO-via-MD5

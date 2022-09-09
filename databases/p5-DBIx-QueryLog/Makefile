@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for logging queries for DBI
+WWW=		https://metacpan.org/release/DBIx-QueryLog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

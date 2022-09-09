@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Smart, easy and powerful way to access/create XML files/data
+WWW=		https://metacpan.org/release/XML-Smart
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

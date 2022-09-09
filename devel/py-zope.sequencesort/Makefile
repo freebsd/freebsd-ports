@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Very Advanced Sequence Sorting
+WWW=		https://pypi.org/project/zope.sequencesort/
 
 LICENSE=	ZPL21
 

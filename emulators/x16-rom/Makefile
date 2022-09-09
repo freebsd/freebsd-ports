@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Commander X16 ROM
+WWW=		https://github.com/commanderx16
 
 BUILD_DEPENDS=	cc65:devel/cc65
 

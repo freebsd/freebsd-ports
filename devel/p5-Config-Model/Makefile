@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Model to create configuration validation tool
+WWW=		https://metacpan.org/release/Config-Model
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

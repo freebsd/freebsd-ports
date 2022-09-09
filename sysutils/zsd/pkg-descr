@@ -7,5 +7,3 @@ indirectly by specifying the number of snapshots that should be kept.
 It goes nicely with zogftw's zogftw_snapshot_successfully_sent_hook()
 to grow a certain number of snapshots on new datasets while keeping the
 number of snapshots on old datasets constant.
-
-WWW: http://www.fabiankeil.de/gehacktes/zsd/

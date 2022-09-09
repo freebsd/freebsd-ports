@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	MCollective and Rufus scheduler wrapper
+WWW=		https://github.com/nullDowntimeLtd/mnrpes
 
 LICENSE=	APACHE20
 

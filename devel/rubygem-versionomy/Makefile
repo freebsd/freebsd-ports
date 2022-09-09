@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generalized version number library for Ruby
+WWW=		https://dazuma.github.io/versionomy/
 
 LICENSE=	BSD3CLAUSE
 

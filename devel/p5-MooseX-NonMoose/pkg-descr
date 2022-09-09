@@ -10,5 +10,3 @@ including it in a Moose::Exporter-based package used across an entire
 application should be possible, without interfering with classes that
 only inherit from Moose modules, or even classes that don't inherit from
 anything at all.
-
-WWW: https://metacpan.org/release/MooseX-NonMoose

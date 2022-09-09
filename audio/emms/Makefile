@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Multi-Media System
+WWW=		https://www.gnu.org/software/emms/index.html
 
 LICENSE=	GPLv3
 

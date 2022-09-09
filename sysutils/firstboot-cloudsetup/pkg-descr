@@ -1,5 +1,3 @@
 Configure network and user data from cloud configuration at first boot.
 The configuration is written before the netif service is started.
 Compatible with OpenNebula.
-
-WWW: https://git.sr.ht/~jornane/cloudsetup

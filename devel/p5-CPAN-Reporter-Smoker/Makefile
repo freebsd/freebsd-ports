@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Turnkey CPAN Testers smoking
+WWW=		https://metacpan.org/release/CPAN-Reporter-Smoker
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CPAN-Reporter>0:devel/p5-CPAN-Reporter \

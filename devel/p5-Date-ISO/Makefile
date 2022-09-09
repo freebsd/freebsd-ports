@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Converts dates between ISO and Gregorian formats
+WWW=		https://metacpan.org/release/Date-ISO
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Date-ICal>=1.54:devel/p5-Date-ICal \

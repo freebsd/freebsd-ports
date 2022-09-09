@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl implementation of Dublin Core compatible metadata
+WWW=		https://metacpan.org/release/Metadata
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

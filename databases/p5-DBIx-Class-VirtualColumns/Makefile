@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Add virtual columns to DBIx::Class schemata
+WWW=		https://metacpan.org/release/DBIx-Class-VirtualColumns
 
 BUILD_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
 		p5-Class-C3-XS>=0.02:devel/p5-Class-C3-XS \

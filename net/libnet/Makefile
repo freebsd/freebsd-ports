@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libnet/libnet/releases/download/v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for creating IP packets
+WWW=		https://github.com/libnet/libnet
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

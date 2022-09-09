@@ -6,6 +6,7 @@ DISTNAME=	owpd300b
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
+WWW=		http://www.maximintegrated.com/en/products/comms/ibutton.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

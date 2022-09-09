@@ -8,5 +8,3 @@ an ODBC driver manager.  It currently supports either iODBC or unixODBC.
 This port allows the user to select which driver manager to use via a
 build-time variable definition - see the comments in the Makefile for further
 details.
-
-WWW: http://orcane.net/freeodbc++/

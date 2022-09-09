@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Distribution builder
+WWW=		https://metacpan.org/release/Dist-Zilla
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

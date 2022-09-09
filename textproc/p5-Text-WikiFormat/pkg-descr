@@ -1,5 +1,3 @@
 Text::WikiFormat converts text in a simple Wiki markup language to whatever
 your little heart desires, provided you can describe it accurately in a
 semi-regular tag language.
-
-WWW: https://metacpan.org/release/Text-WikiFormat

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-ac
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
+WWW=		https://lha.osdn.jp
 
 # Converted from RESTRICTED
 LICENSE=	LHA

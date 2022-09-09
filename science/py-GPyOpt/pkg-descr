@@ -9,5 +9,3 @@ With GPyOpt you can:
 Among other functionalities, with GPyOpt you can design experiments in parallel,
 use cost models and mix different types of variables in your designs. Many users
 already use GpyOpt for research purposes.
-
-WWW: https://sheffieldml.github.io/GPyOpt/

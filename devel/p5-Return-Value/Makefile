@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Polymorphic return values for Perl
+WWW=		https://metacpan.org/release/Return-Value
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

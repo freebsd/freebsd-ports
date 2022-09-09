@@ -8,6 +8,7 @@ MASTER_SITES=	http://ecasound.seul.org/download/ \
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Multitrack audio processing software
+WWW=		https://nosignal.fi/ecasound/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	121
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Process utilities module for Python
+WWW=		https://pypi.org/project/psutil/
 
 LICENSE=	BSD3CLAUSE
 

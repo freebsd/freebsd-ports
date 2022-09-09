@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Network device configuration backup tool
+WWW=		https://github.com/ytti/oxidized
 
 LICENSE=	APACHE20
 

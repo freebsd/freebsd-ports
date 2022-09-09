@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java client library for the Spread Group Communication System
+WWW=		http://www.spread.org/
 
 BUILD_DEPENDS=	${ANT}:devel/apache-ant
 

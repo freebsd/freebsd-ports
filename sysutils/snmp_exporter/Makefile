@@ -1,11 +1,12 @@
 PORTNAME=	snmp_exporter
 PORTVERSION=	0.20.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
 COMMENT=	SNMP Exporter for Prometheus
+WWW=		https://github.com/prometheus/snmp_exporter
 
 LICENSE=	APACHE20
 

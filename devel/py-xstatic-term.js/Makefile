@@ -8,6 +8,7 @@ DISTNAME=	XStatic-term.js-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	term.js (XStatic packaging standard)
+WWW=		https://github.com/chjj/term.js
 
 LICENSE=	MIT
 

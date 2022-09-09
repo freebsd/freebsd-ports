@@ -16,6 +16,8 @@ share/urbackup/www/css/bootstrap-select.chash-d2d8b0cbdd75333eb01a025abd0ed954.m
 share/urbackup/www/css/bootstrap-select.css
 share/urbackup/www/css/bootstrap-theme.chash-46d96593303e4c8666f497bb7602c999.min.css
 share/urbackup/www/css/bootstrap-theme.css
+share/urbackup/www/css/bootstrap-toggle.chash-e12db6c1f34cdb5b0151e54141174bf3.css
+share/urbackup/www/css/bootstrap-toggle.min.css
 share/urbackup/www/css/bootstrap.chash-2f624089c65f12185e79925bc5a7fc42.min.css
 share/urbackup/www/css/bootstrap.css
 share/urbackup/www/css/buttons.bootstrap.css
@@ -36,6 +38,7 @@ share/urbackup/www/css/select.bootstrap.css
 share/urbackup/www/css/select.bootstrap.min.css
 share/urbackup/www/css/select.dataTables.css
 share/urbackup/www/css/select.dataTables.min.css
+share/urbackup/www/css/urbackup_extra.chash-3db0cfd0827ea1e31800d5d3479113e1.css
 share/urbackup/www/css/urbackup_extra.chash-88c2abb07e691af5684519b618394250.css
 share/urbackup/www/favicon.ico
 share/urbackup/www/fonts/glyphicons-halflings-regular.eot
@@ -68,6 +71,8 @@ share/urbackup/www/images/urbackup.png
 share/urbackup/www/index.htm
 share/urbackup/www/js/bootstrap-select.chash-76ee99405563373864c57f9093c526eb.min.js
 share/urbackup/www/js/bootstrap-select.js
+share/urbackup/www/js/bootstrap-toggle.chash-4f3a8e499de27e992b7f0e0f92de3491.min.js
+share/urbackup/www/js/bootstrap-toggle.js
 share/urbackup/www/js/bootstrap.chash-c5b5b2fa19bd66ff23211d9f844e0131.min.js
 share/urbackup/www/js/bootstrap.js
 share/urbackup/www/js/buttons.bootstrap.js
@@ -112,6 +117,7 @@ share/urbackup/www/js/templates.chash-413440024835c5e4ea99c0badf2311b0.js
 share/urbackup/www/js/templates.chash-488eb6bdb61144c5f3628cb61193cbf0.js
 share/urbackup/www/js/templates.chash-98b70da992ffbfb64873cc47c15e8992.js
 share/urbackup/www/js/templates.chash-9e4954e10a60c31df0e2c25e7e191086.js
+share/urbackup/www/js/templates.chash-b822a22aef4c363c85a5e1fac111e96a.js
 share/urbackup/www/js/templates.chash-ecd192a19340d82b8e2a92e4a7aae964.js
 share/urbackup/www/js/templates.chash-f85173fea3869fb86c781b60569246a4.js
 share/urbackup/www/js/translation.chash-17666a6e1eff21a4453aeeb5408a5a27.js
@@ -119,6 +125,7 @@ share/urbackup/www/js/translation.chash-2c1ec818032b1e0514904724dfc9a3a5.js
 share/urbackup/www/js/translation.chash-3e8d08068445883d1daf8cf2a3bc4340.js
 share/urbackup/www/js/translation.chash-43d97f4542e2b5d1974594094b5eb0eb.js
 share/urbackup/www/js/translation.chash-53030ead4b0c2992b7a742a5bed95dc8.js
+share/urbackup/www/js/translation.chash-6c145a3b0cb6473cadc36c8fb10ea5fb.js
 share/urbackup/www/js/translation.chash-710c13b3aadc254a86a15dd18230f8b6.js
 share/urbackup/www/js/translation.chash-a1fc94d4665af6cb090a8a17d3eaee0b.js
 share/urbackup/www/js/urbackup.chash-020242a6f6d68010a6e63e3065ff53d6.js
@@ -128,6 +135,7 @@ share/urbackup/www/js/urbackup.chash-221e78b41974ea96ceb781abfbd5c6ed.js
 share/urbackup/www/js/urbackup.chash-32c284d4b5189f22969dea49551e6192.js
 share/urbackup/www/js/urbackup.chash-4e0e45b263393deba863167b97075a63.js
 share/urbackup/www/js/urbackup.chash-5136f8ca86773fbc763df80b4a706227.js
+share/urbackup/www/js/urbackup.chash-5933c314ef08f6c833516581c05302ef.js
 share/urbackup/www/js/urbackup.chash-5e62d89707ee959924e2e01cc23d59e0.js
 share/urbackup/www/js/urbackup.chash-6833a6d96ee805d4ad26b143e6b3eced.js
 share/urbackup/www/js/urbackup.chash-70c25c845d7958e76fa1349fbb937e9e.js
@@ -145,6 +153,7 @@ share/urbackup/www/js/urbackup.chash-cb406b0890d791e36c7542211da71a8c.js
 share/urbackup/www/js/urbackup.chash-f06ab951e72229bb54b7a87d4afce638.js
 share/urbackup/www/js/urbackup_functions.chash-4f795bc977f7d5ea47ee69a69e9f74bc.js
 share/urbackup/www/js/urbackup_functions.chash-6481a2ac25b89a3d87063d9f080a54bb.js
+share/urbackup/www/js/urbackup_functions.chash-98c3f5649cb6de638d6c1ea5df75ce5c.js
 share/urbackup/www/js/urbackup_functions.chash-ba3dbff9829eea33c689d82f9020704d.js
 share/urbackup/www/js/urbackup_functions.chash-cb06117b2b923bb8b72f1ea5eeac5557.js
 share/urbackup/www/js/vs/base/worker/workerMain.js

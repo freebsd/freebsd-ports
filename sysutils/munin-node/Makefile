@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-node
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Node-specific part of Munin
+WWW=		https://munin-monitoring.org/
 
 BUILD_DEPENDS=	bash:shells/bash \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \

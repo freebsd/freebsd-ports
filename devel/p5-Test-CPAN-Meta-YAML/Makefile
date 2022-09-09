@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validate a META.yml file within a CPAN distribution
+WWW=		https://metacpan.org/release/Test-CPAN-Meta-YAML
 
 LICENSE=	ART20
 

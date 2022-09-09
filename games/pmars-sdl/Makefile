@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of pMARS using the Simple Directmedia Library
+WWW=		https://corewar.co.uk/pihlaja/pmars-sdl/
 
 LICENSE=	GPLv2+
 

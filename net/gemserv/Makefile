@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ea@uoga.net
 COMMENT=	Gemini server written in Rust
+WWW=		https://git.sr.ht/~int80h/gemserv
 
 LICENSE=	APACHE20 BSD3CLAUSE MIT MPL20
 LICENSE_COMB=	multi

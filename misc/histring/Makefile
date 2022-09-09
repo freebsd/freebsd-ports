@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Highlight strings using the ANSI terminal escape sequences
+WWW=		https://github.com/suntong/histring
 
 LICENSE=	GPLv2
 

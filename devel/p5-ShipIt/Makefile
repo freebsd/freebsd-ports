@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Software release tool
+WWW=		https://metacpan.org/release/ShipIt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

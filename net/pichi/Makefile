@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in
 COMMENT=	Flexible rule-based proxy
+WWW=		https://github.com/pichi-router/pichi
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

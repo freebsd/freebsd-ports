@@ -1,11 +1,12 @@
 PORTNAME=	natscli
 PORTVERSION=	0.0.33
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Command line utility to interact with and manage NATS
+WWW=		https://github.com/nats-io/natscli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	MOPAC 6 input file reader/writer
+WWW=		https://metacpan.org/release/Chemistry-File-Mopac
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-InternalCoords>=0:science/p5-Chemistry-InternalCoords

@@ -9,6 +9,7 @@ PATCHFILES=	62f3ba4ecb92.diff:-p1
 
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	C++ implementation of an OpenID decentralized identity system
+WWW=		https://kin.klever.net/libopkele/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

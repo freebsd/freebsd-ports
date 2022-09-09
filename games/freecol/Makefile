@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open source version of Colonization
+WWW=		https://freecol.org/
 
 LICENSE=	GPLv2
 

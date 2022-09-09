@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for segyio, the seismic data library
+WWW=		https://github.com/equinor/segyio
 
 LICENSE=	LGPL3+
 

@@ -6,6 +6,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Yet another Nintendo Game Boy emulator
+WWW=		https://github.com/nakal/cingb
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

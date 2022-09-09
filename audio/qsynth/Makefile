@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
+WWW=		https://qsynth.sourceforge.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

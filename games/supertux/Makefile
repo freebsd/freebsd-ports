@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/SuperTux/downloads/raw/master/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
+WWW=		http://supertuxproject.org/
 
 USES=		gl gmake sdl tar:bzip2
 USE_SDL=	image mixer

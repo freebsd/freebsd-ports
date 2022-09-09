@@ -6,6 +6,7 @@ PKGNAMESUFFIX?=	41
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Coffee Script adapter for the Rails asset pipeline
+WWW=		https://github.com/rails/coffee-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

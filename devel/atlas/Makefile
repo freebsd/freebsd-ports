@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	C++ reference implementation of the Atlas protocol
+WWW=		https://www.worldforge.org/index.php/components/atlas-cpp/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

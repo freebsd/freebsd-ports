@@ -6,5 +6,3 @@ collaborating with their teammates and clients effectively.
 It is written in the PHP scripting language and works with the MySQL
 (or one of its forks), and PostgreSQL databases and a web server.
 Almost any web browser should be able to function as a client.
-
-WWW: http://www.mantisbt.org/

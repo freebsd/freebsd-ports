@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	NFS and CIFS tracing/monitoring/capturing/analyzing tool
+WWW=		https://github.com/epam/nfstrace
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

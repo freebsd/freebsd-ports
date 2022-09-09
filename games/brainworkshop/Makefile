@@ -5,6 +5,7 @@ CATEGORIES=	games python
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dual N-Back mental exercise
+WWW=		https://github.com/samcv/brainworkshop
 
 LICENSE=	GPLv1+ # version not specified
 

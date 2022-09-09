@@ -6,6 +6,7 @@ MASTER_SITES=	https://launchpad.net/rapid/pyqt/${PORTVERSION}/+download/
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Import photos and videos efficiently and reliably
+WWW=		https://www.damonlynch.net/rapid/
 
 LICENSE=	GPLv3
 

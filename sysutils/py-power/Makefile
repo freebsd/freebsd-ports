@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cederom@tlen.pl
 COMMENT=	Cross-platform system power status information for Python
+WWW=		https://github.com/Kentzo/Power
 
 LICENSE=	MIT
 

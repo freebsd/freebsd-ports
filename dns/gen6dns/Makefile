@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.hznet.de/tools/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Tool to generate static DNS records for IPv6 hosts using SLAAC
+WWW=		https://www.hznet.de/tools.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

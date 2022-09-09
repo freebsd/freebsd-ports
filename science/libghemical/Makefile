@@ -7,6 +7,7 @@ MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
+WWW=		https://www.bioinformatics.org/ghemical/ghemical/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

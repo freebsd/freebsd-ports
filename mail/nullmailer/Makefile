@@ -8,6 +8,7 @@ MASTER_SITES=	http://untroubled.org/nullmailer/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
+WWW=		https://untroubled.org/nullmailer/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

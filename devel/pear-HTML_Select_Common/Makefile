@@ -5,6 +5,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Some small PEAR classes to handle common <select> lists
+WWW=		https://pear.php.net/package/HTML_Select_Common
 
 LICENSE=	BSD2CLAUSE
 

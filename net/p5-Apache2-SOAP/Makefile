@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Apache2 mod_perl2 SOAP Server
+WWW=		https://metacpan.org/release/Apache2-SOAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

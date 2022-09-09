@@ -16,5 +16,3 @@ inverse of a mod p matrix. These mod p routines are not general purpose; they
 require that p satisfy some preconditions based on the dimension of the input
 matrix (usually p should be prime and should be no more than about 20 bits
 long).
-
-WWW: https://cs.uwaterloo.ca/~astorjoh/iml.html

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Pretty, Human Readable Formatting of Quantities
+WWW=		https://cran.r-project.org/web/packages/prettyunits/
 
 LICENSE=	MIT
 

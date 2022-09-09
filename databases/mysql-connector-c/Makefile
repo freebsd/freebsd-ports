@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MySQL database connector for C
+WWW=		https://dev.mysql.com/downloads/c-api/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

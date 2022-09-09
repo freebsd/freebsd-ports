@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:tu}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI library
+WWW=		http://tse3.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

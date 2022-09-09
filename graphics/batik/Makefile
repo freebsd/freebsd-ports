@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java based SVG toolkit
+WWW=		https://xmlgraphics.apache.org/batik/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

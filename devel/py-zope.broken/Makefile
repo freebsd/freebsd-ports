@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Broken Object Interfaces
+WWW=		https://pypi.org/project/zope.broken/
 
 LICENSE=	ZPL21
 

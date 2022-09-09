@@ -8,6 +8,7 @@ PATCHFILES+=	cc49ad8dac24.patch:-p1
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
+WWW=		https://openscad.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	lzma${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
+WWW=		https://www.7-zip.org/sdk.html
 
 CONFLICTS=	lzmautils xz
 

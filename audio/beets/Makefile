@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Media library management system for obsessive-compulsive music geeks
+WWW=		https://beets.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

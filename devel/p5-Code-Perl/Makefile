@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Produce Perl code from a tree
+WWW=		https://metacpan.org/release/Code-Perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create an Excel file in XML format
+WWW=		https://metacpan.org/release/Spreadsheet-WriteExcelXML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

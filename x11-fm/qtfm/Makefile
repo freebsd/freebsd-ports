@@ -5,6 +5,7 @@ CATEGORIES=	x11-fm
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Small, lightweight file manager based on pure Qt
+WWW=		https://qtfm.eu
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

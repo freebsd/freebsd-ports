@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl
+WWW=		https://www.tcl.tk/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

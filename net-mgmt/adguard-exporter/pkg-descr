@@ -1,4 +1,2 @@
 adguard-exporter connects to AdGuard Home and returns the data as
 Prometheus metrics. Based on the original pihole-exporter.
-
-WWW: https://github.com/ebrianne/adguard-exporter

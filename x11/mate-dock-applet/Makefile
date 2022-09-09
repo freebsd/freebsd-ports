@@ -5,6 +5,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Application dock applet for the MATE panel
+WWW=		https://github.com/ubuntu-mate/mate-dock-applet
 
 LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING

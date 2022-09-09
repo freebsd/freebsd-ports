@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Module that adds descendant tracking to a class
+WWW=		https://github.com/dkubb/descendants_tracker
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

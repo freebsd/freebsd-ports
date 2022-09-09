@@ -1,5 +1,3 @@
 Blame displays the last modification for each line in an
 RCS file.  It is the RCS equivalent of CVS's annotate
 command.
-
-WWW: https://invisible-island.net/rcs-blame/

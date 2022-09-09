@@ -4,8 +4,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for Haskell language
-
-BROKEN_aarch64=	Causes compiler to crash
+WWW=		https://github.com/haskell/haskell-language-server/
 
 LICENSE=	APACHE20
 

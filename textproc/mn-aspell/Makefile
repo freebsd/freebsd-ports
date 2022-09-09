@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Mongolian dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	mn
 

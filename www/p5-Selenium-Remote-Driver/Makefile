@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl Interface for Selenium Remote Driver
+WWW=		https://metacpan.org/release/Selenium-Remote-Driver
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

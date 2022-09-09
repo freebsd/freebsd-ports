@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitHub-flavored-Markdown TaskList components
+WWW=		https://github.com/github/task_list
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

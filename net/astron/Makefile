@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Server Technology for Realtime Object Networking
+WWW=		https://astron.github.io/astron
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

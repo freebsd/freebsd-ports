@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing various bit shifting operations
+WWW=		https://metacpan.org/release/Bit-ShiftReg
 
 USES=		perl5
 USE_PERL5=	configure

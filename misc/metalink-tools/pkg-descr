@@ -10,5 +10,3 @@ Features currently include:
 - Hashing algorithms: md4 md5 sha1 sha256 sha384 sha512 rmd160 tiger
   crc32 ed2k gnunet
 - Generation of Metalink files from MD5SUMS lists
-
-WWW: http://metalinks.sourceforge.net/

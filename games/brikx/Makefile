@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game - remove all tiles from the table
+WWW=		https://sourceforge.net/projects/brikx/
 
 USES=		sdl tar:bzip2
 GNU_CONFIGURE=	yes

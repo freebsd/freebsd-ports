@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	jcpierri@gmail.com
 COMMENT=	Userlevel Common Address Redundancy Protocol
+WWW=		https://github.com/jedisct1/UCarp
 
 LICENSE=	ISC
 LICENSE_NAME=	ISC License

@@ -16,5 +16,3 @@ default configuration parameters, the following can be specified:
      filled in with HTTP connections): 0.0-1.0 (default 1.0)
 
   5. HTTPS_PORT: port (default 8443)
-
-WWW: http://crypto.stanford.edu/~nagendra/projects/WebStone/

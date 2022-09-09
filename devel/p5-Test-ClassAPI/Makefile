@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides basic first-pass API testing for large class trees
+WWW=		https://metacpan.org/release/Test-ClassAPI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

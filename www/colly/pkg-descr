@@ -13,5 +13,3 @@ Features:
 * Automatic encoding of non-unicode responses
 * Robots.txt support
 * Google App Engine support
-
-WWW: http://go-colly.org/

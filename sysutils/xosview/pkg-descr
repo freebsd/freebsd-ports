@@ -3,5 +3,3 @@ parameters. These include CPU usage, load average, memory, swap space,
 network usage and more. Each resource is displayed as a horizontal bar
 which is separated into color coded regions showing how much of the
 resource is being put to a particular use.
-
-WWW: https://www.pogo.org.uk/~mark/xosview/

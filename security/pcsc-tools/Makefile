@@ -5,6 +5,7 @@ MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to test a PCSC driver, card, or reader
+WWW=		http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 
 LICENSE=	GPLv2
 

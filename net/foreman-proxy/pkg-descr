@@ -13,5 +13,3 @@ Puppet - Any Puppet server from 0.24.x
 Puppet CA - Manage certificate signing, cleaning and autosign on a Puppet CA
             server
 BMC - BMC management etc
-
-WWW: https://theforeman.org/

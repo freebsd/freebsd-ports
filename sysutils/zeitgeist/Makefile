@@ -1,26 +1,29 @@
 # NOTE: please keep zeitgeist in sysutils/qzeitgeist in sync
 
 PORTNAME=	zeitgeist
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/+download/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Event logging framework
+WWW=		https://wiki.gnome.org/Projects/Zeitgeist
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	valac:lang/vala \
-		dee-tool:devel/dee \
+BUILD_DEPENDS=	dee-tool:devel/dee \
 		rapper:textproc/raptor2 \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:textproc/py-rdflib@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus@${PY_FLAVOR}
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig python sqlite \
-		tar:xz
-USE_GNOME=	intlhack glib20 introspection:build
+USES=		autoreconf gettext gmake gnome libtool pathfix pkgconfig python \
+		sqlite tar:xz vala:build
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org
+GL_COMMIT=	8b89364c077b46734d193c5b8a80f83b0fc917dd
+USE_GNOME=	cairo gdkpixbuf2 glib20 intlhack \
+		introspection:build
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 GNU_CONFIGURE=	yes
@@ -38,9 +41,5 @@ DATAHUB_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 DATAHUB_USE=	gnome=gtk30
 DATAHUB_CONFIGURE_ENABLE=	datahub
 DATAHUB_DESC=	Passive loggers for Zeitgeist
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python -|${PYTHON_CMD} -|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

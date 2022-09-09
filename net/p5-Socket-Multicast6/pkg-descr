@@ -3,5 +3,3 @@ when manipulating multicast socket attributes.
 
 For simple, object-oriented way of doing the same thing, take a look at
 IO::Socket::Multicast6 or IO::Socket::Multicast
-
-WWW: https://metacpan.org/release/Socket-Multicast6

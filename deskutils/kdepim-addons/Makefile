@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM addons
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libqgpgme.so:security/gpgme-qt5
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 \
-		pkgconfig qt:5 tar:xz
+		pkgconfig qt:5 tar:xz xorg
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		dbusaddons guiaddons i18n iconthemes itemmodels itemviews jobwidgets \
 		kdeclarative khtml kio parts prison service solid sonnet syntaxhighlighting \
@@ -26,13 +27,14 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
 		akonadimime akonadinotes calendarcore calendarsupport \
 		calendarutils contacts eventviews gapi grantleetheme \
-		gravatar identitymanagement imap incidenceeditor \
+		gravatar holidays identitymanagement imap incidenceeditor \
 		kaddressbook kitinerary kontactinterface kpkpass libkdepim \
 		libkleo libksieve mailcommon mailimporter mailtransport \
 		messagelib mime pimcommon pimtextedit tnef
 USE_QT=		concurrent core dbus declarative gui location network printsupport testlib \
 		webchannel webengine widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extra features for Python's JSON: comments, order, datetimes, etc
+WWW=		https://github.com/mverleg/pyjson_tricks
 
 LICENSE=	BSD3CLAUSE
 

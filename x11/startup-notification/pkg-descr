@@ -1,4 +1,2 @@
 startup-notification is a minimal library that supports the startup
 notification spec described at www.freedesktop.org.
-
-WWW: https://www.freedesktop.org/wiki/Software/startup-notification/

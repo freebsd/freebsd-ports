@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast, lightweight, and schema-less search backend
+WWW=		https://github.com/valeriansaliou/sonic
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

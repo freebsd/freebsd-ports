@@ -6,6 +6,7 @@ MASTER_SITES=	https://i3wm.org/downloads/ \
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Improved dynamic tiling window manager
+WWW=		https://i3wm.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

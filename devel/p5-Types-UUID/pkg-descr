@@ -1,4 +1,2 @@
 Types::UUID is a type constraint library suitable for use with
 Moo/Moose attributes, Kavorka sub signatures, and so forth.
-
-WWW: https://metacpan.org/release/Types-UUID

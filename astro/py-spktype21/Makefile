@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Supporting module for jplephem to handle data type 21
+WWW=		https://github.com/whiskie14142/spktype21
 
 LICENSE=	MIT
 

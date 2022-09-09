@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	JAR files from the JRuby distribution
+WWW=		https://github.com/jruby/jruby/tree/master/maven/jruby-jars
 
 LICENSE=	EPL GPLv2 LGPL21
 LICENSE_COMB=	dual

@@ -7,5 +7,3 @@ high-level interfaces for querying or iterating over the stored records.
 dnstable encodes individual records using a format tailored for efficiently
 storing passive DNS data and can quickly perform both "forward" and "inverse"
 searches.
-
-WWW: https://github.com/farsightsec/dnstable

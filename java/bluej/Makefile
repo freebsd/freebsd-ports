@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated Java environment designed for introductory teaching
+WWW=		https://www.bluej.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

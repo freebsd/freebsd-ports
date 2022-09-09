@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Source code analyzer and refactoring browser for C program collections
+WWW=		https://www.spinellis.gr/cscout/
 
 LICENSE=	GPLv3
 

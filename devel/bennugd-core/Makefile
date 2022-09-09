@@ -8,6 +8,7 @@ DISTNAME=	bennugd-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High level open source game development suite, core libs
+WWW=		https://www.bennugd.org/
 
 USES=		dos2unix libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

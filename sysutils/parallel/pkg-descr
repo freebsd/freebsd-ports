@@ -14,5 +14,3 @@ GNU Parallel also makes sure output from the commands is the same
 output as you would get had you run the commands sequentially. This
 makes it possible to use output from GNU Parallel as input for other
 programs.
-
-WWW: https://www.gnu.org/software/parallel/

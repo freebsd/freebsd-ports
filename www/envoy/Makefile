@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Edge and service proxy for cloud-native applications
+WWW=		https://www.envoyproxy.io/
 
 LICENSE=	APACHE20
 

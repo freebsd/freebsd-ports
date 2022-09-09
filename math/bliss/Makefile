@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-graph-tool
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for computing automorphism groups and canonical forms of graphs
+WWW=		http://www.tcs.hut.fi/Software/bliss/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

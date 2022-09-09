@@ -8,6 +8,7 @@ DISTNAME=	Molsketch-${DISTVERSIONFULL}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	2D molecule editor
+WWW=		https://molsketch.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

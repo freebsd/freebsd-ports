@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring webserver performance
+WWW=		https://github.com/httperf/httperf
 
 LICENSE=	GPLv2
 

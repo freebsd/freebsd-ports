@@ -3,5 +3,3 @@ user can define up to four different envelope shapes by drawing Bezier curves.
 Each of these envelope shapes can be connected to different target effects,
 such as amplification, balance, stereo width, filters, pitch shift, delay, and
 distortion effecs and can be combined together.
-
-WWW: https://github.com/sjaehn/BShapr

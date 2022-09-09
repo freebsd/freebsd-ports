@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mozilla SSL certificates
+WWW=		https://github.com/certifi/python-certifi
 
 LICENSE=	MPL20
 

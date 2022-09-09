@@ -7,6 +7,7 @@ DISTNAME=	CDash-2-2-3
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Web-based software testing server
+WWW=		https://www.cdash.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt

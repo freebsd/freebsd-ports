@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Code documentation system, originally for GTK+
+WWW=		https://www.gtk.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

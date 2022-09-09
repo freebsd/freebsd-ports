@@ -18,5 +18,3 @@ those tolerances.  It also tells by how much they differ. A simple example:
 
 % ndiff --relative-error 1.0e-3 test019.txt.1 test019.txt.2
 ### Maximum relative error in matching lines = 8.64e-51 at line 129 field 4
-
-WWW: http://www.math.utah.edu/~beebe/software/ndiff/

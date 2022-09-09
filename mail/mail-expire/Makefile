@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Expire old mails from mailboxes
+WWW=		https://salsa.debian.org/blade/mail-expire
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

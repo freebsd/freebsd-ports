@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based conference management software
+WWW=		https://www.read.seas.harvard.edu/~kohler/hotcrp/
 
 RUN_DEPENDS=	pdftohtml:graphics/poppler-utils \
 		zip:archivers/zip

@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaspersky Anti-Spam 3.x library
+WWW=		https://kaspersky.com
 
 WRKSRC=		${WRKDIR}/libspamtest
 MAKEFILE=	Makefile.FreeBSD

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Array references with accessors
+WWW=		https://metacpan.org/release/Object-Array
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

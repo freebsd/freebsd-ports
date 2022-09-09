@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	More complex retrieve_all() for Class::DBI
+WWW=		https://metacpan.org/release/Class-DBI-Plugin-RetrieveAll
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI

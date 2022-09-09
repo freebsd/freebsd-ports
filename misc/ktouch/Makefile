@@ -4,6 +4,7 @@ CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Touch typing tutor for KDE
+WWW=		https://www.kde.org/applications/education/ktouch
 
 RUN_DEPENDS=	kqtquickcharts>=${KDE_APPLICATIONS_VERSION}:graphics/kqtquickcharts
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://assets.keltia.net/calife/
 
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
+WWW=		https://www.keltia.net/programs/calife
 
 LICENSE=	GPLv2
 

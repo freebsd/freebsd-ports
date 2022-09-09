@@ -17,5 +17,3 @@ Features:
  * ~377.5x faster than YAML.dump
  * ~1.5x faster than Marshal.load
  * ~2x faster than Marshal.dump
-
-WWW: https://github.com/brianmario/yajl-ruby

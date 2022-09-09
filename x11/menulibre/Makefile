@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Advanced menu editor
+WWW=		https://bluesabre.org/projects/menulibre/
 
 LICENSE=	GPLv3
 

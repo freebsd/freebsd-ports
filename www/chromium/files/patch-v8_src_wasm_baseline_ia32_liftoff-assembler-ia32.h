@@ -1,15 +1,15 @@
---- v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h.orig	2022-07-22 17:30:31 UTC
+--- v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h.orig	2022-08-31 12:19:35 UTC
 +++ v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h
-@@ -433,7 +433,7 @@ void LiftoffAssembler::StoreTaggedPointer(Register dst
+@@ -432,7 +432,7 @@ void LiftoffAssembler::StoreTaggedPointer(Register dst
  }
  
  void LiftoffAssembler::Load(LiftoffRegister dst, Register src_addr,
 -                            Register offset_reg, uint32_t offset_imm,
 +                            Register offset_reg, uintptr_t offset_imm,
-                             LoadType type, LiftoffRegList pinned,
-                             uint32_t* protected_load_pc, bool is_load_mem,
-                             bool i64_offset) {
-@@ -510,7 +510,7 @@ void LiftoffAssembler::Load(LiftoffRegister dst, Regis
+                             LoadType type, uint32_t* protected_load_pc,
+                             bool is_load_mem, bool i64_offset) {
+   // Offsets >=2GB are statically OOB on 32-bit systems.
+@@ -508,7 +508,7 @@ void LiftoffAssembler::Load(LiftoffRegister dst, Regis
  }
  
  void LiftoffAssembler::Store(Register dst_addr, Register offset_reg,
@@ -18,7 +18,7 @@
                               StoreType type, LiftoffRegList pinned,
                               uint32_t* protected_store_pc, bool is_store_mem) {
    DCHECK_EQ(type.value_type() == kWasmI64, src.is_gp_pair());
-@@ -578,7 +578,7 @@ void LiftoffAssembler::Store(Register dst_addr, Regist
+@@ -576,7 +576,7 @@ void LiftoffAssembler::Store(Register dst_addr, Regist
  }
  
  void LiftoffAssembler::AtomicLoad(LiftoffRegister dst, Register src_addr,
@@ -26,8 +26,8 @@
 +                                  Register offset_reg, uintptr_t offset_imm,
                                    LoadType type, LiftoffRegList pinned) {
    if (type.value() != LoadType::kI64Load) {
-     Load(dst, src_addr, offset_reg, offset_imm, type, pinned, nullptr, true);
-@@ -597,7 +597,7 @@ void LiftoffAssembler::AtomicLoad(LiftoffRegister dst,
+     Load(dst, src_addr, offset_reg, offset_imm, type, nullptr, true);
+@@ -595,7 +595,7 @@ void LiftoffAssembler::AtomicLoad(LiftoffRegister dst,
  }
  
  void LiftoffAssembler::AtomicStore(Register dst_addr, Register offset_reg,
@@ -36,7 +36,7 @@
                                     StoreType type, LiftoffRegList pinned) {
    DCHECK_NE(offset_reg, no_reg);
    DCHECK_LE(offset_imm, std::numeric_limits<int32_t>::max());
-@@ -937,7 +937,7 @@ inline void AtomicBinop64(LiftoffAssembler* lasm, Bino
+@@ -935,7 +935,7 @@ inline void AtomicBinop64(LiftoffAssembler* lasm, Bino
  }  // namespace liftoff
  
  void LiftoffAssembler::AtomicAdd(Register dst_addr, Register offset_reg,
@@ -45,7 +45,7 @@
                                   LiftoffRegister result, StoreType type) {
    if (type.value() == StoreType::kI64Store) {
      liftoff::AtomicBinop64(this, liftoff::kAdd, dst_addr, offset_reg,
-@@ -950,7 +950,7 @@ void LiftoffAssembler::AtomicAdd(Register dst_addr, Re
+@@ -948,7 +948,7 @@ void LiftoffAssembler::AtomicAdd(Register dst_addr, Re
  }
  
  void LiftoffAssembler::AtomicSub(Register dst_addr, Register offset_reg,
@@ -54,7 +54,7 @@
                                   LiftoffRegister result, StoreType type) {
    if (type.value() == StoreType::kI64Store) {
      liftoff::AtomicBinop64(this, liftoff::kSub, dst_addr, offset_reg,
-@@ -962,7 +962,7 @@ void LiftoffAssembler::AtomicSub(Register dst_addr, Re
+@@ -960,7 +960,7 @@ void LiftoffAssembler::AtomicSub(Register dst_addr, Re
  }
  
  void LiftoffAssembler::AtomicAnd(Register dst_addr, Register offset_reg,
@@ -63,7 +63,7 @@
                                   LiftoffRegister result, StoreType type) {
    if (type.value() == StoreType::kI64Store) {
      liftoff::AtomicBinop64(this, liftoff::kAnd, dst_addr, offset_reg,
-@@ -975,7 +975,7 @@ void LiftoffAssembler::AtomicAnd(Register dst_addr, Re
+@@ -973,7 +973,7 @@ void LiftoffAssembler::AtomicAnd(Register dst_addr, Re
  }
  
  void LiftoffAssembler::AtomicOr(Register dst_addr, Register offset_reg,
@@ -72,7 +72,7 @@
                                  LiftoffRegister result, StoreType type) {
    if (type.value() == StoreType::kI64Store) {
      liftoff::AtomicBinop64(this, liftoff::kOr, dst_addr, offset_reg, offset_imm,
-@@ -988,7 +988,7 @@ void LiftoffAssembler::AtomicOr(Register dst_addr, Reg
+@@ -986,7 +986,7 @@ void LiftoffAssembler::AtomicOr(Register dst_addr, Reg
  }
  
  void LiftoffAssembler::AtomicXor(Register dst_addr, Register offset_reg,
@@ -81,7 +81,7 @@
                                   LiftoffRegister result, StoreType type) {
    if (type.value() == StoreType::kI64Store) {
      liftoff::AtomicBinop64(this, liftoff::kXor, dst_addr, offset_reg,
-@@ -1001,7 +1001,7 @@ void LiftoffAssembler::AtomicXor(Register dst_addr, Re
+@@ -999,7 +999,7 @@ void LiftoffAssembler::AtomicXor(Register dst_addr, Re
  }
  
  void LiftoffAssembler::AtomicExchange(Register dst_addr, Register offset_reg,
@@ -90,7 +90,7 @@
                                        LiftoffRegister value,
                                        LiftoffRegister result, StoreType type) {
    if (type.value() == StoreType::kI64Store) {
-@@ -1015,7 +1015,7 @@ void LiftoffAssembler::AtomicExchange(Register dst_add
+@@ -1013,7 +1013,7 @@ void LiftoffAssembler::AtomicExchange(Register dst_add
  }
  
  void LiftoffAssembler::AtomicCompareExchange(

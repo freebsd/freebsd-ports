@@ -1,11 +1,12 @@
 PORTNAME=	vuls
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.13.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	iscandr@gmail.com
 COMMENT=	Agentless vulnerability scanner
+WWW=		https://vuls.io
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

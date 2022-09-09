@@ -5,5 +5,3 @@ development:
   * py.lookup: find text in recursively found .py files
   * py.countloc: give LOCs for lines and testlines
   * py.which: print location of an importable package or module
-
-WWW: https://pypi.org/project/pycmd/

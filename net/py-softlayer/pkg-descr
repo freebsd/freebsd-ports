@@ -3,5 +3,3 @@ XML-RPC API.
 
 A command-line interface is also included and can be used to manage various
 SoftLayer products and services.
-
-WWW: https://github.com/softlayer/softlayer-python

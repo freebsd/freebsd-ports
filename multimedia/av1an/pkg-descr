@@ -16,5 +16,3 @@ to a very limited number of threads.
 - Simple and clean console look.
 - Automatic detection of the number of workers the host can handle.
 - Both video and audio transcoding.
-
-WWW: https://github.com/master-of-zen/Av1an

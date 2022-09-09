@@ -6,6 +6,7 @@ DISTNAME=	scrub-${PORTVERSION}
 
 MAINTAINER=	erik@elfga.com
 COMMENT=	Writes patterns on files to make retrieving the data more difficult
+WWW=		https://code.google.com/p/diskscrub/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

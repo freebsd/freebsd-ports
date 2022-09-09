@@ -1,10 +1,11 @@
 PORTNAME=	cbsd-mq-api
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Simplified API for creating and destroying CBSD virtual environments
+WWW=		https://www.bsdstore.ru/
 
 LICENSE=	BSD2CLAUSE
 

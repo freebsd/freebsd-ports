@@ -9,5 +9,3 @@ dhcpcd-9 introduces a number of security improvements:
 - sanboxed with capsicum(4)
   processes run in capability mode, limiting their access and therefore
   the potential impact of security vulnerabilities
-
-WWW: https://roy.marples.name/projects/dhcpcd

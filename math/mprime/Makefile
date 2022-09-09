@@ -8,6 +8,7 @@ DISTNAME=	p95v${PORTVERSION:R}${PORTVERSION:E}.source
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Great Internet Mersenne Prime Search
+WWW=		https://www.mersenne.org/
 
 LICENSE=	EULA
 LICENSE_NAME=	EULA

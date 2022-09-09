@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Test only if
+WWW=		https://metacpan.org/release/Test-If
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

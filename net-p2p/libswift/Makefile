@@ -5,6 +5,7 @@ CATEGORIES=		net-p2p
 
 MAINTAINER=		dch@FreeBSD.org
 COMMENT=		IETF Peer-to-Peer Streaming Peer Protocol implementation
+WWW=		https://github.com/skunkwerks/libswift
 
 LICENSE=		LGPL21
 

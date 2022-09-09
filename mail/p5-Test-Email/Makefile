@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Test Email Contents
+WWW=		https://metacpan.org/release/Test-Email
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mail-POP3Client>=2:mail/p5-Mail-POP3Client \

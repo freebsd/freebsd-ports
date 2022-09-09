@@ -1,3 +1,1 @@
 Export Consul service health to Prometheus.
-
-WWW: https://github.com/prometheus/consul_exporter

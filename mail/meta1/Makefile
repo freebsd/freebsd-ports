@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-1.1.Alpha18.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
+WWW=		http://www.meta1.org/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

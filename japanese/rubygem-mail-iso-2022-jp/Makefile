@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides 'mail' gem with iso-2022-jp conversion capability
+WWW=		https://github.com/kuroda/mail-iso-2022-jp
 
 LICENSE=	MIT
 

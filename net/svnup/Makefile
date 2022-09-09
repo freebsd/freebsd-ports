@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	jmehr@umn.edu
 COMMENT=	Lightweight program to pull source from an Apache Subversion server
+WWW=		https://github.com/johnmehr/svnup
 
 LICENSE=	BSD2CLAUSE
 

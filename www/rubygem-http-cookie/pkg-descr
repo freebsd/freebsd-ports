@@ -3,5 +3,3 @@ with security, standards compliance and compatibility in mind, to behave just
 the same as today's major web browsers. It has builtin support for the legacy
 cookies.txt and the latest cookies.sqlite formats of Mozilla Firefox, and its
 modular API makes it easy to add support for a new backend store.
-
-WWW: https://github.com/sparklemotion/http-cookie

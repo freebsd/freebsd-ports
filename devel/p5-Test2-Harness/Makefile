@@ -1,5 +1,5 @@
 PORTNAME=	Test2-Harness
-PORTVERSION=	1.000125
+PORTVERSION=	1.000128
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test2 Harness designed for the Test2 event system
+WWW=		https://metacpan.org/release/Test2-Harness
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

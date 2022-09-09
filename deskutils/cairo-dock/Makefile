@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and eye-candy dock (program launcher)
+WWW=		https://www.glx-dock.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

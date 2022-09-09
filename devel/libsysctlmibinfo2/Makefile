@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Sysctl MIB-Tree API (improved version)
+WWW=		https://gitlab.com/alfix/sysctlmibinfo2/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

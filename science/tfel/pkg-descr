@@ -20,5 +20,4 @@ constraints on each component of the strain or the stress. This tool
 has been much faster (from ten to several hundred times depending on
 the test case) than using a full-fledged finite element solver.
 
-WWW: http://tfel.sourceforge.net/
-WWW: https://github.com/thelfer/tfel
+See also: http://tfel.sourceforge.net/

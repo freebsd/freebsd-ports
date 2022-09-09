@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Render simple UML class diagrams, by loading the code
+WWW=		https://metacpan.org/release/UML-Class-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

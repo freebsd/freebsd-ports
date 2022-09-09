@@ -4,5 +4,3 @@ separated into get and set methods. The get methods are prefixed with
 "get_" as the accessor, while set methods are prefixed with "set_".
 This is the naming style recommended by Damian Conway in Perl Best
 Practices.
-
-WWW: https://metacpan.org/release/MooseX-FollowPBP

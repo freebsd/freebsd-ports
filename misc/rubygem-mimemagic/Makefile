@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MIME detection by extension or content in pure ruby
+WWW=		https://github.com/mimemagicrb/mimemagic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

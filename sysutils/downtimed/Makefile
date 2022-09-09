@@ -6,6 +6,7 @@ MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	System downtime monitoring and reporting tool
+WWW=		https://dist.epipe.com/downtimed/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

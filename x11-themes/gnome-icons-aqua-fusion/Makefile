@@ -11,6 +11,7 @@ DISTNAME=	ICON-AquaFusion
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AquaFusion Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

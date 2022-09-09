@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.cybernoia.de/software/archivemount/
 
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	Mount archives with FUSE
+WWW=		https://www.cybernoia.de/software/archivemount.html
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

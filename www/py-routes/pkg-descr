@@ -5,5 +5,3 @@ create pretty and concise URL's that are RESTful with little effort.
 Speedy and dynamic URL generation means you get a URL with minimal cruft
 (no big dangling query args). Shortcut features like Named Routes cut down
 on repetitive typing.
-
-WWW: https://routes.readthedocs.io/

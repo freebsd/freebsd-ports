@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Dynamic options to evaluate at runtime
+WWW=		https://github.com/apotonick/declarative-option
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/./1}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	MORE flexible neural network package
+WWW=		http://rwiki.sciviews.org/doku.php?id=packages:cran:amore
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

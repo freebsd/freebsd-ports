@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Grep for structured text like SGML and HTML
+WWW=		https://www.cs.helsinki.fi/u/jjaakkol/sgrep.html
 
 LICENSE=	GPLv2
 

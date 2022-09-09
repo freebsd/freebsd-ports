@@ -13,5 +13,3 @@ libraries is built-in.
 
 The Wysiwyg API also allows Drupal modules to register plugins (or
 "buttons") for editors.
-
-WWW: https://www.drupal.org/project/wysiwyg

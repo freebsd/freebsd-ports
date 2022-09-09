@@ -11,5 +11,4 @@ These inbound emails are routed asynchronously using Active Job to one or
 several dedicated mailboxes, which are capable of interacting directly with the
 rest of your domain model.
 
-WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/main/actionmailbox
+See also: https://rubyonrails.org/

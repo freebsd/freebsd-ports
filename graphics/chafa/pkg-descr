@@ -8,5 +8,3 @@ to produce the desired output.
 
 The core functionality is provided by a C library with a public, well-documented
 API.
-
-WWW: https://hpjansson.org/chafa/

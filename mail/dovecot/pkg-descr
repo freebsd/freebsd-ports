@@ -7,5 +7,3 @@ Dovecot is high-performing, self-optimizing, self-healing, and easily
 extensible. It includes IMAP4rev1 and POP3 support. IPv6, SSL and TLS are
 supported. It supports multiple commonly used IMAP extensions, including SORT,
 THREAD and IDLE.
-
-WWW: http://www.dovecot.org/

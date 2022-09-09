@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet Server running in the JVM
+WWW=		https://docs.puppetlabs.com/puppetserver/latest/services_master_puppetserver.html
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for adding database/object validations
+WWW=		http://validatable.rubyforge.org/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

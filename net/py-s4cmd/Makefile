@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command line client for S3 storage
+WWW=		https://github.com/bloomreach/s4cmd
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite element Differential Equations Analysis Library (DEAL)
+WWW=		https://www.dealii.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

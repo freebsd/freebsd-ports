@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Meta-port for the FreeBSD Documentation Project
+WWW=		https://www.freebsd.org/docproj
 
 RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		hugo:www/gohugo \

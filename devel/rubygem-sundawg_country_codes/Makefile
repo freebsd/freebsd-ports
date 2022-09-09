@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manage ISO 3166 country names and codes
+WWW=		https://github.com/HoyaBoya/country_codes
 
 NO_ARCH=	yes
 

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - plugin metaport
+WWW=		http://www.tvdr.de/
 
 RUN_DEPENDS+=	vdr:multimedia/vdr
 

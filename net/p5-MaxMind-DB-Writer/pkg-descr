@@ -1,4 +1,2 @@
 MaxMind::DB::Writer contains the code necessary to write MaxMind DB database
 files.
-
-WWW: https://metacpan.org/release/MaxMind-DB-Writer

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cython wrapper class for reading/writing soundfiles using libsndfile
+WWW=		https://forge-2.ircam.fr/roebel/pysndfile
 
 LICENSE=	LGPL3
 

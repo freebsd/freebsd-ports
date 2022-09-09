@@ -23,9 +23,10 @@
     SUBDIR += ion
     SUBDIR += jailkit
     SUBDIR += klish
+    SUBDIR += ksh
+    SUBDIR += ksh-devel
     SUBDIR += ksh2020
     SUBDIR += ksh93
-    SUBDIR += ksh93-devel
     SUBDIR += mksh
     SUBDIR += modernish
     SUBDIR += nologinmsg

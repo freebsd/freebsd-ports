@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	dynip@a1poweruser.com
 COMMENT=	Dynamic IP Address Updater
+WWW=		http://dynip.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

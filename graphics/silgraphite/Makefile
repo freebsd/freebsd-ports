@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Font engine for complex non-Roman writing systems
+WWW=		http://silgraphite.sourceforge.net/
 
 LICENSE=	CPL05 LGPL21+
 LICENSE_COMB=	dual

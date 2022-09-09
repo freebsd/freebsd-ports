@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Micro-benchmarking NoSQL storage
+WWW=		https://github.com/tarantool/nosqlbench
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

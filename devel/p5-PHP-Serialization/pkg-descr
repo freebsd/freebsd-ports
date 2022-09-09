@@ -5,5 +5,3 @@ access, and vice versa.
 NOTE: Converts PHP arrays into Perl Arrays when the PHP array used
 exclusively numeric indexes, and into Perl Hashes then the PHP array
 did not.
-
-WWW: https://metacpan.org/release/PHP-Serialization

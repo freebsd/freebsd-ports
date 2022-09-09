@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Display keystrokes during screencasts or presentations
+WWW=		https://github.com/nibrahim/showkeys
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

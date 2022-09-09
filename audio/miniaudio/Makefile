@@ -6,6 +6,7 @@ CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C single header audio playback and capture library
+WWW=		https://miniaud.io/
 
 LICENSE=	PD MIT
 LICENSE_COMB=	dual

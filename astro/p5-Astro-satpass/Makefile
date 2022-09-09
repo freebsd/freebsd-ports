@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Classes and app to compute satellite visibility
+WWW=		https://metacpan.org/release/Astro-satpass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

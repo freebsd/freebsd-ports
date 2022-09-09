@@ -7,6 +7,7 @@ DISTNAME=	CMake-hdf5-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA) (latest)
+WWW=		https://www.hdfgroup.org/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to parse complex data structures passed in ARGV
+WWW=		https://metacpan.org/release/ARGV-Struct
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Python nautilus bindings
+WWW=		https://wiki.gnome.org/Projects/NautilusPython
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

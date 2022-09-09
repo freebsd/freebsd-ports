@@ -5,6 +5,7 @@ CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minuscule eventing, networking, and crypto for async applications
+WWW=		https://github.com/uNetworking/uSockets
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Fast compressor/decompressor library
+WWW=		https://google.github.io/snappy/
 
 LICENSE=	BSD3CLAUSE
 

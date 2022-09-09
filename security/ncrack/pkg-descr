@@ -3,5 +3,3 @@ designed using a modular approach, a command-line syntax similar to
 Nmap and a dynamic engine that can adapt its behaviour based on network
 feedback. It allows for rapid, yet reliable large-scale auditing of
 multiple hosts.
-
-WWW: https://nmap.org/ncrack/

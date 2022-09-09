@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Louvain algorithm for community detection
+WWW=		https://github.com/taynaud/python-louvain
 
 LICENSE=	BSD3CLAUSE
 

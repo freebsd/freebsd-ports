@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible, high performance RDBMS-OO mapper
+WWW=		https://metacpan.org/release/Rose-DB-Object
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,6 +1,5 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -9,6 +8,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
+WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 

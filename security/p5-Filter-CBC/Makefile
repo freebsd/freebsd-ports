@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Source filter for Cipher Block Chaining
+WWW=		https://metacpan.org/release/Filter-CBC
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Filter>=0:devel/p5-Filter \

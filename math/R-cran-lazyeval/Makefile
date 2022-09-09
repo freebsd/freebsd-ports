@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Disciplined approach to non-standard evaluation
+WWW=		https://cran.r-project.org/web/packages/lazyeval/
 
 LICENSE=	GPLv3
 

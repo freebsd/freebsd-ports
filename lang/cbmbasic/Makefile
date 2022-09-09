@@ -4,6 +4,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable version of Commodore 64 BASIC
+WWW=		https://github.com/mist64/cbmbasic
 
 LICENSE=	BSD NONE
 # Not really sure about the legal status

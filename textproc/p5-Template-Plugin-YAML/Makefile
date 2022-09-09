@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plugin interface to YAML
+WWW=		https://metacpan.org/dist/Template-Plugin-YAML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

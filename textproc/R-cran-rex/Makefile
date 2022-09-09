@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Friendly Regular Expressions
+WWW=		https://github.com/kevinushey/rex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

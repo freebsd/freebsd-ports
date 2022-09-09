@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sasaki12@gmail.com
 COMMENT=	Debug hints management library for lua
+WWW=		https://github.com/lua-stdlib/_debug
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

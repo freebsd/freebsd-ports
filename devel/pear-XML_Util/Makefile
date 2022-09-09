@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR XML utility class
+WWW=		https://pear.php.net/package/XML_Util
 
 LICENSE=	BSD2CLAUSE
 

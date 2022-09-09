@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Command-line JSON viewer
+WWW=		https://jless.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

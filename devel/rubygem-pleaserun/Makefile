@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool to generate startup scripts
+WWW=		https://github.com/jordansissel/pleaserun
 
 LICENSE=	APACHE20
 

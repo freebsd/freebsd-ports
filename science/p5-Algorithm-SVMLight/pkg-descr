@@ -10,5 +10,3 @@ package:
     thousands of support vectors efficiently.
 
      -- http://svmlight.joachims.org/
-
-WWW: https://metacpan.org/release/Algorithm-SVMLight

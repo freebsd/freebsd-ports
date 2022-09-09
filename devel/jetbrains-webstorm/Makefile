@@ -8,6 +8,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	JetBrains JavaScript IDE
+WWW=		https://www.jetbrains.com/webstorm/
 
 LICENSE=	IntelliJ-WebStorm
 LICENSE_NAME=	Subscription license agreement for business and organizations

@@ -18,5 +18,3 @@ compatibility problems:
 
 The checker then generates a report that assesses the risks of any potential
 problems detected.
-
-WWW: https://lvc.github.io/abi-compliance-checker/

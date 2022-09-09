@@ -7,6 +7,7 @@ DISTNAME=	email_validator-${PORTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Robust email address syntax and deliverability validation library
+WWW=		https://github.com/JoshData/python-email-validator
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

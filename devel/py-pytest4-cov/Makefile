@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Pytest plugin for measuring coverage (legacy version for pytest 4)
+WWW=		https://github.com/pytest-dev/pytest-cov
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

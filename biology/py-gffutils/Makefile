@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Work with GFF and GTF files in a flexible database framework
+WWW=		https://github.com/daler/gffutils
 
 LICENSE=	MIT
 

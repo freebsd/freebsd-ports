@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	beastie@tardisi.com
 COMMENT=	Perl interface to www/yourls, Your Own URL Shortener
+WWW=		https://metacpan.org/release/WWW-Shorten-Yourls
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON-Any>=1.18:converters/p5-JSON-Any \

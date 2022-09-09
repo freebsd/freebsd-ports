@@ -6,6 +6,7 @@ DISTNAME=	${PORTVERSION}-${PORTNAME}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Utility to patch modules and kernel
+WWW=		http://info.iet.unipi.it/~luigi/FreeBSD/
 
 USES=		tar:tgz
 

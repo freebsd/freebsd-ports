@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python API for YouTube
+WWW=		https://github.com/mps-youtube/pafy
 
 LICENSE=	GPLv3
 

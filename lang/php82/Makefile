@@ -7,6 +7,7 @@ DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PHP Scripting Language (8.2.X branch)
+WWW=		https://www.php.net/
 
 LICENSE=	PHP301
 

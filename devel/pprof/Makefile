@@ -1,10 +1,11 @@
 PORTNAME=	pprof
 DISTVERSION=	g20200905
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for visualization and analysis of profiling data
+WWW=		https://github.com/google/pprof
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

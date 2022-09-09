@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Configurable base class for writing internet servers in Perl
+WWW=		https://metacpan.org/release/Net-Server
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

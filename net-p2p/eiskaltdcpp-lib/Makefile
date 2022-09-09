@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	-lib
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	EiskaltDC++ shared library and header files
+WWW=		https://github.com/eiskaltdcpp/eiskaltdcpp
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

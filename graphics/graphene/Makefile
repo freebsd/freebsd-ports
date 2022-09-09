@@ -4,6 +4,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Optimizations for speeding up vector operations
+WWW=		https://ebassi.github.io/graphene/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/ibara/oksh/releases/download/oksh-${DISTVERSION
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Portable OpenBSD Korn shell
+WWW=		https://github.com/ibara/oksh
 
 LICENSE=	PD
 

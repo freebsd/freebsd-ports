@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	International X11 fixed fonts
+WWW=		https://directory.fsf.org/wiki/Intlfonts
 
 LICENSE=	GPLv3+
 

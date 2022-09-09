@@ -1,4 +1,2 @@
 CGI::Application::Dispatch
 Dispatch requests to CGI::Application based objects
-
-WWW: https://metacpan.org/release/CGI-Application-Dispatch

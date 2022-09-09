@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	GRPC-like RPC library that supports file descriptor passing
+WWW=		https://github.com/NuxiNL/arpc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

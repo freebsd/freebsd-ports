@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Git branch checkout command line tool
+WWW=		https://github.com/andys8/git-brunch
 
 LICENSE=	BSD3CLAUSE
 

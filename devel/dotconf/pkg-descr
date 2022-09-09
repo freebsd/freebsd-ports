@@ -10,5 +10,3 @@ substitution for arguments, and on-the-fly inclusion of additional
 config files. Some behaviour can be toggled with flags at runtime.
 To keep dotconf from printing out warnings, you can install your
 own customized error handler.
-
-WWW: https://github.com/williamh/dotconf

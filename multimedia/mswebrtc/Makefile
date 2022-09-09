@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.linphone.org/releases/sources/plugins/mswebrtc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mediastreamer plugin with WebRTC codecs
+WWW=		https://www.linphone.org/technical-corner/mediastreamer2.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

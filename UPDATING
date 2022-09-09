@@ -5,6 +5,54 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220903:
+  AFFECTS: users of editors/vim
+  AUTHOR: adamw@FreeBSD.org
+
+  The Vim port no longer installs a system-wide vimrc. It drastically affected
+  config loading order, and led to various settings being clobbered, duplicated,
+  or ignored.
+
+  Vim's provided defaults.vim (/usr/local/share/vim/vim90/defaults.vim) continues
+  to be read just as before, but its settings are no longer clobbered. Take a look
+  in there for any settings you may want to change, and do ':h initialization' to
+  see where Vim looks for config files.
+
+20220903:
+  AFFECTS: users of archivers/py-borgbackup
+  AUTHOR: mandree@FreeBSD.org
+
+  Borgbackup has been upgraded to version 1.2.  For users who you wish to
+  continue using version 1.1, use either of these commands for upgrading:
+
+  With binary packages through pkg:
+    pkg set -o archivers/py-borgbackup:archivers/py-borgbackup11
+    pkg upgrade
+  With portmaster or portupgrade (replace the command accordingly):
+    portmaster -o archivers/py-borgbackup11 archivers/py-borgbackup
+
+20220901:
+  AFFECTS: users of mail/rainloop-community
+  AUTHOR: yasu@FreeBSD.org
+
+  Since 1.17.0 upstream distributes only one edition "lagacy" under MIT license
+  and mail/rainloop-community is remove as a result. So please uninstall
+  mail/rainloop-community (rainloop-community-phpXY) and install mail/rainloop
+  (rainloop-phpXY) instead.
+
+20220831:
+  AFFECTS: users of x11/xscreensaver on 13.1-RELEASE
+  AUTHOR: zirias@FreeBSD.org
+
+  With the update to 6.04, xscreensaver now uses security/unix-selfauth-helper
+  for PAM authentication. This relies on pam_exec.so, which had a bug causing
+  a segfault on authentication attempts prior to 13.1-RELEASE-p1. For details,
+  please see
+  https://www.freebsd.org/security/advisories/FreeBSD-EN-22:19.pam_exec.asc
+
+  Make sure your system is fully upgraded, otherwise you might be unable to
+  unlock your screen.
+
 20220825:
   AFFECTS: users of net/xrdp or net/xrdp-devel
   AUTHOR: meta@FreeBSD.org

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Module for working with UNIX-flavoured mailboxes
+WWW=		https://metacpan.org/release/Mail-MboxParser
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools \

@@ -4,5 +4,3 @@ join overrides, need for automatic encoding, and normalization (for stuff like
 Jekyll) and the ability to do other safe-style operations in an encapsulated
 format, like copying files and folders with symlinks but only if they originate
 from the given root.
-
-WWW: https://github.com/envygeeks/pathutil

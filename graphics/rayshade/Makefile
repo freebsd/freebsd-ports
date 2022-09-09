@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible system for creating ray-traced images
+WWW=		http://www-graphics.stanford.edu/~cek/rayshade/
 
 LICENSE=	rayshade
 LICENSE_NAME=	Rayshade license

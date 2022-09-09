@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easier tree style for XML::Parser
+WWW=		https://metacpan.org/release/XML-Parser-EasyTree
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

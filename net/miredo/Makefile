@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.remlab.net/files/miredo/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource Teredo (IPv6 tunneling) implementation
+WWW=		https://www.remlab.net/miredo/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

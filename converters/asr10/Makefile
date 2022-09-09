@@ -5,6 +5,7 @@ MASTER_SITES=	http://members.tripod.com/kmi9000/files/
 
 MAINTAINER=	M.Indlekofer@gmx.de
 COMMENT=	Access to Ensoniq EPS/EPS+/ASR devices and image files
+WWW=		https://members.tripod.com/kmi9000/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

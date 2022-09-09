@@ -5,5 +5,3 @@ calls are stored in a data structure describing input and output
 parameters.
 
 The project is actually generating all of it's classes from botocore.
-
-WWW: https://metacpan.org/release/Paws

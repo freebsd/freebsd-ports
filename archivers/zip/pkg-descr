@@ -2,5 +2,3 @@ Zip is a compression and file packaging utility.  It is compatible with
 PKZIP 2.04g (Phil Katz ZIP) for MSDOS systems.  There is a companion to zip
 called unzip (of course) which you can also install from the ports/package
 system.
-
-WWW: http://infozip.sourceforge.net/Zip.html

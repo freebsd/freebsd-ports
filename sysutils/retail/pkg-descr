@@ -4,5 +4,3 @@ given on the command line, and output any changes since last time it
 read the file(s) in question. It will attempt to compensate if the
 filesize changes unexpectedly, and will also attempt to compensate if
 the file contents changes as well. It is not a very complex program.
-
-WWW: http://xjack.org/retail/

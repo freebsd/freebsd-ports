@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS tools
+WWW=		https://metacpan.org/release/MogileFS-Utils
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MogileFS-Client>=1.16:sysutils/p5-MogileFS-Client \

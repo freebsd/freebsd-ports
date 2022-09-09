@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	mizhka@freebsd.org
 COMMENT=	Compression/decompression tool based on snappy library
+WWW=		https://github.com/kubo/snzip
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,10 +1,11 @@
 PORTNAME=	pango
-PORTVERSION=	3.5.1
+PORTVERSION=	4.0.1
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding of Pango 1.x
+WWW=		https://ruby-gnome.github.io/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

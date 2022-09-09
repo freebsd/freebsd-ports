@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show you font info and add new 'name' and 'cmap' tables
+WWW=		https://sourceforge.net/projects/oto/
 
 USES=		gmake iconv
 GNU_CONFIGURE=	YES

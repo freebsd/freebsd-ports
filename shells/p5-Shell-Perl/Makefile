@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read-eval-print loop in Perl
+WWW=		https://metacpan.org/release/Shell-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

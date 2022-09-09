@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
+WWW=		https://www.fluidsynth.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

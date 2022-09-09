@@ -9,5 +9,3 @@ proper cmake based build system suitable for packaging and
 cross-platform development, it's focus has now been extended to
 provide code maintenance and to continue the development of unarr,
 which no longer is maintained.
-
-WWW: https://github.com/selmf/unarr

@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rcpd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RCP server for routers and network devices
+WWW=		https://www.shrubbery.net/rcpd/
 
 GNU_CONFIGURE=	yes
 

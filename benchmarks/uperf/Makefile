@@ -5,6 +5,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Network performance tool to model and replay of networking patterns
+WWW=		https://uperf.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

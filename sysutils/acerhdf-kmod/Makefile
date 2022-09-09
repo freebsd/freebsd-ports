@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Acer Aspire One fan control
+WWW=		https://github.com/t6/kmod-acerhdf
 
 LICENSE=	GPLv2
 

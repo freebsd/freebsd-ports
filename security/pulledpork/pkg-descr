@@ -17,6 +17,3 @@ pulledpork is a Perl script which helps to update your Snort 2.9+ rules.
  * Verbose output so that you know EXACTLY what is happening
  * Minimal Perl Module dependencies
  * A sweet smokey flavor throughout the pork!
-
-
-WWW: https://github.com/shirkdog/pulledpork/

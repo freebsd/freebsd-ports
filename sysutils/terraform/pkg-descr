@@ -3,5 +3,3 @@ physical and virtual servers to email and DNS providers. Once launched,
 Terraform safely and efficiently changes infrastructure as the configuration is
 evolved. Simple file based configuration gives you a single view of your entire
 infrastructure.
-
-WWW: https://terraform.io/

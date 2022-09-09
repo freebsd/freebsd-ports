@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Formatter for spellchecking Pod
+WWW=		https://metacpan.org/release/Pod-Spell
 
 LICENSE=	ART20
 

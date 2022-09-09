@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Eye candy program which displays various patterns
+WWW=		https://github.com/dreamlayers/acidwarp
 
 USES=		cmake magick:7,build sdl
 USE_SDL=	sdl2

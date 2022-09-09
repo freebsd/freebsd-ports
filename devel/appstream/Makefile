@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Machine-readable software metadata for desktop environments
+WWW=		https://www.freedesktop.org/wiki/Distributions/AppStream/
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
@@ -12,8 +13,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		gperf>0:devel/gperf \
 		itstool:textproc/itstool \
-		lmdb>0:databases/lmdb \
-		valac:lang/vala
+		lmdb>0:databases/lmdb
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liblmdb.so:databases/lmdb \
 		libstemmer.so:textproc/snowballstemmer \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml.so:textproc/libyaml
 
 USES=		gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.6+,build tar:xz
+		python:3.6+,build tar:xz vala:build
 
 USE_GNOME=	glib20 introspection:build libxml2 libxslt
 

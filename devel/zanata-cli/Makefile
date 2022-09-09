@@ -6,6 +6,7 @@ MASTER_SITES=	https://repo.maven.apache.org/maven2/org/zanata/${PORTNAME}/${PORT
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Zanata Java command line client
+WWW=		https://docs.zanata.org/en/release/client/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

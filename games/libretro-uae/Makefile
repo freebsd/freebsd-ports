@@ -3,8 +3,9 @@ PORTVERSION=	0.20220404
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libretro port of UAE
+WWW=		https://github.com/libretro/libretro-uae
 
 LICENSE=	GPLv2
 

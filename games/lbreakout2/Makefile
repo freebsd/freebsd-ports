@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breakout-style arcade game
+WWW=		http://lgames.sourceforge.net/index.php?project=LBreakout2
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

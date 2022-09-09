@@ -1,11 +1,12 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.0
-PORTREVISION=	3
+DISTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Highly available Prometheus setup with long term storage capabilities
+WWW=		https://thanos.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

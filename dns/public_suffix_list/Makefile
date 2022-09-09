@@ -1,9 +1,10 @@
 PORTNAME=	public_suffix_list
-PORTVERSION=	20220629
+PORTVERSION=	20220825
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Public Suffix List by Mozilla
+WWW=		https://publicsuffix.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,7 +19,7 @@ PORTDATA=	public_suffix_list.dat \
 
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
-GH_TAGNAME=	104afe5
+GH_TAGNAME=	4f29f15
 USE_GITHUB=	yes
 
 do-install:

@@ -4,6 +4,7 @@ CATEGORIES=	security devel
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
+WWW=		https://github.com/OpenSC/OpenSC/wiki
 
 LICENSE=	LGPL21
 

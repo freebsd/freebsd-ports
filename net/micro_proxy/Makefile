@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Really small HTTP/HTTPS proxy
+WWW=		https://www.acme.com/software/micro_proxy/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	libexec/micro_proxy man/man8/micro_proxy.8.gz

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to Tk
+WWW=		https://forge.ocamlcore.org/projects/labltk/
 
 LICENSE=	LGPL20
 

@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse Java Compiler
+WWW=		https://www.eclipse.org/
 
 LICENSE=	EPL
 

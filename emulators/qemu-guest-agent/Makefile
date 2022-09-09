@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-guest-agent
 
 MAINTAINER=	zhecka@gmail.com
 COMMENT=	QEMU guest-agent utilities
+WWW=		https://wiki.qemu.org/Main_Page
 
 LICENSE=	GPLv2
 

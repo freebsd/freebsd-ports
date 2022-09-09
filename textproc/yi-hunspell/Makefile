@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Yiddish hunspell dictionaries
+WWW=		https://addons.mozilla.org/en-US/firefox/addon/yiddish-spell-checker-yivo/
 
 LICENSE=	GPLv3
 

@@ -1,7 +1,7 @@
 PORTNAME=	screego
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://registry.yarnpkg.com/:yarn
 DISTFILES=	@babel/code-frame/-/code-frame-7.8.3.tgz:yarn \
@@ -1473,6 +1473,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:yarn*:C/:.*$//}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Screen sharing server based on WebRTC
+WWW=		https://github.com/screego/server
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/net/dbeacon/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Distributed multicast beacon server
+WWW=		http://fivebits.net/proj/dbeacon
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ MASTER_SITES=	http://fuse.superglue.se/${PORTNAME}/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Renders ASCII art from mathematical expressions
+WWW=		http://fuse.superglue.se/aamath/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

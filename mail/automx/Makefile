@@ -6,6 +6,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Handles mail account profile requests from mail clients
+WWW=		http://www.automx.org/en/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

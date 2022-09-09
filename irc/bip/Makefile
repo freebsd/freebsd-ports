@@ -5,6 +5,7 @@ MASTER_SITES=	https://projects.duckcorp.org/attachments/download/97/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
+WWW=		https://bip.milkypond.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

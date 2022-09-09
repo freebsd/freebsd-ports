@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libyal/libmsiecf/releases/download/${PORTVERSIO
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the MSIE index.dat files
+WWW=		https://github.com/libyal/libmsiecf
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

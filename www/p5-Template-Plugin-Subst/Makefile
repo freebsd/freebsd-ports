@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT plugin for s/// functionality in templates
+WWW=		https://metacpan.org/release/Template-Plugin-Subst
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit

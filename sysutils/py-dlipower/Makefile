@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	CLI interface to Digital Logger's (DLI) Power Strips
+WWW=		https://github.com/dwighthubbard/python-dlipower
 
 LICENSE=	BSD2CLAUSE
 

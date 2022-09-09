@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
 MAINTAINER=	sean.greven@gmail.com
 COMMENT=	SPA implementation for Linux and FreeBSD
+WWW=		https://www.cipherdyne.org/fwknop/
 
 LICENSE=	GPLv2
 

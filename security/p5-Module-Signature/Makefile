@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module signature file manipulation
+WWW=		https://metacpan.org/release/Module-Signature
 
 LICENSE=	CC0-1.0
 

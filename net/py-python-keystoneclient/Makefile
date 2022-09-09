@@ -1,11 +1,12 @@
 PORTNAME=	python-keystoneclient
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client Library for OpenStack Identity
+WWW=		https://docs.openstack.org/python-keystoneclient/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

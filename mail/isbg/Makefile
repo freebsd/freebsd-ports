@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
+WWW=		https://github.com/isbg/isbg
 
 LICENSE=	BSD2CLAUSE
 

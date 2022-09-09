@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	High-level MVC web framework written in Perl
+WWW=		https://metacpan.org/pod/Mojolicious
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

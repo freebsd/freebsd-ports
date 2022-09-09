@@ -1,5 +1,3 @@
 This is a little module made for CGI scripting. It encodes the parameters to
 be passed to a CGI. It does nothing more, so it's much smaller and loads more
 quickly.
-
-WWW: https://metacpan.org/release/CGI-Enurl

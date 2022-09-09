@@ -8,6 +8,7 @@ PATCHFILES=	d08541a0afb4377ce2f35feb280fbe443870b587.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
+WWW=		https://www.glx-dock.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

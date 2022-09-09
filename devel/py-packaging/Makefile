@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Core utilities for Python packages
+WWW=		https://github.com/pypa/packaging
 
 LICENSE=	APACHE20 BSD2CLAUSE
 LICENSE_COMB=	dual

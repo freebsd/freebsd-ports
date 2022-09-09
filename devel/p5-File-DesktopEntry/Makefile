@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Object to handle desktop files
+WWW=		https://metacpan.org/release/File-DesktopEntry
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

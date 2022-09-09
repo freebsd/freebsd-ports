@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Drop-in replacement for IO::Socket::INET supporting IPv4 and IPv6
+WWW=		https://metacpan.org/release/IO-Socket-IP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

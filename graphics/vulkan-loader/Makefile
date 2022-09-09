@@ -1,10 +1,11 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.225
+PORTVERSION=	1.3.227
 CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Driver loader for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-Loader
 
 LICENSE=	APACHE20
 

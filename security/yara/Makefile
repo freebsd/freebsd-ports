@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Malware identification and classification tool
+WWW=		https://virustotal.github.io/yara/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Microsoft Simple Encrypted Arithmetic Library
+WWW=		https://www.microsoft.com/en-us/research/project/microsoft-seal/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

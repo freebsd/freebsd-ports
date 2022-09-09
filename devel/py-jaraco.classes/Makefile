@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python class routines
+WWW=		https://github.com/jaraco/jaraco.classes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

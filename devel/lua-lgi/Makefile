@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Lua bindings to libraries using GObject-Introspection
+WWW=		https://github.com/pavouk/lgi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

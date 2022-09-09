@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python 2 and 3 compatibility utilities
+WWW=		https://github.com/benjaminp/six
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

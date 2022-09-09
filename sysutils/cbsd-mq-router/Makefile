@@ -1,10 +1,11 @@
 PORTNAME=	cbsd-mq-router
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	CBSD message queue router
+WWW=		https://github.com/cbsd/cbsd-mq-router
 
 LICENSE=	BSD2CLAUSE
 

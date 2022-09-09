@@ -10,5 +10,3 @@ and JWT
 JWT Relies on JWS and JWE functions, so it supports the same functionalities as
 the other 2. JWT functionalities also support nesting serialization (JWE nested
 in a JWS or the opposite).
-
-WWW: https://github.com/babelouest/rhonabwy

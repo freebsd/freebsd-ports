@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	CLI and Library to interface with network devices in rubygems-oxidized
+WWW=		https://github.com/ytti/oxidized-script
 
 LICENSE=	APACHE20
 

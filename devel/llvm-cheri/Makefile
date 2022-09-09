@@ -1,11 +1,12 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	LLVM and Clang with support for the CHERI architecture
+WWW=		https://cheri-cpu.org
 
 LICENSE_DIR=	${WRKSRC}/llvm
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"

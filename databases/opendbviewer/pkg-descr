@@ -7,5 +7,3 @@ PostgreSQL databases.  It contains:
 - Open SQLite table directly with drag'n drop
 - History of last connection
 - Edit database directly from the table view
-
-WWW: https://github.com/Jet1oeil/opendbviewer

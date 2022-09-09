@@ -5,6 +5,7 @@ CATEGORIES=	textproc spanish
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Spanish dictionary
+WWW=		https://www.datsi.fi.upm.es/~coes/
 
 DICT=	 	es
 

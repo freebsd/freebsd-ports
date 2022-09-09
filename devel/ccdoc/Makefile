@@ -7,6 +7,7 @@ DIST_SUBDIR=	ccdoc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
+WWW=		http://ccdoc.sourceforge.net/
 
 LICENSE=	MIT
 

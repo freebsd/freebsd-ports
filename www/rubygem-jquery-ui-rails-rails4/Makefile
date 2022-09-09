@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Packaged JavaScript, CSS and image files of jQuery UI for Rails
+WWW=		https://github.com/joliss/jquery-ui-rails
 
 LICENSE=	MIT
 

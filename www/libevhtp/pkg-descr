@@ -5,5 +5,3 @@ full-fledged HTTP service. The maintainer is under the impression that the
 libevent http API was designed almost as an example of what you can do with
 libevent. It's not Apache in a box, but more and more developers are
 attempting to use it as such.
-
-WWW: https://github.com/ellzey/libevhtp

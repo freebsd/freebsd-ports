@@ -17,6 +17,7 @@ DISTFILES=	libyuv-${LIBYUV_HASH}.tar.gz:libyuv
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Library for freeswitch yuv graphics manipulation
+WWW=		https://chromium.googlesource.com/libyuv/libyuv/
 
 LICENSE=	BSD3CLAUSE
 

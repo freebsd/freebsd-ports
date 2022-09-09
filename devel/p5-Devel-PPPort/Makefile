@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl/Pollution/Portability
+WWW=		https://metacpan.org/release/Devel-PPPort
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ DISTNAME=	glu-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility library
+WWW=		https://gitlab.freedesktop.org/mesa/glu
 
 USES=		gl meson pkgconfig tar:xz
 

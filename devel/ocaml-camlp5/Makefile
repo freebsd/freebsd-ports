@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
+WWW=		http://camlp5.gforge.inria.fr/
 
 LICENSE=	INRIA
 LICENSE_NAME=	INRIA permissive license with copyright notice requirements

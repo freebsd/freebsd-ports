@@ -6,6 +6,7 @@ MASTER_SITES=	http://gcompris.net/download/qt/src/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational games and activities for kids ages 2 to 10
+WWW=		http://gcompris.net/
 
 LICENSE=	AGPLv3 GPLv3
 LICENSE_COMB=	multi

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for Reliable Internet Stream Transport (RIST) protocol
+WWW=		https://code.videolan.org/rist/librist
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

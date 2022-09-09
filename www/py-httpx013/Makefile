@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	013
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Next generation HTTP client
+WWW=		https://github.com/encode/httpx
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Rime Schema Repository
+WWW=		https://rime.github.io/
 
 LICENSE=	GPLv3
 

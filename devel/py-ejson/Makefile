@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensible JSON serializers and deserializers
+WWW=		https://github.com/Yipit/ejson
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

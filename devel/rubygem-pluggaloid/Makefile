@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Extensible plugin system for mikutter
+WWW=		https://github.com/toshia/pluggaloid
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

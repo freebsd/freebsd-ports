@@ -7,16 +7,16 @@ PATCHFILES+=	442bcebcc00e.patch:-p1 # meson >= 0.60
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Application Menu plugin for mate-panel
+WWW=		https://gitlab.com/vala-panel-project/vala-panel-appmenu
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf
-BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	appmenu-registrar>=0:x11/appmenu-registrar \
 		appmenu-gtk-module>=0:x11/gtk-app-menu
 
-USES=	meson gnome mate pkgconfig gettext
+USES=	meson gnome mate pkgconfig gettext vala:build
 
 MESON_ARGS=	-Dvalapanel=disabled \
 		-Dxfce=disabled \

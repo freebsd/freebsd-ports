@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Nanotime python implementation
+WWW=		https://github.com/jbenet/nanotime/tree/master/python
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to access and use telnet protocol
+WWW=		https://metacpan.org/release/Net-Telnet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

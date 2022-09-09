@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Split input and feed it into the given utility
+WWW=		https://github.com/jschauma/xpipe
 
 LICENSE=	BSD2CLAUSE
 

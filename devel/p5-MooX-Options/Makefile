@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	espen@tagestad.no
 COMMENT=	Option keywords to your object (Mo/Moo/Moose)
+WWW=		https://metacpan.org/release/MooX-Options
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

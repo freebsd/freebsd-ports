@@ -7,6 +7,7 @@ DISTNAME=	eyeclk20
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock with eyes following the mouse pointer
+WWW=		https://kozos.jp/myfreesoft/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	X11BASE=${LOCALBASE}

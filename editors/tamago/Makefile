@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Egg V4, Multilingual Input Method for Emacsen
+WWW=		https://github.com/hrs-allbsd/tamago
 
 LICENSE=	GPLv2
 

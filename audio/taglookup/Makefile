@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.kamaz.org.uk/taglookup/
 
 MAINTAINER=	alex@kamaz.org.uk
 COMMENT=	Utility for tagging groups of audio files using CDDB
+WWW=		https://www.kamaz.org.uk/taglookup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

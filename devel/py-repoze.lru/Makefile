@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tiny LRU cache implementation and decorator
+WWW=		https://github.com/repoze/repoze.lru
 
 LICENSE=	REPOZE
 LICENSE_NAME=	Repoze Public License

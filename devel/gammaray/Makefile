@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
+WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
 
 LICENSE=	GPLv2 BSD2CLAUSE
 LICENSE_COMB=	multi
@@ -25,7 +26,6 @@ USE_KDE=	coreaddons syntaxhighlighting
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDAB
 GH_PROJECT=	GammaRay
-
 
 CMAKE_OFF=	STACK_DETAILS_AUTO_DETECT
 CMAKE_ON=	STACK_DETAILS_DWARF

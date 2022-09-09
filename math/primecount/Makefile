@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fast prime counting function implementations
+WWW=		https://github.com/kimwalisch/primecount
 
 LICENSE=	BSD2CLAUSE
 

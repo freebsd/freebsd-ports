@@ -6,6 +6,7 @@ DISTFILES=	XCC_Mixer-1.44.zip:dat
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Westwood Studios MIX format file manipulator
+WWW=		https://github.com/OmniBlade/ccmix
 
 LICENSE=	GPLv2+
 

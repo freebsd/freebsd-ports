@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel.tihanyi@tetragir.com
 COMMENT=	Simple visual task board software
+WWW=		https://kanboard.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

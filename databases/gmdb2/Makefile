@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Official GUI for mdbtools
+WWW=		https://github.com/mdbtools/gmdb2/
 
 LICENSE=	GPLv2
 

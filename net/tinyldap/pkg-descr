@@ -3,5 +3,3 @@ openldap is the reference when it comes to LDAP servers, and it performs
 very poorly despite using techniques such as thread pools.
 
 LICENSE: GPL2
-
-WWW: http://www.fefe.de/tinyldap/

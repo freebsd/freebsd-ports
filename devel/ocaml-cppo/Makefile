@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C-style preprocessor for OCaml
+WWW=		https://github.com/ocaml-community/cppo
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

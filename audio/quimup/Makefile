@@ -7,6 +7,7 @@ DISTNAME=	Quimup_${PORTVERSION}_source
 
 MAINTAINER=	cmangin@arobas.net
 COMMENT=	Qt5 client for MPD (the Music Player Daemon)
+WWW=		https://coonsden.com/?cat=4
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

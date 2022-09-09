@@ -13,5 +13,3 @@ capabilities, data compression, image handling, and interactive 3-D
 geometric editing.  Included is an implementation of Weiler's
 n-Manifold Geometry (NMG) data structures for surface-based solid
 models and photon mapping.
-
-WWW: https://brlcad.org/

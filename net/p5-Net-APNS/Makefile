@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Apple Push Notification Service
+WWW=		https://metacpan.org/release/Net-APNS
 
 RUN_DEPENDS=	\
 	p5-Any-Moose>=0.10:devel/p5-Any-Moose \

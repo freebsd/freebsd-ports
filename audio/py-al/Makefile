@@ -7,6 +7,7 @@ DISTNAME=	PyAL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenAL bindings for Python
+WWW=		https://bitbucket.org/marcusva/py-al
 
 LICENSE=	PD ZLIB
 LICENSE_COMB=	dual

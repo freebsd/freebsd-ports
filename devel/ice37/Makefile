@@ -6,6 +6,7 @@ PKGNAMESUFFIX?=		37
 
 MAINTAINER=		grembo@FreeBSD.org
 COMMENT=		Modern alternative to object middleware such as CORBA/COM/DCOM/COM+
+WWW=		http://www.zeroc.com/
 
 LICENSE=		GPLv2
 

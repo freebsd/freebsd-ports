@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulation of falling sand and other materials
+WWW=		https://sourceforge.net/projects/sdlsand/
 
 USES=		dos2unix sdl zip
 DOS2UNIX_FILES=	CmdLine.cpp

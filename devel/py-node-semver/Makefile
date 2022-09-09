@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python version of node-semver
+WWW=		https://github.com/podhmo/python-node-semver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,5 +3,4 @@ produces binary data in pcap(3) format. This utility is similar to tcpdump(1),
 but has a number of features tailored to DNS transactions and protocol options.
 OARC uses dnscap for DITL data collections.
 
-WWW: https://www.dns-oarc.net/tools/dnscap
-WWW: https://github.com/DNS-OARC/dnscap
+See also: https://github.com/DNS-OARC/dnscap

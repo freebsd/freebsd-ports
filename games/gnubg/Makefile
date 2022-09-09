@@ -7,6 +7,7 @@ DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GNU Backgammon
+WWW=		https://www.gnu.org/software/gnubg/
 
 LICENSE=	GPLv3
 

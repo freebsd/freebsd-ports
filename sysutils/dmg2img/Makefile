@@ -6,6 +6,7 @@ MASTER_SITES=	http://vu1tur.eu.org/tools/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DMG2IMG convert tool
+WWW=		http://vu1tur.eu.org/tools/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ JPEG-LS library implementation
+WWW=		https://github.com/team-charls/charls
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

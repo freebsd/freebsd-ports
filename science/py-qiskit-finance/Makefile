@@ -1,10 +1,11 @@
 PORTNAME=	qiskit-finance
-DISTVERSION=	0.3.3.20220816
+DISTVERSION=	0.3.4
 CATEGORIES=	science finance python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum Finance module from the Qiskit quantum computing framework
+WWW=		https://qiskit.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

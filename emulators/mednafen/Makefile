@@ -7,6 +7,7 @@ MASTER_SITES=	https://mednafen.github.io/releases/files/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
+WWW=		https://mednafen.github.io
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

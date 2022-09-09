@@ -5,5 +5,3 @@ $ your_app [<path>] [<address>]
 
 The library applies the principal of least surprise to command-line
 interfaces.
-
-WWW: https://github.com/joeyespo/path-and-address

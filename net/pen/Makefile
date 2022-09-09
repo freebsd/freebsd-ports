@@ -5,6 +5,7 @@ MASTER_SITES=	http://siag.nu/pub/pen/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Load balancer for UDP and TCP based protocols
+WWW=		https://siag.nu/pen/
 
 LICENSE=	GPLv2
 

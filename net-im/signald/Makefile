@@ -65,6 +65,7 @@ DISTFILES=	BuildConfigPlugin-1.1.8.jar:buildconfig \
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Daemon to facilitate communication via Signal Private Messenger
+WWW=		https://signald.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

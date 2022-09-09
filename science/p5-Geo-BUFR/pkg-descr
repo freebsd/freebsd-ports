@@ -12,5 +12,3 @@ bufrresolve.pl, bufrencode.pl, bufr_reencode.pl and bufralter.pl. See
 https://wiki.met.no/bufr.pm/start for examples of use. For the majority of
 potential users of Geo::BUFR I would expect these programs to be all that
 you will need Geo::BUFR for.
-
-WWW: https://metacpan.org/release/Geo-BUFR

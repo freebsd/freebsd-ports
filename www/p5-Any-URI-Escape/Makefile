@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load URI::Escape::XS preferentially over URI::Escape
+WWW=		https://metacpan.org/release/Any-URI-Escape
 
 RUN_DEPENDS:=	p5-URI-Escape-XS>=0:www/p5-URI-Escape-XS
 

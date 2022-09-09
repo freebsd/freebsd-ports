@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
+WWW=		https://metacpan.org/release/AnyEvent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

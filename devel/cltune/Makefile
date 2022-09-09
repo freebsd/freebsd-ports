@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Library to tune OpenCL kernels
+WWW=		https://github.com/CNugteren/CLTune
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

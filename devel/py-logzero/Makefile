@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Robust and effective logging for Python
+WWW=		https://github.com/metachris/logzero
 
 LICENSE=	MIT
 

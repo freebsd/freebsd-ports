@@ -7,6 +7,7 @@ EXTRACT_ONLY=	#none
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge baseport for all packages
+WWW=		http://octave.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

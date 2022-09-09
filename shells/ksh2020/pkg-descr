@@ -9,5 +9,3 @@ features of the BSD shell "csh".  With KSH-93, medium-sized programming
 tasks can be performed at shell-level without a significant loss
 in performance.  In addition, "sh" scripts can be run on KSH-93
 without modification.
-
-WWW: http://www.kornshell.com/

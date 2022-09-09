@@ -6,5 +6,3 @@ Noteworthy:
 * image resizer: stb_image_resize.h
 * font text rasterizer: stb_truetype.h
 * typesafe containers: stb_ds.h
-
-WWW: https://github.com/nothings/stb

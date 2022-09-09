@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Video editing with Python
+WWW=		https://github.com/Zulko/moviepy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt

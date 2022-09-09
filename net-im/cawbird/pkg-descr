@@ -4,5 +4,3 @@ unsupported after Twitter disabled the streaming API.
 Cawbird works with the new APIs and includes a few fixes and modifications
 that have historically been patched in to IBBoard's custom Corebird build
 on his personal Open Build Service account.
-
-WWW: https://github.com/IBBoard/cawbird

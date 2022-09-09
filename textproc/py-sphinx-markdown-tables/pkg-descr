@@ -2,5 +2,3 @@ Sphinx supports markdown via Recommonmark, which does not support tables.
 This extension provides them.
 
 It renders markdown tables as HTML, as defined by python-markdown.
-
-WWW: https://github.com/ryanfox/sphinx-markdown-tables

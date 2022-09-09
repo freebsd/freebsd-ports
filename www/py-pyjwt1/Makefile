@@ -7,6 +7,7 @@ DISTNAME=	PyJWT-${PORTVERSION}
 
 MAINTAINER=	terje@elde.net
 COMMENT=	JSON Web Token implementation in Python
+WWW=		https://github.com/progrium/pyjwt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

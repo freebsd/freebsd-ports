@@ -4,6 +4,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bidirectional text console
+WWW=		https://www.arabeyes.org/Bicon
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

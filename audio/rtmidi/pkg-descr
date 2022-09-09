@@ -8,5 +8,3 @@ designed with the following goals:
 * simple, common API across all supported platforms
 * only one header and one source file for easy inclusion in programming projects
 * MIDI device enumeration
-
-WWW: https://github.com/thestk/rtmidi

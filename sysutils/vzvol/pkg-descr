@@ -3,5 +3,3 @@ format, and manage zvols in the context of use for
 virtualization. It is meant to simplify the management of
 these devices, as well as allow the creation of a shim
 .VMDK file to allow the use of a zvol with VirtualBox.
-
-WWW: https://github.com/RainbowHackerHorse/vzvol

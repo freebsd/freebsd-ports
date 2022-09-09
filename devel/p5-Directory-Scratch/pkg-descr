@@ -3,5 +3,3 @@ temporary storage space, manipulate files inside it, then clean it up.
 
 This module aims to eliminate that problem by making it easy to do
 things right.
-
-WWW: https://metacpan.org/release/Directory-Scratch

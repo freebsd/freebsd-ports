@@ -1,5 +1,3 @@
 The primary purpose of this is to use file descriptors instead of file
 handles for socket operations. File descriptors can be shared between
 threads and not need dup file handles for each threads.
-
-WWW: https://metacpan.org/release/POSIX-Socket

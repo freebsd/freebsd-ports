@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSIO
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partitioned Global Address Space (PGAS) library for distributed arrays
+WWW=		https://hpc.pnl.gov//globalarrays/
 
 LICENSE=	BMIL
 LICENSE_NAME=	Battelle Memorial Institute License

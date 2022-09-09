@@ -9,6 +9,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Allows you to limit the number of simultaneous connexions
+WWW=		https://dominia.org/djao/limitipconn2.html
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

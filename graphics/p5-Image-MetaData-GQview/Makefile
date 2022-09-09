@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for GQview image metadata
+WWW=		https://metacpan.org/release/Image-MetaData-GQview
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

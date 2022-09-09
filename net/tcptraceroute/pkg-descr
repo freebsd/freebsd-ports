@@ -13,5 +13,3 @@ cases, these firewalls will permit inbound TCP packets to specific ports that
 hosts sitting behind the firewall are listening for connections on. By sending
 out TCP SYN packets instead of UDP or ICMP ECHO packets, tcptraceroute is able
 to bypass the most common firewall filters.
-
-WWW: https://github.com/mct/tcptraceroute

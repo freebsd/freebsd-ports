@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Compute descriptive statistics for discrete data sets
+WWW=		https://metacpan.org/release/Statistics-Descriptive-Discrete
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

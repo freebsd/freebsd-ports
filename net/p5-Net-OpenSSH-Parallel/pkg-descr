@@ -11,5 +11,3 @@ Common usage of the module is as follows:
 - Queue the actions you want to run (commands, file copy operations, etc.) using
   the "push" method.
 - Call the "run" method and let the parallel scheduler take care of everything!
-
-WWW: https://metacpan.org/release/Net-OpenSSH-Parallel

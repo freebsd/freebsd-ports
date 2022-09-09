@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	FreeBSD/GhostBSD network connection manager
+WWW=		https://github.com/GhostBSD/networkmgr
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

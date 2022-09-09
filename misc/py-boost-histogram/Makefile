@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings for the C++14 Boost::Histogram library
+WWW=		https://github.com/scikit-hep/boost-histogram
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Colorful worry-free console applications
+WWW=		https://github.com/matthewdeanmartin/colorclass
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

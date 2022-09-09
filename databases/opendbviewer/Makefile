@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Simple database explorer
+WWW=		https://github.com/Jet1oeil/opendbviewer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

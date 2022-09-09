@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Interface for developing Trackback clients and servers
+WWW=		https://metacpan.org/release/Net-Trackback
 
 BUILD_DEPENDS=	p5-Class-ErrorHandler>=0.01:devel/p5-Class-ErrorHandler \
 		p5-libwww>0:www/p5-libwww

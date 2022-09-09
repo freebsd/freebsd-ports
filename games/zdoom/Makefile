@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Source port for Doom-engine games
+WWW=		https://www.zdoom.org/
 
 LICENSE=	DOOM
 LICENSE_NAME=	Limited Use Software License Agreement

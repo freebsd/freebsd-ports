@@ -7,6 +7,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OCaml bindings to libmysqlclient
+WWW=		http://ygrek.org.ua/p/ocaml-mysql/
 
 LICENSE=	LGPL21
 

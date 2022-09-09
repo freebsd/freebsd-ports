@@ -1,4 +1,2 @@
 Provides a general-purpose tool for dynamic report generation in R
 using Literate Programming techniques.
-
-WWW: https://cran.r-project.org/web/packages/knitr/

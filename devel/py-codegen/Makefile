@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Extension to ast that allows ast to python code generation
+WWW=		https://github.com/andreif/codegen
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	willtisdale@gmail.com
 COMMENT=	Remote shell that reconnects without interrupting session
+WWW=		https://eternalterminal.dev/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	PGF/TikZ diagram editor
+WWW=		https://tikzit.github.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

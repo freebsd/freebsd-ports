@@ -1,13 +1,14 @@
 PORTNAME=	cockroach
 DISTVERSIONPREFIX=	v
 DISTVERSION=	19.1.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	https://binaries.cockroachdb.com/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cloud-native SQL database that survive disasters
+WWW=		https://www.cockroachlabs.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/cockroachdb/cockroach/LICENSE

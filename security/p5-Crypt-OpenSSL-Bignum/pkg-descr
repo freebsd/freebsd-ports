@@ -5,5 +5,3 @@ OpenSSL provides are exposed to perl. In addition,
 this module can be used to provide access to bignum
 values produced by other OpenSSL modules, such as key
 parameters from Crypt::OpenSSL::RSA.
-
-WWW: https://metacpan.org/release/Crypt-OpenSSL-Bignum

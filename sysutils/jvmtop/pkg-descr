@@ -5,5 +5,3 @@ jvms on a machine. In a top-like manner, it displays JVM internal metrics
 It's tested with different releases of Oracle JDK, IBM JDK and OpenJDK on
 FreeBSD, Linux, Solaris and Windows hosts.  Jvmtop requires a JDK - a JRE
 will not suffice.
-
-WWW: https://github.com/patric-r/jvmtop

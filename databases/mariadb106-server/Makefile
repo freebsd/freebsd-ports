@@ -1,6 +1,6 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.8
-PORTREVISION?=	1
+PORTVERSION=	10.6.9
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -18,11 +18,13 @@ PKGNAMESUFFIX?=	106-server
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
+WWW=		https://mariadb.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
+		libzstd.so:archivers/zstd
 
 # Ugly workaround for MariaDB/CMake library detection
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -61,7 +63,7 @@ OPTIONS_DEFINE_aarch64=	WSREP
 OPTIONS_DEFINE_powerpc64le=	WSREP
 OPTIONS_DEFINE_powerpc64=	WSREP
 OPTIONS_DEFINE_riscv64=	WSREP
-OPTIONS_GROUP_COMPRESSION=	LZ4 LZO SNAPPY ZSTD
+OPTIONS_GROUP_COMPRESSION=	LZ4 LZO SNAPPY
 OPTIONS_GROUP_ENGINES=	COLUMNSTORE INNOBASE MROONGA OQGRAPH ROCKSDB S3 SPHINX SPIDER
 OPTIONS_GROUP_GROONGA=	ZMQ MSGPACK
 OPTIONS_EXCLUDE_i386=	ROCKSDB
@@ -81,7 +83,6 @@ SPHINX_DESC=	SphinxSE engine
 SPIDER_DESC=	Partitioning and XA-transactions engine
 WSREP_DESC=	Build wsrep clustering
 ZMQ_DESC=	ZeroMQ support
-ZSTD_DESC+=	Zstandard compression support (RocksDB only)
 .endif
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${PREFIX} \
@@ -179,7 +180,7 @@ MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_USES=		python
-ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD}
+ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD} -DWITH_ROCKSDB_zstd=ON
 SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON  -DWITH_ROCKSDB_snappy=ON
 SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF -DWITH_ROCKSDB_snappy=OFF
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
@@ -190,8 +191,6 @@ WSREP_RUN_DEPENDS=	bash:shells/bash \
 			#stunnel:security/stunnel
 WSREP_SHEBANG_FILES=	bin/wsrep_sst_rsync
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
-ZSTD_CMAKE_ON=		-DWITH_ROCKSDB_zstd=ON
-ZSTD_CMAKE_OFF=		-DWITH_ROCKSDB_zstd=OFF
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .for PLUGIN in ${DISABLED_PLUGINS}

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.vanheusden.com/multitail/ \
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Tail multiple files on console with ncurses
+WWW=		https://www.vanheusden.com/multitail/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

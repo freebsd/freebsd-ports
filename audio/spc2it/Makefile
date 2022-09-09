@@ -5,6 +5,7 @@ CATEGORIES=	audio converters
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert SPC files to IT (Impulse Tracker) files
+WWW=		https://github.com/uyjulian/spc2it
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	GPS file translating tool (pre-qt version)
+WWW=		https://www.gpsbabel.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

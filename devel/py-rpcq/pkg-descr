@@ -6,5 +6,3 @@ sockets and MessagePack (msgpack) serialization.
 
 Not intended to be a full-featured replacement for other frameworks
 like gRPC or Apache Thrift.
-
-WWW: https://github.com/rigetti/rpcq

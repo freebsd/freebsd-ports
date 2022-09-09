@@ -4,5 +4,3 @@ This plugin reads the <vdr-conf-path>/sources.conf and
 parses the coresponding transponderlist  (.tpl file),
 then it scans this sat and updates/appends all found channels to
 the current channel list.
-
-WWW: http://www.reel-multimedia.com

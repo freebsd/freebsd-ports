@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wallpapers from NOAA Geostationary Operational Environment Satellite
+WWW=		https://github.com/pigmonkey/goesimage
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE

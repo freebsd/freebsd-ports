@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module which allows logging to RabbitMQ via log4perl
+WWW=		https://metacpan.org/release/Log-Log4perl-Appender-RabbitMQ
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${LOCALBASE}/bin/l4p-tmpl:devel/p5-Log-Log4perl \

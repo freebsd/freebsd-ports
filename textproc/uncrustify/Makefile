@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Highly configurable source code beautifier
+WWW=		http://uncrustify.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,6 +15,8 @@ USE_GITHUB=	yes
 USES=		cmake compiler:c++11-lang python:build
 CMAKE_ON=	NoGitVersionString
 TEST_TARGET=	test
+
+PORTSCOUT=	limit:^[0-9]+\.
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

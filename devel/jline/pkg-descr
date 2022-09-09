@@ -14,5 +14,3 @@ You can use the jline.ConsoleRunner application to set up the system
 input stream and continue on the launch another program. For example,
 to use JLine as the input handler for the popular BeanShell console
 application, you can run: java jline.ConsoleRunner bsh.Interpreter
-
-WWW: http://jline.sourceforge.net/

@@ -11,6 +11,7 @@ DISTNAME=	ICON-Iris
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Iris SVG Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

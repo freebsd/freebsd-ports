@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal Radio Hacker: investigate wireless protocols like a boss
+WWW=		https://github.com/jopohl/urh
 
 LICENSE=	GPLv3
 

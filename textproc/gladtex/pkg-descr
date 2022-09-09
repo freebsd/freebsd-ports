@@ -1,4 +1,2 @@
 Gladtex reads a 'htex' file (html with LaTeX maths embedded in <EQ></EQ>)
 and produces html with equations substituted by images.
-
-WWW: http://gladtex.sourceforge.net/

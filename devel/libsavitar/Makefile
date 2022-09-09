@@ -5,6 +5,7 @@ DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	C++ implementation of 3mf loading/python bindings
+WWW=		https://github.com/Ultimaker/libSavitar
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

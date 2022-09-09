@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Object oriented X.509 certificate revocation list parser
+WWW=		https://metacpan.org/release/Crypt-X509-CRL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

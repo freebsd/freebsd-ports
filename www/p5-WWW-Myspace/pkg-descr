@@ -2,5 +2,3 @@ WWW::Myspace.pm provides methods to access your myspace.com account
 and functions automatically. It provides a simple interface for
 scripts to log in, access lists of friends, scan user's profiles,
 retreive profile data, send messages, and post comments.
-
-WWW: https://metacpan.org/release/WWW-Myspace

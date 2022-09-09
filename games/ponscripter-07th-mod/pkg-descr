@@ -4,5 +4,3 @@ interpreter with an emphasis on supporting games in Western languages.
 This fork is intended to provide additional features to Ponscripter
 that make it more suitable for releasing games on Steam. It, however,
 does not have qualms with breaking compatibility in minor ways.
-
-WWW: https://github.com/sekaiproject/ponscripter-fork

@@ -7,5 +7,3 @@ functionality.
 - Rotate by 90/180/270 degrees to adjust for mobile devices in portrait mode.
 - Optimized versions for SSE2/SSSE3/AVX2 on x86/x64,
   Neon on Arm, DSP R2 Mips are possible.
-
-WWW: https://chromium.googlesource.com/libyuv/libyuv/

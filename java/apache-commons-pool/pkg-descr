@@ -5,5 +5,3 @@ The Pool Component
 	 use to provide easily interchangable pooling implementations.
 	2. A toolkit for creating modular object pools.
 	3. Several general purpose pool implementations.
-
-WWW: https://commons.apache.org/proper/commons-pool/

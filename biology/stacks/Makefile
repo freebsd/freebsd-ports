@@ -6,6 +6,7 @@ MASTER_SITES=	http://catchenlab.life.illinois.edu/stacks/source/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Software pipeline for building loci from short-read sequences
+WWW=		https://catchenlab.life.illinois.edu/stacks/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

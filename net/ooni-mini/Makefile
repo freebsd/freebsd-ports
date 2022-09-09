@@ -1,11 +1,12 @@
 PORTNAME=		ooni-mini
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.23.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Small command line client that tests OONI's functionality
+WWW=		https://ooni.org/about/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

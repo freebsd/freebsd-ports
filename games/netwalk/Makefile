@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game where the object is to connect every terminal to the main server
+WWW=		https://github.com/blynn/netwalk
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

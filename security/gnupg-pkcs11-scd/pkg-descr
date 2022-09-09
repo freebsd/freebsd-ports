@@ -1,4 +1,2 @@
 gnupg-pkcs11 is a project to implement a BSD-licensed smart-card daemon to
 enable the use of PKCS#11 tokens with GnuPG.
-
-WWW: https://github.com/alonbl/gnupg-pkcs11-scd

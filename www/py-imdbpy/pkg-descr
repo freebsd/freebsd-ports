@@ -7,5 +7,3 @@ independent from the data source (since IMDb provides two or three different
 interfaces to their database). IMDbPY is mainly intended for programmers and
 developers who want to build their Python programs using the IMDbPY package, but
 some example scripts - useful for simple users - are included.
-
-WWW: http://imdbpy.sourceforge.net/

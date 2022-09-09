@@ -10,5 +10,3 @@ Example:
 	4. Start gedit.
 	5. Click Paste. Normally nothing will happen. But if GNOME Clipboard
 	   Daemon is running, pasting will work.
-
-WWW: http://members.chello.nl/~h.lai/gnome-clipboard-daemon/

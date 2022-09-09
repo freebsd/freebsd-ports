@@ -9,6 +9,7 @@ DIST_SUBDIR=	${DISTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Myrica free TrueType fonts for programming
+WWW=		https://myrica.estable.jp/
 
 USES=		fonts:fc 7z
 FONTPATHSPEC=	${FONTNAME}:pri=60

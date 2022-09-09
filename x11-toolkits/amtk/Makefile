@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Actions, Menus and Toolbars Kit
+WWW=		https://wiki.gnome.org/Projects/Amtk
 
 LICENSE=	LGPL21
 

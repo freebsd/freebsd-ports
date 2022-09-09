@@ -1,10 +1,12 @@
 PORTNAME=	meek
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.37.0
+PORTREVISION=	1
 CATEGORIES=	security net
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Pluggable transport proxy that relays through third-party server
+WWW=		https://trac.torproject.org/projects/tor/wiki/doc/meek
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/${GO_PKGNAME}/COPYING

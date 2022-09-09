@@ -1,5 +1,3 @@
 CGI::Session::Driver::memcache is a storage driver (only referred as
 'driver' in CGI::Session lingo) for persisting CGI Sessions into a
 fast memcached server.
-
-WWW: https://metacpan.org/release/CGI-Session-Driver-memcached

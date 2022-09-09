@@ -4,5 +4,3 @@ capture any activity that happens on STDERR and see that it
 is syslogged for later perusal. You can also create an arbitrary
 filehandle, say LOG, and send stuff to syslog by printing to
 this filehandle.
-
-WWW: https://metacpan.org/release/Tie-Syslog

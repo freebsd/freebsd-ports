@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-engine
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Libre Action Roleplaying Engine
+WWW=		https://flarerpg.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

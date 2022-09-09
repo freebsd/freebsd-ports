@@ -12,5 +12,3 @@ details.
 textX follows the syntax and semantics of Xtext but differs in some places and
 is implemented 100% in Python using Arpeggio PEG parser - no grammar
 ambiguities, unlimited lookahead, interpreter style of work.
-
-WWW: http://textx.github.io/textX/stable/

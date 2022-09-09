@@ -3,5 +3,3 @@ Perl. It is pragmatic in the sense that it switches certain JavaScript
 idioms for Perl ones, in order to make the use of it concise. A primary
 goal of jQuery is to "Find things and do things, concisely". pQuery has
 the same goal.
-
-WWW: https://metacpan.org/release/pQuery

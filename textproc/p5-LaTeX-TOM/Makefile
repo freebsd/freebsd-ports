@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing, analyzing, and manipulating LaTeX documents
+WWW=		https://metacpan.org/release/LaTeX-TOM
 
 USES=		perl5
 USE_PERL5=	configure

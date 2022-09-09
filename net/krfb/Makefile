@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VNC server for KDE
+WWW=		https://www.kde.org
 
 LIB_DEPENDS=	libvncserver.so:net/libvncserver \
 		libxcb-image.so:x11/xcb-util-image

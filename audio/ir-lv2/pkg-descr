@@ -6,5 +6,3 @@ IR is a no-latency/low-latency, realtime, high performance signal
 convolver especially for creating reverb effects. Supports impulse
 responses with 1, 2 or 4 channels, in any soundfile format supported
 by libsndfile.
-
-WWW: https://github.com/tomszilagyi/ir.lv2

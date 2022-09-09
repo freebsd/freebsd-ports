@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General Hidden Markov Model Library in C
+WWW=		http://ghmm.sourceforge.net/
 
 LICENSE=	GPLv3
 

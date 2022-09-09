@@ -9,6 +9,7 @@ DISTNAME=	f1spirit-linux
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of classic F1 Spirit racing game
+WWW=		http://www.braingames.getput.com/f1spirit/default.asp
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

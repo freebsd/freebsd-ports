@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
+WWW=		https://www.exim.org/
 
 LICENSE=	GPLv2
 

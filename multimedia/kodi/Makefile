@@ -6,6 +6,7 @@ CATEGORIES=	multimedia java
 
 MAINTAINER=	yzrh@noema.org
 COMMENT=	Award winning media center application
+WWW=		https://kodi.tv/
 
 LICENSE=	GPLv2+
 

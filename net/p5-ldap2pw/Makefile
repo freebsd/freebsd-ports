@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Synchronize local user database with LDAP directory
+WWW=		https://github.com/dag-erling/ldap2pw
 
 LICENSE=	BSD3CLAUSE
 

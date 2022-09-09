@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	BDD-based satisfiability and reachability solver
+WWW=		https://www.win.tue.nl/~wieger/bddsolve/
 
 LIB_DEPENDS+=	libbdd.so:science/buddy \
 		libboost_program_options.so:devel/boost-libs

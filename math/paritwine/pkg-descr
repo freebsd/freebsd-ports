@@ -1,5 +1,3 @@
 PariTwine is a glue library between the system for computer algebra and number
 theory PARI/GP and a number of other mathematics libraries, currently GMP,
 GNU MPFR, GNU MPC, FLINT, ARB and CMH.
-
-WWW: http://www.multiprecision.org/paritwine/home.html

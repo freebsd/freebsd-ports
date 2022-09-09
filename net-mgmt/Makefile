@@ -122,6 +122,7 @@
     SUBDIR += librenms
     SUBDIR += libsmi
     SUBDIR += lldpd
+    SUBDIR += mac-telnet
     SUBDIR += mbrowse
     SUBDIR += mdata-client
     SUBDIR += metronome

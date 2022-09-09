@@ -5,6 +5,7 @@ CATEGORIES=	finance
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tiny Bitcoin Library written in C
+WWW=		https://github.com/libbtc/libbtc
 
 LICENSE=	MIT
 

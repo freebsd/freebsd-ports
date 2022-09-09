@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Higher Order Perl Lexer
+WWW=		https://metacpan.org/release/HOP-Lexer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HOP-Stream>=0.01:devel/p5-HOP-Stream

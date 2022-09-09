@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Incredibly simple helpers for testing code with exceptions
+WWW=		https://metacpan.org/release/Test-Fatal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

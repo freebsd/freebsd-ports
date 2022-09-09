@@ -8,5 +8,3 @@ hierarchy under ~/.cache by the builder name and port origin.
 regular expressions. Combining it with portgrep allows advanced
 searching for e.g. specific maintainer, failures of ports with specific USES,
 with specific dependency, etc.
-
-WWW: https://github.com/dmgk/fallout

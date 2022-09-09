@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Pure BASH/ZSH Lets Encrypt client
+WWW=		https://github.com/dehydrated-io/dehydrated
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

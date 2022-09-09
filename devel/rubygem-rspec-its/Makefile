@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	RSpec extension gem for attribute matching
+WWW=		https://github.com/rspec/rspec-its
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/${PORTNAME}/ \
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for creating MusicBrainz DiscIDs
+WWW=		https://musicbrainz.org/doc/libdiscid
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

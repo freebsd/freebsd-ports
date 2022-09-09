@@ -1,6 +1,6 @@
 PORTNAME=	mumps
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.3
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/:mumps
 PKGNAMEPREFIX=	coin-or-
@@ -8,6 +8,7 @@ DISTFILES=	MUMPS_${MUMPS_VERSION}.tar.gz:mumps
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR autotools harness to build Mumps
+WWW=		https://github.com/coin-or-tools/ThirdParty-Mumps
 
 LICENSE=	EPL
 
@@ -42,7 +43,6 @@ post-extract: # link MUMPS into the location in the tree
 pre-build: # patching from get.Mumps
 	@cd ${WRKSRC} && \
 		${PATCH} -p0 < mumps_mpi.patch && \
-		${MV} MUMPS/libseq/mpi.h MUMPS/libseq/mumps_mpi.h && \
-		${PATCH} -p0 < mumps_dump.patch
+		${MV} MUMPS/libseq/mpi.h MUMPS/libseq/mumps_mpi.h
 
 .include <bsd.port.post.mk>

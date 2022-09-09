@@ -7,6 +7,7 @@ DISTFILES=	# None
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C and C++ toolchain for CloudABI
+WWW=		https://github.com/NuxiNL/cloudlibc
 
 LICENSE=	MIT
 

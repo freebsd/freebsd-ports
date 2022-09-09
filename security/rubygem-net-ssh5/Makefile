@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SSH processing
+WWW=		https://github.com/net-ssh/net-ssh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

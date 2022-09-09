@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Classifier module for Bayesian and other types of classifications
+WWW=		https://github.com/jekyll/classifier-reborn
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,4 +1,2 @@
 Custom SQLite functions written in Python for ranking documents
 indexed using the FTS4 extension.
-
-WWW: https://github.com/simonw/sqlite-fts4

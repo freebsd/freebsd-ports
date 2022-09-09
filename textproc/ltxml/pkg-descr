@@ -20,5 +20,3 @@ XML elements.  The two views can be mixed, allowing great flexibility
 in the manipulation of XML documents. It also includes a powerful,
 yet simple, querying language, which allows the user to quickly and
 easily select those parts of an XML document which are of interest.
-
-WWW: http://www.ltg.ed.ac.uk/software/ltxml/

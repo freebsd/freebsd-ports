@@ -1,4 +1,2 @@
 Data::Object::Role::Pluggable provides a mechanism for dispatching to plugin
 classes.
-
-WWW: https://metacpan.org/release/Data-Object-Role-Pluggable

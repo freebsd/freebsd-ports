@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	High resolution timing for PHP
+WWW=		https://pecl.php.net/package/hrtime
 
 LICENSE=	BSD2CLAUSE
 

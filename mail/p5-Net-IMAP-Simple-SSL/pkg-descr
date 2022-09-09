@@ -1,4 +1,2 @@
 This module is a subclass of Net::IMAP::Simple that includes SSL
 support. The interface is identical.
-
-WWW: https://metacpan.org/release/Net-IMAP-Simple-SSL

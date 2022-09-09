@@ -5,5 +5,3 @@ its local name space as well as some devices (the keyboard, mouse, and
 screen) to a remote CPU server, which mounts this name space on /mnt/term
 and starts a shell. Typically, either explicitly or via the profile, one
 uses the shell to start rio(1).
-
-WWW: http://swtch.com/drawterm/

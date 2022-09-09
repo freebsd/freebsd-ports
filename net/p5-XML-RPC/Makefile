@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl implementation for an XML-RPC client and server
+WWW=		https://metacpan.org/release/XML-RPC
 
 LICENSE=		ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.coker.com.au/postal/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
+WWW=		https://www.coker.com.au/postal/
 
 LICENSE=	GPLv3
 

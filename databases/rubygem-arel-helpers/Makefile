@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Helpers to construct database queries with ActiveRecord and Arel
+WWW=		https://github.com/camertron/arel-helpers
 
 LICENSE=	MIT
 

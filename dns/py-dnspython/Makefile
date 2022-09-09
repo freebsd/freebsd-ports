@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DNS toolkit for Python
+WWW=		https://www.dnspython.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

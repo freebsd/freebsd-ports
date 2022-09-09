@@ -4,6 +4,7 @@ CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for handling Kolab data stored on an IMAP server
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Cache \

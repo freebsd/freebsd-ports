@@ -3,5 +3,3 @@ clamd service - an anti-virus daemon process.
 
 You can find more information about clam anti-virus at
 http://www.clamav.org/
-
-WWW: https://metacpan.org/release/Clamd

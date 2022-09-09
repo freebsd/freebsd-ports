@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple vector graphics in Python
+WWW=		https://github.com/Zulko/gizeh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt

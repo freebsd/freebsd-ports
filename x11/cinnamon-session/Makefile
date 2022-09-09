@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the cinnamon desktop
+WWW=		http://cinnamon.linuxmint.com/
 
 LICENSE=	GPLv2
 

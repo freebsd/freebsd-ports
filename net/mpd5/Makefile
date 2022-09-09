@@ -8,6 +8,7 @@ DIST_SUBDIR=	mpd5
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
+WWW=		https://sourceforge.net/projects/mpd/
 
 LICENSE=	BSD3CLAUSE
 

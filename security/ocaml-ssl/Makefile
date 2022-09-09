@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OpenSSL bindings for OCaml
+WWW=		https://github.com/savonet/ocaml-ssl
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ wayland-protocols.
 A protocol in wayland-protocols consists of a directory containing a set
 of XML files containing the protocol specification, and a README file
 containing detailed state and a list of maintainers.
-
-WWW: https://wayland.freedesktop.org/

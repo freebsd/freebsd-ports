@@ -1,19 +1,19 @@
 PORTNAME=	django-tinymce
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Django application to use TinyMCE editor
+WWW=		https://github.com/jazzband/django-tinymce
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>0:www/py-django32@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 TEST_ENV=	DJANGO_SETTINGS_MODULE=tests.settings PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

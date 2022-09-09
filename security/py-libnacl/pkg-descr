@@ -4,5 +4,4 @@ extensive documentation on how to use nacl as well as being completely portable.
 The file in libnacl/__init__.py can be pulled out and placed directly in any
 project to give a single file binding to all of nacl.
 
-WWW: https://libnacl.readthedocs.io/en/latest/
-WWW: https://github.com/saltstack/libnacl
+See also: https://github.com/saltstack/libnacl

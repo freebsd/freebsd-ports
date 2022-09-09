@@ -5,5 +5,3 @@ not directly provide any methods or functions of its own.
 These functions are provided for performing DNS-specific lookups, to obtain MX
 or SRV records, for example. For regular name resolution, the usual getaddrinfo
 and getnameinfo methods on the standard IO::Async::Resolver should be used.
-
-WWW: https://metacpan.org/release/IO-Async-Resolver-DNS

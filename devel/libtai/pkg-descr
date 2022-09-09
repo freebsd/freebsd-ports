@@ -15,5 +15,3 @@ Julian day number for easy date arithmetic.
 This version of libtai requires a UNIX system with gettimeofday(). It
 will be easy to port to other operating systems with compilers
 supporting 64-bit arithmetic.
-
-WWW: http://cr.yp.to/libtai.html

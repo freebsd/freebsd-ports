@@ -1,10 +1,11 @@
 PORTNAME=	mcjoin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10
+DISTVERSION=	2.11
 CATEGORIES=	net
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Simple multicast testing application for UNIX
+WWW=		https://github.com/troglobit/mcjoin
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

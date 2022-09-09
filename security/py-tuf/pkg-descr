@@ -5,5 +5,3 @@ Software update systems are vulnerable to many known attacks, including
 those that can result in clients being compromised or crashed. TUF helps
 solve this problem by providing a flexible security framework that can
 be added to software updaters.
-
-WWW: https://www.updateframework.com

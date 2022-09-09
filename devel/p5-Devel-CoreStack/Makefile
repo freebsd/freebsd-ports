@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module that generates a stack dump from a core file
+WWW=		https://metacpan.org/release/Devel-CoreStack
 
 USES=		perl5
 USE_PERL5=	configure

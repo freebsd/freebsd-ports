@@ -4,5 +4,3 @@ accepting user input, loading data, drawing images, playing sounds, etc.
 However, Allegro is not a game engine.
 
 Online documentation: http://docs.liballeg.org/
-
-WWW: https://liballeg.org/

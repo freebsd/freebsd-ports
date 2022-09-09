@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run Perl standard test scripts with statistics
+WWW=		https://metacpan.org/release/Test-Harness
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

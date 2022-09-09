@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for ring class fields of imaginary quadratic number fields
+WWW=		https://www.multiprecision.org/cm/home.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

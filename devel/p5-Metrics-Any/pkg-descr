@@ -18,5 +18,3 @@ This separation of concerns allows module authors to write code which will
 report metrics without needing to care about the exact mechanism of that
 reporting (as well as to write code which does not itself depend on the code
 required to perform that reporting).
-
-WWW: https://metacpan.org/release/Metrics-Any

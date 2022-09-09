@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary for HITCHCOCK'S BIBLE NAMES (EPWING V1 format)
+WWW=		http://openlab.ring.gr.jp/edict/fpw/
 
 USES=		zip
 NO_BUILD=	yes

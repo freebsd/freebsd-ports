@@ -3,5 +3,3 @@ of entropy, information, or disorder in an information stream or data
 collection has many interesting applications.
 libdisorder provides a simple C library for calculating classic Shannon
 entropy (more to come in future releases).
-
-WWW: http://libdisorder.freshdefense.net/

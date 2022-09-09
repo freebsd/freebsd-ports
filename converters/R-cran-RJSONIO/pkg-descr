@@ -11,5 +11,3 @@ uses a new native parser, implements the transformation code in C
 and allocates memory efficiently (rather than concatenating because
 of event driven parsing). The result is a significantly faster
 parsing of large JSON documents.
-
-WWW: https://cran.r-project.org/web/packages/RJSONIO/

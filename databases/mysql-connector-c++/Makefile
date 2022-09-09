@@ -6,6 +6,7 @@ MASTER_SITES=	MYSQL/Connector-C++
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MySQL database connector for C++
+WWW=		https://dev.mysql.com/doc/relnotes/connector-cpp/en/index.html
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/LICENSE

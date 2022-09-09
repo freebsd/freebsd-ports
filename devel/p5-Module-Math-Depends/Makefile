@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Convenience object for manipulating module dependencies
+WWW=		https://metacpan.org/release/Module-Math-Depends
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

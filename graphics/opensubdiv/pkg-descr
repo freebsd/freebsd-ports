@@ -3,5 +3,3 @@ subdivision surface (subdiv) evaluation on massively parallel CPU and GPU
 architectures. This codepath is optimized for drawing deforming subdivs with
 static topology at interactive framerates. The resulting limit surface
 matches Pixar's Renderman to numerical precision.
-
-WWW: http://graphics.pixar.com/opensubdiv

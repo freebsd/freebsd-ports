@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Backend module for pass_persist feature of Net-SNMP
+WWW=		https://metacpan.org/release/SNMP-Persist
 
 USES=		perl5
 USE_PERL5=	configure

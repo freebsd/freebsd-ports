@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Extract the unique elements of a list
+WWW=		https://metacpan.org/release/List-Uniq
 
 USES=		perl5
 USE_PERL5=	configure

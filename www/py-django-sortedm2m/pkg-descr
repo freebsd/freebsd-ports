@@ -1,5 +1,3 @@
 sortedm2m is a drop-in replacement for Django's own ManyToManyField. The
 provided SortedManyToManyField behaves like the original one but remembers
 the order of added relations.
-
-WWW: https://github.com/gregmuellegger/django-sortedm2m

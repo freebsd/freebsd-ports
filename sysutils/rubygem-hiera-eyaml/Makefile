@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Backend for Hiera that provides encryption/decryption for properties
+WWW=		https://github.com/voxpupuli/hiera-eyaml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

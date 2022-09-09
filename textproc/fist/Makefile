@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.fourmilab.ch/fist/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Emphatic message generator
+WWW=		https://www.fourmilab.ch/fist/
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/fist man/man1/fist.1.gz

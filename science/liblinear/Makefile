@@ -1,11 +1,12 @@
 PORTNAME=	liblinear
-PORTVERSION=	2.44
+PORTVERSION=	2.45
 CATEGORIES=	science math
 MASTER_SITES=	https://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 		https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for Large Linear Classification
+WWW=		https://www.csie.ntu.edu.tw/~cjlin/liblinear/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

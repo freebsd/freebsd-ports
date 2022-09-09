@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dumps a data structure in a tree fashion
+WWW=		https://metacpan.org/release/Data-TreeDumper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

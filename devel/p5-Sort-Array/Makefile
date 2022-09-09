@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Powerful array sorting Perl interface
+WWW=		https://metacpan.org/release/Sort-Array
 
 USES=		perl5
 USE_PERL5=	configure

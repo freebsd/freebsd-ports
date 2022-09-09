@@ -2,8 +2,9 @@ PORTNAME=	libretro-beetle_pce
 PORTVERSION=	0.20220218
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port of Mednafen PCE to libretro
+WWW=		https://github.com/libretro/beetle-pce-libretro
 
 LICENSE=	GPLv2
 

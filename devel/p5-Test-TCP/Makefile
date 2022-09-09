@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Testing TCP program
+WWW=		https://metacpan.org/release/Test-TCP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

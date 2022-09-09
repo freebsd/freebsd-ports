@@ -4,6 +4,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR preferences management class
+WWW=		https://pear.php.net/package/Auth_PrefManager
 
 USES=		pear
 

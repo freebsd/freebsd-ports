@@ -6,6 +6,7 @@ CATEGORIES=	games java
 
 MAINTAINER=	voidanix@420blaze.it
 COMMENT=	Common utilities for Java Game Technology Group projects
+WWW=		https://github.com/jinput/jutils
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based puzzle game
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/enigma/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

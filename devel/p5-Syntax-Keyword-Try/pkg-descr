@@ -6,5 +6,3 @@ block.
 As well as providing a handy syntax for this useful behaviour, this module also
 serves to contain a number of code examples for how to implement parser plugins
 and manipulate optrees to provide new syntax and behaviours for perl code.
-
-WWW: https://metacpan.org/release/Syntax-Keyword-Try

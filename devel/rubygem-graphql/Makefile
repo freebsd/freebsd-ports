@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Plain-Ruby implementation of GraphQL
+WWW=		https://github.com/rmosolgo/graphql-ruby
 
 LICENSE=	MIT
 

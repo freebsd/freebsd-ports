@@ -5,6 +5,7 @@ MASTER_SITES=	GNUSTEP/core
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep makefile package
+WWW=		http://www.gnustep.org/
 
 LICENSE=	GPLv3
 

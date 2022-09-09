@@ -5,6 +5,7 @@ CATEGORIES=	emulators games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Game Boy and Game Boy Color emulator written in C
+WWW=		https://sameboy.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,5 +4,3 @@ daily and monthly and are saved as static HTML files.
 
 It is written in pure C without the need of external libraries, targetted to
 be used in an embedded firewall system. A HTTP server is not included.
-
-WWW: http://mdolze.gmxhome.de/iograph.shtml

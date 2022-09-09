@@ -138,6 +138,7 @@
 %%SITE_PERL%%/SNMP/Info/MAU.pm
 %%SITE_PERL%%/SNMP/Info/MRO.pm
 %%SITE_PERL%%/SNMP/Info/NortelStack.pm
+%%SITE_PERL%%/SNMP/Info/PortAccessEntity.pm
 %%SITE_PERL%%/SNMP/Info/PowerEthernet.pm
 %%SITE_PERL%%/SNMP/Info/RapidCity.pm
 %%SITE_PERL%%/SNMP/Info/SONMP.pm
@@ -281,6 +282,7 @@
 %%PERL5_MAN3%%/SNMP::Info::MAU.3.gz
 %%PERL5_MAN3%%/SNMP::Info::MRO.3.gz
 %%PERL5_MAN3%%/SNMP::Info::NortelStack.3.gz
+%%PERL5_MAN3%%/SNMP::Info::PortAccessEntity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::PowerEthernet.3.gz
 %%PERL5_MAN3%%/SNMP::Info::RapidCity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::SONMP.3.gz

@@ -4,5 +4,3 @@ older applications and systems designed for modem use to operate on the
 Internet.  TCPSER supports all standard Hayes commands, and understands
 extended and vendor proprietary commands (though it does not implement
 many of them).  TCPSER can be used for both inbound and outbound connections.
-
-WWW: https://github.com/FozzTexx/tcpser

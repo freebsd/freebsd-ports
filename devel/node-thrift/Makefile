@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	node-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node.js bindings for the Apache Thrift RPC system
+WWW=		https://thrift.apache.org/
 
 USES=		cpe nodejs:run
 CPE_VENDOR=	apache

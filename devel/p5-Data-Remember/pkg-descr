@@ -14,5 +14,3 @@ if ($heap->{job}{$job}{options}{wibble} eq $something_else) {
 
 This module is meant to simplify this sort of things, with
 optional persistence as a bonus.
-
-WWW: https://metacpan.org/release/Data-Remember

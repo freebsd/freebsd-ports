@@ -4,5 +4,3 @@ program. Other limitations:
 * only 'stream' socket type
 * only 'nowait'
 * doesn't switch user-ids
-
-WWW: http://www.acme.com/software/micro_inetd/

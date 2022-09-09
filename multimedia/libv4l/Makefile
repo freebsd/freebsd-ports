@@ -8,6 +8,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Video4Linux library
+WWW=		https://linuxtv.org/wiki/index.php/V4l-utils
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

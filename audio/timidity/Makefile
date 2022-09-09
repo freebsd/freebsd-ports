@@ -7,6 +7,7 @@ DISTFILES+=	${DISTNAME}.tar.gz:timidity
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI to PCM software synthesizer
+WWW=		http://www.onicos.com/staff/iz/timidity/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE support utilities
+WWW=		https://mate-desktop.org/
 
 LICENSE=	GPLv2+ GFDL LGPL20+
 LICENSE_COMB=	multi

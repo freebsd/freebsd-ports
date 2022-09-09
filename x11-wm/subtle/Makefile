@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-xi
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Grid-based manual tiling window manager
+WWW=		https://subtle.subforge.org/
 
 LICENSE=	GPLv2
 

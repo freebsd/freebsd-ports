@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	R Package Installation from Remote Repositories, Including 'GitHub'
+WWW=		https://remotes.r-lib.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

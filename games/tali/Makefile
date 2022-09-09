@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome tali
+WWW=		https://wiki.gnome.org/Apps/Tali
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

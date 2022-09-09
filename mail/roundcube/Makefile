@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}mail-${DISTVERSION}-complete
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
+WWW=		https://roundcube.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

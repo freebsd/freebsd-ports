@@ -5,5 +5,3 @@ is a modular family of independent packages, written in C. Each package provides
 good performance and minimal footprint for different required functionalities.
 These functionalities are common and shared across all SDKs providing better
 code reuse, optimization, and accuracy.
-
-WWW: https://github.com/awslabs/aws-crt-ruby

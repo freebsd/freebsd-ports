@@ -6,6 +6,7 @@ MASTER_SITES=	http://stable.hypertriton.com/agar/
 
 MAINTAINER=	vedge@hypertriton.com
 COMMENT=	Cross-platform GUI toolkit
+WWW=		https://libagar.org/
 
 LICENSE=	BSD2CLAUSE
 

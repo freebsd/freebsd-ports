@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate common types of methods
+WWW=		https://metacpan.org/release/Class-MakeMethods
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

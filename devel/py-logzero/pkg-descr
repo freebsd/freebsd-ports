@@ -14,5 +14,3 @@ Robust and effective logging for Python 2 and 3.
 - All contained in a single file.
 - Licensed under the MIT license.
 - Heavily inspired by the Tornado web framework.
-
-WWW: https://github.com/metachris/logzero

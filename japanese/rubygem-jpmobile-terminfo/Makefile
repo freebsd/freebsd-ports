@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Carrier terminal information List for jpmobile
+WWW=		https://github.com/jpmobile/jpmobile-terminfo
 
 LICENSE=	MIT
 

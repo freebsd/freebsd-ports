@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL based function grapher
+WWW=		https://glgraph.kaosu.ch/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

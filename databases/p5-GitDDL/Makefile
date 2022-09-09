@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for database migration utility by git managed sql
+WWW=		https://metacpan.org/release/GitDDL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,5 +4,3 @@ you can now use literal Unicode characters as part of strings,
 variable names, and regular expressions.
 
 utf8::all goes further.
-
-WWW: https://metacpan.org/release/utf8-all

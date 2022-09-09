@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl5 interface to DMAC Double Message-Digest Algorithms
+WWW=		https://metacpan.org/release/Digest-DMAC
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

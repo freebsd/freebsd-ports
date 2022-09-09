@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast Scheme interpreter
+WWW=		https://www.sof.ch/dan/qscheme/index-e.html
 
 LICENSE=	GPLv2
 

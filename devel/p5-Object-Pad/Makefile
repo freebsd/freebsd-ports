@@ -1,11 +1,12 @@
 PORTNAME=	Object-Pad
-PORTVERSION=	0.66
+PORTVERSION=	0.68
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple syntax for lexical slot-based objects
+WWW=		https://metacpan.org/dist/Object-Pad
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

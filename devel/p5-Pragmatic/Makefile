@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add pragmata to Exporter
+WWW=		https://metacpan.org/release/Pragmatic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

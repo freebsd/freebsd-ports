@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declarative Validation of Perl Data Structures
+WWW=		https://metacpan.org/release/Declare-Constraints-Simple
 
 BUILD_DEPENDS=	p5-Class-Inspector>=1.24:devel/p5-Class-Inspector \
 		p5-aliased>=0:devel/p5-aliased \

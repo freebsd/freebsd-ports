@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Asyncio based SMTP server
+WWW=		https://aiosmtpd.readthedocs.io/
 
 LICENSE=	APACHE20
 

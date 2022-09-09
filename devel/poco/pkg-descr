@@ -13,5 +13,3 @@ as well as an XMLWriter.
 
 The Util library contains classes for working with configuration
 files and command line arguments, as well as various utility classes.
-
-WWW: https://pocoproject.org/

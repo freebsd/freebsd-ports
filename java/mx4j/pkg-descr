@@ -8,5 +8,3 @@ systems and provide a standard interface to the outside world,
 enabling the development of web services. JMX allows developers
 to write more modular and loosely coupled system components and
 reduce the complexity of large, interoperating systems.
-
-WWW: http://mx4j.sourceforge.net

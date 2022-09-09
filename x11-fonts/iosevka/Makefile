@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIO
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Slender monospace sans-serif and slab-serif typeface for programming
+WWW=		https://typeof.net/Iosevka/
 
 # The license file is not downloaded.
 LICENSE=	OFL11

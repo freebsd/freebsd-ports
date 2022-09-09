@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Configuration library for Python that uses YAML
+WWW=		https://github.com/beetbox/confuse
 
 LICENSE=	MIT
 

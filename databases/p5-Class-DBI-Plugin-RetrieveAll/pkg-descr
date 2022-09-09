@@ -1,4 +1,2 @@
 This is a simple plugin to a Class::DBI subclass which provides a
 'retrieve_all_sorted_by' method.
-
-WWW: https://metacpan.org/release/Class-DBI-Plugin-RetrieveAll

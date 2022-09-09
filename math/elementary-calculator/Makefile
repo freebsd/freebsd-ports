@@ -5,16 +5,16 @@ PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Simple calculator written in Vala
+WWW=		https://github.com/elementary/calculator
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgranite-7.so:x11-toolkits/granite7 \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		gettext gnome meson pkgconfig python:3.6+,build
+USES=		gettext gnome meson pkgconfig python:3.6+,build vala:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	HTTP Action, Adventure and Excitement
+WWW=		https://metacpan.org/pod/HTTP::Headers::ActionPack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

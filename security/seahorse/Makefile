@@ -6,13 +6,13 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
+WWW=		https://wiki.gnome.org/Apps/Seahorse
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnupg>=2.1.4:security/gnupg \
-		itstool:textproc/itstool \
-		valac:lang/vala
+		itstool:textproc/itstool
 LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 		libgpgme.so:security/gpgme \
 		libhandy-1.so:x11-toolkits/libhandy \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 RUN_DEPENDS=	gnupg>=2.1.4:security/gnupg
 
 USES=		cpe gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.5+,build tar:xz xorg
+		python:3.5+,build tar:xz vala:build xorg
 USE_CSTD=	c99
 USE_GNOME=	gtk30
 GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \

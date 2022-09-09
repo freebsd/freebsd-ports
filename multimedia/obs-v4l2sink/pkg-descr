@@ -4,5 +4,3 @@ sink part. You can use it with v4l2loopback to achieve cross-program video
 transfer between OBS Studio and third party software supporting Video4Linux2,
 e.g. to present an OBS session in proprietary browser-based conferencing systems
 by selecting the OBS session as a webcam.
-
-WWW: https://github.com/CatxFish/obs-v4l2sink

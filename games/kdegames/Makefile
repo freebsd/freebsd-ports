@@ -4,6 +4,7 @@ CATEGORIES=	games kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Games for KDE (meta port)
+WWW=		https://www.kde.org/applications/games/
 
 USES=		kde:5 metaport
 

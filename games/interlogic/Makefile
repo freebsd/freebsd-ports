@@ -7,6 +7,7 @@ DISTNAME=	interLOGIC-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Move colored balls through the maze connecting it with each other
+WWW=		https://sourceforge.net/projects/interlogic/
 
 USES=		gmake sdl
 USE_SDL=	image sdl

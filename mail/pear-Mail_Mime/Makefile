@@ -5,6 +5,7 @@ CATEGORIES=	mail www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR classes to create and decode MIME messages
+WWW=		https://pear.php.net/package/Mail_Mime
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ DISTNAME=	openbsm-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
+WWW=		http://www.trustedbsd.org/openbsm.html
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi

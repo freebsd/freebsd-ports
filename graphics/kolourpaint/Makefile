@@ -4,8 +4,10 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE paint program
+WWW=		http://www.kolourpaint.org
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
+		kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash emoticons guiaddons i18n iconthemes init \
 		itemmodels itemviews jobwidgets kdelibs4support kio libkexiv2 \
@@ -14,6 +16,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		ecm_build
 USE_QT=		dbus concurrent core gui network printsupport widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

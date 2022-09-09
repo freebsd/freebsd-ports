@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical Imaging NetCDF
+WWW=		https://www.bic.mni.mcgill.ca/ServicesSoftware/MINC
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

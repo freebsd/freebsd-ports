@@ -6,6 +6,7 @@ MASTER_SITES=	http://sigrok.org/download/source/sigrok-cli/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, CLI client
+WWW=		https://sigrok.org/
 
 LICENSE=	GPLv3
 

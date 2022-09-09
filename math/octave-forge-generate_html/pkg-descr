@@ -9,5 +9,3 @@ This is generate_html.
   the help texts for a set of functions. The package is designed to be as
   general as possible, but also contains convenience functions for
   generating a set of pages for entire packages.
-
-WWW: http://octave.sourceforge.net/

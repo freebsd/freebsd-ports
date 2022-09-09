@@ -11,5 +11,3 @@ them from any machine that runs Ruby.
 ruby-growl also contains a command-line notification tool named
 'growl'.  Where possible, it isoption-compatible with growlnotify.
 (Use --priority instead of -p.)
-
-WWW: https://github.com/drbrain/ruby-growl

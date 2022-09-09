@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/sbt/sbt/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Build tool for Scala projects
+WWW=		https://www.scala-sbt.org/
 
 LICENSE=	APACHE20
 

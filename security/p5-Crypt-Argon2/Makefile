@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl interface to the Argon2 key derivation functions
+WWW=		https://metacpan.org/release/Crypt-Argon2
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/README

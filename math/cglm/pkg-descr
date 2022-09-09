@@ -5,5 +5,3 @@ This library stores matrices as column-major order but in the future row-major
 is considered to be supported as optional.
 
 Currently only float type is supported for most operations.
-
-WWW: https://github.com/recp/cglm

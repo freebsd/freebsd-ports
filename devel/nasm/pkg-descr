@@ -9,5 +9,3 @@ others.  It has strong support for macro conventions.
 
 The port also includes NDISASM, a binary file disassembler which uses the
 same instruction set as NASM.
-
-WWW: https://www.nasm.us/

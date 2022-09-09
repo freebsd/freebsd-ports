@@ -11,5 +11,3 @@ used for pulling newsgroups from specific NNTP servers that are not
 distributed in the usual manner. Since newsx obeys the normal news spool
 configuration file and requires little or no specific configuration, the
 administrative burden should be minimized.
-
-WWW: http://www.kvaleberg.no/newsx.html

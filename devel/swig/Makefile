@@ -5,6 +5,7 @@ MASTER_SITES=	SF/swig/swig/swig-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate wrappers for calling C/C++ code from other languages
+WWW=		https://www.swig.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE-GPL

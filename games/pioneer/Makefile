@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Space adventure game set in the Milky Way galaxy
+WWW=		https://pioneerspacesim.net/
 
 LICENSE=		APACHE20 BSD2CLAUSE CC-BY-SA-3.0 DejaVu GPLv3 IUP \
 			MIT SIL ZLIB

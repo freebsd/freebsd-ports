@@ -1,0 +1,20 @@
+--- policyd-spf.peruser.5.orig	2022-09-05 16:01:49 UTC
++++ policyd-spf.peruser.5
+@@ -137,7 +137,7 @@ policyd-spf python per-user configuration
+ 
+ .SH "USAGE"
+ Usage:
+-  policyd-spf [/etc/policyd-spf/policyd-spf.conf]
++  policyd-spf [%%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf]
+ 
+ .SH "OTHER DOCUMENTATION"
+ This documentation assumes you have read Postfix's README_FILES/
+@@ -196,7 +196,7 @@ The text file option is useful for testing and when on
+ users require per-user configurations.  It is specified in the main
+ configuration file:
+ 
+-"Per_User = text,/etc/pypolicyd-spf/userconf"
++"Per_User = text,%%PREFIX%%/etc/python-pypolicyd-spf/userconf"
+ 
+ Lines beginning with "#" are treated as comments and ignored.  The location of
+ the file is determined by the system administrator. No default file is

@@ -10,5 +10,3 @@ The Makefile generated with mmake supports:
    - Install
    - Uninstall
    - Dependencies
-
-WWW: http://www.tildeslash.com/mmake/

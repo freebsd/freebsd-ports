@@ -7,5 +7,4 @@ classes for the manipulation of basic algebraic objects, such as vectors,
 matrices (dense, sparse, and structured), univariate polynomials, and recursive
 multivariate polynomials.
 
-WWW: https://casys.gricad-pages.univ-grenoble-alpes.fr/givaro
-WWW: https://github.com/linbox-team/givaro
+See also: https://github.com/linbox-team/givaro

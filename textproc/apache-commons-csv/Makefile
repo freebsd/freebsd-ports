@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java support for Comma Separated Value format
+WWW=		https://commons.apache.org/proper/commons-csv/
 
 LICENSE=	APACHE20
 

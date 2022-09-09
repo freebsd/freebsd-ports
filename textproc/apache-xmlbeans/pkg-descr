@@ -14,5 +14,3 @@ provides several ways to get at the XML, including:
 This port contains also the OOXML Schemas, XmlBeans generated from the Ecma
 supplied xsds.
 See https://poi.apache.org/help/faq.html#faq-N10025 .
-
-WWW: https://xmlbeans.apache.org/

@@ -1,11 +1,12 @@
 PORTNAME=	solidity
-PORTVERSION=	0.8.16
+PORTVERSION=	0.8.17
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Solidity Contract-Oriented Programming Language
+WWW=		https://github.com/ethereum/solidity
 
 LICENSE=	GPLv3
 
@@ -22,6 +23,7 @@ CPE_VENDOR=	${PORTNAME}lang
 
 OPTIONS_DEFINE=	Z3 CVC4
 OPTIONS_DEFAULT=Z3 CVC4
+OPTIONS_EXCLUDE_i386=	Z3
 Z3_DESC=	SMT Checker via Z3
 CVC4_DESC=	SMT Checker via CVC4
 Z3_LIB_DEPENDS=		libz3.so:math/z3

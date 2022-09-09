@@ -10,6 +10,7 @@ PATCHFILES=	ftp.pl_wupatch
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Mirror packages on remote sites
+WWW=		http://ry.ca/mirror/mirror/
 
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 

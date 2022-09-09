@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-bin-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Java classes for XML
+WWW=		https://xmlbeans.apache.org/
 
 LICENSE=	APACHE20
 

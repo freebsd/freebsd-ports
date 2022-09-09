@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Schrodinger-developed 2D coordinate generation
+WWW=		https://github.com/schrodinger/coordgenlibs
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

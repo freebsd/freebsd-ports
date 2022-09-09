@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Efficient file compressor
+WWW=		https://BSDforge.com/projects/archivers/grzip
 
 LICENSE=	LGPL21
 

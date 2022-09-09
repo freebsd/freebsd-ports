@@ -10,5 +10,3 @@ Wslay supports:
 * Automatic ping reply.
 * Callback interface.
 * External event loop.
-
-WWW: https://github.com/tatsuhiro-t/wslay

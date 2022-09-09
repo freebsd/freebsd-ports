@@ -5,16 +5,16 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Building blocks for modern GNOME applications
+WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	sassc:textproc/sassc \
-		valac:lang/vala
+BUILD_DEPENDS=	sassc:textproc/sassc
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		gettext gnome meson ninja pkgconfig
+USES=		gettext gnome meson ninja pkgconfig vala:build
 USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
 GL_SITE=	https://gitlab.gnome.org

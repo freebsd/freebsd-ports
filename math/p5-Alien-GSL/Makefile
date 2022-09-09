@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Detect and get configuration setting for GSL
+WWW=		https://metacpan.org/release/Alien-GSL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

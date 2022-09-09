@@ -15,5 +15,3 @@ language. It includes:
   First, you run vrename to create a list of signals in the design. You then
   edit this list, changing as many symbols as you wish. Vrename is then run a
   second time to apply the changes.
-
-WWW: https://www.veripool.org/wiki/verilog-perl

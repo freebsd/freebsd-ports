@@ -1,4 +1,4 @@
---- base/files/dir_reader_linux.h.orig	2022-06-18 05:49:12 UTC
+--- base/files/dir_reader_linux.h.orig	2022-08-31 12:19:35 UTC
 +++ base/files/dir_reader_linux.h
 @@ -16,10 +16,16 @@
  #include "base/logging.h"
@@ -32,8 +32,8 @@
 +#if BUILDFLAG(IS_BSD)
 +    const int r = getdents(fd_, reinterpret_cast<char *>(buf_), sizeof(buf_));
 +#else
-     const int r = syscall(__NR_getdents64, fd_, buf_, sizeof(buf_));
+     const long r = syscall(__NR_getdents64, fd_, buf_, sizeof(buf_));
 +#endif
      if (r == 0)
        return false;
-     if (r == -1) {
+     if (r < 0) {

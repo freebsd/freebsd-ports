@@ -5,6 +5,7 @@ CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for image-annotation tools
+WWW=		https://github.com/ksnip/kImageAnnotator
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

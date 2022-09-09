@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Gregorian calendar program
+WWW=		https://www.gnu.org/software/gcal/
 
 LICENSE=	GPLv3+
 

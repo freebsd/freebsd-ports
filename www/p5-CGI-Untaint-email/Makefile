@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate an email address in a CGI form
+WWW=		https://metacpan.org/release/CGI-Untaint-email
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI-Untaint>=0:www/p5-CGI-Untaint \

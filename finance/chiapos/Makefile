@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	risner@stdio.com
 COMMENT=	Chia proof of space plotting, proving, and verifying (cmake part)
+WWW=		https://github.com/Chia-Network/chiapos
 
 LICENSE=	APACHE20 BSD2CLAUSE MIT
 LICENSE_COMB=	multi

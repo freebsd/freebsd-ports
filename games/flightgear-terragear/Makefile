@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for building scenery for the FlightGear project
+WWW=		https://github.com/FlightGear/terragear
 
 LICENSE=	GPLv2
 

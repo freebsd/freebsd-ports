@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Disk formatting type autodetector
+WWW=		http://disktype.sourceforge.net/
 
 USES=		gmake
 

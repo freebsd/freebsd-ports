@@ -10,6 +10,7 @@ DISTNAME=	ganglia-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
+WWW=		http://ganglia.info/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

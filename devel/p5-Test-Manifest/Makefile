@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to interact with a t/test_manifest file
+WWW=		https://metacpan.org/release/Test-Manifest
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

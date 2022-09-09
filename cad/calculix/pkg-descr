@@ -12,5 +12,3 @@ Supported solvers
 	* DUNS-CFD (pre, post)
 	* ISAAC-CFD (pre, post)
 	* OpenFOAM (pre, post)
-
-WWW: http://www.calculix.de/

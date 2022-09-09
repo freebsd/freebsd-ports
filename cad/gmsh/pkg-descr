@@ -5,5 +5,3 @@ is built around four modules: geometry, mesh, solver and post-processing. The
 specification of any input to these modules is done either interactively using
 the graphical user interface or in ASCII text files using Gmsh's own scripting
 language.
-
-WWW: http://www.geuz.org/gmsh/

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\./_/g}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Propositional Logic sentence shell/interpreter
+WWW=		http://plman.sourceforge.net/
 
 NO_BUILD=	yes
 

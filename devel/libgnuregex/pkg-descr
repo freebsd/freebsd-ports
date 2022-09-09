@@ -7,5 +7,3 @@ regular expressions with more features and shorthand, such as:
 - \s and \S ([[:space:]], [^[:space:]])
 - \w and \W ([[:alnum:]], [^[:alnum:]])
 - \` and \' (beginning of subject, end of subject)
-
-WWW: http://www.gnu.org/software/gnulib/

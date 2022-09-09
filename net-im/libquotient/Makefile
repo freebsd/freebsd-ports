@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM support library using Qt technologies
+WWW=		https://github.com/quotient-im/libQuotient
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

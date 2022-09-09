@@ -5,6 +5,7 @@ CATEGORIES=		devel
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	High-performance data structures and utilities for C++
+WWW=		https://github.com/rescrv/e
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

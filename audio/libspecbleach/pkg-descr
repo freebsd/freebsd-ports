@@ -2,5 +2,3 @@ C library for audio noise reduction and other spectral effects.
 
 libspecbleach is based on the algorithms that were used in
 noise-repellent.
-
-WWW: https://github.com/lucianodato/libspecbleach

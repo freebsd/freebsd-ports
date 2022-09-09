@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple date object
+WWW=		https://metacpan.org/release/Date-Simple
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High-level IO library for command-line interfaces
+WWW=		https://github.com/JEG2/highline
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

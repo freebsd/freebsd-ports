@@ -1,12 +1,13 @@
 PORTNAME=	publicsuffix
 PORTVERSION=	1.1.0
-PORTREVISION=	54
+PORTREVISION=	56
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	d.pryadko@rambler-co.ru
 COMMENT=	Get public suffix of domain name from Public Suffix List
+WWW=		https://pypi.org/project/publicsuffix/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

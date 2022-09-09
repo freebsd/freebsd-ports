@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Tool for making hackers do excellent presentations
+WWW=		https://live.gnome.org/Pinpoint
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

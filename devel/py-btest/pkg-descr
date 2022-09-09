@@ -6,5 +6,3 @@ that will be executed, and success is determined based on their
 exit codes. btest comes with some additional tools that can be used
 within such tests to robustly compare output against a previously
 established baseline.
-
-WWW: https://github.com/zeek/btest/

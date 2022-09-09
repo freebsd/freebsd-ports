@@ -7,6 +7,7 @@ DISTNAME=	Safe-${PORTVERSION}
 
 MAINTAINER=	andrej@ebert.su
 COMMENT=	Python library to test password strength
+WWW=		https://pypi.org/project/Safe/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

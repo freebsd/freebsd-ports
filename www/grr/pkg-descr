@@ -11,5 +11,3 @@ Features
  Serializing obtained feed-information to hard-disk
  Managing (Adding, removing) feeds
  Parsing ATOM feeds.
-
-WWW: http://gap.nongnu.org/grr/index.html

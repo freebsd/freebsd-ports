@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Compare and identify differences between two binary files
+WWW=		https://sourceforge.net/projects/hexcompare/
 
 LICENSE=	GPLv3
 

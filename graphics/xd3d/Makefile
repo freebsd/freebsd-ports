@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Simple scientific visualization tool
+WWW=		http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
 LICENSE=	GPLv2
 

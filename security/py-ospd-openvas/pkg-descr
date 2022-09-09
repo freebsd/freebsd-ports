@@ -4,5 +4,3 @@ see https://github.com/greenbone/openvas.
 Once running, you need to configure OpenVAS for the Greenbone Vulnerability
 Manager, for example via the web interface Greenbone Security Assistant. Then
 you can create scan tasks to use OpenVAS.
-
-WWW: https://github.com/greenbone/ospd-openvas

@@ -7,6 +7,7 @@ DISTNAME=	Quantis-${DISTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Kernel driver for Quantis PCI/PCIe random number generator
+WWW=		https://www.idquantique.com/
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

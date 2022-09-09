@@ -8,5 +8,3 @@ independent from the collection of file extensions. Instead of using cryptic
 ANSI escape codes, colors can be specified in the RRGGBB format and will be
 translated to either truecolor (24-bit) ANSI codes or 8-bit codes for older
 terminal emulators.
-
-WWW: https://github.com/sharkdp/vivid

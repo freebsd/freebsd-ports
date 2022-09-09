@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide patterns for CIDR blocks
+WWW=		https://metacpan.org/release/Regexp-Common-net-CIDR
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Regexp-Common>0:textproc/p5-Regexp-Common

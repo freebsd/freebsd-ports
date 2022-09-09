@@ -7,6 +7,7 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Compiler for the functional language Haskell
+WWW=		https://www.haskell.org/ghc/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -40,7 +41,7 @@ GMP_DESC=		Use GNU Multi-precision Library from Ports
 PROFILE_DESC=		Add support for performance profiling
 
 BOOT_CONFIGURE_ENV=	GHC=${LOCALBASE}/bin/ghc
-BOOT_CONFIGURE_ENV_OFF=	GHC=${BOOT_GHC}
+BOOT_CONFIGURE_ENV_OFF=	GHC=${BOOT_GHC} LLC=llc${BOOT_LLVM_VERSION} OPT=opt${BOOT_LLVM_VERSION}
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 DOCS_VARS=		enable_docs=YES

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Twisted-based Tor controller client
+WWW=		https://github.com/meejah/txtorcon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

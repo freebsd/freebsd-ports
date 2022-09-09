@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for rendering safe templates
+WWW=		https://shopify.github.io/liquid/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

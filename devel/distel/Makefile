@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Distel extends Emacs Lisp with Erlang-style message passing
+WWW=		http://www.bluetail.com/~luke/distel/
 
 LICENSE=	MIT
 

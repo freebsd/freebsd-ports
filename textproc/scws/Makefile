@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.xunsearch.com/scws/down/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Chinese word segmentation program and lib
+WWW=		http://www.xunsearch.com/scws/index.php
 
 LICENSE=	BSD2CLAUSE
 

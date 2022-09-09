@@ -5,11 +5,11 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Client)
+WWW=		https://github.com/haiwen/seafile
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		bash:shells/bash
 
 USES=		autoreconf gnome iconv libarchive libtool localbase \
-		pathfix pkgconfig python:3.6+ shebangfix sqlite ssl
+		pathfix pkgconfig python:3.6+ shebangfix sqlite ssl vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile

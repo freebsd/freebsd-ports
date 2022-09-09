@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Pretty-print TCP session monitor/analyzer
+WWW=		https://github.com/KLab/miruo
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

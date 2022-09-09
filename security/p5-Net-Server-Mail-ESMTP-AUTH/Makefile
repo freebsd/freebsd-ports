@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Plain and login auth methods for Net::Server::Mail::ESMTP
+WWW=		https://metacpan.org/release/Net-Server-Mail-ESMTP-AUTH
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

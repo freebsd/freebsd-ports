@@ -9,6 +9,7 @@ DISTFILES=	iso-schematron-xslt1.zip \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Leading Implementation of ISO Schematron
+WWW=		https://www.schematron.com/implementation.html
 
 USES=		zip
 

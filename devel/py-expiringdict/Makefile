@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Dictionary with auto-expiring values for caching purposes
+WWW=		https://github.com/mailgun/expiringdict
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

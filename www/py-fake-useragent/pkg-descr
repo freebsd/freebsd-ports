@@ -3,5 +3,3 @@ Up to date simple useragent faker with real world database.
 Features:
   * grabs up to date useragent from useragentstring.com
   * randomize with real world statistic via w3schools.com
-
-WWW: https://pypi.org/project/fake-useragent/

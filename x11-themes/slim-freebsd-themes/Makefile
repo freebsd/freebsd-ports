@@ -7,6 +7,7 @@ DISTFILES=	slim-freebsd-beastie.tar.gz slim-freebsd-simple.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	FreeBSD Theme pack for SLiM login app
+WWW=		https://people.freebsd.org/~decke/
 
 LICENSE=	CC-BY-SA-4.0
 

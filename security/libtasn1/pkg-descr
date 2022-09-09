@@ -9,5 +9,3 @@ The main features of this library are:
   containing an array;
 - DER (Distinguish Encoding Rules) encoding;
 - no limits for INTEGER and ENUMERATED values
-
-WWW: http://www.gnu.org/software/libtasn1/

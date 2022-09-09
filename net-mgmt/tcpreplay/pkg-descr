@@ -10,5 +10,3 @@ reproduce the real-world anomalies that appear on production networks
 (asymmetric routes, traffic bursts/lulls, fragmentation, retransmissions,
 etc.), tcpreplay allows for exact replication of real traffic seen on real
 networks.
-
-WWW: https://github.com/appneta/tcpreplay

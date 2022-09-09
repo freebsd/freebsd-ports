@@ -8,6 +8,7 @@ DISTFILES=	${DISTDATE}_${DISTNAME}-war-tomcat.zip \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Madsonic streaming media server
+WWW=		https://www.madsonic.org
 
 LICENSE=	GPLv3
 

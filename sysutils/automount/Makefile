@@ -5,6 +5,7 @@ MASTER_SITES=	https://raw.github.com/vermaden/automount/master/
 
 MAINTAINER=	vermaden@interia.pl
 COMMENT=	FreeBSD's devd(8) based automount solution
+WWW=		https://github.com/vermaden/automount/
 
 LICENSE=	BSD2CLAUSE
 

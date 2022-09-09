@@ -8,5 +8,3 @@ logged into the server for other reasons.
 
 The main audience using slowloris is of course a system administrators wanting
 to measure their webserver's performance and vulnerability.
-
-WWW: http://ha.ckers.org/slowloris/

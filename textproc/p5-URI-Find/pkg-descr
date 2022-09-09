@@ -4,5 +4,3 @@ a URI to be).  It employs a series of heuristics too:
   - Find schemeless URIs (ie. www.foo.com)
   - Avoid picking up trailing characters from the text
   - Avoid picking up URL-like things such as Perl module names.
-
-WWW: https://metacpan.org/release/URI-Find

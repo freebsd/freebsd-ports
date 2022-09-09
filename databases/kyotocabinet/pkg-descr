@@ -19,5 +19,3 @@ C++, C, Java, Python, Ruby, Perl, and Lua. Kyoto Cabinet is available
 on platforms which have API conforming to C++03 with the TR1 library
 extensions. Kyoto Cabinet is a free software licensed under the GNU
 General Public License.
-
-WWW: https://dbmx.net/kyotocabinet/

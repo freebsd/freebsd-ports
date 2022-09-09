@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Ruby utilities for exporting SVN repo to git
+WWW=		https://github.com/nirvdrum/svn2git
 
 LICENSE=	MIT
 

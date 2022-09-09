@@ -8,6 +8,7 @@ DISTNAME=	VirtualBox-${PORTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox kernel module for FreeBSD
+WWW=		https://www.virtualbox.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

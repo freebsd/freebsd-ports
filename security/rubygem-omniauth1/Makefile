@@ -1,11 +1,12 @@
 PORTNAME=	omniauth
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generalized Rack framework for multiple-provider authentication
+WWW=		https://github.com/omniauth/omniauth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

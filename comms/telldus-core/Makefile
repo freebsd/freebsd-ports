@@ -6,9 +6,12 @@ MASTER_SITES=	http://download.telldus.com/TellStick/Software/telldus-core/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tellstick Telldus daemon + library
+WWW=		https://developer.telldus.com/wiki/TellStickInstallationSource
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		does not build: 'tr1/memory' file not found
 
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libftdi.so:devel/libftdi \

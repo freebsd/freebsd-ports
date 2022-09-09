@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classical memory game
+WWW=		http://lgames.sourceforge.net/index.php?project=LPairs
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

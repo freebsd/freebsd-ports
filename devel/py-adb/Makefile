@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure-python implementation of ADB and Fastboot protocols
+WWW=		https://github.com/google/python-adb
 
 LICENSE=	APACHE20
 

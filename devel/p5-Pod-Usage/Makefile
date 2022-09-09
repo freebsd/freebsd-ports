@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Print a usage message from embedded pod documentation
+WWW=		https://metacpan.org/release/Pod-Usage
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

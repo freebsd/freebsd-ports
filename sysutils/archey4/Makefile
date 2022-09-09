@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple system information tool written in Python
+WWW=		https://github.com/HorlogeSkynet/archey4
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

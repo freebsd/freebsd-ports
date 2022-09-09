@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Userland NFS command tool
+WWW=		https://github.com/NetDirect/nfsshell
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

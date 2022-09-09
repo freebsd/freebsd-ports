@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Templating system that compiles HTML::Template files to Perl code
+WWW=		https://metacpan.org/release/HTML-Template-Compiled
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

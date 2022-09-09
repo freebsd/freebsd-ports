@@ -10,5 +10,3 @@ These are the main SCEW features:
 - Writes XML documents to multiple outputs.
 - Allows adding new I/O sources easily.
 - UTF-8, ISO-8859-1 and US-ASCII encodings (and UTF-16 in Windows).
-
-WWW: https://savannah.nongnu.org/projects/scew

@@ -17,5 +17,3 @@ Start and end context names match
 context name does not match the start context name, then it is ignored.
 The module does not even check if the configuration contexts have valid
 names.
-
-WWW: https://metacpan.org/release/Apache-ConfigParser

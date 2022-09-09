@@ -8,5 +8,3 @@ case you don't).
 
 The AnyEvent watcher can be disabled by executing undef $AnyEvent::BDB::WATCHER.
 Please notify the author of when and why you think this was necessary.
-
-WWW: https://metacpan.org/release/AnyEvent-BDB

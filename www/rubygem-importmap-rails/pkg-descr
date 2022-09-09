@@ -15,5 +15,3 @@ the the whole bundle, now only the cache for that single file is invalidated.
 There's native support for import maps in Chrome/Edge 89+, and a shim available
 for any browser with basic ESM support. So your app will be able to work with
 all the evergreen browsers.
-
-WWW: https://github.com/rails/importmap-rails

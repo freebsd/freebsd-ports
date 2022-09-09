@@ -6,5 +6,3 @@ make their installation optional.
 
 Files installed by this port will take precedence over similarily named
 calendars in the base system.
-
-WWW: http://www.freebsd.org

@@ -12,5 +12,3 @@ With xjobs this can be achieved easily, and it is possible to limit the load of
 the machine to a useful value. It works similar to xargs, but starts several
 processes simultaneously and gives only one line of arguments to each utility
 call.
-
-WWW: http://www.maier-komor.de/xjobs.html

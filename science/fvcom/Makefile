@@ -8,6 +8,7 @@ DIST_SUBDIR=	fvcom
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
+WWW=		http://fvcom.smast.umassd.edu/FVCOM/index.html
 
 # Converted from RESTRICTED
 LICENSE=	fvcom

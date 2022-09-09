@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Salted Challenge Response Authentication Mechanism (RFC 5802)
+WWW=		https://metacpan.org/release/Authen-SCRAM
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

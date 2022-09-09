@@ -4,5 +4,3 @@ Multiple ways of supporting translation are implemented and methods to determine
 the current users (browser-)language.
 
 Localizing Numbers, DateTime and currency is also implemented.
-
-WWW: https://pear.php.net/package/I18N

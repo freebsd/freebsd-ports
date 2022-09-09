@@ -2,5 +2,3 @@ tclbsd provides a way for Tcl programs to exercise many interesting and useful
 system calls and library routines available to C programs on versions of BSD
 UNIX such as FreeBSD. Many of the interfaces also work with Linux and other
 non-BSD UNIX variants as well.
-
-WWW: https://github.com/flightaware/tclbsd

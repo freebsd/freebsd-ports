@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JSON reader and writer library for C++
+WWW=		https://github.com/open-source-parsers/jsoncpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Scriptable database and system performance benchmark
+WWW=		https://github.com/akopytov/sysbench
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

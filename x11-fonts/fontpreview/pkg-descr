@@ -4,5 +4,3 @@ feature is provided by fzf and the preview is generated with ImageMagick and
 then displayed using nsxiv. This tool is highly customizable, almost all of the
 variables in this tool can be changed using the command-line flags or the
 environment variables.
-
-WWW: https://github.com/sdushantha/fontpreview

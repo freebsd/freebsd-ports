@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Framework for accessing TiVo using XML/HTTP
+WWW=		https://metacpan.org/release/Net-TiVo
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \

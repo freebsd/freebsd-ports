@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	C/C++ library for parallel programming
+WWW=		https://github.com/siemens/embb
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi

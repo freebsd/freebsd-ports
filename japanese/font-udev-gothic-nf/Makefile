@@ -8,6 +8,7 @@ DISTNAME=	UDEVGothic_NF_v${DISTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UDEV Gothic (Nerd Fonts)
+WWW=		https://github.com/yuru7/udev-gothic
 
 LICENSE=	OFL11
 

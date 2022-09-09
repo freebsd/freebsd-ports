@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Libraries shared between Net::OpenID::Consumer and Net::OpenID::Server
+WWW=		https://metacpan.org/release/Net-OpenID-Common
 
 LICENSE=	ARTPERL10
 

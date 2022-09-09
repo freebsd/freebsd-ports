@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Experiment library for Gitlab
+WWW=		https://gitlab.com/gitlab-org/ruby/gems/gitlab-experiment
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	http://fredrik.hubbe.net/x2vnc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to link multiple X and VNC servers together
+WWW=		https://fredrik.hubbe.net/x2vnc.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

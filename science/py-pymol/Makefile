@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenGL-based molecular visualization system
+WWW=		https://pymol.org/2/
 
 LICENSE=	PyMOL
 LICENSE_NAME=	Open-Source PyMOL Copyright

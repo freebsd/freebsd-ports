@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	gauche-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple multithreaded HTTP server written in Gauche
+WWW=		https://github.com/shirok/Gauche-makiki
 
 LICENSE=	BSD
 

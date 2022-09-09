@@ -8,6 +8,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Display LaTeX output in your IMs
+WWW=		https://sourceforge.net/projects/pidgin-latex/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin

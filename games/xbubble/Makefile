@@ -6,6 +6,7 @@ MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle Bobble clone for Unix/X11 platforms
+WWW=		https://www.nongnu.org/xbubble/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

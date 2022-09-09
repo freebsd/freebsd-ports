@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Large scale deploys using BitTorrent
+WWW=		https://github.com/lg/murder
 
 LICENSE=	APACHE20
 

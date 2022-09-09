@@ -1,5 +1,3 @@
 irc2dc provides intercomunication between users of DC++ hub and IRC channel
 For now it works just like simple bot, that transfers public messages from
 one side to other.
-
-WWW: https://sourceforge.net/projects/irc2dc/

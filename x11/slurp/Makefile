@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Select a region in a Wayland compositor
+WWW=		https://wayland.emersion.fr/slurp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

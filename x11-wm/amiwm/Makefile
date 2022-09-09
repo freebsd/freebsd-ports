@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}0.21pl2
 
 MAINTAINER=	dcarmich@dcarmichael.net
 COMMENT=	Window manager that makes your desktop look like an Amiga(TM)
+WWW=		https://www.lysator.liu.se/~marcus/amiwm.html
 
 USES=		shebangfix xorg
 SHEBANG_FILES=	Xinitrc.in \

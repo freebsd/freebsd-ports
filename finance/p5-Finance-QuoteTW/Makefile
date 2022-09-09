@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fetch quotes of mutual funds in Taiwan
+WWW=		https://metacpan.org/release/Finance-QuoteTW
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-TreeDumper>=0:devel/p5-Data-TreeDumper \

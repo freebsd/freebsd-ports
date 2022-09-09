@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	fjachuf@gmail.com
 COMMENT=	Enhanced i3lock with higher capacity
+WWW=		https://github.com/Raymo111/i3lock-color
 
 LICENSE=	BSD3CLAUSE
 
@@ -35,9 +36,6 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 LDFLAGS+=	${ICONV_LIB}
 
 CONFLICTS_INSTALL=	i3lock
-
-BUILD_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
-INSTALL_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
 
 PLIST_FILES=	"@(,,4755) bin/i3lock" \
 		man/man1/i3lock.1.gz

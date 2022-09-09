@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	CTF framework and exploit development library
+WWW=		https://github.com/Gallopsled/pwntools
 
 LICENSE=	BSD2CLAUSE GPLv2 MIT
 LICENSE_COMB=	multi

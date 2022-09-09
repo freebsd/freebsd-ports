@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run HTTP tests on external live servers
+WWW=		https://metacpan.org/release/Plack-Test-ExternalServer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

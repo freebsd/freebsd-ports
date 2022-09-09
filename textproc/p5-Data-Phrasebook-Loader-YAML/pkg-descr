@@ -5,5 +5,3 @@ accessible via a unique key. Phrases may contain placeholders, please see
 Data::Phrasebook for an explanation of how to use these. Groups of phrases are
 kept in a dictionary. In this implementation a single file is one complete
 dictionary.
-
-WWW: https://metacpan.org/release/Data-Phrasebook-Loader-YAML

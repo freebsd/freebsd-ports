@@ -3,5 +3,3 @@ distance is a measure of the degree of proximity between two strings. This
 distance is the number of substitutions, deletions or insertions ("edits")
 needed to transform one string into the other one (and vice versa). When two
 strings have distance 0, they are the same.
-
-WWW: https://metacpan.org/release/Text-Levenshtein

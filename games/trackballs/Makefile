@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
+WWW=		https://trackballs.github.io/
 
 LICENSE=	GPLv2+ ETHYMONICS
 LICENSE_COMB=	multi

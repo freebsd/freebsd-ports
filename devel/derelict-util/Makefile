@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The base library for all Derelict packages
+WWW=		https://github.com/DerelictOrg/DerelictUtil
 
 LICENSE=	BSL
 

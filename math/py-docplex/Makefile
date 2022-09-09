@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IBM Decision Optimization CPLEX Modeling for Python
+WWW=		https://www.ibm.com/cloud/decision-optimization-for-watson-studio
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

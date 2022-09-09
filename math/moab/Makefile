@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Component for representing and evaluating mesh data
+WWW=		https://press3.mcs.anl.gov/sigma/moab-library/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

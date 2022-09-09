@@ -1,5 +1,5 @@
 PORTNAME?=	percona
-DISTVERSION=	5.7.37-40
+DISTVERSION=	5.7.39-42
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
@@ -11,6 +11,7 @@ DISTFILES=	percona-server-${DISTVERSION}${EXTRACT_SUFX}:percona \
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
+WWW=		https://www.percona.com/software/percona-server
 
 LICENSE?=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

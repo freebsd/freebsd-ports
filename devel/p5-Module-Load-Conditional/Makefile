@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Looking up Perl modules information/loading at runtime
+WWW=		https://metacpan.org/release/Module-Load-Conditional
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.zeroflux.org/proj/knock/files/ \
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Flexible port-knocking server and client
+WWW=		http://www.zeroflux.org/projects/knock
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

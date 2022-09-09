@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript library for image/html/multimedia content display
+WWW=		https://fancyapps.com/fancybox/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-plugins
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT=	Third party plugins for Mupen64plus
+WWW=		https://code.google.com/p/mupen64plus/
 
 USES=		metaport
 

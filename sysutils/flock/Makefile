@@ -7,6 +7,7 @@ DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Manage locks from shell scripts
+WWW=		https://www.kernel.org/pub/linux/utils/util-linux/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 
 MAINTAINER=	felix@userspace.com.au
 COMMENT=	NSS module using a PostgreSQL database for backend
+WWW=		https://ftp.postgresql.org/pub/projects/pgFoundry/sysauth/NSS/
 
 LICENSE=	GPLv2
 

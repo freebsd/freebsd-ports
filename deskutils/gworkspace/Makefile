@@ -5,6 +5,7 @@ MASTER_SITES=	GNUSTEP/usr-apps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep workspace manager
+WWW=		http://www.gnustep.it/enrico/gworkspace/
 
 LICENSE=	GPLv2
 

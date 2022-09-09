@@ -8,6 +8,7 @@ DISTNAME=	STYMulator-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line Yamaha YM2149 (.ym) chiptune player
+WWW=		http://atariarea.krap.pl/stymulator/
 
 LICENSE=	GPLv2
 

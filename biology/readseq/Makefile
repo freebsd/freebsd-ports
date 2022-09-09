@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Read and reformat biosequences, Java command-line version
+WWW=		https://sourceforge.net/projects/readseq
 
 LICENSE=	PD
 

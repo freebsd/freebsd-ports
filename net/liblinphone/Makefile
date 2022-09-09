@@ -1,10 +1,10 @@
 PORTNAME=	liblinphone
-DISTVERSION=	5.1.32
-PORTREVISION=	1
+DISTVERSION=	5.1.56
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP library supporting voice/video calls and text messaging
+WWW=		https://www.linphone.org/technical-corner/liblinphone.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -29,7 +29,7 @@ USES=		cmake gnome iconv pkgconfig python:build sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	05b13b98229fc69ed3075916857dbe32b60b2b39
+GL_COMMIT=	c5d52f725840bceca36874f480d86bdbb91f5b7e
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

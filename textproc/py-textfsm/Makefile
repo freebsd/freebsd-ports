@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parses semi-structured text into Python tables
+WWW=		https://github.com/google/textfsm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

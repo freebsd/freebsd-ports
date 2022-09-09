@@ -1,21 +1,20 @@
 PORTNAME=	loki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	grafana-
 
 MAINTAINER=	freebsd@funzi.org
 COMMENT=	Scalable, highly-available, multi-tenant log aggregation system
+WWW=		https://github.com/grafana/loki
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 armv7 armv6 amd64 i386
 USES=		go:modules cpe
 CPE_VENDOR=	grafana
 USE_GITHUB=	yes
-
 
 GH_ACCOUNT=	grafana
 GH_PROJECT=	loki
@@ -120,7 +119,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-zookeeper:zk:v1.0.2:go_zookeeper_zk/vendor/github.com/go-zookeeper/zk \
 		go4org:go4:d4a079459e60:go4org_go4/vendor/go4.org/intern \
-		go4org:go4:d4a079459e60:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
+		go4org:unsafe-assume-no-moving-gc:928513b29760:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
 		gofrs:flock:v0.7.1:gofrs_flock/vendor/github.com/gofrs/flock \
 		gogo:googleapis:v1.4.0:gogo_googleapis/vendor/github.com/gogo/googleapis \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -348,6 +347,7 @@ post-extract:
 	@${RLN} ${WRKSRC_coreos_etcd} ${WRKSRC}/vendor/go.etcd.io/etcd
 	@${MKDIR} ${WRKSRC}/vendor/gopkg.in/fsnotify
 	@${RLN} ${WRKSRC_fsnotify_fsnotify_1} ${WRKSRC}/vendor/gopkg.in/fsnotify/fsnotify.v1
+	@${MV} ${WRKSRC}/vendor/go4.org/unsafe/assume-no-moving-gc/unsafe-assume-no-moving-gc-928513b29760/untested.go ${WRKSRC}/vendor/go4.org/unsafe/assume-no-moving-gc/untested.go
 
 post-install:
 	@${CP} ${WRKSRC}/cmd/loki/loki-local-config.yaml ${STAGEDIR}${PREFIX}/etc/loki.yaml.sample

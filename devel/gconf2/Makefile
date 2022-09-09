@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
+WWW=		https://www.gnome.org/projects/gconf/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

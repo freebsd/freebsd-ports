@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Annotate data with labels based on the Mann-Whitney U test
+WWW=		https://fri.uni-lj.si/en/laboratory/biolab
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

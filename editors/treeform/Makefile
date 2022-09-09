@@ -6,6 +6,7 @@ DISTNAME=	TreeForm_1_0_3
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Linguistic Syntax/Semantics tree drawing editor
+WWW=		https://treeform.blogspot.com/
 
 USES=		zip
 NO_BUILD=	yes

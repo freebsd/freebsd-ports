@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Interact with the FreeBSD bugzilla instance
+WWW=		https://github.com/pgollucci/freebsd-bugzilla-cli
 
 LICENSE=	APACHE20
 

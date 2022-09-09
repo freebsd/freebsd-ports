@@ -14,5 +14,3 @@ integer and boolean arrays, and tuples thereof. The goals of the library are:
   operations where the array shape is known, there is a reduce() method to
   reduce an index to a simpler index that is equivalent for the given shape.
 - Enable useful transformation and manipulation functions on index objects.
-
-WWW: https://github.com/Quansight-Labs/ndindex

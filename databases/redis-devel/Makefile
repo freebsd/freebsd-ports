@@ -1,10 +1,11 @@
 PORTNAME=	redis
-DISTVERSION=	7.0.4.20220731
+DISTVERSION=	7.0.4.20220831
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
+WWW=		https://redis.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TUPLE=	redis:redis:2029976
+GH_TUPLE=	redis:redis:c66eaf4
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo

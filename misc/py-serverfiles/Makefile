@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Access files on a HTTP server and store them locally for reuse
+WWW=		https://pypi.org/project/serverfiles/
 
 LICENSE=	GPLv3+
 

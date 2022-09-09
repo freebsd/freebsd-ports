@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Gesture-recognition application for X11
+WWW=		https://github.com/thjaeger/easystroke
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

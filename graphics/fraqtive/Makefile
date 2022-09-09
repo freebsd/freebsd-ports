@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
+WWW=		https://fraqtive.mimec.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

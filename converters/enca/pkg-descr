@@ -1,5 +1,3 @@
 Enca currently can determine 8bit charsets of Belarussian, Czech, Polish,
 Russian, Slovak and Ukrainian texts and also some multibyte encodings,
 independently on language (provided it's some European language).
-
-WWW: http://gitorious.org/enca

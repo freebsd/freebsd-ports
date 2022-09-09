@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	apache-
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Apache XML security libraries - C++ version
+WWW=		https://santuario.apache.org/cindex.html
 
 LICENSE=	APACHE20
 

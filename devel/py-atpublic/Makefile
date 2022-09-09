@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Very simple decorator and function of module's all
+WWW=		https://public.readthedocs.io/
 
 LICENSE=	APACHE20
 

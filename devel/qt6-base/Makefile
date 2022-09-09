@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
+WWW=		https://www.qt.io/
 
 BUILD_DEPENDS=	xml:textproc/xmlstarlet \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \

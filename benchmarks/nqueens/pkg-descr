@@ -1,4 +1,2 @@
 N-queens benchmark written in C.  Includes base version and (optinal)
 distributed MPI version.
-
-WWW: http://www.arch.cs.titech.ac.jp/~kise/nq/index.htm

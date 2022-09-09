@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby interface to GnuPG Made Easy (GPGME)
+WWW=		https://github.com/ueno/ruby-gpgme
 
 LICENSE=	LGPL21+
 

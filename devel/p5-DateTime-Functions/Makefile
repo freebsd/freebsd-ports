@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Procedural interface to DateTime functions
+WWW=		https://metacpan.org/release/DateTime-Functions
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime

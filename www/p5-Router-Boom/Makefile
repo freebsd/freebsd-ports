@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fast routing engine for web applications
+WWW=		https://metacpan.org/release/Router-Boom
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

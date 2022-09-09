@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Helps working with singletons
+WWW=		https://github.com/lazybird/django-solo
 
 LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

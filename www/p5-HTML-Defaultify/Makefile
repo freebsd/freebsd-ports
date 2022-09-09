@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Perl module to populate HTML forms with default values
+WWW=		https://metacpan.org/release/HTML-Defaultify
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

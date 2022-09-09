@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
+WWW=		http://bluefish.openoffice.nl/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

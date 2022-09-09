@@ -18,5 +18,3 @@ objects that provide access to the elements within.
 "pg_python" Quick Console
 Get a Python console with a connection to PostgreSQL for quick tests and simple
 scripts.
-
-WWW: http://python.projects.postgresql.org/

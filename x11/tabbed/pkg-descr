@@ -4,5 +4,3 @@ application, i.e. uzbl, urxvt and xterm.
 
 It consists of a single binary, configuration is done at compile-time
 by a single config.h file.
-
-WWW: http://tools.suckless.org/tabbed

@@ -1,11 +1,12 @@
 PORTNAME=	python-glanceclient
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Image API Client Library
+WWW=		https://docs.openstack.org/python-glanceclient/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,5 +7,3 @@ include a number of features found in Bash's globbing such as
 backslash escaping, brace expansion, extended glob pattern groups,
 etc. They also add a number of new useful functions as well, such as
 globmatch which functions like fnmatch, but for paths.
-
-WWW: https://pypi.org/project/wcmatch/

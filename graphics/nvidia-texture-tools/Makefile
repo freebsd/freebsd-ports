@@ -4,11 +4,13 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
+WWW=		https://github.com/castano/nvidia-texture-tools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6 aarch64 powerpc64le # see src/nvcore/nvcore.h
+BROKEN_aarch64=	error: use of undeclared identifier '__builtin_ia32_emms'
 
 USES=		cmake compiler:c++11-lang
 CMAKE_ON=	NVTT_SHARED \

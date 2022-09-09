@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides telnet client functionality
+WWW=		https://github.com/ruby/net-telnet
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

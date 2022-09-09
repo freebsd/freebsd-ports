@@ -4,5 +4,3 @@ check individual words as well as parse text, latex, html or xml documents. For
 a more user-friendly interface use the 'spelling' package which builds on this
 package to automate checking of files, documentation and vignettes in all
 common formats.
-
-WWW: https://docs.ropensci.org/hunspell/

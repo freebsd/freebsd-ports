@@ -4,5 +4,3 @@ you need to enable it at compile time (-Donline-tests=true) and link to libcurl.
 lv2lint can optionally test your plugin symbol visibility and link dependencies.
 If you want that, you need to enable it at compile time (-Delf-tests=true) and
 link to libelf.
-
-WWW: https://github.com/OpenMusicKontrollers/lv2lint

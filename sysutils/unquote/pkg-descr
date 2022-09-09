@@ -1,4 +1,2 @@
 unquote executes a command after unquoting a specified list of arguments,
 so that arbitrary characters may be passed in command-line arguments.
-
-WWW: http://devel.ringlet.net/misc/unquote/

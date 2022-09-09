@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Simple wrapper for the C qrencode library
+WWW=		https://github.com/Arachnid/pyqrencode/tree/master
 
 LICENSE=	MIT
 

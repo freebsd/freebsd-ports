@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IO::All combines all of the best Perl IO modules
+WWW=		https://metacpan.org/release/IO-All
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

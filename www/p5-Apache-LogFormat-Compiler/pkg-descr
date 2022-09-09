@@ -1,4 +1,2 @@
 Compile a log format string to perl-code.  For faster generating
 access_log line.
-
-WWW: https://metacpan.org/release/Apache-LogFormat-Compiler

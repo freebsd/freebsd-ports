@@ -1,5 +1,3 @@
 The Test::Cmd module provides a low-level framework for portable automated
 testing of executable commands and scripts (in any language, not just Perl),
 especially commands and scripts that interact with the file system.
-
-WWW: https://metacpan.org/release/Test-Cmd

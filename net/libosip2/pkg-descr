@@ -5,5 +5,3 @@ rfc2543 (soon to be deprecated by latest revisions). This library aims
 to provide multimedia and telecom software developers an easy and powerful
 interface to initiate and control SIP based sessions in their applications.
 SIP is a open standard replacement from IETF for H323.
-
-WWW: http://www.gnu.org/software/osip/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities for commandline-based programs
+WWW=		https://metacpan.org/release/Commandable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

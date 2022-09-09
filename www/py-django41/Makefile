@@ -1,7 +1,5 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	django
-PORTVERSION=	4.1
+PORTVERSION=	4.1.1
 CATEGORIES=	www python
 MASTER_SITES=	https://media.djangoproject.com/releases/4.1/ \
 		CHEESESHOP \
@@ -13,6 +11,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	High-level Python Web Framework
+WWW=		https://www.djangoproject.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

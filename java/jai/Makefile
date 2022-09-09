@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-lib
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	High performance image processing libraries for Java
+WWW=		http://java.sun.com/products/java-media/jai/
 
 # Converted from RESTRICTED
 LICENSE=	jai

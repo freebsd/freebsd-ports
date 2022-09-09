@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Small Ruby library of mixed utils/extensions
+WWW=		https://github.com/flori/spruz
 
 LICENSE=	MIT
 

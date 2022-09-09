@@ -15,5 +15,3 @@ type of the function (which includes the signature). The main
 drawback of this approach is that the compilation time will increase
 for the file that does the registration, it is therefore recommended
 that you register everything in the same cpp-file.
-
-WWW: http://www.rasterbar.com/products/luabind.html

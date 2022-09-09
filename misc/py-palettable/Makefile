@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of color palettes for Python
+WWW=		https://jiffyclub.github.io/palettable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

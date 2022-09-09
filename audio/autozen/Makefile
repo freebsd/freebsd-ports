@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.linuxlabs.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjust brain waves with sound
+WWW=		http://www.linuxlabs.com/autozen.shtml
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

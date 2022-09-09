@@ -6,6 +6,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org mga display driver
+WWW=		https://www.x.org/
 
 USES=		gl xorg-cat:driver
 USE_GL=		gl

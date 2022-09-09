@@ -4,5 +4,3 @@ script tools, it does not spawn processes or use much CPU time,
 and is ideal for when one wants continuous monitoring and fast
 response upon target failure. It is written in C and supports both
 IPv4 and IPv6.
-
-WWW: http://www.bnet.pl/~jajcus/apinger/

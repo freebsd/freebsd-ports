@@ -1,5 +1,5 @@
 PORTNAME=	gems
-PORTVERSION=	3.3.19
+PORTVERSION=	3.3.21
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -8,6 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Package management framework for the Ruby language
+WWW=		https://rubygems.org/
 
 LICENSE=	MIT RUBY
 LICENSE_COMB=	dual

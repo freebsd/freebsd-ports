@@ -1,6 +1,6 @@
-TIMESTAMP = 1657556273
-SHA256 (RasmusLindroth-tut-1.0.11_GH0.tar.gz) = 9b039109fc1af188ae8f6d92f511d76e6d71b3901fb2d2df8000b6c888c83829
-SIZE (RasmusLindroth-tut-1.0.11_GH0.tar.gz) = 187560
+TIMESTAMP = 1661645029
+SHA256 (RasmusLindroth-tut-1.0.17_GH0.tar.gz) = b92da4aa1bf36d77657b76149262f7fdb731d83111b81a69d3b017179c4319a1
+SIZE (RasmusLindroth-tut-1.0.17_GH0.tar.gz) = 190910
 SHA256 (RasmusLindroth-go-mastodon-v0.0.8_GH0.tar.gz) = 4e34103f9e3312aec974a576d71ac28d0d66bf579c0d63150deaa9e51cd5b49e
 SIZE (RasmusLindroth-go-mastodon-v0.0.8_GH0.tar.gz) = 32734
 SHA256 (atotto-clipboard-v0.1.4_GH0.tar.gz) = cafd64dc78f293c1e774386186f3f817461a1a8940ef86d5d9e9524b58aa791e

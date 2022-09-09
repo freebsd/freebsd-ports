@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Compatibility library for OCaml's Uchar module
+WWW=		https://ocaml.github.io/uchar/
 
 LICENSE=	LGPL21 # (with linking exception)
 LICENSE_FILE=	${WRKSRC}/LICENSE

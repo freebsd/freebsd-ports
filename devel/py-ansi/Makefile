@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ANSI cursor movement and graphics
+WWW=		https://github.com/tehmaze/ansi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

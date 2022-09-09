@@ -3,5 +3,3 @@ The sync extension introduces synchronization objects into PHP.
 Named and unnamed Mutex, Semaphore, Event, and Reader-Writer objects provide
 OS-level synchronization on both *NIX (POSIX semaphores required) and Windows
 platforms.
-
-WWW: https://pecl.php.net/package/sync

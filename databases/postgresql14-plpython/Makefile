@@ -6,6 +6,7 @@ PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Python to write SQL functions
+WWW=		https://www.postgresql.org/
 
 USES+=		pgsql:${WANT_PGSQL_VER} ${WANT_PYTHON_USE}
 WANT_PGSQL=	server

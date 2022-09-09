@@ -9,5 +9,3 @@ Features:
 - iconv-like usage.
 - language-level Simplified-Traditional Chinese conversion.
 - idioms can be translated.
-
-WWW: https://github.com/xiaoyjy/cconv

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-music-analyzer
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multithreaded C library used to compute distance between songs
+WWW=		https://github.com/Polochon-street/bliss
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

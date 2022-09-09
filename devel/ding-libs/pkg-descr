@@ -6,5 +6,3 @@ serialization (libcollection), a dynamically growing, reference-counted
 array (libref_array), and a library to process configuration files in
 initialization format (INI) into a library collection data structure
 (libini_config).
-
-WWW: https://pagure.io/SSSD/ding-libs/

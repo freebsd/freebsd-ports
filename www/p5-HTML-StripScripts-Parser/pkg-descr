@@ -4,5 +4,3 @@ HTML::Parser to parse the HTML.
 See HTML::Parser for details of how to customise how the raw HTML
 is parsed into tags, and HTML::StripScripts for details of how to
 customise the way those tags are filtered.
-
-WWW: https://metacpan.org/release/HTML-StripScripts-Parser

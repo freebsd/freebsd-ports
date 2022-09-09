@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.enderunix.org/spamguard/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
+WWW=		http://www.enderunix.org/spamguard
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

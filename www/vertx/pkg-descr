@@ -6,5 +6,3 @@ It is an event driven application framework that runs on the JVM
 Vert.x then exposes the API in Clojure, DynJS, Groovy, Java,
 JavaScript, Ruby, PHP, Python, and Scala.
 So you choose what language you want to use.
-
-WWW: http://vertx.io/

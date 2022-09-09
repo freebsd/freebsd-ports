@@ -6,6 +6,7 @@ CATEGORIES=	print
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Dynamic binding to the FreeType library for the D lang
+WWW=		https://github.com/DerelictOrg/DerelictFT
 
 LICENSE=	BSL
 

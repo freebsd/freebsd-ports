@@ -3,5 +3,3 @@ hierarchal information) into a tree structure. It can also deparse these
 same tree structures back into a string. It accepts various types of input,
 such as strings, filenames, and array references. The tree structure used
 is a hierarchy of Tree::Simple objects.
-
-WWW: https://metacpan.org/release/Tree-Parser

@@ -7,5 +7,3 @@ rendered in order to point out a geometrical feature or a physical quantity.
 The program is developed as a graphical interface for MOLCAS program package,
 however it's adaptive nature makes possible using luscus with other
 computational program packages and chemical formats.
-
-WWW: https://sourceforge.net/projects/luscus/

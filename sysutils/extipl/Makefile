@@ -5,6 +5,7 @@ MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Partition-selectable boot loader for IBM-PC/AT compatibles
+WWW=		http://extipl.sourceforge.jp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

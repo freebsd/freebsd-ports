@@ -5,6 +5,7 @@ CATEGORIES=	security python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cowrie SSH/Telnet honeypot
+WWW=		https://www.cowrie.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.rst

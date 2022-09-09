@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Various path conversion routines for Perl
+WWW=		https://metacpan.org/release/File-PathConvert
 
 PORTSCOUT=	skipv:0.85
 

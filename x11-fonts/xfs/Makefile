@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org font server
+WWW=		https://www.x.org/
 
 USES=		cpe gmake xorg xorg-cat:app
 CPE_VENDOR=	x.org

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	XDG Base Directory Specification implementation in D lang
+WWW=		https://github.com/FreeSlave/xdgpaths
 
 LICENSE=	BSL
 

@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Firmware modules for ${FLAVOR} Intel GPUs
+WWW=		https://github.com/freebsd/drm-kmod-firmware
 
 LICENSE=	INTEL
 LICENSE_NAME=	Intel firmware license (i915)

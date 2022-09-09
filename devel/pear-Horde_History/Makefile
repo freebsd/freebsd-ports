@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for tracking the history of an object
+WWW=		https://pear.horde.org
 
 USES=		horde cpe
 USE_HORDE_RUN=	Horde_Db \

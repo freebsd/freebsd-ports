@@ -9,5 +9,3 @@ great job and hopefully he will continue for a long time yet.
 
 The idea of zlib-ng is not to replace zlib, but to co-exist as a drop-in
 replacement with a lower threshold for code change.
-
-WWW: https://github.com/zlib-ng/zlib-ng

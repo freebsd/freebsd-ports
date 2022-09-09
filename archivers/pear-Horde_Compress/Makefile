@@ -4,6 +4,7 @@ CATEGORIES=	archivers www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Compression API
+WWW=		https://pear.horde.org
 
 OPTIONS_DEFAULT=	ZLIB
 OPTIONS_DEFINE=		ZLIB

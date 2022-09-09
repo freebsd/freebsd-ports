@@ -6,5 +6,3 @@ writing parsers. These are:
   + UTF-8 and UTF-16 (host endian) support functions
   + Various simple data structures (resizeable buffer, stack, vector)
   + A UTF-8 input stream
-
-WWW: http://www.netsurf-browser.org/projects/libparserutils/

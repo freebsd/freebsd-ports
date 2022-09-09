@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Misc Functions of the Department of Statistics (e1071), TU Wien
+WWW=		https://cran.r-project.org/web/packages/e1071/
 
 LICENSE=	GPLv2+
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://dl.bintray.com/pidgin/releases/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Collection of libpurple plugins
+WWW=		https://keep.imfreedom.org/pidgin/purple-plugin-pack
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

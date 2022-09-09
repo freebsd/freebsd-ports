@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse cpanfile
+WWW=		https://metacpan.org/release/Module-CPANfile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

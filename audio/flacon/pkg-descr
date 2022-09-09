@@ -11,5 +11,3 @@ all tracks at once or for each tag separately.  Its features are:
   - Automatic character set detection for CUE files
   - Generation of the per-track CUE file in the output directory
   - Multi-threaded conversion process and graphical user interface
-
-WWW: http://flacon.github.io/

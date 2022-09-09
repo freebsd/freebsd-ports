@@ -6,5 +6,3 @@ an OpenMP runtime library, and the LLVM infrastructure these are built on.
 
 The LLDB debugger has been removed from this port due to its dependency
 on the obsolete python-2.7.
-
-WWW: http://llvm.org/

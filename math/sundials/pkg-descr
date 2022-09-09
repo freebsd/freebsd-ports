@@ -7,5 +7,3 @@ for IMEX methods; IDA, solves initial value problems for differential-algebraic
 equation (DAE) systems; IDAS, solves DAE systems and includes sensitivity
 analysis capabilities (forward and adjoint); KINSOL, solves nonlinear algebraic
 systems.
-
-WWW: https://computation.llnl.gov/projects/sundials

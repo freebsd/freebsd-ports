@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Perceptual video quality assessment based on multi-method fusion
+WWW=		https://github.com/Netflix/vmaf
 
 LICENSE=	BSD2CLAUSE+PATENT
 LICENSE_GROUPS=	FSF OSI COPYFREE

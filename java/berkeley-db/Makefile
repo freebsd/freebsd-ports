@@ -7,6 +7,7 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Berkeley DB Java Edition
+WWW=		https://www.oracle.com/database/technologies/related/berkeleydb.html
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

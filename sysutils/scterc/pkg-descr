@@ -6,5 +6,3 @@ is called ERC (error recovery control, usually in Seagate), TLER
 
 This rc.d script allows to set these valus on system startup to
 tune disks for RAID usage.
-
-WWW: https://github.com/AMDmi3/scterc-rc.d

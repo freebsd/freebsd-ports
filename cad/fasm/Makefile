@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-fpga
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FPGA assembly (FASM) parser and generator
+WWW=		https://github.com/SymbiFlow/fasm
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

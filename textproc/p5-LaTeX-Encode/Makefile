@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode characters for LaTeX formatting
+WWW=		https://metacpan.org/release/LaTeX-Encode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

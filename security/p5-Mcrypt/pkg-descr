@@ -1,5 +1,3 @@
 The Mcrypt modules provides and simple and inuitive perl abstraction of the
 libmcrypt cryptography library.  It provide mechanisms for encoding and
 decoding perl scalars.
-
-WWW: https://metacpan.org/release/Mcrypt

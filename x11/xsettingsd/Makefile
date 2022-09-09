@@ -7,6 +7,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	aou@eecs.berkeley.edu
 COMMENT=	Daemon that implements the XSETTINGS specification
+WWW=		https://github.com/derat/xsettingsd
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

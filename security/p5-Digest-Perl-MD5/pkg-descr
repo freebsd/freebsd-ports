@@ -4,5 +4,3 @@ works without C-Code. You should use "Digest::MD5" instead of this
 module if it is available. This module is only usefull for
 computers where you cannot install "Digest::MD5" (e.g. lack of a
 C-Compiler).
-
-WWW: https://metacpan.org/release/Digest-Perl-MD5

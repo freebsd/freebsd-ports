@@ -1,10 +1,11 @@
 PORTNAME=	httr
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tools for Working with URLs and HTTP
+WWW=		https://cran.r-project.org/web/packages/httr/
 
 LICENSE=	MIT
 

@@ -13,5 +13,3 @@ POE::Component::Client::MPD module is way safer - you're advised to use it
 instead of Audio::MPD. Or you can try to set conntype to $REUSE (see
 Audio::MPD constructor for more details), but you would be then on your
 own to deal with disconnections.
-
-WWW: https://metacpan.org/release/Audio-MPD

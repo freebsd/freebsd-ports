@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	PCP eXecution Protocol Agent
+WWW=		https://github.com/puppetlabs/pxp-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

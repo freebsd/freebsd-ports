@@ -7,6 +7,7 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays information in real time about users currently logged on
+WWW=		http://wizard.ae.krakow.pl/~mike/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}:main \
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genome-wide Complex Trait Analysis
+WWW=		https://cnsgenomics.com/software/gcta/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GNU_General_Public_License_v3.txt

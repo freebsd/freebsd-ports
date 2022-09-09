@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Optimally choose files to be put on a CD (or other media)
+WWW=		https://savannah.nongnu.org/projects/bestfit/
 
 LICENSE=	GPLv2
 

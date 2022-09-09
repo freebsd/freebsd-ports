@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RequestStore gives you per-request global storage
+WWW=		https://github.com/steveklabnik/request_store
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Applied Econometrics with R
+WWW=		https://cran.r-project.org/web/packages/AER/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -1,6 +1,6 @@
---- chrome/common/url_constants.h.orig	2022-07-22 17:30:31 UTC
+--- chrome/common/url_constants.h.orig	2022-08-31 12:19:35 UTC
 +++ chrome/common/url_constants.h
-@@ -447,7 +447,7 @@ extern const char kOutdatedPluginLearnMoreURL[];
+@@ -462,7 +462,7 @@ extern const char kOutdatedPluginLearnMoreURL[];
  extern const char kPhoneHubPermissionLearnMoreURL[];
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

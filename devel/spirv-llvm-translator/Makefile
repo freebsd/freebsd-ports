@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bi-directional translation between SPIR-V and LLVM IR
+WWW=		https://github.com/KhronosGroup/SPIRV-LLVM-Translator
 
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

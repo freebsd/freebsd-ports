@@ -4,6 +4,9 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical roguelike game
+WWW=		https://attnam.com/ \
+		http://ivan.sourceforge.net/ \
+		https://github.com/Attnam/ivan
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,7 +22,7 @@ GH_TAGNAME=	v${PORTVERSION:C/\.//}
 
 PLIST_FILES=	bin/ivan
 
-PORTSCOUT=	skipv:0.301,0.310,0.311,0.401,0.410,0.420,0.430
+PORTSCOUT=	limit:^0\.[5-9]
 
 PORTDATA=	*
 PORTDOCS=	*

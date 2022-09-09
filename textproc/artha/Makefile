@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Free cross-platform English thesaurus
+WWW=		http://artha.sourceforge.net/wiki/index.php/Home
 
 LICENSE=	GPLv2
 

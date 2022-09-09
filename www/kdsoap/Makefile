@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/$
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	C++/Qt SOAP framework
+WWW=		https://github.com/KDAB/KDSoap
 
 # The software is partly under (LGPL21 | GPL2 | GPL3 ), and partly
 # under AGPLv3. We choose LGPL21 and AGPLv3, since that's easiest

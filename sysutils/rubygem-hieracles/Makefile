@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tool for Hiera parameters visualisation and analysis
+WWW=		https://github.com/Gandi/hieracles/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

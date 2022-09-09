@@ -1,11 +1,12 @@
 PORTNAME=	kapacitor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Time-series data collection
+WWW=		https://influxdata.com/time-series-platform/kapacitor/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

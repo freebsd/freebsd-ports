@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access system calls that Perl doesn't provide access to
+WWW=		https://metacpan.org/release/Sys-Syscall
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

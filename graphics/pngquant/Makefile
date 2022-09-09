@@ -6,6 +6,7 @@ MASTER_SITES=	https://pngquant.org/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Converts 32-bit RGBA PNGs into 8-bit RGBA-palette PNGs
+WWW=		https://pngquant.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

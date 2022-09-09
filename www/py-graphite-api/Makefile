@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Graphite-web, without the interface - just the rendering HTTP API
+WWW=		https://github.com/brutasse/graphite-api
 
 LICENSE=	APACHE20
 

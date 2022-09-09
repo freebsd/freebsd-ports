@@ -6,6 +6,7 @@ MASTER_SITES=	http://billposer.org/Software/Downloads/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
+WWW=		http://freecode.com/projects/uni2ascii/
 
 LICENSE=	GPLv3
 

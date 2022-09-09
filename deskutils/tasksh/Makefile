@@ -6,6 +6,7 @@ MASTER_SITES=	http://taskwarrior.org/download/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Shell command that wraps Taskwarrior commands
+WWW=		https://tasktools.org/projects/tasksh.html
 
 USES=		cmake compiler:c++11-lang readline
 

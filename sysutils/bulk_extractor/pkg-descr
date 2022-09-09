@@ -5,5 +5,3 @@ stored in feature files that can be easily inspected, parsed, or
 processed with automated tools. bulk_extractor also creates
 histograms of features that it finds, as features that are more
 common tend to be more important.
-
-WWW: https://github.com/simsong/bulk_extractor

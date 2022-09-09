@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto-adaptive genetic system designed for ALife research
+WWW=		https://avida.devosoft.org/
 
 LICENSE=	GPLv3
 

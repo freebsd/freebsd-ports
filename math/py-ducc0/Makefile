@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distinctly Useful Code Collection (DUCC)
+WWW=		https://gitlab.mpcdf.mpg.de/mtr/ducc
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

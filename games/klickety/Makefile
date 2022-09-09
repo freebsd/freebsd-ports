@@ -4,9 +4,10 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		https://www.kde.org/applications/games/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 \
-		shebangfix tar:xz
+		shebangfix tar:xz xorg
 SHEBANG_FILES=	src/klickety-2.0-inherit-ksame-highscore.pl
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n itemviews \
@@ -15,6 +16,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 

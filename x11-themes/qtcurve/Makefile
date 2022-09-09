@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Widget styles for Qt and GTK+ toolkits
+WWW=		https://invent.kde.org/system/qtcurve
 
 .if !defined(QTCURVE_SLAVE)
 USES=		metaport

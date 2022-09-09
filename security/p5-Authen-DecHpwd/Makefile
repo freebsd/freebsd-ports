@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for DEC VMS password hashing
+WWW=		https://metacpan.org/release/Authen-DecHpwd
 
 LICENSE=	GPLv2+
 

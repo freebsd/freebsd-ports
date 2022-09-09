@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Interactive console text-based command-line Twitter client
+WWW=		https://oysttyer.github.io/docs/userGuide.html
 
 LICENSE=	FFSL
 LICENSE_NAME=	Floodgap Free Software License

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Generates CUE sheets from a CD TOC (Table Of Contents)
+WWW=		https://packages.debian.org/sid/mkcue
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

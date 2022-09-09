@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
+WWW=		https://github.com/freebsd/pkg
 
 LICENSE=	BSD2CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for mathematical computations
+WWW=		https://github.com/kunishi/algebra-ruby2
 
 USE_RUBY=	yes
 USES=		gem

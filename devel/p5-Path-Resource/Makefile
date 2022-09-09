@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module for combining local path manipulation and URI manipulation
+WWW=		https://metacpan.org/release/Path-Resource
 
 BUILD_DEPENDS=	p5-Path-Abstract>0:devel/p5-Path-Abstract \
 		p5-Path-Class>=0:devel/p5-Path-Class \

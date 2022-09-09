@@ -10,6 +10,7 @@ DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Tasks app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/tasks
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

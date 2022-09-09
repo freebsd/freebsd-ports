@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Latent Trait Models under IRT
+WWW=		https://cran.r-project.org/package=ltm
 
 LICENSE=	GPLv2+
 

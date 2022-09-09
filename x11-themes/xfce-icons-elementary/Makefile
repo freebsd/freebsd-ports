@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	xfce-icons-
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Elementary icons, extended and maintained for Xfce
+WWW=		https://github.com/shimmerproject/elementary-xfce
 
 LICENSE=	GPLv2
 

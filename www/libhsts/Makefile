@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/rockdaboot/libhsts/uploads/4753f61b5a3c6253acf4
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to check a domain against the Chromium HSTS Preload list
+WWW=		https://gitlab.com/rockdaboot/libhsts
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

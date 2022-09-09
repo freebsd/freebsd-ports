@@ -4,8 +4,9 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@riseup.net
+MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Generate and manipulate Open XML PowerPoint (.pptx) files
+WWW=		https://github.com/scanny/python-pptx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

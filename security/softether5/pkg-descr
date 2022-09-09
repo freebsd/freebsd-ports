@@ -14,5 +14,3 @@ use security/softether (RTM version) or security/softether-devel
 other than i386/amd64 processors. Users who want to use SoftEther on
 single board computers such as Raspberry Pi, BeagleBoard or other
 embedded devices, try this port.
-
-WWW: https://www.softether.org

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Captures output while still printing it in real-time
+WWW=		https://github.com/pycontribs/subprocess-tee
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

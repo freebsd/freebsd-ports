@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	AWS SDK C utilities
+WWW=		https://github.com/awslabs/aws-c-sdkutils
 
 LICENSE=	APACHE20
 

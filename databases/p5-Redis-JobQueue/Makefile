@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Job queue management implemented using Redis server
+WWW=		https://metacpan.org/release/Redis-JobQueue
 
 LICENSE=	ARTPERL10
 

@@ -8,6 +8,7 @@ MASTER_SITES=	https://github.com/libyal/libpff/releases/download/${PORTVERSION:E
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the PFF and the OFF formats
+WWW=		https://github.com/libyal/libpff
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

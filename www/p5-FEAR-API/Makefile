@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Zen
+WWW=		https://metacpan.org/release/XERN/FEAR-API-0.489
 
 LICENSE=	ARTPERL10
 

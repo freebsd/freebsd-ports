@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.prelude-siem.org/attachments/download/1393/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library to access Prelude IDMEF database
+WWW=		https://www.prelude-siem.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

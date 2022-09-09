@@ -1,4 +1,2 @@
 Sort::Key::IPv4
 Sorts lists of objects by some property containing an IPv4 address
-
-WWW: https://metacpan.org/release/Sort-Key-IPv4

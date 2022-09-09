@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Rmetrics - Autoregressive Conditional Heteroskedastic Modelling
+WWW=		https://www.rmetrics.org
 
 LICENSE=	GPLv2+
 

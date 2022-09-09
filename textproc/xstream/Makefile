@@ -6,6 +6,7 @@ DISTFILES=	${PORTNAME}-distribution-${PORTVERSION}-bin${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Simple library to serialize Java objects to XML
+WWW=		http://xstream.codehaus.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

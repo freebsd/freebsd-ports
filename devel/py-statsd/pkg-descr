@@ -1,4 +1,2 @@
 statsd is a friendly front-end to Graphite. This is a Python client for the
 statsd daemon.
-
-WWW: https://github.com/jsocol/pystatsd

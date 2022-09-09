@@ -3,5 +3,3 @@ scripted dynamic rule creation. Ideally you could dynamically take a
 list of bad hosts and build an array of snort rule objects from that
 list. Then write that list using the string() method to a snort rules
 file.
-
-WWW: https://metacpan.org/release/Snort-Rule

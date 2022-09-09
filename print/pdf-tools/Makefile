@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Emacs support library for PDF files
+WWW=		https://github.com/vedang/pdf-tools
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

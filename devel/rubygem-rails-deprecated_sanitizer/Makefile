@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Deprecated sanitizer API extracted from Action View
+WWW=		https://github.com/rails/rails-deprecated_sanitizer
 
 LICENSE=	MIT
 

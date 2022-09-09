@@ -7,6 +7,7 @@ DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extension to RubyInline
+WWW=		https://rubygems.org/gems/rubyinlineaccel
 
 RUN_DEPENDS=	rubygem-rubyinline>=3.6.3:devel/rubygem-rubyinline
 

@@ -7,6 +7,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Oscilloscope application for interfacing with various IIO devices
+WWW=		https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

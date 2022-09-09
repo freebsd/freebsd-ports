@@ -7,6 +7,7 @@ CATEGORIES=	math devel graphics
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	C++/Python lib of 2D/3D vector, matrix, math ops for computer graphics
+WWW=		https://github.com/AcademySoftwareFoundation/Imath/
 
 LICENSE=	BSD3CLAUSE
 

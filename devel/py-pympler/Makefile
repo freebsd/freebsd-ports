@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Measure, monitor and analyze the memory behavior of Python objects
+WWW=		https://github.com/pympler/pympler
 
 LICENSE=	APACHE20
 

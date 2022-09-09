@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	View and validate restructured text in package's long_description
+WWW=		https://github.com/collective/collective.checkdocs
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	URL normalization for Python
+WWW=		https://github.com/niksite/url-normalize
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

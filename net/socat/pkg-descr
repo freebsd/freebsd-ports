@@ -9,5 +9,3 @@ socksifier, for attacking weak firewalls, as a shell interface to UNIX
 sockets, IP6 relay, for redirecting TCP oriented programs like brutus to a
 serial line, or to establish a relatively secure environment (su and chroot)
 for running client or server shell scripts with network connections.
-
-WWW: http://www.dest-unreach.org/socat/

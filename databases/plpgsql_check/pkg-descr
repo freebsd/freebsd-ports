@@ -14,5 +14,3 @@ Features:
   unused indexes
 - possibility to collect relations and functions used by function
 - possibility to check EXECUTE stmt agaist SQL injection vulnerability
-
-WWW: https://github.com/okbob/plpgsql_check

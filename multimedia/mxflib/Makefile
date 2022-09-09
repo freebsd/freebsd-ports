@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	C++ library for MXF file I/O
+WWW=		http://www.freemxf.org/
 
 GNU_CONFIGURE=	yes
 

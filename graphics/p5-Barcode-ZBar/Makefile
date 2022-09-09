@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to ZBar barcode reader
+WWW=		https://metacpan.org/release/Barcode-ZBar
 
 LIB_DEPENDS=	libzbar.so:graphics/zbar
 

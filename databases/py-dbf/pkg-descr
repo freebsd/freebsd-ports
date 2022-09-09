@@ -5,5 +5,3 @@ Currently supports dBase III, and FoxPro - Visual FoxPro 6 tables.
 Text is returned as unicode, and codepage settings in tables are
 honored. Documentation needs work, but author is very responsive
 to e-mails.
-
-WWW: https://pypi.org/project/dbf/

@@ -7,5 +7,3 @@ terminal"; simply that the mode of operation is that the user types a textual
 representation of some action, and the program parses this text in order to
 perform it. This could equally apply to a command input text area in a GUI
 program.
-
-WWW: https://metacpan.org/release/Commandable

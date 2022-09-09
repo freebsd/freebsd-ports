@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create an Excel Spreadsheet from XML
+WWW=		https://metacpan.org/release/Spreadsheet-WriteExcel-FromXML
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-OLE-Storage_Lite>=0:devel/p5-OLE-Storage_Lite \

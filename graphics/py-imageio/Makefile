@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.20.0
+PORTVERSION=	2.21.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for reading and writing image, video formats
+WWW=		https://github.com/imageio/imageio
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

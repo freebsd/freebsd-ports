@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for FastAGI handling
+WWW=		https://metacpan.org/release/Asterisk-FastAGI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

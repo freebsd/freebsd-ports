@@ -4,5 +4,3 @@ header and claims body.  Unlike any that I've found, however, jwt-cli
 allows you to encode a new JWT with nearly any piece of data you can
 think of.  Custom header values (some), custom claim bodies (as long
 as it's JSON, it's game), and using any secret you need.
-
-WWW: https://github.com/mike-engel/jwt-cli

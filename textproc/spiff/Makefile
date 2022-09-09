@@ -1,11 +1,12 @@
 PORTNAME=	spiff
 PORTVERSION=	1.0.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Declarative YAML templating system tuned for BOSH deployment manifests
+WWW=		https://github.com/cloudfoundry-incubator/spiff
 
 USES=		go
 

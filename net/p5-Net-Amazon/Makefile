@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for accessing amazon.com via SOAP and XML/HTTP
+WWW=		https://metacpan.org/release/Net-Amazon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

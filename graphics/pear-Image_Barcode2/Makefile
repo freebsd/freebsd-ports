@@ -4,6 +4,7 @@ CATEGORIES=	graphics www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for barcode generation
+WWW=		https://pear.php.net/package/Image_Barcode2
 
 USE_PHP=	gd
 USES=		pear php

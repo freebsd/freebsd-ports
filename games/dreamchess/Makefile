@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	OpenGL chess game
+WWW=		https://www.dreamchess.org
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	dovecot-
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	Dovecot FTS plugin based on Xapian
+WWW=		https://github.com/slusarz/dovecot-fts-flatcurve
 
 LICENSE=	LGPL21
 

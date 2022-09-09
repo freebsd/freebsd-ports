@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	dz@426.ch
 COMMENT=	Schedules periodic jobs on systems that are not permanently up
+WWW=		https://sourceforge.net/projects/anacron/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

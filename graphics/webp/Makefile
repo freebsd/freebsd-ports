@@ -1,5 +1,5 @@
 PORTNAME=	webp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/ \
 		https://storage.googleapis.com/downloads.webmproject.org/releases/webp/
@@ -7,6 +7,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google WebP image format conversion tool
+WWW=		https://developers.google.com/speed/webp/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -38,8 +39,5 @@ X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes
 X11_USE=		GL=glut
 X11_USES=		gl
-
-post-patch:
-	@${REINPLACE_CMD} '/build_vwebp=yes/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

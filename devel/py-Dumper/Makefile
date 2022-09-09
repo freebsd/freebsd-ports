@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Conveniently print any Python data structure
+WWW=		https://pypi.org/project/Dumper/
 
 LICENSE=	PSFL
 

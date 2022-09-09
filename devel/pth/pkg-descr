@@ -16,5 +16,3 @@ The event facility allows threads to wait until various types of events
 occur, including pending I/O on file descriptors, asynchronous signals,
 elapsed timers, pending I/O on message ports, thread and process
 termination, and even customized callback functions.
-
-WWW: http://www.gnu.org/software/pth/

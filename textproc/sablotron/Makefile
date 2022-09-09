@@ -7,6 +7,7 @@ DISTNAME=	Sablot-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
+WWW=		https://sourceforge.net/projects/sablotron/
 
 LICENSE=	MPL11 GPLv2+
 LICENSE_COMB=	dual

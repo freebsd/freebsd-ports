@@ -10,5 +10,3 @@ shape.
 It can load and save diagrams to a custom XML format (gzipped by default, to
 save space), can export diagrams to EPS or SVG formats and can print diagrams
 (including ones that span multiple pages).
-
-WWW: https://live.gnome.org/Dia

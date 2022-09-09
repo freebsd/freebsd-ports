@@ -2,5 +2,3 @@ XMLRPC::Lite is a collection of Perl modules which provides a simple interface
 to the XML-RPC Protocol (XML-RPC) both on client and server side.  Based on
 SOAP::Lite module, it gives you access to all features and transports
 available in that module.
-
-WWW: https://metacpan.org/release/XMLRPC-Lite

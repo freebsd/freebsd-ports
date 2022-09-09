@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Maps Ruby objects to documents and back
+WWW=		https://github.com/trailblazer/representable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	notebook_shim-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Shim layer for notebook traits and config
+WWW=		https://github.com/jupyter/notebook_shim
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

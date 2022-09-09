@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
 COMMENT=	Web Service Discovery (WSD) host daemon for Samba
+WWW=		https://github.com/christgau/wsdd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

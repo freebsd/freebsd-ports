@@ -6,6 +6,7 @@ MASTER_SITES=	http://files.etoilebsd.net/cplanet/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	RSS Feed Aggregator that generates static HTML
+WWW=		https://fossil.etoilebsd.net/cplanet/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

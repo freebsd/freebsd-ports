@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.staff.science.uu.nl/~penni101/mirmon/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
+WWW=		http://www.cs.uu.nl/people/henkp/mirmon/
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

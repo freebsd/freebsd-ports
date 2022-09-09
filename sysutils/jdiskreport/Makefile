@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.jGoodies.com/download/${PORTNAME}/
 
 MAINTAINER=	jon@witchspace.com
 COMMENT=	Java program to graphically display disk usage statistics
+WWW=		http://www.jgoodies.com/freeware/jdiskreport/
 
 USES=		zip
 USE_JAVA=	YES

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Porters stemming algorithm for Denmark
+WWW=		https://metacpan.org/release/Lingua-Stem-Snowball-Da
 
 LICENSE=	GPLv2
 

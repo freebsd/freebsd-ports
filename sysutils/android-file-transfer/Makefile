@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Android MTP client with minimalistic UI
+WWW=		https://github.com/whoozle/android-file-transfer-linux
 
 LICENSE=	GPLv3+
 

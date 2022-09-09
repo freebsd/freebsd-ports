@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ACES Container Reference Implementation
+WWW=		https://github.com/ampas/aces_container
 
 LICENSE=	AMPAS
 LICENSE_NAME=	AMPAS

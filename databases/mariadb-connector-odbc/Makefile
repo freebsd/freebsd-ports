@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-src
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	MariaDB database connector for odbc
+WWW=		https://mariadb.com/kb/en/mariadb/mariadb-connector-odbc/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

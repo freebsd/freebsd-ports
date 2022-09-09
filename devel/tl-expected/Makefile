@@ -5,6 +5,7 @@ CATEGORIES=		devel
 
 MAINTAINER=		henry.hu.sh@gmail.com
 COMMENT=		C++11/14/17 std::expected with functional-style extensions
+WWW=		https://github.com/TartanLlama/expected
 
 LICENSE=		PD
 LICENSE_FILE=		${WRKSRC}/COPYING

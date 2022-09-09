@@ -5,5 +5,3 @@ classes and attributes and PCDATA as properties of those classes.  It
 then uses an object-relational mapping to map these objects to the
 database.  An XML-based mapping language is used to define the view and
 map it to the database.
-
-WWW: http://www.rpbourret.com/xmldbms/index.htm

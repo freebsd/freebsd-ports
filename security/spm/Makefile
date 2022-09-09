@@ -6,6 +6,7 @@ DISTNAME=	f920ab3f68
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Simple password manager
+WWW=		https://notabug.org/kl3/spm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

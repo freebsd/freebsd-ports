@@ -3,5 +3,4 @@ a given DBI connection (and DBD::* driver).
 
 It currently supports the following drivers: MySQL, PostgreSQL (Pg).
 
-WWW: https://metacpan.org/release/DateTime-Format-DBI
-WWW: http://datetime.perl.org/
+See also: http://datetime.perl.org/

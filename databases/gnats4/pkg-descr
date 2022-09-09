@@ -4,5 +4,3 @@ with users through various means, including e-mail, Web and a network
 daemon.  GNATS stores all the information about problem reports in its
 databases, consisting of plain text files and it provides tools for
 querying, editing and maintaining these databases.
-
-WWW: http://www.gnu.org/software/gnats/

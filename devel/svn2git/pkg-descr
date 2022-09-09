@@ -2,5 +2,3 @@
 
 The svn to git converter as used by KDE.  For practical examples on writing
 rules for conversion, see: http://gitorious.org/svn2git/kde-ruleset
-
-WWW: http://gitorious.org/svn2git/svn2git

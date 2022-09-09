@@ -5,6 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 plasma desktop
+WWW=		https://www.kde.org/plasma-desktop
 
 # TODO: update packagekit-qt5
 #LIB_DEPENDS=    libpackagekit-qt.so:ports-mgmt/packagekit-qt5

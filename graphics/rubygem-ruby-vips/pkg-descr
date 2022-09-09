@@ -6,5 +6,3 @@ the end of the pipe is connected to a destination, the whole pipeline executes
 at once, streaming the image in parallel from source to destination a section at
 a time. Because ruby-vips is parallel, it's quick, and because it doesn't need
 to keep entire images in memory, it's light.
-
-WWW: https://github.com/libvips/ruby-vips

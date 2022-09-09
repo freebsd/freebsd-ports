@@ -11,6 +11,7 @@ DIST_SUBDIR=	mingw
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
+WWW=		http://mingw.sourceforge.net
 
 CONFLICTS=	mingw-bin-msvcrt
 

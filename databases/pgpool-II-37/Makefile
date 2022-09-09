@@ -1,11 +1,12 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	3.7.24
+PORTVERSION=	3.7.25
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	37
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
+WWW=		https://pgpool.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

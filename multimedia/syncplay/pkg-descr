@@ -5,5 +5,3 @@ room on that server. Pauses, unpauses and seeks made within that
 media player instance are relayed to fellow viewers via the server
 to allow for these actions to be replicated by the media players
 of everyone else in the same virtual room.
-
-WWW: https://syncplay.pl/

@@ -5,5 +5,3 @@ event-based application. Unlike other event libraries, libpeak might process
 events in parallel on Symmetric Multi-processing (SMP) systems. Its high
 performance is particularly adapted for networking applications that need to
 process lots of data on lots of connections.
-
-WWW: http://peak.sourceforge.net/

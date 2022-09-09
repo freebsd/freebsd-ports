@@ -1,5 +1,3 @@
 This module implements the Brew edit distance that is very close to
 the dynamic programming technique used for the Wagner-Fischer (and so
 for the Levenshtein) edit distance.
-
-WWW: https://metacpan.org/release/Text-Brew

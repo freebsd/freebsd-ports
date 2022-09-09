@@ -13,5 +13,3 @@ add the packet compression support to pure Java SSH system, but
 they are useless for our requirements. The Internet draft SSH
 Transport Layer Protocol says in the section '4.2 Compression' as
 follows,
-
-WWW: http://www.jcraft.com/jzlib/

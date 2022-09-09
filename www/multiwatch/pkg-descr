@@ -3,5 +3,3 @@ running; it is made to be used with spawn-fcgi, so all forks share the same
 fastcgi socket (no webserver restart needed if you increase/decrease the
 number of forks), and it is easier than to setup multiple daemontool
 supervised instances.
-
-WWW: http://redmine.lighttpd.net/projects/multiwatch/wiki

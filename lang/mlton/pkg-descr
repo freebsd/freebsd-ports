@@ -3,5 +3,3 @@ Compiler.  MLton runs on a variety of platforms, generates excellent
 code, has a fast C FFI, profiling, and many useful libraries,
 including an interface to the GNU multiprecision library.  For more
 information, go to the MLton home page.
-
-WWW: http://mlton.org/

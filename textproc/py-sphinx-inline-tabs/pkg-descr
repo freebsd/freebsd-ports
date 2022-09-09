@@ -7,5 +7,3 @@ Features:
 - Synchronisation: Tabs with the same label all switch with a single click.
 - Works without JavaScript: JavaScript is not required for the basics, only for
   synchronisation.
-
-WWW: https://github.com/pradyunsg/sphinx-inline-tabs

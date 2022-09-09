@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework to provide start/stop/reload for a daemon
+WWW=		https://metacpan.org/release/Daemon-Generic
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Flock>=0:devel/p5-File-Flock \

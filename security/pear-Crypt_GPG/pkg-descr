@@ -3,5 +3,3 @@ It requires the GnuPG executable to be on the system.
 
 Though GnuPG can support symmetric-key cryptography, this package is intended
 only to facilitate public-key cryptography.
-
-WWW: https://pear.php.net/package/Crypt_GPG

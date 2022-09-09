@@ -5,5 +5,3 @@ your opponent, you lose. Many poker variants are supported (draw,
 holdem, omaha, etc.) and more can be added.  poker-eval is designed
 for speed so that it can be used within poker simulation software
 using either exhaustive exploration or Monte Carlo.
-
-WWW: http://www.pokersource.info/wiki/poker-eval

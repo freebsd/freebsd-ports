@@ -6,5 +6,3 @@ data archiving.  Lzip is a clean implementation of the LZMA algorithm.
 The lzip file format is designed for long-term data archiving.  It is
 clean, provides very safe four factor integrity checking, and is backed
 by the recovery capabilities of lziprecover.
-
-WWW: http://www.nongnu.org/lzip/

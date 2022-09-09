@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	meyser@xenet.de
 COMMENT=	WebDav, CalDav and Carddav Server/Framework written in PHP
+WWW=		https://sabre.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

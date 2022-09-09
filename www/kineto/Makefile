@@ -1,10 +1,11 @@
 PORTNAME=	kineto
 DISTVERSION=	g20211104
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	corey@electrickite.org
 COMMENT=	HTTP to Gemini proxy
+WWW=		https://git.sr.ht/~sircmpwn/kineto/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

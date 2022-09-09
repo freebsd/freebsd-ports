@@ -9,5 +9,3 @@ document:
   an optional bloc of text (a SVN::Dump::Text object).
 * Some special records (delete records with a Node-kind header)
   recursively contain included records.
-
-WWW: https://metacpan.org/release/SVN-Dump

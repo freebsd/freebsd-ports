@@ -9,5 +9,3 @@ The module provides a JavaScript library for seamless integration of C++ and
 QML applications with HTML/JavaScript and QML clients. The clients must use the
 JavaScript library to access the serialized QObjects published by the host
 applications.
-
-WWW: https://qt.io

@@ -7,5 +7,3 @@ zoneinfo module. The backport's documentation can be found on readthedocs.
 
 The module uses the system time zone data if available, and falls back
 to the tzdata package (available on PyPI) if installed.
-
-WWW: https://github.com/pganssle/zoneinfo

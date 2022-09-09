@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Project Environment determination
+WWW=		https://metacpan.org/release/Dir-Project
 
 LICENSE=	LGPL3 ART20
 LICENSE_COMB=	dual

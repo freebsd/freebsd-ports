@@ -6,5 +6,3 @@ uses YAJL JSON parsing library, so it's also quite fast.
 JsonSlicer takes a path of JSON map keys or array indexes, and
 provides iterator interface which yields JSON data matching given
 path as complete Python objects.
-
-WWW: https://pypi.org/project/jsonslicer/

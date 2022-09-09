@@ -4,5 +4,3 @@ currtime is an enhanced command-line operated real time clock. Features include:
  * Shows the current time on the same line
  * Can run for a specified number of ticks (seconds) with the -T (ticks) flag
  * Option to display each tick on a new line with the -n flag
-
-WWW: https://github.com/neelchauhan/currtime

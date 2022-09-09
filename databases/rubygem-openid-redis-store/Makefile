@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Redis store for OpenID
+WWW=		https://github.com/dekart/openid-redis-store
 
 RUN_DEPENDS=	rubygem-redis>=0:databases/rubygem-redis \
 		rubygem-ruby-openid>=0:net/rubygem-ruby-openid

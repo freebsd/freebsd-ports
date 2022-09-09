@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	varnish-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Varnish Module (vmod) to query MaxMind GeoIP2 DB files
+WWW=		https://github.com/fgsch/libvmod-geoip2
 
 LICENSE=	BSD2CLAUSE
 

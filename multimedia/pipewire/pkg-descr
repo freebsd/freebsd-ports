@@ -4,5 +4,3 @@ includes:
   application provided streams) and multiplexing this with clients.
 - Accessing sources of video for consumption.
 - Generating graphs for audio and video processing.
-
-WWW: https://pipewire.org/

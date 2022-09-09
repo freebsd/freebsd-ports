@@ -12,5 +12,3 @@ While mike is flexible, it's optimized around putting your docs in a
 <major>.<minor> directory, with optional aliases (e.g. latest or dev) to
 particularly notable versions. This makes it easy to make permalinks to whatever
 version of the documentation you want to direct people to.
-
-WWW: https://github.com/jimporter/mike

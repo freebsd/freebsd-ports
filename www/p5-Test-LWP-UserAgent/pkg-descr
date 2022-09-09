@@ -5,5 +5,3 @@ concerned with actually sending your request over the network,
 allowing an interception of that request and simulating a particular
 response. This greatly facilitates testing of client networking
 code where the server follows a known protocol.
-
-WWW: https://metacpan.org/release/Test-LWP-UserAgent

@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	U2F webauthn app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/twofactor_webauthn
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

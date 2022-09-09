@@ -5,6 +5,7 @@ MASTER_SITES=	http://devel.ringlet.net/files/sys/rname/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute a program with a fake name
+WWW=		https://devel.ringlet.net/sysutils/rname/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

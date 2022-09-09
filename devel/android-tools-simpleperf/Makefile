@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Android simpleperf tool
+WWW=		https://developer.android.com/ndk/guides/simpleperf
 
 LICENSE=	APACHE20
 

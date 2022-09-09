@@ -11,5 +11,3 @@ information.
 There are two classes to use for templating. HTML_Template_IT is used for basic
 templating needs. HTML_Template_ITX gives you full power over the templating
 engine, allowing blocks to be added, and function callbacks to be used.
-
-WWW: https://pear.php.net/package/HTML_Template_IT

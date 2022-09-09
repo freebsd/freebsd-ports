@@ -1,3 +1,1 @@
 A Python implementation of RFC 3986 including validation and authority parsing.
-
-WWW: https://github.com/python-hyper/rfc3986

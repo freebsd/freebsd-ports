@@ -1,11 +1,12 @@
 PORTNAME=	openmvs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Multi-View Stereo reconstruction library
+WWW=		https://github.com/cdcseacave/openMVS
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

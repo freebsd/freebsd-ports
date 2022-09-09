@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Fuji Xerox Printer Driver
+WWW=		https://www.fujixerox.co.jp/download/apeosport/download/c4300series/linux_module.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

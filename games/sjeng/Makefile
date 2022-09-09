@@ -7,6 +7,7 @@ DISTNAME=	Sjeng-Free-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess engine supporting chess variations
+WWW=		https://sjeng.org/indexold.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,5 +4,3 @@ to load balance lots of function calls, or to call functions between
 languages.
 
 This is the Perl client component.
-
-WWW: http://www.danga.com/gearman/

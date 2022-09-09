@@ -1,11 +1,12 @@
 PORTNAME=	container-diff
 PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Diff your Docker containers
+WWW=		https://github.com/GoogleContainerTools/container-diff
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

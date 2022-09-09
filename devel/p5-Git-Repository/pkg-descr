@@ -7,5 +7,3 @@ A Git::Repository object simply provides context to the git commands
 being run. Is it possible to call the command()and run() methods against
 the class itself, and the context (typically current working directory)
 will be obtained from the options and environment.
-
-WWW: https://metacpan.org/release/Git-Repository

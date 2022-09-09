@@ -1,4 +1,2 @@
 Improve the rendering of HTML emails by making CSS inline,
 converting links and warning about unsupported code.
-
-WWW: https://github.com/premailer/premailer

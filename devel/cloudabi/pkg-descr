@@ -7,5 +7,3 @@ allowed to perform.
 This port installs a set of header files that contain the definitions
 that describe the ABI itself: all of the constants, types, structures
 and system calls.
-
-WWW: https://github.com/NuxiNL/cloudabi

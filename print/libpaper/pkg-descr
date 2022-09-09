@@ -15,5 +15,3 @@ See the sources for paperconf(1) in src/paper.c for how to use the library.
 
 Copyright (C) Yves Arrouye <yves@debian.org>, 1996
               Adrian Bunk  <bunk@fs.tum.de> , 2000
-
-WWW: http://packages.qa.debian.org/libp/libpaper.html

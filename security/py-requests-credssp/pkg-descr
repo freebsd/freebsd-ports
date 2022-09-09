@@ -1,3 +1,1 @@
 An authentication handler for using CredSSP with Python Requests.
-
-WWW: https://github.com/jborean93/requests-credssp

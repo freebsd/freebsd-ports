@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Tool to make packet captures containing the content of specified file
+WWW=		https://github.com/Cisco-Talos/file2pcap
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

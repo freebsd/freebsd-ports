@@ -6,6 +6,7 @@ DISTNAME=	scala3-${DISTVERSION}
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Scala Programming Language
+WWW=		https://www.scala-lang.org/
 
 LICENSE=	APACHE20
 

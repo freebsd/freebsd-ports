@@ -1,3 +1,1 @@
 Add i18n/l10n support to Flask applications with the help of the Babel library.
-
-WWW: https://pypi.org/project/Flask-Babel/

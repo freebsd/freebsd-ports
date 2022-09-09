@@ -7,6 +7,7 @@ PATCHFILES=	f1a415ebe08c01ccf317.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable version of the original C&C engine
+WWW=		https://github.com/TheAssemblyArmada/Vanilla-Conquer
 
 LICENSE=	GPLv3+
 

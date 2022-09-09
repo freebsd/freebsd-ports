@@ -12,6 +12,7 @@ PATCHFILES+=		emacs28.1-canna-20220406b.diff.gz:-p1:canna
 
 MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros ${COMMENT_${FLAVOR}}
+WWW=		https://www.gnu.org/software/emacs/
 COMMENT_nox=	(No X flavor)
 COMMENT_canna=	(Canna Japanese input flavor)
 

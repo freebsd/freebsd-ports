@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Help validate forms with the CGI::Application framework
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-ValidateRM
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-FillInForm>=0:www/p5-HTML-FillInForm \

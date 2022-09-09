@@ -4,14 +4,14 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Keybinding viewer for i3 and other programs
+WWW=		https://github.com/regolith-linux/remontoire
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		gettext-tools gnome meson pkgconfig python:build shebangfix
+USES=		gettext-tools gnome meson pkgconfig python:build shebangfix vala:build
 USE_GITHUB=	yes
 USE_GNOME=	gtk30
 GH_ACCOUNT=	regolith-linux

@@ -10,5 +10,3 @@ Features:
 - Allows supplying regexp-patterns to ignore and filter paths for better
   results.
 - Tested on all Ruby environments via travis-ci.
-
-WWW: https://github.com/guard/listen

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Porter stemming algorithm for Russian (KOI8-R only)
+WWW=		https://metacpan.org/release/Lingua-Stem-Ru
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

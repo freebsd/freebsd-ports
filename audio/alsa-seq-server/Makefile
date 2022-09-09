@@ -1,10 +1,11 @@
 PORTNAME=	alsa-seq-server
 DISTVERSIONPREFIX=	v
-PORTVERSION=		1.0.8
+PORTVERSION=		1.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	ALSA MIDI sequencer server
+WWW=		https://github.com/hselasky/alsa-seq-server
 
 LICENSE=	BSD2CLAUSE
 

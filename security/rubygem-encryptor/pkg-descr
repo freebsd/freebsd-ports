@@ -1,4 +1,2 @@
 A simple wrapper for the standard ruby OpenSSL library to encrypt
 and decrypt strings
-
-WWW: https://github.com/attr-encrypted/encryptor

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of portable public domain utilities for Common Lisp
+WWW=		https://common-lisp.net/project/alexandria/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENCE

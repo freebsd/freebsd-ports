@@ -15,5 +15,3 @@ Features:
 * No caching/etag
 * Supports GET/POST forms and IFrames
 * Optional HMAC URL verifier key to prevent service abuse
-
-WWW: https://github.com/asciimoo/morty

@@ -3,5 +3,3 @@ for large-scale nonlinear optimization.
 
 cyipopt is a python wrapper around Ipopt. It enables using Ipopt from the
 comfort of the great Python scripting language.
-
-WWW: https://github.com/matthias-k/cyipopt

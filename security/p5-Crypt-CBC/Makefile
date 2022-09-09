@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to Cipher Block Chaining with DES and IDEA
+WWW=		https://metacpan.org/release/Crypt-CBC
 
 LICENSE=	ART10
 

@@ -13,5 +13,3 @@ With a notable exception, the test suite covers way over ninety percent of
 the code. The remaining holes are mostly difficult-to-test corner cases
 and sanity tests. The comparison routines are the exception for which
 there will be more extensive tests in a future release.
-
-WWW: https://metacpan.org/release/Number-WithError

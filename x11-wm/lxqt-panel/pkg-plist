@@ -66,6 +66,7 @@ share/desktop-directories/lxqt-settings.directory
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_id.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_it.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_ja.qm
+%%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_ko.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_lt.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_lv.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_nb_NO.qm

@@ -1,5 +1,3 @@
 tcpproxy is a simple TCP connection proxy which combines the features of
 rinetd and 6tunnel. tcpproxy supports IPv4 and IPv6 and also supports
 connections from IPv6 to IPv4 endpoints and vice versa.
-
-WWW: http://www.spreadspace.org/tcpproxy/

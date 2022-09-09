@@ -9,5 +9,3 @@ readability matters, or when you need to assemble the match conditions
 at run time.
 
 URI::Match adds the following methods to the URI namespace.
-
-WWW: https://metacpan.org/release/URI-Match

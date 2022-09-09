@@ -6,6 +6,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Stress test benchmarks
+WWW=		http://kernel.ubuntu.com/~cking/stress-ng/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

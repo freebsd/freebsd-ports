@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/linuxwacom/${PORTNAME}/releases/download/${DIST
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org legacy Wacom tablet driver
+WWW=		https://linuxwacom.github.io/
 
 LICENSE=	GPLv2+
 

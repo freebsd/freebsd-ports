@@ -1,5 +1,3 @@
 POE::Component::Hailo is a POE component that provides a non-blocking wrapper
 around Hailo. It accepts the events listed under "INPUT" and emits the events
 listed under "OUTPUT".
-
-WWW: https://metacpan.org/release/POE-Component-Hailo

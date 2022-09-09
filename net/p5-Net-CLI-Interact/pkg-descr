@@ -4,5 +4,3 @@ interface to CLI interactions, supporting:
 - SSH, Telnet and Serial-Line connections
 - Unix and Windows support
 - Reuseable device command phrasebooks
-
-WWW: https://metacpan.org/release/Net-CLI-Interact

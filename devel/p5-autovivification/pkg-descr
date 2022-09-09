@@ -8,5 +8,3 @@ last, or when it happens in intuitively read-only constructs like exists.
 
 This pragma lets you disable autovivification for some constructs and optionally
 throws a warning or an error when it would have happened.
-
-WWW: https://metacpan.org/release/autovivification

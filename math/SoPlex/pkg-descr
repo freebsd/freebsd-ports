@@ -14,5 +14,3 @@ programs via a C++ class library. The main features of SoPlex are:
 * an LP iterative refinement procedure to compute high-precision solution
 * routines for an exact rational LU factorization and continued fraction
   approximations in order to compute exact solutions.
-
-WWW: http://soplex.zib.de

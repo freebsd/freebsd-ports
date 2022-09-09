@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Programming environment for images, animation, and interactions
+WWW=		https://processing.org/
 
 LICENSE=	GPLv2
 

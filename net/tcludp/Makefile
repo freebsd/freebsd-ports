@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	frank@fenor.de
 COMMENT=	UDP extension for TCL
+WWW=		http://tcludp.sourceforge.net/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

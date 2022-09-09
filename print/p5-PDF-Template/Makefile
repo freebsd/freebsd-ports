@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	PDF layout system that uses the same data structures as HTML::Template
+WWW=		https://metacpan.org/release/PDF-Template
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	pdflib-perl>=0:print/pdflib-perl \

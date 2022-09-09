@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lxde/lxmenu-data%20%28desktop%20menu%29/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu data used by lxpanel
+WWW=		https://lxde.org/
 
 LICENSE=	LGPL21
 

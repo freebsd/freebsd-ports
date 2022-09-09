@@ -10,5 +10,3 @@ is O(M2N), where M is the length of the regular expression and N is the length
 of the text. The used space is also quadratic on the length of the regex, but
 does not depend on the searched string. This quadratic behaviour occurs only
 on pathological cases which are probably very rare in practice.
-
-WWW: https://laurikari.net/tre/

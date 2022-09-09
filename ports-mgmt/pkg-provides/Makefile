@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Pkg plugin for querying which package provides a particular file
+WWW=		https://github.com/rosorio/pkg-provides
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE
 LICENSE_COMB=	multi

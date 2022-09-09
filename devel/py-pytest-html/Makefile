@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Pytest plugin for generating html reports
+WWW=		https://github.com/pytest-dev/pytest-html
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

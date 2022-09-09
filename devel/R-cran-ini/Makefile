@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Read and Write '.ini' Files
+WWW=		https://github.com/dvdscripter/ini
 
 LICENSE=	GPLv3
 

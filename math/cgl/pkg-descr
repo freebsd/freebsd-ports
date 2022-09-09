@@ -1,5 +1,3 @@
 Collection of cut generators that can be used with other COIN-OR packages
 that make use of cuts, such as, among others, the linear solver Clp or the
 mixed integer linear programming solvers Cbc or BCP.
-
-WWW: https://github.com/coin-or/Cgl

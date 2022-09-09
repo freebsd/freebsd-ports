@@ -7,6 +7,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	brg@dgate.org
 COMMENT=	MIPS R3000 simulator
+WWW=		http://www.dgate.org/vmips/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Creates new Net::LDAP::Entry objects for a posixAccount entry
+WWW=		https://metacpan.org/release/Net-LDAP-posixAccount
 
 RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Sys-User-UIDhelper>=0:sysutils/p5-Sys-User-UIDhelper \

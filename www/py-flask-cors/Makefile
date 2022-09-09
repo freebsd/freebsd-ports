@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stiginge@pvv.org
 COMMENT=	Flask extension adding a decorator for CORS support
+WWW=		https://github.com/corydolphin/flask-cors
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

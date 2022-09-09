@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library of advanced math functions that includes a Perl OO module
+WWW=		https://metacpan.org/release/Bit-Vector
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

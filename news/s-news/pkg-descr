@@ -15,5 +15,3 @@ It expires articles by how long they have been in the spool.
 It has NNTP access configuration to allow and deny read, post and transfer
 access to remote hosts.
 It is very light weight and relatively easy to configure.
-
-WWW: http://www.lost.org.uk/snews.html

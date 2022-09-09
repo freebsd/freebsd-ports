@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Robust high performance CORBA ORB for C++ and Python
+WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
 

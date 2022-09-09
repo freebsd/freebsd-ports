@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Small RSpec clone
+WWW=		https://github.com/leahneukirchen/bacon
 
 LICENSE=	MIT
 

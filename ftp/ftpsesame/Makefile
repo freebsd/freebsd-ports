@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.sentia.org/downloads/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper for pf firewall to pass FTP protocol
+WWW=		https://www.sentia.org/projects/ftpsesame/
 
 LICENSE=	ISCL
 

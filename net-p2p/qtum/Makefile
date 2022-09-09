@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p finance
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PoS cryptocurrency that can execute smart contract as part of an UTXO
+WWW=		https://qtum.org/
 
 LICENSE=	GPLv3
 

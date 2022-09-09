@@ -6,6 +6,7 @@ DISTNAME=	Eterm-bg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image files for background of Eterm
+WWW=		http://www.eterm.org/
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

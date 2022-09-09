@@ -18,5 +18,3 @@ reduced time and space complexity. BMC Bioinformatics 5(1): 113.
 The NAR paper gives only a brief overview of the algorithm and
 implementation details. For a full discussion of the method and many of
 the non-default options that it offers, please see the BMC paper.
-
-WWW: http://www.drive5.com/muscle/

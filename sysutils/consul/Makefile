@@ -1,11 +1,13 @@
 PORTNAME=	consul
 PORTVERSION=	1.12.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
 # co-maintainer: brd
 COMMENT=	Service discovery and configuration made easy
+WWW=		https://www.consul.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

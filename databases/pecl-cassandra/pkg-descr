@@ -3,5 +3,3 @@ library for Apache Cassandra and DataStax Enterprise.
 
 Using exclusively Cassandra's binary protocol and
 Cassandra Query Language v3.
-
-WWW: https://pecl.php.net/package/cassandra

@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
+WWW=		https://cr.yp.to/daemontools.html
 
 LICENSE=	PD
 

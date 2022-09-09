@@ -6,5 +6,3 @@ variables.
 Particularly helpful in conjunction with mod_perl applications where
 some or all application logic resides in separate Perl modules that
 would otherwise not get reloaded until the server restarts.
-
-WWW: https://metacpan.org/release/Module-Reload-Sel

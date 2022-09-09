@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	The Yahoo! JavaScript and CSS Compressor
+WWW=		https://yui.github.io/yuicompressor/
 
 LICENSE=	BSD3CLAUSE MPL20
 LICENSE_COMB=	multi

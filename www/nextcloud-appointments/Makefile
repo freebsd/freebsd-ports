@@ -10,6 +10,7 @@ DIST_SUBDIR=	nextcloud/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Appointments app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/appointments
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

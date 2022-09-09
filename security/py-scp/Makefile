@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Scp module for paramiko
+WWW=		https://github.com/jbardin/scp.py
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -5,5 +5,3 @@ Set of modules:
 * Pod::Text - convert POD data to formatted ASCII text
 * Pod::Text::Color - convert POD data to formatted color ASCII text
 * Pod::Text::Overstrike - convert POD data to formatted overstrike text
-
-WWW: https://metacpan.org/release/podlators

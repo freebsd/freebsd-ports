@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugins based on Mutable Instrument's Clouds
+WWW=		https://github.com/polyeffects/lenticular_lv2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

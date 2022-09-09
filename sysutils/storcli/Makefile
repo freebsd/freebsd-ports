@@ -6,6 +6,7 @@ DISTNAME=	007.1211.0000.0000_Unified_StorCLI
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
+WWW=		https://broadcom.com/support/storage/
 
 LICENSE=	storcli
 LICENSE_NAME=	BROADCOM

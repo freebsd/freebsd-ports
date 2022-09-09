@@ -6,6 +6,7 @@ MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Convert CVS module to darcs repository
+WWW=		http://ab-initio.mit.edu/cvs2darcs/
 
 LICENSE=	GPLv2
 

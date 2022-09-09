@@ -1,4 +1,2 @@
 This module provides tracking of objects, for the purpose of detecting
 memory leaks due to circular references or innappropriate caching schemes.
-
-WWW: https://metacpan.org/release/Devel-LeakGuard-Object

@@ -6,6 +6,7 @@ EXTRACT_ONLY=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command-line interface for Cabal and Hackage
+WWW=		https://www.haskell.org/cabal/
 
 LICENSE=	BSD3CLAUSE
 

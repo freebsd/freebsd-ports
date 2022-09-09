@@ -9,5 +9,3 @@ plumbing.
 NNG is implemented in C, requiring only C99 and CMake to build. It can be built
 as a shared or a static library, and is readily embeddable. It is also designed
 to be easy to port to new platforms if your platform is not already supported.
-
-WWW: https://nanomsg.github.io/nng/

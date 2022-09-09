@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a 'smart' list of HTML links
+WWW=		https://metacpan.org/release/HTML-LinkList
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

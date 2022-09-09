@@ -6,6 +6,7 @@ MASTER_SITES=	GNUPG
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Complete and free PGP implementation
+WWW=		https://www.gnupg.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for omega automata manipulation and model checking
+WWW=		https://spot.lrde.epita.fr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

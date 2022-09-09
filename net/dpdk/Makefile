@@ -5,6 +5,7 @@ MASTER_SITES=	http://fast.dpdk.org/rel/
 
 MAINTAINER=	bruce.richardson@intel.com
 COMMENT=	DPDK: Software libraries for packet processing
+WWW=		https://dpdk.org/
 
 LICENSE=	BSD3CLAUSE
 

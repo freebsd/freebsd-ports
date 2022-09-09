@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.antcom.de/gtick/download/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Metronome application
+WWW=		https://www.antcom.de/gtick/
 
 LICENSE=	GPLv3
 

@@ -9,5 +9,3 @@ IOHexperimenter provides:
 - Logging methods to effortlessly store benchmarking data in a format compatible
   with IOHanalyzer, with future support for additional data logging options
 - (Soon to come:) A framework which significantly simplifies algorithm design
-
-WWW: https://github.com/IOHprofiler/IOHexperimenter

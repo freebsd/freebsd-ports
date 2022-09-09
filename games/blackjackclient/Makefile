@@ -7,6 +7,7 @@ DISTNAME=	t-blackjack-beta
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Blackjack game in Java
+WWW=		https://sourceforge.net/projects/t-blackjack/
 
 LICENSE=	GPLv2
 

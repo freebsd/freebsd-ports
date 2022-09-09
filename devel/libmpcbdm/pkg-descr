@@ -8,5 +8,3 @@ The package includes example "mpc8xx" program, that displays information
 about connected board using libmpcbdm library.
 
 The schematic of adapter itself can be found at project homepage.
-
-WWW: https://sourceforge.net/projects/libmpc8xx/

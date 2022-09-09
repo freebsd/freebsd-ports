@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Atari Running on Any Machine
+WWW=		https://aranym.github.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Core functionality for a NymphCast client
+WWW=		https://github.com/MayaPosch/libnymphcast
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

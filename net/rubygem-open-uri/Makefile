@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use wrapper for Net::HTTP, Net::HTTPS and Net::FTP
+WWW=		https://github.com/ruby/open-uri
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

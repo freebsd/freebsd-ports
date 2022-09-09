@@ -1,5 +1,3 @@
 Based heavily on Devel::Leak, Devel::LeakTrace uses the pluggable runops
 feature in perl 5.6 and later in order to trace SV allocations of a
 running program.
-
-WWW: https://metacpan.org/release/Devel-LeakTrace

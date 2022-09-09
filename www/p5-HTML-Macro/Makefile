@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process HTML templates with loops, conditionals, macros and more
+WWW=		https://metacpan.org/release/HTML-Macro
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Random password generator
+WWW=		https://metacpan.org/release/String-MkPasswd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

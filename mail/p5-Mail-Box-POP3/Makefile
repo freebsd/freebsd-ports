@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handle POP3 folders as client
+WWW=		https://metacpan.org/release/Mail-Box-POP3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

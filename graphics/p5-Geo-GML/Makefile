@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to Process Geography Markup Language
+WWW=		https://metacpan.org/release/Geo-GML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

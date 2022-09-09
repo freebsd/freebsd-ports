@@ -7,6 +7,7 @@ MASTER_SITES=	https://snort.org/downloads/snortplus/ \
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 2.9+
+WWW=		https://www.snort.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

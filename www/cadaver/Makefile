@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline client for DAV
+WWW=		http://www.webdav.org/cadaver/
 
 LIB_DEPENDS=	libneon.so:www/neon
 

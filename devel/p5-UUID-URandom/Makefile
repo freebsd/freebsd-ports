@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	UUIDs based on /dev/urandom or the Windows Crypto API
+WWW=		https://metacpan.org/release/UUID-URandom
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Collection of tests for RDMA micro-benchmark
+WWW=		https://github.com/linux-rdma/perftest/
 
 LICENSE=	LGPL21 BSD2CLAUSE
 LICENSE_COMB=	dual

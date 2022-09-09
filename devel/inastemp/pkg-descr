@@ -18,5 +18,3 @@ Features:
 * Fast intrinsic exp() function (if not supported natively by the compiler)
 * Explicit branches vectorization several patterns which represent many
   applications are demonstrated
-
-WWW: https://gitlab.mpcdf.mpg.de/bbramas/inastemp

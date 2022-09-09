@@ -1,15 +1,16 @@
 PORTNAME=	plm
-DISTVERSION=	2.6-1
+DISTVERSION=	2.6-2
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Linear Models for Panel Data
+WWW=		https://cran.r-project.org/web/packages/plm/
 
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-bdsmatrix>0:math/R-cran-bdsmatrix \
-		R-cran-collapse>=1.6.0:devel/R-cran-collapse \
+		R-cran-collapse>=1.8.0:devel/R-cran-collapse \
 		R-cran-zoo>0:math/R-cran-zoo \
 		R-cran-sandwich>0:math/R-cran-sandwich \
 		R-cran-lmtest>0:finance/R-cran-lmtest \

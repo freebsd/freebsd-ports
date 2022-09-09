@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Belgian eID middleware
+WWW=		https://github.com/Fedict/eid-mw/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

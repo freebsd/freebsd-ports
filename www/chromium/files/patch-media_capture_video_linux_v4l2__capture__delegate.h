@@ -1,6 +1,6 @@
---- media/capture/video/linux/v4l2_capture_delegate.h.orig	2022-05-19 14:06:27 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.h.orig	2022-08-31 12:19:35 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.h
-@@ -85,10 +85,10 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+@@ -86,10 +86,10 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
    // device file descriptor or (re)starting streaming, can fail but works after
    // retrying (https://crbug.com/670262). Returns false if the |request| ioctl
    // fails too many times.

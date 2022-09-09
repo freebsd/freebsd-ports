@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for generating one time passwords
+WWW=		https://github.com/mdp/rotp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

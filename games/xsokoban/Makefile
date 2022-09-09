@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.cs.cornell.edu/andru/release/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle of pushing objects to the goals
+WWW=		https://www.cs.cornell.edu/andru/xsokoban.html
 
 USES=		imake xorg
 USE_XORG=	xpm

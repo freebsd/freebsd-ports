@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	APL385 Unicode monospaced code font
+WWW=		https://apl385.com/fonts
 
 LICENSE=	PD
 

@@ -9,5 +9,3 @@ For general active spaces up to 40 electrons in 40 orbitals can be handled with
 DMRG, and for one-dimensional active spaces up to 100 electrons in 100 orbitals.
 The 2-RDM of these active spaces can also be easily extracted, while the 3- and
 4-RDM are limited to about 28 orbitals.
-
-WWW: https://github.com/SebWouters/CheMPS2

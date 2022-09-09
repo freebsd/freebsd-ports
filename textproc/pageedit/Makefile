@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	WYSIWYG visual XHTML editor
+WWW=		https://github.com/Sigil-Ebook/PageEdit
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

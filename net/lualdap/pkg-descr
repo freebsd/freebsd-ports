@@ -4,5 +4,3 @@ In fact it is a bind to OpenLDAP or to ADSI. It enables a Lua program to:
 - connect to an LDAP server;
 - execute any operation (search, add, compare, delete, modify and rename);
 - retrieve entries and references of the search result.
-
-WWW: https://github.com/lualdap/lualdap

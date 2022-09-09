@@ -5,12 +5,13 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
+WWW=		https://w1.fi/wpa_supplicant/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	f2bb0839f
-COMMIT_DATE=	2022.07.16
+GH_TAGNAME=	aa75aa1dc
+COMMIT_DATE=	2022.07.26
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README

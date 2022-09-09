@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Non-blocking CouchDB client based on jquery.couch.js
+WWW=		https://metacpan.org/release/AnyEvent-CouchDB
 
 LICENSE=	MIT
 

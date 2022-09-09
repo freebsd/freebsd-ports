@@ -2,5 +2,3 @@ CGI::Compress::Gzip extends the CGI class to auto-detect whether the
 client browser wants compressed output and apply gzip compression on any
 content printed on the default filehandle.  This module is intended to
 be a drop-in replacement for CGI.pm in a typical scripting environment.
-
-WWW: https://metacpan.org/release/CGI-Compress-Gzip

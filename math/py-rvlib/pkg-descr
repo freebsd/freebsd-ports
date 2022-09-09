@@ -10,5 +10,3 @@ exploiting numba.
 This package was inspired by Joshua Adelman's (@synapticarbors) blog post
 describing how to call the Rmath C library from numba using CFFI, and utilizes
 his build script to set up the CFFI interface.
-
-WWW: https://github.com/QuantEcon/rvlib

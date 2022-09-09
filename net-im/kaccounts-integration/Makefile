@@ -4,6 +4,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	System to administer web accounts for the KDE desktop
+WWW=		https://projects.kde.org/projects/kdereview/kaccounts-integration
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libaccounts-qt5.so:net-im/libaccounts-qt5 \

@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Add allelic depth info from a SAM stream to a VCF file
+WWW=		https://github.com/auerlab/ad2vcf
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

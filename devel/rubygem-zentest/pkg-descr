@@ -15,5 +15,3 @@ corresponding dependent tests.
 multiruby runs anything you want on multiple versions of ruby.
 
 Test::Rails helps you build industrial-strength Rails code.
-
-WWW: https://github.com/seattlerb/zentest

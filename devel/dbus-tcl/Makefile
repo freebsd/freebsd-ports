@@ -7,6 +7,7 @@ DISTNAME=	dbus-${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl interface to the D-Bus messaging system
+WWW=		http://chiselapp.com/user/schelte/repository/dbus/home
 
 LICENSE=	ISCL
 

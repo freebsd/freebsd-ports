@@ -9,6 +9,7 @@ PATCHFILES=	081a14557ada1f76f8807e00fccc5d71b9c96313.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Audio codec for lossless, lossy, and hybrid compression
+WWW=		https://www.wavpack.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

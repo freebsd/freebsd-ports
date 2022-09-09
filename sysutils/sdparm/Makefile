@@ -5,6 +5,7 @@ MASTER_SITES=	http://sg.danny.cz/sg/p/
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Utilities to access SCSI device parameters
+WWW=		https://sg.danny.cz/sg/sdparm.html
 
 LICENSE=	BSD3CLAUSE
 

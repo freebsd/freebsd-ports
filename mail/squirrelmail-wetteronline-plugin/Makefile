@@ -5,6 +5,7 @@ CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for the weather in Germany
+WWW=		https://www.squirrelmail.org
 
 USE_SM_COMPAT=	yes
 

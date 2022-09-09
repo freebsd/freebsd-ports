@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python port of the YUI CSS compression algorithm
+WWW=		https://github.com/zacharyvoase/cssmin
 
 LICENSE=	MIT
 

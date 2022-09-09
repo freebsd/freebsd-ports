@@ -6,6 +6,7 @@ DISTNAME=	Foswiki-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Free and open source enterprise wiki
+WWW=		http://www.foswiki.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

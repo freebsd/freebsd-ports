@@ -6,6 +6,7 @@ MASTER_SITES=	http://software.in2p3.fr/bbftp/dist/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure file transfer suite optimized for large files (client)
+WWW=		http://software.in2p3.fr/bbftp/
 
 LICENSE=	GPLv2+
 

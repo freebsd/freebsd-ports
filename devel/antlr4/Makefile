@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
+WWW=		https://www.antlr.org/
 
 LICENSE=	BSD3CLAUSE
 

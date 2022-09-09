@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Product-Limit Estimation for Censored Event History Analysis
+WWW=		https://cran.r-project.org/web/packages/prodlim/
 
 LICENSE=	GPLv2+
 

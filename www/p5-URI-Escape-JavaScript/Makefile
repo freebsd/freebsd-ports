@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	Perl implementation of JavaScript's escape()/unescape() functions
+WWW=		https://metacpan.org/release/URI-Escape-JavaScript
 
 USES=		perl5
 USE_PERL5=	configure

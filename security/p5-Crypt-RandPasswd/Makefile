@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the Automated Password Generator standard
+WWW=		https://metacpan.org/release/Crypt-RandPasswd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

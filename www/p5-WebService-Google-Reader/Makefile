@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Google Reader
+WWW=		https://metacpan.org/release/WebService-Google-Reader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

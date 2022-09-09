@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to HMAC Message-Digest Algorithms
+WWW=		https://metacpan.org/release/Digest-HMAC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	net python
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Python SDK for the VMware vSphere API of ESX, ESXi, and vCenter
+WWW=		https://github.com/vmware/pyvmomi
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     vmware

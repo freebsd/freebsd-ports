@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	axel.rau@chaos1.de
 COMMENT=	Python attributes without boilerplate
+WWW=		https://github.com/hynek/characteristic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

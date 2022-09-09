@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Collection of slang (Vulkan) shaders for libretro
+WWW=		https://github.com/libretro/slang-shaders
 
 LICENSE=	GPLv3
 

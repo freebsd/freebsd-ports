@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Find the vendor for a given MAC address
+WWW=		https://github.com/bauerj/mac_vendor_lookup
 
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=2.3.5:www/py-aiohttp@${PY_FLAVOR} \

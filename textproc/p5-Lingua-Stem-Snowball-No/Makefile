@@ -8,6 +8,7 @@ DISTNAME=	Snowball-Norwegian-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stemmer for Norwegian
+WWW=		https://metacpan.org/release/Snowball-Norwegian
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

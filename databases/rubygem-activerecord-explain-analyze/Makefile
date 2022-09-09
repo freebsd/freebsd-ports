@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Extends ActiveRecord#explain with additional features
+WWW=		https://github.com/6/activerecord-explain-analyze
 
 LICENSE=	MIT
 

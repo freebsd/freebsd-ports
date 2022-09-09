@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	GTK+ 1Password reader
+WWW=		https://github.com/jbreams/gonepass
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

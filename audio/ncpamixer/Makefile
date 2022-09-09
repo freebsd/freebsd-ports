@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Ncurses PulseAudio mixer
+WWW=		https://github.com/fulhax/ncpamixer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

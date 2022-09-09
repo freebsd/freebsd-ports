@@ -5,6 +5,7 @@ MASTER_SITES=	SF/gputils/gputils/1.5.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Microchip PIC microcontrollers
+WWW=		https://gputils.sourceforge.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

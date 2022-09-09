@@ -2,5 +2,3 @@ Bot Sentry is a Pidgin (libpurple) plugin to prevent Instant Message (IM) spam.
 It allows you to ignore IMs unless the sender is in your Buddy List, the sender
 is in your Allow List, or the sender correctly answers a question you have
 predefined.
-
-WWW: https://sourceforge.net/projects/pidgin-bs/

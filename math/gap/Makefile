@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	System for computational discrete algebra
+WWW=		https://www.gap-system.org/
 
 LICENSE=	GPLv2+
 
@@ -15,8 +16,7 @@ BROKEN_riscv64=		fails to link: undefined reference to SyAllocBags
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		autoreconf:build gmake libtool localbase perl5 shebangfix	\
-		readline
+USES=		gmake libtool localbase perl5 readline shebangfix
 SHEBANG_FILES=	.
 USE_PERL5=	run
 

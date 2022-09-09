@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Deferred logs and timers
+WWW=		https://metacpan.org/release/Log-Defer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

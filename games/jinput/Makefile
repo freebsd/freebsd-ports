@@ -5,6 +5,7 @@ CATEGORIES=	games java
 
 MAINTAINER=	voidanix@420blaze.it
 COMMENT=	Java Game Controller API
+WWW=		https://github.com/jinput/jinput
 
 LICENSE=	BSD2CLAUSE
 

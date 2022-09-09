@@ -16,5 +16,3 @@ The following features of phonopy are highlighted:
 * Interfaces to calculators: VASP, VASP DFPT, ABINIT, Quantu ESPRESSO, SIESTA,
   Elk, FHI-aims, WIEN2k, CRYSTAL
 * Python APIs
-
-WWW: https://phonopy.github.io/phonopy/

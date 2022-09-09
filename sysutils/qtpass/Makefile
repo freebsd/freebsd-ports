@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
 COMMENT=	Qt GUI for pass, the standard unix password manager
+WWW=		https://qtpass.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/gkmap/gkmap/gkmap-${PORTVERSION}/
 
 MAINTAINER=	javad.kouhi@gmail.com
 COMMENT=	Simplification of Boolean Functions using Karnaugh Map
+WWW=		https://sourceforge.net/projects/gkmap/
 
 LICENSE=	GPLv2
 

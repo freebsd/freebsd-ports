@@ -4,6 +4,7 @@ CATEGORIES=	security devel
 
 MAINTAINER=	hsw@bitmark.com
 COMMENT=	Memory hard password hashing program and library
+WWW=		https://github.com/P-H-C/phc-winner-argon2
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

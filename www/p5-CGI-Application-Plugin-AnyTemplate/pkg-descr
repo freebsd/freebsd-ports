@@ -11,5 +11,3 @@ templating systems on the fly.
 
 This approach has many uses. For instance, it can be useful in
 migrating your application from one templating system to another.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-AnyTemplate

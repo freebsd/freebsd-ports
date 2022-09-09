@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/acaudwell/${PORTNAME}/releases/download/${DISTN
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Website access log visualization tool
+WWW=		https://logstalgia.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

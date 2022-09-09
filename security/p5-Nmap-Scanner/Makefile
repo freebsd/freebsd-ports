@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perform and manipulate nmap scans using perl
+WWW=		https://metacpan.org/release/Nmap-Scanner
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

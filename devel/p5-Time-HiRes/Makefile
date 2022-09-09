@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module implementing High resolution time, sleep, and alarm
+WWW=		https://metacpan.org/release/Time-HiRes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

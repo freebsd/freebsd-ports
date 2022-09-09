@@ -5,6 +5,7 @@ MASTER_SITES=	SF/mtxorb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control Daemon for Matrix Orbital LCD screens
+WWW=		http://mtxorb.sourceforge.net/
 
 USES=		tar:tgz
 

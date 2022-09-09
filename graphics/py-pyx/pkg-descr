@@ -13,5 +13,3 @@ Features:
   splitting, smoothing, etc.
 - sophisticated graph generation: modular design, pluggable axes, axes
   partitioning based on rational number arithmetics, flexible graph styles, etc.
-
-WWW: https://pyx-project.org/

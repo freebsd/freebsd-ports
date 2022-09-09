@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy things make really easy with Crypt::CBC
+WWW=		https://metacpan.org/release/Crypt-CBCeasy
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-CBC>=0:security/p5-Crypt-CBC \

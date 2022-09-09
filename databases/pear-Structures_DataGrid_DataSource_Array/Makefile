@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DataSource driver using arrays
+WWW=		https://pear.php.net/package/Structures_DataGrid_DataSource_Array
 
 LICENSE=	BSD2CLAUSE
 

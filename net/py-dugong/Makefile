@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	niklaas@kulturflatrate.net
 COMMENT=	HTTP 1.1 client module designed for RESTful protocols
+WWW=		https://github.com/python-dugong/python-dugong/
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

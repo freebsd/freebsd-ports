@@ -6,5 +6,3 @@ Features:
   - Supports the OpenAPI Specification (versions 2 and 3)
   - Framework-agnostic
   - Utilities for parsing docstrings
-
-WWW: https://github.com/marshmallow-code/apispec

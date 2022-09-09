@@ -1,5 +1,3 @@
 mod_jk is a replacement to the elderly mod_jserv. It is a completely
 new Tomcat-Apache plugin that handles the communication between
 Tomcat and Apache.
-
-WWW: https://tomcat.apache.org/connectors-doc/

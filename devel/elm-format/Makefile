@@ -4,6 +4,7 @@ CATEGORIES=	devel textproc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Elm source code formatter based on the official Elm Style Guide
+WWW=		https://github.com/avh4/elm-format/
 
 LICENSE=	BSD3CLAUSE
 

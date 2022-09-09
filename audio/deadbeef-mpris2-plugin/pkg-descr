@@ -12,5 +12,3 @@ What is currently missing:
     interface
   - The optional "CanSetFullscreen" property of the org.mpris.MediaPlayer2
     interface
-
-WWW: https://github.com/Serranya/deadbeef-mpris2-plugin

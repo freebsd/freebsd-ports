@@ -6,6 +6,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/3484/
 
 MAINTAINER=	dg@fastmail.co.uk
 COMMENT=	Extension to libpq parameter handling
+WWW=		http://libpqtypes.esilo.com/
 
 LICENSE=	BSD2CLAUSE
 

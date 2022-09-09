@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide https support for LWP::UserAgent
+WWW=		https://metacpan.org/release/LWP-Protocol-https
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

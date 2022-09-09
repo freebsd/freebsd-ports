@@ -5,5 +5,3 @@ generate consensus sequences. It supports three alignment modes: local
 and three gap modes: linear, affine and convex (piecewise affine). It also
 supports Intel SSE4.1+ and AVX2 vectorization (marginally faster due to high
 latency shifts), SIMDe and dispatching.
-
-WWW: https://github.com/rvaser/spoa

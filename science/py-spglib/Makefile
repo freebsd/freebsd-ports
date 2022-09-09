@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for finding and handling crystal symmetries (python binding)
+WWW=		https://atztogo.github.io/spglib/
 
 LICENSE=	BSD3CLAUSE
 

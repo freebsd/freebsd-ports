@@ -13,5 +13,3 @@ Now it has an implementation for DWG2000 (R15), but only for read.
 Library comes with cadinfo utility, which prints out everything
 library can get from file - header variables, CAD custom classes,
 presented layers and geometries with their attributes.
-
-WWW: https://trac.osgeo.org/gdal/wiki/DWG_driver

@@ -19,5 +19,3 @@ The DBCP Component
    maintain an efficient, feature-rich package under the ASF license.
    The commons-dbcp package relies on code in the commons-pool package to
    provide the underlying object pool mechanisms that it utilizes.
-
-WWW: https://commons.apache.org/dbcp/

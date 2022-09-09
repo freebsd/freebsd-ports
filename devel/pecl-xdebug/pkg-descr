@@ -14,5 +14,3 @@ Xdebug also provides:
     * profiling information for PHP scripts
     * script execution analysis
     * capabilities to debug your scripts interactively with a debug client
-
-WWW: http://www.xdebug.org/

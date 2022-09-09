@@ -2,6 +2,7 @@ PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk interface for TiMidity++
+WWW=		http://timidity.sourceforge.net/
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 

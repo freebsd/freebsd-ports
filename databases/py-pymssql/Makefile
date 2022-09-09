@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@thelanman.net
 COMMENT=	Python database interface for MS-SQL. Version 2
+WWW=		https://www.pymssql.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

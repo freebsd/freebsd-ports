@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Humanist sans-serif font
+WWW=		https://www.theleagueofmoveabletype.com/junction
 
 LICENSE=	OFL11
 LICENSE_FILE=	"${WRKSRC}/Open Font License.markdown"

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
+WWW=		https://igraph.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -26,9 +27,4 @@ BINARY_ALIAS=	git=false
 pre-configure:
 	@${ECHO} ${DISTVERSION} > ${WRKSRC}/IGRAPH_VERSION
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300523
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-etc_cmake_compilers.cmake
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

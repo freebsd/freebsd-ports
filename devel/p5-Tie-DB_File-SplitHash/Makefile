@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper around the DB_File Berkeley database system
+WWW=		https://metacpan.org/release/Tie-DB_File-SplitHash
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

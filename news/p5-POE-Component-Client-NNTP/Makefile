@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component for non-blocking NNTP access
+WWW=		https://metacpan.org/release/POE-Component-Client-NNTP
 
 BUILD_DEPENDS=	p5-POE>=0.999.9:devel/p5-POE \
 		p5-POE-Component-Pluggable>=0.03:devel/p5-POE-Component-Pluggable \

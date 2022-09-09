@@ -5,6 +5,7 @@ PKGNAMESUFFIX?=	${CNEWS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
+WWW=		https://github.com/lazarus-pkgs/suck
 
 LICENSE=	PD
 

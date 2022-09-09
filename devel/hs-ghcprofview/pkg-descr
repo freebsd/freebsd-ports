@@ -3,5 +3,3 @@ profiterole and profiteur, ghcprofview uses a traditional approach to profiling.
 It allows you to view cost centres tree as it is and browse it interactively,
 and allows you to do some actions that you may be used to in, for example,
 Java's visualvm.
-
-WWW: https://github.com/portnov/ghcprofview-hs

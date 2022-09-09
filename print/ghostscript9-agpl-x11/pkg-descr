@@ -3,5 +3,3 @@ Format (PDF) files.  It allows you to manipulate such files and to
 convert them to various printer, image and other formats.
 
 This package contains X11 devices for Ghostscript.
-
-WWW: https://ghostscript.com/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::SAX::Expat subclass for non-blocking (incremental)
+WWW=		https://metacpan.org/release/XML-SAX-Expat-Incremental
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Parser>0:textproc/p5-XML-Parser \

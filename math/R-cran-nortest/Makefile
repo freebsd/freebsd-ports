@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tests for Normality
+WWW=		https://cran.r-project.org/web/packages/nortest/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

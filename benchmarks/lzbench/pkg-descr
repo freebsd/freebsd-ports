@@ -6,5 +6,3 @@ and decompress the file and decompressed file is verified.
 This approach has a big advantage of using the same compiler with the same
 optimizations for all compressors.  The disadvantage is that it requires
 source code of each compressor (therefore Slug or lzturbo are not included).
-
-WWW: https://github.com/inikep/lzbench

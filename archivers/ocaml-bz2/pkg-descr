@@ -7,5 +7,3 @@ anything offering an in_channel/out_channel abstraction (files, sockets, ...).
 
 Also, with CamlBZ2 you can compress and decompress strings in memory using the
 bzip2 compression algorithm.
-
-WWW: http://camlbz2.forge.ocamlcore.org

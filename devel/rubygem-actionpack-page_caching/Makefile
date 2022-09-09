@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Static page caching for Action Pack (removed from core in Rails 4.0)
+WWW=		https://github.com/rails/actionpack-page_caching
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

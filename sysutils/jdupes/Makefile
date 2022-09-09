@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Powerful duplicate file finder and an enhanced fork of 'fdupes'
+WWW=		https://github.com/jbruchon/jdupes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

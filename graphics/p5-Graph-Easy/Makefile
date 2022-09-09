@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Render graphs as ASCII, HTML, SVG, or Graphviz
+WWW=		https://metacpan.org/release/Graph-Easy
 
 LICENSE=	GPLv2+
 

@@ -9,5 +9,3 @@ interface for creating syntactically correct URIs from known components
 interface is rather tedious, requiring a number of method calls, which is
 particularly ugly when done inside a templating system such as Mason or
 TT2.
-
-WWW: https://metacpan.org/release/URI-FromHash

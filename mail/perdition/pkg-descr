@@ -11,5 +11,3 @@ OpenLDAP libraries ship with the distribution.
 The use of perditon to scale mail services beyond a single box is discussed
 in a paper the author wrote on high capacity email, so be sure to check the
 web page.
-
-WWW: http://www.vergenet.net/linux/perdition/

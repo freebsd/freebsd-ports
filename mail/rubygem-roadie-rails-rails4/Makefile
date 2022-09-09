@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-rails4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Helper for generating HTML mails in Rails applications
+WWW=		https://github.com/Mange/roadie-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

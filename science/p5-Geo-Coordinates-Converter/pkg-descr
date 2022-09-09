@@ -2,5 +2,3 @@ Geo::Coordinates::Converter is a simple converter of geo coordinates, the
 format and datum of geo coordinates are simply converted. when it is
 insufficient in the coordinate system and the format of the standard, it
 is possible to add it easily.
-
-WWW: https://metacpan.org/release/Geo-Coordinates-Converter

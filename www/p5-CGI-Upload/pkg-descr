@@ -8,5 +8,3 @@ regarding files uploaded in this manner.
 This module builds upon primarily the CGI and File::MMagic
 modules and offers some tidy and succinct methods for the
 handling of files uploaded via multipart/form-data requests.
-
-WWW: https://metacpan.org/release/CGI-Upload

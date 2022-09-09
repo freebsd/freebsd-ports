@@ -4,6 +4,7 @@ CATEGORIES=	mail www pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for dealing with MIME types
+WWW=		https://pear.php.net/package/MIME_Type
 
 LICENSE=	LGPL3
 

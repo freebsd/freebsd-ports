@@ -14,5 +14,3 @@ using the command 'mcelog --no-dmi --ascii'.
 FreeBSD conversion patches were originally written by John
 Baldwin <jhb@freebsd.org> and later incorporated into this
 port.
-
-WWW: http://mcelog.org/

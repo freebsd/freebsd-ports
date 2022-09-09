@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Rainbow table based crack tool
+WWW=		https://www.freerainbowtables.com
 
 LICENSE=	GPLv2
 

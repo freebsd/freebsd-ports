@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based rock-shooting game similar to Asteroids
+WWW=		http://www.newbreedsoftware.com/vectoroids/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

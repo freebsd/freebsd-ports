@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module to define equality, equivalence and inspection methods
+WWW=		https://github.com/dry-rb/dry-equalizer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

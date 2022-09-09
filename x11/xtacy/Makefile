@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}114
 
 MAINTAINER=	matt@bdd.net
 COMMENT=	X11 trippy color-cycling toy
+WWW=		http://www.gweep.net/~jer/xtacy.html
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grub-emu loader for bhyve
+WWW=		https://github.com/grehan-freebsd/grub2-bhyve
 
 LICENSE=	GPLv3
 

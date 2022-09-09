@@ -5,6 +5,7 @@ MASTER_SITES=	SF/fldigi/flamp/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program for the Amateur Multicast Protocol
+WWW=		https://sourceforge.net/projects/fldigi/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

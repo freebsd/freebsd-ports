@@ -7,6 +7,7 @@ CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Go engine without human-provided knowledge based on AlphaGo Zero paper
+WWW=		https://github.com/leela-zero/leela-zero
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

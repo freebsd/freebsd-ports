@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Custom prefetches for DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-CustomPrefetch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

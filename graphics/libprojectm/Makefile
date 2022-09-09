@@ -6,6 +6,7 @@ CATEGORIES=	graphics audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Awesome music visualiser
+WWW=		https://github.com/projectM-visualizer/projectm
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

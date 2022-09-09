@@ -6,6 +6,7 @@ MASTER_SITES=	http://digitalstratum.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sends web server log entries to a PostgreSQL database
+WWW=		http://www.digitalstratum.com/pglogd/
 
 LICENSE=	BSD3CLAUSE
 

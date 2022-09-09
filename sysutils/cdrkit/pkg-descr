@@ -4,5 +4,3 @@ programs included in the cdrkit package were originally derived from several
 sources, most notably mkisofs by Eric Youngdale and others, cdda2wav by Heiko
 Eissfeldt, and cdrecord by Joerg Schilling. However, cdrkit is not affiliated
 with any of these authors; it is now an independent project.
-
-WWW: http://www.cdrkit.org/

@@ -6,5 +6,3 @@ The core library is written in C and a binding for Python using PyGTK is
 available. The networking layer supports connections over both IPv4 and IPv6.
 Example code illustrates how to build a vncviewer replacement using either C
 or Python.
-
-WWW: http://live.gnome.org/gtk-vnc

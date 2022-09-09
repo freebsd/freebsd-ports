@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	rosenke@dssgmbh.de
 COMMENT=	Markdown Parser written in C
+WWW=		https://github.com/mity/md4c
 
 LICENSE=	MIT
 

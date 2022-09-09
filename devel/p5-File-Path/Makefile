@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create or remove directory trees
+WWW=		https://metacpan.org/release/File-Path
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

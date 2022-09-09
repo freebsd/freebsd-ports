@@ -11,5 +11,3 @@ flexible structure and anchor constraints, and provides efficient computation of
 reliabilities in sequence-structure alignment. The package offers a robust core
 of features and is used as experimental platform for the incorporation of new
 features in RNA sequence-structure alignment.
-
-WWW: https://github.com/s-will/LocARNA

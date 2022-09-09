@@ -4,5 +4,3 @@ hardware configuration, aka "Optimus".
 
 Applications to be run with Nvidia acceleration should be started using
 `nvrun-vgl`.
-
-WWW: https://github.com/therontarigo/freebsd-gpu-headless

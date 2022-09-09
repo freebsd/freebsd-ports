@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TweetStream provides simple Ruby access to Twitter Streaming API
+WWW=		https://github.com/tweetstream/tweetstream
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplement file to use "mypaedia" on lookup
+WWW=		http://openlab.ring.gr.jp/edict/mypaedia-fpw/
 
 RUN_DEPENDS=	sox:audio/sox \
 		timidity:audio/timidity++ \

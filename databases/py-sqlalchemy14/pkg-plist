@@ -59,6 +59,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/vertical/dictlike.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_static/_sphinx_javascript_frameworks_compat.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/annotated.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/changelog.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/clipboard.min.js
@@ -78,6 +79,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/nonannotated.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js

@@ -1,5 +1,3 @@
 Generates histograms similar to R's hist and numpy's histogram functions.
 Inspired somewhat by Richard Cottons's matlab implementation and the wikipedia
 histogram article.
-
-WWW: https://github.com/jtprince/histogram

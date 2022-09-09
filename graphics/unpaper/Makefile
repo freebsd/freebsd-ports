@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.flameeyes.eu/files/
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Post-processing tool for scanned sheets of paper
+WWW=		https://www.flameeyes.eu/projects/unpaper
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

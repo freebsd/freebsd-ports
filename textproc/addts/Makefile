@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.gnu.org.ua/release/addts/ \
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Prepend current timestamp to every line of input text
+WWW=		https://puszcza.gnu.org.ua/projects/addts/
 
 LICENSE=	GPLv3+
 

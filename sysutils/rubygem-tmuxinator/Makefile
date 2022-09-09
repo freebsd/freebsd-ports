@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manage complex tmux sessions easily
+WWW=		https://github.com/tmuxinator/tmuxinator
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Manipulate ACL with Python
+WWW=		https://pylibacl.k1024.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

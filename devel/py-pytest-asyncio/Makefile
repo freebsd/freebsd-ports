@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Py.test plugin providing fixtures and markers for asyncio
+WWW=		https://pypi.org/project/pytest-asyncio/
 
 LICENSE=	APACHE20
 

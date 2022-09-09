@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT?=	MariaDB driver for the Perl5 Database Interface (DBI)
+WWW=		https://metacpan.org/release/DBD-MariaDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

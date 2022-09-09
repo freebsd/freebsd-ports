@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Mminimal, fast alternative to 'du -sh'
+WWW=		https://github.com/sharkdp/diskus/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT

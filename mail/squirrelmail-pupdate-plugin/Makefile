@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}-1.4.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks for plugin updates by parsing the SM site
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=68
 
 LICENSE=	GPLv2
 

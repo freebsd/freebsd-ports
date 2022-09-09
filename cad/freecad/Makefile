@@ -8,6 +8,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
+WWW=		https://www.freecadweb.org/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE

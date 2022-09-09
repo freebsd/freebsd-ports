@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	GUI for ngspice and gnucap circuit simulators
+WWW=		http://users.tpg.com.au/micksw012/gspiceui.html
 
 LICENSE=	GPLv3
 

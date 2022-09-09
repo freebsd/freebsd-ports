@@ -10,5 +10,3 @@ It has the benefit of having developed and refined over 20 years with input from
 dozens of contributors and being deployed on thousands of websites. CGI.pm was
 included in the perl distribution from perl v5.4 to v5.20, however is has now
 been removed from the perl core.
-
-WWW: https://metacpan.org/release/CGI

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IMAP client interface with lots of features
+WWW=		https://metacpan.org/release/Mail-IMAPTalk
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper for xxHash algorithm
+WWW=		https://github.com/ewencp/pyhashxx
 
 LICENSE=	BSD2CLAUSE
 

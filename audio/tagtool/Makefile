@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME MP3/Ogg file tagger
+WWW=		http://pwp.netcabo.pt/paol/tagtool/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	How random is your data?
+WWW=		https://metacpan.org/release/Statistics-ChiSquare
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.zmatt.net/pspresent/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen slide shows of postscript files
+WWW=		http://www.zmatt.net/pspresent/
 
 LICENSE=	GPLv2
 

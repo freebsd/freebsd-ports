@@ -2,5 +2,3 @@ Spylls is an effort of porting prominent spellcheckers into clear,
 well-structured, well-documented Python. It is intended to be useful both as a
 library and as some kind of "reference (or investigatory, if you will)
 implementation". Currently, only Hunspell is ported.
-
-WWW: https://pypi.org/project/spylls/

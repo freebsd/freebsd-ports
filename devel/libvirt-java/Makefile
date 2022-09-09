@@ -6,6 +6,7 @@ MASTER_SITES=	http://libvirt.org/sources/java/ \
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Java bindings for Libvirt virtualization API
+WWW=		https://libvirt.org/java.html
 
 LICENSE=	MIT
 

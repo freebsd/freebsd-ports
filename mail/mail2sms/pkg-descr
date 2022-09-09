@@ -1,5 +1,3 @@
 mail2sms converts a single (large) mail to a tiny text with contents
 from the mail. Perfectly suitable to send as an SMS message to a
 GSM telephone.
-
-WWW: http://daniel.haxx.se/projects/mail2sms/

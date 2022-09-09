@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to libgpgme
+WWW=		https://metacpan.org/dist/Crypt-GpgME
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

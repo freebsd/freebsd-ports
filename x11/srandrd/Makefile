@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple randr daemon
+WWW=		https://github.com/jceb/srandrd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

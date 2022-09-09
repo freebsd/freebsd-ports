@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensible memoizing collections and decorators
+WWW=		https://github.com/tkem/cachetools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

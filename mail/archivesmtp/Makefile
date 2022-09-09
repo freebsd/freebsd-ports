@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.dancingfortune.com/projects/archivesmtp/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP mail archiver
+WWW=		http://www.dancingfortune.com/projects/archivesmtp/index.php
 
 LIBS+=		-lmilter -lpthread
 MAKE_ENV+=	LDADD="${LIBS}"

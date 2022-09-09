@@ -1,10 +1,11 @@
 PORTNAME=	logstash-forwarder
 PORTVERSION=	0.4.0.20150507
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 
 MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Collect logs locally in preparation for processing elsewhere!
+WWW=		https://github.com/elasticsearch/logstash-forwarder
 
 LICENSE=	APACHE20
 

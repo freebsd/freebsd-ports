@@ -10,6 +10,7 @@ PATCHFILES=	21601eb4b8941b8d6d9b795b1d6db4bd376f5b28.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Library for parsing/normalizing street addresses around the world
+WWW=		https://github.com/openvenues/libpostal
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

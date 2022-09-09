@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for audio processing
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/
 
 LICENSE=	BSD3CLAUSE
 

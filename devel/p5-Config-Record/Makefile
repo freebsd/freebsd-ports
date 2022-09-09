@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Configuration file access
+WWW=		https://metacpan.org/release/Config-Record
 
 LICENSE=	GPLv2
 

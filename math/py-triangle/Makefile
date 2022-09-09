@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Python interface to triangle
+WWW=		https://rufat.be/triangle
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LibSBML Python API
+WWW=		https://sbml.org/Main_Page
 
 LICENSE=	LGPL21
 

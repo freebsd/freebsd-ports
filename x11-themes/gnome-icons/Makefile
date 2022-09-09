@@ -9,6 +9,7 @@ CATEGORIES=	x11-themes gnome
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for Gnome iconsets
+WWW=		https://art.gnome.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/AquaFusion/index.theme:x11-themes/gnome-icons-aqua-fusion \
 		${LOCALBASE}/share/icons/CfG-Crystal-SVG-1.2.0/index.theme:x11-themes/gnome-icons-crystal \

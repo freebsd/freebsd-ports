@@ -3,5 +3,3 @@ via Unix domain socket. Since emacs21 or former version does
 not support Unix domain socket in elisp itself, icanna helps
 the elisp application to interact with Canna server by relaying
 data between standard input/output and Unix domain socket.
-
-WWW: http://www.ceres.dti.ne.jp/~knak/yc.html

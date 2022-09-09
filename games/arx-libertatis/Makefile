@@ -7,6 +7,7 @@ MASTER_SITES=	https://arx-libertatis.org/files/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform port of Arx Fatalis
+WWW=		https://arx-libertatis.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

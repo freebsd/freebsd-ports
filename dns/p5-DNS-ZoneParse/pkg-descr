@@ -8,5 +8,3 @@ XML::Simple with this module once you have parsed the zonefile.
 DNS::ZoneParse scans the DNS zonefile - removes comments and separates the file
 into it's constituent records. It then parses each record and stores the
 records internally. See below for information on the accessor methods.
-
-WWW: https://metacpan.org/release/DNS-ZoneParse

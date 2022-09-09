@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy mocking of LWP packages
+WWW=		https://metacpan.org/release/Test-Mock-LWP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

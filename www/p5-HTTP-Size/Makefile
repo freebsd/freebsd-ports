@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get the byte size of an internet resource
+WWW=		https://metacpan.org/release/HTTP-Size
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

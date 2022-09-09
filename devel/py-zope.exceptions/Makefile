@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	General Zope Exceptions
+WWW=		https://pypi.org/project/zope.exceptions/
 
 LICENSE=	ZPL21
 

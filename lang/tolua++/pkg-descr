@@ -12,5 +12,3 @@ Lua. Based on a cleaned header file (or extracts from real header files),
 tolua automatically generates the binding code to access C/C++ features
 from Lua. Using Lua API and tag method facilities, tolua maps C/C++
 constants, external variables, functions, classes, and methods to Lua.
-
-WWW: http://www.codenix.com/~tolua/

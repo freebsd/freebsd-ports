@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	3GPP Adaptive Multi-Rate - Wideband (AMR-WB) Speech Codec
+WWW=		http://www.penguin.cz/~utx/amr
 
 LICENSE=	BSD3CLAUSE 3GPP
 LICENSE_COMB=	multi

@@ -3,5 +3,3 @@ mailboxes and converts them to Maildir format.
 
 Some details of this are to suit Courier IMAP's naming
 conventions for Maildir mailboxes.
-
-WWW: http://batleth.sapienti-sat.org/projects/mb2md/

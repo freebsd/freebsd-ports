@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for Augeas
+WWW=		https://augeas.net/
 
 LICENSE=	LGPL21
 

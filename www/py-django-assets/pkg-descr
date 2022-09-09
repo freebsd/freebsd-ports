@@ -1,4 +1,2 @@
 Integrates the webassets library with Django, adding support for merging,
 minifying and compiling CSS and Javascript files.
-
-WWW: https://github.com/miracle2k/django-assets

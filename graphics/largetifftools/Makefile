@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.imnc.in2p3.fr/pagesperso/deroulers/software/largetifft
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Process very large TIFF files
+WWW=		https://www.imnc.in2p3.fr/pagesperso/deroulers/software/largetifftools/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

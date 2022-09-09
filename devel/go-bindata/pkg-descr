@@ -1,4 +1,2 @@
 A small utility which generates Go code from any file. Useful for embedding
 binary data in a Go program.
-
-WWW: https://github.com/go-bindata/go-bindata

@@ -7,5 +7,3 @@ It uses the getaddrinfo(3) function to convert hostnames and service names or
 port numbers into sets of possible addresses to connect to or listen on. This
 allows it to work for IPv6 where the system supports it, while still falling
 back to IPv4-only on systems which don't.
-
-WWW: https://metacpan.org/release/IO-Socket-IP

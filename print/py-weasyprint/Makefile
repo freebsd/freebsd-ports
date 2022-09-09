@@ -7,6 +7,7 @@ DISTNAME=	WeasyPrint-${PORTVERSION}
 
 MAINTAINER=	darcy@druid.net
 COMMENT=	Converts HTML/CSS documents to PDF
+WWW=		https://weasyprint.org/
 
 LICENSE=	BSD3CLAUSE
 

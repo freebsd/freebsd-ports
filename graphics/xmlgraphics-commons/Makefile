@@ -7,6 +7,7 @@ MASTER_SITES=	APACHE/xmlgraphics/commons/binaries \
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
+WWW=		https://xmlgraphics.apache.org/commons/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

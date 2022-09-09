@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Meta-port for the LXQt Desktop
+WWW=		https://lxqt-project.org
 
 RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-about:x11/lxqt-about \

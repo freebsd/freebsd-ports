@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Neural Network eXchange
+WWW=		https://onnx.ai/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

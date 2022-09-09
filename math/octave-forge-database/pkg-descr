@@ -6,5 +6,3 @@ build and install scripts.
 This is database.
 
   Interface to SQL databases, currently only postgresql using libpq.
-
-WWW: http://octave.sourceforge.net/

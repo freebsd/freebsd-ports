@@ -13,5 +13,3 @@ extra software is needed to view the albums, -just your web browser.
 Unlike "server side" album scripts, JAlbum albums can be served
 from a plain web server without scripting support. You can also
 share your albums on CD-ROM.
-
-WWW: http://jalbum.net/

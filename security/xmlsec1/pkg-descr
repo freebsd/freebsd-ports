@@ -5,5 +5,3 @@ major XML security standards:
    - XML Encryption
    - Canonical XML (was included in libxml2)
    - Exclusive Canonical XML (was included in libxml2)
-
-WWW: https://www.aleksey.com/xmlsec/

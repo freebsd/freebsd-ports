@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
+WWW=		https://www.snort.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

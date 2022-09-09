@@ -7,5 +7,3 @@ do not need to be changed with git-secret when someone's permission
 is revoked - just remove their key from the keychain using git secret
 killperson their@email.com, and re-encrypt the files, and they won't
 be able to decrypt secrets anymore.
-
-WWW: https://git-secret.io/

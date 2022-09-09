@@ -2,12 +2,13 @@ PORTNAME=	chrono
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0-4
 DISTVERSIONSUFFIX=	-g70cda7f
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-time-tracking
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast time tracking tool made with love
+WWW=		https://github.com/gochrono/chrono
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

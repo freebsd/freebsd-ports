@@ -5,5 +5,3 @@ part of a machine learning pipeline (supervised learning). Presently this
 includes the following core RBAs: ReliefF, SURF, SURF*, MultiSURF*, and
 MultiSURF. Additionally, an implementation of the iterative TuRF mechanism and
 VLSRelief is included.
-
-WWW: https://github.com/EpistasisLab/scikit-rebate

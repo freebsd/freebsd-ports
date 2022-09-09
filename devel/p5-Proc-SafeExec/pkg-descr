@@ -3,5 +3,3 @@ replaces all of Perl's questionable ways of accomodating this, including
 system(), open() with a pipe, exec(), back-ticks, etc.  This module will never
 automatically invoke /bin/sh.  This module is easy enough to use that /bin/sh
 should be unnecessary, even for complex pipelines.
-
-WWW: https://metacpan.org/release/Proc-SafeExec

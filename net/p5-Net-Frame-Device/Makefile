@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get network device and gateway information
+WWW=		https://metacpan.org/release/Net-Frame-Device
 
 LICENSE=	ART10
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Orange add-on for analyzing, visualizing, manipulating time series
+WWW=		https://github.com/biolab/orange3-timeseries
 
 LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

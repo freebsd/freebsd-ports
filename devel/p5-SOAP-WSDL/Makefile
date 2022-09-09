@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for SOAP with WSDL support
+WWW=		https://metacpan.org/release/SOAP-WSDL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

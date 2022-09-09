@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Slide Shows in Vim
+WWW=		https://metacpan.org/release/Vroom
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

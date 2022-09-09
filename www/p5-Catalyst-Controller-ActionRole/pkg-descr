@@ -1,4 +1,2 @@
 Catalyst::Controller::ActionRole is a perl module that apply roles to
 action instances.
-
-WWW: https://metacpan.org/release/Catalyst-Controller-ActionRole

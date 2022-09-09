@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for building interactive map applications
+WWW=		https://kartograph.org/docs/kartograph.py/
 
 LICENSE=	MIT
 

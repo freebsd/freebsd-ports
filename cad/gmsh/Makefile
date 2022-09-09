@@ -8,6 +8,7 @@ DIST_SUBDIR=	gmsh
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
+WWW=		https://www.geuz.org/gmsh/
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi

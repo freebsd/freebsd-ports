@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Retrofuturism inspired monospaced programming font
+WWW=		https://github.com/benbusby/anomaly-mono
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE

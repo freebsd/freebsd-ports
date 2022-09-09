@@ -15,5 +15,3 @@ statements and return the root node for a tree of nodes which describes
 the CQL statement. This data structure can then be used by a client
 application to analyze the statement, and possibly turn it into a query
 for a local repository.
-
-WWW: https://metacpan.org/release/CQL-Parser

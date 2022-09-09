@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Country/Language names in 2-letter code pairs
+WWW=		https://github.com/grosser/i18n_data
 
 LICENSE=	MIT
 

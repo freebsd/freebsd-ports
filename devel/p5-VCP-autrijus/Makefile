@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-snapshot-${PORTVERSION:C/\.([^.]*)$/-\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tool for copying files between various SCM repositories
+WWW=		http://public.perforce.com/public/revml/index.html
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \

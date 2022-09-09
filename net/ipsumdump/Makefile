@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
+WWW=		http://www.cs.ucla.edu/~kohler/ipsumdump
 
 LICENSE=	CLICK
 LICENSE_NAME=	Click license

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Grep through binaries
+WWW=		https://github.com/m4b/bingrep
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

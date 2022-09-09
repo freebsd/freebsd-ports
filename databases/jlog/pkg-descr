@@ -7,5 +7,3 @@ while subscribers open the log and consume messages from it. "That
 sounds easy." libjlog abstracts away the need to perform log rotation
 or maintenance by publishing into fixed size log buffers and
 eliminating old log buffers when there are no more consumers pending.
-
-WWW: https://labs.omniti.com/labs/jlog

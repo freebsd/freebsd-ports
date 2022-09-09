@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super milter that can invoke several milters selectively
+WWW=		https://milter-manager.osdn.jp/
 
 LICENSE=	AGPLv3 GFDL GPLv3 LGPL3
 LICENSE_COMB=	multi

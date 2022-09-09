@@ -13,5 +13,3 @@ This is queueing.
   measures for Markov chains can als be computed (including state occupancy
   probabilities, mean time to absorption, time-averaged sojourn times), both
   for continuous-time and discrete-time chains.
-
-WWW: http://octave.sourceforge.net/

@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Quick Audio Sonar
+WWW=		https://github.com/hselasky/qaudiosonar
 
 LICENSE=	BSD2CLAUSE
 

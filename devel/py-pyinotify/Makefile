@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to (lib)inotify
+WWW=		https://github.com/seb-m/pyinotify
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

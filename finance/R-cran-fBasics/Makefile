@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Rmetrics - Markets and Basic Statistics
+WWW=		https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics
 
 LICENSE=	GPLv2+
 

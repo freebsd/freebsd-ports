@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for SOAP communications
+WWW=		https://github.com/savonrb/savon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

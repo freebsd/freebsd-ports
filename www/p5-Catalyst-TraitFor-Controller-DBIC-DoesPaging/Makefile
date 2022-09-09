@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Alex.Bakhtin@gmail.com
 COMMENT=	Helps you paginate, search, sort, and more easily using DBIx::Class
+WWW=		https://metacpan.org/release/Catalyst-TraitFor-Controller-DBIC-DoesPaging
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Model-DBIC-Schema>=0.29:www/p5-Catalyst-Model-DBIC-Schema \

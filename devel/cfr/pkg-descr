@@ -10,5 +10,3 @@ on your classpath). (Use --help to list arguments).
 
 Alternately, to decompile an entire jar, simply provide the jar path, and if
 you want to emit files (which you probably do!) add --outputdir /tmp/putithere.
-
-WWW: https://www.benf.org/other/cfr/

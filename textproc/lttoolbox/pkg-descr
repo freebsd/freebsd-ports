@@ -6,5 +6,3 @@ process.
 The package is split into three programs, lt-comp, the compiler,
 lt-proc, the processor, and lt-expand, which generates all possible
 mappings between surface forms and lexical forms in the dictionary.
-
-WWW: http://wiki.apertium.org/wiki/Lttoolbox

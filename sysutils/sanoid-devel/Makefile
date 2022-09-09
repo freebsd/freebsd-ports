@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Policy-driven snapshot management and replication tools
+WWW=		https://github.com/jimsalterjrs/sanoid
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

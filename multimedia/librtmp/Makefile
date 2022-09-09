@@ -6,6 +6,7 @@ DISTNAME=	rtmpdump-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	RTMP stream library
+WWW=		https://rtmpdump.mplayerhq.hu/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

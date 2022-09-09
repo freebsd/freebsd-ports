@@ -6,6 +6,7 @@ CATEGORIES=		archivers
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Fast ISO to CSO compressor for PSP and PS2 emulators
+WWW=		https://github.com/unknownbrackets/maxcso
 
 LICENSE=	ISCL
 

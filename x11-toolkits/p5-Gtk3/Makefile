@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Perl module for Gtk+ 3.x graphical user interface library
+WWW=		https://metacpan.org/pod/Gtk3
 
 LICENSE=	LGPL21+
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE

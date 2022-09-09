@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	php-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Native PHP syntax highlighting engine
+WWW=		http://qbnz.com/highlighter/
 
 LICENSE=	GPLv2
 

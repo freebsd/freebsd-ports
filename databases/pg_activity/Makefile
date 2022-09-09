@@ -5,6 +5,7 @@ CATEGORIES=	databases python
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Htop like application for PostgreSQL server activity monitoring
+WWW=		https://github.com/dalibo/pg_activity
 
 LICENSE=	PostgreSQL
 

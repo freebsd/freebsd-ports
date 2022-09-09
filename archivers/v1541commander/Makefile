@@ -5,6 +5,7 @@ CATEGORIES=	archivers emulators
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Virtual 1541 disk commander
+WWW=		https://github.com/excess-c64/v1541commander
 
 LICENSE=	BSD2CLAUSE STYLEFONT
 LICENSE_COMB=	multi

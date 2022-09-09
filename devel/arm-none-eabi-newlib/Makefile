@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${NEWLIB_TARGET}-
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Newlib distribution for ${NEWLIB_TARGET} targets
+WWW=		https://www.sourceware.org/newlib/
 
 BUILD_DEPENDS+=	${NEWLIB_TARGET}-ar:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
 		${NEWLIB_TARGET}-as:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \

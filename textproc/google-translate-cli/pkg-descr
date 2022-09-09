@@ -1,4 +1,2 @@
 google-translate-cli is a 100-line AWK program to let you use Google Translate
 without a web browser, i.e., from the terminal.
-
-WWW: https://www.soimort.org/translate-shell/

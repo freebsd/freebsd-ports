@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Configuration Markup Language (ZCML)
+WWW=		https://pypi.org/project/zope.configuration/
 
 LICENSE=	ZPL21
 

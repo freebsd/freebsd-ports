@@ -1,4 +1,2 @@
 The Tree::Suffix module provides an interface to the C library
 libstree, which implements generic suffix trees.
-
-WWW: https://metacpan.org/release/Tree-Suffix

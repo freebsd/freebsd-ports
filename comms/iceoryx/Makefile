@@ -5,6 +5,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	flo@purplekraken.com
 COMMENT=	True zero-copy inter-process communication
+WWW=		https://iceoryx.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

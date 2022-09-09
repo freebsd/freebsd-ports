@@ -5,6 +5,7 @@ MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
+WWW=		https://inter7.com/sqwebmail/
 
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg

@@ -7,5 +7,3 @@ find it.
 It works on any file system, but on very fragmented file systems it can only
 recover the first chunk of each file. Practical experience shows, however, that
 chunks of 30-50MB are not uncommon.
-
-WWW: https://github.com/jbj/magicrescue/

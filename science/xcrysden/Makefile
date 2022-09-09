@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.xcrysden.org/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Crystalline and molecular structure visualisation program
+WWW=		http://www.xcrysden.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	PyVISA-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python VISA bindings for GPIB, RS232, TCPIP and USB instruments
+WWW=		https://github.com/pyvisa/pyvisa
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

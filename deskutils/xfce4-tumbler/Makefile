@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
+WWW=		https://git.xfce.org/xfce/tumbler/
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

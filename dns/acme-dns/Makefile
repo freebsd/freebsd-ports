@@ -1,11 +1,13 @@
 PORTNAME=		acme-dns
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0
+PORTREVISION=	1
 PORTEPOCH=		1
 CATEGORIES=		dns
 
 MAINTAINER=		mops@punkt.de
 COMMENT=		Limited DNS server with RESTful HTTP API to handle ACME DNS challenges
+WWW=		https://github.com/joohoi/acme-dns
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE

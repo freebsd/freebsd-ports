@@ -5,6 +5,7 @@ CATEGORIES=	net python
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Python utility to create a local cache of directory services
+WWW=		https://github.com/google/nsscache
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bash automated testing system
+WWW=		https://github.com/bats-core/bats-core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

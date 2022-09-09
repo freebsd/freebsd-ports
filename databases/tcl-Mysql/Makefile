@@ -7,6 +7,7 @@ DISTNAME=	tcl-sql-${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
+WWW=		https://sourceforge.net/projects/tcl-sql/
 
 PATCH_DEPENDS=	rcsdiff:devel/rcs
 

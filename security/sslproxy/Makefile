@@ -7,6 +7,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Transparent and scalable SSL/TLS interception
+WWW=		https://github.com/sonertari/SSLproxy
 
 LICENSE=	BSD2CLAUSE
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenGL wrapper for Ruby
+WWW=		https://github.com/larskanis/opengl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

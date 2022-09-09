@@ -9,5 +9,3 @@ It consists of a common object database that allows entities to have an almost
 infinte number of properties, metadata (both embedded/harvested as well as user
 definable), a comprehensive database of keywords/tags and links to other
 entities.
-
-WWW: https://wiki.gnome.org/Projects/Tracker

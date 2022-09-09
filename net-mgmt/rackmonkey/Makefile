@@ -9,6 +9,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Web-based tool for managing racks of equipment
+WWW=		http://flux.org.uk/projects/rackmonkey/
 
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-CGI>=0:www/p5-CGI \

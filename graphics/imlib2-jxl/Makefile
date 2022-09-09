@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL loader for imlib2
+WWW=		https://github.com/alistair7/imlib2-jxl
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE-BSD-ab

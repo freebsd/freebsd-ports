@@ -1,10 +1,11 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.2.3
-PORTREVISION=	0
+PORTREVISION=	4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
+WWW=		https://gitlab.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -108,7 +109,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
-	rubygem-aws-sdk-core>=3.131.0<3.132:devel/rubygem-aws-sdk-core \
+	rubygem-aws-sdk-core3131>=3.131.0<3.132:devel/rubygem-aws-sdk-core3131 \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
 	rubygem-aws-sdk-s3>=1.114.0<1.115:devel/rubygem-aws-sdk-s3 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
@@ -145,7 +146,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-acts-as-taggable-on>=9.0<10:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq64>=6.4<6.5:devel/rubygem-sidekiq64 \
 	rubygem-sidekiq-cron-sidekiq64>=1.2<2.0:devel/rubygem-sidekiq-cron-sidekiq64 \
-	rubygem-redis-namespace>=1.8.1<1.9.0:databases/rubygem-redis-namespace \
+	rubygem-redis-namespace18>=1.8.1<1.9.0:databases/rubygem-redis-namespace18 \
 	rubygem-gitlab-sidekiq-fetcher>=0.8.0<0.9:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-fugit>=1.2.1<2:devel/rubygem-fugit \
 	rubygem-httparty>=0.16.4<1:www/rubygem-httparty \
@@ -156,7 +157,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-version_sorter>=2.2.4<2.3.0:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.7<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
-	rubygem-redis>=4.4.0<5:databases/rubygem-redis \
+	rubygem-redis4>=4.4.0<5:databases/rubygem-redis4 \
 	rubygem-connection_pool>=2.2.5<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack52-rails61>=5.2.0<5.3:databases/rubygem-redis-actionpack52-rails61 \
 	rubygem-discordrb-webhooks>=3.4<4.0:net-im/rubygem-discordrb-webhooks \
@@ -165,7 +166,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-flowdock>=0.7<1.0:www/rubygem-flowdock \
 	rubygem-slack-messenger>=2.3.4<2.4.0:devel/rubygem-slack-messenger \
 	rubygem-hangouts-chat>=0.0.5<0.1.0:net/rubygem-hangouts-chat \
-	rubygem-asana>=0.10.13<0.11:www/rubygem-asana \
+	rubygem-asana0>=0.10.13<0.11:www/rubygem-asana0 \
 	rubygem-ruby-fogbugz021>=0.2.1<0.3.0:devel/rubygem-ruby-fogbugz021 \
 	rubygem-kubeclient>=4.9.2<4.10.0:www/rubygem-kubeclient \
 	rubygem-sanitize>=6.0<7:textproc/rubygem-sanitize \

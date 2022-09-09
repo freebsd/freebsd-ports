@@ -1,11 +1,12 @@
 PORTNAME=		mqtt2prometheus
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		net-mgmt
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Export MQTT metrics to prometheus
+WWW=		https://github.com/hikhvar/mqtt2prometheus/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

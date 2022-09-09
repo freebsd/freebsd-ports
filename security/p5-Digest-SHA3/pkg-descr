@@ -6,5 +6,3 @@ The module gives Perl programmers a convenient way to calculate SHA3-224,
 SHA3-256, SHA3-384, and SHA3-512 message digests, as well as variable-length
 hashes using SHAKE128 and SHAKE256. Digest::SHA3 can handle all types of input,
 including partial-byte data.
-
-WWW: https://metacpan.org/pod/Digest::SHA3

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	XS implementation of the Heap::Simple interface
+WWW=		https://metacpan.org/release/Heap-Simple-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.prevanders.net/	\
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Library to analyze DWARF debugging information in ELF files
+WWW=		https://www.prevanders.net/dwarf.html
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.willhackforsushi.com/code/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert packet captures in 802.11 format to Ethernet format
+WWW=		https://www.willhackforsushi.com/?page_id=79
 
 LICENSE=	GPLv2
 

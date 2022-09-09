@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to dump YAML with color
+WWW=		https://metacpan.org/release/YAML-Tiny-Color
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

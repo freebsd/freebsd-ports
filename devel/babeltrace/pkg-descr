@@ -7,5 +7,3 @@ git://git.efficios.com/ctf.git
 gitweb:     http://git.efficios.com/?p=ctf.git
 The CE Workgroup of the Linux Foundation, Ericsson, and EfficiOS have
 sponsored this work.
-
-WWW: http://www.efficios.com/babeltrace

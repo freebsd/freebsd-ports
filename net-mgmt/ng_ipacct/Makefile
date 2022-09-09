@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Netgraph IP accounting
+WWW=		https://github.com/vstakhov/ng_ipacct/
 
 LICENSE=	BSD2CLAUSE
 

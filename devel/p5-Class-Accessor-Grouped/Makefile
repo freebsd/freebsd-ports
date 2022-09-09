@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lets you build groups of accessors
+WWW=		https://metacpan.org/release/Class-Accessor-Grouped
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

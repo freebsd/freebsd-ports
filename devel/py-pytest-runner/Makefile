@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Test support for pytest runner in setup.py
+WWW=		https://github.com/pytest-dev/pytest-runner
 
 LICENSE=	MIT
 

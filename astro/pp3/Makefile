@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/PP3/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates celestial charts
+WWW=		http://pp3.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

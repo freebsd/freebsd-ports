@@ -5,6 +5,7 @@ CATEGORIES=	databases net
 
 MAINTAINER=	axel.rau@chaos1.de
 COMMENT=	IP address and IP range index types for PostgreSQL
+WWW=		https://github.com/RhodiumToad/ip4r
 
 LICENSE=	PostgreSQL
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	spry@anarchy.in.the.ph
 COMMENT=	Perl encoding/decoding implementation of the ICMPv6 layer
+WWW=		https://metacpan.org/release/Net-Frame-Layer-ICMPv6
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \

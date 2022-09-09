@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Use Database URLs in your Django Application
+WWW=		https://github.com/jazzband/dj-database-url
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

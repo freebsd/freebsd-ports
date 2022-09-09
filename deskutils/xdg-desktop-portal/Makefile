@@ -7,6 +7,7 @@ PATCHFILES=	552.patch:-p1:freebsd_compat
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Portal frontend service for Flatpak
+WWW=		https://github.com/flatpak/xdg-desktop-portal
 
 LICENSE=	LGPL21
 
@@ -28,7 +29,6 @@ GH_ACCOUNT=	flatpak
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400008) \
- || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300501) \
  || ${OSVERSION} < 1300000
 IGNORE=		requires O_PATH support in open(2)
 .endif

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Deep merge function for Python
+WWW=		https://github.com/clarketm/mergedeep
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

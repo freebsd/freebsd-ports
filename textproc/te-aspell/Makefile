@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Aspell Telugu dictionary
+WWW=		http://www.swecha.org/wiki/Wordlist_and_Dictionaries
 
 DICT=		te
 

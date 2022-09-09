@@ -7,6 +7,7 @@ DISTFILES=
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Perl interface to Thrift
+WWW=		https://thrift.apache.org/
 
 BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector
 RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector

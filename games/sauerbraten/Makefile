@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_2020_12_21_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
+WWW=		http://sauerbraten.org/
 
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi

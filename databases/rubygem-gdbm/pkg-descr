@@ -15,5 +15,3 @@ time. A process can open a database as a "reader" or a
 "writer". Whereas a reader has only read-access to the database, a
 writer has read- and write-access. A database can be accessed either
 by any number of readers or by exactly one writer at the same time.
-
-WWW: https://rubygems.org/gems/gdbm

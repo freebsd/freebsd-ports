@@ -17,5 +17,3 @@ Security improvements:
   ntpq) can no longer be disabled.
 * The deprecated and vulnerability-prone ntpdate program has been replaced with
   a shell wrapper around ntpdig.
-
-WWW: https://gitlab.com/NTPsec/ntpsec/

@@ -9,6 +9,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
+WWW=		https://tug.org/texlive/
 
 LIB_DEPENDS=	libicuio.so:devel/icu \
 		libt1.so:devel/t1lib \

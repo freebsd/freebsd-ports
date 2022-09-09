@@ -8,9 +8,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/fonts_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/freebsd-questions_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/freebsd-releng_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-src-lsp/freebsd-src-lsp_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/freebsd-update-server_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/geom-class_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/gjournal-desktop_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/hubs/hubs_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec-must_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/ldap-auth_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leap-seconds_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/linux-emulation_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/linux-users_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/mailing-list-faq_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/nanobsd_es.pdf

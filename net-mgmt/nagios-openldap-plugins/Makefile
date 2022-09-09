@@ -9,6 +9,7 @@ DISTNAME=	ltb-project-nagios-plugins-${PORTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugins to monitor OpenLDAP
+WWW=		https://ltb-project.org/wiki/documentation/
 
 LICENSE=	GPLv2
 

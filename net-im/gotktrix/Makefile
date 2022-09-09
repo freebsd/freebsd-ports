@@ -1,10 +1,12 @@
 PORTNAME=	gotktrix
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Matrix client in Go and GTK4
+WWW=		https://github.com/diamondburned/gotktrix
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

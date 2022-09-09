@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Low-level components of distutils2 and higher-level APIs
+WWW=		https://bitbucket.org/pypa/distlib
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	FastAPI-Users Ormar database adapter
+WWW=		https://github.com/fastapi-users/fastapi-users-db-ormar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

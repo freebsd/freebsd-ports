@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Efficient binary serialization, like JSON but smaller and faster
+WWW=		https://msgpack.org/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

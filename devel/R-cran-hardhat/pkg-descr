@@ -6,5 +6,3 @@ about S3 methods and formulas, which the average package developer
 might not have. The goal of 'hardhat' is to reduce the burden around
 building new modeling packages by providing functionality for
 preprocessing, predicting, and validating input.
-
-WWW: https://cran.r-project.org/web/packages/hardhat/

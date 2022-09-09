@@ -8,6 +8,7 @@ PATCHFILES=	f9125454bfb2cd28d78544ba41d92c028be6a277.patch:-p1 # Lift the defaul
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for binary data visualization and analysis
+WWW=		https://codisec.com/veles/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Recursively merge two or more hashes, simply
+WWW=		https://metacpan.org/release/Hash-Merge-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	React/JSX adapter for the Ruby on Rails asset pipeline
+WWW=		https://github.com/reactjs/react-rails
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

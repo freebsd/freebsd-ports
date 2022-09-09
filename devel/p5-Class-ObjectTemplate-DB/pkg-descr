@@ -6,5 +6,3 @@ objects stored in databases (hence the name of the module).
 That way an object can be created, without triggering a DB lookup.
 Later if data is accessed and it is not currently present in the object,
 it can be retrieved on an as-need basis.
-
-WWW: https://metacpan.org/release/Class-ObjectTemplate-DB

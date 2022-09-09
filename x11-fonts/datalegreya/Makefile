@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts math textproc
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Typeface that melts text and data visualisation
+WWW=		https://figs-lab.com/en/datalegreya
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/SIL\ Open\ Font\ License.txt

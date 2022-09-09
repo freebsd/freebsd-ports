@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validates X.509 certificates and paths
+WWW=		https://github.com/MatthiasValvekens/certvalidator
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

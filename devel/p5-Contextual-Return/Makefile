@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create context-sensitive return values
+WWW=		https://metacpan.org/release/Contextual-Return
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

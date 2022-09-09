@@ -8,5 +8,3 @@ from a few inconveniences:
 - It applies gsettings directly, with no need to use workarounds. You
   don't need to set gsettings in the sway config file. You don't need
   the "import-gsettings" script.
-
-WWW: https://github.com/nwg-piotr/nwg-look

@@ -3,5 +3,3 @@ This set of modules provides perl class wrappers for the network mapper
 modules, a developer, network administrator, or other techie can create
 perl routines or classes which can be used to automate and integrate
 nmap scans elegantly into new and existing perl scripts.
-
-WWW: https://metacpan.org/release/Nmap-Scanner

@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Browser based analytics and search interface to ElasticSearch
+WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 

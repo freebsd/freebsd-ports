@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
 COMMENT=	Rime Cangjie v5 schema support
+WWW=		https://github.com/rime/rime-cangjie
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

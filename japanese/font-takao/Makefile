@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Improved IPA Japanese fonts
+WWW=		https://launchpad.net/takao-fonts
 
 LICENSE=	IPAFONTLICv1.0
 LICENSE_NAME=	IPA Font License Agreement v1.0

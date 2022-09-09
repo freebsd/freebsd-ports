@@ -6,6 +6,7 @@ MASTER_SITES=	SF/jdictionary/Plugins%20for%20jDictionary/Smart%20English-German
 DISTNAME=	SmartEngGer-1_4.jar
 
 COMMENT=	JDictionary plugin: English-German dictionary
+WWW=		http://jdictionary.info/
 
 MASTERDIR=	${.CURDIR}/../../textproc/jdictionary
 

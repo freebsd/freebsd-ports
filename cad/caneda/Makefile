@@ -5,6 +5,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	EDA software suite focused on ease of use and portability
+WWW=		http://caneda.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

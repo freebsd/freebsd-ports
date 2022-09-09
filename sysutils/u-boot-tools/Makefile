@@ -6,6 +6,7 @@ DISTNAME=	u-boot-${PORTVERSION}
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	U-boot related tools
+WWW=		https://www.denx.de/wiki/U-Boot
 
 LICENSE=	GPLv2
 

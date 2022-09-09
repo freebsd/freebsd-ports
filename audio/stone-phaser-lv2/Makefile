@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classic analog phaser effect, made with DPF and Faust
+WWW=		https://github.com/jpcima/stone-phaser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

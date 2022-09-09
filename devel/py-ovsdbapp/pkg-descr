@@ -9,5 +9,4 @@ Features:
 - Transaction support
 - Native OVSDB communication
 
-WWW: https://docs.openstack.org/ovsdbapp/latest/
-WWW: https://github.com/openstack/ovsdbapp
+See also: https://github.com/openstack/ovsdbapp

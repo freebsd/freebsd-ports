@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bscott@bunyatech.com.au
 COMMENT=	Clock widget with analog and digital display
+WWW=		https://metacpan.org/release/Tk-Clock
 
 LICENSE=	ARTPERL10 GPLv1+
 LICENSE_COMB=	dual

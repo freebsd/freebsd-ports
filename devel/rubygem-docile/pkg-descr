@@ -1,4 +1,2 @@
 Docile turns any Ruby object into a DSL. Especially useful with the Builder
 pattern.
-
-WWW: https://ms-ati.github.io/docile/

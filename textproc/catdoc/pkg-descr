@@ -6,5 +6,3 @@ mode.  Also included are:
 - xls2csv, which converts Excel spreadsheets to plain text files with CSV
   (comma-separated value) lines; and
 - catppt, which extracts text from PowerPoint files.
-
-WWW: http://www.wagner.pp.ru/~vitus/software/catdoc/

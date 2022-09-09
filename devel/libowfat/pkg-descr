@@ -1,5 +1,3 @@
 libowfat is a library of general purpose APIs extracted from Dan
 Bernstein's software, reimplemented and covered by the GNU General
 Public License Version 2 (no later versions).
-
-WWW: https://www.fefe.de/libowfat/

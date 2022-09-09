@@ -8,5 +8,3 @@ applications.
 
 BUGS: the interesting parts of this port are the libraries, but some components
       like Wok are not [yet] fully functional.
-
-WWW: http://www.opencascade.org/

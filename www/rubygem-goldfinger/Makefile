@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Webfinger utility for Ruby
+WWW=		https://github.com/tootsuite/goldfinger
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low level implementation of the HTTP/1 protocol
+WWW=		https://github.com/socketry/protocol-http1
 
 LICENSE=	MIT
 

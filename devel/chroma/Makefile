@@ -1,12 +1,13 @@
 PORTNAME=	chroma
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-syntax-highlighter
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General purpose syntax highlighter in pure Go
+WWW=		https://github.com/alecthomas/chroma
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

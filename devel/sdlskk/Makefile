@@ -7,6 +7,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK like library for input Japanese, based on SDL
+WWW=		https://www.kmc.gr.jp/~ohai/sdlskk.en.html
 
 LICENSE=	LGPL21
 

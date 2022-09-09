@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.13 \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Traffic visualizer, similar to nettop
+WWW=		https://sourceforge.net/projects/jnettop/
 
 GNU_CONFIGURE=	yes
 USES=		gmake gnome pkgconfig

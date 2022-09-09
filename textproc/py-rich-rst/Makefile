@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Beautiful reStructuredText renderer for Rich
+WWW=		https://github.com/wasi-master/rich-rst
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

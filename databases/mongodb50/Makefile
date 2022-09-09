@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.10
-PORTREVISION=	1
+DISTVERSION=	5.0.11
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -10,6 +9,7 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database (5.0.x Branch)
+WWW=		https://docs.mongodb.com/v5.0/
 
 LICENSE=	APACHE20 SSPLv1 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi
@@ -62,8 +62,8 @@ GROUPS=		mongodb
 
 OPTIONS_DEFINE=			LTO SASL SSL
 OPTIONS_DEFAULT=		LTO SASL SSL
-OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12/llvm13 on aarch64.
+#OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
+#OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12/llvm13 on aarch64.
 
 LTO_MAKE_ARGS=	--lto=on
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musical instrument tuner
+WWW=		https://www.nongnu.org/lingot/
 
 LICENSE=	GPLv2
 

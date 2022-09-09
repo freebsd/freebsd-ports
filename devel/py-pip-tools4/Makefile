@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Keep your pinned dependencies fresh
+WWW=		https://pypi.org/project/pip-tools/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

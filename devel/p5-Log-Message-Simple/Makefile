@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides standardized logging facilities using the Log::Message module
+WWW=		https://metacpan.org/release/Log-Message-Simple
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Message>=0:devel/p5-Log-Message

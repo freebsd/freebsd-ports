@@ -6,6 +6,7 @@ DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
+WWW=		https://www.musicpd.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

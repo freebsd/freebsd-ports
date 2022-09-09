@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy safelist-based HTML-sanitizing tool
+WWW=		https://github.com/mozilla/bleach
 
 LICENSE=	APACHE20
 

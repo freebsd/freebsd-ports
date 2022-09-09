@@ -1,12 +1,13 @@
 PORTNAME=	ipfs-go-fs-repo-migrations
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/ipfs/fs-repo-migrations/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Migrations for the filesystem repository of ipfs clients
+WWW=		https://github.com/ipfs/fs-repo-migrations
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

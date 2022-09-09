@@ -5,6 +5,7 @@ MASTER_SITES=	http://sg.danny.cz/sg/p/
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	dd tool that specializes in files that are block devices
+WWW=		https://sg.danny.cz/sg/ddpt.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

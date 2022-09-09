@@ -5,6 +5,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Development branch of AT&T KornShell 93
+WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 
@@ -41,7 +42,6 @@ post-patch:
 	@${MV} ${WRKSRC}/src/cmd/ksh93/docs/ksh.1 ${WRKSRC}/src/cmd/ksh93/docs/ksh93.1
 .endif
 .if ${PORT_OPTIONS:MKSH}
-	@# Keep portlint happy
 .endif
 
 .include <bsd.port.mk>

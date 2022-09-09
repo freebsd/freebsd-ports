@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	avk@vl.ru
 COMMENT=	LDAP database backend for Django
+WWW=		https://github.com/django-ldapdb/django-ldapdb
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

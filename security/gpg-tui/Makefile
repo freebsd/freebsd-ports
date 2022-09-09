@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Terminal User Interface for GnuPG
+WWW=		https://github.com/orhun/gpg-tui
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

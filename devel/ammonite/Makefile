@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Provides a system shell in the high-level Scala language
+WWW=		https://ammonite.io/
 
 LICENSE=	MIT
 

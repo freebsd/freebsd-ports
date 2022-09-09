@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Freedesktop secrets provider that uses pass as a backend
+WWW=		https://github.com/nullobsi/pass-secrets
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

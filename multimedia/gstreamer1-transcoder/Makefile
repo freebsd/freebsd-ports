@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GStreamer Transcoding API
+WWW=		https://github.com/pitivi/gst-transcoder
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

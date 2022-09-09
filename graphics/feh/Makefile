@@ -1,10 +1,12 @@
 PORTNAME=	feh
-PORTVERSION=	3.9
+PORTVERSION=	3.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Image viewer that utilizes Imlib2
+WWW=		https://feh.finalrewind.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Safely evaluate pure Haskell expressions
+WWW=		https://github.com/gwern/mueval
 
 LICENSE=	BSD3CLAUSE
 

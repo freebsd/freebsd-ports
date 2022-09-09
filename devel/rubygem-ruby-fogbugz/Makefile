@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Ruby wrapper for the Fogbugz XML API
+WWW=		https://github.com/firmafon/ruby-fogbugz
 
 LICENSE=	MIT
 

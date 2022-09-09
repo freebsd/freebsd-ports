@@ -1,0 +1,20 @@
+--- configure.ac.orig	2022-08-25 15:32:21.256937000 -0700
++++ configure.ac	2022-08-25 15:37:36.166445000 -0700
+@@ -802,7 +802,7 @@
+ 
+ dnl A Python GUI client application for the sysadmin desktop
+ dnl (not necessarily on the NUT server itself):
+-NUT_ARG_WITH([nut_monitor], [install the NUT-Monitor GUI files], [auto])
++NUT_ARG_WITH([nut_monitor], [install the NUT-Monitor GUI files], [no])
+ NUT_ARG_WITH([pynut], [install the PyNUT module files (yes, no, app, auto)], [auto])
+ dnl Note: we did NUT_CHECK_PYTHON2 NUT_CHECK_PYTHON3 etc above,
+ dnl and if at all possible, we generate the files from .in templates
+@@ -1301,7 +1301,7 @@
+     dnl Can we satisfy any NUT-Monitor installation request?
+     if test -n "${nut_with_nut_monitor_py2gtk2}${nut_with_nut_monitor_py3qt5}" ; then
+         case "${nut_with_nut_monitor}" in
+-            "auto") nut_with_nut_monitor="yes" ;;
++            "auto") nut_with_nut_monitor="no" ;;
+         esac
+     else
+         case "${nut_with_nut_monitor}" in

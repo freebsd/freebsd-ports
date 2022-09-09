@@ -9,5 +9,3 @@ Features
 * Event performance times in seconds can be calculated from tick times and tempo
   meta messages with the MidiFile::doTimeAnalysis function
 * Durations of notes can be extracted using the MidiFile::linkNotePairs function
-
-WWW: https://midifile.sapp.org/

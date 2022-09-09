@@ -7,5 +7,3 @@ This is simp.
 
  This package define the basic operations on intervals. It is useful when
  some values for a computation are incertain.
-
-WWW: http://octave.sourceforge.net/

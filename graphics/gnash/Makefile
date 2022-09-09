@@ -7,6 +7,7 @@ DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Flash movie player
+WWW=		https://www.gnu.org/software/gnash/
 
 LICENSE=	GPLv3
 

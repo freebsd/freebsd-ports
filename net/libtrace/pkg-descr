@@ -5,7 +5,5 @@ including live device capture, DAG hardware capture and off-line trace files
 
 More information about libtrace can be found on the libtrace webpage.
 
-WWW: http://research.wand.net.nz/software/libtrace.php
-
 Original port created by Matt Peterson <matt at peterson.org>
 Updated for FreeBSD 9.0 by Shane Alcock <salcock at waikato.ac.nz>

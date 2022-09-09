@@ -9,5 +9,3 @@ The library provides:
   equipped with rich public interfaces.
 * Self-contained code that does not require any additional libraries
   (except for some optional branch-and-cut algorithms).
-
-WWW: https://ogdf.uos.de/

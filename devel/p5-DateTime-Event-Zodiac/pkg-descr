@@ -1,5 +1,3 @@
 DateTime::Event::Zodiac returns the latin zodiac name or alternatively
 the unicode zodiac symbol for the given date. The zodiac may be calculated
 using either fixed dates or using the longitude/position of the sun.
-
-WWW: https://metacpan.org/release/DateTime-Event-Zodiac

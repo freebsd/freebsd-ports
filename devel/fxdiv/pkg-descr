@@ -11,5 +11,3 @@ Features:
 * Compatible with C99, C++, OpenCL, and CUDA
 * Uses platform-specific compiler intrinsics for optimal performance
 * Covered with unit tests and microbenchmarks
-
-WWW: https://github.com/Maratyszcza/FXdiv

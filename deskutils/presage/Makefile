@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Intelligent predictive text entry system
+WWW=		https://presage.sourceforge.io/
 
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}

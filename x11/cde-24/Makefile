@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-24
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Common Desktop Environment
+WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 
 LICENSE=	LGPL21
 

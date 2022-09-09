@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Proxy for using WebDriver clients with Gecko-based browsers
+WWW=		https://github.com/mozilla/geckodriver
 
 LICENSE=	MPL20
 

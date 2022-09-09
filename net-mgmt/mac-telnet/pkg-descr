@@ -1,0 +1,4 @@
+Open source MAC Telnet client and server for connecting to MikroTik RouterOS
+devices and Posix machines via MAC address.
+
+Binaries are provided for both mac-telnet client and server.

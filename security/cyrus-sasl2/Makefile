@@ -1,4 +1,5 @@
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
+WWW=		https://www.cyrusimap.org/sasl/
 
 USES=		cpe libtool:keepla pathfix perl5
 USE_PERL5=	patch

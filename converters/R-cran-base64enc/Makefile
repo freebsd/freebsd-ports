@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tools for base64 encoding
+WWW=		https://cran.r-project.org/web/packages/base64enc/
 
 LICENSE=	GPLv2+
 

@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}.zip \
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Numerical/scientific/number-theoretic calculations
+WWW=		https://metacpan.org/dist/Math-Pari
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

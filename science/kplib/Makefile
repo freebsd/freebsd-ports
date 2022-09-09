@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for finding optimal Generalized Monkhorst-Pack k-points grid
+WWW=		https://gitlab.com/muellergroup/kplib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

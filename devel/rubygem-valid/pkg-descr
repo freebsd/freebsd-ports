@@ -1,5 +1,3 @@
 Validator is a simple ruby validation class.
 
 It's not used directly inside the class but rather outside.
-
-WWW: https://github.com/zombor/Validator

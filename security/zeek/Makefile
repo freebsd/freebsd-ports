@@ -1,12 +1,12 @@
 PORTNAME=	zeek
-PORTVERSION=	5.0.0
-PORTREVISION=	2
+PORTVERSION=	5.0.1
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	System for detecting network intruders in real-time
+WWW=		https://www.zeek.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl interface to MoviePosterDB
+WWW=		https://metacpan.org/release/WebService-MoviePosterDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

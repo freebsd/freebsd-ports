@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pure-OO reimplementation of dumpvar.pl
+WWW=		https://metacpan.org/release/Devel-Dumpvar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

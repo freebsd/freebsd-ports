@@ -1,4 +1,2 @@
 Librarian is a framework for writing bundlers, which are tools that resolve,
 fetch, install, and isolate a project's dependencies, in Ruby.
-
-WWW: https://github.com/applicationsonline/librarian

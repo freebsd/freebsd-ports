@@ -6,5 +6,3 @@ data it can work with.  Loading modules at runtime can also provide
 flexible interfaces for perl modules.  Modules can let the programmer
 decide what modules will be used by it instead of hard-coding their
 names.
-
-WWW: https://metacpan.org/release/Class-Loader

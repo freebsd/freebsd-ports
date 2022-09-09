@@ -8,6 +8,7 @@ DISTNAME=	libDesktop-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop library
+WWW=		https://www.defora.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

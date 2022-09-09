@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Setuptools plugin that adds test information to .egg-info
+WWW=		https://pypi.org/project/eggtestinfo/
 
 LICENSE=	ZPL21
 

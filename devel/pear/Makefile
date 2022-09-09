@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PEAR framework for PHP
+WWW=		https://pear.php.net/
 
 LICENSE=	PHP301
 

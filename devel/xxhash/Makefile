@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely fast non-cryptographic hash algorithm
+WWW=		https://cyan4973.github.io/xxHash/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

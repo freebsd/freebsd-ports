@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail and news gateway for Zconnect
+WWW=		https://www.dinoex.de/unix-connect.html
 
 BUILD_DEPENDS=	lrz:comms/lrzsz
 

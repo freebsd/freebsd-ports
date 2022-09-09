@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Play and organize your music collection
+WWW=		http://gnumdk.github.io/lollypop/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

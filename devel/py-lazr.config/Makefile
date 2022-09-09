@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Create configuration schemas, and process and validate configurations
+WWW=		https://launchpad.net/lazr.config
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

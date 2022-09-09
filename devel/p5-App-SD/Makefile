@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Peer-to-peer replicated distributed issue tracker
+WWW=		https://syncwith.us/sd/
 
 LICENSE=	MIT
 

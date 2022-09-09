@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}.zip
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free interior 3D design application
+WWW=		https://www.sweethome3d.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT

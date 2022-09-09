@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - EPG search plugin
+WWW=		http://winni.vdr-developer.org/epgsearch/index_eng.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

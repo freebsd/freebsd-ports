@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.dirvish.org/
 
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Network backup system based off of rsync
+WWW=		http://www.dirvish.org/
 
 RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules \
 		p5-Time-Period>=0:devel/p5-Time-Period \

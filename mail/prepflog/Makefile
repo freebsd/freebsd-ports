@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
+WWW=		https://github.com/johnfawcett/prepflog
 
 LICENSE=	GPLv2+
 

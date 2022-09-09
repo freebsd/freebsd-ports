@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	peterjeremy@acm.org
 COMMENT=	Debugger for use with MSP 430 MCUs
+WWW=		http://mspdebug.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Format number with metric prefix
+WWW=		https://metacpan.org/dist/Number-Format-Metric
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Efficient resampling and calculation of medians with confidence intervals
+WWW=		https://metacpan.org/release/Statistics-CaseResampling
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

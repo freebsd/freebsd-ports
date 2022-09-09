@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-bin-${PORTVERSION}-${RELEASE_DATE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API To Access Microsoft Format Files
+WWW=		https://poi.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

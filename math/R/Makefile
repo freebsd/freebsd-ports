@@ -5,6 +5,7 @@ MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Language for statistical computing and graphics
+WWW=		https://www.R-project.org/
 
 LICENSE=	GPLv2
 

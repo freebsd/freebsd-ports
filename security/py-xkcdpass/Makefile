@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jacob@jwfh.ca
 COMMENT=	Password generator as in XKCD 936
+WWW=		https://github.com/jwfh/xkcdpass
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.BSD

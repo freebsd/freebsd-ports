@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Commons of banal micro-functions for Python
+WWW=		https://github.com/pudo/banal
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

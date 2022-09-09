@@ -5,5 +5,3 @@ for display purposes.
 The Rose::HTML::Object class may be used directly to represent a generic
 tag with an explicitly set element name and arbitrary attributes. There
 are also methods for parent/child manipulation.
-
-WWW: https://metacpan.org/release/Rose-HTML-Objects

@@ -4,5 +4,3 @@ Features
  - Protocol Agnostic - Currently supporting HTTP, HTTPS, HTTP/2.
  - Scenario-Based - Create your flow in a JSON file. Without a line of code!
  - Different Load Types - Test your system's limits across different load types.
-
-WWW: https://github.com/ddosify/ddosify

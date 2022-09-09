@@ -16,5 +16,3 @@ functions:
   - Testing the challenge-response functionality of a YubiKey;
   - Deleting the configuration of a YubiKey;
   - Checking type and firmware version of the YubiKey.
-
-WWW: https://github.com/Yubico/yubikey-personalization-gui

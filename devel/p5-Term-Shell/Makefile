@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write command-line shells in Perl
+WWW=		https://metacpan.org/release/Term-Shell
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

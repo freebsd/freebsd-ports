@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Library to handle Apple Property List format
+WWW=		https://www.libimobiledevice.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

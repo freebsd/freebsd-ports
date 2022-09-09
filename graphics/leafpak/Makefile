@@ -5,6 +5,7 @@ MASTER_SITES=	http://hoshina.denpa.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic file cutter for LEAF/AQUAPLUS PAK format archives
+WWW=		https://hoshina.denpa.org/leafpak.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

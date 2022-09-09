@@ -7,6 +7,7 @@ LICENSE=	GPLv3
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-threaded bzip2/bunzip2 filter
+WWW=		https://lbzip2.org/
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

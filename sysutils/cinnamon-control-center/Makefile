@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for Cinnamon
+WWW=		http://cinnamon.linuxmint.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

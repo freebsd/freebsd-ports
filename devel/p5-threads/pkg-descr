@@ -17,5 +17,3 @@ possible to enable threading inside an eval "", do, require, or use.
 In particular, if you are intending to share variables with
 threads::shared, you must use threads before you use threads::shared.
 (threads will emit a warning if you do it the other way around.)
-
-WWW: https://metacpan.org/release/threads

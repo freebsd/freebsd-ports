@@ -5,6 +5,7 @@ MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line utility for pastebin
+WWW=		https://phab.lubuntu.me/source/pastebinit/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

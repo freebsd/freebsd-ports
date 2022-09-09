@@ -1,10 +1,11 @@
 PORTNAME=	xmpp-client
 PORTVERSION=	20170324
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	XMPP client with OTR support
+WWW=		https://github.com/agl/xmpp-client
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

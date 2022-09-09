@@ -9,6 +9,7 @@ DIST_SUBDIR=	eclipse
 
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Shell script editor for Eclipse
+WWW=		https://sourceforge.net/projects/shelled/
 
 RUN_DEPENDS=	eclipse:java/eclipse
 

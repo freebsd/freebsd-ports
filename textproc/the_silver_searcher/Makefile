@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Code-searching tool similar to ack but faster
+WWW=		https://github.com/ggreer/the_silver_searcher
 
 LICENSE=	APACHE20
 

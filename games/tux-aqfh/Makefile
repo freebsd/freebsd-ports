@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tuxedo The Penguin: A Quest for Herring
+WWW=		https://sourceforge.net/projects/tuxaqfh/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

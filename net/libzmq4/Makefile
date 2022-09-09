@@ -7,6 +7,7 @@ DISTNAME=	zeromq-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	ZeroMQ core library (Version 4)
+WWW=		https://www.zeromq.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

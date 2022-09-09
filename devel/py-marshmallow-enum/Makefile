@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enum field for Marshmallow
+WWW=		https://github.com/justanr/marshmallow_enum
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

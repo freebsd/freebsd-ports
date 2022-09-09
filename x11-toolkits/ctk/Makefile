@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-widgets
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Widgets and common code for medical imaging, surgical navigation, etc
+WWW=		https://www.commontk.org/index.php/Main_Page
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	HTTP/SOCKS proxy server for everybody
+WWW=		https://github.com/leproxy/leproxy
 
 LICENSE=	MIT
 

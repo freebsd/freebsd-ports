@@ -5,5 +5,3 @@ sockaddr, Hashicorp Consul, and Hashicorp Vault secrets.
 Gomplate lets you process templates which also include shell-like
 variables. Also there are some useful built-in functions that can be
 used to make templates even more expressive.
-
-WWW: https://github.com/hairyhenderson/gomplate

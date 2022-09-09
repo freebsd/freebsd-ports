@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to view space usage in your terminal
+WWW=		https://github.com/paul-nechifor/ohmu
 
 LICENSE=	MIT
 

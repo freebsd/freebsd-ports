@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Toolset for interacting with the OStatus2 suite of protocols
+WWW=		https://github.com/Gargron/ostatus2/
 
 LICENSE=	MIT
 

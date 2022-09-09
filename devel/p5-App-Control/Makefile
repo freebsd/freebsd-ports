@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Apachectl style control of another script or executable
+WWW=		https://metacpan.org/release/App-Control
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

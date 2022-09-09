@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	User-level file synchronization tool
+WWW=		https://www.cis.upenn.edu/~bcpierce/unison/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

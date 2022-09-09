@@ -2,8 +2,9 @@ PORTNAME=	libretro-prosystem
 PORTVERSION=	0.20220228
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of ProSystem to the libretro API
+WWW=		https://github.com/libretro/prosystem-libretro
 
 LICENSE=	GPLv2
 

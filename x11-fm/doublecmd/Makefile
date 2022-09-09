@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Total Commander like file manager for the X Window System
+WWW=		https://doublecmd.sourceforge.io
 
 LICENSE=	GPLv2
 

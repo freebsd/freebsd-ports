@@ -1,11 +1,12 @@
 PORTNAME=	wsproto
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sans-IO WebSocket protocol implementation
+WWW=		https://pypi.org/project/wsproto/
 
 LICENSE=	MIT
 

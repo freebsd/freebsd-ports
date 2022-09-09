@@ -6,6 +6,7 @@ DISTNAME=	opensips-${DISTVERSION}
 
 MAINTAINER=	bambyster@gmail.com
 COMMENT=	Open SIP Server
+WWW=		https://www.opensips.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

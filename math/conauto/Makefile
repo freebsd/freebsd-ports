@@ -5,6 +5,7 @@ MASTER_SITES=	https://sites.google.com/site/giconauto/home/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program for graph isomorphism testing & automorphism group computation
+WWW=		https://sites.google.com/site/giconauto/
 
 LICENSE=	GPLv3+
 

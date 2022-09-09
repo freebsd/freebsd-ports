@@ -4,5 +4,3 @@ finds a file in the directory.
 
 Its primary intended use is processing a "drop-box" style directory,
 such as an FTP upload directory.
-
-WWW: https://metacpan.org/release/POE-Component-DirWatch

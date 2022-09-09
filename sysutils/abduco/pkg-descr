@@ -8,5 +8,3 @@ abduco is in many ways very similar to dtach but is a completely
 independent implementation which is actively maintained, contains no
 legacy code, provides a few additional features, has a cleaner, more
 robust implementation and is distributed under the ISC license.
-
-WWW: http://www.brain-dump.org/projects/abduco/

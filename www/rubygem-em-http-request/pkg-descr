@@ -10,5 +10,3 @@ Async (EventMachine) HTTP client, with support for:
 - Connection-level & Global middleware support
 - HTTP parser via http_parser.rb
 - Works wherever EventMachine runs: Rubinius, JRuby, MRI
-
-WWW: https://github.com/igrigorik/em-http-request

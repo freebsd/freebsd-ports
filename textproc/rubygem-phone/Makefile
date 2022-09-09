@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Phone number parsing, validation and formatting
+WWW=		https://github.com/carr/phone
 
 LICENSE=	MIT
 

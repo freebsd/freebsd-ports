@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Recursive hash merger
+WWW=		https://rubygems.org/gems/deep_merge
 
 LICENSE=	MIT
 

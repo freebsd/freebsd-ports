@@ -1,11 +1,12 @@
 PORTNAME=	caronade
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Small and light tool to help with FreeBSD Ports CI
+WWW=		https://github.com/decke/caronade
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

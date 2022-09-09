@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
+WWW=		http://freshmeat.net/projects/tinywm/?branch_id=55633&release_id=184175
 
 OPTIONS_DEFINE=	DOCS
 

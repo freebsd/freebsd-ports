@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep difference and search of any Python object/data
+WWW=		https://github.com/seperman/deepdiff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

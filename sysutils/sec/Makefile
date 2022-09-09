@@ -5,6 +5,7 @@ MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Simple event (logs) correlator
+WWW=		https://simple-evcorr.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ rule them all, so to speak.
 
 Also, unlike MooX::HandlesVia, it honours type constraints, plus it doesn't have
 the limitation that it can't mutate non-reference values.
-
-WWW: https://metacpan.org/dist/Sub-HandlesVia

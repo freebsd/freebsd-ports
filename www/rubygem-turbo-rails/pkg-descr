@@ -21,5 +21,3 @@ builds on top of those basics to make the integration with Rails as smooth as
 possible. You can deliver turbo updates via model callbacks over Action Cable,
 respond to controller actions with native navigation or standard redirects, and
 render turbo frames with helpers and layout-free responses.
-
-WWW: https://github.com/hotwired/turbo-rails

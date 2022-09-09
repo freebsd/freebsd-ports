@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Hexadecimal Range Dumper with color, bitfields and skip ranges
+WWW=		https://metacpan.org/release/Data-HexDump-Range
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Readonly>=0:devel/p5-Readonly \

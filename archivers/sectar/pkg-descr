@@ -3,5 +3,3 @@ yet, but it can encrypt/decrypt files only using multiple blocksizes,
 and keysizes using the AES algorithm Rijndael. Once the standalone app
 is stable, then it will be incorporated with tar. The encryption is
 exported under exemption TSU 740.13.
-
-WWW: http://sf.net/projects/star/

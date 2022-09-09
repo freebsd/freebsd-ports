@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src.doc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to fit population models across sites
+WWW=		https://evolution.genetics.washington.edu/lamarc/recombine.html
 
 USES=		shebangfix
 

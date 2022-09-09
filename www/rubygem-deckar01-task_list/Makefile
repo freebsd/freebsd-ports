@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Markdown TaskList components
+WWW=		https://github.com/deckar01/task_list
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

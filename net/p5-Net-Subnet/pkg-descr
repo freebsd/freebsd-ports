@@ -9,5 +9,3 @@ Subnets have to be given in "address/mask" or "address/length" (CIDR) format.
 The Socket and Socket6 modules are used to normalise addresses, which means that
 any of the address formats supported by inet_aton and inet_pton can be used with
 Net::Subnet.
-
-WWW: https://metacpan.org/release/Net-Subnet

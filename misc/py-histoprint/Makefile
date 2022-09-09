@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pretty printing of histograms to the console
+WWW=		https://github.com/scikit-hep/histoprint
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	Logbook-${PORTVERSION}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Logging replacement for Python
+WWW=		https://logbook.readthedocs.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -1,11 +1,12 @@
 PORTNAME=	openzfs
-PORTVERSION=	2022060100
+PORTVERSION=	2022082900
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS userland for FreeBSD
+WWW=		https://github.com/zfsonfreebsd/ZoF
 
 LICENSE=	CDDL
 
@@ -32,13 +33,9 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_PROJECT=	zfs
-GH_TAGNAME=	bc8192cd5
+GH_TAGNAME=	2d5622f5b
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013
-IGNORE=	needs FreeBSD 12/13 with AES-CCM support
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug --enable-debuginfo
@@ -66,4 +63,4 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

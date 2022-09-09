@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl HTTP proxy
+WWW=		https://metacpan.org/release/HTTP-Proxy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

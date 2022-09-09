@@ -13,5 +13,3 @@ What's in the SDK:
 - Platforms
   Windows desktop, Windows Store, Windows Phone, Ubuntu, OS X, iOS, and Android
   [and now also FreeBSD ;-)]
-
-WWW: https://github.com/Microsoft/cpprestsdk

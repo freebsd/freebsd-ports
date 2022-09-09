@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Cryptography API
+WWW=		https://pear.horde.org
 
 OPTIONS_DEFINE=	BCMATH
 BCMATH_DESC=	Depend on bcmath PHP extension

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple data validation library
+WWW=		https://github.com/keleshev/schema
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextlib2>=0.5.5:devel/py-contextlib2@${PY_FLAVOR}
 

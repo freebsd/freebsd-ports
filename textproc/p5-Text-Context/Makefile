@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handle highlighting search result context snippets
+WWW=		https://metacpan.org/release/Text-Context
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-Context-EitherSide>=1.1:textproc/p5-Text-Context-EitherSide \

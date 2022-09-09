@@ -8,6 +8,7 @@ DISTNAME=	Healpix_${DISTVERSIONFULL}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software for pixelization, visualization, etc of data on the sphere
+WWW=		https://healpix.jpl.nasa.gov/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

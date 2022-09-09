@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure-python wrapper for libusb-1.0
+WWW=		https://github.com/vpelletier/python-libusb1
 
 LICENSE=	LGPL21+
 

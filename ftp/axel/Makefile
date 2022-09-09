@@ -6,10 +6,10 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/axel/axel-2.4.tar.gz/a2a76
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Download accelerator
+WWW=		http://axel.alioth.debian.org/
 
 DEPRECATED=	Last release in 2009 and dead upstream, please consider using www/aria2
 EXPIRATION_DATE=2022-06-30
-
 
 USES=		cpe gmake
 HAS_CONFIGURE=	yes

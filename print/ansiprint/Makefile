@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prints through a terminal with ANSI escape sequences
+WWW=		http://ansiprint.sourceforge.net
 
 USES=		tar:tgz
 PLIST_FILES=	bin/${PORTNAME}

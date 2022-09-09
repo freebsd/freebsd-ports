@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
+WWW=		https://wl.widelands.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,6 +26,8 @@ CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_VERSION="${DISTVERSION}" \
 		-DWL_OPTIMIZE_FLAGS="" \
 		-Wno-dev
+
+PORTSCOUT=	limit:^[0-9]+\.
 
 PORTDATA=	*
 PORTDOCS=	*

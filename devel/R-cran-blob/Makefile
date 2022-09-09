@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	A Simple S3 Class for Representing Vectors of Binary Data ('BLOBS')
+WWW=		https://blob.tidyverse.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

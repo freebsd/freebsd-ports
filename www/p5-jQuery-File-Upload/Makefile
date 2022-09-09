@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for jQuery File Upload plugin
+WWW=		https://metacpan.org/release/jQuery-File-Upload
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

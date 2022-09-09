@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose attributes with IOC integration
+WWW=		https://metacpan.org/release/MooseX-IOC
 
 BUILD_DEPENDS=	p5-IOC>=0:devel/p5-IOC \
 		p5-Moose>=0:devel/p5-Moose

@@ -7,6 +7,7 @@ DISTFILES=	plog.pl
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Perl based ipfilter log reporter
+WWW=		http://www.antibozo.net/ogata/webtools/
 
 USES=		perl5 shebangfix
 EXTRACT_CMD=	${CP}

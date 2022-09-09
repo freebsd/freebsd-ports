@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails61
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Framework to pass data to JS easily
+WWW=		https://github.com/gazay/gon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,5 +7,3 @@ A fast and modern Python SOAP client
 - Support for tornado async transport via gen.coroutine (Python 2.7+)
 - Support for asyncio via aiohttp (Python 3.5+)
 - Experimental support for XOP messages
-
-WWW: https://python-zeep.readthedocs.io/

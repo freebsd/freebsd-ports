@@ -13,5 +13,3 @@ Supported Features:
 	* Large parameterization capabilities, including dimensionality,
 	  fill factor, node capacity, etc.
 	* STR packing / bulk loading.
-
-WWW: https://libspatialindex.github.io/

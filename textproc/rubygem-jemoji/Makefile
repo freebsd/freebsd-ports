@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GitHub-flavored emoji plugin for Jekyll
+WWW=		https://github.com/jekyll/jemoji
 
 LICENSE=	MIT
 

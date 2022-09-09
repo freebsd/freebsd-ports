@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Devel::StackTrace + PadWalker
+WWW=		https://metacpan.org/release/Devel-StackTrace-WithLexicals
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,5 +5,3 @@ The pylib is a development support library featuring these tools and APIs:
   * py.iniconfig:  easy parsing of .ini files
   * py.code:  dynamic code generation and introspection
   * py.path:  uniform local and svn path objects
-
-WWW: https://pylib.org/

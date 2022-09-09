@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
 COMMENT=	Rime Chewing schema support
+WWW=		https://github.com/rime/rime-bopomofo
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	graphics print
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Creates a PDF file from image files
+WWW=		http://tumble.brouhaha.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,5 +7,3 @@ PostgreSQL servers written in Python.
 It allows your organisation to perform remote backups of multiple
 servers in business critical environments and helps DBAs during the
 recovery phase.
-
-WWW: https://pgbarman.org/

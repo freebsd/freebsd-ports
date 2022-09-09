@@ -5,5 +5,3 @@ and LZMA2 compression. Supported formats:
 * Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS,
   IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF,
   UEFI, VDI, VHD, VMDK, WIM, XAR and Z
-
-WWW: https://www.7-zip.org/

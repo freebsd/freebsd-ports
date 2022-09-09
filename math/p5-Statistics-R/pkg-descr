@@ -1,4 +1,2 @@
 Statistics::R will permit the control of the R (R-project) interpreter
 through Perl in different architectures and OS.
-
-WWW: https://metacpan.org/release/Statistics-R

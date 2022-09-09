@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl binding for Redis database
+WWW=		https://metacpan.org/release/Redis
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/co
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple and highly customizable quick launch bar
+WWW=		http://wbar.googlecode.com/
 
 LICENSE=	GPLv3
 

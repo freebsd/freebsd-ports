@@ -2,5 +2,3 @@ courierpassd is a password changing utility that uses the courier-authlib
 authentication library to change user credentials.
 
 Its interface follows that of poppassd.
-
-WWW: http://www.arda.homeunix.net/store/

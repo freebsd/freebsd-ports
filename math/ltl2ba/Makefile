@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lsv.fr/~gastin/ltl2ba/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast translation from LTL formulae to Buchi automata
+WWW=		https://www.lsv.fr/~gastin/ltl2ba/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

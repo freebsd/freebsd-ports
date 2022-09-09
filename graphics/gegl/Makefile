@@ -6,6 +6,7 @@ MASTER_SITES=	GIMP
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
+WWW=		https://gegl.org/
 
 LICENSE=	BSD3CLAUSE GPLv3+ LGPL3+
 LICENSE_COMB=	multi
@@ -113,7 +114,7 @@ GEXIV2_MESON_ENABLED=	gexiv2
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MESON_ENABLED=	libtiff
 
-VAPI_BUILD_DEPENDS=	vapigen:lang/vala
+VAPI_USES=		vala:build
 VAPI_MESON_ENABLED=	vapigen
 
 .include <bsd.port.pre.mk>

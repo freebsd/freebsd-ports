@@ -5,6 +5,7 @@ CATEGORIES=	devel java
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Gradle tab completion for Bash and Zsh
+WWW=		https://github.com/gradle/gradle-completion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,5 +5,3 @@ The daemon provide virtual character and network devices for accessing the
 console of the Mellanox Bluefield device. Refer to
 https://www.mellanox.com/products/bluefield-overview
 for more information.
-
-WWW: https://github.com/Mellanox/rshim-user-space/

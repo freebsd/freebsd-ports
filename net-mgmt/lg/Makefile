@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/mat/lg \
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Looking Glass written in Perl as a CGI script
+WWW=		https://github.com/Cougar/lg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

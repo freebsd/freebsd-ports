@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Display statistics about your code
+WWW=		https://github.com/XAMPPRocky/tokei
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

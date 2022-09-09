@@ -4,8 +4,9 @@ CATEGORIES=	net-p2p python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical client for the Soulseek file sharing network
+WWW=		https://github.com/Nicotine-Plus/nicotine-plus/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

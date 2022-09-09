@@ -12,5 +12,3 @@ bison or PLY.
 
 Parsley is an implementation of OMeta, an object-oriented pattern-matching
 language developed by Alessandro Warth.
-
-WWW: https://github.com/pyga/parsley

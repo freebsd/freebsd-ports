@@ -7,6 +7,7 @@ DISTNAME=	skkinput-${PORTVERSION}
 
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
+WWW=		https://sourceforge.jp/projects/skkinput3/
 
 USES=		imake xorg
 USE_GCC=	yes

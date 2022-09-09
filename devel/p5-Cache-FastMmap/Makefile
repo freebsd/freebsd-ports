@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Uses an mmap'ed file to act as a shared memory interprocess cache #'
+WWW=		https://metacpan.org/release/Cache-FastMmap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Opus playback library
+WWW=		https://opus-codec.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

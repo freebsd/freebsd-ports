@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Starfield screensaver for Kodi
+WWW=		https://github.com/xbmc/screensaver.stars
 
 LICENSE=	GPLv2+
 

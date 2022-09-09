@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C++ utility library with generic and independent components
+WWW=		https://www.codesynthesis.com/projects/libcutl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

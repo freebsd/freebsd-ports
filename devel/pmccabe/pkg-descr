@@ -7,5 +7,3 @@ only removes comments from source code; codechanges, a program to
 calculate the amount of change which has occurred between two source
 trees or files; and vifn, to invoke vi given a function name rather
 than a file name.
-
-WWW: http://www.parisc-linux.org/~bame/pmccabe/

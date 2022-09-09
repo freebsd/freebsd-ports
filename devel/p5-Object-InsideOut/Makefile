@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Comprehensive inside-out object support module
+WWW=		https://metacpan.org/release/Object-InsideOut
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

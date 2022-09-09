@@ -7,6 +7,7 @@ DISTNAME=	routers2-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extra extensions and scripts for routers2 frontend
+WWW=		https://www.steveshipway.org/software/
 
 RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:net-mgmt/routers2 \
 		${LOCALBASE}/bin/mrtg-ping-probe:net-mgmt/mrtg-ping-probe

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugin bundle from Open Music Kontrollers
+WWW=		https://open-music-kontrollers.ch/lv2/orbit/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING

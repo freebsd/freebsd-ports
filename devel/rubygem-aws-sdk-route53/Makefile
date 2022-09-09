@@ -1,10 +1,11 @@
 PORTNAME=	aws-sdk-route53
-PORTVERSION=	1.63.0
+PORTVERSION=	1.64.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for Amazon Route 53 (Route 53)
+WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-route53
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

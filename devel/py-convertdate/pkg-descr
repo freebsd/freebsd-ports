@@ -20,5 +20,3 @@ french_republican.from_gregorian(2014, 10, 31)
 # (223, 2, 1, 9)
 hebrew.from_gregorian(2014, 10, 31)
 # (5775, 8, 7)
-
-WWW: https://github.com/fitnr/convertdate

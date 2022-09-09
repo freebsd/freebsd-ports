@@ -1,10 +1,11 @@
 PORTNAME=	kamerka
 DISTVERSION=	0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Take photos using your webcam and shiny animated QML interface
+WWW=		https://dos1.github.io/kamerka/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libv4l2.so:multimedia/libv4l \
 		libphonon4qt5.so:multimedia/phonon \
 		libqimageblitz.so:x11/qimageblitz
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dos1
 USE_QT=		concurrent core dbus declarative gui network printsupport script xml widgets \
@@ -24,6 +25,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash 
 		kio notifications package parts service solid sonnet textwidgets \
 		unitconversion xmlgui widgetsaddons windowsystem \
 		doctools_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

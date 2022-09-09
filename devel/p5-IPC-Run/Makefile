@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run subprocesses with piping and redirection
+WWW=		https://metacpan.org/release/IPC-Run
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

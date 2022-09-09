@@ -4,6 +4,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class to emulate Perl's Crypt::CBC module
+WWW=		https://pear.php.net/package/Crypt_CBC
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

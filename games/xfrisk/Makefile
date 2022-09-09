@@ -8,6 +8,7 @@ DISTNAME=	XFrisk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player networked Risk game for X11
+WWW=		http://old.tuxick.net/xfrisk/
 
 LICENSE=	GPLv2+ CR
 LICENSE_COMB=	multi

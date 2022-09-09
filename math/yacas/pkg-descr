@@ -6,5 +6,3 @@ write your own symbolic manipulation algorithms. The core engine supports
 arbitrary precision arithmetic (although it can optionally be linked with
 the library "libgmp3") and is able to execute symbolic manipulations on
 various mathematical objects by following user-defined rules.
-
-WWW: http://www.yacas.org/

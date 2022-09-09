@@ -6,6 +6,7 @@ DISTNAME=	fontawesome-free-${DISTVERSION}-desktop
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Suite of pictographic icons from Font Awesome (free version)
+WWW=		https://fontawesome.com/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

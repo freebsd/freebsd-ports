@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.ratbox.org/download/				\
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Advanced, stable IRC daemon, used widely on EFnet
+WWW=		https://www.ratbox.org/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Radiator Radius Server by Open System Consultants
+WWW=		https://www.open.com.au/
 
 # Commercial software
 LICENSE=	radiator

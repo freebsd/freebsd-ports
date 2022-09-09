@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
+WWW=		https://observium.org
 
 LICENSE=	EULA
 LICENSE_NAME=	"Observium License Version 1.0"

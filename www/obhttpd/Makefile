@@ -6,6 +6,7 @@ DISTFILES=	libressl-${SSL}.tar.gz:libressl
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	OpenBSD http server
+WWW=		https://github.com/koue/httpd
 
 LICENSE=	BSD3CLAUSE
 

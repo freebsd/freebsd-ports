@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum macro assembler for D-Wave systems
+WWW=		https://github.com/lanl/qmasm
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

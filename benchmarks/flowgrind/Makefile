@@ -6,6 +6,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
+WWW=		http://flowgrind.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

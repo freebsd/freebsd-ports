@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	cmcdonald@netgate.com
 COMMENT=	Zephir Parser delivered as a C extension for the PHP language
+WWW=		https://github.com/zephir-lang/php-zephir-parser
 
 LICENSE=	MIT
 

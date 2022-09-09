@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically create snapshots with Capybara
+WWW=		https://github.com/mattheworiordan/capybara-screenshot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

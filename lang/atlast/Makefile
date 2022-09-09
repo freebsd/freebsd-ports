@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.fourmilab.ch/atlast/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Autodesk Threaded Language Application System Toolkit
+WWW=		https://www.fourmilab.ch/atlast/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

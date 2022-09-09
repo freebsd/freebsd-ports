@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	System secureness checker
+WWW=		http://www.fish2.com/cops/
 
 USES=		groff perl5 shebangfix
 USE_PERL5=	run

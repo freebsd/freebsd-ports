@@ -1,4 +1,2 @@
 MIME::Charset provides informations about character sets used for MIME
 messages on Internet.
-
-WWW: https://metacpan.org/release/MIME-Charset

@@ -1,4 +1,2 @@
 A subclass of Date::Range that uses Time::Piece objects, rather
 than Date::Simple, to manipulate ranges of dates.
-
-WWW: https://metacpan.org/release/Time-Piece-Range

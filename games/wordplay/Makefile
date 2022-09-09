@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to generate anagrams
+WWW=		http://hsvmovies.com/static_subpages/personal_orig/wordplay/
 
 NO_WRKSUBDIR=	yes
 

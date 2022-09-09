@@ -1,5 +1,3 @@
 Escapes XML entities from text, so that you don't fall prey to people putting
 quotes, less-than/greater-than, and ampersands, into variables that end up in
 TT templates.
-
-WWW: https://metacpan.org/release/Template-Plugin-XML-Escape

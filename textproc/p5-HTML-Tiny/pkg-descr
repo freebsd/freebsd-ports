@@ -9,5 +9,3 @@ to
     * entity encode HTML
     * build query strings
     * JSON encode data structures
-
-WWW: https://metacpan.org/release/HTML-Tiny

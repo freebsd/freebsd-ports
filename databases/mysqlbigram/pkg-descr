@@ -10,5 +10,3 @@ recompiling the server.
 This n-gram parser uses this plugin interface to implement a simple
 n-gram (bi-gram) fulltext index parser which can be used for languages
 without word delimiters.
-
-WWW: http://mysqlbigram.googlepages.com/

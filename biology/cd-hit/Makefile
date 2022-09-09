@@ -6,6 +6,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Clustering and comparing protein or nucleotide sequences
+WWW=		http://weizhong-lab.ucsd.edu/cd-hit/
 
 LICENSE=	GPLv2
 

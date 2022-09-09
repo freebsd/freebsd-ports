@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Allow for retrying of code blocks
+WWW=		https://github.com/nfedyashev/retryable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

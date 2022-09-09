@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.sr.ht/~proycon/${PORTNAME}/archive/${DISTVERSIONFULL}$
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Output simple text to a Wayland desktop widget
+WWW=		https://git.sr.ht/~proycon/wayout
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

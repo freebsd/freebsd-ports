@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	API and drivers for immersive technology
+WWW=		https://github.com/OpenHMD/OpenHMD
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

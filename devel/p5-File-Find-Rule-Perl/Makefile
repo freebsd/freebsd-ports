@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Common rules for searching for Perl things
+WWW=		https://metacpan.org/release/File-Find-Rule-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -12,5 +12,3 @@ may seen some small changes in the future. For what it's worth, the
 likeliest area for changes are in the syntax for the search method,
 and would most likely not break much in the way of backwards
 compatibility.
-
-WWW: https://metacpan.org/release/Data-ObjectDriver

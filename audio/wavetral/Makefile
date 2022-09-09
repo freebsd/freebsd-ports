@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convert between single cycle waveforms and audio spectra
+WWW=		https://github.com/jeanette-c/wavetral
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

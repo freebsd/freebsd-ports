@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to install files from here to there
+WWW=		https://metacpan.org/release/ExtUtils-Install
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

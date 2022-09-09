@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR netlib models
+WWW=		https://www.coin-or.org/
 
 LICENSE=	EPL
 

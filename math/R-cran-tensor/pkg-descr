@@ -1,4 +1,2 @@
 The tensor product of two arrays is notionally an outer product of the arrays
 collapsed in specific extents by summing along the appropriate diagonals.
-
-WWW: https://CRAN.R-project.org/package=tensor

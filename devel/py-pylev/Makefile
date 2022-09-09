@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python Levenshtein implementation
+WWW=		https://github.com/toastdriven/pylev
 
 LICENSE=	BSD3CLAUSE
 

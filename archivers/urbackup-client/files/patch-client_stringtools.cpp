@@ -2,28 +2,9 @@ Build fails on FreeBSD due to urbackup's local definitions of isnumber()
 conflicting with a library function. This patch renames the port's definition to
 resolve the conflict. Analogous changes are also made in client/stringtools.h
 
---- client/stringtools.cpp.orig	2018-08-12 19:17:45 UTC
+--- client/stringtools.cpp.orig	2022-08-29 17:44:01 UTC
 +++ client/stringtools.cpp
-@@ -486,12 +486,12 @@ std::string nconvert(s32 i){
- 	ss << i;
- 	return ss.str();
- }
--
--std::string nconvert(int long i) {
--	ostringstream ss;
--	ss << i;
--	return ss.str();
--}
-+
-+std::string nconvert(int long i) {
-+	ostringstream ss;
-+	ss << i;
-+	return ss.str();
-+}
- 
- #if defined(_WIN64) || defined(_LP64)
- std::string nconvert(unsigned int i){
-@@ -825,7 +825,7 @@ void TokenizeMail(std::string& str, std:
+@@ -826,7 +826,7 @@ void TokenizeMail(const std::string& str, std::vector<
  //--------------------------------------------------------------------
  /**
  */
@@ -32,7 +13,7 @@ resolve the conflict. Analogous changes are also made in client/stringtools.h
  {
  	if( ch>=48 && ch <=57 )
  		return true;
-@@ -848,7 +848,7 @@ bool isletter(char ch)
+@@ -849,7 +849,7 @@ bool isletter(char ch)
  //--------------------------------------------------------------------
  /**
  */
@@ -41,7 +22,7 @@ resolve the conflict. Analogous changes are also made in client/stringtools.h
  {
  	if( ch>=48 && ch <=57 )
  		return true;
-@@ -928,7 +928,7 @@ int getNextNumber(const std::string &pSt
+@@ -929,7 +929,7 @@ int getNextNumber(const std::string &pStr, int *read)
  	bool start=false;
  	for(size_t i=0;i<pStr.size();++i)
  	{
@@ -50,7 +31,7 @@ resolve the conflict. Analogous changes are also made in client/stringtools.h
  		{
  			num+=pStr[i];
  			start=true;
-@@ -1445,7 +1445,7 @@ void replaceNonAlphaNumeric(std::string 
+@@ -1444,7 +1444,7 @@ void replaceNonAlphaNumeric(std::string &str, char rch
  {
  	for(size_t i=0;i<str.size();++i)
  	{
@@ -59,10 +40,3 @@ resolve the conflict. Analogous changes are also made in client/stringtools.h
  		{
  			str[i]=rch;
  		}
-@@ -1497,4 +1497,4 @@ std::string EscapeParamString(const std:
- 		}
- 	}
- 	return ret;
--}
-\ No newline at end of file
-+}

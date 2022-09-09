@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail ${COMMENT_${FLAVOR}}
+WWW=		https://www.postfix.org/
 
 LICENSE=	EPL IPL10
 LICENSE_COMB=	multi

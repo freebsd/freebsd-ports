@@ -12,5 +12,3 @@ located in the tinker/source directory and recompile.  Note that if it
 is set too large that tinker programs will abort and core dump.
 
 For more information about Tinker see:
-
-WWW: https://dasher.wustl.edu/tinker/

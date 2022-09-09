@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert gettext PO files to JSON objects
+WWW=		https://github.com/webhippie/po_to_json
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Process an SNMP trap with perl
+WWW=		https://metacpan.org/release/SNMP-Trapinfo
 
 USES=		perl5
 USE_PERL5=	configure

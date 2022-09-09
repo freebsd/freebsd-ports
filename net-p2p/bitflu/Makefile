@@ -5,6 +5,7 @@ MASTER_SITES=	http://bitflu.workaround.ch/bitflu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client written in Perl
+WWW=		https://bitflu.workaround.ch/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/Documentation/artistic-2_0.txt

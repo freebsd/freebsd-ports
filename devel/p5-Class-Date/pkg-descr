@@ -5,5 +5,3 @@ dates.
 
 You can use ``+'', ``-'', ``<'' and ``>'' operators as with native
 perl data types.
-
-WWW: https://metacpan.org/release/Class-Date

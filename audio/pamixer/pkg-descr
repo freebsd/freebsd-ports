@@ -14,5 +14,3 @@ Features
   - Increase / Decrease the volume for a device (using gamma
     correction optionally)
   - Mute or unmute a device
-
-WWW: https://github.com/cdemoulins/pamixer

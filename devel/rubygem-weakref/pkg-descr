@@ -1,5 +1,3 @@
 Weak Reference class that allows a referenced object to be garbage-collected.
 
 A WeakRef may be used exactly like the object it references.
-
-WWW: https://github.com/ruby/weakref

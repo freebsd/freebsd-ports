@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Aozora Mincho Japanese TrueType fonts
+WWW=		http://blueskis.wktk.so/AozoraMincho/
 
 USES=		fonts:fc zip
 FONTPATHSPEC=	${FONTNAME}:pri=60

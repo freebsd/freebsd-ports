@@ -22,5 +22,3 @@ composable function transformations. Both grad and jit are instances of such
 transformations. Others are vmap for automatic vectorization and pmap for
 single-program multiple-data (SPMD) parallel programming of multiple
 accelerators, with more to come.
-
-WWW: https://github.com/google/jax

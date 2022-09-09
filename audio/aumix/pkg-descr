@@ -3,5 +3,3 @@ scripts, or interactively at the console or a terminal with a full-screen,
 ncurses-based interface and sysmouse(4) support.
 
 Can optionally be built with a GTK+-based interface.
-
-WWW: http://jpj.net/~trevor/aumix.html

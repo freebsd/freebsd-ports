@@ -17,5 +17,3 @@ uncertainty calculations are performed analytically.
 
 Correlations between variables are automatically handled, which sets this module
 a part from many existing error propagation codes.
-
-WWW: https://uncertainties-python-package.readthedocs.io/en/latest/

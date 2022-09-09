@@ -4,5 +4,3 @@ The aim of BDD is to address the shortcomings of Test Driven Development and,
 by using terminology focused on the behavioural aspects of the system rather
 than testing, attempt to help direct developers towards a focus on the real
 value to be found in TDD at its most successful, or BDD as we call it.
-
-WWW: https://github.com/rspec/rspec-metagem

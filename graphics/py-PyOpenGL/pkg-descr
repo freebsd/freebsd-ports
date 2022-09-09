@@ -17,5 +17,3 @@ library (and related libraries).  The package provides interfaces to:
 The Python bindings offer some value-added tools in addition to the
 standard API, including support for fast processing of arrays of
 coordinates, trackball support, etc.
-
-WWW: http://pyopengl.sourceforge.net/

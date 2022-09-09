@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Package and build manager for D applications and libraries
+WWW=		https://github.com/dlang/dub
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

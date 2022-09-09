@@ -1,11 +1,12 @@
 PORTNAME=	rss2email
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.13.1
+DISTVERSION=	3.14
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Emails posts from subscribed RSS/Atom newsfeeds
+WWW=		https://github.com/rss2email/rss2email
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

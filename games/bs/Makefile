@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Battleships solitaire game with a color interface
+WWW=		http://www.catb.org/~esr/bs/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

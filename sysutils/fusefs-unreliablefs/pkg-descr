@@ -8,5 +8,3 @@ Supported fault injections are:
 - errinj_noop - replace file operation with no operation (similar to
   libeatmydata, but applicable to any file operation).
 - errinj_slowdown - slowdown invoked file operation.
-
-WWW: https://github.com/ligurio/unreliablefs

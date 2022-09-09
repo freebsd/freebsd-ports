@@ -9,6 +9,7 @@ MASTER_SITES=	LOCAL/jbeich
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer voxel RPG written in Rust
+WWW=		https://veloren.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

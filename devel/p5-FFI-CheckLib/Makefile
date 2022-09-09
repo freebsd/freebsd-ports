@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Check that a library is available for FFI
+WWW=		https://metacpan.org/release/FFI-CheckLib
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

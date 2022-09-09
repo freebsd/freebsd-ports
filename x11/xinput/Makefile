@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Very useful utility for configuring and testing XInput devices
+WWW=		http://ftp.x.org/contrib/utilities/xinput.README
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,4 +1,2 @@
 This module provides an XS implementation of the interface described in
 Heap::Simple. Look there for a description.
-
-WWW: https://metacpan.org/release/Heap-Simple-XS

@@ -4,5 +4,3 @@ inherit from a base class and some optional selection of mixin classes.
 A factory is provided to generate the mixed classes with multiple
 inheritance. A NEXT method allows method redispatch up the inheritance
 chain.
-
-WWW: https://metacpan.org/release/Class-MixinFactory

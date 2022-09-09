@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR command line execution interface
+WWW=		https://pear.php.net/package/System_Command
 
 USES=		pear
 

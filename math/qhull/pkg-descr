@@ -5,5 +5,3 @@ triangulations, and furthest-site Voronoi diagrams. It runs in 2-d,
 for computing the convex hull. Qhull handles roundoff errors from
 floating point arithmetic. It computes volumes, surface areas, and
 approximations to the convex hull.
-
-WWW: http://www.qhull.org

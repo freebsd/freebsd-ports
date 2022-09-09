@@ -1,4 +1,2 @@
 This is the official implementation of JDBC, the Java Database
 Connectivity API, for accessing PostgreSQL databases from Java.
-
-WWW: http://jdbc.postgresql.org/

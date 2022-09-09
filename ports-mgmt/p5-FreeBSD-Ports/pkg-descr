@@ -10,5 +10,3 @@ sorted alphabetically:
   foreach my $p (keys %port) {
       print $p->as_ascii,"\n";
   }
-
-WWW: https://people.freebsd.org/~tom/portpm/

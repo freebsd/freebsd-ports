@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	C++ matrix library
+WWW=		http://www.robertnz.net/nm_intro.htm
 
 NO_WRKSUBDIR=	yes
 USES=		gmake

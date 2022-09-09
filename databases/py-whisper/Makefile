@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Fixed-size database, similar in design to RRD
+WWW=		https://github.com/graphite-project/whisper
 
 LICENSE=	APACHE20
 

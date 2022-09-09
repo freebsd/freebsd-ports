@@ -9,5 +9,3 @@ The resulting compiled template is much faster than a normal cached
 template.  Benchmarks show HTML::Template::JIT, with a precompiled
 template, performing 4 to 8 times faster than HTML::Template in cache
 mode.
-
-WWW: http://html-template.sourceforge.net/html_template_jit.html

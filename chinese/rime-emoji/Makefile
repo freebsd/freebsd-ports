@@ -4,6 +4,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime emoji suggestions support
+WWW=		https://github.com/rime/rime-emoji
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

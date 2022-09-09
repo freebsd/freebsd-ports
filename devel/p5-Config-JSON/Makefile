@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JSON based config file system
+WWW=		https://metacpan.org/release/Config-JSON
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	x11-toolkits gnustep
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep GUI backend
+WWW=		http://www.gnustep.org/
 
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3

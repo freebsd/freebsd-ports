@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Super fast http parser for Ruby
+WWW=		https://github.com/cotag/http-parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

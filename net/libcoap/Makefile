@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	C implementation of the Constrained Application Protocol
+WWW=		https://github.com/obgm/libcoap
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

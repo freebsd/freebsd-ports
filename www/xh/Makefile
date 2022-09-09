@@ -1,11 +1,11 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
-PORTREVISION=	4
+DISTVERSION=	0.16.1
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Friendly and fast tool for sending HTTP requests
+WWW=		https://github.com/ducaale/xh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,11 +20,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		alloc-no-stdlib-2.0.3 \
 		alloc-stdlib-0.2.1 \
-		ansi_term-0.11.0 \
 		anyhow-1.0.44 \
 		assert_cmd-2.0.2 \
-		assert_matches-1.5.0 \
-		async-compression-0.3.8 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base-x-0.2.8 \
@@ -32,7 +29,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
 		block-buffer-0.9.0 \
-		brotli-3.3.2 \
+		brotli-3.3.3 \
 		brotli-decompressor-2.3.2 \
 		bstr-0.2.16 \
 		bumpalo-3.7.0 \
@@ -42,7 +39,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		cfg-if-1.0.0 \
 		chardetng-0.1.15 \
 		chrono-0.4.19 \
-		clap-2.33.3 \
+		clap-3.1.0 \
+		clap_complete-3.1.0 \
+		clap_derive-3.1.0 \
 		console-0.14.1 \
 		const_fn-0.4.8 \
 		cookie-0.15.1 \
@@ -63,7 +62,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.29 \
 		encoding_rs_io-0.1.7 \
-		flate2-1.0.21 \
+		flate2-1.0.22 \
 		float-cmp-0.8.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -72,25 +71,23 @@ CARGO_CRATES=	adler-1.0.2 \
 		futures-channel-0.3.17 \
 		futures-core-0.3.17 \
 		futures-io-0.3.17 \
-		futures-macro-0.3.17 \
 		futures-sink-0.3.17 \
 		futures-task-0.3.17 \
 		futures-util-0.3.17 \
 		generic-array-0.14.4 \
 		getopts-0.2.21 \
 		getrandom-0.2.3 \
-		h2-0.3.4 \
+		h2-0.3.13 \
 		hashbrown-0.11.2 \
-		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
 		http-0.2.4 \
 		http-body-0.4.3 \
 		httparse-1.5.1 \
 		httpdate-1.0.1 \
-		humantime-2.1.0 \
 		hyper-0.14.12 \
-		hyper-rustls-0.22.1 \
+		hyper-rustls-0.23.0 \
 		hyper-tls-0.5.0 \
 		idna-0.2.3 \
 		indexmap-1.7.0 \
@@ -99,6 +96,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		ipnet-2.3.1 \
 		itertools-0.10.1 \
 		itoa-0.4.8 \
+		itoa-1.0.1 \
 		js-sys-0.3.54 \
 		jsonxf-1.1.1 \
 		lazy_static-1.4.0 \
@@ -131,6 +129,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		openssl-probe-0.1.4 \
 		openssl-sys-0.9.66 \
 		os_display-0.1.3 \
+		os_str_bytes-6.0.0 \
 		pem-0.8.3 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.7 \
@@ -145,7 +144,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
-		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.29 \
 		psl-types-2.0.7 \
 		publicsuffix-2.1.1 \
@@ -160,17 +158,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.6 \
+		reqwest-0.11.10 \
 		ring-0.16.20 \
 		rpassword-5.0.1 \
 		rustc_version-0.2.3 \
-		rustls-0.19.1 \
-		rustls-native-certs-0.5.0 \
+		rustls-0.20.4 \
+		rustls-native-certs-0.6.2 \
+		rustls-pemfile-0.3.0 \
+		rustls-pemfile-1.0.0 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
-		sct-0.6.1 \
+		sct-0.7.0 \
 		security-framework-2.4.2 \
 		security-framework-sys-2.4.2 \
 		semver-0.9.0 \
@@ -178,7 +178,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		serde-1.0.130 \
 		serde_derive-1.0.130 \
 		serde_json-1.0.67 \
-		serde_urlencoded-0.7.0 \
+		serde_urlencoded-0.7.1 \
 		sha1-0.6.0 \
 		sha2-0.9.8 \
 		slab-0.4.4 \
@@ -189,16 +189,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		stdweb-derive-0.5.3 \
 		stdweb-internal-macros-0.2.9 \
 		stdweb-internal-runtime-0.1.5 \
-		strsim-0.8.0 \
-		structopt-0.3.23 \
-		structopt-derive-0.4.16 \
+		strsim-0.10.0 \
 		syn-1.0.76 \
 		syntect-4.6.0 \
 		tempfile-3.2.0 \
-		term_size-0.3.2 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
-		textwrap-0.11.0 \
+		textwrap-0.14.2 \
 		thiserror-1.0.29 \
 		thiserror-impl-1.0.29 \
 		time-0.2.27 \
@@ -208,11 +205,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		tinyvec_macros-0.1.0 \
 		tokio-1.11.0 \
 		tokio-native-tls-0.3.0 \
-		tokio-rustls-0.22.0 \
+		tokio-rustls-0.23.3 \
 		tokio-socks-0.5.1 \
-		tokio-util-0.6.8 \
+		tokio-util-0.7.1 \
 		tower-service-0.3.1 \
 		tracing-0.1.26 \
+		tracing-attributes-0.1.20 \
 		tracing-core-0.1.19 \
 		treeline-0.1.0 \
 		try-lock-0.2.3 \
@@ -220,14 +218,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		unindent-0.1.7 \
 		untrusted-0.7.1 \
 		url-2.2.2 \
 		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
@@ -240,13 +236,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasm-bindgen-macro-support-0.2.77 \
 		wasm-bindgen-shared-0.2.77 \
 		web-sys-0.3.54 \
-		webpki-0.21.4 \
-		webpki-roots-0.21.1 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.7.0 \
+		winreg-0.10.1 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5
 

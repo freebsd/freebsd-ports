@@ -9,6 +9,7 @@ PATCHFILES=	ng-1.4.4-replace_bug.patch
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Light Emacs-clone with Japanese support
+WWW=		http://tt.sakura.ne.jp/~amura/ng/
 
 USES=		ncurses
 MAKEFILE=	sys/sysv/Makefile

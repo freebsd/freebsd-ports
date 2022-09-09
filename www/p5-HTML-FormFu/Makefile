@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML Form Creation, Rendering and Validation Framework
+WWW=		https://metacpan.org/release/HTML-FormFu
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

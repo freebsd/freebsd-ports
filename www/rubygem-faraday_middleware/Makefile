@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of Ruby Faraday middlewares
+WWW=		https://github.com/lostisland/faraday_middleware
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

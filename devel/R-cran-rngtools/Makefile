@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Utility functions for working with Random Number Generators
+WWW=		https://cran.r-project.org/web/packages/rngtools/
 
 LICENSE=	GPLv3
 

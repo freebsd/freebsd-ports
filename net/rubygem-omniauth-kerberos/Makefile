@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	OmniAuth strategy for Kerberos
+WWW=		https://github.com/jgraichen/omniauth-kerberos
 
 LICENSE=	MIT
 

@@ -1,10 +1,11 @@
 PORTNAME=	metasploit
 DISTVERSION=	6.1.24
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
+WWW=		https://metasploit.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

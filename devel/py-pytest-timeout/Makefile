@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Pytest plugin to abort hanging tests
+WWW=		https://github.com/pytest-dev/pytest-timeout
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

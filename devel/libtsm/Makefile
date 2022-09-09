@@ -5,6 +5,7 @@ MASTER_SITES=	http://freedesktop.org/software/kmscon/releases/
 
 MAINTAINER=	angus@agibson.me
 COMMENT=	Terminal-emulator state machine
+WWW=		https://www.freedesktop.org/wiki/Software/kmscon/libtsm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

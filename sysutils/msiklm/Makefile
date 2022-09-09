@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	MSI keyboard light manager
+WWW=		https://github.com/Gibtnix/MSIKLM
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

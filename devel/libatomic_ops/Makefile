@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/ivmai/${PORTNAME}/releases/download/v${DISTVERS
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Atomic operations access library
+WWW=		https://github.com/ivmai/libatomic_ops
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi

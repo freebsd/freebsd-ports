@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	User registration with social account authentication
+WWW=		https://www.intenct.nl/projects/django-allauth/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

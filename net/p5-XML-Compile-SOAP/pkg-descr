@@ -10,5 +10,3 @@ Be aware that there are three kinds of SOAP:
    but the content is also well defined.
 3. RPC style SOAP encoded. The sent data is nowhere described formally. The data
    is constructed in some ad-hoc way.
-
-WWW: https://metacpan.org/release/XML-Compile-SOAP

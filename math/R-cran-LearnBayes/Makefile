@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for Learning Bayesian Inference
+WWW=		https://cran.r-project.org/web/packages/LearnBayes/
 
 LICENSE=	GPLv2+
 

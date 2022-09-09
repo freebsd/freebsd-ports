@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Lightweight, object-oriented Python state machine implementation
+WWW=		https://github.com/pytransitions/transitions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

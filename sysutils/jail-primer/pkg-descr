@@ -7,6 +7,3 @@ of the individual jails.
 The legacy rc.conf method, Modern rc.conf method, and the jail(8) jail.conf
 methods are documented. Script are included that perform the tasks explained
 in the documentation.
-
-WWW: http://jail-primer.sourceforge.net/
-

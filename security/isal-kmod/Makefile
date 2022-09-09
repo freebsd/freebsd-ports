@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Kernel crypto driver using Intel(R) ISA-L crypto
+WWW=		https://github.com/bsdjhb/ocf_isa_l
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/isa-l_crypto/LICENSE

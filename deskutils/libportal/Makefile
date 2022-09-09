@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	GIO-styled async APIs for Flatpak
+WWW=		https://github.com/flatpak/libportal
 
 LICENSE=	GPLv2+
 
@@ -22,7 +23,7 @@ OPTIONS_DEFINE=		VALA
 OPTIONS_DEFAULT=	VALA
 
 VALA_MESON_TRUE=	vapi
-VALA_BUILD_DEPENDS=	vapigen:lang/vala
+VALA_USES=		vala:build
 VALA_DESC=		Install Vala language bindings
 
 # docs require a port for gi-docgen

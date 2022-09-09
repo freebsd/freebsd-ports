@@ -1,10 +1,12 @@
 PORTNAME=	pgmetrics
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Collect and display info & stats from a running PostgreSQL server
+WWW=		https://pgmetrics.io/
 
 LICENSE=	APACHE20
 

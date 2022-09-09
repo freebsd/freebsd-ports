@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	UUID Generator for Ruby
+WWW=		https://github.com/assaf/uuid
 
 LICENSE=	MIT
 

@@ -9,5 +9,3 @@ This module allows you to test Catalyst web applications but does not
 start a server or issue HTTP requests. Instead, it passes the HTTP
 request object directly to Catalyst. Thus you do not need to use a real
 hostname: "http://localhost/" will do.
-
-WWW: https://metacpan.org/release/Test-WWW-Mechanize-CGIApp

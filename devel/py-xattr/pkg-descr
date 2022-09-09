@@ -1,5 +1,3 @@
 Extended attributes extend the basic attributes of files and directories
 in the file system.  They are stored as name:data pairs associated with
 file system objects (files, directories, symlinks, etc).
-
-WWW: https://github.com/xattr/xattr

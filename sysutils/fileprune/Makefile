@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Prune a file set according to a given age distribution
+WWW=		https://www.spinellis.gr/sw/unix/fileprune/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

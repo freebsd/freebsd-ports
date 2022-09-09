@@ -10,5 +10,3 @@ The APL interpreter has implemented:
   - a shared variable interface
 
 In addition, GNU APL can be scripted.
-
-WWW: https://www.gnu.org/software/apl/

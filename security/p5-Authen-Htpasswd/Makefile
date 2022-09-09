@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to read and modify Apache .htpasswd files
+WWW=		https://metacpan.org/release/Authen-Htpasswd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

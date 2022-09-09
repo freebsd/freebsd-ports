@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	XPath 1.0/2.0/3.0 parsers and selectors for ElementTree and lxml
+WWW=		https://github.com/sissaschool/elementpath
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

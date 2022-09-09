@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Query the properties/capabilities of filehandle
+WWW=		https://metacpan.org/release/PerlIO-Layers
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

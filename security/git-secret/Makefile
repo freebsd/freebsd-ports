@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	mail@sobolevn.me
 COMMENT=	Bash tool to store your private data inside a git repository
+WWW=		https://git-secret.io/
 
 LICENSE=	MIT
 #MASTER_SITES=	https://github.com/sobolevn/git-secret/archive/

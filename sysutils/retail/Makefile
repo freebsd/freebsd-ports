@@ -7,6 +7,7 @@ MASTER_SITES=	http://xjack.org/retail/download/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Program for incremental logfile reader
+WWW=		http://xjack.org/retail/
 
 LICENSE=	GPLv2
 

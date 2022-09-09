@@ -4,5 +4,3 @@ supported 3D fractals: Mandelbulb, Mandelbox, BulbBox, JuliaBulb,
 Menger Sponge, Quaternion, Trigonometric, Hypercomplex, and Iterated
 Function Systems (IFS). All of these can be combined into infinite
 variations with the ability to hybridize different formulas together.
-
-WWW: https://mandelbulber.com/

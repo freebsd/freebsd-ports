@@ -4,5 +4,3 @@ colours. It offers 152 named RGB colours (184 with spelling variations)
 that are commonly supported and used in HTML, SVG, and X11 applications.
 A technique for generating a monochromatic contrasting palette is also
 included.
-
-WWW: https://github.com/ripta/color-tools

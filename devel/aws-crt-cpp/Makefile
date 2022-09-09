@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C++ wrapper around the aws-c libraries
+WWW=		https://github.com/awslabs/aws-crt-cpp
 
 LICENSE=	APACHE20
 

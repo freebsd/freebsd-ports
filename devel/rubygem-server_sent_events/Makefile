@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	freebsd@moov.de
 COMMENT=	Library for dealing with server-sent events
+WWW=		https://github.com/xlab-steampunk/redfish-client-ruby
 
 LICENSE=	APACHE20
 

@@ -1,11 +1,12 @@
 PORTNAME=	nextcloud-spreed-signaling
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Signaling server used for Nextcloud Talk
+WWW=		https://github.com/strukturag/nextcloud-spreed-signaling
 
 LICENSE=	AGPLv3
 

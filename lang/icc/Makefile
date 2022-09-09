@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 # infos regarding this port
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel C/C++ compiler, set up to produce native FreeBSD binaries
+WWW=		https://software.intel.com/en-us/c-compilers
 
 LICENSE=	EPL LGPL21 INTEL
 LICENSE_COMB=	multi

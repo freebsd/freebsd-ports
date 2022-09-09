@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-nolib
 
 MAINTAINER=	vsasjason@gmail.com
 COMMENT=	Optimizer for PNG files
+WWW=		http://pmt.sourceforge.net/pngcrush/
 
 LICENSE=	Pngcrush
 LICENSE_NAME=	Pngcrush License

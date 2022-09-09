@@ -27,6 +27,7 @@ include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
 include/vulkan/vulkan_raii.hpp
 include/vulkan/vulkan_screen.h
+include/vulkan/vulkan_static_assertions.hpp
 include/vulkan/vulkan_structs.hpp
 include/vulkan/vulkan_to_string.hpp
 include/vulkan/vulkan_vi.h

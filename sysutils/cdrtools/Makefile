@@ -2,6 +2,7 @@ PORTNAME=	cdrtools
 CATEGORIES=	sysutils audio
 
 COMMENT=	Tools for ripping from and recording to CDs and DVDs
+WWW=		https://codeberg.org/schilytools/schilytools
 
 LAME_RUN_DEPENDS=	lame:audio/lame
 VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools

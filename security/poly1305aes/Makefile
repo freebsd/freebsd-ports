@@ -5,6 +5,7 @@ MASTER_SITES=	http://cr.yp.to/mac/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poly1305 message authentication reference implementation using AES
+WWW=		https://cr.yp.to/mac.html
 
 LICENSE=	PD
 

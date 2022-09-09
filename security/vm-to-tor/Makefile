@@ -4,6 +4,7 @@ CATEGORIES=	security net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Connect virtual machines to the tor network
+WWW=		https://github.com/yurivict/vm-to-tor
 
 LICENSE=	BSD4CLAUSE
 

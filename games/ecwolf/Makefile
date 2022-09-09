@@ -7,6 +7,7 @@ MASTER_SITES=	http://maniacsvault.net/ecwolf/files/ecwolf/1.x/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Source port for Wolfenstein 3D, Spear of Destiny
+WWW=		https://maniacsvault.net/ecwolf/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/license-gpl.txt

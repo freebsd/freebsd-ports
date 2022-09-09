@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-texture-compressor
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Texture compression library and tool
+WWW=		https://github.com/akb825/Cuttlefish
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/wget
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	File and recursive website downloader
+WWW=		https://gitlab.com/gnuwget/wget2
 
 LICENSE=	GPLv3+ LGPL3+
 LICENSE_COMB=	multi

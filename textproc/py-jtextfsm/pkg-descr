@@ -18,5 +18,3 @@ Note: This package was originally a fork of TextFSM because TextFSM had no
 support for Python3 at that time (that's not the case anymore, btw).
 Nevertheless this package is somewhat smaller compared to TextFSM and is used
 in some projects.
-
-WWW: https://github.com/jonathanslenders/textfsm

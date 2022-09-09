@@ -7,6 +7,7 @@ MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Spectrum analyser
+WWW=		http://arvin.schnell-web.net/xanalyser/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

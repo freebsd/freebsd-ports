@@ -1,25 +1,26 @@
 PORTNAME=	newsstar
 PORTVERSION=	1.5.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	SF
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
+WWW=		http://newsstar.sourceforge.net/
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgdbm.so:databases/gdbm
 BUILD_DEPENDS=	xmlto:textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:textproc/docbook-xml
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
-GNU_CONFIGURE=	yes
-USES=		iconv perl5 shebangfix
+USES=		iconv ncurses perl5 shebangfix
+IGNORE_SSL=	libressl libressl-devel
+IGNORE_SSL_REASON=GPL linking exeption only provided for OpenSSL
+
 SHEBANG_FILES=	newsstar.in
 
-OPTIONS_DEFINE=		SSL DOCS EXAMPLES
-OPTIONS_DEFAULT=	SSL
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-chown \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
 		--with-rc-dir=/var/spool/newsstar/lib \
@@ -27,6 +28,9 @@ CONFIGURE_ARGS+=--disable-chown \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
+
+OPTIONS_DEFINE=		DOCS EXAMPLES SSL
+OPTIONS_DEFAULT=	SSL
 
 .include <bsd.port.options.mk>
 
@@ -70,6 +74,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
 	${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
 	${REINPLACE_CMD} -e 's|install-data-local: install-docs|install-data-local:|' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|SSL_library_init|OPENSSL_init_ssl|' ${WRKSRC}/configure
 
 post-install:
 	${MAKE} -C ${WRKSRC}/src install DESTDIR=${STAGEDIR}

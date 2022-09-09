@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Carrier IP Address List for jpmobile
+WWW=		https://github.com/jpmobile/jpmobile-ipaddresses
 
 LICENSE=	MIT
 

@@ -6,5 +6,3 @@ With this information, a HTTP client may contact a website without
 trying a plain-text HTTP connection first. It prevents interception
 with redirects that take place over HTTP. None of the sent data
 will ever be unencrypted.
-
-WWW: https://gitlab.com/rockdaboot/libhsts

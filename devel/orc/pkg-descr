@@ -7,5 +7,3 @@ available in SIMD architectures, including saturated addition and
 subtraction, and many arithmetic operations.
 
 (OIL stands for Optimized Inner Loops)
-
-WWW: https://gstreamer.freedesktop.org/projects/orc.html

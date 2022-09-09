@@ -9,5 +9,3 @@ This package contains the following subpackages:
     heapy - The heap analysis toolset. It can be used to find information about
           the objects in the heap and display the information in various ways.
     sets - Bitsets and 'nodesets' implemented in C.
-
-WWW: https://github.com/zhuyifei1999/guppy3/

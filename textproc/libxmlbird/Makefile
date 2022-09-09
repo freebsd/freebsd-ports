@@ -5,14 +5,14 @@ MASTER_SITES=	https://birdfont.org/xmlbird-releases/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	XML parser for Vala and C programs
+WWW=		https://birdfont.org/xmlbird.php
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPLv3.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR} \
-		valac:lang/vala
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR}
 
-USES=		gettext-runtime gnome pkgconfig python:3.7+,build shebangfix tar:xz
+USES=		gettext-runtime gnome pkgconfig python:3.7+,build shebangfix tar:xz vala:build
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py

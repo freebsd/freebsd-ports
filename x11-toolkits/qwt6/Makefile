@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	6-qt5
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
+WWW=		http://qwt.sourceforge.net/
 
 USES=		compiler:c++11-lang gl gmake qmake qt:5 tar:bzip2
 USE_GL=		gl

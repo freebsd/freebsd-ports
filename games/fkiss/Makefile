@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freely enjoy childlike KISS, French-KISS!
+WWW=		http://www2s.biglobe.ne.jp/~yav/soft/index.html #fkiss
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,10 +1,15 @@
 PORTNAME=	speech-dispatcher
 DISTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 
+PATCH_SITES=	https://github.com/brailcom/speechd/commit/
+PATCHFILES=	c204a23db76345d0bce2cdf395517c99699a8a4a.diff:-p1
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Common interface to speech synthesis
+WWW=		https://devel.freebsoft.org/speechd
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

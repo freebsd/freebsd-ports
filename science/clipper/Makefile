@@ -6,6 +6,7 @@ MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Libraries for the organisation of crystallographic data
+WWW=		http://www.ysbl.york.ac.uk/~cowtan/clipper/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

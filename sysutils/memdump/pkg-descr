@@ -6,5 +6,3 @@ Note: consider using Brian Carrier's Sleuthkit, available as `sysutils/
 sleuthkit' port.  It is the official successor, based on parts from TCT.
 Development of the Coroner's Toolkit was stopped years ago.  It is only
 updated for bugfixes, which are very rare.
-
-WWW: http://www.porcupine.org/forensics/tct.html

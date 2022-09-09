@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multi-platform, multi-architecture disassembly framework
+WWW=		http://capstone-engine.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

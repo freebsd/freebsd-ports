@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Duplicate file finder
+WWW=		https://github.com/elmindreda/duff
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia communication library written in C language
+WWW=		https://www.pjsip.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

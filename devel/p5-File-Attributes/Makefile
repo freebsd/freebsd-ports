@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulate file metadata in Perl
+WWW=		https://metacpan.org/release/File-Attributes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML \

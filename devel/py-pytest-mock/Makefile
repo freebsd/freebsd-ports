@@ -9,6 +9,7 @@ PATCHFILES=	b3badafebedea3605c90eb22a68adff2885a8bb0.patch:-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Thin wrapper around the mock package for easier use with py.test
+WWW=		https://github.com/pytest-dev/pytest-mock/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

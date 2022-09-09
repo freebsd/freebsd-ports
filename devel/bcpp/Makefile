@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility similar to indent for C++ code
+WWW=		https://invisible-island.net/bcpp/bcpp.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

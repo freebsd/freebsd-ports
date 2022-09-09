@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	raffaele.delorenzo@libero.it
 COMMENT=	SOCKS Client v4/v5 RFC Compliant with many features
+WWW=		http://csocks.altervista.org
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

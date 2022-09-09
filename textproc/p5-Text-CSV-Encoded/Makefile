@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Perl module for Encoding aware CVS files parsing
+WWW=		https://metacpan.org/release/Text-CSV-Encoded
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

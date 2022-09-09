@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
+WWW=		https://www.squirrelmail.org
 
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

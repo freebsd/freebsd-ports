@@ -1,11 +1,12 @@
 PORTNAME=	google-cloud-storage
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Client for Google Cloud Storage
+WWW=		https://github.com/googleapis/python-storage
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

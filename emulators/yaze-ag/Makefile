@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Z80 and CP/M-80 emulator
+WWW=		http://yaze-ag.de/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

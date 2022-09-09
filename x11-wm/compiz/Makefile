@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/compiz/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Compiz Composite/Window Manager
+WWW=		http://www.compiz.org/
 
 LICENSE=		GPLv2+ LGPL21+ MIT
 LICENSE_COMB=		multi
