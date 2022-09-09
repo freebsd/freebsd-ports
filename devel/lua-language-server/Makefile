@@ -1,5 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.5.4
+DISTVERSION=	3.5.5
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
