@@ -1,7 +1,5 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.35
+PORTVERSION=	10.3.36
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
