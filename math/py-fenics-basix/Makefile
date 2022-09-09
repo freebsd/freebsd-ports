@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	pybind11>=2.6.4:devel/pybind11 \
-		cmake>=3.16:devel/cmake \
+		cmake>=3.16:devel/cmake-core \
 		xtensor>0:math/xtensor \
 		xtl-quant-stack>0:devel/xtl-quant-stack \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \

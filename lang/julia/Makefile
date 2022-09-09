@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 
 MY_DEPENDS=	7zz:archivers/7-zip
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
-		cmake:devel/cmake \
+		cmake:devel/cmake-core \
 		${MY_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \

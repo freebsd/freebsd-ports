@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
-		cmake:devel/cmake \
+		cmake:devel/cmake-core \
 		meson:devel/meson
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgudev-1.0.so:devel/libgudev \

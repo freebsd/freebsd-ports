@@ -19,7 +19,7 @@ BROKEN_mips64=		fails to compile: 'fpsetmask' was not declared in this scope
 
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:shells/bash \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libev.so:devel/libev \
 		libgcrypt.so:security/libgcrypt \

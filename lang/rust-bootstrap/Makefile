@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	untested on other architectures
 
 BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysroot@${FLAVOR} \
-		cmake:devel/cmake \
+		cmake:devel/cmake-core \
 		gmake:devel/gmake \
 		rust>=${PORTVERSION}:lang/rust
 

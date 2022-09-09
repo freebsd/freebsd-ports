@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
 		nanopb>0:devel/nanopb \
-		cmake:devel/cmake \
+		cmake:devel/cmake-core \
 		protoc:devel/protobuf
 LIB_DEPENDS=	libboxfort.so:devel/boxfort \
 		libffi.so:devel/libffi \
