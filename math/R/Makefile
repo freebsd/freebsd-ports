@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2
 # R packages may require GNU make or cmake to build
 RUN_DEPENDS=	gmake:devel/gmake \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 
 # possible TODO
 # - Use --with-recommended-packages=no by default
