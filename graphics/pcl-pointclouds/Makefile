@@ -71,7 +71,7 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 QHULL_DESC=		Include convex-hull operations
 QHULL_CMAKE_BOOL=	WITH_QHULL
-QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull8
+QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull
 
 QT5_CMAKE_ON=		-DWITH_QT=QT5
 QT5_CMAKE_OFF=		-DWITH_QT=NO
