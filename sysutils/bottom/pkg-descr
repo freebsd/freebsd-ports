@@ -21,4 +21,4 @@ tool. Features include:
     Changing the default behaviour of some widgets
     Changing the layout of widgets
     Filtering out entries in disk and temperature widgets
-    An htop-inspired basic mode
+    An htop-inspired basic mode (btm -b)
