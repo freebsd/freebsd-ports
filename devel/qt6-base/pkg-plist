@@ -2478,7 +2478,6 @@ lib/cmake/Qt6/FindWrapBundledLibpngConfigExtra.cmake
 lib/cmake/Qt6/FindWrapBundledPcre2ConfigExtra.cmake
 lib/cmake/Qt6/FindWrapBundledZLIBConfigExtra.cmake
 lib/cmake/Qt6/FindWrapDBus1.cmake
-lib/cmake/Qt6/FindWrapDoubleConversion.cmake
 lib/cmake/Qt6/FindWrapFreetype.cmake
 lib/cmake/Qt6/FindWrapHarfbuzz.cmake
 lib/cmake/Qt6/FindWrapJpeg.cmake
@@ -2488,6 +2487,7 @@ lib/cmake/Qt6/FindWrapOpenSSLHeaders.cmake
 lib/cmake/Qt6/FindWrapPCRE2.cmake
 lib/cmake/Qt6/FindWrapPNG.cmake
 lib/cmake/Qt6/FindWrapRt.cmake
+lib/cmake/Qt6/FindWrapSystemDoubleConversion.cmake
 lib/cmake/Qt6/FindWrapSystemFreetype.cmake
 lib/cmake/Qt6/FindWrapSystemHarfbuzz.cmake
 lib/cmake/Qt6/FindWrapSystemJpeg.cmake
@@ -2501,7 +2501,6 @@ lib/cmake/Qt6/FindWrapZLIB.cmake
 lib/cmake/Qt6/FindWrapZSTD.cmake
 lib/cmake/Qt6/FindXKB_COMMON_X11.cmake
 lib/cmake/Qt6/FindXRender.cmake
-lib/cmake/Qt6/Finddouble-conversion.cmake
 lib/cmake/Qt6/ModuleDescription.json.in
 lib/cmake/Qt6/PkgConfigLibrary.pc.in
 lib/cmake/Qt6/Qt3rdPartyLibraryConfig.cmake.in
@@ -3187,6 +3186,8 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-vc4-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-vc4-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-rasp-pi4-aarch64/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-rasp-pi4-aarch64/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi4-v3d-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi4-v3d-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rcar-h2-g++/qmake.conf
@@ -3656,6 +3657,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/htmltabs.qdocconf
 %%QT_DOCDIR%%/global/includes-online/search.qdoc
 %%QT_DOCDIR%%/global/includes/cli-build-cmake.qdocinc
+%%QT_DOCDIR%%/global/includes/corelib/port-from-qregexp.qdocinc
 %%QT_DOCDIR%%/global/includes/examples-run.qdocinc
 %%QT_DOCDIR%%/global/includes/module-use.qdocinc
 %%QT_DOCDIR%%/global/includes/standardpath/functiondocs.qdocinc
@@ -3670,6 +3672,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/qt-module-defaults-online-commercial.qdocconf
 %%QT_DOCDIR%%/global/qt-module-defaults-online.qdocconf
 %%QT_DOCDIR%%/global/qt-module-defaults.qdocconf
+%%QT_DOCDIR%%/global/snippets/code/doc_src_port_from_qregexp.cpp
 %%QT_DOCDIR%%/global/template/images/Qt-dark_gradient.png
 %%QT_DOCDIR%%/global/template/images/Qt-footer-bg.jpg
 %%QT_DOCDIR%%/global/template/images/Qt-footer_shadow.png

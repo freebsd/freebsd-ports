@@ -351,7 +351,6 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellAdditionalTargetInfo.cmak
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellDependencies.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellAdditionalTargetInfo.cmake
