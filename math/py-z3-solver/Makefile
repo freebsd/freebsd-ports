@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../../../LICENSE.txt
 
 BROKEN_riscv64=	fails to configure, see https://github.com/Z3Prover/z3/issues/6183
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 
 USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils autoplist

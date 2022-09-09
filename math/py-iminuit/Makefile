@@ -11,7 +11,7 @@ WWW=		https://iminuit.readthedocs.io/en/stable/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++14-lang python:3.6+

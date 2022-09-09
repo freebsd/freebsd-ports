@@ -21,7 +21,7 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc powerpc64 powerpc64le powerpcspe
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		v4l_compat>=1.0.20120501:multimedia/v4l_compat
 LIB_DEPENDS=	libaudio.so:audio/nas \
 		libdbus-1.so:devel/dbus \

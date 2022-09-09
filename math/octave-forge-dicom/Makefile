@@ -9,7 +9,7 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-BUILD_DEPENDS+=	cmake:devel/cmake
+BUILD_DEPENDS+=	cmake:devel/cmake-core
 
 LIB_DEPENDS+=	libgdcmCommon.so:devel/gdcm
 

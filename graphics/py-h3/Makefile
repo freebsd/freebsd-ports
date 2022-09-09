@@ -11,7 +11,7 @@ WWW=		https://github.com/uber/h3-py
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		h3>=${PORTVERSION:R}:graphics/h3 \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR}
 LIB_DEPENDS=	libh3.so:graphics/h3

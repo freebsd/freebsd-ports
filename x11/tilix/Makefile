@@ -9,7 +9,7 @@ WWW=		https://gnunn1.github.io/tilix-web/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		po4a-translate:textproc/po4a \
 		${LOCALBASE}/libdata/pkgconfig/vted-3.pc:x11-toolkits/gtkd
 LIB_DEPENDS=	libdruntime-ldc-shared.so:lang/ldc \

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 BROKEN_FreeBSD_12_powerpc64=	fails to install: /wrkdirs/usr/ports/devel/py-keystone-engine/work-py36/keystone-engine-0.9.1-3/src/build/llvm/lib/libkeystone.so: No such file or directory
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 
 USES=		pkgconfig python:3.6+
 USE_PYTHON=	distutils autoplist

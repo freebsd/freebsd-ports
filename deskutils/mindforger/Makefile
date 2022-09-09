@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	CMARK
 OPTIONS_DEFAULT=	CMARK
 CMARK_DESC=	CommonMark support (Markdown -> HTML rendering)
 
-CMARK_BUILD_DEPENDS=	cmake:devel/cmake
+CMARK_BUILD_DEPENDS=	cmake:devel/cmake-core
 CMARK_QMAKE_OFF=	CONFIG+="mfnomd2html"
 
 .include <bsd.port.options.mk>

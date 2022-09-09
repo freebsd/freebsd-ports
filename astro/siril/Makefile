@@ -15,7 +15,7 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libcfitsio.so:astro/cfitsio \
 		libconfig.so:devel/libconfig \

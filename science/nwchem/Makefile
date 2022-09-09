@@ -68,7 +68,7 @@ OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_VARS=		CONFLICTS_BUILD=mpich
 
 LIBXC_DESC=		Use libxc
-LIBXC_BUILD_DEPENDS=	cmake:devel/cmake
+LIBXC_BUILD_DEPENDS=	cmake:devel/cmake-core
 LIBXC_MAKE_ENV=		USE_LIBXC=Y
 
 PYTHON_DESC=		Enable Python syntax in input files
