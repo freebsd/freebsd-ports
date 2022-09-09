@@ -1,6 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTVERSION=	7.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -29,14 +28,14 @@ LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
 FLAVORS=			default nox11 tools
 FLAVOR?=			${FLAVORS:[1]}
 default_CONFLICTS_INSTALL=	qemu-devel qemu-nox11 qemu-tools qemu-utils \
-				qemu5* qemu6*
+				qemu6* qemu70*
 nox11_PKGNAMESUFFIX=		-nox11
-nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu5* qemu6*
+nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6* qemu70*
 nox11_COMMENT=			(without X11)
 tools_PKGNAMESUFFIX=		-tools
 tools_COMMENT=			(tools only)
-tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu5* \
-				qemu6*
+tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6* \
+				qemu70*
 tools_DESCR=			${.CURDIR}/pkg-descr-tools
 tools_PLIST=			${.CURDIR}/pkg-plist-tools
 
@@ -168,7 +167,7 @@ OPENGL_USES=			gl
 OPENGL_USE=			GL=gbm,gl
 OPENGL_CONFIGURE_OFF=		--disable-opengl
 PNG_LIB_DEPENDS=		libpng.so:graphics/png
-PNG_CONFIGURE_OFF=		--disable-vnc-png
+PNG_CONFIGURE_OFF=		--disable-png
 SAMBA_USES=			samba:run # smbd
 SAMBA_CONFIGURE_ON=		--smbd=${LOCALBASE}/sbin/smbd
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
@@ -237,8 +236,8 @@ post-install:
 .if ${FLAVOR:U} != tools
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
