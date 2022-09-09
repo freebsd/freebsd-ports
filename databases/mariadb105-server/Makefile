@@ -1,7 +1,5 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME?=	mariadb
-PORTVERSION=	10.5.16
+PORTVERSION=	10.5.17
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	\
