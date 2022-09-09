@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Spherical mercator coordinate and tile utilities
+WWW=		https://github.com/mapbox/mercantile
 
 LICENSE=	BSD3CLAUSE
 
