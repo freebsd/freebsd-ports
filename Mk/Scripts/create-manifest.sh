@@ -52,7 +52,7 @@ licenselogic: ${dp_LICENSE_COMB:-single}
 EOT
 
 # Then, the optional bits
-[ -z "${dp_WWW}" ] || echo "www: ${dp_WWW}"
+[ -z "${dp_WWW}" ] || echo "www: \"${dp_WWW}\""
 [ -z "${dp_LICENSE}" ] || echo "licenses: [ ${dp_LICENSE} ]"
 [ -z "${dp_USERS}" ] || echo "users: [ ${dp_USERS} ]"
 [ -z "${dp_GROUPS}" ] || echo "groups: [ ${dp_GROUPS} ]"
