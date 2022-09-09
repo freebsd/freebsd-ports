@@ -4,7 +4,7 @@ PORTREVISION?=	0	# devel/cppcheck-gui
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT?=	Static analysis of C/C++ code
+COMMENT?=	Tool for static C/C++ code analysis
 WWW=		https://cppcheck.sourceforge.io/
 
 LICENSE=	GPLv3+
