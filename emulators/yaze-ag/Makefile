@@ -1,6 +1,5 @@
 PORTNAME=	yaze-ag
-DISTVERSION=	2.51.0
-PORTREVISION=	1
+DISTVERSION=	2.51.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/
 

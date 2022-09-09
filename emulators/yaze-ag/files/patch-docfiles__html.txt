@@ -1,0 +1,13 @@
+--- docfiles_html.txt.orig	2022-09-09 21:20:05 UTC
++++ docfiles_html.txt
+@@ -1,8 +1,8 @@ doc_html/How_to_read.txt
+ doc_html/BOOTSYS.Z80.html
+ doc_html/How_to_read.txt
+-doc_html/INSTALL-2.51.2.html
++doc_html/INSTALL-2.51.3.html
+ doc_html/README-1.10.html
+-doc_html/README-2.51.2.html
++doc_html/README-2.51.3.html
+ doc_html/README_BIOS3_Z80.html
+ doc_html/README_BOOTSYS.html
+ doc_html/cdm.1.html

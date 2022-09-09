@@ -1,6 +1,6 @@
---- Makefile_freebsd.orig	2021-05-11 19:11:02 UTC
+--- Makefile_freebsd.orig	2021-12-20 20:32:05 UTC
 +++ Makefile_freebsd
-@@ -6,12 +6,12 @@ BUILD = " (build for AMD (barcelona, 64Bit))"
+@@ -6,12 +6,12 @@ CC            =	clang
  CC            =	clang
  
  #where you want the binaries and manual page
@@ -29,7 +29,7 @@
  
  # -DUSE_GNU_READLINE for command recall/editing and filename completion
  # -DBGii_BUG works around a problem in Backgrounder II
-@@ -210,29 +211,29 @@ install:	all
+@@ -215,29 +216,29 @@ install:	all
  		$(CC) $(CFLAGS) cdm.o $(LIBS) -o $@
  
  install:	all
