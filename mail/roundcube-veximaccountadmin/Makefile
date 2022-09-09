@@ -9,6 +9,7 @@ DISTNAME=	rcube_plg_veximaccountadmin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Roundcube vexim account admin plugin
+WWW=		http://axel.sjostedt.no/misc/dev/roundcube/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for encoding for mobile phones in Japan
+WWW=		https://metacpan.org/release/Encode-JP-Mobile
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

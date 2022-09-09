@@ -6,6 +6,7 @@ MASTER_SITES=	http://students.ceid.upatras.gr/~sxanth/ncc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program analysis tool and call-graph navigator
+WWW=		http://students.ceid.upatras.gr/~sxanth/ncc/
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

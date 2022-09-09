@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate random password that looks like real word
+WWW=		https://metacpan.org/release/Crypt-PassGen
 
 USES=		perl5
 USE_PERL5=	configure

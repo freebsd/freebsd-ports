@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	fredrik@min-hemsida.net
 COMMENT=	Nagios dashboard
+WWW=		https://github.com/frlen/nagnu
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

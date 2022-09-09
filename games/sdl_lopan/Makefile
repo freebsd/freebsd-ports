@@ -11,6 +11,7 @@ EXTRACT_ONLY=	sdllopan-${DISTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mahjong game remake
+WWW=		http://www.linuxmotors.com/sdllopan/
 
 WRKSRC=		${WRKDIR}/sdllopan-${PORTVERSION}
 

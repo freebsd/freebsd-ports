@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
+WWW=		https://xerces.apache.org/xerces-c/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

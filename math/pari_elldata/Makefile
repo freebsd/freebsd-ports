@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Elliptic Curve Data for PARI/GP
+WWW=		https://pari.math.u-bordeaux.fr/packages.html
 
 LICENSE=	ART20
 

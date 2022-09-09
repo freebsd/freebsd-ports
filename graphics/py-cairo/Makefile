@@ -8,6 +8,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Python bindings for Cairo
+WWW=		https://github.com/pygobject/pycairo
 
 LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	multi

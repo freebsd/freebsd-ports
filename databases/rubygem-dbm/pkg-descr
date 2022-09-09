@@ -20,5 +20,3 @@ any of the following:
 
 All of these dbm implementations have their own Ruby interfaces
 available, which provide richer (but varying) APIs.
-
-WWW: https://github.com/ruby/dbm

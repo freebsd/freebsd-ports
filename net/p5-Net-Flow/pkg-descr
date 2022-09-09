@@ -7,5 +7,3 @@ It is future work. You can easily make the Flow Proxy, Protocol Converter
 and Flow Concentrator by using the combination of both function. And also,
 you can make the flexible Collector which can receive any Templates
 by using the Storable perl module.
-
-WWW: https://metacpan.org/release/Net-Flow

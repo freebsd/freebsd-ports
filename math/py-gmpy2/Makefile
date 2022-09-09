@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GMP/MPIR, MPFR, and MPC interface to Python
+WWW=		https://pypi.org/project/gmpy2/
 
 LICENSE=	GPLv3
 

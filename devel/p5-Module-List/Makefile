@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Module 'directory' listing
+WWW=		https://metacpan.org/release/Module-List
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

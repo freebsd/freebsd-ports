@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Schema-based serializer/deserializer with support for Avro
+WWW=		https://github.com/confluentinc/libserdes
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

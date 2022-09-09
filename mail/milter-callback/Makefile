@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Milter to perform a envelope-from sender verification on target MX
+WWW=		http://unix.zhegan.in
 
 LICENSE=	GPLv3
 

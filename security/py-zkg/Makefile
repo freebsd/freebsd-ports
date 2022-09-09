@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mshirk@daemon-security.com
 COMMENT=	Zeek NSM package manager
+WWW=		https://github.com/zeek/package-manager
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

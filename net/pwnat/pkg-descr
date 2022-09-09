@@ -15,5 +15,3 @@ no UPnP/STUN/ICE required, no spoofing, and no DNS tricks.
 More importantly, the client can then connect to any
 host or port on any remote host or to a fixed host and
 port decided by the server.
-
-WWW: https://samy.pl/pwnat

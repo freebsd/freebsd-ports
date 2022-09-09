@@ -10,5 +10,3 @@ the CERT secure coding guide. The checks do not rely on twos complement
 arithmetic and should not at any point perform an arithmetic operations
 that may overflow. It also performs basic type agreement checks to
 ensure that the macros are being used (somewhat) correctly.
-
-WWW: https://gitlab.com/ports1/safe-iop/

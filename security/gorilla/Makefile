@@ -8,6 +8,7 @@ DISTFILES=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}${EXTRACT_SUF
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Password Gorilla is a cross-platform Password Manager
+WWW=		https://github.com/zdia/gorilla
 
 LICENSE=	GPLv2
 

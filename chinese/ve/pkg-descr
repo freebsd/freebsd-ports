@@ -16,5 +16,3 @@ ve is a tiny editor, about 60K. It's woju's favorite UNIX editor.
 The most obvious weakness of ve is changing TABs into Spaces. So
 please don't use ve to edit TAB-important files, such as Makefile,
 sendmail.cf, syslog.conf... etc.
-
-WWW: http://netlab.cse.yzu.edu.tw/~statue/freebsd/zh-tut/ve.html

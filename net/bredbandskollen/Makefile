@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to check internet connection speed
+WWW=		https://github.com/dotse/bbk
 
 LICENSE=	GPLv2
 

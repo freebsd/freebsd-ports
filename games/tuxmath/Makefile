@@ -10,6 +10,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educational arcade game starring Tux
+WWW=		http://tux4kids.alioth.debian.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING_GPL3

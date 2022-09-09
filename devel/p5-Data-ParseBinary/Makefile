@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another parser for binary structures
+WWW=		https://metacpan.org/pod/Data::ParseBinary
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

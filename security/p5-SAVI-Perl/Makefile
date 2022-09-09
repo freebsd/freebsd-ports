@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl5 module interface to Sophos AntiVirus
+WWW=		http://www.csupomona.edu/~henson/archive/projects/SAVI-Perl/dist/
 
 USES=		perl5
 USE_PERL5=	configure

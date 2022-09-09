@@ -7,6 +7,7 @@ DISTNAME=	Twiggy-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pythonic logger
+WWW=		https://github.com/wearpants/twiggy/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

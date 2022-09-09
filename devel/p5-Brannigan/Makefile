@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Comprehensive, flexible system for validating and parsing input
+WWW=		https://metacpan.org/pod/Brannigan
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

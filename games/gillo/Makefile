@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Players are cars throwing a magnetic fuzzy ball into a goal
+WWW=		https://sourceforge.net/projects/gillo/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

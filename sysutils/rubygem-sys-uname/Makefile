@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface for getting system information
+WWW=		https://github.com/djberg96/sys-uname
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

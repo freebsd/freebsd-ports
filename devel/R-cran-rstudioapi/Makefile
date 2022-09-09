@@ -1,10 +1,11 @@
 PORTNAME=	rstudioapi
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Safely Access the RStudio API
+WWW=		https://cran.r-project.org/web/packages/rstudioapi/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	KDE/Qt/qtcreator
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	C++ and QML IDE for Qt development
+WWW=		https://qt-project.org/wiki/Category:Tools::QtCreator
 
 LICENSE=	QtGPL
 LICENSE_GROUPS_QtGPL=	GPL

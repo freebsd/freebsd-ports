@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Library of Simple JSON and XML Parsing
+WWW=		https://github.com/jnunemaker/crack
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	net-im devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for building Telegram clients
+WWW=		https://github.com/tdlib/td
 
 LICENSE=	BSL
 

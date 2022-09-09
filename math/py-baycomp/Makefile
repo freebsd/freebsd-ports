@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for Bayesian comparison of classifiers
+WWW=		https://github.com/janezd/baycomp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

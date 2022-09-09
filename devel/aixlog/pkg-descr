@@ -7,5 +7,3 @@ Features:
 * Unobtrusive, typesafe and expressive
 * Easy to switch from existing "cout logging"
 * Native support for various platforms (through Sinks)
-
-WWW: https://github.com/badaix/aixlog

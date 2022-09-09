@@ -6,5 +6,3 @@ data. Hence many biomechanics softwares can produce C3D files in order to share
 data. However, there is a lack in the biomechanics community of an easy to use,
 free and open source library to read, modify and write them as needed when it
 gets to the data analysis.
-
-WWW: https://github.com/pyomeca/ezc3d

@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/kuriyama
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to support x-reproxy-url header
+WWW=		https://github.com/kazuho/mod_reproxy
 
 LICENSE=	APACHE20
 

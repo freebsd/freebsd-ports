@@ -18,5 +18,3 @@ features
 *  written in go, so lightweight and suitable for a raspberry pi, etc.
 *  newer salt and token auth
 *  tested on dsub, jamstash, sublime music, and soundwaves
-
-WWW: https://github.com/sentriz/gonic

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Search CPAN using a SQLite database
+WWW=		https://metacpan.org/release/CPAN-SQLite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

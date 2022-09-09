@@ -11,5 +11,3 @@ Features:
 - Conditional settings
 - Config, log and PID file support
 - Remote control via DBus
-
-WWW: https://github.com/yshui/picom

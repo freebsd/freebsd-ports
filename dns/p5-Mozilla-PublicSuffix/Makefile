@@ -1,13 +1,14 @@
 PORTNAME=	Mozilla-PublicSuffix
 PORTVERSION=	1.0.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get public suffix of domain name via Mozilla Public Suffix List
+WWW=		https://metacpan.org/release/Mozilla-PublicSuffix
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

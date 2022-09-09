@@ -5,5 +5,3 @@ Information Service''.
 
 Currently this is an experimental port, with support only for the
 `passwd' and `group' databases.
-
-WWW: http://www.padl.com/OSS/nss_ldap.html

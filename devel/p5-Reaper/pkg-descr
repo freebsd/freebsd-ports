@@ -4,5 +4,3 @@ meaning it will not just replace an existing $SIG{CHLD} handler.  It still
 requires applications to do the right thing in using this module and not
 installing their own versions. At least it provides a consistent
 implementation that can be shared between various modules.
-
-WWW: https://metacpan.org/release/Reaper

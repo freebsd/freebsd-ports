@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library to deal with pinyin
+WWW=		https://github.com/libpinyin/libpinyin
 
 LICENSE=	GPLv2
 

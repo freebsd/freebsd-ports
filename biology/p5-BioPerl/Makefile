@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E:S|00|.|g}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of Perl modules for bioinformatics
+WWW=		https://bioperl.org/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

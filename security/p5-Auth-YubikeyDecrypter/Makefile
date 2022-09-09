@@ -9,6 +9,7 @@ DISTNAME=	Auth-Yubikey_Decrypter-${PORTVERSION}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Decrypting the output from the yubikey token
+WWW=		https://metacpan.org/release/Auth-Yubikey_Decrypter
 
 RUN_DEPENDS=	p5-Crypt-Rijndael>=1:security/p5-Crypt-Rijndael
 

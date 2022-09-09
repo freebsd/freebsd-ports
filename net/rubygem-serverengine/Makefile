@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Framework to implement robust multiprocess servers
+WWW=		https://github.com/treasure-data/serverengine
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/${PORTNAME} \
 
 MAINTAINER=	sakaue.mamoru@mwghennndo.com
 COMMENT=	Ports upgrading utility for massive forced reinstall
+WWW=		http://www.mwghennndo.com/software/portsreinstall/
 
 LICENSE=	BSD2CLAUSE
 

@@ -13,5 +13,3 @@ Pum permits the followings operations on Postgres databases:
   - upgrade a database applying delta files
 
 and some other useful operations.
-
-WWW: https://github.com/opengisch/pum

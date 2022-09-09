@@ -1,11 +1,12 @@
 PORTNAME=	discord.py
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	games python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	API wrapper for Discord written in Python
+WWW=		https://github.com/Rapptz/discord.py
 
 LICENSE=	MIT
 

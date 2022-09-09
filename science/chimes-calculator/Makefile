@@ -5,6 +5,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chebyshev Interaction Model for Efficient Simulation
+WWW=		https://github.com/rk-lindsey/chimes_calculator
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Quickly and easily construct new packages
+WWW=		https://metacpan.org/release/Package-Generator
 
 LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual

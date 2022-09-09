@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Determine the printable width of the terminal
+WWW=		https://github.com/jquast/wcwidth
 
 LICENSE=	MIT
 

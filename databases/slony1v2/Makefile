@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	dgilbert@eicat.ca
 COMMENT=	PostgreSQL master to multiple replicas replication system
+WWW=		https://www.slony.info/
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

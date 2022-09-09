@@ -7,6 +7,7 @@ DISTNAME=	mpc-${PORTVERSION}
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Command line client for the musicpd
+WWW=		https://www.musicpd.org/clients/mpc/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

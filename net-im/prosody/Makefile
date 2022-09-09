@@ -6,6 +6,7 @@ MASTER_SITES=	https://prosody.im/downloads/source/
 
 MAINTAINER=	thomas@beingboiled.info
 COMMENT=	Simple extensible XMPP server written in Lua
+WWW=		https://www.prosody.im/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

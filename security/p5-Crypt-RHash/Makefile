@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compute hash sums and magnet links
+WWW=		https://metacpan.org/release/Crypt-RHash
 
 LICENSE=	MIT
 

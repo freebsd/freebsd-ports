@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geocode addresses with the OpenStreetMap Nominatim API
+WWW=		https://metacpan.org/release/Geo-Coder-OSM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

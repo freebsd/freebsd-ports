@@ -4,5 +4,3 @@
   # ... later
   if ($color->is_red) {
   # it can't be yellow or green
-
-WWW: https://metacpan.org/release/Object-Enum

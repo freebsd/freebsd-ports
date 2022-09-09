@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Tarsnap wrapper which expires backups using a gfs-scheme
+WWW=		https://github.com/miracle2k/tarsnapper
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

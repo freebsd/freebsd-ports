@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pytest plugin to run pycodestyle
+WWW=		https://github.com/henry0312/pytest-codestyle
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,5 +6,3 @@ Although lynx is fast, small, and very stable, it makes no attempt
 to handle JavaScript or CSS formatting. Other console browsers like
 elinks (www/elinks) tackle those languages, with varying degrees
 of success.
-
-WWW: http://lynx.invisible-island.net/current/

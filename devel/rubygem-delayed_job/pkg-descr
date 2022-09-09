@@ -10,5 +10,3 @@ multitude of core tasks. Amongst those tasks are:
 - updating solr, our search server, after product changes
 - batch imports
 - spam checks
-
-WWW: https://github.com/collectiveidea/delayed_job

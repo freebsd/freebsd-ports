@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
+WWW=		https://llvm.org/
 
 LICENSE_DIR=	${WRKSRC}/llvm
 .include "Makefile.LICENSE"
@@ -551,7 +552,7 @@ post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
-.if ${SNAPDATE} == 20220811
+.if ${SNAPDATE} == 20220906
 	# expected to be temporary
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/flang-new \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/flang

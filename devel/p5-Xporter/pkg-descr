@@ -11,5 +11,3 @@ the user.
 
 To reset the default EXPORT list to empty, a bare minus ('-') or logical-not
 sign ('!') is placed as the first parameter in the client's import list.
-
-WWW: https://metacpan.org/release/Xporter

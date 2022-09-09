@@ -5,5 +5,3 @@ Methods for Sparse Linear Systems," Timothy A. Davis, SIAM, Philadelphia, 2006.
 
 Note: the CSparse library is meant for personal experimentation. For system-wide
 installation, please install math/suitesparse-cxsparse instead.
-
-WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

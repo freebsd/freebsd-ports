@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Simple, portable, lightweight library for handling UTF-8 strings
+WWW=		http://utfcpp.sourceforge.net/
 
 LICENSE=	BSL
 

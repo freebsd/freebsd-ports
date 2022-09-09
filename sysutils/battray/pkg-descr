@@ -5,5 +5,3 @@ It is also able to take certain actions depending on battery status.
 
 It's simple, easy, fairly environment-independent, and "just works" without
 tons of (Gnome|KDE|..) dependencies.
-
-WWW: https://github.com/arp242/battray

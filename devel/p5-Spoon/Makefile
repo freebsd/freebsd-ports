@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Spiffy Application Building Framework
+WWW=		https://metacpan.org/release/Spoon
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Spiffy>=0:devel/p5-Spiffy \

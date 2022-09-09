@@ -4,5 +4,3 @@ This is a near direct port of the of the perl module
 Geo::StreetAddress::US originally written by Schuyler D. Erle.
 For more information see
 https://metacpan.org/release/SDERLE/Geo-StreetAddress-US-0.99
-
-WWW: https://github.com/derrek/street-address

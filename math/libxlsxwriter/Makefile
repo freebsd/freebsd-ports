@@ -5,6 +5,7 @@ CATEGORIES=	math devel
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	C library for creating Excel XLSX files
+WWW=		https://libxlsxwriter.github.io/
 
 LICENSE=	BSD2CLAUSE
 

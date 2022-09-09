@@ -5,5 +5,3 @@ Includes functions for Kalman filtering and smoothing.
 
 Estimation of variance matrices can be performed using
 the EM algorithm in case of Gaussian models.
-
-WWW: http://cran.r-project.org/web/packages/sspir/

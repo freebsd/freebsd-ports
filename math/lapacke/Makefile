@@ -2,6 +2,7 @@ PORTNAME=	lapacke
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Standard C language APIs for LAPACK
+WWW=		https://www.netlib.org/lapack/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

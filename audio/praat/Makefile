@@ -1,10 +1,11 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.2.16
+DISTVERSION=		6.2.17
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Phonetics by Computer
+WWW=		https://www.fon.hum.uva.nl/praat/
 
 LICENSE=	GPLv2
 

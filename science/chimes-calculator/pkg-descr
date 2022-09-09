@@ -15,5 +15,3 @@ etc). Users have the option of directly embedding the ChIMES
 calculator within their codes, or evaluating interactions through the
 beginner-friendly serial interface, each of which have Python, C++, C,
 and FORTRAN API's.
-
-WWW: https://github.com/rk-lindsey/chimes_calculator

@@ -16,5 +16,3 @@ original XDR library by Sun, in that the same filter is used for both reading
 and writing. However, heavy usage of templates makes the API simpler and type
 safe. Function inlining and careful avoidance of pointers or virtual
 functions, also make generated code faster.
-
-WWW: http://xtl.sourceforge.net/

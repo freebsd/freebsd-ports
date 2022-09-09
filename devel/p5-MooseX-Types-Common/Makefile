@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of commonly-used type constraints that do not ship with p5-Moose
+WWW=		https://metacpan.org/release/MooseX-Types-Common
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

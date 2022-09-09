@@ -14,5 +14,3 @@ KTorrent is a BitTorrent client for KDE. Its main features are:
   o Directory scanner to automatically load torrents in certain directories
   o Trackers can be added to torrents
   o File prioritization for multi file torrents
-
-WWW: https://kde.org/applications/en/internet/org.kde.ktorrent

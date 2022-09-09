@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
+WWW=		https://boinc.berkeley.edu/
 
 LICENSE=	LGPL3
 

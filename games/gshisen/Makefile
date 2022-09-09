@@ -7,6 +7,7 @@ DISTNAME=	GShisen-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for GNUstep
+WWW=		https://gap.nongnu.org/gshisen/index.html
 
 LICENSE=	GPLv2+
 

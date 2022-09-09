@@ -7,6 +7,7 @@ DISTNAME=	AntTweakBar_${DISTVERSION:S/.//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library to add light and GUI into graphic apps
+WWW=		http://anttweakbar.sourceforge.net/doc/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../License.txt

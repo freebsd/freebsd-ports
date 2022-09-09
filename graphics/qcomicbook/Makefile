@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based comic book archive viewer
+WWW=		https://github.com/stolowski/QComicBook
 
 LICENSE=	GPLv2
 

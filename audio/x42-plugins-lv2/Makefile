@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only to allow USE_GITHUB=nodefault for z
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of LV2 plugins (submodules)
+WWW=		https://github.com/x42/x42-plugins/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbox for manipulating Ogg video files
+WWW=		http://www.streamnik.de/oggvideotools.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

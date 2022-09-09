@@ -17,5 +17,3 @@ In order to use this software, you need SDR hardware, for example
 * SDRplay RSP2pro (can receive on frequencies 1 kHz to 2 GHz)
 
 See the user guide: https://github.com/jopohl/urh/raw/master/data/userguide.pdf
-
-WWW: https://github.com/jopohl/urh

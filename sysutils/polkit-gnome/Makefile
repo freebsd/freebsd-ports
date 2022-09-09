@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME frontend to the PolicyKit framework
+WWW=		https://www.freedesktop.org/wiki/Software/polkit/
 
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit
 

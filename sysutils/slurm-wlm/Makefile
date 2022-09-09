@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-wlm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Linux Utility for Resource Management
+WWW=		https://slurm.schedmd.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

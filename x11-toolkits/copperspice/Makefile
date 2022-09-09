@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.copperspice.com/${PORTNAME}/source/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	First class GUI library to unite the C++ community
+WWW=		https://www.copperspice.com/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.LGPL

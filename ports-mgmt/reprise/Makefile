@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt python
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Port testing system
+WWW=		https://github.com/AMDmi3/reprise
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

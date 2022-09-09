@@ -7,5 +7,3 @@ offers to remove it. It is able to find:
 - Empty files
 - Recursive empty directories
 - Files with broken user or group id.
-
-WWW: https://rmlint.readthedocs.io/en/latest/

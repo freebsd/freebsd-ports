@@ -5,5 +5,3 @@ science and engineering modules together as a single package.
 SciPy includes modules for graphics and plotting, optimization, integration,
 special functions, signal and image processing, genetic algorithms, ODE
 solvers, and others.
-
-WWW: https://www.scipy.org/

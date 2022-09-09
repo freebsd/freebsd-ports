@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Django REST framework
+WWW=		https://jpadilla.github.io/django-rest-framework-xml/
 
 LICENSE=	BSD2CLAUSE
 

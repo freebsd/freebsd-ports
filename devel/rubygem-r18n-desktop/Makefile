@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	i18n tool to translate your desktop application in several languages
+WWW=		https://github.com/r18n/r18n-desktop
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

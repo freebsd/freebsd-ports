@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get the current subroutine
+WWW=		https://metacpan.org/release/Sub-Current
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

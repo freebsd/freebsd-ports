@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Thrift Client
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 

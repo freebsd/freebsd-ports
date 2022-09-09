@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fuzzy match using string similarity and regexp rules
+WWW=		https://github.com/seamusabshere/fuzzy_match
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

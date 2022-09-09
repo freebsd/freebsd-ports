@@ -6,6 +6,7 @@ MASTER_SITES=	SF/dtorrent/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	CTorrent monitoring and managing interface
+WWW=		https://www.rahul.net/dholmes/ctorrent/ctcs.html
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

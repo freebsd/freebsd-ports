@@ -1,12 +1,12 @@
 PORTNAME=	rasterio
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and direct raster I/O for use with Numpy and SciPy
+WWW=		https://github.com/rasterio/rasterio
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -20,7 +20,7 @@ RUN_DEPENDS=	gdal>=3.1:graphics/gdal \
 		${PYTHON_PKGNAMEPREFIX}click>=4.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-plugins>=0:devel/py-click-plugins@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cligj>=0.5:devel/py-cligj@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.18,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snuggs>=1.4.1:math/py-snuggs@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python:3.7+

@@ -6,5 +6,3 @@ build and install scripts.
 This is ncarray.
 
  Access a single or a collection of NetCDF files as a multi-dimensional array.
-
-WWW: http://octave.sourceforge.net/

@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Draws ASCII-art configurable boxes around text or code
+WWW=		https://boxes.thomasjensen.com/
 
 LICENSE=	GPLv2
 

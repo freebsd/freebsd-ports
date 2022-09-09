@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	mops@punkt.de
 COMMENT=	PHP bindings for libvips
+WWW=		https://github.com/libvips/php-vips-ext
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -4,6 +4,7 @@ CATEGORIES=	accessibility kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Screen magnifier
+WWW=		https://www.kde.org/applications/utilities/kmag/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

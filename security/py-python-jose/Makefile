@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Client SDK for TIP API which require Authentication Tokens
+WWW=		https://github.com/mpdavis/python-jose
 
 LICENSE=	MIT
 

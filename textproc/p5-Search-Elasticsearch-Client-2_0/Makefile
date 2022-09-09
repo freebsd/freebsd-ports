@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	ElasticSearch API for 2.0 servers
+WWW=		https://metacpan.org/release/Search-Elasticsearch-Client-2_0
 
 LICENSE=	APACHE20
 

@@ -5,5 +5,3 @@ configuration objects.  Basic NCNF API does not make a distinction
 between different types of configuration objects.  However, there are a
 couple of additional functions present to ease the use of certain types
 of configuration objects.
-
-WWW: https://sourceforge.net/projects/ncnf/

@@ -4,6 +4,7 @@ CATEGORIES=	security pear
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	PECL classes for PAM integration
+WWW=		https://pecl.php.net/package/krb5
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby bindings for RRD
+WWW=		https://rubygems.org/gems/errand
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

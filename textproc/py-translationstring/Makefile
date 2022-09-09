@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility library for i18n relied on by various Repoze packages
+WWW=		https://pypi.org/project/translationstring/
 
 LICENSE=	BSDMV
 LICENSE_NAME=	BSD Modification Variant

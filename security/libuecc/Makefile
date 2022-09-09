@@ -7,6 +7,7 @@ MASTER_SITES=	https://git.universe-factory.net/libuecc/snapshot/ \
 
 MAINTAINER=	crest_maintainer@rlwinm.de
 COMMENT=	Very small Elliptic Curve Cryptography library
+WWW=		https://git.universe-factory.net/libuecc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

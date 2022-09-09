@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
+WWW=		http://mlterm.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

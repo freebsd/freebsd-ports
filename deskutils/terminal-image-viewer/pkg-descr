@@ -13,5 +13,3 @@ For each 4x8 pixel cell of the (potentially downscaled) image:
 * Compare the bitmap to the assumed bitmaps for various unicode block graphics
   characters.
 * Re-calculate the foreground and background colors for the chosen character.
-
-WWW: https://github.com/stefanhaustein/TerminalImageViewer

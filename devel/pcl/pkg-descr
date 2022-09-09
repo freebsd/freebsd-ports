@@ -4,5 +4,3 @@ see The Art of Computer Programming by Donald E. Knuth. Coroutines
 are a very simple cooperative multitasking environment where the
 switch from one task to another is done explicitly by a function
 call.
-
-WWW: http://www.xmailserver.org/libpcl.html

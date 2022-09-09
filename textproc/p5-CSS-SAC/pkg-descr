@@ -6,5 +6,3 @@ http://www.w3.org/TR/SAC.
 CSS having more constructs than XML, core SAC is still more complex than
 core SAX.  However, if you need to parse a CSS style sheet, SAC probably
 remains the easiest way to get it done.
-
-WWW: https://metacpan.org/release/CSS-SAC

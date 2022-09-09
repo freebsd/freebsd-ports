@@ -14,5 +14,3 @@ implementation of the RISC-V SBI specifications for platform-specific firmwares
 executing in M-mode (case 1 mentioned above). An OpenSBI implementation can be
 easily extended by RISC-V platform and system-on-chip vendors to fit a
 particular hardware configuration.
-
-WWW: https://github.com/riscv/opensbi

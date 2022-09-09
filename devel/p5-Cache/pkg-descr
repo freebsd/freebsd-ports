@@ -2,5 +2,3 @@ The Cache modules are designed to assist a developer in persisting
 data for a specified period of time.  Often these modules are used
 in web applications to store data locally to save repeated and
 redundant expensive calls to remote machines or databases.
-
-WWW: https://metacpan.org/release/Cache

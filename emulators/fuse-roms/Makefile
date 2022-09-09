@@ -10,6 +10,7 @@ EXTRACT_ONLY=	fuse-emulator-roms-${PORTVERSION}-${FCREV}.fc${FCVER}.noarch.rpm
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Spectrum ROM files, for use with the Fuse emulator
+WWW=		https://sourceforge.net/projects/fuse-emulator/
 
 LICENSE=	NONE
 # No explicit permission to redistribute

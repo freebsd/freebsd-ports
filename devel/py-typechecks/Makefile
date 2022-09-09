@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Type checking helpers for Python
+WWW=		https://github.com/openvax/typechecks
 
 LICENSE=	APACHE20
 

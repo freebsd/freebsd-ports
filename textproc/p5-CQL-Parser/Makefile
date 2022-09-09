@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compiles CQL strings into parse trees of Node subtypes
+WWW=		https://metacpan.org/release/CQL-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

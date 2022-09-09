@@ -7,5 +7,3 @@ a web interface.
 Unlike external utility programs that communicate with VDR and it's plugins
 by SVDRP, Live has direct access to VDR's data structures and is thus very
 fast.
-
-WWW: http://live.vdr-developer.org/

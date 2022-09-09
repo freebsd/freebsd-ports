@@ -8,5 +8,3 @@ available.  The simplicity goal means that it doesn't have many
 features like tabs or scroll back as in other terminals.  Instead, it
 is expected that users of Alacritty make use of a terminal multiplexer
 such as tmux.
-
-WWW: https://github.com/jwilm/alacritty

@@ -8,5 +8,3 @@ Layout (CTL) scripts, such as Devanagari, Thai, Lao, and Tibetan are
 supported to the extent provided by Pango and by the OpenType fonts
 installed on your system. All of this is provided without need for any
 special configuration or layout calculation on the programmer's part.
-
-WWW: http://www.unifont.org/lasi/

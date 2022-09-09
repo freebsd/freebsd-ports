@@ -6,6 +6,7 @@ MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Conversion utility for passive DNS data in dnstable format
+WWW=		https://github.com/farsightsec/dnstable-convert
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

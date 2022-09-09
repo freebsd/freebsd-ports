@@ -9,5 +9,3 @@ SPCM automates the process of configuring a head node, compute
 nodes, file servers, and visualization nodes. Most common management
 tasks can be performed using a simple menu interface, while additional
 tasks are supported by command-line tools.
-
-WWW: http://acadix.biz/cluster-admin.php

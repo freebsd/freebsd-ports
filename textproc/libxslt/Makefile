@@ -1,12 +1,12 @@
 PORTNAME=	libxslt
-DISTVERSION=	1.1.35
-PORTREVISION=	3
+DISTVERSION=	1.1.37
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML stylesheet transformation library
+WWW=		https://gitlab.gnome.org/GNOME/libxslt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,8 +24,11 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	CRYPTO MEM_DEBUG
-OPTIONS_DEFAULT=	CRYPTO
+PLIST_SUB=	LIBVERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=	CRYPTO MEM_DEBUG STATIC
+OPTIONS_DEFAULT=	CRYPTO STATIC
+OPTIONS_SUB=		yes
 
 CRYPTO_DESC=	Enable crypto support
 MEM_DEBUG_DESC=	Enable memory debugging
@@ -35,6 +38,8 @@ CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 CRYPTO_CONFIGURE_WITH=	crypto
 
 MEM_DEBUG_CONFIGURE_WITH=	mem-debug
+
+STATIC_CONFIGURE_ENABLE=	static
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \

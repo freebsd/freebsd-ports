@@ -1,4 +1,2 @@
 A way to start Pry remotely and to connect to it using DRb. This allows to
 access the state of the running program from anywhere.
-
-WWW: https://github.com/Mon-Ouie/pry-remote

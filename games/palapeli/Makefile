@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		https://www.kde.org/applications/games/palapeli/
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		shared-mime-info tar:xz
@@ -12,6 +13,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

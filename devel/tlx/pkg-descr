@@ -7,5 +7,3 @@ found in the STL. The most important design goals and conventions are:
 * warning and bug-freeness on all compilers.
 * keep overhead down - small overall size such that is can be included without
   bloating applications.
-
-WWW: https://github.com/tlx/tlx

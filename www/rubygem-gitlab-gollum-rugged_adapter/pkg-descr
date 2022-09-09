@@ -1,3 +1,1 @@
 Adapter for Gollum to use Rugged (libgit2) at the backend.
-
-WWW: https://gitlab.com/gitlab-org/gitlab-gollum-rugged_adapter

@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR::HTML_Select is a class for generating HTML form select elements
+WWW=		https://pear.php.net/package/HTML_Select
 
 LICENSE=	PHP301
 

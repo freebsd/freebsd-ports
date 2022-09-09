@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for getting image information
+WWW=		https://metacpan.org/release/Image-Info
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

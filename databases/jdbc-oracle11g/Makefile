@@ -10,6 +10,7 @@ DIST_SUBDIR=	oracle11g
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDBC drivers for Oracle 11g
+WWW=		http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html
 
 # Converted from RESTRICTED
 LICENSE=	ORACLE

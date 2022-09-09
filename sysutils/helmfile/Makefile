@@ -1,11 +1,12 @@
 PORTNAME=	helmfile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.142.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Helmfile is a declarative spec for deploying helm charts
+WWW=		https://github.com/roboll/helmfile
 
 LICENSE=	MIT
 

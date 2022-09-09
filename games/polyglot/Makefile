@@ -7,6 +7,7 @@ MASTER_SITES=	http://hardy.uhasselt.be/Toga/polyglot-release/ \
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Winboard protocol to UCI protocol adapter
+WWW=		http://wbec-ridderkerk.nl/html/details1/PolyGlot.html
 
 LICENSE=	GPLv2
 

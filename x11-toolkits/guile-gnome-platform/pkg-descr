@@ -3,5 +3,3 @@ libraries. Guile-Gnome brings the power of Scheme to your graphical
 application: from Pango to GnomeCanvas, Gtk+ to GStreamer, Glade to
 GtkSourceView, you will find in Guile-Gnome a comprehensive
 environment for developing modern applications.
-
-WWW: https://www.gnu.org/software/guile-gnome/

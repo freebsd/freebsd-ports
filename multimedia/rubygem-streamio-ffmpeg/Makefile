@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wraps ffmpeg to read metadata and transcodes videos
+WWW=		https://github.com/streamio/streamio-ffmpeg
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

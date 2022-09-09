@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-c++-${DISTVERSION}
 
 MAINTAINER=	felix@userspace.com.au
 COMMENT=	Serialization/RPC system
+WWW=		https://capnproto.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

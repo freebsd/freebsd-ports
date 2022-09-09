@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.bigorno.net/xrick/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Rick Dangerous
+WWW=		https://www.bigorno.net/xrick/
 
 # Converted from RESTRICTED
 LICENSE=	xrick

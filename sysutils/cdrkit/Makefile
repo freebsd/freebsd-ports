@@ -8,6 +8,7 @@ MASTER_SITES=	http://ponce.cc/slackware/sources/repo/ \
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT?=	Command-line CD/DVD writing suite
+WWW=		http://www.cdrkit.org/
 
 LICENSE=	GPLv2+
 

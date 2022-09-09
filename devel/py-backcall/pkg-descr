@@ -5,5 +5,3 @@ you're careful.
 
 backcall provides a way of specifying the callback signature using a prototype
 function
-
-WWW: https://github.com/takluyver/backcall

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugin architecture for the Faust programming language
+WWW=		https://bitbucket.org/agraef/faust-lv2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

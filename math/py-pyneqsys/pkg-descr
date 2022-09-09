@@ -13,5 +13,3 @@ In addition to offering a unified interface to different solvers, pyneqsys can
 also derive the Jacobian analytically (when using pyneqsys.SymbolicSys). This
 is useful since doing so manually is widely recognized as both tedious and error
 prone.
-
-WWW: https://github.com/bjodah/pyneqsys

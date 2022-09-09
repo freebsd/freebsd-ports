@@ -4,5 +4,3 @@ strings.
 Each MicroMason object acts as a "template compiler," which converts
 templates from text-with-embedded-code formats into ready-to-execute
 Perl subroutines.
-
-WWW: https://metacpan.org/release/Text-MicroMason

@@ -1,11 +1,12 @@
 PORTNAME=	Data-Dmp
-PORTVERSION=	0.241
+PORTVERSION=	0.242
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dump Perl data structures as Perl code
+WWW=		https://metacpan.org/release/Data-Dmp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

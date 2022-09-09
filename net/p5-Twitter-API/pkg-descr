@@ -18,5 +18,3 @@ Additional features are available via optional traits:
  * "the whole enchilada" combines all the above traits via Enchilada
  * app-only (OAuth2) support via AppAuth
  * automatic rate limiting via RateLimiting
-
-WWW: https://metacpan.org/release/Twitter-API

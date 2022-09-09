@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensions to MooseX::Types::DateTime
+WWW=		https://metacpan.org/release/MooseX-Types-DateTime-MoreCoercions
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

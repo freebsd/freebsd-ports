@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Command line tool to interact with the PostgreSQL Extension Network
+WWW=		https://pgxn.github.io/pgxnclient/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

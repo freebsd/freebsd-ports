@@ -3,5 +3,3 @@ attaching it to a new terminal. Started a long-running process over
 ssh, but have to leave and don't want to interrupt it? Just start
 a screen, use reptyr to grab it, and then kill the ssh session and
 head on home.
-
-WWW: https://github.com/nelhage/reptyr

@@ -18,5 +18,3 @@ $res->encoding
 $res->decoded_content
 
   Discontinued since HTTP::Message already has this method.
-
-WWW: https://metacpan.org/release/HTTP-Response-Encoding

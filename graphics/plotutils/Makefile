@@ -7,6 +7,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Plotting library and toolkit
+WWW=		https://www.gnu.org/software/plotutils/plotutils.html
 
 LICENSE=	GPLv3
 

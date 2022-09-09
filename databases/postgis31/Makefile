@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	31
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Geographic objects support for PostgreSQL databases
+WWW=		https://postgis.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

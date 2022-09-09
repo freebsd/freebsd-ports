@@ -7,6 +7,7 @@ DISTNAME=	JetBrainsMono-${DISTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Free and open source typeface for developers
+WWW=		https://www.jetbrains.com/lp/mono
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

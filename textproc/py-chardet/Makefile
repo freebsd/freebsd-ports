@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Universal encoding detector for Python
+WWW=		https://github.com/chardet/chardet
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

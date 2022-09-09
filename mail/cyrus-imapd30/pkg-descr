@@ -17,5 +17,3 @@ efficiency, scalability, and administratability.  Multiple concurrent
 read/write connections to the same mailbox are permitted.  The server
 supports access control lists on mailboxes and storage quotas on mailbox
 hierarchies.
-
-WWW: https://www.cyrusimap.org/

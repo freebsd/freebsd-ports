@@ -5,5 +5,3 @@ libraries such as GTK+ and Qt, WMApp automates this process by providing the
 classes and functions necessary for widget creation and callbacks. The library
 provides numerous widgets, all with the traditional dockapp appearance. Many
 common dockapps could already be rewritten to use this library.
-
-WWW: http://starplot.org/wmapp/

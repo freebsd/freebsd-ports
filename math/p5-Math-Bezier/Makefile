@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to solve Bezier curves
+WWW=		https://metacpan.org/release/Math-Bezier
 
 USES=		perl5
 USE_PERL5=	configure

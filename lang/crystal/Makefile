@@ -8,6 +8,7 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Language with Ruby-like syntax and static type checking
+WWW=		https://crystal-lang.org
 
 LICENSE=	APACHE20
 

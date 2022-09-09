@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-astronomical
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Positional Astronomy Library
+WWW=		https://github.com/Starlink/pal
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

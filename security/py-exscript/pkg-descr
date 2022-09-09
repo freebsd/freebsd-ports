@@ -2,5 +2,3 @@ Exscript is a Python module and a template processor for automating network
 connections over protocols such as Telnet or SSH.
 We attempt to create the best possible set of tools for working with
 Telnet and SSH.
-
-WWW: https://github.com/knipknap/exscript

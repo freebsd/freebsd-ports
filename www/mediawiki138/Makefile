@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	138${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Wiki engine used by Wikipedia
+WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 

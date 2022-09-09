@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module which implements an ordered hash-like object
+WWW=		https://metacpan.org/release/Tie-LLHash
 
 USES=		perl5
 USE_PERL5=	configure

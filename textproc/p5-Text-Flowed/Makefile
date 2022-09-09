@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	RFC2646 format=flowed
+WWW=		https://metacpan.org/release/Text-Flowed
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

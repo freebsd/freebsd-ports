@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Development Master
+WWW=		https://github.com/pdm-project/pdm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

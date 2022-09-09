@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Storage Client Library with multi API version support
+WWW=		https://pypi.org/project/azure-multiapi-storage/
 
 LICENSE=	MIT
 

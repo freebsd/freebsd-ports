@@ -3,5 +3,4 @@ language. It was written from scratch using FreeTDS library.
 
 This is the version 2 release branch.
 
-WWW: http://www.pymssql.org/
-WWW: https://github.com/pymssql/pymssql
+See also: https://github.com/pymssql/pymssql

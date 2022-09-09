@@ -3,5 +3,3 @@ synchronization tool. It makes use of the GTK libraries and is released under
 the GPL license, so it is opensource. It doesn't support all of rsync features,
 but can be effectively used to synchronize local directories and supports
 remote targets in a limited way (read: manual).
-
-WWW: http://www.opbyte.it/grsync

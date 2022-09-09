@@ -4,5 +4,3 @@ it doesn't itself subclass HTTP::Server::Simple; you need to subclass
 from both HTTP::Server::Simple::Recorder and an actual
 HTTP::Server::Simple subclass, and HTTP::Server::Simple::Recorder should
 be listed first.
-
-WWW: https://metacpan.org/release/HTTP-Server-Simple-Recorder

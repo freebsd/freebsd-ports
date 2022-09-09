@@ -12,5 +12,3 @@ The ColoredFormatter class takes several arguments:
 - secondary_log_colors: A mapping of names to log_colors style mappings,
   defining additional colors that can be used in format strings.
 - style: Available on Python 3.2 and above. See logging.Formatter.
-
-WWW: https://github.com/borntyping/python-colorlog

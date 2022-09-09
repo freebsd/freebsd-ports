@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Easy editor with both curses and X11 interfaces
+WWW=		https://gitlab.com/ports1/aee
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/Artistic

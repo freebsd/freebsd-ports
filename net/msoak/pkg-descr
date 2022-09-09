@@ -5,6 +5,3 @@ them out. This utility was created to back up to a central location
 messages received by a handfull of brokers, instead of launching
 (and having to monitor success of) a large number of mosquitto_sub(1)
 programs.
-
-
-WWW: https://github.com/jpmens/msoak

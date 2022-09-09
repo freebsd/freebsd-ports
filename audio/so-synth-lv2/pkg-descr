@@ -10,5 +10,3 @@ SO-404 is a simple bass synthesizer using 1 oscillator and 1 filter.
 The oscillator is a simple saw wave oscillator and the filter is a simple
 resonant lowpass filter. You know, like that other very good and famous synth
 with a similar name. Just not as good and famous.
-
-WWW: https://github.com/jeremysalwen/So-synth-LV2

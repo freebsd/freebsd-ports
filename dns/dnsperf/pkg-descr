@@ -14,5 +14,3 @@ network operators to take advantage of the data.
 
 ResPerf systematically increases the query rate and monitors the
 response rate to simulate caching DNS services.
-
-WWW: https://www.dns-oarc.net/tools/dnsperf

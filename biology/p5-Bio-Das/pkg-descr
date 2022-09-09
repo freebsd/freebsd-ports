@@ -4,5 +4,3 @@ version 1.5.  This system is described at http://biodas.org.  Both
 unencrypted (http:) and SSL-encrypted (https:) DAS servers are sup-
 ported.  (To run SSL, you will need IO::Socket::SSL and Net::SSLeay
 installed).
-
-WWW: https://metacpan.org/release/Bio-Das

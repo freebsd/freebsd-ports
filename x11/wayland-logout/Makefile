@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple logout on Wayland
+WWW=		https://github.com/soreau/wayland-logout
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

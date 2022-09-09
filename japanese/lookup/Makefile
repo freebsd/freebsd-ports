@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Emacs search interface for CD-ROM books, etc
+WWW=		https://lookup2.github.io/
 
 LICENSE=	GPLv2+
 

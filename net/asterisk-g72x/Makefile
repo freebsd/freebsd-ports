@@ -5,8 +5,9 @@ CATEGORIES=	net
 MASTER_SITES=	http://asterisk.hosting.lv/src/
 DISTNAME=	asterisk-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	G.729 codec for Asterisk PBX
+WWW=		http://asterisk.hosting.lv/
 
 LIB_DEPENDS=	libbcg729.so:audio/bcg729
 

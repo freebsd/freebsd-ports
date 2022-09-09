@@ -11,6 +11,7 @@ GH_PROJECT=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
+WWW=		https://www.alsa-project.org/
 
 LICENSE=	LGPL21+
 

@@ -8,6 +8,7 @@ DISTNAME=	abuse-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL port of the Abuse game engine
+WWW=		http://abuse.zoy.org/
 
 LICENSE=	GPLv2+ PD WTFPL BPRINCE
 LICENSE_COMB=	multi

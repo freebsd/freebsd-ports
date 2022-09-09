@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Brisk Menu is an efficient menu for the MATE Desktop
+WWW=		https://github.com/solus-project/brisk-menu #brisk-menu
 
 LICENSE=	GPLv2+ CC-BY-SA-4.0
 LICENSE_COMB=	multi

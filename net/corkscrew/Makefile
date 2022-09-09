@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.agroman.net/corkscrew/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	HTTP tunnelling utility for SSH
+WWW=		http://www.agroman.net/corkscrew/
 
 LICENSE=	GPLv2
 

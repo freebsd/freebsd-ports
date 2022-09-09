@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Python library for accessing PostgreSQL database using asyncio
+WWW=		https://github.com/aio-libs/aiopg
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

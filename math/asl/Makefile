@@ -8,6 +8,7 @@ DISTFILES=	solvers-64919f75f.tgz:solvers
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR autotools harness to build AMPL Solver Library
+WWW=		https://github.com/coin-or-tools/ThirdParty-ASL
 
 LICENSE=	EPL
 

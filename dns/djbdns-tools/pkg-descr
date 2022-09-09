@@ -5,5 +5,3 @@ It includes several useful Domain Name System (DNS) tools:
 - dnsip, dnsipq, dnsname, dnstxt, and dnsmx: simple
   command-line interfaces to DNS
 - dnsq, dnstrace, dnstracesort: DNS debugging tools
-
-WWW: http://cr.yp.to/djbdns.html

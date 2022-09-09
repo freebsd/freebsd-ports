@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Sets, Generalized Sets, Customizable Sets and Intervals
+WWW=		https://cran.r-project.org/web/packages/sets/
 
 LICENSE=	GPLv2
 

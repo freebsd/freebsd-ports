@@ -7,6 +7,7 @@ DISTNAME=	mr-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tool to manage all your version control repos
+WWW=		https://myrepos.branchable.com/
 
 LICENSE=	GPLv2+
 

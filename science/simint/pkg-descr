@@ -4,5 +4,3 @@ the primitive loop of the OS algorithm, with additional vectorization and
 optimizations left to the compiler.
 
 Simint is intended to be used for quantum chemistry computations.
-
-WWW: http://www.bennyp.org/research/simint/

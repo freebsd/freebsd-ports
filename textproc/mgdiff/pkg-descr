@@ -7,5 +7,3 @@ to generate a user-specified merge of the two files into a third file.
 This program's appearance is based upon a program called gdiff, which
 runs only on Silicon Graphics workstations and for which source code
 is not provided.
-
-WWW: https://BSDforge.com/projects/textproc/mgdiff/

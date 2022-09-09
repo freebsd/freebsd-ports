@@ -20,5 +20,3 @@ Anti-Features:
 * Does not require recipes for each individual Ruby version or configuration.
 * Does not support installing trunk/HEAD or nightly rolling releases.
 * Does not support installing unsupported/unmaintained versions of Ruby.
-
-WWW: https://github.com/postmodern/ruby-install

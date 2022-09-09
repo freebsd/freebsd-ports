@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read the data from a spreadsheet
+WWW=		https://metacpan.org/release/Spreadsheet-Read
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

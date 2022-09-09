@@ -1,11 +1,12 @@
 PORTNAME=	tellico
 DISTVERSION=	3.4.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection manager for KDE
+WWW=		https://tellico-project.org
 
 LICENSE=	GPLv2
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libbtparse.so:textproc/btparse \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
 		kde:5 pkgconfig python:run qt:5 shared-mime-info shebangfix \
-		tar:xz
+		tar:xz xorg
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive attica5 auth bookmarks codecs completion config \
 		configwidgets coreaddons crash filemetadata guiaddons \
@@ -29,8 +30,9 @@ USE_KDE=	archive attica5 auth bookmarks codecs completion config \
 		libkcddb libksane newstuff parts service solid sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
 		doctools_build ecm_build
-USE_QT=		concurrent core dbus gui network widgets xml  \
+USE_QT=		concurrent core dbus gui network printsupport widgets xml  \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 
 SHEBANG_FILES=	src/fetch/scripts/dark_horse_comics.py \
 		src/fetch/scripts/fr.allocine.py

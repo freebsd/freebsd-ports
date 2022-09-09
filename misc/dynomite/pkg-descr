@@ -7,5 +7,3 @@ The ultimate goal with Dynomite is to be able to implement high availability and
 cross-datacenter replication on storage engines that do not inherently provide
 that functionality. The implementation is efficient, not complex (few moving
 parts), and highly performant.
-
-WWW: https://github.com/Netflix/dynomite

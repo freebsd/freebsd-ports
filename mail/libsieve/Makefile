@@ -6,6 +6,7 @@ MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing, sorting, and filtering mail
+WWW=		http://sodabrew.com/libsieve/
 
 LICENSE=	LGPL21
 

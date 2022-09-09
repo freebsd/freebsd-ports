@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
+WWW=		https://www.kokkonen.net/tjko/projects.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

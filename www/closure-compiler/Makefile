@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	bryan@frimin.fr
 COMMENT=	Closure Compiler
+WWW=		https://developers.google.com/closure/compiler/
 
 LICENSE=	APACHE20
 

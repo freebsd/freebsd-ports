@@ -7,5 +7,3 @@ different. It's perhaps not as natural or "smooth", but I find the
 articulation clearer and easier to listen to for long periods.
 It can run as a command line program to speak text from a file or
 from stdin.
-
-WWW: https://github.com/espeak-ng/espeak-ng/

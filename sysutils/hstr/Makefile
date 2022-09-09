@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	monsieurp@gentoo.org
 COMMENT=	Bash and Zsh shell history suggest box
+WWW=		https://github.com/dvorka/hstr
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

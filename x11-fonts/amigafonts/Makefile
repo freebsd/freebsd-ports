@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Faithfully remade Amiga fonts
+WWW=		https://github.com/rewtnull/amigafonts
 
 LICENSE=	GPLv3RLE+
 

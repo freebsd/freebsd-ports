@@ -5,6 +5,7 @@ MASTER_SITES=	http://people.debian.org/~godisch/wmpuzzle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable puzzle game for WindowMaker and AfterStep
+WWW=		https://people.debian.org/~godisch/wmpuzzle/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

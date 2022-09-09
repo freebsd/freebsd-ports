@@ -1,10 +1,11 @@
 PORTNAME=	gomate
 DISTVERSION=	g20170711
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
 COMMENT=	Edit files from an ssh session in TextMate/VSCode
+WWW=		https://github.com/mattn/gomate
 
 LICENSE=	MIT
 

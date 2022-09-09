@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wnn7 elisp client
+WWW=		https://www.omronsoft.co.jp/SP/pcunix/wnn7/support/wnn7egg_src.html
 
 EMACSDIR=	${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 ELISPDIR=	${EMACSDIR}/wnn7egg

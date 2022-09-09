@@ -7,6 +7,7 @@ MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page-sou
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in
+WWW=		https://liquidrescale.wikidot.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

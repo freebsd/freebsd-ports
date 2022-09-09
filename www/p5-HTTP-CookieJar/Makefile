@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Minimalist HTTP user agent cookie jar
+WWW=		https://metacpan.org/release/HTTP-CookieJar
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

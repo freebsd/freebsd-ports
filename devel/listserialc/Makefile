@@ -4,6 +4,7 @@ CATEGORIES=	devel java
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Simple multiplatform program to list serial ports with vid/pid/iserial
+WWW=		https://github.com/arduino/listSerialPortsC
 
 LICENSE=	LGPL3+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy, practical library for making terminal apps
+WWW=		https://github.com/jquast/blessed
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

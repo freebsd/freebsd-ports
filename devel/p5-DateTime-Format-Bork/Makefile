@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Formats datetimes for that guy from The Muppet Show
+WWW=		https://metacpan.org/release/DateTime-Format-Bork
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \

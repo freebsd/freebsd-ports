@@ -6,6 +6,7 @@ DISTNAME=	CoCoALib-${DISTVERSION}
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	C++ library for doing Computations in Commutative Algebra
+WWW=		https://cocoa.dima.unige.it
 
 LICENSE=			GPLv3+ GFDL PD
 LICENSE_COMB=			multi

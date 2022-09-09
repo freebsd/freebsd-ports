@@ -10,5 +10,3 @@ want to use part of the framework, and not whole framework.
 Finally, anyone can create a layer, and put it on his CPAN space, because
 of the modularity Net::Frame offers. For an example,
 see Net::Frame::Layer::ICMPv4 on my CPAN space.
-
-WWW: https://metacpan.org/release/Net-Frame

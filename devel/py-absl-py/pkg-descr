@@ -7,5 +7,3 @@ Features:
 - Distributed commandline flags system
 - Custom logging module with additional features
 - Testing utilities
-
-WWW: https://github.com/abseil/abseil-py

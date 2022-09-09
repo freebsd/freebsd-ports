@@ -13,5 +13,3 @@ password-cracking applications, or in any other situation where speed is more
 important than careful handling of sensitive data. However, it is intended to be
 fast and lightweight enough for use in servers that must field thousands of
 login attempts per minute.
-
-WWW: https://github.com/besser82/libxcrypt

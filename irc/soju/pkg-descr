@@ -7,5 +7,3 @@ A user-friendly IRC bouncer.
 
  - Support connecting to multiple upstream servers via a single IRC
    connection to the bouncer
-
-WWW: https://soju.im

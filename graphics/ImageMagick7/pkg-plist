@@ -173,6 +173,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ashlar.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/avs.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/avs.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bayer.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bayer.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bgr.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bgr.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bmp.la

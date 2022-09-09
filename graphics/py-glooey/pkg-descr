@@ -16,5 +16,3 @@ a class variable, and styles can be easily composed using either inner
 classes or previously defined widgets. This philosophy makes glooey easy
 to get started with, and powerful enough to support even the most
 complicated games.
-
-WWW: https://pypi.org/project/glooey

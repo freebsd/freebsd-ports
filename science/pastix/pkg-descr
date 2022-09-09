@@ -5,5 +5,3 @@ precision (real or complex) using LLt, LDLt and LU with static pivoting (for non
 symmetric matrices having a symmetric pattern). This solver also provides some
 low-rank compression methods to reduce the memory footprint and/or the
 time-to-solution.
-
-WWW: https://solverstack.gitlabpages.inria.fr/pastix/

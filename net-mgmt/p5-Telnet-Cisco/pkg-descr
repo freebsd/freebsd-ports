@@ -1,4 +1,2 @@
 Net::Telnet::Cisco provides additional functionality to Net::Telnet for
 dealing with Cisco routers.
-
-WWW: https://metacpan.org/release/Net-Telnet-Cisco

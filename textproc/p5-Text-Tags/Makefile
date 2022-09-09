@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parses folksonomy space-separated tags
+WWW=		https://metacpan.org/release/Text-Tags
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

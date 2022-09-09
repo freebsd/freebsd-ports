@@ -18,5 +18,3 @@ This is actually several separate C++11/C++14/C++17 libraries:
 * "islamic.h" is a header-only library built on top of the "date.h" library
   which implements a proleptic Islamic calendar which is fully interoperable
   with everything above.
-
-WWW: https://github.com/HowardHinnant/date

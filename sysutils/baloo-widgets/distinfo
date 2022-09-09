@@ -1,5 +1,3 @@
-TIMESTAMP = 1661104210
-SHA256 (KDE/release-service/22.08.0/baloo-widgets-22.08.0.tar.xz) = 38f799fde70b1d3fad21593caee97338d226c2ccfe0602ef7d96ea5a0c9689fa
-SIZE (KDE/release-service/22.08.0/baloo-widgets-22.08.0.tar.xz) = 272688
-SHA256 (KDE/release-service/22.08.0/7ff54ae9b68ca0edf3d6cd57c3eefb6cf072b6f8.diff) = 5c79308a2f8bc7fc47b620a541b2054a154952af71e7015cbca3db612ff98c94
-SIZE (KDE/release-service/22.08.0/7ff54ae9b68ca0edf3d6cd57c3eefb6cf072b6f8.diff) = 706
+TIMESTAMP = 1662481968
+SHA256 (KDE/release-service/22.08.1/baloo-widgets-22.08.1.tar.xz) = b61e9fb76e73360d1f96c8862871d7ad1d8baf2b14b8f32a02697a4d1edae40a
+SIZE (KDE/release-service/22.08.1/baloo-widgets-22.08.1.tar.xz) = 272720

@@ -5,5 +5,3 @@ I use this as I don't have superfluous files lying around in the distribution
 directories, and have set the relevant svk ignore properties.
 
 To use it, just list in your .shipit file.
-
-WWW: https://metacpan.org/release/ShipIt-Step-Manifest

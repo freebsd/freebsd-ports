@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/hrs
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Canna dictionary containing a lot of words
+WWW=		http://cannadic.oucrc.org/
 
 LICENSE=	GPLv2
 

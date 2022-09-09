@@ -12,5 +12,3 @@ folders, HTML, SGML, etc... With relatively simple queries you can display mail
 messages by their subject or sender, extract titles or links or any regions
 from HTML files, function prototypes from C or make complex queries to SGML
 files based on the DTD of the file.
-
-WWW: http://www.cs.helsinki.fi/u/jjaakkol/sgrep.html

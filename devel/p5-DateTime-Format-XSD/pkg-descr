@@ -2,5 +2,3 @@ XML Schema defines a usage profile which is a subset of
 the ISO8601 profile.  This profile defines that the
 following is the only possible representation for a
 dateTime, despite all other options ISO provides.
-
-WWW: https://metacpan.org/release/DateTime-Format-XSD

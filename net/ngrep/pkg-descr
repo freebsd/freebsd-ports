@@ -7,5 +7,3 @@ currently recognizes TCP, UDP, and ICMP across Ethernet, PPP, SLIP,
 FDDI, Token Ring and null interfaces, and understands BPF filter
 logic in the same fashion as more common packet sniffing tools,
 like tcpdump and snoop.
-
-WWW: http://ngrep.sourceforge.net/

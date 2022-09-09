@@ -3,5 +3,3 @@ assets into Go binaries for distribution. It
 supports falling back to the local file system
 when no embedded assets are available, for
 instance, in development mode.
-
-WWW: https://github.com/knadh/stuffbin

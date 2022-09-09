@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}${_suffix}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Academic literature suite
+WWW=		https://www.docear.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

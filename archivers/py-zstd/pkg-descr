@@ -9,5 +9,3 @@ cover) nor extreme speeds (which LZ4 covers).
 Please note that this is a simple python binding to Zstandard.
 A more full-featured binding is Gregory Szorc's py-zstandard
 package.
-
-WWW: https://github.com/sergey-dryabzhinsky/python-zstd

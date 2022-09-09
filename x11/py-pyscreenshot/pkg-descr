@@ -5,5 +5,3 @@ Features:
 * Capturing the whole desktop
 * Capturing an area
 * saving to PIL or Pillow image memory
-
-WWW: https://github.com/ponty/pyscreenshot

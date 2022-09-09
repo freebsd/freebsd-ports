@@ -1,4 +1,2 @@
 The libcuckoo library provides a high-performance, compact hash table that
 allows multiple concurrent reader and writer threads.
-
-WWW: https://github.com/efficient/libcuckoo

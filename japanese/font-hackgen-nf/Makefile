@@ -8,6 +8,7 @@ DISTNAME=	HackGen_NF_v${DISTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	HackGen_NF is a composite font of Hack and GenJyuu-Gothic
+WWW=		https://github.com/yuru7/HackGen
 
 LICENSE=	OFL11
 

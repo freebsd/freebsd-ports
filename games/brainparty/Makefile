@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Family-friendly set of 36 puzzle games
+WWW=		http://www.tuxradar.com/brainparty
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

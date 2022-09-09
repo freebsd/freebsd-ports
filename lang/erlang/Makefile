@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.3.4.3
+DISTVERSION=	24.3.4.4
 PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
@@ -8,6 +8,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

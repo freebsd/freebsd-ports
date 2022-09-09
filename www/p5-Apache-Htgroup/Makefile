@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	otaviof@gmail.com
 COMMENT=	Manage Apache authentication group files
+WWW=		https://metacpan.org/release/Apache-Htgroup
 
 USES=		perl5
 USE_PERL5=	configure

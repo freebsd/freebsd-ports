@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to GTK+ 2.x
+WWW=		https://garrigue.github.io/lablgtk/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

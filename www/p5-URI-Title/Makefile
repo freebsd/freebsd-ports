@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get the titles of things on the web in a sensible way
+WWW=		https://metacpan.org/release/URI-Title
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

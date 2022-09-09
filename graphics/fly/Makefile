@@ -7,6 +7,7 @@ MASTER_SITES=	http://fossies.org/unix/www/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
+WWW=		http://martin.gleeson.com/fly/
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Realtime graphical spectrum analyzer, LV2 plugin and JACK application
+WWW=		https://github.com/jpcima/spectacle
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

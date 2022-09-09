@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Modern, lightweight, performant and tunable OpenCL BLAS library
+WWW=		https://github.com/CNugteren/CLBlast
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Verilog simulation and synthesis tool
+WWW=		http://iverilog.icarus.com/
 
 LICENSE=	GPLv2
 

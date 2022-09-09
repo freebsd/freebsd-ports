@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pacman with a fast food twist
+WWW=		https://sourceforge.net/projects/hannah/
 
 LICENSE=	GPLv2 OFL11
 LICENSE_COMB=	multi

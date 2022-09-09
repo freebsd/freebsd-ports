@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for NES / Famicom (FCEUmm)
+WWW=		https://github.com/libretro/libretro-fceumm/
 
 LICENSE=	GPLv2+
 

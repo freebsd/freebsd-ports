@@ -30,5 +30,3 @@ command being executed will apply to only those jail names matching that prefix.
 
 Qjail has been incorporated into the Finch open source project,
 see http://dreamcat4.github.io/finch/ for details.
-
-WWW: http://qjail.sourceforge.net/

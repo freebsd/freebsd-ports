@@ -9,5 +9,3 @@ there are some important differences:
 * if you want to have best FFT performance with pyFFTW, you should create arrays
   with empty, zeros or ones functions from SimpleSpectral instead of generic
   versions from NumPy (arrays will be byte aligned for your CPU)
-
-WWW: https://github.com/xmikos/simplespectral

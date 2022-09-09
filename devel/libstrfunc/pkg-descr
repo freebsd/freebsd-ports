@@ -5,5 +5,3 @@ and time conversions, et cetera.
 Handles base64, quoted-printable, url_encode, mime-words and other encoded data.
 
 Please have a look at strfunc(3) and other manual pages.
-
-WWW: https://sourceforge.net/projects/libstrfunc/

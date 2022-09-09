@@ -14,5 +14,3 @@ Import window or by opening a PGN file in Scid. However, PGN files cannot be
 edited by Scid (it opens them read-only) and they use more memory and are
 slower to load, so for large PGN files it is recommended that you create a
 Scid database from them first with the pgnscid utility.
-
-WWW: http://scid.sourceforge.net/

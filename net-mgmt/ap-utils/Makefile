@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	Set of utilities to configure and monitor wireless access points
+WWW=		https://ap-utils.polesye.net/
 
 GNU_CONFIGURE=	yes
 USES=		iconv ncurses tar:bzip2

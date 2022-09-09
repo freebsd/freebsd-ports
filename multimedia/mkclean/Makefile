@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean and optimize Matroska and WebM files
+WWW=		https://www.matroska.org/downloads/mkclean.html
 
 LICENSE=	BSD3CLAUSE
 

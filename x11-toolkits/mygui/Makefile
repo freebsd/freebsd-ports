@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits graphics devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT?=	Fast, simple and flexible GUI system for games and 3D applications
+WWW=		http://mygui.info/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.MIT

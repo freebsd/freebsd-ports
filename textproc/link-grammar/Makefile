@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Grammar checking library
+WWW=		https://www.abisource.com/projects/link-grammar/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

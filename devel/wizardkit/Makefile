@@ -7,6 +7,7 @@ DISTNAME=	WizardKit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework needed by Project Manager
+WWW=		http://home.gna.org/pmanager/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

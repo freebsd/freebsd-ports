@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Vishap Oberon Compiler for Oberon-2
+WWW=		https://github.com/vishaps/voc/
 
 LICENSE=	GPLv3
 

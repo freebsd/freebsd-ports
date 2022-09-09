@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	String padding routines for Perl
+WWW=		https://metacpan.org/release/String-Pad
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

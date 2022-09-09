@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, user-friendly ncurses-based CD player
+WWW=		https://www.nongnu.org/tcd/
 
 LICENSE=	GPLv2
 

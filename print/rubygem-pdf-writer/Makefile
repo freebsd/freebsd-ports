@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby PDF document creation library
+WWW=		https://github.com/metaskills/pdf-writer
 
 LICENSE=	MIT
 

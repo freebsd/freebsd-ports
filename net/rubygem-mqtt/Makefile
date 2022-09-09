@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Implementation of the MQTT protocol
+WWW=		https://github.com/njh/ruby-mqtt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

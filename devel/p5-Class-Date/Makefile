@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class for easy date and time manipulation
+WWW=		https://metacpan.org/release/Class-Date
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

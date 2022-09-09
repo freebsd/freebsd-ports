@@ -6,5 +6,3 @@ servers and embedded devices.
 The main goals of libtorrent are to be efficient and easy to use.
 
 NB: this is NOT the same library as the net-p2p/libtorrent port!
-
-WWW: https://libtorrent.org/

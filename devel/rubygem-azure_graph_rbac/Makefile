@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Active Directory Graph Rbac Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/data/azure_graph_rbac
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

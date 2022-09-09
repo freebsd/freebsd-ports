@@ -2,5 +2,3 @@ Python library for working with the `Growl Notification Transport
 Protocol ( http://www.growlforwindows.com/gfw/help/gntp.aspx )
 
 It should work as a dropin replacement for the older Python bindings.
-
-WWW: https://github.com/kfdm/gntp/

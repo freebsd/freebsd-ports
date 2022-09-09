@@ -9,5 +9,3 @@ This is lssa.
  irregularly-spaced time series.  Currently includes functions based off the
  Lomb-Scargle periodogram and Adolf Mathias' implementation for R and C (see
  http://www.jstatsoft.org/v11/i02).
-
-WWW: http://octave.sourceforge.net/

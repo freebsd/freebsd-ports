@@ -4,5 +4,3 @@ mean, median, etc. on independent rows and/or columns during a single
 pass on independent rows and/or columns.  Memory use is trivial except
 for functions that require loading the sample/population for sorting,
 such as median.
-
-WWW: https://github.com/auerlab/basic-stats

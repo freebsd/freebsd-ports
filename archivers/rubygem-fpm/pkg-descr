@@ -1,5 +1,3 @@
 Convert directories, rpms, python eggs, rubygems, and more to rpms, debs,
 solaris packages and more. Win at package management without wasting pointless
 hours debugging bad rpm specs!
-
-WWW: https://github.com/jordansissel/fpm

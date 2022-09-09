@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Run JavaScript code from Python
+WWW=		https://pypi.org/project/PyExecJS/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

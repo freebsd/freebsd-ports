@@ -3,5 +3,3 @@ This is a very simple TT2 Plugin for generating CSV.
 A CSV object will be instantiated via the following directive:
 
 [% USE CSV %]
-
-WWW: https://metacpan.org/release/Template-Plugin-CSV

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
+WWW=		https://metacpan.org/release/XML-Feed
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

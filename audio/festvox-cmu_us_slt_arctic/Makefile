@@ -7,6 +7,7 @@ DIST_SUBDIR=	festival
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	CMU US English female voice for festival
+WWW=		http://festvox.org/cmu_arctic/dbs_slt.html
 
 LICENSE=	MIT-variant
 LICENSE_NAME=	MIT License (CMU variant)

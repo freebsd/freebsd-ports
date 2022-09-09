@@ -6,6 +6,7 @@ DISTNAME=	ags_linux_v.${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adventure Game Studio Engine
+WWW=		https://www.adventuregamestudio.co.uk/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/License.txt

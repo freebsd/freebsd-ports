@@ -6,5 +6,3 @@ a terminal in real time.
 
 It supports rate calculation for counters and up to two graphs on a single
 display using reverse video for the second line.
-
-WWW: https://github.com/tenox7/ttyplot

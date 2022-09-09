@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Dump big dumb Perl structs to anonymous JavaScript structs
+WWW=		https://metacpan.org/release/Data-JavaScript-Anon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

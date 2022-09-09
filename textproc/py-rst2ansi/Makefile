@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	PopularMoment@protonmail.com
 COMMENT=	RST converter to ansi-decorated console output
+WWW=		https://github.com/Snaipe/python-rst2ansi
 
 LICENSE=	MIT
 

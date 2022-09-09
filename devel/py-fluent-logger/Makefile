@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	edwardchuang@gmail.com
 COMMENT=	Structured logger for Fluentd (Python)
+WWW=		https://github.com/fluent/fluent-logger-python
 
 LICENSE=	APACHE20
 

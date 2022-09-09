@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-full
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live, Full Version
+WWW=		https://tug.org/texlive/
 
 USE_TEX=	full texhash
 USES=		metaport

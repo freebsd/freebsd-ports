@@ -7,6 +7,7 @@ DISTNAME=	PyVTK-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for manipulating VTK files in Python
+WWW=		https://github.com/pearu/pyvtk
 
 LICENSE=	GPLv2
 

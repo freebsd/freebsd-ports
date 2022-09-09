@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt GUI dialog for OpenSSH authentication
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 

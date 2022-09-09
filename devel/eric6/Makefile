@@ -5,6 +5,8 @@ DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 PORTREVISION=	1
 CATEGORIES=	devel python
 
+WWW=		https://eric-ide.python-projects.org/index.html
+
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=15.2:devel/py-virtualenv@${PY_FLAVOR} \

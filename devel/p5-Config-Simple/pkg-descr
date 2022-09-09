@@ -6,5 +6,3 @@ Config::Simple is a class representing configuration file object. It
 supports several configuration file syntax and tries to identify the
 file syntax to parse them accordingly. Library supports parsing,
 updating and creating configuration files.
-
-WWW: https://metacpan.org/release/Config-Simple

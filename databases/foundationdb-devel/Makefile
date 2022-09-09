@@ -7,6 +7,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Distributed, transactional key-value store
+WWW=		https://www.foundationdb.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

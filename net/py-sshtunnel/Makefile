@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Pure Python SSH tunnels
+WWW=		https://pypi.org/project/sshtunnel/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

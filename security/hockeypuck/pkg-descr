@@ -6,5 +6,3 @@ as are RFC 6637 ECC keys.
 As-of-yet unsupported key material, such as recent Ed25519 signing keys,
 may be distributed by Hockeypuck, however Hockeypuck is not able to
 validate them yet.
-
-WWW: https://hockeypuck.github.io

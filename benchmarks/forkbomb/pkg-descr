@@ -7,5 +7,3 @@ useful for determining maximum memory which can be given to
 servers (bind or squid) without taking machine down.  You can
 test different operation systems with this tool and see how they
 are handling the load.
-
-WWW: http://home.tiscali.cz/~cz210552/forkbomb.html

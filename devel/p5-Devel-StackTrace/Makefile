@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stack trace and stack trace frame objects
+WWW=		https://metacpan.org/release/Devel-StackTrace
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${SLANG_VER}/modules/grace/ \
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	SLang module to plot graphs with grace
+WWW=		http://www.jedsoft.org/slang/modules/grace/index.html
 
 LICENSE=	GPLv2
 

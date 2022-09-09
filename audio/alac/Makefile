@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Apple Lossless Audio Codec
+WWW=		https://github.com/mikebrady/alac
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

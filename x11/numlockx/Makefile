@@ -6,6 +6,7 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turns on numlock in X
+WWW=		http://home.kde.org/~seli/numlockx/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

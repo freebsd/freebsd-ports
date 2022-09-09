@@ -6,6 +6,7 @@ MASTER_SITES=	https://pkgs.rpmfusion.org/repo/pkgs/free/gmtk/gmtk-1.0.9.tar.gz/9
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for gnome-mplayer and gecko-mediaplayer
+WWW=		http://code.google.com/p/gmtk/
 
 LICENSE=	GPLv2
 

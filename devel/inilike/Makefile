@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	D library for parsing ini-like files used in Freedesktop systems
+WWW=		https://github.com/FreeSlave/inilike
 
 LICENSE=	BSL
 

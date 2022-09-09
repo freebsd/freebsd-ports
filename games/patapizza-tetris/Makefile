@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial clone of the original Tetris game
+WWW=		https://github.com/patapizza/tetris
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

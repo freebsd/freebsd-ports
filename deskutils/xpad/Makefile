@@ -5,6 +5,7 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Virtual note-pad system for your X11 desktop
+WWW=		https://launchpad.net/xpad/trunk
 
 LICENSE=	GPLv3
 

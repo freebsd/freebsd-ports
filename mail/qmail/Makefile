@@ -9,6 +9,7 @@ EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	erdgeist@erdgeist.org
 COMMENT?=	Secure, reliable, efficient, simple, and fast MTA
+WWW=		https://cr.yp.to/qmail.html
 
 DIST_SUBDIR=	qmail
 

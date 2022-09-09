@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.eyesbeyond.com/freebsddom/astzclock/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Afterstep clock with some timezone extensions
+WWW=		http://www.eyesbeyond.com/freebsddom/astzclock/
 
 USES=		imake xorg
 USE_XORG=	xpm

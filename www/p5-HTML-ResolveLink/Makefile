@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Resolve relative links in (X)HTML into absolute URI
+WWW=		https://metacpan.org/release/HTML-ResolveLink
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

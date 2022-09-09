@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight python library for time series data analysis
+WWW=		https://github.com/linkedin/luminol
 
 LICENSE=	APACHE20
 

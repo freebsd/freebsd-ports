@@ -4,5 +4,3 @@ SFCGAL is a C++ wrapper library around CGAL with the aim of supporting ISO
 SFCGAL provides standard compliant geometry types and operations, that can be
 accessed from its C or C++ APIs. PostGIS uses the C API, to expose some
 SFCGAL's functions in spatial databases
-
-WWW: http://www.sfcgal.org/

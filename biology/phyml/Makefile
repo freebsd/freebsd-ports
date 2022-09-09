@@ -1,11 +1,12 @@
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.20211231
+DISTVERSION=	3.3.20220408
 PORTEPOCH=	1
 CATEGORIES=	biology
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
+WWW=		https://github.com/stephaneguindon/phyml
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

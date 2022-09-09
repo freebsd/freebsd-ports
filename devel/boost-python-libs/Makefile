@@ -2,6 +2,7 @@ PORTNAME=	boost-libs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Framework for interfacing Python and C++
+WWW=		https://www.boost.org/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

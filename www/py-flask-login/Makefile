@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andrej@ebert.su
 COMMENT=	User session management for Flask
+WWW=		https://github.com/maxcountryman/flask-login
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

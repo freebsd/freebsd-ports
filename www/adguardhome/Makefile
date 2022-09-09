@@ -1,11 +1,12 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.107.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Network-wide ads & trackers blocking DNS server
+WWW=		https://adguard.com/en/adguard-home/overview.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

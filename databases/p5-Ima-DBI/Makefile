@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database connection caching and organization
+WWW=		https://metacpan.org/release/Ima-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

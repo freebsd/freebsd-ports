@@ -5,6 +5,7 @@ MASTER_SITES=	SF/rasmusdsp/${PORTNAME}/Gervill%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic sound synthesizer for Java
+WWW=		https://java.net/projects/gervill/pages/Home
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/LICENSE

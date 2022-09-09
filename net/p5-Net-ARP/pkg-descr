@@ -1,4 +1,2 @@
 Net::ARP can be used to create and send ARP packets and to get the mac address
 of an ethernet interface or IP address.
-
-WWW: https://metacpan.org/release/Net-ARP

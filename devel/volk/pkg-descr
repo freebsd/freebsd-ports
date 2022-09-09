@@ -15,5 +15,3 @@ write portable SIMD code.
 
 Bleeding edge code can be found in our git repository at
 https://www.gnuradio.org/git/volk.git/.
-
-WWW: https://github.com/gnuradio/volk

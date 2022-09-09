@@ -14,5 +14,3 @@ pip is meant to improve on easy_install. Some of the improvements:
     * Error messages should be useful.
     * Packages don't have to be installed as egg archives, they can be
       installed flat (while keeping the egg metadata).
-
-WWW: https://pip.pypa.io/en/latest/

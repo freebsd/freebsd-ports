@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Useful tools for Gnome2/Gtk2 Perl GUI design
+WWW=		https://metacpan.org/release/Gtk2-Ex-Dialogs
 
 LICENSE=	LGPL21
 

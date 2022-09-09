@@ -5,6 +5,7 @@ MASTER_SITES=		http://www.hznet.de/dns/zkt/
 
 MAINTAINER=		frank@harz.behrens.de
 COMMENT=		Tool to manage keys and signatures for DNSSEC-zones
+WWW=		https://www.hznet.de/dns/zkt/
 
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

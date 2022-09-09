@@ -13,6 +13,7 @@ PATCHFILES=	a30f90956b81feeb65007828c27617df1ce9f052.patch:-p1 \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Software "soundcard" modem/TNC and APRS encoder/decoder
+WWW=		https://github.com/wb2osz/direwolf
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

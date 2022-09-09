@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	osidorkin@gmail.com
 COMMENT=	RSS feed generator for websites missing it
+WWW=		https://github.com/RSS-Bridge/rss-bridge
 
 LICENSE=	PD
 

@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR XML parsing class based on PHP's bundled expat
+WWW=		https://pear.php.net/package/XML_Parser
 
 LICENSE=	BSD2CLAUSE
 

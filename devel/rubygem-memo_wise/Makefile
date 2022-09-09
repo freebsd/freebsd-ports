@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sdalu@sdalu.com
 COMMENT=	Support for memoizing functions
+WWW=		https://github.com/panorama-ed/memo_wise
 
 LICENSE=	MIT
 

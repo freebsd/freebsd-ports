@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for validating XML documents against a W3C XML Schema
+WWW=		https://metacpan.org/release/XML-Validator-Schema
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tree-DAG_Node>=0:devel/p5-Tree-DAG_Node \

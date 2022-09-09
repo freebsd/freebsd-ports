@@ -4,6 +4,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	filip@parag.rs
 COMMENT=	Hetzner Dynamic DNS Daemon
+WWW=		https://github.com/filiparag/hetzner_ddns
 
 LICENSE=	BSD2CLAUSE
 

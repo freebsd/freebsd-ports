@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/swapd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that watches free memory and manages swap files
+WWW=		https://www.rkeene.org/oss/swapd/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

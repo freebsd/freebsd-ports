@@ -8,6 +8,7 @@ MASTER_SITES=	https://getdnsapi.net/dist/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Modern asynchronous DNS API
+WWW=		https://getdnsapi.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

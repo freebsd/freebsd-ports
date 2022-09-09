@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Customizable program to run programs, with tab-completion
+WWW=		https://sourceforge.net/projects/gmrun/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to generate HTML pagination linkage easily
+WWW=		https://metacpan.org/release/CGI-Pager
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

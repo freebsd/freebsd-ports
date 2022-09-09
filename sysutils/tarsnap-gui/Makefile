@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Cross platform GUI for the Tarsnap command line client
+WWW=		https://github.com/Tarsnap/tarsnap-gui/wiki
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tarsnap

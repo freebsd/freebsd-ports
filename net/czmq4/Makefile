@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ (Version 4)
+WWW=		http://czmq.zeromq.org
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

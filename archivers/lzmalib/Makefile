@@ -6,6 +6,7 @@ MASTER_SITES=	http://tokyocabinet.sourceforge.net/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thin wrapper library of LZMA
+WWW=		http://tokyocabinet.sourceforge.net/
 
 USES=		gmake
 GNU_CONFIGURE=	yes

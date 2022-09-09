@@ -7,5 +7,3 @@ __amalgam__.py. Combined with some hooks in the __init__.py, this
 should dramatically reduce the number of files that are being searched
 for inside of the package. This is critical in larger projects where
 import times are the major startup time cost.
-
-WWW: https://github.com/xonsh/amalgamate

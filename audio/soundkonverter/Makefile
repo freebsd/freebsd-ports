@@ -1,11 +1,12 @@
 PORTNAME=	soundkonverter
 PORTVERSION=	3.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio kde
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
+WWW=		https://github.com/dfaust/soundkonverter/
 
 LICENSE=	GPLv2
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libphonon4qt5.so:multimedia/phonon
 
 GH_ACCOUNT=	dfaust
-USES=		cmake compiler:c++11-lang kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
 USE_QT=		dbus concurrent core buildtools_build gui network printsupport \
 		qmake_build widgets xml
@@ -24,6 +25,7 @@ USE_KDE=	auth codecs config configwidgets completion coreaddons crash \
 		service solid sonnet unitconversion windowsystem widgetsaddons \
 		xmlgui \
 		doctools_build
+USE_XORG=	x11
 WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFAULT=	VORBIS FLAC NORMALIZE VORBISGAIN

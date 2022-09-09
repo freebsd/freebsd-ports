@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Official Python client library for NSQ
+WWW=		https://github.com/nsqio/pynsq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

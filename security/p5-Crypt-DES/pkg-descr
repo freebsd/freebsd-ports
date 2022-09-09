@@ -4,5 +4,3 @@ Crypt::BlockCipher interface, which has the following
 methods:
 
 blocksize, keysize, encrypt, decrypt
-
-WWW: https://metacpan.org/release/Crypt-DES

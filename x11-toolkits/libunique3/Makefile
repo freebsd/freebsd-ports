@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for single instance applications
+WWW=		http://live.gnome.org/LibUnique
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

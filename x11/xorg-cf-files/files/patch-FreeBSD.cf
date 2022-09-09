@@ -1,17 +1,73 @@
---- ./FreeBSD.cf.orig	2009-10-16 23:45:42.000000000 +0200
-+++ ./FreeBSD.cf	2013-06-27 17:14:30.661790922 +0200
-@@ -78,6 +78,7 @@
+--- FreeBSD.cf.orig	2021-08-02 01:00:38 UTC
++++ FreeBSD.cf
+@@ -47,19 +47,11 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #define HasNdbm			YES
+ #define HasPutenv		YES
+ #define HasSnprintf		YES
+-#if OSMajorVersion == 3 && OSMinorVersion >= 3 || OSMajorVersion > 3
+ # define HasStrlcat		YES
+-#endif
+-#if OSMajorVersion == 4 && OSMinorVersion >= 2 || OSMajorVersion > 4
+ # define HasBasename		YES
+-#else
+-# define HasBasename		NO
+-#endif
+ #define HasBSD44Sockets 	YES
+ #define HasDlopen		YES
+-#if ((OSRelVersion >= 410002) && OSRelVersion < 500000) || (OSRelVersion >= 500012)
+ #define HasSetProcTitle		YES
+-#endif
+ #ifndef HasLibCrypt
+ # define HasLibCrypt		YES
+ #endif
+@@ -74,64 +66,28 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #ifndef BuildPDFdocs
+ # define BuildPDFdocs NO
+ #endif
+-#if (OSMajorVersion >= 3)
  #define HasIssetugid		YES
  #define HasPoll			YES
- #endif
+-#endif
 +#define BuildHtmlManPages	NO
  
- #if OSMajorVersion >= 4
+-#if OSMajorVersion >= 4
  #define HasGetIfAddrs		YES
-@@ -117,14 +118,8 @@
- # if (OSRelVersion < 500043)
- #  define NeedUIThrStubs	YES
- # endif
+-#endif
+ 
+-/* All versions define AF_INET6. 3.x and earlier don't have IPv6 support. */
+-#if OSMajorVersion < 4
+-#ifndef BuildIPv6
+-#define BuildIPv6		NO
+-#endif
+-#endif
+-
+ #define IPv6SocketsAlsoIPv4	NO
+ 
+-#if (OSMajorVersion > 1)
+ #define InstallXloadSetGID	NO
+-#else
+-#define InstallXloadSetGID	YES
+-#endif
+ 
+ #define HasWeakSymbols		UseElfFormat
+ 
+ /*
+  * Multi-thread safe libs
+  */
+-/* 2.2.7 and later has libc_r (POSIX threads) */
+-#if OSMajorVersion == 2 && OSMinorVersion == 2 && OSTeenyVersion >= 7 || \
+-    OSMajorVersion >= 3
+ # define HasPosixThreads	YES
+ # define ThreadedX		YES
+ # define HasThreadSafeAPI	YES
+-# if OSRelVersion < 501000
+-#  define MTSafeAPIDefines	-DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI
+-# else
+ #  define MTSafeAPIDefines	-DXUSE_MTSAFE_API
+-# endif
+-# if (OSRelVersion < 500043)
+-#  define NeedUIThrStubs	YES
+-# endif
 -# if (OSRelVersion >= 502102)
 -#  define ThreadsLibraries	-lpthread
 -# elif (OSRelVersion >= 500016)
@@ -20,12 +76,42 @@
 -#  define ThreadsLibraries	-pthread
 -# endif
 -# define SystemMTDefines	-D_THREAD_SAFE
+-#endif
 +# define ThreadsLibraries	-lpthread
 +# define SystemMTDefines	
+ 
+-/* This fixes linking C programs against libGLU on FreeBSD 3.x */
+-#if (OSMajorVersion == 3)
+-#define SharedGLUReqs		$(LDPRELIB) $(XLIB) $(GLXLIB) -lstdc++ -lgcc
+-#endif
+-
+ #define AvoidNullMakeCommand	YES
+ #define StripInstalledPrograms	YES
+ #define CompressAllFonts	YES
+@@ -155,30 +111,18 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #endif
  
- /* This fixes linking C programs against libGLU on FreeBSD 3.x */
-@@ -178,7 +173,9 @@
+ #ifndef HasMktemp
+-#if (OSMajorVersion >= 4) || (OSMajorVersion == 3 && OSMinorVersion >= 1) || \
+-	(OSMajorVersion == 2 && OSMinorVersion == 2 && OSTeenyVersion >= 7)
+ #define HasMktemp		YES
+-#else
+-#define HasMktemp		NO
+ #endif
+-#endif
+ 
+-/*
+- * 2.2.x has perl 4 by default, not perl 5.
+- */
+-#if (OSMajorVersion <= 2)
+-#ifndef HasPerl5
+-#define HasPerl5		NO
+-#endif
+-#endif
+-
+ #ifndef CcCmd
+ #define CcCmd			cc
+ #endif
  #ifndef CplusplusCmd
  #define CplusplusCmd		c++
  #endif
@@ -35,7 +121,99 @@
  #define PreProcessCmd		CppCmd
  #define StandardCppOptions	-traditional
  #define StandardCppDefines	/**/
-@@ -338,7 +335,7 @@
+@@ -196,72 +140,45 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #endif
+ #endif
+ #ifndef ExtraLibraries
+-/* support for multi-byte locales is in libxpg4 rather than libc */
+-#if (OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion >= 2)) && \
+-    !(OSMajorVersion == 4 && OSRelVersion >= 400020) && \
+-    !(OSRelVersion >= 500005)
+-#define ExtraLibraries		-lxpg4
+-#else
+ #define ExtraLibraries		/**/
+ #endif
+-#endif
+ #ifndef UseGnuMalloc
+-/* 2.2 doesn't really have GnuMalloc */
+-#if OSMajorVersion < 2 || (OSMajorVersion == 2 && OSMinorVersion < 2)
+-#define UseGnuMalloc		YES
+-#else
+ #define UseGnuMalloc		NO
+ #endif
+-#endif
+-/* 2.2.2 and later has setusercontext() */
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 2) || \
+-     (OSMajorVersion == 2 && OSMinorVersion == 2 && OSTeenyVersion >= 2)
+ #define HasSetUserContext	YES
+-#endif
+ 
+-#if OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 6)
+ #define HasGetpeereid		YES
+-#endif
+ 
+-/* 3.3(?) and later has support for setting MTRRs */
+ #ifndef HasMTRRSupport
+-#if OSMajorVersion > 3 || (OSMajorVersion == 3 && OSMinorVersion >= 3)
+ #define HasMTRRSupport		YES
+-#else
+-#define HasMTRRSupport		NO
+ #endif
+-#endif
+ 
+ /*
+  * Drivers that don't need AGP can work with 4.0, but we don't have a
+  * mechanism for specifying a subset of drivers in the OS.cf files yet.
+  */
+ #ifndef BuildXF86DRI
+-#if OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1)
+ #define BuildXF86DRI		YES
+ #endif
+-#endif
+ 
+ /*
+- * 4.1/i386 and 5.0/i386,alpha,ia64,amd64 have the AGP driver.
++ * i386,alpha,ia64,amd64 have the AGP driver.
+  */
+ #ifndef HasAgpGart
+-#if defined(i386Architecture) && \
+-	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1))
++#if defined(i386Architecture)
+ #define HasAgpGart		YES
+ #endif
+ #if (defined(AlphaArchitecture) || defined(ia64Architecture) || \
+-	defined(AMD64Architecture)) && (OSMajorVersion >= 5)
++	defined(AMD64Architecture))
+ #define HasAgpGart		YES
+ #endif
+ #endif
+ 
+ /*
+  * SSE and 3DNow will be autodetected, so binutils is the only
+- * requirement for enabling this.  By 4.2 they were all supported.
++ * requirement for enabling this.
+  */
+-#if defined(AMD64Architecture) || defined(i386Architecture) && \
+-	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2))
++#if defined(AMD64Architecture) || defined(i386Architecture)
+ # define HasX86Support          YES
+ # define HasMMXSupport		YES
+ # define Has3DNowSupport	YES
+@@ -311,8 +228,6 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ # define UseRpath		YES
+ #endif
+ 
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion >= 2)
+-
+ # ifndef RpathLoadFlags
+ #  if UseRpath
+ #   if UseElfFormat
+@@ -333,12 +248,10 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #  endif
+ # endif
+ 
+-#endif
+-
  #ifndef LibraryRpathLoadFlags
  # if UseRpath
  #  if UseElfFormat
@@ -44,14 +222,51 @@
  #  else
  #   define LibraryRpathLoadFlags	-R $(USRLIBDIRPATH)
  #  endif
-@@ -470,14 +467,14 @@
- /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+@@ -359,20 +272,13 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #define GnuMallocLibrary	-lgnumalloc
+ #endif
+ 
+-#if (OSMajorVersion > 2) || (OSMajorVersion == 2 && OSMinorVersion >= 2) \
+-	|| (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 6)
+-/* 2.1.6 and 2.2 have libz */
+ #ifndef HasZlib
+ #define HasZlib		YES
+ #endif
+-#endif
+ 
+-/* PAM appeared in FreeBSD 3.1 */
+-#if (OSMajorVersion > 3) || (OSMajorVersion == 3 && OSMinorVersion >=1 )
+ #ifndef HasPam
+ #define HasPam		YES
+ #endif
+-#endif
+ 
+ /* There are two options for building.  One is to assume that the system has
+  * many of the dependencies provided by the ports tree.  The other is to just
+@@ -449,7 +355,6 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+-#if OSMajorVersion > 1
+ #define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING
+ #define HasMakefileSafeInclude	YES
+@@ -462,22 +367,15 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #define ForceNormalLib		YES
+ #endif
+ #define HasMkstemp		YES
+-#else
+-#define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME -DXNO_SYSCONF
+-#define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
+-#endif
+ 
+-/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
- #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
 -#define DefaultGcc2i386Opt -O2 GccAliasingArgs
 +#define DefaultGcc2i386Opt
  #endif
- #endif
+-#endif
  
  #ifdef i386Architecture
  # define OptimizedCDebugFlags DefaultGcc2i386Opt
@@ -61,7 +276,7 @@
  #endif
  
  #ifndef PreIncDir
-@@ -498,6 +495,10 @@
+@@ -498,6 +396,10 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #define SystemManDirectory	/usr/share/man
  #endif
  
@@ -70,5 +285,29 @@
 +#endif
 +
  #define InstKmemFlags	-g kmem -m 2755
+ 
+ /*
+@@ -507,9 +409,7 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ # define CompressManPages	YES
+ #endif
+ 
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion >= 1)
+ #define HasBsdMake	YES
+-#endif
+ 
+ #ifndef StaticLibrary
+ #define StaticLibrary(libpath,libname) -Wl,-Bstatic Concat(-L,libpath) Concat(-l,libname) -Wl,-Bdynamic
+@@ -561,13 +461,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ 
+ #ifndef HasCookieMaker
+ /* Which versions have /dev/urandom? */
+-#if OSMajorVersion >= 4
+ #define HasCookieMaker		YES
+ #define MkCookieCmd \
+ 	'dd if=/dev/urandom bs=16 count=1 2>/dev/null | hexdump -e \\"%08x\\"'
+-#else
+-#define HasCookieMaker		NO
+-#endif
+ #endif
  
  /*

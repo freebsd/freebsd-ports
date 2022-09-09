@@ -3,5 +3,3 @@ This module implements several types of array iterators:
 - bidirectional
 - circular
 - reusable
-
-WWW: https://metacpan.org/release/Array-Iterator

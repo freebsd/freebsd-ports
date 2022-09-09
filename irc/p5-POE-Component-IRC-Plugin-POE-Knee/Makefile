@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin that runs Acme::POE::Knee races
+WWW=		https://metacpan.org/release/POE-Component-IRC-Plugin-POE-Knee
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

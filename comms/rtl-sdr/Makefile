@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Command-line tool that performs SDR with RTL2832-based USB sticks
+WWW=		https://sdr.osmocom.org/trac/wiki/rtl-sdr
 
 LICENSE=	GPLv2
 

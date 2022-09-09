@@ -1,5 +1,3 @@
 twemproxy, aka nutcracker is a fast and lightweight proxy for memcached and
 redis protocol. It was primarily built to reduce the connection count on the
 backend caching serve
-
-WWW: https://github.com/twitter/twemproxy

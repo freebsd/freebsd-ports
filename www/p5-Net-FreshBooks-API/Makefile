@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy OO access to the FreshBooks.com API
+WWW=		https://metacpan.org/release/Net-FreshBooks-API
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

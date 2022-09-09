@@ -12,5 +12,4 @@ scopes and namespaces.  CScout has already been applied on projects
 ranging from tens of thousands of lines, like the FreeBSD and
 Linux kernels, and the Apache web server.
 
-WWW: https://www.spinellis.gr/cscout/
-WWW: https://github.com/dspinellis/cscout
+See also: https://github.com/dspinellis/cscout

@@ -13,5 +13,3 @@ Radio and the Qt GUI toolkit. Currently it supports the following devices:
 
 Gqrx can operate as a traditional AM/FM/SSB receiver with audio output or as
 an FFT-only instrument.
-
-WWW: http://gqrx.dk

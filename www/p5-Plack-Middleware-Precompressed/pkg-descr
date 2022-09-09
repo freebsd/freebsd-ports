@@ -9,5 +9,3 @@ one for compression-enabled clients.
 
 To do so, it appends a .gz suffix to the request URI and tries to
 serve that.  If that fails, it will try again with the unmodified URI.
-
-WWW: https://metacpan.org/release/Plack-Middleware-Precompressed

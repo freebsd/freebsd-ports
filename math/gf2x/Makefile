@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library for multiplying polynomials over the binary field
+WWW=		https://gitlab.inria.fr/gf2x/gf2x
 
 LICENSE=		GPLv3 LGPL21
 LICENSE_COMB=		dual

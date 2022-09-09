@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full-featured tabular structured data management package
+WWW=		https://pear.php.net/package/Structures_DataGrid
 
 LICENSE=	BSD3CLAUSE
 

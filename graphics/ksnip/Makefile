@@ -1,10 +1,12 @@
 PORTNAME=	ksnip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Screenshot and annotation tool
+WWW=		https://github.com/ksnip/ksnip
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -12,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libkColorPicker.so:graphics/kcolorpicker \
 		libkImageAnnotator.so:graphics/kimageannotator
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 xorg
 USE_GITHUB=	yes
 USE_KDE=	ecm_build
 USE_QT=		concurrent core dbus gui network printsupport svg testlib \

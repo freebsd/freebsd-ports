@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Kernel Smoothing
+WWW=		https://cran.r-project.org/package=ks
 
 LICENSE=	GPLv2+
 

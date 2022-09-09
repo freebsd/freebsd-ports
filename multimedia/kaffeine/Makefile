@@ -1,11 +1,12 @@
 PORTNAME=	kaffeine
 DISTVERSION=	2.0.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia player based on KDE and VLC
+WWW=		https://www.kde.org/applications/multimedia/kaffeine/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,7 +23,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		doctools_build
 USE_QT=		concurrent core dbus gui network phonon4 sql svg x11extras xml \
 		widgets qmake_build buildtools_build
-USE_XORG=	xscrnsaver
+USE_XORG=	x11 xscrnsaver
 
 CPE_VENDOR=	kaffeine
 CPE_PRODUCT=	kaffeine_player

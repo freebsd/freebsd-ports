@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use REAL UUIDs in Test2
+WWW=		https://metacpan.org/release/Test2-Plugin-UUID
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

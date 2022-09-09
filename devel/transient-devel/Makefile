@@ -1,12 +1,13 @@
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7-140
-DISTVERSIONSUFFIX=	-gcc887eb
+DISTVERSION=	0.3.7-159
+DISTVERSIONSUFFIX=	-g6b9c93a
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Emacs key and popup interface for complex keybindings
+WWW=		https://github.com/magit/transient
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

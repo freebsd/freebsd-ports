@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NetBIOS name network scanner
+WWW=		https://github.com/resurrecting-open-source-projects/nbtscan
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

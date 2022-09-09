@@ -5,6 +5,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple TTY terminal I/O application
+WWW=		https://tio.github.io
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

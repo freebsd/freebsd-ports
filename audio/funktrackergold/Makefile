@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/apps/sound/players
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses MOD/FNK music tracker
+WWW=		https://boutell.com/lsm/lsmbyid.cgi/000831
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,12 +24,6 @@ PLIST_FILES=	bin/funkgold
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE:Mgcc}
-CFLAGS+=	-fnested-functions
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${STAGEDIR}${PREFIX}/bin
 
@@ -38,4 +33,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

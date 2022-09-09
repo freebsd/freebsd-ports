@@ -16,5 +16,3 @@ An example usage:
 or in your Xresources file:
   KTerm*VT100*fontList:		-kappa-fixed-medium-r-normal--20-*
   KTerm*VT100*boldFontList:	-kappa-fixed-bold-r-normal--20-*
-
-WWW: http://kappa.allnet.ne.jp/20dot.fonts/

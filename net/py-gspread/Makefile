@@ -1,5 +1,5 @@
 PORTNAME=	gspread
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Google Spreadsheets Python API
+WWW=		http://burnash.github.io/gspread/
 
 LICENSE=	MIT
 

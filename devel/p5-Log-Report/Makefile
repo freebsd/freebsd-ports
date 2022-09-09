@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Report a problem, pluggable handlers and language support
+WWW=		https://metacpan.org/release/Log-Report
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

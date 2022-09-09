@@ -8,18 +8,18 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
+WWW=		https://wiki.gnome.org/Projects/dconf
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala>=0.18.1:lang/vala \
-		docbook-xsl>=0:textproc/docbook-xsl \
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		${LOCALBASE}/libdata/pkgconfig/bash-completion.pc:shells/bash-completion
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.6+,build tar:xz
+USES=		gettext gnome localbase meson pkgconfig python:3.6+,build tar:xz vala:build
 USE_CSTD=	c99
 USE_GNOME=	glib20 libxslt:build
 USE_LDCONFIG=	yes

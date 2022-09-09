@@ -7,5 +7,3 @@ and then decompressed back to its original form.  To support encryption
 applications, bicom also includes a passphrase-protection option that
 will automatically encrypt after compressing, or decrypt before
 decompressing.
-
-WWW: http://www3.sympatico.ca/mt0000/bicom/

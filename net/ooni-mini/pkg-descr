@@ -6,5 +6,3 @@ functionality without integrating with full features of OONI Probe CLI.
 
 miniooni can use tunnels provided by Tor, if you like to. The use of regular
 HTTP proxies is also possible.
-
-WWW: https://ooni.org/about/

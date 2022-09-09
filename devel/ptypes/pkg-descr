@@ -19,5 +19,3 @@ PTypes is a C++ Portable Types Library. It offers the following features:
    other within one application to form pipes, like processes in the Unix shell.
 * Finally, everything above is portable: all platform-dependent details
    are hidden inside.
-
-WWW: http://ptypes.sourceforge.net/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Romanization of Standard Chinese language
+WWW=		https://metacpan.org/release/Lingua-ZH-Romanize-Pinyin
 
 LICENSE=	Lingua-ZH-Romanize-Pinyin
 LICENSE_NAME=	License of Lingua-ZH-Romanize-Pinyin

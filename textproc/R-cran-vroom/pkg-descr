@@ -3,5 +3,3 @@ and 'fwf') quickly. When reading it uses a quick initial indexing
 step, then reads the values lazily , so only the data you actually
 use needs to be read. The writer formats the data in parallel and
 writes to disk asynchronously from formatting.
-
-WWW: https://cran.r-project.org/web/packages/vroom/

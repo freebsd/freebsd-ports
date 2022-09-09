@@ -7,6 +7,7 @@ DISTFILES=	netron-${DISTVERSION}-node_modules.tgz:js
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualizer for neural network, deep learning, machine learning models
+WWW=		https://github.com/lutzroeder/netron
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

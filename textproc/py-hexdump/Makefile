@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Print binary in hex format
+WWW=		https://pypi.org/project/hexdump/
 
 LICENSE=	PD
 

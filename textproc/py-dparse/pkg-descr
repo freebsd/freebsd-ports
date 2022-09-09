@@ -5,5 +5,3 @@ Parses and updates Python dependency files. Following files are supported:
 * tox.ini
 * Pipfile
 * Pifile.lock
-
-WWW: https://github.com/pyupio/dparse

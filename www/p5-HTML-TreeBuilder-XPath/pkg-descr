@@ -1,4 +1,2 @@
 This module adds typical XPath methods to HTML::TreeBuilder, to make
 it easy to query a document.
-
-WWW: https://metacpan.org/release/HTML-TreeBuilder-XPath

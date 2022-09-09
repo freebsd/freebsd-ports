@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	dev@submerge.ch
 COMMENT=	Low latency audio server
+WWW=		https://jackaudio.org/
 
 LICENSE=	GPLv2 GPLv3+
 LICENSE_COMB=	multi

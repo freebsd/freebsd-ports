@@ -1,11 +1,12 @@
 PORTNAME=	automaton
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Friendly state machines for python
+WWW=		https://docs.openstack.org/automaton/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

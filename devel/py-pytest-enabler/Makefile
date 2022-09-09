@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enable installed pytest plugins
+WWW=		https://github.com/jaraco/pytest-enabler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

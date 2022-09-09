@@ -6,6 +6,7 @@ DISTNAME=	CSSC-${PORTVERSION}
 
 MAINTAINER=	gspurki@gmail.com
 COMMENT=	Workalike for the source code control system SCCS
+WWW=		https://www.gnu.org/software/cssc/
 
 LICENSE=	GPLv3
 

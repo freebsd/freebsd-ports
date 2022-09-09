@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HMAC-based Key Derivation Function
+WWW=		https://github.com/jtdowney/hkdf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

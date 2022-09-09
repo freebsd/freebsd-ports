@@ -8,5 +8,3 @@ The are front ends for:
 The dhcpcd-online command line utility is also included, which can be
 used to work out if dhcpcd(8) is in the connected state - useful in
 startup scripts or monitoring applications.
-
-WWW: https://roy.marples.name/projects/dhcpcd-ui

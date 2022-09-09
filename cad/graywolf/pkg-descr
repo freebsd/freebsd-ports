@@ -9,5 +9,3 @@ has been forked off from version 6.3.5 of TimberWolf.
 The main improvement in graywolf is that the build process is more streamlined
 and that it behaves as a normal linux tool - you can call it from anywhere and
 no environment variables must be set first.
-
-WWW: https://github.com/rubund/graywolf

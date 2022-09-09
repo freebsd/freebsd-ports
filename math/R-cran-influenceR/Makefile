@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Software Tools to Quantify Structural Importance of Nodes in a Network
+WWW=		https://cran.r-project.org/web/packages/influenceR/
 
 LICENSE=	GPLv2
 

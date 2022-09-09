@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-a1.tar.gz
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source re-implementation of Alien versus Predator
+WWW=		https://icculus.org/avp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	notus-scanner
-DISTVERSION=	22.4.0
+DISTVERSION=	22.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	scanner for creating results from local security checks
+WWW=		https://github.com/greenbone/notus-scanner
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

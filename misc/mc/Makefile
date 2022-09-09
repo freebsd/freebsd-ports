@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.midnight-commander.org/ \
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander clone
+WWW=		https://midnight-commander.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

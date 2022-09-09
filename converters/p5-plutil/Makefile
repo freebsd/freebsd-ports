@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl implementation of Mac OS X plutil
+WWW=		http://scw.us/iPhone/plutil/
 
 USES=		shebangfix perl5 tar:xz
 USE_PERL5=	run

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Prometheus exporter for gstat data
+WWW=		https://github.com/tykling/gstat_exporter
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

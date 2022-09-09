@@ -6,5 +6,3 @@ designed to facilitate packaging Python projects, where packaging includes:
  - Project installation
  - Platform-specific details
  - Python 3 support
-
-WWW: https://pypi.org/project/setuptools/

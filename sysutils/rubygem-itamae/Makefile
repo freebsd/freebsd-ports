@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Simple and lightweight configuration management tool
+WWW=		https://github.com/itamae-kitchen/itamae
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

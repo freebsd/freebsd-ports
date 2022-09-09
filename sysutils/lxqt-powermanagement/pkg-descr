@@ -1,5 +1,3 @@
 lxqt-powermanagement can monitor power management events and
 optionally triggers actions like e.g. shut down a system when
 laptop batteries are low on power.
-
-WWW: https://github.com/lxqt/lxqt-powermanagement

@@ -11,5 +11,3 @@ WebInject can be used as a complete test framework that is controlled by the
 WebInject User Interface (GUI). Optionally, it can be used as a standalone
 test runner (text/console application) which can be integrated and called
 from other test frameworks or applications.
-
-WWW: http://www.webinject.org/

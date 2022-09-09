@@ -1,3 +1,1 @@
 Cython memory pool for RAII-style memory management.
-
-WWW: https://github.com/explosion/cymem

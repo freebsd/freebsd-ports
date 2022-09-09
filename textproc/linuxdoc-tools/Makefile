@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.com/agmartin/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Fork of SGML-tools specially tailored for linuxdoc SGMLs
+WWW=		https://gitlab.com/agmartin/linuxdoc-tools
 
 LICENSE=	GPLv3 LinuxdocTools
 LICENSE_COMB=	multi

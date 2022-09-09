@@ -1,4 +1,2 @@
 Data::Object::Role::Dumpable provides methods for dumping the object and
 underlying value.
-
-WWW: https://metacpan.org/release/Data-Object-Role-Dumpable

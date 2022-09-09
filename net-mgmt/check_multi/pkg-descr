@@ -13,5 +13,3 @@ a tag for each child plugin and then the check command line.
 check_multi can cover complex Business Process Views - using a builtin
 state evaluation mechanism. The second benefit is cluster monitoring
 with no need for extra services. All you need is provided by check_multi.
-
-WWW: http://www.my-plugin.de/wiki/projects/check_multi/start

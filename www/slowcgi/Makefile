@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	FastCGI interface for old CGI programs
+WWW=		https://github.com/koue/slowcgi
 
 LICENSE=	BSD3CLAUSE
 

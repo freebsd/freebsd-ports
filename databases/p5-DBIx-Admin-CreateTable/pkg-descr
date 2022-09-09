@@ -15,5 +15,3 @@ Assumptions:
   sequence is called 't_id_seq': This is true for both Oracle and Postgres,
   which use sequences to populate primary key columns. The sequences are named
   after both the table and the column.
-
-WWW: https://metacpan.org/release/DBIx-Admin-CreateTable

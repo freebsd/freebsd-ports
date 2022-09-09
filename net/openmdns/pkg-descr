@@ -1,5 +1,3 @@
 OpenMDNS is a full implementation of MDNS/DNS-SD (also known as Zeroconf),
 it aims to be a light replacement for Avahi/Bonjour. Currently, OpenMDNS is
 about 10% of the size of Avahi.
-
-WWW: http://www.haesbaert.org/openmdns/

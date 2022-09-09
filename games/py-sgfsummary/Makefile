@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGF Summarizer
+WWW=		http://gotools.sourceforge.net/sgfsummary/
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:games/py-sgflib@${PY_FLAVOR}
 

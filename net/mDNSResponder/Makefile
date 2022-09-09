@@ -5,6 +5,7 @@ MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bonjour (zero-configuration networking) by Apple
+WWW=		https://opensource.apple.com/tarballs/mDNSResponder/
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

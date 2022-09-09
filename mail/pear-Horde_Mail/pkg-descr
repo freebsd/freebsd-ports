@@ -7,5 +7,3 @@ additional functionality, including (but not limited to):
 * PHPUnit test suite.
 * Provides more comprehensive sendmail error messages.
 * Uses Exceptions instead of PEAR_Errors.
-
-WWW: http://pear.horde.org

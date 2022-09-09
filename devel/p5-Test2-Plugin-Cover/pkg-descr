@@ -8,5 +8,3 @@ list. This list will be attached to a test2 event just before the test exits. In
 most formaters the event will only show up as a comment on STDOUT # This test
 covered N source files. . However tools such as Test2::Harness::UI can make full
 use of the coverage information contained in the event.
-
-WWW: https://metacpan.org/release/Test2-Plugin-Cover

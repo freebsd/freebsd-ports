@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Distributed, interactive, smart revision control system
+WWW=		http://darcs.net/
 
 LICENSE=	GPLv2+
 

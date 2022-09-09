@@ -6,6 +6,7 @@ CATEGORIES=	science devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only C++ HDF5 interface
+WWW=		https://github.com/BlueBrain/HighFive
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

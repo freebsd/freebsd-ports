@@ -13,5 +13,3 @@ Features:
   - Can coordinate with other Caddy instances in a cluster
 - HTTP/1.1, HTTP/2, and experimental HTTP/3 support
 - Actually fun to use
-
-WWW: https://caddyserver.com

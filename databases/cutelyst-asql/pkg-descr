@@ -8,5 +8,3 @@ Qt Async Sql library
 * Notifications
 
 Supports database migrations and queries both as JSON and QVariantHash.
-
-WWW: https://github.com/cutelyst/asql

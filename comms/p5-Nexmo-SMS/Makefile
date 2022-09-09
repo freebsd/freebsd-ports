@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Send SMS via http://www.nexmo.com/ API
+WWW=		https://metacpan.org/release/Nexmo-SMS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTTP-Message>=5.836:www/p5-HTTP-Message \

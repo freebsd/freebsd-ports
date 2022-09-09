@@ -9,5 +9,3 @@ X11 desktop.  It currently features:
   - Small number of dependencies, briefly: glib2, cairo, pango, libX11
   - Small memory footprint (about 2-4 megabytes)
   - Small executable (80 kilobytes at the moment)
-
-WWW: https://code.google.com/archive/p/bmpanel2/

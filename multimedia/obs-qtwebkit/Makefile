@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Browser source plugin for obs-studio
+WWW=		https://github.com/swills/obs-qtwebkit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

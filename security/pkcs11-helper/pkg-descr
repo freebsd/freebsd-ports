@@ -12,5 +12,3 @@ pkcs11-helper is not designed to manage card content, since
 object attributes are usually vendor specific, and 99% of
 application need to access existing objects in order to
 perform signature and decryption.
-
-WWW: https://github.com/OpenSC/pkcs11-helper

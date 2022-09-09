@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line pc speaker bell
+WWW=		https://www.critical.ch/yell/
 
 LICENSE=	BSD2CLAUSE
 

@@ -5,5 +5,3 @@ A set of methods added to the String class to allow title casing of strings:
 - words with periods are left alone
 - first and last word always capitalized
 - small words after colons are capitalized
-
-WWW: https://github.com/samsouder/titlecase

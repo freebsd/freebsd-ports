@@ -7,6 +7,7 @@ DISTNAME=	importlib_metadata-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read metadata from Python packages
+WWW=		https://github.com/python/importlib_metadata
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

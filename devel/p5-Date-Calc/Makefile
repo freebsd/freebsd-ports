@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gregorian calendar date calculations
+WWW=		https://metacpan.org/pod/Date::Calc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

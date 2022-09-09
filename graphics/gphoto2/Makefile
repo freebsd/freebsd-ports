@@ -5,6 +5,7 @@ MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line frontend to libgphoto2
+WWW=		http://www.gphoto.org/proj/gphoto2/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,4 +1,2 @@
 mbox2imap is a python script to upload email stored in mbox file format to
 an IMAP server.
-
-WWW: https://BSDforge.com/projects/mail/mbox2imap/

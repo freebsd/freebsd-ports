@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.vanheusden.com/Linux/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for debugging TCP connections
+WWW=		https://www.vanheusden.com/Linux/ #recvnet
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

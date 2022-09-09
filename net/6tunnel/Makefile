@@ -5,6 +5,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	TCP proxy for applications that do not speak IPv6
+WWW=		https://github.com/wojtekka/6tunnel
 
 LICENSE=	GPLv2
 

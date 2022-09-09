@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	OCaml subroutines collection
+WWW=		http://raevnos.pennmush.org/code/extlib/
 
 LICENSE=	LGPL21
 

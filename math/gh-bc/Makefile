@@ -1,11 +1,12 @@
 PORTNAME=		bc
-PORTVERSION=		6.0.1
+PORTVERSION=		6.0.2
 CATEGORIES=		math lang
 MASTER_SITES=		https://github.com/gavinhoward/bc/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=		gh-
 
 MAINTAINER=		se@FreeBSD.org
 COMMENT=		GNU compatible bc/dc calculator
+WWW=		https://git.yzena.com/gavin/bc
 
 LICENSE=		BSD2CLAUSE MIT
 LICENSE_COMB=		multi
@@ -15,7 +16,7 @@ USES=			compiler:c11 tar:xz
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_ARGS+=	--predefined-build-type=BSD
+CONFIGURE_ARGS+=	--predefined-build-type=BSD --disable-problematic-tests
 
 TEST_TARGET=		test
 

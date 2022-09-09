@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	VAR Modelling
+WWW=		https://cran.r-project.org/web/packages/vars/
 
 LICENSE=	GPLv2+
 

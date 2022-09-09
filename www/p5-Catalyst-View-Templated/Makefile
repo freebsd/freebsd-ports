@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic base class for template-based views
+WWW=		https://metacpan.org/release/Catalyst-View-Templated
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -3,5 +3,3 @@ AUTH service extension, enabling a perl5 application to talk to and
 authenticate against SMTP servers. This documentation assumes that you are
 familiar with the concepts of the SMTP protocol described in RFC821 and with
 the AUTH service extension described in RFC2554.
-
-WWW: https://metacpan.org/release/Net-SMTP_auth

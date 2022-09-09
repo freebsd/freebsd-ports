@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	YAML implementation in Perl
+WWW=		https://metacpan.org/release/YAML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

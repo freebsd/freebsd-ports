@@ -2,11 +2,12 @@ PORTNAME=	stegify
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2-2
 DISTVERSIONSUFFIX=	-g62518ca
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Steganography software
+WWW=		https://github.com/DimitarPetrov/stegify
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

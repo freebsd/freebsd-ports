@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/dns/fastresolve/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Programs to get DNS and domain ownership information from web logs
+WWW=		https://BSDforge.com/projects/dns/fastresolve/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

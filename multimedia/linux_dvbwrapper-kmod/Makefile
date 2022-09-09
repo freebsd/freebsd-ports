@@ -6,6 +6,7 @@ DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux compatibility layer - DVB ioctl handler
+WWW=		https://people.freebsd.org/~nox/dvb/
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 

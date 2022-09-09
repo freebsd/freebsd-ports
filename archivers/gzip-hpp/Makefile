@@ -6,6 +6,7 @@ CATEGORIES=	archivers devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library for gzip compression and decompression
+WWW=		https://github.com/mapbox/gzip-hpp
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

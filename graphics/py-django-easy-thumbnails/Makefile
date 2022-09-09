@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
 
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	Easy thumbnails for Django
+WWW=		https://pypi.org/project/easy-thumbnails/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for/to use Moose or Mouse modules
+WWW=		https://metacpan.org/release/Any-Moose
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

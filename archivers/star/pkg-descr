@@ -19,5 +19,3 @@ Main advantages over other tar implementations:
 	control			  ignored for which file name pattern
 	true incremental	- star uses the same method as dump(8)/restore(8)
 	dump/restore features	  but acts OS and FS independent
-
-WWW: https://codeberg.org/schilytools/schilytools

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails52
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Provide a peek into the Redis calls made
+WWW=		https://github.com/peek/peek-redis
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

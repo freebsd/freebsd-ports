@@ -4,6 +4,7 @@ CATEGORIES=	www net ftp python
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical download manager (GUI for Aria2)
+WWW=		https://persepolisdm.github.io/
 
 LICENSE=	GPLv3+
 

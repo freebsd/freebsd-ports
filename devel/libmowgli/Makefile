@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Development framework for C
+WWW=		http://www.atheme.org/projects/libmowgli.html
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

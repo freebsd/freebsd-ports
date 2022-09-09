@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Authentication plugin for HTTP::Server::Simple
+WWW=		https://metacpan.org/release/HTTP-Server-Simple-Authen
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

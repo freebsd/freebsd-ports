@@ -5,6 +5,7 @@ CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library providing support for additional image formats
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kimageformats/html/index.html
 
 LIB_DEPENDS=	libImath.so:math/Imath
 

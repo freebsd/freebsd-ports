@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	pluknet@gmail.com
 COMMENT=	Simple TCP proxy
+WWW=		http://www.crocodile.org/software.html
 
 GNU_CONFIGURE=	yes
 

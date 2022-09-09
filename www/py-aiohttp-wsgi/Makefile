@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	WSGI adapter for aiohttp
+WWW=		https://github.com/etianen/aiohttp-wsgi
 
 LICENSE=	BSD3CLAUSE
 

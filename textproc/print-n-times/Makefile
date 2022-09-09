@@ -6,6 +6,7 @@ MASTER_SITES=	http://aaronland.info/xsl/string/print-n-times/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print a string (n) times
+WWW=		https://aaronland.info/xsl/string/print-n-times
 
 NO_BUILD=	yes
 

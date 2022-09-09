@@ -9,6 +9,7 @@ PATCHFILES=	3bd3e448668b95da784159bf5733b5169831b026.patch:-p1 \
 
 MAINTAINER=	daniel.engberg.lists@pyret.net
 COMMENT=	Utility to create ISO images of encrypted DVDs
+WWW=		https://github.com/xrgtn/dvdread
 
 LICENSE=	GPLv3
 

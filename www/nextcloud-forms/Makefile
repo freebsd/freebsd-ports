@@ -10,6 +10,7 @@ DIST_SUBDIR=	nextcloud/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Forms app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/forms
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

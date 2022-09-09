@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Hogan-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hogan (XStatic packaging standard)
+WWW=		https://twitter.github.io/hogan.js/
 
 LICENSE=	APACHE20
 

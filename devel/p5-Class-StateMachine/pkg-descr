@@ -1,4 +1,2 @@
 Class::StateMachine allows to define methods that are dispatched
 depending on an internal state property via the OnState attribute.
-
-WWW: https://metacpan.org/release/Class-StateMachine

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Allow write DBIC add_column definitions as attribute options
+WWW=		https://metacpan.org/release/DBIx-Class-MooseColumns
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

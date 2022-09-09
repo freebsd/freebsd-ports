@@ -5,6 +5,7 @@ CATEGORIES=	science cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite-difference time-domain software for electromagnetic simulations
+WWW=		https://github.com/NanoComp/meep
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

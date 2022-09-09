@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-extractor # avoid collision with misc/deco
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to extract various archive file formats
+WWW=		https://github.com/peha/deco
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,10 +1,11 @@
 PORTNAME=		prometheus-dnssec-exporter
 DISTVERSION=		g20181110
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		dns
 
 MAINTAINER=		philip@FreeBSD.org
 COMMENT=		DNSSEC exporter for Prometheus
+WWW=		https://github.com/chrj/prometheus-dnssec-exporter
 
 LICENSE=		MIT
 

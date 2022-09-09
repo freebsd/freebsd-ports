@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension for direct-to-lpd printing
+WWW=		https://metacpan.org/release/Net-Printer
 
 LICENSE=	BSD2CLAUSE
 

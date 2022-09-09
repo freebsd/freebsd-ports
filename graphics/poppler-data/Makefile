@@ -5,6 +5,7 @@ MASTER_SITES=	http://poppler.freedesktop.org/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Poppler encoding data
+WWW=		https://poppler.freedesktop.org/
 
 LICENSE=	MIT ADOBE GPLv2
 LICENSE_COMB=	multi

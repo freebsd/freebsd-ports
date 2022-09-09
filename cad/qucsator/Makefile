@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Circuit simulator of the Qucs project
+WWW=		https://github.com/Qucs/qucsator
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

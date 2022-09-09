@@ -8,5 +8,3 @@ The definitions of these tokens were taken from the XML spec
 Also contains the regular expressions for the following tokens from the
 XML Namespaces spec at http://www.w3.org/TR/REC-xml-names:
 NCNameChar, NCName, QName, Prefix and LocalPart.
-
-WWW: https://metacpan.org/release/XML-RegExp

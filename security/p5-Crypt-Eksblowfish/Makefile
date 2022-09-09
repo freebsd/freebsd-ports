@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for the Eksblowfish block cipher
+WWW=		https://metacpan.org/release/Crypt-Eksblowfish
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

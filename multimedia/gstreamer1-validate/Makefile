@@ -6,6 +6,7 @@ DISTNAME=	gst-validate-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer element validation suite
+WWW=		https://gstreamer.freedesktop.org/
 
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server

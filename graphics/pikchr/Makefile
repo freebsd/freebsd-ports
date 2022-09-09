@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${CHECKIN}${ARCHIVE_SUFX}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	PIC-like markup language for diagrams
+WWW=		https://pikchr.org
 
 LICENSE=	BSD0CLAUSE
 

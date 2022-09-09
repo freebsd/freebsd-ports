@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-release-${VERSION_DATE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Architecture for Highly Concurrent Server Applications
+WWW=		http://www.eecs.harvard.edu/~mdw/proj/seda/
 
 USE_JAVA=	yes
 USE_ANT=	yes

@@ -16,5 +16,3 @@ generator for token position tracking.
 The idea of parser combinators used in funcparserlib comes from the
 Introduction to Functional Programming course. We have converted
 it from ML into Python.
-
-WWW: https://funcparserlib.pirx.ru/

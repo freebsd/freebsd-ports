@@ -6,6 +6,7 @@ MASTER_SITES=	SF/trousers/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Provides a basic set of TPM tools
+WWW=		http://trousers.sourceforge.net
 
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License

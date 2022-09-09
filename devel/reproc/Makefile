@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C/C++ library to simplify running external programs
+WWW=		https://github.com/DaanDeMeyer/reproc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

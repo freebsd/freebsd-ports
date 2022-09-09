@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	IP device monitoring tool
+WWW=		https://github.com/dennypage/dpinger
 
 LICENSE=	BSD2CLAUSE
 

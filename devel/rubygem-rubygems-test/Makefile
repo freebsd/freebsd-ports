@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Run automated tests
+WWW=		https://github.com/rubygems/rubygems-test
 
 LICENSE=	MIT
 

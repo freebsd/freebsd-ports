@@ -5,5 +5,3 @@ Pyzor initially started out to be merely a Python implementation of Razor,
 but due to the protocol and the fact that Razor's server is not Free Software,
 I decided to Pyzor should be based upon a new, lighter, more language-
 independent protocol.
-
-WWW: https://github.com/SpamExperts/pyzor

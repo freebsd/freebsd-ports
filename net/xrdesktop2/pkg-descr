@@ -5,5 +5,3 @@ Xrdesktop2's intent is to handle Rdesktop's available commandline options,
 by presenting them in a [Perl/GTK2] GUI. Xrdesktop2 currently handles most
 any of the options you're likely to be interested in. Future versions will
 undoubtedly add more.
-
-WWW: https://BSDforge.com/projects/net/xrdesktop2/

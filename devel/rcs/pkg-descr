@@ -4,5 +4,3 @@ revisions.  RCS is useful for text that is revised frequently, including source
 code, programs, documentation, graphics, papers, and form letters.
 
 This port is gnu rcs.
-
-WWW: http://www.gnu.org/software/rcs/

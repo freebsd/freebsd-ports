@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.argon.org/~roderick/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Construct and optionally send MIME messages from command line
+WWW=		http://www.argon.org/~roderick/
 
 LICENSE=	GPLv2+
 

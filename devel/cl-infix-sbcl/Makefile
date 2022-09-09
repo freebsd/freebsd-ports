@@ -7,6 +7,7 @@ DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp macro to read math statements in infix notation
+WWW=		https://www.cliki.net/infix
 
 # Converted from NO_CDROM
 LICENSE=	infix

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Apple AirScan compatible SANE web frontend
+WWW=		https://github.com/SimulPiscator/AirSane
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

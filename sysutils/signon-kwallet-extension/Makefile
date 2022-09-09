@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KWallet integration for signon framework
+WWW=		https://projects.kde.org/projects/kde/kdenetwork/signon-kwallet-extension
 
 LIB_DEPENDS=	libsignon-qt5.so:sysutils/signon-qt5
 

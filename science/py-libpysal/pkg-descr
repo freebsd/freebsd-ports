@@ -7,5 +7,4 @@ packages in the PySAL family:
 - Computational geometry: libpysal.cg
 - Built-in example datasets libpysal.examples
 
-WWW: https://pysal.org/libpysal/
-WWW: https://github.com/pysal/libpysal
+See also: https://github.com/pysal/libpysal

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.xbill.org/download/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Save your computers from the evil clutches of Bill
+WWW=		http://www.xbill.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR} --disable-gtk

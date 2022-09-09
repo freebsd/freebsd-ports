@@ -7,6 +7,7 @@ CATEGORIES=	net-im java
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Implementation of the Signal client protocol
+WWW=		https://github.com/signalapp/libsignal-client
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

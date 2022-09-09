@@ -1,10 +1,11 @@
 PORTNAME=	textql
 PORTVERSION=	g20200203
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Execute SQL against structured text like CSV or TSV
+WWW=		https://github.com/dinedal/textql/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

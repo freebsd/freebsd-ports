@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Discord API for Ruby
+WWW=		https://github.com/shardlab/discordrb
 
 LICENSE=	MIT
 

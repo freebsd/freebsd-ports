@@ -7,6 +7,7 @@ DISTNAME=	nsf${DISTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Highly flexible, Tcl-based, object-oriented scripting language
+WWW=		https://next-scripting.org
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Powerful DevOps solution heavily relaying on CBSD
+WWW=		https://github.com/cbsd/reggae
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

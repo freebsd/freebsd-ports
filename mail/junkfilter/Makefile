@@ -7,6 +7,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	gsutter@zer0.org
 COMMENT=	Spam filtering software for procmail
+WWW=		https://junkfilter.zer0.org/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

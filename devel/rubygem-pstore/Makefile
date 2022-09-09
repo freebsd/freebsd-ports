@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Transactional File Storage for Ruby Objects
+WWW=		https://github.com/ruby/pstore
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

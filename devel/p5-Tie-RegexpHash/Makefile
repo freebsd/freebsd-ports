@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use regular expressions as hash keys
+WWW=		https://metacpan.org/release/Tie-RegexpHash
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

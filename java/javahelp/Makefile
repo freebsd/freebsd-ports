@@ -5,6 +5,7 @@ CATEGORIES=	java devel
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Online help support for Java applications
+WWW=		https://javaee.github.io/javahelp/
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE

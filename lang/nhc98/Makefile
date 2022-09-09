@@ -8,6 +8,7 @@ DIST_SUBDIR=	nhc98
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fully-fledged compiler for Haskell 98
+WWW=		https://www.haskell.org/nhc98/
 
 ONLY_FOR_ARCHS=	i386
 

@@ -6,6 +6,7 @@ PORTNAME=	gettext
 PORTREVISION=	0
 
 COMMENT=	GNU gettext meta package
+WWW=		https://www.gnu.org/software/gettext/
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 

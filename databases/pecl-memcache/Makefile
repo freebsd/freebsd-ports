@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension
+WWW=		https://github.com/websupport-sk/pecl-memcache
 
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE

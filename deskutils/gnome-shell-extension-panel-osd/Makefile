@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OSD extension for the GNOME shell
+WWW=		https://github.com/jenslody/gnome-shell-extension-panel-osd
 
 BROKEN=		does not fetch
 

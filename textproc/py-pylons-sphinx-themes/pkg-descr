@@ -1,5 +1,3 @@
 Pylons Sphinx Themes is a Python package that contains Sphinx themes for Pylons
 related projects. This project is based on Pylons Sphinx Theme (singular), but
 uses a package implementation instead of git submodules and manual steps.
-
-WWW: https://github.com/Pylons/pylons-sphinx-themes

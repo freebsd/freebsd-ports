@@ -1,5 +1,5 @@
 PORTNAME=	glance-store
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	glance_store-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Image Service Store Library
+WWW=		https://docs.openstack.org/glance_store/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

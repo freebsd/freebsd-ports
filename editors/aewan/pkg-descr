@@ -12,5 +12,3 @@ colors, as well as bold and blink attributes. The user may also
 select rectangular areas of the canvas in order to move, copy
 and paste them. Aewan also supports 'intelligent' horizontal
 and vertical flipping (e.g. converts '\' to '/', etc).
-
-WWW: http://aewan.sourceforge.net/

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage a Samba PDC with an LDAP Backend
+WWW=		https://metacpan.org/release/Samba-LDAP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \

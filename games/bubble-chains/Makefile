@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free crossplatform 2D arcade-puzzle game
+WWW=		https://github.com/ArsMasiuk/bubble-chains
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

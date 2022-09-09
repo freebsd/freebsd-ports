@@ -1,10 +1,11 @@
 PORTNAME=	gvm
 PORTVERSION=	22.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone vulnerability management (metaport)
+WWW=		https://www.openvas.org/
 
 USES=		metaport python:3.7+
 

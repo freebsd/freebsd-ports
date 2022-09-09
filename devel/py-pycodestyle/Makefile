@@ -6,14 +6,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Python style guide checker
+WWW=		https://pycodestyle.readthedocs.io/en/latest/ \
+		https://pypi.org/project/pycodestyle/ \
+		https://github.com/pycqa/pycodestyle
 
 LICENSE=	MIT # mentioned as "Expat"
 
-USES=		python:3.6+
+USES=		python:3.6+ pytest
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover testsuite
 
 .include <bsd.port.mk>

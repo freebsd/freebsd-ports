@@ -8,6 +8,7 @@ DISTNAME=	otf-hermit-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced font for programmers by a programmer
+WWW=		https://pcaro.es/p/hermit/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE

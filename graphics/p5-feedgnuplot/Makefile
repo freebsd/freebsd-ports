@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	General purpose pipe-oriented plotting tool
+WWW=		https://metacpan.org/release/DKOGAN/feedgnuplot-1.51
 
 LICENSE=	ART10 GPLv3
 LICENSE_COMB=	dual

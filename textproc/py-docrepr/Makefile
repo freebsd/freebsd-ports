@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Generate rich representations for docstrings
+WWW=		https://github.com/spyder-ide/docrepr/
 
 LICENSE=	BSD3CLAUSE
 

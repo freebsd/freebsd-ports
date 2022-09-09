@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Add pre- and post-execution wrappers
+WWW=		https://metacpan.org/release/Sub-WrapPackages
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MySQL Adapter for DataMapper
+WWW=		https://github.com/datamapper/dm-mysql-adapter
 
 LICENSE=	MIT
 

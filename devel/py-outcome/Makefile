@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Capture the outcome of Python function calls
+WWW=		https://pypi.org/project/outcome/
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual

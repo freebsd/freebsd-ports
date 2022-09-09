@@ -6,6 +6,7 @@ MASTER_SITES=	http://projects.ukrweb.net/files/ \
 
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	Netgraph node for Mikrotik EoIP tunneling
+WWW=		http://imax.in.ua/ng_mikrotik_eoip/
 
 LICENSE=	BSD2CLAUSE
 

@@ -13,5 +13,3 @@ For best results, you will want to create a code generator that filters
 your data to remove all unnecessary information. For example, in a large
 english document, you should probably remove all white space, as well as
 removing all capitalization.
-
-WWW: https://metacpan.org/release/Algorithm-RabinKarp

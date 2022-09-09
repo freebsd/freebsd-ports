@@ -2,8 +2,9 @@ PORTNAME=	libretro-dosbox
 PORTVERSION=	0.20220406
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of DOSBox (upstream) to the libretro API
+WWW=		https://github.com/libretro/dosbox-libretro
 
 LICENSE=	GPLv2
 

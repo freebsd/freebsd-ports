@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous and multi channel Perl AMQP client
+WWW=		https://metacpan.org/release/AnyEvent-RabbitMQ
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

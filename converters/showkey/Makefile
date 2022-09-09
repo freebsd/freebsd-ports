@@ -5,6 +5,7 @@ MASTER_SITES=	http://catb.org/~esr/showkey/
 
 MAINTAINER=	snkoppenaal@gmail.com
 COMMENT=	Display cooked key sequences (keycap-to-keystrokes mappings)
+WWW=		http://catb.org/~esr/showkey/
 
 LICENSE=	MIT
 

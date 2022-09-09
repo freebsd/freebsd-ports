@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Executable Uniform Command-Line Interface Descriptions
+WWW=		https://metacpan.org/release/Getopt-Euclid
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

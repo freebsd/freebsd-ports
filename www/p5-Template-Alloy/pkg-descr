@@ -5,5 +5,3 @@ favorite template interface and syntax and get features from each of the other
 major template systems. And Template::Alloy is fast - whether your using
 mod_perl, cgi, or running from the commandline. There is even
 Template::Alloy::XS for getting a little more speed when that is necessary.
-
-WWW: https://metacpan.org/release/Template-Alloy

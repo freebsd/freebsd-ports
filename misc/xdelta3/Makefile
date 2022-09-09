@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
+WWW=		http://xdelta.org/
 
 LICENSE=	GPLv2+
 

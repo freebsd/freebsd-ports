@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Git URL parsing module
+WWW=		https://github.com/nephila/giturlparse
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

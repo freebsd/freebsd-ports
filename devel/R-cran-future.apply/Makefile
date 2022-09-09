@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Apply Function to Elements in Parallel using Futures
+WWW=		https://cran.r-project.org/web/packages/future.apply/
 
 LICENSE=	GPLv2+
 

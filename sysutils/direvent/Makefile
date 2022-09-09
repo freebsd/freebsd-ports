@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Per-directory file system event monitor
+WWW=		https://www.gnu.org.ua/software/direvent/
 
 LICENSE=	GPLv3+
 

@@ -7,6 +7,7 @@ MASTER_SITES=	SUNSITE/devel/lang/c \
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	C-like compiler that translates input code to the HP48 RPL language
+WWW=		http://www.sigala.it/sandro/software.php #hp48cc
 
 LICENSE=	GPLv2
 

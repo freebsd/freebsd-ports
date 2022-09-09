@@ -3,5 +3,3 @@ to Perl 5.
 
 It now supports Promises, allowing asynchronous operation. See
 Mojolicious::Plugin::GraphQL for an example of how to take advantage of this.
-
-WWW: https://metacpan.org/release/GraphQL

@@ -7,6 +7,7 @@ DISTNAME=	XStatic-mdi-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	mdi (Material Design Icons) (XStatic packaging standard)
+WWW=		https://materialdesignicons.com/
 
 LICENSE=	MIT
 

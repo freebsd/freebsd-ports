@@ -14,5 +14,3 @@ conversations over instant messaging by providing:
 * Perfect forward secrecy
        If you lose control of your private keys, no previous
        conversation is compromised.
-
-WWW: http://www.cypherpunks.ca/otr/

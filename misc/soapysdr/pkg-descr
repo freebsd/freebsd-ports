@@ -6,5 +6,3 @@ support their hardware using SoapySDR device modules. There are wrappers for
 both gr-osmosdr, uhd, and gr-uhd to bring an ecosystem of existing applications
 to SoapySDR devices. And SoapySDR has support for powerful platforms like GNU
 Radio and Pothos.
-
-WWW: https://github.com/pothosware/SoapySDR

@@ -1,11 +1,12 @@
 PORTNAME=	mongodb36-tools
 PORTVERSION=	3.6.3
 DISTVERSIONPREFIX=	r
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases net
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Tools for MongoDB
+WWW=		https://github.com/mongodb/mongo-tools
 
 LICENSE=	APACHE20
 

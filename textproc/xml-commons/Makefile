@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Provides common XML code for Apache projects
+WWW=		https://xerces.apache.org/xml-commons/
 
 USE_JAVA=	yes
 JAVA_RUN=	yes

@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Library to build higher-level cryptographic tools
+WWW=		https://github.com/jedisct1/libsodium
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

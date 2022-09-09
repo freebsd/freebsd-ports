@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Distribute sized items to buckets with limited size
+WWW=		https://metacpan.org/release/Algorithm-Bucketizer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

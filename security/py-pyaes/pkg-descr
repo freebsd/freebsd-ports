@@ -6,5 +6,3 @@ common modes of operation (CBC, CFB, CTR, ECB and OFB).
 - Pure-Python (no external dependancies)
 - BlockFeeder API allows streams to easily be encrypted and decrypted
 - Python 2.x and 3.x support
-
-WWW: https://github.com/ricmoo/pyaes

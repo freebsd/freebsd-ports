@@ -15,5 +15,3 @@ The plugin works on the active layer or floating selection. If a
 selection is present, it is saved to a channel. If the layer has a
 transparency mask, an option is given to select the behaviour
 (apply/discard).
-
-WWW: http://liquidrescale.wikidot.com/

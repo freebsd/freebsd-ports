@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC driver for MySQL${MYSQL_VER} / ${DRIVER_MANAGER}
+WWW=		https://www.mysql.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	http://guichaz.free.fr/gliv/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer that uses Gdk-Pixbuf and OpenGL
+WWW=		http://guichaz.free.fr/gliv/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

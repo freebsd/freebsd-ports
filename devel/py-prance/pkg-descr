@@ -6,5 +6,3 @@ with the OpenAPI spec.
 Mostly the latter involves handling non-URI references; OpenAPI is fine with
 providing relative file paths, whereas JSON references require URIs at this
 point in time.
-
-WWW: https://github.com/jfinkhaeuser/prance

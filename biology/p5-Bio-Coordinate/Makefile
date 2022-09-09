@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modules for working with biological coordinates
+WWW=		https://metacpan.org/release/Bio-Coordinate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

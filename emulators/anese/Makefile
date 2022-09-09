@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	NES Emulator written for fun and learning
+WWW=		https://prilik.com/ANESE/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

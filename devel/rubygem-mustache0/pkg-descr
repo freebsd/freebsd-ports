@@ -9,5 +9,3 @@ Think of Mustache as a replacement for your views. Instead of views
 consisting of ERB or HAML with random helpers and arbitrary logic,
 your views are broken into two parts: a Ruby class and an HTML
 template.
-
-WWW: https://github.com/mustache/mustache

@@ -5,5 +5,3 @@ them.  Current backends:
   relocations won't show properly
 - Mach 32/64, arm, x86
 - PE (debug only)
-
-WWW: https://github.com/m4b/bingrep

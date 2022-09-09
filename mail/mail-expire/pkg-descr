@@ -9,5 +9,3 @@ The old messages are compressed with gzip or xz and stored in the file with
 the name following the pattern MBOXNAME.MONTH_YEAR.gz (or similar).  The
 reference time for the output filename is calculated from the current time
 minus number of days specified in the first parameter.
-
-WWW: https://salsa.debian.org/blade/mail-expire

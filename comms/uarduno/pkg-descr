@@ -13,4 +13,3 @@ Additionally, some 'ACM' USB Serial devices may work with this driver by
 manually adding their Vendor ID and Product ID combination to files/ids.txt
 
 Official web site
-WWW: http://www.mrp3.com/uarduno.html

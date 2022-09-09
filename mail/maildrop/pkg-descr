@@ -11,5 +11,3 @@ similar to mail/procmail.
 - maildrop is written in C++, and handles resources more efficiently.
 
 maildrop can be used with sendmail, qmail, and other MTAs.
-
-WWW: http://www.courier-mta.org/maildrop/

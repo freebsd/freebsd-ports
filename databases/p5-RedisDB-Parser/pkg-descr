@@ -1,4 +1,2 @@
 This module provides methods to build redis requests and parse replies
 from the server.
-
-WWW: https://metacpan.org/release/RedisDB-Parser

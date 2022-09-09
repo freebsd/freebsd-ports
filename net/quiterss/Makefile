@@ -7,6 +7,7 @@ DISTNAME=	QuiteRSS-${PORTVERSION}-src
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open-source cross-platform RSS/Atom news feeds reader
+WWW=		https://quiterss.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

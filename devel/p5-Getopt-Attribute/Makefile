@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Attribute wrapper for Getopt::Long
+WWW=		https://metacpan.org/release/Getopt-Attribute
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

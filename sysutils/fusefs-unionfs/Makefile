@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE based implementation of the well-known unionfs
+WWW=		https://github.com/rpodgorny/unionfs-fuse
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

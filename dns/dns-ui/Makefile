@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	LDAP-authenticated PowerDNS user interface by Opera
+WWW=		https://github.com/operasoftware/dns-ui/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

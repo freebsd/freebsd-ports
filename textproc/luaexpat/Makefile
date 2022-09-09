@@ -1,10 +1,11 @@
 PORTNAME=	luaexpat
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SAX XML parser based on the Expat library
+WWW=		https://lunarmodules.github.io/luaexpat/
 
 LICENSE=	MIT
 

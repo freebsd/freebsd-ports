@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python toolbox for performing gradient-free optimization
+WWW=		https://github.com/facebookresearch/nevergrad
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

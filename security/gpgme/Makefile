@@ -6,6 +6,7 @@ MASTER_SITES=	GNUPG/gpgme
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Library to make access to GnuPG easier
+WWW=		https://www.gnupg.org/related_software/gpgme/
 
 LICENSE?=	LGPL21+
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER

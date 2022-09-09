@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovenian thesaurus
+WWW=		http://www.tezaver.si/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby C bindings to libbzip2
+WWW=		https://github.com/brianmario/bzip2-ruby
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

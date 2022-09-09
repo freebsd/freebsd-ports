@@ -11,5 +11,3 @@ To use fspd, you must copy the fspd.conf.sample file, normally installed in
 /usr/local/etc/, to fspd.conf and edit it.
 
 You can run fspd from inetd or stand-alone.
-
-WWW: http://fsp.sourceforge.net/

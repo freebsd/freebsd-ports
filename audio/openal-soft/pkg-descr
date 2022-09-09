@@ -5,5 +5,3 @@ sound emitters are among the features handled by the API.  More
 advanced effects, including air absorption, low-pass filters, and
 reverb, are available through the EFX extension.  It also facilitates
 streaming audio, multi-channel buffers, and audio capture.
-
-WWW: https://openal-soft.org/

@@ -6,6 +6,7 @@ DISTNAME=	dictd-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dictionary Server Protocol (RFC2229) client
+WWW=		https://www.dict.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

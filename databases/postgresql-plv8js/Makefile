@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	js
 
 MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	PL/v8js procedural language for PostgreSQL database
+WWW=		https://plv8.github.io/
 
 LICENSE=	PostgreSQL
 

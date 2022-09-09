@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl extension for Catalyst view for RSS, Atom, or other XML feeds
+WWW=		https://metacpan.org/release/Catalyst-View-XML-Feed
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

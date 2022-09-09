@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@shiori.com.br
 COMMENT=	Replacement for inconsistent parts of POSIX
+WWW=		https://github.com/sionescu/libfixposix
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENCE

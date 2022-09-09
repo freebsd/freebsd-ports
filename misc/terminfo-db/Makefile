@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Terminal Description database
+WWW=		https://invisible-island.net/ncurses/ncurses.html
 
 LICENSE=	MIT
 

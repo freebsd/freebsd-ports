@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
+WWW=		https://musescore.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL

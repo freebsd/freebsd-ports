@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check for memory leaks and circular memory references
+WWW=		https://metacpan.org/release/Test-Memory-Cycle
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Cycle>=0:devel/p5-Devel-Cycle \

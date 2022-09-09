@@ -7,6 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:SCOTTW
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Save log files in a nice way
+WWW=		https://metacpan.org/release/SCOTTW/savelogs-1.98
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

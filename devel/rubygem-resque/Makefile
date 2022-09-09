@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Redis-backed Ruby library for queuing jobs
+WWW=		https://resque.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

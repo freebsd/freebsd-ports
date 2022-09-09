@@ -1,5 +1,5 @@
 PORTNAME=	notes
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www editors
 MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -10,6 +10,7 @@ DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Notes app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/notes
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

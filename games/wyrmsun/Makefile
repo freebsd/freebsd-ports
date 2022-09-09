@@ -1,10 +1,11 @@
 PORTNAME=	wyrmsun
-PORTVERSION=	5.3.5
+PORTVERSION=	5.3.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Strategy game based on history, mythology and fiction
+WWW=		https://andrettin.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt

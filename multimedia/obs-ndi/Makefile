@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Network Device Interface
+WWW=		https://github.com/Palakis/obs-ndi
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

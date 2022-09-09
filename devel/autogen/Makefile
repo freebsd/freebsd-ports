@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/autogen/rel${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool designed to simplify the creation and maintenance of programs
+WWW=		https://www.gnu.org/software/autogen/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

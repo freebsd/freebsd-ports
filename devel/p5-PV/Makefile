@@ -8,6 +8,7 @@ DISTNAME=	PerlVision-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 library for text-mode user interface widgets
+WWW=		https://metacpan.org/release/PerlVision
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

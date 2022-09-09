@@ -12,5 +12,3 @@ _ The Time-Zone Library - This library uses the IANA time zone
   database that is installed on the system to convert between
   _absolute time_ and _civil time_. This library is declared in
   time_zone.h.
-
-WWW: https://github.com/google/cctz

@@ -10,5 +10,3 @@ the features of WSME that rely on the typing system like:
 
 WSME is originally a rewrite of TGWebServices with a focus on extensibility,
 framework-independence and better type handling.
-
-WWW: https://opendev.org/x/wsme

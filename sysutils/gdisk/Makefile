@@ -6,6 +6,7 @@ DISTNAME=	gptfdisk-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GPT fdisk
+WWW=		https://www.rodsbooks.com/fixparts/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	http://sg.danny.cz/sg/p/
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Utilities to send SAS Serial Management Protocol requests
+WWW=		https://sg.danny.cz/sg/smp_utils.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

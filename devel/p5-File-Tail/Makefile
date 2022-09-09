@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to read the end of a file as it's appended to
+WWW=		https://metacpan.org/release/File-Tail
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

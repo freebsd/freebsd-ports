@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Community effort to maintain Jedi Academy + Jedi Outcast
+WWW=		https://openjk.org
 
 LICENSE=	GPLv2
 

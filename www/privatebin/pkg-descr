@@ -16,5 +16,3 @@ HTTPS (e.g. enforced by use of HSTS and/or HPKP).
 
 See https://github.com/PrivateBin/PrivateBin/wiki/Configuration for
 configuration options available in "cfg/conf.php".
-
-WWW: https://privatebin.info/

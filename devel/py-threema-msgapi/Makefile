@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Threema Gateway Message SDK for Python
+WWW=		https://github.com/lgrahl/threema-msgapi-sdk-python/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

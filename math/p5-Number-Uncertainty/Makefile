@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object-orientated uncertainty object
+WWW=		https://metacpan.org/release/Number-Uncertainty
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -4,5 +4,3 @@ parsers.  It is an intermediate layer between the abstract syntax tree
 configuration file format.
 
 Config::Parser::Ini is a configuration file parser for ini-style files.
-
-WWW: https://metacpan.org/release/Config-Parser

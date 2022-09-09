@@ -1,4 +1,2 @@
 Iconv is a wrapper class for the UNIX 95 iconv() function family, which
 translates string between various encoding systems.
-
-WWW: https://github.com/ruby/iconv

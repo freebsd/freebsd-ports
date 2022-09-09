@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
+WWW=		https://www.openttd.org/
 
 LICENSE=	GPLv2
 

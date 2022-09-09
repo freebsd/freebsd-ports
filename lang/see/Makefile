@@ -9,6 +9,7 @@ MASTER_SITES=	http://download.openpkg.org/components/cache/see/ \
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
+WWW=		http://www.adaptive-enterprises.com.au/~d/software/see/
 
 LICENSE=	BSD3CLAUSE DTOA.C
 LICENSE_COMB=	multi

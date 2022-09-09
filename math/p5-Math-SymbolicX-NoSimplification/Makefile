@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Turn off Math::Symbolic simplification
+WWW=		https://metacpan.org/release/Math-SymbolicX-NoSimplification
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Input validator that just validates input
+WWW=		https://metacpan.org/pod/Input::Validator
 
 LICENSE=	ART20
 

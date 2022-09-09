@@ -7,6 +7,7 @@ DISTNAME=	cryptography_vectors-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test vectors for the cryptography package
+WWW=		https://github.com/pyca/cryptography/tree/main/vectors
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

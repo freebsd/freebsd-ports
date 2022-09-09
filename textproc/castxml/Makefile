@@ -1,11 +1,11 @@
 PORTNAME=	castxml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
-PORTREVISION=	1
+DISTVERSION=	0.4.6
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C-family Abstract Syntax Tree XML Output
+WWW=		https://github.com/CastXML/CastXML
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

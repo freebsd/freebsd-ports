@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/pwd_unmkdb/ \
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Recover a master.passwd from the hashed database
+WWW=		https://www.over-yonder.net/~fullermd/projects/pwd_unmkdb/
 
 USES=		tar:xz
 

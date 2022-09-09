@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EventMachine based WebSocket server
+WWW=		https://github.com/igrigorik/em-websocket
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

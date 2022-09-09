@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Project aiming to create a new and versatile RTS Engine
+WWW=		https://springrts.com/
 
 LICENSE=	GPLv2+ BSD3CLAUSE BSD2CLAUSE
 LICENSE_COMB=	multi

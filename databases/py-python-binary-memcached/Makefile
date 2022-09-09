@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure python module to access memcached via its binary protocol
+WWW=		https://github.com/jaysonsantos/python-binary-memcached
 
 LICENSE=	MIT
 

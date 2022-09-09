@@ -9,5 +9,3 @@ Highlight features:
 - Clean/simple/lightweight/intuitive architecture-neutral API.
 - Thread-safe by design
 - Implemented in C/C++ languages, with bindings for Python
-
-WWW: https://www.keystone-engine.org/

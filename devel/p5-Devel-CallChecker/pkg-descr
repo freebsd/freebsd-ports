@@ -13,5 +13,3 @@ supplies the C header file and link library which provide access to the
 functions. In normal use, "callchecker0_h" and "callchecker_linkable" should be
 called at build time (not authoring time) for the module that wishes to use the
 C functions.
-
-WWW: https://metacpan.org/release/Devel-CallChecker

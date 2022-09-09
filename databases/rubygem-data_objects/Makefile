@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Unified Ruby API for popular databases
+WWW=		https://github.com/datamapper/do
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

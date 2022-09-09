@@ -5,6 +5,7 @@ MASTER_SITES=	http://files.itstool.org/itstool/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Make XML documents translatable through po files
+WWW=		https://itstool.org/
 
 LICENSE=	GPLv3
 

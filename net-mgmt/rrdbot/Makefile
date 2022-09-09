@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
+WWW=		https://github.com/REANNZ/rrdbot/
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 

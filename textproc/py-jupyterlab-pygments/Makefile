@@ -7,6 +7,7 @@ DISTNAME=	jupyterlab_pygments-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pygments theme using JupyterLab CSS variables
+WWW=		https://github.com/jupyterlab/jupyterlab_pygments
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to a implementing 3-DES EDE encryption and decryption
+WWW=		https://metacpan.org/release/Crypt-DES_EDE3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

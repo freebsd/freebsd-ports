@@ -4,6 +4,7 @@ CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	dmytro@posteo.net
 COMMENT=	Jakarta EE application server derived from GlassFish Server Open Source Edition
+WWW=		https://www.payara.fish/
 
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual

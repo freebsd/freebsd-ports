@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set default flags on regular expressions
+WWW=		https://metacpan.org/release/Regexp-DefaultFlags
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

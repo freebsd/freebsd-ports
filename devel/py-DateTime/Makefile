@@ -9,6 +9,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope 2 DateTime data type
+WWW=		https://pypi.org/project/DateTime/
 
 LICENSE=	ZPL21
 

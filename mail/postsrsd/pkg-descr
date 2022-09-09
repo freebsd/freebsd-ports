@@ -1,4 +1,2 @@
 PostSRSd provides the Sender Rewriting Scheme (SRS) via TCP-based lookup
 tables for Postfix. SRS is needed if your mail server acts as forwarder.
-
-WWW: https://github.com/roehling/postsrsd

@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Multi-threaded SATIP server that supports DVB cards
+WWW=		https://github.com/catalinii/minisatip
 
 LICENSE=	GPLv2+
 

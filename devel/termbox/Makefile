@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	as@php.net
 COMMENT=	Legacy-free alternative to ncurses
+WWW=		https://github.com/termbox/termbox
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

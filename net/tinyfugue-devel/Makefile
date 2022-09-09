@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
+WWW=		https://github.com/ingwarsw/tinyfugue
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

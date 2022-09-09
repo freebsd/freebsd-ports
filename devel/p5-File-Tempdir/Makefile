@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Perl5 module to provide an object interface for File::Temp
+WWW=		https://metacpan.org/release/File-Tempdir
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

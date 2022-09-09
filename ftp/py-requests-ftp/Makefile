@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	FTP transport adapter for requests
+WWW=		https://github.com/Lukasa/requests-ftp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command line mod music players using libmodplug
+WWW=		https://github.com/alexmyczko/modplug-tools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

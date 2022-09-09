@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomecanvas library
+WWW=		http://gtkmm.sourceforge.net/
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Create & extract files from DOS .ARC files
+WWW=		http://arc.sourceforge.net/
 
 LICENSE=	GPLv2
 

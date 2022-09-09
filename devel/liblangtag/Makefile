@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/tagoh/liblangtag/downloads/ \
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Interface library to access tags for identifying languages
+WWW=		https://bitbucket.org/tagoh/liblangtag/wiki/Home
 
 LICENSE=	LGPL3 MPL20
 LICENSE_COMB=	dual

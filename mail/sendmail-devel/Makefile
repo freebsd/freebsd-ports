@@ -1,6 +1,6 @@
 PORTNAME=	sendmail
-PORTVERSION=	8.17.1.9
-PORTREVISION=	2
+PORTVERSION=	8.17.1.20
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
+WWW=		https://www.sendmail.org/
 
 LICENSE=	Sendmail
 LICENSE_NAME=	Sendmail License

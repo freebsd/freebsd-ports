@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/bardsoftware/ganttproject/releases/download/gan
 
 MAINTAINER=	freebsd@ny-central.org
 COMMENT=	Gantt chart based project scheduling and management tool
+WWW=		https://www.ganttproject.biz/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

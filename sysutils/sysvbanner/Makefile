@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	d.oriented@gmail.com
 COMMENT=	SysV banner
+WWW=		https://github.com/uffejakobsen/sysvbanner
 
 USES=		gmake
 USE_GITHUB=	yes

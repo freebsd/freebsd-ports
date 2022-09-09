@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Facebook plugin for libpurple
+WWW=		https://github.com/dequis/purple-facebook
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

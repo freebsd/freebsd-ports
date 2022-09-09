@@ -10,5 +10,4 @@ adds/removes packages from your Pipfile as you install/uninstall packages. It
 also generates the ever-important Pipfile.lock, which is used to produce
 deterministic builds.
 
-WWW: https://docs.pipenv.org/
-WWW: https://github.com/pypa/pipenv
+See also: https://github.com/pypa/pipenv

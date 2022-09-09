@@ -1,11 +1,12 @@
 PORTNAME=	sops
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security editors
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Editor of encrypted files that supports YAML, JSON and BINARY formats
+WWW=		https://github.com/mozilla/sops
 
 LICENSE=	MPL20
 

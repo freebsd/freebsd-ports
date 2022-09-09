@@ -10,5 +10,3 @@ low bitrate narrowband speech at 6 kbit/s to very high quality
 stereo music at 510 kbit/s. Opus uses both Linear Prediction (LP)
 and the Modified Discrete Cosine Transform (MDCT) to achieve good
 compression of both speech and music.
-
-WWW: https://opus-codec.org/

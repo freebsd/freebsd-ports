@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Crypt password utilities
+WWW=		https://metacpan.org/release/Crypt-Password-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

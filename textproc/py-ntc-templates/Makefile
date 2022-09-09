@@ -1,11 +1,12 @@
 PORTNAME=	ntc-templates
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	textproc net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	TextFSM Templates for Network Devices
+WWW=		https://github.com/networktocode/ntc-templates
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,6 +24,10 @@ USE_PYTHON=	autoplist distutils
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' \
+		${WRKSRC}/setup.py
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs

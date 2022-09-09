@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VCP destination driver for svn/svk
+WWW=		https://metacpan.org/release/CLKAO/VCP-Dest-svk-0.29
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Roundcube plugin to setup different SMTP settings per identity
+WWW=		https://github.com/deflomu/Roundcube-SMTP-per-Identity-Plugin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

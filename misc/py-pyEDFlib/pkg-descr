@@ -6,5 +6,3 @@ by Kemp.
 
 The EDF/EDF+ format saves all data in the 16 bit format. A version which saves
 all data in the 24 bit format was introduces by the company BioSemi.
-
-WWW: https://github.com/holgern/pyedflib

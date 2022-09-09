@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${SNAPSHOT}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Small LDAP implementation
+WWW=		https://www.fefe.de/tinyldap/
 
 LICENSE=	GPLv2
 

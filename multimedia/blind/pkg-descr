@@ -9,5 +9,3 @@ non-premultiplied alpha and without any transfer-function, with values stored
 in native doubles or optionally in native floats. These two configurations are
 the only options, but the container format is designed so this can be changed
 arbitrarily in the future.
-
-WWW: https://tools.suckless.org/blind/

@@ -1,4 +1,2 @@
 Test::Mock::Guard is mock test library using RAII.  This module is able
 to change method behavior by each scope.
-
-WWW: https://metacpan.org/release/Test-Mock-Guard

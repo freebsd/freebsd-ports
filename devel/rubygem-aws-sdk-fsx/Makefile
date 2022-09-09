@@ -1,10 +1,11 @@
 PORTNAME=	aws-sdk-fsx
-PORTVERSION=	1.57.0
+PORTVERSION=	1.58.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for Amazon FSx
+WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-fsx
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

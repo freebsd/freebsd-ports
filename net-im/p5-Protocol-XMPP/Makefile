@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Protocol-level support for XMPP interaction
+WWW=		https://metacpan.org/release/Protocol-XMPP
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
 		p5-XML-LibXML-SAX-ChunkParser>=0.00003:textproc/p5-XML-LibXML-SAX-ChunkParser

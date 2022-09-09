@@ -1,6 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.12-58
-PORTREVISION=	1
+DISTVERSION=	6.9.12-62
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
@@ -12,6 +11,7 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Image processing tools (legacy version)
+WWW=		https://legacy.imagemagick.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

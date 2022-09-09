@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to lookup CD-ROM dictionaries
+WWW=		https://www.nerimadors.or.jp/~jiro/cdrom2/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

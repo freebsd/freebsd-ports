@@ -8,13 +8,14 @@ DISTNAME=	${SIP_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
+WWW=		http://www.riverbankcomputing.co.uk/software/sip/
 
 LICENSE=		SIP GPLv2 GPLv3
 LICENSE_COMB=		multi
 LICENSE_NAME_SIP=	SIP License
 LICENSE_GROUPS_SIP=	FSF GPL OSI
 LICENSE_PERMS_SIP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE_SIP=	${WRKSRC}/LICENSE 
+LICENSE_FILE_SIP=	${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL2
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPL3
 

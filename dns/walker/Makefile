@@ -6,6 +6,7 @@ MASTER_SITES=	http://josefsson.org/walker/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover zone file information from servers that use DNSSEC
+WWW=		https://josefsson.org/walker/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

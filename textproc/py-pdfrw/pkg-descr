@@ -8,5 +8,3 @@ A Python library and utility that reads and writes PDF files:
 - Can be used either standalone, or in conjunction with reportlab
   to reuse existing PDFs in new ones
 - Permissively licensed
-
-WWW: https://github.com/pmaupin/pdfrw

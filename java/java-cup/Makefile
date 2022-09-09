@@ -7,6 +7,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-bin-${PORTVERSION:S|.|-|}
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	LALR parser generator in Java
+WWW=		http://www2.cs.tum.edu/projects/cup/
 
 LICENSE=	SMLNJ
 LICENSE_NAME=	Standard ML of New Jersey License

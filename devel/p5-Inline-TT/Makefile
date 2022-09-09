@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides inline support for template toolkit 2.x
+WWW=		https://metacpan.org/release/Inline-TT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/chaos/powerman/releases/download/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for doing remote power control
+WWW=		https://github.com/chaos/powerman
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

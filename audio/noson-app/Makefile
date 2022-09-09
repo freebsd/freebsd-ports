@@ -4,6 +4,7 @@ CATEGORIES=	audio net
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Fast and smart SONOS controller
+WWW=		https://janbar.github.io/noson-app/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

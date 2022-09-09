@@ -7,9 +7,9 @@ MASTER_SITES=	https://codeber.org/technomancy/leiningen/releases/download/${PORT
 DISTFILES=	${DISTVERSION}${EXTRACT_SUFX} ${PORTNAME}-${PORTVERSION}-standalone.jar:standalone
 EXTRACT_ONLY=	${DISTVERSION}${EXTRACT_SUFX}
 
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automate Clojure projects
+WWW=		https://codeberg.org/leiningen/leiningen
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING

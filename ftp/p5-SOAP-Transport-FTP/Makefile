@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	FTP Client support for SOAP::Lite
+WWW=		https://metacpan.org/release/SOAP-Transport-FTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

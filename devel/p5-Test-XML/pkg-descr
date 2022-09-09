@@ -3,5 +3,3 @@ These tools are compatible with the Test::More and Test::Simple
 modules.  At present, there is generic XML comparison support, as
 well as modules for dealing with XML::SAX, XML::Twig and XML::XPath
 handlers.
-
-WWW: https://metacpan.org/release/Test-XML

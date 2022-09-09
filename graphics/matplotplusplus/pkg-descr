@@ -6,5 +6,3 @@ algorithms, multiple coding styles, and supports generic backends.
 
 Matplot++ renders graphics using gnuplot and shows graphics in
 gnuplot standalone windows.
-
-WWW: https://alandefreitas.github.io/matplotplusplus/

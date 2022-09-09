@@ -8,6 +8,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

@@ -1,6 +1,8 @@
 PKGNAMESUFFIX=	-gtk
 PORTREVISION=	4
 
+WWW=		https://www.transmissionbt.com/
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	xdg-open:devel/xdg-utils

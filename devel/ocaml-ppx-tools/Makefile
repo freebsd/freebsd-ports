@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Tools for authors of ppx rewriters
+WWW=		https://github.com/ocaml-ppx/ppx_tools
 
 LICENSE=	MIT
 

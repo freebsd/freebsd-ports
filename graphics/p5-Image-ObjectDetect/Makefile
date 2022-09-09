@@ -1,12 +1,13 @@
 PORTNAME=	Image-ObjectDetect
 PORTVERSION=	0.12
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Detects objects from picture using opencv
+WWW=		https://metacpan.org/release/Image-ObjectDetect
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

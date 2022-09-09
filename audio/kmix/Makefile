@@ -4,12 +4,13 @@ CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sound mixer for KDE
+WWW=		https://www.kde.org/applications/multimedia/kmix/
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		emoticons globalaccel i18n iconthemes init itemmodels \
 		itemviews kcmutils kdelibs4support notifications package \
@@ -17,6 +18,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		ecm_build
 USE_QT=		core dbus gui widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 # we want the KF5 version of kmix
 CMAKE_ARGS=	-DKMIX_KF5_BUILD:BOOL=TRUE

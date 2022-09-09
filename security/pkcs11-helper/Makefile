@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-h
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Helper library for multiple PKCS\#11 providers
+WWW=		https://github.com/OpenSC/pkcs11-helper
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

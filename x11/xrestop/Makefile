@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
+WWW=		https://www.freedesktop.org/wiki/Software/xrestop/
 
 USES=		gmake pkgconfig ncurses xorg xorg-cat:app
 USE_XORG=	x11 xext xrender xt xres xorgproto

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Text::Xslate renderer for for Mojolicious
+WWW=		https://metacpan.org/pod/MojoX::Renderer::Xslate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

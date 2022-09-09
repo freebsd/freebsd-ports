@@ -11,5 +11,3 @@ And there is more to it:
 * Transparent transaction support
 * Dog-pile prevention mechanism
 * A couple of hacks to make django faster
-
-WWW: https://github.com/Suor/django-cacheops

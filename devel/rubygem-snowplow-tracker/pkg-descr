@@ -1,4 +1,2 @@
 A tracker that can collect event data from your
 Ruby applications, Ruby on Rails web applications and Ruby gems.
-
-WWW: https://github.com/snowplow/snowplow-ruby-tracker

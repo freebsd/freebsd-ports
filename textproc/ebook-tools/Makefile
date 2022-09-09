@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accesses and converts various ebook file formats
+WWW=		https://sourceforge.net/projects/ebook-tools/
 
 LICENSE=	MIT
 

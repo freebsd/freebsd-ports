@@ -7,6 +7,7 @@ DISTNAME=	SDL_net-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small sample cross-platform networking library
+WWW=		https://www.libsdl.org/projects/SDL_net/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING

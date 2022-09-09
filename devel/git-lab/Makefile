@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	GitLab management commands for git CLI
+WWW=		https://invent.kde.org/sdk/git-lab
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=2.1.8:devel/py-gitpython@${PY_FLAVOR} \

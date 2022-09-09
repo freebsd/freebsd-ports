@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast and simple mbox folder reader
+WWW=		https://metacpan.org/release/Mail-Mbox-MessageParser
 
 LICENSE=	GPLv2
 

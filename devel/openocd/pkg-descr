@@ -6,5 +6,3 @@ of hardware dongles: USB based, parallel port based, and other standalone boxes
 that run OpenOCD internally. It allows MIPS, ARM7, ARM9, XScale and Cortex
 based cores to be debugged via the GDB protocol. Flash writing is supported
 for external CFI compatible NOR flashes, NAND and several internal flashes.
-
-WWW: http://openocd.sf.net/

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for managing configuration files, written for wayfire
+WWW=		https://wayfire.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

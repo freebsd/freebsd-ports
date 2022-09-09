@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Freedesktop compliant menu library
+WWW=		https://www.xfce.org/
 
 # garcon's source code is licensed under GPLv2, while its
 # documentation is under GFDL 1.1.

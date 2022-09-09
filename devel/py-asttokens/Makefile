@@ -1,11 +1,13 @@
 PORTNAME=	asttokens
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Annotate AST trees with source code positions
+WWW=		https://pypi.org/project/asttokens/ \
+		https://github.com/gristlabs/asttokens
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

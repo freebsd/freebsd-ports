@@ -7,5 +7,3 @@ described in CPAN::Meta::Spec.
 CPAN::Meta provides a simple class to represent this distribution
 metadata (or distmeta), along with some helpful methods for
 interrogating that data.
-
-WWW: https://metacpan.org/release/CPAN-Meta

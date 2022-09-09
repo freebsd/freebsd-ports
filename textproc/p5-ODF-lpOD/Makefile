@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenDocument management interface
+WWW=		https://metacpan.org/release/ODF-lpOD
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTFILES=	BlenderManualIen.23.html.tar.gz BlenderManualIIen.23.html.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blender Documentation
+WWW=		https://docs.blender.org/
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

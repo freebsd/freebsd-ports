@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	cmangin@arobas.net
 COMMENT=	Turn-based strategy engine inspired by Panzer General
+WWW=		http://lgames.sourceforge.net/index.php?project=LGeneral
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

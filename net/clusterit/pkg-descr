@@ -2,5 +2,3 @@ This is a collection of clustering tools to turn your ordinary everyday pile
 of UNIX workstations into a speedy parallel beast. This facilitates managing
 a set of program executing in parallel with a very flexible authentication
 scheme.
-
-WWW: http://www.garbled.net/clusterit.html

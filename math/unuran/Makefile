@@ -6,6 +6,7 @@ MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal Non-Uniform RANdom number generators
+WWW=		http://statmath.wu-wien.ac.at/unuran/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

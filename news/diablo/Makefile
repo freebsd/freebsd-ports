@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-REL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive newsfeeding and newsreading software package
+WWW=		https://www.openusenet.org/diablo/
 
 LICENSE=	BSD3CLAUSE
 

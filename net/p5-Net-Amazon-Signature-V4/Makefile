@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for AWS signature V4, AWS4-HMAC-SHA256
+WWW=		https://metacpan.org/release/Net-Amazon-Signature-V4
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

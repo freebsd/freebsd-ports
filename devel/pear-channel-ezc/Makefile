@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		https://ezcomponents.org/
 
 PEAR_CHANNEL_HOST=	components.ez.no
 

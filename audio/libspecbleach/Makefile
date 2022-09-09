@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for audio noise reduction
+WWW=		https://github.com/lucianodato/libspecbleach
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

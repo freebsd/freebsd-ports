@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Wrapper script for Borg backup software
+WWW=		https://torsion.org/borgmatic/
 
 LICENSE=	GPLv3
 

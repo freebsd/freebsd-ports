@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for looks_like_number() perl API
+WWW=		https://metacpan.org/release/Scalar-Util-LooksLikeNumber
 
 USES=		perl5
 USE_PERL5=	configure

@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool for converting AHX sound modules to WAV
+WWW=		https://github.com/pete-gordon/hivelytracker
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

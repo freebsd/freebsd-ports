@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Hamlit (haml) generators for Rails 5
+WWW=		https://github.com/mfung/hamlit-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

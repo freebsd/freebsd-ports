@@ -1,10 +1,11 @@
 PORTNAME=	filtron
 PORTVERSION=	g20180218
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Filtering reverse HTTP proxy
+WWW=		https://github.com/asciimoo/filtron
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

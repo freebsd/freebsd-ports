@@ -6,6 +6,7 @@ MASTER_SITES=	http://hoshina.denpa.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic viewer for Leaf products
+WWW=		https://hoshina.denpa.org/lfview.html
 
 USES=		imake tar:tgz xorg
 USE_XORG=	x11 xext

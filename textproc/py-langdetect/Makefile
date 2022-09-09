@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Language detection library ported from Google\'s language-detection
+WWW=		https://github.com/Mimino666/langdetect
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

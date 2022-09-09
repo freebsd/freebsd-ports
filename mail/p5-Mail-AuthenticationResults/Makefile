@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object Oriented Authentication-Results Headers
+WWW=		https://metacpan.org/release/Mail-AuthenticationResults
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

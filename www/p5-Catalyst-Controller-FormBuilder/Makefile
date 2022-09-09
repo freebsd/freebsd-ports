@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst FormBuilder Base Controller
+WWW=		https://metacpan.org/release/Catalyst-Controller-FormBuilder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
+WWW=		https://abiword.github.io/enchant/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

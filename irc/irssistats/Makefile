@@ -5,6 +5,7 @@ MASTER_SITES=	http://royale.zerezo.com/irssistats/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate IRC statistics based on irssi logs
+WWW=		http://royale.zerezo.com/irssistats/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

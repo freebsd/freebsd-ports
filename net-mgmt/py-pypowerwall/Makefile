@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Python interface for Tesla Powerwall and solar power data
+WWW=		https://github.com/jasonacox/pypowerwall
 
 LICENSE=	MIT
 

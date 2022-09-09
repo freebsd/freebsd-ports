@@ -1,4 +1,2 @@
 File::Dir::Dumper - dump directory structures' meta-data in a consistent and
 machine-readable way.
-
-WWW: https://metacpan.org/release/File-Dir-Dumper

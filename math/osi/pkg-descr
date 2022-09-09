@@ -15,5 +15,3 @@ Solver        Derived Class
 * SYMPHONY    OsiSym
 * Vol         OsiVol
 * XPRESS-MP   OsiXpr
-
-WWW: https://projects.coin-or.org/Osi/

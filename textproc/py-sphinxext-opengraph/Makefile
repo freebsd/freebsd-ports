@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Sphinx extension to generate OpenGraph metadata
+WWW=		https://github.com/wpilibsuite/sphinxext-opengraph
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

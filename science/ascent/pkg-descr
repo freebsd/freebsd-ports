@@ -7,5 +7,3 @@ It supports:
 * Young effort, yet already includes most common visualization operations
 * Provides a simple infrastructure to integrate custom analysis
 * Provides C++, C, Python, and Fortran APIs
-
-WWW: https://ascent.readthedocs.io/en/latest/

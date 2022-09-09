@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Lexically scoped resource management
+WWW=		https://metacpan.org/release/Scope-Guard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

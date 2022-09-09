@@ -1,5 +1,3 @@
 This module implements the semantics for perl6-style variable binding,
 
 as well as subroutine call argument passing and binding, in Perl 5.
-
-WWW: https://metacpan.org/release/Data-Bind

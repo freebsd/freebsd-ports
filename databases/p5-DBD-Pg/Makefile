@@ -1,11 +1,12 @@
 PORTNAME=	DBD-Pg
-PORTVERSION=	3.15.1
+PORTVERSION=	3.16.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
+WWW=		https://metacpan.org/release/DBD-Pg
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

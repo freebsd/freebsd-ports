@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.litech.org/tayga/
 
 MAINTAINER=	melifaro@FreeBSD.org
 COMMENT=	Userland stateless NAT64 daemon
+WWW=		http://www.litech.org/tayga/
 
 LICENSE=	GPLv2
 

@@ -3,5 +3,3 @@ utilities to plot flow diagrams, visualising webs,... Support for
 the book "A practical guide to ecological modelling - using R as a
 simulation platform" by Karline Soetaert and Peter M.J. Herman
 (2009). Springer. Includes demo(flowchart), demo(plotmat), demo(plotweb)
-
-WWW: https://cran.r-project.org/web/packages/diagram/

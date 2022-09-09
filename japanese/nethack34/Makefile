@@ -11,6 +11,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Japanized NetHack
+WWW=		https://sourceforge.jp/projects/jnethack/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

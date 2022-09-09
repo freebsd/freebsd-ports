@@ -7,5 +7,3 @@ details).
 
 Immutable mappings based on HAMT have O(log N) performance for both set() and
 get() operations, which is essentially O(1) for relatively small mappings.
-
-WWW: https://github.com/MagicStack/immutables

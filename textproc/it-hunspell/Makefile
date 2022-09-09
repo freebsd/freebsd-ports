@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian hunspell dictionaries
+WWW=		https://extensions.openoffice.org/en/project/italian-dictionary-thesaurus-hyphenation-patterns
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of Integrated Templates API with template 'compilation' added
+WWW=		https://pear.php.net/package/HTML_Template_Sigma
 
 LICENSE=	PHP301
 

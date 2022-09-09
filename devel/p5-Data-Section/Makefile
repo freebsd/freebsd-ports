@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read multiple hunks of data out of your DATA section
+WWW=		https://metacpan.org/release/Data-Section
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

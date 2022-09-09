@@ -8,6 +8,7 @@ DISTNAME=	game-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple Tetris-like game
+WWW=		http://zevv.nl/play/code/game/
 
 LICENSE=	GPLv2+
 

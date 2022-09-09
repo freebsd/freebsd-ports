@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose messaging, notification and menuing program for X11
+WWW=		https://github.com/telser/nezd
 
 LICENSE=	MIT
 

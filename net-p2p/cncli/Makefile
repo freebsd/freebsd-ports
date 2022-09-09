@@ -6,6 +6,7 @@ CATEGORIES=		net-p2p
 
 MAINTAINER=		boris@zfs.ninja
 COMMENT=		A community-based cardano-node CLI tool
+WWW=		https://cardano-community.github.io/guild-operators/
 
 LICENSE=		APACHE20
 LICENSE_FILE=		${WRKSRC}/LICENSE

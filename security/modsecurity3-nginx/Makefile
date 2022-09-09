@@ -7,6 +7,7 @@ DISTFILES=	${_NGINX_DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Instruction detection and prevention engine / nginx Wrapper
+WWW=		https://github.com/SpiderLabs/ModSecurity-nginx
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

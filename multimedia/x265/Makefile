@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/get/${BB_TAG}.tar.gz?
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
+WWW=		https://www.x265.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC:H}/COPYING

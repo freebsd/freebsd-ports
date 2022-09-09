@@ -1,10 +1,11 @@
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.8
+DISTVERSION=	3.0.9
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 3.0+
+WWW=		https://www.snort.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Podish Parser for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Data
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

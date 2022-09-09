@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free FPS game featuring two opposing teams: humans and aliens
+WWW=		http://www.tremulous.net/
 
 LICENSE=	GPLv2
 

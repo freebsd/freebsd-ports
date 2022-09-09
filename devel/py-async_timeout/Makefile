@@ -7,6 +7,7 @@ DISTNAME=	async-timeout-${DISTVERSIONFULL}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Timeout context manager for asyncio programs
+WWW=		https://github.com/aio-libs/async-timeout
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

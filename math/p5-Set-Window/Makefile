@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage an interval on the integer line
+WWW=		https://metacpan.org/release/Set-Window
 
 USES=		perl5
 USE_PERL5=	configure

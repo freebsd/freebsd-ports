@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Interface to open and send raw frames to the network
+WWW=		https://metacpan.org/release/Net-Write
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic

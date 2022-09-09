@@ -4,5 +4,3 @@ specify data conversion routines written in Python. ZConfig's model is
 very different from the model support by the ConfigParser module
 found in Python's standard library, and is more suitable to
 configuration-intensive applications.
-
-WWW: https://pypi.org/project/ZConfig/

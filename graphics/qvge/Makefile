@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Qt Visual Graph Editor
+WWW=		https://github.com/ArsMasiuk/qvge
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Utility to help sysutils/pot to manage the internal network
+WWW=		https://github.com/pizzamig/potnet
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

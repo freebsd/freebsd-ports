@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tiling window manager
+WWW=		https://xmonad.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

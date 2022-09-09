@@ -1,11 +1,12 @@
 PORTNAME=	Apache-Solr
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	High level interface to the Solr server
+WWW=		https://metacpan.org/release/Apache-Solr
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

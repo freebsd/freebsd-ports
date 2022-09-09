@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gary@hayers.org
 COMMENT=	Client interface to NNTP (RFC977)
+WWW=		https://metacpan.org/release/NNTPClient
 
 USES=		perl5
 USE_PERL5=	configure

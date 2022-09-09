@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	57
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Version control system (as was in FreeBSD prior to removal)
+WWW=		https://www.gnu.org/software/rcs/
 
 LICENSE=	GPLv2
 

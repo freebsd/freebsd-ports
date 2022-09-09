@@ -17,5 +17,3 @@ command:
     setup-bash-complete
 
 To write a new Bash::Completion plugin, see Bash::Completion::Plugin.
-
-WWW: https://metacpan.org/release/Bash-Completion

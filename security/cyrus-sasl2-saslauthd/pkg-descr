@@ -5,6 +5,3 @@ The server fulfills two roles: it isolates all code requiring
 superuser privileges into a single process, and it can be used to
 provide proxy authentication services to clients that do not
 understand SASL based authentication.
-
-
-WWW: https://www.cyrusimap.org/sasl/

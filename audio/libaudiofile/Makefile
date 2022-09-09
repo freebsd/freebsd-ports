@@ -7,6 +7,7 @@ DISTNAME=	audiofile-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound library for SGI audio file
+WWW=		https://www.68k.org/~michael/audiofile/
 
 LICENSE=	LGPL21
 

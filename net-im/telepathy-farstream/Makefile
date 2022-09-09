@@ -6,6 +6,7 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Farstream Connection Manager for Telepathy Framework
+WWW=		https://telepathy.freedesktop.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

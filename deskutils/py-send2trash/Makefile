@@ -7,6 +7,7 @@ DISTNAME=	Send2Trash-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small package that sends files to the Trash
+WWW=		https://github.com/arsenetar/send2trash
 
 LICENSE=	BSD3CLAUSE
 

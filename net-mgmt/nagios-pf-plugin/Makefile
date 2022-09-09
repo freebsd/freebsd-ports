@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios plugin for checking PF
+WWW=		https://github.com/kian/nagios-pf-plugin/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kian

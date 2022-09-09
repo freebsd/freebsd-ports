@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Google Snappy (de)compressor
+WWW=		https://metacpan.org/release/Compress-Snappy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

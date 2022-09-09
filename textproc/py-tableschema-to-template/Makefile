@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate an Excel template with input validation from Frictionless Table Schema
+WWW=		https://github.com/hubmapconsortium/tableschema-to-template
 
 LICENSE=	MIT
 

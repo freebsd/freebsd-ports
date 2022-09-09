@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extend your attribute interfaces for Mouse
+WWW=		https://metacpan.org/release/MouseX-NativeTraits
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

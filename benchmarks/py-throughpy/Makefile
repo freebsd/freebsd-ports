@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	contato@kanazuchi.com
 COMMENT=	Python script to test throughput with iperf3
+WWW=		https://github.com/kanazux/throughpy
 
 LICENSE=	BSD2CLAUSE
 

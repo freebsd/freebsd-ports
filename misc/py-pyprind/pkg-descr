@@ -3,5 +3,3 @@ percentage indicator object that let you track the progress of a loop structure
 or other iterative computation. Typical applications include the processing of
 large data sets to provide an intuitive estimate at runtime about the progress
 of the computation.
-
-WWW: https://github.com/rasbt/pyprind

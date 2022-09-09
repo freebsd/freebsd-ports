@@ -18,5 +18,3 @@ like media players, video editors, streaming media broadcasters and
 so on. That said, very good media players can easily be built on
 top of GStreamer and we even include a simple yet functional
 mediaplayer with GStreamer called Gst-Player
-
-WWW: https://gstreamer.freedesktop.org/

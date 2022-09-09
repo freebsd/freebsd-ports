@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of handy utilities for numbers
+WWW=		https://metacpan.org/release/Number-Misc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

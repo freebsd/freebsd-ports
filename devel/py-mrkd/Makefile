@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Write man pages using Markdown, and convert them to Roff or HTML
+WWW=		https://github.com/refi64/mrkd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK Widget to Render MathML Documents
+WWW=		http://helm.cs.unibo.it/mml-widget/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

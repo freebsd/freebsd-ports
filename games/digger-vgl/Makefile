@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.digger.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD graphics console (VGL) version of the famous Digger game
+WWW=		https://www.digger.org/
 
 ONLY_FOR_ARCHS=	amd64 i386
 

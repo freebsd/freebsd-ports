@@ -1,5 +1,3 @@
 ADMS is a code generator that converts electrical compact device models
 specified in high-level description language into ready-to-compile C
 code for the API of spice simulators.
-
-WWW: https://github.com/Qucs/ADMS

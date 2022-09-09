@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.bennyp.org/research/simint/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Obara-Saika (OS) method of calculating electron repulsion integrals
+WWW=		https://www.bennyp.org/research/simint/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

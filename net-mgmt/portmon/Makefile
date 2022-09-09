@@ -8,6 +8,7 @@ MASTER_SITES=	http://voodoo.bawue.com/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that monitor network services
+WWW=		http://www.aboleo.net/software/portmon
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

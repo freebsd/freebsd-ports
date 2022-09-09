@@ -6,6 +6,7 @@ CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Elegantly record your screen
+WWW=		https://github.com/SeaDve/Kooha
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

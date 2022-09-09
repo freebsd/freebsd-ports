@@ -7,6 +7,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/294276875/ \
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
+WWW=		https://launchpad.net/qpdfview
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

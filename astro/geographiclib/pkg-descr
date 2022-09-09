@@ -4,5 +4,3 @@ coordinates, for gravity (e.g., EGM2008), geoid height, and geomagnetic
 field (e.g., WMM2020) calculations, and for solving geodesic problems.
 
 It is a suitable replacement for the core functionality provided by geotrans.
-
-WWW: https://geographiclib.sourceforge.io/

@@ -5,6 +5,7 @@ DISTNAME=	Graphite-RAD.E8-${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	KDE Mac OS X like iconset, most from rad-e8 design
+WWW=		http://www.kde-look.org/content/show.php?content=9502
 
 USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/Graphite-RAD.E8-${PORTVERSION}

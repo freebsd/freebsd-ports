@@ -6,6 +6,7 @@ MASTER_SITES=	SF/opensc/${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Middleware framework for smart card terminals
+WWW=		https://github.com/OpenSC/openct
 
 LICENSE=	LGPL21
 

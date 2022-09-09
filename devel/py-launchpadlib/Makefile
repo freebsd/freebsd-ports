@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Python API for Launchpad
+WWW=		https://help.launchpad.net/API/launchpadlib
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

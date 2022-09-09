@@ -6,6 +6,7 @@ DISTFILES=	# none
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Automatic 3-way merge of /etc updates
+WWW=		https://BSDforge.com/projects/sysutils/etcmerge/
 
 LICENSE=	NONE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Drop-in replacement for <STDIN> with handling of non-standard keys
+WWW=		https://metacpan.org/release/Term-RawInput
 
 LICENSE=	GPLv2
 

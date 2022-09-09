@@ -5,6 +5,7 @@ MASTER_SITES=	http://${PORTNAME}.sesse.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance video filters for the GPU
+WWW=		https://movit.sesse.net
 
 LICENSE=	GPLv2+
 

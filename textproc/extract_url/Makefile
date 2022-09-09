@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Perl script that extracts URLs from email in MIME or plain text format
+WWW=		https://www.memoryhole.net/~kyle/extract_url/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

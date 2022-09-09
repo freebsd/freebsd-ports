@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Redis DB management tool
+WWW=		https://redisdesktop.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

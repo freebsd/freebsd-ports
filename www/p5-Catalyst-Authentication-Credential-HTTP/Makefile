@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTTP plain and digest authentication plugin for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Authentication-Credential-HTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

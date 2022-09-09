@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Module::Build subclass with prepackaged tests
+WWW=		https://metacpan.org/release/Module-Build-Kwalitee
 
 BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML \
 		p5-Test-Pod>=0:devel/p5-Test-Pod \

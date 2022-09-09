@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple converter from OpenDocument Text to plain text
+WWW=		https://github.com/dstosberg/odt2txt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-2

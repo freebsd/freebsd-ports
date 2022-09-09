@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
+WWW=		https://github.com/proxytunnel/proxytunnel/
 
 LICENSE=	GPLv2+ BSD3CLAUSE MIT
 LICENSE_COMB=	multi

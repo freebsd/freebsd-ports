@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Composable, reusable tests with roles and Moo
+WWW=		https://metacpan.org/release/Test-Roo
 
 LICENSE=	APACHE20
 

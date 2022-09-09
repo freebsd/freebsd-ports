@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT 1.0 processor for Java
+WWW=		http://saxon.sourceforge.net/
 
 LICENSE=	MPL10
 

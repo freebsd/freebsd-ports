@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Asterisk app_amd for FreeSWITCH
+WWW=		https://github.com/seanbright/mod_amd
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

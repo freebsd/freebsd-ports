@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper modules for common bioinformatics tools
+WWW=		https://github.com/bioperl/bioperl-run
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

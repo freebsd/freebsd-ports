@@ -3,5 +3,3 @@ CyLP is a Python interface to COIN-OR's Linear and mixed-integer program solvers
 solution process of the solvers from within Python. For example, you may define
 cut generators, branch-and-bound strategies, and primal/dual Simplex pivot rules
 completely in Python.
-
-WWW: https://github.com/coin-or/CyLP

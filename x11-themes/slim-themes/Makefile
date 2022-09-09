@@ -8,6 +8,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/ports/slim-themes/:new_themes \
 
 MAINTAINER=	d.oriented@gmail.com
 COMMENT=	Theme pack for SLiM login app
+WWW=		https://contents.meetbsd.ir/apps/opensource/slim/
 
 RUN_DEPENDS=	slim>=0:x11/slim
 

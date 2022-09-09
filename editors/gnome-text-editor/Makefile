@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for the GNOME Desktop Environment
+WWW=		https://gitlab.gnome.org/GNOME/gnome-text-editor
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

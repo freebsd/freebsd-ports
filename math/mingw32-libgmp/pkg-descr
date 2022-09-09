@@ -5,5 +5,3 @@ available memory in the machine GMP runs on. GMP has a rich set of
 functions, and the functions have a regular interface.
 
 This port compiles libgmp using MinGW32.
-
-WWW: http://www.swox.com/gmp/

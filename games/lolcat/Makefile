@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	gbe@FreeBSD.org
 COMMENT=	High performance implementation of the famous lolcat
+WWW=		https://github.com/jaseg/lolcat
 
 LICENSE=		WTFPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

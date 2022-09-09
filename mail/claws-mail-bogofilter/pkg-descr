@@ -3,5 +3,3 @@ or LOCAL account using Bogofilter. It can optionally delete mail identified
 as spam or save it to a designated folder. Bogofilter is a pure Bayesian
 filter, therefore it has better speed performance than SpamAssassin but might
 catch less spam.
-
-WWW: https://www.claws-mail.org/plugin.php?plugin=bogofilter

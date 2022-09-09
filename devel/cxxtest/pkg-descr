@@ -8,5 +8,3 @@ Its advantages over existing alternatives are that it:
    file/console I/O, graphics libraries)
 
 This makes it extremely portable and usable.
-
-WWW: http://cxxtest.sourceforge.net/

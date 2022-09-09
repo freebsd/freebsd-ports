@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Support libraries for Pololu robots
+WWW=		https://www.pololu.com/docs/0J20
 
 LICENSE=	MIT
 

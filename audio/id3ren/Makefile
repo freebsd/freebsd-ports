@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Rename MP3 files, edit tags, search, etc
+WWW=		https://github.com/sebcode/id3ren
 
 LICENSE=	GPLv2
 

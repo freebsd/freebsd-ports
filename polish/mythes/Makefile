@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Polish thesaurus
+WWW=		http://synonimy.ux.pl/
 
 LICENSE=	LGPL21
 

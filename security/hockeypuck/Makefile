@@ -1,10 +1,11 @@
 PORTNAME=	hockeypuck
 DISTVERSION=	g20180725
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
-MAINTAINER=	michiel@vanbaak.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
+WWW=		https://hockeypuck.github.io
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

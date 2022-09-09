@@ -16,5 +16,3 @@ A session is a collection of all processes that originate from a single
 common ancestor and retain knowledge of a secret. As an implementation
 detail, this secret may be stored in the process environment by the
 login manager under the name XDG_SESSION_COOKIE.
-
-WWW: https://github.com/ConsoleKit2/ConsoleKit2

@@ -8,6 +8,7 @@ DIST_SUBDIR=	jabber
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::Jabber provides Perl Developer access to the Jabber protocol
+WWW=		https://www.jabber.org/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL

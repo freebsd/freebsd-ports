@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Recursive descent parsing library based on functional combinators
+WWW=		https://funcparserlib.pirx.ru/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Computer Music Toolkit - a collection of LADSPA plugins
+WWW=		https://www.ladspa.org/cmt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa

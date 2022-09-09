@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple and dumb file system watcher
+WWW=		https://metacpan.org/release/Filesys-Notify-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

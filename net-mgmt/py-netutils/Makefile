@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Common helper functions useful in network automation
+WWW=		https://github.com/networktocode/netutils
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

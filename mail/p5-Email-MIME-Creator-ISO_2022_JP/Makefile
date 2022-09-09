@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of Email::MIME mixin to create an iso-2022-jp mail
+WWW=		https://metacpan.org/release/Email-MIME-Creator-ISO_2022_JP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

@@ -4,6 +4,7 @@ CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Wayland Server Components built on KDE Frameworks
+WWW=		https://github.com/kde/plasma-wayland-protocols
 
 LICENSE=	LGPL21
 

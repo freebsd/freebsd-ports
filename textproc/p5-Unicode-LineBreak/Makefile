@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 # blanket update approval granted.
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Unicode-LineBreak package
+WWW=		https://metacpan.org/release/Unicode-LineBreak
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	voidanix@420blaze.it
 COMMENT=	Monospaced bitmap font forked from Tamsyn
+WWW=		https://github.com/sunaku/tamzen-font
 
 LICENSE=	TAMZEN
 LICENSE_NAME=	Tamzen License

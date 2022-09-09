@@ -1,5 +1,6 @@
 PKGNAMESUFFIX?=	-${OSSEC_TYPE}
 COMMENT?=	Security tool to monitor and check logs and intrusions - local (standalone) installation
+WWW=		https://ossec.github.io
 OSSEC_TYPE?=	local
 
 .include "${.CURDIR}/../ossec-hids/version.mk"

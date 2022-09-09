@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML to wiki markup converter
+WWW=		https://metacpan.org/release/HTML-WikiConverter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customizable, extensible automatic printer filter
+WWW=		https://www.pell.portland.or.us/~orc/Code/magicfilter/
 
 USES=		ghostscript
 

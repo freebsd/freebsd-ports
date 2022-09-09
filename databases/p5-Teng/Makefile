@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for simple DBI wrapper/ORMapper
+WWW=		https://metacpan.org/release/Teng
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

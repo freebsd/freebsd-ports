@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for IP Range Comparisons
+WWW=		https://metacpan.org/release/Net-IP-RangeCompare
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

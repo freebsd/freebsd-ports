@@ -4,5 +4,3 @@ high compatibility with existing spatial packages, transformers
 construct new geometries from existing geometries, predicates provide
 a means to select geometries based on spatial relationships, and
 accessors extract information about geometries.
-
-WWW: https://cran.r-project.org/web/packages/s2/

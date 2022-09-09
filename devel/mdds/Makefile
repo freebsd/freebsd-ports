@@ -5,6 +5,7 @@ MASTER_SITES=	https://kohei.us/files/mdds/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Multi-dimensional data index algorithm
+WWW=		https://gitlab.com/mdds/mdds
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

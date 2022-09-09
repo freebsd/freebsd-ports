@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easing the creation of REST API services in Python
+WWW=		https://pypi.org/project/txrestapi/
 
 LICENSE=	MIT
 

@@ -5,5 +5,3 @@ with rigorous security guarantees.
 
 This package provides a daemon program to run the Cardano node and a CLI
 management tool.
-
-WWW: https://cardano.org/

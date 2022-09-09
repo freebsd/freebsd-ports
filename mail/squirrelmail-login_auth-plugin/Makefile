@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.0
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Automatically log in user based on HTTP authentication
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=34
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 

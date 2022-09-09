@@ -1,10 +1,11 @@
 PORTNAME=	pgroonga
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
+WWW=		https://pgroonga.github.io/
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYING

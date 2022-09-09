@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
+WWW=		https://gnocl.org/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

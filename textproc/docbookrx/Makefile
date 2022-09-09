@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	DocBook to AsciiDoc converter
+WWW=		https://github.com/asciidoctor/docbookrx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
