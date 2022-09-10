@@ -15,6 +15,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	header
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
