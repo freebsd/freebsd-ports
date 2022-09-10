@@ -15,7 +15,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITHUB=	yes
 
-#NO_ARCH=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*.rst
 
