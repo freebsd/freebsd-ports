@@ -1,5 +1,5 @@
 PORTNAME=	libssh
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh.org/files/${PORTVERSION:R}/
 
