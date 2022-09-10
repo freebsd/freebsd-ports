@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
