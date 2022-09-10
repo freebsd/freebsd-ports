@@ -2,9 +2,11 @@ PORTNAME=	opensonic
 PORTVERSION=	0.1.4
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	SF/opensnc/Open%20Sonic/${PORTVERSION}
+MASTER_SITES=	SF/opensnc/Open%20Sonic/${PORTVERSION} \
+		LOCAL/tobik:loggcompat
 DISTNAME=	opensnc-src-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		loggcompat-4.4.2${EXTRACT_SUFX}:loggcompat
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Game based on the "Sonic the Hedgehog" universe
@@ -24,13 +26,11 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 		false
 
 USES=		cmake
-USE_GITHUB=	nodefault
-GH_TUPLE=	t6:loggcompat:4.4.2:loggcompat
 
 CONFIGURE_ENV=	_ALLEGRO_LIBS="`allegro-config --libs`" \
 		_ALLEGRO_VERSION="`allegro-config --version`"
 
-CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC_loggcompat}
+CFLAGS+=	-I${LOCALBASE}/include -I${WRKDIR}/loggcompat-4.4.2
 
 SUB_FILES=	opensonic
 
