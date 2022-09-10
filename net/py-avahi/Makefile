@@ -27,6 +27,8 @@ USES=		python:3.5+
 USE_PYTHON=	flavors py3kplist
 MANPAGES=	avahi-bookmarks.1
 
+NO_ARCH=	yes
+
 # See https://github.com/lathiat/avahi/issues/277
 post-extract:
 	${CP} ${FILESDIR}/build-db ${WRKSRC}/service-type-database
