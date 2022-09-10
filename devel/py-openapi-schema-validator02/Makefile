@@ -19,6 +19,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^0\.2\.
+
 OPTIONS_DEFINE=	ISODATE RFC3339_VALIDATOR STRICT_RFC3339
 ISODATE_DESC=		Datetime validator via isodate
 RFC3339_VALIDATOR_DESC=	Datetime validator via rfc3339-validator
