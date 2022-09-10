@@ -1,6 +1,5 @@
 PORTNAME=	psutil
-PORTVERSION=	5.9.1
-PORTREVISION=	2
+PORTVERSION=	5.9.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-LDFLAGS+=	-lutil # fix of: site-packages/psutil/_psutil_bsd.cpython-39.so: Undefined symbol "kinfo_getfile"
+LDFLAGS+=	-lutil
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}psutil121
 
