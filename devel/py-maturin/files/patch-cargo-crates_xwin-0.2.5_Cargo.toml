@@ -1,0 +1,15 @@
+Avoid using vendored OpenSSL.
+
+Dependency chain:
+
+xwin -> native-tls -> openssl-sys -> openssl-src
+
+--- cargo-crates/xwin-0.2.5/Cargo.toml.orig	2022-09-08 15:14:53 UTC
++++ cargo-crates/xwin-0.2.5/Cargo.toml
+@@ -132,6 +132,5 @@ native-tls = [
+ default = ["rustls-tls"]
+ native-tls = [
+     "ureq/native-tls",
+-    "native-tls-crate/vendored",
+ ]
+ rustls-tls = ["ureq/tls"]
