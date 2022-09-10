@@ -3,7 +3,7 @@ DISTVERSION=	0.8.0
 PORTREVISION=	2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Shell script analysis tool
 WWW=		https://www.shellcheck.net/
 
