@@ -49,6 +49,7 @@ setup(
         'hatchling.cli',
         'hatchling.cli.build',
         'hatchling.cli.dep',
+        'hatchling.cli.metadata',
         'hatchling.cli.version',
         'hatchling.dep',
         'hatchling.licenses',
