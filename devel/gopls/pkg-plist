@@ -11,6 +11,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/emacs.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/inlayHints.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/semantictokens.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/settings.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/subl.md
