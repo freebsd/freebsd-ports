@@ -1,6 +1,6 @@
---- cmake/build_helpers.cmake.orig	2022-08-14 12:54:20 UTC
+--- cmake/build_helpers.cmake.orig	2022-09-03 22:05:27 UTC
 +++ cmake/build_helpers.cmake
-@@ -367,17 +367,9 @@ function(downloadImHexPatternsFiles dest)
+@@ -374,17 +374,9 @@ function(downloadImHexPatternsFiles dest)
              set(PATTERNS_BRANCH ImHex-v${IMHEX_VERSION})
          endif ()
  
@@ -19,7 +19,7 @@
          endforeach ()
      endif ()
  
-@@ -385,7 +377,6 @@ endfunction()
+@@ -392,7 +384,6 @@ endfunction()
  
  macro(setupCompilerWarnings target)
      set(IMHEX_COMMON_FLAGS "-Wall -Wextra -Werror")

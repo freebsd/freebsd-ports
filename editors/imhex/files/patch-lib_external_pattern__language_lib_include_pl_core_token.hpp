@@ -1,6 +1,6 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-08-20 15:51:46 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-09-04 13:52:32 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
-@@ -153,9 +153,9 @@ namespace pl::core {
+@@ -152,9 +152,9 @@ namespace pl::core {
  
          using Literal    = std::variant<char, bool, u128, i128, double, std::string, ptrn::Pattern *>;
          using ValueTypes = std::variant<Keyword, Identifier, Operator, Literal, ValueType, Separator>;
@@ -12,7 +12,7 @@
          [[nodiscard]] constexpr static inline bool isInteger(const ValueType &type) {
              return isUnsigned(type) || isSigned(type);
          }
-@@ -431,128 +431,128 @@ namespace pl::core {
+@@ -198,128 +198,128 @@ namespace pl::core {
  
      namespace tkn {
  

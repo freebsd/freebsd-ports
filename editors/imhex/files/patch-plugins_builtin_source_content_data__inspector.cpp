@@ -1,7 +1,7 @@
---- plugins/builtin/source/content/data_inspector.cpp.orig	2022-08-05 19:30:19 UTC
+--- plugins/builtin/source/content/data_inspector.cpp.orig	2022-09-03 22:05:27 UTC
 +++ plugins/builtin/source/content/data_inspector.cpp
-@@ -102,7 +102,7 @@ namespace hex::plugin::builtin {
-         auto number   = hex::signExtend(Size * 8, hex::changeEndianess(value, Size, endian));
+@@ -105,7 +105,7 @@ namespace hex::plugin::builtin {
+ 
          bool negative = number < 0;
  
 -        return hex::format(format, negative ? "-" : "", std::abs(number));
@@ -9,7 +9,7 @@
      }
  
      template<std::integral T, size_t Size = sizeof(T)>
-@@ -282,7 +282,7 @@ namespace hex::plugin::builtin {
+@@ -285,7 +285,7 @@ namespace hex::plugin::builtin {
  
                  auto number   = hex::crypt::decodeSleb128(buffer);
                  bool negative = number < 0;
