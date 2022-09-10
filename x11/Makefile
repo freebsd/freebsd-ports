@@ -483,6 +483,7 @@
     SUBDIR += xfce4-terminal
     SUBDIR += xfce4-verve-plugin
     SUBDIR += xfce4-whiskermenu-plugin
+    SUBDIR += xfce4-windowck-plugin
     SUBDIR += xfd
     SUBDIR += xfishtank
     SUBDIR += xforward
