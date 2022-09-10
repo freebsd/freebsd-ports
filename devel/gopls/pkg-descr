@@ -6,5 +6,3 @@ You should not need to interact with gopls directly---it will be
 automatically integrated into your editor.  The specific features and
 settings vary slightly by editor, so we recommend that you proceed to
 the documentation for your editor below.
-
-WWW: https://pkg.go.dev/golang.org/x/tools/gopls
