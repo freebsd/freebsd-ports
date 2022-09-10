@@ -98,7 +98,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python:3.7+ qca qt:5 \
+		fortran gl gmake gnome pgsql pyqt:5 python:3.8+ qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
