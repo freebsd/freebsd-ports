@@ -1,13 +1,13 @@
 PORTNAME=	runit
 DISTVERSION=	2.1.3.7
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://codeberg.org/attachments/0f74bee0-05ce-40b4-9cdf-0f9f5a37f90b?dummy=/
 PKGNAMESUFFIX=	-faster
 DISTNAME=	freebsd-runit-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Runit based init replacement for ${OPSYS}
-WWW=		http://smarden.org/runit/
+WWW=		https://codeberg.org/tobik/runit-faster
 
 LICENSE=	BSD3CLAUSE CC0-1.0
 LICENSE_COMB=	multi
