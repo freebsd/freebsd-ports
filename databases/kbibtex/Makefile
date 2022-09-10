@@ -6,7 +6,7 @@ MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bibliography editor for KDE
-WWW=		http://home.gna.org/kbibtex/
+WWW=		https://userbase.kde.org/KBibTeX
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpoppler.so:graphics/poppler \
