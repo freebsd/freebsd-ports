@@ -21,18 +21,9 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.11.2<5.0:misc/py-tqdm@${PY_FLAVOR} \
 
-USES=		python:3.8+
+USES=		magick:run python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-OPTIONS_SINGLE=	IMAGEMAGICK
-OPTIONS_SINGLE_IMAGEMAGICK=	IMAGEMAGICK6 IMAGEMAGICK7
-OPTIONS_DEFAULT=IMAGEMAGICK7
-IMAGEMAGICK6_DESC=	Use ImageMagick 6.x as backend
-IMAGEMAGICK7_DESC=	Use ImageMagick 7.x as backend
-
-IMAGEMAGICK6_USES=	magick:6,run
-IMAGEMAGICK7_USES=	magick:7,run
 
 .include <bsd.port.mk>
