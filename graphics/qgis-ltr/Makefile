@@ -1,7 +1,7 @@
 # Created by: Laurent Courty
 
 PORTNAME=	qgis
-DISTVERSION=	3.22.10
+DISTVERSION=	3.22.11
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
