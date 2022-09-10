@@ -20,6 +20,8 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	palletsprojects
 
+PORTSCOUT=	limit:^2\.1\.
+
 OPTIONS_DEFINE=	EXAMPLES WATCHDOG
 WATCHDOG_DESC=	Monitor filesystem events
 
