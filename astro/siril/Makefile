@@ -1,5 +1,5 @@
 PORTNAME=	siril
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
