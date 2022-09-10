@@ -1,5 +1,5 @@
 PORTNAME=	xdaliclock
-DISTVERSION=	2.46
+DISTVERSION=	2.47
 CATEGORIES=	x11-clocks
 MASTER_SITES=	https://www.jwz.org/${PORTNAME}/
 
