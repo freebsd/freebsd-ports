@@ -12,4 +12,4 @@ configuration files and services to replace init(8) and rc(8) with
 runit for initializing your system.  Heavily inspired by Void Linux'
 init scripts.
 
-WWW: http://smarden.org/runit/
+WWW: https://codeberg.org/tobik/runit-faster

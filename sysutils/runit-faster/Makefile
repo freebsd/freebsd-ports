@@ -3,7 +3,7 @@
 PORTNAME=	runit
 DISTVERSION=	2.1.3.7
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://codeberg.org/attachments/0f74bee0-05ce-40b4-9cdf-0f9f5a37f90b?dummy=/
 PKGNAMESUFFIX=	-faster
 DISTNAME=	freebsd-runit-${DISTVERSION}
 
