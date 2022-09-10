@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-designerplugin-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Designer plugin for Phonon
-WWW=		http://phonon.kde.org
+WWW=		https://userbase.kde.org/Phonon
 
 LICENSE=	LGPL21
 

@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multimedia framework
-WWW=		https://phonon.kde.org/
+WWW=		https://userbase.kde.org/Phonon
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

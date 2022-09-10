@@ -8,7 +8,7 @@ DIST_SUBDIR=	KDE/phonon
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VLC backend for Phonon
-WWW=		https://invent.kde.org/libraries/phonon-vlc
+WWW=		https://userbase.kde.org/Phonon
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

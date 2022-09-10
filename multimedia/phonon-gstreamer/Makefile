@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-${PHONON_PLUGIN}-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GStreamer backend for Phonon
-WWW=		http://phonon.kde.org
+WWW=		https://userbase.kde.org/Phonon
 
 LICENSE=	LGPL21
 
