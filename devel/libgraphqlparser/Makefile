@@ -2,7 +2,6 @@ PORTNAME=	libgraphqlparser
 PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-#MASTER_SITES=
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GraphQL query parser
