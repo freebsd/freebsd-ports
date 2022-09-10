@@ -1,5 +1,5 @@
 PORTNAME=	openapi-spec-validator
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/p1c2u/openapi-spec-validator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5.8.0<6.0.0:devel/py-importlib-resources@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5.4.0<6.0.0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0.0<5.0.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema-spec>=0.1.1<0.2.0:devel/py-jsonschema-spec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=1.7.1<2.0.0:devel/py-lazy-object-proxy@${PY_FLAVOR} \
