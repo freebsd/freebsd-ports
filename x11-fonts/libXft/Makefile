@@ -1,6 +1,10 @@
 PORTNAME=	libXft
 DISTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
+
+PATCH_SITES=	https://gitlab.freedesktop.org/xorg/lib/libxft/-/commit/
+PATCHFILES=	95284856783b824a714b7506762f4adce3bb17ce.diff:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Client-sided font API for X applications
