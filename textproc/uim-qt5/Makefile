@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Qt5 modules of uim input method
-WWW=		https://github.com/uim/uim
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libuim.so:textproc/uim

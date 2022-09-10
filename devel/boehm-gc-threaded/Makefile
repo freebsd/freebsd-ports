@@ -1,5 +1,4 @@
 COMMENT=	Garbage collection and memory leak detection for C and C++ with threading support
-WWW=		https://www.hboehm.info/gc/
 
 MASTERDIR=	${.CURDIR}/../boehm-gc
 DESCR=		${.CURDIR}/pkg-descr

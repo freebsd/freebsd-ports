@@ -1,7 +1,6 @@
 PORTNAME=	qtel
 
 COMMENT=	Qtel Echolink client
-WWW=		https://www.svxlink.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

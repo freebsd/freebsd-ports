@@ -1,7 +1,6 @@
 PORTNAME=	qwdtools
 CATEGORIES=	games converters
 COMMENT=	Convert QuakeWorld demos from QWD format to MVD format
-WWW=		https://github.com/deurk/mvdsv
 DESCR=		${.CURDIR}/pkg-descr
 PKGMESSAGE=	/nonexistent
 

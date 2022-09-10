@@ -3,8 +3,6 @@ PORTVERSION=		${SNAPSHOT}
 MASTER_SITE_SUBDIR=	inn/snapshots
 DISTNAME=		inn-${BRANCH}-${SNAPSHOT}
 
-WWW=		https://www.eyrie.org/~eagle/software/inn/
-
 BRANCH=		2.8
 SNAPSHOT=	20220812
 

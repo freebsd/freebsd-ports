@@ -4,7 +4,6 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Qt 5 bindings to the Avahi mDNS system
-WWW=		https://www.avahi.org/
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app
 

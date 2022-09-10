@@ -3,7 +3,6 @@ PORTREVISION=	1
 PKGNAMESUFFIX=	19-traymonitor
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
-WWW=		https://www.bareos.org/
 
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 		libbareos.so:sysutils/bareos19-client

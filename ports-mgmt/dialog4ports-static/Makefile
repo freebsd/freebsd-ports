@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-static
 
 COMMENT=	Console Interface to configure ports (static version for chroots)
-WWW=		https://bitbucket.org/m1cro/d4p/
 
 MASTERDIR=	${.CURDIR}/../dialog4ports
 DESCR=		${.CURDIR}/pkg-descr

@@ -4,7 +4,6 @@ PKGNAMESUFFIX=	-sharp
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Avahi service discovery
-WWW=		https://www.avahi.org/
 
 LIB_DEPENDS=	libavahi-core.so:net/avahi-app
 

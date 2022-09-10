@@ -7,7 +7,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Dictionary for C/Migemo Japanese incremental search tool
-WWW=		https://www.kaoriya.net/software/cmigemo
 
 LICENSE=	GPLv2
 

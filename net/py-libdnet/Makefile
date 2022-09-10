@@ -3,7 +3,6 @@ CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python module for libdnet
-WWW=		https://github.com/5u623l20/libdnet/
 
 LIB_DEPENDS=	libdnet.so:net/libdnet
 

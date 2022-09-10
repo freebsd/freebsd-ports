@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-gst1
 
 COMMENT=	GStreamer 1 plugin from libnice
-WWW=		https://nice.freedesktop.org/
 
 LIB_DEPENDS=	libnice.so:net-im/libnice
 

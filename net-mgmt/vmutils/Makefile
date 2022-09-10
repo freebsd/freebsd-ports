@@ -1,7 +1,6 @@
 PORTNAME=	vmutils
 
 COMMENT=	Ancillary utilities and agent for VictoriaMetrics
-WWW=		https://victoriametrics.github.io/
 
 USE_RC_SUBR=	vmagent
 

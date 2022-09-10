@@ -6,7 +6,6 @@ PKGNAMESUFFIX=	-anthy
 .endif
 
 COMMENT=	Uim plugin using Anthy input method
-WWW=		https://github.com/uim/uim
 
 .if !defined(WITHOUT_X11)
 USE_GNOME=	cairo gdkpixbuf2 gtk30

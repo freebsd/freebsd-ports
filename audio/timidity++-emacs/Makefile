@@ -2,7 +2,6 @@ PKGNAMESUFFIX=	-emacs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs interface for TiMidity++
-WWW=		http://timidity.sourceforge.net/
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
