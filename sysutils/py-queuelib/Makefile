@@ -18,6 +18,8 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 TEST_TARGET=	test
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP}
 
