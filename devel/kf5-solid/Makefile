@@ -4,7 +4,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 hardware integration and detection
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/solid/html/index.html
 
 RUN_DEPENDS=	bsdisks:sysutils/bsdisks
 

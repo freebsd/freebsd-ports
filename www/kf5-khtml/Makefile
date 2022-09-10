@@ -5,7 +5,6 @@ CATEGORIES=	www kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 KTHML rendering engine
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/khtml/html/index.html
 
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png

@@ -5,7 +5,6 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 plugin based UI runtime used to write user interfaces
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/plasma-framework/html/index.html
 
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		egl gl

@@ -5,7 +5,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 addons to QtDBus
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kdbusaddons/html/index.html
 
 LICENSE=	LGPL21+
 

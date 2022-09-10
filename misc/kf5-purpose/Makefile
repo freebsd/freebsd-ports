@@ -5,7 +5,6 @@ CATEGORIES=	misc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Offers available actions for a specific purpose
-WWW=		https://api.kde.org/frameworks/purpose/html/index.html
 
 LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libkaccounts.so:net-im/kaccounts-integration

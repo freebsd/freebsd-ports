@@ -4,7 +4,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 advanced internationalization framework
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/index.html
 
 USES=		cmake compiler:c++11-lib gettext-runtime \
 		gettext-tools:build,run kde:5 qt:5 tar:xz

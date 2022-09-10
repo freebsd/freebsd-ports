@@ -5,7 +5,6 @@ CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 addons to QtGui
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kguiaddons/html/index.html
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 

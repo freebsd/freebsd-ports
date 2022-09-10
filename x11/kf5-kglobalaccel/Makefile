@@ -5,7 +5,6 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library to add support for global workspace shortcuts
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kglobalaccel/html/index.html
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 

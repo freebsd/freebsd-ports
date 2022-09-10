@@ -4,7 +4,6 @@ CATEGORIES=	archivers kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library that provides classes for handling archive formats
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/karchive/html/index.html
 
 # Sources say LGPL20, KDE policy says LGPL21+, license file is LGPL21
 LICENSE=	LGPL20

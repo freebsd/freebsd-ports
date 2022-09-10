@@ -5,7 +5,6 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 porting aid from KDELibs4
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kdelibs4support/html/index.html
 
 BUILD_DEPENDS=	p5-URI>=0:net/p5-URI
 

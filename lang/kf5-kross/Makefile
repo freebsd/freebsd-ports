@@ -5,7 +5,6 @@ CATEGORIES=	lang kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 multi-language application scripting
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kross/html/index.html
 
 USES=		cmake compiler:c++11-lib gettext gl kde:5 qt:5 tar:xz xorg
 USE_GL=		gl

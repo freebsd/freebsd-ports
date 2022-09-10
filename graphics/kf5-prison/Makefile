@@ -4,7 +4,6 @@ CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	API to produce barcodes
-WWW=		https://api.kde.org/frameworks/prison/html/index.html
 
 LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
 		libqrencode.so:graphics/libqrencode \

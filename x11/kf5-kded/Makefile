@@ -4,7 +4,6 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 extensible daemon for providing system level services
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kded/html/index.html
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons crash dbusaddons service \

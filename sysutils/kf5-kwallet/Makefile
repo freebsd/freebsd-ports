@@ -8,7 +8,6 @@ PATCHFILES=	ac77d25dcf9eb5832ebdf9301041682547d2b4cf.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 secure and unified container for user passwords
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kwallet/html/index.html
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \

@@ -5,7 +5,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 widgets for configuration dialogs
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kconfigwidgets/html/index.html
 
 # Sources say LGPL20+, KDE policy says LGPL21+, license file is LGPL21
 LICENSE=	LGPL21+

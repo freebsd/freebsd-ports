@@ -5,7 +5,6 @@ CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt QuickControl2 style for KDE
-WWW=		https://www.kde.org
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons iconthemes \

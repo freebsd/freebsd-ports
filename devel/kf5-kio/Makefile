@@ -5,7 +5,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 resource and network access abstraction
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kio/html/index.html
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext gnome kde:5 cpe qt:5 ssl tar:xz xorg

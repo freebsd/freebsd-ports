@@ -4,7 +4,6 @@ CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Open Collaboration Services API library KDE5 version
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/attica/html/index.html
 
 # The sources are LGPL21 or LGPL3 or later-version-approved-by-KDE,
 # so use the OR of existing license versions. COPYING is LGPL21.

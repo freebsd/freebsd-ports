@@ -4,7 +4,6 @@ CATEGORIES=	textproc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for string manipulation
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kcodecs/html/index.html
 
 LICENSE=	LGPL21
 

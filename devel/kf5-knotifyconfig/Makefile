@@ -5,7 +5,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 configuration system for KNotify
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/knotifyconfig/html/index.html
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 

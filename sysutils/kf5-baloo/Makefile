@@ -4,7 +4,6 @@ CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 Framework for searching and managing user metadata
-WWW=		https://projects.kde.org/projects/kde/kdelibs/baloo
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb \
 		libinotify.so:devel/libinotify

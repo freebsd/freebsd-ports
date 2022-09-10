@@ -5,7 +5,6 @@ CATEGORIES=	textproc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 plugin-based spell checking library
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/sonnet/html/index.html
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libhunspell-1.7.so:textproc/hunspell

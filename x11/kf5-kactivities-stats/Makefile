@@ -5,7 +5,6 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 statistics for activities
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kactivities/html/index.html
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 

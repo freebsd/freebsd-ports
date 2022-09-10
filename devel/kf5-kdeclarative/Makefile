@@ -5,7 +5,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library providing integration of QML and KDE Frameworks
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kdeclarative/html/index.html
 
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
 
