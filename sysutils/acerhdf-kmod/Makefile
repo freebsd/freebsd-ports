@@ -1,11 +1,11 @@
 PORTNAME=	acerhdf-kmod
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	sysutils
+MASTER_SITES=	https://codeberg.org/attachments/c87b1205-eb13-4500-8066-254e7237277b?dummy=/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Acer Aspire One fan control
-WWW=		https://github.com/t6/kmod-acerhdf
+WWW=		https://codeberg.org/tobik/acerhdf-kmod
 
 LICENSE=	GPLv2
 
@@ -13,9 +13,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	specific to one machine
 
 USES=		kmod uidfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	t6
-GH_PROJECT=	kmod-acerhdf
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/acerhdf.4 ${STAGEDIR}${PREFIX}/man/man4
