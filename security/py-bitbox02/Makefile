@@ -21,4 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}base58>=2.0.0:security/py-base58@${PY_FLAVOR
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
