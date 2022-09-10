@@ -1,7 +1,9 @@
 PORTNAME=	quark
 DISTVERSION=	g20210222
 CATEGORIES=	www
+MASTER_SITES=	LOCAL/tobik
 PKGNAMESUFFIX=	-server
+DISTNAME=	quark-68b4f733b2755762e43df90f73db5a6ec8d14104
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and simple HTTP GET/HEAD-only web server for static content
@@ -9,10 +11,6 @@ WWW=		https://tools.suckless.org/quark/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	t6 # mirror of http://git.suckless.org/quark/
-GH_TAGNAME=	68b4f733b2755762e43df90f73db5a6ec8d14104
 
 CONFLICTS_INSTALL=	quark
 
