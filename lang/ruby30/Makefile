@@ -161,13 +161,13 @@ pre-install-RDOC-on:
 post-install:
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 #
-# Link just installed "ruby" to "ruby27", etc.
+# Link just installed "ruby" to "ruby30", etc.
 #
 . for FILE in ${INSTALLED_SCRIPTS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 #
-# Link "ruby.1.gz" to "ruby27.1.gz", etc.
+# Link "ruby.1.gz" to "ruby30.1.gz", etc.
 #
 . for FILE in ${INSTALLED_MANUALS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}.1.gz
