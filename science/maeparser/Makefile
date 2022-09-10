@@ -1,7 +1,6 @@
 PORTNAME=	maeparser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.4
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	schrodinger
 USE_LDCONFIG=	yes
