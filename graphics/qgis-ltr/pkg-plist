@@ -5625,6 +5625,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/spatialite.db
 %%DATADIR%%/resources/srs.db
 %%DATADIR%%/resources/symbology-style.xml
+%%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-down-disabled.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-down.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/arrow-up.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/caret-down.svg
@@ -5647,6 +5648,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/themes/Blend of Gray/qscintilla.ini
 %%DATADIR%%/resources/themes/Blend of Gray/style.qss
 %%DATADIR%%/resources/themes/Blend of Gray/variables.qss
+%%DATADIR%%/resources/themes/Night Mapping/icons/arrow-down-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/arrow-down.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/arrow-up.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/caret-down.svg
