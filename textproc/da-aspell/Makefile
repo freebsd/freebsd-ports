@@ -1,12 +1,11 @@
 PORTNAME=	${DICT}-aspell
-SPELLVERSION=	5-da-1.4.42-1
-PORTREVISION=	1
+SPELLVERSION=	6-da-1.6.36-11-0
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Danish dictionary
-WWW=		http://da.speling.org/
+WWW=		http://aspell.net/
 
 DICT=	 	da
 
