@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220910:
+  AFFECTS: users of devel/cmake
+  AUTHOR: diizzy@FreeBSD.org
+
+  CMake has been converted to a meta-port and new CMake packages created causes
+  conflicts with old binary packages prior to this change.
+
+  If CMake was installed using binary packages via pkg it needs to be
+  uninstalled using pkg delete before installing CMake and related packages
+  after this change.
+
+    pkg delete cmake
+    pkg install cmake-core
+
+  If you're using portmaster you also need to delete the old CMake package
+  before upgrading.
+
 20220909:
   AFFECTS: users of emulators/qemu
   AUTHOR: bofh@FreeBSD.org
