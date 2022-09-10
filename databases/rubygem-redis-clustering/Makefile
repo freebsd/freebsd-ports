@@ -1,5 +1,5 @@
 PORTNAME=	redis-clustering
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
