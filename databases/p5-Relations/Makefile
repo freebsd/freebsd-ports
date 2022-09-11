@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Functions to Use with Databases and Queries
-WWW=		http://www.gaf3.com/
+WWW=		https://metacpan.org/pod/Relations
 
 USES=		perl5
 USE_PERL5=	configure

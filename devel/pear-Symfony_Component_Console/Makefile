@@ -7,7 +7,7 @@ DIST_SUBDIR=	Symfony2
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Symfony2 Console Component
-WWW=		http://pear.symfony.com/
+WWW=		https://symfony.com/doc/current/components/console.html
 
 LICENSE=	MIT
 
