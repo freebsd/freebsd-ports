@@ -40,7 +40,7 @@ include/upsclient.h
 lib/libnutclient.a
 lib/libnutclient.so
 lib/libnutclient.so.2
-lib/libnutclient.so.2.0.0
+lib/libnutclient.so.2.0.1
 lib/libupsclient.a
 lib/libupsclient.so
 lib/libupsclient.so.6
