@@ -23,6 +23,7 @@ DISTFILES+=	${LO_I18N_FILE}_helppack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
 DIST_SUBDIR=	libreoffice/i18n
 
 COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
+WWW?=		https://www.libreoffice.org/
 
 DESCR?=	${.CURDIR}/../../editors/libreoffice/pkg-descr.i18n
 
