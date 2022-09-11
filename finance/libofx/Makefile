@@ -1,5 +1,5 @@
 PORTNAME=	libofx
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.7
 CATEGORIES=	finance
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		SF/${PORTNAME}/${PORTNAME}
