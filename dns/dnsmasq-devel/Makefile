@@ -1,8 +1,8 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.87rc1
+DISTVERSION=	2.87rc1 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
-PORTEPOCH=	4 # attn - different between -devel and dnsmasq ports!
+PORTEPOCH=	5 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
 		LOCAL/mandree/
