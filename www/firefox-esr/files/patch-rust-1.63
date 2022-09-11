@@ -1,27 +1,33 @@
-Backport of https://hg.mozilla.org/releases/mozilla-beta/raw-rev/c37c77a20f96
-Only the rust code is present (not the .toml, .json and .lock files)
-
-
-diff --git a/third_party/rust/packed_simd/build.rs b/third_party/rust/packed_simd/build.rs
---- third_party/rust/packed_simd/build.rs
-+++ third_party/rust/packed_simd/build.rs
-@@ -1,6 +1,11 @@
-+use rustc_version::{version, Version};
-+
- fn main() {
-     let target = std::env::var("TARGET").expect("TARGET environment variable not defined");
-     if target.contains("neon") {
-         println!("cargo:rustc-cfg=libcore_neon");
-     }
-+    if version().unwrap() < Version::parse("1.61.0-alpha").unwrap() {
-+        println!("cargo:rustc-cfg=aarch64_target_feature");
-+    }
+--- third_party/rust/packed_simd_2/src/lib.rs.orig	2022-09-10 19:06:55.959234000 +0200
++++ third_party/rust/packed_simd_2/src/lib.rs	2022-09-10 22:36:23.284125000 +0200
+@@ -222,7 +222,6 @@
+     link_llvm_intrinsics,
+     core_intrinsics,
+     stmt_expr_attributes,
+-    crate_visibility_modifier,
+     custom_inner_attributes,
+ )]
+ #![allow(non_camel_case_types, non_snake_case,
+@@ -344,6 +343,6 @@
+     __shuffle_vector8,
+ };
+ 
+-crate mod llvm {
+-    crate use crate::codegen::llvm::*;
++pub(crate) mod llvm {
++    pub(crate) use crate::codegen::llvm::*;
  }
-diff --git a/third_party/rust/packed_simd/src/api.rs b/third_party/rust/packed_simd/src/api.rs
---- third_party/rust/packed_simd/src/api.rs
-+++ third_party/rust/packed_simd/src/api.rs
-@@ -1,13 +1,13 @@
- //! Implements the Simd<[T; N]> APIs
+--- third_party/rust/packed_simd_2/src/testing.rs.orig	2022-09-10 19:16:42.285346000 +0200
++++ third_party/rust/packed_simd_2/src/testing.rs	2022-09-10 19:16:57.916906000 +0200
+@@ -5,4 +5,4 @@
+ 
+ #[cfg(test)]
+ #[macro_use]
+-crate mod utils;
++pub(crate) mod utils;
+--- third_party/rust/packed_simd_2/src/api.rs.orig	2022-09-10 19:17:48.501919000 +0200
++++ third_party/rust/packed_simd_2/src/api.rs	2022-09-10 19:20:13.220782000 +0200
+@@ -2,7 +2,7 @@
  
  #[macro_use]
  mod bitmask;
@@ -30,17 +36,7 @@ diff --git a/third_party/rust/packed_simd/src/api.rs b/third_party/rust/packed_s
  #[macro_use]
  mod cmp;
  #[macro_use]
- mod default;
- #[macro_use]
- mod fmt;
- #[macro_use]
- mod from;
-@@ -32,17 +32,17 @@ mod shuffle1_dyn;
- #[macro_use]
- mod slice;
- #[macro_use]
- mod swap_bytes;
- #[macro_use]
+@@ -37,7 +37,7 @@
  mod bit_manip;
  
  #[cfg(feature = "into_bits")]
@@ -49,15 +45,9 @@ diff --git a/third_party/rust/packed_simd/src/api.rs b/third_party/rust/packed_s
  
  macro_rules! impl_i {
      ([$elem_ty:ident; $elem_n:expr]: $tuple_id:ident, $mask_ty:ident
-      | $ielem_ty:ident, $ibitmask_ty:ident | $test_tt:tt | $($elem_ids:ident),*
-      | From: $($from_vec_ty:ident),* | $(#[$doc:meta])*) => {
-         impl_minimal_iuf!([$elem_ty; $elem_n]: $tuple_id | $ielem_ty | $test_tt
-                           | $($elem_ids),* | $(#[$doc])*);
-         impl_ops_vector_arithmetic!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
-diff --git a/third_party/rust/packed_simd/src/codegen.rs b/third_party/rust/packed_simd/src/codegen.rs
---- third_party/rust/packed_simd/src/codegen.rs
-+++ third_party/rust/packed_simd/src/codegen.rs
-@@ -1,24 +1,24 @@
+--- third_party/rust/packed_simd_2/src/codegen.rs.orig	2022-09-10 21:40:51.110429000 +0200
++++ third_party/rust/packed_simd_2/src/codegen.rs	2022-09-10 21:41:40.892955000 +0200
+@@ -1,19 +1,19 @@
  //! Code-generation utilities
  
 -crate mod bit_manip;
@@ -85,17 +75,7 @@ diff --git a/third_party/rust/packed_simd/src/codegen.rs b/third_party/rust/pack
          //^^^^^^^ leaked through SimdArray
  
          impl crate::sealed::Seal for [$elem_ty; $elem_count] {}
- 
-         impl crate::sealed::SimdArray for [$elem_ty; $elem_count] {
-             type Tuple = $tuple_id;
-             type T = $elem_ty;
-             const N: usize = $elem_count;
-@@ -30,33 +30,33 @@ macro_rules! impl_simd_array {
-             type Element = $elem_ty;
-             const LANES: usize = $elem_count;
-             type LanesType = [u32; $elem_count];
-         }
- 
+@@ -35,28 +35,28 @@
      }
  }
  
@@ -141,29 +121,9 @@ diff --git a/third_party/rust/packed_simd/src/codegen.rs b/third_party/rust/pack
 -crate use self::vPtr::*;
 +pub(crate) mod vPtr;
 +pub(crate) use self::vPtr::*;
-diff --git a/third_party/rust/packed_simd/src/codegen/bit_manip.rs b/third_party/rust/packed_simd/src/codegen/bit_manip.rs
---- third_party/rust/packed_simd/src/codegen/bit_manip.rs
-+++ third_party/rust/packed_simd/src/codegen/bit_manip.rs
-@@ -1,12 +1,12 @@
- //! LLVM bit manipulation intrinsics.
- #[rustfmt::skip]
- 
--use crate::*;
-+pub(crate) use crate::*;
- 
- #[allow(improper_ctypes, dead_code)]
- extern "C" {
-     #[link_name = "llvm.ctlz.v2i8"]
-     fn ctlz_u8x2(x: u8x2, is_zero_undef: bool) -> u8x2;
-     #[link_name = "llvm.ctlz.v4i8"]
-     fn ctlz_u8x4(x: u8x4, is_zero_undef: bool) -> u8x4;
-     #[link_name = "llvm.ctlz.v8i8"]
-@@ -142,17 +142,17 @@ extern "C" {
-     #[link_name = "llvm.ctpop.v1i128"]
-     fn ctpop_u128x1(x: u128x1) -> u128x1;
-     #[link_name = "llvm.ctpop.v2i128"]
-     fn ctpop_u128x2(x: u128x2) -> u128x2;
-     #[link_name = "llvm.ctpop.v4i128"]
+--- third_party/rust/packed_simd_2/src/codegen/bit_manip.rs.orig	2022-09-10 19:31:08.323162000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/bit_manip.rs	2022-09-10 19:31:43.202743000 +0200
+@@ -147,7 +147,7 @@
      fn ctpop_u128x4(x: u128x4) -> u128x4;
  }
  
@@ -172,20 +132,9 @@ diff --git a/third_party/rust/packed_simd/src/codegen/bit_manip.rs b/third_party
      fn ctpop(self) -> Self;
      fn ctlz(self) -> Self;
      fn cttz(self) -> Self;
- }
- 
- macro_rules! impl_bit_manip {
-     (inner: $ty:ident, $scalar:ty, $uty:ident,
-      $ctpop:ident, $ctlz:ident, $cttz:ident) => {
-diff --git a/third_party/rust/packed_simd/src/codegen/llvm.rs b/third_party/rust/packed_simd/src/codegen/llvm.rs
---- third_party/rust/packed_simd/src/codegen/llvm.rs
-+++ third_party/rust/packed_simd/src/codegen/llvm.rs
-@@ -71,58 +71,58 @@ pub unsafe fn __shuffle_vector64<const I
- where
-     T: Simd,
-     <T as Simd>::Element: Shuffle<[u32; 64], Output = U>,
- {
-     simd_shuffle64(x, y, IDX)
+--- third_party/rust/packed_simd_2/src/codegen/llvm.rs.orig	2022-09-10 19:32:11.219584000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/llvm.rs	2022-09-10 19:33:41.546367000 +0200
+@@ -76,53 +76,53 @@
  }
  
  extern "platform-intrinsic" {
@@ -279,19 +228,21 @@ diff --git a/third_party/rust/packed_simd/src/codegen/llvm.rs b/third_party/rust
 -    crate fn simd_bitmask<T, U>(value: T) -> U;
 +    pub(crate) fn simd_bitmask<T, U>(value: T) -> U;
  }
-diff --git a/third_party/rust/packed_simd/src/codegen/math.rs b/third_party/rust/packed_simd/src/codegen/math.rs
---- third_party/rust/packed_simd/src/codegen/math.rs
-+++ third_party/rust/packed_simd/src/codegen/math.rs
+--- third_party/rust/packed_simd_2/src/codegen/math.rs.orig	2022-09-10 19:34:17.379236000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math.rs	2022-09-10 19:34:26.714320000 +0200
 @@ -1,3 +1,3 @@
  //! Vertical math operations
  
 -crate mod float;
 +pub(crate) mod float;
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float.rs b/third_party/rust/packed_simd/src/codegen/math/float.rs
---- third_party/rust/packed_simd/src/codegen/math/float.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float.rs
-@@ -1,18 +1,18 @@
- //! Vertical floating-point math operations.
+--- third_party/rust/packed_simd_2/src/codegen/reductions.rs.orig	2022-09-10 19:34:57.587073000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/reductions.rs	2022-09-10 19:35:05.385839000 +0200
+@@ -1 +1 @@
+-crate mod mask;
++pub(crate) mod mask;
+--- third_party/rust/packed_simd_2/src/codegen/math/float.rs.orig	2022-09-10 21:30:49.888386000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float.rs	2022-09-10 21:31:17.215147000 +0200
+@@ -2,17 +2,17 @@
  #![allow(clippy::useless_transmute)]
  
  #[macro_use]
@@ -323,284 +274,36 @@ diff --git a/third_party/rust/packed_simd/src/codegen/math/float.rs b/third_part
 +pub(crate) mod sin_pi;
 +pub(crate) mod sqrt;
 +pub(crate) mod sqrte;
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/abs.rs b/third_party/rust/packed_simd/src/codegen/math/float/abs.rs
---- third_party/rust/packed_simd/src/codegen/math/float/abs.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/abs.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `fabs`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors fabs
+--- third_party/rust/packed_simd_2/src/codegen/reductions/mask.rs.orig	2022-09-10 21:31:56.335188000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/reductions/mask.rs	2022-09-10 21:32:31.806684000 +0200
+@@ -7,11 +7,11 @@
  
  use crate::*;
  
--crate trait Abs {
-+pub(crate) trait Abs {
-     fn abs(self) -> Self;
+-crate trait All: crate::marker::Sized {
++pub(crate) trait All: crate::marker::Sized {
+     unsafe fn all(self) -> bool;
  }
  
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.fabs.v2f32"]
-     fn fabs_v2f32(x: f32x2) -> f32x2;
-     #[link_name = "llvm.fabs.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/cos.rs b/third_party/rust/packed_simd/src/codegen/math/float/cos.rs
---- third_party/rust/packed_simd/src/codegen/math/float/cos.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/cos.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `cos`
- #![allow(unused)]
+-crate trait Any: crate::marker::Sized {
++pub(crate) trait Any: crate::marker::Sized {
+     unsafe fn any(self) -> bool;
+ }
  
- // FIXME 64-bit 1 elem vector cos
+--- third_party/rust/packed_simd_2/src/codegen/swap_bytes.rs.orig	2022-09-10 21:33:03.767610000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/swap_bytes.rs	2022-09-10 21:33:21.542738000 +0200
+@@ -5,7 +5,7 @@
  
  use crate::*;
  
--crate trait Cos {
-+pub(crate) trait Cos {
-     fn cos(self) -> Self;
+-crate trait SwapBytes {
++pub(crate) trait SwapBytes {
+     fn swap_bytes(self) -> Self;
  }
  
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.cos.v2f32"]
-     fn cos_v2f32(x: f32x2) -> f32x2;
-     #[link_name = "llvm.cos.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/cos_pi.rs b/third_party/rust/packed_simd/src/codegen/math/float/cos_pi.rs
---- third_party/rust/packed_simd/src/codegen/math/float/cos_pi.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/cos_pi.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `cos`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors cos_pi
- 
- use crate::*;
- 
--crate trait CosPi {
-+pub(crate) trait CosPi {
-     fn cos_pi(self) -> Self;
- }
- 
- gen_unary_impl_table!(CosPi, cos_pi);
- 
- macro_rules! impl_def {
-     ($vid:ident, $PI:path) => {
-         impl CosPi for $vid {
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/exp.rs b/third_party/rust/packed_simd/src/codegen/math/float/exp.rs
---- third_party/rust/packed_simd/src/codegen/math/float/exp.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/exp.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `exp`
- #![allow(unused)]
- 
- // FIXME 64-bit expgle elem vectors misexpg
- 
- use crate::*;
- 
--crate trait Exp {
-+pub(crate) trait Exp {
-     fn exp(self) -> Self;
- }
- 
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.exp.v2f32"]
-     fn exp_v2f32(x: f32x2) -> f32x2;
-     #[link_name = "llvm.exp.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/ln.rs b/third_party/rust/packed_simd/src/codegen/math/float/ln.rs
---- third_party/rust/packed_simd/src/codegen/math/float/ln.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/ln.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `ln`
- #![allow(unused)]
- 
- // FIXME 64-bit lngle elem vectors mislng
- 
- use crate::*;
- 
--crate trait Ln {
-+pub(crate) trait Ln {
-     fn ln(self) -> Self;
- }
- 
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.log.v2f32"]
-     fn ln_v2f32(x: f32x2) -> f32x2;
-     #[link_name = "llvm.log.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/mul_add.rs b/third_party/rust/packed_simd/src/codegen/math/float/mul_add.rs
---- third_party/rust/packed_simd/src/codegen/math/float/mul_add.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/mul_add.rs
-@@ -1,15 +1,15 @@
- //! Vertical floating-point `mul_add`
- #![allow(unused)]
- use crate::*;
- 
- // FIXME: 64-bit 1 element mul_add
- 
--crate trait MulAdd {
-+pub(crate) trait MulAdd {
-     fn mul_add(self, y: Self, z: Self) -> Self;
- }
- 
- #[cfg(not(target_arch = "s390x"))]
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.fma.v2f32"]
-     fn fma_v2f32(x: f32x2, y: f32x2, z: f32x2) -> f32x2;
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/mul_adde.rs b/third_party/rust/packed_simd/src/codegen/math/float/mul_adde.rs
---- third_party/rust/packed_simd/src/codegen/math/float/mul_adde.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/mul_adde.rs
-@@ -1,14 +1,14 @@
- //! Approximation for floating-point `mul_add`
- use crate::*;
- 
- // FIXME: 64-bit 1 element mul_adde
- 
--crate trait MulAddE {
-+pub(crate) trait MulAddE {
-     fn mul_adde(self, y: Self, z: Self) -> Self;
- }
- 
- #[cfg(not(target_arch = "s390x"))]
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.fmuladd.v2f32"]
-     fn fmuladd_v2f32(x: f32x2, y: f32x2, z: f32x2) -> f32x2;
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/powf.rs b/third_party/rust/packed_simd/src/codegen/math/float/powf.rs
---- third_party/rust/packed_simd/src/codegen/math/float/powf.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/powf.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `powf`
- #![allow(unused)]
- 
- // FIXME 64-bit powfgle elem vectors mispowfg
- 
- use crate::*;
- 
--crate trait Powf {
-+pub(crate) trait Powf {
-     fn powf(self, x: Self) -> Self;
- }
- 
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.pow.v2f32"]
-     fn powf_v2f32(x: f32x2, y: f32x2) -> f32x2;
-     #[link_name = "llvm.pow.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/sin.rs b/third_party/rust/packed_simd/src/codegen/math/float/sin.rs
---- third_party/rust/packed_simd/src/codegen/math/float/sin.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/sin.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `sin`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors sin
- 
- use crate::*;
- 
--crate trait Sin {
-+pub(crate) trait Sin {
-     fn sin(self) -> Self;
- }
- 
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.sin.v2f32"]
-     fn sin_v2f32(x: f32x2) -> f32x2;
-     #[link_name = "llvm.sin.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/sin_cos_pi.rs b/third_party/rust/packed_simd/src/codegen/math/float/sin_cos_pi.rs
---- third_party/rust/packed_simd/src/codegen/math/float/sin_cos_pi.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/sin_cos_pi.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `sin_cos`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors sin_cos
- 
- use crate::*;
- 
--crate trait SinCosPi: Sized {
-+pub(crate) trait SinCosPi: Sized {
-     type Output;
-     fn sin_cos_pi(self) -> Self::Output;
- }
- 
- macro_rules! impl_def {
-     ($vid:ident, $PI:path) => {
-         impl SinCosPi for $vid {
-             type Output = (Self, Self);
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/sin_pi.rs b/third_party/rust/packed_simd/src/codegen/math/float/sin_pi.rs
---- third_party/rust/packed_simd/src/codegen/math/float/sin_pi.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/sin_pi.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `sin_pi`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors sin_pi
- 
- use crate::*;
- 
--crate trait SinPi {
-+pub(crate) trait SinPi {
-     fn sin_pi(self) -> Self;
- }
- 
- gen_unary_impl_table!(SinPi, sin_pi);
- 
- macro_rules! impl_def {
-     ($vid:ident, $PI:path) => {
-         impl SinPi for $vid {
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/sqrt.rs b/third_party/rust/packed_simd/src/codegen/math/float/sqrt.rs
---- third_party/rust/packed_simd/src/codegen/math/float/sqrt.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/sqrt.rs
-@@ -1,16 +1,16 @@
- //! Vertical floating-point `sqrt`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors sqrt
- 
- use crate::*;
- 
--crate trait Sqrt {
-+pub(crate) trait Sqrt {
-     fn sqrt(self) -> Self;
- }
- 
- #[allow(improper_ctypes)]
- extern "C" {
-     #[link_name = "llvm.sqrt.v2f32"]
-     fn sqrt_v2f32(x: f32x2) -> f32x2;
-     #[link_name = "llvm.sqrt.v4f32"]
-diff --git a/third_party/rust/packed_simd/src/codegen/math/float/sqrte.rs b/third_party/rust/packed_simd/src/codegen/math/float/sqrte.rs
---- third_party/rust/packed_simd/src/codegen/math/float/sqrte.rs
-+++ third_party/rust/packed_simd/src/codegen/math/float/sqrte.rs
-@@ -1,17 +1,17 @@
- //! Vertical floating-point `sqrt`
- #![allow(unused)]
- 
- // FIXME 64-bit 1 elem vectors sqrte
- 
- use crate::llvm::simd_fsqrt;
- use crate::*;
- 
--crate trait Sqrte {
-+pub(crate) trait Sqrte {
-     fn sqrte(self) -> Self;
- }
- 
- gen_unary_impl_table!(Sqrte, sqrte);
- 
- cfg_if! {
-     if #[cfg(all(target_arch = "x86_64", feature = "sleef-sys"))] {
-         use sleef_sys::*;
-diff --git a/third_party/rust/packed_simd/src/codegen/pointer_sized_int.rs b/third_party/rust/packed_simd/src/codegen/pointer_sized_int.rs
---- third_party/rust/packed_simd/src/codegen/pointer_sized_int.rs
-+++ third_party/rust/packed_simd/src/codegen/pointer_sized_int.rs
-@@ -1,28 +1,28 @@
- //! Provides `isize` and `usize`
- 
- use cfg_if::cfg_if;
+--- third_party/rust/packed_simd_2/src/codegen/pointer_sized_int.rs.orig	2022-09-10 21:34:02.615474000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/pointer_sized_int.rs	2022-09-10 21:34:21.270191000 +0200
+@@ -4,24 +4,24 @@
  
  cfg_if! {
      if #[cfg(target_pointer_width = "8")] {
@@ -637,80 +340,152 @@ diff --git a/third_party/rust/packed_simd/src/codegen/pointer_sized_int.rs b/thi
      } else {
          compile_error!("unsupported target_pointer_width");
      }
- }
-diff --git a/third_party/rust/packed_simd/src/codegen/reductions.rs b/third_party/rust/packed_simd/src/codegen/reductions.rs
---- third_party/rust/packed_simd/src/codegen/reductions.rs
-+++ third_party/rust/packed_simd/src/codegen/reductions.rs
-@@ -1,1 +1,1 @@
--crate mod mask;
-+pub(crate) mod mask;
-diff --git a/third_party/rust/packed_simd/src/codegen/reductions/mask.rs b/third_party/rust/packed_simd/src/codegen/reductions/mask.rs
---- third_party/rust/packed_simd/src/codegen/reductions/mask.rs
-+++ third_party/rust/packed_simd/src/codegen/reductions/mask.rs
-@@ -2,21 +2,21 @@
- //!
- //! Works around [LLVM bug 36702].
- //!
- //! [LLVM bug 36702]: https://bugs.llvm.org/show_bug.cgi?id=36702
- #![allow(unused_macros)]
+--- third_party/rust/packed_simd_2/src/codegen/math/float/abs.rs.orig	2022-09-10 21:48:23.724318000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/abs.rs	2022-09-10 21:48:40.251837000 +0200
+@@ -5,7 +5,7 @@
  
  use crate::*;
  
--crate trait All: crate::marker::Sized {
-+pub(crate) trait All: crate::marker::Sized {
-     unsafe fn all(self) -> bool;
+-crate trait Abs {
++pub(crate) trait Abs {
+     fn abs(self) -> Self;
  }
  
--crate trait Any: crate::marker::Sized {
-+pub(crate) trait Any: crate::marker::Sized {
-     unsafe fn any(self) -> bool;
- }
- 
- #[macro_use]
- mod fallback_impl;
- 
- cfg_if! {
-     if #[cfg(any(target_arch = "x86", target_arch = "x86_64"))] {
-diff --git a/third_party/rust/packed_simd/src/codegen/swap_bytes.rs b/third_party/rust/packed_simd/src/codegen/swap_bytes.rs
---- third_party/rust/packed_simd/src/codegen/swap_bytes.rs
-+++ third_party/rust/packed_simd/src/codegen/swap_bytes.rs
-@@ -1,26 +1,26 @@
- //! Horizontal swap bytes reductions.
- 
- // FIXME: investigate using `llvm.bswap`
- // https://github.com/rust-lang-nursery/packed_simd/issues/19
+--- third_party/rust/packed_simd_2/src/codegen/math/float/cos.rs.orig	2022-09-10 21:49:27.748830000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/cos.rs	2022-09-10 21:49:44.643631000 +0200
+@@ -5,7 +5,7 @@
  
  use crate::*;
  
--crate trait SwapBytes {
-+pub(crate) trait SwapBytes {
-     fn swap_bytes(self) -> Self;
+-crate trait Cos {
++pub(crate) trait Cos {
+     fn cos(self) -> Self;
  }
  
- macro_rules! impl_swap_bytes {
-     (v16: $($id:ident,)+) => {
-         $(
-             impl SwapBytes for $id {
-                 #[inline]
-                 fn swap_bytes(self) -> Self {
--                    unsafe { shuffle!(self, [1, 0]) }
-+                    shuffle!(self, [1, 0])
-                 }
-             }
-         )+
-     };
-     (v32: $($id:ident,)+) => {
-         $(
-             impl SwapBytes for $id {
-                 #[inline]
-diff --git a/third_party/rust/packed_simd/src/codegen/vPtr.rs b/third_party/rust/packed_simd/src/codegen/vPtr.rs
---- third_party/rust/packed_simd/src/codegen/vPtr.rs
-+++ third_party/rust/packed_simd/src/codegen/vPtr.rs
-@@ -1,16 +1,16 @@
- //! Pointer vector types
+--- third_party/rust/packed_simd_2/src/codegen/math/float/cos_pi.rs.orig	2022-09-10 21:50:13.245107000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/cos_pi.rs	2022-09-10 21:50:49.459654000 +0200
+@@ -5,7 +5,7 @@
  
- macro_rules! impl_simd_ptr {
-     ([$ptr_ty:ty; $elem_count:expr]: $tuple_id:ident | $ty:ident
+ use crate::*;
+ 
+-crate trait CosPi {
++pub(crate) trait CosPi {
+     fn cos_pi(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/exp.rs.orig	2022-09-10 21:51:22.692375000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/exp.rs	2022-09-10 21:51:40.651456000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Exp {
++pub(crate) trait Exp {
+     fn exp(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/ln.rs.orig	2022-09-10 21:52:09.156673000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/ln.rs	2022-09-10 21:52:22.811266000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Ln {
++pub(crate) trait Ln {
+     fn ln(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/mul_add.rs.orig	2022-09-10 21:53:05.084641000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/mul_add.rs	2022-09-10 21:53:14.931151000 +0200
+@@ -4,7 +4,7 @@
+ 
+ // FIXME: 64-bit 1 element mul_add
+ 
+-crate trait MulAdd {
++pub(crate) trait MulAdd {
+     fn mul_add(self, y: Self, z: Self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/mul_adde.rs.orig	2022-09-10 21:53:45.460180000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/mul_adde.rs	2022-09-10 21:54:00.179323000 +0200
+@@ -3,7 +3,7 @@
+ 
+ // FIXME: 64-bit 1 element mul_adde
+ 
+-crate trait MulAddE {
++pub(crate) trait MulAddE {
+     fn mul_adde(self, y: Self, z: Self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/powf.rs.orig	2022-09-10 21:54:39.691293000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/powf.rs	2022-09-10 21:54:51.171088000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Powf {
++pub(crate) trait Powf {
+     fn powf(self, x: Self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sin.rs.orig	2022-09-10 21:55:35.107224000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sin.rs	2022-09-10 21:55:49.986672000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Sin {
++pub(crate) trait Sin {
+     fn sin(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sin_cos_pi.rs.orig	2022-09-10 21:56:21.723890000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sin_cos_pi.rs	2022-09-10 21:56:37.098691000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait SinCosPi: Sized {
++pub(crate) trait SinCosPi: Sized {
+     type Output;
+     fn sin_cos_pi(self) -> Self::Output;
+ }
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sin_pi.rs.orig	2022-09-10 21:57:41.227568000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sin_pi.rs	2022-09-10 21:58:02.562792000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait SinPi {
++pub(crate) trait SinPi {
+     fn sin_pi(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sqrt.rs.orig	2022-09-10 21:58:34.115328000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sqrt.rs	2022-09-10 21:58:47.786446000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Sqrt {
++pub(crate) trait Sqrt {
+     fn sqrt(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sqrte.rs.orig	2022-09-10 21:59:34.330737000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sqrte.rs	2022-09-10 21:59:51.881919000 +0200
+@@ -6,7 +6,7 @@
+ use crate::llvm::simd_fsqrt;
+ use crate::*;
+ 
+-crate trait Sqrte {
++pub(crate) trait Sqrte {
+     fn sqrte(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/vPtr.rs.orig	2022-09-10 22:00:33.194761000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/vPtr.rs	2022-09-10 22:01:11.386122000 +0200
+@@ -5,7 +5,7 @@
       | $($tys:ty),*) => {
          #[derive(Copy, Clone)]
          #[repr(simd)]
@@ -719,49 +494,3 @@ diff --git a/third_party/rust/packed_simd/src/codegen/vPtr.rs b/third_party/rust
          //^^^^^^^ leaked through SimdArray
  
          impl<$ty> crate::sealed::Seal for [$ptr_ty; $elem_count] {}
-         impl<$ty> crate::sealed::SimdArray for [$ptr_ty; $elem_count] {
-             type Tuple = $tuple_id<$ptr_ty>;
-             type T = $ptr_ty;
-             const N: usize = $elem_count;
-             type NT = [u32; $elem_count];
-diff --git a/third_party/rust/packed_simd/src/lib.rs b/third_party/rust/packed_simd/src/lib.rs
---- third_party/rust/packed_simd/src/lib.rs
-+++ third_party/rust/packed_simd/src/lib.rs
-@@ -206,14 +206,13 @@
-     rustc_attrs,
-     platform_intrinsics,
-     stdsimd,
--    aarch64_target_feature,
-     arm_target_feature,
-     link_llvm_intrinsics,
-     core_intrinsics,
-     stmt_expr_attributes,
--    crate_visibility_modifier,
-     custom_inner_attributes
- )]
-+#![cfg_attr(aarch64_target_feature, feature(aarch64_target_feature))]
- #![allow(non_camel_case_types, non_snake_case,
-         // FIXME: these types are unsound in C FFI already
-         // See https://github.com/rust-lang/rust/issues/53346
-@@ -334,6 +333,6 @@ pub use self::codegen::llvm::{
-     __shuffle_vector4, __shuffle_vector64, __shuffle_vector8,
- };
- 
--crate mod llvm {
--    crate use crate::codegen::llvm::*;
-+pub(crate) mod llvm {
-+    pub(crate) use crate::codegen::llvm::*;
- }
-diff --git a/third_party/rust/packed_simd/src/testing.rs b/third_party/rust/packed_simd/src/testing.rs
---- third_party/rust/packed_simd/src/testing.rs
-+++ third_party/rust/packed_simd/src/testing.rs
-@@ -1,8 +1,8 @@
- //! Testing macros and other utilities.
- 
- #[macro_use]
- mod macros;
- 
- #[cfg(test)]
- #[macro_use]
--crate mod utils;
-+pub(crate) mod utils;

@@ -1,6 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	91.13.0
-PORTREVISION=	1
+DISTVERSION=	102.2.0
 PORTEPOCH=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -13,14 +12,14 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.68:security/nss \
-		icu>=67.1,1:devel/icu \
+		nss>=3.79.1:security/nss \
+		icu>=71.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=2.8.1:print/harfbuzz \
+		harfbuzz>=4.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.37:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.8.2:multimedia/libvpx \
+		libvpx>=1.11.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
@@ -33,6 +32,7 @@ CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS_INSTALL=	firefox
 USE_MOZILLA=	-sqlite
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
+CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 
 USES=		tar:xz
 
@@ -43,6 +43,17 @@ MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+MOZ_OPTIONS+=	--disable-webrtc --without-wasm-sandboxed-libraries
+.else
+BUILD_DEPENDS+= ${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \
+		${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/clang/${LLVM_VERSION}/lib/wasi/libclang_rt.builtins-wasm32.a:devel/wasi-compiler-rt${LLVM_DEFAULT}
+MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/%u/%U/' -e '/X-MultipleArgs/d' \
