@@ -1,8 +1,9 @@
 PORTNAME=	julia
 DISTVERSION=	1.7.3
 DISTVERSIONSUFFIX=	-full
+PORTREVISION=	1
 CATEGORIES=	lang math
-MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	rizor.reardon@yahoo.com
 COMMENT=	Implementation of Julia, a language for technical computing
@@ -37,6 +38,7 @@ USES=		gmake compiler:c++14-lang cpe fortran python perl5 \
 CPE_VENDOR=	julialang
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 CFLAGS+=	-fpic
 
@@ -51,13 +53,13 @@ TEST_TARGET=	test
 PORTDOCS=	html
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-CXXFLAGS+=	-std=c++14
 MAKE_ARGS+=	NO_GIT=1 \
 		USE_BINARYBUILDER=0 \
 		prefix=${PREFIX} \
 		JCXXFLAGS="${CXXFLAGS}" \
 		USE_GPL_LIBS=0 \
 		ARCH=x86_64 \
+		JULIA_CPU_TARGET=generic \
 		USE_SYSTEM_CURL=1 \
 		USE_SYSTEM_GMP=1 \
 		USE_SYSTEM_OPENLIBM=1 \
@@ -93,7 +95,7 @@ GPL_LIBS_MAKE_ARGS=	USE_SYSTEM_LIBSUITESPARSE=1 \
 			USE_GPL_LIBS=1
 
 NATIVE_DESC=		Build with native CPU JIT tuning
-NATIVE_MAKE_ARGS=	MARCH=native
+NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native
 
 post-patch:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
@@ -113,6 +115,9 @@ post-configure:
 	) || ( \
 		echo "USE_BLAS64=0" >> ${WRKSRC}/Make.user \
 	)
+
+pre-install:
+	${CP} ${WRKSRC}/deps/srccache/cacert-2020-10-14.pem ${WRKSRC}/usr/share/julia/cert.pem
 
 post-install:
 	# clean up for Pkg3.jl

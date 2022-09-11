@@ -291,6 +291,7 @@ libexec/7z
 %%DATADIR%%/base/version_git.jl
 %%DATADIR%%/base/views.jl
 %%DATADIR%%/base/weakkeydict.jl
+%%DATADIR%%/cert.pem
 %%DATADIR%%/julia-config.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/ArgTools/LICENSE
 %%DATADIR%%/stdlib/v%%VERSION%%/ArgTools/Project.toml
