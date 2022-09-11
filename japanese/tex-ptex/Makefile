@@ -12,7 +12,7 @@ EXTRACT_ONLY=	texlive-${TEXLIVE_VERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
-WWW=		http://www.ascii.co.jp/pb/ptex/
+WWW=		https://ctan.org/pkg/ptex
 
 USES=		localbase tar:xz perl5 pkgconfig
 USE_TEX=	kpathsea web2c ptexenc texmf formats fmtutil
