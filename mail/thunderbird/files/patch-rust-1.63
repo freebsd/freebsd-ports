@@ -1,0 +1,496 @@
+--- third_party/rust/packed_simd_2/src/lib.rs.orig	2022-09-10 19:06:55.959234000 +0200
++++ third_party/rust/packed_simd_2/src/lib.rs	2022-09-10 22:36:23.284125000 +0200
+@@ -222,7 +222,6 @@
+     link_llvm_intrinsics,
+     core_intrinsics,
+     stmt_expr_attributes,
+-    crate_visibility_modifier,
+     custom_inner_attributes,
+ )]
+ #![allow(non_camel_case_types, non_snake_case,
+@@ -344,6 +343,6 @@
+     __shuffle_vector8,
+ };
+ 
+-crate mod llvm {
+-    crate use crate::codegen::llvm::*;
++pub(crate) mod llvm {
++    pub(crate) use crate::codegen::llvm::*;
+ }
+--- third_party/rust/packed_simd_2/src/testing.rs.orig	2022-09-10 19:16:42.285346000 +0200
++++ third_party/rust/packed_simd_2/src/testing.rs	2022-09-10 19:16:57.916906000 +0200
+@@ -5,4 +5,4 @@
+ 
+ #[cfg(test)]
+ #[macro_use]
+-crate mod utils;
++pub(crate) mod utils;
+--- third_party/rust/packed_simd_2/src/api.rs.orig	2022-09-10 19:17:48.501919000 +0200
++++ third_party/rust/packed_simd_2/src/api.rs	2022-09-10 19:20:13.220782000 +0200
+@@ -2,7 +2,7 @@
+ 
+ #[macro_use]
+ mod bitmask;
+-crate mod cast;
++pub(crate) mod cast;
+ #[macro_use]
+ mod cmp;
+ #[macro_use]
+@@ -37,7 +37,7 @@
+ mod bit_manip;
+ 
+ #[cfg(feature = "into_bits")]
+-crate mod into_bits;
++pub(crate) mod into_bits;
+ 
+ macro_rules! impl_i {
+     ([$elem_ty:ident; $elem_n:expr]: $tuple_id:ident, $mask_ty:ident
+--- third_party/rust/packed_simd_2/src/codegen.rs.orig	2022-09-10 21:40:51.110429000 +0200
++++ third_party/rust/packed_simd_2/src/codegen.rs	2022-09-10 21:41:40.892955000 +0200
+@@ -1,19 +1,19 @@
+ //! Code-generation utilities
+ 
+-crate mod bit_manip;
+-crate mod llvm;
+-crate mod math;
+-crate mod reductions;
+-crate mod shuffle;
+-crate mod shuffle1_dyn;
+-crate mod swap_bytes;
++pub(crate) mod bit_manip;
++pub(crate) mod llvm;
++pub(crate) mod math;
++pub(crate) mod reductions;
++pub(crate) mod shuffle;
++pub(crate) mod shuffle1_dyn;
++pub(crate) mod swap_bytes;
+ 
+ macro_rules! impl_simd_array {
+     ([$elem_ty:ident; $elem_count:expr]:
+      $tuple_id:ident | $($elem_tys:ident),*) => {
+         #[derive(Copy, Clone)]
+         #[repr(simd)]
+-        pub struct $tuple_id($(crate $elem_tys),*);
++        pub struct $tuple_id($(pub(crate) $elem_tys),*);
+         //^^^^^^^ leaked through SimdArray
+ 
+         impl crate::sealed::Seal for [$elem_ty; $elem_count] {}
+@@ -35,28 +35,28 @@
+     }
+ }
+ 
+-crate mod pointer_sized_int;
++pub(crate) mod pointer_sized_int;
+ 
+-crate mod v16;
+-crate use self::v16::*;
++pub(crate) mod v16;
++pub(crate) use self::v16::*;
+ 
+-crate mod v32;
+-crate use self::v32::*;
++pub(crate) mod v32;
++pub(crate) use self::v32::*;
+ 
+-crate mod v64;
+-crate use self::v64::*;
++pub(crate) mod v64;
++pub(crate) use self::v64::*;
+ 
+-crate mod v128;
+-crate use self::v128::*;
++pub(crate) mod v128;
++pub(crate) use self::v128::*;
+ 
+-crate mod v256;
+-crate use self::v256::*;
++pub(crate) mod v256;
++pub(crate) use self::v256::*;
+ 
+-crate mod v512;
+-crate use self::v512::*;
++pub(crate) mod v512;
++pub(crate) use self::v512::*;
+ 
+-crate mod vSize;
+-crate use self::vSize::*;
++pub(crate) mod vSize;
++pub(crate) use self::vSize::*;
+ 
+-crate mod vPtr;
+-crate use self::vPtr::*;
++pub(crate) mod vPtr;
++pub(crate) use self::vPtr::*;
+--- third_party/rust/packed_simd_2/src/codegen/bit_manip.rs.orig	2022-09-10 19:31:08.323162000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/bit_manip.rs	2022-09-10 19:31:43.202743000 +0200
+@@ -147,7 +147,7 @@
+     fn ctpop_u128x4(x: u128x4) -> u128x4;
+ }
+ 
+-crate trait BitManip {
++pub(crate) trait BitManip {
+     fn ctpop(self) -> Self;
+     fn ctlz(self) -> Self;
+     fn cttz(self) -> Self;
+--- third_party/rust/packed_simd_2/src/codegen/llvm.rs.orig	2022-09-10 19:32:11.219584000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/llvm.rs	2022-09-10 19:33:41.546367000 +0200
+@@ -76,53 +76,53 @@
+ }
+ 
+ extern "platform-intrinsic" {
+-    crate fn simd_eq<T, U>(x: T, y: T) -> U;
+-    crate fn simd_ne<T, U>(x: T, y: T) -> U;
+-    crate fn simd_lt<T, U>(x: T, y: T) -> U;
+-    crate fn simd_le<T, U>(x: T, y: T) -> U;
+-    crate fn simd_gt<T, U>(x: T, y: T) -> U;
+-    crate fn simd_ge<T, U>(x: T, y: T) -> U;
++    pub(crate) fn simd_eq<T, U>(x: T, y: T) -> U;
++    pub(crate) fn simd_ne<T, U>(x: T, y: T) -> U;
++    pub(crate) fn simd_lt<T, U>(x: T, y: T) -> U;
++    pub(crate) fn simd_le<T, U>(x: T, y: T) -> U;
++    pub(crate) fn simd_gt<T, U>(x: T, y: T) -> U;
++    pub(crate) fn simd_ge<T, U>(x: T, y: T) -> U;
+ 
+-    crate fn simd_insert<T, U>(x: T, idx: u32, val: U) -> T;
+-    crate fn simd_extract<T, U>(x: T, idx: u32) -> U;
++    pub(crate) fn simd_insert<T, U>(x: T, idx: u32, val: U) -> T;
++    pub(crate) fn simd_extract<T, U>(x: T, idx: u32) -> U;
+ 
+-    crate fn simd_cast<T, U>(x: T) -> U;
++    pub(crate) fn simd_cast<T, U>(x: T) -> U;
+ 
+-    crate fn simd_add<T>(x: T, y: T) -> T;
+-    crate fn simd_sub<T>(x: T, y: T) -> T;
+-    crate fn simd_mul<T>(x: T, y: T) -> T;
+-    crate fn simd_div<T>(x: T, y: T) -> T;
+-    crate fn simd_rem<T>(x: T, y: T) -> T;
+-    crate fn simd_shl<T>(x: T, y: T) -> T;
+-    crate fn simd_shr<T>(x: T, y: T) -> T;
+-    crate fn simd_and<T>(x: T, y: T) -> T;
+-    crate fn simd_or<T>(x: T, y: T) -> T;
+-    crate fn simd_xor<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_add<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_sub<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_mul<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_div<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_rem<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_shl<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_shr<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_and<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_or<T>(x: T, y: T) -> T;
++    pub(crate) fn simd_xor<T>(x: T, y: T) -> T;
+ 
+-    crate fn simd_reduce_add_unordered<T, U>(x: T) -> U;
+-    crate fn simd_reduce_mul_unordered<T, U>(x: T) -> U;
+-    crate fn simd_reduce_add_ordered<T, U>(x: T, acc: U) -> U;
+-    crate fn simd_reduce_mul_ordered<T, U>(x: T, acc: U) -> U;
+-    crate fn simd_reduce_min<T, U>(x: T) -> U;
+-    crate fn simd_reduce_max<T, U>(x: T) -> U;
+-    crate fn simd_reduce_min_nanless<T, U>(x: T) -> U;
+-    crate fn simd_reduce_max_nanless<T, U>(x: T) -> U;
+-    crate fn simd_reduce_and<T, U>(x: T) -> U;
+-    crate fn simd_reduce_or<T, U>(x: T) -> U;
+-    crate fn simd_reduce_xor<T, U>(x: T) -> U;
+-    crate fn simd_reduce_all<T>(x: T) -> bool;
+-    crate fn simd_reduce_any<T>(x: T) -> bool;
++    pub(crate) fn simd_reduce_add_unordered<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_mul_unordered<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_add_ordered<T, U>(x: T, acc: U) -> U;
++    pub(crate) fn simd_reduce_mul_ordered<T, U>(x: T, acc: U) -> U;
++    pub(crate) fn simd_reduce_min<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_max<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_min_nanless<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_max_nanless<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_and<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_or<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_xor<T, U>(x: T) -> U;
++    pub(crate) fn simd_reduce_all<T>(x: T) -> bool;
++    pub(crate) fn simd_reduce_any<T>(x: T) -> bool;
+ 
+-    crate fn simd_select<M, T>(m: M, a: T, b: T) -> T;
++    pub(crate) fn simd_select<M, T>(m: M, a: T, b: T) -> T;
+ 
+-    crate fn simd_fmin<T>(a: T, b: T) -> T;
+-    crate fn simd_fmax<T>(a: T, b: T) -> T;
++    pub(crate) fn simd_fmin<T>(a: T, b: T) -> T;
++    pub(crate) fn simd_fmax<T>(a: T, b: T) -> T;
+ 
+-    crate fn simd_fsqrt<T>(a: T) -> T;
+-    crate fn simd_fma<T>(a: T, b: T, c: T) -> T;
++    pub(crate) fn simd_fsqrt<T>(a: T) -> T;
++    pub(crate) fn simd_fma<T>(a: T, b: T, c: T) -> T;
+ 
+-    crate fn simd_gather<T, P, M>(value: T, pointers: P, mask: M) -> T;
+-    crate fn simd_scatter<T, P, M>(value: T, pointers: P, mask: M);
++    pub(crate) fn simd_gather<T, P, M>(value: T, pointers: P, mask: M) -> T;
++    pub(crate) fn simd_scatter<T, P, M>(value: T, pointers: P, mask: M);
+ 
+-    crate fn simd_bitmask<T, U>(value: T) -> U;
++    pub(crate) fn simd_bitmask<T, U>(value: T) -> U;
+ }
+--- third_party/rust/packed_simd_2/src/codegen/math.rs.orig	2022-09-10 19:34:17.379236000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math.rs	2022-09-10 19:34:26.714320000 +0200
+@@ -1,3 +1,3 @@
+ //! Vertical math operations
+ 
+-crate mod float;
++pub(crate) mod float;
+--- third_party/rust/packed_simd_2/src/codegen/reductions.rs.orig	2022-09-10 19:34:57.587073000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/reductions.rs	2022-09-10 19:35:05.385839000 +0200
+@@ -1 +1 @@
+-crate mod mask;
++pub(crate) mod mask;
+--- third_party/rust/packed_simd_2/src/codegen/math/float.rs.orig	2022-09-10 21:30:49.888386000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float.rs	2022-09-10 21:31:17.215147000 +0200
+@@ -2,17 +2,17 @@
+ #![allow(clippy::useless_transmute)]
+ 
+ #[macro_use]
+-crate mod macros;
+-crate mod abs;
+-crate mod cos;
+-crate mod cos_pi;
+-crate mod exp;
+-crate mod ln;
+-crate mod mul_add;
+-crate mod mul_adde;
+-crate mod powf;
+-crate mod sin;
+-crate mod sin_cos_pi;
+-crate mod sin_pi;
+-crate mod sqrt;
+-crate mod sqrte;
++pub(crate) mod macros;
++pub(crate) mod abs;
++pub(crate) mod cos;
++pub(crate) mod cos_pi;
++pub(crate) mod exp;
++pub(crate) mod ln;
++pub(crate) mod mul_add;
++pub(crate) mod mul_adde;
++pub(crate) mod powf;
++pub(crate) mod sin;
++pub(crate) mod sin_cos_pi;
++pub(crate) mod sin_pi;
++pub(crate) mod sqrt;
++pub(crate) mod sqrte;
+--- third_party/rust/packed_simd_2/src/codegen/reductions/mask.rs.orig	2022-09-10 21:31:56.335188000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/reductions/mask.rs	2022-09-10 21:32:31.806684000 +0200
+@@ -7,11 +7,11 @@
+ 
+ use crate::*;
+ 
+-crate trait All: crate::marker::Sized {
++pub(crate) trait All: crate::marker::Sized {
+     unsafe fn all(self) -> bool;
+ }
+ 
+-crate trait Any: crate::marker::Sized {
++pub(crate) trait Any: crate::marker::Sized {
+     unsafe fn any(self) -> bool;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/swap_bytes.rs.orig	2022-09-10 21:33:03.767610000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/swap_bytes.rs	2022-09-10 21:33:21.542738000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait SwapBytes {
++pub(crate) trait SwapBytes {
+     fn swap_bytes(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/pointer_sized_int.rs.orig	2022-09-10 21:34:02.615474000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/pointer_sized_int.rs	2022-09-10 21:34:21.270191000 +0200
+@@ -4,24 +4,24 @@
+ 
+ cfg_if! {
+     if #[cfg(target_pointer_width = "8")] {
+-        crate type isize_ = i8;
+-        crate type usize_ = u8;
++        pub(crate) type isize_ = i8;
++        pub(crate) type usize_ = u8;
+     } else if #[cfg(target_pointer_width = "16")] {
+-        crate type isize_ = i16;
+-        crate type usize_ = u16;
++        pub(crate) type isize_ = i16;
++        pub(crate) type usize_ = u16;
+     } else if #[cfg(target_pointer_width = "32")] {
+-        crate type isize_ = i32;
+-        crate type usize_ = u32;
++        pub(crate) type isize_ = i32;
++        pub(crate) type usize_ = u32;
+ 
+     } else if #[cfg(target_pointer_width = "64")] {
+-        crate type isize_ = i64;
+-        crate type usize_ = u64;
++        pub(crate) type isize_ = i64;
++        pub(crate) type usize_ = u64;
+     } else if #[cfg(target_pointer_width = "64")] {
+-        crate type isize_ = i64;
+-        crate type usize_ = u64;
++        pub(crate) type isize_ = i64;
++        pub(crate) type usize_ = u64;
+     } else if #[cfg(target_pointer_width = "128")] {
+-        crate type isize_ = i128;
+-        crate type usize_ = u128;
++        pub(crate) type isize_ = i128;
++        pub(crate) type usize_ = u128;
+     } else {
+         compile_error!("unsupported target_pointer_width");
+     }
+--- third_party/rust/packed_simd_2/src/codegen/math/float/abs.rs.orig	2022-09-10 21:48:23.724318000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/abs.rs	2022-09-10 21:48:40.251837000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Abs {
++pub(crate) trait Abs {
+     fn abs(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/cos.rs.orig	2022-09-10 21:49:27.748830000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/cos.rs	2022-09-10 21:49:44.643631000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Cos {
++pub(crate) trait Cos {
+     fn cos(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/cos_pi.rs.orig	2022-09-10 21:50:13.245107000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/cos_pi.rs	2022-09-10 21:50:49.459654000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait CosPi {
++pub(crate) trait CosPi {
+     fn cos_pi(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/exp.rs.orig	2022-09-10 21:51:22.692375000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/exp.rs	2022-09-10 21:51:40.651456000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Exp {
++pub(crate) trait Exp {
+     fn exp(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/ln.rs.orig	2022-09-10 21:52:09.156673000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/ln.rs	2022-09-10 21:52:22.811266000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Ln {
++pub(crate) trait Ln {
+     fn ln(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/mul_add.rs.orig	2022-09-10 21:53:05.084641000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/mul_add.rs	2022-09-10 21:53:14.931151000 +0200
+@@ -4,7 +4,7 @@
+ 
+ // FIXME: 64-bit 1 element mul_add
+ 
+-crate trait MulAdd {
++pub(crate) trait MulAdd {
+     fn mul_add(self, y: Self, z: Self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/mul_adde.rs.orig	2022-09-10 21:53:45.460180000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/mul_adde.rs	2022-09-10 21:54:00.179323000 +0200
+@@ -3,7 +3,7 @@
+ 
+ // FIXME: 64-bit 1 element mul_adde
+ 
+-crate trait MulAddE {
++pub(crate) trait MulAddE {
+     fn mul_adde(self, y: Self, z: Self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/powf.rs.orig	2022-09-10 21:54:39.691293000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/powf.rs	2022-09-10 21:54:51.171088000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Powf {
++pub(crate) trait Powf {
+     fn powf(self, x: Self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sin.rs.orig	2022-09-10 21:55:35.107224000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sin.rs	2022-09-10 21:55:49.986672000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Sin {
++pub(crate) trait Sin {
+     fn sin(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sin_cos_pi.rs.orig	2022-09-10 21:56:21.723890000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sin_cos_pi.rs	2022-09-10 21:56:37.098691000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait SinCosPi: Sized {
++pub(crate) trait SinCosPi: Sized {
+     type Output;
+     fn sin_cos_pi(self) -> Self::Output;
+ }
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sin_pi.rs.orig	2022-09-10 21:57:41.227568000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sin_pi.rs	2022-09-10 21:58:02.562792000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait SinPi {
++pub(crate) trait SinPi {
+     fn sin_pi(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sqrt.rs.orig	2022-09-10 21:58:34.115328000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sqrt.rs	2022-09-10 21:58:47.786446000 +0200
+@@ -5,7 +5,7 @@
+ 
+ use crate::*;
+ 
+-crate trait Sqrt {
++pub(crate) trait Sqrt {
+     fn sqrt(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/math/float/sqrte.rs.orig	2022-09-10 21:59:34.330737000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/math/float/sqrte.rs	2022-09-10 21:59:51.881919000 +0200
+@@ -6,7 +6,7 @@
+ use crate::llvm::simd_fsqrt;
+ use crate::*;
+ 
+-crate trait Sqrte {
++pub(crate) trait Sqrte {
+     fn sqrte(self) -> Self;
+ }
+ 
+--- third_party/rust/packed_simd_2/src/codegen/vPtr.rs.orig	2022-09-10 22:00:33.194761000 +0200
++++ third_party/rust/packed_simd_2/src/codegen/vPtr.rs	2022-09-10 22:01:11.386122000 +0200
+@@ -5,7 +5,7 @@
+      | $($tys:ty),*) => {
+         #[derive(Copy, Clone)]
+         #[repr(simd)]
+-        pub struct $tuple_id<$ty>($(crate $tys),*);
++        pub struct $tuple_id<$ty>($(pub(crate) $tys),*);
+         //^^^^^^^ leaked through SimdArray
+ 
+         impl<$ty> crate::sealed::Seal for [$ptr_ty; $elem_count] {}
