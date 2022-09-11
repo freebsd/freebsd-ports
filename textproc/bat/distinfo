@@ -1,4 +1,4 @@
-TIMESTAMP = 1662725822
+TIMESTAMP = 1662924238
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
@@ -289,5 +289,5 @@ SHA256 (rust/crates/xml-rs-0.8.4.crate) = d2d7d3948613f75c98fd9328cfdcc45acc4d36
 SIZE (rust/crates/xml-rs-0.8.4.crate) = 52690
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (sharkdp-bat-v0.22.0_GH0.tar.gz) = bec63bffc315bda7b65d472a19833e14bbaff4d251cedf8bfc77c82a00b77bfc
-SIZE (sharkdp-bat-v0.22.0_GH0.tar.gz) = 1794663
+SHA256 (sharkdp-bat-v0.22.1_GH0.tar.gz) = 25e45debf7c86794281d63a51564feefa96fdfdf575381e3adc5c06653ecaeca
+SIZE (sharkdp-bat-v0.22.1_GH0.tar.gz) = 1795451
