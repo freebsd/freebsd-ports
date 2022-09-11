@@ -1,11 +1,11 @@
 PORTNAME=	ipsumdump
-PORTVERSION=	1.86
+DISTVERSION=	1.86
 CATEGORIES=	net
-MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
+MASTER_SITES=	https://read.seas.harvard.edu/~kohler/ipsumdump/
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
-WWW=		http://www.cs.ucla.edu/~kohler/ipsumdump
+WWW=		https://read.seas.harvard.edu/~kohler/ipsumdump
 
 LICENSE=	CLICK
 LICENSE_NAME=	Click license
