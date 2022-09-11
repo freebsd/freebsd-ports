@@ -139,7 +139,7 @@ USBREDIR_DESC=			usb device network redirection (experimental!)
 VDE_DESC=			vde dependency (for vde networking)
 X86_TARGETS_DESC=		Build only x86 system targets
 CAPSTONE_LIB_DEPENDS=		libcapstone.so:devel/capstone4
-CAPSTONE_CONFIGURE_ON=		--enable-capstone=system \
+CAPSTONE_CONFIGURE_ON=		--enable-capstone \
 				--extra-cflags=-I${LOCALBASE}/include/capstone
 CAPSTONE_CONFIGURE_OFF=		--disable-capstone
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
