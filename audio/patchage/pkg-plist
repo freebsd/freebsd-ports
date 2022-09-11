@@ -13,4 +13,7 @@ share/icons/hicolor/32x32/apps/patchage.svg
 share/icons/hicolor/48x48/apps/patchage.png
 share/icons/hicolor/48x48/apps/patchage.svg
 share/icons/hicolor/scalable/apps/patchage.svg
+share/locale/de/LC_MESSAGES/patchage.mo
+share/locale/fr/LC_MESSAGES/patchage.mo
+share/locale/ko/LC_MESSAGES/patchage.mo
 %%DATADIR%%/patchage.ui
