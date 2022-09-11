@@ -1,6 +1,5 @@
 PORTNAME=	gtable
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -8,7 +7,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Arrange grobs in tables
 WWW=		https://cran.r-project.org/web/packages/gtable/
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 
 USES=	cran:auto-plist
 
