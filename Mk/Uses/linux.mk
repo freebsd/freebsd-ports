@@ -63,6 +63,7 @@ _linux_c7_dosfstools=			linux-c7-dosfstools>0:sysutils/linux-c7-dosfstools
 _linux_${linux_ARGS}_dri=		linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 _linux_${linux_ARGS}_elfutils-libelf=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
 _linux_c7_elfutils-libs=		linux-c7-elfutils-libs>0:devel/linux-c7-elfutils-libs
+_linux_c7_expat-devel=			linux-c7-expat-devel>0:textproc/linux-c7-expat-devel
 _linux_${linux_ARGS}_expat=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
 _linux_c7_flac=				linux-c7-flac-libs>0:audio/linux-c7-flac
 _linux_${linux_ARGS}_fontconfig=	linux-${linux_ARGS}-fontconfig>0:x11-fonts/linux-${linux_ARGS}-fontconfig
