@@ -1419,6 +1419,7 @@
     SUBDIR += linux-c7-sdl20
     SUBDIR += linux-c7-strace
     SUBDIR += linux-c7-systemd-libs
+    SUBDIR += linux-c7-zlib-devel
     SUBDIR += linux-ltp
     SUBDIR += linux-sublime-merge
     SUBDIR += linux_libusb

@@ -1,0 +1,9 @@
+TIMESTAMP = 1658737766
+SHA256 (centos/zlib-devel-1.2.7-18.el7.aarch64.rpm) = 7b5f44e3de91b6e3230b159bc0a2cce6fe3b9e4d589a20130fc517b866e02d4b
+SIZE (centos/zlib-devel-1.2.7-18.el7.aarch64.rpm) = 50604
+SHA256 (centos/zlib-devel-1.2.7-18.el7.i686.rpm) = 90fff9f5f0da00a5e8964c424b293a0e9eb565b0a0c2d8bdeffa4f19a14200c7
+SIZE (centos/zlib-devel-1.2.7-18.el7.i686.rpm) = 51164
+SHA256 (centos/zlib-devel-1.2.7-18.el7.x86_64.rpm) = 80429b07f1dd83e41aa54505f3eb9be3be9c5cb21972617cac56ad46fd68a8ae
+SIZE (centos/zlib-devel-1.2.7-18.el7.x86_64.rpm) = 51128
+SHA256 (centos/zlib-1.2.7-18.el7.src.rpm) = dce23cdfa1698c7a23995fc0d192608b5dbfde6d284edeffa41b6aaeff212940
+SIZE (centos/zlib-1.2.7-18.el7.src.rpm) = 527066

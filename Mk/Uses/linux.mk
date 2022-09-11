@@ -136,6 +136,7 @@ _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils
 _linux_c7_wayland=			linux-c7-wayland>0:graphics/linux-c7-wayland
 _linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
 _linux_c7_xorglibs=			linux-c7-xorg-libs>=7.7_7:x11/linux-c7-xorg-libs
+_linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel
 
 USE_LINUX?=		base
 .  for i in ${USE_LINUX}
