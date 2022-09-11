@@ -1,7 +1,3 @@
-TIMESTAMP = 1653607991
-SHA256 (qalculate-qt-4.2.0.tar.gz) = 1c62e419bb1f4c16aa428f68281bee3c44a12dde865e0a0b22e53b09f79a0a36
-SIZE (qalculate-qt-4.2.0.tar.gz) = 1283316
-SHA256 (a8bb789828cf21ad0551dd4b1757984b57d8e76b.patch) = 4155abaf34b8a35a7ae48f4caa2a22d2a3e712f90d6ef215a4a77005c2fbb481
-SIZE (a8bb789828cf21ad0551dd4b1757984b57d8e76b.patch) = 691
-SHA256 (fa69618d42b133e5942c4bb86efe2838b61af935.patch) = 2adc056c5710feff68f802eddba25d9f8ec73a0bad8aacdaa16e7c619514d7bb
-SIZE (fa69618d42b133e5942c4bb86efe2838b61af935.patch) = 731
+TIMESTAMP = 1662920005
+SHA256 (qalculate-qt-4.3.0.tar.gz) = add2c06b7909b99de2db8853ba48af5556ac51358423faeb1c03931fb6c446bf
+SIZE (qalculate-qt-4.3.0.tar.gz) = 1275580

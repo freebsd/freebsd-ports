@@ -1,11 +1,8 @@
 PORTNAME=	qalculate-qt
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/Qalculate/${PORTNAME}/commit/
-PATCHFILES+=	a8bb789828cf21ad0551dd4b1757984b57d8e76b.patch:-p1 #Add missing header
-PATCHFILES+=	fa69618d42b133e5942c4bb86efe2838b61af935.patch:-p1 #Fix version string
+PKGNAMESUFFIX=	${FLAVOR:S/qt//}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (Qt frontend)
@@ -17,9 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libqalculate.so:math/libqalculate
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lib gl pkgconfig qmake qt:5
+FLAVORS=		qt5 qt6
+FLAVOR?=		${FLAVORS:[1]}
+qt5_CONFLICTS_INSTALL=	qalculate-qt qalculate-qt6
+qt6_CONFLICTS_INSTALL=	qalculate-qt qalculate-qt5
+
+USES=		compiler:c++11-lib gl pkgconfig qmake qt:${FLAVOR:S/qt//}
 USE_GL=		gl
-USE_QT=		buildtools:build linguisttools:build core gui network widgets
+_USE_QT5=	buildtools:build linguisttools:build core gui network widgets
+_USE_QT6=	base tools:build
+USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
