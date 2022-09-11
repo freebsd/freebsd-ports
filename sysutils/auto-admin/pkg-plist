@@ -1,6 +1,7 @@
 bin/auto-append-line
 bin/auto-ask
 bin/auto-backup-file
+bin/auto-clean-pkgsrc
 bin/auto-fastest-mirror
 bin/auto-get-ip
 bin/auto-get-netmask
@@ -49,7 +50,6 @@ sbin/auto-change-primary-group
 sbin/auto-change-uid
 sbin/auto-check-ports-branch
 sbin/auto-clean-disk
-sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
 sbin/auto-cuda-install
