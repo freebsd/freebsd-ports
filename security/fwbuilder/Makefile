@@ -6,7 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
-WWW=		http://www.fwbuilder.org/
+WWW=		https://github.com/fwbuilder/fwbuilder
 
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: libz library not found
 
