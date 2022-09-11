@@ -1,5 +1,6 @@
 PORTNAME=	drm-fbsd12.0-kmod
 PORTVERSION=	4.16.g20220126
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,8 +12,6 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64 and i386
-
-RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
 OPTIONS_DEFINE=	DEBUG
 
