@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Logstash 8 was installed
+
+1) To start logstash as an agent during startup, add
+
+    logstash_enable="YES"
+
+   to your /etc/rc.conf.
+
+2) Extra options can be found in startup script.
+
+3) WARNING: In order for logstash to work properly,
+   you need /proc filesystem mounted.
+EOM
+}
+]
