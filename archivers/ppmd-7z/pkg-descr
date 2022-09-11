@@ -1,3 +1,0 @@
-Simple command line implementation of PPMD compression algorithm. It
-is based on code by Dmitry Shkarin (archivers/ppmd) but reworked by
-Igor Pavlov and bundled with 7zip.

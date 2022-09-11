@@ -173,7 +173,6 @@
     SUBDIR += pixz
     SUBDIR += plzip
     SUBDIR += ppmd
-    SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-acefile

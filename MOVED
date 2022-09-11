@@ -17553,3 +17553,4 @@ www/mediawiki136||2022-09-04|Has expired: Upstream no longer maintained
 games/sopwith|games/sdl-sopwith|2022-09-04|Moved to match upstream name
 graphics/drm-fbsd13-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
 graphics/drm-54-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
+archivers/ppmd-7z|archivers/7-zip|2022-09-11|ppmd-7z was a mis-named p7zip project that is unmaintained and has numerous vulnerabilities, users should use 7-zip instead
