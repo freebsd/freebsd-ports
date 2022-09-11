@@ -1,6 +1,6 @@
---- Makefile.orig	2018-09-13 09:39:16 UTC
+--- Makefile.orig	2022-07-11 08:31:26 UTC
 +++ Makefile
-@@ -11,8 +11,6 @@ ifeq ($(OSTYPE),Linux)
+@@ -11,8 +11,6 @@ ifeq ($(OSTYPE),FreeBSD)
  endif
  
  ifeq ($(OSTYPE),FreeBSD)

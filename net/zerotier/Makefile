@@ -1,5 +1,5 @@
 PORTNAME=	zerotier
-DISTVERSION=	1.8.9
+DISTVERSION=	1.10.1
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=		BUSINESS MIT PD
 LICENSE_COMB=		multi
 LICENSE_NAME_BUSINESS=	Business Source License
 LICENSE_FILE_BUSINESS=	${WRKSRC}/LICENSE.txt
-LICENSE_FILE_MIT=	${WRKSRC}/ext/json/LICENSE.MIT
+LICENSE_FILE_MIT=	${WRKSRC}/ext/http-parser/LICENSE-MIT
 LICENSE_PERMS_BUSINESS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	as:devel/binutils
