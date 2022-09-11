@@ -1,5 +1,5 @@
 PORTNAME=	virtualmin
-PORTVERSION=	7.0
+PORTVERSION=	7.2
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
@@ -17,9 +17,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:sysutils/webmin
 
 USES=		cpe shebangfix
 SHEBANG_FILES=	*.cgi
-NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
+
+post-build:
+	cd ${WRKSRC} && ${CC} procmail-wrapper.c -o procmail-wrapper
 
 post-extract:
 	@${RM} -r ${WRKSRC}/images/.xvpics ${WRKSRC}/.gitignore
