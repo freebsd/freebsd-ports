@@ -16,7 +16,7 @@ USES=	cmake compiler:c++14-lang desktop-file-utils gettext-runtime \
 	gnome localbase:ldflags lxqt pkgconfig qt:5 gnome tar:xz xorg
 
 USE_GNOME=	glib20
-USE_QT=		buildtools_build qmake_build core dbus gui linguisttools \
+USE_QT=		buildtools:build qmake:build core dbus gui linguisttools \
 		network printsupport svg widgets x11extras
 USE_LXQT=	buildtools libfmqt
 USE_XORG=	ice sm x11 xcb xext xfixes

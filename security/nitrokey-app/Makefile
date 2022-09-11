@@ -19,7 +19,7 @@ GH_ACCOUNT=	Nitrokey
 GH_TUPLE=	Nitrokey:nitrokey-app:${DISTVERSIONPREFIX}${DISTVERSION}\
 		tplgy:cppcodec:61d9b04:cppcodec
 
-USE_QT=	buildtools_build concurrent gui linguisttools_build qmake_build svg widgets
+USE_QT=	buildtools:build concurrent gui linguisttools:build qmake:build svg widgets
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/3rdparty/cppcodec

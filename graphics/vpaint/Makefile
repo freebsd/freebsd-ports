@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalboris
 
 USES=		compiler:c++11-lib eigen:3 gl qmake qt:5
-USE_QT=		core gui widgets opengl network qmake_build buildtools_build
+USE_QT=		core gui widgets opengl network qmake:build buildtools:build
 USE_GL=		gl glu glew
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/src/Gui

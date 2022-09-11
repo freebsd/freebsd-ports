@@ -26,7 +26,7 @@ _qt_version?=	5
 _qt5_qt6_on=	OFF
 _qt6_qt6_on=	ON
 _qt5_use=	core dbus gui widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 _qt6_use=	base
 _qt5_plist_sub=	QT_VERSION_SUFFIX=
 _qt6_plist_sub=	QT_VERSION_SUFFIX=6

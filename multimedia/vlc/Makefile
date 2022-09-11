@@ -275,7 +275,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 QT5_USES=	qt:5
-QT5_USE=	QT=gui,core,svg,widgets,x11extras,buildtools_build
+QT5_USE=	QT=gui,core,svg,widgets,x11extras,buildtools:build
 QT5_CONFIGURE_ENABLE=	qt
 QT5_IMPLIES=	X11
 

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libtag.so:audio/taglib
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		core gui network widgets buildtools_build
+USE_QT=		core gui network widgets buildtools:build
 USE_GL=		gl
 
 WRKSRC=		${WRKDIR}/Quimup_${PORTVERSION}_source

@@ -17,7 +17,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		decoration ecm frameworkintegration guiaddons i18n kcmutils \
 		service wayland widgetsaddons windowsystem
 USE_QT=		core dbus declarative gui network widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>

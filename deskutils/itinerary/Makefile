@@ -12,11 +12,11 @@ USE_KDE=	calendarcore completion config contacts coreaddons crash \
 		dbusaddons i18n jobwidgets kio kpkpass notifications kosm \
 		kitinerary kpublictransport mime qqc2-desktop-style \
 		service solid widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network quick3d \
 		quickcontrols2 \
 		testlib widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

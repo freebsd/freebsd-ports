@@ -15,10 +15,10 @@ USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		parts plasma-framework plasma-workspace runner service solid \
 		sonnet textwidgets unitconversion widgetsaddons windowsystem \
 		xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative graphicaleffects gui location \
 		network printsupport script webchannel widgets x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	PURPOSE QTWEBENGINE

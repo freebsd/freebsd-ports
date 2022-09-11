@@ -51,7 +51,7 @@ OPENGL_USE=		GL=gl,glew,glu
 
 QT5_CMAKE_BOOL=		USE_QT
 QT5_USES=		qt:5
-QT5_USE=		QT=core,concurrent,gui,network,svg,widgets,buildtools_build,qmake_build
+QT5_USE=		QT=core,concurrent,gui,network,svg,widgets,buildtools:build,qmake:build
 QT5_IMPLIES=		OPENGL
 
 SPGLIB_DESC=		Enable optional features using spglib

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util
 
 USES=		compiler:c++11-lang gl qmake qt:5 xorg
-USE_QT=		buildtools_build concurrent core gui \
+USE_QT=		buildtools:build concurrent core gui \
 		multimedia network svg x11extras widgets
 USE_XORG=	xcb xdamage
 USE_GL=		gl
@@ -27,7 +27,7 @@ GH_PROJECT=	lumina
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USE=	QT=linguist_build
+NLS_USE=	QT=linguist:build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 CONFLICTS_INSTALL=	lumina-1.2.*

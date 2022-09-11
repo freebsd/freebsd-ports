@@ -13,7 +13,7 @@ USES=		compiler:c++11-lang gl gnome pkgconfig qmake:norecursive \
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_QT=		core declarative gui network opengl widgets \
-		buildtools_build
+		buildtools:build
 USE_XORG=	x11 xext xv
 
 QT_CONFIG=	xlib

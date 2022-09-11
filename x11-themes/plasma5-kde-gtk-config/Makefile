@@ -20,9 +20,9 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 gtk30
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons dbusaddons decoration guiaddons i18n iconthemes \
 		jobwidgets kcmutils kio newstuff service widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network svg widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11 xcursor
 
 .include <bsd.port.mk>

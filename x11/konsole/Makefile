@@ -20,10 +20,10 @@ USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		iconthemes init itemmodels jobwidgets kio \
 		newstuff notifications notifyconfig parts pty service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

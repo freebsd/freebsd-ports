@@ -54,8 +54,8 @@ PLIST=		${PKGDIR}/pkg-plist.${QTCURVE_SLAVE}
 .if ${QTCURVE_SLAVE} == "utils"
 PKGNAMESUFFIX=	-utils
 USES+=		gettext-runtime kde:5 qt:5
-USE_KDE+=	i18n_build
-USE_QT+=	buildtools_build qmake_build
+USE_KDE+=	i18n:build
+USE_QT+=	buildtools:build qmake:build
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}
 .else
@@ -66,8 +66,8 @@ LIB_DEPENDS+=	libqtcurve-utils.so:x11-themes/qtcurve-utils
 PKGNAMEPREFIX=	gtk2-
 PKGNAMESUFFIX=	-theme
 USES+=		gettext-runtime gnome kde:5 qt:5
-USE_KDE=	i18n_build
-USE_QT+=	buildtools_build qmake_build
+USE_KDE=	i18n:build
+USE_QT+=	buildtools:build qmake:build
 USE_GNOME=	cairo gdkpixbuf2 gtk20 pango
 USE_LDCONFIG=	yes
 
@@ -84,9 +84,9 @@ USES+=		kde:5 qt:5
 USE_KDE=	archive completion config configwidgets coreaddons \
 		frameworkintegration guiaddons i18n iconthemes \
 		init kdelibs4support kio widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		core dbus gui printsupport svg widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 BUILD_WRKSRC=	${WRKSRC}/qt5
 .endif
 
@@ -94,9 +94,9 @@ BUILD_WRKSRC=	${WRKSRC}/qt5
 CONFLICTS_INSTALL=	kf5-style-qtcurve
 PKGNAMEPREFIX=	qt5-style-
 USES+=		kde:5 qt:5
-USE_KDE=	i18n_build
+USE_KDE=	i18n:build
 USE_QT=		core dbus gui svg widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/qtcurve.so
 .endif
 

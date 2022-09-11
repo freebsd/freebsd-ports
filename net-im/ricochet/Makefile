@@ -19,7 +19,7 @@ USES=		compiler:c++11-lib gl gmake pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricochet-im
 USE_QT=		core declarative gui multimedia network quickcontrols widgets \
-		buildtools_build linguisttools_build
+		buildtools:build linguisttools:build
 USE_GL=		gl
 QMAKE_ARGS+=	DEFINES+=RICOCHET_NO_PORTABLE OPENSSLDIR=${OPENSSLBASE}
 

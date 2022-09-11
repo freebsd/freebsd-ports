@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp libmpfr.so:math/mpfr
 USES=		compiler:c++14-lang gmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	huxingyi
-USE_QT=		buildtools_build linguisttools_build qmake_build \
+USE_QT=		buildtools:build linguisttools:build qmake:build \
 		core gui network opengl widgets
 ALL_TARGET=	all
 

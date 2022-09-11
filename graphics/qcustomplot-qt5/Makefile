@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 USES=		compiler:c++11-lang pkgconfig qt:5
-USE_QT=		core gui widgets printsupport buildtools_build
+USE_QT=		core gui widgets printsupport buildtools:build
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

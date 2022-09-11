@@ -17,7 +17,7 @@ RUN_DEPENDS=	rsync:net/rsync \
 USES=		compiler:c++11-lang gl qmake qt:5
 
 USE_GL=		gl
-USE_QT=		core gui network widgets buildtools_build
+USE_QT=		core gui network widgets buildtools:build
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr|$$$${PREFIX}|g' -e '/INSTALLS/s|debianmenu ||' \

@@ -16,7 +16,7 @@ USES=		compiler:c++11-lang gettext gl pathfix pkgconfig python qmake \
 		qt:5 tar:bz2
 USE_GL=		gl
 USE_QT=		core dbus gui network sql testlib xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 # gitlab variables
 USE_GITLAB=	yes

@@ -18,7 +18,7 @@ USE_GL=		gl
 USE_GNOME=	glib20 libxml2
 USE_KDE=	ecm
 USE_QT=		core gui opengl phonon4 widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5

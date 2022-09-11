@@ -39,8 +39,8 @@ USE_XORG=	ice sm x11 xext
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	mixxxdj
-USE_QT=		buildtools concurrent core dbus gui linguisttools_build network \
-		opengl qmake_build  script scripttools sql sql-sqlite3 svg \
+USE_QT=		buildtools concurrent core dbus gui linguisttools:build network \
+		opengl qmake:build  script scripttools sql sql-sqlite3 svg \
 		testlib x11extras xml xmlpatterns widgets
 
 CONFLICTS=	mixxx22*

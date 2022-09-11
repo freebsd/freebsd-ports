@@ -14,7 +14,7 @@ LIB_DEPENDS=	libminizip.so:archivers/minizip
 
 USES=		cmake desktop-file-utils gl lua:51 pkgconfig qt:5 sdl
 USE_GL=		gl glu
-USE_QT=		buildtools_build core gui opengl qmake_build widgets
+USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_SDL=	sdl2
 
 CFLAGS+=	-DPUBLIC_RELEASE

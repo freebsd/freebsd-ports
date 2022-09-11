@@ -13,7 +13,7 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 USES=		compiler:c++11-lib pkgconfig qmake qt:5
 USE_GITHUB=	yes
-USE_QT=		qmake_build buildtools_build core gui network widgets
+USE_QT=		qmake:build buildtools:build core gui network widgets
 GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	VulkanCapsViewer
 GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.3.226:vkheaders/Vulkan-Headers
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	WAYLAND X11
 OPTIONS_DEFAULT=WAYLAND X11
 
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_USE=		QT=wayland_build
+WAYLAND_USE=		QT=wayland:build
 WAYLAND_QMAKE_ON=	DEFINES+=WAYLAND
 
 X11_USE=		QT=x11extras

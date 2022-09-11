@@ -25,7 +25,7 @@ GL_ACCOUNT=	solarus-games
 GL_COMMIT=	f43727b232b3ed13d98440a845e2a29e470e4f0d
 
 MAKE_ARGS+=	DESTDIR=${STAGEDIR}
-USE_QT=		buildtools_build core gui linguisttools_build widgets
+USE_QT=		buildtools:build core gui linguisttools:build widgets
 USE_SDL=	sdl2 ttf2 image2
 USE_GL=		gl glu
 USE_LDCONFIG=	yes

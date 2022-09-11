@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 USES=		compiler:c++11-lib gl qmake qt:5 tar:bzip2
 USE_CXXSTD=	c++11
 USE_GL=		gl
-USE_QT=		buildtools_build core gui widgets
+USE_QT=		buildtools:build core gui widgets
 
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \

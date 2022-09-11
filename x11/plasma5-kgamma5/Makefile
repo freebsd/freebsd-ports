@@ -12,9 +12,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		itemmodels itemviews jobwidgets kio notifications parts \
 		service solid sonnet textwidgets unitconversion widgetsaddons \
 		windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		core dbus gui network printsupport widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xxf86vm
 
 .include <bsd.port.mk>

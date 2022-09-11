@@ -63,7 +63,7 @@ LIBRETRO_CMAKE_BOOL=	LIBRETRO
 LIBRETRO_PLIST_FILES=	lib/libretro/${PORTNAME}_libretro.so
 LIBRETRO_VARS=	CONFLICTS_INSTALL= DESKTOP_ENTRIES= PLIST= PORTDATA= PKGMESSAGE= SUB_FILES=
 QT5_USES=	qt:5 sdl
-QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,gui,multimedia,opengl,widgets
+QT5_USE=	QT=qmake:build,buildtools:build,linguisttools:build,gui,multimedia,opengl,widgets
 QT5_USE+=	SDL=sdl2 # audio, joystick
 QT5_CMAKE_BOOL=	USING_QT_UI
 QT5_VARS=	EXENAME=PPSSPPQt

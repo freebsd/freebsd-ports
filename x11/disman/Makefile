@@ -14,9 +14,9 @@ TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
 USES=		cmake:testing kde:5 qt:5
 USE_GITLAB=	yes
-USE_KDE=	ecm_build coreaddons
+USE_KDE=	ecm:build coreaddons
 USE_LDCONFIG=	yes
-USE_QT=		qmake_build buildtools_build core dbus gui
+USE_QT=		qmake:build buildtools:build core dbus gui
 GL_ACCOUNT=	kwinft
 GL_COMMIT=	a8fc81af423ab14513c7096b405cec3f58943495
 PLIST_SUB=	VERSION=${PORTVERSION}

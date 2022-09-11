@@ -11,7 +11,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++14-lang kde:5 xorg lxqt pkgconfig qt:5 tar:xz gnome
-USE_QT=		buildtools_build qmake_build core dbus gui linguisttools \
+USE_QT=		buildtools:build qmake:build core dbus gui linguisttools \
 		svg widgets x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools lxqt

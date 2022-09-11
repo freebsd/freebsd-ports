@@ -22,7 +22,7 @@ USES=		compiler:c++11-lang gl pkgconfig qmake qt:5 xorg
 USE_GL=		gl
 USE_XORG=	x11 xpm
 USE_QT=		core gui network svg widgets x11extras  \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
 
 OPTIONS_DEFINE=		DOCS LDAP

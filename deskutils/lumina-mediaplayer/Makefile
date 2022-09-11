@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 USES=		compiler:c++11-lang desktop-file-utils gl gstreamer qmake qt:5
 USE_GL=		gl
 USE_GSTREAMER=	gl
-USE_QT=		buildtools_build core concurrent gui \
+USE_QT=		buildtools:build core concurrent gui \
 		multimedia network svg widgets x11extras
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
@@ -22,7 +22,7 @@ GH_PROJECT=	lumina
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USE=	qt=linguist_build
+NLS_USE=	qt=linguist:build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}

@@ -14,13 +14,13 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons dbusaddons emoticons i18n init iconthemes itemmodels itemviews \
 		jobwidgets kcmutils kio newstuff service solid sonnet textwidgets \
 		wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadisearch contacts grantleetheme imap ldap \
 		libkdepim mime pimtextedit purpose
 USE_QT=		concurrent core dbus designer gui network printsupport script testlib \
 		uiplugin uitools webkit widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

@@ -13,7 +13,7 @@ USE_KDE=	activities completion config coreaddons crash dbusaddons \
 		plasma-framework plasma-workspace purpose runner service \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core declarative dbus gui network widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

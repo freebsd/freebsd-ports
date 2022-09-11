@@ -22,8 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	retext-project
 GH_PROJECT=	retext
 USE_PYTHON=	distutils autoplist noflavors
-USE_QT=		linguisttools_build
-USE_PYQT=	pyqt5_run sip_run
+USE_QT=		linguisttools:build
+USE_PYQT=	pyqt5:run sip:run
 
 BINARY_ALIAS=	lrelease=${LRELEASE}
 

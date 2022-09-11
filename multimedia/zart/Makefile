@@ -25,7 +25,7 @@ USES=		compiler:c++11-lang pkgconfig qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-koi
 GH_TAGNAME=	099554f
-USE_QT=		core gui network widgets xml buildtools_build
+USE_QT=		core gui network widgets xml buildtools:build
 
 GMIC_VERSION=	2.8.1
 

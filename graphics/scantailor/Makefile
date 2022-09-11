@@ -20,8 +20,8 @@ USES=		cmake compiler:c++11-lang desktop-file-utils jpeg qt:5 \
 		shared-mime-info xorg
 USE_CXXSTD=	gnu++98
 USE_GITHUB=	yes
-USE_QT=		core gui network opengl widgets xml buildtools_build \
-		linguisttools_build qmake_build
+USE_QT=		core gui network opengl widgets xml buildtools:build \
+		linguisttools:build qmake:build
 USE_XORG+=	xrender
 
 GH_ACCOUNT=	4lex4

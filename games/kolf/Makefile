@@ -12,10 +12,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		itemviews jobwidgets kdelibs4support kio libkdegames \
 		notifications parts service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 USE_LDCONFIG=	yes
 

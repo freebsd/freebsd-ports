@@ -41,8 +41,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 gtkmm24 pango
-USE_QT=		core gui svg widgets x11extras xml buildtools_build linguisttools_build qmake_build
-#USE_QT=		base svg tools_build # for Qt6
+USE_QT=		core gui svg widgets x11extras xml buildtools:build linguisttools:build qmake:build
+#USE_QT=		base svg tools:build # for Qt6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${DISTVERSION}
 

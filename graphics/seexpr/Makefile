@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		bison cmake compiler:c++14-lang gl qt:5
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build qmake_build core gui opengl widgets
+USE_QT=		buildtools:build qmake:build core gui opengl widgets
 
 MAKE_JOBS_UNSAFE=	yes	# https://github.com/wdas/seexpr/issues/40
 
@@ -38,7 +38,7 @@ LLVM_LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_DEFAULT}
 LLVM_CMAKE_OFF=		-DENABLE_LLVM_BACKEND:BOOL=FALSE
 
 NLS_USES=		kde:5
-NLS_USE=		KDE=ecm_build
+NLS_USE=		KDE=ecm:build
 NLS_CMAKE_OFF=		-DBUILD_TRANSLATIONS:BOOL=FALSE
 
 PYTHON_BUILD_DEPENDS=	sip:devel/py-sip4

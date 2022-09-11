@@ -33,11 +33,11 @@ USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		textwidgets threadweaver \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui help network printsupport \
-		script sql widgets xml buildtools_build qmake_build
+		script sql widgets xml buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 		kdevplatform/util/.zshrc
-# Most ports have ecm_build, testlib_build, but because this is an
+# Most ports have ecm:build, testlib:build, but because this is an
 # IDE, which **probably** is used for Qt / KDE development (also
 # other things, but let's guess a target market), pull in some
 # additional development things that are otherwise build-dep-only.

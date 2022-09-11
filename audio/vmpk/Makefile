@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdrumstick-rt.so:audio/drumstick
 
 USES=		compiler:c++11-lang cmake localbase:ldflags pkgconfig qt:6 tar:bz2 xorg
-USE_QT=		base svg tools_build
+USE_QT=		base svg tools:build
 USE_XORG=	xcb
 
 CMAKE_ON=	EMBED_TRANSLATIONS

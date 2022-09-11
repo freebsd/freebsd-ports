@@ -11,8 +11,8 @@ LICENSE=	LGPL21+
 
 USES=		cmake compiler:c++11-lib cpe kde:5 qt:5 tar:xz
 CPE_VENDOR=	kde
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		core dbus declarative gui linguisttools network xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 .include <bsd.port.mk>

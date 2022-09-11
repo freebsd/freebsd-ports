@@ -28,7 +28,7 @@ SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	python/plugin python/proxy resources/install/postinst python/test_dis
 USE_GITHUB=	yes
 GH_ACCOUNT=	codilime
-USE_QT=		core gui network widgets buildtools_build qmake_build
+USE_QT=		core gui network widgets buildtools:build qmake:build
 
 CMAKE_ARGS=	-DFREEBSD_PYTHON_CMD:STRING=${PYTHON_CMD} \
 		-DFREEBSD_PYTHON_EXENAME:STRING=${PYTHON_CMD:C/.*\///} \

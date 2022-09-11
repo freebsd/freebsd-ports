@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		dos2unix python pyqt:5
 USE_PYTHON=	distutils cython noflavors autoplist
-USE_PYQT=	pyqt5_run sip_run
+USE_PYQT=	pyqt5:run sip:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uvemas

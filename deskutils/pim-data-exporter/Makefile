@@ -17,13 +17,13 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons i18n itemmodels itemviews \
 		jobwidgets kio notifications service solid wallet \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadinotes calendarcore contacts \
 		grantleetheme identitymanagement imap libkdepim libkleo mailcommon \
 		mailtransport messagelib mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

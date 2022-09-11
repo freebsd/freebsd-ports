@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libtcmalloc.so:devel/google-perftools
 
 USES=		compiler:c++17-lang cmake pkgconfig qt:5
-USE_QT=		core gui svg widgets buildtools_build qmake_build
+USE_QT=		core gui svg widgets buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict

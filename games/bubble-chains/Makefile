@@ -16,7 +16,7 @@ GH_ACCOUNT=	ArsMasiuk
 
 USES=		qmake qt:5 xorg
 USE_QT=		core gui widgets xml opengl multimedia x11extras \
-		qmake_build buildtools_build
+		qmake:build buildtools:build
 USE_XORG=	x11 xrandr
 
 QMAKE_ARGS=	DATADIR="${DATADIR}"

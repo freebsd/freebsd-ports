@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_SUB=	yes
 
 GUI_USES=	qt:5
-GUI_USE=	QT=buildtools_build,qmake_build,core,gui,widgets
+GUI_USE=	QT=buildtools:build,qmake:build,core,gui,widgets
 GUI_MAKE_ENV=	QMAKE="${QMAKE}"
 GUI_ALL_TARGET=	gui
 GUI_INSTALL_TARGET=	install-gui

@@ -19,9 +19,9 @@ USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
 		doctools i18n iconthemes itemmodels kcmutils notifications \
 		service sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		libkleo mime \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui network printsupport testlib widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

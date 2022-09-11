@@ -11,9 +11,9 @@ LIB_DEPENDS=	 libqmobipocket.so:graphics/kdegraphics-mobipocket
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
 USE_KDE=	archive completion config coreaddons jobwidgets libkdcraw \
 		libkexiv2 kio service solid widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

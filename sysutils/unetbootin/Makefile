@@ -16,7 +16,7 @@ RUN_DEPENDS=	7zz:archivers/7-zip \
 		mke2fs:sysutils/e2fsprogs
 
 USES=		qt:5
-USE_QT=		buildtools_build linguisttools_build qmake_build \
+USE_QT=		buildtools:build linguisttools:build qmake:build \
 		core gui network widgets
 QMAKE_ARGS=	DEFINES+=LOCALBASE=\\\\\\\"${LOCALBASE}\\\\\\\"
 

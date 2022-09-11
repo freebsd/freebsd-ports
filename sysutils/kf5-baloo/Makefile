@@ -13,6 +13,6 @@ USE_KDE=	config coreaddons crash dbusaddons \
 		filemetadata i18n idletime kio service \
 		solid
 USE_QT=		concurrent core dbus declarative gui network \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 .include <bsd.port.mk>

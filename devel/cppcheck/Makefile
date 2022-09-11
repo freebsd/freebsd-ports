@@ -24,7 +24,7 @@ RUN_DEPENDS=		cppcheck:devel/cppcheck
 
 CMAKE_ON+=		BUILD_GUI
 USES+=			qt:5
-USE_QT=			core gui widgets printsupport help qmake_build buildtools_build linguisttools_build
+USE_QT=			core gui widgets printsupport help qmake:build buildtools:build linguisttools:build
 
 BUILD_WRKSRC=		${WRKSRC}/gui
 INSTALL_WRKSRC=		${WRKSRC}/gui

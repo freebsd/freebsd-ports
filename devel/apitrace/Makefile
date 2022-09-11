@@ -33,7 +33,7 @@ OPTIONS_SUB=		yes
 WAFFLE_DESC=	Use Waffle library to allow retrace on Wayland, headless etc.
 
 QT5_USES=	qt:5
-QT5_USE=	QT=core,gui,network,widgets,buildtools_build,qmake_build
+QT5_USE=	QT=core,gui,network,widgets,buildtools:build,qmake:build
 QT5_CMAKE_BOOL=	ENABLE_GUI
 
 WAFFLE_LIB_DEPENDS=	libwaffle-1.so:graphics/waffle

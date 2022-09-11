@@ -20,7 +20,7 @@ USES=		cmake compiler:c++11-lang gettext gnome gstreamer localbase:ldflags pathf
 		pkgconfig python:3.5+,build qt:5
 USE_GNOME=	glib20 libxslt:build
 USE_QT=		core dbus gui network xml \
-		buildtools_build qmake_build testlib_build widgets_build
+		buildtools:build qmake:build testlib:build widgets:build
 
 CMAKE_ON=	ENABLE_FARSTREAM CMAKE_DISABLE_FIND_PACKAGE_Doxygen
 CMAKE_OFF=	ENABLE_EXAMPLES ENABLE_FARSIGHT ENABLE_TESTS

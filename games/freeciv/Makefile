@@ -76,7 +76,7 @@ PGSQL_CONFIGURE_ON=	--with-postgres-prefix=${LOCALBASE}
 PGSQL_VARS=		_FREECIV_DB+=postgres
 
 QT5_USES=		qt:5 sdl
-QT5_USE=		QT=core,gui,widgets,buildtools_build \
+QT5_USE=		QT=core,gui,widgets,buildtools:build \
 			SDL=mixer2
 QT5_CONFIGURE_ON=	--with-qt5-includes=${LOCALBASE}/${QT_INCDIR_REL} \
 			--with-qt5-libs=${LOCALBASE}/${QT_LIBDIR_REL}

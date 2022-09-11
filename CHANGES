@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220911:
+AUTHOR: zirias@FreeBSD.org
+
+  kde.mk, qt.mk and pyqt.mk now use a colon for component suffixes
+
+  Suffixes for build, run and test (for pyqt) dependencies used an underscore
+  previously. This was not in line with most other USES, using a colon for
+  that purpose.
+
+  So if you previously had for example
+
+	USE_QT=	buildtools_build
+
+  replace it with
+
+	USE_QT= buildtools:build
+
 20220907:
 AUTHOR: se@FreeBSD.org
 

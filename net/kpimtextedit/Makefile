@@ -12,9 +12,9 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		emoticons i18n iconthemes init itemmodels itemviews jobwidgets \
 		kdelibs4support kio service solid sonnet syntaxhighlighting textwidgets \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network speech widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

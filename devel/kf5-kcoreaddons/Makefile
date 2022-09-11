@@ -9,9 +9,9 @@ LICENSE=	LGPL21+ BSD3CLAUSE
 LICENSE_COMB=	multi
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 shared-mime-info tar:xz
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		core linguisttools \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=		FAM INOTIFY
 OPTIONS_DEFAULT=	INOTIFY

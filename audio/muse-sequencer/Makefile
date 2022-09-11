@@ -29,7 +29,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome localbase:ldflags qt:5 pkgconfig python shared-mime-info shebangfix
 USE_GL=		gl
-USE_QT=		core gui svg xml widgets buildtools_build linguisttools_build qmake_build uitools_build
+USE_QT=		core gui svg xml widgets buildtools:build linguisttools:build qmake:build uitools:build
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
 USE_LDCONFIG=	yes
 

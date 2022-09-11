@@ -19,7 +19,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gnome \
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 USE_QT=		core dbus gui multimedia network xml widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 
 CMAKE_ARGS=	-DWITH_DOCBOOKDIR="${LOCALBASE}/share/xsl/docbook" \
 		-DWITH_LIBDIR=lib \
@@ -39,7 +39,7 @@ KID3_APPS+=	QT
 # KF5
 USES+=		kde:5
 USE_KDE+=	auth codecs config configwidgets coreaddons kio \
-		service widgetsaddons xmlgui doctools_build ecm_build
+		service widgetsaddons xmlgui doctools:build ecm:build
 USE_QT+=	concurrent
 PLIST_SUB+=	KF5="" QT="@comment " QT_SUFX=""
 KID3_APPS+=	KDE
@@ -78,7 +78,7 @@ TAGLIB_DESC=		Various audio formats support via Taglib
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 TAGLIB_CMAKE_BOOL=	WITH_TAGLIB
 
-TEST_USE=		LOCALE=en_US.UTF-8 QT=testlib_build
+TEST_USE=		LOCALE=en_US.UTF-8 QT=testlib:build
 TEST_CMAKE_BOOL=	BUILD_TESTING
 TEST_TARGET=		# define to override CMAKE_ARGS from Uses/kde.mk
 TEST_WRKSRC=		${BUILD_WRKSRC}/src/test

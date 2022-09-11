@@ -104,10 +104,10 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYQT=	pyqt5 qscintilla2 pysip sip
-USE_QT=		3d buildtools_build core concurrent dbus declarative \
-		designer_build qdoc_build gamepad gui linguist_build location \
-		network printsupport qmake_build script serialport \
-		sql sql-pgsql sql-sqlite3 svg uitools_build \
+USE_QT=		3d buildtools:build core concurrent dbus declarative \
+		designer:build qdoc:build gamepad gui linguist:build location \
+		network printsupport qmake:build script serialport \
+		sql sql-pgsql sql-sqlite3 svg uitools:build \
 		webengine webkit widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py

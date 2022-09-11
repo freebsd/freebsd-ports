@@ -8,6 +8,6 @@ COMMENT=	Qt 5 charts module
 
 USES=		compiler:c++11-lang qmake qt-dist:5,charts tar:xz
 USE_QT=		core declarative network gui widgets designer \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

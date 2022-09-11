@@ -10,9 +10,9 @@ LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 
 USES=		cmake compiler:c++17-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth coreaddons i18n widgetsaddons \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative \
 		gui widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

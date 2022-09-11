@@ -22,7 +22,7 @@ USE_GNOME=		cairo gdkpixbuf2 glib20 libxml2 pango
 USE_KDE=		auth codecs config configwidgets coreaddons i18n \
 			kirigami2 widgetsaddons
 USE_QT=			core declarative gui network widgets xml \
-			buildtools_build qmake_build
+			buildtools:build qmake:build
 
 pre-configure:
 	${CP} ${DISTDIR}/${DISTNAME}.cargo.vendor${EXTRACT_SUFX} ${WRKSRC}/ikona.cargo.vendor.tar.xz

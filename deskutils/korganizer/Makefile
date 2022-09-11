@@ -15,16 +15,16 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		itemmodels itemviews jobwidgets kcmutils kdelibs4support kio \
 		newstuff notifications parts service solid sonnet textwidgets \
 		unitconversion wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		akonadinotes akonadisearch calendarcore calendarsupport \
 		calendarutils contacts eventviews grantleetheme holidays identitymanagement \
 		imap incidenceeditor kontactinterface ldap \
 		libkdepim mailtransport mime pimcommon pimtextedit \
-		kdepim-runtime5_run
+		kdepim-runtime5:run
 USE_QT=		concurrent core dbus gui multimedia network phonon4 printsupport widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

@@ -27,7 +27,7 @@ BROKEN=		error: use of undeclared identifier '_1'
 USES=		compiler:c++11-lang gl gmake iconv qmake qt:5 sdl sqlite ssl
 USE_GL=		gl
 USE_CXXSTD=	c++11
-USE_QT=		buildtools_build core gui network sql sql-sqlite3 widgets
+USE_QT=		buildtools:build core gui network sql sql-sqlite3 widgets
 USE_SDL=	mixer
 
 QMAKE_SOURCE_PATH=	pokerth.pro

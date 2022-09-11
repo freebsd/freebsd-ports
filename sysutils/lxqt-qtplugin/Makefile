@@ -18,7 +18,7 @@ USES=	cmake compiler:c++14-lang gnome kde:5 lxqt pkgconfig tar:xz qt:5 \
 
 USE_XORG=xcb
 USE_GNOME=glib20
-USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
+USE_QT=	buildtools:build qmake:build core dbus gui svg widgets \
 	x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools qtxdg libfmqt

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libsndfile.so:audio/libsndfile # audio/alsa-lib isn't really needed: https://github.com/grame-cncm/faustlive/issues/3
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5 shebangfix
-USE_QT=		core gui network widgets buildtools_build
+USE_QT=		core gui network widgets buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

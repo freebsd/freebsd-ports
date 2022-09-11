@@ -29,7 +29,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USES=		cmake jpeg compiler:c++14-lang iconv:wchar_t qt:5
 
-USE_QT+=	buildtools_build qmake_build
+USE_QT+=	buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
@@ -66,7 +66,7 @@ IMAGEVIEWER_USES=	gl
 IMAGEVIEWER_IMPLIES=	TOOLS
 IMAGEVIEWER_CMAKE_BOOL=	USE_QT USE_OPENGL
 IMAGEVIEWER_USE=	GL=gl,glu,glew \
-			QT=buildtools,core,gui,opengl,qmake_build,widgets
+			QT=buildtools,core,gui,opengl,qmake:build,widgets
 
 OPENCV_CMAKE_BOOL=	USE_OPENCV
 OPENCV_IMPLIES=		OPENJPEG

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=	cmake compiler:c++11-lang gettext-runtime lxqt \
 	pkgconfig qt:5 tar:xz
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build core gui qmake_build linguisttools widgets
+USE_QT=		buildtools:build core gui qmake:build linguisttools widgets
 USE_LXQT=	buildtools
 
 CMAKE_ARGS+=	-DQTERMWIDGET_USE_UTEMPTER=ON

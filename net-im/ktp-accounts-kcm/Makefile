@@ -26,9 +26,9 @@ USE_GNOME=	intltool
 USE_KDE=	auth codecs config configwidgets coreaddons i18n \
 		iconthemes itemviews kcmutils kio notifications notifyconfig \
 		service texteditor wallet widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network sql widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	IRC JABBER SALUT DOCS

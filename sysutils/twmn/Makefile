@@ -16,7 +16,7 @@ USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	sboli
 GH_TAGNAME=	861a323
-USE_QT=		core dbus gui network widgets x11extras buildtools_build
+USE_QT=		core dbus gui network widgets x11extras buildtools:build
 LDFLAGS+=	-Wl,--as-needed  # see bug#224488
 
 # Fix build with Qt 5.13

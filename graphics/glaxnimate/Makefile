@@ -15,7 +15,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpotrace.so:graphics/libpotrace
 
 USES=		cmake compiler:c++17-lang gl libarchive python qt:5
-USE_QT=		concurrent core gui network svg xml widgets buildtools_build linguisttools_build qmake_build uitools_build
+USE_QT=		concurrent core gui network svg xml widgets buildtools:build linguisttools:build qmake:build uitools:build
 USE_GL=		gl
 
 USE_GITLAB=	yes

@@ -232,7 +232,7 @@ MARIADB_CONFIGURE_ENABLE=	mariadb-sdbc
 MARIADB_USES=	mysql:client
 
 QT5_CONFIGURE_ENABLE=	qt5
-QT5_USE=	qt=buildtools_build,core,gui,network,qmake_build,widgets,x11extras
+QT5_USE=	qt=buildtools:build,core,gui,network,qmake:build,widgets,x11extras
 QT5_USES=	qt:5
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen

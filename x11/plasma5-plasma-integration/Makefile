@@ -15,10 +15,10 @@ USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
 		coreaddons ecm i18n iconthemes itemviews jobwidgets kio \
 		notifications service solid wayland widgetsaddons windowsystem \
 		xmlgui \
-		qqc2-desktop-style_run
+		qqc2-desktop-style:run
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xcb xcursor
 
 SHEBANG_FILES=	src/platformtheme/fonts_akregator.pl \

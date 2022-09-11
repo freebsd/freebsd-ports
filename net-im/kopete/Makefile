@@ -21,11 +21,11 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		khtml kio notifications notifyconfig parts service solid sonnet \
 		syntaxhighlighting texteditor textwidgets unitconversion wallet widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # KDE PIM components
 USE_KDE+=	contacts identitymanagement libkleo pimtextedit
 USE_QT=		concurrent core dbus gui network phonon4 printsupport sql widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	protocols/winpopup/winpopup-install \

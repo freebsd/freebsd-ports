@@ -18,7 +18,7 @@ GH_ACCOUNT=	xaos-project
 GH_PROJECT=	XaoS
 
 USE_GL=		gl
-USE_QT=		core gui opengl widgets buildtools_build linguisttools_build
+USE_QT=		core gui opengl widgets buildtools:build linguisttools:build
 
 QMAKE_ARGS+=	INCLUDEPATH+=${LOCALBASE}/include \
 		LIBS+=-L${LOCALBASE}/lib

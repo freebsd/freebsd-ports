@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	X11
 X11_DESC=	Build with Qt 5 GUI frontend
 
 X11_USES=	pkgconfig qt:5
-X11_USE=	QT=buildtools_build,qmake_build,charts,core,gui,widgets
+X11_USE=	QT=buildtools:build,qmake:build,charts,core,gui,widgets
 X11_CONFIGURE_OFF=	--disable-gui
 
 post-patch:

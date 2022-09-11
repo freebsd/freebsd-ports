@@ -15,12 +15,12 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		i18n iconthemes itemviews jobwidgets kded kio notifications \
 		parts service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build \
-		designerplugin_build designerplugin_run \
-		itemmodels_run
+		doctools:build ecm:build \
+		designerplugin:build designerplugin:run \
+		itemmodels:run
 USE_QT=		concurrent core dbus designer gui network \
 		printsupport svg testlib widgets x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	ice sm x11 xcb xext
 
 SHEBANG_FILES=	src/kio/fileshareset

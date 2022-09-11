@@ -18,10 +18,10 @@ USE_KDE=	activities archive attica auth codecs completion config \
 		guiaddons i18n iconthemes jobwidgets kdeclarative kio \
 		libksysguard newstuff notifications package plasma-framework \
 		service solid wayland widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network widgets \
 		x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xext
 
 .include <bsd.port.mk>

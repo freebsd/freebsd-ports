@@ -67,14 +67,14 @@ NO_TEST=	yes
 .  if ${SLAVEPORT} == "qt5"
 LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
 USES+=		compiler:c++11-lib pkgconfig qt:5
-USE_QT=	buildtools_build core
+USE_QT=	buildtools:build core
 CONFIGURE_ARGS+=--enable-languages="cpp qt"
 DOCSDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE+=	DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
-TEST_USE=		QT=testlib_build
+TEST_USE=		QT=testlib:build
 .  endif
 
 .  if ${SLAVEPORT} == "python"

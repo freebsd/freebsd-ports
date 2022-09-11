@@ -13,10 +13,10 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 		jobwidgets kdeclarative kio kirigami2 newstuff package parts \
 		plasma-framework service solid sonnet syntaxhighlighting \
 		texteditor textwidgets widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus declarative gui network webkit widgets \
 		x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

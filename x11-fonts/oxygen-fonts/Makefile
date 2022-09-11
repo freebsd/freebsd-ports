@@ -16,11 +16,11 @@ BUILD_DEPENDS=	fontforge:print/fontforge
 
 USES=		cmake fonts:none kde:5 qt:5 tar:xz
 
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 KDE_PLASMA_VERSION=	${DISTVERSION}
 KDE_PLASMA_BRANCH=	Attic
 
-USE_QT=	buildtools_build qmake_build
+USE_QT=	buildtools:build qmake:build
 
 NO_ARCH=	yes
 

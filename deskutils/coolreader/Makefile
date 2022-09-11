@@ -23,7 +23,7 @@ USES=		qt:5 cmake:noninja pkgconfig desktop-file-utils jpeg
 USE_GITHUB=	yes
 GH_ACCOUNT=	buggins
 
-USE_QT=		core buildtools_build gui qmake_build widgets linguisttools_build
+USE_QT=		core buildtools:build gui qmake:build widgets linguisttools:build
 
 CMAKE_ARGS=	-D GUI=QT5 -D MAX_IMAGE_SCALE_MUL=2 \
 		-D DOC_DATA_COMPRESSION_LEVEL=3 -D DOC_BUFFER_SIZE=0x1400000

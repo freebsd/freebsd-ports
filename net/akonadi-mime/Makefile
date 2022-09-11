@@ -10,11 +10,11 @@ LICENSE=	LGPL21
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shared-mime-info tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		i18n itemmodels kio service widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi mime
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

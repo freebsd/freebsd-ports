@@ -67,7 +67,7 @@ NCURSES_CFLAGS=		-I${NCURSESBASE}/include
 QT5_USES=		compiler:c++11-lang gl pkgconfig qmake:no_env qt:5
 QT5_USE=		cxxstd=-std=c++11 \
 			gl=gl \
-			qt=buildtools_build,core,gui,widgets
+			qt=buildtools:build,core,gui,widgets
 QT5_CONFIGURE_ENV=	CCLINK="${CXX}"
 QT5_CONFIGURE_ON=	--with-qt5 --with-moc="${MOC}"
 QT5_CONFIGURE_OFF=	--without-qt

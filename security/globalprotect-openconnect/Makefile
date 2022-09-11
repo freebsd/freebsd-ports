@@ -14,7 +14,7 @@ LIB_DEPENDS=	libopenconnect.so:security/openconnect
 
 USES=		cmake:noninja qt:5
 USE_GITHUB=	yes
-USE_QT=		buildtools core dbus declarative gui location network printsupport qmake_build webchannel webengine websockets widgets
+USE_QT=		buildtools core dbus declarative gui location network printsupport qmake:build webchannel webengine websockets widgets
 
 GH_ACCOUNT=	yuezk
 GH_PROJECT=	GlobalProtect-openconnect

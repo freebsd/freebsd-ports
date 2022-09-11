@@ -21,7 +21,7 @@ CONFLICTS_INSTALL=	gstreamer${PKGNAMESUFFIX}
 USES=		bison cmake compiler:c++11-lang gl gnome gstreamer pathfix pkgconfig qt:5 tar:xz
 USE_GL=		gl
 USE_GNOME=	glib20
-USE_QT=		buildtools_build qmake_build core declarative gui network opengl \
+USE_QT=		buildtools:build qmake:build core declarative gui network opengl \
 		testlib widgets
 
 USE_LDCONFIG=	yes

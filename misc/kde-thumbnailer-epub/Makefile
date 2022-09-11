@@ -12,9 +12,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
-USE_KDE=	ecm_build archive completion config coreaddons jobwidgets kio \
+USE_KDE=	ecm:build archive completion config coreaddons jobwidgets kio \
 		service solid widgetsaddons windowsystem
-USE_QT=		buildtools_build qmake_build concurrent core dbus gui network \
+USE_QT=		buildtools:build qmake:build concurrent core dbus gui network \
 		widgets xmlpatterns
 USE_XORG=	x11
 

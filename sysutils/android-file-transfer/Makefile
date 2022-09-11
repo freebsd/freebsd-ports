@@ -39,7 +39,7 @@ PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_PLIST_FILES=	%%PYTHON_SITELIBDIR%%/aftl%%PYTHON_EXT_SUFFIX%%.so
 
 QT5_USES=	qt:5
-QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,core,gui,network,widgets
+QT5_USE=	QT=qmake:build,buildtools:build,linguisttools:build,core,gui,network,widgets
 QT5_CMAKE_BOOL=	BUILD_QT_UI
 QT5_CMAKE_ON=	-DDESIRED_QT_VERSION:STRING=5
 QT5_PLIST_FILES=	bin/android-file-transfer \

@@ -13,9 +13,9 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	codecs config coreaddons i18n \
-		ecm_build
+		ecm:build
 USE_QT=		core gui \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

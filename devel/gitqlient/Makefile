@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++11-lang cpe qmake:outsource qt:5
 USE_GL+=	gl
 USE_QT=		core gui widgets \
-		buildtools_build
+		buildtools:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	francescmm

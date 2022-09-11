@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 screen magnifier
 
 USES=		compiler:c++11-lang qmake qt-dist:5,tools
-USE_QT=		core gui widgets buildtools_build
+USE_QT=		core gui widgets buildtools:build
 
 # qt5logo.png is installed by qt5-widgets.
 DESKTOP_ENTRIES="Qt 5 PixelTool" "" \

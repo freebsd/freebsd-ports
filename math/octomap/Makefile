@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/octovis/LICENSE.txt
 LIB_DEPENDS=	libQGLViewer-qt5.so:graphics/libQGLViewer
 
 USES=		cmake:testing compiler:c++11-lang localbase:ldflags gl qt:5
-USE_QT=		core gui opengl xml widgets buildtools_build qmake_build
+USE_QT=		core gui opengl xml widgets buildtools:build qmake:build
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 

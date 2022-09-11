@@ -11,7 +11,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang pkgconfig qt:5
-USE_QT=		core gui widgets buildtools_build qmake_build
+USE_QT=		core gui widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 SUFFIX=		-qt5

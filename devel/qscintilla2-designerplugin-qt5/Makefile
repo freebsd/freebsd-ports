@@ -15,7 +15,7 @@ DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt5/distinfo
 USES=		compiler:c++11-lang qmake pyqt:5 qt:5 gl
 USE_GL=		gl
 USE_QT=		core designer printsupport gui widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/designer
 

@@ -9,9 +9,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING-CMAKE-SCRIPTS
 
 USES=		cmake kde:5 qt:5 tar:xz
-USE_QT=		linguisttools buildtools_build qmake_build
+USE_QT=		linguisttools buildtools:build qmake:build
 
-HELP_USE=	QT=help_build # qt5-help is only used to build a .qch file.
+HELP_USE=	QT=help:build # qt5-help is only used to build a .qch file.
 NO_ARCH=	yes
 
 PORTDOCS=	html/*

@@ -10,9 +10,9 @@ LIB_DEPENDS=	libsignon-qt5.so:sysutils/signon-qt5
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	wallet \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	${KDE_PREFIX}/${SE_DIR}
 PLIST_FILES=	${SE_DIR}/libkeyring-kwallet.so
 SE_DIR=		lib/signon/extensions

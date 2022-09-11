@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 \
 		shared-mime-info
 USE_GL=		gl
-USE_QT=		core gui svg widgets xml buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui svg widgets xml buildtools:build linguisttools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc

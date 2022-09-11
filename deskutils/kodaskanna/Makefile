@@ -19,9 +19,9 @@ USE_XORG=	x11
 USE_QT=		concurrent core dbus declarative gui \
 		multimedia network quickcontrols quickcontrols2 \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_KDE=	auth codecs config configwidgets coreaddons i18n \
 		kio purpose service widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ RUN_DEPENDS=	minizinc:math/minizinc
 USES=		gl compiler:c++11-lang qmake qt:5
 USE_QT=		core declarative gui location network printsupport \
 		sql testlib webchannel webengine websockets widgets \
-		buildtools_build
+		buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

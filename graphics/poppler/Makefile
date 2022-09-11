@@ -79,7 +79,7 @@ BINARY_ALIAS+=		python3=${PYTHON_CMD}
 .  elif ${_SLAVE_PORT} == qt5
 USES+=			qt:5
 USE_QT=			core gui widgets xml \
-			buildtools_build qmake_build testlib_build
+			buildtools:build qmake:build testlib:build
 .  elif ${_SLAVE_PORT} == qt6
 USES+=			gl qt:6
 USE_GL+=		gl opengl

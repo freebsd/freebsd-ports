@@ -26,7 +26,7 @@ SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 USES+=		desktop-file-utils qt:5
-USE_QT=		core buildtools gui linguisttools_build network qmake_build xml widgets
+USE_QT=		core buildtools gui linguisttools:build network qmake:build xml widgets
 
 BUILD_DEPENDS+=	protoc:devel/protobuf \
 		svg2png:graphics/svg2png

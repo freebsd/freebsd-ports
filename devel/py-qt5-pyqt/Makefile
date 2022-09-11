@@ -24,7 +24,7 @@ USE_QT=		connectivity core dbus declarative designer gui help imageformats locat
 		multimedia network opengl printsupport quick3d remoteobjects \
 		sensors serialport speech sql svg testlib webchannel webkit websockets \
 		widgets x11extras xml xmlpatterns \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
 

@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		desktop-file-utils pkgconfig qt:5
 GNU_CONFIGURE=	yes
-USE_QT=		buildtools_build linguisttools_build qmake_build \
+USE_QT=		buildtools:build linguisttools:build qmake:build \
 		concurrent core gui opengl printsupport widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq

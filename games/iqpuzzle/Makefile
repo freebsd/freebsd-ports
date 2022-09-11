@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gl qmake qt:5
-USE_QT=		core gui widgets buildtools_build
+USE_QT=		core gui widgets buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

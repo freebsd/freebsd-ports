@@ -13,7 +13,7 @@ CONFLICTS=	libqmatrixclient\*
 
 USES=	cmake compiler:c++14-lang qt:5 tar:xz
 USE_QT=	core gui multimedia network \
-	buildtools_build qmake_build testlib_build
+	buildtools:build qmake:build testlib:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quotient-im

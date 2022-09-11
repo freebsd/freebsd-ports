@@ -29,7 +29,7 @@ RS_REVISION=	0e6d27a
 USE_GNOME=	libxml2 libxslt
 USE_GL=		gl
 USE_QT=		core gui multimedia printsupport network widgets xml \
-		buildtools_build uitools_build
+		buildtools:build uitools:build
 DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro \
 		retroshare-gui/src/gui/elastic/node.cpp
 

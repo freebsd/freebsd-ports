@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang qt:5 shebangfix tar:xz
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build core gui qmake widgets xml
+USE_QT=		buildtools:build core gui qmake widgets xml
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man \
 		-DDOCSDIR="${DOCSDIR}" \

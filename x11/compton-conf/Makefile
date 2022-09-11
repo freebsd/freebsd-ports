@@ -15,7 +15,7 @@ RUN_DEPENDS=	compton:x11-wm/compton
 
 USES=	cmake compiler:c++14-lang localbase:ldflags lxqt qt:5 \
 	pkgconfig tar:xz
-USE_QT=	buildtools_build qmake_build core dbus gui linguisttools \
+USE_QT=	buildtools:build qmake:build core dbus gui linguisttools \
 	widgets
 USE_LXQT=	buildtools
 

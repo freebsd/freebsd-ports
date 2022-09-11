@@ -18,7 +18,7 @@ SHEBANG_FILES=	src/*.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
 GH_PROJECT=	Cadence
-USE_QT=		core gui widgets buildtools_build
+USE_QT=		core gui widgets buildtools:build
 USE_PYQT=	pyqt5 sip
 
 CXXFLAGS+=	-DJACKBRIDGE_PROPER_CPP11_SUPPORT=yes

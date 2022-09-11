@@ -23,7 +23,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 USES=		compiler:c++17-lang cmake fortran gl jpeg python qt:5 xorg
 USE_XORG=	ice sm x11 xext xt
-USE_QT=		core declarative gui network opengl sql widgets qmake_build buildtools_build
+USE_QT=		core declarative gui network opengl sql widgets qmake:build buildtools:build
 USE_GL=		gl
 USE_LDCONFIG=	yes
 

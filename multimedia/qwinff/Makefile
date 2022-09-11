@@ -16,8 +16,8 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 
 USES=		cmake:noninja compiler:c++11-lang qt:5
 USE_GITHUB=	yes
-USE_QT=		core gui linguisttools network widgets buildtools_build \
-		qmake_build
+USE_QT=		core gui linguisttools network widgets buildtools:build \
+		qmake:build
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|" \

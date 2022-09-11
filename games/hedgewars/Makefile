@@ -23,8 +23,8 @@ USES=		cmake:noninja desktop-file-utils fpc gl lua:51 pkgconfig qt:5 \
 USE_SDL=	sdl2 mixer2 image2 ttf2 net2
 USE_FPC=	opengl libpng rtl-objpas rtl-extra
 USE_QT=		core gui widgets network \
-		qmake_build buildtools_build \
-		linguisttools_build
+		qmake:build buildtools:build \
+		linguisttools:build
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 CMAKE_ON=	NOSERVER

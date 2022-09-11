@@ -19,7 +19,7 @@ GH_ACCOUNT=	flameshot-org
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_QT=		core dbus gui linguist network svg widgets \
-		buildtools_build
+		buildtools:build
 
 post-patch:
 	        @${REINPLACE_CMD} -e 's,$${CMAKE_INSTALL_FULL_BINDIR},${LOCALBASE}/bin,1' \

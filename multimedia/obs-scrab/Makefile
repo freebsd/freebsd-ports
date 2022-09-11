@@ -16,7 +16,7 @@ USES=		cmake localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	univrsal
 GH_PROJECT=	scrab
-USE_QT=		core gui widgets buildtools_build qmake_build
+USE_QT=		core gui widgets buildtools:build qmake:build
 
 CXXFLAGS+=	-I${LOCALBASE}/include/obs
 

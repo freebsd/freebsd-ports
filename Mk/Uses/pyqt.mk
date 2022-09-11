@@ -11,10 +11,10 @@
 #		targets are then set assuming a certain tarball and
 #		port layout.
 # USE_PYQT	- List of PyQt components to depend on
-#		* foo_build    only build depend
-#		* foo_run      only run depend
-#		* foo_test     only test depend
-#		* foo          both (default)
+#		* foo:build    only build depend
+#		* foo:run      only run depend
+#		* foo:test     only test depend
+#		* foo          build and run depend (default)
 # PYQT_SIPDIR	- where sip files will be installed to
 # PYQT_APIDIR	- where api files will be installed to
 # PYQT_DOCDIR	- where doc files will be installed to
@@ -199,7 +199,7 @@ _USE_PYQT_ALL+=				${_USE_SIP_ALL} \
 					${_USE_QSCINTILLA} \
 					${_USE_PYQTBUILDER}
 .  for comp in ${_USE_PYQT_ALL:O:u}
-_USE_PYQT_ALL_SUFFIXED+=		py-${comp} py-${comp}_build py-${comp}_run py-${comp}_test
+_USE_PYQT_ALL_SUFFIXED+=		py-${comp} py-${comp}:build py-${comp}:run py-${comp}:test
 py-${comp}_BUILD_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
 py-${comp}_RUN_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
 py-${comp}_TEST_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
@@ -211,9 +211,9 @@ py-${comp}_test_TEST_DEPENDS?=		${py-${comp}_TEST_DEPENDS}
 _USE_PYQT=      ${USE_PYQT:O:u}
 .  for comp in ${_USE_PYQT}
 .    if ${_USE_PYQT_ALL_SUFFIXED:Mpy-${comp}}
-BUILD_DEPENDS+=		${py-${comp}_BUILD_DEPENDS}
-RUN_DEPENDS+=		${py-${comp}_RUN_DEPENDS}
-TEST_DEPENDS+=		${py-${comp}_TEST_DEPENDS}
+BUILD_DEPENDS+=		${py-${comp:S/:/_/}_BUILD_DEPENDS}
+RUN_DEPENDS+=		${py-${comp:S/:/_/}_RUN_DEPENDS}
+TEST_DEPENDS+=		${py-${comp:S/:/_/}_TEST_DEPENDS}
 .    else
 IGNORE?=	cannot be installed: unknown USE_PYQT component ${comp} #'
 .    endif

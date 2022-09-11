@@ -15,9 +15,9 @@ RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list
 
 USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons dbusaddons service i18n notifications \
-		ecm_build
+		ecm:build
 USE_QT=		core  dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

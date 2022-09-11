@@ -41,7 +41,7 @@ GRAPHICS=	X11_GRAPHICS
 GRAPHICS=	# none
 .elif ${FLAVOR} == "qt"
 USES+=		localbase pkgconfig qt:5
-USE_QT=		buildtools_build core gui multimedia network widgets
+USE_QT=		buildtools:build core gui multimedia network widgets
 MAKE_ENV+=	MOCPATH=${MOC} LINK="${CXX} -pie"
 # Qt wants PIC for some reason.  For C code, PIE should be enough.
 CFLAGS+=	-I${QT_INCDIR} -fpie

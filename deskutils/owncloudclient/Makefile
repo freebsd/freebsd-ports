@@ -26,7 +26,7 @@ USE_KDE=	completion config coreaddons jobwidgets kio service \
 		widgetsaddons windowsystem
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus gui network sql webkit widgets xml \
-		buildtools_build linguist_build qmake_build
+		buildtools:build linguist:build qmake:build
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:STRING=man \
 		-DSYSCONF_INSTALL_DIR="${PREFIX}/etc"

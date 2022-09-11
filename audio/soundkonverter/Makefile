@@ -17,14 +17,14 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 GH_ACCOUNT=	dfaust
 USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
-USE_QT=		dbus concurrent core buildtools_build gui network printsupport \
-		qmake_build widgets xml
+USE_QT=		dbus concurrent core buildtools:build gui network printsupport \
+		qmake:build widgets xml
 USE_KDE=	auth codecs config configwidgets completion coreaddons crash \
 		bookmarks guiaddons i18n iconthemes init itemviews jobwidgets \
 		kdelibs4support kio libkcddb notifications parts textwidgets \
 		service solid sonnet unitconversion windowsystem widgetsaddons \
 		xmlgui \
-		doctools_build
+		doctools:build
 USE_XORG=	x11
 WRKSRC_SUBDIR=	src
 

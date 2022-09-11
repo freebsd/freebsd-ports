@@ -9,7 +9,7 @@ WWW=		https://github.com/martinrotter/rssguard
 LICENSE=	GPLv3+
 
 USES=		cmake qt:5
-USE_QT=		buildtools_build linguisttools_build qmake_build \
+USE_QT=		buildtools:build linguisttools:build qmake:build \
 		core dbus declarative gui multimedia network sql \
 		widgets xml
 USE_GITHUB=	yes

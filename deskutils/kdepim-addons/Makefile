@@ -22,7 +22,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		dbusaddons guiaddons i18n iconthemes itemmodels itemviews jobwidgets \
 		kdeclarative khtml kio parts prison service solid sonnet syntaxhighlighting \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
 		akonadimime akonadinotes calendarcore calendarsupport \
@@ -33,7 +33,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
 		messagelib mime pimcommon pimtextedit tnef
 USE_QT=		concurrent core dbus declarative gui location network printsupport testlib \
 		webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

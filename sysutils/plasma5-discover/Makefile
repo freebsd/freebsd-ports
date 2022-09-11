@@ -18,10 +18,10 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 		kirigami2 newstuff notifications package plasma-framework \
 		service solid textwidgets wallet widgetsaddons windowsystem \
 		xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network svg widgets \
 		x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 CPE_VENDOR=	kde

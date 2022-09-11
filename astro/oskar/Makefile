@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 
 USES=		cmake compiler:c++11-lang localbase:ldflags python qt:5 \
 		shebangfix
-USE_QT=		core gui network widgets buildtools_build qmake_build
+USE_QT=		core gui network widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	apps/oskar_convert_cst_to_scalar.py

@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
-USE_QT=		core gui network multimedia widgets qmake_build buildtools_build
+USE_QT=		core gui network multimedia widgets qmake:build buildtools:build
 CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
 		USE_HW_ACCEL ENABLE_PYTHON\
 		CMAKE_DISABLE_FIND_PACKAGE_Catch2\

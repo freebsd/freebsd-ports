@@ -16,7 +16,7 @@ LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 USES=		cmake qt:5 compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	admshao
-USE_QT=		core gui widgets buildtools_build qmake_build
+USE_QT=		core gui widgets buildtools:build qmake:build
 
 CMAKE_ARGS=	-DLIBOBS_INCLUDE_DIR=${LOCALBASE}/include
 

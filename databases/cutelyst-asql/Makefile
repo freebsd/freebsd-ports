@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c++11-lang localbase pgsql qt:5
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT=		qmake_build buildtools_build \
+USE_QT=		qmake:build buildtools:build \
 		core
 
 GH_ACCOUNT=	cutelyst

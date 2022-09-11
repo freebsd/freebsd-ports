@@ -11,9 +11,9 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons guiaddons i18n iconthemes itemviews jobwidgets kio \
 		notifications service solid widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

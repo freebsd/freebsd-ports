@@ -18,10 +18,10 @@ USE_KDE=	activities auth bookmarks codecs completion config \
 		itemviews jobwidgets kio kirigami2 libkscreen notifications notifyconfig \
 		parts plasma-workspace service solid sonnet textwidgets \
 		unitconversion wayland widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network printsupport widgets \
 		x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>

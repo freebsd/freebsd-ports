@@ -15,8 +15,8 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 
 USES=		compiler:c++17-lang desktop-file-utils gl iconv pkgconfig \
 		qt:5 shared-mime-info ssl
-USE_QT=		core gui multimedia network svg widgets buildtools_build \
-		linguisttools_build qmake_build
+USE_QT=		core gui multimedia network svg widgets buildtools:build \
+		linguisttools:build qmake:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

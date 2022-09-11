@@ -48,7 +48,7 @@ GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
 LATEX_USE=	TEX=base,dvipsk,pdftex
 
 QT5_USES=	qt:5
-QT5_USE=	QT=core,widgets,gui,xml,qmake_build,buildtools_build
+QT5_USE=	QT=core,widgets,gui,xml,qmake:build,buildtools:build
 QT5_CMAKE_BOOL=	build_wizard
 QT5_PLIST_FILES=	bin/doxywizard
 

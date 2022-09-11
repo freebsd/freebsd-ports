@@ -16,7 +16,7 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib
 USES=		compiler:c++17-lang gettext-runtime gnome qmake \
 		pathfix pkgconfig python qt:5 tar:bz2
 USE_GNOME=	glib20
-USE_QT=		buildtools_build core qmake_build testlib xml
+USE_QT=		buildtools:build core qmake:build testlib xml
 
 # gitlab variables
 USE_GITLAB=	yes

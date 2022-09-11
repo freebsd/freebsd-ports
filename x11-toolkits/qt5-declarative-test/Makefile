@@ -12,7 +12,7 @@ USES=		compiler:c++11-lang gl python:build qmake:norecursive \
 		qt-dist:5,declarative
 USE_GL=		gl
 USE_QT=		core declarative gui network sql testlib widgets \
-		buildtools_build
+		buildtools:build
 
 CONFLICTS=	qt5-declarative-render2d-* qt5-qml qt5-quick
 

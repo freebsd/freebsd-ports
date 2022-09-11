@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ruben2020
 
 USE_QT=		concurrent core gui widgets xml  \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 
 CMAKE_ON=	BUILD_QT5
 

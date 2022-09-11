@@ -19,7 +19,7 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:c++11-lib gl pkgconfig qmake qt:5
 USE_GL=		gl
-USE_QT=		buildtools_build linguisttools_build core gui network widgets
+USE_QT=		buildtools:build linguisttools:build core gui network widgets
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

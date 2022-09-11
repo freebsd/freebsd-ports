@@ -11,8 +11,8 @@
 #   Versions:		5
 #
 # Port variables:
-# USE_QT		- List of Qt modules to depend on, with optional '_build'
-#			  and '_run' suffixes. Define it empty to include this file
+# USE_QT		- List of Qt modules to depend on, with optional ':build'
+#			  and ':run' suffixes. Define it empty to include this file
 #			  without depending on Qt ports.
 #
 # MAINTAINER:	kde@FreeBSD.org
@@ -399,18 +399,18 @@ _USE_QT_ALL=		${_USE_QT_COMMON} \
 			${_USE_QT${_QT_VER}_ONLY}
 _USE_QT=		${USE_QT}
 # Iterate through components deprived of suffix.
-.  for component in ${_USE_QT:O:u:C/_(build|run)$//}
+.  for component in ${_USE_QT:O:u:C/:(build|run)$//}
 # Check that the component is valid.
 .    if ${_USE_QT_ALL:M${component}} != ""
 # Skip meta-components (currently none).
 .      if defined(qt-${component}_PORT) && (defined(qt-${component}_PATH) || defined(qt-${component}_LIB))
 # Check if a dependency type is explicitly requested.
-.        if ${_USE_QT:M${component}_*} != "" && ${_USE_QT:M${component}} == ""
+.        if ${_USE_QT:M${component}\:*} != "" && ${_USE_QT:M${component}} == ""
 qt-${component}_TYPE=		# empty
-.          if ${_USE_QT:M${component}_build} != ""
+.          if ${_USE_QT:M${component}\:build} != ""
 qt-${component}_TYPE+=		build
 .          endif
-.          if ${_USE_QT:M${component}_run} != ""
+.          if ${_USE_QT:M${component}\:run} != ""
 qt-${component}_TYPE+=		run
 .          endif
 .        endif # ${_USE_QT:M${component}_*} != "" && ${_USE_QT:M${component}} == ""

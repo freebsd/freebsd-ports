@@ -15,7 +15,7 @@ RUN_DEPENDS=	fossil:devel/fossil
 
 USES=		compiler:c++11-lang gmake qmake qt:5 shebangfix
 USE_QT=		core gui network webkit widgets \
-		buildtools_build linguisttools_build
+		buildtools:build linguisttools:build
 
 SHEBANG_FILES=	intl/convert.sh
 PLIST_FILES=	bin/fuel share/applications/fuel.desktop \

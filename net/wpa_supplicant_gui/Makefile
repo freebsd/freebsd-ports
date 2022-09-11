@@ -15,8 +15,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USES=		gl gmake qt:5 xorg
-USE_QT=		qmake_build buildtools_build linguisttools_build core gui \
-		widgets svg_run
+USE_QT=		qmake:build buildtools:build linguisttools:build core gui \
+		widgets svg:run
 USE_GL=		gl
 
 ALL_TARGET=	wpa_gui-qt4

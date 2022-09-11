@@ -10,7 +10,7 @@ LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 CONFLICTS=	bacula*-bat bareos-traymonitor
 
 USES=		pkgconfig gettext-runtime desktop-file-utils qt:5
-USE_QT=		buildtools_build qmake_build uitools_build gui core widgets
+USE_QT=		buildtools:build qmake:build uitools:build gui core widgets
 WITH_BAT=	yes
 
 PLIST=		${.CURDIR}/pkg-plist

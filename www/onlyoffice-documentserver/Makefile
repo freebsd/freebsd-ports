@@ -42,7 +42,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 
 USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase nodejs:16,build pkgconfig \
 		python:3.7+,build qt:5 trigger
-USE_QT=		qmake_build
+USE_QT=		qmake:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
 GH_PROJECT=	DocumentServer

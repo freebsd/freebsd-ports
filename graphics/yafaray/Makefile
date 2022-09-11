@@ -41,7 +41,7 @@ OPTIONS_SUB=	yes
 QT_DESC=	Enable Qt Gui build
 QT_USES=	qt:5
 QT_CMAKE_BOOL=	WITH_QT
-QT_USE=		QT=core,gui,widgets,qmake_build,buildtools_build,qmake_build
+QT_USE=		QT=core,gui,widgets,qmake:build,buildtools:build,qmake:build
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSES

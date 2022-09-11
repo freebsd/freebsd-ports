@@ -21,7 +21,7 @@ USES=		compiler:c++11-lang gnome iconv:wchar_t pkgconfig \
 USE_GITHUB=	yes
 GH_TAGNAME=	99982a1
 USE_XORG=	x11 xtst
-USE_QT=		buildtools_build linguisttools_build core gui help \
+USE_QT=		buildtools:build linguisttools:build core gui help \
 		network printsupport sql svg webkit widgets \
 		x11extras xml
 QMAKE_ARGS=	${PORTNAME}.pro CONFIG+="zim_support"

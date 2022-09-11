@@ -14,8 +14,8 @@ USES=			cmake compiler:c++11-lang cpe pkgconfig qt:5 shebangfix
 USE_GITHUB=		yes
 GH_ACCOUNT=		CDrummond
 
-USE_QT=			buildtools_build concurrent core dbus gui network \
-			qmake_build sql sql-sqlite3_run svg widgets xml
+USE_QT=			buildtools:build concurrent core dbus gui network \
+			qmake:build sql sql-sqlite3:run svg widgets xml
 
 CMAKE_ON=		CMAKE_DISABLE_FIND_PACKAGE_UDev
 CMAKE_OFF=		ENABLE_CDIOPARANOIA
@@ -72,7 +72,7 @@ MUSICBRAINZ_IMPLIES=	CDPARANOIA
 MUSICBRAINZ_LIB_DEPENDS=libmusicbrainz5.so:audio/libmusicbrainz5
 MUSICBRAINZ_CMAKE_BOOL=	ENABLE_MUSICBRAINZ
 
-NLS_USE=		QT=linguisttools_build
+NLS_USE=		QT=linguisttools:build
 NLS_CMAKE_ON=		-DLCONVERT_EXECUTABLE:STRING=${QT_BINDIR}/lconvert \
 			-DLRELEASE_EXECUTABLE:STRING=${QT_BINDIR}/lrelease
 NLS_CMAKE_OFF=		-DLCONVERT_EXECUTABLE:BOOL=FALSE \

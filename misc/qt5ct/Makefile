@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cmake compiler:c++11-lang gettext-runtime gl gnome qt:5 \
 		tar:bz2 xorg
 USE_QT=		concurrent core dbus gui paths svg widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_GL=		egl gl
 USE_XORG=	x11 xext xrender
 USE_GNOME=	glib20

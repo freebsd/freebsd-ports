@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 USES=	cmake compiler:c++14-lang gettext gnome kde:5 lxqt \
 	pkgconfig qt:5 tar:xz xorg
 USE_GNOME=	glib20
-USE_QT=		buildtools_build qmake_build dbus core gui linguisttools \
+USE_QT=		buildtools:build qmake:build dbus core gui linguisttools \
 		svg widgets x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools qtxdg

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++14-lang gl qmake qt:5 tar:bzip2
 USE_GL=		gl
-USE_QT=		core printsupport widgets buildtools_build
+USE_QT=		core printsupport widgets buildtools:build
 
 INSTALL_TARGET=	${WRKSRC}/fet-cl
 

@@ -23,7 +23,7 @@ GH_PROJECT=	${PORTNAME}2
 USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
 		pkgconfig qt:5
 USE_QT=		core widgets network gui multimedia testlib concurrent \
-		qmake_build buildtools_build uitools_build
+		qmake:build buildtools:build uitools:build
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/mandelbulber2/cmake
 

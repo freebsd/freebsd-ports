@@ -12,7 +12,7 @@ USE_KDE=	ecm
 # pim components
 USE_KDE+=	mime
 USE_QT=		core gui \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

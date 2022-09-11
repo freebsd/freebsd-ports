@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	IJhack
 GH_PROJECT=	QtPass
 USE_GL=		gl
-USE_QT=		core gui network testlib widgets buildtools_build linguisttools_build
+USE_QT=		core gui network testlib widgets buildtools:build linguisttools:build
 CPE_VENDOR=	ijhack
 
 # Create a desktop entry for the port.

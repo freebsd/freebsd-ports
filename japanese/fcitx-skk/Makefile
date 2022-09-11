@@ -27,7 +27,7 @@ QT5_DESC=	Enable Qt for GUI configuration
 
 .if ${PORT_OPTIONS:MQT5}
 USES+=		qt:5
-USE_QT=		buildtools_build qmake_build gui widgets
+USE_QT=		buildtools:build qmake:build gui widgets
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT5=""
 LIB_DEPENDS+=	libFcitxQt5WidgetsAddons.so:textproc/fcitx-qt5

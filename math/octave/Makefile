@@ -52,7 +52,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_QT=		core gui help network opengl \
-		qmake_build buildtools_build linguist_build \
+		qmake:build buildtools:build linguist:build \
 		printsupport sql widgets \
 		xml
 USE_XORG=	x11 xext xfixes xft \

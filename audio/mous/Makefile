@@ -72,7 +72,7 @@ OSS_CMAKE_BOOL=		WITH_PLUGIN_OSS
 
 QT5_CMAKE_BOOL=		WITH_APP_QT5
 QT5_USES=		qt:5
-QT5_USE=		qt=buildtools,core,gui,widgets,qmake_build
+QT5_USE=		qt=buildtools,core,gui,widgets,qmake:build
 
 SNDIO_CMAKE_BOOL=	WITH_PLUGIN_SNDIO
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio

@@ -26,8 +26,8 @@ USE_LDCONFIG=	${PREFIX}/lib/sigil
 
 USE_QT=		concurrent core declarative gui location network printsupport \
 		svg webchannel webengine widgets xml xmlpatterns \
-		buildtools_build linguisttools_build qmake_build \
-		imageformats_run
+		buildtools:build linguisttools:build qmake:build \
+		imageformats:run
 
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py

@@ -7,7 +7,7 @@ COMMENT=	KDE development scripts
 
 USES=		cmake kde:5 perl5 python:run qt:5 shebangfix tar:xz
 USE_KDE=	doctools ecm
-USE_QT=		buildtools_build qmake_build
+USE_QT=		buildtools:build qmake:build
 
 SHEBANG_FILES=	cxxmetric \
 		draw_lib_dependencies \

@@ -9,8 +9,8 @@
 #
 # USE_KDE	List of KF5/Plasma5 components (other ports) that this
 #		port depends on.
-#		* foo_build	Add a build-time dependency (BUILD_DEPENDS)
-#		* foo_run	Add a run-time dependency (RUN_DEPENDS)
+#		* foo:build	Add a build-time dependency (BUILD_DEPENDS)
+#		* foo:run	Add a run-time dependency (RUN_DEPENDS)
 #		* foo (default)	Add both dependencies on component <foo>, or
 #				a LIB_DEPENDS if applicable.
 #
@@ -25,7 +25,7 @@
 #
 # option DOCS	If the port is part of kde-applications (see CATEGORIES,
 #		above) and has an option defined for DOCS then a dependency
-#		for doctools_build is added. The option itself doesn't
+#		for doctools:build is added. The option itself doesn't
 #		have to do anything -- the dependency is always there.
 #
 # KDE_INVENT	If the port does not have a regular release, and should
@@ -159,7 +159,7 @@ _KDE_OPTIONS=		bogus ${OPTIONS_DEFINE}
 .        if ${_KDE_OPTIONS:MDOCS}
 DOCSDIR=		${PREFIX}/share/doc
 PORTDOCS?=		HTML/*
-USE_KDE+=		doctools_build
+USE_KDE+=		doctools:build
 .        endif
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
@@ -870,18 +870,18 @@ kde-${comp}_PATH=		${kde-${comp}${_KDE_VERSION}_LIB}
 _USE_KDE_ALL=	${_USE_${_KDE_RELNAME}_ALL}
 
 # Iterate through components deprived of suffix.
-.    for component in ${USE_KDE:O:u:C/_.+//}
+.    for component in ${USE_KDE:O:u:C/:.+//}
   # Check that the component is valid.
 .      if ${_USE_KDE_ALL:M${component}} != ""
    # Skip meta-components (currently none).
 .        if defined(kde-${component}_PORT) && (defined(kde-${component}_PATH) || defined(kde-${component}_LIB))
     # Check if a dependency type is explicitly requested.
-.          if ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
+.          if ${USE_KDE:M${component}\:*} != "" && ${USE_KDE:M${component}} == ""
 kde-${component}_TYPE=	# empty
-.            if ${USE_KDE:M${component}_build} != ""
+.            if ${USE_KDE:M${component}\:build} != ""
 kde-${component}_TYPE+=	build
 .            endif
-.            if ${USE_KDE:M${component}_run} != ""
+.            if ${USE_KDE:M${component}\:run} != ""
 kde-${component}_TYPE+=	run
 .            endif
 .          endif # ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""

@@ -23,7 +23,7 @@ USE_KDE=	archive auth codecs completion config \
 		solid sonnet textwidgets widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui location network phonon4 \
 		printsupport sql webchannel widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 

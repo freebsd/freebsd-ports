@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		qmake qt:5
-USE_QT=		buildtools_build \
+USE_QT=		buildtools:build \
 		core gui network printsupport sql svg widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	giowck

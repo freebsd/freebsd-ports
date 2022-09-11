@@ -23,7 +23,7 @@ GH_ACCOUNT=	LibreCAD
 GH_PROJECT=	LibreCAD
 USE_GL=		gl
 USE_QT=		core gui printsupport svg widgets \
-		buildtools_build linguisttools_build
+		buildtools:build linguisttools:build
 
 QMAKE_ARGS+=	BOOST_DIR="${LOCALBASE}"
 

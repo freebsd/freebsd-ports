@@ -33,7 +33,7 @@ CMAKE_OFF=		VIPSTER_DOWNLOAD_DEPENDENCIES
 DESKTOP_DESC=		Build QT-based desktop app
 DESKTOP_CMAKE_BOOL=	VIPSTER_DESKTOP
 DESKTOP_USES=		qt:5
-DESKTOP_USE=		QT=core,gui,widgets,buildtools_build,qmake_build
+DESKTOP_USE=		QT=core,gui,widgets,buildtools:build,qmake:build
 
 LAMMPS_DESC=		Interactive LAMMPS in desktop app
 LAMMPS_CMAKE_BOOL=	VIPSTER_LAMMPS

@@ -14,9 +14,9 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash doctools emoticons i18n iconthemes init itemmodels \
 		jobwidgets kdelibs4support kio parts service solid sonnet syntaxhighlighting \
 		texteditor textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network printsupport svg widgets xml xmlpatterns \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	pykig/pykig.py
 

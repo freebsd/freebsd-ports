@@ -14,9 +14,9 @@ LIB_DEPENDS=	libunarr.so:archivers/unarr
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:5
 USE_GITHUB=	yes
-USE_QT=		qmake_build buildtools_build core concurrent_build declarative \
-		gui multimedia network quickcontrols2 sql sql-sqlite3_run svg \
-		testlib_build widgets
+USE_QT=		qmake:build buildtools:build core concurrent:build declarative \
+		gui multimedia network quickcontrols2 sql sql-sqlite3:run svg \
+		testlib:build widgets
 
 OPTIONS_DEFINE=	OPENGL POPPLER
 OPTIONS_DEFAULT=OPENGL POPPLER

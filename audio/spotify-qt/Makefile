@@ -15,7 +15,7 @@ RUN_DEPENDS=	spotifyd:audio/spotifyd
 USES=		cmake compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	kraxarn
-USE_QT=		core dbus gui network svg widgets buildtools_build qmake_build
+USE_QT=		core dbus gui network svg widgets buildtools:build qmake:build
 
 PLIST_FILES=	bin/spotify-qt \
 		share/applications/spotify-qt.desktop \

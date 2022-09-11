@@ -11,7 +11,7 @@ WWW=		http://qwt.sourceforge.net/
 
 USES=		compiler:c++11-lang gl gmake qmake qt:5 tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools_build widgets gui core designer gui opengl svg xml printsupport concurrent
+USE_QT=		buildtools:build widgets gui core designer gui opengl svg xml printsupport concurrent
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 DOCSDIR=	${PREFIX}/share/doc/qwt6-qt5

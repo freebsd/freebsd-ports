@@ -14,10 +14,10 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		i18n iconthemes itemviews jobwidgets kded \
 		notifications service solid sonnet textwidgets wallet \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network \
 		script widgets x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

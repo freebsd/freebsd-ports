@@ -21,9 +21,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		init itemviews jobwidgets js khtml kio okular parts service \
 		solid sonnet syntaxhighlighting texteditor textwidgets \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus gui network script widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	*.pl
 

@@ -16,7 +16,7 @@ USES=			cmake compiler:c++11-lang gettext kde:5 \
 USE_KDE=		config coreaddons ecm marble widgetsaddons
 USE_QT=			core declarative gui location network webchannel \
 			webengine webkit widgets xml \
-			buildtools_build printsupport qmake_build
+			buildtools:build printsupport qmake:build
 
 CONFLICTS_INSTALL=	calligra-2*
 

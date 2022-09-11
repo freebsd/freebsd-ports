@@ -16,10 +16,10 @@ LICENSE=	GPLv3
 
 USES=		gl python:3.8+ pyqt:5 qt:5
 USE_GL=		gl
-USE_PYQT=	sip_build pyqt5
+USE_PYQT=	sip:build pyqt5
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core declarative gui location network printsupport webchannel \
-		webengine widgets qmake_build
+		webengine widgets qmake:build
 
 PLIST_SUB=		PYQT_WEBENGINE_VERSION=${DISTVERSION}
 

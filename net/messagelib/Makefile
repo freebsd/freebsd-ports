@@ -22,7 +22,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons guiaddons i18n iconthemes imap itemmodels itemviews jobwidgets \
 		kdewebkit kio notifications service solid sonnet syntaxhighlighting \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 		contacts grantleetheme gravatar identitymanagement \
@@ -30,7 +30,7 @@ USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 		mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		uitools webchannel webengine widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

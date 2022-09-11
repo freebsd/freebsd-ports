@@ -15,7 +15,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	qt5
 USES=		compiler:c++11-lang qt:5
-USE_QT=		core buildtools_build
+USE_QT=		core buildtools:build
 AVAHI_PKGCONFIG=avahi-qt5.pc
 
 .include "${MASTERDIR}/Makefile"

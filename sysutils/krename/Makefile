@@ -20,7 +20,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash i18n iconthemes itemviews jobwidgets \
 		kio service solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui network xml widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

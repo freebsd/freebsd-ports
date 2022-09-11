@@ -22,7 +22,7 @@ GH_ACCOUNT=	Governikus
 GH_PROJECT=	AusweisApp2
 USE_QT=		concurrent core declarative graphicaleffects gui network \
 		quickcontrols2 svg websockets widgets \
-		buildtools_build linguisttools_build
+		buildtools:build linguisttools:build
 
 # The VENDOR variable controls the name of the directory in ${PREFIX}/share.
 CMAKE_ARGS=	-DVENDOR=${PORTNAME}

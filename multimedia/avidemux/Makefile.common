@@ -89,7 +89,7 @@ USE_GNOME+=	libxslt
 USES+=		gl qt:5 xorg
 USE_GL=		gl glu
 USE_QT=		core gui network widgets \
-		qmake_build buildtools_build linguist_build
+		qmake:build buildtools:build linguist:build
 USE_XORG=	x11
 CMAKE_ARGS+=	-DENABLE_QT5:BOOL=ON
 PLIST_SUB+=	QT5=""

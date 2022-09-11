@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5 tar:bzip2 xorg
 
-USE_QT=		buildtools_build core gui opengl qmake_build multimedia network svg widgets
+USE_QT=		buildtools:build core gui opengl qmake:build multimedia network svg widgets
 USE_GL=		gl glut
 
 USE_GITHUB=	yes

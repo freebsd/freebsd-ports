@@ -38,7 +38,7 @@ KAPPTEMPLATE_DESC=	Template generator
 KAPPTEMPLATE_RUN_DEPENDS=	kapptemplate>=${KDE_APPLICATIONS_VERSION}:devel/kapptemplate
 
 KATE_DESC=		KDE advanced text editor
-KATE_USE=		KDE=kate_run
+KATE_USE=		KDE=kate:run
 
 KCACHEGRIND_DESC=	Profiler frontend
 KCACHEGRIND_RUN_DEPENDS=	kcachegrind>=${KDE_APPLICATIONS_VERSION}:devel/kcachegrind

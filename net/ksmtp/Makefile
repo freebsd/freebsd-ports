@@ -14,7 +14,7 @@ USE_KDE=	config coreaddons i18n kio service
 # pim components
 USE_KDE+=	mime
 USE_QT=		concurrent core dbus network \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 USE_LDCONFIG=	yes
 

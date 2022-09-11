@@ -14,7 +14,7 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 		newstuff service widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative designer gui network uiplugin \
 		widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes
 
 .include <bsd.port.mk>

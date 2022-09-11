@@ -17,10 +17,10 @@ TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
 USES=		cmake:testing kde:5 qt:5
 USE_GITLAB=	yes
-USE_KDE=	ecm_build config coreaddons dbusaddons globalaccel i18n \
+USE_KDE=	ecm:build config coreaddons dbusaddons globalaccel i18n \
 		kcmutils kdeclarative plasma-framework xmlgui
 USE_LDCONFIG=	yes
-USE_QT=		qmake_build buildtools_build core dbus declarative gui \
+USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		sensors widgets
 GL_ACCOUNT=	kwinft
 GL_COMMIT=	a4dcebd297fded753579c7aef5a874617d274b7f

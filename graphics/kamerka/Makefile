@@ -19,12 +19,12 @@ USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dos1
 USE_QT=		concurrent core dbus declarative gui network printsupport script xml widgets \
-		qmake_build buildtools_build
+		qmake:build buildtools:build
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash \
 		guiaddons i18n iconthemes init itemviews jobwidgets kdeclarative kdelibs4support \
 		kio notifications package parts service solid sonnet textwidgets \
 		unitconversion xmlgui widgetsaddons windowsystem \
-		doctools_build
+		doctools:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	NLS

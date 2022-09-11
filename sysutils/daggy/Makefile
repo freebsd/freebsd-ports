@@ -16,7 +16,7 @@ LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 		libyaml-cpp.so:devel/yaml-cpp
 
 USES=		gl cmake compiler:c++17-lang localbase:ldflags pkgconfig qt:6 ssl
-USE_QT=		base tools_build
+USE_QT=		base tools:build
 USE_GL=		gl
 USE_LDCONFIG=	yes
 

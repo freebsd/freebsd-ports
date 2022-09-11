@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
 
 USES=		compiler:c++11-lang gl qmake qt:5
-USE_QT=		core gui buildtools_build
+USE_QT=		core gui buildtools:build
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

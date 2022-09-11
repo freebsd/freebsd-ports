@@ -28,17 +28,17 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		notifications notifyconfig parts service solid sonnet \
 		syntaxhighlighting texteditor textwidgets unitconversion wallet \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 		calendarutils contacts gravatar grantleetheme \
 		identitymanagement libkdepim libkleo libksieve \
 		kontactinterface ldap mailcommon mailtransport messagelib \
 		mime pimcommon pimtextedit tnef \
-		kdepim-runtime5_run
+		kdepim-runtime5:run
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

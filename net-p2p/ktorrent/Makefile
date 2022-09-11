@@ -22,10 +22,10 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		notifyconfig parts plotting service \
 		solid sonnet syndication textwidgets widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network phonon4 printsupport \
 		script webchannel widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=		DOCS WORKSPACE

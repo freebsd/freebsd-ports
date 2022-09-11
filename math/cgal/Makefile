@@ -40,7 +40,7 @@ VISUALIZATION_LIB_DEPENDS=	libgeomview.so:graphics/geomview
 .if ${PORT_OPTIONS:MQT5}
 USES+=		gl qt:5
 CMAKE_ARGS+=	-DWITH_CGAL_Qt5=ON
-USE_QT+=	core gui opengl widgets svg buildtools_build qmake_build xml
+USE_QT+=	core gui opengl widgets svg buildtools:build qmake:build xml
 USE_GL+=	gl glu
 .else
 CMAKE_ARGS+=	-DWITH_CGAL_Qt5=OFF

@@ -22,7 +22,7 @@ USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2 mixer2
 USE_XORG=	x11 sm ice xext xrandr xxf86vm
-USE_QT=		buildtools_build core gui network widgets qmake_build opengl x11extras
+USE_QT=		buildtools:build core gui network widgets qmake:build opengl x11extras
 CMAKE_ARGS+=	-DDENG_ENABLE_COTIRE=OFF -DDENG_ASSIMP_EMBEDDED=OFF
 LDFLAGS+=	-lexecinfo
 

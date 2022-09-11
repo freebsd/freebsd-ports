@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 USES=		cmake compiler:c++11-lang jpeg kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		core gui \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True

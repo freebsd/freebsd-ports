@@ -12,7 +12,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp
 
 USES=		compiler:c++11-lang qmake qt-dist:5
 USE_QT=		core declarative gui network opengl \
-		buildtools_build
+		buildtools:build
 
 QT_BINARIES=	yes
 

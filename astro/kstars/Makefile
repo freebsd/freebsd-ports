@@ -31,11 +31,11 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets\
 		iconthemes init itemviews jobwidgets kio newstuff notifications \
 		notifyconfig parts plotting service solid texteditor \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core datavis3d dbus declarative gui multimedia \
 		network opengl printsupport sql svg testlib websockets widgets \
 		xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

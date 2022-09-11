@@ -27,7 +27,7 @@ USES=		cmake compiler:${OPENMP}c++11-lib eigen:3 gl localbase qt:5 \
 		sqlite
 USE_GITHUB=	yes
 USE_GL=		gl glew
-USE_QT=		qmake_build buildtools_build core gui opengl_build widgets
+USE_QT=		qmake:build buildtools:build core gui opengl:build widgets
 EXCLUDE=	SQLite
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S,^,--exclude lib/,}
 CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED

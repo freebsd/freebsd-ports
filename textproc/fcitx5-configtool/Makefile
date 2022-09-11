@@ -27,7 +27,7 @@ GH_ACCOUNT=	fcitx
 
 USE_KDE=	ecm coreaddons kdeclarative i18n itemviews kirigami2 package widgetsaddons
 USE_QT=		concurrent core dbus declarative gui quickcontrols2 widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xkbfile
 USE_LDCONFIG=	yes
 

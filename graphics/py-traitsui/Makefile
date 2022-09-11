@@ -33,7 +33,7 @@ WXPYTHON_DESC=	wxPython backend
 PYSIDE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyside2>=0:devel/pyside2@${PY_FLAVOR}
 QT5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 QT5_USES=		pyqt:5
-QT5_USE=		PYQT=pyqt5_run
+QT5_USE=		PYQT=pyqt5:run
 WXPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython41>0:x11-toolkits/py-wxPython4@${PY_FLAVOR}
 
 .include <bsd.port.mk>

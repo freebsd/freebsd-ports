@@ -24,7 +24,7 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 USES=		cmake compiler:c++11-lib desktop-file-utils qt:5
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
 		script sql sql-sqlite3 svg widgets xmlpatterns \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OtterBrowser

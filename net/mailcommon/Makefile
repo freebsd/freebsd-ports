@@ -20,14 +20,14 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		guiaddons i18n iconthemes itemmodels itemviews jobwidgets kio \
 		service solid sonnet syntaxhighlighting textwidgets wallet \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts grantleetheme identitymanagement \
 		imap ldap libkdepim libkleo mailimporter \
 		mailtransport messagelib mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus network xml designer gui multimedia \
 		phonon4 testlib uiplugin uitools webkit widgets \
-                buildtools_build qmake_build
+                buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

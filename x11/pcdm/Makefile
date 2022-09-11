@@ -17,7 +17,7 @@ RUN_DEPENDS=	xorg-minimal>=0:x11/xorg-minimal \
 
 USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_QT=		core gui network svg multimedia imageformats \
-		buildtools_build x11extras widgets concurrent linguisttools_build
+		buildtools:build x11extras widgets concurrent linguisttools:build
 USE_GL=		gl
 USE_XORG=	x11
 

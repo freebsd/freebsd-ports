@@ -31,7 +31,7 @@ USE_KDE=	activities auth codecs config configwidgets coreaddons \
 		plasma-framework service solid widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui network quickcontrols \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 post-patch:

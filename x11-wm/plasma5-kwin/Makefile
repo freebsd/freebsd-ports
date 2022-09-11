@@ -41,12 +41,12 @@ USE_KDE=	activities attica auth breeze codecs completion config \
 		notifications package plasma-framework \
 		plasma-wayland-protocols runner service sonnet textwidgets \
 		wayland widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus declarative gui multimedia network script \
 		sensors uiplugin uitools widgets x11extras xml \
-		buildtools_build qmake_build testlib_build \
-		quickcontrols2_run virtualkeyboard_run
+		buildtools:build qmake:build testlib:build \
+		quickcontrols2:run virtualkeyboard:run
 USE_XORG=	ice sm x11 xcb xext xi
 SHEBANG_FILES=	kconf_update/*.py \
 		kconf_update/*.pl

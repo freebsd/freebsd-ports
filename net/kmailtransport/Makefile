@@ -17,7 +17,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
 # pim components
 USE_KDE+=	akonadi akonadimime gapi ksmtp mime pimcommon
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

@@ -9,8 +9,8 @@ USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	attica5 auth codecs config configwidgets coreaddons \
 		globalaccel guiaddons i18n iconthemes itemviews sonnet \
 		textwidgets widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui network printsupport widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

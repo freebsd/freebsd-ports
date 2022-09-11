@@ -17,7 +17,7 @@ DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
 
 NO_ARCH=	yes
 USES=		cmake qt:5
-USE_QT=		help_build
+USE_QT=		help:build
 USE_LOCALE=	en_US.UTF-8
 
 CMAKE_OFF=	SPHINX_MAN

@@ -18,10 +18,10 @@ LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
-USE_QT=		buildtools_build core dbus gui network printsupport qmake_build \
-		sql testlib_build xml webkit widgets
+USE_QT=		buildtools:build core dbus gui network printsupport qmake:build \
+		sql testlib:build xml webkit widgets
 USE_KDE=	activities archive auth bookmarks codecs completion config \
-		configwidgets coreaddons doctools_build ecm_build i18n \
+		configwidgets coreaddons doctools:build ecm:build i18n \
 		iconthemes itemmodels itemviews jobwidgets kcmutils \
 		kio notifications textwidgets service solid sonnet \
 		wallet widgetsaddons xmlgui

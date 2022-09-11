@@ -70,7 +70,7 @@ GIN_VERSION=	2.1.2
 COMMENT+=	(desktop UI version)
 USES+=		desktop-file-utils qt:5 shared-mime-info
 USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
-		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
+		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools:build qmake:build
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Desktop
 INSTALL_SUBDIR=	${PORTNAME:tl}
 EXECUTABLE=	${PORTNAME:tl}

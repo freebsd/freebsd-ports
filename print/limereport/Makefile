@@ -11,8 +11,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++11-lang dos2unix gl qt:5
-USE_QT+=	buildtools_build core gui script sql xml svg quickcontrols2 \
-		printsupport uitools network widgets declarative qmake_build
+USE_QT+=	buildtools:build core gui script sql xml svg quickcontrols2 \
+		printsupport uitools network widgets declarative qmake:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

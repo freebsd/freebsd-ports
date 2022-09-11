@@ -10,9 +10,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons i18n iconthemes itemviews \
 		jobwidgets kdewebkit kio plotting service solid sonnet \
 		textwidgets widgetsaddons xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus designer gui linguisttools \
 		network webkit widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

@@ -15,9 +15,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons globalaccel i18n iconthemes itemviews \
 		jobwidgets kio notifications service solid sonnet textwidgets \
 		wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network phonon4 svg widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

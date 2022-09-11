@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	maliit
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_QT=		core dbus declarative gui network wayland widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	xcb
 
 CMAKE_ON=	enable-dbus-activation \

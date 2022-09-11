@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		cmake compiler:c++11-lib gnome qt:5
-USE_QT=		buildtools_build concurrent core network qmake_build websockets widgets gui
+USE_QT=		buildtools:build concurrent core network qmake:build websockets widgets gui
 USE_GITHUB=	yes
 GH_TAGNAME=	2021-01-26-Release-2.8.0
 
@@ -32,7 +32,7 @@ SERVATRICE_CMAKE_OFF=	-DWITH_SERVER=OFF
 COCKATRICE_CMAKE_ON=	-DWITH_CLIENT=ON -DWITH_ORACLE=ON
 COCKATRICE_CMAKE_OFF=	-DWITH_CLIENT=OFF -DWITH_ORACLE=OFF
 
-COCKATRICE_USE=		qt=multimedia,printsupport,svg,linguisttools_build
+COCKATRICE_USE=		qt=multimedia,printsupport,svg,linguisttools:build
 SERVATRICE_USE=		qt=sql,sql-mysql
 SERVATRICE_USE+=	RC_SUBR=servatrice
 

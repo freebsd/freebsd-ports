@@ -21,7 +21,7 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libsndfile.so:audio/libsndfile
 
 USES=		autoreconf desktop-file-utils gettext-runtime gl gmake gnome libtool pkgconfig python:run qt:5 shebangfix tar:bz2 xorg
-USE_QT=		core gui widgets buildtools_build
+USE_QT=		core gui widgets buildtools:build
 USE_GNOME=	cairo glib20
 USE_GL=		gl
 USE_XORG=	x11

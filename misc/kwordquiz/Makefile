@@ -14,9 +14,9 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		kdelibs4support kio libkeduvocdocument newstuff notifications \
 		notifyconfig parts service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui network phonon4 printsupport widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

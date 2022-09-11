@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		compiler:c++17-lang pkgconfig \
 		qmake qt:5 zip
 USE_QT=		core gui multimedia network printsupport widgets x11extras xml \
-		buildtools_build linguist_build
+		buildtools:build linguist:build
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/bin ${STAGEDIR}${QT_PLUGINDIR}/

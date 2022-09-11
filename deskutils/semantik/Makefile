@@ -17,7 +17,7 @@ USE_KDE=	auth config configwidgets coreaddons i18n iconthemes \
 USE_LDCONFIG=	yes
 USE_QT=		core dbus declarative gui location network printsupport \
 		svg webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 SHEBANG_FILES=	src/templates/beamer/wscript \
 		src/templates/pdflatex/wscript \

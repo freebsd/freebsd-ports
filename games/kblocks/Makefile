@@ -11,7 +11,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons i18n itemmodels kio libkdegames newstuff \
 		notifyconfig textwidgets widgetsaddons windowsystem xmlgui
 USE_QT=		core dbus declarative gui network phonon4 svg testlib widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

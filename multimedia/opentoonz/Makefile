@@ -28,7 +28,7 @@ USE_GITHUB=	yes
 USE_GL=		gl glew glu glut
 USE_QT=		core gui multimedia network opengl printsupport \
 		script serialport svg widgets xml \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 CMAKE_ARGS=	-DWITH_SYSTEM_LZO:BOOL=ON \
 		-DWITH_SYSTEM_SUPERLU:BOOL=ON
 CMAKE_SOURCE_PATH=	${WRKSRC}/toonz/sources

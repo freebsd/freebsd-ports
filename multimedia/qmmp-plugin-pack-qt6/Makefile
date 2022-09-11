@@ -19,7 +19,7 @@ CONFLICTS=	${PORTNAME}-qt5
 PORTSCOUT=	limit:^1\..*
 
 USES=		cmake pkgconfig qt:6 tar:bzip2
-USE_QT=		base tools_build
+USE_QT=		base tools:build
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes

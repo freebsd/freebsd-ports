@@ -16,7 +16,7 @@ USES=		pkgconfig qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	CineEncoder
 GH_PROJECT=	cine-encoder
-USE_QT=		buildtools_build qmake_build core gui multimedia \
+USE_QT=		buildtools:build qmake:build core gui multimedia \
 		network svg widgets x11extras
 USE_XORG=	x11 xext
 

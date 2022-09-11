@@ -17,7 +17,7 @@ USES=		compiler:c++11-lang desktop-file-utils gettext gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	oferkv
 USE_GL=		gl
-USE_QT=		core gui imageformats svg widgets buildtools_build
+USE_QT=		core gui imageformats svg widgets buildtools:build
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

@@ -18,7 +18,7 @@ USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus gui imageformats linguisttools \
-		printsupport sql sql-sqlite3 svg widgets xml buildtools_build
+		printsupport sql sql-sqlite3 svg widgets xml buildtools:build
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 

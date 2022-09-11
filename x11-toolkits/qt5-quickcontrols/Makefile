@@ -11,6 +11,6 @@ BROKEN_armv6=		fails to install: pkg-static: Unable to access file ApplicationWi
 
 USES=		compiler:c++11-lang qmake qt-dist:5,quickcontrols
 USE_QT=		core declarative gui widgets \
-		buildtools_build
+		buildtools:build
 
 .include <bsd.port.mk>

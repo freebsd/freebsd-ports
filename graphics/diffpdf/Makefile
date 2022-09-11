@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang qmake qt:5 gl
 USE_GL=		gl
-USE_QT=		buildtools linguist_build core gui printsupport widgets
+USE_QT=		buildtools linguist:build core gui printsupport widgets
 
 PLIST_FILES=	bin/diffpdf
 

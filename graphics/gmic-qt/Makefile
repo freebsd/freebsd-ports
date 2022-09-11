@@ -27,7 +27,7 @@ gimp_PKGNAMESUFFIX=	-gimp
 
 USES=		cmake compiler:c++14-lang pkgconfig qt:5 xorg
 USE_QT=		core gui network widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
 USE_GITHUB=	yes

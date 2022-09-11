@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	miek
 GH_TAGNAME=	d6115cb458068fa64c7bbd9020bcbab3373fee0e
 
-USE_QT=		core buildtools_build concurrent widgets
+USE_QT=		core buildtools:build concurrent widgets
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

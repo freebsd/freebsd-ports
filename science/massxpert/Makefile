@@ -21,8 +21,8 @@ GL_SITE=	https://salsa.debian.org/
 GL_ACCOUNT=	debichem-team
 GL_COMMIT=	a21ad33eee0314df202146392023dfb3868b7d84
 USE_GNOME=	glib20
-USE_QT=		core gui printsupport svg widgets xml buildtools_build \
-		qmake_build
+USE_QT=		core gui printsupport svg widgets xml buildtools:build \
+		qmake:build
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 
 .include <bsd.port.mk>

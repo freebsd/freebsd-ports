@@ -14,10 +14,10 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash i18n itemviews jobwidgets kdeclarative kio package parts \
 		service solid sonnet syntaxhighlighting texteditor textwidgets \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network script scripttools svg webkit \
 		widgets xml xmlpatterns \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

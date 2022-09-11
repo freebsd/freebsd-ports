@@ -14,7 +14,7 @@ RUN_DEPENDS=	upower:sysutils/upower
 
 USES=	cmake compiler:c++14-lang gettext-runtime kde:5 qt:5 \
 	localbase:ldflags lxqt pkgconfig tar:xz gnome xorg
-USE_QT=	buildtools_build qmake_build core svg widgets x11extras \
+USE_QT=	buildtools:build qmake:build core svg widgets x11extras \
 	dbus gui xml
 USE_GNOME=	glib20
 USE_KDE=	idletime solid windowsystem

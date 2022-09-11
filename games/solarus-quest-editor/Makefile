@@ -28,7 +28,7 @@ GL_COMMIT=	e541e1312c242bff10aa1fb84a7eb8b6cb8504ba
 
 CMAKE_ARGS+=	-DSOLARUS_USE_LUAJIT=OFF
 USE_SDL=	sdl2 ttf2 image2
-USE_QT=		buildtools_build concurrent core gui linguist qmake_build widgets
+USE_QT=		buildtools:build concurrent core gui linguist qmake:build widgets
 
 DESKTOP_ENTRIES=	"Solarus Quest Editor" "${COMMENT}" "${PORTNAME}" "${PORTNAME}"  \
 			"Game;" false

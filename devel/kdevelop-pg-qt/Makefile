@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 USES=		bison cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		core testlib \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 CONFLICTS=	kdevelop-pg-qt-1.0*
 

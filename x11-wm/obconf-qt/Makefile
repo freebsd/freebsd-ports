@@ -18,7 +18,7 @@ LIB_DEPENDS=	libobt.so:x11-wm/openbox \
 USES=		cmake compiler:c++11-lang gettext-runtime localbase qt:5 \
 		gnome lxqt pkgconfig tar:xz xorg
 
-USE_QT=		buildtools_build qmake_build core gui linguisttools \
+USE_QT=		buildtools:build qmake:build core gui linguisttools \
 		widgets x11extras
 
 USE_LXQT=	buildtools

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/data/LICENSES/GPL-3.0.txt
 USES=		compiler:c++11-lib desktop-file-utils gl pkgconfig qmake \
 		qt:5 shared-mime-info tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools_build linguisttools_build core gui widgets
+USE_QT=		buildtools:build linguisttools:build core gui widgets
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

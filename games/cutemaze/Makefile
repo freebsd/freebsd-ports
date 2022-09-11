@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2
 USE_GL=		gl
-USE_QT=		core gui svg imageformats_run widgets \
-		linguisttools_build buildtools_build
+USE_QT=		core gui svg imageformats:run widgets \
+		linguisttools:build buildtools:build
 
 PORTDOCS=	ChangeLog README
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

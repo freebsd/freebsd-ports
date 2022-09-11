@@ -34,7 +34,7 @@ CONFIG_DESC=	Install configuration utility (needs Qt 5)
 UTILS_DESC=	Build and install utility programs
 
 CONFIG_USES=		qt:5
-CONFIG_USE=		QT=core,gui,widgets,buildtools_build,qmake_build
+CONFIG_USE=		QT=core,gui,widgets,buildtools:build,qmake:build
 CONFIG_CMAKE_BOOL_OFF=	ALSOFT_NO_CONFIG_UTIL
 CONFIG_CMAKE_ON=	-DALSOFT_NO_QT5:BOOL=OFF
 

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lib gl qmake qt:5 tar:bzip2
 USE_GL=		gl
 USE_QT=		core gui widgets \
-		buildtools_build linguisttools_build
+		buildtools:build linguisttools:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

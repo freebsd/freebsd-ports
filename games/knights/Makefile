@@ -17,7 +17,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		widgetsaddons xmlgui
 USE_QT=		concurrent core dbus declarative gui network speech \
 		svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

@@ -12,8 +12,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 
 USES=		cmake compiler:c++11-lib gettext kde:5 \
 		pkgconfig qt:5 shebangfix tar:xz
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		core dbus gui \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

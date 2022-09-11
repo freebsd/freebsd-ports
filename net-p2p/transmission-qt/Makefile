@@ -6,7 +6,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c++11-lang qt:5
 NLS_USES=	gettext-runtime:run qt:5
-USE_QT=		buildtools_build linguisttools_build qmake_build \
+USE_QT=		buildtools:build linguisttools:build qmake:build \
 		core dbus gui network widgets
 CMAKE_ON=	USE_QT
 

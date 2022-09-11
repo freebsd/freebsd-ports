@@ -17,7 +17,7 @@ LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip \
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl pkgconfig \
 		qmake:outsource qt:5 sdl
 USE_GL=		gl glu
-USE_QT=		core gui widgets buildtools_build linguisttools_build
+USE_QT=		core gui widgets buildtools:build linguisttools:build
 
 DOS2UNIX_FILES=	src/widget_file_browse.h
 

@@ -11,7 +11,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang lxqt pkgconfig tar:xz qt:5
-USE_QT=		qmake_build buildtools_build core
+USE_QT=		qmake:build buildtools:build core
 USE_LXQT=	buildtools
 USE_LDCONFIG=	yes
 

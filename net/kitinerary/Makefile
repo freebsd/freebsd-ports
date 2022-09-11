@@ -16,11 +16,11 @@ USES=		compiler:c++11-lang cmake gettext gnome kde:5 pkgconfig qt:5 \
 		shared-mime-info ssl tar:xz
 USE_GNOME=	libxml2
 USE_KDE=	archive codecs coreaddons i18n \
-		ecm_build
+		ecm:build
 # Pim components
 USE_KDE+=	calendarcore contacts kpkpass mime
 USE_QT=		core declarative gui network \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

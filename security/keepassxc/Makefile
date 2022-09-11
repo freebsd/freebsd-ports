@@ -23,8 +23,8 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils pkgconfig qt:5 \
 		readline shared-mime-info tar:xz xorg
-USE_QT=		concurrent core dbus gui network svg widgets buildtools_build \
-		linguisttools_build qmake_build testlib_build x11extras
+USE_QT=		concurrent core dbus gui network svg widgets buildtools:build \
+		linguisttools:build qmake:build testlib:build x11extras
 USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}

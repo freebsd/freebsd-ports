@@ -14,10 +14,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		i18n jobwidgets kdeclarative kio package parts service \
 		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		script svg widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

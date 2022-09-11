@@ -39,7 +39,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.12.0-2-gc2aa9dd:hidapi/3rdparty/hidapi/hidapi \
 USES=		cmake compiler:c++17-lang elfctl gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
 USE_GL=		gl glew
-USE_QT=		qmake_build buildtools_build core concurrent dbus gui multimedia svg widgets
+USE_QT=		qmake:build buildtools:build core concurrent dbus gui multimedia svg widgets
 USE_XORG=	x11
 CMAKE_ON=	CMAKE_SKIP_RPATH ${CURL FFMPEG FLATBUFFERS LIBPNG PUGIXML XXHASH:L:S/^/USE_SYSTEM_/}
 CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests

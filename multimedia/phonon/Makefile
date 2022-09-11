@@ -21,7 +21,7 @@ CMAKE_OFF=	PHONON_BUILD_DESIGNER_PLUGIN \
 USE_LDCONFIG=	yes
 USE_KDE=	ecm
 USE_QT=		core dbus gui opengl widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 

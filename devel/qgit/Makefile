@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 USES=		cmake compiler:c++11-lang cpe qt:5
 USE_QT=		core gui widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tibirna

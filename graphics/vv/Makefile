@@ -26,7 +26,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USES=		cmake compiler:c++11-lang eigen:3 jpeg qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-vv
-USE_QT=		core designer gui network sql widgets xml buildtools_build qmake_build
+USE_QT=		core designer gui network sql widgets xml buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xt
 USE_CXXSTD=	c++11
 

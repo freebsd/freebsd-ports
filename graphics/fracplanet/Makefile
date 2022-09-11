@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 USES=		compiler:c++11-lang gl gnome qmake:outsource qt:5
 USE_GL=		gl glu
 QMAKE_ARGS=	VERSION_NUMBER=${PORTVERSION}
-USE_QT=		buildtools_build core gui opengl
+USE_QT=		buildtools:build core gui opengl
 
 DESKTOP_ENTRIES=	"Fracplanet" \
 			"" \

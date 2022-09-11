@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pkgconfig qt:5
 GNU_CONFIGURE=	yes
-USE_QT=		buildtools_build qmake_build core gui widgets
+USE_QT=		buildtools:build qmake:build core gui widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq

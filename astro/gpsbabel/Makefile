@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gmake localbase qt:5
-USE_QT=		core qmake_build
+USE_QT=		core qmake:build
 
 CONFLICTS=	gpsbabel14
 
@@ -24,7 +24,7 @@ OPTIONS_SUB=	yes
 GUI_USES=	gl
 GUI_USE=	GL=gl \
 		QT=declarative,gui,location,network,printsupport,webchannel \
-		QT=webengine,widgets,xml,buildtools_build,linguisttools_build
+		QT=webengine,widgets,xml,buildtools:build,linguisttools:build
 GUI_ALL_TARGET=	gui
 GUI_VARS=	MAKE_JOBS_UNSAFE=yes
 

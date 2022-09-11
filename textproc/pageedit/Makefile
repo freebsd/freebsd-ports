@@ -17,6 +17,6 @@ GH_PROJECT=	PageEdit
 
 USE_QT=		concurrent core declarative gui location network \
 		printsupport webchannel webengine widgets xml \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 
 .include <bsd.port.mk>

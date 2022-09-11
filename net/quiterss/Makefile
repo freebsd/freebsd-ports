@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
 		qmake:outsource qt:5 sqlite
-USE_QT=		buildtools_build linguisttools_build core xml gui widgets \
-		network multimedia printsupport webkit sql sql-sqlite3_run
+USE_QT=		buildtools:build linguisttools:build core xml gui widgets \
+		network multimedia printsupport webkit sql sql-sqlite3:run
 USE_GL=		gl
 
 NO_WRKSUBDIR=	yes

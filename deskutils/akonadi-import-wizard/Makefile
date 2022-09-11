@@ -16,13 +16,13 @@ USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons i18n itemmodels kio service wallet \
 		widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts grantleetheme \
 		identitymanagement imap libkdepim libkleo mailcommon mailimporter \
 		mailtransport messagelib mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

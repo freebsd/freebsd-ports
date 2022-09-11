@@ -58,7 +58,7 @@ GH_PROJECT=	tdesktop
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT=		buildtools_build core dbus gui imageformats network qmake_build \
+USE_QT=		buildtools:build core dbus gui imageformats network qmake:build \
 		svg wayland widgets
 .else
 USES+=		qt:6

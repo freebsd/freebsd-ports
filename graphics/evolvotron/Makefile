@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++11-lib gl gnome python qmake qt:5
-USE_QT=		core gui widgets xml buildtools_build
+USE_QT=		core gui widgets xml buildtools:build
 USE_GL=		gl
 QMAKE_ARGS=	VERSION_NUMBER="${PORTVERSION}"
 QMAKE_SOURCE_PATH=	${WRKSRC}/main.pro

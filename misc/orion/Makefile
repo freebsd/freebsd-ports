@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 USES=		compiler:c++14-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	drac69
-USE_QT=		core declarative graphicaleffects gui network quickcontrols2 svg widgets buildtools_build
+USE_QT=		core declarative graphicaleffects gui network quickcontrols2 svg widgets buildtools:build
 USE_GL=		gl
 
 PLIST_FILES=	bin/${PORTNAME} \

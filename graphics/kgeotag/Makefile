@@ -12,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt
 
 USES=		cmake compiler:c++17-lang kde:5 pkgconfig qt:5 tar:xz
 USE_QT=		core gui widgets \
-		buildtools_build linguist_build qmake_build
+		buildtools:build linguist:build qmake:build
 USE_KDE=	coreaddons config configwidgets crash i18n libkexiv2 \
 		marble xmlgui \
-		ecm_build
+		ecm:build
 # From stage-qa; these are not checked explicitly, but link
 # transitively though other KDE components (mostly Marble).
 USE_QT+=	dbus declarative location network printsupport webchannel xml

@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 USES=		cmake:insource compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		core designer gui phonon4 widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 PLIST_FILES=	${QT_PLUGINDIR_REL}/designer/phononwidgets.so
 

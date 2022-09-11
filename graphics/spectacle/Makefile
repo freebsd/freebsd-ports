@@ -17,10 +17,10 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons globalaccel guiaddons i18n jobwidgets kdeclarative kio \
 		libkipi newstuff notifications package purpose service solid wayland \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		core concurrent dbus declarative gui network printsupport \
 		quickcontrols svg widgets x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11 xcb xext xfixes
 
 OPTIONS_DEFINE=	DOCS

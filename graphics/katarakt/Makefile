@@ -14,7 +14,7 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		buildtools_build core gui xml dbus network widgets
+USE_QT=		buildtools:build core gui xml dbus network widgets
 USE_GL=		gl
 
 USE_GITLAB=	yes

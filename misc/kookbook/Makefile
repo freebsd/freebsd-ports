@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmarkdown.so:textproc/discount
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		core declarative gui network printsupport widgets \
-		qmake_build buildtools_build testlib_build
+		qmake:build buildtools:build testlib:build
 
 .include <bsd.port.mk>

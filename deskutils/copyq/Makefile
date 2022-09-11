@@ -33,8 +33,8 @@ USE_KDE=	notifications
 USE_LDCONFIG=	yes
 
 USE_QT=		core declarative gui network script svg wayland widgets \
-		x11extras buildtools_build linguisttools_build qmake_build \
-		imageformats_run
+		x11extras buildtools:build linguisttools:build qmake:build \
+		imageformats:run
 USE_XORG=	x11 xau xcb xdmcp xtst
 
 LDFLAGS+=	-Wl,--as-needed

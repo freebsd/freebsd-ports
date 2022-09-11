@@ -67,7 +67,7 @@ PYTHON_CMAKE_ON=	-DWITH_PYTHON3_BINDINGS:BOOL=ON
 STUDIO_DESC=	Build appleseed.studio (Qt-based)
 STUDIO_LIB_DEPENDS=	${PY_BOOST}
 STUDIO_USES=	qt:5
-STUDIO_USE=	QT=buildtools_build,qmake_build,concurrent,core,gui,opengl,widgets
+STUDIO_USE=	QT=buildtools:build,qmake:build,concurrent,core,gui,opengl,widgets
 STUDIO_CMAKE_OFF=	-DWITH_STUDIO:BOOL=OFF
 STUDIO_IMPLIES=	PYTHON
 

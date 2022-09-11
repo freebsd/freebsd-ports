@@ -20,7 +20,7 @@ USES=		cmake pkgconfig tar:xz
 USES+=		compiler:c++11-lang kde:5 qt:5
 USE_KDE=	ecm
 USE_QT=		core gui widgets phonon4 \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 
 PHONON_PLUGIN=	vlc

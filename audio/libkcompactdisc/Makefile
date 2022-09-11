@@ -9,9 +9,9 @@ WWW=		https://www.kde.org/
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	coreaddons emoticons i18n itemmodels itemviews \
 		kdelibs4support solid \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui phonon4 widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ALSA DOCS

@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=1.0:audio/py-discid@${PY_FLAVOR} \
 
 USES=		gettext pyqt:5 python:3.7+ desktop-file-utils
 USE_LOCALE=	en_US.UTF-8
-USE_PYQT=	pyqt5_run sip
+USE_PYQT=	pyqt5:run sip
 USE_PYTHON=	autoplist distutils noflavors
 
 CONFLICTS_INSTALL=	picard-tools py*-python-picard # bin/picard

@@ -30,7 +30,7 @@ USES=		alias cmake compiler:c++11-lib desktop-file-utils \
 		localbase:ldflags pkgconfig shared-mime-info tar:bzip2 \
 		qt:5 xorg
 USE_QT=		core gui network printsupport testlib widgets xml \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
 OPTIONS_DEFINE=		LIRC

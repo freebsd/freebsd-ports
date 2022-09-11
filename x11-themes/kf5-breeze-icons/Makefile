@@ -12,8 +12,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang cmake kde:5 python:3.5+,build qt:5 shebangfix tar:xz
-USE_KDE=	ecm_build
-USE_QT=		buildtools_build qmake_build testlib_build
+USE_KDE=	ecm:build
+USE_QT=		buildtools:build qmake:build testlib:build
 
 SHEBANG_FILES=	 svg-xml-script-template.py generate-24px-versions.py
 

@@ -11,7 +11,7 @@ BROKEN_armv6=		fails to install: pkg-static: Unable to access file DayOfWeekRow.
 
 USES=		compiler:c++11-lang qmake:norecursive qt-dist:5
 USE_QT=		core declarative gui widgets \
-		buildtools_build
+		buildtools:build
 QT_DIST=	${PORTNAME}
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++17-lang qt:5
-USE_QT=		core gui network svg widgets xml buildtools_build \
-		linguisttools_build qmake_build testlib_build
+USE_QT=		core gui network svg widgets xml buildtools:build \
+		linguisttools:build qmake:build testlib:build
 TEST_TARGET=	test
 
 PLIST_FILES=	bin/heimer \

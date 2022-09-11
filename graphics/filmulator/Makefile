@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cmake jpeg libarchive pkgconfig qt:5
 USE_GITHUB=	yes
-USE_QT=		buildtools_build qmake_build core declarative gui \
+USE_QT=		buildtools:build qmake:build core declarative gui \
 		network sql widgets
 
 GH_ACCOUNT=	CarVac

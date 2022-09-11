@@ -24,7 +24,7 @@ USE_GL=	gl glew glu
 
 USE_LDCONFIG=	yes
 
-USE_QT=	core opengl buildtools_build qmake_build
+USE_QT=	core opengl buildtools:build qmake:build
 
 USE_SDL=	sdl2
 

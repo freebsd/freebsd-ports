@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localization tools
 
 USES=		compiler:c++11-lang qmake qt-dist:5,tools
-USE_QT=		core xml buildtools_build declarative_build
+USE_QT=		core xml buildtools:build declarative:build
 
 BUILD_WRKSRC=	${WRKSRC}/src/linguist
 INSTALL_WRKSRC=	${WRKSRC}/src/linguist

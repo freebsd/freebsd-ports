@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gl qt:5
 USE_QT=		core gui network printsupport script svg xml widgets \
-		buildtools_build linguisttools_build qmake_build uitools_build
+		buildtools:build linguisttools:build qmake:build uitools:build
 USE_GL=		gl
 
 USE_GITLAB=	yes

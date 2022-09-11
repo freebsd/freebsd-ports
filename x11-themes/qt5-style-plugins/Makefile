@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	qt
 GH_PROJECT=	qtstyleplugins
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
-USE_QT=		core dbus gui widgets buildtools_build
+USE_QT=		core dbus gui widgets buildtools:build
 USE_GL=		gl
 USE_XORG=	x11 xext
 

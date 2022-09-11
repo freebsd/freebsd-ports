@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libvncclient.so:net/libvncserver
 
 USES=		cmake compiler:c++11-lang qt:5
-USE_QT=		buildtools_build qmake_build \
+USE_QT=		buildtools:build qmake:build \
 		core dbus gui network printsupport testlib widgets
 
 USE_GITHUB=	yes

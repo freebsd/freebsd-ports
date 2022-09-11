@@ -12,7 +12,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash i18n itemviews jobwidgets kio libkdegames notifications service \
 		solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

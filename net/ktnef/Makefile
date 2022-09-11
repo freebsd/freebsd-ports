@@ -9,11 +9,11 @@ LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons i18n kdelibs4support \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	calendarcore calendarutils contacts
 USE_QT=		core gui widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

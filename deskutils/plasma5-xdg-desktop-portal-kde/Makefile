@@ -14,10 +14,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons i18n itemviews jobwidgets kdeclarative kio \
 		kirigami2 notifications package plasma-framework service solid \
 		wayland widgetsaddons windowsystem xmlgui \
-		ecm_build plasma-wayland-protocols_build
+		ecm:build plasma-wayland-protocols:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmidisharelight.so:audio/midisharelight
 
 USES=		compiler:c++11-lang gl cmake gnome localbase:ldflags pkgconfig qt:5 xorg
-USE_QT=		core gui widgets printsupport xml buildtools_build qmake_build
+USE_QT=		core gui widgets printsupport xml buildtools:build qmake:build
 USE_GL=		gl
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes

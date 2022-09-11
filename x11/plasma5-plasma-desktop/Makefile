@@ -39,12 +39,12 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		plasma-framework plasma-workspace runner service solid sonnet \
 		textwidgets unitconversion wallet widgetsaddons windowsystem \
 		xmlgui \
-		doctools_build ecm_build \
-		drkonqi_run infocenter_run kde-cli-tools_run kmenuedit_run \
-		ksysguard_run polkit-kde-agent-1_run systemsettings_run
+		doctools:build ecm:build \
+		drkonqi:run infocenter:run kde-cli-tools:run kmenuedit:run \
+		ksysguard:run polkit-kde-agent-1:run systemsettings:run
 USE_QT=		concurrent core dbus declarative gui network phonon4 \
 		printsupport sql svg widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender
 
 CPE_VENDOR=	kde

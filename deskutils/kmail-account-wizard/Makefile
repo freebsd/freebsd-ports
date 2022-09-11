@@ -18,12 +18,12 @@ USE_KDE=	attica auth codecs config configwidgets coreaddons crash \
 		dbusaddons i18n itemmodels itemviews kcmutils kio kross \
 		newstuff notifications notifyconfig service texteditor wallet \
 		widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadimime identitymanagement ldap libkdepim libkleo \
 		mailtransport mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus gui network script widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

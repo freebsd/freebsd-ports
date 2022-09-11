@@ -20,9 +20,9 @@ USES=		cmake compiler:c++11-lib gettext kde:5 qca qt:5 tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		i18n iconthemes notifications service \
 		widgetsaddons windowsystem \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		core dbus gui testlib widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=		PINENTRY

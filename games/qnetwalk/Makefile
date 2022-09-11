@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
 USES=		cmake compiler:c++11-lang pkgconfig qt:5 sdl
-USE_QT=		core gui widgets qmake_build buildtools_build linguisttools_build
+USE_QT=		core gui widgets qmake:build buildtools:build linguisttools:build
 USE_SDL=	sdl2 mixer2
 
 PORTDOCS=	ChangeLog.md README.md

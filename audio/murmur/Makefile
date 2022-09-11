@@ -15,7 +15,7 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		compiler:c++11-lang qmake pkgconfig python:build qt:5 ssl
 USE_CXXSTD=	c++11
-USE_QT=		buildtools_build core network sql xml
+USE_QT=		buildtools:build core network sql xml
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mumble-voip
@@ -48,7 +48,7 @@ MYSQL_VARS_OFF=		CONFIG+=no-sql-mysql
 MYSQL_USE=		QT=sql-mysql
 
 SQLITE_VARS_OFF=	CONFIG+=no-sqlite3_run
-SQLITE_USE=		QT=sql-sqlite3_run
+SQLITE_USE=		QT=sql-sqlite3:run
 
 USERS=		murmur
 GROUPS=		murmur

@@ -20,7 +20,7 @@ GH_ACCOUNT=	evpo
 GH_PROJECT=	EncryptPad
 
 USE_GL=		gl
-USE_QT=		core gui widgets buildtools_build qmake_build
+USE_QT=		core gui widgets buildtools:build qmake:build
 BINARY_ALIAS=	python=${PYTHON_CMD} \
 		qmake=${QMAKE}
 

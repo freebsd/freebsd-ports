@@ -31,7 +31,7 @@ USES=		bison compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	glib20 libxml2
-USE_QT=		buildtools_build core concurrent_build dbus gui multimedia widgets
+USE_QT=		buildtools:build core concurrent:build dbus gui multimedia widgets
 USE_XORG=	x11
 GH_TAGNAME=	41f58fe57c03457a3a8b4dc541ef5654ec3e8c78
 QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}

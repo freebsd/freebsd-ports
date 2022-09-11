@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GL=		gl
-USE_QT=		buildtools_build linguisttools_build core gui network \
+USE_QT=		buildtools:build linguisttools:build core gui network \
 		printsupport widgets xml
 
 USE_GITHUB=	yes

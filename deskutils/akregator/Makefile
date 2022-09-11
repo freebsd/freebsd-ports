@@ -19,13 +19,13 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		i18n iconthemes itemmodels jobwidgets kcmutils kio \
 		notifications notifyconfig parts service solid sonnet texteditor\
 		textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadimime contacts grantleetheme kontactinterface \
 		libkdepim libkleo messagelib mime pimcommon pimtextedit syndication
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

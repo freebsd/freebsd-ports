@@ -12,7 +12,7 @@ USE_GITHUB=	yes
 GH_TAGNAME=	21e57f
 USE_GL=		gl
 USE_QT=		core declarative gui network \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	${QT_QMLDIR}/Box2D.2.0/
 
 .include <bsd.port.mk>

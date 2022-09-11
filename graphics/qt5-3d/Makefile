@@ -11,7 +11,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp
 
 USES=		compiler:c++11-lang perl5 pkgconfig qmake:norecursive qt-dist:5,3d
 USE_PERL5=	extract
-USE_QT=		concurrent core declarative gui network buildtools_build
+USE_QT=		concurrent core declarative gui network buildtools:build
 
 OPTIONS_DEFINE_amd64=	AVX
 OPTIONS_DEFINE_i386=	AVX

@@ -14,7 +14,7 @@ USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dman95
 USE_GL=		gl
-USE_QT=		core gui network widgets buildtools_build
+USE_QT=		core gui network widgets buildtools:build
 
 CONFLICTS_INSTALL=	fasm fasm-fpga
 
