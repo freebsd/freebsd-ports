@@ -1,3 +1,31 @@
+  <vuln vid="f75722ce-31b0-11ed-8b56-0800277bb8a8">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.17.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20869">
+	  <p>Double check CloneURL is acceptable</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21011">
+	  <p>Add more checks in migration code</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.io/2022/09/gitea-1.17.2-is-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-19</discovery>
+      <entry>2022-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80e057e7-2f0a-11ed-978f-fcaa147e860e">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
