@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,8 +15,9 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
-CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.63 \
+CARGO_CRATES=	anes-0.1.6 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.64 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -33,28 +34,26 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.2 \
 		blocking-1.2.0 \
-		bstr-0.2.17 \
 		bumpalo-3.9.1 \
 		cache-padded-1.2.0 \
-		cast-0.2.7 \
 		cast-0.3.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-2.34.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
 		clap-3.2.20 \
 		clap_lex-0.2.3 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
 		cpufeatures-0.2.2 \
-		criterion-0.3.6 \
-		criterion-plot-0.4.4 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.4 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
 		crypto-common-0.1.6 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
 		ctor-0.1.22 \
 		digest-0.10.3 \
 		either-1.6.1 \
@@ -72,7 +71,6 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		indexmap-1.8.1 \
 		instant-0.1.12 \
 		itertools-0.10.3 \
-		itoa-0.4.8 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		kv-log-macro-1.0.7 \
@@ -102,15 +100,11 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		rayon-1.5.3 \
 		rayon-core-1.9.2 \
 		regex-1.5.5 \
-		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
-		rustc_version-0.4.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.7 \
 		serde-1.0.136 \
-		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.85 \
 		sha-1-0.10.0 \
@@ -121,14 +115,12 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		strsim-0.10.0 \
 		syn-1.0.90 \
 		termcolor-1.1.3 \
-		textwrap-0.11.0 \
 		textwrap-0.15.0 \
 		thiserror-1.0.32 \
 		thiserror-impl-1.0.32 \
 		tinytemplate-1.2.1 \
 		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
-		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		value-bag-1.0.0-alpha.8 \
 		version_check-0.9.4 \
