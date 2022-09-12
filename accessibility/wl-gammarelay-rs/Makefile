@@ -1,7 +1,6 @@
 PORTNAME=	wl-gammarelay-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,8 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MaxVerevkin
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.62 \
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		anyhow-1.0.64 \
 		async-broadcast-0.4.1 \
 		async-recursion-0.3.2 \
 		async-trait-0.1.57 \
@@ -28,8 +27,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		bytes-1.2.1 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-3.2.17 \
-		clap_derive-3.2.17 \
+		clap-3.2.20 \
+		clap_derive-3.2.18 \
 		clap_lex-0.2.4 \
 		derivative-2.2.0 \
 		dirs-4.0.0 \
@@ -40,15 +39,15 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		enumflags2_derive-0.7.4 \
 		event-listener-2.5.3 \
 		fastrand-1.8.0 \
-		futures-0.3.23 \
-		futures-channel-0.3.23 \
-		futures-core-0.3.23 \
-		futures-executor-0.3.23 \
-		futures-io-0.3.23 \
-		futures-macro-0.3.23 \
-		futures-sink-0.3.23 \
-		futures-task-0.3.23 \
-		futures-util-0.3.23 \
+		futures-0.3.24 \
+		futures-channel-0.3.24 \
+		futures-core-0.3.24 \
+		futures-executor-0.3.24 \
+		futures-io-0.3.24 \
+		futures-macro-0.3.24 \
+		futures-sink-0.3.24 \
+		futures-task-0.3.24 \
+		futures-util-0.3.24 \
 		getrandom-0.2.7 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
@@ -59,14 +58,14 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		lazy_static-1.4.0 \
 		libc-0.2.132 \
 		libloading-0.7.3 \
-		lock_api-0.4.7 \
+		lock_api-0.4.8 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memmap-0.7.0 \
 		memoffset-0.6.5 \
 		mio-0.8.4 \
 		nix-0.24.2 \
-		once_cell-1.13.1 \
+		once_cell-1.14.0 \
 		ordered-stream-0.0.1 \
 		os_str_bytes-6.3.0 \
 		parking_lot-0.12.1 \
@@ -79,6 +78,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.43 \
+		quick-xml-0.23.1 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -98,16 +98,16 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		shmemfdrs-0.1.3 \
 		slab-0.4.7 \
 		smallvec-1.9.0 \
-		socket2-0.4.4 \
+		socket2-0.4.7 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.99 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		textwrap-0.15.0 \
-		thiserror-1.0.32 \
-		thiserror-impl-1.0.32 \
-		tokio-1.20.1 \
+		thiserror-1.0.34 \
+		thiserror-impl-1.0.34 \
+		tokio-1.21.0 \
 		tokio-macros-1.8.0 \
 		toml-0.5.9 \
 		tracing-0.1.36 \
@@ -117,12 +117,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-ident-1.0.3 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wayland-backend-0.1.0-beta.8 \
-		wayland-client-0.30.0-beta.8 \
-		wayland-protocols-0.30.0-beta.8 \
-		wayland-protocols-wlr-0.1.0-beta.8 \
-		wayland-scanner-0.30.0-beta.8 \
-		wayland-sys-0.30.0-beta.8 \
+		wayland-backend-0.1.0-beta.9 \
+		wayland-client-0.30.0-beta.9 \
+		wayland-protocols-0.30.0-beta.9 \
+		wayland-protocols-wlr-0.1.0-beta.9 \
+		wayland-scanner-0.30.0-beta.9 \
+		wayland-sys-0.30.0-beta.9 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
@@ -133,9 +133,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		windows_i686_msvc-0.36.1 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_msvc-0.36.1 \
-		xml-rs-0.8.4 \
-		zbus-3.0.0 \
-		zbus_macros-3.0.0 \
+		zbus-3.1.0 \
+		zbus_macros-3.1.0 \
 		zbus_names-2.2.0 \
 		zvariant-3.6.0 \
 		zvariant_derive-3.6.0
