@@ -1,7 +1,6 @@
 PORTNAME=	cmake
-DISTVERSION=	3.23.3
+DISTVERSION=	3.24.0
 CATEGORIES=	devel
-PORTREVISION=	1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Meta-port to connect all CMake bits

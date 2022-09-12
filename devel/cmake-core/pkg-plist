@@ -6,12 +6,10 @@ share/aclocal/cmake.m4
 share/bash-completion/completions/cmake
 share/bash-completion/completions/cpack
 share/bash-completion/completions/ctest
-share/emacs/site-lisp/cmake-mode.el
-share/vim/vimfiles/indent/cmake.vim
-share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/command/DEVICE_LINK_OPTIONS.txt
 %%DATADIR%%/Help/command/FIND_XXX.txt
 %%DATADIR%%/Help/command/FIND_XXX_ORDER.txt
+%%DATADIR%%/Help/command/FIND_XXX_REGISTRY_VIEW.txt
 %%DATADIR%%/Help/command/FIND_XXX_ROOT.txt
 %%DATADIR%%/Help/command/LINK_OPTIONS_LINKER.txt
 %%DATADIR%%/Help/command/OPTIONS_SHELL.txt
@@ -154,6 +152,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/cpack_gen/productbuild.rst
 %%DATADIR%%/Help/cpack_gen/rpm.rst
 %%DATADIR%%/Help/cpack_gen/wix.rst
+%%DATADIR%%/Help/envvar/ADSP_ROOT.rst
 %%DATADIR%%/Help/envvar/ASM_DIALECT.rst
 %%DATADIR%%/Help/envvar/ASM_DIALECTFLAGS.rst
 %%DATADIR%%/Help/envvar/CC.rst
@@ -162,6 +161,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/envvar/CMAKE_APPLE_SILICON_PROCESSOR.rst
 %%DATADIR%%/Help/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst
 %%DATADIR%%/Help/envvar/CMAKE_BUILD_TYPE.rst
+%%DATADIR%%/Help/envvar/CMAKE_COLOR_DIAGNOSTICS.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIGURATION_TYPES.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIG_TYPE.rst
 %%DATADIR%%/Help/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.rst
@@ -301,7 +301,6 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/module/CPackIFWConfigureFile.rst
 %%DATADIR%%/Help/module/CPackNSIS.rst
 %%DATADIR%%/Help/module/CPackNuGet.rst
-%%DATADIR%%/Help/module/CPackPackageMaker.rst
 %%DATADIR%%/Help/module/CPackProductBuild.rst
 %%DATADIR%%/Help/module/CPackRPM.rst
 %%DATADIR%%/Help/module/CPackWIX.rst
@@ -668,6 +667,16 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/policy/CMP0127.rst
 %%DATADIR%%/Help/policy/CMP0128.rst
 %%DATADIR%%/Help/policy/CMP0129.rst
+%%DATADIR%%/Help/policy/CMP0130.rst
+%%DATADIR%%/Help/policy/CMP0131.rst
+%%DATADIR%%/Help/policy/CMP0132.rst
+%%DATADIR%%/Help/policy/CMP0133.rst
+%%DATADIR%%/Help/policy/CMP0134.rst
+%%DATADIR%%/Help/policy/CMP0135.rst
+%%DATADIR%%/Help/policy/CMP0136.rst
+%%DATADIR%%/Help/policy/CMP0137.rst
+%%DATADIR%%/Help/policy/CMP0138.rst
+%%DATADIR%%/Help/policy/CMP0139.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -901,6 +910,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/COMPILE_PDB_NOTE.txt
 %%DATADIR%%/Help/prop_tgt/COMPILE_PDB_OUTPUT_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/COMPILE_PDB_OUTPUT_DIRECTORY_CONFIG.rst
+%%DATADIR%%/Help/prop_tgt/COMPILE_WARNING_AS_ERROR.rst
 %%DATADIR%%/Help/prop_tgt/CONFIG_OUTPUT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/CONFIG_POSTFIX.rst
 %%DATADIR%%/Help/prop_tgt/CROSSCOMPILING_EMULATOR.rst
@@ -997,10 +1007,14 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/INTERFACE_COMPILE_FEATURES.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_COMPILE_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_HEADER_SETS.rst
+%%DATADIR%%/Help/prop_tgt/INTERFACE_HEADER_SETS_TO_VERIFY.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_DEPENDS.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_DIRECTORIES.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_LIBRARIES.rst
+%%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_LIBRARIES_DIRECT.rst
+%%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_LIBRARIES_DIRECT.txt
+%%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_LIBRARIES_DIRECT_EXCLUDE.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_LINK_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_POSITION_INDEPENDENT_CODE.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_PRECOMPILE_HEADERS.rst
@@ -1043,6 +1057,8 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/LINK_LIBRARIES.rst
 %%DATADIR%%/Help/prop_tgt/LINK_LIBRARIES_INDIRECTION.txt
 %%DATADIR%%/Help/prop_tgt/LINK_LIBRARIES_ONLY_TARGETS.rst
+%%DATADIR%%/Help/prop_tgt/LINK_LIBRARY_OVERRIDE.rst
+%%DATADIR%%/Help/prop_tgt/LINK_LIBRARY_OVERRIDE_LIBRARY.rst
 %%DATADIR%%/Help/prop_tgt/LINK_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/LINK_SEARCH_END_STATIC.rst
 %%DATADIR%%/Help/prop_tgt/LINK_SEARCH_START_STATIC.rst
@@ -1116,6 +1132,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_CODE_BEFORE_INCLUDE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_MODE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_UNIQUE_ID.rst
+%%DATADIR%%/Help/prop_tgt/VERIFY_INTERFACE_HEADER_SETS.rst
 %%DATADIR%%/Help/prop_tgt/VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
 %%DATADIR%%/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
@@ -1129,6 +1146,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCES.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCES_COPY_LOCAL.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCE_refname.rst
+%%DATADIR%%/Help/prop_tgt/VS_DOTNET_STARTUP_OBJECT.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_DPI_AWARE.rst
 %%DATADIR%%/Help/prop_tgt/VS_GLOBAL_KEYWORD.rst
@@ -1140,6 +1158,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/VS_JUST_MY_CODE_DEBUGGING.rst
 %%DATADIR%%/Help/prop_tgt/VS_KEYWORD.rst
 %%DATADIR%%/Help/prop_tgt/VS_MOBILE_EXTENSIONS_VERSION.rst
+%%DATADIR%%/Help/prop_tgt/VS_NO_COMPILE_BATCHING.rst
 %%DATADIR%%/Help/prop_tgt/VS_NO_SOLUTION_DEPLOY.rst
 %%DATADIR%%/Help/prop_tgt/VS_PACKAGE_REFERENCES.rst
 %%DATADIR%%/Help/prop_tgt/VS_PLATFORM_TOOLSET.rst
@@ -1156,6 +1175,8 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_COMPONENT.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_EXTENSIONS.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_REFERENCES.rst
+%%DATADIR%%/Help/prop_tgt/WATCOM_RUNTIME_LIBRARY-VALUES.txt
+%%DATADIR%%/Help/prop_tgt/WATCOM_RUNTIME_LIBRARY.rst
 %%DATADIR%%/Help/prop_tgt/WIN32_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/WINDOWS_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_ATTRIBUTE_an-attribute.rst
@@ -1191,6 +1212,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_UNDEFINED_BEHAVIOUR_SANITIZER_STOP.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_WORKING_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_ZOMBIE_OBJECTS.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_XCCONFIG.rst
 %%DATADIR%%/Help/prop_tgt/XCTEST.rst
 %%DATADIR%%/Help/prop_tgt/XXX_OUTPUT_DIRECTORY.txt
 %%DATADIR%%/Help/prop_tgt/XXX_OUTPUT_NAME.txt
@@ -1211,6 +1233,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/release/3.21.rst
 %%DATADIR%%/Help/release/3.22.rst
 %%DATADIR%%/Help/release/3.23.rst
+%%DATADIR%%/Help/release/3.24.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1226,6 +1249,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/BUILD_SHARED_LIBS.rst
 %%DATADIR%%/Help/variable/CACHE.rst
 %%DATADIR%%/Help/variable/CMAKE_ABSOLUTE_DESTINATION_FILES.rst
+%%DATADIR%%/Help/variable/CMAKE_ADSP_ROOT.rst
 %%DATADIR%%/Help/variable/CMAKE_AIX_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_ANT_ADDITIONAL_OPTIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_API.rst
@@ -1295,6 +1319,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_CODEBLOCKS_COMPILER_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_CODEBLOCKS_EXCLUDE_EXTERNAL_FILES.rst
 %%DATADIR%%/Help/variable/CMAKE_CODELITE_USE_TARGETS.rst
+%%DATADIR%%/Help/variable/CMAKE_COLOR_DIAGNOSTICS.rst
 %%DATADIR%%/Help/variable/CMAKE_COLOR_MAKEFILE.rst
 %%DATADIR%%/Help/variable/CMAKE_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_COMPILER_2005.rst
@@ -1303,6 +1328,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_COMPILER_IS_GNUG77.rst
 %%DATADIR%%/Help/variable/CMAKE_COMPILE_PDB_OUTPUT_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_COMPILE_PDB_OUTPUT_DIRECTORY_CONFIG.rst
+%%DATADIR%%/Help/variable/CMAKE_COMPILE_WARNING_AS_ERROR.rst
 %%DATADIR%%/Help/variable/CMAKE_CONFIGURATION_TYPES.rst
 %%DATADIR%%/Help/variable/CMAKE_CONFIG_POSTFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_CPACK_COMMAND.rst
@@ -1383,9 +1409,11 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_PREFER_CONFIG.rst
+%%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_REDIRECTS_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_RESOLVE_SYMLINKS.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_SORT_DIRECTION.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_SORT_ORDER.rst
+%%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_TARGETS_GLOBAL.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_WARN_NO_MODULE.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_ROOT_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_ROOT_PATH_MODE_INCLUDE.rst
@@ -1396,6 +1424,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_CMAKE_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_CMAKE_SYSTEM_PATH.rst
+%%DATADIR%%/Help/variable/CMAKE_FIND_USE_INSTALL_PREFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_PACKAGE_REGISTRY.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_PACKAGE_ROOT_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH.rst
@@ -1517,9 +1546,13 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINKER_WRAPPER_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINKER_WRAPPER_FLAG_SEP.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_EXECUTABLE.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE_SUPPORTED.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FILE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_SUFFIX.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_USING_FEATURE.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_USING_FEATURE_SUPPORTED.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_WHAT_YOU_USE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_OUTPUT_EXTENSION.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_PLATFORM_ID.rst
@@ -1542,11 +1575,17 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_LINK_DEF_FILE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_DEPENDS_NO_SHARED.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_DIRECTORIES_BEFORE.rst
+%%DATADIR%%/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE.rst
+%%DATADIR%%/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE.txt
+%%DATADIR%%/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE_SUPPORTED.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_INTERFACE_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARIES_ONLY_TARGETS.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_FILE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_SUFFIX.rst
+%%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_USING_FEATURE.rst
+%%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_USING_FEATURE.txt
+%%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_USING_FEATURE_SUPPORTED.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_SEARCH_END_STATIC.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_SEARCH_START_STATIC.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_WHAT_YOU_USE.rst
@@ -1610,6 +1649,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_PROJECT-NAME_INCLUDE.rst
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_PROJECT-NAME_INCLUDE_BEFORE.rst
+%%DATADIR%%/Help/variable/CMAKE_PROJECT_TOP_LEVEL_INCLUDES.rst
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_VERSION_MAJOR.rst
 %%DATADIR%%/Help/variable/CMAKE_PROJECT_VERSION_MINOR.rst
@@ -1669,6 +1709,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_TLS_VERIFY.rst
 %%DATADIR%%/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
+%%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_NO_PLATFORM_VARIABLES.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_TARGET_TYPE.rst
 %%DATADIR%%/Help/variable/CMAKE_TWEAK_VERSION.rst
@@ -1679,6 +1720,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.rst
 %%DATADIR%%/Help/variable/CMAKE_USE_RELATIVE_PATHS.rst
 %%DATADIR%%/Help/variable/CMAKE_VERBOSE_MAKEFILE.rst
+%%DATADIR%%/Help/variable/CMAKE_VERIFY_INTERFACE_HEADER_SETS.rst
 %%DATADIR%%/Help/variable/CMAKE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VISIBILITY_INLINES_HIDDEN.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_DEVENV_COMMAND.rst
@@ -1688,6 +1730,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_VS_INTEL_Fortran_PROJECT_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_JUST_MY_CODE_DEBUGGING.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_MSBUILD_COMMAND.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_NO_COMPILE_BATCHING.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_NUGET_PACKAGE_RESTORE.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_NsightTegra_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_NAME.rst
@@ -1712,6 +1755,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_VS_WINRT_BY_DEFAULT.rst
 %%DATADIR%%/Help/variable/CMAKE_WARN_DEPRECATED.rst
 %%DATADIR%%/Help/variable/CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION.rst
+%%DATADIR%%/Help/variable/CMAKE_WATCOM_RUNTIME_LIBRARY.rst
 %%DATADIR%%/Help/variable/CMAKE_WIN32_EXECUTABLE.rst
 %%DATADIR%%/Help/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_ATTRIBUTE_an-attribute.rst
@@ -1739,6 +1783,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_UNDEFINED_BEHAVIOUR_SANITIZER_STOP.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_WORKING_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_ZOMBIE_OBJECTS.rst
+%%DATADIR%%/Help/variable/CMAKE_XCODE_XCCONFIG.rst
 %%DATADIR%%/Help/variable/CPACK_ABSOLUTE_DESTINATION_FILES.rst
 %%DATADIR%%/Help/variable/CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CPACK_CUSTOM_INSTALL_VARIABLES.rst
@@ -1775,6 +1820,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_PRE_MEMCHECK.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_PRE_TEST.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_TESTS_IGNORE.rst
+%%DATADIR%%/Help/variable/CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_WARNING_EXCEPTION.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_WARNING_MATCH.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_XXX.txt
@@ -1835,6 +1881,8 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Help/variable/IGNORE_SEARCH_SYSTEM.txt
 %%DATADIR%%/Help/variable/IOS.rst
 %%DATADIR%%/Help/variable/LIBRARY_OUTPUT_PATH.rst
+%%DATADIR%%/Help/variable/LINK_GROUP_PREDEFINED_FEATURES.txt
+%%DATADIR%%/Help/variable/LINK_LIBRARY_PREDEFINED_FEATURES.txt
 %%DATADIR%%/Help/variable/MINGW.rst
 %%DATADIR%%/Help/variable/MSVC.rst
 %%DATADIR%%/Help/variable/MSVC10.rst
@@ -2093,7 +2141,10 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Modules/CheckTypeSizeMap.cmake.in
 %%DATADIR%%/Modules/CheckVariableExists.c
 %%DATADIR%%/Modules/CheckVariableExists.cmake
+%%DATADIR%%/Modules/Compiler/ADSP-C.cmake
+%%DATADIR%%/Modules/Compiler/ADSP-CXX.cmake
 %%DATADIR%%/Modules/Compiler/ADSP-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/ADSP.cmake
 %%DATADIR%%/Modules/Compiler/ARMCC-ASM.cmake
 %%DATADIR%%/Modules/Compiler/ARMCC-C.cmake
 %%DATADIR%%/Modules/Compiler/ARMCC-CXX.cmake
@@ -2219,12 +2270,14 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Modules/Compiler/LCC-FindBinUtils.cmake
 %%DATADIR%%/Modules/Compiler/LCC-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/LCC.cmake
+%%DATADIR%%/Modules/Compiler/LLVMFlang-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-ASM.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-C.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/MSVC.cmake
 %%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/NVHPC-C.cmake
 %%DATADIR%%/Modules/Compiler/NVHPC-CXX.cmake
@@ -2325,6 +2378,8 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Modules/FeatureSummary.cmake
 %%DATADIR%%/Modules/FetchContent.cmake
 %%DATADIR%%/Modules/FetchContent/CMakeLists.cmake.in
+%%DATADIR%%/Modules/FetchContent/package-config-version.cmake.in
+%%DATADIR%%/Modules/FetchContent/package-config.cmake.in
 %%DATADIR%%/Modules/FindALSA.cmake
 %%DATADIR%%/Modules/FindASPELL.cmake
 %%DATADIR%%/Modules/FindAVIFile.cmake
@@ -2565,6 +2620,11 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Modules/MacOSXFrameworkInfo.plist.in
 %%DATADIR%%/Modules/MacroAddFileDependencies.cmake
 %%DATADIR%%/Modules/MatlabTestsRedirect.cmake
+%%DATADIR%%/Modules/Platform/ADSP-C.cmake
+%%DATADIR%%/Modules/Platform/ADSP-CXX.cmake
+%%DATADIR%%/Modules/Platform/ADSP-Common.cmake
+%%DATADIR%%/Modules/Platform/ADSP-Determine.cmake
+%%DATADIR%%/Modules/Platform/ADSP.cmake
 %%DATADIR%%/Modules/Platform/AIX-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/AIX-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/AIX-GNU-ASM.cmake
@@ -3031,3 +3091,6 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/include/cmCPluginAPI.h
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
+share/emacs/site-lisp/cmake-mode.el
+share/vim/vimfiles/indent/cmake.vim
+share/vim/vimfiles/syntax/cmake.vim
