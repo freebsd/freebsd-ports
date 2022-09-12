@@ -15,16 +15,19 @@ BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
 BUILD_DEPENDS=	bash:shells/bash \
 		evdev-proto>0:devel/evdev-proto
 
-USES=		cmake compiler:c++17-lang localbase:ldflags sdl xorg
+USES=		cmake compiler:c++17-lang localbase:ldflags sdl shebangfix xorg
 USE_SDL=	sdl2
 USE_XORG=	x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
+SHEBANG_FILES=	build/launch-c.in build/launch-cxx.in
+
 #CMAKE_ON=	BUILD_SHARED_LIBS # not yet supported, see https://github.com/google/filament/issues/1075
 CMAKE_OFF=	USE_STATIC_LIBCXX FILAMENT_ENABLE_JAVA
 CMAKE_ARGS+=	-DDIST_DIR="." # prevent subdirectory for libraries
+CMAKE_ARGS+=	-DUSE_CCACHE:BOOL=${CCACHE_ENABLED:tu}
 
 LDFLAGS+=	-lexecinfo -lSDL2
 
