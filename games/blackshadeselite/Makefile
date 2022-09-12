@@ -6,7 +6,7 @@ MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
-WWW=		https://web.archive.org/web/20170521213338/http://home.gna.org:80/blackshadeselite/
+WWW=		https://web.archive.org/web/20170521213338/http://home.gna.org/blackshadeselite/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
