@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+
+!!! ATTENTION !!!
+
+Make sure that you are flashing proper F/W.
+There is different pinout in different images and you may loose
+connection to EFR32 chip after flashing.
+
+
+Extra F/W sources:
+https://www.zigbee2mqtt.io/guide/adapters/
+https://github.com/xsp1989/zigbeeFirmware/
+https://github.com/grobasoz/zigbee-firmware
+https://github.com/zha-ng/EZSP-Firmware
+https://github.com/MattWestb/EFR32-FW
+https://github.com/walthowd/husbzb-firmware
+
+
+Please note if you are using the EZSP v8 firmware you will also have to
+add the following to your configuration.yaml for the Home Assistant
+ZHA integration to load successfully.
+
+zha:
+  zigpy_config:
+    ezsp_config:
+      CONFIG_PACKET_BUFFER_COUNT: 64
+      CONFIG_MAX_END_DEVICE_CHILDREN: 32
+      CONFIG_SOURCE_ROUTE_TABLE_SIZE: 200
+
+EOM
+}
+]
