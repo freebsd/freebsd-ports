@@ -88,17 +88,17 @@ Library selection is handled by libglvnd and/or libmap.conf.
     static const char *search_path_vars[] = {
        /* Read GBM_DRIVERS_PATH first for compatibility, but LIBGL_DRIVERS_PATH
         * is recommended over GBM_DRIVERS_PATH.
---- src/gbm/meson.build.orig	2020-05-30 21:28:01 UTC
+--- src/gbm/meson.build.orig	2022-09-12 22:59:56 UTC
 +++ src/gbm/meson.build
-@@ -44,7 +44,7 @@ if with_platform_wayland
+@@ -52,7 +52,7 @@ libgbm = shared_library(
  endif
  
  libgbm = shared_library(
--  'gbm',
-+  'gbm' + get_option('egl-lib-suffix'),
+-  libgbm_name,
++  libgbm_name + get_option('egl-lib-suffix'),
    files_gbm,
    include_directories : incs_gbm,
-   c_args : [c_vis_args, args_gbm],
+   c_args : [args_gbm],
 --- src/glx/meson.build.orig	2020-12-03 22:36:27 UTC
 +++ src/glx/meson.build
 @@ -108,10 +108,10 @@ elif with_dri_platform == 'windows'
