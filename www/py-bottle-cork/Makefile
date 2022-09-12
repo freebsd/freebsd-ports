@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Bottle authentication and authorization module
-WWW=		http://cork.firelet.net/
+WWW=		https://cork.readthedocs.io
 
 LICENSE=	LGPL3
 
