@@ -1,5 +1,5 @@
 PORTNAME=	jetty
-PORTVERSION=	9.4.29
+PORTVERSION=	9.4.48
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${PORTVERSION}.${JDVDATE}/
 PKGNAMESUFFIX=	9
@@ -15,12 +15,13 @@ LICENSE_FILE=	${WRKSRC}/license-eplv10-aslv20.html
 
 RUN_DEPENDS=	bash:shells/bash
 
+USES=		cpe shebangfix
+
 CONFLICTS=	jetty-8.*
 
-JDVDATE=	v20200521
+JDVDATE=	v20220622
 USE_JAVA=	yes
 NO_ARCH=	yes
-USES=		cpe shebangfix
 CPE_VENDOR=	eclipse
 SHEBANG_FILES=	bin/jetty.sh
 NO_BUILD=	yes

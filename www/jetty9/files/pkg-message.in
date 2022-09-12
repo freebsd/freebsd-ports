@@ -14,7 +14,7 @@ http://www.eclipse.org/jetty/documentation/current/startup-base-and-home.html
 
 You may want to activate it in /etc/rc.conf:
 
-    # echo %%APP_NAME%%_enable="YES" >> /etc/rc.conf
+    # sysrc %%APP_NAME%%_enable="YES"
 
 A sample configuration file can be found here:
 
