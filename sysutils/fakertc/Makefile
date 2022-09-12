@@ -1,6 +1,6 @@
 PORTNAME=	fakertc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1
+DISTVERSION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	ronald-lists@klop.ws
