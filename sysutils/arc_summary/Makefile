@@ -6,6 +6,7 @@ DISTFILES=	${PORTNAME}?${PORTVERSION}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Print ZFS ARC cache statistics and other information
+WWW=		https://cuddletech.com/2008/10/explore-your-zfs-adaptive-replacement-cache-arc/
 
 LICENSE=	BSD2CLAUSE
 

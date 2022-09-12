@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Authenticate with the Atlassian Connect REST APIs
+WWW=		https://bitbucket.org/atlassian/atlassian-jwt-ruby
 
 LICENSE=	APACHE20
 

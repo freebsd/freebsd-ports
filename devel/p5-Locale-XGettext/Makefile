@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create PO files from text files
+WWW=		https://metacpan.org/release/Locale-XGettext
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

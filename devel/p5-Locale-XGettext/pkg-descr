@@ -7,5 +7,3 @@ common base needed for such scripts.
 Locale::XGettext is the base class for various string extractors. These string
 extractors can be used as standalone programs on the command-line or as a module
 as a part of other software.
-
-https://metacpan.org/release/Locale-XGettext

@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check status of Varnish
+WWW=		https://www.varnish-cache.org/utility/nagios-varnish-plugin
 
 LICENSE=	BSD2CLAUSE
 

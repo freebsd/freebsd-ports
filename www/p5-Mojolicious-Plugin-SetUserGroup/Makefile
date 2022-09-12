@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mojolicious plugin to set unprivileged credentials
+WWW=		https://metacpan.org/pod/Mojolicious::Plugin::SetUserGroup
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

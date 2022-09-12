@@ -10,6 +10,7 @@ DISTFILES=	u-boot-2015.07.tar.bz2:source1 \
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	Cross-build U-Boot loader for Utilite (and Utilite Pro)
+WWW=		https://www.denx.de/wiki/U-Boot
 
 LICENSE=	GPLv2
 

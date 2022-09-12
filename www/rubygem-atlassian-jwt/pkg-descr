@@ -5,5 +5,3 @@ URL the app is accessing. This gem simplifies generating the claim.
 
 This gem provides helpers for generating Atlassian specific JWT claims. It also
 exposes the ruby-jwt gem's encode and decode methods.
-
-https://bitbucket.org/atlassian/atlassian-jwt-ruby
