@@ -1,34 +1,7 @@
-diff --git a/configure.ac b/configure.ac
-index 7c1a697..3bbd969 100644
---- configure.ac
---- configure.ac
-@@ -663,6 +663,22 @@ dnl ===========================================================================
- # Thread-safety primitives
- #
- 
-+AC_CACHE_CHECK([stdatomic.h atomic primitives], fc_cv_have_stdatomic_atomic_primitives, [
-+	fc_cv_have_stdatomic_atomic_primitives=false
-+	AC_TRY_LINK([
-+		#include <stdatomic.h>
-+
-+		void memory_barrier (void) { atomic_thread_fence (memory_order_acq_rel); }
-+		int atomic_add (atomic_int *i) { return atomic_fetch_add_explicit (i, 1, memory_order_relaxed); }
-+		int mutex_trylock (atomic_flag *m) { return atomic_flag_test_and_set_explicit (m, memory_order_acquire); }
-+		void mutex_unlock (atomic_flag *m) { atomic_flag_clear_explicit (m, memory_order_release); }
-+		], [], fc_cv_have_stdatomic_atomic_primitives=true
-+	)
-+])
-+if $fc_cv_have_stdatomic_atomic_primitives; then
-+	AC_DEFINE(HAVE_STDATOMIC_PRIMITIVES, 1, [Have Intel __sync_* atomic primitives])
-+fi
-+
- AC_CACHE_CHECK([for Intel atomic primitives], fc_cv_have_intel_atomic_primitives, [
- 	fc_cv_have_intel_atomic_primitives=false
- 	AC_TRY_LINK([
-diff --git a/fc-lang/fc-lang.py b/fc-lang/fc-lang.py
+diff --git fc-lang/fc-lang.py fc-lang/fc-lang.py
 index cc1dea8..627d470 100755
 --- fc-lang/fc-lang.py
---- fc-lang/fc-lang.py
++++ fc-lang/fc-lang.py
 @@ -244,9 +244,9 @@ if __name__=='__main__':
      print('#define OFF0        (LEAF0 + {} * sizeof (FcCharLeaf))'.format(len(leaves)))
      print('#define NUM0        (OFF0 + {} * sizeof (uintptr_t))'.format(tn))
@@ -51,102 +24,11 @@ index cc1dea8..627d470 100755
      FcChar16       numbers[{}];
      {}       langIndices[{}];
      {}       langIndicesInv[{}];
-diff --git a/fontconfig/fontconfig.h b/fontconfig/fontconfig.h
-index 1ae34ae..790f83d 100644
---- fontconfig/fontconfig.h
---- fontconfig/fontconfig.h
-@@ -67,7 +67,7 @@ typedef int		FcBool;
-  * it means multiple copies of the font information.
-  */
- 
--#define FC_CACHE_VERSION_NUMBER	7
-+#define FC_CACHE_VERSION_NUMBER	8
- #define _FC_STRINGIFY_(s)    	#s
- #define _FC_STRINGIFY(s)    	_FC_STRINGIFY_(s)
- #define FC_CACHE_VERSION    	_FC_STRINGIFY(FC_CACHE_VERSION_NUMBER)
-diff --git a/meson-cc-tests/stdatomic-primitives-test.c b/meson-cc-tests/stdatomic-primitives-test.c
-new file mode 100644
-index 0000000..6d11d34
---- /dev/null
---- meson-cc-tests/stdatomic-primitives-test.c
-@@ -0,0 +1,8 @@
-+#include <stdatomic.h>
-+
-+void memory_barrier (void) { atomic_thread_fence (memory_order_acq_rel); }
-+int atomic_add (atomic_int *i) { return atomic_fetch_add_explicit (i, 1, memory_order_relaxed); }
-+int mutex_trylock (atomic_flag *m) { return atomic_flag_test_and_set_explicit (m, memory_order_acquire); }
-+void mutex_unlock (atomic_flag *m) { atomic_flag_clear_explicit (m, memory_order_release); }
-+
-+int main(void) { return 0;}
-diff --git a/meson.build b/meson.build
-index 0ec3dc6..64cae44 100644
---- meson.build
---- meson.build
-@@ -190,6 +190,10 @@ else
-   conf.set('FLEXIBLE_ARRAY_MEMBER', 1)
- endif
- 
-+if cc.links(files('meson-cc-tests/stdatomic-primitives-test.c'), name: 'stdatomic.h atomics')
-+  conf.set('HAVE_STDATOMIC_PRIMITIVES', 1)
-+endif
-+
- if cc.links(files('meson-cc-tests/intel-atomic-primitives-test.c'), name: 'Intel atomics')
-   conf.set('HAVE_INTEL_ATOMIC_PRIMITIVES', 1)
- endif
-diff --git a/src/fcatomic.h b/src/fcatomic.h
-index 9f56b3d..a41b0aa 100644
---- src/fcatomic.h
---- src/fcatomic.h
-@@ -51,6 +51,25 @@ typedef <type> fc_atomic_int_t;
- #define fc_atomic_ptr_cmpexch(P,O,N)	*(P) == (O) ? (*(P) = (N), FcTrue) : FcFalse // atomic release
- 
- 
-+#elif !defined(FC_NO_MT) && defined(HAVE_STDATOMIC_PRIMITIVES)
-+
-+#include <stdatomic.h>
-+
-+typedef atomic_int fc_atomic_int_t;
-+#define FC_ATOMIC_INT_FORMAT		"d"
-+#define fc_atomic_int_add(AI, V)	atomic_fetch_add (&(AI), (V))
-+
-+#define fc_atomic_ptr_get(P)		atomic_load ((_Atomic(void *)*) (P))
-+static inline FcBool _fc_atomic_ptr_cmpexch(_Atomic(void *)*P, void * O, _Atomic(void *) N) {
-+  return atomic_compare_exchange_strong(P, &O, N);
-+}
-+#define fc_atomic_ptr_cmpexch(P,O,N)	_fc_atomic_ptr_cmpexch ((_Atomic(void *)*) (P), (O), (N))
-+
-+/* Casting -1 to _Atomic(int) produces a compiler error with Clang (but not GCC)
-+ * so we have to override FC_REF_CONSTANT_VALUE for stdatomic.h atomics.
-+ * See https://bugs.llvm.org/show_bug.cgi?id=40249. */
-+#define FC_REF_CONSTANT_VALUE (-1)
-+
- #elif !defined(FC_NO_MT) && defined(_MSC_VER) || defined(__MINGW32__)
- 
- #include "fcwindows.h"
-@@ -137,7 +156,9 @@ typedef int fc_atomic_int_t;
- #endif
- 
- /* reference count */
-+#ifndef FC_REF_CONSTANT_VALUE
- #define FC_REF_CONSTANT_VALUE ((fc_atomic_int_t) -1)
-+#endif
- #define FC_REF_CONSTANT {FC_REF_CONSTANT_VALUE}
- typedef struct _FcRef { fc_atomic_int_t count; } FcRef;
- static inline void   FcRefInit     (FcRef *r, int v) { r->count = v; }
-diff --git a/src/fccache.c b/src/fccache.c
-index b2392d3..d8408b0 100644
+diff --git src/fccache.c src/fccache.c
+index 4a6a752..0304360 100644
 --- src/fccache.c
---- src/fccache.c
-@@ -135,7 +135,7 @@ FcCacheIsMmapSafe (int fd)
- 	    status =  use ? MMAP_USE : MMAP_DONT_USE;
- 	else
- 	    status = MMAP_CHECK_FS;
--	(void) fc_atomic_ptr_cmpexch (&static_status, NULL, (void *) status);
-+	(void) fc_atomic_ptr_cmpexch (&static_status, NULL, (void *) (intptr_t) status);
-     }
- 
-     if (status == MMAP_CHECK_FS)
-@@ -900,13 +900,15 @@ FcCacheOffsetsValid (FcCache *cache)
++++ src/fccache.c
+@@ -901,13 +901,15 @@ FcCacheOffsetsValid (FcCache *cache)
              FcPattern		*font = FcFontSetFont (fs, i);
              FcPatternElt	*e;
              FcValueListPtr	 l;
@@ -165,7 +47,7 @@ index b2392d3..d8408b0 100644
  		!FcRefIsConst (&font->ref))
                  return FcFalse;
  
-@@ -917,7 +919,7 @@ FcCacheOffsetsValid (FcCache *cache)
+@@ -918,7 +920,7 @@ FcCacheOffsetsValid (FcCache *cache)
  
  	    for (j = 0; j < font->num; j++)
  	    {
@@ -174,11 +56,11 @@ index b2392d3..d8408b0 100644
  		for (l = FcPatternEltValues(&e[j]); l; l = FcValueListNext(l))
  		{
  		    if ((char *) l < last_offset || (char *) l > end - sizeof (*l) ||
-diff --git a/src/fccfg.c b/src/fccfg.c
-index 21fc9b1..ae956b9 100644
+diff --git src/fccfg.c src/fccfg.c
+index eb174a4..8267136 100644
 --- src/fccfg.c
---- src/fccfg.c
-@@ -451,6 +451,7 @@ FcConfigAddCache (FcConfig *config, FcCache *cache,
++++ src/fccfg.c
+@@ -427,6 +427,7 @@ FcConfigAddCache (FcConfig *config, FcCache *cache,
  	    FcPattern	*font = FcFontSetFont (fs, i);
  	    FcChar8	*font_file;
  	    FcChar8	*relocated_font_file = NULL;
@@ -186,10 +68,10 @@ index 21fc9b1..ae956b9 100644
  
  	    if (FcPatternObjectGetString (font, FC_FILE_OBJECT,
  					  0, &font_file) == FcResultMatch)
-diff --git a/src/fccharset.c b/src/fccharset.c
-index 114f948..d7c47dd 100644
+diff --git src/fccharset.c src/fccharset.c
+index 832649c..2f12d5b 100644
 --- src/fccharset.c
---- src/fccharset.c
++++ src/fccharset.c
 @@ -37,8 +37,8 @@ FcCharSetCreate (void)
  	return 0;
      FcRefInit (&fcs->ref, 1);
@@ -221,56 +103,45 @@ index 114f948..d7c47dd 100644
      FcChar16	*numbers = FcCharSetNumbers (fcs);
  
      ucs4 >>= 8;
-@@ -175,36 +175,44 @@ FcCharSetPutLeaf (FcCharSet	*fcs,
-       }
-       else
+@@ -177,8 +177,7 @@ FcCharSetPutLeaf (FcCharSet	*fcs,
        {
-+	int i;
+ 	int i;
          unsigned int alloced = fcs->num;
--	intptr_t *new_leaves, distance;
+-	intptr_t *new_leaves;
+-	ptrdiff_t distance;
 +        FcCharLeaf **new_leaves;
-+	FcBool alloc_failed = FcFalse;
  
  	alloced *= 2;
- 	new_leaves = realloc (leaves, alloced * sizeof (*leaves));
- 	if (!new_leaves)
- 	    return FcFalse;
-+	/* We have to move the leaves even if realloc(numbers) fails since
-+	 * realloc() with the old size is not guaranteed to give back the
-+	 * previous pointer. */
  	numbers = realloc (numbers, alloced * sizeof (*numbers));
- 	if (!numbers)
+@@ -188,26 +187,29 @@ FcCharSetPutLeaf (FcCharSet	*fcs,
+ 	if (!new_leaves)
  	{
--	    /* Revert the reallocation of leaves */
--	    leaves = realloc (new_leaves, (alloced / 2) * sizeof (*new_leaves));
-+	    alloc_failed = FcTrue;
-+	    /* Shrink the reallocation of leaves, to avoid wasting memory */
-+	    new_leaves = realloc (new_leaves, (alloced / 2) * sizeof (*new_leaves));
+ 	    /*
+-	     * Revert the reallocation of numbers. We update numbers_offset
+-	     * first in case realloc() fails.
++	     * Revert the reallocation of numbers. We update numbers first in
++	     * case realloc() fails.
+ 	     */
+-	    fcs->numbers_offset = FcPtrToOffset (fcs, numbers);
++	    fcs->numbers = numbers;
+ 	    numbers = realloc (numbers, (alloced / 2) * sizeof (*numbers));
  	    /* unlikely to fail though */
--	    if (!leaves)
-+	    if (!new_leaves)
+ 	    if (!numbers)
  		return FcFalse;
--	    fcs->leaves_offset = FcPtrToOffset (fcs, leaves);
--	    return FcFalse;
+-	    fcs->numbers_offset = FcPtrToOffset (fcs, numbers);
++	    fcs->numbers = numbers;
+ 	    return FcFalse;
  	}
--	distance = (intptr_t) new_leaves - (intptr_t) leaves;
--	if (new_leaves && distance)
--	{
--	    int i;
--	    for (i = 0; i < fcs->num; i++)
--		new_leaves[i] -= distance;
+-	distance = (char *) new_leaves - (char *) leaves;
 +	/* Relocate all offset-encoded leaves objects (not the ones stored as real pointers) */
-+	for (i = 0; i < fcs->num; i++) {
+ 	for (i = 0; i < fcs->num; i++) {
+-	    new_leaves[i] -= distance;
 +	   if (FcIsEncodedOffset(new_leaves[i])) {
 +		ptrdiff_t distance = (char *) new_leaves - (char *) leaves;
 +		new_leaves[i] = FcOffsetEncode(FcOffsetDecode(new_leaves[i]) - distance, FcCharLeaf);
 +	   }
  	}
  	leaves = new_leaves;
-+	if (alloc_failed) {
-+	    fcs->leaves = leaves;
-+	    return FcFalse;
-+	}
        }
  
 -      fcs->leaves_offset = FcPtrToOffset (fcs, leaves);
@@ -280,7 +151,7 @@ index 114f948..d7c47dd 100644
      }
  
      memmove (leaves + pos + 1, leaves + pos,
-@@ -212,7 +220,7 @@ FcCharSetPutLeaf (FcCharSet	*fcs,
+@@ -215,7 +217,7 @@ FcCharSetPutLeaf (FcCharSet	*fcs,
      memmove (numbers + pos + 1, numbers + pos,
  	     (fcs->num - pos) * sizeof (*numbers));
      numbers[pos] = (FcChar16) ucs4;
@@ -289,7 +160,7 @@ index 114f948..d7c47dd 100644
      fcs->num++;
      return FcTrue;
  }
-@@ -230,7 +238,7 @@ FcCharSetFindLeafCreate (FcCharSet *fcs, FcChar32 ucs4)
+@@ -233,7 +235,7 @@ FcCharSetFindLeafCreate (FcCharSet *fcs, FcChar32 ucs4)
  
      pos = FcCharSetFindLeafPos (fcs, ucs4);
      if (pos >= 0)
@@ -298,7 +169,7 @@ index 114f948..d7c47dd 100644
  
      leaf = calloc (1, sizeof (FcCharLeaf));
      if (!leaf)
-@@ -254,8 +262,7 @@ FcCharSetInsertLeaf (FcCharSet *fcs, FcChar32 ucs4, FcCharLeaf *leaf)
+@@ -257,8 +259,7 @@ FcCharSetInsertLeaf (FcCharSet *fcs, FcChar32 ucs4, FcCharLeaf *leaf)
      if (pos >= 0)
      {
  	free (FcCharSetLeaf (fcs, pos));
@@ -308,16 +179,7 @@ index 114f948..d7c47dd 100644
  	return FcTrue;
      }
      pos = -pos - 1;
-@@ -1120,7 +1127,7 @@ FcCharSetHash (FcCharSet *fcs)
- static FcBool
- FcCharSetFreezeOrig (FcCharSetFreezer *freezer, const FcCharSet *orig, const FcCharSet *frozen)
- {
--    FcCharSetOrigEnt	**bucket = &freezer->orig_hash_table[((uintptr_t) orig) % FC_CHAR_SET_HASH_SIZE];
-+    FcCharSetOrigEnt	**bucket = &freezer->orig_hash_table[((ptraddr_t) orig) % FC_CHAR_SET_HASH_SIZE];
-     FcCharSetOrigEnt	*ent;
- 
-     ent = malloc (sizeof (FcCharSetOrigEnt));
-@@ -1174,24 +1181,20 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
+@@ -1177,24 +1178,20 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
      ent->set.num = fcs->num;
      if (fcs->num)
      {
@@ -348,16 +210,7 @@ index 114f948..d7c47dd 100644
      }
  
      ent->hash = hash;
-@@ -1204,7 +1207,7 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
- static const FcCharSet *
- FcCharSetFindFrozen (FcCharSetFreezer *freezer, const FcCharSet *orig)
- {
--    FcCharSetOrigEnt    **bucket = &freezer->orig_hash_table[((uintptr_t) orig) % FC_CHAR_SET_HASH_SIZE];
-+    FcCharSetOrigEnt    **bucket = &freezer->orig_hash_table[((ptraddr_t) orig) % FC_CHAR_SET_HASH_SIZE];
-     FcCharSetOrigEnt	*ent;
- 
-     for (ent = *bucket; ent; ent = ent->next)
-@@ -1300,7 +1303,7 @@ FcCharSetFreezerDestroy (FcCharSetFreezer *freezer)
+@@ -1303,7 +1300,7 @@ FcCharSetFreezerDestroy (FcCharSetFreezer *freezer)
  FcBool
  FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
  {
@@ -366,7 +219,7 @@ index 114f948..d7c47dd 100644
      FcChar16	    *numbers;
      int		    i;
  
-@@ -1323,9 +1326,9 @@ FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
+@@ -1326,9 +1323,9 @@ FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
  
      if (!FcSerializeAlloc (serialize, cs, sizeof (FcCharSet)))
  	return FcFalse;
@@ -378,7 +231,7 @@ index 114f948..d7c47dd 100644
  	return FcFalse;
      for (i = 0; i < cs->num; i++)
  	if (!FcSerializeAlloc (serialize, FcCharSetLeaf(cs, i),
-@@ -1338,7 +1341,7 @@ FcCharSet *
+@@ -1341,7 +1338,7 @@ FcCharSet *
  FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  {
      FcCharSet	*cs_serialized;
@@ -387,7 +240,7 @@ index 114f948..d7c47dd 100644
      FcChar16	*numbers, *numbers_serialized;
      FcCharLeaf	*leaf, *leaf_serialized;
      int		i;
-@@ -1364,16 +1367,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
+@@ -1367,16 +1364,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  	if (!leaves_serialized)
  	    return NULL;
  
@@ -406,7 +259,7 @@ index 114f948..d7c47dd 100644
  
  	for (i = 0; i < cs->num; i++)
  	{
-@@ -1382,15 +1383,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
+@@ -1385,15 +1380,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  	    if (!leaf_serialized)
  		return NULL;
  	    *leaf_serialized = *leaf;
@@ -425,10 +278,10 @@ index 114f948..d7c47dd 100644
      }
  
      return cs_serialized;
-diff --git a/src/fcdbg.c b/src/fcdbg.c
+diff --git src/fcdbg.c src/fcdbg.c
 index e2c6b56..655ac73 100644
 --- src/fcdbg.c
---- src/fcdbg.c
++++ src/fcdbg.c
 @@ -154,7 +154,6 @@ void
  FcCharSetPrint (const FcCharSet *c)
  {
@@ -447,46 +300,11 @@ index e2c6b56..655ac73 100644
  	
  	printf ("\t");
  	printf ("%04x:", numbers[i]);
-diff --git a/src/fcint.h b/src/fcint.h
-index 612287f..1c71df0 100644
+diff --git src/fcint.h src/fcint.h
+index c615b66..7d916af 100644
 --- src/fcint.h
---- src/fcint.h
-@@ -31,6 +31,10 @@
- 
- #include "fcstdint.h"
- 
-+#ifndef __PTRADDR_TYPE__
-+typedef unsigned long ptraddr_t;
-+#endif
-+
- #include <stdlib.h>
- #include <stdio.h>
- #include <string.h>
-@@ -149,19 +153,19 @@ FC_ASSERT_STATIC (sizeof (FcRef) == sizeof (int));
-  */
- 
- /* Is the provided pointer actually an offset? */
--#define FcIsEncodedOffset(p)	((((intptr_t) (p)) & 1) != 0)
-+#define FcIsEncodedOffset(p)	((((ptraddr_t) (p)) & 1) != 0)
- 
- /* Encode offset in a pointer of type t */
--#define FcOffsetEncode(o,t)	((t *) ((o) | 1))
-+#define FcOffsetEncode(o,t)	((t *) (intptr_t) ((o) | 1))
- 
- /* Decode a pointer into an offset */
- #define FcOffsetDecode(p)	(((intptr_t) (p)) & ~1)
- 
- /* Compute pointer offset */
--#define FcPtrToOffset(b,p)	((intptr_t) (p) - (intptr_t) (b))
-+#define FcPtrToOffset(b,p)	((ptrdiff_t) ((char *) (p) - (char *) (b)))
- 
- /* Given base address, offset and type, return a pointer */
--#define FcOffsetToPtr(b,o,t)	((t *) ((intptr_t) (b) + (o)))
-+#define FcOffsetToPtr(b,o,t)	((t *) ((intptr_t) (b) + (ptrdiff_t) (o)))
- 
- /* Given base address, encoded offset and type, return a pointer */
- #define FcEncodedOffsetToPtr(b,p,t) FcOffsetToPtr(b,FcOffsetDecode(p),t)
-@@ -225,11 +229,13 @@ typedef struct _FcPatternElt {
++++ src/fcint.h
+@@ -225,11 +225,13 @@ typedef struct _FcPatternElt {
  struct _FcPattern {
      int		    num;
      int		    size;
@@ -502,7 +320,7 @@ index 612287f..1c71df0 100644
  
  #define FcFontSetFonts(fs)	FcPointerMember(fs,fonts,FcPattern *)
  
-@@ -367,15 +373,23 @@ typedef struct _FcCharLeaf {
+@@ -367,15 +369,23 @@ typedef struct _FcCharLeaf {
  struct _FcCharSet {
      FcRef	    ref;	/* reference count */
      int		    num;	/* size of leaves and numbers arrays */
@@ -534,10 +352,10 @@ index 612287f..1c71df0 100644
  
  #define FCSS_DEFAULT            0 /* default behavior */
  #define FCSS_ALLOW_DUPLICATES   1 /* allows for duplicate strings in the set */
-diff --git a/src/fcpat.c b/src/fcpat.c
-index 5927be4..3000190 100644
+diff --git src/fcpat.c src/fcpat.c
+index 82c6bed..e1cd507 100644
 --- src/fcpat.c
---- src/fcpat.c
++++ src/fcpat.c
 @@ -36,7 +36,7 @@ FcPatternCreate (void)
      memset (p, 0, sizeof (FcPattern));
      p->num = 0;
@@ -547,7 +365,7 @@ index 5927be4..3000190 100644
      FcRefInit (&p->ref, 1);
      return p;
  }
-@@ -414,7 +414,7 @@ FcPatternCacheRewriteFile (const FcPattern *p,
+@@ -394,7 +394,7 @@ FcPatternCacheRewriteFile (const FcPattern *p,
      new_path = data;
  
      *new_p = *p;
@@ -556,7 +374,7 @@ index 5927be4..3000190 100644
  
      /* Copy all but the FILE values from the cache */
      for (i = 0, j = 0; i < p->num; i++)
-@@ -545,7 +545,7 @@ FcPatternObjectInsertElt (FcPattern *p, FcObject object)
+@@ -525,7 +525,7 @@ FcPatternObjectInsertElt (FcPattern *p, FcObject object)
  		e = (FcPatternElt *) malloc (s * sizeof (FcPatternElt));
  	    if (!e)
  		return FcFalse;
@@ -565,7 +383,7 @@ index 5927be4..3000190 100644
  	    while (p->size < s)
  	    {
  		e[p->size].object = 0;
-@@ -1504,8 +1504,9 @@ FcPatternSerialize (FcSerialize *serialize, const FcPattern *pat)
+@@ -1481,8 +1481,9 @@ FcPatternSerialize (FcSerialize *serialize, const FcPattern *pat)
      if (!elts_serialized)
  	return NULL;
  
@@ -577,25 +395,3 @@ index 5927be4..3000190 100644
  
      for (i = 0; i < FcPatternObjectCount (pat); i++)
      {
-diff --git a/src/fcserialize.c b/src/fcserialize.c
-index d2f221d..b137baa 100644
---- src/fcserialize.c
---- src/fcserialize.c
-@@ -78,7 +78,7 @@ FcSerializeDestroy (FcSerialize *serialize)
- FcBool
- FcSerializeAlloc (FcSerialize *serialize, const void *object, int size)
- {
--    uintptr_t	bucket = ((uintptr_t) object) % FC_SERIALIZE_HASH_SIZE;
-+    size_t	bucket = ((ptraddr_t) object) % FC_SERIALIZE_HASH_SIZE;
-     FcSerializeBucket  *buck;
- 
-     for (buck = serialize->buckets[bucket]; buck; buck = buck->next)
-@@ -113,7 +113,7 @@ FcSerializeReserve (FcSerialize *serialize, int size)
- intptr_t
- FcSerializeOffset (FcSerialize *serialize, const void *object)
- {
--    uintptr_t	bucket = ((uintptr_t) object) % FC_SERIALIZE_HASH_SIZE;
-+    size_t	bucket = ((ptraddr_t) object) % FC_SERIALIZE_HASH_SIZE;
-     FcSerializeBucket  *buck;
- 
-     for (buck = serialize->buckets[bucket]; buck; buck = buck->next)
