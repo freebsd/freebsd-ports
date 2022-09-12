@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.8
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -75,7 +75,7 @@ GH_TUPLE=	Arceliar:ironwood:b7f71f05435a:arceliar_ironwood/vendor/github.com/Arc
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.0:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:630584e8d5aa:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:c86fa9a7ed90:golang_crypto/vendor/golang.org/x/crypto \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:image:70e8d0d3baa9:golang_image/vendor/golang.org/x/image \
@@ -84,10 +84,10 @@ GH_TUPLE=	Arceliar:ironwood:b7f71f05435a:arceliar_ironwood/vendor/github.com/Arc
 		golang:net:c7608f3a8462:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:a90be440212d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:9e1f76180b77:golang_sys/vendor/golang.org/x/sys \
 		golang:term:065cf7ba2467:golang_term/vendor/golang.org/x/term \
 		golang:text:5bd84dd9b33b:golang_text/vendor/golang.org/x/text \
-		golang:time:583f2d630306:golang_time/vendor/golang.org/x/time \
+		golang:time:e5dcc9cfc0b9:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.12:golang_tools/vendor/golang.org/x/tools \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
 		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -111,8 +111,8 @@ GH_TUPLE=	Arceliar:ironwood:b7f71f05435a:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:637a173a3661:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:565beccfebed:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:gomatrixserverlib:dec87dbaa407:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:b215925d5534:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.13:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -125,8 +125,8 @@ GH_TUPLE=	Arceliar:ironwood:b7f71f05435a:arceliar_ironwood/vendor/github.com/Arc
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		nats-io:jwt:v2.3.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:d8d25d9b0b1c:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:fb5ca2cbc995:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:v2.9.0:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:a1017eec10b0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
