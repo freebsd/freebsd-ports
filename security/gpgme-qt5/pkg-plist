@@ -30,6 +30,8 @@ include/QGpgME/QGpgMENewCryptoConfig
 include/QGpgME/QuickJob
 include/QGpgME/ReceiveKeysJob
 include/QGpgME/RefreshKeysJob
+include/QGpgME/RevokeKeyJob
+include/QGpgME/SetPrimaryUserIDJob
 include/QGpgME/SignEncryptJob
 include/QGpgME/SignJob
 include/QGpgME/SignKeyJob
@@ -74,6 +76,8 @@ include/qgpgme/qgpgmenewcryptoconfig.h
 include/qgpgme/quickjob.h
 include/qgpgme/receivekeysjob.h
 include/qgpgme/refreshkeysjob.h
+include/qgpgme/revokekeyjob.h
+include/qgpgme/setprimaryuseridjob.h
 include/qgpgme/signencryptjob.h
 include/qgpgme/signjob.h
 include/qgpgme/signkeyjob.h
@@ -88,4 +92,4 @@ lib/cmake/QGpgme/QGpgmeConfig.cmake
 lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
 lib/libqgpgme.so.15
-lib/libqgpgme.so.15.0.0
+lib/libqgpgme.so.15.1.0
