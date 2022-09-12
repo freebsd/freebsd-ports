@@ -1,5 +1,5 @@
 PORTNAME=	gottet
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
@@ -11,23 +11,14 @@ WWW=		https://gottcode.org/gottet/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib gl qmake qt:5 tar:bzip2
-USE_GL=		gl
-USE_QT=		core gui widgets \
-		buildtools:build linguisttools:build
+USES=		cmake compiler:c++11-lib gl qt:6 tar:bzip2
+USE_GL=		opengl
+USE_QT=		base tools:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|share/man|man|' ${WRKSRC}/gottet.pro
-
-post-patch-NLS-off:
-	@${REINPLACE_CMD} -e \
-		'/INSTALLS/s|qm||' ${WRKSRC}/gottet.pro
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
