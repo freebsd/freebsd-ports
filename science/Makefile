@@ -5,7 +5,6 @@
     SUBDIR += ChipmunkPhysics
     SUBDIR += InsightToolkit
     SUBDIR += PETSc
-    SUBDIR += R-cran-AMORE
     SUBDIR += R-cran-DCluster
     SUBDIR += R-cran-Epi
     SUBDIR += R-cran-FAdist
