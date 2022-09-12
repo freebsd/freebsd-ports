@@ -26,8 +26,7 @@ MAKE_ARGS=	C_COMPILER="${CC}" \
 		LINKER_OPTIONS="${LDFLAGS}" \
 		MANDIR=${PREFIX}/man \
 		PREFIX=${PREFIX}
-# parallel build not supported
-MAKE_JOBS_UNSAFE=	yes
+
 TEST_TARGET=	check
 
 DATADIR=	${PREFIX}/share/chicken
