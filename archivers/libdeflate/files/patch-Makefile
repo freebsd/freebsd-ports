@@ -1,15 +1,15 @@
---- Makefile.orig	2022-01-12 05:24:28 UTC
+--- Makefile.orig	2022-09-11 02:13:50 UTC
 +++ Makefile
-@@ -54,7 +54,7 @@ cc-option = $(shell if $(CC) $(1) -c -x c /dev/null -o
+@@ -54,7 +54,7 @@ override CFLAGS :=							\
  	      1>&2 2>/dev/null; then echo $(1); fi)
  
  override CFLAGS :=							\
 -	-O2 -fomit-frame-pointer -std=c99 -I. -Wall -Wundef		\
 +	-std=c99 -I. -Wall -Wundef					\
- 	$(call cc-option,-Wpedantic)					\
  	$(call cc-option,-Wdeclaration-after-statement)			\
+ 	$(call cc-option,-Wimplicit-fallthrough)			\
  	$(call cc-option,-Wmissing-prototypes)				\
-@@ -331,7 +331,7 @@ install:all $(PKGCONFBASE)
+@@ -340,7 +340,7 @@ install:all $(PKGCONFBASE)
  		$(DESTDIR)$(BINDIR)
  	install -m644 $(STATIC_LIB) $(DESTDIR)$(LIBDIR)
  	if [ -z "$(DISABLE_SHARED)" ]; then				\
@@ -18,12 +18,12 @@
  	fi
  	sed -e "s|@PREFIX@|$(PREFIX)|"					\
  	    -e "s|@LIBDIR@|$(LIBDIR)|"					\
-@@ -340,7 +340,7 @@ install:all $(PKGCONFBASE)
+@@ -349,7 +349,7 @@ install:all $(PKGCONFBASE)
  	    $(PKGCONFBASE) > $(DESTDIR)$(LIBDIR)/pkgconfig/libdeflate.pc
  	chmod 644 $(DESTDIR)$(LIBDIR)/pkgconfig/libdeflate.pc
  	install -m644 libdeflate.h $(DESTDIR)$(INCDIR)
 -	install -m755 gzip$(PROG_SUFFIX) \
 +	install -s -m755 gzip$(PROG_SUFFIX) \
  		$(DESTDIR)$(BINDIR)/libdeflate-gzip$(PROG_SUFFIX)
- 	ln -f $(DESTDIR)$(BINDIR)/libdeflate-gzip$(PROG_SUFFIX)		\
- 	      $(DESTDIR)$(BINDIR)/libdeflate-gunzip$(PROG_SUFFIX)
+ 	if [ -n "$(HARD_LINKS)" ]; then					\
+ 		ln -f $(DESTDIR)$(BINDIR)/libdeflate-gzip$(PROG_SUFFIX)	\
