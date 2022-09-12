@@ -19,6 +19,7 @@ bin/pot
 %%DATADIR%%/create.sh
 %%DATADIR%%/de-init.sh
 %%DATADIR%%/destroy.sh
+%%DATADIR%%/exec.sh
 %%DATADIR%%/export.sh
 %%DATADIR%%/export-ports.sh
 %%DATADIR%%/get-attribute.sh
@@ -27,8 +28,10 @@ bin/pot
 %%DATADIR%%/import.sh
 %%DATADIR%%/info.sh
 %%DATADIR%%/init.sh
+%%DATADIR%%/last-run-stats.sh
 %%DATADIR%%/list.sh
 %%DATADIR%%/mount-in.sh
+%%DATADIR%%/mount-out.sh
 %%DATADIR%%/network.sh
 %%DATADIR%%/prepare.sh
 %%DATADIR%%/prune.sh
@@ -42,7 +45,9 @@ bin/pot
 %%DATADIR%%/set-hook.sh
 %%DATADIR%%/set-hosts.sh
 %%DATADIR%%/set-rss.sh
+%%DATADIR%%/set-status.sh
 %%DATADIR%%/show.sh
+%%DATADIR%%/signal.sh
 %%DATADIR%%/snapshot.sh
 %%DATADIR%%/start.sh
 %%DATADIR%%/stop.sh

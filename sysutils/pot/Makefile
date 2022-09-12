@@ -1,5 +1,5 @@
 PORTNAME=	pot
-DISTVERSION=	0.14.0
+DISTVERSION=	0.15.0
 PORTREVISION=	0
 CATEGORIES=	sysutils
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	potnet:sysutils/potnet \
 	ncat:security/nmap \
 	freebsd-release-manifests>0:misc/freebsd-release-manifests
+TEST_DEPENDS=	flock:sysutils/flock
 
 USE_RC_SUBR=	pot pot_early
 
@@ -27,6 +28,8 @@ ZSH_DESC=	Zsh Autocompletion support
 
 OPTIONS_DEFAULT=	ZSH
 OPTIONS_SUB=	yes
+
+TEST_WRKSRC=	${WRKSRC}/tests
 
 PORTDOCS=	*
 
@@ -52,6 +55,9 @@ do-install:
 
 do-install-ZSH-on:
 	( cd ${WRKSRC}/share/zsh && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/zsh)
+
+do-test:
+	( cd ${TEST_WRKSRC} && ./test-suite.sh )
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
