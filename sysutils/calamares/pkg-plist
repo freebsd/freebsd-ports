@@ -1,5 +1,6 @@
 bin/calamares
 include/libcalamares/Branding.h
+include/libcalamares/CalamaresAbout.h
 include/libcalamares/CalamaresConfig.h
 include/libcalamares/CalamaresVersion.h
 include/libcalamares/CppJob.h
@@ -73,6 +74,7 @@ include/libcalamares/utils/Qml.h
 include/libcalamares/utils/QtCompat.h
 include/libcalamares/utils/RAII.h
 include/libcalamares/utils/Retranslator.h
+include/libcalamares/utils/Runner.h
 include/libcalamares/utils/String.h
 include/libcalamares/utils/Traits.h
 include/libcalamares/utils/UMask.h
@@ -90,7 +92,9 @@ include/libcalamares/viewpages/QmlViewStep.h
 include/libcalamares/viewpages/Slideshow.h
 include/libcalamares/viewpages/ViewStep.h
 include/libcalamares/widgets/ClickableLabel.h
+include/libcalamares/widgets/ErrorDialog.h
 include/libcalamares/widgets/FixedAspectRatioLabel.h
+include/libcalamares/widgets/LogWidget.h
 include/libcalamares/widgets/PrettyRadioButton.h
 include/libcalamares/widgets/TranslationFix.h
 include/libcalamares/widgets/WaitingWidget.h
@@ -121,6 +125,7 @@ lib/calamares/modules/fstab/fstab.schema.yaml
 lib/calamares/modules/fstab/main.py
 lib/calamares/modules/fstab/module.desc
 lib/calamares/modules/fstab/test.yaml
+lib/calamares/modules/fstab/test2.yaml
 lib/calamares/modules/grubcfg/grubcfg.schema.yaml
 lib/calamares/modules/grubcfg/main.py
 lib/calamares/modules/grubcfg/module.desc
@@ -191,6 +196,7 @@ lib/calamares/modules/services-openrc/main.py
 lib/calamares/modules/services-openrc/module.desc
 lib/calamares/modules/services-systemd/main.py
 lib/calamares/modules/services-systemd/module.desc
+lib/calamares/modules/services-systemd/services-systemd.schema.yaml
 lib/calamares/modules/shellprocess/libcalamares_job_shellprocess.so
 lib/calamares/modules/shellprocess/module.desc
 lib/calamares/modules/summary/libcalamares_viewmodule_summary.so
@@ -213,6 +219,8 @@ lib/calamares/modules/welcome/libcalamares_viewmodule_welcome.so
 lib/calamares/modules/welcome/module.desc
 lib/calamares/modules/welcomeq/libcalamares_viewmodule_welcomeq.so
 lib/calamares/modules/welcomeq/module.desc
+lib/calamares/modules/zfs/libcalamares_job_zfs.so
+lib/calamares/modules/zfs/module.desc
 lib/cmake/Calamares/CMakeColors.cmake
 lib/cmake/Calamares/CalamaresAddBrandingSubdirectory.cmake
 lib/cmake/Calamares/CalamaresAddLibrary.cmake
@@ -295,6 +303,7 @@ share/locale/ml/LC_MESSAGES/calamares-python.mo
 share/locale/mr/LC_MESSAGES/calamares-python.mo
 share/locale/nb/LC_MESSAGES/calamares-python.mo
 share/locale/nl/LC_MESSAGES/calamares-python.mo
+share/locale/oc/LC_MESSAGES/calamares-python.mo
 share/locale/pl/LC_MESSAGES/calamares-python.mo
 share/locale/pt_BR/LC_MESSAGES/calamares-python.mo
 share/locale/pt_PT/LC_MESSAGES/calamares-python.mo
