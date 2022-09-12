@@ -1,6 +1,6 @@
 --- code/qcommon/files.c.orig	2011-12-24 12:29:32 UTC
 +++ code/qcommon/files.c
-@@ -195,6 +195,9 @@ static const unsigned int missionpak_che
+@@ -195,6 +195,9 @@ static const unsigned int missionpak_checksums[] =
  	1438664554u
  };
  
@@ -10,7 +10,7 @@
  // if this is defined, the executable positively won't work with any paks other
  // than the demo pak, even if productid is present.  This is only used for our
  // last demo release to prevent the mac and linux users from using the demo
-@@ -250,6 +253,7 @@ static  cvar_t          *fs_apppath;
+@@ -250,6 +253,7 @@ static	cvar_t		*fs_basepath;
  #endif
  
  static	cvar_t		*fs_basepath;
@@ -59,7 +59,7 @@
  
  	remove( osPath );
  }
-@@ -564,7 +570,7 @@ FS_HomeRemove
+@@ -564,7 +570,7 @@ void FS_HomeRemove( const char *homePath ) {
  ===========
  */
  void FS_HomeRemove( const char *homePath ) {
@@ -68,7 +68,7 @@
  
  	remove( FS_BuildOSPath( fs_homepath->string,
  			fs_gamedir, homePath ) );
-@@ -643,7 +649,7 @@ fileHandle_t FS_SV_FOpenFileWrite( const
+@@ -643,7 +649,7 @@ fileHandle_t FS_SV_FOpenFileWrite( const char *filenam
  		Com_Printf( "FS_SV_FOpenFileWrite: %s\n", ospath );
  	}
  
@@ -86,20 +86,18 @@
  	char			*from_ospath, *to_ospath;
  
  	if ( !fs_searchpaths ) {
-@@ -754,7 +760,11 @@ void FS_SV_Rename( const char *from, con
+@@ -754,7 +760,9 @@ void FS_SV_Rename( const char *from, const char *to ) 
  		Com_Printf( "FS_SV_Rename: %s --> %s\n", from_ospath, to_ospath );
  	}
  
 -	FS_CheckFilenameIsNotExecutable( to_ospath, __func__ );
-+	FS_CheckFilenameIsMutable( to_ospath, __func__ );
-+
 +	if ( safe ) {
 +		FS_CheckFilenameIsMutable( to_ospath, __func__ );
 +	}
  
  	rename(from_ospath, to_ospath);
  }
-@@ -784,7 +794,7 @@ void FS_Rename( const char *from, const 
+@@ -784,7 +792,7 @@ void FS_Rename( const char *from, const char *to ) {
  		Com_Printf( "FS_Rename: %s --> %s\n", from_ospath, to_ospath );
  	}
  
@@ -108,7 +106,7 @@
  
  	rename(from_ospath, to_ospath);
  }
-@@ -843,7 +853,7 @@ fileHandle_t FS_FOpenFileWrite( const ch
+@@ -843,7 +851,7 @@ fileHandle_t FS_FOpenFileWrite( const char *filename )
  		Com_Printf( "FS_FOpenFileWrite: %s\n", ospath );
  	}
  
@@ -117,7 +115,7 @@
  
  	if( FS_CreatePath( ospath ) ) {
  		return 0;
-@@ -891,7 +901,7 @@ fileHandle_t FS_FOpenFileAppend( const c
+@@ -891,7 +899,7 @@ fileHandle_t FS_FOpenFileAppend( const char *filename 
  		Com_Printf( "FS_FOpenFileAppend: %s\n", ospath );
  	}
  
@@ -126,7 +124,7 @@
  
  	if( FS_CreatePath( ospath ) ) {
  		return 0;
-@@ -963,6 +973,7 @@ int FS_FOpenFileRead( const char *filena
+@@ -963,6 +971,7 @@ int FS_FOpenFileRead( const char *filename, fileHandle
  	FILE			*temp;
  	int				l;
  	char demoExt[16];
@@ -134,7 +132,7 @@
  
  	hash = 0;
  
-@@ -970,11 +981,22 @@ int FS_FOpenFileRead( const char *filena
+@@ -970,11 +979,22 @@ int FS_FOpenFileRead( const char *filename, fileHandle
  		Com_Error( ERR_FATAL, "Filesystem call made without initialization\n" );
  	}
  
@@ -157,7 +155,7 @@
  				hash = FS_HashFileName(filename, search->pack->hashSize);
  			}
  			// is the element a pak file?
-@@ -1040,6 +1062,14 @@ int FS_FOpenFileRead( const char *filena
+@@ -1040,6 +1060,14 @@ int FS_FOpenFileRead( const char *filename, fileHandle
  	for ( search = fs_searchpaths ; search ; search = search->next ) {
  		//
  		if ( search->pack ) {
@@ -172,7 +170,7 @@
  			hash = FS_HashFileName(filename, search->pack->hashSize);
  		}
  		// is the element a pak file?
-@@ -1657,7 +1687,7 @@ Creates a new pak_t in the search chain 
+@@ -1657,7 +1685,7 @@ of a zip file.
  of a zip file.
  =================
  */
@@ -181,7 +179,7 @@
  {
  	fileInPack_t	*buildBuffer;
  	pack_t			*pack;
-@@ -1666,11 +1696,12 @@ static pack_t *FS_LoadZipFile(const char
+@@ -1666,11 +1694,12 @@ static pack_t *FS_LoadZipFile(const char *zipfile, con
  	unz_global_info gi;
  	char			filename_inzip[MAX_ZPATH];
  	unz_file_info	file_info;
@@ -195,7 +193,7 @@
  
  	fs_numHeaderLongs = 0;
  
-@@ -1714,6 +1745,7 @@ static pack_t *FS_LoadZipFile(const char
+@@ -1714,6 +1743,7 @@ static pack_t *FS_LoadZipFile(const char *zipfile, con
  
  	Q_strncpyz( pack->pakFilename, zipfile, sizeof( pack->pakFilename ) );
  	Q_strncpyz( pack->pakBasename, basename, sizeof( pack->pakBasename ) );
@@ -203,7 +201,7 @@
  
  	// strip .pk3 if needed
  	if ( strlen( pack->pakBasename ) > 4 && !Q_stricmp( pack->pakBasename + strlen( pack->pakBasename ) - 4, ".pk3" ) ) {
-@@ -1730,6 +1762,30 @@ static pack_t *FS_LoadZipFile(const char
+@@ -1730,6 +1760,30 @@ static pack_t *FS_LoadZipFile(const char *zipfile, con
  		if (err != UNZ_OK) {
  			break;
  		}
@@ -234,7 +232,7 @@
  		if (file_info.uncompressed_size > 0) {
  			fs_headerLongs[fs_numHeaderLongs++] = LittleLong(file_info.crc);
  		}
-@@ -1784,7 +1840,7 @@ qboolean FS_CompareZipChecksum(const cha
+@@ -1784,7 +1838,7 @@ qboolean FS_CompareZipChecksum(const char *zipfile)
  	pack_t *thepak;
  	int index, checksum;
  	
@@ -243,7 +241,7 @@
  	
  	if(!thepak)
  		return qfalse;
-@@ -2569,10 +2625,8 @@ void FS_AddGameDirectory( const char *pa
+@@ -2569,10 +2623,8 @@ void FS_AddGameDirectory( const char *path, const char
  
  	for ( i = 0 ; i < numfiles ; i++ ) {
  		pakfile = FS_BuildOSPath( path, dir, pakfiles[i] );
@@ -255,7 +253,7 @@
  		
  		fs_packFiles += pak->numfiles;
  
-@@ -2854,11 +2908,14 @@ static void FS_Startup( const char *game
+@@ -2854,11 +2906,14 @@ static void FS_Startup( const char *gameName )
  
  	Com_Printf( "----- FS_Startup -----\n" );
  
@@ -270,7 +268,7 @@
  	homePath = Sys_DefaultHomePath();
  	if (!homePath || !homePath[0]) {
  		homePath = fs_basepath->string;
-@@ -2878,6 +2935,11 @@ static void FS_Startup( const char *game
+@@ -2878,6 +2933,11 @@ static void FS_Startup( const char *gameName )
  	if (fs_apppath->string[0])
  		FS_AddGameDirectory(fs_apppath->string, gameName);
  	#endif
