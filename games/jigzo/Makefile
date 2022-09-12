@@ -2,12 +2,11 @@ PORTNAME=	jigzo
 PORTVERSION=	0.6.1
 PORTREVISION=	12
 CATEGORIES=	games
-MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL jigsaw puzzle game
-WWW=		http://www.resorama.com/jigzo/
+WWW=		https://web.archive.org/web/20110102231249/http://www.resorama.com/jigzo
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.txt
