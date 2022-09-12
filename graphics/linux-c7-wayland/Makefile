@@ -5,6 +5,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Wayland compositor libraries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://wayland.freedesktop.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

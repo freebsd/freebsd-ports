@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for handling MIME data
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

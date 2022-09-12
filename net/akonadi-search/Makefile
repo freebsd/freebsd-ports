@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries and daemons to implement searching in Akonadi
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

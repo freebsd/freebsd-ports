@@ -6,6 +6,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	International Components for Unicode (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://site.icu-project.org/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	${PORTNAME}-project

@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LDAP access API for KDE
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

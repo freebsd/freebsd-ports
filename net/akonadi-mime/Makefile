@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries and daemons to implement basic email handling
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

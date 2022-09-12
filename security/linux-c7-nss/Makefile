@@ -5,6 +5,7 @@ CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://developer.mozilla.org/docs/Mozilla/Projects/NSS
 
 USES=		cpe linux:c7
 CPE_VENDOR=	mozilla

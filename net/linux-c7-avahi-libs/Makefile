@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for Avahi (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.avahi.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE glue for embedding KParts into Kontact
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

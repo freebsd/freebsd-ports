@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Import mbox files to KMail
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

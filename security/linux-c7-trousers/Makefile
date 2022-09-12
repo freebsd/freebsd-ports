@@ -6,6 +6,7 @@ CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Open-source TCG Software Stack (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://sourceforge.net/projects/trousers/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	${PORTNAME}_project

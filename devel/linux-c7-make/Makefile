@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GNU make utility (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.gnu.org/software/make/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	gnu

@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Import data from other mail clients to KMail
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \

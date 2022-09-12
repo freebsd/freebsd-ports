@@ -6,6 +6,7 @@ CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://aspell.net/
 
 LICENSE=	LGPL21+
 

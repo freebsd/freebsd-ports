@@ -6,6 +6,7 @@ CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library providing XML and HTML support (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://xmlsoft.org/
 
 LICENSE=	MIT
 

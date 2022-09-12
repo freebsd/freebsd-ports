@@ -5,6 +5,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data Model and Extraction System for Travel Reservation information
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.gnupg.org/software/libgpg-error/
 
 LICENSE=	LGPL21+
 

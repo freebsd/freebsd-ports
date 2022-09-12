@@ -5,6 +5,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Netscape Portable Runtime (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

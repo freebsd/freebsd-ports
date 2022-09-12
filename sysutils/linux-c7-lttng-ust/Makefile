@@ -6,6 +6,7 @@ MASTER_SITES=	EPEL7/l
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries to instrument and trace user applications (CentOS ${LINUX_DIST_VER})
+WWW=		https://github.com/lttng/lttng-ust
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 

@@ -6,6 +6,7 @@ CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CSS2 parsing library (CentOS ${LINUX_DIST_VER})
+WWW=		http://www.freespiders.org/projects/libcroco/
 
 LICENSE=	MIT
 

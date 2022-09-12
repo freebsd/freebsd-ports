@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Akonadi management and debugging console
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

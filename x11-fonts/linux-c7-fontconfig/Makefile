@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freedesktop.org/wiki/Software/fontconfig/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

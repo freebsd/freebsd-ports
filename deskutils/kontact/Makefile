@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Personal Information Manager
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

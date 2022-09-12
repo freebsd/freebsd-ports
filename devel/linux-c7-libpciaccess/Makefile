@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Generic PCI access library (CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

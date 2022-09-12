@@ -7,6 +7,7 @@ DISTNAME=	libjpeg-turbo-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	SIMD-accelerated JPEG codec (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://libjpeg-turbo.org/
 
 USES=		cpe linux:c7
 CPE_PRODUCT=	libjpeg-turbo

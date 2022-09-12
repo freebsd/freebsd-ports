@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM grantleetheme
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

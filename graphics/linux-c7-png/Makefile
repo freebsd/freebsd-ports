@@ -6,6 +6,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library for manipulating PNG images (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://www.libpng.org/pub/png/libpng.html
 
 LICENSE=	LIBPNG
 LICENSE_NAME=	libpng license

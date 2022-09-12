@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-utils
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Utils for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://pulseaudio.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

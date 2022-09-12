@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Advanced Linux Sound Architecture headers (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.alsa-project.org/
 
 LICENSE=	LGPL21+
 

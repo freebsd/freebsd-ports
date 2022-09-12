@@ -6,6 +6,7 @@ CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Ogg bitstream library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.xiph.org/ogg/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

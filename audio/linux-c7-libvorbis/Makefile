@@ -6,6 +6,7 @@ CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Audio compression codec library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://xiph.org/vorbis/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

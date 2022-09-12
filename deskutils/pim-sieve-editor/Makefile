@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mail sieve editor
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
 

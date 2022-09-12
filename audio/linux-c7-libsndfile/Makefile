@@ -6,6 +6,7 @@ CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF) (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://www.mega-nerd.com/libsndfile/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Editor for Grantlee themes
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

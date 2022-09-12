@@ -5,6 +5,7 @@ CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Low-level pixel manipulation library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://pixman.org
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

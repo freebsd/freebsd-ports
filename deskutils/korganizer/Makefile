@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Calendar and scheduling Program
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libical.so:devel/libical
 

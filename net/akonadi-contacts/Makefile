@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries and daemons to implement Contact Management in Akonadi
+WWW=		https://www.kde.org/
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \

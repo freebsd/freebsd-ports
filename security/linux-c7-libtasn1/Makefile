@@ -5,6 +5,7 @@ CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	ASN.1 structure parser library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.gnu.org/software/libtasn1/
 
 LICENSE=	LGPL21+
 

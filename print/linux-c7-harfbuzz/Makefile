@@ -5,6 +5,7 @@ CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	OpenType text shaping engine (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://harfbuzz.github.io/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

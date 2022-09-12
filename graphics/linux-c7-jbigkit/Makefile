@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lossless compression for bi-level images (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.cl.cam.ac.uk/~mgk25/jbigkit/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

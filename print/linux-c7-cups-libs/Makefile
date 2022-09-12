@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common UNIX Printing System libraries
+WWW=		https://github.com/OpenPrinting/cups
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

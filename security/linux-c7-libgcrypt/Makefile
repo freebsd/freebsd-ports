@@ -6,6 +6,7 @@ CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Crypto library based on code used in GnuPG (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.gnupg.org/software/libgcrypt/index.html
 
 LICENSE=	LGPL21+
 

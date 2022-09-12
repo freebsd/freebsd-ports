@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE utility and user interface functions for accessing calendar
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

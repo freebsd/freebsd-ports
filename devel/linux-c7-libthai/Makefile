@@ -6,6 +6,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Thai language support library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://linux.thai.net/projects/libthai/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

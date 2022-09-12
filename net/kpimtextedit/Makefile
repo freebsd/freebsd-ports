@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for PIM-specific text editing utilities
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

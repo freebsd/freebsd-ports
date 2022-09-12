@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Common libriares for KDEPim
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 

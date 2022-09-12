@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	CLI tools to manage akonadi calendars
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libical.so:devel/libical
 

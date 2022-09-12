@@ -8,6 +8,7 @@ DISTNAME=	SDL_mixer-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Sample multi-channel audio mixer library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.libsdl.org/projects/SDL_mixer/index.html
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 

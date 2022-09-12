@@ -5,6 +5,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Generic stack unwinding library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.nongnu.org/libunwind/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

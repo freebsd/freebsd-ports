@@ -5,6 +5,7 @@ CATEGORIES=	databases linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Complete ODBC driver manager (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://www.unixodbc.org/
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Video4Linux library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://linuxtv.org/wiki/index.php/V4l-utils
 
 LICENSE=	LGPL20+
 

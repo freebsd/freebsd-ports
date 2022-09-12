@@ -15,6 +15,7 @@ DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation
+WWW=		https://www.qt.io/
 
 WRKSRC=		${WRKDIR}/Docs/Qt-${QT5_VERSION}
 

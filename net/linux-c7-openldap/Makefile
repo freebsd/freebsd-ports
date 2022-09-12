@@ -6,6 +6,7 @@ CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	LDAP libraries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.OpenLDAP.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

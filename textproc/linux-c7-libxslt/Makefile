@@ -6,6 +6,7 @@ CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	XSLT C library for GNOME (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://gitlab.gnome.org/GNOME/libxslt/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	xmlsoft

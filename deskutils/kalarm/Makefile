@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal alarm scheduler
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libical.so:devel/libical
 

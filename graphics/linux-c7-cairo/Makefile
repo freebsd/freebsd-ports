@@ -6,6 +6,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Vector graphics library Cairo (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.cairographics.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes
