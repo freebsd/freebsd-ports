@@ -1,10 +1,6 @@
 PORTNAME=	librecad
-DISTVERSION=	2.2.0-rc3
-PORTREVISION=	1
+DISTVERSION=	2.2.0-rc4
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8c3b652a8813.patch:-p1 # https://github.com/LibreCAD/LibreCAD/issues/1488
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2D CAD system
