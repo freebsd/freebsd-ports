@@ -1,10 +1,3 @@
-SHA256 (baekmuk-2.0.tar.gz) = 7d4a264919d89382cf7e2e4fecbf244ba3f15dfaf5ce1167f5419aed9ec3e43f
-SIZE (baekmuk-2.0.tar.gz) = 9834480
-SHA256 (batang10.bdf.gz) = 586884bdaec7468e497e4efa7b2540067e8a14d5ca329bf1bea768d0e3b02d88
-SIZE (batang10.bdf.gz) = 140072
-SHA256 (batang10b.bdf.gz) = 096a361c7e3271d7bd042bb1baca1d7951034a742cfd6844340e92677acb3893
-SIZE (batang10b.bdf.gz) = 129197
-SHA256 (gulim10.bdf.gz) = 63ad02caedefa035bf6e7037cb469f69747d2b278bcf64226334d60f8d566356
-SIZE (gulim10.bdf.gz) = 147718
-SHA256 (gulim10b.bdf.gz) = d4d9fce1c50e7775b57051cb0e92e7141e9a9e59f3780dcd892faf7396d60fa5
-SIZE (gulim10b.bdf.gz) = 149638
+TIMESTAMP = 1663011418
+SHA256 (865-baekmuk-bdf-2.2.tar.gz) = eec120d5c7e41672c2157fb4e1040a532f1d4de79e4845c28b243d73a4daa54c
+SIZE (865-baekmuk-bdf-2.2.tar.gz) = 9547995
