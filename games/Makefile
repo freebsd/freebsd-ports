@@ -781,6 +781,7 @@
     SUBDIR += prboom-plus
     SUBDIR += primateplunge
     SUBDIR += puckman
+    SUBDIR += punchy
     SUBDIR += pvpgn
     SUBDIR += py-2048-py
     SUBDIR += py-cbeams
