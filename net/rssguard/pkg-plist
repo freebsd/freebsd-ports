@@ -18,5 +18,5 @@ include/librssguard/services/abstract/serviceroot.h
 include/librssguard/services/abstract/unreadnode.h
 lib/librssguard.so
 share/applications/com.github.rssguard.desktop
-share/icons/hicolor/512x512/apps/rssguard.png
+share/icons/hicolor/256x256/apps/rssguard.png
 share/metainfo/com.github.rssguard.appdata.xml
