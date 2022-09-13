@@ -612,6 +612,7 @@
     SUBDIR += megaglest
     SUBDIR += megaglest-data
     SUBDIR += megamario
+    SUBDIR += melonds
     SUBDIR += memonix
     SUBDIR += meqcc
     SUBDIR += meritous
