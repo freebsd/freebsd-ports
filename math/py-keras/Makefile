@@ -5,16 +5,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep learning library for Python
-
-USE_GITHUB=     yes
-GH_ACCOUNT=     keras-team
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	r2.9
+WWW=		https://keras.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=    ${PYNUMPY} \
+RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}absl-py>=1.0.0:devel/py-absl-py \
 		${PYTHON_PKGNAMEPREFIX}h5py>=0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.3.5:math/py-pandas@${PY_FLAVOR} \
@@ -33,6 +29,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 
 USES=		python:3.7+
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	keras-team
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	r2.9
+
 .include "Makefile.MASTER_SITES"
 
 post-patch:
@@ -49,7 +50,7 @@ post-patch:
 	@${MKDIR} ${WRKDIR}/whl
 
 	# These files are from my tensorflow port
-	# if both make it into the port they can be shared        
+	# if both make it into the port they can be shared
 
 	# copy the toolchain over
 	@${CP} -R ${PATCHDIR}/freebsd \
@@ -75,7 +76,7 @@ post-patch:
 	# auto generated files will sometimes ignore our py_runtime toolchain and our PYTHON_BIN_PATH
 	# causing it to still set the shebang line to bin/env python3. Even on the github page the solution
 	# has been to use a symlink to work around so do that here as a fix
-	@${MKDIR} ${WRKDIR}/.bin               
+	@${MKDIR} ${WRKDIR}/.bin
 	${LN} -s ${PYTHON_CMD} ${WRKDIR}/.bin/python3
 
 	@${REINPLACE_CMD} "s#%%PYTHON%%#${PYTHON_CMD}#" \
@@ -83,8 +84,8 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} \
-                PYTHON_BIN_PATH=${PYTHON_CMD} \
-                PYTHON_LIB_PATH="${PYTHON_SITELIBDIR}" \
+		PYTHON_BIN_PATH=${PYTHON_CMD} \
+		PYTHON_LIB_PATH="${PYTHON_SITELIBDIR}" \
 		PYTHON_BINARY=${PYTHON_CMD} \
 		bazel --bazelrc="${WRKSRC}/bazelrc" \
 		build --config=freebsd \
@@ -96,7 +97,6 @@ do-build:
 	@cd ${WRKSRC} && \
 		bazel-bin/keras/tools/pip_package/build_pip_package \
 		${WRKDIR}/whl
-        
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}
