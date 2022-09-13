@@ -1,5 +1,5 @@
-PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	3.0.0
+PORTNAME=	${GH_PROJECT:[1]:tl}
+PORTVERSION=	3.1.1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -8,15 +8,18 @@ WWW=		https://github.com/JonMagon/KDiskMark
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 RUN_DEPENDS=	fio:benchmarks/fio
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	JonMagon
-GH_PROJECT=	KDiskMark
+GH_ACCOUNT=	JonMagon itay-grudev:sa
+GH_PROJECT=	KDiskMark SingleApplication:sa
+GH_TAGNAME=	f1e1508:sa
+GH_SUBDIR=	src/singleapplication:sa
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_QT=		buildtools:build linguisttools:build qmake:build \
-		dbus core gui widgets
+		dbus core gui network widgets
 USE_KDE=	ecm:build auth coreaddons
 
 post-patch:
