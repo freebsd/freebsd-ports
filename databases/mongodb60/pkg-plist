@@ -1,0 +1,7 @@
+bin/mongod
+bin/mongos
+@sample etc/mongodb.conf.sample
+%%DOCSDIR%%/LICENSE-Community.txt
+%%DOCSDIR%%/MPL-2
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THIRD-PARTY-NOTICES

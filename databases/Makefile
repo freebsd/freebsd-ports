@@ -191,6 +191,7 @@
     SUBDIR += mongodb42-tools
     SUBDIR += mongodb44
     SUBDIR += mongodb50
+    SUBDIR += mongodb60
     SUBDIR += mroonga
     SUBDIR += mtop
     SUBDIR += mydumper
