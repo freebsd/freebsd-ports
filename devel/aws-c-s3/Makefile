@@ -1,6 +1,7 @@
 PORTNAME=	aws-c-s3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.47
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-io.so:devel/aws-c-io \
 		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
 		libaws-checksums.so:devel/aws-checksums \
-		libs2n.so:security/s2n
+		libs2n.so:security/s2n-tls
 
 USES=		cmake compiler:c11 ssl
 
