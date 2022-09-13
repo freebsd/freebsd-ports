@@ -10,7 +10,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
 NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON_i386=	Fails to compile: warning: 16 enumeration values not handled in switch: 'V_MINVMTYPES' ...
+NOT_FOR_ARCHS_REASON_i386=	unsupported platform: https://github.com/aardappel/treesheets/issues/260
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext gnome
 
