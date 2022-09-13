@@ -337,6 +337,7 @@
     SUBDIR += smlnj
     SUBDIR += snobol4
     SUBDIR += solidity
+    SUBDIR += spidermonkey102
     SUBDIR += spidermonkey17
     SUBDIR += spidermonkey78
     SUBDIR += spidermonkey91
