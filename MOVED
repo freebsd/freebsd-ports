@@ -17556,3 +17556,4 @@ graphics/drm-54-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm
 archivers/ppmd-7z|archivers/7-zip|2022-09-11|ppmd-7z was a mis-named p7zip project that is unmaintained and has numerous vulnerabilities, users should use 7-zip instead
 science/R-cran-AMORE||2022-09-12|Has expired: Upstream no longer maintained
 www/moodle310|www/moodle311|2022-09-12|Has expired: Upstream no longer maintained, upgrade to next LTS
+security/s2n|security/s2n-tls|2022-09-13|Moved to match upstream name
