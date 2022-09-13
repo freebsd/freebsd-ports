@@ -18,8 +18,4 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/serdi
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
-
 .include <bsd.port.mk>
