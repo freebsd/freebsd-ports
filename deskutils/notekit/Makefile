@@ -1,6 +1,5 @@
 PORTNAME=	notekit
-PORTVERSION=	g20211222
-PORTREVISION=	2
+PORTVERSION=	g20220907
 CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -17,7 +16,7 @@ USES=		cmake compiler:c++17-lang gnome pkgconfig
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
 USE_GITHUB=	yes
 GH_ACCOUNT=	blackhole89
-GH_TAGNAME=	6d6278b
+GH_TAGNAME=	f0d0781
 
 post-patch:
 	@${REINPLACE_CMD} -e '/workaround for old jsoncpp/d' \
