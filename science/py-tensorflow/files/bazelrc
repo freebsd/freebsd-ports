@@ -8,12 +8,28 @@ build --spawn_strategy=local --genrule_strategy=local
 test --spawn_strategy=local --genrule_strategy=local
 
 # make bazel only fetch distfiles from the cache
-fetch --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-distdir/"
-build --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-distdir/"
+fetch --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-dist/"
+build --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-dist/"
 
 build --define=PREFIX=%%LOCALBASE%%
 build --define=LIBDIR=%%LOCALBASE%%/lib
+build --define=INCLUDEDIR=%%LOCALBASE%%/include
+build --define=PROTOBUF_INCLUDE_PATH=%%LOCALBASE%%/include
 
-build --config=noaws --config=nohdfs --config=noignite --config=nokafka
+build --config=noaws --config=nohdfs
 build --define tensorflow_mkldnn_contraction_kernel=0
-build --incompatible_no_support_tools_in_action_inputs=false
+
+build --action_env=BAZEL_CXXOPTS="-std=c++17"
+build --incompatible_enable_cc_toolchain_resolution
+
+build --extra_toolchains=//freebsd:cc-toolchain-freebsd
+build --linkopt="-lexecinfo" --toolchain_resolution_debug=//freebsd:freebsd_clang
+
+# for python
+build --action_env=PATH=%%PATH%%
+build --host_action_env=PATH=%%PATH%%
+
+build --action_env=KERAS_HOME="%%BAZEL_DIST%%/.keras"
+build --host_action_env=KERAS_HOME="%%BAZEL_DIST%%/.keras"
+
+build --config=freebsd

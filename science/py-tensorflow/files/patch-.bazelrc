@@ -1,0 +1,22 @@
+--- .bazelrc.orig	2022-05-22 22:28:22 UTC
++++ .bazelrc
+@@ -151,6 +151,19 @@ build --experimental_cc_shared_library
+ 
+ # Default options should come above this line.
+ 
++# Use our custom-configured c++ toolchain.
++# Use --cpu as a differentiator.
++build:freebsd --cpu=k8
++ 
++# Use the default Bazel C++ toolchain to build the tools used during the
++# build.
++build:freebsd --crosstool_top=//freebsd:freebsd_clang
++build:freebsd --linkopt=-L%%LOCALBASE%%/lib
++
++build:freebsd --python_path="%%PYTHON%%"
++build:freebsd --define force_libcpp=enabled
++build:freebsd --action_env=CXXFLAGS=-stdlib=libc++
++
+ # Allow builds using libc++ as a linker library
+ # This is mostly for OSSFuzz, so we also pass in the flags from environment to clean build file
+ build:libc++ --action_env=CC

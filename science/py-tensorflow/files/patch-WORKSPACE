@@ -1,9 +1,10 @@
---- WORKSPACE.orig	2021-01-04 20:18:42 UTC
+--- WORKSPACE.orig	2022-05-22 22:28:22 UTC
 +++ WORKSPACE
-@@ -12,6 +12,15 @@ http_archive(
-     ],
- )
- 
+@@ -1,4 +1,15 @@
+ workspace(name = "org_tensorflow")
++register_toolchains("//freebsd:freebsd_py_toolchain")
++
++load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 +http_archive(
 +    name = "io_bazel_rules_docker",
 +    sha256 = "7d453450e1eb70e238eea6b31f4115607ec1200e91afea01c25f9804f37e39c8",
@@ -12,50 +13,6 @@
 +        "https://github.com/bazelbuild/rules_docker/releases/download/v0.10.0/rules_docker-v0.10.0.tar.gz",
 +    ],
 +)
-+
- # Load tf_repositories() before loading dependencies for other repository so
- # that dependencies like com_google_protobuf won't be overridden.
- load("//tensorflow:workspace.bzl", "tf_repositories")
-@@ -78,6 +87,42 @@ http_file(
-     executable = 1,
-     urls = ["https://github.com/google/xctestrunner/releases/download/0.2.7/ios_test_runner.par"],
- )  # https://github.com/google/xctestrunner/releases
-+
-+new_local_repository(
-+    name = "jsonHeaders",
-+    path = "%%LOCALBASE%%/include/json",
-+    build_file_content = """  
-+
-+package(
-+    default_visibility = [
-+    "//visibility:public",
-+    ],
-+)
-+
-+cc_library(
-+    name = "headers",
-+    srcs = glob(["*.h"]),
-+)
-+""",
-+)
-+
-+new_local_repository(
-+    name = "absl_Headers",
-+    path = "%%LOCALBASE%%/include/absl",
-+    build_file_content = """
-+
-+package(
-+    default_visibility = [
-+    "//visibility:public",
-+    ],
-+)
-+cc_library(
-+    name = "abslHeaders",
-+    srcs = glob(["*/*.h", "*/*/*.h", "*/*/*/*/*/*.h"]),
-+)
-+
-+""",
-+)
- # Use `swift_rules_dependencies` to fetch the toolchains. With the
- # `git_repository` rules above, the following call will skip redefining them.
- load("@build_bazel_rules_swift//swift:repositories.bzl", "swift_rules_dependencies")
+ 
+ # Initialize the TensorFlow repository and all dependencies.
+ #
