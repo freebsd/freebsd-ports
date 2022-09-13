@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		lua:build ninja:make
+USES=		dos2unix lua:build ninja:make
 USE_GITHUB=	yes
 GH_ACCOUNT=	sumneko
 GH_TUPLE=	actboy168:bee.lua:301ad60:bee/3rd/bee.lua \
@@ -22,6 +22,8 @@ GH_TUPLE=	actboy168:bee.lua:301ad60:bee/3rd/bee.lua \
 		sqmedeiros:lpeglabel:b5d7638:lpeglabel/3rd/lpeglabel
 
 BINARY_ALIAS=	gcc=${CC}
+DOS2UNIX_FILES=	3rd/bee.lua/bee/thread/spinlock.h \
+		3rd/luamake/3rd/bee.lua/bee/thread/spinlock.h
 SUB_FILES=	lua-language-server
 PLIST_FILES=	bin/lua-language-server \
 		${DATADIR_REL}/bin/lua-language-server \
