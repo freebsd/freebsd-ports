@@ -1,7 +1,8 @@
 PORTNAME=	punchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.4
-CATEGORIES=	games
+PORTREVISION=	1
+CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	2.5D side-scroller beatemup, made in Bevy
@@ -101,6 +102,7 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
 		cache-padded-1.2.0 \
+		calloop-0.9.3 \
 		cc-1.0.73 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
@@ -149,6 +151,7 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		directories-4.0.1 \
 		dirs-sys-0.3.7 \
 		dispatch-0.2.0 \
+		dlib-0.5.0 \
 		downcast-rs-1.2.0 \
 		egui-0.18.1 \
 		egui_extras-0.18.0 \
@@ -242,6 +245,7 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		matches-0.1.9 \
 		matrixmultiply-0.3.2 \
 		memchr-2.5.0 \
+		memmap2-0.3.1 \
 		memoffset-0.6.5 \
 		metal-0.24.0 \
 		minimal-lexical-0.2.1 \
@@ -332,6 +336,7 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		ryu-1.0.11 \
 		safe_arch-0.6.0 \
 		same-file-1.0.6 \
+		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		self_cell-0.10.2 \
 		serde-1.0.144 \
@@ -344,6 +349,7 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		slab-0.4.7 \
 		slotmap-1.0.6 \
 		smallvec-1.9.0 \
+		smithay-client-toolkit-0.15.4 \
 		spade-2.0.0 \
 		spirv-0.2.0+1.5.4 \
 		stdweb-0.1.3 \
@@ -405,6 +411,12 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		wasm-bindgen-macro-0.2.82 \
 		wasm-bindgen-macro-support-0.2.82 \
 		wasm-bindgen-shared-0.2.82 \
+		wayland-client-0.29.5 \
+		wayland-commons-0.29.5 \
+		wayland-cursor-0.29.5 \
+		wayland-protocols-0.29.5 \
+		wayland-scanner-0.29.5 \
+		wayland-sys-0.29.5 \
 		web-sys-0.3.59 \
 		webbrowser-0.7.1 \
 		weezl-0.1.7 \
@@ -428,7 +440,9 @@ CARGO_CRATES=	ab_glyph-0.2.16 \
 		winit-0.26.1 \
 		x11-dl-2.20.0 \
 		x11rb-0.9.0 \
-		xi-unicode-0.3.0
+		xcursor-0.3.4 \
+		xi-unicode-0.3.0 \
+		xml-rs-0.8.4
 
 post-patch:
 # Search assets under PREFIX instead of current directory
