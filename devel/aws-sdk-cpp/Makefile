@@ -1,5 +1,6 @@
 PORTNAME=	aws-sdk-cpp
 PORTVERSION=	1.9.328
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-http.so:devel/aws-c-http \
 		libaws-c-io.so:devel/aws-c-io \
-		libs2n.so:security/s2n \
+		libs2n.so:security/s2n-tls \
 		libaws-c-compression.so:devel/aws-c-compression \
 		libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
