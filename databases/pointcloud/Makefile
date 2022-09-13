@@ -1,6 +1,6 @@
 PORTNAME=	pointcloud
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
