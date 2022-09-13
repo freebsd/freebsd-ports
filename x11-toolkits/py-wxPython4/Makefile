@@ -1,9 +1,9 @@
 PORTNAME=	wxPython
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	41
+PKGNAMESUFFIX=	42
 DIST_SUBDIR=	python
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -16,11 +16,12 @@ LICENSE_NAME_WXWINDOWS=	wxWindows Library Licence, Version 3.1
 LICENSE_FILE_WXWINDOWS=	${WRKSRC}/license/licence.txt
 LICENSE_PERMS_WXWINDOWS=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}attrdict>0:devel/py-attrdict@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gl localbase pkgconfig python:3.6+
 USE_GL=		glu
-USE_WX=		3.1
+USE_WX=		3.2
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=		NLS
