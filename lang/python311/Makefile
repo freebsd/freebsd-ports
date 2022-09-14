@@ -7,7 +7,7 @@ DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Interpreted object-oriented programming language (beta version)
+COMMENT=	Interpreted object-oriented programming language (RC version)
 WWW=		https://www.python.org/
 
 LICENSE=	PSFL
