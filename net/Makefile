@@ -80,6 +80,7 @@
     SUBDIR += cjdns
     SUBDIR += clash
     SUBDIR += cloud-init
+    SUBDIR += cloud-init-devel
     SUBDIR += cloudflared
     SUBDIR += cloudquery
     SUBDIR += clusterit
