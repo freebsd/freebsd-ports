@@ -4393,7 +4393,6 @@ audio/cheesetracker||2013-07-26|Has expired: Depends on Qt 3.x
 audio/cynthiune||2013-07-26|Has expired: Depends on Qt 3.x
 audio/ermixer||2013-07-26|Has expired: Depends on Qt 3.x
 audio/k3bmonkeyaudioplugin||2013-07-26|Has expired: Depends on Qt 3.x
-audio/kid3||2013-07-26|Has expired: Depends on Qt 3.x
 audio/kirocker||2013-07-26|Has expired: Depends on Qt 3.x
 audio/kmp||2013-07-26|Has expired: Depends on Qt 3.x
 audio/lplayer||2013-07-26|Has expired: Depends on Qt 3.x
@@ -11248,7 +11247,7 @@ audio/libkcompactdisc-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 audio/kmix-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 audio/audex||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 audio/kio-audiocd-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
-audio/kid3-kde4||2018-12-31|Has expired: Qt4 and KDE4 EOL upstream. Use audio/kid3-qt5 or audio/kid3-kf5 instead
+audio/kid3-kde4||2018-12-31|Has expired: Qt4 and KDE4 EOL upstream. Use audio/kid3@qt5 or audio/kid3@kf5 instead
 audio/libkcddb-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 audio/kstreamripper||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 audio/juk-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
@@ -11338,7 +11337,7 @@ sysutils/kfloppy-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 sysutils/kcm-polkit-kde||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 hungarian/kde4-l10n||2018-12-31|Has expired: KDE4 is EOL upstream
 java/netbeans-devel|java/netbeans|2018-12-31|Development port was removed now that this version is stable
-audio/kid3-qt4|audio/kid3-qt5|2018-12-31|Has expired: KDE4 is EOL upstream
+audio/kid3-qt4|audio/kid3@qt5|2018-12-31|Has expired: Qt4 is EOL upstream
 textproc/uim-kde4||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 misc/kde4-xdg-env||2018-12-31|Removed, KDE4-related
 x11-themes/wallpapers-freebsd-kde4|x11-themes/wallpapers-freebsd-kde|2018-12-31|Renamed, the port is not KDE4 specific
@@ -17557,3 +17556,5 @@ archivers/ppmd-7z|archivers/7-zip|2022-09-11|ppmd-7z was a mis-named p7zip proje
 science/R-cran-AMORE||2022-09-12|Has expired: Upstream no longer maintained
 www/moodle310|www/moodle311|2022-09-12|Has expired: Upstream no longer maintained, upgrade to next LTS
 security/s2n|security/s2n-tls|2022-09-13|Moved to match upstream name
+audio/kid3-kf5|audio/kid3@kf5|2022-09-13|Merged into flavorized version
+audio/kid3-qt5|audio/kid3@qt5|2022-09-13|Merged into flavorized version

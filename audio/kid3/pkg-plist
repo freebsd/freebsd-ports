@@ -91,6 +91,7 @@ share/icons/hicolor/64x64/apps/kid3%%QT_SUFX%%.png
 %%DATADIR%%/translations/kid3_it.qm
 %%DATADIR%%/translations/kid3_ko.qm
 %%DATADIR%%/translations/kid3_nl.qm
+%%DATADIR%%/translations/kid3_nn.qm
 %%DATADIR%%/translations/kid3_pl.qm
 %%DATADIR%%/translations/kid3_pt.qm
 %%DATADIR%%/translations/kid3_pt_BR.qm
