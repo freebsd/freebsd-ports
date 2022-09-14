@@ -4,8 +4,6 @@ bin/gegrep
 bin/gfgrep
 bin/ggrep
 bin/grep
-man/man1/gegrep.1.gz
-man/man1/gfgrep.1.gz
 man/man1/ggrep.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/be/LC_MESSAGES/grep.mo
@@ -29,6 +27,7 @@ man/man1/ggrep.1.gz
 %%NLS%%share/locale/id/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/it/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/grep.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/ky/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/grep.mo
@@ -44,6 +43,7 @@ man/man1/ggrep.1.gz
 %%NLS%%share/locale/sl/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/grep.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/th/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/grep.mo
