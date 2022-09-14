@@ -13,9 +13,9 @@ include/harfbuzz/hb-face.h
 include/harfbuzz/hb-font.h
 include/harfbuzz/hb-ft.h
 %%GLIB%%include/harfbuzz/hb-glib.h
-%%GOBJECT%%/include/harfbuzz/hb-gobject-enums.h
-%%GOBJECT%%/include/harfbuzz/hb-gobject-structs.h
-%%GOBJECT%%/include/harfbuzz/hb-gobject.h
+%%GOBJECT%%include/harfbuzz/hb-gobject-enums.h
+%%GOBJECT%%include/harfbuzz/hb-gobject-structs.h
+%%GOBJECT%%include/harfbuzz/hb-gobject.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-map.h
 include/harfbuzz/hb-ot-color.h
