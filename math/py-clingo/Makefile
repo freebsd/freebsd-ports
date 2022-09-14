@@ -1,5 +1,5 @@
 PORTNAME=	clingo
-PORTVERSION=	5.6.0
+DISTVERSION=	5.6.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 USES=		compiler:c++14-lang python:3.6+
 USE_PYTHON=	distutils autoplist unittest # some tests break, see https://github.com/potassco/clingo/issues/390
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/libpyclingo/clingo/tests
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/clingo
+TEST_WRKSRC=	${WRKSRC}/libpyclingo
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/clingo/_clingo${PYTHON_EXT_SUFFIX}.so
