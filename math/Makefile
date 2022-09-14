@@ -223,6 +223,7 @@
     SUBDIR += clblas
     SUBDIR += clblast
     SUBDIR += clfft
+    SUBDIR += clingcon
     SUBDIR += clingo
     SUBDIR += cliquer
     SUBDIR += cln
