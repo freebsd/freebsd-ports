@@ -108,6 +108,7 @@
     SUBDIR += blokish
     SUBDIR += bloodfrontier
     SUBDIR += bluemoon
+    SUBDIR += blues
     SUBDIR += bomber
     SUBDIR += bomberclone
     SUBDIR += bombherman
@@ -526,8 +527,8 @@
     SUBDIR += libretro-mame2000
     SUBDIR += libretro-mame2003
     SUBDIR += libretro-mame2003_plus
-    SUBDIR += libretro-mgba
     SUBDIR += libretro-melonds
+    SUBDIR += libretro-mgba
     SUBDIR += libretro-mu
     SUBDIR += libretro-nestopia
     SUBDIR += libretro-nxengine
