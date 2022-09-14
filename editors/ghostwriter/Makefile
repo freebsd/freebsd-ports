@@ -1,5 +1,5 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	2.1.5
+DISTVERSION=	2.1.6
 CATEGORIES=	editors
 
 MAINTAINER=	madpilot@FreeBSD.org
