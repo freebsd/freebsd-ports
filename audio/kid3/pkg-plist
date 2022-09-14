@@ -6,11 +6,9 @@ lib/libkid3-gui.so
 lib/kid3/libamazonimport.so
 lib/kid3/libdiscogsimport.so
 lib/kid3/libfreedbimport.so
-%%MP3%%lib/kid3/libid3libmetadata.so
-%%MP4%%lib/kid3/libmp4v2metadata.so
 lib/kid3/libmusicbrainzimport.so
 %%VORBIS%%lib/kid3/liboggflacmetadata.so
-%%TAGLIB%%lib/kid3/libtaglibmetadata.so
+lib/kid3/libtaglibmetadata.so
 %%CLI%%man/ca/man1/kid3-cli.1.gz
 %%QT%%man/ca/man1/kid3-qt.1.gz
 man/ca/man1/kid3.1.gz

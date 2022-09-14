@@ -1,5 +1,6 @@
 PORTNAME=	kid3
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -12,6 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 FLAVORS=	qt5 qt6 kf5
 FLAVOR?=	${FLAVORS:[1]}
@@ -26,15 +28,18 @@ CMAKE_ARGS=	-DWITH_DOCBOOKDIR="${LOCALBASE}/share/xsl/docbook" \
 		-DWITH_MANDIR=man \
 		-DWITH_PLUGINSDIR=lib/kid3 \
 		-DFFMPEG_ROOT="${LOCALBASE}" \
-		-DWITH_QML=OFF \
 		-DWITH_APPS="${KID3_APPS:S/ /;/gW}"
+CMAKE_OFF=	WITH_ID3LIB \
+		WITH_MP4V2 \
+		WITH_QML
+CMAKE_ON=	WITH_TAGLIB
 PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
 USE_QT=		core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
-CMAKE_ARGS+=	-DWITH_QT5=ON
+CMAKE_ON+=	WITH_QT5
 PLIST_SUB+=	KF5="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
@@ -43,7 +48,7 @@ KID3_APPS+=	QT
 USES+=		gl qt:6
 USE_GL=		opengl
 USE_QT=		base multimedia tools:build
-CMAKE_ARGS+=	-DWITH_QT5=OFF
+CMAKE_OFF+=	WITH_QT5
 PLIST_SUB+=	KF5="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
@@ -54,7 +59,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons kio \
 		service widgetsaddons xmlgui doctools:build ecm:build
 USE_QT=		concurrent core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
-CMAKE_ARGS+=	-DWITH_QT5=ON
+CMAKE_ON+=	WITH_QT5
 PLIST_SUB+=	KF5="" \
 		QT="@comment " \
 		QT_SUFX=""
@@ -67,8 +72,8 @@ CONFLICTS_INSTALL+=	kid3-${f}
 .  endif
 .endfor
 
-OPTIONS_DEFINE=		CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB TEST
-OPTIONS_DEFAULT=	CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB
+OPTIONS_DEFINE=		CLI ACOUSTID FLAC VORBIS TEST
+OPTIONS_DEFAULT=	CLI ACOUSTID FLAC VORBIS
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
 
@@ -83,16 +88,6 @@ CLI_VARS=		KID3_APPS+=CLI
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_BOOL=	WITH_FLAC
 FLAC_IMPLIES=		VORBIS
-
-MP3_LIB_DEPENDS=	libid3.so:audio/id3lib
-MP3_CMAKE_BOOL=		WITH_ID3LIB
-
-MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
-MP4_CMAKE_BOOL=		WITH_MP4V2
-
-TAGLIB_DESC=		Various audio formats support via Taglib
-TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
-TAGLIB_CMAKE_BOOL=	WITH_TAGLIB
 
 TEST_USE=		LOCALE=en_US.UTF-8
 .if ${FLAVOR} == qt5 || ${FLAVOR} == kf5
