@@ -189,6 +189,7 @@ include/thrift/lib/cpp/util/FrozenTestUtil.h
 include/thrift/lib/cpp/util/FrozenUtil-inl.h
 include/thrift/lib/cpp/util/FrozenUtil.h
 include/thrift/lib/cpp/util/PausableTimer.h
+include/thrift/lib/cpp/util/SaturatingMath.h
 include/thrift/lib/cpp/util/THttpParser.h
 include/thrift/lib/cpp/util/VarintUtils-inl.h
 include/thrift/lib/cpp/util/VarintUtils.h
@@ -260,8 +261,9 @@ include/thrift/lib/cpp2/async/TwoWayBridge.h
 include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
-include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/detail/BoxedIfLarge.h
 include/thrift/lib/cpp2/detail/FieldMask.h
+include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
@@ -306,7 +308,6 @@ include/thrift/lib/cpp2/op/Copy.h
 include/thrift/lib/cpp2/op/Create.h
 include/thrift/lib/cpp2/op/DeterministicAccumulator.h
 include/thrift/lib/cpp2/op/Encode.h
-include/thrift/lib/cpp2/op/Ensure.h
 include/thrift/lib/cpp2/op/Get.h
 include/thrift/lib/cpp2/op/Hash.h
 include/thrift/lib/cpp2/op/Patch.h
@@ -320,16 +321,18 @@ include/thrift/lib/cpp2/op/detail/BaseOp.h
 include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
 include/thrift/lib/cpp2/op/detail/Compare.h
+include/thrift/lib/cpp2/op/detail/ContainerOp.h
 include/thrift/lib/cpp2/op/detail/Copy.h
 include/thrift/lib/cpp2/op/detail/ContainerPatch.h
 include/thrift/lib/cpp2/op/detail/Create.h
 include/thrift/lib/cpp2/op/detail/Encode.h
-include/thrift/lib/cpp2/op/detail/Ensure.h
 include/thrift/lib/cpp2/op/detail/Get.h
 include/thrift/lib/cpp2/op/detail/Hash.h
 include/thrift/lib/cpp2/op/detail/HashProtocol.h
 include/thrift/lib/cpp2/op/detail/Patch.h
+include/thrift/lib/cpp2/op/detail/StructOp.h
 include/thrift/lib/cpp2/op/detail/StructPatch.h
+include/thrift/lib/cpp2/op/detail/ValueOp.h
 include/thrift/lib/cpp2/op/detail/ValuePatch.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
@@ -340,6 +343,7 @@ include/thrift/lib/cpp2/protocol/CompactV1Protocol.h
 include/thrift/lib/cpp2/protocol/Cpp2Ops-inl.h
 include/thrift/lib/cpp2/protocol/Cpp2Ops.h
 include/thrift/lib/cpp2/protocol/DebugProtocol.h
+include/thrift/lib/cpp2/protocol/GetStandardProtocol.h
 include/thrift/lib/cpp2/protocol/JSONProtocol-inl.h
 include/thrift/lib/cpp2/protocol/JSONProtocol.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon-inl.h
