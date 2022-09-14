@@ -8,7 +8,6 @@ include/rapidfuzz/details/common.hpp
 include/rapidfuzz/details/common_impl.hpp
 include/rapidfuzz/details/distance.hpp
 include/rapidfuzz/details/intrinsics.hpp
-include/rapidfuzz/details/matching_blocks.hpp
 include/rapidfuzz/details/type_traits.hpp
 include/rapidfuzz/details/types.hpp
 include/rapidfuzz/distance.hpp
