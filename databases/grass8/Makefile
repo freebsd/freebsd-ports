@@ -1,6 +1,6 @@
 PORTNAME=	grass
 DISTVERSION=	8.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -48,7 +48,7 @@ nviz_CMD=	${PREFIX}/${GRASS_INST_DIR}/bin/nviz
 USE_XORG=	sm ice x11 xext xi xmu xrender xt
 USE_GL=		gl glu
 USE_GNOME=	cairo
-USE_WX=		3.1
+USE_WX=		3.2
 WX_COMPS=	wx python:run
 GNU_CONFIGURE=	yes
 
