@@ -248,23 +248,13 @@ MASTER_SITE_FRUGALWARE+= \
 .if !defined(IGNORE_MASTER_SITE_GCC)
 MASTER_SITE_GCC+= \
 	https://mirrors.kernel.org/sourceware/gcc/%SUBDIR%/ \
-	http://gcc.parentingamerica.com/%SUBDIR%/ \
-	http://gcc.cybermirror.org/%SUBDIR%/ \
-	http://gcc-uk.internet.bs/%SUBDIR%/ \
-	http://www.netgull.com/gcc/%SUBDIR%/ \
-	http://robotlab.itk.ppke.hu/gcc/%SUBDIR%/ \
-	http://gcc.fyxm.net/%SUBDIR%/ \
 	https://ftp-stud.hs-esslingen.de/pub/Mirrors/sourceware.org/gcc/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/sourceware.org/pub/gcc/%SUBDIR%/ \
-	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.gwdg.de/pub/misc/gcc/%SUBDIR%/ \
-	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/
+	https://ftp.funet.fi/pub/mirrors/sourceware.org/pub/gcc/%SUBDIR%/ \
+	https://ftp.mpi-inf.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
+	https://mirrorservice.org/sites/sourceware.org/pub/gcc/%SUBDIR%/ \
+	http://mirror.koddos.net/gcc/%SUBDIR%/ \
+	http://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/ \
+	http://gcc.gnu.org/pub/gcc/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GENTOO)
