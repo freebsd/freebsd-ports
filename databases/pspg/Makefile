@@ -1,5 +1,5 @@
 PORTNAME=	pspg
-DISTVERSION=	5.5.6
+DISTVERSION=	5.5.7
 CATEGORIES=	databases
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/pspg
+PLIST_FILES=	bin/pspg man/man1/pspg.1.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		DOCS INOTIFY PGSQL
@@ -39,6 +39,7 @@ PGSQL_VARS=		WANT_PGSQL=client
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pspg
+	${INSTALL_MAN} ${WRKSRC}/pspg.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
