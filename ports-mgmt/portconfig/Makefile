@@ -1,5 +1,5 @@
 PORTNAME=	portconfig
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -14,10 +14,10 @@ USES=		localbase:ldflags
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	d8863468ba3f5927a6f27180ec18b21724a24fcf
+GL_COMMIT=	120109308b3c15a4570e65ea91bfba6426b37193
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
+		man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
