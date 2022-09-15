@@ -1,0 +1,39 @@
+--- configure.ac.orig	2022-09-13 09:50:49 UTC
++++ configure.ac
+@@ -104,7 +104,7 @@ elif test "x$enable_python_plugins" != xno; then
+         rm -f Python.framework
+         ln -s $PYTHON_FRAMEWORK Python.framework ])
+     PKG_CHECK_MODULES([python], [python-embed], [PYTHON_CONFIG_EXISTS=yes], [PYTHON_CONFIG_EXISTS=no])
+-    PKG_CHECK_MODULES([python], [python3-embed], [PYTHON3_CONFIG_EXISTS=yes; AC_DEFINE(PY_IS_PYTHON3, [1], [Is Python version 3])], [PYTHON3_CONFIG_EXISTS=no])
++    PKG_CHECK_MODULES([python], [python-3.9-embed], [PYTHON3_CONFIG_EXISTS=yes; AC_DEFINE(PY_IS_PYTHON3, [1], [Is Python version 3])], [PYTHON3_CONFIG_EXISTS=no])
+     if test "$PYTHON_CONFIG_EXISTS" = "yes" || test "$PYTHON3_CONFIG_EXISTS" = "yes"; then
+         AM_CONDITIONAL([BUILD_PYTHON_API], [true])
+         AC_DEFINE([HAVE_PYTHON], [1], [Python support])
+@@ -272,11 +272,11 @@ AS_IF([test "x$PLATFORM" = xosx],
+                     [AC_MSG_NOTICE([libnotify support will be disabled])])])])])
+ 
+ dnl feature: xscreensaver
+-AS_IF([test "x$enable_xscreensaver" != xno],
++AS_IF([test "x$with_xscreensaver" != xno],
+     [PKG_CHECK_MODULES([xscrnsaver], [xscrnsaver],
+         [AC_MSG_NOTICE([xscreensaver support is enabled]);
+          LIBS="$xscrnsaver_LIBS $LIBS" CFLAGS="$CFLAGS $xscrnsaver_CFLAGS"],
+-        [AS_IF([test "x$enable_xscreensaver" = xyes],
++        [AS_IF([test "x$with_xscreensaver" = xyes],
+             [AC_MSG_ERROR([xscreensaver is required but does not exist])],
+             [AC_MSG_NOTICE([xscreensaver support is disabled])])])])
+ 
+@@ -311,11 +311,11 @@ if test "x$enable_otr" != xno; then
+ fi
+ 
+ dnl feature: pixbuf / used for scaling avatars before uploading via `/avatar set`
+-AS_IF([test "x$enable_pixbuf" != xno],
++AS_IF([test "x$enable_gdk_pixbuf" != xno],
+     [PKG_CHECK_MODULES([gdk_pixbuf], [gdk-pixbuf-2.0 >= 2.4],
+         [AC_DEFINE([HAVE_PIXBUF], [1], [gdk-pixbuf module])
+          LIBS="$gdk_pixbuf_LIBS $LIBS" CFLAGS="$gdk_pixbuf_CFLAGS $CFLAGS"],
+-        [AS_IF([test "x$enable_pixbuf" = xyes],
++        [AS_IF([test "x$enable_gdk_pixbuf" = xyes],
+                [AC_MSG_ERROR([gdk-pixbuf-2.0 >= 2.4 is required to scale avatars before uploading])],
+                [AC_MSG_NOTICE([gdk-pixbuf-2.0 >= 2.4 not found, GDK Pixbuf support not enabled])])])])
+ 

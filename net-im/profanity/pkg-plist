@@ -13,6 +13,7 @@ man/man1/profanity.1.gz
 %%DATADIR%%/themes/gruvbox
 %%DATADIR%%/themes/hacker
 %%DATADIR%%/themes/headache
+%%DATADIR%%/themes/irssi
 %%DATADIR%%/themes/joker
 %%DATADIR%%/themes/jubalian
 %%DATADIR%%/themes/orange
@@ -87,6 +88,7 @@ man/man1/profanity-os.1.gz
 man/man1/profanity-otr.1.gz
 man/man1/profanity-outtype.1.gz
 man/man1/profanity-ox.1.gz
+man/man1/profanity-ox-setup.1.gz
 man/man1/profanity-paste.1.gz
 man/man1/profanity-pgp.1.gz
 man/man1/profanity-ping.1.gz
@@ -113,6 +115,7 @@ man/man1/profanity-silence.1.gz
 man/man1/profanity-slashguard.1.gz
 man/man1/profanity-software.1.gz
 man/man1/profanity-splash.1.gz
+man/man1/profanity-stamp.1.gz
 man/man1/profanity-states.1.gz
 man/man1/profanity-status.1.gz
 man/man1/profanity-statusbar.1.gz
