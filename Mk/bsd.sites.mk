@@ -927,16 +927,18 @@ MASTER_SITE_SAMBA+= \
 	https://ftp.samba.org/pub/%SUBDIR%/
 .endif
 
-# List:	https://download.savannah.gnu.org/mirmon/
+# List:	https://download-mirror.savannah.gnu.org/releases/00_MIRRORS.html
 .if !defined(IGNORE_MASTER_SITE_SAVANNAH)
 MASTER_SITE_SAVANNAH+= \
 	https://download.savannah.gnu.org/releases/%SUBDIR%/ \
-	https://download-mirror.savannah.gnu.org/releases/%SUBDIR%/ \
+	https://nongnu.uib.no/%SUBDIR%/ \
+	https://mirror.kumi.systems/nongnu/%SUBDIR%/ \
+	https://mirrors.up.pt/pub/nongnu/%SUBDIR%/ \
 	http://nongnu.askapache.com/%SUBDIR%/ \
-	http://mirror.lihnidos.org/GNU/savannah/%SUBDIR%/ \
-	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
-	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
-	http://gnu.mirrors.pair.com/savannah/savannah/%SUBDIR%/
+	http://mirror.netcologne.de/savannah/%SUBDIR%/ \
+	http://mirror.csclub.uwaterloo.ca/nongnu/%SUBDIR%/ \
+	http://mirror.easyname.at/nongnu/%SUBDIR%/ \
+	https://download-mirror.savannah.gnu.org/releases/%SUBDIR%/
 .endif
 
 # List:		https://sourceforge.net/p/forge/documentation/Mirrors/
