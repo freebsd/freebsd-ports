@@ -1,23 +1,28 @@
 PORTNAME=	castget
-DISTVERSION=	2.0.1
-PORTREVISION=	2
+DISTVERSION=	2.0.1.20220211
 CATEGORIES=	www
-MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line podcast downloader
-WWW=		https://www.nongnu.org/castget/
+WWW=		https://castget.johndal.com/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libid3.so:audio/id3lib \
+BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
+LIB_DEPENDS=	libtag.so:audio/taglib \
 		libcurl.so:ftp/curl
 
-USES=		compiler:c11 gnome libtool localbase:ldflags pkgconfig tar:bzip2
-USE_LDCONFIG=	yes
+USES=		autoreconf compiler:c11 gmake gnome groff libtool \
+		localbase:ldflags pkgconfig
 USE_GNOME=	glib20 libxml2
-# CONFIGURE_ARGS=	--disable-static
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mlj
+GH_TAGNAME=	da9727d
+
+#CONFIGURE_ARGS=	--disable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
