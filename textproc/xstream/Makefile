@@ -1,12 +1,12 @@
 PORTNAME=	xstream
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.19
 CATEGORIES=	textproc java
-MASTER_SITES=	https://nexus.codehaus.org/content/repositories/releases/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
+MASTER_SITES=	https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-distribution-${PORTVERSION}-bin${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Simple library to serialize Java objects to XML
-WWW=		http://xstream.codehaus.org/
+WWW=		https://x-stream.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
