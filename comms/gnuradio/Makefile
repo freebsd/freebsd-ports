@@ -1,7 +1,7 @@
 PORTNAME=	gnuradio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -70,7 +70,7 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 USE_PYQT=	pyqt5
-USE_WX=		3.1
+USE_WX=		3.2
 USE_QT=		buildtools core gui xml qmake widgets
 WX_COMPS=	wx python:run
 USE_LDCONFIG=	yes
