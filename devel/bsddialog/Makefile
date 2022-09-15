@@ -1,8 +1,8 @@
 PORTNAME=	bsddialog
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	alfix86@gmail.com
 COMMENT=	Text User Interface Widgets
 WWW=		https://gitlab.com/alfix/bsddialog
 
@@ -10,11 +10,10 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	c4b7fed3cd5ce3b6a5aa77ff194e0a86f830bf4c
+GL_COMMIT=	968e494d54862d1672ad439a6d02ec791976c004
 
-LIBDIR=	${WRKSRC}/lib
-HEADERS=	${LIBDIR}/bsddialog.h \
-		${LIBDIR}/bsddialog_progressview.h \
+LIBDIR=		${WRKSRC}/lib
+HEADERS=	${LIBDIR}/bsddialog.h ${LIBDIR}/bsddialog_progressview.h \
 		${LIBDIR}/bsddialog_theme.h
 
 do-install:
