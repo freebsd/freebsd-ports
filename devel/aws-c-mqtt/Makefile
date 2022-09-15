@@ -9,6 +9,7 @@ COMMENT=	C99 implementation of the MQTT 3.1.1 specification
 WWW=		https://github.com/awslabs/aws-c-mqtt
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-common.so:devel/aws-c-common \
@@ -17,15 +18,15 @@ LIB_DEPENDS=	libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-io.so:devel/aws-c-io \
 		libs2n.so:security/s2n-tls
 
-USES=		cmake compiler:c11 ssl
+USES=		cmake:testing compiler:c11 ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
-		-DBUILD_TESTING=OFF \
-		-DCMAKE_PREFIX_PATH=${LOCALBASE}
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${LOCALBASE}
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_TESTING
 
 .include <bsd.port.mk>
