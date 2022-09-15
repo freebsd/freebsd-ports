@@ -256,6 +256,7 @@
     SUBDIR += halibut
     SUBDIR += heirloom-doctools
     SUBDIR += hevea
+    SUBDIR += hexcode
     SUBDIR += hhm
     SUBDIR += hi-aspell
     SUBDIR += highlight
