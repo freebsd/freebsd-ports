@@ -1,0 +1,36 @@
+Revert [1]. According to the commit message, this was supposed to fix linking,
+but strip(1) fails to strip the static libraries, saying that the file
+format is not recognized. "all-static" with two leading dashes is not a valid
+libtool command, either. Even with one leading dash and building with -fPIC,
+linking fails with missing symbols. Regression tests pass after revert.
+
+[1] https://gitlab.freedesktop.org/libopenraw/libopenraw/-/commit/13d5f630910f85787578b540db4d154b30dca3aa
+
+--- lib/Makefile.in.orig	2022-06-25 02:10:51 UTC
++++ lib/Makefile.in
+@@ -135,7 +135,7 @@ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+   }
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+-libopenraw_la_DEPENDENCIES = $(RUST_LIB) libopenraw_internals.la
++libopenraw_la_DEPENDENCIES = libopenraw_internals.la
+ am__dirstamp = $(am__leading_dot)dirstamp
+ am_libopenraw_la_OBJECTS = capi/capi.lo capi/debug.lo capi/rawdata.lo \
+ 	capi/rawfile.lo capi/bitmapdata.lo capi/mosaicinfo.lo \
+@@ -709,14 +709,12 @@ RUST_LIB = $(RUST_PATH)/libmp4.a
+ CARGO_TARGET_DIR = @abs_top_builddir@/lib/mp4/target
+ RUST_PATH = $(CARGO_TARGET_DIR)/@CARGO_TARGET_SUBDIR@
+ RUST_LIB = $(RUST_PATH)/libmp4.a
+-
+-# The use of --all-static is necesary for the RUST_LIB
++RUST_LIBADD = -L$(RUST_PATH) -lmp4
+ libopenraw_la_LDFLAGS = \
+ 	-version-info @LIBOPENRAW_VERSION_INFO@ \
+-	--all-static \
+ 	-lpthread -ldl
+ 
+-libopenraw_la_LIBADD = -ljpeg $(RUST_LIB) libopenraw_internals.la
++libopenraw_la_LIBADD = -ljpeg $(RUST_LIBADD) libopenraw_internals.la
+ libopenraw_la_SOURCES = \
+ 	capi/capi.h \
+ 	capi/capi.cpp \
