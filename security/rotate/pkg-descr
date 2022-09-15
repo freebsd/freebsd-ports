@@ -1,0 +1,3 @@
+rotate/librotator provides binary rotation similar to the ROT-13 cipher, with
+the main difference being librotator runs at the binary level, so it can work
+on any binary data and any text regardless of encoding, not just latin text.
