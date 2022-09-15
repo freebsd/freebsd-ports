@@ -1,7 +1,6 @@
 PORTNAME=      rotate
 DISTVERSION=   1.2
 CATEGORIES=    security
-MASTER_SITES=  https://gitlab.com/LadySerenaKitty
 
 MAINTAINER=    jlhawkwell@ladyserenakitty.com
 COMMENT=       Binary rotation cipher (rot-13)
