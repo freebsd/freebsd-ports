@@ -1,0 +1,67 @@
+diff --git ../generic/tk3d.c ../generic/tk3d.c
+index f1cc8f1de..c81b72d4a 100644
+--- ../generic/tk3d.c
++++ ../generic/tk3d.c
+@@ -323,7 +323,7 @@ Tk_NameOf3DBorder(
+ {
+     TkBorder *borderPtr = (TkBorder *) border;
+ 
+-    return borderPtr->hashPtr->key.string;
++    return Tcl_GetHashKey(borderPtr->hashPtr->tablePtr, borderPtr->hashPtr);
+ }
+ 
+ /*
+diff --git ../generic/tkBitmap.c ../generic/tkBitmap.c
+index ccc97a464..f0cefda39 100644
+--- ../generic/tkBitmap.c
++++ ../generic/tkBitmap.c
+@@ -541,7 +541,8 @@ Tk_NameOfBitmap(
+ 	goto unknown;
+     }
+     bitmapPtr = (TkBitmap *)Tcl_GetHashValue(idHashPtr);
+-    return bitmapPtr->nameHashPtr->key.string;
++    return Tcl_GetHashKey(bitmapPtr->nameHashPtr->tablePtr,
++	    bitmapPtr->nameHashPtr);
+ }
+ 
+ /*
+diff --git ../generic/tkColor.c ../generic/tkColor.c
+index 6b6405ad3..04b222075 100644
+--- ../generic/tkColor.c
++++ ../generic/tkColor.c
+@@ -366,7 +366,7 @@ Tk_NameOfColor(
+     TkColor *tkColPtr = (TkColor *) colorPtr;
+ 
+     if (tkColPtr->magic==COLOR_MAGIC && tkColPtr->type==TK_COLOR_BY_NAME) {
+-	return tkColPtr->hashPtr->key.string;
++	return Tcl_GetHashKey(tkColPtr->hashPtr->tablePtr, tkColPtr->hashPtr);
+     } else {
+ 	ThreadSpecificData *tsdPtr = (ThreadSpecificData *)
+ 		Tcl_GetThreadData(&dataKey, sizeof(ThreadSpecificData));
+diff --git ../generic/tkCursor.c ../generic/tkCursor.c
+index 902472b33..aea17a9a0 100644
+--- ../generic/tkCursor.c
++++ ../generic/tkCursor.c
+@@ -436,7 +436,7 @@ Tk_NameOfCursor(
+     if (cursorPtr->otherTable != &dispPtr->cursorNameTable) {
+ 	goto printid;
+     }
+-    return cursorPtr->hashPtr->key.string;
++    return Tcl_GetHashKey(cursorPtr->hashPtr->tablePtr, cursorPtr->hashPtr);
+ }
+ 
+ /*
+diff --git ../generic/tkFont.c ../generic/tkFont.c
+index 71008bce0..f533f5a01 100644
+--- ../generic/tkFont.c
++++ ../generic/tkFont.c
+@@ -1415,7 +1415,8 @@ Tk_NameOfFont(
+ {
+     TkFont *fontPtr = (TkFont *) tkfont;
+ 
+-    return fontPtr->cacheHashPtr->key.string;
++    return Tcl_GetHashKey(fontPtr->cacheHashPtr->tablePtr,
++	    fontPtr->cacheHashPtr);
+ }
+ 
+ /*
