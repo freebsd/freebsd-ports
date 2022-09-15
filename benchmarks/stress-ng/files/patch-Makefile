@@ -1,11 +1,11 @@
---- Makefile.orig	2021-09-28 10:04:14 UTC
+--- Makefile.orig	2022-09-13 21:31:56 UTC
 +++ Makefile
-@@ -21,7 +21,7 @@ VERSION=0.13.04
- # Codename "wakeboarding interstellar wombat"
+@@ -21,7 +21,7 @@ VERSION=0.14.04
  #
- 
+ # Codename "annus horribilis"
+ #
 -CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99
 +CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu11 -pipe
- 
+
  #
  # Pedantic flags
