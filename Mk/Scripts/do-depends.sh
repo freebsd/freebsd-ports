@@ -67,7 +67,7 @@ install_depends()
 			${dp_PKG_ADD} -A ${pkgfile}
 		fi
 	elif [ -n "${dp_USE_PACKAGE_DEPENDS_REMOTE}" ] &&
-	    ${dp_PKG_RQUERY} %n "${pkgname}" &&
+	    ${dp_PKG_RQUERY} %n "${pkgname}" 2>&1 >/dev/null &&
 	    [ "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   Installing existing package ${pkgname} from a remote repository"
 		${dp_PKG_INSTALL} -qy "${pkgname}"
