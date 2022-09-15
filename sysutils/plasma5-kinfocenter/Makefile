@@ -30,10 +30,6 @@ USE_XORG=	ice sm x11 xext
 # TODO	-- this should be handled correctly...
 LDFLAGS+=-ldevinfo
 
-post-extract:
-	# File move not handled by patch
-	${MV} ${WRKSRC}/Modules/pci/kcm_pci.json ${WRKSRC}/Modules/pci/kcm_pci.json.cmake
-
 # install freebsd-logo and distrorc
 post-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}/images

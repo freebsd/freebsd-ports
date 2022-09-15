@@ -17764,3 +17764,4 @@ x11-toolkits/libsexy||2023-01-30|Depends on EOLed gtk+20, not depended on in the
 x11-toolkits/gtkmathview||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
 x11-toolkits/vdk||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
 audio/libgpod-sharp||2023-02-01|Depends on EOLed gtk+20, not depended on in the ports tree
+x11/plasma5-kwayland-server|x11-wm/plasma5-kwin|2023-12-31|Reintegrated into x11-wm/plasma5-kwin

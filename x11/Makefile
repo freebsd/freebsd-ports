@@ -294,10 +294,10 @@
     SUBDIR += plasma5-kgamma5
     SUBDIR += plasma5-kscreen
     SUBDIR += plasma5-kwayland-integration
-    SUBDIR += plasma5-kwayland-server
     SUBDIR += plasma5-layer-shell-qt
     SUBDIR += plasma5-libkscreen
     SUBDIR += plasma5-plasma
+    SUBDIR += plasma5-plasma-bigscreen
     SUBDIR += plasma5-plasma-desktop
     SUBDIR += plasma5-plasma-integration
     SUBDIR += plasma5-plasma-workspace
