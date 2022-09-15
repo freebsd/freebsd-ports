@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
+--- CMakeLists.txt.orig	2022-07-06 21:36:34 UTC
 +++ CMakeLists.txt
-@@ -1665,7 +1665,7 @@ IF(LINUX AND KNOWN_CUSTOM_LIBRARIES)
+@@ -1819,7 +1819,7 @@ IF(LINUX AND KNOWN_CUSTOM_LIBRARIES)
  ENDIF()
  
  IF(WITH_AUTHENTICATION_LDAP)
@@ -9,23 +9,35 @@
      # LDAP / SASL / KERBEROS / SSL must all be "system" or "custom", not a mix.
      IF(WITH_LDAP STREQUAL "system" OR
          WITH_SASL STREQUAL "system" OR
-@@ -1714,10 +1714,10 @@ IF(WITH_AUTHENTICATION_KERBEROS)
+@@ -1868,6 +1868,7 @@ IF(WITH_AUTHENTICATION_KERBEROS)
    ENDIF()
  ENDIF()
  
--# Add system/bundled editline.
--MYSQL_CHECK_EDITLINE()
- # Add libevent
--MYSQL_CHECK_LIBEVENT()
++IF(NOT WITHOUT_TOOLS)
+ # Add system/bundled editline.
+ MYSQL_CHECK_EDITLINE()
+ SET(EDITLINE_WARN_GIVEN)
+@@ -1878,7 +1879,9 @@ IF(EDITLINE_WARN_GIVEN)
+     "You can use -DWITH_EDITLINE=bundled instead."
+     )
+ ENDIF()
++ENDIF(NOT WITHOUT_TOOLS)
+ 
 +IF(NOT WITHOUT_SERVER)
-+  MYSQL_CHECK_LIBEVENT()
-+ENDIF()
+ # Add libevent
+ MYSQL_CHECK_LIBEVENT()
+ SET(LIBEVENT_WARN_GIVEN)
+@@ -1889,6 +1892,7 @@ IF(LIBEVENT_WARN_GIVEN)
+     "You can use -DWITH_LIBEVENT=bundled instead."
+     )
+ ENDIF()
++ENDIF(NOT WITHOUT_SERVER)
+ 
  # Add lz4 library
  MYSQL_CHECK_LZ4()
- # Add icu library
-@@ -1917,7 +1917,9 @@ ADD_CUSTOM_TARGET(plugin_all)
- # Utility target to build every target added with MYSQL_ADD_COMPONENT.
- ADD_CUSTOM_TARGET(component_all)
+@@ -2142,7 +2146,9 @@ ADD_CUSTOM_TARGET(clang_tidy_prerequisites)
+ ADD_DEPENDENCIES(clang_tidy_prerequisites protobuf_generated_all)
+ ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
  
 -ADD_SUBDIRECTORY(include)
 +IF(NOT WITHOUT_CLIENTLIBS)
@@ -34,14 +46,12 @@
  ADD_SUBDIRECTORY(strings)
  ADD_SUBDIRECTORY(vio)
  ADD_SUBDIRECTORY(mysys)
-@@ -1962,12 +1964,17 @@ IF(WITH_UNIT_TESTS)
+@@ -2187,12 +2193,15 @@ IF(WITH_UNIT_TESTS)
    ADD_SUBDIRECTORY(unittest/mytap/t)
  ENDIF()
  
 -ADD_SUBDIRECTORY(client)
 +IF(NOT WITHOUT_TOOLS)
-+  # Add system/bundled editline
-+  MYSQL_CHECK_EDITLINE()
 +  ADD_SUBDIRECTORY(client)
 +ENDIF(NOT WITHOUT_TOOLS)
 +
@@ -54,7 +64,7 @@
    ADD_SUBDIRECTORY(testclients)
    ADD_SUBDIRECTORY(sql)
  ENDIF()
-@@ -2020,11 +2027,11 @@ ENDIF()
+@@ -2247,11 +2256,11 @@ ENDIF()
  # scripts/mysql_config depends on client and server targets loaded above.
  # It is referenced by some of the directories below, so we insert it here.
  ADD_SUBDIRECTORY(scripts)
@@ -67,7 +77,7 @@
    IF(WITH_INTERNAL)
      ADD_SUBDIRECTORY(internal)
    ENDIF()
-@@ -2134,6 +2141,7 @@ IF(PACK_SEPARATE_COMPONENTS)
+@@ -2361,6 +2370,7 @@ IF(PACK_SEPARATE_COMPONENTS)
    SET(CPACK_COMPONENTS_GROUPING IGNORE)
  ENDIF()
  
@@ -75,7 +85,7 @@
  IF(UNIX)
    INSTALL(FILES
      Docs/mysql.info
-@@ -2168,6 +2176,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+@@ -2395,6 +2405,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
      PATTERN "sp-imp-spec.txt" EXCLUDE
      PATTERN "README.build" EXCLUDE
    )

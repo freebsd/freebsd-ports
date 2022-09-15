@@ -1,5 +1,5 @@
 PORTNAME?=		mysql
-PORTVERSION=		8.0.29
+PORTVERSION=		8.0.30
 PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
@@ -85,7 +85,6 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LZ4=system \
 		-DWITH_ICU=system \
 		-DWITH_CURL=system \
-		-DWITH_ZLIB=system \
 		-DWITH_ZSTD=system \
 		-DWITH_PROTOBUF=system \
 		-DWITH_SSL=system \
