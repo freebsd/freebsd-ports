@@ -6,7 +6,7 @@
      sources = [ "fonts.conf" ]
 -    outputs = [ "$root_out_dir/etc/fonts/{{source_file_part}}" ]
 +    if (is_freebsd) {
-+      outputs = [ "$root_out_dir/%%LOCALBASE%%/etc/fonts/{{source_file_part}}" ]
++      outputs = [ "$root_out_dir/usr/local/etc/fonts/{{source_file_part}}" ]
 +    } else {
 +      outputs = [ "$root_out_dir/etc/fonts/{{source_file_part}}" ]
 +    }

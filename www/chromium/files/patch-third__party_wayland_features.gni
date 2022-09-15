@@ -8,7 +8,7 @@
 -  system_wayland_scanner_path = "/usr/bin/wayland-scanner"
 +  assert(host_os == "linux" || host_os == "freebsd")
 +  if (is_bsd) {
-+    system_wayland_scanner_path = "%%LOCALBASE%%/bin/wayland-scanner"
++    system_wayland_scanner_path = "/usr/local/bin/wayland-scanner"
 +  } else {
 +    system_wayland_scanner_path = "/usr/bin/wayland-scanner"
 +  }

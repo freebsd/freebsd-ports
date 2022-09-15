@@ -87,7 +87,7 @@
 +        if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
 +          *result = FilePath(cpath);
 +        else
-+          *result = FilePath("%%LOCALBASE%%/chrome/chrome");
++          *result = FilePath("/usr/local/chrome/chrome");
 +        return true;
 +#if !BUILDFLAG(IS_AIX)
 +      }

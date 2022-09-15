@@ -5,7 +5,7 @@
        "SYSCONFDIR=\"/etc\"",
        "FALLBACK_CONFIG_DIRS=\"/etc/xdg\"",
 -      "FALLBACK_DATA_DIRS=\"/usr/local/share:/usr/share\"",
-+      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:%%LOCALBASE%%/share:/usr/share\"",
++      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:/usr/local/share:/usr/share\"",
      ]
    }
  }
