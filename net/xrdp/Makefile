@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.19
+DISTVERSION=	0.9.20
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -75,6 +75,10 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
+
+post-patch:
+	${REINPLACE_CMD} -e "s|^param=Xorg|param=${LOCALBASE}/libexec/Xorg|" \
+		${WRKSRC}/sesman/sesman.ini.in
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}
