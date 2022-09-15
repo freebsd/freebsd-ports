@@ -1,7 +1,6 @@
 PORTNAME=	diffcode
 DISTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	https://gitlab.com/LadySerenaKitty
 
 MAINTAINER=	jlhawkwell@ladyserenakitty.com
 COMMENT=	Progrssive differential cipher
