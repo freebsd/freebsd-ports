@@ -1,7 +1,6 @@
 PORTNAME=	hexcode
 DISTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	https://gitlab.com/LadySerenaKitty
 
 MAINTAINER=	jlhawkwell@ladyserenakitty.com
 COMMENT=	Easily convert between hex and data.
