@@ -43,4 +43,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/*.c ${STAGEDIR}${EXAMPLESDIR}
 
+# testunit fails: https://github.com/aws/s2n-tls/issues/3489
+
 .include <bsd.port.mk>
