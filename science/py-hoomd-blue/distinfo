@@ -1,6 +1,6 @@
-TIMESTAMP = 1662274709
-SHA256 (glotzerlab-hoomd-blue-v3.4.0_GH0.tar.gz) = 8104de10f46f18f65fdefe56b320773bd6f1526879d7d62f2b6d93e656782674
-SIZE (glotzerlab-hoomd-blue-v3.4.0_GH0.tar.gz) = 2814355
+TIMESTAMP = 1663294537
+SHA256 (glotzerlab-hoomd-blue-v3.5.0_GH0.tar.gz) = f082f2494636edb5ee1e26a93f75387bea224f52108163f47b0397115160cf98
+SIZE (glotzerlab-hoomd-blue-v3.5.0_GH0.tar.gz) = 2824590
 SHA256 (glotzerlab-upp11-0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360_GH0.tar.gz) = 759695139bddae1d8a7cd52c967b856d6debf28fb37ea177f78c4434e2b210a8
 SIZE (glotzerlab-upp11-0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360_GH0.tar.gz) = 21058
 SHA256 (glotzerlab-nano-signal-slot-34223a4a7e97f8e114ef007e5360cf7a71265da3_GH0.tar.gz) = d15030482c82d9e4a99c2f67d8ef23b33cc318dd48ac0f8e804c6d4750f27ff4
@@ -19,5 +19,5 @@ SHA256 (mphowardlab-neighbor-ba0f06869b766066a7068852fa3b8c5fa746f71f_GH0.tar.gz
 SIZE (mphowardlab-neighbor-ba0f06869b766066a7068852fa3b8c5fa746f71f_GH0.tar.gz) = 49039
 SHA256 (mphowardlab-hipper-b6da049a516ada03e4e1b66ca6b4c2c7c9668595_GH0.tar.gz) = c64a484884eaab3eb9fd8f7b27b144a7bfadfeab101e95d82bc2a6f7e4fb7cec
 SIZE (mphowardlab-hipper-b6da049a516ada03e4e1b66ca6b4c2c7c9668595_GH0.tar.gz) = 20228
-SHA256 (glotzerlab-hoomd-examples-15ba66f409e278b0f5d4e2ea8139fb52139beda3_GH0.tar.gz) = 3f3bd183e44affef9bc7b9bc23bff3b6e16adbcefd7db361619255498e96a648
-SIZE (glotzerlab-hoomd-examples-15ba66f409e278b0f5d4e2ea8139fb52139beda3_GH0.tar.gz) = 5736623
+SHA256 (glotzerlab-hoomd-examples-1eb694bdd7873217be61ad38febe144a0efed3b5_GH0.tar.gz) = f4618e11ee30b3fa968e537ec715baef28f4a58f3759a2ca92889e404b3b6dbf
+SIZE (glotzerlab-hoomd-examples-1eb694bdd7873217be61ad38febe144a0efed3b5_GH0.tar.gz) = 5736628
