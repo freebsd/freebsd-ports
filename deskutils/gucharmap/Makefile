@@ -1,11 +1,8 @@
 PORTNAME=	gucharmap
-PORTVERSION=	14.0.1
+PORTVERSION=	15.0.0
 CATEGORIES=	deskutils gnome
 #MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	a8ee037f8cf1.patch:-p1 # meson 0.61
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Unicode/ISO10646 character map and font viewer
@@ -31,11 +28,9 @@ MESON_ARGS=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	GNOME
-GL_COMMIT=	3efb47b75b61d7c6db7e48d72f7aa8c4d4365011
+GL_COMMIT=	36de4b20deb47bccd8434e36dcc48db8b9460e47
 
 GLIB_SCHEMAS=	org.gnome.Charmap.gschema.xml
-
-PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
