@@ -50,6 +50,7 @@ bin/llvm-readelf-devel
 bin/llvm-readobj-devel
 bin/llvm-reduce-devel
 bin/llvm-remark-size-diff-devel
+bin/llvm-remarkutil-devel
 bin/llvm-rtdyld-devel
 bin/llvm-sim-devel
 bin/llvm-size-devel
@@ -259,6 +260,7 @@ llvm-devel/bin/llvm-readelf
 llvm-devel/bin/llvm-readobj
 llvm-devel/bin/llvm-reduce
 llvm-devel/bin/llvm-remark-size-diff
+llvm-devel/bin/llvm-remarkutil
 llvm-devel/bin/llvm-rtdyld
 llvm-devel/bin/llvm-sim
 llvm-devel/bin/llvm-size
@@ -751,6 +753,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/AST/NSAPI.h
 %%CLANG%%llvm-devel/include/clang/AST/NestedNameSpecifier.h
 %%CLANG%%llvm-devel/include/clang/AST/NonTrivialTypeVisitor.h
+%%CLANG%%llvm-devel/include/clang/AST/ODRDiagsEmitter.h
 %%CLANG%%llvm-devel/include/clang/AST/ODRHash.h
 %%CLANG%%llvm-devel/include/clang/AST/OSLog.h
 %%CLANG%%llvm-devel/include/clang/AST/OpenMPClause.h
@@ -2452,7 +2455,6 @@ llvm-devel/include/llvm/CodeGen/DebugHandlerBase.h
 llvm-devel/include/llvm/CodeGen/DwarfStringPoolEntry.h
 llvm-devel/include/llvm/CodeGen/EdgeBundles.h
 llvm-devel/include/llvm/CodeGen/ExecutionDomainFix.h
-llvm-devel/include/llvm/CodeGen/ExpandLargeDivRem.h
 llvm-devel/include/llvm/CodeGen/ExpandReductions.h
 llvm-devel/include/llvm/CodeGen/ExpandVectorPredication.h
 llvm-devel/include/llvm/CodeGen/FastISel.h
@@ -3081,6 +3083,8 @@ llvm-devel/include/llvm/IR/IntrinsicsDirectX.td
 llvm-devel/include/llvm/IR/IntrinsicsHexagon.h
 llvm-devel/include/llvm/IR/IntrinsicsHexagon.td
 llvm-devel/include/llvm/IR/IntrinsicsHexagonDep.td
+llvm-devel/include/llvm/IR/IntrinsicsLoongArch.h
+llvm-devel/include/llvm/IR/IntrinsicsLoongArch.td
 llvm-devel/include/llvm/IR/IntrinsicsMips.h
 llvm-devel/include/llvm/IR/IntrinsicsMips.td
 llvm-devel/include/llvm/IR/IntrinsicsNVPTX.h
@@ -3708,6 +3712,7 @@ llvm-devel/include/llvm/Transforms/Instrumentation/MemProfiler.h
 llvm-devel/include/llvm/Transforms/Instrumentation/MemorySanitizer.h
 llvm-devel/include/llvm/Transforms/Instrumentation/PGOInstrumentation.h
 llvm-devel/include/llvm/Transforms/Instrumentation/PoisonChecking.h
+llvm-devel/include/llvm/Transforms/Instrumentation/SanitizerBinaryMetadata.h
 llvm-devel/include/llvm/Transforms/Instrumentation/SanitizerCoverage.h
 llvm-devel/include/llvm/Transforms/Instrumentation/ThreadSanitizer.h
 llvm-devel/include/llvm/Transforms/ObjCARC.h
@@ -4106,6 +4111,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Arithmetic/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Arithmetic/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Arithmetic/Transforms/Passes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Arithmetic/Transforms/WideIntEmulationConverter.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Arithmetic/Utils/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmNeon/ArmNeon.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmNeon/ArmNeon.h.inc
@@ -4595,6 +4601,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tensor/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tensor/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tensor/Transforms/Passes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Tensor/Transforms/TransformUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tensor/Transforms/Transforms.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tensor/Utils/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/IR/TosaAttributes.cpp.inc
@@ -4651,6 +4658,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOps.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOps.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOpsAttrDefs.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOpsAttrDefs.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOpsDialect.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/IR/VectorOpsEnums.cpp.inc
@@ -4959,7 +4968,6 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/Transforms.capi.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Transforms/Transforms.capi.h.inc
 %%MLIR%%llvm-devel/include/mlir/Transforms/ViewOpGraph.h
-%%OPENMP%%llvm-devel/include/ompt-multiplex.h
 %%GOLD%%llvm-devel/lib/LLVMgold.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
@@ -5075,6 +5083,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/nmmintrin.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/omp-tools.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/omp.h
+%%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ompt-multiplex.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ompt.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/opencl-c-base.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/opencl-c.h

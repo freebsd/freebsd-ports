@@ -131,8 +131,8 @@ CLANG_USE=		PERL5=run
 .endif
 COMPILER_RT_DESC=	Sanitizer libraries
 COMPILER_RT_IMPLIES=	CLANG
-COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
-			${_COMPILER_RT_IGNORELISTS:S|^|${_CRTBLDIR}/|}
+COMPILER_RT_PLIST_FILES=${COMPILER_RT_LIBS} \
+			${COMPILER_RT_IGNORELISTS:S|^|${_CRTBLDIR}/|}
 DOCS_PORTDOCS=		llvm
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
@@ -304,179 +304,46 @@ CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
-_CRTLIBDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/lib/freebsd
-_CRTBLDIR=	${LLVM_DIR}/lib/clang/%%LLVM_RELEASE%%/share
-_COMPILER_RT_LIBS_i386= \
-	libclang_rt.asan-i386.a \
-	libclang_rt.asan-i386.so \
-	libclang_rt.asan-preinit-i386.a \
-	libclang_rt.asan_static-i386.a \
-	libclang_rt.asan_cxx-i386.a \
-	libclang_rt.builtins-i386.a \
-	libclang_rt.cfi-i386.a \
-	libclang_rt.cfi_diag-i386.a \
-	libclang_rt.profile-i386.a \
-	libclang_rt.safestack-i386.a \
-	libclang_rt.stats-i386.a \
-	libclang_rt.stats_client-i386.a \
-	libclang_rt.ubsan_minimal-i386.a \
-	libclang_rt.ubsan_minimal-i386.so \
-	libclang_rt.ubsan_standalone-i386.a \
-	libclang_rt.ubsan_standalone-i386.so \
-	libclang_rt.ubsan_standalone_cxx-i386.a
 .if ${ARCH} == "amd64"
-_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
-_COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
-_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
-_COMPILER_RT_LIBS= \
-	libclang_rt.asan-preinit-x86_64.a \
-	libclang_rt.asan_static-x86_64.a \
-	libclang_rt.asan-x86_64.a \
-	libclang_rt.asan-x86_64.a.syms \
-	libclang_rt.asan-x86_64.so \
-	libclang_rt.asan_cxx-x86_64.a \
-	libclang_rt.asan_cxx-x86_64.a.syms \
-	libclang_rt.builtins-x86_64.a \
-	libclang_rt.cfi-x86_64.a \
-	libclang_rt.cfi_diag-x86_64.a \
-	libclang_rt.dd-x86_64.a \
-	libclang_rt.dyndd-x86_64.so \
-	libclang_rt.fuzzer-x86_64.a \
-	libclang_rt.fuzzer_interceptors-x86_64.a \
-	libclang_rt.fuzzer_no_main-x86_64.a \
-	libclang_rt.msan-x86_64.a \
-	libclang_rt.msan-x86_64.a.syms \
-	libclang_rt.msan_cxx-x86_64.a \
-	libclang_rt.msan_cxx-x86_64.a.syms \
-	libclang_rt.xray-basic-x86_64.a \
-	libclang_rt.xray-fdr-x86_64.a \
-	libclang_rt.xray-profiling-x86_64.a \
-	libclang_rt.xray-x86_64.a \
-	libclang_rt.orc-x86_64.a \
-	libclang_rt.profile-x86_64.a \
-	libclang_rt.safestack-x86_64.a \
-	libclang_rt.stats-x86_64.a \
-	libclang_rt.stats_client-x86_64.a \
-	libclang_rt.tsan-x86_64.a \
-	libclang_rt.tsan-x86_64.a.syms \
-	libclang_rt.tsan-x86_64.so \
-	libclang_rt.tsan_cxx-x86_64.a \
-	libclang_rt.tsan_cxx-x86_64.a.syms \
-	libclang_rt.ubsan_minimal-x86_64.a \
-	libclang_rt.ubsan_minimal-x86_64.a.syms \
-	libclang_rt.ubsan_minimal-x86_64.so \
-	libclang_rt.ubsan_standalone-x86_64.a \
-	libclang_rt.ubsan_standalone-x86_64.a.syms \
-	libclang_rt.ubsan_standalone-x86_64.so \
-	libclang_rt.ubsan_standalone_cxx-x86_64.a \
-	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
+COMPILER_RT_ARCHS=		x86_64
+COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+COMPILER_RT_IGNORELISTS+=	cfi_ignorelist.txt
+COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .if exists(/usr/lib32/libc.so.7)
-_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+COMPILER_RT_ARCHS+=		i386
 .endif
 .elif ${ARCH} == "i386"
-_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
-_COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
-_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+COMPILER_RT_ARCHS=		i386
+COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+COMPILER_RT_IGNORELISTS+=	cfi_ignorelist.txt
 .elif ${ARCH} == "powerpc"
-_COMPILER_RT_LIBS= \
-	libclang_rt.builtins-powerpc.a \
-	libclang_rt.profile-powerpc.a
+COMPILER_RT_ARCHS=		powerpc
 .elif ${ARCH} == "powerpc64"
-_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
-_COMPILER_RT_LIBS= \
-	libclang_rt.asan-powerpc64.a \
-	libclang_rt.asan-powerpc64.a.syms \
-	libclang_rt.asan-powerpc64.so \
-	libclang_rt.asan-preinit-powerpc64.a \
-	libclang_rt.asan_cxx-powerpc64.a \
-	libclang_rt.asan_cxx-powerpc64.a.syms \
-	libclang_rt.asan_static-powerpc64.a \
-	libclang_rt.builtins-powerpc64.a \
-	libclang_rt.msan-powerpc64.a \
-	libclang_rt.msan-powerpc64.a.syms \
-	libclang_rt.msan_cxx-powerpc64.a \
-	libclang_rt.msan_cxx-powerpc64.a.syms \
-	libclang_rt.profile-powerpc64.a \
-	libclang_rt.stats-powerpc64.a \
-	libclang_rt.stats_client-powerpc64.a \
-	libclang_rt.tsan-powerpc64.a \
-	libclang_rt.tsan-powerpc64.a.syms \
-	libclang_rt.tsan-powerpc64.so \
-	libclang_rt.tsan_cxx-powerpc64.a \
-	libclang_rt.tsan_cxx-powerpc64.a.syms \
-	libclang_rt.ubsan_minimal-powerpc64.a \
-	libclang_rt.ubsan_minimal-powerpc64.a.syms \
-	libclang_rt.ubsan_minimal-powerpc64.so \
-	libclang_rt.ubsan_standalone-powerpc64.a \
-	libclang_rt.ubsan_standalone-powerpc64.a.syms \
-	libclang_rt.ubsan_standalone-powerpc64.so \
-	libclang_rt.ubsan_standalone_cxx-powerpc64.a \
-	libclang_rt.ubsan_standalone_cxx-powerpc64.a.syms
+COMPILER_RT_ARCHS=		powerpc64
 .if exists(/usr/lib32/libc.so.7)
-_COMPILER_RT_LIBS+= \
-	libclang_rt.builtins-powerpc.a \
-	libclang_rt.profile-powerpc.a
+COMPILER_RT_ARCHS+=		powerpc
 .endif
+COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .elif ${ARCH} == "powerpc64le"
-_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
-_COMPILER_RT_LIBS= \
-	libclang_rt.asan-powerpc64le.a \
-	libclang_rt.asan-powerpc64le.a.syms \
-	libclang_rt.asan-powerpc64le.so \
-	libclang_rt.asan-preinit-powerpc64le.a \
-	libclang_rt.asan_cxx-powerpc64le.a \
-	libclang_rt.asan_cxx-powerpc64le.a.syms \
-	libclang_rt.asan_static-powerpc64le.a \
-	libclang_rt.builtins-powerpc64le.a \
-	libclang_rt.msan-powerpc64le.a \
-	libclang_rt.msan-powerpc64le.a.syms \
-	libclang_rt.msan_cxx-powerpc64le.a \
-	libclang_rt.msan_cxx-powerpc64le.a.syms \
-	libclang_rt.profile-powerpc64le.a \
-	libclang_rt.stats-powerpc64le.a \
-	libclang_rt.stats_client-powerpc64le.a \
-	libclang_rt.tsan-powerpc64le.a \
-	libclang_rt.tsan-powerpc64le.a.syms \
-	libclang_rt.tsan-powerpc64le.so \
-	libclang_rt.tsan_cxx-powerpc64le.a \
-	libclang_rt.tsan_cxx-powerpc64le.a.syms \
-	libclang_rt.ubsan_minimal-powerpc64le.a \
-	libclang_rt.ubsan_minimal-powerpc64le.a.syms \
-	libclang_rt.ubsan_minimal-powerpc64le.so \
-	libclang_rt.ubsan_standalone-powerpc64le.a \
-	libclang_rt.ubsan_standalone-powerpc64le.a.syms \
-	libclang_rt.ubsan_standalone-powerpc64le.so \
-	libclang_rt.ubsan_standalone_cxx-powerpc64le.a \
-	libclang_rt.ubsan_standalone_cxx-powerpc64le.a.syms \
-	libclang_rt.xray-basic-powerpc64le.a \
-	libclang_rt.xray-fdr-powerpc64le.a \
-	libclang_rt.xray-powerpc64le.a \
-	libclang_rt.xray-profiling-powerpc64le.a
+COMPILER_RT_ARCHS=		powerpc64le
+COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .elif ${ARCH} == "riscv64"
-_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-_COMPILER_RT_LIBS= \
-	libclang_rt.asan-preinit-riscv64.a \
-	libclang_rt.asan-riscv64.a \
-	libclang_rt.asan-riscv64.a.syms \
-	libclang_rt.asan-riscv64.so \
-	libclang_rt.asan_cxx-riscv64.a \
-	libclang_rt.asan_cxx-riscv64.a.syms \
-	libclang_rt.asan_static-riscv64.a \
-	libclang_rt.builtins-riscv64.a \
-	libclang_rt.profile-riscv64.a \
-	libclang_rt.stats-riscv64.a \
-	libclang_rt.stats_client-riscv64.a \
-	libclang_rt.ubsan_minimal-riscv64.a \
-	libclang_rt.ubsan_minimal-riscv64.a.syms \
-	libclang_rt.ubsan_minimal-riscv64.so \
-	libclang_rt.ubsan_standalone-riscv64.a \
-	libclang_rt.ubsan_standalone-riscv64.a.syms \
-	libclang_rt.ubsan_standalone-riscv64.so \
-	libclang_rt.ubsan_standalone_cxx-riscv64.a \
-	libclang_rt.ubsan_standalone_cxx-riscv64.a.syms
+COMPILER_RT_ARCHS=		riscv64
+COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
 .endif
+
+_CRTBASEDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}
+_CRTBLDIR=	${_CRTBASEDIR}/share
+_CRTLIBDIR=	${_CRTBASEDIR}/lib
+
+.include "Makefile.RUNTIMES"
+
+COMPILER_RT_LIBS=
+.for CRT_ARCH in ${COMPILER_RT_ARCHS}
+COMPILER_RT_LIBS:= ${COMPILER_RT_LIBS} ${COMPILER_RT_LIBS_${CRT_ARCH}:S|^|${_CRTLIBDIR}/${CRT_ARCH}-portbld-${OPSYS:tl}${OSREL}/|}
+.endfor
 
 # Comment out plist entries for unsupported options.
 .for opt in ${_ALL_OPTIONS}
@@ -552,7 +419,7 @@ post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
-.if ${SNAPDATE} == 20220906
+.if ${SNAPDATE} == 20220915
 	# expected to be temporary
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/flang-new \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/flang
@@ -620,7 +487,7 @@ build-plist:
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
 	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a$$/) {printf "%%%%STATIC_LIBS%%%%"} \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /${OPENMP_PATTERN}|${EXTRAS_PATTERN}|${COMPILER_RT_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /${OPENMP_PATTERN}|${EXTRAS_PATTERN}|${COMPILER_RT_PATTERN}|lib[a-z]*_rt/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
@@ -630,7 +497,7 @@ build-plist:
 	    if ($$0 ~ /(${MLIR_PATTERN})/) {printf "%%%%MLIR%%%%"} \
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
-	    if ($$0 !~ /libclang_rt/) {print} \
+	    if ($$0 !~ /lib[a-z]*_rt/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
