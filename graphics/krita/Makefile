@@ -1,6 +1,5 @@
 PORTNAME=	krita
-DISTVERSION=	5.1.0
-PORTREVISION=	2
+DISTVERSION=	5.1.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -13,6 +12,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libheif>=1.12.0:graphics/libheif
+BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_aarch64=	xsimd>=8.1:devel/xsimd
+BUILD_DEPENDS_amd64=	xsimd>=8.1:devel/xsimd
+BUILD_DEPENDS_i386=	xsimd>=8.1:devel/xsimd
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenColorIO.so:graphics/opencolorio \
 		libX11.so:x11/libX11 \
@@ -23,6 +26,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		libheif.so:graphics/libheif \
+		libturbojpeg.so:graphics/libjpeg-turbo \
 		libjxl.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		libmypaint.so:graphics/libmypaint \
@@ -39,7 +43,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 # Disable ninja generator for now (with gmake), until the duplicate test targets are resolved upstream.
 USES=		cmake:noninja gmake compiler:c++11-lib desktop-file-utils \
 		eigen:3 gettext jpeg kde:5 localbase:ldflags pkgconfig \
-		python:3.4+ qt:5 shared-mime-info tar:xz xorg
+		python:3.7+ qt:5 shared-mime-info tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
