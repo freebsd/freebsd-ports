@@ -5,6 +5,7 @@ CATEGORIES=	sysutils wayland
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
+WWW=		https://github.com/r-c-f/waynergy
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
