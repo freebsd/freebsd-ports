@@ -1,5 +1,5 @@
 PORTNAME=	puzzles
-PORTVERSION=	20220802
+PORTVERSION=	20220913
 CATEGORIES=	games
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
 		https://mirror.amdmi3.ru/distfiles/
@@ -13,13 +13,17 @@ WWW=		https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-COMMITHASH=	8399cff
+COMMITHASH=	27dd36e
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6-nox11
+BUILD_DEPENDS=	convert:graphics/ImageMagick6-nox11 \
+		halibut:textproc/halibut
 
 USES=		cmake gnome perl5 pkgconfig
 USE_PERL5=	build
 CMAKE_ARGS=	-DNAME_PREFIX:STRING=sgt-
+
+DATADIR=	${PREFIX}/share/sgt-puzzles
+PORTDATA=	*
 
 OPTIONS_SINGLE=	GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
