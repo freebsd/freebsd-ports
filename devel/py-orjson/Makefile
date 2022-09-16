@@ -57,6 +57,8 @@ CARGO_TARGET_DIR=${WRKSRC}/target
 MAKE_ENV=	${CARGO_ENV}
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+.include <bsd.port.options.mk>
+
 # This is to prevent Mk/Uses/python.mk do-configure target from firing.
 do-configure:
 	@${ECHO} 'No configure'
