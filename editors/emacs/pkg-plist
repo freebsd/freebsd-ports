@@ -3652,6 +3652,8 @@ share/metainfo/emacs.metainfo.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/common-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/fbterm.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/fbterm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.el.gz
