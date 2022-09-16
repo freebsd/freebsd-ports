@@ -1,3 +1,34 @@
+  <vuln vid="aeb4c85b-3600-11ed-b52d-589cfc007716">
+    <topic>puppetdb -- Potential SQL injection</topic>
+    <affects>
+      <package>
+	<name>puppetdb6</name>
+	<range><lt>6.22.1</lt></range>
+      </package>
+      <package>
+	<name>puppetdb7</name>
+	<range><lt>7.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Puppet reports:</p>
+	<blockquote cite="https://puppet.com/docs/puppetdb/7/release_notes.html#puppetdb-7111">
+	  <p>The org.postgresql/postgresql driver has been updated to version 42.4.1 to address CVE-2022-31197, which is an SQL injection risk that according to the CVE report, can only be exploited if an attacker controls the database to the extent that they can adjust relevant tables to have "malicious" column names.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31197</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-31197</url>
+      <url>https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-r38f-c4h4-hqq2</url>
+    </references>
+    <dates>
+      <discovery>2022-08-03</discovery>
+      <entry>2022-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b59847e0-346d-11ed-8fe9-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
