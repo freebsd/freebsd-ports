@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Fast, correct JSON library for Python
+WWW=		https://pypi.org/project/orjson/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

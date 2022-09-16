@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Nintendo DS emulator
+WWW=		WWW: https://melonds.kuribo64.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

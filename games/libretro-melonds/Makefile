@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Port of melonDS to libretro
+WWW=		https://github.com/libretro/melonDS/
 
 LICENSE=	GPLv3
 
