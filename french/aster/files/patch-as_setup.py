@@ -1,6 +1,6 @@
 --- as_setup.py.orig	2020-10-26 15:54:27 UTC
 +++ as_setup.py
-@@ -45,6 +45,8 @@ import tarfile
+@@ -45,6 +45,8 @@ import pprint
  import compileall
  import imp
  import pprint
@@ -17,7 +17,7 @@
        self._print(self._fmt_title % _('Extraction'))
        if kargs.get('external')!=None:
           self._call_external(**kargs)
-@@ -518,6 +521,88 @@ class SETUP:
+@@ -518,6 +521,96 @@ class SETUP:
        os.chdir(prev)
        if iextr_as:
           self.Clean(to_delete=path)
@@ -30,6 +30,14 @@
 +         nl = ligne.find("uselib_store='SYS', lib='dl'")
 +         if nl > 0:
 +            ligne =ligne.replace("self.check_cc", "# self.check_cc")
++         sys.stdout.write(ligne)
++      file2patch = os.path.join(self.workdir, self.content, 'waftools/med.py')
++      self._print('FreeBSD patch: use hdf5-110 ' + file2patch)
++      for ligne in fileinput.input(file2patch, inplace=1):
++         nl = 0
++         nl = ligne.find("self.env.INCLUDEDIR, 'hdf5'")
++         if nl > 0:
++            ligne =ligne.replace("'hdf5'", "'hdf5-110'")
 +         sys.stdout.write(ligne)
 + #     file2patch = os.path.join(self.workdir, self.content, 'bibcxx/wscript')
 + #     self._print('FreeBSD patch: explicit link with libc++ required since Gcc 4.9 => modify ' + file2patch)
