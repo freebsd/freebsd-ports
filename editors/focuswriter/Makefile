@@ -1,5 +1,6 @@
 PORTNAME=	focuswriter
 DISTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
@@ -19,9 +20,12 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv pkgconfig \
 USE_GL=		gl
 USE_QT=		base multimedia tools:build
 
-PORTDATA=	*
-PORTDOCS=	CREDITS ChangeLog README
-OPTIONS_DEFINE=	DOCS
+PORTDATA=		*
+PORTDOCS=		CREDITS ChangeLog README
+OPTIONS_DEFINE=		DOCS LTO
+OPTIONS_DEFAULT=	LTO
+
+LTO_CMAKE_BOOL=	ENABLE_LINK_TIME_OPTIMIZATION
 
 post-install-DOCS-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
