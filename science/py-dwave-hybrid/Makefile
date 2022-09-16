@@ -1,5 +1,5 @@
 PORTNAME=	dwave-hybrid
-DISTVERSION=	0.6.8
+DISTVERSION=	0.6.9
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
