@@ -1,0 +1,9 @@
+[
+{ type: upgrade
+  maximum_version: 2.1.54
+  message: <<EOD
+The V1 scheduler is no longer supported.  If you have not yet updated to V2 or
+V3, you will be prompted to update when you attempt to review cards in 2.1.50+.
+EOD
+}
+]

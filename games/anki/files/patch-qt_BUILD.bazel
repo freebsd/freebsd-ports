@@ -1,24 +1,23 @@
 Avoid loading of "requirements.bzl" because it requires "pip_import" which
 is already disabled in "defs.bzl".
 
---- qt/BUILD.bazel.orig	2021-05-04 05:04:50 UTC
+--- qt/BUILD.bazel.orig	2022-05-26 02:51:51 UTC
 +++ qt/BUILD.bazel
-@@ -1,5 +1,4 @@
+@@ -1,5 +1,4 @@ load("@rules_python//python:defs.bzl", "py_binary", "p
  load("@rules_python//python:defs.bzl", "py_binary", "py_test")
 -load("@py_deps//:requirements.bzl", "requirement")
  
  py_binary(
      name = "genhooks_gui",
-@@ -10,8 +9,6 @@ py_binary(
+@@ -10,7 +9,6 @@ py_binary(
      visibility = [":__subpackages__"],
      deps = [
          "//pylib/tools:hookslib",
 -        requirement("black"),
--        requirement("stringcase"),
+         "//pylib/anki/_vendor:stringcase",
      ],
  )
- 
-@@ -32,8 +29,6 @@ py_test(
+@@ -32,8 +30,6 @@ py_test(
      deps = [
          "//pylib/anki",
          "//qt/aqt:aqt_without_data",
@@ -27,23 +26,23 @@ is already disabled in "defs.bzl".
      ],
  )
  
-@@ -56,7 +51,6 @@ py_test(
+@@ -60,7 +56,6 @@ py_test(
          "//pylib/anki",
          "//qt/aqt:aqt_without_data",
-         "@pyqt5//:pkg",
+         "@pyqt6",
 -        requirement("mypy"),
      ],
  )
  
-@@ -76,7 +70,6 @@ py_test(
+@@ -80,7 +75,6 @@ py_test(
      deps = [
          "//pylib/anki",
          "//qt/aqt:aqt_without_data",
 -        requirement("pylint"),
-         "@pyqt5//:pkg",
+         "@pyqt6",
      ],
  )
-@@ -93,8 +86,6 @@ py_test(
+@@ -97,8 +91,6 @@ py_test(
      main = "tests/run_format.py",
      deps = [
          "//qt/aqt:aqt_without_data",
@@ -52,7 +51,7 @@ is already disabled in "defs.bzl".
      ],
  )
  
-@@ -111,8 +102,6 @@ py_binary(
+@@ -115,8 +107,6 @@ py_binary(
      main = "tests/run_format.py",
      tags = ["manual"],
      deps = [
@@ -61,7 +60,7 @@ is already disabled in "defs.bzl".
      ],
  )
  
-@@ -134,6 +123,5 @@ py_binary(
+@@ -191,6 +181,5 @@ py_binary(
      srcs = ["tools/profile.py"],
      tags = ["manual"],
      deps = [

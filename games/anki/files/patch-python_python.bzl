@@ -1,9 +1,9 @@
 Since Bazel 4.2.0 bootstrapping Python stub scripts are prepended with
 a "Shebang" expression.
 
---- python.bzl.orig	2021-08-20 19:05:37 UTC
-+++ python.bzl
-@@ -27,6 +27,7 @@ py_runtime(
+--- python/python.bzl.orig	2022-07-10 21:03:57 UTC
++++ python/python.bzl
+@@ -77,6 +77,7 @@ py_runtime(
      name = "python_runtime",
      interpreter_path = "{path}",
      python_version = "PY3",

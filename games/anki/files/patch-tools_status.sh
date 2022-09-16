@@ -1,7 +1,7 @@
 Use _MY_BUILDHASH which is defined in the Port's Makefile
 
---- scripts/status.sh.orig	2021-02-15 17:35:54 UTC
-+++ scripts/status.sh
+--- tools/status.sh.orig	2022-06-05 15:45:44 UTC
++++ tools/status.sh
 @@ -1,3 +1,3 @@
  #!/bin/bash
  
