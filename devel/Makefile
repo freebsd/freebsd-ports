@@ -714,6 +714,7 @@
     SUBDIR += gconf2
     SUBDIR += gconfmm26
     SUBDIR += gdb
+    SUBDIR += gdb-cheri
     SUBDIR += gdcm
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
