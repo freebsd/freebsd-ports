@@ -1,5 +1,5 @@
 PORTNAME=	mailfromd
-PORTVERSION=	8.13
+PORTVERSION=	8.14
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
