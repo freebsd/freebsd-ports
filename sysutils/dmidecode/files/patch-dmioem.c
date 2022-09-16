@@ -2,7 +2,24 @@ Obtained from:	https://git.savannah.gnu.org/cgit/dmidecode.git/commit/?id=a1a225
 
 --- dmioem.c.orig	2022-06-27 15:06:32 UTC
 +++ dmioem.c
-@@ -299,6 +299,96 @@ static void dmi_hp_203_devloc(const char *fname, unsig
+@@ -198,13 +198,14 @@ static void dmi_hp_240_attr(u64 defined, u64 set)
+ 	};
+ 	unsigned int i;
+ 
+-	pr_attr("Attributes Defined/Set", NULL);
++	pr_list_start("Attributes Defined/Set", NULL);
+ 	for (i = 0; i < ARRAY_SIZE(attributes); i++)
+ 	{
+ 		if (!(defined.l & (1UL << i)))
+ 			continue;
+-		pr_subattr(attributes[i], "%s", set.l & (1UL << i) ? "Yes" : "No");
++		pr_list_item("%s: %s", attributes[i], set.l & (1UL << i) ? "Yes" : "No");
+ 	}
++	pr_list_end();
+ }
+ 
+ static void dmi_hp_203_assoc_hndl(const char *fname, u16 num)
+@@ -299,6 +300,96 @@ static void dmi_hp_203_devloc(const char *fname, unsig
  	pr_attr(fname, "%s", str);
  }
  
@@ -99,7 +116,7 @@ Obtained from:	https://git.savannah.gnu.org/cgit/dmidecode.git/commit/?id=a1a225
  static void dmi_hp_238_loc(const char *fname, unsigned int code)
  {
  	const char *str = "Reserved";
-@@ -597,6 +687,36 @@ static int dmi_decode_hp(const struct dmi_header *h)
+@@ -597,6 +688,36 @@ static int dmi_decode_hp(const struct dmi_header *h)
  			pr_attr("Misc. Features", "0x%08x", feat);
  			pr_subattr("iCRU", "%s", feat & 0x0001 ? "Yes" : "No");
  			pr_subattr("UEFI", "%s", feat & 0x1400 ? "Yes" : "No");
