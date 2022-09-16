@@ -1,26 +1,25 @@
 PORTNAME=	libshumate
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.0.alpha.1
 CATEGORIES=	x11-toolkits geography
 MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	-shortwave
 
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	d4e23adc49e1.patch:-p1 # https://gitlab.gnome.org/GNOME/libshumate/-/merge_requests/136
-
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GTK4 widget to display maps
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	GTK4 widget to display maps (compatible with Shortwave)
 WWW=		https://wiki.gnome.org/Projects/libshumate
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		gettext gnome meson pkgconfig sqlite tar:xz vala:build
+USES=		gnome meson pkgconfig sqlite tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
 USE_LDCONFIG=	yes
 
-CONFLICTS=	libshumate-shortwave
+CONFLICTS=	libshumate
+PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=	DOCS
 
