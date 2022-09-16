@@ -1,7 +1,7 @@
-diff -r 5da2c0902e8e README
+diff -r a63d0a70afea README
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/README	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,232 @@
++++ b/README	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,230 @@
 +Experimental QUIC support for nginx
 +-----------------------------------
 +
@@ -24,15 +24,13 @@ diff -r 5da2c0902e8e README
 +
 +    The project code base is under the same BSD license as nginx.
 +
-+    The code is currently at a beta level of quality and should not
-+    be used in production.
++    The code is currently at a beta level of quality, however
++    there are several production deployments with it.
 +
-+    We are working on improving HTTP/3 support with the goal of
-+    integrating it to the main NGINX codebase.  Expect frequent
-+    updates of this code and don't rely on it for whatever purpose.
-+
-+    We'll be grateful for any feedback and code submissions however
-+    we don't bear any responsibilities for any issues with this code.
++    We are working on improving HTTP/3 support to integrate it into
++    the main NGINX codebase.  Thus, expect further updates of this code,
++    including features, changes in behaviour, bug fixes, and refactoring.
++    We'll be grateful for any feedback and code submissions.
 +
 +    You can always contact us via nginx-devel mailing list [3].
 +
@@ -234,9 +232,9 @@ diff -r 5da2c0902e8e README
 +    [6] https://nginx.org/en/docs/http/ngx_http_core_module.html#listen
 +    [7] https://nginx.org/en/docs/debugging_log.html
 +    [8] http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf
-diff -r 5da2c0902e8e auto/lib/openssl/conf
---- a/auto/lib/openssl/conf	Tue Jun 21 17:25:36 2022 +0300
-+++ b/auto/lib/openssl/conf	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea auto/lib/openssl/conf
+--- a/auto/lib/openssl/conf	Tue Jul 19 17:05:27 2022 +0300
++++ b/auto/lib/openssl/conf	Fri Sep 16 14:00:14 2022 -0400
 @@ -5,12 +5,16 @@
  
  if [ $OPENSSL != NONE ]; then
@@ -296,9 +294,9 @@ diff -r 5da2c0902e8e auto/lib/openssl/conf
 +        fi
 +    fi
  fi
-diff -r 5da2c0902e8e auto/make
---- a/auto/make	Tue Jun 21 17:25:36 2022 +0300
-+++ b/auto/make	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea auto/make
+--- a/auto/make	Tue Jul 19 17:05:27 2022 +0300
++++ b/auto/make	Fri Sep 16 14:00:14 2022 -0400
 @@ -6,9 +6,10 @@
  echo "creating $NGX_MAKEFILE"
  
@@ -312,9 +310,9 @@ diff -r 5da2c0902e8e auto/make
           $NGX_OBJS/src/mail \
           $NGX_OBJS/src/stream \
           $NGX_OBJS/src/misc
-diff -r 5da2c0902e8e auto/modules
---- a/auto/modules	Tue Jun 21 17:25:36 2022 +0300
-+++ b/auto/modules	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea auto/modules
+--- a/auto/modules	Tue Jul 19 17:05:27 2022 +0300
++++ b/auto/modules	Fri Sep 16 14:00:14 2022 -0400
 @@ -102,7 +102,7 @@ if [ $HTTP = YES ]; then
      fi
  
@@ -475,9 +473,9 @@ diff -r 5da2c0902e8e auto/modules
  if [ $USE_PCRE = YES ]; then
      ngx_module_type=CORE
      ngx_module_name=ngx_regex_module
-diff -r 5da2c0902e8e auto/options
---- a/auto/options	Tue Jun 21 17:25:36 2022 +0300
-+++ b/auto/options	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea auto/options
+--- a/auto/options	Tue Jul 19 17:05:27 2022 +0300
++++ b/auto/options	Fri Sep 16 14:00:14 2022 -0400
 @@ -45,6 +45,8 @@ USE_THREADS=NO
  
  NGX_FILE_AIO=NO
@@ -565,9 +563,9 @@ diff -r 5da2c0902e8e auto/options
    --with-stream_realip_module        enable ngx_stream_realip_module
    --with-stream_geoip_module         enable ngx_stream_geoip_module
    --with-stream_geoip_module=dynamic enable dynamic ngx_stream_geoip_module
-diff -r 5da2c0902e8e auto/os/linux
---- a/auto/os/linux	Tue Jun 21 17:25:36 2022 +0300
-+++ b/auto/os/linux	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea auto/os/linux
+--- a/auto/os/linux	Tue Jul 19 17:05:27 2022 +0300
++++ b/auto/os/linux	Fri Sep 16 14:00:14 2022 -0400
 @@ -232,6 +232,50 @@ ngx_feature_test="struct crypt_data  cd;
  ngx_include="sys/vfs.h";     . auto/include
  
@@ -619,9 +617,9 @@ diff -r 5da2c0902e8e auto/os/linux
  # UDP segmentation offloading
  
  ngx_feature="UDP_SEGMENT"
-diff -r 5da2c0902e8e auto/sources
---- a/auto/sources	Tue Jun 21 17:25:36 2022 +0300
-+++ b/auto/sources	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea auto/sources
+--- a/auto/sources	Tue Jul 19 17:05:27 2022 +0300
++++ b/auto/sources	Fri Sep 16 14:00:14 2022 -0400
 @@ -83,7 +83,7 @@ CORE_SRCS="src/core/nginx.c \
  
  EVENT_MODULES="ngx_events_module ngx_event_core_module"
@@ -631,9 +629,9 @@ diff -r 5da2c0902e8e auto/sources
  
  EVENT_DEPS="src/event/ngx_event.h \
              src/event/ngx_event_timer.h \
-diff -r 5da2c0902e8e src/core/nginx.c
---- a/src/core/nginx.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/core/nginx.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/core/nginx.c
+--- a/src/core/nginx.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/core/nginx.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -680,6 +680,9 @@ ngx_exec_new_binary(ngx_cycle_t *cycle, 
  
      ls = cycle->listening.elts;
@@ -644,9 +642,9 @@ diff -r 5da2c0902e8e src/core/nginx.c
          p = ngx_sprintf(p, "%ud;", ls[i].fd);
      }
  
-diff -r 5da2c0902e8e src/core/ngx_bpf.c
+diff -r a63d0a70afea src/core/ngx_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/core/ngx_bpf.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,143 @@
 +
 +/*
@@ -791,9 +789,9 @@ diff -r 5da2c0902e8e src/core/ngx_bpf.c
 +
 +    return ngx_bpf(BPF_MAP_LOOKUP_ELEM, &attr, sizeof(attr));
 +}
-diff -r 5da2c0902e8e src/core/ngx_bpf.h
+diff -r a63d0a70afea src/core/ngx_bpf.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/core/ngx_bpf.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -838,9 +836,9 @@ diff -r 5da2c0902e8e src/core/ngx_bpf.h
 +int ngx_bpf_map_lookup(int fd, const void *key, void *value);
 +
 +#endif /* _NGX_BPF_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/core/ngx_connection.c
---- a/src/core/ngx_connection.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/core/ngx_connection.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/core/ngx_connection.c
+--- a/src/core/ngx_connection.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/core/ngx_connection.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -72,10 +72,6 @@ ngx_create_listening(ngx_conf_t *cf, str
  
      ngx_memcpy(ls->addr_text.data, text, len);
@@ -865,9 +863,9 @@ diff -r 5da2c0902e8e src/core/ngx_connection.c
          c = ls[i].connection;
  
          if (c) {
-diff -r 5da2c0902e8e src/core/ngx_connection.h
---- a/src/core/ngx_connection.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/core/ngx_connection.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/core/ngx_connection.h
+--- a/src/core/ngx_connection.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/core/ngx_connection.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -73,6 +73,7 @@ struct ngx_listening_s {
      unsigned            reuseport:1;
      unsigned            add_reuseport:1;
@@ -887,9 +885,9 @@ diff -r 5da2c0902e8e src/core/ngx_connection.h
  #if (NGX_SSL || NGX_COMPAT)
      ngx_ssl_connection_t  *ssl;
  #endif
-diff -r 5da2c0902e8e src/core/ngx_core.h
---- a/src/core/ngx_core.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/core/ngx_core.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/core/ngx_core.h
+--- a/src/core/ngx_core.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/core/ngx_core.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -27,6 +27,7 @@ typedef struct ngx_connection_s      ngx
  typedef struct ngx_thread_task_s     ngx_thread_task_t;
  typedef struct ngx_ssl_s             ngx_ssl_t;
@@ -918,9 +916,9 @@ diff -r 5da2c0902e8e src/core/ngx_core.h
  
  
  #define LF     (u_char) '\n'
-diff -r 5da2c0902e8e src/event/ngx_event.c
---- a/src/event/ngx_event.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/event/ngx_event.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/event/ngx_event.c
+--- a/src/event/ngx_event.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/event/ngx_event.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -267,6 +267,18 @@ ngx_process_events_and_timers(ngx_cycle_
  ngx_int_t
  ngx_handle_read_event(ngx_event_t *rev, ngx_uint_t flags)
@@ -977,9 +975,9 @@ diff -r 5da2c0902e8e src/event/ngx_event.c
  
  #if (NGX_HAVE_REUSEPORT)
  
-diff -r 5da2c0902e8e src/event/ngx_event_openssl.c
---- a/src/event/ngx_event_openssl.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/event/ngx_event_openssl.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/event/ngx_event_openssl.c
+--- a/src/event/ngx_event_openssl.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/event/ngx_event_openssl.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -3149,6 +3149,13 @@ ngx_ssl_shutdown(ngx_connection_t *c)
      ngx_err_t   err;
      ngx_uint_t  tries;
@@ -994,9 +992,9 @@ diff -r 5da2c0902e8e src/event/ngx_event_openssl.c
      rc = NGX_OK;
  
      ngx_ssl_ocsp_cleanup(c);
-diff -r 5da2c0902e8e src/event/ngx_event_openssl.h
---- a/src/event/ngx_event_openssl.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/event/ngx_event_openssl.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/event/ngx_event_openssl.h
+--- a/src/event/ngx_event_openssl.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/event/ngx_event_openssl.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -24,6 +24,14 @@
  #include <openssl/engine.h>
  #endif
@@ -1012,9 +1010,9 @@ diff -r 5da2c0902e8e src/event/ngx_event_openssl.h
  #include <openssl/hmac.h>
  #ifndef OPENSSL_NO_OCSP
  #include <openssl/ocsp.h>
-diff -r 5da2c0902e8e src/event/ngx_event_udp.c
---- a/src/event/ngx_event_udp.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/event/ngx_event_udp.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/event/ngx_event_udp.c
+--- a/src/event/ngx_event_udp.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/event/ngx_event_udp.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -12,13 +12,6 @@
  
  #if !(NGX_WIN32)
@@ -1029,9 +1027,9 @@ diff -r 5da2c0902e8e src/event/ngx_event_udp.c
  static void ngx_close_accepted_udp_connection(ngx_connection_t *c);
  static ssize_t ngx_udp_shared_recv(ngx_connection_t *c, u_char *buf,
      size_t size);
-diff -r 5da2c0902e8e src/event/ngx_event_udp.h
---- a/src/event/ngx_event_udp.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/event/ngx_event_udp.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/event/ngx_event_udp.h
+--- a/src/event/ngx_event_udp.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/event/ngx_event_udp.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -23,6 +23,13 @@
  #endif
  
@@ -1046,9 +1044,9 @@ diff -r 5da2c0902e8e src/event/ngx_event_udp.h
  #if (NGX_HAVE_ADDRINFO_CMSG)
  
  typedef union {
-diff -r 5da2c0902e8e src/event/quic/bpf/bpfgen.sh
+diff -r a63d0a70afea src/event/quic/bpf/bpfgen.sh
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/bpfgen.sh	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/bpf/bpfgen.sh	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,113 @@
 +#!/bin/bash
 +
@@ -1163,9 +1161,9 @@ diff -r 5da2c0902e8e src/event/quic/bpf/bpfgen.sh
 +process_section
 +generate_tail
 +
-diff -r 5da2c0902e8e src/event/quic/bpf/makefile
+diff -r a63d0a70afea src/event/quic/bpf/makefile
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/makefile	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/bpf/makefile	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,30 @@
 +CFLAGS=-O2 -Wall
 +
@@ -1197,9 +1195,9 @@ diff -r 5da2c0902e8e src/event/quic/bpf/makefile
 +	llvm-objdump -S -no-show-raw-insn $<
 +
 +.DELETE_ON_ERROR:
-diff -r 5da2c0902e8e src/event/quic/bpf/ngx_quic_reuseport_helper.c
+diff -r a63d0a70afea src/event/quic/bpf/ngx_quic_reuseport_helper.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,140 @@
 +#include <errno.h>
 +#include <linux/string.h>
@@ -1341,9 +1339,9 @@ diff -r 5da2c0902e8e src/event/quic/bpf/ngx_quic_reuseport_helper.c
 +     */
 +    return SK_PASS;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,1459 @@
 +
 +/*
@@ -1585,7 +1583,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.c
 +        return NULL;
 +    }
 +
-+    qc->keys = ngx_quic_keys_new(c->pool);
++    qc->keys = ngx_pcalloc(c->pool, sizeof(ngx_quic_keys_t));
 +    if (qc->keys == NULL) {
 +        return NULL;
 +    }
@@ -1672,7 +1670,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.c
 +        }
 +    }
 +
-+    if (ngx_quic_keys_set_initial_secret(c->pool, qc->keys, &pkt->dcid)
++    if (ngx_quic_keys_set_initial_secret(qc->keys, &pkt->dcid, c->log)
 +        != NGX_OK)
 +    {
 +        return NULL;
@@ -2804,9 +2802,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.c
 +
 +    ngx_quic_finalize_connection(c, qc->shutdown_code, qc->shutdown_reason);
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,123 @@
 +
 +/*
@@ -2931,9 +2929,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.h
 +    ngx_str_t *secret, ngx_str_t *salt, u_char *out, size_t len);
 +
 +#endif /* _NGX_EVENT_QUIC_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ack.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_ack.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ack.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,1193 @@
 +
 +/*
@@ -4128,9 +4126,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ack.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ack.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_ack.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ack.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,30 @@
 +
 +/*
@@ -4162,9 +4160,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ack.h
 +    ngx_quic_send_ctx_t *ctx);
 +
 +#endif /* _NGX_EVENT_QUIC_ACK_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_bpf.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_bpf.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,657 @@
 +
 +/*
@@ -4823,9 +4821,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_bpf.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_bpf_code.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_bpf_code.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf_code.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_bpf_code.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,88 @@
 +/* AUTO-GENERATED, DO NOT EDIT. */
 +
@@ -4915,9 +4913,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_bpf_code.c
 +    .license = "BSD",
 +    .type = BPF_PROG_TYPE_SK_REUSEPORT,
 +};
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connection.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_connection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connection.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connection.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,276 @@
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -5195,9 +5193,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connection.h
 +#endif
 +
 +#endif /* _NGX_EVENT_QUIC_CONNECTION_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connid.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_connid.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connid.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,502 @@
 +
 +/*
@@ -5701,9 +5699,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connid.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connid.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_connid.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connid.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,29 @@
 +
 +/*
@@ -5734,9 +5732,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connid.h
 +    ngx_quic_client_id_t *cid);
 +
 +#endif /* _NGX_EVENT_QUIC_CONNID_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_frames.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_frames.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_frames.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,844 @@
 +
 +/*
@@ -6582,9 +6580,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_frames.c
 +}
 +
 +#endif
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_frames.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_frames.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_frames.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -6629,9 +6627,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_frames.h
 +#endif
 +
 +#endif /* _NGX_EVENT_QUIC_FRAMES_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_migration.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_migration.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_migration.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,671 @@
 +
 +/*
@@ -7304,9 +7302,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_migration.c
 +        ngx_add_timer(&qc->path_validation, next);
 +    }
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_migration.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_migration.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_migration.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,42 @@
 +
 +/*
@@ -7350,10 +7348,10 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_migration.h
 +void ngx_quic_path_validation_handler(ngx_event_t *ev);
 +
 +#endif /* _NGX_EVENT_QUIC_MIGRATION_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_output.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.c	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,1283 @@
++++ b/src/event/quic/ngx_event_quic_output.c	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,1292 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -8284,6 +8282,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
 +{
 +    ssize_t            len;
 +    ngx_str_t          res;
++    ngx_quic_keys_t    keys;
 +    ngx_quic_frame_t   frame;
 +    ngx_quic_header_t  pkt;
 +
@@ -8312,12 +8311,11 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
 +        return NGX_ERROR;
 +    }
 +
-+    pkt.keys = ngx_quic_keys_new(c->pool);
-+    if (pkt.keys == NULL) {
-+        return NGX_ERROR;
-+    }
++    ngx_memzero(&keys, sizeof(ngx_quic_keys_t));
 +
-+    if (ngx_quic_keys_set_initial_secret(c->pool, pkt.keys, &inpkt->dcid)
++    pkt.keys = &keys;
++
++    if (ngx_quic_keys_set_initial_secret(pkt.keys, &inpkt->dcid, c->log)
 +        != NGX_OK)
 +    {
 +        return NGX_ERROR;
@@ -8365,10 +8363,14 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
 +
 +    u_char             buf[NGX_QUIC_RETRY_BUFFER_SIZE];
 +    u_char             dcid[NGX_QUIC_SERVER_CID_LEN];
++    u_char             tbuf[NGX_QUIC_TOKEN_BUF_SIZE];
 +
 +    expires = ngx_time() + NGX_QUIC_RETRY_TOKEN_LIFETIME;
 +
-+    if (ngx_quic_new_token(c, c->sockaddr, c->socklen, conf->av_token_key,
++    token.data = tbuf;
++    token.len = NGX_QUIC_TOKEN_BUF_SIZE;
++
++    if (ngx_quic_new_token(c->log, c->sockaddr, c->socklen, conf->av_token_key,
 +                           &token, &inpkt->dcid, expires, 1)
 +        != NGX_OK)
 +    {
@@ -8431,11 +8433,16 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
 +    ngx_quic_frame_t       *frame;
 +    ngx_quic_connection_t  *qc;
 +
++    u_char                  tbuf[NGX_QUIC_TOKEN_BUF_SIZE];
++
 +    qc = ngx_quic_get_connection(c);
 +
 +    expires = ngx_time() + NGX_QUIC_NEW_TOKEN_LIFETIME;
 +
-+    if (ngx_quic_new_token(c, path->sockaddr, path->socklen,
++    token.data = tbuf;
++    token.len = NGX_QUIC_TOKEN_BUF_SIZE;
++
++    if (ngx_quic_new_token(c->log, path->sockaddr, path->socklen,
 +                           qc->conf->av_token_key, &token, NULL, expires, 0)
 +        != NGX_OK)
 +    {
@@ -8637,9 +8644,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
 +
 +    return size;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_output.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_output.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,40 @@
 +
 +/*
@@ -8681,10 +8688,10 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.h
 +    size_t min, ngx_quic_path_t *path);
 +
 +#endif /* _NGX_EVENT_QUIC_OUTPUT_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_protection.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.c	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,1177 @@
++++ b/src/event/quic/ngx_event_quic_protection.c	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,1123 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -8697,8 +8704,6 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +#include <ngx_event_quic_connection.h>
 +
 +
-+/* RFC 5116, 5.1 and RFC 8439, 2.3 for all supported ciphers */
-+#define NGX_QUIC_IV_LEN               12
 +/* RFC 9001, 5.4.1.  Header Protection Application: 5-byte mask */
 +#define NGX_QUIC_HP_LEN               5
 +
@@ -8723,25 +8728,23 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +} ngx_quic_ciphers_t;
 +
 +
-+typedef struct ngx_quic_secret_s {
-+    ngx_str_t                 secret;
-+    ngx_str_t                 key;
-+    ngx_str_t                 iv;
-+    ngx_str_t                 hp;
-+} ngx_quic_secret_t;
-+
-+
 +typedef struct {
-+    ngx_quic_secret_t         client;
-+    ngx_quic_secret_t         server;
-+} ngx_quic_secrets_t;
++    size_t                    out_len;
++    u_char                   *out;
 +
++    size_t                    prk_len;
++    const uint8_t            *prk;
 +
-+struct ngx_quic_keys_s {
-+    ngx_quic_secrets_t        secrets[NGX_QUIC_ENCRYPTION_LAST];
-+    ngx_quic_secrets_t        next_key;
-+    ngx_uint_t                cipher;
-+};
++    size_t                    label_len;
++    const u_char             *label;
++} ngx_quic_hkdf_t;
++
++#define ngx_quic_hkdf_set(label, out, prk)                                    \
++    {                                                                         \
++        (out)->len, (out)->data,                                              \
++        (prk)->len, (prk)->data,                                              \
++        (sizeof(label) - 1), (u_char *)(label),                               \
++    }
 +
 +
 +static ngx_int_t ngx_hkdf_expand(u_char *out_key, size_t out_len,
@@ -8765,8 +8768,8 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +    ngx_str_t *ad, ngx_log_t *log);
 +static ngx_int_t ngx_quic_tls_hp(ngx_log_t *log, const EVP_CIPHER *cipher,
 +    ngx_quic_secret_t *s, u_char *out, u_char *in);
-+static ngx_int_t ngx_quic_hkdf_expand(ngx_pool_t *pool, const EVP_MD *digest,
-+    ngx_str_t *out, ngx_str_t *label, const uint8_t *prk, size_t prk_len);
++static ngx_int_t ngx_quic_hkdf_expand(ngx_quic_hkdf_t *hkdf,
++    const EVP_MD *digest, ngx_log_t *log);
 +
 +static ngx_int_t ngx_quic_create_packet(ngx_quic_header_t *pkt,
 +    ngx_str_t *res);
@@ -8832,8 +8835,8 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +
 +
 +ngx_int_t
-+ngx_quic_keys_set_initial_secret(ngx_pool_t *pool, ngx_quic_keys_t *keys,
-+    ngx_str_t *secret)
++ngx_quic_keys_set_initial_secret(ngx_quic_keys_t *keys, ngx_str_t *secret,
++    ngx_log_t *log)
 +{
 +    size_t              is_len;
 +    uint8_t             is[SHA256_DIGEST_LENGTH];
@@ -8870,12 +8873,12 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +        .len = is_len
 +    };
 +
-+    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, pool->log, 0,
++    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, log, 0,
 +                   "quic ngx_quic_set_initial_secret");
 +#ifdef NGX_QUIC_DEBUG_CRYPTO
-+    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, pool->log, 0,
++    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, log, 0,
 +                   "quic salt len:%uz %*xs", sizeof(salt), sizeof(salt), salt);
-+    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, pool->log, 0,
++    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, log, 0,
 +                   "quic initial secret len:%uz %*xs", is_len, is_len, is);
 +#endif
 +
@@ -8891,28 +8894,20 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +    client->iv.len = NGX_QUIC_IV_LEN;
 +    server->iv.len = NGX_QUIC_IV_LEN;
 +
-+    struct {
-+        ngx_str_t   label;
-+        ngx_str_t  *key;
-+        ngx_str_t  *prk;
-+    } seq[] = {
++    ngx_quic_hkdf_t seq[] = {
 +        /* labels per RFC 9001, 5.1. Packet Protection Keys */
-+        { ngx_string("tls13 client in"), &client->secret, &iss },
-+        { ngx_string("tls13 quic key"),  &client->key,    &client->secret },
-+        { ngx_string("tls13 quic iv"),   &client->iv,     &client->secret },
-+        { ngx_string("tls13 quic hp"),   &client->hp,     &client->secret },
-+        { ngx_string("tls13 server in"), &server->secret, &iss },
-+        { ngx_string("tls13 quic key"),  &server->key,    &server->secret },
-+        { ngx_string("tls13 quic iv"),   &server->iv,     &server->secret },
-+        { ngx_string("tls13 quic hp"),   &server->hp,     &server->secret },
++        ngx_quic_hkdf_set("tls13 client in", &client->secret, &iss),
++        ngx_quic_hkdf_set("tls13 quic key",  &client->key,    &client->secret),
++        ngx_quic_hkdf_set("tls13 quic iv",   &client->iv,     &client->secret),
++        ngx_quic_hkdf_set("tls13 quic hp",   &client->hp,     &client->secret),
++        ngx_quic_hkdf_set("tls13 server in", &server->secret, &iss),
++        ngx_quic_hkdf_set("tls13 quic key",  &server->key,    &server->secret),
++        ngx_quic_hkdf_set("tls13 quic iv",   &server->iv,     &server->secret),
++        ngx_quic_hkdf_set("tls13 quic hp",   &server->hp,     &server->secret),
 +    };
 +
 +    for (i = 0; i < (sizeof(seq) / sizeof(seq[0])); i++) {
-+
-+        if (ngx_quic_hkdf_expand(pool, digest, seq[i].key, &seq[i].label,
-+                                 seq[i].prk->data, seq[i].prk->len)
-+            != NGX_OK)
-+        {
++        if (ngx_quic_hkdf_expand(&seq[i], digest, log) != NGX_OK) {
 +            return NGX_ERROR;
 +        }
 +    }
@@ -8922,40 +8917,34 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +
 +
 +static ngx_int_t
-+ngx_quic_hkdf_expand(ngx_pool_t *pool, const EVP_MD *digest, ngx_str_t *out,
-+    ngx_str_t *label, const uint8_t *prk, size_t prk_len)
++ngx_quic_hkdf_expand(ngx_quic_hkdf_t *h, const EVP_MD *digest, ngx_log_t *log)
 +{
 +    size_t    info_len;
 +    uint8_t  *p;
 +    uint8_t   info[20];
 +
-+    if (out->data == NULL) {
-+        out->data = ngx_pnalloc(pool, out->len);
-+        if (out->data == NULL) {
-+            return NGX_ERROR;
-+        }
-+    }
-+
-+    info_len = 2 + 1 + label->len + 1;
++    info_len = 2 + 1 + h->label_len + 1;
 +
 +    info[0] = 0;
-+    info[1] = out->len;
-+    info[2] = label->len;
-+    p = ngx_cpymem(&info[3], label->data, label->len);
++    info[1] = h->out_len;
++    info[2] = h->label_len;
++
++    p = ngx_cpymem(&info[3], h->label, h->label_len);
 +    *p = '\0';
 +
-+    if (ngx_hkdf_expand(out->data, out->len, digest,
-+                        prk, prk_len, info, info_len)
++    if (ngx_hkdf_expand(h->out, h->out_len, digest,
++                        h->prk, h->prk_len, info, info_len)
 +        != NGX_OK)
 +    {
-+        ngx_ssl_error(NGX_LOG_INFO, pool->log, 0,
-+                      "ngx_hkdf_expand(%V) failed", label);
++        ngx_ssl_error(NGX_LOG_INFO, log, 0,
++                      "ngx_hkdf_expand(%*s) failed", h->label_len, h->label);
 +        return NGX_ERROR;
 +    }
 +
 +#ifdef NGX_QUIC_DEBUG_CRYPTO
-+    ngx_log_debug3(NGX_LOG_DEBUG_EVENT, pool->log, 0,
-+                   "quic expand %V key len:%uz %xV", label, out->len, out);
++    ngx_log_debug5(NGX_LOG_DEBUG_EVENT, log, 0,
++                   "quic expand \"%*s\" len:%uz %*xs",
++                   h->label_len, h->label, h->out_len, h->out_len, h->out);
 +#endif
 +
 +    return NGX_OK;
@@ -9334,11 +9323,12 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +
 +
 +ngx_int_t
-+ngx_quic_keys_set_encryption_secret(ngx_pool_t *pool, ngx_uint_t is_write,
++ngx_quic_keys_set_encryption_secret(ngx_log_t *log, ngx_uint_t is_write,
 +    ngx_quic_keys_t *keys, enum ssl_encryption_level_t level,
 +    const SSL_CIPHER *cipher, const uint8_t *secret, size_t secret_len)
 +{
 +    ngx_int_t            key_len;
++    ngx_str_t            secret_str;
 +    ngx_uint_t           i;
 +    ngx_quic_secret_t   *peer_secret;
 +    ngx_quic_ciphers_t   ciphers;
@@ -9351,12 +9341,13 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +    key_len = ngx_quic_ciphers(keys->cipher, &ciphers, level);
 +
 +    if (key_len == NGX_ERROR) {
-+        ngx_ssl_error(NGX_LOG_INFO, pool->log, 0, "unexpected cipher");
++        ngx_ssl_error(NGX_LOG_INFO, log, 0, "unexpected cipher");
 +        return NGX_ERROR;
 +    }
 +
-+    peer_secret->secret.data = ngx_pnalloc(pool, secret_len);
-+    if (peer_secret->secret.data == NULL) {
++    if (sizeof(peer_secret->secret.data) < secret_len) {
++        ngx_log_error(NGX_LOG_ALERT, log, 0,
++                      "unexpected secret len: %uz", secret_len);
 +        return NGX_ERROR;
 +    }
 +
@@ -9367,34 +9358,22 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +    peer_secret->iv.len = NGX_QUIC_IV_LEN;
 +    peer_secret->hp.len = key_len;
 +
-+    struct {
-+        ngx_str_t       label;
-+        ngx_str_t      *key;
-+        const uint8_t  *secret;
-+    } seq[] = {
-+        { ngx_string("tls13 quic key"), &peer_secret->key, secret },
-+        { ngx_string("tls13 quic iv"),  &peer_secret->iv,  secret },
-+        { ngx_string("tls13 quic hp"),  &peer_secret->hp,  secret },
++    secret_str.len = secret_len;
++    secret_str.data = (u_char *) secret;
++
++    ngx_quic_hkdf_t seq[] = {
++        ngx_quic_hkdf_set("tls13 quic key", &peer_secret->key, &secret_str),
++        ngx_quic_hkdf_set("tls13 quic iv", &peer_secret->iv, &secret_str),
++        ngx_quic_hkdf_set("tls13 quic hp", &peer_secret->hp, &secret_str),
 +    };
 +
 +    for (i = 0; i < (sizeof(seq) / sizeof(seq[0])); i++) {
-+
-+        if (ngx_quic_hkdf_expand(pool, ciphers.d, seq[i].key, &seq[i].label,
-+                                 seq[i].secret, secret_len)
-+            != NGX_OK)
-+        {
++        if (ngx_quic_hkdf_expand(&seq[i], ciphers.d, log) != NGX_OK) {
 +            return NGX_ERROR;
 +        }
 +    }
 +
 +    return NGX_OK;
-+}
-+
-+
-+ngx_quic_keys_t *
-+ngx_quic_keys_new(ngx_pool_t *pool)
-+{
-+    return ngx_pcalloc(pool, sizeof(ngx_quic_keys_t));
 +}
 +
 +
@@ -9456,49 +9435,23 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +    next->server.iv.len = NGX_QUIC_IV_LEN;
 +    next->server.hp = current->server.hp;
 +
-+    struct {
-+        ngx_str_t   label;
-+        ngx_str_t  *key;
-+        ngx_str_t  *secret;
-+    } seq[] = {
-+        {
-+            ngx_string("tls13 quic ku"),
-+            &next->client.secret,
-+            &current->client.secret,
-+        },
-+        {
-+            ngx_string("tls13 quic key"),
-+            &next->client.key,
-+            &next->client.secret,
-+        },
-+        {
-+            ngx_string("tls13 quic iv"),
-+            &next->client.iv,
-+            &next->client.secret,
-+        },
-+        {
-+            ngx_string("tls13 quic ku"),
-+            &next->server.secret,
-+            &current->server.secret,
-+        },
-+        {
-+            ngx_string("tls13 quic key"),
-+            &next->server.key,
-+            &next->server.secret,
-+        },
-+        {
-+            ngx_string("tls13 quic iv"),
-+            &next->server.iv,
-+            &next->server.secret,
-+        },
++    ngx_quic_hkdf_t seq[] = {
++        ngx_quic_hkdf_set("tls13 quic ku",
++                          &next->client.secret, &current->client.secret),
++        ngx_quic_hkdf_set("tls13 quic key",
++                          &next->client.key, &next->client.secret),
++        ngx_quic_hkdf_set("tls13 quic iv",
++                          &next->client.iv, &next->client.secret),
++        ngx_quic_hkdf_set("tls13 quic ku",
++                          &next->server.secret, &current->server.secret),
++        ngx_quic_hkdf_set("tls13 quic key",
++                          &next->server.key, &next->server.secret),
++        ngx_quic_hkdf_set("tls13 quic iv",
++                          &next->server.iv, &next->server.secret),
 +    };
 +
 +    for (i = 0; i < (sizeof(seq) / sizeof(seq[0])); i++) {
-+
-+        if (ngx_quic_hkdf_expand(c->pool, ciphers.d, seq[i].key, &seq[i].label,
-+                                 seq[i].secret->data, seq[i].secret->len)
-+            != NGX_OK)
-+        {
++        if (ngx_quic_hkdf_expand(&seq[i], ciphers.d, c->log) != NGX_OK) {
 +            return NGX_ERROR;
 +        }
 +    }
@@ -9596,7 +9549,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +    }
 +
 +    secret.key.len = sizeof(key);
-+    secret.key.data = key;
++    ngx_memcpy(secret.key.data, key, sizeof(key));
 +    secret.iv.len = NGX_QUIC_IV_LEN;
 +
 +    if (ngx_quic_tls_seal(ciphers.c, &secret, &itag, nonce, &in, &ad, pkt->log)
@@ -9862,10 +9815,10 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_protection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.h	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,37 @@
++++ b/src/event/quic/ngx_event_quic_protection.h	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,75 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -9884,11 +9837,49 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.h
 +
 +#define NGX_QUIC_ENCRYPTION_LAST  ((ssl_encryption_application) + 1)
 +
++/* RFC 5116, 5.1 and RFC 8439, 2.3 for all supported ciphers */
++#define NGX_QUIC_IV_LEN               12
 +
-+ngx_quic_keys_t *ngx_quic_keys_new(ngx_pool_t *pool);
-+ngx_int_t ngx_quic_keys_set_initial_secret(ngx_pool_t *pool,
-+    ngx_quic_keys_t *keys, ngx_str_t *secret);
-+ngx_int_t ngx_quic_keys_set_encryption_secret(ngx_pool_t *pool,
++/* largest hash used in TLS is SHA-384 */
++#define NGX_QUIC_MAX_MD_SIZE          48
++
++
++typedef struct {
++    size_t                    len;
++    u_char                    data[NGX_QUIC_MAX_MD_SIZE];
++} ngx_quic_md_t;
++
++
++typedef struct {
++    size_t                    len;
++    u_char                    data[NGX_QUIC_IV_LEN];
++} ngx_quic_iv_t;
++
++
++typedef struct {
++    ngx_quic_md_t             secret;
++    ngx_quic_md_t             key;
++    ngx_quic_iv_t             iv;
++    ngx_quic_md_t             hp;
++} ngx_quic_secret_t;
++
++
++typedef struct {
++    ngx_quic_secret_t         client;
++    ngx_quic_secret_t         server;
++} ngx_quic_secrets_t;
++
++
++struct ngx_quic_keys_s {
++    ngx_quic_secrets_t        secrets[NGX_QUIC_ENCRYPTION_LAST];
++    ngx_quic_secrets_t        next_key;
++    ngx_uint_t                cipher;
++};
++
++
++ngx_int_t ngx_quic_keys_set_initial_secret(ngx_quic_keys_t *keys,
++    ngx_str_t *secret, ngx_log_t *log);
++ngx_int_t ngx_quic_keys_set_encryption_secret(ngx_log_t *log,
 +    ngx_uint_t is_write, ngx_quic_keys_t *keys,
 +    enum ssl_encryption_level_t level, const SSL_CIPHER *cipher,
 +    const uint8_t *secret, size_t secret_len);
@@ -9903,9 +9894,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.h
 +
 +
 +#endif /* _NGX_EVENT_QUIC_PROTECTION_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_socket.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_socket.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_socket.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,237 @@
 +
 +/*
@@ -10144,9 +10135,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_socket.c
 +
 +    return NULL;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_socket.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_socket.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_socket.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,28 @@
 +
 +/*
@@ -10176,9 +10167,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_socket.h
 +
 +
 +#endif /* _NGX_EVENT_QUIC_SOCKET_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_ssl.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,614 @@
 +
 +/*
@@ -10255,7 +10246,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
 +                   secret_len, rsecret);
 +#endif
 +
-+    if (ngx_quic_keys_set_encryption_secret(c->pool, 0, qc->keys, level,
++    if (ngx_quic_keys_set_encryption_secret(c->log, 0, qc->keys, level,
 +                                            cipher, rsecret, secret_len)
 +        != NGX_OK)
 +    {
@@ -10291,7 +10282,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
 +                   secret_len, wsecret);
 +#endif
 +
-+    if (ngx_quic_keys_set_encryption_secret(c->pool, 1, qc->keys, level,
++    if (ngx_quic_keys_set_encryption_secret(c->log, 1, qc->keys, level,
 +                                            cipher, wsecret, secret_len)
 +        != NGX_OK)
 +    {
@@ -10325,7 +10316,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
 +
 +    cipher = SSL_get_current_cipher(ssl_conn);
 +
-+    if (ngx_quic_keys_set_encryption_secret(c->pool, 0, qc->keys, level,
++    if (ngx_quic_keys_set_encryption_secret(c->log, 0, qc->keys, level,
 +                                            cipher, rsecret, secret_len)
 +        != NGX_OK)
 +    {
@@ -10346,7 +10337,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
 +                   secret_len, wsecret);
 +#endif
 +
-+    if (ngx_quic_keys_set_encryption_secret(c->pool, 1, qc->keys, level,
++    if (ngx_quic_keys_set_encryption_secret(c->log, 1, qc->keys, level,
 +                                            cipher, wsecret, secret_len)
 +        != NGX_OK)
 +    {
@@ -10794,9 +10785,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_ssl.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,19 @@
 +
 +/*
@@ -10817,9 +10808,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.h
 +    ngx_quic_header_t *pkt, ngx_quic_frame_t *frame);
 +
 +#endif /* _NGX_EVENT_QUIC_SSL_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_streams.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_streams.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_streams.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,1654 @@
 +
 +/*
@@ -12475,9 +12466,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_streams.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_streams.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_streams.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_streams.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,44 @@
 +
 +/*
@@ -12523,10 +12514,10 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_streams.h
 +    ngx_quic_connection_t *qc);
 +
 +#endif /* _NGX_EVENT_QUIC_STREAMS_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_tokens.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.c	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,295 @@
++++ b/src/event/quic/ngx_event_quic_tokens.c	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,285 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -12538,14 +12529,6 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 +#include <ngx_event.h>
 +#include <ngx_sha1.h>
 +#include <ngx_event_quic_connection.h>
-+
-+
-+#define NGX_QUIC_MAX_TOKEN_SIZE              64
-+    /* SHA-1(addr)=20 + sizeof(time_t) + retry(1) + odcid.len(1) + odcid */
-+
-+/* RFC 3602, 2.1 and 2.4 for AES-CBC block size and IV length */
-+#define NGX_QUIC_AES_256_CBC_IV_LEN          16
-+#define NGX_QUIC_AES_256_CBC_BLOCK_SIZE      16
 +
 +
 +static void ngx_quic_address_hash(struct sockaddr *sockaddr, socklen_t socklen,
@@ -12577,7 +12560,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 +
 +
 +ngx_int_t
-+ngx_quic_new_token(ngx_connection_t *c, struct sockaddr *sockaddr,
++ngx_quic_new_token(ngx_log_t *log, struct sockaddr *sockaddr,
 +    socklen_t socklen, u_char *key, ngx_str_t *token, ngx_str_t *odcid,
 +    time_t exp, ngx_uint_t is_retry)
 +{
@@ -12609,9 +12592,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 +    cipher = EVP_aes_256_cbc();
 +    iv_len = NGX_QUIC_AES_256_CBC_IV_LEN;
 +
-+    token->len = iv_len + len + NGX_QUIC_AES_256_CBC_BLOCK_SIZE;
-+    token->data = ngx_pnalloc(c->pool, token->len);
-+    if (token->data == NULL) {
++    if ((size_t) (iv_len + len + NGX_QUIC_AES_256_CBC_BLOCK_SIZE) > token->len)
++    {
++        ngx_log_error(NGX_LOG_ALERT, log, 0, "quic token buffer is too small");
 +        return NGX_ERROR;
 +    }
 +
@@ -12648,7 +12631,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 +    EVP_CIPHER_CTX_free(ctx);
 +
 +#ifdef NGX_QUIC_DEBUG_PACKETS
-+    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
++    ngx_log_debug2(NGX_LOG_DEBUG_EVENT, log, 0,
 +                   "quic new token len:%uz %xV", token->len, token);
 +#endif
 +
@@ -12797,10 +12780,8 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 +
 +    if (odcid.len) {
 +        pkt->odcid.len = odcid.len;
-+        pkt->odcid.data = ngx_pstrdup(c->pool, &odcid);
-+        if (pkt->odcid.data == NULL) {
-+            return NGX_ERROR;
-+        }
++        pkt->odcid.data = pkt->odcid_buf;
++        ngx_memcpy(pkt->odcid.data, odcid.data, odcid.len);
 +
 +    } else {
 +        pkt->odcid = pkt->dcid;
@@ -12822,10 +12803,10 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 +
 +    return NGX_DECLINED;
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_tokens.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.h	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,23 @@
++++ b/src/event/quic/ngx_event_quic_tokens.h	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,35 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -12840,18 +12821,30 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.h
 +#include <ngx_core.h>
 +
 +
++#define NGX_QUIC_MAX_TOKEN_SIZE              64
++    /* SHA-1(addr)=20 + sizeof(time_t) + retry(1) + odcid.len(1) + odcid */
++
++/* RFC 3602, 2.1 and 2.4 for AES-CBC block size and IV length */
++#define NGX_QUIC_AES_256_CBC_IV_LEN          16
++#define NGX_QUIC_AES_256_CBC_BLOCK_SIZE      16
++
++#define NGX_QUIC_TOKEN_BUF_SIZE             (NGX_QUIC_AES_256_CBC_IV_LEN      \
++                                             + NGX_QUIC_MAX_TOKEN_SIZE        \
++                                             + NGX_QUIC_AES_256_CBC_BLOCK_SIZE)
++
++
 +ngx_int_t ngx_quic_new_sr_token(ngx_connection_t *c, ngx_str_t *cid,
 +    u_char *secret, u_char *token);
-+ngx_int_t ngx_quic_new_token(ngx_connection_t *c, struct sockaddr *sockaddr,
++ngx_int_t ngx_quic_new_token(ngx_log_t *log, struct sockaddr *sockaddr,
 +    socklen_t socklen, u_char *key, ngx_str_t *token, ngx_str_t *odcid,
 +    time_t expires, ngx_uint_t is_retry);
 +ngx_int_t ngx_quic_validate_token(ngx_connection_t *c,
 +    u_char *key, ngx_quic_header_t *pkt);
 +
 +#endif /* _NGX_EVENT_QUIC_TOKENS_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_transport.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_transport.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,2164 @@
 +
 +/*
@@ -15017,10 +15010,10 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.c
 +{
 +    (void) ngx_quic_write_uint64(dcid, key);
 +}
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.h
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_transport.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.h	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,397 @@
++++ b/src/event/quic/ngx_event_quic_transport.h	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,398 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -15345,6 +15338,7 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.h
 +
 +    /* cleartext fields */
 +    ngx_str_t                                   odcid; /* retry packet tag */
++    u_char                                      odcid_buf[NGX_QUIC_MAX_CID_LEN];
 +    ngx_str_t                                   dcid;
 +    ngx_str_t                                   scid;
 +    uint64_t                                    pn;
@@ -15418,9 +15412,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.h
 +void ngx_quic_dcid_encode_key(u_char *dcid, uint64_t key);
 +
 +#endif /* _NGX_EVENT_QUIC_TRANSPORT_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_udp.c
+diff -r a63d0a70afea src/event/quic/ngx_event_quic_udp.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_udp.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/event/quic/ngx_event_quic_udp.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,473 @@
 +
 +/*
@@ -15895,9 +15889,9 @@ diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_udp.c
 +
 +    return NULL;
 +}
-diff -r 5da2c0902e8e src/http/modules/ngx_http_ssl_module.c
---- a/src/http/modules/ngx_http_ssl_module.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/modules/ngx_http_ssl_module.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/modules/ngx_http_ssl_module.c
+--- a/src/http/modules/ngx_http_ssl_module.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/modules/ngx_http_ssl_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -419,16 +419,19 @@ ngx_http_ssl_alpn_select(ngx_ssl_conn_t 
      unsigned char *outlen, const unsigned char *in, unsigned int inlen,
      void *arg)
@@ -16022,9 +16016,9 @@ diff -r 5da2c0902e8e src/http/modules/ngx_http_ssl_module.c
                  return NGX_ERROR;
              }
          }
-diff -r 5da2c0902e8e src/http/ngx_http.c
---- a/src/http/ngx_http.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http.c
+--- a/src/http/ngx_http.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -1200,7 +1200,10 @@ ngx_http_add_listen(ngx_conf_t *cf, ngx_
      port = cmcf->ports->elts;
      for (i = 0; i < cmcf->ports->nelts; i++) {
@@ -16123,9 +16117,9 @@ diff -r 5da2c0902e8e src/http/ngx_http.c
          addrs6[i].conf.proxy_protocol = addr[i].opt.proxy_protocol;
  
          if (addr[i].hash.buckets == NULL
-diff -r 5da2c0902e8e src/http/ngx_http.h
---- a/src/http/ngx_http.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http.h
+--- a/src/http/ngx_http.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -20,6 +20,8 @@ typedef struct ngx_http_file_cache_s  ng
  typedef struct ngx_http_log_ctx_s     ngx_http_log_ctx_t;
  typedef struct ngx_http_chunked_s     ngx_http_chunked_t;
@@ -16166,9 +16160,9 @@ diff -r 5da2c0902e8e src/http/ngx_http.h
  ngx_int_t ngx_http_huff_decode(u_char *state, u_char *src, size_t len,
      u_char **dst, ngx_uint_t last, ngx_log_t *log);
  size_t ngx_http_huff_encode(u_char *src, size_t len, u_char *dst,
-diff -r 5da2c0902e8e src/http/ngx_http_core_module.c
---- a/src/http/ngx_http_core_module.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_core_module.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_core_module.c
+--- a/src/http/ngx_http_core_module.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_core_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -3989,6 +3989,7 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
      ngx_memzero(&lsopt, sizeof(ngx_http_listen_opt_t));
  
@@ -16210,9 +16204,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_core_module.c
      for (n = 0; n < u.naddrs; n++) {
          lsopt.sockaddr = u.addrs[n].sockaddr;
          lsopt.socklen = u.addrs[n].socklen;
-diff -r 5da2c0902e8e src/http/ngx_http_core_module.h
---- a/src/http/ngx_http_core_module.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_core_module.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_core_module.h
+--- a/src/http/ngx_http_core_module.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_core_module.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -75,6 +75,7 @@ typedef struct {
      unsigned                   wildcard:1;
      unsigned                   ssl:1;
@@ -16245,9 +16239,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_core_module.h
      in_port_t                  port;
      ngx_array_t                addrs;     /* array of ngx_http_conf_addr_t */
  } ngx_http_conf_port_t;
-diff -r 5da2c0902e8e src/http/ngx_http_request.c
---- a/src/http/ngx_http_request.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_request.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_request.c
+--- a/src/http/ngx_http_request.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_request.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -29,10 +29,6 @@ static ngx_int_t ngx_http_process_connec
  static ngx_int_t ngx_http_process_user_agent(ngx_http_request_t *r,
      ngx_table_elt_t *h, ngx_uint_t offset);
@@ -16385,9 +16379,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_request.c
  #if (NGX_STAT_STUB)
      (void) ngx_atomic_fetch_add(ngx_stat_active, -1);
  #endif
-diff -r 5da2c0902e8e src/http/ngx_http_request.h
---- a/src/http/ngx_http_request.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_request.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_request.h
+--- a/src/http/ngx_http_request.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_request.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -24,6 +24,7 @@
  #define NGX_HTTP_VERSION_10                1000
  #define NGX_HTTP_VERSION_11                1001
@@ -16423,9 +16417,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_request.h
      unsigned                          expect_tested:1;
      unsigned                          root_tested:1;
      unsigned                          done:1;
-diff -r 5da2c0902e8e src/http/ngx_http_request_body.c
---- a/src/http/ngx_http_request_body.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_request_body.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_request_body.c
+--- a/src/http/ngx_http_request_body.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_request_body.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -92,6 +92,13 @@ ngx_http_read_client_request_body(ngx_ht
      }
  #endif
@@ -16482,9 +16476,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_request_body.c
         )
      {
          return NGX_OK;
-diff -r 5da2c0902e8e src/http/ngx_http_upstream.c
---- a/src/http/ngx_http_upstream.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_upstream.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_upstream.c
+--- a/src/http/ngx_http_upstream.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_upstream.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -521,6 +521,13 @@ ngx_http_upstream_init(ngx_http_request_
      }
  #endif
@@ -16519,9 +16513,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_upstream.c
  #if (NGX_HAVE_KQUEUE)
  
      if (ngx_event_flags & NGX_USE_KQUEUE_EVENT) {
-diff -r 5da2c0902e8e src/http/ngx_http_write_filter_module.c
---- a/src/http/ngx_http_write_filter_module.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/http/ngx_http_write_filter_module.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/http/ngx_http_write_filter_module.c
+--- a/src/http/ngx_http_write_filter_module.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/http/ngx_http_write_filter_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -240,6 +240,10 @@ ngx_http_write_filter(ngx_http_request_t
              r->out = NULL;
              c->buffered &= ~NGX_HTTP_WRITE_BUFFERED;
@@ -16544,9 +16538,9 @@ diff -r 5da2c0902e8e src/http/ngx_http_write_filter_module.c
      if ((c->buffered & NGX_LOWLEVEL_BUFFERED) && r->postponed == NULL) {
          return NGX_AGAIN;
      }
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,123 @@
 +
 +/*
@@ -16671,9 +16665,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3.h
+diff -r a63d0a70afea src/http/v3/ngx_http_v3.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,166 @@
 +
 +/*
@@ -16841,9 +16835,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3.h
 +
 +
 +#endif /* _NGX_HTTP_V3_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_encode.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_encode.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_encode.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,304 @@
 +
 +/*
@@ -17149,9 +17143,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_encode.c
 +
 +    return (uintptr_t) p;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_encode.h
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_encode.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_encode.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,34 @@
 +
 +/*
@@ -17187,9 +17181,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_encode.h
 +
 +
 +#endif /* _NGX_HTTP_V3_ENCODE_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_filter_module.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_filter_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_filter_module.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_filter_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,1536 @@
 +
 +/*
@@ -18727,9 +18721,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_filter_module.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_module.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_module.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,551 @@
 +
 +/*
@@ -19282,9 +19276,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_module.c
 +
 +    return NGX_CONF_OK;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_parse.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_parse.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_parse.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,2013 @@
 +
 +/*
@@ -21299,9 +21293,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_parse.c
 +        }
 +    }
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_parse.h
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_parse.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_parse.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,146 @@
 +
 +/*
@@ -21449,10 +21443,10 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_parse.h
 +
 +
 +#endif /* _NGX_HTTP_V3_PARSE_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_request.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_request.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_request.c	Tue Jul 19 12:13:58 2022 -0400
-@@ -0,0 +1,1687 @@
++++ b/src/http/v3/ngx_http_v3_request.c	Fri Sep 16 14:00:14 2022 -0400
+@@ -0,0 +1,1689 @@
 +
 +/*
 + * Copyright (C) Roman Arutyunyan
@@ -23007,15 +23001,17 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_request.c
 +                }
 +
 +                /* rc == NGX_OK */
-+            }
 +
-+            if (max != -1 && (uint64_t) (max - rb->received) < st->length) {
-+                ngx_log_error(NGX_LOG_ERR, r->connection->log, 0,
-+                              "client intended to send too large "
-+                              "body: %O+%ui bytes",
-+                              rb->received, st->length);
++                if (max != -1 && (uint64_t) (max - rb->received) < st->length) {
++                    ngx_log_error(NGX_LOG_ERR, r->connection->log, 0,
++                                  "client intended to send too large "
++                                  "body: %O+%ui bytes",
++                                  rb->received, st->length);
 +
-+                return NGX_HTTP_REQUEST_ENTITY_TOO_LARGE;
++                    return NGX_HTTP_REQUEST_ENTITY_TOO_LARGE;
++                }
++
++                continue;
 +            }
 +
 +            if (b
@@ -23140,9 +23136,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_request.c
 +
 +    return rc;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_table.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_table.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_table.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,720 @@
 +
 +/*
@@ -23864,9 +23860,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_table.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_table.h
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_table.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_table.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,58 @@
 +
 +/*
@@ -23926,9 +23922,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_table.h
 +
 +
 +#endif /* _NGX_HTTP_V3_TABLE_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_uni.c
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_uni.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_uni.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,760 @@
 +
 +/*
@@ -24690,9 +24686,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_uni.c
 +
 +    return NGX_OK;
 +}
-diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_uni.h
+diff -r a63d0a70afea src/http/v3/ngx_http_v3_uni.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/http/v3/ngx_http_v3_uni.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,38 @@
 +
 +/*
@@ -24732,9 +24728,9 @@ diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_uni.h
 +
 +
 +#endif /* _NGX_HTTP_V3_UNI_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/os/unix/ngx_socket.h
---- a/src/os/unix/ngx_socket.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/os/unix/ngx_socket.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/os/unix/ngx_socket.h
+--- a/src/os/unix/ngx_socket.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/os/unix/ngx_socket.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -13,6 +13,8 @@
  
  
@@ -24744,9 +24740,9 @@ diff -r 5da2c0902e8e src/os/unix/ngx_socket.h
  
  typedef int  ngx_socket_t;
  
-diff -r 5da2c0902e8e src/stream/ngx_stream.c
---- a/src/stream/ngx_stream.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/stream/ngx_stream.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/stream/ngx_stream.c
+--- a/src/stream/ngx_stream.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/stream/ngx_stream.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -518,6 +518,24 @@ ngx_stream_optimize_servers(ngx_conf_t *
              ls->reuseport = addr[i].opt.reuseport;
  #endif
@@ -24792,9 +24788,9 @@ diff -r 5da2c0902e8e src/stream/ngx_stream.c
          addrs6[i].conf.proxy_protocol = addr[i].opt.proxy_protocol;
          addrs6[i].conf.addr_text = addr[i].opt.addr_text;
      }
-diff -r 5da2c0902e8e src/stream/ngx_stream.h
---- a/src/stream/ngx_stream.h	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/stream/ngx_stream.h	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/stream/ngx_stream.h
+--- a/src/stream/ngx_stream.h	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/stream/ngx_stream.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -16,6 +16,10 @@
  #include <ngx_stream_ssl_module.h>
  #endif
@@ -24822,9 +24818,9 @@ diff -r 5da2c0902e8e src/stream/ngx_stream.h
      unsigned                       proxy_protocol:1;
  } ngx_stream_addr_conf_t;
  
-diff -r 5da2c0902e8e src/stream/ngx_stream_core_module.c
---- a/src/stream/ngx_stream_core_module.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/stream/ngx_stream_core_module.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/stream/ngx_stream_core_module.c
+--- a/src/stream/ngx_stream_core_module.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/stream/ngx_stream_core_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -760,6 +760,29 @@ ngx_stream_core_listen(ngx_conf_t *cf, n
  #endif
          }
@@ -24868,9 +24864,9 @@ diff -r 5da2c0902e8e src/stream/ngx_stream_core_module.c
          if (ls->so_keepalive) {
              return "\"so_keepalive\" parameter is incompatible with \"udp\"";
          }
-diff -r 5da2c0902e8e src/stream/ngx_stream_handler.c
---- a/src/stream/ngx_stream_handler.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/stream/ngx_stream_handler.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/stream/ngx_stream_handler.c
+--- a/src/stream/ngx_stream_handler.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/stream/ngx_stream_handler.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -129,6 +129,10 @@ ngx_stream_init_connection(ngx_connectio
      s->ssl = addr_conf->ssl;
  #endif
@@ -24904,10 +24900,10 @@ diff -r 5da2c0902e8e src/stream/ngx_stream_handler.c
      rev = c->read;
      rev->handler = ngx_stream_session_handler;
  
-diff -r 5da2c0902e8e src/stream/ngx_stream_proxy_module.c
---- a/src/stream/ngx_stream_proxy_module.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/stream/ngx_stream_proxy_module.c	Tue Jul 19 12:13:58 2022 -0400
-@@ -1769,6 +1769,21 @@ ngx_stream_proxy_process(ngx_stream_sess
+diff -r a63d0a70afea src/stream/ngx_stream_proxy_module.c
+--- a/src/stream/ngx_stream_proxy_module.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/stream/ngx_stream_proxy_module.c	Fri Sep 16 14:00:14 2022 -0400
+@@ -1771,6 +1771,21 @@ ngx_stream_proxy_process(ngx_stream_sess
          if (dst->type == SOCK_STREAM && pscf->half_close
              && src->read->eof && !u->half_closed && !dst->buffered)
          {
@@ -24929,9 +24925,9 @@ diff -r 5da2c0902e8e src/stream/ngx_stream_proxy_module.c
              if (ngx_shutdown_socket(dst->fd, NGX_WRITE_SHUTDOWN) == -1) {
                  ngx_connection_error(c, ngx_socket_errno,
                                       ngx_shutdown_socket_n " failed");
-diff -r 5da2c0902e8e src/stream/ngx_stream_quic_module.c
+diff -r a63d0a70afea src/stream/ngx_stream_quic_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.c	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/stream/ngx_stream_quic_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,377 @@
 +
 +/*
@@ -25310,9 +25306,9 @@ diff -r 5da2c0902e8e src/stream/ngx_stream_quic_module.c
 +
 +    return NGX_CONF_ERROR;
 +}
-diff -r 5da2c0902e8e src/stream/ngx_stream_quic_module.h
+diff -r a63d0a70afea src/stream/ngx_stream_quic_module.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.h	Tue Jul 19 12:13:58 2022 -0400
++++ b/src/stream/ngx_stream_quic_module.h	Fri Sep 16 14:00:14 2022 -0400
 @@ -0,0 +1,20 @@
 +
 +/*
@@ -25334,9 +25330,9 @@ diff -r 5da2c0902e8e src/stream/ngx_stream_quic_module.h
 +
 +
 +#endif /* _NGX_STREAM_QUIC_H_INCLUDED_ */
-diff -r 5da2c0902e8e src/stream/ngx_stream_ssl_module.c
---- a/src/stream/ngx_stream_ssl_module.c	Tue Jun 21 17:25:36 2022 +0300
-+++ b/src/stream/ngx_stream_ssl_module.c	Tue Jul 19 12:13:58 2022 -0400
+diff -r a63d0a70afea src/stream/ngx_stream_ssl_module.c
+--- a/src/stream/ngx_stream_ssl_module.c	Tue Jul 19 17:05:27 2022 +0300
++++ b/src/stream/ngx_stream_ssl_module.c	Fri Sep 16 14:00:14 2022 -0400
 @@ -1194,7 +1194,10 @@ ngx_stream_ssl_conf_command_check(ngx_co
  static ngx_int_t
  ngx_stream_ssl_init(ngx_conf_t *cf)
