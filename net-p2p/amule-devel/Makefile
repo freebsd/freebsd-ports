@@ -1,6 +1,6 @@
 PORTNAME=	amule
 PORTVERSION=	11065
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--with-denoise-level=0
 CONFIGURE_ENV=	LEX="${FLEX}" PKG_CONFIG="${PKG_CONFIG}" \
 		docdir='$${prefix}/${DOCSDIR_REL}'
 
-CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI BOOST CAS DEBUG DOCS \

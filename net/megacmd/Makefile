@@ -1,5 +1,6 @@
 PORTNAME=	megacmd
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	_Linux
 CATEGORIES=	net
 
@@ -96,7 +97,5 @@ CONFIGURE_ARGS=	--disable-examples \
 		--with-zlib --with-readline=${LOCALBASE}
 
 INSTALL_TARGET=	install-strip
-
-CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 
 .include <bsd.port.mk>

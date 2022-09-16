@@ -1,5 +1,6 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.26
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -21,7 +22,6 @@ USE_RC_SUBR=	urbackup_server
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-packaging --with-mountvhd --without-embedded-sqlite3 --without-embedded-lmdb --without-embedded-lua
-CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message urbackupsrv.conf.sample-daemon

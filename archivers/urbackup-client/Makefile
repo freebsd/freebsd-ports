@@ -1,5 +1,6 @@
 PORTNAME=	urbackup-client
 DISTVERSION=	2.5.20.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
@@ -22,7 +23,6 @@ GROUPS=		urbackup
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-clientupdate \
 		--without-embedded-sqlite3
-CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 
 SUB_FILES=	pkg-message urbackupclient.conf.sample-daemon
 
