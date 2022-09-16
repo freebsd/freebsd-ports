@@ -246,6 +246,7 @@ include/snort/utils/safec.h
 include/snort/utils/segment_mem.h
 include/snort/utils/sflsq.h
 include/snort/utils/stats.h
+%%TSC%%include/snort/time/tsc_clock.h
 include/snort/utils/util.h
 include/snort/utils/util_cstring.h
 include/snort/utils/util_unfold.h
