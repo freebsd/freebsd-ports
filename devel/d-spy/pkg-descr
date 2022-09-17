@@ -1,0 +1,3 @@
+D-Spy is a tool to explore and test end-points and interfaces on the
+System or Session D-Bus. You can also connect to D-Bus peers by
+address. D-Spy was originally part of GNOME Builder.

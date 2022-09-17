@@ -495,6 +495,7 @@
     SUBDIR += cxxtools
     SUBDIR += d-feet
     SUBDIR += d-scanner
+    SUBDIR += d-spy
     SUBDIR += darts
     SUBDIR += dash.el
     SUBDIR += dasm
