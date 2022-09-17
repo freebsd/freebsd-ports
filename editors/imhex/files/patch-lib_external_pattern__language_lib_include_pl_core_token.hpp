@@ -1,6 +1,6 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-09-04 13:52:32 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-09-16 15:30:16 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
-@@ -152,9 +152,9 @@ namespace pl::core {
+@@ -148,9 +148,9 @@ namespace pl::core {
  
          using Literal    = std::variant<char, bool, u128, i128, double, std::string, ptrn::Pattern *>;
          using ValueTypes = std::variant<Keyword, Identifier, Operator, Literal, ValueType, Separator>;
@@ -12,7 +12,7 @@
          [[nodiscard]] constexpr static inline bool isInteger(const ValueType &type) {
              return isUnsigned(type) || isSigned(type);
          }
-@@ -198,128 +198,128 @@ namespace pl::core {
+@@ -194,133 +194,133 @@ namespace pl::core {
  
      namespace tkn {
  
@@ -43,6 +43,7 @@
 -            constexpr auto This         = createToken(core::Token::Type::Keyword, Token::Keyword::This);
 -            constexpr auto In           = createToken(core::Token::Type::Keyword, Token::Keyword::In);
 -            constexpr auto Out          = createToken(core::Token::Type::Keyword, Token::Keyword::Out);
+-            constexpr auto Reference    = createToken(core::Token::Type::Keyword, Token::Keyword::Reference);
 +            inline auto If           = createToken(core::Token::Type::Keyword, Token::Keyword::If);
 +            inline auto Else         = createToken(core::Token::Type::Keyword, Token::Keyword::Else);
 +            inline auto While        = createToken(core::Token::Type::Keyword, Token::Keyword::While);
@@ -63,17 +64,25 @@
 +            inline auto This         = createToken(core::Token::Type::Keyword, Token::Keyword::This);
 +            inline auto In           = createToken(core::Token::Type::Keyword, Token::Keyword::In);
 +            inline auto Out          = createToken(core::Token::Type::Keyword, Token::Keyword::Out);
++            inline auto Reference    = createToken(core::Token::Type::Keyword, Token::Keyword::Reference);
  
          }
  
          namespace Literal {
  
--            constexpr auto Identifier   = [](const std::string &name = { }) -> Token     { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
--            constexpr auto Numeric      = [](const Token::Literal &value = { }) -> Token { return createToken(core::Token::Type::Integer, value); };
--            constexpr auto String       = [](const std::string &value = { }) -> Token    { return createToken(core::Token::Type::String, Token::Literal(value)); };
-+            inline auto Identifier   = [](const std::string &name = { }) -> Token     { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
-+            inline auto Numeric      = [](const Token::Literal &value = { }) -> Token { return createToken(core::Token::Type::Integer, value); };
-+            inline auto String       = [](const std::string &value = { }) -> Token    { return createToken(core::Token::Type::String, Token::Literal(value)); };
+-            constexpr auto IdentifierValue   = [](const std::string &name = { }) -> Token     { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
+-            constexpr auto NumericValue      = [](const Token::Literal &value = { }) -> Token { return createToken(core::Token::Type::Integer, value); };
+-            constexpr auto StringValue       = [](const std::string &value = { }) -> Token    { return createToken(core::Token::Type::String, Token::Literal(value)); };
++            inline auto IdentifierValue   = [](const std::string &name = { }) -> Token     { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
++            inline auto NumericValue      = [](const Token::Literal &value = { }) -> Token { return createToken(core::Token::Type::Integer, value); };
++            inline auto StringValue       = [](const std::string &value = { }) -> Token    { return createToken(core::Token::Type::String, Token::Literal(value)); };
+ 
+-            constexpr auto Identifier = createToken(core::Token::Type::Identifier, { });
+-            constexpr auto Numeric = createToken(core::Token::Type::Integer, { });
+-            constexpr auto String = createToken(core::Token::Type::String, { });
++            inline auto Identifier = createToken(core::Token::Type::Identifier, { });
++            inline auto Numeric = createToken(core::Token::Type::Integer, { });
++            inline auto String = createToken(core::Token::Type::String, { });
  
          }
  

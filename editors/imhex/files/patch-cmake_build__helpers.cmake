@@ -1,9 +1,10 @@
---- cmake/build_helpers.cmake.orig	2022-09-03 22:05:27 UTC
+--- cmake/build_helpers.cmake.orig	2022-09-15 12:40:14 UTC
 +++ cmake/build_helpers.cmake
-@@ -374,17 +374,9 @@ function(downloadImHexPatternsFiles dest)
+@@ -383,24 +383,15 @@ function(downloadImHexPatternsFiles dest)
+         else ()
              set(PATTERNS_BRANCH ImHex-v${IMHEX_VERSION})
          endif ()
- 
+-
 -        FetchContent_Declare(
 -            imhex_patterns
 -            GIT_REPOSITORY https://github.com/WerWolv/ImHex-Patterns.git
@@ -12,14 +13,21 @@
 -
 -        FetchContent_Populate(imhex_patterns)
 -
+     else ()
+         # Maybe patterns are cloned to a subdirectory
+-        set(imhex_patterns_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ImHex-Patterns")
++        set(imhex_patterns_SOURCE_DIR "${CMAKE_BINARY_DIR}/_deps/imhex_patterns_src")
+     endif ()
+ 
+     if (EXISTS ${imhex_patterns_SOURCE_DIR})
          set(PATTERNS_FOLDERS_TO_INSTALL constants encodings includes patterns magic)
          foreach (FOLDER ${PATTERNS_FOLDERS_TO_INSTALL})
 -            install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION ${dest})
-+            install(DIRECTORY "${CMAKE_BINARY_DIR}/_deps/imhex_patterns_src/${FOLDER}" DESTINATION "share/imhex/")
++            install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "share/imhex/")
          endforeach ()
      endif ()
  
-@@ -392,7 +384,6 @@ endfunction()
+@@ -408,7 +399,6 @@ endfunction()
  
  macro(setupCompilerWarnings target)
      set(IMHEX_COMMON_FLAGS "-Wall -Wextra -Werror")
