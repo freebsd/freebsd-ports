@@ -1,5 +1,6 @@
 PORTNAME=	primecountpy
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +19,9 @@ RUN_DEPENDS=	${PYDEPS}
 
 USES=		localbase python:3.7+
 USE_PYTHON=	cython distutils
+.if !defined(WITH_DEBUG)
+LDFLAGS+=	-s
+.endif
 
 PYDEPS=	${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 
