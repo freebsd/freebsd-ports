@@ -50,6 +50,7 @@ include/mtx/log.hpp
 include/mtx/pushrules.hpp
 include/mtx/requests.hpp
 include/mtx/responses.hpp
+include/mtx/responses/capabilities.hpp
 include/mtx/responses/common.hpp
 include/mtx/responses/create_room.hpp
 include/mtx/responses/crypto.hpp
