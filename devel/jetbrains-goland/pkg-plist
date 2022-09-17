@@ -34,7 +34,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/asm-tree-9.2.jar
 %%DATADIR%%/lib/asm-util-9.2.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-GO-222.3739.57
+%%DATADIR%%/lib/build-marker-GO-222.4167.25
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -311,8 +311,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/git4idea/lib/git4idea.jar
 %%DATADIR%%/plugins/github/lib/github.jar
 %%DATADIR%%/plugins/go-ide/lib/go-ide.jar
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-4305af858e98-ec65528e77fb.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-4305af858e98-ec65528e77fb.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-4305af858e98-3a2c0e88b862.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-4305af858e98-3a2c0e88b862.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/go/lib/go-openapi.jar
