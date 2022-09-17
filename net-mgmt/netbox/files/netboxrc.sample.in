@@ -44,10 +44,12 @@
 name="netbox"
 rcvar=netbox_enable
 netbox_path=%%DATADIR%%
+extra_commands="upgrade"
 
 load_rc_config $name
 
 start_precmd="netbox_precmd"
+upgrade_cmd="netbox_upgrade"
 command=${netbox_program:-%%LOCALBASE%%/bin/gunicorn}
 procname=${netbox_procname:-%%PYTHON_CMD%%}
 netbox_chdir=${netbox_path}
@@ -86,6 +88,23 @@ fi
 netbox_precmd()
 {
 	install -d -o ${netbox_user} `dirname ${pidfile}`
+}
+
+netbox_upgrade()
+{
+	if [ -f ${pidfile} ]; then
+		cd ${netbox_path}
+		%%PYTHON_CMD%% manage.py migrate
+		%%PYTHON_CMD%% manage.py trace_paths --no-input
+		%%LOCALBASE%%/bin/mkdocs build
+		%%PYTHON_CMD%% manage.py collectstatic --no-input
+		%%PYTHON_CMD%% manage.py remove_stale_contenttypes --no-input
+		%%PYTHON_CMD%% manage.py clearsessions
+		%%PYTHON_CMD%% manage.py clearcache
+		echo "Please restart NetBox and the WSGI environment."
+	else
+		echo "NetBox is not running!"
+	fi
 }
 
 run_rc_command "$1"

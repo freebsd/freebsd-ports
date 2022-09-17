@@ -34,110 +34,6 @@ The following steps are required to finish the upgrade:
 EOD
 }
 { type: upgrade
-  maximum_version: 2.9.8
-  message: <<EOD
-Changes related to the NetBox configuration:
-
-1. If in use, LDAP authentication must be enabled by setting
-   REMOTE_AUTH_BACKEND to 'netbox.authentication.LDAPBackend'.  (The LDAP
-   configuration parameters in ldap_config.py remain unchanged.)
-
-2. REMOTE_AUTH_DEFAULT_PERMISSIONS now takes a dictionary rather than a list.
-   This is a mapping of permission names to a dictionary of constraining
-   attributes, or None.
-
-   For example, ['dcim.add_site', 'dcim.change_site'] would become
-   {'dcim.add_site': None, 'dcim.change_site': None}.
-
-3. Support for the DEFAULT_TIMEOUT parameter under REDIS database configuration
-   was removed.  Set RQ_DEFAULT_TIMEOUT as a global configuration parameter
-   instead.
-
-
-Changes related to permissions:
-
-1. Any permissions referencing the legacy ReportResult model (e.g.
-   'extras.view_reportresult') should be updated to reference the Report model.
-
-2. The 'secrets.activate_userkey' permission no longer exists.  Instead,
-   'secrets.change_userkey' is checked to determine whether a user has the
-   ability to activate a UserKey.
-
-3. The 'users.delete_token permission' is no longer enforced.  All users are
-   permitted to delete their own API tokens.
-
-
-Changes to the REST API:
-
-Numerous changes have been made to the REST API. Please check the changelogs
-for more details.
-
-
-Workaround for issues with invalid nested data:
-
-Users that are experiencing invalid nested data with regions, rack groups, or
-tenant groups can perform a one-time operation using the NetBox shell to
-rebuild the correct nested relationships after upgrading:
-
-# cd %%DATADIR%%
-# python%%PYTHON_VER%% manage.py nbshell
-### NetBox interactive shell (localhost)
-### Python 3.x.x | Django 3.1.x | NetBox 2.9.x
-### lsmodels() will show available models. Use help(<model>) for more info.
->>> Region.objects.rebuild()
->>> RackGroup.objects.rebuild()
->>> TenantGroup.objects.rebuild()
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.9.9
-  message: <<EOD
-An new sample rc script has been added to manage the RQ-worker service.  If the
-EXAMPLES option is enabled (which is the default) it can be found in the
-following directory:
-
-%%EXAMPLESDIR%%/netbox_rq.sample
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.10.3
-  message: <<EOD
-The Django templating language (DTL) is no longer supported for export
-templates.  Please ensure that all export templates use Jinja2 before
-upgrading.
-
-Also the support for embedded graphs was completely removed and several changes
-to the REST API were made.  Please check the changelogs for further details.
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.11.9
-  message: <<EOD
-* All objects now use numeric IDs in their UI view URLs instead of slugs.  You
-  may need to update external references to NetBox objects.  (Note that this
-  does _not_ affect the REST API.)
-
-* The UI now uses numeric IDs when filtering object lists.  You may need to
-  update external links to filtered object lists.  (Note that the slug- and
-  name-based filters will continue to work, however the filter selection fields
-  within the UI will not be automatically populated.)
-
-* The RackGroup model has been renamed to "Location".  Its REST API endpoint
-  has changed from /api/dcim/rack-groups/ to /api/dcim/locations/.
-
-* The foreign key field "group" on dcim.Rack has been renamed to "location".
-
-* The foreign key field "site" on ipam.VLANGroup has been replaced with the
-  "scope" generic foreign key.
-
-* Custom script ObjectVars no longer support the "queryset" parameter:
-  Use "model" instead.
-
-Several changes to the REST API were made as well.  Please check the changelogs
-for further details.
-EOD
-}
-{ type: upgrade
   maximum_version: 3.0.4
   message: <<EOD
 /!\ WARNING /!\
@@ -202,8 +98,8 @@ The NetBox 3.0 release contains major changes, so at least items 1.), 2.) and
 
    Please run following commands to enable the new script:
 
-   # cp %%EXAMPLESDIR%%/850-netbox-housekeeping.sample %%LOCALBASE%%/etc/periodic/daily/850-netbox-housekeeping
-   # chmod 555 %%LOCALBASE%%/etc/periodic/daily/850-netbox-housekeeping
+   # cp %%EXAMPLESDIR%%/850.netbox-housekeeping.sample %%LOCALBASE%%/etc/periodic/daily/850.netbox-housekeeping
+   # chmod 555 %%LOCALBASE%%/etc/periodic/daily/850.netbox-housekeeping
    # sysrc -f /etc/periodic.conf daily_netbox_housekeeping_enable="YES"
 EOD
 }
@@ -329,6 +225,59 @@ Please note that the general update instructions got another command that needs
 to be issued after each update:
 
 # python%%PYTHON_VER%% manage.py clearcache
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.3.4
+  message: <<EOD
+The NetBox 3.3 release contains some breaking API changes, so please check the
+following items before running the database migrations:
+
+* Device position, device type height, and rack unit values are now reported
+  as decimals (e.g. 1.0 or 1.5) to support modeling half-height rack units.
+
+* The "nat_outside" relation on the IP address model now returns a list of zero
+  or more related IP addresses, rather than a single instance (or None).
+
+* Several fields on the cable API serializers have been altered or removed to
+  support multiple-object cable terminations:
+
++------------------------------+------+-------------------------------+------+
+| Old Name                     | Type | New Name                      | Type |
++------------------------------+------+-------------------------------+------+
+| termination_a_type           | str  | Removed                       | -    |
+| termination_b_type           | str  | Removed                       | -    |
+| termination_a_id             | int  | Removed                       | -    |
+| termination_b_id             | int  | Removed                       | -    |
+| termination_a                | obj  | a_terminations                | list |
+| termination_b                | obj  | b_terminations                | list |
++------------------------------+------+-------------------------------+------+
+
+* As with the cable model, several API fields on all objects to which cables
+  can be connected (interfaces, circuit terminations, etc.) have been changed:
+
++------------------------------+------+-------------------------------+------+
+| Old Name                     | Type | New Name                      | Type |
++------------------------------+------+-------------------------------+------+
+| link_peer                    | obj  | link_peers                    | list |
+| link_peer_type               | str  | link_peers_type               | str  |
+| connected_endpoint           | obj  | connected_endpoints           | list |
+| connected_endpoint_type      | str  | connected_endpoints_type      | str  |
+| connected_endpoint_reachable | bool | connected_endpoints_reachable | bool |
++------------------------------+------+-------------------------------+------+
+
+* The cable path serialization returned by the "/paths/" endpoint for
+  pass-through ports has been simplified, and the following fields removed:
+
+  "origin_type", "origin", "destination_type", "destination". (Additionally,
+  "is_complete" has been added.)
+
+* Several changes to the REST API were made as well.  Please check the
+  changelogs for further details.
+
+* The netbox sample rc script got a new "upgrade" directive that also
+  simplifies the upgrade process (database migrations, building the embedded
+  documentation, etc.).
 EOD
 }
 ]
