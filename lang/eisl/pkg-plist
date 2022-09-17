@@ -34,6 +34,7 @@ bin/eisl
 %%DATADIR%%/library/opengl.lsp
 %%DATADIR%%/library/persist.lsp
 %%DATADIR%%/library/regex.lsp
+%%DATADIR%%/library/regex.o
 %%DATADIR%%/library/seq.lsp
 %%DATADIR%%/library/sort.lsp
 %%DATADIR%%/library/tcltk.lsp
