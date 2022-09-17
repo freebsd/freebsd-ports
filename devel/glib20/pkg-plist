@@ -15,7 +15,6 @@ bin/gtester
 bin/gtester-report
 include/gio-unix-2.0/gio/gdesktopappinfo.h
 include/gio-unix-2.0/gio/gfiledescriptorbased.h
-include/gio-unix-2.0/gio/gunixfdlist.h
 include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
@@ -170,6 +169,7 @@ include/glib-2.0/gio/gtlspassword.h
 include/glib-2.0/gio/gtlsserverconnection.h
 include/glib-2.0/gio/gunixconnection.h
 include/glib-2.0/gio/gunixcredentialsmessage.h
+include/glib-2.0/gio/gunixfdlist.h
 include/glib-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
@@ -317,6 +317,7 @@ libdata/pkgconfig/gmodule-export-2.0.pc
 libdata/pkgconfig/gmodule-no-export-2.0.pc
 libdata/pkgconfig/gobject-2.0.pc
 libdata/pkgconfig/gthread-2.0.pc
+libexec/gio-launch-desktop
 %%MANPAGES%%man/man1/gapplication.1.gz
 %%MANPAGES%%man/man1/gdbus-codegen.1.gz
 %%MANPAGES%%man/man1/gdbus.1.gz
@@ -550,6 +551,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/gio/api-index-2-68.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-2-70.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-2-72.html
+%%DOCS%%share/gtk-doc/html/gio/api-index-2-74.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/gio/api-index-full.html
 %%DOCS%%share/gtk-doc/html/gio/application.html
@@ -686,6 +688,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-68.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-70.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-72.html
+%%DOCS%%share/gtk-doc/html/glib/api-index-2-74.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-2-8.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/glib/api-index-full.html
@@ -831,6 +834,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-68.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-70.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-72.html
+%%DOCS%%share/gtk-doc/html/gobject/api-index-2-74.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-2-8.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/gobject/api-index-full.html
@@ -894,6 +898,7 @@ share/gettext/its/gschema.loc
 %%DOCS%%share/gtk-doc/html/gobject/tools-vala.html
 %%DOCS%%share/gtk-doc/html/gobject/up-insensitive.png
 %%DOCS%%share/gtk-doc/html/gobject/up.png
+%%NLS%%share/locale/ab/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/af/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/am/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/an/LC_MESSAGES/glib20.mo
