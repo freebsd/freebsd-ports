@@ -1,0 +1,13 @@
+--- meson.build.orig	2022-07-31 10:16:29 UTC
++++ meson.build
+@@ -3,9 +3,7 @@ srcdir = meson.source_root()
+ 
+ srcdir = meson.source_root()
+ 
+-txt = run_command('git', '--git-dir=' + srcdir + '/.git', 'rev-parse', 'HEAD').stdout().strip()
+-dirty = run_command(srcdir + '/git-dirty.sh').stdout().strip()
+-add_global_arguments('-DBUILD_ID="' + txt + dirty + '"', language : 'c')
++add_global_arguments('-DBUILD_ID="\\0"', language : 'c')
+ 
+ conf_data = configuration_data()
+ conf_data.set('VERSION', meson.project_version())

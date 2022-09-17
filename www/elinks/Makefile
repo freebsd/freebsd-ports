@@ -1,6 +1,6 @@
 PORTNAME=	elinks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.1
 CATEGORIES=	www
 
 MAINTAINER=	jailbird@fdf.net
@@ -10,24 +10,27 @@ WWW=		https://github.com/rkd77/elinks/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf bison:alias cpe gmake iconv pkgconfig ssl
+USES=		bison:alias cpe gmake iconv meson perl5 pkgconfig python:3.7+ ssl
+BUILD_DEPENDS=	xmlto:textproc/xmlto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkd77
 
 LIBS+=		-lexecinfo
+CONIGURE_ENV=	PYTHON_PATH="${PYTHON_CMD}"
+MESON_ARGS=	-Dgpm=false -Dperl=true
 
-OPTIONS_DEFINE=		256COLORS 88COLORS BITTORRENT BROTLI EXMODE \
+OPTIONS_DEFINE=		256COLORS 88COLORS TRUECOLORS BITTORRENT BROTLI EXMODE \
 			FASTMEM FINGER FSP FTP GOPHER GUILE HIGHLIGHT \
 			IDN LOCAL_CGI LUA LZMA MOUSE NLS NNTP NOROOT \
-			PERL SMB SPIDERMONKEY XBELMARKS ZSTD
+			SMB SPIDERMONKEY TRE XBELMARKS ZSTD
 OPTIONS_DEFAULT=	256COLORS 88COLORS BROTLI EXMODE FASTMEM FTP \
 			HIGHLIGHT LZMA MOUSE
 OPTIONS_SUB=		yes
 
 88COLORS_DESC=		88 color support
 256COLORS_DESC=		256 color support
+TRUECOLORS_DESC=	True color support
 SPIDERMONKEY_DESC=	ECMAScript support (via SpiderMonkey)
 XBELMARKS_DESC=		XBEL bookmarks (via expat)
 LOCAL_CGI_DESC=		Local CGI support
@@ -36,75 +39,86 @@ EXMODE_DESC=		Exmode (CLI) support
 HIGHLIGHT_DESC=		HTML highlighting using DOM engine
 NOROOT_DESC=		Prevention of usage by root
 FASTMEM_DESC=		Fast memory allocation functions
+TRE_DESC=		TRE regex search support
 
 BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
-BROTLI_CONFIGURE_ON=	--with-brotli
+BROTLI_MESON_TRUE=	brotli
 
 NLS_USES=		gettext
-NLS_CONFIGURE_OFF=	--disable-nls
+NLS_MESON_TRUE=		nls
 
 GUILE_LIB_DEPENDS=	libguile-3.0.so:lang/guile
-GUILE_CONFIGURE_WITH=	guile
+GUILE_MESON_TRUE=	guile
 
-LUA_USES=		lua
-LUA_CONFIGURE_ON=	--with-luapkg=lua-${LUA_VER}
+LUA_USES=		lua:52-53
+LUA_MESON_ON=		-Dluapkg=lua-${LUA_VER}
 
-LZMA_CONFIGURE_ON=	--with-lzma
+LZMA_MESON_TRUE=	lzma
 
-PERL_USES=		perl5
-PERL_CONFIGURE_WITH=	perl
-
-FASTMEM_CONFIGURE_ON=	--enable-fastmem
+FASTMEM_MESON_TRUE=	fastmem
 
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_USES=		localbase
-IDN_CONFIGURE_WITH=	idn
+IDN_MESON_TRUE=		idn
 
-NOROOT_CONFIGURE_ON=	--enable-no-root
+NOROOT_MESON_TRUE=	no-root
 
-HIGHLIGHT_CONFIGURE_ON=	--enable-html-highlight
+HIGHLIGHT_MESON_TRUE=	html-highlight
 
-EXMODE_CONFIGURE_ON=	--enable-exmode
+EXMODE_MESON_TRUE=	exmode
 
 SMB_USES=		samba # smbclient
-SMB_CONFIGURE_ENABLE=	smb
+SMB_MESON_TRUE=		smb
 
 FSP_RUN_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:net/fsplib
 FSP_BUILD_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:net/fsplib
-FSP_CONFIGURE_ENABLE=	fsp
+FSP_MESON_TRUE=		fsp
 
-FTP_CONFIGURE_ENABLE=	ftp
+FTP_MESON_TRUE=		ftp
 
-NNTP_CONFIGURE_ENABLE=	nntp
+NNTP_MESON_TRUE=	nntp
 
-BITTORRENT_CONFIGURE_ENABLE=	bittorrent
+BITTORRENT_MESON_TRUE=	bittorrent
 
-GOPHER_CONFIGURE_ENABLE=	gopher
+GOPHER_MESON_TRUE=	gopher
 
-MOUSE_CONFIGURE_ENABLE=	mouse
+MOUSE_MESON_TRUE=	mouse
 
-FINGER_CONFIGURE_ENABLE=	finger
+FINGER_MESON_TRUE=	finger
 
-LOCAL_CGI_CONFIGURE_ENABLE=	cgi
+LOCAL_CGI_MESON_TRUE=	cgi
 
 XBELMARKS_LIB_DEPENDS=	libexpat.so:textproc/expat2
-XBELMARKS_CONFIGURE_OFF=--disable-xbel
+XBELMARKS_MESON_TRUE=	xbel
 
-256COLORS_CONFIGURE_ON=	--enable-256-colors
+256COLORS_MESON_TRUE=	256-colors
 
-88COLORS_CONFIGURE_ON=	--enable-88-colors
+88COLORS_MESON_TRUE=	88-colors
 
-SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:lang/spidermonkey17
-SPIDERMONKEY_RUN_DEPENDS=	js:lang/spidermonkey17
-SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr
+TRUECOLORS_MESON_TRUE=	true-color
+
+SPIDERMONKEY_USES=		compiler:c++17-lang sqlite
+SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-78.so:lang/spidermonkey78 \
+				${LOCALBASE}/lib/libxml++-5.0.so:textproc/libxml++
+SPIDERMONKEY_RUN_DEPENDS=	js78:lang/spidermonkey78
+SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr \
+				libxml++-5.0.so:textproc/libxml++
 SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr \
-				-I${LOCALBASE}/include/js-1.7
+				-I${LOCALBASE}/include/js-78
+SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/nspr \
+				-I${LOCALBASE}/include/js-78
 SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lnspr4 -lpthread -lm
-SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey
-SPIDERMONKEY_CONFIGURE_OFF=	--disable-sm-scripting --without-spidermonkey
+SPIDERMONKEY_MESON_ON=		-Dsm-scripting=true -Dspidermonkey=true
+
+TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
+TRE_MESON_TRUE=		tre
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_USES=		localbase
-ZSTD_CONFIGURE_ON=	--with-zstd
+ZSTD_MESON_TRUE=	zstd
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/doc/tools/help2xml
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python3|${PYTHON_CMD}|g' ${WRKSRC}/doc/tools/asciidoc/asciidoc.py
 
 .include <bsd.port.mk>
