@@ -1,0 +1,6 @@
+libdata/pkgconfig/hwdata.pc
+%%DATADIR%%/hwdata/iab.txt
+%%DATADIR%%/hwdata/oui.txt
+%%DATADIR%%/hwdata/pci.ids
+%%DATADIR%%/hwdata/pnp.ids
+%%DATADIR%%/hwdata/usb.ids
