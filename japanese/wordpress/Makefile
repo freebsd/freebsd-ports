@@ -1,5 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.0
+DISTVERSION=	6.0.1
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	https://ja.wordpress.org/

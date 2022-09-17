@@ -1,5 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.0
+DISTVERSION=	6.0.1
 DISTVERSIONSUFFIX=	-zh_TW
 CATEGORIES=	chinese www
 MASTER_SITES=	https://tw.wordpress.org/
