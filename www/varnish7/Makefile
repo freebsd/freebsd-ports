@@ -1,5 +1,5 @@
 PORTNAME=	varnish
-DISTVERSION=	7.1.1
+DISTVERSION=	7.2.0
 DISTVERSIONPREFIX=	varnish-
 CATEGORIES=	www
 PKGNAMESUFFIX=	7
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		autoreconf compiler cpe gmake libedit libtool ncurses pathfix \
 		pkgconfig python:3.6+,build readline shebangfix
+
+SUB_FILES=	pkg-message
 
 CONFLICTS=	varnish4 varnish6
 
