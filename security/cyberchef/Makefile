@@ -7,6 +7,7 @@ DISTNAME=	CyberChef_${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Cyber operations within a web browser
+WWW=		https://github.com/gchq/CyberChef/wiki
 
 LICENSE=	APACHE20
 
