@@ -21,6 +21,8 @@ include/rapidfuzz/distance/LCSseq.hpp
 include/rapidfuzz/distance/LCSseq_impl.hpp
 include/rapidfuzz/distance/Levenshtein.hpp
 include/rapidfuzz/distance/Levenshtein_impl.hpp
+include/rapidfuzz/distance/OSA.hpp
+include/rapidfuzz/distance/OSA_impl.hpp
 include/rapidfuzz/fuzz.hpp
 include/rapidfuzz/fuzz.impl
 include/rapidfuzz/rapidfuzz_all.hpp
