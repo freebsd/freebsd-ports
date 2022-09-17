@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.3
-PORTREVISION=	1
+DISTVERSION=	0.31.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -312,6 +311,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vte-0.10.1 \
+		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
 		vtparse-0.6.1 \
 		waker-fn-1.1.0 \
