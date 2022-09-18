@@ -1,62 +1,64 @@
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.9.328
-PORTREVISION=	1
+DISTVERSION=	1.9.348
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C++ interface for Amazon Web Services (AWS)
 WWW=		https://github.com/aws/aws-sdk-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=		fails to build: runaway process
-BROKEN_armv7=		fails to build: runaway process
-BROKEN_i386=		fails to build: compiler runs out of memory
-BROKEN_powerpc=		fails to build: compiler runs out of memory
+BROKEN_armv6=	fails to build: runaway process
+BROKEN_armv7=	fails to build: runaway process
+BROKEN_i386=	fails to build: compiler runs out of memory
+BROKEN_powerpc=	fails to build: compiler runs out of memory
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpulse.so:audio/pulseaudio \
+LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
+		libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-common.so:devel/aws-c-common \
-		libaws-checksums.so:devel/aws-checksums \
+		libaws-c-compression.so:devel/aws-c-compression \
 		libaws-c-event-stream.so:devel/aws-c-event-stream \
-		libaws-crt-cpp.so:devel/aws-crt-cpp \
-		libaws-c-mqtt.so:devel/aws-c-mqtt \
-		libaws-c-s3.so:devel/aws-c-s3 \
-		libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-http.so:devel/aws-c-http \
 		libaws-c-io.so:devel/aws-c-io \
-		libs2n.so:security/s2n-tls \
-		libaws-c-compression.so:devel/aws-c-compression \
-		libaws-c-cal.so:security/aws-c-cal \
+		libaws-c-mqtt.so:devel/aws-c-mqtt \
+		libaws-c-s3.so:devel/aws-c-s3 \
 		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
-		libnghttp2.so:www/libnghttp2 \
-		libssh2.so:security/libssh2 \
+		libaws-checksums.so:devel/aws-checksums \
+		libaws-crt-cpp.so:devel/aws-crt-cpp \
+		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
-		libsndfile.so:audio/libsndfile \
 		libFLAC.so:audio/flac \
+		libnghttp2.so:www/libnghttp2 \
+		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
-		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg
+		libpulse.so:audio/pulseaudio \
+		libs2n.so:security/s2n-tls \
+		libsndfile.so:audio/libsndfile \
+		libssh2.so:security/libssh2 \
+		libvorbis.so:audio/libvorbis
 
-USES=		cmake:noninja compiler:c++11-lib gettext-runtime localbase:ldflags \
+USES=		cmake compiler:c++11-lib gettext-runtime localbase:ldflags \
 		pkgconfig ssl xorg
-USE_XORG=	x11 xcb ice sm xtst xau xdmcp xext xi
+USE_GITHUB=	yes
+GH_ACCOUNT=	aws
+USE_LDCONFIG=	yes
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xi xtst
+
+CMAKE_ARGS+=	-DBUILD_ONLY="${BUILD_ONLY}" \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DCMAKE_PREFIX_PATH=${LOCALBASE}
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_DEPS
+
+CXXFLAGS+=	-Wno-error -Wno-c11-extensions
 
 BUILD_ONLY?=
 
 OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
 
-TEST_CMAKE_OFF=	-DENABLE_TESTING=OFF
-
-CMAKE_ARGS+=	-DBUILD_DEPS=OFF -DBUILD_ONLY="${BUILD_ONLY}" \
-		-DCMAKE_PREFIX_PATH=${LOCALBASE} -DCMAKE_INSTALL_LIBDIR=lib
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	aws
-USE_LDCONFIG=	yes
-CXXFLAGS+=	-Wno-error -Wno-c11-extensions
+TEST_CMAKE_BOOL_OFF=	ENABLE_TESTING
 
 pre-everything::
 	@${ECHO_MSG}
