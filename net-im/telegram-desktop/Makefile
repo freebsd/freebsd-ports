@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.1.1
-PORTREVISION=	2
+DISTVERSION=	4.2.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -42,28 +41,15 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libxxhash.so:devel/xxhash \
 		libvpx.so:multimedia/libvpx
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	${FLAVORS:[1]}
-qt5_PKGNAMESUFFIX=
-qt6_PKGNAMESUFFIX=	-qt6
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
-qt6_CONFLICTS_INSTALL=	${PORTNAME}
-
 USES=		cmake compiler:c++17-lang desktop-file-utils gl \
-		gnome pkgconfig python:3.7+,build ssl xorg
+		gnome kde:5 pkgconfig python:3.7+,build qt:5 ssl xorg
+USE_KDE=	coreaddons
+USE_QT=		buildtools:build core dbus gui imageformats network qmake:build \
+		svg wayland widgets
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
-
-.if ${FLAVOR} == qt5
-USES+=		qt:5
-USE_QT=		buildtools:build core dbus gui imageformats network qmake:build \
-		svg wayland widgets
-.else
-USES+=		qt:6
-USE_QT=		5compat base imageformats svg wayland
-.endif
 
 USE_GL=		gl
 USE_GNOME=	glib20 glibmm
