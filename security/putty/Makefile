@@ -1,6 +1,6 @@
 PORTNAME=	putty
 DISTVERSION=	0.78~pre20220916.e1b73f0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -22,7 +22,7 @@ LICENSE_FILE=	${PATCH_WRKSRC}/LICENCE
 USES=		cmake cpe perl5 pkgconfig
 USE_PERL5=	build
 
-CONFLICTS_INSTALL?=	pssh putty-nogtk
+CONFLICTS_INSTALL?=	pssh* putty-nogtk*
 
 PLIST_FILES=	bin/pageant \
 		bin/plink \
