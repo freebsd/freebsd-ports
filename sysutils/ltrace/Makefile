@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror
+CONFIGURE_ARGS+=	--without-libunwind # fix build: configure is looking for and finds libunwind.h, but the C code later doesn't find libunwind-ptrace.h and breaks
 ONLY_FOR_ARCHS=	amd64
 
 OPTIONS_DEFINE=	DOCS
