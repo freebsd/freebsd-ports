@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -14,7 +14,7 @@ PATCH_SITES=	https://raw.githubusercontent.com/archlinux/svntogit-packages/packa
 PATCHFILES=	libreoffice-poppler-22.09.0.patch:-p1
 
 COMMENT=	Full integrated office productivity suite
-WWW=		https://www.libreoffice.org/
+WWW?=		https://www.libreoffice.org/
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
@@ -130,7 +130,9 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
-OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PDFIUM PGSQL MARIADB QT5 SDK TEST WEBDAV
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PDFIUM PGSQL MARIADB SDK TEST WEBDAV
+OPTIONS_RADIO=	QT
+OPTIONS_RADIO_QT=	QT5 QT6
 OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
 #OPTIONS_EXCLUDE=	GTK4
 
@@ -142,7 +144,9 @@ MMEDIA_DESC=	Enable multimedia backend for Impress
 PDFIUM_DESC=	Enable PDFium secure engine
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
+QT_DESC=	Select Qt GUI engine version
 QT5_DESC=	Qt5 GUI toolkit support (default visual style)
+QT6_DESC=	Qt6 GUI toolkit support (experimental visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
 WEBDAV_DESC=	Enable WebDAV protocol
@@ -235,6 +239,13 @@ QT5_CONFIGURE_ENABLE=	qt5
 QT5_USE=	qt=buildtools:build,core,gui,network,qmake:build,widgets,x11extras
 QT5_USES=	qt:5
 
+QT6_CONFIGURE_ENABLE=	qt6
+QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
+QT6_PREVENTS=	KF5
+QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
+QT6_USE=	qt=base,declarative:build,tools:build
+QT6_USES=	qt:6
+
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
 SDK_CONFIGURE_ENABLE=	odk
 SDK_CONFIGURE_OFF=	--without-doxygen
@@ -321,6 +332,7 @@ MAKE_ENV+=	verbose=1
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( \
+    (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
     (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
     (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
 BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
@@ -348,8 +360,7 @@ LLD_UNSAFE=	yes
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-c++11-narrowing \
-		-Wno-unused-parameter -Wno-unused-local-typedefs
+CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-typedefs
 .else
 CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 .endif
