@@ -563,6 +563,7 @@
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
+    SUBDIR += roundcube-larry
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels
