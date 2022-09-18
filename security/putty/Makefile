@@ -1,6 +1,6 @@
 PORTNAME=	putty
 DISTVERSION=	0.78~pre20220916.e1b73f0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -84,13 +84,13 @@ CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=TRUE
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} # Heimdal-like in base system
 USES+=		gssapi:base,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC -DKRB5_CONFIG:PATH=${KRB5CONFIG}
 .elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
 USES+=		gssapi:heimdal,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC -DKRB5_CONFIG:PATH=${KRB5CONFIG}
 .elif ${PORT_OPTIONS:MGSSAPI_MIT}
 USES+=		gssapi:mit,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC -DKRB5_CONFIG:PATH=${KRB5CONFIG}
 .elif ${PORT_OPTIONS:MGSSAPI_DYNAMIC}
 BROKEN=		GSSAPI_DYNAMIC does not work as of putty 0.78~pre20220916.e1b73f0
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=DYNAMIC
@@ -106,6 +106,10 @@ post-patch:
 	${REINPLACE_CMD} '/FindGit/d' \
 		${WRKSRC}/cmake/setup.cmake \
 		${WRKSRC}/doc/CMakeLists.txt
+	# nuke pkg-config detection of GSSAPI/Kerberos libs,
+	# it interferes with FreeBSD's krb5-config approach
+	${REINPLACE_CMD} '/pkg_check_modules(KRB5 krb5-gssapi)/d' \
+		${WRKSRC}/cmake/platforms/unix.cmake
 
 post-install:
 .if ${PORT_OPTIONS:MGTK3}
