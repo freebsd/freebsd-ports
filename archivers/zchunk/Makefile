@@ -1,5 +1,5 @@
 PORTNAME=	zchunk
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
