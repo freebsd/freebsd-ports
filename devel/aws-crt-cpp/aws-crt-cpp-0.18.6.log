@@ -1,0 +1,539 @@
+build started at Sun Sep 18 12:42:15 WEST 2022
+port directory: /usr/ports/devel/aws-crt-cpp
+package name: aws-crt-cpp-0.18.6
+building for: FreeBSD 131amd64-devel 13.1-RELEASE FreeBSD 13.1-RELEASE amd64
+maintained by: eduardo@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.3.7_1
+Host OSVERSION: 1400067
+Jail OSVERSION: 1301000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1301000
+UNAME_v=FreeBSD 13.1-RELEASE
+UNAME_r=13.1-RELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.7_1
+MASTERMNT=/usr/local/poudriere/data/.m/131amd64-devel/ref
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=st-256color
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/131amd64-devel/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=131amd64-devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/131amd64-devel/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs PKGLATESTREPOSITORY=/tmp/pkgs/Latest
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+eduardo@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/.cache  HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+NINJA_STATUS="[%p %s/%t] " OPENSSLBASE=/usr OPENSSLDIR=/etc/ssl OPENSSLINC=/usr/include OPENSSLLIB=/usr/lib XDG_DATA_HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/.cache  HOME=/wrkdirs/usr/ports/devel/aws-crt-cpp/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS="  -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+CMAKE_BUILD_TYPE="release" OSREL=13.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/aws-crt-cpp"  EXAMPLESDIR="share/examples/aws-crt-cpp"  DATADIR="share/aws-crt-cpp"  WWWDIR="www/aws-crt-cpp"  ETCDIR="etc/aws-crt-cpp"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/aws-crt-cpp DOCSDIR=/usr/local/share/doc/aws-crt-cpp EXAMPLESDIR=/usr/local/share/examples/aws-crt-cpp  WWWDIR=/usr/local/www/aws-crt-cpp ETCDIR=/usr/local/etc/aws-crt-cpp
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/make.conf ####
+#MAKE_JOBS_NUMBER=4
+#LICENSES_ACCEPTED=${LICENSE}
+
+.if ${.CURDIR:M*/devel/llvm13}
+MAKE_JOBS_NUMBER=6
+.endif
+
+.if ${.CURDIR:M*/devel/aws-sdk-cpp}
+MAKE_JOBS_NUMBER=6
+.endif
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19472
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License APACHE20 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.18.4.pkg
+[131amd64-devel] Installing pkg-1.18.4...
+[131amd64-devel] Extracting pkg-1.18.4: .......... done
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of aws-crt-cpp-0.18.6
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License APACHE20 accepted by the user
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by aws-crt-cpp-0.18.6 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License APACHE20 accepted by the user
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by aws-crt-cpp-0.18.6 for building
+=> SHA256 Checksum OK for awslabs-aws-crt-cpp-v0.18.6_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License APACHE20 accepted by the user
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by aws-crt-cpp-0.18.6 for building
+===>  Extracting for aws-crt-cpp-0.18.6
+=> SHA256 Checksum OK for awslabs-aws-crt-cpp-v0.18.6_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for aws-crt-cpp-0.18.6
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-core-3.24.0.pkg
+[131amd64-devel] Installing cmake-core-3.24.0...
+[131amd64-devel] `-- Installing curl-7.85.0...
+[131amd64-devel] |   `-- Installing ca_root_nss-3.83...
+[131amd64-devel] |   `-- Extracting ca_root_nss-3.83: .......... done
+[131amd64-devel] |   `-- Installing libnghttp2-1.48.0...
+[131amd64-devel] |   `-- Extracting libnghttp2-1.48.0: .......... done
+[131amd64-devel] |   `-- Installing libpsl-0.21.1_4...
+[131amd64-devel] |   | `-- Installing gettext-runtime-0.21...
+[131amd64-devel] |   |   `-- Installing indexinfo-0.3.1...
+[131amd64-devel] |   |   `-- Extracting indexinfo-0.3.1: .... done
+[131amd64-devel] |   | `-- Extracting gettext-runtime-0.21: .......... done
+[131amd64-devel] |   | `-- Installing libidn2-2.3.3...
+[131amd64-devel] |   |   `-- Installing libunistring-1.0...
+[131amd64-devel] |   |   `-- Extracting libunistring-1.0: .......... done
+[131amd64-devel] |   | `-- Extracting libidn2-2.3.3: .......... done
+[131amd64-devel] |   `-- Extracting libpsl-0.21.1_4: .......... done
+[131amd64-devel] |   `-- Installing libssh2-1.10.0,3...
+[131amd64-devel] |   `-- Extracting libssh2-1.10.0,3: .......... done
+[131amd64-devel] `-- Extracting curl-7.85.0: .......... done
+[131amd64-devel] `-- Installing expat-2.4.8...
+[131amd64-devel] `-- Extracting expat-2.4.8: .......... done
+[131amd64-devel] `-- Installing jsoncpp-1.9.5...
+[131amd64-devel] `-- Extracting jsoncpp-1.9.5: .......... done
+[131amd64-devel] `-- Installing libarchive-3.6.1,1...
+[131amd64-devel] |   `-- Installing liblz4-1.9.4,1...
+[131amd64-devel] |   `-- Extracting liblz4-1.9.4,1: .......... done
+[131amd64-devel] |   `-- Installing zstd-1.5.2_1...
+[131amd64-devel] |   `-- Extracting zstd-1.5.2_1: .......... done
+[131amd64-devel] `-- Extracting libarchive-3.6.1,1: .......... done
+[131amd64-devel] `-- Installing libuv-1.44.2...
+[131amd64-devel] `-- Extracting libuv-1.44.2: .......... done
+[131amd64-devel] `-- Installing rhash-1.4.3...
+[131amd64-devel] `-- Extracting rhash-1.4.3: .......... done
+[131amd64-devel] Extracting cmake-core-3.24.0: .......... done
+=====
+Message from ca_root_nss-3.83:
+
+--
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of aws-crt-cpp-0.18.6
+===>   aws-crt-cpp-0.18.6 depends on executable: ninja - not found
+===>   Installing existing package /packages/All/ninja-1.11.1,2.pkg
+[131amd64-devel] Installing ninja-1.11.1,2...
+[131amd64-devel] `-- Installing python39-3.9.14...
+[131amd64-devel] |   `-- Installing libffi-3.4.2...
+[131amd64-devel] |   `-- Extracting libffi-3.4.2: .......... done
+[131amd64-devel] |   `-- Installing mpdecimal-2.5.1...
+[131amd64-devel] |   `-- Extracting mpdecimal-2.5.1: .......... done
+[131amd64-devel] |   `-- Installing readline-8.1.2...
+[131amd64-devel] |   `-- Extracting readline-8.1.2: .......... done
+[131amd64-devel] `-- Extracting python39-3.9.14: .......... done
+[131amd64-devel] Extracting ninja-1.11.1,2: ........ done
+=====
+Message from python39-3.9.14:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+===>   aws-crt-cpp-0.18.6 depends on executable: ninja - found
+===>   Returning to build of aws-crt-cpp-0.18.6
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-auth.so - not found
+===>   Installing existing package /packages/All/aws-c-auth-0.6.16_1.pkg
+[131amd64-devel] Installing aws-c-auth-0.6.16_1...
+[131amd64-devel] `-- Installing aws-c-cal-0.5.19...
+[131amd64-devel] |   `-- Installing aws-c-common-0.8.1,1...
+[131amd64-devel] |   `-- Extracting aws-c-common-0.8.1,1: .......... done
+[131amd64-devel] `-- Extracting aws-c-cal-0.5.19: .......... done
+[131amd64-devel] `-- Installing aws-c-compression-0.2.15...
+[131amd64-devel] `-- Extracting aws-c-compression-0.2.15: .......... done
+[131amd64-devel] `-- Installing aws-c-http-0.6.20_1...
+[131amd64-devel] |   `-- Installing aws-c-io-0.13.4_2...
+[131amd64-devel] |   | `-- Installing s2n-tls-1.3.21,1...
+[131amd64-devel] |   | `-- Extracting s2n-tls-1.3.21,1: .......... done
+[131amd64-devel] |   `-- Extracting aws-c-io-0.13.4_2: .......... done
+[131amd64-devel] `-- Extracting aws-c-http-0.6.20_1: .......... done
+[131amd64-devel] `-- Installing aws-c-sdkutils-0.1.3...
+[131amd64-devel] `-- Extracting aws-c-sdkutils-0.1.3: .......... done
+[131amd64-devel] Extracting aws-c-auth-0.6.16_1: .......... done
+=====
+Message from s2n-tls-1.3.21,1:
+
+--
+If s2n fails due mlock(2) syscall try to increase vm.max_wired.
+Example:
+ - sysctl vm.max_wired=1572864
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-auth.so - found (/usr/local/lib/libaws-c-auth.so)
+===>   Returning to build of aws-crt-cpp-0.18.6
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-cal.so - found (/usr/local/lib/libaws-c-cal.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-common.so - found (/usr/local/lib/libaws-c-common.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-compression.so - found (/usr/local/lib/libaws-c-compression.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-event-stream.so - not found
+===>   Installing existing package /packages/All/aws-c-event-stream-0.2.14_2,1.pkg
+[131amd64-devel] Installing aws-c-event-stream-0.2.14_2,1...
+[131amd64-devel] `-- Installing aws-checksums-0.1.13_1,1...
+[131amd64-devel] `-- Extracting aws-checksums-0.1.13_1,1: .......... done
+[131amd64-devel] Extracting aws-c-event-stream-0.2.14_2,1: .......... done
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-event-stream.so - found (/usr/local/lib/libaws-c-event-stream.so)
+===>   Returning to build of aws-crt-cpp-0.18.6
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-http.so - found (/usr/local/lib/libaws-c-http.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-io.so - found (/usr/local/lib/libaws-c-io.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-mqtt.so - not found
+===>   Installing existing package /packages/All/aws-c-mqtt-0.7.12_1.pkg
+[131amd64-devel] Installing aws-c-mqtt-0.7.12_1...
+[131amd64-devel] Extracting aws-c-mqtt-0.7.12_1: .......... done
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-mqtt.so - found (/usr/local/lib/libaws-c-mqtt.so)
+===>   Returning to build of aws-crt-cpp-0.18.6
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-s3.so - not found
+===>   Installing existing package /packages/All/aws-c-s3-0.1.48.pkg
+[131amd64-devel] Installing aws-c-s3-0.1.48...
+[131amd64-devel] Extracting aws-c-s3-0.1.48: .......... done
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-s3.so - found (/usr/local/lib/libaws-c-s3.so)
+===>   Returning to build of aws-crt-cpp-0.18.6
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-sdkutils.so - found (/usr/local/lib/libaws-c-sdkutils.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-checksums.so - found (/usr/local/lib/libaws-checksums.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libs2n.so - found (/usr/local/lib/libs2n.so)
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   aws-crt-cpp-0.18.6 depends on file: /usr/local/bin/cmake - found
+===>   aws-crt-cpp-0.18.6 depends on executable: ninja - found
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-auth.so - found (/usr/local/lib/libaws-c-auth.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-cal.so - found (/usr/local/lib/libaws-c-cal.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-common.so - found (/usr/local/lib/libaws-c-common.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-compression.so - found (/usr/local/lib/libaws-c-compression.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-event-stream.so - found (/usr/local/lib/libaws-c-event-stream.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-http.so - found (/usr/local/lib/libaws-c-http.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-io.so - found (/usr/local/lib/libaws-c-io.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-mqtt.so - found (/usr/local/lib/libaws-c-mqtt.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-s3.so - found (/usr/local/lib/libaws-c-s3.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-c-sdkutils.so - found (/usr/local/lib/libaws-c-sdkutils.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libaws-checksums.so - found (/usr/local/lib/libaws-checksums.so)
+===>   aws-crt-cpp-0.18.6 depends on shared library: libs2n.so - found (/usr/local/lib/libs2n.so)
+===>  Configuring for aws-crt-cpp-0.18.6
+===>  Performing out-of-source build
+/bin/mkdir -p /wrkdirs/usr/ports/devel/aws-crt-cpp/work/.build
+-- The CXX compiler identification is Clang 13.0.0
+-- The C compiler identification is Clang 13.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- AWS CRT C++ v0.18.6
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Found Threads: TRUE  
+-- Found crypto: /usr/lib/libcrypto.so  
+-- LibCrypto Include Dir: /usr/include
+-- LibCrypto Shared Lib:  /usr/lib/libcrypto.so
+-- LibCrypto Static Lib:  /usr/lib/libcrypto.a
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- S2N found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- aws-c-cal found target: AWS::crypto
+-- crypto Include Dir: /usr/include
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_COLOR_MAKEFILE
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_EXE_LINKER_FLAGS
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_VERBOSE_MAKEFILE
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/.build
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for aws-crt-cpp-0.18.6
+[  3% 12/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/StringUtils.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/StringUtils.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/StringUtils.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/StringUtils.cpp
+[  6% 13/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/Allocator.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/Allocator.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/Allocator.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/Allocator.cpp
+[ 10% 14/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/external/cJSON.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/external/cJSON.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/external/cJSON.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/external/cJSON.cpp
+[ 13% 15/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/crypto/HMAC.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/crypto/HMAC.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/crypto/HMAC.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/crypto/HMAC.cpp
+[ 17% 16/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/crypto/Hash.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/crypto/Hash.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/crypto/Hash.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/crypto/Hash.cpp
+[ 20% 17/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/DateTime.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/DateTime.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/DateTime.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/DateTime.cpp
+[ 24% 18/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/UUID.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/UUID.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/UUID.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/UUID.cpp
+[ 27% 19/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/Types.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/Types.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/Types.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/Types.cpp
+[ 31% 20/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/Api.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/Api.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/Api.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/Api.cpp
+[ 34% 21/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/auth/Sigv4Signing.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/auth/Sigv4Signing.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/auth/Sigv4Signing.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/auth/Sigv4Signing.cpp
+[ 37% 22/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/JsonObject.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/JsonObject.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/JsonObject.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/JsonObject.cpp
+[ 41% 23/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/auth/Credentials.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/auth/Credentials.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/auth/Credentials.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/auth/Credentials.cpp
+[ 44% 24/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnection.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnection.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnection.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/http/HttpConnection.cpp
+[ 48% 25/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/SocketOptions.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/SocketOptions.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/SocketOptions.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/SocketOptions.cpp
+[ 51% 26/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/ImdsClient.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/ImdsClient.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/ImdsClient.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/ImdsClient.cpp
+[ 55% 27/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/EventLoopGroup.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/EventLoopGroup.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/EventLoopGroup.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/EventLoopGroup.cpp
+[ 58% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/ChannelHandler.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/ChannelHandler.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/ChannelHandler.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/ChannelHandler.cpp
+[ 62% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnectionManager.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnectionManager.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnectionManager.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/http/HttpConnectionManager.cpp
+[ 65% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/http/HttpRequestResponse.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/http/HttpRequestResponse.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/http/HttpRequestResponse.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/http/HttpRequestResponse.cpp
+[ 68% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/Bootstrap.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/Bootstrap.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/Bootstrap.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/Bootstrap.cpp
+[ 72% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/http/HttpProxyStrategy.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/http/HttpProxyStrategy.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/http/HttpProxyStrategy.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/http/HttpProxyStrategy.cpp
+[ 75% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/Pkcs11.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/Pkcs11.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/Pkcs11.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/Pkcs11.cpp
+[ 79% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/Stream.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/Stream.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/Stream.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/Stream.cpp
+[ 82% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/Uri.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/Uri.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/Uri.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/Uri.cpp
+[ 86% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/HostResolver.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/HostResolver.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/HostResolver.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/HostResolver.cpp
+[ 89% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/io/TlsOptions.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/io/TlsOptions.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/io/TlsOptions.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/io/TlsOptions.cpp
+[ 93% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/iot/MqttClient.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/iot/MqttClient.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/iot/MqttClient.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/iot/MqttClient.cpp
+[ 96% 28/29] /usr/bin/c++ -DAWS_AUTH_USE_IMPORT_EXPORT -DAWS_CAL_USE_IMPORT_EXPORT -DAWS_CHECKSUMS_USE_IMPORT_EXPORT -DAWS_COMMON_USE_IMPORT_EXPORT -DAWS_COMPRESSION_USE_IMPORT_EXPORT -DAWS_CRT_CPP_EXPORTS -DAWS_CRT_CPP_USE_IMPORT_EXPORT -DAWS_EVENT_STREAM_USE_IMPORT_EXPORT -DAWS_HTTP_USE_IMPORT_EXPORT -DAWS_IO_USE_IMPORT_EXPORT -DAWS_MQTT_USE_IMPORT_EXPORT -DAWS_MQTT_WITH_WEBSOCKETS -DAWS_S3_USE_IMPORT_EXPORT -DAWS_SDKUTILS_USE_IMPORT_EXPORT -DAWS_USE_KQUEUE -DCJSON_HIDE_SYMBOLS -Daws_crt_cpp_EXPORTS -I/wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/include -isystem /usr/local/include -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -DS2N_STACKTRACE -DS2N_CPUID_AVAILABLE -fPIC -DS2N_FALL_THROUGH_SUPPORTED -DS2N___RESTRICT__SUPPORTED -DS2N_MADVISE_SUPPORTED -DS2N_MINHERIT_SUPPORTED -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD5_SHA1_HASH -DS2N_LIBCRYPTO_SUPPORTS_EVP_RC4 -DS2N_LIBCRYPTO_SUPPORTS_EVP_MD_CTX_SET_PKEY_CTX -std=gnu++11 -MD -MT CMakeFiles/aws-crt-cpp.dir/source/mqtt/MqttClient.cpp.o -MF CMakeFiles/aws-crt-cpp.dir/source/mqtt/MqttClient.cpp.o.d -o CMakeFiles/aws-crt-cpp.dir/source/mqtt/MqttClient.cpp.o -c /wrkdirs/usr/ports/devel/aws-crt-cpp/work/aws-crt-cpp-0.18.6/source/mqtt/MqttClient.cpp
+[100% 29/29] : && /usr/bin/c++ -fPIC -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing  -fstack-protector-strong -shared -Wl,-soname,libaws-crt-cpp.so -o libaws-crt-cpp.so CMakeFiles/aws-crt-cpp.dir/source/Allocator.cpp.o CMakeFiles/aws-crt-cpp.dir/source/Api.cpp.o CMakeFiles/aws-crt-cpp.dir/source/DateTime.cpp.o CMakeFiles/aws-crt-cpp.dir/source/ImdsClient.cpp.o CMakeFiles/aws-crt-cpp.dir/source/JsonObject.cpp.o CMakeFiles/aws-crt-cpp.dir/source/StringUtils.cpp.o CMakeFiles/aws-crt-cpp.dir/source/Types.cpp.o CMakeFiles/aws-crt-cpp.dir/source/UUID.cpp.o CMakeFiles/aws-crt-cpp.dir/source/auth/Credentials.cpp.o CMakeFiles/aws-crt-cpp.dir/source/auth/Sigv4Signing.cpp.o CMakeFiles/aws-crt-cpp.dir/source/crypto/HMAC.cpp.o CMakeFiles/aws-crt-cpp.dir/source/crypto/Hash.cpp.o CMakeFiles/aws-crt-cpp.dir/source/external/cJSON.cpp.o CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnection.cpp.o CMakeFiles/aws-crt-cpp.dir/source/http/HttpConnectionManager.cpp.o CMakeFiles/aws-crt-cpp.dir/source/http/HttpProxyStrategy.cpp.o CMakeFiles/aws-crt-cpp.dir/source/http/HttpRequestResponse.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/Bootstrap.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/ChannelHandler.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/EventLoopGroup.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/HostResolver.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/Pkcs11.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/SocketOptions.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/Stream.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/TlsOptions.cpp.o CMakeFiles/aws-crt-cpp.dir/source/io/Uri.cpp.o CMakeFiles/aws-crt-cpp.dir/source/iot/MqttClient.cpp.o CMakeFiles/aws-crt-cpp.dir/source/mqtt/MqttClient.cpp.o  -Wl,-rpath,/usr/local/lib:  /usr/local/lib/libaws-c-mqtt.so.1.0.0  /usr/local/lib/libaws-c-event-stream.so.1.0.0  /usr/local/lib/libaws-c-s3.so.1.0.0  /usr/local/lib/libaws-c-auth.so.1.0.0  /usr/local/lib/libaws-c-http.so.1.0.0  /usr/local/lib/libaws-c-io.so.1.0.0  /usr/local/lib/libs2n.so.1.0.0  /usr/local/lib/libaws-c-compression.so.1.0.0  /usr/local/lib/libaws-c-cal.so.1.0.0  /usr/lib/libcrypto.so  /usr/local/lib/libaws-c-sdkutils.so.1.0.0  /usr/local/lib/libaws-checksums.so.1.0.0  /usr/local/lib/libaws-c-common.so.1.0.0  -ldl  -lm  -lthr  -lexecinfo && :
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for aws-crt-cpp-0.18.6
+===>   Generating temporary packing list
+[  0% 1/1] cd /wrkdirs/usr/ports/devel/aws-crt-cpp/work/.build && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/Allocator.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/Api.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/Config.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/DateTime.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/Exports.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/ImdsClient.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/JsonObject.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/Optional.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/RefCounted.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/StlAllocator.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/StringUtils.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/StringView.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/Types.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/UUID.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/auth/Credentials.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/auth/Signing.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/auth/Sigv4Signing.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/crypto/HMAC.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/crypto/Hash.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/Bootstrap.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/ChannelHandler.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/EventLoopGroup.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/HostResolver.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/Pkcs11.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/SocketOptions.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/Stream.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/TlsOptions.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/io/Uri.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/iot/MqttClient.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/mqtt/MqttClient.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/http/HttpConnection.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/http/HttpConnectionManager.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/http/HttpProxyStrategy.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/include/aws/crt/http/HttpRequestResponse.h
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/lib/libaws-crt-cpp.so
+-- Set runtime path of "/wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/lib/libaws-crt-cpp.so" to "/usr/local/lib"
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/lib/aws-crt-cpp/cmake/shared/aws-crt-cpp-targets.cmake
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/lib/aws-crt-cpp/cmake/shared/aws-crt-cpp-targets-release.cmake
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/lib/aws-crt-cpp/cmake/aws-crt-cpp-config.cmake
+-- Installing: /wrkdirs/usr/ports/devel/aws-crt-cpp/work/stage/usr/local/lib/aws-crt-cpp/cmake/aws-crt-cpp-config-version.cmake
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for aws-crt-cpp-0.18.6
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for aws-crt-cpp-0.18.6
+===>  Checking if aws-crt-cpp is already installed
+===>   Registering installation for aws-crt-cpp-0.18.6
+[131amd64-devel] Installing aws-crt-cpp-0.18.6...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-auth.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-cal.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-common.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-compression.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-event-stream.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-http.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-io.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-mqtt.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-s3.so.0unstable]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-c-sdkutils.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libaws-checksums.so.1.0.0]
+ 0x0000000000000001 NEEDED               Shared library: [libc++.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libcrypto.so.111]
+ 0x0000000000000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libdl.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libexecinfo.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+ 0x0000000000000001 NEEDED               Shared library: [libs2n.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libthr.so.3]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for aws-crt-cpp
+===>   Deinstalling aws-crt-cpp-0.18.6
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	aws-crt-cpp: 0.18.6
+
+Number of packages to be removed: 1
+[131amd64-devel] [1/1] Deinstalling aws-crt-cpp-0.18.6...
+[131amd64-devel] [1/1] Deleting files for aws-crt-cpp-0.18.6: .......... done
+===========================================================================
+=>> Checking for extra files and directories
