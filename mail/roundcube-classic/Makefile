@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Larry skin/theme for Rouncube webmail
+WWW=		https://github.com/roundcube/classic/
 
 LICENSE=	GPLv3+
 
