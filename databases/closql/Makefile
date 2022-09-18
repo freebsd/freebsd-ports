@@ -17,7 +17,7 @@ RUN_DEPENDS=	emacsql${EMACS_PKGNAMESUFFIX}>=3.0.0:databases/emacsql@${EMACS_FLAV
 
 USES=		emacs
 USE_GITHUB=	yes
-GH_ACCOUNT=	emacscollective
+GH_ACCOUNT=	magit
 
 CONFLICTS_INSTALL=	closql closql-emacs_* # share/doc/closql/README.md
 
