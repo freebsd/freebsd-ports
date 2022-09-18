@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220918:
+  AFFECTS: users of mail/roundcube
+  AUTHOR: brnrd@FreeBSD.org
+
+  Roundcube has been upgraded to 1.6.0 and introduces breaking changes to
+  configuration options of remote services (imap, smtp, ldap, sieve). Check
+  https://roundcube.net/news/2022/07/28/roundcube-1.6.0-released for details.
+
+  Version 1.6 no longer includes the Classic and Larry skins, which are now
+  available as separate mail/roundcube-classic and mail/roundcube-larry ports.
+
 20220910:
   AFFECTS: users of devel/cmake
   AUTHOR: diizzy@FreeBSD.org

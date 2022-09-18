@@ -5,10 +5,25 @@ If this is a first installation of RoundCube you have to create
 a new database and a db user. Read INSTALL for detailed instructions.
 EOM
 }
-{ type: install
+{ type: upgrade
   message: <<EOM
 If you already had a previous version of RoundCube installed,
 you should check your config files and DB schema are up-to-date.
+Read UPGRADING for detailed instructions.
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.6.0"
+  message: <<EOM
+Roundcube 1.6 has a number of breaking changes in the smtp, imap,
+ldap, and managesieve connection configuration. Check 
+https://roundcube.net/news/2022/07/28/roundcube-1.6.0-released for
+details.
+ 
+Roundcube 1.6 no longer includes the "Classic" and "Larry" skins.
+The skins can be found as mail/rouncube-larry and
+mail/roundcube-classic ports.
+
 Read UPGRADING for detailed instructions.
 EOM
 }
