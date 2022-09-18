@@ -1,9 +1,15 @@
 PORTNAME=	putty
 DISTVERSION=	0.78~pre20220916.e1b73f0
+PORTREVISION=	1
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/
+EXTRA_PATCHES+=	${FILESDIR}/0001-Unix-GSSAPI-support-krb5-config-as-well-as-pkg-confi.patch
+EXTRA_PATCHES+=	${FILESDIR}/0002-Unix-static-GSSAPI-fix-an-uninitialised-structure-fi.patch
+EXTRA_PATCHES+=	${FILESDIR}/0003-Unix-GSSAPI-support-static-linking-against-Heimdal.patch
+EXTRA_PATCHES+=	${FILESDIR}/0004-GSSAPI-fix-don-t-pass-GSS_C_NO_NAME-to-inquire_cred_.patch
+PATCH_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client including xterm emulator
@@ -18,11 +24,13 @@ USE_PERL5=	build
 
 CONFLICTS_INSTALL?=	pssh putty-nogtk
 
-PLIST_FILES=	bin/plink \
+PLIST_FILES=	bin/pageant \
+		bin/plink \
 		bin/pscp \
 		bin/psftp \
 		bin/psusan \
 		bin/puttygen \
+		share/man/man1/pageant.1.gz \
 		share/man/man1/plink.1.gz \
 		share/man/man1/pscp.1.gz \
 		share/man/man1/psftp.1.gz \
@@ -30,14 +38,13 @@ PLIST_FILES=	bin/plink \
 		share/man/man1/puttygen.1.gz
 
 OPTIONS_DEFINE=			GTK3
-OPTIONS_DEFAULT=		GSSAPI_NONE GTK3
+OPTIONS_DEFAULT=		GSSAPI_BASE GTK3
 OPTIONS_SINGLE=			GSSAPI_SELECT
-OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_DYNAMIC GSSAPI_NONE
-#OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE \
-#				GSSAPI_DYNAMIC \
-#				GSSAPI_HEIMDAL \
-#				GSSAPI_MIT \
-#				GSSAPI_NONE
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE \
+				GSSAPI_HEIMDAL \
+				GSSAPI_MIT \
+				GSSAPI_NONE \
+				# GSSAPI_DYNAMIC
 GSSAPI_DYNAMIC_DESC=	EXPERIMENTAL dynamic runtime load of GSS libs
 
 .include <bsd.port.options.mk>
@@ -55,10 +62,8 @@ USES+=		gnome
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=3
 
-PLIST_FILES+=	bin/pageant \
-		bin/pterm \
+PLIST_FILES+=	bin/pterm \
 		bin/putty \
-		share/man/man1/pageant.1.gz \
 		share/man/man1/pterm.1.gz \
 		share/man/man1/putty.1.gz \
 		share/pixmaps/putty.ico
@@ -77,20 +82,17 @@ CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=OFF
 CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=TRUE
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
-# does not compile currently
-BROKEN=		GSSAPI_HEIMDAL does not compile as of putty 0.77 and 0.78~pre20220916.e1b73f0
-USES+=		gssapi:heimdal,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
-.elif ${PORT_OPTIONS:MGSSAPI_BASE}
-BROKEN=		GSSAPI_BASE does not work as of putty 0.77 and 0.78~pre20220916.e1b73f0
+.if ${PORT_OPTIONS:MGSSAPI_BASE} # Heimdal-like in base system
 USES+=		gssapi:base,flags
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
+.elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+USES+=		gssapi:heimdal,flags
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
 .elif ${PORT_OPTIONS:MGSSAPI_MIT}
-BROKEN=		GSSAPI_MIT does not work as of putty 0.77 and 0.78~pre20220916.e1b73f0
 USES+=		gssapi:mit,flags
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
 .elif ${PORT_OPTIONS:MGSSAPI_DYNAMIC}
+BROKEN=		GSSAPI_DYNAMIC does not work as of putty 0.78~pre20220916.e1b73f0
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=DYNAMIC
 USES+=		gssapi:base,flags
 .else

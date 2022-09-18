@@ -1,16 +1,20 @@
-From 1992df5d7a1ea0636a62facbdb74d32cb4d5b50d Mon Sep 17 00:00:00 2001
+From b0a61849efb3cbf0f1c0fead0f422341a969458c Mon Sep 17 00:00:00 2001
 From: Simon Tatham <anakin@pobox.com>
-Date: Wed, 1 Jun 2022 10:48:14 +0100
-Subject: [PATCH] First attempt at supporting krb5-config.
+Date: Sat, 17 Sep 2022 07:53:43 +0100
+Subject: [PATCH 1/4] Unix GSSAPI: support krb5-config as well as pkg-config.
 
+On FreeBSD, I'm told, you can't configure Kerberos via pkg-config. So
+we need a fallback. Here's some manual code to run krb5-config and
+pick apart the result, similar to what I already did with gtk-config
+for our (still not dead!) GTK 1 support.
 ---
  cmake/platforms/unix.cmake | 63 +++++++++++++++++++++++++++++++++++++-
  1 file changed, 62 insertions(+), 1 deletion(-)
 
-diff --git ./cmake/platforms/unix.cmake ./cmake/platforms/unix.cmake
+diff --git a/cmake/platforms/unix.cmake b/cmake/platforms/unix.cmake
 index 291d1e64..95339f22 100644
---- ./cmake/platforms/unix.cmake~
-+++ ./cmake/platforms/unix.cmake
+--- a/cmake/platforms/unix.cmake
++++ b/cmake/platforms/unix.cmake
 @@ -108,16 +108,77 @@ if(PUTTY_GSSAPI STREQUAL DYNAMIC)
  endif()
  
@@ -91,5 +95,5 @@ index 291d1e64..95339f22 100644
      set(NO_GSSAPI ON)
    endif()
 -- 
-2.34.1
+2.37.3
 
