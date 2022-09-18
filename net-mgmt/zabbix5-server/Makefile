@@ -62,6 +62,8 @@ LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+PORTSCOUT=	limit:^5\.0\.
+
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp
