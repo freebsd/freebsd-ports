@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Fork of clementine with many features
 WWW=		https://www.strawberrymusicplayer.org/
 
