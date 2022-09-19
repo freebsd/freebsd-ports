@@ -44,7 +44,7 @@ GROUPS=		mongodb
 OPTIONS_DEFINE=		LTO SASL SSL
 OPTIONS_DEFAULT=	LTO SASL SSL
 
-MAKE_ARGS=	-cxx-std=17 \
+MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
 		--runtime-hardening=on \
