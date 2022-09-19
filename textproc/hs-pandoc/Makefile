@@ -228,9 +228,9 @@ OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == aarch64
 # compiler goes out of memory
-BUILD_ARGS+=	--disable-optimization
+BUILD_ARGS+=   --disable-optimization
 .endif
 
 post-install-EMBED_DATA-off:
