@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220919:
+  AFFECTS: users of sysutils/schilyutils
+  AUTHOR: fuz@fuz.su
+
+  Schilyutils has been split up into two ports. If you want the bosh shell,
+  the new port is shells/bosh, which can be installed with:
+
+  # pkg install bosh
+    or
+  # portmaster -o shells/bosh
+
 20220918:
   AFFECTS: users of mail/roundcube
   AUTHOR: brnrd@FreeBSD.org
