@@ -1,4 +1,4 @@
---- src/wigwam.c.orig	2022-08-31 17:25:16 UTC
+--- src/wigwam.c.orig	2022-06-29 09:42:42 UTC
 +++ src/wigwam.c
 @@ -582,7 +582,7 @@ int check_main_config(char *config_dir) {
  		/* Private key check
@@ -9,15 +9,12 @@
  			printf("Error loading private key from %s.\n", needle->value);
  			errors++;
  			goto next_crt;
-@@ -601,9 +601,11 @@ int check_main_config(char *config_dir) {
+@@ -601,7 +601,7 @@ int check_main_config(char *config_dir) {
  			goto next_crt;
  		}
  
-+#ifndef __FreeBSD__
- 		if (certificate.MBEDTLS_PRIVATE(sig_md) < MBEDTLS_MD_SHA256) {
+-		if (certificate.MBEDTLS_PRIVATE(sig_md) < MBEDTLS_MD_SHA256) {
++		if (certificate.sig_md < MBEDTLS_MD_SHA256) {
  			printf("Warning: the certificate signature algoritm in %s should at least be SHA256.\n", needle->value);
  		}
-+#endif
  
- next_crt:
- 		last_file = needle->value;
