@@ -7206,6 +7206,7 @@
     SUBDIR += sope
     SUBDIR += sope2
     SUBDIR += sord
+    SUBDIR += spark
     SUBDIR += sparsebitset
     SUBDIR += sparsehash
     SUBDIR += spatialindex

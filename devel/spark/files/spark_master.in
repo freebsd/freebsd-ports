@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# PROVIDE: spark_master
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=spark_master
+rcvar=spark_master_enable
+load_rc_config $name
+
+: ${spark_master_enable:=NO}
+: ${spark_master_ip=:`hostname`}
+: ${spark_master_port:=7077}
+: ${spark_master_webui_port:=8080}
+
+export SPARK_PID_DIR=/var/run/spark
+export SPARK_LOG_DIR=/var/log/spark
+export SPARK_MASTER_IP=${spark_master_ip}
+export SPARK_MASTER_PORT=${spark_master_port}
+export SPARK_MASTER_WEBUI_PORT=${spark_master_webui_port}
+export SPARK_IDENT_STRING=%%SPARK_USER%%
+
+pidfile=${SPARK_PID_DIR}/spark-${SPARK_IDENT_STRING}-org.apache.spark.deploy.master.Master-1.pid
+start_cmd="/usr/bin/su -m %%SPARK_USER%% -c %%DATADIR%%/sbin/start-master.sh"
+stop_cmd="/usr/bin/su -m %%SPARK_USER%% -c %%DATADIR%%/sbin/stop-master.sh"
+
+export PATH=$PATH:%%LOCALBASE%%/bin
+
+run_rc_command "$1"
