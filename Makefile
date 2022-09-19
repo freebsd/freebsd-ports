@@ -72,6 +72,7 @@ INDEX_COMPRESSION_FORMAT?=	xz
 	${INDEX_COMPRESSION_FORMAT} != bz2 && ${INDEX_COMPRESSION_FORMAT} != zst
 .error "Invalid compression format: ${INDEX_COMPRESSION_FORMAT}, expecting xz, bz2 or zst"
 .endif
+WWW=		https://www.sqlite.org/
 
 fetchindex: ${INDEXDIR}/${INDEXFILE}.${INDEX_COMPRESSION_FORMAT}
 	@if bsdcat < ${INDEXDIR}/${INDEXFILE}.${INDEX_COMPRESSION_FORMAT} > ${INDEXDIR}/${INDEXFILE}.tmp ; then \
