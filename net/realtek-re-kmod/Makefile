@@ -16,7 +16,7 @@ USES=		kmod tar:tgz uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdupre
 GH_PROJECT=	rtl_bsd_drv
-GH_TAGNAME=	1dff2e4
+GH_TAGNAME=	33ee14b
 
 PLIST_FILES=	${KMODDIR}/if_re.ko
 
