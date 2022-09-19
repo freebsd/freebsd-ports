@@ -162,6 +162,7 @@
 %%WWWDIR%%/css/includes/components/_search_input.scss
 %%WWWDIR%%/css/includes/components/_select2.scss
 %%WWWDIR%%/css/includes/components/_tabs.scss
+%%WWWDIR%%/css/includes/components/chartist/_chartist.scss
 %%WWWDIR%%/css/includes/components/chartist/_generate.scss
 %%WWWDIR%%/css/includes/components/chartist/_palette_cb_seq_blue_9.scss
 %%WWWDIR%%/css/includes/components/chartist/_palette_cb_seq_red_9.scss
@@ -1177,6 +1178,10 @@
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/configs.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/dates.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/native_inventory.php
+%%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3.php
+%%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3/inventory.php
+%%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3/notifications.php
+%%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3/schema_fixes.php
 %%WWWDIR%%/install/migrations/update_9.1.0_to_9.1.1.php
 %%WWWDIR%%/install/migrations/update_9.1.1_to_9.1.3.php
 %%WWWDIR%%/install/migrations/update_9.1.x_to_9.2.0.php
@@ -1252,6 +1257,7 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.2-empty.sql
@@ -1273,6 +1279,7 @@
 %%WWWDIR%%/install/mysql/glpi-9.5.6-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.7-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.8-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.5.9-empty.sql
 %%WWWDIR%%/install/update.php
 %%WWWDIR%%/js/Forms/FaIconSelector.js
 %%WWWDIR%%/js/Forms/FaIconSelector.min.js
@@ -1487,6 +1494,7 @@
 %%WWWDIR%%/locales/zh_TW.mo
 %%WWWDIR%%/locales/zh_TW.po
 %%WWWDIR%%/marketplace/remove.txt
+%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/pics/PICS-AUTHORS.txt
 %%WWWDIR%%/pics/accepted.png
 %%WWWDIR%%/pics/actualiser.png
@@ -3213,6 +3221,7 @@
 %%WWWDIR%%/src/System/Requirement/RequirementInterface.php
 %%WWWDIR%%/src/System/Requirement/SeLinux.php
 %%WWWDIR%%/src/System/Requirement/SessionsConfiguration.php
+%%WWWDIR%%/src/System/Requirement/SessionsSecurityConfiguration.php
 %%WWWDIR%%/src/System/RequirementsList.php
 %%WWWDIR%%/src/System/RequirementsManager.php
 %%WWWDIR%%/src/System/Status/StatusChecker.php
@@ -3385,6 +3394,7 @@
 %%WWWDIR%%/templates/pages/assets/software.html.twig
 %%WWWDIR%%/templates/pages/assets/unmanaged.html.twig
 %%WWWDIR%%/templates/pages/login.html.twig
+%%WWWDIR%%/templates/pages/login_error.html.twig
 %%WWWDIR%%/templates/pages/management/appliance.html.twig
 %%WWWDIR%%/templates/pages/management/certificate.html.twig
 %%WWWDIR%%/templates/pages/management/contract.html.twig
@@ -3401,8 +3411,6 @@
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/SECURITY.md
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/VULNERABILITIES.md
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/composer.json
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/cors/postmessage.html
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/cors/result.html
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-noscript.css
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-ui-noscript.css
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-ui.css
@@ -3410,7 +3418,6 @@
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/docker-compose.yml
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/img/loading.gif
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/img/progressbar.gif
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/index.html
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/cors/jquery.postmessage-transport.js
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/cors/jquery.xdr-transport.js
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/demo.js
@@ -3434,20 +3441,6 @@
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.htaccess
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/index.php
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/php.ini
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/index.html
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/unit.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/vendor/chai.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/vendor/mocha.css
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/vendor/mocha.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/LICENSE.txt
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/assets/black+white-3x2.jpg
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/assets/black+white-60x40.gif
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/conf/chrome.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/conf/firefox.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/hooks/index.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/test/pages/file-upload.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/test/specs/01-file-upload.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/wdio.conf.js
 %%WWWDIR%%/vendor/brick/math/CHANGELOG.md
 %%WWWDIR%%/vendor/brick/math/LICENSE
 %%WWWDIR%%/vendor/brick/math/SECURITY.md
@@ -3495,10 +3488,6 @@
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/LICENSE.md
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/Makefile
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/README.md
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/bin/benchmark.php
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/bin/constant_generator.php
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/bin/init_user_agent.php
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/bin/user_agent_sorter.php
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/composer.json
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/phpunit.xml.dist
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/src/UserAgent/Browsers.php
@@ -3507,9 +3496,6 @@
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/src/UserAgent/UserAgentInterface.php
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/src/UserAgent/UserAgentParser.php
 %%WWWDIR%%/vendor/donatj/phpuseragentparser/src/UserAgentParser.php
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/tests/UserAgentParserFunctionTest.php
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/tests/UserAgentParserObjectTest.php
-%%WWWDIR%%/vendor/donatj/phpuseragentparser/tests/user_agents.dist.json
 %%WWWDIR%%/vendor/elvanto/litemoji/LICENSE
 %%WWWDIR%%/vendor/elvanto/litemoji/README.md
 %%WWWDIR%%/vendor/elvanto/litemoji/composer.json
@@ -3550,6 +3536,8 @@
 %%WWWDIR%%/vendor/glpi-project/inventory_format/examples/networkequipment_5.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/examples/phone_1.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/examples/printer_1.json
+%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/printer_2.json
+%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/printer_3.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/inventory.schema.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/Converter.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/FilesToJSON.php
@@ -3622,7 +3610,6 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions_include.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/LICENSE
-%%WWWDIR%%/vendor/guzzlehttp/promises/Makefile
 %%WWWDIR%%/vendor/guzzlehttp/promises/README.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/AggregateException.php
@@ -3682,27 +3669,8 @@
 %%WWWDIR%%/vendor/html2text/html2text/composer.json
 %%WWWDIR%%/vendor/html2text/html2text/phpunit.xml.dist
 %%WWWDIR%%/vendor/html2text/html2text/src/Html2Text.php
-%%WWWDIR%%/vendor/html2text/html2text/test/BasicTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/BlockquoteTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/ConstructorTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/DefinitionListTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/DelTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/HtmlCharsTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/ImageTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/InsTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/LinkTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/ListTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/PreTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/PrintTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/SearchReplaceTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/SpanTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/StrToUpperTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/TableTest.php
-%%WWWDIR%%/vendor/html2text/html2text/test/bootstrap.php
-%%WWWDIR%%/vendor/htmlawed/htmlawed/LICENSE-GPL2
-%%WWWDIR%%/vendor/htmlawed/htmlawed/LICENSE-LGPL3
+%%WWWDIR%%/vendor/htmlawed/htmlawed/composer.json
 %%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawed.php
-%%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawedTest.php
 %%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawed_README.htm
 %%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawed_README.txt
 %%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawed_TESTCASE.txt
@@ -4404,18 +4372,7 @@
 %%WWWDIR%%/vendor/mexitek/phpcolors/LICENSE
 %%WWWDIR%%/vendor/mexitek/phpcolors/README.md
 %%WWWDIR%%/vendor/mexitek/phpcolors/composer.json
-%%WWWDIR%%/vendor/mexitek/phpcolors/demo/demo.php
-%%WWWDIR%%/vendor/mexitek/phpcolors/demo/phpColor-demo.png
 %%WWWDIR%%/vendor/mexitek/phpcolors/src/Mexitek/PHPColors/Color.php
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/bootstrap.php
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorAnalyze.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorChange.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorComplementary.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorConvertHslToHex.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorConvertNameToHex.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorConvertRgbToHex.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorInput.phpt
-%%WWWDIR%%/vendor/mexitek/phpcolors/tests/colorMix.phpt
 %%WWWDIR%%/vendor/michelf/php-markdown/License.md
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/Markdown.inc.php
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/Markdown.php
@@ -4427,130 +4384,6 @@
 %%WWWDIR%%/vendor/michelf/php-markdown/Readme.php
 %%WWWDIR%%/vendor/michelf/php-markdown/composer.json
 %%WWWDIR%%/vendor/michelf/php-markdown/phpunit.xml.dist
-%%WWWDIR%%/vendor/michelf/php-markdown/test/bootstrap.php
-%%WWWDIR%%/vendor/michelf/php-markdown/test/helpers/MarkdownTestHelper.php
-%%WWWDIR%%/vendor/michelf/php-markdown/test/integration/PhpMarkdownTest.php
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Amps and angle encoding.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Amps and angle encoding.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Auto links.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Auto links.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Backslash escapes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Backslash escapes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Blockquotes with code blocks.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Blockquotes with code blocks.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Blocks.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Blocks.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Spans.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Spans.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Hard-wrapped paragraphs with list-like lines.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Hard-wrapped paragraphs with list-like lines.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Horizontal rules.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Horizontal rules.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Images.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Images.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Advanced).text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Advanced).xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Simple).html
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Simple).text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML comments.html
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML comments.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, inline style.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, inline style.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, reference style.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, reference style.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, shortcut references.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, shortcut references.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Literal quotes in titles.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Literal quotes in titles.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Basics.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Basics.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Syntax.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Syntax.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Nested blockquotes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Nested blockquotes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Ordered and unordered lists.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Ordered and unordered lists.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Strong and em together.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Strong and em together.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tabs.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tabs.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tidyness.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tidyness.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Abbr.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Abbr.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks Special Cases.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks Special Cases.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Definition Lists.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Definition Lists.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Emphasis.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Emphasis.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Footnotes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Footnotes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Headers with attributes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Headers with attributes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Inline HTML with Markdown content.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Inline HTML with Markdown content.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Link & Image Attributes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Link & Image Attributes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tables.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tables.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks Special Cases.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks Special Cases.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Adjacent Lists.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Adjacent Lists.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Auto Links.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Auto Links.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Backslash escapes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Backslash escapes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code Spans.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code Spans.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block in a list item.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block in a list item.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block on second line.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block on second line.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block regressions.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block regressions.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Email auto links.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Email auto links.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Emphasis.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Emphasis.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Empty List Item.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Empty List Item.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Headers.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Headers.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Horizontal Rules.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Horizontal Rules.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Simple).html
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Simple).text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Span).text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Span).xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML comments.html
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML comments.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Ins & del.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Ins & del.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Links, inline style.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Links, inline style.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/MD5 Hashes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/MD5 Hashes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Mixed OLs and ULs.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Mixed OLs and ULs.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Nesting.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Nesting.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/PHP-Specific Bugs.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/PHP-Specific Bugs.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Parens in URL.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Parens in URL.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Quotes in attributes.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Quotes in attributes.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Tight blocks.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Tight blocks.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.text
-%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.xhtml
-%%WWWDIR%%/vendor/michelf/php-markdown/test/unit/MarkdownExtraTest.php
 %%WWWDIR%%/vendor/monolog/monolog/CHANGELOG.md
 %%WWWDIR%%/vendor/monolog/monolog/LICENSE
 %%WWWDIR%%/vendor/monolog/monolog/README.md
@@ -4566,6 +4399,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/FluentdFormatter.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/FormatterInterface.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/GoogleCloudLoggingFormatter.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php
@@ -4641,6 +4475,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SqsHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SymfonyMailerHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdp/UdpSocket.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdpHandler.php
@@ -4783,7 +4618,6 @@
 %%WWWDIR%%/vendor/phplang/scope-exit/README.md
 %%WWWDIR%%/vendor/phplang/scope-exit/composer.json
 %%WWWDIR%%/vendor/phplang/scope-exit/src/ScopeExit.php
-%%WWWDIR%%/vendor/phplang/scope-exit/tests/BasicTest.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
 %%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
 %%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
@@ -5059,8 +4893,6 @@
 %%WWWDIR%%/vendor/rlanvin/php-rrule/CHANGELOG.md
 %%WWWDIR%%/vendor/rlanvin/php-rrule/LICENSE
 %%WWWDIR%%/vendor/rlanvin/php-rrule/README.md
-%%WWWDIR%%/vendor/rlanvin/php-rrule/bin/import_windows_timezones.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/bin/review_translations.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/composer.json
 %%WWWDIR%%/vendor/rlanvin/php-rrule/phpunit.xml.dist
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/RRule.php
@@ -5079,23 +4911,8 @@
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/i18n/nl.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/i18n/sv.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/tzdata/windows.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/RRuleTest.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/RSetTest.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/RfcParserTest.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/bootstrap.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/i18n/fr_BE.php
-%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/i18n/xx.php
 %%WWWDIR%%/vendor/sabre/dav/LICENSE
 %%WWWDIR%%/vendor/sabre/dav/README.md
-%%WWWDIR%%/vendor/sabre/dav/bin/build.php
-%%WWWDIR%%/vendor/sabre/dav/bin/googlecode_upload.py
-%%WWWDIR%%/vendor/sabre/dav/bin/migrateto20.php
-%%WWWDIR%%/vendor/sabre/dav/bin/migrateto21.php
-%%WWWDIR%%/vendor/sabre/dav/bin/migrateto30.php
-%%WWWDIR%%/vendor/sabre/dav/bin/migrateto32.php
-%%WWWDIR%%/vendor/sabre/dav/bin/naturalselection
-%%WWWDIR%%/vendor/sabre/dav/bin/sabredav
-%%WWWDIR%%/vendor/sabre/dav/bin/sabredav.php
 %%WWWDIR%%/vendor/sabre/dav/composer.json
 %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend/AbstractBackend.php
 %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend/BackendInterface.php
@@ -5351,12 +5168,6 @@
 %%WWWDIR%%/vendor/sabre/http/LICENSE
 %%WWWDIR%%/vendor/sabre/http/README.md
 %%WWWDIR%%/vendor/sabre/http/composer.json
-%%WWWDIR%%/vendor/sabre/http/examples/asyncclient.php
-%%WWWDIR%%/vendor/sabre/http/examples/basicauth.php
-%%WWWDIR%%/vendor/sabre/http/examples/client.php
-%%WWWDIR%%/vendor/sabre/http/examples/digestauth.php
-%%WWWDIR%%/vendor/sabre/http/examples/reverseproxy.php
-%%WWWDIR%%/vendor/sabre/http/examples/stringify.php
 %%WWWDIR%%/vendor/sabre/http/lib/Auth/AWS.php
 %%WWWDIR%%/vendor/sabre/http/lib/Auth/AbstractAuth.php
 %%WWWDIR%%/vendor/sabre/http/lib/Auth/Basic.php
@@ -5379,26 +5190,6 @@
 %%WWWDIR%%/vendor/sabre/http/lib/Version.php
 %%WWWDIR%%/vendor/sabre/http/lib/functions.php
 %%WWWDIR%%/vendor/sabre/http/phpstan.neon
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/AWSTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/BasicTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/BearerTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/DigestTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/ClientTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/FunctionsTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/MessageDecoratorTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/MessageTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/NegotiateTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/RequestDecoratorTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/RequestTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/ResponseDecoratorTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/ResponseTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/SapiTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/HTTP/URLUtilTest.php
-%%WWWDIR%%/vendor/sabre/http/tests/bootstrap.php
-%%WWWDIR%%/vendor/sabre/http/tests/phpunit.xml
-%%WWWDIR%%/vendor/sabre/http/tests/www/bar.php
-%%WWWDIR%%/vendor/sabre/http/tests/www/foo
-%%WWWDIR%%/vendor/sabre/http/tests/www/large.php
 %%WWWDIR%%/vendor/sabre/uri/LICENSE
 %%WWWDIR%%/vendor/sabre/uri/composer.json
 %%WWWDIR%%/vendor/sabre/uri/lib/InvalidUriException.php
@@ -5407,15 +5198,6 @@
 %%WWWDIR%%/vendor/sabre/uri/phpstan.neon
 %%WWWDIR%%/vendor/sabre/vobject/LICENSE
 %%WWWDIR%%/vendor/sabre/vobject/README.md
-%%WWWDIR%%/vendor/sabre/vobject/bin/bench.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/bench_freebusygenerator.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/bench_manipulatevcard.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/fetch_windows_zones.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/generate_vcards
-%%WWWDIR%%/vendor/sabre/vobject/bin/generateicalendardata.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/mergeduplicates.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/rrulebench.php
-%%WWWDIR%%/vendor/sabre/vobject/bin/vobject
 %%WWWDIR%%/vendor/sabre/vobject/composer.json
 %%WWWDIR%%/vendor/sabre/vobject/lib/BirthdayCalendarGenerator.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Cli.php
@@ -5526,9 +5308,7 @@
 %%WWWDIR%%/vendor/sabre/xml/lib/XmlSerializable.php
 %%WWWDIR%%/vendor/scssphp/scssphp/LICENSE.md
 %%WWWDIR%%/vendor/scssphp/scssphp/README.md
-%%WWWDIR%%/vendor/scssphp/scssphp/bin/pscss
 %%WWWDIR%%/vendor/scssphp/scssphp/composer.json
-%%WWWDIR%%/vendor/scssphp/scssphp/phpcs.xml.dist
 %%WWWDIR%%/vendor/scssphp/scssphp/scss.inc.php
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Base/Range.php
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Block.php
@@ -5603,7 +5383,6 @@
 %%WWWDIR%%/vendor/seld/jsonlint/CHANGELOG.md
 %%WWWDIR%%/vendor/seld/jsonlint/LICENSE
 %%WWWDIR%%/vendor/seld/jsonlint/README.md
-%%WWWDIR%%/vendor/seld/jsonlint/bin/jsonlint
 %%WWWDIR%%/vendor/seld/jsonlint/composer.json
 %%WWWDIR%%/vendor/seld/jsonlint/phpstan.neon.dist
 %%WWWDIR%%/vendor/seld/jsonlint/src/Seld/JsonLint/DuplicateKeyException.php
@@ -6094,6 +5873,14 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-php82/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-php82/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php82/Resources/stubs/AllowDynamicProperties.php
+%%WWWDIR%%/vendor/symfony/polyfill-php82/Resources/stubs/SensitiveParameter.php
+%%WWWDIR%%/vendor/symfony/polyfill-php82/Resources/stubs/SensitiveParameterValue.php
+%%WWWDIR%%/vendor/symfony/polyfill-php82/SensitiveParameterValue.php
+%%WWWDIR%%/vendor/symfony/polyfill-php82/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php82/composer.json
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/Required.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/SubscribedService.php
 %%WWWDIR%%/vendor/symfony/service-contracts/CHANGELOG.md
@@ -6156,164 +5943,6 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/VERSION
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/composer.json
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/config/tcpdf_config.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_html.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_png.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_svg.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_svgi.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_html.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_png.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_svg.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_svgi.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_html.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_png.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_svg.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_svgi.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_html.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_png.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_svg.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_svgi.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/tcpdf_barcodes_1d_include.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/tcpdf_barcodes_2d_include.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/config/tcpdf_config_alt.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert/tcpdf.crt
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert/tcpdf.fdf
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert/tcpdf.p12
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/chapter_demo_1.txt
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/chapter_demo_2.txt
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/table_data_demo.txt
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/utf8test.txt
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_001.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_002.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_003.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_004.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_005.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_006.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_007.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_008.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_009.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_010.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_011.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_012.pdf
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_012.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_013.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_014.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_015.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_016.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_017.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_018.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_019.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_020.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_021.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_022.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_023.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_024.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_025.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_026.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_027.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_028.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_029.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_030.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_031.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_032.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_033.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_034.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_035.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_036.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_037.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_038.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_039.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_040.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_041.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_042.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_043.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_044.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_045.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_046.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_047.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_048.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_049.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_050.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_051.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_052.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_053.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_054.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_055.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_056.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_057.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_058.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_059.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_060.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_061.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_062.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_063.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_064.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_065.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_066.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/_blank.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/alpha.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/image_demo.jpg
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/image_with_alpha.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/img.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/logo_example.gif
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/logo_example.jpg
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/logo_example.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_box.ai
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_box.svg
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_cell.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_logo.jpg
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_signature.png
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/testsvg.svg
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tux.svg
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/index.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/afr.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ara.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/aze.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/bel.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/bra.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/bul.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/cat.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ces.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/chi.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/cym.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/dan.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/eng.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/est.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/eus.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/far.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/fra.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ger.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/gle.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/glg.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hat.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/heb.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hrv.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hun.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hye.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ind.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ita.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/jpn.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/kat.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/kor.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/mkd.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/mlt.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/msa.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/nld.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/nob.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/pol.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/por.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ron.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/rus.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/slv.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/spa.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/sqi.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/srp.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/swa.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/swe.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ukr.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/urd.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/yid.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/zho.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/tcpdf_include.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/COPYING
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/ChangeLog
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/README
@@ -6521,9 +6150,6 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_barcodes_2d.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_import.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_parser.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/.htaccess
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/convert_fonts_examples.txt
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 %%WWWDIR%%/vendor/true/punycode/CHANGELOG.md
 %%WWWDIR%%/vendor/true/punycode/LICENSE
 %%WWWDIR%%/vendor/true/punycode/README.md
@@ -6718,7 +6344,6 @@
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/LICENSE
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/README.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/_config.yml
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/bin/cam
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/composer.json
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/API.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/Drivers.md
@@ -6753,12 +6378,6 @@
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/LzwStreamWrapper.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/PclzipZipInterface.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/UnifiedArchive.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/ArchivingTest.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/ReadingTest.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/bootstrap.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/doc
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/folder/subdoc
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/folder/subfolder/subfile
 %%WWWDIR%%/vendor/webmozart/assert/CHANGELOG.md
 %%WWWDIR%%/vendor/webmozart/assert/LICENSE
 %%WWWDIR%%/vendor/webmozart/assert/README.md
@@ -6767,14 +6386,744 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/reports
+@dir %%WWWDIR%%/ajax
+@dir %%WWWDIR%%/bin
+@dir %%WWWDIR%%/config
+@dir %%WWWDIR%%/css
+@dir %%WWWDIR%%/css/includes
+@dir %%WWWDIR%%/css/includes/components
+@dir %%WWWDIR%%/css/includes/components/chartist
+@dir %%WWWDIR%%/css/includes/components/itilobject
+@dir %%WWWDIR%%/css/includes/components/setup
+@dir %%WWWDIR%%/css/includes/mixins
+@dir %%WWWDIR%%/css/includes/pages
+@dir %%WWWDIR%%/css/legacy
+@dir %%WWWDIR%%/css/legacy/includes
+@dir %%WWWDIR%%/css/lib
+@dir %%WWWDIR%%/css/lib/bootstrap
+@dir %%WWWDIR%%/css/lib/bootstrap/scss
+@dir %%WWWDIR%%/css/lib/bootstrap/scss/forms
+@dir %%WWWDIR%%/css/lib/bootstrap/scss/helpers
+@dir %%WWWDIR%%/css/lib/bootstrap/scss/mixins
+@dir %%WWWDIR%%/css/lib/bootstrap/scss/utilities
+@dir %%WWWDIR%%/css/lib/bootstrap/scss/vendor
+@dir %%WWWDIR%%/css/lib/fontsource
+@dir %%WWWDIR%%/css/lib/fontsource/inter
+@dir %%WWWDIR%%/css/lib/fontsource/inter/files
+@dir %%WWWDIR%%/css/lib/fontsource/inter/scss
+@dir %%WWWDIR%%/css/lib/select2
+@dir %%WWWDIR%%/css/lib/select2/src
+@dir %%WWWDIR%%/css/lib/select2/src/scss
+@dir %%WWWDIR%%/css/lib/select2/src/scss/mixins
+@dir %%WWWDIR%%/css/lib/select2/src/scss/theme
+@dir %%WWWDIR%%/css/lib/select2/src/scss/theme/classic
+@dir %%WWWDIR%%/css/lib/select2/src/scss/theme/default
+@dir %%WWWDIR%%/css/lib/tabler
+@dir %%WWWDIR%%/css/lib/tabler/core
+@dir %%WWWDIR%%/css/lib/tabler/core/src
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/demo
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/fonts
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/layout
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/mixins
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/ui
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/ui/forms
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/ui/typo
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/utils
+@dir %%WWWDIR%%/css/lib/tabler/core/src/scss/vendor
+@dir %%WWWDIR%%/css/lib/tabler/icons
+@dir %%WWWDIR%%/css/lib/tabler/icons/iconfont
+@dir %%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts
+@dir %%WWWDIR%%/css/palettes
+@dir %%WWWDIR%%/css/palettes/previews
+@dir %%WWWDIR%%/css/standalone
+@dir %%WWWDIR%%/css_compiled
+@dir %%WWWDIR%%/files
+@dir %%WWWDIR%%/files/_cache
+@dir %%WWWDIR%%/files/_cron
+@dir %%WWWDIR%%/files/_dumps
+@dir %%WWWDIR%%/files/_graphs
+@dir %%WWWDIR%%/files/_inventories
+@dir %%WWWDIR%%/files/_locales
+@dir %%WWWDIR%%/files/_lock
+@dir %%WWWDIR%%/files/_log
+@dir %%WWWDIR%%/files/_pictures
+@dir %%WWWDIR%%/files/_plugins
+@dir %%WWWDIR%%/files/_rss
+@dir %%WWWDIR%%/files/_sessions
+@dir %%WWWDIR%%/files/_tmp
+@dir %%WWWDIR%%/files/_uploads
+@dir %%WWWDIR%%/front
+@dir %%WWWDIR%%/front/contenttemplates
+@dir %%WWWDIR%%/front/log
+@dir %%WWWDIR%%/inc
+@dir %%WWWDIR%%/install
+@dir %%WWWDIR%%/install/migrations
+@dir %%WWWDIR%%/install/migrations/update_10.0.0_to_10.0.1
+@dir %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2
+@dir %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3
+@dir %%WWWDIR%%/install/migrations/update_9.4.x_to_9.5.0
+@dir %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0
+@dir %%WWWDIR%%/install/mysql
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/js/Forms
+@dir %%WWWDIR%%/js/RichText
+@dir %%WWWDIR%%/js/modules
+@dir %%WWWDIR%%/js/modules/Kanban
+@dir %%WWWDIR%%/js/modules/Search
+@dir %%WWWDIR%%/js/modules/SearchTokenizer
+@dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%/lib/bundles
+@dir %%WWWDIR%%/locales
+@dir %%WWWDIR%%/marketplace
+@dir %%WWWDIR%%/pics
+@dir %%WWWDIR%%/pics/charts
+@dir %%WWWDIR%%/pics/icones
+@dir %%WWWDIR%%/pics/impact
+@dir %%WWWDIR%%/pics/jquery
+@dir %%WWWDIR%%/pics/layout
+@dir %%WWWDIR%%/pics/logos
+@dir %%WWWDIR%%/pics/logos/sources
+@dir %%WWWDIR%%/pics/screenshots
+@dir %%WWWDIR%%/pics/timeline
+@dir %%WWWDIR%%/plugins
+@dir %%WWWDIR%%/public
+@dir %%WWWDIR%%/public/lib
+@dir %%WWWDIR%%/public/lib/flatpickr
+@dir %%WWWDIR%%/public/lib/flatpickr/l10n
+@dir %%WWWDIR%%/public/lib/flatpickr/themes
+@dir %%WWWDIR%%/public/lib/fortawesome
+@dir %%WWWDIR%%/public/lib/fortawesome/fontawesome-free
+@dir %%WWWDIR%%/public/lib/fortawesome/fontawesome-free/webfonts
+@dir %%WWWDIR%%/public/lib/fullcalendar
+@dir %%WWWDIR%%/public/lib/fullcalendar/core
+@dir %%WWWDIR%%/public/lib/fullcalendar/core/locales
+@dir %%WWWDIR%%/public/lib/jquery.fancytree
+@dir %%WWWDIR%%/public/lib/jquery.fancytree/dist
+@dir %%WWWDIR%%/public/lib/jquery.fancytree/dist/skin-awesome
+@dir %%WWWDIR%%/public/lib/jquery.rateit
+@dir %%WWWDIR%%/public/lib/jquery.rateit/scripts
+@dir %%WWWDIR%%/public/lib/leaflet
+@dir %%WWWDIR%%/public/lib/leaflet-fullscreen
+@dir %%WWWDIR%%/public/lib/leaflet-fullscreen/dist
+@dir %%WWWDIR%%/public/lib/leaflet.awesome-markers
+@dir %%WWWDIR%%/public/lib/leaflet.awesome-markers/dist
+@dir %%WWWDIR%%/public/lib/leaflet.awesome-markers/dist/images
+@dir %%WWWDIR%%/public/lib/leaflet/dist
+@dir %%WWWDIR%%/public/lib/leaflet/dist/images
+@dir %%WWWDIR%%/public/lib/photoswipe
+@dir %%WWWDIR%%/public/lib/photoswipe/dist
+@dir %%WWWDIR%%/public/lib/photoswipe/dist/default-skin
+@dir %%WWWDIR%%/public/lib/select2
+@dir %%WWWDIR%%/public/lib/select2/js
+@dir %%WWWDIR%%/public/lib/select2/js/i18n
+@dir %%WWWDIR%%/public/lib/tinymce
+@dir %%WWWDIR%%/public/lib/tinymce-i18n
+@dir %%WWWDIR%%/public/lib/tinymce-i18n/langs6
+@dir %%WWWDIR%%/public/lib/tinymce/skins
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content/dark
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content/default
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content/document
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content/tinymce-5
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content/tinymce-5-dark
+@dir %%WWWDIR%%/public/lib/tinymce/skins/content/writer
+@dir %%WWWDIR%%/public/lib/tinymce/skins/ui
+@dir %%WWWDIR%%/public/lib/tinymce/skins/ui/oxide
+@dir %%WWWDIR%%/public/lib/tinymce/skins/ui/oxide-dark
+@dir %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5
+@dir %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5-dark
+@dir %%WWWDIR%%/sound
+@dir %%WWWDIR%%/src
+@dir %%WWWDIR%%/src/Agent
+@dir %%WWWDIR%%/src/Agent/Communication
+@dir %%WWWDIR%%/src/Agent/Communication/Headers
+@dir %%WWWDIR%%/src/Api
+@dir %%WWWDIR%%/src/Api/Deprecated
+@dir %%WWWDIR%%/src/Application
+@dir %%WWWDIR%%/src/Application/View
+@dir %%WWWDIR%%/src/Application/View/Extension
+@dir %%WWWDIR%%/src/Cache
+@dir %%WWWDIR%%/src/CalDAV
+@dir %%WWWDIR%%/src/CalDAV/Backend
+@dir %%WWWDIR%%/src/CalDAV/Contracts
+@dir %%WWWDIR%%/src/CalDAV/Node
+@dir %%WWWDIR%%/src/CalDAV/Plugin
+@dir %%WWWDIR%%/src/CalDAV/Traits
+@dir %%WWWDIR%%/src/Console
+@dir %%WWWDIR%%/src/Console/Assets
+@dir %%WWWDIR%%/src/Console/Build
+@dir %%WWWDIR%%/src/Console/Cache
+@dir %%WWWDIR%%/src/Console/Command
+@dir %%WWWDIR%%/src/Console/Config
+@dir %%WWWDIR%%/src/Console/Database
+@dir %%WWWDIR%%/src/Console/Exception
+@dir %%WWWDIR%%/src/Console/Ldap
+@dir %%WWWDIR%%/src/Console/Maintenance
+@dir %%WWWDIR%%/src/Console/Marketplace
+@dir %%WWWDIR%%/src/Console/Migration
+@dir %%WWWDIR%%/src/Console/Plugin
+@dir %%WWWDIR%%/src/Console/Rules
+@dir %%WWWDIR%%/src/Console/Security
+@dir %%WWWDIR%%/src/Console/System
+@dir %%WWWDIR%%/src/Console/Task
+@dir %%WWWDIR%%/src/Console/Traits
+@dir %%WWWDIR%%/src/ContentTemplates
+@dir %%WWWDIR%%/src/ContentTemplates/Parameters
+@dir %%WWWDIR%%/src/ContentTemplates/Parameters/ParametersTypes
+@dir %%WWWDIR%%/src/Csv
+@dir %%WWWDIR%%/src/Dashboard
+@dir %%WWWDIR%%/src/Exception
+@dir %%WWWDIR%%/src/Features
+@dir %%WWWDIR%%/src/Http
+@dir %%WWWDIR%%/src/Inventory
+@dir %%WWWDIR%%/src/Inventory/Asset
+@dir %%WWWDIR%%/src/Mail
+@dir %%WWWDIR%%/src/Mail/Protocol
+@dir %%WWWDIR%%/src/Marketplace
+@dir %%WWWDIR%%/src/Marketplace/Api
+@dir %%WWWDIR%%/src/Plugin
+@dir %%WWWDIR%%/src/RichText
+@dir %%WWWDIR%%/src/Stat
+@dir %%WWWDIR%%/src/Stat/Data
+@dir %%WWWDIR%%/src/Stat/Data/Graph
+@dir %%WWWDIR%%/src/Stat/Data/Location
+@dir %%WWWDIR%%/src/Stat/Data/Sglobal
+@dir %%WWWDIR%%/src/System
+@dir %%WWWDIR%%/src/System/Diagnostic
+@dir %%WWWDIR%%/src/System/Requirement
+@dir %%WWWDIR%%/src/System/Status
+@dir %%WWWDIR%%/src/Team
+@dir %%WWWDIR%%/src/Toolbox
+@dir %%WWWDIR%%/templates
+@dir %%WWWDIR%%/templates/central
+@dir %%WWWDIR%%/templates/central/lists
+@dir %%WWWDIR%%/templates/components
+@dir %%WWWDIR%%/templates/components/dashboard
+@dir %%WWWDIR%%/templates/components/dropdown
+@dir %%WWWDIR%%/templates/components/form
+@dir %%WWWDIR%%/templates/components/itilobject
+@dir %%WWWDIR%%/templates/components/itilobject/actors
+@dir %%WWWDIR%%/templates/components/itilobject/fields
+@dir %%WWWDIR%%/templates/components/itilobject/timeline
+@dir %%WWWDIR%%/templates/components/kanban
+@dir %%WWWDIR%%/templates/components/kanban/item_panels
+@dir %%WWWDIR%%/templates/components/search
+@dir %%WWWDIR%%/templates/components/user
+@dir %%WWWDIR%%/templates/impact
+@dir %%WWWDIR%%/templates/install
+@dir %%WWWDIR%%/templates/install/blocks
+@dir %%WWWDIR%%/templates/layout
+@dir %%WWWDIR%%/templates/layout/parts
+@dir %%WWWDIR%%/templates/pages
+@dir %%WWWDIR%%/templates/pages/admin
+@dir %%WWWDIR%%/templates/pages/admin/inventory
+@dir %%WWWDIR%%/templates/pages/assets
+@dir %%WWWDIR%%/templates/pages/management
+@dir %%WWWDIR%%/templates/pages/self-service
+@dir %%WWWDIR%%/templates/pages/setup
+@dir %%WWWDIR%%/vendor
+@dir %%WWWDIR%%/vendor/blueimp
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/css
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/img
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/cors
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/vendor
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python/static
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php
+@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files
+@dir %%WWWDIR%%/vendor/brick
+@dir %%WWWDIR%%/vendor/brick/math
+@dir %%WWWDIR%%/vendor/brick/math/src
+@dir %%WWWDIR%%/vendor/brick/math/src/Exception
+@dir %%WWWDIR%%/vendor/brick/math/src/Internal
+@dir %%WWWDIR%%/vendor/brick/math/src/Internal/Calculator
+@dir %%WWWDIR%%/vendor/composer
+@dir %%WWWDIR%%/vendor/container-interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/docs
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/docs/images
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception
+@dir %%WWWDIR%%/vendor/donatj
+@dir %%WWWDIR%%/vendor/donatj/phpuseragentparser
+@dir %%WWWDIR%%/vendor/donatj/phpuseragentparser/src
+@dir %%WWWDIR%%/vendor/donatj/phpuseragentparser/src/UserAgent
+@dir %%WWWDIR%%/vendor/elvanto
+@dir %%WWWDIR%%/vendor/elvanto/litemoji
+@dir %%WWWDIR%%/vendor/elvanto/litemoji/src
+@dir %%WWWDIR%%/vendor/glpi-project
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/bin
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/data
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/examples
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/lib
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/source_files
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory/tests
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory/tests/units
+@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data
+@dir %%WWWDIR%%/vendor/guzzlehttp
+@dir %%WWWDIR%%/vendor/guzzlehttp/guzzle
+@dir %%WWWDIR%%/vendor/guzzlehttp/guzzle/src
+@dir %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Cookie
+@dir %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Exception
+@dir %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler
+@dir %%WWWDIR%%/vendor/guzzlehttp/promises
+@dir %%WWWDIR%%/vendor/guzzlehttp/promises/src
+@dir %%WWWDIR%%/vendor/guzzlehttp/psr7
+@dir %%WWWDIR%%/vendor/guzzlehttp/psr7/src
+@dir %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Exception
+@dir %%WWWDIR%%/vendor/html2text
+@dir %%WWWDIR%%/vendor/html2text/html2text
+@dir %%WWWDIR%%/vendor/html2text/html2text/src
+@dir %%WWWDIR%%/vendor/htmlawed
+@dir %%WWWDIR%%/vendor/htmlawed/htmlawed
+@dir %%WWWDIR%%/vendor/iamcal
+@dir %%WWWDIR%%/vendor/iamcal/lib_autolink
+@dir %%WWWDIR%%/vendor/laminas
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Filter
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Translator
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Translator/Loader
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Translator/Plural
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Validator
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Validator/PhoneNumber
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/View
+@dir %%WWWDIR%%/vendor/laminas/laminas-i18n/src/View/Helper
+@dir %%WWWDIR%%/vendor/laminas/laminas-loader
+@dir %%WWWDIR%%/vendor/laminas/laminas-loader/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-loader/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Address
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Protocol
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Protocol/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Protocol/Smtp
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Protocol/Smtp/Auth
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage/Folder
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage/Message
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage/Part
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage/Part/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Storage/Writable
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Transport
+@dir %%WWWDIR%%/vendor/laminas/laminas-mail/src/Transport/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-mime
+@dir %%WWWDIR%%/vendor/laminas/laminas-mime/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-mime/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/bin
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/AbstractFactory
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Factory
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Initializer
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Proxy
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Test
+@dir %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Tool
+@dir %%WWWDIR%%/vendor/laminas/laminas-stdlib
+@dir %%WWWDIR%%/vendor/laminas/laminas-stdlib/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/ArrayUtils
+@dir %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/Guard
+@dir %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/StringWrapper
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/bin
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Barcode
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Db
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Exception
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/File
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Hostname
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Isbn
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Sitemap
+@dir %%WWWDIR%%/vendor/laminas/laminas-validator/src/Translator
+@dir %%WWWDIR%%/vendor/league
+@dir %%WWWDIR%%/vendor/league/csv
+@dir %%WWWDIR%%/vendor/league/csv/src
+@dir %%WWWDIR%%/vendor/mexitek
+@dir %%WWWDIR%%/vendor/mexitek/phpcolors
+@dir %%WWWDIR%%/vendor/mexitek/phpcolors/src
+@dir %%WWWDIR%%/vendor/mexitek/phpcolors/src/Mexitek
+@dir %%WWWDIR%%/vendor/mexitek/phpcolors/src/Mexitek/PHPColors
+@dir %%WWWDIR%%/vendor/michelf
+@dir %%WWWDIR%%/vendor/michelf/php-markdown
+@dir %%WWWDIR%%/vendor/michelf/php-markdown/Michelf
+@dir %%WWWDIR%%/vendor/monolog
+@dir %%WWWDIR%%/vendor/monolog/monolog
+@dir %%WWWDIR%%/vendor/monolog/monolog/src
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Attribute
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Curl
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Slack
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdp
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Test
+@dir %%WWWDIR%%/vendor/paragonie
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/dist
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/lib
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/ChaCha20
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/Curve25519
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/Curve25519/Ge
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/Poly1305
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Base64
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/ChaCha20
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519/Ge
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Poly1305
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/SecretStream
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/ChaCha20
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Curve25519
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Curve25519/Ge
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Poly1305
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/SecretStream
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/PHP52
+@dir %%WWWDIR%%/vendor/phplang
+@dir %%WWWDIR%%/vendor/phplang/scope-exit
+@dir %%WWWDIR%%/vendor/phplang/scope-exit/src
+@dir %%WWWDIR%%/vendor/phpmailer
+@dir %%WWWDIR%%/vendor/phpmailer/phpmailer
+@dir %%WWWDIR%%/vendor/phpmailer/phpmailer/language
+@dir %%WWWDIR%%/vendor/phpmailer/phpmailer/src
+@dir %%WWWDIR%%/vendor/psr
+@dir %%WWWDIR%%/vendor/psr/cache
+@dir %%WWWDIR%%/vendor/psr/cache/src
+@dir %%WWWDIR%%/vendor/psr/container
+@dir %%WWWDIR%%/vendor/psr/container/src
+@dir %%WWWDIR%%/vendor/psr/http-client
+@dir %%WWWDIR%%/vendor/psr/http-client/src
+@dir %%WWWDIR%%/vendor/psr/http-factory
+@dir %%WWWDIR%%/vendor/psr/http-factory/src
+@dir %%WWWDIR%%/vendor/psr/http-message
+@dir %%WWWDIR%%/vendor/psr/http-message/src
+@dir %%WWWDIR%%/vendor/psr/log
+@dir %%WWWDIR%%/vendor/psr/log/Psr
+@dir %%WWWDIR%%/vendor/psr/log/Psr/Log
+@dir %%WWWDIR%%/vendor/psr/log/Psr/Log/Test
+@dir %%WWWDIR%%/vendor/psr/simple-cache
+@dir %%WWWDIR%%/vendor/psr/simple-cache/src
+@dir %%WWWDIR%%/vendor/ralouphie
+@dir %%WWWDIR%%/vendor/ralouphie/getallheaders
+@dir %%WWWDIR%%/vendor/ralouphie/getallheaders/src
+@dir %%WWWDIR%%/vendor/ramsey
+@dir %%WWWDIR%%/vendor/ramsey/collection
 @dir %%WWWDIR%%/vendor/ramsey/collection/bin
-@dir %%WWWDIR%%/vendor/sabre/event/bin
-@dir %%WWWDIR%%/vendor/sabre/http/bin
-@dir %%WWWDIR%%/vendor/sabre/xml/bin
+@dir %%WWWDIR%%/vendor/ramsey/collection/src
+@dir %%WWWDIR%%/vendor/ramsey/collection/src/Exception
+@dir %%WWWDIR%%/vendor/ramsey/collection/src/Map
+@dir %%WWWDIR%%/vendor/ramsey/collection/src/Tool
+@dir %%WWWDIR%%/vendor/ramsey/uuid
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Builder
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Codec
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Converter
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Converter/Number
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Converter/Time
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Exception
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Fields
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Generator
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Guid
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Lazy
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Math
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Nonstandard
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Provider
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Provider/Dce
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Provider/Node
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Provider/Time
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Rfc4122
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Type
+@dir %%WWWDIR%%/vendor/ramsey/uuid/src/Validator
+@dir %%WWWDIR%%/vendor/rlanvin
+@dir %%WWWDIR%%/vendor/rlanvin/php-rrule
+@dir %%WWWDIR%%/vendor/rlanvin/php-rrule/src
+@dir %%WWWDIR%%/vendor/rlanvin/php-rrule/src/i18n
+@dir %%WWWDIR%%/vendor/rlanvin/php-rrule/src/tzdata
+@dir %%WWWDIR%%/vendor/sabre
+@dir %%WWWDIR%%/vendor/sabre/dav
+@dir %%WWWDIR%%/vendor/sabre/dav/lib
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Exception
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Notifications
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Principal
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Schedule
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Subscriptions
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Xml/Filter
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Xml/Notification
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CardDAV
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CardDAV/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CardDAV/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CardDAV/Xml/Filter
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CardDAV/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/CardDAV/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Browser
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Browser/assets
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Browser/assets/openiconic
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Exception
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/FS
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/FSExt
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Locks
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Locks/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Mount
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/PartialUpdate
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/PropertyStorage
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/PropertyStorage/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Sharing
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Sync
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Xml/Element
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Xml/Response
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Exception
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/FS
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/PrincipalBackend
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/event
+@dir %%WWWDIR%%/vendor/sabre/event/lib
+@dir %%WWWDIR%%/vendor/sabre/event/lib/Loop
+@dir %%WWWDIR%%/vendor/sabre/event/lib/Promise
+@dir %%WWWDIR%%/vendor/sabre/http
+@dir %%WWWDIR%%/vendor/sabre/http/lib
+@dir %%WWWDIR%%/vendor/sabre/http/lib/Auth
+@dir %%WWWDIR%%/vendor/sabre/uri
+@dir %%WWWDIR%%/vendor/sabre/uri/lib
+@dir %%WWWDIR%%/vendor/sabre/vobject
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Component
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/ITip
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Parser
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Parser/XML
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Parser/XML/Element
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Property
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Property/VCard
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Recur
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Splitter
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/TimezoneGuesser
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata
+@dir %%WWWDIR%%/vendor/sabre/vobject/resources
+@dir %%WWWDIR%%/vendor/sabre/vobject/resources/schema
+@dir %%WWWDIR%%/vendor/sabre/xml
+@dir %%WWWDIR%%/vendor/sabre/xml/lib
+@dir %%WWWDIR%%/vendor/sabre/xml/lib/Deserializer
+@dir %%WWWDIR%%/vendor/sabre/xml/lib/Element
+@dir %%WWWDIR%%/vendor/sabre/xml/lib/Serializer
+@dir %%WWWDIR%%/vendor/scssphp
+@dir %%WWWDIR%%/vendor/scssphp/scssphp
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Base
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Block
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Compiler
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Exception
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Formatter
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Logger
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Node
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/SourceMap
+@dir %%WWWDIR%%/vendor/scssphp/scssphp/src/Util
+@dir %%WWWDIR%%/vendor/sebastian
+@dir %%WWWDIR%%/vendor/sebastian/diff
+@dir %%WWWDIR%%/vendor/sebastian/diff/src
+@dir %%WWWDIR%%/vendor/sebastian/diff/src/Exception
+@dir %%WWWDIR%%/vendor/sebastian/diff/src/Output
+@dir %%WWWDIR%%/vendor/seld
+@dir %%WWWDIR%%/vendor/seld/jsonlint
+@dir %%WWWDIR%%/vendor/seld/jsonlint/src
+@dir %%WWWDIR%%/vendor/seld/jsonlint/src/Seld
+@dir %%WWWDIR%%/vendor/seld/jsonlint/src/Seld/JsonLint
+@dir %%WWWDIR%%/vendor/simplepie
+@dir %%WWWDIR%%/vendor/simplepie/simplepie
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/idn
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Cache
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Content
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Content/Type
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Decode
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Decode/HTML
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/HTTP
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Net
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Parse
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/XML
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/XML/Declaration
+@dir %%WWWDIR%%/vendor/swaggest
+@dir %%WWWDIR%%/vendor/swaggest/json-diff
+@dir %%WWWDIR%%/vendor/swaggest/json-diff/src
+@dir %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonPatch
+@dir %%WWWDIR%%/vendor/swaggest/json-schema
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/benchmarks
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/spec
 @dir %%WWWDIR%%/vendor/swaggest/json-schema/spec/JSON-Schema-Test-Suite
 @dir %%WWWDIR%%/vendor/swaggest/json-schema/spec/ajv
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/Constraint
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/Constraint/Format
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/Exception
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/Meta
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/Path
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/RemoteRef
+@dir %%WWWDIR%%/vendor/swaggest/json-schema/src/Structure
+@dir %%WWWDIR%%/vendor/symfony
+@dir %%WWWDIR%%/vendor/symfony/cache
+@dir %%WWWDIR%%/vendor/symfony/cache-contracts
+@dir %%WWWDIR%%/vendor/symfony/cache/Adapter
+@dir %%WWWDIR%%/vendor/symfony/cache/DataCollector
+@dir %%WWWDIR%%/vendor/symfony/cache/DependencyInjection
+@dir %%WWWDIR%%/vendor/symfony/cache/Exception
+@dir %%WWWDIR%%/vendor/symfony/cache/Marshaller
+@dir %%WWWDIR%%/vendor/symfony/cache/Messenger
+@dir %%WWWDIR%%/vendor/symfony/cache/Traits
+@dir %%WWWDIR%%/vendor/symfony/console
+@dir %%WWWDIR%%/vendor/symfony/console/Attribute
+@dir %%WWWDIR%%/vendor/symfony/console/CI
+@dir %%WWWDIR%%/vendor/symfony/console/Command
+@dir %%WWWDIR%%/vendor/symfony/console/CommandLoader
+@dir %%WWWDIR%%/vendor/symfony/console/Completion
+@dir %%WWWDIR%%/vendor/symfony/console/Completion/Output
+@dir %%WWWDIR%%/vendor/symfony/console/DependencyInjection
+@dir %%WWWDIR%%/vendor/symfony/console/Descriptor
+@dir %%WWWDIR%%/vendor/symfony/console/Event
+@dir %%WWWDIR%%/vendor/symfony/console/EventListener
+@dir %%WWWDIR%%/vendor/symfony/console/Exception
+@dir %%WWWDIR%%/vendor/symfony/console/Formatter
+@dir %%WWWDIR%%/vendor/symfony/console/Helper
+@dir %%WWWDIR%%/vendor/symfony/console/Input
+@dir %%WWWDIR%%/vendor/symfony/console/Logger
+@dir %%WWWDIR%%/vendor/symfony/console/Output
+@dir %%WWWDIR%%/vendor/symfony/console/Question
+@dir %%WWWDIR%%/vendor/symfony/console/Resources
+@dir %%WWWDIR%%/vendor/symfony/console/Resources/bin
+@dir %%WWWDIR%%/vendor/symfony/console/SignalRegistry
+@dir %%WWWDIR%%/vendor/symfony/console/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tester
+@dir %%WWWDIR%%/vendor/symfony/console/Tester/Constraint
+@dir %%WWWDIR%%/vendor/symfony/css-selector
+@dir %%WWWDIR%%/vendor/symfony/css-selector/Exception
+@dir %%WWWDIR%%/vendor/symfony/css-selector/Node
+@dir %%WWWDIR%%/vendor/symfony/css-selector/Parser
+@dir %%WWWDIR%%/vendor/symfony/css-selector/Parser/Handler
+@dir %%WWWDIR%%/vendor/symfony/css-selector/Parser/Shortcut
+@dir %%WWWDIR%%/vendor/symfony/css-selector/Parser/Tokenizer
+@dir %%WWWDIR%%/vendor/symfony/css-selector/XPath
+@dir %%WWWDIR%%/vendor/symfony/css-selector/XPath/Extension
+@dir %%WWWDIR%%/vendor/symfony/deprecation-contracts
+@dir %%WWWDIR%%/vendor/symfony/dom-crawler
+@dir %%WWWDIR%%/vendor/symfony/dom-crawler/Field
+@dir %%WWWDIR%%/vendor/symfony/dom-crawler/Test
+@dir %%WWWDIR%%/vendor/symfony/dom-crawler/Test/Constraint
+@dir %%WWWDIR%%/vendor/symfony/polyfill-ctype
+@dir %%WWWDIR%%/vendor/symfony/polyfill-iconv
+@dir %%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-iconv/Resources/charset
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php80
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php81
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php81/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php82
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php82/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-php82/Resources/stubs
+@dir %%WWWDIR%%/vendor/symfony/service-contracts
+@dir %%WWWDIR%%/vendor/symfony/service-contracts/Attribute
+@dir %%WWWDIR%%/vendor/symfony/service-contracts/Test
+@dir %%WWWDIR%%/vendor/symfony/string
+@dir %%WWWDIR%%/vendor/symfony/string/Exception
+@dir %%WWWDIR%%/vendor/symfony/string/Inflector
+@dir %%WWWDIR%%/vendor/symfony/string/Resources
 @dir %%WWWDIR%%/vendor/symfony/string/Resources/bin
+@dir %%WWWDIR%%/vendor/symfony/string/Resources/data
+@dir %%WWWDIR%%/vendor/symfony/string/Slugger
+@dir %%WWWDIR%%/vendor/symfony/translation-contracts
+@dir %%WWWDIR%%/vendor/symfony/translation-contracts/Test
+@dir %%WWWDIR%%/vendor/symfony/var-exporter
+@dir %%WWWDIR%%/vendor/symfony/var-exporter/Exception
+@dir %%WWWDIR%%/vendor/symfony/var-exporter/Internal
+@dir %%WWWDIR%%/vendor/tecnickcom
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/config
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/dejavu-fonts-ttf-2.33
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/dejavu-fonts-ttf-2.34
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20100919
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/include
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/barcodes
+@dir %%WWWDIR%%/vendor/true
+@dir %%WWWDIR%%/vendor/true/punycode
+@dir %%WWWDIR%%/vendor/true/punycode/src
+@dir %%WWWDIR%%/vendor/true/punycode/src/Exception
+@dir %%WWWDIR%%/vendor/twig
+@dir %%WWWDIR%%/vendor/twig/string-extra
+@dir %%WWWDIR%%/vendor/twig/twig
 @dir %%WWWDIR%%/vendor/twig/twig/doc
+@dir %%WWWDIR%%/vendor/twig/twig/src
+@dir %%WWWDIR%%/vendor/twig/twig/src/Cache
+@dir %%WWWDIR%%/vendor/twig/twig/src/Error
+@dir %%WWWDIR%%/vendor/twig/twig/src/Extension
+@dir %%WWWDIR%%/vendor/twig/twig/src/Loader
+@dir %%WWWDIR%%/vendor/twig/twig/src/Node
+@dir %%WWWDIR%%/vendor/twig/twig/src/Node/Expression
+@dir %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary
+@dir %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Filter
+@dir %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Test
+@dir %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Unary
+@dir %%WWWDIR%%/vendor/twig/twig/src/NodeVisitor
+@dir %%WWWDIR%%/vendor/twig/twig/src/Profiler
+@dir %%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper
+@dir %%WWWDIR%%/vendor/twig/twig/src/Profiler/Node
+@dir %%WWWDIR%%/vendor/twig/twig/src/Profiler/NodeVisitor
+@dir %%WWWDIR%%/vendor/twig/twig/src/RuntimeLoader
+@dir %%WWWDIR%%/vendor/twig/twig/src/Sandbox
+@dir %%WWWDIR%%/vendor/twig/twig/src/Test
+@dir %%WWWDIR%%/vendor/twig/twig/src/TokenParser
+@dir %%WWWDIR%%/vendor/twig/twig/src/Util
+@dir %%WWWDIR%%/vendor/wapmorgan
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/OneFile
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Exceptions
+@dir %%WWWDIR%%/vendor/webmozart
+@dir %%WWWDIR%%/vendor/webmozart/assert
+@dir %%WWWDIR%%/vendor/webmozart/assert/src
 @owner
 @group
