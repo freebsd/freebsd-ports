@@ -1,9 +1,7 @@
 PORTNAME=	hedgewars
-PORTVERSION=	1.0.0
-PORTREVISION=	9
+PORTVERSION=	1.0.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://www.hedgewars.org/download/releases/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,8 +10,6 @@ WWW=		https://www.hedgewars.org
 
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
-
-BROKEN_i386=	ld: error: duplicate symbol: LandDirty_dimension_info
 
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
@@ -37,10 +33,6 @@ PLIST_FILES=	bin/${PORTNAME} bin/hwengine \
 		lib/libphyslayer.so \
 		lib/libphyslayer.so.1.0
 PORTDATA=	*
-
-USE_LOCALE=	en_US.UTF-8
-MAKE_ENV=	LOCALBASE="${LOCALBASE}"  # fpc issue https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=251712
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"  # fpc issue https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=251712
 
 OPTIONS_DEFINE=	VIDEOREC
 OPTIONS_DEFAULT=VIDEOREC
