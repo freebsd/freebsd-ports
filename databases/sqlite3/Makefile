@@ -214,8 +214,8 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 
 .include <bsd.port.options.mk>
 
-# YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-YEAR=	2022
+# _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
+_YEAR=	2022
 
 # Platform Configuration
 # -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]
