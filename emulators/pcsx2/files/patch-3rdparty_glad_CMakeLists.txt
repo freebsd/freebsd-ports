@@ -1,0 +1,10 @@
+--- 3rdparty/glad/CMakeLists.txt.orig	2022-09-02 10:21:30 UTC
++++ 3rdparty/glad/CMakeLists.txt
+@@ -12,6 +12,7 @@ elseif(X11_API OR WAYLAND_API)
+ 	)
+ endif()
+ 
++target_include_directories(glad PRIVATE "${CMAKE_INSTALL_PREFIX}/include")
+ target_include_directories(glad PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include")
+ target_include_directories(glad INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include")
+ target_link_libraries(glad PRIVATE Threads::Threads "${CMAKE_DL_LIBS}")
