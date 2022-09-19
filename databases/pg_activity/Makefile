@@ -1,5 +1,5 @@
 PORTNAME=	pg_activity
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 
@@ -12,6 +12,7 @@ LICENSE=	PostgreSQL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blessed>=0:devel/py-blessed@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}attrs>=20.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>=0:devel/py-humanize@${PY_FLAVOR}
 
 USES=		python:3.6+
