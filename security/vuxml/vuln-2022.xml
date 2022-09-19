@@ -1,3 +1,35 @@
+  <vuln vid="656b0152-faa9-4755-b08d-aee4a774bd04">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.2">
+	<p> Fix a possible overflow and crash in the ICMP analyzer
+	when receiving a specially crafted packet. </p>
+	<p> Fix a possible overflow and crash in the IRC analyzer
+	when receiving a specially crafted packet. </p>
+	<p> Fix a possible overflow and crash in the SMB analyzer
+	when receiving a specially crafted packet. </p>
+	<p> Fix two possible crashes when converting IP headers for
+	output via the raw_packet event. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.2</url>
+    </references>
+    <dates>
+      <discovery>2022-09-19</discovery>
+      <entry>2022-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aeb4c85b-3600-11ed-b52d-589cfc007716">
     <topic>puppetdb -- Potential SQL injection</topic>
     <affects>
