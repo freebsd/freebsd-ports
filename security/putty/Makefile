@@ -1,14 +1,14 @@
 PORTNAME=	putty
-DISTVERSION=	0.78~pre20220916.e1b73f0
-PORTREVISION=	3
+PORTVERSION=	0.78~pre20220919
+DISTNAME=	${PORTNAME}-${PORTVERSION}.fda41e1
+PORTREVISION=	0
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
-MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/
-EXTRA_PATCHES+=	${FILESDIR}/0001-Unix-GSSAPI-support-krb5-config-as-well-as-pkg-confi.patch
-EXTRA_PATCHES+=	${FILESDIR}/0002-Unix-static-GSSAPI-fix-an-uninitialised-structure-fi.patch
-EXTRA_PATCHES+=	${FILESDIR}/0003-Unix-GSSAPI-support-static-linking-against-Heimdal.patch
-EXTRA_PATCHES+=	${FILESDIR}/0004-GSSAPI-fix-don-t-pass-GSS_C_NO_NAME-to-inquire_cred_.patch
+MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/ \
+		LOCAL/mandree/
+EXTRA_PATCHES+=	${FILESDIR}/0001-setpgrp-cmake-check-use-if-not-if-defined.patch
+EXTRA_PATCHES+=	${FILESDIR}/0002-Use-GTK_LDFLAGS-when-testing-for-Pango.patch
 PATCH_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -72,12 +72,9 @@ DESKTOP_ENTRIES=	"PuTTY" \
 			"" \
 			false
 .else
-# XXX FIXME HACK ALERT
-# PUTTY_GTK_VERSION=OFF is not a valid choice, but manages to
-# skip all version comparisons for GTK in cmake/gtk.cmake:
-CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=OFF
-# this is standard stuff:
-CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=TRUE
+# hack alert: PuTTY, as of 864b4c, masks the definition of NOT_X_WINDOWS
+# under GTK_FOUND; which it defeats. Pass it down explicitly.
+CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=NONE -DNOT_X_WINDOWS:BOOL=TRUE
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} # Heimdal-like in base system

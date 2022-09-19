@@ -1,0 +1,29 @@
+From 864b4c27fa67a95b2daa095923878bdba9fc6fcf Mon Sep 17 00:00:00 2001
+From: Simon Tatham <anakin@pobox.com>
+Date: Mon, 19 Sep 2022 11:34:21 +0000
+Subject: [PATCH 2/2] Use GTK_LDFLAGS when testing for Pango.
+
+On FreeBSD, the GTK libraries aren't stored on the standard library
+path, so pkg-config has to emit a -L option as well as -l options.
+This worked fine during the main build, but the -L option wasn't being
+passed through to check_symbol_exists() for the tests of Pango API
+function availability.
+---
+ cmake/gtk.cmake | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/cmake/gtk.cmake b/cmake/gtk.cmake
+index 34396d2f..13ff7705 100644
+--- a/cmake/gtk.cmake
++++ b/cmake/gtk.cmake
+@@ -74,6 +74,7 @@ if(GTK_FOUND)
+   # Check for some particular Pango functions.
+   function(pango_check_subscope)
+     set(CMAKE_REQUIRED_INCLUDES ${GTK_INCLUDE_DIRS})
++    set(CMAKE_REQUIRED_LINK_OPTIONS ${GTK_LDFLAGS})
+     set(CMAKE_REQUIRED_LIBRARIES ${GTK_LIBRARIES})
+     check_symbol_exists(pango_font_family_is_monospace "pango/pango.h"
+       HAVE_PANGO_FONT_FAMILY_IS_MONOSPACE)
+-- 
+2.37.3
+
