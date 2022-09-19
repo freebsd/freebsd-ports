@@ -93,6 +93,7 @@
     SUBDIR += icingaweb2-module-grafana
     SUBDIR += icingaweb2-module-graphite
     SUBDIR += icingaweb2-module-idoreports
+    SUBDIR += icingaweb2-module-incubator
     SUBDIR += icingaweb2-module-ipl
     SUBDIR += icingaweb2-module-jira
     SUBDIR += icingaweb2-module-map
