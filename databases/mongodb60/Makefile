@@ -52,7 +52,7 @@ MAKE_ARGS=	${MAKE_JOBS_NUMBER} \
 		--use-system-pcre \
 		--use-system-snappy \
 		--use-system-zlib \
-		-j \
+		-j ${MAKE_JOBS_NUMBER} \
 		AR=${PREFIX}/bin/ar \
 		MONGO_VERSION=${DISTVERSION} \
 		VERBOSE=on
