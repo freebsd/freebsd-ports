@@ -1,6 +1,6 @@
 PORTNAME=	putty
 PORTVERSION=	0.78~pre20220919
-DISTNAME=	${PORTNAME}-${PORTVERSION}.fda41e1
+DISTVERSIONSUFFIX=	.fda41e1
 PORTREVISION=	0
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
@@ -9,6 +9,7 @@ MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/ \
 		LOCAL/mandree/
 EXTRA_PATCHES+=	${FILESDIR}/0001-setpgrp-cmake-check-use-if-not-if-defined.patch
 EXTRA_PATCHES+=	${FILESDIR}/0002-Use-GTK_LDFLAGS-when-testing-for-Pango.patch
+EXTRA_PATCHES+= ${FILESDIR}/0001-Stop-trying-to-include-X11-headers-in-non-GTK-builds.patch
 PATCH_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -72,9 +73,7 @@ DESKTOP_ENTRIES=	"PuTTY" \
 			"" \
 			false
 .else
-# hack alert: PuTTY, as of 864b4c, masks the definition of NOT_X_WINDOWS
-# under GTK_FOUND; which it defeats. Pass it down explicitly.
-CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=NONE -DNOT_X_WINDOWS:BOOL=TRUE
+CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=NONE
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} # Heimdal-like in base system
