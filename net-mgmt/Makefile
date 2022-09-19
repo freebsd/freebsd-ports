@@ -101,6 +101,7 @@
     SUBDIR += icingaweb2-module-reactbundle
     SUBDIR += icingaweb2-module-reporting
     SUBDIR += icingaweb2-module-vsphere
+    SUBDIR += icingaweb2-module-vspheredb
     SUBDIR += icingaweb2-module-x509
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
