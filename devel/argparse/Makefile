@@ -1,5 +1,5 @@
 PORTNAME=	argparse
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/p-ranav/argparse
 
 LICENSE=	MIT
 
-USES=		cmake
+USES=		cmake:noninja
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav
