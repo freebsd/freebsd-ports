@@ -1,6 +1,6 @@
+
 PORTNAME=	logitechmediaserver
-PORTVERSION=	7.9.2.g2018.12.10
-PORTREVISION=	1
+DISTVERSION=	8.2.0.g2021.11.13
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,14 +19,14 @@ BUILD_DEPENDS=	nasm:devel/nasm \
 		bash:shells/bash \
 		rsync:net/rsync
 LIB_DEPENDS=	libgd.so:graphics/gd
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:d3dc895 \
-		Logitech:slimserver-vendor:21f307f:vendor
+GH_TUPLE=	Logitech:slimserver:4694dd8 \
+		Logitech:slimserver-vendor:c2162d0:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
-		Bin/dbish \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
 		Slim/Plugin/UPnP/t/MediaRenderer.t \
 		Slim/Plugin/UPnP/t/MediaServer.t \
@@ -37,6 +37,39 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		scanner.pl \
 		slimserver.pl \
 		${WRKSRC_vendor}/CPAN/hints/darwin.pl
+
+EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
+
+SUB_FILES=	Custom.pm \
+		custom-convert.conf \
+		logitechmediaserver.conf
+SUB_LIST=	PERL=${PERL} \
+		PORTNAME=${PORTNAME} \
+		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
+		SLIMDIR=${SLIMDIR} \
+		SLIMDBDIR=${SLIMDBDIR} \
+		SLIMUSER=${SLIMUSER} \
+		SLIMGROUP=${SLIMGROUP} \
+		CONFFILES="${CONFFILES}"
+
+PLIST_SUB=	SLIMDIR=${SLIMDIR} \
+		SLIMDBDIR=${SLIMDBDIR} \
+		OPSYS=${OPSYS:tl} \
+		ARCH=${ARCH} \
+		ARCHNAME=${ARCHNAME}
+
+EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
+SUB_FILES=	Custom.pm \
+		custom-convert.conf \
+		logitechmediaserver.conf
+SUB_LIST=	PERL=${PERL} \
+		PORTNAME=${PORTNAME} \
+		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
+		SLIMDIR=${SLIMDIR} \
+		SLIMDBDIR=${SLIMDBDIR} \
+		SLIMUSER=${SLIMUSER} \
+		SLIMGROUP=${SLIMGROUP} \
+		CONFFILES="${CONFFILES}"
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
@@ -52,9 +85,8 @@ TEST_VARS_OFF=		CONTRIB_FLAGS=-t
 
 USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
-EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
 
-DOCFILES=	Changelog*.html Installation.txt License*.txt
+DOCFILES=	Changelog*.html License*.txt
 CONFFILES=	convert.conf types.conf
 
 PLIST_SUB=	SLIMDIR=${SLIMDIR} \
@@ -62,18 +94,6 @@ PLIST_SUB=	SLIMDIR=${SLIMDIR} \
 		OPSYS=${OPSYS:tl} \
 		ARCH=${ARCH} \
 		ARCHNAME=${ARCHNAME}
-
-SUB_FILES=	Custom.pm \
-		custom-convert.conf \
-		logitechmediaserver.conf
-SUB_LIST=	PERL=${PERL} \
-		PORTNAME=${PORTNAME} \
-		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
-		SLIMDIR=${SLIMDIR} \
-		SLIMDBDIR=${SLIMDBDIR} \
-		SLIMUSER=${SLIMUSER} \
-		SLIMGROUP=${SLIMGROUP} \
-		CONFFILES="${CONFFILES}"
 
 SLIMDIR?=	share/logitechmediaserver
 SLIMDBDIR?=	/var/db/logitechmediaserver
@@ -84,16 +104,11 @@ SLIMGROUP?=	${SLIMUSER}
 
 .if ${ARCH} == "i386"
 ARCHNAME=	i386-freebsd-thread-multi-64int
-PLIST_SUB+=	I386_ONLY=""
-.else
-PLIST_SUB+=	I386_ONLY="@comment "
+PLIST=		${PKGDIR}/pkg-plist.i386
 .endif
 
 .if ${ARCH} == "amd64"
 ARCHNAME=	amd64-freebsd-thread-multi
-PLIST_SUB+=	AMD64_ONLY=""
-.else
-PLIST_SUB+=	AMD64_ONLY="@comment "
 .endif
 
 do-build:
@@ -108,7 +123,7 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX}/${SLIMDIR} && \
 		${FIND} . -name \*.orig -delete -o -name \*.bak -delete -o -name \*.packlist -delete && \
 		${FIND} ./CPAN/arch/ ! -path './CPAN/arch/${PERL_VER}*' -delete && \
-		${RM} -r -- Bin/* && \
+		${RM} -r -- Bin/* .editorconfig .github && \
 		${RM} -- ${CONFFILES} ${DOCFILES})
 	(cd ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN/arch/${PERL_VER} && \
 		${RM} -r -- arm-linux-gnueabihf-thread-multi-64int && \
@@ -125,7 +140,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${WRKDIR}/logitechmediaserver.conf \
 	    ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
-	${INSTALL_SCRIPT} ${WRKSRC}/Bin/dbish ${STAGEDIR}${PREFIX}/${SLIMDIR}/Bin/
 	@${LN} -s ${SLIMDBDIR}/cache ${STAGEDIR}${PREFIX}/${SLIMDIR}/Cache
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
