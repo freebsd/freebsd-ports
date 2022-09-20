@@ -39,6 +39,11 @@ MAKE_ENV+=	FLEX="${FLEX}"
 pre-patch:
 	@(cd ${WRKSRC}/win && ${LN} -sf ../../vulture)
 
+post-patch:
+	@${FIND} ${WRKSRC} \( -name "*.c" -o -name "*.h" \) -print
+	@${FIND} ${WRKSRC} \( -name "*.c" -o -name "*.h" \) -exec \
+		${REINPLACE_CMD} -e 's|yn(|yesno(|g' {} \;
+
 pre-configure:
 	@${CHMOD} a+x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
