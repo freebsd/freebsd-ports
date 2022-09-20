@@ -52,6 +52,7 @@ include/fatal/type/arithmetic.h
 include/fatal/type/array.h
 include/fatal/type/benchmark/trie/trie_benchmark.h
 include/fatal/type/bitwise.h
+include/fatal/type/builtin.h
 include/fatal/type/call_traits.h
 include/fatal/type/cartesian_product.h
 include/fatal/type/cat.h
@@ -86,6 +87,7 @@ include/fatal/type/impl/apply.h
 include/fatal/type/impl/arithmetic.h
 include/fatal/type/impl/array.h
 include/fatal/type/impl/bitwise.h
+include/fatal/type/impl/builtin.h
 include/fatal/type/impl/cartesian_product.h
 include/fatal/type/impl/cat.h
 include/fatal/type/impl/compare.h
