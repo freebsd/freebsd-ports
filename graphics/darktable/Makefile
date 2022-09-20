@@ -1,6 +1,5 @@
 PORTNAME=	darktable
-PORTVERSION=	3.8.1
-PORTREVISION=	8
+PORTVERSION=	4.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
