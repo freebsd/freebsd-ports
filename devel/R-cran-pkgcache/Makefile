@@ -1,11 +1,11 @@
 PORTNAME=	pkgcache
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Cache 'CRAN'-Like Metadata and R Packages
-WWW=		https://github.com/r-lib/pkgcache #readme
+WWW=		https://github.com/r-lib/pkgcache#readme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -26,7 +26,7 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-pillar>0:devel/R-cran-pillar \
 		R-cran-rprojroot>0:devel/R-cran-rprojroot \
 		R-cran-sessioninfo>0:devel/R-cran-sessioninfo \
-		R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-pingr>0:net/R-cran-pingr \
 		R-cran-fs>0:sysutils/R-cran-fs \
