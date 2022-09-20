@@ -431,6 +431,7 @@ include/duckdb/optimizer/rule/move_constants.hpp
 include/duckdb/optimizer/rule/regex_optimizations.hpp
 include/duckdb/optimizer/statistics_propagator.hpp
 include/duckdb/optimizer/topn_optimizer.hpp
+include/duckdb/parallel/base_pipeline_event.hpp
 include/duckdb/parallel/concurrentqueue.hpp
 include/duckdb/parallel/event.hpp
 include/duckdb/parallel/pipeline.hpp
