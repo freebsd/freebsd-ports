@@ -6,11 +6,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High performance real-time physics library
-WWW=		http://www.tokamakphysics.com/
+WWW=		https://sourceforge.net/projects/tokamakp/ \
+		https://web.archive.org/web/20140902123857/http://www.tokamakphysics.com/
 
 LICENSE=	BSD3CLAUSE ZLIB
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/license.txt # not actually used by ports framework
+
+DEPRECATED=	Last release in 2008, abandoned upstream, not used, website disappeared
+EXPIRATION_DATE=	2022-11-20
 
 USES=		gmake zip:infozip dos2unix
 DOS2UNIX_FILES=	build/gnu/tokamak.make
@@ -27,8 +31,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 .if !defined(WITH_DEBUG)
 CPPFLAGS+=	-DNDEBUG
 .endif
@@ -40,11 +42,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/tokamak.h
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/math/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/math/
 	${INSTALL_DATA} ${WRKSRC}/include/tokamak.h ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/math/*.h ${STAGEDIR}${PREFIX}/include/math/
 	${INSTALL_DATA} ${WRKSRC}/lib/libtokamak_m.a ${STAGEDIR}${PREFIX}/lib/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
