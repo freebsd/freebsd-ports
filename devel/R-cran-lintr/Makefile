@@ -1,5 +1,5 @@
 PORTNAME=	lintr
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -20,13 +20,13 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-digest>0:security/R-cran-digest \
 		R-cran-rex>0:textproc/R-cran-rex \
 		R-cran-xml2>=1.0.0:textproc/R-cran-xml2 \
-		R-cran-xmlparsedata>=1.0.3:textproc/R-cran-xmlparsedata
+		R-cran-xmlparsedata>=1.0.5:textproc/R-cran-xmlparsedata
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-mockery>0:devel/R-cran-mockery \
 		R-cran-rstudioapi>=0.2:devel/R-cran-rstudioapi \
 		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
 		R-cran-tibble>0:devel/R-cran-tibble \
-		R-cran-withr>0:devel/R-cran-withr \
+		R-cran-withr>=2.5.0:devel/R-cran-withr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-httr>=1.2.1:www/R-cran-httr
 
@@ -34,5 +34,6 @@ USES=		cran:auto-plist
 
 post-install:
 	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
+
 
 .include <bsd.port.mk>
