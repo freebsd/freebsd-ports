@@ -1,0 +1,12 @@
+--- gst-libs/gst/webrtc/meson.build.orig	2022-09-05 21:22:10 UTC
++++ gst-libs/gst/webrtc/meson.build
+@@ -1,3 +1,4 @@
++if get_option('webrtc').enabled()
+ webrtc_sources = files([
+   'dtlstransport.c',
+   'icetransport.c',
+@@ -95,3 +96,4 @@ gstwebrtc_dep = declare_dependency(link_with: gstwebrt
+   dependencies: gstwebrtc_dependencies)
+ 
+ meson.override_dependency(pkg_name, gstwebrtc_dep)
++endif

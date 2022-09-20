@@ -1,0 +1,2 @@
+lib/gstreamer-%%VERSION%%/libgstx264.so
+%%DATADIR%%-%%VERSION%%/presets/GstX264Enc.prs

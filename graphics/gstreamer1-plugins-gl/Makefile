@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer GL graphics plugin
@@ -15,17 +15,28 @@ OPTIONS_DEFINE=	WAYLAND
 OPTIONS_DEFAULT=WAYLAND
 OPTIONS_SUB=	yes
 
-WAYLAND_CONFIGURE_ENABLE=	wayland
+OPTIONS_UNSET=	WAYLAND
+
+GL_WINSYS=	"x11,egl"
+
+WAYLAND_VARS=	gl_winsys+=",wayland"
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 
-pre-build:
-.for dir in ${GL_GST_DIRS}
-	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET})
-.endfor
+USES=  gl
+USE_GL=  gl glu glesv2 egl
+USE_XORG+=x11 \
+					xext \
+					xcb
+BUILD_DEPENDS= ${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+LIB_DEPENDS= libgraphene-1.0.so:graphics/graphene \
+	libpng16.so:graphics/png
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/pkgconfig/gstreamer-gl.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/gstreamer-gl-1.0.pc
+MESON_ARGS+= -Dgl=enabled \
+						 -Dgl_winsys="${GL_WINSYS}" \
+						 -Dgl_api=opengl,gles2 \
+						 -Dgl_platform=glx,egl
+
+GST_PLUGIN_DIR=  gst-libs/gst/gl ext/gl
 
 .include "${MASTERDIR}/Makefile"

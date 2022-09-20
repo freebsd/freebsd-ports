@@ -1,0 +1,21 @@
+--- ext/dash/meson.build.orig	2022-09-13 21:07:32 UTC
++++ ext/dash/meson.build
+@@ -45,9 +45,15 @@ if xml2_dep.found()
+     c_args : gst_plugins_bad_args + ['-DGST_USE_UNSTABLE_API'],
+     link_args : noseh_link_args,
+     include_directories : [configinc, libsinc],
+-    dependencies : [gstadaptivedemux_dep, gsturidownloader_dep, gsttag_dep,
+-                    gstnet_dep, gstpbutils_dep, gstbase_dep, gstisoff_dep,
+-                    gio_dep, xml2_dep],
++    dependencies : [cc.find_library('gstadaptivedemux-1.0', required : true),
++      cc.find_library('gsturidownloader-1.0', required : true),
++      dependency('gstreamer-tag-1.0'),
++      dependency('gstreamer-net-1.0'),
++      dependency('gstreamer-pbutils-1.0'),
++      gstbase_dep,
++      cc.find_library('gstisoff-1.0', required : true),
++      gio_dep,
++      xml2_dep],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

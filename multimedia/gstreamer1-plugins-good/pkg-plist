@@ -24,6 +24,7 @@ lib/gstreamer-%%VERSION%%/libgstinterleave.so
 lib/gstreamer-%%VERSION%%/libgstisomp4.so
 lib/gstreamer-%%VERSION%%/libgstlevel.so
 lib/gstreamer-%%VERSION%%/libgstmatroska.so
+lib/gstreamer-%%VERSION%%/libgstmonoscope.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
 lib/gstreamer-%%VERSION%%/libgstmultifile.so
 lib/gstreamer-%%VERSION%%/libgstmultipart.so

@@ -1,0 +1,13 @@
+--- sys/xvimage/meson.build.orig	2022-09-17 07:37:22 UTC
++++ sys/xvimage/meson.build
+@@ -19,7 +19,9 @@ if xvideo_dep.found()
+     xvimage_sources,
+     c_args : gst_plugins_base_args + no_warn_args,
+     include_directories: [configinc, libsinc],
+-    dependencies : glib_deps + [video_dep, gst_base_dep, gst_dep, x11_dep, xshm_dep, xvideo_dep, libm],
++    dependencies : glib_deps + [
++      dependency('gstreamer-video-1.0', required : true),
++      gst_base_dep, gst_dep, x11_dep, xshm_dep, xvideo_dep, libm],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

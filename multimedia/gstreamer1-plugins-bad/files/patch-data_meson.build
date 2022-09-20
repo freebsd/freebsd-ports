@@ -1,0 +1,12 @@
+--- data/meson.build.orig	2022-09-05 21:41:46 UTC
++++ data/meson.build
+@@ -1,3 +1,4 @@
++if get_option('data').enabled()
+ encoding_targetsdir = join_paths(get_option('datadir'),
+     'gstreamer-' + api_version, 'encoding-profiles')
+ 
+@@ -21,3 +22,4 @@ foreach path_targets : encoding_targets
+   etargets = path_targets.get(1)
+   install_data(sources: etargets, install_dir: dir)
+ endforeach
++endif

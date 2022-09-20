@@ -23,6 +23,7 @@ include/gstreamer-%%VERSION%%/ges/ges-gerror.h
 include/gstreamer-%%VERSION%%/ges/ges-group.h
 include/gstreamer-%%VERSION%%/ges/ges-image-source.h
 include/gstreamer-%%VERSION%%/ges/ges-layer.h
+include/gstreamer-%%VERSION%%/ges/ges-marker-list.h
 include/gstreamer-%%VERSION%%/ges/ges-meta-container.h
 include/gstreamer-%%VERSION%%/ges/ges-multi-file-source.h
 include/gstreamer-%%VERSION%%/ges/ges-operation-clip.h
@@ -34,15 +35,18 @@ include/gstreamer-%%VERSION%%/ges/ges-prelude.h
 include/gstreamer-%%VERSION%%/ges/ges-project.h
 include/gstreamer-%%VERSION%%/ges/ges-screenshot.h
 include/gstreamer-%%VERSION%%/ges/ges-source-clip.h
+include/gstreamer-%%VERSION%%/ges/ges-source-clip-asset.h
 include/gstreamer-%%VERSION%%/ges/ges-source.h
 include/gstreamer-%%VERSION%%/ges/ges-test-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-text-overlay-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-text-overlay.h
+include/gstreamer-%%VERSION%%/ges/ges-time-overlay-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-timeline-element.h
 include/gstreamer-%%VERSION%%/ges/ges-timeline.h
 include/gstreamer-%%VERSION%%/ges/ges-title-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-title-source.h
 include/gstreamer-%%VERSION%%/ges/ges-track-element-asset.h
+include/gstreamer-%%VERSION%%/ges/ges-track-element-deprecated.h
 include/gstreamer-%%VERSION%%/ges/ges-track-element.h
 include/gstreamer-%%VERSION%%/ges/ges-track.h
 include/gstreamer-%%VERSION%%/ges/ges-transition-clip.h

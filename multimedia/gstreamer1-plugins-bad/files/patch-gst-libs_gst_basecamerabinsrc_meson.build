@@ -1,0 +1,12 @@
+--- gst-libs/gst/basecamerabinsrc/meson.build.orig	2022-09-05 21:00:40 UTC
++++ gst-libs/gst/basecamerabinsrc/meson.build
+@@ -1,3 +1,4 @@
++if get_option('basecamerabinsrc').enabled()
+ camerabin_sources = files(
+   'gstcamerabin-enum.c',
+   'gstcamerabinpreview.c',
+@@ -51,3 +52,4 @@ gstbasecamerabin_dep = declare_dependency(link_with : 
+   sources: gen_sources,
+   dependencies : [gstapp_dep])
+ meson.override_dependency(pkg_name, gstbasecamerabin_dep)
++endif

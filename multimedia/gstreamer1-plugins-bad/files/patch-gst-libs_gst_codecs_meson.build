@@ -1,0 +1,15 @@
+--- gst-libs/gst/codecs/meson.build.orig	2022-09-05 20:49:44 UTC
++++ gst-libs/gst/codecs/meson.build
+@@ -1,3 +1,4 @@
++if get_option('codecs').enabled()
+ codecs_sources = files(
+   'gsth264decoder.c',
+   'gsth264picture.c',
+@@ -81,4 +82,5 @@ gstcodecs_dep = declare_dependency(link_with : gstcode
+   include_directories : [libsinc],
+   sources: gen_sources,
+   dependencies : [gstvideo_dep, gstcodecparsers_dep])
+-meson.override_dependency(pkg_name, gstcodecs_dep)
+\ No newline at end of file
++meson.override_dependency(pkg_name, gstcodecs_dep)
++endif

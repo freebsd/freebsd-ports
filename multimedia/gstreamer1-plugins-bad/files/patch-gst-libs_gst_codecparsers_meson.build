@@ -1,0 +1,12 @@
+--- gst-libs/gst/codecparsers/meson.build.orig	2022-09-05 20:42:22 UTC
++++ gst-libs/gst/codecparsers/meson.build
+@@ -1,3 +1,4 @@
++if get_option('codecparsers').enabled()
+ codecparser_sources = files([
+   'gstjpeg2000sampling.c',
+   'gstjpegparser.c',
+@@ -69,3 +70,4 @@ gstcodecparsers_dep = declare_dependency(link_with : g
+ 
+ libraries += [[pkg_name, {'lib': gstcodecparsers}]]
+ meson.override_dependency(pkg_name, gstcodecparsers_dep)
++endif

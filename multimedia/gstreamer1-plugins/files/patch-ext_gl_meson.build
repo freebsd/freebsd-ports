@@ -1,0 +1,11 @@
+--- ext/gl/meson.build.orig	2022-09-09 09:05:31 UTC
++++ ext/gl/meson.build
+@@ -146,7 +146,7 @@ gstopengl = library('gstopengl',
+   objc_args : gst_plugins_base_args + gl_objc_args + extra_c_args,
+   link_args : noseh_link_args,
+   include_directories : [configinc],
+-  dependencies : [gstgl_dep, video_dep,
++  dependencies : [gstgl_dep, dependency('gstreamer-video-1.0'),
+                   gst_base_dep, gst_controller_dep, libm] + optional_deps,
+   install : true,
+   install_dir : plugins_install_dir)

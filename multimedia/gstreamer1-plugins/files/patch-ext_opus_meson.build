@@ -1,0 +1,19 @@
+--- ext/opus/meson.build.orig	2022-09-06 22:11:13 UTC
++++ ext/opus/meson.build
+@@ -11,12 +11,15 @@ opus_dep = dependency('opus', version: '>= 0.9.4', req
+                       fallback: ['opus', 'opus_dep'], default_options: ['docs=disabled'])
+ 
+ if opus_dep.found()
++  pbutils_dep2 = dependency('gstreamer-pbutils-@0@'.format(api_version))
++  audio_dep2 = dependency('gstreamer-audio-@0@'.format(api_version))
++  tag_dep2 = dependency('gstreamer-tag-@0@'.format(api_version))
+   gstopus = library('gstopus',
+     opus_sources,
+     c_args : gst_plugins_base_args,
+     link_args : noseh_link_args,
+     include_directories: [configinc, libsinc],
+-    dependencies : glib_deps + [pbutils_dep, tag_dep, audio_dep, gst_dep, gst_base_dep, opus_dep, libm],
++    dependencies : glib_deps + [pbutils_dep2, tag_dep2, audio_dep2, gst_dep, gst_base_dep, opus_dep, libm],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

@@ -1,0 +1,12 @@
+--- gst-libs/gst/interfaces/meson.build.orig	2022-09-05 21:08:24 UTC
++++ gst-libs/gst/interfaces/meson.build
+@@ -1,3 +1,4 @@
++if get_option('interfaces').enabled()
+ photography_sources = ['photography.c']
+ photo_headers = ['photography.h', 'photography-prelude.h']
+ install_headers(photo_headers, subdir : 'gstreamer-1.0/gst/interfaces')
+@@ -40,3 +41,4 @@ gstphotography_dep = declare_dependency(link_with : gs
+ 
+ libraries += [[pkg_name, {'lib': gstphotography}]]
+ meson.override_dependency(pkg_name, gstphotography_dep)
++endif

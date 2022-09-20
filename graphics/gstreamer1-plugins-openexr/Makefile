@@ -1,4 +1,4 @@
-PORTREVISION=	12
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer OpenExr codec plugin
@@ -9,9 +9,11 @@ DIST=		bad
 
 CPPFLAGS+=	-DInt64=uint64_t
 
-pre-configure:
-		${REINPLACE_CMD} -e 's/c++98/c++11/' ${WRKSRC}/ext/openexr/Makefile.in
-
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+
+PLIST=  ${.CURDIR}/pkg-plist
+
+LIB_DEPENDS=  libOpenEXR.so:graphics/openexr \
+	libImath-3_1.so:math/Imath
 
 .include "${MASTERDIR}/Makefile"

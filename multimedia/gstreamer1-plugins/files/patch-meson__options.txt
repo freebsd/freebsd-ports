@@ -1,0 +1,30 @@
+--- meson_options.txt.orig	2022-09-06 20:35:43 UTC
++++ meson_options.txt
+@@ -1,9 +1,27 @@
++option('tag', type : 'feature', value : 'auto', description : 'tag integration library and tag plugin')
++option('pkgconfig', type : 'feature', value : 'auto', description : 'pkgconfig integration library and pkgconfig plugin')
++option('fft', type : 'feature', value : 'auto', description : 'fft integration library and fft plugin')
++option('video', type : 'feature', value : 'auto', description : 'video integration library and video plugin')
++option('audio', type : 'feature', value : 'auto', description : 'audio integration library and audio plugin')
++option('rtp', type : 'feature', value : 'auto', description : 'rtp integration library and rtp plugin')
++option('pbutils', type : 'feature', value : 'auto', description : 'pbutils integration library and pbutils plugin')
++option('sdp', type : 'feature', value : 'auto', description : 'sdp integration library and sdp plugin')
++option('rtsp', type : 'feature', value : 'auto', description : 'rtsp integration library and rtsp plugin')
++option('riff', type : 'feature', value : 'auto', description : 'riff integration library and riff plugin')
++option('ximage', type : 'feature', value : 'auto', description : 'ximage integration library and ximage plugin')
++option('app', type : 'feature', value : 'auto', description : 'app integration library and app plugin')
++option('allocators', type : 'feature', value : 'auto', description : 'allocators integration library and allocators plugin')
++
+ option('audioresample_format', type : 'combo',
+        choices : ['int', 'float', 'auto'], value : 'auto')
+ option('install_plugins_helper', type: 'string', value: '',
+        description: 'Path of distro helper script to call to install missing plugins')
+ option('iso-codes', type : 'feature', value : 'auto',
+        description: 'Use iso-codes in libgsttag (for language names)')
++option('defaultaudiosink', type : 'string', value : 'autoaudiosink',
++       description: 'set default audio sink')
++option('defaultaudiosrc', type : 'string', value : 'autoaudiosrc',
++       description: 'set default audio src')
+ 
+ # OpenGL integration library options
+ option('gl_api', type : 'array', choices : ['opengl', 'gles2', 'auto'], value : ['auto'],

@@ -1,0 +1,12 @@
+--- gst-libs/gst/video/meson.build.orig	2022-09-06 21:09:42 UTC
++++ gst-libs/gst/video/meson.build
+@@ -1,3 +1,4 @@
++if get_option('video').enabled()
+ video_sources = files([
+   'colorbalance.c',
+   'colorbalancechannel.c',
+@@ -181,3 +182,4 @@ video_dep = declare_dependency(link_with : gstvideo,
+   sources : video_gen_sources)
+ 
+ meson.override_dependency(pkg_name, video_dep)
++endif

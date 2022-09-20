@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer-plugins good-quality plug-ins
@@ -9,21 +9,57 @@ GST_PLUGIN_SUFFIX=	-good
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
 DIST=	good
-GOOD_GST_DIRS=	gst sys po
 
 PLIST=		${.CURDIR}/pkg-plist
-FILESDIR=	${.CURDIR}/files
 PATCHDIR=	${.CURDIR}/files
 NO_GSTREAMER_COMMON=	yes
 
-do-build:
-.for dir in ${GOOD_GST_DIRS}
-	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET})
-.endfor
-
-do-install:
-.for dir in ${GOOD_GST_DIRS}
-	@(cd ${INSTALL_WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.endfor
+GOOD_GST_ENABLED_PLUGINS=	alpha \
+				apetag \
+				audiofx \
+				audioparsers \
+				auparse \
+				autodetect \
+				avi \
+				cutter \
+				deinterlace \
+				debugutils \
+				dtmf \
+				effectv \
+				equalizer \
+				flv \
+				flx \
+				goom \
+				goom2k1 \
+				icydemux \
+				id3demux \
+				imagefreeze \
+				interleave \
+				isomp4 \
+				law \
+				level \
+				matroska \
+				monoscope \
+				multifile \
+				multipart \
+				nls \
+				oss \
+				oss4 \
+				replaygain \
+				rtp \
+				rtpmanager \
+				rtsp \
+				shapewipe \
+				smpte \
+				spectrum \
+				tests \
+				udp \
+				videobox \
+				videocrop \
+				videofilter \
+				videomixer \
+				wavenc \
+				wavparse \
+				y4m
 
 .include "${MASTERDIR}/Makefile"

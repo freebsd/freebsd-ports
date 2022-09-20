@@ -1,0 +1,39 @@
+--- meson.build.orig	2022-09-03 05:39:18 UTC
++++ meson.build
+@@ -17,6 +17,8 @@ endif
+ gst_version_is_stable = gst_version_minor.is_even()
+ gst_version_is_dev = gst_version_minor % 2 == 1 and gst_version_micro < 90
+ 
++build_gstgl = false
++
+ host_system = host_machine.system()
+ 
+ have_cxx = add_languages('cpp', native: false, required: false)
+@@ -282,8 +284,10 @@ core_conf.set_quoted('GST_PACKAGE_ORIGIN', get_option(
+ 
+ # FIXME: These should be configure options
+ core_conf.set_quoted('DEFAULT_VIDEOSINK', 'autovideosink')
+-core_conf.set_quoted('DEFAULT_AUDIOSINK', 'autoaudiosink')
+ 
++core_conf.set_quoted('DEFAULT_AUDIOSINK', get_option('defaultaudiosink'))
++core_conf.set_quoted('DEFAULT_AUDIOSRC', get_option('defaultaudiosrc'))
++
+ # Set whether the audioresampling method should be detected at runtime
+ core_conf.set('AUDIORESAMPLE_FORMAT_' + get_option('audioresample_format').to_upper(), true)
+ 
+@@ -484,6 +488,7 @@ pkgconfig_plugins_base_libs_variables = [
+   'libraries=' + ' '.join(base_libraries),
+ ]
+ 
++if get_option('pkgconfig').enabled()
+ pkgconfig.generate(
+   libraries : [gst_dep],
+   variables : pkgconfig_variables + pkgconfig_plugins_base_libs_variables,
+@@ -497,6 +502,7 @@ pkgconfig.generate(
+ run_command(meson_pkg_config_file_fixup_script,
+   'gstreamer-plugins-base-1.0', 'libraries',
+   check: true)
++endif
+ 
+ if have_orcc
+   update_orc_dist_files = find_program('scripts/update-orc-dist-files.py')

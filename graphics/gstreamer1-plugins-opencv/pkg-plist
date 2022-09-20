@@ -5,5 +5,3 @@ lib/gstreamer-%%VERSION%%/libgstopencv.so
 lib/libgstopencv-%%VERSION%%.so
 lib/libgstopencv-%%VERSION%%.so.0
 lib/libgstopencv-%%VERSION%%.so.%%SOVERSION%%
-share/gst-plugins-bad/%%VERSION%%/opencv_haarcascades/fist.xml
-share/gst-plugins-bad/%%VERSION%%/opencv_haarcascades/palm.xml

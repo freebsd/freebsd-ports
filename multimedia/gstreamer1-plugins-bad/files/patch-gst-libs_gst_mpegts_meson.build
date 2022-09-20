@@ -1,0 +1,12 @@
+--- gst-libs/gst/mpegts/meson.build.orig	2022-09-05 21:11:41 UTC
++++ gst-libs/gst/mpegts/meson.build
+@@ -1,3 +1,4 @@
++if get_option('mpegts').enabled()
+ mpegts_sources = files(
+   'mpegts.c',
+   'gstmpegtssection.c',
+@@ -82,3 +83,4 @@ gstmpegts_dep = declare_dependency(link_with : gstmpeg
+   dependencies : [gst_dep],
+   sources : gen_sources)
+ meson.override_dependency(pkg_name, gstmpegts_dep)
++endif

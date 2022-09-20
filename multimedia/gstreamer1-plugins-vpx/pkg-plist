@@ -1,0 +1,2 @@
+lib/gstreamer-%%VERSION%%/libgstvpx.so
+%%DATADIR%%-%%VERSION%%/presets/GstVP8Enc.prs

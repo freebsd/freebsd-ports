@@ -1,0 +1,42 @@
+--- meson_options.txt.orig	2022-09-04 20:24:08 UTC
++++ meson_options.txt
+@@ -1,5 +1,39 @@
+ option('gst_play_tests', type: 'boolean', value: false,
+        description: 'Enable GstPlay tests that need network access')
++option('adaptivedemux', type: 'feature', value: 'auto',
++       description: 'adaptivedemux lib')
++option('audio', type: 'feature', value: 'auto',
++       description: 'audio lib')
++option('codecparsers', type: 'feature', value: 'auto',
++       description: 'codecparsers lib')
++option('codecs', type: 'feature', value: 'auto',
++       description: 'codecs lib')
++option('basecamerabinsrc', type: 'feature', value: 'auto',
++       description: 'basecamerabinsrc lib')
++option('insertbin', type: 'feature', value: 'auto',
++       description: 'insertbin lib')
++option('interfaces', type: 'feature', value: 'auto',
++       description: 'interfaces lib')
++option('isoff', type: 'feature', value: 'auto',
++       description: 'isoff lib')
++option('mpegts', type: 'feature', value: 'auto',
++       description: 'mpegts lib')
++option('play', type: 'feature', value: 'auto',
++       description: 'play lib')
++option('player', type: 'feature', value: 'auto',
++       description: 'player lib')
++option('transcoder', type: 'feature', value: 'auto',
++       description: 'transcoder lib')
++option('uridownloader', type: 'feature', value: 'auto',
++       description: 'uridownloader lib')
++option('webrtc', type: 'feature', value: 'auto',
++       description: 'webrtc lib')
++option('tools', type: 'feature', value: 'auto',
++       description: 'tools lib')
++option('data', type: 'feature', value: 'auto',
++       description: 'data lib')
++option('pkgconfig', type: 'feature', value: 'auto',
++       description: 'pkgconfig lib')
+ 
+ # Feature options for plugins without external deps
+ option('accurip', type : 'feature', value : 'auto')

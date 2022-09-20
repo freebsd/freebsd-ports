@@ -1,0 +1,12 @@
+--- gst-libs/gst/rtsp/meson.build.orig	2022-09-06 21:08:11 UTC
++++ gst-libs/gst/rtsp/meson.build
+@@ -1,3 +1,4 @@
++if get_option('rtsp').enabled()
+ rtsp_sources = files([
+   'gstrtsptransport.c',
+   'gstrtspurl.c',
+@@ -90,3 +91,4 @@ rtsp_dep = declare_dependency(link_with : gst_rtsp,
+   sources : rtsp_gen_sources)
+ 
+ meson.override_dependency(pkg_name, rtsp_dep)
++endif

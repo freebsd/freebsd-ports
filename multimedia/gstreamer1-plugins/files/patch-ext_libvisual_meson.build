@@ -1,0 +1,12 @@
+--- ext/libvisual/meson.build.orig	2022-09-12 14:49:46 UTC
++++ ext/libvisual/meson.build
+@@ -13,7 +13,8 @@ if libvisual_dep.found()
+     libvisual_sources,
+     c_args : gst_plugins_base_args,
+     include_directories: [configinc, libsinc],
+-    dependencies : glib_deps + [libvisual_dep, audio_dep, video_dep, pbutils_dep, gst_dep, gst_base_dep],
++    dependencies : glib_deps + [libvisual_dep, dependency('gstreamer-audio-1.0'),
++      dependency('gstreamer-video-1.0'), dependency('gstreamer-pbutils-1.0'), gst_dep, gst_base_dep],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

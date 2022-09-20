@@ -1,0 +1,16 @@
+--- sys/msdk/meson.build.orig	2022-09-16 08:39:55 UTC
++++ sys/msdk/meson.build
+@@ -169,7 +169,12 @@ if msdk_deps_found
+     msdk_sources,
+     c_args : gst_plugins_bad_args + ['-DGST_USE_UNSTABLE_API'],
+     include_directories : [configinc, mfx_inc],
+-    dependencies : [gstbase_dep, gstvideo_dep, gstpbutils_dep, gstallocators_dep, gstcodecparsers_dep, mfx_dep, msdk_deps],
++    dependencies : [gstbase_dep,
++      dependency('gstreamer-video-1.0', required : true),
++      dependency('gstreamer-pbutils-1.0', required : true),
++      dependency('gstreamer-allocators-1.0', required : true),
++      dependency('gstreamer-codecparsers-1.0', required : true),
++      mfx_dep, msdk_deps],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

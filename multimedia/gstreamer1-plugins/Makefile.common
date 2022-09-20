@@ -1,608 +1,365 @@
-BASE_GST_ALL_PLUGINS= \
+BASE_GST_ALL_PLUGINS+= \
+		adder \
+		allocators \
 		alsa \
+		app \
+		audio \
+		audioconvert \
+		audiomixer \
+		audiorate \
+		audioresample \
+		audiotestsrc \
 		cdparanoia \
+		compositor \
+		doc \
+		encoding \
+		examples \
+		fft \
+		gio \
 		gl \
-		ivorbis \
 		libvisual \
+		nls \
 		ogg \
-		opengl \
 		opus \
+		overlaycomposition \
 		pango \
+		pbtypes \
+		pbutils \
+		pkgconfig \
+		playback \
+		rawparse \
+		riff \
+		rtp \
+		rtsp \
+		sdp \
+		subparse \
+		tag \
+		tcp \
+		tests \
 		theora \
+		tools \
+		typefind \
+		video \
+		videoconvert \
+		videorate \
+		videoscale \
+		videotestsrc \
+		volume \
 		vorbis \
-		x \
+		ximage \
 		xvideo
 
-BASE_GST_NON_PLUGINS= \
-		--disable-gles2 \
-		--disable-egl \
-		--disable-glx
+BASE_GST_ENABLED_PLUGINS?=
 
 BAD_GST_ALL_PLUGINS+= \
+		accurip \
+		adaptivedemux \
+		adpcmdec \
+		adpcmenc \
+		aes \
+		aiff \
+		androidmedia \
 		aom \
+		applemedia \
+		asfmux \
 		assrender \
+		audiobuffersplit \
+		audiofxbad \
+		audiolatency \
+		audiomixmatrix \
+		audiovisualizers \
+		autoconvert \
+		basecamerabinsrc \
+		bayer \
+		bluez \
 		bs2b \
+		bz2 \
+		camerabin2 \
 		chromaprint \
+		closedcaption \
+		codecalpha \
+		codecparsers \
+		codecs \
+		coloreffects \
+		colormanagement \
 		curl \
 		dash \
+		data \
+		dc1394 \
+		debugutils \
+		directfb \
+		directsound \
+		doc \
 		dtls \
 		dts \
+		dvb \
+		dvbsubenc \
+		dvbsuboverlay \
+		dvdspu \
+		examples \
 		faac \
 		faad \
+		faceoverlay \
+		festival \
+		fieldanalysis \
 		flite \
+		freeverb \
+		frei0r \
+		gaudieffects \
+		gdp \
+		geometrictransform \
 		gme \
 		gsm \
 		hls \
+		id3tag \
+		insertbin \
+		inter \
+		interfaces \
+		interlace \
+		ipcpipeline \
+		isoff \
+		ivfparse \
+		ivtc \
+		jp2kdecimator \
+		jpegformat \
 		kate \
 		kms \
 		ladspa \
 		libde265 \
+		librfb \
 		lv2 \
+		midi \
 		modplug \
 		mpeg2enc \
+		mpegdemux \
+		mpegpsmux \
+		mpegts \
+		mpegtsdemux \
+		mpegtsmux \
 		mplex \
 		msdk \
 		musepack \
+		mxf \
 		neon \
-		ofa \
+		netsim \
+		nls \
+		nvcodec \
+		onvif \
 		openal \
 		opencv \
 		openexr \
 		openh264 \
 		openjpeg \
 		openmpt \
+		opus \
+		pcapparse \
+		pkgconfig \
+		play \
+		player \
+		pnm \
+		proxy \
+		rawparse \
+		removesilence \
 		resindvd \
-		rtmp \
+		rist \
 		rsvg \
+		rtmp \
+		rtmp2 \
+		rtp \
+		sbc \
+		sctp \
+		sdp \
+		segmentclip \
+		shm \
+		siren \
+		smooth \
 		smoothstreaming \
 		sndfile \
 		soundtouch \
 		spandsp \
+		speed \
 		srtp \
+		subenc \
+		switchbin \
+		tests \
+		timecode \
+		tinyalsa \
+		tools \
+		transcode \
+		transcoder \
 		ttml \
-		vdpau \
+		uridownloader \
+		uvch264 \
+		videofilters \
+		videoframe_audiolevel \
+		videoparsers \
+		videosignal \
+		vmnc \
 		vulkan \
+		wasapi \
 		wayland \
 		webp \
+		webrtc \
 		webrtcdsp \
+		winks \
+		winscreencap \
 		x265 \
-		zbar \
+		y4m \
+		zbar
 
-BAD_GST_NON_PLUGINS= \
-		--enable-bz2 \
-		--enable-dvb \
-		--enable-shm \
-		--disable-acm \
-		--disable-android_media \
-		--disable-apple_media \
-		--disable-avc \
-		--disable-bluez \
-		--disable-directfb \
-		--disable-direct3d \
-		--disable-directsound \
-		--disable-nvenc \
-		--disable-nvdec \
-		--disable-sbc \
-		--disable-spc \
-		--disable-tinyalsa \
-		--disable-uvch264 \
-		--disable-vcd \
-		--disable-wasapi \
-		--disable-winks \
-		--disable-winscreencap
+BAD_GST_ENABLED_PLUGINS?=
 
 GOOD_GST_ALL_PLUGINS+= \
 		aalib \
+		alpha \
+		apetag \
+		audiofx \
+		audioparsers \
+		auparse \
+		autodetect \
+		avi \
 		cairo \
+		cutter \
+		debugutils \
+		deinterlace \
+		directsound \
+		dtmf \
+		dv \
+		dv1394 \
+		effectv \
+		equalizer \
+		examples \
 		flac \
-		gdk_pixbuf \
-		gst_v4l2 \
+		flv \
+		flx \
+		gdk-pixbuf \
+		goom \
+		goom2k1 \
 		gtk3 \
+		icydemux \
+		id3demux \
+		imagefreeze \
+		interleave \
+		isomp4 \
 		jack \
 		jpeg \
 		lame \
+		law \
+		level \
 		libcaca \
-		libdv \
-		libpng \
+		matroska \
+		monoscope \
 		mpg123 \
+		multifile \
+		multipart \
+		nls \
+		oss \
+		oss4 \
+		osxaudio \
+		osxvideo \
+		png \
 		pulse \
-		qt \
+		qt5 \
+		replaygain \
+		rtp \
+		rtpmanager \
+		rtsp \
+		shapewipe \
 		shout2 \
+		smpte \
 		soup \
+		spectrum \
 		speex \
 		taglib \
+		tests \
 		twolame \
+		udp \
+		v4l2 \
+		videobox \
+		videocrop \
+		videofilter \
+		videomixer \
 		vpx \
+		waveform \
+		wavenc \
 		wavpack \
-		x
+		wavparse \
+		ximagesrc \
+		y4m
 
-GOOD_GST_NON_PLUGINS=	\
-		--disable-dv1394 \
-		--disable-directsound \
-		--disable-osx_audio \
-		--disable-osx_video \
-		--disable-waveform \
-		--enable-bz2 \
-		--enable-oss \
-		--enable-oss4 \
-		--enable-zlib
+GOOD_GST_ENABLED_PLUGINS?=
 
 UGLY_GST_ALL_PLUGINS+= \
 		a52dec \
 		amrnb \
-		amrwb \
+		amrwbdec \
+		asfdemux \
 		cdio \
+		dvdlpcmdec \
 		dvdread \
+		dvdsub \
 		mpeg2dec \
+		nls \
+		realmedia \
 		sidplay \
-		x264
+		x264 \
+		xingmux
 
-UGLY_GST_NON_PLUGINS=
+UGLY_GST_ENABLED_PLUGINS?=
+
+# gstreamer scripts tend to call python3 rather than python
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 # Disable all plugins by default
 .if ${DIST}=="base"
 .for d in ${BASE_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	--disable-${d}
+CONFIGURE_ARGS+=	-D${d}=disabled
 .endfor
-CONFIGURE_ARGS+= ${BASE_GST_NON_PLUGINS}
+.for d in ${BASE_GST_ENABLED_PLUGINS}
+CONFIGURE_ARGS+=	-D${d}=enabled
+.endfor
 .endif
 
 .if ${DIST}=="bad"
 .for d in ${BAD_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	--disable-${d}
+CONFIGURE_ARGS+=	-D${d}=disabled
 .endfor
-CONFIGURE_ARGS+= ${BAD_GST_NON_PLUGINS}
+.for d in ${BAD_GST_ENABLED_PLUGINS}
+CONFIGURE_ARGS+=	-D${d}=enabled
+.endfor
 .endif
 
 .if ${DIST}=="good"
 .for d in ${GOOD_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	--disable-${d}
+CONFIGURE_ARGS+=	-D${d}=disabled
 .endfor
-CONFIGURE_ARGS+= ${GOOD_GST_NON_PLUGINS}
+.for d in ${GOOD_GST_ENABLED_PLUGINS}
+CONFIGURE_ARGS+=	-D${d}=enabled
+.endfor
 .endif
 
 .if ${DIST}=="ugly"
 .for d in ${UGLY_GST_ALL_PLUGINS}
-CONFIGURE_ARGS+=	--disable-${d}
+CONFIGURE_ARGS+=	-D${d}=disabled
 .endfor
-CONFIGURE_ARGS+= ${UGLY_GST_NON_PLUGINS}
+.for d in ${UGLY_GST_ENABLED_PLUGINS}
+CONFIGURE_ARGS+=	-D${d}=enabled
+.endfor
 .endif
 
 .if ${GST_PLUGIN}!="base" && ${GST_PLUGIN}!="bad" && \
-	${GST_PLUGIN}!="good" && ${GST_PLUGIN}!="ugly"
-CONFIGURE_ARGS+=	--enable-${GST_PLUGIN}
+	${GST_PLUGIN}!="good" && ${GST_PLUGIN}!="ugly" && \
+	${GST_PLUGIN}!="x"
+CONFIGURE_ARGS+=	-D${GST_PLUGIN}=enabled
 .endif
 
 .if !defined(NO_GSTREAMER_COMMON)
 GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
 
-# Enable the right plugin
-CONFIGURE_ARGS:=${CONFIGURE_ARGS:S|--disable-${GST_PLUGIN}|--enable-${GST_PLUGIN}|}
+USE_GSTREAMER+=	${DIST:base=}
 
 GST_INC_DIR=		include/gstreamer-${VERSION}
 GST_LIB_DIR=		lib/gstreamer-${VERSION}
 
-# Auto create PLIST
-PLIST?=		${NONEXISTENT}
-
-# ------- plugins ---------
-
-# a52dec
-gst_a52dec_LIB_DEPENDS=	liba52.so:audio/liba52
-
-# aalib
-gst_aalib_LIB_DEPENDS=	libaa.so:graphics/aalib
-gst_aalib_USES=		ncurses
-gst_aalib_PLIST_FILES=	${GST_LIB_DIR}/libgstaasink.so
-
-# amrnb
-gst_amrnb_LIB_DEPENDS=	libopencore-amrnb.so:audio/opencore-amr
-gst_amrnb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrnb.so \
-			share/gstreamer-${VERSION}/presets/GstAmrnbEnc.prs
-
-# amrwb
-gst_amrwb_LIB_DEPENDS=	libopencore-amrwb.so:audio/opencore-amr
-gst_amrwb_GST_PLUGIN_DIR=	ext/amrwbdec
-gst_amrwb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrwbdec.so
-
-# aom
-gst_aom_LIB_DEPENDS=	libaom.so:multimedia/aom
-
-# assrender
-gst_assrender_LIB_DEPENDS=	libass.so:multimedia/libass
-gst_assrender_USES=	compiler:c11
-
-# bs2b
-gst_bs2b_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
-
-# cairo
-gst_cairo_USE_GNOME=	cairo
-
-# cdparanoia
-gst_cdparanoia_LIB_DEPENDS=	libcdda_interface.so:audio/cdparanoia
-
-# cdio
-gst_cdio_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
-
-# chromaprint
-gst_chromaprint_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
-
-# curl
-gst_curl_LIB_DEPENDS=	libcurl.so:ftp/curl \
-			libssh2.so:security/libssh2
-
-# dash
-gst_dash_USE_GNOME=	libxml2
-gst_dash_PLIST_FILES=	${GST_LIB_DIR}/libgstdashdemux.so
-
-# dtls
-gst_dtls_USES=		compiler:c11 ssl
-gst_dtls_CONFIGURE_ENV=	DTLS_CFLAGS="-I${OPENSSLINC}" \
-			DTLS_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-
-# dts
-gst_dts_LIB_DEPENDS=	libdca.so:multimedia/libdca
-gst_dts_PLIST_FILES=	${GST_LIB_DIR}/libgstdtsdec.so
-
-# libdv
-gst_libdv_LIB_DEPENDS=		libdv.so:multimedia/libdv
-gst_libdv_GST_PLUGIN_DIR=	ext/dv
-gst_libdv_PLIST_FILES=		${GST_LIB_DIR}/libgstdv.so
-
-# dvdread
-gst_dvdread_LIB_DEPENDS=libdvdread.so:multimedia/libdvdread
-
-# faac
-gst_faac_LIB_DEPENDS=	libfaac.so:audio/faac
-
-# faad
-gst_faad_LIB_DEPENDS=	libfaad.so:audio/faad
-
-# flac
-gst_flac_LIB_DEPENDS=	libFLAC.so:audio/flac
-
-# flite
-gst_flite_LIB_DEPENDS=	libflite.so:audio/flite
-
-# gdk_pixbuf
-gst_gdk_pixbuf_USE_GNOME=	gdkpixbuf2
-gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.so
-
-# gl
-gst_gl_USES=	gl
-gst_gl_USE_GL=	gl glu glesv2 egl
-gst_gl_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
-gst_gl_LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
-gst_gl_CONFIGURE_ARGS=	--enable-gl --enable-glx \
-			--enable-egl --enable-gles2
-gst_gl_GST_PLUGIN_DIR=	gst-libs/gst/gl ext/gl
-gst_gl_PLIST_FILES=		#
-
-# gme
-gst_gme_LIB_DEPENDS=	libgme.so:audio/libgme
-
-# gsm
-gst_gsm_LIB_DEPENDS=	libgsm.so:audio/gsm
-
-# gtk3
-gst_gtk3_USES=		gnome
-gst_gtk3_USE_GSTREAMER=	gl
-gst_gtk3_USE_GNOME=	cairo gdkpixbuf2 gtk30
-gst_gtk3_CONFIGURE_ARGS=--enable-gtk3
-gst_gtk3_GST_PLUGIN_DIR=ext/gtk
-gst_gtk3_PLIST_FILES=	${GST_LIB_DIR}/libgstgtk.so
-
-# hls
-gst_hls_LIB_DEPENDS=	libnettle.so:security/nettle
-
-# jack
-gst_jack_LIB_DEPENDS=	libjack.so:audio/jack
-
-# jpeg
-gst_jpeg_USES=		jpeg
-
-# kate
-gst_kate_LIB_DEPENDS=	libkate.so:multimedia/libkate
-
-# kms
-gst_kms_LIB_DEPENDS=	libdrm.so:graphics/libdrm
-gst_kms_GST_PLUGIN_DIR=	sys/kms
-
-# ladspa
-gst_ladspa_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
-
-# lame
-gst_lame_LIB_DEPENDS=	libmp3lame.so:audio/lame
-
-# libcaca
-gst_libcaca_LIB_DEPENDS=	libcaca.so:graphics/libcaca
-gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so
-
-# libde265
-gst_libde265_LIB_DEPENDS=	libde265.so:multimedia/libde265
-gst_libde265_PLIST_FILES=	${GST_LIB_DIR}/libgstde265.so
-
-# librfb
-gst_librfb_USES=	xorg
-gst_librfb_USE_XORG=	x11
-
-# liblv2
-gst_lv2_USES=		pkgconfig
-gst_lv2_BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
-gst_lv2_LIB_DEPENDS=	libsord-0.so:devel/sord \
-			libserd-0.so:devel/serd \
-			libsratom-0.so:audio/sratom \
-			liblilv-0.so:audio/lilv
-
-# png
-gst_libpng_LIB_DEPENDS=	libpng.so:graphics/png
-gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so
-
-# libvisual
-gst_libvisual_LIB_DEPENDS=	libvisual-0.4.so:graphics/libvisual04
-
-# modplug
-gst_modplug_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
-
-# mpeg2enc
-gst_mpeg2enc_LIB_DEPENDS=	libmjpegutils.so:multimedia/mjpegtools
-
-# mpeg2dec
-gst_mpeg2dec_LIB_DEPENDS=	libmpeg2.so:multimedia/libmpeg2
-
-# mplex
-gst_mplex_LIB_DEPENDS=	libmplex2.so:multimedia/mjpegtools
-
-# mpg123
-gst_mpg123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
-
-# msdk
-gst_msdk_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev \
-			libmfx.so:multimedia/intel-media-sdk \
-			libva-drm.so:multimedia/libva
-gst_msdk_GST_PLUGIN_DIR=	sys/msdk
-
-# musepack
-gst_musepack_LIB_DEPENDS=libmpcdec.so:audio/musepack
-
-# neon
-gst_neon_LIB_DEPENDS+=  libneon.so:www/neon
-gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.so
-
-# ogg
-gst_ogg_LIB_DEPENDS=	libogg.so:audio/libogg
-
-# opencv
-gst_opencv_LIB_DEPENDS=		libopencv_highgui.so:graphics/opencv
-gst_opencv_GST_PLUGIN_DIR=	gst-libs/gst/opencv ext/opencv
-gst_opencv_PLIST_FILES=		#
-gst_opencv_USES=	compiler:c++11-lib
-
-# openexr
-gst_openexr_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
-
-# openjpeg
-gst_openjpeg_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
-
-# openh264
-gst_openh264_LIB_DEPENDS=	libopenh264.so:multimedia/openh264
-
-# openmpt
-gst_openmpt_LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
-
-# opus
-gst_opus_LIB_DEPENDS=	libopus.so:audio/opus
-
-# pango
-gst_pango_USE_GNOME=	cairo pango
-
-# pulse
-gst_pulse_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-gst_pulse_PLIST_FILES=	${GST_LIB_DIR}/libgstpulseaudio.so
-
-# qt
-gst_qt_USES=	compiler:c++11-lang qt:5
-gst_qt_USE_QT=	core gui declarative buildtools:build network x11extras
-gst_qt_USE_GSTREAMER=	gl
-gst_qt_PLIST_FILES=	${GST_LIB_DIR}/libgstqmlgl.so
-
-# resindvd
-gst_resindvd_BUILD_DEPENDS=	libdvdnav>=4.1.2:multimedia/libdvdnav
-gst_resindvd_LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
-gst_resindvd_RUN_DEPENDS=	libdvdnav>=4.1.2:multimedia/libdvdnav
-
-# rtmp
-gst_rtmp_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
-
-# rsvg
-gst_rsvg_USE_GNOME=	cairo librsvg2
-
-# shout2
-gst_shout2_LIB_DEPENDS=	libshout.so:audio/libshout
-
-# sidplay
-gst_sidplay_LIB_DEPENDS=	libsidplay.so:audio/libsidplay
-gst_sidplay_PLIST_FILES=	${GST_LIB_DIR}/libgstsid.so
-
-# smoothstreaming
-gst_smoothstreaming_USE_GNOME=	libxml2
-
-# sndfile
-gst_sndfile_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
-
-# soundtouch
-gst_soundtouch_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
-
-# souphttpsrc
-gst_soup_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
-
-# spandsp
-gst_spandsp_LIB_DEPENDS=	libspandsp.so:comms/spandsp
-
-# speex
-gst_speex_LIB_DEPENDS=	libspeex.so:audio/speex
-
-# srtp
-gst_srtp_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2
-
-# taglib
-gst_taglib_LIB_DEPENDS=	libtag.so:audio/taglib
-
-# theora
-gst_theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora \
-			libogg.so:audio/libogg
-
-# ttml
-gst_ttml_USE_GNOME=	cairo libxml2 pango
-gst_ttml_PLIST_FILES=	${GST_LIB_DIR}/libgstttmlsubs.so
-
-# twolame
-gst_twolame_LIB_DEPENDS=	libtwolame.so:audio/twolame
-
-# gst_v4l2
-gst_gst_v4l2_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
-gst_gst_v4l2_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-gst_gst_v4l2_RUN_DEPENDS=	webcamd:multimedia/webcamd
-gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.so
-gst_gst_v4l2_GST_PLUGIN_DIR=	sys/v4l2
-
-# vorbis
-gst_vorbis_USE_GSTREAMER=	ogg
-gst_vorbis_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
-
-# vpx
-gst_vpx_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
-gst_vpx_PLIST_FILES=	${GST_LIB_DIR}/libgstvpx.so \
-			share/gstreamer-${VERSION}/presets/GstVP8Enc.prs
-
-# vdpau
-gst_vdpau_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
-gst_vdpau_GST_PLUGIN_DIR=	sys/vdpau
-
-# vulkan
-gst_vulkan_USE_GSTREAMER=	gl
-gst_vulkan_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-				${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
-				${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-				wayland-protocols>=0:graphics/wayland-protocols
-gst_vulkan_LIB_DEPENDS=		libvulkan.so:graphics/vulkan-loader \
-				libwayland-client.so:graphics/wayland
-gst_vulkan_CONFIGURE_ARGS=	--enable-wayland
-
-# webp
-gst_webp_LIB_DEPENDS=	libwebp.so:graphics/webp
-
-# webrtcdsp
-gst_webrtcdsp_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
-
-# X ximage and xvimage sinks aka output
-.if ${DIST} == base
-gst_x_USES=		xorg
-gst_x_USE_XORG=		x11 xv xext
-gst_x_CONFIGURE_ARGS=	--enable-xvideo --enable-xshm
-gst_x_GST_PLUGIN_DIR=	sys/ximage sys/xvimage
-gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesink.so \
-			${GST_LIB_DIR}/libgstxvimagesink.so
-.endif
-
-.if ${DIST} == good
-# Ximagesrc
-gst_x_USES=		xorg
-gst_x_USE_XORG=		x11 xfixes xdamage xext
-gst_x_CONFIGURE_ARGS=	--enable-x
-gst_x_GST_PLUGIN_DIR=	sys/ximage
-gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesrc.so
-.endif
-
-# x264
-gst_x264_LIB_DEPENDS=	libx264.so:multimedia/libx264
-gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.so \
-			share/gstreamer-${VERSION}/presets/GstX264Enc.prs
-
-# x265
-gst_x265_LIB_DEPENDS=	libx265.so:multimedia/x265
-
-# xvid
-gst_xvid_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
-
-# wavpack
-gst_wavpack_LIB_DEPENDS=	libwavpack.so:audio/wavpack
-
-# zbar
-gst_zbar_LIB_DEPENDS=	libzbar.so:graphics/zbar
-
 .endif # NO_GSTREAMER_COMMON
 
-.if !defined(NO_GSTREAMER_COMMON)
-gst_${GST_PLUGIN}_BUILD_DEPENDS?=
-gst_${GST_PLUGIN}_LIB_DEPENDS?=
-gst_${GST_PLUGIN}_RUN_DEPENDS?=
-gst_${GST_PLUGIN}_USES?=
-gst_${GST_PLUGIN}_USE_QT?=
-gst_${GST_PLUGIN}_USE_XORG?=
-gst_${GST_PLUGIN}_PLIST_FILES?= \
-		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.so
-gst_${GST_PLUGIN}_EXTRA_LIBS?=
-gst_${GST_PLUGIN}_PREBUILD_DIR?=
-gst_${GST_PLUGIN}_GST_PLUGIN_DIR?=	ext/${GST_PLUGIN}
-gst_${GST_PLUGIN}_POSTBUILD_DIR?=
-gst_${GST_PLUGIN}_USE_XORG?=
-gst_${GST_PLUGIN}_USE_GNOME?=
-gst_${GST_PLUGIN}_CONFIGURE_ENV?=
-gst_${GST_PLUGIN}_USE_GL?=
-gst_${GST_PLUGIN}_GLIB_SCHEMAS?=
-gst_${GST_PLUGIN}_CONFIGURE_ARGS?=
-gst_${GST_PLUGIN}_USE_SDL?=
-gst_${GST_PLUGIN}_USE_GSTREAMER?=
-
-BUILD_DEPENDS+=	${gst_${GST_PLUGIN}_BUILD_DEPENDS}
-LIB_DEPENDS+=	${gst_${GST_PLUGIN}_LIB_DEPENDS}
-RUN_DEPENDS+=	${gst_${GST_PLUGIN}_RUN_DEPENDS}
-USES+=		${gst_${GST_PLUGIN}_USES}
-PLIST_FILES=	${gst_${GST_PLUGIN}_PLIST_FILES}
-EXTRA_LIBS+=	${gst_${GST_PLUGIN}_EXTRA_LIBS}
-.if ${gst_${GST_PLUGIN}_USE_XORG}!=""
-USE_XORG+=	${gst_${GST_PLUGIN}_USE_XORG}
-.endif
-.if ${gst_${GST_PLUGIN}_USE_GNOME}!=""
-USE_GNOME+=	${gst_${GST_PLUGIN}_USE_GNOME}
-.endif
-.if ${gst_${GST_PLUGIN}_USE_QT}!=""
-USE_QT+=	${gst_${GST_PLUGIN}_USE_QT}
-.endif
-CONFIGURE_ENV+=	${gst_${GST_PLUGIN}_CONFIGURE_ENV}
-.if ${gst_${GST_PLUGIN}_USE_GL}!=""
-USE_GL+=	${gst_${GST_PLUGIN}_USE_GL}
-.endif
-
-.if ${gst_${GST_PLUGIN}_GLIB_SCHEMAS}!=""
-GLIB_SCHEMAS=	${gst_${GST_PLUGIN}_GLIB_SCHEMAS}
-.endif
-
-CONFIGURE_ARGS+=	${gst_${GST_PLUGIN}_CONFIGURE_ARGS}
-
-.if ${gst_${GST_PLUGIN}_USE_SDL}!=""
-USE_SDL=		${gst_${GST_PLUGIN}_USE_SDL}
-.endif
-
-USE_GSTREAMER+=	${gst_${GST_PLUGIN}_USE_GSTREAMER} ${DIST:base=}
-GST_PREBUILD_DIR=	${gst_${GST_PLUGIN}_GST_PREBUILD_DIR}
-GST_PLUGIN_DIR=		${gst_${GST_PLUGIN}_GST_PLUGIN_DIR}
-GST_POSTBUILD_DIR=	${gst_${GST_PLUGIN}_GST_POSTBUILD_DIR}
-
-.if !target(do-build)
-do-build:
-.for dir in ${GST_PREBUILD_DIR} ${GST_PLUGIN_DIR} ${GST_POSTBUILD_DIR}
-	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-.endfor
-.endif
-
-.if !target(do-install)
-do-install:
-.for dir in ${GST_PLUGIN_DIR}
-	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-.endfor
-.endif
-.endif
