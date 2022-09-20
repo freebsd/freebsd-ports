@@ -198,8 +198,6 @@ include/thrift/lib/cpp2/Adapt.h
 include/thrift/lib/cpp2/BadFieldAccess.h
 include/thrift/lib/cpp2/BoxedValuePtr.h
 include/thrift/lib/cpp2/CloneableIOBuf.h
-include/thrift/lib/cpp2/FieldMask.h
-include/thrift/lib/cpp2/FieldPath.h
 include/thrift/lib/cpp2/FieldRef.h
 include/thrift/lib/cpp2/FieldRefHash.h
 include/thrift/lib/cpp2/FieldRefTraits.h
@@ -289,6 +287,7 @@ include/thrift/lib/cpp2/frozen/VectorAssociative.h
 include/thrift/lib/cpp2/frozen/schema/MemorySchema.h
 include/thrift/lib/cpp2/gen/client_cpp.h
 include/thrift/lib/cpp2/gen/client_h.h
+include/thrift/lib/cpp2/gen/intern_list.h
 include/thrift/lib/cpp2/gen/module_constants_cpp.h
 include/thrift/lib/cpp2/gen/module_constants_h.h
 include/thrift/lib/cpp2/gen/module_data_cpp.h
@@ -343,6 +342,8 @@ include/thrift/lib/cpp2/protocol/CompactV1Protocol.h
 include/thrift/lib/cpp2/protocol/Cpp2Ops-inl.h
 include/thrift/lib/cpp2/protocol/Cpp2Ops.h
 include/thrift/lib/cpp2/protocol/DebugProtocol.h
+include/thrift/lib/cpp2/protocol/FieldMask.h
+include/thrift/lib/cpp2/protocol/FieldPath.h
 include/thrift/lib/cpp2/protocol/GetStandardProtocol.h
 include/thrift/lib/cpp2/protocol/JSONProtocol-inl.h
 include/thrift/lib/cpp2/protocol/JSONProtocol.h
@@ -421,6 +422,7 @@ include/thrift/lib/cpp2/server/MemoryTracker.h
 include/thrift/lib/cpp2/server/MonitoringMethodNames.h
 include/thrift/lib/cpp2/server/MonitoringServerInterface.h
 include/thrift/lib/cpp2/server/ParallelConcurrencyController.h
+include/thrift/lib/cpp2/server/PerturbSource.h
 include/thrift/lib/cpp2/server/PolledServiceHealth.h
 include/thrift/lib/cpp2/server/PreprocessParams.h
 include/thrift/lib/cpp2/server/ReactiveToggle.h
