@@ -33,6 +33,7 @@
     SUBDIR += luna
     SUBDIR += marble
     SUBDIR += match
+    SUBDIR += mepo
     SUBDIR += merkaartor
     SUBDIR += mkgmap
     SUBDIR += mkgmap-splitter
