@@ -1,6 +1,6 @@
---- cgx_2.19/src/Makefile.orig	2021-03-11 17:35:46 UTC
-+++ cgx_2.19/src/Makefile
-@@ -4,11 +4,11 @@ CFLAGS = -O2 -Wall -Wno-narrowing \
+--- cgx_2.20/src/Makefile.orig	2022-07-29 09:41:00 UTC
++++ cgx_2.20/src/Makefile
+@@ -5,11 +5,11 @@ CFLAGS = -O2 -Wall -Wno-narrowing -DSEMINIT \
    -I/usr/include/GL \
    -I../../libSNL/src \
    -I../../glut-3.5/src \
@@ -15,7 +15,7 @@
    -lm -lpthread -lrt
  
  
-@@ -66,7 +66,7 @@ OULIB = $(ULIB:.c=.o)
+@@ -67,7 +67,7 @@ OULIB = $(ULIB:.c=.o)
  OUTIL = $(SUTIL:.c=.o)
  
  cgx: $(OLIB) $(OUTIL) $(OULIB)
