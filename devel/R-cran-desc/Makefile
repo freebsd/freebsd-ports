@@ -1,11 +1,11 @@
 PORTNAME=	desc
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Manipulate DESCRIPTION Files
-WWW=		https://github.com/r-lib/desc #readme
+WWW=		https://github.com/r-lib/desc#readme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
