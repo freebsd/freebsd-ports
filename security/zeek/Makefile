@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.2
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -143,6 +143,10 @@ post-install-ZEEKCTL-on:
 post-install:
 	${MV} ${STAGEDIR}${DATADIR}/site/local.zeek \
 	    ${STAGEDIR}${DATADIR}/site/local.zeek.sample
+	@${RM} -rf ${STAGEDIR}${PREFIX}/var
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zeek-cut
+
+post-install-SPICY-on:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/include/hilti/rt/3rdparty/SafeInt/Archive
 	@${RM} -rf ${STAGEDIR}${PREFIX}/include/hilti/rt/3rdparty/SafeInt/Test
 	@${RMDIR} ${STAGEDIR}${PREFIX}/include/zeek/builtin-plugins/spicy-plugin/bin
@@ -153,8 +157,6 @@ post-install:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/include/zeek/builtin-plugins/spicy-plugin/tests
 	@${RMDIR} ${STAGEDIR}${PREFIX}/include/zeek/script_opt/CPP/maint
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/zeek-spicy/modules
-	@${RM} -rf ${STAGEDIR}${PREFIX}/var
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zeek-cut
 
 pre-install-ZEEKCTL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
