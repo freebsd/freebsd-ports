@@ -1,5 +1,5 @@
 PORTNAME=	flameshot
-PORTVERSION=	11.0.0
+PORTVERSION=	12.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -12,14 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++11-lang gl qmake qt:5
 
-CMAKE_INSTALL_PREFIX=	${STAGEDIR}/${PREFIX}
-
-GH_ACCOUNT=	flameshot-org
-
 USE_GITHUB=	yes
+GH_ACCOUNT=	flameshot-org
 USE_GL=		gl
-USE_QT=		core dbus gui linguist network svg widgets \
-		buildtools:build
+USE_QT=		core dbus gui linguist network svg widgets buildtools:build
+
+CMAKE_INSTALL_PREFIX=	${STAGEDIR}/${PREFIX}
 
 post-patch:
 	        @${REINPLACE_CMD} -e 's,$${CMAKE_INSTALL_FULL_BINDIR},${LOCALBASE}/bin,1' \
