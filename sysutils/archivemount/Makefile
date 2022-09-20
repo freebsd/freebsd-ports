@@ -1,6 +1,5 @@
 PORTNAME=	archivemount
-DISTVERSION=	0.8.12
-PORTREVISION=	2
+DISTVERSION=	0.9.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.cybernoia.de/software/archivemount/
 
