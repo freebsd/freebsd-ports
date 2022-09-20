@@ -1,14 +1,14 @@
 # There are three Qt related USES files with different access to Qt.
 #   - qmake: The port requires Qt's qmake to build -- creates the configure target
 #            - auto includes qt.mk
-#   - qt-dist: The port is a port for a part of Qt5
+#   - qt-dist: The port is a port for a part of Qt
 #            - auto includes qt.mk and qmake.mk
 #   - qt.mk  - Dependency handling. USE_QT=foo bar
 #
 # Usage:
 #   USES=qt:<version>[,no_env]
 #
-#   Versions:		5
+#   Versions:		5, 6
 #
 # Port variables:
 # USE_QT		- List of Qt modules to depend on, with optional ':build'
