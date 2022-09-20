@@ -1,5 +1,5 @@
 PORTNAME=	libfixbuf
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 

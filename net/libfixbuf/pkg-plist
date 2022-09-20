@@ -6,7 +6,7 @@ include/fixbuf/version.h
 lib/libfixbuf.a
 lib/libfixbuf.so
 lib/libfixbuf.so.9
-lib/libfixbuf.so.9.0.1
+lib/libfixbuf.so.9.0.3
 libdata/pkgconfig/libfixbuf.pc
 man/man1/ipfixDump.1.gz
 %%DATADIR%%/cert_ipfix.xml
