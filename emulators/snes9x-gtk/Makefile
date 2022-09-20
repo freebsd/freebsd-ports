@@ -1,91 +1,58 @@
 PORTNAME=	snes9x
-PORTVERSION=	1.54.1
-PORTREVISION=	8
+DISTVERSION=	1.61
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-gtk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System (SNES) Emulator
 WWW=		https://github.com/snes9xgit/snes9x
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	Snes9x
 LICENSE_NAME=	Snes9x License
-LICENSE_FILE=	${WRKSRC}/../docs/snes9x-license.txt
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DEPENDS=	libminizip.so:archivers/minizip \
+		libepoxy.so:graphics/libepoxy \
+		libpng.so:graphics/png
 
+USES=		compiler:c++17-lang desktop-file-utils gettext \
+		gnome localbase:ldflags meson pkgconfig sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
-
-USES=		autoreconf:2.69 compiler:c11 desktop-file-utils gettext gmake \
-		gnome localbase perl5 pkgconfig sdl tar:bzip2 xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libxml2
+GH_TUPLE=	KhronosGroup:glslang:bcf6a24:glslang/../shaders/glslang \
+		KhronosGroup:SPIRV-Cross:1458bae:spirv/../shaders/SPIRV-Cross
+USE_GNOME=	gdkpixbuf2 gtkmm30
 USE_SDL=	sdl2
-USE_XORG=	x11 xext
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-Wl,--as-needed
+USE_XORG=	x11 xrandr xext
 
 PATCH_WRKSRC=	${WRKSRC}/..
 WRKSRC_SUBDIR=	gtk
 
-OPTIONS_DEFINE=		DEBUG JMA NETPLAY
-OPTIONS_GROUP=		SOUND VIDEO
-OPTIONS_GROUP_SOUND=	ALSA PORTAUDIO PULSEAUDIO
-OPTIONS_GROUP_VIDEO=	OPENGL XRANDR XVIDEO
-OPTIONS_DEFAULT=	JMA NETPLAY XVIDEO XRANDR
+OPTIONS_MULTI=		SOUND
+OPTIONS_MULTI_SOUND=	ALSA OSS PORTAUDIO PULSEAUDIO
+OPTIONS_DEFINE=		DEBUGGER NLS WAYLAND XVIDEO
+OPTIONS_DEFAULT=	OSS WAYLAND XVIDEO
+OPTIONS_SUB=		yes
 
-DEBUG_CONFIGURE_WITH=		debug
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_MESON_TRUE=	alsa
 
-JMA_DESC=			JMA archive decompression support
-JMA_CONFIGURE_WITH=		jma-decomp
+DEBUGGER_DESC=		Snes9X debugger
+DEBUGGER_MESON_TRUE=	debugger
 
-NETPLAY_DESC=			Network support
-NETPLAY_CONFIGURE_WITH=		netplay
+OSS_MESON_TRUE=		oss
 
-OPENGL_CONFIGURE_WITH=		opengl
-OPENGL_USES=			gl
-OPENGL_USE=			GL=gl,glu
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+PORTAUDIO_MESON_TRUE=	portaudio
 
-XRANDR_CONFIGURE_WITH=		xrandr
-XRANDR_USE=			XORG=xrandr
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_MESON_TRUE=	pulseaudio
 
-XVIDEO_CONFIGURE_WITH=		xv
-XVIDEO_USE=			XORG=xv
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_MESON_TRUE=	wayland
 
-ALSA_CONFIGURE_WITH=		alsa
-ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
-ALSA_USES=			compiler:c++11-lang
+XVIDEO_USE=		XORG=xv
 
-PORTAUDIO_CONFIGURE_WITH=	portaudio
-PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
-
-PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
-
-PLIST_FILES=	bin/snes9x-gtk \
-		share/pixmaps/snes9x.svg \
-		share/applications/snes9x.desktop
-
-.include <bsd.port.pre.mk>
-
-.if exists(/usr/lib/libusbhid.a)
-CONFIGURE_ARGS+=	--with-joystick
-.else
-CONFIGURE_ARGS+=	--without-joystick
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|sdl|sdl2|g' -e 's|-ldl||g' \
-		${WRKSRC}/configure.ac
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
-	${INSTALL_DATA} ${WRKSRC}/data/snes9x.svg \
-		${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/snes9x.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
