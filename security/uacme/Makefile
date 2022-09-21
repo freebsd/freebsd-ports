@@ -1,10 +1,9 @@
 PORTNAME=	uacme
 DISTVERSIONPREFIX=	upstream/
-DISTVERSION=	1.7.1
-PORTREVISION=	2
+DISTVERSION=	1.7.3
 CATEGORIES=	security www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Lightweight C ACMEv2 client which uses external authenticators
 WWW=		https://github.com/ndilieto/uacme
 
