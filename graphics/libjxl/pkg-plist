@@ -20,6 +20,7 @@ include/jxl/resizable_parallel_runner_cxx.h
 include/jxl/thread_parallel_runner.h
 include/jxl/thread_parallel_runner_cxx.h
 include/jxl/types.h
+include/jxl/version.h
 %%PIXBUF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jxl.so
 lib/libjxl.a
 lib/libjxl.so
