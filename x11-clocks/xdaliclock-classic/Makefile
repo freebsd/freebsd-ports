@@ -1,7 +1,7 @@
 PORTNAME=	xdaliclock
 PORTVERSION=	2.44
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://www.jwz.org/xdaliclock/
+MASTER_SITES=	https://www.jwz.org/xdaliclock/
 PKGNAMESUFFIX=	-classic
 
 MAINTAINER=	glebius@FreeBSD.org
