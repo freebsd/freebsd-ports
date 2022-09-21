@@ -38,6 +38,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--size-limit=16384x16384
 MAKE_ARGS+=	verbose=yes
 ALL_TARGET=	# empty
+# libvpx passes compiler flags to a linker command and links libwebm that is
+# written in C++. Use a C++ compiler command as a linker command.
+LD="${CXX}"
 
 post-patch:
 	@${REINPLACE_CMD} -E '/gcctarget|link_with_cc/s/gcc[[:>:]]/$${CC}/' \
