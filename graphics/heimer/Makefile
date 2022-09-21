@@ -1,6 +1,5 @@
 PORTNAME=	heimer
-DISTVERSION=	3.6.0
-PORTREVISION=	1
+DISTVERSION=	3.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/juzzlin/Heimer/releases/download/${DISTVERSION}/
 
