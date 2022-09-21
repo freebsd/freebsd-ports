@@ -1,10 +1,7 @@
 PORTNAME=	phonopy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16.1
+DISTVERSION=	2.16.2
 CATEGORIES=	science python
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b2e7b1d6f7280b2d4d99fb74737b2bffbc86fd08.patch:-p1 # backport fix for https://github.com/phonopy/phonopy/issues/234
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for phonon calculations at harmonic and quasi-harmonic levels

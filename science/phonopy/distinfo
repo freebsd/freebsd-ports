@@ -1,5 +1,3 @@
-TIMESTAMP = 1663558187
-SHA256 (phonopy-phonopy-v2.16.1_GH0.tar.gz) = 2968096a29b4ac1698484536b0d066ca9a373f432dcf869dce599716ac14713f
-SIZE (phonopy-phonopy-v2.16.1_GH0.tar.gz) = 6565634
-SHA256 (b2e7b1d6f7280b2d4d99fb74737b2bffbc86fd08.patch) = 76224a55bf4c7dcad01c741e4c71aaa8307bded218c3aeeabe6cb9344d375bf2
-SIZE (b2e7b1d6f7280b2d4d99fb74737b2bffbc86fd08.patch) = 989
+TIMESTAMP = 1663742760
+SHA256 (phonopy-phonopy-v2.16.2_GH0.tar.gz) = 247e56731f3bf51868d0f655fc40921bc73292f38e83fb79f9d20a8325a8d317
+SIZE (phonopy-phonopy-v2.16.2_GH0.tar.gz) = 6566737
