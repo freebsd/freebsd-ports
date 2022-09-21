@@ -1,11 +1,20 @@
---- CMakeLists.txt.orig	2022-05-11 09:27:30 UTC
+--- CMakeLists.txt.orig	2022-09-19 07:53:52 UTC
 +++ CMakeLists.txt
-@@ -136,7 +136,7 @@ if(${heyoka_VERSION} VERSION_LESS ${_HEYOKA_PY_MIN_HEY
+@@ -144,7 +144,7 @@ else()
+     # and Python3 is *not* found, we try again, this time with the full Development
+     # component (rather than only Development.Module). This seems to work around the
+     # issue, for now at least.
+-    find_package(Python3 QUIET COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
++    find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} QUIET COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
+ 
+     if(NOT Python3_FOUND)
+         list(POP_BACK _HEYOKA_PY_PYTHON3_COMPONENTS)
+@@ -152,7 +152,7 @@ else()
+     endif()
  endif()
  
- # Python.
--find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
-+find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} REQUIRED EXACT COMPONENTS Interpreter Development)
+-find_package(Python3 QUIET REQUIRED COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
++find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} QUIET REQUIRED COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
+ 
  message(STATUS "Python3 interpreter: ${Python3_EXECUTABLE}")
  message(STATUS "Python3 installation directory: ${Python3_SITEARCH}")
- if(${Python3_VERSION_MINOR} LESS 5)
