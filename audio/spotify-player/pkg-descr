@@ -1,0 +1,14 @@
+spotify-player is a fast, easy to use, and configurable terminal music player.
+
+Features:
+- Minimalist UI with an intuitive paging and popup system.
+- Highly configurable, allow to easily customize application's
+  shortcuts or theme/color scheme.
+- Feature parity with the official Spotify application.
+- Support remote control with Spotify Connect.
+- Support streaming songs directly from the terminal.
+- Support lyric for most songs.
+- Support cross-platform media control.
+- Support image rendering.
+
+A Spotify Premium account is required to use spotify-player.
