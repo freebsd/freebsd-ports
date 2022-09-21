@@ -1,5 +1,5 @@
 PORTNAME=	serd
-DISTVERSION=	0.30.14
+DISTVERSION=	0.30.16
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
