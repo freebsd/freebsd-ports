@@ -20,4 +20,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
+post-install:
+	@${CHMOD} 0600 ${STAGEDIR}${PREFIX}/etc/mactelnetd.users
+	@-${CHOWN} root ${STAGEDIR}${PREFIX}/etc/mactelnetd.users
+
 .include <bsd.port.mk>
