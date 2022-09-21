@@ -1,21 +1,23 @@
 PORTNAME=	xdaliclock
 DISTVERSION=	2.47
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	https://www.jwz.org/${PORTNAME}/
 
 MAINTAINER=	eduardo@FreeBSD.org
-COMMENT=	Rather neat animated clock
+COMMENT=	Rather neat animated clock (GL & GTK version)
 WWW=		https://www.jwz.org/xdaliclock/
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		gl gmake gnome pkgconfig
+USES=		desktop-file-utils gl gmake gnome pkgconfig xorg
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-
 GLIB_SCHEMAS=	org.jwz.xdaliclock.gschema.xml
+USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
+CONFLICTS=	xdaliclock-classic
 WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
 PLIST_FILES=	bin/xdaliclock \
