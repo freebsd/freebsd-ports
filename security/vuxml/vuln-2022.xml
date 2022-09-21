@@ -1,3 +1,61 @@
+  <vuln vid="95e6e6ca-3986-11ed-8e0c-6c3be5272acd">
+    <topic>Grafana -- Privilege escalation</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>2.1.0</ge><lt>8.5.13</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.9</lt></range>
+	<range><ge>9.1.0</ge><lt>9.1.6</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.13</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.0.9</lt></range>
+	<range><ge>9.1.0</ge><lt>9.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/09/20/grafana-security-releases-new-versions-with-moderate-severity-security-fixes-for-cve-2022-35957-and-cve-2022-36062/">
+	  <p>On August 9 an internal security review identified a vulnerability
+	  in the Grafana which allows an escalation from Admin privileges
+	  to Server Admin when Auth proxy authentication is used.</p>
+	  <p><a href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/auth-proxy/#configure-auth-proxy-authentication">
+	  Auth proxy</a> allows to authenticate a user by only providing the username
+	  (or email) in a <code>X-WEBAUTH-USER</code> HTTP header: the trust assumption
+	  is that a front proxy will take care of authentication and that Grafana server
+	  is publicly reachable only with this front proxy.</p>
+	  <p><a href="https://grafana.com/docs/grafana/latest/developers/http_api/data_source/#data-source-proxy-calls">
+	  Datasource proxy</a> breaks this assumption:</p>
+	  <ul>
+	    <li>it is possible to configure a fake datasource pointing to a localhost
+	    Grafana install with a <code>X-WEBAUTH-USER</code> HTTP header containing
+	    admin username.</li>
+	    <li>This fake datasource can be called publicly via this proxying feature.</li>
+	  </ul>
+	  <p>The CVSS score for this vulnerability is 6.6 Moderate
+	  (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35957</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-ff5c-938w-8c9q</url>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="656b0152-faa9-4755-b08d-aee4a774bd04">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
