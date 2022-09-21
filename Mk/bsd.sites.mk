@@ -449,6 +449,7 @@ git-clone-${_group}: ${_GITHUB_CLONE_DIR}
 .    endif
 convert-to-gh-tuple:
 	@${ECHO_MSG} ${GH_ACCOUNT}:${GH_PROJECT}:${GH_TAGNAME} ${_GH_TUPLE_OUT:S/\/$//}
+WWW?=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
 .  endif # defined(USE_GITHUB)
 .endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 
@@ -579,6 +580,7 @@ git-clone-${_group}: ${_GITLAB_CLONE_DIR}
 	@${ECHO_MSG} "Cloned the ${_group} GitLab repository into ${_GITLAB_CLONE_DIR}/${GL_PROJECT_${_group}}" | ${FMT_80}
 .      endfor
 .    endif
+WWW?=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/
 .  endif # defined(USE_GITLAB)
 .endif # !defined(IGNORE_MASTER_SITE_GITLAB)
 

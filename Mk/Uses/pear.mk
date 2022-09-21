@@ -40,6 +40,8 @@ MASTER_SITES?=	http://pear.php.net/get/
 EXTRACT_SUFX?=	.tgz
 DIST_SUBDIR?=	PEAR
 
+WWW?=		https://pear.php.net/package/${PORTNAME}/
+
 .      if empty(php_ARGS:Mphpize)
 NO_BUILD=	yes
 .      endif
