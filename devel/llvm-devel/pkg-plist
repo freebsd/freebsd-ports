@@ -2059,8 +2059,6 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Utility/RangeMap.h
 %%LLDB%%llvm-devel/include/lldb/Utility/RegisterValue.h
 %%LLDB%%llvm-devel/include/lldb/Utility/RegularExpression.h
-%%LLDB%%llvm-devel/include/lldb/Utility/Reproducer.h
-%%LLDB%%llvm-devel/include/lldb/Utility/ReproducerProvider.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Scalar.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SelectHelper.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SharedCluster.h
@@ -5429,6 +5427,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAffineUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAnalysis.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithmeticDialect.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithmeticTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithmeticToLLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithmeticToSPIRV.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithmeticTransforms.a
@@ -5614,6 +5613,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTestAnalysis.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTestDialect.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTestDynDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTestFuncToLLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTestIR.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTestPDLL.a
