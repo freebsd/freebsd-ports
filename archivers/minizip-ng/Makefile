@@ -1,5 +1,5 @@
 PORTNAME=	minizip-ng
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.6
 CATEGORIES=	archivers
 
 MAINTAINER=	lbartoletti@FreeBSD.org
