@@ -52,7 +52,7 @@ licenselogic: ${dp_LICENSE_COMB:-single}
 EOT
 
 # Then, the optional bits
-[ -z "${dp_WWW}" ] || echo "www: \"${dp_WWW}\""
+[ -z "${dp_WWW}" ] || echo "www: \"${dp_WWW%% *}\""
 [ -z "${dp_LICENSE}" ] || echo "licenses: [ ${dp_LICENSE} ]"
 [ -z "${dp_USERS}" ] || echo "users: [ ${dp_USERS} ]"
 [ -z "${dp_GROUPS}" ] || echo "groups: [ ${dp_GROUPS} ]"
@@ -89,7 +89,9 @@ fi
 cp ${dp_DESCR} ${dp_METADIR}/+DESC
 if [ -n "${dp_WWW}" ] && ! grep -q '^WWW: ' ${dp_DESCR}; then
 	echo >> ${dp_METADIR}/+DESC
-	echo "WWW: ${dp_WWW}" >> ${dp_METADIR}/+DESC
+	for www in ${dp_WWW}; do
+		echo "WWW: ${www}" >> ${dp_METADIR}/+DESC
+	done
 fi
 
 # Concatenate all the scripts
