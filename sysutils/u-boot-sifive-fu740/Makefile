@@ -1,11 +1,13 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
+PATCHFILES+=	1665960/raw
+
 MODEL=		sifive-fu740
 BOARD_CONFIG=	sifive_unmatched_defconfig
 FAMILY=		sifive
 UBOOT_ARCH=	riscv64
 
-U_BOOT_SLAVE_PORTREVISION_2022.04=	2
+U_BOOT_SLAVE_PORTREVISION_2022.04=	3
 
 # The FIT image will embed an OpenSBI firmware binary
 OPENSBI_FIRM=	${LOCALBASE}/share/opensbi/lp64/generic/firmware/fw_dynamic.bin
