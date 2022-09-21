@@ -22,14 +22,3 @@ Remove libs that are not here on FreeBSD.
  	;;
  esac
  
-@@ -142,8 +148,8 @@ case "$osvers" in
- *)
-        libpth="/usr/lib /usr/local/lib"
-        glibpth="/usr/lib /usr/local/lib"
--       ldflags="-Wl,-E "
--        lddlflags="-shared "
-+       ldflags="-Wl,-E,--allow-multiple-definition"
-+        lddlflags="-shared -Wl,--allow-multiple-definition"
-         cccdlflags='-DPIC -fPIC'
-        ;;
- esac
