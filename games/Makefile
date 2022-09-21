@@ -1018,6 +1018,7 @@
     SUBDIR += vanilla-conquer
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
+    SUBDIR += vcmi
     SUBDIR += vectoroids
     SUBDIR += veloren
     SUBDIR += violetland
