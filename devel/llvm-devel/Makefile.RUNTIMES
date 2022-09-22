@@ -71,8 +71,8 @@ LIBCLANG_RT_LIBS_i386= \
 
 RT_ARCHES+=powerpc
 LIBCLANG_RT_LIBS_powerpc= \
-	builtins-powerpc.a \
-	profile-powerpc.a
+	builtins.a \
+	profile.a
 
 RT_ARCHES+=powerpc64
 LIBCLANG_RT_LIBS_powerpc64= \
