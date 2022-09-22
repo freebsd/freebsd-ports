@@ -135,7 +135,13 @@ jail_root="${_home}/jail"
 jail_topology="/topology_dir/`basename ${_topology}`"
 jail_config="/config_dir/`basename ${_config}`"
 jail_socket="/socket/`basename ${_socket}`"
-jail_cmd="jail -c name=${name}_jail path=${jail_root} exec.jail_user=cardano exec.system_jail_user ip4=inherit ip6=inherit host=inherit"
+jail_ip6_arg=""
+sysctl -q kern.features.inet6 2> /dev/null
+if [ "$?" = "0" ]
+then
+    jail_ip6_arg="ip6=inherit"
+fi
+jail_cmd="jail -c name=${name}_jail path=${jail_root} exec.jail_user=cardano exec.system_jail_user ip4=inherit ${jail_ip6_arg} host=inherit"
 
 pidfile="/var/run/${name}.pid"
 flags="run +RTS ${_rts_flags} -RTS \
