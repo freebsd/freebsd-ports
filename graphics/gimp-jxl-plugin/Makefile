@@ -1,6 +1,6 @@
 PORTNAME=	gimp-jxl-plugin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7rc
+DISTVERSION=	0.7.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
