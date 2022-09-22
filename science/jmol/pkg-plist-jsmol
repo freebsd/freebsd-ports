@@ -42,6 +42,7 @@
 %%WWWDIR%%/data/aquation20.jdx
 %%WWWDIR%%/data/astex.cmds.txt
 %%WWWDIR%%/data/bbPlane.pse
+%%WWWDIR%%/data/bcc.cif
 %%WWWDIR%%/data/benzene.c3xml
 %%WWWDIR%%/data/benzenevib.spardir/Document
 %%WWWDIR%%/data/benzenevib.spardir/M0001/Calculations
@@ -79,6 +80,7 @@
 %%WWWDIR%%/data/chairflip.png
 %%WWWDIR%%/data/chalcanthite.png
 %%WWWDIR%%/data/chalcanthite_model.png
+%%WWWDIR%%/data/chromium.cif
 %%WWWDIR%%/data/cl2o.gamess
 %%WWWDIR%%/data/co2.smol
 %%WWWDIR%%/data/croconic_new(1).magres
@@ -99,6 +101,7 @@
 %%WWWDIR%%/data/filled.png
 %%WWWDIR%%/data/flexfit.spt
 %%WWWDIR%%/data/gold.cif
+%%WWWDIR%%/data/graphite.cif
 %%WWWDIR%%/data/icsd_200866.cif
 %%WWWDIR%%/data/icsd_250072.cif
 %%WWWDIR%%/data/icsd_26520.cif
