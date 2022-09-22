@@ -1,5 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	1.35.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	arrowd@FreeBSD.org
