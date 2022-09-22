@@ -1,15 +1,12 @@
 PORTNAME=	putty
-PORTVERSION=	0.78~pre20220919
-DISTVERSIONSUFFIX=	.fda41e1
+PORTVERSION=	0.78~pre20220922
+DISTVERSIONSUFFIX=	.9fcfd67
 PORTREVISION=	0
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/ \
 		LOCAL/mandree/
-EXTRA_PATCHES+=	${FILESDIR}/0001-setpgrp-cmake-check-use-if-not-if-defined.patch
-EXTRA_PATCHES+=	${FILESDIR}/0002-Use-GTK_LDFLAGS-when-testing-for-Pango.patch
-EXTRA_PATCHES+= ${FILESDIR}/0001-Stop-trying-to-include-X11-headers-in-non-GTK-builds.patch
 PATCH_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
