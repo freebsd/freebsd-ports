@@ -33,8 +33,8 @@
      endef
  endif
  
-+FINAL_CFLAGS+=-I${PREFIX}/include/lua51
-+FINAL_LIBS+= -L${PREFIX}/lib -llua-5.1
++FINAL_CFLAGS+=-I${PREFIX}/include/luajit-2.0
++FINAL_LIBS+= -L${PREFIX}/lib -lluajit-5.1
 +
  REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
  REDIS_LD=$(QUIET_LINK)$(CC) $(FINAL_LDFLAGS)
