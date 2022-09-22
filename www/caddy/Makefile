@@ -1,6 +1,7 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -19,6 +20,8 @@ SUB_FILES=	Caddyfile.sample caddy pkg-message
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample ${ETCDIR_REL}/Caddyfile.sample"
+
+GO_BUILDFLAGS+=	-ldflags='-X github.com/caddyserver/caddy/v2.VersionString=${DISTVERSIONFULL}'
 
 GO_TARGET=	./cmd/caddy
 # If go.mod is sufficient:
