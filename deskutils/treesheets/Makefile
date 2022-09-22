@@ -16,6 +16,8 @@ GH_ACCOUNT=	aardappel
 GH_TAGNAME=	3074091860
 USE_WX=		3.1
 
+PORTSCOUT=	ignore:1 # upstream uses CI run ids as releases
+
 PORTDATA=	images scripts
 PORTDOCS=	docs readme.html
 PORTEXAMPLES=	examples
