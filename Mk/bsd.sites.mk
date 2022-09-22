@@ -751,10 +751,7 @@ MASTER_SITE_MOZILLA_ADDONS+= \
 MASTER_SITE_MYSQL+= \
 	ftp://ftp.fi.muni.cz/pub/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/%SUBDIR%/ \
-	http://mirrors.ntua.gr/MySQL/Downloads/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/databases/mysql/Downloads/%SUBDIR%/ \
-	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
-	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
 	https://dev.mysql.com/get/Downloads/%SUBDIR%/
 .endif
 
