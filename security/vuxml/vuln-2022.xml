@@ -1,3 +1,35 @@
+  <vuln vid="f1f637d1-39eb-11ed-ab44-080027f5fec9">
+    <topic>redis -- Potential remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.0.0</ge><lt>7.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/releases/tag/7.0.5">
+	  <p>
+	    Executing a XAUTOCLAIM command on a stream key in a
+	    specific state, with a specially crafted COUNT argument,
+	    may cause an integer overflow, a subsequent heap overflow,
+	    and potentially lead to remote code execution. The problem
+	    affects Redis versions 7.0.0 or newer.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35951</cvename>
+      <url>https://github.com/redis/redis/releases/tag/7.0.5</url>
+    </references>
+    <dates>
+      <discovery>2022-09-21</discovery>
+      <entry>2022-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95e6e6ca-3986-11ed-8e0c-6c3be5272acd">
     <topic>Grafana -- Privilege escalation</topic>
     <affects>
