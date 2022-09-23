@@ -1272,6 +1272,7 @@
     SUBDIR += py-CommonMark
     SUBDIR += py-Morfessor
     SUBDIR += py-QDarkStyle
+    SUBDIR += py-RTFDE
     SUBDIR += py-Tempita
     SUBDIR += py-acora
     SUBDIR += py-aeidon
