@@ -1,5 +1,5 @@
 PORTNAME=	i3
-DISTVERSION=	4.20.1
+DISTVERSION=	4.21
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://i3wm.org/downloads/ \
 		http://i3wm.org/downloads/
