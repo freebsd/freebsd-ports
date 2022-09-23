@@ -28,7 +28,6 @@ lib/emby-server/system/Emby.Server.MediaEncoding.dll
 lib/emby-server/system/Emby.Server.Sync.dll
 lib/emby-server/system/Emby.Sqlite.dll
 lib/emby-server/system/Emby.Web.GenericEdit.dll
-lib/emby-server/system/Emby.Web.GenericUi.dll
 lib/emby-server/system/Emby.Web.dll
 lib/emby-server/system/EmbyServer
 lib/emby-server/system/EmbyServer.deps.json
@@ -407,7 +406,6 @@ lib/emby-server/system/dashboard-ui/home/favorites.js
 lib/emby-server/system/dashboard-ui/home/home.html
 lib/emby-server/system/dashboard-ui/home/home.js
 lib/emby-server/system/dashboard-ui/home/hometab.js
-lib/emby-server/system/dashboard-ui/home/nowplaying.js
 lib/emby-server/system/dashboard-ui/home_horiz/focushandler.js
 lib/emby-server/system/dashboard-ui/home_horiz/home.css
 lib/emby-server/system/dashboard-ui/home_horiz/home.html
@@ -809,13 +807,10 @@ lib/emby-server/system/dashboard-ui/modules/nowplayingbar/nowplayingbar.js
 lib/emby-server/system/dashboard-ui/modules/pagejs/page.js
 lib/emby-server/system/dashboard-ui/modules/photoplayer/plugin.js
 lib/emby-server/system/dashboard-ui/modules/photoscreensaver/plugin.js
-lib/emby-server/system/dashboard-ui/modules/playback/iconosd.css
 lib/emby-server/system/dashboard-ui/modules/playback/mediasession.js
-lib/emby-server/system/dashboard-ui/modules/playback/playbackorientation.js
 lib/emby-server/system/dashboard-ui/modules/playback/playerselection.js
 lib/emby-server/system/dashboard-ui/modules/playback/playersettingsmenu.js
 lib/emby-server/system/dashboard-ui/modules/playback/remotecontrolautoplay.js
-lib/emby-server/system/dashboard-ui/modules/playback/volumeosd.js
 lib/emby-server/system/dashboard-ui/modules/playerstats/playerstats.css
 lib/emby-server/system/dashboard-ui/modules/playerstats/playerstats.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/array.js
@@ -914,8 +909,6 @@ lib/emby-server/system/dashboard-ui/modules/themes/logodark.png
 lib/emby-server/system/dashboard-ui/modules/themes/logowhite.png
 lib/emby-server/system/dashboard-ui/modules/toast/toast.css
 lib/emby-server/system/dashboard-ui/modules/toast/toast.js
-lib/emby-server/system/dashboard-ui/modules/upnextdialog/upnextdialog.css
-lib/emby-server/system/dashboard-ui/modules/upnextdialog/upnextdialog.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/baseview.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/viewmanager.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.js
