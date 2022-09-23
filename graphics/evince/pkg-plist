@@ -53,8 +53,10 @@ include/evince/%%VERSION%%/libview/ev-view-type-builtins.h
 include/evince/%%VERSION%%/libview/ev-view.h
 %%COMICS%%lib/evince/4/backends/comicsdocument.evince-backend
 %%DJVU%%lib/evince/4/backends/djvudocument.evince-backend
+%%DVI%%lib/evince/4/backends/dvidocument.evince-backend
 %%COMICS%%lib/evince/4/backends/libcomicsdocument.so
 %%DJVU%%lib/evince/4/backends/libdjvudocument.so
+%%DVI%%lib/evince/4/backends/libdvidocument.so
 lib/evince/4/backends/libpdfdocument.so
 lib/evince/4/backends/libpsdocument.so
 lib/evince/4/backends/libtiffdocument.so
@@ -2855,6 +2857,7 @@ share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
 %%COMICS%%share/metainfo/evince-comicsdocument.metainfo.xml
 %%DJVU%%share/metainfo/evince-djvudocument.metainfo.xml
+%%DVI%%share/metainfo/evince-dvidocument.metainfo.xml
 share/metainfo/evince-pdfdocument.metainfo.xml
 share/metainfo/evince-psdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
