@@ -1,0 +1,9 @@
+ebcdic is a Python package adding additional EBCDIC codecs for data
+exchange with legacy system. It works with Python 2.7 and Python
+3.4+.
+
+EBCDIC is short for Extended Binary Coded Decimal Interchange Code
+and is a family of character encodings that is mainly used on
+mainframe computers. There is no real point in using it unless you
+have to exchange data with legacy systems that still only support
+EBCDIC as character encoding.

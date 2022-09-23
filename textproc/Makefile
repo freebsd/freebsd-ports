@@ -1314,6 +1314,7 @@
     SUBDIR += py-dominate
     SUBDIR += py-dparse
     SUBDIR += py-duecredit
+    SUBDIR += py-ebcdic
     SUBDIR += py-elasticsearch
     SUBDIR += py-elasticsearch-async
     SUBDIR += py-elasticsearch-curator
