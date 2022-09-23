@@ -1,5 +1,5 @@
 PORTNAME=	jq
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP LOCAL/mandree:mandree
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,15 +22,21 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		localbase python:3.7-3.10
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-extract:
 		# move tests into place - unchanged between 1.2.1 and 1.2.2
-		${MV} ${WRKDIR}/jq-1.2.1/* ${WRKDIR}/jq-1.2.2/
+		${MV} ${WRKDIR}/jq-1.2.1/* ${WRKSRC}
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jq*.so
+
+.if defined(_MANDREE_FORCE_POUDRIERE_TEST_)
+BUILD_DEPENDS+=	${TEST_DEPENDS}
+pre-package:
+		${MAKE} test
+.endif
 
 do-test:
 		cd ${WRKSRC} && ${SETENV} \
