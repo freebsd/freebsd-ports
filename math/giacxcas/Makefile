@@ -1,6 +1,5 @@
 PORTNAME=	giacxcas
-DISTVERSION=	1.6.0-7
-PORTREVISION=	4
+DISTVERSION=	1.9.0-21
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoalib/tgz/:cocoa \
@@ -34,12 +33,14 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libmpfi.so:math/mpfi \
 		libpari.so:math/pari \
 		libpng.so:graphics/png \
+		libnauty.so:math/nauty \
+		libcliquer.so:math/cliquer \
 		libsamplerate.so:audio/libsamplerate
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		blaslapack compiler:c++14-lang desktop-file-utils fortran \
 		gettext gl gmake gnome jpeg libtool localbase ncurses perl5 \
-		readline shebangfix xorg
+		python readline shebangfix xorg
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_XORG=	x11 xcursor xext xft xi xinerama
@@ -54,7 +55,8 @@ CONFIGURE_ENV=	ac_cv_lib_X11_main=yes \
 		ac_cv_lib_fltk_main=yes \
 		ac_cv_lib_fltk_images_main=yes \
 		ac_cv_lib_jpeg_main=yes
-SHEBANG_FILES=	src/pgiac
+SHEBANG_FILES=	src/pgiac micropython-1.12/docs/conf.py
+
 INSTALL_TARGET=	install-strip
 
 COCOA_LIB_VERSION=	0.99700
@@ -81,6 +83,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 #NB: built of giacxcas with USE_GCC and nlt is successfull if the ntl port is also
 #    installed  with USE_GCC
 CONFIGURE_ARGS+=	--disable-ntl
+CONFIGURE_ARGS+=	--disable-micropy # it causes SEGV in xcas in the nlr_push call from execute_from_lexer@main.c
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -122,6 +125,13 @@ pre-configure:
 .endfor
 	${FIND} ${WRKSRC}/doc -type f | ${XARGS} ${GREP} -l 'share/giac/doc' | \
 		${XARGS} ${REINPLACE_CMD} -e 's|/usr/local/share/giac/doc|${DOCSDIR}|'
+	${FIND} ${WRKSRC}/micropython-1.12 -type f | ${XARGS}	\
+		${GREP} -l "/usr/bin/env python3" | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|/usr/bin/env python3|${PYTHON_CMD}|'
+	${FIND} ${WRKSRC}/micropython-1.12 -type f | ${XARGS}	\
+		${GREP} -l "python3 \|'python3'\|= python3\|^python3" | ${XARGS}	\
+		${REINPLACE_CMD} -e "s|python3 |${PYTHON_CMD} |;s|'python3'|'${PYTHON_CMD}'|"	\
+			-e "s|= python3|= ${PYTHON_CMD}|;s|^python3|${PYTHON_CMD}|"
 	@(cd ${COCOALIB-GIAC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
 		--with-cxx="${CXX}")
 	@(cd ${FLTKDEV-GIAC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
