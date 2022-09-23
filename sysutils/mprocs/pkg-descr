@@ -1,0 +1,2 @@
+mprocs runs multiple commands in parallel and shows output of each
+command separately.
