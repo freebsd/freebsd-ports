@@ -1921,6 +1921,7 @@
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
+    SUBDIR += termshot
     SUBDIR += tet-aspell
     SUBDIR += texi2db
     SUBDIR += texi2html
