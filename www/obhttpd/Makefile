@@ -1,5 +1,5 @@
 PORTNAME=	obhttpd
-PORTVERSION=	7.0.20211221
+PORTVERSION=	7.1.20220923
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -38,9 +38,9 @@ LDFLAGS+=	-L${WRKSRC_libimsg}/src/lib/libutil \
 USERS=		www
 GROUPS=		www
 
-SSL=		3.4.1
-LIBEVENT=	6.6.20191030
-LIBIMSG=	6.9.20210510
+SSL=		3.5.3
+LIBEVENT=	7.1.20220916
+LIBIMSG=	7.1.20220916
 
 post-patch:
 	${REINPLACE_CMD} -e 's|libimsg/src||g' \
