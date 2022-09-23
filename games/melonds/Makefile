@@ -1,11 +1,12 @@
 PORTNAME=	melonds
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Nintendo DS emulator
-WWW=		WWW: https://melonds.kuribo64.net/
+WWW=		https://melonds.kuribo64.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
