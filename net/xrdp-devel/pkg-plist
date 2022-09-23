@@ -106,6 +106,7 @@ man/man8/xrdp-sesrun.8.gz
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman
+%%DATADIR%%/README.logo
 %%DATADIR%%/ad24b.bmp
 %%DATADIR%%/ad256.bmp
 %%DATADIR%%/cursor0.cur
@@ -115,3 +116,4 @@ sbin/xrdp-sesman
 %%DATADIR%%/xrdp24b.bmp
 %%DATADIR%%/xrdp256.bmp
 %%DATADIR%%/xrdp_logo.bmp
+%%DATADIR%%/xrdp_logo.png
