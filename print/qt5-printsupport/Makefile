@@ -8,7 +8,7 @@ COMMENT=	Qt print support module
 
 USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
 USE_PERL5=	extract
-USE_QT=		core gui widgets qmake_build buildtools_build
+USE_QT=		core gui widgets qmake:build buildtools:build
 HAS_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}

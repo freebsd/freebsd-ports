@@ -1,5 +1,6 @@
 PORTNAME=	calamares
 DISTVERSION=	3.2.61
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/calamares/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -14,10 +15,10 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 
 USES=		cmake compiler:c++17-lang cpe gettext kde:5 python qt:5
 USE_KDE=	coreaddons dbusaddons \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 CMAKE_OFF=	INSTALL_POLKIT
 

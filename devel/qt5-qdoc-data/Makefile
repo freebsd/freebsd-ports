@@ -13,6 +13,7 @@ DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QDoc configuration files
+WWW=		https://www.qt.io/
 
 LICENSE=	GFDL
 LICENSE_FILE=	${WRKSRC}/LICENSE.FDL

@@ -16,7 +16,7 @@ GH_ACCOUNT=	xiaoyong
 GH_PROJECT=	2048-Qt
 
 USES=		compiler:c++11-lang gmake pkgconfig qmake qt:5
-USE_QT=		core declarative gui network widgets buildtools_build quickcontrols
+USE_QT=		core declarative gui network widgets buildtools:build quickcontrols
 
 PLIST_FILES=	bin/2048-qt ${DESKTOPDIR}/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png

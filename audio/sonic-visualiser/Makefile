@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils dos2unix gmake gl pkgconfig qt:5 xorg
 DOS2UNIX_FILES=	convert.pro
-USE_QT=		buildtools_build core gui network qmake_build svg testlib widgets xml
+USE_QT=		buildtools:build core gui network qmake:build svg testlib widgets xml
 USE_XORG=	x11
 USE_GL=		gl
 

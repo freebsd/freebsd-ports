@@ -24,7 +24,7 @@ LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
 USES=		cmake:testing compiler:c++11-lang gl pkgconfig readline qt:5
 USE_GITHUB=	yes
 USE_GL=		gl glu
-USE_QT=		core gui opengl qmake_build
+USE_QT=		core gui opengl qmake:build
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}

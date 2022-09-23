@@ -110,7 +110,7 @@ QMAKE_SOURCE_PATH?=	# empty
 
 # Add qmake to USE_QT -- unless it's qmake itself
 .  if !${PORTNAME} == qmake && ${_QT_VER:M5}
-USE_QT+=		qmake_build
+USE_QT+=		qmake:build
 .  endif
 
 .  if empty(qmake_ARGS:Mno_env)

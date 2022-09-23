@@ -559,9 +559,11 @@
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-calendar-kolab
     SUBDIR += roundcube-carddav
+    SUBDIR += roundcube-classic
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
+    SUBDIR += roundcube-larry
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels

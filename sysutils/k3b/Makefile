@@ -27,9 +27,9 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons filemetadata i18n iconthemes \
 		itemviews jobwidgets kcmutils kio newstuff notifications \
 		notifyconfig service solid widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network webkit widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 # The ffmpeg-plugin needs patching

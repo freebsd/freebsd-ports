@@ -1,4 +1,10 @@
-%%PLUGDIR%%/CAcert-ssl-security.png
-%%PLUGDIR%%/README
-%%PLUGDIR%%/config.inc.php.dist
+%%PLUGDIR%%/LICENSE
+%%PLUGDIR%%/README.md
+%%PLUGDIR%%/composer.json
+@sample %%PLUGDIR%%/config.inc.php.dist %%PLUGDIR%%/config.inc.php
+%%PLUGDIR%%/localization/de_DE.inc.dist
+%%PLUGDIR%%/localization/en_US.inc.dist
+%%PLUGDIR%%/login_info.js
 %%PLUGDIR%%/login_info.php
+%%PLUGDIR%%/media/CAcert-ssl-security.png
+%%PLUGDIR%%/media/plugin_login_info.png

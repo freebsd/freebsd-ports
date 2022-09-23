@@ -16,9 +16,9 @@ USE_GL=		gl
 USE_QT=		core dbus declarative gui \
 		network quickcontrols quickcontrols2 \
 		svg widgets \
-		buildtools_build linguist_build qmake_build
+		buildtools:build linguist:build qmake:build
 USE_KDE=	calendarcore config coreaddons dbusaddons i18n kirigami2 notifications service \
-		ecm_build
+		ecm:build
 
 CMAKE_ON=	REMINDERS_ENABLED
 CMAKE_OFF=	BUILD_TESTING

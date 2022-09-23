@@ -40,6 +40,6 @@ NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 
 QT5_USES=	qt:5
 QT5_USE=		QT=core,gui,multimedia,network,widgets \
-			QT=buildtools_build,qmake_build
+			QT=buildtools:build,qmake:build
 
 .include <bsd.port.mk>

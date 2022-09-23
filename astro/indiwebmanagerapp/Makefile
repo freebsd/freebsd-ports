@@ -16,7 +16,7 @@ USES=		cmake iconv gettext kde:5 ninja qt:5 pkgconfig python:3.7+ xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons doctools i18n kio itemviews jobwidgets service \
 		solid widgetsaddons windowsystem xmlgui
-USE_QT=		buildtools concurrent core dbus gui qmake_build network widgets \
+USE_QT=		buildtools concurrent core dbus gui qmake:build network widgets \
 		xml
 USE_XORG=	x11
 USE_GITHUB=	yes

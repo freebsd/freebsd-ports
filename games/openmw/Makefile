@@ -24,8 +24,8 @@ USES=		cmake compiler:c++17-lang gl openal pkgconfig qt:5 sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 USE_GL=		gl
-USE_QT=		core gui network opengl printsupport widgets buildtools_build \
-		qmake_build
+USE_QT=		core gui network opengl printsupport widgets buildtools:build \
+		qmake:build
 USE_SDL=	sdl2
 
 CMAKE_ARGS=	-DDESIRED_QT_VERSION=5 \

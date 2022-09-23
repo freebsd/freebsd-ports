@@ -4,7 +4,6 @@ CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 Framework for searching and managing user metadata
-WWW=		https://projects.kde.org/projects/kde/kdelibs/baloo
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb \
 		libinotify.so:devel/libinotify
@@ -14,6 +13,6 @@ USE_KDE=	config coreaddons crash dbusaddons \
 		filemetadata i18n idletime kio service \
 		solid
 USE_QT=		concurrent core dbus declarative gui network \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 .include <bsd.port.mk>

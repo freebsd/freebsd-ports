@@ -10,7 +10,7 @@ WWW=		https://docs.ros.org/api/catkin/html/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake>=3.15:devel/cmake \
+BUILD_DEPENDS=	cmake-core>=3.15:devel/cmake-core \
 		googletest>=1.8.1:devel/googletest \
 		${PYTHON_PKGNAMEPREFIX}ros-catkin_pkg>=0.4.0:devel/ros-catkin_pkg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}empy>=1:textproc/py-empy@${PY_FLAVOR} \

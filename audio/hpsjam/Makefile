@@ -15,7 +15,7 @@ LIB_DEPENDS= \
 
 USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools_build core gui widgets svg
+USE_QT=		buildtools:build core gui widgets svg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky

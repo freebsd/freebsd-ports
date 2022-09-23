@@ -6,6 +6,7 @@ CATEGORIES=	converters linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Unicode Bidirectional Algorithm (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://fribidi.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

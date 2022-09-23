@@ -14,7 +14,7 @@ USES=		cmake compiler:c++11-lang magick:6,build qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jet1oeil
 USE_QT=		core gui network sql sql-sqlite3 testlib widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 
 OPTIONS_DEFINE=		DOCS PGSQL MYSQL
 OPTIONS_DEFAULT=	PGSQL

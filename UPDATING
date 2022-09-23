@@ -5,6 +5,59 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220919:
+  AFFECTS: users of sysutils/schilyutils
+  AUTHOR: fuz@fuz.su
+
+  Schilyutils has been split up into two ports. If you want the bosh shell,
+  the new port is shells/bosh, which can be installed with:
+
+  # pkg install bosh
+    or
+  # portmaster -o shells/bosh
+
+20220918:
+  AFFECTS: users of mail/roundcube
+  AUTHOR: brnrd@FreeBSD.org
+
+  Roundcube has been upgraded to 1.6.0 and introduces breaking changes to
+  configuration options of remote services (imap, smtp, ldap, sieve). Check
+  https://roundcube.net/news/2022/07/28/roundcube-1.6.0-released for details.
+
+  Version 1.6 no longer includes the Classic and Larry skins, which are now
+  available as separate mail/roundcube-classic and mail/roundcube-larry ports.
+
+20220910:
+  AFFECTS: users of devel/cmake
+  AUTHOR: diizzy@FreeBSD.org
+
+  CMake has been converted to a meta-port and new CMake packages created causes
+  conflicts with old binary packages prior to this change.
+
+  If CMake was installed using binary packages via pkg it needs to be
+  uninstalled using pkg delete before installing CMake and related packages
+  after this change.
+
+    pkg delete cmake
+    pkg install cmake-core
+
+  If you're using portmaster you also need to delete the old CMake package
+  before upgrading.
+
+20220909:
+  AFFECTS: users of emulators/qemu
+  AUTHOR: bofh@FreeBSD.org
+
+  emulators/qemu has been updated to 7.1.0. Previous 7.0.X branch has
+  been repocopied to emulators/qemu70. If someone wants to stick with 7.0.X
+  branch please use one of the following command:
+
+  # pkg install qemu70/qemu70-nox11(based on flavor used)
+    or
+  # portmaster -o emulators/qemu70 emulators/qemu
+    or
+  # portupgrade -o emulators/qemu70 emulators/qemu
+
 20220903:
   AFFECTS: users of editors/vim
   AUTHOR: adamw@FreeBSD.org

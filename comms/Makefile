@@ -131,6 +131,7 @@
     SUBDIR += pr
     SUBDIR += predict
     SUBDIR += py-adafruit-ampy
+    SUBDIR += py-elelabs-zigbee-ezsp-utility
     SUBDIR += py-esptool
     SUBDIR += py-fritzconnection
     SUBDIR += py-hid

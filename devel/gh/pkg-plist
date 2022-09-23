@@ -55,9 +55,11 @@
 %%MANPAGES%%man/man1/gh-issue-delete.1.gz
 %%MANPAGES%%man/man1/gh-issue-edit.1.gz
 %%MANPAGES%%man/man1/gh-issue-list.1.gz
+%%MANPAGES%%man/man1/gh-issue-pin.1.gz
 %%MANPAGES%%man/man1/gh-issue-reopen.1.gz
 %%MANPAGES%%man/man1/gh-issue-status.1.gz
 %%MANPAGES%%man/man1/gh-issue-transfer.1.gz
+%%MANPAGES%%man/man1/gh-issue-unpin.1.gz
 %%MANPAGES%%man/man1/gh-issue-view.1.gz
 %%MANPAGES%%man/man1/gh-issue.1.gz
 %%MANPAGES%%man/man1/gh-label-clone.1.gz

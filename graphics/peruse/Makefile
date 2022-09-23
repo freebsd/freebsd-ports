@@ -16,7 +16,7 @@ USE_KDE=	archive attica baloo completion config coreaddons crash ecm \
 		kdeclarative kio newstuff package service solid \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui network opengl sql widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

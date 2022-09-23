@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries and daemons to implement searching in Akonadi
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
@@ -13,11 +14,11 @@ USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		crash i18n itemmodels kcmutils package plasma-framework \
 		runner service widgetsaddons \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadimime calendarcore contacts  mime
 USE_QT=		core dbus gui widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

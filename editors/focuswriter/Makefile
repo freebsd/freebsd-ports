@@ -1,7 +1,11 @@
 PORTNAME=	focuswriter
 DISTVERSION=	1.8.2
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
+
+PATCH_SITES=	https://github.com/gottcode/${PORTNAME}/commit/
+PATCHFILES=	0c642bec1e966b6e3f340d65e30558fb638010d9.patch:-p1 # version fix
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple, distraction-free writing environment
@@ -17,11 +21,14 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv pkgconfig \
 		qt:6 tar:bz2
 USE_GL=		gl
-USE_QT=		base multimedia tools_build
+USE_QT=		base multimedia tools:build
 
-PORTDATA=	*
-PORTDOCS=	CREDITS ChangeLog README
-OPTIONS_DEFINE=	DOCS
+PORTDATA=		*
+PORTDOCS=		CREDITS ChangeLog README
+OPTIONS_DEFINE=		DOCS LTO
+OPTIONS_DEFAULT=	LTO
+
+LTO_CMAKE_BOOL=	ENABLE_LINK_TIME_OPTIMIZATION
 
 post-install-DOCS-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}

@@ -27,8 +27,8 @@ GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/
 USE_KDE=	plasma-framework
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport qdbus quickcontrols2 svg webchannel \
-		widgets x11extras buildtools_build doc_build linguist_build \
-		qmake_build testlib_build
+		widgets x11extras buildtools:build doc:build linguist:build \
+		qmake:build testlib:build
 
 CMAKE_OFF=	USE_STANDARD_FILESYSTEM SYSTEMD_SUPPORT
 

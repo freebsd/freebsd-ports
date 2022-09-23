@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-monitor
 
 COMMENT=	The Exim monitor for the Exim MTA
-WWW=		https://www.exim.org/
 
 MASTERDIR=	${.CURDIR}/../exim
 

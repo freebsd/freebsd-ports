@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//}
-WWW=		http://delta.affinix.com/qca/
+WWW=		https://api.kde.org/qca/html/index.html
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DQCA_SUFFIX=${FLAVOR} \
 		-D${FLAVOR:tu}:BOOL=TRUE
-_USE_QT5=	core buildtools_build qmake_build
+_USE_QT5=	core buildtools:build qmake:build
 _USE_QT6=	5compat base
 USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 

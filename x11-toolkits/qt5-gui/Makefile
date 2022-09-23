@@ -34,7 +34,7 @@ USES=			compiler:c++11-lang gl jpeg localbase \
 USE_GL=			egl gl
 USE_GNOME=		glib20
 USE_PERL5=		extract
-USE_QT=			core dbus network buildtools_build qmake_build
+USE_QT=			core dbus network buildtools:build qmake:build
 QT_BINARIES=		yes
 QT_CONFIG=		accessibility dbus \
 			fontconfig opengl png system-freetype system-jpeg \

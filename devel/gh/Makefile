@@ -1,7 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.7
-PORTREVISION=	1
+DISTVERSION=	2.15.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -72,10 +71,10 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
-		shurcooL:githubv4:d292edc3691b:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
+		shurcooL:githubv4:a14260e6f8a2:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:graphql:18c5c3165e3a:shurcool_graphql/vendor/github.com/shurcooL/graphql \
 		sourcegraph:jsonrpc2:v0.1.0:sourcegraph_jsonrpc2/vendor/github.com/sourcegraph/jsonrpc2 \
-		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.5.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.4.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.5:stretchr_testify/vendor/github.com/stretchr/testify \

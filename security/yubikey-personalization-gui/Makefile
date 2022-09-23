@@ -16,7 +16,7 @@ LIB_DEPENDS=	libykpers-1.so:security/ykpers \
 
 USES=		compiler:c++11-lang pkgconfig qmake qt:5
 USE_GITHUB=	yes
-USE_QT=		buildtools_build core gui testlib_build widgets
+USE_QT=		buildtools:build core gui testlib:build widgets
 
 GH_ACCOUNT=	Yubico
 

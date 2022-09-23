@@ -16,3 +16,4 @@ lib/cmake/SQLiteCpp/SQLiteCppTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SQLiteCpp/SQLiteCppTargets.cmake
 lib/libSQLiteCpp.so
 lib/libSQLiteCpp.so.0
+share/SQLiteCpp/package.xml

@@ -31,13 +31,6 @@ def register_repos():
 	path = "%%_MY_LOCALREPO%%/rules_python",
     )
 
-    # python pip
-    ##############
-    native.local_repository(
-        name = "com_github_ali5h_rules_pip",
-        path = "%%_MY_LOCALREPO%%/rules_pip",
-    )
-
     # javascript
     ##############
     native.local_repository(
@@ -45,11 +38,9 @@ def register_repos():
 	path = "%%_MY_LOCALREPO%%/rules_nodejs",
     )
 
-    # esbuild-toolchain
-    #####################
     native.local_repository(
-	name = "esbuild_toolchain",
-	path = "%%_MY_LOCALREPO%%/esbuild_toolchain",
+	name = "rules_nodejs",
+	path = "%%_MY_LOCALREPO%%/rules_nodejs",
     )
 
     # sass
@@ -92,13 +83,6 @@ def register_repos():
     native.local_repository(
         name = "build_bazel_rules_typescript",
         path = "%%_MY_LOCALREPO%%/rules_nodejs/third_party/github.com/bazelbuild/rules_typescript",
-    )
-
-    # stub pyqt5 repository
-    #########################
-    native.local_repository(
-        name = "pyqt5",
-	path = "%%_MY_LOCALREPO%%/pyqt5",
     )
 
     # provides node from ports

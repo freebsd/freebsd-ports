@@ -1,39 +1,75 @@
-DISTFILES+=	fft2d.tgz:oourafft2d \
-		49177915a14a.tar.gz:eigen \
-		43ef2148c0936ebf7cb4be6b19927a9d9d145b8f.tar.gz:abseil \
-		bazel-skylib.0.8.0.tar.gz:skylib \
-		92dd8a7a518a2fb7ba992d47c8b38299fe0be825.tar.gz:toolchain \
+DISTFILES+=	platforms-0.0.2.tar.gz:platforms \
+		apple_support.0.12.1.tar.gz:apple \
+		bazel-skylib-1.0.3.tar.gz:skylib \
+		dfc67056200b674accd08d8f9a21e328098c07e2.tar.gz:toolchain \
+		v0.1.1.zip:buildrules \
+		rules_apple.0.33.0.tar.gz:applerules \
+		081771d4a0e9d7d3aa0eed2ef389fa4700dfb23e.tar.gz:rulescc \
 		308b05b2419edb5c8ee0471b67a40403df940149.tar.gz:closure \
-		0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip:rulescc \
 		rules_docker-v0.10.0.tar.gz:docker \
-		rules_swift.0.11.1.tar.gz:swift \
-		816a4ae622e964763ca0862d9dbd19324a1eaf45.tar.gz:farmhash \
-		12fed0cd7cfcd9e169bf1925bc3a7a58725fdcc3.zip:gemmlowp \
+		7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip:java \
+		rules_pkg-0.2.5.tar.gz:pkg \
+		11bf7c25e666dd7ddacbcd4d4c4a9de7a25175f8.tar.gz:protolib \
+		rules_python-0.0.1.tar.gz:pythonrules \
+		rules_swift.0.25.0.tar.gz:swift \
+		790d7a083520398268d92d0bd61cf85dfa32ee98.tar.gz:dlpack \
+		0d859a811870d10f53a594927d0d0b97573ad06d.tar.gz:farmhash \
+		e844ffd17118c1e17d94e1ba4354c075a4577b88.zip:gemmlowp \
 		fd3d9af80465e4383162e4a7c5e2f406e82dd968.tar.gz:highwayhash \
-		36dbc057604f00aacfc0288ddad57e3b21cfc1b8.tar.gz:kissfft \
-		94d31935a2c94fe7e7c7379a0f3393e181928ff7.tar.gz:bazel \
-		v2.3.0.tar.gz:pybind \
-		7a7e03f906aada0cf4b749b51213fe5784eeff84.tar.gz:llvm \
-		1200fe90bb174a6224a525ee60148671a786a71f.tar.gz:neon \
-		license.rst.txt:license \
-		backports.weakref-1.0rc1.tar.gz:weakref 
+		506cfa4bffd060c06ec338ce50ea3468daa6c814.tar.gz:re2 \
+		e6c1b8dc8a8b00ee74e7268aac8b18d7260ab1ce.zip:ruy \
+		835a7d7b1ee3bc83e575e302a985c66ec4b65249.tar.gz:sobol \
+		openmp-10.0.1.src.tar.xz:llvmorg \
+		36dbc057604f00aacfc0288ddad57e3b21cfc1b8.tar.gz:kiss \
+		v2.6.tar.gz:onednn \
+		v1.0.tar.gz:ooura \
+		5916273f79a21551890fd3d56fc5375a78d1598d.zip:cpuinfo \
+		d5e37adf1406cf899d7d9ec1d317c47506ccb970.tar.gz:cpuinfo2 \
+		093ed77f7d50f75b376f40a71ea86e08cedb8b80.tar.gz:runtime \
+		eigen-008ff3483a8c5604639e1c4d204eae30ad737af6.tar.gz:eigen \
+		11b2812d64e49bab9b6c489f79067fc94e69db9f.zip:xnnpack \
+		b8374f80e42010941bda6c85b0e3f1a1bd77a1e0.zip:pthread \
+		4dfe081cf6bcd15db339cf2680b9281b8451eeb3.zip:fp16 \
+		63058eff77e11aa15bf531df5dd34395ec3017c8.zip:fxdiv \
+		1cb299165c859533e22f2ed05eb2abd5071544df.tar.gz:llvm \
+		541b1ded4abadcc38e8178680b0677f65594ea6f.zip:apis \
+		v1.12.0.tar.gz:flatbuffer \
+		1200fe90bb174a6224a525ee60148671a786a71f.tar.gz:neon
 
-MASTER_SITES+=	http://www.kurims.kyoto-u.ac.jp/~ooura/:oourafft2d \
-		https://storage.googleapis.com/mirror.tensorflow.org/bitbucket.org/eigen/eigen/get/:eigen \
-		https://github.com/abseil/abseil-cpp/archive/:abseil \
-		https://github.com/bazelbuild/bazel-skylib/releases/download/0.8.0/:skylib \
+MASTER_SITES+=	https://github.com/bazelbuild/platforms/releases/download/0.0.2/:platforms \
+		https://github.com/bazelbuild/apple_support/releases/download/0.12.1/:apple \
+		https://github.com/bazelbuild/bazel-skylib/releases/download/1.0.3/:skylib \
 		https://github.com/bazelbuild/bazel-toolchains/archive/:toolchain \
+		https://github.com/bazelbuild/rules_android/archive/:buildrules \
+		https://github.com/bazelbuild/rules_apple/releases/download/0.33.0/:applerules \
+		https://github.com/bazelbuild/rules_cc/archive/:rulescc \
 		https://github.com/bazelbuild/rules_closure/archive/:closure \
 		https://github.com/bazelbuild/rules_docker/releases/download/v0.10.0/:docker \
-		https://github.com/bazelbuild/rules_swift/releases/download/0.11.1/:swift \
+		https://github.com/bazelbuild/rules_java/archive/:java \
+		https://github.com/bazelbuild/rules_pkg/releases/download/0.2.5/:pkg \
+		https://github.com/bazelbuild/rules_proto/archive/:protolib \
+		https://github.com/bazelbuild/rules_python/releases/download/0.0.1/:pythonrules \
+		https://github.com/bazelbuild/rules_swift/releases/download/0.25.0/:swift \
+		https://github.com/dmlc/dlpack/archive/:dlpack \
 		https://github.com/google/farmhash/archive/:farmhash \
 		https://github.com/google/gemmlowp/archive/:gemmlowp \
 		https://github.com/google/highwayhash/archive/:highwayhash \
-		https://github.com/mborgerding/kissfft/archive/:kissfft \
-		https://github.com/nlopezgi/bazel-toolchains/archive/:bazel \
-		https://github.com/pybind/pybind11/archive/:pybind \
-		https://github.com/llvm-mirror/llvm/archive/:llvm \
-		https://github.com/intel/ARM_NEON_2_x86_SSE/archive/:neon \
-		https://storage.googleapis.com/mirror.tensorflow.org/docs.python.org/2.7/_sources/:license \
-		https://pypi.python.org/packages/bc/cc/3cdb0a02e7e96f6c70bd971bc8a90b8463fda83e264fa9c5c1c98ceabd81/:weakref \
-		https://github.com/bazelbuild/rules_cc/archive/:rulescc
+		https://github.com/google/re2/archive/:re2 \
+		https://github.com/google/ruy/archive/:ruy \
+		https://github.com/joe-kuo/sobol_data/archive/:sobol \
+		https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/:llvmorg \
+		https://github.com/mborgerding/kissfft/archive/:kiss \
+		https://github.com/oneapi-src/oneDNN/archive/refs/tags/:onednn \
+		https://github.com/petewarden/OouraFFT/archive/:ooura \
+		https://github.com/pytorch/cpuinfo/archive/:cpuinfo \
+		https://github.com/pytorch/cpuinfo/archive/:cpuinfo2 \
+		https://github.com/tensorflow/runtime/archive/:runtime \
+		https://gitlab.com/libeigen/eigen/-/archive/008ff3483a8c5604639e1c4d204eae30ad737af6/:eigen \
+		https://github.com/google/XNNPACK/archive/:xnnpack \
+		https://github.com/Maratyszcza/pthreadpool/archive/:pthread \
+		https://github.com/Maratyszcza/FP16/archive/:fp16 \
+		https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
+		https://storage.googleapis.com/mirror.tensorflow.org/github.com/llvm/llvm-project/archive/:llvm \
+		https://github.com/googleapis/googleapis/archive/:apis \
+		https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/flatbuffers/archive/:flatbuffer \
+		https://github.com/intel/ARM_NEON_2_x86_SSE/archive/:neon

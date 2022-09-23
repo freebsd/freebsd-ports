@@ -9,9 +9,9 @@ WWW=		https://www.kde.org/applications/games/kiriki/
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
 		guiaddons i18n iconthemes kio libkdegames widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network printsupport svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

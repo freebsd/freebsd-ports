@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GL=		gl
-USE_QT=		buildtools_build qmake_build \
+USE_QT=		buildtools:build qmake:build \
 		core gui printsupport widgets xml
 
 QMAKE_ARGS=	CONFIG+="configure"

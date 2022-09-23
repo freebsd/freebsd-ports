@@ -24,10 +24,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		itemviews jobwidgets kcmutils kio kirigami2 notifications \
 		people qqc2-desktop-style service solid wayland widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		quickcontrols2 testlib wayland widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xtst
 USE_LDCONFIG=	${QT_QMLDIR}/org/kde/kdeconnect
 

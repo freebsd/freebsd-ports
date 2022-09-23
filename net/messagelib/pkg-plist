@@ -947,11 +947,11 @@ share/messageviewer/about/default/main.css
 share/messageviewer/about/default/main.html
 share/messageviewer/about/default/splash.theme
 share/messageviewer/about/default/status.html
-share/messageviewer/defaultthemes/%%GRANTLEE_VERSION_SHORT%%/header.html
-share/messageviewer/defaultthemes/%%GRANTLEE_VERSION_SHORT%%/kmail_default.desktop
-share/messageviewer/defaultthemes/%%GRANTLEE_VERSION_SHORT%%/photo.png
-share/messageviewer/defaultthemes/%%GRANTLEE_VERSION_SHORT%%/photo.svg
-share/messageviewer/defaultthemes/%%GRANTLEE_VERSION_SHORT%%/style.css
+share/messageviewer/defaultthemes/5.2/header.html
+share/messageviewer/defaultthemes/5.2/kmail_default.desktop
+share/messageviewer/defaultthemes/5.2/photo.png
+share/messageviewer/defaultthemes/5.2/photo.svg
+share/messageviewer/defaultthemes/5.2/style.css
 share/messageviewer/longurlServices.json
 share/org.kde.syntax-highlighting/syntax/kmail-template.xml
 share/qlogging-categories5/messagelib.categories

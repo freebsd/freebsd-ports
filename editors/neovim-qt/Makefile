@@ -17,7 +17,7 @@ RUN_DEPENDS=	neovim>=0:editors/neovim
 USES=		cmake compiler:c++11-lang desktop-file-utils qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	equalsraf
-USE_QT=		core gui network testlib widgets buildtools_build qmake_build svg
+USE_QT=		core gui network testlib widgets buildtools:build qmake:build svg
 
 CMAKE_ON=	USE_SYSTEM_MSGPACK
 CMAKE_OFF=	ENABLE_TESTS

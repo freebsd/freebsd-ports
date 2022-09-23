@@ -11,19 +11,17 @@ WWW=		https://github.com/vcrhonek/hwdata
 LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	ginstall:sysutils/coreutils
+
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	vcrhonek
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--datadir=${DATADIR}
+
+BINARY_ALIAS=	install=ginstall
 
 NO_ARCH=	yes
-NO_BUILD=	yes
-
-_ID_FILES=	pci.ids pnp.ids usb.ids
-PLIST_FILES=	${_ID_FILES:C,^,${DATADIR}/,}
-
-do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/
-.for _id_file in ${_ID_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${_id_file} ${STAGEDIR}${DATADIR}/
-.endfor
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jmgr
 USE_QT=		concurrent core dbus gui multimedia network script scripttools speech sql widgets x11extras xml xmlpatterns \
-		buildtools_build uitools_build
+		buildtools:build uitools:build
 USE_GNOME=	gdkpixbuf2 glib20
 USE_GL=		gl
 USE_XORG=	x11 xtst
@@ -30,7 +30,7 @@ QMAKE_ARGS=	PKGCONFIG_OPENCV=opencv4
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USE=	QT=linguisttools_build
+NLS_USE=	QT=linguisttools:build
 
 pre-build-NLS-on: # this is a hackish way to turn NLS on/off, asked the upstream to have the NLS option
 	@cd ${WRKSRC} && ${MAKE_CMD} locale_release

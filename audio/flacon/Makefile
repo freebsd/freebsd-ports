@@ -21,8 +21,8 @@ TEST_DEPENDS=	alacenc:audio/alacenc \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5
 USE_GITHUB=	yes
-USE_QT=		buildtools_build concurrent_build qmake_build testlib_build \
-		linguisttools_build core gui network widgets
+USE_QT=		buildtools:build concurrent:build qmake:build testlib:build \
+		linguisttools:build core gui network widgets
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=YES
 
 do-test:

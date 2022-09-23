@@ -20,7 +20,7 @@ USES=		cmake kde:5 pkgconfig qt:5
 
 USE_QT=		3d concurrent core declarative designer gui help linguisttools \
 		location network printsupport script scripttools svg uiplugin \
-		webchannel widgets xml buildtools_build qdoc_build qmake_build
+		webchannel widgets xml buildtools:build qdoc:build qmake:build
 USE_KDE=	coreaddons syntaxhighlighting
 
 USE_GITHUB=	yes

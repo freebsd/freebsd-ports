@@ -26,6 +26,7 @@ lib/mariadb/plugin/dialog.so
 lib/mariadb/plugin/mysql_clear_password.so
 lib/mariadb/plugin/remote_io.so
 lib/mariadb/plugin/sha256_password.so
+lib/mariadb/plugin/zstd.so
 libdata/pkgconfig/libmariadb.pc
 man/man3/mariadb_cancel.3.gz
 man/man3/mariadb_connection.3.gz

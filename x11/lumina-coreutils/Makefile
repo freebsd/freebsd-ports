@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 RUN_DEPENDS=	xrandr:x11/xrandr
 
 USES=		compiler:c++11-lang qmake qt:5
-USE_QT=		buildtools_build concurrent core gui \
+USE_QT=		buildtools:build concurrent core gui \
 		imageformats multimedia network \
 		svg widgets x11extras
 USE_GITHUB=	yes
@@ -23,7 +23,7 @@ GH_PROJECT=	lumina
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=	yes
 
-NLS_USE=	QT=linguist_build
+NLS_USE=	QT=linguist:build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 WRKSRC_SUBDIR=	src-qt5/core-utils

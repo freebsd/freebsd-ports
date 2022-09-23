@@ -1,7 +1,7 @@
 PORTNAME?=	zed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	4
+DISTVERSION=	1.2.0
+PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	meta@FreeBSD.org
@@ -32,10 +32,8 @@ GH_TUPLE=	\
 		fraugster:parquet-go:e6b70a8a7212:fraugster_parquet_go/vendor/github.com/fraugster/parquet-go \
 		go-check:check:038fdea0a05b:go_check_check/vendor/gopkg.in/check.v1 \
 		go-redis:redis:v8.4.11:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
-		go-yaml:yaml:c476de37821d:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		go4org:intern:ae77deb06f29:go4org_go4/vendor/go4.org/intern \
-		go4org:unsafe-assume-no-moving-gc:db492cf91b37:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
 		golang:mock:v1.5.0:golang_mock/vendor/github.com/golang/mock \
@@ -47,10 +45,11 @@ GH_TUPLE=	\
 		golang:sys:e2b7044e8c71:golang_sys/vendor/golang.org/x/sys \
 		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gorilla:mux:98cb6bf42e08:gorilla_mux/vendor/github.com/gorilla/mux \
 		gosuri:uilive:v0.0.4:gosuri_uilive/vendor/github.com/gosuri/uilive \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		inetaf:netaddr:c74959edd3b6:inetaf_netaddr/vendor/inet.af/netaddr \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \

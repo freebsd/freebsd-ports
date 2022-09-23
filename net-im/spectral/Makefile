@@ -17,7 +17,7 @@ USES=		cmake compiler:c++17-lang gl pkgconfig qt:5 tar:bz2
 USE_GL=		gl
 USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 svg widgets \
-		buildtools_build linguist_build qmake_build testlib_build
+		buildtools:build linguist:build qmake:build testlib:build
 
 CMAKE_ON=	USE_INTREE_LIBQMC
 

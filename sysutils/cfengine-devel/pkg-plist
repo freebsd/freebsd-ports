@@ -8,6 +8,7 @@ bin/cf-promises
 bin/cf-runagent
 bin/cf-secret
 bin/cf-serverd
+bin/cf-support
 bin/cf-upgrade
 bin/rpmvercmp
 libexec/cfengine/libpromises.so

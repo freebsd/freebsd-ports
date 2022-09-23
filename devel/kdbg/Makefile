@@ -14,7 +14,7 @@ USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_KDE=	auth codecs config configwidgets coreaddons ecm \
 		i18n iconthemes widgetsaddons windowsystem xmlgui
 USE_QT=		core dbus gui widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	j6t

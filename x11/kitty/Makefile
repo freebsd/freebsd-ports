@@ -1,6 +1,5 @@
 PORTNAME=	kitty
-DISTVERSION=	0.25.2
-PORTREVISION=	1
+DISTVERSION=	0.26.2
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://github.com/kovidgoyal/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -15,6 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
+		openssl>0:security/openssl \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		pkgconfig python:3.5+ shebangfix tar:xz terminfo xorg
+		pkgconfig python:3.5+ shebangfix ssl tar:xz terminfo xorg
 CPE_VENDOR=	kitty_project
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr

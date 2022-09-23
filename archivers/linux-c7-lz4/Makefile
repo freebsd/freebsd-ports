@@ -5,6 +5,7 @@ CATEGORIES=	archivers linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	LZ4 compression library and utilities (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://lz4.github.io/lz4/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

@@ -1,8 +1,6 @@
 PKGNAMESUFFIX=	-utils
 PORTREVISION=	3
 
-WWW=		https://www.transmissionbt.com/
-
 NLS_USES=	gettext-tools:build
 
 MASTERDIR=	${.CURDIR}/../transmission-cli

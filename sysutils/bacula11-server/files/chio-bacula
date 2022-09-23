@@ -2,7 +2,7 @@
 #
 # Bacula interface to FreeBSD chio autoloader command with
 # multiple drive support
-# (By Lars Köller, lars+bacula@koellers.net, 2004)
+# (By Lars KÃ¶ller, lars+bacula@koellers.net, 2004)
 #
 #  If you set in your Device resource
 #
@@ -27,7 +27,7 @@
 #
 me=$(basename $0)
 
-# Debug output, take care this file is writeable for user bacula!
+# Debug output, take care: this file is writable by user bacula!
 #LOG=/var/db/bacula/chio-bacula.log
 #exec 2>>$LOG
 #echo "------------------------- $(date) Start $(basename $0) -------------------------" >> $LOG
@@ -37,7 +37,7 @@ me=$(basename $0)
 logger -p user.err "$me $@"
 
 # This simulates a barcode reader in the changer.
-# The labes of the virtual barcode reader are located in the BARCODE_FILE
+# The labels of the virtual barcode reader are located in the BARCODE_FILE
 SIMULATE_BARCODE=true
 BARCODE_FILE=/usr/local/etc/bacula/bacula-barcodes
 MTX=/bin/chio
@@ -67,7 +67,7 @@ usage()
   echo "list            Lists full storage slots"
   echo "loaded          Gives slot from where the tape was loaded."
   echo "                0 means the tape drive is empty."
-  echo "slots           Gives Number of aviable slots."
+  echo "slots           Gives number of available slots."
   echo ""
   echo "Example:"
   echo "  $me /dev/changer load 1   loads a tape from slot 1"

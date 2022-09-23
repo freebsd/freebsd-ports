@@ -5,6 +5,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Parse and render SVG vector graphics (CentOS ${LINUX_DIST_VER})
+WWW=		https://live.gnome.org/LibRsvg
 
 USES=		cpe linux:c7
 CPE_VENDOR=	gnome

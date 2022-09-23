@@ -9,7 +9,7 @@ COMMENT=	Qt5 Remote Objects module
 USES=		compiler:c++11-lang gl qmake qt-dist:5
 USE_GL=		gl
 USE_QT=		core declarative network \
-		buildtools_build
+		buildtools:build
 
 QT_BINARIES=	yes
 

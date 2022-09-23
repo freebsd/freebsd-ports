@@ -1,5 +1,6 @@
 PORTNAME=	cantor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,11 +23,11 @@ USE_KDE=	attica auth archive bookmarks codecs completion config \
 		itemmodels itemviews init jobwidgets kdelibs4support kio \
 		newstuff parts pty service solid sonnet syntaxhighlighting \
 		texteditor textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui help location network \
 		printsupport sql svg webchannel webengine \
 		widgets xml xmlpatterns \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

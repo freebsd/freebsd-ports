@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	aarnt
 
 USE_QT=		core concurrent declarative gui linguist network xml widgets \
-		buildtools_build
+		buildtools:build
 
 PLIST_FILES=	bin/${PORTNAME} \
 		lib/${PORTNAME}/${PORTNAME}-doas \

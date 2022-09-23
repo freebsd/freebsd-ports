@@ -1,5 +1,5 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${PORTVERSION}/
@@ -33,7 +33,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	PLUGINS
 OPTIONS_DEFAULT=PLUGINS
-OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
@@ -111,11 +110,23 @@ do-install-PLUGINS-on:
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
 .for f in ${PLUGINS_CONFIG_FILES}
 	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+	${ECHO} "@sample ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 .for f in ${PLUGINS_SAMPLE_CONFIG_FILES}
 	${INSTALL} ${WRKSRC}/config/${f}.example ${STAGEDIR}${ETCDIR}/${f}.sample
+	${ECHO} "${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "plugins" ${STAGEDIR}${PREFIX}/lib/opensearch/)
 	(cd ${WRKSRC}/plugins/opensearch-security/tools && ${COPYTREE_BIN} "*.sh" ${STAGEDIR}${PREFIX}/lib/opensearch/plugins/opensearch-security/tools)
+
+post-install:
+.for f in ${CONFIG_FILES}
+	${ECHO} "@sample ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
+.endfor
+	${FIND} -s ${STAGEDIR}${PREFIX}/lib/opensearch -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${ECHO} "@dir lib/opensearch/plugins" >> ${TMPPLIST}
+	${ECHO} "@dir libexec/opensearch" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0755) ${ETCDIR}" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

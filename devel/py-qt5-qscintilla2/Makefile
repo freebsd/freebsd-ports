@@ -17,9 +17,9 @@ DESTDIRNAME=	INSTALL_ROOT
 
 USES=		python:3.5-3.9 pyqt:5 gl qt:5
 USE_GL=		gl
-USE_PYQT=	pyqt5 sip_build qtbuilder
+USE_PYQT=	pyqt5 sip:build qtbuilder
 USE_PYTHON=	concurrent flavors py3kplist
-USE_QT=		core gui printsupport widgets buildtools_build qmake_build
+USE_QT=		core gui printsupport widgets buildtools:build qmake:build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace

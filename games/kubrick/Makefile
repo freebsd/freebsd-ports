@@ -10,9 +10,9 @@ USES=		cmake compiler:c++11-lang gl kde:5 qt:5 tar:xz
 USE_GL=		gl glu
 USE_KDE=	auth codecs config configwidgets coreaddons crash \
 		i18n kio libkdegames service widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network opengl svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

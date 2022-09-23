@@ -13,9 +13,9 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		dbusaddons i18n iconthemes itemviews jobwidgets kcmutils \
 		kio notifications plasma-framework service solid widgetsaddons \
 		windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 post-patch:

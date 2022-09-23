@@ -15,9 +15,9 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons doctools kio service sonnet textwidgets i18n \
 		iconthemes jobwidgets notifications parts solid widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 CONFLICTS_INSTALL=	dragon # bin/dragon

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang gettext-runtime gl python:3.4+ qmake qt:5
 USE_QT=		core declarative declarative-test gui network quickcontrols \
-		svg testlib widgets buildtools_build
+		svg testlib widgets buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

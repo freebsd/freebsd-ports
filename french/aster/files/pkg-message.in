@@ -4,8 +4,8 @@
 To run Code_Aster through ASTK, type:
 %%tools_dir%%/astk
 
-On i386 or amd64 platforms, we suggest you install the ports french/gibi
-and french/homard, two additional meshing tools.
+On i386 or amd64 platforms, we suggest you install the port french/homard,
+an additional meshing tool.
 EOM
 }
 ]

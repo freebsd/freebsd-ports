@@ -1,6 +1,5 @@
 PORTNAME=	wallutils
-DISTVERSION=	5.11.1
-PORTREVISION=	2
+DISTVERSION=	5.12.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,16 +20,18 @@ GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xml
 		anthonynsimon:bild:v0.13.0:anthonynsimon_bild/vendor/github.com/anthonynsimon/bild \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
+		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:image:41969df76e82:golang_image/vendor/golang.org/x/image \
+		golang:image:e7cb96979f69:golang_image/vendor/golang.org/x/image \
 		golang:net:58aab5ef257a:golang_net/vendor/golang.org/x/net \
-		golang:sys:05e143d24a9e:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:aba9fc2a8ff2:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		mattn:go-colorable:v0.1.12:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		stretchr:powerwalk:bceb9d014549:stretchr_powerwalk/vendor/github.com/stretchr/powerwalk \
+		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
 		xyproto:env:v1.7.0:xyproto_env/vendor/github.com/xyproto/env \
 		xyproto:heic:v1.0.0:xyproto_heic/vendor/github.com/xyproto/heic
@@ -45,6 +46,7 @@ GO_TARGET=	./cmd/getdpi \
 		./cmd/settimed \
 		./cmd/setwallpaper \
 		./cmd/timedinfo \
+		./cmd/vram \
 		./cmd/wayinfo \
 		./cmd/xinfo \
 		./cmd/xml2stw \

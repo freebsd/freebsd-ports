@@ -22,7 +22,7 @@ GH_ACCOUNT=	olive-editor
 DOS2UNIX_FILES=	olive.pro \
 		ui/graphview.cpp \
 		ui/timelineheader.cpp
-USE_QT=		core gui multimedia network opengl svg widgets buildtools_build linguisttools_build
+USE_QT=		core gui multimedia network opengl svg widgets buildtools:build linguisttools:build
 USE_GL=		gl
 
 DATADIR=	${PREFIX}/share/olive-editor

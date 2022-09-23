@@ -1,6 +1,6 @@
 PORTNAME=	pinentry
-PORTVERSION=	1.2.0
-PORTREVISION?=	1
+PORTVERSION=	1.2.1
+PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=--disable-pinentry-gnome3
 
 .if ${PINENTRY_GUI} == "qt5"
 USES+=		compiler:c++11-lib qt:5
-USE_QT=		core gui widgets buildtools_build
+USE_QT=		core gui widgets buildtools:build
 PLIST_FILES=	bin/pinentry-qt5
 CONFIGURE_ARGS+=--enable-pinentry-qt5 \
 		--program-suffix=5

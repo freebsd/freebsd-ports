@@ -1,7 +1,7 @@
 PORTNAME=	libadwaita
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-toolkits
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Building blocks for modern GNOME applications
@@ -14,14 +14,8 @@ BUILD_DEPENDS=	sassc:textproc/sassc
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		gettext gnome meson ninja pkgconfig vala:build
-USE_GITLAB=	yes
+USES=		gettext gnome meson ninja pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	GNOME
-GL_COMMIT=	0e57660217829b3f905f20e1c53aaf42c2302882
-
-PORTSCOUT=	limit:1,even
 
 OPTIONS_DEFINE=	DOCS
 

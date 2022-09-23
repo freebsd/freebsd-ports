@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/sparklemotion/sqlite3-ruby
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		gem

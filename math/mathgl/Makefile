@@ -55,7 +55,7 @@ MPI_CMAKE_BOOL=		enable-mpi
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
 QT5_CMAKE_BOOL=		enable-qt5
-QT5_USE=		QT=core,gui,opengl,printsupport,widgets,buildtools_build,qmake_build
+QT5_USE=		QT=core,gui,opengl,printsupport,widgets,buildtools:build,qmake:build
 QT5_USES=		desktop-file-utils qt:5 shared-mime-info
 
 FLTK_CMAKE_BOOL=	enable-fltk

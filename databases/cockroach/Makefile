@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS_REASON=	64-bit system is strongly recommended
 
 BUILD_DEPENDS=	autoconf:devel/autoconf \
 		bash:shells/bash \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 
 USES=		gmake go libedit
 

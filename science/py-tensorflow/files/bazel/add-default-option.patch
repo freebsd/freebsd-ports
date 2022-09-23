@@ -1,0 +1,37 @@
+--- a/build_defs.bzl    2022-08-28 12:18:33.375130000 +0100
++++ b/build_defs.bzl	2022-08-28 12:21:40.701070000 +0100
+@@ -173,7 +173,7 @@
+             ":emscripten_wasm": wasm_srcs,
+             ":emscripten_wasmsimd": wasmsimd_srcs,
+             ":emscripten_wasmrelaxedsimd": wasmrelaxedsimd_srcs,
+-            "//conditions:default": [],
++            "//conditions:default": x86_srcs,
+         }),
+         copts = [
+             "-Iinclude",
+@@ -210,7 +210,7 @@
+             ":emscripten_wasm": wasm_copts,
+             ":emscripten_wasmsimd": wasmsimd_copts,
+             ":emscripten_wasmrelaxedsimd": wasmrelaxedsimd_copts,
+-            "//conditions:default": [],
++            "//conditions:default": [opt for opt in gcc_x86_copts],
+         }) + select({
+             ":windows_x86_64_clang": ["/clang:" + opt for opt in gcc_copts],
+             ":windows_x86_64_mingw": gcc_copts,
+@@ -233,7 +233,7 @@
+             ":linux_armv7a": ["-lpthread"],
+             ":linux_arm64": ["-lpthread"],
+             ":android": ["-lm"],
+-            "//conditions:default": [],
++            "//conditions:default": ["-lpthread"],
+         }),
+         textual_hdrs = hdrs,
+         visibility = visibility,
+@@ -304,6 +304,7 @@
+             ":emscripten_wasm": wasm_deps,
+             ":emscripten_wasmsimd": wasmsimd_deps,
+             ":emscripten_wasmrelaxedsimd": wasmrelaxedsimd_deps,
++            "//conditions:default": x86_deps,
+         }),
+     )
+ 

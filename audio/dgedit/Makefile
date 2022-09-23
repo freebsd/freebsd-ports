@@ -14,7 +14,7 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libsndfile.so:audio/libsndfile
 
 USES=		autoreconf compiler:c++14-lang gmake libtool localbase pkgconfig qt:5
-USE_QT=		buildtools_build core gui linguisttools_build widgets xml
+USE_QT=		buildtools:build core gui linguisttools:build widgets xml
 
 GNU_CONFIGURE=	yes
 

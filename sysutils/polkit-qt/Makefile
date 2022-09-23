@@ -13,7 +13,7 @@ LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
 USES=		cmake compiler:c++11-lang gnome pkgconfig qt:5 tar:xz
 USE_GNOME=	glib20
-USE_QT=		core dbus gui widgets buildtools_build qmake_build
+USE_QT=		core dbus gui widgets buildtools:build qmake:build
 CMAKE_OFF=	BUILD_EXAMPLES  \
 		BUILD_TEST
 

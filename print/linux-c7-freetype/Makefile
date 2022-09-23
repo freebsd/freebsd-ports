@@ -6,6 +6,7 @@ CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Font rendering engine (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freetype.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

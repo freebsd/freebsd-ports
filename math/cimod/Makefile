@@ -1,6 +1,6 @@
 PORTNAME=	cimod
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.36
+DISTVERSION=	1.4.37
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
+TEST_DEPENDS=	git:devel/git # to clone googletest
 
 USES=		cmake:testing compiler:c++17-lang eigen:3,build,run
 

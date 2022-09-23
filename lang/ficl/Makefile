@@ -11,8 +11,8 @@ WWW=		http://ficl.sourceforge.net/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${PATCHDIR}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	this port is not tested on anything other than i386 and amd64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64le powerpc64 powerpc
+ONLY_FOR_ARCHS_REASON=	this port is not tested on anything other than i386, amd64, powerpc, powerpc64 and powerpc64le
 
 USE_LDCONFIG=	YES
 

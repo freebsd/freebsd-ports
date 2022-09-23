@@ -15,7 +15,7 @@ WWW=		https://github.com/wazuh/wazuh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake-core
 
 USES=		cpe gmake perl5 readline shebangfix sqlite:3 uidfix
 

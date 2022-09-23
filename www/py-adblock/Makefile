@@ -100,6 +100,11 @@ CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
+CONFLICTS_INSTALL=	py3[0-9]-adblock py3[0-9][0-9]-adblock # lib/libadblock.so
+
+# Required since maturin >= 0.13.0
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
 .include <bsd.port.options.mk>
 
 # This is to prevent Mk/Uses/python.mk do-configure target from firing.
@@ -108,7 +113,7 @@ do-configure:
 do-build:
 	@(cd ${BUILD_WRKSRC} ; \
 		PSL_PATH="${PREFIX}/share/public_suffix_list/public_suffix_list.dat" \
-		${SETENV} ${MAKE_ENV} maturin build --release ${WITH_DEBUG:D:U--strip})
+		${SETENV} ${MAKE_ENV} maturin-${PYTHON_VER} build --release ${WITH_DEBUG:D:U--strip})
 
 # Due to upstream not supplying a setup.py file or other way to install
 # using pip command for now...
@@ -120,7 +125,7 @@ do-install:
 	@(cd ${INSTALL_WRKSRC} ; \
 		${INSTALL_DATA} "target/release/libadblock.so" \
 		"${STAGEDIR}/${PREFIX}/lib" ; \
-		${SETENV} ${MAKE_ENV} pip install --isolated --root=${STAGEDIR} \
+		${SETENV} ${MAKE_ENV} pip-${PYTHON_VER} install --isolated --root=${STAGEDIR} \
 		--ignore-installed --no-deps target/wheels/*.whl)
 
 post-install:

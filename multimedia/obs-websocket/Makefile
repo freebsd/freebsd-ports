@@ -13,7 +13,7 @@ BUILD_DEPENDS=	websocketpp>0:devel/websocketpp
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 
 USES=		cmake:insource compiler:c++17-lang localbase:ldflags qt:5 # insource because of https://github.com/obsproject/obs-websocket/issues/973
-USE_QT=		core gui widgets buildtools_build concurrent_build qmake_build
+USE_QT=		core gui widgets buildtools:build concurrent:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	obsproject

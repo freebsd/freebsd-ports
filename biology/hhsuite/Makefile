@@ -11,6 +11,8 @@ WWW=		https://github.com/soedinglab/hh-suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: no member named 'neon_f64' in 'simde__m128d_private', see https://github.com/soedinglab/hh-suite/issues/322
+
 LIB_DEPENDS=	libmpi.so:net/openmpi
 
 USES=		compiler:c++11-lang cmake perl5 python shebangfix

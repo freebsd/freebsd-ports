@@ -5,14 +5,13 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 runtime and library to organize work in separate activities
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kactivities/html/index.html
 
 BUILD_DEPENDS=	boost-libs>1.53:devel/boost-libs
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pathfix qt:5 tar:xz
 USE_KDE=	config coreaddons service \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network sql \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

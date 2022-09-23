@@ -24,9 +24,9 @@ USE_GL=		gl
 USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 \
 		svg widgets xml \
-		buildtools_build linguist_build qmake_build
+		buildtools:build linguist:build qmake:build
 USE_KDE=	config coreaddons dbusaddons i18n itemmodels kirigami2 notifications \
 		qqc2-desktop-style \
-		ecm_build
+		ecm:build
 
 .include <bsd.port.mk>

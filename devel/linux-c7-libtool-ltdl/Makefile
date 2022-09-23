@@ -6,6 +6,7 @@ SRC_DISTFILES=	${DISTNAME:S/-ltdl//}${SRC_SUFX}:SOURCE
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for GNU libtool (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.gnu.org/software/libtool/
 
 LICENSE=	LGPL21+
 

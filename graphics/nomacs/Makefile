@@ -22,7 +22,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils \
 		dos2unix pkgconfig qt:5
 USE_QT=		concurrent core gui network printsupport svg widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 DOS2UNIX_FILES=	ImageLounge/plugins/PaintPlugin/src/DkPaintPlugin.cpp \
 		ImageLounge/src/DkGui/DkWidgets.cpp
 

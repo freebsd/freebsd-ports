@@ -1,9 +1,11 @@
 PORTNAME=	grantlee-editor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Editor for Grantlee themes
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
@@ -19,13 +21,13 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons crash dbusaddons i18n itemmodels jobwidgets \
 		kio newstuff service solid syntaxhighlighting texteditor \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts grantleetheme \
 		libkleo messagelib mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

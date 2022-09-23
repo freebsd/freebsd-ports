@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lib
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer) (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.cyrusimap.org/sasl/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

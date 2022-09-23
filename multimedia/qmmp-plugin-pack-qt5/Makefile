@@ -20,7 +20,7 @@ PORTSCOUT=	limit:^1\..*
 
 USES=		cmake pkgconfig qt:5 tar:bzip2
 USE_QT=		core gui widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes

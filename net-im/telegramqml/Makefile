@@ -18,7 +18,7 @@ GH_ACCOUNT=	Aseman-Land
 GH_PROJECT=	TelegramQML
 
 USES=		compiler:c++11-lang qmake:outsource qt:5 ssl
-USE_QT=		qmake_build buildtools_build core declarative sql xml multimedia
+USE_QT=		qmake:build buildtools:build core declarative sql xml multimedia
 USE_LDCONFIG=	yes
 QMAKE_ARGS=	BUILD_MODE+=lib \
 		LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae"

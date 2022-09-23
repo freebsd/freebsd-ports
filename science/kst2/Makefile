@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig \
 		qt:5 shared-mime-info
 USE_QT=		concurrent core gui network printsupport svg widgets xml \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_LDCONFIG=	yes
 
 KST_VERSION=	2.0.8

@@ -12,7 +12,7 @@ WWW=		https://www.sweethome3d.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
-BUILD_DEPENDS=	cmake:devel/cmake java3d>=0:java/java3d
+BUILD_DEPENDS=	cmake:devel/cmake-core java3d>=0:java/java3d
 RUN_DEPENDS=	java3d>=0:java/java3d
 
 USE_ANT=	yes

@@ -5,7 +5,7 @@ MASTER_SITES=
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
-WWW=		http://pinfo.alioth.debian.org/
+WWW=		https://github.com/baszoetekouw/pinfo
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

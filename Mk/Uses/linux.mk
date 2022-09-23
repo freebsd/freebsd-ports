@@ -65,6 +65,7 @@ _linux_c7_dosfstools=			linux-c7-dosfstools>0:sysutils/linux-c7-dosfstools
 _linux_${linux_ARGS}_dri=		linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 _linux_${linux_ARGS}_elfutils-libelf=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
 _linux_c7_elfutils-libs=		linux-c7-elfutils-libs>0:devel/linux-c7-elfutils-libs
+_linux_c7_expat-devel=			linux-c7-expat-devel>0:textproc/linux-c7-expat-devel
 _linux_${linux_ARGS}_expat=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
 _linux_c7_flac=				linux-c7-flac-libs>0:audio/linux-c7-flac
 _linux_${linux_ARGS}_fontconfig=	linux-${linux_ARGS}-fontconfig>0:x11-fonts/linux-${linux_ARGS}-fontconfig
@@ -114,6 +115,7 @@ _linux_c7_numactl-libs=			linux-c7-numactl-libs>0:sysutils/linux-c7-numactl-libs
 _linux_${linux_ARGS}_openal-soft=	linux-${linux_ARGS}-openal-soft>0:audio/linux-${linux_ARGS}-openal-soft
 _linux_${linux_ARGS}_openldap=		linux-${linux_ARGS}-openldap>0:net/linux-${linux_ARGS}-openldap
 _linux_c7_openmotif=			linux-c7-motif>0:x11-toolkits/linux-c7-openmotif
+_linux_c7_openssl-devel=		linux-c7-openssl-devel>0:security/linux-c7-openssl-devel
 _linux_c7_openssl=			${_linux_c7_base}
 _linux_c7_p11-kit=			linux-c7-p11-kit>0:security/linux-c7-p11-kit
 _linux_${linux_ARGS}_pango=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
@@ -138,6 +140,7 @@ _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils
 _linux_c7_wayland=			linux-c7-wayland>0:graphics/linux-c7-wayland
 _linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
 _linux_c7_xorglibs=			linux-c7-xorg-libs>=7.7_7:x11/linux-c7-xorg-libs
+_linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel
 
 USE_LINUX?=		base
 .  for i in ${USE_LINUX}

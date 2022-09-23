@@ -16,10 +16,10 @@ LIB_DEPENDS=	libkColorPicker.so:graphics/kcolorpicker \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 xorg
 USE_GITHUB=	yes
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		concurrent core dbus gui network printsupport svg testlib \
 		widgets x11extras xml \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_XORG=	x11 xcb
 
 PORTSCOUT=	limit:^[0-9]

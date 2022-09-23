@@ -1,7 +1,7 @@
 PORTNAME=	engauge-digitizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.2.2
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	graphics math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5 # pkgconfig is for https://github.com/markummitchell/engauge-digitizer/issues/423
 USE_GITHUB=	yes
 GH_ACCOUNT=	markummitchell
-USE_QT=		core gui printsupport sql xml widgets buildtools_build
+USE_QT=		core gui printsupport sql xml widgets buildtools:build
 USE_GL=		gl
 CONFIGURE_ENV=	OPENJPEG_INCLUDE=${PREFIX}/include/openjpeg-2.4 OPENJPEG_LIB=${PREFIX}/lib \
 		POPPLER_INCLUDE=${PREFIX}/include/poppler/qt5 POPPLER_LIB=${PREFIX}/lib
@@ -30,7 +30,7 @@ CXXFLAGS+=	`pkg-config --cflags libopenjp2` # workaround for https://github.com/
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 
-DOCS_USE=	QT=help,linguist_build
+DOCS_USE=	QT=help,linguist:build
 
 do-patch-NLS-on:
 	@${REINPLACE_CMD} -e 's|QCoreApplication::applicationDirPath () + "/translations",|"${DATADIR}/translations",|' ${WRKSRC}/src/Translator/TranslatorContainer.cpp

@@ -36,8 +36,7 @@ lib/kitty/kittens/mouse_demo/__init__.py
 lib/kitty/kittens/mouse_demo/main.py
 lib/kitty/kittens/panel/__init__.py
 lib/kitty/kittens/panel/main.py
-lib/kitty/kittens/prewarm/__init__.py
-lib/kitty/kittens/prewarm/main.py
+lib/kitty/kitty/prewarm.py
 lib/kitty/kittens/query_terminal/__init__.py
 lib/kitty/kittens/query_terminal/main.py
 lib/kitty/kittens/remote_file/__init__.py

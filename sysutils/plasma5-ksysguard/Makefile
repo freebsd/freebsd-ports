@@ -16,9 +16,9 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons emoticons i18n iconthemes init itemmodels itemviews \
 		jobwidgets kio libksysguard newstuff notifications service \
 		solid widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=		INOTIFY

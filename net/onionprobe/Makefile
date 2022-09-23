@@ -24,6 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${P
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	packages/*.py \
 		packages/onionprobe/*.py
 

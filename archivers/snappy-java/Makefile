@@ -20,7 +20,7 @@ LICENSE=	APACHE20
 BROKEN_armv6=		fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
 BROKEN_armv7=		fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		sbt:devel/sbt
 
 USES=		gmake

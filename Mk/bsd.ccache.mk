@@ -11,6 +11,7 @@
 #                       default.
 #
 # Port use (users should not modify these):
+#  - CCACHE_ENABLED - tells the port if ccache is enabled.
 #  - CCACHE_BIN - path to the ccache binary.  Intended to be prefixed before CC.
 #  - CCACHE_WRAPPER_PATH - path to directory containing compiler symlinks back
 #                          to ccache.  For example, gcc5 -> ccache.  Intended
@@ -42,11 +43,18 @@ _CCACHEMKINCLUDED=	yes
 NO_CCACHE=	t
 .  endif
 
+.  if defined(WITH_CCACHE_BUILD)
+CCACHE_ENABLED= yes
+.  else
+CCACHE_ENABLED= no
+.  endif
+
 # HOME is always set to ${WRKDIR} now. Try to use /root/.ccache as default.
 .  if defined(WITH_CCACHE_BUILD) && !defined(CCACHE_DIR)
 .    if defined(USER) && ${USER} == root
 CCACHE_DIR=	/root/.ccache
 .    else
+CCACHE_ENABLED=	no
 NO_CCACHE=	yes
 WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
 .    endif

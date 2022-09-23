@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lang desktop-file-utils gl gmake qmake qt:5 tar:tgz
 USE_GL=		gl
 USE_QT=		concurrent core gui multimedia network opengl printsupport svg \
-		widgets xml buildtools_build linguisttools_build speech
+		widgets xml buildtools:build linguisttools:build speech
 
 PLIST_FILES=	bin/chessx \
 		share/applications/chessx.desktop \

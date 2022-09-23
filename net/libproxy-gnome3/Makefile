@@ -3,7 +3,6 @@ CATEGORIES=	net devel
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	GSettings-based configuration plug-in for libproxy
-WWW=		https://libproxy.github.io/libproxy/
 
 USES=		gnome
 USE_GNOME=	glib20

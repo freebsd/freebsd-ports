@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	kf5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 frameworks meta port
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/
+WWW=		https://api.kde.org/frameworks/index.html
 
 USES=		metaport kde:5 qt:5
 # remove bluez-qt as we do not have bluez

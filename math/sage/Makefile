@@ -22,7 +22,7 @@ BROKEN=		hoping to fix it with Python-3.9
 
 BUILD_DEPENDS=	bash:shells/bash		\
 		dash:shells/dash		\
-		cmake:devel/cmake		\
+		cmake:devel/cmake-core		\
 		dreadnaut:math/nauty		\
 		${PYTHON_PKGNAMEPREFIX}alabaster>0:textproc/py-alabaster@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR}\

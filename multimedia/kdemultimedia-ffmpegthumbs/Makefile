@@ -16,7 +16,7 @@ USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	completion config coreaddons i18n jobwidgets kio service solid \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

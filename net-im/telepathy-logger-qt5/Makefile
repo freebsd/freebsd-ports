@@ -23,7 +23,7 @@ USES=		bison:build cmake compiler:c++11-lang gnome kde:5 \
 		pkgconfig python:3.5+,build qt:5 tar:xz
 USE_GNOME=	glib20 libxml2
 USE_KDE=	ecm
-USE_QT=		core buildtools_build dbus network qmake_build xml
+USE_QT=		core buildtools:build dbus network qmake:build xml
 CMAKE_ARGS=	-DUSE_COMMON_CMAKE_PACKAGE_CONFIG_DIR:BOOL=True
 USE_LDCONFIG=	yes
 

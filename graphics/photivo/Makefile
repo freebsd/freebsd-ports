@@ -23,7 +23,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
 		gettext-runtime gnome jpeg pkgconfig qt:5 zip
 USE_GNOME=	glib20
-USE_QT=		qmake_build buildtools_build core gui network widgets
+USE_QT=		qmake:build buildtools:build core gui network widgets
 DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileMgrWindow.h \
 		Sources/ptImageHelper.h Sources/ptMainWindow.h Sources/ptImageHelper.cpp
 

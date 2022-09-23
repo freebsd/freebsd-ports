@@ -21,7 +21,7 @@ LXQTAUTOSTART_DESC=		Create autostart entry for LXQt
 LXQTAUTOSTART_BUILD_DEPENDS=	${LOCALBASE}/share/cmake/lxqt-build-tools/lxqt-build-tools-config.cmake:devel/lxqt-build-tools
 LXQTAUTOSTART_CMAKE_BOOL=	ENABLE_LXQT_AUTOSTART
 
-USE_QT=		buildtools_build qmake_build core gui linguisttools \
+USE_QT=		buildtools:build qmake:build core gui linguisttools \
 		network widgets
 
 USE_XORG=	x11

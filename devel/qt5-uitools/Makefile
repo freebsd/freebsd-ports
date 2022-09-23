@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Designer UI forms support module
 
 USES=		compiler:c++11-lang qmake qt-dist:5,tools
-USE_QT=		core gui uiplugin widgets buildtools_build
+USE_QT=		core gui uiplugin widgets buildtools:build
 
 BUILD_WRKSRC=	${WRKSRC}/src/designer/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/designer/src/${PORTNAME}

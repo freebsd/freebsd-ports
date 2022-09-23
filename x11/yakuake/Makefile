@@ -16,9 +16,9 @@ USE_KDE=	attica auth archive codecs completion config configwidgets \
 		jobwidgets kio newstuff notifications notifyconfig parts \
 		service solid sonnet textwidgets wayland widgetsaddons windowsystem \
 		xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

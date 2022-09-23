@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:noninja compiler:c++14-lang desktop-file-utils qt:5
 USE_QT=		core gui network widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		cpeditor:QCodeEditor:dbf8b26:cpeditor_QCodeEditor/third_party/QCodeEditor \

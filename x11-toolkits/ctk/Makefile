@@ -15,7 +15,7 @@ USES=		cmake compiler:c++11-lib qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	commontk
 USE_QT=		concurrent core designer gui opengl sql widgets xml xmlpatterns \
-		buildtools_build uitools_build qmake_build testlib_build # see CMake/ctkMacroSetupQt.cmake
+		buildtools:build uitools:build qmake:build testlib:build # see CMake/ctkMacroSetupQt.cmake
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCTK_QT_VERSION=5

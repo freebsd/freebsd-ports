@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for accessing D-BUS (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freedesktop.org/Software/dbus
 
 LICENSE=	GPLv2+
 

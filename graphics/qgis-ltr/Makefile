@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.22.10
-PORTREVISION=	2
+DISTVERSION=	3.22.11
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -101,16 +100,16 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python:3.7+ qca qt:5 \
+		fortran gl gmake gnome pgsql pyqt:5 python:3.8+ qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYQT=	pyqt5 qscintilla2 pysip sip
-USE_QT=		3d buildtools_build core concurrent dbus declarative \
-		designer_build qdoc_build gamepad gui linguist_build location \
-		network printsupport qmake_build script serialport \
-		sql sql-pgsql sql-sqlite3 svg uitools_build \
+USE_QT=		3d buildtools:build core concurrent dbus declarative \
+		designer:build qdoc:build gamepad gui linguist:build location \
+		network printsupport qmake:build script serialport \
+		sql sql-pgsql sql-sqlite3 svg uitools:build \
 		webengine webkit widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py

@@ -76,6 +76,8 @@
     SUBDIR += libhandy
     SUBDIR += libhandy0
     SUBDIR += libsexy
+    SUBDIR += libshumate
+    SUBDIR += libshumate-shortwave
     SUBDIR += libunique3
     SUBDIR += libwnck
     SUBDIR += libwnck3

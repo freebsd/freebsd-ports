@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 USES=		compiler:c++11-lang qmake qt:5
-USE_QT=		core gui qmake_build buildtools_build
+USE_QT=		core gui qmake:build buildtools:build
 
 GH_ACCOUNT=	gamecreature
 GH_PROJECT=	QtAwesome

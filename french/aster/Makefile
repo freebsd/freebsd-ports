@@ -1,6 +1,6 @@
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -34,7 +34,7 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 #		pylupdate5:textproc/py-qt5-xml
-LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
+LIB_DEPENDS+=	libhdf5-110.so:science/hdf5-110			\
 		libscotch.so:cad/scotch				\
 		libmetis.so:math/metis				\
 		libmed.so:french/med				\
@@ -47,11 +47,12 @@ RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 
 USES=		bison blaslapack:openblas fortran gettext python:3.6+ qt:5 tk
 USE_BINUTILS=	yes
-USE_QT=		linguisttools_build
+USE_QT=		linguisttools:build
 
 #CONFLICTS_BUILD=${PYTHON_PKGNAMEPREFIX}cysignals-1.*
 
 HAS_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include/hdf5-110
 MAKE_ENV=	INCLUDES="${LOCALBASE}/include"	\
 		INCLUDEDIR="${LOCALBASE}/include"	\
 		LD_PRELOAD="${LOCALBASE}/lib/gcc${_GCC_VER}/libgcc_s.so.1"	\
@@ -255,7 +256,7 @@ pre-configure:
 	${ECHO_CMD} "HOME_GMSH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_GIBI = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_HOMARD = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "INCLUDEDIR = ['${LOCALBASE}/include', '${LOCALBASE}/include/metis', ]"\
+	${ECHO_CMD} "INCLUDEDIR = ['${LOCALBASE}/include/hdf5-110', '${LOCALBASE}/include', '${LOCALBASE}/include/metis', ]"\
 			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_MFRONT = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg

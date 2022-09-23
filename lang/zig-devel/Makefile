@@ -1,5 +1,6 @@
 PORTNAME=	zig
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -31,6 +32,8 @@ STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM runtime dependency
 STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 STATIC_CMAKE_BOOL=	CMAKE_SKIP_INSTALL_RPATH ZIG_STATIC
 STATIC_LDFLAGS=		-llzma -lm -lmd -lxml2 -lz
+
+CMAKE_ON=	THREADS_PREFER_PTHREAD_FLAG
 
 _LLVM_VER=	13
 _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig

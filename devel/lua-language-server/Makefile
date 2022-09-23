@@ -1,5 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.5.5
+DISTVERSION=	3.5.6
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -11,17 +11,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		lua:build ninja:make
+USES=		dos2unix lua:build ninja:make
 USE_GITHUB=	yes
 GH_ACCOUNT=	sumneko
-GH_TUPLE=	actboy168:bee.lua:301ad60:bee/3rd/bee.lua \
-		actboy168:luamake:db9d087:luamake/3rd/luamake \
-		cppcxy:EmmyLuaCodeStyle:f389817:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
-		bjornbytes:lovr-docs:a6fc516:lovr/3rd/lovr-api \
+GH_TUPLE=	actboy168:bee.lua:a749943:bee/3rd/bee.lua \
+		actboy168:bee.lua:680acbd:bee_luamake/3rd/luamake/3rd/bee.lua \
+		actboy168:luamake:637d163:luamake/3rd/luamake \
+		cppcxy:EmmyLuaCodeStyle:3fefe6e:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
+		bjornbytes:lovr-docs:8df44c6:lovr/3rd/lovr-api \
 		love2d-community:love-api:69e7e01:love/3rd/love-api \
 		sqmedeiros:lpeglabel:b5d7638:lpeglabel/3rd/lpeglabel
 
 BINARY_ALIAS=	gcc=${CC}
+DOS2UNIX_FILES=	3rd/bee.lua/bee/thread/spinlock.h \
+		3rd/luamake/3rd/bee.lua/bee/thread/spinlock.h
 SUB_FILES=	lua-language-server
 PLIST_FILES=	bin/lua-language-server \
 		${DATADIR_REL}/bin/lua-language-server \
@@ -30,8 +33,8 @@ PLIST_FILES=	bin/lua-language-server \
 		${DATADIR_REL}/main.lua
 PORTDATA=	locale meta script
 
-post-extract:
-	${CP} -rp ${WRKSRC}/3rd/bee.lua ${WRKSRC}/3rd/luamake/3rd
+# post-extract:
+# 	${CP} -rp ${WRKSRC}/3rd/bee.lua ${WRKSRC}/3rd/luamake/3rd
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; s|%%LOCALBASE%%|${LOCALBASE}|' \

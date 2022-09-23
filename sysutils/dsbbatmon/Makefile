@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++11-lang gl qmake qt:5 tar:tgz
 
 USE_GL=		gl
-USE_QT=		buildtools_build core gui linguisttools_build widgets
+USE_QT=		buildtools:build core gui linguisttools:build widgets
 
 .include <bsd.port.mk>

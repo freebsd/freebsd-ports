@@ -1,5 +1,5 @@
 PORTNAME=	eksanos
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -9,12 +9,12 @@ WWW=		https://github.com/eksanos/eksanos
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgranite.so:x11-toolkits/granite \
+LIB_DEPENDS=	libgranite-7.so:x11-toolkits/granite7 \
 		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		gnome meson pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk40 libadwaita
 
 .include <bsd.port.mk>

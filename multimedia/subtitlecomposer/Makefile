@@ -20,8 +20,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons jobwidgets i18n itemviews kio kross \
 		parts service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
-		doctools_build ecm_build
-USE_QT=		buildtools_build qmake_build testlib_build \
+		doctools:build ecm:build
+USE_QT=		buildtools:build qmake:build testlib:build \
 		concurrent core dbus gui network script widgets xml
 USE_XORG=	x11
 

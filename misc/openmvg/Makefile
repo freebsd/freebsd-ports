@@ -55,7 +55,7 @@ GH_ACCOUNT=	openMVG
 GH_PROJECT=	openMVG
 GH_TUPLE=	openMVG-thirdparty:cereal:ac168fe:cereal/dependencies/cereal
 WRKSRC_SUBDIR=	src
-USE_QT=		core gui opengl svg widgets buildtools_build qmake_build
+USE_QT=		core gui opengl svg widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DEIGEN_INCLUDE_DIR_HINTS=${LOCALBASE}/include/eigen3 \

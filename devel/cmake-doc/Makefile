@@ -1,5 +1,5 @@
 PORTNAME=	cmake
-DISTVERSION=	3.23.3
+DISTVERSION=	3.24.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-doc
@@ -17,7 +17,7 @@ DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
 
 NO_ARCH=	yes
 USES=		cmake qt:5
-USE_QT=		help_build
+USE_QT=		help:build
 USE_LOCALE=	en_US.UTF-8
 
 CMAKE_OFF=	SPHINX_MAN

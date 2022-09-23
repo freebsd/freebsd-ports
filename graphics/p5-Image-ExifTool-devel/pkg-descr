@@ -1,15 +1,10 @@
-ExifTool is a highly customizable Perl script and module for reading and
-writing meta information in images.
+ExifTool is a highly customizable Perl script and module for reading,
+writing and editing meta information in a wide variety of files.
 
-ExifTool reads EXIF, GPS, IPTC, XMP, GeoTIFF, ICC Profile and Photoshop
-IRB and ID3 meta information from JPG, JP2, TIFF, GIF, BMP, PICT, QTIF,
-PNG, MNG, JNG, MIFF, PPM, PGM, PBM, XMP, EPS, PS, AI, PDF, PSD, DCM,
-ACR, THM, CRW, CR2, MRW, NEF, PEF, ORF, RAF, RAW, SRF, MOS, X3F and DNG
-images, MP3 and WAV audio files, and AVI, MOV and MP4 videos.  ExifTool
-also extracts information from the maker notes of many digital cameras
-by various manufacturers including Canon, Casio, FujiFilm, JVC/Victor,
-Kodak, Leaf, Minolta/Konica-Minolta, Nikon, Olympus/Epson,
-Panasonic/Leica, Pentax/Asahi, Ricoh, Sanyo and Sigma/Foveon.
-
-ExifTool writes EXIF, GPS, IPTC, XMP and MakerNotes meta information to
-JPEG, TIFF, GIF, CRW, THM, CR2, NEF, PEF and DNG images.
+ExifTool supports many different metadata formats including EXIF, GPS, IPTC,
+XMP, JFIF, GeoTIFF, ICC Profile, Photoshop IRB, FlashPix, AFCP and ID3,
+Lyrics3, as well as the maker notes of many digital cameras by Canon, Casio,
+DJI, FLIR, FujiFilm, GE, GoPro, HP, JVC/Victor, Kodak, Leaf,
+Minolta/Konica-Minolta, Motorola, Nikon, Nintendo, Olympus/Epson,
+Panasonic/Leica, Pentax/Asahi, Phase One, Reconyx, Ricoh, Samsung, Sanyo,
+Sigma/Foveon and Sony.

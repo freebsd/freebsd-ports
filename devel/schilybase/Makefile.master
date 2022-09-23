@@ -1,10 +1,9 @@
-DISTVERSION=	2021-09-18
-PORTREVISION=	2
-MASTER_SITES=	SF/schilytools \
-		http://fuz.su/~fuz/distfiles/schilytools/
+DISTVERSION=	2022-09-18
+MASTER_SITES=	http://fuz.su/pub/schilytools/
 DISTNAME=	schily-${DISTVERSION}
 
 MAINTAINER=	fuz@fuz.su
+WWW?=		https://codeberg.org/schilytools/schilytools
 
 LICENSE=	CDDL ${COMPONENTS:@c@${LICENSE.${c}}@:O:u}
 LICENSE.autoconf=	GPLv2
@@ -13,6 +12,7 @@ LICENSE.man2html=	GPLv2
 LICENSE.mkisofs=	GPLv2
 LICENSE.libparanoia=	LGPL21
 LICENSE.cpp=		BSD3CLAUSE
+LICENSE.ctags=		BSD3CLAUSE
 LICENSE.libmdigest=	BSD2CLAUSE
 LICENSE.libfile=	BSD2CLAUSE
 LICENSE.patch=		BSD1CLAUSE
@@ -40,7 +40,7 @@ MAKE_ARGS=	INS_BASE=${PREFIX} \
 		INS_RBASE=${PREFIX} \
 		LINKMODE=dynamic \
 		DESTDIR=${STAGEDIR} \
-		STRIPFLAGS=${WITH_DEBUG:D:U-s} \
+		STRIPFLAGS=${STRIP} \
 		CCOM=${COMPILER_TYPE} \
 		CC=${CC} \
 		CCC=${CXX} \
@@ -53,6 +53,8 @@ PLIST_SUB+=	OPSYS=${OPSYS:tl} ARCH=${ARCH} COMPILER_TYPE=${COMPILER_TYPE}
 PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE?=	${.CURDIR}/pkg-message
 DESCR=		${.CURDIR}/pkg-descr
+
+TESTCOMPONENTS?=	${COMPONENTS}
 
 post-extract:
 	@cd ${WRKSRC}/rmt && ${MV} rmt.dfl srmt.dfl
@@ -81,9 +83,10 @@ do-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.* 
 .endif
 
+# the test suite gets moody if we set INS_BASE/INS_RBASE/DESTDIR
 do-test:
-.for component in ${COMPONENTS}
-	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} tests
+.for component in ${TESTCOMPONENTS}
+	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS:NINS_*BASE=*:NDESTDIR=*} tests
 .endfor
 
 .include <bsd.port.mk>

@@ -191,6 +191,7 @@
     SUBDIR += mongodb42-tools
     SUBDIR += mongodb44
     SUBDIR += mongodb50
+    SUBDIR += mongodb60
     SUBDIR += mroonga
     SUBDIR += mtop
     SUBDIR += mydumper
@@ -653,6 +654,7 @@
     SUBDIR += postgis30
     SUBDIR += postgis31
     SUBDIR += postgis32
+    SUBDIR += postgis33
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy

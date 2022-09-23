@@ -15,7 +15,7 @@ USES=		compiler:c++14-lang qmake qt:5 tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	anpp
 
-USE_QT=		core gui widgets buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui widgets buildtools:build linguisttools:build qmake:build
 
 WRKSRC_SUBDIR=	aCalc/aCalc
 

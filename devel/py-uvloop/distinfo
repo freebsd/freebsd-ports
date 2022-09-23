@@ -1,3 +1,3 @@
-TIMESTAMP = 1629088655
-SHA256 (uvloop-0.16.0.tar.gz) = f74bc20c7b67d1c27c72601c78cf95be99d5c2cdd4514502b4f3eb0933ff1228
-SIZE (uvloop-0.16.0.tar.gz) = 2129067
+TIMESTAMP = 1663765763
+SHA256 (uvloop-0.17.0.tar.gz) = 0ddf6baf9cf11a1a22c71487f39f15b2cf78eb5bde7e5b45fbb99e8a9d91b9e1
+SIZE (uvloop-0.17.0.tar.gz) = 2279973

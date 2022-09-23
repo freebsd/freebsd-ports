@@ -6,7 +6,6 @@ DISTNAME=	fetchmail-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Python-based GUI to configure fetchmail
-WWW=		https://www.fetchmail.info/
 
 LICENSE=	GPLv2+
 

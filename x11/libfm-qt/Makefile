@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 
 USES=	cmake compiler:c++14-lang gettext-runtime lxqt pkgconfig \
 	qt:5 gnome shared-mime-info tar:xz xorg
-USE_QT=	buildtools_build qmake_build core gui linguisttools widgets \
+USE_QT=	buildtools:build qmake:build core gui linguisttools widgets \
 	x11extras
 USE_GNOME=	glib20
 USE_XORG=	xcb

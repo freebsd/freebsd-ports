@@ -18,7 +18,7 @@ BROKEN_powerpc64=	fails to compile: _psutil_bsd.c: error: 'struct xtcpcb' has no
 
 BUILD_DEPENDS=	${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
 		zip:archivers/zip \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		libpng.so:graphics/png \

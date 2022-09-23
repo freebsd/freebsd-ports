@@ -5,7 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Multi Arcade Machine Emulator
-WWW=		https://mamedev.org/
+WWW?=		https://mamedev.org/
 
 LICENSE=	GPLv2
 
@@ -27,7 +27,7 @@ GH_ACCOUNT=	mamedev
 GH_PROJECT=	mame				# explicit (master port)
 GH_TAGNAME=	mame${PORTVERSION:S/.//}
 USE_GL=		gl
-USE_QT=		buildtools core gui qmake_build widgets
+USE_QT=		buildtools core gui qmake:build widgets
 USE_SDL=	sdl2 ttf2
 USE_XORG=	x11 xext xi xinerama xrender
 

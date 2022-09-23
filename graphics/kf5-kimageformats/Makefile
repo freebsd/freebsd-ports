@@ -5,15 +5,14 @@ CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library providing support for additional image formats
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kimageformats/html/index.html
 
 LIB_DEPENDS=	libImath.so:math/Imath
 
 USES=		cmake compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	archive \
-		ecm_build
+		ecm:build
 USE_QT=		core gui printsupport widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 

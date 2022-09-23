@@ -1,6 +1,6 @@
 PORTNAME=	scribus
 PORTVERSION=	1.5.8
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -39,8 +39,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils dos2unix gnome \
 		jpeg pkgconfig python:3.6+ qt:5 shared-mime-info tar:xz
-USE_QT=		buildtools_build core declarative gui linguisttools_build \
-		network opengl printsupport qmake_build widgets xml
+USE_QT=		buildtools:build core declarative gui linguisttools:build \
+		network opengl printsupport qmake:build widgets xml
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 USE_GNOME=	libxml2
 

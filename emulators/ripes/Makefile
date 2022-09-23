@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 USES=		cmake qmake qt:5
 
-USE_QT=		buildtools_build charts concurrent core gui svg testlib widgets
+USE_QT=		buildtools:build charts concurrent core gui svg testlib widgets
 
 CMAKE_INSTALL_PREFIX=   ${STAGEDIR}${PREFIX}
 

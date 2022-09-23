@@ -24,7 +24,7 @@ PLIST_SUB=	VER=${PORTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
 USE_KDE=	ecm
-USE_QT=		concurrent core dbus widgets buildtools_build qmake_build
+USE_QT=		concurrent core dbus widgets buildtools:build qmake:build
 USE_XORG=	x11 xcb
 USE_LDCONFIG=	yes
 

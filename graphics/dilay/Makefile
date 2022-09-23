@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	abau
 USE_CXXSTD=	c++14
 USE_GL=		gl
-USE_QT=		core gui opengl widgets xml buildtools_build
+USE_QT=		core gui opengl widgets xml buildtools:build
 
 MAKE_JOBS_UNSAFE=	yes  # Workaround for: https://github.com/abau/dilay/issues/19 parallel build fails (still a problem despite having been closed)
 

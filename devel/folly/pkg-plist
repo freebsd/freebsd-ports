@@ -595,6 +595,7 @@ include/folly/lang/Aligned.h
 include/folly/lang/Assume.h
 include/folly/lang/Badge.h
 include/folly/lang/Bits.h
+include/folly/lang/Builtin.h
 include/folly/lang/Byte.h
 include/folly/lang/CArray.h
 include/folly/lang/CString.h

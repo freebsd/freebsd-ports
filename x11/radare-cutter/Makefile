@@ -23,7 +23,7 @@ GH_PROJECT=	r2cutter
 GH_TUPLE=	radareorg:cutter-translations:8e1d24b:translations/translations
 
 USE_QT=		core declarative gui linguist location network printsupport svg \
-		webchannel widgets buildtools_build
+		webchannel widgets buildtools:build
 USE_GL=		gl
 
 WRKSRC_SUBDIR=	src

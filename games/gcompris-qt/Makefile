@@ -16,11 +16,11 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 LIB_DEPENDS=	libBox2D.so:x11-toolkits/qml-box2d
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
-USE_KDE=	doctools_build ecm_build
+USE_KDE=	doctools:build ecm:build
 USE_QT=		core declarative graphicaleffects gui multimedia network quickcontrols \
 		sensors svg widgets \
-		buildtools_build linguisttools_build qmake_build testlib_build \
-		imageformats_run
+		buildtools:build linguisttools:build qmake:build testlib:build \
+		imageformats:run
 
 CMAKE_ARGS=	-DQML_BOX2D_LIBRARY=${QT_QMLDIR}/Box2D.2.0
 

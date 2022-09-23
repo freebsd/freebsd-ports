@@ -13,7 +13,7 @@ USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	config coreaddons crash dbusaddons ecm i18n iconthemes \
 		notifications widgetsaddons windowsystem
 USE_QT=		core dbus gui widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

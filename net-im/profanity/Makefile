@@ -1,5 +1,5 @@
 PORTNAME=	profanity
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -10,8 +10,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
-LIB_DEPENDS=	libmesode.so:net-im/libmesode \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libotr.so:security/libotr \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libgpgme.so:security/gpgme \
@@ -19,7 +18,8 @@ LIB_DEPENDS=	libmesode.so:net-im/libmesode \
 		libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		libsignal-protocol-c.so:net/libsignal-protocol-c \
-		libstrophe.so:net-im/libstrophe
+		libstrophe.so:net-im/libstrophe \
+		libqrencode.so:graphics/libqrencode
 
 USES=		cpe ncurses pkgconfig ssl python:3.8+ readline autoreconf libtool gnome \
 		sqlite:3
@@ -30,9 +30,9 @@ GH_ACCOUNT=	profanity-im
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr --enable-python-plugins --enable-c-plugins \
-		--enable-pgp --enable-icons-and-clipboard=no \
-		--with-xscreensaver=no \
-		--enable-omemo
+		--enable-pgp --disable-icons-and-clipboard \
+		--without-xscreensaver --disable-gdk-pixbuf \
+		--enable-omemo --enable-omemo-qrcode
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
 INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	NOTIFY

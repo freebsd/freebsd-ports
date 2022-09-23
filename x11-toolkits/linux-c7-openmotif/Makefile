@@ -6,6 +6,7 @@ CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://motif.ics.com/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

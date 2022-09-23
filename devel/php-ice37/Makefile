@@ -3,7 +3,6 @@ PKGNAMEPREFIX=		${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=		grembo@FreeBSD.org
 COMMENT=		Ice (Internet Communications Engine) language mapping for PHP
-WWW=		http://www.zeroc.com/
 
 LICENSE=		GPLv2
 

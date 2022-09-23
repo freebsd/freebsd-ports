@@ -34,7 +34,7 @@ GUI_DESC=	Build configuration utility (requires Qt 5)
 GUI_LIB_DEPENDS=	libcurl.so:ftp/curl \
 			libdns_sd.so:net/avahi-libdns
 GUI_USES=		qt:5
-GUI_USE=		QT=core,gui,network,widgets,buildtools_build,qmake_build
+GUI_USE=		QT=core,gui,network,widgets,buildtools:build,qmake:build
 GUI_CMAKE_BOOL=		BARRIER_BUILD_GUI
 
 post-extract:

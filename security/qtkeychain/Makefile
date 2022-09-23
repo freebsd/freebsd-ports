@@ -21,7 +21,7 @@ _WITH_QT6_qt6=	ON
 CMAKE_ARGS=	-DBUILD_WITH_QT6=${_WITH_QT6_${FLAVOR}} \
 		-DQT_MKSPECDIR_REL=${QT_MKSPECDIR_REL}
 USE_GITHUB=	yes
-_USE_QT_qt5=	core dbus buildtools_build qmake_build
+_USE_QT_qt5=	core dbus buildtools:build qmake:build
 _USE_QT_qt6=	base
 USE_QT=		${_USE_QT_${FLAVOR}}
 GH_ACCOUNT=	frankosterfeld
@@ -37,8 +37,8 @@ LIBSECRET_DESC=		Enable libsecret backend
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	LIBSECRET_SUPPORT
 
-_QT_LINGUIST_qt5=	linguisttools_build
-_QT_LINGUIST_qt6=	tools_build
+_QT_LINGUIST_qt5=	linguisttools:build
+_QT_LINGUIST_qt6=	tools:build
 NLS_USE=		qt=${_QT_LINGUIST_${FLAVOR}}
 NLS_CMAKE_BOOL=		BUILD_TRANSLATIONS
 

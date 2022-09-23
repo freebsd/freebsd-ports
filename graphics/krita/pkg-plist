@@ -227,6 +227,8 @@ lib/libkritaresourcewidgets.so.%%SHLIB_VER%%
 lib/libkritastore.so
 lib/libkritastore.so.%%SHLIB_SHVER%%
 lib/libkritastore.so.%%SHLIB_VER%%
+lib/libkritatiffpsd.so.%%SHLIB_SHVER%%
+lib/libkritatiffpsd.so.%%SHLIB_VER%%
 lib/libkritaui.so
 lib/libkritaui.so.%%SHLIB_SHVER%%
 lib/libkritaui.so.%%SHLIB_VER%%
@@ -1062,6 +1064,7 @@ share/locale/id/LC_MESSAGES/krita.mo
 share/locale/is/LC_MESSAGES/krita.mo
 share/locale/it/LC_MESSAGES/krita.mo
 share/locale/ja/LC_MESSAGES/krita.mo
+share/locale/ka/LC_MESSAGES/krita.mo
 share/locale/kk/LC_MESSAGES/krita.mo
 share/locale/km/LC_MESSAGES/krita.mo
 share/locale/ko/LC_MESSAGES/krita.mo

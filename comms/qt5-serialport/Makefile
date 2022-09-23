@@ -8,6 +8,6 @@ COMMENT=	Qt functions to access serial ports
 
 USES=		compiler:c++11-lang libtool perl5 qmake qt-dist:5,serialport
 USE_PERL5=	extract
-USE_QT=		core buildtools_build
+USE_QT=		core buildtools:build
 
 .include <bsd.port.mk>

@@ -15,7 +15,6 @@ include/vulkan/vk_layer_extension_utils.h
 include/vulkan/vk_layer_logging.h
 include/vulkan/vk_layer_utils.cpp
 include/vulkan/vk_layer_utils.h
-include/vulkan/vk_loader_platform.h
 include/vulkan/vk_object_types.h
 include/vulkan/vk_safe_struct.cpp
 include/vulkan/vk_safe_struct.h

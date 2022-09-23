@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	85
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.tcl.tk/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

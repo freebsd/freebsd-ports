@@ -1,5 +1,5 @@
 PORTNAME=	future.apply
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,8 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/future.apply/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-future>=1.22.1:devel/R-cran-future \
-		R-cran-globals>=0.14.0:devel/R-cran-globals
+CRAN_DEPENDS=	R-cran-future>=1.27.0:devel/R-cran-future \
+		R-cran-globals>=0.16.1:devel/R-cran-globals
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 

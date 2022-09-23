@@ -14,7 +14,7 @@ USES=		compiler:c++11-lang gl qmake qt:5
 
 USE_GL=		gl
 USE_QT=		core gui multimedia network script testlib widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nzeemin

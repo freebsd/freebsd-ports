@@ -1,6 +1,6 @@
 PORTNAME=	sdl12-compat
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.2.52
+DISTVERSION=	1.2.56
 CATEGORIES=	devel wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,7 +23,7 @@ SUFFIX=		-${PORTNAME:C/.*-//}
 PLIST_FILES=	etc/libmap.d/${PORTNAME}.conf \
 		lib/libSDL-1.2${SUFFIX}.so \
 		lib/libSDL-1.2${SUFFIX}.so.0 \
-		lib/libSDL-1.2${SUFFIX}.so.1.2.52 \
+		lib/libSDL-1.2${SUFFIX}.so.${DISTVERSION:C/-*//} \
 		"@comment lib/libSDLmain.a"
 
 post-patch:

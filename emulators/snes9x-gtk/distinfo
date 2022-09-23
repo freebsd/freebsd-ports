@@ -1,3 +1,7 @@
-TIMESTAMP = 1479034785
-SHA256 (snes9xgit-snes9x-1.54.1_GH0.tar.gz) = 85862a22498bc418c37bd7c81a3089d9cc00af279b91e5f7fa8bea05e2e3027b
-SIZE (snes9xgit-snes9x-1.54.1_GH0.tar.gz) = 2186737
+TIMESTAMP = 1663634942
+SHA256 (snes9xgit-snes9x-1.61_GH0.tar.gz) = ce7aad69c3041ba4c33690e9e7d21ceb1b9283d85759b1bf683dfb8c473511bb
+SIZE (snes9xgit-snes9x-1.61_GH0.tar.gz) = 3016890
+SHA256 (KhronosGroup-glslang-bcf6a24_GH0.tar.gz) = 89e768efce6c406bb4d0c00c14559106dba83542e3f5385648b5338a80db945c
+SIZE (KhronosGroup-glslang-bcf6a24_GH0.tar.gz) = 3183142
+SHA256 (KhronosGroup-SPIRV-Cross-1458bae_GH0.tar.gz) = f3eef2c0f46f8483bc61d687564c45ff6e9f4a38a7be5e6e4e5f59dd787a3785
+SIZE (KhronosGroup-SPIRV-Cross-1458bae_GH0.tar.gz) = 677457

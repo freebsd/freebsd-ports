@@ -29,9 +29,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/data/typeparam.py
 %%PYTHON_SITELIBDIR%%/hoomd/device.py
 %%PYTHON_SITELIBDIR%%/hoomd/error.py
-%%PYTHON_SITELIBDIR%%/hoomd/example_plugin/__init__.py
-%%PYTHON_SITELIBDIR%%/hoomd/example_plugin/_example_plugin%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/hoomd/example_plugin/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/filter/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/filter/all_.py
 %%PYTHON_SITELIBDIR%%/hoomd/filter/custom.py
@@ -89,6 +86,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Action.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Analyzer.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ArrayView.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Autotuned.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Autotuner.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/BondedGroupData.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/BondedGroupData.h
@@ -133,7 +131,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/LoadBalancerGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MPIConfiguration.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ManagedArray.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MemoryTraceback.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshDefinition.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshGroupData.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshGroupData.h
@@ -888,6 +885,12 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/operation.py
 %%PYTHON_SITELIBDIR%%/hoomd/operations.py
+%%PYTHON_SITELIBDIR%%/hoomd/pair_plugin/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/pair_plugin/_pair_plugin%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/pair_plugin/pair.py
+%%PYTHON_SITELIBDIR%%/hoomd/pair_plugin/pytest/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/pair_plugin/pytest/test_example_pair.py
+%%PYTHON_SITELIBDIR%%/hoomd/pytest.ini
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/dummy.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/pytest-openmpi.sh
@@ -938,6 +941,11 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/update/custom_updater.py
 %%PYTHON_SITELIBDIR%%/hoomd/update/particle_filter.py
 %%PYTHON_SITELIBDIR%%/hoomd/update/remove_drift.py
+%%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/_updater_plugin%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/pytest/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/pytest/test_example_updater.py
+%%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/util.py
 %%PYTHON_SITELIBDIR%%/hoomd/variant.py
 %%PYTHON_SITELIBDIR%%/hoomd/version.py

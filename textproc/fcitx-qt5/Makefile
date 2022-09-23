@@ -16,7 +16,7 @@ USES=		compiler:c++11-lib cmake gettext kde:5 pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
 USE_KDE=	ecm
-USE_QT=		concurrent core dbus gui widgets buildtools_build qmake_build
+USE_QT=		concurrent core dbus gui widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

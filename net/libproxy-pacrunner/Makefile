@@ -3,7 +3,6 @@ CATEGORIES=	net devel
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	pacrunner plug-in for libproxy
-WWW=		https://libproxy.github.io/libproxy/
 
 LIBPROXY_SLAVE=	pacrunner
 MASTERDIR=	${.CURDIR}/../libproxy

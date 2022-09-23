@@ -1,3 +1,6 @@
+%%FONTSDIR%%/COPYRIGHT
+%%FONTSDIR%%/COPYRIGHT.ks
+%%FONTSDIR%%/README
 %%FONTSDIR%%/batang10.pcf.gz
 %%FONTSDIR%%/batang10b.pcf.gz
 %%FONTSDIR%%/batang12.pcf.gz
@@ -19,6 +22,7 @@
 %%FONTSDIR%%/dotum18.pcf.gz
 %%FONTSDIR%%/dotum20.pcf.gz
 %%FONTSDIR%%/dotum24.pcf.gz
+%%FONTSDIR%%/fonts.alias
 %%FONTSDIR%%/gulim10.pcf.gz
 %%FONTSDIR%%/gulim10b.pcf.gz
 %%FONTSDIR%%/gulim12.pcf.gz

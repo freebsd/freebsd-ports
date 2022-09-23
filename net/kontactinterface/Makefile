@@ -4,6 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE glue for embedding KParts into Kontact
+WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
@@ -12,9 +13,9 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		emoticons i18n iconthemes init itemmodels itemviews jobwidgets \
 		kdelibs4support kio parts service solid sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

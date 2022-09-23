@@ -7,6 +7,8 @@ COMMENT=	Localized interface for libreoffice
 WWW=		https://www.libreoffice.org/
 
 USES=		metaport
+# metaport forces a single license
+LICENSE_COMB=	single
 
 LO_LANG_ALL=	af am ar as ast be bg bn bn_IN bo br brx bs ca ca_valencia ckb \
 		cs cy da de dgo dsb dz el en_GB en_ZA eo es et eu fa fi fr fur fy \

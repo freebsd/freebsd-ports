@@ -38,7 +38,7 @@ GH_ACCOUNT=	LMMS
 GH_TUPLE=	mjansson:rpmalloc:1.4.0:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
 		lukas-w:qt5-x11embed:ec77d4ba40bebc0c53a016adb646b6fa65dd5faf:qt5x11embed/src/3rdparty/qt5-x11embed
 USE_LDCONFIG=	yes
-USE_QT=		core gui widgets x11extras xml buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui widgets x11extras xml buildtools:build linguisttools:build qmake:build
 USE_XORG=	xcursor xext xfixes xft xinerama xrender
 
 CMAKE_OFF=	WANT_ALSA WANT_CALF WANT_CAPS WANT_CMT WANT_SWH WANT_STK \

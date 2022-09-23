@@ -3,7 +3,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	0
 
 COMMENT=	Pythonic bindings for the notmuch mail database using CFFI
-WWW=		https://notmuchmail.org/
 
 LICENSE=	GPLv3
 

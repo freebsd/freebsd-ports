@@ -18,10 +18,10 @@ USE_KDE=	activities archive auth bookmarks codecs completion config \
 		jobwidgets js kdelibs4support khtml kio notifications parts \
 		pty service solid sonnet syntaxhighlighting textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network phonon4 printsupport \
 		sql svg testlib webchannel widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xcursor
 SHEBANG_FILES=	info/kde-info2html
 

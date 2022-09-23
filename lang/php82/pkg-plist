@@ -201,6 +201,7 @@ include/php/ext/standard/dl.h
 include/php/ext/standard/dl_arginfo.h
 include/php/ext/standard/exec.h
 include/php/ext/standard/file.h
+include/php/ext/standard/file_arginfo.h
 include/php/ext/standard/flock_compat.h
 include/php/ext/standard/fsock.h
 include/php/ext/standard/head.h

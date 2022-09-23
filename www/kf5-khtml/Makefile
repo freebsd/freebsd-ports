@@ -5,7 +5,6 @@ CATEGORIES=	www kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 KTHML rendering engine
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/khtml/html/index.html
 
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
@@ -16,10 +15,10 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		configwidgets coreaddons globalaccel i18n iconthemes \
 		jobwidgets js kio notifications parts service solid sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network phonon4 \
 		printsupport widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
 .include <bsd.port.mk>

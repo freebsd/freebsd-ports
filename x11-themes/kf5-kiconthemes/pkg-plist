@@ -6,6 +6,7 @@ include/KF5/KIconThemes/KIconEffect
 include/KF5/KIconThemes/KIconEngine
 include/KF5/KIconThemes/KIconLoader
 include/KF5/KIconThemes/KIconTheme
+include/KF5/KIconThemes/KQuickIconProvider
 include/KF5/KIconThemes/kiconbutton.h
 include/KF5/KIconThemes/kiconcolors.h
 include/KF5/KIconThemes/kicondialog.h
@@ -15,6 +16,7 @@ include/KF5/KIconThemes/kiconloader.h
 include/KF5/KIconThemes/kicontheme.h
 include/KF5/KIconThemes/kiconthemes_export.h
 include/KF5/KIconThemes/kiconthemes_version.h
+include/KF5/KIconThemes/kquickiconprovider.h
 lib/cmake/KF5IconThemes/KF5IconThemesConfig.cmake
 lib/cmake/KF5IconThemes/KF5IconThemesConfigVersion.cmake
 lib/cmake/KF5IconThemes/KF5IconThemesTargets-%%CMAKE_BUILD_TYPE%%.cmake

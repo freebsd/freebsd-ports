@@ -14,7 +14,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui network script webkit \
 		widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	WEBENGINE

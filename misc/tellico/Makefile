@@ -1,6 +1,6 @@
 PORTNAME=	tellico
 DISTVERSION=	3.4.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -29,9 +29,9 @@ USE_KDE=	archive attica5 auth bookmarks codecs completion config \
 		i18n iconthemes itemmodels itemviews jobwidgets js khtml kio \
 		libkcddb libksane newstuff parts service solid sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml  \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	src/fetch/scripts/dark_horse_comics.py \

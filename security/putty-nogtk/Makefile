@@ -1,8 +1,8 @@
 PKGNAMESUFFIX=		-nogtk
 
-OPTIONS_EXCLUDE=	GTK2 GTK3
+OPTIONS_EXCLUDE=	GTK3
 
-CONFLICTS_INSTALL=	pssh putty putty-gtk2
+CONFLICTS_INSTALL=	pssh* putty*
 
 MASTERDIR=		${.CURDIR}/../../security/putty
 

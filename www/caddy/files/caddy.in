@@ -59,7 +59,7 @@ required_files="${caddy_config} ${command}"
 
 start_precmd="caddy_precmd"
 start_cmd="caddy_start"
-stop_cmd="caddy_stop"
+stop_precmd="caddy_prestop"
 
 # Extra Commands
 extra_commands="configtest reload"
@@ -68,42 +68,59 @@ reload_cmd="caddy_command reload ${caddy_flags}"
 
 caddy_command()
 {
-	/usr/bin/su -m "${caddy_user}" -c "${command} $*"
+    /usr/bin/su -m "${caddy_user}" -c "${command} $*"
 }
 
 caddy_precmd()
 {
-	# Create required directories and set permissions
-	/usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}
-	/usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/config
-	/usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/data
-	/usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_logdir}
-	/usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" /var/run/caddy
+    # Create required directories and set permissions
+    /usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}
+    /usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/config
+    /usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/data
+    /usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_logdir}
+    /usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" /var/run/caddy
+    if [ -e ${caddy_logfile} ]; then
+        /bin/chmod 644 ${caddy_logfile}
+        /usr/sbin/chown root:wheel ${caddy_logfile}
+    else
+        /usr/bin/install -m 644 -o root -g wheel /dev/null ${caddy_logfile}
+    fi
 }
 
 caddy_start()
 {
-	echo -n "Starting caddy... "
-	/usr/bin/su -m ${caddy_user} -c "${command} start ${caddy_flags} \
-		${caddy_extra_flags} --pidfile ${pidfile}" >> ${caddy_logfile} 2>&1
-	if [ $? -eq 0 ] && ps -ax -o pid | grep -q "$(cat ${pidfile})"; then
-		echo "done"
-		echo "Log: ${caddy_logfile}"
-	else
-		echo "Error: Caddy failed to start"
-		echo "Check the caddy log: ${caddy_logfile}"
-	fi
+    echo -n "Starting caddy... "
+    /usr/bin/su -m ${caddy_user} -c "${command} start ${caddy_flags} \
+        ${caddy_extra_flags} --pidfile ${pidfile}" >> ${caddy_logfile} 2>&1
+    if [ $? -eq 0 ] && ps -ax -o pid | grep -q "$(cat ${pidfile})"; then
+        echo "done"
+        echo "Log: ${caddy_logfile}"
+    else
+        echo "Error: Caddy failed to start"
+        echo "Check the caddy log: ${caddy_logfile}"
+    fi
 }
 
-caddy_stop()
+caddy_prestop()
 {
-	echo -n "Stopping caddy... "
-	if caddy_command stop; then
-		echo "done"
-	else
-		echo "Error: Unable to stop caddy"
-		echo "Check the caddy log: ${caddy_logfile}"
-	fi
+    local result
+
+    echo -n "Stopping caddy... "
+
+    result="$(caddy_command stop 2>&1)"
+    if [ ${?} -eq 0 ]; then
+        echo "done"
+        exit 0
+    else
+        if echo "${result}" | grep -q "connection refused"; then
+            echo "admin interface unavailable; using pidfile"
+            return 0
+        else
+            echo "Error: Unable to stop caddy"
+            echo "Check the caddy log: ${caddy_logfile}"
+            return 1
+        fi
+    fi
 }
 
 run_rc_command "$1"

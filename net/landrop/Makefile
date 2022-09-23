@@ -20,7 +20,7 @@ GH_ACCOUNT=	LANDrop
 GH_PROJECT=	LANDrop
 
 USE_GL=	gl
-USE_QT=	buildtools_build core gui network widgets
+USE_QT=	buildtools:build core gui network widgets
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/LANDrop/LANDrop.pro
 

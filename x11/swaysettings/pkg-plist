@@ -1,4 +1,5 @@
 bin/sway-autostart
+bin/sway-wallpaper
 bin/swaysettings
 share/appdata/org.erikreider.swaysettings.appdata.xml
 share/applications/org.erikreider.swaysettings.desktop

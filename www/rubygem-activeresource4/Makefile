@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Coherent wrapper object-relational mapping for REST web services
-WWW=		https://rubyonrails.org/
+WWW=		https://github.com/rails/activeresource
 
 LICENSE=	MIT
 

@@ -1,0 +1,14 @@
+[
+{
+	message: <<EOM
+For information about updating your current Varnish deployment to the new
+version, see Upgrading to Varnish 7.2:
+  https://varnish-cache.org/docs/7.2/whats-new/upgrading-7.2.html
+
+For the complete release information, see the Varnish Cache 7.2.0 release page:
+  https://varnish-cache.org/releases/rel7.2.0.html
+EOM
+	type: upgrade
+	maximum_version: "7.2.0"
+}
+]

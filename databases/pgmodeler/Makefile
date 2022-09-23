@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_GL=		gl
 USE_QT=		core gui network printsupport sql svg widgets testlib uitools \
-		buildtools_build
+		buildtools:build
 USE_XORG=	x11 xext
 
 USE_LDCONFIG=	yes

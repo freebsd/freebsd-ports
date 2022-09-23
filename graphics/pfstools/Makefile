@@ -86,7 +86,7 @@ GLVIEW_USE=		GL=glut GL=gl,glu
 
 VIEW_CMAKE_BOOL=	WITH_QT
 VIEW_USES=		gl qt:5
-VIEW_USE=		GL=glut GL=gl,glu QT=core,gui,widgets,buildtools_build,qmake_build
+VIEW_USE=		GL=glut GL=gl,glu QT=core,gui,widgets,buildtools:build,qmake:build
 
 .include <bsd.port.options.mk>
 

@@ -6,6 +6,7 @@ CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Implementation of the Audio File Library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.68k.org/~michael/audiofile/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

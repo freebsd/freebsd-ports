@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		python:3.7+ pyqt:5
 USE_PYTHON=	distutils autoplist
-USE_PYQT=	pyqt5_run
+USE_PYQT=	pyqt5:run
 NO_ARCH=	yes
 
 post-extract:

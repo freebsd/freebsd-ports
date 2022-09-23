@@ -4,7 +4,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 documentation generation from docbook
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kdoctools/html/index.html
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml \
@@ -15,8 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xs
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive i18n \
-		ecm_build
+		ecm:build
 USE_QT=		core \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.11
+DISTVERSION=	5.0.12
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -62,8 +62,6 @@ GROUPS=		mongodb
 
 OPTIONS_DEFINE=			LTO SASL SSL
 OPTIONS_DEFAULT=		LTO SASL SSL
-#OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-#OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12/llvm13 on aarch64.
 
 LTO_MAKE_ARGS=	--lto=on
 

@@ -1,7 +1,6 @@
 PORTNAME=	husky-huskylib
 
 COMMENT=	Husky generic FTN library
-WWW=		http://husky.sourceforge.net/
 
 LICENSE=	LGPL21
 

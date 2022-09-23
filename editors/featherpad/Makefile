@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsujan
 GH_PROJECT=	FeatherPad
 
-USE_QT=		buildtools_build qmake_build core dbus gui printsupport network \
+USE_QT=		buildtools:build qmake:build core dbus gui printsupport network \
 		svg widgets x11extras linguisttools
 USE_XORG=	x11 sm ice xext
 USE_GL=		gl

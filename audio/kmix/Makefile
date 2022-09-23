@@ -15,9 +15,9 @@ USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		emoticons globalaccel i18n iconthemes init itemmodels \
 		itemviews kcmutils kdelibs4support notifications package \
 		plasma-framework service solid widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 # we want the KF5 version of kmix

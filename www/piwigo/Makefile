@@ -1,6 +1,7 @@
 PORTNAME=	piwigo
 DISTVERSION=	12.3.0
-PORTREVISION=	1
+PORTREVISION=	3
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 CATEGORIES=	www
 MASTER_SITES=	https://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
@@ -11,11 +12,13 @@ WWW=		https://piwigo.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/sodium.so:security/pecl-libsodium@${PHP_FLAVOR}
-
-USES=		cpe php:web zip
+USES=		cpe php:web,flavors zip
 USE_PHP=	ctype dom exif filter gd hash iconv json mbstring mysqli \
-		openssl pcre pdo session simplexml spl tokenizer xml zlib
+		openssl pcre pdo session simplexml sodium spl tokenizer \
+		xml zip zlib
+# sodium is needed for randomisation stuff (prefferred option),
+# 	could be replaced by mcrypt
+# zip is used by an optional plugin
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -71,7 +71,7 @@ TEST_VARS=	AWT_TEST=true FULL_TEST=true
 
 # Gradle calls CMake during the build
 WEBKIT_IMPLIES=	MEDIA
-WEBKIT_BUILD_DEPENDS=	cmake:devel/cmake
+WEBKIT_BUILD_DEPENDS=	cmake:devel/cmake-core
 WEBKIT_LIB_DEPENDS=	libicui18n.so:devel/icu
 WEBKIT_USES=	bison gmake gperf perl5 python:3.5+,build
 WEBKIT_USE=	GNOME=libxslt,libxml2 \

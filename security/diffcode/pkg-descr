@@ -1,0 +1,3 @@
+diffcode is a project that can encode and decode using the progressive
+differential algorithm.  During encoding, the difference between the binary
+values of each input character is calculated and that difference is output.

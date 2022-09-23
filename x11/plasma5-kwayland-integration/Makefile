@@ -17,7 +17,7 @@ USES=		cmake compiler:c++11-lib gl kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		gl
 USE_KDE=	ecm guiaddons idletime plasma-wayland-protocols wayland windowsystem
 USE_QT=		core gui wayland widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

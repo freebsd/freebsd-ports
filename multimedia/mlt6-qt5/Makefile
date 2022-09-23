@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 USES=		qt:5 xorg
 USE_CXXSTD=	c++11
 USE_QT=		core gui svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 CONFLICTS_INSTALL=	mlt7-qt5

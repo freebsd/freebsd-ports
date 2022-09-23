@@ -1,6 +1,6 @@
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.22.0
+DISTVERSION=	3.22.2
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -89,7 +89,7 @@ USES=		gmake perl5 shebangfix ssl
 USE_GITHUB=	yes
 GH_PROJECT=	openxpki-config:conf
 GH_TAGNAME=	${DISTVERSIONPREFIX}${_conf_VERSION}:conf
-_conf_VERSION=	3.16
+_conf_VERSION=	3.22
 
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki

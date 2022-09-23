@@ -9,6 +9,7 @@ DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 examples sourcecode
+WWW=		https://www.qt.io/
 
 NO_ARCH=	yes
 NO_BUILD=	yes

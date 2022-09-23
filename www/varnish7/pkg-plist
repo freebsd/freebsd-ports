@@ -19,7 +19,8 @@ include/varnish/tbl/backend_poll.h
 include/varnish/tbl/ban_arg_oper.h
 include/varnish/tbl/ban_oper.h
 include/varnish/tbl/ban_vars.h
-include/varnish/tbl/bo_flags.h
+include/varnish/tbl/bereq_flags.h
+include/varnish/tbl/beresp_flags.h
 include/varnish/tbl/boc_state.h
 include/varnish/tbl/body_status.h
 include/varnish/tbl/cli_cmds.h
@@ -34,15 +35,16 @@ include/varnish/tbl/htc.h
 include/varnish/tbl/http_headers.h
 include/varnish/tbl/http_response.h
 include/varnish/tbl/locks.h
-include/varnish/tbl/mgt_vcc.h
 include/varnish/tbl/obj_attr.h
 include/varnish/tbl/oc_exp_flags.h
 include/varnish/tbl/oc_flags.h
 include/varnish/tbl/params.h
+include/varnish/tbl/req_bereq_flags.h
 include/varnish/tbl/req_flags.h
 include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
 include/varnish/tbl/symbol_kind.h
+include/varnish/tbl/vcc_feature_bits.h
 include/varnish/tbl/vcl_returns.h
 include/varnish/tbl/vcl_states.h
 include/varnish/tbl/vhd_fsm_funcs.h
@@ -72,6 +74,7 @@ include/varnish/vcli.h
 include/varnish/vcs.h
 include/varnish/vdef.h
 include/varnish/vmod_abi.h
+include/varnish/vnum.h
 include/varnish/vqueue.h
 include/varnish/vre.h
 include/varnish/vre_pcre2.h

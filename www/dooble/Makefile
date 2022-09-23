@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	textbrowser
 
 USE_QT=		concurrent core gui network printsupport sql webengine widgets \
-		xml buildtools_build qmake_build
+		xml buildtools:build qmake:build
 USE_XORG=	xcb
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro

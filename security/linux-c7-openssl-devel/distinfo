@@ -1,0 +1,9 @@
+TIMESTAMP = 1658735647
+SHA256 (centos/openssl-devel-1.0.2k-19.el7.aarch64.rpm) = f79aa92d9dcf4935fc3c0374c9473389cb4fee86ffe435c01c0b1bdb85417525
+SIZE (centos/openssl-devel-1.0.2k-19.el7.aarch64.rpm) = 1581696
+SHA256 (centos/openssl-devel-1.0.2k-19.el7.i686.rpm) = cb3005597ffb95211e77f1a99fafc78aef306ec494f49160ef1fa05a1a708fdd
+SIZE (centos/openssl-devel-1.0.2k-19.el7.i686.rpm) = 1581476
+SHA256 (centos/openssl-devel-1.0.2k-19.el7.x86_64.rpm) = 00a702e913cb10d7ee36dc1602ec30353df6efdf229ffc23a8d7c8a614e46bb6
+SIZE (centos/openssl-devel-1.0.2k-19.el7.x86_64.rpm) = 1581408
+SHA256 (centos/openssl-1.0.2k-19.el7.src.rpm) = 25c07f6b42f0cce780b8b8a3de492cbe06f9040f898fa3a342aee530b0887c0f
+SIZE (centos/openssl-1.0.2k-19.el7.src.rpm) = 3761359

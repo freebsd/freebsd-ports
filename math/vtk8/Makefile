@@ -63,7 +63,7 @@ $w_DESC=	$w wrapping
 .endfor
 
 QT5_USES=		qt:5
-QT5_USE=		QT=core,gui,sql,uiplugin,widgets,x11extras,qmake_build,buildtools_build
+QT5_USE=		QT=core,gui,sql,uiplugin,widgets,x11extras,qmake:build,buildtools:build
 QT5_CMAKE_ON=		-DVTK_QT_VERSION:STRING="5" \
 			-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5 \
 			-DVTK_Group_Qt:BOOL=ON

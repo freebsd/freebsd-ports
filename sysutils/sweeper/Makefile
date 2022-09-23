@@ -11,7 +11,7 @@ USE_KDE=	activities-stats auth bookmarks codecs config configwidgets \
 		coreaddons crash i18n kio service sonnet textwidgets \
 		widgetsaddons xmlgui
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

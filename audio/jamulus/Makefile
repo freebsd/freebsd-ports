@@ -17,7 +17,7 @@ FLAVOR?=	${FLAVORS:[1]}
 server_PKGNAMESUFFIX=	-server
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		concurrent core multimedia network xml buildtools_build linguisttools_build
+USE_QT=		concurrent core multimedia network xml buildtools:build linguisttools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

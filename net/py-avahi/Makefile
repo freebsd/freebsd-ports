@@ -5,7 +5,6 @@ PKGNAMESUFFIX=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Avahi mDNS system
-WWW=		https://www.avahi.org/
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
@@ -26,6 +25,8 @@ USE_GNOME=	pygobject3 gtk30
 USES=		python:3.5+
 USE_PYTHON=	flavors py3kplist
 MANPAGES=	avahi-bookmarks.1
+
+NO_ARCH=	yes
 
 # See https://github.com/lathiat/avahi/issues/277
 post-extract:

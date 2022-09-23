@@ -1,6 +1,6 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,11 +14,13 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		compiler:c11 gnome localbase:ldflags meson pkgconfig vala:build
+USES=		compiler:c11 gnome localbase:ldflags meson pkgconfig \
+		python:build shebangfix vala:build
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
+SHEBANG_FILES=	build-aux/meson/postinstall.py
 GLIB_SCHEMAS=	org.erikreider.swaync.gschema.xml
 
 OPTIONS_DEFINE=	MANPAGES

@@ -23,9 +23,9 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		itemviews jobwidgets kcmutils kdewebkit kio notifications \
 		notifyconfig parts purpose service solid sonnet textwidgets \
 		wallet widgetsaddons windowsystem xmlgui \
-		kded_run
+		kded:run
 USE_QT=		concurrent core dbus gui network networkauth webkit widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

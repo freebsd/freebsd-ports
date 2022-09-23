@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-api
 
 COMMENT=	Baculum API
-WWW=		https://www.bacula.org/
 
 LICENSE=	AGPLv3
 

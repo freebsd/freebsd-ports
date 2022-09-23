@@ -20,7 +20,7 @@ USE_GL=		gl  # Dependency added by qt5-gui.
 USE_GITHUB=	yes
 USE_KDE=	ecm
 USE_QT=		concurrent core gui network webkit widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xext
 
 GH_ACCOUNT=	zealdocs

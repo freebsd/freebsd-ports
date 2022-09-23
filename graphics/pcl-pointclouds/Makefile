@@ -79,7 +79,7 @@ QT5_BROKEN=		WITH_QT doesn't do anything, should be used by apps, but apps is al
 
 VTK_DESC=		Build VTK visualizations
 VTK_USES=		gl qt:5
-VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools_build,qmake_build
+VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools:build,qmake:build
 VTK_CMAKE_BOOL=		WITH_VTK
 VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
 VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9

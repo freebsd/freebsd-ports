@@ -94,6 +94,7 @@ libdata/pkgconfig/guile-gnome-glib-2.pc
 %%DATADIR%%/gnome/defs/printui.defs
 %%DATADIR%%/gnome/defs/vte-overrides.defs
 %%DATADIR%%/gnome/defs/vte.defs
+%%GLADE%%%%DATADIR%%/gnome/glade.scm
 %%DATADIR%%/gnome/glib.scm
 %%DATADIR%%/gnome/gobject.scm
 %%DATADIR%%/gnome/gobject/config.scm

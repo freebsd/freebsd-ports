@@ -1,5 +1,5 @@
 PORTNAME=	stonesoup
-DISTVERSION=	0.29.0
+DISTVERSION=	0.29.1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su

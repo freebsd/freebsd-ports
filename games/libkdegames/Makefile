@@ -15,9 +15,9 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		globalaccel guiaddons i18n iconthemes init itemmodels \
 		itemviews jobwidgets kdeclarative kdelibs4support kio newstuff \
 		package service textwidgets widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network svg widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_LDCONFIG=	yes
 
 SHLIB_VER=	7.3.1

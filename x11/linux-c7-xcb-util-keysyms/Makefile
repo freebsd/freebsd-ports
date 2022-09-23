@@ -6,6 +6,7 @@ CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Port of Xlib's XImage and XShmImage functions (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://xcb.freedesktop.org/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

@@ -1,6 +1,9 @@
 bin/xdx
 man/man1/xdx.1.gz
 share/applications/Xdx.desktop
+share/locale/de/LC_MESSAGES/xdx.mo
+share/locale/en@boldquot/LC_MESSAGES/xdx.mo
+share/locale/en@quot/LC_MESSAGES/xdx.mo
 share/locale/es/LC_MESSAGES/xdx.mo
 share/locale/fr/LC_MESSAGES/xdx.mo
 share/locale/nl/LC_MESSAGES/xdx.mo
@@ -12,16 +15,13 @@ share/locale/pt/LC_MESSAGES/xdx.mo
 %%DATADIR%%/MANUAL.nl
 %%DATADIR%%/MANUAL.pl
 %%DATADIR%%/cty.dat
+%%DATADIR%%/gnuplot/wwv.gnuplot
 %%DATADIR%%/pixmaps/bigsmile.png
 %%DATADIR%%/pixmaps/cry.png
 %%DATADIR%%/pixmaps/sad.png
 %%DATADIR%%/pixmaps/smile.png
 %%DATADIR%%/pixmaps/wink.png
 %%DATADIR%%/pixmaps/xdx-logo.png
-%%DATADIR%%/pixmaps/xdx-logo.xcf
 %%DATADIR%%/pixmaps/xdx.png
-%%DATADIR%%/pixmaps/xdx.xcf
 %%DATADIR%%/pixmaps/xdx.xpm
 %%DATADIR%%/sounds/attention.wav
-%%DATADIR%%/wwv.gnuplot
-%%DATADIR%%/wwv.gnuplot~

@@ -18,7 +18,7 @@ LIB_DEPENDS=	lib1541img.so:archivers/lib1541img
 
 USES=		compiler:c++11-lang gmake pkgconfig qt:5 shared-mime-info
 
-USE_QT=		core gui network widgets buildtools_build linguisttools_build
+USE_QT=		core gui network widgets buildtools:build linguisttools:build
 
 USE_GITHUB=	yes
 GH_PROJECT=	zimk:zimk

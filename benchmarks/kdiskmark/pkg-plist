@@ -1,9 +1,7 @@
 bin/kdiskmark
-lib/libexec/kauth/kdiskmark_helper
+libexec/kdiskmark_helper
 share/applications/kdiskmark.desktop
-share/dbus-1/system-services/dev.jonmagon.kdiskmark.helper.service
-share/dbus-1/system.d/dev.jonmagon.kdiskmark.applicationinterface.conf
-share/dbus-1/system.d/dev.jonmagon.kdiskmark.helper.conf
+share/dbus-1/system-services/dev.jonmagon.kdiskmark.helperinterface.service
 share/dbus-1/system.d/dev.jonmagon.kdiskmark.helperinterface.conf
 share/icons/hicolor/128x128/apps/kdiskmark.png
 share/icons/hicolor/16x16/apps/kdiskmark.png
@@ -24,6 +22,7 @@ share/icons/hicolor/64x64/apps/kdiskmark.png
 %%DATADIR%%/translations/kdiskmark_pt_BR.qm
 %%DATADIR%%/translations/kdiskmark_ru_RU.qm
 %%DATADIR%%/translations/kdiskmark_sk_SK.qm
+%%DATADIR%%/translations/kdiskmark_sv_SE.qm
 %%DATADIR%%/translations/kdiskmark_tr_TR.qm
 %%DATADIR%%/translations/kdiskmark_uk_UA.qm
 %%DATADIR%%/translations/kdiskmark_zh_CN.qm

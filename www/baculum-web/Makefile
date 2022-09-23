@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-web
 
 COMMENT=	Baculum Web
-WWW=		https://www.bacula.org/
 
 LICENSE=	AGPLv3
 

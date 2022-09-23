@@ -30,14 +30,14 @@ CONFLICTS_INSTALL=	plasma5-kwin # bin/kwin_wayland
 USES=		cmake:testing gl kde:5 pkgconfig python:run qt:5 shebangfix xorg
 USE_GITLAB=	yes
 USE_GL=		egl
-USE_KDE=	ecm_build auth completion config configwidgets \
+USE_KDE=	ecm:build auth completion config configwidgets \
 		coreaddons crash dbusaddons decoration globalaccel i18n \
 		idletime kcmutils kdeclarative kio kscreenlocker newstuff \
 		notifications package plasma-framework service textwidgets \
 		widgetsaddons windowsystem xmlgui
 USE_LDCONFIG=	yes
-USE_QT=		qmake_build buildtools_build core dbus declarative gui \
-		multimedia_run quickcontrols2_run widgets x11extras
+USE_QT=		qmake:build buildtools:build core dbus declarative gui \
+		multimedia:run quickcontrols2:run widgets x11extras
 USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
 GL_COMMIT=	022f157ce4bd14fbe069ab6fe41647b70d20f004
@@ -51,7 +51,7 @@ BREEZE_DESC=		Default window decoration plugin
 BREEZE_USE=		KDE=breeze
 BREEZE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Breeze
 
-DOCS_USE=		KDE=doctools_build
+DOCS_USE=		KDE=doctools:build
 DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5DocTools
 
 QA11Y_DESC=		Accessibility (focus tracking) for Zoom effect

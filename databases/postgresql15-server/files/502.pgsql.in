@@ -34,7 +34,7 @@ fi
 : ${daily_pgsql_backupdir:="~${daily_pgsql_user}/backups"}
 : ${daily_pgsql_savedays:="7"}
 
-# allow '~´ in dir name
+# allow '~' in directory name
 eval backupdir=${daily_pgsql_backupdir}
 
 rc=0

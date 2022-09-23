@@ -1,20 +1,19 @@
 PORTNAME=	elgg
-PORTVERSION=	3.3.23
+PORTVERSION=	4.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Blogging and social networking platform
 WWW=		https://www.elgg.org/
 
 LICENSE=	GPLv2
 
 USES=		cpe gettext shebangfix zip php
-USE_PHP=	curl dom filter gd hash intl json mbstring pdo_mysql \
+USE_PHP=	curl dom fileinfo filter gd hash intl \
+		json mbstring pdo_mysql \
 		session simplexml soap sqlite3 xml xmlrpc
 IGNORE_WITH_PHP=	81 82
-
-SHEBANG_FILES=	vendor/elgg/elgg/.scripts/validate_commit_msg.php
 
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

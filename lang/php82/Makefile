@@ -1,5 +1,5 @@
 PORTNAME=	php82
-DISTVERSION=	8.2.0beta2
+DISTVERSION=	8.2.0RC2
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~sergey/

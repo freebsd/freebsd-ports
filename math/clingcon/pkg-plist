@@ -1,0 +1,7 @@
+bin/clingcon
+include/clingcon.h
+lib/cmake/Clingcon/ClingconConfig.cmake
+lib/cmake/Clingcon/ClingconConfigVersion.cmake
+lib/cmake/Clingcon/ClingconTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Clingcon/ClingconTargets.cmake
+lib/libclingcon.so

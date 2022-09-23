@@ -2,11 +2,11 @@ PORTNAME=	piewm
 PORTVERSION=	1.04
 PORTREVISION=	4
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.catwhisker.org/~david/FreeBSD/distfiles/ LOCAL/dhw
+MASTER_SITES=	http://www.catwhisker.org/~david/FreeBSD/distfiles/ https://web.archive.org/web/20160424061632if_/http://www.crynwr.com/piewm/ LOCAL/dhw
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	tvtwm with pie (circular) menus
-WWW=		http://www.crynwr.com/piewm/
+WWW=		https://web.archive.org/web/20160409071502if_/http://www.crynwr.com/piewm/index.html~
 
 USES=		imake xorg
 DISABLE_SIZE=	yes

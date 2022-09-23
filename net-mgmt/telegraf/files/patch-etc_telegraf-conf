@@ -1,5 +1,5 @@
---- etc/telegraf.conf.orig	1979-11-30 01:00:00.000000000 +0100
-+++ etc/telegraf.conf	2022-08-09 00:12:28.711127000 +0200
+--- etc/telegraf.conf.orig	1979-11-30 00:00:00.000000000 +0100
++++ etc/telegraf.conf	2022-09-14 18:38:59.926968000 +0200
 @@ -60,7 +60,7 @@
  
    ## Collected metrics are rounded to the precision specified. Precision is

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libqhttpengine.so:www/qhttpengine \
 USES=		cmake compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-desktop
-USE_QT=		core gui network widgets buildtools_build qmake_build
+USE_QT=		core gui network widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

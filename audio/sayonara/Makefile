@@ -16,8 +16,8 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gnome gstreamer pkgconfig \
 		qt:5 python shebangfix
 USE_GNOME=	glib20
 USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
-USE_QT=		dbus core gui network sql sql-sqlite3_run svg widgets xml \
-		buildtools_build qmake_build linguisttools_build
+USE_QT=		dbus core gui network sql sql-sqlite3:run svg widgets xml \
+		buildtools:build qmake:build linguisttools:build
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	luciocarreras

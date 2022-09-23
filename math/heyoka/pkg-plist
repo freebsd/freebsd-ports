@@ -2,8 +2,10 @@ include/heyoka/callable.hpp
 include/heyoka/celmec/vsop2013.hpp
 include/heyoka/config.hpp
 include/heyoka/detail/binomial.hpp
+include/heyoka/detail/cm_utils.hpp
 include/heyoka/detail/dfloat.hpp
 include/heyoka/detail/event_detection.hpp
+include/heyoka/detail/fmt_compat.hpp
 include/heyoka/detail/fwd_decl.hpp
 include/heyoka/detail/igor.hpp
 include/heyoka/detail/llvm_fwd.hpp
@@ -76,5 +78,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.18
-lib/libheyoka.so.18.0
+lib/libheyoka.so.19
+lib/libheyoka.so.19.0

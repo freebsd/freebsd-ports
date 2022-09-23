@@ -1,7 +1,6 @@
 PORTNAME=	cmake
-DISTVERSION=	3.23.3
+DISTVERSION=	3.24.0
 CATEGORIES=	devel
-PORTREVISION=	1
 
 BROKEN_purecap=	requires missing CheriABI Python
 USE_PKG64=	1

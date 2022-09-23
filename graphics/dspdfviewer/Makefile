@@ -1,7 +1,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	57
+PORTREVISION=	58
 CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		cmake:insource compiler:c++14-lang pkgconfig qt:5
-USE_QT=		core gui linguisttools widgets xml buildtools_build qmake_build
+USE_QT=		core gui linguisttools widgets xml buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

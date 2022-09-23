@@ -3,7 +3,6 @@ PORTREVISION=	1
 PKGNAMESUFFIX=	20-traymonitor
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
-WWW=		https://www.bareos.org/
 
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 		libbareos.so:sysutils/bareos20-client
@@ -11,7 +10,7 @@ LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 CONFLICTS=	bareos-traymonitor bareos18-traymonitor bareos19-traymonitor
 
 USES=		desktop-file-utils gettext-runtime pkgconfig qt:5
-USE_QT=		buildtools_build qmake_build uitools_build gui core widgets
+USE_QT=		buildtools:build qmake:build uitools:build gui core widgets
 WITH_BAT=	yes
 
 PLIST=		${.CURDIR}/pkg-plist

@@ -1,0 +1,4 @@
+bin/etator
+bin/rotate
+include/rotate.h
+lib/librotator.so

@@ -23,7 +23,7 @@ USE_QT=		concurrent core declarative designer graphicaleffects gui \
 		help location network opengl printsupport \
 		quickcontrols2 scripttools sql svg testlib \
 		webchannel widgets xml xmlpatterns \
-		buildtools_build linguisttools_build qmake_build uitools_build
+		buildtools:build linguisttools:build qmake:build uitools:build
 
 USE_GITHUB=	yes
 GH_PROJECT=	MuseScore

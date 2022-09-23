@@ -23,7 +23,7 @@ USE_GL=		gl
 USE_PYTHON=	flavors
 USE_QT=		3d buildtools charts core datavis3d declarative \
 		designer gui help location multimedia network opengl \
-		printsupport qmake_build script scripttools scxml sensors \
+		printsupport qmake:build script scripttools scxml sensors \
 		speech sql svg testlib uitools webchannel \
 		websockets widgets x11extras xml xmlpatterns
 

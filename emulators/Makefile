@@ -103,6 +103,7 @@
     SUBDIR += parallels-tools
     SUBDIR += pcem
     SUBDIR += pcemu
+    SUBDIR += pcsx2
     SUBDIR += pcsxr
     SUBDIR += ppsspp
     SUBDIR += ppsspp-qt5

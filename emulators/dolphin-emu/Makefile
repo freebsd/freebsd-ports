@@ -54,7 +54,7 @@ GH_TAGNAME=	7321802
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xi xrandr
-USE_QT=		buildtools_build core gui widgets
+USE_QT=		buildtools:build core gui widgets
 
 # XXX USE_MGBA crashes configure step
 CMAKE_ARGS+=	-DUSE_UPNP:BOOL=ON \

@@ -22,9 +22,9 @@ USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
 		kio newstuff notifications parts service \
 		solid sonnet texteditor textwidgets widgetsaddons \
 		windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 SHLIB_VER=	5.0.0

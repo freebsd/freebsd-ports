@@ -3,7 +3,6 @@ CATEGORIES=	net lang
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	Perl binding for libproxy
-WWW=		https://libproxy.github.io/libproxy/
 
 USES=		perl5
 CMAKE_ON=	PERL_VENDORINSTALL PERL_LINK_LIBPERL

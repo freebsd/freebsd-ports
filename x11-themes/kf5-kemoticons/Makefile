@@ -4,12 +4,11 @@ CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library to convert emoticons
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kemoticons/html/index.html
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	archive config coreaddons service \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ USES=		autoreconf compiler:c++11-lang desktop-file-utils gl gmake \
 		gnome iconv pkgconfig qt:5 tar:xz
 USE_GL=		gl glu glew
 GNU_CONFIGURE=	yes
-USE_QT=		buildtools_build core gui opengl widgets
+USE_QT=		buildtools:build core gui opengl widgets
 USE_CXXSTD=	c++11
 
 # no port fow equalizer now, lirc detecting not working

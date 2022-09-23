@@ -84,6 +84,7 @@ include/python%%XYDOT%%%%ABI%%/internal/pycore_hashtable.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_import.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_initconfig.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_interp.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_long.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_object.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pathconfig.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pyerrors.h

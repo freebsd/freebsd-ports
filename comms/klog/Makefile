@@ -13,9 +13,9 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib
 USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GITHUB=	yes
 USE_GL=		gl
-USE_QT=		buildtools_build charts core declarative gui \
-		linguisttools_build location multimedia network \
-		printsupport sql sql-sqlite3_run serialport widgets
+USE_QT=		buildtools:build charts core declarative gui \
+		linguisttools:build location multimedia network \
+		printsupport sql sql-sqlite3:run serialport widgets
 GH_ACCOUNT=	ea4k
 GH_PROJECT=	klog
 

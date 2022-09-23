@@ -18,10 +18,10 @@ USE_KDE=	akonadi auth bookmarks codecs completion config configwidgets \
 USE_KDE+=	akonadicalendar akonadicontacts akonadinotes akonadisearch \
 		calendarcore contacts identitymanagement kontactinterface ldap \
 		mime pimtextedit \
-		kdepim-runtime5_run
+		kdepim-runtime5:run
 USE_QT=		concurrent core dbus declarative gui network printsupport testlib \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Faroese dictionary
-WWW=		http://fo.speling.org/
+WWW=		http://aspell.net/
 
 DICT=	 	fo
 

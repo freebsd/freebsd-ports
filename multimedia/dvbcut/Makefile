@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
 		qmake:outsource qt:5 shared-mime-info
 
-USE_QT=		core gui widgets xml buildtools_build linguisttools_build
+USE_QT=		core gui widgets xml buildtools:build linguisttools:build
 USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bernhardu

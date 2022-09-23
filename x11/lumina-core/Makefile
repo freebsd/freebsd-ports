@@ -28,7 +28,7 @@ USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build concurrent core dbus declarative gui \
+USE_QT=		buildtools:build concurrent core dbus declarative gui \
 		imageformats multimedia network svg widgets x11extras
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
@@ -46,7 +46,7 @@ TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
 MULTIMEDIA_USES=	gstreamer
 MULTIMEDIA_USE=		GSTREAMER=core
 
-NLS_USE=	QT=linguist_build
+NLS_USE=	QT=linguist:build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 WRKSRC_SUBDIR=	src-qt5/core

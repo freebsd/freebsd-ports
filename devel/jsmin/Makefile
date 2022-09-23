@@ -1,5 +1,5 @@
 PORTNAME=	jsmin
-PORTVERSION=	20130329
+PORTVERSION=	20191031
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://crockford.com/javascript/jsmin.html
 USE_GITHUB=	yes
 GH_ACCOUNT=	douglascrockford
 GH_PROJECT=	JSMin
-GH_TAGNAME=	1bf6ce5
+GH_TAGNAME=	430bfe6
 
 PLIST_FILES=	bin/jsmin
 PORTDOCS=	README

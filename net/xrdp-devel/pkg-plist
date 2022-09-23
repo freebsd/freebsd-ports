@@ -3,6 +3,7 @@ bin/xrdp-genkeymap
 bin/xrdp-keygen
 bin/xrdp-sesadmin
 bin/xrdp-sesrun
+bin/xrdp-dumpfv1
 lib/libpainter.a
 lib/libpainter.so
 lib/libpainter.so.0
@@ -96,6 +97,7 @@ man/man5/sesman.ini.5.gz
 man/man8/xrdp.8.gz
 man/man5/xrdp.ini.5.gz
 man/man8/xrdp-chansrv.8.gz
+man/man8/xrdp-dumpfv1.8.gz
 man/man8/xrdp-genkeymap.8.gz
 man/man8/xrdp-keygen.8.gz
 man/man8/xrdp-sesadmin.8.gz
@@ -109,6 +111,7 @@ sbin/xrdp-sesman
 %%DATADIR%%/cursor0.cur
 %%DATADIR%%/cursor1.cur
 %%DATADIR%%/sans-10.fv1
+%%DATADIR%%/sans-18.fv1
 %%DATADIR%%/xrdp24b.bmp
 %%DATADIR%%/xrdp256.bmp
 %%DATADIR%%/xrdp_logo.bmp

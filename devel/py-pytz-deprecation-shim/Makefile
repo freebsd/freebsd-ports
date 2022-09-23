@@ -1,5 +1,6 @@
 PORTNAME=	pytz-deprecation-shim
 PORTVERSION=	0.1.0.post0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +11,8 @@ COMMENT=	Shims to make deprecation of pytz easier
 WWW=		https://github.com/pganssle/pytz-deprecation-shim
 
 LICENSE=	APACHE20
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tzdata>=0:devel/py-tzdata@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils

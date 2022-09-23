@@ -24,7 +24,7 @@ USES=	cmake:noninja compiler:c++11-lang fortran gl libedit \
 USE_GL=		glu
 USE_QT=		core gui network widgets \
 		multimedia concurrent printsupport serialport sql sql-sqlite3 \
-		buildtools_build linguisttools_build qmake_build testlib
+		buildtools:build linguisttools:build qmake:build testlib
 
 CONFLICTS_INSTALL=	wsjtz
 

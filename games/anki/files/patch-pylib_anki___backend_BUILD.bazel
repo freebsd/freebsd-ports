@@ -1,30 +1,29 @@
 Avoid loading of "requirements.bzl" because it requires "pip_import" which
 is already disabled in "defs.bzl".
 
---- pylib/anki/_backend/BUILD.bazel.orig	2021-07-30 08:30:37 UTC
+--- pylib/anki/_backend/BUILD.bazel.orig	2022-05-26 02:51:51 UTC
 +++ pylib/anki/_backend/BUILD.bazel
-@@ -1,5 +1,4 @@
+@@ -1,5 +1,4 @@ load("@rules_python//python:defs.bzl", "py_binary")
  load("@rules_python//python:defs.bzl", "py_binary")
 -load("@py_deps//:requirements.bzl", "requirement")
  load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
  load("@bazel_skylib//lib:selects.bzl", "selects")
- 
-@@ -9,9 +8,6 @@ py_binary(
+ load(":python_lib.bzl", "copy_python_lib")
+@@ -10,9 +9,7 @@ py_binary(
          "genbackend.py",
      ],
      deps = [
 -        requirement("black"),
--        requirement("stringcase"),
+         "//pylib/anki/_vendor:stringcase",
 -        requirement("protobuf"),
          "//pylib/anki:proto",
      ],
  )
-@@ -29,8 +25,6 @@ py_binary(
+@@ -30,7 +27,6 @@ py_binary(
          "genfluent.py",
      ],
      deps = [
 -        requirement("black"),
--        requirement("stringcase"),
+         "//pylib/anki/_vendor:stringcase",
      ],
  )
- 

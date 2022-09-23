@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 USES=		cmake compiler:c++11-lang dos2unix pkgconfig qt:5 tar:bzip2
 DOS2UNIX_FILES=	main.cpp
-USE_QT=		buildtools_build qmake_build core gui widgets
+USE_QT=		buildtools:build qmake:build core gui widgets
 
 ICON_SIZES=	16x16 32x32 128x128 256x256 512x512
 

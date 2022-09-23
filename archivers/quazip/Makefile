@@ -16,7 +16,7 @@ GH_ACCOUNT=	stachenov
 CPE_VENDOR=	quazip_project
 USE_LDCONFIG=	yes
 USE_QT=		core network \
-		buildtools_build testlib_build qmake_build
+		buildtools:build testlib:build qmake:build
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=FALSE
 
 PLIST_SUB=	QTVER_SUFFIX=5 \

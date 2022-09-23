@@ -19,7 +19,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gl pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	captnfab
 GH_PROJECT=	PianoBooster
-USE_QT=		core gui opengl widgets xml buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui opengl widgets xml buildtools:build linguisttools:build qmake:build
 USE_GL=		gl glu
 
 CMAKE_ON=	USE_JACK

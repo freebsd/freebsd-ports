@@ -5,6 +5,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Callback Framework for C++ (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://libsigc.sourceforge.net/
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake:no_env qt:5 tar:bzip2
 USE_QT=		core gui xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}"
 

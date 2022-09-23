@@ -17,7 +17,7 @@ GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TUPLE=	CloudCompare:CCCoreLib:f0d5450:CloudCompare/libs/qCC_db/extern/CCCoreLib
 
-USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build svg linguisttools_build
+USE_QT=		concurrent core gui opengl printsupport widgets buildtools:build qmake:build svg linguisttools:build
 USE_LDCONFIG=	yes
 
 # PDAL support disabled ATM

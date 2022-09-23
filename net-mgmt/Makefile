@@ -93,12 +93,15 @@
     SUBDIR += icingaweb2-module-grafana
     SUBDIR += icingaweb2-module-graphite
     SUBDIR += icingaweb2-module-idoreports
+    SUBDIR += icingaweb2-module-incubator
     SUBDIR += icingaweb2-module-ipl
+    SUBDIR += icingaweb2-module-jira
     SUBDIR += icingaweb2-module-map
     SUBDIR += icingaweb2-module-pdfexport
     SUBDIR += icingaweb2-module-reactbundle
     SUBDIR += icingaweb2-module-reporting
     SUBDIR += icingaweb2-module-vsphere
+    SUBDIR += icingaweb2-module-vspheredb
     SUBDIR += icingaweb2-module-x509
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery

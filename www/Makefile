@@ -41,6 +41,7 @@
     SUBDIR += baculum-api
     SUBDIR += baculum-common
     SUBDIR += baculum-web
+    SUBDIR += badwolf
     SUBDIR += baikal
     SUBDIR += bareos-webui
     SUBDIR += bareos18-webui
@@ -405,7 +406,6 @@
     SUBDIR += mongoose
     SUBDIR += mongrel2
     SUBDIR += monolith
-    SUBDIR += moodle310
     SUBDIR += moodle311
     SUBDIR += moodle39
     SUBDIR += moodle40
@@ -1401,6 +1401,7 @@
     SUBDIR += pserv
     SUBDIR += publicfile
     SUBDIR += punbb
+    SUBDIR += py-Pituophis
     SUBDIR += py-Tenjin
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
@@ -1452,6 +1453,7 @@
     SUBDIR += py-dj40-django-mptt
     SUBDIR += py-dj40-django-prometheus
     SUBDIR += py-dj40-django-redis
+    SUBDIR += py-dj40-django-rich
     SUBDIR += py-dj40-django-tables2
     SUBDIR += py-dj40-django-taggit
     SUBDIR += py-dj40-django-timezone-field

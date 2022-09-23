@@ -33,7 +33,7 @@ RUN_DEPENDS=	avahi-browse:net/avahi-app
 USES=		cmake gettext-runtime gnome jpeg localbase qt:5 xorg
 USE_GNOME=	glib20
 USE_LDCONFIG=	${PREFIX}/lib/epsonscan2
-USE_QT=		buildtools_build core gui qmake_build widgets
+USE_QT=		buildtools:build core gui qmake:build widgets
 USE_XORG=	x11 xau xcb xdmcp
 
 EPSON_VERSION=	1.0.0.0

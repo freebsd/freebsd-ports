@@ -13,7 +13,7 @@ WWW=		https://fuchsia.googlesource.com/jiri
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules ninja:build

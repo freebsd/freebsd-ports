@@ -17,7 +17,7 @@ LIB_DEPENDS=	libAvogadroCore.so:science/avogadrolibs \
 		libMoleQueueClient.so:misc/molequeue
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gl libarchive qt:5
-USE_QT=		core concurrent gui network widgets buildtools_build qmake_build
+USE_QT=		core concurrent gui network widgets buildtools:build qmake:build
 USE_GL=		gl glew glu
 USE_LDCONFIG=	yes
 

@@ -16,9 +16,9 @@ USE_KDE=	kio sonnet auth calendarcore codecs config configwidgets \
 		coreaddons dbusaddons i18n idletime jobwidgets \
 		notifications service textwidgets widgetsaddons \
 		windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

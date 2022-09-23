@@ -11,9 +11,9 @@ USE_GL=		gl
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons i18n itemviews jobwidgets kio parts service \
 		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus designer gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

@@ -1,7 +1,7 @@
 PORTNAME=	tio
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.47
+DISTVERSION=	2.0
 CATEGORIES=	comms
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple TTY terminal I/O application
@@ -10,10 +10,9 @@ WWW=		https://tio.github.io
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		meson pkgconfig
+LIB_DEPENDS=	libinih.so:devel/inih
 
-USE_GITHUB=	yes
-GH_TUPLE=	benhoyt:inih:r55:inih/subprojects/libinih
+USES=		meson pkgconfig tar:xz
 
 OPTIONS_DEFINE=	BASH DOCS
 OPTIONS_DEFAULT=	BASH

@@ -15,7 +15,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils \
 		localbase:ldflags qt:5
 USE_QT=		core declarative graphicaleffects gui multimedia network \
 		quickcontrols sql svg widgets xml \
-		buildtools_build linguisttools_build qmake_build
+		buildtools:build linguisttools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	luspi

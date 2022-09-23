@@ -21,7 +21,7 @@ nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
 USES=			compiler:c++14-lang cpe pkgconfig qmake:no_env qt:5 ssl tar:xz
 GNU_CONFIGURE=		yes
-USE_QT=			core network sql xml buildtools_build linguisttools_build qmake_build
+USE_QT=			core network sql xml buildtools:build linguisttools:build qmake:build
 DESTDIRNAME=		INSTALL_ROOT
 CONFIGURE_ENV+=		openssl_CFLAGS="-I${OPENSSLINC}" openssl_LIBS="-L${OPENSSLLIB} -lssl"
 

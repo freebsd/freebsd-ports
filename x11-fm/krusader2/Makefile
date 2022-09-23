@@ -18,7 +18,7 @@ USE_KDE=	archive auth auth bookmarks codecs completion config \
 		service solid sonnet textwidgets wallet widgetsaddons \
 		windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network printsupport xml widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

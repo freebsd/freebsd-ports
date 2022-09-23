@@ -10,7 +10,7 @@ DISTNAME=	unixcw_${PORTVERSION}.orig
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT?=	Libs for cw on unix
-WWW=		http://unixcw.sourceforge.net/
+WWW?=		http://unixcw.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

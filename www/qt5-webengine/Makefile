@@ -77,7 +77,7 @@ USE_GL=		gl
 USE_GNOME=	glib20 libxml2 libxslt
 USE_QT=		core declarative gui location network printsupport \
 		webchannel widgets \
-		buildtools_build designer_build qmake_build
+		buildtools:build designer:build qmake:build
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xorgproto \
 		xrandr xrender xscrnsaver xtst
 

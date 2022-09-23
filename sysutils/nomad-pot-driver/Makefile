@@ -1,7 +1,7 @@
 PORTNAME=	nomad-pot-driver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	5
+DISTVERSION=	0.9.0
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -32,6 +32,7 @@ GH_TUPLE=	\
 		agext:levenshtein:v1.2.1:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v1.0.0:apparentlymart_go_textseg/vendor/github.com/apparentlymart/go-textseg \
 		appc:spec:v0.8.11:appc_spec/vendor/github.com/appc/spec \
+		armon:circbuf:bbbad097214e:armon_circbuf/vendor/github.com/armon/circbuf \
 		armon:go-metrics:ec5e00d3c878:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		checkpoint-restore:go-criu:fcdcd07065c5:checkpoint_restore_go_criu/vendor/github.com/checkpoint-restore/go-criu \
 		containerd:go-cni:60d125212faf:containerd_go_cni/vendor/github.com/containerd/go-cni \
@@ -39,6 +40,7 @@ GH_TUPLE=	\
 		coreos:go-iptables:v0.4.3:coreos_go_iptables/vendor/github.com/coreos/go-iptables \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		coreos:pkg:399ea9e2e55f:coreos_pkg/vendor/github.com/coreos/pkg \
+		creack:pty:v1.1.18:creack_pty/vendor/github.com/creack/pty \
 		cyphar:filepath-securejoin:v0.2.2:cyphar_filepath_securejoin/vendor/github.com/cyphar/filepath-securejoin \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		docker:cli:13fb276442f5:docker_cli/vendor/github.com/docker/cli \
@@ -68,8 +70,8 @@ GH_TUPLE=	\
 		hashicorp:go-getter:v1.4.0:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
 		hashicorp:go-hclog:v0.10.0:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-immutable-radix:v1.1.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
-		hashicorp:go-msgpack:23165f7bc3c2:hashicorp_go_msgpack/vendor/github.com/ugorji/go \
-		hashicorp:go-msgpack:96ddbed8d05b:hashicorp_go_msgpack_1/vendor/github.com/hashicorp/go-msgpack \
+		hashicorp:go-msgpack:23165f7bc3c2:hashicorp_go_msgpack_1/vendor/github.com/ugorji/go \
+		hashicorp:go-msgpack:96ddbed8d05b:hashicorp_go_msgpack/vendor/github.com/hashicorp/go-msgpack \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-plugin:v1.0.1:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
 		hashicorp:go-rootcerts:v1.0.1:hashicorp_go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
@@ -96,6 +98,7 @@ GH_TUPLE=	\
 		mitchellh:reflectwalk:v1.0.1:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
 		moby:moby:v0.6.3:moby_moby_1/vendor/github.com/docker/docker-credential-helpers \
 		moby:moby:v1.13.1:moby_moby/vendor/github.com/docker/docker \
+		moby:moby:v1.13.1:moby_moby_2/vendor/github.com/moby/moby \
 		mrunalp:fileutils:7d4729fb3618:mrunalp_fileutils/vendor/github.com/mrunalp/fileutils \
 		oklog:run:v1.0.0:oklog_run/vendor/github.com/oklog/run \
 		opencontainers:runc:6cc515888830:opencontainers_runc/vendor/github.com/opencontainers/runc \
@@ -115,7 +118,8 @@ post-extract:
 	@${RLN} ${WRKSRC_hashicorp_consul} ${WRKSRC}/vendor/github.com/hashicorp/consul
 	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/nomad/api
 	@${RLN} ${WRKSRC_hashicorp_nomad_api}/api ${WRKSRC}/vendor/github.com/hashicorp/nomad/api
-	@${MKDIR} ${WRKSRC}/vendor/github.com/moby
-	@${RLN} ${WRKSRC_moby_moby} ${WRKSRC}/vendor/github.com/moby/moby
+
+	#@${MKDIR} ${WRKSRC}/vendor/github.com/moby
+	#@${RLN} ${WRKSRC_moby_moby} ${WRKSRC}/vendor/github.com/moby/moby
 
 .include <bsd.port.mk>

@@ -16,10 +16,10 @@ USE_KDE=	attica auth codecs completion configwidgets coreaddons config \
 		notifications kross khtml service solid sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui \
 		libkeduvocdocument \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network multimedia \
 		printsupport script svg webchannel webengine widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xrender
 
 OPTIONS_DEFINE=	DOCS

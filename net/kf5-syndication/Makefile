@@ -5,15 +5,14 @@ CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE RSS feed handling library
-WWW=		https://api.kde.org/stable/kdepimlibs-apidocs/syndication/html/index.html
 
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	codecs service \
-		ecm_build
+		ecm:build
 USE_QT=		core xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

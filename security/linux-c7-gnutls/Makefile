@@ -5,6 +5,7 @@ CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://gnutls.org/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	gnu

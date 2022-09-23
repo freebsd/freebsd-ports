@@ -1,6 +1,6 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.5.3
-PORTREVISION=	2
+PORTVERSION=	3.6.0
+#PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -17,9 +17,9 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gmake \
 		gnome iconv localbase:ldflags pkgconfig qt:5 shared-mime-info \
 		sqlite ssl
-USE_QT=		buildtools_build concurrent core dbus declarative graphicaleffects \
-		gui linguist_build location network printsupport qmake_build \
-		quickcontrols2 sql svg testlib webchannel websockets \
+USE_QT=		buildtools:build concurrent core dbus declarative graphicaleffects \
+		gui linguist:build location network printsupport qmake:build \
+		quickcontrols quickcontrols2 sql svg testlib webchannel websockets \
 		widgets xml
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \

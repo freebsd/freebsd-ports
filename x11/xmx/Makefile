@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X protocol multiplexor
+WWW=		https://cs.brown.edu/software/xmx/
 
 USES=		tar:Z xorg
 USE_XORG=	x11

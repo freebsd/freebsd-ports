@@ -11,9 +11,9 @@ LICENSE=	GPLv2
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		i18n iconthemes notifications widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui phonon4 widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xtst
 
 OPTIONS_DEFINE=	DOCS

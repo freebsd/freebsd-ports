@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Extension to the Tk toolkit
-WWW=		https://dev.pdqi.com/fossil/wize/doc/tip/Wize.Blt.html
+WWW=		https://wiki.tcl-lang.org/page/BLT
 
 LICENSE=	MIT
 

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libGUIDOEngine.so:audio/guidolib \
 
 USES=		cmake gnome qt:5
 USE_QT=		core declarative gui network multimedia opengl printsupport sensors svg widgets websockets \
-		qmake_build buildtools_build
+		qmake:build buildtools:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

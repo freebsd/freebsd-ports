@@ -1,29 +1,25 @@
 PORTNAME=	ta-lib
-DISTVERSIONPREFIX=	TA_Lib-
-DISTVERSION=	0.4.24
+PORTVERSION=	0.4.25
 CATEGORIES=	finance python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	TA-Lib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python wrapper for ta-lib (tools for market analysis)
+COMMENT=	Python wrapper for TA-Lib (Technical Analysis Library)
 WWW=		https://mrjbq7.github.io/ta-lib/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libta_lib.so:devel/ta-lib
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:3.6+
-
-MAKE_ENV=	TA_INCLUDE_PATH="${LOCALBASE}/include"
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	mrjbq7
-USE_PYTHON=	distutils cython autoplist
+USES=		localbase python:3.7+
+USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/talib/_ta_lib*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

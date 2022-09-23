@@ -1,3 +1,5 @@
-TIMESTAMP = 1661347547
-SHA256 (JonMagon-KDiskMark-3.0.0_GH0.tar.gz) = 191b11519b991d0d2b492fdeb5a17ccad0ea2be584c9a5697d533cd8d81ea358
-SIZE (JonMagon-KDiskMark-3.0.0_GH0.tar.gz) = 176758
+TIMESTAMP = 1663319523
+SHA256 (JonMagon-KDiskMark-3.1.2_GH0.tar.gz) = 8bf4ed9b77abf6d021d2d8e306b457cf7a4ef3e2b0741bbdf39ea2e888a4301d
+SIZE (JonMagon-KDiskMark-3.1.2_GH0.tar.gz) = 171351
+SHA256 (itay-grudev-SingleApplication-f1e1508_GH0.tar.gz) = 61cd90baa768cc7aa8d96f57e3de15ad15282cc1c726de9891f4f27f410464f7
+SIZE (itay-grudev-SingleApplication-f1e1508_GH0.tar.gz) = 21982

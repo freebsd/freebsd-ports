@@ -1,5 +1,5 @@
 PORTNAME=	CycloneDDS
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.2
 CATEGORIES=	comms
 
 MAINTAINER=	flo@purplekraken.com

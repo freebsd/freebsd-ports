@@ -15,10 +15,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl kde:5 \
 USE_GL=		glu
 USE_KDE=	auth codecs config configwidgets coreaddons doctools i18n \
 		kio service widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network opengl printsupport \
 		svg testlib webchannel widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 
 OPTIONS_DEFINE=	DOCS WEBENGINE

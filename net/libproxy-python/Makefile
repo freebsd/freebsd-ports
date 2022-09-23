@@ -4,7 +4,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	Python binding for libproxy
-WWW=		https://libproxy.github.io/libproxy/
 
 USES=		python:3.6+
 USE_PYTHON=	flavors py3kplist

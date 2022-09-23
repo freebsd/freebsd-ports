@@ -3,7 +3,6 @@ CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libuuid
 
 COMMENT=	UUID library from e2fsprogs package
-WWW=		http://e2fsprogs.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${INSTALL_WRKSRC}/COPYING

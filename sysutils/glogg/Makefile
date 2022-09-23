@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 USES=		compiler:c++11-lang desktop-file-utils qmake qt:5
-USE_QT=		core gui widgets dbus buildtools_build
+USE_QT=		core gui widgets dbus buildtools:build
 LDFLAGS+=	-Wl,--as-needed  # prevents stray USE_GL=gl, see bug#224488
 
 PLIST_FILES=	bin/glogg \

@@ -41,7 +41,7 @@ USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative gui location network \
-		opengl printsupport qmake_build svg webchannel webengine \
+		opengl printsupport qmake:build svg webchannel webengine \
 		widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 

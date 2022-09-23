@@ -8,7 +8,7 @@ DIST_SUBDIR=	KDE/phonon
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VLC backend for Phonon
-WWW=		https://invent.kde.org/libraries/phonon-vlc
+WWW=		https://userbase.kde.org/Phonon
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -20,7 +20,7 @@ USES=		cmake pkgconfig tar:xz
 USES+=		compiler:c++11-lang kde:5 qt:5
 USE_KDE=	ecm
 USE_QT=		core gui widgets phonon4 \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 
 PHONON_PLUGIN=	vlc

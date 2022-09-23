@@ -1,7 +1,6 @@
 PKGNAMESUFFIX=	-lite
 
 COMMENT=	Command-line driven graphing utility (lite package)
-WWW=		http://www.gnuplot.info/
 
 CONFLICTS_INSTALL=	gnuplot
 

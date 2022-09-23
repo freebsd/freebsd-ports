@@ -5,6 +5,7 @@ bin/inspector
 bin/metabase-orphaned-segments
 bin/metabase-verify
 bin/metric-receiver
+bin/migrate-public-ids
 bin/multinode
 bin/node-cleanup
 bin/nullify-bad-user-agents

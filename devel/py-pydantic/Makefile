@@ -1,5 +1,5 @@
 PORTNAME=	pydantic
-DISTVERSION=	1.9.1
+DISTVERSION=	1.10.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.3:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/pydantic/pydantic/issues/4535
 
 CPE_VENDOR=	pydantic_project
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pydantic/*${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>

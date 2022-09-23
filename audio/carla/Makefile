@@ -22,7 +22,7 @@ USES=		compiler:c++11-lib desktop-file-utils gl gmake gnome localbase \
 		tar:bz2 xorg
 USE_PYQT=	pyqt5 sip
 USE_GNOME=	gtk20 gtk30
-USE_QT=		core gui widgets buildtools_build
+USE_QT=		core gui widgets buildtools:build
 USE_GL=		gl
 USE_XORG=	x11
 USE_SDL=	sdl2

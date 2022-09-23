@@ -2,6 +2,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/php-align.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-face.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-face.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-local-manual.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-local-manual.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode-debug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode-debug.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode.el

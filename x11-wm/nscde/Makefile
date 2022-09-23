@@ -65,7 +65,6 @@ SUB_LIST=	EXAMPLESDIR=${EXAMPLESDIR} \
 		PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/NsCDE-${DISTVERSION}
-PLIST_SUB=	ARCH=${ARCH}
 
 OPTIONS_DEFINE=			DOCS EXAMPLES
 OPTIONS_DEFAULT=		DOCS EXAMPLES KSH2020 SUDO
@@ -86,6 +85,11 @@ SUDO_RUN_DEPENDS=	sudo:security/sudo
 
 _SUDOFILES=	data/fvwm/Functions.fvwmconf.in lib/scripts/SysActionDialog
 
+.include <bsd.port.pre.mk>
+
+UNAME_M!=	${UNAME} -m
+PLIST_SUB+=	ARCH=${UNAME_M}
+
 post-patch-DOAS-on:
 	( for SUDOF in ${_SUDOFILES}; do ${REINPLACE_CMD} -e "s@sudo \\-n@doas@g" ${WRKSRC}/$${SUDOF}; done )
 
@@ -96,4 +100,4 @@ post-install-EXAMPLES-on:
 post-install-EXAMPLES-off:
 	${RM} -fr ${STAGEDIR}/${PREFIX}/share/doc/nscde/examples/*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

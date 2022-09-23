@@ -6,6 +6,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GLib bindings for D-Bus (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freedesktop.org/wiki/Software/DBusBindings/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	freedesktop

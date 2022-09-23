@@ -15,9 +15,9 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons guiaddons i18n iconthemes itemviews \
 		kdeclarative kio libkdegames newstuff notifyconfig service \
 		textwidgets widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network phonon4 svg widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 CMAKE_ON=	WITH_BH_SOLVER
 
 OPTIONS_DEFINE=	DOCS

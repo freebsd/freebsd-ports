@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig shebangfix qt:5
 USE_GNOME=	cairo
-USE_QT=		buildtools_build core gui qmake_build widgets
+USE_QT=		buildtools:build core gui qmake:build widgets
 USE_TEX=	pdftex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

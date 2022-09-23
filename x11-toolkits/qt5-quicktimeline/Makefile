@@ -9,6 +9,6 @@ WWW=		https://qt-project.org
 
 USES=		compiler:c++11-lang qmake qt-dist:5
 USE_QT=		core declarative quickcontrols \
-		buildtools_build
+		buildtools:build
 
 .include <bsd.port.mk>

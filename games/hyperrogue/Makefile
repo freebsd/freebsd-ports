@@ -1,5 +1,5 @@
 PORTNAME=	hyperrogue
-PORTVERSION=	12.0u
+PORTVERSION=	12.1a
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -13,13 +13,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+USES=		compiler:c++11-lang gl gmake localbase:ldflags sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	zenorogue
-
-USES=		compiler:c++11-lang gl gmake localbase:ldflags sdl xorg
 USE_SDL=	sdl mixer gfx ttf
 USE_GL=		gl glew
 ALL_TARGET=	hyperrogue
+
+PORTSCOUT=	skipv:12.1  # https://github.com/freebsd/portscout/issues/18
 
 # remove -O2, otherwise clang takes gigabytes of memory
 CXXFLAGS:=	${CXXFLAGS:C/-O[0-9]//} -DFHS -DHYPERPATH="\\\"${DATADIR}/\\\""

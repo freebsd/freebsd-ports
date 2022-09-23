@@ -14,9 +14,9 @@ USE_KDE=	activities activities-stats auth codecs completion config \
 		kdeclarative khtml kio kirigami2 notifications package parts \
 		plasma-framework plasma-workspace runner service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

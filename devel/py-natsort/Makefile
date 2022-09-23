@@ -1,5 +1,5 @@
 PORTNAME=	natsort
-DISTVERSION=	8.1.0
+DISTVERSION=	8.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 do-test:

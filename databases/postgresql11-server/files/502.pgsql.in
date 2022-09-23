@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Maintenance shell script to vacuum and backup database
-# Put this in /usr/local/etc/periodic/daily, and it will be run 
+# Put this in /usr/local/etc/periodic/daily, and it will be run
 # every night
 #
 # Written by Palle Girgensohn <girgen@pingpong.net>
@@ -34,7 +34,7 @@ fi
 : ${daily_pgsql_backupdir:="~${daily_pgsql_user}/backups"}
 : ${daily_pgsql_savedays:="7"}
 
-# allow '~´ in dir name
+# allow '~' in directory name
 eval backupdir=${daily_pgsql_backupdir}
 
 rc=0
@@ -43,7 +43,7 @@ pgsql_backup() {
 	# daily_pgsql_backupdir must be writeable by user %%PG_USER%%
 	# ~%%PG_USER%% is just that under normal circumstances,
 	# but this might not be where you want the backups...
-	if [ ! -d ${backupdir} ] ; then 
+	if [ ! -d ${backupdir} ] ; then
 	    echo Creating ${backupdir}
 	    mkdir -m 700 ${backupdir}; chown ${daily_pgsql_user} ${backupdir}
 	fi

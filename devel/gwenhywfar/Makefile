@@ -76,7 +76,7 @@ USE_GNOME+=	cairo gdkpixbuf2 gtk30
 USES+=		compiler:c++11-lang gl qmake:no_env qt:5
 USE_GL=		gl
 USE_QT=		core gui widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
 		--with-qt5-moc=${MOC} \
 		--with-qt5-uic=${UIC}

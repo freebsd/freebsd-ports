@@ -17,13 +17,13 @@ BROKEN_aarch64=	build fails: use of undeclared identifier '__TBB_machine_fetchad
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs \
 		${LOCALBASE}/include/CGAL/Polygon_mesh_processing/corefinement.h:math/cgal \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 LIB_DEPENDS=	libgmp.so:math/gmp libmpfr.so:math/mpfr
 
 USES=		compiler:c++14-lang gmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	huxingyi
-USE_QT=		buildtools_build linguisttools_build qmake_build \
+USE_QT=		buildtools:build linguisttools:build qmake:build \
 		core gui network opengl widgets
 ALL_TARGET=	all
 

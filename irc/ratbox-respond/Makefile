@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ratbox.org/download/${PORTNAME}/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Client-side implementation of the challenge oper system in ircd-ratbox
-WWW=		http://respond.ratbox.org/
+WWW=		https://www.ratbox.org/respond/
 
 CONFIGURE_WRKSRC=${WRKSRC}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}

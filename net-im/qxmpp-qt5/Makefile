@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 USES=		cmake compiler:c++17-lang libtool pathfix pkgconfig qt:5
 USE_QT=		core gui network xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qxmpp-project

@@ -18,7 +18,7 @@ USES=			cmake compiler:c++11-lang kde:5 \
 			python qt:5 tar:xz
 USE_KDE=		coreaddons ecm i18n
 USE_QT=			core gui network widgets xml \
-			buildtools_build qmake_build
+			buildtools:build qmake:build
 
 # In the future, these options will be moved into slave ports
 OPTIONS_DEFINE=		SQLITE MYSQL PGSQL

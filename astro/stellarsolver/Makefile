@@ -13,7 +13,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libwcs.so:astro/wcslib
 
 USES=		cmake desktop-file-utils iconv ninja qt:5 pkgconfig
-USE_QT=		buildtools concurrent core gui qmake_build network widgets
+USE_QT=		buildtools concurrent core gui qmake:build network widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	rlancaste
 

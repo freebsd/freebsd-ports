@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build core gui qmake_build sql widgets xml
+USE_QT=		buildtools:build core gui qmake:build sql widgets xml
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" \

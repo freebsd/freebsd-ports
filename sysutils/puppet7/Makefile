@@ -1,6 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	7.18.0
-PORTREVISION=	1
+PORTVERSION=	7.19.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7

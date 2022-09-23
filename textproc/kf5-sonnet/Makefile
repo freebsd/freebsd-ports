@@ -5,15 +5,14 @@ CATEGORIES=	textproc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 plugin-based spell checking library
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/sonnet/html/index.html
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		core declarative gui linguisttools network uiplugin widgets \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 # Disable examples -- they are not installed anyways.
 CMAKE_OFF=	ENABLE_EXAMPLES

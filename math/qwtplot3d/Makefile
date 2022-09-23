@@ -11,7 +11,7 @@ WWW=		https://github.com/SciDAVis/qwtplot3d
 LIB_DEPENDS=	libgl2ps.so:print/gl2ps
 
 USES=		cmake compiler:c++17-lang gl qt:5
-USE_QT=		core gui opengl widgets buildtools_build qmake_build
+USE_QT=		core gui opengl widgets buildtools:build qmake:build
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 

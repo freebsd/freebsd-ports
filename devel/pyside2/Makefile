@@ -20,9 +20,9 @@ USES=		cmake gl python:3.5+ qt:5 tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
-USE_QT=		3d buildtools_build charts concurrent core datavis3d declarative \
+USE_QT=		3d buildtools:build charts concurrent core datavis3d declarative \
 		designer gamepad gui help location multimedia network opengl \
-		printsupport qmake_build quickcontrols2 remoteobjects serialport \
+		printsupport qmake:build quickcontrols2 remoteobjects serialport \
 		script scripttools scxml sensors speech sql svg testlib uitools \
 		webchannel websockets widgets x11extras xml xmlpatterns
 

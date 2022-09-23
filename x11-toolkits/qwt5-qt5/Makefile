@@ -7,7 +7,7 @@ COMMENT=	Qt Widgets for Technical Applications
 WWW=		http://qwt.sourceforge.net/
 
 USES=		cmake compiler:c++17-lang qt:5
-USE_QT=		core gui printsupport svg widgets buildtools_build qmake_build
+USE_QT=		core gui printsupport svg widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

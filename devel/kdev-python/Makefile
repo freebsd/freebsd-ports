@@ -17,7 +17,7 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		solid sonnet syntaxhighlighting texteditor textwidgets \
 		threadweaver widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)

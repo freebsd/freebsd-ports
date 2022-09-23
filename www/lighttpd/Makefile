@@ -1,11 +1,11 @@
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.66
+PORTVERSION=	1.4.67
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT?=	Secure, fast, compliant, and flexible Web Server
-WWW=		https://www.lighttpd.net/
+WWW?=		https://www.lighttpd.net/
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 LICENSE=	BSD3CLAUSE

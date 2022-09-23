@@ -63,7 +63,7 @@ USES=		alias cmake compiler:c11 eigen:3 fortran gl gnome jpeg localbase	\
 		pkgconfig python qt:5 shebangfix tar:xz xorg
 USE_GL=		gl glew glu glut
 USE_GNOME=	libxml2
-USE_QT=		buildtools_build core gui help network opengl qmake_build sql svg	\
+USE_QT=		buildtools:build core gui help network opengl qmake:build sql svg	\
 		widgets x11extras xmlpatterns
 USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xorgproto xrender	\
 		xxf86vm

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5 tar:bz2
 USE_GL=		gl
 USE_QT=		core declarative gui network testlib xml \
-		buildtools_build qdoc_build qmake_build
+		buildtools:build qdoc:build qmake:build
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso

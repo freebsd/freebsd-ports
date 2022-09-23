@@ -16,7 +16,7 @@ USES=		cmake compiler:c++11-lang gnome kde:5 pkgconfig python:3.4+ \
 USE_GNOME=	gdkpixbuf2
 USE_KDE=	breeze ecm
 USE_QT=		core \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 CMAKE_ARGS=	-DPython3_EXECUTABLE:PATH=${PYTHON_CMD}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}

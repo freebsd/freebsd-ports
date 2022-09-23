@@ -1,6 +1,5 @@
 PORTNAME=	discordo
-DISTVERSION=	g20220907
-PORTREVISION=	1
+DISTVERSION=	g20220909
 CATEGORIES=	net-im
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ayntgl
-GH_TAGNAME=	ab6f290
+GH_TAGNAME=	40e2e7e
 GH_TUPLE=	alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		danieljoos:wincred:v1.1.2:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
@@ -22,6 +21,7 @@ GH_TUPLE=	alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/aless
 		diamondburned:arikawa:v3.1.0:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v2.5.3:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:sys:87db552b00fd:golang_sys/vendor/golang.org/x/sys \
 		golang:term:a9ba230a4035:golang_term/vendor/golang.org/x/term \
@@ -29,7 +29,6 @@ GH_TUPLE=	alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/aless
 		golang:time:e5dcc9cfc0b9:golang_time/vendor/golang.org/x/time \
 		gorilla:schema:v1.2.0:gorilla_schema/vendor/github.com/gorilla/schema \
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		layeh:gopher-luar:v1.0.10:layeh_gopher_luar/vendor/layeh.com/gopher-luar \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -37,7 +36,6 @@ GH_TUPLE=	alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/aless
 		rivo:uniseg:v0.3.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		skratchdot:open-golang:eef842397966:skratchdot_open_golang/vendor/github.com/skratchdot/open-golang \
 		stretchr:testify:v1.7.2:stretchr_testify/vendor/github.com/stretchr/testify \
-		yuin:gopher-lua:658193537a64:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zalando:go-keyring:v0.2.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring
 
 PLIST_FILES=	bin/${PORTNAME}

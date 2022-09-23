@@ -5,6 +5,7 @@ CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Assistive technology ATK bridge (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://gitlab.gnome.org/GNOME/at-spi2-atk
 
 LICENSE=	LGPL20+
 

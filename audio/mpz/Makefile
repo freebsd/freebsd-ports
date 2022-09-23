@@ -16,7 +16,7 @@ GH_ACCOUNT=	olegantonyan
 
 USES=		compiler:c++11-lang desktop-file-utils gstreamer qmake qt:5
 USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
-USE_QT=		buildtools_build concurrent core dbus gui multimedia \
+USE_QT=		buildtools:build concurrent core dbus gui multimedia \
 		network widgets x11extras
 
 QMAKE_ARGS=	DEFINES+=USE_SYSTEM_TAGLIB DEFINES+=USE_SYSTEM_YAMLCPP

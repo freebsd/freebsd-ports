@@ -11,7 +11,7 @@ WWW=		https://github.com/maxbachmann/RapidFuzz
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		ninja:devel/ninja \
 		jarowinkler-cpp>0:textproc/jarowinkler-cpp \
 		rapidfuzz-cpp>0:devel/rapidfuzz-cpp \

@@ -1,5 +1,6 @@
 PORTNAME=	texstudio
 DISTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -19,7 +20,7 @@ USES=		compiler:c++11-lang desktop-file-utils dos2unix \
 		ghostscript:run gl pkgconfig qmake qt:5 xorg
 USE_QT	=	core declarative gui network script svg widgets \
 		xml printsupport concurrent uitools \
-		buildtools_build
+		buildtools:build
 QTVER_SUFFIX=	5
 
 USE_XORG=	x11

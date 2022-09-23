@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 # because of arch-specific assembly
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 TEST_DEPENDS=	fftw3>0:math/fftw3 \
 		googletest>0:devel/googletest
 

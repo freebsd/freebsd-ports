@@ -1,12 +1,11 @@
 PORTNAME=	art
 PORTVERSION=	0.9.02
 CATEGORIES=	devel
-MASTER_SITES=	http://skylark.tsu.ru/art/0.9/download/src/ \
-		SF/art-project/src/
+MASTER_SITES=	SF/art-project/src/
 
 MAINTAINER=	virtual.lark@gmail.com
 COMMENT=	Resource tracing, debugging, and profiling tool
-WWW=		http://skylark.tsu.ru/art/index-en.html
+WWW=		https://github.com/larkvirtual/restracer/
 
 LICENSE=	GPLv3
 

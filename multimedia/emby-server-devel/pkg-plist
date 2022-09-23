@@ -8,6 +8,7 @@ lib/emby-server/system/Emby.ActivityLog.dll
 lib/emby-server/system/Emby.Api.dll
 lib/emby-server/system/Emby.Codecs.Dxva.dll
 lib/emby-server/system/Emby.Codecs.dll
+lib/emby-server/system/Emby.Drawing.LibVips.dll
 lib/emby-server/system/Emby.Drawing.Skia.dll
 lib/emby-server/system/Emby.Drawing.dll
 lib/emby-server/system/Emby.Ffmpeg.Base.dll
@@ -27,6 +28,7 @@ lib/emby-server/system/Emby.Server.MediaEncoding.dll
 lib/emby-server/system/Emby.Server.Sync.dll
 lib/emby-server/system/Emby.Sqlite.dll
 lib/emby-server/system/Emby.Web.GenericEdit.dll
+lib/emby-server/system/Emby.Web.GenericUi.dll
 lib/emby-server/system/Emby.Web.dll
 lib/emby-server/system/EmbyServer
 lib/emby-server/system/EmbyServer.deps.json
@@ -169,8 +171,11 @@ lib/emby-server/system/Microsoft.VisualBasic.dll
 lib/emby-server/system/Microsoft.Win32.Primitives.dll
 lib/emby-server/system/Microsoft.Win32.Registry.dll
 lib/emby-server/system/Microsoft.Win32.SystemEvents.dll
+lib/emby-server/system/NetVips.dll
+lib/emby-server/system/Newtonsoft.Json.dll
 lib/emby-server/system/PlaylistsNET.dll
 lib/emby-server/system/RSSDP.dll
+lib/emby-server/system/SMBLibrary.dll
 lib/emby-server/system/SQLitePCL.pretty.dll
 lib/emby-server/system/SQLitePCLRaw.provider.sqlite3.dll.config
 lib/emby-server/system/SQLitePCLRawEx.core.dll
@@ -183,7 +188,6 @@ lib/emby-server/system/SharpDX.MediaFoundation.dll
 lib/emby-server/system/SharpDX.dll
 lib/emby-server/system/SimpleInjector.dll
 lib/emby-server/system/SkiaSharp.dll
-lib/emby-server/system/SMBLibrary.dll
 lib/emby-server/system/System.AppContext.dll
 lib/emby-server/system/System.Buffers.dll
 lib/emby-server/system/System.Collections.Concurrent.dll
@@ -736,6 +740,9 @@ lib/emby-server/system/dashboard-ui/modules/formhelper.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreen-dc.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreenmanager.js
 lib/emby-server/system/dashboard-ui/modules/genericedit/genericedit.js
+lib/emby-server/system/dashboard-ui/modules/genericui/genericui.html
+lib/emby-server/system/dashboard-ui/modules/genericui/genericui.js
+lib/emby-server/system/dashboard-ui/modules/genericui/wizardpage.template.html
 lib/emby-server/system/dashboard-ui/modules/headroom/headroom.css
 lib/emby-server/system/dashboard-ui/modules/headroom/headroom.js
 lib/emby-server/system/dashboard-ui/modules/hlsjs/hls.min.js
@@ -881,7 +888,6 @@ lib/emby-server/system/dashboard-ui/modules/sync/transfermanager.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/artiststab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/basetab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/collectionstab.js
-lib/emby-server/system/dashboard-ui/modules/tabbedview/collectionstab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/folderstab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/genrestab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/itemstab.js

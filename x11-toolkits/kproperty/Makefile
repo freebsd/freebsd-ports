@@ -13,7 +13,7 @@ USES=			cmake compiler:c++11-lang gettext kde:5 qt:5 \
 			tar:xz
 USE_KDE=		ecm config coreaddons guiaddons i18n widgetsaddons
 USE_QT=			core declarative gui widgets xml \
-			buildtools_build qmake_build
+			buildtools:build qmake:build
 
 CONFLICTS_INSTALL=	calligra-2*
 

@@ -5,16 +5,15 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 abstraction for system notifications
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/knotifications/html/index.html
 
 LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libcanberra.so:audio/libcanberra
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	codecs config coreaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui linguisttools network phonon4 widgets x11extras \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xtst
 
 OPTIONS_DEFINE=		AUDIO

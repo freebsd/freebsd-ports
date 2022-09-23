@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	fails to build: vendor/github.com/DataDog/gopsutil/process/process_freebsd.go:95:9: cannot use k.Start.Sec * 1000 (value of type int32) as type int64 in return statement
 
-BUILD_DEPENDS=	cmake>=3.12:devel/cmake \
+BUILD_DEPENDS=	cmake-core>=3.12:devel/cmake-core \
 		go-bindata>0:devel/go-bindata
 
 USES=		go:modules python:3.7+

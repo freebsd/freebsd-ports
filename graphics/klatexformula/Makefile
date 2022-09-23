@@ -16,8 +16,8 @@ USES=		cmake compiler:c++11-lang desktop-file-utils ghostscript:run \
 		gl qt:5 shared-mime-info tar:bzip2 localbase
 USE_GL=		gl
 USE_QT=		core dbus gui sql svg widgets x11extras xml \
-		buildtools_build designer_build linguisttools_build \
-		qmake_build uitools_build
+		buildtools:build designer:build linguisttools:build \
+		qmake:build uitools:build
 USE_TEX=	latex dvipsk
 USE_LDCONFIG=	yes
 

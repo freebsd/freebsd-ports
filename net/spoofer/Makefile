@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
 GUI_USES=	gl qt:5
-GUI_USE=	GL=gl QT=buildtools_build,qmake_build,core,network,gui,widgets
+GUI_USE=	GL=gl QT=buildtools:build,qmake:build,core,network,gui,widgets
 GUI_CONFIGURE_ENABLE=	manager
 GUI_VARS=	USE_RC_SUBR=${PORTNAME}
 

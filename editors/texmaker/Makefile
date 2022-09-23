@@ -17,7 +17,7 @@ USES=		compiler:c++11-lang desktop-file-utils ghostscript:x11,run \
 		gl pkgconfig qmake qt:5 tar:bzip2
 USE_GL=		gl
 USE_QT=		concurrent core gui network printsupport script widgets \
-		xml buildtools_build
+		xml buildtools:build
 USE_TEX=	latex dvipsk
 
 EXTRACT_AFTER_ARGS=	--exclude hunspell

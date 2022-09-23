@@ -18,6 +18,6 @@ USES=		cmake compiler:c++11-lang gl kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		egl
 USE_KDE=	ecm wayland
 USE_QT=		concurrent core gui wayland \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	skrooge
 DISTVERSION=	2.28.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -27,13 +27,13 @@ USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		package parts plasma-framework runner service solid sonnet \
 		textwidgets unitconversion wallet widgetsaddons windowsystem \
 		xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 # designerplugin is weird: it's defined as a _run dependency, but
 # skrooge checks for it at build-time.
-USE_KDE+=	designerplugin_build
+USE_KDE+=	designerplugin:build
 USE_QT=		concurrent core dbus declarative designer gui network \
 		printsupport script sql svg webkit widgets xml \
-		buildtools_build designer_build qmake_build testlib_build
+		buildtools:build designer:build qmake:build testlib:build
 USE_XORG=	x11
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \
 		skgbankmodeler/skrooge-coinmarketcap.py \

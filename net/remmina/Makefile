@@ -83,7 +83,7 @@ GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
 KWALLET_USES=		kde:5 qt:5
-KWALLET_USE=		kde=wallet qt=buildtools_build,core,gui,qmake_build
+KWALLET_USE=		kde=wallet qt=buildtools:build,core,gui,qmake:build
 KWALLET_CMAKE_BOOL=	WITH_KF5WALLET
 
 NLS_CMAKE_BOOL=		WITH_TRANSLATIONS

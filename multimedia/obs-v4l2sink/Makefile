@@ -16,7 +16,7 @@ LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 USES=		cmake compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CatxFish
-USE_QT=		core gui widgets buildtools_build qmake_build
+USE_QT=		core gui widgets buildtools:build qmake:build
 
 CMAKE_ARGS=	-DLIBOBS_INCLUDE_DIR=${LOCALBASE}/include/obs
 

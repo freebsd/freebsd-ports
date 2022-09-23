@@ -1,12 +1,12 @@
 PORTNAME=	gym
-PORTVERSION=	0.25.2
+PORTVERSION=	0.26.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenAI toolkit for developing and comparing your reinforcement learning agents
-WWW=		https://www.gymlibrary.ml/
+WWW=		https://www.gymlibrary.dev/
 
 LICENSE=	MIT
 

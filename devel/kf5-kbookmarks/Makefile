@@ -4,13 +4,12 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for bookmarks and the XBEL format
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kbookmarks/html/index.html
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons \
 		widgetsaddons xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui linguisttools widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

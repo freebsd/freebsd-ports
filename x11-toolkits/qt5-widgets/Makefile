@@ -8,7 +8,7 @@ COMMENT=	Qt C++ widgets module
 
 USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base xorg
 USE_PERL5=	extract
-USE_QT=		core gui qmake_build buildtools_build
+USE_QT=		core gui qmake:build buildtools:build
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
 

@@ -40,7 +40,7 @@ GH_TUPLE=		uglide:RedisDesktopManager:${PORTVERSION}:DEFAULT/RedisDesktopManager
 			redis:hiredis:6850306:hiredis/3rdparty/qredisclient/3rdparty/hiredis \
 			simdjson:simdjson:3bd8b0b:simdjson/3rdparty/simdjson
 USE_QT=			charts concurrent core declarative gui network \
-			quickcontrols svg widgets buildtools_build qmake_build
+			quickcontrols svg widgets buildtools:build qmake:build
 QMAKE_ARGS+=		SYSTEM_BROTLI=1 SYSTEM_LZ4=1 SYSTEM_SNAPPY=1 \
 			SYSTEM_ZSTD=1 VERSION=${PORTVERSION}
 BINARY_ALIAS=		python3-config=${PYTHON_CMD}-config \

@@ -26,7 +26,7 @@ GH_PROJECT=	Charm
 USE_QT=		core dbus gui \
 		network printsupport script sql sql-sqlite3 \
 		widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	ice x11 xcb xext xscrnsaver
 
 .include <bsd.port.mk>

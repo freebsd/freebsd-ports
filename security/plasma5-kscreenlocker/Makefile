@@ -20,9 +20,9 @@ USE_KDE=	auth codecs config configwidgets coreaddons crash emoticons \
 		kdeclarative layer-shell-qt notifications package \
 		plasma-framework service sonnet textwidgets wayland \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network qdbus widgets x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	ice sm x11 xcb xcursor xext xi
 
 CPE_VENDOR=	kde

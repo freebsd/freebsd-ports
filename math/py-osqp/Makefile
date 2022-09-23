@@ -16,7 +16,7 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}qdldl>0:math/py-qdldl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.6+

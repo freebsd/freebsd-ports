@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		liblo.so:audio/liblo
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags pkgconfig qt:5 shared-mime-info
-USE_QT=		core gui svg widgets xml buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui svg widgets xml buildtools:build linguisttools:build qmake:build
 USE_GL=		gl
 
 CMAKE_OFF=	CONFIG_ALSA_MIDI

@@ -1,28 +1,27 @@
---- Makefile.orig	2021-02-18 00:40:10 UTC
+--- Makefile.orig	2022-08-05 00:08:56 UTC
 +++ Makefile
-@@ -15,10 +15,10 @@
+@@ -15,7 +15,7 @@
  #
  
- CURLINCL = `curl-config --cflags` 
--JANSINCL = -I/usr/local/include
-+JANSINCL = -I$(LOCALBASE)/include
+ # Base directory for jansson header and libraries
+-JANSBASE=/usr/local
++JANSBASE=$(LOCALBASE)
+ # For macOS on M1, use this instead of the above line:
+ #JANSBASE=/opt/homebrew
  
- CURLLIBS = `[ ! -z "$$(curl-config --libs)" ] && curl-config --libs || curl-config --static-libs`
--JANSLIBS = -L/usr/local/lib -ljansson
-+JANSLIBS = -L$(LOCALBASE)/lib -ljansson
- 
- CWARN =-W -Wall -Wextra -Wcast-qual -Wpointer-arith -Wwrite-strings \
- 	-Wmissing-prototypes  -Wbad-function-cast -Wnested-externs \
-@@ -34,7 +34,7 @@ CDEBUG = -g -O3
+@@ -41,9 +41,9 @@ INCL= $(CURLINCL) $(JANSINCL)
+ CDEBUG = -g -O3
  CFLAGS += $(CGPROF) $(CDEBUG) $(CWARN) $(CDEFS)
  INCL= $(CURLINCL) $(JANSINCL)
- # freebsd requires that -lresolv _not_ be used here
 -LIBS= $(CURLLIBS) $(JANSLIBS) -lresolv
++#LIBS= $(CURLLIBS) $(JANSLIBS) -lresolv
+ # For freebsd, it requires that -lresolv _not_ be used here, use this instead of the above line:
+-#LIBS= $(CURLLIBS) $(JANSLIBS)
 +LIBS= $(CURLLIBS) $(JANSLIBS)
- #LIBS= $(CURLLIBS) $(JANSLIBS)
  
  TOOL = dnsdbq
-@@ -48,12 +48,12 @@ TOOL_SRC = $(TOOL).c ns_ttl.c netio.c \
+ TOOL_OBJ = $(TOOL).o ns_ttl.o netio.o \
+@@ -58,12 +58,12 @@ install: all
  all: $(TOOL)
  
  install: all

@@ -1,6 +1,5 @@
 PORTNAME=	poppler
-DISTVERSION=	22.08.0
-PORTREVISION=	1
+DISTVERSION=	22.09.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -56,7 +55,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=123
+PLIST_SUB+=	SHLIB_VER=124
 
 OPTIONS_DEFINE=		CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG
@@ -80,7 +79,7 @@ BINARY_ALIAS+=		python3=${PYTHON_CMD}
 .  elif ${_SLAVE_PORT} == qt5
 USES+=			qt:5
 USE_QT=			core gui widgets xml \
-			buildtools_build qmake_build testlib_build
+			buildtools:build qmake:build testlib:build
 .  elif ${_SLAVE_PORT} == qt6
 USES+=			gl qt:6
 USE_GL+=		gl opengl

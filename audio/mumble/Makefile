@@ -38,7 +38,7 @@ GH_TUPLE=	mumble-voip:mumble:${DISTVERSION} \
 		mumble-voip:sbcelt:045493d:mumble_sbcelt/3rdparty/sbcelt-src \
 		mumble-voip:mumble-theme:9467fe8:mumble_theme/themes/Mumble
 
-USE_QT=		buildtools_build core gui l10n linguist_build network opengl sql sql-sqlite3_run svg widgets xml
+USE_QT=		buildtools:build core gui l10n linguist:build network opengl sql sql-sqlite3:run svg widgets xml
 USE_LDCONFIG=	yes
 
 USE_XORG=	ice xi x11

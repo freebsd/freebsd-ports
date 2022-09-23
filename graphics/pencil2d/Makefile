@@ -15,7 +15,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake qmake qt:5 \
 		shared-mime-info
-USE_QT=		core gui multimedia svg testlib widgets xml xmlpatterns buildtools_build
+USE_QT=		core gui multimedia svg testlib widgets xml xmlpatterns buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

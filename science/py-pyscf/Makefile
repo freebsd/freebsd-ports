@@ -15,7 +15,7 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
-		cmake:devel/cmake \
+		cmake:devel/cmake-core \
 		gmake:devel/gmake
 LIB_DEPENDS=	libcint.so:science/libcint \
 		libxc.so:science/libxc \

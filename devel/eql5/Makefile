@@ -14,7 +14,7 @@ LIB_DEPENDS=	libecl.so:lang/ecl
 USES=		gl qmake qt:5
 USE_QT=		core declarative gui help location multimedia network \
 		printsupport sql svg webchannel webengine widgets \
-		buildtools_build uitools_build
+		buildtools:build uitools:build
 USE_GL=		gl
 USE_LDCONFIG=	yes
 

@@ -1,13 +1,13 @@
 PORTNAME=	closql
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Store EIEIO objects using EmacSQL
-WWW=		https://github.com/emacscollective/closql
+WWW=		https://github.com/magit/closql
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,7 +17,7 @@ RUN_DEPENDS=	emacsql${EMACS_PKGNAMESUFFIX}>=3.0.0:databases/emacsql@${EMACS_FLAV
 
 USES=		emacs
 USE_GITHUB=	yes
-GH_ACCOUNT=	emacscollective
+GH_ACCOUNT=	magit
 
 CONFLICTS_INSTALL=	closql closql-emacs_* # share/doc/closql/README.md
 

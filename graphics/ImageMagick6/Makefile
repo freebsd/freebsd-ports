@@ -1,5 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.12-62
+DISTVERSION=	6.9.12-63
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
@@ -25,8 +25,9 @@ PORTSCOUT?=	limit:^6\.9\.
 CONFLICTS_INSTALL=	ImageMagick7 ImageMagick7-nox11 # bin/Magick++-config
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		compiler:c++11-lang cpe gettext-runtime gmake gnome libtool:keepla \
-		localbase pathfix perl5 pkgconfig:both shebangfix tar:xz
+USES=		compiler:c++11-lang cpe gettext-runtime gmake gnome \
+		libtool:keepla localbase pathfix perl5 pkgconfig:both \
+		shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
@@ -280,9 +281,9 @@ PLIST_SUB+=		WMF="@comment "
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
 . if ${PORT_OPTIONS:MX11}
-USES+=			ghostscript:x11
+USES+=		ghostscript:x11
 . else
-USES+=			ghostscript
+USES+=		ghostscript
 . endif
 .endif
 

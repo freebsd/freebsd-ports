@@ -22,7 +22,7 @@ MINOR_VERSION=	6.1
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake iconv \
 		pkgconfig perl5 python qt:5 shebangfix tar:xz xorg
-USE_QT=		core concurrent gui svg widgets x11extras buildtools_build qmake_build
+USE_QT=		core concurrent gui svg widgets x11extras buildtools:build qmake:build
 USE_XORG=	xcb
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-boost \

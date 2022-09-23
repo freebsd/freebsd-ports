@@ -1,10 +1,6 @@
 PORTNAME=	libmad
-PORTVERSION=	0.16.2
-PORTREVISION=	1
+PORTVERSION=	0.16.3
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/tenacityteam/libmad/commit/
-PATCHFILES=	9ec2efa6ba4bfaed7805867077d3a67daa022331.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)

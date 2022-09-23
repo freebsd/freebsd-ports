@@ -17,8 +17,6 @@ COMMIT_DATE=	2022.08.28
 
 LICENSE=	LGPL21
 
-BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
-BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 BROKEN_i386=		cannot bind to a temporary of type va_list
 
 WRKSRC_SUBDIR=	${PORTNAME}

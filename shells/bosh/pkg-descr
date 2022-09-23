@@ -1,0 +1,23 @@
+The Schily Bourne Shell was derived from the Bourne Shell sources from
+OpenSolaris.  The Schily Bourne Shell is actively maintained and
+enhanced on a regular base.  It can be compiled into three variants:
+
+Non-POSIX SVr4/OpenSolaris variant (obosh)
+	The portable but not extended variant obosh allows script
+	portability testing.  Most scripts that run in the old Schily
+	Bourne Shell will run with any Unix shell that is still in use
+	since 1990.
+
+Minimal POSIX compliant variant (pbosh)
+	This version implements the minimal set of POSIX features and
+	this version is always in strict POSIX mode.  The features are
+	similar to the features in dash, but since pbosh supports multi
+	byte characters, it is really POSIX compliant.  The pbosh
+	variant allows script portability testing aginst the POSIX
+	feature set.
+
+The POSIX compliant extended variant (bosh)
+	This version has been verified to work as the system shell on
+	Gentoo Linux and OpenSolaris (SchilliX).  The enhanced Schily
+	Bourne Shell (bosh) implements many features that are missing
+	in the OpenSolaris Bourne Shell listed above.

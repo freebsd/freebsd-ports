@@ -1,13 +1,24 @@
---- ffi/Makefile.freebsd.orig	2020-01-03 17:02:39 UTC
+--- ffi/Makefile.freebsd.orig	2022-09-01 13:47:22 UTC
 +++ ffi/Makefile.freebsd
-@@ -1,7 +1,7 @@
+@@ -1,17 +1,17 @@
  
 -CXX = clang++ -std=c++11 -stdlib=libc++
--CXXFLAGS = $(LLVM_CXXFLAGS)
--LDFLAGS = $(LLVM_LDFLAGS)
-+CXX ?= clang++
++CXX ?= clang++ -std=c++11 -stdlib=libc++
+ 
+ # -flto and --exclude-libs allow us to remove those parts of LLVM we don't use
+ CXX_FLTO_FLAGS ?= -flto
+ LD_FLTO_FLAGS ?= -flto -Wl,--exclude-libs=ALL
+ 
+-CXXFLAGS := $(CPPFLAGS) $(CXXFLAGS) $(LLVM_CXXFLAGS) $(CXX_FLTO_FLAGS)
+-LDFLAGS := $(LDFLAGS) $(LLVM_LDFLAGS) $(LD_FLTO_FLAGS)
 +CXXFLAGS := $(CPPFLAGS) $(CXXFLAGS) $(LLVM_CXXFLAGS)
 +LDFLAGS := $(LDFLAGS) $(LLVM_LDFLAGS)
  LIBS = $(LLVM_LIBS)
  INCLUDE = core.h
  SRC = assembly.cpp bitcode.cpp core.cpp initfini.cpp module.cpp value.cpp \
+ 	executionengine.cpp transforms.cpp passmanagers.cpp targets.cpp dylib.cpp \
+-	linker.cpp object_file.cpp
++	linker.cpp object_file.cpp custom_passes.cpp
+ OUTPUT = libllvmlite.so
+ 
+ all: $(OUTPUT)

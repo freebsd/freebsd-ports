@@ -80,6 +80,7 @@
 %%DSO%%%%SRCACHE%%libexec/nginx/ngx_http_srcache_filter_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/nginx/ngx_stream_module.so
+%%DSO%%%%STS%%libexec/nginx/ngx_http_stream_server_traffic_status_module.so
 %%DSO%%%%VOD%%libexec/nginx/ngx_http_vod_module.so
 %%DSO%%%%VTS%%libexec/nginx/ngx_http_vhost_traffic_status_module.so
 %%DSO%%%%WEBSOCKIFY%%libexec/nginx/ngx_http_websockify_module.so

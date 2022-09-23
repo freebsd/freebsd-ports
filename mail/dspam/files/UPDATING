@@ -1,7 +1,7 @@
 # $Tecnik: ports/mail/dspam/files/UPDATING,v 1.16 2006/06/07 23:45:21 itetcu Exp $
 #
 # for each PKGNAME or user option change an entry should be added in this file
-# each entry 
+# each entry
 
 This file documents some of the problems you may encounter when
 upgrading dspam port.  I will try my best to minimize these disruptions,
@@ -248,7 +248,7 @@ BUGFIX: Decoding NUL characters causes message truncation
 BUGFIX: Many files not written to group directory when using managed groups
 BUGFIX: Some LDAs/MTAs truncate message when single dots not properly quoted
 BUGFIX: 7BIT encoding contains 8BIT characters
-BUGFIX: Messages to multiple local recipients may fail to decode completely 
+BUGFIX: Messages to multiple local recipients may fail to decode completely
 BUGFIX: Delivery of false positives fails in managed groups
 BUGFIX: LMTP/SMTP delivery fails on non-250 2xx response code
 BUGFIX: Messages missing a terminating boundary fail to receive a signature
@@ -256,7 +256,7 @@ BUGFIX: Messages missing a terminating boundary fail to receive a signature
 
 ###########################################################################
 # dspam-3.4.6.20050523.0845
-# 
+#
 
 BUGFIX: fix for managed groups where delivery of false positives would fail
 due to the managed group not being recognized
@@ -284,10 +284,10 @@ when the loose signature was provided without the appropriate delimiter
 before ./cofigure fails [3]
 
 [1] "Obscure" = it took me about 4 hours and a 500 queue processed one by
-one by hand to catch and reproduce the problem after 7 days of mail 
+one by hand to catch and reproduce the problem after 7 days of mail
 processing w/o error
 [2] Pointed out by vanilla@
-[3] Pointed out by Arvinn Løkkebakken <arvinn@whitebird.no> for mail/dspam
+[3] Pointed out by Arvinn LÃ¸kkebakken <arvinn@whitebird.no> for mail/dspam
 
 
 ###########################################################################
@@ -327,7 +327,7 @@ Please read carefully distributed docs like README and UPGRADING.
 
 - disable ORACLE DB back-end; it's unmaintained and hasn't work on FreeBSD
 - (added post-factum) Fix mysql/neural-combination
-- (added post-factum) change POSTGRESQL* to POSTGRESQL because of "Split the 
+- (added post-factum) change POSTGRESQL* to POSTGRESQL because of "Split the
 postgresql ports into a server and a client part"
 
 
@@ -375,7 +375,7 @@ TrustedDeliveryAgent, but leave them commented out
 # dspam-3.2.3.20041218.2100_1
 #
 
-- fix installation of SQLite docs and implicitly package 
+- fix installation of SQLite docs and implicitly package
 (reported by: pointyhat via kris@)
 
 #############################################################################
@@ -384,13 +384,13 @@ TrustedDeliveryAgent, but leave them commented out
 
 - change of name: SQLITE --> SQLITE2, as the -devel port already have sqlite3
 support
-- fix deinstall to delete dspam.conf if it hasn't been cutomized, as 
+- fix deinstall to delete dspam.conf if it hasn't been cutomized, as
 requested by kris@ with "Ports Janitor" hat :)
 - correct long-standing copy/paste bug DSPAM_{GROUPD,MODE} where set to
-DSPAM_HOME_{GROUP,MODE} 
+DSPAM_HOME_{GROUP,MODE}
 
 #############################################################################
-# dspam-3.2.3.20041203.1245_1 (entry added post-factum, it was an automated 
+# dspam-3.2.3.20041203.1245_1 (entry added post-factum, it was an automated
 #                            update approved by me but not under my control )
 #
 
@@ -400,12 +400,12 @@ DSPAM_HOME_{GROUP,MODE}
 # dspam-3.2.3.20041203.1245
 #
 
-- now we support also MYSQL50 and we handle MYSQL cases right based on a 
+- now we support also MYSQL50 and we handle MYSQL cases right based on a
 patch sent by Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>
-- add support for exim as suggested by 
+- add support for exim as suggested by
 Shahbaz Javeed <sjaveed@adderpit.com>; we try to build exim with the same
 database back-end if possible (still work to do to automate pg 7.3 case)
-- fix PREF_EXT and BDB4 cases as well in our Makefile (actually is 4.1 and 
+- fix PREF_EXT and BDB4 cases as well in our Makefile (actually is 4.1 and
 I'm thinking about dropping support for it since SQLite works a lot better if
 you don't want a full sql server; feedback welcome)
 - also small vendor bug-fixes (pgp signed mails, pgsql driver)
@@ -460,7 +460,7 @@ WITH_SIGNATURE_LIFE     SIGNATURE_LIFE
 OPTION                       port default
 ----------------------------------------------
 LOG_DIR                         /var/log/dspam
-WITH_USER_HOMEDIR             
+WITH_USER_HOMEDIR
 DSPAM_HOME_OWNER
 DSPAM_HOME_GROUP
 DSPAM_HOME_MODE
@@ -487,11 +487,11 @@ in dspam port dir with appropiate OPTIONS and VARs (see changes above)
 - back-up the database
 - use the appropiate migration scripts from files dir of dspam port dir
 ( for MySQL you should use 2x_to_3x_db.sql then 310_to_320.my.sql)
-(if using MySQL 4.1.x or 3.xx you're on your own for now; the same for 
+(if using MySQL 4.1.x or 3.xx you're on your own for now; the same for
 PostgreSQL, but take a look in the UPDATING and 310_to_320.pg.sql)
 
-5. Back-up and them move the files from the old DSPAM_HOME 
-(defaulted: /usr/loca/etc/dspam) to the new DSPAM_HOME (default /var/db/dspam) 
+5. Back-up and them move the files from the old DSPAM_HOME
+(defaulted: /usr/loca/etc/dspam) to the new DSPAM_HOME (default /var/db/dspam)
 or where ever you defined DSPAM_HOME in 2 above.
 
 6. Adjust you new dspam.conf according with your setup OPTIONS and VARs defined
@@ -502,7 +502,7 @@ on make / mak install step.
 8. Enable dspam in the MTA setup, but only locally or something and start testing.
 
 If something ain't working is one of:
-- permissions problems (hint: with what UID 
+- permissions problems (hint: with what UID
 is dspam called from your MTA vs. DSPAM_HOME and DSPAM_LOG_DIR)
-- something wrong in dspam.conf (hint: you didn't remove old config files 
+- something wrong in dspam.conf (hint: you didn't remove old config files
 and they are still used ?)

@@ -5,6 +5,7 @@ CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://graphite.sil.org
 
 USES=		cpe linux:c7
 CPE_VENDOR=	sil

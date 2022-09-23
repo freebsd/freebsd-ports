@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lukejee@gmail.com
 COMMENT=	Go Versioning Manager
+WWW=		https://github.com/pote/gvp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

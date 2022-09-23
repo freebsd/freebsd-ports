@@ -104,7 +104,7 @@ TCLTK_CMAKE_ON=		-DPLPLOT_TK_VERSION:STRING="${TK_VER}" \
 THREADS_CMAKE_BOOL=	THREADS_HAVE_PTHREAD_ARG
 
 QT5_USES=		qt:5
-QT5_USE=		QT=core,gui,printsupport,svg,xml,widgets,buildtools_build,qmake_build
+QT5_USE=		QT=core,gui,printsupport,svg,xml,widgets,buildtools:build,qmake:build
 QT5_CMAKE_BOOL=		ENABLE_qt
 
 WXGTK_LIB_DEPENDS=	libagg.so:graphics/agg

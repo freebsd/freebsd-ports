@@ -4,10 +4,13 @@ PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Development branch of AT&T KornShell 93
+COMMENT=	Archived development branch of AT&T KornShell 93
 WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
+
+DEPRECATED=	Upstream ksh2020 branch archived, development continues under new ksh93 project
+EXPIRATION_DATE=	2022-09-30
 
 USES=		compiler:c11 meson ninja python:build
 

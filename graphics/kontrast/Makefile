@@ -9,9 +9,9 @@ WWW=		https://apps.kde.org/en/kontrast
 USES=		compiler:c++11-lang cmake pkgconfig \
 		kde:5 qt:5 tar:xz
 USE_KDE=	coreaddons i18n kdeclarative kirigami2 \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network quickcontrols2 sql svg widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

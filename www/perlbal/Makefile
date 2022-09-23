@@ -22,11 +22,13 @@ RUN_DEPENDS=	p5-BSD-Resource>=0:devel/p5-BSD-Resource \
 		p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
 		p5-libwww>=0:www/p5-libwww
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 USE_RC_SUBR=	perlbal
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} 's,/etc/perlbal,${PREFIX}/etc/perlbal,g' \

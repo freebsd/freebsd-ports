@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	JPEG-2000 reference implementation (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.ece.uvic.ca/~frodo/jasper/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	${PORTNAME}_project

@@ -5,7 +5,6 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 advanced embeddable text editor
-WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/ktexteditor/html/index.html
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libeditorconfig.so:editors/editorconfig-core-c
@@ -16,10 +15,10 @@ USE_KDE=	archive auth codecs completion config configwidgets \
 		coreaddons guiaddons i18n iconthemes itemviews \
 		jobwidgets kio parts service solid sonnet syntaxhighlighting \
 		textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
 		script widgets xml xmlpatterns \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

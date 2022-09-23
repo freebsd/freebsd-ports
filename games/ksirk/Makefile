@@ -11,7 +11,7 @@ USE_KDE=	attica auth codecs completion config configwidgets \
 		coreaddons crash i18n iconthemes kio libkdegames newstuff \
 		service wallet widgetsaddons xmlgui
 USE_QT=		concurrent core dbus declarative gui network phonon4 svg widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

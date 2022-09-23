@@ -1,7 +1,7 @@
 PORTNAME=	texworks
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.6.2
-PORTREVISION=	43
+PORTREVISION=	44
 CATEGORIES=	editors
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		compiler:c++11-lang cmake desktop-file-utils pkgconfig \
 		qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	TeXworks
-USE_QT=		buildtools_build designer_build qmake_build \
+USE_QT=		buildtools:build designer:build qmake:build \
 		core concurrent dbus gui linguisttools script \
 		scripttools uitools widgets xml
 

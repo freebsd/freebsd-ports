@@ -20,7 +20,7 @@ USES=		cmake compiler:c++17-lang gettext-runtime gnome \
 USE_GNOME=	glib20
 USE_QT=		core dbus declarative gui multimedia network widgets \
 		quickcontrols quickcontrols2 \
-		buildtools_build linguist_build qmake_build
+		buildtools:build linguist:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quotient-im

@@ -66,7 +66,7 @@ MAGICK_USES=		magick:6
 MAGICK_CMAKE_BOOL=	USE_MAGICK
 
 QT5_USES=	desktop-file-utils qt:5
-QT5_USE=	qt=qmake_build,buildtools_build,core,gui,widgets,network,opengl,multimedia
+QT5_USE=	qt=qmake:build,buildtools:build,core,gui,widgets,network,opengl,multimedia
 QT5_CMAKE_BOOL=	BUILD_QT
 
 .include <bsd.port.mk>

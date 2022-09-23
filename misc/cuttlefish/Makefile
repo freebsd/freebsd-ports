@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 TEST_DEPENDS=	ispc:devel/ispc
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang dos2unix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	akb825
@@ -32,5 +32,7 @@ GH_TUPLE=	akb825:freeimage:dae76e95cd4a9fbb58b0a6d635fd3c3f4b222076:akb825_freei
 CMAKE_OFF=	CUTTLEFISH_BUILD_DOCS CUTTLEFISH_BUILD_TESTS
 CMAKE_ON=	CUTTLEFISH_SHARED
 CMAKE_TESTING_ON=	CUTTLEFISH_BUILD_TESTS
+DOS2UNIX_FILES=	lib/FreeImage/Source/FreeImage/PluginDDS.cpp \
+		lib/FreeImage/Source/FreeImage/PluginBMP.cpp
 
 .include <bsd.port.mk>

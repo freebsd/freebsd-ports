@@ -1,6 +1,6 @@
 Remove libs that are not here on FreeBSD.
 
---- hints/freebsd.sh.orig	2016-12-05 10:28:13 UTC
+--- hints/freebsd.sh.orig	2020-12-28 16:57:44 UTC
 +++ hints/freebsd.sh
 @@ -88,6 +88,8 @@ case "$osvers" in
  	esac

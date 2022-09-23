@@ -1,0 +1,9 @@
+TIMESTAMP = 1658733496
+SHA256 (centos/expat-devel-2.1.0-12.el7.aarch64.rpm) = eb818da9347fa683079771a80a725cdd73f29373000868f602d2d8c591040eb7
+SIZE (centos/expat-devel-2.1.0-12.el7.aarch64.rpm) = 57588
+SHA256 (centos/expat-devel-2.1.0-12.el7.i686.rpm) = 275fe3cbc73d662f72c3244222c2329caa68e4aaf7d107ef009657dd06fb6e92
+SIZE (centos/expat-devel-2.1.0-12.el7.i686.rpm) = 58148
+SHA256 (centos/expat-devel-2.1.0-12.el7.x86_64.rpm) = a9f6672cc1643c21d9689685c9bae287909204e8cd6eb12be11bd438679b82b0
+SIZE (centos/expat-devel-2.1.0-12.el7.x86_64.rpm) = 58112
+SHA256 (centos/expat-2.1.0-12.el7.src.rpm) = d459d51d04fdb0e3f3063310937f81a78271d9303d34d60a32953aa1c36bf896
+SIZE (centos/expat-2.1.0-12.el7.src.rpm) = 583181

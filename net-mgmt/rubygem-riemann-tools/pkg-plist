@@ -10,6 +10,7 @@ bin/riemann-freeswitch
 bin/riemann-haproxy
 bin/riemann-health
 bin/riemann-kvminstance
+bin/riemann-md
 bin/riemann-memcached
 bin/riemann-net
 bin/riemann-nginx-status
@@ -17,4 +18,6 @@ bin/riemann-ntp
 bin/riemann-portcheck
 bin/riemann-proc
 bin/riemann-varnish
+bin/riemann-wrapper
 bin/riemann-zookeeper
+bin/riemann-zpool

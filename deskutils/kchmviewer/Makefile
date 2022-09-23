@@ -15,7 +15,7 @@ USES=		compiler:c++11-lang desktop-file-utils dos2unix gl \
 		qmake:outsource qt:5 xorg
 USE_GL=		gl
 USE_QT=		core dbus gui network printsupport webkit widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 USE_GITHUB=	yes

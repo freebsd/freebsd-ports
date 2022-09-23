@@ -4,7 +4,6 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 Client and Server library wrapper for the Wayland libraries
-WWW=		https://api.kde.org/frameworks/kwayland/html/index.html
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		wayland-protocols>=0:graphics/wayland-protocols \
@@ -17,8 +16,8 @@ LICENSE_COMB=	dual
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_GL=		egl
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		concurrent core gui wayland \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 .include <bsd.port.mk>

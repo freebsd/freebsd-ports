@@ -1,18 +1,18 @@
 # There are three Qt related USES files with different access to Qt.
 #   - qmake: The port requires Qt's qmake to build -- creates the configure target
 #            - auto includes qt.mk
-#   - qt-dist: The port is a port for a part of Qt5
+#   - qt-dist: The port is a port for a part of Qt
 #            - auto includes qt.mk and qmake.mk
 #   - qt.mk  - Dependency handling. USE_QT=foo bar
 #
 # Usage:
 #   USES=qt:<version>[,no_env]
 #
-#   Versions:		5
+#   Versions:		5, 6
 #
 # Port variables:
-# USE_QT		- List of Qt modules to depend on, with optional '_build'
-#			  and '_run' suffixes. Define it empty to include this file
+# USE_QT		- List of Qt modules to depend on, with optional ':build'
+#			  and ':run' suffixes. Define it empty to include this file
 #			  without depending on Qt ports.
 #
 # MAINTAINER:	kde@FreeBSD.org
@@ -23,7 +23,7 @@ _QT_MK_INCLUDED=	qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.5
-QT6_VERSION?=		6.3.1
+QT6_VERSION?=		6.3.2
 
 # We accept the Qt version to be passed by either or all of the three mk files.
 .  if empty(qt_ARGS) && empty(qmake_ARGS) && empty(qt-dist_ARGS)
@@ -399,18 +399,18 @@ _USE_QT_ALL=		${_USE_QT_COMMON} \
 			${_USE_QT${_QT_VER}_ONLY}
 _USE_QT=		${USE_QT}
 # Iterate through components deprived of suffix.
-.  for component in ${_USE_QT:O:u:C/_(build|run)$//}
+.  for component in ${_USE_QT:O:u:C/:(build|run)$//}
 # Check that the component is valid.
 .    if ${_USE_QT_ALL:M${component}} != ""
 # Skip meta-components (currently none).
 .      if defined(qt-${component}_PORT) && (defined(qt-${component}_PATH) || defined(qt-${component}_LIB))
 # Check if a dependency type is explicitly requested.
-.        if ${_USE_QT:M${component}_*} != "" && ${_USE_QT:M${component}} == ""
+.        if ${_USE_QT:M${component}\:*} != "" && ${_USE_QT:M${component}} == ""
 qt-${component}_TYPE=		# empty
-.          if ${_USE_QT:M${component}_build} != ""
+.          if ${_USE_QT:M${component}\:build} != ""
 qt-${component}_TYPE+=		build
 .          endif
-.          if ${_USE_QT:M${component}_run} != ""
+.          if ${_USE_QT:M${component}\:run} != ""
 qt-${component}_TYPE+=		run
 .          endif
 .        endif # ${_USE_QT:M${component}_*} != "" && ${_USE_QT:M${component}} == ""

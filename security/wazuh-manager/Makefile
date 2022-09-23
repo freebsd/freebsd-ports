@@ -17,7 +17,7 @@ WWW=		https://wazuh.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
 		libnghttp2.so:www/libnghttp2
 

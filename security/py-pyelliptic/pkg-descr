@@ -1,4 +1,2 @@
 Python OpenSSL wrapper. For modern cryptography with ECC, AES, HMAC,
 Blowfish, ...
-
-https://github.com/radfish/pyelliptic

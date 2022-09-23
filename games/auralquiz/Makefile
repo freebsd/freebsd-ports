@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GL=		gl
-USE_QT=		core gui widgets phonon4 qmake_build buildtools_build
+USE_QT=		core gui widgets phonon4 qmake:build buildtools:build
 
 PORTDOCS=	CHANGELOG README TODO
 

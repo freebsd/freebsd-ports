@@ -6,6 +6,7 @@ CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Pango library (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.pango.org/
 
 USES=		cpe linux:c7
 CPE_VENDOR=	gnome

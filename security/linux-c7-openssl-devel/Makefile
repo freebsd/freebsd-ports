@@ -1,0 +1,25 @@
+PORTNAME=	openssl
+PORTVERSION=	1.0.2k
+DISTVERSIONSUFFIX=	-19.el7
+CATEGORIES=	security linux
+PKGNAMESUFFIX=	-devel
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	OpenSSL headers (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.openssl.org/
+
+LICENSE=	OpenSSL
+
+USES=		cpe linux:c7
+USE_LINUX=	openssl
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
+
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

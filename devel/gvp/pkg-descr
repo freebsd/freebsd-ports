@@ -9,5 +9,3 @@ it also modifies GOBIN and PATH to include the new GOPATH/bin directory.
 
 gvp is a companion tool to gpm but both tools can be used independently
 from each other.
-
-https://github.com/pote/gvp

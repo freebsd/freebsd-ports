@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
-		cmake:devel/cmake
+		cmake:devel/cmake-core
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
 USE_GITHUB=	yes

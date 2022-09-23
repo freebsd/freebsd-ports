@@ -1,5 +1,6 @@
 %%QT_INCDIR%%/QtDataVisualization/%%FULLVER%%/QtDataVisualization/private/abstract3dcontroller_p.h
 %%QT_INCDIR%%/QtDataVisualization/%%FULLVER%%/QtDataVisualization/private/abstract3drenderer_p.h
+%%QT_INCDIR%%/QtDataVisualization/%%FULLVER%%/QtDataVisualization/private/abstractdeclarativeinterface_p.h
 %%QT_INCDIR%%/QtDataVisualization/%%FULLVER%%/QtDataVisualization/private/abstractitemmodelhandler_p.h
 %%QT_INCDIR%%/QtDataVisualization/%%FULLVER%%/QtDataVisualization/private/abstractobjecthelper_p.h
 %%QT_INCDIR%%/QtDataVisualization/%%FULLVER%%/QtDataVisualization/private/abstractrenderitem_p.h

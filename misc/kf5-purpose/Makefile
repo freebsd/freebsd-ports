@@ -5,7 +5,6 @@ CATEGORIES=	misc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Offers available actions for a specific purpose
-WWW=		https://api.kde.org/frameworks/purpose/html/index.html
 
 LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libkaccounts.so:net-im/kaccounts-integration
@@ -17,9 +16,9 @@ USE_GNOME=	intltool
 USE_KDE=	config completion coreaddons i18n kdeclarative kio \
 		kirigami2 notifications jobwidgets service solid \
 		widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

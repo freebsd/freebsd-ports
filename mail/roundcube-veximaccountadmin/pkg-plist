@@ -1,11 +1,12 @@
-%%PLUGINDIR%%/CHANGELOG
-%%PLUGINDIR%%/LICENSE
-%%PLUGINDIR%%/README
-%%PLUGINDIR%%/config.inc.php.dist
-%%PLUGINDIR%%/delete.png
-%%PLUGINDIR%%/localization/en_US.inc
-%%PLUGINDIR%%/localization/fr_FR.inc
-%%PLUGINDIR%%/localization/nb_NO.inc
-%%PLUGINDIR%%/veximaccountadmin.css
-%%PLUGINDIR%%/veximaccountadmin.js
-%%PLUGINDIR%%/veximaccountadmin.php
+%%WWWDIR%%/plugins/veximaccountadmin/CHANGELOG.md
+%%WWWDIR%%/plugins/veximaccountadmin/LICENSE
+%%WWWDIR%%/plugins/veximaccountadmin/README.md
+@sample %%WWWDIR%%/plugins/veximaccountadmin/config.inc.php.dist %%WWWDIR%%/plugins/veximaccountadmin/config.inc.php
+%%WWWDIR%%/plugins/veximaccountadmin/delete.png
+%%WWWDIR%%/plugins/veximaccountadmin/localization/en_US.inc
+%%WWWDIR%%/plugins/veximaccountadmin/localization/fr_FR.inc
+%%WWWDIR%%/plugins/veximaccountadmin/localization/it_IT.inc
+%%WWWDIR%%/plugins/veximaccountadmin/localization/nb_NO.inc
+%%WWWDIR%%/plugins/veximaccountadmin/veximaccountadmin.css
+%%WWWDIR%%/plugins/veximaccountadmin/veximaccountadmin.js
+%%WWWDIR%%/plugins/veximaccountadmin/veximaccountadmin.php

@@ -1,6 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
+DISTVERSION=	3.5.0
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,7 +27,7 @@ GH_TUPLE=	glotzerlab:upp11:0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360:glotzerlab_u
 		glotzerlab:hipCUB:c70e19332a8402049b3359b409e50220a759c42d:glotzerlab_hipCUB/hoomd/extern/hipCUB \
 		mphowardlab:neighbor:ba0f06869b766066a7068852fa3b8c5fa746f71f:mphowardlab_neighbor/hoomd/extern/neighbor \
 		mphowardlab:hipper:b6da049a516ada03e4e1b66ca6b4c2c7c9668595:mphowardlab_hipper/hoomd/extern/hipper \
-		glotzerlab:hoomd-examples:15ba66f409e278b0f5d4e2ea8139fb52139beda3:glotzerlab_hoomd_examples/sphinx-doc/tutorial
+		glotzerlab:hoomd-examples:1eb694bdd7873217be61ad38febe144a0efed3b5:glotzerlab_hoomd_examples/sphinx-doc/tutorial
 
 SHEBANG_GLOB=	*.sh
 

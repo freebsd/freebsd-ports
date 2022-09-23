@@ -18,7 +18,7 @@ USE_KDE=	auth breeze-icons codecs config configwidgets coreaddons \
 		kcmutils plasma-framework service wayland widgetsaddons \
 		windowsystem
 USE_QT=		core dbus declarative gui network widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>

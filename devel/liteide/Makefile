@@ -34,7 +34,7 @@ GH_TUPLE=	visualfc:gocode:901895f2a886:visualfc_gocode \
 
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
-USE_QT=		buildtools_build core gui network printsupport widgets xml
+USE_QT=		buildtools:build core gui network printsupport widgets xml
 
 SUB_FILES=	liteide
 

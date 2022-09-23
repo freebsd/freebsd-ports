@@ -16,7 +16,7 @@ LIB_DEPENDS=	libbiosig.so:biology/biosig \
 		libxdf.so:misc/libxdf
 
 USES=		gl qmake qt:5
-USE_QT=		core gui widgets xml qmake_build buildtools_build
+USE_QT=		core gui widgets xml qmake:build buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes

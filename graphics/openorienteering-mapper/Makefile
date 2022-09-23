@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 
 USES=		cmake:noninja compiler:c++14-lang \
 		desktop-file-utils gmake qt:5 shared-mime-info
-USE_QT=		buildtools_build help qmake_build concurrent core gui \
+USE_QT=		buildtools:build help qmake:build concurrent core gui \
 		network printsupport testlib widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenOrienteering
@@ -34,20 +34,20 @@ OPTIONS_DEFAULT=	DOCS EXAMPLES GDAL NLS TIFF
 OPTIONS_SUB=	yes
 DOCS_CMAKE_BOOL=	Mapper_WITH_DOCS
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_USE=	QT=assistant_run
+DOCS_USE=	QT=assistant:run
 EXAMPLES_CMAKE_BOOL=	Mapper_WITH_EXAMPLES
 GDAL_DESC=	Use the GDAL library
 GDAL_CMAKE_BOOL=	Mapper_USE_GDAL
 GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
 NLS_CMAKE_BOOL=	Mapper_WITH_NLS
-NLS_USE=	QT=linguisttools_build
+NLS_USE=	QT=linguisttools:build
 NLS_USES=	gettext-runtime
 POSITIONING_DESC=	GPS positioning
 POSITIONING_CMAKE_ON=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Positioning=0 -DCMAKE_DISABLE_FIND_PACKAGE_Qt5Sensors=0 -DCMAKE_DISABLE_FIND_PACKAGE_Qt5SerialPort=0
 POSITIONING_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Positioning=1 -DCMAKE_DISABLE_FIND_PACKAGE_Qt5Sensors=1 -DCMAKE_DISABLE_FIND_PACKAGE_Qt5SerialPort=1
 POSITIONING_USE=	QT=location,sensors,serialport
 TEST_CMAKE_BOOL=	Mapper_WITH_TEST
-TEST_USE=	QT=testlib_build
+TEST_USE=	QT=testlib:build
 TEST_TEST_TARGET=	test
 TIFF_DESC=	Support for TIFF
 TIFF_USE=	QT=imageformats

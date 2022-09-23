@@ -1,19 +1,14 @@
 PORTNAME=	birdfont
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.29.6
+DISTVERSION=	2.32.2
 CATEGORIES=	graphics x11-fonts
+MASTER_SITES=	https://birdfont.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Editor for vector graphics and TTF, OTF, EOT and SVG fonts
+MAINTAINER=	eduardo@FreeBSD.org
+COMMENT=	Font editor for creating fonts in TTF, EOT, SVG and BIRDFONT format
 WWW=		https://birdfont.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPLv3.txt
-
-# Seems to be a Vala problem: there is no string
-# "BIRD_FONT_TEST_BIRD_FONT_NOT_STARTED" in the source code;
-# there's only "NOT_STARTED".
-BROKEN=	build/libbirdfont/TestBirdFont.c:107:46: error: use of undeclared identifier 'BIRD_FONT_TEST_BIRD_FONT_NOT_STARTED'
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR}
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -25,10 +20,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libxmlbird.so:textproc/libxmlbird
 
-USES=		compiler:c++11-lang gettext-tools gnome pkgconfig \
-		python:3.7+,build shared-mime-info shebangfix sqlite:3 tar:xz vala:build
-USE_GITHUB=	yes
-GH_ACCOUNT=	johanmattssonm
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
+		pkgconfig python:3.7+,build shared-mime-info shebangfix \
+		sqlite:3 tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py

@@ -1,5 +1,6 @@
 PORTNAME=	khelpcenter
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,13 +17,13 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		itemmodels itemviews jobwidgets js kcmutils \
 		kio khtml parts service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 # This port depends on doctools; we need the entities and such for runtime
 # documentation support, where all the other KDE Plasma parts need it
 # only for the build-time documentation-generation.
 USE_KDE+=	doctools
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	searchhandlers/khc_mansearch.pl
 

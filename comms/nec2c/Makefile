@@ -1,26 +1,21 @@
 PORTNAME=	nec2c
-PORTVERSION=	.9
-PORTREVISION=	3
+DISTVERSION=	1.3
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://nec-archives.pa3kj.com/ \
-		LOCAL/db
-DISTNAME=	nec2c
+MASTER_SITES=	https://www.qsl.net/5b4az/pkg/nec2/nec2c/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
-WWW=		http://5b4az.chronos.org.uk/pages/nec2.html
+WWW=		https://www.qsl.net/5b4az/
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libccm.so:math/ccmath
 
-USES=		dos2unix
+USES=		dos2unix tar:bz2
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+GNU_CONFIGURE=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${STAGEDIR}${EXAMPLESDIR}
+PLIST_FILES=	bin/nec2c
+
 .include <bsd.port.mk>

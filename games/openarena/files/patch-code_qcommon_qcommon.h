@@ -13,7 +13,7 @@
  // referenced flags
  // these are in loop specific order so don't change the order
  #define FS_GENERAL_REF	0x01
-@@ -627,7 +633,7 @@ fileHandle_t	FS_FOpenFileAppend( const c
+@@ -627,7 +633,7 @@ int		FS_SV_FOpenFileRead( const char *filename, fileHa
  
  fileHandle_t FS_SV_FOpenFileWrite( const char *filename );
  int		FS_SV_FOpenFileRead( const char *filename, fileHandle_t *fp );
@@ -22,13 +22,13 @@
  int		FS_FOpenFileRead( const char *qpath, fileHandle_t *file, qboolean uniqueFILE );
  // if uniqueFILE is true, then a new FILE will be fopened even if the file
  // is found in an already open pak file.  If uniqueFILE is false, you must call
-@@ -1099,6 +1105,9 @@ char	*Sys_DefaultInstallPath(void);
+@@ -1098,6 +1104,9 @@ char    *Sys_DefaultAppPath(void);
+ #ifdef MACOS_X
  char    *Sys_DefaultAppPath(void);
  #endif
- 
++
 +void	Sys_SetDefaultLibPath(const char *path);
 +char	*Sys_DefaultLibPath(void);
-+
+ 
  void  Sys_SetDefaultHomePath(const char *path);
  char	*Sys_DefaultHomePath(void);
- const char	*Sys_TempPath(void);

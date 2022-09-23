@@ -2,13 +2,15 @@ PORTNAME=	schilyutils
 CATEGORIES=	sysutils converters deskutils textproc shells
 
 COMMENT=	Collection of utilities from J. Schilling
-WWW=		https://codeberg.org/schilytools/schilytools
+WWW=		http://schilytools.sourceforge.net/
 
 USES+=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	man2html/man2html cstyle/cstyle.pl
 
-CONFLICTS_INSTALL=	bosh-cli bsh calc clusterit deforaos-browser heirloom-sh latte-integrale p5-Math-SigFigs radmind # bin/bosh bin/bsh bin/calc bin/copy bin/count bin/fsdiff bin/jsh
+# bin/bsh bin/calc bin/copy bin/count bin/fsdiff
+CONFLICTS_INSTALL=	bsh calc deforaos-browser \
+		latte-integrale p5-Math-SigFigs radmind
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	bsh \
@@ -22,6 +24,7 @@ COMPONENTS=	bsh \
 		count \
 		cpp \
 		cstyle \
+		ctags \
 		cut \
 		fifo \
 		label \
@@ -29,17 +32,14 @@ COMPONENTS=	bsh \
 		lndir \
 		match \
 		mdigest \
-		obosh \
 		p \
 		paste \
 		patch \
-		pbosh \
 		printf \
 		sdd \
 		sfind \
 		sformat \
 		sgrow \
-		sh \
 		termcap \
 		translit \
 		udiff

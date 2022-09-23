@@ -8,9 +8,9 @@ lib/cmake/AdwaitaQt%%QT_VERSION_SUFFIX%%/AdwaitaQt%%QT_VERSION_SUFFIX%%Targets-%
 lib/cmake/AdwaitaQt%%QT_VERSION_SUFFIX%%/AdwaitaQt%%QT_VERSION_SUFFIX%%Targets.cmake
 lib/libadwaitaqt%%QT_VERSION_SUFFIX%%.so
 lib/libadwaitaqt%%QT_VERSION_SUFFIX%%.so.1
-lib/libadwaitaqt%%QT_VERSION_SUFFIX%%.so.1.4.1
+lib/libadwaitaqt%%QT_VERSION_SUFFIX%%.so.%%PORTVERSION%%
 lib/libadwaitaqt%%QT_VERSION_SUFFIX%%priv.so
 lib/libadwaitaqt%%QT_VERSION_SUFFIX%%priv.so.1
-lib/libadwaitaqt%%QT_VERSION_SUFFIX%%priv.so.1.4.1
+lib/libadwaitaqt%%QT_VERSION_SUFFIX%%priv.so.%%PORTVERSION%%
 %%QT_PLUGINDIR%%/styles/adwaita.so
 libdata/pkgconfig/adwaita-qt%%QT_VERSION_SUFFIX%%.pc

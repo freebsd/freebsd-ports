@@ -14,7 +14,7 @@ LIB_DEPENDS=	libarchiveqt5.so:archivers/libarchive-qt \
 		libcprime-core.so:deskutils/libcprime
 
 USES=		cmake localbase:ldflags qt:5
-USE_QT=		buildtools_build core gui network qmake_build widgets
+USE_QT=		buildtools:build core gui network qmake:build widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore

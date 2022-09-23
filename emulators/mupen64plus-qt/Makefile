@@ -21,8 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 USES=		gl pkgconfig qmake qt:5
 USE_GL=		gl
 USE_QT=		core gui network sql widgets xml \
-		buildtools_build \
-		sql-sqlite3_run
+		buildtools:build \
+		sql-sqlite3:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dh4

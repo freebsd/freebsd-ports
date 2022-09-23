@@ -16,7 +16,7 @@ USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
 
 USE_GNOME=	glib20
 USE_PERL5=	extract
-USE_QT=		qmake_build buildtools_build
+USE_QT=		qmake:build buildtools:build
 HAS_CONFIGURE=	yes
 # Disable (almost) everything to install minimal qconfig.h.
 # -no-feature-* adds QT_NO_* (for features which have no switch or

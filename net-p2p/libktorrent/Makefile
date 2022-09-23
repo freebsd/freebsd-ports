@@ -13,9 +13,9 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash i18n \
 		jobwidgets kio service solid widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

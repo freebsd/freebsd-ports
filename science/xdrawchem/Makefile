@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
 USES=		compiler:c++11-lang gl qmake qt:5
-USE_QT=		core gui network printsupport svg widgets xml buildtools_build
+USE_QT=		core gui network printsupport svg widgets xml buildtools:build
 USE_GL=		gl
 
 USE_GITLAB=	yes

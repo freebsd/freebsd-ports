@@ -9,6 +9,6 @@ COMMENT=	Qt network auth module
 USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5
 USE_PERL5=	extract
 USE_QT=		core network \
-		buildtools_build
+		buildtools:build
 
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/6fd1533057ff
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/ded0334d214f
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/70887d44ffa3
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
 
 --- configure.orig	2021-10-24 20:47:11 UTC
 +++ configure
@@ -300,7 +301,21 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
      return 0;
  }
  
-@@ -350,6 +443,16 @@ static int eb_send_frame(AVCodecContext *avctx, const 
+@@ -330,11 +423,8 @@ static int eb_send_frame(AVCodecContext *avctx, const 
+         if (svt_enc->eos_flag == EOS_SENT)
+             return 0;
+ 
+-        headerPtrLast.n_alloc_len   = 0;
+-        headerPtrLast.n_filled_len  = 0;
+-        headerPtrLast.n_tick_count  = 0;
+-        headerPtrLast.p_app_private = NULL;
+-        headerPtrLast.p_buffer      = NULL;
++        memset(&headerPtrLast, 0, sizeof(headerPtrLast));
++        headerPtrLast.pic_type      = EB_AV1_INVALID_PICTURE;
+         headerPtrLast.flags         = EB_BUFFERFLAG_EOS;
+ 
+         svt_av1_enc_send_picture(svt_enc->svt_handle, &headerPtrLast);
+@@ -350,6 +440,16 @@ static int eb_send_frame(AVCodecContext *avctx, const 
      headerPtr->p_app_private = NULL;
      headerPtr->pts           = frame->pts;
  
@@ -317,7 +332,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
      svt_av1_enc_send_picture(svt_enc->svt_handle, headerPtr);
  
      return 0;
-@@ -472,21 +575,22 @@ static const AVOption options[] = {
+@@ -472,21 +572,22 @@ static const AVOption options[] = {
  #define OFFSET(x) offsetof(SvtContext, x)
  #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
  static const AVOption options[] = {
@@ -349,7 +364,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
  
      FF_AV1_PROFILE_OPTS
  
-@@ -518,21 +622,20 @@ static const AVOption options[] = {
+@@ -518,21 +619,20 @@ static const AVOption options[] = {
          { LEVEL("7.3", 73) },
  #undef LEVEL
  
@@ -382,7 +397,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
      {NULL},
  };
  
-@@ -544,9 +647,10 @@ static const AVCodecDefault eb_enc_defaults[] = {
+@@ -544,9 +644,10 @@ static const AVCodecDefault eb_enc_defaults[] = {
  };
  
  static const AVCodecDefault eb_enc_defaults[] = {
@@ -395,7 +410,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
      { "qmax",      "63"    },
      { NULL },
  };
-@@ -561,12 +665,11 @@ AVCodec ff_libsvtav1_encoder = {
+@@ -561,12 +662,11 @@ AVCodec ff_libsvtav1_encoder = {
      .receive_packet = eb_receive_packet,
      .close          = eb_enc_close,
      .capabilities   = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_OTHER_THREADS,

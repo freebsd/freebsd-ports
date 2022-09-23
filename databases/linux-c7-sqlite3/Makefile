@@ -6,6 +6,7 @@ CATEGORIES=	databases linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library that implements an embeddable SQL database engine (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.sqlite.org/
 
 LICENSE=	PD
 

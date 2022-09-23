@@ -5,6 +5,7 @@ CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Assistive technology service provider interface (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://gitlab.gnome.org/GNOME/at-spi2-core
 
 LICENSE=	LGPL20+
 

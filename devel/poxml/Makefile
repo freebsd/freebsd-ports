@@ -9,7 +9,7 @@ USES=		cmake compiler:c++11-lang gettext-tools:build,run \
 		kde:5 qt:5 tar:xz
 USE_KDE=	doctools ecm
 USE_QT=		core xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
 

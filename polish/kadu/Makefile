@@ -40,8 +40,8 @@ USE_GNOME=	glib20
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		script scripttools sql webkit widgets x11extras \
 		xml xmlpatterns \
-		buildtools_build linguisttools_build testlib_build \
-		qmake_build imageformats_run sql-sqlite3_run
+		buildtools:build linguisttools:build testlib:build \
+		qmake:build imageformats:run sql-sqlite3:run
 # Setting KADU_VERSION disables git invocation
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON \
 		-DENABLE_TESTS=OFF

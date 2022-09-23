@@ -26,6 +26,7 @@
     SUBDIR += alure
     SUBDIR += amarok
     SUBDIR += amb-plugins
+    SUBDIR += amberol
     SUBDIR += ampache
     SUBDIR += ample
     SUBDIR += amsynth
@@ -226,6 +227,7 @@
     SUBDIR += gmtp
     SUBDIR += gmusicbrowser
     SUBDIR += gnaural
+    SUBDIR += gnome-metronome
     SUBDIR += gnome-music
     SUBDIR += gnome-podcasts
     SUBDIR += gnormalize
@@ -331,8 +333,7 @@
     SUBDIR += julius
     SUBDIR += kapitonov-plugins-pack-lv2
     SUBDIR += kexis
-    SUBDIR += kid3-kf5
-    SUBDIR += kid3-qt5
+    SUBDIR += kid3
     SUBDIR += klystrack
     SUBDIR += kmix
     SUBDIR += komposter
@@ -603,7 +604,6 @@
     SUBDIR += pd
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
-    SUBDIR += phaserotate-lv2
     SUBDIR += pianobar
     SUBDIR += pianobooster
     SUBDIR += pianod2
@@ -760,6 +760,7 @@
     SUBDIR += spiralsynthmodular
     SUBDIR += splay
     SUBDIR += splaytk
+    SUBDIR += spotify-player
     SUBDIR += spotify-qt
     SUBDIR += spotify-tui
     SUBDIR += spotifyd

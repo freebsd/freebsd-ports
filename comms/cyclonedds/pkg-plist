@@ -1,6 +1,5 @@
 bin/ddsperf
 bin/idlc
-bin/pubsub
 include/dds/config.h
 include/dds/dds.h
 include/dds/ddsc/dds_basic_types.h
@@ -27,7 +26,10 @@ include/dds/ddsi/ddsi_config_impl.h
 include/dds/ddsi/ddsi_deadline.h
 include/dds/ddsi/ddsi_deliver_locally.h
 include/dds/ddsi/ddsi_domaingv.h
+include/dds/ddsi/ddsi_endpoint.h
+include/dds/ddsi/ddsi_entity.h
 include/dds/ddsi/ddsi_entity_index.h
+include/dds/ddsi/ddsi_entity_match.h
 include/dds/ddsi/ddsi_guid.h
 include/dds/ddsi/ddsi_handshake.h
 include/dds/ddsi/ddsi_iid.h
@@ -39,10 +41,13 @@ include/dds/ddsi/ddsi_list_tmpl.h
 include/dds/ddsi/ddsi_locator.h
 include/dds/ddsi/ddsi_mcgroup.h
 include/dds/ddsi/ddsi_ownip.h
+include/dds/ddsi/ddsi_participant.h
 include/dds/ddsi/ddsi_plist.h
 include/dds/ddsi/ddsi_plist_generic.h
 include/dds/ddsi/ddsi_pmd.h
 include/dds/ddsi/ddsi_portmapping.h
+include/dds/ddsi/ddsi_proxy_endpoint.h
+include/dds/ddsi/ddsi_proxy_participant.h
 include/dds/ddsi/ddsi_raweth.h
 include/dds/ddsi/ddsi_rhc.h
 include/dds/ddsi/ddsi_security_exchange.h
@@ -62,7 +67,9 @@ include/dds/ddsi/ddsi_tcp.h
 include/dds/ddsi/ddsi_threadmon.h
 include/dds/ddsi/ddsi_time.h
 include/dds/ddsi/ddsi_tkmap.h
+include/dds/ddsi/ddsi_topic.h
 include/dds/ddsi/ddsi_tran.h
+include/dds/ddsi/ddsi_typebuilder.h
 include/dds/ddsi/ddsi_typelib.h
 include/dds/ddsi/ddsi_typelookup.h
 include/dds/ddsi/ddsi_typewrap.h
@@ -83,7 +90,6 @@ include/dds/ddsi/q_bitset.h
 include/dds/ddsi/q_bswap.h
 include/dds/ddsi/q_ddsi_discovery.h
 include/dds/ddsi/q_debmon.h
-include/dds/ddsi/q_entity.h
 include/dds/ddsi/q_feature_check.h
 include/dds/ddsi/q_freelist.h
 include/dds/ddsi/q_gc.h
@@ -108,6 +114,7 @@ include/dds/ddsi/q_whc.h
 include/dds/ddsi/q_xevent.h
 include/dds/ddsi/q_xmsg.h
 include/dds/ddsi/sysdeps.h
+include/dds/ddsrt/align.h
 include/dds/ddsrt/arch.h
 include/dds/ddsrt/atomics.h
 include/dds/ddsrt/atomics/arm.h
@@ -209,13 +216,13 @@ lib/cmake/CycloneDDS/CycloneDDSTargets.cmake
 lib/cmake/CycloneDDS/idlc/Generate.cmake
 lib/libcycloneddsidl.so
 lib/libcycloneddsidl.so.0
-lib/libcycloneddsidl.so.0.9.1
+lib/libcycloneddsidl.so.0.10.2
 lib/libdds_security_ac.so
 lib/libdds_security_auth.so
 lib/libdds_security_crypto.so
 lib/libddsc.so
 lib/libddsc.so.0
-lib/libddsc.so.0.9.1
+lib/libddsc.so.0.10.2
 libdata/pkgconfig/CycloneDDS.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.rst
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md

@@ -25,12 +25,12 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		kdeclarative newstuff notifications notifyconfig package \
 		service solid sonnet textwidgets widgetsaddons windowsystem \
 		xmlgui \
-		ecm_build \
-		init_run
+		ecm:build \
+		init:run
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		networkauth quickcontrols2 xml \
-		buildtools_build qmake_build \
-		quickcontrols_run script svg webkit widgets
+		buildtools:build qmake:build \
+		quickcontrols:run script svg webkit widgets
 USE_XORG=	x11
 CFLAGS+=	-isystem${LOCALBASE}/include # linux/input.h
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"

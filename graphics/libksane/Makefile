@@ -11,9 +11,9 @@ LIB_DEPENDS=	libsane.so:graphics/sane-backends \
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	config i18n sonnet textwidgets wallet widgetsaddons \
-		ecm_build
+		ecm:build
 USE_QT=		core gui widgets \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

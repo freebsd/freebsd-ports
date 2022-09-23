@@ -2,8 +2,6 @@ CATEGORIES=	www
 PKGNAMESUFFIX=	-web
 PORTREVISION=	1
 
-WWW=		https://www.transmissionbt.com/
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTDATA=	web

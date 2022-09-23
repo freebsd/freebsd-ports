@@ -1,5 +1,4 @@
 # Define PORTREVISION in ${MASTERDIR}
-WWW=		https://www.isc.org/bind/
 
 .ifdef BIND_TOOLS_DEVEL
 MASTERDIR=	${.CURDIR}/../../dns/bind9-devel

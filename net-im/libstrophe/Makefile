@@ -1,5 +1,5 @@
 PORTNAME=	libstrophe
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.2
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		libtool pkgconfig autoreconf ssl
+USES=		gmake libtool pkgconfig autoreconf ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	strophe
 GNU_CONFIGURE=	yes

@@ -15,10 +15,10 @@ USE_GNOME=	glib20
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons i18n itemviews jobwidgets kio kirigami2 \
 		notifications purpose service solid widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
 		quickcontrols widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

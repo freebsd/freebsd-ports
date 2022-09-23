@@ -1,4 +1,4 @@
-TIMESTAMP = 1651509764
+TIMESTAMP = 1653575598
 SHA256 (tianocore-edk2-g202202-edk2-stable202202_GH0.tar.gz) = 072e84dfe3c8fbb35bb058dcc8b0f623fe831cead74ba81b0f8236d00a03e947
 SIZE (tianocore-edk2-g202202-edk2-stable202202_GH0.tar.gz) = 14208170
 SHA256 (tianocore-edk2-platforms-38855c56_GH0.tar.gz) = 87324cb01f3460a681155b5d12b2e19fa00638a0366c300813c507a1cbe081cb
@@ -15,3 +15,7 @@ SHA256 (google-brotli-v1.0.9-35-gf4153a0_GH0.tar.gz) = 8deff90317f030d770ab912fb
 SIZE (google-brotli-v1.0.9-35-gf4153a0_GH0.tar.gz) = 512041
 SHA256 (akheron-jansson-v2.13.1_GH0.tar.gz) = f22901582138e3203959c9257cf83eba9929ac41d7be4a42557213a22ebcc7a0
 SIZE (akheron-jansson-v2.13.1_GH0.tar.gz) = 144979
+SHA256 (22130dcd98b4d4b76ac8d922adb4a2dbc86fa52c.patch) = d7e7e46f5c84abc222343182c7c4dfef26cbb78b5a0269514466221211fe050b
+SIZE (22130dcd98b4d4b76ac8d922adb4a2dbc86fa52c.patch) = 1672
+SHA256 (85021f8cf22d1bd4114803c6c610dea5ef0059f1.patch) = d4e68faead64d7b808b32bb37aac110f0d7dd98433ec5d145e8de016d6d9ba0a
+SIZE (85021f8cf22d1bd4114803c6c610dea5ef0059f1.patch) = 2068

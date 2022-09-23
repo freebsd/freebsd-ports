@@ -1,0 +1,38 @@
+--- SConstruct.orig	2021-07-15 20:56:31 UTC
++++ SConstruct
+@@ -1328,9 +1328,9 @@ if has_option('variables-help'):
+     print(env_vars.GenerateHelpText(env))
+     Exit(0)
+ 
+-unknown_vars = env_vars.UnknownVariables()
+-if unknown_vars:
+-    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
++#unknown_vars = env_vars.UnknownVariables()
++#if unknown_vars:
++#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
+ 
+ if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
+     env.FatalError("Cannot use non-default install actions when generating Ninja.")
+@@ -2507,7 +2507,7 @@ if env.TargetOSIs('posix'):
+             # If runtime hardening is requested, then build anything
+             # destined for an executable with the necessary flags for PIE.
+             env.AppendUnique(
+-                PROGCCFLAGS=['-fPIE'],
++                PROGCCFLAGS=['-fpic'],
+                 PROGLINKFLAGS=['-pie'],
+             )
+ 
+@@ -2684,8 +2684,12 @@ if not env.TargetOSIs('windows', 'macOS') and (env.Too
+     # setting it for both C and C++ by setting both of CFLAGS and
+     # CXXFLAGS.
+ 
++    arm_march_flag = "armv8-a"
++    if get_option('use-hardware-crc32') == "on":
++        arm_march_flag += "+crc"
++
+     default_targeting_flags_for_architecture = {
+-        "aarch64"    : { "-march=" : "armv8.2-a",    "-mtune=" : "generic"                        },
++        "aarch64"    : { "-march=" : arm_march_flag, "-mtune=" : "generic"                        },
+         "i386"       : { "-march=" : "nocona",       "-mtune=" : "generic"                        },
+         "ppc64le"    : { "-mcpu="  : "power8",       "-mtune=" : "power8", "-mcmodel=" : "medium" },
+         "s390x"      : { "-march=" : "z196",         "-mtune=" : "zEC12"                          },

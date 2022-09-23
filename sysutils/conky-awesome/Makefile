@@ -2,7 +2,6 @@ PKGNAMESUFFIX=	-awesome
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Advanced, highly configurable system monitor (configured for x11-wm/awesome)
-WWW=		https://github.com/brndnmtthws/conky
 
 MASTERDIR=	${.CURDIR}/../conky
 DESCR=		${.CURDIR}/pkg-descr

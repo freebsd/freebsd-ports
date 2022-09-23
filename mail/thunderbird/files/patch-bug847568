@@ -1,10 +1,10 @@
 # Allow building against system-wide graphite2/harfbuzz.
 
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index 7620b4d00623..09d3db5ca8c0 100644
+index a1b58eb..a0a0943 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1292,6 +1292,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
+@@ -1289,6 +1289,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
          'proxy.h',
      ]
  
@@ -25,12 +25,12 @@ index 7620b4d00623..09d3db5ca8c0 100644
      system_headers += [
          'vpx_mem/vpx_mem.h',
 diff --git dom/base/moz.build dom/base/moz.build
-index 8e19020315ae..2fcdbb6f7b42 100644
+index d390adf..4508f19 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -546,6 +546,9 @@ if CONFIG["MOZ_BUILD_APP"] in ["browser", "mobile/android", "xulrunner"]:
- if CONFIG["MOZ_X11"]:
-     CXXFLAGS += CONFIG["TK_CFLAGS"]
+@@ -576,6 +576,9 @@ FINAL_LIBRARY = "xul"
+ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
+     CXXFLAGS += CONFIG["MOZ_GTK3_CFLAGS"]
  
 +if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
 +    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
@@ -40,7 +40,7 @@ index 8e19020315ae..2fcdbb6f7b42 100644
      script="gen-usecounters.py",
 diff --git gfx/graphite2/geckoextra/moz.build gfx/graphite2/geckoextra/moz.build
 new file mode 100644
-index 0000000000000..24e8d7a03274a
+index 0000000..24e8d7a
 --- /dev/null
 +++ gfx/graphite2/geckoextra/moz.build
 @@ -0,0 +1,21 @@
@@ -66,7 +66,7 @@ index 0000000000000..24e8d7a03274a
 +
 +FINAL_LIBRARY = 'gkmedias'
 diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
-index faaab1b17971..04eff5f09882 100644
+index b91d9c1..a97e6eb 100755
 --- gfx/graphite2/moz-gr-update.sh
 +++ gfx/graphite2/moz-gr-update.sh
 @@ -1,6 +1,7 @@
@@ -96,10 +96,10 @@ index faaab1b17971..04eff5f09882 100644
  echo
  echo If gfx/graphite2/src/files.mk has changed, please make corresponding
 diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
-index 22c76a7df020..a01490bd49ee 100644
+index 3180257..4587a3b 100644
 --- gfx/harfbuzz/README-mozilla
 +++ gfx/harfbuzz/README-mozilla
-@@ -15,3 +15,8 @@ from within the gfx/harfbuzz directory.
+@@ -21,3 +21,8 @@ from within the gfx/harfbuzz directory.
  
  If the collection of source files changes, manual updates to moz.build may be
  needed as we don't use the upstream makefiles.
@@ -109,12 +109,12 @@ index 22c76a7df020..a01490bd49ee 100644
 +with checkout version or increment latest tag by one if it's not based
 +on upstream release.
 diff --git gfx/moz.build gfx/moz.build
-index 771f652e837a..3b358d84e384 100644
+index 4d6d63d..cd57b0c 100644
 --- gfx/moz.build
 +++ gfx/moz.build
-@@ -13,6 +13,14 @@ with Files("wr/**"):
- if CONFIG["MOZ_TREE_CAIRO"]:
-     DIRS += ["cairo"]
+@@ -10,6 +10,14 @@ with Files("**"):
+ with Files("wr/**"):
+     BUG_COMPONENT = ("Core", "Graphics: WebRender")
  
 +if CONFIG["MOZ_SYSTEM_GRAPHITE2"]:
 +    DIRS += ["graphite2/geckoextra"]
@@ -125,9 +125,9 @@ index 771f652e837a..3b358d84e384 100644
 +    DIRS += ["harfbuzz/src"]
 +
  DIRS += [
+     "cairo",
      "2d",
-     "ycbcr",
-@@ -21,8 +29,6 @@ DIRS += [
+@@ -19,8 +27,6 @@ DIRS += [
      "qcms",
      "gl",
      "layers",
@@ -137,10 +137,10 @@ index 771f652e837a..3b358d84e384 100644
      "thebes",
      "ipc",
 diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
-index e06ae3457a47..93faa61594a3 100755
+index 5e0fd17..860b80a 100755
 --- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
-@@ -98,6 +98,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -96,6 +96,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -148,13 +148,13 @@ index e06ae3457a47..93faa61594a3 100755
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
-     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
-     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+     LOCAL_INCLUDES += [
+         "/gfx/cairo/cairo/src",
 diff --git gfx/skia/moz.build gfx/skia/moz.build
-index 2118677ca3a8..e4978b413784 100644
+index 524bd28..615c93b 100755
 --- gfx/skia/moz.build
 +++ gfx/skia/moz.build
-@@ -490,6 +490,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -488,6 +488,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -162,13 +162,13 @@ index 2118677ca3a8..e4978b413784 100644
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
-     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
-     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+     LOCAL_INCLUDES += [
+         "/gfx/cairo/cairo/src",
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
-index 56f1b9fe3f4b..0ac1100b0df3 100644
+index baa6f09..4f02a9e 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -287,7 +287,13 @@ if CONFIG["MOZ_WAYLAND"]:
+@@ -286,7 +286,13 @@ if CONFIG["MOZ_WAYLAND"]:
  
  LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
@@ -184,35 +184,40 @@ index 56f1b9fe3f4b..0ac1100b0df3 100644
  if CONFIG["CC_TYPE"] == "clang":
      # Suppress warnings from Skia header files.
 diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
-index cb1233c56d7e..06fb1f9f174b 100644
+index 301eb9a..7cece5e 100644
 --- intl/unicharutil/util/moz.build
 +++ intl/unicharutil/util/moz.build
-@@ -25,4 +25,7 @@ UNIFIED_SOURCES += [
+@@ -25,6 +25,9 @@ UNIFIED_SOURCES += [
      "nsUnicodeProperties.cpp",
  ]
  
 +if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
 +    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
 +
- FINAL_LIBRARY = "xul"
+ include("/ipc/chromium/chromium-config.mozbuild")
+ 
+ GeneratedFile(
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
-index 79c26e3e7001..c4d93bc5f7dc 100644
+index f769e27..315bdd4 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -105,3 +105,6 @@ USE_LIBS += ["icu"]
+@@ -102,6 +102,9 @@ GeneratedFile(
+     "etld_data.inc", script="prepare_tlds.py", inputs=["effective_tld_names.dat"]
+ )
  
- if CONFIG["CC_TYPE"] in ("clang", "gcc"):
-     CXXFLAGS += ["-Wno-error=shadow"]
-+
 +if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
 +    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
++
+ # need to include etld_data.inc
+ LOCAL_INCLUDES += [
+     "/netwerk/base",
 diff --git old-configure.in old-configure.in
-index 95a58b634593..b614eef85c89 100644
+index d147957..d332b34 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -2303,6 +2303,27 @@ dnl ========================================================
- 
- AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
+@@ -1335,6 +1335,27 @@ fi
+ AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
+ AC_SUBST(MOZ_MACBUNDLE_ID)
  
 +dnl ========================================================
 +dnl Check for graphite2
@@ -236,13 +241,13 @@ index 95a58b634593..b614eef85c89 100644
 +fi
 +
  dnl ========================================================
- dnl Check for pixman and cairo
+ dnl = Child Process Name for IPC
  dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
-index 24f940e1ed7e..079a575adec3 100644
+index 2c3f869..e8a9d23 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -247,6 +247,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
+@@ -269,6 +269,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
  if CONFIG["MOZ_SYSTEM_WEBP"]:
      OS_LIBS += CONFIG["MOZ_WEBP_LIBS"]
  
@@ -256,12 +261,12 @@ index 24f940e1ed7e..079a575adec3 100644
      OS_LIBS += CONFIG["MOZ_LIBEVENT_LIBS"]
  
 diff --git toolkit/moz.configure toolkit/moz.configure
-index 9297e4d6f501..d8e273887e4b 100644
+index 0069865..9bb1864 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -1055,6 +1055,25 @@ set_config("FT2_LIBS", ft2_info.libs)
- add_old_configure_assignment("FT2_LIBS", ft2_info.libs)
- add_old_configure_assignment("FT2_CFLAGS", ft2_info.cflags)
+@@ -1058,6 +1058,25 @@ def geckodriver_default(enable_tests, target, cross_compile, hazard, asan, autom
+         return False
+     return True
  
 +# Graphite2
 +# ==============================================================
@@ -283,5 +288,5 @@ index 9297e4d6f501..d8e273887e4b 100644
 +
 +set_config("MOZ_SYSTEM_HARFBUZZ", depends_if(system_harfbuzz)(lambda _: True))
  
- # Remote agent
- # (partial implementation of Chromium Remote Debugging Protocol)
+ option(
+     "--enable-geckodriver",

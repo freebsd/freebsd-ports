@@ -21,7 +21,7 @@ LIB_DEPENDS=	libCSXCAD.so:cad/csxcad \
 		libvtkCommonCore-9.1.so:math/vtk9
 
 USES=		cmake gl jpeg pkgconfig qt:5 xorg
-USE_QT=		core gui opengl sql widgets xml buildtools_build qmake_build
+USE_QT=		core gui opengl sql widgets xml buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl opengl
 USE_LDCONFIG=	yes

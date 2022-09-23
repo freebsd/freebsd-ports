@@ -20,10 +20,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash 
 		dbusaddons i18n iconthemes idletime itemviews jobwidgets kio kirigami2 \
 		notifications notifyconfig prison service solid sonnet syntaxhighlighting \
 		textwidgets widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative declarative gui multimedia \
 		network networkauth speech sql xml websockets widgets \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 PLIST_SUB=	SO_VER=${DISTVERSION}

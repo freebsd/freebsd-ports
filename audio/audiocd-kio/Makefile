@@ -22,7 +22,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network phonon4 printsupport widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 USE_LDCONFIG=	yes
 

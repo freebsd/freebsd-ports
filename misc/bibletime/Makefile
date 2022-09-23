@@ -14,7 +14,7 @@ LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
 		libsword.so:misc/sword
 
 USES=		cmake compiler:c11 qt:5 tar:xz ssl
-USE_QT=		buildtools core dbus gui linguist_build network printsupport \
+USE_QT=		buildtools core dbus gui linguist:build network printsupport \
 		script svg webkit widgets \
-		xml qmake_build testlib_build
+		xml qmake:build testlib:build
 .include <bsd.port.mk>

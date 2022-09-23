@@ -1,15 +1,15 @@
---- scripts/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
+--- scripts/CMakeLists.txt.orig	2022-07-06 21:36:34 UTC
 +++ scripts/CMakeLists.txt
-@@ -323,6 +323,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
-         GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
-         STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+@@ -332,6 +332,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+           SET(${var} "${${var}}-L${dir} " )
+         ENDIF()
          SET(${var} "${${var}}-l${lib} " )
 +        ELSEIF(lib STREQUAL "-pthread")
 +          SET(${var} "${${var}}-pthread " )
        ELSE()
          SET(${var} "${${var}}-l${lib} " )
        ENDIF()
-@@ -396,7 +398,7 @@ ELSE()
+@@ -405,7 +407,7 @@ ELSE()
      ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
      ESCAPE_QUOTES @ONLY)
  
@@ -18,7 +18,7 @@
      MESSAGE(STATUS "INSTALL ${PKGCONFIG_FILE} ${INSTALL_PKGCONFIGDIR}")
      INSTALL(FILES
        ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
-@@ -409,23 +411,28 @@ ELSE()
+@@ -418,23 +420,28 @@ ELSE()
    # mysqld_safe used in mtr even for systemd platforms
    IF(WITH_SYSTEMD)
      SET(BIN_SCRIPTS

@@ -15,6 +15,6 @@ USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 \
 USE_KDE=	ecm kirigami2 notifications qqc2-desktop-style
 USE_QT=		core dbus declarative gui location multimedia network \
 		quickcontrols2 sql svg widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 
 .include <bsd.port.mk>

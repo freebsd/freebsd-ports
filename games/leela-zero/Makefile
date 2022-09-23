@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 USES=		cmake compiler:c++14-lang eigen:3 localbase qt:5
 USE_GITHUB=	yes
 GH_TUPLE=	google:googletest:cafa9e5:gtest/gtest
-USE_QT=		core widgets buildtools_build qmake_build
+USE_QT=		core widgets buildtools:build qmake:build
 
 CMAKE_ON=	USE_BLAS BUILD_TESTING
 CMAKE_ARGS=	-DBLAS_INCLUDE_DIRS:STRING=${LOCALBASE}/include

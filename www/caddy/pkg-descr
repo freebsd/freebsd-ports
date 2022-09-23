@@ -11,5 +11,5 @@ Features:
   - ACME (Let's Encrypt) for public sites
   - Fully-managed local CA for internal names and IPs
   - Can coordinate with other Caddy instances in a cluster
-- HTTP/1.1, HTTP/2, and experimental HTTP/3 support
+- HTTP/1.1, HTTP/2, and HTTP/3 support
 - Actually fun to use

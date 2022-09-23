@@ -16,7 +16,7 @@ WWW=		https://www.waffle-gl.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 
 USES=		compiler:c11 gl localbase meson pkgconfig python:3.5+,build
 USE_GITLAB=	yes

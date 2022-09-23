@@ -14,12 +14,12 @@ USES=		cmake gettext compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		i18n iconthemes itemmodels itemviews jobwidgets kcmutils \
 		kio service wallet widgetsaddons \
-		ecm_build
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadisearch contacts ldap mime
 USE_QT=		concurrent core dbus designer gui network uiplugin uitools \
 		widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 USE_LDCONFIG=	yes
 

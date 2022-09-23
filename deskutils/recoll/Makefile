@@ -1,6 +1,6 @@
 PORTNAME=	recoll
 PORTVERSION=	1.31.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 PYDISTUTILS_PKGNAME=	Recoll
 PYDISTUTILS_PKGVERSION=	1.0
-USE_QT=		core gui printsupport widgets xml buildtools_build qmake_build
+USE_QT=		core gui printsupport widgets xml buildtools:build qmake:build
 
 SHEBANG_FILES=	desktop/hotrecoll.py filters/*.py filters/rcl7z \
 		filters/rclaudio filters/rclchm filters/rcldia filters/rclepub \

@@ -13,10 +13,10 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
 		i18n iconthemes itemviews kcmutils kdeclarative kio newstuff package \
 		parts service sonnet texteditor textwidgets widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus declarative gui network quickcontrols2 script sql \
 		testlib widgets x11extras xml xmlpatterns \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xext xkbfile
 
 OPTIONS_DEFINE=	DOCS

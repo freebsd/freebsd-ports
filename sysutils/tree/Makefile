@@ -1,5 +1,5 @@
 PORTNAME=	tree
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mama.indstate.edu/users/ice/tree/src/ \
 		https://fossies.org/linux/misc/

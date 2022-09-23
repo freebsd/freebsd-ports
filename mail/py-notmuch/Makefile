@@ -2,7 +2,6 @@ CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python interface for the Notmuch email search and tagging library
-WWW=		https://notmuchmail.org/
 
 LICENSE=	GPLv3
 

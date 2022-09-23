@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Zetaback ZFS backup and recovery management system
+WWW=		https://labs.omniti.com/trac/zetaback
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	omniti-labs

@@ -1,16 +1,15 @@
 Avoid loading of "requirements.bzl" because it requires "pip_import" which
 is already disabled in "defs.bzl".
 
---- qt/aqt/BUILD.bazel.orig	2021-07-30 08:30:37 UTC
+--- qt/aqt/BUILD.bazel.orig	2022-05-26 02:51:51 UTC
 +++ qt/aqt/BUILD.bazel
-@@ -1,6 +1,5 @@
- load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+@@ -1,5 +1,4 @@ load("@rules_python//python:defs.bzl", "py_library")
  load("@rules_python//python:defs.bzl", "py_library")
 -load("@py_deps//:requirements.bzl", "requirement")
- load("@rules_python//experimental/python:wheel.bzl", "py_package", "py_wheel")
+ load("@rules_python//python:packaging.bzl", "py_package", "py_wheel")
  load("//:defs.bzl", "anki_version")
  
-@@ -42,21 +41,9 @@ aqt_core_data = [
+@@ -40,20 +39,8 @@ aqt_deps = [
  ]
  
  aqt_deps = [
@@ -23,7 +22,6 @@ is already disabled in "defs.bzl".
 -    requirement("waitress"),
 -    requirement("send2trash"),
 -    requirement("jsonschema"),
-     "@pyqt5//:pkg",
  ] + select({
      "@bazel_tools//src/conditions:host_windows": [
 -        requirement("psutil"),

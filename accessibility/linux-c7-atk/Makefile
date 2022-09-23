@@ -6,6 +6,7 @@ CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Accessibility Toolkit (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://developer.gnome.org/atk/
 
 LICENSE=	GPLv3
 

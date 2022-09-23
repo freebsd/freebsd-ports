@@ -12,7 +12,7 @@ LIB_DEPENDS=	libcw.so:comms/unixcw
 MASTERDIR=	${.CURDIR}/../unixcw
 
 USES=		compiler:c++11-lang gettext qt:5
-USE_QT=		gui widgets buildtools_build qmake_build
+USE_QT=		gui widgets buildtools:build qmake:build
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xcwcp

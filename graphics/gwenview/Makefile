@@ -23,10 +23,10 @@ USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		kdelibs4support kimageformats kio libkdcraw libkipi \
 		notifications parts service solid sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network opengl phonon4 printsupport \
 		svg widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

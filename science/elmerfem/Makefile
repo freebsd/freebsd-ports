@@ -69,8 +69,8 @@ OCC_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.0 \
 
 _LIBSTAGEDIR=	${STAGEDIR}/${PREFIX}/lib/elmersolver
 _PYVERSION=	${PYTHON_VER}${PYTHON_ABIVER}
-_QT5_LIBS=	buildtools_build concurrent core declarative gui location \
-		network opengl printsupport qmake_build script sensors \
+_QT5_LIBS=	buildtools:build concurrent core declarative gui location \
+		network opengl printsupport qmake:build script sensors \
 		sql svg webchannel webkit widgets xml
 
 .include <bsd.port.pre.mk>

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libqtermwidget5.so:x11-toolkits/qtermwidget \
 RUN_DEPENDS=	coregarage:deskutils/coregarage
 
 USES=		cmake localbase:ldflags qt:5
-USE_QT=		buildtools_build core gui qmake_build serialport widgets
+USE_QT=		buildtools:build core gui qmake:build serialport widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore

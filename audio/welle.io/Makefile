@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AlbrechtL
 GH_TAGNAME=	0aacf578d77d79212483cd6fce436fb66523f63f
 USE_QT=		charts core dbus declarative gui multimedia network \
-		quickcontrols2 widgets buildtools_build qmake_build
+		quickcontrols2 widgets buildtools:build qmake:build
 
 OPTIONS_DEFINE=		AIRSPY CLI FFTW RTLSDR SOAPY
 OPTIONS_DEFAULT=	FFTW RTLSDR

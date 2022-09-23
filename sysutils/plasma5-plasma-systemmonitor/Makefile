@@ -15,7 +15,7 @@ USE_KDE=	attica auth codecs config configwidgets coreaddons dbusaddons \
 		windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

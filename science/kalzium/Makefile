@@ -24,12 +24,12 @@ USE_KDE=	auth archive attica bookmarks codecs completion config configwidgets \
 		khtml kio newstuff notifications parts plotting service solid \
 		sonnet textwidgets unitconversion widgetsaddons windowsystem \
 		xmlgui \
-		ecm_build
+		ecm:build
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_QT=		concurrent core dbus declarative gui network opengl printsupport script svg \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

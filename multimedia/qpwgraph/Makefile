@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 
 USES=		cmake pkgconfig qt:5
-USE_QT=		core gui network widgets buildtools_build qmake_build
+USE_QT=		core gui network widgets buildtools:build qmake:build
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org

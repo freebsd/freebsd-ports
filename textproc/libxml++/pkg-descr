@@ -4,3 +4,5 @@ but complete API.
 
 libxml++-5.0 (ABI version 5.0) does not depend on glibmm, is not as
 good at handling UTF-8 strings, but has fewer dependencies.
+
+See also: https://libxmlplusplus.sourceforge.net/

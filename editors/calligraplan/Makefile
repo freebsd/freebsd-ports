@@ -19,9 +19,9 @@ USE_KDE=	activities akonadi archive auth bookmarks codecs completion config \
 		notifications parts service solid sonnet textwidgets wallet \
 		widgetsaddons windowsystem xmlgui \
 		akonadicontacts calendarcore contacts \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus gui network printsupport widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
 PLIST_SUB+=	SHLIB_VER=18.0.0 SHLIB_SHORT=18

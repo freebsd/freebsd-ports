@@ -6,6 +6,7 @@ CATEGORIES=	ftp linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Tool for transferring files with URL syntax (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://curl.se/
 
 LICENSE=	MIT
 

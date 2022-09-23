@@ -1,6 +1,6 @@
 PORTNAME=	gallery2
 PORTVERSION=	2.3.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	SF/gallery/gallery2/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}-full
@@ -32,7 +32,7 @@ FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 GD_RUN_DEPENDS=		pngtogd:graphics/gd
 GD_USE=			PHP=gd
 GRAPHMAGICK_RUN_DEPENDS=gm:graphics/GraphicsMagick
-IMAGEMAGICK_USES=	magick:6,run
+IMAGEMAGICK_USES=	magick:run
 JHEAD_RUN_DEPENDS=	jhead:graphics/jhead
 MYSQL_USE=		PHP=mysqli
 NETPBM_RUN_DEPENDS=	giftopnm:graphics/netpbm
