@@ -1,5 +1,5 @@
 PORTNAME=	got
-PORTVERSION=	0.75
+PORTVERSION=	0.76
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
