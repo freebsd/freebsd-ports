@@ -1,6 +1,5 @@
 PORTNAME=	pear
-PORTVERSION=	1.10.12
-PORTREVISION=	0
+PORTVERSION=	1.10.13
 CATEGORIES=	devel
 MASTER_SITES=	http://build.dimapanov.com/~fluffy/distfiles/ \
 		LOCAL/fluffy \
@@ -19,7 +18,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_PHP=	pcre:build xml:build zlib:build
-IGNORE_WITH_PHP=82
 
 PEARDIR=	${PREFIX}/share/pear
 
@@ -30,16 +28,14 @@ post-patch:
 		-e "s|%%BUNDLEDIR%%|${WRKSRC}/go-pear-bundle|" \
 		-e "s|%%TMPDIR%%|/tmp/pear|" \
 		${WRKSRC}/go-pear
-	@cd ${WRKSRC}/go-pear-bundle && ${MKDIR} tmp && ${TAR} -C tmp -xf PEAR-${PORTVERSION}.tar
+	@cd ${WRKSRC}/go-pear-bundle && ${MKDIR} tmp && ${TAR} -C tmp -xzf PEAR-${PORTVERSION}.tgz
 	@cd ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION} && ${PATCH} -s -p0 < ${FILESDIR}/extra-patch-PEAR-Config.php
 	@${RM} ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION}/PEAR/Config.php.orig
 	@${MD5} -q ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION}/PEAR/Config.php > ${WRKSRC}/Config.php.md5
-	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -cf ../PEAR-${PORTVERSION}.tar PEAR-${PORTVERSION} package.xml
+	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -czf ../PEAR-${PORTVERSION}.tgz PEAR-${PORTVERSION} package.xml
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${LOCALBASE}/bin/php -q ./go-pear
-	@${SED} -i "" "s|<?php|<?php dl('pcre.so'); dl('xml.so');|" \
-		${STAGEDIR}${PEARDIR}/peclcmd.php
 # pear violates stage when staging as root, hide this
 .if defined(PACKAGE_BUILDING)
 	@${RM} -r ${PEARDIR}
