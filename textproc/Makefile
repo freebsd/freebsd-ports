@@ -1327,6 +1327,7 @@
     SUBDIR += py-enchant
     SUBDIR += py-enrich
     SUBDIR += py-et_xmlfile
+    SUBDIR += py-extract-msg
     SUBDIR += py-fastavro
     SUBDIR += py-feedparser
     SUBDIR += py-fingerprints
