@@ -1,5 +1,5 @@
 PORTNAME=	birdfont
-DISTVERSION=	2.32.2
+DISTVERSION=	2.32.3
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	https://birdfont.org/releases/
 
