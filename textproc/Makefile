@@ -1545,6 +1545,7 @@
     SUBDIR += py-tablib
     SUBDIR += py-terminaltables
     SUBDIR += py-textdistance
+    SUBDIR += py-textract
     SUBDIR += py-textfsm
     SUBDIR += py-texttable
     SUBDIR += py-textual
