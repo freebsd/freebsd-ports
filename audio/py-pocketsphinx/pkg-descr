@@ -1,0 +1,5 @@
+Pocketsphinx is a part of the CMU Sphinx Open Source Toolkit For
+Speech Recognition.
+
+This package provides a python interface to CMU Sphinxbase and
+Pocketsphinx libraries created with SWIG and Setuptools.
