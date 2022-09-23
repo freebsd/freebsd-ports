@@ -1,5 +1,5 @@
 PORTNAME=	boxes
-PORTVERSION=	1.3
+PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -7,19 +7,26 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Draws ASCII-art configurable boxes around text or code
 WWW=		https://boxes.thomasjensen.com/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libpcre2-32.so:devel/pcre2 \
+		libunistring.so:devel/libunistring
+
+USES=		bison gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ascii-boxes
 
-USES=		bison gmake
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -I. -I../src -I${LOCALBASE}/include" \
+		GLOBALCONF=${GLOBALCONF} \
+		LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	build
-MAKE_ARGS=	CC="${CC}" GLOBALCONF=${GLOBALCONF} CFLAGS="${CFLAGS} -ansi -I. -Iregexp"
 
 GLOBALCONF=	${DATADIR}/boxes-config
 
-PLIST_FILES=	bin/${PORTNAME} \
-		${DATADIR_REL}/${PORTNAME}-config \
+PLIST_FILES=	${DATADIR_REL}/${PORTNAME}-config \
+		bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 PORTDOCS=	README.md
@@ -30,7 +37,7 @@ post-patch:
 	@${RM} ${WRKSRC}/src/${PORTNAME}.h ${WRKSRC}/doc/${PORTNAME}.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-config ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
