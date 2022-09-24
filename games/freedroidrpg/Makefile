@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		cpe jpeg gmake localbase lua:52+ python sdl xorg
+USES=		cpe jpeg gmake localbase lua:-53 python sdl xorg
 CPE_VENDOR=	freedroid
 USE_XORG=	x11
 USE_SDL=	sdl image gfx
