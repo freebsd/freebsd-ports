@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		cmake localbase lua
+USES=		cmake localbase lua:-53
 USE_GITHUB=	yes
 GH_ACCOUNT=	axkibe
 USE_RC_SUBR=	lsyncd
