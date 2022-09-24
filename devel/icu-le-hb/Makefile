@@ -1,5 +1,6 @@
 PORTNAME=	icu-le-hb
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	devel print
 
 MAINTAINER=	office@FreeBSD.org

@@ -33,6 +33,7 @@ include/unicode/datefmt.h
 include/unicode/dbbi.h
 include/unicode/dcfmtsym.h
 include/unicode/decimfmt.h
+include/unicode/displayoptions.h
 include/unicode/docmain.h
 include/unicode/dtfmtsym.h
 include/unicode/dtintrv.h
@@ -139,6 +140,7 @@ include/unicode/udata.h
 include/unicode/udateintervalformat.h
 include/unicode/udatpg.h
 include/unicode/udisplaycontext.h
+include/unicode/udisplayoptions.h
 include/unicode/uenum.h
 include/unicode/ufieldpositer.h
 include/unicode/uformattable.h
@@ -162,7 +164,6 @@ include/unicode/uniset.h
 include/unicode/unistr.h
 include/unicode/unorm.h
 include/unicode/unorm2.h
-include/unicode/unounclass.h
 include/unicode/unum.h
 include/unicode/unumberformatter.h
 include/unicode/unumberrangeformatter.h
