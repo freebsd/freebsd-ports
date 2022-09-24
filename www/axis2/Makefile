@@ -4,7 +4,7 @@ CATEGORIES=	www java
 MASTER_SITES=	APACHE/axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 WWW=		https://axis.apache.org/axis2/java/core/
 
