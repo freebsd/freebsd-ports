@@ -49,7 +49,7 @@
 @mode 660
 @owner root
 @group wazuh
-/var/ossec/etc/ossec.conf
+@sample /var/ossec/etc/ossec.conf.sample
 /var/ossec/etc/shared/cis_apache2224_rcl.txt
 /var/ossec/etc/shared/cis_debian_linux_rcl.txt
 /var/ossec/etc/shared/cis_mysql5-6_community_rcl.txt
@@ -429,7 +429,7 @@
 @dir /var/ossec/backup
 @dir /var/ossec/bin
 @dir /var/ossec/etc/shared/default
-@dir /var/ossec/etc/shared
+@dir(root,wazuh,770) /var/ossec/etc/shared
 @dir(wazuh,wazuh,770) /var/ossec/etc
 @dir(root,wazuh,750) /var/ossec/lib
 @dir(wazuh,wazuh,750) /var/ossec/logs/wazuh
