@@ -1,5 +1,5 @@
 PORTNAME=	mantis
-PORTVERSION=	2.25.2
+PORTVERSION=	2.25.5
 PORTEPOCH=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt/mantis-stable/${PORTVERSION}
@@ -69,9 +69,9 @@ PGSQL_USE=			PHP=pgsql
 PIWIK_GH_TUPLE=			mantisbt-plugins:piwik:a2dba46836bdc07a80b8040e889ba0606f97415e:piwik
 SAMPLEAUTH_GH_TUPLE=		mantisbt-plugins:SampleAuth:34856715f49a5c273f33e094c759c0e0b52b3912:sampleauth/plugins/SampleAuth
 SI_USE=				PHP=curl
-SI_GH_TUPLE=			mantisbt-plugins:source-integration:v2.4.1:si
-SLACK_GH_TUPLE=			mantisbt-plugins:Slack:1488824bca1cd4cbacc99930a095c4d0131eb206:slack/plugins/Slack
-SNIPPETS_GH_TUPLE=		mantisbt-plugins:Snippets:v2.3.2:snippets/plugins/Snippets
+SI_GH_TUPLE=			mantisbt-plugins:source-integration:v2.6.0:si
+SLACK_GH_TUPLE=			mantisbt-plugins:Slack:v1.0.3:slack
+SNIPPETS_GH_TUPLE=		mantisbt-plugins:Snippets:v2.4.1:snippets/plugins/Snippets
 TASKODROME_GH_TUPLE=		mantisbt-plugins:Taskodrome:69577a62e7db1c50945b513616ca15db97eeb67f:taskodrome
 TIMETRACKING_GH_TUPLE=		mantisbt-plugins:timetracking:3a560673d85e17651fc1994f5e09e2ae9df62336:timetracking
 
