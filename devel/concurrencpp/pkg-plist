@@ -35,8 +35,10 @@ include/concurrencpp/results/when_result.h
 include/concurrencpp/runtime/constants.h
 include/concurrencpp/runtime/runtime.h
 include/concurrencpp/task.h
+include/concurrencpp/threads/async_lock.h
 include/concurrencpp/threads/binary_semaphore.h
 include/concurrencpp/threads/cache_line.h
+include/concurrencpp/threads/constants.h
 include/concurrencpp/threads/thread.h
 include/concurrencpp/timers/constants.h
 include/concurrencpp/timers/timer.h
