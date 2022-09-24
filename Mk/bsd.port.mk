@@ -1173,7 +1173,6 @@ ABI=
 ABI+=	purecap
 .      endif
 .    endif
-_EXPORTED_VARS+=	ABI
 
 # Get operating system versions for a cross build
 .    if defined(CROSS_SYSROOT)
