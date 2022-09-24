@@ -614,10 +614,19 @@ index 9f4fd4b0..20032555 100644
  	},
  	{
 diff --git libpkg/pkg_elf.c libpkg/pkg_elf.c
-index 05512c36..cb30aff4 100644
+index 05512c36..1ff64463 100644
 --- libpkg/pkg_elf.c
 +++ libpkg/pkg_elf.c
-@@ -716,6 +716,62 @@ aeabi_parse_arm_attributes(void *data, size_t length)
+@@ -183,6 +183,8 @@ shlib_valid_abi(const char *fpath, GElf_Ehdr *hdr, const char *abi)
+ 					strlcpy(wordsize, p + 1, MIN((long)sizeof(wordsize), t - p));
+ 				break;
+ 			}
++		} else {
++			break;
+ 		}
+ 	}
+ 	/* Invalid ABI line */
+@@ -716,6 +718,62 @@ aeabi_parse_arm_attributes(void *data, size_t length)
  #undef MOVE
  }
  
@@ -680,7 +689,7 @@ index 05512c36..cb30aff4 100644
  static bool
  elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
  {
-@@ -810,6 +866,7 @@ elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
+@@ -810,6 +868,7 @@ elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
  		xasprintf(&oi->version, "%d", version / 100000);
  	}
  
@@ -688,7 +697,7 @@ index 05512c36..cb30aff4 100644
  	return (true);
  }
  
-@@ -826,16 +883,20 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
+@@ -826,16 +885,20 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
  	int fd, i;
  	int ret = EPKG_OK;
  	const char *arch, *abi, *endian_corres_str, *wordsize_corres_str, *fpu;
@@ -710,7 +719,7 @@ index 05512c36..cb30aff4 100644
  
  	if (oi == NULL) {
  		memset(&loi, 0, sizeof(loi));
-@@ -1003,6 +1064,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
+@@ -1003,6 +1066,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
  		    ":%s:%s:%s:%s:%s", arch, wordsize_corres_str,
  		    endian_corres_str, abi, fpu);
  		break;
@@ -726,7 +735,7 @@ index 05512c36..cb30aff4 100644
  	case EM_MIPS:
  		/*
  		 * this is taken from binutils sources:
-@@ -1045,8 +1115,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
+@@ -1045,8 +1117,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
  				abi = "unknown";
  				break;
  		}
