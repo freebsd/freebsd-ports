@@ -4,6 +4,9 @@ lib/emby-server/bin/ffprobe
 lib/emby-server/lib/libSkiaSharp.so
 lib/emby-server/lib/libSkiaSharp.so.2
 lib/emby-server/lib/libSkiaSharp.so.80.2
+lib/emby-server/lib/libvips.so
+lib/emby-server/lib/libvips.so.42
+lib/emby-server/lib/libvips.so.42.15.0
 lib/emby-server/system/Emby.ActivityLog.dll
 lib/emby-server/system/Emby.Api.dll
 lib/emby-server/system/Emby.Codecs.Dxva.dll
@@ -28,6 +31,7 @@ lib/emby-server/system/Emby.Server.MediaEncoding.dll
 lib/emby-server/system/Emby.Server.Sync.dll
 lib/emby-server/system/Emby.Sqlite.dll
 lib/emby-server/system/Emby.Web.GenericEdit.dll
+lib/emby-server/system/Emby.Web.GenericUI.dll
 lib/emby-server/system/Emby.Web.dll
 lib/emby-server/system/EmbyServer
 lib/emby-server/system/EmbyServer.deps.json
@@ -601,6 +605,8 @@ lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-input/emby-input.
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-itemrefreshindicator/emby-itemrefreshindicator.js
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-itemscontainer/emby-itemscontainer.css
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-itemscontainer/emby-itemscontainer.js
+lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-multilineselect/emby-multilineselect.css
+lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-multilineselect/emby-multilineselect.js
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-progressbar/emby-progressbar.css
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-progressbar/emby-progressbar.js
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-progressring/emby-progressring.css
@@ -909,6 +915,7 @@ lib/emby-server/system/dashboard-ui/modules/themes/logodark.png
 lib/emby-server/system/dashboard-ui/modules/themes/logowhite.png
 lib/emby-server/system/dashboard-ui/modules/toast/toast.css
 lib/emby-server/system/dashboard-ui/modules/toast/toast.js
+lib/emby-server/system/dashboard-ui/modules/transparencymanagement.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/baseview.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/viewmanager.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.js
