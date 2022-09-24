@@ -1,5 +1,5 @@
 PORTNAME=	scrypt
-PORTVERSION=	1.4.3
+PORTVERSION=	2.0.0
 CATEGORIES=	security pear
 
 MAINTAINER=	dbaio@FreeBSD.org
