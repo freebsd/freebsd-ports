@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		liblmdb.so:databases/lmdb
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse \
-		libtool lua:53+ pkgconfig sqlite:3
+		libtool lua:53 pkgconfig sqlite:3
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.am
 USE_RC_SUBR=	urbackup_server
 
