@@ -1,7 +1,7 @@
 PORTNAME=	toml-f
-DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
 CATEGORIES=	textproc
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	TOML parser for data serialization and deserialization in Fortran
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 BROKEN_aarch64=	cannot find an intrinsic module named 'ieee_arithmetic'
 
-USES=		cmake:testing fortran
-USE_GITHUB=	yes
+USES=		cmake:testing fortran tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
