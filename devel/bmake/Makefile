@@ -1,5 +1,5 @@
 PORTNAME=	bmake
-PORTVERSION=	20220901
+PORTVERSION=	20220909
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.netbsd.org/pub/NetBSD/misc/sjg/
 
