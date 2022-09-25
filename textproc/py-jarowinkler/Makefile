@@ -1,5 +1,5 @@
 PORTNAME=	jarowinkler
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 USES=		python:3.6+
 USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/maxbachmann/JaroWinkler/issues/7
 
-TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jarowinkler/_initialize_cpp.cpython-${PYTHON_SUFFIX}.so
