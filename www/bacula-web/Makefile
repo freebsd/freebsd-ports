@@ -1,7 +1,7 @@
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.5.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -45,7 +45,7 @@ USE_PHP+=		pdo_pgsql
 .if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--with-sqlite=yes
 SUB_LIST+=		REQ_SQLITE=sqlite
-USE_PHP+=		pdo_sqlite
+USE_PHP+=		pdo_sqlite sqlite3
 .endif
 
 do-install:
