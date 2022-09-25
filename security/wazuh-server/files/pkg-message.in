@@ -1,0 +1,64 @@
+[
+{ type: install
+  message: <<EOM
+Wazuh server components were installed
+
+1) Wazuh server componenets are based on Wazuh manager and Filebeat projects.
+   This guide help you to adapt wazuh configuration for it works on FreeBSD
+   using apps are part of ports tree. We are using an alternative way to
+   configure wazuh server components on FreeBSD. It is necessary configure
+   logstash between filebeat and opensearch because FreeBSD does not include
+   versions lesser or equal to 7.16.x of Filebeat into ports tree.
+
+2) Do not forget take a look to wazuh-manager post install message to configure
+   the wazuh-server component.
+
+   # pkg info -D -x wazuh-manager | less
+
+3) Copy %%PREFIX%%/etc/wazuh-server/filebeat.yml to %%PREFIX%%/etc/beats/
+   directory
+
+4) Copy %%PREFIX%%/etc/wazuh-server/logstash.yml and %%PREFIX%%/etc/wazuh-server/wazuh-template.json
+   files to %%PREFIX%%/etc/logstash/ directory
+
+5) You can use my own version of wazuh certificates generator for generate
+   root, admin, indexer, server and dashboard certificates used by wazuh
+   components.
+
+   https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz
+
+6) Edit filebeat.yml and logstash.yml files and changes options accord to your
+   setup. For example host, ssl, filter, etc. Sample files can give you a good
+   guide about that.
+
+7) Install logstash-output-opensearch plugin
+
+   # cd %%PREFIX%%/logstash/bin
+   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk11 ./logstash-plugin install logstash-output-opensearch"
+
+8) Check if logstash-output-opensearch plugin was installed
+
+   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk11 ./logstash-plugin list | grep logstash-output-opensearch"
+
+9) Add Filebeat and Logstash to /etc/rc.conf
+
+   # sysrc filebeat_enable="YES"
+   # sysrc logstash_enable="YES"
+
+10) Start Filebeat and Logstash services
+   
+   # service filebeat start
+   # service logstash start
+
+11) You can look more useful information at the following link:
+
+    https://documentation.wazuh.com/current/installation-guide/wazuh-server/step-by-step.html
+
+    Take on mind wazuh arquitecture on FreeBSD is configurated not similar like
+    you can read at wazuh guide. Some times you could decided configure logstash
+    on another host. If it is your case you must adapt some points in this guide.
+
+12) Enjoy it
+EOM
+}
+]
