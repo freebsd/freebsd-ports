@@ -1,5 +1,5 @@
 PORTNAME=	parallel-hashmap
-DISTVERSION=	1.35
+DISTVERSION=	1.36
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
