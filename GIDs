@@ -251,7 +251,7 @@ jicofo:*:307:jitsi
 jvb:*:308:jitsi
 wazuh:*:309:
 cardano:*:310:
-# free: 311
+_arti:*:311:
 _sphinx:*:312:
 _fastdfs:*:313:
 # free: 314

@@ -1,19 +1,20 @@
 PORTNAME=	arti
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Implementation of Tor, in Rust
-WWW=		https://gitlab.torproject.org/tpo/core/arti/
+WWW=		https://arti.torproject.org/
 
 LICENSE=	MIT
 
 USES=		cargo sqlite ssl
 USE_RC_SUBR=	arti
-#GROUPS=		_arti
-#USERS=		_arti
-#SUB_LIST=	USER="${USERS}" GROUP="${GROUPS}"
-#PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
+GROUPS=		_arti
+USERS=		_arti
+SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
+PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
