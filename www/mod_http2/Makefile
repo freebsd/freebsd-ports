@@ -1,7 +1,7 @@
 PORTNAME=	mod_http2
-PORTVERSION=	2.0.7
-DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.7
 CATEGORIES=	www
+MASTER_SITES=	https://github.com/icing/mod_h2/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -13,18 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		apache:2.4+ autoreconf libtool ssl pkgconfig:build
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	icing
-GH_PROJECT=	mod_h2
-
+USES=		apache:2.4+ libtool ssl pkgconfig
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--without-curl
 
-MODULENAME=	${GH_PROJECT}
-
-CFLAGS+=	-I${LOCALBASE}/include
+MODULENAME=	mod_h2
 
 SUB_FILES=	200_mod_http2.conf 300_mod_proxy_http2.conf
 PORTDOCS=	README README.md

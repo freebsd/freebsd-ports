@@ -1,0 +1,47 @@
+diff --git a/www/mod_http2/Makefile b/www/mod_http2/Makefile
+index df7cf2134a5d..86b78443183d 100644
+--- a/www/mod_http2/Makefile
++++ b/www/mod_http2/Makefile
+@@ -1,7 +1,7 @@
+ PORTNAME=	mod_http2
+-PORTVERSION=	2.0.7
+-DISTVERSIONPREFIX=	v
++DISTVERSION=	2.0.7
+ CATEGORIES=	www
++MASTER_SITES=	https://github.com/icing/mod_h2/releases/download/v${DISTVERSION}/
+ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
+ 
+ MAINTAINER=	brnrd@FreeBSD.org
+@@ -13,18 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
+ 
+ LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
+ 
+-USES=		apache:2.4+ autoreconf libtool ssl pkgconfig:build
+-USE_GITHUB=	yes
+-
+-GH_ACCOUNT=	icing
+-GH_PROJECT=	mod_h2
+-
++USES=		apache:2.4+ libtool ssl pkgconfig
+ GNU_CONFIGURE=	yes
+-CONFIGURE_ARGS=	--without-curl
+ 
+-MODULENAME=	${GH_PROJECT}
++CONFIGURE_ARGS=	--without-curl
+ 
+-CFLAGS+=	-I${LOCALBASE}/include
++MODULENAME=	mod_h2
+ 
+ SUB_FILES=	200_mod_http2.conf 300_mod_proxy_http2.conf
+ PORTDOCS=	README README.md
+diff --git a/www/mod_http2/distinfo b/www/mod_http2/distinfo
+index c101abd0306f..fa15b82e8951 100644
+--- a/www/mod_http2/distinfo
++++ b/www/mod_http2/distinfo
+@@ -1,3 +1,3 @@
+-TIMESTAMP = 1664101577
+-SHA256 (icing-mod_h2-v2.0.7_GH0.tar.gz) = ef3809a73f75a9ccbc8c6ef244097d4c9a7ea7eb39ea268d11716d3c6ed77b07
+-SIZE (icing-mod_h2-v2.0.7_GH0.tar.gz) = 675492
++TIMESTAMP = 1664115493
++SHA256 (mod_http2-2.0.7.tar.gz) = f46ad9b3fc91a82bee3d226fcd3667dd4da6dad996f6a97e2272b0e1f9e2534f
++SIZE (mod_http2-2.0.7.tar.gz) = 1011387
