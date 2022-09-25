@@ -1,7 +1,6 @@
 PORTNAME=	nwg-drawer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	4
+DISTVERSION=	0.3.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -37,6 +36,7 @@ PORTDATA=	desktop-directories *.css
 post-patch:
 # Respect PREFIX for *.desktop
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/main.go \
 		${WRKSRC}/tools.go
 
 post-install:
