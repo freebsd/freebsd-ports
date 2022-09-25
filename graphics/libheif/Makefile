@@ -1,7 +1,12 @@
 PORTNAME=	libheif
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/strukturag/${PORTNAME}/commit/
+PATCHFILES=	a01baccaf40bafcabddba47846f5e914ca0724f6.patch:-p1 \
+		d506bccdcecd7133ab12daa4ebcfbbb75d40641f.patch:-p1
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder
@@ -15,9 +20,6 @@ USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome \
 CPE_VENDOR=	struktur
 USE_GNOME=	gdkpixbuf2 glib20
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	strukturag
 
 OPTIONS_DEFINE=		AOM DAV1D EXAMPLES LIBDE265 RAV1E X265
 OPTIONS_DEFAULT=	AOM DAV1D LIBDE265 X265
