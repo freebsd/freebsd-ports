@@ -1,35 +1,40 @@
 PORTNAME=	picocrypt
-PORTVERSION=	1.25
-PORTREVISION=	4
+DISTVERSION=	1.30
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Small, simple, yet very secure encryption tool
 WWW=		https://github.com/HACKERALERT/Picocrypt
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Picocrypt.go:53:11: cannot use 1 << 40 (untyped int constant 1099511627776) as int value in variable declaration (overflows) \
+			https://github.com/HACKERALERT/Picocrypt/issues/127
+
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gl gnome go:modules pkgconfig xorg
 USE_GL=		gl
-USE_GNOME=	gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xau xcb xdmcp
 USE_GITHUB=	yes
 GH_ACCOUNT=	HACKERALERT
 GH_PROJECT=	Picocrypt
-GH_TUPLE=	\
-		HACKERALERT:clipboard:7345ba96aeca:hackeralert_clipboard/vendor/github.com/HACKERALERT/clipboard \
-		HACKERALERT:crypto:ba8732acd7e7:hackeralert_crypto/vendor/github.com/HACKERALERT/crypto \
-		HACKERALERT:dialog:a9e6303eda42:hackeralert_dialog/vendor/github.com/HACKERALERT/dialog \
-		HACKERALERT:giu:a37934efe9a9:hackeralert_giu/vendor/github.com/HACKERALERT/giu \
-		HACKERALERT:gl:402fdd216609:hackeralert_gl/vendor/github.com/HACKERALERT/gl \
-		HACKERALERT:glfw:d0da149b3bef:hackeralert_glfw_glfw/vendor/github.com/HACKERALERT/glfw \
-		HACKERALERT:imgui-go:da7cd33ca753:hackeralert_imgui_go/vendor/github.com/HACKERALERT/imgui-go \
-		HACKERALERT:infectious:bb1303403749:hackeralert_infectious/vendor/github.com/HACKERALERT/infectious \
+GH_TUPLE=	HACKERALERT:clipboard:cccec4a4226a:hackeralert_clipboard/vendor/github.com/HACKERALERT/clipboard \
+		HACKERALERT:crypto:aa0dd62d8f67:hackeralert_crypto/vendor/github.com/HACKERALERT/crypto \
+		HACKERALERT:dialog:af3bc34fe379:hackeralert_dialog/vendor/github.com/HACKERALERT/dialog \
+		HACKERALERT:giu:1141d2b849c4:hackeralert_giu/vendor/github.com/HACKERALERT/giu \
+		HACKERALERT:gl:73af36e130d3:hackeralert_gl/vendor/github.com/HACKERALERT/gl \
+		HACKERALERT:glfw:2c5dd2490d18:hackeralert_glfw_glfw/vendor/github.com/HACKERALERT/glfw \
+		HACKERALERT:imgui-go:ccba9a3ad6fa:hackeralert_imgui_go/vendor/github.com/HACKERALERT/imgui-go \
+		HACKERALERT:infectious:2c37b99f37ff:hackeralert_infectious/vendor/github.com/HACKERALERT/infectious \
 		HACKERALERT:mainthread:2ec9e701cc14:hackeralert_mainthread/vendor/github.com/HACKERALERT/mainthread \
 		HACKERALERT:serpent:293b29869c66:hackeralert_serpent/vendor/github.com/HACKERALERT/serpent \
-		HACKERALERT:sys:2e09c491f471:hackeralert_sys/vendor/github.com/HACKERALERT/sys \
-		HACKERALERT:w32:4b84c2675d8d:hackeralert_w32/vendor/github.com/HACKERALERT/w32 \
-		HACKERALERT:zxcvbn-go:f131a4666ad5:hackeralert_zxcvbn_go/vendor/github.com/HACKERALERT/zxcvbn-go
+		HACKERALERT:sys:46e319fb60c9:hackeralert_sys/vendor/github.com/HACKERALERT/sys \
+		HACKERALERT:w32:76f2a4b526bd:hackeralert_w32/vendor/github.com/HACKERALERT/w32 \
+		HACKERALERT:zxcvbn-go:fa924b767f89:hackeralert_zxcvbn_go/vendor/github.com/HACKERALERT/zxcvbn-go
 
 WRKSRC_SUBDIR=	src
 
