@@ -9,10 +9,10 @@ Subject: [PATCH] bugfix: update handling of multiple headers changed in nginx
  src/ngx_http_lua_headers_out.c | 64 ++++++++++++++++++++++++++++++++++
  2 files changed, 110 insertions(+)
 
-diff --git a/../lua-nginx-module-0.10.21/src/ngx_http_lua_headers_in.c b/src/ngx_http_lua_headers_in.c
+diff --git a/../lua-nginx-module-0.10.22/src/ngx_http_lua_headers_in.c b/src/ngx_http_lua_headers_in.c
 index a55d9cac7..440548140 100644
---- a/../lua-nginx-module-0.10.21/src/ngx_http_lua_headers_in.c
-+++ b/../lua-nginx-module-0.10.21/src/ngx_http_lua_headers_in.c
+--- a/../lua-nginx-module-0.10.22/src/ngx_http_lua_headers_in.c
++++ b/../lua-nginx-module-0.10.22/src/ngx_http_lua_headers_in.c
 @@ -152,9 +152,15 @@ static ngx_http_lua_set_header_t  ngx_http_lua_set_handlers[] = {
                   ngx_http_set_builtin_header },
  #endif
@@ -83,10 +83,10 @@ index a55d9cac7..440548140 100644
  }
  
  
-diff --git a/../lua-nginx-module-0.10.21/src/ngx_http_lua_headers_out.c b/src/ngx_http_lua_headers_out.c
+diff --git a/../lua-nginx-module-0.10.22/src/ngx_http_lua_headers_out.c b/src/ngx_http_lua_headers_out.c
 index 6e9f9c19a..571723d9a 100644
---- a/../lua-nginx-module-0.10.21/src/ngx_http_lua_headers_out.c
-+++ b/../lua-nginx-module-0.10.21/src/ngx_http_lua_headers_out.c
+--- a/../lua-nginx-module-0.10.22/src/ngx_http_lua_headers_out.c
++++ b/../lua-nginx-module-0.10.22/src/ngx_http_lua_headers_out.c
 @@ -311,6 +311,69 @@ static ngx_int_t
  ngx_http_set_builtin_multi_header(ngx_http_request_t *r,
      ngx_http_lua_header_val_t *hv, ngx_str_t *value)

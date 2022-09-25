@@ -226,7 +226,7 @@ LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.21:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.22:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lua-nginx-module:-p1
 
@@ -297,7 +297,7 @@ SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 
-SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:2e99740:shibboleth
+SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:86489a3:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
 SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
