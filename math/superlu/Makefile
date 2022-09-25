@@ -1,10 +1,7 @@
 PORTNAME=	superlu
-PORTVERSION=	5.2.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.3.0
 CATEGORIES=	math
-MASTER_SITES=	https://portal.nersc.gov/project/sparse/superlu/ \
-		https://portal.nersc.gov/project/sparse/xiaoye-web/:doc
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Library of routines for performing sparse factorization
@@ -16,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 USES=		cmake fortran pkgconfig
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	xiaoyeli
+
 CMAKE_ON=	USE_XSDK_DEFAULTS
 CMAKE_OFF=	enable_tests
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_SINGLE=		BLAS
@@ -28,9 +26,6 @@ OPTIONS_DEFAULT=	REFERENCE
 
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CMAKE_ON=		-DBLA_VENDOR:STRING="ATLAS"
-DOCS_DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			${SLU_DOCS:S/$/:doc/}
-DOCS_EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 GOTOBLAS_DESC=		GotoBLAS blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
 GOTOBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="Goto"
@@ -40,7 +35,8 @@ REFERENCE_DESC=		Reference blas implementation
 REFERENCE_USES=		blaslapack
 REFERENCE_CMAKE_ON=	-DBLA_VENDOR:STRING="Generic"
 
-SLU_DOCS=	SLU_general.ps.gz slu_ilu.pdf simax-29176.pdf
+PORTDOCS=		*
+PORTEXAMPLES=		*
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -50,10 +46,8 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${SLU_DOCS} \
-		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/DOC && ${COPYTREE_SHARE} "html ug.pdf" \
-		${STAGEDIR}${DOCSDIR})
+	cd ${WRKSRC}/DOC && ${COPYTREE_SHARE} "html ug.pdf" \
+		${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
