@@ -10,8 +10,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	Picocrypt.go:53:11: cannot use 1 << 40 (untyped int constant 1099511627776) as int value in variable declaration (overflows) \
-			https://github.com/HACKERALERT/Picocrypt/issues/127
+NOT_FOR_ARCHS_REASON=	upstream only supports 64-bit
+# https://github.com/HACKERALERT/Picocrypt/issues/127
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
