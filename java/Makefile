@@ -18,7 +18,6 @@
     SUBDIR += bluej
     SUBDIR += bootstrap-openjdk11
     SUBDIR += bootstrap-openjdk17
-    SUBDIR += bootstrap-openjdk6
     SUBDIR += bootstrap-openjdk8
     SUBDIR += bouncycastle
     SUBDIR += bouncycastle15

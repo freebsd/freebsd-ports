@@ -17560,3 +17560,4 @@ audio/kid3-kf5|audio/kid3@kf5|2022-09-13|Merged into flavorized version
 audio/kid3-qt5|audio/kid3@qt5|2022-09-13|Merged into flavorized version
 audio/phaserotate-lv2|audio/x42-plugins-lv2|2022-09-13|phaserotate-lv2 LV2 plugin is included in the x42-plugins-lv2 plugin collection
 graphics/darktable40|graphics/darktable|2022-09-22|Obsolete. Use graphics/darktable, which is the same version
+java/bootstrap-openjdk6|java/bootstrap-openjdk8|2022-09-25|Was only used to bootstrap the now deleted java/openjdk7 port
