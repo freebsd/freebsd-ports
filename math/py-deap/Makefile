@@ -1,5 +1,5 @@
 PORTNAME=	deap
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	math biology science devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,11 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.5+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # tests fail, see https://github.com/DEAP/deap/issues/668
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/deap/tools/_hypervolume/hv${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
