@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2022-09-25 18:09:06 UTC
++++ CMakeLists.txt
+@@ -13,9 +13,9 @@ PROJECT(squish)
+ 
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
+ 
+-OPTION(BUILD_SQUISH_WITH_OPENMP "Build with OpenMP." ON)
++OPTION(BUILD_SQUISH_WITH_OPENMP "Build with OpenMP." OFF)
+ 
+-OPTION(BUILD_SQUISH_WITH_SSE2 "Build with SSE2." ON)
++OPTION(BUILD_SQUISH_WITH_SSE2 "Build with SSE2." OFF)
+ OPTION(BUILD_SQUISH_WITH_ALTIVEC "Build with Altivec." OFF)
+ 
+ OPTION(BUILD_SHARED_LIBS "Build shared libraries." OFF)

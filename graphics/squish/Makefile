@@ -1,31 +1,28 @@
 PORTNAME=	squish
-PORTVERSION=	1.10
-PORTREVISION=	2
+DISTVERSION=	1.15
 CATEGORIES=	graphics
-MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libsquish/
+MASTER_SITES=	SF/lib${PORTNAME}
+DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	rddeblois@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source DXT compression library
-WWW=		https://code.google.com/p/libsquish/
+WWW=		https://sourceforge.net/projects/libsquish/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		uidfix
-MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}
-PLIST_FILES=	include/squish.h \
-		lib/libsquish.a lib/libsquish.so.1 lib/libsquish.so
-MAKEFILE=	${FILESDIR}/BSDmakefile
+USES=		cmake tar:tgz
 USE_LDCONFIG=	yes
 
-OPTIONS_RADIO=	RG1
-OPTIONS_RADIO_RG1=	ALTIVEC SSE
-OPTIONS_DEFAULT_amd64=	SSE
-OPTIONS_DEFAULT_powerpc64=	ALTIVEC
-OPTIONS_DEFAULT_powerpc64le=	ALTIVEC
-ALTIVEC_DESC=	Use Altivec instructions
-RG1_DESC=	Optimizations Selection
+NO_WRKSUBDIR=	yes
 
-ALTIVEC_CXXFLAGS=	-DSQUISH_USE_ALTIVEC=1 -maltivec
-SSE_CXXFLAGS=		-DSQUISH_USE_SSE=2 -msse2
+PLIST_FILES=	lib/libsquish.so.0.0 \
+		lib/libsquish.so \
+		include/squish.h
+
+CMAKE_ON_aarch64=	BUILD_SQUISH_WITH_OPENMP
+CMAKE_ON_amd64=		BUILD_SQUISH_WITH_OPENMP BUILD_SQUISH_WITH_SSE2
+CMAKE_ON_i386=		BUILD_SQUISH_WITH_OPENMP
+CMAKE_ON=		BUILD_SHARED_LIBS ${CMAKE_ON_${ARCH}}
 
 .include <bsd.port.mk>

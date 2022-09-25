@@ -1,2 +1,3 @@
-SHA256 (squish-1.10.tar.gz) = aec3428badafdbb3b0ed1ea3a385a8029e65694282459f61b4a538963e8cada3
-SIZE (squish-1.10.tar.gz) = 45009
+TIMESTAMP = 1664129303
+SHA256 (libsquish-1.15.tgz) = 628796eeba608866183a61d080d46967c9dda6723bc0a3ec52324c85d2147269
+SIZE (libsquish-1.15.tgz) = 59199
