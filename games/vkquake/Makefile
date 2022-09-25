@@ -1,5 +1,6 @@
 PORTNAME=	vkquake
 DISTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology

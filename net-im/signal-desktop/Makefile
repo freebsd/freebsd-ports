@@ -1,6 +1,7 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.56.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn \
 		LOCAL/mikael/signal-desktop/:electron_gyp \
