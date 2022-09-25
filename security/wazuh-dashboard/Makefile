@@ -14,7 +14,7 @@ WWW=		https://github.com/wazuh/wazuh-kibana-app
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboard
+RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards
 
 NO_BUILD=	yes
 
