@@ -5,6 +5,7 @@ bin/x42-fil4
 bin/x42-matrixmixer8x8
 bin/x42-meter
 bin/x42-mixtri
+bin/x42-phaserotate
 bin/x42-scope
 bin/x42-spectr
 bin/x42-stepseq
@@ -71,6 +72,7 @@ lib/lv2/onsettrigger.lv2/onsettrigger.ttl
 lib/lv2/phaserotate.lv2/manifest.ttl
 lib/lv2/phaserotate.lv2/phaserotate.so
 lib/lv2/phaserotate.lv2/phaserotate.ttl
+lib/lv2/phaserotate.lv2/phaserotateUI_gl.so
 lib/lv2/sisco.lv2/manifest.ttl
 lib/lv2/sisco.lv2/sisco.so
 lib/lv2/sisco.lv2/sisco.ttl
@@ -108,6 +110,7 @@ man/man1/x42-fil4.1.gz
 man/man1/x42-matrixmixer.1.gz
 man/man1/x42-meter.1.gz
 man/man1/x42-mixtri.1.gz
+man/man1/x42-phaserotate.1.gz
 man/man1/x42-scope.1.gz
 man/man1/x42-spectr.1.gz
 man/man1/x42-stepseq.1.gz
