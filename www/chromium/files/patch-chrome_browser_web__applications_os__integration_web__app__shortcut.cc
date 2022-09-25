@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2022-09-24 10:57:32 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
-@@ -44,7 +44,7 @@ namespace {
+@@ -45,7 +45,7 @@ namespace {
  
  #if BUILDFLAG(IS_MAC)
  const int kDesiredIconSizesForShortcut[] = {16, 32, 128, 256, 512};
@@ -9,16 +9,25 @@
  // Linux supports icons of any size. FreeDesktop Icon Theme Specification states
  // that "Minimally you should install a 48x48 icon in the hicolor theme."
  const int kDesiredIconSizesForShortcut[] = {16, 32, 48, 128, 256, 512};
-@@ -147,7 +147,7 @@ ScopedShortcutOverrideForTesting::~ScopedShortcutOverr
+@@ -130,7 +130,7 @@ std::string GetAllFilesInDir(const base::FilePath& fil
+ }  // namespace
+ 
+ ScopedShortcutOverrideForTesting::ScopedShortcutOverrideForTesting() {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   auto callback = base::BindRepeating(
+       [](ScopedShortcutOverrideForTesting* scoped_override,
+          base::FilePath filename, std::string xdg_command,
+@@ -163,7 +163,7 @@ ScopedShortcutOverrideForTesting::~ScopedShortcutOverr
        }
      }
    }
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   directories = {&desktop};
- #endif
-   for (base::ScopedTempDir* dir : directories) {
-@@ -191,7 +191,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
+   // Reset the file handling callback.
+   SetUpdateMimeInfoDatabaseOnLinuxCallbackForTesting(
+       UpdateMimeInfoDatabaseOnLinuxCallback());
+@@ -210,7 +210,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
          scoped_override->chrome_apps_folder.CreateUniqueTempDirUnderPath(
              base_path);
      DCHECK(success);
@@ -27,7 +36,7 @@
      bool success =
          scoped_override->desktop.CreateUniqueTempDirUnderPath(base_path);
      DCHECK(success);
-@@ -211,7 +211,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
+@@ -230,7 +230,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
  #elif BUILDFLAG(IS_MAC)
      bool success = scoped_override->chrome_apps_folder.CreateUniqueTempDir();
      DCHECK(success);

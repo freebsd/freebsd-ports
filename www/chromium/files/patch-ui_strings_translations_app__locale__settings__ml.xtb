@@ -1,4 +1,4 @@
---- ui/strings/translations/app_locale_settings_ml.xtb.orig	2022-07-22 17:30:31 UTC
+--- ui/strings/translations/app_locale_settings_ml.xtb.orig	2022-09-24 10:57:32 UTC
 +++ ui/strings/translations/app_locale_settings_ml.xtb
 @@ -9,7 +9,7 @@
    <translation id="IDS_WEB_FONT_FAMILY">'Segoe UI',Arial,AnjaliOldLipi,Rachana,Kartika</translation>
@@ -8,4 +8,4 @@
 +<if expr="is_posix">
    <translation id="IDS_WEB_FONT_FAMILY">Arial,AnjaliOldLipi,Rachana,Kartika,sans-serif</translation>
  </if>
- <if expr="chromeos_ash or chromeos_lacros">
+ <if expr="is_chromeos">

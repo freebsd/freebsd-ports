@@ -1,8 +1,8 @@
---- components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc.orig	2022-07-22 17:30:31 UTC
+--- components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc.orig	2022-09-24 10:57:32 UTC
 +++ components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc
 @@ -36,6 +36,7 @@ bool ScreenAIPreSandboxHook(sandbox::policy::SandboxLi
    }
-   screen_ai::SetPreloadedLibraryFilePath(library_path);
+   screen_ai::StoreComponentBinaryPath(library_path);
  
 +#if !BUILDFLAG(IS_BSD)
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();

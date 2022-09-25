@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_dialogs.h.orig	2022-07-22 17:30:31 UTC
+--- chrome/browser/ui/browser_dialogs.h.orig	2022-09-24 10:57:32 UTC
 +++ chrome/browser/ui/browser_dialogs.h
-@@ -27,7 +27,7 @@
+@@ -25,7 +25,7 @@
  #include "ui/base/models/dialog_model.h"
  #include "ui/gfx/native_widget_types.h"
  

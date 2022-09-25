@@ -1,8 +1,8 @@
---- services/device/compute_pressure/cpu_probe.cc.orig	2022-08-31 12:19:35 UTC
+--- services/device/compute_pressure/cpu_probe.cc.orig	2022-09-24 10:57:32 UTC
 +++ services/device/compute_pressure/cpu_probe.cc
-@@ -55,6 +55,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
- #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-   return CpuProbeLinux::Create();
+@@ -63,6 +63,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
+ #elif BUILDFLAG(IS_MAC)
+   return CpuProbeMac::Create();
  #else
 +  NOTIMPLEMENTED();
    return std::make_unique<NullCpuProbe>();

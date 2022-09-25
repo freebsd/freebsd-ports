@@ -1,6 +1,6 @@
---- build/config/BUILD.gn.orig	2022-02-28 16:54:41 UTC
+--- build/config/BUILD.gn.orig	2022-09-24 10:57:32 UTC
 +++ build/config/BUILD.gn
-@@ -218,13 +218,17 @@ config("default_libs") {
+@@ -215,13 +215,17 @@ config("default_libs") {
        "CoreText.framework",
        "Foundation.framework",
      ]

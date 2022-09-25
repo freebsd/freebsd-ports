@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2022-08-31 12:19:35 UTC
+--- chrome/common/chrome_features.h.orig	2022-09-24 10:57:32 UTC
 +++ chrome/common/chrome_features.h
 @@ -81,7 +81,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
@@ -18,7 +18,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -210,7 +210,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -204,7 +204,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDesktopPWAsWebBundles;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kChromeAppsDeprecation;
  COMPONENT_EXPORT(CHROME_FEATURES)
-@@ -424,7 +424,7 @@ extern const base::Feature kIncognitoNtpRevamp;
+@@ -429,7 +429,7 @@ extern const base::Feature kKioskEnableAppService;
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kUpdateHistoryEntryPointsInIncognito;
  
@@ -36,7 +36,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kLinuxLowMemoryMonitor;
  COMPONENT_EXPORT(CHROME_FEATURES)
-@@ -433,7 +433,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -438,7 +438,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

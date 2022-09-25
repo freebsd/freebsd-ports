@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2022-09-02 10:45:05 UTC
+--- content/gpu/gpu_main.cc.orig	2022-09-24 10:57:32 UTC
 +++ content/gpu/gpu_main.cc
 @@ -86,7 +86,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -396,7 +396,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -401,7 +401,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  

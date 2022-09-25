@@ -1,4 +1,4 @@
---- ui/strings/translations/app_locale_settings_ko.xtb.orig	2022-07-22 17:30:31 UTC
+--- ui/strings/translations/app_locale_settings_ko.xtb.orig	2022-09-24 10:57:32 UTC
 +++ ui/strings/translations/app_locale_settings_ko.xtb
 @@ -12,7 +12,7 @@
  <if expr="is_ios">
@@ -8,4 +8,4 @@
 +<if expr="is_posix">
    <translation id="IDS_WEB_FONT_FAMILY">Noto Sans CJK KR,NanumGothic,UnDotum,Baekmuk Gulim,sans-serif</translation>
  </if>
- <if expr="chromeos_ash or chromeos_lacros">
+ <if expr="is_chromeos">

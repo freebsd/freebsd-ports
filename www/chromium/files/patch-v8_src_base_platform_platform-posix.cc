@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2022-08-31 12:19:35 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2022-09-24 10:57:32 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -68,7 +68,7 @@
  #include <sys/syscall.h>
@@ -25,7 +25,7 @@
    uintptr_t raw_addr;
    {
      MutexGuard guard(rng_mutex.Pointer());
-@@ -386,6 +393,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -390,6 +397,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -33,7 +33,7 @@
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -635,7 +643,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -647,7 +655,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  
  // static
  bool OS::HasLazyCommits() {
@@ -42,7 +42,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1210,7 +1218,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1224,7 +1232,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \

@@ -1,4 +1,4 @@
---- third_party/ipcz/src/reference_drivers/random.cc.orig	2022-06-17 14:20:10 UTC
+--- third_party/ipcz/src/reference_drivers/random.cc.orig	2022-09-24 10:57:32 UTC
 +++ third_party/ipcz/src/reference_drivers/random.cc
 @@ -15,7 +15,7 @@
  #include <limits>
@@ -9,7 +9,7 @@
  #include <asm/unistd.h>
  #include <errno.h>
  #include <sys/syscall.h>
-@@ -77,7 +77,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
+@@ -78,7 +78,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
    ABSL_ASSERT(ok);
  #elif BUILDFLAG(IS_FUCHSIA)
    zx_cprng_draw(destination.data(), destination.size());

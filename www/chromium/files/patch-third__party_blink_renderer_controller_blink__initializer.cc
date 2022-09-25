@@ -1,4 +1,4 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2022-08-31 12:19:35 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2022-09-24 10:57:32 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
 @@ -74,12 +74,12 @@
  #include "third_party/blink/renderer/controller/oom_intervention_impl.h"
@@ -24,8 +24,8 @@
    // Initialize UserLevelMemoryPressureSignalGenerator so it starts monitoring.
    if (UserLevelMemoryPressureSignalGenerator::Enabled())
      UserLevelMemoryPressureSignalGenerator::Instance();
-@@ -251,7 +251,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
-       main_thread->GetTaskRunner());
+@@ -253,7 +253,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+       main_thread_task_runner);
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

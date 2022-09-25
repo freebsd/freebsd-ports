@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2022-09-24 10:57:32 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc
 @@ -13,7 +13,7 @@
  
@@ -7,14 +7,14 @@
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/linux_key_rotation_command.h"
- #endif  // BUILDFLAG(IS_WIN)
- 
-@@ -43,7 +43,7 @@ std::unique_ptr<KeyRotationCommand> KeyRotationCommand
+ #elif BUILDFLAG(IS_MAC)
+ #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/mac_key_rotation_command.h"
+@@ -45,7 +45,7 @@ std::unique_ptr<KeyRotationCommand> KeyRotationCommand
      scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory) {
  #if BUILDFLAG(IS_WIN)
    return std::make_unique<WinKeyRotationCommand>();
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return std::make_unique<LinuxKeyRotationCommand>(
-       std::move(url_loader_factory));
- #else
+   return std::make_unique<LinuxKeyRotationCommand>(url_loader_factory);
+ #elif BUILDFLAG(IS_MAC)
+   return std::make_unique<MacKeyRotationCommand>(url_loader_factory);
