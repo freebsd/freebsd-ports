@@ -5,7 +5,7 @@ CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Set of LV2 plugins
+COMMENT=	Calf Studio Gear: audio plug-in pack for LV2 and JACK
 WWW=		https://calf-studio-gear.org/
 
 LICENSE=	GPLv2 LGPL21
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \
 		libexpat.so:textproc/expat2
 
-USES=		autoreconf gmake gnome libtool localbase pkgconfig
+USES=		autoreconf desktop-file-utils gmake gnome libtool localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
