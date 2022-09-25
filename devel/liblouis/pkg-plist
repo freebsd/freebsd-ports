@@ -3,7 +3,6 @@
 %%DATADIR%%/tables/IPA.utb
 %%DATADIR%%/tables/Lv-Lv-g1.utb
 %%DATADIR%%/tables/Pl-Pl-g1.utb
-%%DATADIR%%/tables/Se-Se-g1.utb
 %%DATADIR%%/tables/afr-za-g1.ctb
 %%DATADIR%%/tables/afr-za-g2.ctb
 %%DATADIR%%/tables/ar-ar-comp8.utb
@@ -236,6 +235,7 @@
 %%DATADIR%%/tables/latinLetterDef8Dots.uti
 %%DATADIR%%/tables/latinLowercase.uti
 %%DATADIR%%/tables/latinUppercaseComp6.uti
+%%DATADIR%%/tables/lg-ug-g1.utb
 %%DATADIR%%/tables/litdigits6DotsPlusDot6.uti
 %%DATADIR%%/tables/litdigits6Dots.uti
 %%DATADIR%%/tables/loweredDigits6Dots.uti
@@ -315,6 +315,7 @@
 %%DATADIR%%/tables/ru-litbrl-detailed.utb
 %%DATADIR%%/tables/ru-ru-g1.ctb
 %%DATADIR%%/tables/ru-unicode.dis
+%%DATADIR%%/tables/rw-rw-g1.utb
 %%DATADIR%%/tables/sa-in-g1.utb
 %%DATADIR%%/tables/sa.tbl
 %%DATADIR%%/tables/sah.utb
@@ -338,7 +339,9 @@
 %%DATADIR%%/tables/sr.tbl
 %%DATADIR%%/tables/sv-1989.ctb
 %%DATADIR%%/tables/sv-1996.ctb
-%%DATADIR%%/tables/sv.tbl
+%%DATADIR%%/tables/sv-g0.utb
+%%DATADIR%%/tables/sv-g1.ctb
+%%DATADIR%%/tables/sv-g2.ctb
 %%DATADIR%%/tables/ta.ctb
 %%DATADIR%%/tables/tamil.cti
 %%DATADIR%%/tables/ta-ta-g1.ctb
@@ -388,6 +391,7 @@
 %%DATADIR%%/tables/zh-chn.ctb
 %%DATADIR%%/tables/zh-hk.ctb
 %%DATADIR%%/tables/zh-tw.ctb
+%%DATADIR%%/tables/zhcn-cbs.ctb
 %%DATADIR%%/tables/zhcn-g1.ctb
 %%DATADIR%%/tables/zhcn-g2.ctb
 %%DATADIR%%/tables/zu-za-g1.utb
@@ -416,7 +420,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.10
+lib/liblouis.so.20.0.11
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
