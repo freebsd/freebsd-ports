@@ -10,7 +10,6 @@ WWW=		https://www.openjpeg.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake>=3:devel/cmake
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
