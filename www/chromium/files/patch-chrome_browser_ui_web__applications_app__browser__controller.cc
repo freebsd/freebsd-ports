@@ -1,6 +1,6 @@
---- chrome/browser/ui/web_applications/app_browser_controller.cc.orig	2022-08-31 12:19:35 UTC
+--- chrome/browser/ui/web_applications/app_browser_controller.cc.orig	2022-09-24 10:57:32 UTC
 +++ chrome/browser/ui/web_applications/app_browser_controller.cc
-@@ -408,7 +408,7 @@ CustomThemeSupplier* AppBrowserController::GetThemeSup
+@@ -428,7 +428,7 @@ CustomThemeSupplier* AppBrowserController::GetThemeSup
  }
  
  bool AppBrowserController::ShouldUseSystemTheme() const {

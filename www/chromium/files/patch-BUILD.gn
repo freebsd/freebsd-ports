@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2022-08-31 12:19:35 UTC
+--- BUILD.gn.orig	2022-09-24 10:57:32 UTC
 +++ BUILD.gn
 @@ -53,7 +53,7 @@ declare_args() {
    root_extra_deps = []
@@ -9,7 +9,7 @@
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -85,7 +85,6 @@ group("gn_all") {
+@@ -83,7 +83,6 @@ group("gn_all") {
      "//codelabs",
      "//components:components_unittests",
      "//components/gwp_asan:gwp_asan_unittests",
@@ -17,7 +17,7 @@
      "//net:net_unittests",
      "//sandbox:sandbox_unittests",
      "//services:services_unittests",
-@@ -435,7 +434,7 @@ group("gn_all") {
+@@ -441,7 +440,7 @@ group("gn_all") {
      ]
    }
  
@@ -26,7 +26,7 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -624,6 +623,15 @@ group("gn_all") {
+@@ -642,6 +641,15 @@ group("gn_all") {
      deps += [ "//gpu/tools/compositor_model_bench" ]
    }
  
@@ -42,7 +42,7 @@
    if (is_mac) {
      deps += [
        "//third_party/breakpad:crash_inspector",
-@@ -672,7 +680,7 @@ group("gn_all") {
+@@ -690,7 +698,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -51,7 +51,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1187,7 +1195,7 @@ if (!is_ios) {
+@@ -1202,7 +1210,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -60,7 +60,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1196,7 +1204,7 @@ if (!is_ios) {
+@@ -1211,7 +1219,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1645,7 +1653,7 @@ group("chromium_builder_perf") {
+@@ -1654,7 +1662,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

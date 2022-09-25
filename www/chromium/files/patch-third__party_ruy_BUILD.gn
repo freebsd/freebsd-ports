@@ -1,8 +1,8 @@
---- third_party/ruy/BUILD.gn.orig	2022-08-31 12:19:35 UTC
+--- third_party/ruy/BUILD.gn.orig	2022-09-24 10:57:32 UTC
 +++ third_party/ruy/BUILD.gn
-@@ -11,7 +11,7 @@ use_cpuinfo =
-     # cpuinfo is not supported on Windows on ARM yet.
-     !(is_win && current_cpu == "arm64") &&
+@@ -9,7 +9,7 @@ use_cpuinfo =
+     current_cpu != "ppc64" && current_cpu != "ppc64le" &&
+     current_cpu != "s390" && current_cpu != "s390x" &&
      # cpuinfo is not supported on fuchsia.
 -    !is_fuchsia &&
 +    !is_fuchsia && !is_bsd &&

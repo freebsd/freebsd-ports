@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-08-31 12:19:35 UTC
+--- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-09-24 10:57:32 UTC
 +++ base/allocator/partition_allocator/partition_alloc_constants.h
 @@ -91,7 +91,7 @@ PartitionPageShift() {
    return 18;  // 256 KiB
@@ -9,12 +9,12 @@
  PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR PA_ALWAYS_INLINE size_t
  PartitionPageShift() {
    return PageAllocationGranularityShift() + 2;
-@@ -247,7 +247,7 @@ constexpr size_t kSuperPageBaseMask = ~kSuperPageOffse
- #if defined(PA_HAS_64_BITS_POINTERS)
- // The Configurable Pool is only available in 64-bit mode
- constexpr size_t kNumPools = 3;
--#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Special-case macOS. Contrary to other platforms, there is no sandbox limit
- // there, meaning that a single renderer could "happily" consume >8GiB. So the
- // 8GiB pool size is a regression. Make the limit higher on this platform only
+@@ -270,7 +270,7 @@ constexpr size_t kNumPools = 3;
+ // Special-case Android and iOS, which incur test failures with larger
+ // GigaCage. Regardless, allocating >8GiB with malloc() on these platforms is
+ // unrealistic as of 2022.
+-#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
++#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+ constexpr size_t kPoolMaxSize = 8 * kGiB;
+ #else
+ constexpr size_t kPoolMaxSize = 16 * kGiB;

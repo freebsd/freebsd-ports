@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2022-08-31 12:19:35 UTC
+--- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2022-09-24 10:57:32 UTC
 +++ third_party/blink/renderer/platform/scheduler/common/thread.cc
-@@ -97,7 +97,7 @@ void Thread::CreateAndSetCompositorThread() {
+@@ -86,7 +86,7 @@ void Thread::CreateAndSetCompositorThread() {
        std::make_unique<scheduler::CompositorThread>(params);
    compositor_thread->Init();
  

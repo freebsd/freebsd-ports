@@ -1,6 +1,6 @@
---- chrome/browser/ui/window_sizer/window_sizer.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/ui/window_sizer/window_sizer.cc.orig	2022-09-24 10:57:32 UTC
 +++ chrome/browser/ui/window_sizer/window_sizer.cc
-@@ -172,7 +172,7 @@ void WindowSizer::GetBrowserWindowBoundsAndShowState(
+@@ -173,7 +173,7 @@ void WindowSizer::GetBrowserWindowBoundsAndShowState(
        browser, window_bounds, show_state);
  }
  

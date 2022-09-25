@@ -1,4 +1,4 @@
---- content/renderer/render_thread_impl.cc.orig	2022-08-31 12:19:35 UTC
+--- content/renderer/render_thread_impl.cc.orig	2022-09-24 10:57:32 UTC
 +++ content/renderer/render_thread_impl.cc
 @@ -190,7 +190,7 @@
  
@@ -9,7 +9,7 @@
  #include <malloc.h>
  #endif
  
-@@ -670,7 +670,7 @@ void RenderThreadImpl::Init() {
+@@ -671,7 +671,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -18,7 +18,7 @@
    render_message_filter()->SetThreadType(
        ChildProcess::current()->io_thread_id(), base::ThreadType::kCompositing);
  #endif
-@@ -1040,7 +1040,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1041,7 +1041,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
    const bool enable_video_decode_accelerator =
  
@@ -27,7 +27,7 @@
        base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux) &&
  #else
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode) &&
-@@ -1051,7 +1051,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1052,7 +1052,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
    const bool enable_video_encode_accelerator =
  

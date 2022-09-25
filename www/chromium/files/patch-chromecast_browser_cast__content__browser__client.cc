@@ -1,6 +1,6 @@
---- chromecast/browser/cast_content_browser_client.cc.orig	2022-08-31 12:19:35 UTC
+--- chromecast/browser/cast_content_browser_client.cc.orig	2022-09-24 10:57:32 UTC
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -470,7 +470,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -434,7 +434,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {

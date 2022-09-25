@@ -1,8 +1,8 @@
---- components/sync_device_info/local_device_info_util_linux.cc.orig	2022-04-21 18:48:31 UTC
+--- components/sync_device_info/local_device_info_util_linux.cc.orig	2022-09-24 10:57:32 UTC
 +++ components/sync_device_info/local_device_info_util_linux.cc
-@@ -14,6 +14,11 @@
- #include "chromeos/constants/devicetype.h"  // nogncheck
- #endif
+@@ -9,6 +9,11 @@
+ 
+ #include "base/linux_util.h"
  
 +#if defined(__FreeBSD__)
 +#include <sys/param.h>
@@ -11,4 +11,4 @@
 +
  namespace syncer {
  
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ std::string GetPersonalizableDeviceNameInternal() {

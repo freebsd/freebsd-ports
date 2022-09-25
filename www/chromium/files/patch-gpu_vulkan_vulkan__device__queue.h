@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_device_queue.h.orig	2022-02-28 16:54:41 UTC
+--- gpu/vulkan/vulkan_device_queue.h.orig	2022-09-24 10:57:32 UTC
 +++ gpu/vulkan/vulkan_device_queue.h
-@@ -155,7 +155,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
+@@ -158,7 +158,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
  
    bool allow_protected_memory_ = false;
  

@@ -1,4 +1,4 @@
---- chrome/browser/ui/chrome_pages.h.orig	2022-08-31 12:19:35 UTC
+--- chrome/browser/ui/chrome_pages.h.orig	2022-09-24 10:57:32 UTC
 +++ chrome/browser/ui/chrome_pages.h
 @@ -30,7 +30,7 @@ enum class ConsentLevel;
  }  // namespace signin
@@ -9,7 +9,7 @@
  namespace web_app {
  enum class AppSettingsPageEntryPoint;
  }  // namespace web_app
-@@ -210,7 +210,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
+@@ -213,7 +213,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

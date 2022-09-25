@@ -1,6 +1,6 @@
---- chrome/test/BUILD.gn.orig	2022-08-31 12:19:35 UTC
+--- chrome/test/BUILD.gn.orig	2022-09-24 10:57:32 UTC
 +++ chrome/test/BUILD.gn
-@@ -9731,7 +9731,7 @@ test("chrome_app_unittests") {
+@@ -9861,7 +9861,7 @@ test("chrome_app_unittests") {
      "//components/heap_profiling/in_process",
      "//components/safe_browsing:buildflags",
    ]

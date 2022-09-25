@@ -1,6 +1,6 @@
---- third_party/dawn/src/dawn/common/Platform.h.orig	2022-07-22 17:30:31 UTC
+--- third_party/dawn/src/dawn/common/Platform.h.orig	2022-09-24 10:57:32 UTC
 +++ third_party/dawn/src/dawn/common/Platform.h
-@@ -26,6 +26,11 @@
+@@ -45,6 +45,11 @@
  #error "Unsupported Windows platform."
  #endif
  

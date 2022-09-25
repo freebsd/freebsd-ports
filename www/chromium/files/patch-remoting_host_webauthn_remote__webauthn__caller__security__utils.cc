@@ -1,4 +1,4 @@
---- remoting/host/webauthn/remote_webauthn_caller_security_utils.cc.orig	2022-06-17 14:20:10 UTC
+--- remoting/host/webauthn/remote_webauthn_caller_security_utils.cc.orig	2022-09-24 10:57:32 UTC
 +++ remoting/host/webauthn/remote_webauthn_caller_security_utils.cc
 @@ -9,7 +9,7 @@
  #include "base/strings/utf_string_conversions.h"
@@ -26,4 +26,4 @@
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    base::ProcessId parent_pid =
        base::GetParentProcessId(base::GetCurrentProcessHandle());
-   base::FilePath parent_image_path = GetProcessImagePath(parent_pid);
+   // Note that on Linux the process image may no longer exist in its original

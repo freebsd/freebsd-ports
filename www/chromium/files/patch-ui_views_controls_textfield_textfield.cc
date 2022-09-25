@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2022-08-31 12:19:35 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2022-09-24 10:57:32 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -70,7 +70,7 @@
  #include "base/win/win_util.h"
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -1718,7 +1718,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -1720,7 +1720,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2217,14 +2217,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2219,14 +2219,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

@@ -1,4 +1,4 @@
---- third_party/angle/src/third_party/volk/BUILD.gn.orig	2022-09-01 05:13:41 UTC
+--- third_party/angle/src/third_party/volk/BUILD.gn.orig	2022-09-25 07:07:39 UTC
 +++ third_party/angle/src/third_party/volk/BUILD.gn
 @@ -20,7 +20,7 @@ source_set("volk") {
    public_configs = [ ":volk_config" ]
