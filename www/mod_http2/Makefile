@@ -1,5 +1,5 @@
 PORTNAME=	mod_http2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		apache:2.4+ autoreconf libtool ssl
+USES=		apache:2.4+ autoreconf libtool ssl pkgconfig:build
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	icing
