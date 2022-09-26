@@ -9,8 +9,8 @@ WWW=		https://github.com/HACKERALERT/Picocrypt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	upstream only supports 64-bit
+ONLY_FOR_ARCHS=	amd64 arm64 mips64 powerpc64 powerpc64le riscv64 sparc64
+ONLY_FOR_ARCHS_REASON=	upstream only supports 64-bit
 # https://github.com/HACKERALERT/Picocrypt/issues/127
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
