@@ -69,7 +69,7 @@ index eb174a4..8267136 100644
  	    if (FcPatternObjectGetString (font, FC_FILE_OBJECT,
  					  0, &font_file) == FcResultMatch)
 diff --git src/fccharset.c src/fccharset.c
-index 832649c..2f12d5b 100644
+index cd927d9..f0b87a7 100644
 --- src/fccharset.c
 +++ src/fccharset.c
 @@ -37,8 +37,8 @@ FcCharSetCreate (void)
@@ -179,7 +179,22 @@ index 832649c..2f12d5b 100644
  	return FcTrue;
      }
      pos = -pos - 1;
-@@ -1177,24 +1178,20 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
+@@ -555,8 +556,14 @@ FcCharSetMerge (FcCharSet *a, const FcCharSet *b, FcBool *changed)
+ 	    }
+ 	    else
+ 	    {
++/*
++ * TODO: add cheri support.
++ * foot(1) terminal crashes here.
++ */
++#if 0
+ 		FcCharLeaf *al = FcCharSetLeaf(a, ai);
+ 		FcCharSetUnionLeaf (al, al, bl);
++#endif
+ 	    }
+ 
+ 	    ai++;
+@@ -1177,24 +1184,20 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
      ent->set.num = fcs->num;
      if (fcs->num)
      {
@@ -210,7 +225,7 @@ index 832649c..2f12d5b 100644
      }
  
      ent->hash = hash;
-@@ -1303,7 +1300,7 @@ FcCharSetFreezerDestroy (FcCharSetFreezer *freezer)
+@@ -1303,7 +1306,7 @@ FcCharSetFreezerDestroy (FcCharSetFreezer *freezer)
  FcBool
  FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
  {
@@ -219,7 +234,7 @@ index 832649c..2f12d5b 100644
      FcChar16	    *numbers;
      int		    i;
  
-@@ -1326,9 +1323,9 @@ FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
+@@ -1326,9 +1329,9 @@ FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
  
      if (!FcSerializeAlloc (serialize, cs, sizeof (FcCharSet)))
  	return FcFalse;
@@ -231,7 +246,7 @@ index 832649c..2f12d5b 100644
  	return FcFalse;
      for (i = 0; i < cs->num; i++)
  	if (!FcSerializeAlloc (serialize, FcCharSetLeaf(cs, i),
-@@ -1341,7 +1338,7 @@ FcCharSet *
+@@ -1341,7 +1344,7 @@ FcCharSet *
  FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  {
      FcCharSet	*cs_serialized;
@@ -240,7 +255,7 @@ index 832649c..2f12d5b 100644
      FcChar16	*numbers, *numbers_serialized;
      FcCharLeaf	*leaf, *leaf_serialized;
      int		i;
-@@ -1367,16 +1364,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
+@@ -1367,16 +1370,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  	if (!leaves_serialized)
  	    return NULL;
  
@@ -259,7 +274,7 @@ index 832649c..2f12d5b 100644
  
  	for (i = 0; i < cs->num; i++)
  	{
-@@ -1385,15 +1380,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
+@@ -1385,15 +1386,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  	    if (!leaf_serialized)
  		return NULL;
  	    *leaf_serialized = *leaf;
@@ -301,7 +316,7 @@ index e2c6b56..655ac73 100644
  	printf ("\t");
  	printf ("%04x:", numbers[i]);
 diff --git src/fcint.h src/fcint.h
-index c615b66..7d916af 100644
+index c615b66..d46dafe 100644
 --- src/fcint.h
 +++ src/fcint.h
 @@ -225,11 +225,13 @@ typedef struct _FcPatternElt {
@@ -352,6 +367,15 @@ index c615b66..7d916af 100644
  
  #define FCSS_DEFAULT            0 /* default behavior */
  #define FCSS_ALLOW_DUPLICATES   1 /* allows for duplicate strings in the set */
+@@ -448,7 +458,7 @@ typedef union _FcAlign {
+ 
+ typedef struct _FcSerializeBucket {
+     const void	*object; /* key */
+-    uintptr_t	hash;    /* hash of key */
++    ptraddr_t	hash;    /* hash of key */
+     intptr_t	offset;  /* value */
+ } FcSerializeBucket;
+ 
 diff --git src/fcpat.c src/fcpat.c
 index 82c6bed..e1cd507 100644
 --- src/fcpat.c
@@ -395,3 +419,37 @@ index 82c6bed..e1cd507 100644
  
      for (i = 0; i < FcPatternObjectCount (pat); i++)
      {
+diff --git src/fcserialize.c src/fcserialize.c
+index 2388dcd..47c7f34 100644
+--- src/fcserialize.c
++++ src/fcserialize.c
+@@ -93,17 +93,17 @@ FcSerializeHashPtr (const void *object)
+ }
+ 
+ 
+-#elif ((SIZEOF_VOID_P) * (CHAR_BIT)) == 64
++#else
+ 
+ /*
+  * Based on splittable64/splitmix64 from Mix13
+  * https://zimbry.blogspot.com/2011/09/better-bit-mixing-improving-on.html
+  * https://prng.di.unimi.it/splitmix64.c
+  */
+-static uintptr_t
++static ptraddr_t
+ FcSerializeHashPtr (const void *object)
+ {
+-    uintptr_t x = (uintptr_t)object;
++    ptraddr_t x = (ptraddr_t)object;
+     x ^= x >> 30;
+     x *= 0xbf58476d1ce4e5b9U;
+     x ^= x >> 27;
+@@ -117,7 +117,7 @@ FcSerializeHashPtr (const void *object)
+ static FcSerializeBucket*
+ FcSerializeFind (const FcSerialize *serialize, const void *object)
+ {
+-    uintptr_t hash = FcSerializeHashPtr (object);
++    ptraddr_t hash = FcSerializeHashPtr (object);
+     size_t buckets_count = serialize->buckets_count;
+     size_t index = hash & (buckets_count-1);
+     for (size_t n = 0; n < buckets_count; ++n) {
