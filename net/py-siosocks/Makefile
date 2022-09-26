@@ -1,5 +1,5 @@
 PORTNAME=	siosocks
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-trio>=0:devel/py-pytest-trio@${PY_FLAVOR}
 
-USES=		python:3.6+ pytest
+USES=		python:3.8+ pytest
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
