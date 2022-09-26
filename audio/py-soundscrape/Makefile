@@ -1,6 +1,5 @@
 PORTNAME=	soundscrape
-PORTVERSION=	0.30.2
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.31.0:audio/py-mutagen@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}clint>=0.3.2:devel/py-clint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}demjson>=2.2.2:devel/py-demjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fudge>=1.0.3:devel/py-fudge@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nose>=1.3.7:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.3.1:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.24.0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.9.0:www/py-requests@${PY_FLAVOR}
@@ -28,7 +26,7 @@ USE_PYTHON=	autoplist concurrent distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	Miserlou
 GH_PROJECT=	SoundScrape
-GH_TAGNAME=	efc63b9
+GH_TAGNAME=	800c1bfcad378d2de061e3b7964d59fe8b811862
 
 NO_ARCH=	yes
 
