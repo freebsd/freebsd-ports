@@ -1,26 +1,41 @@
 PORTNAME=	copyq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.3.0
+DISTVERSION=	6.3.2
 CATEGORIES=	deskutils
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	eduardo@FreeBSD.org
-COMMENT=	Qt5 based clipboard manager
+COMMENT=	Qt${FLAVOR:S/qt//} based clipboard manager
 WWW=		https://github.com/hluk/CopyQ
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++17-lang desktop-file-utils kde:5 qt:5 xorg
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt5
+
+qt5_CONFLICTS_INSTALL=	copyq-qt6
+qt6_CONFLICTS_INSTALL=	copyq-qt5
+
+USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:5 \
+		qt:${FLAVOR:S/qt//} xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	hluk
 GH_PROJECT=	CopyQ
-USE_KDE=	notifications
-
-USE_QT=		core dbus declarative gui network svg wayland widgets x11extras \
+USE_GL=		gl
+USE_KDE=	notifications # needed WITH_QT6, Extra CMake Modules (ECM)
+_USE_QT5=	core dbus declarative gui network svg wayland widgets x11extras \
 		xml buildtools:build qmake:build
+_USE_QT6=	base declarative svg wayland translations:build
+USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 USE_XORG=	ice sm x11 xext xfixes xtst
+
+_QT6_CMAKE_ARGS=	-DQtWaylandScanner_EXECUTABLE=${PREFIX}/libexec/qt6/qtwaylandscanner \
+			-DWITH_QT6:BOOL=TRUE
+CMAKE_ARGS=		${_QT${FLAVOR:S/qt//}_CMAKE_ARGS}
 
 PORTSCOUT=	limit:^d\.d\.
 
