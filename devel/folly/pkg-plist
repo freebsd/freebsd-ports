@@ -384,9 +384,13 @@ include/folly/experimental/exception_tracer/StackTrace.h
 include/folly/experimental/flat_combining/FlatCombining.h
 include/folly/experimental/io/AsyncBase.h
 include/folly/experimental/io/AsyncIO.h
+include/folly/experimental/io/AsyncIoUringSocket.h
+include/folly/experimental/io/AsyncIoUringSocketFactory.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
+include/folly/experimental/io/IoUringEvent.h
+include/folly/experimental/io/IoUringEventBaseLocal.h
 include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/SimpleAsyncIO.h
 include/folly/experimental/observer/Observable-inl.h
