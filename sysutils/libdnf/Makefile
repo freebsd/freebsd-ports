@@ -1,5 +1,5 @@
 PORTNAME=	libdnf
-DISTVERSION=	0.68.0
+DISTVERSION=	0.69.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libunistring.so:devel/libunistring \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
+TEST_DEPENDS=	cppunit>0:devel/cppunit
 
 USES=		cmake:testing compiler:c++11-lang gettext gnome lua pkgconfig sqlite ssl
 USE_GNOME=	glib20 libxml2
@@ -41,6 +42,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rpm-software-management
 
 CMAKE_OFF=	BUILD_TESTNG WITH_GTKDOC WITH_HTML WITH_TESTS FREEBSD_INSTALL_DOCS
+CMAKE_TESTING_ON=	BUILD_TESTNG WITH_TESTS # tests throw exceptions, see https://github.com/rpm-software-management/libdnf/issues/1581
 
 BINARY_ALIAS=	git=false
 
