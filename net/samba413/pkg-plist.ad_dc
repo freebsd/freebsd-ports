@@ -5,7 +5,6 @@ sbin/samba_dnsupdate
 sbin/samba_kcc
 sbin/samba_spnupdate
 sbin/samba_upgradedns
-sbin/samba-gpupdate
 include/samba4/dcerpc_server.h
 lib/samba4/libdcerpc-server.so
 lib/samba4/libdcerpc-server.so.0
@@ -172,4 +171,3 @@ lib/samba4/private/libscavenge-dns-records-samba4.so
 @dir %%DATADIR%%/setup/ad-schema
 @dir %%DATADIR%%/setup
 @dir %%DATADIR%%
-man/man8/samba-gpupdate.8.gz
