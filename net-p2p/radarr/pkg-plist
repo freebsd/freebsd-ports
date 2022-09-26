@@ -3,6 +3,7 @@
 %%DATADIR%%/bin/DryIoc.Microsoft.DependencyInjection.dll
 %%DATADIR%%/bin/DryIoc.dll
 %%DATADIR%%/bin/Dynamitey.dll
+%%DATADIR%%/bin/Equ.dll
 %%DATADIR%%/bin/FFMpegCore.dll
 %%DATADIR%%/bin/FluentMigrator.Abstractions.dll
 %%DATADIR%%/bin/FluentMigrator.Extensions.Oracle.dll
@@ -49,7 +50,8 @@
 %%DATADIR%%/bin/Localization/Core/it.json
 %%DATADIR%%/bin/Localization/Core/ja.json
 %%DATADIR%%/bin/Localization/Core/ko.json
-%%DATADIR%%/bin/Localization/Core/nan.json
+%%DATADIR%%/bin/Localization/Core/lt.json
+%%DATADIR%%/bin/Localization/Core/lv.json
 %%DATADIR%%/bin/Localization/Core/nb_NO.json
 %%DATADIR%%/bin/Localization/Core/nl.json
 %%DATADIR%%/bin/Localization/Core/pl.json
@@ -64,7 +66,6 @@
 %%DATADIR%%/bin/Localization/Core/uk.json
 %%DATADIR%%/bin/Localization/Core/vi.json
 %%DATADIR%%/bin/Localization/Core/zh_CN.json
-%%DATADIR%%/bin/Localization/Core/zh_Hans.json
 %%DATADIR%%/bin/Localization/Core/zh_TW.json
 %%DATADIR%%/bin/MailKit.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.Antiforgery.dll
@@ -217,6 +218,8 @@
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Newtonsoft.Json.dll
 %%DATADIR%%/bin/NodaTime.dll
+%%DATADIR%%/bin/Npgsql.dll
+%%DATADIR%%/bin/Polly.Contrib.WaitAndRetry.dll
 %%DATADIR%%/bin/Radarr
 %%DATADIR%%/bin/Radarr.Api.V3.deps.json
 %%DATADIR%%/bin/Radarr.Api.V3.dll
