@@ -1,5 +1,6 @@
 Try unsynchronized userptr if regular one fails.
 https://github.com/FreeBSDDesktop/kms-drm/issues/197
+https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13162
 
 --- src/gallium/drivers/crocus/crocus_bufmgr.c.orig	2021-06-30 22:34:42 UTC
 +++ src/gallium/drivers/crocus/crocus_bufmgr.c
