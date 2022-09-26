@@ -282,12 +282,10 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tallinn.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tirane.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Ulyanovsk.pm
-%%SITE_PERL%%/DateTime/TimeZone/Europe/Uzhgorod.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vienna.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vilnius.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Volgograd.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Warsaw.pm
-%%SITE_PERL%%/DateTime/TimeZone/Europe/Zaporozhye.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zurich.pm
 %%SITE_PERL%%/DateTime/TimeZone/Floating.pm
 %%SITE_PERL%%/DateTime/TimeZone/HST.pm
