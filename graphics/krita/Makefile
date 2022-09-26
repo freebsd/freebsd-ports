@@ -15,7 +15,6 @@ BUILD_DEPENDS=	libheif>=1.12.0:graphics/libheif
 BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_aarch64=	xsimd>=8.1:devel/xsimd
 BUILD_DEPENDS_amd64=	xsimd>=8.1:devel/xsimd
-BUILD_DEPENDS_i386=	xsimd>=8.1:devel/xsimd
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenColorIO.so:graphics/opencolorio \
 		libX11.so:x11/libX11 \
