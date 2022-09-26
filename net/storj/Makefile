@@ -1,5 +1,5 @@
 PORTNAME=	storj
-PORTVERSION=	1.63.1
+PORTVERSION=	1.64.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -14,11 +14,8 @@ USE_GITHUB=	yes
 
 .include "${.CURDIR}/Makefile.deps"
 
-STORJ_CMDS=	certificates connect-test crashcollect identity inspector \
-		metabase-orphaned-segments metabase-verify metric-receiver \
-		migrate-public-ids \
-		multinode node-cleanup nullify-bad-user-agents satellite \
-		storagenode storagenode-updater \
+STORJ_CMDS=	certificates crashcollect identity inspector metric-receiver \
+		multinode satellite storagenode storagenode-updater \
 		storj-admin storj-sim uplink versioncontrol
 
 GO_TARGET=	${STORJ_CMDS:S,^,./cmd/,}

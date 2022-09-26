@@ -101,7 +101,7 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:1b57fc2bbda1:storj_common/vendor/storj.io/common \
+		storj:common:654fd98b53c6:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.32:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:c3a9898b5bca:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:c354e3e64dd3:storj_private/vendor/storj.io/private \
