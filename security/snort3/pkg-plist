@@ -49,6 +49,7 @@ include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
 include/snort/flow/ha.h
 include/snort/flow/stash_item.h
+include/snort/flow/session.h
 include/snort/framework/api_options.h
 include/snort/framework/base_api.h
 include/snort/framework/bits.h
@@ -141,6 +142,12 @@ include/snort/service_inspectors/http_inspect/http_common.h
 include/snort/service_inspectors/http_inspect/http_field.h
 include/snort/service_inspectors/http_inspect/http_inspect_base.h
 include/snort/service_inspectors/http_inspect/http_stream_splitter_base.h
+include/snort/service_inspectors/http2_inspect/http2_huffman_state_machine.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode_impl.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode_impl.h
+include/snort/service_inspectors/http_inspect/http_test_manager.h
 include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
@@ -225,6 +232,10 @@ include/snort/sfip/sf_returns.h
 include/snort/stream/paf.h
 include/snort/stream/stream.h
 include/snort/stream/stream_splitter.h
+include/snort/stream/udp/stream_udp.h
+include/snort/stream/udp/udp_ha.h
+include/snort/stream/udp/udp_module.h
+include/snort/stream/udp/udp_session.h
 include/snort/target_based/snort_protocols.h
 include/snort/time/clock_defs.h
 include/snort/time/packet_time.h
