@@ -1,0 +1,23 @@
+--- js/src/gc/Memory.cpp.orig	2022-09-22 19:17:31.000000000 +0100
++++ js/src/gc/Memory.cpp	2022-10-12 16:37:12.967127000 +0100
+@@ -442,6 +442,12 @@
+   return region;
+ #else
+ 
++/*
++ * TODO: firefox on aarch64 has issues with this
++ * (random crashes on start up or during operation)
++ */
++
++#if 0
+ #  ifdef JS_64BIT
+   // Use the scattershot allocator if the address range is large enough.
+   if (UsingScattershotAllocator()) {
+@@ -453,6 +459,7 @@
+     return region;
+   }
+ #  endif
++#endif
+ 
+   // Try to allocate the region. If the returned address is aligned,
+   // either we OOMed (region is nullptr) or we're done.
