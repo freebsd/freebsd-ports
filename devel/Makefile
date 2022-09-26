@@ -7178,6 +7178,7 @@
     SUBDIR += shmap
     SUBDIR += shtk
     SUBDIR += shtool
+    SUBDIR += shunit2
     SUBDIR += sigar
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
