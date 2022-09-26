@@ -1120,6 +1120,7 @@
     SUBDIR += libcbor
     SUBDIR += libccid
     SUBDIR += libcdb
+    SUBDIR += libcds
     SUBDIR += libcfu
     SUBDIR += libchipcard
     SUBDIR += libcidr

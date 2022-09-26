@@ -1,0 +1,22 @@
+The Concurrent Data Structures (CDS) library is a collection of concurrent
+containers that don't require external (manual) synchronization for shared
+access, and safe memory reclamation (SMR) algorithms like Hazard Pointer and
+user-space RCU that is used as an epoch-based SMR.
+
+CDS is mostly header-only template library. Only SMR core implementation is
+segregated to .so file.
+
+The library contains the implementations of the following containers:
+* lock-free stack with optional elimination support
+* several algo for lock-free queue, including classic Michael & Scott
+  algorithm and its derivatives, the flat combining queue, the segmented queue.
+* several implementation of unordered set/map - lock-free and fine-grained
+  lock-based
+* flat-combining technique
+* lock-free skip-list
+* lock-free FeldmanHashMap/Set Multi-Level Array Hash with thread-safe
+  bidirectional iterator support
+* Bronson's et al algorithm for fine-grained lock-based AVL tree
+
+Generally, each container has an intrusive and non-intrusive (STL-like) version
+belonging to cds::intrusive and cds::container namespace respectively.
