@@ -15,7 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libev.so:devel/libev \
 		libpangocairo-1.0.so:x11-toolkits/pango \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libstartup-notification-1.so:x11/startup-notification \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-icccm.so:x11/xcb-util-wm \
