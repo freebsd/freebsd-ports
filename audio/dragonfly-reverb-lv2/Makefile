@@ -1,5 +1,5 @@
 PORTNAME=	dragonfly-reverb
-DISTVERSION=	3.2.6
+DISTVERSION=	3.2.7
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +20,8 @@ USE_XORG=	x11 xext xrandr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	michaelwillis
-GH_TUPLE=	DISTRHO:DPF:39cd498:DISTRHO_DPF/dpf \
-		DISTRHO:pugl:b1d9703:pugl/dpf/dgl/src/pugl-upstream
+GH_TUPLE=	DISTRHO:DPF:93ce247:DISTRHO_DPF/dpf \
+		DISTRHO:pugl:48032d1:pugl/dpf/dgl/src/pugl-upstream
 
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 
