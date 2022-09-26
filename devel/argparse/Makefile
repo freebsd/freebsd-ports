@@ -1,6 +1,7 @@
 PORTNAME=	argparse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -22,6 +23,11 @@ PLIST_FILES=	include/argparse/argparse.hpp \
 		libdata/pkgconfig/argparse.pc
 
 OPTIONS_DEFINE=		TEST
-TEST_CMAKE_BOOL=	ARGPARSE_BUILD_SAMPLES ARGPARSE_BUILD_TESTS
+TEST_CMAKE_BOOL=	ARGPARSE_BUILD_TESTS
+
+test:
+		@if [ -x ${WRKDIR}/.build/test/tests ]; then \
+			${WRKDIR}/.build/test/tests; \
+		fi
 
 .include <bsd.port.mk>
