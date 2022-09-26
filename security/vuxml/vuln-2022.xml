@@ -1,3 +1,38 @@
+  <vuln vid="f9ada0b5-3d80-11ed-9330-080027f5fec9">
+    <topic>squid -- Exposure of sensitive information in cache manager</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mikhail Evdokimov (aka konata) reports:</p>
+	<blockquote cite="https://github.com/squid-cache/squid/security/advisories/GHSA-rcg9-7fqm-83mq">
+	  <p>
+	    Due to inconsistent handling of internal URIs Squid is
+	    vulnerable to Exposure of Sensitive Information about
+	    clients using the proxy. This problem allows a trusted
+	    client to directly access cache manager information
+	    bypassing the manager ACL protection. The available cache
+	    manager information contains records of internal network
+	    structure, client credentials, client identity and client
+	    traffic behaviour.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41317</cvename>
+      <url>https://github.com/squid-cache/squid/security/advisories/GHSA-rcg9-7fqm-83mq</url>
+    </references>
+    <dates>
+      <discovery>2022-04-17</discovery>
+      <entry>2022-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1f637d1-39eb-11ed-ab44-080027f5fec9">
     <topic>redis -- Potential remote code execution vulnerability</topic>
     <affects>
