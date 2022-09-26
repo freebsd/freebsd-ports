@@ -1,3 +1,3 @@
-TIMESTAMP = 1647604434
-SHA256 (gnome/gobject-introspection-1.72.0.tar.xz) = 02fe8e590861d88f83060dd39cda5ccaa60b2da1d21d0f95499301b186beaabc
-SIZE (gnome/gobject-introspection-1.72.0.tar.xz) = 1040936
+TIMESTAMP = 1663523817
+SHA256 (gnome/gobject-introspection-1.74.0.tar.xz) = 347b3a719e68ba4c69ff2d57ee2689233ea8c07fc492205e573386779e42d653
+SIZE (gnome/gobject-introspection-1.74.0.tar.xz) = 1044008

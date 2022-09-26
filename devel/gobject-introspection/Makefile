@@ -1,6 +1,5 @@
 PORTNAME=	gobject-introspection
-DISTVERSION=	1.72.0
-PORTREVISION=	1
+DISTVERSION=	1.74.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison gettext gnome localbase meson pkgconfig python:3.6+ tar:xz
+USES=		bison gettext gnome localbase meson pkgconfig python:3.7+ tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddoctool=disabled \
