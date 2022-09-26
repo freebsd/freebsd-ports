@@ -1,7 +1,7 @@
 PORTNAME=	flameshot
 PORTVERSION=	12.1.0
 DISTVERSIONPREFIX=	v
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils wayland
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful yet simple to use screenshot software
