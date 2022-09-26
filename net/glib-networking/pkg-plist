@@ -4,6 +4,7 @@ lib/gio/modules/libgiognutls.so
 lib/gio/modules/libgiolibproxy.so
 libexec/glib-pacrunner
 share/dbus-1/services/org.gtk.GLib.PACRunner.service
+share/locale/ab/LC_MESSAGES/glib-networking.mo
 share/locale/an/LC_MESSAGES/glib-networking.mo
 share/locale/ar/LC_MESSAGES/glib-networking.mo
 share/locale/as/LC_MESSAGES/glib-networking.mo
@@ -37,6 +38,7 @@ share/locale/hu/LC_MESSAGES/glib-networking.mo
 share/locale/id/LC_MESSAGES/glib-networking.mo
 share/locale/it/LC_MESSAGES/glib-networking.mo
 share/locale/ja/LC_MESSAGES/glib-networking.mo
+share/locale/ka/LC_MESSAGES/glib-networking.mo
 share/locale/kk/LC_MESSAGES/glib-networking.mo
 share/locale/km/LC_MESSAGES/glib-networking.mo
 share/locale/kn/LC_MESSAGES/glib-networking.mo
