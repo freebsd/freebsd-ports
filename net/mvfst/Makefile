@@ -1,6 +1,5 @@
 PORTNAME=	mvfst
-DISTVERSION=	g20220328
-PORTREVISION=	4
+DISTVERSION=	g20220926
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,24 +24,19 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang cpe
+USES=		cmake:testing compiler:c++17-lang cpe
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
-GH_TAGNAME=	31cadb557c903355e1ea04261f52e89098a68f99
+GH_TAGNAME=	1e9db60a905b00618c857abcc8a27931f6baa154
 
 CPE_VENDOR=	facebook
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTS
+CMAKE_TESTING_ON=	BUILD_TESTS # several tests fail, see https://github.com/facebookincubator/mvfst/issues/275
 
 CXXFLAGS+=	-fPIC
-
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>

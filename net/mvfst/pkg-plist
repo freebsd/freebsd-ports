@@ -2,7 +2,7 @@ include/quic/QuicConstants.h
 include/quic/QuicException.h
 include/quic/api/IoBufQuicBatch.h
 include/quic/api/LoopDetectorCallback.h
-include/quic/api/Observer.h
+include/quic/api/QuicAckFrequencyFunctions.h
 include/quic/api/QuicBatchWriter.h
 include/quic/api/QuicPacketScheduler.h
 include/quic/api/QuicSocket.h
@@ -55,14 +55,17 @@ include/quic/congestion_control/BbrBandwidthSampler.h
 include/quic/congestion_control/BbrRttSampler.h
 include/quic/congestion_control/BbrTesting.h
 include/quic/congestion_control/CongestionControlFunctions.h
+include/quic/congestion_control/CongestionController.h
 include/quic/congestion_control/CongestionControllerFactory.h
 include/quic/congestion_control/Copa.h
 include/quic/congestion_control/Copa2.h
 include/quic/congestion_control/NewReno.h
 include/quic/congestion_control/Pacer.h
+include/quic/congestion_control/PacketProcessor.h
 include/quic/congestion_control/QuicCCP.h
 include/quic/congestion_control/QuicCubic.h
 include/quic/congestion_control/ServerCongestionControllerFactory.h
+include/quic/congestion_control/SimulatedTBF.h
 include/quic/congestion_control/StaticCwndCongestionController.h
 include/quic/congestion_control/TokenlessPacer.h
 include/quic/congestion_control/third_party/ccp/libstartccp.h
@@ -104,6 +107,9 @@ include/quic/logging/QLogger.h
 include/quic/logging/QLoggerConstants.h
 include/quic/logging/QLoggerTypes.h
 include/quic/loss/QuicLossFunctions.h
+include/quic/observer/SocketObserverContainer.h
+include/quic/observer/SocketObserverInterface.h
+include/quic/observer/SocketObserverTypes.h
 include/quic/server/AcceptObserver.h
 include/quic/server/CCPReader.h
 include/quic/server/QuicCcpThreadLauncher.h
@@ -126,6 +132,7 @@ include/quic/server/handshake/StatelessResetGenerator.h
 include/quic/server/handshake/TokenGenerator.h
 include/quic/server/state/ServerConnectionIdRejector.h
 include/quic/server/state/ServerStateMachine.h
+include/quic/server/third-party/siphash.h
 include/quic/state/AckEvent.h
 include/quic/state/AckHandlers.h
 include/quic/state/AckStates.h
@@ -179,6 +186,7 @@ lib/libmvfst_handshake.a
 lib/libmvfst_happyeyeballs.a
 lib/libmvfst_looper.a
 lib/libmvfst_loss.a
+lib/libmvfst_observer.a
 lib/libmvfst_qlogger.a
 lib/libmvfst_server.a
 lib/libmvfst_server_state.a
