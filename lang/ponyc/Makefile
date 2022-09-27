@@ -9,6 +9,9 @@ WWW=		https://www.ponylang.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Very outdated and unsupported upstream, depends on end of life devel/llvm70
+EXPIRATION_DATE=2022-12-31
+
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	undefined reference to __atomic_compare_exchange_8
 
