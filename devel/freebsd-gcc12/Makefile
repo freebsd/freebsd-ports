@@ -12,6 +12,8 @@ WWW=		https://gcc.gnu.org/
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+IGNORE_FreeBSD_12= Not supported on FreeBSD 12
+
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR} \
 		objdump:devel/binutils
 LIB_DEPENDS=	libgmp.so:math/gmp \
