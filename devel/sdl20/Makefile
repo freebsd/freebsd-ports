@@ -91,7 +91,6 @@ JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JOYSTICK_CONFIGURE_ENABLE=	joystick haptic
 JOYSTICK_BUILD_DEPENDS=		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 JOYSTICK_LIB_DEPENDS=		libinotify.so:devel/libinotify
-JOYSTICK_BROKEN_OFF=		Does not build with JOYSTICK disabled
 NAS_CONFIGURE_ENABLE=		nas nas-shared
 NAS_LIB_DEPENDS=		libaudio.so:audio/nas
 OSS_CONFIGURE_ENABLE=		oss
