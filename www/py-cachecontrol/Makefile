@@ -1,5 +1,5 @@
 PORTNAME=	CacheControl
-DISTVERSION=	0.12.11
+DISTVERSION=	0.12.12
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,11 @@ NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
 
 CONFLICTS_INSTALL=	py*-cachecontrol # bin/doesitcache
+
+OPTIONS_DEFINE=		FILECACHE REDIS
+OPTIONS_DEFAULT=	FILECACHE
+FILECACHE_DESC=		FileCache support
+REDIS_DESC=		Redis support
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py ${WRKSRC}/CacheControl.egg-info/requires.txt
