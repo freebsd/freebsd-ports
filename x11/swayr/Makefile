@@ -1,6 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -18,8 +18,8 @@ WRKSRC_SUBDIR=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}d
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		android_system_properties-0.1.4 \
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		android_system_properties-0.1.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		battery-0.7.8 \
@@ -28,8 +28,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.22 \
-		clap-3.2.17 \
-		clap_derive-3.2.17 \
+		clap-3.2.22 \
+		clap_derive-3.2.18 \
 		clap_lex-0.2.4 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
@@ -41,41 +41,41 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		directories-4.0.1 \
 		dirs-sys-0.3.7 \
 		either-1.8.0 \
-		env_logger-0.9.0 \
+		env_logger-0.9.1 \
 		getrandom-0.2.7 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
-		iana-time-zone-0.1.46 \
+		iana-time-zone-0.1.50 \
 		indexmap-1.9.1 \
 		itoa-1.0.3 \
-		js-sys-0.3.59 \
+		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.132 \
+		libc-0.2.133 \
 		log-0.4.17 \
 		mach-0.3.2 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		nix-0.19.1 \
-		ntapi-0.3.7 \
+		ntapi-0.4.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		once_cell-1.13.1 \
+		once_cell-1.15.0 \
 		os_str_bytes-6.3.0 \
-		peg-0.8.0 \
-		peg-macros-0.8.0 \
-		peg-runtime-0.8.0 \
+		peg-0.8.1 \
+		peg-macros-0.8.1 \
+		peg-runtime-0.8.1 \
 		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.43 \
+		proc-macro2-1.0.44 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
-		rand_core-0.6.3 \
+		rand_core-0.6.4 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.16 \
@@ -85,32 +85,32 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rt-format-0.3.1 \
 		ryu-1.0.11 \
 		scopeguard-1.1.0 \
-		serde-1.0.144 \
-		serde_derive-1.0.144 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
 		serde_json-1.0.85 \
 		strsim-0.10.0 \
 		swaybar-types-3.0.0 \
 		swayipc-3.0.1 \
 		swayipc-types-1.1.2 \
-		syn-1.0.99 \
-		sysinfo-0.25.3 \
+		syn-1.0.101 \
+		sysinfo-0.26.4 \
 		termcolor-1.1.3 \
-		textwrap-0.15.0 \
-		thiserror-1.0.32 \
-		thiserror-impl-1.0.32 \
+		textwrap-0.15.1 \
+		thiserror-1.0.36 \
+		thiserror-impl-1.0.36 \
 		time-0.1.44 \
 		toml-0.5.9 \
 		typenum-1.15.0 \
-		unicode-ident-1.0.3 \
+		unicode-ident-1.0.4 \
 		uom-0.30.0 \
 		version_check-0.9.4 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.82 \
-		wasm-bindgen-backend-0.2.82 \
-		wasm-bindgen-macro-0.2.82 \
-		wasm-bindgen-macro-support-0.2.82 \
-		wasm-bindgen-shared-0.2.82 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
