@@ -1,5 +1,5 @@
-TIMESTAMP = 1658529759
-SHA256 (ARM-software-astc-encoder-4.0.0_GH0.tar.gz) = a33be92e95427025e45f9543678c38eb5507b344dedcb5506af42f9bac93040a
-SIZE (ARM-software-astc-encoder-4.0.0_GH0.tar.gz) = 35758128
+TIMESTAMP = 1664242344
+SHA256 (ARM-software-astc-encoder-4.1.0_GH0.tar.gz) = a369fc3232f0b484b60076b43f7c8f0ddb5d01e8c01ac280e0bae469a33e9477
+SIZE (ARM-software-astc-encoder-4.1.0_GH0.tar.gz) = 35777444
 SHA256 (google-googletest-e2239ee_GH0.tar.gz) = 47a8ca2e1be737588628cbc82726a7c4fed060ae0098709003845e3ef298da2f
 SIZE (google-googletest-e2239ee_GH0.tar.gz) = 886254
