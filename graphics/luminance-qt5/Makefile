@@ -30,7 +30,10 @@ USE_QT=		concurrent core declarative gui location network \
 		buildtools:build linguisttools:build qmake:build
 
 OPTIONS_DEFINE=		CFITSIO DOCS HELPBROWSER
-OPTIONS_DEFAULT=	CFITSIO HELPBROWSER
+OPTIONS_DEFAULT=	CFITSIO
+OPTIONS_DEFAULT_aarch64=	HELPBROWSER
+OPTIONS_DEFAULT_amd64=	HELPBROWSER
+OPTIONS_DEFAULT_i386=	HELPBROWSER
 
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 
