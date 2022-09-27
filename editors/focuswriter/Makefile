@@ -1,11 +1,7 @@
 PORTNAME=	focuswriter
-DISTVERSION=	1.8.2
-PORTREVISION=	2
+DISTVERSION=	1.8.3
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
-
-PATCH_SITES=	https://github.com/gottcode/${PORTNAME}/commit/
-PATCHFILES=	0c642bec1e966b6e3f340d65e30558fb638010d9.patch:-p1 # version fix
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple, distraction-free writing environment
