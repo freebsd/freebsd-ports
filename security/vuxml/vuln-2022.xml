@@ -1,3 +1,62 @@
+  <vuln vid="18529cb0-3e9c-11ed-9bc7-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>106.0.5249.61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop_27.html">
+	  <p>This release contains 20 security fixes, including:</p>
+	  <ul>
+	    <li>[1358907] High CVE-2022-3304: Use after free in CSS. Reported by Anonymous on 2022-09-01</li>
+	    <li>[1343104] High CVE-2022-3201: Insufficient validation of untrusted input in Developer Tools. Reported by NDevTK on 2022-07-09</li>
+	    <li>[1319229] High CVE-2022-3305: Use after free in Survey. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Vulnerability Research Institute on 2022-04-24</li>
+	    <li>[1320139] High CVE-2022-3306: Use after free in Survey. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Vulnerability Research Institute on 2022-04-27</li>
+	    <li>[1323488] High CVE-2022-3307: Use after free in Media. Reported by Anonymous Telecommunications Corp. Ltd. on 2022-05-08</li>
+	    <li>[1342722] Medium CVE-2022-3308: Insufficient policy enforcement in Developer Tools. Reported by Andrea Cappa (zi0Black) @ Shielder on 2022-07-08</li>
+	    <li>[1348415] Medium CVE-2022-3309: Use after free in Assistant. Reported by zh1x1an1221 of Ant Group Tianqiong Security Lab on 2022-07-29</li>
+	    <li>[1240065] Medium CVE-2022-3310: Insufficient policy enforcement in Custom Tabs. Reported by Ashwin Agrawal from Optus, Sydney on 2021-08-16</li>
+	    <li>[1302813] Medium CVE-2022-3311: Use after free in Import. Reported by Samet Bekmezci @sametbekmezci on 2022-03-04</li>
+	    <li>[1303306] Medium CVE-2022-3312: Insufficient validation of untrusted input in VPN. Reported by Andr.Ess on 2022-03-06</li>
+	    <li>[1317904] Medium CVE-2022-3313: Incorrect security UI in Full Screen. Reported by Irvan Kurniawan (sourc7) on 2022-04-20</li>
+	    <li>[1328708] Medium CVE-2022-3314: Use after free in Logging. Reported by Anonymous on 2022-05-24</li>
+	    <li>[1322812] Medium CVE-2022-3315: Type confusion in Blink. Reported by Anonymous on 2022-05-05</li>
+	    <li>[1333623] Low CVE-2022-3316: Insufficient validation of untrusted input in Safe Browsing. Reported by Sven Dysthe (@svn_dy) on 2022-06-07</li>
+	    <li>[1300539] Low CVE-2022-3317: Insufficient validation of untrusted input in Intents. Reported by Hafiizh on 2022-02-24</li>
+	    <li>[1318791] Low CVE-2022-3318: Use after free in ChromeOS Notifications. Reported by GraVity0 on 2022-04-22</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3201</cvename>
+      <cvename>CVE-2022-3304</cvename>
+      <cvename>CVE-2022-3305</cvename>
+      <cvename>CVE-2022-3306</cvename>
+      <cvename>CVE-2022-3307</cvename>
+      <cvename>CVE-2022-3308</cvename>
+      <cvename>CVE-2022-3309</cvename>
+      <cvename>CVE-2022-3310</cvename>
+      <cvename>CVE-2022-3311</cvename>
+      <cvename>CVE-2022-3312</cvename>
+      <cvename>CVE-2022-3313</cvename>
+      <cvename>CVE-2022-3314</cvename>
+      <cvename>CVE-2022-3315</cvename>
+      <cvename>CVE-2022-3316</cvename>
+      <cvename>CVE-2022-3317</cvename>
+      <cvename>CVE-2022-3318</cvename>
+      <url>https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2022-09-27</discovery>
+      <entry>2022-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a0670a1-3e1a-11ed-b48b-e0d55e2a8bf9">
     <topic>expat -- Heap use-after-free vulnerability</topic>
     <affects>
