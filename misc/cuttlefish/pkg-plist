@@ -6,7 +6,10 @@ include/cuttlefish/Image.h
 include/cuttlefish/Texture.h
 lib/cmake/Cuttlefish/CuttlefishConfig.cmake
 lib/cmake/Cuttlefish/CuttlefishConfigVersion.cmake
-lib/cmake/Cuttlefish/CuttlefishTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/Cuttlefish/CuttlefishTargets.cmake
+lib/cmake/Cuttlefish/cuttlefish-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Cuttlefish/cuttlefish-targets.cmake
+lib/cmake/Cuttlefish/cuttlefish_lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Cuttlefish/cuttlefish_lib-targets.cmake
 lib/libcuttlefish.so
-lib/libcuttlefish.so.2.6.2
+lib/libcuttlefish.so.2.7
+lib/libcuttlefish.so.2.7.0
