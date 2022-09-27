@@ -3861,19 +3861,6 @@ delete-distfiles-list:
 .      endif
 .    endif
 
-# Generates patches.
-
-update-patches:
-	@toedit=`PATCH_WRKSRC=${PATCH_WRKSRC} \
-		PATCHDIR=${PATCHDIR} \
-		PATCH_LIST=${PATCHDIR}/patch-* \
-		DIFF_ARGS=${DIFF_ARGS} \
-		DISTORIG=${DISTORIG} \
-		${SH} ${PORTSDIR}/Tools/scripts/update-patches`; \
-	case $$toedit in "");; \
-	*) ${ECHO_CMD} -n 'edit patches: '; read i; \
-	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
-
 # Checksumming utilities
 
 # List all algorithms here, all the variables name must begin with dp_
