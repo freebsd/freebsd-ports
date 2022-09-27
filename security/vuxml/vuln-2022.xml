@@ -1,3 +1,30 @@
+  <vuln vid="0a0670a1-3e1a-11ed-b48b-e0d55e2a8bf9">
+    <topic>expat -- Heap use-after-free vulnerability</topic>
+    <affects>
+      <package>
+	<name>expat</name>
+	<range><lt>2.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security Advisory reports:</p>
+	<blockquote cite="https://www.debian.org/security/2022/dsa-5236">
+	  <p>Rhodri James discovered a heap use-after-free vulnerability in the doContent function in Expat, an XML parsing C library, which could result in denial of service or potentially the execution of arbitrary code, if a malformed XML file is processed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-40674</cvename>
+      <url>https://www.debian.org/security/2022/dsa-5236</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-40674</url>
+    </references>
+    <dates>
+      <discovery>2022-09-14</discovery>
+      <entry>2022-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9ada0b5-3d80-11ed-9330-080027f5fec9">
     <topic>squid -- Exposure of sensitive information in cache manager</topic>
     <affects>
