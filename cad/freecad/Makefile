@@ -41,8 +41,8 @@ USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative gui location network \
-		opengl printsupport qmake:build svg webchannel webengine \
-		widgets xml xmlpatterns
+		opengl printsupport qmake:build svg webchannel widgets xml \
+		xmlpatterns
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
@@ -77,6 +77,14 @@ COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${
 
 DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
 		${PORTNAME} "Graphics;Engineering;" false
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+USE_QT+=	webengine
+.else
+USE_QT+=	webkit
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
