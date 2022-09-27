@@ -33,6 +33,8 @@ share/applications/far2l.desktop
 %%DATADIR%%/FarRus.hlf
 %%DATADIR%%/FarRus.lng
 %%DATADIR%%/FarSpa.lng
+%%DATADIR%%/FarUkr.hlf
+%%DATADIR%%/FarUkr.lng
 %%DATADIR%%/Plugins/NetRocks/plug/eng.lng
 %%DATADIR%%/Plugins/NetRocks/plug/helpe.hlf
 %%DATADIR%%/Plugins/NetRocks/plug/rus.lng
@@ -482,7 +484,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/incsrch/plug/isrcrus.lng
 %%DATADIR%%/Plugins/inside/plug/config.ini
 %%DATADIR%%/Plugins/inside/plug/eng.lng
-%%DATADIR%%/Plugins/inside/plug/rus.kng
+%%DATADIR%%/Plugins/inside/plug/rus.lng
 %%DATADIR%%/Plugins/multiarc/plug/arceng.hlf
 %%DATADIR%%/Plugins/multiarc/plug/arceng.lng
 %%DATADIR%%/Plugins/multiarc/plug/arcrus.hlf
@@ -500,6 +502,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/ps.sh
 %%DATADIR%%/trash.sh
 %%DATADIR%%/view.sh
+%%DATADIR%%/xlats.ini
 share/icons/far2l.svg
 share/icons/hicolor/1024x1024/apps/far2l.svg
 share/icons/hicolor/128x128/apps/far2l.svg

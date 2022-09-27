@@ -1,11 +1,7 @@
 PORTNAME=	far2l
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=	v_
-PORTREVISION=	1
 CATEGORIES=	misc
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	f49e2475f7eba50d3d5c.patch:-p1 c99fbdb382250828d974.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of FAR v2 to Unix-like systems
@@ -47,7 +43,7 @@ WXGTK_USE=	WX=3.0+
 X11_DESC=	Build with TTY X11 extensions
 X11_CMAKE_OFF=	-DTTYX:BOOL=OFF
 X11_USES=	xorg
-X11_USE=	XORG=ice,sm,x11,xext
+X11_USE=	XORG=ice,sm,x11,xext,xi
 
 post-patch:
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
