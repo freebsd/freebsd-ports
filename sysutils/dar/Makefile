@@ -1,7 +1,6 @@
 PORTNAME=	dar
-PORTVERSION=	2.5.14
-PORTREVISION=	3
-DISTVERSIONSUFFIX=	-bis
+PORTVERSION=	2.7.7
+
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -11,38 +10,58 @@ WWW=		http://dar.linux.free.fr/
 
 LICENSE=	GPLv2+
 
-USES=		compiler:c++11-lang libtool shebangfix
-SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
-		--disable-upx \
-		--disable-ea-support --disable-nodump-flag \
-		--disable-gnugetopt --disable-dar-static \
-		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-INSTALL_TARGET=	install-strip
+USES=		compiler:c++14-lang libtool pathfix shebangfix
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+SHEBANG_FILES=	doc/samples/*.bash doc/samples/*.sh doc/samples/dar_backup \
+		doc/samples/date_past_N_days
 
-OPTIONS_DEFINE=		GCRYPT GPGME LZO ZLIB BZIP2 LZMA DOCS NLS
-OPTIONS_DEFAULT=	BZIP2 LZMA LZO ZLIB
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${DATADIR} \
+		--disable-build-html \
+		--disable-dar-static \
+		--disable-ea-support \
+		--disable-gnugetopt \
+		--disable-libcurl-linking \
+		--disable-nodump-flag \
+		--disable-upx
+
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=		ARGON2 BZIP2 DELTA DOCS GCRYPT GPGME LZ4 LZMA LZO \
+			MULTITHR NLS ZLIB ZSTD
+OPTIONS_DEFAULT=	ARGON2 BZIP2 DELTA GCRYPT LZ4 LZMA LZO MULTITHR ZLIB \
+			ZSTD
 OPTIONS_SUB=		yes
 
-ZLIB_CONFIGURE_OFF=	--disable-libz-linking
+ARGON2_DESC=	argon2 hashing algorithm via libargon2
+DELTA_DESC=	Binary delta support via librsync
+GPGME_DESC=	gpgme for asymetric crypto algorithms
+MULTITHR_DESC=	Multithreading support via libthreadar
+
+ARGON2_IMPLIES=		GCRYPT
+ARGON2_LIB_DEPENDS=	libargon2.so:security/libargon2
+ARGON2_CONFIGURE_OFF=	--disable-libargon2-linking
 BZIP2_CONFIGURE_OFF=	--disable-libbz2-linking
-LZMA_CONFIGURE_OFF=	--disable-libxz-linking
-GPGME_DESC=		gpgme for asymetric crypto algorithms
-GPGME_CONFIGURE_OFF=	--disable-gpgme-linking
-GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
-GPGME_IMPLIES=		GCRYPT
-GCRYPT_CONFIGURE_OFF=	--disable-libgcrypt-linking
+DELTA_LIB_DEPENDS=	librsync.so:net/librsync
+DELTA_CONFIGURE_OFF=	--disable-librsync-linking
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-LZO_DESC=		Support lzo compression via liblzo2
+GCRYPT_CONFIGURE_OFF=	--disable-libgcrypt-linking
+GPGME_IMPLIES=		GCRYPT
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
+GPGME_CONFIGURE_OFF=	--disable-gpgme-linking
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_CONFIGURE_OFF=	--disable-liblz4-linking
+LZMA_CONFIGURE_OFF=	--disable-libxz-linking
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_OFF=	--disable-liblzo2-linking
+MULTITHR_LIB_DEPENDS=	libthreadar.so:devel/libthreadar
+MULTITHR_CONFIGURE_OFF=	--disable-threadar
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+ZLIB_CONFIGURE_OFF=	--disable-libz-linking
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_CONFIGURE_OFF=	--disable-libzstd-linking
 
 post-patch:
 	@${REINPLACE_CMD} -e \
