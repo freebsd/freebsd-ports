@@ -1,5 +1,6 @@
 PORTNAME=	bottom
 DISTVERSION=	0.6.8-r20220909
+PORTREVISION= 	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -14,10 +15,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ClementTsang
 GH_TAGNAME=	7218918
 
-PLIST_FILES=	bin/btm
 PORTDOCS=	*
+PLIST_FILES=	bin/btm \
+		man/man1/btm.1.gz \
+		share/bash-completion/completions/btm.bash \
+		share/fish/vendor_completions.d/btm.fish \
+		share/zsh/site-functions/_btm
 
 OPTIONS_DEFINE=	DOCS
+
+# Build manpages and shell completion
+CARGO_ENV+= 	BTM_GENERATE=true
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
@@ -203,8 +211,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wrapcenum-derive-0.4.0
 
+GEN_DIR= 	${WRKDIR}/bottom-*/target/tmp/bottom
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/btm
+	${INSTALL_MAN} ${GEN_DIR}/manpage/btm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${GEN_DIR}/completion/btm.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${GEN_DIR}/completion/btm.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${GEN_DIR}/completion/_btm     ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
