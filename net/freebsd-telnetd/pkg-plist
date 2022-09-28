@@ -1,2 +1,3 @@
 libexec/telnetd
 man/man8/telnetd.8.gz
+@sample etc/pam.d/telnetd.default etc/pam.d/telnetd

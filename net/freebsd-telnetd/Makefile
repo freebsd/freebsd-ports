@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-telnetd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.0.2
+DISTVERSION=	14.0.3
 CATEGORIES=	net
 
 MAINTAINER=	cy@FreeBSD.org
@@ -36,5 +36,8 @@ MAKE_ENV+=	NO_WERROR=1
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/lib/libpam/pam.d/telnetd ${STAGEDIR}${PREFIX}/etc/pam.d/telnetd.default
 
 .include <bsd.port.mk>
