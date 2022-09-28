@@ -1,7 +1,6 @@
 PORTNAME=	srt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	2
+DISTVERSION=	1.5.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ GH_ACCOUNT=	Haivision
 
 SHEBANG_FILES=	scripts/srt-ffplay
 
-CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS # 2 tests are known to fail: https://github.com/Haivision/srt/issues/2389, https://github.com/Haivision/srt/issues/2390
+CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS # 1 test fails when net.inet6.ip6.v6only=1: https://github.com/Haivision/srt/issues/2389
 
 OPTIONS_DEFINE=			HEAVY_LOGGING
 OPTIONS_RADIO=			ENCRYPTION
