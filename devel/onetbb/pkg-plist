@@ -19,6 +19,7 @@ include/oneapi/tbb/detail/_aggregator.h
 include/oneapi/tbb/detail/_aligned_space.h
 include/oneapi/tbb/detail/_allocator_traits.h
 include/oneapi/tbb/detail/_assert.h
+include/oneapi/tbb/detail/_attach.h
 include/oneapi/tbb/detail/_concurrent_queue_base.h
 include/oneapi/tbb/detail/_concurrent_skip_list.h
 include/oneapi/tbb/detail/_concurrent_unordered_base.h
@@ -143,14 +144,14 @@ lib/cmake/TBB/TBBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb.so
 lib/libtbb.so.12
-lib/libtbb.so.12.5
+lib/libtbb.so.12.6
 lib/libtbbbind_2_0.so
 lib/libtbbbind_2_0.so.3
-lib/libtbbbind_2_0.so.3.5
+lib/libtbbbind_2_0.so.3.6
 lib/libtbbmalloc.so
 lib/libtbbmalloc.so.2
-lib/libtbbmalloc.so.2.5
+lib/libtbbmalloc.so.2.6
 lib/libtbbmalloc_proxy.so
 lib/libtbbmalloc_proxy.so.2
-lib/libtbbmalloc_proxy.so.2.5
+lib/libtbbmalloc_proxy.so.2.6
 libdata/pkgconfig/tbb%%PCSUFX%%.pc
