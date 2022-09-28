@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	smallcheck #bigcheck check exhaustive-check paranoid-check
 TEST_WRKSRC=	${WRKSRC}/tests
-USES=		gmake libtool makeinfo pathfix perl5 pkgconfig
+USES=		gmake libtool pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
@@ -65,6 +65,10 @@ OPENMPI_CONFIGURE_ENV=		MPICC=${MPIDIR}/bin/mpicc \
 				MPIRUN=${MPIDIR}/bin/mpirun
 
 .include <bsd.port.options.mk>
+
+.if !${ABI:Mpurecap}
+USES+=	makeinfo
+.endif
 
 # Enable cycle counter via the CNTVCT_EL0 register for all variants on arm64.
 .if ${ARCH} == "aarch64"
