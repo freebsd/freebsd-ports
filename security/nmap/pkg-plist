@@ -600,6 +600,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/nat-pmp-info.nse
 %%DATADIR%%/scripts/nat-pmp-mapport.nse
 %%DATADIR%%/scripts/nbd-info.nse
+%%DATADIR%%/scripts/nbns-interfaces.nse
 %%DATADIR%%/scripts/nbstat.nse
 %%DATADIR%%/scripts/ncp-enum-users.nse
 %%DATADIR%%/scripts/ncp-serverinfo.nse
@@ -625,6 +626,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/omp2-brute.nse
 %%DATADIR%%/scripts/omp2-enum-targets.nse
 %%DATADIR%%/scripts/omron-info.nse
+%%DATADIR%%/scripts/openflow-info.nse
 %%DATADIR%%/scripts/openlookup-info.nse
 %%DATADIR%%/scripts/openvas-otp-brute.nse
 %%DATADIR%%/scripts/openwebnet-discovery.nse
@@ -643,6 +645,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/pop3-brute.nse
 %%DATADIR%%/scripts/pop3-capabilities.nse
 %%DATADIR%%/scripts/pop3-ntlm-info.nse
+%%DATADIR%%/scripts/port-states.nse
 %%DATADIR%%/scripts/pptp-version.nse
 %%DATADIR%%/scripts/puppet-naivesigning.nse
 %%DATADIR%%/scripts/qconn-exec.nse
