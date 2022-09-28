@@ -1,6 +1,5 @@
 PORTNAME=	slowcgi
-PORTVERSION=	6.3.20180905
-PORTREVISION=	1
+PORTVERSION=	7.1.20220916
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -11,18 +10,21 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-WRKSRC_SUBDIR=	src/usr.sbin/${GH_PROJECT}
+USES=		uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue
 GH_PROJECT=	slowcgi
 
-USES=		uidfix
 USE_RC_SUBR=	slowcgi
 
-CFLAGS+=	-Wall
-
 MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
+
+CFLAGS+=	-Wall -I${PREFIX}/include
+
+LDFLAGS+=	-L${PREFIX}/lib
+
+WRKSRC_SUBDIR=	src/usr.sbin/${GH_PROJECT}
 
 USERS=		www
 GROUPS=		www
