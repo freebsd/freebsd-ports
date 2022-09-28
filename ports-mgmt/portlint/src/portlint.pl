@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 13;
+my $micro = 14;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -519,14 +519,6 @@ sub checkdescr {
 				"moved into the Makefile.  ".
 				"Remove the WWW: line from this file and add \"WWW=$wwwurl\"".
 				"to the Makefile immediately below the COMMENT line.");
-			if ($wwwurl !~ m|^https?://|) {
-				&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin ".
-					"with \"http://\" or \"https://\".");
-			}
-			if ($wwwurl =~ m|^http://search.cpan.org/~|) {
-				&perror("WARN", $file, -1, "consider changing WWW URL to ".
-					"http://search.cpan.org/dist/$makevar{PORTNAME}/");
-			}
 		}
 		$linecnt++;
 		$longlines++ if ($maxchars{$file} < length);
