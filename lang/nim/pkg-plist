@@ -104,6 +104,7 @@ lib/nim/compiler/nversion.nim
 lib/nim/compiler/optimizer.nim
 lib/nim/compiler/options.nim
 lib/nim/compiler/packagehandling.nim
+lib/nim/compiler/packages.nim
 lib/nim/compiler/parampatterns.nim
 lib/nim/compiler/parser.nim
 lib/nim/compiler/passaux.nim
@@ -610,6 +611,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/nversion.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/optimizer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compiler/packages.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/parampatterns.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/parser.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/passaux.html
