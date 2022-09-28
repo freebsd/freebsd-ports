@@ -1,6 +1,6 @@
 PORTNAME=	lensfun
 PORTVERSION=	0.3.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -22,19 +22,33 @@ SHEBANG_FILES=	apps/lensfun-add-adapter apps/lensfun-convert-lcp \
 		apps/lensfun-update-data
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DBUILD_AUXFUN:BOOL=ON
+CMAKE_ARGS=	-DBUILD_AUXFUN:BOOL=ON -DBUILD_LENSTOOL:BOOL=ON \
+		-DBUILD_TESTS:BOOL=ON
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE=
-PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
 OPTIONS_DEFINE=	SIMD PYHELPERS
 OPTIONS_DEFAULT=	SIMD PYHELPERS
 OPTIONS_SUB=	yes
-PYHELPERS_DESC=	Install database helper scripts (need Python 3)
+PYHELPERS_DESC=	Install database helper Python scripts
 
 SIMD_CMAKE_OFF=	-DBUILD_FOR_SSE:BOOL=OFF -DBUILD_FOR_SSE2:BOOL=OFF
 
+PYHELPERS_BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/setuptools/_distutils/core.py:devel/py-setuptools@${PY_FLAVOR}
 PYHELPERS_CMAKE_ON=	-DSTAGEDIR:STRING=${STAGEDIR} -DPYTHON:STRING=${PYTHON_CMD}
 PYHELPERS_CMAKE_OFF=	-DINSTALL_HELPER_SCRIPTS:BOOL=OFF -DPYTHON:STRING=IGNORE
 PYHELPERS_USES=		python:3.4+
+
+post-patch:
+	@${REINPLACE_CMD} -e '/#include <cmath>/ { x; s/^/#include <clocale>/; G; }' \
+		${WRKSRC}/tests/test_modifier_coord_centering_old.cpp \
+		${WRKSRC}/tests/test_modifier_coord_perspective_correction.cpp \
+		${WRKSRC}/tests/test_modifier_coord_perspective_correction_old.cpp \
+		${WRKSRC}/tests/test_modifier_coord_tiny_image_old.cpp \
+		${WRKSRC}/tests/test_modifier_performance.cpp \
+		${WRKSRC}/tests/test_modifier_regression.cpp \
+		${WRKSRC}/tests/test_modifier_regression_old.cpp
+
+do-test:
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 
 .include <bsd.port.mk>
