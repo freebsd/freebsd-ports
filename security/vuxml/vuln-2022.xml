@@ -1,3 +1,39 @@
+  <vuln vid="cb902a77-3f43-11ed-9402-901b0e9408dc">
+    <topic>Matrix clients -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cinny</name>
+	<range><lt>2.2.1</lt></range>
+      </package>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients">
+	  <p>Two critical severity vulnerabilities in end-to-end encryption were
+	  found in the SDKs which power Element, Beeper, Cinny, SchildiChat,
+	  Circuli, Synod.im and any other clients based on matrix-js-sdk,
+	  matrix-ios-sdk or matrix-android-sdk2.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39249</cvename>
+      <cvename>CVE-2022-39250</cvename>
+      <cvename>CVE-2022-39251</cvename>
+      <cvename>CVE-2022-39236</cvename>
+      <url>https://matrix.org/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients</url>
+    </references>
+    <dates>
+      <discovery>2022-09-23</discovery>
+      <entry>2022-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18529cb0-3e9c-11ed-9bc7-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
