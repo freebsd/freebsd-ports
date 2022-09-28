@@ -1,6 +1,5 @@
 PORTNAME=	pari
-DISTVERSION=	2.13.4
-PORTEPOCH=	2
+DISTVERSION=	2.15.0
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
 
@@ -15,7 +14,7 @@ BROKEN_mips64=		fails to link: mpker.c:(.text+0x33bc): relocation truncated to f
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		perl5 readline
+USES=		bison perl5 readline
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
 HAS_CONFIGURE=	yes

@@ -2,12 +2,13 @@ bin/gp
 bin/gp-%%GP_VERSION%%
 bin/gphelp
 bin/tex2mail
-include/pari/mpinl.h
 include/pari/genpari.h
+include/pari/mpinl.h
 include/pari/pari.h
 include/pari/paricast.h
 include/pari/paricfg.h
 include/pari/paricom.h
+include/pari/paridbglvl.h
 include/pari/paridecl.h
 include/pari/parierr.h
 include/pari/parigen.h
@@ -19,9 +20,9 @@ include/pari/paripriv.h
 include/pari/paristio.h
 include/pari/parisys.h
 include/pari/paritune.h
-lib/libpari.so.%%PORTVERSION%%
-lib/libpari.so.7
 lib/libpari.so
+lib/libpari.so.%%PORTVERSION%%
+lib/libpari.so.8
 lib/pari/pari.cfg
 man/man1/gp-%%GP_VERSION%%.1.gz
 man/man1/gp.1.gz
