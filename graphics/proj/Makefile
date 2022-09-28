@@ -1,6 +1,5 @@
 PORTNAME=	proj
-PORTVERSION=	8.2.1
-PORTREVISION=	2
+PORTVERSION=	9.1.0
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
@@ -10,19 +9,17 @@ COMMENT=	Cartographic Projections library
 WWW=		https://github.com/OSGeo/PROJ
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+#LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtiff.so:graphics/tiff
-RUN_DEPENDS=	proj-data>=0:graphics/proj-data
+#RUN_DEPENDS=	proj-data>=0:graphics/proj-data
 
-USES=		compiler:c++11-lang cpe gmake libtool pathfix pkgconfig sqlite
+USES=		compiler:c++11-lang cmake cpe libtool pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	proj_project
+CMAKE_OFF=	BUILD_TESTING
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+CPE_VENDOR=	proj_project
 
 .include <bsd.port.mk>
