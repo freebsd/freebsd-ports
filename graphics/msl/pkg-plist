@@ -16,6 +16,10 @@ include/MSL/Compile/Types.h
 include/MSL/Config.h
 lib/cmake/MSL/MSLConfig.cmake
 lib/cmake/MSL/MSLConfigVersion.cmake
+lib/cmake/MSL/mslb-extract-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/MSL/mslb-extract-targets.cmake
+lib/cmake/MSL/mslc-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/MSL/mslc-targets.cmake
 lib/cmake/MSLClient/MSLClientConfig.cmake
 lib/cmake/MSLClient/MSLClientConfigVersion.cmake
 lib/cmake/MSLClient/MSLClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -25,6 +29,6 @@ lib/cmake/MSLCompile/MSLCompileConfigVersion.cmake
 lib/cmake/MSLCompile/MSLCompileTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MSLCompile/MSLCompileTargets.cmake
 lib/libmsl_client.so
-lib/libmsl_client.so.1.5.5
+lib/libmsl_client.so.1.6.0
 lib/libmsl_compile.so
-lib/libmsl_compile.so.1.5.5
+lib/libmsl_compile.so.1.6.0
