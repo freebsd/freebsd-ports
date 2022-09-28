@@ -202,8 +202,10 @@ EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangChangeNamespace \
 		libclangDaemon \
 		libclangDoc \
+		libclangIncludeCleaner \
 		libclangIncludeFixer \
 		libclangMove \
+		libclangPseudo \
 		libclangQuery \
 		libclangRename \
 		libclangReorderFields \
