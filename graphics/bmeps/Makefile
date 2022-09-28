@@ -1,12 +1,12 @@
 PORTNAME=	bitmap2pp
-DISTVERSION=	4.33.0
+DISTVERSION=	4.34.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
-WWW=		https://sourceforge.net/p/dktools/wiki/bmpp%20manual/
+WWW=		https://sourceforge.net/p/dktools/wiki/bitmap2pp/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,12 +23,10 @@ CONFIGURE_ENV=	ac_cv_header_db_h=no
 
 ALL_TARGET=		${PORTNAME}
 CONFLICTS_INSTALL=	dktools[0-9]*
-
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

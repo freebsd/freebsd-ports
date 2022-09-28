@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220929:
+  AFFECTS: users of graphics/bmeps
+  AUTHOR: takefu@airport.fm
+
+  The executable name has been changed from this edition from bmpp to bitmap2pp
+
 20220925:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
