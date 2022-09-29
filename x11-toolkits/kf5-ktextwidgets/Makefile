@@ -14,6 +14,7 @@ USE_QT=		concurrent core gui widgets xml \
 
 OPTIONS_DEFINE=		AUDIO
 OPTIONS_DEFAULT=	AUDIO
+OPTIONS_EXCLUDE_purecap=AUDIO
 
 AUDIO_DESC=		Audio notifications/speech support
 AUDIO_USE=		QT=speech
