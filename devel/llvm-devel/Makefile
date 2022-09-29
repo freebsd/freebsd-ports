@@ -301,21 +301,13 @@ STRIP=
 
 .if ${ARCH} == "aarch64"
 COMPILER_RT_ARCHS=		aarch64
-COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	cfi_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .elif ${ARCH} == "amd64"
 COMPILER_RT_ARCHS=		x86_64
-COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	cfi_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .if exists(/usr/lib32/libc.so.7)
 COMPILER_RT_ARCHS+=		i386
 .endif
 .elif ${ARCH} == "i386"
 COMPILER_RT_ARCHS=		i386
-COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	cfi_ignorelist.txt
 .elif ${ARCH} == "powerpc"
 COMPILER_RT_ARCHS=		powerpc
 .elif ${ARCH} == "powerpc64"
@@ -323,15 +315,10 @@ COMPILER_RT_ARCHS=		powerpc64
 .if exists(/usr/lib32/libc.so.7)
 COMPILER_RT_ARCHS+=		powerpc
 .endif
-COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .elif ${ARCH} == "powerpc64le"
 COMPILER_RT_ARCHS=		powerpc64le
-COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
-COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 .elif ${ARCH} == "riscv64"
 COMPILER_RT_ARCHS=		riscv64
-COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
 .endif
 
 _CRTBASEDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}
@@ -344,6 +331,15 @@ _COMPILER_RT_LIBS=
 .for CRT_ARCH in ${COMPILER_RT_ARCHS}
 _COMPILER_RT_LIBS:= ${_COMPILER_RT_LIBS} ${COMPILER_RT_LIBS_${CRT_ARCH}:S|^|${_CRTLIBDIR}/${CRT_ARCH}-portbld-${OPSYS:tl}${OSREL}/|}
 .endfor
+
+COMPILER_RT_IGNORELISTS=
+.for RT in asan cfi msan
+.if ${_COMPILER_RT_LIBS:M*/libclang_rt.${RT}.a}
+COMPILER_RT_IGNORELISTS:=	${COMPILER_RT_IGNORELISTS} ${RT}_ignorelist.txt
+.endif
+.endfor
+# Strip empty element
+COMPILER_RT_IGNORELISTS:=${COMPILER_RT_IGNORELISTS:N^$$}
 
 # Comment out plist entries for unsupported options.
 .for opt in ${_ALL_OPTIONS}
