@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=LTO NOTIFY PGO UTF8PROC XDG
 OPTIONS_EXCLUDE+=	${CC:T:Mgcc*:C/.+/LTO/} # undefined reference to `xstrdup'
 OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # https://github.com/llvm/llvm-project/issues/46697
 OPTIONS_EXCLUDE_FreeBSD_12=	${WAYLAND_DISPLAY:UPGO} # ./pgo hangs
+OPTIONS_EXCLUDE_purecap=	LTO NOTIFY PGO UTF8PROC XDG
 
 DOCS_BUILD_DEPENDS=	scdoc:textproc/scdoc
 DOCS_MESON_ENABLED=	docs
