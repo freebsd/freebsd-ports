@@ -182,8 +182,10 @@ EXTRAS_LIBS=	\
 		libclangChangeNamespace \
 		libclangDaemon \
 		libclangDoc \
+		libclangIncludeCleaner \
 		libclangIncludeFixer \
 		libclangMove \
+		libclangPseudo \
 		libclangQuery \
 		libclangRename \
 		libclangReorderFields \
@@ -415,7 +417,7 @@ post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
-.if ${SNAPDATE} == 20220921
+.if ${SNAPDATE} == 20220928
 	# expected to be temporary
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/flang-new \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/flang
