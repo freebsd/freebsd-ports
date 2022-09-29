@@ -18,6 +18,7 @@ USE_XORG=	x11 xtst
 
 OPTIONS_DEFINE=		AUDIO
 OPTIONS_DEFAULT=	AUDIO
+OPTIONS_EXCLUDE_purecap=AUDIO
 
 AUDIO_DESC=		Audio notifications/text-to-speech support
 AUDIO_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3
