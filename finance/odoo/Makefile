@@ -1,5 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	15.0
+PORTREVISION=	1
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -64,7 +65,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ pgsql shebangfix
+USES=		cpe python:3.7+ pgsql shebangfix
 USE_PYTHON=	distutils
 USE_OPENLDAP=	yes
 
@@ -86,6 +87,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|werkzeug.url_quote_plus|werkzeug.urls.url_quote_plus|g' \
 		${WRKSRC}/odoo/addons/base/models/ir_ui_view.py
 	@${REINPLACE_CMD} -i "" -e 's|werkzeug.url_unquote_plus|werkzeug.urls.url_quote_plus|g' \
+		-e 's|.NumberConverter|.converters.NumberConverter|g' \
 		${WRKSRC}/odoo/addons/base/models/ir_http.py \
 		${WRKSRC}/odoo/addons/http_routing/models/ir_http.py
 	@${REINPLACE_CMD} -i "" -e 's|from werkzeug import url_encode|from werkzeug.urls import url_encode|g' \
