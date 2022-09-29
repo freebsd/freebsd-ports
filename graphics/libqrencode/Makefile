@@ -24,7 +24,13 @@ PLIST_FILES=	bin/qrencode \
 		lib/libqrencode.so \
 		lib/libqrencode.so.4 \
 		lib/libqrencode.so.${PORTVERSION} \
-		libdata/pkgconfig/libqrencode.pc \
-		share/man/man1/qrencode.1.gz
+		libdata/pkgconfig/libqrencode.pc
+
+
+.include <bsd.port.options.mk>
+
+.if !${ABI:Mpurecap}
+PLIST_FILES+=	share/man/man1/qrencode.1.gz
+.endif
 
 .include <bsd.port.mk>
