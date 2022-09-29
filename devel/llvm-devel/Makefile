@@ -126,7 +126,7 @@ CLANG_USE=		PERL5=run
 COMPILER_RT_DESC=	Sanitizer libraries
 COMPILER_RT_IMPLIES=	CLANG
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS} \
-			${COMPILER_RT_IGNORELISTS:S|^|${_CRTBLDIR}/|}
+			${COMPILER_RT_IGNORELISTS:S|^|${_CRTILDIR}/|}
 DOCS_PORTDOCS=		llvm
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
@@ -322,7 +322,7 @@ COMPILER_RT_ARCHS=		riscv64
 .endif
 
 _CRTBASEDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}
-_CRTBLDIR=	${_CRTBASEDIR}/share
+_CRTILDIR=	${_CRTBASEDIR}/share
 _CRTLIBDIR=	${_CRTBASEDIR}/lib
 
 .include "Makefile.RUNTIMES"
