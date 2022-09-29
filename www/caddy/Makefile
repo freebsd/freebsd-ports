@@ -18,6 +18,8 @@ CPE_VENDOR=	caddyserver
 USE_RC_SUBR=	caddy
 SUB_FILES=	Caddyfile.sample caddy pkg-message
 
+CONFLICTS_INSTALL=	xcaddy
+
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample ${ETCDIR_REL}/Caddyfile.sample"
 
