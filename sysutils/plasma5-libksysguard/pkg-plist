@@ -607,5 +607,5 @@ share/locale/zh_TW/LC_MESSAGES/ksgrd.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/zh_TW/LC_MESSAGES/processcore.mo
 share/locale/zh_TW/LC_MESSAGES/processui.mo
-share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
+%%POLKIT%%share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
 share/qlogging-categories5/libksysguard.categories
