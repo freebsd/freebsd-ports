@@ -1,5 +1,5 @@
 PORTNAME=	kicad
-PORTVERSION=	6.0.7
+PORTVERSION=	6.0.8
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-templates/-/archive/${DISTVERSION}/
 PKGNAMESUFFIX=	-library-tmpl

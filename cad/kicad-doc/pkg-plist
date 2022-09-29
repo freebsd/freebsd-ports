@@ -15,8 +15,6 @@
 %%DOCSDIR%%/help/ca/images/project_tree.png
 %%DOCSDIR%%/help/ca/kicad.html
 %%DOCSDIR%%/help/ca/kicad.pdf
-%%DOCSDIR%%/help/de/cvpcb.html
-%%DOCSDIR%%/help/de/cvpcb.pdf
 %%DOCSDIR%%/help/de/eeschema.html
 %%DOCSDIR%%/help/de/eeschema.pdf
 %%DOCSDIR%%/help/de/gerbview.html
@@ -205,7 +203,6 @@
 %%DOCSDIR%%/help/de/images/copypaste51.png
 %%DOCSDIR%%/help/de/images/copypaste52.png
 %%DOCSDIR%%/help/de/images/copypaste53.png
-%%DOCSDIR%%/help/de/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/de/images/de/3d_window.png
 %%DOCSDIR%%/help/de/images/de/annotate-dialog.png
 %%DOCSDIR%%/help/de/images/de/block_constraints.png
@@ -434,7 +431,6 @@
 %%DOCSDIR%%/help/de/images/icons/config.png
 %%DOCSDIR%%/help/de/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/de/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/de/images/icons/copy.png
 %%DOCSDIR%%/help/de/images/icons/copy_library.png
 %%DOCSDIR%%/help/de/images/icons/copycomponent.png
 %%DOCSDIR%%/help/de/images/icons/create_cmp_file.png
@@ -444,7 +440,6 @@
 %%DOCSDIR%%/help/de/images/icons/dashline.png
 %%DOCSDIR%%/help/de/images/icons/datasheet.png
 %%DOCSDIR%%/help/de/images/icons/delete.png
-%%DOCSDIR%%/help/de/images/icons/delete_association.png
 %%DOCSDIR%%/help/de/images/icons/directory.png
 %%DOCSDIR%%/help/de/images/icons/display_options.png
 %%DOCSDIR%%/help/de/images/icons/down.png
@@ -536,7 +531,6 @@
 %%DOCSDIR%%/help/de/images/icons/language.png
 %%DOCSDIR%%/help/de/images/icons/layers_manager.png
 %%DOCSDIR%%/help/de/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/de/images/icons/left.png
 %%DOCSDIR%%/help/de/images/icons/lib_next.png
 %%DOCSDIR%%/help/de/images/icons/lib_previous.png
 %%DOCSDIR%%/help/de/images/icons/libedit.png
@@ -629,13 +623,6 @@
 %%DOCSDIR%%/help/de/images/icons/reload2.png
 %%DOCSDIR%%/help/de/images/icons/reset_text.png
 %%DOCSDIR%%/help/de/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/de/images/icons/right.png
-%%DOCSDIR%%/help/de/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/de/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/de/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/de/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/de/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/de/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/de/images/icons/save.png
 %%DOCSDIR%%/help/de/images/icons/save_as.png
 %%DOCSDIR%%/help/de/images/icons/save_library.png
@@ -656,7 +643,6 @@
 %%DOCSDIR%%/help/de/images/icons/showtrack.png
 %%DOCSDIR%%/help/de/images/icons/svg_file.png
 %%DOCSDIR%%/help/de/images/icons/swap_layer.png
-%%DOCSDIR%%/help/de/images/icons/text_sketch.png
 %%DOCSDIR%%/help/de/images/icons/three_d.png
 %%DOCSDIR%%/help/de/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/de/images/icons/tools.png
@@ -721,8 +707,6 @@
 %%DOCSDIR%%/help/de/pcbnew.pdf
 %%DOCSDIR%%/help/de/pl_editor.html
 %%DOCSDIR%%/help/de/pl_editor.pdf
-%%DOCSDIR%%/help/en/cvpcb.html
-%%DOCSDIR%%/help/en/cvpcb.pdf
 %%DOCSDIR%%/help/en/eeschema.html
 %%DOCSDIR%%/help/en/eeschema.pdf
 %%DOCSDIR%%/help/en/gerbview.html
@@ -914,7 +898,6 @@
 %%DOCSDIR%%/help/en/images/copypaste51.png
 %%DOCSDIR%%/help/en/images/copypaste52.png
 %%DOCSDIR%%/help/en/images/copypaste53.png
-%%DOCSDIR%%/help/en/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/en/images/drag_element.png
 %%DOCSDIR%%/help/en/images/edit_line.png
 %%DOCSDIR%%/help/en/images/edit_line_end.png
@@ -988,10 +971,8 @@
 %%DOCSDIR%%/help/en/images/en/context_line_move.png
 %%DOCSDIR%%/help/en/images/en/context_line_move_end.png
 %%DOCSDIR%%/help/en/images/en/context_line_move_start.png
-%%DOCSDIR%%/help/en/images/en/context_menu.png
 %%DOCSDIR%%/help/en/images/en/cvpcb_footprint_docfile.png
 %%DOCSDIR%%/help/en/images/en/cvpcb_main_window.png
-%%DOCSDIR%%/help/en/images/en/cvpcb_preference_menu.png
 %%DOCSDIR%%/help/en/images/en/default_hot_key_list.png
 %%DOCSDIR%%/help/en/images/en/dialog_bom.png
 %%DOCSDIR%%/help/en/images/en/dialog_choose_component.png
@@ -1006,11 +987,6 @@
 %%DOCSDIR%%/help/en/images/en/eeschema_filter.png
 %%DOCSDIR%%/help/en/images/en/electricalspacing.png
 %%DOCSDIR%%/help/en/images/en/erc_pointers_info.png
-%%DOCSDIR%%/help/en/images/en/filter_comp.png
-%%DOCSDIR%%/help/en/images/en/filter_comp_and_pincount.png
-%%DOCSDIR%%/help/en/images/en/filter_library.png
-%%DOCSDIR%%/help/en/images/en/filter_none.png
-%%DOCSDIR%%/help/en/images/en/filter_pincount.png
 %%DOCSDIR%%/help/en/images/en/find_dialog.png
 %%DOCSDIR%%/help/en/images/en/footprint_select.png
 %%DOCSDIR%%/help/en/images/en/footprint_view.png
@@ -1023,7 +999,6 @@
 %%DOCSDIR%%/help/en/images/en/frame_example.png
 %%DOCSDIR%%/help/en/images/en/insert_newline_code.png
 %%DOCSDIR%%/help/en/images/en/insert_slashnewline_code.png
-%%DOCSDIR%%/help/en/images/en/lib_table.png
 %%DOCSDIR%%/help/en/images/en/main_toolbar.png
 %%DOCSDIR%%/help/en/images/en/main_window.png
 %%DOCSDIR%%/help/en/images/en/main_window_popup.png
@@ -1141,7 +1116,6 @@
 %%DOCSDIR%%/help/en/images/icons/config.png
 %%DOCSDIR%%/help/en/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/en/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/en/images/icons/copy.png
 %%DOCSDIR%%/help/en/images/icons/copy_library.png
 %%DOCSDIR%%/help/en/images/icons/copycomponent.png
 %%DOCSDIR%%/help/en/images/icons/create_cmp_file.png
@@ -1151,7 +1125,6 @@
 %%DOCSDIR%%/help/en/images/icons/dashline.png
 %%DOCSDIR%%/help/en/images/icons/datasheet.png
 %%DOCSDIR%%/help/en/images/icons/delete.png
-%%DOCSDIR%%/help/en/images/icons/delete_association.png
 %%DOCSDIR%%/help/en/images/icons/directory.png
 %%DOCSDIR%%/help/en/images/icons/display_options.png
 %%DOCSDIR%%/help/en/images/icons/down.png
@@ -1243,7 +1216,6 @@
 %%DOCSDIR%%/help/en/images/icons/language.png
 %%DOCSDIR%%/help/en/images/icons/layers_manager.png
 %%DOCSDIR%%/help/en/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/en/images/icons/left.png
 %%DOCSDIR%%/help/en/images/icons/lib_next.png
 %%DOCSDIR%%/help/en/images/icons/lib_previous.png
 %%DOCSDIR%%/help/en/images/icons/libedit.png
@@ -1336,13 +1308,6 @@
 %%DOCSDIR%%/help/en/images/icons/reload2.png
 %%DOCSDIR%%/help/en/images/icons/reset_text.png
 %%DOCSDIR%%/help/en/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/en/images/icons/right.png
-%%DOCSDIR%%/help/en/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/en/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/en/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/en/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/en/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/en/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/en/images/icons/save.png
 %%DOCSDIR%%/help/en/images/icons/save_as.png
 %%DOCSDIR%%/help/en/images/icons/save_library.png
@@ -1363,7 +1328,6 @@
 %%DOCSDIR%%/help/en/images/icons/showtrack.png
 %%DOCSDIR%%/help/en/images/icons/svg_file.png
 %%DOCSDIR%%/help/en/images/icons/swap_layer.png
-%%DOCSDIR%%/help/en/images/icons/text_sketch.png
 %%DOCSDIR%%/help/en/images/icons/three_d.png
 %%DOCSDIR%%/help/en/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/en/images/icons/tools.png
@@ -1447,8 +1411,6 @@
 %%DOCSDIR%%/help/en/pl_editor.pdf
 %%DOCSDIR%%/help/en/plugins.html
 %%DOCSDIR%%/help/en/plugins.pdf
-%%DOCSDIR%%/help/es/cvpcb.html
-%%DOCSDIR%%/help/es/cvpcb.pdf
 %%DOCSDIR%%/help/es/eeschema.html
 %%DOCSDIR%%/help/es/eeschema.pdf
 %%DOCSDIR%%/help/es/gerbview.html
@@ -1636,7 +1598,6 @@
 %%DOCSDIR%%/help/es/images/copypaste51.png
 %%DOCSDIR%%/help/es/images/copypaste52.png
 %%DOCSDIR%%/help/es/images/copypaste53.png
-%%DOCSDIR%%/help/es/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/es/images/drag_element.png
 %%DOCSDIR%%/help/es/images/edit_line.png
 %%DOCSDIR%%/help/es/images/edit_line_end.png
@@ -1765,7 +1726,6 @@
 %%DOCSDIR%%/help/es/images/icons/config.png
 %%DOCSDIR%%/help/es/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/es/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/es/images/icons/copy.png
 %%DOCSDIR%%/help/es/images/icons/copy_library.png
 %%DOCSDIR%%/help/es/images/icons/copycomponent.png
 %%DOCSDIR%%/help/es/images/icons/create_cmp_file.png
@@ -1775,7 +1735,6 @@
 %%DOCSDIR%%/help/es/images/icons/dashline.png
 %%DOCSDIR%%/help/es/images/icons/datasheet.png
 %%DOCSDIR%%/help/es/images/icons/delete.png
-%%DOCSDIR%%/help/es/images/icons/delete_association.png
 %%DOCSDIR%%/help/es/images/icons/directory.png
 %%DOCSDIR%%/help/es/images/icons/display_options.png
 %%DOCSDIR%%/help/es/images/icons/down.png
@@ -1867,7 +1826,6 @@
 %%DOCSDIR%%/help/es/images/icons/language.png
 %%DOCSDIR%%/help/es/images/icons/layers_manager.png
 %%DOCSDIR%%/help/es/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/es/images/icons/left.png
 %%DOCSDIR%%/help/es/images/icons/lib_next.png
 %%DOCSDIR%%/help/es/images/icons/lib_previous.png
 %%DOCSDIR%%/help/es/images/icons/libedit.png
@@ -1960,13 +1918,6 @@
 %%DOCSDIR%%/help/es/images/icons/reload2.png
 %%DOCSDIR%%/help/es/images/icons/reset_text.png
 %%DOCSDIR%%/help/es/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/es/images/icons/right.png
-%%DOCSDIR%%/help/es/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/es/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/es/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/es/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/es/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/es/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/es/images/icons/save.png
 %%DOCSDIR%%/help/es/images/icons/save_as.png
 %%DOCSDIR%%/help/es/images/icons/save_library.png
@@ -1987,7 +1938,6 @@
 %%DOCSDIR%%/help/es/images/icons/showtrack.png
 %%DOCSDIR%%/help/es/images/icons/svg_file.png
 %%DOCSDIR%%/help/es/images/icons/swap_layer.png
-%%DOCSDIR%%/help/es/images/icons/text_sketch.png
 %%DOCSDIR%%/help/es/images/icons/three_d.png
 %%DOCSDIR%%/help/es/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/es/images/icons/tools.png
@@ -2063,8 +2013,6 @@
 %%DOCSDIR%%/help/es/pcbnew.pdf
 %%DOCSDIR%%/help/es/pl_editor.html
 %%DOCSDIR%%/help/es/pl_editor.pdf
-%%DOCSDIR%%/help/fr/cvpcb.html
-%%DOCSDIR%%/help/fr/cvpcb.pdf
 %%DOCSDIR%%/help/fr/eeschema.html
 %%DOCSDIR%%/help/fr/eeschema.pdf
 %%DOCSDIR%%/help/fr/getting_started_in_kicad.html
@@ -2249,7 +2197,6 @@
 %%DOCSDIR%%/help/fr/images/copypaste51.png
 %%DOCSDIR%%/help/fr/images/copypaste52.png
 %%DOCSDIR%%/help/fr/images/copypaste53.png
-%%DOCSDIR%%/help/fr/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/fr/images/drag_element.png
 %%DOCSDIR%%/help/fr/images/edit_line.png
 %%DOCSDIR%%/help/fr/images/edit_line_end.png
@@ -2399,7 +2346,6 @@
 %%DOCSDIR%%/help/fr/images/icons/config.png
 %%DOCSDIR%%/help/fr/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/fr/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/fr/images/icons/copy.png
 %%DOCSDIR%%/help/fr/images/icons/copy_library.png
 %%DOCSDIR%%/help/fr/images/icons/copycomponent.png
 %%DOCSDIR%%/help/fr/images/icons/create_cmp_file.png
@@ -2409,7 +2355,6 @@
 %%DOCSDIR%%/help/fr/images/icons/dashline.png
 %%DOCSDIR%%/help/fr/images/icons/datasheet.png
 %%DOCSDIR%%/help/fr/images/icons/delete.png
-%%DOCSDIR%%/help/fr/images/icons/delete_association.png
 %%DOCSDIR%%/help/fr/images/icons/directory.png
 %%DOCSDIR%%/help/fr/images/icons/display_options.png
 %%DOCSDIR%%/help/fr/images/icons/down.png
@@ -2499,7 +2444,6 @@
 %%DOCSDIR%%/help/fr/images/icons/language.png
 %%DOCSDIR%%/help/fr/images/icons/layers_manager.png
 %%DOCSDIR%%/help/fr/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/fr/images/icons/left.png
 %%DOCSDIR%%/help/fr/images/icons/lib_next.png
 %%DOCSDIR%%/help/fr/images/icons/lib_previous.png
 %%DOCSDIR%%/help/fr/images/icons/libedit.png
@@ -2592,13 +2536,6 @@
 %%DOCSDIR%%/help/fr/images/icons/reload2.png
 %%DOCSDIR%%/help/fr/images/icons/reset_text.png
 %%DOCSDIR%%/help/fr/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/fr/images/icons/right.png
-%%DOCSDIR%%/help/fr/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/fr/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/fr/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/fr/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/fr/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/fr/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/fr/images/icons/save.png
 %%DOCSDIR%%/help/fr/images/icons/save_as.png
 %%DOCSDIR%%/help/fr/images/icons/save_library.png
@@ -2619,7 +2556,6 @@
 %%DOCSDIR%%/help/fr/images/icons/showtrack.png
 %%DOCSDIR%%/help/fr/images/icons/svg_file.png
 %%DOCSDIR%%/help/fr/images/icons/swap_layer.png
-%%DOCSDIR%%/help/fr/images/icons/text_sketch.png
 %%DOCSDIR%%/help/fr/images/icons/three_d.png
 %%DOCSDIR%%/help/fr/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/fr/images/icons/tools.png
@@ -2800,8 +2736,6 @@
 %%DOCSDIR%%/help/id/images/wires_labels.png
 %%DOCSDIR%%/help/id/kicad.html
 %%DOCSDIR%%/help/id/kicad.pdf
-%%DOCSDIR%%/help/it/cvpcb.html
-%%DOCSDIR%%/help/it/cvpcb.pdf
 %%DOCSDIR%%/help/it/eeschema.html
 %%DOCSDIR%%/help/it/eeschema.pdf
 %%DOCSDIR%%/help/it/gerbview.html
@@ -2962,7 +2896,6 @@
 %%DOCSDIR%%/help/it/images/copypaste51.png
 %%DOCSDIR%%/help/it/images/copypaste52.png
 %%DOCSDIR%%/help/it/images/copypaste53.png
-%%DOCSDIR%%/help/it/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/it/images/drag_element.png
 %%DOCSDIR%%/help/it/images/edit_line.png
 %%DOCSDIR%%/help/it/images/edit_line_end.png
@@ -3054,7 +2987,6 @@
 %%DOCSDIR%%/help/it/images/icons/config.png
 %%DOCSDIR%%/help/it/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/it/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/it/images/icons/copy.png
 %%DOCSDIR%%/help/it/images/icons/copy_library.png
 %%DOCSDIR%%/help/it/images/icons/copycomponent.png
 %%DOCSDIR%%/help/it/images/icons/create_cmp_file.png
@@ -3064,7 +2996,6 @@
 %%DOCSDIR%%/help/it/images/icons/dashline.png
 %%DOCSDIR%%/help/it/images/icons/datasheet.png
 %%DOCSDIR%%/help/it/images/icons/delete.png
-%%DOCSDIR%%/help/it/images/icons/delete_association.png
 %%DOCSDIR%%/help/it/images/icons/directory.png
 %%DOCSDIR%%/help/it/images/icons/display_options.png
 %%DOCSDIR%%/help/it/images/icons/down.png
@@ -3156,7 +3087,6 @@
 %%DOCSDIR%%/help/it/images/icons/language.png
 %%DOCSDIR%%/help/it/images/icons/layers_manager.png
 %%DOCSDIR%%/help/it/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/it/images/icons/left.png
 %%DOCSDIR%%/help/it/images/icons/lib_next.png
 %%DOCSDIR%%/help/it/images/icons/lib_previous.png
 %%DOCSDIR%%/help/it/images/icons/libedit.png
@@ -3249,13 +3179,6 @@
 %%DOCSDIR%%/help/it/images/icons/reload2.png
 %%DOCSDIR%%/help/it/images/icons/reset_text.png
 %%DOCSDIR%%/help/it/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/it/images/icons/right.png
-%%DOCSDIR%%/help/it/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/it/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/it/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/it/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/it/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/it/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/it/images/icons/save.png
 %%DOCSDIR%%/help/it/images/icons/save_as.png
 %%DOCSDIR%%/help/it/images/icons/save_library.png
@@ -3276,7 +3199,6 @@
 %%DOCSDIR%%/help/it/images/icons/showtrack.png
 %%DOCSDIR%%/help/it/images/icons/svg_file.png
 %%DOCSDIR%%/help/it/images/icons/swap_layer.png
-%%DOCSDIR%%/help/it/images/icons/text_sketch.png
 %%DOCSDIR%%/help/it/images/icons/three_d.png
 %%DOCSDIR%%/help/it/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/it/images/icons/tools.png
@@ -3541,8 +3463,6 @@
 %%DOCSDIR%%/help/it/pcbnew.pdf
 %%DOCSDIR%%/help/it/pl_editor.html
 %%DOCSDIR%%/help/it/pl_editor.pdf
-%%DOCSDIR%%/help/ja/cvpcb.html
-%%DOCSDIR%%/help/ja/cvpcb.pdf
 %%DOCSDIR%%/help/ja/eeschema.html
 %%DOCSDIR%%/help/ja/eeschema.pdf
 %%DOCSDIR%%/help/ja/gerbview.html
@@ -3699,7 +3619,6 @@
 %%DOCSDIR%%/help/ja/images/icons/config.png
 %%DOCSDIR%%/help/ja/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/ja/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/ja/images/icons/copy.png
 %%DOCSDIR%%/help/ja/images/icons/copy_library.png
 %%DOCSDIR%%/help/ja/images/icons/copycomponent.png
 %%DOCSDIR%%/help/ja/images/icons/create_cmp_file.png
@@ -3709,7 +3628,6 @@
 %%DOCSDIR%%/help/ja/images/icons/dashline.png
 %%DOCSDIR%%/help/ja/images/icons/datasheet.png
 %%DOCSDIR%%/help/ja/images/icons/delete.png
-%%DOCSDIR%%/help/ja/images/icons/delete_association.png
 %%DOCSDIR%%/help/ja/images/icons/directory.png
 %%DOCSDIR%%/help/ja/images/icons/display_options.png
 %%DOCSDIR%%/help/ja/images/icons/down.png
@@ -3801,7 +3719,6 @@
 %%DOCSDIR%%/help/ja/images/icons/language.png
 %%DOCSDIR%%/help/ja/images/icons/layers_manager.png
 %%DOCSDIR%%/help/ja/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/ja/images/icons/left.png
 %%DOCSDIR%%/help/ja/images/icons/lib_next.png
 %%DOCSDIR%%/help/ja/images/icons/lib_previous.png
 %%DOCSDIR%%/help/ja/images/icons/libedit.png
@@ -3894,13 +3811,6 @@
 %%DOCSDIR%%/help/ja/images/icons/reload2.png
 %%DOCSDIR%%/help/ja/images/icons/reset_text.png
 %%DOCSDIR%%/help/ja/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/ja/images/icons/right.png
-%%DOCSDIR%%/help/ja/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/ja/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/ja/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/ja/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/ja/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/ja/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/ja/images/icons/save.png
 %%DOCSDIR%%/help/ja/images/icons/save_as.png
 %%DOCSDIR%%/help/ja/images/icons/save_library.png
@@ -3921,7 +3831,6 @@
 %%DOCSDIR%%/help/ja/images/icons/showtrack.png
 %%DOCSDIR%%/help/ja/images/icons/svg_file.png
 %%DOCSDIR%%/help/ja/images/icons/swap_layer.png
-%%DOCSDIR%%/help/ja/images/icons/text_sketch.png
 %%DOCSDIR%%/help/ja/images/icons/three_d.png
 %%DOCSDIR%%/help/ja/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/ja/images/icons/tools.png
@@ -4287,8 +4196,6 @@
 %%DOCSDIR%%/help/ja/pl_editor.pdf
 %%DOCSDIR%%/help/ja/plugins.html
 %%DOCSDIR%%/help/ja/plugins.pdf
-%%DOCSDIR%%/help/pl/cvpcb.html
-%%DOCSDIR%%/help/pl/cvpcb.pdf
 %%DOCSDIR%%/help/pl/eeschema.html
 %%DOCSDIR%%/help/pl/eeschema.pdf
 %%DOCSDIR%%/help/pl/gerbview.html
@@ -4368,7 +4275,6 @@
 %%DOCSDIR%%/help/pl/images/copypaste51.png
 %%DOCSDIR%%/help/pl/images/copypaste52.png
 %%DOCSDIR%%/help/pl/images/copypaste53.png
-%%DOCSDIR%%/help/pl/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/pl/images/drag_element.png
 %%DOCSDIR%%/help/pl/images/edit_line.png
 %%DOCSDIR%%/help/pl/images/edit_line_end.png
@@ -4449,7 +4355,6 @@
 %%DOCSDIR%%/help/pl/images/icons/config.png
 %%DOCSDIR%%/help/pl/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/pl/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/pl/images/icons/copy.png
 %%DOCSDIR%%/help/pl/images/icons/copy_library.png
 %%DOCSDIR%%/help/pl/images/icons/copycomponent.png
 %%DOCSDIR%%/help/pl/images/icons/create_cmp_file.png
@@ -4459,7 +4364,6 @@
 %%DOCSDIR%%/help/pl/images/icons/dashline.png
 %%DOCSDIR%%/help/pl/images/icons/datasheet.png
 %%DOCSDIR%%/help/pl/images/icons/delete.png
-%%DOCSDIR%%/help/pl/images/icons/delete_association.png
 %%DOCSDIR%%/help/pl/images/icons/directory.png
 %%DOCSDIR%%/help/pl/images/icons/display_options.png
 %%DOCSDIR%%/help/pl/images/icons/down.png
@@ -4551,7 +4455,6 @@
 %%DOCSDIR%%/help/pl/images/icons/language.png
 %%DOCSDIR%%/help/pl/images/icons/layers_manager.png
 %%DOCSDIR%%/help/pl/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/pl/images/icons/left.png
 %%DOCSDIR%%/help/pl/images/icons/lib_next.png
 %%DOCSDIR%%/help/pl/images/icons/lib_previous.png
 %%DOCSDIR%%/help/pl/images/icons/libedit.png
@@ -4644,13 +4547,6 @@
 %%DOCSDIR%%/help/pl/images/icons/reload2.png
 %%DOCSDIR%%/help/pl/images/icons/reset_text.png
 %%DOCSDIR%%/help/pl/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/pl/images/icons/right.png
-%%DOCSDIR%%/help/pl/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/pl/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/pl/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/pl/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/pl/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/pl/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/pl/images/icons/save.png
 %%DOCSDIR%%/help/pl/images/icons/save_as.png
 %%DOCSDIR%%/help/pl/images/icons/save_library.png
@@ -4671,7 +4567,6 @@
 %%DOCSDIR%%/help/pl/images/icons/showtrack.png
 %%DOCSDIR%%/help/pl/images/icons/svg_file.png
 %%DOCSDIR%%/help/pl/images/icons/swap_layer.png
-%%DOCSDIR%%/help/pl/images/icons/text_sketch.png
 %%DOCSDIR%%/help/pl/images/icons/three_d.png
 %%DOCSDIR%%/help/pl/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/pl/images/icons/tools.png
@@ -5063,8 +4958,6 @@
 %%DOCSDIR%%/help/pl/pcbnew.pdf
 %%DOCSDIR%%/help/pl/pl_editor.html
 %%DOCSDIR%%/help/pl/pl_editor.pdf
-%%DOCSDIR%%/help/ru/cvpcb.html
-%%DOCSDIR%%/help/ru/cvpcb.pdf
 %%DOCSDIR%%/help/ru/eeschema.html
 %%DOCSDIR%%/help/ru/eeschema.pdf
 %%DOCSDIR%%/help/ru/gerbview.html
@@ -5136,7 +5029,6 @@
 %%DOCSDIR%%/help/ru/images/copypaste51.png
 %%DOCSDIR%%/help/ru/images/copypaste52.png
 %%DOCSDIR%%/help/ru/images/copypaste53.png
-%%DOCSDIR%%/help/ru/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/ru/images/edit_line.png
 %%DOCSDIR%%/help/ru/images/edit_line_end.png
 %%DOCSDIR%%/help/ru/images/edit_line_start.png
@@ -5219,7 +5111,6 @@
 %%DOCSDIR%%/help/ru/images/icons/config.png
 %%DOCSDIR%%/help/ru/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/ru/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/ru/images/icons/copy.png
 %%DOCSDIR%%/help/ru/images/icons/copy_library.png
 %%DOCSDIR%%/help/ru/images/icons/copycomponent.png
 %%DOCSDIR%%/help/ru/images/icons/create_cmp_file.png
@@ -5229,7 +5120,6 @@
 %%DOCSDIR%%/help/ru/images/icons/dashline.png
 %%DOCSDIR%%/help/ru/images/icons/datasheet.png
 %%DOCSDIR%%/help/ru/images/icons/delete.png
-%%DOCSDIR%%/help/ru/images/icons/delete_association.png
 %%DOCSDIR%%/help/ru/images/icons/directory.png
 %%DOCSDIR%%/help/ru/images/icons/display_options.png
 %%DOCSDIR%%/help/ru/images/icons/down.png
@@ -5321,7 +5211,6 @@
 %%DOCSDIR%%/help/ru/images/icons/language.png
 %%DOCSDIR%%/help/ru/images/icons/layers_manager.png
 %%DOCSDIR%%/help/ru/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/ru/images/icons/left.png
 %%DOCSDIR%%/help/ru/images/icons/lib_next.png
 %%DOCSDIR%%/help/ru/images/icons/lib_previous.png
 %%DOCSDIR%%/help/ru/images/icons/libedit.png
@@ -5414,13 +5303,6 @@
 %%DOCSDIR%%/help/ru/images/icons/reload2.png
 %%DOCSDIR%%/help/ru/images/icons/reset_text.png
 %%DOCSDIR%%/help/ru/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/ru/images/icons/right.png
-%%DOCSDIR%%/help/ru/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/ru/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/ru/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/ru/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/ru/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/ru/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/ru/images/icons/save.png
 %%DOCSDIR%%/help/ru/images/icons/save_as.png
 %%DOCSDIR%%/help/ru/images/icons/save_library.png
@@ -5441,7 +5323,6 @@
 %%DOCSDIR%%/help/ru/images/icons/showtrack.png
 %%DOCSDIR%%/help/ru/images/icons/svg_file.png
 %%DOCSDIR%%/help/ru/images/icons/swap_layer.png
-%%DOCSDIR%%/help/ru/images/icons/text_sketch.png
 %%DOCSDIR%%/help/ru/images/icons/three_d.png
 %%DOCSDIR%%/help/ru/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/ru/images/icons/tools.png
@@ -5806,8 +5687,6 @@
 %%DOCSDIR%%/help/ru/pl_editor.pdf
 %%DOCSDIR%%/help/ru/plugins.html
 %%DOCSDIR%%/help/ru/plugins.pdf
-%%DOCSDIR%%/help/zh/cvpcb.html
-%%DOCSDIR%%/help/zh/cvpcb.pdf
 %%DOCSDIR%%/help/zh/eeschema.html
 %%DOCSDIR%%/help/zh/eeschema.pdf
 %%DOCSDIR%%/help/zh/gerbview.html
@@ -5896,7 +5775,6 @@
 %%DOCSDIR%%/help/zh/images/copypaste51.png
 %%DOCSDIR%%/help/zh/images/copypaste52.png
 %%DOCSDIR%%/help/zh/images/copypaste53.png
-%%DOCSDIR%%/help/zh/images/cvpcb_main_toolbar.png
 %%DOCSDIR%%/help/zh/images/drag_element.png
 %%DOCSDIR%%/help/zh/images/edit_line.png
 %%DOCSDIR%%/help/zh/images/edit_line_end.png
@@ -6016,7 +5894,6 @@
 %%DOCSDIR%%/help/zh/images/icons/config.png
 %%DOCSDIR%%/help/zh/images/icons/contrast_mode.png
 %%DOCSDIR%%/help/zh/images/icons/copper_layers_setup.png
-%%DOCSDIR%%/help/zh/images/icons/copy.png
 %%DOCSDIR%%/help/zh/images/icons/copy_library.png
 %%DOCSDIR%%/help/zh/images/icons/copycomponent.png
 %%DOCSDIR%%/help/zh/images/icons/create_cmp_file.png
@@ -6026,7 +5903,6 @@
 %%DOCSDIR%%/help/zh/images/icons/dashline.png
 %%DOCSDIR%%/help/zh/images/icons/datasheet.png
 %%DOCSDIR%%/help/zh/images/icons/delete.png
-%%DOCSDIR%%/help/zh/images/icons/delete_association.png
 %%DOCSDIR%%/help/zh/images/icons/directory.png
 %%DOCSDIR%%/help/zh/images/icons/display_options.png
 %%DOCSDIR%%/help/zh/images/icons/down.png
@@ -6118,7 +5994,6 @@
 %%DOCSDIR%%/help/zh/images/icons/language.png
 %%DOCSDIR%%/help/zh/images/icons/layers_manager.png
 %%DOCSDIR%%/help/zh/images/icons/leave_sheet.png
-%%DOCSDIR%%/help/zh/images/icons/left.png
 %%DOCSDIR%%/help/zh/images/icons/lib_next.png
 %%DOCSDIR%%/help/zh/images/icons/lib_previous.png
 %%DOCSDIR%%/help/zh/images/icons/libedit.png
@@ -6211,13 +6086,6 @@
 %%DOCSDIR%%/help/zh/images/icons/reload2.png
 %%DOCSDIR%%/help/zh/images/icons/reset_text.png
 %%DOCSDIR%%/help/zh/images/icons/resize_sheet.png
-%%DOCSDIR%%/help/zh/images/icons/right.png
-%%DOCSDIR%%/help/zh/images/icons/rotate_neg_x.png
-%%DOCSDIR%%/help/zh/images/icons/rotate_neg_y.png
-%%DOCSDIR%%/help/zh/images/icons/rotate_neg_z.png
-%%DOCSDIR%%/help/zh/images/icons/rotate_pos_x.png
-%%DOCSDIR%%/help/zh/images/icons/rotate_pos_y.png
-%%DOCSDIR%%/help/zh/images/icons/rotate_pos_z.png
 %%DOCSDIR%%/help/zh/images/icons/save.png
 %%DOCSDIR%%/help/zh/images/icons/save_as.png
 %%DOCSDIR%%/help/zh/images/icons/save_library.png
@@ -6238,7 +6106,6 @@
 %%DOCSDIR%%/help/zh/images/icons/showtrack.png
 %%DOCSDIR%%/help/zh/images/icons/svg_file.png
 %%DOCSDIR%%/help/zh/images/icons/swap_layer.png
-%%DOCSDIR%%/help/zh/images/icons/text_sketch.png
 %%DOCSDIR%%/help/zh/images/icons/three_d.png
 %%DOCSDIR%%/help/zh/images/icons/tool_ratsnest.png
 %%DOCSDIR%%/help/zh/images/icons/tools.png

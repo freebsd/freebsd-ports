@@ -8034,10 +8034,16 @@
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_28.6x28.6x7.3mm_P18.0mm_P11.6mm.wrl
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_32.0x5.6x17.0mm_P10.0mm_P7.5mm.step
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_32.0x5.6x17.0mm_P10.0mm_P7.5mm.wrl
+%%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_DIGITRON_KBPC_T.step
+%%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_DIGITRON_KBPC_T.wrl
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_DIP-4_W5.08mm_P2.54mm.step
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_DIP-4_W5.08mm_P2.54mm.wrl
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_DIP-4_W7.62mm_P5.08mm.step
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_DIP-4_W7.62mm_P5.08mm.wrl
+%%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_GeneSiC_KBPC_T.step
+%%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_GeneSiC_KBPC_T.wrl
+%%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_GeneSiC_KBPC_W.step
+%%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_GeneSiC_KBPC_W.wrl
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_IXYS_GUFP.step
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_IXYS_GUFP.wrl
 %%DATADIR%%/3dmodels/Diode_THT.3dshapes/Diode_Bridge_Round_D8.9mm.step
@@ -9980,6 +9986,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/VQFN-28-1EP_4x5mm_P0.5mm_EP2.55x3.55mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/VQFN-28-1EP_4x5mm_P0.5mm_EP2.55x3.55mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Vishay_PowerPAK_MLP32_55G.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Vishay_PowerPAK_MLP32_55G.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/WDFN-12-1EP_3x3mm_P0.45mm_EP1.7x2.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/WDFN-12-1EP_3x3mm_P0.45mm_EP1.7x2.5mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/WDFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.4mm.step

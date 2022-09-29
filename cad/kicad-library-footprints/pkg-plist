@@ -932,6 +932,7 @@
 %%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_CUI_SJ1-3533NG_Horizontal_CircularHoles.kicad_mod
 %%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_CUI_SJ1-3535NG_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_CUI_SJ1-3535NG_Horizontal_CircularHoles.kicad_mod
+%%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_CUI_SJ2-3593D-SMT_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_Ledino_KB3SPRS_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_Lumberg_1503_07_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_Audio.pretty/Jack_3.5mm_PJ31060-I_Horizontal.kicad_mod
@@ -1151,6 +1152,7 @@
 %%DATADIR%%/footprints/Connector_Card.pretty/microSD_HC_Hirose_DM3BT-DSF-PEJS.kicad_mod
 %%DATADIR%%/footprints/Connector_Card.pretty/microSD_HC_Hirose_DM3D-SF.kicad_mod
 %%DATADIR%%/footprints/Connector_Card.pretty/microSD_HC_Molex_104031-0811.kicad_mod
+%%DATADIR%%/footprints/Connector_Card.pretty/microSD_HC_Molex_47219-2001.kicad_mod
 %%DATADIR%%/footprints/Connector_Card.pretty/microSD_HC_Wuerth_693072010801.kicad_mod
 %%DATADIR%%/footprints/Connector_Card.pretty/microSIM_JAE_SF53S006VCBR2000.kicad_mod
 %%DATADIR%%/footprints/Connector_Coaxial.pretty/BNC_Amphenol_031-6575_Horizontal.kicad_mod
@@ -6965,6 +6967,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_R5xxxPA_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_RPA60-xxxxSFW.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_RPMx.x-x.0.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_Silvertel_Ag5810.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TDN_5-xxxxWISM_SMD.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TDN_5-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEL12-xxxx_THT.kicad_mod
@@ -7081,6 +7084,7 @@
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Abracon_ABM3B-4Pin_5.0x3.2mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Abracon_ABM3C-4Pin_5.0x3.2mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Abracon_ABM7-2Pin_6.0x3.5mm.kicad_mod
+%%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Abracon_ABM8AIG-4Pin_3.2x2.5mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Abracon_ABM8G-4Pin_3.2x2.5mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Abracon_ABS25-4Pin_8.0x3.8mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_ECS_CSM3X-2Pin_7.6x4.1mm.kicad_mod
@@ -7543,6 +7547,25 @@
 %%DATADIR%%/footprints/Fuse.pretty/Fuse_SunFuse-6HP.kicad_mod
 %%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Blade_ATO_Littelfuse_Pudenz_2_Pin.kicad_mod
 %%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Blade_Mini_Keystone_3568.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Bel_FC-203-22_Lateral_P17.80x5.00mm_D1.17mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Eaton_1A5601-01_Inline_P20.80x6.76mm_D1.70mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Keystone_3512P_Inline_P23.62x7.27mm_D1.02x2.41x1.02x1.57mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Keystone_3512_Inline_P23.62x7.27mm_D1.02x1.57mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Keystone_3517_Inline_P23.11x6.76mm_D1.70mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Keystone_3518P_Inline_P23.11x6.76mm_D2.44x1.70mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_111_Inline_P20.00x5.00mm_D1.05mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_111_Lateral_P18.80x5.00mm_D1.17mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_445-030_Inline_P20.50x5.20mm_D1.30mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_519_Inline_P20.60x5.00mm_D1.00mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_520_Inline_P20.50x5.80mm_D1.30mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Littelfuse_521_Lateral_P17.00x5.00mm_D1.30mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Schurter_CQM_Inline_P20.60x5.00mm_D1.00mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-5x20mm_Schurter_OG_Lateral_P15.00x5.00mm_D1.3mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-6.3x32mm_Littelfuse_102071_Inline_P34.70x7.60mm_D2.00mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-6.3x32mm_Littelfuse_102_122_Inline_P34.21x7.62mm_D1.98mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-6.3x32mm_Littelfuse_102_Inline_P34.21x7.62mm_D2.54mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Clip-6.3x32mm_Littelfuse_122_Inline_P34.21x7.62mm_D2.54mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Cylinder-5x20mm_Bulgin_FX0456_Vertical_Closed.kicad_mod
 %%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Cylinder-5x20mm_Bulgin_FX0457_Horizontal_Closed.kicad_mod
 %%DATADIR%%/footprints/Fuse.pretty/Fuseholder_Cylinder-5x20mm_EATON_H15-V-1_Vertical_Closed.kicad_mod
@@ -7904,6 +7927,12 @@
 %%DATADIR%%/footprints/Inductor_THT.pretty/L_Axial_L9.5mm_D4.0mm_P15.24mm_Horizontal_Fastron_SMCC.kicad_mod
 %%DATADIR%%/footprints/Inductor_THT.pretty/L_Axial_L9.5mm_D4.0mm_P2.54mm_Vertical_Fastron_SMCC.kicad_mod
 %%DATADIR%%/footprints/Inductor_THT.pretty/L_Axial_L9.5mm_D4.0mm_P5.08mm_Vertical_Fastron_SMCC.kicad_mod
+%%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_PulseElectronics_PH9455x105NL_1.kicad_mod
+%%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_PulseElectronics_PH9455x155NL_1.kicad_mod
+%%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_PulseElectronics_PH9455x205NL_1.kicad_mod
+%%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_PulseElectronics_PH9455x405NL_1.kicad_mod
+%%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_PulseElectronics_PH9455x705NL_1.kicad_mod
+%%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_PulseElectronics_PH9455xxx6NL_2.kicad_mod
 %%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_Toroid_Vertical_L19.3mm_W10.8mm_Px6.35mm_Py15.24mm_Bourns_8100.kicad_mod
 %%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_Toroid_Vertical_L21.0mm_W10.0mm_Px5.08mm_Py12.70mm_Murata_5100.kicad_mod
 %%DATADIR%%/footprints/Inductor_THT.pretty/L_CommonMode_Toroid_Vertical_L24.0mm_W16.3mm_Px10.16mm_Py20.32mm_Murata_5200.kicad_mod
@@ -8149,6 +8178,7 @@
 %%DATADIR%%/footprints/LED_SMD.pretty/LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm.kicad_mod
 %%DATADIR%%/footprints/LED_SMD.pretty/LED_SK6812_EC15_1.5x1.5mm.kicad_mod
 %%DATADIR%%/footprints/LED_SMD.pretty/LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm.kicad_mod
+%%DATADIR%%/footprints/LED_SMD.pretty/LED_WS2812B-2020_PLCC4_2.0x2.0mm.kicad_mod
 %%DATADIR%%/footprints/LED_SMD.pretty/LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm.kicad_mod
 %%DATADIR%%/footprints/LED_SMD.pretty/LED_WS2812_PLCC6_5.0x5.0mm_P1.6mm.kicad_mod
 %%DATADIR%%/footprints/LED_SMD.pretty/LED_Yuji_5730.kicad_mod
@@ -8627,6 +8657,7 @@
 %%DATADIR%%/footprints/OptoDevice.pretty/Everlight_ITR8307.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Everlight_ITR8307F43.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Everlight_ITR8307_Reverse.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Everlight_ITR9608-F.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Finder_34.81.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Hamamatsu_C12880.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Hamamatsu_S13360-30CS.kicad_mod
@@ -8644,6 +8675,7 @@
 %%DATADIR%%/footprints/OptoDevice.pretty/LaserDiode_TO38ICut-3.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/LaserDiode_TO5-D9-3.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/LaserDiode_TO56-3.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_Bivar_RLP1-400-650.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_Dialight_515-1064F.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_LPF-C012303S.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Lightpipe_LPF-C013301S.kicad_mod
@@ -8656,13 +8688,16 @@
 %%DATADIR%%/footprints/OptoDevice.pretty/ONSemi_QSE15x.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/OnSemi_CASE100AQ.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/OnSemi_CASE100CY.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Osram_BP104-SMD.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Osram_BPW34S-SMD.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_BPW82.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_DIL2_4.3x4.65mm_P5.08mm.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_LPT80A.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_SFH205.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_SFH225.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Osram_SFH2430.kicad_mod
+%%DATADIR%%/footprints/OptoDevice.pretty/Osram_SFH2440.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_SFH9x0x.kicad_mod
-%%DATADIR%%/footprints/OptoDevice.pretty/Osram_SMD-DIL2_4.5x4.0mm.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Osram_SMD-SmartDIL.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/Panasonic_APV-AQY_SSOP-4_4.45x2.65mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/OptoDevice.pretty/PerkinElmer_VTL5C.kicad_mod
@@ -12091,6 +12126,7 @@
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_CurrentSense_8.4x7.2mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Bel_S558-5999-T7-F.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Bourns_PT61017PEL.kicad_mod
+%%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Bourns_PT61020EL.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_HALO_TG111-MSC13.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N2_SO-16_7.11x12.7mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N5_SO-16_7.11x12.7mm.kicad_mod
@@ -12167,6 +12203,7 @@
 %%DATADIR%%/footprints/Transformer_THT.pretty/Transformer_Toroid_Tapped_Horizontal_D14.0mm_Amidon-T50.kicad_mod
 %%DATADIR%%/footprints/Transformer_THT.pretty/Transformer_Toroid_Tapped_Horizontal_D9.0mm_Amidon-T30.kicad_mod
 %%DATADIR%%/footprints/Transformer_THT.pretty/Transformer_Wuerth_750343373.kicad_mod
+%%DATADIR%%/footprints/Transformer_THT.pretty/Transformer_Wuerth_760871131.kicad_mod
 %%DATADIR%%/footprints/Transistor_Power_Module.pretty/Infineon_AG-ECONO2.kicad_mod
 %%DATADIR%%/footprints/Transistor_Power_Module.pretty/Infineon_EasyPIM-1B.kicad_mod
 %%DATADIR%%/footprints/Transistor_Power_Module.pretty/Infineon_EasyPIM-2B.kicad_mod
@@ -12287,4 +12324,5 @@
 %%DATADIR%%/footprints/Varistor.pretty/RV_Disc_D9mm_W5.5mm_P5mm.kicad_mod
 %%DATADIR%%/footprints/Varistor.pretty/RV_Disc_D9mm_W5.7mm_P5mm.kicad_mod
 %%DATADIR%%/footprints/Varistor.pretty/RV_Disc_D9mm_W6.1mm_P5mm.kicad_mod
+%%DATADIR%%/footprints/Varistor.pretty/RV_Rect_V25S440P_L26.5mm_W8.2mm_P12.7mm.kicad_mod
 %%DATADIR%%/template/fp-lib-table
