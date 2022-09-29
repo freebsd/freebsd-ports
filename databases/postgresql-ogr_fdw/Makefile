@@ -1,7 +1,6 @@
 PORTNAME=	ogr_fdw
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -24,8 +23,8 @@ MAKE_ENV=	USE_PGXS=1
 
 PLIST_FILES=	bin/ogr_fdw_info \
 		lib/postgresql/ogr_fdw.so \
-		share/postgresql/extension/ogr_fdw--1.0--1.1.sql \
-		share/postgresql/extension/ogr_fdw--1.1.sql \
+		share/postgresql/extension/ogr_fdw--1.0--${PORTVERSION:R}.sql \
+		share/postgresql/extension/ogr_fdw--${PORTVERSION:R}.sql \
 		share/postgresql/extension/ogr_fdw.control
 
 post-install:
