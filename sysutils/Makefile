@@ -138,6 +138,7 @@
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
+    SUBDIR += bsdebfetch
     SUBDIR += bsdfan
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
