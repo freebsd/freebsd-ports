@@ -1,6 +1,6 @@
 PORTNAME=	liblxi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16
+DISTVERSION=	1.17
 CATEGORIES=	misc
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Library for communicating with LXI compatible instruments
 WWW=		https://lxi-tools.github.io
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libxml2.so:textproc/libxml2
