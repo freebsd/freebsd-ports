@@ -1,5 +1,5 @@
 PORTNAME=	jplephem
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,6 +24,6 @@ SHEBANG_FILES=	test.sh	bin/doctest.sh bin/parse_zzidmap.sh bin/benchmark.py
 NO_ARCH=	yes
 
 do-test:	install
-	(cd ${WRKSRC} && ./test.sh)
+	(cd ${WRKSRC} && ${SETENV} PYTHON=${PYTHON_CMD} ./test.sh)
 
 .include <bsd.port.mk>
