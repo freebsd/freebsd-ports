@@ -1,0 +1,2 @@
+secure.py lock is a lightweight package that adds optional security headers for
+Python web frameworks.

@@ -975,6 +975,7 @@
     SUBDIR += py-scp
     SUBDIR += py-scramp
     SUBDIR += py-scrypt
+    SUBDIR += py-secure
     SUBDIR += py-securesystemslib
     SUBDIR += py-sequoia
     SUBDIR += py-service_identity
