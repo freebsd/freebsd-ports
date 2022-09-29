@@ -404,7 +404,6 @@
 %%DATADIR%%/Europe/Tallinn
 %%DATADIR%%/Europe/Tirane
 %%DATADIR%%/Europe/Ulyanovsk
-%%DATADIR%%/Europe/Uzhgorod
 %%DATADIR%%/Europe/Vaduz
 %%DATADIR%%/Europe/Vatican
 %%DATADIR%%/Europe/Vienna
@@ -412,7 +411,6 @@
 %%DATADIR%%/Europe/Volgograd
 %%DATADIR%%/Europe/Warsaw
 %%DATADIR%%/Europe/Zagreb
-%%DATADIR%%/Europe/Zaporozhye
 %%DATADIR%%/Europe/Zurich
 %%DATADIR%%/Factory
 %%DATADIR%%/GMT
@@ -547,6 +545,8 @@
 %%BACKWARD%%%%DATADIR%%/Europe/Belfast
 %%BACKWARD%%%%DATADIR%%/Europe/Kiev
 %%BACKWARD%%%%DATADIR%%/Europe/Tiraspol
+%%BACKWARD%%%%DATADIR%%/Europe/Uzhgorod
+%%BACKWARD%%%%DATADIR%%/Europe/Zaporozhye
 %%BACKWARD%%%%DATADIR%%/GB
 %%BACKWARD%%%%DATADIR%%/GB-Eire
 %%BACKWARD%%%%DATADIR%%/GMT+0
