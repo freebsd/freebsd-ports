@@ -260,7 +260,7 @@ you update your ports collection, before attempting any port upgrades.
   then be deleted afterwards, if not empty.
 
 20220625:
-AFFECTS: users of sysutils/fusefs-bindfs
+  AFFECTS: users of sysutils/fusefs-bindfs
   AUTHOR: doralitze@chaotikum.org
 
   Bindfs defaults to use direct I/O since version 1.16. While this results
@@ -272,7 +272,7 @@ AFFECTS: users of sysutils/fusefs-bindfs
   2. Upgrade your application in order to query mapping guards
 
 20220623:
-AFFECTS: users of science/gramps
+  AFFECTS: users of science/gramps
   AUTHOR: fernape@FreeBSD.org
 
   databases/py-bsddb3 is deprecated and will be removed in the future. With that
@@ -282,7 +282,7 @@ AFFECTS: users of science/gramps
   as database.
 
 20220620:
-AFFECTS: users of www/selenium
+  AFFECTS: users of www/selenium
   AUTHOR: fernape@FreeBSD.org
 
   The port has changed startup args so if you are using selenium_args= in
@@ -1146,8 +1146,8 @@ AFFECTS: users of www/selenium
     # portupgrade -o security/clamav-lts security/clamav
 
 20211006:
-AFFECTS: users of misc/freebsd-doc-*
-AUTHOR: blackend@FreeBSD.org
+  AFFECTS: users of misc/freebsd-doc-*
+  AUTHOR: blackend@FreeBSD.org
 
 The misc/freebsd-doc-* ports have been updated to the new doc toolchain,
 and use a somewhat different arrangement of directories and symlinks,
