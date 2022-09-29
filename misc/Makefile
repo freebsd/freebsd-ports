@@ -32,6 +32,7 @@
     SUBDIR += broot
     SUBDIR += bsod
     SUBDIR += buffer
+    SUBDIR += caffe
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib

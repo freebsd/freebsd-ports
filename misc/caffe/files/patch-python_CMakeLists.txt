@@ -1,0 +1,25 @@
+--- python/CMakeLists.txt.orig	2020-02-13 07:20:36 UTC
++++ python/CMakeLists.txt
+@@ -23,12 +23,12 @@ endif()
+ 
+ # ---[ Install
+ # scripts
+-file(GLOB python_files *.py requirements.txt)
+-install(FILES ${python_files} DESTINATION python)
++#file(GLOB python_files *.py requirements.txt)
++#install(FILES ${python_files} DESTINATION python)
+ 
+ # module
+ install(DIRECTORY caffe
+-    DESTINATION python
++    DESTINATION ${FREEBSD_PYTHONPREFIX_SITELIBDIR}/caffe
+     FILES_MATCHING
+     PATTERN "*.py"
+     PATTERN "ilsvrc_2012_mean.npy"
+@@ -36,5 +36,5 @@ install(DIRECTORY caffe
+     )
+ 
+ # _caffe.so
+-install(TARGETS pycaffe  DESTINATION python/caffe)
++install(TARGETS pycaffe  DESTINATION ${FREEBSD_PYTHONPREFIX_SITELIBDIR}/caffe)
+ 
