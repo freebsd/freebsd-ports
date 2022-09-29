@@ -410,6 +410,7 @@
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2
     SUBDIR += py-pyEDFlib
+    SUBDIR += py-pyct
     SUBDIR += py-pyfiglet
     SUBDIR += py-pykml
     SUBDIR += py-pypatent

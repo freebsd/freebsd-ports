@@ -1,0 +1,8 @@
+pyct is a utility package that includes:
+* pyct.cmd: Makes various commands available to other packages. The same
+  commands are available from within python. Can either add new subcommands
+  to an existing argparse based command if the module has an existing command,
+  or create the entire command if the module has no existing command. Currently,
+  there are commands for copying examples and fetching data.
+* pyct.build: Provides various commands to help package building, primarily as a
+  convenience for project maintainers.
