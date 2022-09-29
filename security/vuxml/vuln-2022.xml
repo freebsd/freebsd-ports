@@ -1,3 +1,42 @@
+  <vuln vid="5a1c2e06-3fb7-11ed-a402-b42e991fc52e">
+    <topic>unbound -- Non-Responsive Delegation Attack</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.16.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+	A vulnerability named 'Non-Responsive Delegation Attack'
+	(NRDelegation Attack) has been discovered in various DNS
+	resolving software. The NRDelegation Attack works by having
+	a malicious delegation with a considerable number of non
+	responsive nameservers. The attack starts by querying a
+	resolver for a record that relies on those unresponsive
+	nameservers. The attack can cause a resolver to spend a lot
+	of time/resources resolving records under a malicious
+	delegation point where a considerable number of unresponsive
+	NS records reside. It can trigger high CPU usage in some
+	resolver implementations that continually look in the cache
+	for resolved NS records in that delegation.
+      </p>
+	<blockquote cite="https://www.cvedetails.com/cve/CVE-2022-3204">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3204</cvename>
+      <url>https://nlnetlabs.nl/downloads/unbound/CVE-2022-3204.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-09-26</discovery>
+      <entry>2022-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb902a77-3f43-11ed-9402-901b0e9408dc">
     <topic>Matrix clients -- several vulnerabilities</topic>
     <affects>
