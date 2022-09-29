@@ -20,6 +20,12 @@ GL_COMMIT=	4d9092861f57bbb4a8e64d14b29ec6aaa1c9190f
 PLIST_FILES=	sbin/${PORTNAME} \
 		share/man/man8/${PORTNAME}.8.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400071
+IGNORE=		uses struct sysctl_oid definition previous FreeBSD 1400071
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
@@ -32,4 +38,4 @@ USES+=	ncurses
 USES+=	ncurses:port
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
