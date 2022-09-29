@@ -39,10 +39,6 @@ PLIST_SUB=	PCSUFX="${PCSUFX}"
 PCSUFX=	32
 .endif
 
-.if ${ARCH} == riscv64
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_tbb_tools__api_ittnotify__config.h
-.endif
-
 .if ${ARCH} == powerpc64
 CMAKE_ARGS+=	-DTBB_ENABLE_IPO:BOOL=OFF
 .endif
