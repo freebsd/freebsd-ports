@@ -1,5 +1,6 @@
 PORTNAME=	aiomcache
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe python:3.7+
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
+
+post-extract:
+	@${MV} ${WRKSRC}/tests ${WRKSRC}/aiomcache/
 
 .include <bsd.port.mk>
