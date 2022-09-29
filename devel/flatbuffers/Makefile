@@ -1,7 +1,6 @@
 PORTNAME=	flatbuffers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.8
-PORTEPOCH=	1
+DISTVERSION=	22.9.24
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ GH_ACCOUNT=	google
 
 CMAKE_ON=	FLATBUFFERS_BUILD_SHAREDLIB
 CMAKE_OFF=	FLATBUFFERS_BUILD_FLATLIB FLATBUFFERS_BUILD_TESTS
-CMAKE_TESTING_ON=	FLATBUFFERS_BUILD_TESTS # one test fails, see https://github.com/google/flatbuffers/issues/7009
+CMAKE_TESTING_ON=	FLATBUFFERS_BUILD_TESTS # one test fails, see https://github.com/google/flatbuffers/issues/7009 and https://github.com/google/flatbuffers/issues/7556
 
 BINARY_ALIAS=	git=false python3=${PYTHON_CMD}
 
