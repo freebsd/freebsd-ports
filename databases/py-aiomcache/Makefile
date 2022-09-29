@@ -9,7 +9,7 @@ COMMENT=	Minimal asyncio memcached client
 WWW=		https://github.com/aio-libs/aiomcache/
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe python:3.7+
 CPE_VENDOR=	${PORTNAME}_project
