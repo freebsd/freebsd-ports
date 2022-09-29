@@ -4966,7 +4966,6 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/Transforms.capi.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Transforms/Transforms.capi.h.inc
 %%MLIR%%llvm-devel/include/mlir/Transforms/ViewOpGraph.h
-%%GOLD%%llvm-devel/lib/LLVMgold.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h

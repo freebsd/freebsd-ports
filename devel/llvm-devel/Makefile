@@ -166,6 +166,7 @@ STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+GOLD_PLIST_FILES=	${LLVM_DIR}/lib/LLVMgold.so
 
 CONFLICTS_INSTALL=	llvm-devel llvm-devel-lite
 
@@ -501,8 +502,7 @@ build-plist:
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(${MLIR_PATTERN})/) {printf "%%%%MLIR%%%%"} \
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
-	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
-	    if ($$0 !~ /lib[a-z]*_rt/) {print} \
+	    if ($$0 !~ /(lib[a-z]*_rt|LLVMgold)/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
