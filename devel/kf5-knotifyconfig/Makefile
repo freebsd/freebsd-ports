@@ -18,6 +18,7 @@ USE_XORG=	x11
 
 OPTIONS_DEFINE=		AUDIO
 OPTIONS_DEFAULT=	AUDIO
+OPTIONS_EXCLUDE_purecap=AUDIO
 
 AUDIO_DESC=		Audio notifications/text-to-speech support
 AUDIO_USE=		QT=speech
