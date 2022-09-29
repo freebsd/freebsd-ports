@@ -1,7 +1,7 @@
 PORTNAME=	algol68g
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	lang
-MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
+MASTER_SITES=	https://jmvdveer.home.xs4all.nl/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Algol 68 Genie compiler
