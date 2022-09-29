@@ -1,8 +1,12 @@
 PORTNAME=	sdl2
 DISTVERSION=	2.24.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
+
+PATCH_SITES=	https://github.com/libsdl-org/SDL/commit/
+PATCHFILES=	a204ef50bbf20b77083c0a14124e673efc3a53c6.patch:-p1
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
