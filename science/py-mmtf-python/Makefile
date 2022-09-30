@@ -1,6 +1,6 @@
 PORTNAME=	mmtf-python
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,12 +11,15 @@ WWW=		https://github.com/rcsb/mmtf-python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.0:devel/py-msgpack@${PY_FLAVOR} \
+		${PYNUMPY}
 
 USES=		python:3.6+
+USE_PYTHON=	distutils autoplist
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcsb
-USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 post-build:
