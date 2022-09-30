@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.9
+DISTVERSION=	0.10.0
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -109,8 +109,8 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:eb0633c739ef:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:df85cb5026fc:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:gomatrixserverlib:91d455cd3621:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:2ce51dd4a42c:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.15:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
