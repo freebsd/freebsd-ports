@@ -323,6 +323,7 @@
     SUBDIR += runner
     SUBDIR += rxvt-unicode
     SUBDIR += sakura
+    SUBDIR += salut
     SUBDIR += sbxkb
     SUBDIR += screen-message
     SUBDIR += screengrab
