@@ -11,7 +11,7 @@ LICENSE_NAME=	ICU license
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	__uint128_t is only implemented on 64-bit platforms
 
 LIB_DEPENDS=	libuv.so:devel/libuv
@@ -22,6 +22,7 @@ USE_GITLAB=	yes
 GL_COMMIT=	572f79bb4f0f84a8b16c3892c894c2b9ed64b458
 
 CFLAGS_powerpc64=	-Datomic_testandset_64=atomic_testandset_long
+CFLAGS_powerpc64le=	-Datomic_testandset_64=atomic_testandset_long
 CFLAGS_riscv64=	-Datomic_testandset_64=atomic_testandset_long
 MAKEFILE=	GNUmakefile
 
