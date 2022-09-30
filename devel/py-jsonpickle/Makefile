@@ -1,5 +1,5 @@
 PORTNAME=	jsonpickle
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 
 USES=		cpe python:3.6+
+USE_PYTHON=	distutils autoplist pytest
+
 CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
