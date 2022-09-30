@@ -1,6 +1,6 @@
-TIMESTAMP = 1660861168
-SHA256 (hashicorp-consul-template-v0.29.2_GH0.tar.gz) = 9834ff3d346fcc29be6cdbd0ed3022ad1b4cec2839199175655bdabeed96e735
-SIZE (hashicorp-consul-template-v0.29.2_GH0.tar.gz) = 258127
+TIMESTAMP = 1664577219
+SHA256 (hashicorp-consul-template-v0.29.3_GH0.tar.gz) = 1381c924f37ef712d9e152a5000c98e9b56044e6d1c9ac4e7ce6b4bfedf4cdaa
+SIZE (hashicorp-consul-template-v0.29.3_GH0.tar.gz) = 262513
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 053a61c4b0d78e6978600c99562f04d053993c428d549a20b627151cf1aabbae
