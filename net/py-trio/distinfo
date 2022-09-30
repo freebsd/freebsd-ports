@@ -1,3 +1,3 @@
-TIMESTAMP = 1656239400
-SHA256 (trio-0.21.0.tar.gz) = 523f39b7b69eef73501cebfe1aafd400a9aad5b03543a0eded52952488ff1c13
-SIZE (trio-0.21.0.tar.gz) = 446500
+TIMESTAMP = 1664567440
+SHA256 (trio-0.22.0.tar.gz) = ce68f1c5400a47b137c5a4de72c7c901bd4e7a24fbdebfe9b41de8c6c04eaacf
+SIZE (trio-0.22.0.tar.gz) = 472205
