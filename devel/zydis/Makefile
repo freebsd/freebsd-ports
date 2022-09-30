@@ -10,7 +10,7 @@ WWW=		https://zydis.re
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 riscv64
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	see definitions in include/Zycore/Defines.h
 
 USES=		cmake cpe dos2unix localbase:ldflags
