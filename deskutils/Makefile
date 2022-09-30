@@ -176,7 +176,6 @@
     SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
-    SUBDIR += myitcrm
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note
