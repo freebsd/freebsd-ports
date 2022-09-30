@@ -12,6 +12,8 @@ WWW=		https://github.com/SoptikHa2/desed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: error[E0308]: mismatched types, see https://gitlab.com/rust-kqueue/rust-kqueue-sys/-/issues/3
+
 RUN_DEPENDS=	gsed:textproc/gsed
 
 USES=		cargo
