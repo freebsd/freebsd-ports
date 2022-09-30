@@ -4,7 +4,6 @@
     SUBDIR += amule-devel
     SUBDIR += arbitrum-avm
     SUBDIR += autoscan
-    SUBDIR += awgg
     SUBDIR += bazarr
     SUBDIR += bitcoin
     SUBDIR += bitcoin-daemon

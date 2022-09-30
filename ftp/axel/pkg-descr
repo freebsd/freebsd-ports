@@ -1,3 +1,0 @@
-Axel tries to accelerate downloads by opening more than one connection to a
-server (possibly to different servers). Because of its size it might also
-be useful as a wget replacement on bootdisks and other small systems.
