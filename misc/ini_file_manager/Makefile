@@ -11,7 +11,7 @@ WWW=		https://sourceforge.net/projects/ini-files/
 
 LICENSE=	MIT
 
-EXPIRATION_DATE=2022-09-30
+EXPIRATION_DATE=2022-12-31
 
 USES=		ada zip dos2unix
 

@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 
 # PR 248674
 DEPRECATED=	Based on way end-of-life version of GCC, has issues, and is unmaintained
-EXPIRATION_DATE=2022-02-28
+EXPIRATION_DATE=2022-12-31
 
 .include "${.CURDIR}/Makefile.common"
 
