@@ -547,7 +547,6 @@
     SUBDIR += mapyrus
     SUBDIR += matplotlib-cpp
     SUBDIR += matplotplusplus
-    SUBDIR += megapov
     SUBDIR += meh
     SUBDIR += mesa-demos
     SUBDIR += mesa-devel
