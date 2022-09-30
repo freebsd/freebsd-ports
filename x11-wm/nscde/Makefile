@@ -9,6 +9,9 @@ WWW=		https://github.com/NsCDE/NsCDE
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on expired shells/ksh2020
+EXPIRATION_DATE=2022-12-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
