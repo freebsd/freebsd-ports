@@ -32,6 +32,8 @@ DESKTOP_ENTRIES="Dust3D" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	skipv:unstable
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc || ${ARCH} == riscv64

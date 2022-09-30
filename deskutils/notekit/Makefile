@@ -18,6 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	blackhole89
 GH_TAGNAME=	f0d0781
 
+PORTSCOUT=	skipv:latest-deb
+
 post-patch:
 	@${REINPLACE_CMD} -e '/workaround for old jsoncpp/d' \
 		${WRKSRC}/mainwindow.cpp
