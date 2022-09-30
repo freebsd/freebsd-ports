@@ -377,7 +377,6 @@
     SUBDIR += libmaxminddb
     SUBDIR += libmdf
     SUBDIR += libmediawiki
-    SUBDIR += libmms
     SUBDIR += libnatpmp
     SUBDIR += libnet
     SUBDIR += libnfs
