@@ -362,6 +362,7 @@
     SUBDIR += swaylock-effects
     SUBDIR += swaync
     SUBDIR += swayr
+    SUBDIR += swayrbar
     SUBDIR += swaysettings
     SUBDIR += sxhkd
     SUBDIR += sxpc
