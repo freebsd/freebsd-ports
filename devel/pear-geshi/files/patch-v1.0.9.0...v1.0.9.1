@@ -1,0 +1,3723 @@
+diff --git geshi.php geshi.php
+index 4effa48..cf5e163 100644
+--- geshi.php 2017-05-13 19:11:19 UTC
++++ geshi.php 2022-09-15 20:03:19 UTC
+@@ -43 +43 @@
+-define('GESHI_VERSION', '1.0.9.0');
++define('GESHI_VERSION', '1.0.9.1');
+@@ -629,0 +630,13 @@ class GeSHi {
++    /**
++     * Clean up the language name to prevent malicious code injection
++     *
++     * @param string $language The name of the language to strip
++     * @since 1.0.9.1
++     */
++    public function strip_language_name($language) {
++        $language = preg_replace('#[^a-zA-Z0-9\-_]#', '', $language);
++        $language = strtolower($language);
++
++        return $language;
++    }
++
+@@ -649,3 +662 @@ class GeSHi {
+-        $language = preg_replace('#[^a-zA-Z0-9\-_]#', '', $language);
+-
+-        $language = strtolower($language);
++        $language = $this->strip_language_name($language);
+@@ -1475 +1486 @@ class GeSHi {
+-                'ini' => array('ini', 'desktop'),
++                'ini' => array('ini', 'desktop', 'vbp'),
+@@ -1509,2 +1520,2 @@ class GeSHi {
+-                'vb' => array('bas'),
+-                'vbnet' => array(),
++                'vb' => array('bas', 'ctl', 'frm'),
++                'vbnet' => array('vb', 'sln'),
+@@ -1513 +1524 @@ class GeSHi {
+-                'xml' => array('xml', 'svg', 'xrc'),
++                'xml' => array('xml', 'svg', 'xrc', 'vbproj', 'csproj', 'userprefs', 'resx', 'stetic', 'settings', 'manifest', 'myapp'),
+@@ -1961,0 +1973,5 @@ class GeSHi {
++        // check whether language_data is available
++        if (empty($this->language_data)) {
++            return false;
++        }
++
+@@ -2143 +2159 @@ class GeSHi {
+-    public function parse_code () {
++    public function parse_code() {
+@@ -2150,0 +2167,5 @@ class GeSHi {
++        // check whether language_data is available
++        if (empty($this->language_data)) {
++            $this->error = GESHI_ERROR_NO_SUCH_LANG;
++        }
++
+@@ -4698 +4719,3 @@ class GeSHi {
+-                $callback_2 = create_function('$matches', 'return "[" . str_replace("|", "", $matches[1]) . "]";');
++                $callback_2 = function($matches) {
++                    return "[" . str_replace("|", "", $matches[1]) . "]";
++                };
+diff --git geshi/4cs.php geshi/4cs.php
+index cae453f..228d523 100644
+--- geshi/4cs.php 2017-05-13 19:11:19 UTC
++++ geshi/4cs.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/6502acme.php geshi/6502acme.php
+index a11a108..5d40da9 100644
+--- geshi/6502acme.php 2017-05-13 19:11:19 UTC
++++ geshi/6502acme.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/6502kickass.php geshi/6502kickass.php
+index 9da8f24..1ddbc59 100644
+--- geshi/6502kickass.php 2017-05-13 19:11:19 UTC
++++ geshi/6502kickass.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/6502tasm.php geshi/6502tasm.php
+index 4ce348f..539db01 100644
+--- geshi/6502tasm.php 2017-05-13 19:11:19 UTC
++++ geshi/6502tasm.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/68000devpac.php geshi/68000devpac.php
+index 96a9d08..db5c85b 100644
+--- geshi/68000devpac.php 2017-05-13 19:11:19 UTC
++++ geshi/68000devpac.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/abap.php geshi/abap.php
+index d9df3ea..99536f0 100644
+--- geshi/abap.php 2017-05-13 19:11:19 UTC
++++ geshi/abap.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/actionscript.php geshi/actionscript.php
+index bbafbdf..d350a18 100644
+--- geshi/actionscript.php 2017-05-13 19:11:19 UTC
++++ geshi/actionscript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/actionscript3.php geshi/actionscript3.php
+index 20dcf5d..351b6b0 100644
+--- geshi/actionscript3.php 2017-05-13 19:11:19 UTC
++++ geshi/actionscript3.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ada.php geshi/ada.php
+index bad8595..0eb0b7c 100644
+--- geshi/ada.php 2017-05-13 19:11:19 UTC
++++ geshi/ada.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/aimms.php geshi/aimms.php
+index ea49b8e..6c65391 100644
+--- geshi/aimms.php 2017-05-13 19:11:19 UTC
++++ geshi/aimms.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/algol68.php geshi/algol68.php
+index f1555c6..956d35c 100644
+--- geshi/algol68.php 2017-05-13 19:11:19 UTC
++++ geshi/algol68.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/apache.php geshi/apache.php
+index da1f5dd..8db1b9a 100644
+--- geshi/apache.php 2017-05-13 19:11:19 UTC
++++ geshi/apache.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/applescript.php geshi/applescript.php
+index e71eb32..c46912f 100644
+--- geshi/applescript.php 2017-05-13 19:11:19 UTC
++++ geshi/applescript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/apt_sources.php geshi/apt_sources.php
+index 49c51b0..6e97909 100644
+--- geshi/apt_sources.php 2017-05-13 19:11:19 UTC
++++ geshi/apt_sources.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/arm.php geshi/arm.php
+index 86b71e1..8ac5264 100644
+--- geshi/arm.php 2017-05-13 19:11:19 UTC
++++ geshi/arm.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/asm.php geshi/asm.php
+index 606f2f4..44a70ca 100644
+--- geshi/asm.php 2017-05-13 19:11:19 UTC
++++ geshi/asm.php 2022-09-15 20:03:19 UTC
+@@ -11 +11 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/asp.php geshi/asp.php
+index 6ba8f98..db9daae 100644
+--- geshi/asp.php 2017-05-13 19:11:19 UTC
++++ geshi/asp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/asymptote.php geshi/asymptote.php
+index a75a629..a701ae9 100644
+--- geshi/asymptote.php 2017-05-13 19:11:19 UTC
++++ geshi/asymptote.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/autoconf.php geshi/autoconf.php
+index 9c1cf12..f7090fe 100644
+--- geshi/autoconf.php 2017-05-13 19:11:19 UTC
++++ geshi/autoconf.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/autohotkey.php geshi/autohotkey.php
+index 4a47d73..03a03ab 100644
+--- geshi/autohotkey.php 2017-05-13 19:11:19 UTC
++++ geshi/autohotkey.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/autoit.php geshi/autoit.php
+index 5742afe..2286aae 100644
+--- geshi/autoit.php 2017-05-13 19:11:19 UTC
++++ geshi/autoit.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/avisynth.php geshi/avisynth.php
+index cbd8a12..ea9fc9a 100644
+--- geshi/avisynth.php 2017-05-13 19:11:19 UTC
++++ geshi/avisynth.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/awk.php geshi/awk.php
+index e94e64f..f116b81 100644
+--- geshi/awk.php 2017-05-13 19:11:19 UTC
++++ geshi/awk.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/bascomavr.php geshi/bascomavr.php
+index 96ec609..90d8506 100644
+--- geshi/bascomavr.php 2017-05-13 19:11:19 UTC
++++ geshi/bascomavr.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/bash.php geshi/bash.php
+index d975215..939b23a 100644
+--- geshi/bash.php 2017-05-13 19:11:19 UTC
++++ geshi/bash.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -90,0 +91 @@ $language_data = array (
++        // Control flow keywords and super-important builtins
+@@ -93 +94 @@ $language_data = array (
+-            'if', 'in', 'select', 'set', 'then', 'until', 'while', 'time'
++            'if', 'in', 'select', 'set', 'then', 'time', 'until', 'while'
+@@ -94,0 +96 @@ $language_data = array (
++        // Common Unix commands
+@@ -268 +270 @@ $language_data = array (
+-            'kbd_mode','kbdrate', 'kdialog', 'kfile', 'kill', 'killall',
++            'kbd_mode','kbdrate', 'kdialog', 'kfile', 'killall',
+@@ -289 +291 @@ $language_data = array (
+-            'rbash', 'rcs', 'rcs2log', 'read', 'readlink', 'red', 'resizecons',
++            'rbash', 'rcs', 'rcs2log', 'readlink', 'red', 'resizecons',
+@@ -367,0 +370 @@ $language_data = array (
++        // Builtin commands
+@@ -369,2 +372,2 @@ $language_data = array (
+-            'alias', 'bg', 'bind', 'break', 'builtin', 'cd', 'command',
+-            'compgen', 'complete', 'continue', 'declare', 'dirs', 'disown',
++            'alias', 'bg', 'bind', 'break', 'builtin', 'caller', 'cd', 'command',
++            'compgen', 'complete', 'compopt', 'continue', 'coproc', 'declare', 'dirs', 'disown',
+@@ -372,5 +375,5 @@ $language_data = array (
+-            'fg', 'getopts', 'hash', 'help', 'history', 'jobs', 'let',
+-            'local', 'logout', 'popd', 'printf', 'pushd', 'pwd', 'readonly',
+-            'return', 'shift', 'shopt', 'source', 'suspend', 'test', 'times',
+-            'trap', 'type', 'typeset', 'ulimit', 'umask', 'unalias', 'unset',
+-            'wait'
++            'fg', 'getopts', 'hash', 'help', 'history', 'jobs', 'kill', 'let',
++            'local', 'logout', 'mapfile', 'popd', 'printf', 'pushd', 'pwd', 'read',
++            'readarray', 'readonly', 'return', 'shift', 'shopt', 'source',
++            'suspend', 'test', 'times', 'trap', 'type', 'typeset', 'ulimit',
++            'umask', 'unalias', 'unset', 'wait'
+diff --git geshi/basic4gl.php geshi/basic4gl.php
+index 499428f..ab4b6ef 100644
+--- geshi/basic4gl.php 2017-05-13 19:11:19 UTC
++++ geshi/basic4gl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/batch.php geshi/batch.php
+index 03a972e..4f048b6 100644
+--- geshi/batch.php 2017-05-13 19:11:19 UTC
++++ geshi/batch.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/bf.php geshi/bf.php
+index 06fddfe..4206d2f 100644
+--- geshi/bf.php 2017-05-13 19:11:19 UTC
++++ geshi/bf.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/biblatex.php geshi/biblatex.php
+index 8500cb6..873c4ad 100644
+--- geshi/biblatex.php 2017-05-13 19:11:19 UTC
++++ geshi/biblatex.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/bibtex.php geshi/bibtex.php
+index 169011e..684f938 100644
+--- geshi/bibtex.php 2017-05-13 19:11:19 UTC
++++ geshi/bibtex.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/blitzbasic.php geshi/blitzbasic.php
+index 6311e8a..092aaa7 100644
+--- geshi/blitzbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/blitzbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/bnf.php geshi/bnf.php
+index fafd94f..1d7b053 100644
+--- geshi/bnf.php 2017-05-13 19:11:19 UTC
++++ geshi/bnf.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/boo.php geshi/boo.php
+index 19c8378..0a35d5d 100644
+--- geshi/boo.php 2017-05-13 19:11:19 UTC
++++ geshi/boo.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/c.php geshi/c.php
+index 75e1c27..1d217ea 100644
+--- geshi/c.php 2017-05-13 19:11:19 UTC
++++ geshi/c.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/c_loadrunner.php geshi/c_loadrunner.php
+index c1559bc..2d5cc73 100644
+--- geshi/c_loadrunner.php 2017-05-13 19:11:19 UTC
++++ geshi/c_loadrunner.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/c_mac.php geshi/c_mac.php
+index dc03184..5a364d9 100644
+--- geshi/c_mac.php 2017-05-13 19:11:19 UTC
++++ geshi/c_mac.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/c_winapi.php geshi/c_winapi.php
+index 37db047..52ea491 100644
+--- geshi/c_winapi.php 2017-05-13 19:11:19 UTC
++++ geshi/c_winapi.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/caddcl.php geshi/caddcl.php
+index 6a205f9..72d1cd9 100644
+--- geshi/caddcl.php 2017-05-13 19:11:19 UTC
++++ geshi/caddcl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cadlisp.php geshi/cadlisp.php
+index 97ac8ed..1123af1 100644
+--- geshi/cadlisp.php 2017-05-13 19:11:19 UTC
++++ geshi/cadlisp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ceylon.php geshi/ceylon.php
+index 1c806d3..52b74c1 100644
+--- geshi/ceylon.php 2017-05-13 19:11:19 UTC
++++ geshi/ceylon.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cfdg.php geshi/cfdg.php
+index 7ad658d..2cf72f4 100644
+--- geshi/cfdg.php 2017-05-13 19:11:19 UTC
++++ geshi/cfdg.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cfm.php geshi/cfm.php
+index 7f98c33..516c666 100644
+--- geshi/cfm.php 2017-05-13 19:11:19 UTC
++++ geshi/cfm.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/chaiscript.php geshi/chaiscript.php
+index 13570c9..e816782 100644
+--- geshi/chaiscript.php 2017-05-13 19:11:19 UTC
++++ geshi/chaiscript.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/chapel.php geshi/chapel.php
+index d043634..4f31f88 100644
+--- geshi/chapel.php 2017-05-13 19:11:19 UTC
++++ geshi/chapel.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cil.php geshi/cil.php
+index 82a2052..152fcc2 100644
+--- geshi/cil.php 2017-05-13 19:11:19 UTC
++++ geshi/cil.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/clojure.php geshi/clojure.php
+index 0a5d1dd..55cbc42 100644
+--- geshi/clojure.php 2017-05-13 19:11:19 UTC
++++ geshi/clojure.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cmake.php geshi/cmake.php
+index cebf147..13e67ff 100644
+--- geshi/cmake.php 2017-05-13 19:11:19 UTC
++++ geshi/cmake.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cobol.php geshi/cobol.php
+index 990551a..ac466f2 100644
+--- geshi/cobol.php 2017-05-13 19:11:19 UTC
++++ geshi/cobol.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/coffeescript.php geshi/coffeescript.php
+index 9656668..4b5feb2 100644
+--- geshi/coffeescript.php 2017-05-13 19:11:19 UTC
++++ geshi/coffeescript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cpp-qt.php geshi/cpp-qt.php
+index 40b7e5a..3d9e55d 100644
+--- geshi/cpp-qt.php 2017-05-13 19:11:19 UTC
++++ geshi/cpp-qt.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cpp-winapi.php geshi/cpp-winapi.php
+index b8bc6cc..662e4c4 100644
+--- geshi/cpp-winapi.php 2017-05-13 19:11:19 UTC
++++ geshi/cpp-winapi.php 2022-09-15 20:03:19 UTC
+@@ -11 +11 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cpp.php geshi/cpp.php
+index 1439dfe..348c7cf 100644
+--- geshi/cpp.php 2017-05-13 19:11:19 UTC
++++ geshi/cpp.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/csharp.php geshi/csharp.php
+index a5a0f11..da72167 100644
+--- geshi/csharp.php 2017-05-13 19:11:19 UTC
++++ geshi/csharp.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/css.php geshi/css.php
+index 5d15fad..15450ed 100644
+--- geshi/css.php 2017-05-13 19:11:19 UTC
++++ geshi/css.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/cuesheet.php geshi/cuesheet.php
+index 97d631c..c9724f5 100644
+--- geshi/cuesheet.php 2017-05-13 19:11:19 UTC
++++ geshi/cuesheet.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/d.php geshi/d.php
+index 5e3713a..2f0e352 100644
+--- geshi/d.php 2017-05-13 19:11:19 UTC
++++ geshi/d.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/dart.php geshi/dart.php
+index 83c00c9..4d1d824 100644
+--- geshi/dart.php 2017-05-13 19:11:19 UTC
++++ geshi/dart.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/dcl.php geshi/dcl.php
+index a1489c7..6607744 100644
+--- geshi/dcl.php 2017-05-13 19:11:19 UTC
++++ geshi/dcl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/dcpu16.php geshi/dcpu16.php
+index 8c61bff..b5dbb2f 100644
+--- geshi/dcpu16.php 2017-05-13 19:11:19 UTC
++++ geshi/dcpu16.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/dcs.php geshi/dcs.php
+index 58bf5a0..72b0c37 100644
+--- geshi/dcs.php 2017-05-13 19:11:19 UTC
++++ geshi/dcs.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/delphi.php geshi/delphi.php
+index fadb4ad..3533f62 100644
+--- geshi/delphi.php 2017-05-13 19:11:19 UTC
++++ geshi/delphi.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/diff.php geshi/diff.php
+index ee01e0c..b630be2 100644
+--- geshi/diff.php 2017-05-13 19:11:19 UTC
++++ geshi/diff.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/div.php geshi/div.php
+index 6ae99f1..6740724 100644
+--- geshi/div.php 2017-05-13 19:11:19 UTC
++++ geshi/div.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/dos.php geshi/dos.php
+index 744cb82..1a4ebb7 100644
+--- geshi/dos.php 2017-05-13 19:11:19 UTC
++++ geshi/dos.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/dot.php geshi/dot.php
+index 77de029..a4e8267 100644
+--- geshi/dot.php 2017-05-13 19:11:19 UTC
++++ geshi/dot.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/e.php geshi/e.php
+index 5f321e6..6a04779 100644
+--- geshi/e.php 2017-05-13 19:11:19 UTC
++++ geshi/e.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ecmascript.php geshi/ecmascript.php
+index 8d4ab15..05069ff 100644
+--- geshi/ecmascript.php 2017-05-13 19:11:19 UTC
++++ geshi/ecmascript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/eiffel.php geshi/eiffel.php
+index 14a2cc0..50cdf6f 100644
+--- geshi/eiffel.php 2017-05-13 19:11:19 UTC
++++ geshi/eiffel.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/email.php geshi/email.php
+index c77d0fa..c9bdf26 100644
+--- geshi/email.php 2017-05-13 19:11:19 UTC
++++ geshi/email.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -54,5 +54,46 @@ $language_data = array (
+-            'Authentication-Results','Comment','Content-Description','Content-Type',
+-            'Content-Disposition','Content-Transfer-Encoding','Delivered-To',
+-            'Dkim-Signature','Domainkey-Signature','In-Reply-To','Message-Id',
+-            'MIME-Version','OpenPGP','Received','Received-SPF','References',
+-            'Reply-To', 'Resend-From','Resend-To','Return-Path','User-Agent'
++            'Original-Recipient','Accept-Language','Alternate-Recipient',
++            'Archived-At','Authentication-Results','Auto-Submitted',
++            'Autoforwarded','Autosubmitted','Base','Comments',
++            'Content-Alternative','Content-Base','Content-Description',
++            'Content-Disposition','Content-Duration','Content-features',
++            'Content-ID','Content-Identifier','Content-Language',
++            'Content-Location','Content-MD5','Content-Return',
++            'Content-Transfer-Encoding','Content-Type','Conversion',
++            'Conversion-With-Loss','Deferred-Delivery','Delivery-Date',
++            'Discarded-X400-IPMS-Extensions','Discarded-X400-MTS-Extensions',
++            'Disclose-Recipients','Disposition-Notification-Options',
++            'Disposition-Notification-To','DKIM-Signature',
++            'DL-Expansion-History','Downgraded-Bcc','Downgraded-Cc',
++            'Downgraded-Disposition-Notification-To',
++            'Downgraded-Final-Recipient','Downgraded-From',
++            'Downgraded-In-Reply-To','Downgraded-Mail-From',
++            'Downgraded-Message-Id','Downgraded-Original-Recipient',
++            'Downgraded-Rcpt-To','Downgraded-References',
++            'Downgraded-Reply-To','Downgraded-Resent-Bcc',
++            'Downgraded-Resent-Cc','Downgraded-Resent-From',
++            'Downgraded-Resent-Reply-To','Downgraded-Resent-Sender',
++            'Downgraded-Resent-To','Downgraded-Return-Path',
++            'Downgraded-Sender','Downgraded-To','Encoding','Encrypted','Expires',
++            'Expiry-Date','Generate-Delivery-Report','Importance','In-Reply-To',
++            'Incomplete-Copy','Keywords','Language','Latest-Delivery-Time',
++            'List-Archive','List-Help','List-ID','List-Owner','List-Post',
++            'List-Subscribe','List-Unsubscribe','List-Unsubscribe-Post',
++            'Message-Context','Message-ID','Message-Type','MIME-Version',
++            'MMHS-Acp127-Message-Identifier','MMHS-Codress-Message-Indicator',
++            'MMHS-Copy-Precedence','MMHS-Exempted-Address',
++            'MMHS-Extended-Authorisation-Info','MMHS-Handling-Instructions',
++            'MMHS-Message-Instructions','MMHS-Message-Type',
++            'MMHS-Originator-PLAD','MMHS-Originator-Reference',
++            'MMHS-Other-Recipients-Indicator-CC',
++            'MMHS-Other-Recipients-Indicator-To','MMHS-Primary-Precedence',
++            'MMHS-Subject-Indicator-Codes','MT-Priority','Obsoletes',
++            'Organization','Original-Encoded-Information-Types','Original-From',
++            'Original-Message-ID','Original-Subject','Originator-Return-Address',
++            'PICS-Label','Prevent-NonDelivery-Report','Priority','Received',
++            'Received-SPF','References','Reply-By','Reply-To',
++            'Require-Recipient-Valid-Since','Resent-Bcc','Resent-Cc',
++            'Resent-Date','Resent-From','Resent-Message-ID','Resent-Reply-To',
++            'Resent-Sender','Resent-To','Return-Path','Sensitivity',
++            'Solicitation','Supersedes','VBR-Info','X400-Content-Identifier',
++            'X400-Content-Return','X400-Content-Type','X400-MTS-Identifier',
++            'X400-Originator','X400-Received','X400-Recipients','X400-Trace'
+@@ -61 +102 @@ $language_data = array (
+-            'Date','From','Sender','Subject','To','CC'
++            'Bcc','CC','Date','From','Sender','Subject','To'
+@@ -104,0 +146 @@ $language_data = array (
++            1 => 'color: #002040;',
+@@ -193 +235,2 @@ $language_data = array (
+-        0 => "/(?P<start>^)[A-Za-z][a-zA-Z0-9\-]*\s*:\s*(?:.|(?=\n\s)\n)*(?P<end>$)/m"
++        0 => "/(?P<start>^)[A-Za-z][a-zA-Z0-9\-]*\s*:\s*(?:.|(?=\n\s)\n)*(?P<end>$)/m",
++        1 => "/(?P<start>^)--[a-zA-Z0-9_=\-]+[a-zA-Z0-9_](?:--)?(?P<end>$)/m"
+@@ -196,0 +240 @@ $language_data = array (
++        1 => false
+diff --git geshi/epc.php geshi/epc.php
+index b3ea4ae..7882d00 100644
+--- geshi/epc.php 2017-05-13 19:11:19 UTC
++++ geshi/epc.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/erlang.php geshi/erlang.php
+index a153832..8053d87 100644
+--- geshi/erlang.php 2017-05-13 19:11:19 UTC
++++ geshi/erlang.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/euphoria.php geshi/euphoria.php
+index 5888d0f..35c99ec 100644
+--- geshi/euphoria.php 2017-05-13 19:11:19 UTC
++++ geshi/euphoria.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ezt.php geshi/ezt.php
+index 5052412..a02ebc4 100644
+--- geshi/ezt.php 2017-05-13 19:11:19 UTC
++++ geshi/ezt.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/f1.php geshi/f1.php
+index 1203e1b..c6f93cc 100644
+--- geshi/f1.php 2017-05-13 19:11:19 UTC
++++ geshi/f1.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/falcon.php geshi/falcon.php
+index ad5f3a6..6160cba 100644
+--- geshi/falcon.php 2017-05-13 19:11:19 UTC
++++ geshi/falcon.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/fo.php geshi/fo.php
+index 8628bb1..c9dca6c 100644
+--- geshi/fo.php 2017-05-13 19:11:19 UTC
++++ geshi/fo.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/fortran.php geshi/fortran.php
+index e463cb9..6e41e9d 100644
+--- geshi/fortran.php 2017-05-13 19:11:19 UTC
++++ geshi/fortran.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/freebasic.php geshi/freebasic.php
+index cc6bd7b..952d8f1 100644
+--- geshi/freebasic.php 2017-05-13 19:11:19 UTC
++++ geshi/freebasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/freeswitch.php geshi/freeswitch.php
+index 14f2b93..a4729a4 100644
+--- geshi/freeswitch.php 2017-05-13 19:11:19 UTC
++++ geshi/freeswitch.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/fsharp.php geshi/fsharp.php
+index 5fc9878..c88c4c2 100644
+--- geshi/fsharp.php 2017-05-13 19:11:19 UTC
++++ geshi/fsharp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/gambas.php geshi/gambas.php
+index 8510b86..9993a6c 100644
+--- geshi/gambas.php 2017-05-13 19:11:19 UTC
++++ geshi/gambas.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/gdb.php geshi/gdb.php
+index d05a9ca..250e277 100644
+--- geshi/gdb.php 2017-05-13 19:11:19 UTC
++++ geshi/gdb.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/genero.php geshi/genero.php
+index 4d3cc36..afdf9d9 100644
+--- geshi/genero.php 2017-05-13 19:11:19 UTC
++++ geshi/genero.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/genie.php geshi/genie.php
+index dabc389..05b3565 100644
+--- geshi/genie.php 2017-05-13 19:11:19 UTC
++++ geshi/genie.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/gettext.php geshi/gettext.php
+index 871f5ae..4161cb8 100644
+--- geshi/gettext.php 2017-05-13 19:11:19 UTC
++++ geshi/gettext.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/glsl.php geshi/glsl.php
+index d67adb2..eab78e9 100644
+--- geshi/glsl.php 2017-05-13 19:11:19 UTC
++++ geshi/glsl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/gml.php geshi/gml.php
+index 2cb0cd2..30b900e 100644
+--- geshi/gml.php 2017-05-13 19:11:19 UTC
++++ geshi/gml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/gnuplot.php geshi/gnuplot.php
+index 55e1055..3af5f93 100644
+--- geshi/gnuplot.php 2017-05-13 19:11:19 UTC
++++ geshi/gnuplot.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/go.php geshi/go.php
+index 5c9212b..83d3cab 100644
+--- geshi/go.php 2017-05-13 19:11:19 UTC
++++ geshi/go.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/groovy.php geshi/groovy.php
+index 9f201bb..f8a228e 100644
+--- geshi/groovy.php 2017-05-13 19:11:19 UTC
++++ geshi/groovy.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/gwbasic.php geshi/gwbasic.php
+index 9bf2c15..0fd7a29 100644
+--- geshi/gwbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/gwbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/haskell.php geshi/haskell.php
+index 7b7c904..1a22447 100644
+--- geshi/haskell.php 2017-05-13 19:11:19 UTC
++++ geshi/haskell.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -108 +108 @@ $language_data = array (
+-            'Int', 'Integer', 'Float', 'Double', 'Rational',
++            'Int', 'Integer', 'Float', 'Double', 'Rational', 'Word',
+@@ -117 +117,3 @@ $language_data = array (
+-            'Monad', 'Functor',
++            'Semigroup', 'Monoid',
++            'Monad', 'Applicative', 'Functor',
++            'Foldable', 'Traversable',
+@@ -175 +177 @@ $language_data = array (
+-        2 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/{FNAME}.html',
++        2 => 'http://hackage.haskell.org/package/base/docs/{FNAME}.html',
+@@ -177 +179 @@ $language_data = array (
+-        3 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:{FNAME}',
++        3 => 'http://hackage.haskell.org/package/base/docs/Prelude.html#v:{FNAME}',
+@@ -179 +181 @@ $language_data = array (
+-        4 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:{FNAME}',
++        4 => 'http://hackage.haskell.org/package/base/docs/Prelude.html#t:{FNAME}',
+@@ -181 +183 @@ $language_data = array (
+-        5 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:{FNAME}'
++        5 => 'http://hackage.haskell.org/package/base/docs/Prelude.html#t:{FNAME}'
+diff --git geshi/haxe.php geshi/haxe.php
+index c9376bd..f63674d 100644
+--- geshi/haxe.php 2017-05-13 19:11:19 UTC
++++ geshi/haxe.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/hicest.php geshi/hicest.php
+index b8639bb..f92f6d6 100644
+--- geshi/hicest.php 2017-05-13 19:11:19 UTC
++++ geshi/hicest.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/hq9plus.php geshi/hq9plus.php
+index 843f2d6..29878ed 100644
+--- geshi/hq9plus.php 2017-05-13 19:11:19 UTC
++++ geshi/hq9plus.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/html4strict.php geshi/html4strict.php
+index 42ff9c7..56c40a1 100644
+--- geshi/html4strict.php 2017-05-13 19:11:19 UTC
++++ geshi/html4strict.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/html5.php geshi/html5.php
+index 25d33cb..f6316f7 100644
+--- geshi/html5.php 2017-05-13 19:11:19 UTC
++++ geshi/html5.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/icon.php geshi/icon.php
+index 1022690..feb3d84 100644
+--- geshi/icon.php 2017-05-13 19:11:19 UTC
++++ geshi/icon.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/idl.php geshi/idl.php
+index f960f8b..e7596ce 100644
+--- geshi/idl.php 2017-05-13 19:11:19 UTC
++++ geshi/idl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ini.php geshi/ini.php
+index fe04224..bf25d4b 100644
+--- geshi/ini.php 2017-05-13 19:11:19 UTC
++++ geshi/ini.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -51 +51 @@ $language_data = array (
+-    'QUOTEMARKS' => array('"'),
++    'QUOTEMARKS' => array('"', "'"),
+diff --git geshi/inno.php geshi/inno.php
+index 542719c..32202af 100644
+--- geshi/inno.php 2017-05-13 19:11:19 UTC
++++ geshi/inno.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/intercal.php geshi/intercal.php
+index 669050a..5702d91 100644
+--- geshi/intercal.php 2017-05-13 19:11:19 UTC
++++ geshi/intercal.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/io.php geshi/io.php
+index 5c8b93f..ce1c0e9 100644
+--- geshi/io.php 2017-05-13 19:11:19 UTC
++++ geshi/io.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ispfpanel.php geshi/ispfpanel.php
+index 8e60eed..37e04b6 100644
+--- geshi/ispfpanel.php 2017-05-13 19:11:19 UTC
++++ geshi/ispfpanel.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/j.php geshi/j.php
+index 499c489..c39e54f 100644
+--- geshi/j.php 2017-05-13 19:11:19 UTC
++++ geshi/j.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/java.php geshi/java.php
+index 59733b5..71c2d71 100644
+--- geshi/java.php 2017-05-13 19:11:19 UTC
++++ geshi/java.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/java5.php geshi/java5.php
+index f9dbf31..fbd0e30 100644
+--- geshi/java5.php 2017-05-13 19:11:19 UTC
++++ geshi/java5.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/javascript.php geshi/javascript.php
+index bc13dc4..70fca9c 100644
+--- geshi/javascript.php 2017-05-13 19:11:19 UTC
++++ geshi/javascript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/jcl.php geshi/jcl.php
+index 07e3b50..9bc0c6c 100644
+--- geshi/jcl.php 2017-05-13 19:11:19 UTC
++++ geshi/jcl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/jquery.php geshi/jquery.php
+index 0ffd83f..f8b9c11 100644
+--- geshi/jquery.php 2017-05-13 19:11:19 UTC
++++ geshi/jquery.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/julia.php geshi/julia.php
+index 93459c5..70848e6 100644
+--- geshi/julia.php 2017-05-13 19:11:19 UTC
++++ geshi/julia.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/kixtart.php geshi/kixtart.php
+index 7f66e74..0d67f64 100644
+--- geshi/kixtart.php 2017-05-13 19:11:19 UTC
++++ geshi/kixtart.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/klonec.php geshi/klonec.php
+index 58f2d7b..faecffe 100644
+--- geshi/klonec.php 2017-05-13 19:11:19 UTC
++++ geshi/klonec.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/klonecpp.php geshi/klonecpp.php
+index 4b71cba..7f5949d 100644
+--- geshi/klonecpp.php 2017-05-13 19:11:19 UTC
++++ geshi/klonecpp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/kotlin.php geshi/kotlin.php
+index cb20ad8..d83e76c 100644
+--- geshi/kotlin.php 2017-05-13 19:11:19 UTC
++++ geshi/kotlin.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/latex.php geshi/latex.php
+index d03dde9..79f1f9d 100644
+--- geshi/latex.php 2017-05-13 19:11:19 UTC
++++ geshi/latex.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lb.php geshi/lb.php
+index 6882ea8..b1193c0 100644
+--- geshi/lb.php 2017-05-13 19:11:19 UTC
++++ geshi/lb.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ldif.php geshi/ldif.php
+index 86be996..b77b8ee 100644
+--- geshi/ldif.php 2017-05-13 19:11:19 UTC
++++ geshi/ldif.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lisp.php geshi/lisp.php
+index 9b3dbf8..5029ca2 100644
+--- geshi/lisp.php 2017-05-13 19:11:19 UTC
++++ geshi/lisp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/llvm.php geshi/llvm.php
+index ca375bb..0c19c7d 100644
+--- geshi/llvm.php 2017-05-13 19:11:19 UTC
++++ geshi/llvm.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/locobasic.php geshi/locobasic.php
+index 596cb12..709de5d 100644
+--- geshi/locobasic.php 2017-05-13 19:11:19 UTC
++++ geshi/locobasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/logtalk.php geshi/logtalk.php
+index a3ed129..a4af76c 100644
+--- geshi/logtalk.php 2017-05-13 19:11:19 UTC
++++ geshi/logtalk.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lolcode.php geshi/lolcode.php
+index 39cae20..f473c0d 100644
+--- geshi/lolcode.php 2017-05-13 19:11:19 UTC
++++ geshi/lolcode.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lotusformulas.php geshi/lotusformulas.php
+index 4f1c678..57d34f3 100644
+--- geshi/lotusformulas.php 2017-05-13 19:11:19 UTC
++++ geshi/lotusformulas.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lotusscript.php geshi/lotusscript.php
+index 069e603..8e41f36 100644
+--- geshi/lotusscript.php 2017-05-13 19:11:19 UTC
++++ geshi/lotusscript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lscript.php geshi/lscript.php
+index 432d54a..a73e786 100644
+--- geshi/lscript.php 2017-05-13 19:11:19 UTC
++++ geshi/lscript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lsl2.php geshi/lsl2.php
+index 608b5e1..94f4754 100644
+--- geshi/lsl2.php 2017-05-13 19:11:19 UTC
++++ geshi/lsl2.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/lua.php geshi/lua.php
+index 313bbb5..2b8ebc4 100644
+--- geshi/lua.php 2017-05-13 19:11:19 UTC
++++ geshi/lua.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/m68k.php geshi/m68k.php
+index e2040a6..2d995c5 100644
+--- geshi/m68k.php 2017-05-13 19:11:19 UTC
++++ geshi/m68k.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/magiksf.php geshi/magiksf.php
+index 154cd26..44f069d 100644
+--- geshi/magiksf.php 2017-05-13 19:11:19 UTC
++++ geshi/magiksf.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/make.php geshi/make.php
+index fa3193e..6ea601f 100644
+--- geshi/make.php 2017-05-13 19:11:19 UTC
++++ geshi/make.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mapbasic.php geshi/mapbasic.php
+index d85e574..383bb51 100644
+--- geshi/mapbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/mapbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mathematica.php geshi/mathematica.php
+index 77d8653..238ccde 100644
+--- geshi/mathematica.php 2017-05-13 19:11:19 UTC
++++ geshi/mathematica.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/matlab.php geshi/matlab.php
+index f6e8ee5..84c0209 100644
+--- geshi/matlab.php 2017-05-13 19:11:19 UTC
++++ geshi/matlab.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -56 +56 @@ $language_data = array (
+-            'break', 'case', 'catch', 'continue', 'elseif', 'else', 'end', 'for',
++            'break', 'case', 'catch', 'classdef', 'continue', 'elseif', 'else', 'end', 'for',
+@@ -64 +64 @@ $language_data = array (
+-            'ans','area','asec','asech','asin','asinh','atan','atan2','atanh',
++            'ans','area','arrayfun','asec','asech','asin','asinh','atan','atan2','atanh',
+@@ -69 +69 @@ $language_data = array (
+-            'blkdiag','bone','box','brighten','builtin','bwcontr','calendar',
++            'blkdiag','bone','bounds','box','brighten','builtin','bwcontr','calendar',
+@@ -81,2 +81,2 @@ $language_data = array (
+-            'cumprod','cumsum','cumtrapz','cylinder','daspect','date','datenum',
+-            'datestr','datetick','datevec','dbclear','dbcont','dbdown',
++            'cumprod','cumsum','cumtrapz','cylinder','daspect','dataset','datastore','date','datenum',
++            'datestr','datetick','datetime','datevec','dbclear','dbcont','dbdown',
+@@ -85,2 +85,2 @@ $language_data = array (
+-            'delaunay','det','diag','dialog','diff','diffuse','dlmread',
+-            'dlmwrite','dmperm','double','dragrect','drawnow','dsearch','eig',
++            'delaunay','det','diag','dialog','diff','diffuse','discretize','dlmread',
++            'dlmwrite','dmperm','double','dragrect','drawnow','dsearch','duration','eig',
+@@ -99 +99 @@ $language_data = array (
+-            'griddata','gsvd','gtext','hadamard','hankel','hdf','helpdlg',
++            'griddata','gsvd','gtext','hadamard','hankel','hdf','head','helpdlg',
+@@ -104,3 +104,4 @@ $language_data = array (
+-            'int2str','int32','int8','interp1','interp2','interp3','interpft',
+-            'interpn','intersect','inv','invhilb','ipermute','isa','ishandle',
+-            'ismember','isocaps','isonormals','isosurface','j','jet','keyboard',
++            'int2str','int32','int8','int64','interp1','interp2','interp3','interpft',
++            'interpn','intersect','inv','invhilb','ipermute','isa','iscell',
++            'iscellstr','isfile','isfolder','ishandle','isinf',
++            'ismember','isnan','isocaps','isonormals','isosurface','issorted','j','jet','keyboard',
+@@ -111 +112 @@ $language_data = array (
+-            'menuedit','mesh','meshc','meshgrid','min','mod','msgbox','mu2lin',
++            'menuedit','mesh','meshc','meshgrid','min','missing','mod','msgbox','mu2lin',
+@@ -123 +124 @@ $language_data = array (
+-            'rank','rat','rats','rbbox','rcond','real','realmax','realmin',
++            'rank','rat','rats','rbbox','rcond','readtable','real','realmax','realmin',
+@@ -136,2 +137,2 @@ $language_data = array (
+-            'stream2','stream3','streamline','strings','strjust','strmatch',
+-            'strncmp','strrep','strtok','struct','struct2cell','strvcat',
++            'stream2','stream3','streamline','string','strings','strjust','strmatch',
++            'strncmp','strrep','strtok','struct','structfun','struct2cell','strvcat',
+@@ -140,2 +141,2 @@ $language_data = array (
+-            'surfnorm','svd','svds','symmmd','symrcm','symvar','tan','tanh',
+-            'texlabel','text Create','textread','textwrap','tic','title','toc',
++            'surfnorm','svd','svds','symmmd','symrcm','symvar','tail','tall','tan','tanh',
++            'texlabel','text Create','textread','textwrap','tic','timeseries','timer','timetable','title','toc',
+@@ -144 +145 @@ $language_data = array (
+-            'uigetfile','uimenu','uint32','uint8','uiputfile','uiresume',
++            'uigetfile','uimenu','uint32','uint8','uint64','uiputfile','uiresume',
+@@ -149 +150 @@ $language_data = array (
+-            'winter','wk1read','wk1write','xlabel','xlim','ylabel','ylim',
++            'winter','wk1read','wk1write','writetable','xlabel','xlim','ylabel','ylim',
+@@ -156 +157 @@ $language_data = array (
+-            'more','munlock','open','openvar','pack','partialpath','path',
++            'more','munlock','numel','open','openvar','pack','partialpath','path',
+@@ -209 +210 @@ $language_data = array (
+-        2 => 'http://www.mathworks.com/access/helpdesk/help/techdoc/ref/{FNAMEL}.html'
++        2 => 'https://www.mathworks.com/help/matlab/ref/{FNAMEL}.html'
+diff --git geshi/mercury.php geshi/mercury.php
+index 9f77e4b..df8c9bb 100644
+--- geshi/mercury.php 2017-05-13 19:11:19 UTC
++++ geshi/mercury.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/metapost.php geshi/metapost.php
+index f5944cb..83882d8 100644
+--- geshi/metapost.php 2017-05-13 19:11:19 UTC
++++ geshi/metapost.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mirc.php geshi/mirc.php
+index 4aea845..a58b45f 100644
+--- geshi/mirc.php 2017-05-13 19:11:19 UTC
++++ geshi/mirc.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mk-61.php geshi/mk-61.php
+index 653a336..669799c 100644
+--- geshi/mk-61.php 2017-05-13 19:11:19 UTC
++++ geshi/mk-61.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mmix.php geshi/mmix.php
+index 5c8178c..21fc061 100644
+--- geshi/mmix.php 2017-05-13 19:11:19 UTC
++++ geshi/mmix.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/modula2.php geshi/modula2.php
+index 2a20973..850b9e6 100644
+--- geshi/modula2.php 2017-05-13 19:11:19 UTC
++++ geshi/modula2.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/modula3.php geshi/modula3.php
+index b3c223c..1ba83f6 100644
+--- geshi/modula3.php 2017-05-13 19:11:19 UTC
++++ geshi/modula3.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mpasm.php geshi/mpasm.php
+index e6cf70e..42c85a1 100644
+--- geshi/mpasm.php 2017-05-13 19:11:19 UTC
++++ geshi/mpasm.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mxml.php geshi/mxml.php
+index 4bac672..afc0769 100644
+--- geshi/mxml.php 2017-05-13 19:11:19 UTC
++++ geshi/mxml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/mysql.php geshi/mysql.php
+index e62a122..afe8684 100644
+--- geshi/mysql.php 2017-05-13 19:11:19 UTC
++++ geshi/mysql.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -393,9 +393,9 @@ $language_data = array (
+-        1 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        2 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        3 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        4 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        5 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        6 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        7 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        8 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
+-        9 => 'http://search.oracle.com/search/search?group=MySQL&amp;q={FNAME}',
++        1 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        2 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        3 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        4 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        5 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        6 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        7 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        8 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
++        9 => 'https://www.oracle.com/search/results?cat=mysql&amp;Ntk=SI-ALL5&amp;Ntt={FNAME}',
+diff --git geshi/nagios.php geshi/nagios.php
+index ac6d63a..2358598 100644
+--- geshi/nagios.php 2017-05-13 19:11:19 UTC
++++ geshi/nagios.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/netrexx.php geshi/netrexx.php
+index 38e09fa..a6d444b 100644
+--- geshi/netrexx.php 2017-05-13 19:11:19 UTC
++++ geshi/netrexx.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/newlisp.php geshi/newlisp.php
+index b5a9431..2daa72b 100644
+--- geshi/newlisp.php 2017-05-13 19:11:19 UTC
++++ geshi/newlisp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/nginx.php geshi/nginx.php
+index 47ced0a..ab2a9fb 100644
+--- geshi/nginx.php 2017-05-13 19:11:19 UTC
++++ geshi/nginx.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -867 +867,6 @@ $language_data = array (
+-    'HIGHLIGHT_STRICT_BLOCK' => array()
++    'HIGHLIGHT_STRICT_BLOCK' => array(),
++    'PARSER_CONTROL' => array(
++        'ENABLE_FLAGS' => array(
++            'NUMBERS' => GESHI_NEVER
++            )
++        )
+diff --git geshi/nimrod.php geshi/nimrod.php
+index a85edfb..1be7970 100644
+--- geshi/nimrod.php 2017-05-13 19:11:19 UTC
++++ geshi/nimrod.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/nsis.php geshi/nsis.php
+index 61da046..3fb54a0 100644
+--- geshi/nsis.php 2017-05-13 19:11:19 UTC
++++ geshi/nsis.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oberon2.php geshi/oberon2.php
+index 8540cad..38a1915 100644
+--- geshi/oberon2.php 2017-05-13 19:11:19 UTC
++++ geshi/oberon2.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/objc.php geshi/objc.php
+index 3fdf49a..0f6ee1d 100644
+--- geshi/objc.php 2017-05-13 19:11:19 UTC
++++ geshi/objc.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/objeck.php geshi/objeck.php
+index 6fab2d0..465db89 100644
+--- geshi/objeck.php 2017-05-13 19:11:19 UTC
++++ geshi/objeck.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ocaml-brief.php geshi/ocaml-brief.php
+index f63c9e7..1d7563e 100644
+--- geshi/ocaml-brief.php 2017-05-13 19:11:19 UTC
++++ geshi/ocaml-brief.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/ocaml.php geshi/ocaml.php
+index 4e14082..e9e57ef 100644
+--- geshi/ocaml.php 2017-05-13 19:11:19 UTC
++++ geshi/ocaml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/octave.php geshi/octave.php
+index a77e5da..999ab26 100644
+--- geshi/octave.php 2017-05-13 19:11:19 UTC
++++ geshi/octave.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oobas.php geshi/oobas.php
+index e6f5efd..b022ebf 100644
+--- geshi/oobas.php 2017-05-13 19:11:19 UTC
++++ geshi/oobas.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oorexx.php geshi/oorexx.php
+index 5fde800..db629b5 100644
+--- geshi/oorexx.php 2017-05-13 19:11:19 UTC
++++ geshi/oorexx.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oracle11.php geshi/oracle11.php
+index 36b2082..0e2cf4a 100644
+--- geshi/oracle11.php 2017-05-13 19:11:19 UTC
++++ geshi/oracle11.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oracle8.php geshi/oracle8.php
+index f132090..f723e65 100644
+--- geshi/oracle8.php 2017-05-13 19:11:19 UTC
++++ geshi/oracle8.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oxygene.php geshi/oxygene.php
+index 662bba2..ac7e88c 100644
+--- geshi/oxygene.php 2017-05-13 19:11:19 UTC
++++ geshi/oxygene.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/oz.php geshi/oz.php
+index 3b96566..943eb8d 100644
+--- geshi/oz.php 2017-05-13 19:11:19 UTC
++++ geshi/oz.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/parasail.php geshi/parasail.php
+index a72d845..7a136b9 100644
+--- geshi/parasail.php 2017-05-13 19:11:19 UTC
++++ geshi/parasail.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/parigp.php geshi/parigp.php
+index 9c6a143..fe99c10 100644
+--- geshi/parigp.php 2017-05-13 19:11:19 UTC
++++ geshi/parigp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pascal.php geshi/pascal.php
+index 0d95af5..ee89223 100644
+--- geshi/pascal.php 2017-05-13 19:11:19 UTC
++++ geshi/pascal.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pcre.php geshi/pcre.php
+index 243121b..fd48c39 100644
+--- geshi/pcre.php 2017-05-13 19:11:19 UTC
++++ geshi/pcre.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/per.php geshi/per.php
+index 8337823..0962235 100644
+--- geshi/per.php 2017-05-13 19:11:19 UTC
++++ geshi/per.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/perl.php geshi/perl.php
+index 0a05708..e60c4c4 100644
+--- geshi/perl.php 2017-05-13 19:11:19 UTC
++++ geshi/perl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/perl6.php geshi/perl6.php
+index f063a6b..ce2fafb 100644
+--- geshi/perl6.php 2017-05-13 19:11:19 UTC
++++ geshi/perl6.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pf.php geshi/pf.php
+index 2f80e23..440ecb3 100644
+--- geshi/pf.php 2017-05-13 19:11:19 UTC
++++ geshi/pf.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/phix.php geshi/phix.php
+index a4f4e4e..66096a2 100644
+--- geshi/phix.php 2017-05-13 19:11:19 UTC
++++ geshi/phix.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/php-brief.php geshi/php-brief.php
+index 922c9d9..f7fb415 100644
+--- geshi/php-brief.php 2017-05-13 19:11:19 UTC
++++ geshi/php-brief.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/php.php geshi/php.php
+index 6b24840..dc9561a 100644
+--- geshi/php.php 2017-05-13 19:11:19 UTC
++++ geshi/php.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pic16.php geshi/pic16.php
+index bd742ad..da5e263 100644
+--- geshi/pic16.php 2017-05-13 19:11:19 UTC
++++ geshi/pic16.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pike.php geshi/pike.php
+index 12dabf2..b07a05e 100644
+--- geshi/pike.php 2017-05-13 19:11:19 UTC
++++ geshi/pike.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pixelbender.php geshi/pixelbender.php
+index d7bcc08..bb9c2a4 100644
+--- geshi/pixelbender.php 2017-05-13 19:11:19 UTC
++++ geshi/pixelbender.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pli.php geshi/pli.php
+index 6f12c1f..ac52a4c 100644
+--- geshi/pli.php 2017-05-13 19:11:19 UTC
++++ geshi/pli.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/plsql.php geshi/plsql.php
+index c2ad851..70dfb13 100644
+--- geshi/plsql.php 2017-05-13 19:11:19 UTC
++++ geshi/plsql.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/postgresql.php geshi/postgresql.php
+index 2816c6c..5a666c8 100644
+--- geshi/postgresql.php 2017-05-13 19:11:19 UTC
++++ geshi/postgresql.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/postscript.php geshi/postscript.php
+index 00ee93c..d29b8a7 100644
+--- geshi/postscript.php 2017-05-13 19:11:19 UTC
++++ geshi/postscript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/povray.php geshi/povray.php
+index eb75d41..e71efd7 100644
+--- geshi/povray.php 2017-05-13 19:11:19 UTC
++++ geshi/povray.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/powerbuilder.php geshi/powerbuilder.php
+index b93e7dd..5e0cbc7 100644
+--- geshi/powerbuilder.php 2017-05-13 19:11:19 UTC
++++ geshi/powerbuilder.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/powershell.php geshi/powershell.php
+index 4230459..5b33306 100644
+--- geshi/powershell.php 2017-05-13 19:11:19 UTC
++++ geshi/powershell.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/proftpd.php geshi/proftpd.php
+index 99ae966..63d3924 100644
+--- geshi/proftpd.php 2017-05-13 19:11:19 UTC
++++ geshi/proftpd.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/progress.php geshi/progress.php
+index 1541472..2160a3c 100644
+--- geshi/progress.php 2017-05-13 19:11:19 UTC
++++ geshi/progress.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/prolog.php geshi/prolog.php
+index f3c8e8f..26d7448 100644
+--- geshi/prolog.php 2017-05-13 19:11:19 UTC
++++ geshi/prolog.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/properties.php geshi/properties.php
+index 3cbde9d..89c6d62 100644
+--- geshi/properties.php 2017-05-13 19:11:19 UTC
++++ geshi/properties.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/providex.php geshi/providex.php
+index 2d09be4..1a17865 100644
+--- geshi/providex.php 2017-05-13 19:11:19 UTC
++++ geshi/providex.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/purebasic.php geshi/purebasic.php
+index e40890b..8b9b65e 100644
+--- geshi/purebasic.php 2017-05-13 19:11:19 UTC
++++ geshi/purebasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pycon.php geshi/pycon.php
+index 31531a7..4e372ac 100644
+--- geshi/pycon.php 2017-05-13 19:11:19 UTC
++++ geshi/pycon.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/pys60.php geshi/pys60.php
+index caedc2f..54a1f59 100644
+--- geshi/pys60.php 2017-05-13 19:11:19 UTC
++++ geshi/pys60.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/python.php geshi/python.php
+index 3df07ea..a34ed74 100644
+--- geshi/python.php 2017-05-13 19:11:19 UTC
++++ geshi/python.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/q.php geshi/q.php
+index 926ddbf..a6b005d 100644
+--- geshi/q.php 2017-05-13 19:11:19 UTC
++++ geshi/q.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/qbasic.php geshi/qbasic.php
+index 0a09b4d..9f3be88 100644
+--- geshi/qbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/qbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/qml.php geshi/qml.php
+index 3aa3457..fe89e45 100644
+--- geshi/qml.php 2017-05-13 19:11:19 UTC
++++ geshi/qml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/racket.php geshi/racket.php
+index 2b25b9b..c26ea60 100644
+--- geshi/racket.php 2017-05-13 19:11:19 UTC
++++ geshi/racket.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/rails.php geshi/rails.php
+index f5683b8..9ca7046 100644
+--- geshi/rails.php 2017-05-13 19:11:19 UTC
++++ geshi/rails.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/rbs.php geshi/rbs.php
+index 76610d1..6e9e775 100644
+--- geshi/rbs.php 2017-05-13 19:11:19 UTC
++++ geshi/rbs.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/rebol.php geshi/rebol.php
+index d11447a..16c4cea 100644
+--- geshi/rebol.php 2017-05-13 19:11:19 UTC
++++ geshi/rebol.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/reg.php geshi/reg.php
+index e73c961..c966674 100644
+--- geshi/reg.php 2017-05-13 19:11:19 UTC
++++ geshi/reg.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/rexx.php geshi/rexx.php
+index 9e0a73e..6a4f1a8 100644
+--- geshi/rexx.php 2017-05-13 19:11:19 UTC
++++ geshi/rexx.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/robots.php geshi/robots.php
+index 91fd87e..92863c3 100644
+--- geshi/robots.php 2017-05-13 19:11:19 UTC
++++ geshi/robots.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/roff.php geshi/roff.php
+new file mode 100644
+index 0000000..6f87690
+--- /dev/null 2017-05-13 19:11:19 UTC
++++ geshi/roff.php 2022-09-15 20:03:19 UTC
+@@ -0,0 +1,510 @@
++<?php
++/*************************************************************************************
++ * roff.php
++ * ---------------------------------
++ * Author: Artur Iwicki (iwicki DOT artur AT svgames DOT pl)
++ * Copyright: (c) 2017 Artur Iwicki
++ * Release Version: 1.0.9.1
++ * Date Started: 2017-11-17
++ *
++ * roff (Unix man page) language file for GeSHi.
++ *
++ * CHANGES
++ * -------
++ * 2018-12-06 (1.0.1)
++ *  - Fix reqex for line-start requests (must start with [.'], not [\.'])
++ *  - Add some missing whitespace escapes
++ * 2017-11-20 (1.0.0)
++ *  - First Release
++ *
++ *************************************************************************************
++ *
++ *     This file is part of GeSHi.
++ *
++ *   GeSHi is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; either version 2 of the License, or
++ *   (at your option) any later version.
++ *
++ *   GeSHi is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details.
++ *
++ *   You should have received a copy of the GNU General Public License
++ *   along with GeSHi; if not, write to the Free Software
++ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ *
++ ************************************************************************************/
++
++$language_data = array (
++    'LANG_NAME' => 'roff',
++    'COMMENT_SINGLE' => array(
++        1 => '\\"',
++        2 => '\\#',
++        ),
++    'COMMENT_MULTI' => array(),
++    'COMMENT_REGEXP' => array(
++        1 => '/^\\.\\\\"[[:print:]]*/m'
++        ),
++    'QUOTEMARKS' => array(),
++    'ESCAPE_CHAR' => '',
++    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
++    'CASE_SENSITIVE' => array(
++        GESHI_COMMENTS => false,
++        ),
++    'KEYWORDS' => array(
++        ),
++    'SYMBOLS' => array(
++        0 => array(
++            '\\[-D]',    '\\(-D',
++            '\\[Sd]',    '\\(Sd',
++            '\\[TP]',    '\\(TP',
++            '\\[Tp]',    '\\(Tp',
++            '\\[ss]',    '\\(ss',
++            '\\[ff]',    '\\(ff',
++            '\\[fi]',    '\\(fi',
++            '\\[fl]',    '\\(fl',
++            '\\[Fi]',    '\\(Fi',
++            '\\[Fl]',    '\\(Fl',
++            '\\[/L]',    '\\(/L',
++            '\\[/l]',    '\\(/l',
++            '\\[/O]',    '\\(/O',
++            '\\[/o]',    '\\(/o',
++            '\\[AE]',    '\\(AE',
++            '\\[ae]',    '\\(ae',
++            '\\[OE]',    '\\(OE',
++            '\\[oe]',    '\\(oe',
++            '\\[IJ]',    '\\(IJ',
++            '\\[ij]',    '\\(ij',
++            '\\[.i]',    '\\(.i',
++            '\\[.j]',    '\\(.j',
++            '\\[\'A]',    '\\(\'A',
++            '\\[\'C]',    '\\(\'C',
++            '\\[\'E]',    '\\(\'E',
++            '\\[\'I]',    '\\(\'I',
++            '\\[\'O]',    '\\(\'O',
++            '\\[\'U]',    '\\(\'U',
++            '\\[\'Y]',    '\\(\'Y',
++            '\\[\'a]',    '\\(\'a',
++            '\\[\'c]',    '\\(\'c',
++            '\\[\'e]',    '\\(\'e',
++            '\\[\'i]',    '\\(\'i',
++            '\\[\'o]',    '\\(\'o',
++            '\\[\'u]',    '\\(\'u',
++            '\\[\'y]',    '\\(\'y',
++            '\\[:A]',    '\\(:A',
++            '\\[:E]',    '\\(:E',
++            '\\[:I]',    '\\(:I',
++            '\\[:O]',    '\\(:O',
++            '\\[:U]',    '\\(:U',
++            '\\[:Y]',    '\\(:Y',
++            '\\[:a]',    '\\(:a',
++            '\\[:e]',    '\\(:e',
++            '\\[:i]',    '\\(:i',
++            '\\[:o]',    '\\(:o',
++            '\\[:u]',    '\\(:u',
++            '\\[:y]',    '\\(:y',
++            '\\[^A]',    '\\(^A',
++            '\\[^E]',    '\\(^E',
++            '\\[^I]',    '\\(^I',
++            '\\[^O]',    '\\(^O',
++            '\\[^U]',    '\\(^U',
++            '\\[^a]',    '\\(^a',
++            '\\[^e]',    '\\(^e',
++            '\\[^i]',    '\\(^i',
++            '\\[^o]',    '\\(^o',
++            '\\[^u]',    '\\(^u',
++            '\\[`A]',    '\\(`A',
++            '\\[`E]',    '\\(`E',
++            '\\[`I]',    '\\(`I',
++            '\\[`O]',    '\\(`O',
++            '\\[`U]',    '\\(`U',
++            '\\[`a]',    '\\(`a',
++            '\\[`e]',    '\\(`e',
++            '\\[`i]',    '\\(`i',
++            '\\[`o]',    '\\(`o',
++            '\\[`u]',    '\\(`u',
++            '\\[~A]',    '\\(~A',
++            '\\[~N]',    '\\(~N',
++            '\\[~O]',    '\\(~O',
++            '\\[~a]',    '\\(~a',
++            '\\[~n]',    '\\(~n',
++            '\\[~o]',    '\\(~o',
++            '\\[vS]',    '\\(vS',
++            '\\[vs]',    '\\(vs',
++            '\\[vZ]',    '\\(vZ',
++            '\\[vz]',    '\\(vz',
++            '\\[,C]',    '\\(,C',
++            '\\[,c]',    '\\(,c',
++            '\\[oA]',    '\\(oA',
++            '\\[oa]',    '\\(oa',
++            '\\[a"]',    '\\(a"',
++            '\\[a-]',    '\\(a-',
++            '\\[a.]',    '\\(a.',
++            '\\[a^]',    '\\(a^',
++            '\\[aa]',    '\\(aa',
++            '\\[ga]',    '\\(ga',
++            '\\[ab]',    '\\(ab',
++            '\\[ac]',    '\\(ac',
++            '\\[ad]',    '\\(ad',
++            '\\[ah]',    '\\(ah',
++            '\\[ao]',    '\\(ao',
++            '\\[a~]',    '\\(a~',
++            '\\[ho]',    '\\(ho',
++            '\\[ha]',    '\\(ha',
++            '\\[ti]',    '\\(ti',
++            '\\[Bq]',    '\\(Bq',
++            '\\[bq]',    '\\(bq',
++            '\\[lq]',    '\\(lq',
++            '\\[rq]',    '\\(rq',
++            '\\[oq]',    '\\(oq',
++            '\\[cq]',    '\\(cq',
++            '\\[aq]',    '\\(aq',
++            '\\[dq]',    '\\(dq',
++            '\\[Fo]',    '\\(Fo',
++            '\\[Fc]',    '\\(Fc',
++            '\\[fo]',    '\\(fo',
++            '\\[fc]',    '\\(fc',
++            '\\[r!]',    '\\(r!',
++            '\\[r?]',    '\\(r?',
++            '\\[em]',    '\\(em',
++            '\\[en]',    '\\(en',
++            '\\[hy]',    '\\(hy',
++            '\\[lB]',    '\\(lB',
++            '\\[rB]',    '\\(rB',
++            '\\[lC]',    '\\(lC',
++            '\\[rC]',    '\\(rC',
++            '\\[la]',    '\\(la',
++            '\\[ra]',    '\\(ra',
++            '\\[bv]',    '\\(bv',
++            '\\[braceex]',
++            '\\[bracketlefttp]',
++            '\\[bracketleftbt]',
++            '\\[bracketleftex]',
++            '\\[bracketrighttp]',
++            '\\[bracketrightbt]',
++            '\\[bracketrightex]',
++            '\\[lt]',    '\\(lt',
++            '\\[bracelefttp]',
++            '\\[lk]',    '\\(lk',
++            '\\[braceleftmid]',
++            '\\[lb]',    '\\(lb',
++            '\\[braceleftbt]',
++            '\\[braceleftex]',
++            '\\[rt]',    '\\(rt',
++            '\\[bracerighttp]',
++            '\\[rk]',    '\\(rk',
++            '\\[bracerightmid]',
++            '\\[rb]',    '\\(rb',
++            '\\[bracerightbt]',
++            '\\[bracerightex]',
++            '\\[parenlefttp]',
++            '\\[parenleftbt]',
++            '\\[parenleftex]',
++            '\\[parenrighttp]',
++            '\\[parenrightbt]',
++            '\\[parenrightex]',
++            '\\[&lt;-]',    '\\(&lt;-',
++            '\\[-&gt;]',    '\\(-&gt;',
++            '\\[&lt;&gt;]',    '\\(&lt;&gt;',
++            '\\[da]',    '\\(da',
++            '\\[ua]',    '\\(ua',
++            '\\[va]',    '\\(va',
++            '\\[lA]',    '\\(lA',
++            '\\[rA]',    '\\(rA',
++            '\\[hA]',    '\\(hA',
++            '\\[dA]',    '\\(dA',
++            '\\[uA]',    '\\(uA',
++            '\\[vA]',    '\\(vA',
++            '\\[an]',    '\\(an',
++            '\\[ba]',    '\\(ba',
++            '\\[br]',    '\\(br',
++            '\\[ul]',    '\\(ul',
++            '\\[rn]',    '\\(rn',
++            '\\[ru]',    '\\(ru',
++            '\\[bb]',    '\\(bb',
++            '\\[sl]',    '\\(sl',
++            '\\[rs]',    '\\(rs',
++            '\\[ci]',    '\\(ci',
++            '\\[bu]',    '\\(bu',
++            '\\[dd]',    '\\(dd',
++            '\\[dg]',    '\\(dg',
++            '\\[lz]',    '\\(lz',
++            '\\[sq]',    '\\(sq',
++            '\\[ps]',    '\\(ps',
++            '\\[sc]',    '\\(sc',
++            '\\[lh]',    '\\(lh',
++            '\\[rh]',    '\\(rh',
++            '\\[at]',    '\\(at',
++            '\\[sh]',    '\\(sh',
++            '\\[CR]',    '\\(CR',
++            '\\[OK]',    '\\(OK',
++            '\\[co]',    '\\(co',
++            '\\[rg]',    '\\(rg',
++            '\\[tm]',    '\\(tm',
++            '\\[bs]',    '\\(bs',
++            '\\[Do]',    '\\(Do',
++            '\\[ct]',    '\\(ct',
++            '\\[eu]',    '\\(eu',
++            '\\[Eu]',    '\\(Eu',
++            '\\[Ye]',    '\\(Ye',
++            '\\[Po]',    '\\(Po',
++            '\\[Cs]',    '\\(Cs',
++            '\\[Fn]',    '\\(Fn',
++            '\\[de]',    '\\(de',
++            '\\[%0]',    '\\(%0',
++            '\\[fm]',    '\\(fm',
++            '\\[sd]',    '\\(sd',
++            '\\[mc]',    '\\(mc',
++            '\\[Of]',    '\\(Of',
++            '\\[Om]',    '\\(Om',
++            '\\[AN]',    '\\(AN',
++            '\\[OR]',    '\\(OR',
++            '\\[no]',    '\\(no',
++            '\\[tno]',
++            '\\[te]',    '\\(te',
++            '\\[fa]',    '\\(fa',
++            '\\[st]',    '\\(st',
++            '\\[3d]',    '\\(3d',
++            '\\[tf]',    '\\(tf',
++            '\\[or]',    '\\(or',
++            '\\[12]',    '\\(12',
++            '\\[14]',    '\\(14',
++            '\\[34]',    '\\(34',
++            '\\[18]',    '\\(18',
++            '\\[38]',    '\\(38',
++            '\\[58]',    '\\(58',
++            '\\[78]',    '\\(78',
++            '\\[S1]',    '\\(S1',
++            '\\[S2]',    '\\(S2',
++            '\\[S3]',    '\\(S3',
++            '\\[pl]',    '\\(pl',
++            '\\[mi]',    '\\(mi',
++            '\\[-+]',    '\\(-+',
++            '\\[+-]',    '\\(+-',
++            '\\[t+-]',
++            '\\[pc]',    '\\(pc',
++            '\\[md]',    '\\(md',
++            '\\[mu]',    '\\(mu',
++            '\\[tmu]',
++            '\\[c*]',    '\\(c*',
++            '\\[c+]',    '\\(c+',
++            '\\[di]',    '\\(di',
++            '\\[tdi]',
++            '\\[f/]',    '\\(f/',
++            '\\[**]',    '\\(**',
++            '\\[&lt;=]',    '\\(&lt;=',
++            '\\[&gt;=]',    '\\(&gt;=',
++            '\\[&lt;&lt;]',    '\\(&lt;&lt;',
++            '\\[&gt;&gt;]',    '\\(&gt;&gt;',
++            '\\[eq]',    '\\(eq',
++            '\\[!=]',    '\\(!=',
++            '\\[==]',    '\\(==',
++            '\\[ne]',    '\\(ne',
++            '\\[=~]',    '\\(=~',
++            '\\[|=]',    '\\(|=',
++            '\\[ap]',    '\\(ap',
++            '\\[~~]',    '\\(~~',
++            '\\[~=]',    '\\(~=',
++            '\\[pt]',    '\\(pt',
++            '\\[es]',    '\\(es',
++            '\\[mo]',    '\\(mo',
++            '\\[nm]',    '\\(nm',
++            '\\[sb]',    '\\(sb',
++            '\\[nb]',    '\\(nb',
++            '\\[sp]',    '\\(sp',
++            '\\[nc]',    '\\(nc',
++            '\\[ib]',    '\\(ib',
++            '\\[ip]',    '\\(ip',
++            '\\[ca]',    '\\(ca',
++            '\\[cu]',    '\\(cu',
++            '\\[/_]',    '\\(/_',
++            '\\[pp]',    '\\(pp',
++            '\\[is]',    '\\(is',
++            '\\[integral]',
++            '\\[sum]',
++            '\\[product]',
++            '\\[coproduct]',
++            '\\[gr]',    '\\(gr',
++            '\\[sr]',    '\\(sr',
++            '\\[sqrt]',
++            '\\[radicalex]',
++            '\\[sqrtex]',
++            '\\[lc]',    '\\(lc',
++            '\\[rc]',    '\\(rc',
++            '\\[lf]',    '\\(lf',
++            '\\[rf]',    '\\(rf',
++            '\\[if]',    '\\(if',
++            '\\[Ah]',    '\\(Ah',
++            '\\[Im]',    '\\(Im',
++            '\\[Re]',    '\\(Re',
++            '\\[wp]',    '\\(wp',
++            '\\[pd]',    '\\(pd',
++            '\\[-h]',    '\\(-h',
++            '\\[hbar]',
++            '\\[*A]',    '\\(*A',
++            '\\[*B]',    '\\(*B',
++            '\\[*G]',    '\\(*G',
++            '\\[*D]',    '\\(*D',
++            '\\[*E]',    '\\(*E',
++            '\\[*Z]',    '\\(*Z',
++            '\\[*Y]',    '\\(*Y',
++            '\\[*H]',    '\\(*H',
++            '\\[*I]',    '\\(*I',
++            '\\[*K]',    '\\(*K',
++            '\\[*L]',    '\\(*L',
++            '\\[*M]',    '\\(*M',
++            '\\[*N]',    '\\(*N',
++            '\\[*C]',    '\\(*C',
++            '\\[*O]',    '\\(*O',
++            '\\[*P]',    '\\(*P',
++            '\\[*R]',    '\\(*R',
++            '\\[*S]',    '\\(*S',
++            '\\[*T]',    '\\(*T',
++            '\\[*U]',    '\\(*U',
++            '\\[*F]',    '\\(*F',
++            '\\[*X]',    '\\(*X',
++            '\\[*Q]',    '\\(*Q',
++            '\\[*W]',    '\\(*W',
++            '\\[*a]',    '\\(*a',
++            '\\[*b]',    '\\(*b',
++            '\\[*g]',    '\\(*g',
++            '\\[*d]',    '\\(*d',
++            '\\[*e]',    '\\(*e',
++            '\\[*z]',    '\\(*z',
++            '\\[*y]',    '\\(*y',
++            '\\[*h]',    '\\(*h',
++            '\\[*i]',    '\\(*i',
++            '\\[*k]',    '\\(*k',
++            '\\[*l]',    '\\(*l',
++            '\\[*m]',    '\\(*m',
++            '\\[*n]',    '\\(*n',
++            '\\[*c]',    '\\(*c',
++            '\\[*o]',    '\\(*o',
++            '\\[*p]',    '\\(*p',
++            '\\[*r]',    '\\(*r',
++            '\\[ts]',    '\\(ts',
++            '\\[*s]',    '\\(*s',
++            '\\[*t]',    '\\(*t',
++            '\\[*u]',    '\\(*u',
++            '\\[*f]',    '\\(*f',
++            '\\[*x]',    '\\(*x',
++            '\\[*q]',    '\\(*q',
++            '\\[*w]',    '\\(*w',
++            '\\[+h]',    '\\(+h',
++            '\\[+f]',    '\\(+f',
++            '\\[+p]',    '\\(+p',
++            '\\[+e]',    '\\(+e',
++            '\\[CL]',    '\\(CL',
++            '\\[SP]',    '\\(SP',
++            '\\[HE]',    '\\(HE',
++            '\\[DI]',    '\\(DI',
++            ),
++        1 => array(
++            // Special characters
++            '\\\\', '\\´', '\\`', '\\-',
++            '\\_',  '\\.', '\\%', '\\!',
++            '\\0',  '\\|', '\\^', '\\&',
++            '\\)',  '\\/', '\\,', '\\~',
++            '\\:',  '\\{', '\\}', '\\a',
++            '\\c',  '\\d', '\\e', '\\E',
++            '\\p',  '\\r', '\\t', '\\u',
++
++            // Whitespace escapes
++            '\\ ', '\\h', "\\\n",
++
++            // Text modifiers
++            '\\fB', '\\fI', '\\fR', '\\fP',
++            '\\f0', '\\f1', '\\f2', '\\f3', '\\f4', '\\f5', '\\f6', '\\f7', '\\f8', '\\f9',
++            ),
++        ),
++    'STYLES' => array(
++        'KEYWORDS' => array(
++            ),
++        'COMMENTS' => array(
++            1 => 'color: #ffff55;',
++            2 => 'color: #ffff55;',
++            ),
++        'ESCAPE_CHAR' => array(
++            ),
++        'BRACKETS' => array(
++            ),
++        'STRINGS' => array(
++            ),
++        'NUMBERS' => array(
++            ),
++        'METHODS' => array(
++            ),
++        'SYMBOLS' => array(
++            0 => 'color: #00aaaa',
++            1 => 'color: #aa00aa',
++            ),
++        'REGEXPS' => array(
++            0 => 'color: #ffff55;',
++            1 => 'font-weight: bold;',
++            2 => 'font-style: italic;',
++            3 => 'font-weight: bold;',
++            4 => 'font-style: italic;',
++            5 => 'color: #55aaff;',
++            ),
++        'SCRIPT' => array(
++            )
++        ),
++    'REGEXPS' => array(
++        0 => array(
++            // Unicode characters
++            GESHI_SEARCH => '\\\\\\[u([[:xdigit:]]{4,5})\\]',
++            GESHI_REPLACE => '\\\\[\\1]',
++            GESHI_MODIFIERS => '',
++            GESHI_BEFORE => '',
++            GESHI_AFTER => '',
++            ),
++        1 => array(
++            // Bold text - formatted using .B or 'B
++            GESHI_SEARCH => "^([\\.']{1}B[[:blank:]]*\\n{0,1})([[:print:]]+)",
++            GESHI_REPLACE => '\\2',
++            GESHI_MODIFIERS => 'm',
++            GESHI_BEFORE => '\\1',
++            GESHI_AFTER => '',
++            ),
++        2 => array(
++            // Italic text - formatted using .I or 'I
++            GESHI_SEARCH => "^([\\.']{1}I[[:blank:]]*\\n{0,1})([[:print:]]+)",
++            GESHI_REPLACE => '\\2',
++            GESHI_MODIFIERS => 'm',
++            GESHI_BEFORE => '\\1',
++            GESHI_AFTER => '',
++            ),
++        3 => array(
++            // Bold text - formatted inline
++            GESHI_SEARCH => '(\\\\fB)([[:print:]]+?)(\\\\fR)',
++            GESHI_REPLACE => '\\2',
++            GESHI_MODIFIERS => '',
++            GESHI_BEFORE => '\\1',
++            GESHI_AFTER => '\\3',
++            ),
++        4 => array (
++            // Italic text - formatted inline
++            GESHI_SEARCH => '(\\\\fI)([[:print:]]+?)(\\\\fR)',
++            GESHI_REPLACE => '\\2',
++            GESHI_MODIFIERS => '',
++            GESHI_BEFORE => '\\1',
++            GESHI_AFTER => '\\3',
++            ),
++        5 => array(
++            // Line start macros (.TP, .SH, et cetera)
++            GESHI_SEARCH => "^([.']{1}[a-zA-Z]+)",
++            GESHI_REPLACE => '\\1',
++            GESHI_MODIFIERS => 'm',
++            GESHI_BEFORE => '',
++            GESHI_AFTER => '',
++            ),
++        ),
++    'URLS' => array(),
++    'OOLANG' => false,
++    'OBJECT_SPLITTERS' => array(),
++    'HIGHLIGHT_STRICT_BLOCK' => array(),
++    'STRICT_MODE_APPLIES' => GESHI_NEVER,
++    'SCRIPT_DELIMITERS' => array(),
++);
+diff --git geshi/rpmspec.php geshi/rpmspec.php
+index 55d722d..49c4106 100644
+--- geshi/rpmspec.php 2017-05-13 19:11:19 UTC
++++ geshi/rpmspec.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/rsplus.php geshi/rsplus.php
+index 6c8771d..4dad7db 100644
+--- geshi/rsplus.php 2017-05-13 19:11:19 UTC
++++ geshi/rsplus.php 2022-09-15 20:03:19 UTC
+@@ -10 +10 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -377 +377 @@ $language_data = array (
+-            'makeRweaveLatexCodeRunner', 'memory.limit', 'memory.size', 'menu', 'methods', 'mirror2html', 'modifyList',
++            'makeRweaveLatexCodeRunner', 'memory.limit', 'memory.size', 'menu', 'mirror2html', 'modifyList',
+diff --git geshi/ruby.php geshi/ruby.php
+index b47953d..0b8aa33 100644
+--- geshi/ruby.php 2017-05-13 19:11:19 UTC
++++ geshi/ruby.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/rust.php geshi/rust.php
+index 46d46c8..3fb5c36 100644
+--- geshi/rust.php 2017-05-13 19:11:19 UTC
++++ geshi/rust.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/sas.php geshi/sas.php
+index 31446d7..3d370be 100644
+--- geshi/sas.php 2017-05-13 19:11:19 UTC
++++ geshi/sas.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/sass.php geshi/sass.php
+index a4408a9..725435a 100644
+--- geshi/sass.php 2017-05-13 19:11:19 UTC
++++ geshi/sass.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/scala.php geshi/scala.php
+index d288eb0..d9b0bac 100644
+--- geshi/scala.php 2017-05-13 19:11:19 UTC
++++ geshi/scala.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/scheme.php geshi/scheme.php
+index 3230d5f..e5a289a 100644
+--- geshi/scheme.php 2017-05-13 19:11:19 UTC
++++ geshi/scheme.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/scilab.php geshi/scilab.php
+index 6b35520..dbe8a39 100644
+--- geshi/scilab.php 2017-05-13 19:11:19 UTC
++++ geshi/scilab.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -185 +185 @@ $language_data = array (
+-            'scilab', 'Scilab', 'ScilabEval', 'scilink', 'scipad', 'SciString', 'SciStringArray', 'sd2sci', 'sda', 'sdf',
++            'ScilabEval', 'scilink', 'scipad', 'SciString', 'SciStringArray', 'sd2sci', 'sda', 'sdf',
+diff --git geshi/scl.php geshi/scl.php
+index 761a0ac..17bad11 100644
+--- geshi/scl.php 2017-05-13 19:11:19 UTC
++++ geshi/scl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/sdlbasic.php geshi/sdlbasic.php
+index 170c665..b5fc9fa 100644
+--- geshi/sdlbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/sdlbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/smalltalk.php geshi/smalltalk.php
+index d57e543..faa0798 100644
+--- geshi/smalltalk.php 2017-05-13 19:11:19 UTC
++++ geshi/smalltalk.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/smarty.php geshi/smarty.php
+index cb8833f..62b37f2 100644
+--- geshi/smarty.php 2017-05-13 19:11:19 UTC
++++ geshi/smarty.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/spark.php geshi/spark.php
+index 30213ec..0d722e7 100644
+--- geshi/spark.php 2017-05-13 19:11:19 UTC
++++ geshi/spark.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/sparql.php geshi/sparql.php
+index 68aaa5f..d5847f2 100644
+--- geshi/sparql.php 2017-05-13 19:11:19 UTC
++++ geshi/sparql.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/sql.php geshi/sql.php
+index b386729..73e2109 100644
+--- geshi/sql.php 2017-05-13 19:11:19 UTC
++++ geshi/sql.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+@@ -72 +72 @@ $language_data = array (
+-            'DEFAULT', 'DELAYED', 'DELETE', 'DESC', 'DESCRIBE', 'DISTINCT', 'DOUBLE',
++            'DEFAULT', 'DEFERRABLE', 'DEFERRED', 'DELAYED', 'DELETE', 'DESC', 'DESCRIBE', 'DISTINCT', 'DOUBLE',
+@@ -80 +80 @@ $language_data = array (
+-            'IDENTIFIED', 'IDENTITY', 'IF', 'IGNORE', 'IN', 'INCREMENT', 'INDEX', 'INFILE', 'INNER',
++            'IDENTIFIED', 'IDENTITY', 'IF', 'IGNORE', 'IMMEDIATE', 'IN', 'INCREMENT', 'INDEX', 'INFILE', 'INITIALLY', 'INNER',
+diff --git geshi/sshconfig.php geshi/sshconfig.php
+new file mode 100644
+index 0000000..d38cc46
+--- /dev/null 2017-05-13 19:11:19 UTC
++++ geshi/sshconfig.php 2022-09-15 20:03:19 UTC
+@@ -0,0 +1,165 @@
++<?php
++/*************************************************************************************
++ * sshconfig.php
++ * --------
++ * Author: Kevin Ernst (kevin.ernst -at- cchmc.org)
++ * Copyright: (c) 2017 Kevin Ernst
++ * Release Version: 1.0.9.1
++ * Date Started: 2017/12/01
++ *
++ * OpenSSH config file (~/.ssh/config) language file for GeSHi.
++ *
++ * CHANGES
++ * -------
++ * 2017/12/02 (1.0.0)
++ *   -  First release; couldn't figure out how to separately highlight negated
++ *      hostnames/wildcards, but it's good enough for a basic ~/.ssh/config
++ *
++ *************************************************************************************
++ *
++ *     This file is part of GeSHi.
++ *
++ *   GeSHi is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; either version 2 of the License, or
++ *   (at your option) any later version.
++ *
++ *   GeSHi is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details.
++ *
++ *   You should have received a copy of the GNU General Public License
++ *   along with GeSHi; if not, write to the Free Software
++ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ *
++ ************************************************************************************/
++
++$language_data = array (
++    'LANG_NAME' => 'sshconfig',
++    'COMMENT_SINGLE' => array(),
++    'COMMENT_MULTI' => array(),
++    'COMMENT_REGEXP' => array(0 => '/^\s*#.*?$/m'),
++    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
++    'QUOTEMARKS' => array('"'),
++    'ESCAPE_CHAR' => '',
++    'KEYWORDS' => array(
++        0 => array(
++            'Host',
++            ),
++        1 => array(
++            "Hostname", "Match", "AddKeysToAgent", "AddressFamily", "BatchMode",
++            "BindAddress", "CanonicalDomains", "CanonicalizeFallbackLocal",
++            "CanonicalizeHostname", "CanonicalizeMaxDots",
++            "CanonicalizePermittedCNAMEs", "CertificateFile",
++            "ChallengeResponseAuthentication", "CheckHostIP", "Ciphers",
++            "ClearAllForwardings", "Compression", "ConnectionAttempts",
++            "ConnectTimeout", "ControlMaster", "ControlPath", "ControlPersist",
++            "DynamicForward", "EnableSSHKeysign", "EscapeChar",
++            "ExitOnForwardFailure", "FingerprintHash", "ForwardAgent",
++            "ForwardX11", "ForwardX11Timeout", "ForwardX11Trusted",
++            "GatewayPorts", "GlobalKnownHostsFile", "GSSAPIAuthentication",
++            "GSSAPIDelegateCredentials", "HashKnownHosts",
++            "HostbasedAuthentication", "HostbasedKeyTypes", "HostKeyAlgorithms",
++            "HostKeyAlias", "HostName", "IdentitiesOnly", "IdentityAgent",
++            "IdentityFile", "IgnoreUnknown", "Include", "IPQoS",
++            "KbdInteractiveAuthentication", "KbdInteractiveDevices",
++            "KexAlgorithms", "LocalCommand", "LocalForward", "LogLevel", "MACs",
++            "NoHostAuthenticationForLocalhost", "NumberOfPasswordPrompts",
++            "PasswordAuthentication", "PermitLocalCommand", "PKCS11Provider",
++            "Port", "PreferredAuthentications", "ProxyCommand", "ProxyJump",
++            "ProxyUseFdpass", "PubkeyAcceptedKeyTypes", "PubkeyAuthentication",
++            "RekeyLimit", "RemoteCommand", "RemoteForward", "RequestTTY",
++            "RevokedHostKeys", "SendEnv", "ServerAliveCountMax",
++            "ServerAliveInterval", "StreamLocalBindMask",
++            "StreamLocalBindUnlink", "StrictHostKeyChecking", "SyslogFacility",
++            "TCPKeepAlive", "Tunnel", "TunnelDevice", "UpdateHostKeys",
++            "UsePrivilegedPort", "User", "UserKnownHostsFile",
++            "VerifyHostKeyDNS", "VisualHostKey", "XAuthLocation",
++            ),
++        ),
++    'SYMBOLS' => array(
++        0 => array(
++            '%h', '%p',
++            ),
++        // these get clobbered by regexes anyway
++        //1 => array( '!'),
++        //2 => array( '*')
++        ),
++    'CASE_SENSITIVE' => array(
++        GESHI_COMMENTS => false,
++        0 => true,
++        1 => true,
++        ),
++    'STYLES' => array(
++        'KEYWORDS' => array(
++            0 => 'color: green; font-weight: bold',
++            1 => 'color: blue',
++            ),
++        'COMMENTS' => array(
++            0 => 'color: #666666; font-style: italic;'
++            ),
++        'ESCAPE_CHAR' => array(
++            0 => ''
++            ),
++        'BRACKETS' => array(
++            0 => ''
++            ),
++        'STRINGS' => array(
++            0 => 'color: #933;'
++            ),
++        'NUMBERS' => array(
++            0 => ''
++            ),
++        'METHODS' => array(
++            0 => ''
++            ),
++        'SYMBOLS' => array(
++            0 => 'color: lightseagreen; font-weight: bold',
++            // these two get clobbered by regexes below anyway
++            1 => 'color: red; font-weight: bold',
++            1 => 'color: darkmagenta; font-weight: bold',
++            ),
++        'REGEXPS' => array(
++            0 => 'color: darkmagenta;',
++            //1 => 'color: red; font-weight: bold',
++            2 => 'color: magenta; font-weight: bold',
++            ),
++        'SCRIPT' => array(
++            0 => ''
++            )
++        ),
++    'URLS' => array(
++        0=> 'https://man.openbsd.org/ssh_config#{FNAME}',
++        1=> 'https://man.openbsd.org/ssh_config#{FNAME}',
++        ),
++    'OOLANG' => false,
++    'OBJECT_SPLITTERS' => array(
++        ),
++    'REGEXPS' => array(
++        // Hostnames
++        0 => array(
++            GESHI_SEARCH => '(Host(name)?.*?)(?<=\s)(.*)',
++            GESHI_REPLACE => '\\3',
++            GESHI_MODIFIERS => '',
++            GESHI_BEFORE => '\\1',
++            GESHI_AFTER => ''
++            ),
++        // Negated hostanmes (doesn't work)
++        //1 => array(
++        //    GESHI_SEARCH => '([([{,<+*-\/=\s!]|&lt;)(?!(?:PIPE|SEMI|DOT|NUM|REG3XP\d*)\W)(![a-zA-Z*]\w*)(?!\w)',
++        //    GESHI_SEARCH => '(?<=!)(.*?)',
++        //    GESH_REPLACE => '\\2',
++        //    GESHI_MODIFIERS => '',
++        //    GESHI_BEFORE => '\\1',
++        //    GESHI_AFTER => ''
++        //    ),
++        // Wildcards
++        2 => '\*'
++        ),
++    'STRICT_MODE_APPLIES' => GESHI_NEVER,
++    'SCRIPT_DELIMITERS' => array(
++        ),
++    'HIGHLIGHT_STRICT_BLOCK' => array(
++        )
++);
+diff --git geshi/standardml.php geshi/standardml.php
+index 9979ac5..c48494c 100644
+--- geshi/standardml.php 2017-05-13 19:11:19 UTC
++++ geshi/standardml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/stonescript.php geshi/stonescript.php
+index 6ea1971..cdf8991 100644
+--- geshi/stonescript.php 2017-05-13 19:11:19 UTC
++++ geshi/stonescript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/swift.php geshi/swift.php
+index 4069035..93091bb 100644
+--- geshi/swift.php 2017-05-13 19:11:19 UTC
++++ geshi/swift.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/systemverilog.php geshi/systemverilog.php
+index 24ed343..6d3124b 100644
+--- geshi/systemverilog.php 2017-05-13 19:11:19 UTC
++++ geshi/systemverilog.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/tcl.php geshi/tcl.php
+index 73b854e..ddaf134 100644
+--- geshi/tcl.php 2017-05-13 19:11:19 UTC
++++ geshi/tcl.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/tclegg.php geshi/tclegg.php
+index cc787e8..725e1e2 100644
+--- geshi/tclegg.php 2017-05-13 19:11:19 UTC
++++ geshi/tclegg.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/teraterm.php geshi/teraterm.php
+index 7c36002..9f04b7b 100644
+--- geshi/teraterm.php 2017-05-13 19:11:19 UTC
++++ geshi/teraterm.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/texgraph.php geshi/texgraph.php
+index ed57955..1f82d42 100644
+--- geshi/texgraph.php 2017-05-13 19:11:19 UTC
++++ geshi/texgraph.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/text.php geshi/text.php
+index 5b97cff..217e9c0 100644
+--- geshi/text.php 2017-05-13 19:11:19 UTC
++++ geshi/text.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/thinbasic.php geshi/thinbasic.php
+index d4c91e2..a8b413e 100644
+--- geshi/thinbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/thinbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/tsql.php geshi/tsql.php
+index e333c97..a20ac91 100644
+--- geshi/tsql.php 2017-05-13 19:11:19 UTC
++++ geshi/tsql.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/twig.php geshi/twig.php
+index 2936e0f..62b193d 100644
+--- geshi/twig.php 2017-05-13 19:11:19 UTC
++++ geshi/twig.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/typoscript.php geshi/typoscript.php
+index c52ba91..4fa2fd9 100644
+--- geshi/typoscript.php 2017-05-13 19:11:19 UTC
++++ geshi/typoscript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/unicon.php geshi/unicon.php
+index bd56f50..736c29d 100644
+--- geshi/unicon.php 2017-05-13 19:11:19 UTC
++++ geshi/unicon.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/upc.php geshi/upc.php
+index 0b8b485..228940d 100644
+--- geshi/upc.php 2017-05-13 19:11:19 UTC
++++ geshi/upc.php 2022-09-15 20:03:19 UTC
+@@ -11 +11 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/urbi.php geshi/urbi.php
+index f87e6c1..236a331 100644
+--- geshi/urbi.php 2017-05-13 19:11:19 UTC
++++ geshi/urbi.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/uscript.php geshi/uscript.php
+index 216eaff..eb385db 100644
+--- geshi/uscript.php 2017-05-13 19:11:19 UTC
++++ geshi/uscript.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vala.php geshi/vala.php
+index fd8ce68..d69354d 100644
+--- geshi/vala.php 2017-05-13 19:11:19 UTC
++++ geshi/vala.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vb.php geshi/vb.php
+index 2d2a7b6..3a44053 100644
+--- geshi/vb.php 2017-05-13 19:11:19 UTC
++++ geshi/vb.php 2022-09-15 20:03:19 UTC
+@@ -8 +8 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vbnet.php geshi/vbnet.php
+index 058b9c4..3932c52 100644
+--- geshi/vbnet.php 2017-05-13 19:11:19 UTC
++++ geshi/vbnet.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vbscript.php geshi/vbscript.php
+index 4f73664..66796ec 100644
+--- geshi/vbscript.php 2017-05-13 19:11:19 UTC
++++ geshi/vbscript.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vedit.php geshi/vedit.php
+index fa79420..4a6e1c6 100644
+--- geshi/vedit.php 2017-05-13 19:11:19 UTC
++++ geshi/vedit.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/verilog.php geshi/verilog.php
+index 8632304..afcd91e 100644
+--- geshi/verilog.php 2017-05-13 19:11:19 UTC
++++ geshi/verilog.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vhdl.php geshi/vhdl.php
+index edb0fd6..9ff11ec 100644
+--- geshi/vhdl.php 2017-05-13 19:11:19 UTC
++++ geshi/vhdl.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/vim.php geshi/vim.php
+index 39ec831..6f959a0 100644
+--- geshi/vim.php 2017-05-13 19:11:19 UTC
++++ geshi/vim.php 2022-09-15 20:03:19 UTC
+@@ -9 +9 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/visualfoxpro.php geshi/visualfoxpro.php
+index 9e43ead..cda3d5a 100644
+--- geshi/visualfoxpro.php 2017-05-13 19:11:19 UTC
++++ geshi/visualfoxpro.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/visualprolog.php geshi/visualprolog.php
+index 72ddb45..edb186c 100644
+--- geshi/visualprolog.php 2017-05-13 19:11:19 UTC
++++ geshi/visualprolog.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/whitespace.php geshi/whitespace.php
+index 47ca8fd..c11f69f 100644
+--- geshi/whitespace.php 2017-05-13 19:11:19 UTC
++++ geshi/whitespace.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/whois.php geshi/whois.php
+index 5ca47e1..e429d25 100644
+--- geshi/whois.php 2017-05-13 19:11:19 UTC
++++ geshi/whois.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/winbatch.php geshi/winbatch.php
+index aa1ce52..618fb6e 100644
+--- geshi/winbatch.php 2017-05-13 19:11:19 UTC
++++ geshi/winbatch.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/wolfram.php geshi/wolfram.php
+new file mode 100644
+index 0000000..9ea9e3c
+--- /dev/null 2017-05-13 19:11:19 UTC
++++ geshi/wolfram.php 2022-09-15 20:03:19 UTC
+@@ -0,0 +1,967 @@
++<?php
++/******************************************************************************
++ * wolfram.php
++ * ----------
++ * Author: Mysterious Light (youngmysteriouslight@gmail.com)
++ * Copyright: (c) 2018 Mysterious Light (youngmysteriouslight@gmail.com)
++ * Release Version: 1.0.9.1
++ * Date Started: 2018/01/12
++ *
++ * Wolfram language file for GeSHi.
++ *
++ ******************************************************************************
++ *
++ *   This file is part of GeSHi.
++ *
++ *   GeSHi is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; either version 2 of the License, or
++ *   (at your option) any later version.
++ *
++ *   GeSHi is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details.
++ *
++ *   You should have received a copy of the GNU General Public License
++ *   along with GeSHi; if not, write to the Free Software
++ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ *
++ *****************************************************************************/
++
++$language_data = array (
++    'LANG_NAME' => 'Wolfram',
++    'COMMENT_SINGLE' => array(),
++    'COMMENT_MULTI' => array('(*' => '*)'),
++    'COMMENT_REGEXP' => array(
++        2 => '/\\(\\*.*\\*\\)/',
++        3 => '/\\\\\\[\\w+]/'
++        ),
++    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
++    'QUOTEMARKS' => array('"'),
++    'ESCAPE_CHAR' => '\\',
++    'KEYWORDS' => array(
++        /* main wolfram keywords */
++        1 => array(
++            'AbelianGroup', '$Aborted', 'AbortKernels', 'Abort', 'Abs', 'All',
++            'AbortProtect', 'AbsoluteCurrentValue', 'AbsoluteDashing', 'AddTo',
++            'AbsoluteFileName', 'AbsoluteOptions', 'AbsolutePointSize', 'And',
++            'AbsoluteThickness', 'AbsoluteTime', 'AbsoluteTiming', 'Accuracy',
++            'AccountingForm', 'Accumulate', 'AccuracyGoal', 'ActionMenu', 'C',
++            'Active', 'ActiveStyle', 'AcyclicGraphQ', 'AddOnHelpPath', 'Alias',
++            'AdjacencyGraph', 'AdjacencyMatrix', 'AdjustmentBox', 'AiryAi',
++            'AffineTransform', 'AiryAiPrime', 'AiryAiZero', 'AiryBi', 'AngerJ',
++            'AiryBiPrime', 'AiryBiZero', 'AlgebraicIntegerQ', 'AlgebraicRules',
++            'AlgebraicNumberDenominator', 'AlgebraicNumber', 'Algebraics', 'D',
++            'AlgebraicNumberNorm', 'AlgebraicNumberPolynomial', 'Alignment',
++            'AlgebraicNumberTrace', 'AlgebraicUnitQ', 'AlignmentPoint', 'Arg',
++            'AllowGroupClose', 'AllowInlineCells', 'AllowReverseGroupClose',
++            'AllowScriptLevelChange', 'AlphaChannel', 'AlternatingGroup', 'Do',
++            'AlternativeHypothesis', 'Alternatives', 'AmbientLight', 'Animate',
++            'AnchoredSearch', 'AndersonDarlingTest', 'AngleBracket', 'Annuity',
++            'AnimationCycleOffset', 'AnimationCycleRepetitions', 'Animator',
++            'AnimationDirection', 'AnimationDisplayTime', 'AnimationRate', 'E',
++            'AnimationRepetitions', 'AnimationRunning', 'Annotation', 'Apart',
++            'AnnuityDue', 'Antialiasing', 'ApartSquareFree', 'Appearance', 'I',
++            'AppearanceElements', 'AppellF1', 'Append', 'AppendTo', 'Apply',
++            'ArcCosh', 'ArcCos', 'ArcCoth', 'ArcCot', 'ArcCsch', 'ArcCsc', 'N',
++            'ArcSech', 'ArcSec', 'ArcSinDistribution', 'ArcSinh', 'ArcSin',
++            'ArcTanh', 'ArcTan', 'ArgMax', 'ArgMin', 'ArithmeticGeometricMean',
++            'ArrayComponents', 'ArrayDepth', 'ArrayFlatten', 'Array', 'ArrayQ',
++            'ArrayPad', 'ArrayPlot', 'ArrayRules', 'Arrowheads', 'Arrow', 'Dt',
++            'AspectRatioFixed', 'AspectRatio', '$AssertFunction', 'Assert',
++            'Assuming', '$Assumptions', 'Assumptions', 'AstronomicalData', 'O',
++            'Asynchronous', 'AtomQ', 'Attributes', 'AutoAction', 'AutoDelete',
++            'AugmentedSymmetricPolynomial', 'AutoGeneratedPackage', 'AxesEdge',
++            'AutoIndent', 'AutoItalicWords', 'AutoloadPath', 'Automatic', 'If',
++            'AutoMultiplicationSymbol', 'AutoOpenNotebooks', 'AutoScroll',
++            'AutoOpenPalettes', 'AutorunSequencing', 'AutoSpacing', 'Axes',
++            'AxesLabel', 'AxesOrigin', 'AxesStyle', 'Axis', 'Background', 'Im',
++            'BabyMonsterGroupB', 'Back', 'Backslash', 'Backward', 'Band', 'In',
++            'BarabasiAlbertGraphDistribution', 'BarChart3D', 'BarChart', 'Cap',
++            'BarnesG', 'BarOrigin', 'BarSpacing', '$BaseDirectory', 'BaseForm',
++            'Baseline', 'BaselinePosition', 'BaseStyle', '$BatchInput', 'Beep',
++            '$BatchOutput', 'BatesDistribution', 'BattleLemarieWavelet', 'CDF',
++            'Because', 'BeckmannDistribution', 'BeginDialogPacket', 'Begin',
++            'BeginPackage', 'BellB', 'BellY', 'BenfordDistribution', 'BesselI',
++            'BeniniDistribution', 'BenktanderGibratDistribution', 'BernoulliB',
++            'BenktanderWeibullDistribution', 'BernoulliDistribution', 'Beta',
++            'BernoulliGraphDistribution', 'BernsteinBasis', 'BesselJ', 'BitOr',
++            'BesselJZero', 'BesselK', 'BesselY', 'BesselYZero', 'BezierCurve',
++            'BetaBinomialDistribution', 'BetaDistribution', 'BetaRegularized',
++            'BetaNegativeBinomialDistribution', 'BetaPrimeDistribution', 'Cos',
++            'BetweennessCentrality', 'BezierFunction', 'BilateralFilter', 'On',
++            'Binarize', 'BinaryFormat', 'BinaryImageQ', 'BinaryReadList', 'Or',
++            'BinaryRead', 'BinaryWrite', 'BinCounts', 'BinLists', 'Binomial',
++            'BinomialDistribution', 'BinormalDistribution', 'BipartiteGraphQ',
++            'BiorthogonalSplineWavelet', 'BirnbaumSaundersDistribution', 'Cot',
++            'BitAnd', 'BitClear', 'BitGet', 'BitLength', 'BitNot', 'BitSet',
++            'BitShiftLeft', 'BitShiftRight', 'BitXor', 'Black', 'Blank', 'Csc',
++            'BlankNullSequence', 'BlankSequence', 'Blend', 'Block', 'Blue',
++            'BlockRandom', 'Blur', 'BodePlot', 'Bold', 'Bookmarks', 'Booleans',
++            'BooleanConvert', 'BooleanCountingFunction', 'BooleanFunction',
++            'BooleanGraph', 'BooleanMaxterms', 'BooleanMinimize', 'Boole',
++            'BooleanMinterms', 'BooleanTable', 'BooleanVariables', 'Bottom',
++            'BorderDimensions', 'BorelTannerDistribution', 'BoundaryStyle',
++            'BottomHatTransform', 'BoxBaselineShift', 'BoxData', 'Boxed', 'Pi',
++            'BoxFormFormatTypes', 'BoxFrame', 'BoxMargins', 'BoxMatrix', 'Cup',
++            'BoxRatios', 'BoxStyle', 'BoxWhiskerChart', 'BracketingBar', 'Del',
++            'BrayCurtisDistance', 'BreadthFirstScan', 'Break', 'Brown', 'Byte',
++            'BrownForsytheTest', 'BSplineBasis', 'BSplineCurve', 'BubbleChart',
++            'BSplineFunction', 'BSplineSurface', 'BubbleChart3D', 'ButtonBar',
++            'BubbleScale', 'BubbleSizes', 'ButterflyGraph', 'ButtonBox', 'Det',
++            'ButtonBoxOptions', 'ButtonData', 'ButtonEvaluator', 'ButtonFrame',
++            'ButtonExpandable', 'ButtonFunction', 'ButtonMargins', 'Button',
++            'ButtonMinHeight', 'ButtonNotebook', 'ButtonNote', 'ButtonSource',
++            'ButtonStyle', 'ByteCount', '$ByteOrdering', 'ByteOrdering', 'Dot',
++            'CallPacket', 'CanberraDistance', 'CancelButton', '$Canceled',
++            'Cancel', 'CandlestickChart', 'CapForm', 'CapitalDifferentialD',
++            'CarmichaelLambda', 'Cases', 'Cashflow', 'Casoratian', 'Catalan',
++            'CatalanNumber', 'Catch', 'CauchyDistribution', 'CayleyGraph',
++            'CDFWavelet', 'Ceiling', 'CellArray', 'CellAutoOverwrite', 'Cell',
++            'CellBaseline', 'CellBracketOptions', 'CellChangeTimes', 'Center',
++            'CellContext', 'CellDingbat', 'CellDynamicExpression', 'CellFrame',
++            'CellEditDuplicate', 'CellEpilog', 'CellEvaluationDuplicate', 'Re',
++            'CellEvaluationFunction', 'CellEventActions', 'CellFrameColor',
++            'CellFrameLabelMargins', 'CellFrameLabels', 'CellFrameMargins',
++            'CellGroupData', 'CellGrouping', 'CellGroupingRules', 'CellGroup',
++            'CellHorizontalScrolling', 'CellLabelAutoDelete', 'CellLabel',
++            'CellLabelMargins', 'CellLabelPositioning', 'CellMargins', 'CForm',
++            'CellOpen', 'CellPrint', 'CellProlog', 'CellSize', 'CellTags',
++            'CellularAutomaton', 'CensoredDistribution', 'Censoring', 'Check',
++            'CenterDot', 'CentralMomentGeneratingFunction', 'CentralMoment',
++            'ChampernowneNumber', 'ChanVeseBinarize', '$CharacterEncoding',
++            'CharacterEncoding', '$CharacterEncodings', 'Character', 'Chop',
++            'CharacterEncodingsPath', 'CharacteristicFunction', 'Characters',
++            'CharacteristicPolynomial', 'CharacterRange', 'ChartBaseStyle',
++            'ChartElementFunction', 'ChartElements', 'ChartLabels', 'Checkbox',
++            'ChartLayout', 'ChartLegends', 'ChartStyle', 'ChebyshevDistance',
++            'ChebyshevT', 'ChebyshevU', 'CheckAbort', 'CheckboxBar', 'Circle',
++            'ChemicalData', 'ChessboardDistance', 'ChiDistribution', 'Clear',
++            'ChineseRemainder', 'ChiSquareDistribution', 'ChoiceButtons', 'Tr',
++            'ChoiceDialog', 'CholeskyDecomposition', 'CircleDot', 'CirclePlus',
++            'CircleMinus', 'CircleTimes', 'CirculantGraph', 'CityData', 'Clip',
++            'ClearAll', 'ClearAttributes', 'ClearSystemCache', 'ClebschGordan',
++            'ClickPane', 'ClipFill', 'ClippingStyle', 'Clock', 'CloseKernels',
++            'Close', 'ClosenessCentrality', 'ClosingAutoSave', 'Closing',
++            'ClusteringComponents', 'CMYKColor', 'CoefficientArrays', 'Colon',
++            'CoefficientList', 'Coefficient', 'CoefficientRules', 'Collect',
++            'CoifletWavelet', 'ColorCombine', 'ColorConvert', 'ColorData',
++            'ColorDataFunction', 'ColorFunction', 'ColorFunctionScaling',
++            'Colorize', 'ColorNegate', 'ColorOutput', 'ColorQuantize', 'Cone',
++            'ColorRules', 'ColorSelectorSettings', 'ColorSeparate', 'Column',
++            'ColorSetter', 'ColorSlider', 'ColorSpace', 'ColumnAlignments',
++            'ColumnForm', 'ColumnLines', 'ColumnsEqual', 'ColumnSpacings',
++            'ColumnWidths', '$CommandLine', 'CommonDefaultFormatTypes', 'Cosh',
++            'CommonestFilter', 'Commonest', 'CompilationOptions', 'Compiled',
++            '$CompilationTarget', 'CompilationTarget', 'CompiledFunction',
++            'Compile', 'Complement', 'CompleteGraph', 'CompleteGraphQ', 'Coth',
++            'CompleteKaryTree', 'Complexes', 'ComplexExpand', 'Complex', 'End',
++            'ComplexInfinity', 'ComplexityFunction', 'ComponentMeasurements',
++            'ComposeList', 'Compose', 'ComposeSeries', 'Composition', 'Count',
++            'CompoundExpression', 'Compress', 'ConditionalExpression', 'Cross',
++            'Conditioned', 'Condition', 'ConfidenceLevel', 'ConfigurationPath',
++            '$ConfiguredKernels', 'Congruent', 'Conjugate', 'Conjunction',
++            'ConjugateTranspose', 'ConnectedComponents', 'ConnectedGraphQ',
++            'ConoverTest', 'ConstantArray', 'Constant', 'Constants', 'Context',
++            'ConstrainedMax', 'ConstrainedMin', 'ContentPadding', '$Context',
++            'ContentSelectable', 'ContentSize', '$ContextPath', 'Contexts',
++            'ContextToFileName', 'ContinuedFractionK', 'ContinuedFraction',
++            'Continue', 'ContinuousAction', 'ContinuousTimeModelQ', 'Contours',
++            'ContinuousWaveletData', 'ContinuousWaveletTransform', 'Control',
++            'ContourDetect', 'ContourGraphics', 'ContourLabels', 'ContourPlot',
++            'ContourLevels', 'ContourLines', 'ContourPlot3D', 'ContourShading',
++            'ContourSpacing', 'ContourStyle', 'ContraharmonicMean', 'Convolve',
++            'ControlActive', '$ControlActiveSetting', 'ControllabilityGramian',
++            'ControllabilityMatrix', 'ControllableDecomposition', 'CoprimeQ',
++            'ControllableModelQ', 'ControllerInformation', 'ControllerLinking',
++            'ControllerManipulate', 'ControllerMethod', 'ControllerPath',
++            'ControllerState', 'ControlPlacement', 'ControlsRendering', 'Csch',
++            'ControlType', 'Convergents', 'ConversionOptions', 'Coproduct',
++            'ConversionRules', 'ConwayGroupCo1', 'ConwayGroupCo2', 'Copyable',
++            'ConwayGroupCo3', 'CoordinatesToolOptions', 'CopulaDistribution',
++            'CopyDirectory', 'CopyFile', 'CopyToClipboard', 'CornerFilter',
++            'CornerNeighbors', 'CorrelationDistance', 'Correlation', 'Cubics',
++            'CoshIntegral', 'CosineDistance', 'CosIntegral', 'CounterFunction',
++            'CounterAssignments', 'CounterIncrements', 'CountRoots', 'Cuboid',
++            'CounterStyleMenuListing', 'CountryData', 'Covariance', 'Cumulant',
++            'CovarianceEstimatorFunction', 'CramerVonMisesTest', 'CrossMatrix',
++            'CreateArchive', 'CreateDialog', 'CreateDirectory', 'CreateWindow',
++            'CreateDocument', 'CreateIntermediateDirectories', 'CreatePalette',
++            'CreateScheduledTask', '$CreationDate', 'CriticalSection', 'Cyan',
++            'CrossingDetect', 'CumulantGeneratingFunction', 'CupCap', 'Cycles',
++            'CurrentImage', '$CurrentLink', 'CurrentValue', 'CurveClosed',
++            'CurvatureFlowFilter', 'CycleGraph', 'CyclicGroup', 'Cyclotomic',
++            'Cylinder', 'CylindricalDecomposition', 'DagumDistribution', 'Erf',
++            'DamerauLevenshteinDistance', 'Darker', 'Dashed', 'Dashing', 'Exp',
++            'DataDistribution', 'DataRange', 'DataReversed', 'DateDifference',
++            'DateFunction', 'DateListLogPlot', 'DateList', 'DateListPlot',
++            'Date', 'DatePattern', 'DatePlus', '$DateStringFormat', 'DawsonF',
++            'DateString', 'DateTicksFormat', 'DaubechiesWavelet', 'Debug',
++            'DavisDistribution', 'DeBruijnGraph', 'DeclarePackage', 'Default',
++            'Decompose', 'Decrement', 'DedekindEta', 'DefaultAxesStyle', 'Fit',
++            'DefaultBaseStyle', 'DefaultBoxStyle', 'DefaultButton', 'Defer',
++            'DefaultColor', 'DefaultDuplicateCellStyle', 'DefaultDuration',
++            'DefaultElement', 'DefaultFaceGridsStyle', 'DefaultFieldHintStyle',
++            '$DefaultFont', 'DefaultFont', 'DefaultFontProperties', 'Degree',
++            'DefaultFormatType', 'DefaultFrameStyle', 'DefaultFrameTicksStyle',
++            'DefaultGridLinesStyle', '$DefaultImagingDevice', 'DefaultOptions',
++            'DefaultInlineFormatType', 'DefaultLabelStyle', 'DefaultMenuStyle',
++            'DefaultNaturalLanguage', 'DefaultNewCellStyle', 'DefaultNotebook',
++            'DefaultNewInlineCellStyle', 'DefaultStyleDefinitions', 'Delete',
++            'DefaultTicksStyle', 'Definition', 'DegreeCentrality', 'Deletable',
++            'DegreeGraphDistribution', 'Deinitialization', 'DeleteCases',
++            'DeleteBorderComponents', 'DeleteContents', 'DeleteDirectory',
++            'DeleteDuplicates', 'DeleteFile', 'DeleteSmallComponents', 'Depth',
++            'DeletionWarning', 'DelimiterFlashTime', 'DelimiterMatching',
++            'Delimiter', 'Denominator', 'DensityGraphics', 'DensityHistogram',
++            'DensityPlot', 'DependentVariables', 'Deployed', 'Deploy', 'Disk',
++            'DepthFirstScan', 'DerivativeFilter', 'Derivative', 'DesignMatrix',
++            'DGaussianWavelet', 'DiacriticalPositioning', 'DiagonalMatrix',
++            'Diagonal', 'DialogInput', 'Dialog', 'DialogNotebook', 'Diamond',
++            'DialogProlog', 'DialogReturn', 'DialogSymbols', 'DiamondMatrix',
++            'DiceDissimilarity', 'DictionaryLookup', 'DifferenceDelta', 'Drop',
++            'DifferenceRoot', 'DifferenceRootReduce', 'Differences', 'DigitQ',
++            'DifferentialD', 'DifferentialRoot', 'DifferentialRootReduce',
++            'DigitBlock', 'DigitCharacter', 'DigitCount', 'DihedralGroup',
++            'Dilation', 'Dimensions', 'DiracComb', 'DiracDelta', 'Direction',
++            'DirectedEdge', 'DirectedEdges', 'DirectedGraph', 'DirectedGraphQ',
++            'DirectedInfinity', 'Directive', 'DirectoryName', 'Directory',
++            'DirectoryQ', 'DirectoryStack', 'DirichletCharacter', 'DirichletL',
++            'DirichletConvolve', 'DirichletDistribution', 'DirichletTransform',
++            'DiscreteConvolve', 'DiscreteDelta', 'DiscreteIndicator', 'Divide',
++            'DiscreteLQEstimatorGains', 'DiscreteLQRegulatorGains', 'Dispatch',
++            'DiscreteLyapunovSolve', 'DiscretePlot3D', 'DiscretePlot', 'Dump',
++            'DiscreteRatio', 'DiscreteRiccatiSolve', 'DiscreteShift', 'Dotted',
++            'DiscreteTimeModelQ', 'DiscreteUniformDistribution', 'Disjunction',
++            'DiscreteWaveletData', 'DiscreteWaveletPacketTransform', 'Display',
++            'DiscreteWaveletTransform', 'Discriminant', 'DiskMatrix', 'DSolve',
++            'DispersionEstimatorFunction', 'DisplayAllSteps', 'DisplayForm',
++            'DisplayEndPacket', '$DisplayFunction', 'DisplayFunction', '$Echo',
++            '$Display', 'DisplayPacket', 'DisplayString', 'DistanceFunction',
++            'DistanceTransform', '$DistributedContexts', 'DistributedContexts',
++            'DistributeDefinitions', 'Distributed', 'Distribute', 'Dithering',
++            'DistributionChart', 'DistributionFitTest', 'DivideBy', 'Dividers',
++            'DistributionParameterAssumptions', 'DistributionParameterQ',
++            'Divisible', 'DivisorSigma', 'Divisors', 'DivisorSum', 'DMSList',
++            'DMSString', 'DockedCells', 'DocumentNotebook', 'DotDashed', 'For',
++            'DotEqual', 'DoubleBracketingBar', 'DoubleDownArrow', 'DownArrow',
++            'DoubleLeftArrow', 'DoubleLeftRightArrow', 'DoubleLongLeftArrow',
++            'DoubleLongLeftRightArrow', 'DoubleLongRightArrow', 'DownArrowBar',
++            'DoubleRightArrow', 'DoubleUpArrow', 'DoubleUpDownArrow', 'EdgeQ',
++            'DoubleVerticalBar', 'DownArrowUpArrow', 'DownLeftRightVector',
++            'DownLeftTeeVector', 'DownLeftVectorBar', 'DownLeftVector', 'Erfc',
++            'DownRightTeeVector', 'DownRightVectorBar', 'DownRightVector',
++            'DownTeeArrow', 'DownValues', 'DragAndDrop', 'DSolveConstants',
++            'DualSystemsModel', 'DumpSave', '$DynamicEvaluation', 'Dynamic',
++            'DynamicEvaluationTimeout', 'DynamicModule', 'DynamicModuleValues',
++            'DynamicSetting', 'DynamicWrapper', 'EdgeAdd', 'EdgeCount', 'Erfi',
++            'EdgeCoverQ', 'EdgeDelete', 'EdgeDetect', 'EdgeForm', 'EdgeIndex',
++            'EdgeLabeling', 'EdgeLabels', 'EdgeLabelStyle', 'EdgeList', 'Exit',
++            'EdgeRenderingFunction', 'EdgeRules', 'EdgeShapeFunction', 'Equal',
++            'EdgeStyle', 'EdgeWeight', 'Editable', 'EditCellTagsSettings',
++            'EditDistance', 'EffectiveInterest', 'Eigensystem', 'Eigenvalues',
++            'EigenvectorCentrality', 'Eigenvectors', 'ElementData', 'Element',
++            'Eliminate', 'EllipticE', 'EllipticExp', 'EllipticExpPrime', 'GCD',
++            'EllipticF', 'EllipticK', 'EllipticLog', 'EllipticNomeQ', 'Encode',
++            'EllipticPi', 'EllipticTheta', 'EllipticThetaPrime', 'EmitSound',
++            'EmpiricalDistribution', 'EmptyGraphQ', 'Enabled', 'EndOfFile',
++            'EndDialogPacket', 'EndOfLine', 'EndOfString', 'EndPackage', 'Get',
++            'EngineeringForm', 'EnterExpressionPacket', 'EnterTextPacket',
++            'EntropyFilter', 'Entropy', 'Environment', '$Epilog', 'Epilog',
++            'EqualTilde', 'Equilibrium', 'Equivalent', 'ErlangDistribution',
++            'Erosion', 'ErrorBox', 'ErrorBoxOptions', 'EstimatedDistribution',
++            'EstimatorGains', 'EstimatorRegulator', 'EuclideanDistance', 'Hue',
++            'EulerE', 'EulerGamma', 'EulerianGraphQ', 'EulerPhi', 'Evaluate',
++            'Evaluatable', 'EvaluatePacket', 'EvaluationCompletionAction',
++            'EvaluationElements', 'EvaluationMonitor', 'EvaluationNotebook',
++            'EvaluationObject', 'EvaluatorNames', 'Evaluator', 'EvenQ', 'Find',
++            'EventHandler', 'EventLabels', 'ExactNumberQ', 'ExampleData',
++            'Except', 'ExcludedForms', 'ExcludePods', 'Exclusions', 'Exists',
++            'ExclusionsStyle', 'ExpandAll', 'ExpandDenominator', 'Expand',
++            'ExpandFileName', 'ExpandNumerator', 'Expectation', 'ExpIntegralE',
++            'ExpectedValue', 'ExpGammaDistribution', 'ExpIntegralEi', 'Export',
++            'ExponentFunction', 'ExponentialDistribution', 'ExponentialFamily',
++            'ExponentialGeneratingFunction', 'ExponentialMovingAverage', 'LCM',
++            'ExponentialPowerDistribution', 'Exponent', 'ExponentPosition',
++            'ExponentStep', 'ExportAutoReplacements', '$ExportFormats', 'Flat',
++            'ExportString', 'ExpressionCell', 'Expression', 'ExpToTrig', 'Log',
++            'ExtendedGCD', 'Extension', 'ExtentElementFunction', 'ExtentSize',
++            'ExtentMarkers', 'ExternalDataCharacterEncoding', 'ExtractArchive',
++            'Extract', 'ExtremeValueDistribution', 'FaceForm', 'FaceGrids',
++            'FaceGridsStyle', 'FactorComplete', 'Factorial2', 'Factorial',
++            'FactorialMomentGeneratingFunction', 'FactorialMoment', 'Factor',
++            'FactorialPower', 'FactorInteger', 'FactorList', 'FactorTermsList',
++            'FactorSquareFreeList', 'FactorSquareFree', 'FactorTerms', 'False',
++            '$Failed', 'FeedbackType', 'Fibonacci', 'FieldHint', 'FieldMasked',
++            'FieldHintStyle', 'FieldSize', 'FileBaseName', 'FileByteCount',
++            'FileDate', 'FileExistsQ', 'FileExtension', 'FileFormat', 'First',
++            'FileHash', 'FileNameDepth', 'FileNameDialogSettings', 'FileNames',
++            'FileNameDrop', 'FileNameJoin', 'FileNameSetter', 'FileNameSplit',
++            'FileNameTake', 'FilePrint', 'FileType', 'FilledCurve', 'Filling',
++            'FillingStyle', 'FillingTransform', 'FilterRules', 'FinancialBond',
++            'FinancialData', 'FinancialDerivative', 'FinancialIndicator',
++            'FindArgMax', 'FindArgMin', 'FindClique', 'FindClusters', 'Floor',
++            'FindCurvePath', 'FindDistributionParameters', 'FindDivisions',
++            'FindEdgeCover', 'FindEulerianCycle', 'FindFile', 'FindFit', 'Map',
++            'FindGeneratingFunction', 'FindGeoLocation', 'FindInstance', 'Max',
++            'FindGeometricTransform', 'FindGraphIsomorphism', 'FindLibrary',
++            'FindHamiltonianCycle', 'FindIndependentEdgeSet', 'FindList',
++            'FindIndependentVertexSet', 'FindIntegerNullVector', 'FindMaximum',
++            'FindLinearRecurrence', 'FindMaxValue', 'FindMinimum', 'FindRoot',
++            'FindMinValue', 'FindPermutation', 'FindSequenceFunction', 'Fold',
++            'FindSettings', 'FindShortestPath', 'FindShortestTour', 'Flatten',
++            'FindThreshold', 'FindVertexCover', 'FinishDynamic', 'FittedModel',
++            'FiniteAbelianGroupCount', 'FiniteGroupCount', 'FiniteGroupData',
++            'FischerGroupFi22', 'FischerGroupFi23', 'FischerGroupFi24Prime',
++            'FisherHypergeometricDistribution', 'FisherRatioTest', 'FlattenAt',
++            'FisherZDistribution', 'FixedPointList', 'FixedPoint', 'FlipView',
++            'FoldList', 'FontColor', 'FontFamily', 'FontForm', 'FontSize',
++            'FontProperties', 'FontSlant', 'FontSubstitutions', 'FontTracking',
++            'FontVariations', 'FontWeight', 'ForAll', 'Format', '$FormatType',
++            'FormatTypeAutoConvert', 'FormatType', 'FormBox', 'FormBoxOptions',
++            'FortranForm', 'ForwardBackward', 'Forward', 'FourierCoefficient',
++            'FourierCosCoefficient', 'FourierCosSeries', 'FourierCosTransform',
++            'FourierDCT', 'FourierDST', 'Fourier', 'FourierParameters', 'Full',
++            'FourierSequenceTransform', 'FourierSeries', 'FourierSinSeries',
++            'FourierSinCoefficient', 'FourierSinTransform', 'FourierTransform',
++            'FourierTrigSeries', 'FractionalPart', 'FractionBox', 'FrameBox',
++            'FractionBoxOptions', 'FractionLine', 'FrameBoxOptions', 'Framed',
++            'FrameLabel', 'FrameMargins', 'Frame', 'FrameStyle', 'FrameTicks',
++            'FrameTicksStyle', 'FRatioDistribution', 'FrechetDistribution',
++            'FreeQ', 'FresnelC', 'FresnelS', 'FrobeniusNumber', 'FromASCII',
++            'FrobeniusSolve', 'FromCharacterCode', 'FromCoefficientRules',
++            'FromContinuedFraction', 'FromDate', 'FromDigits', 'FromDMS',
++            'FrontEndDynamicExpression', 'FrontEndEventActions', '$FrontEnd',
++            'FrontEndExecute', '$FrontEndSession', 'FrontEndStackSize', 'Glow',
++            'FrontEndTokenExecute', 'FrontEndToken', 'Front', 'FullDefinition',
++            'FullForm', 'FullGraphics', 'FullOptions', 'FullSimplify', 'Gamma',
++            'FunctionExpand', 'FunctionInterpolation', 'Function', 'GatherBy',
++            'FunctionSpace', 'GaborWavelet', 'GainMargins', 'GainPhaseMargins',
++            'GammaDistribution', 'GammaRegularized', 'GapPenalty', 'Gather',
++            'GaussianFilter', 'GaussianIntegers', 'GaussianMatrix', 'General',
++            'GegenbauerC', 'GeneralizedLinearModelFit', 'GenerateConditions',
++            'GeneratedCell', 'GeneratedParameters', 'GeneratingFunction',
++            'GenericCylindricalDecomposition', 'GenomeData', 'GenomeLookup',
++            'GeodesicDilation', 'GeodesicErosion', 'GeoDestination', 'Goto',
++            'GeodesyData', 'GeoDirection', 'GeoDistance', 'GeoGridPosition',
++            '$GeoLocation', 'GeometricDistribution', 'GeometricMeanFilter',
++            'GeometricMean', 'GeometricTransformation', 'GeoPositionENU',
++            'GeoPosition', 'GeoPositionXYZ', 'GeoProjectionData', 'Glaisher',
++            'GoldenRatio', 'GompertzMakehamDistribution', 'GradientFilter',
++            'Gradient', 'GraphCenter', 'GraphComplement', 'GraphData', 'Graph',
++            'GraphDiameter', 'GraphDifference', 'GraphDisjointUnion', 'GraphQ',
++            'GraphDistanceMatrix', 'GraphDistance', 'GraphHighlight', 'Gray',
++            'GraphHighlightStyle', 'Graphics3D', 'GraphicsArray', 'Graphics',
++            'GraphicsColumn', 'GraphicsComplex', 'GraphicsGrid', 'GraphicsRow',
++            'GraphicsGroup', 'GraphicsSpacing', 'GraphIntersection', 'Greater',
++            'GraphLayout', 'GraphPeriphery', 'GraphPlot3D', 'GraphPlot', 'Min',
++            'GraphPower', 'GraphRadius', 'GraphStyle', 'GraphUnion', 'Green',
++            'GrayLevel', 'GreaterEqualLess', 'GreaterEqual', 'GreaterGreater',
++            'GreaterFullEqual', 'GreaterLess', 'GreaterSlantEqual', 'GridBox',
++            'GreaterTilde', 'GridBaseline', 'GridCreationSettings', 'Grid',
++            'GridDefaultElement', 'GridFrameMargins', 'GridFrame', 'GridGraph',
++            'GridLines', 'GridLinesStyle', 'GroebnerBasis', 'GroupActionBase',
++            'GroupCentralizer', 'GroupElementPosition', 'GroupElementQ', 'Mod',
++            'GroupElements', 'GroupGenerators', 'GroupMultiplicationTable',
++            'GroupOrbits', 'GroupOrder', 'GroupPageBreakWithin', 'HaarWavelet',
++            'GroupSetwiseStabilizer', 'GroupStabilizerChain', 'Gudermannian',
++            'GroupStabilizer', 'GumbelDistribution', 'HalfNormalDistribution',
++            'HamiltonianGraphQ', 'HammingDistance', 'HankelH1', 'HankelH2',
++            'HankelMatrix', 'HaradaNortonGroupHN', 'HararyGraph', 'Hash',
++            'HarmonicMeanFilter', 'HarmonicMean', 'HarmonicNumber', 'Head',
++            'Haversine', 'HazardFunction', 'Heads', 'HeavisideLambda', 'Hold',
++            'HeavisidePi', 'HeavisideTheta', 'HeldGroupHe', 'HeldPart', 'Item',
++            'HelpBrowserSettings', 'HermiteDecomposition', 'HermiteH', 'Image',
++            'HermitianMatrixQ', 'HessenbergDecomposition', 'HiddenSurface',
++            'HexadecimalCharacter', 'HighlightGraph', 'HigmanSimsGroupHS',
++            'HilbertMatrix', 'Histogram3D', 'HistogramDistribution', 'HoldAll',
++            'HistogramList', 'Histogram', '$HistoryLength', 'HitMissTransform',
++            'HITSCentrality', 'HoldAllComplete', 'HoldComplete', 'HoldFirst',
++            'HoldForm', 'HoldPattern', 'HoldRest', '$HomeDirectory', 'ImageQ',
++            'HomeDirectory', 'HornerForm', 'HotellingTSquareDistribution',
++            'HoytDistribution', 'HTMLSave', 'HumpDownHump', 'HumpEqual', 'Nor',
++            'HurwitzLerchPhi', 'HurwitzZeta', 'HyperbolicDistribution', 'Join',
++            'HypercubeGraph', 'Hyperfactorial', 'Hypergeometric0F1', 'Implies',
++            'Hypergeometric0F1Regularized', 'Hypergeometric1F1', 'Hyperlink',
++            'Hypergeometric1F1Regularized', 'Hypergeometric2F1', 'Hyphenation',
++            'Hypergeometric2F1Regularized', 'HypergeometricDistribution',
++            'HypergeometricPFQ', 'HypergeometricPFQRegularized', 'Identity',
++            'HypergeometricU', 'HypothesisTestData', 'IdentityMatrix', 'Infix',
++            'IgnoreCase', '$IgnoreEOF', 'ImageAdd', 'ImageAdjust', 'ImageClip',
++            'ImageAlign', 'ImageApply', 'ImageAspectRatio', 'ImageAssemble',
++            'ImageCapture', 'ImageChannels', 'ImageColorSpace', 'ImageCompose',
++            'ImageConvolve', 'ImageCooccurrence', 'ImageCorrelate', 'ImagePad',
++            'ImageCorrespondingPoints', 'ImageCrop', 'ImageData', 'ImageLines',
++            'ImageDeconvolve', 'ImageDifference', 'ImageDimensions', 'Import',
++            'ImageEffect', 'ImageFilter', 'ImageForestingComponents', 'Inner',
++            'ImageForwardTransformation', 'ImageHistogram', 'ImageKeypoints',
++            'ImageLevels', 'ImageMargins', 'ImageMultiply', 'ImagePadding',
++            'ImagePartition', 'ImagePerspectiveTransformation', 'ImageReflect',
++            'ImageRegion', 'ImageResize', 'ImageResolution', 'ImageRotated',
++            'ImageRotate', 'ImageScaled', 'ImageSizeAction', 'ImageSize',
++            'ImageSizeMultipliers', 'ImageSubtract', 'ImageTake', 'ImageTrim',
++            'ImageTransformation', 'ImageType', 'ImageValue', '$ImportFormats',
++            '$ImagingDevices', 'ImportAutoReplacements', 'ImportString', 'Not',
++            'IncidenceGraph', 'IncidenceMatrix', 'IncludeConstantBasis', 'Off',
++            'IncludeFileExtension', 'IncludePods', 'Increment', 'IndexGraph',
++            'IndependentEdgeSetQ', 'IndependentVertexSetQ', 'Indeterminate',
++            'InexactNumberQ', 'Infinity', 'Information', 'Inherited', '$Input',
++            '$InitialDirectory', 'InitializationCellEvaluation', 'Inpaint',
++            'InitializationCell', 'InitializationCellWarning', 'InputAliases',
++            'InitializationGroup', 'Initialization', 'InputAssumptions', 'Out',
++            'InputAutoReplacements', 'InputField', '$InputFileName', 'Input',
++            'InputForm', 'InputNamePacket', 'InputNotebook', 'InputPacket',
++            'InputStream', 'InputString', 'InputStringPacket', 'Insert', 'PDF',
++            'InsertResults', 'Inset', '$Inspector', '$InstallationDate', 'Put',
++            '$InstallationDirectory', 'Install', 'InstallService', 'InString',
++            'IntegerDigits', 'IntegerExponent', 'IntegerLength', 'Integer',
++            'IntegerPartitions', 'IntegerPart', 'IntegerQ', 'Integers', 'Last',
++            'IntegerString', 'Integrate', 'InteractiveTradingChart', 'Inverse',
++            'Interleaving', 'InternallyBalancedDecomposition', 'Interpolation',
++            'InterpolatingFunction', 'InterpolatingPolynomial', 'Interrupt',
++            'InterpolationOrder', 'InterpolationPoints', 'InterpretationBox',
++            'InterpretationBoxOptions', 'Interpretation', 'InterquartileRange',
++            'Intersection', 'IntervalIntersection', 'IntervalMemberQ', 'Label',
++            'Interval', 'IntervalUnion', 'InverseBetaRegularized', 'Invisible',
++            'InverseCDF', 'InverseChiSquareDistribution', 'InverseErfc', 'Raw',
++            'InverseContinuousWaveletTransform', 'InverseDistanceTransform',
++            'InverseEllipticNomeQ', 'InverseErf', 'InverseFourierCosTransform',
++            'InverseFourier', 'InverseFourierSequenceTransform', 'IsotopeData',
++            'InverseFourierSinTransform', 'InverseFourierTransform', 'Italic',
++            'InverseFunction', 'InverseFunctions', 'InverseGammaDistribution',
++            'InverseGammaRegularized', 'InverseGaussianDistribution', 'Joined',
++            'InverseGudermannian', 'InverseHaversine', 'InverseJacobiCD',
++            'InverseJacobiCN', 'InverseJacobiCS', 'InverseJacobiDC', 'JacobiP',
++            'InverseJacobiDN', 'InverseJacobiDS', 'InverseJacobiNC', 'Kernels',
++            'InverseJacobiND', 'InverseJacobiNS', 'InverseJacobiSC', 'Labeled',
++            'InverseJacobiSD', 'InverseJacobiSN', 'InverseLaplaceTransform',
++            'InversePermutation', 'InverseRadon', 'InverseSeries', 'ItemSize',
++            'InverseSurvivalFunction', 'InverseWaveletTransform', 'ItemStyle',
++            'InverseWeierstrassP', 'InverseZTransform', 'IsolatingInterval',
++            'IrreduciblePolynomialQ', 'IsomorphicGraphQ', 'ItemAspectRatio',
++            '$IterationLimit', 'JaccardDissimilarity', 'JacobiAmplitude',
++            'JacobiCD', 'JacobiCN', 'JacobiCS', 'JacobiDC', 'JacobiDN', 'Left',
++            'JacobiDS', 'JacobiNC', 'JacobiND', 'JacobiNS', 'JacobiSC', 'Less',
++            'JacobiSD', 'JacobiSN', 'JacobiSymbol', 'JacobiZeta', 'JoinForm',
++            'JankoGroupJ1', 'JankoGroupJ2', 'JankoGroupJ3', 'JankoGroupJ4',
++            'JarqueBeraALMTest', 'JohnsonDistribution', 'JoinedCurve', 'Large',
++            'JordanDecomposition', 'JordanModelDecomposition', 'KagiChart',
++            'KalmanEstimator', 'KarhunenLoeveDecomposition', 'KaryTree', 'Red',
++            'KatzCentrality', 'KCoreComponents', 'KDistribution', 'KelvinBei',
++            'KelvinBer', 'KelvinKei', 'KelvinKer', '$KernelCount', '$KernelID',
++            'KernelMixtureDistribution', 'KernelObject', 'Khinchin', 'Larger',
++            'KirchhoffGraph', 'KirchhoffMatrix', 'KleinInvariantJ', 'KnotData',
++            'KnightTourGraph', 'KolmogorovSmirnovTest', 'KroneckerDelta',
++            'KroneckerProduct', 'KroneckerSymbol', 'KuiperTest', 'Kurtosis',
++            'KumaraswamyDistribution', 'KuwaharaFilter', 'LabelingFunction',
++            'LabelStyle', 'LaguerreL', 'LandauDistribution', '$Language',
++            'LanguageCategory', 'Language', 'LaplaceDistribution', 'Latitude',
++            'LaplaceTransform', 'LaplacianFilter', 'LaplacianGaussianFilter',
++            'LatitudeLongitude', 'LatticeData', 'LatticeReduce', 'LeafCount',
++            'LaunchKernels', 'LayeredGraphPlot', 'LayerSizeFunction', 'Length',
++            'LeastSquares', 'LeftArrowBar', 'LeftArrow', 'LeftArrowRightArrow',
++            'LeftDownTeeVector', 'LeftDownVectorBar', 'LeftDownVector', 'Line',
++            'LeftRightArrow', 'LeftRightVector', 'LeftTeeArrow', 'LeftVector',
++            'LeftTeeVector', 'LeftTriangleBar', 'LeftTriangleEqual', 'LetterQ',
++            'LeftTriangle', 'LeftUpDownVector', 'LeftUpTeeVector', 'Legended',
++            'LeftUpVectorBar', 'LeftUpVector', 'LeftVectorBar', 'LegendreP',
++            'LegendAppearance', 'LegendreQ', 'LegendreType', 'LengthWhile',
++            'LerchPhi', 'LessEqualGreater', 'LessEqual', 'LessFullEqual',
++            'LessGreater', 'LessLess', 'LessSlantEqual', 'LessTilde', 'Level',
++            'LetterCharacter', 'LeveneTest', 'LeviCivitaTensor', 'LibraryLoad',
++            'LevyDistribution', 'LibraryFunctionError', 'LibraryFunctionLoad',
++            'LibraryFunctionInformation', 'LibraryFunction', '$LibraryPath',
++            'LibraryFunctionUnload', 'LibraryUnload', '$LicenseExpirationDate',
++            '$LicenseID', '$LicenseServer', 'LiftingFilterData', 'LightBlue',
++            'LiftingWaveletTransform', 'LightBrown', 'LightCyan', 'Lighter',
++            'LightGray', 'LightGreen', 'LightingAngle', 'Lighting', 'LightRed',
++            'LightMagenta', 'LightOrange', 'LightPink', 'LightPurple', 'Limit',
++            'LightSources', 'LightYellow', 'Likelihood', 'LimitsPositioning',
++            'LimitsPositioningTokens', 'LindleyDistribution', 'LinearModelFit',
++            'LinearFractionalTransform', 'LinearOffsetFunction', 'LinearSolve',
++            'LinearProgramming', 'LinearRecurrence', 'LinearSolveFunction',
++            'LinebreakAdjustments', 'LineBreakChart', 'LineBreakWithin', 'Row',
++            'LineGraph', 'LineIndentMaxFraction', 'LineIndent', '$Line', 'Run',
++            'LineIntegralConvolutionPlot', 'LineIntegralConvolutionScale',
++            'LineSpacing', 'LinkClose', 'LinkConnect', 'LinkCreate', '$Linked',
++            'LinkFunction', 'LinkInterrupt', 'LinkLaunch', 'LinkObject', 'Sec',
++            'LinkOpen', 'LinkPatterns', 'LinkProtocol', 'LinkRead', 'Links',
++            'LinkReadyQ', 'LinkWrite', 'LiouvilleLambda', 'Listable', 'List',
++            'ListAnimate', 'ListContourPlot3D', 'ListContourPlot', 'ListPlay',
++            'ListConvolve', 'ListCorrelate', 'ListCurvePathPlot', 'ListPlot3D',
++            'ListDeconvolve', 'ListDensityPlot', 'ListInterpolation', 'Locked',
++            'ListLineIntegralConvolutionPlot', 'ListLinePlot', 'ListLogPlot',
++            'ListLogLinearPlot', 'ListLogLogPlot', 'ListPlot', 'ListPolarPlot',
++            'ListPointPlot3D', 'ListStreamDensityPlot', 'ListStreamPlot',
++            'ListSurfacePlot3D', 'ListVectorDensityPlot', 'ListVectorPlot3D',
++            'ListVectorPlot', 'Literal', 'LocalizeVariables', 'LocationTest',
++            'LocationEquivalenceTest', 'LocatorAutoCreate', 'Locator', 'Log10',
++            'LocatorPane', 'LocatorRegion', 'Log2', 'LogBarnesG', 'LogGamma',
++            'LogGammaDistribution', 'LogicalExpand', 'LogIntegral', 'LogPlot',
++            'LogisticDistribution', 'LogitModelFit', 'LogLikelihood', 'LucasL',
++            'LogLinearPlot', 'LogLogisticDistribution', 'LogLogPlot', 'Manual',
++            'LogNormalDistribution', 'LogSeriesDistribution', 'LongestMatch',
++            'LongestCommonSequence', 'LongestCommonSubsequence', 'Longest',
++            'Longitude', 'LongLeftArrow', 'LongLeftRightArrow', 'LowerCaseQ',
++            'LongRightArrow', 'LoopFreeGraphQ', 'LowerLeftArrow', '$MachineID',
++            'LowerRightArrow', 'LowerTriangularize', 'LQEstimatorGains', 'Set',
++            'LQGRegulator', 'LQOutputRegulatorGains', 'LQRegulatorGains',
++            'LUBackSubstitution', 'LUDecomposition', 'LyapunovSolve', 'MapAll',
++            'LyonsGroupLy', '$MachineAddresses', '$MachineDomain', 'Magenta',
++            '$MachineDomains', '$MachineEpsilon', '$MachineName', 'Magnify',
++            'MachineNumberQ', '$MachinePrecision', 'MachinePrecision', 'MapAt',
++            '$MachineType', 'Magnification', 'Majority', 'MakeBoxes', 'MatchQ',
++            'MakeExpression', 'MangoldtLambda', 'ManhattanDistance', 'MarcumQ',
++            'Manipulate', 'Manipulator', 'MannWhitneyTest', 'MantissaExponent',
++            'MapIndexed', 'MapThread', 'MardiaCombinedTest', 'Masking', 'Mean',
++            'MardiaKurtosisTest', 'MardiaSkewnessTest', 'MarginalDistribution',
++            'MatchingDissimilarity', 'MatchLocalNames', 'MathieuC', 'MathieuS',
++            'MathieuCharacteristicA', 'MathieuCharacteristicB', 'MathMLForm',
++            'MathieuCharacteristicExponent', 'MathieuCPrime', 'MathieuSPrime',
++            'MathieuGroupM11', 'MathieuGroupM12', 'MathieuGroupM22', 'MatrixQ',
++            'MathieuGroupM23', 'MathieuGroupM24', 'MatrixExp', 'MatrixForm',
++            'MatrixPlot', 'MatrixPower', 'MatrixRank', 'MaxDetect', 'Maximize',
++            'MaxExtraBandwidths', 'MaxExtraConditions', '$MaxExtraPrecision',
++            'MaxFilter', 'MaxIterations', '$MaxMachineNumber', 'MaxMemoryUsed',
++            'MaxMixtureKernels', '$MaxNumber', '$MaxPiecewiseCases', '$$Media',
++            'MaxPlotPoints', '$MaxPrecision', 'MaxRecursion', '$MaxRootDegree',
++            'MaxStableDistribution', 'MaxStepFraction', 'MaxStepSize', 'Mesh',
++            'MaxSteps', 'MaxValue', 'MaxwellDistribution', 'MeanDeviation',
++            'McLaughlinGroupMcL', 'MeanFilter', 'MeanShiftFilter', 'MeanShift',
++            'MedianDeviation', 'MedianFilter', 'Median', 'Medium', 'MeijerG',
++            'MemberQ', 'MemoryConstrained', 'MemoryInUse', 'MenuCommandKey',
++            'MenuPacket', 'MenuSortingValue', 'MenuStyle', 'MenuView', 'Minus',
++            'MeshFunctions', 'MeshRange', 'MeshShading', 'MeshStyle', 'Method',
++            'MessageDialog', '$MessageGroups', '$MessageList', 'MessageList',
++            'MessageName', 'Message', 'MessagePacket', '$MessagePrePrint',
++            '$Messages', 'Messages', 'MexicanHatWavelet', 'MeyerWavelet',
++            'MinDetect', 'MinFilter', 'MinimalPolynomial', 'Minimize', 'Modal',
++            'MinimalStateSpaceModel', '$MinMachineNumber', '$MinNumber', 'Sin',
++            'Minors', '$MinPrecision', 'MinStableDistribution', 'MinusPlus',
++            'MinValue', 'Missing', 'MixtureDistribution', 'ModularLambda',
++            'Module', '$ModuleNumber', 'Modulus', 'MoebiusMu', 'MomentConvert',
++            'MomentEvaluate', 'MomentGeneratingFunction', 'Moment', 'Monitor',
++            'MonomialList', 'MonsterGroupM', 'MorletWavelet', 'Most', 'NameQ',
++            'MorphologicalBinarize', 'MorphologicalBranchPoints', 'Mouseover',
++            'MorphologicalComponents', 'MorphologicalEulerNumber', 'Names',
++            'MorphologicalGraph', 'MorphologicalPerimeter', 'MouseAnnotation',
++            'MorphologicalTransform', 'MouseAppearance', 'MousePosition',
++            'MovingAverage', 'MovingMedian', 'MoyalDistribution', 'Nand',
++            'MultiedgeStyle', 'MultilaunchWarning', 'MultilineFunction', 'Sow',
++            'MultinomialDistribution', 'Multinomial', 'MultiplicativeOrder',
++            'MultinormalDistribution', 'MultivariatePoissonDistribution',
++            'MultivariateHypergeometricDistribution', 'NakagamiDistribution',
++            'MultivariateTDistribution', 'NArgMax', 'NArgMin', 'NCache', 'Sum',
++            'NDSolve', 'NearestFunction', 'Nearest', 'Needs', 'Negative',
++            'NeedlemanWunschSimilarity', 'NegativeBinomialDistribution', 'Tan',
++            'NegativeMultinomialDistribution', 'NeighborhoodGraph', 'NestList',
++            'NestedGreaterGreater', 'NestedLessLess', 'Nest', 'NestWhileList',
++            'NestWhile', 'NevilleThetaC', 'NevilleThetaD', 'NevilleThetaN',
++            'NevilleThetaS', '$NewMessage', '$NewSymbol', 'NExpectation',
++            'NextPrime', 'NHoldAll', 'NHoldFirst', 'NHoldRest', 'NicholsPlot',
++            'NicholsGridLines', 'NIntegrate', 'NMaximize', 'NMaxValue', 'None',
++            'NMinimize', 'NMinValue', 'NominalVariables', 'NonConstants',
++            'NoncentralBetaDistribution', 'NoncentralChiSquareDistribution',
++            'NoncentralFRatioDistribution', 'NoncentralStudentTDistribution',
++            'NonCommutativeMultiply', 'NonlinearModelFit', 'NonNegative',
++            'NonPositive', 'NorlundB', 'NormalDistribution', 'Normalize',
++            'NormalizedSquaredEuclideanDistance', 'Normal', 'NormalsFunction',
++            'NormFunction', 'Norm', 'NotCongruent', 'NotCupCap', 'NotebookGet',
++            'NotDoubleVerticalBar', 'NotebookApply', 'NotebookAutoSave', 'Top',
++            'NotebookBrowseDirectory', 'NotebookClose', 'NotebookCreate',
++            'NotebookConvertSettings', 'NotebookDelete', 'NotebookDirectory',
++            'NotebookDynamicExpression', 'NotebookEvaluate', 'NotebookFind',
++            'NotebookEventActions', 'NotebookFileName', 'NotebookInformation',
++            'NotebookLocate', 'Notebook', 'NotebookObject', 'NotebookOpen',
++            'NotebookPath', 'NotebookPrint', 'NotebookPut', 'NotebookRead',
++            'NotebookSave', 'NotebookSelection', 'NotebooksMenu', '$Notebooks',
++            'Notebooks', 'NotebookWrite', 'NotElement', 'NotEqualTilde', 'Vee',
++            'NotExists', 'NotGreaterEqual', 'NotGreaterFullEqual', 'NotLess',
++            'NotGreaterGreater', 'NotGreaterLess', 'NotGreater', 'NotLessLess',
++            'NotGreaterSlantEqual', 'NotGreaterTilde', 'NotHumpDownHump',
++            'NotHumpEqual', 'NotLeftTriangleBar', 'NotLeftTriangleEqual',
++            'NotLeftTriangle', 'NotLessEqual', 'NotLessFullEqual', 'NotSubset',
++            'NotLessGreater', 'NotLessSlantEqual', 'NotLessTilde', 'NotTilde',
++            'NotNestedGreaterGreater', 'NotNestedLessLess', 'NotPrecedesEqual',
++            'NotPrecedes', 'NotPrecedesSlantEqual', 'NotPrecedesTilde', 'NSum',
++            'NotReverseElement', 'NotRightTriangleBar', 'NotRightTriangle',
++            'NotRightTriangleEqual', 'NotSquareSubsetEqual', 'NotSquareSubset',
++            'NotSquareSupersetEqual', 'NotSquareSuperset', 'NotSubsetEqual',
++            'NotSucceedsEqual', 'NotSucceeds', 'NotSucceedsSlantEqual', 'Null',
++            'NotSucceedsTilde', 'NotSupersetEqual', 'NotSuperset', 'NProduct',
++            'NotTildeEqual', 'NotTildeFullEqual', 'NotTildeTilde', 'NRoots',
++            'NotVerticalBar', 'NProbability', 'NSolve', 'NullRecords', 'OddQ',
++            'NullSpace', 'NullWords', 'NumberFieldClassNumber', 'NumberFormat',
++            'NumberFieldDiscriminant', 'NumberFieldFundamentalUnits', 'Number',
++            'NumberFieldIntegralBasis', 'NumberFieldNormRepresentatives',
++            'NumberFieldRegulator', 'NumberFieldRootsOfUnity', 'NumberForm',
++            'NumberFieldSignature', '$NumberMarks', 'NumberMarks', 'NumberQ',
++            'NumberMultiplier', 'NumberPadding', 'NumberPoint', 'NumberSigns',
++            'NumberSeparator', 'NumberString', 'Numerator', 'NumericFunction',
++            'NumericQ', 'NyquistGridLines', 'NyquistPlot', 'ObservableModelQ',
++            'ObservabilityGramian', 'ObservabilityMatrix', 'Offset', 'Opacity',
++            'ObservableDecomposition', 'ONanGroupON', 'OneIdentity', 'Opener',
++            'OpenAppend', 'OpenerView', 'Opening', 'OpenRead', 'OpenTemporary',
++            'OpenWrite', 'Operate', '$OperatingSystem', 'OperatingSystem',
++            'Optional', 'OptionInspectorSettings', 'Options', 'OptionsPattern',
++            'OptionValue', 'Orange', 'OrderDistribution', 'OrderedQ', 'Order',
++            'Ordering', 'Orderless', 'Orthogonalize', 'Outer', 'OutputForm',
++            'OutputAutoOverwrite', 'OutputControllabilityMatrix', '$Output',
++            'OutputControllableModelQ', 'OutputNamePacket', 'OutputResponse',
++            '$OutputSizeLimit', 'OutputSizeLimit', 'OutputStream', 'OverBar',
++            'OverDot', 'Overflow', 'OverHat', 'Overlaps', 'Overlay', 'OwenT',
++            'OverscriptBox', 'OverscriptBoxOptions', 'Overscript', 'OverTilde',
++            'OverVector', 'OwnValues', '$Packages', 'PackingMethod', 'Padding',
++            'PaddedForm', 'PadeApproximant', 'PadLeft', 'PadRight', 'Paneled',
++            'PageBreakAbove', 'PageBreakBelow', 'PageBreakWithin', 'PageWidth',
++            'PageFooterLines', 'PageFooters', 'PageHeaderLines', 'PageHeaders',
++            'PageRankCentrality', 'PairedBarChart', 'PairedHistogram', 'Panel',
++            'PairedTTest', 'PairedZTest', 'PaletteNotebook', 'PalettePath',
++            'Pane', 'PaneSelector', 'ParabolicCylinderD', 'ParagraphIndent',
++            'ParagraphSpacing', 'ParallelArray', 'ParallelCombine', 'Part',
++            'ParallelDo', 'ParallelEvaluate', 'Parallelization', 'Parallelize',
++            'ParallelMap', 'ParallelNeeds', 'ParallelProduct', 'ParallelSum',
++            'ParallelSubmit', 'ParallelTable', 'ParallelTry', 'ParametricPlot',
++            'ParameterEstimator', 'ParameterMixtureDistribution', 'Partition',
++            'ParametricPlot3D', 'ParentDirectory', '$ParentLink', 'Paste',
++            '$ParentProcessID', 'ParetoDistribution', 'ParticleData', '$Path',
++            'PartitionsP', 'PartitionsQ', 'PascalDistribution', 'PassEventsUp',
++            'PassEventsDown', 'PasteBoxFormInlineCells', 'PasteButton', 'Path',
++            'PathGraph', 'PathGraphQ', '$PathnameSeparator', 'Pattern', 'Pick',
++            'PatternSequence', 'PatternTest', 'PauliMatrix', 'PaulWavelet',
++            'Pause', 'PearsonChiSquareTest', 'PearsonDistribution', 'Permute',
++            '$PerformanceGoal', 'PerformanceGoal', 'PermutationCycles', 'Pink',
++            'PermutationCyclesQ', 'PermutationGroup', 'PermutationLength',
++            'PermutationList', 'PermutationListQ', 'PermutationMax', 'Placed',
++            'PermutationMin', 'PermutationOrder', 'PermutationPower', 'Plain',
++            'PermutationProduct', 'PermutationReplace', 'Permutations', 'Play',
++            'PermutationSupport', 'PeronaMalikFilter', 'PERTDistribution',
++            'PetersenGraph', 'PhaseMargins', 'PiecewiseExpand', 'Piecewise',
++            'PieChart3D', 'PieChart', 'PixelConstrained', 'PixelValue', 'Plot',
++            'Placeholder', 'PlaceholderReplace', 'PlayRange', 'Plot3D', 'Plus',
++            'Plot3Matrix', 'PlotDivision', 'PlotJoined', 'PlotLabel', 'Point',
++            'PlotLayout', 'PlotMarkers', 'PlotPoints', 'PlotRangeClipping',
++            'PlotRange', 'PlotRangePadding', 'PlotRegion', 'PlotStyle', '$Pre',
++            'PlusMinus', 'Pochhammer', 'PodStates', 'PodWidth', 'PointSize',
++            'PointFigureChart', 'PoissonConsulDistribution', 'PolarAxes',
++            'PoissonDistribution', 'PolarAxesOrigin', 'PolarGridLines', 'Quit',
++            'PolarPlot', 'PolarTicks', 'PoleZeroMarkers', 'PolyGamma', '$Post',
++            'PolyaAeppliDistribution', 'PolygonIntersections', 'Polygon',
++            'PolyhedronData', 'PolyLog', 'PolynomialExtendedGCD', 'PopupMenu',
++            'PolynomialGCD', 'PolynomialLCM', 'PolynomialMod', 'PolynomialQ',
++            'PolynomialQuotient', 'PolynomialQuotientRemainder', 'PopupView',
++            'PolynomialReduce', 'PolynomialRemainder', 'PopupWindow', 'Power',
++            'Position', 'PositiveDefiniteMatrixQ', 'Positive', 'PossibleZeroQ',
++            'Postfix', 'PowerDistribution', 'PowerExpand', 'PowerModList',
++            'PowerMod', 'PowersRepresentations', 'PowerSymmetricPolynomial',
++            'PrecedenceForm', 'PrecedesEqual', 'Precedes', 'PrecedesTilde',
++            'PrecedesSlantEqual', 'PrecisionGoal', 'Precision', 'PreDecrement',
++            'PreemptProtect', 'PreferencesPath', 'Prefix', 'PreIncrement',
++            'Prepend', 'PrependTo', '$PrePrint', '$PreRead', 'Prime', 'PrimeQ',
++            'PreserveImageOptions', 'PriceGraphDistribution', 'PrimeNu', 'Xor',
++            'PrimeOmega', 'PrimePi', 'PrimePowerQ', 'Primes', 'PrimeZetaP',
++            'PrimitiveRoot', 'PrincipalComponents', 'PrincipalValue', 'Print',
++            'PrintAction', 'PrintingCopies', 'PrintingOptions', 'PrivatePaths',
++            'PrintingPageRange', 'PrintingStartingPageNumber', 'Probability',
++            'PrintingStyleEnvironment', 'PrintPrecision', 'PrintTemporary',
++            'PrivateEvaluationOptions', 'PrivateFontOptions', 'ProbitModelFit',
++            'PrivateNotebookOptions', 'ProbabilityDistribution', '$ProcessID',
++            'ProbabilityPlot', 'ProbabilityScalePlot', '$ProcessorCount',
++            '$ProcessorType', 'ProductDistribution', '$ProductInformation',
++            'ProductLog', 'Product', 'ProgressIndicator', 'Projection', 'Read',
++            'Prolog', 'Properties', 'PropertyList', 'Property', 'Proportional',
++            'PropertyValue', 'Proportion', 'Protected', 'Protect', 'Pruning',
++            'ProteinData', 'PseudoInverse', 'Purple', 'PutAppend', 'QBinomial',
++            'QFactorial', 'QGamma', 'QHypergeometricPFQ', 'QPochhammer',
++            'QPolyGamma', 'QRDecomposition', 'QuadraticIrrationalQ', 'Quiet',
++            'Quantile', 'QuantilePlot', 'Quartics', 'QuartileDeviation',
++            'QuartileSkewness', 'Quartiles', 'Quotient', 'QuotientRemainder',
++            'RadicalBox', 'RadicalBoxOptions', 'RadioButtonBar', 'RadioButton',
++            'Radon', 'RamanujanTauL', 'RamanujanTau', 'RamanujanTauTheta',
++            'RamanujanTauZ', 'RandomChoice', 'RandomComplex', 'RandomGraph',
++            'RandomImage', 'RandomInteger', 'Random', 'RandomPermutation',
++            'RandomPrime', 'RandomReal', 'RandomSample', '$RandomState',
++            'RandomVariate', 'RangeFilter', 'Range', 'RankedMax', 'RankedMin',
++            'RasterArray', 'Rasterize', 'Raster', 'RasterSize', 'Rationalize',
++            'Rational', 'Rationals', 'Ratios', 'RawBoxes', 'RawData', 'Real',
++            'RayleighDistribution', 'ReadList', 'ReadProtected', 'RealDigits',
++            'RealBlockDiagonalForm', 'RealExponent', 'Reals', 'Reap', 'Record',
++            'RecordLists', 'RecordSeparators', 'RectangleChart3D', 'Rectangle',
++            'RectangleChart', 'RecurrenceTable', '$RecursionLimit', 'Reduce',
++            'ReferenceLineStyle', 'Refine', 'ReflectionMatrix', 'Refresh',
++            'ReflectionTransform', 'RefreshRate', 'RegionBinarize', 'Release',
++            'RegionFunction', 'RegionPlot3D', 'RegionPlot', 'Regularization',
++            'RegularExpression', 'ReleaseHold', '$ReleaseNumber', 'ReliefPlot',
++            'ReliefImage', 'RemoveAlphaChannel', 'Remove', 'RemoveProperty',
++            'RemoveScheduledTask', 'RenameDirectory', 'RenameFile', 'Repeated',
++            'RenderAll', 'RenkoChart', 'RepeatedNull', 'ReplaceAll', 'Replace',
++            'ReplaceHeldPart', 'ReplaceList', 'ReplacePart', 'ReplaceRepeated',
++            'Resampling', 'Rescale', 'RescalingTransform', 'ResetDirectory',
++            'ResetMedium', 'ResetScheduledTask', 'Residue', 'Resolve', 'Rest',
++            'Resultant', 'ResumePacket', 'ReturnExpressionPacket', 'Return',
++            'ReturnPacket', 'ReturnTextPacket', 'ReverseElement', 'Reverse',
++            'ReverseBiorthogonalSplineWavelet', 'ReverseEquilibrium', 'Riffle',
++            'ReverseGraph', 'ReverseUpEquilibrium', 'RevolutionAxis', 'Right',
++            'RevolutionPlot3D', 'RGBColor', 'RiccatiSolve', 'RiceDistribution',
++            'RidgeFilter', 'RiemannR', 'RiemannSiegelTheta', 'RiemannSiegelZ',
++            'RightArrowBar', 'RightArrowLeftArrow', 'RightArrow', 'Root',
++            'RightCosetRepresentative', 'RightDownTeeVector', 'RightTeeArrow',
++            'RightDownVectorBar', 'RightDownVector', 'RightTeeVector', 'Roots',
++            'RightTriangleBar', 'RightTriangleEqual', 'RightTriangle', 'Round',
++            'RightUpDownVector', 'RightUpTeeVector', 'RightUpVectorBar',
++            'RightUpVector', 'RightVectorBar', 'RightVector', '$RootDirectory',
++            'RogersTanimotoDissimilarity', 'RootApproximant', 'RootIntervals',
++            'RootLocusPlot', 'RootMeanSquare', 'RootOfUnityQ', 'RootReduce',
++            'RootSum', 'RotateLabel', 'RotateLeft', 'Rotate', 'RotateRight',
++            'RotationAction', 'RotationMatrix', 'RotationTransform', 'RowBox',
++            'RoundingRadius', 'RowAlignments', 'RowLines', 'RowMinHeight',
++            'RowReduce', 'RowsEqual', 'RowSpacings', 'RSolve', 'RuleDelayed',
++            'RudvalisGroupRu', 'Rule', 'RulerUnits', 'RunScheduledTask',
++            'RunThrough', 'RuntimeAttributes', 'RuntimeOptions', 'SameQ',
++            'RussellRaoDissimilarity', 'SameTest', 'SampleDepth', 'SampleRate',
++            'SampledSoundFunction', 'SampledSoundList', 'SamplingPeriod',
++            'SatisfiabilityCount', 'SatisfiabilityInstances', 'SatisfiableQ',
++            'Saveable', 'SaveAutoDelete', 'SaveDefinitions', 'Save', 'Scaled',
++            'SawtoothWave', 'Scale', 'ScalingFunctions', 'ScalingMatrix',
++            'ScalingTransform', 'Scan', '$ScheduledTask', 'ScheduledTasks',
++            'ScheduledTaskObject', 'SchurDecomposition', 'ScientificForm',
++            'ScreenRectangle', 'ScreenStyleEnvironment', '$ScriptCommandLine',
++            'ScriptBaselineShifts', 'ScriptLevel', 'ScriptMinSize', 'Sech',
++            'ScriptSizeMultipliers', 'Scrollbars', 'ScrollingOptions', 'Share',
++            'ScrollPosition', 'SechDistribution', 'SectorChart3D', 'Select',
++            'SectorChart', 'SectorOrigin', 'SectorSpacing', 'SeedRandom',
++            'Selectable', 'SelectComponents', 'SelectedNotebook', 'SendMail',
++            'SelectionAnimate', 'SelectionCreateCell', 'SelectionEvaluate',
++            'SelectionEvaluateCreateCell', 'SelectionMove', 'SelfLoopStyle',
++            'SemialgebraicComponentInstances', 'SequenceAlignment', 'Sequence',
++            'SequenceForm', 'SequenceHold', 'SeriesCoefficient', 'SeriesData',
++            'Series', '$SessionID', 'SessionTime', 'SetAccuracy', 'SetDelayed',
++            'SetAlphaChannel', 'SetAttributes', 'SetDirectory', 'SetFileDate',
++            'SetOptions', 'SetPrecision', 'SetProperty', 'SetSelectedNotebook',
++            'SetSharedFunction', 'SetSharedVariable', 'SetStreamPosition',
++            'SetSystemOptions', 'SetterBar', 'Setter', 'Setting', 'Shading',
++            'Shallow', 'ShannonWavelet', 'ShapiroWilkTest', '$SharedFunctions',
++            '$SharedVariables', 'Sharpen', 'ShearingMatrix', 'ShortDownArrow',
++            'ShearingTransform', 'ShortestMatch', 'Shortest', 'ShortLeftArrow',
++            'ShortestPathFunction', 'Short', 'ShortRightArrow', 'ShortUpArrow',
++            'ShowAutoStyles', 'ShowCellBracket', 'ShowCellLabel', 'Show',
++            'ShowCellTags', 'ShowClosedCellArea', 'ShowContents', 'Signature',
++            'ShowCursorTracker', 'ShowGroupOpener', 'ShowPageBreaks', 'Sign',
++            'ShowSelection', 'ShowShortBoxForm', 'ShowSpecialCharacters',
++            'ShowStringCharacters', 'ShrinkingDelay', 'SiegelTheta', 'Sinc',
++            'SiegelTukeyTest', 'SignedRankTest', 'SignificanceLevel', 'Sinh',
++            'SignPadding', 'SignTest', 'SimilarityRules', 'SimpleGraph',
++            'SimpleGraphQ', 'Simplify', 'SinghMaddalaDistribution', 'Skeleton',
++            'SingleLetterItalics', 'SingularValueDecomposition', 'SinIntegral',
++            'SingularValueList', 'SingularValuePlot', 'SingularValues', 'Skip',
++            'SinhIntegral', 'SixJSymbol', 'SkeletonTransform', 'Skewness',
++            'SkellamDistribution', 'SkewNormalDistribution', 'Slider2D',
++            'Slider', 'SlideView', 'Slot', 'SlotSequence', 'SmallCircle',
++            'Smaller', 'Small', 'SmithWatermanSimilarity', 'SmoothHistogram3D',
++            'SmoothDensityHistogram', 'SmoothHistogram', 'SolveAlways', 'Sort',
++            'SmoothKernelDistribution', 'SokalSneathDissimilarity', 'Solve',
++            'SortBy', '$SoundDisplayFunction', 'Sound', 'SoundNote', 'Spacer',
++            'SoundVolume', 'Spacings', 'SpanAdjustments', 'SpanFromAbove',
++            'SpanCharacterRounding', 'SpanFromBoth', 'SpanFromLeft', 'Span',
++            'SpanLineThickness', 'SpanMaxSize', 'SpanMinSize', 'SpanSymmetric',
++            'SparseArray', 'Speak', 'Specularity', 'SpellingCorrection',
++            'SpellingDictionaries', 'SpellingDictionariesPath', 'Sphere',
++            'SpellingOptions', 'SphericalBesselJ', 'SphericalBesselY', 'Split',
++            'SphericalHankelH1', 'SphericalHankelH2', 'SphericalHarmonicY',
++            'SphericalPlot3D', 'SphericalRegion', 'SpheroidalEigenvalue',
++            'SpheroidalJoiningFactor', 'SpheroidalPS', 'SpheroidalPSPrime',
++            'SpheroidalQS', 'SpheroidalQSPrime', 'SpheroidalRadialFactor',
++            'SpheroidalS1', 'SpheroidalS1Prime', 'SpheroidalS2', 'Splice',
++            'SpheroidalS2Prime', 'SplineClosed', 'SplineDegree', 'SplineKnots',
++            'SplineWeights', 'SplitBy', 'SpokenString', 'SqrtBox', 'Sqrt',
++            'SquaredEuclideanDistance', 'SquareFreeQ', 'SquareIntersection',
++            'Square', 'SquaresR', 'SquareSubsetEqual', 'SquareSubset', 'Stack',
++            'SquareSupersetEqual', 'SquareSuperset', 'SquareUnion', 'Star',
++            'SquareWave', 'StabilityMargins', 'StabilityMarginsStyle', 'Stub',
++            'StableDistribution', 'StackBegin', 'StackComplete', 'Standardize',
++            'StackInhibit', 'StandardDeviationFilter', 'StandardDeviation',
++            'StandardForm', 'StarGraph', 'StartingStepSize', 'StartOfLine',
++            'StartOfString', 'StartProcess', 'StartScheduledTask', 'Streams',
++            'StartupSound', 'StateFeedbackGains', 'StateOutputEstimator',
++            'StateResponse', 'StateSpaceModel', 'StateSpaceRealization',
++            'StateSpaceTransform', 'StationaryWaveletPacketTransform', 'Style',
++            'StationaryWaveletTransform', 'StatusArea', 'StepMonitor', 'Table',
++            'StieltjesGamma', 'StirlingS1', 'StirlingS2', 'StopScheduledTask',
++            'StreamColorFunction', 'StreamColorFunctionScaling', 'StreamPlot',
++            'StreamDensityPlot', 'StreamPoints', 'StreamPosition', 'String',
++            'StreamScale', 'StreamStyle', 'StringCases', 'StringCount', 'Take',
++            'StringDrop', 'StringExpression', 'StringFormat', 'StringForm',
++            'StringFreeQ', 'StringInsert', 'StringJoin', 'StringLength',
++            'StringMatchQ', 'StringPosition', 'StringQ', 'StringReplaceList',
++            'StringReplace', 'StringReplacePart', 'StringReverse', 'StruveH',
++            'StringSkeleton', 'StringSplit', 'StringTake', 'StringToStream',
++            'StringTrim', 'StructuredSelection', 'StruveL', 'StyleBox', 'Tanh',
++            'StudentTDistribution', 'StyleBoxAutoDelete', 'StyleData', 'Tally',
++            'StyleDefinitions', 'StyleForm', 'StyleMenuListing', 'StylePrint',
++            'StyleNameDialogSettings', 'StyleSheetPath', 'Subfactorial',
++            'Subgraph', 'SubMinus', 'SubPlus', 'Subresultants', 'SubscriptBox',
++            'SubscriptBoxOptions', 'Subscripted', 'Subscript', 'SubsetEqual',
++            'Subset', 'Subsets', 'SubStar', 'SubsuperscriptBox', 'Subtract',
++            'SubsuperscriptBoxOptions', 'Subsuperscript', 'SubtractFrom',
++            'SucceedsEqual', 'Succeeds', 'SucceedsSlantEqual', 'SucceedsTilde',
++            'SuchThat', 'SumConvergence', 'SuperDagger', 'SuperMinus', 'Text',
++            'SuperPlus', 'SuperscriptBox', 'SuperscriptBoxOptions', 'Superset',
++            'Superscript', 'SupersetEqual', 'SuperStar', 'SurfaceColor',
++            'SurfaceGraphics', 'SurvivalDistribution', 'SurvivalFunction',
++            'SuspendPacket', 'SuzukiDistribution', 'SuzukiGroupSuz', 'Switch',
++            'SymbolName', 'Symbol', 'SymletWavelet', 'SymmetricGroup', 'Thick',
++            'SymmetricMatrixQ', 'SymmetricPolynomial', 'SymmetricReduction',
++            'SynchronousInitialization', 'SynchronousUpdating', 'SyntaxForm',
++            '$SyntaxHandler', 'SyntaxInformation', 'SyntaxLength', 'SyntaxQ',
++            'SyntaxPacket', '$SystemCharacterEncoding', 'SystemDialogInput',
++            'SystemHelpPath', '$SystemID', 'SystemInformation', '$System',
++            'SystemOpen', 'SystemOptions', 'SystemsModelDelete', 'TabFilling',
++            'SystemsModelDimensions', 'SystemsModelExtract', 'TableAlignments',
++            'SystemsModelFeedbackConnect', 'SystemsModelLabels', 'TableDepth',
++            'SystemsModelOrder', 'SystemsModelParallelConnect', 'TableForm',
++            'SystemsModelSeriesConnect', 'SystemsModelStateFeedbackConnect',
++            '$SystemWordLength', 'TableDirections', 'TableHeadings', 'TabView',
++            'TableSpacing', 'TabSpacings', 'TagBox', 'TaggingRules', 'TagSet',
++            'TagSetDelayed', 'TagUnset', 'TakeWhile', 'TargetFunctions',
++            'TautologyQ', '$TemporaryDirectory', 'Temporary', 'TensorRank',
++            '$TemporaryPrefix', 'TeXForm', 'TeXSave', 'TextAlignment', 'Thin',
++            'TextCell', 'TextClipboardType', 'TextData', 'TextJustification',
++            'TextPacket', 'TextRecognize', '$TextStyle', 'TextStyle', 'Thread',
++            'TextureCoordinateFunction', 'TextureCoordinateScaling', 'Texture',
++            'Therefore', 'Thickness', 'Thinning', 'ThompsonGroupTh', 'Through',
++            'ThreeJSymbol', 'Threshold', 'Throw', 'Thumbnail', 'Ticks', 'Tiny',
++            'TicksStyle', 'TildeEqual', 'TildeFullEqual', 'Tilde', '$TimedOut',
++            'TildeTilde', 'TimeConstrained', 'TimeConstraint', 'TimesBy',
++            'Times', '$TimeUnit', 'TimeUsed', 'TimeValue', '$TimeZone', 'Trig',
++            'TimeZone', 'Timing', 'TitsGroupT', 'ToASCII', 'ToBoxes', 'ToDate',
++            'ToCharacterCode', 'ToContinuousTimeModel', 'ToDiscreteTimeModel',
++            'ToeplitzMatrix', 'ToExpression', 'ToFileName', 'Together', 'True',
++            'TogglerBar', 'Toggler', 'ToHeldExpression', 'TokenWords', 'Total',
++            'Tolerance', 'ToLowerCase', 'ToNumberField', 'TooltipDelay',
++            'Tooltip', '$TopDirectory', 'TopHatTransform', 'TopologicalSort',
++            'ToRadicals', 'ToRules', 'ToString', 'TotalVariationFilter',
++            'TotalWidth', 'ToUpperCase', 'TraceAbove', 'TraceBackward', 'Tube',
++            'TraceDepth', 'TraceDialog', 'TraceForward', 'Trace', 'TraceOff',
++            'TraceOn', 'TraceOriginal', 'TracePrint', 'TraceScan', 'Translate',
++            'TrackedSymbols', 'TradingChart', 'TraditionalForm', 'Transparent',
++            'TraditionalFunctionNotation', 'TransferFunctionCancel', 'Trigger',
++            'TransferFunctionExpand', 'TransferFunctionFactor', 'Transpose',
++            'TransferFunctionModel', 'TransferFunctionPoles', 'TreeForm',
++            'TransferFunctionZeros', 'TransformationFunction', 'TreeGraph',
++            'TransformationFunctions', 'TransformationMatrix', 'TreeGraphQ',
++            'TransformedDistribution', 'TranslationTransform', 'TreePlot',
++            'TrendStyle', 'TriangleWave', 'TriangularDistribution', 'TrueQ',
++            'TrigExpand', 'TrigFactorList', 'TrigFactor', 'TrigReduce', 'With',
++            'TrigToExp', 'TrimmedMean', 'TruncatedDistribution', 'TTest',
++            'TukeyLambdaDistribution', 'Tuples', 'TuranGraph', 'TuringMachine',
++            'Uncompress', 'Undefined', 'UnderBar', 'Underflow', 'Underlined',
++            'UnderoverscriptBox', 'UnderoverscriptBoxOptions', 'Underscript',
++            'Underoverscript', 'UnderscriptBox', 'UnderscriptBoxOptions',
++            'UndirectedEdge', 'UndirectedGraph', 'UndirectedGraphQ', 'Unequal',
++            'Unevaluated', 'UniformDistribution', 'UniformGraphDistribution',
++            'UniformSumDistribution', 'Uninstall', 'Union', 'UnionPlus',
++            'Unique', 'UnitBox', 'Unitize', 'UnitStep', 'UnitTriangle', 'Word',
++            'UnitVector', 'Unprotect', 'UnsameQ', 'UnsavedVariables', 'Unset',
++            'UnsetShared', 'UpArrowBar', 'UpArrowDownArrow', 'UpArrow', 'Xnor',
++            'UpdateInterval', 'Update', 'UpDownArrow', 'UpEquilibrium', 'Zeta',
++            'UpperCaseQ', 'UpperLeftArrow', 'UpperRightArrow', 'UpSetDelayed',
++            'UpperTriangularize', 'UpSet', 'UpTeeArrow', 'UpValues', '$Urgent',
++            '$UserAddOnsDirectory', '$UserBaseDirectory', '$UserName', 'Wedge',
++            '$UserDocumentsDirectory', 'UsingFrontEnd', 'ValidationLength',
++            'ValueQ', 'Variables', 'VarianceEquivalenceTest', 'Variance',
++            'VarianceEstimatorFunction', 'VarianceTest', 'VectorAngle',
++            'VectorColorFunction', 'VectorColorFunctionScaling', 'VectorPlot',
++            'VectorDensityPlot', 'VectorPlot3D', 'VectorPoints', 'VectorQ',
++            'VectorScale', 'VectorStyle', 'Verbatim', 'VerifyConvergence',
++            'VerifyTestAssumptions', '$Version', '$VersionNumber', 'VertexAdd',
++            'VertexColors', 'VertexComponent', 'VertexCoordinateRules',
++            'VertexCoordinates', 'VertexCount', 'VertexCoverQ', 'VertexDegree',
++            'VertexDelete', 'VertexEccentricity', 'VertexInComponent', 'Which',
++            'VertexInDegree', 'VertexIndex', 'VertexLabeling', 'VertexLabels',
++            'VertexLabelStyle', 'VertexList', 'VertexNormals', 'VertexQ',
++            'VertexOutComponent', 'VertexOutDegree', 'VertexRenderingFunction',
++            'VertexReplace', 'VertexShapeFunction', 'VertexShape', 'ViewAngle',
++            'VertexSize', 'VertexStyle', 'VertexTextureCoordinates', 'Visible',
++            'VertexWeight', 'VerticalBar', 'VerticalSeparator', 'ViewCenter',
++            'VerticalSlider', 'VerticalTilde', 'ViewMatrix', 'ViewPoint',
++            'ViewRange', 'ViewVector', 'ViewVertical', 'VonMisesDistribution',
++            'WaitAll', 'WaitNext', 'WakebyDistribution', 'WatershedComponents',
++            'WalleniusHypergeometricDistribution', 'WaringYuleDistribution',
++            'WatsonUSquareTest', 'WattsStrogatzGraphDistribution', 'WeberE',
++            'WaveletBestBasis', 'WaveletFilterCoefficients', 'WaveletListPlot',
++            'WaveletImagePlot', 'WaveletMapIndexed', 'WaveletMatrixPlot',
++            'WaveletPhi', 'WaveletPsi', 'WaveletScale', 'WaveletScalogram',
++            'WaveletThreshold', 'WeatherData', 'WeibullDistribution', 'While',
++            'WeierstrassHalfPeriods', 'WeierstrassInvariants', 'WeierstrassP',
++            'WeierstrassPPrime', 'WeierstrassSigma', 'WeierstrassZeta',
++            'WeightedAdjacencyGraph', 'WeightedAdjacencyMatrix', 'Weights',
++            'WeightedGraphQ', 'WheelGraph', 'White', 'WhitespaceCharacter',
++            'Whitespace', 'WhittakerM', 'WhittakerW', 'WienerFilter', 'Write',
++            'WignerD', 'WignerSemicircleDistribution', 'WindowClickSelect',
++            'WindowElements', 'WindowFloating', 'WindowFrameElements', 'ZTest',
++            'WindowFrame', 'WindowMargins', 'WindowMovable', 'WindowOpacity',
++            'WindowSize', 'WindowStatusArea', 'WindowTitle', 'WindowToolbars',
++            'WolframAlpha', 'WordBoundary', 'WordCharacter', 'WordData',
++            'WordSearch', 'WordSeparators', 'WorkingPrecision', 'WriteString',
++            'Wronskian', 'XMLElement', 'XMLObject', 'Yellow', 'ZernikeR',
++            'YuleDissimilarity', 'ZeroTest', 'ZeroWidthTimes', 'ZetaZero',
++            'ZipfDistribution', 'ZTransform'
++            )
++        ),
++    /* Most symbol combinations can be valid Wolfram operators */
++    'SYMBOLS' => array(
++        '!', '@', '#', '$', '%', '&', '*', '-', '+', '=',
++        '^', '~', '|', '\\', '>', '<', ':', '?', '/'
++        ),
++    'CASE_SENSITIVE' => array(
++        GESHI_COMMENTS => false,
++        1 => true /* Wolfram is a case sensitive language */
++        ),
++    'STYLES' => array(
++        'KEYWORDS' => array(
++            1 => 'font-weight: bold;', /* make the system functions bold */
++            ),
++        'COMMENTS' => array(
++            'MULTI' => 'color: grey;',
++            2 => 'color: grey;', /* nested comments are grey as well */
++            3 => 'color: #000aa; font-weight: bold;' /* complex symbols */
++            ),
++        'ESCAPE_CHAR' => array(
++            0 => 'background-color: #3cb371; font-weight: bold;'
++            ),
++        'BRACKETS' => array(
++            0 => 'color: green; font-weight: bold;'
++            ),
++        'STRINGS' => array(
++            0 => 'color: grey; font-weight: bold;'
++            ),
++        'NUMBERS' => array(
++            0 => 'color: red;'
++            ),
++        'METHODS' => array(
++            1 => 'color: #060;'
++            ),
++        'REGEXPS' => array(
++            ),
++        'SYMBOLS' => array(
++            0 => 'color: #339933; font-weight: bold;'
++            ),
++        'SCRIPT' => array(
++            )
++        ),
++    'URLS' => array(
++        /* online documentation for system functions */
++        1 => 'http://reference.wolfram.com/language/ref/{FNAME}.html'
++        ),
++    'OOLANG' => false,
++    'OBJECT_SPLITTERS' => array(
++        ),
++    'REGEXPS' => array(
++        ),
++    'STRICT_MODE_APPLIES' => GESHI_NEVER,
++    'SCRIPT_DELIMITERS' => array(
++        ),
++    'HIGHLIGHT_STRICT_BLOCK' => array(
++        )
++);
+diff --git geshi/xbasic.php geshi/xbasic.php
+index 45af710..c78a7b9 100644
+--- geshi/xbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/xbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/xml.php geshi/xml.php
+index a6a145f..6f12739 100644
+--- geshi/xml.php 2017-05-13 19:11:19 UTC
++++ geshi/xml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/xojo.php geshi/xojo.php
+index e067acf..abd2525 100644
+--- geshi/xojo.php 2017-05-13 19:11:19 UTC
++++ geshi/xojo.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/xorg_conf.php geshi/xorg_conf.php
+index 92b276b..b9280bb 100644
+--- geshi/xorg_conf.php 2017-05-13 19:11:19 UTC
++++ geshi/xorg_conf.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/xpp.php geshi/xpp.php
+index d249c48..0e57f4d 100644
+--- geshi/xpp.php 2017-05-13 19:11:19 UTC
++++ geshi/xpp.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/yaml.php geshi/yaml.php
+index 252779e..e423717 100644
+--- geshi/yaml.php 2017-05-13 19:11:19 UTC
++++ geshi/yaml.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/z80.php geshi/z80.php
+index 5c8021f..d934933 100644
+--- geshi/z80.php 2017-05-13 19:11:19 UTC
++++ geshi/z80.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
+diff --git geshi/zxbasic.php geshi/zxbasic.php
+index d097194..ec90e79 100644
+--- geshi/zxbasic.php 2017-05-13 19:11:19 UTC
++++ geshi/zxbasic.php 2022-09-15 20:03:19 UTC
+@@ -7 +7 @@
+- * Release Version: 1.0.9.0
++ * Release Version: 1.0.9.1
