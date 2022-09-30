@@ -5,7 +5,6 @@
     SUBDIR += Maaate
     SUBDIR += a2jmidid
     SUBDIR += aacgain
-    SUBDIR += aacplusenc
     SUBDIR += abcde
     SUBDIR += abcselect
     SUBDIR += abgate-lv2
