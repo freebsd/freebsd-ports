@@ -45,4 +45,6 @@ CMAKE_ARGS=	-DBLAS=Open \
 		-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DFREEBSD_PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 
+PORTSCOUT=	limit:^.*[0-9]$$ # should end with a digit to prevent tags like rcnn-release
+
 .include <bsd.port.mk>
