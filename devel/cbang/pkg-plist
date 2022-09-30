@@ -248,13 +248,16 @@ include/cbang/openssl/KeyGenCallback.h
 include/cbang/openssl/KeyGenPacifier.h
 include/cbang/openssl/KeyPair.h
 include/cbang/openssl/PasswordCallback.h
-include/cbang/openssl/RSA.h
 include/cbang/openssl/Revoked.h
 include/cbang/openssl/SSL.h
 include/cbang/openssl/SSLContext.h
 include/cbang/openssl/SecurityUtilities.h
 include/cbang/openssl/XORStreamFilter.h
-include/cbang/os/CPUID.h
+include/cbang/os/CPUInfo.h
+include/cbang/os/CPUInfoAArch64.h
+include/cbang/os/CPUInfoX86.h
+include/cbang/os/CPURegsAArch64.h
+include/cbang/os/CPURegsX86.h
 include/cbang/os/Condition.h
 include/cbang/os/Directory.h
 include/cbang/os/DirectoryWalker.h
@@ -343,6 +346,7 @@ include/cbang/util/Boolean.h
 include/cbang/util/CompilerInfo.h
 include/cbang/util/Features.h
 include/cbang/util/FormatCheck.h
+include/cbang/util/Hex.h
 include/cbang/util/HexString.h
 include/cbang/util/HumanNumber.h
 include/cbang/util/HumanSize.h
@@ -409,7 +413,6 @@ lib/libcbang0.so.%%VER%%
 %%DATADIR%%/config/bzip2/__init__.py
 %%DATADIR%%/config/bzip2/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/config/cbang/__init__.py
-%%DATADIR%%/config/cbang/__init__.py.orig
 %%DATADIR%%/config/cbang/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/config/chakra/__init__.py
 %%DATADIR%%/config/chakra/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
