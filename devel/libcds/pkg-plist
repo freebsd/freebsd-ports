@@ -355,6 +355,6 @@ include/cds/user_setup/threading.h
 include/cds/version.h
 lib/cmake/LibCDS/LibCDSConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibCDS/LibCDSConfig.cmake
-lib64/libcds-s.a
-lib64/libcds.so
-lib64/libcds.so.2.3.3
+lib/libcds-s.a
+lib/libcds.so
+lib/libcds.so.2.3.3
