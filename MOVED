@@ -17574,3 +17574,4 @@ audio/aacplusenc||2022-09-30|Has expired: Legacy audio format, superseded by HE-
 net/libmms||2022-09-30|Has expired: Obsolete, Microsoft deprecated MMS protocol in favour of RTSP in 2003
 audio/mctoolame-decoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
 audio/mctoolame-encoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
+www/py-ws4py||2022-09-30|Has expired: Upstream abandoned
