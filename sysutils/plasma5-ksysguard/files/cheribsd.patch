@@ -1,0 +1,18 @@
+--- CMakeLists.txt	2022-09-30 21:34:40.334013000 +0100
++++ CMakeLists.txt	2022-09-30 21:34:50.864098000 +0100
+@@ -32,7 +32,6 @@
+     Config
+     CoreAddons
+     DBusAddons
+-    DocTools
+     I18n
+     IconThemes
+     ItemViews
+@@ -64,7 +63,6 @@
+ 
+ add_subdirectory( gui )
+ 
+-add_subdirectory( doc )
+ add_subdirectory( pics )
+ add_subdirectory( example )
+ 

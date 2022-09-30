@@ -16,14 +16,15 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons emoticons i18n iconthemes init itemmodels itemviews \
 		jobwidgets kio libksysguard newstuff notifications service \
 		solid widgetsaddons windowsystem xmlgui \
-		doctools:build ecm:build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
-OPTIONS_DEFINE=		INOTIFY
+OPTIONS_DEFINE=		DOCS INOTIFY
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 OPTIONS_SUB=		yes
+OPTIONS_EXCLUDE_purecap=INOTIFY
 
 INOTIFY_DESC=		Filesystem alteration notifications using inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
