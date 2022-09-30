@@ -17566,3 +17566,5 @@ sysutils/py-ansible-base||2022-09-30|Has expired: Depends on expired security/py
 devel/flang||2022-09-30|Has expired: Very outdated and unsupported upstream, current version in tree is several years old and upstream is still active
 devel/flang-clang||2022-09-30|Has expired: Very outdated and unsupported upstream, current version in tree is several years old and upstream is still active
 deskutils/myitcrm||2022-09-30|Has expired: Abandoned project as last update was on 2012-01-15
+lang/spidermonkey17||2022-09-30|Has expired: Obsolete, released in 2007 and since long unsupported upstream
+lang/p5-JavaScript-SpiderMonkey||2022-09-30|Has expired: Depends on deprecated SpiderMonkey 1.7
