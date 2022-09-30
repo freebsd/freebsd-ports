@@ -53,6 +53,7 @@ load_rc_config $name
 : ${XDG_DATA_HOME:="${caddy_directory}/data"}
 export XDG_CONFIG_HOME XDG_DATA_HOME
 
+command="${caddy_command}"
 caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
 pidfile="/var/run/${name}/${name}.pid"
 
