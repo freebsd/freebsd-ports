@@ -1,6 +1,6 @@
---- src/platformsupport/devicediscovery/qdevicediscovery_static.cpp.orig	2020-07-03 14:25:13 UTC
+--- src/platformsupport/devicediscovery/qdevicediscovery_static.cpp.orig	2022-09-19 10:23:04 UTC
 +++ src/platformsupport/devicediscovery/qdevicediscovery_static.cpp
-@@ -47,11 +47,7 @@
+@@ -11,11 +11,7 @@
  #include <QLoggingCategory>
  #include <QtCore/private/qcore_unix_p.h>
  

@@ -1,6 +1,6 @@
---- src/platformsupport/devicediscovery/qdevicediscovery_udev.cpp.orig	2020-07-03 14:25:13 UTC
+--- src/platformsupport/devicediscovery/qdevicediscovery_udev.cpp.orig	2022-09-19 10:23:04 UTC
 +++ src/platformsupport/devicediscovery/qdevicediscovery_udev.cpp
-@@ -46,11 +46,7 @@
+@@ -10,11 +10,7 @@
  #include <QSocketNotifier>
  #include <QLoggingCategory>
  

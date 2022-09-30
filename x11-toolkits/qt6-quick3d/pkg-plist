@@ -1,5 +1,7 @@
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dabstractlight_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dbakedlightmap_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dcamera_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dcubemaptexture_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dcustomcamera_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dcustommaterial_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3ddefaultmaterial_p.h
@@ -10,6 +12,7 @@
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dinstancing_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3ditem2d_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3djoint_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dlightmapper_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dloader_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dmaterial_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dmodel_p.h
@@ -35,6 +38,8 @@
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dscenerootnode_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dshaderutils_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dskeleton_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dskin_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dspecularglossymaterial_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dspotlight_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dtexture_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dtexturedata_p.h
@@ -62,7 +67,6 @@
 %%QT_INCDIR%%/QtQuick3DAssetImport/%%FULLVER%%/QtQuick3DAssetImport/private/qssgassetimporterfactory_p.h
 %%QT_INCDIR%%/QtQuick3DAssetImport/%%FULLVER%%/QtQuick3DAssetImport/private/qssgassetimporterplugin_p.h
 %%QT_INCDIR%%/QtQuick3DAssetImport/%%FULLVER%%/QtQuick3DAssetImport/private/qssgassetimportmanager_p.h
-%%QT_INCDIR%%/QtQuick3DAssetImport/%%FULLVER%%/QtQuick3DAssetImport/private/qssglightmapuvgenerator_p.h
 %%QT_INCDIR%%/QtQuick3DAssetImport/%%FULLVER%%/QtQuick3DAssetImport/private/qtquick3dassetimportexports_p.h
 %%QT_INCDIR%%/QtQuick3DAssetImport/%%FULLVER%%/QtQuick3DAssetImport/private/qtquick3dassetimportglobal_p.h
 %%QT_INCDIR%%/QtQuick3DAssetImport/QtQuick3DAssetImport
@@ -102,6 +106,10 @@
 %%QT_INCDIR%%/QtQuick3DGlslParser/qtquick3dglslparserexports.h
 %%QT_INCDIR%%/QtQuick3DGlslParser/qtquick3dglslparserversion.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/gridgeometry_p.h
+%%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/heightfieldgeometry_p.h
+%%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/instancerepeater_p.h
+%%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/lookatnode_p.h
+%%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/proceduralskytexturedata_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/qtquick3dhelpersexports_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/qtquick3dhelpersglobal_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/randominstancing_p.h
@@ -129,11 +137,14 @@
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticleemitburst_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticleemitter_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlegravity_p.h
+%%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlelineparticle_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlemodelblendparticle_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlemodelparticle_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlemodelshape_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlepointrotator_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlerandomizer_p.h
+%%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlerepeller_p.h
+%%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlescaleaffector_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticleshape_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticleshapedatautils_p.h
 %%QT_INCDIR%%/QtQuick3DParticles/%%FULLVER%%/QtQuick3DParticles/private/qquick3dparticlespriteparticle_p.h
@@ -153,6 +164,8 @@
 %%QT_INCDIR%%/QtQuick3DParticles/qtquick3dparticlesexports.h
 %%QT_INCDIR%%/QtQuick3DParticles/qtquick3dparticlesglobal.h
 %%QT_INCDIR%%/QtQuick3DParticles/qtquick3dparticlesversion.h
+%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssglayerrenderdata_p.h
+%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssglightmapper_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgperframeallocator_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderableimage_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderableobjects_p.h
@@ -166,9 +179,6 @@
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderdefaultmaterialshadergenerator_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendereffect_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderer_p.h
-%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendererimpllayerrenderdata_p.h
-%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendererimpllayerrenderhelper_p.h
-%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendererimpllayerrenderpreparationdata_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendererutil_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendergeometry_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendergraphobject_p.h
@@ -180,13 +190,13 @@
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderlayer_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderlight_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderloadedtexture_p.h
-%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendermaterialdirty_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendermaterialshadergenerator_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendermesh_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendermodel_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendermorphtarget_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendernode_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderparticles_p.h
+%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderpickresult_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderray_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderreflectionmap_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderreflectionprobe_p.h
@@ -198,6 +208,7 @@
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendershadermetadata_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendershadowmap_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderskeleton_p.h
+%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderskin_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendertexturedata_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrhicontext_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrhicustommaterialsystem_p.h
@@ -221,6 +232,7 @@
 %%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssgbounds3_p.h
 %%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssgdataref_p.h
 %%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssginvasivelinkedlist_p.h
+%%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssglightmapuvgenerator_p.h
 %%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssgmesh_p.h
 %%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssgmeshbvh_p.h
 %%QT_INCDIR%%/QtQuick3DUtils/%%FULLVER%%/QtQuick3DUtils/private/qssgmeshbvhbuilder_p.h
@@ -299,15 +311,10 @@ lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportConfig.cmake
 lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportConfigVersion.cmake
 lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportConfigVersionImpl.cmake
 lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportDependencies.cmake
+lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportPlugins.cmake
 lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportTargets.cmake
 lib/cmake/Qt6Quick3DAssetImport/Qt6Quick3DAssetImportVersionlessTargets.cmake
-lib/cmake/Qt6Quick3DAssetImport/Qt6UipAssetImporterPluginAdditionalTargetInfo.cmake
-lib/cmake/Qt6Quick3DAssetImport/Qt6UipAssetImporterPluginConfig.cmake
-lib/cmake/Qt6Quick3DAssetImport/Qt6UipAssetImporterPluginConfigVersion.cmake
-lib/cmake/Qt6Quick3DAssetImport/Qt6UipAssetImporterPluginConfigVersionImpl.cmake
-lib/cmake/Qt6Quick3DAssetImport/Qt6UipAssetImporterPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/Qt6Quick3DAssetImport/Qt6UipAssetImporterPluginTargets.cmake
 lib/cmake/Qt6Quick3DAssetUtils/Qt6Quick3DAssetUtilsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Quick3DAssetUtils/Qt6Quick3DAssetUtilsConfig.cmake
 lib/cmake/Qt6Quick3DAssetUtils/Qt6Quick3DAssetUtilsConfigVersion.cmake
@@ -472,7 +479,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_quick3dutils.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quick3dutils_private.pri
 %%QT_PLUGINDIR%%/assetimporters/libassimp.so
-%%QT_PLUGINDIR%%/assetimporters/libuip.so
 %%QT_PLUGINDIR%%/qmltooling/libqmldbg_quick3dprofiler.so
 %%QT_QMLDIR%%/QtQuick3D/AssetUtils/designer/IdComboBox.qml
 %%QT_QMLDIR%%/QtQuick3D/AssetUtils/designer/NodeSection.qml
@@ -561,6 +567,7 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Effects/qmldir
 %%QT_QMLDIR%%/QtQuick3D/Helpers/AxisHelper.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/DebugView.qml
+%%QT_QMLDIR%%/QtQuick3D/Helpers/OrbitCameraController.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/WasdController.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/AxisHelperSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/AxisHelperSpecifics.qml
@@ -569,6 +576,8 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/GridGeometrySection.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/GridGeometrySpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/IdComboBox.qml
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/LookAtNodeSection.qml
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/LookAtNodeSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/NodeSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/WasdControllerSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/WasdControllerSpecifics.qml
@@ -585,6 +594,9 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/gridgeometry.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/gridgeometry16.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/gridgeometry@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/lookatnode.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/lookatnode16.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/lookatnode@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/wasdcontroller.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/wasdcontroller16.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/wasdcontroller@2x.png
@@ -632,6 +644,8 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/Gravity3DSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/Gravity3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/IdComboBox.qml
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/LineParticle3DSection.qml
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/LineParticle3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ModelBlendParticle3DSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ModelBlendParticle3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ModelParticle3DSection.qml
@@ -650,6 +664,10 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ParticleSystem3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/PointRotator3DSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/PointRotator3DSpecifics.qml
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/Repeller3DSection.qml
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/Repeller3DSpecifics.qml
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ScaleAffector3DSection.qml
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ScaleAffector3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/SpriteParticle3DSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/SpriteParticle3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/SpriteSequence3DSection.qml
@@ -677,6 +695,9 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/gravity-16px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/gravity-24px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/gravity-24px@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/line-particle-16px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/line-particle-24px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/line-particle-24px@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/model-blend-particle-16px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/model-blend-particle-24px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/model-blend-particle-24px@2x.png
@@ -695,6 +716,12 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/point-rotator-16px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/point-rotator-24px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/point-rotator-24px@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/repeller-16px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/repeller-24px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/repeller-24px@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/scale-affector-16px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/scale-affector-24px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/scale-affector-24px@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/sprite-particle-16px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/sprite-particle-24px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/sprite-particle-24px@2x.png
@@ -731,6 +758,8 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/designer/BufferInputSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/BufferSection.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/BufferSpecifics.qml
+%%QT_QMLDIR%%/QtQuick3D/designer/CameraSection.qml
+%%QT_QMLDIR%%/QtQuick3D/designer/CustomCameraSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/CustomMaterialSection.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/CustomMaterialSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/DefaultMaterialSection.qml
@@ -847,6 +876,9 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/designer/images/plane.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/plane16.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/plane@2x.png
+%%QT_QMLDIR%%/QtQuick3D/designer/images/reflectionProbe.png
+%%QT_QMLDIR%%/QtQuick3D/designer/images/reflectionProbe16.png
+%%QT_QMLDIR%%/QtQuick3D/designer/images/reflectionProbe@2x.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/repeater3d.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/repeater3d16.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/repeater3d@2x.png

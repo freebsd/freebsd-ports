@@ -151,6 +151,7 @@ lib/cmake/Qt6Sensors/Qt6SensorsConfig.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsConfigVersion.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsConfigVersionImpl.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsDependencies.cmake
+lib/cmake/Qt6Sensors/Qt6SensorsPlugins.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsVersionlessTargets.cmake

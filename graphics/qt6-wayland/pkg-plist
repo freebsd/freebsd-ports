@@ -8,6 +8,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-server-buffer-extension.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-surface-extension.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-tablet-unstable-v2.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-text-input-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-text-input-unstable-v2.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-text-input-unstable-v4-wip.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-touch-extension.h
@@ -59,6 +60,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandsurface_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtabletv2_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtextinputinterface_p.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtextinputv1_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtextinputv2_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtextinputv4_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtouch_p.h
@@ -74,6 +76,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-server-buffer-extension-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-surface-extension-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-tablet-unstable-v2-client-protocol.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-text-input-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-text-input-unstable-v2-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-text-input-unstable-v4-wip-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-touch-extension-client-protocol.h
@@ -443,6 +446,7 @@ lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfigVersion.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfigVersionImpl.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientDependencies.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientMacros.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientPlugins.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientVersionlessTargets.cmake
@@ -476,6 +480,7 @@ lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorConfigVersion.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorConfigVersionImpl.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorDependencies.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorMacros.cmake
+lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorPlugins.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorTargets.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorVersionlessTargets.cmake

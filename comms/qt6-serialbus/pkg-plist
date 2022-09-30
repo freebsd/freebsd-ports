@@ -74,6 +74,7 @@ lib/cmake/Qt6SerialBus/Qt6SerialBusConfig.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusConfigVersion.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusConfigVersionImpl.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusDependencies.cmake
+lib/cmake/Qt6SerialBus/Qt6SerialBusPlugins.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusTargets.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusVersionlessTargets.cmake

@@ -259,6 +259,7 @@ lib/cmake/Qt6Designer/Qt6DesignerConfig.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersion.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersionImpl.cmake
 lib/cmake/Qt6Designer/Qt6DesignerDependencies.cmake
+lib/cmake/Qt6Designer/Qt6DesignerPlugins.cmake
 lib/cmake/Qt6Designer/Qt6DesignerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Designer/Qt6DesignerTargets.cmake
 lib/cmake/Qt6Designer/Qt6DesignerVersionlessTargets.cmake
@@ -382,8 +383,8 @@ libdata/pkgconfig/Qt6Help.pc
 libdata/pkgconfig/Qt6Linguist.pc
 libdata/pkgconfig/Qt6UiPlugin.pc
 libdata/pkgconfig/Qt6UiTools.pc
-%%QT_LIBEXECDIR%%/lrelease-pro
 %%QT_LIBEXECDIR%%/lprodump
+%%QT_LIBEXECDIR%%/lrelease-pro
 %%QT_LIBEXECDIR%%/lupdate-pro
 %%QT_LIBEXECDIR%%/qhelpgenerator
 %%QT_LIBEXECDIR%%/qtattributionsscanner
