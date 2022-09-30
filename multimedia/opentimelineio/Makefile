@@ -25,6 +25,6 @@ GH_TUPLE=	martinmoene:optional-lite:5e4b7760aac85ea73a5b9b91c726fc36cbd4149b:mar
 
 CMAKE_ON=	OTIO_FIND_IMATH
 
-PORTSCOUT=	ignore:v0.91 # erroneously labeled tag
+PORTSCOUT=	limit:^.*[0-9]$$ # should end with a digit to prevent tags like last_pure_python
 
 .include <bsd.port.mk>
