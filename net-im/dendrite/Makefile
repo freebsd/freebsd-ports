@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -73,7 +73,7 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:35f4265a4bc0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:eccd6366d1be:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:b168a2c6b86b:golang_exp/vendor/golang.org/x/exp \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:glog:v1.0.0:golang_glog/vendor/github.com/golang/glog \
@@ -84,10 +84,10 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		golang:net:f2f64ebce3c1:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:fb04ddd9f9c8:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:f11e5e49a4ec:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7a66f970e087:golang_term/vendor/golang.org/x/term \
 		golang:text:5bd84dd9b33b:golang_text/vendor/golang.org/x/text \
-		golang:time:2ce7c2934d45:golang_time/vendor/golang.org/x/time \
+		golang:time:f3bd1da661af:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.12:golang_tools/vendor/golang.org/x/tools \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -100,7 +100,7 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
 		juju:errors:v1.0.0:juju_errors/vendor/github.com/juju/errors \
 		kardianos:minwinsvc:v1.0.0:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
-		klauspost:compress:v1.15.10:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.15.11:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		lib:pq:v1.10.7:lib_pq/vendor/github.com/lib/pq \
 		lucas-clemente:quic-go:v0.29.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
@@ -122,7 +122,7 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		nats-io:jwt:v2.3.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:52d7b481c4b5:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats-server:v2.9.2:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		nats-io:nats.go:v1.17.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
