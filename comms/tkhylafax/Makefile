@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/tk interface to Sam Leffler's fax package
 
+DEPRECATED=	Depends on expired comms/hylafax
+EXPIRATION_DATE=2022-12-31
+
 RUN_DEPENDS=	sendfax:comms/hylafax \
 		gv:print/gv
 
