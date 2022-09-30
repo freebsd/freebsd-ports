@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -28,6 +28,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libenchant-2.so:textproc/enchant2 \
+		libhunspell-1.7.so:textproc/hunspell \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
 		libopenal.so:audio/openal-soft \
