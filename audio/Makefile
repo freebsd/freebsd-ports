@@ -461,8 +461,6 @@
     SUBDIR += mamba
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
-    SUBDIR += mctoolame-decoder
-    SUBDIR += mctoolame-encoder
     SUBDIR += mda-lv2
     SUBDIR += mhwaveedit
     SUBDIR += midi-matrix-lv2

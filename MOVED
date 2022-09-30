@@ -17572,3 +17572,5 @@ devel/electron17||2022-09-30|Has expired: EOLed upstream, switch to newer versio
 www/ttf2eot||2022-09-30|Has expired: Obsolete font format that's been superseded by OTF/TTF/WOFF/WOFF2
 audio/aacplusenc||2022-09-30|Has expired: Legacy audio format, superseded by HE-AAC(v1), HE-AACv2 and xHE-AAC/USAC. Please consider using audio/fdk-aac via FFmpeg or audio/exhale
 net/libmms||2022-09-30|Has expired: Obsolete, Microsoft deprecated MMS protocol in favour of RTSP in 2003
+audio/mctoolame-decoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
+audio/mctoolame-encoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
