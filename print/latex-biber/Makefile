@@ -1,6 +1,7 @@
 PORTNAME=	biber
 PORTVERSION=	2.17
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	TeX
@@ -38,7 +39,8 @@ __DEPENDS=	ja-p5-Encode-EUCJPASCII>0:japanese/p5-Encode-EUCJPASCII \
 		p5-XML-LibXML-Simple>0:textproc/p5-XML-LibXML-Simple \
 		p5-XML-LibXSLT>0:textproc/p5-XML-LibXSLT \
 		p5-XML-Writer>0:textproc/p5-XML-Writer \
-		p5-autovivification>0:devel/p5-autovivification
+		p5-autovivification>0:devel/p5-autovivification \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 BUILD_DEPENDS=	${__DEPENDS}
 RUN_DEPENDS=	${__DEPENDS}
 
