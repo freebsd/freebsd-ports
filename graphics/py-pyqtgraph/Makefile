@@ -1,8 +1,12 @@
 PORTNAME=	pyqtgraph
 DISTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/pyqtgraph/pyqtgraph/commit/
+PATCHFILES=	935914143d87f28575ea9d60bd9efada57b3bdd6.patch:-p1 # Fix renderView to not use mremap on FreeBSD, see https://github.com/pyqtgraph/pyqtgraph/pull/2445/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific graphics and GUI library for Python
@@ -19,7 +23,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt5-pyqt>0:devel/py-qt5-pyqt@${PY_FLAVOR} # PyQtGraph requires one of PyQt5, PyQt6, PySide2 or PySide6
 
 USES=		python:3.8+
-USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/pyqtgraph/pyqtgraph/issues/2444
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
