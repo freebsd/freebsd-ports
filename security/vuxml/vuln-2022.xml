@@ -1,3 +1,34 @@
+  <vuln vid="d459c914-4100-11ed-9bc7-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>106.0.5249.91</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop_30.html">
+	  <p>This release contains 3 security fixes, including:</p>
+	  <ul>
+	    <li>[1366813] High CVE-2022-3370: Use after free in Custom Elements. Reported by Aviv A. on 2022-09-22</li>
+	    <li>[1366399] High CVE-2022-3373: Out of bounds write in V8. Reported by Tibor Klajnscek on 2022-09-21</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3370</cvename>
+      <cvename>CVE-2022-3373</cvename>
+      <url>https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2022-09-30</discovery>
+      <entry>2022-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04422df1-40d8-11ed-9be7-454b1dd82c64">
     <topic>Gitlab -- Multiple vulnerabilities</topic>
     <affects>
