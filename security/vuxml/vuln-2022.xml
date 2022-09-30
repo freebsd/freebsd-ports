@@ -1,3 +1,61 @@
+  <vuln vid="04422df1-40d8-11ed-9be7-454b1dd82c64">
+    <topic>Gitlab -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.4.0</ge><lt>15.4.1</lt></range>
+	<range><ge>15.3.0</ge><lt>15.3.4</lt></range>
+	<range><ge>9.3.0</ge><lt>15.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/09/29/security-release-gitlab-15-4-1-released/">
+	  <p>Denial of Service via cloning an issue</p>
+	  <p>Arbitrary PUT request as victim user through Sentry error list</p>
+	  <p>Content injection via External Status Checks</p>
+	  <p>Project maintainers can access Datadog API Key from logs</p>
+	  <p>Unsafe serialization of Json data could lead to sensitive data leakage</p>
+	  <p>Import bug allows importing of private local git repos</p>
+	  <p>Maintainer can leak Github access tokens by changing integration URL (even after 15.2.1 patch)</p>
+	  <p>Unauthorized users able to create issues in any project</p>
+	  <p>Bypass group IP restriction on Dependency Proxy</p>
+	  <p>Healthcheck endpoint allow list can be bypassed when accessed over HTTP in an HTTPS enabled system</p>
+	  <p>Disclosure of Todo details to guest users</p>
+	  <p>A user's primary email may be disclosed through group member events webhooks</p>
+	  <p>Content manipulation due to branch/tag name confusion with the default branch name</p>
+	  <p>Leakage of email addresses in WebHook logs</p>
+	  <p>Specially crafted output makes job logs inaccessible</p>
+	  <p>Enforce editing approval rules on project level</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3283</cvename>
+      <cvename>CVE-2022-3060</cvename>
+      <cvename>CVE-2022-2904</cvename>
+      <cvename>CVE-2022-3018</cvename>
+      <cvename>CVE-2022-3291</cvename>
+      <cvename>CVE-2022-3067</cvename>
+      <cvename>CVE-2022-2882</cvename>
+      <cvename>CVE-2022-3066</cvename>
+      <cvename>CVE-2022-3286</cvename>
+      <cvename>CVE-2022-3285</cvename>
+      <cvename>CVE-2022-3330</cvename>
+      <cvename>CVE-2022-3351</cvename>
+      <cvename>CVE-2022-3288</cvename>
+      <cvename>CVE-2022-3293</cvename>
+      <cvename>CVE-2022-3279</cvename>
+      <cvename>CVE-2022-3325</cvename>
+      <url>https://about.gitlab.com/releases/2022/09/29/security-release-gitlab-15-4-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-09-29</discovery>
+      <entry>2022-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a1c2e06-3fb7-11ed-a402-b42e991fc52e">
     <topic>unbound -- Non-Responsive Delegation Attack</topic>
     <affects>
