@@ -10,6 +10,7 @@ COMMENT=	status_command for swaybar
 WWW=		https://sr.ht/~tsdh/swayr/#swayrbar
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${_LICENSE_STORE}/GPLv3
 
 USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}

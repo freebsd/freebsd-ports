@@ -10,6 +10,7 @@ COMMENT=	Urgent-first/LRU window switcher for sway
 WWW=		https://sr.ht/~tsdh/swayr/#swayr
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${_LICENSE_STORE}/GPLv3
 
 USES=		cargo
 PLIST_FILES=	bin/${PORTNAME} \
