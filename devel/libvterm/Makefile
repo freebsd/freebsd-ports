@@ -1,7 +1,7 @@
 PORTNAME=	libvterm
-PORTVERSION=	0.1.1
+PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpad.net/libvterm/trunk/v0.1/+download/
+MASTER_SITES=	https://www.leonerd.org.uk/code/libvterm/
 
 MAINTAINER=	aaron.kaufman@pm.me
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
@@ -14,7 +14,7 @@ USES=		compiler:c11 cpe gmake libtool:build pathfix perl5
 CPE_VENDOR=	leonerd
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
-USE_PERL5=	test
+USE_PERL5=	build test
 MAKE_ARGS=	PREFIX=${PREFIX}
 
 post-install:
