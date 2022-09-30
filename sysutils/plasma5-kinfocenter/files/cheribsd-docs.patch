@@ -1,0 +1,18 @@
+--- CMakeLists.txt	2022-09-30 17:28:28.943923000 +0100
++++ CMakeLists.txt	2022-09-30 17:28:38.898346000 +0100
+@@ -26,7 +26,6 @@
+     Config
+     ConfigWidgets
+     CoreAddons
+-    DocTools
+     I18n
+     KCMUtils
+     KIO
+@@ -60,7 +59,6 @@
+ add_subdirectory(src)
+ 
+ include(ECMOptionalAddSubdirectory)
+-ecm_optional_add_subdirectory( doc )
+ 
+ # add clang-format target for all our real source files
+ file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
