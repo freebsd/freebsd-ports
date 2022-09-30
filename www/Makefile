@@ -2247,6 +2247,7 @@
     SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
     SUBDIR += tomcat10
+    SUBDIR += tomcat101
     SUBDIR += tomcat85
     SUBDIR += tomcat9
     SUBDIR += tomee
