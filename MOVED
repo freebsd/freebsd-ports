@@ -17563,3 +17563,4 @@ java/bootstrap-openjdk6|java/bootstrap-openjdk8|2022-09-25|Was only used to boot
 graphics/caffe|misc/caffe|2022-09-29|Move to a more appropriate category
 security/pwman3||2022-09-30|Has expired: Depends on expired security/py-pycrypto
 sysutils/py-ansible-base||2022-09-30|Has expired: Depends on expired security/py-pycrypto
+devel/flang||2022-09-30|Has expired: Very outdated and unsupported upstream, current version in tree is several years old and upstream is still active
