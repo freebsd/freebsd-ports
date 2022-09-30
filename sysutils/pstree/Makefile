@@ -1,15 +1,17 @@
 PORTNAME=	pstree
-PORTVERSION=	2.39
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.40
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.thp.uni-due.de/pub/source/
+MASTER_SITES=	https://github.com/FredHucht/${PORTNAME}/files/9119465/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	List processes as a tree
-WWW=		http://www.thp.uni-due.de/pstree/
+WWW=		https://github.com/FredHucht/pstree
 
-USES=		alias
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_WRKSUBDIR=	yes
+USES=	zip
 
 CONFLICTS=	psmisc
 
