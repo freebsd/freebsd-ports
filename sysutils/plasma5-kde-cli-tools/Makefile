@@ -15,11 +15,15 @@ USE_KDE=	activities auth bookmarks codecs completion config \
 		kdeclarative kdesu kio notifications parts plasma-workspace \
 		pty service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		doctools:build ecm:build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport svg \
 		widgets x11extras xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 CPE_VENDOR=	kde
+
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	DOCS
+OPTIONS_SUB=		yes
 
 .include <bsd.port.mk>

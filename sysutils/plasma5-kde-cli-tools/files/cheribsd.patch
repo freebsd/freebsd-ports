@@ -1,0 +1,18 @@
+--- CMakeLists.txt	2022-09-30 17:37:16.077822000 +0100
++++ CMakeLists.txt	2022-09-30 17:37:43.103189000 +0100
+@@ -45,7 +45,6 @@
+ 
+ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+     Config
+-    DocTools
+     IconThemes
+     I18n
+     KCMUtils
+@@ -72,7 +71,6 @@
+ 
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ 
+-add_subdirectory(doc)
+ 
+ 
+ function(install_compat_symlink executable_target)
