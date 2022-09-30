@@ -1,5 +1,5 @@
 PORTNAME=	libmatroska
-DISTVERSION=	1.6.3
+DISTVERSION=	1.7.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://dl.matroska.org/downloads/libmatroska/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 LIB_DEPENDS=	libebml.so:textproc/libebml
 
-USES=		cmake compiler:c++11-lang cpe tar:xz
+USES=		cmake compiler:c++14-lang cpe tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	matroska
 
