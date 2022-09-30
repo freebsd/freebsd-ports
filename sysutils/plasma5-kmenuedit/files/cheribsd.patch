@@ -1,0 +1,18 @@
+--- CMakeLists.txt	2022-09-30 20:58:27.369210000 +0100
++++ CMakeLists.txt	2022-09-30 20:58:42.275259000 +0100
+@@ -37,7 +37,6 @@
+     KIO
+     ItemViews
+     Sonnet
+-    DocTools
+     GlobalAccel
+ )
+ 
+@@ -49,7 +48,6 @@
+ add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
+ 
+ add_subdirectory( pixmaps ) 
+-add_subdirectory( doc )
+ add_subdirectory(kconf_update)
+ 
+ set(kmenueditcommon_STAT_SRCS basictab.cpp
