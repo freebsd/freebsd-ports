@@ -2,7 +2,7 @@
 #
 # Feature:	fortran
 # Usage:	USES=fortran
-# Valid ARGS:	flang, gfortran (default)
+# Valid ARGS:	gfortran
 #
 # MAINTAINER:	fortran@FreeBSD.org
 
@@ -13,17 +13,7 @@ _INCLUDE_USES_FORTRAN_MK=	yes
 fortran_ARGS=	${FORTRAN_DEFAULT}
 .  endif
 
-.  if ${fortran_ARGS} == flang
-.    if ${ARCH} == amd64
-BUILD_DEPENDS+=	flang>0:devel/flang
-RUN_DEPENDS+=	flang>0:devel/flang
-F77=		flang
-FC=		flang
-LDFLAGS+=	-L${LOCALBASE}/flang/lib -Wl,--as-needed -lflang -lexecinfo -Wl,--no-as-needed
-.    else
-IGNORE=		USES=fortran: flang argument only available for amd64
-.    endif
-.  elif ${fortran_ARGS} == gfortran
+.  if ${fortran_ARGS} == gfortran
 _GCC_VER=	${GCC_DEFAULT:S/.//}
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
 RUN_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
