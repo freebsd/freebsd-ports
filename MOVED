@@ -17569,3 +17569,4 @@ deskutils/myitcrm||2022-09-30|Has expired: Abandoned project as last update was 
 lang/spidermonkey17||2022-09-30|Has expired: Obsolete, released in 2007 and since long unsupported upstream
 lang/p5-JavaScript-SpiderMonkey||2022-09-30|Has expired: Depends on deprecated SpiderMonkey 1.7
 devel/electron17||2022-09-30|Has expired: EOLed upstream, switch to newer version
+www/ttf2eot||2022-09-30|Has expired: Obsolete font format that's been superseded by OTF/TTF/WOFF/WOFF2
