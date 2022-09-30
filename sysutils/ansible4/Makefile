@@ -12,6 +12,9 @@ WWW=		https://www.ansible.com/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired security/py-pycrypto (via sysutils/py-ansible-core211)
+EXPIRATION_DATE=2022-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core211>0:sysutils/py-ansible-core211@${PY_FLAVOR}
 
 USES=		ansible:env cpe python:3.6+ shebangfix

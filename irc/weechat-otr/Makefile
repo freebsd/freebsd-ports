@@ -10,6 +10,9 @@ WWW=		https://github.com/mmb/weechat-otr
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on expired security/py-pycrypto (via security/py-potr)
+EXPIRATION_DATE=2022-12-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}potr>=1.0.1:security/py-potr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}potr>=1.0.1:security/py-potr@${PY_FLAVOR} \
 		weechat:irc/weechat
