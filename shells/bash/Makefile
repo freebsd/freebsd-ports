@@ -1,65 +1,69 @@
+# Please don't remove commented lines. They will become relevant once
+# the first official patch is released.
+
 PORTNAME=		bash
-PATCHLEVEL=		16
-PORTVERSION=		5.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+#PATCHLEVEL=		0
+#PORTVERSION=		5.2.${PATCHLEVEL:S/^0//g}
+PORTVERSION=		5.2
 CATEGORIES=		shells
 MASTER_SITES=		GNU
-DISTNAME=		${PORTNAME}-${PORTVERSION:R}
+#DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
-PATCHFILES!=		/usr/bin/jot -s " " -w \
-			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
+#PATCHFILES!=		/usr/bin/jot -s " " -w \
+#			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+#			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
-WWW=		https://www.gnu.org/software/bash/
+WWW=			https://www.gnu.org/software/bash/
 
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=		FDESCFS PORTS_READLINE HELP NLS STATIC SYSBASHRC \
-			SYSLOG DOCS
-FDESCFS_DESC=		Enable use of /dev/fd
-HELP_DESC=		Enable builtin help
-PORTS_READLINE_DESC=	libreadline from ports instead of bundled one
-SYSBASHRC_DESC=		Enable system-wide rc files
-
-OPTIONS_DEFAULT=	HELP PORTS_READLINE
-
 USES=			bison cpe iconv makeinfo pathfix localbase
-GNU_CONFIGURE=		yes
-OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
-
-FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
-FDESCFS_SUB_FILES=	pkg-message
-
-HELP_CONFIGURE_ENABLE=	help-builtin
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
-
-PORTS_READLINE_CONFIGURE_WITH=	installed-readline
-PORTS_READLINE_USES=	readline
-
-INFO=			bash
-
-PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README \
-			bash.html bashref.html
-
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins \
 			--with-libiconv-prefix=${ICONV_PREFIX}
 
-MAKE_ARGS+=	TERMCAP_LIB=-ltinfow
+MAKE_ARGS+=		TERMCAP_LIB=-ltinfow
+
+INFO=			bash
+PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README \
+			bash.html bashref.html
+
+OPTIONS_DEFINE=		FDESCFS PORTS_READLINE HELP NLS STATIC SYSBASHRC \
+			SYSLOG DOCS
+OPTIONS_DEFAULT=	HELP
+OPTIONS_SUB=		yes
+
+FDESCFS_DESC=		Enable use of /dev/fd
+HELP_DESC=		Enable builtin help
+PORTS_READLINE_DESC=	libreadline from ports instead of bundled one
+SYSBASHRC_DESC=		Enable system-wide rc files
+
+FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
+FDESCFS_SUB_FILES=	pkg-message
+
+HELP_CONFIGURE_ENABLE=	help-builtin
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+PORTS_READLINE_BROKEN=	ld: error: undefined symbol: rl_trim_arg_from_keyseq
+PORTS_READLINE_USES=	readline
+PORTS_READLINE_CONFIGURE_WITH=	installed-readline
+
+STATIC_BROKEN=		multiple definition of strtoimax
 
 .if empty(PKGNAMESUFFIX)
-CONFLICTS+=	bash-static
+CONFLICTS+=	bash-static bash52-static
 .else
-CONFLICTS+=	bash
+CONFLICTS+=	bash bash52
 .endif
 CONFLICTS+=	bashc
 
@@ -101,10 +105,6 @@ post-patch-SYSBASHRC-on:
 		-e "s|.*\(#define SYS_BASH.*\)\(/etc/.*\"\).*|\1${PREFIX}\2|" \
 		${WRKSRC}/config-top.h
 
-post-configure:
-	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
-
 pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
 
@@ -120,15 +120,15 @@ post-install:
 regress: build
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
 
-ckp:
-	${MAKE} -DPATCH_DEBUG clean patch
+#ckp:
+#	${MAKE} -DPATCH_DEBUG clean patch
 
 # requires ftp/ncftp3
-cklatest:
-	@${ECHO} -n "Currently at: "
-	@${MAKE} -V PATCHLEVEL
-	-ncftpls \
-		${PATCH_SITES:Mftp*:Ox:[1]} \
-		| fgrep -v .sig | ${SORT} | ${TAIL}
+#cklatest:
+#	@${ECHO} -n "Currently at: "
+#	@${MAKE} -V PATCHLEVEL
+#	-ncftpls \
+#		${PATCH_SITES:Mftp*:Ox:[1]} \
+#		| fgrep -v .sig | ${SORT} | ${TAIL}
 
 .include <bsd.port.mk>

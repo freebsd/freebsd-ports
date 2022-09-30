@@ -1,21 +1,22 @@
---- doc/Makefile.in.orig	2015-12-07 00:55:56 UTC
+--- doc/Makefile.in.orig	2022-09-27 16:41:33 UTC
 +++ doc/Makefile.in
-@@ -175,7 +175,7 @@ pdf: ${PDFFILES}
- bashref.dvi: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+@@ -175,7 +175,7 @@ bashref.dvi: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+ 	$(RM) $@
  	${SET_TEXINPUTS} $(TEXI2DVI) $(srcdir)/bashref.texi || { ${RM} $@ ; exit 1; }
  
 -bashref.info: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
 +bash.info: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+ 	$(RM) $@
  	$(MAKEINFO) --no-split -I$(TEXINPUTDIR) $(srcdir)/bashref.texi
  
- # experimental
-@@ -188,9 +188,6 @@ bashref.pdf: $(BASHREF_FILES) $(HSUSER) 
+@@ -188,10 +188,6 @@ bashref.pdf: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+ #	$(TEXI2HTML) -menu -monolithic -I $(TEXINPUTDIR) $(srcdir)/bashref.texi
  bashref.html: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
  	$(MAKEINFO) --html --no-split -I$(TEXINPUTDIR) $(srcdir)/bashref.texi
- 
--bash.info: bashref.info
--	${SHELL} ${INFOPOST} < $(srcdir)/bashref.info > $@ ; \
 -
+-bash.info: $(BASHREF_FILES) $(HSUSER) $(RLUSER)
+-	$(RM) $@
+-	$(MAKEINFO) -o $@ --no-split -I$(TEXINPUTDIR) $(srcdir)/bashref.texi
+ 
  bash.txt: bash.1
  bash.ps: bash.1
- bash.html: bash.1

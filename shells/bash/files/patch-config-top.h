@@ -1,6 +1,6 @@
---- config-top.h.orig	2016-05-19 18:34:02 UTC
+--- config-top.h.orig	2021-11-05 13:11:12 UTC
 +++ config-top.h
-@@ -74,7 +74,7 @@
+@@ -84,7 +84,7 @@
  #endif
  
  /* Default primary and secondary prompt strings. */
