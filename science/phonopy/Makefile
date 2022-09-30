@@ -10,6 +10,8 @@ WWW=		https://phonopy.github.io/phonopy/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: no such file or directory: 'NOTFOUND', see https://github.com/phonopy/phonopy/issues/236
+
 USES=		cmake
 USE_LDCONFIG=	yes
 
