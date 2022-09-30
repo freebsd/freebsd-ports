@@ -10,6 +10,7 @@ WWW=		https://google.github.io/filament/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation breaks: unexpected token in operand, see https://github.com/google/filament/issues/6131
 BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
 
 BUILD_DEPENDS=	bash:shells/bash \
