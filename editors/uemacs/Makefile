@@ -1,11 +1,13 @@
 PORTNAME=	uemacs
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://debian.physik.uni-essen.de/misc/memacs/disk2/
+MASTER_SITES=	https://github.com/zoomosis/uemacs/releases/download/v4.0/
 DISTNAME=	ue400dev
 
 MAINTAINER=	mail@ozzmosis.com
 COMMENT=	Full screen editor
+WWW=		https://github.com/zoomosis/uemacs
 
 # Converted from NO_CDROM
 LICENSE=	uemacs
