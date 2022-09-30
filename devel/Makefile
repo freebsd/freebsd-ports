@@ -626,7 +626,6 @@
     SUBDIR += fire-hpp
     SUBDIR += firmware-utils
     SUBDIR += fistgen
-    SUBDIR += flang-clang
     SUBDIR += flatbuffers
     SUBDIR += flatbuffers205
     SUBDIR += flatcc
