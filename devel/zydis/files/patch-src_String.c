@@ -23,7 +23,7 @@
      }
  
 -#if defined(ZYAN_X64) || defined(ZYAN_AARCH64)
-+#if defined(ZYAN_X64) || defined(ZYAN_AARCH64) || defined(ZYAN_PPC64)
++#if defined(ZYAN_X64) || defined(ZYAN_AARCH64) || defined(ZYAN_PPC64) || defined(ZYAN_RISCV64)
      ZYAN_CHECK(ZydisStringAppendDecU64(string, value, padding_length));
  #else
      if (value & 0xFFFFFFFF00000000)
@@ -32,7 +32,7 @@
      }
  
 -#if defined(ZYAN_X64) || defined(ZYAN_AARCH64)
-+#if defined(ZYAN_X64) || defined(ZYAN_AARCH64) || defined(ZYAN_PPC64)
++#if defined(ZYAN_X64) || defined(ZYAN_AARCH64) || defined(ZYAN_PPC64) || defined(ZYAN_RISCV64)
      ZYAN_CHECK(ZydisStringAppendHexU64(string, value, padding_length, uppercase));
  #else
      if (value & 0xFFFFFFFF00000000)
