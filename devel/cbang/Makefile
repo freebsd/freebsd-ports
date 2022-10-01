@@ -1,5 +1,5 @@
 PORTNAME=	cbang
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libv8.so:lang/v8		\
 USE_GITHUB=	yes
 GH_ACCOUNT=	CauldronDevelopmentLLC
 
-USES=		compiler:c++14-lang localbase mysql:client python:test scons	\
+USES=		compiler:c++17-lang localbase mysql:client python:test scons	\
 		sqlite ssl
 USE_LDCONFIG=	yes
 
