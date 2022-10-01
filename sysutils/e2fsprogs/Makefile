@@ -142,7 +142,7 @@ USE_PERL5=	build
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400072
+.if ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400072
 BROKEN=		incompatible qsort_r() API. Upstream working on a autoconf-based fix.
 .endif
 
