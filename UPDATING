@@ -29,6 +29,15 @@ you update your ports collection, before attempting any port upgrades.
   shared library dependencies.
 
 20220919:
+  AFFECTS: users of audio/strawberry
+  AUTHOR: mandree@FreeBSD.org
+
+  strawberry now uses FLAVORs based on the qt version, offering -qt5 and
+  -qt6, with -qt5 the default.
+
+  You may need to explicitly install either of the new flavors.
+
+20220919:
   AFFECTS: users of sysutils/schilyutils
   AUTHOR: fuz@fuz.su
 
