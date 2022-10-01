@@ -185,6 +185,7 @@ include/wolfssl/wolfcrypt/eccsi.h
 include/wolfssl/wolfcrypt/ed25519.h
 include/wolfssl/wolfcrypt/ed448.h
 include/wolfssl/wolfcrypt/error-crypt.h
+include/wolfssl/wolfcrypt/ext_kyber.h
 include/wolfssl/wolfcrypt/falcon.h
 include/wolfssl/wolfcrypt/fe_448.h
 include/wolfssl/wolfcrypt/fe_operations.h
@@ -195,6 +196,7 @@ include/wolfssl/wolfcrypt/hash.h
 include/wolfssl/wolfcrypt/hmac.h
 include/wolfssl/wolfcrypt/integer.h
 include/wolfssl/wolfcrypt/kdf.h
+include/wolfssl/wolfcrypt/kyber.h
 include/wolfssl/wolfcrypt/logging.h
 include/wolfssl/wolfcrypt/md2.h
 include/wolfssl/wolfcrypt/md4.h
@@ -221,11 +223,13 @@ include/wolfssl/wolfcrypt/sha512.h
 include/wolfssl/wolfcrypt/signature.h
 include/wolfssl/wolfcrypt/siphash.h
 include/wolfssl/wolfcrypt/sp_int.h
+include/wolfssl/wolfcrypt/sphincs.h
 include/wolfssl/wolfcrypt/srp.h
 include/wolfssl/wolfcrypt/tfm.h
 include/wolfssl/wolfcrypt/types.h
 include/wolfssl/wolfcrypt/visibility.h
 include/wolfssl/wolfcrypt/wc_encrypt.h
+include/wolfssl/wolfcrypt/wc_kyber.h
 include/wolfssl/wolfcrypt/wc_port.h
 include/wolfssl/wolfcrypt/wolfevent.h
 include/wolfssl/wolfcrypt/wolfmath.h
@@ -233,7 +237,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.35
-lib/libwolfssl.so.35.0.0
+lib/libwolfssl.so.35.1.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
