@@ -1,11 +1,11 @@
---- cmake-proxies/CMakeLists.txt.orig	2022-05-07 05:25:37 UTC
+--- cmake-proxies/CMakeLists.txt.orig	2022-09-27 06:14:03 UTC
 +++ cmake-proxies/CMakeLists.txt
-@@ -103,7 +103,7 @@ add_conan_lib(
-    libmad
-    libmad/0.15.2b@audacity/stable
-    OPTION_NAME libmad
--   PKG_CONFIG "mad >= 0.15.0b" # Ubuntu has broken PC file
-+   PKG_CONFIG "libmad >= 0.15.0b" # Ubuntu has broken PC file
- )
+@@ -130,7 +130,7 @@ else()
+       libmad
+       libmad/0.15.2b-1@
+       OPTION_NAME libmad
+-      PKG_CONFIG "mad >= 0.15.0b" # Ubuntu has broken PC file
++      PKG_CONFIG "libmad >= 0.15.0b" # Ubuntu has broken PC file
+    )
+ endif()
  
- add_conan_lib(

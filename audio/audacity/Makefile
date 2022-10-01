@@ -1,7 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.1.3
-PORTREVISION=	2
+DISTVERSION=	3.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -15,12 +14,14 @@ BUILD_DEPENDS=	conan:sysutils/conan
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libexpat.so:textproc/expat2 \
 		libmp3lame.so:audio/lame \
+		libmpg123.so:audio/mpg123 \
 		libopus.so:audio/opus \
 		libportaudio.so:audio/portaudio \
 		libportmidi.so:audio/portmidi \
 		libsndfile.so:audio/libsndfile \
 		libsoxr.so:audio/libsoxr \
 		libsqlite3.so:databases/sqlite3 \
+		libwavpack.so:audio/wavpack \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake compiler:c++17-lang cpe desktop-file-utils gettext \
@@ -46,8 +47,9 @@ CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_wxwidgets:STRING=system \
 		-Daudacity_use_zlib:STRING=system
 CMAKE_ON=	audacity_use_pa_oss audacity_obey_system_dependencies
-CMAKE_OFF=	audacity_has_networking audacity_has_updates_check \
-		audacity_use_pa_alsa audacity_use_pch
+CMAKE_OFF=	audacity_has_audiocom_upload audacity_has_networking audacity_has_updates_check \
+		audacity_use_pa_alsa audacity_use_pch audacity_has_sentry_reporting \
+		audacity_has_tests audacity_has_vst3
 
 OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LV2 MAD \
 			OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
