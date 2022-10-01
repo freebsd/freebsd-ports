@@ -1,6 +1,6 @@
 PORTNAME=	ctre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7
+DISTVERSION=	3.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://compile-time.re/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++20-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hanickadot
