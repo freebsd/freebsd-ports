@@ -58,7 +58,7 @@
 +		}
 +	}
 +	char *str = buf;
-+	while (line = strsep(&str, "\n")) {
++	while ((line = strsep(&str, "\n"))) {
 +#endif /* __FreeBSD__ */
  		last = which;
  		which ^= 1;
@@ -70,7 +70,7 @@
  			continue;
  		devs[which] = makedev(ma, mi);
 +#else
-+		char type[5];
++		char type[6];
 +		int dummy;
  
 +		if (sscanf(line, "%*d %5s %128[^ ] %lld %d",
