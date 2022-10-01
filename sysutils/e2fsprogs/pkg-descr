@@ -1,0 +1,3 @@
+This is a helper package that will copy and register the essential binaries
+from e2fsprogs-core to /sbin, so that it is possible to have /usr in an ext2,
+ext3, or ext4 file system, and still have a proper fsck in /sbin.
