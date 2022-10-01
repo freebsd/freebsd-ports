@@ -5,7 +5,7 @@ PORTNAME=		bash
 #PATCHLEVEL=		0
 #PORTVERSION=		5.2.${PATCHLEVEL:S/^0//g}
 PORTVERSION=		5.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 #DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -58,8 +58,6 @@ NLS_CONFIGURE_ENABLE=	nls
 PORTS_READLINE_BROKEN=	ld: error: undefined symbol: rl_trim_arg_from_keyseq
 PORTS_READLINE_USES=	readline
 PORTS_READLINE_CONFIGURE_WITH=	installed-readline
-
-STATIC_BROKEN=		multiple definition of strtoimax
 
 .if empty(PKGNAMESUFFIX)
 CONFLICTS+=	bash-static bash52-static
