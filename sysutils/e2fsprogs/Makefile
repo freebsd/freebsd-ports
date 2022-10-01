@@ -13,7 +13,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.46.5
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -141,6 +141,10 @@ USE_PERL5=	build
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400072
+BROKEN=		incompatible qsort_r() API. Upstream working on a autoconf-based fix.
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 . if empty(ICONV_LIB)
