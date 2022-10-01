@@ -38,13 +38,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		cmake fortran pkgconfig python
 USE_LDCONFIG=	yes
 
-GH_ACCOUNT=	BVLC
 USE_GITHUB=	yes
+GH_ACCOUNT=	BVLC
 
 CMAKE_ARGS=	-DBLAS=Open \
 		-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DFREEBSD_PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 
-PORTSCOUT=	limit:^.*[0-9]$$ # should end with a digit to prevent tags like rcnn-release
+PORTSCOUT=	limit:^[0-9].*[0-9]$$ # should begin and end with a digit to prevent tags like rcnn-release and rc5
 
 .include <bsd.port.mk>
