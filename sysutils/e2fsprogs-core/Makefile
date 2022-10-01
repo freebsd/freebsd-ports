@@ -1,19 +1,6 @@
-# heavily modified by: Matthias Andree <mandree@FreeBSD.org>
-#
-# supported FLAVORS=	default nobootfsck roothardlinks
-# FLAVORS explained:
-# default 	- install e2fsck fsck_ext2fs into /sbin and symlink from PREFIX
-# 		- requires that / is writable
-#
-# roothardlinks - install e2fsck fsck_ext2fs into /sbin and hardlink from PREFIX
-# 		- requires that / is writable and the same file system as PREFIX
-#
-# nobootfsck	- does not install into /sbin, but will be unable to fsck
-# 		  ext2/ext3/ext4 file systems at boot, before PREFIX is mounted
-
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.46.5
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -49,6 +36,7 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--libdir='${PREFIX}/lib/e2fsprogs/' \
 		--includedir='${PREFIX}/include/e2fsprogs/' \
 		--with-root-prefix='${PREFIX}' \
+		DD=${LOCALBASE}/bin/gdd \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
 # apparently HAVE_PTHREAD_H checks go missing if the FUSEFS option is unset, force it:
@@ -56,7 +44,7 @@ CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
-CONFLICTS_INSTALL=	e2fsprogs e2fsprogs-nobootfsck e2fsprogs-roothardlinks
+CONFLICTS_INSTALL=	e2fsprogs-nobootfsck e2fsprogs-roothardlinks
 
 PORTSCOUT=	ignore:1	# cannot handle the version in the directory
 
@@ -83,6 +71,9 @@ BASHTESTS_DESC=	Enable tests that require the GNU bash shell
 LIBUNWIND_DESC=	Backtrace with libunwind (do set WITH_DEBUG_PORTS+=${PKGORIGIN}!)
 
 FUSEFS_CONFIGURE_ENABLE=	fuse2fs
+FUSEFS_USES=		fuse
+
+NLS_USES=		gettext iconv:build
 
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
 BASHTESTS_BUILD_DEPENDS=	${BASH_CMD}:shells/bash
@@ -114,10 +105,7 @@ MAKE_ARGS+=	V=1
 .include <bsd.port.options.mk>
 
 .if ${MASTERDIR} == ${.CURDIR}
-FLAVORS=	default nobootfsck roothardlinks
-FLAVOR?=	${FLAVORS:[1]}
-nobootfsck_PKGNAMESUFFIX=	-nobootfsck
-roothardlinks_PKGNAMESUFFIX=	-roothardlinks
+PKGNAMESUFFIX=	-core
 .endif
 
 . if ! empty(ARCH:Mpowerpc*)
@@ -126,14 +114,6 @@ roothardlinks_PKGNAMESUFFIX=	-roothardlinks
 # see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242798 (ppc32 - untested)
 USES+=		compiler:c11
 . endif
-
-.if ${PORT_OPTIONS:MFUSEFS}
-USES+=		fuse
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv:build
-.endif
 
 .if empty(PORT_OPTIONS:MNOTESTS) && ${MASTERDIR} == ${.CURDIR}
 USES+=		perl5
@@ -158,15 +138,17 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no-sbrk
 .endif
 
 # d_fallocate_blkmap appears to fail on some systems for unknown reasons.
+# m_offset sometimes failes, a make clean and re-build usually fixes this. Reason unknown.
 post-patch::
+.if !empty(DISTFILES)
 	@${REINPLACE_CMD} -E -e 's/md5sum ([^ ]*)/printf "%s  %s\\n" $$(md5 -q \1) \1/' \
 	    -e "s/ == 0/ = 0/" -e "s/tar x$$/tar xf -/" -e "s/\<dd\>/gdd/" \
 	    ${WRKSRC}/tests/[a-z]_*/script
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
 	@${REINPLACE_CMD} -e 's,/etc/blkid.tab,${ETCDIR}/blkid.tab,' ${WRKSRC}/misc/blkid* ${WRKSRC}/lib/blkid/blkidP.h
 	@${REINPLACE_CMD} -E -e 's/__GNUC_PREREQ\>/__GNUC_PREREQ__/' ${WRKSRC}/*/*/*.[ch] ${WRKSRC}/*/*.c
-.if empty(PORT_OPTIONS:MALLTESTS)
-. for i in \
+. if empty(PORT_OPTIONS:MALLTESTS)
+.  for i in \
 		d_fallocate_blkmap \
 		f_baddir \
 		f_bbfile \
@@ -203,14 +185,15 @@ post-patch::
 		u_dryrun \
 		u_mke2fs_opt_offset
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
-. endfor
-.endif
-.if ${PORT_OPTIONS:MBASHTESTS}
+.  endfor
+. endif
+. if ${PORT_OPTIONS:MBASHTESTS}
 	${REINPLACE_CMD} -e 's}^SHELL *=.*}SHELL = ${_CHECK_SHELL}}' ${WRKSRC}/MCONFIG.in
-.else
-. for i in f_large_dir
+. else
+.  for i in f_large_dir
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
-. endfor
+.  endfor
+. endif
 .endif
 
 ##############################################################
@@ -218,12 +201,6 @@ post-patch::
 ##############################################################
 .if ${MASTERDIR} == ${.CURDIR}
 # NOTE: The previous .if block goes all the way to the end of the file.
-
-.if ${FLAVOR} == nobootfsck
-PLIST_SUB+=	ROOTSBIN="@comment "
-.else
-PLIST_SUB+=	ROOTSBIN=""
-.endif
 
 .if !empty(PORT_OPTIONS:MNOTESTS) && (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1400000 || ((${ARCH} != i386) && (${ARCH} != amd64)))
 BROKEN=	it was not tested on your system by the maintainer; you must run self-tests
@@ -319,28 +296,7 @@ post-build:
 .endif
 
 post-install:
-	# pkg workaround time again;
-	# the whole purpose of this dance is to move the necessities for
-	# /etc/fstab fsck'ing into /sbin, and symlink to these guys
-	# in the regular hierarchy, normally $PREFIX/sbin. Hard links may
-	# crash the install if /usr[/local] is a separate file system from /,
-	# and pkg 1.15.4 can't automatically unroll or install relative symlinks.
-.if ${FLAVOR} != nobootfsck
-	${MKDIR} ${STAGEDIR}/sbin
-	${MV} -f ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}/sbin/ # from INSTALL_TARGET
-	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}/sbin/  # from port
-	# according to TPH 6.1.1 Handling Symbolic Links, these are to be absolute
-	# for the default FLAVOR, yet stage-qa warns about these on 2020-09-16.
-. if ${FLAVOR} == roothardlinks
-	${LN} -f ${STAGEDIR}/sbin/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
-	${LN} -f ${STAGEDIR}/sbin/e2fsck      ${STAGEDIR}${PREFIX}/sbin/
-. else
-	${LN} -fs /sbin/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
-	${LN} -fs /sbin/e2fsck      ${STAGEDIR}${PREFIX}/sbin/
-. endif
-.else
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
-.endif
 	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext2
 	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext3
 	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext4
