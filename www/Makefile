@@ -2302,6 +2302,7 @@
     SUBDIR += uchiwa
     SUBDIR += ufdbguard
     SUBDIR += ulfius
+    SUBDIR += ungoogled-chromium
     SUBDIR += unit
     SUBDIR += unit-java
     SUBDIR += unit-perl
