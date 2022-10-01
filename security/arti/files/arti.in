@@ -30,25 +30,9 @@ pidfiledir="/var/run/${name}"
 pidfile="${pidfiledir}/${name}.pid"
 logfiledir="/var/log/${name}"
 logfile="${logfiledir}/${name}.log"
-dbfiledir="/var/db/${name}"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/${name}"
 
 command_args="-f -o $logfile -p $pidfile $procname proxy --config $arti_config"
-
-start_precmd="${name}_prestart"
-
-arti_prestart()
-{
-	if [ ! -d ${pidfiledir} ]; then
-		install -d -o ${arti_user} -g ${arti_group} ${pidfiledir}
-	fi
-	if [ ! -d ${logfiledir} ]; then
-		install -d -o ${arti_user} -g ${arti_group} ${logfiledir}
-	fi
-	if [ ! -d ${dbfiledir} ]; then
-		install -d -o ${arti_user} -g ${arti_group} ${dbfiledir}
-	fi
-}
 
 run_rc_command "$1"
