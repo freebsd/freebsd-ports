@@ -1,6 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake compiler:c++17-lang cpe gnome perl5 pkgconfig sqlite ssl
+USES=		cmake compiler:c++20-lang cpe gnome perl5 pkgconfig sqlite ssl
 CPE_VENDOR=	rspamd_project
 USE_GITHUB=	yes
 USE_GNOME=	glib20
