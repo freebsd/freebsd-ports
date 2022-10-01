@@ -1,6 +1,5 @@
 PORTNAME=	din
-PORTVERSION=	54
-PORTREVISION=	2
+PORTVERSION=	55
 CATEGORIES=	audio
 MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
 
