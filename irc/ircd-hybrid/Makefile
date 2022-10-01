@@ -1,5 +1,5 @@
 PORTNAME=	ircd-hybrid
-PORTVERSION=	8.2.42
+PORTVERSION=	8.2.43
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -67,9 +67,6 @@ RUN_DEPENDS+=	${CERTSFILE}:security/ca_root_nss
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/${PORTNAME}-${PORTVERSION} \
 			--localstatedir=/var/${PORTNAME} \
 			--sysconfdir=${PREFIX}/etc/${PORTNAME}
-
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/mkpasswd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-mkpasswd
