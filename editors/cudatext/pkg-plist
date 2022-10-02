@@ -819,6 +819,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-tools-menuitem.png
 %%DATADIR%%/readme/wiki/cudatext-tools-props.png
 %%DATADIR%%/readme/wiki/cudatext-tree-css-colors.png
+%%DATADIR%%/readme/wiki/cudatext-ui-elements.png
 %%DATADIR%%/readme/wiki/cudatext-viewer-asking.png
 %%DATADIR%%/readme/wiki/cudatext-viewer-hex.png
 %%DATADIR%%/readme/wiki/cudatext-viewer-modes.png
