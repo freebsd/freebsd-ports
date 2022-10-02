@@ -1,20 +1,22 @@
 PORTNAME=	hackrf
-PORTVERSION=	2017.02.1
+PORTVERSION=	2021.03.1
 CATEGORIES=	comms devel hamradio science security
 
-MAINTAINER=	cederom@tlen.pl
+MAINTAINER=	tomek@cedro.info
 COMMENT=	Low cost open source hardware software radio platform
 WWW=		https://greatscottgadgets.com/hackrf/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	hackrf-devel
-
-USE_GITHUB=	YES
-GH_ACCOUNT=	mossmann
-GH_TAGNAME=	31a37bd
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		cmake
+USE_GITHUB=	YES
+GH_ACCOUNT=	mossmann
+GH_TAGNAME=	e6eb4ba
+
+CONFLICTS=	hackrf-devel
+
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 CMAKE_ARGS=	-DLIBUSB_LIBRARIES=/usr/lib/libusb.so
 
