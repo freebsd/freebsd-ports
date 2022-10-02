@@ -9,8 +9,8 @@ WWW=		https://spamassassin.apache.org/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_TAGNAME=	5f1d4a0e9
-SA_COMMIT_DATE=	2022.09.11
+GH_TAGNAME=	57ed8b56e
+SA_COMMIT_DATE=	2022.10.02
 
 LICENSE=	APACHE20
 
