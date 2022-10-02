@@ -39,7 +39,7 @@ include/KF5/KDAV/kdav/enums.h
 include/KF5/KDAV/kdav/etagcache.h
 include/KF5/KDAV/kdav/kdav_export.h
 include/KF5/KDAV/kdav/protocolinfo.h
-include/KF5/kdav_version.h
+include/KF5/KDAV/kdav_version.h
 lib/cmake/KF5DAV/KF5DAVConfig.cmake
 lib/cmake/KF5DAV/KF5DAVConfigVersion.cmake
 lib/cmake/KF5DAV/KF5DAVTargets-%%CMAKE_BUILD_TYPE%%.cmake

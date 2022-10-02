@@ -25,8 +25,8 @@ include/KF5/KBookmarks/kbookmarkmanager.h
 include/KF5/KBookmarks/kbookmarkmenu.h
 include/KF5/KBookmarks/kbookmarkowner.h
 include/KF5/KBookmarks/kbookmarks_export.h
-include/KF5/KBookmarks/konqbookmarkmenu.h
 include/KF5/KBookmarks/kbookmarks_version.h
+include/KF5/KBookmarks/konqbookmarkmenu.h
 lib/cmake/KF5Bookmarks/KF5BookmarksConfig.cmake
 lib/cmake/KF5Bookmarks/KF5BookmarksConfigVersion.cmake
 lib/cmake/KF5Bookmarks/KF5BookmarksTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -76,6 +76,7 @@ share/locale/id/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/is/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/it/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/ja/LC_MESSAGES/kbookmarks5_qt.qm
+share/locale/ka/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/kk/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/km/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/ko/LC_MESSAGES/kbookmarks5_qt.qm
