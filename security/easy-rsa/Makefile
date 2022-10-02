@@ -1,12 +1,10 @@
 PORTNAME=	easy-rsa
 DISTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/
 DISTNAME=	EasyRSA-${DISTVERSION}
 
-# Eric F. Crist <ecrist@secure-computing.net> does not require my
-# approval for changes to this package. -- mandree@FreeBSD.org
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Small RSA key management package based on openssl
 WWW=		https://github.com/OpenVPN/easy-rsa
