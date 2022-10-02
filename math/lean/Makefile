@@ -14,6 +14,8 @@ WWW=		https://leanprover-community.github.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_aarch64=	c++ crashes during link on arm64 on math/lean, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266777
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		cmake:testing compiler:c++11-lang
