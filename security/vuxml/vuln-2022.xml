@@ -1,3 +1,44 @@
+  <vuln vid="67057b48-41f4-11ed-86c3-080027881239">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.8</lt></range>
+      </package>
+      <package>
+	<name>mediawiki137</name>
+	<range><lt>1.37.6</lt></range>
+      </package>
+      <package>
+	<name>mediawiki138</name>
+	<range><lt>1.38.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/SPYFDCGZE7KJNO73ET7QVSUXMHXVRFTE/">
+	  <p>(T316304, CVE-2022-41767) SECURITY: reassignEdits doesn't update results
+	    in an IP range check on Special:Contributions..</p>
+	  <p>(T309894, CVE-2022-41765) SECURITY: HTMLUserTextField exposes existence
+	    of hidden users.</p>
+	  <p> (T307278, CVE-2022-41766) SECURITY: On action=rollback the message
+	    "alreadyrolled" can leak revision deleted user name.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41765</cvename>
+      <cvename>CVE-2022-41766</cvename>
+      <cvename>CVE-2022-41767</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/SPYFDCGZE7KJNO73ET7QVSUXMHXVRFTE/</url>
+    </references>
+    <dates>
+      <discovery>2022-09-29</discovery>
+      <entry>2022-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d459c914-4100-11ed-9bc7-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
