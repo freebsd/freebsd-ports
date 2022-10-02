@@ -1,5 +1,5 @@
 PORTNAME=	rssguard
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
