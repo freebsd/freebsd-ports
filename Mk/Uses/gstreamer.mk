@@ -57,7 +57,7 @@ _GST1_PLUGINS_security=	dtls
 _GST1_PLUGINS_sysutils=	cdio
 _GST1_PLUGINS_www=	neon
 _GST1_PLUGINS_x11=	x ximagesrc
-_GST1_PLUGINS_x11-toolkits=	gtk gtk4 pango
+_GST1_PLUGINS_x11-toolkits=	gtk pango
 
 # == Unversioned information
 
@@ -390,9 +390,6 @@ gst-ximagesrc_IMPL=	good
 
 gst-gtk_PORT=		x11-toolkits/gstreamer${_GST_VER}-plugins-gtk
 gst-gtk_IMPL=		bad
-
-gst-gtk4_PORT=		x11-toolkits/gstreamer${_GST_VER}-plugins-gtk4
-gst-gtk4_IMPL=		good
 
 gst-pango_PORT=		x11-toolkits/gstreamer${_GST_VER}-plugins-pango
 gst-pango_IMPL=		#

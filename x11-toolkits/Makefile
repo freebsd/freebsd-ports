@@ -25,7 +25,6 @@
     SUBDIR += granite
     SUBDIR += granite7
     SUBDIR += gstreamer1-plugins-gtk
-    SUBDIR += gstreamer1-plugins-gtk4
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-layer-shell
     SUBDIR += gtk-sharp-beans
