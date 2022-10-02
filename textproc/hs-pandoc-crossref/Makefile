@@ -167,4 +167,11 @@ USE_CABAL=	Glob-0.10.2_3 \
 		zip-archive-0.4.2.1 \
 		zlib-0.6.3.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+# compiler goes out of memory
+BUILD_ARGS+=   --disable-optimization
+.endif
+
+.include <bsd.port.post.mk>
