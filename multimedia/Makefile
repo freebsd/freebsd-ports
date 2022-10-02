@@ -31,6 +31,7 @@
     SUBDIR += cheese
     SUBDIR += chilitags
     SUBDIR += cineencoder
+    SUBDIR += clapper
     SUBDIR += clutter-gst
     SUBDIR += clutter-gst3
     SUBDIR += cmrt
