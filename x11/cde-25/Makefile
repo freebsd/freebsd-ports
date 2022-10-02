@@ -1,5 +1,5 @@
 PORTNAME=	cde
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 .if !defined(MASTERDIR)
