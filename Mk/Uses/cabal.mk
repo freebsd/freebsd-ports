@@ -187,17 +187,17 @@ cabal-extract: check-cabal
 .  if ${_hackage_is_default} == no
 	@${ECHO_MSG} "===> Recursing down to make extract"
 	@${MAKE} -C ${.CURDIR} extract SKIP_CABAL_EXTRACT=yes USE_CABAL=
-	${RM} -rf ${CABAL_HOME}
+	${RM} -r ${CABAL_HOME}
 .  endif
 	@${ECHO_MSG} "===> Fetching Hackage index into ${CABAL_HOME}/.cabal"
-	@${SETENV} HOME=${CABAL_HOME} ${CABAL_CMD} update
+	${SETENV} HOME=${CABAL_HOME} ${CABAL_CMD} update
 .  if ${_hackage_is_default} == yes
-	@cd ${WRKDIR} && \
+	cd ${WRKDIR} && \
 		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} get ${PORTNAME}-${PORTVERSION}
 .  else
 .    if ${cabal_ARGS:Mhpack}
 	@${ECHO_MSG} "===> Running ${HPACK_CMD} to generate .cabal file"
-	@cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} ${HPACK_CMD}
+	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} ${HPACK_CMD}
 .    endif
 .  endif
 # Remove Haskell dependencies that come from GH_TUPLE
