@@ -15,4 +15,8 @@ PLIST_FILES=	bin/docbook2mdoc \
 
 USES=	tar:tgz
 
+post-patch:
+	${REINPLACE_CMD} -e 's|^PREFIX = /usr/local|PREFIX = ${PREFIX}|' \
+	    ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
