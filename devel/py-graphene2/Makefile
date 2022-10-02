@@ -24,6 +24,6 @@ NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}graphene
 
-PORTSCOUT=	limmit:^2\.
+PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.mk>
