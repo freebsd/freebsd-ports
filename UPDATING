@@ -5,6 +5,30 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221002:
+  AFFECTS: users of shells/bash
+  AUTHOR: ehaupt@FreeBSD.org
+
+  Bash has been updated to version 5.2. In previous versions, the default port
+  option-set used to link against libreadline from ports. However, the current
+  version of devel/readline is too old for bash 5.2.
+
+  For now, the default option has been switched to use the bundled version of
+  libreadline and the other option is marked broken. Once devel/readline is
+  updated this can be reverted.
+
+  If you're updating bash from source and you've previously explicitly set to
+  use use PORTS_READLINE, you'll have to disable the PORTS_READLINE option
+  before updating:
+
+  # cd /usr/ports/shells/bash
+  # make config
+
+   or flush it entirely:
+
+  # cd /usr/ports/shells/bash
+  # make rmconfig
+
 20220929:
   AFFECTS: users of graphics/bmeps
   AUTHOR: takefu@airport.fm
