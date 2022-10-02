@@ -147,7 +147,7 @@ include/utils/bitset.h
 include/utils/compiler.h
 include/utils/compressed_pair.h
 include/utils/debug.h
-include/utils/linux/Mutex.h
+include/utils/generic/Mutex.h
 include/utils/memalign.h
 include/utils/ostream.h
 include/utils/unwindows.h
