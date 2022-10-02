@@ -1,6 +1,6 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.2
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libgraphene-1.0.so:graphics/graphene
+RUN_DEPENDS=	${LOCALBASE}/lib/gstreamer-1.0/libgstgtk4.so:multimedia/gstreamer1-plugins-rust
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig
 USE_GITHUB=	yes
@@ -22,10 +23,10 @@ GH_PROJECT=	Kooha
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	io.github.seadve.Kooha.gschema.xml
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		android_system_properties-0.1.4 \
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.62 \
+		anyhow-1.0.65 \
 		atomic_refcell-0.1.8 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -40,12 +41,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		color_quant-1.1.0 \
 		core-foundation-sys-0.8.3 \
 		field-offset-0.3.4 \
-		futures-channel-0.3.23 \
-		futures-core-0.3.23 \
-		futures-executor-0.3.23 \
-		futures-io-0.3.23 \
-		futures-task-0.3.23 \
-		futures-util-0.3.23 \
+		fragile-1.2.1 \
+		futures-channel-0.3.24 \
+		futures-core-0.3.24 \
+		futures-executor-0.3.24 \
+		futures-io-0.3.24 \
+		futures-task-0.3.24 \
+		futures-util-0.3.24 \
 		gdk-pixbuf-0.15.11 \
 		gdk-pixbuf-sys-0.15.10 \
 		gdk4-0.4.8 \
@@ -65,14 +67,18 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		gobject-sys-0.15.10 \
 		graphene-rs-0.15.1 \
 		graphene-sys-0.15.10 \
-		gsettings-macro-0.1.11 \
+		gsettings-macro-0.1.14 \
 		gsk4-0.4.8 \
 		gsk4-sys-0.4.8 \
 		gst-plugin-gif-0.8.0 \
+		gst-plugin-gtk4-0.1.1 \
 		gst-plugin-version-helper-0.7.3 \
 		gstreamer-0.18.8 \
+		gstreamer-audio-sys-0.18.3 \
 		gstreamer-base-0.18.0 \
 		gstreamer-base-sys-0.18.0 \
+		gstreamer-pbutils-0.18.7 \
+		gstreamer-pbutils-sys-0.18.0 \
 		gstreamer-sys-0.18.0 \
 		gstreamer-video-0.18.7 \
 		gstreamer-video-sys-0.18.3 \
@@ -80,8 +86,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		gtk4-macros-0.4.8 \
 		gtk4-sys-0.4.8 \
 		heck-0.4.0 \
-		iana-time-zone-0.1.46 \
-		js-sys-0.3.59 \
+		iana-time-zone-0.1.48 \
+		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
 		libadwaita-0.2.0-alpha.2 \
 		libadwaita-sys-0.2.0-alpha.2 \
@@ -103,12 +109,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		once_cell-1.13.1 \
+		once_cell-1.14.0 \
 		option-operations-0.4.1 \
 		pango-0.15.10 \
 		pango-sys-0.15.10 \
-		paste-1.0.8 \
-		pest-2.2.1 \
+		paste-1.0.9 \
+		pest-2.3.1 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
@@ -118,23 +124,23 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.43 \
 		quick-xml-0.22.0 \
-		quick-xml-0.23.0 \
+		quick-xml-0.25.0 \
 		quote-1.0.21 \
 		regex-1.6.0 \
 		regex-syntax-0.6.27 \
 		rustc_version-0.3.3 \
 		semver-0.11.0 \
 		semver-parser-0.10.2 \
-		serde-1.0.143 \
-		serde_derive-1.0.143 \
+		serde-1.0.144 \
+		serde_derive-1.0.144 \
 		sharded-slab-0.1.4 \
 		slab-0.4.7 \
 		smallvec-1.9.0 \
 		syn-1.0.99 \
 		system-deps-6.0.2 \
 		temp-dir-0.1.11 \
-		thiserror-1.0.32 \
-		thiserror-impl-1.0.32 \
+		thiserror-1.0.35 \
+		thiserror-impl-1.0.35 \
 		thread_local-1.1.4 \
 		toml-0.5.9 \
 		tracing-0.1.36 \
@@ -142,16 +148,16 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tracing-core-0.1.29 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.15 \
-		ucd-trie-0.1.4 \
-		unicode-ident-1.0.3 \
+		ucd-trie-0.1.5 \
+		unicode-ident-1.0.4 \
 		valuable-0.1.0 \
 		version-compare-0.1.0 \
 		version_check-0.9.4 \
-		wasm-bindgen-0.2.82 \
-		wasm-bindgen-backend-0.2.82 \
-		wasm-bindgen-macro-0.2.82 \
-		wasm-bindgen-macro-support-0.2.82 \
-		wasm-bindgen-shared-0.2.82 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
 		weezl-0.1.7 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
