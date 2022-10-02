@@ -1,7 +1,6 @@
 PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.2
-PORTREVISION=	1
+DISTVERSION=	3.3.3
 CATEGORIES=	print java
 
 MAINTAINER=	andreas@bilke.org
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 USE_ANT=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	pdftk-java
-GL_COMMIT=	7d2ac3c1fa858f2c247c809fc6ef43f71f241098
+GL_COMMIT=	e4292c8f1bd2580a44d3cbf3570a4505bd3a74b6
 USE_JAVA=	yes
 ALL_TARGET=	jar
 NO_ARCH=	yes
