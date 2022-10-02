@@ -17575,7 +17575,6 @@ net/libmms||2022-09-30|Has expired: Obsolete, Microsoft deprecated MMS protocol 
 audio/mctoolame-decoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
 audio/mctoolame-encoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
 www/py-ws4py||2022-09-30|Has expired: Upstream abandoned
-net-p2p/awgg||2022-09-30|Has expired: Depends on expired ftp/axel
 ftp/axel||2022-09-30|Has expired: Last release in 2009 and dead upstream, please consider using www/aria2
 databases/py-bsddb3|databases/py-berkeleydb|2022-09-30|Has expired: Requires upstream EOLd db5. Use py-berkeleydb
 graphics/megapov|graphics/povray37|2022-10-01|Has expired: Abandoned upstream. graphics/povray37 is the recommended replacement
