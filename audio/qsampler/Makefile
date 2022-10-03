@@ -1,6 +1,6 @@
 PORTNAME=	qsampler
 DISTVERSIONPREFIX=	qsampler_
-DISTVERSION=	0_9_6
+DISTVERSION=	0_9_7
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,10 +15,9 @@ LIB_DEPENDS=	libgig.so:audio/libgig \
 RUN_DEPENDS=	linuxsampler:audio/linuxsampler
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags pkgconfig \
-		shared-mime-info qmake:no_env qt:5 xorg
+		shared-mime-info qmake:no_env qt:6 xorg
 USE_GL=		gl
-USE_QT=		core gui network widgets x11extras \
-		buildtools:build linguisttools:build qmake:build
+USE_QT=		base svg tools:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
