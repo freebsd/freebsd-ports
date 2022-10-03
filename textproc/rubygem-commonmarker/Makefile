@@ -1,5 +1,5 @@
 PORTNAME=	commonmarker
-PORTVERSION=	0.23.5
+PORTVERSION=	0.23.6
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
