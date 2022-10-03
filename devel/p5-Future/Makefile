@@ -16,8 +16,11 @@ TEST_DEPENDS=	p5-Test-Fatal>0:devel/p5-Test-Fatal \
 		p5-Test-Identity>0:devel/p5-Test-Identity \
 		p5-Test-Refcount>0:devel/p5-Test-Refcount
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>
