@@ -1,6 +1,6 @@
 PORTNAME=	win98se-icon-theme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.13
+DISTVERSION=	0.2.14
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
