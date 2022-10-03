@@ -1,6 +1,6 @@
 PORTNAME=	intel-ipsec-mb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	security
 
 MAINTAINER=	freebsd@sysctl.cz
