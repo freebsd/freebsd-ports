@@ -1,0 +1,11 @@
+include/mmtf.hpp
+include/mmtf/binary_decoder.hpp
+include/mmtf/binary_encoder.hpp
+include/mmtf/decoder.hpp
+include/mmtf/encoder.hpp
+include/mmtf/errors.hpp
+include/mmtf/export_helpers.hpp
+include/mmtf/map_decoder.hpp
+include/mmtf/msgpack_decoders.hpp
+include/mmtf/msgpack_encoders.hpp
+include/mmtf/structure_data.hpp

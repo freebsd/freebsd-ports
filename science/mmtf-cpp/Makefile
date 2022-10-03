@@ -1,7 +1,6 @@
 PORTNAME=	mmtf-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
-PORTREVISION=	2
+DISTVERSION=	1.1.0
 CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,37 +11,26 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack
+TEST_DEPENDS=	catch>0:devel/catch
 
-USES=		cmake compiler:c++11-lang localbase:ldflags
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcsb
-GH_TUPLE=	rcsb:mmtf:8c88834:x/mmtf_spec
+GH_TUPLE=	rcsb:mmtf:8c88834:x/submodules/mmtf_spec
+
+CMAKE_TESTING_ON=	mmtf_build_local BUILD_TESTS
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	include/mmtf.hpp \
-		include/mmtf/binary_decoder.hpp \
-		include/mmtf/binary_encoder.hpp \
-		include/mmtf/decoder.hpp \
-		include/mmtf/encoder.hpp \
-		include/mmtf/errors.hpp \
-		include/mmtf/export_helpers.hpp \
-		include/mmtf/map_decoder.hpp \
-		include/mmtf/msgpack_decoder.hpp \
-		include/mmtf/object_encoders.hpp \
-		include/mmtf/structure_data.hpp
-
-post-patch:
-	@cd ${WRKDIR} && ${LN} -s ${WRKSRC}/mmtf_spec # needed for testing
+post-patch: # correct paths of test data to be accessible to the test executable
+	@${REINPLACE_CMD} -e '\
+		s|\.\./submodules/mmtf_spec|${WRKSRC}/submodules/mmtf_spec|g; \
+		s|\.\./temporary_test_data|${WRKSRC}/temporary_test_data|g' \
+		${WRKSRC}/tests/mmtf_tests.cpp
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} include ${STAGEDIR}${PREFIX}
-
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -Dmmtf_build_local=ON -DBUILD_TESTS=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
