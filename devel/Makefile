@@ -4788,6 +4788,7 @@
     SUBDIR += py-mccabe
     SUBDIR += py-mdv
     SUBDIR += py-mediafile
+    SUBDIR += py-mediapy
     SUBDIR += py-medikit
     SUBDIR += py-memory-allocator
     SUBDIR += py-memory-profiler
