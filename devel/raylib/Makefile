@@ -1,5 +1,5 @@
 PORTNAME=	raylib
-DISTVERSION=	4.0.0
+DISTVERSION=	4.2.0
 CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -31,7 +31,6 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/src/raylib.h \
 		${WRKSRC}/src/raymath.h \
 		${WRKSRC}/src/rlgl.h \
-		${WRKSRC}/src/extras/physac.h \
 		${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
