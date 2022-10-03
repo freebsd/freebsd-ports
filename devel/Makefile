@@ -2447,6 +2447,7 @@
     SUBDIR += p5-File-SearchPath
     SUBDIR += p5-File-Share
     SUBDIR += p5-File-ShareDir
+    SUBDIR += p5-File-ShareDir-Dist
     SUBDIR += p5-File-ShareDir-Install
     SUBDIR += p5-File-ShareDir-PAR
     SUBDIR += p5-File-ShareDir-PathClass
