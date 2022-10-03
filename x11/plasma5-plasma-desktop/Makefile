@@ -9,8 +9,7 @@ WWW=		https://www.kde.org/plasma-desktop
 
 # TODO: update packagekit-qt5
 #LIB_DEPENDS=    libpackagekit-qt.so:ports-mgmt/packagekit-qt5
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-image.so:x11/xcb-util-image \
@@ -27,21 +26,21 @@ BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
 		xdg-user-dir:devel/xdg-user-dirs
 
-USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gnome \
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext \
 		kde:5 pkgconfig python:3.5+,run qt:5 shebangfix tar:xz xorg
 USE_GNOME=	glib20
-USE_KDE=	activities activities-stats archive attica auth baloo \
+USE_KDE=	activities activities-stats archive attica auth \
 		bookmarks codecs completion config configwidgets coreaddons \
-		crash dbusaddons emoticons filemetadata globalaccel guiaddons \
+		crash dbusaddons emoticons globalaccel guiaddons \
 		i18n iconthemes init itemmodels itemviews jobwidgets kcmutils \
-		kdeclarative kdelibs4support kio libksysguard newstuff \
+		kdeclarative kio libksysguard newstuff \
 		notifications notifyconfig package parts people \
 		plasma-framework plasma-workspace runner service solid sonnet \
 		textwidgets unitconversion wallet widgetsaddons windowsystem \
 		xmlgui \
-		doctools:build ecm:build \
+		ecm:build \
 		drkonqi:run infocenter:run kde-cli-tools:run kmenuedit:run \
-		ksysguard:run polkit-kde-agent-1:run systemsettings:run
+		ksysguard:run systemsettings:run
 USE_QT=		concurrent core dbus declarative gui network phonon4 \
 		printsupport sql svg widgets x11extras xml \
 		buildtools:build qmake:build
@@ -56,8 +55,9 @@ SHEBANG_FILES=	kcms/ksmserver/kconf_update/*.py \
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=		ACCOUNTS FEEDBACK
-OPTIONS_DEFAULT=	ACCOUNTS FEEDBACK
+OPTIONS_DEFINE=		ACCOUNTS BALOO CLOCK DOCS FEEDBACK
+OPTIONS_DEFAULT=	ACCOUNTS BALOO CLOCK DOCS FEEDBACK
+OPTIONS_EXCLUDE_purecap=ACCOUNTS BALOO CLOCK FEEDBACK
 OPTIONS_GROUP=		IM
 OPTIONS_GROUP_IM=	IBUS SCIM
 IM_DESC=		Input Method Support
@@ -72,8 +72,18 @@ ACCOUNTS_LIB_DEPENDS=	libkaccounts.so:net-im/kaccounts-integration \
 			libaccounts-qt5.so:net-im/libaccounts-qt5
 ACCOUNTS_USE=		gnome=intltool
 ACCOUNTS_DESC=		Accounts management library support
+BALOO_DESC=		Baloo support
+CLOCK_DESC=		KCM Clock support
 FEEDBACK_LIB_DEPENDS=	libKUserFeedbackCore.so:deskutils/kuserfeedback
 FEEDBACK_DESC=		Collecting user feedback
+
+.include <bsd.port.options.mk>
+
+.if !${ABI:Mpurecap}
+LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
+USES+=		gnome
+USE_KDE+=	baloo filemetadata kdelibs4support polkit-kde-agent-1:run
+.endif
 
 post-patch:
 # Set the correct iso-codes directory

@@ -1,0 +1,36 @@
+--- kcms/CMakeLists.txt	2022-10-01 22:26:31.912154000 +0100
++++ kcms/CMakeLists.txt	2022-10-01 22:26:57.273631000 +0100
+@@ -9,7 +9,6 @@
+ endif()
+ 
+ add_subdirectory( access )
+-add_subdirectory( dateandtime )
+ add_subdirectory( ksplash )
+ 
+ add_subdirectory( launch )
+--- CMakeLists.txt	2022-10-05 19:44:55.065430000 +0100
++++ CMakeLists.txt	2022-10-05 20:53:30.202917000 +0100
+@@ -46,7 +46,6 @@
+     Crash
+     Plasma
+     PlasmaQuick
+-    DocTools
+     I18n
+     KCMUtils
+     NewStuff
+@@ -67,7 +66,6 @@
+     WidgetsAddons
+     Codecs
+     Sonnet
+-    KDELibs4Support # kcms/dateandtime
+ )
+ 
+ find_package(AccountsQt5 ${ACCOUNTSQT_DEP_VERSION} CONFIG)
+@@ -226,7 +224,6 @@
+ 
+ add_subdirectory(layout-templates)
+ 
+-add_subdirectory(doc)
+ add_subdirectory(runners)
+ add_subdirectory(containments)
+ add_subdirectory(toolboxes)
