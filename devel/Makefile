@@ -4484,6 +4484,7 @@
     SUBDIR += py-enlighten
     SUBDIR += py-entrypoints
     SUBDIR += py-enum-compat
+    SUBDIR += py-envier
     SUBDIR += py-envisage
     SUBDIR += py-envs
     SUBDIR += py-epc
