@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-storage_v1
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/googleapis/google-api-ruby-client/tree/master/generated
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-google-apis-core>=0.7<2.0:devel/rubygem-google-apis-core
+RUN_DEPENDS=	rubygem-google-apis-core>=0.9.0<2.0:devel/rubygem-google-apis-core
 
 USES=		gem
 USE_RUBY=	yes
