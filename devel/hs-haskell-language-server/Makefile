@@ -593,10 +593,17 @@ USE_CABAL+=		${${f}_USE_CABAL}
 .endfor
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+# compiler goes out of memory
+BUILD_ARGS+=	--disable-optimization
+.endif
+
 .if ${FLAVOR:U} != default
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-wrapper
 	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${GHC_VERSION}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
