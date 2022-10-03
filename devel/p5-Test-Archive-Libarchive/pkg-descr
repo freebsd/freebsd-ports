@@ -1,0 +1,7 @@
+Error handling for libarchive and Archive::Libarchive is fairly primitive. Most
+methods return an int which correspond to ARCHIVE_EOF, ARCHIVE_OK,
+ARCHIVE_RETRY, ARCHIVE_WARN, ARCHIVE_FAILED or ARCHIVE_FATAL. Some methods will
+also return the number of actual bytes written on success and one of these codes
+on failure. It can be tedious doing the necessary checks for each method call in
+a test, so this module provides tools for testing Archive::Libarchive method
+calls that follow this pattern.
