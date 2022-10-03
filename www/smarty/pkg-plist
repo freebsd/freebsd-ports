@@ -19,7 +19,9 @@
 %%DATADIR%%/plugins/modifier.date_format.php
 %%DATADIR%%/plugins/modifier.debug_print_var.php
 %%DATADIR%%/plugins/modifier.escape.php
+%%DATADIR%%/plugins/modifier.explode.php
 %%DATADIR%%/plugins/modifier.mb_wordwrap.php
+%%DATADIR%%/plugins/modifier.number_format.php
 %%DATADIR%%/plugins/modifier.regex_replace.php
 %%DATADIR%%/plugins/modifier.replace.php
 %%DATADIR%%/plugins/modifier.spacify.php
