@@ -1,6 +1,6 @@
 PORTNAME=	SASM
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.1
+DISTVERSION=	3.12.2
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -14,7 +14,7 @@ USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dman95
 USE_GL=		gl
-USE_QT=		core gui network widgets buildtools:build
+USE_QT=		core gui network widgets buildtools
 
 CONFLICTS_INSTALL=	fasm fasm-fpga
 
