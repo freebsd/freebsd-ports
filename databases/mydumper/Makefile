@@ -22,6 +22,8 @@ PLIST_FILES=	sbin/mydumper sbin/myloader
 
 USE_GITHUB=	yes
 
+PORTSCOUT=	skipv:v${DISTVERSION}
+
 post-patch:
 	@${REINPLACE_CMD} -e '/link_libraries(mydumper/ s|)$$| -lm)|; s|-Werror||' ${WRKSRC}/CMakeLists.txt
 
