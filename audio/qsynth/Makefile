@@ -1,5 +1,5 @@
 PORTNAME=	qsynth
-PORTVERSION=	0.9.7
+DISTVERSION=	0.9.8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
-USES=		cmake compiler:c++11-lang pkgconfig qt:5
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:6
 USE_CXXSTD=	c++11
-USE_QT=		core gui network widgets x11extras buildtools:build \
-		linguisttools:build qmake:build
+USE_QT=		base svg tools:build
 
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
