@@ -1,4 +1,5 @@
 Obtained from:	https://git.savannah.gnu.org/cgit/dmidecode.git/commit/?id=a1a2258ffbe450e8561ee833787da9321fa734b0
+		https://git.savannah.gnu.org/cgit/dmidecode.git/commit/?id=c3357b532941a8df387618e692e522cc7a43b3e8
 
 --- dmioem.c.orig	2022-06-27 15:06:32 UTC
 +++ dmioem.c
