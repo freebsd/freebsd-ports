@@ -10,8 +10,8 @@ WWW=		https://github.com/rspec/rspec-its
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rspec-core>=${PORTVERSION:R}:devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=${PORTVERSION:R}:devel/rubygem-rspec-expectations
+RUN_DEPENDS=	rubygem-rspec-core>=3.0.0:devel/rubygem-rspec-core \
+		rubygem-rspec-expectations>=3.0.0:devel/rubygem-rspec-expectations
 
 NO_ARCH=	yes
 USES=		gem shebangfix
