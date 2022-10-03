@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-github
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/omniauth/omniauth-github
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-omniauth>=2.0<3:security/rubygem-omniauth \
-		rubygem-omniauth-oauth2>=1.7.1<2.0:net/rubygem-omniauth-oauth2
+		rubygem-omniauth-oauth2>=1.8<2:net/rubygem-omniauth-oauth2
 
 USES=		gem
 USE_RUBY=	yes
