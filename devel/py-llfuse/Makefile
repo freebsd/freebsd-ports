@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	stdin@niklaas.eu
+MAINTAINER=	ports@FreeBSD.org # stdin@niklaas.eu refuses mail
 COMMENT=	Python bindings for low-level FUSE API
 WWW=		https://bitbucket.org/nikratio/python-llfuse
 
