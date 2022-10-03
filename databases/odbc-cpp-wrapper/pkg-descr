@@ -1,0 +1,13 @@
+odbc-cpp-wrapper is an object-oriented C++-wrapper of the ODBC API. It takes
+care of
+- managing the lifetime of ODBC resources,
+- allocating and managing resources needed for ODBC operations and
+- converting ODBC errors to exceptions and throwing them.
+
+The odbc-cpp-wrapper API attempts to make usage of ODBC as simple as possible.
+The API was designed to make wrong usage almost impossible and to ensure proper
+object lifetime management.
+
+odbc-cpp-wrapper was originally developed for exchanging spatial data with
+databases. It focuses on batch operations of variable-sized data, which is not
+very well supported by other ODBC wrappers.
