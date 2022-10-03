@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server
-PORTVERSION=	1.18.1
+PORTVERSION=	1.19.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
