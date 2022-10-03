@@ -44,7 +44,8 @@ extras_require = \
  'etree': ['etils[array_types]', 'etils[epy]', 'etils[enp]', 'etils[etqdm]'],
  'etree-dm': ['dm-tree', 'etils[etree]'],
  'etree-jax': ['jax[cpu]', 'etils[etree]'],
- 'etree-tf': ['tf-nightly', 'etils[etree]']}
+ 'etree-tf': ['tf-nightly', 'etils[etree]'],
+ 'lazy-imports': ['etils[ecolab]']}
 
 setup(name='etils',
       version='%%PORTVERSION%%',
