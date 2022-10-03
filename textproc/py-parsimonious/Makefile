@@ -4,9 +4,9 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PEGs based parser in Python
-WWW=		https://pypi.org/project/parsimonious/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Pure-Python PEG parser
+WWW=		https://github.com/erikrose/parsimonious
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,6 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 do-test:
