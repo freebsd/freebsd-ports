@@ -9,10 +9,14 @@ WWW=		https://github.com/google/leveldb
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake compiler:c++11-lang localbase
+TEST_DEPENDS=	benchmark>=0:devel/benchmark \
+		googletest>=0:devel/googletest
+
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags
 
 CMAKE_OFF=	LEVELDB_BUILD_TESTS
 CMAKE_ON=	BUILD_SHARED_LIBS LEVELDB_BUILD_BENCHMARKS LEVELDB_INSTALL
+CMAKE_TESTING_ON=	LEVELDB_BUILD_TESTS
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
