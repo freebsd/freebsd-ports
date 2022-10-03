@@ -1,5 +1,5 @@
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.21
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
