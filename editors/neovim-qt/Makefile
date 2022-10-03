@@ -1,6 +1,6 @@
 PORTNAME=	neovim-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.16.1
+DISTVERSION=	0.2.17
 CATEGORIES=	editors
 
 MAINTAINER=	chuck@tuffli.net
@@ -10,8 +10,8 @@ WWW=		https://github.com/equalsraf/neovim-qt/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	neovim>=0:editors/neovim
-LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
+BUILD_DEPENDS=	neovim>=0:editors/neovim unibilium>=0:devel/unibilium
+LIB_DEPENDS=	libmsgpackc.so:devel/msgpack libunibilium.so:devel/unibilium
 RUN_DEPENDS=	neovim>=0:editors/neovim
 
 USES=		cmake compiler:c++11-lang desktop-file-utils qt:5
