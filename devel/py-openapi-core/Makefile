@@ -25,4 +25,15 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DJANGO FALCON FLASK REQUESTS
+DJANGO_DESC=	Django support
+FALCON_DESC=	Falcon support
+FLASK_DESC=	Flask support
+REQUESTS_DESC=	Requests support
+
+DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.0:www/py-django32@${PY_FLAVOR}
+FALCON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}falcon>=3.0:www/py-falcon@${PY_FLAVOR}
+FLASK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:www/py-flask@${PY_FLAVOR}
+REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+
 .include <bsd.port.mk>
