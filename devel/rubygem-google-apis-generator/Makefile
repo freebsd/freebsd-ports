@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-generator
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-activesupport60>=5.0:devel/rubygem-activesupport60 \
 		rubygem-gems>=1.2<2:devel/rubygem-gems \
-		rubygem-google-apis-core>=0.7<2.0:devel/rubygem-google-apis-core \
+		rubygem-google-apis-core>=0.9.0<2.0:devel/rubygem-google-apis-core \
 		rubygem-google-apis-discovery_v1>=0.5<1:devel/rubygem-google-apis-discovery_v1 \
 		rubygem-thor>=0.20<2:devel/rubygem-thor
 
