@@ -1,5 +1,5 @@
 PORTNAME=	copier
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.3:devel/py-colorama@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=0.9.0:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plumbum>=1.6.9:sysutils/py-plumbum@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic>=1.9.0:devel/py-pydantic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic>=1.10.2:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.7.1:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml-include>=1.2:devel/py-pyyaml-include@${PY_FLAVOR} \
