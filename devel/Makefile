@@ -5162,6 +5162,7 @@
     SUBDIR += py-pytest-twisted
     SUBDIR += py-pytest-verbose-parametrize
     SUBDIR += py-pytest-virtualenv
+    SUBDIR += py-pytest-watcher
     SUBDIR += py-pytest-xdist
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-pytest4

@@ -1,0 +1,5 @@
+pytest-watcher is a tool to automatically rerun pytest when your code changes.
+It looks for the following events:
+- New *.py file created
+- Existing *.py file modified
+- Existing *.py file deleted
