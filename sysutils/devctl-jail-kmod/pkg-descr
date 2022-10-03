@@ -1,0 +1,3 @@
+Kernel mdule providing dectl notifications for jails
+Jails event like start and stop can be notified via devd.
+Devd acions can be added to send messages to syslogd
