@@ -1,0 +1,12 @@
+Perl's garbage collection has one big problem: Circular references can't get
+cleaned up. The above example is the sort of thing that sometimes trips me up,
+where a code reference inside a data structure refers to another part of the
+data structure. There already exists a good testing module to find these sort of
+problems: Test::Memory::Cycle, so why write this one? Well that module uses
+Test::Builder, and this one instead uses Test2::API. If you want to write
+Test2::Suite tests without pulling in Test::Builder then this is the cycle
+testing module for you.
+
+Test2::Tools::MemoryCycle also uses the standard Exporter interface, instead of
+letting you specify a test plan. That behavior was once in vogue I guess, but I
+do not care for it.
