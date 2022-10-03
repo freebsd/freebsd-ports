@@ -5,9 +5,9 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Interactive command-line HTTP client
-WWW=		https://pypi.org/project/http-prompt/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Interactive HTTP command-line client
+WWW=		https://github.com/httpie/http-prompt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
