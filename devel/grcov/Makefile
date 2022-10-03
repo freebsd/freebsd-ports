@@ -1,7 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.10
-PORTREVISION=	2
+DISTVERSION=	0.8.11
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,12 +15,11 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 
-CARGO_CRATES=	\
-		addr2line-0.17.0 \
+CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.57 \
+		anyhow-1.0.58 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.65 \
@@ -32,8 +30,10 @@ CARGO_CRATES=	\
 		bstr-0.2.17 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
-		cargo-binutils-0.3.5 \
-		cargo_metadata-0.11.4 \
+		camino-1.0.9 \
+		cargo-binutils-0.3.6 \
+		cargo-platform-0.1.2 \
+		cargo_metadata-0.14.2 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
@@ -42,20 +42,18 @@ CARGO_CRATES=	\
 		clap-2.34.0 \
 		cpp_demangle-0.3.5 \
 		crc32fast-1.3.2 \
-		crossbeam-0.8.1 \
-		crossbeam-channel-0.5.4 \
+		crossbeam-channel-0.5.5 \
 		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.8 \
-		crossbeam-queue-0.3.5 \
-		crossbeam-utils-0.8.8 \
-		crypto-common-0.1.3 \
+		crossbeam-epoch-0.9.9 \
+		crossbeam-utils-0.8.10 \
+		crypto-common-0.1.4 \
 		ctor-0.1.22 \
 		debugid-0.7.3 \
 		deunicode-0.4.3 \
-		diff-0.1.12 \
+		diff-0.1.13 \
 		digest-0.8.1 \
 		digest-0.10.3 \
-		either-1.6.1 \
+		either-1.7.0 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
 		fake-simd-0.1.2 \
@@ -65,7 +63,7 @@ CARGO_CRATES=	\
 		fomat-macros-0.3.1 \
 		generic-array-0.12.4 \
 		generic-array-0.14.5 \
-		getrandom-0.2.6 \
+		getrandom-0.2.7 \
 		gimli-0.26.1 \
 		globset-0.4.9 \
 		globwalk-0.8.1 \
@@ -92,7 +90,7 @@ CARGO_CRATES=	\
 		num_cpus-1.13.1 \
 		num_threads-0.1.6 \
 		object-0.28.4 \
-		once_cell-1.12.0 \
+		once_cell-1.13.0 \
 		opaque-debug-0.2.3 \
 		output_vt100-0.1.3 \
 		parse-zoneinfo-0.3.0 \
@@ -110,44 +108,41 @@ CARGO_CRATES=	\
 		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.39 \
+		proc-macro2-1.0.40 \
 		quick-xml-0.23.0 \
-		quote-1.0.18 \
+		quote-1.0.20 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
-		regex-1.5.6 \
-		regex-syntax-0.6.26 \
+		regex-1.6.0 \
+		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		rustc-cfg-0.4.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		rustc_version-0.2.3 \
+		rustc_version-0.4.0 \
 		ryu-1.0.10 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-0.9.0 \
-		semver-0.10.0 \
-		semver-1.0.10 \
-		semver-parser-0.7.0 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
-		serde_json-1.0.81 \
+		semver-1.0.12 \
+		serde-1.0.138 \
+		serde_derive-1.0.138 \
+		serde_json-1.0.82 \
 		sha-1-0.8.2 \
 		simplelog-0.12.0 \
 		siphasher-0.3.10 \
 		slug-0.1.4 \
-		smallvec-1.8.0 \
+		smallvec-1.9.0 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		symbolic-common-8.7.3 \
-		symbolic-demangle-8.7.3 \
-		syn-1.0.96 \
+		symbolic-common-8.8.0 \
+		symbolic-demangle-8.8.0 \
+		syn-1.0.98 \
 		synstructure-0.12.6 \
 		tcmalloc-0.3.0 \
 		tempfile-3.3.0 \
@@ -155,12 +150,12 @@ CARGO_CRATES=	\
 		termcolor-1.1.3 \
 		textwrap-0.11.0 \
 		thread_local-1.1.4 \
-		time-0.1.43 \
-		time-0.3.9 \
+		time-0.1.44 \
+		time-0.3.11 \
 		time-macros-0.2.4 \
 		toml-0.5.9 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.3 \
+		ucd-trie-0.1.4 \
 		uncased-0.9.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -168,7 +163,7 @@ CARGO_CRATES=	\
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.0 \
+		unicode-ident-1.0.1 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
@@ -178,7 +173,8 @@ CARGO_CRATES=	\
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
