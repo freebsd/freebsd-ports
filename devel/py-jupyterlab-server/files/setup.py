@@ -40,7 +40,7 @@ setup(
             'codecov',
             'ipykernel',
             'jupyter-server[test]',
-            'openapi-core>=0.14.2',
+            'openapi_core~=0.14.2',
             'openapi-spec-validator<0.5',
             'pytest-console-scripts',
             'pytest-cov',
