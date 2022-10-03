@@ -1,6 +1,5 @@
 PORTNAME=	nbclassic
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/jupyter/nbclassic/releases/download/v${PORTVERSION}/
@@ -14,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argon2-cffi>=0:security/py-argon2-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipykernel5>=0:devel/py-ipykernel5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipykernel>=0:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython_genutils>=0:devel/py-ipython_genutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=6.1.1:devel/py-jupyter-client@${PY_FLAVOR} \
