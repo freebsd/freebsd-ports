@@ -1,5 +1,3 @@
-TIMESTAMP = 1662740807
-SHA256 (suricata-6.0.6.tar.gz) = 00173634fa76aee636e38a90b1c02616c903e42173107d47b4114960b5fbe839
-SIZE (suricata-6.0.6.tar.gz) = 32651139
-SHA256 (5dbbc52b066b2047c4bc30be7fd29dbb3febaf96.patch) = a346c3b4ebd7f02492eab6b45f2c6fd063bfe28571bb0832ff07d95ee866e1f0
-SIZE (5dbbc52b066b2047c4bc30be7fd29dbb3febaf96.patch) = 885
+TIMESTAMP = 1664344381
+SHA256 (suricata-6.0.8.tar.gz) = 253ce3cc0df967ad9371d6ea8d4eed91ec593df3ed04e08229c7cf85780c91a3
+SIZE (suricata-6.0.8.tar.gz) = 32697425
