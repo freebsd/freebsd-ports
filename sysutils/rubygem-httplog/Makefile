@@ -1,5 +1,5 @@
 PORTNAME=	httplog
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/trusche/httplog
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=1.0:www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack>=2.0,3:www/rubygem-rack \
 		rubygem-rainbow>=2.0.0:devel/rubygem-rainbow
 
 USES=		gem
