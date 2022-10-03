@@ -1,6 +1,6 @@
 PORTNAME=	arrow
 DISTVERSION=	8.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -80,7 +80,7 @@ FLIGHT_LIB_DEPENDS=		libgflags.so:devel/gflags \
 				libgrpc.so:devel/grpc \
 				libre2.so:devel/re2
 FLIGHT_IMPLIES=			IPC
-FLIGHT_BROKEN=			configure breaks: Could not find a package configuration file provided by "re2"
+#FLIGHT_BROKEN=			configure breaks: Could not find a package configuration file provided by "re2"
 
 GANDIVA_DESC=			Gandiva libraries
 GANDIVA_USES=			ssl
@@ -90,6 +90,7 @@ GANDIVA_LIB_DEPENDS=		libgrpc.so:devel/grpc \
 				libprotobuf.so:devel/protobuf \
 				libre2.so:devel/re2 \
 				libutf8proc.so:textproc/utf8proc
+#GANDIVA_BROKEN=		llvm12 stage error (ln: /wrkdirs/usr/ports/devel/llvm12/work/stage/usr/local/llvm12/bin/clang: No such file or directory)
 
 HDFS_DESC=			Arrow HDFS bridge
 HDFS_CMAKE_BOOL=		ARROW_HDFS
@@ -136,6 +137,7 @@ PLASMA_LIB_DEPENDS=		libaws-c-auth.so:security/aws-c-auth \
 				libaws-c-sdkutils.so:devel/aws-c-sdkutils \
 				libaws-crt-cpp.so:devel/aws-crt-cpp \
 				libgflags.so:devel/gflags
+#PLASMA_BROKEN=		PLIST issue (Error: Orphaned: bin/ONplasma-store-server, Error: Missing: bin/plasma-store-server)
 
 BUILD_UTILITIES_DESC=		build Arrow commandline utilities
 BUILD_UTILITIES_CMAKE_BOOL=	ARROW_BUILD_UTILITIES
@@ -211,10 +213,17 @@ pre-configure-PYTHON-on:
 	@${MV} ${WRKSRC}/src/arrow/python/arrow-python.pc.in ${WRKSRC}/src/arrow/python/arrow-python${PYTHON_SUFFIX}.pc.in
 	@${MV} ${WRKSRC}/src/arrow/python/arrow-python-flight.pc.in ${WRKSRC}/src/arrow/python/arrow-python${PYTHON_SUFFIX}-flight.pc.in
 
+post-install-PLASMA-on:
+	-${MV} ${STAGEDIR}${PREFIX}/bin/ONplasma-store-server ${STAGEDIR}${PREFIX}/bin/plasma-store-server
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPUTE} || ${PORT_OPTIONS:MFLIGHT} || ${PORT_OPTIONS:MGANDIVA}
 PLIST_FILES+=	lib/cmake/arrow/Findre2Alt.cmake
+.endif
+
+.if ${PORT_OPTIONS:MFLIGHT} || ${PORT_OPTIONS:MGANDIVA}
+PLIST_FILES+=	lib/cmake/arrow/FindgRPCAlt.cmake
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON} == "PYTHON" && ${PORT_OPTIONS:MFLIGHT} == "FLIGHT"
