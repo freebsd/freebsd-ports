@@ -1,5 +1,5 @@
 PORTNAME=	premailer
-PORTVERSION=	1.16.0
+PORTVERSION=	1.17.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
-		rubygem-css_parser>=1.6.0:textproc/rubygem-css_parser \
+		rubygem-css_parser>=1.12.0:textproc/rubygem-css_parser \
 		rubygem-htmlentities>=4.0.0:textproc/rubygem-htmlentities
 
 USES=		gem
