@@ -1,5 +1,5 @@
 PORTNAME=	net-imap
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,7 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-digest>=0:security/rubygem-digest \
-		rubygem-net-protocol>=0:net/rubygem-net-protocol \
-		rubygem-strscan>=0:devel/rubygem-strscan
+RUN_DEPENDS=	rubygem-net-protocol>=0:net/rubygem-net-protocol
 
 USES=		gem
 USE_RUBY=	yes
