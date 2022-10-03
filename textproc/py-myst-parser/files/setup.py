@@ -14,10 +14,10 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['docutils>=0.15,<0.19',
+['docutils>=0.15,<0.20',
  'jinja2',
  'markdown-it-py>=1.0.0,<3.0.0',
- 'mdit-py-plugins~=0.3.0',
+ 'mdit-py-plugins~=0.3.1',
  'pyyaml',
  'sphinx>=4,<6',
  'typing-extensions']
@@ -37,7 +37,8 @@ extras_require = \
              'pytest-cov',
              'pytest-regressions',
              'pytest-param-files~=0.3.4',
-             'sphinx-pytest']}
+             'sphinx-pytest',
+             'sphinx<5.2']}
 
 entry_points = \
 {'console_scripts': ['myst-anchors = myst_parser.cli:print_anchors',
