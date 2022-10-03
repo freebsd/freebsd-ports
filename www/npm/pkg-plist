@@ -298,14 +298,11 @@ lib/node_modules/npm/lib/utils/validate-lockfile.js
 lib/node_modules/npm/lib/utils/web-auth.js
 lib/node_modules/npm/lib/workspaces/get-workspaces.js
 lib/node_modules/npm/lib/workspaces/update-workspaces.js
-lib/node_modules/npm/man/man1/npm-README.1.gz
 lib/node_modules/npm/man/man1/npm-access.1.gz
 lib/node_modules/npm/man/man1/npm-adduser.1.gz
 lib/node_modules/npm/man/man1/npm-audit.1.gz
 lib/node_modules/npm/man/man1/npm-bin.1.gz
 lib/node_modules/npm/man/man1/npm-bugs.1.gz
-lib/node_modules/npm/man/man1/npm-build.1.gz
-lib/node_modules/npm/man/man1/npm-bundle.1.gz
 lib/node_modules/npm/man/man1/npm-cache.1.gz
 lib/node_modules/npm/man/man1/npm-ci.1.gz
 lib/node_modules/npm/man/man1/npm-completion.1.gz
@@ -373,8 +370,6 @@ lib/node_modules/npm/man/man5/npm-shrinkwrap-json.5.gz
 lib/node_modules/npm/man/man5/npmrc.5.gz
 lib/node_modules/npm/man/man5/package-json.5.gz
 lib/node_modules/npm/man/man5/package-lock-json.5.gz
-lib/node_modules/npm/man/man5/package-locks.5.gz
-lib/node_modules/npm/man/man5/shrinkwrap-json.5.gz
 lib/node_modules/npm/man/man7/config.7.gz
 lib/node_modules/npm/man/man7/dependency-selectors.7.gz
 lib/node_modules/npm/man/man7/developers.7.gz
@@ -385,7 +380,6 @@ lib/node_modules/npm/man/man7/registry.7.gz
 lib/node_modules/npm/man/man7/removal.7.gz
 lib/node_modules/npm/man/man7/scope.7.gz
 lib/node_modules/npm/man/man7/scripts.7.gz
-lib/node_modules/npm/man/man7/semver.7.gz
 lib/node_modules/npm/man/man7/workspaces.7.gz
 lib/node_modules/npm/node_modules/.bin/arborist
 lib/node_modules/npm/node_modules/.bin/color-support
