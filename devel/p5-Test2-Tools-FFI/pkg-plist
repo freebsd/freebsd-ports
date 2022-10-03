@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/Alien/libt2t.pm
+%%SITE_ARCH%%/Test2/Plugin/FFI/Package.pm
+%%SITE_ARCH%%/Test2/Tools/FFI.pm
+%%SITE_ARCH%%/auto/Test2/Tools/FFI/FFI.txt
+%%SITE_ARCH%%/auto/share/dist/Test2-Tools-FFI/include/t2t/simple.h
+%%SITE_ARCH%%/auto/share/dist/Test2-Tools-FFI/lib/libt2t.so
+%%PERL5_MAN3%%/Alien::libt2t.3.gz
+%%PERL5_MAN3%%/Test2::Plugin::FFI::Package.3.gz
+%%PERL5_MAN3%%/Test2::Tools::FFI.3.gz
