@@ -1,5 +1,5 @@
 PORTNAME=	Type-Tiny
-PORTVERSION=	1.016010
+PORTVERSION=	2.000001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Exporter-Tiny>=1.000000:devel/p5-Exporter-Tiny
+RUN_DEPENDS=	p5-Exporter-Tiny>=1.004001:devel/p5-Exporter-Tiny
 TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Function-Parameters>=0:devel/p5-Function-Parameters \
 		p5-JSON>=0:converters/p5-JSON \
@@ -26,6 +26,7 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-MouseX-Types>=0:devel/p5-MouseX-Types \
 		p5-Role-Tiny>=0:devel/p5-Role-Tiny \
 		p5-Sub-Exporter-Lexical>=0:devel/p5-Sub-Exporter-Lexical \
+		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings \
@@ -43,13 +44,10 @@ OPTIONS_DEFINE=	RECOMMENDED
 OPTIONS_DEFAULT=RECOMMENDED
 RECOMMENDED_DESC=	Recommended dependencies by upstream
 
-RECOMMENDED_BUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
+RECOMMENDED_BUILD_DEPENDS=	${RECOMMENDED_RUN_DEPENDS}
+RECOMMENDED_RUN_DEPENDS=	p5-Class-XSAccessor>=1.17,1:devel/p5-Class-XSAccessor \
+				p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 				p5-Ref-Util-XS>=0.100:devel/p5-Ref-Util-XS \
-				p5-Type-Tie>=0:devel/p5-Type-Tie \
-				p5-Type-Tiny-XS>=0.016:devel/p5-Type-Tiny-XS
-RECOMMENDED_RUN_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
-				p5-Ref-Util-XS>=0.100:devel/p5-Ref-Util-XS \
-				p5-Type-Tie>=0:devel/p5-Type-Tie \
 				p5-Type-Tiny-XS>=0.016:devel/p5-Type-Tiny-XS
 
 .include <bsd.port.mk>
