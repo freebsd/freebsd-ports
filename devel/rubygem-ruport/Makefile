@@ -1,5 +1,5 @@
 PORTNAME=	ruport
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,12 @@ WWW=		https://github.com/ruport/ruport
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-pdf-writer>=1.1.8:print/rubygem-pdf-writer \
-		rubygem-prawn>=0.12.0:print/rubygem-prawn
+RUN_DEPENDS=	rubygem-prawn>=2.4.0<2.5:print/rubygem-prawn \
+		rubygem-prawn-table>=0.2.0<0.3:print/rubygem-prawn-table
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
