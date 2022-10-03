@@ -1,5 +1,5 @@
 PORTNAME=	oauth2
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-faraday>=0.17.3<3.0:www/rubygem-faraday \
 		rubygem-jwt>=1.0<3.0:www/rubygem-jwt \
 		rubygem-multi_json>=1.3<2:devel/rubygem-multi_json \
 		rubygem-multi_xml>=0.5<1:textproc/rubygem-multi_xml \
-		rubygem-rack>=1.2,3<3,3:www/rubygem-rack
+		rubygem-rack>=1.2,3<4,3:www/rubygem-rack
 
 USES=		gem
 USE_RUBY=	yes
