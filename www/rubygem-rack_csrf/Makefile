@@ -1,5 +1,5 @@
 PORTNAME=	rack_csrf
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,12 @@ WWW=		https://github.com/baldowl/rack_csrf
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rdoc
 
-RUN_DEPENDS=	rubygem-rack>=1.1.0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=1.1.0,3:www/rubygem-rack
 TEST_DEPENDS=	rubygem-rspec>0:devel/rubygem-rspec
 
 USES=		gem
 USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
