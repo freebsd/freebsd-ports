@@ -1,7 +1,6 @@
 PORTNAME=	stepcode
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -20,10 +19,6 @@ CMAKE_ARGS+=	-DSC_INSTALL_PREFIX=${PREFIX} \
 		-DSC_BUILD_TYPE=Release
 
 MANDIRS=	${PREFIX}/man
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,( JudyValue ) 0,nullptr,' \
-		${WRKSRC}/src/base/judy/src/judy*Array.h
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/schema_scanner
