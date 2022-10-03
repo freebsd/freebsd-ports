@@ -1,4 +1,4 @@
---- tests/test.orig	2019-10-20 12:36:40 UTC
+--- tests/test.orig	2022-09-28 20:58:43 UTC
 +++ tests/test
 @@ -1,2 +1,2 @@
  #!/bin/sh
