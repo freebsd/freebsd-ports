@@ -1,5 +1,5 @@
 PORTNAME=	redis-clustering
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-redis>=${PORTVERSION}:databases/rubygem-redis \
-		rubygem-redis-cluster-client>=0.3.2:databases/rubygem-redis-cluster-client
+		rubygem-redis-cluster-client>=0.3.7:databases/rubygem-redis-cluster-client
 
 USES=		gem
 USE_RUBY=	yes
