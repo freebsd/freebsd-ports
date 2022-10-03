@@ -1,5 +1,5 @@
 PORTNAME=	rspec_junit_formatter
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
