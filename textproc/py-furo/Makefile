@@ -1,5 +1,5 @@
 PORTNAME=	furo
-PORTVERSION=	2022.6.21
+PORTVERSION=	2022.9.29
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		LOCAL/sunpoet:static
@@ -15,7 +15,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.7:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=4.0,1<6.0,1:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-basic-ng>=0:textproc/py-sphinx-basic-ng@${PY_FLAVOR}
 
