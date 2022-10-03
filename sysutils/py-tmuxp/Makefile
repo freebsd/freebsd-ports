@@ -1,5 +1,5 @@
 PORTNAME=	tmuxp
-PORTVERSION=	1.13.1
+PORTVERSION=	1.15.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kaptan>=0.5.10:devel/py-kaptan@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libtmux>=0.14.0<0.15.0:devel/py-libtmux@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libtmux>=0.15.1<0.16.0:devel/py-libtmux@${PY_FLAVOR} \
 		tmux:sysutils/tmux
 
 USES=		python:3.6+
