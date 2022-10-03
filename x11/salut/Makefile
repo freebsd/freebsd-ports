@@ -1,6 +1,6 @@
 PORTNAME=	salut
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3
+DISTVERSION=	0.3.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cargo
 USE_GITLAB=	yes
 GL_ACCOUNT=	snakedye
-GL_COMMIT=	9dc0ba82713515cf660b2fb75a411909fa1b4ae1
+GL_COMMIT=	c6e2dad1fb542080bc1b6a0bf73f87a522900deb
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler-1.0.2 \
@@ -53,8 +53,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.10 \
-		crossbeam-utils-0.8.11 \
+		crossbeam-epoch-0.9.11 \
+		crossbeam-utils-0.8.12 \
 		data-url-0.1.1 \
 		derivative-2.2.0 \
 		dirs-4.0.0 \
@@ -65,7 +65,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		enumflags2-0.7.5 \
 		enumflags2_derive-0.7.4 \
 		event-listener-2.5.3 \
-		exr-1.5.0 \
+		exr-1.5.1 \
 		fastrand-1.8.0 \
 		flate2-1.0.24 \
 		float-cmp-0.9.0 \
@@ -87,18 +87,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
-		iana-time-zone-0.1.47 \
-		image-0.24.3 \
+		iana-time-zone-0.1.50 \
+		image-0.24.4 \
 		ini-1.3.0 \
 		instant-0.1.12 \
+		io-lifetimes-1.0.0-rc1 \
 		jpeg-decoder-0.2.6 \
-		js-sys-0.3.59 \
+		js-sys-0.3.60 \
 		kurbo-0.8.3 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
-		libc-0.2.132 \
+		libc-0.2.134 \
 		libloading-0.7.3 \
-		lock_api-0.4.8 \
+		lock_api-0.4.9 \
 		log-0.4.17 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
@@ -107,14 +108,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
 		nanorand-0.7.0 \
-		nix-0.23.1 \
 		nix-0.24.2 \
 		nom-7.1.1 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		once_cell-1.14.0 \
+		once_cell-1.15.0 \
 		ordered-stream-0.0.1 \
 		parking-2.0.0 \
 		parking_lot-0.12.1 \
@@ -129,12 +129,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		polling-2.3.0 \
 		ppv-lite86-0.2.16 \
 		proc-macro-crate-1.2.1 \
-		proc-macro2-1.0.43 \
-		quick-xml-0.23.0 \
+		proc-macro2-1.0.46 \
+		quick-xml-0.23.1 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
-		rand_core-0.6.3 \
+		rand_core-0.6.4 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		rctree-0.4.0 \
@@ -143,15 +143,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-1.6.0 \
 		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
-		rgb-0.8.33 \
+		rgb-0.8.34 \
 		roxmltree-0.14.1 \
 		rustybuzz-0.5.1 \
 		safe_arch-0.5.2 \
 		scoped-tls-1.0.0 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
-		serde-1.0.144 \
-		serde_derive-1.0.144 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
 		serde_repr-0.1.9 \
 		sha1-0.6.1 \
 		sha1_smol-1.0.0 \
@@ -159,16 +159,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		siphasher-0.3.10 \
 		slab-0.4.7 \
 		slotmap-1.0.6 \
-		smallvec-1.9.0 \
+		smallvec-1.10.0 \
 		socket2-0.4.7 \
 		spin-0.9.4 \
 		static_assertions-1.1.0 \
 		strict-num-0.1.0 \
 		svgtypes-0.8.1 \
-		syn-1.0.99 \
+		syn-1.0.101 \
 		tempfile-3.3.0 \
-		thiserror-1.0.34 \
-		thiserror-impl-1.0.34 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
 		threadpool-1.8.1 \
 		tiff-0.7.3 \
 		time-0.1.44 \
@@ -183,26 +183,26 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-bidi-mirroring-0.1.0 \
 		unicode-ccc-0.1.2 \
 		unicode-general-category-0.4.0 \
-		unicode-ident-1.0.3 \
-		unicode-script-0.5.4 \
+		unicode-ident-1.0.4 \
+		unicode-script-0.5.5 \
 		unicode-vo-0.1.0 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		waker-fn-1.1.0 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.82 \
-		wasm-bindgen-backend-0.2.82 \
-		wasm-bindgen-macro-0.2.82 \
-		wasm-bindgen-macro-support-0.2.82 \
-		wasm-bindgen-shared-0.2.82 \
-		wayland-backend-0.1.0-beta.9 \
-		wayland-client-0.30.0-beta.9 \
-		wayland-cursor-0.30.0-beta.9 \
-		wayland-protocols-0.30.0-beta.9 \
-		wayland-protocols-wlr-0.1.0-beta.9 \
-		wayland-scanner-0.30.0-beta.9 \
-		wayland-sys-0.30.0-beta.9 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		wayland-backend-0.1.0-beta.10 \
+		wayland-client-0.30.0-beta.10 \
+		wayland-cursor-0.30.0-beta.10 \
+		wayland-protocols-0.30.0-beta.10 \
+		wayland-protocols-wlr-0.1.0-beta.10 \
+		wayland-scanner-0.30.0-beta.10 \
+		wayland-sys-0.30.0-beta.10 \
 		weezl-0.1.7 \
 		wepoll-ffi-0.1.2 \
 		winapi-0.3.9 \
@@ -219,14 +219,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		xmlparser-0.13.3 \
 		xmlwriter-0.1.0 \
 		yeslogic-fontconfig-sys-3.2.0 \
-		zbus-2.3.2 \
-		zbus_macros-2.3.2 \
+		zbus-3.2.0 \
+		zbus_macros-3.2.0 \
 		zbus_names-2.2.0 \
-		zvariant-3.6.0 \
-		zvariant_derive-3.6.0 \
+		zvariant-3.7.1 \
+		zvariant_derive-3.7.1 \
 		resvg,usvg@git+https://github.com/RazrFalcon/resvg.git\#a739aef5d01360ec238c886bc50674f31458df00 \
 		xkbcommon@git+https://github.com/rust-x-bindings/xkbcommon-rs\#4e491bee1b850625ae077134901f89836edb6e81 \
-		snui,snui-derive,snui-wayland@git+https://gitlab.com/snakedye/snui.git\#cd6c1d363fd5672c2f057a7e9ff026bc0f6b85d2 \
-		smithay-client-toolkit@git+https://github.com/Smithay/client-toolkit.git\#87424f2cd10d50422d81ee0444e92becb45d43c4
+		snui,snui-derive,snui-wayland@git+https://gitlab.com/snakedye/snui.git\#83873f1e148a9c84471c10f166c9a945a44d3e64 \
+		snui-adwaita@git+https://gitlab.com/snakedye/snui-adwaita.git\#e848dae0db366bc7eacccd8f33ebdaa08f0b3ad0 \
+		smithay-client-toolkit@git+https://github.com/Smithay/client-toolkit.git\#1cc11af8538040f46173bf021ac079c342ddeebb
 
 .include <bsd.port.mk>
