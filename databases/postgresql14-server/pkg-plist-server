@@ -1338,7 +1338,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-11
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-12
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-13
-%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-%%PG_VERSION%%
+%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-14
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-2
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-3
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-4

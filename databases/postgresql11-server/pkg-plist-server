@@ -1274,7 +1274,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+0
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+1
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+10
-%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+%%PG_VERSION%%
+%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-11
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+12
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+2
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+3
@@ -1287,7 +1287,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-0
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-1
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-10
-%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-%%PG_VERSION%%
+%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-11
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-12
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-13
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-14

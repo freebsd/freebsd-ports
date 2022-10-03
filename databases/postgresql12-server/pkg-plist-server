@@ -25,7 +25,7 @@ lib/postgresql/euc_cn_and_mic.so
 lib/postgresql/euc_jp_and_sjis.so
 lib/postgresql/euc_kr_and_mic.so
 lib/postgresql/euc_tw_and_big5.so
-lib/postgresql/latin2_and_win%%PG_VERSION%%50.so
+lib/postgresql/latin2_and_win1250.so
 lib/postgresql/latin_and_mic.so
 lib/postgresql/libpqwalreceiver.so
 lib/postgresql/pgoutput.so
@@ -1298,7 +1298,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+1
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+10
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+11
-%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+%%PG_VERSION%%
+%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-12
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+2
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+3
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+4
@@ -1311,7 +1311,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-1
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-10
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-11
-%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-%%PG_VERSION%%
+%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-12
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-13
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-14
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-2
