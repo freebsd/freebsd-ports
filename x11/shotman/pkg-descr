@@ -1,0 +1,8 @@
+The uncompromising screenshot GUI for Wayland compositors.
+
+shotman takes a screenshot and shows it in a small floating thumbnail window.
+The screenshot can then copied with Ctrl+C, deleted with D, or dismissed
+with Esc.
+
+shotman is designed to run in response to some global hotkey (e.g.: Super+P,
+PrintScreen, etc). It is designed for interactive usage.
