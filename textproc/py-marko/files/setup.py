@@ -51,7 +51,6 @@ setup_kwargs = {
     'extras_require': EXTRAS_REQUIRE,
     'python_requires': '>=3.6',
     'entry_points': ENTRY_POINTS,
-
 }
 
 setup(**setup_kwargs)
