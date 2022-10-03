@@ -1,12 +1,12 @@
 PORTNAME=	iso8601
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple module to parse ISO 8601 dates
-WWW=		https://bitbucket.org/micktwomey/pyiso8601
+WWW=		https://github.com/micktwomey/pyiso8601
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
