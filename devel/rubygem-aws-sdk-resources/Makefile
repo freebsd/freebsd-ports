@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.140.0
+PORTVERSION=	3.142.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -163,6 +163,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-iotevents>=1<2:devel/rubygem-aws-sdk-iotevents \
 		rubygem-aws-sdk-ioteventsdata>=1<2:devel/rubygem-aws-sdk-ioteventsdata \
 		rubygem-aws-sdk-iotfleethub>=1<2:devel/rubygem-aws-sdk-iotfleethub \
+		rubygem-aws-sdk-iotfleetwise>=1<2:devel/rubygem-aws-sdk-iotfleetwise \
 		rubygem-aws-sdk-iotjobsdataplane>=1<2:devel/rubygem-aws-sdk-iotjobsdataplane \
 		rubygem-aws-sdk-iotsecuretunneling>=1<2:devel/rubygem-aws-sdk-iotsecuretunneling \
 		rubygem-aws-sdk-iotsitewise>=1<2:devel/rubygem-aws-sdk-iotsitewise \
@@ -219,6 +220,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-mgn>=1<2:devel/rubygem-aws-sdk-mgn \
 		rubygem-aws-sdk-migrationhub>=1<2:devel/rubygem-aws-sdk-migrationhub \
 		rubygem-aws-sdk-migrationhubconfig>=1<2:devel/rubygem-aws-sdk-migrationhubconfig \
+		rubygem-aws-sdk-migrationhuborchestrator>=1<2:devel/rubygem-aws-sdk-migrationhuborchestrator \
 		rubygem-aws-sdk-migrationhubrefactorspaces>=1<2:devel/rubygem-aws-sdk-migrationhubrefactorspaces \
 		rubygem-aws-sdk-migrationhubstrategyrecommendations>=1<2:devel/rubygem-aws-sdk-migrationhubstrategyrecommendations \
 		rubygem-aws-sdk-mobile>=1<2:devel/rubygem-aws-sdk-mobile \
