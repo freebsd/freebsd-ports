@@ -575,6 +575,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/next-page.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/open.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/open.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/outline-close.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/outline-close.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/outline-open.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/outline-open.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/paste.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/paste.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/preferences.pbm
@@ -904,6 +908,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/allout.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ansi-color.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ansi-color.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/ansi-osc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/ansi-osc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/apropos.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/apropos.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/arc-mode.el.gz
@@ -2190,8 +2196,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/ielm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-file.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-file.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-mode.el.gz
@@ -2206,6 +2210,20 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/gravatar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/image-converter.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/image-converter.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-crop.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-crop.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-dired.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-dired.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-external.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-external.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-tags.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-tags.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-util.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired-util.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-dired.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/wallpaper.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/wallpaper.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/imenu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/imenu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/indent.el.gz
@@ -2549,8 +2567,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/vnvni.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/welsh.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/welsh.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/linum.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/linum.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/loaddefs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/loadhist.el.gz
@@ -2855,6 +2871,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-docker.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-docker.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-fuse.el.gz
@@ -2969,6 +2987,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/linum.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/linum.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/makesum.el.gz
@@ -3018,6 +3038,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sup-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/thumbs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/thumbs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tls.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tls.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-edt.el.gz
@@ -3302,6 +3324,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/password-cache.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-cvs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-cvs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-git.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-git.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-gnu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-gnu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/pcmpl-linux.el.gz
@@ -3652,6 +3676,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/common-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/fbterm.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/fbterm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.el.gz
@@ -3812,8 +3838,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/thread.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/thread.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/thumbs.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/thumbs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/time-stamp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/time-stamp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/time.el.gz
