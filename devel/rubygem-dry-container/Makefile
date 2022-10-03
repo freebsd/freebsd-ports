@@ -1,5 +1,5 @@
 PORTNAME=	dry-container
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
