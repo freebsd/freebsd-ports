@@ -1,8 +1,8 @@
 PORTNAME=	confget
-PORTVERSION=	4.1.0
-DISTVERSIONPREFIX=	release-
+PORTVERSION=	4.1.1
 CATEGORIES=	textproc
-MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/
+MASTER_SITES=	https://devel.ringlet.net/files/textproc/confget/
+# https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read variables from INI-style configuration files
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/confget/confget
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USES=		gmake tar:xz
 
 MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
 TEST_TARGET=	test

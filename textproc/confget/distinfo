@@ -1,3 +1,3 @@
-TIMESTAMP = 1643971002
-SHA256 (confget-release-4.1.0.tar.gz) = 7d6f61277b1c09b054bcb90dc624537a80616044162c7aa5d1d0d68c5e2b8295
-SIZE (confget-release-4.1.0.tar.gz) = 53165
+TIMESTAMP = 1663672754
+SHA256 (confget-4.1.1.tar.xz) = 04b2f4f13ec08d49bd220fc4ba866090c362dbb1284247855440bdef15c21acd
+SIZE (confget-4.1.1.tar.xz) = 46324
