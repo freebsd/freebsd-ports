@@ -307,6 +307,8 @@ share/gtksourceview-3.0/styles/Yaru-dark.xml
 share/gtksourceview-3.0/styles/Yaru.xml
 share/gtksourceview-4/styles/Yaru-dark.xml
 share/gtksourceview-4/styles/Yaru.xml
+share/gtksourceview-5/styles/Yaru-dark.xml
+share/gtksourceview-5/styles/Yaru.xml
 share/themes/Yaru-bark-dark/gnome-shell
 share/themes/Yaru-bark-dark/gtk-2.0/apps.rc
 share/themes/Yaru-bark-dark/gtk-2.0/assets/border.png
@@ -1024,6 +1026,8 @@ share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/checkbox/checkbox-checked-f
 share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/checkbox/checkbox-checked.svg
 share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/checkbox/checkbox-unchecked-focused.svg
 share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/checkbox/checkbox-unchecked.svg
+share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/checkbox/radio-checked.svg
+share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/checkbox/radio-unchecked.svg
 share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/switch/switch-off.svg
 share/themes/Yaru-cinnamon-dark/cinnamon/dark-assets/switch/switch-on.svg
 share/themes/Yaru-cinnamon-dark/cinnamon/thumbnail.png
@@ -1036,6 +1040,8 @@ share/themes/Yaru-cinnamon/cinnamon/light-assets/checkbox/checkbox-checked-focus
 share/themes/Yaru-cinnamon/cinnamon/light-assets/checkbox/checkbox-checked.svg
 share/themes/Yaru-cinnamon/cinnamon/light-assets/checkbox/checkbox-unchecked-focused.svg
 share/themes/Yaru-cinnamon/cinnamon/light-assets/checkbox/checkbox-unchecked.svg
+share/themes/Yaru-cinnamon/cinnamon/light-assets/checkbox/radio-checked.svg
+share/themes/Yaru-cinnamon/cinnamon/light-assets/checkbox/radio-unchecked.svg
 share/themes/Yaru-cinnamon/cinnamon/light-assets/switch/switch-off.svg
 share/themes/Yaru-cinnamon/cinnamon/light-assets/switch/switch-on.svg
 share/themes/Yaru-cinnamon/cinnamon/thumbnail.png
@@ -1186,6 +1192,8 @@ share/themes/Yaru-dark/cinnamon/dark-assets/checkbox/checkbox-checked-focused.sv
 share/themes/Yaru-dark/cinnamon/dark-assets/checkbox/checkbox-checked.svg
 share/themes/Yaru-dark/cinnamon/dark-assets/checkbox/checkbox-unchecked-focused.svg
 share/themes/Yaru-dark/cinnamon/dark-assets/checkbox/checkbox-unchecked.svg
+share/themes/Yaru-dark/cinnamon/dark-assets/checkbox/radio-checked.svg
+share/themes/Yaru-dark/cinnamon/dark-assets/checkbox/radio-unchecked.svg
 share/themes/Yaru-dark/cinnamon/dark-assets/menu/menu-hover.svg
 share/themes/Yaru-dark/cinnamon/dark-assets/menu/menu.svg
 share/themes/Yaru-dark/cinnamon/dark-assets/menu/submenu.svg
@@ -4448,6 +4456,8 @@ share/themes/Yaru/cinnamon/light-assets/checkbox/checkbox-checked-focused.svg
 share/themes/Yaru/cinnamon/light-assets/checkbox/checkbox-checked.svg
 share/themes/Yaru/cinnamon/light-assets/checkbox/checkbox-unchecked-focused.svg
 share/themes/Yaru/cinnamon/light-assets/checkbox/checkbox-unchecked.svg
+share/themes/Yaru/cinnamon/light-assets/checkbox/radio-checked.svg
+share/themes/Yaru/cinnamon/light-assets/checkbox/radio-unchecked.svg
 share/themes/Yaru/cinnamon/light-assets/menu/menu-hover.svg
 share/themes/Yaru/cinnamon/light-assets/menu/menu.svg
 share/themes/Yaru/cinnamon/light-assets/menu/submenu.svg
