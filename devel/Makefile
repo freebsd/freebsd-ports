@@ -5426,6 +5426,7 @@
     SUBDIR += py-types-PyYAML
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
+    SUBDIR += py-types-cryptography
     SUBDIR += py-types-docutils
     SUBDIR += py-types-futures
     SUBDIR += py-types-mock
