@@ -3,6 +3,7 @@ bin/git-receive-pack
 bin/git-shell
 bin/git-upload-archive
 bin/git-upload-pack
+bin/scalar
 etc/bash_completion.d/git-completion.bash
 %%PERL%%%%SITE_PERL%%/FromCPAN/Error.pm
 %%PERL%%%%SITE_PERL%%/FromCPAN/Mail/Address.pm
@@ -61,6 +62,7 @@ libexec/git-core/git-credential-cache--daemon
 libexec/git-core/git-credential-store
 libexec/git-core/git-daemon
 libexec/git-core/git-describe
+libexec/git-core/git-diagnose
 libexec/git-core/git-diff
 libexec/git-core/git-diff-files
 libexec/git-core/git-diff-index
@@ -185,6 +187,7 @@ libexec/git-core/git-var
 libexec/git-core/git-verify-commit
 libexec/git-core/git-verify-pack
 libexec/git-core/git-verify-tag
+libexec/git-core/git-version
 libexec/git-core/git-web--browse
 libexec/git-core/git-whatchanged
 libexec/git-core/git-worktree
@@ -212,6 +215,7 @@ libexec/git-core/mergetools/tortoisemerge
 libexec/git-core/mergetools/vimdiff
 libexec/git-core/mergetools/winmerge
 libexec/git-core/mergetools/xxdiff
+libexec/git-core/scalar
 man/man1/git-add.1.gz
 man/man1/git-am.1.gz
 man/man1/git-annotate.1.gz
@@ -246,6 +250,7 @@ man/man1/git-credential-store.1.gz
 man/man1/git-credential.1.gz
 man/man1/git-daemon.1.gz
 man/man1/git-describe.1.gz
+man/man1/git-diagnose.1.gz
 man/man1/git-diff-files.1.gz
 man/man1/git-diff-index.1.gz
 man/man1/git-diff-tree.1.gz
@@ -365,11 +370,23 @@ man/man1/git-worktree.1.gz
 man/man1/git-write-tree.1.gz
 man/man1/git.1.gz
 man/man1/gitweb.1.gz
+man/man1/scalar.1.gz
 man/man5/gitattributes.5.gz
+man/man5/gitformat-bundle.5.gz
+man/man5/gitformat-chunk.5.gz
+man/man5/gitformat-commit-graph.5.gz
+man/man5/gitformat-index.5.gz
+man/man5/gitformat-pack.5.gz
+man/man5/gitformat-signature.5.gz
 man/man5/githooks.5.gz
 man/man5/gitignore.5.gz
 man/man5/gitmailmap.5.gz
 man/man5/gitmodules.5.gz
+man/man5/gitprotocol-capabilities.5.gz
+man/man5/gitprotocol-common.5.gz
+man/man5/gitprotocol-http.5.gz
+man/man5/gitprotocol-pack.5.gz
+man/man5/gitprotocol-v2.5.gz
 man/man5/gitrepository-layout.5.gz
 man/man5/gitweb.conf.5.gz
 man/man7/gitcli.7.gz
@@ -716,6 +733,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.37.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.37.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.37.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.38.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1223,7 +1241,12 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/qsort.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/strbuf.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/swap.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/tests/free.c
+%%CONTRIB%%share/git-core/contrib/coccinelle/tests/free.res
+%%CONTRIB%%share/git-core/contrib/coccinelle/tests/unused.c
+%%CONTRIB%%share/git-core/contrib/coccinelle/tests/unused.res
 %%CONTRIB%%share/git-core/contrib/coccinelle/the_repository.pending.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/unused.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xcalloc.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xopen.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xstrdup_or_null.cocci
@@ -1317,12 +1340,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/remote-helpers/git-remote-hg
 %%CONTRIB%%share/git-core/contrib/remotes2config.sh
 %%CONTRIB%%share/git-core/contrib/rerere-train.sh
-%%CONTRIB%%share/git-core/contrib/scalar/Makefile
-%%CONTRIB%%share/git-core/contrib/scalar/README.md
-%%CONTRIB%%share/git-core/contrib/scalar/scalar.c
-%%CONTRIB%%share/git-core/contrib/scalar/scalar.txt
-%%CONTRIB%%share/git-core/contrib/scalar/t/Makefile
-%%CONTRIB%%share/git-core/contrib/scalar/t/t9099-scalar.sh
 %%CONTRIB%%share/git-core/contrib/stats/git-common-hash
 %%CONTRIB%%share/git-core/contrib/stats/mailmap.pl
 %%CONTRIB%%share/git-core/contrib/stats/packinfo.pl
@@ -1376,5 +1393,4 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/git.mo
-%%CONTRIB%%@dir share/git-core/contrib/scalar/.depend
 @dir share/git-core/templates/branches

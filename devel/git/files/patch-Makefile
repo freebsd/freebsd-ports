@@ -1,6 +1,6 @@
---- Makefile.orig	2021-10-29 22:46:52 UTC
+--- Makefile.orig	2022-10-02 23:02:46 UTC
 +++ Makefile
-@@ -517,16 +517,16 @@ GIT-VERSION-FILE: FORCE
+@@ -542,17 +542,17 @@ bindir = $(prefix)/bin
  
  prefix = $(HOME)
  bindir = $(prefix)/bin
@@ -12,8 +12,9 @@
  mergetoolsdir = $(gitexecdir)/mergetools
  sharedir = $(prefix)/share
 -gitwebdir = $(sharedir)/gitweb
--perllibdir = $(sharedir)/perl5
 +gitwebdir = $(sharedir)/examples/git/gitweb
+ gitwebstaticdir = $(gitwebdir)/static
+-perllibdir = $(sharedir)/perl5
 +perllibdir = %%SITE_PERL%%
  localedir = $(sharedir)/locale
  template_dir = share/git-core/templates
@@ -22,7 +23,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -551,8 +551,8 @@ DIFF = diff
+@@ -577,8 +577,8 @@ INSTALL = install
  TAR = tar
  FIND = find
  INSTALL = install
@@ -31,9 +32,9 @@
 +TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
  XGETTEXT = xgettext
+ MSGCAT = msgcat
  MSGFMT = msgfmt
- CURL_CONFIG = curl-config
-@@ -1465,9 +1465,9 @@ EXTLIBS += -lz
+@@ -1539,9 +1539,9 @@ ifndef NO_OPENSSL
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -46,7 +47,7 @@
  	else
  		OPENSSL_LINK =
  	endif
-@@ -2371,7 +2371,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
+@@ -2442,7 +2442,7 @@ else # NO_PERL
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -55,7 +56,7 @@
  	$(QUIET_GEN) \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \
-@@ -2387,7 +2387,7 @@ ifndef NO_PYTHON
+@@ -2458,7 +2458,7 @@ $(SCRIPT_PYTHON_GEN): % : %.py
  $(SCRIPT_PYTHON_GEN): GIT-CFLAGS GIT-PREFIX GIT-PYTHON-VARS
  $(SCRIPT_PYTHON_GEN): % : %.py
  	$(QUIET_GEN) \
@@ -64,7 +65,7 @@
  	    $< >$@+ && \
  	chmod +x $@+ && \
  	mv $@+ $@
-@@ -3015,7 +3015,7 @@ install: all
+@@ -3238,7 +3238,7 @@ install: all
  	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'
