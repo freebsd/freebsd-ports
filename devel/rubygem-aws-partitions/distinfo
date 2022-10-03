@@ -1,3 +1,3 @@
-TIMESTAMP = 1663672914
-SHA256 (rubygem/aws-partitions-1.632.0.gem) = 8581a9dccd5d2458877e6097bfedb0a78344d5720aab71edd1f617e1060a51e5
-SIZE (rubygem/aws-partitions-1.632.0.gem) = 49664
+TIMESTAMP = 1664768030
+SHA256 (rubygem/aws-partitions-1.640.0.gem) = 77ff17db6b57abd61f3b853e8c524ac8cbe046045655a7337f6a5abd032c5c78
+SIZE (rubygem/aws-partitions-1.640.0.gem) = 50176
