@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-performance
-PORTVERSION=	1.14.3
+PORTVERSION=	1.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
