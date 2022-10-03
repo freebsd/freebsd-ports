@@ -1,3 +1,7 @@
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_binder.svg
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_colab.png
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_deepnote.svg
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_jupyterhub.svg
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ar/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bg/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bn/LC_MESSAGES/booktheme.po
@@ -43,6 +47,7 @@
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/vi/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_CN/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_TW/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/sbt-webpack-macros.html
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/scripts/sphinx-book-theme.js
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/scripts/sphinx-book-theme.js.map
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/styles/sphinx-book-theme.css
