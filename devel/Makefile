@@ -1016,6 +1016,7 @@
     SUBDIR += kBuild
     SUBDIR += kapptemplate
     SUBDIR += kcachegrind
+    SUBDIR += kconfig-frontends
     SUBDIR += kcov
     SUBDIR += kdbg
     SUBDIR += kde-dev-scripts
