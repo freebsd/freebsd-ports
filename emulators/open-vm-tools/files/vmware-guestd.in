@@ -18,7 +18,7 @@ rcvar=vmware_guestd_enable
 load_rc_config $name
 
 checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null 2>&1"
-if ${checkvm_cmd}; then
+if eval "${checkvm_cmd}"; then
 	: ${vmware_guestd_enable:="YES"}
 else
 	: ${vmware_guestd_enable:="NO"}
