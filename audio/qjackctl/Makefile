@@ -1,6 +1,6 @@
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_9_7
+DISTVERSION=	0_9_8
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig qt:5
-USE_QT=		core gui network widgets x11extras xml buildtools:build linguisttools:build qmake:build
+USES=		cmake compiler:c++11-lib desktop-file-utils gl localbase:ldflags pkgconfig qt:6
+USE_QT=		base svg tools:build
 USE_GL=		gl
 USE_CXXSTD=	c++11
 
@@ -33,7 +33,6 @@ ALSA_CMAKE_BOOL=	CONFIG_ALSA_SEQ
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 DBUS_CMAKE_BOOL=	CONFIG_DBUS
-DBUS_USE=		QT=dbus
 
 PORTAUDIO_CMAKE_BOOL=	CONFIG_PORTAUDIO
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
