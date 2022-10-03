@@ -607,7 +607,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+0
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+1
-%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT-10
+%%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+10
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+11
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+12
 %%TZDATA%%%%DATADIR%%/timezone/Etc/GMT+2
