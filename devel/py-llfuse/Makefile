@@ -1,21 +1,24 @@
 PORTNAME=	llfuse
-PORTVERSION=	1.3.8
+PORTVERSION=	1.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org # stdin@niklaas.eu refuses mail
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for low-level FUSE API
-WWW=		https://bitbucket.org/nikratio/python-llfuse
+WWW=		https://github.com/python-llfuse/python-llfuse/
 
 LICENSE=	LGPL20+
 
-py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
-
-USES=		compiler:c++11-lang fuse pkgconfig python:3.7-3.10 # 3.11 fails because llfuse.c includes longintrepr.h directly, see https://docs.python.org/3.11/whatsnew/3.11.html
+USES=		compiler:c++11-lang fuse pkgconfig python
 USE_PYTHON=	distutils autoplist
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/llfuse*.so
+
+do-test:
+	# apparently the code does not understand FreeBSD's /proc/NNN/status layout and looks for a line
+	# prefixed Groups: which FreeBSD 13 does not provide.
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PREFIX}/lib/python3.9/site-packages ${PYTHON_CMD} -m pytest -x
 
 .include <bsd.port.mk>
