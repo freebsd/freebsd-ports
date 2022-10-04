@@ -74,6 +74,7 @@
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += drawxtl
+    SUBDIR += dssp
     SUBDIR += dvc
     SUBDIR += dwave-preprocessing
     SUBDIR += dynare
