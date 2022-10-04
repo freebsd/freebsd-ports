@@ -1,7 +1,7 @@
 PORTNAME=	gemmi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.7
-CATEGORIES=	science
+CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Macromolecular crystallography library and utilities
@@ -14,6 +14,8 @@ USES=		cmake:testing compiler:c++17-lang # tests don't run, see https://github.c
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	project-gemmi
+
+CMAKE_TESTING_TARGET=	check
 
 OPTIONS_DEFINE=		FORTRAN
 
