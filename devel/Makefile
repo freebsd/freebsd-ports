@@ -7192,6 +7192,7 @@
     SUBDIR += shfmt
     SUBDIR += shiboken2
     SUBDIR += shmap
+    SUBDIR += shroud
     SUBDIR += shtk
     SUBDIR += shtool
     SUBDIR += shunit2
