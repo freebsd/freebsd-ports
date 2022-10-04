@@ -112,6 +112,13 @@ SQLITE_CMAKE_ON=	-DFEATURE_sql_sqlite=ON \
 SQLITE_CMAKE_OFF=	-DFEATURE_sql_sqlite=OFF
 SQLITE_USES=		sqlite:3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "armv6" || ${ARCH} == "armv7"
+BUILD_DEPENDS+=	as:devel/binutils
+CMAKE_ARGS+=	-DCMAKE_ASM_FLAGS=-no-integrated-as
+.endif
+
 # TODO: do this cleaner -- somewhere cmake/qmake still creates empty directories
 # for the cmake files in INSTALL_PREFIX/lib/cmake
 post-install:
@@ -123,4 +130,4 @@ post-install:
 		${RLN} $$t; \
 	done <${WRKDIR}/.build/user_facing_tool_links.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
