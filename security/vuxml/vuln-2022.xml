@@ -1,3 +1,40 @@
+  <vuln vid="d487d4fc-43a8-11ed-8b01-b42e991fc52e">
+    <topic>zydis -- heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>zydis</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zyantific reports:</p>
+	<blockquote cite="https://github.com/zyantific/zydis/security/advisories/GHSA-q42v-hv86-3m4g">
+	<p>
+	Zydis users of versions v3.2.0 and older
+	that use the string functions provided in zycore in order to
+	append untrusted user data to the formatter buffer within
+	their custom formatter hooks can run into heap buffer
+	overflows. Older versions of Zydis failed to properly
+	initialize the string object within the formatter buffer,
+	forgetting to initialize a few fields, leaving their value
+	to chance. This could then in turn cause zycore functions
+	like ZyanStringAppend to make incorrect calculations for the
+	new target size, resulting in heap memory corruption.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41253</cvename>
+      <url>https://www.cvedetails.com/cve/CVE-2021-41253</url>
+    </references>
+    <dates>
+      <discovery>2021-11-08</discovery>
+      <entry>2022-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67057b48-41f4-11ed-86c3-080027881239">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
