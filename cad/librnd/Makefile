@@ -1,5 +1,5 @@
 PORTNAME=	librnd
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	cad
 MASTER_SITES=	http://repo.hu/projects/${PORTNAME}/releases/
 
@@ -10,13 +10,19 @@ WWW=		http://www.repo.hu/projects/librnd/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfungw.so:devel/fungw
+LIB_DEPENDS=	libfungw.so:devel/fungw \
+		libgenht.so:devel/genht
 
 USES=		gmake pkgconfig tar:bz2
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--all=plugin --plugin-hid_remote
+CONFIGURE_ARGS=	--all=plugin --plugin-hid_remote \
+		${WITH_DEBUG:D--debug} \
+		--CC=${CC} \
+		--CFLAGS='${CFLAGS}' \
+		--LDFLAGS='${LDFLAGS}'
+
 TEST_TARGET=	test
 BINARY_ALIAS=	make=${MAKE_CMD}
 
