@@ -1,7 +1,6 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.7
-PORTREVISION=	1
+DISTVERSION=	3.8.5
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
@@ -10,14 +9,17 @@ WWW=		https://edbrowse.org/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libcurl.so:ftp/curl \
-		libtidy5.so:www/tidy-html5 \
-		libduktape.so:lang/duktape-lib
+BUILD_DEPENDS=	${LOCALBASE}/include/quickjs/quickjs.h:lang/quickjs \
+		${LOCALBASE}/lib/quickjs/libquickjs.a:lang/quickjs
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libodbc.so:databases/unixODBC \
+		libpcre2-8.so:devel/pcre2
 
-USES=		cmake:insource compiler:c11 perl5 readline
+USES=		compiler:c11 gmake perl5 pkgconfig readline
 USE_PERL5=	build
 USE_GITHUB=	yes
+
+MAKEFILE=	makefile
 
 GH_ACCOUNT=	CMB
 
@@ -30,7 +32,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man-edbrowse-freebsd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
-	${INSTALL_PROGRAM} ${WRKSRC}/edbrowse ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/edbrowse ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
