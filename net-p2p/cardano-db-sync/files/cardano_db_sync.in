@@ -108,12 +108,6 @@ cardano_db_sync_start()
 {
     check_startmsgs && echo "Starting ${name}."
 
-    while ! nc -NU ${cardano_db_sync_cnode_socket} < /dev/null > /dev/null
-    do
-        echo "Waiting for cardano-node socket to appear in ${cardano_db_sync_cnode_socket}"
-        sleep 10s
-    done
-
     cd $cardano_db_sync_home && /usr/bin/env PATH=$PATH:%%LOCALBASE%%/bin /usr/sbin/daemon -p $pidfile -S -T cardano-db-sync \
         ${command} ${flags} 2>&1 > /dev/null
 }
