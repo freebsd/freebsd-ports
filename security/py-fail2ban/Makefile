@@ -1,10 +1,9 @@
 PORTNAME=	fail2ban
-DISTVERSION=	0.11.2
-PORTREVISION=	3
+DISTVERSION=	1.0.1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	theis@gmx.at
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Scans log files and bans IP that makes too many password failures
 WWW=		https://www.fail2ban.org/wiki/index.php/Main_Page
 
@@ -63,6 +62,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, sed , ${SED} ,g' \
 		${WRKSRC}/config/action.d/hostsdeny.conf
 
+	# XXX Ideally this should be in do-build but it only works in
+	# XXX post-patch
 	(cd ${WRKSRC}/ && ${PY2TO3_CMD} ${PY2TO3_ARG} bin/* fail2ban)
 
 post-install:
