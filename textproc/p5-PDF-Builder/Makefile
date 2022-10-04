@@ -1,7 +1,5 @@
-# created by: cmt@FreeBSD.org
-
 PORTNAME=	PDF-Builder
-PORTVERSION=	3.023
+DISTVERSION=	3.024
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
