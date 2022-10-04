@@ -1,7 +1,5 @@
-# created by: cmt@FreeBSD.org
-
 PORTNAME=	Gtk3-ImageView
-PORTVERSION=	9
+DISTVERSION=	10
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ASOKOLOV
@@ -11,7 +9,7 @@ MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Perl bindings to the GtkImageView image viewer widget
 WWW=		https://metacpan.org/release/Gtk3-ImageView
 
-LICENSE=	ART10 GPLv1+
+LICENSE=	ARTPERL10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
