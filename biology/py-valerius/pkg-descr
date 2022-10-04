@@ -1,0 +1,3 @@
+valerius is a simple Bioinformatics toolset for processing Biological sequences.
+
+It can gfetch sequences from servers, detect their types, do FASTA parsing.

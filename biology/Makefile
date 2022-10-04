@@ -175,6 +175,7 @@
     SUBDIR += py-pywgsim
     SUBDIR += py-resdk
     SUBDIR += py-scikit-bio
+    SUBDIR += py-valerius
     SUBDIR += py-xenaPython
     SUBDIR += pyfasta
     SUBDIR += python-nexus
