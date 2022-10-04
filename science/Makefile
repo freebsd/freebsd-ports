@@ -135,6 +135,7 @@
     SUBDIR += latte
     SUBDIR += libaec
     SUBDIR += libccp4
+    SUBDIR += libcifpp
     SUBDIR += libcint
     SUBDIR += libctl
     SUBDIR += libecpint
