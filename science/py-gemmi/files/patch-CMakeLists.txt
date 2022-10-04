@@ -1,0 +1,46 @@
+--- CMakeLists.txt.orig	2022-09-21 17:17:09 UTC
++++ CMakeLists.txt
+@@ -274,6 +274,7 @@ add_executable(gemmi-wcn EXCLUDE_FROM_ALL $<TARGET_OBJ
+                src/wcn.cpp $<TARGET_OBJECTS:input>)
+ support_gz(gemmi-wcn)
+ 
++if (FALSE)
+ add_executable(program
+                src/align.cpp src/blobs.cpp
+                src/cif2mtz.cpp src/cif2json.cpp src/contact.cpp
+@@ -290,15 +291,16 @@ add_executable(program
+                $<TARGET_OBJECTS:options>)
+ support_gz(program)
+ target_compile_definitions(program PRIVATE GEMMI_ALL_IN_ONE=1)
+-set_target_properties(program PROPERTIES OUTPUT_NAME gemmi)
++#set_target_properties(program PROPERTIES OUTPUT_NAME gemmi)
+ if (WIN32 AND USE_WMAIN)
+   # _UNICODE=1 is now set globally
+-  #target_compile_definitions(program PRIVATE _UNICODE=1)
++  target_compile_definitions(program PRIVATE _UNICODE=1)
+   if(MINGW)
+     # target_link_options were added in cmake 3.13
+     set_target_properties(program PROPERTIES LINK_FLAGS "-municode")
+   endif()
+ endif()
++endif()
+ 
+ ### tests and examples ###
+ 
+@@ -416,12 +418,12 @@ else()
+   message(STATUS "Skipping Python module. Add -D USE_PYTHON=1 to build it.")
+ endif()
+ 
+-install(TARGETS program DESTINATION bin)
+-install(DIRECTORY include/gemmi DESTINATION include)
++#install(TARGETS program DESTINATION bin)
++#install(DIRECTORY include/gemmi DESTINATION include)
+ if (USE_PYTHON AND DEFINED PYTHON_INSTALL_DIR)
+   install(TARGETS py DESTINATION ${PYTHON_INSTALL_DIR})
+-  install(DIRECTORY examples/ DESTINATION ${PYTHON_INSTALL_DIR}/gemmi-examples
+-          FILES_MATCHING PATTERN "*.py")
++  #install(DIRECTORY examples/ DESTINATION ${PYTHON_INSTALL_DIR}/gemmi-examples
++  #        FILES_MATCHING PATTERN "*.py")
+   if (INSTALL_EGG_INFO)
+     install(CODE
+      "execute_process(COMMAND \"${PYTHON_EXECUTABLE}\" setup.py install_egg_info --install-dir \"\$ENV{DESTDIR}${PYTHON_INSTALL_DIR}\"

@@ -98,6 +98,7 @@
     SUBDIR += gbtolib
     SUBDIR += gchemutils
     SUBDIR += gdma
+    SUBDIR += gemmi
     SUBDIR += getdp
     SUBDIR += ghemical
     SUBDIR += ghmm
@@ -303,6 +304,7 @@
     SUBDIR += py-eccodes
     SUBDIR += py-esda
     SUBDIR += py-fresnel
+    SUBDIR += py-gemmi
     SUBDIR += py-geolinks
     SUBDIR += py-geomet
     SUBDIR += py-geometer
