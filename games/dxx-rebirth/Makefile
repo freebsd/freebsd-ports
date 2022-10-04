@@ -1,9 +1,12 @@
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20220823
+PORTVERSION=	20220929
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
+
+PATCH_SITES=	https://github.com/dxx-rebirth/dxx-rebirth/commit/
+PATCHFILES=	fc4157f56f6acd5e63367974dd4249b88f3a2535.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source port of Descent and Descent 2
