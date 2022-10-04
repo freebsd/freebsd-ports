@@ -1,7 +1,5 @@
-# created by: cmt@FreeBSD.org
-
 PORTNAME=	Graphics-TIFF
-PORTVERSION=	16
+DISTVERSION=	19
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +8,7 @@ MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Perl extension for the libtiff library
 WWW=		https://metacpan.org/pod/Graphics::TIFF
 
-LICENSE=	ART10 GPLv1+
+LICENSE=	ARTPERL10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>0:devel/p5-ExtUtils-Depends \
