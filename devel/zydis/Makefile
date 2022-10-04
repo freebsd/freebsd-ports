@@ -1,6 +1,6 @@
 PORTNAME=	zydis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -17,7 +17,7 @@ USES=		cmake cpe dos2unix localbase:ldflags
 USE_GITHUB=	yes
 DOS2UNIX_FILES=	src/String.c
 GH_ACCOUNT=	zyantific
-GH_TUPLE=	zyantific:zycore-c:273e26a:zydis/dependencies/zycore
+GH_TUPLE=	zyantific:zycore-c:7c33e13:zydis/dependencies/zycore
 CPE_VENDOR=	zyantific
 
 .include <bsd.port.mk>
