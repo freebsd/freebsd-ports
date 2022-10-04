@@ -266,10 +266,10 @@ include/polymake/polytope/generic_lp_client.h
 include/polymake/polytope/generic_milp_client.h
 include/polymake/polytope/h_vector.h
 include/polymake/polytope/hasse_diagram.h
-include/polymake/polytope/hypersimplex.h
 include/polymake/polytope/inner_point.h
 include/polymake/polytope/is_regular.h
 %%LRS%%include/polymake/polytope/lrs_interface.h
+include/polymake/polytope/matroid_polytopes.h
 include/polymake/polytope/minkowski_sum_fukuda.h
 %%NORMALIZ%%include/polymake/polytope/normaliz_interface.h
 include/polymake/polytope/optimal_contains.h
@@ -312,6 +312,7 @@ include/polymake/topaz/complex_tools.tcc
 include/polymake/topaz/connected_sum.h
 include/polymake/topaz/connected_sum.tcc
 include/polymake/topaz/graph.h
+include/polymake/topaz/grass_plucker.h
 include/polymake/topaz/hasse_diagram.h
 include/polymake/topaz/is_sphere_h.h
 include/polymake/topaz/jockusch.h
@@ -371,13 +372,13 @@ include/polymake/type_utils.h
 include/polymake/vector
 lib/libpolymake-apps-rt.so
 lib/libpolymake-apps-rt.so.4
-lib/libpolymake-apps-rt.so.4.6
+lib/libpolymake-apps-rt.so.4.7
 lib/libpolymake-apps.so
 lib/libpolymake-apps.so.4
-lib/libpolymake-apps.so.4.6
+lib/libpolymake-apps.so.4.7
 lib/libpolymake.so
 lib/libpolymake.so.4
-lib/libpolymake.so.4.6
+lib/libpolymake.so.4.7
 libexec/polymake/config.ninja
 libexec/polymake/lib/common.so
 libexec/polymake/lib/fan.so
@@ -387,10 +388,10 @@ libexec/polymake/lib/group.so
 libexec/polymake/lib/ideal.so
 libexec/polymake/lib/libpolymake-apps-rt.so
 libexec/polymake/lib/libpolymake-apps-rt.so.4
-libexec/polymake/lib/libpolymake-apps-rt.so.4.6
+libexec/polymake/lib/libpolymake-apps-rt.so.4.7
 libexec/polymake/lib/libpolymake-apps.so
 libexec/polymake/lib/libpolymake-apps.so.4
-libexec/polymake/lib/libpolymake-apps.so.4.6
+libexec/polymake/lib/libpolymake-apps.so.4.7
 libexec/polymake/lib/matroid.so
 libexec/polymake/lib/polytope.so
 libexec/polymake/lib/topaz.so
@@ -624,6 +625,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/ideal/rules/ideal.rules
 %%DATADIR%%/apps/ideal/rules/ideal_properties.rules
 %%DATADIR%%/apps/ideal/rules/main.rules
+%%DATADIR%%/apps/ideal/rules/slack_ideal.rules
 %%DATADIR%%/apps/matroid/rules/_4ti2.rules
 %%DATADIR%%/apps/matroid/rules/automorphisms.rules
 %%DATADIR%%/apps/matroid/rules/dual.rules
@@ -819,6 +821,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/polytope/src/edge_lengths.cc
 %%DATADIR%%/apps/polytope/src/edge_middle.cc
 %%DATADIR%%/apps/polytope/src/edge_orientable.cc
+%%DATADIR%%/apps/polytope/src/ehrhart_polynomials_of_matroid_polytopes.cc
 %%DATADIR%%/apps/polytope/src/explicit-zonotope.cc
 %%DATADIR%%/apps/polytope/src/face_lattice.cc
 %%DATADIR%%/apps/polytope/src/faces_and_facets.cc
@@ -971,6 +974,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/topaz/rules/common.rules
 %%DATADIR%%/apps/topaz/rules/complex_properties.rules
 %%DATADIR%%/apps/topaz/rules/gap.rules
+%%DATADIR%%/apps/topaz/rules/grass_plucker.rules
 %%DATADIR%%/apps/topaz/rules/help.rules
 %%DATADIR%%/apps/topaz/rules/hyperbolic_surface.rules
 %%DATADIR%%/apps/topaz/rules/main.rules
@@ -1006,6 +1010,9 @@ libexec/polymake/shared
 %%DATADIR%%/apps/topaz/src/fundamental_group.cc
 %%DATADIR%%/apps/topaz/src/gkz_computation.cc
 %%DATADIR%%/apps/topaz/src/graph.cc
+%%DATADIR%%/apps/topaz/src/grass_plucker.cc
+%%DATADIR%%/apps/topaz/src/grass_plucker_impl.cc
+%%DATADIR%%/apps/topaz/src/grass_plucker_tree_impl.cc
 %%DATADIR%%/apps/topaz/src/h_induced_quotient.cc
 %%DATADIR%%/apps/topaz/src/h_vector.cc
 %%DATADIR%%/apps/topaz/src/hasse_diagram.cc
@@ -1041,6 +1048,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/topaz/src/odd_complex_of_manifold.cc
 %%DATADIR%%/apps/topaz/src/orientation.cc
 %%DATADIR%%/apps/topaz/src/persistent_homology.cc
+%%DATADIR%%/apps/topaz/src/poincare_sphere.cc
 %%DATADIR%%/apps/topaz/src/product.cc
 %%DATADIR%%/apps/topaz/src/projective_plane.cc
 %%DATADIR%%/apps/topaz/src/projective_potato.cc
@@ -1225,7 +1233,6 @@ libexec/polymake/shared
 %%NORMALIZ%%%%DATADIR%%/bundled/libnormaliz/apps/polytope/rules/convexhull.rules
 %%NORMALIZ%%%%DATADIR%%/bundled/libnormaliz/apps/polytope/rules/main.rules
 %%NORMALIZ%%%%DATADIR%%/bundled/libnormaliz/apps/polytope/src/build_flags.pl
-%%NORMALIZ%%%%DATADIR%%/bundled/libnormaliz/apps/polytope/src/libnormaliz_inst.cc
 %%NORMALIZ%%%%DATADIR%%/bundled/libnormaliz/apps/polytope/src/normaliz_interface.cc
 %%DATADIR%%/bundled/libnormaliz/polymake.ext
 %%LRS%%%%DATADIR%%/bundled/lrs/apps/polytope/rules/lrs_ch.rules
@@ -1255,6 +1262,7 @@ libexec/polymake/shared
 %%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/rules/help.rules
 %%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/rules/main.rules
 %%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/rules/singular.rules
+%%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/rules/slack_ideal.rules
 %%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/src/singularConvertTypes.cc
 %%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/src/singularIdeal.cc
 %%SINGULAR%%%%DATADIR%%/bundled/singular/apps/ideal/src/singularInit.cc
@@ -1284,6 +1292,10 @@ libexec/polymake/shared
 %%DATADIR%%/demo/data.ipynb
 %%DATADIR%%/demo/face_lattice_tutorial.ipynb
 %%DATADIR%%/demo/files/3d_printing_with_x3d/3d_printing_helping_subs.pl
+%%DATADIR%%/demo/files/hands_on_tropical_geometry/3d_printing_helper_functions.pl
+%%DATADIR%%/demo/files/hands_on_tropical_geometry/3d_printing_template_curve.pl
+%%DATADIR%%/demo/files/hands_on_tropical_geometry/3d_printing_template_surface.pl
+%%DATADIR%%/demo/files/hands_on_tropical_geometry/3d_printing_template_surface_and_curve.pl
 %%DATADIR%%/demo/files/json_and_polydb/data/geometric_01.pdata
 %%DATADIR%%/demo/files/json_and_polydb/data/matroid.mat
 %%DATADIR%%/demo/files/json_and_polydb/polydb_meta/Polytopes/01Polytopes/Polytopes.01Polytopes.2.1.json
@@ -1291,12 +1303,13 @@ libexec/polymake/shared
 %%DATADIR%%/demo/files/json_and_polydb/polydb_meta/Polytopes/01Polytopes/schema.2.1.json
 %%DATADIR%%/demo/files/json_and_polydb/polydb_meta/Polytopes/Polytopes.2.1.json
 %%DATADIR%%/demo/files/optimization/c3t.lp
- %%DATADIR%%/demo/files/optimization/c3t.mps
+%%DATADIR%%/demo/files/optimization/c3t.mps
 %%DATADIR%%/demo/files/optimization/lpclosure.pl
 %%DATADIR%%/demo/files/optimization/mip.lp
 %%DATADIR%%/demo/files/optimization/stab.lp
 %%DATADIR%%/demo/files/optimization/unbounded.lp
 %%DATADIR%%/demo/gomory.ipynb
+%%DATADIR%%/demo/hands_on_tropical_geometry.ipynb
 %%DATADIR%%/demo/hyperbolic_surface_tutorial.ipynb
 %%DATADIR%%/demo/ilp_and_hilbertbases.ipynb
 %%DATADIR%%/demo/json_and_polydb.ipynb
@@ -1494,6 +1507,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/4.4
 %%DATADIR%%/upgrades/4.5
 %%DATADIR%%/upgrades/4.6
+%%DATADIR%%/upgrades/4.7
 %%DATADIR%%/upgrades/big_objects-2.10.1
 %%DATADIR%%/upgrades/big_objects-2.11.1
 %%DATADIR%%/upgrades/big_objects-2.12.1
@@ -1511,6 +1525,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/big_objects-4.3.3
 %%DATADIR%%/upgrades/big_objects-4.4.1
 %%DATADIR%%/upgrades/big_objects-4.5.1
+%%DATADIR%%/upgrades/big_objects-4.6.1
 @dir libexec/polymake/bundled/atint
 %%BLISS%%@dir libexec/polymake/bundled/bliss
 @dir libexec/polymake/bundled/cdd
