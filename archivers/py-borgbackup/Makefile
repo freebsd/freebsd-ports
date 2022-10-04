@@ -35,7 +35,7 @@ FUSE_DESC=	Support to mount locally borg backup files
 FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
 
 _BORGHOME=${WRKDIR}/testhome
-_BORGENV=BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
+_BORGENV=-i BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
 post-install:
 	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
@@ -64,6 +64,6 @@ post-install:
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg info ${WRKDIR}/borgrepo
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${_BORGENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} -vv
+	cd ${WRKSRC} && ${SETENV} ${_BORGENV} ${TEST_ENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} -vv
 
 .include <bsd.port.mk>
