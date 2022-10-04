@@ -1,3 +1,69 @@
+  <vuln vid="854c2afb-4424-11ed-af97-adcabf310f9b">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.7</lt></range>
+      </package>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/54853">
+	  <p>archive/tar: unbounded memory consumption when reading
+	    headers</p>
+	  <p>Reader.Read did not set a limit on the maximum size of
+	    file headers. A maliciously crafted archive could cause
+	    Read to allocate unbounded amounts of memory, potentially
+	    causing resource exhaustion or panics. Reader.Read now
+	    limits the maximum size of header blocks to 1 MiB.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/54663">
+	  <p>net/http/httputil: ReverseProxy should not forward
+	    unparseable query parameters</p>
+	  <p>Requests forwarded by ReverseProxy included the raw
+	    query parameters from the inbound request, including
+	    unparseable parameters rejected by net/http. This could
+	    permit query parameter smuggling when a Go proxy
+	    forwards a parameter with an unparseable value.</p>
+	  <p>ReverseProxy will now sanitize the query parameters in
+	    the forwarded query when the outbound request's Form
+	    field is set after the ReverseProxy.Director function
+	    returns, indicating that the proxy has parsed the query
+	    parameters. Proxies which do not parse query parameters
+	    continue to forward the original query parameters
+	    unchanged.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/55949">
+	  <p>regexp/syntax: limit memory used by parsing regexps</p>
+	  <p>The parsed regexp representation is linear in the size
+	    of the input, but in some cases the constant factor can be
+	    as high as 40,000, making relatively small regexps consume
+	    much larger amounts of memory.</p>
+	  <p>Each regexp being parsed is now limited to a 256 MB
+	    memory footprint. Regular expressions whose
+	    representation would use more space than that are now
+	    rejected. Normal use of regular expressions is
+	    unaffected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2879</cvename>
+      <cvename>CVE-2022-2880</cvename>
+      <cvename>CVE-2022-41715</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/xtuG5faxtaU/m/jEhlI_5WBgAJ</url>
+    </references>
+    <dates>
+      <discovery>2022-10-04</discovery>
+      <entry>2022-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d487d4fc-43a8-11ed-8b01-b42e991fc52e">
     <topic>zydis -- heap buffer overflow</topic>
     <affects>
