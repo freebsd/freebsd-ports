@@ -1,0 +1,2 @@
+atomium is a molecular modeller and file parser, capable of reading from and
+writing to .pdb, .cif and .mmtf files.

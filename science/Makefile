@@ -277,6 +277,7 @@
     SUBDIR += py-asdf-standard
     SUBDIR += py-asdf-transform-schemas
     SUBDIR += py-ase
+    SUBDIR += py-atomium
     SUBDIR += py-avogadrolibs
     SUBDIR += py-cdo
     SUBDIR += py-chainer
