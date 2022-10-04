@@ -52,6 +52,7 @@
     SUBDIR += chemtool-devel
     SUBDIR += chimes-calculator
     SUBDIR += chrono
+    SUBDIR += cif-tools
     SUBDIR += clhep
     SUBDIR += clipper
     SUBDIR += code_saturne
