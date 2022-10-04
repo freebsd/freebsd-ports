@@ -1541,6 +1541,7 @@
     SUBDIR += mono-addins
     SUBDIR += mpatrol
     SUBDIR += mph
+    SUBDIR += mrc
     SUBDIR += msbuild
     SUBDIR += msgpack
     SUBDIR += msgpack-d

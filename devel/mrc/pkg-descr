@@ -1,0 +1,4 @@
+Resource compiler to make executables self-contained.
+
+It stores data in the static data section of an executable. The data is then
+available through global variables.
