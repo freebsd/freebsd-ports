@@ -1,5 +1,5 @@
 PORTNAME=	mercurial
-PORTVERSION=	6.2.2
+PORTVERSION=	6.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
@@ -10,7 +10,7 @@ WWW=		https://www.mercurial-scm.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe python:3.6+ shebangfix
+USES=		cpe python:3.7+ shebangfix
 SHEBANG_FILES=	contrib/hgweb.fcgi hgweb.cgi
 USE_PYTHON=	autoplist distutils
 
