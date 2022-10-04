@@ -11,6 +11,7 @@ WWW=		https://numba.pydata.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		not compatible with onetbb-2021.6.0, see https://github.com/numba/numba/issues/8487
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
