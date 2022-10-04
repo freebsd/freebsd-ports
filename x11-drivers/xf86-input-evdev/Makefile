@@ -13,9 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libmtdev.so:devel/libmtdev
-RUN_DEPENDS=	webcamd>=3.1.0.1:multimedia/webcamd
-
 USES=		pathfix xorg-cat:driver
 CONFIGURE_ENV=	UDEV_CFLAGS=" " UDEV_LIBS=" "
+
+.include <bsd.port.options.mk>
+
+.if !${ABI:Mpurecap}
+RUN_DEPENDS=	webcamd>=3.1.0.1:multimedia/webcamd
+.endif
 
 .include <bsd.port.mk>
