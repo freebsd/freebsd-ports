@@ -1,5 +1,5 @@
 PORTNAME=	openssh
-DISTVERSION=	9.0p1
+DISTVERSION=	9.1p1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -101,7 +101,7 @@ PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI} || ${FLAVOR:U} == gssapi
-#BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
+BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
@@ -114,7 +114,8 @@ GSSAPI_DEBIAN_SUBDIR=	${DISTVERSION}-1
 PATCH_SITES+=	https://sources.debian.org/data/main/o/openssh/1:${GSSAPI_DEBIAN_SUBDIR}/debian/patches/gssapi.patch?dummy=/:gsskex
 # Bump this when updating the patch location
 GSSAPI_UPDATE_DATE=	20220203
-PATCHFILES+=	openssh-${DISTVERSION}-gsskex-all-20141021-debian-rh-${GSSAPI_UPDATE_DATE}.patch:-p1:gsskex
+#GSSAPI_DISTVERSION=	9.0p1
+PATCHFILES+=	openssh-${GSSAPI_DISTVERSION:U${DISTVERSION}}-gsskex-all-20141021-debian-rh-${GSSAPI_UPDATE_DATE}.patch:-p1:gsskex
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gssapi-auth2-gss.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gssapi-kexgssc.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gssapi-kexgsss.c
