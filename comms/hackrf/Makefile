@@ -1,5 +1,6 @@
 PORTNAME=	hackrf
 PORTVERSION=	2021.03.1
+PORTREVISION=	1
 CATEGORIES=	comms devel hamradio science security
 
 MAINTAINER=	tomek@cedro.info
@@ -8,7 +9,8 @@ WWW=		https://greatscottgadgets.com/hackrf/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float
 
 USES=		cmake
 USE_GITHUB=	YES
