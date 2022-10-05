@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2022-03-28 18:11:04 UTC
+--- content/browser/renderer_host/render_message_filter.cc.orig	2022-10-05 07:34:01 UTC
 +++ content/browser/renderer_host/render_message_filter.cc
-@@ -67,7 +67,7 @@
+@@ -66,7 +66,7 @@
  #if BUILDFLAG(IS_MAC)
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
@@ -9,21 +9,21 @@
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -129,7 +129,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
+@@ -128,7 +128,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
    std::move(callback).Run(routing_id, frame_token, devtools_frame_token);
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RenderMessageFilter::SetThreadPriorityOnFileThread(
+ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
      base::PlatformThreadId ns_tid,
-     base::ThreadPriority priority) {
-@@ -150,7 +150,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+     base::ThreadType thread_type) {
+@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
  }
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RenderMessageFilter::SetThreadPriority(int32_t ns_tid,
-                                             base::ThreadPriority priority) {
+ void RenderMessageFilter::SetThreadType(int32_t ns_tid,
+                                         base::ThreadType thread_type) {
    constexpr base::TaskTraits kTraits = {

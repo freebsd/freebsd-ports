@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2022-04-01 07:48:30 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2022-10-05 07:34:01 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -109,7 +109,7 @@
+@@ -108,7 +108,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,7 +9,7 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -178,7 +178,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -177,7 +177,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        main_thread_scheduler_(main_thread_scheduler) {
    // RenderThread may not exist in some tests.
    if (RenderThreadImpl::current()) {
@@ -18,7 +18,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -188,7 +188,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -187,7 +187,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  
@@ -27,18 +27,17 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -283,7 +283,8 @@ RendererBlinkPlatformImpl::WrapSharedURLLoaderFactory(
+@@ -254,7 +254,7 @@ RendererBlinkPlatformImpl::WrapURLLoaderFactory(
        /*terminate_sync_load_event=*/nullptr);
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+// pledge
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_BSD)
- void RendererBlinkPlatformImpl::SetDisplayThreadPriority(
-     base::PlatformThreadId thread_id) {
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ void RendererBlinkPlatformImpl::SetThreadType(base::PlatformThreadId thread_id,
+                                               base::ThreadType thread_type) {
    if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
-@@ -298,7 +299,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
- }
+@@ -265,7 +265,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
+ #endif
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)

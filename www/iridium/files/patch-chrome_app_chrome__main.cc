@@ -1,6 +1,6 @@
---- chrome/app/chrome_main.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/app/chrome_main.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/app/chrome_main.cc
-@@ -25,7 +25,7 @@
+@@ -26,7 +26,7 @@
  #include "chrome/app/notification_metrics.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/base_switches.h"
  #endif
  
-@@ -146,7 +146,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -152,7 +152,7 @@ int ChromeMain(int argc, const char** argv) {
      headless::SetUpCommandLine(command_line);
    } else {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

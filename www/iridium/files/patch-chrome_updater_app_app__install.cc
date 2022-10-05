@@ -1,6 +1,6 @@
---- chrome/updater/app/app_install.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/updater/app/app_install.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/updater/app/app_install.cc
-@@ -166,7 +166,7 @@ void AppInstall::WakeCandidate() {
+@@ -215,7 +215,7 @@ void AppInstall::WakeCandidate() {
        update_service_internal, base::WrapRefCounted(this)));
  }
  

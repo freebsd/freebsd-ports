@@ -1,6 +1,6 @@
---- chrome/common/pref_names.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/common/pref_names.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/common/pref_names.cc
-@@ -1188,7 +1188,7 @@ const char kUseAshProxy[] = "lacros.proxy.use_ash_prox
+@@ -1249,7 +1249,7 @@ const char kUseAshProxy[] = "lacros.proxy.use_ash_prox
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1291,7 +1291,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1348,7 +1348,7 @@ const char kShowUpdatePromotionInfoBar[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,8 +18,8 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1780,7 +1780,7 @@ const char kDownloadDefaultDirectory[] = "download.def
- const char kDownloadDirUpgraded[] = "download.directory_upgrade";
+@@ -1854,7 +1854,7 @@ const char kDownloadDirUpgraded[] = "download.director
+ const char kDownloadLastCompleteTime[] = "download.last_complete_time";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_MAC)
@@ -27,7 +27,7 @@
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2069,7 +2069,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
+@@ -2151,7 +2151,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
  // its isolation requirements.
  const char kWebAppsIsolationState[] = "web_apps.isolation_state";
  
@@ -36,7 +36,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  // Dictionary that maps origins to web apps that can act as URL handlers.
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
-@@ -2199,7 +2199,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2251,7 +2251,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -45,12 +45,12 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3129,7 +3129,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+@@ -3275,7 +3275,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
  const char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Boolean that indicates if native notifications are allowed to be used in
- // place of Chrome notifications. Will be replaced by kAllowSystemNotifications.
- const char kAllowNativeNotifications[] = "native_notifications.allowed";
+ // Boolean that indicates if system notifications are allowed to be used in
+ // place of Chrome notifications.
+ const char kAllowSystemNotifications[] = "system_notifications.allowed";

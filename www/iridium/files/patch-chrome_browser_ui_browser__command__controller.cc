@@ -1,24 +1,24 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -88,7 +88,7 @@
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
+@@ -96,7 +96,7 @@
+ #include "components/user_manager/user_manager.h"
  #endif
  
-@@ -277,7 +277,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/linux/linux_ui.h"
+ #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+@@ -285,7 +285,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+ #endif
+   }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
-   ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -513,7 +513,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+   auto* linux_ui = ui::LinuxUi::instance();
+@@ -530,7 +530,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -1040,7 +1040,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -1093,7 +1093,7 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

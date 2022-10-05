@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.h.orig	2022-03-28 18:11:04 UTC
+--- chrome/common/chrome_paths.h.orig	2022-10-05 07:34:01 UTC
 +++ chrome/common/chrome_paths.h
 @@ -56,7 +56,7 @@ enum {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
@@ -18,7 +18,7 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -105,7 +105,7 @@ enum {
+@@ -117,7 +117,7 @@ enum {
    DIR_CHROMEOS_CUSTOM_WALLPAPERS,     // Directory where custom wallpapers
                                        // reside.
  #endif

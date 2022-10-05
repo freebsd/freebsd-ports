@@ -1,6 +1,6 @@
---- net/dns/dns_config_service_posix.cc.orig	2022-03-28 18:11:04 UTC
+--- net/dns/dns_config_service_posix.cc.orig	2022-10-05 07:34:01 UTC
 +++ net/dns/dns_config_service_posix.cc
-@@ -33,6 +33,11 @@
+@@ -34,6 +34,11 @@
  #include "net/dns/dns_config_watcher_mac.h"
  #endif
  
@@ -12,7 +12,7 @@
  namespace net {
  
  namespace internal {
-@@ -129,6 +134,11 @@ class DnsConfigServicePosix::Watcher : public DnsConfi
+@@ -130,6 +135,11 @@ class DnsConfigServicePosix::Watcher : public DnsConfi
  
    bool Watch() override {
      CheckOnCorrectSequence();

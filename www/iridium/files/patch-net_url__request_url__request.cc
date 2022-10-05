@@ -1,13 +1,14 @@
---- net/url_request/url_request.cc.orig	2022-04-01 07:48:30 UTC
+--- net/url_request/url_request.cc.orig	2022-10-05 07:34:01 UTC
 +++ net/url_request/url_request.cc
-@@ -14,12 +14,14 @@
+@@ -13,6 +13,7 @@
+ #include "base/bind.h"
  #include "base/callback.h"
  #include "base/callback_helpers.h"
- #include "base/compiler_specific.h"
 +#include "base/command_line.h"
+ #include "base/compiler_specific.h"
  #include "base/metrics/histogram_macros.h"
  #include "base/rand_util.h"
- #include "base/strings/utf_string_conversions.h"
+@@ -20,6 +21,7 @@
  #include "base/synchronization/lock.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "base/values.h"

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2022-04-01 07:48:30 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2022-10-05 07:34:01 UTC
 +++ components/feature_engagement/public/feature_constants.cc
-@@ -22,7 +22,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
+@@ -24,7 +24,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
                                       base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,8 +9,8 @@
  const base::Feature kIPHDesktopSharedHighlightingFeature{
      "IPH_DesktopSharedHighlighting", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
-@@ -286,7 +286,7 @@ const base::Feature kIPHDefaultSiteViewFeature{
-     "IPH_DefaultSiteView", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -294,7 +294,7 @@ const base::Feature kIPHOverflowMenuTipFeature{
+     "IPH_OverflowMenuTip", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_IOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

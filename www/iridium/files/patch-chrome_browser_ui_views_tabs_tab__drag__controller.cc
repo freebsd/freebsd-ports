@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
-@@ -480,7 +480,7 @@ void TabDragController::Init(TabDragContext* source_co
+@@ -476,7 +476,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
    // - Chrome OS
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -9,7 +9,7 @@
    can_release_capture_ = false;
  #endif
    start_point_in_screen_ = gfx::Point(source_view_offset, mouse_offset.y());
-@@ -1021,7 +1021,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
+@@ -1029,7 +1029,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,16 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2350,7 +2350,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -1944,7 +1944,7 @@ void TabDragController::CompleteDrag() {
+       }
+ 
+       // If source window was maximized - maximize the new window as well.
+-#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC)
++#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_BSD)
+       // Keeping maximized state breaks snap to Grid on Windows when dragging
+       // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
+       // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
+@@ -2334,7 +2334,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

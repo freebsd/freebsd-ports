@@ -1,6 +1,6 @@
---- third_party/boringssl/src/crypto/fipsmodule/rand/internal.h.orig	2022-04-01 07:48:30 UTC
+--- third_party/boringssl/src/crypto/fipsmodule/rand/internal.h.orig	2022-10-05 07:34:01 UTC
 +++ third_party/boringssl/src/crypto/fipsmodule/rand/internal.h
-@@ -26,7 +26,8 @@ extern "C" {
+@@ -27,7 +27,8 @@ extern "C" {
  
  
  #if !defined(OPENSSL_WINDOWS) && !defined(OPENSSL_FUCHSIA) && \

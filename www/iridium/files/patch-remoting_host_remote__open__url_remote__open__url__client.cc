@@ -1,6 +1,6 @@
---- remoting/host/remote_open_url/remote_open_url_client.cc.orig	2022-03-28 18:11:04 UTC
+--- remoting/host/remote_open_url/remote_open_url_client.cc.orig	2022-10-05 07:34:01 UTC
 +++ remoting/host/remote_open_url/remote_open_url_client.cc
-@@ -15,7 +15,7 @@
+@@ -18,7 +18,7 @@
  #include "remoting/host/mojom/chromoting_host_services.mojom.h"
  #include "remoting/host/mojom/remote_url_opener.mojom.h"
  
@@ -9,7 +9,7 @@
  #include "remoting/host/remote_open_url/remote_open_url_client_delegate_linux.h"
  #elif BUILDFLAG(IS_WIN)
  #include "remoting/host/remote_open_url/remote_open_url_client_delegate_win.h"
-@@ -28,7 +28,7 @@ namespace {
+@@ -31,7 +31,7 @@ namespace {
  constexpr base::TimeDelta kRequestTimeout = base::Seconds(5);
  
  std::unique_ptr<RemoteOpenUrlClient::Delegate> CreateDelegate() {

@@ -1,6 +1,6 @@
---- tools/gn/src/base/files/file_posix.cc.orig	2022-03-28 18:11:04 UTC
+--- tools/gn/src/base/files/file_posix.cc.orig	2022-10-05 07:34:01 UTC
 +++ tools/gn/src/base/files/file_posix.cc
-@@ -369,7 +369,7 @@ void File::DoInitialize(const FilePath& path, uint32_t
+@@ -371,7 +371,7 @@ void File::DoInitialize(const FilePath& path, uint32_t
  bool File::Flush() {
    DCHECK(IsValid());
  

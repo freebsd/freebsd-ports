@@ -1,6 +1,6 @@
---- base/system/sys_info.h.orig	2022-03-28 18:11:04 UTC
+--- base/system/sys_info.h.orig	2022-10-05 07:34:01 UTC
 +++ base/system/sys_info.h
-@@ -212,6 +212,8 @@ class BASE_EXPORT SysInfo {
+@@ -211,6 +211,8 @@ class BASE_EXPORT SysInfo {
    // On Desktop this returns true when memory <= 2GB.
    static bool IsLowEndDevice();
  
@@ -9,12 +9,12 @@
   private:
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
    FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
-@@ -222,7 +224,7 @@ class BASE_EXPORT SysInfo {
+@@ -221,7 +223,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
 -    BUILDFLAG(IS_AIX)
 +    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
-   static int64_t AmountOfAvailablePhysicalMemory(
+   static uint64_t AmountOfAvailablePhysicalMemory(
        const SystemMemoryInfoKB& meminfo);
  #endif

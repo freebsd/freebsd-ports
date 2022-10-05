@@ -1,4 +1,4 @@
---- base/system/sys_info_posix.cc.orig	2022-03-28 20:16:21 UTC
+--- base/system/sys_info_posix.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/system/sys_info_posix.cc
 @@ -37,7 +37,7 @@
  
@@ -16,9 +16,9 @@
 -#endif  // !BUILDFLAG(IS_OPENBSD)
 +#endif  // !BUILDFLAG(IS_BSD)
  
- int64_t AmountOfVirtualMemory() {
+ uint64_t AmountOfVirtualMemory() {
    struct rlimit limit;
-@@ -143,11 +143,11 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
+@@ -144,11 +144,11 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
  
  namespace base {
  
@@ -31,8 +31,8 @@
 +#endif  // !BUILDFLAG(IS_BSD)
  
  // static
- int64_t SysInfo::AmountOfVirtualMemory() {
-@@ -239,6 +239,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+ uint64_t SysInfo::AmountOfVirtualMemory() {
+@@ -238,6 +238,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

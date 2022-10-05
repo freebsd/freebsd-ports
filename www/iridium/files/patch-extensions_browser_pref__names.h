@@ -1,11 +1,11 @@
---- extensions/browser/pref_names.h.orig	2022-03-28 18:11:04 UTC
+--- extensions/browser/pref_names.h.orig	2022-10-05 07:34:01 UTC
 +++ extensions/browser/pref_names.h
-@@ -101,7 +101,7 @@ extern const char kToolbar[];
- // uninstalled/removed and should not be reloaded.
+@@ -98,7 +98,7 @@ extern const char kStorageGarbageCollect[];
  extern const char kDeletedComponentExtensions[];
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  // A preference for whether Chrome Apps should be allowed. The default depends
  // on the ChromeAppsDeprecation feature flag, and this pref can extend support
  // for Chrome Apps by enterprise policy.

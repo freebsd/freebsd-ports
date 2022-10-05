@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/web_app_provider.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/web_applications/web_app_provider.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/web_applications/web_app_provider.cc
-@@ -289,7 +289,7 @@ void WebAppProvider::CreateSubsystems(Profile* profile
+@@ -271,7 +271,7 @@ void WebAppProvider::CreateSubsystems(Profile* profile
          protocol_handler_manager.get());
  
      std::unique_ptr<UrlHandlerManager> url_handler_manager;

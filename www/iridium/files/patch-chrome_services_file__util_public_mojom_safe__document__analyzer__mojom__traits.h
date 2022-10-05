@@ -1,6 +1,6 @@
---- chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h.orig	2022-03-28 18:11:04 UTC
+--- chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h.orig	2022-10-05 07:34:01 UTC
 +++ chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  #include "mojo/public/cpp/bindings/struct_traits.h"
  
  #if !BUILDFLAG(FULL_SAFE_BROWSING) || \

@@ -1,6 +1,6 @@
---- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2022-03-28 18:11:04 UTC
+--- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2022-10-05 07:34:01 UTC
 +++ gpu/ipc/common/gpu_memory_buffer_support.h
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/gpu_memory_buffer.h"
  

@@ -1,6 +1,6 @@
---- third_party/protobuf/src/google/protobuf/stubs/platform_macros.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/protobuf/src/google/protobuf/stubs/platform_macros.h.orig	2022-10-05 07:34:01 UTC
 +++ third_party/protobuf/src/google/protobuf/stubs/platform_macros.h
-@@ -118,7 +118,7 @@ GOOGLE_PROTOBUF_PLATFORM_ERROR
+@@ -122,7 +122,7 @@ GOOGLE_PROTOBUF_PLATFORM_ERROR
  
  #undef GOOGLE_PROTOBUF_PLATFORM_ERROR
  

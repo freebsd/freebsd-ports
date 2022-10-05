@@ -1,15 +1,15 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2022-04-01 07:48:30 UTC
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2022-10-05 07:34:01 UTC
 +++ content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -115,7 +115,7 @@
+@@ -116,7 +116,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "content/browser/accessibility/browser_accessibility_auralinux.h"
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -453,7 +453,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
+ #include "ui/linux/linux_ui.h"
+@@ -441,7 +441,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
    if (manager)
      return ToBrowserAccessibilityWin(manager->GetRoot())->GetCOM();
  
@@ -18,7 +18,7 @@
    BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetRoot())
-@@ -1576,7 +1576,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -1579,7 +1579,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return GetTextInputManager() && GetTextInputManager()->should_do_learning();
  }
  
@@ -27,7 +27,7 @@
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -2412,7 +2412,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2400,7 +2400,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -36,12 +36,12 @@
    return NeedsInputGrab();
  #else
    return false;
-@@ -2604,7 +2604,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -2577,7 +2577,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
-   ui::TextEditKeyBindingsDelegateAuraLinux* keybinding_delegate =
-       ui::GetTextEditKeyBindingsDelegate();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
+   if (!event.skip_in_browser && linux_ui && event.os_event &&

@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_fido.cc.orig	2022-03-28 18:11:04 UTC
+--- services/device/hid/hid_connection_fido.cc.orig	2022-10-05 07:34:01 UTC
 +++ services/device/hid/hid_connection_fido.cc
-@@ -0,0 +1,198 @@
+@@ -0,0 +1,197 @@
 +// Copyright (c) 2020 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -12,7 +12,6 @@
 +#include "base/location.h"
 +#include "base/numerics/safe_math.h"
 +#include "base/posix/eintr_wrapper.h"
-+#include "base/task/post_task.h"
 +#include "base/task/single_thread_task_runner.h"
 +#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_restrictions.h"

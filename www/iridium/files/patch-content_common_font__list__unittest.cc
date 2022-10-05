@@ -1,11 +1,11 @@
---- content/common/font_list_unittest.cc.orig	2022-03-28 18:11:04 UTC
+--- content/common/font_list_unittest.cc.orig	2022-10-05 07:34:01 UTC
 +++ content/common/font_list_unittest.cc
-@@ -51,7 +51,7 @@ TEST(FontList, GetFontList) {
-         EXPECT_TRUE(HasFontWithName(*fonts, "MS Gothic", "MS Gothic"));
-         EXPECT_TRUE(HasFontWithName(*fonts, "Segoe UI", "Segoe UI"));
-         EXPECT_TRUE(HasFontWithName(*fonts, "Verdana", "Verdana"));
+@@ -48,7 +48,7 @@ TEST(FontList, GetFontList) {
+         EXPECT_TRUE(HasFontWithName(fonts, "MS Gothic", "MS Gothic"));
+         EXPECT_TRUE(HasFontWithName(fonts, "Segoe UI", "Segoe UI"));
+         EXPECT_TRUE(HasFontWithName(fonts, "Verdana", "Verdana"));
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-         EXPECT_TRUE(HasFontWithName(*fonts, "Arimo", "Arimo"));
+         EXPECT_TRUE(HasFontWithName(fonts, "Arimo", "Arimo"));
  #else
-         EXPECT_TRUE(HasFontWithName(*fonts, "Arial", "Arial"));
+         EXPECT_TRUE(HasFontWithName(fonts, "Arial", "Arial"));

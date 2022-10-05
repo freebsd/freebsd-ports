@@ -1,6 +1,6 @@
---- third_party/pdfium/core/fxge/cfx_fontmapper.cpp.orig	2022-03-28 18:11:04 UTC
+--- third_party/pdfium/core/fxge/cfx_fontmapper.cpp.orig	2022-10-05 07:34:01 UTC
 +++ third_party/pdfium/core/fxge/cfx_fontmapper.cpp
-@@ -155,7 +155,7 @@ constexpr AltFontFamily kAltFontFamilies[] = {
+@@ -157,7 +157,7 @@ constexpr AltFontFamily kAltFontFamilies[] = {
      {"ForteMT", "Forte"},
  };
  

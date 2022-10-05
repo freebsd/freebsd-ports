@@ -1,6 +1,6 @@
---- v8/src/compiler/backend/ia32/instruction-selector-ia32.cc.orig	2022-03-28 18:11:04 UTC
+--- v8/src/compiler/backend/ia32/instruction-selector-ia32.cc.orig	2022-10-05 07:34:01 UTC
 +++ v8/src/compiler/backend/ia32/instruction-selector-ia32.cc
-@@ -3019,6 +3019,7 @@ void InstructionSelector::VisitI8x16Shuffle(Node* node
+@@ -3026,6 +3026,7 @@ void InstructionSelector::VisitI8x16Shuffle(Node* node
    Emit(opcode, 1, &dst, input_count, inputs, temp_count, temps);
  }
  
@@ -8,7 +8,7 @@
  void InstructionSelector::VisitI8x16Swizzle(Node* node) {
    InstructionCode op = kIA32I8x16Swizzle;
  
-@@ -3072,6 +3073,9 @@ void VisitMinOrMax(InstructionSelector* selector, Node
+@@ -3079,6 +3080,9 @@ void VisitMinOrMax(InstructionSelector* selector, Node
  void InstructionSelector::VisitF32x4Pmin(Node* node) {
    VisitMinOrMax(this, node, kIA32Minps, true);
  }

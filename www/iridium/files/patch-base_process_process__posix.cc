@@ -1,6 +1,6 @@
---- base/process/process_posix.cc.orig	2022-04-01 07:48:30 UTC
+--- base/process/process_posix.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/process/process_posix.cc
-@@ -23,10 +23,15 @@
+@@ -25,10 +25,15 @@
  #include "build/build_config.h"
  #include "third_party/abseil-cpp/absl/types/optional.h"
  
@@ -35,7 +35,7 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -356,7 +361,55 @@ void Process::Exited(int exit_code) const {}
+@@ -392,7 +397,55 @@ void Process::Exited(int exit_code) const {
  
  int Process::GetPriority() const {
    DCHECK(IsValid());
@@ -43,7 +43,7 @@
 +#if defined(OS_BSD)
 +  return 0;
 +#else
-   return getpriority(PRIO_PROCESS, process_);
+   return getpriority(PRIO_PROCESS, static_cast<id_t>(process_));
 +#endif
 +}
 +
@@ -58,14 +58,14 @@
 +  Time ct = Time();
 +
 +#if !defined(OS_BSD)
-+  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
++  if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
 +    goto out;
 +
 +  mib[5] = (info_size / sizeof(struct kinfo_proc));
 +  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL)
 +    goto out;
 +
-+  if (sysctl(mib, base::size(mib), info, &info_size, NULL, 0) < 0)
++  if (sysctl(mib, std::size(mib), info, &info_size, NULL, 0) < 0)
 +    goto out;
 +
 +  ct = Time::FromTimeT(info->p_ustart_sec);

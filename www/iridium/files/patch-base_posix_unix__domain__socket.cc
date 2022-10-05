@@ -1,6 +1,6 @@
---- base/posix/unix_domain_socket.cc.orig	2022-03-28 18:11:04 UTC
+--- base/posix/unix_domain_socket.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/posix/unix_domain_socket.cc
-@@ -50,7 +50,7 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
+@@ -51,7 +51,7 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
  
  // static
  bool UnixDomainSocket::EnableReceiveProcessId(int fd) {
@@ -9,7 +9,7 @@
    const int enable = 1;
    return setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &enable, sizeof(enable)) == 0;
  #else
-@@ -140,7 +140,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -149,7 +149,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
  
    const size_t kControlBufferSize =
        CMSG_SPACE(sizeof(int) * kMaxFileDescriptors)
@@ -18,7 +18,7 @@
        // macOS does not support ucred.
        // macOS supports xucred, but this structure is insufficient.
        + CMSG_SPACE(sizeof(struct ucred))
-@@ -168,7 +168,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -177,7 +177,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
          wire_fds = reinterpret_cast<int*>(CMSG_DATA(cmsg));
          wire_fds_len = payload_len / sizeof(int);
        }
@@ -27,7 +27,7 @@
        // macOS does not support SCM_CREDENTIALS.
        if (cmsg->cmsg_level == SOL_SOCKET &&
            cmsg->cmsg_type == SCM_CREDENTIALS) {
-@@ -202,6 +202,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -211,6 +211,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
      socklen_t pid_size = sizeof(pid);
      if (getsockopt(fd, SOL_LOCAL, LOCAL_PEERPID, &pid, &pid_size) != 0)
        pid = -1;

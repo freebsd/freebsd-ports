@@ -1,7 +1,7 @@
---- components/password_manager/core/common/password_manager_features.h.orig	2022-04-01 07:48:30 UTC
+--- components/password_manager/core/common/password_manager_features.h.orig	2022-10-05 07:34:01 UTC
 +++ components/password_manager/core/common/password_manager_features.h
-@@ -27,7 +27,7 @@ extern const base::Feature kEnablePasswordsAccountStor
- extern const base::Feature KEnablePasswordGenerationForClearTextFields;
+@@ -37,7 +37,7 @@ extern const base::Feature KEnablePasswordGenerationFo
+ extern const base::Feature kEnablePasswordManagerWithinFencedFrame;
  extern const base::Feature kFillingAcrossAffiliatedWebsites;
  extern const base::Feature kFillOnAccountSelect;
 -#if BUILDFLAG(IS_LINUX)
@@ -9,15 +9,14 @@
  extern const base::Feature kForceInitialSyncWhenDecryptionFails;
  #endif
  extern const base::Feature kInferConfirmationPasswordField;
-@@ -46,11 +46,11 @@ extern const base::Feature kPasswordScriptsFetching;
+@@ -63,10 +63,10 @@ extern const base::Feature kPasswordReuseDetectionEnab
+ extern const base::Feature kPasswordScriptsFetching;
+ extern const base::Feature kPasswordStrengthIndicator;
  extern const base::Feature kRecoverFromNeverSaveAndroid;
- extern const base::Feature kReparseServerPredictionsFollowingFormChange;
- extern const base::Feature kSecondaryServerFieldPredictions;
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  extern const base::Feature kSkipUndecryptablePasswords;
  #endif
- extern const base::Feature kSupportForAddPasswordsInSettings;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  extern const base::Feature kSyncUndecryptablePasswordsLinux;

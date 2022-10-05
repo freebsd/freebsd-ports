@@ -1,9 +1,9 @@
---- base/allocator/partition_allocator/page_allocator.h.orig	2022-03-28 18:11:04 UTC
+--- base/allocator/partition_allocator/page_allocator.h.orig	2022-10-05 07:34:01 UTC
 +++ base/allocator/partition_allocator/page_allocator.h
-@@ -194,7 +194,7 @@ BASE_EXPORT void DecommitAndZeroSystemPages(void* addr
- // Whether decommitted memory is guaranteed to be zeroed when it is
+@@ -206,7 +206,7 @@ void DecommitAndZeroSystemPages(void* address, size_t 
  // recommitted. Do not assume that this will not change over time.
- constexpr BASE_EXPORT bool DecommittedMemoryIsAlwaysZeroed() {
+ constexpr PA_COMPONENT_EXPORT(
+     PARTITION_ALLOC) bool DecommittedMemoryIsAlwaysZeroed() {
 -#if BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
    return false;

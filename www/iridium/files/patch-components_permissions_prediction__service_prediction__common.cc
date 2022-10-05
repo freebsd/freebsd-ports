@@ -1,6 +1,6 @@
---- components/permissions/prediction_service/prediction_common.cc.orig	2022-03-28 18:11:04 UTC
+--- components/permissions/prediction_service/prediction_common.cc.orig	2022-10-05 07:34:01 UTC
 +++ components/permissions/prediction_service/prediction_common.cc
-@@ -36,7 +36,7 @@ int BucketizeValue(int count) {
+@@ -33,7 +33,7 @@ int BucketizeValue(int count) {
  
  ClientFeatures_Platform GetCurrentPlatformProto() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
    return permissions::ClientFeatures_Platform_PLATFORM_DESKTOP;
  #elif BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
    return permissions::ClientFeatures_Platform_PLATFORM_MOBILE;
-@@ -47,7 +47,7 @@ ClientFeatures_Platform GetCurrentPlatformProto() {
+@@ -44,7 +44,7 @@ ClientFeatures_Platform GetCurrentPlatformProto() {
  
  ClientFeatures_PlatformEnum GetCurrentPlatformEnumProto() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

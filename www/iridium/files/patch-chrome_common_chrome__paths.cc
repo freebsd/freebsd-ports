@@ -1,6 +1,6 @@
---- chrome/common/chrome_paths.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/common/chrome_paths.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/common/chrome_paths.cc
-@@ -44,14 +44,14 @@
+@@ -49,14 +49,14 @@
  
  namespace {
  
@@ -27,7 +27,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -407,12 +407,14 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -421,12 +421,14 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -44,7 +44,7 @@
  #endif
        break;
      }
-@@ -422,7 +424,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -436,7 +438,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -53,7 +53,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
          return false;
-@@ -430,7 +432,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -444,7 +446,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -62,7 +62,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -475,7 +477,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -488,7 +490,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
  #endif
  
@@ -71,7 +71,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -489,6 +491,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -502,6 +504,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/opt/chrome/native-messaging-hosts"));

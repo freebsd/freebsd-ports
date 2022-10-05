@@ -1,17 +1,17 @@
---- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2022-10-05 07:34:01 UTC
 +++ third_party/blink/renderer/core/frame/web_frame_test.cc
-@@ -6310,7 +6310,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
-   EXPECT_EQ(64, ComputeOffset(layout_object, 1000, 1000));
- }
- 
+@@ -6357,7 +6357,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
+   MoveCaretStaysHorizontallyAlignedWhenMoved
+ #endif
+ // TODO(crbug.com/1317375): Build these tests on all platforms.
 -#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
 +#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
- TEST_F(WebFrameTest, SelectRangeStaysHorizontallyAlignedWhenMoved) {
+ TEST_F(WebFrameTest, MAYBE_SelectRangeStaysHorizontallyAlignedWhenMoved) {
    RegisterMockedHttpURLLoad("move_caret.html");
  
-@@ -6689,7 +6689,7 @@ TEST_F(CompositedSelectionBoundsTest, SVGBasic) {
- TEST_F(CompositedSelectionBoundsTest, SVGTextWithFragments) {
-   RunTest("composited_selection_bounds_svg_text_with_fragments.html");
+@@ -6753,7 +6753,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionSc
+ TEST_F(CompositedSelectionBoundsTest, LargeSelectionNoScroll) {
+   RunTest("composited_selection_bounds_large_selection_noscroll.html");
  }
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

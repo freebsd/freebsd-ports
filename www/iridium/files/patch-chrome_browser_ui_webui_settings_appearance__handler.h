@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.h
 @@ -40,7 +40,7 @@ class AppearanceHandler : public SettingsPageUIHandler
  
@@ -7,5 +7,5 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
    // Changes the UI theme of the browser to the system (GTK+) theme.
-   void HandleUseSystemTheme(base::Value::ConstListView args);
+   void HandleUseSystemTheme(const base::Value::List& args);
  #endif

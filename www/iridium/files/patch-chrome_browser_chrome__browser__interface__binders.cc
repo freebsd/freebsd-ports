@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -96,13 +96,13 @@
+@@ -113,13 +113,13 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -16,7 +16,7 @@
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "ui/webui/resources/cr_components/app_management/app_management.mojom.h"
  #endif
-@@ -172,7 +172,7 @@
+@@ -188,7 +188,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -25,8 +25,8 @@
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -665,7 +665,7 @@ void PopulateChromeFrameBinders(
- #endif
+@@ -780,7 +780,7 @@ void PopulateChromeFrameBinders(
+ #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -34,16 +34,16 @@
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -673,7 +673,7 @@ void PopulateChromeFrameBinders(
+@@ -788,7 +788,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
-       !render_frame_host->GetParent()) {
+       render_frame_host->IsInPrimaryMainFrame()) {
      map->Add<blink::mojom::SubAppsService>(
-@@ -714,14 +714,14 @@ void PopulateChromeWebUIFrameBinders(
+@@ -843,14 +843,14 @@ void PopulateChromeWebUIFrameBinders(
        SegmentationInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -60,8 +60,8 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1040,7 +1040,7 @@ void PopulateChromeWebUIFrameBinders(
- #endif
+@@ -1235,7 +1235,7 @@ void PopulateChromeWebUIFrameBinders(
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
