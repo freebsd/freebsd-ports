@@ -1,5 +1,5 @@
 PORTNAME=	pyqubo
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,14 +10,12 @@ WWW=		https://pyqubo.readthedocs.io/en/latest/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.10:devel/py-deprecated@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.12:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dimod>=0.9.14:science/py-dimod@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-neal>=0.5.7:science/py-dwave-neal@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.15.0:devel/py-six@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}codecov>=2.1.9:devel/py-codecov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coverage>=4.5.1:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbsphinx>=0.8.3:textproc/py-nbsphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0.11.1:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.36.2:devel/py-wheel@${PY_FLAVOR} \
@@ -28,6 +26,8 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		pybind11>0:devel/pybind11 \
 		robin-hood-hashing>0:devel/robin-hood-hashing
 RUN_DEPENDS=	${PY_DEPENDS}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.1.9:devel/py-codecov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>=4.5.1:devel/py-coverage@${PY_FLAVOR}
 
 USES=		eigen:3 python:3.8+
 USE_PYTHON=	distutils cython autoplist unittest
