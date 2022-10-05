@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.2
+DISTVERSION=	5.1.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	anes-0.1.6 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.64 \
+		anyhow-1.0.65 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -43,8 +42,10 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.20 \
+		clap-4.0.8 \
 		clap_lex-0.2.3 \
-		colored_json-2.1.0 \
+		clap_lex-0.3.0 \
+		colored_json-3.0.1 \
 		concurrent-queue-1.2.2 \
 		cpufeatures-0.2.2 \
 		criterion-0.4.0 \
@@ -55,7 +56,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		crossbeam-utils-0.8.8 \
 		crypto-common-0.1.6 \
 		ctor-0.1.22 \
-		digest-0.10.3 \
+		digest-0.10.5 \
 		either-1.6.1 \
 		event-listener-2.5.2 \
 		fastrand-1.7.0 \
@@ -85,10 +86,10 @@ CARGO_CRATES=	anes-0.1.6 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
-		pest-2.3.0 \
-		pest_derive-2.3.0 \
-		pest_generator-2.3.0 \
-		pest_meta-2.3.0 \
+		pest-2.4.0 \
+		pest_derive-2.4.0 \
+		pest_generator-2.4.0 \
+		pest_meta-2.4.0 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
 		plotters-0.3.1 \
@@ -107,7 +108,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.85 \
-		sha-1-0.10.0 \
+		sha1-0.10.5 \
 		signal-hook-0.3.13 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.5 \
@@ -137,8 +138,8 @@ CARGO_CRATES=	anes-0.1.6 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
-
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
