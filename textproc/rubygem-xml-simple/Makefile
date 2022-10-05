@@ -1,5 +1,5 @@
 PORTNAME=	xml-simple
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/maik/xml-simple
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
+
+RUN_DEPENDS=	rubygem-rexml>0:textproc/rubygem-rexml
 
 NO_ARCH=	yes
 
