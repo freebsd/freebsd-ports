@@ -1,5 +1,5 @@
 PORTNAME=	pyzabbix
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,12 @@ WWW=		https://github.com/lukecyca/pyzabbix
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8.5:devel/py-semantic-version@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
