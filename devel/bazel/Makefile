@@ -1,5 +1,5 @@
 PORTNAME=	bazel
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.0 # please make sure that science/py-tensorflow builds before updating
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
