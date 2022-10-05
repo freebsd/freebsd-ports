@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.230
 CATEGORIES=	graphics wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	be9ec70fcbb1.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Tools/pull/687
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tools and demos for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-Tools
