@@ -12,10 +12,10 @@ share/applications/gnome-datetime-panel.desktop
 share/applications/gnome-default-apps-panel.desktop
 share/applications/gnome-diagnostics-panel.desktop
 share/applications/gnome-display-panel.desktop
+share/applications/gnome-firmware-security-panel.desktop
 share/applications/gnome-info-overview-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-location-panel.desktop
-share/applications/gnome-lock-panel.desktop
 share/applications/gnome-microphone-panel.desktop
 share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-multitasking-panel.desktop
@@ -25,6 +25,7 @@ share/applications/gnome-power-panel.desktop
 share/applications/gnome-printers-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-removable-media-panel.desktop
+share/applications/gnome-screen-panel.desktop
 share/applications/gnome-search-panel.desktop
 share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
@@ -69,7 +70,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings-power-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-printers-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-region-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-removable-media-symbolic.svg
-share/icons/hicolor/scalable/apps/org.gnome.Settings-screen-lock-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Settings-screen-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-search-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-sharing-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-sound-symbolic.svg
@@ -79,6 +80,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
 share/icons/hicolor/scalable/status/info-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Settings-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -322,7 +324,7 @@ share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
 share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
 share/polkit-1/actions/org.gnome.controlcenter.user-accounts.policy
 share/polkit-1/rules.d/gnome-control-center.rules
-share/sounds/gnome/default/alerts/bark.ogg
-share/sounds/gnome/default/alerts/drip.ogg
-share/sounds/gnome/default/alerts/glass.ogg
-share/sounds/gnome/default/alerts/sonar.ogg
+share/sounds/gnome/default/alerts/click.ogg
+share/sounds/gnome/default/alerts/hum.ogg
+share/sounds/gnome/default/alerts/string.ogg
+share/sounds/gnome/default/alerts/swing.ogg
