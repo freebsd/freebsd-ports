@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2019-12-21 09:41:47 UTC
+--- src/Makefile.in.orig	2020-08-13 19:57:03 UTC
 +++ src/Makefile.in
-@@ -2607,7 +2607,7 @@ info: info-am
+@@ -2625,7 +2625,7 @@ info: info-am
  
  info-am:
  

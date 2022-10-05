@@ -9,6 +9,15 @@
  #define X509_STORE_CTX_get_by_subject X509_STORE_get_by_subject
  #endif
  extern "C" {
+@@ -775,7 +775,7 @@ error:
+ #elif USE_OPENSSL
+ //static int lftp_ssl_passwd_callback(char *buf,int size,int rwflag,void *userdata);
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || (defined (LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000L)
+ // for compatibility with older versions
+ X509_OBJECT *X509_OBJECT_new()
+ {
 @@ -840,7 +840,7 @@ lftp_ssl_openssl_instance::lftp_ssl_openssl_instance()
     ssl_ctx=SSL_CTX_new();
     X509_set_default_verify_paths(ssl_ctx->cert);
