@@ -1,6 +1,6 @@
 PORTNAME=	omniauth-google-oauth2
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/zquestz/omniauth-google-oauth2
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-jwt>=2.0:www/rubygem-jwt \
-		rubygem-omniauth1>=1.1.1:security/rubygem-omniauth1 \
+		rubygem-omniauth>=1.1.1:security/rubygem-omniauth \
 		rubygem-omniauth-oauth2>=1.5:net/rubygem-omniauth-oauth2
 
 USES=		gem
