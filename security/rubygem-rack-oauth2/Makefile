@@ -1,5 +1,5 @@
 PORTNAME=	rack-oauth2
-PORTVERSION=	1.19.0
+PORTVERSION=	1.21.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
