@@ -1,3 +1,30 @@
+  <vuln vid="c2a89e8f-44e9-11ed-9215-00e081b7aa2d">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.370</lt></range>
+      </package>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2022-09-21/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-2886 / CVE-2022-41224</h5>
+	  <p>XSS vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41224</cvename>
+      <url>https://www.jenkins.io/security/advisory/2022-09-21/</url>
+    </references>
+    <dates>
+      <discovery>2022-09-21</discovery>
+      <entry>2022-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="854c2afb-4424-11ed-af97-adcabf310f9b">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
