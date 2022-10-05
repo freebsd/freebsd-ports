@@ -5672,6 +5672,7 @@
     SUBDIR += quantum
     SUBDIR += quickcheck++
     SUBDIR += quilt
+    SUBDIR += qxlsx
     SUBDIR += rabs
     SUBDIR += radare2
     SUBDIR += radian

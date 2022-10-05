@@ -1,0 +1,3 @@
+QXlsx is reader/writer library for Microsoft Excel files (*.xlsx).
+Because QtXlsx is no longer supported since 2014, new project had
+been created based off of it in 2017.
