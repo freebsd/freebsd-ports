@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.41.1
+DISTVERSION=	2.50.6
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +18,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:9b05121:grame_cncm_faustlibraries/libraries \
-		google:oboe:7146098:google_oboe/architecture/android/app/oboe \
-		google:oboe:7146098:google_oboe/architecture/smartKeyboard/android/app/oboe
+		grame-cncm:faustlibraries:f9efea9:grame_cncm_faustlibraries/libraries
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
 
@@ -48,6 +46,12 @@ HTTPD_CMAKE_BOOL=	INCLUDE_HTTP
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
+
+post-patch:
+	# change qmake (5) -> qmake6
+	@cd ${WRKSRC} && \
+		${REINPLACE_CMD} -i '' -e 's|echo qmake)|echo qmake6)|; s|echo qmake-qt5)|echo qmake6)|' \
+			tools/faust2appls/faust2*
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
