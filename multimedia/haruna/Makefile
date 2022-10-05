@@ -1,6 +1,5 @@
 PORTNAME=	haruna
-DISTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSION=	0.9.2
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 CATEGORIES=	multimedia kde
 
@@ -13,7 +12,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	kio-extras>0:devel/kio-extras \
 		yt-dlp:www/yt-dlp
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		doctools filemetadata i18n iconthemes kirigami2 itemviews jobwidgets \
 		kio service solid widgetsaddons windowsystem xmlgui \
