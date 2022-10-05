@@ -1,0 +1,11 @@
+--- templates/locales/en.yml.orig	2021-11-05 21:15:44 UTC
++++ templates/locales/en.yml
+@@ -1863,7 +1863,7 @@ en:
+           Address: %{address}
+           Ranges: %{ranges}
+ 
+-        Valid ranges can be modified in the /etc/vbox/networks.conf file. For
++        Valid ranges can be modified in the @PREFIX@/etc/vbox/networks.conf file. For
+         more information including valid format see:
+ 
+           https://www.virtualbox.org/manual/ch06.html#network_hostonly

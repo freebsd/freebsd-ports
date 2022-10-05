@@ -1,7 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.19
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -70,7 +70,10 @@ BASH_PLIST_FILES=	share/bash-completion/completions/vagrant
 ZSH_PLIST_FILES=	share/share/zsh/site-functions/_vagrant
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' ${WRKSRC}/bin/vagrant
+	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' \
+		${WRKSRC}/bin/vagrant \
+		${WRKSRC}/plugins/providers/virtualbox/action/network.rb \
+		${WRKSRC}/templates/locales/en.yml
 
 do-build:
 	(cd ${WRKSRC}; (${ECHO_CMD} -e "install:\n\techo\n") > Makefile)
