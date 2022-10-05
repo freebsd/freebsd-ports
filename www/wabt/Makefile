@@ -1,5 +1,5 @@
 PORTNAME=	wabt
-DISTVERSION=	1.0.29
+DISTVERSION=	1.0.30
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cmake:testing localbase:ldflags python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
-GH_TUPLE=	WebAssembly:testsuite:d42da0117f7a93c6a9127e2b9eec64749152c4c1:WebAssembly_testsuite/third_party/testsuite \
+GH_TUPLE=	WebAssembly:testsuite:4f77306bb63151631d84f58dedf67958eb9911b9:WebAssembly_testsuite/third_party/testsuite \
 		dabeaz:ply:d776a2ece6c12bf8f8b6a0e65b48546ac6078765:dabeaz_ply/third_party/ply \
 		WebAssembly:wasm-c-api:d9a80099d496b5cdba6f3fe8fc77586e0e505ddc:WebAssembly_wasm_c_api/third_party/wasm-c-api \
 		nodejs:uvwasi:55eff19f4c7e69ec151424a037f951e0ad006ed6:nodejs_uvwasi/third_party/uvwasi
