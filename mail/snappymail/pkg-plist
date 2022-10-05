@@ -794,7 +794,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Common/Paginator.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Common/PopupsAsk.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Common/PopupsLanguages.html
-%%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Components/CheckboxMaterialDesign.html
+%%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Components/Checkbox.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Components/Select.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/Login.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/MailFolderList.html
