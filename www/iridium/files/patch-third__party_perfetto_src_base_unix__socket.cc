@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/unix_socket.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/perfetto/src/base/unix_socket.cc.orig	2022-10-05 07:34:01 UTC
 +++ third_party/perfetto/src/base/unix_socket.cc
 @@ -42,7 +42,7 @@
  #include <unistd.h>
@@ -9,7 +9,7 @@
  #include <sys/ucred.h>
  #endif
  
-@@ -791,9 +791,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+@@ -801,9 +801,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
      return;
    PERFETTO_CHECK(peer_cred_mode_ != SockPeerCredMode::kIgnore);
  

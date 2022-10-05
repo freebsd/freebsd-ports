@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/spinning_mutex.cc.orig	2022-03-28 18:11:04 UTC
+--- base/allocator/partition_allocator/spinning_mutex.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/allocator/partition_allocator/spinning_mutex.cc
-@@ -17,7 +17,15 @@
+@@ -18,7 +18,15 @@
  
  #if defined(PA_HAS_LINUX_KERNEL)
  #include <errno.h>
@@ -16,7 +16,7 @@
  #include <sys/syscall.h>
  #include <unistd.h>
  #endif  // defined(PA_HAS_LINUX_KERNEL)
-@@ -85,8 +93,13 @@ void SpinningMutex::FutexWait() {
+@@ -107,8 +115,13 @@ void SpinningMutex::FutexWait() {
    // |kLockedContended| anymore. Note that even without spurious wakeups, the
    // value of |state_| is not guaranteed when this returns, as another thread
    // may get the lock before we get to run.
@@ -30,7 +30,7 @@
  
    if (err) {
      // These are programming error, check them.
-@@ -98,8 +111,14 @@ void SpinningMutex::FutexWait() {
+@@ -120,8 +133,14 @@ void SpinningMutex::FutexWait() {
  
  void SpinningMutex::FutexWake() {
    int saved_errno = errno;

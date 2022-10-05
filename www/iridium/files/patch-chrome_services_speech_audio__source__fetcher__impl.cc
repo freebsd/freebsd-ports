@@ -1,6 +1,6 @@
---- chrome/services/speech/audio_source_fetcher_impl.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/services/speech/audio_source_fetcher_impl.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/services/speech/audio_source_fetcher_impl.cc
-@@ -68,7 +68,7 @@ void AudioSourceFetcherImpl::Start(
+@@ -69,7 +69,7 @@ void AudioSourceFetcherImpl::Start(
  
    // TODO(crbug.com/1185978): Check implementation / sandbox policy on Mac and
    // Windows.

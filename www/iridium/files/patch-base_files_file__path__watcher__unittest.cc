@@ -1,6 +1,6 @@
---- base/files/file_path_watcher_unittest.cc.orig	2022-03-28 18:11:04 UTC
+--- base/files/file_path_watcher_unittest.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/files/file_path_watcher_unittest.cc
-@@ -450,7 +450,7 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
+@@ -498,7 +498,7 @@ TEST_F(FilePathWatcherTest, MAYBE_WatchDirectory) {
    VLOG(1) << "Waiting for file1 creation";
    ASSERT_TRUE(WaitForEvents());
  
@@ -9,7 +9,7 @@
    // Mac implementation does not detect files modified in a directory.
    ASSERT_TRUE(WriteFile(file1, "content v2"));
    VLOG(1) << "Waiting for file1 modification";
-@@ -1038,7 +1038,7 @@ enum Permission {
+@@ -1118,7 +1118,7 @@ enum Permission {
    Execute
  };
  
@@ -18,7 +18,7 @@
  bool ChangeFilePermissions(const FilePath& path, Permission perm, bool allow) {
    struct stat stat_buf;
  
-@@ -1069,7 +1069,7 @@ bool ChangeFilePermissions(const FilePath& path, Permi
+@@ -1149,7 +1149,7 @@ bool ChangeFilePermissions(const FilePath& path, Permi
  }
  #endif  // BUILDFLAG(IS_APPLE)
  

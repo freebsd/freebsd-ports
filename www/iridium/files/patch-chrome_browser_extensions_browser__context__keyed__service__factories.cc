@@ -1,6 +1,6 @@
---- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
-@@ -52,7 +52,7 @@
+@@ -53,7 +53,7 @@
  #include "extensions/browser/api/networking_private/networking_private_delegate_factory.h"
  #include "ppapi/buildflags/buildflags.h"
  
@@ -9,10 +9,10 @@
  #include "chrome/browser/extensions/api/system_indicator/system_indicator_manager_factory.h"
  #endif
  
-@@ -124,7 +124,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -122,7 +122,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
    extensions::SettingsPrivateEventRouterFactory::GetInstance();
    extensions::SettingsOverridesAPI::GetFactoryInstance();
-   extensions::SignedInDevicesManager::GetFactoryInstance();
+   extensions::SidePanelService::GetFactoryInstance();
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    extensions::SystemIndicatorManagerFactory::GetInstance();

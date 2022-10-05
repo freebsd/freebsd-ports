@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2022-04-01 07:48:30 UTC
+--- third_party/blink/renderer/core/layout/layout_view.cc.orig	2022-10-05 07:34:01 UTC
 +++ third_party/blink/renderer/core/layout/layout_view.cc
-@@ -64,7 +64,7 @@
+@@ -65,7 +65,7 @@
  #include "ui/display/screen_info.h"
  #include "ui/gfx/geometry/quad_f.h"
  

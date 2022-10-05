@@ -1,6 +1,24 @@
---- content/common/user_agent.cc.orig	2022-04-01 07:48:30 UTC
+--- content/common/user_agent.cc.orig	2022-10-05 07:34:01 UTC
 +++ content/common/user_agent.cc
-@@ -245,6 +245,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -41,7 +41,7 @@ std::string GetUserAgentPlatform() {
+   return "";
+ #elif BUILDFLAG(IS_MAC)
+   return "Macintosh; ";
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   return "X11; ";  // strange, but that's what Firefox uses
+ #elif BUILDFLAG(IS_ANDROID)
+   return "Linux; ";
+@@ -63,7 +63,7 @@ std::string GetUnifiedPlatform() {
+   return "Windows NT 10.0; Win64; x64";
+ #elif BUILDFLAG(IS_FUCHSIA)
+   return "Fuchsia";
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return "X11; Linux x86_64";
+ #else
+ #error Unsupported platform
+@@ -275,6 +275,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

@@ -1,11 +1,11 @@
---- components/flags_ui/flags_state.cc.orig	2022-04-01 07:48:30 UTC
+--- components/flags_ui/flags_state.cc.orig	2022-10-05 07:34:01 UTC
 +++ components/flags_ui/flags_state.cc
-@@ -622,7 +622,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
- #elif BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -672,7 +672,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
    return kOsCrOS;
- #elif (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
--    BUILDFLAG(IS_OPENBSD)
-+    BUILDFLAG(IS_BSD)
+ #elif BUILDFLAG(IS_CHROMEOS_LACROS)
+   return kOsLacros;
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_OPENBSD)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return kOsLinux;
  #elif BUILDFLAG(IS_ANDROID)
    return kOsAndroid;

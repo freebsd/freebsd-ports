@@ -1,6 +1,6 @@
---- net/disk_cache/blockfile/disk_format.h.orig	2022-03-28 18:11:04 UTC
+--- net/disk_cache/blockfile/disk_format.h.orig	2022-10-05 07:34:01 UTC
 +++ net/disk_cache/blockfile/disk_format.h
-@@ -149,7 +149,9 @@ struct RankingsNode {
+@@ -153,7 +153,9 @@ struct RankingsNode {
  };
  #pragma pack(pop)
  

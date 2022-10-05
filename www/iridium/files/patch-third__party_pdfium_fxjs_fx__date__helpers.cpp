@@ -1,6 +1,6 @@
---- third_party/pdfium/fxjs/fx_date_helpers.cpp.orig	2022-03-28 18:11:04 UTC
+--- third_party/pdfium/fxjs/fx_date_helpers.cpp.orig	2022-10-05 07:34:01 UTC
 +++ third_party/pdfium/fxjs/fx_date_helpers.cpp
-@@ -36,6 +36,11 @@ double GetLocalTZA() {
+@@ -37,6 +37,11 @@ double GetLocalTZA() {
      return 0;
    time_t t = 0;
    FXSYS_time(&t);
@@ -12,7 +12,7 @@
    FXSYS_localtime(&t);
  #if BUILDFLAG(IS_WIN)
    // In gcc 'timezone' is a global variable declared in time.h. In VC++, that
-@@ -44,6 +49,7 @@ double GetLocalTZA() {
+@@ -45,6 +50,7 @@ double GetLocalTZA() {
    _get_timezone(&timezone);
  #endif
    return (double)(-(timezone * 1000));

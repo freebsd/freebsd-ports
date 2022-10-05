@@ -1,6 +1,6 @@
---- components/os_crypt/libsecret_util_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- components/os_crypt/libsecret_util_linux.cc.orig	2022-10-05 07:34:01 UTC
 +++ components/os_crypt/libsecret_util_linux.cc
-@@ -101,13 +101,13 @@ bool LibsecretLoader::LoadLibsecret() {
+@@ -102,13 +102,13 @@ bool LibsecretLoader::LoadLibsecret() {
    if (libsecret_loaded_)
      return true;
  

@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2022-03-28 18:11:04 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2022-10-05 07:34:01 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,407 @@
+@@ -0,0 +1,413 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -36,6 +36,7 @@
 +#include "base/posix/eintr_wrapper.h"
 +#include "base/strings/string_number_conversions.h"
 +#include "base/system/sys_info.h"
++#include "base/threading/thread.h"
 +#include "base/time/time.h"
 +#include "build/build_config.h"
 +#include "sandbox/constants.h"
@@ -101,6 +102,11 @@
 +  return instance;
 +}
 +
++void SandboxLinux::StopThread(base::Thread* thread) {
++  DCHECK(thread);
++  thread->Stop();
++}
++
 +void SandboxLinux::PreinitializeSandbox(sandbox::mojom::Sandbox sandbox_type) {
 +  CHECK(!pre_initialized_);
 +#if BUILDFLAG(USING_SANITIZER)
@@ -133,7 +139,7 @@
 +    auto* display = connection->GetXlibDisplay().display();
 +
 +    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, base::size(buf));
++    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
 +  }
 +
 +  if (process_type.empty()) {

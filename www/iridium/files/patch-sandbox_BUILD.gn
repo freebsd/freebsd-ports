@@ -1,6 +1,6 @@
---- sandbox/BUILD.gn.orig	2022-03-28 18:11:04 UTC
+--- sandbox/BUILD.gn.orig	2022-10-05 07:34:01 UTC
 +++ sandbox/BUILD.gn
-@@ -27,7 +27,7 @@ group("sandbox") {
+@@ -49,7 +49,7 @@ group("sandbox") {
        "//sandbox/mac:system_services",
        "//sandbox/mac/mojom",
      ]

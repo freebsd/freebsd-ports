@@ -1,4 +1,4 @@
---- base/synchronization/lock_impl.h.orig	2022-03-28 18:11:04 UTC
+--- base/synchronization/lock_impl.h.orig	2022-10-05 07:34:01 UTC
 +++ base/synchronization/lock_impl.h
 @@ -107,6 +107,10 @@ void LockImpl::Unlock() {
  }
@@ -9,11 +9,11 @@
 +#pragma GCC diagnostic ignored "-Wthread-safety-analysis"
 +#endif
  
- BASE_EXPORT std::string SystemErrorCodeToString(int error_code);
- 
-@@ -121,6 +125,9 @@ void LockImpl::Unlock() {
-   int rv = pthread_mutex_unlock(&native_handle_);
-   DCHECK_EQ(rv, 0) << ". " << strerror(rv);
+ #if DCHECK_IS_ON()
+ BASE_EXPORT void dcheck_trylock_result(int rv);
+@@ -127,6 +131,9 @@ void LockImpl::Unlock() {
+   dcheck_unlock_result(rv);
+ #endif
  }
 +#if BUILDFLAG(IS_FREEBSD)
 +#pragma GCC diagnostic pop

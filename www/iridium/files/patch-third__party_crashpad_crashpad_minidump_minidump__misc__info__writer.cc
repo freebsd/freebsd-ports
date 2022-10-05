@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc.orig	2022-10-05 07:34:01 UTC
 +++ third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
-@@ -119,6 +119,10 @@ std::string MinidumpMiscInfoDebugBuildString() {
+@@ -159,6 +159,10 @@ std::string MinidumpMiscInfoDebugBuildString() {
    static constexpr char kOS[] = "win";
  #elif BUILDFLAG(IS_FUCHSIA)
    static constexpr char kOS[] = "fuchsia";

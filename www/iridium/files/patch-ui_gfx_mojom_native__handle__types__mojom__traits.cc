@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2022-10-05 07:34:01 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.cc
 @@ -8,11 +8,11 @@
  
@@ -30,5 +30,5 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    out->modifier = data.modifier();
- #endif
- 
+   out->supports_zero_copy_webgpu_import =
+       data.supports_zero_copy_webgpu_import();

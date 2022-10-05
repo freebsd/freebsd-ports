@@ -1,20 +1,7 @@
---- base/process/process_metrics_openbsd.cc.orig	2022-04-01 07:48:30 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/process/process_metrics_openbsd.cc
-@@ -4,17 +4,36 @@
+@@ -6,14 +6,23 @@
  
- #include "base/process/process_metrics.h"
- 
-+#include "base/files/file_util.h"
-+#include "base/logging.h"
-+#include "base/process/internal_linux.h"
-+#include "base/strings/string_number_conversions.h"
-+#include "base/strings/string_split.h"
-+#include "base/strings/string_tokenizer.h"
-+#include "base/strings/string_util.h"
-+#include "base/system/sys_info.h"
-+#include "base/threading/thread_restrictions.h"
-+#include "base/notreached.h"
-+
  #include <stddef.h>
  #include <stdint.h>
 +#include <fcntl.h>
@@ -24,10 +11,10 @@
  
 +#include <kvm.h>
 +
- #include "base/cxx17_backports.h"
  #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
 +#include "base/values.h"
++#include "base/notreached.h"
  
  namespace base {
  
@@ -37,33 +24,34 @@
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
      ProcessHandle process) {
-@@ -25,49 +44,24 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+@@ -24,49 +33,23 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
 -static int GetProcessCPU(pid_t pid) {
-+double ProcessMetrics::GetPlatformIndependentCPUUsage() {
++TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  size_t length;
 -  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
 -                sizeof(struct kinfo_proc), 0 };
 +  size_t length = sizeof(struct kinfo_proc);
++  struct timeval tv;
  
--  if (sysctl(mib, base::size(mib), NULL, &length, NULL, 0) < 0)
+-  if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0)
 -    return -1;
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
 +                sizeof(struct kinfo_proc), 1 };
  
 -  mib[5] = (length / sizeof(struct kinfo_proc));
-+  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
-+    return 0.0;
- 
--  if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
--    return 0;
 -
+   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
+-    return 0;
++    return TimeDelta();
+ 
 -  return info.p_pctcpu;
-+  return static_cast<double>((info.p_pctcpu * 100.0) / FSCALE);
- }
+-}
++  tv.tv_sec = info.p_rtime_sec;
++  tv.tv_usec = info.p_rtime_usec;
  
 -double ProcessMetrics::GetPlatformIndependentCPUUsage() {
 -  TimeTicks time = TimeTicks::Now();
@@ -80,13 +68,14 @@
 -  double percentage = static_cast<double>((cpu * 100.0) / FSCALE);
 -
 -  return percentage;
--}
--
- TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
-   NOTREACHED();
-   return TimeDelta();
++  return Microseconds(TimeValToMicroseconds(tv));
  }
  
+-TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED();
+-  return TimeDelta();
+-}
+-
 -ProcessMetrics::ProcessMetrics(ProcessHandle process)
 -    : process_(process),
 -      last_cpu_(0) {}
@@ -94,16 +83,7 @@
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
    int pagesize;
-@@ -75,7 +69,7 @@ size_t GetSystemCommitCharge() {
-   unsigned long mem_total, mem_free, mem_inactive;
-   size_t len = sizeof(vmtotal);
- 
--  if (sysctl(mib, base::size(mib), &vmtotal, &len, NULL, 0) < 0)
-+  if (sysctl(mib, std::size(mib), &vmtotal, &len, NULL, 0) < 0)
-     return 0;
- 
-   mem_total = vmtotal.t_vm;
-@@ -85,6 +79,129 @@ size_t GetSystemCommitCharge() {
+@@ -84,6 +67,129 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

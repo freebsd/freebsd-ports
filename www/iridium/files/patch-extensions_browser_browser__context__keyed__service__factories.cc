@@ -1,4 +1,4 @@
---- extensions/browser/browser_context_keyed_service_factories.cc.orig	2022-04-01 07:48:30 UTC
+--- extensions/browser/browser_context_keyed_service_factories.cc.orig	2022-10-05 07:34:01 UTC
 +++ extensions/browser/browser_context_keyed_service_factories.cc
 @@ -89,7 +89,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
    IdleManagerFactory::GetInstance();
@@ -8,4 +8,4 @@
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    NetworkingPrivateEventRouterFactory::GetInstance();
  #endif
-   PowerAPI::GetFactoryInstance();
+   OffscreenDocumentManager::GetFactory();

@@ -1,6 +1,6 @@
---- net/dns/BUILD.gn.orig	2022-04-01 07:48:30 UTC
+--- net/dns/BUILD.gn.orig	2022-10-05 07:34:01 UTC
 +++ net/dns/BUILD.gn
-@@ -114,7 +114,7 @@ source_set("dns") {
+@@ -113,7 +113,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]
@@ -9,7 +9,7 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -155,6 +155,7 @@ source_set("dns") {
+@@ -154,6 +154,7 @@ source_set("dns") {
      ":host_resolver_manager",
      ":mdns_client",
      "//net:net_public_deps",

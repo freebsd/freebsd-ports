@@ -1,7 +1,7 @@
---- content/app/content_main.cc.orig	2022-04-01 07:48:30 UTC
+--- content/app/content_main.cc.orig	2022-10-05 07:34:01 UTC
 +++ content/app/content_main.cc
-@@ -254,7 +254,7 @@ RunContentProcess(ContentMainParams params,
-     base::allocator::InstallDanglingRawPtrChecks();
+@@ -284,7 +284,7 @@ RunContentProcess(ContentMainParams params,
+ #endif
      base::EnableTerminationOnOutOfMemory();
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

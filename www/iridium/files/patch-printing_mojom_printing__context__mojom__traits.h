@@ -1,6 +1,6 @@
---- printing/mojom/printing_context_mojom_traits.h.orig	2022-03-28 18:11:04 UTC
+--- printing/mojom/printing_context_mojom_traits.h.orig	2022-10-05 07:34:01 UTC
 +++ printing/mojom/printing_context_mojom_traits.h
-@@ -168,7 +168,7 @@ struct StructTraits<printing::mojom::PrintSettingsData
+@@ -158,7 +158,7 @@ struct StructTraits<printing::mojom::PrintSettingsData
      return s.pages_per_sheet();
    }
  

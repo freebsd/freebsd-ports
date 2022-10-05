@@ -1,6 +1,6 @@
---- v8/tools/run.py.orig	2022-03-28 18:11:04 UTC
+--- v8/tools/run.py.orig	2022-10-05 07:34:01 UTC
 +++ v8/tools/run.py
-@@ -11,7 +11,7 @@ from __future__ import print_function
+@@ -9,7 +9,7 @@ scripts."""
  import subprocess
  import sys
  

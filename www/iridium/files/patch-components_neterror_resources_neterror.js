@@ -1,11 +1,11 @@
---- components/neterror/resources/neterror.js.orig	2022-03-28 18:11:04 UTC
+--- components/neterror/resources/neterror.js.orig	2022-10-05 07:34:01 UTC
 +++ components/neterror/resources/neterror.js
-@@ -129,7 +129,7 @@ function detailsButtonClick() {
- }
+@@ -130,7 +130,7 @@ function detailsButtonClick() {
  
  let primaryControlOnLeft = true;
--// <if expr="is_macosx or is_ios or is_linux or is_android">
-+// <if expr="is_macosx or is_ios or is_linux or is_android or is_bsd">
+ // clang-format off
+-// <if expr="is_macosx or is_ios or is_linux or is_chromeos or is_android">
++// <if expr="is_macosx or is_ios or is_posix or is_chromeos or is_android">
+ // clang-format on
  primaryControlOnLeft = false;
  // </if>
- 

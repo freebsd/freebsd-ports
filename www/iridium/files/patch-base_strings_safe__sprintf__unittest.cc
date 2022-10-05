@@ -1,6 +1,6 @@
---- base/strings/safe_sprintf_unittest.cc.orig	2022-03-28 18:11:04 UTC
+--- base/strings/safe_sprintf_unittest.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/strings/safe_sprintf_unittest.cc
-@@ -731,6 +731,7 @@ TEST(SafeSPrintfTest, EmbeddedNul) {
+@@ -732,6 +732,7 @@ TEST(SafeSPrintfTest, EmbeddedNul) {
  #endif
  }
  
@@ -8,7 +8,7 @@
  TEST(SafeSPrintfTest, EmitNULL) {
    char buf[40];
  #if defined(__GNUC__)
-@@ -747,6 +748,7 @@ TEST(SafeSPrintfTest, EmitNULL) {
+@@ -748,6 +749,7 @@ TEST(SafeSPrintfTest, EmitNULL) {
  #pragma GCC diagnostic pop
  #endif
  }

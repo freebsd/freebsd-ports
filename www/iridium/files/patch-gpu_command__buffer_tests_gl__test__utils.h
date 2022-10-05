@@ -1,6 +1,6 @@
---- gpu/command_buffer/tests/gl_test_utils.h.orig	2022-04-01 07:48:30 UTC
+--- gpu/command_buffer/tests/gl_test_utils.h.orig	2022-10-05 07:34:01 UTC
 +++ gpu/command_buffer/tests/gl_test_utils.h
-@@ -120,7 +120,7 @@ class GpuCommandBufferTestEGL {
+@@ -122,7 +122,7 @@ class GpuCommandBufferTestEGL {
      return gfx::HasExtension(gl_extensions_, extension);
    }
  

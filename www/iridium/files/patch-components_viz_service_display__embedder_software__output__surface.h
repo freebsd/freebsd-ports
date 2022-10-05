@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/software_output_surface.h.orig	2022-03-28 18:11:04 UTC
+--- components/viz/service/display_embedder/software_output_surface.h.orig	2022-10-05 07:34:01 UTC
 +++ components/viz/service/display_embedder/software_output_surface.h
-@@ -56,7 +56,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -47,7 +47,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
    gfx::OverlayTransform GetDisplayTransform() override;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -78,7 +78,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -69,7 +69,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

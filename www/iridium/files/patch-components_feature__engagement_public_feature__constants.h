@@ -1,7 +1,7 @@
---- components/feature_engagement/public/feature_constants.h.orig	2022-04-01 07:48:30 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2022-10-05 07:34:01 UTC
 +++ components/feature_engagement/public/feature_constants.h
-@@ -30,7 +30,7 @@ extern const base::Feature kUseClientConfigIPH;
- extern const base::Feature kIPHDummyFeature;
+@@ -32,7 +32,7 @@ extern const base::Feature kIPHDummyFeature;
+ extern const base::Feature kEnableIPH;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
@@ -9,12 +9,12 @@
  extern const base::Feature kIPHDesktopSharedHighlightingFeature;
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusHelpBubbleScreenReaderPromoFeature;
-@@ -174,7 +174,7 @@ extern const base::Feature kIPHDiscoverFeedHeaderFeatu
- extern const base::Feature kIPHDefaultSiteViewFeature;
+@@ -178,7 +178,7 @@ extern const base::Feature kIPHFollowWhileBrowsingFeat
+ extern const base::Feature kIPHOverflowMenuTipFeature;
  #endif  // BUILDFLAG(IS_IOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  extern const base::Feature kIPHAutofillVirtualCardSuggestionFeature;
- extern const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature;
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
