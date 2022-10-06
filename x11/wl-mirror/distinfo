@@ -1,5 +1,5 @@
-TIMESTAMP = 1658304837
-SHA256 (Ferdi265-wl-mirror-v0.12.1_GH0.tar.gz) = 1359f95e5451bad20ac52141ca45de08a2eba1bca7112e8040dc16ecd032b12b
-SIZE (Ferdi265-wl-mirror-v0.12.1_GH0.tar.gz) = 43205
-SHA256 (wlroots-wlr-protocols-0c7437e2b600382f0be33949c4e244b2a3702fcb_GL0.tar.gz) = a0692e5454b8cdb3cb5a7c89393b870cd71289f749508ad31e572705c0645a07
-SIZE (wlroots-wlr-protocols-0c7437e2b600382f0be33949c4e244b2a3702fcb_GL0.tar.gz) = 22792
+TIMESTAMP = 1665054447
+SHA256 (Ferdi265-wl-mirror-v0.12.2_GH0.tar.gz) = 33439f2ab0a888086960eff70961f54195dca8e924a09b78da606608fa65eee7
+SIZE (Ferdi265-wl-mirror-v0.12.2_GH0.tar.gz) = 43275
+SHA256 (wlroots-wlr-protocols-8cdeaac7497f8ba2413e44b421ea00cc47ad828f_GL0.tar.gz) = f1db1dd408803e02eebf7c4c26f6e85a3ad588fd7ba123e2e681d2faf70d985c
+SIZE (wlroots-wlr-protocols-8cdeaac7497f8ba2413e44b421ea00cc47ad828f_GL0.tar.gz) = 23031
