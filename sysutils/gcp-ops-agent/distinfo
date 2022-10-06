@@ -1,6 +1,6 @@
-TIMESTAMP = 1663625292
-SHA256 (GoogleCloudPlatform-ops-agent-2.20.0_GH0.tar.gz) = c223e8707f11976fd2670d737480cad5674bb2d61a701ce2ffa555a7563bc348
-SIZE (GoogleCloudPlatform-ops-agent-2.20.0_GH0.tar.gz) = 873387
+TIMESTAMP = 1665093488
+SHA256 (GoogleCloudPlatform-ops-agent-2.22.0_GH0.tar.gz) = d46e2782b963a7211a732b59653417bd9d05d478e7cc4e58a37a736d1e9f408e
+SIZE (GoogleCloudPlatform-ops-agent-2.22.0_GH0.tar.gz) = 886285
 SHA256 (StackExchange-wmi-v1.2.1_GH0.tar.gz) = a90126aa4c4defa7455be9610e84b0606972eccfa4111c2ec97179691d240b5a
 SIZE (StackExchange-wmi-v1.2.1_GH0.tar.gz) = 12449
 SHA256 (blang-semver-v3.5.1_GH0.tar.gz) = 3d9da53f4c2d3169bfa9b25f2f36f301a37556a47259c870881524c643c69c57
