@@ -1,5 +1,4 @@
 PORTNAME=	claws-mail-plugins
-PORTVERSION=	3.19.0
 CATEGORIES=	mail news
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -8,7 +7,8 @@ WWW=		https://www.claws-mail.org/plugins.php
 
 USES=		metaport
 
-.include "../claws-mail/Makefile.claws.plugins"
+.include "${.CURDIR}/../claws-mail/Makefile.ver"
+.include "${.CURDIR}/../claws-mail/Makefile.claws.plugins"
 
 # pgpcore, pgpinline, pgpmime, smime
 CLAWS_PLUGINS+=	pgp
