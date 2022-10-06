@@ -5,6 +5,7 @@
 	<name>jenkins</name>
 	<range><lt>2.370</lt></range>
       </package>
+    </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Jenkins Security Advisory:</p>
