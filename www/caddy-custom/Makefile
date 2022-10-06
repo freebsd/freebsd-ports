@@ -1,7 +1,6 @@
 # READ pkg-descr FOR INSTRUCTIONS!
 # This port will NOT build in poudriere without (simple) manual
 # intervention.
-# It is intentionally not hooked to package build.
 
 PORTNAME=	caddy-custom
 PORTVERSION=	${CADDY_VERSION}.${XCADDY_VERSION}
@@ -17,6 +16,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	xcaddy:www/xcaddy
 
 USES=		go:no_targets
+
+NO_PACKAGE=	Requires network access (see pkg-descr)
 
 CONFLICTS_INSTALL=	caddy
 

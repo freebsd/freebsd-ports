@@ -60,6 +60,7 @@
     SUBDIR += c-icap-modules
     SUBDIR += cadaver
     SUBDIR += caddy
+    SUBDIR += caddy-custom
     SUBDIR += calamaris
     SUBDIR += calamaris-devel
     SUBDIR += caldavzap
