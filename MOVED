@@ -17579,3 +17579,4 @@ ftp/axel||2022-09-30|Has expired: Last release in 2009 and dead upstream, please
 databases/py-bsddb3|databases/py-berkeleydb|2022-09-30|Has expired: Requires upstream EOLd db5. Use py-berkeleydb
 graphics/megapov|graphics/povray37|2022-10-01|Has expired: Abandoned upstream. graphics/povray37 is the recommended replacement
 x11-toolkits/gstreamer1-plugins-gtk4||2022-10-01|No consumers left and deprecated in favor gtk4 plugin from multimedia/gstreamer1-plugins-rust >= 0.8.0
+deskutils/lookbook|deskutils/iconbrowser|2022-10-05|Project was renamed, now it is an official elementary OS application

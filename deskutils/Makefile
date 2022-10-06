@@ -123,6 +123,7 @@
     SUBDIR += i3lock
     SUBDIR += i3status
     SUBDIR += ical
+    SUBDIR += iconbrowser
     SUBDIR += itinerary
     SUBDIR += jjclient
     SUBDIR += jlj
@@ -153,7 +154,6 @@
     SUBDIR += libkdepim
     SUBDIR += libportal
     SUBDIR += ljclive
-    SUBDIR += lookbook
     SUBDIR += lumina-archiver
     SUBDIR += lumina-calculator
     SUBDIR += lumina-fileinfo
