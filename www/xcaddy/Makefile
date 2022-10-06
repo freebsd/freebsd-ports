@@ -14,12 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-USE_RC_SUBR=	caddy
-SUB_FILES=	caddy
-SUB_LIST+= 	CADDYDIR="${PREFIX}/etc/caddy"
-
-CONFLICTS_INSTALL=	caddy
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	caddyserver
 GH_TUPLE=	Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
