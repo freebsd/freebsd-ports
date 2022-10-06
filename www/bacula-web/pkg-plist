@@ -1,7 +1,3 @@
-@group www
-@owner www
-@dir(,,744) %%WWWDIR%%/application/assets/protected
-@dir(,,744) %%WWWDIR%%/application/views/cache
 %%WWWDIR%%/.codeclimate.yml
 %%WWWDIR%%/.csslintrc
 %%WWWDIR%%/.eslintignore
@@ -10,9 +6,12 @@
 %%WWWDIR%%/.github/workflows/build.yml
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/.readthedocs.yaml
+%%WWWDIR%%/.tx/config
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
+%%WWWDIR%%/application/Entity/log.php
+%%WWWDIR%%/application/Entity/user.php
 %%WWWDIR%%/application/assets/css/default.css
 %%WWWDIR%%/application/assets/images/bacula-web-logo.png
 %%WWWDIR%%/application/assets/js/default.js
@@ -21,8 +20,12 @@
 %%WWWDIR%%/application/config/.htaccess
 %%WWWDIR%%/application/config/application.php
 %%WWWDIR%%/application/libs/fileconfig.class.php
+%%WWWDIR%%/application/locale/be/LC_MESSAGES/messages.mo
+%%WWWDIR%%/application/locale/be/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/be_BY/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/be_BY/LC_MESSAGES/messages.po
+%%WWWDIR%%/application/locale/ca/LC_MESSAGES/messages.mo
+%%WWWDIR%%/application/locale/ca/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/ca_ES/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/ca_ES/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/de_DE/LC_MESSAGES/messages.mo
@@ -41,23 +44,29 @@
 %%WWWDIR%%/application/locale/nl_NL/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/no_NO/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/no_NO/LC_MESSAGES/messages.po
+%%WWWDIR%%/application/locale/pl/LC_MESSAGES/messages.mo
+%%WWWDIR%%/application/locale/pl/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/pl_PL/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/pl_PL/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/pt_BR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/pt_BR/LC_MESSAGES/messages.po
+%%WWWDIR%%/application/locale/ro_RO/LC_MESSAGES/messages.mo
+%%WWWDIR%%/application/locale/ro_RO/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/ru_RU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/ru_RU/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/sv_SE/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/sv_SE/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/zh_CN/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/zh_CN/LC_MESSAGES/messages.po
-%%WWWDIR%%/application/models/clients.model.php
-%%WWWDIR%%/application/models/database.model.php
-%%WWWDIR%%/application/models/filesets.model.php
-%%WWWDIR%%/application/models/jobfiles.model.php
-%%WWWDIR%%/application/models/jobs.model.php
-%%WWWDIR%%/application/models/pools.model.php
-%%WWWDIR%%/application/models/volumes.model.php
+%%WWWDIR%%/application/tables/CatalogTable.php
+%%WWWDIR%%/application/tables/ClientTable.php
+%%WWWDIR%%/application/tables/FileSetTable.php
+%%WWWDIR%%/application/tables/JobFileTable.php
+%%WWWDIR%%/application/tables/JobTable.php
+%%WWWDIR%%/application/tables/LogTable.php
+%%WWWDIR%%/application/tables/PoolTable.php
+%%WWWDIR%%/application/tables/UserTable.php
+%%WWWDIR%%/application/tables/VolumeTable.php
 %%WWWDIR%%/application/views/backupjob.view.php
 %%WWWDIR%%/application/views/cache/README
 %%WWWDIR%%/application/views/client.view.php
@@ -93,22 +102,22 @@
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
 %%WWWDIR%%/console.php
+%%WWWDIR%%/core/Exception/NotAuthorizedException.php
+%%WWWDIR%%/core/Exception/PageNotFoundException.php
 %%WWWDIR%%/core/app/cerrorhandler.class.php
-%%WWWDIR%%/core/app/cmodel.class.php
 %%WWWDIR%%/core/app/cview.class.php
 %%WWWDIR%%/core/app/userauth.class.php
 %%WWWDIR%%/core/app/webapplication.class.php
-%%WWWDIR%%/core/bweb.class.php
+%%WWWDIR%%/core/bootstrap.php
 %%WWWDIR%%/core/const.inc.php
-%%WWWDIR%%/core/db/cdb.class.php
+%%WWWDIR%%/core/db/Database.php
+%%WWWDIR%%/core/db/DatabaseFactory.php
+%%WWWDIR%%/core/db/Table.php
 %%WWWDIR%%/core/db/cdbpagination.class.php
 %%WWWDIR%%/core/db/cdbquery.class.php
-%%WWWDIR%%/core/db/cdbresult.class.php
-%%WWWDIR%%/core/db/cdbutils.class.php
-%%WWWDIR%%/core/global.inc.php
 %%WWWDIR%%/core/graph/chart.class.php
+%%WWWDIR%%/core/helpers/sanitizer.php
 %%WWWDIR%%/core/i18n/ctranslation.class.php
-%%WWWDIR%%/core/utils/chttprequest.class.php
 %%WWWDIR%%/core/utils/cutils.class.php
 %%WWWDIR%%/core/utils/datetimeutil.class.php
 %%WWWDIR%%/core/utils/file.class.php
@@ -157,6 +166,15 @@
 %%WWWDIR%%/docs/source/_static/bacula-web-volumes.jpg
 %%WWWDIR%%/docs/source/conf.py
 %%WWWDIR%%/docs/source/index.rst
-%%WWWDIR%%/index.php
+%%WWWDIR%%/public/.htaccess
+%%WWWDIR%%/public/css/.gitkeep
+%%WWWDIR%%/public/fonts/.gitkeep
+%%WWWDIR%%/public/img/.gitkeep
+%%WWWDIR%%/public/index.php
+%%WWWDIR%%/public/js/.gitkeep
 %%WWWDIR%%/sonar-project.properties
+@dir(,,744) %%WWWDIR%%/application/assets/protected
+@dir(,,744) %%WWWDIR%%/application/views/cache
+@group www
+@owner www
 @sample %%WWWDIR%%/application/config/config.php.sample
