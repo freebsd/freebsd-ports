@@ -5,7 +5,7 @@ CATEGORIES=		net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Client API library for the Matrix protocol
-WWW=		https://github.com/Nheko-Reborn/mtxclient
+WWW=		https://nheko.im/nheko-reborn/mtxclient/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

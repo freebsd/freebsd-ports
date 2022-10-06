@@ -1,11 +1,11 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM client based on Qt technologies
-WWW=		https://github.com/Nheko-Reborn/nheko
+WWW=		https://nheko.im/nheko-reborn/nheko/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
