@@ -146,7 +146,7 @@ Index: src/link.h
 Index: src/phys.c
 ===================================================================
 --- src/phys.c	(revision 2452)
-+++ src/phys.c	(revision 2454)
++++ src/phys.c	(revision 2461)
 @@ -590,8 +590,8 @@ PhysMsg(int type, void *arg)
  	UNREF(l);
  	return;
@@ -164,7 +164,7 @@ Index: src/phys.c
  	}
 -        (*l->type->open)(l);
 +	/* Redial may result in MSG_OPEN for just opened device */
-+	if (l->state == PHYS_STATE_DOWN)
++	if (l->state == PHYS_STATE_DOWN || l->state == PHYS_STATE_CONNECTING)
 +	    (*l->type->open)(l);
 +	else
 +	    Log(LG_PHYS2, ("[%s] device: OPEN event ignored",
