@@ -20,6 +20,9 @@ WWW=		https://github.com/grafana/grafana
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	EOLed upstream, unfixed vulnerabilities
+EXPIRATION_DATE=	2022-11-06
+
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
