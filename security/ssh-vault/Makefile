@@ -1,6 +1,6 @@
 PORTNAME=	ssh-vault
 PORTVERSION=	0.12.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	nbari@tequila.io

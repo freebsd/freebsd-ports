@@ -1,6 +1,6 @@
 PORTNAME=	bosh-cli
 PORTVERSION=	5.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
