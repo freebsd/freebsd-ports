@@ -610,6 +610,8 @@ include/agrum/tools/database/DBTranslator4IntegerVariable.h
 include/agrum/tools/database/DBTranslator4IntegerVariable_inl.h
 include/agrum/tools/database/DBTranslator4LabelizedVariable.h
 include/agrum/tools/database/DBTranslator4LabelizedVariable_inl.h
+include/agrum/tools/database/DBTranslator4NumericalDiscreteVariable.h
+include/agrum/tools/database/DBTranslator4NumericalDiscreteVariable_inl.h
 include/agrum/tools/database/DBTranslator4RangeVariable.h
 include/agrum/tools/database/DBTranslator4RangeVariable_inl.h
 include/agrum/tools/database/DBTranslatorSet.h
@@ -891,6 +893,8 @@ include/agrum/tools/variables/integerVariable.h
 include/agrum/tools/variables/integerVariable_inl.h
 include/agrum/tools/variables/labelizedVariable.h
 include/agrum/tools/variables/labelizedVariable_inl.h
+include/agrum/tools/variables/numericalDiscreteVariable.h
+include/agrum/tools/variables/numericalDiscreteVariable_inl.h
 include/agrum/tools/variables/rangeVariable.h
 include/agrum/tools/variables/rangeVariable_inl.h
 include/agrum/tools/variables/variable.h

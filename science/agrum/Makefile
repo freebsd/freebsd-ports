@@ -1,5 +1,5 @@
 PORTNAME=	agrum
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.1
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://agrum.gitlab.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang shebangfix # the 'act' executable uses 'python' and is broken, when act is broken CMakeLists.txt builds with default configuration which is fine
+USES=		cmake compiler:c++20-lang shebangfix # the 'act' executable uses 'python' and is broken, when act is broken CMakeLists.txt builds with default configuration which is fine
 USE_LDCONFIG=	yes
 
 LLD_UNSAFE=	yes
@@ -17,7 +17,7 @@ LLD_UNSAFE=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
-GL_COMMIT=	8141e589aaca335b9582c2ca8bbd6594bc4b174b
+GL_COMMIT=	cd81e3c04da2cedf5c8d02c55dfeac87b9dc82b6
 
 SHEBANG_FILES=	act
 
