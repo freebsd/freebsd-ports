@@ -1,5 +1,5 @@
 PORTNAME=	iperf
-DISTVERSION=	3.11
+DISTVERSION=	3.12
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
