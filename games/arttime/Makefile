@@ -1,11 +1,12 @@
 PORTNAME=	arttime
 PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bring curated text/ascii art to artless terminals
-WWW=		https://github.com/reportaman/arttime
+WWW=		https://github.com/poetaman/arttime
 
 LICENSE=	GPLv3
 
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	zsh:shells/zsh
 RUN_DEPENDS=	zsh:shells/zsh
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	reportaman
+GH_ACCOUNT=	poetaman
 
 NO_ARCH=	yes
 NO_BUILD=	yes
