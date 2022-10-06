@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--without-libudev
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
-USE_GCC=	yes
+USE_GCC=	11
 .endif
 
 .include <bsd.port.mk>
