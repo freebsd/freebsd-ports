@@ -48,8 +48,8 @@ include/snort/flow/flow_data.h
 include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
 include/snort/flow/ha.h
-include/snort/flow/stash_item.h
 include/snort/flow/session.h
+include/snort/flow/stash_item.h
 include/snort/framework/api_options.h
 include/snort/framework/base_api.h
 include/snort/framework/bits.h
@@ -80,6 +80,8 @@ include/snort/hash/hash_key_operations.h
 include/snort/hash/hashes.h
 %%HYPERSCAN%%include/snort/helpers/hyper_scratch_allocator.h
 %%HYPERSCAN%%include/snort/helpers/hyper_search.h
+include/snort/helpers/process.h
+include/snort/helpers/sigsafe.h
 include/snort/hash/lru_cache_local.h
 include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
@@ -89,8 +91,6 @@ include/snort/helpers/boyer_moore_search.h
 include/snort/helpers/buffer_data.h
 include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
-include/snort/helpers/process.h
-include/snort/helpers/sigsafe.h
 include/snort/helpers/scratch_allocator.h
 include/snort/host_tracker/cache_allocator.h
 include/snort/host_tracker/cache_interface.h
@@ -142,12 +142,6 @@ include/snort/service_inspectors/http_inspect/http_common.h
 include/snort/service_inspectors/http_inspect/http_field.h
 include/snort/service_inspectors/http_inspect/http_inspect_base.h
 include/snort/service_inspectors/http_inspect/http_stream_splitter_base.h
-include/snort/service_inspectors/http2_inspect/http2_huffman_state_machine.h
-include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode.h
-include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode_impl.h
-include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode.h
-include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode_impl.h
-include/snort/service_inspectors/http_inspect/http_test_manager.h
 include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
@@ -221,6 +215,12 @@ include/snort/pub_sub/smb_events.h
 include/snort/pub_sub/ssh_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
+include/snort/service_inspectors/http2_inspect/http2_huffman_state_machine.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode_impl.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode.h
+include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode_impl.h
+include/snort/service_inspectors/http_inspect/http_test_manager.h
 include/snort/service_inspectors/netflow/netflow_cache.h
 include/snort/service_inspectors/netflow/netflow_headers.h
 include/snort/service_inspectors/netflow/netflow_module.h
@@ -254,10 +254,8 @@ include/snort/utils/memcap_allocator.h
 include/snort/utils/util_ber.h
 include/snort/utils/primed_allocator.h
 include/snort/utils/safec.h
-include/snort/utils/segment_mem.h
 include/snort/utils/sflsq.h
 include/snort/utils/stats.h
-%%TSC%%include/snort/time/tsc_clock.h
 include/snort/utils/util.h
 include/snort/utils/util_cstring.h
 include/snort/utils/util_unfold.h
