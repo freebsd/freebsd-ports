@@ -1,3 +1,7 @@
+@dir(,,744) %%WWWDIR%%/application/assets/protected
+@dir(,,744) %%WWWDIR%%/application/views/cache
+@group www
+@owner www
 %%WWWDIR%%/.codeclimate.yml
 %%WWWDIR%%/.csslintrc
 %%WWWDIR%%/.eslintignore
@@ -173,8 +177,4 @@
 %%WWWDIR%%/public/index.php
 %%WWWDIR%%/public/js/.gitkeep
 %%WWWDIR%%/sonar-project.properties
-@dir(,,744) %%WWWDIR%%/application/assets/protected
-@dir(,,744) %%WWWDIR%%/application/views/cache
-@group www
-@owner www
 @sample %%WWWDIR%%/application/config/config.php.sample
