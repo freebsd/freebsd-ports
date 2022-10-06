@@ -11,7 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		dos2unix lua:build ninja:make
+# BROKEN_FREEBSD_12=	3rd/bee.lua/bee/thread/spinlock.h:9:14: fatal error: 'immintrin.h' file not found
+
+USES=		compiler:features dos2unix lua:build ninja:make
 USE_GITHUB=	yes
 GH_ACCOUNT=	sumneko
 GH_TUPLE=	actboy168:bee.lua:a749943:bee/3rd/bee.lua \
@@ -32,6 +34,15 @@ PLIST_FILES=	bin/lua-language-server \
 		${DATADIR_REL}/debugger.lua \
 		${DATADIR_REL}/main.lua
 PORTDATA=	locale meta script
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 130
+BUILD_DEPENDS+=	llvm13>0:devel/llvm13
+CPP=		${LOCALBASE}/bin/clang-cpp13
+CC=		${LOCALBASE}/bin/clang13
+CXX=		${LOCALBASE}/bin/clang++13
+.endif
 
 # post-extract:
 # 	${CP} -rp ${WRKSRC}/3rd/bee.lua ${WRKSRC}/3rd/luamake/3rd
