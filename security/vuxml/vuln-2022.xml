@@ -1,3 +1,45 @@
+  <vuln vid="f4f15051-4574-11ed-81a1-080027881239">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py37-django32</name>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>py38-django40</name>
+	<name>py39-django40</name>
+	<name>py310-django40</name>
+	<range><lt>4.0.8</lt></range>
+      </package>
+      <package>
+	<name>py38-django41</name>
+	<name>py39-django41</name>
+	<name>py310-django41</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2022/oct/04/security-releases/">
+	  <p>CVE-2022-41323: Potential denial-of-service vulnerability in
+	    internationalized URLs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41323</cvename>
+      <url>https://www.djangoproject.com/weblog/2022/oct/04/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-09-23</discovery>
+      <entry>2022-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2a89e8f-44e9-11ed-9215-00e081b7aa2d">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
