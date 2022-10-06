@@ -10,7 +10,7 @@
 # Optional settings:
 # caddy_command (string):     Full path to the caddy binary
 # caddy_config (string):      Full path to caddy config file
-#                             (%%PREFIX%%/etc/Caddyfile)
+#                             (%%PREFIX%%/etc/caddy/Caddyfile)
 # caddy_adapter (string):     Config adapter type (caddyfile)
 # caddy_directory (string):   Root for caddy storage (ACME certs, etc.)
 #                             (/var/db/caddy)
@@ -39,7 +39,7 @@ load_rc_config $name
 # Defaults
 : ${caddy_enable:=NO}
 : ${caddy_adapter:=caddyfile}
-: ${caddy_config:="%%PREFIX%%/etc/Caddyfile"}
+: ${caddy_config:="%%PREFIX%%/etc/caddy/Caddyfile"}
 : ${caddy_command:="%%PREFIX%%/bin/${name}"}
 : ${caddy_directory:=/var/db/caddy}
 : ${caddy_extra_flags:=""}
