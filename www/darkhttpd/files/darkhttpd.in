@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: darkhttpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for darkhttpd in /etc/rc.conf
+#
+# darkhttpd_enable (bool):    Enable darkhttpd. (default=NO)
+# darkhttpd_dir (str):        WWW root directory. (default=%%WWWDIR%%)
+# darkhttpd_flags (str):      Flags used for darkhttpd. (default=--uid %%USER%% --gid %%GROUP%%)
+#
+
+. /etc/rc.subr
+
+name="darkhttpd"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${darkhttpd_enable:="NO"}
+: ${darkhttpd_dir:=%%WWWDIR%%}
+: ${darkhttpd_flags=--uid %%USER%% --gid %%GROUP%%}
+
+darkhttpd_flags="${darkhttpd_dir} ${darkhttpd_flags}"
+
+command="%%LOCALBASE%%/bin/darkhttpd"
+pidfile="/var/run/darkhttpd/darkhttpd.pid"
+command_args="--daemon --pidfile ${pidfile}"
+
+run_rc_command "$1"
