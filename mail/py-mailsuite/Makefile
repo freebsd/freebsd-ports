@@ -1,5 +1,5 @@
 PORTNAME=	mailsuite
-DISTVERSION=	1.7.3
+DISTVERSION=	1.9.9
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,8 @@ USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	${RM} ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
