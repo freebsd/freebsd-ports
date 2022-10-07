@@ -1,6 +1,5 @@
 PORTNAME=	gap
-DISTVERSION=	4.11.1
-PORTREVISION=	2
+DISTVERSION=	4.12.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
@@ -17,39 +16,15 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake libtool localbase perl5 readline shebangfix
-SHEBANG_FILES=	.
 USE_PERL5=	run
 
-OPTIONS_DEFINE=	ADDPACK MANU
-OPTIONS_DEFAULT=ADDPACK
-OPTIONS_SUB=	yes
-ADDPACK_DESC=	Additional packages typically "expected" out-of-the-box
-ADDPACK_VARS=	ADD_PACK="${ADDPACK}"
-MANU_DESC=	HTML and PDF manuals
-MANU_USE=	TEX=latex:build,formats,web2c
-MANU_VARS=	DOC_TARGET=doc
+SHEBANG_FILES=	.
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	all ${DOC_TARGET}
+ALL_TARGET=	all
 INSTALL_TARGET=	install-headers install-libgap
 USE_LDCONFIG=	yes
-PORTDATA=	doc/*
-
-MAKE_JOBS_UNSAFE=yes
-
-PLIST_SUB=	ALNUTH_VER=3.1.2 AUTPGRP_VER=1.10.2 CRISP_VER=1.4.5 \
-		CTBLLIB_VER=1.3.1 FACT_INT_VER=1.6.3 GAP_DOC_VER=1.6.4 \
-		HELP_VER=3.5 IRREDSOL_VER=1.4.1 LAGUNA_VER=3.9.3 \
-		POLENTA_VER=1.3.9 POLYCYCLIC_VER=2.16 PRIMGRP_VER=3.4.1 \
-		RESCLASSES_VER=4.7.2 SOPHUS_VER=1.24 SMALL_GRP_VER=1.4.2 \
-		TOMLIB_VER=1.2.9
-
-# The minimal packages GAP needs to run (do not need compilation)
-MINPACK=	GAPDoc- HeLP- primgrp- SmallGrp- transgrp
-ADDPACK=	atlasrep autpgrp- alnuth- crisp- ctbllib FactInt- fga	\
-		irredsol- laguna- polenta- polycyclic- resclasses-	\
-		sophus- tomlib-
 
 ACLOCVER=	1.16	# Truncated version of aclocal / automake
 
@@ -73,19 +48,11 @@ post-build:
 		${RM} bistellar
 
 post-install:
-	# additional header
-	${INSTALL_DATA} ${WRKSRC}/gen/config.h ${STAGEDIR}${PREFIX}/include/gap
 	# install gap binary
 	${INSTALL_PROGRAM} ${WRKSRC}/gap ${STAGEDIR}${PREFIX}/bin/gap-bin
-	# strip
-	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/gap-bin lib/libgap.so.0.0.0
-	# install gac executable
-	${INSTALL_SCRIPT} ${WRKSRC}/gac ${STAGEDIR}${PREFIX}/bin/gac
-	${REINPLACE_CMD} -i '' -e ' \
-		s|^\. "$${abs_top_builddir}/sysinfo.gap"|. "${DATADIR}/sysinfo.gap"|; \
-		s|^abs_top_builddir=.*|abs_top_builddir="${DATADIR}/min-builddir"|; \
-		s|^abs_top_srcdir=.*|abs_top_srcdir="${DATADIR}/min-srcdir"| \
-		' ${STAGEDIR}${PREFIX}/bin/gac
+	## install gac executable - GAC is disabled since the project can't install it properly
+	#${INSTALL_SCRIPT} ${WRKSRC}/gac ${STAGEDIR}${PREFIX}/bin/gac
+	#${REINPLACE_CMD} -i '' -e 's|^\. "${WRKSRC}/sysinfo.gap"|. "${DATADIR}/sysinfo.gap"|' ${STAGEDIR}${PREFIX}/bin/gac
 	# prepare and install wrapper
 	@${CAT} ${WRKSRC}/bin/gap.sh | ${SED} -e ' \
 		s:${WRKSRC}:${GAP_LIBDIR}:; \
@@ -94,25 +61,26 @@ post-install:
 		/^exec/s:/gap::; \
 		' > ${WRKSRC}/bin/gap
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
-	# min-builddir and min-srcdir
-	${MKDIR} ${STAGEDIR}${DATADIR}/min-builddir ${STAGEDIR}${DATADIR}/min-srcdir
-	${INSTALL_SCRIPT} ${WRKSRC}/libtool ${STAGEDIR}${DATADIR}/min-builddir
-	${RLN} ${STAGEDIR}${PREFIX}/bin/gap ${STAGEDIR}${DATADIR}/min-builddir/gap
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} obj ${STAGEDIR}${DATADIR}/min-builddir/
-	# install packages
-	${MKDIR} ${STAGEDIR}${DATADIR}/pkg
-.for f in doc etc gen grp lib tst sysinfo.gap
+	## min-builddir
+	#${MKDIR} ${STAGEDIR}${DATADIR}/min-builddir
+	#${INSTALL_SCRIPT} ${WRKSRC}/libtool ${STAGEDIR}${DATADIR}/min-builddir
+	#${RLN} ${STAGEDIR}${PREFIX}/bin/gap ${STAGEDIR}${DATADIR}/min-builddir/gap
+	#cd ${WRKSRC}/build && ${COPYTREE_SHARE} obj ${STAGEDIR}${DATADIR}/min-builddir/
+	# install files/directories
+.for f in doc etc grp lib tst sysinfo.gap
 	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/
 .endfor
-.for p in ${MINPACK} ${ADD_PACK}
-	cd ${WRKSRC}/pkg && ${CP} -R $$(ls -d ${p}*) ${STAGEDIR}${DATADIR}/pkg/
-.endfor
+	# install packages
+	cd ${WRKSRC} && ${COPYTREE_SHARE} pkg ${STAGEDIR}${DATADIR}
 	# correct paths in sysinfo.gap
 	${REINPLACE_CMD} -i '' -e ' \
-		s|^GAP_BIN_DIR=.*|GAP_BIN_DIR="${PREFIX}/bin"|; \
-		s|^GAP_LIB_DIR=.*|GAP_LIB_DIR="${PREFIX}/lib"|; \
+		s|^GAP=.*|GAP="${PREFIX}/bin/gap"|; \
+		s|^GAC=.*|GAP="${PREFIX}/bin/gac"|; \
+		s|^GAP_CXXFLAGS=.*|GAP_CXXFLAGS="-I"|; \
 		s| -isystem ${PREFIX}/include |&-I${PREFIX}/include/gap |; \
 		' ${STAGEDIR}${DATADIR}/sysinfo.gap
+	# remove redundant files
+	${RM} ${STAGEDIR}${DATADIR}/pkg/patternclass/lib/.DS_Store
 
 do-test:
 	@cd ${WRKSRC} && ./gap ${FILESDIR}/test.g
