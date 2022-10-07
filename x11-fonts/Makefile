@@ -17,6 +17,7 @@
     SUBDIR += artwiz-aleczapka-de
     SUBDIR += artwiz-aleczapka-se
     SUBDIR += artwiz-fonts
+    SUBDIR += atkinson-hyperlegible
     SUBDIR += averiagwf
     SUBDIR += b612
     SUBDIR += bdf2sfd
