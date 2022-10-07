@@ -20,6 +20,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/night-owl.theme
 %%DATADIR%%/themes/nord.theme
 %%DATADIR%%/themes/onedark.theme
+%%DATADIR%%/themes/paper.theme
 %%DATADIR%%/themes/solarized_dark.theme
 %%DATADIR%%/themes/solarized_light.theme
 %%DATADIR%%/themes/tomorrow-night.theme
