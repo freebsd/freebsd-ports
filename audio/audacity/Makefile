@@ -1,6 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	conan:sysutils/conan
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libmp3lame.so:audio/lame \
 		libmpg123.so:audio/mpg123 \
@@ -35,23 +36,30 @@ WX_COMPS=	wx
 PORTDOCS=	README.txt
 
 CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
+		-Daudacity_use_curl:STRING=system \
 		-Daudacity_use_expat:STRING=system \
+		-Daudacity_use_libmp3lame:STRING=system \
+		-Daudacity_use_libmpg123:STRING=system \
+		-Daudacity_use_libopus:STRING=system \
+		-Daudacity_use_libsndfile:STRING=system \
 		-Daudacity_use_midi:STRING=system \
 		-Daudacity_use_nyquist:STRING=local \
-		-Daudacity_use_portsmf:STRING=local \
-		-Daudacity_use_portmixer:STRING=local \
 		-Daudacity_use_portaudio:STRING=system \
+		-Daudacity_use_portmixer:STRING=local \
+		-Daudacity_use_portsmf:STRING=local \
 		-Daudacity_use_soxr:STRING=system \
-		-Daudacity_use_sndfile:STRING=system \
 		-Daudacity_use_sqlite:STRING=system \
+		-Daudacity_use_uuid:STRING=system \
+		-Daudacity_use_wavpack=system \
 		-Daudacity_use_wxwidgets:STRING=system \
 		-Daudacity_use_zlib:STRING=system
-CMAKE_ON=	audacity_use_pa_oss audacity_obey_system_dependencies
-CMAKE_OFF=	audacity_has_audiocom_upload audacity_has_networking audacity_has_updates_check \
-		audacity_use_pa_alsa audacity_use_pch audacity_has_sentry_reporting \
-		audacity_has_tests audacity_has_vst3
+		
+CMAKE_ON=	audacity_bundle_gplv3 audacity_conan_allow_prebuilt_binaries audacity_obey_system_dependencies
+CMAKE_OFF=	audacity_has_audiocom_upload audacity_conan_enabled audacity_conan_force_build_dependencies \
+		audacity_has_crashreports audacity_has_networking audacity_has_updates_check audacity_has_url_schemes_support \
+		audacity_has_sentry_reporting audacity_has_tests audacity_has_vst3 audacity_perform_codesign audacity_use_pch
 
-OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LV2 MAD \
+OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LV2 MAD MANUAL \
 			OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
 			VORBIS VST
 OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA LV2 MAD OGG SBSMS \
@@ -60,6 +68,7 @@ OPTIONS_EXCLUDE_i386=	SBSMS
 
 LV2_DESC=		Add LV2 plug-in support
 MAD_DESC=		Use libmad for mp2/3 decoding support
+MANUAL_DESC=		Include manual
 SBSMS_DESC=		Use libsbsms for pitch and tempo changing
 SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
 TWOLAME_DESC=		Use libtwolame for MP2 export support
@@ -77,8 +86,8 @@ FFMPEG_CMAKE_OFF=	-Daudacity_use_ffmpeg:STRING=off
 FFMPEG_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-FLAC_CMAKE_ON=		-Daudacity_use_flac:STRING=system
-FLAC_CMAKE_OFF=		-Daudacity_use_flac:STRING=local
+FLAC_CMAKE_ON=		-Daudacity_use_libflac:STRING=system
+FLAC_CMAKE_OFF=		-Daudacity_use_libflac:STRING=off
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
 ID3TAG_CMAKE_ON=	-Daudacity_use_libid3tag:STRING=system
@@ -100,11 +109,14 @@ MAD_CMAKE_ON=		-Daudacity_use_libmad:STRING=system
 MAD_CMAKE_OFF=		-Daudacity_use_libmad:STRING=off
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
+MANUAL_CMAKE_BOOL=	audacity_package_manual
+
 # TODO: fix NLS support properly
 PLIST_SUB+=		NLS=""
+OPTIONS_SUB=		yes
 
-OGG_CMAKE_ON=		-Daudacity_use_ogg:STRING=system
-OGG_CMAKE_OFF=		-Daudacity_use_ogg:STRING=local
+OGG_CMAKE_ON=		-Daudacity_use_libogg:STRING=system
+OGG_CMAKE_OFF=		-Daudacity_use_libogg:STRING=off
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 
 SBSMS_CMAKE_ON=		-Daudacity_use_sbsms:STRING=local
@@ -122,8 +134,8 @@ VAMP_CMAKE_ON=		-Daudacity_use_vamp:STRING=system
 VAMP_CMAKE_OFF=		-Daudacity_use_vamp:STRING=off
 VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
-VORBIS_CMAKE_ON=	-Daudacity_use_vorbis:STRING=system
-VORBIS_CMAKE_OFF=	-Daudacity_use_vorbis:STRING=off
+VORBIS_CMAKE_ON=	-Daudacity_use_libvorbis:STRING=system
+VORBIS_CMAKE_OFF=	-Daudacity_use_libvorbis:STRING=off
 VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis
 
