@@ -1,5 +1,5 @@
 PORTNAME=	dimod
-DISTVERSION=	0.11.5
+DISTVERSION=	0.11.6
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>0:devel/py-mypy@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		compiler:c++11-lang python:3.7+
 USE_PYTHON=	distutils cython autoplist unittest
 
 USE_GITHUB=	yes
