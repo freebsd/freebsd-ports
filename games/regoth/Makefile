@@ -4,7 +4,7 @@ DISTVERSION=	0.4.189
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reimplementation of zEngine, the Gothic and Gothic II engine
 WWW=		https://github.com/REGoth-project/REGoth
 

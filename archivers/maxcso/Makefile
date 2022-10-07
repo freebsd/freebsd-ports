@@ -4,7 +4,7 @@ DISTVERSION=		1.10.0
 PORTREVISION=	2
 CATEGORIES=		archivers
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast ISO to CSO compressor for PSP and PS2 emulators
 WWW=		https://github.com/unknownbrackets/maxcso
 

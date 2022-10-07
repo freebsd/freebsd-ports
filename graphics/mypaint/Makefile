@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/garynthompson/${PORTNAME}/commit/
 # GTK input grab fix
 PATCHFILES=	94c623b788462fadb3e292b918edc4e90adf4faa.patch:-p1
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 WWW=		http://mypaint.org/
 

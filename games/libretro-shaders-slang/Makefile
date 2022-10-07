@@ -2,7 +2,7 @@ PORTNAME=	libretro-shaders-slang
 DISTVERSION=	g20200225
 CATEGORIES=	games
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of slang (Vulkan) shaders for libretro
 WWW=		https://github.com/libretro/slang-shaders
 
