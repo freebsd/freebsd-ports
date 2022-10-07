@@ -2,7 +2,7 @@
 
 # PROVIDE: routinator
 # REQUIRE: DAEMON
-# BEFORE:  LOGIN
+# REQUIRE:  LOGIN
 # KEYWORD: shutdown
 
 . /etc/rc.subr
