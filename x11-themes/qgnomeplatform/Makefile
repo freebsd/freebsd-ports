@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-g53d7924
 PORTREVISION=	1
 CATEGORIES=	x11-themes
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 5 Platform Theme designed to fit into GNOME
 WWW=		https://github.com/FedoraQt/QGnomePlatform
 

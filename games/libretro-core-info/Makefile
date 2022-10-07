@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=v
 DISTVERSION=	1.10.3
 CATEGORIES=	games
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metadata about libretro cores
 WWW=		https://github.com/libretro/libretro-core-info
 

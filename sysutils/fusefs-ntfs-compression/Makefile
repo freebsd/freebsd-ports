@@ -4,7 +4,7 @@ DISTVERSION=		1.0
 CATEGORIES=		sysutils
 PKGNAMEPREFIX=		fusefs-
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTFS-3G plugin for reading XPRESS or LZX compressed files
 WWW=		https://github.com/ebiggers/ntfs-3g-system-compression
 

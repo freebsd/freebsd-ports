@@ -3,7 +3,7 @@ DISTVERSION=	1.4-3
 DISTVERSIONSUFFIX=	-g6116d42b
 CATEGORIES=	multimedia python
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 WWW=		https://otsaloma.io/gaupol/
 

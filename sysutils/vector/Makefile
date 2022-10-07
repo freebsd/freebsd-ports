@@ -4,7 +4,7 @@ DISTVERSION=	0.10.0
 PORTREVISION=	18
 CATEGORIES=	sysutils
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance logs, metrics, and events router
 WWW=		https://vector.dev
 

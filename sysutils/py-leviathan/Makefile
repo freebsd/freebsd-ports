@@ -5,7 +5,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to control and monitor NZXT (Asetek) liquid coolers
 WWW=		https://github.com/jaksi/leviathan/tree/0.1.1
 

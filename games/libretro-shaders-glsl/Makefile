@@ -2,7 +2,7 @@ PORTNAME=	libretro-shaders-glsl
 DISTVERSION=	g20200314
 CATEGORIES=	games
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of GLSL shaders for libretro
 WWW=		https://github.com/libretro/glsl-shaders
 

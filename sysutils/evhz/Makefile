@@ -3,7 +3,7 @@ DISTVERSION=	g20210920
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~iank/${PORTNAME}/archive/${SR_HT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring evdev event rate (mouse polling rate)
 WWW=		https://git.sr.ht/~iank/evhz
 

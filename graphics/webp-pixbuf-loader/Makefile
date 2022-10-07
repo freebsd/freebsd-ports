@@ -3,7 +3,7 @@ DISTVERSION=	0.0.3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebP image loader plugin for GdkPixbuf2
 WWW=		https://github.com/aruiz/webp-pixbuf-loader
 

@@ -4,7 +4,7 @@ DISTVERSION=	3.7.1
 PORTREVISION=	1
 CATEGORIES=	textproc devel
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pairwise Independent Combinatorial Testing tool
 WWW=		https://github.com/Microsoft/pict
 

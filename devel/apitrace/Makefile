@@ -10,7 +10,7 @@ PATCHFILES=	cd3486343001d6a47.patch:-p1 \
 # detect RTLD_DEEPBIND: https://github.com/apitrace/apitrace/pull/571
 PATCHFILES+=	2d31d49eac9bcc010.patch:-p1
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for tracing OpenGL and other graphics APIs
 WWW=		https://apitrace.github.io
 

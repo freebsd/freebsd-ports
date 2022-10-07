@@ -4,7 +4,7 @@ PORTREVISION=	9
 CATEGORIES=	devel
 PKGNAMEPREFIX=	git-
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Syntax-highlighting pager for git/diff
 WWW=		https://github.com/dandavison/delta
 

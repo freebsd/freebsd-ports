@@ -5,7 +5,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://maude.cs.illinois.edu/w/images/d/d8/
 DISTNAME=	Maude-${PORTVERSION}
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance reflective language
 WWW=		https://maude.cs.uiuc.edu/
 

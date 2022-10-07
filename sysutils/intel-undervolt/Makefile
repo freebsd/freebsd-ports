@@ -3,7 +3,7 @@ DISTVERSION=	1.5-7
 DISTVERSIONSUFFIX=	-g66cfb65
 CATEGORIES=	sysutils
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel CPU undervolting tool
 WWW=		https://github.com/kitsunyan/intel-undervolt
 

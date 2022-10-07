@@ -3,7 +3,7 @@ DISTVERSION=	1.2.0
 PORTREVISION=	3
 CATEGORIES=	deskutils
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Browse and find system icons
 WWW=		https://github.com/danrabbit/lookbook
 
