@@ -1,9 +1,9 @@
---- cargo-crates/v8-0.47.1/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.47.1/v8/include/v8config.h
-@@ -273,7 +273,18 @@
- # define V8_HAS_ATTRIBUTE_WARN_UNUSED_RESULT \
-     (__has_attribute(warn_unused_result))
+--- cargo-crates/v8-0.51.0/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.51.0/v8/include/v8config.h
+@@ -345,7 +345,18 @@ path. Add it with -I<path> to the command line
+     (V8_HAS_CPP_ATTRIBUTE(no_unique_address))
  
+ # define V8_HAS_BUILTIN_ASSUME (__has_builtin(__builtin_assume))
 +// Work around Clang bug present in 9.0.1, at least.
 +//
 +// Clang stores alignment as a 32-bit unsigned integer, but V8 only uses
