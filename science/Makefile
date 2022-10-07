@@ -322,6 +322,7 @@
     SUBDIR += py-inequality
     SUBDIR += py-jupyter_jsmol
     SUBDIR += py-kim-query
+    SUBDIR += py-kimpy
     SUBDIR += py-kinematics
     SUBDIR += py-kliff
     SUBDIR += py-kpLib
