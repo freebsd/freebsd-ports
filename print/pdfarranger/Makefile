@@ -1,6 +1,5 @@
 PORTNAME=	pdfarranger
-DISTVERSION=	1.8.2
-PORTREVISION=	5
+DISTVERSION=	1.9.1
 CATEGORIES=	print
 
 MAINTAINER=	Alexander88207@protonmail.com
