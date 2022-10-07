@@ -1,5 +1,6 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.0.5
+PORTREVISION=	1
 CATEGORIES=	net-p2p databases
 
 PATCH_SITES=	https://arrowd.name/:freebsd_compat
@@ -46,7 +47,7 @@ GH_TUPLE=	HeinrichApfelmus:threepenny-gui:e3bb8283fc7d2e8aa374eea29426002e8dcd67
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium \
 		bitcoin-core:secp256k1:${SECP256K1_HASH}:secp
 
-CARDANO_DB_SYNC_HASH=	b32fb363a738eb0453ed6c84f2dfd7723c0640bd
+CARDANO_DB_SYNC_HASH=	8ad98d48e0068f3768d48e18fdcbe254037cba3b
 LIBSODIUM_HASH=		66f017f16633f2060db25e17c170c2afa0f2a8a1
 # Obtained from https://github.com/input-output-hk/cardano-node/blob/master/.github/workflows/github-page.yml#L21
 SECP256K1_HASH=		ac83be33d0956faf6b7f61a60ab524ef7d6a473a
