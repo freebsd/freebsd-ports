@@ -43,7 +43,7 @@ command=%%PREFIX%%/bin/cardano-db-sync
 
 cardano_deployment_url="https://raw.githubusercontent.com/cardano-bsd-alliance/freebsd-ports-cardano-artifacts/master/cardano-db-sync"
 cardano_config_files="config db-sync-config byron-genesis shelley-genesis alonzo-genesis"
-cardano_networks="mainnet testnet"
+cardano_networks="mainnet preview preprod"
 
 start_cmd="${name}_start"
 start_precmd="${name}_prestart"
@@ -85,6 +85,12 @@ sanity_check()
     then
         echo "Invalid value for cardano_db_sync_pgpass: missing file ${cardano_db_sync_pgpass}"
         echo "Did you setup postgresql database access?"
+        exit 1
+    fi
+    if [ ! -d `dirname ${cardano_db_sync_cnode_socket}` ]
+    then
+        echo "The directory for the socket file ${cardano_db_sync_cnode_socket} is missing"
+        echo "Cardano-node is not running and/or wrong path specified for /jail/socket/ dir"
         exit 1
     fi
     return 0

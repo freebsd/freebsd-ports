@@ -1,6 +1,6 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p databases
 
 PATCH_SITES=	https://arrowd.name/:freebsd_compat
