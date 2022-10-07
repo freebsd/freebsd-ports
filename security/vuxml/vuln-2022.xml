@@ -41,7 +41,7 @@
   </vuln>
 
   <vuln vid="c2a89e8f-44e9-11ed-9215-00e081b7aa2d">
-    <topic>jenkins -- multiple vulnerabilities</topic>
+    <topic>jenkins -- XSS vulnerability</topic>
     <affects>
       <package>
 	<name>jenkins</name>
@@ -54,7 +54,13 @@
 	<blockquote cite="https://www.jenkins.io/security/advisory/2022-09-21/">
 	  <h1>Description</h1>
 	  <h5>(High) SECURITY-2886 / CVE-2022-41224</h5>
-	  <p>XSS vulnerability</p>
+	  <p>Jenkins 2.367 through 2.369 (both inclusive) does not escape
+	    tooltips of the l:helpIcon UI component used for some help icons on
+	    the Jenkins web UI.</p>
+	  <p>This results in a stored cross-site scripting (XSS) vulnerability
+	    exploitable by attackers able to control tooltips for this
+	    component.</p>
+	  <p>Jenkins 2.370 escapes tooltips of the l:helpIcon UI component.</p>
 	</blockquote>
       </body>
     </description>
@@ -65,6 +71,7 @@
     <dates>
       <discovery>2022-09-21</discovery>
       <entry>2022-10-05</entry>
+      <modified>2022-10-07</modified>
     </dates>
   </vuln>
 
