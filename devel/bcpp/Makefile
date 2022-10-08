@@ -1,5 +1,5 @@
 PORTNAME=	bcpp
-PORTVERSION=	20210108
+PORTVERSION=	20221002
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/${PORTNAME}/
