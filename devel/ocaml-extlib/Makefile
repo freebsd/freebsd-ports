@@ -1,35 +1,34 @@
 PORTNAME=	extlib
-PORTVERSION=	1.7.5
+DISTVERSION=	1.7.9
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/ygrek/ocaml-extlib/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Complete - yet small - standard library for OCaml
 WWW=		https://github.com/ygrek/ocaml-extlib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BROKEN_mips=	Depends on Ocaml(not available for mips)
+BROKEN_mips=	depends on Ocaml(not available for mips)
 
 BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 
-WRKSRC_SUBDIR=	src
-
 USES=		gmake
-USE_GITHUB=	yes
-GH_ACCOUNT=	ygrek
-GH_PROJECT=	ocaml-extlib
 
 USE_OCAML=	yes
-USE_OCAML_CAMLP4=yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
+USE_OCAML_CAMLP4=	yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAMLFIND_PLIST=	yes
 
-MAKE_ARGS=	VERSION="${PORTVERSION}"
+MAKE_ARGS=	VERSION="${DISTVERSION}"
 ALL_TARGET=	all opt doc
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+
+WRKSRC_SUBDIR=	src
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
