@@ -1,5 +1,5 @@
 PORTNAME=	imapfilter
-PORTVERSION=	2.7.5
+PORTVERSION=	2.7.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -11,17 +11,11 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		cpe lua ssl
-
+USES=		cpe localbase:ldflags lua ssl
 CPE_VENDOR=	imapfilter_project
-
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	lefcha
 
-PORTDOCS=	LICENSE NEWS README
 MAKE_ARGS=	PREFIX=${PREFIX} \
 		MYCFLAGS="${CPPFLAGS}" \
 		MYLDFLAGS="${LDFLAGS}" \
@@ -30,18 +24,27 @@ MAKE_ARGS=	PREFIX=${PREFIX} \
 		MANDIR=${MANPREFIX}/man \
 		LIBLUA=-llua-${LUA_VER}
 
-OPTIONS_DEFINE=	DOCS
+CPPFLAGS+=	-I${LUA_INCDIR}
+
+PORTDOCS=	LICENSE NEWS README
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_SUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|-ldl ||' ${WRKSRC}/src/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/imapfilter
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}/${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${DATADIR} ${STAGEDIR}/${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && \
 		${INSTALL_DATA} config.lua extend.lua \
 			${STAGEDIR}/${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>

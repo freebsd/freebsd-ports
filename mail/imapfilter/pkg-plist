@@ -9,5 +9,5 @@ man/man5/imapfilter_config.5.gz
 %%DATADIR%%/options.lua
 %%DATADIR%%/regex.lua
 %%DATADIR%%/set.lua
-%%EXAMPLESDIR%%/config.lua
-%%EXAMPLESDIR%%/extend.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/config.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/extend.lua
