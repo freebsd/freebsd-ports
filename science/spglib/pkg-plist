@@ -1,7 +1,14 @@
+%%FORTRAN%%bin/spglib_example_fortran.X
 include/spglib.h
 include/spglib_f08.f90
+%%FORTRAN%%lib/libspglib_f08.a
+%%FORTRAN%%lib/libspglib_f08.so
+%%FORTRAN%%lib/libspglib_f08.so.1
+%%FORTRAN%%lib/libspglib_f08.so.2.0.1
 lib/libsymspg.a
 lib/libsymspg.so
 lib/libsymspg.so.1
-lib/libsymspg.so.1.16.5
+lib/libsymspg.so.2.0.1
+%%FORTRAN%%lib/spglib_f08.mod
 libdata/pkgconfig/spglib.pc
+%%FORTRAN%%libdata/pkgconfig/spglib_f08.pc

@@ -1,6 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.5
+DISTVERSION=	2.0.1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/spglib/spglib/issues/192
 USE_GITHUB=	yes
 
 WRKSRC_SUBDIR=	python
