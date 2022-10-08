@@ -402,6 +402,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Accounts.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Admin.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Attachments.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Contacts.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Filters.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Folders.php
