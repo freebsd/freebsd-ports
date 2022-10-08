@@ -1,8 +1,11 @@
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	0.22.2
+PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	3f927f555fd4f0f0043fbceddcf7023d5dd22bb2.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
@@ -10,14 +13,15 @@ WWW=		https://www.stellarium.org/
 
 LICENSE=	GPLv2+
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Stellarium
+LIB_DEPENDS=	libQXlsx.so:devel/qxlsx
 
 USES=		cmake compiler:c++11-lang desktop-file-utils \
 		qt:5 shared-mime-info
 USE_QT=		qmake:build buildtools:build \
 		charts concurrent core gui network opengl \
 		printsupport widgets
+USE_GITHUB=	yes
+GH_ACCOUNT=	Stellarium
 
 GUIDE_VERSION=	${PORTVERSION}
 
@@ -25,15 +29,17 @@ PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
-			TELESCOPE TEST TEXTURES WEBENGINE
-OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS TELESCOPE WEBENGINE
+			SHOWMYSKY TELESCOPE TEST TEXTURES WEBENGINE
+OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS SHOWMYSKY TELESCOPE \
+			WEBENGINE
 OPTIONS_SUB=		yes
 
 GPS_DESC=		GPS (NMEA handling) support
 MORE_STARS_DESC=	Install additional star catalogs (1.0GB)
 MULTIMEDIA_DESC=	Sound and video support
 SCRIPTS_DESC=		Remote control and scripting support
-TELESCOPE_DESC=		Telescope control plugin
+SHOWMYSKY_DESC=		ShowMySky atmosphere light scattering model
+TELESCOPE_DESC=		Build telescope control plugin
 TEXTURES_DESC=		Install better quality textures
 WEBENGINE_DESC=		Get and show extra object information
 
@@ -53,6 +59,11 @@ NLS_CMAKE_OFF=		-DENABLE_NLS:BOOL=OFF
 SCRIPTS_USE=		QT=script
 SCRIPTS_CMAKE_OFF=	-DENABLE_SCRIPTING:BOOL=OFF
 
+SHOWMYSKY_BUILD_DEPENDS=	${LOCALBASE}/include/ShowMySky/AtmosphereRenderer.hpp:astro/calcmysky
+SHOWMYSKY_RUN_DEPENDS=	${LOCALBASE}/lib/libShowMySky.so:astro/calcmysky
+SHOWMYSKY_CMAKE_OFF=	-DENABLE_SHOWMYSKY:BOOL=OFF
+
+TELESCOPE_BUILD_DEPENDS=	${LOCALBASE}/lib/libindiclient.a:devel/indi
 TELESCOPE_USE=		QT=serialport
 TELESCOPE_CMAKE_OFF=	-DUSE_PLUGIN_TELESCOPECONTROL:BOOL=OFF
 
@@ -75,6 +86,10 @@ DISTFILES+=	stars_4_1v0_2.cat:stars4 stars_5_2v0_1.cat:stars5 \
 		stars_6_2v0_1.cat:stars6 stars_7_2v0_1.cat:stars7 \
 		stars_8_2v0_1.cat:stars8
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/TARGET_LINK_LIBRARIES/s,QXlsx ,,' \
+		${WRKSRC}/plugins/Satellites/src/CMakeLists.txt
 
 post-extract-DOCS-on:
 	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
