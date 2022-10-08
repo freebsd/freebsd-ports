@@ -1,6 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.85.0
-PORTREVISION=	2
+PORTVERSION=	0.87.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -27,7 +26,7 @@ GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		certifi:gocertifi:431795d63e8d:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		cirruslabs:cirrus-ci-agent:v1.81.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
+		cirruslabs:cirrus-ci-agent:v1.89.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
 		cirruslabs:echelon:v1.7.0:cirruslabs_echelon/vendor/github.com/cirruslabs/echelon \
 		cirruslabs:go-java-glob:v0.1.0:cirruslabs_go_java_glob/vendor/github.com/cirruslabs/go-java-glob \
 		cirruslabs:podmanapi:v0.2.0:cirruslabs_podmanapi/vendor/github.com/cirruslabs/podmanapi \
@@ -46,7 +45,6 @@ GH_TUPLE=	\
 		docker:go:d30aec9fd63c:docker_go/vendor/github.com/docker/go \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
-		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		fvbommel:sortorder:v1.0.2:fvbommel_sortorder/vendor/github.com/fvbommel/sortorder \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
@@ -77,7 +75,6 @@ GH_TUPLE=	\
 		grpc:grpc-go:v1.41.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
@@ -111,7 +108,6 @@ GH_TUPLE=	\
 		opencontainers:runc:v1.0.0-rc93:opencontainers_runc/vendor/github.com/opencontainers/runc \
 		opencontainers:runtime-spec:e6143ca7d51d:opencontainers_runtime_spec/vendor/github.com/opencontainers/runtime-spec \
 		otiai10:copy:v1.7.0:otiai10_copy/vendor/github.com/otiai10/copy \
-		pelletier:go-toml:v1.9.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:sftp:v1.12.0:pkg_sftp/vendor/github.com/pkg/sftp \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -124,13 +120,10 @@ GH_TUPLE=	\
 		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.5.1:spf13_afero/vendor/github.com/spf13/afero \
-		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
-		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		syndtr:gocapability:42c35b437635:syndtr_gocapability/vendor/github.com/syndtr/gocapability \
 		theupdateframework:notary:v0.7.0:theupdateframework_notary/vendor/github.com/theupdateframework/notary \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
@@ -148,7 +141,5 @@ PLIST_FILES=	bin/cirrus
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/moby/sys/mountinfo
 	@${RLN} ${WRKSRC_moby_sys_mountinfo}/mountinfo ${WRKSRC}/vendor/github.com/moby/sys/mountinfo
-
-PLIST_FILES=	bin/cirrus
 
 .include <bsd.port.mk>
