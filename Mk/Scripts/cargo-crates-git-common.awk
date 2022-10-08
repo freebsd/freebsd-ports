@@ -38,7 +38,7 @@ function commit_from_git_url(url) {
 	}
 }
 
-function split_git_url(info, git_url,		url, path, account, project, commit, i, dir_ver, host) {
+function split_git_url(info, git_url,		url, path, account, project, commit, i, dir_ver, host, tag, fragment) {
 	delete info
 	split_url(url, git_url)
 	url["scheme"] = tolower(url["scheme"])
@@ -80,6 +80,8 @@ function split_git_url(info, git_url,		url, path, account, project, commit, i, d
 			project = path[i]
 			sub(/\.[gG][iI][tT]$/, "", project)
 			commit = commit_from_git_url(url)
+			fragment = url["fragment"]
+			tag = url["query", "tag"]
 
 			host = url["host"]
 			delete url
@@ -93,7 +95,12 @@ function split_git_url(info, git_url,		url, path, account, project, commit, i, d
 			gsub(/\//, "-", account)
 			info["filename"] = sprintf("%s-%s-%s_GL0.tar.gz", account, project, commit)
 
-			info["dir"] = sprintf("%s-%s", project, commit)
+			# c.f. https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266724
+			if (tag) {
+				info["dir"] = sprintf("%s-%s-%s", project, tag, fragment)
+			} else {
+				info["dir"] = sprintf("%s-%s", project, commit)
+			}
 
 			return 1
 		}
