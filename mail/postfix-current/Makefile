@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.8-20220816
+DISTVERSION=	3.8-20221007
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
