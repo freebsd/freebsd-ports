@@ -1,6 +1,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		2
 PORTVERSION=		5.2.${PATCHLEVEL:S/^0//g}
+PORTREVISION=		1
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -50,7 +51,7 @@ HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-PORTS_READLINE_BROKEN=	ld: error: undefined symbol: rl_trim_arg_from_keyseq
+PORTS_READLINE_BROKEN=	needs a newer version of devel/readline, disable PORTS_READLINE and retry
 PORTS_READLINE_USES=	readline
 PORTS_READLINE_CONFIGURE_WITH=	installed-readline
 
