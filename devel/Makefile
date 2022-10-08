@@ -5151,6 +5151,7 @@
     SUBDIR += py-pytest-plus
     SUBDIR += py-pytest-profiling
     SUBDIR += py-pytest-pycodestyle
+    SUBDIR += py-pytest-qt
     SUBDIR += py-pytest-randomly
     SUBDIR += py-pytest-regressions
     SUBDIR += py-pytest-regtest
