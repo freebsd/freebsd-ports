@@ -1,6 +1,5 @@
 PORTNAME=	wallutils
-DISTVERSION=	5.12.2
-PORTREVISION=	1
+DISTVERSION=	5.12.4
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +24,7 @@ GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xml
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:e7cb96979f69:golang_image/vendor/golang.org/x/image \
 		golang:net:58aab5ef257a:golang_net/vendor/golang.org/x/net \
-		golang:sys:aba9fc2a8ff2:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:84dc82d7e875:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -34,7 +33,7 @@ GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xml
 		stretchr:powerwalk:bceb9d014549:stretchr_powerwalk/vendor/github.com/stretchr/powerwalk \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
-		xyproto:env:v1.7.0:xyproto_env/vendor/github.com/xyproto/env \
+		xyproto:env:v1.8.0:xyproto_env/vendor/github.com/xyproto/env \
 		xyproto:heic:v1.0.0:xyproto_heic/vendor/github.com/xyproto/heic
 GL_TUPLE=	https://gitlab.howett.net:go:plist:1454fab16a0642638feb0ae98c41f79eccb2a20a:go_plist/vendor/howett.net/plist
 GO_TARGET=	./cmd/getdpi \
