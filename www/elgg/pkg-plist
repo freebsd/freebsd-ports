@@ -15679,7 +15679,6 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions_include.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/LICENSE
-%%WWWDIR%%/vendor/guzzlehttp/promises/Makefile
 %%WWWDIR%%/vendor/guzzlehttp/promises/README.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/AggregateException.php
@@ -17564,6 +17563,7 @@
 %%WWWDIR%%/vendor/npm-asset/jquery/src/css/var/getStyles.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/css/var/isHiddenWithinTree.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/css/var/rboxStyle.js
+%%WWWDIR%%/vendor/npm-asset/jquery/src/css/var/rcustomProp.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/css/var/rnumnonpx.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/css/var/swap.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/data.js
@@ -17625,9 +17625,11 @@
 %%WWWDIR%%/vendor/npm-asset/jquery/src/var/rcheckableType.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/var/rcssNum.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/var/rnothtmlwhite.js
+%%WWWDIR%%/vendor/npm-asset/jquery/src/var/rtrimCSS.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/var/slice.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/var/support.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/var/toString.js
+%%WWWDIR%%/vendor/npm-asset/jquery/src/var/whitespace.js
 %%WWWDIR%%/vendor/npm-asset/jquery/src/wrap.js
 %%WWWDIR%%/vendor/npm-asset/normalize.css/CHANGELOG.md
 %%WWWDIR%%/vendor/npm-asset/normalize.css/LICENSE.md
