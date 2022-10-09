@@ -1,5 +1,5 @@
 PORTNAME=	openapi-core
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator02>=0.2.0<0.3.0:devel/py-openapi-schema-validator02@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator04>=0.4.0<0.5.0:devel/py-openapi-spec-validator04@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.3.0<0.4.0:devel/py-openapi-schema-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.5.0<0.6.0:devel/py-openapi-spec-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parse>=0:textproc/py-parse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathable>=0.4.0<0.5.0:devel/py-pathable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3.0<5.0.0:devel/py-typing-extensions@${PY_FLAVOR} \
