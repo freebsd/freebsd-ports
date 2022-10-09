@@ -1,5 +1,6 @@
 PORTNAME=	pydata-sphinx-theme
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		LOCAL/sunpoet:static
@@ -29,6 +30,6 @@ post-patch:
 	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 post-install:
-	cd ${WRKDIR}/static/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/
+	cd ${WRKDIR}/static/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/pydata_sphinx_theme/
 
 .include <bsd.port.mk>
