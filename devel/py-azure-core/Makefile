@@ -1,5 +1,5 @@
 PORTNAME=	azure-core
-PORTVERSION=	1.25.1
+PORTVERSION=	1.26.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,10 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	ASYNC
-OPTIONS_DEFAULT=ASYNC
-ASYNC_DESC=	Async transport support
+OPTIONS_DEFINE=	AIO
+OPTIONS_DEFAULT=AIO
+AIO_DESC=	Async transport support
 
-ASYNC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR}
+AIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.0:www/py-aiohttp@${PY_FLAVOR}
 
 .include <bsd.port.mk>
