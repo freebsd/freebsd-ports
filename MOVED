@@ -17591,3 +17591,4 @@ devel/rubygem-fugit12|devel/rubygem-fugit|2022-10-09|Remove obsoleted port. Use 
 devel/rubygem-json25|devel/rubygem-json|2022-10-09|Remove obsoleted port. Use devel/rubygem-json instead
 devel/rubygem-oj310|devel/rubygem-oj|2022-10-09|Remove obsoleted port. Use devel/rubygem-oj instead
 net/rubygem-omniauth-facebook4|net/rubygem-omniauth-facebook|2022-10-09|Remove obsoleted port. Use net/rubygem-omniauth-facebook instead
+www/rubygem-cal-heatmap-rails-rails4|www/rubygem-cal-heatmap-rails|2022-10-09|Remove obsoleted port. Use www/rubygem-cal-heatmap-rails instead
