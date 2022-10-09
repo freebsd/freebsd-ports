@@ -17583,3 +17583,4 @@ devel/p5-Type-Tie|devel/p5-Type-Tiny|2022-10-09|Remove obsoleted port. Use devel
 databases/py-alembic16|databases/py-alembic|2022-10-09|Remove obsoleted port. Use databases/py-alembic instead
 devel/py-openapi-spec-validator04|devel/py-openapi-spec-validator|2022-10-09|Remove obsoleted port. Use devel/py-openapi-spec-validator instead
 devel/py-openapi-schema-validator02|devel/py-openapi-schema-validator|2022-10-09|Remove obsoleted port. Use devel/py-openapi-schema-validator instead
+databases/rubygem-redis44|databases/rubygem-redis|2022-10-09|Remove obsoleted port. Use databases/rubygem-redis instead
