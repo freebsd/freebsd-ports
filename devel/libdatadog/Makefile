@@ -1,5 +1,5 @@
 PORTNAME=	libdatadog
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -65,6 +65,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		lazy_static-1.4.0 \
 		libc-0.2.125 \
 		log-0.4.17 \
+		lz4_flex-0.9.5 \
 		maplit-1.0.2 \
 		memchr-2.5.0 \
 		mime-0.3.16 \
@@ -76,6 +77,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		num_cpus-1.13.1 \
 		once_cell-1.10.0 \
 		openssl-probe-0.1.5 \
+		paste-1.0.7 \
 		percent-encoding-2.1.0 \
 		petgraph-0.6.0 \
 		pin-project-1.0.10 \
@@ -113,6 +115,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		smallvec-1.8.0 \
 		socket2-0.4.4 \
 		spin-0.5.2 \
+		static_assertions-1.1.0 \
 		syn-1.0.93 \
 		sys-info-0.9.1 \
 		tempfile-3.3.0 \
@@ -130,6 +133,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.11 \
 		try-lock-0.2.3 \
+		twox-hash-1.6.3 \
 		unicase-2.6.0 \
 		unicode-xid-0.2.3 \
 		untrusted-0.7.1 \
