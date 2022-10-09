@@ -52,6 +52,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Extract/ArchiveZip.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Extract/CommandLine.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Extract/Directory.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Extract/File.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Extract/Negotiate.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Fetch.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Fetch/CurlCommand.pm
@@ -147,6 +148,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract::ArchiveZip.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract::CommandLine.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract::Directory.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Extract::File.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract::Negotiate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Fetch.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Fetch::CurlCommand.3.gz
