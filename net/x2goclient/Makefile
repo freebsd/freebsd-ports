@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt client for the X2Go system
 WWW=		https://www.x2go.org/
 
