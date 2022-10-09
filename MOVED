@@ -17594,3 +17594,4 @@ net/rubygem-omniauth-facebook4|net/rubygem-omniauth-facebook|2022-10-09|Remove o
 www/rubygem-cal-heatmap-rails-rails4|www/rubygem-cal-heatmap-rails|2022-10-09|Remove obsoleted port. Use www/rubygem-cal-heatmap-rails instead
 www/rubygem-d3_rails-rails4|www/rubygem-d3_rails|2022-10-09|Remove obsoleted port. Use www/rubygem-d3_rails instead
 www/rubygem-jwt21|www/rubygem-jwt|2022-10-09|Remove obsoleted port. Use www/rubygem-jwt instead
+www/rubygem-protocol-rack01|www/rubygem-protocol-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-protocol-rack instead
