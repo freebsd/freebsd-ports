@@ -4873,7 +4873,6 @@
     SUBDIR += py-openapi-schema-validator
     SUBDIR += py-openapi-schema-validator02
     SUBDIR += py-openapi-spec-validator
-    SUBDIR += py-openapi-spec-validator04
     SUBDIR += py-opencensus
     SUBDIR += py-opencensus-context
     SUBDIR += py-opendht

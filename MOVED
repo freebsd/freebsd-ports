@@ -17581,3 +17581,4 @@ x11-toolkits/gstreamer1-plugins-gtk4||2022-10-01|No consumers left and deprecate
 deskutils/lookbook|deskutils/iconbrowser|2022-10-05|Project was renamed, now it is an official elementary OS application
 devel/p5-Type-Tie|devel/p5-Type-Tiny|2022-10-09|Remove obsoleted port. Use devel/p5-Type-Tiny instead
 databases/py-alembic16|databases/py-alembic|2022-10-09|Remove obsoleted port. Use databases/py-alembic instead
+devel/py-openapi-spec-validator04|devel/py-openapi-spec-validator|2022-10-09|Remove obsoleted port. Use devel/py-openapi-spec-validator instead
