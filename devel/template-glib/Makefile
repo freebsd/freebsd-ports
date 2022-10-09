@@ -1,15 +1,18 @@
 PORTNAME=	template-glib
-PORTVERSION=	3.34.1
+PORTVERSION=	3.36.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Templating library for GLib
+WWW=		https://gitlab.gnome.org/GNOME/template-glib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison compiler:c11 gettext gnome meson pkgconfig tar:xz vala:build
+BUILD_DEPENDS=	valac:lang/vala
+
+USES=		bison compiler:c11 gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection
 
 .include <bsd.port.mk>

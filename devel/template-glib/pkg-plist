@@ -13,7 +13,7 @@ include/template-glib-1.0/tmpl-version.h
 lib/girepository-1.0/Template-1.0.typelib
 lib/libtemplate_glib-1.0.so
 lib/libtemplate_glib-1.0.so.0
-lib/libtemplate_glib-1.0.so.0.3400.1
+lib/libtemplate_glib-1.0.so.0.3600.0
 libdata/pkgconfig/template-glib-1.0.pc
 share/gir-1.0/Template-1.0.gir
 share/locale/ca/LC_MESSAGES/template-glib.mo
