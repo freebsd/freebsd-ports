@@ -10,6 +10,8 @@ WWW=		https://gitlab.gnome.org/jwestman/blueprint-compiler
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	gtk4>0:x11-toolkits/gtk40
+
 USES=		gnome meson python shebangfix
 USE_GITLAB=	yes
 USE_GNOME=	pygobject3
