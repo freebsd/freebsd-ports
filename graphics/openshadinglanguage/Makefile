@@ -1,7 +1,6 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.17.0
-PORTREVISION=	2
+DISTVERSION=	1.12.6.2
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -37,11 +36,8 @@ CMAKE_ARGS+=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}" \
 # This flag fixes linking with clang 9.0 ??
 CXXFLAGS+=	-DNDEBUG
 
-OPTIONS_DEFINE=		MATERIALX OSLTOY
+OPTIONS_DEFINE=		OSLTOY
 OPTIONS_SUB=		yes
-
-MATERIALX_DESC=		Install material library
-MATERIALX_CMAKE_BOOL=	OSL_BUILD_MATERIALX
 
 OSLTOY_DESC=		Interactive shader edit and visualize tool
 OSLTOY_CMAKE_BOOL=	USE_QT
@@ -65,7 +61,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
 		-e 's,%%PYCMD%%,${PYTHON_CMD},' \
 		${WRKSRC}/src/shaders/CMakeLists.txt \
-		${WRKSRC}/src/shaders/MaterialX/CMakeLists.txt \
 		${WRKSRC}/src/doc/CMakeLists.txt \
 		${WRKSRC}/src/liboslexec/CMakeLists.txt
 
