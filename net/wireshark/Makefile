@@ -1,5 +1,5 @@
 PORTNAME?=	wireshark
-DISTVERSION=	3.6.8
+DISTVERSION=	4.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -42,7 +42,7 @@ LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 #CFLAGS+=	-funit-at-a-time
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd etwdump
+    reordercap captype randpktdump udpdump sharkd etwdump wifidump
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
@@ -81,7 +81,7 @@ CISCODUMP_DESC=		Build ciscodump extcap tool
 OPUS_DESC=		Build opus decoder plugin
 
 GUI_USES=		qt:5
-GUI_USE=	qt=core,gui,multimedia,widgets,printsupport,svg,buildtools:build,linguisttools:build,qmake:build
+GUI_USE=	qt=core,concurrent,gui,multimedia,widgets,printsupport,svg,buildtools:build,linguisttools:build,qmake:build
 
 LTO_CMAKE_BOOL=		ENABLE_LTO
 LUA_USES=		lua:51-52
