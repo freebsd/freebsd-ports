@@ -375,6 +375,7 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
+    SUBDIR += py-apache-beam
     SUBDIR += py-boost-histogram
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer

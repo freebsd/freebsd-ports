@@ -1,0 +1,17 @@
+Apache Beam is a unified programming model for Batch and Streaming data
+processing.
+
+Beam provides a general approach to expressing embarrassingly parallel data
+processing pipelines and supports three categories of users, each of which have
+relatively disparate backgrounds and needs.
+
+* End Users: Writing pipelines with an existing SDK, running it on an existing
+  runner. These users want to focus on writing their application logic and have
+  everything else just work.
+* SDK Writers: Developing a Beam SDK targeted at a specific user community
+  (Java, Python, Scala, Go, R, graphical, etc). These users are language geeks
+  and would prefer to be shielded from all the details of various runners and
+  their implementations.
+* Runner Writers: Have an execution environment for distributed processing and
+  would like to support programs written against the Beam Model. Would prefer to
+  be shielded from details of multiple SDKs.
