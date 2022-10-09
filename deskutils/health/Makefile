@@ -12,19 +12,18 @@ WWW=		https://gitlab.gnome.org/World/Health
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libsecret-1.so:security/libsecret \
 		libtracker-sparql-3.0.so:sysutils/tracker3
 
-USES=		cargo gettext gnome meson pkgconfig python:build
+USES=		cargo gettext gnome meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo gtk40 libadwaita
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Health
 GL_COMMIT=	d664384370bb55f0e46a78da094c567a5a7e97c6
-GL_TUPLE=	jwestman:blueprint-compiler:87cedc2c7e48b01dc1b07aef937e2fe02111b18c:bpc/subprojects/blueprint-compiler
-BINARY_ALIAS=	python3=${PYTHON_CMD}
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	dev.Cogitri.Health.gschema.xml
 

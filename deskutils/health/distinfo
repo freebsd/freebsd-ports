@@ -395,7 +395,5 @@ SHA256 (rust/crates/zxcvbn-2.2.1.crate) = 568becce91e872373a4b33f24ddc67e5280ae2
 SIZE (rust/crates/zxcvbn-2.2.1.crate) = 423554
 SHA256 (World-Health-d664384370bb55f0e46a78da094c567a5a7e97c6_GL0.tar.gz) = 908c1d49c6f13fb688e4e29516422fdb06d78a8bd3dd2fcb3e875e892f8a84da
 SIZE (World-Health-d664384370bb55f0e46a78da094c567a5a7e97c6_GL0.tar.gz) = 546853
-SHA256 (jwestman-blueprint-compiler-87cedc2c7e48b01dc1b07aef937e2fe02111b18c_GL0.tar.gz) = e921f97b3fa32450161fc757759163e53578c46eac9bdea6a9c314ec8dc08f2c
-SIZE (jwestman-blueprint-compiler-87cedc2c7e48b01dc1b07aef937e2fe02111b18c_GL0.tar.gz) = 56398
 SHA256 (864d961a3c4e.patch) = 92c94b0072702ebd1d9c7d54af2cd01258bc1324fada608f05114ff3a7e12219
 SIZE (864d961a3c4e.patch) = 1702
