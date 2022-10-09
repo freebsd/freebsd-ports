@@ -1,5 +1,6 @@
 PORTNAME=	sinatra-r18n
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-r18n-core>=5.0<6:devel/rubygem-r18n-core \
-		rubygem-sinatra>=1.3<3:www/rubygem-sinatra
+		rubygem-sinatra2>=1.3<3:www/rubygem-sinatra2
 
 USES=		gem
 USE_RUBY=	yes
