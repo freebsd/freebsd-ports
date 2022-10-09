@@ -17585,3 +17585,4 @@ devel/py-openapi-spec-validator04|devel/py-openapi-spec-validator|2022-10-09|Rem
 devel/py-openapi-schema-validator02|devel/py-openapi-schema-validator|2022-10-09|Remove obsoleted port. Use devel/py-openapi-schema-validator instead
 databases/rubygem-redis44|databases/rubygem-redis|2022-10-09|Remove obsoleted port. Use databases/rubygem-redis instead
 databases/rubygem-redis-actionpack52-rails61|databases/rubygem-redis-actionpack-rails61|2022-10-09|Remove obsoleted port. Use databases/rubygem-redis-actionpack-rails61 instead
+devel/rubygem-devise47-rails61|devel/rubygem-devise-rails61|2022-10-09|Remove obsoleted port. Use devel/rubygem-devise-rails61 instead
