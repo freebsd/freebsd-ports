@@ -3,7 +3,7 @@ DISTVERSION=	0.0.15
 PORTREVISION=	6
 CATEGORIES=	multimedia
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Live video streaming server in golang
 WWW=		https://github.com/gwuhaolin/livego
 
