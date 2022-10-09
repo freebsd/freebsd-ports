@@ -2882,6 +2882,7 @@
     SUBDIR += p5-MooseX-Daemonize
     SUBDIR += p5-MooseX-Declare
     SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
+    SUBDIR += p5-MooseX-Extended
     SUBDIR += p5-MooseX-FollowPBP
     SUBDIR += p5-MooseX-Getopt
     SUBDIR += p5-MooseX-Has-Options

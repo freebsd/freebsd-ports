@@ -1,0 +1,6 @@
+MooseX::Extended attempts to create a safer version of Moose that defaults to
+read-only attributes and is easier to read and write.
+
+It tries to bring some of the lessons learned from the Corinna project, while
+acknowledging that you can't always get what you want (such as true
+encapsulation and true methods).
