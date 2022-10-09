@@ -7,7 +7,10 @@ setup(
     maintainer = 'Chris Holdgraf',
     maintainer_email = 'choldgraf@gmail.com',
     url = None,
-    packages = ['sphinx_book_theme'],
+    packages = [
+        'sphinx_book_theme',
+        'sphinx_book_theme.header_buttons',
+    ],
     package_dir = {'': 'src'},
     package_data = {'': ['*']},
     install_requires = [
