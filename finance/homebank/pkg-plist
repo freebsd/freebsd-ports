@@ -1,5 +1,5 @@
 bin/homebank
-share/appdata/homebank.appdata.xml
+share/metainfo/homebank.appdata.xml
 share/application-registry/homebank.applications
 share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/flt-exclude.png

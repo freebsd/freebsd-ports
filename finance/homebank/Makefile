@@ -1,5 +1,5 @@
 PORTNAME=	homebank
-PORTVERSION=	5.5.6
+PORTVERSION=	5.5.7
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
