@@ -5,14 +5,12 @@
 %%IMAGEVIEWER%%bin/iv
 %%TOOLS%%bin/maketx
 %%TOOLS%%bin/oiiotool
+%%TOOLS%%bin/testtex
 include/OpenImageIO/argparse.h
 include/OpenImageIO/array_view.h
 include/OpenImageIO/atomic.h
 include/OpenImageIO/attrdelegate.h
 include/OpenImageIO/benchmark.h
-include/OpenImageIO/c-deepdata.h
-include/OpenImageIO/c-paramlist.h
-include/OpenImageIO/c-typedesc.h
 include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/deepdata.h
@@ -33,6 +31,7 @@ include/OpenImageIO/filter.h
 include/OpenImageIO/fmath.h
 include/OpenImageIO/fstream_mingw.h
 include/OpenImageIO/function_view.h
+include/OpenImageIO/half.h
 include/OpenImageIO/hash.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h
@@ -66,6 +65,7 @@ include/OpenImageIO/unittest.h
 include/OpenImageIO/unordered_map_concurrent.h
 include/OpenImageIO/ustring.h
 include/OpenImageIO/varyingref.h
+include/OpenImageIO/vecparam.h
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.%%SHL1%%
