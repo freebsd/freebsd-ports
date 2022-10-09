@@ -4,7 +4,7 @@ CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video understanding deep learning library
 WWW=		https://github.com/facebookresearch/pytorchvideo
 
