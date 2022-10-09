@@ -502,8 +502,10 @@ man/man7/paperless.7.gz
 %%WWWDIR%%/static/paperless/img/logo-dark.png
 %%WWWDIR%%/static/paperless/img/logo-light.png
 %%WWWDIR%%/static/rest_framework/css/bootstrap-theme.min.css
+%%WWWDIR%%/static/rest_framework/css/bootstrap-theme.min.css.map
 %%WWWDIR%%/static/rest_framework/css/bootstrap-tweaks.css
 %%WWWDIR%%/static/rest_framework/css/bootstrap.min.css
+%%WWWDIR%%/static/rest_framework/css/bootstrap.min.css.map
 %%WWWDIR%%/static/rest_framework/css/default.css
 %%WWWDIR%%/static/rest_framework/css/font-awesome-4.0.3.css
 %%WWWDIR%%/static/rest_framework/css/prettify.css
