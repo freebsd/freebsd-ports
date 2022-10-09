@@ -1,0 +1,12 @@
+Red Gandiva is the Ruby bindings of Gandiva. Red Gandiva is based on GObject
+Introspection.
+
+Gandiva is a toolset for compiling and evaluating expressions on Arrow data.
+
+GObject Introspection is a middleware for language bindings of C library.
+GObject Introspection can generate language bindings automatically at runtime.
+
+Red Gandiva uses Gandiva GLib and gobject-introspection gem to generate Ruby
+bindings of Gandiva.
+
+See also: https://github.com/apache/arrow/tree/master/ruby/red-gandiva
