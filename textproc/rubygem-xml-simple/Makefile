@@ -10,11 +10,11 @@ WWW=		https://github.com/maik/xml-simple
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-rexml>0:textproc/rubygem-rexml
+RUN_DEPENDS=	rubygem-rexml>=0:textproc/rubygem-rexml
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
