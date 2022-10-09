@@ -11,6 +11,8 @@ WWW=		https://github.com/neelchauhan/freebsd-android-tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	ld: error: undefined symbol: OPENSSL_cpuid_setup
+
 LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libgmock.so:devel/googletest \
 		liblz4.so:archivers/liblz4 \
