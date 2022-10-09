@@ -1,5 +1,5 @@
 PORTNAME=	libzen
-PORTVERSION=	22.06
+PORTVERSION=	22.09
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
