@@ -1,5 +1,5 @@
 PORTNAME=	vger
-PORTVERSION=	1.11
+PORTVERSION=	2.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://tildegit.org/solene/vger/archive/
 DISTFILES=	${PORTVERSION}.tar.gz
