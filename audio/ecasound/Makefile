@@ -6,7 +6,7 @@ MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
 		http://ecawave.sourceforge.net/download/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 WWW=		https://nosignal.fi/ecasound/
 
