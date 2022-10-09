@@ -17589,3 +17589,4 @@ devel/rubygem-devise47-rails61|devel/rubygem-devise-rails61|2022-10-09|Remove ob
 devel/rubygem-flipper021|devel/rubygem-flipper|2022-10-09|Remove obsoleted port. Use devel/rubygem-flipper instead
 devel/rubygem-fugit12|devel/rubygem-fugit|2022-10-09|Remove obsoleted port. Use devel/rubygem-fugit instead
 devel/rubygem-json25|devel/rubygem-json|2022-10-09|Remove obsoleted port. Use devel/rubygem-json instead
+devel/rubygem-oj310|devel/rubygem-oj|2022-10-09|Remove obsoleted port. Use devel/rubygem-oj instead
