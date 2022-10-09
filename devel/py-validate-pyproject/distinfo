@@ -1,3 +1,3 @@
-TIMESTAMP = 1662212178
-SHA256 (validate-pyproject-0.10.tar.gz) = 74186c5535ac4db9b7e1df2359c9f32b12ff9c6f5a4c2998e442409bfd29c422
-SIZE (validate-pyproject-0.10.tar.gz) = 104131
+TIMESTAMP = 1665073140
+SHA256 (validate-pyproject-0.10.1.tar.gz) = 4621e7728bcfc42fcb54752dc3712c1f4d2e2eb99ee97c31e34f62cabea26254
+SIZE (validate-pyproject-0.10.1.tar.gz) = 104167
