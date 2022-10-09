@@ -1873,7 +1873,6 @@
     SUBDIR += rubygem-cssbundling-rails
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-d3_rails
-    SUBDIR += rubygem-d3_rails-rails4
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-deckar01-task_list
     SUBDIR += rubygem-domainatrix
