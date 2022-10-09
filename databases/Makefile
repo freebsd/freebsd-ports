@@ -982,6 +982,7 @@
     SUBDIR += rubygem-postgres_ext
     SUBDIR += rubygem-puppetdb_cli
     SUBDIR += rubygem-rbase
+    SUBDIR += rubygem-red-arrow
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-actionpack
     SUBDIR += rubygem-redis-actionpack-rails5
