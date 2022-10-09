@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python 3 library for building Gopher clients and servers
 WWW=		https://pypi.org/project/Pituophis/
 
