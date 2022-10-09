@@ -15,10 +15,11 @@ package_dir = \
 {'': 'src'}
 
 install_requires = \
-['packaging', 'rich', 'tomli', 'nodeenv', 'setuptools', 'pep621']
+['pyproject-metadata', 'packaging', 'rich', 'tomli', 'nodeenv', 'setuptools']
 
 extras_require = \
-{'cli': ['build', 'click', 'sphinx-autobuild']}
+{":python_version <= '3.7'": ['typing_extensions '],
+ 'cli': ['build', 'click', 'sphinx-autobuild']}
 
 entry_points = \
 {'console_scripts': ['stb = sphinx_theme_builder._internal.cli:main']}
