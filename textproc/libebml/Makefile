@@ -1,5 +1,5 @@
 PORTNAME=	libebml
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	https://dl.matroska.org/downloads/libebml/
 
