@@ -986,6 +986,7 @@
     SUBDIR += rubygem-red-arrow-dataset
     SUBDIR += rubygem-red-gandiva
     SUBDIR += rubygem-red-parquet
+    SUBDIR += rubygem-red-plasma
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-actionpack
     SUBDIR += rubygem-redis-actionpack-rails5
