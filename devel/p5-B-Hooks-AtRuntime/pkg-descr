@@ -1,0 +1,5 @@
+B::Hooks::AtRuntime allows code that runs at compile-time to do something at
+runtime. A block passed to at_runtime gets compiled into the code that's
+currently compiling, and will be called when control reaches that point at
+runtime. In the example in the SYNOPSIS, the warnings will occur in order, and
+if that section of code runs more than once, so will all three warnings.

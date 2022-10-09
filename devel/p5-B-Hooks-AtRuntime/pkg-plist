@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/B/Hooks/AtRuntime.pm
+%%SITE_ARCH%%/auto/B/Hooks/AtRuntime/AtRuntime.so
+%%PERL5_MAN3%%/B::Hooks::AtRuntime.3.gz
