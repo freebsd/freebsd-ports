@@ -1,5 +1,5 @@
 PORTNAME=	dry-configurable
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/dry-rb/dry-configurable
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-dry-core>=0.6<1:devel/rubygem-dry-core
+RUN_DEPENDS=	rubygem-dry-core>=0.6<1:devel/rubygem-dry-core \
+		rubygem-zeitwerk>=2.6<3:devel/rubygem-zeitwerk
 
 USES=		gem
 USE_RUBY=	yes
