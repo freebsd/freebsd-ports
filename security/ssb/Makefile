@@ -4,7 +4,7 @@ DISTVERSION=	0.1.1
 PORTREVISION=	6
 CATEGORIES=	security
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSH Server Bruteforcer
 WWW=		https://github.com/kitabisa/ssb
 
