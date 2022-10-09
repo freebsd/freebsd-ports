@@ -90,6 +90,7 @@
 %%DATADIR%%/symbols/MCU_Microchip_ATmega.kicad_sym
 %%DATADIR%%/symbols/MCU_Microchip_ATtiny.kicad_sym
 %%DATADIR%%/symbols/MCU_Microchip_AVR.kicad_sym
+%%DATADIR%%/symbols/MCU_Microchip_AVR_Dx.kicad_sym
 %%DATADIR%%/symbols/MCU_Microchip_PIC10.kicad_sym
 %%DATADIR%%/symbols/MCU_Microchip_PIC12.kicad_sym
 %%DATADIR%%/symbols/MCU_Microchip_PIC16.kicad_sym
@@ -114,6 +115,7 @@
 %%DATADIR%%/symbols/MCU_NXP_S08.kicad_sym
 %%DATADIR%%/symbols/MCU_Nordic.kicad_sym
 %%DATADIR%%/symbols/MCU_Parallax.kicad_sym
+%%DATADIR%%/symbols/MCU_RaspberryPi.kicad_sym
 %%DATADIR%%/symbols/MCU_Renesas_Synergy_S1.kicad_sym
 %%DATADIR%%/symbols/MCU_STC.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32F0.kicad_sym
