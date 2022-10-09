@@ -1,7 +1,5 @@
 PORTNAME=	rustworkx
-DISTVERSION=	0.11.0-51
-DISTVERSIONSUFFIX=	-ge9edfdc
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	math python
 #MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		cargo python:3.7+
-USE_PYTHON=	autoplist distutils pytest # all tests fail to run, see https://github.com/Qiskit/rustworkx/issues/655
+USE_PYTHON=	autoplist distutils pytest # unclear how to run tests, see https://github.com/Qiskit/rustworkx/issues/695
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
@@ -58,12 +56,13 @@ CARGO_CRATES=	ahash-0.7.6 \
 		parking_lot_core-0.8.5 \
 		petgraph-0.6.2 \
 		ppv-lite86-0.2.16 \
+		priority-queue-1.2.0 \
 		proc-macro2-1.0.39 \
-		pyo3-0.16.5 \
-		pyo3-build-config-0.16.5 \
-		pyo3-ffi-0.16.5 \
-		pyo3-macros-0.16.5 \
-		pyo3-macros-backend-0.16.5 \
+		pyo3-0.16.6 \
+		pyo3-build-config-0.16.6 \
+		pyo3-ffi-0.16.6 \
+		pyo3-macros-0.16.6 \
+		pyo3-macros-backend-0.16.6 \
 		quick-xml-0.22.0 \
 		quote-1.0.18 \
 		rand-0.8.5 \
@@ -76,9 +75,9 @@ CARGO_CRATES=	ahash-0.7.6 \
 		redox_syscall-0.2.13 \
 		ryu-1.0.10 \
 		scopeguard-1.1.0 \
-		serde-1.0.142 \
-		serde_derive-1.0.142 \
-		serde_json-1.0.83 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
+		serde_json-1.0.85 \
 		smallvec-1.8.0 \
 		syn-1.0.96 \
 		target-lexicon-0.12.4 \
