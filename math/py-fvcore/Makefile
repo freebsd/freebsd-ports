@@ -4,7 +4,7 @@ CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared code among different Facebook research projects
 WWW=		https://github.com/facebookresearch/fvcore
 
