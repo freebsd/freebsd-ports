@@ -812,6 +812,7 @@
     SUBDIR += py-pycql
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
+    SUBDIR += py-pymongo
     SUBDIR += py-pymssql
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
@@ -852,7 +853,6 @@
     SUBDIR += py-whisper
     SUBDIR += py-xapian
     SUBDIR += py-zodbpickle
-    SUBDIR += pymongo
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
     SUBDIR += qof

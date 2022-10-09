@@ -17596,3 +17596,4 @@ www/rubygem-d3_rails-rails4|www/rubygem-d3_rails|2022-10-09|Remove obsoleted por
 www/rubygem-jwt21|www/rubygem-jwt|2022-10-09|Remove obsoleted port. Use www/rubygem-jwt instead
 www/rubygem-protocol-rack01|www/rubygem-protocol-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-protocol-rack instead
 www/rubygem-rack223|www/rubygem-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-rack instead
+databases/pymongo|databases/py-pymongo|2022-10-09|Add the py- prefix which all Python ports should have

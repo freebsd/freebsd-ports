@@ -10,7 +10,7 @@ MAINTAINER=	mail@derzinn.de
 COMMENT=	Minimal database Model management for MongoDB
 WWW=		https://github.com/slacy/minimongo
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=1.9:databases/pymongo@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=1.9:databases/py-pymongo@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
