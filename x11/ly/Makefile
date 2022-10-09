@@ -4,7 +4,7 @@ DISTVERSION=	0.5.2
 PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TUI (ncurses-like) display manager for X and Wayland
 WWW=		https://github.com/cylgom/ly
 
