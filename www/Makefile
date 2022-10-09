@@ -1938,6 +1938,7 @@
     SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails-rails4
+    SUBDIR += rubygem-haml5
     SUBDIR += rubygem-hamlit
     SUBDIR += rubygem-hamlit-rails
     SUBDIR += rubygem-hamlit-rails-rails5
