@@ -1,6 +1,5 @@
 PORTNAME=	fog
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-atmos>=0:net/rubygem-fog-atmos \
 		rubygem-fog-aws>=0.6.0:net/rubygem-fog-aws \
-		rubygem-fog-brightbox>=0.4:net/rubygem-fog-brightbox \
+		rubygem-fog-brightbox>=0.4<2.0:net/rubygem-fog-brightbox \
 		rubygem-fog-cloudatcost>=0.4<1:net/rubygem-fog-cloudatcost \
 		rubygem-fog-cloudstack>=0.1.0<0.2:net/rubygem-fog-cloudstack \
 		rubygem-fog-core>=2.1<3:devel/rubygem-fog-core \
 		rubygem-fog-digitalocean>=0.3.0:net/rubygem-fog-digitalocean \
 		rubygem-fog-dnsimple>=2.1<3:net/rubygem-fog-dnsimple \
-		rubygem-fog-dynect>=0.0.2:net/rubygem-fog-dynect \
+		rubygem-fog-dynect>=0.0.2<0.6.0:net/rubygem-fog-dynect \
 		rubygem-fog-ecloud>=0.1<1:net/rubygem-fog-ecloud \
 		rubygem-fog-google>=1.0<2:net/rubygem-fog-google \
 		rubygem-fog-internet-archive>=0:net/rubygem-fog-internet-archive \
@@ -44,7 +43,7 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-xenserver>=0:net/rubygem-fog-xenserver \
 		rubygem-fog-xml>=0.1.1<0.2:textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.5<1:net/rubygem-ipaddress \
-		rubygem-json>=2.0<3:devel/rubygem-json
+		rubygem-json>=2.3<3:devel/rubygem-json
 
 USES=		gem
 USE_RUBY=	yes
