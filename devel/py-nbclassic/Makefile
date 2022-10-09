@@ -1,6 +1,5 @@
 PORTNAME=	nbclassic
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/jupyter/nbclassic/releases/download/v${PORTVERSION}/
