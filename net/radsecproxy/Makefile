@@ -3,7 +3,7 @@ DISTVERSION=	1.9.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic RADIUS proxy
 WWW=		https://radsecproxy.github.io
 
