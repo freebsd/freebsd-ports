@@ -5,7 +5,7 @@ MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 WWW=		https://forthworks.com/retro
 
