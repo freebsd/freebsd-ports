@@ -1,6 +1,6 @@
---- configure.orig	2020-06-15 18:54:23 UTC
+--- configure.orig	2022-10-09 19:04:43 UTC
 +++ configure
-@@ -3744,13 +3744,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3784,13 +3784,7 @@ host_os=$target_os_default
  host_os=$target_os_default
  
  # machine
@@ -15,12 +15,3 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6736,7 +6736,7 @@ fi
- 
- if enabled sdl2; then
-     SDL2_CONFIG="${cross_prefix}sdl2-config"
--    test_pkg_config sdl2 "sdl2 >= 2.0.1 sdl2 < 2.1.0" SDL_events.h SDL_PollEvent
-+    test_pkg_config sdl2 "sdl2 >= 2.0.1 sdl2 < 3.0.0" SDL_events.h SDL_PollEvent
-     if disabled sdl2 && "${SDL2_CONFIG}" --version > /dev/null 2>&1; then
-         sdl2_cflags=$("${SDL2_CONFIG}" --cflags)
-         sdl2_extralibs=$("${SDL2_CONFIG}" --libs)
