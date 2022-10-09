@@ -5,7 +5,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate6/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Telephony Engine
 WWW=		http://yate.null.ro
 
