@@ -17580,3 +17580,4 @@ graphics/megapov|graphics/povray37|2022-10-01|Has expired: Abandoned upstream. g
 x11-toolkits/gstreamer1-plugins-gtk4||2022-10-01|No consumers left and deprecated in favor gtk4 plugin from multimedia/gstreamer1-plugins-rust >= 0.8.0
 deskutils/lookbook|deskutils/iconbrowser|2022-10-05|Project was renamed, now it is an official elementary OS application
 devel/p5-Type-Tie|devel/p5-Type-Tiny|2022-10-09|Remove obsoleted port. Use devel/p5-Type-Tiny instead
+databases/py-alembic16|databases/py-alembic|2022-10-09|Remove obsoleted port. Use databases/py-alembic instead
