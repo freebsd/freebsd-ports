@@ -4164,6 +4164,7 @@
     SUBDIR += py-astroid253
     SUBDIR += py-asttokens
     SUBDIR += py-astunparse
+    SUBDIR += py-async-lru
     SUBDIR += py-async_generator
     SUBDIR += py-async_timeout
     SUBDIR += py-asynctest
