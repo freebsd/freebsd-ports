@@ -3,7 +3,6 @@ bin/pmat-cat-svpv
 bin/pmat-counts
 bin/pmat-diff
 bin/pmat-leakreport
-bin/pmat-list-dangling-ptrs
 bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT.pm
 %%SITE_ARCH%%/Devel/MAT/Cmd.pod
@@ -20,6 +19,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/Tool/Find.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Identify.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Inrefs.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/ListDanglingPtrs.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Outrefs.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Reachability.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Roots.pm
@@ -83,6 +83,7 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Tool::Find.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Identify.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Inrefs.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::ListDanglingPtrs.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Outrefs.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Reachability.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Roots.3.gz
