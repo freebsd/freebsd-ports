@@ -1,6 +1,6 @@
 %%TEST%%bin/mysofa2json
 include/mysofa.h
-lib/libmysofa.a
+%%STATIC%%lib/libmysofa.a
 lib/libmysofa.so
 lib/libmysofa.so.1
 lib/libmysofa.so.1.3.0
