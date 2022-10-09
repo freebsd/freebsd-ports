@@ -1,5 +1,5 @@
 PORTNAME=	qcad
-PORTVERSION=	3.27.6.7
+PORTVERSION=	3.27.7.0
 DISTVERSIONPREFIX=	v
 #PORTREVISION=	1
 CATEGORIES=	cad
@@ -18,12 +18,20 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	bash:shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs
 
+#USES=		compiler:c++11-lang gl gmake qmake qt:${FLAVOR:S/qt//}
 USES=		compiler:c++11-lang gl gmake qmake qt:5
+#FLAVORS=	qt5 qt6
+#FLAVOR?=	qt5
+#qt5_PKGNAMESUFFIX=	-qt5
+#qt6_PKGNAMESUFFIX=	-qt6
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT=		buildtools qmake:build \
+_USE_QT5=	buildtools qmake:build \
 		designer gui help imageformats network opengl script \
 		scripttools sql svg uitools xml xmlpatterns webkit
+#_USE_QT6=	base tools
+#USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
+USE_QT=		${_USE_QT5}
 USE_GL=		glu
 
 DESKTOP_ENTRIES="QCad"	\
@@ -67,7 +75,7 @@ RESDIR=		${WRKSRC}/release
 pre-configure:
 	${MKDIR} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${_QT_VERSION}
 	${CP} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.13.2/qt-labs-qtscriptgenerator-5.13.2.pro \
-           ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${_QT_VERSION}/qt-labs-qtscriptgenerator-${_QT_VERSION}.pro
+		${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${_QT_VERSION}/qt-labs-qtscriptgenerator-${_QT_VERSION}.pro
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RS.cpp
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
