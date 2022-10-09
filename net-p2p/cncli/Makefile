@@ -1,12 +1,11 @@
 PORTNAME=		cncli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		5.1.0
-PORTREVISION=	1
+DISTVERSION=		5.1.2
 CATEGORIES=		net-p2p
 
 MAINTAINER=		boris@zfs.ninja
 COMMENT=		A community-based cardano-node CLI tool
-WWW=		https://cardano-community.github.io/guild-operators/
+WWW=			https://cardano-community.github.io/guild-operators/
 
 LICENSE=		APACHE20
 LICENSE_FILE=		${WRKSRC}/LICENSE
@@ -29,13 +28,14 @@ CARGO_ENV=	SODIUM_LIB_DIR=${LIBS_PREFIX}${PREFIX}/lib SODIUM_INCLUDE_DIR=${LIBS_
 
 CARGO_CRATES=	ahash-0.7.6 \
 		aho-corasick-0.7.18 \
+		android_system_properties-0.1.4 \
 		ansi_term-0.12.1 \
 		arrayref-0.3.6 \
 		arrayvec-0.7.2 \
-		async-channel-1.6.1 \
+		async-channel-1.7.1 \
 		async-executor-1.4.1 \
 		async-global-executor-2.2.0 \
-		async-io-1.7.0 \
+		async-io-1.8.0 \
 		async-lock-2.5.0 \
 		async-std-1.12.0 \
 		async-task-4.3.0 \
@@ -47,19 +47,19 @@ CARGO_CRATES=	ahash-0.7.6 \
 		base58-0.2.0 \
 		base64-0.13.0 \
 		bech32-0.8.1 \
-		bech32-0.9.0 \
+		bech32-0.9.1 \
 		bigdecimal-0.3.0 \
 		bitflags-1.3.2 \
 		blake2b_simd-1.0.0 \
 		blocking-1.2.0 \
-		bumpalo-3.10.0 \
+		bumpalo-3.11.0 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
 		cache-padded-1.2.0 \
 		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.20 \
+		chrono-0.4.22 \
 		chrono-tz-0.6.3 \
 		chrono-tz-build-0.0.3 \
 		clap-2.34.0 \
@@ -73,7 +73,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		crossbeam-utils-0.8.11 \
 		cryptoxide-0.4.2 \
 		ctor-0.1.23 \
-		either-1.7.0 \
+		either-1.8.0 \
 		encoding_rs-0.8.31 \
 		env_logger-0.7.1 \
 		env_logger-0.9.0 \
@@ -85,20 +85,20 @@ CARGO_CRATES=	ahash-0.7.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
-		futures-0.3.21 \
-		futures-channel-0.3.21 \
-		futures-core-0.3.21 \
-		futures-executor-0.3.21 \
-		futures-io-0.3.21 \
+		futures-0.3.23 \
+		futures-channel-0.3.23 \
+		futures-core-0.3.23 \
+		futures-executor-0.3.23 \
+		futures-io-0.3.23 \
 		futures-lite-1.12.0 \
-		futures-macro-0.3.21 \
-		futures-sink-0.3.21 \
-		futures-task-0.3.21 \
-		futures-util-0.3.21 \
+		futures-macro-0.3.23 \
+		futures-sink-0.3.23 \
+		futures-task-0.3.23 \
+		futures-util-0.3.23 \
 		getrandom-0.2.7 \
 		gloo-timers-0.2.4 \
 		gmp-mpfr-sys-1.4.10 \
-		h2-0.3.13 \
+		h2-0.3.14 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
 		hashlink-0.8.0 \
@@ -113,6 +113,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		humantime-2.1.0 \
 		hyper-0.14.20 \
 		hyper-tls-0.5.0 \
+		iana-time-zone-0.1.46 \
 		idna-0.2.3 \
 		indexmap-1.9.1 \
 		instant-0.1.12 \
@@ -122,7 +123,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		js-sys-0.3.59 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.127 \
+		libc-0.2.132 \
 		libsqlite3-sys-0.25.1 \
 		log-0.4.17 \
 		matches-0.1.9 \
@@ -138,29 +139,29 @@ CARGO_CRATES=	ahash-0.7.6 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		once_cell-1.13.0 \
+		once_cell-1.13.1 \
 		openssl-0.10.41 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.75 \
-		pallas-addresses-0.13.0 \
-		pallas-codec-0.13.0 \
-		pallas-crypto-0.13.0 \
-		pallas-miniprotocols-0.13.0 \
-		pallas-multiplexer-0.13.0 \
-		pallas-primitives-0.13.0 \
-		pallas-traverse-0.13.0 \
+		pallas-addresses-0.13.2 \
+		pallas-codec-0.13.2 \
+		pallas-crypto-0.13.2 \
+		pallas-miniprotocols-0.13.2 \
+		pallas-multiplexer-0.13.2 \
+		pallas-primitives-0.13.2 \
+		pallas-traverse-0.13.2 \
 		parking-2.0.0 \
 		parse-zoneinfo-0.3.0 \
 		percent-encoding-2.1.0 \
-		phf-0.11.0 \
-		phf_codegen-0.11.0 \
-		phf_generator-0.11.0 \
-		phf_shared-0.11.0 \
+		phf-0.11.1 \
+		phf_codegen-0.11.1 \
+		phf_generator-0.11.1 \
+		phf_shared-0.11.1 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
-		polling-2.2.0 \
+		polling-2.3.0 \
 		ppv-lite86-0.2.16 \
 		pretty_env_logger-0.4.0 \
 		proc-macro-error-1.0.4 \
@@ -183,13 +184,13 @@ CARGO_CRATES=	ahash-0.7.6 \
 		ryu-1.0.11 \
 		schannel-0.1.20 \
 		scopeguard-1.1.0 \
-		security-framework-2.6.1 \
+		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
-		serde-1.0.142 \
+		serde-1.0.144 \
 		serde-aux-3.1.0 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.142 \
-		serde_json-1.0.83 \
+		serde_derive-1.0.144 \
+		serde_json-1.0.85 \
 		serde_urlencoded-0.7.1 \
 		siphasher-0.3.10 \
 		slab-0.4.7 \
