@@ -17590,3 +17590,4 @@ devel/rubygem-flipper021|devel/rubygem-flipper|2022-10-09|Remove obsoleted port.
 devel/rubygem-fugit12|devel/rubygem-fugit|2022-10-09|Remove obsoleted port. Use devel/rubygem-fugit instead
 devel/rubygem-json25|devel/rubygem-json|2022-10-09|Remove obsoleted port. Use devel/rubygem-json instead
 devel/rubygem-oj310|devel/rubygem-oj|2022-10-09|Remove obsoleted port. Use devel/rubygem-oj instead
+net/rubygem-omniauth-facebook4|net/rubygem-omniauth-facebook|2022-10-09|Remove obsoleted port. Use net/rubygem-omniauth-facebook instead
