@@ -5,7 +5,7 @@ CATEGORIES=	net education
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network simulator for Internet systems
 WWW=		https://www.nsnam.org/
 
