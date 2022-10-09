@@ -1,5 +1,5 @@
 PORTNAME=	libmatroska
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://dl.matroska.org/downloads/libmatroska/
 
