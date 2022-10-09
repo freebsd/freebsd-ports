@@ -105,6 +105,7 @@ include/spot/tl/relabel.hh
 include/spot/tl/remove_x.hh
 include/spot/tl/simplify.hh
 include/spot/tl/snf.hh
+include/spot/tl/sonf.hh
 include/spot/tl/unabbrev.hh
 include/spot/twa/acc.hh
 include/spot/twa/bdddict.hh
@@ -129,6 +130,7 @@ include/spot/twaalgos/contains.hh
 include/spot/twaalgos/copy.hh
 include/spot/twaalgos/couvreurnew.hh
 include/spot/twaalgos/cycles.hh
+include/spot/twaalgos/dbranch.hh
 include/spot/twaalgos/degen.hh
 include/spot/twaalgos/determinize.hh
 include/spot/twaalgos/dot.hh

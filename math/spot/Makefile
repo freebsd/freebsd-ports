@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.10.6
+DISTVERSION=	2.11
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	tl.pdf
 
-TEST_TARGET=	check
+TEST_TARGET=	check # at least one test fails to run, see https://gitlab.lre.epita.fr/spot/spot/-/issues/517
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
