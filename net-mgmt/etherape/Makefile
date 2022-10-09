@@ -3,7 +3,7 @@ PORTVERSION=	0.9.20
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical network traffic monitor tool modeled after Etherman
 WWW=		http://etherape.sourceforge.net/
 
