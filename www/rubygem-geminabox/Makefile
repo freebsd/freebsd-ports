@@ -1,5 +1,6 @@
 PORTNAME=	geminabox
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-httpclient>=2.2.7:www/rubygem-httpclient \
 		rubygem-nesty>=0:devel/rubygem-nesty \
 		rubygem-reentrant_flock>=0:devel/rubygem-reentrant_flock \
-		rubygem-sinatra>=2.0<3:www/rubygem-sinatra
+		rubygem-sinatra2>=2.0<3:www/rubygem-sinatra2
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
