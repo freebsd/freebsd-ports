@@ -1,0 +1,12 @@
+geventhttpclient is a high performance, concurrent HTTP client library for
+python using gevent.
+
+geventhttpclient uses a fast http parser, written in C.
+
+geventhttpclient has been specifically designed for high concurrency, streaming
+and support HTTP 1.1 persistent connections. More generally it is designed for
+efficiently pulling from REST APIs and streaming APIs like Twitter's.
+
+Safe SSL support is provided by default. geventhttpclient depends on the certifi
+CA Bundle. This is the same CA Bundle which ships with the Requests codebase,
+and is derived from Mozilla Firefox's canonical set.

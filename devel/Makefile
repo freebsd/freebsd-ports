@@ -4583,6 +4583,7 @@
     SUBDIR += py-geojson
     SUBDIR += py-get-reader
     SUBDIR += py-gevent
+    SUBDIR += py-geventhttpclient
     SUBDIR += py-git-semver
     SUBDIR += py-git-up
     SUBDIR += py-git-url-parse
