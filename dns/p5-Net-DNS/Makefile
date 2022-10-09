@@ -1,5 +1,5 @@
 PORTNAME=	Net-DNS
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5
 MASTER_SITES=	CPAN
@@ -27,13 +27,13 @@ IDN2_DESC=	International Domain Names support via Net::LibIDN2
 SSHFP_DESC=	SSH2 Fingerprint support
 TSIG_DESC=	Transaction Signature Support
 
-IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
+IDN_BUILD_DEPENDS=	${IDN_RUN_DEPENDS}
 IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
-IDN2_BUILD_DEPENDS=	p5-Net-LibIDN2>=1:dns/p5-Net-LibIDN2
+IDN2_BUILD_DEPENDS=	${IDN2_RUN_DEPENDS}
 IDN2_RUN_DEPENDS=	p5-Net-LibIDN2>=1:dns/p5-Net-LibIDN2
-SSHFP_BUILD_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
-SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
-TSIG_BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
+SSHFP_BUILD_DEPENDS=	${SSHFP_RUN_DEPENDS}
+SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.02:security/p5-Digest-BubbleBabble
+TSIG_BUILD_DEPENDS=	${TSIG_RUN_DEPENDS}
 TSIG_RUN_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
 
 .include <bsd.port.mk>
