@@ -5,6 +5,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/App/Yath/Command/upload.pm
 %%SITE_PERL%%/App/Yath/Plugin/YathUIDB.pm
 %%SITE_PERL%%/App/Yath/Tester/UI.pm
+%%SITE_PERL%%/Test2/EventFacet/Binary.pm
 %%SITE_PERL%%/Test2/Harness/Renderer/UI.pm
 %%SITE_PERL%%/Test2/Harness/Renderer/UIDB.pm
 %%SITE_PERL%%/Test2/Harness/UI.pm
@@ -12,6 +13,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/CPANImporter.pm
 %%SITE_PERL%%/Test2/Harness/UI/Config.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/Binary.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Coverage.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Download.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Durations.pm
@@ -38,6 +40,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/ApiKey.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Binary.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Coverage.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/CoverageManager.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Email.pm
@@ -61,6 +64,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/ApiKey.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Binary.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Coverage.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/CoverageManager.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Email.pm
@@ -83,6 +87,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/ApiKey.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Binary.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Coverage.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/CoverageManager.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Email.pm
@@ -106,6 +111,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/ApiKey.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Binary.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Coverage.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/CoverageManager.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Email.pm
@@ -128,6 +134,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/ApiKey.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Binary.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Coverage.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/CoverageManager.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Email.pm
@@ -225,10 +232,12 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/upload.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/user.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/view.tx
+%%PERL5_MAN3%%/Test2::EventFacet::Binary.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::CPANImporter.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Config.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::Binary.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Coverage.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Download.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Durations.3.gz
