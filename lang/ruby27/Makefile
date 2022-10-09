@@ -185,6 +185,10 @@ post-install:
 . endfor
 .endif
 
+post-install-CAPIDOCS-on:
+	${RM} ${STAGEDIR}${PREFIX}/share/doc/ruby${RUBY_SUFFIX}/capi/.timestamp
+	cd ${STAGEDIR}${PREFIX} && ${FIND} share/doc/ruby${RUBY_SUFFIX}/capi/ -type f >> ${TMPPLIST}
+
 post-install-DEBUG-off:
 #
 # XXX: hack to strip ruby binary. Ruby uses its own install script that seems
