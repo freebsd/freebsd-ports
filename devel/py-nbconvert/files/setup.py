@@ -23,7 +23,6 @@ setup(
         'jinja2>=3.0',
         'jupyter-core>=4.7',
         'jupyterlab-pygments',
-        'lxml',
         'markupsafe>=2.0',
         'mistune<3,>=2.0.3',
         'nbclient>=0.5.0',
