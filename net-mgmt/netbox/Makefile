@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.4
+DISTVERSION=	3.3.5
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,12 +23,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj40-django-tables2
 # - www/py-dj40-djangorestframework (in conjunction with www/py-dj40-drf-yasg)
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.7<4.1:www/py-django40@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.8<4.1:www/py-django40@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-cors-headers>=3.13.0<4:www/py-dj40-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-debug-toolbar>=3.6.0<4:www/py-dj40-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-filter>=22.1<23:www/py-dj40-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj40-django-graphiql-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj40-django-mptt>=0.13.4<0.14:www/py-dj40-django-mptt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj40-django-mptt>=0.14.0<0.15:www/py-dj40-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-prometheus>=2.2.0<2.3:www/py-dj40-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-redis>=5.2.0<6:www/py-dj40-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-rich>=1.4.0<2:www/py-dj40-django-rich@${PY_FLAVOR} \
@@ -36,13 +36,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.7<4.1:www/py-django40@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj40-django-tables2>=2.4.1<2.5:www/py-dj40-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-taggit>=3.0.0<4:www/py-dj40-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-timezone-field>=5.0<6:www/py-dj40-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj40-djangorestframework>=3.13.1<3.14.0:www/py-dj40-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj40-drf-yasg>=1.21.3<1.22:www/py-dj40-drf-yasg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj40-djangorestframework>=3.14.0<3.15.0:www/py-dj40-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj40-drf-yasg>=1.21.4<1.22:www/py-dj40-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-graphene-django>=2.15.0<3:devel/py-dj40-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=5.0.1<6:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.1<4:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.5:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.4:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown-include>=0.7.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.2.11<9:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.17.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
@@ -54,7 +54,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.7<4.1:www/py-django40@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.3.0<5:security/py-social-auth-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.2.1<4:textproc/py-tablib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tzdata>=2022.2:devel/py-tzdata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tzdata>=2022.4:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1<7:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=20.1.0<21:www/py-gunicorn@${PY_FLAVOR}
 
