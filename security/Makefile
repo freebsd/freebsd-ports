@@ -845,6 +845,7 @@
     SUBDIR += py-certbot-dns-digitalocean
     SUBDIR += py-certbot-dns-dnsimple
     SUBDIR += py-certbot-dns-dnsmadeeasy
+    SUBDIR += py-certbot-dns-gandi
     SUBDIR += py-certbot-dns-gehirn
     SUBDIR += py-certbot-dns-google
     SUBDIR += py-certbot-dns-linode
