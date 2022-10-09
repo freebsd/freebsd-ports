@@ -1,5 +1,5 @@
---- src/make_parens.py.orig	2022-03-04 21:37:55 UTC
-+++ src/make_parens.py
+--- make_parens.py.orig	2022-03-04 21:37:55 UTC
++++ make_parens.py
 @@ -412,7 +412,7 @@ def main():
          mutator.permute(line.strip())
  
@@ -9,8 +9,8 @@
  
  
  if __name__ == '__main__':
---- src/sqlparse_map.py.orig	2022-03-04 21:37:55 UTC
-+++ src/sqlparse_map.py
+--- sqlparse_map.py.orig	2022-03-04 21:37:55 UTC
++++ sqlparse_map.py
 @@ -1564,6 +1564,6 @@ if __name__ == '__main__':
      if len(CHARMAP) != 256:
          sys.stderr.write("Assert failed: charmap is %d characters\n" % len(CHARMAP))
@@ -19,8 +19,8 @@
 +    print(dump())
  
  # pylint: disable=C0301,C0302
---- src/sqlparse2c.py.orig	2022-03-04 21:38:43 UTC
-+++ src/sqlparse2c.py
+--- sqlparse2c.py.orig	2022-03-04 21:38:43 UTC
++++ sqlparse2c.py
 @@ -14,7 +14,7 @@ import sys
  def toc(obj):
      """ main routine """

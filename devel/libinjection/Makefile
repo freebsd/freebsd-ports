@@ -8,17 +8,19 @@ COMMENT=	SQL / SQLI tokenizer parser analyzer
 WWW=		https://github.com/libinjection/libinjection
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USES=		python:build shebangfix
+
+WRKSRC_SUBDIR=	src
 
 USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.py
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libinjection*.h ${STAGEDIR}${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/src/libinjection.a ${STAGEDIR}${PREFIX}/lib/libinjection.a
-	${INSTALL_LIB} ${WRKSRC}/src/libinjection.so ${STAGEDIR}${PREFIX}/lib/libinjection.so
+	${INSTALL_DATA} ${WRKSRC}/libinjection*.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/libinjection.a ${STAGEDIR}${PREFIX}/lib/libinjection.a
+	${INSTALL_LIB} ${WRKSRC}/libinjection.so ${STAGEDIR}${PREFIX}/lib/libinjection.so
 
 .include <bsd.port.mk>
