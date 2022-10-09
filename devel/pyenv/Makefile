@@ -1,5 +1,5 @@
 PORTNAME=	pyenv
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -27,6 +27,7 @@ SHEBANG_FILES=	plugins/python-build/scripts/add_miniconda.py
 post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_ARGS} -e "s|\$${root}/completions|${DATADIR}/completions|g" \
 		${WRKSRC}/libexec/pyenv-init
+	@${RM} ${WRKSRC}/libexec/pyenv.orig
 
 do-install:
 	CC="${CC}" ${WRKSRC}/src/${CONFIGURE_CMD}
