@@ -1,5 +1,6 @@
 PORTNAME?=	wireshark
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -42,7 +43,7 @@ LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 #CFLAGS+=	-funit-at-a-time
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd etwdump wifidump
+    reordercap captype randpktdump udpdump sharkd etwdump
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
@@ -50,7 +51,7 @@ PLIST_SUB+=		${x:tu}="@comment $x not installed" \
 			${x:tu}_MAN="@comment $x not installed "
 CMAKE_ARGS+=		-DBUILD_$x=OFF
 EXTRA_PATCHES=		${FILESDIR}/extra-patch-doc_CMakeLists.txt
-OPTIONS_EXCLUDE+=	RTP SNMP LUA ANDROIDDUMP CISCODUMP SSHDUMP
+OPTIONS_EXCLUDE+=	RTP SNMP LUA ANDROIDDUMP CISCODUMP SSHDUMP WIFIDUMP
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
 			${x:tu}_MAN="" \
@@ -58,7 +59,8 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LTO LUA DECRYPT ANDROIDDUMP SSHDUMP CISCODUMP OPUS
+OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LTO LUA DECRYPT ANDROIDDUMP SSHDUMP CISCODUMP OPUS \
+			WIFIDUMP
 
 OPTIONS_SINGLE=		GSSAPI
 
@@ -79,6 +81,7 @@ GSSAPI_NONE_DESC=		Disable Kerberos support
 SSHDUMP_DESC=		Build sshdump extcap tool
 CISCODUMP_DESC=		Build ciscodump extcap tool
 OPUS_DESC=		Build opus decoder plugin
+WIFIDUMP_DESC=		Build wifidump extcap tool
 
 GUI_USES=		qt:5
 GUI_USE=	qt=core,concurrent,gui,multimedia,widgets,printsupport,svg,buildtools:build,linguisttools:build,qmake:build
@@ -97,6 +100,7 @@ DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
 CISCODUMP_LIB_DEPENDS=	libssh.so:security/libssh
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+WIFIDUMP_LIB_DEPENDS=	libssh.so:security/libssh
 
 GSSAPI_NONE_CMAKE_ON=	-DENABLE_KERBEROS=OFF
 GSSAPI_NONE_CMAKE_OFF=	-DENABLE_KERBEROS=ON
@@ -118,6 +122,8 @@ CISCODUMP_CMAKE_ON=-DBUILD_ciscodump=ON
 CISCODUMP_CMAKE_OFF=-DBUILD_ciscodump=OFF
 OPUS_CMAKE_ON=	-DENABLE_OPUS=ON
 OPUS_CMAKE_OFF=	-DENABLE_OPUS=OFF
+WIFIDUMP_CMAKE_ON=-DBUILD_wifidump=ON
+WIFIDUMP_CMAKE_OFF=-DBUILD_wifidump=OFF
 
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 
@@ -137,7 +143,9 @@ PLIST_SUB+=	ANDROIDDUMP_LIB="@comment " \
 		SSHDUMP_MAN="@comment " \
 		CISCODUMP_LIB="@comment " \
 		CISCODUMP_MAN="@comment " \
-		OPUS="@comment "
+		OPUS="@comment " \
+		WIFIDUMP_LIB="@comment " \
+		WIFIDUMP_MAN="@comment "
 .endif
 
 .include <bsd.port.options.mk>
@@ -182,6 +190,13 @@ PLIST_SUB+=	CISCODUMP_LIB="@comment " \
 PLIST_SUB+=	OPUS=""
 .else
 PLIST_SUB+=	OPUS="@comment "
+.endif
+.if ${PORT_OPTIONS:MWIFIDUMP}
+PLIST_SUB+=	WIFIDUMP_LIB="" \
+		WIFIDUMP_MAN=""
+.else
+PLIST_SUB+=	WIFIDUMP_LIB="@comment " \
+		WIFIDUMP_MAN="@comment "
 .endif
 .endif
 
