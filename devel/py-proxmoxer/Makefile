@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	david@isnic.is
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the Proxmox REST API v2
 WWW=		https://github.com/proxmoxer/proxmoxer
 
