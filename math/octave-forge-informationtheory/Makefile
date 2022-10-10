@@ -10,6 +10,8 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+MASTER_SITE_OLD=	R2009_06
+
 GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"

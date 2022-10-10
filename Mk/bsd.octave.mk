@@ -6,9 +6,14 @@
 # It is, in effect, a wrapper using the package handling already built
 # into math/octave.
 
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases \
-		SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-06-07 \
-		SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-05-08
+.if !empty(MASTER_SITE_OLD:MR2009_05)
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-05-08
+.elif !empty(MASTER_SITE_OLD:MR2009_06)
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-06-07
+.else
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+.endif
+
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 bsd_octave_mk_MAINTAINER=	stephen@FreeBSD.org

@@ -10,6 +10,8 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+MASTER_SITE_OLD=	R2009_05
+
 GNU_CONFIGURE=	yes
 
 RUN_DEPENDS+=	zenity:x11/zenity

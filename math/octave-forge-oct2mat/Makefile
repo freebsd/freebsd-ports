@@ -10,6 +10,8 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+MASTER_SITE_OLD=	R2009_06
+
 GNU_CONFIGURE=	yes
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:math/octave-forge-io

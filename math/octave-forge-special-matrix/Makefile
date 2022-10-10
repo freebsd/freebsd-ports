@@ -7,6 +7,8 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WWW=		http://octave.sourceforge.net/
 
+MASTER_SITE_OLD=	R2009_05
+
 GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
