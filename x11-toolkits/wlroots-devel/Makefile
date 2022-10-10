@@ -17,7 +17,6 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
@@ -31,12 +30,19 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_COMMIT=	3a949ea8eb0277f52d10ef0d54760323752321c9
+GL_TUPLE=	wayland:wayland-protocols:e631010ab7b96988e7c64c24b7d90f64717eaeee:wlproto/subprojects/wayland-protocols
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
 .ifdef PKGNAMESUFFIX
 PORTSCOUT=	ignore:1
 PREFIX=		${LOCALBASE}/${PKGBASE} # avoid conflict with the default
 MESON_ARGS+=	-Ddatadir="${LOCALBASE}/share"
+
+post-install:	post-install${PKGNAMESUFFIX}
+post-install${PKGNAMESUFFIX}:
+# XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
+	@${RM} -r ${STAGEDIR}${LOCALBASE}/share/pkgconfig
+	@${RM} -r ${STAGEDIR}${LOCALBASE}/share/wayland-protocols
 .endif
 
 OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
