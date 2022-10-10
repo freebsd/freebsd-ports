@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.9.357
+DISTVERSION=	1.9.362
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
