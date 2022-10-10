@@ -2,9 +2,9 @@ PORTNAME=	vm
 DISTVERSION=	0.14.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/-/archive/${DISTVERSION}/
-DISTNAME=	vm.lv2-${DISTVERSION}
+MASTER_SITES=	https://git.open-music-kontrollers.ch/lv2/vm.lv2/snapshot/
 PKGNAMESUFFIX=	-lv2
+DISTNAME=	${PORTNAME}.lv2-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual machine LV2 plugin bundle
@@ -20,13 +20,8 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom
 
-USES=		compiler:c++11-lib gl meson pkgconfig localbase xorg
+USES=		compiler:c++11-lib gl meson pkgconfig localbase tar:xz xorg
 USE_XORG=	x11 xext
 USE_GL=		gl glew glu
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
-post-extract:
-	@${MV} ${WRKDIR}/vm* ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
