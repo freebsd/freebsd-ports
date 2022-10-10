@@ -37,7 +37,7 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:devel/nasm
@@ -47,4 +47,11 @@ BUILD_DEPENDS+=	nasm:devel/nasm
 CONFIGURE_ARGS+=--disable-vsx
 .endif
 
-.include <bsd.port.mk>
+# test_libFLAC:
+# "iterator claims file is writable when tester thinks it should not be"
+.if ${UID} == 0
+do-test:
+	@${ECHO_MSG} "The tests cannot be run as root, skipping."
+.endif
+
+.include <bsd.port.post.mk>
