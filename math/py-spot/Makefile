@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspot.so:math/spot
 
-USES=		compiler:c++14-lang gmake libtool python:3.4+
+USES=		compiler:c++17-lang gmake libtool python:3.4+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --disable-static
@@ -34,5 +34,7 @@ post-configure:
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+# to test: cd ../spot && make test WITH_PYTHON=yes
 
 .include <bsd.port.mk>
