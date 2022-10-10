@@ -200,6 +200,7 @@
     SUBDIR += fcitx5-gtk
     SUBDIR += fcitx5-lua
     SUBDIR += fcitx5-qt
+    SUBDIR += fcitx5-qt-common
     SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell
