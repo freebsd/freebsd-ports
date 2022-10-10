@@ -1,6 +1,6 @@
 PORTNAME=	desed
 DISTVERSION=	1.2.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -12,14 +12,13 @@ WWW=		https://github.com/SoptikHa2/desed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	compilation fails: error[E0308]: mismatched types, see https://gitlab.com/rust-kqueue/rust-kqueue-sys/-/issues/3
-
 RUN_DEPENDS=	gsed:textproc/gsed
 
 USES=		cargo
 
 PLIST_FILES=	bin/${PORTNAME}
 
+# DO NOT downgrade kqueue* crates below to avoid this problem: https://gitlab.com/rust-kqueue/rust-kqueue-sys/-/issues/3
 CARGO_CRATES=	ansi_term-0.11.0 \
 		anyhow-1.0.32 \
 		arc-swap-0.4.7 \
@@ -42,8 +41,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		iovec-0.1.4 \
 		itertools-0.9.0 \
 		kernel32-sys-0.2.2 \
-		kqueue-1.0.2 \
-		kqueue-sys-1.0.1 \
+		kqueue-1.0.6 \
+		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.78 \
 		lock_api-0.3.4 \
@@ -77,5 +76,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		ws2_32-sys-0.2.1
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/desed
 
 .include <bsd.port.mk>
