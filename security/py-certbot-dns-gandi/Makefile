@@ -1,12 +1,13 @@
-PORTNAME=	certbot-plugin-gandi
+PORTNAME=	certbot-dns-gandi
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bgupta@kde.org
 COMMENT=	Gandi LiveDNS plugin for Certbot
-WWW=		https://github.com/obynio/certbot-plugin-gandi
+WWW=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,6 +24,7 @@ USE_PYTHON=	autoplist concurrent distutils
 # a wheel and not the source package.
 USE_GITHUB=	yes
 GH_ACCOUNT=	obynio
+GH_PROJECT=	certbot-plugin-gandi
 
 NO_ARCH=	yes
 
