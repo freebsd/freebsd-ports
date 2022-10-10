@@ -1,3 +1,31 @@
+  <vuln vid="0ae56f3e-488c-11ed-bb31-b42e99a1b9c3">
+    <topic>strongswan -- DOS attack vulnerability</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lahav Schlesinger reported a bug related to online
+	  certificate revocation checking that can lead to a
+	  denial-of-service attack</p>
+	<blockquote cite="https://www.strongswan.org/blog/2022/10/03/strongswan-vulnerability-(cve-2022-40617).html">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-40617</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-40617</url>
+    </references>
+    <dates>
+      <discovery>2022-10-03</discovery>
+      <entry>2022-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e4133d8b-ab33-451a-bc68-3719de73d54a">
     <topic>routinator -- potential DOS attack</topic>
     <affects>
