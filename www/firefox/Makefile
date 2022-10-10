@@ -1,5 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	105.0.3
+DISTVERSION=	106.0
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
@@ -11,7 +11,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.82:security/nss \
+		nss>=3.83:security/nss \
 		icu>=71.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=4.4.1:print/harfbuzz \
@@ -63,10 +63,6 @@ post-patch:
 		${FIREFOX_DESKTOP}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
-
-pre-configure:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf2.13)
-	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
 
 post-install:
 	${INSTALL_DATA} ${FIREFOX_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/

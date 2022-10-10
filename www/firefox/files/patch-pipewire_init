@@ -1,12 +1,12 @@
-Chase ABI from multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+    Chase ABI from multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+    
+    Ref: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 
-https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
-
-diff --git third_party/libwebrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc third_party/libwebrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc
-index 2fd3b1a575..79a14d7d7e 100644
---- third_party/libwebrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc
-+++ third_party/libwebrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc
-@@ -279,7 +279,7 @@ void BaseCapturerPipeWire::InitPipeWire() {
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/moz_base_capturer_pipewire.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/moz_base_capturer_pipewire.cc
+index 9bd7cec7ff22..811c4eb33e7c 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/moz_base_capturer_pipewire.cc
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/moz_base_capturer_pipewire.cc
+@@ -382,7 +382,7 @@ void BaseCapturerPipeWire::InitPipeWire() {
    }
  #endif  // defined(WEBRTC_DLOPEN_PIPEWIRE)
  
@@ -14,22 +14,35 @@ index 2fd3b1a575..79a14d7d7e 100644
 +  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
  
    pw_main_loop_ = pw_thread_loop_new("pipewire-main-loop", nullptr);
-   pw_context_ = pw_context_new(pw_thread_loop_get_loop(pw_main_loop_), nullptr, 0);
-diff --git third_party/libwebrtc/modules/desktop_capture/linux/pipewire.sigs third_party/libwebrtc/modules/desktop_capture/linux/pipewire.sigs
-index 3e21e9dc07..f561dcf619 100644
---- third_party/libwebrtc/modules/desktop_capture/linux/pipewire.sigs
-+++ third_party/libwebrtc/modules/desktop_capture/linux/pipewire.sigs
-@@ -16,7 +16,7 @@ void pw_loop_destroy(pw_loop *loop);
- pw_loop * pw_loop_new(pw_properties *properties);
+ 
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs
+index 06a97b8f294e..ea14a8014431 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs
+@@ -15,7 +15,7 @@ pw_loop * pw_loop_new(const spa_dict *props);
+ 
  
  // pipewire.h
 -void pw_init(int *argc, char **argv[]);
 +void pipewire_init(int *argc, char **argv[]);
+ const char* pw_get_library_version();
  
  // properties.h
- pw_properties * pw_properties_new_string(const char *args);
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
+index 12c8e7a9347d..00e3a9c76758 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
+@@ -388,7 +388,7 @@ bool SharedScreenCastStreamPrivate::StartScreenCastStream(
+ 
+   pw_stream_node_id_ = stream_node_id;
+ 
+-  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
++  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
+ 
+   pw_main_loop_ = pw_thread_loop_new("pipewire-main-loop", nullptr);
+ 
 diff --git third_party/pipewire/libpipewire/mozpipewire.cpp third_party/pipewire/libpipewire/mozpipewire.cpp
-index 1ecfc3196a..6f44b35964 100644
+index 1ecfc3196af1..6f44b35964d0 100644
 --- third_party/pipewire/libpipewire/mozpipewire.cpp
 +++ third_party/pipewire/libpipewire/mozpipewire.cpp
 @@ -58,7 +58,7 @@ struct pw_context * (*pw_context_new_fn)(struct pw_loop *main_loop,
@@ -74,12 +87,27 @@ index 1ecfc3196a..6f44b35964 100644
  }
  
  void
+diff --git third_party/pipewire/pipewire/log.h third_party/pipewire/pipewire/log.h
+index 26ffc20f9a0d..0357bdffbb7e 100644
+--- third_party/pipewire/pipewire/log.h
++++ third_party/pipewire/pipewire/log.h
+@@ -50,8 +50,8 @@ extern enum spa_log_level pw_log_level;
+ extern struct spa_log_topic *PW_LOG_TOPIC_DEFAULT;
+ 
+ /** Configure a logging module. This is usually done automatically
+- * in pw_init() but you can install a custom logger before calling
+- * pw_init(). */
++ * in pipewire_init() but you can install a custom logger before calling
++ * pipewire_init(). */
+ void pw_log_set(struct spa_log *log);
+ 
+ /** Get the log interface */
 diff --git third_party/pipewire/pipewire/pipewire.h third_party/pipewire/pipewire/pipewire.h
-index 69c523bd62..378502004c 100644
+index b932103f46e6..2c88e28421ec 100644
 --- third_party/pipewire/pipewire/pipewire.h
 +++ third_party/pipewire/pipewire/pipewire.h
-@@ -114,9 +114,9 @@ extern "C" {
-  * \brief PipeWire initialization and infrastructure functions
+@@ -69,9 +69,9 @@ extern "C" {
+  * \{
   */
  void
 -pw_init(int *argc, char **argv[]);
