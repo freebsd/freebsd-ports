@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gap-packages
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gaproot=${LOCALBASE}/share/gap
+CONFIGURE_ARGS=	--with-gaproot=${LOCALBASE}/lib/gap
 
 ALL_TARGET=	default
 
