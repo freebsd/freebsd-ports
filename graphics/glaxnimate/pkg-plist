@@ -16128,6 +16128,7 @@ share/applications/glaxnimate.desktop
 %%DATADIR%%/glaxnimate/images/icons/keyframe-add.svg
 %%DATADIR%%/glaxnimate/images/icons/keyframe-record.svg
 %%DATADIR%%/glaxnimate/images/icons/keyframe-remove.svg
+%%DATADIR%%/glaxnimate/images/icons/lottiefiles.svg
 %%DATADIR%%/glaxnimate/images/keyframe/custom.svg
 %%DATADIR%%/glaxnimate/images/keyframe/ease.svg
 %%DATADIR%%/glaxnimate/images/keyframe/finish/custom.svg
@@ -16145,6 +16146,9 @@ share/applications/glaxnimate.desktop
 %%DATADIR%%/glaxnimate/images/keyframe/status/not-animated.svg
 %%DATADIR%%/glaxnimate/images/keyframe/status/tween.svg
 %%DATADIR%%/glaxnimate/images/logo.svg
+%%DATADIR%%/glaxnimate/images/trace/complex.jpg
+%%DATADIR%%/glaxnimate/images/trace/flat.png
+%%DATADIR%%/glaxnimate/images/trace/pixel.png
 %%DATADIR%%/glaxnimate/images/widgets/background.png
 %%DATADIR%%/glaxnimate/lib/lottie/__init__.py
 %%DATADIR%%/glaxnimate/lib/lottie/exporters/__init__.py
@@ -16254,11 +16258,5 @@ share/applications/glaxnimate.desktop
 %%DATADIR%%/glaxnimate/templates/Telegram_Sticker_60.rawr
 %%DATADIR%%/glaxnimate/themes/dark.ini
 %%DATADIR%%/glaxnimate/themes/light.ini
-%%DATADIR%%/glaxnimate/translations/glaxnimate_de.qm
-%%DATADIR%%/glaxnimate/translations/glaxnimate_en_GB.qm
-%%DATADIR%%/glaxnimate/translations/glaxnimate_en_US.qm
-%%DATADIR%%/glaxnimate/translations/glaxnimate_fr.qm
-%%DATADIR%%/glaxnimate/translations/glaxnimate_it.qm
-%%DATADIR%%/glaxnimate/translations/glaxnimate_zh_CN.qm
 share/icons/hicolor/512x512/apps/glaxnimate.png
 share/icons/hicolor/scalable/apps/glaxnimate.svg
