@@ -1,23 +1,22 @@
---- doc/CMakeLists.txt.orig	2021-11-25 07:35:42.282939000 -0500
-+++ doc/CMakeLists.txt	2021-11-25 07:38:48.263204000 -0500
-@@ -42,24 +42,39 @@ macro (ADD_MAN_PAGE _page_name _man_section)
+--- doc/CMakeLists.txt.orig	2022-10-11 14:38:02.853482000 -0400
++++ doc/CMakeLists.txt	2022-10-11 14:39:14.016917000 -0400
+@@ -42,25 +42,39 @@ macro (ADD_MAN_PAGE _page_name _man_section)
  	endif()
  endmacro()
  
 +macro (ADD_MAN_PAGE_NO_INSTALL _page_name _man_section)
-+	if(ASCIIDOCTOR_FOUND)
-+		list(APPEND HTML_INSTALL_FILES ${CMAKE_CURRENT_BINARY_DIR}/${_page_name}.html)
++       if(ASCIIDOCTOR_FOUND)
++               list(APPEND HTML_INSTALL_FILES ${CMAKE_CURRENT_BINARY_DIR}/${_page_name}.html)
 +
-+		if (${_man_section} EQUAL 1)
-+			list(APPEND MAN1_SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${_page_name}.adoc)
-+		elseif (${_man_section} EQUAL 4)
-+			list(APPEND MAN4_SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${_page_name}.adoc)
-+		else()
-+			message(FATAL_ERROR "Unsupported manual page section ${_man_section} for ${_page_name}")
-+		endif()
-+	endif()
++               if (${_man_section} EQUAL 1)
++                       list(APPEND MAN1_SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${_page_name}.adoc)
++               elseif (${_man_section} EQUAL 4)
++                       list(APPEND MAN4_SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${_page_name}.adoc)
++               else()
++                       message(FATAL_ERROR "Unsupported manual page section ${_man_section} for ${_page_name}")
++               endif()
++       endif()
 +endmacro()
-+
 +
  ADD_MAN_PAGE(wireshark   1)
 -ADD_MAN_PAGE(androiddump 1)
@@ -51,7 +50,9 @@
 +ADD_MAN_PAGE_NO_INSTALL(text2pcap   1)
  ADD_MAN_PAGE(tshark      1)
 -ADD_MAN_PAGE(udpdump     1)
+-ADD_MAN_PAGE(wifidump    1)
 +ADD_MAN_PAGE_NO_INSTALL(udpdump     1)
++ADD_MAN_PAGE_NO_INSTALL(wifidump    1)
  
  ADD_MAN_PAGE(extcap           4)
  ADD_MAN_PAGE(wireshark-filter 4)
