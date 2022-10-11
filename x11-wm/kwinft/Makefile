@@ -1,6 +1,6 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.25.0
+DISTVERSION=	5.26.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://gitlab.com/kwinft/kwinft
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		requires https://gitlab.com/kwinft/kwinft/-/commit/2f5ba95e376f
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
@@ -42,7 +40,7 @@ USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		multimedia:run quickcontrols2:run widgets x11extras
 USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	effect/effects/*.py kconf_update/*.py kconf_update/*.pl
-GL_COMMIT=	a70cd81ac8f81189782831e52b6fec01aeeefdfd
+GL_COMMIT=	3005b261c7e069a2cee5f35ed676356b1a8c11b0
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, glib, intl, Qt5*, KF5*
 
@@ -59,6 +57,28 @@ DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5DocTools
 QA11Y_DESC=		Accessibility (focus tracking) for Zoom effect
 QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt5.so:accessibility/libqaccessibilityclient
 QA11Y_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_QAccessibilityClient
+
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
+.if !exists(/usr/include/c++/v1/concepts) || make(makesum) || make(fetch)
+USES+=		llvm:13,build
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
+
+# XXX Move into separate port and standardize via USES
+USE_GITHUB=	nodefault
+GH_TUPLE+=	llvm:llvm-project:llvmorg-13.0.1:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
+# Don't link against new libc++ to avoid ABI mismatch in Qt
+#LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
+
+pre-configure:	bundled-libcxx
+bundled-libcxx:
+	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS:M*Ninja*} \
+		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
+		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
+.endif
 
 .include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>
