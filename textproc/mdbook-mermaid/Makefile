@@ -1,7 +1,6 @@
 PORTNAME=	mdbook-mermaid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,101 +15,116 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	badboy
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.57 \
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.65 \
 		assert_cmd-2.0.4 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		block-buffer-0.7.3 \
-		block-padding-0.1.5 \
+		block-buffer-0.10.3 \
 		bstr-0.2.17 \
-		byte-tools-0.3.1 \
-		byteorder-1.4.3 \
-		bytes-1.1.0 \
+		bumpalo-3.11.0 \
+		bytes-1.2.1 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-3.1.18 \
-		clap_complete-3.1.4 \
-		clap_lex-0.2.0 \
-		combine-4.6.4 \
-		ctor-0.1.22 \
-		diff-0.1.12 \
+		chrono-0.4.22 \
+		clap-3.2.22 \
+		clap_complete-3.2.5 \
+		clap_lex-0.2.4 \
+		codespan-reporting-0.11.1 \
+		combine-4.6.6 \
+		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.5 \
+		crypto-common-0.1.6 \
+		ctor-0.1.23 \
+		cxx-1.0.78 \
+		cxx-build-1.0.78 \
+		cxxbridge-flags-1.0.78 \
+		cxxbridge-macro-1.0.78 \
+		diff-0.1.13 \
 		difflib-0.4.0 \
-		digest-0.8.1 \
+		digest-0.10.5 \
 		doc-comment-0.3.3 \
-		either-1.6.1 \
-		env_logger-0.7.1 \
-		env_logger-0.9.0 \
-		fake-simd-0.1.2 \
-		fastrand-1.7.0 \
-		generic-array-0.12.4 \
-		handlebars-4.3.0 \
-		hashbrown-0.11.2 \
+		either-1.8.0 \
+		env_logger-0.9.1 \
+		fastrand-1.8.0 \
+		generic-array-0.14.6 \
+		handlebars-4.3.5 \
+		hashbrown-0.12.3 \
 		hermit-abi-0.1.19 \
-		humantime-1.3.0 \
 		humantime-2.1.0 \
-		indexmap-1.8.1 \
+		iana-time-zone-0.1.51 \
+		iana-time-zone-haiku-0.1.0 \
+		indexmap-1.9.1 \
 		instant-0.1.12 \
-		itertools-0.10.3 \
-		itoa-1.0.2 \
+		itertools-0.10.5 \
+		itoa-1.0.4 \
+		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.126 \
+		libc-0.2.135 \
+		link-cplusplus-1.0.7 \
 		log-0.4.17 \
-		maplit-1.0.2 \
-		mdbook-0.4.18 \
+		mdbook-0.4.21 \
 		memchr-2.5.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
-		opaque-debug-0.2.3 \
+		once_cell-1.15.0 \
 		opener-0.5.0 \
-		os_str_bytes-6.1.0 \
+		os_str_bytes-6.3.0 \
 		output_vt100-0.1.3 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
+		pest-2.4.0 \
+		pest_derive-2.4.0 \
+		pest_generator-2.4.0 \
+		pest_meta-2.4.0 \
 		predicates-2.1.1 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
-		pretty_assertions-1.2.1 \
-		proc-macro2-1.0.39 \
-		pulldown-cmark-0.9.1 \
-		quick-error-1.2.3 \
-		quote-1.0.18 \
-		redox_syscall-0.2.13 \
-		regex-1.5.6 \
+		pretty_assertions-1.3.0 \
+		proc-macro2-1.0.46 \
+		pulldown-cmark-0.9.2 \
+		quote-1.0.21 \
+		redox_syscall-0.2.16 \
+		regex-1.6.0 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.26 \
+		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
-		ryu-1.0.10 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
-		serde_json-1.0.81 \
-		sha-1-0.8.2 \
+		ryu-1.0.11 \
+		scratch-1.0.2 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
+		serde_json-1.0.86 \
+		sha1-0.10.5 \
 		shlex-1.1.0 \
 		strsim-0.10.0 \
-		syn-1.0.95 \
+		syn-1.0.102 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		termtree-0.2.4 \
-		textwrap-0.15.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
-		time-0.1.43 \
+		textwrap-0.15.1 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
+		time-0.1.44 \
 		toml-0.5.9 \
 		toml_edit-0.14.4 \
 		topological-sort-0.1.0 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.3 \
+		ucd-trie-0.1.5 \
 		unicase-2.6.0 \
-		unicode-ident-1.0.0 \
+		unicode-ident-1.0.5 \
+		unicode-width-0.1.10 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yansi-0.5.1
 
 .include <bsd.port.mk>
