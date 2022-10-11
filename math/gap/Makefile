@@ -31,8 +31,6 @@ MAKEFILE=	GNUmakefile
 
 ACLOCVER=	1.16	# Truncated version of aclocal / automake
 
-.include <bsd.port.options.mk>
-
 pre-configure:
 # Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
 	${REINPLACE_CMD} -i .c++20 's/-I/-iquote/' \
@@ -55,6 +53,8 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} pkg ${STAGEDIR}${DATADIR}
 	# remove redundant files
 	${RM} ${STAGEDIR}${DATADIR}/pkg/patternclass/lib/.DS_Store
+	# strip binary
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgap.so.8.0.0
 
 do-test:
 	@cd ${WRKSRC} && ./gap ${FILESDIR}/test.g
