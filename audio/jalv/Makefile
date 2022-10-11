@@ -1,6 +1,5 @@
 PORTNAME=	jalv
-DISTVERSION=	1.6.6
-PORTREVISION=	3
+DISTVERSION=	1.6.8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -21,15 +20,12 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang gnome pkgconfig python:build qmake:no_configure,no_env \
-		qt:5 tar:bz2 waf
-CONFIGURE_ARGS=	--no-qt4
-USE_CXXSTD=	c++11
+USES=		desktop-file-utils gnome pkgconfig meson qmake:no_configure,no_env \
+		qt:5 tar:xz
 USE_QT=		core gui widgets buildtools:build
 USE_GNOME=	atk atkmm cairo cairomm pango pangomm libsigc++20 \
 		gdkpixbuf2 glib20 glibmm  gtk20 gtk30 gtkmm24
 
-post-install:
-		@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/jalv* lib/jack/jalv.so
+CXXFLAGS+=	-fPIC
 
 .include <bsd.port.mk>
