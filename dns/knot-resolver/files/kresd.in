@@ -62,4 +62,14 @@ kresd_stop() {
 	fi
 	}
 
+kresd_status() {
+    if [ -e "${pidfile}" ]; then
+        echo "${name} is running on pid $(cat $pidfile)."
+        return 1
+    else
+        echo "${name} is not running."
+        return 0
+    fi
+}
+
 run_rc_command "$1"
