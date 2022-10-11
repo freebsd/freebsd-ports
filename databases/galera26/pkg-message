@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 Find the Galera Cluster documentation at
-http://galeracluster.com/documentation-webpages/
+https://galeracluster.com/library/documentation/index.html
 EOM
 }
 ]
