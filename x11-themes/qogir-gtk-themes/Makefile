@@ -1,5 +1,5 @@
 PORTNAME=	qogir-gtk-themes
-DISTVERSION=	2021-11-17
+DISTVERSION=	2022-07-17
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -10,10 +10,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash>0:shells/bash \
-		gsed:textproc/gsed \
 		sassc>0:textproc/sassc
 RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
-		gtk-engines2>0:x11-themes/gtk-engines2
+		gtk-engines2>0:x11-themes/gtk-engines2 \
+		adwaita-icon-theme>0:x11-themes/adwaita-icon-theme
 
 USES=		shebangfix
 SHEBANG_FILES=	install.sh
