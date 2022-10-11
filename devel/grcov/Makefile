@@ -1,6 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.11
+DISTVERSION=	0.8.12
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,106 +17,103 @@ GH_ACCOUNT=	mozilla
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.18 \
+		aho-corasick-0.7.19 \
+		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.58 \
+		anyhow-1.0.64 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		backtrace-0.3.65 \
+		backtrace-0.3.66 \
 		bitflags-1.3.2 \
-		block-buffer-0.7.3 \
-		block-buffer-0.10.2 \
-		block-padding-0.1.5 \
+		block-buffer-0.10.3 \
 		bstr-0.2.17 \
-		byte-tools-0.3.1 \
+		bumpalo-3.11.0 \
 		byteorder-1.4.3 \
-		camino-1.0.9 \
+		camino-1.1.1 \
 		cargo-binutils-0.3.6 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.14.2 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		chrono-tz-0.6.1 \
-		chrono-tz-build-0.0.2 \
+		chrono-0.4.22 \
+		chrono-tz-0.6.3 \
+		chrono-tz-build-0.0.3 \
 		clap-2.34.0 \
+		core-foundation-sys-0.8.3 \
 		cpp_demangle-0.3.5 \
+		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.5 \
-		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.9 \
-		crossbeam-utils-0.8.10 \
-		crypto-common-0.1.4 \
-		ctor-0.1.22 \
-		debugid-0.7.3 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.10 \
+		crossbeam-utils-0.8.11 \
+		crypto-common-0.1.6 \
+		ctor-0.1.23 \
+		debugid-0.8.0 \
 		deunicode-0.4.3 \
 		diff-0.1.13 \
-		digest-0.8.1 \
 		digest-0.10.3 \
-		either-1.7.0 \
+		either-1.8.0 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
-		fake-simd-0.1.2 \
-		fastrand-1.7.0 \
+		fastrand-1.8.0 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
-		fomat-macros-0.3.1 \
-		generic-array-0.12.4 \
-		generic-array-0.14.5 \
+		generic-array-0.14.6 \
 		getrandom-0.2.7 \
-		gimli-0.26.1 \
+		gimli-0.26.2 \
 		globset-0.4.9 \
 		globwalk-0.8.1 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		humansize-1.1.1 \
+		iana-time-zone-0.1.47 \
 		ignore-0.4.18 \
 		instant-0.1.12 \
 		is_executable-1.0.1 \
-		itoa-1.0.2 \
+		itoa-1.0.3 \
+		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
-		libc-0.2.126 \
+		libc-0.2.132 \
 		libz-sys-1.1.8 \
 		log-0.4.17 \
-		maplit-1.0.2 \
-		md-5-0.10.1 \
+		md-5-0.10.4 \
 		memchr-2.5.0 \
-		memmap2-0.5.4 \
+		memmap2-0.5.7 \
 		memoffset-0.6.5 \
-		miniz_oxide-0.5.3 \
+		miniz_oxide-0.5.4 \
 		msvc-demangler-0.9.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		num_threads-0.1.6 \
-		object-0.28.4 \
-		once_cell-1.13.0 \
-		opaque-debug-0.2.3 \
+		object-0.29.0 \
+		once_cell-1.14.0 \
 		output_vt100-0.1.3 \
 		parse-zoneinfo-0.3.0 \
-		percent-encoding-2.1.0 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
-		phf-0.10.1 \
-		phf_codegen-0.10.0 \
-		phf_generator-0.10.0 \
-		phf_shared-0.10.0 \
+		percent-encoding-2.2.0 \
+		pest-2.3.0 \
+		pest_derive-2.3.0 \
+		pest_generator-2.3.0 \
+		pest_meta-2.3.0 \
+		phf-0.11.1 \
+		phf_codegen-0.11.1 \
+		phf_generator-0.11.1 \
+		phf_shared-0.11.1 \
 		pkg-config-0.3.25 \
 		ppv-lite86-0.2.16 \
-		pretty_assertions-1.2.1 \
+		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.40 \
-		quick-xml-0.23.0 \
-		quote-1.0.20 \
+		proc-macro2-1.0.43 \
+		quick-xml-0.25.0 \
+		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
-		redox_syscall-0.2.13 \
+		redox_syscall-0.2.16 \
 		regex-1.6.0 \
 		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
@@ -124,14 +121,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		ryu-1.0.10 \
+		ryu-1.0.11 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.12 \
-		serde-1.0.138 \
-		serde_derive-1.0.138 \
-		serde_json-1.0.82 \
-		sha-1-0.8.2 \
+		semver-1.0.13 \
+		serde-1.0.144 \
+		serde_derive-1.0.144 \
+		serde_json-1.0.85 \
+		sha-1-0.10.0 \
 		simplelog-0.12.0 \
 		siphasher-0.3.10 \
 		slug-0.1.4 \
@@ -140,22 +137,24 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		symbolic-common-8.8.0 \
-		symbolic-demangle-8.8.0 \
-		syn-1.0.98 \
+		symbolic-common-9.1.1 \
+		symbolic-demangle-9.1.1 \
+		syn-1.0.99 \
 		synstructure-0.12.6 \
 		tcmalloc-0.3.0 \
 		tempfile-3.3.0 \
-		tera-1.16.0 \
+		tera-1.17.0 \
 		termcolor-1.1.3 \
 		textwrap-0.11.0 \
+		thiserror-1.0.34 \
+		thiserror-impl-1.0.34 \
 		thread_local-1.1.4 \
 		time-0.1.44 \
-		time-0.3.11 \
+		time-0.3.14 \
 		time-macros-0.2.4 \
 		toml-0.5.9 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.4 \
+		ucd-trie-0.1.5 \
 		uncased-0.9.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -163,11 +162,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.1 \
+		unicode-ident-1.0.3 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
-		uuid-0.8.2 \
 		uuid-1.1.2 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
@@ -175,10 +173,16 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		walkdir-2.3.2 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.82 \
+		wasm-bindgen-backend-0.2.82 \
+		wasm-bindgen-macro-0.2.82 \
+		wasm-bindgen-macro-support-0.2.82 \
+		wasm-bindgen-shared-0.2.82 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yansi-0.5.1 \
 		zip-0.6.2
 
 PLIST_FILES=	bin/grcov
