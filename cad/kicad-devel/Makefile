@@ -1,6 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -42,7 +42,7 @@ GL_ACCOUNT=	kicad/code
 GL_PROJECT=	kicad
 GL_COMMIT=	${GIT_SRC_HASH}
 USE_GL=		gl glew glu glut
-USE_WX=		3.1
+USE_WX=		3.2
 WX_COMPS=	wx python:lib
 USE_GNOME=	atk cairo gtk30 gdkpixbuf2 pango
 USE_XORG+=	ice pixman x11 xext
