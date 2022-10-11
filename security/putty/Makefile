@@ -7,7 +7,6 @@ CATEGORIES=	security
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/ \
 		LOCAL/mandree/
-PATCH_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client including xterm emulator
