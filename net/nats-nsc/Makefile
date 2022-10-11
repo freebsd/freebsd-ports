@@ -1,6 +1,6 @@
 PORTNAME=	nsc
-PORTVERSION=	2.7.2
-PORTREVISION=	2
+PORTVERSION=	2.7.3
+PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
 
@@ -23,13 +23,13 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.3.0:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:3147a52a75dd:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
+		golang:net:f3363e06e74c:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d668ce993890:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:5a964db01320:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:3c1f35247d10:golang_sys/vendor/golang.org/x/sys \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		google:go-github:v30.1.0:google_go_github_v30/vendor/github.com/google/go-github/v30 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
@@ -45,8 +45,8 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		mitchellh:go-wordwrap:v1.0.0:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nats-io:cliprompts:372d79b36768:nats_io_cliprompts_v2/vendor/github.com/nats-io/cliprompts \
 		nats-io:jsm.go:v0.0.33:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
-		nats-io:jwt:v1.2.2:nats_io_jwt/vendor/github.com/nats-io/jwt \
-		nats-io:jwt:v2.3.0:nats_io_jwt_v2 \
+		nats-io:jwt:a826c77dc9d2:nats_io_jwt \
+		nats-io:jwt:v2.3.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nats-server:v2.8.4:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		nats-io:nats.go:v1.16.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
@@ -67,8 +67,8 @@ PLIST_FILES=	bin/nsc \
 		share/doc/${PORTNAME}/README.md
 
 post-extract:
-	@${RM} -r ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
-	@${RLN} ${WRKSRC_nats_io_jwt_v2}/v2 ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
+	#@${RM} -r ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
+	#@${RLN} ${WRKSRC_nats_io_jwt_v2}/v2 ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
