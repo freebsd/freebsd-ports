@@ -14,22 +14,17 @@ In the %%EXAMPLESDIR%% directory, you can find the dnsapi
 scripts which will be useful if you decide to use dns-01 challenges. Also 
 included are the deploy scripts.
 
-A newsyslog.conf sample file is provided at %%EXAMPLESDIR%%/acme.sh.conf
-and you could create a symlink from that to %%PREFIX%%/etc/newsyslog.conf.d/
+A newsyslog.conf sample file is installed at 
+%%PREFIX%%/etc/newsyslog.d/acme.sh - you must modify it by
+at least uncommenting the line.
 
-Your sample cronjob looks like this:
+If you run `newsyslog -NC` it will create the required logfiles.
 
-############################################################################
-$ sudo crontab -l -u acme
-# use /bin/sh to run commands, overriding the default set by cron
-SHELL=/bin/sh
-# mail any output to here, no matter whose crontab this is
-MAILTO=dan@example.org
+Please edit %%PREFIX%%/etc/cron.d/acme.sh changing:
 
-7 22 * * * /usr/local/sbin/acme.sh --cron --home /var/db/acme/.acme.sh > /dev/null
-############################################################################
-
-Change x & y to some minute and hour of the day.
+* MAILTO - your email address
+* xx to the minute you want the cronjob to run
+* yy to the hour you want the cronjob to run
 EOM
 }
 ]

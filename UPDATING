@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221011:
+  AFFECTS: users of security/acme.sh
+  AUTHOR: dvl@FreeBSD.org
+
+  This update may break your install if you were using a symlink to 
+  %%EXAMPLESDIR%%/acme.sh.conf - that file is no longer installed. Instead,
+  a log rotation configuration is now installed to etc/cron.d/acme.sh.sample
+  you should modify etc/cron.d/acme.sh to needs.
+
+  The port now installs a log rotation file to etc/newsyslog.d/acme.sh.sample
+  and you you should update etc/newsyslog.d/acme.sh to suit your needs.
+  This file has long been part of the port, but was never installed.
+
+  Neither the log rotation nor the crontab are active until you remove the
+  comments.
+
 20221002:
   AFFECTS: users of shells/bash
   AUTHOR: ehaupt@FreeBSD.org
