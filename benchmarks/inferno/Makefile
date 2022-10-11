@@ -1,6 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.9
+DISTVERSION=	0.11.10
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,8 @@ GH_ACCOUNT=	jonhoo
 
 CARGO_CRATES=	adler32-1.2.0 \
 		ahash-0.7.6 \
-		arrayvec-0.4.12 \
+		anes-0.1.6 \
+		arrayvec-0.7.2 \
 		assert_cmd-2.0.4 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -27,19 +28,19 @@ CARGO_CRATES=	adler32-1.2.0 \
 		bytemuck-1.12.1 \
 		cast-0.3.0 \
 		cfg-if-1.0.0 \
-		clap-2.34.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
 		clap-3.2.22 \
 		clap_derive-3.2.18 \
 		clap_lex-0.2.4 \
 		crc32fast-1.3.2 \
-		criterion-0.3.6 \
-		criterion-plot-0.4.5 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.10 \
 		crossbeam-utils-0.8.11 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
 		ctor-0.1.23 \
 		dashmap-5.4.0 \
 		diff-0.1.13 \
@@ -54,8 +55,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		hermit-abi-0.1.19 \
 		indexmap-1.9.1 \
 		itertools-0.10.4 \
-		itoa-0.4.8 \
-		itoa-1.0.3 \
+		itoa-1.0.4 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
 		libc-0.2.132 \
@@ -66,8 +66,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		maplit-1.0.2 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
-		nodrop-0.1.14 \
-		num-format-0.4.0 \
+		num-format-0.4.3 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		once_cell-1.14.0 \
@@ -102,9 +101,8 @@ CARGO_CRATES=	adler32-1.2.0 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.144 \
-		serde_cbor-0.11.2 \
-		serde_derive-1.0.144 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
 		serde_json-1.0.85 \
 		smallvec-1.9.0 \
 		str_stack-0.1.0 \
@@ -113,11 +111,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		termcolor-1.1.3 \
 		termtree-0.2.4 \
 		testing_logger-0.1.1 \
-		textwrap-0.11.0 \
 		textwrap-0.15.1 \
 		tinytemplate-1.2.1 \
 		unicode-ident-1.0.4 \
-		unicode-width-0.1.10 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
