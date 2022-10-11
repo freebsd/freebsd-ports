@@ -162,7 +162,7 @@ SSL_DEFAULT?=	base
 # Possible values: 8.5, 8.6, 8.7
 TCLTK_DEFAULT?=		8.6
 
-# Possible values: 4, 6
+# Possible values: 4, 6, 7
 VARNISH_DEFAULT?=	4
 
 # Possible value: 14, 16, 18, lts, current
