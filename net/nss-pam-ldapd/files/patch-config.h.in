@@ -1,0 +1,12 @@
+--- config.h.in.orig	2022-10-10 21:16:40 UTC
++++ config.h.in
+@@ -30,6 +30,9 @@
+ /* Define to 1 if you have the `clearenv' function. */
+ #undef HAVE_CLEARENV
+ 
++/* Define to 1 if you have the `closefrom' function. */
++#undef HAVE_CLOSEFROM
++
+ /* Define to 1 if you have the <ctype.h> header file. */
+ #undef HAVE_CTYPE_H
+ 
