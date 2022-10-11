@@ -1,6 +1,5 @@
 PORTNAME=	openmesh
-DISTVERSION=	8.1
-PORTREVISION=	1
+DISTVERSION=	9.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.openmesh.org/media/Releases/${DISTVERSION}/
 DISTNAME=	OpenMesh-${DISTVERSION}
@@ -19,6 +18,8 @@ USE_QT=		core concurrent gui help network opengl printsupport script scripttools
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/OpenMesh-${DISTVERSION}.0
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/include/OpenMesh/Tools/VDPM/xpm
