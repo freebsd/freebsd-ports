@@ -1,0 +1,13 @@
+Index: src/util.c
+===================================================================
+--- src/util.c	(revision 2462)
++++ src/util.c	(revision 2463)
+@@ -982,7 +982,7 @@ TcpGetListenPort(struct u_addr *addr, in_port_t port, 
+ 
+ /* Make socket available for connections  */
+ 
+-  if (listen(sock, -1) < 0)
++  if (listen(sock, INT_MAX) < 0)
+   {
+     Perror("%s: listen", __FUNCTION__);
+     (void) close(sock);
