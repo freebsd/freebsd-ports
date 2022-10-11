@@ -1,5 +1,6 @@
 PORTNAME=	atkinson-hyperlegible
 PORTVERSION=	2020.0514
+PORTREVISION=	1
 CATEGORIES=	x11-fonts accessibility
 MASTER_SITES=	https://brailleinstitute.org/wp-content/uploads/${PORTNAME}-font/:source1 \
 		http://brailleinstitute.org/wp-content/uploads/2020/11/:source2
@@ -39,20 +40,17 @@ post-extract:
 	@${FIND} ${WRKSRC} -type f -exec ${MV} {} ${WRKSRC}/allfonts \;
 
 do-install:
-	@${DO_NADA}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 
 do-install-TTF-on:
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/allfonts/*.ttf ${STAGEDIR}${FONTSDIR}
 
 do-install-OTF-on:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/allfonts/*.otf ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/allfonts/*.otf ${STAGEDIR}${FONTSDIR}
 
 post-install-WEB-on:
 .for ext in svg eot woff woff2
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/allfonts/*.${ext} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/allfonts/*.${ext} ${STAGEDIR}${FONTSDIR}
 .endfor
 
 .include <bsd.port.mk>
