@@ -237,6 +237,15 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^DRIVER_MODULE/s/, nvidia_devclass//' \
 		${WRKSRC}/src/${NVSRC}/nvidia_pci.c
 .endif
+# Catch up with pmap_unmapdev() and kmem_*() changes in 14-CURRENT
+.if ${OSVERSION} >= 1400070
+	${REINPLACE_CMD} -e '/pmap_unmapdev/s,(vm_offset_t),,' \
+		${WRKSRC}/src/${NVSRC}/nvidia_os.c
+	${REINPLACE_CMD} -e '/vm_offset_t virtual_address/s,vm_offset_t ,char *,' \
+		${WRKSRC}/src/${NVSRC}/nv-freebsd.h
+	${REINPLACE_CMD} -e '/vm_offset_t address;/s,vm_offset_t ,void *,' \
+		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
+.endif
 # Finally, process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
