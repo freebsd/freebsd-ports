@@ -1,0 +1,18 @@
+PORTNAME=	kronometer
+DISTVERSION=	2.2.91
+CATEGORIES=	deskutils kde kde-applications
+MASTER_SITES=	http://download.kde.org/unstable/${PORTNAME}/${DISTVERSION}/src/
+DISTNAME=	${PORTNAME}-${DISTVERSION}
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Stopwatch application
+WWW=		https://userbase.kde.org/Kronometer
+
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USE_KDE=	auth codecs config configwidgets coreaddons crash i18n \
+		widgetsaddons xmlgui \
+		doctools:build ecm:build
+USE_QT=		core dbus gui widgets xml \
+		buildtools:build qmake:build testlib:build
+
+.include <bsd.port.mk>

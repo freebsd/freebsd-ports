@@ -147,6 +147,7 @@
     SUBDIR += kongress
     SUBDIR += kontact
     SUBDIR += korganizer
+    SUBDIR += kronometer
     SUBDIR += kruler
     SUBDIR += ktimetracker
     SUBDIR += kuserfeedback

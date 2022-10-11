@@ -1,0 +1,12 @@
+Kronometer is a stopwatch application.
+
+Kronometer's main features are the following:
+
+- Start/pause/resume the stopwatch widget
+- Laps recording: you can capture the stopwatch time and add a note to it
+- Lap times sorting: you can easily find the shortest or longest lap time
+- Reset the stopwatch widget and the lap times
+- Time format settings: you can choose the stopwatch granularity
+- Times saving and resuming: you can save and resume the stopwatch status
+- Lap times export: you can export the lap times using the JSON or CSV format
+
