@@ -2,7 +2,7 @@ PORTNAME=	iconbrowser
 DISTVERSION=	2.0.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Browse and find system icons
 WWW=		https://github.com/elementary/iconbrowser
 
