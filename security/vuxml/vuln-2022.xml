@@ -1,3 +1,79 @@
+  <vuln vid="f9140ad4-4920-11ed-a07e-080027f5fec9">
+    <topic>samba -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba412</name>
+	<range><lt>4.12.16</lt></range>
+      </package>
+      <package>
+	<name>samba413</name>
+	<range><lt>4.13.17_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://lists.samba.org/archive/samba-announce/2022/000609.html">
+	  <dl>
+	    <dt>CVE-2022-2031</dt>
+	    <dd>
+	      The KDC and the kpasswd service share a single account
+	      and set of keys, allowing them to decrypt each other's
+	      tickets. A user who has been requested to change their
+	      password can exploit this to obtain and use tickets to
+	      other services.
+	    </dd>
+	    <dt>CVE-2022-32744</dt>
+	    <dd>
+	      The KDC accepts kpasswd requests encrypted with any key
+	      known to it. By encrypting forged kpasswd requests with
+	      its own key, a user can change the passwords of other
+	      users, enabling full domain takeover.
+	    </dd>
+	    <dt>CVE-2022-32745</dt>
+	    <dd>
+	      Samba AD users can cause the server to access
+	      uninitialised data with an LDAP add or modify request,
+	      usually resulting in a segmentation fault.
+	    </dd>
+	    <dt>CVE-2022-32746</dt>
+	    <dd>
+	      The AD DC database audit logging module can be made to
+	      access LDAP message values that have been freed by a
+	      preceding database module, resulting in a
+	      use-after-free. This is only possible when modifying
+	      certain privileged attributes, such as
+	      userAccountControl.
+	    </dd>
+	    <dt>CVE-2022-32742</dt>
+	    <dd>
+	      SMB1 Client with write access to a share can cause
+	      server memory contents to be written into a file or
+	      printer.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2031</cvename>
+      <cvename>CVE-2022-32744</cvename>
+      <cvename>CVE-2022-32745</cvename>
+      <cvename>CVE-2022-32746</cvename>
+      <cvename>CVE-2022-32742</cvename>
+      <url>https://lists.samba.org/archive/samba-announce/2022/000609.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-2031.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-32744.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-32745.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-32746.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-32742.html</url>
+    </references>
+    <dates>
+      <discovery>2022-07-27</discovery>
+      <entry>2022-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ae56f3e-488c-11ed-bb31-b42e99a1b9c3">
     <topic>strongswan -- DOS attack vulnerability</topic>
     <affects>
