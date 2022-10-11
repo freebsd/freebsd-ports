@@ -1,0 +1,15 @@
+This is a crude hack to avoid aesgcm-neon.c on FreeBSD 12.3,
+which does - by way of clang 10.0.1 - not offer vaddq_p128()
+through arm-neon.h. clang 13 as of FreeBSD 13.1 does.
+
+--- crypto/CMakeLists.txt.orig	2022-09-21 23:42:30 UTC
++++ crypto/CMakeLists.txt
+@@ -192,7 +192,7 @@ if(neon)
+       volatile poly128_t r;
+       volatile poly64_t a, b;
+       volatile poly64x2_t u, v;
+-      int main(void) { r = vmull_p64(a, b); r = vmull_high_p64(u, v); }"
++      int main(void) { r = vmull_p64(a, b); r = vmull_high_p64(u, v); r = vaddq_p128(r, r); }"
+     ADD_SOURCES_IF_SUCCESSFUL aesgcm-neon.c)
+ 
+   # The 'sha3' architecture extension, despite the name, includes
