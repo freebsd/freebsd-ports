@@ -1,8 +1,9 @@
-PORTNAME=	luakit-devel
-DISTVERSION=	2.3-26
-DISTVERSIONSUFFIX=	-g6cac833
+PORTNAME=	luakit
+DISTVERSION=	2.3.1-6
+DISTVERSIONSUFFIX=	-ge9c7693
 PORTEPOCH=	1
 CATEGORIES=	www
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
@@ -17,6 +18,7 @@ NOT_FOR_ARCHS_REASON_sparc64=	Does not install on sparc64
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libharfbuzz.so:print/harfbuzz \
 		libsoup-2.4.so:devel/libsoup \
 		libfreetype.so:print/freetype2 \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
@@ -31,6 +33,9 @@ GH_PROJECT=	luakit
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 CONFLICTS_INSTALL=	luakit
+
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS LUAJIT
 LUAJIT_DESC=	Use the Just-In-Time compiler for lua
