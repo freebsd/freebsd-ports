@@ -1,0 +1,10 @@
+Library::CallNumber::LC is mostly designed to do call number
+normalization, with the following goals:
+* The normalized call numbers are comparable with each other, for
+  proper sorting
+* The normalized call number is a short as possible, so left-anchored
+  wildcard searches are possible (e.g., searching on "A11*" should
+  give you all the A11 call numbers)
+* A range defined by start_of_range and end_of_range should be
+  correct, assuming that the string given for the end of the range
+  is, in fact, a left prefix.
