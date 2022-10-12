@@ -1,4 +1,5 @@
 bin/EukHighConfidenceFilter
+bin/MitoHighConfidenceFilter
 bin/covels-SE
 bin/coves-SE
 bin/eufindtRNA
@@ -10,6 +11,7 @@ etc/tRNAscan-SE.conf
 %%DATADIR%%/gcode/gcode.cilnuc
 %%DATADIR%%/gcode/gcode.echdmito
 %%DATADIR%%/gcode/gcode.invmito
+%%DATADIR%%/gcode/gcode.marsumito
 %%DATADIR%%/gcode/gcode.othmito
 %%DATADIR%%/gcode/gcode.vertmito
 %%DATADIR%%/gcode/gcode.ystmito
@@ -86,6 +88,7 @@ etc/tRNAscan-SE.conf
 %%DATADIR%%/models/TRNAinf-mito-vert-Arg.cm
 %%DATADIR%%/models/TRNAinf-mito-vert-Asn.cm
 %%DATADIR%%/models/TRNAinf-mito-vert-Asp.cm
+%%DATADIR%%/models/TRNAinf-mito-vert-Cys-no-darm.cm
 %%DATADIR%%/models/TRNAinf-mito-vert-Cys.cm
 %%DATADIR%%/models/TRNAinf-mito-vert-Gln.cm
 %%DATADIR%%/models/TRNAinf-mito-vert-Glu.cm
@@ -116,6 +119,7 @@ etc/tRNAscan-SE.conf
 %%DATADIR%%/tRNAscanSE/CM.pm
 %%DATADIR%%/tRNAscanSE/CMscanResultFile.pm
 %%DATADIR%%/tRNAscanSE/Configuration.pm
+%%DATADIR%%/tRNAscanSE/Constants.pm
 %%DATADIR%%/tRNAscanSE/Eufind.pm
 %%DATADIR%%/tRNAscanSE/FpScanResultFile.pm
 %%DATADIR%%/tRNAscanSE/GeneticCode.pm
