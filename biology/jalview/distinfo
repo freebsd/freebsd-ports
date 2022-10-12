@@ -1,5 +1,5 @@
-TIMESTAMP = 1619390838
-SHA256 (jalview_2_11_1_4.tar.gz) = 30c0a89bbaf58bc5fd15fd7b167768d21cda1431676f28e22669fd5a342396eb
-SIZE (jalview_2_11_1_4.tar.gz) = 103154170
-SHA256 (jalview-2.11.1.4-deps.tar.gz) = 93e88557841d295146aa5f9144e22a8774c9699c9a6a43a4a25673148d91c7d9
-SIZE (jalview-2.11.1.4-deps.tar.gz) = 21061379
+TIMESTAMP = 1665557435
+SHA256 (jalview_2_11_2_5.tar.gz) = dcb7211fe55db9b598281f2025787defdfbe8ce048141df7c38501ad4554c998
+SIZE (jalview_2_11_2_5.tar.gz) = 211101247
+SHA256 (jalview-2.11.2.5-deps.tar.gz) = 9eff680720f3f56f9d07f8b416c63d5460220f0562471e7c796cc28dce3b5182
+SIZE (jalview-2.11.2.5-deps.tar.gz) = 88745285
