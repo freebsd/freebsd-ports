@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Install textproc/libyaml for YAML support, math/gmp for BigInt support,
-textproc/libxml2 for XML support.
-EOM
-}
-]

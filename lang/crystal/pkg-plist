@@ -1,5 +1,5 @@
 bin/crystal
-%%BASH%%etc/bash_completion.d/_crystal.bash
+etc/bash_completion.d/_crystal.bash
 lib/crystal/VERSION
 lib/crystal/annotations.cr
 lib/crystal/array.cr
@@ -100,6 +100,7 @@ lib/crystal/compiler/crystal/interpreter/local_vars_gatherer.cr
 lib/crystal/compiler/crystal/interpreter/multidispatch.cr
 lib/crystal/compiler/crystal/interpreter/op_code.cr
 lib/crystal/compiler/crystal/interpreter/primitives.cr
+lib/crystal/compiler/crystal/interpreter/prompt.cr
 lib/crystal/compiler/crystal/interpreter/repl.cr
 lib/crystal/compiler/crystal/interpreter/to_bool.cr
 lib/crystal/compiler/crystal/interpreter/value.cr
@@ -248,6 +249,8 @@ lib/crystal/compiler/crystal/tools/table_print.cr
 lib/crystal/compiler/crystal/tools/typed_def_processor.cr
 lib/crystal/compiler/crystal/types.cr
 lib/crystal/compiler/crystal/util.cr
+lib/crystal/compiler/crystal/warnings.cr
+lib/crystal/compiler/crystal/zero_one_or_many.cr
 lib/crystal/compiler/requires.cr
 lib/crystal/complex.cr
 lib/crystal/compress/deflate/deflate.cr
@@ -459,6 +462,8 @@ lib/crystal/float.cr
 lib/crystal/float/printer.cr
 lib/crystal/float/printer/cached_powers.cr
 lib/crystal/float/printer/diy_fp.cr
+lib/crystal/float/printer/dragonbox.cr
+lib/crystal/float/printer/dragonbox_cache.cr
 lib/crystal/float/printer/grisu3.cr
 lib/crystal/float/printer/ieee.cr
 lib/crystal/gc.cr
@@ -642,6 +647,7 @@ lib/crystal/lib_c/aarch64-linux-musl/c/termios.cr
 lib/crystal/lib_c/aarch64-linux-musl/c/time.cr
 lib/crystal/lib_c/aarch64-linux-musl/c/unistd.cr
 lib/crystal/lib_c/aarch64-portbld-freebsd
+lib/crystal/lib_c/aarch64-unknown-freebsd
 lib/crystal/lib_c/amd64-unknown-openbsd
 lib/crystal/lib_c/arm-linux-gnueabihf/c/arpa/inet.cr
 lib/crystal/lib_c/arm-linux-gnueabihf/c/dirent.cr
@@ -1338,4 +1344,4 @@ lib/crystal/yaml/schema/fail_safe.cr
 lib/crystal/yaml/serialization.cr
 lib/crystal/yaml/to_yaml.cr
 man/man1/crystal.1.gz
-%%ZSH%%share/zsh/site-functions/_crystal
+share/zsh/site-functions/_crystal
