@@ -1,6 +1,6 @@
 PORTNAME=	Ipopt
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	3.14.9
+DISTVERSION=	3.14.10
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,13 +12,16 @@ LICENSE=	EPL
 LIB_DEPENDS=	libcoinasl.so:math/asl \
 		libcoinmetis.so:math/coin-or-metis \
 		libcoinmumps.so:math/coin-or-mumps
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		blaslapack compiler:c++11-lang fortran libtool pathfix \
-		pkgconfig
+		pkgconfig shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
+
+SHEBANG_FILES=	test/run_unitTests.in
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
