@@ -17,14 +17,13 @@
 	If you cannot upgrade to roundcube-thunderbird_labels-1.4.13 disable the
 	tb_label_modify_labels config option.
 	</p>
-	<blockquote cite="https://github.com/mike-kfed/roundcube-thunderbird_labels/security/advisories/GHSA-wp6h-wgxq-v949">
+	<blockquote cite="https://roundcube.net/news/2021/12/30/security-update-1.4.13-released">
 	  <p>.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>No known CVE</cvename>
-      <url>https://github.com/advisories?query=cwe%3A94</url>
+      <url>https://github.com/mike-kfed/roundcube-thunderbird_labels/security/advisories/GHSA-wp6h-wgxq-v949</url>
     </references>
     <dates>
       <discovery>2022-10-10</discovery>
