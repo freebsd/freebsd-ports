@@ -24,8 +24,6 @@
 %%PLUGINDIR_REL%%/localization/ru_RU.inc
 %%PLUGINDIR_REL%%/localization/sk_SK.inc
 %%PLUGINDIR_REL%%/localization/uk_UA.inc
-%%PLUGINDIR_REL%%/node_modules/roundcube/index.js
-%%PLUGINDIR_REL%%/node_modules/roundcube/package.json
 %%PLUGINDIR_REL%%/skins/classic/includes/toolbar.html
 %%PLUGINDIR_REL%%/skins/classic/tb_label.css
 %%PLUGINDIR_REL%%/skins/classic/thunderbird_32.png
