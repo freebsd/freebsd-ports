@@ -2,7 +2,6 @@ GH_TUPLE= \
 	rtissera:libchdr:5de1a59019815ccdbba0fe07c71b31406d023248:libchdr/3rdparty/libchdr/libchdr \
 	mozilla:cubeb:dc511c6b3597b6384d28949285b9289e009830ea:cubeb/3rdparty/cubeb/cubeb \
 	biojppm:rapidyaml:213b201d264139cd1b887790197e08850af628e3:rapidyaml/3rdparty/rapidyaml/rapidyaml \
-	ocornut:imgui:60bea052a92cbb4a93b221002fdf04f0da3698e1:imgui/3rdparty/imgui/imgui \
 	facebook:zstd:e47e674cd09583ff0503f0f6defd6d23d8b718d3:zstd/3rdparty/zstd/zstd \
 	google:googletest:800f5422ac9d9e0ad59cd860a2ef3a679588acb4:googletest/3rdparty/cubeb/cubeb/googletest \
 	arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/3rdparty/cubeb/cubeb/cmake/sanitizers-cmake \
