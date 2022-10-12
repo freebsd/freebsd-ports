@@ -128,35 +128,11 @@ MASTER_SITE_CRATESIO+=	https://crates.io/api/v1/crates/%SUBDIR%/download?dummy=/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
-MASTER_SITE_DEBIAN+= \
-	http://cdn.debian.net/debian/%SUBDIR%/ \
-	http://http.debian.net/debian/%SUBDIR%/ \
-	http://www.gtlib.gatech.edu/pub/debian/%SUBDIR%/ \
-	ftp://ftp.us.debian.org/debian/%SUBDIR%/ \
-	http://ftp.au.debian.org/debian/%SUBDIR%/ \
-	http://ftp.cl.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.cz.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.de.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.ee.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.fi.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.fr.debian.org/debian/%SUBDIR%/ \
-	http://ftp.hk.debian.org/debian/%SUBDIR%/ \
-	http://ftp.hr.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.hu.debian.org/debian/%SUBDIR%/ \
-	http://ftp.ie.debian.org/debian/%SUBDIR%/ \
-	http://ftp.it.debian.org/debian/%SUBDIR%/ \
-	http://ftp.jp.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.nl.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.no.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.pl.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.ru.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.se.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.si.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.sk.debian.org/debian/%SUBDIR%/ \
-	http://ftp.wa.au.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp2.de.debian.org/debian/%SUBDIR%/ \
-	ftp://ftp.snt.utwente.nl/pub/linux/debian/%SUBDIR%/ \
-	ftp://ftp.acc.umu.se/debian/%SUBDIR%/
+MASTER_SITE_DEBIAN+=	http://deb.debian.org/debian/%SUBDIR%/
+.  for country in am au at by be br bg ca cl cn hr cz dk fi fr de hk hu is it \
+		  jp kr lt md nl nc nz no pl pt ru sk si es se ch tw uk us
+MASTER_SITE_DEBIAN+=	http://ftp.${country}.debian.org/debian/%SUBDIR%/
+.  endfor
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN_POOL)
