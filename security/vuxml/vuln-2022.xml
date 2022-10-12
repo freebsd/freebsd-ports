@@ -1,3 +1,37 @@
+  <vuln vid="127674c6-4a27-11ed-9f93-002b67dfc673">
+    <topic>roundcube-thunderbird_labels -- RCE with custom label titles</topic>
+    <affects>
+      <package>
+	<name>roundcube-thunderbird_labels</name>
+	<range><le>1.4.12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>
+	Remote code execution vulnerability in
+	roundcube-thunderbird_labels when tb_label_modify_labels is enabled.
+
+	Workaround:
+
+	If you cannot upgrade to roundcube-thunderbird_labels-1.4.13 disable the
+	tb_label_modify_labels config option.
+	</p>
+	<blockquote cite="https://github.com/mike-kfed/roundcube-thunderbird_labels/security/advisories/GHSA-wp6h-wgxq-v949">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>No known CVE</cvename>
+      <url>https://github.com/advisories?query=cwe%3A94</url>
+    </references>
+    <dates>
+      <discovery>2022-10-10</discovery>
+      <entry>2022-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7cb12ee0-4a13-11ed-8ad9-3065ec8fd3ec">
     <topic>chromium -- mulitple vulnerabilities</topic>
     <affects>
