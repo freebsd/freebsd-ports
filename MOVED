@@ -17597,3 +17597,4 @@ www/rubygem-jwt21|www/rubygem-jwt|2022-10-09|Remove obsoleted port. Use www/ruby
 www/rubygem-protocol-rack01|www/rubygem-protocol-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-protocol-rack instead
 www/rubygem-rack223|www/rubygem-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-rack instead
 databases/pymongo|databases/py-pymongo|2022-10-09|Add the py- prefix which all Python ports should have
+audio/protracker|audio/pt2-clone|2022-10-12|Renamed to match project name
