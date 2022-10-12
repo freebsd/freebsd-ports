@@ -1,3 +1,46 @@
+  <vuln vid="7cb12ee0-4a13-11ed-8ad9-3065ec8fd3ec">
+    <topic>chromium -- mulitple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>106.0.5249.119</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>106.0.5249.119</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/10/stable-channel-update-for-desktop_11.html">
+	  <p>This release contains 6 security fixes:</p>
+	  <ul>
+	    <li>[1364604] High CVE-2022-3445: Use after free in Skia. Reported by Nan Wang (@eternalsakura13) and Yong Liu of 360 Vulnerability Research Institute on 2022-09-16</li>
+	    <li>[1368076] High CVE-2022-3446: Heap buffer overflow in WebSQL. Reported by Kaijie Xu (@kaijieguigui) on 2022-09-26</li>
+	    <li>[1366582] High CVE-2022-3447: Inappropriate implementation in Custom Tabs. Reported by Narendra Bhati of Suma Soft Pvt. Ltd. Pune (India) on 2022-09-22</li>
+	    <li>[1363040] High CVE-2022-3448: Use after free in Permissions API. Reported by raven at KunLun lab on 2022-09-13</li>
+	    <li>[1364662] High CVE-2022-3449: Use after free in Safe Browsing. Reported by asnine on 2022-09-17</li>
+	    <li>[1369882] High CVE-2022-3450: Use after free in Peer Connection. Reported by Anonymous on 2022-09-30</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3445</cvename>
+      <cvename>CVE-2022-3446</cvename>
+      <cvename>CVE-2022-3447</cvename>
+      <cvename>CVE-2022-3448</cvename>
+      <cvename>CVE-2022-3449</cvename>
+      <cvename>CVE-2022-3450</cvename>
+      <url>https://chromereleases.googleblog.com/2022/10/stable-channel-update-for-desktop_11.html</url>
+    </references>
+    <dates>
+      <discovery>2022-10-11</discovery>
+      <entry>2022-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9140ad4-4920-11ed-a07e-080027f5fec9">
     <topic>samba -- Multiple vulnerabilities</topic>
     <affects>
