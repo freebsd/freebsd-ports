@@ -1,7 +1,7 @@
 PORTNAME=	putty
 PORTVERSION=	0.78~pre20220922
 DISTVERSIONSUFFIX=	.9fcfd67
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
