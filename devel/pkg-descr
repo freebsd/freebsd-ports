@@ -1,0 +1,3 @@
+Returns the true Damerau Levenshtein edit distance of strings with
+adjacent transpositions. XS implementation (requires a C compiler).
+Works correctly with utf8.
