@@ -1,0 +1,7 @@
+This module implmements a version of keyboard distance for fuzzy
+string matching. Keyboard distance is a measure of the physical
+distance between two keys on a keyboard. For example, 'g' has a
+distance of 1 from the keys 'r', 't', 'y', 'f', 'h', 'v', 'b', and
+'n'. Immediate diagonals (like ''r, 'y', 'v', and 'n') are considered
+to have a distance of 1 instead of 1.414 to help to prevent
+horizontal/vertical bias.
