@@ -1,6 +1,7 @@
 PORTNAME=	wl-clipboard
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -31,5 +32,11 @@ PLIST_FILES=	bin/wl-copy \
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/completions/fish/meson.build
+# Search mime-support (etc/mime.types) and shared-mime-info (share/mime/types)
+	@${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,' \
+		-e '/local/!s,/etc,${LOCALBASE}&,' \
+		${WRKSRC}/completions/bash/wl-copy \
+		${WRKSRC}/completions/zsh/_wl-copy \
+		${WRKSRC}/src/util/files.c
 
 .include <bsd.port.mk>
