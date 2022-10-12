@@ -16,7 +16,6 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	bugaevc
-
 PLIST_FILES=	bin/wl-copy \
 		bin/wl-paste \
 		man/man1/wl-clipboard.1.gz \
