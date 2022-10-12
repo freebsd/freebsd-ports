@@ -1,12 +1,12 @@
 PORTNAME=	Module-Info
-PORTVERSION=	0.35
-PORTREVISION=	1
+DISTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Provides information about Perl modules
+WWW=		https://metacpan.org/pod/Module::Info
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PathTools>=0:devel/p5-PathTools
