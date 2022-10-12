@@ -3,12 +3,12 @@
 %%DATADIR%%/bin/connect-standalone.sh
 %%DATADIR%%/bin/kafka-acls.sh
 %%DATADIR%%/bin/kafka-broker-api-versions.sh
+%%DATADIR%%/bin/kafka-cluster.sh
 %%DATADIR%%/bin/kafka-configs.sh
 %%DATADIR%%/bin/kafka-console-consumer.sh
 %%DATADIR%%/bin/kafka-console-producer.sh
 %%DATADIR%%/bin/kafka-consumer-groups.sh
 %%DATADIR%%/bin/kafka-consumer-perf-test.sh
-%%DATADIR%%/bin/kafka-cluster.sh
 %%DATADIR%%/bin/kafka-delegation-tokens.sh
 %%DATADIR%%/bin/kafka-delete-records.sh
 %%DATADIR%%/bin/kafka-dump-log.sh
@@ -16,6 +16,8 @@
 %%DATADIR%%/bin/kafka-get-offsets.sh
 %%DATADIR%%/bin/kafka-leader-election.sh
 %%DATADIR%%/bin/kafka-log-dirs.sh
+%%DATADIR%%/bin/kafka-metadata-quorum.sh
+%%DATADIR%%/bin/kafka-metadata-shell.sh
 %%DATADIR%%/bin/kafka-mirror-maker.sh
 %%DATADIR%%/bin/kafka-producer-perf-test.sh
 %%DATADIR%%/bin/kafka-reassign-partitions.sh
@@ -37,6 +39,7 @@
 %%DATADIR%%/libs/argparse4j-0.7.0.jar
 %%DATADIR%%/libs/audience-annotations-0.5.0.jar
 %%DATADIR%%/libs/commons-cli-1.4.jar
+%%DATADIR%%/libs/commons-lang3-3.12.0.jar
 %%DATADIR%%/libs/commons-lang3-3.8.1.jar
 %%DATADIR%%/libs/connect-api-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/connect-basic-auth-extension-%%PORTVERSION%%.jar
@@ -49,21 +52,21 @@
 %%DATADIR%%/libs/hk2-api-2.6.1.jar
 %%DATADIR%%/libs/hk2-locator-2.6.1.jar
 %%DATADIR%%/libs/hk2-utils-2.6.1.jar
-%%DATADIR%%/libs/jackson-annotations-2.12.3.jar
-%%DATADIR%%/libs/jackson-core-2.12.3.jar
-%%DATADIR%%/libs/jackson-databind-2.12.3.jar
-%%DATADIR%%/libs/jackson-dataformat-csv-2.12.3.jar
-%%DATADIR%%/libs/jackson-datatype-jdk8-2.12.3.jar
-%%DATADIR%%/libs/jackson-jaxrs-base-2.12.3.jar
-%%DATADIR%%/libs/jackson-jaxrs-json-provider-2.12.3.jar
-%%DATADIR%%/libs/jackson-module-jaxb-annotations-2.12.3.jar
-%%DATADIR%%/libs/jackson-module-scala_2.13-2.12.3.jar
-%%DATADIR%%/libs/jakarta.activation-api-1.2.1.jar
+%%DATADIR%%/libs/jackson-annotations-2.13.3.jar
+%%DATADIR%%/libs/jackson-core-2.13.3.jar
+%%DATADIR%%/libs/jackson-databind-2.13.3.jar
+%%DATADIR%%/libs/jackson-dataformat-csv-2.13.3.jar
+%%DATADIR%%/libs/jackson-datatype-jdk8-2.13.3.jar
+%%DATADIR%%/libs/jackson-jaxrs-base-2.13.3.jar
+%%DATADIR%%/libs/jackson-jaxrs-json-provider-2.13.3.jar
+%%DATADIR%%/libs/jackson-module-jaxb-annotations-2.13.3.jar
+%%DATADIR%%/libs/jackson-module-scala_2.13-2.13.3.jar
+%%DATADIR%%/libs/jakarta.activation-api-1.2.2.jar
 %%DATADIR%%/libs/jakarta.annotation-api-1.3.5.jar
 %%DATADIR%%/libs/jakarta.inject-2.6.1.jar
 %%DATADIR%%/libs/jakarta.validation-api-2.0.2.jar
 %%DATADIR%%/libs/jakarta.ws.rs-api-2.1.6.jar
-%%DATADIR%%/libs/jakarta.xml.bind-api-2.3.2.jar
+%%DATADIR%%/libs/jakarta.xml.bind-api-2.3.3.jar
 %%DATADIR%%/libs/javassist-3.27.0-GA.jar
 %%DATADIR%%/libs/javax.servlet-api-3.1.0.jar
 %%DATADIR%%/libs/javax.ws.rs-api-2.1.1.jar
@@ -74,63 +77,65 @@
 %%DATADIR%%/libs/jersey-container-servlet-core-2.34.jar
 %%DATADIR%%/libs/jersey-hk2-2.34.jar
 %%DATADIR%%/libs/jersey-server-2.34.jar
-%%DATADIR%%/libs/jetty-client-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-continuation-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-http-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-io-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-security-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-server-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-servlet-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-servlets-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-util-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jetty-util-ajax-9.4.43.v20210629.jar
-%%DATADIR%%/libs/jline-3.12.1.jar
+%%DATADIR%%/libs/jetty-client-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-continuation-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-http-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-io-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-security-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-server-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-servlet-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-servlets-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-util-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jetty-util-ajax-9.4.48.v20220622.jar
+%%DATADIR%%/libs/jline-3.21.0.jar
 %%DATADIR%%/libs/jopt-simple-5.0.4.jar
-%%DATADIR%%/libs/jose4j-0.7.8.jar
+%%DATADIR%%/libs/jose4j-0.7.9.jar
 %%DATADIR%%/libs/kafka-clients-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-log4j-appender-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-metadata-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-raft-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-server-common-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka-shell-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-storage-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-storage-api-%%PORTVERSION%%.jar
-%%DATADIR%%/libs/kafka-shell-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-streams-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-streams-examples-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-streams-scala_2.13-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-streams-test-utils-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-tools-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka_2.13-%%PORTVERSION%%.jar
-%%DATADIR%%/libs/log4j-1.2.17.jar
 %%DATADIR%%/libs/lz4-java-1.8.0.jar
-%%DATADIR%%/libs/maven-artifact-3.8.1.jar
+%%DATADIR%%/libs/maven-artifact-3.8.4.jar
 %%DATADIR%%/libs/metrics-core-2.2.0.jar
 %%DATADIR%%/libs/metrics-core-4.1.12.1.jar
-%%DATADIR%%/libs/netty-buffer-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-codec-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-common-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-handler-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-resolver-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-transport-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-transport-native-epoll-4.1.68.Final.jar
-%%DATADIR%%/libs/netty-transport-native-unix-common-4.1.68.Final.jar
+%%DATADIR%%/libs/netty-buffer-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-codec-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-common-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-handler-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-resolver-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-transport-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-transport-classes-epoll-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-transport-native-epoll-4.1.78.Final.jar
+%%DATADIR%%/libs/netty-transport-native-unix-common-4.1.78.Final.jar
 %%DATADIR%%/libs/osgi-resource-locator-1.0.3.jar
 %%DATADIR%%/libs/paranamer-2.8.jar
-%%DATADIR%%/libs/plexus-utils-3.2.1.jar
+%%DATADIR%%/libs/plexus-utils-3.3.0.jar
 %%DATADIR%%/libs/reflections-0.9.12.jar
-%%DATADIR%%/libs/rocksdbjni-6.22.1.1.jar
-%%DATADIR%%/libs/scala-collection-compat_2.13-2.4.4.jar
-%%DATADIR%%/libs/scala-java8-compat_2.13-1.0.0.jar
-%%DATADIR%%/libs/scala-library-2.13.6.jar
-%%DATADIR%%/libs/scala-logging_2.13-3.9.3.jar
-%%DATADIR%%/libs/scala-reflect-2.13.6.jar
-%%DATADIR%%/libs/trogdor-%%PORTVERSION%%.jar
-%%DATADIR%%/libs/slf4j-api-1.7.30.jar
-%%DATADIR%%/libs/slf4j-log4j12-1.7.30.jar
+%%DATADIR%%/libs/reload4j-1.2.19.jar
+%%DATADIR%%/libs/rocksdbjni-6.29.4.1.jar
+%%DATADIR%%/libs/scala-collection-compat_2.13-2.6.0.jar
+%%DATADIR%%/libs/scala-java8-compat_2.13-1.0.2.jar
+%%DATADIR%%/libs/scala-library-2.13.8.jar
+%%DATADIR%%/libs/scala-logging_2.13-3.9.4.jar
+%%DATADIR%%/libs/scala-reflect-2.13.8.jar
+%%DATADIR%%/libs/slf4j-api-1.7.36.jar
+%%DATADIR%%/libs/slf4j-reload4j-1.7.36.jar
 %%DATADIR%%/libs/snappy-java-1.1.8.4.jar
+%%DATADIR%%/libs/swagger-annotations-2.2.0.jar
+%%DATADIR%%/libs/trogdor-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/zookeeper-3.6.3.jar
 %%DATADIR%%/libs/zookeeper-jute-3.6.3.jar
-%%DATADIR%%/libs/zstd-jni-1.5.0-4.jar
+%%DATADIR%%/libs/zstd-jni-1.5.2-1.jar
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/api.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/connect.html
@@ -162,6 +167,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_config.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_metrics.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_predicates.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_rest.yaml
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_transforms.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/consumer_config.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/consumer_metrics.html
@@ -177,6 +183,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/streams_config.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/topic_config.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/consumer-groups.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/creating-streams-iframe-placeholder.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/icons/NYT.jpg
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/icons/architecture--white.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/icons/architecture.png
@@ -188,6 +195,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/icons/tutorials--white.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/icons/tutorials.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/icons/zalando.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/intro_to_streams-iframe-placeholder.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka-apis.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka_log.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka_multidc.png
@@ -226,6 +234,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-time-windows-tumbling.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-welcome.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/images/tracking_high_level.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/transforming_part_1-iframe-placeholder.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/transforming_part_2-iframe-placeholder.png
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/implementation.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/js/templateData.js
@@ -262,8 +272,8 @@
 @sample %%ETCDIR%%/connect-distributed.properties.sample
 @sample %%ETCDIR%%/connect-file-sink.properties.sample
 @sample %%ETCDIR%%/connect-file-source.properties.sample
-@sample %%ETCDIR%%/connect-mirror-maker.properties.sample
 @sample %%ETCDIR%%/connect-log4j.properties.sample
+@sample %%ETCDIR%%/connect-mirror-maker.properties.sample
 @sample %%ETCDIR%%/connect-standalone.properties.sample
 @sample %%ETCDIR%%/consumer.properties.sample
 @sample %%ETCDIR%%/log4j.properties.sample
@@ -271,5 +281,9 @@
 @sample %%ETCDIR%%/server.properties.sample
 @sample %%ETCDIR%%/tools-log4j.properties.sample
 @sample %%ETCDIR%%/trogdor.conf.sample
+@sample %%ETCDIR%%/kraft/broker.properties.sample
+@sample %%ETCDIR%%/kraft/controller.properties.sample
+@sample %%ETCDIR%%/kraft/server.properties.sample
 @dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_DBDIR%%
+@dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_DBDIR%%/kraft
 @dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_LOGDIR%%

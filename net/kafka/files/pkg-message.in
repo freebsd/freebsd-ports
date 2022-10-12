@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+    Kafka KRaft mode is marked as production ready since v3.3.1.
+    If you want to start using KRaft mode be aware that there are
+    separate configs in %%ETCDIR%%/kraft directory.
+    The data logs will be stored in %%KAFKA_DBDIR%%/kraft directory by default.
+    So set kafka_config="%%ETCDIR%%/kraft/server.properties" in /etc/rc.conf
+    to get started with KRaft mode.
+EOM
+}
+]
