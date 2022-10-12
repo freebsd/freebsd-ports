@@ -1,6 +1,6 @@
 PORTNAME=	spirv-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.3
+DISTVERSION=	2022.4
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ SHEBANG_FILES=	tools/lesspipe/spirv-lesspipe.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-Tools
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-171-gb2a156e:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:headers/external/spirv-headers
 
 CMAKE_ON=	SPIRV_SKIP_TESTS
 
