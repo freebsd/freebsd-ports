@@ -30,6 +30,7 @@ lib/cmake/ecflow/ecflow-targets.cmake
 %%DATADIR%%/%%ETCDIR%%view_icon_conf.json
 %%DATADIR%%/%%ETCDIR%%view_menu_conf.json
 %%DATADIR%%/%%ETCDIR%%view_menus.json
+%%DATADIR%%/%%ETCDIR%%view_network_conf.json
 %%DATADIR%%/%%ETCDIR%%view_notification_conf.json
 %%DATADIR%%/%%ETCDIR%%view_nstate_conf.json
 %%DATADIR%%/%%ETCDIR%%view_palette.json
