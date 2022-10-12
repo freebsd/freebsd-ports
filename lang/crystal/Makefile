@@ -1,10 +1,15 @@
 PORTNAME=	crystal
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
 DISTFILES=	${BOOTSTRAP_NAME}.tar.xz:bootstrap
 DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+# https://github.com/crystal-lang/crystal/pull/12600
+PATCHFILES=	a9262815f45fc35ad63fa3c1d3d03ce7a57b76e1.diff:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Language with Ruby-like syntax and static type checking
@@ -50,6 +55,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES INTERPRETER STATIC
+OPTIONS_DEFAULT=	INTERPRETER
 
 INTERPRETER_DESC=	Enable interpreter (experimental)
 
