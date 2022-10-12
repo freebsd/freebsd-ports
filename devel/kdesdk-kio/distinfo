@@ -1,3 +1,3 @@
-TIMESTAMP = 1662479891
-SHA256 (KDE/release-service/22.08.1/kdesdk-kio-22.08.1.tar.xz) = 9bd589bdfd9b5e529edea2e72670b5848e8c4029e50e5e7e84f135bf666beee9
-SIZE (KDE/release-service/22.08.1/kdesdk-kio-22.08.1.tar.xz) = 39656
+TIMESTAMP = 1665484015
+SHA256 (KDE/release-service/22.08.2/kdesdk-kio-22.08.2.tar.xz) = c61b1aceaa2812deab0ed28c42aae114579e005933075242ea96ff7a7668b654
+SIZE (KDE/release-service/22.08.2/kdesdk-kio-22.08.2.tar.xz) = 39640

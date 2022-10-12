@@ -1348,6 +1348,7 @@ share/locale/ru/LC_MESSAGES/akonadi_ews_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_google_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_etesync_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_maildir_resource.mo

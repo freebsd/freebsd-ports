@@ -1,6 +1,5 @@
 PORTNAME=	k3b
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

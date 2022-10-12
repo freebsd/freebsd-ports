@@ -1120,6 +1120,7 @@ share/locale/ru/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ru/LC_MESSAGES/libkonq.mo
 share/locale/ru/LC_MESSAGES/searchbarplugin.mo
 share/locale/ru/LC_MESSAGES/uachangerplugin.mo
+share/locale/ru/LC_MESSAGES/webarchiver.mo
 share/locale/ru/LC_MESSAGES/webenginepart.mo
 share/locale/se/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/se/LC_MESSAGES/autorefresh.mo

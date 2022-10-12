@@ -1,6 +1,5 @@
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	astro education kde kde-applications
 
 PATCH_SITES=	https://invent.kde.org/education/marble/-/commit/
