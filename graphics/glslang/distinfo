@@ -1,3 +1,5 @@
 TIMESTAMP = 1660318330
 SHA256 (KhronosGroup-glslang-11.11.0_GH0.tar.gz) = 26c216c3062512c018cbdd752224b8dad703b7e5bb90bf338ba2dbb5d4f11438
 SIZE (KhronosGroup-glslang-11.11.0_GH0.tar.gz) = 3542123
+SHA256 (228c67228a18.patch) = be6a605c2ea0c88b7f42f224ba193b548ae72a5ec9bcda97031e4dee50306b43
+SIZE (228c67228a18.patch) = 1127974
