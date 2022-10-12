@@ -1,6 +1,6 @@
 PORTNAME=	acme.sh
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -48,11 +48,19 @@ post-patch-IDN-on:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}/var/db/acme/.acme.sh ${STAGEDIR}/var/db/acme/certs \
-	         ${STAGEDIR}${PREFIX}/etc/cron.d  ${STAGEDIR}${PREFIX}/etc/newsyslog.d
+
+	${MKDIR} ${STAGEDIR}/var/db/acme/.acme.sh \
+	         ${STAGEDIR}/var/db/acme/certs \
+	         ${STAGEDIR}${PREFIX}/etc/cron.d  \
+	         ${STAGEDIR}${PREFIX}/etc/newsyslog.d \
+	         ${STAGEDIR}${EXAMPLESDIR}
+
 	${INSTALL_DATA} ${FILESDIR}/account.conf.sample ${STAGEDIR}/var/db/acme/.acme.sh
-	${INSTALL_DATA} ${WRKDIR}/acme-crontab          ${STAGEDIR}${PREFIX}/etc/cron.d/acme.sh.sample
-	${INSTALL_DATA} ${FILESDIR}/acme-newsyslog      ${STAGEDIR}${PREFIX}/etc/newsyslog.d/acme.sh.sample
+
+	# install the sample file; pkg-plist will install to etc/cron.d for us
+	${INSTALL_DATA} ${WRKDIR}/acme-crontab     ${STAGEDIR}${EXAMPLESDIR}/acme.sh-cron.d
+
+	${INSTALL_DATA} ${FILESDIR}/acme-newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.d/acme.sh.sample
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -60,6 +68,7 @@ do-install-DOCS-on:
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/deploy ${STAGEDIR}${EXAMPLESDIR}/dnsapi
+
 	( cd ${WRKSRC} && ${COPYTREE_BIN} deploy ${STAGEDIR}${EXAMPLESDIR} )
 	( cd ${WRKSRC} && ${COPYTREE_BIN} dnsapi ${STAGEDIR}${EXAMPLESDIR} )
 	( cd ${WRKSRC} && ${COPYTREE_BIN} notify ${STAGEDIR}${EXAMPLESDIR} )
