@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		fcitx5>=5.0.10:textproc/fcitx5 \
-		fcitx5-qt>=5.0.2:textproc/fcitx5-qt
+		fcitx5-qt5>=5.0.2:textproc/fcitx5-qt@qt5
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libFcitx5Core.so:textproc/fcitx5 \
 		libFcitx5Qt5DBusAddons.so:textproc/fcitx5-qt
