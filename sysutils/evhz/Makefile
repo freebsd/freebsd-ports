@@ -1,7 +1,8 @@
 PORTNAME=	evhz
 DISTVERSION=	g20210920
+DISTVERSIONSUFFIX=	-0-g35b7526
 CATEGORIES=	sysutils
-MASTER_SITES=	https://git.sr.ht/~iank/${PORTNAME}/archive/${SR_HT_COMMIT}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://git.sr.ht/~iank/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tool for measuring evdev event rate (mouse polling rate)
@@ -13,10 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USES=		localbase
-
-SR_HT_COMMIT=	35b7526e0655522bbdf92f6384f4e9dff74f38a0
-WRKSRC=		${WRKDIR}/${PORTNAME}-${SR_HT_COMMIT}
-
 PLIST_FILES=	bin/${PORTNAME}
 
 do-build:
