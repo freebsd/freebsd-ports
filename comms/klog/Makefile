@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 USE_GL=		gl
 USE_QT=		buildtools:build charts core declarative gui \
 		linguisttools:build location multimedia network \
-		printsupport sql sql-sqlite3:run serialport widgets
+		printsupport sql sql-sqlite3:run serialport testlib:build widgets
 GH_ACCOUNT=	ea4k
 GH_PROJECT=	klog
 
