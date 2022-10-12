@@ -8,17 +8,14 @@
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>
-	Remote code execution vulnerability in
-	roundcube-thunderbird_labels when tb_label_modify_labels is enabled.
-
-	Workaround:
-
-	If you cannot upgrade to roundcube-thunderbird_labels-1.4.13 disable the
-	tb_label_modify_labels config option.
-	</p>
+	<p>The Roundcube project reports:</p>
 	<blockquote cite="https://roundcube.net/news/2021/12/30/security-update-1.4.13-released">
-	  <p>.</p>
+	  <h1>Description:</h1>
+	  <p>Remote code execution vulnerability in
+	    roundcube-thunderbird_labels when tb_label_modify_labels is enabled.</p>
+	  <h1>Workaround:</h1>
+	  <p>If you cannot upgrade to roundcube-thunderbird_labels-1.4.13 disable the
+	    tb_label_modify_labels config option.</p>
 	</blockquote>
       </body>
     </description>
