@@ -54,4 +54,9 @@ setup(
         'tests.v3',
         'tests.v4',
     ],
+    package_data = {
+        'nbformat' : [
+            '**/nbformat.**.schema.json',
+        ]
+    },
 )
