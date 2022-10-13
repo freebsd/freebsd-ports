@@ -5080,6 +5080,7 @@
     SUBDIR += py-pylibsrtp
     SUBDIR += py-pylint-django
     SUBDIR += py-pylint-plugin-utils
+    SUBDIR += py-pylint-venv
     SUBDIR += py-pylru
     SUBDIR += py-pylru-cache
     SUBDIR += py-pyls-black
