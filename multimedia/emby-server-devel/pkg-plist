@@ -359,7 +359,6 @@ lib/emby-server/system/dashboard-ui/apikeys/apikeys.js
 lib/emby-server/system/dashboard-ui/app.js
 lib/emby-server/system/dashboard-ui/apploader.js
 lib/emby-server/system/dashboard-ui/bower_components/abortcontroller-polyfill/umd-polyfill.js
-lib/emby-server/system/dashboard-ui/bower_components/css-vars-ponyfill/css-vars-ponyfill.js
 lib/emby-server/system/dashboard-ui/bower_components/fetch/fetch.js
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.js
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.js.mem
@@ -372,7 +371,6 @@ lib/emby-server/system/dashboard-ui/bower_components/libjass/libjass.js
 lib/emby-server/system/dashboard-ui/components/accessschedule/accessschedule.js
 lib/emby-server/system/dashboard-ui/components/accessschedule/accessschedule.template.html
 lib/emby-server/system/dashboard-ui/components/activitylog.js
-lib/emby-server/system/dashboard-ui/components/directorybrowser/directorybrowser.css
 lib/emby-server/system/dashboard-ui/components/directorybrowser/directorybrowser.js
 lib/emby-server/system/dashboard-ui/components/imageoptionseditor/imageoptionseditor.js
 lib/emby-server/system/dashboard-ui/components/imageoptionseditor/imageoptionseditor.template.html
@@ -410,14 +408,11 @@ lib/emby-server/system/dashboard-ui/home/favorites.js
 lib/emby-server/system/dashboard-ui/home/home.html
 lib/emby-server/system/dashboard-ui/home/home.js
 lib/emby-server/system/dashboard-ui/home/hometab.js
-lib/emby-server/system/dashboard-ui/home_horiz/focushandler.js
+lib/emby-server/system/dashboard-ui/home_horiz/folderstab.js
 lib/emby-server/system/dashboard-ui/home_horiz/home.css
 lib/emby-server/system/dashboard-ui/home_horiz/home.html
 lib/emby-server/system/dashboard-ui/home_horiz/home.js
 lib/emby-server/system/dashboard-ui/home_horiz/spotlight.js
-lib/emby-server/system/dashboard-ui/home_horiz/tabbedpage.js
-lib/emby-server/system/dashboard-ui/home_horiz/views.generic.html
-lib/emby-server/system/dashboard-ui/home_horiz/views.generic.js
 lib/emby-server/system/dashboard-ui/home_horiz/views.livetv.html
 lib/emby-server/system/dashboard-ui/home_horiz/views.livetv.js
 lib/emby-server/system/dashboard-ui/home_horiz/views.movies.html
@@ -456,8 +451,6 @@ lib/emby-server/system/dashboard-ui/livetv/schedule.js
 lib/emby-server/system/dashboard-ui/livetv/series.js
 lib/emby-server/system/dashboard-ui/livetv/suggestions.js
 lib/emby-server/system/dashboard-ui/livetvsetup/channels.js
-lib/emby-server/system/dashboard-ui/livetvsetup/embydata.html
-lib/emby-server/system/dashboard-ui/livetvsetup/embydata.js
 lib/emby-server/system/dashboard-ui/livetvsetup/guideprovider.html
 lib/emby-server/system/dashboard-ui/livetvsetup/guideprovider.js
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvsettings.html
@@ -466,8 +459,6 @@ lib/emby-server/system/dashboard-ui/livetvsetup/livetvstatus.html
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvstatus.js
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvtuner.html
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvtuner.js
-lib/emby-server/system/dashboard-ui/livetvsetup/xmltv.html
-lib/emby-server/system/dashboard-ui/livetvsetup/xmltv.js
 lib/emby-server/system/dashboard-ui/logs/log.css
 lib/emby-server/system/dashboard-ui/logs/log.js
 lib/emby-server/system/dashboard-ui/logs/logs.js
@@ -573,6 +564,7 @@ lib/emby-server/system/dashboard-ui/modules/common/usersettings/usersettings.js
 lib/emby-server/system/dashboard-ui/modules/common/usersettings/usersettingsbuilder.js
 lib/emby-server/system/dashboard-ui/modules/confirmstillplaying/plugin.js
 lib/emby-server/system/dashboard-ui/modules/controlbox.js
+lib/emby-server/system/dashboard-ui/modules/css-vars-ponyfill/css-vars-ponyfill.js
 lib/emby-server/system/dashboard-ui/modules/datagrid/datagrid.css
 lib/emby-server/system/dashboard-ui/modules/datagrid/datagrid.js
 lib/emby-server/system/dashboard-ui/modules/dialog/dialog.js
@@ -1109,6 +1101,8 @@ lib/emby-server/system/dashboard-ui/wizard/wizardstart.html
 lib/emby-server/system/dashboard-ui/wizard/wizardstart.js
 lib/emby-server/system/dashboard-ui/wizard/wizarduser.html
 lib/emby-server/system/dashboard-ui/wizard/wizarduserpage.js
+lib/emby-server/system/de/Emby.Server.MediaEncoding.resources.dll
+lib/emby-server/system/el/Emby.Server.MediaEncoding.resources.dll
 lib/emby-server/system/libSystem.Globalization.Native.so
 lib/emby-server/system/libSystem.IO.Compression.Native.so
 lib/emby-server/system/libSystem.Native.so
@@ -1144,6 +1138,7 @@ lib/emby-server/system/plugins/StudioImages.dll
 lib/emby-server/system/plugins/Tvdb.dll
 lib/emby-server/system/traystrings/ar.json
 lib/emby-server/system/traystrings/bg-BG.json
+lib/emby-server/system/traystrings/ca.json
 lib/emby-server/system/traystrings/cs.json
 lib/emby-server/system/traystrings/da.json
 lib/emby-server/system/traystrings/de.json
