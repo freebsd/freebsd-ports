@@ -411,7 +411,6 @@
     SUBDIR += libsoxr
     SUBDIR += libspecbleach
     SUBDIR += libtremor
-    SUBDIR += libumidi
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += libxmp
