@@ -17,8 +17,8 @@ _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
 
 LOCALBASE?=	/usr/local
 
-.  for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC GHOSTSCRIPT GL \
-	IMAGEMAGICK JAVA LAZARUS LIBRSVG2 LINUX LLVM LUA MYSQL NINJA NODEJS PERL5 \
+.  for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC GHOSTSCRIPT GL GO \
+	IMAGEMAGICK JAVA LAZARUS LIBRSVG2 LINUX LLVM LUA MONO MYSQL NINJA NODEJS PERL5 \
 	PGSQL PHP PYTHON PYTHON2 PYTHON3 RUBY RUST SAMBA SSL TCLTK VARNISH
 .    if defined(${lang}_DEFAULT)
 ERROR+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
@@ -52,10 +52,10 @@ GCC_DEFAULT?=		8
 .  else
 GCC_DEFAULT?=		11
 .  endif
-# Possible values: mesa-libs, mesa-devel
-GL_DEFAULT?=		mesa-libs
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
+# Possible values: mesa-libs, mesa-devel
+GL_DEFAULT?=		mesa-libs
 # Possible values: 1.18, 1.19, 1.20-devel
 GO_DEFAULT?=		1.19
 # Possible values: 6, 6-nox11, 7, 7-nox11
@@ -92,6 +92,8 @@ MONO_DEFAULT=		5.10
 MYSQL_DEFAULT?=		5.7
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
+# Possible value: 14, 16, 18, lts, current
+NODEJS_DEFAULT?=    lts
 # Possible values: 5.32, 5.34, 5.36, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
@@ -161,11 +163,7 @@ SSL_DEFAULT?=	base
 .  endif
 # Possible values: 8.5, 8.6, 8.7
 TCLTK_DEFAULT?=		8.6
-
 # Possible values: 4, 6, 7
 VARNISH_DEFAULT?=	4
-
-# Possible value: 14, 16, 18, lts, current
-NODEJS_DEFAULT?=    lts
 
 .endif
