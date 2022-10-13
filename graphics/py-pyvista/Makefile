@@ -1,5 +1,6 @@
 PORTNAME=	pyvista
 DISTVERSION=	0.34.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,4 +24,5 @@ USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
