@@ -95,3 +95,65 @@
              || ((eid != ADEID_RFORK) && (off + len >  valid_data_len)))
          {
              LOG(log_warning, logtype_ad, "parse_entries: bogus eid: %u, off: %u, len: %u",
+@@ -782,20 +791,42 @@ static int ad_header_read_ea(const char *path, struct 
+         EC_FAIL;
+     }
+ 
++    /*
++     * It is possible for AFP metadata to contain a zero-length
++     * comment. This will cause ad_entry(ad, ADEID_COMMENT) to return NULL
++     * but should not be treated as an error condition.
++     * Since recent CVE fixes have introduced new behavior regarding
++     * ad_entry() output. For now, we will AFP_ASSERT() in EC_CLEANUP to prevent
++     * altering on-disk info. This does introduce an avenue to DOS
++     * the netatalk server by locally writing garbage to the EA. At this
++     * point, the outcome is an acceptable risk to prevent unintended
++     * changes to metadata.
++     */
+     if (nentries != ADEID_NUM_EA
+         || !ad_entry(ad, ADEID_FINDERI)
+-        || !ad_entry(ad, ADEID_COMMENT)
+         || !ad_entry(ad, ADEID_FILEDATESI)
+         || !ad_entry(ad, ADEID_AFPFILEI)
+         || !ad_entry(ad, ADEID_PRIVDEV)
+         || !ad_entry(ad, ADEID_PRIVINO)
+         || !ad_entry(ad, ADEID_PRIVSYN)
+         || !ad_entry(ad, ADEID_PRIVID)) {
+-        LOG(log_error, logtype_ad, "ad_header_read_ea(\"%s\"): invalid metadata EA", fullpathname(path));
++        LOG(log_error, logtype_ad,
++            "ad_header_read_ea(\"%s\"): invalid metadata EA "
++            "this is now being treated as a fatal error. "
++            "if you see this log entry, please file a bug ticket "
++            "with your upstream vendor and attach the generated "
++            "core file.", path ? fullpathname(path) : "UNKNOWN");
++
+         errno = EINVAL;
+         EC_FAIL;
+     }
+ 
++    if (!ad_entry(ad, ADEID_COMMENT) &&
++        (ad->ad_eid[ADEID_COMMENT].ade_len != 0)) {
++        errno = EINVAL;
++        EC_FAIL;
++    }
++
+     /*
+      * Ensure the resource fork offset is always set
+      */
+@@ -805,6 +836,8 @@ static int ad_header_read_ea(const char *path, struct 
+ #endif
+ 
+ EC_CLEANUP:
++    AFP_ASSERT(!(ret != 0 && errno == EINVAL));
++#if 0
+     if (ret != 0 && errno == EINVAL) {
+         become_root();
+         (void)sys_removexattr(path, AD_EA_META);
+@@ -812,6 +845,7 @@ EC_CLEANUP:
+         LOG(log_error, logtype_ad, "ad_header_read_ea(\"%s\"): deleted invalid metadata EA", fullpathname(path), nentries);
+         errno = ENOENT;
+     }
++#endif
+     EC_EXIT;
+ }
+ 
