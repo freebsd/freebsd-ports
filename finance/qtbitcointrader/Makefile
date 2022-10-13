@@ -1,5 +1,5 @@
 PORTNAME=	QtBitcoinTrader
-DISTVERSION=	1.41.00
+DISTVERSION=	1.42.00
 CATEGORIES=	finance
 MASTER_SITES=	SF/bitcointrader/SRC/
 
@@ -10,7 +10,7 @@ WWW=		https://centrabit.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3
 
-USES=		compiler:c++11-lib gl qmake qt:5 ssl xorg
+USES=		compiler:c++11-lib desktop-file-utils gl qmake qt:5 ssl xorg
 USE_QT=		core gui multimedia network script speech widgets buildtools:build
 USE_GL=		gl
 
