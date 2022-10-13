@@ -11,10 +11,16 @@ WWW=		https://dianne.skoll.ca/projects/remind/
 
 LICENSE=	GPLv2
 
+USES=		autoreconf
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-perl-build-artifacts
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INSTALL_TARGET=	${WITH_DEBUG:Dinstall:Uinstall-stripped}
+
+# disable LTO on riscv64
+EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.in
+EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
 OPTIONS_DEFINE=	A4 TCLTK REM2HTML REM2PDF
 OPTIONS_DEFAULT=	LANG_US REM2HTML REM2PDF
