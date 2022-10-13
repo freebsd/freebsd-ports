@@ -1459,6 +1459,7 @@
     SUBDIR += py-python-docs-theme
     SUBDIR += py-python-docx
     SUBDIR += py-python-gettext
+    SUBDIR += py-python-lsp-black
     SUBDIR += py-python-lsp-jsonrpc
     SUBDIR += py-python-lsp-server
     SUBDIR += py-python-markdown-math
