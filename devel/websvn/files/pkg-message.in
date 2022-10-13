@@ -1,16 +1,23 @@
 [
 { type: install
   message: <<EOM
-To setup WebSVN, please edit the configuration file:
-%%WWWDIR%%/include/config.php
+Make sure to install dependencies with:
+  cd %%WWWDIR%% && composer i
 
-and modify your web server's configuration to serve
-WebSVN actually!
+Make sure you modify %%WWWDIR%%/include/config.php to your needs and your web
+server configuration to serve WebSVN!
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+Make sure to update dependencies with:
+  cd %%WWWDIR%% && composer u
 EOM
 },
 { type: remove
   message: <<EOM
-Consider deleting %%ETCDIR%%!
+You would like to delete:
+  rm -R %%WWWDIR%% %%ETCDIR%%
 EOM
 }
 ]

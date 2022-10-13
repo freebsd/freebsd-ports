@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221012:
+  AFFECTS: devel/websvn
+  AUTHOR: michael.osipov@siemens.com
+
+  WebSVN 2.8.0 includes full PHP 8.x support which requires a change from PEAR
+  to Composer 2. You must manually install dependencies through it, the ports
+  system will not handle it anymore for you since */horde* (PR 266552) has been
+  marked as incompatible with PHP 8.x for the time being. See pkg-message for
+  detailed instructions.
+
 20221011:
   AFFECTS: users of security/acme.sh
   AUTHOR: dvl@FreeBSD.org
