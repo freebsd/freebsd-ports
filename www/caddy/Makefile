@@ -1,7 +1,6 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
-PORTREVISION=	4
+DISTVERSION=	2.6.2
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -23,7 +22,7 @@ CONFLICTS_INSTALL=	caddy-custom
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample ${ETCDIR_REL}/Caddyfile.sample"
 
-GO_BUILDFLAGS+=	-ldflags='-X github.com/caddyserver/caddy/v2.VersionString=${DISTVERSIONFULL}'
+GO_BUILDFLAGS+=	-ldflags='-X github.com/caddyserver/caddy/v2.CustomVersion=${DISTVERSIONFULL}'
 
 GO_TARGET=	./cmd/caddy
 # If go.mod is sufficient:
