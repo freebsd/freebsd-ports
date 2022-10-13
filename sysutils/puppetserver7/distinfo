@@ -1,3 +1,3 @@
-TIMESTAMP = 1663350225
-SHA256 (puppetserver-7.9.1.tar.gz) = afe3ac70d34f35dafc4b032c09550748f148ca39c0741d91b4ae2d3179f308aa
-SIZE (puppetserver-7.9.1.tar.gz) = 66383400
+TIMESTAMP = 1665640802
+SHA256 (puppetserver-7.9.2.tar.gz) = 7eebcf4fda2aca1d6d523706b40ba6b63f24487077e9d9a34bb72892814bc95c
+SIZE (puppetserver-7.9.2.tar.gz) = 59729859
