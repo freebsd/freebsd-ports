@@ -1,6 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	8.3.0
-PORTREVISION=	3
+PORTVERSION=	8.3.1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -79,6 +78,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h
 .endif
+	# print/libharu installs v2.3.0, with '2.4.0dev' in include/hpdf_version.h
+	@${REINPLACE_CMD} -e 's|HPDF_MINOR_VERSION < 4|HPDF_MINOR_VERSION < 5|' \
+		${WRKSRC}/src/tools/docs/docs_pdf/doc_pdf.cpp
 	@${REINPLACE_CMD} -e 's|PORTVERSION|${PORTVERSION}|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 	@${REINPLACE_CMD} -e 's|-lgomp|-lomp|' \
