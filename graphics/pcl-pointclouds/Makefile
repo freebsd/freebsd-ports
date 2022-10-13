@@ -1,6 +1,6 @@
 PORTNAME=	pcl
 DISTVERSION=	1.12.1
-PORTREVISION=	5
+PORTREVISION=	4
 CATEGORIES=	graphics math
 MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
@@ -81,8 +81,7 @@ VTK_DESC=		Build VTK visualizations
 VTK_USES=		gl qt:5
 VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools:build,qmake:build
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
-VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk9
+VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
+VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
 
-.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

@@ -105,7 +105,4 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rustworkx/rustworkx.cpython-${PYTHON_SUFFIX}.so
 
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} tox -epy
-
 .include <bsd.port.mk>

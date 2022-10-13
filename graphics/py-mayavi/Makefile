@@ -1,6 +1,5 @@
 PORTNAME=	mayavi
 DISTVERSION=	4.8.0
-PORTREVISION=	1
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,5 +52,4 @@ fix-plist:
 do-test:
 	@${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} ${WRKSRC}/examples/mayavi/interactive/coil_design_application.py
 
-.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
