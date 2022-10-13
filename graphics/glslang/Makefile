@@ -1,10 +1,6 @@
 PORTNAME=	glslang
-DISTVERSION=	11.11.0
-PORTREVISION=	1
+DISTVERSION=	11.12.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	228c67228a18.patch:-p1 # https://github.com/KhronosGroup/glslang/pull/3014
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenGL and OpenGL ES shader front end and validator
