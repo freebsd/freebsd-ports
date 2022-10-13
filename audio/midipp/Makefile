@@ -1,6 +1,6 @@
 PORTNAME=	midipp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.1.5
+DISTVERSION=		2.1.6
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -16,7 +16,7 @@ USE_QT=		buildtools:build core gui network printsupport widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 
-GH_TUPLE=	hselasky:libumidi:v2.1.6:a/libumidi
+GH_TUPLE=	hselasky:libumidi:v2.1.8:a/libumidi
 
 OPTIONS_DEFINE= DEBUG CDEV ALSAMIDI JACK
 OPTIONS_DEFAULT= CDEV ALSAMIDI JACK
