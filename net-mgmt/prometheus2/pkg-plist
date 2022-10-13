@@ -32,6 +32,7 @@ bin/promtool
 %%PORTDOCS%%%%DOCSDIR%%/querying/functions.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/index.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/operators.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/remote_read_api.md
 %%PORTDOCS%%%%DOCSDIR%%/stability.md
 %%PORTDOCS%%%%DOCSDIR%%/storage.md
 @sample etc/prometheus.yml.sample
