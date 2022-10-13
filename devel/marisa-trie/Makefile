@@ -1,6 +1,7 @@
 PORTNAME=	marisa-tire
-PORTVERSION=	0.24
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.6
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	iblis@hs.ntnu.edu.tw
@@ -11,18 +12,17 @@ LICENSE=	BSD2CLAUSE LGPL21+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+USES=	autoreconf libtool:build pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	s-yata
 GH_PROJECT=	marisa-trie
-GH_TAGNAME=	961ed33
-
-USES=	autoreconf libtool:build pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	SSE2 SSE3 SSSE3 SSE4 SSE41 SSE42 SSE4A POPCNT
 OPTIONS_DEFAULT=${MACHINE_CPU:tu}
