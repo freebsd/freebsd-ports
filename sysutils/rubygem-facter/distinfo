@@ -1,7 +1,3 @@
-TIMESTAMP = 1663127377
-SHA256 (rubygem/facter-4.2.12.gem) = bbde0a2f69ecb6e138c1b961bc19dc6b35bc503e6cac45739fbb04386e1aa0b5
-SIZE (rubygem/facter-4.2.12.gem) = 159232
-SHA256 (rubygem/2497.diff) = 757442d435a175d634c41d1a6705f928fa6e620c3d6f86bdf5a031c37c8177b3
-SIZE (rubygem/2497.diff) = 4734
-SHA256 (rubygem/2510.diff) = ee33b32c8162bc20ce0b17a394fe1e57d33101c8db584b0350d3955342b36c2f
-SIZE (rubygem/2510.diff) = 7124
+TIMESTAMP = 1665642643
+SHA256 (rubygem/facter-4.2.13.gem) = a4f293b585176b080c8f10e9adb7a4d1cfd484268dfef518b162a0422450264c
+SIZE (rubygem/facter-4.2.13.gem) = 159232

@@ -1,11 +1,7 @@
 PORTNAME=	facter
-PORTVERSION=	4.2.12
+PORTVERSION=	4.2.13
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
-
-PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/puppetlabs/facter/pull/
-PATCHFILES=	2497.diff 2510.diff
-PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Cross-platform Ruby library for retrieving facts from OS
