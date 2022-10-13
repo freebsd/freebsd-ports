@@ -1,5 +1,6 @@
 PORTNAME=	vapoursynth-waifu2x-ncnn-vulkan
 DISTVERSION=	r5
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,10 +19,9 @@ RUN_DEPENDS=	waifu2x-ncnn-vulkan>0:graphics/waifu2x-ncnn-vulkan
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nlzy
-GH_TUPLE=	Tencent:ncnn:20210525:ncnn/deps/ncnn
-CMAKE_ON=	NCNN_SYSTEM_GLSLANG
-CMAKE_ARGS=	-DGLSLANG_TARGET_DIR:PATH="${LOCALBASE}/lib/cmake" \
-		-DVAPOURSYNTH_HEADER_DIR:PATH="${LOCALBASE}/include/vapoursynth"
+GH_TUPLE=	KhronosGroup:glslang:11.9.0-19-g86ff4bca:glslang/deps/ncnn/glslang \
+		Tencent:ncnn:20210525:ncnn/deps/ncnn
+CMAKE_ARGS=	-DVAPOURSYNTH_HEADER_DIR:PATH="${LOCALBASE}/include/vapoursynth"
 DATADIR=	${PREFIX}/lib/vapoursynth
 PORTDATA=	libvsw2xnvk.so
 PORTDOCS=	*.md
@@ -29,8 +29,6 @@ PORTDOCS=	*.md
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-# Drop submodule prefix for NCNN_SYSTEM_GLSLANG
-	@${REINPLACE_CMD} 's,/glslang,,' ${WRKSRC_ncnn}/src/gpu.cpp
 # Models from CLI package are same
 	@${REINPLACE_CMD} -e '/pluginFilePath{/d' \
 		-e '/pluginDir/s, =[^;]*,{"${LOCALBASE}/share/waifu2x-ncnn-vulkan"},' \
