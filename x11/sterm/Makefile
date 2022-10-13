@@ -30,13 +30,11 @@ SCROLLBACK_DESC=	Scroll back through terminal output
 XRESOURCES_DESC=	Allow to handle settings from Xresources
 
 SCROLLBACK_PATCH_SITES=	https://st.suckless.org/patches/scrollback/
-SCROLLBACK_PATCHFILES=	st-scrollback-20210507-4536f46.diff:-p1 \
-			st-scrollback-mouse-20191024-a2c479c.diff:-p1
+SCROLLBACK_PATCHFILES=	st-scrollback-0.8.5.diff:-p1 \
+			st-scrollback-mouse-20220127-2c5edf2.diff:-p1
 
 XRESOURCES_PATCH_SITES=	https://st.suckless.org/patches/xresources/
 XRESOURCES_PATCHFILES=	st-xresources-20200604-9ba7ecf.diff:-p1
-
-MAKE_JOBS_UNSAFE=	yes
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
