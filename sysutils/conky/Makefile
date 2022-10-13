@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -8,13 +8,13 @@ COMMENT?=	Advanced, highly configurable system monitor for X11
 WWW=		https://github.com/brndnmtthws/conky
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-BUILD_DEPENDS=	db2x_xsltproc:textproc/docbook2X \
-		docbook-xsl>=0:textproc/docbook-xsl \
-		xsltproc:textproc/libxslt \
-		gsed:textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		pandoc:textproc/hs-pandoc \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR}
 
 USES=		cpe cmake:noninja compiler:c++11-lib gettext-runtime iconv \
-		localbase lua:52-53 pkgconfig tar:bzip2
+		localbase lua:52-53 pkgconfig python:3.7+,build tar:bzip2
 
 CMAKE_ARGS=	-DBUILD_PORT_MONITORS:BOOL=false \
 		-DBUILD_IBM:BOOL=false \
@@ -28,7 +28,7 @@ CONFLICTS?=	conky-awesome
 SLAVEDIRS=	sysutils/conky-awesome
 PLIST_FILES=	bin/conky man/man1/conky.1.gz
 PORTEXAMPLES=	conky.conf conky_no_x11.conf convert.lua
-PORTDOCS=	html/config_settings.html html/docs.html html/lua.html html/variables.html
+PORTDOCS=	config_settings.yaml variables.yaml lua.yaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brndnmtthws
@@ -57,6 +57,7 @@ DOUBLE_BUFFER_IMPLIES=	X11
 IMLIB2_CMAKE_BOOL=	BUILD_IMLIB2
 IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB2_IMPLIES=		X11
+IMLIB2_USE=		xorg=ice,sm
 
 IPV6_CMAKE_BOOL=	BUILD_IPV6
 
@@ -137,8 +138,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^set(INCLUDE_SEARCH_PATH \(.*\)),set(INCLUDE_SEARCH_PATH \1 ${LUA_INCDIR}),' \
 		-e 's/ -lbsd/ -lintl -linotify/' \
 		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
-	@${REINPLACE_CMD} -e 's,LOCALBASE,${LOCALBASE},' \
-		${WRKSRC}/doc/docgen.sh
 .if ${LUA_DEFAULT} == 5.2
 	# Force using lua 5.2
 	@${REINPLACE_CMD} -e 's/lua.*5\.*3//' \
@@ -149,7 +148,10 @@ post-patch:
 		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
 .endif
 
-post-build:
-	(cd ${WRKSRC}/doc && ${SH} docgen.sh)
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
