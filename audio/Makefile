@@ -309,6 +309,7 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
+    SUBDIR += iir1
     SUBDIR += infamous-plugins-lv2
     SUBDIR += inscore
     SUBDIR += intersect-lv2
