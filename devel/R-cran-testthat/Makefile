@@ -1,5 +1,5 @@
 PORTNAME=	testthat
-DISTVERSION=	3.1.4
+DISTVERSION=	3.1.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,8 +15,7 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-R6>=2.2.0:devel/R-cran-R6 \
 		R-cran-brio>0:devel/R-cran-brio \
 		R-cran-callr>=3.5.1:devel/R-cran-callr \
-		R-cran-cli>=3.3.0:devel/R-cran-cli \
-		R-cran-crayon>=1.3.4:devel/R-cran-crayon \
+		R-cran-cli>=3.4.0:devel/R-cran-cli \
 		R-cran-desc>0:devel/R-cran-desc \
 		R-cran-ellipsis>=0.2.0:devel/R-cran-ellipsis \
 		R-cran-evaluate>0:devel/R-cran-evaluate \
