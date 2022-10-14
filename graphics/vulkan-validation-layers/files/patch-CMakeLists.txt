@@ -10,14 +10,24 @@ CMake Error at CMakeLists.txt:255 (find_package):
   "robin_hood" provides a separate development package or SDK, be sure it has
   been installed.
 
---- CMakeLists.txt.orig	2022-03-16 04:06:06 UTC
+--- CMakeLists.txt.orig	2022-10-14 06:42:02 UTC
 +++ CMakeLists.txt
-@@ -105,6 +105,8 @@ if (ROBIN_HOOD_HASHING_INSTALL_DIR)
- #backwards compatability settings for other parts of the build system that don't use find_package() variables yet
+@@ -89,6 +89,8 @@ if (ROBIN_HOOD_HASHING_INSTALL_DIR)
+ # Dependencies can be installed in arbitrary locations. This is done by update_deps.py / users.
  if (ROBIN_HOOD_HASHING_INSTALL_DIR)
      list(APPEND CMAKE_PREFIX_PATH ${ROBIN_HOOD_HASHING_INSTALL_DIR})
 +    add_library(robin_hood::robin_hood INTERFACE IMPORTED)
 +    target_include_directories(robin_hood::robin_hood INTERFACE ${ROBIN_HOOD_HASHING_INSTALL_DIR}/src/include)
  endif()
- if (SPIRV_HEADERS_INSTALL_DIR)
-     list(APPEND CMAKE_PREFIX_PATH ${SPIRV_HEADERS_INSTALL_DIR})
+ if (GLSLANG_INSTALL_DIR)
+     list(APPEND CMAKE_PREFIX_PATH ${GLSLANG_INSTALL_DIR})
+@@ -206,7 +208,9 @@ if (USE_ROBIN_HOOD_HASHING)
+ option(BUILD_LAYER_SUPPORT_FILES "Generate layer files" OFF) # For generating files when not building layers
+ option(USE_ROBIN_HOOD_HASHING "Use robin-hood-hashing" ON)
+ if (USE_ROBIN_HOOD_HASHING)
++  if (NOT TARGET robin_hood::robin_hood)
+     find_package(robin_hood REQUIRED CONFIG)
++  endif()
+ endif()
+ 
+ if(BUILD_LAYERS OR BUILD_TESTS)
