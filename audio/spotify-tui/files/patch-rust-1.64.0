@@ -1,0 +1,32 @@
+error[E0512]: cannot transmute between types of different sizes, or dependently-sized types
+   --> socket2-0.3.XX/src/sockaddr.rs:176:9
+    |
+176 |         mem::transmute::<SocketAddrV4, sockaddr_in>(v4);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: source type: `SocketAddrV4` (48 bits)
+    = note: target type: `sockaddr_in` (128 bits)
+
+For more information about this error, try `rustc --explain E0512`.
+error: could not compile `socket2` due to previous error
+
+
+--- Cargo.lock.orig	2022-10-14 14:47:57 UTC
++++ Cargo.lock
+@@ -1913,13 +1913,12 @@ name = "socket2"
+ 
+ [[package]]
+ name = "socket2"
+-version = "0.3.12"
++version = "0.3.19"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "03088793f677dce356f3ccc2edb1b314ad191ab702a5de3faf49304f7e104918"
++checksum = "122e570113d28d773067fab24266b66753f6ea915758651696b6e35e49f88d6e"
+ dependencies = [
+- "cfg-if 0.1.10",
++ "cfg-if 1.0.0",
+  "libc",
+- "redox_syscall",
+  "winapi 0.3.9",
+ ]
+ 

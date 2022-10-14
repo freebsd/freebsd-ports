@@ -1,4 +1,4 @@
-TIMESTAMP = 1630018006
+TIMESTAMP = 1665751658
 SHA256 (rust/crates/addr2line-0.14.1.crate) = a55f82cfe485775d02112886f4169bde0c5894d75e79ead7eafe7e40a25e45f7
 SIZE (rust/crates/addr2line-0.14.1.crate) = 31201
 SHA256 (rust/crates/adler-0.2.3.crate) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
@@ -395,8 +395,8 @@ SHA256 (rust/crates/slab-0.4.2.crate) = c111b5bd5695e56cffe5129854aa230b39c93a30
 SIZE (rust/crates/slab-0.4.2.crate) = 10136
 SHA256 (rust/crates/smallvec-1.4.1.crate) = 3757cb9d89161a2f24e1cf78efa0c1fcff485d18e3f55e0aa3480824ddaa0f3f
 SIZE (rust/crates/smallvec-1.4.1.crate) = 25818
-SHA256 (rust/crates/socket2-0.3.12.crate) = 03088793f677dce356f3ccc2edb1b314ad191ab702a5de3faf49304f7e104918
-SIZE (rust/crates/socket2-0.3.12.crate) = 29253
+SHA256 (rust/crates/socket2-0.3.19.crate) = 122e570113d28d773067fab24266b66753f6ea915758651696b6e35e49f88d6e
+SIZE (rust/crates/socket2-0.3.19.crate) = 33782
 SHA256 (rust/crates/str-buf-1.0.5.crate) = d44a3643b4ff9caf57abcee9c2c621d6c03d9135e0d8b589bd9afb5992cb176a
 SIZE (rust/crates/str-buf-1.0.5.crate) = 3852
 SHA256 (rust/crates/strsim-0.7.0.crate) = bb4f380125926a99e52bc279241539c018323fab05ad6368b56f93d9369ff550
