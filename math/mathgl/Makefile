@@ -1,6 +1,6 @@
 PORTNAME=	mathgl
 DISTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
@@ -19,10 +19,11 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libsz.so:science/libaec
 
-USES=		cmake compiler:c++11-lang gettext-runtime gl jpeg xorg
+USES=		cmake compiler:c++11-lang dos2unix gettext-runtime gl jpeg xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
+DOS2UNIX_GLOB=	*.cpp *.h
 
 .for v in double gif glut gsl hdf5 jpeg ltdl mgl2 opengl pdf png zlib
 CMAKE_ARGS+=	-Denable-${v}=ON
