@@ -1,5 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -41,7 +42,7 @@ MANPAGES_USE=		RUBY=yes
 MANPAGES_VARS=		RUBY_NO_RUN_DEPENDS=yes
 
 LUAJIT_DESC=		Use LuaJIT instead of standard Lua
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51
 LUAJIT_CMAKE_BOOL_OFF=	DISABLE_JIT
 
