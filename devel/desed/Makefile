@@ -1,6 +1,5 @@
 PORTNAME=	desed
-DISTVERSION=	1.2.0
-PORTREVISION=	20
+DISTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -18,65 +17,58 @@ USES=		cargo
 
 PLIST_FILES=	bin/${PORTNAME}
 
-# DO NOT downgrade kqueue* crates below to avoid this problem: https://gitlab.com/rust-kqueue/rust-kqueue-sys/-/issues/3
-CARGO_CRATES=	ansi_term-0.11.0 \
-		anyhow-1.0.32 \
-		arc-swap-0.4.7 \
+CARGO_CRATES=	anyhow-1.0.65 \
 		atty-0.2.14 \
-		bitflags-1.2.1 \
-		bytes-0.5.6 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
 		cassowary-0.3.0 \
-		cfg-if-0.1.10 \
-		clap-2.33.3 \
-		cloudabi-0.0.3 \
-		crossterm-0.17.6 \
-		crossterm_winapi-0.6.1 \
-		either-1.6.1 \
-		fuchsia-zircon-0.3.3 \
-		fuchsia-zircon-sys-0.3.3 \
-		futures-core-0.3.5 \
-		hermit-abi-0.1.15 \
-		inotify-0.8.3 \
-		inotify-sys-0.1.3 \
-		iovec-0.1.4 \
-		itertools-0.9.0 \
-		kernel32-sys-0.2.2 \
+		cfg-if-1.0.0 \
+		clap-3.2.22 \
+		clap_lex-0.2.4 \
+		crossterm-0.25.0 \
+		crossterm_winapi-0.9.0 \
+		futures-core-0.3.24 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		indexmap-1.9.1 \
+		inotify-0.10.0 \
+		inotify-sys-0.1.5 \
 		kqueue-1.0.6 \
 		kqueue-sys-1.0.3 \
-		lazy_static-1.4.0 \
-		libc-0.2.78 \
-		lock_api-0.3.4 \
-		log-0.4.8 \
-		mio-0.6.22 \
-		mio-0.7.0 \
-		miow-0.2.1 \
-		miow-0.3.5 \
-		net2-0.2.35 \
-		ntapi-0.3.4 \
-		parking_lot-0.10.2 \
-		parking_lot_core-0.7.2 \
-		pin-project-lite-0.1.10 \
-		redox_syscall-0.1.57 \
+		libc-0.2.135 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		mio-0.8.4 \
+		once_cell-1.15.0 \
+		os_str_bytes-6.3.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.3 \
+		pin-project-lite-0.2.9 \
+		redox_syscall-0.2.16 \
 		scopeguard-1.1.0 \
-		signal-hook-0.1.16 \
-		signal-hook-registry-1.2.0 \
-		slab-0.4.2 \
-		smallvec-1.4.1 \
-		socket2-0.3.12 \
-		strsim-0.8.0 \
-		textwrap-0.11.0 \
-		tokio-0.2.22 \
-		tui-0.9.5 \
-		unicode-segmentation-1.6.0 \
-		unicode-width-0.1.8 \
-		vec_map-0.8.2 \
-		winapi-0.2.8 \
+		signal-hook-0.3.14 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.0 \
+		smallvec-1.10.0 \
+		socket2-0.4.7 \
+		strsim-0.10.0 \
+		termcolor-1.1.3 \
+		textwrap-0.15.1 \
+		tokio-1.21.2 \
+		tui-0.19.0 \
+		unicode-segmentation-1.10.0 \
+		unicode-width-0.1.10 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		ws2_32-sys-0.2.1
-
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/desed
 
