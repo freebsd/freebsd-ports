@@ -1,5 +1,6 @@
 PORTNAME=	luv
 DISTVERSION=	1.44.2-1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -9,10 +10,9 @@ WWW=		https://github.com/luvit/luv
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libuv.so:devel/libuv \
-	 	libluajit-5.1.so:lang/luajit-openresty
+LIB_DEPENDS=	libuv.so:devel/libuv
 
-USES=		cmake
+USES=		cmake luajit
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	luvit keplerproject:compat

@@ -1,6 +1,7 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -12,8 +13,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	gperf:devel/gperf \
 		${LUA_MODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
 		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
-LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
-		libluv.so:devel/luv \
+LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpackc.so:devel/msgpack \
 		libtermkey.so:devel/libtermkey \
 		libtree-sitter.so:devel/tree-sitter \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
 
-USES=		cmake cpe iconv lua:52,build pathfix pkgconfig
+USES=		cmake cpe iconv lua:52,build luajit pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
 		libmpack:libmpack-lua:1.0.9:libmpack_lua
