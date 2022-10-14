@@ -1,5 +1,6 @@
 PORTNAME=	cryptography
-PORTVERSION=	38.0.1
+PORTVERSION=	3.4.8
+PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography-vectors>=${PORTVERSION}:securi
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=1.11.4:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pretend>=0:devel/py-pretend@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=0:devel/py-pytest-benchmark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-subtests>=0:devel/py-pytest-subtests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0,1:devel/py-pytest-xdist@${PY_FLAVOR} \
@@ -31,15 +31,15 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+MAKE_ENV=	CRYPTOGRAPHY_DONT_BUILD_RUST=1
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 CPE_VENDOR=	cryptography_project
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${RM} -r ${WRKSRC}/src/rust/
 .if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+post-patch:
 	@${REINPLACE_CMD} -e 's|"-Wno-error=sign-conversion"||' ${WRKSRC}/src/_cffi_src/build_openssl.py
 .endif
 

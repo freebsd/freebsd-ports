@@ -1,0 +1,62 @@
+From 94590a9aecc9e5ef6fc8eda52bae43643a4c44bd Mon Sep 17 00:00:00 2001
+From: Charlie Li <vishwin@users.noreply.github.com>
+Date: Mon, 19 Apr 2021 18:38:38 -0400
+Subject: [PATCH] Fix build with LibreSSL 3.3.2 (#5988)
+
+* LibreSSL 3.3.2 supports SSL_OP_NO_DTLS*
+
+While here, bump CI
+
+* Fix preprocessor guards for LibreSSL's SSL_OP_NO_DTLS*
+
+DTLS_set_link_mtu and DTLS_get_link_min_mtu are not part of 3.3.2
+
+* Switch to LESS_THAN context for LibreSSL 3.3.2
+
+While here, fix indents
+
+* Remove extra C variable declaration
+
+The variable is not actually used from Python
+---
+ .github/workflows/ci.yml              | 2 +-
+ src/_cffi_src/openssl/cryptography.py | 7 +++++++
+ src/_cffi_src/openssl/ssl.py          | 2 ++
+ 3 files changed, 10 insertions(+), 1 deletion(-)
+
+diff --git src/_cffi_src/openssl/cryptography.py src/_cffi_src/openssl/cryptography.py
+index e2b5a132..b9c7a793 100644
+--- src/_cffi_src/openssl/cryptography.py
++++ src/_cffi_src/openssl/cryptography.py
+@@ -32,6 +32,13 @@ INCLUDES = """
+ #include <Winsock2.h>
+ #endif
+ 
++#if CRYPTOGRAPHY_IS_LIBRESSL
++#define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_332 \
++    (LIBRESSL_VERSION_NUMBER < 0x3030200f)
++#else
++#define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_332 (0)
++#endif
++
+ #define CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER \
+     (OPENSSL_VERSION_NUMBER >= 0x1010006f && !CRYPTOGRAPHY_IS_LIBRESSL)
+ 
+diff --git src/_cffi_src/openssl/ssl.py src/_cffi_src/openssl/ssl.py
+index 11a7d63a..081ef041 100644
+--- src/_cffi_src/openssl/ssl.py
++++ src/_cffi_src/openssl/ssl.py
+@@ -586,8 +586,10 @@ static const long TLS_ST_OK = 0;
+ #endif
+ 
+ #if CRYPTOGRAPHY_IS_LIBRESSL
++#if CRYPTOGRAPHY_LIBRESSL_LESS_THAN_332
+ static const long SSL_OP_NO_DTLSv1 = 0;
+ static const long SSL_OP_NO_DTLSv1_2 = 0;
++#endif
+ long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
+ long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+ #endif
+-- 
+2.31.1
+

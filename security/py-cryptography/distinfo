@@ -1,3 +1,3 @@
-TIMESTAMP = 1665073152
-SHA256 (cryptography-38.0.1.tar.gz) = 1db3d807a14931fa317f96435695d9ec386be7b84b618cc61cfa5d08b0ae33d7
-SIZE (cryptography-38.0.1.tar.gz) = 599412
+TIMESTAMP = 1652122693
+SHA256 (cryptography-3.4.8.tar.gz) = 94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c
+SIZE (cryptography-3.4.8.tar.gz) = 546907
