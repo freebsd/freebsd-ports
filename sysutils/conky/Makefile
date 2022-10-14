@@ -8,37 +8,33 @@ COMMENT?=	Advanced, highly configurable system monitor for X11
 WWW=		https://github.com/brndnmtthws/conky
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-BUILD_DEPENDS=	gsed:textproc/gsed \
-		pandoc:textproc/hs-pandoc \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR}
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 USES=		cpe cmake:noninja compiler:c++11-lib gettext-runtime iconv \
-		localbase lua:52-53 pkgconfig python:3.7+,build tar:bzip2
+		localbase lua:52-53 pkgconfig tar:bzip2
 
 CMAKE_ARGS=	-DBUILD_PORT_MONITORS:BOOL=false \
 		-DBUILD_IBM:BOOL=false \
 		-DBUILD_HDDTEMP:BOOL=false \
 		-DBUILD_IOSTATS:BOOL=false \
 		-DBUILD_AUDACIOUS:BOOL=false \
-		-DBUILD_DOCS:BOOL=true \
 		-DAPP_SED=${LOCALBASE}/bin/gsed
 CONFLICTS?=	conky-awesome
 
 SLAVEDIRS=	sysutils/conky-awesome
-PLIST_FILES=	bin/conky man/man1/conky.1.gz
+PLIST_FILES=	bin/conky
 PORTEXAMPLES=	conky.conf conky_no_x11.conf convert.lua
 PORTDOCS=	config_settings.yaml variables.yaml lua.yaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brndnmtthws
 
-OPTIONS_DEFINE=	APCUPSD CURL DOCS EXAMPLES IPV6 METAR MOC MPD NCURSES RSS \
-		X11 XOAP
+OPTIONS_DEFINE=	APCUPSD CURL DOCS EXAMPLES IPV6 MANPAGES METAR MOC MPD \
+		NCURSES RSS X11 XOAP
 
 OPTIONS_GROUP?=	X11
 OPTIONS_GROUP_X11=	ARGB DOUBLE_BUFFER IMLIB2 XFT XINERAMA LUA_CAIRO LUA_IMLIB2 LUA_RSVG
-OPTIONS_DEFAULT?=	X11 ARGB DOUBLE_BUFFER XFT LUA_CAIRO
+OPTIONS_DEFAULT?=	X11 ARGB DOUBLE_BUFFER MANPAGES XFT LUA_CAIRO
 
 APCUPSD_DESC=		Monitor APCUPSD
 APCUPSD_CMAKE_BOOL=	BUILD_APCUPSD
@@ -90,6 +86,13 @@ MOC_CMAKE_BOOL=		BUILD_MOC
 MPD_DESC=		Control MPD (Music Player Daemon)
 MPD_CMAKE_BOOL=		BUILD_MPD
 
+MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc \
+			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR}
+MANPAGES_USES=		python:3.7+,build
+MANPAGES_CMAKE_BOOL=	BUILD_DOCS
+MANPAGES_PLIST_FILES=	man/man1/conky.1.gz
+
 NCURSES_DESC=		Use ncurses to draw on terminals
 NCURSES_CMAKE_BOOL=	BUILD_NCURSES
 NCURSES_USES=		ncurses:port
@@ -132,11 +135,9 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src_CMakeLists.txt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^#\(set(RELEASE true\)/\1/' \
-		-e 's/-D_POSIX_C_SOURCE=200809L/& -D__BSD_VISIBLE=1 -D_XOPEN_SOURCE=700/' \
+	@${REINPLACE_CMD} -e 's/^# \(set(RELEASE true\)/\1/' \
 		${WRKSRC}/cmake/Conky.cmake
 	@${REINPLACE_CMD} -e 's,^set(INCLUDE_SEARCH_PATH \(.*\)),set(INCLUDE_SEARCH_PATH \1 ${LUA_INCDIR}),' \
-		-e 's/ -lbsd/ -lintl -linotify/' \
 		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
 .if ${LUA_DEFAULT} == 5.2
 	# Force using lua 5.2
