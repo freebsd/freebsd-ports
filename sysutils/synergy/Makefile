@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnotify.so:devel/libnotify \
 		libxkbfile.so:x11/libxkbfile
 
-USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags qt:5 ssl xorg
+USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig qt:5 ssl xorg
 CPE_VENDOR=	synergy-foss
 USE_QT=		core dbus network widgets buildtools:build linguisttools:build qmake:build
 USE_GNOME=	gdkpixbuf2 glib20
@@ -39,7 +39,6 @@ OPTIONS_DEFAULT=		AVAHI_LIBDNS
 OPTIONS_SUB=			yes
 
 AVAHI_LIBDNS_DESC=		Use libdns from avahi to avoid conflicts with KDE/Gnome
-AVAHI_LIBDNS_USES=		pkgconfig
 AVAHI_LIBDNS_CFLAGS=		`pkg-config --cflags avahi-compat-libdns_sd`
 AVAHI_LIBDNS_LDFLAGS=		`pkg-config --libs avahi-compat-libdns_sd`
 AVAHI_LIBDNS_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
