@@ -1,5 +1,6 @@
 PORTNAME=	snort
 DISTVERSION=	3.1.43.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libdaq.so:net/libdaq \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake compiler:c++14-lang cpe iconv localbase pathfix pkgconfig \
+USES=		cmake compiler:c++14-lang cpe iconv localbase luajit pathfix pkgconfig \
 		shebangfix ssl
 USE_GITHUB=	yes
 
@@ -60,12 +61,6 @@ THREADSANITIZER_CMAKE_BOOL=	ENABLE_THREAD_SANITIZER
 TSC_CMAKE_BOOL=			ENABLE_TSC_CLOCK
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
-.else
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
-.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
 BUILD_DEPENDS=	flex>0:textproc/flex
