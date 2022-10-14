@@ -1,6 +1,6 @@
---- src/gallium/drivers/llvmpipe/lp_rast_tri.c.orig	2021-07-21 11:06:08 UTC
+--- src/gallium/drivers/llvmpipe/lp_rast_tri.c.orig	2022-10-11 18:53:31 UTC
 +++ src/gallium/drivers/llvmpipe/lp_rast_tri.c
-@@ -465,7 +465,9 @@ lp_rast_triangle_32_3_4(struct lp_rasterizer_task *tas
+@@ -488,7 +488,9 @@ lp_rast_triangle_32_3_4(struct lp_rasterizer_task *tas
  
  #if defined(_ARCH_PWR8) && UTIL_ARCH_LITTLE_ENDIAN
  

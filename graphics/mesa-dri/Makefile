@@ -27,16 +27,12 @@ ZSTD_MESON_ENABLED=	zstd
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-ALL_DRI_DRIVERS=	I915 I965 R100 R200
-ALL_GALLIUM_DRIVERS=	CROCUS IRIS PANFROST R300 R600 RADEONSI SVGA SWRAST
+ALL_GALLIUM_DRIVERS=	CROCUS IRIS PANFROST R300 R600 RADEONSI SVGA SWRAST ZINK
 ALL_VULKAN_DRIVERS=	INTEL AMD SWRAST
 
-GALLIUM_DRIVERS+=	SWRAST	# llvmpipe
+GALLIUM_DRIVERS+=	SWRAST \
+			ZINK
 VULKAN_DRIVERS+=	SWRAST	# lavapipe
-
-.if ${ARCH:Marm*}
-DRI_DRIVERS+=	R100
-.endif
 
 .if ${ARCH} == aarch64
 GALLIUM_DRIVERS+=	PANFROST
@@ -44,16 +40,15 @@ GALLIUM_DRIVERS+=	PANFROST
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
-DRI_DRIVERS+=		R100 R200
 GALLIUM_DRIVERS+=	R300 R600 RADEONSI
 VULKAN_DRIVERS+=	AMD
+BUILD_DEPENDS+=		glslangValidator:graphics/glslang
 . if ${PORT_OPTIONS:MPLATFORM_X11}
 USE_XORG+=		xv xvmc
 MESON_ARGS+=		-Dgallium-xvmc=enabled
 . endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
-DRI_DRIVERS+=		I915 I965
 GALLIUM_DRIVERS+=	CROCUS IRIS SVGA
 VULKAN_DRIVERS+=	INTEL
 .endif
@@ -72,8 +67,7 @@ USE_XORG+=		xcb xrandr
 MESA_PLATFORMS+=	wayland
 .endif
 
-MESON_ARGS+=	-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
-		-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
+MESON_ARGS+=	-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
 		-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}" \
 		-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
@@ -84,17 +78,7 @@ MESON_ARGS+=	-Dgallium-xa=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
 		-Dglx=disabled \
-		-Degl=disabled \
-		-Dosmesa=false \
-		-Dtools=""
-
-.for _d in ${ALL_DRI_DRIVERS}
-. if defined(DRI_DRIVERS) && ${DRI_DRIVERS:M${_d}}
-PLIST_SUB+=	${_d}_DRIVER=""
-. else
-PLIST_SUB+=	${_d}_DRIVER="@comment "
-. endif
-.endfor
+		-Dosmesa=false
 
 .for _gd in ${ALL_GALLIUM_DRIVERS}
 . if defined(GALLIUM_DRIVERS) && ${GALLIUM_DRIVERS:M${_gd}}

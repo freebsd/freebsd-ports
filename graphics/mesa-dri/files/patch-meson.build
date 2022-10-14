@@ -1,12 +1,14 @@
---- meson.build.orig	2022-03-18 19:26:47 UTC
+--- meson.build.orig	2022-10-11 18:53:31 UTC
 +++ meson.build
-@@ -1414,11 +1414,42 @@ foreach f : ['strtof', 'mkostemp', 'timespec_get', 'me
- endforeach
+@@ -1436,7 +1436,6 @@ functions_to_detect = {
+   'flock': '',
+   'strtok_r': '',
+   'getrandom': '',
+-  'qsort_r': '',
+   'qsort_s': '',
+ }
  
- foreach f : ['strtof', 'mkostemp', 'timespec_get', 'memfd_create', 'random_r',
--             'flock', 'strtok_r', 'getrandom', 'qsort_r', 'qsort_s']
-+             'flock', 'strtok_r', 'getrandom', 'qsort_s']
-   if cc.has_function(f)
+@@ -1445,6 +1444,37 @@ endforeach
      pre_args += '-DHAVE_@0@'.format(f.to_upper())
    endif
  endforeach
@@ -42,5 +44,5 @@
 +  pre_args += '-DHAVE_BSD_QSORT_R'
 +endif
  
- if cc.has_header_symbol('errno.h', 'program_invocation_name',
-                         args : '-D_GNU_SOURCE')
+ if cc.has_header_symbol('time.h', 'struct timespec')
+    pre_args += '-DHAVE_STRUCT_TIMESPEC'

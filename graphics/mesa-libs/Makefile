@@ -29,8 +29,7 @@ ZSTD_MESON_ENABLED=	zstd
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-MESON_ARGS+=	-Dgallium-drivers="" \
-		-Dgallium-vdpau=disabled \
+MESON_ARGS+=	-Dgallium-vdpau=disabled \
 		-Dgallium-xvmc=disabled \
 		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
@@ -41,10 +40,9 @@ MESON_ARGS+=	-Dgallium-drivers="" \
 		-Degl=enabled \
 		-Dgbm=enabled \
 		-Dvulkan-drivers="" \
-		-Dglvnd=true \
-		-Dprefer-iris=true
-# Building EGL and GBM requires a dri driver so add r100
-MESON_ARGS+=	-Ddri-drivers="r100"
+		-Dglvnd=true
+# Building EGL and GBM requires a driver so add r300
+MESON_ARGS+=	-Dgallium-drivers="r300"
 
 .if ${PORT_OPTIONS:MPLATFORM_X11}
 MESA_PLATFORMS+=	x11
