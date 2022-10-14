@@ -1,6 +1,6 @@
 PORTNAME=	kamailio
 PORTVERSION=	5.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -80,7 +80,7 @@ JWT_VARS=		EXTRA_MODULES+=jwt
 KAFKA_LIB_DEPENDS=	librdkafka.so:net/librdkafka
 KAFKA_VARS=		EXTRA_MODULES+=kafka
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_USES=		luajit
 LUAJIT_MAKE_ARGS=	LUAJIT=yes
 LUAJIT_VARS=		EXTRA_MODULES+=app_lua
 
