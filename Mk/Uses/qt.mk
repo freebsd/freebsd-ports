@@ -347,7 +347,7 @@ qt-tools_PORT=		devel/${_QT_RELNAME}-tools
 qt-tools_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/lupdate
 
 qt-translations_PORT=	devel/${_QT_RELNAME}-translations
-qt-translations_PATH=	${LOCALBASE}/${QT_DATADIR_REL}/translations
+qt-translations_PATH=	${LOCALBASE}/${QT_DATADIR_REL}/translations/qt_en.qm
 
 qt-uiplugin_PORT=	x11-toolkits/${_QT_RELNAME}-uiplugin
 qt-uiplugin_PATH=	${LOCALBASE}/${QT_INCDIR_REL}/QtUiPlugin/QtUiPlugin
