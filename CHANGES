@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20221014:
+AUTHOR: adamw@FreeBSD.org
+
+  USES=luajit has been added to support a unified luajit version. The
+  default here is luajit-devel, which should be the right version for
+  nearly everybody.
+
+  luajit-openresty is a drop-in replacement for anything that luajit-devel
+  works in, though not necessarily the other way around. If a program uses
+  the openresty-specific API then you will need USES=luajit:luajit-openresty.
+
+  The standard USES for most ports:
+    USES=luajit
+
+  For anything that requires the openresty API:
+    USES=luajit:luajit-openresty
+
 20220911:
 AUTHOR: zirias@FreeBSD.org
 
