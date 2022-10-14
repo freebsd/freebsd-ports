@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	2340cdb5f0c2.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/296
+PATCHFILES+=	e1286f67d898.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/1163
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for encoding and decoding .avif files
