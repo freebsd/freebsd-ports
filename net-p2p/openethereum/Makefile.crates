@@ -329,7 +329,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
 		smallvec-1.6.1 \
-		socket2-0.3.11 \
+		socket2-0.3.19 \
 		spin-0.5.2 \
 		stable_deref_trait-1.1.1 \
 		static_assertions-1.1.0 \
