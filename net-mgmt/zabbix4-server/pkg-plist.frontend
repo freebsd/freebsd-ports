@@ -32,7 +32,8 @@
 %%WWWDIR%%/app/controllers/CControllerExportXml.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteCreate.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteDelete.php
-%%WWWDIR%%/app/controllers/CControllerHintBox.php
+%%WWWDIR%%/app/controllers/CControllerHintboxActionlist.php
+%%WWWDIR%%/app/controllers/CControllerHintboxEventlist.php
 %%WWWDIR%%/app/controllers/CControllerMapView.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeCreate.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeDelete.php
@@ -106,6 +107,8 @@
 %%WWWDIR%%/app/views/administration.script.list.php
 %%WWWDIR%%/app/views/dashboard.properties.edit.php
 %%WWWDIR%%/app/views/dashboard.sharing.edit.php
+%%WWWDIR%%/app/views/hintbox.actionlist.php
+%%WWWDIR%%/app/views/hintbox.eventlist.php
 %%WWWDIR%%/app/views/layout.csv.php
 %%WWWDIR%%/app/views/layout.htmlpage.footer.php
 %%WWWDIR%%/app/views/layout.htmlpage.header.php
@@ -147,7 +150,6 @@
 %%WWWDIR%%/app/views/monitoring.widget.trigover.view.php
 %%WWWDIR%%/app/views/monitoring.widget.url.view.php
 %%WWWDIR%%/app/views/monitoring.widget.web.view.php
-%%WWWDIR%%/app/views/hint.box.php
 %%WWWDIR%%/app/views/popup.generic.php
 %%WWWDIR%%/app/views/popup.httpstep.php
 %%WWWDIR%%/app/views/popup.media.js.php
@@ -831,6 +833,7 @@
 %%WWWDIR%%/latest.php
 %%WWWDIR%%/local/.htaccess
 %%WWWDIR%%/local/README
+%%WWWDIR%%/locale/README.md
 %%WWWDIR%%/locale/add_new_language.sh
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
@@ -842,6 +845,7 @@
 %%WWWDIR%%/locale/de/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/el/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/el/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/en/LC_MESSAGES/frontend.pot
 %%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/es/LC_MESSAGES/frontend.mo
@@ -871,8 +875,8 @@
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/make_mo.sh
-%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.mo
-%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pl/LC_MESSAGES/frontend.mo
@@ -888,8 +892,8 @@
 %%WWWDIR%%/locale/ru/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.po
-%%WWWDIR%%/locale/sv/LC_MESSAGES/frontend.mo
-%%WWWDIR%%/locale/sv/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo
