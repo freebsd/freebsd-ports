@@ -6,6 +6,8 @@
 # After bsd.port.options.mk or bsd.port.pre.mk, the following are set:
 #   LUAJIT_VER:    The selected luajit version
 #   LUAJIT_INCDIR: The path to luajit's header files
+#   LUAJIT_LUAVER: Which luajit spec version is selected
+#                  (2.0 for luajit, else 2.1)
 
 .if !defined(_INCLUDE_USES_LUAJIT_MK)
 _INCLUDE_USES_LUAJIT_MK=yes
@@ -27,11 +29,12 @@ IGNORE=	Invalid luajit version ${LUAJIT_VER}: valid versions are ${VALID_LUAJIT_
 .endif
 
 .if ${LUAJIT_VER} == luajit
-LUAJIT_INCDIR=	${LOCALBASE}/include/luajit-2.0
+LUAJIT_LUAVER=	2.0
 .else
-LUAJIT_INCDIR=	${LOCALBASE}/include/luajit-2.1
+LUAJIT_LUAVER=	2.1
 .endif
 
 LIB_DEPENDS+=	libluajit-5.1.so:lang/${LUAJIT_VER}
+LUAJIT_INCDIR=	${LOCALBASE}/include/luajit-${LUAJIT_LUAVER}
 
 .endif
