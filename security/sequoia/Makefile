@@ -67,6 +67,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		cc-1.0.59 \
 		cexpr-0.3.6 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chrono-0.4.15 \
 		clang-sys-0.28.1 \
 		clap-2.33.3 \
@@ -243,7 +244,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
 		smallvec-1.4.2 \
-		socket2-0.3.11 \
+		socket2-0.3.19 \
 		spin-0.5.2 \
 		string-0.2.1 \
 		string_cache-0.7.5 \
