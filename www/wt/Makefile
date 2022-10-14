@@ -1,6 +1,10 @@
 PORTNAME=	wt
 DISTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	www
+
+PATCH_SITES=	https://github.com/emweb/wt/commit/
+PATCHFILES+=	450675abc789d135e456bf42a0eb7260bf3d9cbd.diff:-p1 # haru 2.4+
 
 MAINTAINER=	info@babaei.net
 COMMENT=	Widget-centric C++ library for developing web applications
@@ -100,12 +104,12 @@ MYSQL_CMAKE_ON=		-DMYSQL_PREFIX:STRING=${LOCALBASE} \
 			-DENABLE_LIBWTDBO:BOOL=ON
 
 OPENGL_CMAKE_BOOL=	ENABLE_OPENGL
-OPENGL_USES=            gl xorg
-OPENGL_USE=             GL=gl,glew xorg=x11
+OPENGL_USES=		gl xorg
+OPENGL_USE=		GL=gl,glew xorg=x11
 
 PANGO_CMAKE_BOOL=	ENABLE_PANGO
 PANGO_USES=		gnome
-PANGO_USE=              GNOME=pango
+PANGO_USE=		GNOME=pango
 PANGO_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 POSTGRES_CMAKE_BOOL=	ENABLE_POSTGRES
@@ -115,7 +119,7 @@ POSTGRES_CMAKE_ON=	-DPOSTGRES_PREFIX:STRING=${LOCALBASE} \
 
 QT5_CMAKE_BOOL=		ENABLE_QT5
 QT5_USES=		qt:5
-QT5_USE=                qt=buildtools:build,core
+QT5_USE=		qt=buildtools:build,core,qmake:build
 
 RESOURCES_CMAKE_BOOL=	INSTALL_RESOURCES
 
