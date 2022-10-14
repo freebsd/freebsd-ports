@@ -1,5 +1,6 @@
 PORTNAME=	robin-hood-hashing
 DISTVERSION=	3.11.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,13 +15,12 @@ USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinus
 
-NO_BUILD=	yes
+CMAKE_OFF=	RH_STANDALONE_PROJECT
 NO_ARCH=	yes
 
-PLIST_FILES=	include/robin_hood.h
-
-do-install: # see https://github.com/martinus/robin-hood-hashing/issues/162
-	${INSTALL_DATA} ${WRKSRC}/src/include/robin_hood.h ${STAGEDIR}${PREFIX}/include
+PLIST_FILES=	include/robin_hood.h \
+		lib/cmake/robin_hood/robin_hood-targets.cmake \
+		lib/cmake/robin_hood/robin_hoodConfig.cmake
 
 # tests fail to build, see https://github.com/martinus/robin-hood-hashing/issues/161
 
