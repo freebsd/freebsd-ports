@@ -101,10 +101,10 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:654fd98b53c6:storj_common/vendor/storj.io/common \
+		storj:common:0fff01212055:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.32:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:c3a9898b5bca:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:c354e3e64dd3:storj_private/vendor/storj.io/private \
+		storj:private:957cab776577:storj_private/vendor/storj.io/private \
 		storj:uplink:37dccde06f31:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
@@ -118,7 +118,7 @@ GH_TUPLE=	\
 		zeebo:admission:v3.0.3:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
 		zeebo:assert:v1.3.0:zeebo_assert/vendor/github.com/zeebo/assert \
 		zeebo:blake3:v0.2.3:zeebo_blake3/vendor/github.com/zeebo/blake3 \
-		zeebo:clingy:b8a4c2e29e63:zeebo_clingy/vendor/github.com/zeebo/clingy \
+		zeebo:clingy:717640cb8ccd:zeebo_clingy/vendor/github.com/zeebo/clingy \
 		zeebo:errs:v1.3.0:zeebo_errs/vendor/github.com/zeebo/errs \
 		zeebo:errs:v2.0.3:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
