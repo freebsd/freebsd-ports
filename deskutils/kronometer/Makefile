@@ -1,6 +1,6 @@
 PORTNAME=	kronometer
 DISTVERSION=	2.2.91
-CATEGORIES=	deskutils kde kde-applications
+CATEGORIES=	deskutils kde
 MASTER_SITES=	http://download.kde.org/unstable/${PORTNAME}/${DISTVERSION}/src/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
