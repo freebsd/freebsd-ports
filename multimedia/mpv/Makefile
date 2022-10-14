@@ -1,7 +1,7 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio wayland
 MASTER_SITES=	https://waf.io/:waf
@@ -111,7 +111,7 @@ LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
 LUA_USES=			lua:51-52
 LUA_CONFIGURE_ON=		--lua=${LUA_VER_STR}fbsd
 
-LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
+LUAJIT_USES=			luajit
 LUAJIT_CONFIGURE_ON=		--lua=luajit
 
 LUA_NONE_CONFIGURE_ON=		--disable-lua
