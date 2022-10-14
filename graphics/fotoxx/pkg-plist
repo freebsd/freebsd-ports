@@ -197,6 +197,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/folder.png
 %%DATADIR%%/images/fotoxx-views.jpg
 %%DATADIR%%/images/fotoxx.png
+%%DATADIR%%/images/gallery-screen.jpg
 %%DATADIR%%/images/gallery-select.jpg
 %%DATADIR%%/images/gallery-sort.jpg
 %%DATADIR%%/images/gallery-view.jpg
@@ -240,6 +241,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/mashup6.jpg
 %%DATADIR%%/images/mashup7.jpg
 %%DATADIR%%/images/match-colors.jpg
+%%DATADIR%%/images/measure-image.jpg
 %%DATADIR%%/images/menu-summary.jpg
 %%DATADIR%%/images/meta-view.jpg
 %%DATADIR%%/images/meta.png
@@ -269,7 +271,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/perspective1.jpg
 %%DATADIR%%/images/perspective2.jpg
 %%DATADIR%%/images/plugins.jpg
-%%DATADIR%%/images/preferences.jpg
 %%DATADIR%%/images/prev-next.png
 %%DATADIR%%/images/print-margins.jpg
 %%DATADIR%%/images/print-setup.jpg
@@ -302,6 +303,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg
 %%DATADIR%%/images/select.png
+%%DATADIR%%/images/settings.jpg
 %%DATADIR%%/images/sharpen.jpg
 %%DATADIR%%/images/shift-colors.jpg
 %%DATADIR%%/images/show-RGB.jpg
