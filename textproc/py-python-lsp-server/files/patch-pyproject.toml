@@ -1,17 +1,33 @@
 --- pyproject.toml.orig	2022-06-28 16:50:47 UTC
 +++ pyproject.toml
-@@ -31,7 +31,7 @@ all = [
-     "mccabe>=0.6.0,<0.7.0",
-     "pycodestyle>=2.8.0,<2.9.0",
+@@ -26,23 +26,23 @@ all = [
+ 
+ [project.optional-dependencies]
+ all = [
+-    "autopep8>=1.6.0,<1.7.0",
+-    "flake8>=4.0.0,<4.1.0",
+-    "mccabe>=0.6.0,<0.7.0",
+-    "pycodestyle>=2.8.0,<2.9.0",
++    "autopep8>=1.6.0",
++    "flake8>=4.0.0",
++    "mccabe>=0.6.0",
++    "pycodestyle>=2.8.0",
      "pydocstyle>=2.0.0",
 -    "pyflakes>=2.4.0,<2.5.0",
 +    "pyflakes>=2.4.0",
      "pylint>=2.5.0",
      "rope>=0.10.5",
      "yapf",
-@@ -42,7 +42,7 @@ pydocstyle = ["pydocstyle>=2.0.0"]
- mccabe = ["mccabe>=0.6.0,<0.7.0"]
- pycodestyle = ["pycodestyle>=2.8.0,<2.9.0"]
+     "whatthepatch"
+ ]
+-autopep8 = ["autopep8>=1.6.0,<1.7.0"]
+-flake8 = ["flake8>=4.0.0,<4.1.0"]
+-mccabe = ["mccabe>=0.6.0,<0.7.0"]
+-pycodestyle = ["pycodestyle>=2.8.0,<2.9.0"]
++autopep8 = ["autopep8>=1.6.0"]
++flake8 = ["flake8>=4.0.0"]
++mccabe = ["mccabe>=0.6.0"]
++pycodestyle = ["pycodestyle>=2.8.0"]
  pydocstyle = ["pydocstyle>=2.0.0"]
 -pyflakes = ["pyflakes>=2.4.0,<2.5.0"]
 +pyflakes = ["pyflakes>=2.4.0"]
