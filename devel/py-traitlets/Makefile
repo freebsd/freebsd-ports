@@ -1,5 +1,6 @@
 PORTNAME=	traitlets
 DISTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +23,8 @@ NO_ARCH=	yes
 # upstream stopped providing setup.py
 post-patch:
 	@${ECHO_CMD} 'import setuptools; setuptools.setup()' > ${WRKSRC}/setup.py
+
+post-install:
+	@${REINPLACE_CMD} -i '' -e 's|Version: .*|Version: ${DISTVERSION}|' ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/traitlets-*/PKG-INFO
 
 .include <bsd.port.mk>
