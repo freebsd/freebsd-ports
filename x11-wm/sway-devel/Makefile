@@ -1,6 +1,6 @@
 PORTNAME=	sway
-DISTVERSION=	1.7-138
-DISTVERSIONSUFFIX=	-g99fd096d
+DISTVERSION=	1.7-139
+DISTVERSIONSUFFIX=	-g9400bd96
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	-devel
 
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols \
-		wlroots>=0.15.0.316<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.15.0.478<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
