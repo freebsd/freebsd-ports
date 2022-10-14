@@ -10,29 +10,9 @@ CMake Error at CMakeLists.txt:220 (find_package):
   "SPIRV-Headers" provides a separate development package or SDK, be sure it
   has been installed.
 
-CMake Error at CMakeLists.txt:255 (find_package):
-  Could not find a package configuration file provided by "robin_hood" with
-  any of the following names:
-
-    robin_hoodConfig.cmake
-    robin_hood-config.cmake
-
-  Add the installation prefix of "robin_hood" to CMAKE_PREFIX_PATH or set
-  "robin_hood_DIR" to a directory containing one of the above files.  If
-  "robin_hood" provides a separate development package or SDK, be sure it has
-  been installed.
-
 --- CMakeLists.txt.orig	2022-10-28 03:54:50 UTC
 +++ CMakeLists.txt
-@@ -89,12 +89,16 @@ if (ROBIN_HOOD_HASHING_INSTALL_DIR)
- # Dependencies can be installed in arbitrary locations. This is done by update_deps.py / users.
- if (ROBIN_HOOD_HASHING_INSTALL_DIR)
-     list(APPEND CMAKE_PREFIX_PATH ${ROBIN_HOOD_HASHING_INSTALL_DIR})
-+    add_library(robin_hood::robin_hood INTERFACE IMPORTED)
-+    target_include_directories(robin_hood::robin_hood INTERFACE ${ROBIN_HOOD_HASHING_INSTALL_DIR}/src/include)
- endif()
- if (GLSLANG_INSTALL_DIR)
-     list(APPEND CMAKE_PREFIX_PATH ${GLSLANG_INSTALL_DIR})
+@@ -95,6 +95,8 @@ if (SPIRV_HEADERS_INSTALL_DIR)
  endif()
  if (SPIRV_HEADERS_INSTALL_DIR)
      list(APPEND CMAKE_PREFIX_PATH ${SPIRV_HEADERS_INSTALL_DIR})
@@ -41,13 +21,7 @@ CMake Error at CMakeLists.txt:255 (find_package):
  endif()
  if (SPIRV_TOOLS_INSTALL_DIR)
      list(APPEND CMAKE_PREFIX_PATH ${SPIRV_TOOLS_INSTALL_DIR})
-@@ -209,11 +213,15 @@ if (USE_ROBIN_HOOD_HASHING)
- option(BUILD_LAYER_SUPPORT_FILES "Generate layer files" OFF) # For generating files when not building layers
- option(USE_ROBIN_HOOD_HASHING "Use robin-hood-hashing" ON)
- if (USE_ROBIN_HOOD_HASHING)
-+  if (NOT TARGET robin_hood::robin_hood)
-     find_package(robin_hood REQUIRED CONFIG)
-+  endif()
+@@ -213,7 +215,9 @@ if(BUILD_LAYERS OR BUILD_TESTS)
  endif()
  
  if(BUILD_LAYERS OR BUILD_TESTS)
