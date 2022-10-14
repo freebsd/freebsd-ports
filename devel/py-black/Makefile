@@ -4,6 +4,9 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+PATCH_SITES=	https://github.com/psf/black/commit/
+PATCHFILES=	d923945513d8f679f43aec44aa8b777e5f9aab14.diff:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Uncompromising code formatter
 WWW=		https://github.com/psf/black
