@@ -1,19 +1,20 @@
 PORTNAME=	tuptime
-DISTVERSION=	5.1.0
+DISTVERSION=	5.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
 COMMENT=	Historical and statistical system running time report tool
-WWW=		https://github.com/rfrail3/tuptime
+WWW=		https://github.com/rfmoz/tuptime
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python:run shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/tuptime
 USE_GITHUB=	yes
-GH_ACCOUNT=	rfrail3
+GH_ACCOUNT=	rfmoz
 USE_RC_SUBR=	${PORTNAME}
 
 NO_ARCH=	yes
