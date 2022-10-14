@@ -1,8 +1,7 @@
 PORTNAME=	unbound
-DISTVERSION=	1.16.3
+DISTVERSION=	1.17.0
 CATEGORIES=	dns
-MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
-		https://distfiles.crux.guru/
+MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Validating, recursive, and caching DNS resolver
@@ -35,7 +34,7 @@ PORTDOCS=	CNAME-basedRedirectionDesignNotes.pdf CREDITS Changelog \
 OPTIONS_DEFINE=		DEP-RSA1024 DNSCRYPT DNSTAP DOCS DOH ECDSA EVAPI \
 			FILTER_AAAA GOST HIREDIS LIBEVENT MUNIN_PLUGIN PYTHON \
 			SUBNET TFOCL TFOSE THREADS
-OPTIONS_DEFAULT=	DOH DNSCRYPT ECDSA GOST LIBEVENT THREADS
+OPTIONS_DEFAULT=	DNSCRYPT DOH ECDSA GOST LIBEVENT THREADS
 OPTIONS_SUB=		yes
 
 DEP-RSA1024_DESC=	Deprecate the use of RSA 1024 keys

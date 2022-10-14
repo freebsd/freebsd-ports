@@ -1,3 +1,3 @@
-TIMESTAMP = 1663755234
-SHA256 (unbound-1.16.3.tar.gz) = ea0c6665e2c3325b769eac1dfccd60fe1828d5fcf662650039eccb3f67edb28e
-SIZE (unbound-1.16.3.tar.gz) = 6204330
+TIMESTAMP = 1665654475
+SHA256 (unbound-1.17.0.tar.gz) = dcbc95d7891d9f910c66e4edc9f1f2fde4dea2eec18e3af9f75aed44a02f1341
+SIZE (unbound-1.17.0.tar.gz) = 6235060
