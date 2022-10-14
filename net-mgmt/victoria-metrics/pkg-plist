@@ -5,6 +5,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/CNAME
 %%PORTDOCS%%%%DOCSDIR%%/CaseStudies.md
 %%PORTDOCS%%%%DOCSDIR%%/Cluster-VictoriaMetrics.md
+%%PORTDOCS%%%%DOCSDIR%%/ExtendedPromQL.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/Gemfile
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
@@ -14,6 +15,8 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/Quick-Start.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/Release-Guide.md
+%%PORTDOCS%%%%DOCSDIR%%/Single-server-VictoriaMetrics-sending_DD_metrics_to_VM.png
+%%PORTDOCS%%%%DOCSDIR%%/Single-server-VictoriaMetrics-sending_DD_metrics_to_VM_and_DD.png
 %%PORTDOCS%%%%DOCSDIR%%/Single-server-VictoriaMetrics.md
 %%PORTDOCS%%%%DOCSDIR%%/Troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/_config.yml
@@ -80,6 +83,10 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-token-usage.png
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-tokens.png
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart.md
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password-email.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password-profile.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password-save-password.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password.png
 %%PORTDOCS%%%%DOCSDIR%%/operator/README.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/VictoriaMetrics-Operator.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/additional-scrape.MD
