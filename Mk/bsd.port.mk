@@ -339,6 +339,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  can be used in Makefiles by port maintainers
 #				  if a port breaks with it (it should be
 #				  extremely rare).
+# PIE_CFLAGS	- Defaults to -fPIE -fPIC. This value
+#				  is added to CFLAGS and the necessary flags
+#				  are added to LDFLAGS. Note that PIE_UNSAFE
+#				  can be used in Makefiles by port maintainers
+#				  if a port breaks with it.
 ##
 # USE_LOCALE	- LANG and LC_ALL are set to the value of this variable in
 #				  CONFIGURE_ENV and MAKE_ENV.  Example: USE_LOCALE=en_US.UTF-8
@@ -1012,7 +1017,7 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
-_LIST_OF_WITH_FEATURES=	debug lto ssp
+_LIST_OF_WITH_FEATURES=	debug lto ssp pie
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
@@ -1776,8 +1781,6 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .      endif
 .    endfor
 
-# XXX PIE support to be added here
-MAKE_ENV+=	NO_PIE=yes
 # We will control debug files.  Don't let builds that use /usr/share/mk
 # split out debug symbols since the plist won't know to expect it.
 MAKE_ENV+=	MK_DEBUG_FILES=no
