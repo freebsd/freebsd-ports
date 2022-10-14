@@ -1,6 +1,6 @@
---- config/prefs.php.orig	2011-05-03 06:27:23.000000000 -0800
-+++ config/prefs.php	2011-05-07 10:06:10.000000000 -0800
-@@ -1200,7 +1200,7 @@
+--- config/prefs.php.orig	2020-08-27 19:34:20 UTC
++++ config/prefs.php
+@@ -930,7 +930,7 @@ $_prefs['sourceselect'] = array(
  // You can provide default values this way:
  //   'value' => json_encode(array('source_one', 'source_two'))
  $_prefs['search_sources'] = array(
