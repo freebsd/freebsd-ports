@@ -22,6 +22,6 @@ IGNORE=	Invalid luajit default version ${LUAJIT_DEFAULT}: valid versions are ${V
 IGNORE=	Invalid luajit version ${LUAJIT_VER}: valid versions are ${VALID_LUAJIT_VER}
 .endif
 
-LIB_DEPENDS=	libluajit-5.1.so:lang/${LUAJIT_VER}
+LIB_DEPENDS+=	libluajit-5.1.so:lang/${LUAJIT_VER}
 
 .endif
