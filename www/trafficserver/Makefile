@@ -1,5 +1,6 @@
 PORTNAME=	trafficserver
 PORTVERSION=	9.1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -15,14 +16,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libhwloc.so:devel/hwloc2 \
 		libpcre.so:devel/pcre \
 		libxml2.so:textproc/libxml2 \
-		libbrotlienc.so:archivers/brotli \
-		${LIB_DEPENDS_${ARCH}}
-LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_powerpc64=		libluajit-5.1.so:lang/luajit-openresty
-LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
+		libbrotlienc.so:archivers/brotli
 
-USES=		compiler:c++17-lang cpe gmake libtool localbase ncurses \
-		pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
+USES=		compiler:c++17-lang cpe gmake libtool localbase luajit \
+		ncurses pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
 
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
