@@ -1423,7 +1423,11 @@ USES+=mysql:${USE_MYSQL}
 .    endif
 
 .    if !defined(UID)
+.      if defined(.MAKE.UID)
+UID=	${.MAKE.UID}
+.      else
 UID!=	${ID} -u
+.      endif
 .    endif
 
 DESTDIRNAME?=	DESTDIR
