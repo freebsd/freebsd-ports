@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221015:
+  AFFECTS: users of gstreamer1-* when upgrading via port builds on the host
+  AUTHOR: riggs@FreeBSD.org
+
+  The update of the gstreamer1-* ports to 1.20.3 requires a clean install of
+  gstreamer1-* ports. In particular, when trying to update ports in-place using
+  portupgrade or portmaster, the builds are likely to fail due to dependency
+  mismatches. If this is your preferred update path, you need to deinstall
+  (pkg delete -f) gstreamer1 and the plugins before reinstalling them from
+  the ports tree.
+  Note that pkg upgrade will do the right thing: If you use official FreeBSD
+  packages or build your own set of packages using poudriere, nothing special
+  is needed.
+
 20221012:
   AFFECTS: devel/websvn
   AUTHOR: michael.osipov@siemens.com
