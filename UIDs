@@ -443,7 +443,7 @@ datadog:*:480:480::0:0:DataDog Agent:/var/db/datadog:/usr/sbin/nologin
 # free: 495
 # free: 496
 # free: 497
-# free: 498
+rustypaste:*:498:498::0:0:Minimal file upload/pastebin service:/nonexistent:/usr/sbin/nologin
 # free: 499
 # free: 500
 # free: 501

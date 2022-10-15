@@ -1,0 +1,24 @@
+Rustypaste is a minimal file upload/pastebin service.
+
+Features:
+
+* File upload & URL shortening & upload from URL
+  - supports basic HTTP authentication
+  - random file names (optional)
+    - pet name (e.g. capital-mosquito.txt)
+    - alphanumeric string (e.g. yB84D2Dv.txt)
+  - supports expiring links
+    - auto-deletion of expired files (optional)
+  - supports one shot links (can only be viewed once)
+  - guesses MIME types
+    - supports overriding and blacklisting
+  - no duplicate uploads (optional)
+* Single binary
+* Simple configuration
+  - supports hot reloading
+* No database
+  - filesystem is used
+* Self-hosted
+  - centralization is bad!
+* Written in Rust
+  - blazingly fast!
