@@ -1,7 +1,6 @@
 PORTNAME=	tlci
 DISTVERSION=	0.1.0.2
 CATEGORIES=	misc
-MASTER_SITES=	https://gitlab.com/herrhotzenplotz/tlci/
 
 MAINTAINER=	nsonack@outlook.com
 COMMENT=	Tiny Lambda Calculus interpreter
