@@ -3,21 +3,24 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.17
 CATEGORIES=	editors
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Neovim client library and QT5 GUI
 WWW=		https://github.com/equalsraf/neovim-qt/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	neovim>=0:editors/neovim unibilium>=0:devel/unibilium
-LIB_DEPENDS=	libmsgpackc.so:devel/msgpack libunibilium.so:devel/unibilium
+BUILD_DEPENDS=	neovim>=0:editors/neovim \
+		unibilium>=0:devel/unibilium
+LIB_DEPENDS=	libmsgpackc.so:devel/msgpack \
+		libunibilium.so:devel/unibilium
 RUN_DEPENDS=	neovim>=0:editors/neovim
 
 USES=		cmake compiler:c++11-lang desktop-file-utils qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	equalsraf
-USE_QT=		core gui network testlib widgets buildtools:build qmake:build svg
+USE_QT=		core gui network svg testlib widgets buildtools:build \
+		qmake:build
 
 CMAKE_ON=	USE_SYSTEM_MSGPACK
 CMAKE_OFF=	ENABLE_TESTS
