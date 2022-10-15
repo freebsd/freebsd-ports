@@ -394,8 +394,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
 		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
-	@${REINPLACE_CMD} -e '/gstreamer/s/1\.18/1.16/' \
-		-e '/gstreamer.*bad/d' \
+	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \
 		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
 # Add explicit <triple> subdir for --target from USES=cargo
