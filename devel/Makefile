@@ -5170,6 +5170,7 @@
     SUBDIR += py-pytest-sugar
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-tornado
+    SUBDIR += py-pytest-tornasync
     SUBDIR += py-pytest-translations
     SUBDIR += py-pytest-trio
     SUBDIR += py-pytest-twisted
