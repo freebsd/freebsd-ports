@@ -32,7 +32,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/asm-commons-9.2.jar
 %%DATADIR%%/lib/asm-tree-9.2.jar
 %%DATADIR%%/lib/asm-util-9.2.jar
-%%DATADIR%%/lib/build-marker-PC-222.4167.33
+%%DATADIR%%/lib/build-marker-PC-222.4345.23
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -46,8 +46,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/intellij-test-discovery.jar
 %%DATADIR%%/lib/java-utils-1.0.6.jar
 %%DATADIR%%/lib/jetbrains-annotations.jar
-%%DATADIR%%/lib/jffi-1.%%PYTHON_VER%%-native.jar
-%%DATADIR%%/lib/jffi-1.%%PYTHON_VER%%.jar
+%%DATADIR%%/lib/jffi-1.3.9-native.jar
+%%DATADIR%%/lib/jffi-1.3.9.jar
 %%DATADIR%%/lib/jna.jar
 %%DATADIR%%/lib/jnr-a64asm-1.0.0.jar
 %%DATADIR%%/lib/jnr-ffi-2.2.12.jar
@@ -152,8 +152,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/platform-images/lib/platform-images.jar
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-01a76a212fcb-5624bcb7aad9.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-01a76a212fcb-5624bcb7aad9.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-551ccc91bcb5-5624bcb7aad9.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-551ccc91bcb5-5624bcb7aad9.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
