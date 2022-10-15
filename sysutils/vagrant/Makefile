@@ -1,7 +1,6 @@
 PORTNAME=	vagrant
-PORTVERSION=	2.2.19
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -19,22 +18,26 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-bcrypt_pbkdf>=1.1:security/rubygem-bcrypt_pbkdf \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.1.0:devel/rubygem-childprocess \
-		rubygem-ed2551912>=1.2.4<1.3:security/rubygem-ed2551912 \
-		rubygem-erubis>=2.7.0<2.8:www/rubygem-erubis \
-		rubygem-excon>=0.73<1.0:devel/rubygem-excon \
+		rubygem-ed25519>=1.3.0:security/rubygem-ed25519 \
+		rubygem-erubi>=0:www/rubygem-erubi \
+		rubygem-googleapis-common-protos-types>=1.3.0:devel/rubygem-googleapis-common-protos-types \
+		rubygem-grpc>=1.48.0:net/rubygem-grpc \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=1.8,2<2,2:devel/rubygem-i18n \
+		rubygem-ipaddr>=1.2.4:net/rubygem-ipaddr \
 		rubygem-listen>=3.6:devel/rubygem-listen \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
+		rubygem-mime-types>=3.3:misc/rubygem-mime-types \
+		rubygem-net-ftp>=0.1:ftp/rubygem-net-ftp \
 		rubygem-net-scp>=3.0.0:security/rubygem-net-scp \
 		rubygem-net-sftp>=3.0:security/rubygem-net-sftp \
 		rubygem-net-ssh6>=6.1.0<6.2:security/rubygem-net-ssh6 \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
-		rubygem-rest-client>=1.6.0<3.0:www/rubygem-rest-client \
 		rubygem-rexml>=3.2:textproc/rubygem-rexml \
+		rubygem-rgl>=0.5.7:devel/rubygem-rgl \
 		rubygem-ruby_dep>=0:devel/rubygem-ruby_dep \
 		rubygem-rubyzip>=2.2<3:archivers/rubygem-rubyzip \
-		rubygem-vagrant_cloud>=3.0.2<3.1:sysutils/rubygem-vagrant_cloud \
+		rubygem-vagrant_cloud>=3.0.5<3.1:sysutils/rubygem-vagrant_cloud \
 		rubygem-wdm>=0.1.0<0.2:devel/rubygem-wdm \
 		rubygem-winrm-elevated>=1.2.1<2:sysutils/rubygem-winrm-elevated \
 		rubygem-winrm-fs>=1.3.4<2:sysutils/rubygem-winrm-fs \
@@ -45,6 +48,7 @@ CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 USE_RUBY=	yes
+GEM_ENV+=	RB_USER_INSTALL=yes
 
 SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \
 		scripts/sign.sh scripts/website_push_www.sh
@@ -61,13 +65,17 @@ PLIST_SUB+=	DOC_DIR="lib/ruby/gems/${RUBY_VER}/doc" \
 RUBYGEM_ARGS=	-l --no-document --no-update-sources --install-dir \
 		${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} \
 		--ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
-GEM_ENV+=	RB_USER_INSTALL=yes
 
 OPTIONS_DEFINE=		BASH ZSH
 OPTIONS_DEFAULT=	BASH ZSH
 
 BASH_PLIST_FILES=	share/bash-completion/completions/vagrant
 ZSH_PLIST_FILES=	share/share/zsh/site-functions/_vagrant
+
+REMOVE_TARGETS=	.envrc .runner.sh .vimrc .yardopts flake.lock flake.nix Gemfile \
+		gen.go go.mod go.sum Makefile Rakefile shell.nix \
+		vagrant-config.hcl vagrant-spec.config.example.rb \
+		vagrant.gemspec
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' \
@@ -89,7 +97,10 @@ do-build:
 
 post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc
-	${RM} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems/${PORTNAME}-${PORTVERSION}/.runner.sh
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems/${PORTNAME}-${PORTVERSION}/nix
+.for FILE in ${REMOVE_TARGETS}
+	${RM} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems/${PORTNAME}-${PORTVERSION}/${FILE}
+.endfor
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
