@@ -1,6 +1,6 @@
 PORTNAME=	electricsheep
 DISTVERSION=	3.0.2.20191005 # configure.ac though says that the version is 2.7b33
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -28,7 +28,7 @@ GH_ACCOUNT=	scottdraves
 GH_TAGNAME=	37ba0fd692d6581f8fe009ed11c9650cd8174123
 DOS2UNIX_FILES=	ContentDownloader/SheepDownloader.cpp DisplayOutput/OpenGL/glx.cpp
 GNU_CONFIGURE=	yes
-USE_WX=		3.1
+USE_WX=		3.2
 USE_GNOME=	glib20
 USE_GL=		gl glut
 USE_XORG=	x11 xrender
