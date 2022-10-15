@@ -18,12 +18,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # other dependencies in the spyder universe), this port may misbehave in some
 # situations.
 # devel/py-ipykernel      should be >=6.9.2,<7, but is 5.5.6 (conflicts ...)
-# devel/py-jupyter-client should be >=7.3.4,<8, but is 6.1.12
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel5>0:devel/py-ipykernel5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipyparallel>0:devel/py-ipyparallel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.31.1,<8:devel/ipython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-client>0:devel/py-jupyter-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.3.4<8:devel/py-jupyter-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=22.1.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wurlitzer>=1.0.3:misc/py-wurlitzer@${PY_FLAVOR}
