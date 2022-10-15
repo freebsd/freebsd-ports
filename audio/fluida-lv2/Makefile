@@ -1,10 +1,11 @@
 PORTNAME=	fluida
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7
-PORTREVISION=	2
+DISTVERSION=	0.8
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
+MASTER_SITES=	https://github.com/brummer10/Fluida.lv2/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
+DISTNAME=	Fluida_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fluidsynth as LV2 plugin
@@ -22,10 +23,7 @@ USE_GNOME=	cairo
 USE_XORG=	x11
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	brummer10
-GH_PROJECT=	Fluida.lv2
-GH_TUPLE=	brummer10:libxputty:5c69824:libxputty/libxputty
+ALL_TARGET=
 
 PLIST_FILES=	lib/lv2/Fluida.lv2/Fluida.so \
 		lib/lv2/Fluida.lv2/Fluida.ttl \
