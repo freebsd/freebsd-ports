@@ -1,3 +1,3 @@
-TIMESTAMP = 1664791861
-SHA256 (cloudflare-cloudflared-2022.9.1_GH0.tar.gz) = 4919eef5814b4ecc41e1359f9546389688194c9e893b4de3c40b0e3cd2919605
-SIZE (cloudflare-cloudflared-2022.9.1_GH0.tar.gz) = 7053911
+TIMESTAMP = 1665829745
+SHA256 (cloudflare-cloudflared-2022.10.0_GH0.tar.gz) = f83c1ab042e7b15da69d2e7764898e0bc30f94ecd7db36dbd6270ebade1d5d27
+SIZE (cloudflare-cloudflared-2022.10.0_GH0.tar.gz) = 7093198
