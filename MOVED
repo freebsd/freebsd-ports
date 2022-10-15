@@ -17599,3 +17599,4 @@ www/rubygem-rack223|www/rubygem-rack|2022-10-09|Remove obsoleted port. Use www/r
 databases/pymongo|databases/py-pymongo|2022-10-09|Add the py- prefix which all Python ports should have
 audio/protracker|audio/pt2-clone|2022-10-12|Renamed to match project name
 multimedia/gstreamer1-transcoder|multimedia/gstreamer1-plugins-bad|2022-10-15|Upstream included transcoding in plugins-bad
+devel/py-ipykernel5|devel/py-ipykernel|2022-10-15|ipykernel5 is discontinued, ipykernel is used instead

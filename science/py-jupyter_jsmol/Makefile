@@ -1,5 +1,6 @@
 PORTNAME=	jupyter-jsmol
 PORTVERSION=	2021.3.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}widgetsnbextension>0:devel/py-widgetsnbextension@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipykernel5>=5.0.0:devel/py-ipykernel5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipykernel>=5.0.0:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.0.0:devel/ipython@${PY_FLAVOR}
 

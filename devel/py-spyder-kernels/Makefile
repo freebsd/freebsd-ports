@@ -1,5 +1,6 @@
 PORTNAME=	spyder-kernels
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # situations.
 # devel/py-ipykernel      should be >=6.9.2,<7, but is 5.5.6 (conflicts ...)
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipykernel5>0:devel/py-ipykernel5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipykernel>0:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipyparallel>0:devel/py-ipyparallel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.31.1,<8:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.3.4<8:devel/py-jupyter-client@${PY_FLAVOR} \
