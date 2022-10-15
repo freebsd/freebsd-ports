@@ -61,11 +61,11 @@ LDFLAGS+=	-Wl,-E
 .endif
 
 .if ${PORT_OPTIONS:MLUAJIT}
-.  if ${LUAJIT_VER} == luajit-openresty
+.  if ${LUAJIT_VER} == luajit
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+.  else
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
-.  else
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
 .  endif
 .endif
 
