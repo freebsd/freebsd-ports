@@ -1,5 +1,6 @@
 PORTNAME=	wxsvg
 PORTVERSION=	1.5.23
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lib gettext-runtime gmake gnome libtool pathfix pkgconfig tar:bzip2
-USE_WX=		3.1
+USE_WX=		3.2
 WX_CONF_ARGS=	absolute
 USE_GNOME=	cairo glib20 pango
 GNU_CONFIGURE=	yes
