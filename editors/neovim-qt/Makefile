@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.17
 CATEGORIES=	editors
 
-MAINTAINER=	chuck@tuffli.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neovim client library and QT5 GUI
 WWW=		https://github.com/equalsraf/neovim-qt/
 
