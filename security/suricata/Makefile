@@ -1,5 +1,6 @@
 PORTNAME=	suricata
 DISTVERSION=	6.0.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -72,7 +73,7 @@ HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 
 IPFW_CONFIGURE_ON=	--enable-ipfw
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUAJIT_USES=		luajit
 LUAJIT_CONFIGURE_ON=	--enable-luajit
 
 LUA_USES=		lua:51
