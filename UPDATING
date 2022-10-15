@@ -170,8 +170,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/rainloop-community
   AUTHOR: yasu@FreeBSD.org
 
-  Since 1.17.0 upstream distributes only one edition "lagacy" under MIT license
-  and mail/rainloop-community is remove as a result. So please uninstall
+  Since 1.17.0 upstream distributes only one "legacy" edition under MIT license
+  and mail/rainloop-community is removed as a result. So please uninstall
   mail/rainloop-community (rainloop-community-phpXY) and install mail/rainloop
   (rainloop-phpXY) instead.
 
@@ -269,7 +269,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: dch@FreeBSD.org
 
   For more than a decade, the Elixir Mix tool and the Erlang rebar
-  or erlang.mk build tools have been the defacto way of installing
+  or erlang.mk build tools have been the de facto way of installing
   and managing packages for specific applications.
 
   All main-stream applications, from Riak, CouchDB, RabbitMQ, Phoenix,
