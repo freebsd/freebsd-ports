@@ -59,6 +59,5 @@ setup(
         'src.blackd',
         'src.blib2to3',
         'src.blib2to3.pgen2',
-        'tests',
     ],
 )
