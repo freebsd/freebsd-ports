@@ -1,6 +1,7 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -30,7 +31,7 @@ USES=		cmake compiler:c++17-lang cpe desktop-file-utils gettext \
 
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-USE_WX=		3.1+
+USE_WX=		3.2+
 CPE_VENDOR=	audacityteam
 WX_COMPS=	wx
 PORTDOCS=	README.txt
