@@ -1,5 +1,5 @@
 PORTNAME=	nvimpager
-PORTVERSION=	0.10.4
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -10,9 +10,9 @@ WWW=		https://github.com/lucc/nvimpager
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	scdoc:textproc/scdoc
 RUN_DEPENDS=	bash:shells/bash \
-		nvim:editors/neovim \
-		scdoc:textproc/scdoc
+		nvim:editors/neovim
 
 USES=		gmake
 USE_GITHUB=	yes
