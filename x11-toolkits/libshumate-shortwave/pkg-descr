@@ -1,3 +1,0 @@
-libshumate is a C library providing a GtkWidget to display maps. It supports
-numerous free map sources such as OpenStreetMap, OpenCycleMap, OpenAerialMap
-and Maps for free.

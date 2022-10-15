@@ -20,8 +20,6 @@ USES=		gettext gnome meson pkgconfig sqlite tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
 USE_LDCONFIG=	yes
 
-CONFLICTS=	libshumate-shortwave
-
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
