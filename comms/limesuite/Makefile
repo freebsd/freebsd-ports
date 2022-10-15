@@ -1,7 +1,7 @@
 PORTNAME=	limesuite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	22.09.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	tomek@cedro.info
@@ -73,7 +73,7 @@ UTILITIES_CMAKE_BOOL=	ENABLE_UTILITIES
 USES+=		gl xorg
 USE_XORG+=	x11 ice sm xcursor xext xfixes xinerama xft xrender
 USE_GL+=	gl glu
-USE_WX+=	3.1
+USE_WX+=	3.2
 WX_COMPS+=	wx:lib
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 .endif
