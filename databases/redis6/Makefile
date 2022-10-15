@@ -1,6 +1,6 @@
 PORTNAME=	redis
 PORTVERSION=	6.0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	6
@@ -22,25 +22,17 @@ CONFLICTS_INSTALL=	redis redis-devel # etc/rc.d/redis
 OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
 OPTIONS_DEFAULT=	TLS
 OPTIONS_RADIO=		EXTLUA
-OPTIONS_RADIO_EXTLUA=	LUA LUAJIT LUAJITOR
+OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
 OPTIONS_SUB=		yes
 JEMALLOC_DESC=		Use jemalloc
-LUAJITOR_DESC=		Use lang/luajit-openresty instead of builtin lua
-LUAJIT_DESC=		Use lang/luajit instead of builtin lua
+LUAJIT_DESC=		Use luajit instead of builtin lua
 LUA_DESC=		Use lang/lua instead of builtin lua
 TESTS_DESC=		Install lang/tcl for redis unit tests
 TLS_DESC=		Use TLS (openssl req.)
 TRIB_DESC=		Install redis-trib.rb (lang/ruby req.)
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
-LUAJITOR_BUILD_DEPENDS=	${LOCALBASE}/include/luajit-2.1/lua.h:lang/luajit-openresty
-LUAJITOR_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-LUAJITOR_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
-			${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
-LUAJITOR_VARS=		_ADDFLAGS=true
-LUAJIT_BUILD_DEPENDS=	${LOCALBASE}/include/luajit-2.0/lua.h:lang/luajit
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUAJIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+LUAJIT_USES=		luajit
 LUAJIT_VARS=		_ADDFLAGS=true
 LUA_USES=		lua:51
 LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.lua
@@ -63,6 +55,15 @@ CFLAGS+=	-march=i586
 .if defined(_ADDFLAGS)
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
+.endif
+
+.if ${PORT_OPTIONS:MLUAJIT}
+.  if ${LUAJIT_VER} == luajit
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+.  else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
+		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
+.  endif
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
