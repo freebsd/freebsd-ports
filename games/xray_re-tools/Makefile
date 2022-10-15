@@ -6,11 +6,10 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	X-Ray engine game asset converter (unofficial)
 WWW=		https://github.com/abramcumner/xray_re-tools
 
+BUILD_DEPENDS=	${NONEXISTENT}:graphics/nvidia-texture-tools:patch
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libvorbisfile.so:audio/libvorbis \
 		libnvtt.so:graphics/nvidia-texture-tools
-
-BROKEN=		does not link: ld: error: undefined symbol: nv::mem::malloc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	abramcumner
@@ -19,11 +18,13 @@ GH_TAGNAME=	52721d2
 MAKEFILE=	${FILESDIR}/Makefile
 BUILD_WRKSRC=	${WRKSRC}/sources
 WITHOUT_FBSD10_FIX=	yes
+_NVTT_WRKSRC=	${MAKE} -C ${PORTSDIR}/graphics/nvidia-texture-tools -V WRKSRC
 
 PLIST_FILES=	bin/xr_converter
 
 post-extract:
 	@${MV} ${WRKSRC}/sources/3rd\ party ${WRKSRC}/sources/3rd-party
+	@cd ${WRKSRC}/sources/3rd-party && ${RM} -r libogg libvorbis nvtt
 	@${MV} ${WRKSRC}/sources/utils/converter/opcode/Ice/IceTrilist.h \
 		${WRKSRC}/sources/utils/converter/opcode/Ice/IceTriList.h
 	@${LN} -s StdAfx.h ${WRKSRC}/sources/utils/converter/opcode/Stdafx.h
@@ -52,6 +53,11 @@ post-patch:
 		${WRKSRC}/sources/xray_re/xr_string_utils.h
 	@${REINPLACE_CMD} -e 's,MINGW32__),& || defined(__FreeBSD__),' \
 		${WRKSRC}/sources/xray_re/xr_types.h
+
+post-configure:
+	@${LN} -sf ${_NVTT_WRKSRC:sh}/src ${WRKSRC}/sources/3rd-party/nvtt
+	@${REINPLACE_CMD} -e '/#include "nvconfig\.h"/d' \
+		${WRKSRC}/sources/3rd-party/nvtt/nvcore/nvcore.h
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/converter \
