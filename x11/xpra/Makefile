@@ -1,6 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	4.3.4
-PORTREVISION=	2
+PORTVERSION=	4.4
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -10,10 +9,11 @@ WWW=		https://xpra.org/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	brotli:archivers/brotli \
-		pandoc:textproc/hs-pandoc
-LIB_DEPENDS=	libwebp.so:graphics/webp \
-		libharfbuzz.so:print/harfbuzz
+BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libharfbuzz.so:print/harfbuzz \
+		liblz4.so:archivers/liblz4 \
+		libwebp.so:graphics/webp
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>1:archivers/py-brotli@${PY_FLAVOR} \
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		xkbcomp:x11/xkbcomp \
 		Xvfb:x11-servers/xorg-server@xvfb
 
-USES=		desktop-file-utils gettext-runtime gnome pkgconfig \
+USES=		desktop-file-utils gettext-runtime gnome localbase pkgconfig \
 		python:3.6+ shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
@@ -42,9 +42,9 @@ USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xres xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
-SHEBANG_FILES=	fs/lib/cups/xpraforwarder fs/bin/auth_dialog fs/bin/xdg-open \
-		fs/bin/xpra_udev_product_version fs/bin/gnome-open \
-		fs/bin/gvfs-open
+SHEBANG_FILES=	fs/lib/cups/backend/xpraforwarder fs/libexec/xpra/auth_dialog \
+		fs/libexec/xpra/xdg-open fs/libexec/xpra/xpra_signal_listener \
+		fs/libexec/xpra/xpra_udev_product_version
 
 OPTIONS_DEFINE=		AVAHI AVCODEC CUPS DOCS FFMPEG GSTREAMER LIBYUV SWSCALE \
 			WEBCAM X265
@@ -94,7 +94,7 @@ PYDISTUTILS_PKGNAME=	xpra_all
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
 			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 \
 			mdns printing sound vpx webcam
-XPRA_OPTIONS_DISABLED=	uinput Xdummy Xdummy_wrapper
+XPRA_OPTIONS_DISABLED=	strict uinput Xdummy Xdummy_wrapper
 
 .include <bsd.port.options.mk>
 
@@ -117,8 +117,6 @@ post-patch:
 	    ${WRKSRC}/xpra/platform/pycups_printing.py
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/sbin|' \
 	    ${WRKSRC}/fs/etc/xpra/conf.d/16_printing.conf.in
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-	    ${WRKSRC}/xpra/server/server_util.py
 
 post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/xorg.conf \
