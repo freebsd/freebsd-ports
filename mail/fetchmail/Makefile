@@ -1,6 +1,6 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.33
-PORTREVISION?=	1
+DISTVERSION=	6.4.34
+PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
 # do NOT replace fetchmail by ${PORTNAME}
@@ -108,7 +108,7 @@ post-install-DOCS-on:
 CONFIGURE_ARGS+=	--enable-opie
 .endif
 
-.if ${ARCH:Mpowerpc*} && ${OSREL:R} < 13
+.if ${OPSYS} == FreeBSD && (${ARCH:Mpowerpc*} && ${OSREL:R} < 13)
 # as of 2019-10-02, powerpc's base compiler does not yield a working fetchmail.
 # https://svnweb.freebsd.org/ports?view=revision&revision=513614 -- pkubaj@
 USE_GCC=	yes
