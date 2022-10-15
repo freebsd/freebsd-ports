@@ -1,7 +1,7 @@
 PORTNAME=	fastnetmon
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libjson-c.so:devel/json-c \
 		libbson-1.0.so:devel/libbson
 
-USES=	cmake compiler:c++11-lang
+USES=	cmake compiler:c++11-lang luajit
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavel-odintsov
@@ -44,14 +44,13 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
-.elif ${ARCH:Mpowerpc64*}
+.if ${ARCH} != amd64 && ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc && empty(ARCH:Mpowerpc64*)
+CMAKE_ARGS+=	-DENABLE_LUA_SUPPORT:BOOL=OFF
+.else
+.  if ${LUAJIT_VER} == luajit-devel || ${LUAJIT_VER} == luajit-openresty
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_fast__library.h \
 		${FILESDIR}/extra-patch-src_netflow__plugin_netflow__collector.cpp
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
-.else
-CMAKE_ARGS+=	-DENABLE_LUA_SUPPORT:BOOL=OFF
+.  endif
 .endif
 
 post-patch:
