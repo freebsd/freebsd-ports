@@ -1,3 +1,3 @@
-TIMESTAMP = 1616873075
-SHA256 (jupyter_client-6.1.12.tar.gz) = c4bca1d0846186ca8be97f4d2fa6d2bae889cce4892a167ffa1ba6bd1f73e782
-SIZE (jupyter_client-6.1.12.tar.gz) = 301499
+TIMESTAMP = 1665684454
+SHA256 (jupyter_client-7.4.2.tar.gz) = b91a9a7b91ac69adf170d98c87917320f6b466e1c5e89b300226ef4047193376
+SIZE (jupyter_client-7.4.2.tar.gz) = 327079
