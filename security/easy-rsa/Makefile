@@ -1,8 +1,8 @@
 PORTNAME=	easy-rsa
-DISTVERSION=	3.1.0
-PORTREVISION=	3
+DISTVERSION=	3.1.1
 CATEGORIES=	security net-mgmt
-MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/ \
+		LOCAL/mandree/
 DISTNAME=	EasyRSA-${DISTVERSION}
 
 MAINTAINER=	mandree@FreeBSD.org

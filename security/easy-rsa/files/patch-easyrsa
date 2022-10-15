@@ -1,32 +1,13 @@
-Isolate date -j -f ... + ... from locale.
-Filed upstream as Issue #591 <https://github.com/OpenVPN/easy-rsa/issues/591>
+workaround to fix https://github.com/OpenVPN/easy-rsa/issues/725
 
---- easyrsa.orig	2022-05-19 01:53:50 UTC
+--- easyrsa.orig	2022-10-13 11:37:48 UTC
 +++ easyrsa
-@@ -2037,7 +2037,7 @@ renewable() {
- 	verify_ca_init
+@@ -1317,7 +1317,7 @@ Missing X509-type 'COMMON'"
  
- 	in_dir="$EASYRSA_PKI"
--	MATCH=$(echo "$*" | sed -re 's/\s+/|/g')
-+	MATCH=$(echo "$*" | sed -re 's/[[:space:]]+/|/g')
- 	DATE=$(date --date \
-                "+${EASYRSA_CERT_RENEW} days" \
-                +"%y%m%d%H%M%S")
-@@ -2445,7 +2445,7 @@ display_san() {
- 
- 	if echo "$EASYRSA_EXTRA_EXTS" | grep -q subjectAltName; then
- 		print "$(echo "$EASYRSA_EXTRA_EXTS" | grep subjectAltName |
--			sed 's/^\s*subjectAltName\s*=\s*//')"
-+			sed 's/^[[:space:]]*subjectAltName[[:space:]]*=[[:space:]]*//')"
- 	else
- 		san="$(
- 		x509v3san="X509v3 Subject Alternative Name:"
-@@ -3828,6 +3828,8 @@ VERSION_TEXT
- 
- NL='
- '
-+
-+LC_TIME=C ; export LC_TIME ; unset LC_ALL
- 
- # Be secure with a restrictive umask
- [ -z "$EASYRSA_NO_UMASK" ] && umask "${EASYRSA_UMASK:-077}"
+ 	# Check for insert-marker in ssl config file
+ 	if ! grep -q '^#%CA_X509_TYPES_EXTRA_EXTS%' "$EASYRSA_SSL_CONF"; then
+-		die "\
++		warn "\
+ The copy of openssl-easyrsa.cnf in use does not support X509-type 'ca'.
+ * $EASYRSA_SSL_CONF
+ Please update openssl-easyrsa.cnf to the latest official release."
