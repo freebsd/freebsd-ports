@@ -1,5 +1,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/bsdl-gpl_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/building-products_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/committers-guide_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contributing_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contributors_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/cups_es.pdf
@@ -20,6 +21,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/linux-users_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/mailing-list-faq_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/nanobsd_es.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/new-users_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/port-mentor-guidelines_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/pr-guidelines_es.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/problem-reports_es.pdf
