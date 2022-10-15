@@ -1,6 +1,6 @@
 PORTNAME=	cubicsdr
 PORTVERSION=	0.2.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr \
 		libhamlib.so:comms/hamlib
 
 USES=		cmake:noninja compiler:c++11-lib gl python
-USE_WX=		3.1
+USE_WX=		3.2
 USE_GL+=	egl glu
 
 OPTIONS_DEFINE=	HAMLIB
@@ -34,7 +34,7 @@ LIB_DEPENDS+=	libhamlib.so:comms/hamlib
 CMAKE_ARGS+=	-DUSE_HAMLIB=1
 .endif
 
-CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config
+CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.2-config
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjcliffe
 GH_PROJECT=	CubicSDR
