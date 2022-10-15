@@ -1,0 +1,13 @@
+--- configure.ac.orig	2022-10-10 19:42:21 UTC
++++ configure.ac
+@@ -40,6 +40,9 @@
+     mybits="64"
+     mybits_install="64"
+         ;;
++  *arm)
++    mybits="32"
++    ;;
+-  *aarch64)
++  *aarch64|*arm64)
+     mybits="64"
+     mybits_install="64"
