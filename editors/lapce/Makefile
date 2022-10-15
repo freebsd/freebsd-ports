@@ -1,7 +1,7 @@
 PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0 # remove openssl-src-* from CARGO-CRATES each update
-PORTREVISION=	1
+DISTVERSION=	0.2.1	# remove openssl-src-* from CARGO-CRATES each update \
+			  remove patch-lapce-data_src_config.rs rust >= 1.64.0
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -20,14 +20,17 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
-USES=		cargo dos2unix gmake gnome localbase:ldflags perl5 pkgconfig \
-		ssl
-DOS2UNIX_FILES=	cargo-crates/process_path-0.1.4/src/bsd.rs
+USES=		cargo gmake gnome localbase:ldflags perl5 pkgconfig ssl
 USE_GITHUB=	yes
 USE_GNOME=	atk gdkpixbuf2 gtk30 pango
 
 PLIST_FILES=	bin/lapce \
 		bin/lapce-proxy
+
+#patch druid manually since it's not yet patched upstream
+post-patch:
+	@${FIND} ${WRKSRC}/../druid-281fe4bc56a198c7b5da90f65d4047a88153170e \
+		 -name "*.toml" -o -name "*.rs" | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|openbsd|freebsd|g'
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lapce
