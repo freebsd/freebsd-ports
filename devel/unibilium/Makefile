@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.1
 CATEGORIES=	devel
 
-MAINTAINER=	chuck@tuffli.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic terminfo library
 WWW=		https://github.com/mauke/unibilium
 
