@@ -893,6 +893,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.sv
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.th
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.translators
+%%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.uk
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.zh
 %%DATADIR%%/%%EMACS_VER%%/etc/w32-feature.el
 %%DATADIR%%/%%EMACS_VER%%/etc/yow.lines
@@ -2869,10 +2870,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-cmds.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-container.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-container.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-docker.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-docker.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-fuse.el.gz
