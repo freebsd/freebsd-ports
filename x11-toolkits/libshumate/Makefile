@@ -1,11 +1,7 @@
 PORTNAME=	libshumate
-DISTVERSION=	1.0.0.beta
-PORTREVISION=	1
+DISTVERSION=	1.0.1
 CATEGORIES=	x11-toolkits geography
 MASTER_SITES=	GNOME
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	d4e23adc49e1.patch:-p1 # https://gitlab.gnome.org/GNOME/libshumate/-/merge_requests/136
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK4 widget to display maps
