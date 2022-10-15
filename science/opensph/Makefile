@@ -1,6 +1,6 @@
 PORTNAME=	OpenSPH
 DISTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		compiler:c++14-lang qmake qt:5
 USE_GITLAB=	yes
-USE_WX=		3.1
+USE_WX=		3.2
 
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	sevecekp
@@ -31,7 +31,7 @@ CXXFLAGS+=	-DSPH_CONFIG_SET
 
 TEST_WRKSRC=	${WRKDIR}/test
 
-BINARY_ALIAS=	wx-config=${LOCALBASE}/bin/wxgtk3u-3.1-config
+BINARY_ALIAS=	wx-config=${LOCALBASE}/bin/wxgtk3u-3.2-config
 
 PLIST_FILES=	bin/opensph bin/opensph-cli bin/opensph-info
 
