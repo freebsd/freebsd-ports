@@ -1,3 +1,34 @@
+  <vuln vid="d713d709-4cc9-11ed-a621-0800277bb8a8">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.17.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21463">
+	  <p>Sanitize and Escape refs in git backend</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21412">
+	  <p>Bump golang.org/x/text</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21281">
+	  <p>Update bluemonday</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.17.3</url>
+    </references>
+    <dates>
+      <discovery>2022-09-27</discovery>
+      <entry>2022-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="127674c6-4a27-11ed-9f93-002b67dfc673">
     <topic>roundcube-thunderbird_labels -- RCE with custom label titles</topic>
     <affects>
