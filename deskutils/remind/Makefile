@@ -1,5 +1,5 @@
 PORTNAME=	remind
-DISTVERSION=	04.01.00
+DISTVERSION=	04.02.00
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
@@ -64,6 +64,8 @@ REM2PDF_RUN_DEPENDS=	p5-Cairo>0:graphics/p5-Cairo \
 DEFAULT_LATITUDE?=	45.42055555555555
 DEFAULT_LONGITUDE?=	-75.68972222222223
 LOCATION?=	Ottawa
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} \
