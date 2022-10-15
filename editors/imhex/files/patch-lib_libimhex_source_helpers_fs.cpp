@@ -1,4 +1,4 @@
---- lib/libimhex/source/helpers/fs.cpp.orig	2022-08-05 10:52:34 UTC
+--- lib/libimhex/source/helpers/fs.cpp.orig	2022-10-08 08:03:47 UTC
 +++ lib/libimhex/source/helpers/fs.cpp
 @@ -14,10 +14,15 @@
      #include <shlobj.h>
@@ -16,7 +16,7 @@
  #include <filesystem>
  
  namespace hex::fs {
-@@ -179,7 +184,7 @@ namespace hex::fs {
+@@ -189,7 +194,7 @@ namespace hex::fs {
          #endif
      }
  

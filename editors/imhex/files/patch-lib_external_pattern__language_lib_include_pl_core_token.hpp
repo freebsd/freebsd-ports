@@ -1,4 +1,4 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-09-16 15:30:16 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-10-15 20:26:43 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
 @@ -148,9 +148,9 @@ namespace pl::core {
  
@@ -12,7 +12,7 @@
          [[nodiscard]] constexpr static inline bool isInteger(const ValueType &type) {
              return isUnsigned(type) || isSigned(type);
          }
-@@ -194,133 +194,133 @@ namespace pl::core {
+@@ -206,133 +206,133 @@ namespace pl::core {
  
      namespace tkn {
  

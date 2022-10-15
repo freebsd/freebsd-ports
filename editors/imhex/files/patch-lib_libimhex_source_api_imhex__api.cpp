@@ -1,4 +1,4 @@
---- lib/libimhex/source/api/imhex_api.cpp.orig	2022-08-17 21:25:52 UTC
+--- lib/libimhex/source/api/imhex_api.cpp.orig	2022-10-08 08:03:47 UTC
 +++ lib/libimhex/source/api/imhex_api.cpp
 @@ -4,6 +4,7 @@
  #include <hex/api/event.hpp>
@@ -8,7 +8,7 @@
  #include <utility>
  #include <unistd.h>
  
-@@ -260,7 +261,7 @@ namespace hex {
+@@ -266,7 +267,7 @@ namespace hex {
          }
  
          bool isDirty() {

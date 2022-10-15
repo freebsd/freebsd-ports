@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.23.1
+PORTVERSION=	1.24.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -20,6 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		capstone-engine-capstone-${GH_TAG_CAPSTONE}_GH0${EXTRACT_SUFX} \
 		CLIUtils-CLI11-${GH_TAG_CLI11}_GH0${EXTRACT_SUFX} \
 		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
+		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
 		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
 		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
 		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
@@ -29,8 +30,8 @@ BUILD_DEPENDS=	glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json \
 		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
+		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
@@ -47,6 +48,7 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 		capstone-engine:capstone:${GH_TAG_CAPSTONE}:capstone \
 		CLIUtils:CLI11:${GH_TAG_CLI11}:cli11 \
 		fmtlib:fmt:${GH_TAG_FMT}:fmt \
+		josuttis:jthread:${GH_TAG_JTHREAD}:jthread \
 		VirusTotal:yara:${GH_TAG_YARA}:yara \
 		WerWolv:ImHex-Patterns:${GH_TAG_IMHEX_PATTERNS}:imhex_patterns \
 		WerWolv:PatternLanguage:${GH_TAG_PATTERN_LANGUAGE}:pattern_language \
@@ -54,12 +56,13 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 
 GH_TAG_CAPSTONE=	d5141c0
 GH_TAG_CLI11=	faea921
-GH_TAG_FMT=	c4ee726
-GH_TAG_IMHEX_PATTERNS=	5481c2f
-GH_TAG_LIBROMFS=	8c8556d
-GH_TAG_NATIVEFILEDIALOG=	6967d28
-GH_TAG_PATTERN_LANGUAGE=	143628a
-GH_TAG_YARA=	d5a7565
+GH_TAG_FMT=	a337011
+GH_TAG_IMHEX_PATTERNS=	8e70a55
+GH_TAG_JTHREAD=	0fa8d39
+GH_TAG_LIBROMFS=	8efe4c4
+GH_TAG_NATIVEFILEDIALOG=	d4df2b6
+GH_TAG_PATTERN_LANGUAGE=	ab7d738
+GH_TAG_YARA=	ba94b4f
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON \
 		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
@@ -84,6 +87,7 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/xdg.hpp ${WRKSRC}/lib/external/xdgpp
 	${CP} -R ${WRKSRC_capstone}/* ${WRKSRC}/lib/external/capstone
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/external/fmt
+	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/libimhex/include
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/external/nativefiledialog
 	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
