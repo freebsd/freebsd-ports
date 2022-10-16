@@ -1,5 +1,5 @@
 PORTNAME=	mail
-PORTVERSION=	1.13.9
+PORTVERSION=	1.14.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
