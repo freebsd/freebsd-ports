@@ -13,11 +13,12 @@ BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libzbar.so:graphics/zbar \
 		libpipewire-0.3.so:multimedia/pipewire
+RUN_DEPENDS=	${LOCALBASE}/lib/gstreamer-1.0/libgstgtk4.so:multimedia/gstreamer1-plugins-rust
 
 USES=		cargo desktop-file-utils gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
-USE_GSTREAMER=	zbar # XXX gtk4paintablesink
+USE_GSTREAMER=	zbar
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Authenticator
