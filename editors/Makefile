@@ -212,6 +212,7 @@
     SUBDIR += neovim
     SUBDIR += neovim-qt
     SUBDIR += notepadnext
+    SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
     SUBDIR += o
