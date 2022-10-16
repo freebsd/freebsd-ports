@@ -1,6 +1,6 @@
 PORTNAME=	opendht
 DISTVERSION=	1.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +10,11 @@ WWW=		https://github.com/savoirfairelinux/opendht/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		msgpack-cxx>4.0.0:devel/msgpack-cxx
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libjsoncpp.so:devel/jsoncpp \
-		libmsgpackc.so:devel/msgpack \
+		libmsgpackc.so:devel/msgpack-c \
 		libnettle.so:security/nettle \
 		libgnutls.so:security/gnutls
 

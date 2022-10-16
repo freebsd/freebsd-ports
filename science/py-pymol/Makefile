@@ -1,7 +1,7 @@
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
-		libmsgpackc.so:devel/msgpack \
+		libmsgpackc.so:devel/msgpack-c \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR} \

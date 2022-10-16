@@ -1,6 +1,7 @@
 PORTNAME=	neovim-qt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.17
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	neovim>=0:editors/neovim \
 		unibilium>=0:devel/unibilium
-LIB_DEPENDS=	libmsgpackc.so:devel/msgpack \
+LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c \
 		libunibilium.so:devel/unibilium
 RUN_DEPENDS=	neovim>=0:editors/neovim
 

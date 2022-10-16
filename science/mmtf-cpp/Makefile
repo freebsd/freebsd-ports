@@ -1,6 +1,7 @@
 PORTNAME=	mmtf-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://mmtf.rcsb.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack
+RUN_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack-cxx
 TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake:testing compiler:c++11-lang localbase:ldflags

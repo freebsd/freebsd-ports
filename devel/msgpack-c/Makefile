@@ -1,7 +1,8 @@
 PORTNAME=	msgpack
-PORTVERSION=	3.3.0
-DISTVERSIONPREFIX=	cpp-
+PORTVERSION=	4.0.0
+DISTVERSIONPREFIX=	c-
 CATEGORIES=	devel
+PKGNAMESUFFIX=	-c
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Efficient binary serialization, like JSON but smaller and faster

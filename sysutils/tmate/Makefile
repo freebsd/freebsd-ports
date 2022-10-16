@@ -1,6 +1,6 @@
 PORTNAME=	tmate
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Instant terminal sharing
 WWW=		https://tmate.io/
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		libmsgpackc.so:devel/msgpack \
+		libmsgpackc.so:devel/msgpack-c \
 		libssh.so:security/libssh
 
 USES=		autoreconf compiler:c11 ncurses pkgconfig

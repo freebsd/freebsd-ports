@@ -1,6 +1,6 @@
 PORTNAME=	veles
 DISTVERSION=	2018.05.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
@@ -19,7 +19,8 @@ PYTHON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-BUILD_DEPENDS=	msgpack>0:devel/msgpack \
+BUILD_DEPENDS=	msgpack>0:devel/msgpack-c \
+		msgpack-cxx>0:devel/msgpack-cxx \
 		${PYTHON_DEPENDS}
 RUN_DEPENDS=	${PYTHON_DEPENDS}
 

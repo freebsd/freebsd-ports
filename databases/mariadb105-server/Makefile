@@ -1,6 +1,6 @@
 PORTNAME?=	mariadb
 PORTVERSION=	10.5.17
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	\
 		https://mirror.nodesdirect.com/${SITESDIR}/ \
@@ -177,7 +177,7 @@ LZO_CMAKE_ON=		-DWITH_INNODB_LZO=ON
 LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 MROONGA_IMPLIES=	LZ4
-MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
+MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_USES=		python

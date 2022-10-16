@@ -17602,3 +17602,4 @@ multimedia/gstreamer1-transcoder|multimedia/gstreamer1-plugins-bad|2022-10-15|Up
 devel/py-ipykernel5|devel/py-ipykernel|2022-10-15|ipykernel5 is discontinued, ipykernel is used instead
 x11-toolkits/libshumate-shortwave|x11-toolkits/libshumate|2022-10-15|No longer used by audio/shortwave
 orion/misc||2022-10-16|Dead upstream, and fails to build with mpv-0.35
+devel/msgpack|devel/msgpack-c|2022-10-16|MsgPack now separates C and C++ versions
