@@ -1,14 +1,13 @@
 PORTNAME=	portgrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	5
+DISTVERSION=	1.4.1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Parallel port search utility
 WWW=		https://github.com/dmgk/portgrep
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
