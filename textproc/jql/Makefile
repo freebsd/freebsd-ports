@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.0
+DISTVERSION=	5.1.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -42,7 +42,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.20 \
-		clap-4.0.8 \
+		clap-4.0.15 \
 		clap_lex-0.2.3 \
 		clap_lex-0.3.0 \
 		colored_json-3.0.1 \
@@ -107,7 +107,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		scopeguard-1.1.0 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.85 \
+		serde_json-1.0.86 \
 		sha1-0.10.5 \
 		signal-hook-0.3.13 \
 		signal-hook-registry-1.4.0 \
