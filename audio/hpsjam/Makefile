@@ -1,6 +1,6 @@
 PORTNAME=	hpsjam
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.1.1
+DISTVERSION=		1.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -10,7 +10,6 @@ WWW=		https://github.com/hselasky/hpsjam
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS= \
-	libfftw3.so:math/fftw3 \
 	libjack.so:audio/jack
 
 USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2
@@ -19,6 +18,7 @@ USE_QT=		buildtools:build core gui widgets svg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
+GH_TUPLE=	mborgerding:kissfft:131.1.0:a/kissfft
 
 PLIST_FILES= \
 	bin/HpsJam \
