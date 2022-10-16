@@ -1,8 +1,12 @@
 PORTNAME=	baka-mplayer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	7864f248c3fc.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/317
+PATCHFILES+=	fb0cd8133d45.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/317
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 multimedia player based on libmpv
