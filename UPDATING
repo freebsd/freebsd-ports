@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221016:
+  AFFECTS: textproc/apache-solr
+  AUTHOR: mfechner@FreeBSD.org
+
+  Apache solr version 9 is released and made available as extra port
+  textproc/apache-solr9.
+  Version 9 cannot start directly with data from version 8. Additional steps
+  for data migration is required.
+  If you like to use the new version, deinstall the old version and install
+  the new version:
+  # pkg delete apache-solr
+  # pkg install apache-solr9
+  After this you need to migrate data and migration, for this check the solr
+  documentation.
+
 20221015:
   AFFECTS: users of gstreamer1-* when upgrading via port builds on the host
   AUTHOR: riggs@FreeBSD.org
