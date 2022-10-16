@@ -481,6 +481,7 @@
     SUBDIR += postfixadmin-lite
     SUBDIR += postfixadmin33
     SUBDIR += postfixadmin33-lite
+    SUBDIR += postforward
     SUBDIR += postgrey
     SUBDIR += postsrsd
     SUBDIR += prepflog
