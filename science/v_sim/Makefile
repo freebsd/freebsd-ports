@@ -1,6 +1,6 @@
 PORTNAME=	v_sim
 DISTVERSION=	3.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -36,7 +36,7 @@ USES=		autoreconf blaslapack compiler:c11 fortran gl gmake gnome	\
 		shebangfix tar:bzip2 xorg
 SHEBANG_GLOB=	*.py
 USE_XORG=	x11
-USE_GNOME=	cairo gtk30 intltool introspection
+USE_GNOME=	cairo gtk30 gdkpixbuf2 intltool introspection
 USE_GL=		gl glu
 USE_GITLAB=	yes
 GL_ACCOUNT=	l_sim
@@ -72,10 +72,8 @@ PLIST_SUB+=	AB="@comment "
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-PLIST_SUB+=	NLS=""
 .else
 USES+=		gettext-tools
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-configure:
@@ -96,5 +94,9 @@ pre-configure-EXAMPLES-off:
 		${WRKSRC}/Makefile.am
 	${REINPLACE_CMD} -e 's|: install-v_simexamplesDATA|:|'	\
 		${WRKSRC}/lib/python/Makefile.am
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/lib -type f -name "lib*.so.8.0.0" | \
+		${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
