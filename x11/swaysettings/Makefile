@@ -24,6 +24,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwaySettings
 SHEBANG_FILES=	build-aux/meson/postinstall.py
+GLIB_SCHEMAS=	org.erikreider.swaysettings.gschema.xml
 
 post-patch:
 # Respect PREFIX for images and XKB layouts
