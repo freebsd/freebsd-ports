@@ -29,6 +29,7 @@ share/applications/avogadro2.desktop
 %%DATADIR%%/i18n/avogadroapp-id.qm
 %%DATADIR%%/i18n/avogadroapp-it.qm
 %%DATADIR%%/i18n/avogadroapp-ja.qm
+%%DATADIR%%/i18n/avogadroapp-ka.qm
 %%DATADIR%%/i18n/avogadroapp-kn.qm
 %%DATADIR%%/i18n/avogadroapp-ko.qm
 %%DATADIR%%/i18n/avogadroapp-ms.qm
@@ -84,6 +85,7 @@ share/applications/avogadro2.desktop
 %%DATADIR%%/i18n/avogadrolibs-id.qm
 %%DATADIR%%/i18n/avogadrolibs-it.qm
 %%DATADIR%%/i18n/avogadrolibs-ja.qm
+%%DATADIR%%/i18n/avogadrolibs-ka.qm
 %%DATADIR%%/i18n/avogadrolibs-kn.qm
 %%DATADIR%%/i18n/avogadrolibs-ko.qm
 %%DATADIR%%/i18n/avogadrolibs-lv.qm
@@ -111,4 +113,5 @@ share/applications/avogadro2.desktop
 %%DATADIR%%/i18n/avogadrolibs-vi.qm
 %%DATADIR%%/i18n/avogadrolibs-zh_CN.qm
 %%DATADIR%%/i18n/avogadrolibs-zh_TW.qm
+share/metainfo/avogadro2.appdata.xml
 share/pixmaps/avogadro2.png
