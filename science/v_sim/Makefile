@@ -1,8 +1,7 @@
 PORTNAME=	v_sim
-PORTVERSION=	3.8.0
+DISTVERSION=	3.8.0
 PORTREVISION=	4
 CATEGORIES=	science
-MASTER_SITES=	https://gitlab.com/l_sim/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualization of atomic structures
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML	\
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libopenbabel.so:science/openbabel	\
 		libfreetype.so:print/freetype2	\
+		libharfbuzz.so:print/harfbuzz	\
 		libyaml.so:textproc/libyaml	\
 		libnetcdf.so:science/netcdf	\
 		libmsym.so:science/libmsym	\
@@ -38,6 +38,10 @@ SHEBANG_GLOB=	*.py
 USE_XORG=	x11
 USE_GNOME=	cairo gtk30 intltool introspection
 USE_GL=		gl glu
+USE_GITLAB=	yes
+GL_ACCOUNT=	l_sim
+GL_COMMIT=	9dc8e5a0b2f4e7237ac50a922b87d234ff56a6e5
+
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=${LOCALBASE}/bin/bash
 CONFIGURE_ARGS=	--htmldir=${PREFIX}/share/doc --with-openbabel		\
@@ -49,6 +53,7 @@ CPPFLAGS+=	${CFLAGS}
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
+OPTIONS_SUB=	yes
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug-messages
