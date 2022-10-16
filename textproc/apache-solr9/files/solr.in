@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# Copyright (c) 2014, Radim Kolar
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#  * Redistributions of source code must retain the above copyright notice,
+#    this list of conditions and the following disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+# DAMAGE.
+
+#
+# PROVIDE: solr
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=solr
+rcvar=solr_enable
+load_rc_config $name
+
+: ${solr_enable:=NO}
+: ${solr_instance:=/var/db/solr}
+
+solr_start ()
+{
+	su -m solr -c "${command} start"
+}
+
+solr_stop ()
+{
+	su -m solr -c "${command} stop"
+}
+
+solr_status ()
+{
+	su -m solr -c "${command} status"
+}
+
+# add %%LOCALBASE%%/bin to path
+export PATH=$PATH:%%LOCALBASE%%/bin
+# let the start script read some custom settings
+export SOLR_INCLUDE=/usr/local/etc/solr.in.sh
+
+required_files="${solr_instance}/solr.xml /usr/local/etc/solr.in.sh"
+command=%%PREFIX%%/solr/bin/solr
+start_cmd=solr_start
+stop_cmd=solr_stop
+status_cmd=solr_status
+
+run_rc_command "$1"
