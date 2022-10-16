@@ -244,6 +244,7 @@
     SUBDIR += mplex
     SUBDIR += mpv
     SUBDIR += mpv-mpris
+    SUBDIR += mpv034
     SUBDIR += mpvpaper
     SUBDIR += msdl
     SUBDIR += msopenh264
