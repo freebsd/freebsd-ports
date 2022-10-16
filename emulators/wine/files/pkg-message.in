@@ -1,11 +1,6 @@
 [
 { type: install
   message: <<EOM
-Wine requires procfs(5) mounted on /proc. You can do so manually via
-  mount -t procfs proc /proc
-or make it permanent via something like the following in /etc/fstab
-  proc   /proc   procfs   rw   0 0
-
 Some ZFS tuning guides recommend setting KVA_PAGES=512 in your kernel
 configuration.  This is incompatible with Wine.  The maximum possible
 is KVA_PAGES=500, which should still be enough for ZFS.
