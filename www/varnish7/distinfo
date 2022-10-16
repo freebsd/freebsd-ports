@@ -1,3 +1,3 @@
-TIMESTAMP = 1663421158
-SHA256 (varnishcache-varnish-cache-varnish-7.2.0_GH0.tar.gz) = 7074f0c975fcc4a3cf4849b770838d0c1bbea48044e3ea1ab32d879e80df7368
-SIZE (varnishcache-varnish-cache-varnish-7.2.0_GH0.tar.gz) = 1979836
+TIMESTAMP = 1663440346
+SHA256 (varnish-7.2.0.tgz) = 1da8a97ed5f7b7d4d5e04fc5c96fc9a85cb3a20d076eba2b18951f4b306c9686
+SIZE (varnish-7.2.0.tgz) = 4018697
