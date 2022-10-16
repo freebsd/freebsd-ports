@@ -1,9 +1,10 @@
 PORTNAME=	juce
 DISTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	27d6e8388c620bf32be0c86c66ff8c403f4c1d71.diff:-p1
+PATCHFILES=	e819560ff09502af2a4e567b9cf9a9f90f9a3da1.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
