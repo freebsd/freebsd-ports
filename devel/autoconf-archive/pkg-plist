@@ -25,6 +25,7 @@
 %%MACRODIR%%/ax_blas.m4
 %%MACRODIR%%/ax_blas_f77_func.m4
 %%MACRODIR%%/ax_boost_asio.m4
+%%MACRODIR%%/ax_boost_atomic.m4
 %%MACRODIR%%/ax_boost_base.m4
 %%MACRODIR%%/ax_boost_chrono.m4
 %%MACRODIR%%/ax_boost_context.m4
@@ -32,11 +33,14 @@
 %%MACRODIR%%/ax_boost_date_time.m4
 %%MACRODIR%%/ax_boost_filesystem.m4
 %%MACRODIR%%/ax_boost_iostreams.m4
+%%MACRODIR%%/ax_boost_json.m4
 %%MACRODIR%%/ax_boost_locale.m4
 %%MACRODIR%%/ax_boost_log.m4
 %%MACRODIR%%/ax_boost_log_setup.m4
+%%MACRODIR%%/ax_boost_process.m4
 %%MACRODIR%%/ax_boost_program_options.m4
 %%MACRODIR%%/ax_boost_python.m4
+%%MACRODIR%%/ax_boost_random.m4
 %%MACRODIR%%/ax_boost_regex.m4
 %%MACRODIR%%/ax_boost_serialization.m4
 %%MACRODIR%%/ax_boost_signals.m4
@@ -156,6 +160,7 @@
 %%MACRODIR%%/ax_check_page_aligned_malloc.m4
 %%MACRODIR%%/ax_check_pathfind.m4
 %%MACRODIR%%/ax_check_pathname_style.m4
+%%MACRODIR%%/ax_check_pcre2.m4
 %%MACRODIR%%/ax_check_pgsql_db.m4
 %%MACRODIR%%/ax_check_posix_regcomp.m4
 %%MACRODIR%%/ax_check_posix_sysinfo.m4
@@ -353,6 +358,7 @@
 %%MACRODIR%%/ax_have_select.m4
 %%MACRODIR%%/ax_include_strcasecmp.m4
 %%MACRODIR%%/ax_install_files.m4
+%%MACRODIR%%/ax_int128.m4
 %%MACRODIR%%/ax_is_release.m4
 %%MACRODIR%%/ax_java_check_class.m4
 %%MACRODIR%%/ax_java_options.m4
@@ -401,6 +407,7 @@
 %%MACRODIR%%/ax_missing_prog.m4
 %%MACRODIR%%/ax_mpi.m4
 %%MACRODIR%%/ax_mpip.m4
+%%MACRODIR%%/ax_ms_cpprest.m4
 %%MACRODIR%%/ax_need_awk.m4
 %%MACRODIR%%/ax_normalize_path.m4
 %%MACRODIR%%/ax_not_enable_frame_pointer.m4
@@ -423,6 +430,7 @@
 %%MACRODIR%%/ax_pkg_mico.m4
 %%MACRODIR%%/ax_pkg_swig.m4
 %%MACRODIR%%/ax_prefix_config_h.m4
+%%MACRODIR%%/ax_prepend_flag.m4
 %%MACRODIR%%/ax_print_to_file.m4
 %%MACRODIR%%/ax_printf_size_t.m4
 %%MACRODIR%%/ax_prog_apache.m4
@@ -476,6 +484,7 @@
 %%MACRODIR%%/ax_prog_perl_version.m4
 %%MACRODIR%%/ax_prog_pgclient.m4
 %%MACRODIR%%/ax_prog_python_version.m4
+%%MACRODIR%%/ax_prog_robot.m4
 %%MACRODIR%%/ax_prog_ruby_version.m4
 %%MACRODIR%%/ax_prog_scala.m4
 %%MACRODIR%%/ax_prog_scalac.m4
