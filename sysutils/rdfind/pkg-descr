@@ -1,0 +1,3 @@
+Rdfind is a command line tool that finds duplicate files. It is
+useful for compressing backup directories or just finding duplicate
+files. It compares files based on their content, not file names.

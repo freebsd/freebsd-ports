@@ -1145,6 +1145,7 @@
     SUBDIR += rclean
     SUBDIR += rcm
     SUBDIR += rdate
+    SUBDIR += rdfind
     SUBDIR += rdup
     SUBDIR += read-edid
     SUBDIR += recoverdm
