@@ -1,5 +1,6 @@
 PORTNAME=	glvis
 DISTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://glvis.github.io/releases/
 PKGNAMESUFFIX=	-mesh-visualizer # other software also has the name glvis

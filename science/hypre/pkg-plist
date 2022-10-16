@@ -32,6 +32,7 @@ include/_hypre_sstruct_mv.h
 include/_hypre_struct_ls.h
 include/_hypre_struct_mv.h
 include/_hypre_utilities.h
+include/_hypre_utilities.hpp
 include/aux_par_vector.h
 include/aux_parcsr_matrix.h
 include/csr_block_matrix.h
