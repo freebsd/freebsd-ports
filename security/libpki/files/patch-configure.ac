@@ -1,13 +1,34 @@
---- configure.ac.orig	2022-10-10 19:42:21 UTC
+--- configure.ac.orig	2022-10-16 21:47:40 UTC
 +++ configure.ac
-@@ -40,6 +40,9 @@
+@@ -23,7 +23,7 @@ is_aix="no"
+ mybits_install=""
+ is_sparc="no"
+ is_aix="no"
+-my_arch=`uname -m`
++my_arch=`uname -p`
+ 
+ case "$my_arch" in
+   *i686)
+@@ -40,7 +40,13 @@ case "$my_arch" in
      mybits="64"
      mybits_install="64"
          ;;
+-  *aarch64)
 +  *arm)
 +    mybits="32"
 +    ;;
--  *aarch64)
++  *powerpc)
++    mybits="32"
++    ;;
 +  *aarch64|*arm64)
      mybits="64"
      mybits_install="64"
+     ;;
+@@ -57,7 +63,6 @@ case "$my_arch" in
+   *powerpc*)
+     mybits="64"
+     mybits_install="64"
+-    is_aix="yes"
+     ;;
+   *)
+     AC_MSG_ERROR([Not supported arch ($my_arch)])
