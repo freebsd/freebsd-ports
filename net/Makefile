@@ -1395,6 +1395,7 @@
     SUBDIR += sakisafecli
     SUBDIR += samba412
     SUBDIR += samba413
+    SUBDIR += samba416
     SUBDIR += samplicator
     SUBDIR += savvycan
     SUBDIR += sbd

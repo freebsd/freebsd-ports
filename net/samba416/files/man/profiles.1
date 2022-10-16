@@ -1,0 +1,136 @@
+'\" t
+.\"     Title: profiles
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 08/09/2022
+.\"    Manual: User Commands
+.\"    Source: Samba 4.16.4
+.\"  Language: English
+.\"
+.TH "PROFILES" "1" "08/09/2022" "Samba 4\&.16\&.4" "User Commands"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+profiles \- A utility to report and change SIDs in registry files
+.SH "SYNOPSIS"
+.HP \w'\ 'u
+profiles [\-c|\-\-change\-sid=STRING] [\-n|\-\-new\-sid=STRING] [\-v|\-\-verbose] [\-?|\-\-help] [\-\-usage] [\-d|\-\-debuglevel=DEBUGLEVEL] [\-\-debug\-stdout] [\-\-configfile=CONFIGFILE] [\-\-option=name=value] [\-l|\-\-log\-basename=LOGFILEBASE] [\-\-leak\-report] [\-\-leak\-report\-full] {FILE}
+.SH "DESCRIPTION"
+.PP
+This tool is part of the
+\fBsamba\fR(7)
+suite\&.
+.PP
+profiles
+is a utility that reports and changes SIDs in windows registry files\&. It currently only supports NT\&.
+.SH "OPTIONS"
+.PP
+file
+.RS 4
+Registry file to view or edit\&.
+.RE
+.PP
+\-v,\-\-verbose
+.RS 4
+Increases verbosity of messages\&.
+.RE
+.PP
+\-c SID1 \-n SID2, \-\-change\-sid SID1 \-\-new\-sid SID2
+.RS 4
+Change all occurrences of SID1 in
+file
+by SID2\&.
+.RE
+.PP
+\-d|\-\-debuglevel=DEBUGLEVEL
+.RS 4
+\fIlevel\fR
+is an integer from 0 to 10\&. The default value if this parameter is not specified is 1 for client applications\&.
+.sp
+The higher this value, the more detail will be logged to the log files about the activities of the server\&. At level 0, only critical errors and serious warnings will be logged\&. Level 1 is a reasonable level for day\-to\-day running \- it generates a small amount of information about operations carried out\&.
+.sp
+Levels above 1 will generate considerable amounts of log data, and should only be used when investigating a problem\&. Levels above 3 are designed for use only by developers and generate HUGE amounts of log data, most of which is extremely cryptic\&.
+.sp
+Note that specifying this parameter here will override the
+\m[blue]\fBlog level\fR\m[]
+parameter in the
+smb\&.conf
+file\&.
+.RE
+.PP
+\-\-debug\-stdout
+.RS 4
+This will redirect debug output to STDOUT\&. By default all clients are logging to STDERR\&.
+.RE
+.PP
+\-\-configfile=<configuration file>
+.RS 4
+The file specified contains the configuration details required by the client\&. The information in this file can be general for client and server or only provide client specific like options such as
+\m[blue]\fBclient smb encrypt\fR\m[]\&. See
+smb\&.conf
+for more information\&. The default configuration file name is determined at compile time\&.
+.RE
+.PP
+\-\-option=<name>=<value>
+.RS 4
+Set the
+\fBsmb.conf\fR(5)
+option "<name>" to value "<value>" from the command line\&. This overrides compiled\-in defaults and options read from the configuration file\&. If a name or a value includes a space, wrap whole \-\-option=name=value into quotes\&.
+.RE
+.PP
+\-l|\-\-log\-basename=logdirectory
+.RS 4
+Base directory name for log/debug files\&. The extension
+\fB"\&.progname"\fR
+will be appended (e\&.g\&. log\&.smbclient, log\&.smbd, etc\&.\&.\&.)\&. The log file is never removed by the client\&.
+.RE
+.PP
+\-\-leak\-report
+.RS 4
+Enable talloc leak reporting on exit\&.
+.RE
+.PP
+\-\-leak\-report\-full
+.RS 4
+Enable full talloc leak reporting on exit\&.
+.RE
+.PP
+\-V|\-\-version
+.RS 4
+Prints the program version number\&.
+.RE
+.PP
+\-?|\-\-help
+.RS 4
+Print a summary of command line options\&.
+.RE
+.PP
+\-\-usage
+.RS 4
+Display brief usage message\&.
+.RE
+.SH "VERSION"
+.PP
+This man page is part of version 4\&.16\&.4 of the Samba suite\&.
+.SH "AUTHOR"
+.PP
+The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&.
+.PP
+The profiles man page was written by Jelmer Vernooij\&.

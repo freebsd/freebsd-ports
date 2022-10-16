@@ -1,0 +1,38 @@
+From 0eb28116ceefee7bdafabac18a1763f13cb71883 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:42:31 +0200
+Subject: [PATCH 04/28] On FreeBSD `date(1)` has different semantics than on
+ Linux. Generate call parameter accordingly.
+
+FreeBSD: `date [[[[[cc]yy]mm]dd]HH]MM[.ss]`
+Linux:   `date [mmddHHMM[[cc]yy][.ss]]`
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/utils/net_time.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/source3/utils/net_time.c b/source3/utils/net_time.c
+index d102f84614f..f679000a979 100644
+--- a/source3/utils/net_time.c
++++ b/source3/utils/net_time.c
+@@ -82,10 +82,15 @@ static const char *systime(time_t t)
+ 	if (!tm) {
+ 		return "unknown";
+ 	}
+-
++#if defined(FREEBSD)
++	return talloc_asprintf(talloc_tos(), "%04d%02d%02d%02d%02d.%02d",
++				tm->tm_year + 1900, tm->tm_mon+1, tm->tm_mday,
++				tm->tm_hour, tm->tm_min, tm->tm_sec);
++#else
+ 	return talloc_asprintf(talloc_tos(), "%02d%02d%02d%02d%04d.%02d",
+ 			       tm->tm_mon+1, tm->tm_mday, tm->tm_hour,
+ 			       tm->tm_min, tm->tm_year + 1900, tm->tm_sec);
++#endif
+ }
+ 
+ int net_time_usage(struct net_context *c, int argc, const char **argv)
+-- 
+2.37.1
+

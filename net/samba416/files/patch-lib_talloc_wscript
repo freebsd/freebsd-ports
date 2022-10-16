@@ -1,0 +1,10 @@
+--- lib/talloc/wscript.orig	2019-05-07 08:38:21 UTC
++++ lib/talloc/wscript
+@@ -45,7 +45,7 @@ def configure(conf):
+     conf.env.TALLOC_COMPAT1 = False
+     if conf.env.standalone_talloc:
+         conf.env.TALLOC_COMPAT1 = Options.options.TALLOC_COMPAT1
+-        conf.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        conf.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         conf.env.TALLOC_VERSION = VERSION
+ 

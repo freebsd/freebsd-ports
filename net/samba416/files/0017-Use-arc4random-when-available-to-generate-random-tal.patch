@@ -1,0 +1,49 @@
+From 42c9490dd346ee2f4369cbed4c37cb43f06e5d19 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Wed, 7 Sep 2022 23:52:43 +0200
+Subject: [PATCH 17/28] Use arc4random() when available to generate random
+ talloc slab signature.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ lib/talloc/talloc.c | 4 ++++
+ lib/talloc/wscript  | 1 +
+ 2 files changed, 5 insertions(+)
+
+diff --git a/lib/talloc/talloc.c b/lib/talloc/talloc.c
+index 29da190880a..79c76fd9e35 100644
+--- a/lib/talloc/talloc.c
++++ b/lib/talloc/talloc.c
+@@ -397,6 +397,9 @@ void talloc_lib_init(void) CONSTRUCTOR;
+ void talloc_lib_init(void)
+ {
+ 	uint32_t random_value;
++#if defined(HAVE_ARC4RANDOM)
++	random_value = arc4random();
++#else
+ #if defined(HAVE_GETAUXVAL) && defined(AT_RANDOM)
+ 	uint8_t *p;
+ 	/*
+@@ -430,6 +433,7 @@ void talloc_lib_init(void)
+ 		 */
+ 		random_value = ((uintptr_t)talloc_lib_init & 0xFFFFFFFF);
+ 	}
++#endif /* HAVE_ARC4RANDOM */
+ 	talloc_magic = random_value & ~TALLOC_FLAG_MASK;
+ }
+ #else
+diff --git a/lib/talloc/wscript b/lib/talloc/wscript
+index f0c266a7878..c75ec0505df 100644
+--- a/lib/talloc/wscript
++++ b/lib/talloc/wscript
+@@ -52,6 +52,7 @@ def configure(conf):
+ 
+     conf.CHECK_HEADERS('sys/auxv.h')
+     conf.CHECK_FUNCS('getauxval')
++    conf.CHECK_FUNCS('arc4random')
+ 
+     conf.SAMBA_CONFIG_H()
+ 
+-- 
+2.37.1
+

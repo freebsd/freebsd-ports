@@ -1,0 +1,44 @@
+--- source3/wscript_build.orig	2020-07-09 13:33:56 UTC
++++ source3/wscript_build
+@@ -235,11 +235,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
+                         talloc
+                         replace
+                         util_reg
+-                        samba-util
+-                        samba-security
+                         errors3
+                         dbwrap
+-                        samba3-util
++                        samba3util
+                         ''')
+ 
+ # Do not link against this use 'smbconf'
+@@ -482,7 +480,7 @@ bld.SAMBA3_LIBRARY('secrets3',
+ 
+ bld.SAMBA3_LIBRARY('smbldap',
+                     source='lib/smbldap.c',
+-                    deps='ldap lber samba-util smbconf',
++                    deps='ldap lber samba3util smbd_shim samba-debug smbconf',
+                     enabled=bld.CONFIG_SET("HAVE_LDAP"),
+                     private_library=False,
+                     abi_directory='lib/ABI',
+@@ -1151,8 +1151,8 @@ bld.SAMBA3_BINARY('smbspool_krb5_wrapper',
+                  enabled=bld.CONFIG_SET('HAVE_CUPS'))
+ 
+ bld.SAMBA3_BINARY('smbspool_argv_wrapper',
+-		  source='script/tests/smbspool_argv_wrapper.c',
+-		  for_selftest=True)
++                  source='script/tests/smbspool_argv_wrapper.c',
++                  for_selftest=True)
+ 
+ bld.SAMBA3_BINARY('smbconftort',
+                  source='lib/smbconf/testsuite.c',
+@@ -1199,7 +1199,7 @@ bld.SAMBA3_BINARY('vlp',
+                       talloc
+                       smbconf
+                       ''',
+-                 for_selftest=True)
++                 install=True)
+ 
+ 
+ pyrpc_util = bld.pyembed_libname('pyrpc_util')
