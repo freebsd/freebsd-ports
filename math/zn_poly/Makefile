@@ -1,7 +1,6 @@
 PORTNAME=	zn_poly
-PORTVERSION=	0.9.2
+DISTVERSION=	0.9.2
 CATEGORIES=	math
-MASTER_SITES=	https://gitlab.com/sagemath/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C library for polynomial arithmetic
@@ -15,6 +14,9 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake python:build tar:bz2
+USE_GITLAB=	yes
+GL_ACCOUNT=	sagemath
+GL_COMMIT=	f421e4788914e1625488d9b7d5aaab877eb1a940
 
 OPTIONS_DEFINE=	DOCS
 
@@ -39,11 +41,11 @@ pre-configure:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libzn_poly-${PORTVERSION}.so		\
-		${STAGEDIR}${PREFIX}/lib/libzn_poly-${PORTVERSION}.so.0.0.0
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libzn_poly-${PORTVERSION}.so.0.0.0	\
-		${STAGEDIR}${PREFIX}/lib/libzn_poly-${PORTVERSION:R}.so.0
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libzn_poly-${PORTVERSION}.so.0.0.0	\
-		${STAGEDIR}${PREFIX}/lib/libzn_poly-${PORTVERSION:R}.so
+	${INSTALL_PROGRAM} ${WRKSRC}/libzn_poly-${DISTVERSION}.so		\
+		${STAGEDIR}${PREFIX}/lib/libzn_poly-${DISTVERSION}.so.0.0.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libzn_poly-${DISTVERSION}.so.0.0.0	\
+		${STAGEDIR}${PREFIX}/lib/libzn_poly-${DISTVERSION:R}.so.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libzn_poly-${DISTVERSION}.so.0.0.0	\
+		${STAGEDIR}${PREFIX}/lib/libzn_poly-${DISTVERSION:R}.so
 
 .include <bsd.port.mk>
