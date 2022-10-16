@@ -12,6 +12,9 @@ WWW=		https://www.varnish-cache.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	End of life upstream, users are recommended to upgrade to 6.x or higher
+EXPIRATION_DATE=2022-12-31
+
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
