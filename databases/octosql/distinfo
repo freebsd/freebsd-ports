@@ -1,0 +1,5 @@
+TIMESTAMP = 1665905418
+SHA256 (go/databases_octosql/octosql-v0.11.1/v0.11.1.mod) = 0b79d55eb7452c0f7cf892ba1b666c6629e2ce5e68dfbb100c5dddf196e185aa
+SIZE (go/databases_octosql/octosql-v0.11.1/v0.11.1.mod) = 3239
+SHA256 (go/databases_octosql/octosql-v0.11.1/v0.11.1.zip) = bf2ec13d564fa6144c5463eddbb36ed3d72a30fb754268e4fe65e92887ddde65
+SIZE (go/databases_octosql/octosql-v0.11.1/v0.11.1.zip) = 2340891
