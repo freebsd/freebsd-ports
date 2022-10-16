@@ -1,5 +1,3 @@
-flag
-
 Produces a cute little ansi colour 'flag' based off a hash of the machine's
 hostname (or settable via ~/.flag or /etc/flag) which can uniquely visually
 identify a machine, at a glance. Useful for placing into /etc/issue or your
