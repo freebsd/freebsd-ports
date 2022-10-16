@@ -1,8 +1,9 @@
 PORTNAME=	apache-solr
-PORTVERSION=	9.0.0
+PORTVERSION=	8.11.2
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
+MASTER_SITES=	https://archive.apache.org/dist/lucene/solr/${PORTVERSION}/
 DISTNAME=	solr-${PORTVERSION}
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,22 +15,19 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe tar:tgz
-CPE_VENDOR=	apache
-CPE_PRODUCT=	solr
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 JAVA_RUN=	yes
-USE_RC_SUBR=	solr
-
-NO_ARCH=	yes
 NO_BUILD=	yes
-
+NO_ARCH=	yes
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 SUB_FILES=	pkg-message
-
+USE_RC_SUBR=	solr
 USERS=		solr
 GROUPS=		${USERS}
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+CPE_PRODUCT=	solr
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	JTS
 OPTIONS_SUB=	yes

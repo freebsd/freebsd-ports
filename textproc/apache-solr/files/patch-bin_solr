@@ -1,6 +1,6 @@
---- bin/solr.orig	2022-04-25 20:37:26 UTC
+--- bin/solr.orig	2020-10-28 09:40:06 UTC
 +++ bin/solr
-@@ -2269,13 +2269,12 @@ function start_solr() {
+@@ -2255,13 +2255,12 @@ function start_solr() {
  	echo ""
      fi
      # no lsof on cygwin though
@@ -10,19 +10,19 @@
        (loops=0
        while true
        do
--        running=$(lsof -t -PniTCP:$SOLR_PORT -sTCP:LISTEN || :)
+-        running=$(lsof -t -PniTCP:$SOLR_PORT -sTCP:LISTEN)
 +        running=$(sockstat -ls -P tcp -p $SOLR_PORT | grep LISTEN)
-         if [ -z "${running:-}" ]; then
-           slept=$((loops * 2))
+         if [ -z "$running" ]; then
+ 	  slept=$((loops * 2))
            if [ $slept -lt $SOLR_START_WAIT ]; then
-@@ -2293,13 +2292,6 @@ function start_solr() {
+@@ -2279,13 +2278,6 @@ function start_solr() {
          fi
        done) &
        spinner $!
 -    else
 -      echo -e "NOTE: Please install lsof as this script needs it to determine if Solr is listening on port $SOLR_PORT."
 -      sleep 10
--      SOLR_PID=`ps auxww | grep start\.jar | awk "/\-Djetty\.port=$SOLR_PORT/"' {print $2}' | sort -r`
+-      SOLR_PID=`ps auxww | grep start\.jar | grep -w "\-Djetty\.port=$SOLR_PORT" | grep -v grep | awk '{print $2}' | sort -r`
 -      echo -e "\nStarted Solr server on port $SOLR_PORT (pid=$SOLR_PID). Happy searching!\n"
 -      return;
 -    fi
