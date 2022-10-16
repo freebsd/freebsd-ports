@@ -17601,3 +17601,4 @@ audio/protracker|audio/pt2-clone|2022-10-12|Renamed to match project name
 multimedia/gstreamer1-transcoder|multimedia/gstreamer1-plugins-bad|2022-10-15|Upstream included transcoding in plugins-bad
 devel/py-ipykernel5|devel/py-ipykernel|2022-10-15|ipykernel5 is discontinued, ipykernel is used instead
 x11-toolkits/libshumate-shortwave|x11-toolkits/libshumate|2022-10-15|No longer used by audio/shortwave
+orion/misc||2022-10-16|Dead upstream, and fails to build with mpv-0.35
