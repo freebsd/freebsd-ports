@@ -1,8 +1,6 @@
 PORTNAME=	evtest
-DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.34
+DISTVERSION=	1.35
 CATEGORIES=	x11
-MASTER_SITES=	https://gitlab.freedesktop.org/libevdev/${PORTNAME}/-/archive/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Input device event monitor and query tool
@@ -16,6 +14,10 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 USES=		autoreconf localbase
 GNU_CONFIGURE=	yes
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org/
+GL_ACCOUNT=	libevdev
+GL_COMMIT=	da347a8f88d2e5729dd12d61ee9743f902065b55
 
 CFLAGS+=	-DPACKAGE_VERSION=${PKGVERSION}
 
