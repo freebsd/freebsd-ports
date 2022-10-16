@@ -1,11 +1,11 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.16.0
+DISTVERSION=	16.17.1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	16
 
-MAINTAINER=	bhughes@FreeBSD.org
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server
 WWW=		https://nodejs.org/
 
