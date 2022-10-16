@@ -1,7 +1,6 @@
 PORTNAME=	belr
-PORTVERSION=	5.1.32
+DISTVERSION=	5.1.32
 CATEGORIES=	textproc
-MASTER_SITES=	https://gitlab.linphone.org/BC/public/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Language recognition library
@@ -13,6 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
 USES=		cmake compiler:c++11-lib
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.linphone.org/BC
+GL_ACCOUNT=	public
+GL_COMMIT=	03d649ca34c715dda11f842ad54d5eb38752086f
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
