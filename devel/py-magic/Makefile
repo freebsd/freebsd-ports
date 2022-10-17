@@ -1,5 +1,5 @@
 PORTNAME=	magic
-PORTVERSION=	5.42
+PORTVERSION=	5.43
 CATEGORIES=	devel python
 MASTER_SITES=	https://astron.com/pub/file/ \
 		ftp://ftp.astron.com/pub/file/ \
