@@ -1,7 +1,7 @@
 PORTNAME=	powder-toy
 PORTVERSION=	96.2.350
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,7 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	The-Powder-Toy
 GH_PROJECT=	The-Powder-Toy
 
-USES=		compiler:c++11-lang luajit meson pkgconfig python:build sdl
+USES=		compiler:c++11-lang luajit:luajit-openresty meson pkgconfig \
+		python:build sdl
 USE_SDL=	sdl2
 
 PORTDOCS=	README.md changelog.txt
