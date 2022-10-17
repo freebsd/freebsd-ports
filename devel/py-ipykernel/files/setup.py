@@ -42,6 +42,7 @@ setup(
             'pytest>=6.0',
         ],
     },
+    py_modules=['ipykernel_launcher'],
     packages=[
         'ipykernel',
         'ipykernel.comm',
