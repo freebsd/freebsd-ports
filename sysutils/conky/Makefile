@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -80,18 +80,18 @@ METAR_DESC=		Display METAR weather reports
 METAR_CMAKE_BOOL=	BUILD_WEATHER_METAR
 METAR_IMPLIES=		CURL
 
-MOC_DESC=		Control MOC (Music On Console)
-MOC_CMAKE_BOOL=		BUILD_MOC
-
-MPD_DESC=		Control MPD (Music Player Daemon)
-MPD_CMAKE_BOOL=		BUILD_MPD
-
 MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc \
 			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR}
 MANPAGES_USES=		python:3.7+,build
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS
 MANPAGES_PLIST_FILES=	man/man1/conky.1.gz
+
+MOC_DESC=		Control MOC (Music On Console)
+MOC_CMAKE_BOOL=		BUILD_MOC
+
+MPD_DESC=		Control MPD (Music Player Daemon)
+MPD_CMAKE_BOOL=		BUILD_MPD
 
 NCURSES_DESC=		Use ncurses to draw on terminals
 NCURSES_CMAKE_BOOL=	BUILD_NCURSES
@@ -135,8 +135,6 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src_CMakeLists.txt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^# \(set(RELEASE true\)/\1/' \
-		${WRKSRC}/cmake/Conky.cmake
 	@${REINPLACE_CMD} -e 's,^set(INCLUDE_SEARCH_PATH \(.*\)),set(INCLUDE_SEARCH_PATH \1 ${LUA_INCDIR}),' \
 		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
 .if ${LUA_DEFAULT} == 5.2
