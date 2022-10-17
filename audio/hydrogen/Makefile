@@ -1,6 +1,5 @@
 PORTNAME=	hydrogen
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	audio
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
@@ -18,6 +17,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
 USE_QT=		core gui network widgets xml xmlpatterns buildtools:build \
 		linguisttools:build qmake:build testlib:build
 USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${LOCALBASE}/share/man
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
@@ -71,12 +71,11 @@ RDF_LIB_DEPENDS=	liblrdf.so:textproc/liblrdf
 
 TEST_CMAKE_BOOL=	WANT_CPPUNIT
 TEST_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cppunit.pc:devel/cppunit
+TEST_LDFLAGS=		-lexecinfo
 
 post-patch:
 	@${REINPLACE_CMD} 's|EXISTS(tar|EXISTS(${LOCALBASE}/lib/libtar.so|g' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' \
-		${WRKSRC}/data/i18n/CMakeLists.txt
 
 do-test-TEST-on:
 	cd ${WRKSRC} && ./src/tests/tests
