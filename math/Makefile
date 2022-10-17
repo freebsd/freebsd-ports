@@ -514,6 +514,7 @@
     SUBDIR += ngraph
     SUBDIR += nlopt
     SUBDIR += ntl
+    SUBDIR += ntpoly
     SUBDIR += numdiff
     SUBDIR += obake
     SUBDIR += ocaml-num
