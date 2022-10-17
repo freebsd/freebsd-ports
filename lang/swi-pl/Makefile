@@ -1,6 +1,5 @@
 PORTNAME=	swi-pl
-DISTVERSION=	8.2.3
-PORTREVISION=	3
+DISTVERSION=	8.4.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -11,13 +10,15 @@ WWW=		https://www.swi-prolog.org/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_i386=	fails to link: libswipl.so: undefined reference to __atomic_compare_exchange_8
+BROKEN_i386=	FAILED: man/lib/clpfdlib.tex
 BROKEN_mips=	fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
 BROKEN_mips64=	fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libossp-uuid.so:misc/ossp-uuid \
 		libyaml.so:textproc/libyaml
+
+BUILD_DEPENDS=	/usr/local/lib/qt5/bin/qmake:devel/qt5-qmake
 
 USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig \
 		readline shebangfix ssl xorg
