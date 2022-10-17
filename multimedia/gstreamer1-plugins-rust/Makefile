@@ -448,6 +448,7 @@ DAV1D_MESON_ENABLED=	dav1d
 GTK4_DESC=		${GTK3_DESC:S/3/4/}
 GTK4_LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 GTK4_USE=		GNOME=gtk40
+GTK4_MESON_ENABLED=	gtk4
 
 PANGO_USE=		GNOME=cairo,pango
 PANGO_MESON_ENABLED=	closedcaption
