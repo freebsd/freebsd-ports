@@ -2,9 +2,11 @@ bin/nwgbar
 bin/nwgdmenu
 bin/nwggrid
 bin/nwggrid-server
+%%DATADIR%%/README.md
 %%DATADIR%%/icon-missing.png
 %%DATADIR%%/icon-missing.svg
 %%DATADIR%%/nwgbar/bar.json
 %%DATADIR%%/nwgbar/style.css
 %%DATADIR%%/nwgdmenu/style.css
+%%DATADIR%%/nwggrid/grid.conf
 %%DATADIR%%/nwggrid/style.css

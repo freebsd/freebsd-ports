@@ -1,11 +1,7 @@
 PORTNAME=	nwg-launchers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
-PORTREVISION=	2
+DISTVERSION=	0.7.0
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f123f433ad2d.patch:-p1 # https://github.com/nwg-piotr/nwg-launchers/pull/196
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and other window managers
