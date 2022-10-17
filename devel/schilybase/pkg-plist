@@ -1,4 +1,3 @@
-etc/termcap
 include/scg/aspi-dos.h
 include/scg/aspi-win32.h
 include/scg/scgcmd.h

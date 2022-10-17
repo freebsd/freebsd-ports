@@ -233,6 +233,7 @@
     SUBDIR += szip
     SUBDIR += tar-stream-chunker
     SUBDIR += tardy
+    SUBDIR += tartest
     SUBDIR += thunar-archive-plugin
     SUBDIR += torrentzip
     SUBDIR += ucl

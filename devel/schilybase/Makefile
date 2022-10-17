@@ -38,7 +38,7 @@ COMPONENTS=	conf \
 		libsiconv/tables \
 		libstreamar \
 		man \
-		man/man4
+		man/man5
 
 post-patch-PROFILE-off:
 	@${ECHO_MSG} '=> Patching Makefiles to disable profiled libraries'
@@ -51,6 +51,10 @@ post-build-NLS-on:
 _LANGUAGES=	C af am ar be bg ca cs da de el en es et eu fi fr ga he hi hr \
 		hu hy is it ja kk ko lt lv mn nb nl nn pl pt ro ru se sk sl sr \
 		sv tr uk zh
+
+post-install:
+	# this is just a copy of the FreeBSD termcap file, no need to ship it again.
+	${RM} ${STAGEDIR}${PREFIX}/etc/termcap
 
 post-install-NLS-on:
 	@${ECHO_MSG} '=> installing dummy message catalogues'

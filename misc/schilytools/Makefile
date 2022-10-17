@@ -1,5 +1,5 @@
 PORTNAME=	schilytools
-DISTVERSION=	2
+DISTVERSION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	fuz@fuz.su
@@ -13,14 +13,11 @@ RUN_DEPENDS=	bosh>=2022.08.18.b:shells/bosh \
 		sccs>=2021.05.19:devel/sccs \
 		smake>=2021.05.19:devel/smake \
 		sunpromake>=2021.05.19:devel/sunpromake \
+		tartest>=2022.09.18:archivers/tartest \
 		ved>=2021.05.19:editors/ved \
 		cdrtools>=2021.05.19:sysutils/cdrtools \
 		rscsi>=2021.05.19:net/rscsi
 
 USES=		metaport
-
-OPTIONS_DEFINE=	DEPRECATED
-DEPRECATED_DESC=	include deprecated utilities
-DEPRECATED_RUN_DEPENDS=	man2html:textproc/man2html
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ WWW=		http://schilytools.sourceforge.net/
 
 USES+=		perl5 shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	man2html/man2html cstyle/cstyle.pl
+SHEBANG_FILES=	cstyle/cstyle.pl
 
 # bin/bsh bin/calc bin/copy bin/count bin/fsdiff
 CONFLICTS_INSTALL=	bsh calc deforaos-browser \

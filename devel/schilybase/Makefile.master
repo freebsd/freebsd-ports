@@ -1,5 +1,7 @@
-DISTVERSION=	2022-09-18
-MASTER_SITES=	http://fuz.su/pub/schilytools/
+DISTVERSION=	2022-10-16
+MASTER_SITES=	http://fuz.su/pub/schilytools/ \
+		https://schilytools.pkgsrc.pub/pub/schilytools/ \
+		https://mirrors.dotsrc.org/schilytools/
 DISTNAME=	schily-${DISTVERSION}
 
 MAINTAINER=	fuz@fuz.su

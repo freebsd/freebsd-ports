@@ -6,11 +6,9 @@ WWW=		http://cdrtools.sourceforge.net/private/star.html
 
 PORTDOCS=	README* STARvsGNUTAR
 
-OPTIONS_DEFINE+=DOCS GNUTAR TARTEST
+OPTIONS_DEFINE+=DOCS GNUTAR
 OPTIONS_SUB=	yes
 GNUTAR_DESC=	Install a gnutar binary
-TARTEST_DESC=	Install tartest and test scripts
-TARTEST_VARS=	COMPONENTS+=tartest
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	mt \
@@ -18,5 +16,9 @@ COMPONENTS=	mt \
 		star \
 		star_sym \
 		strar
+
+# these are shipped in archivers/tartest
+post-install:
+	${RM} -r ${STAGEDIR}${DOCSDIR}/testscripts
 
 .include "${MASTERDIR}/Makefile.master"

@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221017:
+  AFFECTS: archivers/star
+  AUTHOR: fernape@FreeBSD.org
+
+  With the update of devel/schilybase to 2022-10-16 a new port archivers/tartest
+  has been splitted off from archivers/star.
+
 20221016:
   AFFECTS: textproc/apache-solr
   AUTHOR: mfechner@FreeBSD.org
