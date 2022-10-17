@@ -7,3 +7,5 @@ SHA256 (fac19c9b5a71.patch) = 054fbe8571ad387375a1f259a86e6d3dfe0e826dce47b17e69
 SIZE (fac19c9b5a71.patch) = 2417
 SHA256 (dfb427987185.patch) = 554f1250e7eb9b67f2c1bebbd8b2cacfe97bd5ad611a48dc2f04cdcdb3f14ce3
 SIZE (dfb427987185.patch) = 1969
+SHA256 (7e70644c4c36.patch) = fd403d77a65ec033f073bb1aab8f3ba44ee39ad82f1e1fd9474fdf24b90ec556
+SIZE (7e70644c4c36.patch) = 2779
