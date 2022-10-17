@@ -8,7 +8,10 @@ GH_TUPLE=	\
 		VictoriaMetrics:metrics:v1.22.2:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
 		VictoriaMetrics:metricsql:v0.45.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		aws:aws-sdk-go-v2:9c92421d2b22:aws_aws_sdk_go_v2_presigned_url \
+		aws:aws-sdk-go-v2:4b3b9174c4fe:aws_aws_sdk_go_v2_accept_encoding \
+		aws:aws-sdk-go-v2:9c92421d2b22:aws_aws_sdk_go_v2_v4a \
+		aws:aws-sdk-go-v2:9fa3861a4fb5:aws_aws_sdk_go_v2_manager \
+		aws:aws-sdk-go-v2:credentials/v1.12.21:aws_aws_sdk_go_v2_credentials \
 		aws:aws-sdk-go-v2:v1.16.16:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go-v2 \
 		aws:smithy-go:v1.13.3:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
