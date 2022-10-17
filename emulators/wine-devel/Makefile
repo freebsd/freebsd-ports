@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	7.17
+DISTVERSION=	7.18
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/7.x/
@@ -125,6 +125,10 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libvulkan.so:graphics/vulkan-loader
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MSTAGING} && ${OSVERSION} < 1300000
+BROKEN=		build failure
+.endif
 
 .if (${LLVM_DEFAULT} == 90 || ${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
 _LLVM_VERSION=	12
