@@ -1,0 +1,15 @@
+Reals is a lightweight Python library for arbitrary precision arithmetic. It
+allows you to compute approximations to an arbitrary degree of precision, and,
+contrary to most other libraries, guarantees that all digits it displays are
+correct. It works by using interval arithmetic and continued fractions. The
+bulk of this code is based on Bill Gosper's notes on continued fractions in
+which he presents algorithms for doing arithmetic on continued fractions.
+
+The reals library is characterized by:
+
+  * Correctness; the reals library uses interval arithmetic to ensure that all
+    the digits are correct.
+  * Calculations are done in a streaming way; the result of previous
+    calculations can be re-used.
+  * Uses no external libraries.
+  * Focus on usability.
