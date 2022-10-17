@@ -1,6 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -112,9 +112,12 @@ USE_GL=		gl glu
 
 CONFLICTS=	vtk6 vtk8
 
-do-install-PYTHON-on: # cmake doesn't install pip's .egg-info: https://gitlab.kitware.com/vtk/vtk/-/issues/18087
+do-install-PYTHON-on:
+	# cmake doesn't install pip's .egg-info: https://gitlab.kitware.com/vtk/vtk/-/issues/18087
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
 	@${INSTALL_DATA} ${WRKDIR}/PKG-INFO ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
+	# workaround for: VTK installs mpi4py which makes it to conflict with the standalone mpi4py package, see https://gitlab.kitware.com/vtk/vtk/-/issues/18691
+	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/mpi4py
 
 post-install: # autoplist: thousands of files, complex dependencies on options
 	@cd ${STAGEDIR}${PREFIX} && \
