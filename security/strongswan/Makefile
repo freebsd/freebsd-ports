@@ -1,6 +1,5 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.6
-PORTREVISION=	2
+DISTVERSION=	5.9.8
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/

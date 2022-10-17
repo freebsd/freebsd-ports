@@ -272,7 +272,6 @@ lib/ipsec/plugins/libstrongswan-x509.so
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-pam.so
 lib/ipsec/plugins/libstrongswan-xcbc.la
 lib/ipsec/plugins/libstrongswan-xcbc.so
-libexec/ipsec/_copyright
 libexec/ipsec/_updown
 libexec/ipsec/charon
 %%LOADTESTER%%libexec/ipsec/load-tester
@@ -283,6 +282,8 @@ libexec/ipsec/stroke
 libexec/ipsec/whitelist
 %%PKI%%man/man1/pki---acert.1.gz
 %%PKI%%man/man1/pki---dn.1.gz
+%%PKI%%man/man1/pki---est.1.gz
+%%PKI%%man/man1/pki---estca.1.gz
 %%PKI%%man/man1/pki---gen.1.gz
 %%PKI%%man/man1/pki---issue.1.gz
 %%PKI%%man/man1/pki---keyid.1.gz
@@ -290,6 +291,8 @@ libexec/ipsec/whitelist
 %%PKI%%man/man1/pki---print.1.gz
 %%PKI%%man/man1/pki---pub.1.gz
 %%PKI%%man/man1/pki---req.1.gz
+%%PKI%%man/man1/pki---scep.1.gz
+%%PKI%%man/man1/pki---scepca.1.gz
 %%PKI%%man/man1/pki---self.1.gz
 %%PKI%%man/man1/pki---signcrl.1.gz
 %%PKI%%man/man1/pki---verify.1.gz
