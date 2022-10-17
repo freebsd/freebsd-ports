@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Seamless interoperability between C++11 and Python (cmake part)
-WWW=		https://github.com/wjakob/pybind11
+WWW=		https://pybind11.readthedocs.io/en/stable/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
