@@ -58,7 +58,6 @@
     SUBDIR += apricots
     SUBDIR += aquaria
     SUBDIR += armagetronad
-    SUBDIR += arttime
     SUBDIR += arx-libertatis
     SUBDIR += ascii-invaders
     SUBDIR += asciiquarium

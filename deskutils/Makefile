@@ -8,6 +8,7 @@
     SUBDIR += alarm-clock-applet
     SUBDIR += anydesk
     SUBDIR += appwrapper
+    SUBDIR += arttime
     SUBDIR += aspostit
     SUBDIR += ausweisapp2
     SUBDIR += autocutsel

@@ -17603,3 +17603,4 @@ devel/py-ipykernel5|devel/py-ipykernel|2022-10-15|ipykernel5 is discontinued, ip
 x11-toolkits/libshumate-shortwave|x11-toolkits/libshumate|2022-10-15|No longer used by audio/shortwave
 misc/orion||2022-10-16|Dead upstream and fails to build with mpv-0.35
 devel/msgpack|devel/msgpack-c|2022-10-16|MsgPack now separates C and C++ versions
+games/arttime|deskutils/arttime|2022-10-18|Moved to a better category

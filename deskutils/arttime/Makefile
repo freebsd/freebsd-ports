@@ -1,8 +1,7 @@
 PORTNAME=	arttime
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
-CATEGORIES=	games
+CATEGORIES=	deskutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bring curated text/ascii art to artless terminals
@@ -10,8 +9,10 @@ WWW=		https://github.com/poetaman/arttime
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	zsh:shells/zsh
-RUN_DEPENDS=	zsh:shells/zsh
+BUILD_DEPENDS=	zsh>=5.8:shells/zsh
+RUN_DEPENDS=	notify-send:devel/libnotify \
+		ogg123:audio/vorbis-tools \
+		zsh>=5.8:shells/zsh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	poetaman
