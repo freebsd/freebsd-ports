@@ -1563,7 +1563,7 @@ reinstall the new ones without using the pkg upgrade facility.
   changed name from postgresql_class to postgresql_login_class.
   rc.subr(8) states that the parameter should be named ${name}_login_class.
 
-20200512:
+20210512:
   AFFECTS: users of sysutils/ansible*
   AUTHOR: 0mp@FreeBSD.org
 
