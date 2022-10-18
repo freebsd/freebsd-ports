@@ -168,7 +168,7 @@ VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
 				libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_OFF=		--disable-vulkan --disable-libplacebo
 
-WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.14:graphics/wayland-protocols \
+WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 				${LOCALBASE}/include/linux/input-event-codes.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
 				libwayland-cursor.so:graphics/wayland \
