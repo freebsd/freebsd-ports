@@ -1,13 +1,11 @@
 PORTNAME=	NTPoly
-PORTVERSION=	2.7.1
+DISTVERSION=	2.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/william-dawson/${PORTNAME}/archive/refs/tags/
-DISTNAME=	${PORTNAME:tl}-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library for computing the functions of sparse matrices
-WWW=		https://github.com/kimwalisch/primecount
+WWW=		https://william-dawson.github.io/NTPoly
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,11 +16,11 @@ TEST_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	william-dawson
+USE_GITHUB=	yes
+GH_ACCOUNT=	william-dawson
+GH_TAGNAME=	${PORTNAME:tl}-${DISTVERSIONPREFIX}${DISTVERSION}
 
 USES=		blaslapack:openblas cmake fortran mpi python
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME:tl}-${DISTVERSIONPREFIX}${DISTVERSION}
 FFLAGS+=	-fopenmp -fallow-argument-mismatch
 CXXFLAGS+=	-fopenmp
 CMAKE_ARGS=	-DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN}
