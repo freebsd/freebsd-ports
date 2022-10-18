@@ -1,0 +1,17 @@
+The DIPlib project contains:
+* DIPlib, a C++ library for quantitative image analysis. It has been in
+  development at Delft University of Technology in The Netherlands since 1995.
+  The 3.0 release of DIPlib represented a complete rewrite in modern C++ of the
+  library infrastructure, with most of the image processing and analysis
+  algorithms ported from the previous version, and some of them improved
+  significantly.
+* DIPimage, a MATLAB toolbox for quantitative image analysis. It has been in
+  development at Delft University of Technology in The Netherlands since 1999.
+* PyDIP, Python bindings to DIPlib. This is currently a thin wrapper that
+  exposes the C++ functionality with little change.
+* DIPviewer, an interactive image display utility. It is usable from C++, Python
+  and MATLAB programs. Within DIPimage this is an optional alternative to the
+  default MATLAB-native interactive display utility.
+* DIPjavaio, an interface to OME Bio-Formats, a Java-based library that reads
+  hundreds of image file formats. This module is usable from C++ and Python
+  (DIPimage interfaces to Bio-Formats natively).

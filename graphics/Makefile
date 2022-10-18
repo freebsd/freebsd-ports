@@ -133,6 +133,7 @@
     SUBDIR += diffpdf
     SUBDIR += digikam
     SUBDIR += dilay
+    SUBDIR += diplib
     SUBDIR += ditaa
     SUBDIR += djview4
     SUBDIR += djvulibre
