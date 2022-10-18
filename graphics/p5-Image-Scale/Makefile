@@ -1,5 +1,5 @@
 PORTNAME=	Image-Scale
-PORTVERSION=	0.12
+DISTVERSION=	0.14
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,5 +16,8 @@ TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 USES=		jpeg perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Image/Scale/Scale.so
 
 .include <bsd.port.mk>
