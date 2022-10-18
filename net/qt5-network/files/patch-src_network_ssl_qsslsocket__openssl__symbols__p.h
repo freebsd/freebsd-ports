@@ -31,7 +31,7 @@
  int q_EVP_PKEY_param_check(EVP_PKEY_CTX *ctx);
 +#endif // OPENSSL_NO_DEPRECATED_3_0
  int q_RSA_bits(RSA *a);
-+#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x03050000fL
++#if !defined(LIBRESSL_VERSION_NUMBER)
  Q_AUTOTEST_EXPORT int q_OPENSSL_sk_num(OPENSSL_STACK *a);
  Q_AUTOTEST_EXPORT void q_OPENSSL_sk_pop_free(OPENSSL_STACK *a, void (*b)(void *));
  Q_AUTOTEST_EXPORT OPENSSL_STACK *q_OPENSSL_sk_new_null();
