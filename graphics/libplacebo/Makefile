@@ -1,10 +1,7 @@
 PORTNAME=	libplacebo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.208.0
+DISTVERSION=	5.229.1
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	449f06985c69.patch:-p1 # https://code.videolan.org/videolan/libplacebo/-/issues/225
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reusable library for GPU-accelerated video/image rendering
@@ -38,7 +35,7 @@ LIBUNWIND_DESC=		Use libunwind for stacktraces
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 LIBUNWIND_MESON_ENABLED=	unwind
 
-OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+OPENGL_GH_TUPLE=	Dav1dde:glad:v2.0.1:glad/3rdparty/glad
 OPENGL_MESON_ENABLED=	opengl
 
 SHADERC_DESC=		libshaderc SPIR-V compiler
@@ -50,7 +47,7 @@ TEST_MESON_TRUE=	tests
 
 VULKAN_DESC=		Vulkan-based renderer
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-			${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=	vulkan
 

@@ -3,3 +3,5 @@ SHA256 (videolan-dav1d-99172b11470776177939c3d2bc366fe8d904eab7_GL0.tar.gz) = 41
 SIZE (videolan-dav1d-99172b11470776177939c3d2bc366fe8d904eab7_GL0.tar.gz) = 1375242
 SHA256 (videolan-dav1d-test-data-0214ee7342c646b238f98267adf8503c56d9df53_GL0.tar.gz) = 1399a5a8ddfc8b22c320e30d731c82fce6d962fa28cd16236a742903c969ebe7
 SIZE (videolan-dav1d-test-data-0214ee7342c646b238f98267adf8503c56d9df53_GL0.tar.gz) = 50909709
+SHA256 (5e5b7a04fde7.patch) = 4c9967dc0729631e7a0c8f29074a487c7d322bf664bfefb0d6d93923fdf9bf1c
+SIZE (5e5b7a04fde7.patch) = 8743

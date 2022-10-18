@@ -1,7 +1,7 @@
 include/libplacebo/colorspace.h
 include/libplacebo/common.h
 include/libplacebo/config.h
-include/libplacebo/context.h
+include/libplacebo/d3d11.h
 include/libplacebo/dispatch.h
 include/libplacebo/dither.h
 include/libplacebo/dummy.h
@@ -13,6 +13,8 @@ include/libplacebo/renderer.h
 include/libplacebo/shaders.h
 include/libplacebo/shaders/colorspace.h
 include/libplacebo/shaders/custom.h
+include/libplacebo/shaders/deinterlacing.h
+include/libplacebo/shaders/dithering.h
 include/libplacebo/shaders/film_grain.h
 %%LCMS2%%include/libplacebo/shaders/icc.h
 include/libplacebo/shaders/lut.h
@@ -27,5 +29,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 %%VULKAN%%include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.208
+lib/libplacebo.so.229
 libdata/pkgconfig/libplacebo.pc
