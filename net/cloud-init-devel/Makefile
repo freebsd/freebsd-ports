@@ -1,6 +1,6 @@
 PORTNAME=	cloud-init
-DISTVERSION=	22.3-74
-DISTVERSIONSUFFIX=	-ga5c9e4ad
+DISTVERSION=	22.3-79
+DISTVERSIONSUFFIX=	-g9a2eb975
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -57,7 +57,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cloudinit/settings.py
 	${RM} ${WRKSRC}/config/cloud.cfg.d/99_freebsd.cfg.orig
 
-post-build:
-	${MV} ${WRKSRC}/config/cloud.cfg.d/05_logging.cfg ${WRKSRC}/config/cloud.cfg.d/05_logging.cfg.sample
+post-install:
+	${MV} ${STAGEDIR}${ETCDIR}/cloud.cfg ${STAGEDIR}${ETCDIR}/cloud.cfg.sample
+	${MV} ${STAGEDIR}${ETCDIR}/cloud.cfg.d/05_logging.cfg ${STAGEDIR}${ETCDIR}/cloud.cfg.d/05_logging.cfg.sample
+	${MV} ${STAGEDIR}${ETCDIR}/cloud.cfg.d/99_freebsd.cfg ${STAGEDIR}${ETCDIR}/cloud.cfg.d/99_freebsd.cfg.sample
+	${REINPLACE_CMD} 's|^.*\.cfg$$|@sample &.sample|' ${_PYTHONPKGLIST}
 
 .include <bsd.port.mk>
