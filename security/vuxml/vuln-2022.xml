@@ -1,3 +1,29 @@
+  <vuln vid="7392e1e3-4eb9-11ed-856e-d4c9ef517024">
+    <topic>OpenSSL -- Potential NULL encryption in NID_undef with Custom Cipher</topic>
+    <affects>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="://www.openssl.org/news/secadv/20221011.txt">
+	  <p>Using a Custom Cipher with NID_undef may lead to NULL encryption (low)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3358</cvename>
+      <url>https://www.openssl.org/news/secadv/20221011.txtE</url>
+    </references>
+    <dates>
+      <discovery>2022-10-11</discovery>
+      <entry>2022-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d713d709-4cc9-11ed-a621-0800277bb8a8">
     <topic>gitea -- multiple issues</topic>
     <affects>
