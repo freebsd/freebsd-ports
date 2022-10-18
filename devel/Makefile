@@ -5618,6 +5618,7 @@
     SUBDIR += py-zope.traversing
     SUBDIR += py3c
     SUBDIR += pybind11
+    SUBDIR += pybind11-json
     SUBDIR += pybugz
     SUBDIR += pycanberra
     SUBDIR += pycharm-ce
