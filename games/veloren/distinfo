@@ -1,4 +1,4 @@
-TIMESTAMP = 1660732539
+TIMESTAMP = 1666093812
 SHA256 (rust/crates/ab_glyph-0.2.15.crate) = 24606928a235e73cdef55a0c909719cadd72fce573e5713d58cb2952d8f5794c
 SIZE (rust/crates/ab_glyph-0.2.15.crate) = 15906
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.5.crate) = a13739d7177fbd22bb0ed28badfff9f372f8bef46c863db4e1c6248f6b223b6e
@@ -1407,8 +1407,8 @@ SHA256 (gfx-rs-naga-gfx-25_GH0.tar.gz) = cfbb7b2b3d2b06770278e599b1af9bbf82d6193
 SIZE (gfx-rs-naga-gfx-25_GH0.tar.gz) = 263802
 SHA256 (gfx-rs-gfx-27a1dae3796d33d23812f2bb8c7e3b5aea18b521_GH0.tar.gz) = 0e3578dae85a52adba9cb75e583d4a73c1f50491d3021c80610e2cebca223191
 SIZE (gfx-rs-gfx-27a1dae3796d33d23812f2bb8c7e3b5aea18b521_GH0.tar.gz) = 751311
-SHA256 (gfx-rs-wgpu-a92b8549a8e2cb9dac781bafc5ed32828f3caf46_GH0.tar.gz) = c33f2d7640bdb420b3cf104f873649e83888e2a3c7d7f2dd1a4be29510861b8c
-SIZE (gfx-rs-wgpu-a92b8549a8e2cb9dac781bafc5ed32828f3caf46_GH0.tar.gz) = 4008917
+SHA256 (gfx-rs-wgpu-179ea209374a92837cde252f1d9ee01f628cae08_GH0.tar.gz) = 1c8347a91ee9767812db6d5a36800afe45dc2ee6b125afca39b0139ad90ef9d7
+SIZE (gfx-rs-wgpu-179ea209374a92837cde252f1d9ee01f628cae08_GH0.tar.gz) = 4008990
 SHA256 (veloren-refinery-8ecf4b4772d791e6c8c0a3f9b66a7530fad1af3e_GL0.tar.gz) = 5b66f3a324504b64edf02806953fa5228578b5ab70837fba10736dab2ac60df0
 SIZE (veloren-refinery-8ecf4b4772d791e6c8c0a3f9b66a7530fad1af3e_GL0.tar.gz) = 38520
 SHA256 (xMAC94x-portpicker-rs-df6b37872f3586ac3b21d08b56c8ec7cd92fb172_GH0.tar.gz) = 29252101e189bbe067f0bacba18181afc69a2fb9bc031bbba8dcbade45dec02f
