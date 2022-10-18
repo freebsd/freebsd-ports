@@ -1,3 +1,65 @@
+  <vuln vid="2523bc76-4f01-11ed-929b-002590f2a714">
+    <topic>git -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.38.1</lt></range>
+      </package>
+      <package>
+	<name>git-lite</name>
+	<range><lt>2.38.1</lt></range>
+      </package>
+      <package>
+	<name>git-tiny</name>
+	<range><lt>2.38.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p></p>
+	<blockquote cite="https://lore.kernel.org/git/xmqq4jw1uku5.fsf@gitster.g/T/#u">
+	  <h1>This release contains 2 security fixes:</h1>
+	  <h2>CVE-2022-39253</h2>
+	  <p>
+	   When relying on the `--local` clone optimization, Git dereferences
+	   symbolic links in the source repository before creating hardlinks
+	   (or copies) of the dereferenced link in the destination repository.
+	   This can lead to surprising behavior where arbitrary files are
+	   present in a repository's `$GIT_DIR` when cloning from a malicious
+	   repository.
+
+	   Git will no longer dereference symbolic links via the `--local`
+	   clone mechanism, and will instead refuse to clone repositories that
+	   have symbolic links present in the `$GIT_DIR/objects` directory.
+
+	   Additionally, the value of `protocol.file.allow` is changed to be
+	   "user" by default.
+	  </p>
+	  <h2>CVE-2022-39260</h2>
+	  <p>
+	   An overly-long command string given to `git shell` can result in
+	   overflow in `split_cmdline()`, leading to arbitrary heap writes and
+	   remote code execution when `git shell` is exposed and the directory
+	   `$HOME/git-shell-commands` exists.
+
+	   `git shell` is taught to refuse interactive commands that are
+	   longer than 4MiB in size. `split_cmdline()` is hardened to reject
+	   inputs larger than 2GiB.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39253</cvename>
+      <cvename>CVE-2022-39260</cvename>
+      <url>https://lore.kernel.org/git/xmqq4jw1uku5.fsf@gitster.g/T/#u</url>
+    </references>
+    <dates>
+      <discovery>2022-06-09</discovery>
+      <entry>2022-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7392e1e3-4eb9-11ed-856e-d4c9ef517024">
     <topic>OpenSSL -- Potential NULL encryption in NID_undef with Custom Cipher</topic>
     <affects>
