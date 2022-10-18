@@ -5154,6 +5154,7 @@ llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindOCaml.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindSphinx.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindTerminfo.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindZ3.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/Findzstd.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/GenerateVersionFromVCS.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/GetErrcMessages.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/GetLibraryName.cmake
