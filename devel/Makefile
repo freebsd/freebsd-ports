@@ -5705,6 +5705,7 @@
     SUBDIR += rcs57
     SUBDIR += re2
     SUBDIR += re2c
+    SUBDIR += readerwriterqueue
     SUBDIR += readline
     SUBDIR += rebar
     SUBDIR += rebar3
