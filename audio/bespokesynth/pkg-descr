@@ -1,0 +1,6 @@
+Bespoke is a Digital Audio Workstation (DAW).
+
+Bespoke's core design is to break everything into separate modules that can be
+patched together in a custom layout, much like a hardware modular. Bespoke is
+designed to be highly customizable, with the idea that any of the custom layouts
+that you create will be "bespoke" to you as well.

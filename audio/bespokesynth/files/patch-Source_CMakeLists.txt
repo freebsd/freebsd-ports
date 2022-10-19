@@ -1,0 +1,16 @@
+- workaround for https://github.com/BespokeSynth/BespokeSynth/issues/941
+- remove resource files installed into the build directory
+
+--- Source/CMakeLists.txt.orig	2022-10-19 05:23:08 UTC
++++ Source/CMakeLists.txt
+@@ -848,8 +848,8 @@ target_link_libraries(BespokeSynth PRIVATE
+     $<$<BOOL:${MINGW}>:dbghelp>
+     )
+ 
+-bespoke_copy_resource_dir(BespokeSynth)
+-bespoke_make_portable(BespokeSynth)
++#bespoke_copy_resource_dir(BespokeSynth)
++#bespoke_make_portable(BespokeSynth)
+ 
+ # Rules to do some installing and packaging which we will have to refactor  but
+ # for now gets a nightly going

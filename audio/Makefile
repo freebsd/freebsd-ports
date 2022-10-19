@@ -59,6 +59,7 @@
     SUBDIR += bchoppr-lv2
     SUBDIR += beep
     SUBDIR += beets
+    SUBDIR += bespokesynth
     SUBDIR += bharvestr-lv2
     SUBDIR += bjumblr-lv2
     SUBDIR += bliss

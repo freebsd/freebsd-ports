@@ -1,0 +1,198 @@
+bin/BespokeSynth
+%%DATADIR%%/resource/frabk.ttf
+%%DATADIR%%/resource/frabk_m.ttf
+%%DATADIR%%/resource/help.txt
+%%DATADIR%%/resource/iosevka-type-light.ttf
+%%DATADIR%%/resource/noise.jpg
+%%DATADIR%%/resource/python_stubs/bespoke/__init__.pyi
+%%DATADIR%%/resource/python_stubs/drumplayer/__init__.pyi
+%%DATADIR%%/resource/python_stubs/drumsequencer/__init__.pyi
+%%DATADIR%%/resource/python_stubs/envelope/__init__.pyi
+%%DATADIR%%/resource/python_stubs/grid/__init__.pyi
+%%DATADIR%%/resource/python_stubs/linnstrument/__init__.pyi
+%%DATADIR%%/resource/python_stubs/me/__init__.pyi
+%%DATADIR%%/resource/python_stubs/midicontroller/__init__.pyi
+%%DATADIR%%/resource/python_stubs/module/__init__.pyi
+%%DATADIR%%/resource/python_stubs/notecanvas/__init__.pyi
+%%DATADIR%%/resource/python_stubs/notesequencer/__init__.pyi
+%%DATADIR%%/resource/python_stubs/osccontroller/__init__.pyi
+%%DATADIR%%/resource/python_stubs/oscoutput/__init__.pyi
+%%DATADIR%%/resource/python_stubs/sampleplayer/__init__.pyi
+%%DATADIR%%/resource/python_stubs/vstplugin/__init__.pyi
+%%DATADIR%%/resource/scripting_reference.txt
+%%DATADIR%%/resource/tooltips_deu.txt
+%%DATADIR%%/resource/tooltips_eng.txt
+%%DATADIR%%/resource/tooltips_esp.txt
+%%DATADIR%%/resource/tooltips_ru.txt
+%%DATADIR%%/resource/tooltips_tr.txt
+%%DATADIR%%/resource/userdata_original/controllers/APC Mini.json
+%%DATADIR%%/resource/userdata_original/controllers/Ableton Push 2 Live Port.json
+%%DATADIR%%/resource/userdata_original/controllers/Akai MIDImix.json
+%%DATADIR%%/resource/userdata_original/controllers/Akai MPD232 - Generic Preset.json
+%%DATADIR%%/resource/userdata_original/controllers/Alesis VMini.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia BeatStep.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia MiniLab mkII MIDI 1.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia MiniLab mkII MIDI 1_PADS.json
+%%DATADIR%%/resource/userdata_original/controllers/Axiom AIR Mini 32 MIDI In.json
+%%DATADIR%%/resource/userdata_original/controllers/BCF2000.json
+%%DATADIR%%/resource/userdata_original/controllers/CMD LC-1.json
+%%DATADIR%%/resource/userdata_original/controllers/FCB1010_1.json
+%%DATADIR%%/resource/userdata_original/controllers/FCB1010_4.json
+%%DATADIR%%/resource/userdata_original/controllers/FCB1010_9.json
+%%DATADIR%%/resource/userdata_original/controllers/Generic 4x4.json
+%%DATADIR%%/resource/userdata_original/controllers/Launch Control.json
+%%DATADIR%%/resource/userdata_original/controllers/Launchpad Mini.json
+%%DATADIR%%/resource/userdata_original/controllers/Launchpad S.json
+%%DATADIR%%/resource/userdata_original/controllers/Launchpad.json
+%%DATADIR%%/resource/userdata_original/controllers/Lightpad BLOCK.json
+%%DATADIR%%/resource/userdata_original/controllers/LinnStrument MIDI.json
+%%DATADIR%%/resource/userdata_original/controllers/MPD218 Port A.json
+%%DATADIR%%/resource/userdata_original/controllers/Maschine Jam.json
+%%DATADIR%%/resource/userdata_original/controllers/Maschine Mikro MK2 In.json
+%%DATADIR%%/resource/userdata_original/controllers/Midi Fighter Twister.json
+%%DATADIR%%/resource/userdata_original/controllers/PANORAMA P4.json
+%%DATADIR%%/resource/userdata_original/controllers/QUNEO.json
+%%DATADIR%%/resource/userdata_original/controllers/SL MkII MIDI 1.json
+%%DATADIR%%/resource/userdata_original/controllers/Seaboard RISE.json
+%%DATADIR%%/resource/userdata_original/controllers/TB-3 MIDI 1.json
+%%DATADIR%%/resource/userdata_original/controllers/TB-3 MIDI 2.json
+%%DATADIR%%/resource/userdata_original/controllers/Traktor Kontrol F1 - 1.json
+%%DATADIR%%/resource/userdata_original/controllers/VMeter 1.30 A.json
+%%DATADIR%%/resource/userdata_original/controllers/monome.json
+%%DATADIR%%/resource/userdata_original/controllers/monome128split.json
+%%DATADIR%%/resource/userdata_original/controllers/monome64.json
+%%DATADIR%%/resource/userdata_original/controllers/nanoKONTROL2 SLIDERKNOB.json
+%%DATADIR%%/resource/userdata_original/controllers/nanoKONTROL2.json
+%%DATADIR%%/resource/userdata_original/controllers/nanoPAD2 PAD.json
+%%DATADIR%%/resource/userdata_original/controllers/nanoPAD2.json
+%%DATADIR%%/resource/userdata_original/controllers/osccontroller.json
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [cadet].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [congratulations].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [luger].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [money].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [rico].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [savage].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [swag].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Clap/Clap [team].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [808 bill].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [A].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [crowd].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [flex].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [glock].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [horse].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [leon].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [lighter].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [nextel].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [signal].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [staple].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [track].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/FX/FX [vitas].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [brutal].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [c4].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [cardiak].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [copter].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [death].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [digital].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [dist].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [finesse].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [hit 1].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [laura].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [legend].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [love].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [meal].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [pump].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [rockstar].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatClosed/HH [short].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [backwoods].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [cargo].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [drug].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [flang].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [metro].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [pack].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [retro].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [weather].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/HatOpen/OH [wrist].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [argo].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [deadline].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [finger].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [haley].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [killa].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [mango].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [maze].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [mind].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [moon].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [racg].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [rack].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [snake].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Kick/Kick [zzz].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [classic].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [dash].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [dragon].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [gang].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [gangsta].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [intuition].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [thot].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Perc/Perc [z].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [antidote].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [boomin].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [bwz].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [chop].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [cobra].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [dirty].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [fast].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [fat].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [keke].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [london].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [mob].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [more].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [mozart].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [origins].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [pf].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [roll].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [saviour].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [shorty].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [vybe].wav
+%%DATADIR%%/resource/userdata_original/drums/808kit/Snare/Snare [zip].wav
+%%DATADIR%%/resource/userdata_original/drums/drums.json
+%%DATADIR%%/resource/userdata_original/layouts/blank.json
+%%DATADIR%%/resource/userdata_original/prefabs/mixer.pfb
+%%DATADIR%%/resource/userdata_original/prefabs/multibandcompressor.pfb
+%%DATADIR%%/resource/userdata_original/prefabs/randompan.pfb
+%%DATADIR%%/resource/userdata_original/savestate/example__arpeggiation.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__dj_turntables.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__drumsynth_chance_sequence.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__feedback.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__feedback_distortion_pluck_bass_echo.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__looper_recorder.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__scripting.bsk
+%%DATADIR%%/resource/userdata_original/savestate/example__sequencing_sequencers.bsk
+%%DATADIR%%/resource/userdata_original/scales.json
+%%DATADIR%%/resource/userdata_original/scripts/arpeggiate_input.py
+%%DATADIR%%/resource/userdata_original/scripts/chord_mutation.py
+%%DATADIR%%/resource/userdata_original/scripts/chord_tools.py
+%%DATADIR%%/resource/userdata_original/scripts/chordprogression.py
+%%DATADIR%%/resource/userdata_original/scripts/clappingmusic_hats.py
+%%DATADIR%%/resource/userdata_original/scripts/dozenal.py
+%%DATADIR%%/resource/userdata_original/scripts/drum_mutate.py
+%%DATADIR%%/resource/userdata_original/scripts/drum_patternlist.py
+%%DATADIR%%/resource/userdata_original/scripts/drumplayerrandomizer.py
+%%DATADIR%%/resource/userdata_original/scripts/drumseq_randomize.py
+%%DATADIR%%/resource/userdata_original/scripts/drumsynth_randomize.py
+%%DATADIR%%/resource/userdata_original/scripts/echo.py
+%%DATADIR%%/resource/userdata_original/scripts/euclid.py
+%%DATADIR%%/resource/userdata_original/scripts/midicontroller_input.py
+%%DATADIR%%/resource/userdata_original/scripts/modulecreation.py
+%%DATADIR%%/resource/userdata_original/scripts/nanokontrol_to_m185.py
+%%DATADIR%%/resource/userdata_original/scripts/note_echo.py
+%%DATADIR%%/resource/userdata_original/scripts/passing_tones.py
+%%DATADIR%%/resource/userdata_original/scripts/randomcanvas.py
+%%DATADIR%%/resource/userdata_original/scripts/sampleplayer_chop.py
+%%DATADIR%%/resource/userdata_original/scripts/sampleplayer_to_drumplayer.py
+%%DATADIR%%/resource/userdata_original/scripts/schedule_sequence.py
+%%DATADIR%%/resource/userdata_original/scripts/tension_layers.py
+%%DATADIR%%/resource/userdata_original/scripts/transcribe_to_canvas.py
+%%DATADIR%%/resource/userdata_original/scripts/walk.py
+%%DATADIR%%/resource/userdata_original/scriptstyles.json
+%%DATADIR%%/resource/userdata_original/userdata_version.txt
+share/applications/BespokeSynth.desktop
+share/icons/hicolor/512x512/apps/bespoke_icon.png
