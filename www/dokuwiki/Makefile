@@ -3,6 +3,7 @@ PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.dokuwiki.org/src/dokuwiki/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${DIST_VER}
 
 MAINTAINER=	delphij@FreeBSD.org
