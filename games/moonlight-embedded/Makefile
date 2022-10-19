@@ -1,5 +1,5 @@
 PORTNAME=	moonlight-embedded
-DISTVERSION=	2.5.2
+DISTVERSION=	2.5.3
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/irtimmer/moonlight-embedded/releases/download/v${DISTVERSION}/
 
@@ -11,7 +11,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
+		libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libenet.so:net/enet \
 		libexpat.so:textproc/expat2 \
@@ -34,10 +35,9 @@ post-patch:
 		-e '/libpulse-simple/d' \
 		-e '/libcec/d' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/avahi-client/d' -e 's@SHARED@STATIC@' \
+	@${REINPLACE_CMD} -e 's@SHARED@STATIC@' \
 		-e 's@OpenSSL 1.0.2@OpenSSL@' -e '/^install(/d' \
 		${WRKSRC}/libgamestream/CMakeLists.txt
-	@${RM} ${WRKSRC}/libgamestream/discover.c
 	@${REINPLACE_CMD} -e 's@/etc/moonlight/moonlight.conf@${PREFIX}/etc/moonlight.conf@' \
 		-e 's@moonligt@moonlight@g' \
 		${WRKSRC}/docs/README.pod
