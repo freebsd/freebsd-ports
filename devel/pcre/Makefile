@@ -1,6 +1,6 @@
 PORTNAME=	pcre
 PORTVERSION=	8.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.pcre.org/pub/pcre/ \
 		SF
@@ -31,15 +31,22 @@ TEST_TARGET=	check
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS MAN3 STACK_RECURSION
+OPTIONS_DEFINE=		DOCS JIT MAN3 STACK_RECURSION
 OPTIONS_DEFAULT=	MAN3 STACK_RECURSION
-OPTIONS_SUB=		yes
+OPTIONS_DEFAULT_aarch64+=	JIT
+OPTIONS_DEFAULT_amd64+=	JIT
+OPTIONS_DEFAULT_i386+=	JIT
+OPTIONS_DEFAULT_mips+=	JIT
 
 OPTIONS_RADIO=		CLI
 OPTIONS_RADIO_CLI=	LIBEDIT READLINE
+OPTIONS_SUB=		yes
 
+JIT_DESC=		Use the JIT compiler (not available on all platforms)
 MAN3_DESC=		Install API manpages (section 3)
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
+
+JIT_CONFIGURE_ENABLE=	jit
 
 LIBEDIT_USES=			libedit
 LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
@@ -82,12 +89,6 @@ CONFIGURE_ARGS+=	--with-parens-nest-limit=${WITH_PARENS_NEST_LIMIT}
 # when the 8-bit library is called via the POSIX interface (default: 10):
 .if defined(WITH_POSIX_MALLOC_THRESHOLD)
 CONFIGURE_ARGS+=	--with-posix-malloc-threshold=${WITH_POSIX_MALLOC_THRESHOLD}
-.endif
-
-.if ${ARCH} != "sparc64" && empty(ARCH:Mmips64*) && empty(ARCH:Mriscv64*)
-CONFIGURE_ARGS+=	--enable-jit
-.else
-CONFIGURE_ARGS+=	--disable-jit
 .endif
 
 post-patch:
