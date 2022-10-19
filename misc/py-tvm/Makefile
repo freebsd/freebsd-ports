@@ -1,6 +1,6 @@
 PORTNAME=	tvm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.0
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils noegginfo
+USE_PYTHON=	distutils noegginfo pytest # tests fail, see https://github.com/apache/tvm/issues/13132
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
@@ -33,7 +33,11 @@ GH_TUPLE=	dmlc:dlpack:ddeb264:dlpack/3rdparty/dlpack \
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
 
+LLVM_VERSION=	${LLVM_DEFAULT} # same as in misc/tvm
+RUN_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+
 MAKE_ENV+=	FREEBSD_LIBRARY_PATH=${LOCALBASE}/lib
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 BINARY_ALIAS=	git=false
 

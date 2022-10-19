@@ -24,9 +24,11 @@ include/tvm/ir/env_func.h
 include/tvm/ir/error.h
 include/tvm/ir/expr.h
 include/tvm/ir/function.h
+include/tvm/ir/global_var_supply.h
 include/tvm/ir/instrument.h
 include/tvm/ir/memory_pools.h
 include/tvm/ir/module.h
+include/tvm/ir/name_supply.h
 include/tvm/ir/op.h
 include/tvm/ir/span.h
 include/tvm/ir/tensor_type.h
@@ -34,7 +36,6 @@ include/tvm/ir/transform.h
 include/tvm/ir/type.h
 include/tvm/ir/type_functor.h
 include/tvm/ir/type_relation.h
-include/tvm/meta_schedule/apply_history_best.h
 include/tvm/meta_schedule/arg_info.h
 include/tvm/meta_schedule/builder.h
 include/tvm/meta_schedule/cost_model.h
@@ -55,6 +56,7 @@ include/tvm/meta_schedule/tune_context.h
 include/tvm/node/attr_registry_map.h
 include/tvm/node/functor.h
 include/tvm/node/node.h
+include/tvm/node/object_path.h
 include/tvm/node/reflection.h
 include/tvm/node/repr_printer.h
 include/tvm/node/serialization.h
@@ -133,6 +135,7 @@ include/tvm/runtime/data_type.h
 include/tvm/runtime/debug.h
 include/tvm/runtime/device_api.h
 include/tvm/runtime/executor_info.h
+include/tvm/runtime/hexagon/ops/conv2d.h
 include/tvm/runtime/logging.h
 include/tvm/runtime/memory.h
 include/tvm/runtime/metadata.h
@@ -151,6 +154,19 @@ include/tvm/runtime/vm/bytecode.h
 include/tvm/runtime/vm/executable.h
 include/tvm/runtime/vm/memory_manager.h
 include/tvm/runtime/vm/vm.h
+include/tvm/script/ir_builder/base.h
+include/tvm/script/ir_builder/ir/frame.h
+include/tvm/script/ir_builder/ir/ir.h
+include/tvm/script/ir_builder/tir/frame.h
+include/tvm/script/ir_builder/tir/ir.h
+include/tvm/script/printer.h
+include/tvm/script/printer/doc.h
+include/tvm/script/printer/doc_printer.h
+include/tvm/script/printer/frame.h
+include/tvm/script/printer/ir_docsifier.h
+include/tvm/script/printer/traced_object.h
+include/tvm/script/printer/traced_object_functor.h
+include/tvm/script/printer/var_table.h
 include/tvm/support/parallel_for.h
 include/tvm/support/random_engine.h
 include/tvm/support/span.h
