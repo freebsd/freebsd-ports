@@ -1,3 +1,3 @@
-TIMESTAMP = 1651791038
-SHA256 (octave-forge/zeromq-1.5.4.tar.gz) = c46a72fe0117b13a9f24fd48ffbbce65422fcb80b95ce09b78f1d0b086a9ded4
-SIZE (octave-forge/zeromq-1.5.4.tar.gz) = 446880
+TIMESTAMP = 1666203266
+SHA256 (octave-forge/zeromq-1.5.5.tar.gz) = 300644a5b56eada815b97acc27cab9fe3539713721a2c02dac047a1252f07ecb
+SIZE (octave-forge/zeromq-1.5.5.tar.gz) = 410875
