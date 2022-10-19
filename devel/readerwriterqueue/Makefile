@@ -23,4 +23,9 @@ PLIST_FILES=	include/readerwriterqueue/LICENSE.md \
 		include/readerwriterqueue/readerwritercircularbuffer.h \
 		include/readerwriterqueue/readerwriterqueue.h
 
+BINARY_ALIAS=	g++=${CXX}
+
+do-test:
+	@cd ${WRKSRC}/tests/unittests && ${SETENV} ${MAKE_ENV} ${GMAKE} run
+
 .include <bsd.port.mk>
