@@ -24,6 +24,9 @@ include/GL/internal/dri_interface.h
 %%PLATFORM_X11%%%%R600_GDRIVER%%lib/libXvMCr600.so.1
 %%PLATFORM_X11%%%%R600_GDRIVER%%lib/libXvMCr600.so.1.0
 %%PLATFORM_X11%%%%R600_GDRIVER%%lib/libXvMCr600.so.1.0.0
+@comment lib/libEGL.so
+@comment lib/libEGL.so.1
+@comment lib/libEGL.so.1.0.0
 @comment lib/libgbm.so
 @comment lib/libgbm.so.1
 @comment lib/libgbm.so.1.0.0
