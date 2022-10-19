@@ -60,8 +60,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html/fonts/remixicon.ttf
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html/fonts/remixicon.woff
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html/fonts/remixicon.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_items-2fa61b8e94.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-38ba741aea.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_items-afd8693a5f.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-763f886d9a.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/DynamicSupervisor.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.EmptyError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.html
@@ -168,7 +168,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html/fonts/remixicon.ttf
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html/fonts/remixicon.woff
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html/fonts/remixicon.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_items-d917f5adba.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_items-a7bf1ea3d3.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-db1580406f.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Assertions.html
@@ -237,7 +237,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/html/fonts/remixicon.ttf
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/html/fonts/remixicon.woff
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/html/fonts/remixicon.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_items-0d3ea41086.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_items-ae797aa8f9.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-dcd3853294.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Config.html
