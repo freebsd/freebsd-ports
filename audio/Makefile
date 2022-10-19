@@ -692,6 +692,7 @@
     SUBDIR += rnnoise
     SUBDIR += rnnoise-nu
     SUBDIR += rosegarden
+    SUBDIR += rsgain
     SUBDIR += rsynth
     SUBDIR += rtaudio
     SUBDIR += rtmidi
