@@ -1,6 +1,6 @@
 PORTNAME=	git
 DISTVERSION=	2.38.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -26,6 +26,8 @@ WWW=		https://git-scm.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 SUBPORT?=	core
 
@@ -79,13 +81,13 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		templates/hooks--fsmonitor-watchman.sample
 TEST_TARGET=	test
 
-CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
+CONFIGURE_ARGS=	--with-libpcre2 \
+		--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 .if ${SUBPORT} == core
 
-OPTIONS_DEFINE=	CONTRIB CURL GITWEB HTMLDOCS ICONV NLS PCRE2 PERL SEND_EMAIL \
-		SUBTREE
-OPTIONS_DEFAULT=CONTRIB CURL GITWEB ICONV PCRE2 PERL SEND_EMAIL SUBTREE
+OPTIONS_DEFINE=	CONTRIB CURL GITWEB HTMLDOCS ICONV NLS PERL SEND_EMAIL SUBTREE
+OPTIONS_DEFAULT=CONTRIB CURL GITWEB ICONV PERL SEND_EMAIL SUBTREE
 
 . if ${FLAVOR:U} == lite
 OPTIONS_EXCLUDE+=	GITWEB CONTRIB PERL
@@ -104,7 +106,6 @@ CONTRIB_DESC=	Install contributed scripts
 CURL_DESC=	Install curl support (provides HTTPS transport)
 GITWEB_DESC=	Install gitweb
 HTMLDOCS_DESC=	Install additional documentation
-PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 SUBTREE_DESC=	Install git-subtree
 
@@ -120,9 +121,6 @@ PERL_MAKE_ARGS_OFF=	NO_PERL=1
 GITWEB_IMPLIES=		PERL
 GITWEB_RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI
 GITWEB_MAKE_ARGS_OFF=	NO_GITWEB=1
-
-PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
-PCRE2_CONFIGURE_WITH=	libpcre
 
 SEND_EMAIL_IMPLIES=	PERL
 SEND_EMAIL_RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
