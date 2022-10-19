@@ -7,6 +7,6 @@ lib/cmake/libavif/libavif-config.cmake
 %%PIXBUF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-avif.so
 lib/libavif.so
 lib/libavif.so.15
-lib/libavif.so.15.0.0
+lib/libavif.so.15.0.1
 libdata/pkgconfig/libavif.pc
 %%PIXBUF%%share/thumbnailers/avif.thumbnailer
