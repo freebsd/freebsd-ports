@@ -1,12 +1,11 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-288
-DISTVERSIONSUFFIX=	-ge37f18ee9
+DISTVERSION=	21.0.99.1-292
+DISTVERSIONSUFFIX=	-g395c25f18
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	38be22990fbf.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/960
 PATCHFILES+=	537acb3eb02f.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	9e1ea1442d7f.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	74813b4c09ca.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
