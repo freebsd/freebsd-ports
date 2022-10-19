@@ -4,6 +4,7 @@ include/EGL/eglmesaext.h
 @comment include/GL/internal/dri_interface.h
 include/gbm.h
 @comment lib/dri/radeon_dri.so
+@comment lib/dri/r300_dri.so
 lib/libEGL_mesa.so
 lib/libEGL_mesa.so.0
 lib/libEGL_mesa.so.0.0.0
