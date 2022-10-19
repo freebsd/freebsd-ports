@@ -51,6 +51,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h
 	@${REINPLACE_CMD} -e '/^host_cpu=/s|$$| ; case $$host_cpu in\
 		amd64) host_cpu=x86_64 ;; esac|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,^#ifdef __linux,#ifndef __APPLE,' \
+		${WRKSRC}/DES_bs_b.c
 
 do-install:
 .for b in ${BINARIES}
