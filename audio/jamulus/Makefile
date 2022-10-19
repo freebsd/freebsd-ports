@@ -1,6 +1,6 @@
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_9_0
+DISTVERSION=	3_9_1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +29,9 @@ USE_QT+=	gui widgets
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/applications/${PORTNAME}-server.desktop \
+		share/icons/hicolor/512x512/apps/io.${PORTNAME}.${PORTNAME}.png \
+		share/icons/hicolor/scalable/apps/io.${PORTNAME}.${PORTNAME}.svg \
+		share/icons/hicolor/scalable/apps/io.${PORTNAME}.${PORTNAME}server.svg \
 		share/man/man1/Jamulus.1.gz \
 		share/pixmaps/${PORTNAME}.png \
 		share/pixmaps/${PORTNAME}-server.png
@@ -50,8 +53,7 @@ PORTSCOUT=	limit:^r\d+_ # prevent malformatted tags, like 'latest'
 .if ${FLAVOR:U} == desktop
 post-install:
 	# workaround for https://gitlab.xfce.org/xfce/xfdesktop/-/issues/131
-	${MV} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/jamulus.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${RM} -r ${STAGEDIR}${PREFIX}/share/icons
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/io.jamulus.jamulus.png ${STAGEDIR}${PREFIX}/share/pixmaps/jamulus.png
 	# add Jamulus Server menu item which is simply 'jamulus -s' with a special icon
 	${CP} ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}-server.desktop
 	${REINPLACE_CMD} -i '' ' \
