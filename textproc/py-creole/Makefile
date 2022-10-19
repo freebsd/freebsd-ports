@@ -1,5 +1,5 @@
 PORTNAME=	creole
-PORTVERSION=	1.4.9
+DISTVERSION=	1.4.10
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,12 @@ COMMENT=	Markup converter in pure Python
 WWW=		https://pypi.org/project/python-creole/
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
