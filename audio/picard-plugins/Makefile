@@ -1,5 +1,5 @@
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20220930
+PORTVERSION=	2.0.20221018
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		python:3.7+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	55df59d
+GH_TAGNAME=	c1fae13
 
 PORTSCOUT=	limit:^2\.
 
@@ -22,7 +22,7 @@ NO_ARCH=	yes
 BUILD_WRKSRC=	${WRKSRC}/build
 PLUGINSDIR=	${PYTHON_SITELIBDIR}/picard/plugins
 
-OPTIONS_DEFINE=		BPM DOCS MOODBAR
+OPTIONS_DEFINE=		BPM DOCS MOODBAR REPLAYGAIN2
 OPTIONS_GROUP=		REPLAYGAIN
 OPTIONS_GROUP_REPLAYGAIN=	FLAC MP3 VORBIS WAVPACK
 OPTIONS_SUB=		yes
@@ -36,11 +36,14 @@ BPM_VARS=		PKGMESSAGE+=${.CURDIR}/pkg-message.bmp
 MOODBAR_DESC=		Generate moodbar files
 MOODBAR_RUN_DEPENDS=	moodbar:audio/moodbar
 
-REPLAYGAIN_DESC=	ReplayGain audio normalization
+REPLAYGAIN_DESC=	ReplayGain 1.0 audio normalization (deprecated)
 FLAC_RUN_DEPENDS=	metaflac:audio/flac
 MP3_RUN_DEPENDS=	mp3gain:audio/mp3gain
 VORBIS_RUN_DEPENDS=	vorbisgain:audio/vorbisgain
 WAVPACK_RUN_DEPENDS=	wvgain:audio/wavpack
+
+REPLAYGAIN2_DESC=		ReplayGain 2.0 audio normalization
+REPLAYGAIN2_RUN_DEPENDS=	rsgain:audio/rsgain
 
 do-build:
 # Plugins that include a separate UI (those with an __init__.py) must
