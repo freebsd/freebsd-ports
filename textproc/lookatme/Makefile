@@ -1,5 +1,5 @@
 PORTNAME=	lookatme
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,10 +24,6 @@ USES=		cpe python:3.6+ pytest
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
-
-# https://github.com/d0c-s4vage/lookatme/issues/126
-PYTEST_BROKEN_TESTS=	test_sanity_check_that_errors_are_detected \
-			test_styles_defaults
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|>.*||' ${WRKSRC}/requirements.txt
