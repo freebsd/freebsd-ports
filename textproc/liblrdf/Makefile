@@ -1,11 +1,11 @@
 PORTNAME=	liblrdf
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
 CATEGORIES=	textproc
-MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating RDF files describing LADSPA plugins
-WWW=		https://sourceforge.net/projects/lrdf/
+WWW=		https://github.com/swh/LRDF
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,9 +14,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libraptor2.so:textproc/raptor2
 
 USES=		autoreconf libtool pathfix pkgconfig ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	swh
+GH_PROJECT=	LRDF
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/LRDF-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
