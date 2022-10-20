@@ -11,6 +11,8 @@ WWW=		https://elkowar.github.io/eww
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	mismatched types: expected \`i32\`, found \`i64\`
+
 FLAVORS=			x11 wayland
 wayland_LIB_DEPENDS=		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 wayland_CONFLICTS_INSTALL=	${PORTNAME}-x11
