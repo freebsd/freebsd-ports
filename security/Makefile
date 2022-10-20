@@ -215,6 +215,7 @@
     SUBDIR += hpenc
     SUBDIR += hs-cryptol
     SUBDIR += hydra
+    SUBDIR += hyperhotp
     SUBDIR += i2p
     SUBDIR += i2pd
     SUBDIR += iaikpkcs11wrapper
