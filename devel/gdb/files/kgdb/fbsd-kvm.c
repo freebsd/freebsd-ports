@@ -498,7 +498,7 @@ fbsd_kvm_target::update_thread_list()
 #endif
 #if 0
 	struct target_ops *tb;
-	
+
 	if (kvm != NULL)
 		return;
 
@@ -511,7 +511,7 @@ fbsd_kvm_target::update_thread_list()
 std::string
 fbsd_kvm_target::pid_to_str(ptid_t ptid)
 {
-  return string_printf (_("Thread %ld"), ptid.tid ());
+  return string_printf (_("Thread %llu"), ptid.tid ());
 }
 
 bool
