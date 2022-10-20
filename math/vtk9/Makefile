@@ -1,6 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -19,8 +19,6 @@ LIB_DEPENDS=	\
 		libnetcdf.so:science/netcdf \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 
 USES=		alias cmake compiler:c++11-lang gl jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
@@ -110,6 +108,11 @@ EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 .if !${PORT_OPTIONS:MOSMESA}
 USES+=		gl
 USE_GL=		gl glu
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MMPI}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 .endif
 
 CONFLICTS=	vtk6 vtk8
