@@ -36,7 +36,6 @@ lib/kitty/kittens/mouse_demo/__init__.py
 lib/kitty/kittens/mouse_demo/main.py
 lib/kitty/kittens/panel/__init__.py
 lib/kitty/kittens/panel/main.py
-lib/kitty/kitty/prewarm.py
 lib/kitty/kittens/query_terminal/__init__.py
 lib/kitty/kittens/query_terminal/main.py
 lib/kitty/kittens/remote_file/__init__.py
@@ -102,6 +101,7 @@ lib/kitty/kitty/choose_entry.py
 lib/kitty/kitty/cli.py
 lib/kitty/kitty/cli_stub.py
 lib/kitty/kitty/client.py
+lib/kitty/kitty/clipboard.py
 lib/kitty/kitty/complete.py
 lib/kitty/kitty/conf/__init__.py
 lib/kitty/kitty/conf/generate.py
@@ -148,6 +148,7 @@ lib/kitty/kitty/options/parse.py
 lib/kitty/kitty/options/types.py
 lib/kitty/kitty/options/utils.py
 lib/kitty/kitty/os_window_size.py
+lib/kitty/kitty/prewarm.py
 lib/kitty/kitty/rc/__init__.py
 lib/kitty/kitty/rc/base.py
 lib/kitty/kitty/rc/close_tab.py
