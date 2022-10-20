@@ -1,0 +1,3 @@
+RequestsLibrary is a Robot Framework library aimed to provide HTTP api
+testing functionalities by wrapping the well known Python Requests
+Library.
