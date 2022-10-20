@@ -1,0 +1,5 @@
+Python bindings for libjack using ctypes, which allow you to write
+JACK client applications in Python.
+
+The library provides a low-level, almost unaltered mapping of the
+libjack C API, plus a few additional convenience functions.
