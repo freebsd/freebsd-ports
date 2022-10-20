@@ -67,16 +67,16 @@ LOCATION?=	Ottawa
 
 .include <bsd.port.options.mk>
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} \
 	    -e 's#DEFAULT_LATITUDE 39#DEFAULT_LATITUDE ${DEFAULT_LATITUDE}#' \
 	    -e 's#DEFAULT_LONGITUDE 39#DEFAULT_LONGITUDE ${DEFAULT_LONGITUDE}#' \
 	    -e 's#Ottawa#${LOCATION}#' ${WRKSRC}/src/custom.h
 
-post-patch-A4-on:
+pre-configure-A4-on:
 	@${REINPLACE_CMD} -e 's#"Letter", 612, 792#"A4", 595, 842#' ${WRKSRC}/src/custom.h
 
-post-patch-TCLTK-on:
+pre-configure-TCLTK-on:
 	@${REINPLACE_CMD} -e 's,wish,${WISH},' ${WRKSRC}/scripts/tkremind
 
 do-build:
