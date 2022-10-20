@@ -709,6 +709,7 @@
     SUBDIR += gcc-msp430-ti-toolchain
     SUBDIR += gccmakedep
     SUBDIR += gcem
+    SUBDIR += gcli
     SUBDIR += gconf2
     SUBDIR += gconfmm26
     SUBDIR += gdb
