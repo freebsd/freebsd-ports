@@ -1,6 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -77,7 +77,9 @@ DESIGNER_USE=		QT=designer
 DESIGNER_IMPLIES=	QT5
 
 MPI_CMAKE_BOOL=		VTK_USE_MPI
-MPI_LIB_DEPENDS=	libmpi.so:net/mpich
+#MPI_USES=		mpi:openmpi # fails, needs investigation: The following options helpers are incorrectly set after bsd.port.options.mk and are ineffective: MPI_CFLAGS MPI_LIBS
+MPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
+MPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 MPI_CMAKE_ON=		-DMPIEXEC=${LOCALBASE}/mpi/openmpi/bin/mpiexec
 
 OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
