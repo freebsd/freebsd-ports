@@ -1,0 +1,35 @@
+--- configure.ac.orig	2021-11-03 19:53:36 UTC
++++ configure.ac
+@@ -27,7 +27,7 @@ GDIPLUS_LIBS="`$PKG_CONFIG --libs glib-2.0 `"
+ GDIPLUS_INCLUDES="`$PKG_CONFIG --cflags-only-I glib-2.0 `"
+ GDIPLUS_CFLAGS="$GDIPLUS_INCLUDES `$PKG_CONFIG --cflags-only-other glib-2.0 `"
+ 
+-AC_PATH_PROG(CMAKE, [cmake], [no], [$PATH:/Applications/CMake.app/Contents/bin:/usr/local/bin])
++AC_PATH_PROG(CMAKE, [DISABLEDcmake], [no], [$PATH:/Applications/CMake.app/Contents/bin:/usr/local/bin])
+ if test "x$CMAKE" = "xno"; then
+   AC_MSG_WARN([*** cmake not found, won't build googletest-based tests.])
+ fi
+@@ -75,8 +75,8 @@ if test $text_v = "default"; then
+ 	  [text_v=pango], [text_v=cairo])
+ fi
+ if test $text_v = "pango"; then
+-	PANGO_LIBS="`$PKG_CONFIG --libs pangocairo `"
+-	PANGO_CFLAGS="`$PKG_CONFIG --cflags pangocairo `"
++	PANGO_LIBS="`$PKG_CONFIG --libs pangocairo pangoft2`"
++	PANGO_CFLAGS="`$PKG_CONFIG --cflags pangocairo pangoft2`"
+ 	AC_DEFINE(USE_PANGO_RENDERING,1,[Use Pango to measure and draw text])
+ 	GDIPLUS_PKG_REQ="$GDIPLUS_PKG_REQ pangocairo-1.0"
+ fi
+@@ -212,9 +212,10 @@ fi
+ 
+ # when possible hide stuff we don't want to export
+ AC_MSG_CHECKING(for visibility __attribute__)
+-AC_TRY_COMPILE([], [
++AC_TRY_COMPILE([
+    void __attribute__ ((visibility ("hidden"))) doit (void) {}
+-   void main () { doit (); }
++], [
++   doit ();
+ ], [
+    have_visibility_hidden=yes
+    AC_MSG_RESULT(yes)

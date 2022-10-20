@@ -1,5 +1,5 @@
 PORTNAME=	libgdiplus
-PORTVERSION=	6.0.4
+PORTVERSION=	6.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -10,6 +10,7 @@ WWW=		https://www.mono-project.com/docs/gui/libgdiplus/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	autoconf>0:devel/autoconf
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
@@ -40,5 +41,8 @@ PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.so.0 \
 		lib/libgdiplus.so.0.0.0 \
 		libdata/pkgconfig/libgdiplus.pc
+
+pre-configure:
+	cd ${WRKSRC} && autoconf
 
 .include <bsd.port.mk>
