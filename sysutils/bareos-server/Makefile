@@ -208,6 +208,9 @@ post-patch:
 	@${REINPLACE_CMD}  '45d' ${WRKSRC}/core/src/CMakeLists.txt
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
+.if ${PKGNAMESUFFIX} == "-client"
+	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
+.endif
 
 post-extract:
 .if defined(WITH_CLIENT_ONLY)
