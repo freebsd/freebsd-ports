@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
 CATEGORIES=	deskutils
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plaintext editor from the Lumina Desktop
 WWW=		https://lumina-desktop.org/
 

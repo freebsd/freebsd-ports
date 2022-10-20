@@ -4,7 +4,7 @@ DISTVERSION=	1.6.2
 PORTREVISION=	4
 CATEGORIES=	x11
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
 WWW=		https://lumina-desktop.org/
 

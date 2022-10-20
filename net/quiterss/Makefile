@@ -5,7 +5,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://quiterss.org/files/${PORTVERSION}_/
 DISTNAME=	QuiteRSS-${PORTVERSION}-src
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source cross-platform RSS/Atom news feeds reader
 WWW=		https://quiterss.org/
 

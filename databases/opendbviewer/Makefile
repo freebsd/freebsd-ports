@@ -3,7 +3,7 @@ PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple database explorer
 WWW=		https://github.com/Jet1oeil/opendbviewer
 

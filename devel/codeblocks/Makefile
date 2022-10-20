@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 WWW=		https://www.codeblocks.org/
 
