@@ -1,3 +1,46 @@
+  <vuln vid="d6d088c9-5064-11ed-bade-080027881239">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python37</name>
+	<range><lt>3.7.15</lt></range>
+      </package>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.15</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.15</lt></range>
+      </package>
+      <package>
+	<name>python310</name>
+	<range><lt>3.10.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/release/3.9.15/whatsnew/changelog.html">
+	  <p>gh-97616: Fix multiplying a list by an integer (list *= int): detect
+	    the integer overflow when the new allocated length is close to the
+	    maximum size. Issue reported by Jordan Limor. Patch by Victor Stinner.</p>
+	  <p>gh-97612: Fix a shell code injection vulnerability in the
+	    get-remote-certificate.py example script. The script no longer uses
+	    a shell to run openssl commands. Issue reported and initial fix by
+	    Caleb Shortt. Patch by Victor Stinner.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.python.org/release/3.9.15/whatsnew/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2022-09-29</discovery>
+      <entry>2022-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="676d4f16-4fb3-11ed-a374-8c164567ca3c">
     <topic>nginx -- Two vulnerabilities</topic>
     <affects>
