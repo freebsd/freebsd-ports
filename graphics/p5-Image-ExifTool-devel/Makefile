@@ -1,5 +1,5 @@
 PORTNAME=	Image-ExifTool
-PORTVERSION=	12.45
+PORTVERSION=	12.49
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://exiftool.org/
 PKGNAMEPREFIX=	p5-
