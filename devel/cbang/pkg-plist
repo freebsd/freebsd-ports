@@ -474,5 +474,5 @@ lib/libcbang0.so.%%VER%%
 %%DATADIR%%/config/v8/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/config/valgrind/__init__.py
 %%DATADIR%%/config/valgrind/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,5 +1,5 @@
 PORTNAME=	cbang
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -35,7 +35,7 @@ MAKE_ARGS+=	cc="${CC}"	\
 		cxxstd="c++17"	\
 		ccflags="${CCFLAGS}"	\
 		cxxflags="${CXXFLAGS}"	\
-		libpath="${LIBPATH}"	\
+		libpath="/lib"	\
 		sharedlib=1	\
 		prefix="${STAGEDIR}${PREFIX}"	\
 		compiler="${CHOSEN_COMPILER_TYPE:C/gcc/gnu/}"	\
@@ -44,7 +44,7 @@ MAKE_ARGS+=	cc="${CC}"	\
 #		disable_local="zlib bzip2 lz4 sqlite3 expat boost libevent re2 libyaml"
 MAKE_ENV+=	LIBPATH="${LIBPATH}"	\
 		LIBRARY_PATH="${LIBPATH}:${LIBPATH}/mysql"
-LIBVER=		1.7.0
+LIBVER=		1.7.2
 PLIST_SUB=	VER=${LIBVER}
 
 TEST_WRKSRC=	${WRKSRC}/tests
