@@ -1,6 +1,6 @@
 PORTNAME=	terminator
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
+PORTREVISION=	0
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-terminator/terminator/archive/
 DISTNAME=	v${PORTVERSION}
@@ -29,8 +29,4 @@ PYDISTUTILS_PKGNAME=	Terminator
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-PYDISTUTILS_SETUP+=	--without-icon-cache
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
