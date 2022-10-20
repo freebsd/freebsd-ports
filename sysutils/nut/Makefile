@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	2.8.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
@@ -94,9 +94,6 @@ PDU_CONFIGURE_WITH=	powerman
 
 MODBUS_LIB_DEPENDS+=	libmodbus.so:comms/libmodbus
 MODBUS_CONFIGURE_WITH=	modbus
-
-BASH_BUILD_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
-BASH_RUN_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
 
 AVAHI_BUILD_DEPENDS=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:net/avahi-header
 AVAHI_BUILD_DEPENDS=	avahi-daemon:net/avahi-app
