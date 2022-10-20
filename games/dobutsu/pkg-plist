@@ -2,6 +2,7 @@ bin/dobutsu
 libexec/dobutsu
 %%DATADIR%%/dobutsu.tb.xz
 share/locale/de/LC_MESSAGES/dobutsu.mo
+share/locale/en/LC_MESSAGES/dobutsu.mo
 share/locale/lv/LC_MESSAGES/dobutsu.mo
 share/man/de.UTF-8/man6/dobutsu.6.gz
 share/man/man6/dobutsu.6.gz
