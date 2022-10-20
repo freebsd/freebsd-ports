@@ -1,3 +1,3 @@
-TIMESTAMP = 1649500973
-SHA256 (prometheus-client_python-v0.14.1_GH0.tar.gz) = db2b212c690fb1dbd0da807753af9247da28610c1d93fa12fa0b43bd30d22964
-SIZE (prometheus-client_python-v0.14.1_GH0.tar.gz) = 76321
+TIMESTAMP = 1666250819
+SHA256 (prometheus-client_python-v0.15.0_GH0.tar.gz) = f03a6701eb966ae160947ba664e0f117aed783a7516ebf7bd2e7090285f81607
+SIZE (prometheus-client_python-v0.15.0_GH0.tar.gz) = 82056
