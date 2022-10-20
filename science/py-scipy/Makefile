@@ -1,12 +1,12 @@
 PORTNAME=	scipy
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.2
 CATEGORIES=	science python
-MASTER_SITES=	https://docs.scipy.org/doc/scipy-1.8.1/:doc \
+MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-${DISTVERSION}/:doc \
 		CHEESESHOP:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
-		scipy-ref-1.8.1.pdf:doc
+		scipy-html-${DISTVERSION}.zip:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pythran>=0:devel/py-pythran@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pythran>=0:devel/py-pythran@${PY_FLAVOR} \
+		unzip>0:archivers/unzip
 LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
@@ -32,7 +33,7 @@ LDFLAGS+=	-shared
 PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
-PORTDOCS=	scipy-ref-1.8.1.pdf
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
@@ -41,7 +42,8 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${UNZIP_CMD} -d ${STAGEDIR}${DOCSDIR} ${DISTDIR}/scipy-html-${DISTVERSION}.zip
+	@${RM} ${STAGEDIR}${PREFIX}/share/doc/py39-scipy/.buildinfo
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py
