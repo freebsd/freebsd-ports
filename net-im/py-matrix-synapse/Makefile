@@ -1,9 +1,9 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.68.0
+DISTVERSION=	1.69.0
 CATEGORIES=	net-im python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz
+DISTFILES=	${PORTNAME:S/-/_/}-${DISTVERSION}.tar.gz
 
 MAINTAINER=	ports@skyforge.at
 COMMENT=	Matrix protocol reference homeserver
@@ -63,7 +63,10 @@ CARGO_BUILD=	no
 CARGO_TEST=	no
 CARGO_INSTALL=	no
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
-CARGO_CRATES=	autocfg-1.1.0 \
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		anyhow-1.0.65 \
+		arc-swap-1.5.1 \
+		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		blake2-0.10.4 \
 		block-buffer-0.10.3 \
@@ -73,20 +76,33 @@ CARGO_CRATES=	autocfg-1.1.0 \
 		generic-array-0.14.6 \
 		hex-0.4.3 \
 		indoc-1.0.7 \
+		itoa-1.0.3 \
+		lazy_static-1.4.0 \
 		libc-0.2.132 \
 		lock_api-0.4.7 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		memoffset-0.6.5 \
 		once_cell-1.13.1 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.3 \
 		proc-macro2-1.0.43 \
-		pyo3-0.16.6 \
-		pyo3-build-config-0.16.6 \
-		pyo3-ffi-0.16.6 \
-		pyo3-macros-0.16.6 \
-		pyo3-macros-backend-0.16.6 \
+		pyo3-0.17.1 \
+		pyo3-build-config-0.17.1 \
+		pyo3-ffi-0.17.1 \
+		pyo3-log-0.7.0 \
+		pyo3-macros-0.17.1 \
+		pyo3-macros-backend-0.17.1 \
+		pythonize-0.17.0 \
 		quote-1.0.21 \
 		redox_syscall-0.2.16 \
+		regex-1.6.0 \
+		regex-syntax-0.6.27 \
+		ryu-1.0.11 \
 		scopeguard-1.1.0 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
+		serde_json-1.0.85 \
 		smallvec-1.9.0 \
 		subtle-2.4.1 \
 		syn-1.0.99 \
