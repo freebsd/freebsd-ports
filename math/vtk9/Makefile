@@ -36,6 +36,9 @@ CMAKE_ARGS=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DSTAGEDIR=${STAGEDIR}
 		# all build options are documented here: https://gitlab.kitware.com/vtk/vtk/blob/master/Documentation/dev/build.md
 
+# disable finding Qt6
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6
+
 VTK_SHORT_VER=	${PORTVERSION:R}
 
 DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
