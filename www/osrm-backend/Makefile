@@ -42,6 +42,10 @@ CMAKE_ON=	BUILD_STATIC_LIBS
 CXXFLAGS+=	-Wno-range-loop-construct
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror=all -Werror=extra|-Werror=extra|g' \
+		${PATCH_WRKSRC}/CMakeLists.txt
+
 pre-install:
 	@${MKDIR} ${STAGEDIR}/var/db/osrm-backend
 
