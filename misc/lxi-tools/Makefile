@@ -1,7 +1,6 @@
 PORTNAME=	lxi-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
-PORTREVISION=	1
+DISTVERSION=	2.2
 CATEGORIES=	misc
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -9,24 +8,24 @@ COMMENT=	Collection of tools that enables control of LXI compatible instruments
 WWW=		https://lxi-tools.github.io/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	liblxi.so:misc/liblxi
 
 USES=		meson lua:53 pkgconfig readline
 USE_GITHUB=	yes
 
+MESON_ARGS=	-Dbashcompletiondir=${PREFIX}/etc/bash_completion.d
+
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	BASH DOCS GUI
+OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_SUB=	yes
 
-BASH_MESON_ON=	-Dbashcompletiondir=${PREFIX}/etc/bash_completion.d
-BASH_MESON_OFF=	-Dbashcompletiondir=no
-
+GUI_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 GUI_USES=	gettext-tools gnome python:3.6+,build
 GUI_USE=	gnome=cairo,gdkpixbuf2,glib20,gtk40,gtksourceview5,libadwaita
-GUI_MESON_ON=	-Dgui=true
+GUI_MESON_OFF=	-Dgui=false
 GUI_BINARY_ALIAS=	python3=${PYTHON_CMD}
 GUI_PLIST_FILES=	bin/lxi-gui
 
