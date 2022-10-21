@@ -1,5 +1,5 @@
 PORTNAME=	twofactor_nextcloud_notification
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -14,7 +14,7 @@ WWW=		https://apps.nextcloud.com/apps/twofactor_nextcloud_notification
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=25:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
 IGNORE_WITH_PHP=	82
