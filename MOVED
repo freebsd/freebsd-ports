@@ -17604,3 +17604,4 @@ x11-toolkits/libshumate-shortwave|x11-toolkits/libshumate|2022-10-15|No longer u
 misc/orion||2022-10-16|Dead upstream and fails to build with mpv-0.35
 devel/msgpack|devel/msgpack-c|2022-10-16|MsgPack now separates C and C++ versions
 games/arttime|deskutils/arttime|2022-10-18|Moved to a better category
+security/nextcloud-twofactor_totp|www/nextcloud|2022-10-21|Twofactor TOTP provider bundled with Nextcloud 25
