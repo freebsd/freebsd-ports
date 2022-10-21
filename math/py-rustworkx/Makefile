@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
 USES=		cargo python:3.7+
-USE_PYTHON=	autoplist distutils pytest # unclear how to run tests, see https://github.com/Qiskit/rustworkx/issues/695
+USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
@@ -104,5 +105,8 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rustworkx/rustworkx.cpython-${PYTHON_SUFFIX}.so
+
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} tox -epy
 
 .include <bsd.port.mk>
