@@ -1,5 +1,5 @@
 PORTNAME=	calendar
-PORTVERSION=	3.5.0
+PORTVERSION=	4.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -13,7 +13,7 @@ WWW=		https://apps.nextcloud.com/apps/calendar
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=25:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe php:flavors
 IGNORE_WITH_PHP=	82
