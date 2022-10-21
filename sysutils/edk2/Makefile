@@ -9,6 +9,7 @@ PATCHFILES=	22130dcd98b4d4b76ac8d922adb4a2dbc86fa52c.patch:-p1 \
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	EDK2 Firmware for ${FLAVOR}
+WWW=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/ReadMe.rst
 
 LICENSE=	BSD3CLAUSE
 
@@ -40,15 +41,22 @@ GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 		google:brotli:v1.0.9-35-gf4153a0:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli \
 		akheron:jansson:v2.13.1:jansson/RedfishPkg/Library/JsonLib/jansson
 
+.include <bsd.port.pre.mk>
+
+# Heavily dependent on bsd.port.pre.mk definitions for lang/gcc* details:
 BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
 		dtc=${LOCALBASE}/bin/dtc \
 		ar=${AR} \
-		gcc=${LOCALBASE}/bin/gcc${GCC_DEFAULT} \
-		gcc-ar=${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT} \
-		g++=${LOCALBASE}/bin/g++${GCC_DEFAULT} \
+		gcc=${LOCALBASE}/bin/${CC} \
+		gcc-ar=${LOCALBASE}/bin/${CC:S/gcc/&-ar/} \
+		g++=${LOCALBASE}/bin/${CXX} \
 		python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
-.include <bsd.port.pre.mk>
+# Avoid: "ld-elf.so.1: /lib/libgcc_s.so.1: version GCC_4.5.0
+#         required by /usr/local/lib/gcc11/libstdc++.so.6 not found"
+# (that is from /lib/libgcc_s.so.1 having incomplete/inaccurate
+# coverage for aarch64 g++ code generation's use of libgcc_s.so.1 ):
+EXTRA_LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}
 
 .if ${FLAVOR} == fvp
 PLAT=		fvp
@@ -117,8 +125,8 @@ PLAT_FILENAME_VARS=	BHYVE_UEFI_VARS.fd
 .endif
 
 .if ${FLAVOR} == qemu_x64
-ONLY_FOR_ARCHS= amd64
-ONLY_FOR_ARCHS_REASON=  Do not compile on hardware other than amd64
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Do not compile on hardware other than amd64
 PLAT=		qemu
 PLAT_ARCH=	X64
 PLAT_TARGET=	RELEASE
@@ -127,23 +135,23 @@ PLAT_RESULT=	OvmfX64/${PLAT_TARGET}_GCC5/FV/OVMF.fd
 PLAT_RESULT_CODE=	OvmfX64/${PLAT_TARGET}_GCC5/FV/OVMF_CODE.fd
 PLAT_RESULT_VARS=	OvmfX64/${PLAT_TARGET}_GCC5/FV/OVMF_VARS.fd
 PLAT_FILENAME=	QEMU_UEFI-x86_64.fd
-PLAT_FILENAME_CODE	= QEMU_UEFI_CODE-x86_64.fd
-PLAT_FILENAME_VARS	= QEMU_UEFI_VARS-x86_64.fd
+PLAT_FILENAME_CODE=	QEMU_UEFI_CODE-x86_64.fd
+PLAT_FILENAME_VARS=	QEMU_UEFI_VARS-x86_64.fd
 .endif
 
 .if ${FLAVOR} == qemu_i386
-ONLY_FOR_ARCHS= amd64
-ONLY_FOR_ARCHS_REASON=  Do not compile on hardware other than amd64
-PLAT=           qemu
-PLAT_ARCH=      IA32
-PLAT_TARGET=    RELEASE
-PLATFILE=       OvmfPkg/OvmfPkgIa32.dsc
-PLAT_RESULT=    OvmfIa32/${PLAT_TARGET}_GCC5/FV/OVMF.fd
-PLAT_RESULT_CODE=       OvmfIa32/${PLAT_TARGET}_GCC5/FV/OVMF_CODE.fd
-PLAT_RESULT_VARS=       OvmfIa32/${PLAT_TARGET}_GCC5/FV/OVMF_VARS.fd
-PLAT_FILENAME=  QEMU_UEFI-i386.fd
-PLAT_FILENAME_CODE      = QEMU_UEFI_CODE-i386.fd
-PLAT_FILENAME_VARS      = QEMU_UEFI_VARS-i386.fd
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Do not compile on hardware other than amd64
+PLAT=		qemu
+PLAT_ARCH=	IA32
+PLAT_TARGET=	RELEASE
+PLATFILE=	OvmfPkg/OvmfPkgIa32.dsc
+PLAT_RESULT=	OvmfIa32/${PLAT_TARGET}_GCC5/FV/OVMF.fd
+PLAT_RESULT_CODE=	OvmfIa32/${PLAT_TARGET}_GCC5/FV/OVMF_CODE.fd
+PLAT_RESULT_VARS=	OvmfIa32/${PLAT_TARGET}_GCC5/FV/OVMF_VARS.fd
+PLAT_FILENAME=	QEMU_UEFI-i386.fd
+PLAT_FILENAME_CODE=	QEMU_UEFI_CODE-i386.fd
+PLAT_FILENAME_VARS=	QEMU_UEFI_VARS-i386.fd
 .endif
 
 PLIST_FILES=	${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
@@ -166,7 +174,8 @@ MAKE_ENV+=	WORKSPACE=${WRKDIR} \
 		EDK_TOOLS_PATH=${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools \
 		PATH=${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools/BinWrappers/PosixLike:${PATH} \
 		PYTHON_COMMAND=python3 \
-		PYTHONHASHSEED=1
+		PYTHONHASHSEED=1 \
+		EXTRA_LDFLAGS=${EXTRA_LDFLAGS}
 
 .if ${PLAT_ARCH} == AARCH64 && ${ARCH} != aarch64
 BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
