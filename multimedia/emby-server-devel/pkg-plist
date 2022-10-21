@@ -705,6 +705,7 @@ lib/emby-server/system/dashboard-ui/modules/flvjs/utils/logger.js
 lib/emby-server/system/dashboard-ui/modules/flvjs/utils/logging-control.js
 lib/emby-server/system/dashboard-ui/modules/flvjs/utils/utf8-conv.js
 lib/emby-server/system/dashboard-ui/modules/focusmanager.js
+lib/emby-server/system/dashboard-ui/modules/fonts/GoNotoCurrent.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/fonts.css
 lib/emby-server/system/dashboard-ui/modules/fonts/material-icons/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmJ_3.woff
 lib/emby-server/system/dashboard-ui/modules/fonts/material-icons/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmP_3.woff2
@@ -730,7 +731,6 @@ lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu72xKOzY
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7GxKOzY.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7WxKOzY.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7mxKOzY.woff2
-lib/emby-server/system/dashboard-ui/modules/fonts/subfont.woff2
 lib/emby-server/system/dashboard-ui/modules/formdialog.css
 lib/emby-server/system/dashboard-ui/modules/formhelper.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreen-dc.js
