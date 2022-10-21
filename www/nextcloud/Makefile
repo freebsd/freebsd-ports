@@ -1,12 +1,12 @@
 PORTNAME=	nextcloud
-PORTVERSION=	24.0.6
+PORTVERSION=	25.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	brnrd@FreeBSD.org
-COMMENT=	Personal cloud which runs on your own server
+COMMENT=	Collaboration platform which runs on your own server
 WWW=		https://nextcloud.com
 
 LICENSE=	AGPLv3
@@ -69,6 +69,7 @@ post-patch:
 		${WRKSRC}/config/config.documented.php
 	@${RM} ${WRKSRC}/config/config.documented.php.* \
 		 ${WRKSRC}/updater/updater.phar
+	@${RMDIR} ${WRKSRC}/apps/suspicious_login/vendor/amphp/*/docs/.shared
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
 
 do-install:
