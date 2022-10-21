@@ -1,5 +1,5 @@
 PORTNAME=	XLConnect
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -23,7 +23,7 @@ USES=		cran
 USE_JAVA=	yes
 
 DEP_JARS=	commons-codec commons-collections4 commons-compress	\
-		ooxml-schemas poi poi-ooxml poi-ooxml-schemas		\
+		ooxml-schemas poi poi-ooxml poi-ooxml-full		\
 		SparseBitSet xmlbeans
 
 post-install:
