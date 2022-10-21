@@ -1,5 +1,5 @@
 PORTNAME=	contacts
-PORTVERSION=	4.2.2
+PORTVERSION=	5.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -13,7 +13,7 @@ WWW=		https://apps.nextcloud.com/apps/contacts
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=25:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe php:flavors
 IGNORE_WITH_PHP=	82
