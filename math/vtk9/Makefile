@@ -1,6 +1,5 @@
 PORTNAME=	vtk
-DISTVERSION=	9.1.0
-PORTREVISION=	8
+DISTVERSION=	9.2.2
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -45,8 +44,8 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS MPI OSMESA PYTHON QT5 EXAMPLES
-OPTIONS_DEFAULT=	MPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
+OPTIONS_DEFINE=	DESIGNER DOCS MPI OSMESA PYTHON QT6 EXAMPLES
+OPTIONS_DEFAULT=	MPI PYTHON QT6 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
 OSMESA_DESC=	Use Mesa for off-screen rendering
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
@@ -71,6 +70,12 @@ QT5_USE=		QT=core,declarative,gui,network,opengl,sql,uiplugin,widgets,x11extras,
 QT5_CMAKE_ON=		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5 \
 			-DVTK_GROUP_ENABLE_Qt:STRING=YES \
 			-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES
+
+#QT6_USES=		qt:6
+#QT6_USE=		QT=base,declarative,tools:build
+#QT6_CMAKE_ON=		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5 \
+#			-DVTK_GROUP_ENABLE_Qt:STRING=YES \
+#			-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES
 
 DESIGNER_CMAKE_BOOL=	QT_DESIGNER_PLUGIN
 DESIGNER_USE=		QT=designer
