@@ -26,7 +26,7 @@
 # 		* meson (experimental)
 #
 #
-# By defining USE_GITLAB and GL_COMMIT, it is possible to pull code straight
+# By defining USE_GITLAB and GL_TAGNAME, it is possible to pull code straight
 # from the freedesktop.org gitlab, instead of official release tarballs.
 #
 #.MAINTAINER:	x11@FreeBSD.org
