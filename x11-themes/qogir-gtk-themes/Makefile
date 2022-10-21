@@ -1,8 +1,8 @@
 PORTNAME=	qogir-gtk-themes
-DISTVERSION=	2022-07-17
+DISTVERSION=	2022-10-16
 CATEGORIES=	x11-themes
 
-MAINTAINER=	Alexander88207@protonmail.com
+MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Qogir is a flat Design theme for GTK
 WWW=		https://github.com/vinceliuice/Qogir-theme
 

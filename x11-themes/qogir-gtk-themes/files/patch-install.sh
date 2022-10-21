@@ -1,6 +1,6 @@
---- install.sh.orig	2022-07-07 08:30:28 UTC
+--- install.sh.orig	2022-10-16 06:48:19 UTC
 +++ install.sh
-@@ -562,18 +562,13 @@ tweaks_temp() {
+@@ -556,18 +556,13 @@ tweaks_temp() {
    cp -rf ${SRC_DIR}/src/_sass/_tweaks.scss ${SRC_DIR}/src/_sass/_tweaks-temp.scss
  }
  
@@ -21,7 +21,7 @@
    echo -e "Install Round window version ..."
  }
  
-@@ -587,18 +582,14 @@ install_theme_color() {
+@@ -581,20 +576,16 @@ install_theme_color() {
          theme_color='ubuntu'
          ;;
      esac
@@ -35,10 +35,21 @@
 +  if [[ "$square" == "true" || "$accent" == 'true' || "$window" == 'round' ]]; then
      tweaks='true'
      install_package; tweaks_temp
--  fi
--
--  if [[ "$image" == "true" ]] ; then
--    install_image
    fi
  
+-  if [[ "$image" == "true" ]] ; then
+-    install_image
+-  fi
+-
    if [[ "$square" == "true" ]] ; then
+     install_win_titlebutton
+   fi
+@@ -635,8 +626,6 @@ uninstall_theme() {
+     done
+   done
+ }
+-
+-./clean-old-theme.sh
+ 
+ if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
+   install_theme
