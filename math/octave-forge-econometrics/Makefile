@@ -24,6 +24,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:math/octave-forge-optim
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

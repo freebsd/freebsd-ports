@@ -26,6 +26,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/matgeom.tar.gz:math/octave-forge-matgeom
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

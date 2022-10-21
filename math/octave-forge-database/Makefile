@@ -27,7 +27,7 @@ USES+=		pgsql
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 post-patch:
 	${REINPLACE_CMD} 's#endian.h#sys/endian.h#' ${WRKSRC}/wrap_endian.h

@@ -25,7 +25,7 @@ NO_ARCH=	yes
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

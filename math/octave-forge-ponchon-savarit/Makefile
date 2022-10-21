@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-ponchon-savarit
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/
 DISTNAME=	v${PORVERSION}0.1.0
@@ -24,6 +25,6 @@ do-build:
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

@@ -34,6 +34,6 @@ post-build:
 	${RM} ${WRKSRC}/../inst/DESCRIPTION
 	${RM} ${WRKSRC}/../inst/ltfat/DESCRIPTION
 	${RM} ${WRKSRC}/../inst/ltfat/inst/DESCRIPTION
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

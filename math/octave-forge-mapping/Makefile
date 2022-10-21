@@ -27,6 +27,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/geometry.tar.gz:math/octave-forge-geometry
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>
