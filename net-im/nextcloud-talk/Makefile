@@ -1,5 +1,5 @@
 PORTNAME=	talk
-PORTVERSION=	14.0.5
+PORTVERSION=	15.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im www
 MASTER_SITES=	https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -15,7 +15,7 @@ WWW=		https://nextcloud.com/talk/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=24:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=25:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe php:flavors
 IGNORE_WITH_PHP=	82
