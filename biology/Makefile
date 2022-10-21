@@ -80,6 +80,7 @@
     SUBDIR += kmcp
     SUBDIR += lamarc
     SUBDIR += libbigwig
+    SUBDIR += libcombine
     SUBDIR += libgff
     SUBDIR += libgtextutils
     SUBDIR += libneurosim

@@ -1,0 +1,4 @@
+LibCombine implements a C++ API library providing support for the Combine
+Archive. The library is written after the likeness of libSBML (and in fact some
+classes have been generated using DEVISER). Thus even thought he core is
+written in C++, the classes can be accessed via SWIG from .NET, Java and Python.
