@@ -103,7 +103,7 @@ SUB_LIST=	ETCDIR=${ETCDIR} \
 # node version used with "npm install pkg@5.5.1"
 NODE_VERSION_PKGFETCH=	16.13.0
 # node version used in the ports tree
-NODE_VERSION_PORTS=	16.15.1
+NODE_VERSION_PORTS=	16.17.1
 
 MAKE_ENV=	BUILD_NUMBER="1" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
