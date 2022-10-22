@@ -1,9 +1,6 @@
 PORTNAME=	librcc
-PORTVERSION=	0.2.12
-PORTREVISION=	13
+DISTVERSION=	0.2.13
 CATEGORIES=	devel
-MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
-		LOCAL/fluffy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used by rusxmms for language autodetection
@@ -16,20 +13,21 @@ LIB_DEPENDS=	librcd.so:devel/librcd \
 		libenca.so:converters/enca \
 		libaspell.so:textproc/aspell
 
-USES=		compiler:c++11-lang gmake gnome iconv libtool pathfix pkgconfig \
-		tar:bzip2
+USES=		autoreconf compiler:c++11-lang gmake gnome iconv libtool \
+		localbase:ldflags pathfix pkgconfig
+USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+GH_ACCOUNT=	RusXMMS
+GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk1
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 OPTIONS_DEFINE=	BDB TRANSLATE TOOLS GTK2 GTK3
-OPTIONS_DEFAULT=TOOLS GTK2
+OPTIONS_DEFAULT=TOOLS GTK3
 OPTIONS_SUB=	yes
 
 BDB_DESC=		Translation database support
