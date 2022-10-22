@@ -43,5 +43,5 @@ include/uninorm.h
 include/unicase.h
 include/unigbrk.h
 lib/libunistring.so
-lib/libunistring.so.2
-lib/libunistring.so.2.2.0
+lib/libunistring.so.5
+lib/libunistring.so.5.0.0
