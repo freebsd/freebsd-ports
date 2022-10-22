@@ -1,5 +1,5 @@
 PORTNAME=	profanity
-DISTVERSION=	0.13.0
+DISTVERSION=	0.13.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${PORTNAME}-im/${PORTNAME}/releases/download/${DISTVERSION}/
 
