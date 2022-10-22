@@ -10,7 +10,6 @@ WWW=		http://www.profanity.im/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libotr.so:security/libotr \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libstrophe.so:net-im/libstrophe \
 		libqrencode.so:graphics/libqrencode
 
-USES=		autoreconf cpe gnome libtool ncurses pkgconfig python:3.8+ \
+USES=		cpe gnome libtool ncurses pkgconfig python:3.8+ \
 		readline sqlite:3 tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
@@ -43,7 +42,7 @@ NOTIFY_CONFIGURE_ENABLE=notifications
 
 post-patch:
 	${REINPLACE_CMD} "s,python3-embed,python-${PYTHON_VER}-embed,g" \
-		${WRKSRC}/configure.ac
+		${WRKSRC}/configure
 
 post-install:
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/man/man1 "-name *\.1"
