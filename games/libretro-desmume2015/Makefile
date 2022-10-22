@@ -1,6 +1,6 @@
 PORTNAME=	libretro-desmume2015
 PORTVERSION=	0.20220405
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,7 +26,7 @@ MAKEFILE=	Makefile.freebsd
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != aarch64 || ${ARCH} != amd64 || !${ARCH:Marmv*} || ${ARCH} != i386
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && !${ARCH:Marmv*} && ${ARCH} != i386
 MAKE_ENV+=	DESMUME_JIT=0
 .endif
 
