@@ -1,10 +1,10 @@
 PORTNAME=	libudisks
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.4
 # Obviates the need to specify GH_TAGNAME and repeat the version number later
 DISTVERSIONPREFIX=	udisks-
 CATEGORIES=	sysutils
 
-MAINTAINER=	pauamma@gundo.com
+MAINTAINER=	pauamma@FreeBSD.org
 COMMENT=	Library to manipulate storage devices, from udisks
 WWW=		https://www.freedesktop.org/wiki/Software/udisks/
 
@@ -37,13 +37,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-daemon --disable-dependency-tracking \
 		--with-libintl-prefix=${LOCALBASE}
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
 OPTIONS_DEFINE=	UDISKSCTL NLS DOCS
 OPTIONS_DEFAULT=	UDISKSCTL NLS DOCS
 OPTIONS_SUB=	yes
-DOCS_CONFIGURE_ENABLE=	gtk-doc
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext-runtime
 UDISKSCTL_DESC=	Install udisksctl command line utility
+DOCS_CONFIGURE_ENABLE=	gtk-doc
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 UDISKSCTL_LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit \
 			libpolkit-gobject-1.so:sysutils/polkit
 
