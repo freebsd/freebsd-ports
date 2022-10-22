@@ -1530,6 +1530,7 @@
     SUBDIR += py-sphinxcontrib-programoutput
     SUBDIR += py-sphinxcontrib-qthelp
     SUBDIR += py-sphinxcontrib-serializinghtml
+    SUBDIR += py-sphinxcontrib-svg2pdfconverter
     SUBDIR += py-sphinxcontrib-towncrier
     SUBDIR += py-sphinxcontrib-websupport
     SUBDIR += py-sphinxemoji
