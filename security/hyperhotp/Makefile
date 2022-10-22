@@ -1,5 +1,6 @@
 PORTNAME=	hyperhotp
-DISTVERSION=	g20211005
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1
 CATEGORIES=	security comms
 
 MAINTAINER=	fuz@fuz.su
@@ -11,9 +12,8 @@ LICENSE=	GPLv3
 USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	casept
-#GH_PROJECT=	hyperhotp
-GH_TAGNAME=	ad1f71d0e4669e7b693ae0fd794186204b1941e8
 
-PLIST_FILES=	bin/hyperhotp
+PLIST_FILES=	bin/hyperhotp \
+		share/man/man1/hyperhotp.1.gz
 
 .include <bsd.port.mk>
