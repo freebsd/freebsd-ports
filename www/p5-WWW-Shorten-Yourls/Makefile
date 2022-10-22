@@ -1,6 +1,5 @@
 PORTNAME=	WWW-Shorten-Yourls
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	1.001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -8,6 +7,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	beastie@tardisi.com
 COMMENT=	Perl interface to www/yourls, Your Own URL Shortener
 WWW=		https://metacpan.org/release/WWW-Shorten-Yourls
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON-Any>=1.18:converters/p5-JSON-Any \
