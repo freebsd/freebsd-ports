@@ -32,6 +32,7 @@ share/applications/io.github.fabiangreffrath.Strife.desktop
 share/applications/screensavers/io.github.fabiangreffrath.Doom_Screensaver.desktop
 share/bash-completion/completions/crispy-doom
 share/bash-completion/completions/crispy-heretic
+share/bash-completion/completions/crispy-hexen
 %%PORTDOCS%%%%DOCSDIR%%/CMDLINE.doom
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -48,7 +49,10 @@ share/bash-completion/completions/crispy-heretic
 %%PORTDOCS%%share/doc/crispy-strife/CMDLINE.strife
 %%PORTDOCS%%share/doc/crispy-strife/INSTALL.strife
 share/icons/hicolor/128x128/apps/crispy-doom.png
+share/icons/hicolor/128x128/apps/crispy-heretic.png
+share/icons/hicolor/128x128/apps/crispy-hexen.png
 share/icons/hicolor/128x128/apps/crispy-setup.png
+share/icons/hicolor/128x128/apps/crispy-strife.png
 share/metainfo/io.github.fabiangreffrath.Doom.metainfo.xml
 share/metainfo/io.github.fabiangreffrath.Heretic.metainfo.xml
 share/metainfo/io.github.fabiangreffrath.Hexen.metainfo.xml
