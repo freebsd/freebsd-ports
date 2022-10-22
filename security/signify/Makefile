@@ -1,10 +1,10 @@
 PORTNAME=	signify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10
+DISTVERSION=	0.12
 PORTEPOCH=	1
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Create and verify cryptographic signatures
 WWW=		https://github.com/leahneukirchen/outils/
 
