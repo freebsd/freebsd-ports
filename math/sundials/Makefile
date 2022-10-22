@@ -1,8 +1,7 @@
 PORTNAME=	sundials
-DISTVERSION=	6.3.0
-PORTREVISION=	1
+DISTVERSION=	6.4.0
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/LLNL/sundials/archive/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers
@@ -11,7 +10,7 @@ WWW=		https://computation.llnl.gov/projects/sundials
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing fortran localbase:ldflags python:build
+USES=		cmake:testing fortran localbase:ldflags python:build # 4 tests fail, see https://github.com/LLNL/sundials/issues/220
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=		-DENABLE_PTHREAD:BOOL=ON \
@@ -23,8 +22,8 @@ CMAKE_TESTING_ON=	SUNDIALS_TEST_UNITTESTS \
 
 FCFLAGS:=	${FFLAGS} # project checks that these flags are equal
 
-OPTIONS_DEFINE=		BLAS EXAMPLES LAPACK MPI OPENMP
-OPTIONS_DEFAULT=	LAPACK MPI OPENMP
+OPTIONS_DEFINE=		BLAS EXAMPLES KLU LAPACK MPI OPENMP
+OPTIONS_DEFAULT=	KLU LAPACK MPI OPENMP
 OPTIONS_GROUP=		VECTORS
 OPTIONS_GROUP_VECTORS=	HYPRE PETSC
 VECTORS_DESC=		Alternative vector libraries
@@ -46,6 +45,15 @@ HYPRE_LIB_DEPENDS=	libHYPRE.so:science/hypre # maybe is broken due to https://gi
 HYPRE_IMPLIES=		MPI
 HYPRE_PREVENTS=		LAPACK  # error: Incompatible sunindextype for LAPACK; disable LAPACK and rebuild
 HYPRE_BROKEN=		ERROR: SUNDIALS interface to HYPRE is not functional.
+
+KLU_DESC=		Use KLU package that is part of suitesparse
+KLU_CMAKE_BOOL=		ENABLE_KLU
+KLU_CMAKE_ON=		-DKLU_INCLUDE_DIR=${LOCALBASE}/include/suitesparse -DKLU_LIBRARY_DIR=${LOCALBASE}/lib
+KLU_LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+			libbtf.so:math/suitesparse-btf \
+			libcolamd.so:math/suitesparse-colamd \
+			libklu.so:math/suitesparse-klu \
+			libsuitesparseconfig.so:math/suitesparse-config
 
 LAPACK_DESC=		Use Lapack linear algebra (sets SUNDIALS_INDEX_TYPE=int32)
 LAPACK_USES=		blaslapack:openblas
