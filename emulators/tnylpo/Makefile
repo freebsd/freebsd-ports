@@ -1,15 +1,18 @@
 PORTNAME=	tnylpo
-DISTVERSION=	1.1.3
+DISTVERSION=	1.1.4
 CATEGORIES=	emulators
-MASTER_SITES=	https://gitlab.com/gbrein/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	CP/M emulator
 WWW=		https://gitlab.com/gbrein/tnylpo
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2 gmake
+USES=		gmake
+USE_GITLAB=	yes
+GL_ACCOUNT=	gbrein
+GL_COMMIT=	3216c00c7a97d373b51192a96da46510f75f1adb
 
 MAKEFILE=	makefile
 

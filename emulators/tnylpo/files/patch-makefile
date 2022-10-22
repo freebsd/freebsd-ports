@@ -1,0 +1,11 @@
+--- makefile.orig	2022-10-10 05:31:51 UTC
++++ makefile
+@@ -28,7 +28,7 @@
+ 
+ 
+ SYSTEM=$(shell uname -s)
+-CFLAGS=-std=c99 -pedantic -O3 -Wall
++CFLAGS+=-std=c99 -pedantic -Wall
+ ifeq ($(SYSTEM),Linux)
+ CFLAGS+=-D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE_EXTENDED
+ CFLAGS+=-I /usr/include/ncursesw
