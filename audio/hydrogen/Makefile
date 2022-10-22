@@ -1,6 +1,8 @@
 PORTNAME=	hydrogen
 DISTVERSION=	1.1.1
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/hydrogen-music/${PORTNAME}/releases/download/${DISTVERSION}/ \
+		SF/hydrogen/Hydrogen/${DISTVERSION}%20Sources/
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
@@ -12,15 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		liblo.so:audio/liblo
 
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
+USES=		cmake compiler:c++17-lang desktop-file-utils pkgconfig \
 		localbase qt:5
 USE_QT=		core gui network widgets xml xmlpatterns buildtools:build \
 		linguisttools:build qmake:build testlib:build
 USE_LDCONFIG=	yes
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${LOCALBASE}/share/man
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	hydrogen-music
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${LOCALBASE}/man
 
 OPTIONS_SINGLE=		EXPORT
 OPTIONS_SINGLE_EXPORT=	LIBARCHIVE LIBTAR
