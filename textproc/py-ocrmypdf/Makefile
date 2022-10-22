@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	13.6.0
+DISTVERSION=	13.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -57,6 +57,17 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4:devel/py-importlib-me
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+# The "pyproject.toml" wants devel/py-setuptools_scm >= 7.0.5 which isn't in
+# the Ports tree, yet.  Although py-ocrmypdf builds fine as the "setup.cfg" is
+# used during build instead the "pyproject.toml" move the latter one out of the
+# way to prevent surprises.
+post-extract:
+	@${MV} ${WRKSRC}/pyproject.toml ${WRKSRC}/pyproject.toml.dist
 
 post-install:
 	# Install shell completion files
