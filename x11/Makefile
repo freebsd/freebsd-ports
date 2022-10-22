@@ -45,6 +45,7 @@
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
+    SUBDIR += darkman
     SUBDIR += deforaos-desktop
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
