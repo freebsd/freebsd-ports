@@ -35,8 +35,9 @@ OPTIONS_DEFAULT=	EXTRAS
 EXTRAS_DESC=		Install optional dependencies for additional functionality
 EXTRAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pycodeexport>=0.1.2:devel/py-pycodeexport@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pycompilation>=0.4.3:devel/py-pycompilation@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pycompilation>=0.4.9:devel/py-pycompilation@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pygslodeiv2>=0.9.1:math/py-pygslodeiv2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyodeint>=0.10.1:math/py-pyodeint@${PY_FLAVOR}
+			# TODO pycvodes>=0.13.1 - doesn't build with sundials
 
 .include <bsd.port.mk>
