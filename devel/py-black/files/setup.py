@@ -53,11 +53,6 @@ setup(
             'blackd = blackd:patched_main [d]',
         ],
     },
-    packages=[
-        'scripts',
-        'src.black',
-        'src.blackd',
-        'src.blib2to3',
-        'src.blib2to3.pgen2',
-    ],
+    package_dir={'': 'src'},
+    package_data={'': ['*']},
 )
