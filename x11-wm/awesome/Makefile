@@ -63,5 +63,9 @@ post-patch:
 	# Ref https://github.com/awesomeWM/awesome/issues/1377
 	@${REINPLACE_CMD} -e "/COMMAND lua/ s,lua,${LUA_CMD}," \
 		${WRKSRC}/awesomeConfig.cmake
+	# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267119
+	# Fix build with clang14
+	@${REINPLACE_CMD} -e "s/-export-dynamic/\"-Xlinker -E\"/" \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>
