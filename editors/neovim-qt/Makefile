@@ -28,4 +28,6 @@ CMAKE_OFF=	ENABLE_TESTS
 
 DATADIR=	${PREFIX}/share/nvim-qt
 
+PORTSCOUT=	limit:^d\.d\.
+
 .include <bsd.port.mk>
