@@ -1,5 +1,6 @@
 PORTNAME=	lagrange
 DISTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.skyjake.fi/gemini/${PORTNAME}/releases/download/v${DISTVERSION}/
 

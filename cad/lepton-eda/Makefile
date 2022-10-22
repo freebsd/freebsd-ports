@@ -1,5 +1,6 @@
 PORTNAME=	lepton-eda
 PORTVERSION=	1.9.18
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20220529/
 
