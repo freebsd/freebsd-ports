@@ -2,7 +2,6 @@ PORTNAME=	eigen
 DISTVERSION=	3.4.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	https://gitlab.com/libeigen/eigen/-/archive/${DISTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
@@ -22,7 +21,10 @@ TEST_DEPENDS=	suitesparse-cholmod>0:math/suitesparse-cholmod \
 		gmp>0:math/gmp \
 		boost-libs>0:devel/boost-libs
 
-USES=		cmake:testing tar:bzip2
+USES=		cmake:testing
+USE_GITLAB=	yes
+GL_ACCOUNT=	libeigen
+GL_COMMIT=	3147391d946bb4b6c68edd901f2add6ac1f31f8c
 
 CMAKE_ARGS=	-DPKGCONFIG_INSTALL_DIR:PATH="libdata/pkgconfig"
 CMAKE_ON=	EIGEN_TEST_CXX11 # This is to set the C++ standard to C++11, instead of 03
