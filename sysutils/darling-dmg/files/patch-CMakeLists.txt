@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2019-07-20 22:33:49 UTC
++++ CMakeLists.txt
+@@ -41,7 +41,12 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
+ 	"${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/")
+ 
+ add_definitions(-D_FILE_OFFSET_BITS=64)
+-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -ggdb -O0")
++SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
++
++if(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
++    include_directories("%%LOCALBASE%%//include")
++    link_directories("%%LOCALBASE%%/lib")
++endif()
+ 
+ include(FindLibxml2)
+ 
