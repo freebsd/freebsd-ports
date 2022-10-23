@@ -2174,6 +2174,8 @@
     SUBDIR += rubygem-websocket-driver
     SUBDIR += rubygem-websocket-extensions
     SUBDIR += rubygem-yapra
+    SUBDIR += rustypaste
+    SUBDIR += rustypaste-cli
     SUBDIR += s
     SUBDIR += sabredav
     SUBDIR += sahi
