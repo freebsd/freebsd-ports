@@ -1,3 +1,28 @@
+  <vuln vid="68fcee9b-5259-11ed-89c9-0800276af896">
+    <topic>Cleartext leak in libudisks</topic>
+    <affects>
+      <package>
+	<name>libudisks</name>
+	<range><lt>2.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From libudisks 2.9.4 NEWS:</p>
+	<blockquote cite="https://github.com/storaged-project/udisks/blob/udisks-2.9.4/NEWS">
+	  <p>udiskslinuxblock: Fix leaking cleartext block interface</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/storaged-project/udisks/blob/udisks-2.9.4/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2021-09-29</discovery>
+      <entry>2022-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c253c4aa-5126-11ed-8a21-589cfc0f81b0">
     <topic>phpmyfaq -- CSRF vulnerability</topic>
     <affects>
