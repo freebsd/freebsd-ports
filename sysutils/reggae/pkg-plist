@@ -108,7 +108,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/ansible/group_vars/all.tpl
 %%DATADIR%%/templates/ansible/inventory.local.tpl
 %%DATADIR%%/templates/ansible/inventory.remote.tpl
-%%DATADIR%%/templates/cbsd-bhyve.conf.tpl
+%%DATADIR%%/templates/cbsd-bhyve.freebsd.conf.tpl
 %%DATADIR%%/templates/cbsd-vnet.conf.tpl
 %%DATADIR%%/templates/cbsd.conf.tpl
 %%DATADIR%%/templates/cloud-devops.sh
