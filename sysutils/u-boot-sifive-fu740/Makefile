@@ -1,7 +1,5 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
-PATCHFILES+=	1665960/raw
-
 MODEL=		sifive-fu740
 BOARD_CONFIG=	sifive_unmatched_defconfig
 FAMILY=		sifive
