@@ -3,6 +3,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/
 DISTNAME=	v${PORTVERSION}
+DIST_SUBDIR=	octave-forge/${PORTNAME}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
