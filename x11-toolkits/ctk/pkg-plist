@@ -38,6 +38,7 @@ include/ctk-0.1/ctkColorDialog.h
 include/ctk-0.1/ctkColorPickerButton.h
 include/ctk-0.1/ctkComboBox.h
 include/ctk-0.1/ctkCommandLineParser.h
+include/ctk-0.1/ctkCompatibility_p.h
 include/ctk-0.1/ctkCompilerDetections_p.h
 include/ctk-0.1/ctkCompleter.h
 include/ctk-0.1/ctkConfig.h
@@ -49,6 +50,7 @@ include/ctk-0.1/ctkCoordinatesWidget.h
 include/ctk-0.1/ctkCoordinatesWidget_p.h
 include/ctk-0.1/ctkCoreExport.h
 include/ctk-0.1/ctkCorePythonQtDecorators.h
+include/ctk-0.1/ctkCoreSettings.h
 include/ctk-0.1/ctkCoreTestingMacros.h
 include/ctk-0.1/ctkCoreTestingUtilities.h
 include/ctk-0.1/ctkCoreTestingUtilities.tpp
@@ -64,6 +66,7 @@ include/ctk-0.1/ctkDoubleSpinBox.h
 include/ctk-0.1/ctkDoubleSpinBox_p.h
 include/ctk-0.1/ctkDynamicSpacer.h
 include/ctk-0.1/ctkErrorLogAbstractMessageHandler.h
+include/ctk-0.1/ctkErrorLogAbstractModel.h
 include/ctk-0.1/ctkErrorLogContext.h
 include/ctk-0.1/ctkErrorLogFDMessageHandler.h
 include/ctk-0.1/ctkErrorLogFDMessageHandler_p.h
@@ -191,10 +194,12 @@ lib/ctk-0.1/CMake/CTKExports.cmake
 lib/ctk-0.1/CMake/CTKPluginUseFile.cmake
 lib/ctk-0.1/CMake/UseCTK.cmake
 lib/ctk-0.1/CMake/ctkExport.h.in
+lib/ctk-0.1/CMake/ctkFunctionAddExecutableUtf8.cmake
 lib/ctk-0.1/CMake/ctkFunctionAddPluginRepo.cmake
 lib/ctk-0.1/CMake/ctkFunctionCheckCompilerFlags.cmake
 lib/ctk-0.1/CMake/ctkFunctionCheckoutRepo.cmake
 lib/ctk-0.1/CMake/ctkFunctionCompileSnippets.cmake
+lib/ctk-0.1/CMake/ctkFunctionExtractOptimizedLibrary.cmake
 lib/ctk-0.1/CMake/ctkFunctionExtractOptionNameAndValue.cmake
 lib/ctk-0.1/CMake/ctkFunctionGenerateDGraphInput.cmake
 lib/ctk-0.1/CMake/ctkFunctionGeneratePluginManifest.cmake

@@ -1,6 +1,6 @@
 PORTNAME=	CTK
-DISTVERSION=	2018-10-29
-PORTREVISION=	2
+DISTVERSION=	2018-10-29-269
+DISTVERSIONSUFFIX=	-g8487ec9a
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-widgets
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c++11-lib qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	commontk
-USE_QT=		concurrent core designer gui opengl sql widgets xml xmlpatterns \
+USE_QT=		concurrent core designer gui multimedia opengl sql widgets xml xmlpatterns \
 		buildtools:build uitools:build qmake:build testlib:build # see CMake/ctkMacroSetupQt.cmake
 USE_LDCONFIG=	yes
 
