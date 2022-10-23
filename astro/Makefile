@@ -115,6 +115,7 @@
     SUBDIR += sofa
     SUBDIR += sscalc
     SUBDIR += stardates
+    SUBDIR += starfetch
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium
