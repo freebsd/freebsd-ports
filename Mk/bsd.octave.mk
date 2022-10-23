@@ -16,7 +16,7 @@ LIB_DEPENDS+=	libpcre.so:devel/pcre
 USES+=		fortran gmake compiler:c++14-lang
 CXXFLAGS+=	-std=gnu++11
 
-DIST_SUBDIR=	octave-forge
+DIST_SUBDIR?=	octave-forge
 OCTAVE_PKGNAME=	${PORTNAME:S/octave-forge-//}
 OCTAVE_DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSION}
 TARBALLS_DIR=	${LOCALBASE}/share/octave/tarballs
