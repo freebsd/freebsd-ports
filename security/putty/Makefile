@@ -1,7 +1,6 @@
 PORTNAME=	putty
-PORTVERSION=	0.78~pre20220922
-DISTVERSIONSUFFIX=	.9fcfd67
-PORTREVISION=	1
+DISTVERSION=	0.78~pre20221023
+DISTVERSIONSUFFIX=	.0c59d49
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -37,9 +36,7 @@ PLIST_FILES=	bin/pageant \
 OPTIONS_DEFINE=			GTK3
 OPTIONS_DEFAULT=		GSSAPI_BASE GTK3
 OPTIONS_SINGLE=			GSSAPI_SELECT
-OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE \
-				GSSAPI_HEIMDAL \
-				GSSAPI_MIT \
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT \
 				GSSAPI_NONE
 
 .include <bsd.port.options.mk>
@@ -74,26 +71,29 @@ CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=NONE
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} # Heimdal-like in base system
 USES+=		gssapi:base,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC -DKRB5_CONFIG:PATH=${KRB5CONFIG}
+CMAKE_ARGS+=	-DKRB5_CONFIG:PATH=${KRB5CONFIG} \
+		-DPUTTY_GSSAPI:STRING=STATIC
 .elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
 USES+=		gssapi:heimdal,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC -DKRB5_CONFIG:PATH=${KRB5CONFIG}
+CMAKE_ARGS+=	-DKRB5_CONFIG:PATH=${KRB5CONFIG} \
+		-DPUTTY_GSSAPI:STRING=STATIC
 .elif ${PORT_OPTIONS:MGSSAPI_MIT}
 USES+=		gssapi:mit,flags
-CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC -DKRB5_CONFIG:PATH=${KRB5CONFIG}
+CMAKE_ARGS+=	-DKRB5_CONFIG:PATH=${KRB5CONFIG} \
+		-DPUTTY_GSSAPI:STRING=STATIC
 .else
 CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=OFF
 .endif
 
 post-patch:
-	# we don't want to inherit FreeBSD commits
-	# as PUTTY Git commit revisions,
-	# so pretend we do not have Git:
+# we don't want to inherit FreeBSD commits
+# as PUTTY Git commit revisions,
+# so pretend we do not have Git:
 	${REINPLACE_CMD} '/FindGit/d' \
 		${WRKSRC}/cmake/setup.cmake \
 		${WRKSRC}/doc/CMakeLists.txt
-	# nuke pkg-config detection of GSSAPI/Kerberos libs,
-	# it interferes with FreeBSD's krb5-config approach
+# nuke pkg-config detection of GSSAPI/Kerberos libs,
+# it interferes with FreeBSD's krb5-config approach
 	${REINPLACE_CMD} '/pkg_check_modules(KRB5 krb5-gssapi)/d' \
 		${WRKSRC}/cmake/platforms/unix.cmake
 
