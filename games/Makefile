@@ -796,6 +796,7 @@
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += pysolfc
+    SUBDIR += pysolfc-cardsets
     SUBDIR += pyspacewar
     SUBDIR += q2p
     SUBDIR += q2pro
