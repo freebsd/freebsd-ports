@@ -58,18 +58,15 @@ ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 PTS_DESC=	Functionality provided by third party patches
 RENAMED_DESC=	Add support for renamed file detection
 
-FLAGS_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 FLAGS_EXTRA_PATCHES=	${WRKSRC}/patches/fileflags.diff \
 			${FILESDIR}/extrapatch-main.c
 
-ICONV_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 ICONV_USES=		iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
 
 POPT_PORT_LIB_DEPENDS=		libpopt.so:devel/popt
 POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 
-RENAMED_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 RENAMED_EXTRA_PATCHES=	${WRKSRC}/patches/detect-renamed.diff
 
 SSH_CONFIGURE_ON=	--with-rsh=ssh
@@ -77,7 +74,9 @@ SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 
-.if make(makesum)
+.include <bsd.port.options.mk>
+
+.if make(makesum) || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MRENAMED}
 DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
