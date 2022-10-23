@@ -1,16 +1,15 @@
 PORTNAME=	terminator
-PORTVERSION=	2.1.2
+DISTVERSION=	2.1.2
 PORTREVISION=	0
 CATEGORIES=	x11 python
-MASTER_SITES=	https://github.com/gnome-terminator/terminator/archive/
-DISTNAME=	v${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	https://github.com/gnome-${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Multiple GNOME terminals in one window
 WWW=		https://github.com/gnome-terminator/terminator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
@@ -22,8 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
 USES=		gnome python:3.5+ shebangfix gettext
 USE_GNOME=	intltool pygobject3 vte3
 USE_PYTHON=	autoplist distutils noflavors
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PYDISTUTILS_PKGNAME=	Terminator
 
