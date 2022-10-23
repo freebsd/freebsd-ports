@@ -76,6 +76,8 @@ CMAKE_ARGS+=	-DAMD_LIBRARY_DIRS=${LOCALBASE}/lib
 
 # users: https://duongdo27.github.io/Trilinos/users.html
 
+CONFLICTS_INSTALL=	googletest # installs files into the same place, problematic file: /usr/local/include/gtest/gtest.h, see https://github.com/trilinos/Trilinos/issues/11184
+
 post-install:
 	# remove MPI headers that it installs
 	@${RM} ${STAGEDIR}${PREFIX}/include/mpi*.h
