@@ -1,5 +1,5 @@
 PORTNAME=	redmine
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.8
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	42
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
-		rubygem-rails52>=5.2.6<5.3:www/rubygem-rails52 \
+		rubygem-rails52>=5.2.8.1<5.3:www/rubygem-rails52 \
 		rubygem-rouge>=3.26.0:textproc/rubygem-rouge \
 		rubygem-request_store>=1.5.0:devel/rubygem-request_store \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \

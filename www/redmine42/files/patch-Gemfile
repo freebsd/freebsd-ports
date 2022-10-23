@@ -1,11 +1,7 @@
---- Gemfile.orig	2021-04-30 11:34:49 UTC
+--- Gemfile.orig	2022-10-02 20:10:08 UTC
 +++ Gemfile
-@@ -3,17 +3,17 @@ gem 'bundler', '>= 1.12.0'
- ruby '>= 2.4.0', '< 2.8.0'
- gem 'bundler', '>= 1.12.0'
- 
--gem 'rails', '5.2.8'
-+gem 'rails', '>=5.2.8'
+@@ -6,14 +6,14 @@ gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::
+ gem 'rails', '5.2.8.1'
  gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
  gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::Version.new('2.6.0')
 -gem 'rouge', '~> 3.26.0'
@@ -31,7 +27,7 @@
  gem "rbpdf", "~> 1.20.0"
  gem 'addressable'
  gem 'rubyzip', '~> 2.3.0'
-@@ -44,68 +44,6 @@ end
+@@ -45,68 +45,6 @@ end
    gem "rack-openid"
  end
  
@@ -100,7 +96,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -114,4 +52,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
+@@ -115,4 +53,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file

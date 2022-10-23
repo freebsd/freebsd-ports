@@ -1618,7 +1618,7 @@
 %%WWWDIR%%/public/javascripts/i18n/datepicker-vi.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-CN.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-TW.js
-%%WWWDIR%%/public/javascripts/jquery-3.5.1-ui-1.12.1-ujs-5.2.4.5.js
+%%WWWDIR%%/public/javascripts/jquery-3.6.1-ui-1.13.2-ujs-5.2.8.1.js
 %%WWWDIR%%/public/javascripts/jquery-migrate-3.3.2.min.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
@@ -1690,7 +1690,7 @@
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-icons_777777_256x240.png
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-icons_cc0000_256x240.png
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-icons_ffffff_256x240.png
-%%WWWDIR%%/public/stylesheets/jquery/jquery-ui-1.12.1.css
+%%WWWDIR%%/public/stylesheets/jquery/jquery-ui-1.13.2.css
 %%WWWDIR%%/public/stylesheets/jstoolbar.css
 %%WWWDIR%%/public/stylesheets/responsive.css
 %%WWWDIR%%/public/stylesheets/rtl.css
