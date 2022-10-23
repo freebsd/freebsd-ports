@@ -69,12 +69,14 @@ share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
 share/osinfo/os/almalinux.org/almalinux-8.xml
+share/osinfo/os/almalinux.org/almalinux-9.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.15.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.16.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -298,6 +300,7 @@ share/osinfo/os/fedoraproject.org/fedora-6.xml
 share/osinfo/os/fedoraproject.org/fedora-7.xml
 share/osinfo/os/fedoraproject.org/fedora-8.xml
 share/osinfo/os/fedoraproject.org/fedora-9.xml
+share/osinfo/os/fedoraproject.org/fedora-eln.xml
 share/osinfo/os/fedoraproject.org/fedora-rawhide.xml
 share/osinfo/os/fedoraproject.org/fedora-unknown.xml
 share/osinfo/os/fedoraproject.org/silverblue-28.xml
@@ -327,6 +330,7 @@ share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-12.2.xml
 share/osinfo/os/freebsd.org/freebsd-12.3.xml
 share/osinfo/os/freebsd.org/freebsd-13.0.xml
+share/osinfo/os/freebsd.org/freebsd-13.1.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -395,6 +399,7 @@ share/osinfo/os/hyperbola.info/hyperbola-03.xml
 share/osinfo/os/libosinfo.org/linux-2016.xml
 share/osinfo/os/libosinfo.org/linux-2018.xml
 share/osinfo/os/libosinfo.org/linux-2020.xml
+share/osinfo/os/libosinfo.org/linux-2022.xml
 share/osinfo/os/libosinfo.org/unknown.xml
 share/osinfo/os/mageia.org/mageia-1.xml
 share/osinfo/os/mageia.org/mageia-2.xml
@@ -475,6 +480,8 @@ share/osinfo/os/microsoft.com/winnt-3.5.xml
 share/osinfo/os/microsoft.com/winnt-3.51.xml
 share/osinfo/os/microsoft.com/winnt-4.0.xml
 share/osinfo/os/miraclelinux.com/miraclelinux-8.4.xml
+share/osinfo/os/miraclelinux.com/miraclelinux-9-unknown.xml
+share/osinfo/os/miraclelinux.com/miraclelinux-9.0.xml
 share/osinfo/os/netbsd.org/netbsd-0.8.xml
 share/osinfo/os/netbsd.org/netbsd-0.9.xml
 share/osinfo/os/netbsd.org/netbsd-1.0.xml
@@ -504,6 +511,7 @@ share/osinfo/os/nixos.org/nixos-20.03.xml
 share/osinfo/os/nixos.org/nixos-20.09.xml
 share/osinfo/os/nixos.org/nixos-21.05.xml
 share/osinfo/os/nixos.org/nixos-21.11.xml
+share/osinfo/os/nixos.org/nixos-22.05.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
@@ -552,6 +560,7 @@ share/osinfo/os/opensuse.org/opensuse-15.0.xml
 share/osinfo/os/opensuse.org/opensuse-15.1.xml
 share/osinfo/os/opensuse.org/opensuse-15.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.3.xml
+share/osinfo/os/opensuse.org/opensuse-15.4.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -677,8 +686,11 @@ share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-8.4.xml
 share/osinfo/os/redhat.com/rhel-8.5.xml
+share/osinfo/os/redhat.com/rhel-8.6.xml
+share/osinfo/os/redhat.com/rhel-8.7.xml
 share/osinfo/os/redhat.com/rhel-9-unknown.xml
 share/osinfo/os/redhat.com/rhel-9.0.xml
+share/osinfo/os/redhat.com/rhel-9.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -709,8 +721,10 @@ share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-8.4.xml
 share/osinfo/os/rockylinux.org/rocky-8.5.xml
 share/osinfo/os/rockylinux.org/rocky-8.6.xml
+share/osinfo/os/rockylinux.org/rocky-8.xml
 share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-9.0.xml
+share/osinfo/os/rockylinux.org/rocky-9.xml
 share/osinfo/os/rockylinux.org/rocky-unknown.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-5.0.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-5.1.xml
@@ -756,6 +770,7 @@ share/osinfo/os/suse.com/sle-15-unknown.xml
 share/osinfo/os/suse.com/sle-15.1.xml
 share/osinfo/os/suse.com/sle-15.2.xml
 share/osinfo/os/suse.com/sle-15.3.xml
+share/osinfo/os/suse.com/sle-15.4.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
@@ -777,6 +792,8 @@ share/osinfo/os/suse.com/sled-12.5.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
 share/osinfo/os/suse.com/slem-5.0.xml
+share/osinfo/os/suse.com/slem-5.1.xml
+share/osinfo/os/suse.com/slem-5.2.xml
 share/osinfo/os/suse.com/sles-10.1.xml
 share/osinfo/os/suse.com/sles-10.2.xml
 share/osinfo/os/suse.com/sles-10.3.xml
@@ -828,6 +845,7 @@ share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-21.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-22.04.xml
+share/osinfo/os/ubuntu.com/ubuntu-22.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
@@ -839,6 +857,12 @@ share/osinfo/os/ubuntu.com/ubuntu-8.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-8.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.10.xml
+share/osinfo/os/univention.de/ucs-4.0.xml
+share/osinfo/os/univention.de/ucs-4.1.xml
+share/osinfo/os/univention.de/ucs-4.2.xml
+share/osinfo/os/univention.de/ucs-4.3.xml
+share/osinfo/os/univention.de/ucs-4.4.xml
+share/osinfo/os/univention.de/ucs-5.0.xml
 share/osinfo/os/voidlinux.org/voidlinux-rolling.xml
 share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.1.xml
 share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.xml
