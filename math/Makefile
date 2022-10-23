@@ -609,6 +609,7 @@
     SUBDIR += octave-forge-tcl-octave
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
+    SUBDIR += octave-forge-websockets
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
     SUBDIR += octomap
