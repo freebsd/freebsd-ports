@@ -1,8 +1,11 @@
 PORTNAME=	pysolfc-cardsets
 PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	SF/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}/
+MASTER_SITES=	SF/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}/ \
+		https://slackware.uk/~urchlay/src/:bk
 DISTNAME=	PySolFC-Cardsets-${PORTVERSION}
+DISTFILES=	${DISTNAME}.tar.bz2 \
+		pysolfc-cardsets-bknoll.tar.xz:bk
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Collection of free cardsets adapted for use with PySolFC
@@ -12,7 +15,6 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	pysolfc:games/pysolfc
 
-USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes
 
@@ -33,7 +35,9 @@ post-extract:
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/PySolFC
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/PySolFC
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/PySolFC
+	cd ${WRKSRC}/../pysolfc-cardsets-bknoll && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/PySolFC
 
 .include <bsd.port.mk>
