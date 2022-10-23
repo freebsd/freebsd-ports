@@ -1,7 +1,6 @@
 PORTNAME=	gtk-layer-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	2
+DISTVERSION=	0.8.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	wayland-protocols>=1.16:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 TEST_DEPENDS=	evdev-proto>0:devel/evdev-proto
 
-USES=		compiler:c11 gnome meson pkgconfig
+USES=		compiler:c11 gnome meson pkgconfig vala:build
 USE_GNOME=	gtk30 introspection:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
