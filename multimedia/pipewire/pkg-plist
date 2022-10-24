@@ -1,4 +1,5 @@
 bin/pipewire
+bin/pipewire-avb
 %%MEDIASESSION%%bin/pipewire-media-session
 bin/pipewire-pulse
 bin/pw-cat
@@ -171,16 +172,16 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.354.0
+lib/libpipewire-0.3.so.0.359.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.354.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.359.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.354.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.359.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.354.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.359.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -284,6 +285,7 @@ libdata/pkgconfig/libspa-0.2.pc
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/usb-gaming-headset-output-stereo.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/virtual-surround-7.1.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/analog-only.conf
+%%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/asus-xonar-se.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/audigy.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/cmedia-high-speed-true-hdaudio.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/default.conf
@@ -359,6 +361,7 @@ share/locale/it/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%share/locale/ja/LC_MESSAGES/media-session.mo
 share/locale/ja/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%share/locale/kk/LC_MESSAGES/media-session.mo
+share/locale/ka/LC_MESSAGES/pipewire.mo
 share/locale/kk/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%share/locale/kn/LC_MESSAGES/media-session.mo
 share/locale/kn/LC_MESSAGES/pipewire.mo
@@ -415,13 +418,16 @@ share/locale/zh_CN/LC_MESSAGES/pipewire.mo
 share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/client-rt.conf
 %%DATADIR%%/client.conf
+%%DATADIR%%/filter-chain.conf
 %%DATADIR%%/filter-chain/demonic.conf
-%%DATADIR%%/filter-chain/duplicate-FL.conf
 %%DATADIR%%/filter-chain/sink-dolby-surround.conf
 %%DATADIR%%/filter-chain/sink-eq6.conf
+%%DATADIR%%/filter-chain/sink-make-LFE.conf
 %%DATADIR%%/filter-chain/sink-matrix-spatialiser.conf
+%%DATADIR%%/filter-chain/sink-mix-FL-FR.conf
 %%DATADIR%%/filter-chain/sink-virtual-surround-5.1-kemar.conf
 %%DATADIR%%/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
+%%DATADIR%%/filter-chain/source-duplicate-FL.conf
 %%DATADIR%%/filter-chain/source-rnnoise.conf
 %%DATADIR%%/jack.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/alsa-monitor.conf
@@ -431,5 +437,6 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/with-jack
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/with-pulseaudio
 %%DATADIR%%/minimal.conf
+%%DATADIR%%/pipewire-avb.conf
 %%DATADIR%%/pipewire-pulse.conf
 %%DATADIR%%/pipewire.conf
