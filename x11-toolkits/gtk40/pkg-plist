@@ -15,7 +15,6 @@ bin/gtk4-widget-factory
 %%BROADWAY%%include/gtk-4.0/gdk/broadway/gdkbroadwaydisplay.h
 %%BROADWAY%%include/gtk-4.0/gdk/broadway/gdkbroadwaymonitor.h
 %%BROADWAY%%include/gtk-4.0/gdk/broadway/gdkbroadwaysurface.h
-include/gtk-4.0/gdk/gdk-autocleanup.h
 include/gtk-4.0/gdk/gdk.h
 include/gtk-4.0/gdk/gdkapplaunchcontext.h
 include/gtk-4.0/gdk/gdkcairo.h
@@ -90,7 +89,6 @@ include/gtk-4.0/gdk/gdkvulkancontext.h
 %%X11%%include/gtk-4.0/gdk/x11/gdkx11utils.h
 %%BROADWAY%%include/gtk-4.0/gsk/broadway/gskbroadwayrenderer.h
 include/gtk-4.0/gsk/gl/gskglrenderer.h
-include/gtk-4.0/gsk/gsk-autocleanup.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
 include/gtk-4.0/gsk/gskenums.h
@@ -108,7 +106,6 @@ include/gtk-4.0/gtk/css/gtkcssenumtypes.h
 include/gtk-4.0/gtk/css/gtkcsserror.h
 include/gtk-4.0/gtk/css/gtkcsslocation.h
 include/gtk-4.0/gtk/css/gtkcsssection.h
-include/gtk-4.0/gtk/gtk-autocleanups.h
 include/gtk-4.0/gtk/gtk.h
 include/gtk-4.0/gtk/gtkaboutdialog.h
 include/gtk-4.0/gtk/gtkaccelgroup.h
