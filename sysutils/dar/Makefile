@@ -1,5 +1,6 @@
 PORTNAME=	dar
 PORTVERSION=	2.7.7
+PORTREVISION=	1
 
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
@@ -10,7 +11,7 @@ WWW=		http://dar.linux.free.fr/
 
 LICENSE=	GPLv2+
 
-USES=		compiler:c++14-lang libtool pathfix shebangfix
+USES=		compiler:c++14-lang libtool localbase pathfix shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	doc/samples/*.bash doc/samples/*.sh doc/samples/dar_backup \
