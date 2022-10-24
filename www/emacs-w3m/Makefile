@@ -61,6 +61,10 @@ PLIST_SUB+=	EMACS28="@comment "
 post-patch:
 	@${MV} ${WRKSRC}/aclocal.m4 ${WRKSRC}/acinclude.m4
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m/mew-shimbun.elc \
+	      ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m/mew-w3m.elc
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
