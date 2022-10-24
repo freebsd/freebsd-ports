@@ -17,6 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe shebangfix
 FLAVORS=	openjdk8 openjdk11
+FLAVOR?=	${FLAVORS:[1]}
 
 CONFLICTS=	jetty-8.* jetty-10.*
 
