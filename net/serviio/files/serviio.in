@@ -17,10 +17,14 @@ command=%%PREFIX%%/sbin/serviiod
 load_rc_config $name
 
 : ${serviio_user="dlna"}
+: ${serviio_heap="512M"}
+: ${serviio_stack="20M"}
 
 if [ -n "${serviio_lang}" ]; then
 	export LANG=${serviio_lang}
 fi
+
+export SERVIIO_MEM="-Xmx${serviio_heap} -Xms${serviio_stack}"
 
 _dirs="/var/db/serviio /var/db/serviio/home /var/log/serviio"
 start_precmd="mkdir -p $_dirs; chown $serviio_user $_dirs"

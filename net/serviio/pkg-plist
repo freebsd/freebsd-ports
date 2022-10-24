@@ -36,7 +36,6 @@
 %%JAVAJARDIR%%/serviio/rome-modules.jar
 %%JAVAJARDIR%%/serviio/rome.jar
 %%JAVAJARDIR%%/serviio/saaj-impl.jar
-%%JAVAJARDIR%%/serviio/sbbi-upnp.jar
 %%JAVAJARDIR%%/serviio/serviio-mediabrowser-api.jar
 %%JAVAJARDIR%%/serviio/serviio-mediabrowser-web.jar
 %%JAVAJARDIR%%/serviio/serviio-web-console-api.jar
@@ -47,6 +46,7 @@
 %%JAVAJARDIR%%/serviio/stax-api.jar
 %%JAVAJARDIR%%/serviio/stax-ex.jar
 %%JAVAJARDIR%%/serviio/streamflyer-core.jar
+%%JAVAJARDIR%%/serviio/waifupnp.jar
 %%JAVAJARDIR%%/serviio/winp.jar
 %%JAVAJARDIR%%/serviio/xstream.jar
 @sample %%ETCDIR%%/application-profiles.xml.sample
