@@ -1,5 +1,5 @@
 PORTNAME=	universal-ctags
-PORTVERSION=	p5.9.20220828.0
+PORTVERSION=	p5.9.20221023.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -37,7 +37,8 @@ JSON_CONFIGURE_ENABLE=	json
 LIBXML2_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 LIBXML2_CONFIGURE_ENABLE=	xml
 
-MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
+MANPAGES_BUILD_DEPENDS=		rst2man:textproc/py-docutils
+MANPAGES_CONFIGURE_WITH=	rst2man=${LOCALBASE}/bin/rst2man
 
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE2_CONFIGURE_ENABLE=	pcre2
