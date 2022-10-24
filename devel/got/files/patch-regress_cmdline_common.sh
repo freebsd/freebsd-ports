@@ -1,9 +1,18 @@
---- regress/cmdline/common.sh.orig	2021-03-22 10:05:11 UTC
+--- regress/cmdline/common.sh.orig	2022-08-23 09:11:50 UTC
 +++ regress/cmdline/common.sh
-@@ -26,6 +26,20 @@ export GOT_TEST_ROOT="/tmp"
+@@ -27,6 +27,29 @@ export GOT_IGNORE_GITCONFIG=1
  
  export MALLOC_OPTIONS=S
  
++# work around the fix for CVE-2022-39253 in Git 2.38.1
++git()
++(
++	if [ "$1" = submodule ]; then
++		set - -c protocol.file.allow=always "$@"
++	fi
++	exec git "$@"
++)
++
 +# compat wrapper
 +sed()
 +(
