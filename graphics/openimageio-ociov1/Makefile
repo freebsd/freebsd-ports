@@ -1,7 +1,7 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.21.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics multimedia
 PKGNAMESUFFIX=	-ociov1
 # special port to link oiio libs with ociov1
@@ -30,6 +30,8 @@ USES=		cmake jpeg compiler:c++14-lang iconv:wchar_t
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
+
+PORTSCOUT=	limit:^2\.2\.
 
 CMAKE_ON=	USE_OCIO
 CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS \
