@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/license-eplv10-aslv20.html
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe shebangfix
-FLAVORS=	openjdk8 openjdk9 openjdk10 openjdk11
+FLAVORS=	openjdk8 openjdk11
 
 CONFLICTS=	jetty-8.* jetty-10.*
 
@@ -56,10 +56,6 @@ PLIST_SUB=	\
 
 .if ${FLAVOR:U} == openjdk8
 JAVA_VERSION=	8+
-.elif ${FLAVOR:U} == openjdk9
-JAVA_VERSION=	9+
-.elif ${FLAVOR:U} == openjdk10
-JAVA_VERSION=	10+
 .elif ${FLAVOR:U} == openjdk11
 JAVA_VERSION=	11+
 .endif
