@@ -1,5 +1,5 @@
 PORTNAME=	nbconvert
-PORTVERSION=	7.2.1
+PORTVERSION=	7.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,5 +40,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-
 
 post-patch:
 	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/jupyter/nbconvert
+	cd ${WRKSRC}/share && ${COPYTREE_SHARE} templates ${STAGEDIR}${PREFIX}/share/jupyter/nbconvert
 
 .include <bsd.port.post.mk>
