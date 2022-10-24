@@ -1,11 +1,11 @@
 PORTNAME=	sundials
 DISTVERSION=	6.4.0
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/LLNL/sundials/archive/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers
-WWW=		https://computation.llnl.gov/projects/sundials
+WWW=		https://computing.llnl.gov/projects/sundials
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,14 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing fortran localbase:ldflags python:build # 4 tests fail, see https://github.com/LLNL/sundials/issues/220
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=		-DENABLE_PTHREAD:BOOL=ON \
-			-DBUILD_STATIC_LIBS:BOOL=OFF \
-			-DCMAKE_C_STANDARD=99
-CMAKE_OFF=		EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
+CMAKE_ARGS=		-DCMAKE_C_STANDARD=99
+CMAKE_ON=		ENABLE_PTHREAD
+CMAKE_OFF=		BUILD_STATIC_LIBS \
+			EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
 CMAKE_TESTING_ON=	SUNDIALS_TEST_UNITTESTS \
 			EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
 
-FCFLAGS:=	${FFLAGS} # project checks that these flags are equal
+FCFLAGS:=		${FFLAGS} # project checks that these flags are equal
 
 OPTIONS_DEFINE=		BLAS EXAMPLES KLU LAPACK MPI OPENMP
 OPTIONS_DEFAULT=	KLU LAPACK MPI OPENMP
