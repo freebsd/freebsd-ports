@@ -12,6 +12,9 @@ WWW=		https://www.vtk.org
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=		Old version not used anywhere in the ports tree
+EXPIRATION_DATE=	2022-12-23
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
