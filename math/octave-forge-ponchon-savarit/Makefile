@@ -1,9 +1,7 @@
 PORTNAME=	octave-forge-ponchon-savarit
-PORTVERSION=	0.1.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.1
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/aumpierre-unb/Ponchon-Savarit-for-GNU-Octave/archive/refs/tags/
-DISTNAME=	v${PORTVERSION}
-DIST_SUBDIR=	octave-forge/${PORTNAME}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -12,9 +10,13 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	aumpierre-unb
+GH_PROJECT=	Ponchon-Savarit-for-GNU-Octave
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		Ponchon-Savarit-for-GNU-Octave-${PORTVERSION}
+OCTSRC=		${GH_PROJECT}-${DISTVERSION}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
