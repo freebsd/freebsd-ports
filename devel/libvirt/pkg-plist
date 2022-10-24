@@ -152,6 +152,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/arm_Kunpeng-920.xml
 %%DATADIR%%/cpu_map/arm_Tengyun-S2500.xml
 %%DATADIR%%/cpu_map/arm_ThunderX299xx.xml
+%%DATADIR%%/cpu_map/arm_a64fx.xml
 %%DATADIR%%/cpu_map/arm_cortex-a53.xml
 %%DATADIR%%/cpu_map/arm_cortex-a57.xml
 %%DATADIR%%/cpu_map/arm_cortex-a72.xml
@@ -235,7 +236,9 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/schemas/domaincaps.rng
 %%DATADIR%%/schemas/domaincheckpoint.rng
 %%DATADIR%%/schemas/domaincommon.rng
+%%DATADIR%%/schemas/domainoverrides.rng
 %%DATADIR%%/schemas/domainsnapshot.rng
+%%DATADIR%%/schemas/inactiveDomain.rng
 %%DATADIR%%/schemas/interface.rng
 %%DATADIR%%/schemas/network.rng
 %%DATADIR%%/schemas/networkcommon.rng
