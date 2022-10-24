@@ -1,0 +1,4 @@
+Notes is an open-source and cross-platform note-taking application that
+is beautiful and sleek looking, yet still powerful.  It is fast native
+program (written in C++ with Qt) with a low memory footprint, supporting
+markdown and not tracking users in any way.

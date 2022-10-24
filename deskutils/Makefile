@@ -183,6 +183,7 @@
     SUBDIR += nextcloudclient
     SUBDIR += note
     SUBDIR += notekit
+    SUBDIR += notes
     SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
