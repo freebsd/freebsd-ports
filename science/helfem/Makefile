@@ -1,6 +1,6 @@
 PORTNAME=	helfem
 DISTVERSION=	g20210912
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science # chemistry
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
