@@ -139,6 +139,7 @@
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
     SUBDIR += py-pyserial
+    SUBDIR += py-pyserial-asyncio
     SUBDIR += py-xmodem
     SUBDIR += pyla
     SUBDIR += qico

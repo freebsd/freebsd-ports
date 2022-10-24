@@ -1,0 +1,2 @@
+This module provides asynchronous I/O on serial ports, extending the
+pyserial module.
