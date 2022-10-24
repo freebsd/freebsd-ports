@@ -1,7 +1,7 @@
 PORTNAME=	mirtk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-178
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-g973ce2f
 CATEGORIES=	graphics
 
@@ -31,7 +31,8 @@ TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 VTK_DESC=		Build with the VTK toolkit
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9 \
+VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 			libexpat.so:textproc/expat2
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

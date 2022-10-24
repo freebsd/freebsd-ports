@@ -1,6 +1,6 @@
 PORTNAME=	opencascade
 PORTVERSION=	7.6.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libfreetype.so:print/freetype2		\
 		libexpat.so:textproc/expat2		\
 		libpng16.so:graphics/png		\
-		libvtksys-${VTKVER}.so:math/vtk${VTKVER:R}
+		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R}
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
@@ -39,8 +39,6 @@ SHEBANG_FILES=	adm/templates/*.sh	\
 		adm/start.tcl		\
 		gendoc
 ENVSH=		adm/templates/env.sh
-
-VTKVER=		9.1
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl)
@@ -62,7 +60,7 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DUSE_TBB:BOOL=OFF					\
 		-DUSE_RAPIDJSON:BOOL=ON					\
 		-DUSE_VTK:BOOL=ON					\
-		-D3RDPARTY_VTK_INCLUDE_DIR:PATH=${LOCALBASE}/include/vtk-${VTKVER}
+		-D3RDPARTY_VTK_INCLUDE_DIR:PATH=${LOCALBASE}/include/vtk-${VTK_VER}
 CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
 .if defined(MAINTAINER_MODE)
@@ -181,4 +179,5 @@ regression-test:	install
 	DRAWEXE -f ${FILESDIR}/regtest "
 .endif
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

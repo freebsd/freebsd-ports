@@ -1,7 +1,7 @@
 PORTNAME=	qcsxcad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.2-9
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-g3f09a8b
 CATEGORIES=	cad
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libCSXCAD.so:cad/csxcad \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
-		libvtkCommonCore-9.1.so:math/vtk9
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake gl jpeg pkgconfig qt:5 xorg
 USE_QT=		core gui opengl sql widgets xml buildtools:build qmake:build
@@ -30,6 +30,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	thliebig
 GH_PROJECT=	${PORTNAME:tu}
 
-CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
+CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

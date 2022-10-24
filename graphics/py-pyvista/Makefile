@@ -1,5 +1,6 @@
 PORTNAME=	pyvista
 DISTVERSION=	0.34.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +17,12 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}imageio>0:graphics/py-imageio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scooby>=0.5.1:devel/py-scooby@${PY_FLAVOR} \
-		vtk9>0:math/vtk9
+		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

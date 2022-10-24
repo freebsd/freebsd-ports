@@ -1,6 +1,5 @@
 PORTNAME=	vtk
-DISTVERSION=	9.1.0
-PORTREVISION=	8
+DISTVERSION=	9.2.2
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -35,9 +34,14 @@ CMAKE_ARGS=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_QT_DIR=/${QT_LIBDIR_REL}/plugins/designer \
 		-DSTAGEDIR=${STAGEDIR}
 		# all build options are documented here: https://gitlab.kitware.com/vtk/vtk/blob/master/Documentation/dev/build.md
+		# all modules can be obtailed by: find . -name vtk.module
+		# there's also CMake/vtkWrapSettings.cmake with options
 
 # disable finding Qt6
 CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6
+
+# enable all modules
+#CMAKE_ON+=	VTK_BUILD_ALL_MODULES
 
 VTK_SHORT_VER=	${PORTVERSION:R}
 
@@ -45,20 +49,20 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS MPI OSMESA PYTHON QT5 EXAMPLES
-OPTIONS_DEFAULT=	MPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
+OPTIONS_DEFINE=	DESIGNER DOCS OMPI OSMESA PYTHON QT5 EXAMPLES
+OPTIONS_DEFAULT=	OMPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
 OSMESA_DESC=	Use Mesa for off-screen rendering
+OMPI_DESC=	OpenMPI (Message Passing Interface) support
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
 
-# Options groups
-VTK_WRAPS=	JAVA TCLTK
-OPTIONS_GROUP=	WRAPPING
-OPTIONS_GROUP_WRAPPING=${VTK_WRAPS}
-GROUPS_DESC=	Groups
-WRAPPING_DESC=	Wrapping
-.for w in ${VTK_WRAPS}
-$w_DESC=	$w wrapping
+# Option groups that enable groups of modules in VTK
+VTK_GROUPS=		JAVA TCLTK
+OPTIONS_GROUP=		GROUPS
+OPTIONS_GROUP_GROUPS=	${VTK_GROUPS}
+GROUPS_DESC=		Groups
+.for w in ${VTK_GROUPS}
+$w_DESC=		Enable $w group
 .endfor
 
 PYTHON_USES=		python:3.6+
@@ -68,19 +72,20 @@ PYTHON_VARS=		SUB_FILES=PKG-INFO SUB_LIST=PORTVERSION=${PORTVERSION}
 
 QT5_USES=		qt:5
 QT5_USE=		QT=core,declarative,gui,network,opengl,sql,uiplugin,widgets,x11extras,qmake:build,buildtools:build
-QT5_CMAKE_ON=		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5 \
-			-DVTK_GROUP_ENABLE_Qt:STRING=YES \
-			-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES
+QT5_CMAKE_ON=		-DVTK_GROUP_ENABLE_Qt:STRING=YES \
+			-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5
+
+#QT6_USES=		qt:6
+#QT6_USE=		QT=base,declarative,tools:build
+#QT6_CMAKE_ON=		-DVTK_GROUP_ENABLE_Qt:STRING=YES \
+			-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5
 
 DESIGNER_CMAKE_BOOL=	QT_DESIGNER_PLUGIN
 DESIGNER_USE=		QT=designer
 DESIGNER_IMPLIES=	QT5
 
-MPI_CMAKE_BOOL=		VTK_USE_MPI
-#MPI_USES=		mpi:openmpi # fails, needs investigation: The following options helpers are incorrectly set after bsd.port.options.mk and are ineffective: MPI_CFLAGS MPI_LIBS
-MPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
-MPI_RUN_DEPENDS=	openmpi>0:net/openmpi
-MPI_CMAKE_ON=		-DMPIEXEC=${LOCALBASE}/mpi/openmpi/bin/mpiexec
+OMPI_CMAKE_BOOL=	VTK_USE_MPI
+OMPI_USES=		mpi:openmpi
 
 OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 			-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
@@ -89,17 +94,15 @@ OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 			-DVTK_USE_X:BOOL=OFF
 OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 
-# Wrapping
-JAVA_CATEGORIES=	java
 JAVA_VARS=		USE_JAVA=yes
-JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA Module_vtkWrappingJava
+JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA
 JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 			-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
 			-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ATCH}/libjava.so
 
 TCLTK_USES=		tk
-TCLTK_CMAKE_BOOL=	VTK_WRAP_TCL VTK_Group_Tk
-TCLTK_CMAKE_ON=		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDEDIR} \
+TCLTK_CMAKE_ON=		-DVTK_GROUP_ENABLE_Tk:STRING=YES \
+			-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDEDIR} \
 			-DTK_INCLUDE_PATH:PATH=${TK_INCLUDEDIR}  \
 			-DVTK_INSTALL_TCL_DIR=lib/vtk-${VTK_SHORT_VER}
 
@@ -115,7 +118,7 @@ USES+=		gl
 USE_GL=		gl glu
 .endif
 
-.if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MMPI}
+.if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MOMPI}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 .endif

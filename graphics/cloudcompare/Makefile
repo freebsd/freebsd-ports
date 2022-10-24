@@ -1,7 +1,7 @@
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	nc@FreeBSD.org
@@ -75,7 +75,7 @@ PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png \
 			libtiff.so:graphics/tiff \
-			libvtkCommonCore-9.1.so:math/vtk9
+			libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 PLUGINS_IMPLIES=	SHAPELIB
 
 pre-configure:
@@ -88,4 +88,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/snap/gui/cloudcompare.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/snap/gui/cloudcompare.png ${STAGEDIR}${PREFIX}/share/pixmaps
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

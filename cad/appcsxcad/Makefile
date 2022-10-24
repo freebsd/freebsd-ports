@@ -2,7 +2,7 @@ PORTNAME=	appcsxcad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2-9
 DISTVERSIONSUFFIX=	-g97ba30e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libCSXCAD.so:cad/csxcad \
 		libQCSXCAD.so:cad/qcsxcad \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
-		libvtkCommonCore-9.1.so:math/vtk9
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake jpeg pkgconfig qt:5 xorg
 USE_QT=		core gui sql widgets xml buildtools:build qmake:build
@@ -31,7 +31,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	thliebig
 GH_PROJECT=	AppCSXCAD
 
-CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
+CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
 
 PLIST_FILES=	bin/AppCSXCAD
 
@@ -40,4 +40,5 @@ post-install:
 
 # an example of file that AppCSXCAD opens (zipped): http://openems.de/forum/download/file.php?id=418&sid=6daebbb2df72b415fa2ec7031ffa6ca9
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

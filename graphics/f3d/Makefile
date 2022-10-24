@@ -1,7 +1,7 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +11,16 @@ WWW=		https://f3d-app.github.io/f3d/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreeimage.so:graphics/freeimage \
+		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
+		libImath-3_1.so:math/Imath \
 		libnetcdf.so:science/netcdf \
-		libvtkCommonMisc-9.1.so:math/vtk9
+		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
-USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl xorg
+USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl tcl tk xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xt
 
@@ -57,4 +61,5 @@ RAYTRACING_BROKEN=		Requires VTK::RenderingRayTracing enabled in VTK
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

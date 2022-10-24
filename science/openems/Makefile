@@ -2,7 +2,7 @@ PORTNAME=	openems
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.35-76
 DISTVERSIONSUFFIX=	-gd4448fa
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
-		libvtkCommonCore-9.1.so:math/vtk9
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake jpeg pkgconfig
 USE_LDCONFIG=	yes
@@ -33,7 +33,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	thliebig
 GH_PROJECT=	openEMS
 
-CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1 \
+CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER} \
 		-DLOCALBASE=${LOCALBASE}
 
 CXXFLAGS+=	-I${LOCALBASE}/include/fparser # fparser.pc probably returns a wrong value
@@ -43,4 +43,5 @@ DATADIR=	${PREFIX}/share/openEMS
 post-install:
 	@${REINPLACE_CMD} -i '' -e 's|#!/bin/bash|#!/bin/sh|' ${STAGEDIR}${PREFIX}/bin/openEMS.sh
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	paraview
 DISTVERSION=	5.10.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -56,7 +56,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libdouble-conversion.so:devel/double-conversion
 RUN_DEPENDS=	${PYNUMPY}	\
 		bash:shells/bash	\
-		vtk9>0:math/vtk9	\
+		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		alias cmake compiler:c11 eigen:3 fortran gl gnome jpeg localbase	\
@@ -162,4 +162,5 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

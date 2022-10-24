@@ -1,5 +1,6 @@
 PORTNAME=	mayavi
 DISTVERSION=	4.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,12 +19,11 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/image_LICENSE_OOo.txt
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
-BUILD_DEPENDS=	vtk9>0:math/vtk9 \
-		${PYNUMPY} \
+BUILD_DEPENDS=	${PYNUMPY} \
 		${PY_SPHINX} \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
-RUN_DEPENDS=	vtk9>0:math/vtk9 \
-		${PYNUMPY} \
+LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
+RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}apptools>0:devel/py-apptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}envisage>0:devel/py-envisage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyface>=6.1.1:devel/py-pyface@${PY_FLAVOR} \
@@ -52,4 +52,5 @@ fix-plist:
 do-test:
 	@${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} ${WRKSRC}/examples/mayavi/interactive/coil_design_application.py
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

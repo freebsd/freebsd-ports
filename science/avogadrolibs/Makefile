@@ -1,5 +1,6 @@
 PORTNAME=	avogadrolibs
 DISTVERSION=	1.97.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,7 +66,7 @@ VTK_DESC=		Enable libraries that use VTK
 VTK_USES=		xorg
 VTK_USE=		QT=opengl XORG=x11
 VTK_CMAKE_BOOL=		USE_VTK
-VTK_LIB_DEPENDS=	libvtksys-9.1.so:math/vtk9 \
+VTK_LIB_DEPENDS=	libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 			libfreetype.so:print/freetype2
 VTK_IMPLIES=		QT5
 VTK_BROKEN=		Needs https://github.com/psavery/genXrdPattern, see https://github.com/OpenChemistry/avogadrolibs/issues/1186
@@ -73,4 +74,5 @@ VTK_BROKEN=		Needs https://github.com/psavery/genXrdPattern, see https://github.
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

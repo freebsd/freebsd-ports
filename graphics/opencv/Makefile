@@ -1,6 +1,6 @@
 PORTNAME=	opencv
 DISTVERSION=	4.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -124,7 +124,7 @@ GTK3_CMAKE_BOOL=	WITH_GTK
 
 VTK_DESC=		Include VTK library support (build opencv_viz module)
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
+VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 VTK_USES=		qt:5
 VTK_USE=		QT=buildtools:build,qmake:build
 ###
@@ -235,4 +235,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/lib/atlas-base|${LOCALBASE}/lib|g' ${WRKSRC}/cmake/OpenCVFindAtlas.cmake
 	${REINPLACE_CMD} -e 's|/usr/include/atlas|${LOCALBASE}/include|g' ${WRKSRC}/cmake/OpenCVFindAtlas.cmake
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

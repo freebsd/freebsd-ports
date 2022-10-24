@@ -1,6 +1,6 @@
 PORTNAME=	pcl
 DISTVERSION=	1.12.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics math
 MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
@@ -59,7 +59,7 @@ PLIST_SUB=	SHL3=${DISTVERSION} SHL2=${DISTVERSION:R}
 DATADIR=	${PREFIX}/share/${PORTNAME}-${DISTVERSION:R}  # match the directory where the project installs .cmake files
 
 OPTIONS_DEFINE=		OPENGL PNG QHULL QT5 VTK
-OPTIONS_DEFAULT=	PNG # QHULL is disabled due to conflicts qhull8 vs. qhull
+OPTIONS_DEFAULT=	PNG VTK # QHULL is disabled due to conflicts qhull8 vs. qhull
 OPTIONS_SUB=		yes
 
 OPENGL_CMAKE_BOOL=	WITH_OPENGL # it finds OpenGL, but no binaries are linked with it: https://github.com/PointCloudLibrary/pcl/issues/2641
@@ -81,7 +81,8 @@ VTK_DESC=		Build VTK visualizations
 VTK_USES=		gl qt:5
 VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools:build,qmake:build
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
-VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
+VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
+VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

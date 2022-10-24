@@ -2,7 +2,7 @@ PORTNAME=	csxcad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.2-109
 DISTVERSIONSUFFIX=	-gcd9decb
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
-		libvtkCommonCore-9.1.so:math/vtk9
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake jpeg pkgconfig
 USE_LDCONFIG=	yes
@@ -32,6 +32,7 @@ GH_ACCOUNT=	thliebig
 GH_PROJECT=	${PORTNAME:tu}
 
 CMAKE_ARGS=	-DFPARSER_ROOT_DIR=${LOCALBASE} \
-		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
+		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
