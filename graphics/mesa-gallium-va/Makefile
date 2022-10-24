@@ -21,6 +21,7 @@ ONLY_FOR_ARCHS=		i386 amd64 aarch64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 
 MESON_ARGS+=	-Ddri-drivers="" \
+		-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc" \
 		-Dgallium-drivers="radeonsi,r600" \
 		-Dvulkan-drivers="" \
 		-Dgallium-vdpau=disabled \
