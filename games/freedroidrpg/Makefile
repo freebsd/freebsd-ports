@@ -2,8 +2,8 @@ PORTNAME=	freedroidrpg
 PORTVERSION=	0.16.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION:R}/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION:R}/ \
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	freedroidRPG-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
