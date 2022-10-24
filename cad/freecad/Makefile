@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.20.1
-PORTREVISION=	2
+PORTREVISION=	3
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -47,7 +47,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
 
-VTK_VER=	9.1
+VTK_VER=	9.2
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 
