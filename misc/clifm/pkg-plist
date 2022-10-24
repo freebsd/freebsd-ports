@@ -39,6 +39,8 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/batch_copy.sh
 %%DATADIR%%/plugins/batch_create.sh
 %%DATADIR%%/plugins/bm_import.sh
+%%DATADIR%%/plugins/clifmimg
+%%DATADIR%%/plugins/clifmrun
 %%DATADIR%%/plugins/clip.sh
 %%DATADIR%%/plugins/colors.sh
 %%DATADIR%%/plugins/cprm.sh
@@ -70,6 +72,7 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/vid_viewer.sh
 %%DATADIR%%/plugins/virtualize.sh
 %%DATADIR%%/plugins/wallpaper_setter.sh
+%%DATADIR%%/preview.clifm
 %%DATADIR%%/prompts.clifm
 %%DATADIR%%/readline.clifm
 %%DATADIR%%/tools/deroff.py
