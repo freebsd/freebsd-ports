@@ -1,6 +1,5 @@
 PORTNAME=	msmtp
-PORTVERSION=	1.8.20
-PORTREVISION=	1
+PORTVERSION=	1.8.22
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
