@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cpe shebangfix
 FLAVORS=	openjdk8 openjdk9 openjdk10 openjdk11
 
-CONFLICTS=	jetty-8.*
+CONFLICTS=	jetty-8.* jetty-10.*
 
 JDVDATE=	v20220914
 USE_JAVA=	yes
