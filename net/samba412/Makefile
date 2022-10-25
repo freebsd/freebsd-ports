@@ -7,13 +7,13 @@ DISTNAME=			${SAMBA4_DISTNAME}
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
-WWW=		https://www.samba.org/
+WWW=				https://www.samba.org/
 
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
-DEPRECATED=	Reached its EoL on September 20, 2021
-EXPIRATION_DATE=	2022-11-30
+DEPRECATED=			Reached its EoL on September 20, 2021
+EXPIRATION_DATE=		2022-11-30
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 CONFLICTS_INSTALL?=		samba4* # bin/cifsdd bin/dbwrap_tool bin/dumpmscat bin/findsmb bin/gentest
