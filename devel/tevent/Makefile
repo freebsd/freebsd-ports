@@ -1,29 +1,29 @@
 PORTNAME=			tevent
 DISTVERSION=			0.13.0
-PORTREVISION=			0
+PORTREVISION=			1
 PORTEPOCH=			0
 CATEGORIES=			devel
 MASTER_SITES=			SAMBA
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Talloc based event loop library
-WWW=		https://tevent.samba.org/
+WWW=				https://tevent.samba.org/
 
 LICENSE=			LGPL3
 
 BUILD_DEPENDS=			talloc>=2.3.4:devel/talloc
 RUN_DEPENDS=			talloc>=2.3.4:devel/talloc
 
-USES=				compiler pkgconfig shebangfix  waf
+USES=				compiler pkgconfig shebangfix waf
 USE_LDCONFIG=			yes
 SHEBANG_GLOB=			*.py
 WAF_CMD=			buildtools/bin/waf
 CONFIGURE_LOG=			bin/config.log
 
 PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
-PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR:S;^${PREFIX}/;;}
+PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR:S;^${PREFIX}/;;}
 
-CONFIGURE_ARGS+=		--mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS=			--mandir=${MANPREFIX}/man \
 				--disable-rpath \
 				--disable-rpath-install \
 				--bundled-libraries=!talloc,cmocka \
@@ -43,12 +43,12 @@ DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
 
 PYTHON_USES=			gettext-runtime python:3.6+
-PYTHON_USE+=			python=py3kplist
+PYTHON_USE=			python=py3kplist
 PYTHON_USES_OFF=		python:build,test
 PYTHON_CONFIGURE_OFF=		--disable-python
 
-MANPAGES_CONFIGURE_ENV_OFF+=	XSLTPROC="true"
-MANPAGES_BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="true"
+MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
 # No fancy color error messages
 CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
