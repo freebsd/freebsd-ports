@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main.cc.orig	2022-09-24 10:57:32 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2022-10-24 13:33:33 UTC
 +++ chrome/browser/chrome_browser_main.cc
 @@ -239,11 +239,11 @@
  
@@ -23,7 +23,7 @@
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/metrics/desktop_session_duration/touch_mode_stats_tracker.h"
  #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
-@@ -1025,7 +1025,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1030,7 +1030,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        browser_creator_->AddFirstRunTabs(master_prefs_->new_tabs);
      }
  
@@ -32,7 +32,7 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1038,7 +1038,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1043,7 +1043,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -41,7 +41,7 @@
    // Set the product channel for crash reports.
    if (!crash_reporter::IsCrashpadEnabled()) {
      breakpad::SetChannelCrashKey(
-@@ -1060,7 +1060,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1079,7 +1079,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

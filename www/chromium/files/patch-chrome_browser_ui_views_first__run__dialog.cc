@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2022-10-24 13:33:33 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  
  namespace {
  
@@ -9,7 +9,7 @@
  void InitCrashReporterIfEnabled(bool enabled) {
    if (!crash_reporter::IsCrashpadEnabled() && enabled)
      breakpad::InitCrashReporter(std::string());
-@@ -122,7 +122,7 @@ bool FirstRunDialog::Accept() {
+@@ -129,7 +129,7 @@ bool FirstRunDialog::Accept() {
  
  #if BUILDFLAG(IS_MAC)
    ChangeMetricsReportingState(report_crashes_->GetChecked());

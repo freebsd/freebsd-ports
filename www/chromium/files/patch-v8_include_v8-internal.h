@@ -1,6 +1,6 @@
---- v8/include/v8-internal.h.orig	2022-09-24 10:57:32 UTC
+--- v8/include/v8-internal.h.orig	2022-10-24 13:33:33 UTC
 +++ v8/include/v8-internal.h
-@@ -179,7 +179,7 @@ using SandboxedPointer_t = Address;
+@@ -174,7 +174,7 @@ using SandboxedPointer_t = Address;
  #ifdef V8_ENABLE_SANDBOX
  
  // Size of the sandbox, excluding the guard regions surrounding it.

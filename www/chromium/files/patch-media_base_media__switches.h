@@ -1,6 +1,6 @@
---- media/base/media_switches.h.orig	2022-08-31 12:19:35 UTC
+--- media/base/media_switches.h.orig	2022-10-24 13:33:33 UTC
 +++ media/base/media_switches.h
-@@ -203,7 +203,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
+@@ -202,7 +202,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
  MEDIA_EXPORT extern const base::Feature kUseFakeDeviceForMediaStream;
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
