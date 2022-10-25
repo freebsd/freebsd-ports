@@ -5,7 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Library of complex numbers with arbitrarily high precision
-WWW=		https://www.multiprecision.org/
+WWW=		https://www.multiprecision.org/mpc/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
