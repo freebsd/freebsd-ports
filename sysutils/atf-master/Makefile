@@ -34,6 +34,8 @@ DESCR?=		${.CURDIR}/pkg-descr
 
 NO_ARCH=	yes
 
+LDFLAGS+=	--no-warn-rwx-segments
+
 .if !defined(PLAT)
 PLAT=		NONE
 IGNORE=		is a metaport; there is nothing to build
