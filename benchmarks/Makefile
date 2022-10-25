@@ -71,6 +71,7 @@
     SUBDIR += perftest
     SUBDIR += phoronix-test-suite
     SUBDIR += pipebench
+    SUBDIR += plow
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark

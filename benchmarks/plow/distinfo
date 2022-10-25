@@ -1,0 +1,5 @@
+TIMESTAMP = 1664069439
+SHA256 (go/benchmarks_plow/plow-v1.3.1/v1.3.1.mod) = 3ac99f55827a991f72a1d5ae368ae18355e4dfb1904cc10310416ca916ad3035
+SIZE (go/benchmarks_plow/plow-v1.3.1/v1.3.1.mod) = 1187
+SHA256 (go/benchmarks_plow/plow-v1.3.1/v1.3.1.zip) = 264c905be837d437f5b761f8a9a98609f23eec5189ed0d60c1fab6d21c9b7f43
+SIZE (go/benchmarks_plow/plow-v1.3.1/v1.3.1.zip) = 2645687
