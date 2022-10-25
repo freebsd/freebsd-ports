@@ -42,6 +42,7 @@ TEST_CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 TEST_LIB_DEPENDS=	libunwind.so:devel/libunwind
 TEST_TEST_TARGET=	test
 TEST_IMPLIES=		PNG JPEG  # does not build otherwise
+TEST_BROKEN=		does not build  # XXX: probably devel/sdl20 problem
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/external
