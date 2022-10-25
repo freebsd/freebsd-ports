@@ -19,6 +19,7 @@ bin/regshell
 bin/regtree
 bin/rpcclient
 bin/samba-regedit
+%%ADS%%bin/samba-tool
 bin/sharesec
 bin/smbcacls
 bin/smbclient
@@ -181,6 +182,7 @@ libexec/samba/samba-dcerpcd
 %%LDAP%%%%SAMBA4_LIBDIR%%/private/libsmbldaphelper-samba4.so
 %%SAMBA4_LIBDIR%%/private/libaddns-samba4.so
 %%SAMBA4_LIBDIR%%/private/libads-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libasn1-samba4.so
 %%SAMBA4_LIBDIR%%/private/libasn1util-samba4.so
 %%SAMBA4_LIBDIR%%/private/libauth-samba4.so
 %%SAMBA4_LIBDIR%%/private/libauth-unix-token-samba4.so
@@ -198,6 +200,7 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libcluster-samba4.so
 %%SAMBA4_LIBDIR%%/private/libcmdline-contexts-samba4.so
 %%SAMBA4_LIBDIR%%/private/libcmdline-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libcom-err-samba4.so
 %%SAMBA4_LIBDIR%%/private/libcommon-auth-samba4.so
 %%SAMBA4_LIBDIR%%/private/libdbwrap-samba4.so
 %%SAMBA4_LIBDIR%%/private/libdcerpc-pkt-auth-samba4.so
@@ -212,10 +215,19 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libgpext-samba4.so
 %%SAMBA4_LIBDIR%%/private/libgpo-samba4.so
 %%SAMBA4_LIBDIR%%/private/libgse-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libgss-preauth-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libgssapi-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libhcrypto-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libhdb-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libheimbase-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libheimntlm-samba4.so
 %%SAMBA4_LIBDIR%%/private/libhttp-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libhx509-samba4.so
 %%SAMBA4_LIBDIR%%/private/libidmap-samba4.so
 %%SAMBA4_LIBDIR%%/private/libinterfaces-samba4.so
 %%SAMBA4_LIBDIR%%/private/libiov-buf-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libkdc-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libkrb5-samba4.so
 %%SAMBA4_LIBDIR%%/private/libkrb5samba-samba4.so
 %%SAMBA4_LIBDIR%%/private/libldbsamba-samba4.so
 %%SAMBA4_LIBDIR%%/private/liblibcli-lsa3-samba4.so
@@ -241,6 +253,7 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libREG-FULL-samba4.so
 %%SAMBA4_LIBDIR%%/private/libregistry-samba4.so
 %%SAMBA4_LIBDIR%%/private/libreplace-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libroken-samba4.so
 %%SAMBA4_LIBDIR%%/private/libRPC-SERVER-LOOP-samba4.so
 %%SAMBA4_LIBDIR%%/private/libRPC-WORKER-samba4.so
 %%SAMBA4_LIBDIR%%/private/libsamba-cluster-support-samba4.so
@@ -270,6 +283,7 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libutil-reg-samba4.so
 %%SAMBA4_LIBDIR%%/private/libutil-setid-samba4.so
 %%SAMBA4_LIBDIR%%/private/libutil-tdb-samba4.so
+%%GSSAPI_BUILTIN%%%%SAMBA4_LIBDIR%%/private/libwind-samba4.so
 %%SAMBA4_LIBDIR%%/private/libxattr-tdb-samba4.so
 @dir %%SAMBA4_LIBDIR%%/private
 @dir %%SAMBA4_LIBDIR%%
@@ -436,8 +450,8 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_TDB%%man/man8/samba-tdbrestore.8.gz
 %%SAMBA4_BUNDLED_TDB%%man/man8/samba-tdbtool.8.gz
 %%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_EXT_SUFFIX%%.so
-%%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpytalloc-util%%PYTHON_EXT_SUFFIX%%.so.2
-%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_LIBDIR%%/private/libtalloc.so.2
+%%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpytalloc-util%%PYTHON_EXT_SUFFIX%%-samba4.so
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_LIBDIR%%/private/libtalloc-samba4.so
 %%SAMBA4_BUNDLED_TALLOC%%man/man3/talloc.3.gz
 %%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
 %%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_EXT_SUFFIX%%.so
@@ -445,7 +459,7 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbdump
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbrestore
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbtool
-%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_LIBDIR%%/private/libtdb.so.1
+%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_LIBDIR%%/private/libtdb-samba4.so
 %%SAMBA4_BUNDLED_TEVENT%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tevent%%PYTHON_EXT_SUFFIX%%.so
 %%SAMBA4_BUNDLED_TEVENT%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tevent.py
-%%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_LIBDIR%%/private/libtevent.so.0
+%%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_LIBDIR%%/private/libtevent-samba4.so

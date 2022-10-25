@@ -1,4 +1,3 @@
-bin/samba-tool
 bin/smbtorture
 sbin/samba-gpupdate
 man/man1/smbtorture.1.gz

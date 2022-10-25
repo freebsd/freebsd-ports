@@ -1,13 +1,13 @@
 PORTNAME=			${SAMBA4_BASENAME}416
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
-WWW=				https://www.samba.org/
+WWW=				https://gitlab.com/samba-freebsd/
 
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
@@ -16,7 +16,7 @@ USES=				cpe
 
 CONFLICTS_INSTALL?=		samba4*
 
-EXTRA_PATCHES+=			\
+EXTRA_PATCHES=			\
 				${PATCHDIR}/0001-Compact-and-simplify-modules-build-and-config-genera.patch:-p1 \
 				${PATCHDIR}/0002-Adjust-abi_gen.sh-script-to-run-under-FreeBSD-with-i.patch:-p1 \
 				${PATCHDIR}/0003-Mask-CLang-prototype-warnings-in-kadm5-admin.h.patch:-p1 \
@@ -50,7 +50,7 @@ EXTRA_PATCHES+=			\
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.16.5
+SAMBA4_VERSION=			4.16.6
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -73,7 +73,7 @@ SAMBA4_CONFIG=			smb4.conf
 SAMBA4_MODULES_CLASS=		auth bind9 gensec gpext idmap ldb nss_info \
 				pdb perfcount process_model service vfs
 
-CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
+CONFIGURE_ARGS=			--mandir="${MANPREFIX}/man" \
 				--sysconfdir="${SAMBA4_CONFDIR}" \
 				--includedir="${SAMBA4_INCLUDEDIR}" \
 				--datadir="${DATADIR}" \
@@ -93,10 +93,10 @@ CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
 				--with-privatedir="${SAMBA4_PRIVATEDIR}" \
 				--with-logfilebase="${SAMBA4_LOGDIR}"
 # XXX: Flags
-CONFIGURE_ENV+=			PTHREAD_LDFLAGS="-lpthread"
-MAKE_ENV+=			PYTHONHASHSEED=1
+CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread"
+MAKE_ENV=			PYTHONHASHSEED=1
 
-USES+=				compiler:c++11-lang iconv localbase:ldflags \
+USES=				compiler:c++11-lang iconv localbase:ldflags \
 				perl5 pkgconfig shebangfix waf gettext-runtime
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
@@ -105,8 +105,8 @@ CONFIGURE_LOG=			bin/config.log
 
 PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
-PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
-SUB_LIST+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 OPTIONS_SUB=			yes
 
@@ -158,7 +158,7 @@ ZEROCONF_NONE_DESC=		Zeroconf support is absent
 # the system)
 
 # Iconv(picked up unconditionaly)
-LIB_DEPENDS+=			libiconv.so:converters/libiconv
+LIB_DEPENDS=			libiconv.so:converters/libiconv
 # unwind
 LIB_DEPENDS+=			libunwind.so:devel/libunwind
 # Readline(sponsored by Python)
@@ -184,7 +184,7 @@ RUN_DEPENDS+=			libtasn1>=3.8:security/libtasn1
 BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
 
 # Libarchive
-SAMBA4_BUNDLED_LIBS+=		!libarchive
+SAMBA4_BUNDLED_LIBS=		!libarchive
 BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 
@@ -272,17 +272,17 @@ SAMBA4_BUNDLED_LIBS+=		replace
 SAMBA4_BUNDLED_LIBS+=		com_err
 # Set the test environment variables
 TEST_USES=			python
-TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
+TEST_ENV=			PYTHON="${PYTHON_CMD}" \
 				SHA1SUM=/sbin/sha1 \
 				SHA256SUM=/sbin/sha256 \
 				MD5SUM=/sbin/md5 \
 				PYTHONDONTWRITEBYTECODE=1
 
-TEST_DEPENDS+=			bash:shells/bash \
+TEST_DEPENDS=			bash:shells/bash \
 				tshark:net/tshark
 # External Python modules
-TEST_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-TEST_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+TEST_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+TEST_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 ##############################################################################
 CONFIGURE_ARGS+=		\
 				--with-pam \
