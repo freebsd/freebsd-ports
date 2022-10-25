@@ -60,6 +60,7 @@
     SUBDIR += dnsviz
     SUBDIR += dnswalk
     SUBDIR += dnswall
+    SUBDIR += dnsx
     SUBDIR += doc
     SUBDIR += dog
     SUBDIR += doggo
