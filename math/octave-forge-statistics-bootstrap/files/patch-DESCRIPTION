@@ -1,0 +1,9 @@
+--- ../DESCRIPTION.orig	2022-10-25 00:32:14.447435000 -0500
++++ ../DESCRIPTION	2022-10-25 00:32:21.641290000 -0500
+@@ -1,5 +1,5 @@
+ name: statistics-bootstrap
+-version: 5.0.1
++version: 5.0.2
+ date: 2022-10-10
+ author: Andrew Penn <andy.c.penn@gmail.com>
+ maintainer: Andrew Penn <andy.c.penn@gmail.com>
