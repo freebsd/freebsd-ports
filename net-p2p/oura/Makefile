@@ -11,6 +11,9 @@ WWW=		https://txpipe.github.io/oura/
 LICENSE=		APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	requires AVX on x86
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	txpipe
