@@ -235,7 +235,6 @@
     SUBDIR += kc24
     SUBDIR += kdbxviewer
     SUBDIR += keepass
-    SUBDIR += keepass-diff
     SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassxc
     SUBDIR += keybase
