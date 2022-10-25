@@ -1,0 +1,3 @@
+Tool for static analysis of your terraform code to spot misconfigurations.
+Scan remote and local Terraform modules, support modules outputs formats:
+JSON, SARIF, CSV, CheckStyle, JUnit, text, Gif.

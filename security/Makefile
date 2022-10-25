@@ -235,6 +235,7 @@
     SUBDIR += kc24
     SUBDIR += kdbxviewer
     SUBDIR += keepass
+    SUBDIR += keepass-diff
     SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassxc
     SUBDIR += keybase
@@ -1243,6 +1244,7 @@
     SUBDIR += teleport
     SUBDIR += testssl.sh
     SUBDIR += tfhe
+    SUBDIR += tfsec
     SUBDIR += theonionbox
     SUBDIR += tinc
     SUBDIR += tinc-devel
