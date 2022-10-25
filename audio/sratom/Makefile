@@ -1,5 +1,5 @@
 PORTNAME=	sratom
-PORTVERSION=	0.6.10
+DISTVERSION=	0.6.14
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord
 RUN_DEPENDS=	lv2>=1.14.0:audio/lv2
 
-USES=		pkgconfig python:build tar:bzip2 waf
+USES=		meson pkgconfig python:build tar:xz
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
