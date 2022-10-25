@@ -11,6 +11,9 @@ WWW=		https://www.gnu.org/software/gettext/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BROKEN_purecap=	msgfmt is broken for CheriABI
+USE_PKG64=	1
+
 .include "${.CURDIR}/../gettext/Makefile.common"
 
 BUILD_DEPENDS=	libtextstyle>=${PORTVERSION}:devel/libtextstyle
