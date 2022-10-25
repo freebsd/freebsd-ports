@@ -1,3 +1,54 @@
+  <vuln vid="b4ef02f4-549f-11ed-8ad9-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>107.0.5304.68</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>107.0.5304.68</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/10/stable-channel-update-for-desktop_25.html">
+	  <p>This release contains 14 security fixes, including:</p>
+	  <ul>
+	    <li>[1369871] High CVE-2022-3652: Type Confusion in V8. Reported by srodulv and ZNMchtss at S.S.L Team on 2022-09-30</li>
+	    <li>[1354271] High CVE-2022-3653: Heap buffer overflow in Vulkan. Reported by SeongHwan Park (SeHwa) on 2022-08-19</li>
+	    <li>[1365330] High CVE-2022-3654: Use after free in Layout. Reported by Sergei Glazunov of Google Project Zero on 2022-09-19</li>
+	    <li>[1343384] Medium CVE-2022-3655: Heap buffer overflow in Media Galleries. Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability Research Institute on 2022-07-11</li>
+	    <li>[1345275] Medium CVE-2022-3656: Insufficient data validation in File System. Reported by Ron Masas, Imperva on 2022-07-18</li>
+	    <li>[1351177] Medium CVE-2022-3657: Use after free in Extensions. Reported by Omri Bushari, Talon Cyber Security on 2022-08-09</li>
+	    <li>[1352817] Medium CVE-2022-3658: Use after free in Feedback service on Chrome OS. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Vulnerability Research Institute on 2022-08-14</li>
+	    <li>[1355560] Medium CVE-2022-3659: Use after free in Accessibility. Reported by @ginggilBesel on 2022-08-23</li>
+	    <li>[1327505] Medium CVE-2022-3660: Inappropriate implementation in Full screen mode. Reported by Irvan Kurniawan (sourc7) on 2022-05-20</li>
+	    <li>[1350111] Low CVE-2022-3661: Insufficient data validation in Extensions. Reported by Young Min Kim (@ylemkimon), CompSec Lab at Seoul National University on 2022-08-04</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3652</cvename>
+      <cvename>CVE-2022-3653</cvename>
+      <cvename>CVE-2022-3654</cvename>
+      <cvename>CVE-2022-3655</cvename>
+      <cvename>CVE-2022-3656</cvename>
+      <cvename>CVE-2022-3657</cvename>
+      <cvename>CVE-2022-3658</cvename>
+      <cvename>CVE-2022-3659</cvename>
+      <cvename>CVE-2022-3660</cvename>
+      <cvename>CVE-2022-3661</cvename>
+      <url>https://chromereleases.googleblog.com/2022/10/stable-channel-update-for-desktop_25.html</url>
+    </references>
+    <dates>
+      <discovery>2022-10-25</discovery>
+      <entry>2022-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68fcee9b-5259-11ed-89c9-0800276af896">
     <topic>Cleartext leak in libudisks</topic>
     <affects>
