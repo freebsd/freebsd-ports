@@ -1,3 +1,4 @@
+%%TEST%%bin/StormLib_test
 include/StormLib.h
 include/StormPort.h
 lib/libstorm.so
