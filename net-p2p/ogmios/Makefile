@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	5.5.5
+PORTVERSION=	5.5.6
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 
@@ -78,6 +78,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		assoc-1.0.2_3 \
 		async-2.2.4_2 \
 		async-timer-0.2.0.0 \
+		atomic-primops-0.8.4 \
 		attoparsec-0.13.2.5_2 \
 		attoparsec-iso8601-1.0.2.0_3 \
 		auto-update-0.1.6 \
@@ -90,7 +91,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base58-bytestring-0.1.0 \
 		base64-0.4.2.3_2 \
 		base64-bytestring-1.2.1.0 \
-		base64-bytestring-type-1.0.1_14 \
+		base64-bytestring-type-1.0.1_15 \
 		basement-0.0.12_2 \
 		bech32-1.1.2 \
 		bifunctors-5.5.11_1 \
@@ -121,7 +122,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		conduit-1.3.4.2 \
 		connection-0.3.1_1 \
 		constraints-0.13.3 \
-		constraints-extras-0.3.2.1 \
+		constraints-extras-0.3.2.1_1 \
 		contravariant-1.5.5 \
 		cookie-0.4.5 \
 		criterion-1.5.13.0_2 \
@@ -155,25 +156,26 @@ USE_CABAL=	Glob-0.10.2_3 \
 		erf-2.0.0.0 \
 		extra-1.7.10 \
 		fast-logger-3.1.1 \
-		fgl-5.7.0.3 \
+		fgl-5.7.0.3_1 \
 		file-embed-0.0.15.0 \
 		filelock-0.1.1.5 \
 		fin-0.1.1_2 \
 		fingertree-0.1.5.0 \
 		fmlist-0.9.4 \
-		foldl-1.4.12_4 \
+		foldl-1.4.12_5 \
 		formatting-6.3.7_2 \
 		foundation-0.0.26.1_1 \
 		free-5.1.7_1 \
+		generic-arbitrary-0.2.0_1 \
 		generic-data-0.9.2.1_1 \
 		generic-deriving-1.14.1 \
 		generic-lens-2.2.1.0_1 \
 		generic-lens-core-2.2.1.0_1 \
 		generic-monoid-0.1.0.1_1 \
 		generic-random-1.5.0.1 \
-		generics-sop-0.5.1.2 \
+		generics-sop-0.5.1.2_1 \
 		ghc-byteorder-4.11.0.0.10_3 \
-		graphviz-2999.20.1.0 \
+		graphviz-2999.20.1.0_2 \
 		gray-code-0.3.1 \
 		groups-0.5.3 \
 		half-0.3.1 \
@@ -181,7 +183,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hashable-1.3.5.0_1 \
 		haskell-lexer-1.1 \
 		hedgehog-1.1.1_2 \
-		hedgehog-quickcheck-0.1.1_3 \
+		hedgehog-quickcheck-0.1.1_4 \
 		hostname-1.0 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.8_1 \
@@ -211,7 +213,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		lazysmallcheck-0.6 \
 		lens-5.1_1 \
 		lens-aeson-1.1.3_1 \
-		libyaml-0.1.2 \
+		libyaml-0.1.2_1 \
 		lifted-async-0.10.2.2 \
 		lifted-base-0.2.3.12 \
 		list-t-1.0.5.1 \
@@ -252,10 +254,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		parsers-0.12.10_2 \
 		partial-order-0.2.0.0 \
 		path-pieces-0.2.1_1 \
-		pcre-heavy-1.0.0.2_1 \
+		pcre-heavy-1.0.0.2_2 \
 		pcre-light-0.4.1.0 \
 		pem-0.2.4 \
-		pipes-4.3.16_3 \
+		pipes-4.3.16_6 \
 		polyparse-1.13_5 \
 		pretty-show-1.10 \
 		pretty-simple-4.0.0.0 \
@@ -264,6 +266,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		primitive-0.7.3.0_2 \
 		process-extras-0.7.4 \
 		profunctors-5.6.2_2 \
+		prometheus-2.2.3 \
 		protolude-0.3.0 \
 		psqueues-0.2.7.3 \
 		quickcheck-instances-0.3.27_2 \
@@ -274,7 +277,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		random-1.2.1 \
 		random-shuffle-0.0.4 \
 		readable-0.3.1 \
-		recursion-schemes-5.2.2.2 \
+		recursion-schemes-5.2.2.2_1 \
 		reducers-3.12.4_2 \
 		reflection-2.1.6_1 \
 		regex-base-0.94.0.2_1 \
@@ -298,7 +301,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		snap-server-1.1.2.0_1 \
 		socks-0.6.1 \
 		some-1.0.2 \
-		sop-core-0.5.0.2 \
+		sop-core-0.5.0.2_1 \
 		split-0.2.3.4_2 \
 		splitmix-0.1.0.4_1 \
 		statistics-0.16.0.1 \
@@ -349,7 +352,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		typerep-map-0.5.0.0 \
 		unbounded-delays-0.1.1.1 \
 		unix-bytestring-0.3.7.6 \
-		unix-compat-0.5.4_1 \
+		unix-compat-0.5.4_2 \
 		unix-time-0.4.7 \
 		unliftio-0.2.21.0 \
 		unliftio-core-0.1.2.0_3 \
