@@ -1,12 +1,12 @@
 PORTNAME=	daemons
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	Resource library for Python developers to create daemon processes
-WWW=		https://pypi.org/project/daemons/
+WWW=		https://github.com/kevinconway/daemons
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
