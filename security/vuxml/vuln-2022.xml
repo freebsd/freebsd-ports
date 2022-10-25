@@ -1,3 +1,40 @@
+  <vuln vid="1c5f3fd7-54bf-11ed-8d1e-005056a311d1">
+    <topic>samba -- buffer overflow in Heimdal unwrap_des3()</topic>
+    <affects>
+      <package>
+	<name>samba412</name>
+	<range><lt>4.12.16</lt></range>
+      </package>
+      <package>
+	<name>samba413</name>
+	<range><lt>4.13.17_4</lt></range>
+      </package>
+      <package>
+	<name>samba416</name>
+	<range><lt>4.16.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2022-3437.html">
+	  <p>The DES (for Samba 4.11 and earlier) and Triple-DES decryption
+	  routines in the Heimdal GSSAPI library allow a length-limited write
+	  buffer overflow on malloc() allocated memory when presented with a
+	  maliciously small packet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3437</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2022-3437.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-02</discovery>
+      <entry>2022-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4ef02f4-549f-11ed-8ad9-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
