@@ -1,0 +1,13 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is geographiclib.
+
+ Native Octave/MATLAB implementations of a subset of the C++ library,
+GeographicLib. Key components of this toolbox are: (a) Geodesics, direct,
+inverse, area calculations; (b) Projections, transverse Mercator, polar
+stereographic, etc; (c) Grid systems, UTM, UPS, MGRS; (d) Geoid lookup, egm84,
+egm96, egm2008 geoids supported; (e) Geometric transformations, geocentric,
+local cartesian; (f) Great ellipse, direct, inverse, area calculations.
