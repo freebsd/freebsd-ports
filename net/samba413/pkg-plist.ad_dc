@@ -18,13 +18,12 @@ lib/samba4/private/libdnsserver-common-samba4.so
 lib/samba4/private/libdsdb-garbage-collect-tombstones-samba4.so
 lib/samba4/private/libpac-samba4.so
 lib/samba4/private/libscavenge-dns-records-samba4.so
-%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9.so
-%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_9.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_10.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_11.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_12.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_14.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_16.so
+%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_18.so
 %%SAMBA4_MODULEDIR%%/gensec/krb5.so
 %%SAMBA4_MODULEDIR%%/ldb/acl.so
 %%SAMBA4_MODULEDIR%%/ldb/aclread.so

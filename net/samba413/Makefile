@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}413
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			3
+PORTREVISION=			4
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -17,7 +17,9 @@ CONFLICTS_INSTALL?=		samba4* # bin/cifsdd bin/dbwrap_tool bin/dumpmscat bin/find
 
 USES=				cpe
 
-EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1 \
+				${PATCHDIR}/0001-Compact-and-simplify-modules-build-and-config-genera.patch:-p1 \
+				${PATCHDIR}/CVE-2022-3437-des3-overflow-v4a-4.12.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
