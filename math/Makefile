@@ -556,6 +556,7 @@
     SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
+    SUBDIR += octave-forge-internal-fluid-flow
     SUBDIR += octave-forge-interval
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-irsa
