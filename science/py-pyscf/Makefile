@@ -1,12 +1,13 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for quantum chemistry
-WWW=		https://www.pymol.org/
+WWW=		https://pypi.org/project/pyscf/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
