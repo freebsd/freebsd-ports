@@ -1,6 +1,6 @@
---- chrome/browser/policy/browser_signin_policy_handler.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/policy/browser_signin_policy_handler.cc.orig	2022-10-24 13:33:33 UTC
 +++ chrome/browser/policy/browser_signin_policy_handler.cc
-@@ -44,7 +44,7 @@ void BrowserSigninPolicyHandler::ApplyPolicySettings(c
+@@ -45,7 +45,7 @@ void BrowserSigninPolicyHandler::ApplyPolicySettings(c
        policies.GetValue(policy_name(), base::Value::Type::INTEGER);
    switch (static_cast<BrowserSigninMode>(value->GetInt())) {
      case BrowserSigninMode::kForced:

@@ -1,7 +1,7 @@
---- content/browser/utility_sandbox_delegate.cc.orig	2022-06-17 14:20:10 UTC
+--- content/browser/utility_sandbox_delegate.cc.orig	2022-10-24 13:33:33 UTC
 +++ content/browser/utility_sandbox_delegate.cc
 @@ -63,10 +63,10 @@ UtilitySandboxedProcessLauncherDelegate::
- #if BUILDFLAG(ENABLE_PLUGINS)
+ #if BUILDFLAG(ENABLE_PPAPI)
        sandbox_type_ == sandbox::mojom::Sandbox::kPpapi ||
  #endif
 -#if BUILDFLAG(IS_FUCHSIA)

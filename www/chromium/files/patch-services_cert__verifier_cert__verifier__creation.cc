@@ -1,4 +1,4 @@
---- services/cert_verifier/cert_verifier_creation.cc.orig	2022-08-31 12:19:35 UTC
+--- services/cert_verifier/cert_verifier_creation.cc.orig	2022-10-24 13:33:33 UTC
 +++ services/cert_verifier/cert_verifier_creation.cc
 @@ -12,7 +12,7 @@
  #include "net/cert_net/cert_net_fetcher_url_request.h"
@@ -9,7 +9,7 @@
      BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #include "net/cert/cert_verify_proc_builtin.h"
  #include "net/cert/internal/system_trust_store.h"
-@@ -119,7 +119,7 @@ class OldDefaultCertVerifyProcFactory : public net::Ce
+@@ -90,7 +90,7 @@ class OldDefaultCertVerifyProcFactory : public net::Ce
              user_slot_restriction_ ? crypto::ScopedPK11Slot(PK11_ReferenceSlot(
                                           user_slot_restriction_.get()))
                                     : nullptr));
@@ -18,7 +18,7 @@
      verify_proc = net::CreateCertVerifyProcBuiltin(
          std::move(cert_net_fetcher), net::CreateSslSystemTrustStore());
  #else
-@@ -294,6 +294,7 @@ bool IsUsingChromeRootStore(
+@@ -242,6 +242,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
  bool IsUsingCertNetFetcher() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) ||       \

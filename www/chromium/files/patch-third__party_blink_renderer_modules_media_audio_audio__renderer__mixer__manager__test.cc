@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc.orig	2022-02-28 16:54:41 UTC
+--- third_party/blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc.orig	2022-10-24 13:33:33 UTC
 +++ third_party/blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc
-@@ -678,7 +678,7 @@ TEST_F(AudioRendererMixerManagerTest, MixerParamsLaten
+@@ -708,7 +708,7 @@ TEST_F(AudioRendererMixerManagerTest, MixerParamsLaten
              mixer->get_output_params_for_testing().sample_rate());
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

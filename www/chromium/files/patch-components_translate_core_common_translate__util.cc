@@ -1,7 +1,7 @@
---- components/translate/core/common/translate_util.cc.orig	2022-03-25 21:59:56 UTC
+--- components/translate/core/common/translate_util.cc.orig	2022-10-24 13:33:33 UTC
 +++ components/translate/core/common/translate_util.cc
 @@ -34,7 +34,7 @@ const base::Feature kTranslateSubFrames{"TranslateSubF
- const base::Feature kTFLiteLanguageDetectionEnabled{
+ const base::Feature kTFLiteLanguageDetectionEnabled {
    "TFLiteLanguageDetectionEnabled",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID)

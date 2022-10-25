@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2022-09-24 10:57:32 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2022-10-24 13:33:33 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -113,13 +113,13 @@
+@@ -112,13 +112,13 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -25,7 +25,7 @@
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -780,7 +780,7 @@ void PopulateChromeFrameBinders(
+@@ -799,7 +799,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -34,16 +34,16 @@
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -788,7 +788,7 @@ void PopulateChromeFrameBinders(
+@@ -807,7 +807,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
-       render_frame_host->IsInPrimaryMainFrame()) {
-     map->Add<blink::mojom::SubAppsService>(
-@@ -843,14 +843,14 @@ void PopulateChromeWebUIFrameBinders(
+       !render_frame_host->GetParentOrOuterDocument()) {
+     // The service binder will reject non-primary main frames, but we still need
+@@ -872,14 +872,14 @@ void PopulateChromeWebUIFrameBinders(
        SegmentationInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -60,7 +60,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1235,7 +1235,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1270,7 +1270,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

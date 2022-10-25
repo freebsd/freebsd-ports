@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2022-08-31 12:19:35 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2022-10-24 13:33:33 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
@@ -36,5 +36,5 @@
        break;
 +#endif
      case base::nix::DESKTOP_ENVIRONMENT_XFCE:
+     case base::nix::DESKTOP_ENVIRONMENT_LXQT:
      case base::nix::DESKTOP_ENVIRONMENT_OTHER:
-       break;
