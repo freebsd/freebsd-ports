@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.22.11
-PORTREVISION=	3
+DISTVERSION=	3.22.12
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
