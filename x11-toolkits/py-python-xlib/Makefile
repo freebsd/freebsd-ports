@@ -1,9 +1,7 @@
-PORTNAME=	xlib
-DISTVERSION=	0.27
+PORTNAME=	python-xlib
+DISTVERSION=	0.31
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	X11 library for Python
@@ -18,6 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.6+ tar:bz2
 USE_PYTHON=	autoplist concurrent distutils
+USE_GITHUB=	yes
+GH_ACCOUNT=	python-xlib
 
 NO_ARCH=	yes
 
