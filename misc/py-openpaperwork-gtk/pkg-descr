@@ -1,0 +1,4 @@
+Core module of the OpenPaperwork framework.
+OpenPaperwork is a GUI to make papers searchable.
+
+Gtk plugin bundle is a bunch of plugins for Paperwork related to GLib and GTK.
