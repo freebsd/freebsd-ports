@@ -21,6 +21,7 @@ lib/rehex/exe/plugin.lua
 lib/rehex/exe/string_decode.lua
 lib/rehex/exe/string_stream.lua
 lib/rehex/exe/utils.lua
+lib/rehex/pcap/plugin.lua
 share/applications/rehex.desktop
 share/icons/hicolor/128x128/apps/rehex.png
 share/icons/hicolor/16x16/apps/rehex.png
