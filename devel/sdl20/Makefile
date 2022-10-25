@@ -1,12 +1,8 @@
 PORTNAME=	sdl2
-DISTVERSION=	2.24.0
-PORTREVISION=	1
+DISTVERSION=	2.24.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
-
-PATCH_SITES=	https://github.com/libsdl-org/SDL/commit/
-PATCHFILES=	a204ef50bbf20b77083c0a14124e673efc3a53c6.patch:-p1
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
@@ -95,6 +91,7 @@ JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JOYSTICK_CONFIGURE_ENABLE=	joystick haptic
 JOYSTICK_BUILD_DEPENDS=		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 JOYSTICK_LIB_DEPENDS=		libinotify.so:devel/libinotify
+JOYSTICK_BROKEN_OFF=		does not build without JOYSTICK support
 NAS_CONFIGURE_ENABLE=		nas nas-shared
 NAS_LIB_DEPENDS=		libaudio.so:audio/nas
 OSS_CONFIGURE_ENABLE=		oss
