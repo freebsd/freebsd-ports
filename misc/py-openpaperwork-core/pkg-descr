@@ -1,0 +1,5 @@
+Core module of the OpenPaperwork framework.
+OpenPaperwork is a GUI to make papers searchable.
+
+The core manages Plugins, Callbacks and Interfaces. This package also provide
+some basic plugins that may be used in any kind of application.
