@@ -1,0 +1,14 @@
+Fast and customizable vulnerability scanner based on simple YAML based DSL.
+
+Nuclei offers scanning for a variety of protocols:
+ - TCP
+ - DNS
+ - HTTP
+ - SSL
+ - File
+ - Whois
+ - Websocket
+ - Headless
+
+Example templates:
+ - github.com/projectdiscovery/nuclei-templates

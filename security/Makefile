@@ -371,6 +371,7 @@
     SUBDIR += nmap
     SUBDIR += nss
     SUBDIR += nss_compat_ossl
+    SUBDIR += nuclei
     SUBDIR += nyx
     SUBDIR += oath-toolkit
     SUBDIR += obfs4proxy-tor
