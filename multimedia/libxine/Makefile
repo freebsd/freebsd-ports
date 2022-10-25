@@ -170,6 +170,8 @@ pre-configure-GNUTLS-off:
 		${WRKSRC}/configure
 
 post-patch:
+	@${REINPLACE_CMD} -e '/xine_set_flags/s/XINE_PROTECTED//' \
+		${WRKSRC}/include/xine.h
 .if ${COMPILER_TYPE} == "clang"
 	@${REINPLACE_CMD} -e 's|-fno-rename-registers||' \
 		${WRKSRC}/src/libw32dll/Makefile.in
