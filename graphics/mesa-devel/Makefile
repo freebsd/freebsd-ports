@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	22.2-branchpoint-4095
 DISTVERSIONSUFFIX=	-g977dbfc9dec
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -109,6 +110,7 @@ LTO_MESON_TRUE=		b_lto
 VAAPI_DESC=		Hardware encoding/decoding (only r600, radeonsi)
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_ENABLED=	gallium-va
+VAAPI_MESON_ON=		-Dvideo-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc
 
 VDPAU_DESC=		Hardware decoding (only r600, radeonsi) (implies X11)
 VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
