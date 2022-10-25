@@ -1,0 +1,26 @@
+Pulled from upstream issue https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/2737
+
+diff --git a/src/modules/module-filter-chain.c b/src/modules/module-filter-chain.c
+index 6a899ef5fd776d7e1001ab7ae316ff4bf31a4754..9d65aa938ff441271d6202fc5b8eb8bc57094e17 100644
+--- src/modules/module-filter-chain.c
++++ src/modules/module-filter-chain.c
+@@ -1561,6 +1561,10 @@ static int load_node(struct graph *graph, struct spa_json *json)
+ 	node->control_port = calloc(desc->n_control, sizeof(struct port));
+ 	node->notify_port = calloc(desc->n_notify, sizeof(struct port));
+ 
++	pw_log_info("loaded n_input:%d n_output:%d n_control:%d n_notify:%d",
++			desc->n_input, desc->n_output,
++			desc->n_control, desc->n_notify);
++
+ 	for (i = 0; i < desc->n_input; i++) {
+ 		struct port *port = &node->input_port[i];
+ 		port->node = node;
+@@ -1953,6 +1957,8 @@ static int setup_graph(struct graph *graph, struct spa_json *inputs, struct spa_
+ 			gh->hndl = &node->hndl[i];
+ 			gh->desc = d;
+ 
++		}
++		for (i = 0; i < desc->n_output; i++) {
+ 			spa_list_for_each(link, &node->output_port[i].link_list, output_link)
+ 				link->input->node->n_deps--;
+ 		}
