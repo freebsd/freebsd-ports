@@ -11,6 +11,8 @@ WWW=		https://f3d-app.github.io/f3d/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation breaks on i386 after vtk-9.2.2 upgrade, see https://github.com/f3d-app/f3d/issues/458
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
