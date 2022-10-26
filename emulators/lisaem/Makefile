@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple Lisa 2 Emulator
 WWW=		https://lisaem.sunder.net/
 
+DEPRECATED=	Broken for more than a year and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
