@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20221026:
+AUTHOR: bapt@FreeBSD.org
+  3 new features are available now: PIE, RELRO, BIND_NOW, each port can
+  specify the inability to support any via <feature>_UNSAFE
+
+  All 3 are off by default, the intent is to activate following the freebsd
+  base activation of the same features.
+
+  End users can activate/deactivate globally via WITH_/WITHOUT_ <feature>
+
 20221014:
 AUTHOR: adamw@FreeBSD.org
 
