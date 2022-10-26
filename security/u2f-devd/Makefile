@@ -1,11 +1,11 @@
 PORTNAME=	u2f-devd
 PORTVERSION=	1.1.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Devd hotplug rules for Universal 2nd Factor (U2F) tokens
 
 LICENSE=	BSD2CLAUSE
