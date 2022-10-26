@@ -525,6 +525,7 @@
     SUBDIR += octave-forge
     SUBDIR += octave-forge-actuarial
     SUBDIR += octave-forge-audio
+    SUBDIR += octave-forge-automatic-differentiation
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
     SUBDIR += octave-forge-bioinfo
