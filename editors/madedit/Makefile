@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source and cross-platform text/hex editor
 WWW=		http://madedit.sourceforge.net/
 
+DEPRECATED=	Abandoned project and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
