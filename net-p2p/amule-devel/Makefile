@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-platform eMule p2p client
 WWW=		https://www.amule.org/
 
+DEPRECATED=	Obsolete version and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
