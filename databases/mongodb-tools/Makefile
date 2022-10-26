@@ -1,9 +1,8 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.5.4
-PORTREVISION=	2
+DISTVERSION=	100.6.0
 CATEGORIES=	databases
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Tools for MongoDB 4.4.x and up
 WWW=		https://docs.mongodb.com/database-tools/
 
@@ -52,7 +51,6 @@ MONGOSTAT_VARS=		go_target+=./mongostat/main:mongostat
 MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
-SSL_USES=		ssl
 SSL_USE=		my_tags=ssl
 
 post-install-DOCS-on:
