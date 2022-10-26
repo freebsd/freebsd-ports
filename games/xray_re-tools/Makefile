@@ -56,8 +56,7 @@ post-patch:
 
 post-configure:
 	@${LN} -sf ${_NVTT_WRKSRC:sh}/src ${WRKSRC}/sources/3rd-party/nvtt
-	@${REINPLACE_CMD} -e '/#include "nvconfig\.h"/d' \
-		${WRKSRC}/sources/3rd-party/nvtt/nvcore/nvcore.h
+	@${ECHO_CMD} > ${WRKSRC}/sources/xray_re/nvconfig.h
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/converter \
