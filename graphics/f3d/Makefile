@@ -11,8 +11,6 @@ WWW=		https://f3d-app.github.io/f3d/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	compilation breaks on i386 after vtk-9.2.2 upgrade, see https://github.com/f3d-app/f3d/issues/458
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
@@ -28,6 +26,8 @@ USE_XORG=	ice sm x11 xt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	f3d-app
+
+CMAKE_OFF=	F3D_STRICT_BUILD # disable -Werror
 
 OPTIONS_GROUP=			MODULES
 OPTIONS_GROUP_MODULES=		ALEMBIC ASSIMP EXODUS EXTERNAL_RENDERING OCCT RAYTRACING
