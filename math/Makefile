@@ -605,6 +605,7 @@
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
     SUBDIR += octave-forge-splines
+    SUBDIR += octave-forge-sqlite
     SUBDIR += octave-forge-statistics
     SUBDIR += octave-forge-statistics-bootstrap
     SUBDIR += octave-forge-stk
