@@ -135,7 +135,7 @@ share/man/man1/saga_cmd.1.gz
 share/man/man1/saga_gui.1.gz
 share/metainfo/org.saga-gis.saga-gui.appdata.xml
 share/pixmaps/saga.png
-%%DATADIR%%/docs/saga_on_mac.odt
+%%DATADIR%%/docs/saga_on_mac.md
 %%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
 %%DATADIR%%/docs/saga_toolchains_manual.odt
 @mode 0777
