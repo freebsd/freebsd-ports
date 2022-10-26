@@ -1,5 +1,5 @@
 PORTNAME=	imagick
-PORTVERSION=	3.5.1
+PORTVERSION=	3.7.0
 CATEGORIES=	graphics
 
 MAINTAINER=	000.fbsd@quip.cz
