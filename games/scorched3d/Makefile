@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D version of the classic DOS game Scorched Earth
 WWW=		http://www.scorched3d.co.uk/
 
+DEPRECATED=	Abandoned project and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
