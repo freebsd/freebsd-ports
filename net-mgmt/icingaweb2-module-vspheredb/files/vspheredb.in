@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: vspheredb
+# REQUIRE: icinga2
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable nsca:
+# vspheredb (bool):    Set to "NO" by default.
+#                      Set it to "YES" to enable .
+#
+
+. /etc/rc.subr
+
+name="vspheredb"
+rcvar=vspheredb_enable
+
+pidfile="/var/run/vspheredb.pid"
+command="/usr/sbin/daemon"
+command_args="-f -P ${pidfile} %%PREFIX%%/bin/icingacli vspheredb daemon run"
+
+load_rc_config "${name}"
+
+run_rc_command "$1"
