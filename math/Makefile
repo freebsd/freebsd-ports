@@ -542,6 +542,7 @@
     SUBDIR += octave-forge-doctest
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-fda
+    SUBDIR += octave-forge-femoctave
     SUBDIR += octave-forge-fenv
     SUBDIR += octave-forge-financial
     SUBDIR += octave-forge-fits
