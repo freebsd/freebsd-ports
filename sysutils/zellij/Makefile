@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.4
+DISTVERSION=	0.32.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -89,6 +89,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		darling_core-0.13.4 \
 		darling_macro-0.13.4 \
 		derivative-2.2.0 \
+		destructure_traitobject-0.2.0 \
 		dialoguer-0.10.1 \
 		digest-0.8.1 \
 		digest-0.9.0 \
@@ -146,6 +147,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		is_ci-1.1.1 \
 		itoa-1.0.2 \
 		js-sys-0.3.58 \
+		kdl-4.5.0 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
@@ -158,7 +160,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		lock_api-0.4.7 \
 		log-0.4.17 \
 		log-mdc-0.1.0 \
-		log4rs-1.1.1 \
+		log4rs-1.2.0 \
 		mach-0.3.2 \
 		maplit-1.0.2 \
 		matches-0.1.9 \
@@ -167,7 +169,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		memmem-0.1.1 \
 		memoffset-0.6.5 \
 		miette-3.3.0 \
+		miette-5.3.0 \
 		miette-derive-3.3.0 \
+		miette-derive-5.3.0 \
+		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.3 \
 		mio-0.7.14 \
 		miow-0.3.7 \
@@ -175,6 +180,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		names-0.13.0 \
 		nix-0.23.1 \
 		nom-5.1.2 \
+		nom-7.1.1 \
 		ntapi-0.3.7 \
 		num-derive-0.3.3 \
 		num-integer-0.1.45 \
@@ -291,8 +297,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		tracing-0.1.35 \
 		tracing-attributes-0.1.21 \
 		tracing-core-0.1.27 \
-		traitobject-0.1.0 \
-		typemap-0.3.3 \
+		typemap-ors-1.0.0 \
 		typenum-1.15.0 \
 		typetag-0.1.8 \
 		typetag-impl-0.1.8 \
@@ -303,7 +308,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
-		unsafe-any-0.4.2 \
+		unsafe-any-ors-1.0.0 \
 		url-2.2.2 \
 		utf8parse-0.2.0 \
 		uuid-0.8.2 \
