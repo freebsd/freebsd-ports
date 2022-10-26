@@ -1,6 +1,6 @@
 PORTNAME=	clamsmtp
 PORTVERSION=	1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://thewalter.net/stef/software/clamsmtp/
 

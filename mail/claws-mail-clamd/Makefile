@@ -1,4 +1,5 @@
 PORTNAME=	clamd
+PORTREVISION=	1
 
 COMMENT=	ClamAV based antivirus plugin for Claws Mail
 WWW=		https://www.claws-mail.org/plugins.php
