@@ -14,7 +14,7 @@
 #                        domoticz database directory
 #domoticz_user (str):    Default to www, user for starting domoticz
 #domoticz_group (str):   Default to www, group for stating domoticz
-#domoticz_pidfile (str): Custum PID file path and name
+#domoticz_pidfile (str): Custom PID file path and name
 #                        Default to "/var/run/domoticz/${hostname}.pid".
 #domoticz_args (str):    Custom additional arguments to be passed
 #                        Default to "-syslog -daemon -wwwbind 0.0.0.0"

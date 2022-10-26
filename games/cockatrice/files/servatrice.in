@@ -11,7 +11,7 @@
 #			Set it in the rc.conf or default behaviour of
 #			`servatriced_safe` itself, will be picking
 #			${servatrice_confdir}/my.cnf if it exists.
-# servatrice_pidfile (str):	Custum PID file path and name.
+# servatrice_pidfile (str):	Custom PID file path and name.
 #			Default to "${servatrice_dbdir}/${hostname}.pid".
 # servatrice_args (str):	Custom additional arguments to be passed
 #			to servatriced_safe (default empty).

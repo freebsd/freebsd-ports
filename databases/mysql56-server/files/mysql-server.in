@@ -16,7 +16,7 @@
 #			Set it in the rc.conf or default behaviour of
 #			`mysqld_safe` itself, will be picking
 #			${mysql_confdir}/my.cnf if it exists.
-# mysql_pidfile (str):	Custum PID file path and name.
+# mysql_pidfile (str):	Custom PID file path and name.
 #			Default to "${mysql_dbdir}/${hostname}.pid".
 # mysql_args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).

@@ -9,7 +9,7 @@
 #			Set it to "YES" to enable iipsrv.
 # iipsrv_(instance_)?flags (str):	Custom additional arguments to be passed
 #			to iipsrv. Default to "--bind 127.0.0.1:9111".
-# iipsrv_(instance_)?pidfile (str): Custum PID file path and name.
+# iipsrv_(instance_)?pidfile (str): Custom PID file path and name.
 #			Default to "/var/run/iipsrv.${instance}.pid".
 # iipsrv_(instance_)?user (str): User to run iipsrv as
 #			Default to "nobody".

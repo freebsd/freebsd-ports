@@ -10,7 +10,7 @@
 # munged_keyfile (str): Set to "/usr/local/etc/munge/munge.key" by default.
 #                       Custom munge key.
 # munged_pidfile (str): Set to "/var/run/munged.pid" by default.
-#                       Custum PID file path and name.
+#                       Custom PID file path and name.
 # munged_flags (str):   Set to "" by default.
 #                       Extra flags passed to start command.
 

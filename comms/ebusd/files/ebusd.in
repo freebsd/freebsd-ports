@@ -10,7 +10,7 @@
 #ebusd_enable (bool): set to "YES" to start domotics at boot
 #ebusd_user (str):    Default to ebusd, user for starting ebusd
 #ebusd_group (str):   Default to ebusd, group for stating ebusd
-#ebusd_pidfile (str): Custum PID file path and name
+#ebusd_pidfile (str): Custom PID file path and name
 #                        Default to "/var/run/ebusd/${hostname}.pid".
 #ebusd_args (str):    Custom additional arguments to be passed
 #                        Default to "-d /dev/ttyU0 --scanconfig --localhost"

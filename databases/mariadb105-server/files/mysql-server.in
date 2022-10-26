@@ -11,7 +11,7 @@
 #			Base database directory.
 # mysql_(instance_)?args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).
-# mysql_(instance_)?pidfile (str): Custum PID file path and name.
+# mysql_(instance_)?pidfile (str): Custom PID file path and name.
 #			Default to "${mysql_dbdir}/${hostname}.pid".
 # mysql_(instance_)?user (str): User to run mysqld as
 #			Default to "%%MARIADB_USER%%" created by the port
