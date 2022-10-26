@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows HTML Help (.chm) viewer for UNIX
 WWW=		http://xchm.sourceforge.net/
 
+DEPRECATED=	Abandoned project and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
