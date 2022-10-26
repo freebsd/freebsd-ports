@@ -5,14 +5,14 @@
 # [1] https://github.com/CTSRD-CHERI/cheribuild
 
 PORTNAME=	gdb-cheri
-PORTVERSION=	8.3
+PORTVERSION=	12.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
 USE_GITHUB=yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	gdb
-GH_TAGNAME=	24c49a06930f500a15e409718ad0a3620d87e4d7
+GH_TAGNAME=	ddd1b56a1dcec42f549b140dfeee394c93599072
 
 MAINTAINER=	def@FreeBSD.org
 COMMENT=	GNU Project Debugger with support for the Arm Morello architecture
@@ -22,6 +22,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING3
 DATADIR=	${PREFIX}/share/gdb
 
 USES=		compiler:c++11-lang gmake libtool makeinfo pkgconfig tar:xz
+
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 VER=		${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
@@ -42,6 +44,7 @@ CONFIGURE_ARGS+=--program-suffix=${VER} \
 		--enable-tui \
 		--with-gdb-datadir=${PREFIX}/share/gdb \
 		--with-guile=no \
+		--with-libgmp-type=static \
 		--with-separate-debug-dir=/usr/lib/debug \
 		--without-expat \
 		--without-gnu-as \
