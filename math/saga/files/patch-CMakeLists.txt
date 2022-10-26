@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2022-08-28 17:59:56 UTC
++++ CMakeLists.txt
+@@ -21,6 +21,9 @@ endif()
+ 	set(CMAKE_BUILD_TYPE Release)
+ endif()
+ 
++set(COMPILER "${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
++add_definitions(-DCOMPILER="${COMPILER}")
++
+ if(MSVC)
+ 	set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
+ 
