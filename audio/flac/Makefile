@@ -1,8 +1,7 @@
 PORTNAME=	flac
 PORTVERSION=	1.4.2
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
-		https://ftp.osuosl.org/pub/xiph/releases/flac/
+MASTER_SITES=	https://downloads.xiph.org/releases/flac/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec

@@ -3,8 +3,7 @@ PORTVERSION=	1.4.2
 PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
-		https://ftp.osuosl.org/pub/xiph/releases/vorbis/
+MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Play, encode, and manage Ogg Vorbis files
