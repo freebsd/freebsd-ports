@@ -28,6 +28,7 @@ USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	Alexays
 GH_PROJECT=	Waybar
+MESON_ARGS=	-Dtests=disabled
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config \
 		etc/xdg/${PORTNAME}/style.css
