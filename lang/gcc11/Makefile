@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	11.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -69,7 +69,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 
-LANGUAGES:=	c,c++,objc,fortran,jit
+LANGUAGES:=	c,c++,d,objc,fortran,jit
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
@@ -114,6 +114,7 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
+		gcc${SUFFIX}/gdc \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgccjit \
 		gcc${SUFFIX}/libgomp
