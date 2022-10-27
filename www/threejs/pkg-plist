@@ -303,6 +303,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/background.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderLib/backgroundCube.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/cube.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/depth.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/distanceRGBA.glsl.js
@@ -357,6 +358,7 @@
 %%WWWDIR%%/scenes/FogExp2.js
 %%WWWDIR%%/scenes/Scene.js
 %%WWWDIR%%/textures/CanvasTexture.js
+%%WWWDIR%%/textures/CompressedArrayTexture.js
 %%WWWDIR%%/textures/CompressedTexture.js
 %%WWWDIR%%/textures/CubeTexture.js
 %%WWWDIR%%/textures/Data3DTexture.js
