@@ -26,7 +26,7 @@ BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
 		xdg-user-dir:devel/xdg-user-dirs
 
-USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext \
+USES=		cmake compiler:c++11-lib cpe gettext \
 		kde:5 pkgconfig python:3.5+,run qt:5 shebangfix tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth \
@@ -81,7 +81,7 @@ FEEDBACK_DESC=		Collecting user feedback
 
 .if !${ABI:Mpurecap}
 LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
-USES+=		gnome
+USES+=		desktop-file-utils gnome
 USE_KDE+=	baloo filemetadata kdelibs4support polkit-kde-agent-1:run
 .endif
 
