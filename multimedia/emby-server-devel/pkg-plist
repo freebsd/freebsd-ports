@@ -551,6 +551,7 @@ lib/emby-server/system/dashboard-ui/modules/common/strings/ro.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/ru.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/sk.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/sl-SI.json
+lib/emby-server/system/dashboard-ui/modules/common/strings/sq.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/sv.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/tr.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/uk.json
@@ -1040,6 +1041,7 @@ lib/emby-server/system/dashboard-ui/strings/ro.json
 lib/emby-server/system/dashboard-ui/strings/ru.json
 lib/emby-server/system/dashboard-ui/strings/sk.json
 lib/emby-server/system/dashboard-ui/strings/sl-SI.json
+lib/emby-server/system/dashboard-ui/strings/sq.json
 lib/emby-server/system/dashboard-ui/strings/sv.json
 lib/emby-server/system/dashboard-ui/strings/th.json
 lib/emby-server/system/dashboard-ui/strings/tr.json
@@ -1168,6 +1170,7 @@ lib/emby-server/system/traystrings/pt-BR.json
 lib/emby-server/system/traystrings/pt-PT.json
 lib/emby-server/system/traystrings/ru.json
 lib/emby-server/system/traystrings/sk.json
+lib/emby-server/system/traystrings/sq.json
 lib/emby-server/system/traystrings/sv.json
 lib/emby-server/system/traystrings/tr.json
 lib/emby-server/system/traystrings/uk.json
