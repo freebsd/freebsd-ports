@@ -15,7 +15,7 @@ EOM
 { type: upgrade
   maximum_version: "3.4.0"
   message: <<EOM
-This version needs a mandatory schema change for the gmsyql, gpgsql and gsqlite3 backends. SQL 
+This version needs a mandatory schema change for the gmysql, gpgsql and gsqlite3 backends. SQL
 statements are available in %%DOCSDIR%% or https://doc.powerdns.com
 EOM
 }
@@ -36,6 +36,7 @@ backends. SQL statements are available in %%DOCSDIR%% or https://doc.powerdns.co
 EOM
 }
 { type: upgrade
+  maximum_version: "4.3.0"
   minimum_version: "4.2.0"
   message: <<EOM
 MyDNS and OpenDBX backends removed
@@ -49,6 +50,14 @@ backends. SQL statements are available in %%DOCSDIR%% or https://doc.powerdns.co
 
 For the LMDB backend, please review lmdb-schema-version
 (https://doc.powerdns.com/authoritative/backends/lmdb.html#setting-lmdb-schema-version)
+EOM
+}
+{ type: upgrade
+  minimum_version: "4.3.0"
+  message: <<EOM
+This version needs a mandatory schema change for gmysql, godbc (mssql), gpsql and gsqlite3 backends.
+SQL statements are available at https://github.com/PowerDNS/pdns/blob/master/modules in their
+respective subfolders as 4.3.0_to_4.7.0_schema.xxsql.sql
 EOM
 }
 ]
