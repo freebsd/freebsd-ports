@@ -1,5 +1,5 @@
 PORTNAME=	pcsx2
-PORTVERSION=	1.7.3344
+PORTVERSION=	1.7.3465
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -15,14 +15,15 @@ ONLY_FOR_ARCHS=	amd64
 # - rapidyaml (and c4core) come from 3rdparty/ (0.4.0 is needed)
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
 # - zstd comes from 3rdparty/ (not detected yet)
-# - cubeb comes from 3rdparty/ (not available from ports yet)
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libpulse.so:audio/pulseaudio \
 		libSoundTouch.so:audio/soundtouch \
-		libsamplerate.so:audio/libsamplerate \
 		libharfbuzz.so:print/harfbuzz \
 		libfmt.so:devel/libfmt \
-		libzip.so:archivers/libzip
+		libzip.so:archivers/libzip \
+		libpulse.so:audio/pulseaudio \
+		libjack.so:audio/jack \
+		libsndio.so:audio/sndio
 #		libryml.so:devel/rapidyaml \
 #		libglad.so:graphics/glad \
 #		libzstd.so:archivers/zstd
@@ -41,13 +42,16 @@ USE_XORG=	ice x11 xcb xext xpm xrandr
 USE_WX=		3.0+
 
 # See: cmake/BuildParameters.cmake
-CMAKE_ARGS+=	-DCMAKE_INSTALL_DOCDIR=${DOCSDIR} \
+CMAKE_ARGS+=	\
+		-DCMAKE_REQUIRED_INCLUDES:STRING=${LOCALBASE}/include/ \
+		-DCMAKE_INSTALL_DOCDIR=${DOCSDIR} \
 		-DPACKAGE_MODE:BOOL=ON \
+		-DQT_BUILD:BOOL=OFF \
 		-DUSE_VTUNE:BOOL=OFF \
 		-DUSE_VULKAN:BOOL=OFF \
-		-DQT_BUILD:BOOL=OFF \
 		-DENABLE_TESTS:BOOL=OFF \
-		-DDISABLE_PCSX2_WRAPPER:BOOL=ON
+		-DDISABLE_PCSX2_WRAPPER:BOOL=ON \
+		-DDISABLE_SETCAP:BOOL=ON
 DATADIR=	${PREFIX}/share/PCSX2
 
 OPTIONS_DEFINE=	DOCS NLS

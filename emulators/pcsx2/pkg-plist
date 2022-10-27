@@ -112,6 +112,10 @@ bin/pcsx2
 %%DATADIR%%/resources/shaders/vulkan/present.glsl
 %%DATADIR%%/resources/shaders/vulkan/shadeboost.glsl
 %%DATADIR%%/resources/shaders/vulkan/tfx.glsl
+%%DATADIR%%/resources/sounds/achievements/README.txt
+%%DATADIR%%/resources/sounds/achievements/lbsubmit.wav
+%%DATADIR%%/resources/sounds/achievements/message.wav
+%%DATADIR%%/resources/sounds/achievements/unlock.wav
 share/applications/PCSX2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Configuration_Guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/PCSX2_FAQ.pdf

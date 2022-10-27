@@ -1,11 +1,10 @@
 GH_TUPLE= \
 	rtissera:libchdr:5de1a59019815ccdbba0fe07c71b31406d023248:libchdr/3rdparty/libchdr/libchdr \
-	mozilla:cubeb:dc511c6b3597b6384d28949285b9289e009830ea:cubeb/3rdparty/cubeb/cubeb \
 	biojppm:rapidyaml:213b201d264139cd1b887790197e08850af628e3:rapidyaml/3rdparty/rapidyaml/rapidyaml \
 	facebook:zstd:e47e674cd09583ff0503f0f6defd6d23d8b718d3:zstd/3rdparty/zstd/zstd \
-	google:googletest:800f5422ac9d9e0ad59cd860a2ef3a679588acb4:googletest/3rdparty/cubeb/cubeb/googletest \
-	arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/3rdparty/cubeb/cubeb/cmake/sanitizers-cmake \
+	RetroAchievements:rcheevos:31f8788fe0e694e99db7ce138d45a655c556fa96:rcheevos/3rdparty/rcheevos/rcheevos \
 	biojppm:c4core:d35c7c9bf370134595699d791e6ff8db018ddc8d:c4core/3rdparty/rapidyaml/rapidyaml/ext/c4core \
 	biojppm:cmake:371982300ff5a076d7c3199057ebed77bbe3472f:cmake/3rdparty/rapidyaml/rapidyaml/ext/c4core/cmake \
 	biojppm:debugbreak:5dcbe41d2bd4712c8014aa7e843723ad7b40fd74:debugbreak/3rdparty/rapidyaml/rapidyaml/ext/c4core/src/c4/ext/debugbreak \
 	fastfloat:fast_float:32d21dcecb404514f94fb58660b8029a4673c2c1:fast_float/3rdparty/rapidyaml/rapidyaml/ext/c4core/src/c4/ext/fast_float
+

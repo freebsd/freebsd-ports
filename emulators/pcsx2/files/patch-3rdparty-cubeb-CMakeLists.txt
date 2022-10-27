@@ -1,0 +1,18 @@
+Help cubeb find local headers:
+3rdparty/cubeb/src/cubeb_pulse.c:14:10: fatal error: 'pulse/pulseaudio.h' file not found
+
+--- 3rdparty/cubeb/CMakeLists.txt.orig	2022-10-20 13:57:30 UTC
++++ 3rdparty/cubeb/CMakeLists.txt
+@@ -43,8 +43,10 @@ add_library(cubeb
+   src/cubeb_strings.c
+   src/cubeb_utils.cpp
+ )
+-target_include_directories(cubeb
+-  PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>
++target_include_directories(cubeb PUBLIC
++  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
++  $<BUILD_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
++  $<INSTALL_INTERFACE:include>
+ )
+ set_target_properties(cubeb PROPERTIES
+   VERSION ${cubeb_VERSION}
