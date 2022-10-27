@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20220820
+DISTVERSION=	g20221027
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_COMMIT=	734de8f9aa2df56bcb45ebab7cfa799a23f36403
+GL_COMMIT=	ecad4839caf4c2fab9c6627ceeca9b9cb32e8929
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl sample/sample-scripts/ucn.pl \
@@ -51,7 +51,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL DCO TEST \
 			X509ALTUSERNAME
-OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST
+OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST DCO
 OPTIONS_EXCLUDE_FreeBSD_12=	DCO # FreeBSD 14 only
 OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 OPTIONS_SINGLE=		SSL
