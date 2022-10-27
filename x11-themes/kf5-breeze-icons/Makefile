@@ -23,6 +23,7 @@ CMAKE_ON=	WITH_ICON_GENERATION
 
 .include <bsd.port.options.mk>
 
+CMAKE_BUILD_TYPE=Release
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
