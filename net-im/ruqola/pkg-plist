@@ -6,17 +6,16 @@ lib/libruqolacore.so.%%SO_VER%%
 lib/libruqolawidgets.so.0
 lib/libruqolawidgets.so.%%SO_VER%%
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_passwordauthenticationplugin.so
+%%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_texttospeechtextplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_webshortcuttextplugin.so
 share/applications/org.kde.ruqola.desktop
 share/doc/HTML/en/ruqola/index.cache.bz2
 share/doc/HTML/en/ruqola/index.docbook
+share/icons/hicolor/128x128/apps/ruqola.png
 share/icons/hicolor/22x22/apps/ruqola.png
 share/icons/hicolor/32x32/apps/ruqola.png
 share/icons/hicolor/48x48/apps/ruqola.png
-share/icons/hicolor/128x128/apps/ruqola.png
 share/knotifications5/ruqola.notifyrc
-share/metainfo/org.kde.ruqola.appdata.xml
-share/qlogging-categories5/ruqola.categories
 share/locale/ca/LC_MESSAGES/ruqola.mo
 share/locale/ca@valencia/LC_MESSAGES/ruqola.mo
 share/locale/cs/LC_MESSAGES/ruqola.mo
@@ -28,6 +27,7 @@ share/locale/fi/LC_MESSAGES/ruqola.mo
 share/locale/fr/LC_MESSAGES/ruqola.mo
 share/locale/ia/LC_MESSAGES/ruqola.mo
 share/locale/it/LC_MESSAGES/ruqola.mo
+share/locale/ka/LC_MESSAGES/ruqola.mo
 share/locale/lt/LC_MESSAGES/ruqola.mo
 share/locale/nl/LC_MESSAGES/ruqola.mo
 share/locale/pl/LC_MESSAGES/ruqola.mo
@@ -40,3 +40,6 @@ share/locale/sv/LC_MESSAGES/ruqola.mo
 share/locale/uk/LC_MESSAGES/ruqola.mo
 share/locale/zh_CN/LC_MESSAGES/ruqola.mo
 share/locale/zh_TW/LC_MESSAGES/ruqola.mo
+share/metainfo/org.kde.ruqola.appdata.xml
+share/qlogging-categories5/ruqola.categories
+share/qlogging-categories5/ruqola.renamecategories
