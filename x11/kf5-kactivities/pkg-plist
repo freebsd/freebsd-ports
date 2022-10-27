@@ -21,8 +21,8 @@ lib/libKF5Activities.so
 lib/libKF5Activities.so.5
 lib/libKF5Activities.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KActivities.pri
-%%QT_QMLDIR%%/org/kde/activities/libkactivitiesextensionplugin.so
-%%QT_QMLDIR%%/org/kde/activities/qmldir
+%%QML%%%%QT_QMLDIR%%/org/kde/activities/libkactivitiesextensionplugin.so
+%%QML%%%%QT_QMLDIR%%/org/kde/activities/qmldir
 libdata/pkgconfig/libKActivities.pc
 share/qlogging-categories5/kactivities.categories
 share/qlogging-categories5/kactivities.renamecategories
