@@ -9,6 +9,7 @@ bin/u2spewfoo
 %%ETCDIR%%/file_magic.rules
 %%ETCDIR%%/max_detect.lua
 %%ETCDIR%%/security.lua
+%%ETCDIR%%/sensitive_data.rules
 %%ETCDIR%%/snort.lua
 %%ETCDIR%%/snort_defaults.lua
 %%ETCDIR%%/talos.lua
@@ -70,6 +71,7 @@ include/snort/framework/mpse.h
 include/snort/framework/mpse_batch.h
 include/snort/framework/packet_constraints.h
 include/snort/framework/parameter.h
+include/snort/framework/pdu_section.h
 include/snort/framework/policy_selector.h
 include/snort/framework/range.h
 include/snort/framework/so_rule.h
