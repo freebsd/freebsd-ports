@@ -476,6 +476,7 @@
     SUBDIR += mbasecalc
     SUBDIR += mcsim
     SUBDIR += mdal
+    SUBDIR += mesquite
     SUBDIR += metis
     SUBDIR += mfem
     SUBDIR += mingw32-libgmp
