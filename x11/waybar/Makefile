@@ -1,9 +1,6 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.13
+DISTVERSION=	0.9.14
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	d25278f710a4.patch:-p1 # https://github.com/Alexays/Waybar/pull/1567
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -41,8 +38,8 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
 
-OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
-OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
 .if ${FLAVOR:U} == nopulse
 OPTIONS_EXCLUDE=PULSEAUDIO
 .endif
@@ -52,8 +49,10 @@ DBUS_MESON_ENABLED=	dbusmenu-gtk
 
 EVDEV_DESC=		Keyboard state via libevdev
 EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
-EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
-EVDEV_MESON_ENABLED=	libevdev
+EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev \
+			libinotify.so:devel/libinotify \
+			libinput.so:x11/libinput
+EVDEV_MESON_ENABLED=	libevdev libinput
 
 GLS_DESC=		Use gtk-layer-shell library for popups support
 GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
@@ -61,6 +60,9 @@ GLS_MESON_ENABLED=	gtk-layer-shell
 
 ICONSFONT_DESC=		Install Font Awesome to properly render icons
 ICONSFONT_RUN_DEPENDS=	font-awesome>0:x11-fonts/font-awesome
+
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_MESON_ENABLED=	jack
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
@@ -71,6 +73,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-cpu.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
 			man/man5/${PORTNAME}-disk.5.gz \
+			man/man5/${PORTNAME}-gamemode.5.gz \
 			man/man5/${PORTNAME}-idle-inhibitor.5.gz \
 			man/man5/${PORTNAME}-inhibitor.5.gz \
 			man/man5/${PORTNAME}-keyboard-state.5.gz \
@@ -78,12 +81,14 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
 			man/man5/${PORTNAME}-pulseaudio.5.gz \
+			man/man5/${PORTNAME}-river-mode.5.gz \
 			man/man5/${PORTNAME}-river-tags.5.gz \
 			man/man5/${PORTNAME}-river-window.5.gz \
 			man/man5/${PORTNAME}-sndio.5.gz \
 			man/man5/${PORTNAME}-states.5.gz \
 			man/man5/${PORTNAME}-sway-language.5.gz \
 			man/man5/${PORTNAME}-sway-mode.5.gz \
+			man/man5/${PORTNAME}-sway-scratchpad.5.gz \
 			man/man5/${PORTNAME}-sway-window.5.gz \
 			man/man5/${PORTNAME}-sway-workspaces.5.gz \
 			man/man5/${PORTNAME}-temperature.5.gz \
