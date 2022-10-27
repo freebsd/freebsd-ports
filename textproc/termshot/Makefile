@@ -1,7 +1,6 @@
 PORTNAME=	termshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.4
-PORTREVISION=	1
+DISTVERSION=	0.2.5
 CATEGORIES=	textproc graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -17,7 +16,7 @@ GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-tags noupdater \
 		-ldflags "\
 		-s -w \
-		-X ${GO_MODULE}/internal.Version=${DISTVERSION}"
+		-X ${GO_MODULE}/internal/cmd.version=${DISTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
