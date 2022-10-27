@@ -1,11 +1,13 @@
---- configure.orig	2022-09-25 11:57:11 UTC
+--- configure.orig	2022-10-27 15:10:23 UTC
 +++ configure
-@@ -20004,7 +20004,7 @@ then :
- fi
+@@ -21455,8 +21455,8 @@ fi
+ if test "x${ax_enable_debug}" = "xno"
+ then :
+ 
+-	CFLAGS="-O3 -funroll-loops $CFLAGS"
+-	CXXFLAGS="-O3 $CXXFLAGS"
++	#CFLAGS="-O3 -funroll-loops $CFLAGS"
++	#CXXFLAGS="-O3 $CXXFLAGS"
  
  fi
-- if test "x$HAVE_PREBUILD_FLAG_TAG$HAVEPREBUILD_API_DIR" = "xyesyes"; then
-+ if test "x$HAVE_PREBUILT_FLAC_TAG$HAVE_PREBUILT_API_DIR" = "xyesyes"; then
-   FLaC__HAS_PREBUILT_DOXYGEN_TRUE=
-   FLaC__HAS_PREBUILT_DOXYGEN_FALSE='#'
- else
+ 
