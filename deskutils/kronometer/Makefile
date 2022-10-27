@@ -1,7 +1,7 @@
 PORTNAME=	kronometer
-DISTVERSION=	2.2.91
+DISTVERSION=	2.3.0
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://download.kde.org/unstable/${PORTNAME}/${DISTVERSION}/src/
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
