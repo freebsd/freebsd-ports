@@ -1,9 +1,6 @@
 PORTNAME=	mosh
-PORTVERSION=	1.3.2
-PORTREVISION=	20
+PORTVERSION=	1.4.0
 CATEGORIES=	net
-MASTER_SITES=	https://mosh.org/ \
-		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Mobile terminal that supports intermittent connectivity
@@ -13,14 +10,18 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
+USES=		autoreconf compiler:c++11-lang ncurses perl5 pkgconfig ssl
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-utempter --without-ncurses
-CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+CONFIGURE_ENV+=	OpenSSL_CFLAGS="-I${OPENSSLINC}" OpenSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 		TINFO_CFLAGS="-I/usr/include"
 INSTALL_TARGET=	install-strip
-USES=		compiler:c++11-lang ncurses perl5 pkgconfig ssl
 USE_CXXSTD=	c++11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mobile-shell
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 CONFLICTS_INSTALL=	mosh-0.[2-9].*
 
