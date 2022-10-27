@@ -638,9 +638,13 @@
 %%DATADIR%%/project-static/dist/lldp.js
 %%DATADIR%%/project-static/dist/lldp.js.map
 %%DATADIR%%/project-static/dist/materialdesignicons-webfont-2ZY4X5WS.woff
+%%DATADIR%%/project-static/dist/materialdesignicons-webfont-DWVXV5L5.woff
 %%DATADIR%%/project-static/dist/materialdesignicons-webfont-EH3JD4GG.ttf
+%%DATADIR%%/project-static/dist/materialdesignicons-webfont-ER2MFQKM.woff2
 %%DATADIR%%/project-static/dist/materialdesignicons-webfont-KSYPMDN6.woff2
 %%DATADIR%%/project-static/dist/materialdesignicons-webfont-LWDVGUDX.eot
+%%DATADIR%%/project-static/dist/materialdesignicons-webfont-UHEFFMSX.eot
+%%DATADIR%%/project-static/dist/materialdesignicons-webfont-WM6M6ZHQ.ttf
 %%DATADIR%%/project-static/dist/netbox-dark.css
 %%DATADIR%%/project-static/dist/netbox-external.css
 %%DATADIR%%/project-static/dist/netbox-light.css
@@ -1043,6 +1047,7 @@
 %%DATADIR%%/users/tests/test_models.py
 %%DATADIR%%/users/tests/test_preferences.py
 %%DATADIR%%/users/urls.py
+%%DATADIR%%/users/utils.py
 %%DATADIR%%/users/views.py
 %%DATADIR%%/utilities/__init__.py
 %%DATADIR%%/utilities/api.py
