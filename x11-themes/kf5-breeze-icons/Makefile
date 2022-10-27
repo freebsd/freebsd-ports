@@ -23,8 +23,6 @@ CMAKE_ON=	WITH_ICON_GENERATION
 
 .include <bsd.port.options.mk>
 
-.if !${ABI:Mpurecap}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
-.endif
 
 .include <bsd.port.mk>
