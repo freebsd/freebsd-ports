@@ -18,13 +18,15 @@ BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka \
 		rst2man:textproc/py-docutils
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
-USES=		autoreconf cpe libtool pkgconfig shebangfix tar:xz
+USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
 GL_COMMIT=	ecad4839caf4c2fab9c6627ceeca9b9cb32e8929
 USE_RC_SUBR=	openvpn
 
-SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl sample/sample-scripts/ucn.pl \
+SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
+		sample/sample-scripts/totpauth.py \
+		sample/sample-scripts/ucn.pl \
 		sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=		yes
