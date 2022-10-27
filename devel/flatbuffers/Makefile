@@ -1,6 +1,6 @@
 PORTNAME=	flatbuffers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.9.29
+DISTVERSION=	22.10.26
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ WWW=		https://google.github.io/flatbuffers/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:testing compiler:c++11-lib cpe python:build
+USES=		cmake:testing compiler:c++14-lang cpe python:build
 CPE_VENDOR=	google
 USE_LDCONFIG=	yes
 
