@@ -1,6 +1,6 @@
 PORTNAME=	guile
 PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 USES=		charsetfix compiler:gcc-c++11-lib cpe gmake iconv libtool \
 		makeinfo pathfix pkgconfig readline tar:lz
 CPE_VENDOR=	gnu
-USE_GCC=	12
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
