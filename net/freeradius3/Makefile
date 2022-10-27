@@ -1,5 +1,7 @@
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
+
 PORTNAME=	freeradius
-DISTVERSION=	3.0.25
+DISTVERSION=	3.2.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${DISTVERSION:S/./_/g}/ \
 		https://freeradius.org/ftp/pub/radius/%SUBDIR%/ \
@@ -14,6 +16,10 @@ COMMENT=	Free RADIUS server implementation
 WWW=		https://www.freeradius.org/
 
 LICENSE=	GPLv2
+
+BROKEN_SSL=			libressl libressl-devel
+BROKEN_SSL_REASON_libressl=	LibreSSL is no longer supported
+BROKEN_SSL_REASON_libressl-devel=	${BROKEN_SSL_REASON_libressl}
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libtalloc.so:devel/talloc
@@ -52,7 +58,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER LDAP MYSQL PGSQL UNIXODBC FIREBIRD REDIS \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
 		FREETDS IDN DOCS SQLITE3 PYTHON RUBY UNBOUND PCRE \
-		WINBIND EXAMPLES
+		WINBIND EXAMPLES JSON
 OPTIONS_DEFAULT=USER PERL HEIMDAL UDPFROMTO
 OPTIONS_SINGLE=	KRB
 OPTIONS_SINGLE_KRB=	NOKRB HEIMDAL HEIMDAL_PORT MITKRB_PORT
@@ -85,6 +91,7 @@ DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 REST_DESC=		Enable RESTful API support
 WINBIND_DESC=		Enable native winbind support in rlm_mschap
+JSON_DESC=		With JSON support
 
 EDIR_CONFIGURE_WITH=		edir
 EDIR_IMPLIES=			LDAP
@@ -147,6 +154,10 @@ UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 WINBIND_USES=			samba:build,lib
 WINBIND_CONFIGURE_ON=		--with-winbind-include-dir=${LOCALBASE}/include/samba4 \
 				--with-winbind-lib-dir=${LOCALBASE}/lib/samba4
+JSON_CONFIGURE_WITH=		rlm_json
+JSON_CONFIGURE_ON=		--with-jsonc-lib-dir=${LOCALBASE}/lib \
+				--with-jsonc-include-dir=${LOCALBASE}/include
+JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
 
 .include <bsd.port.options.mk>
 
@@ -195,6 +206,11 @@ EXPM=		yes
 
 # idn module is still experimental
 .if ${PORT_OPTIONS:MIDN} && empty(PORT_OPTIONS:MEXPERIMENTAL)
+EXPM=		yes
+.endif
+
+# json module is still experimental
+.if ${PORT_OPTIONS:MJSON} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 

@@ -1,5 +1,5 @@
-@unexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
-@unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
+@preunexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
+@preunexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 bin/dhcpclient
 bin/map_unit
 bin/rad_counter
@@ -122,9 +122,6 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_counter.a
 %%LIBDIR%%/rlm_counter.la
 %%LIBDIR%%/rlm_counter.so
-%%LIBDIR%%/rlm_cram.a
-%%LIBDIR%%/rlm_cram.la
-%%LIBDIR%%/rlm_cram.so
 %%LIBDIR%%/rlm_date.a
 %%LIBDIR%%/rlm_date.la
 %%LIBDIR%%/rlm_date.so
@@ -206,9 +203,6 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_mschap.a
 %%LIBDIR%%/rlm_mschap.la
 %%LIBDIR%%/rlm_mschap.so
-%%LIBDIR%%/rlm_otp.a
-%%LIBDIR%%/rlm_otp.la
-%%LIBDIR%%/rlm_otp.so
 %%LIBDIR%%/rlm_pam.a
 %%LIBDIR%%/rlm_pam.la
 %%LIBDIR%%/rlm_pam.so
@@ -245,6 +239,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_sometimes.a
 %%LIBDIR%%/rlm_sometimes.la
 %%LIBDIR%%/rlm_sometimes.so
+%%EXPM%%%%JSON%%%%LIBDIR%%/rlm_json.a
+%%EXPM%%%%JSON%%%%LIBDIR%%/rlm_json.la
+%%EXPM%%%%JSON%%%%LIBDIR%%/rlm_json.so
 %%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_redis.a
 %%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_redis.la
 %%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_redis.so
@@ -287,9 +284,6 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_sqlcounter.a
 %%LIBDIR%%/rlm_sqlcounter.la
 %%LIBDIR%%/rlm_sqlcounter.so
-%%EXPM%%%%LIBDIR%%/rlm_sqlhpwippool.a
-%%EXPM%%%%LIBDIR%%/rlm_sqlhpwippool.la
-%%EXPM%%%%LIBDIR%%/rlm_sqlhpwippool.so
 %%LIBDIR%%/rlm_sqlippool.a
 %%LIBDIR%%/rlm_sqlippool.la
 %%LIBDIR%%/rlm_sqlippool.so
@@ -381,6 +375,7 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/deployment/performance-testing
 %%PORTDOCS%%%%DOCSDIR%%/deployment/supervise-radiusd.rst
 %%PORTDOCS%%%%DOCSDIR%%/deployment/tuning_guide
+%%PORTDOCS%%%%DOCSDIR%%/developer/autotools.md
 %%PORTDOCS%%%%DOCSDIR%%/developer/coding-methods.rst
 %%PORTDOCS%%%%DOCSDIR%%/developer/contributing.rst
 %%PORTDOCS%%%%DOCSDIR%%/developer/module_interface.rst
@@ -627,7 +622,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/always
 %%EXAMPLESDIR%%/raddb/mods-available/attr_filter
 %%EXAMPLESDIR%%/raddb/mods-available/cache
-%%EXAMPLESDIR%%/raddb/mods-available/cache_eap
+%%EXAMPLESDIR%%/raddb/mods-available/cache_auth
 %%EXAMPLESDIR%%/raddb/mods-available/chap
 %%EXAMPLESDIR%%/raddb/mods-available/couchbase
 %%EXAMPLESDIR%%/raddb/mods-available/counter
@@ -650,8 +645,10 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/idn
 %%EXAMPLESDIR%%/raddb/mods-available/inner-eap
 %%EXAMPLESDIR%%/raddb/mods-available/ippool
+%%EXAMPLESDIR%%/raddb/mods-available/json
 %%EXAMPLESDIR%%/raddb/mods-available/krb5
 %%EXAMPLESDIR%%/raddb/mods-available/ldap
+%%EXAMPLESDIR%%/raddb/mods-available/ldap_google
 %%EXAMPLESDIR%%/raddb/mods-available/linelog
 %%EXAMPLESDIR%%/raddb/mods-available/logintime
 %%EXAMPLESDIR%%/raddb/mods-available/mac2ip
@@ -660,7 +657,6 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/moonshot-targeted-ids
 %%EXAMPLESDIR%%/raddb/mods-available/ntlm_auth
 %%EXAMPLESDIR%%/raddb/mods-available/opendirectory
-%%EXAMPLESDIR%%/raddb/mods-available/otp
 %%EXAMPLESDIR%%/raddb/mods-available/pam
 %%EXAMPLESDIR%%/raddb/mods-available/pap
 %%EXAMPLESDIR%%/raddb/mods-available/passwd
@@ -702,6 +698,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
 %%PYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python3/example.py
 %%PYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python3/radiusd.py
+%%EXAMPLESDIR%%/raddb/mods-config/realm/freeradius-naptr-to-home-server.sh
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/dailycounter.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/expire_on_login.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/monthlycounter.conf
@@ -787,8 +784,9 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/setup.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/process-radacct-refresh.sh
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/process-radacct-schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/process-radacct-close-after-reload.pl
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/process-radacct-new-data-usage-period.sh
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/mysql/queries.conf
@@ -800,7 +798,6 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/unbound/default.conf
 %%EXAMPLESDIR%%/raddb/mods-enabled/always
 %%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
-%%EXAMPLESDIR%%/raddb/mods-enabled/cache_eap
 %%EXAMPLESDIR%%/raddb/mods-enabled/chap
 %%EXAMPLESDIR%%/raddb/mods-enabled/date
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail
@@ -847,6 +844,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/sites-available/README
 %%EXAMPLESDIR%%/raddb/sites-available/abfab-tls
 %%EXAMPLESDIR%%/raddb/sites-available/abfab-tr-idp
+%%EXAMPLESDIR%%/raddb/sites-available/aws-nlb
 %%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
 %%EXAMPLESDIR%%/raddb/sites-available/challenge
 %%EXAMPLESDIR%%/raddb/sites-available/channel_bindings
@@ -861,6 +859,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/sites-available/dhcp.relay
 %%EXAMPLESDIR%%/raddb/sites-available/dynamic-clients
 %%EXAMPLESDIR%%/raddb/sites-available/example
+%%EXAMPLESDIR%%/raddb/sites-available/google-ldap-auth
 %%EXAMPLESDIR%%/raddb/sites-available/inner-tunnel
 %%EXAMPLESDIR%%/raddb/sites-available/originate-coa
 %%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
@@ -870,6 +869,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/sites-available/status
 %%EXAMPLESDIR%%/raddb/sites-available/totp
 %%EXAMPLESDIR%%/raddb/sites-available/tls
+%%EXAMPLESDIR%%/raddb/sites-available/tls-cache
 %%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
 %%EXAMPLESDIR%%/raddb/sites-available/vmps
 %%EXAMPLESDIR%%/raddb/sites-enabled/default
@@ -894,6 +894,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.acme
 %%DATADIR%%/dictionary.actelis
 %%DATADIR%%/dictionary.adtran
+%%DATADIR%%/dictionary.adva
 %%DATADIR%%/dictionary.aerohive
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
@@ -933,6 +934,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.centec
 %%DATADIR%%/dictionary.checkpoint
 %%DATADIR%%/dictionary.chillispot
+%%DATADIR%%/dictionary.ciena
 %%DATADIR%%/dictionary.cisco
 %%DATADIR%%/dictionary.cisco.asa
 %%DATADIR%%/dictionary.cisco.bbsm
@@ -946,6 +948,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.compat
 %%DATADIR%%/dictionary.compatible
 %%DATADIR%%/dictionary.cosine
+%%DATADIR%%/dictionary.covaro
 %%DATADIR%%/dictionary.dante
 %%DATADIR%%/dictionary.dellemc
 %%DATADIR%%/dictionary.dhcp
@@ -968,6 +971,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.foundry
 %%DATADIR%%/dictionary.freedhcp
 %%DATADIR%%/dictionary.freeradius
+%%DATADIR%%/dictionary.freeradius.evs5
 %%DATADIR%%/dictionary.freeradius.internal
 %%DATADIR%%/dictionary.freeswitch
 %%DATADIR%%/dictionary.gandalf
@@ -995,6 +999,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.lucent
 %%DATADIR%%/dictionary.manzara
 %%DATADIR%%/dictionary.meinberg
+%%DATADIR%%/dictionary.mellanox
 %%DATADIR%%/dictionary.meraki
 %%DATADIR%%/dictionary.merit
 %%DATADIR%%/dictionary.meru
@@ -1007,9 +1012,11 @@ sbin/radmin
 %%DATADIR%%/dictionary.motorola.wimax
 %%DATADIR%%/dictionary.navini
 %%DATADIR%%/dictionary.net
+%%DATADIR%%/dictionary.netelastic
 %%DATADIR%%/dictionary.netscreen
 %%DATADIR%%/dictionary.networkphysics
 %%DATADIR%%/dictionary.nexans
+%%DATADIR%%/dictionary.nile
 %%DATADIR%%/dictionary.nokia
 %%DATADIR%%/dictionary.nokia.conflict
 %%DATADIR%%/dictionary.nomadix
@@ -1116,10 +1123,10 @@ sbin/radmin
 %%DATADIR%%/dictionary.zeus
 %%DATADIR%%/dictionary.zte
 %%DATADIR%%/dictionary.zyxel
-@exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
-@exec chmod -R g-w,o-rwx %D/etc/raddb
-@exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
-@exec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
-@exec mkdir -p /var/run/radiusd
-@unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
+@dir /var/log/radacct
+@dir /var/run/radiusd
+@postexec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
+@postexec chmod -R g-w,o-rwx %D/etc/raddb
+@postexec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
+@postexec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
+@postexec mkdir -p /var/run/radiusd
