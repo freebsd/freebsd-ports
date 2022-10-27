@@ -131,6 +131,9 @@ post-patch:
 		${WRKSRC}/src/modules/gamemode.cpp \
 		${WRKSRC}/src/modules/inhibitor.cpp \
 		${WRKSRC}/src/modules/upower/upower.cpp
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/src/modules/wlr/taskbar.cpp
 
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
