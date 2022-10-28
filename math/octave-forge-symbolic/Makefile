@@ -11,8 +11,8 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-BUILD_DEPENDS+=	isympy:math/py-sympy
-RUN_DEPENDS+=	isympy:math/py-sympy
+BUILD_DEPENDS+=	isympy:math/py-sympy@${PY_FLAVOR}
+RUN_DEPENDS+=	isympy:math/py-sympy@${PY_FLAVOR}
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
