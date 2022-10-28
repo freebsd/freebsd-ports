@@ -1,4 +1,6 @@
 include/cglm/affine-mat.h
+include/cglm/affine-post.h
+include/cglm/affine-pre.h
 include/cglm/affine.h
 include/cglm/affine2d.h
 include/cglm/applesimd.h
@@ -29,6 +31,9 @@ include/cglm/call/ease.h
 include/cglm/call/euler.h
 include/cglm/call/frustum.h
 include/cglm/call/io.h
+include/cglm/call/ivec2.h
+include/cglm/call/ivec3.h
+include/cglm/call/ivec4.h
 include/cglm/call/mat2.h
 include/cglm/call/mat3.h
 include/cglm/call/mat4.h
@@ -66,6 +71,9 @@ include/cglm/ease.h
 include/cglm/euler.h
 include/cglm/frustum.h
 include/cglm/io.h
+include/cglm/ivec2.h
+include/cglm/ivec3.h
+include/cglm/ivec4.h
 include/cglm/mat2.h
 include/cglm/mat3.h
 include/cglm/mat4.h
@@ -89,6 +97,8 @@ include/cglm/simd/sse2/quat.h
 include/cglm/simd/x86.h
 include/cglm/sphere.h
 include/cglm/struct.h
+include/cglm/struct/affine-post.h
+include/cglm/struct/affine-pre.h
 include/cglm/struct/affine.h
 include/cglm/struct/affine2d.h
 include/cglm/struct/box.h
@@ -101,6 +111,8 @@ include/cglm/struct/clipspace/persp_lh_no.h
 include/cglm/struct/clipspace/persp_lh_zo.h
 include/cglm/struct/clipspace/persp_rh_no.h
 include/cglm/struct/clipspace/persp_rh_zo.h
+include/cglm/struct/clipspace/project_no.h
+include/cglm/struct/clipspace/project_zo.h
 include/cglm/struct/clipspace/view_lh_no.h
 include/cglm/struct/clipspace/view_lh_zo.h
 include/cglm/struct/clipspace/view_rh_no.h
@@ -135,5 +147,5 @@ include/cglm/vec4.h
 include/cglm/version.h
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.8.5
+lib/libcglm.so.0.8.7
 libdata/pkgconfig/cglm.pc
