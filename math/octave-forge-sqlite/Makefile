@@ -10,13 +10,14 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+USES=		autoreconf
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnu-octave
 GH_PROJECT=	octave-sqlite
 
 LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
 
-USES=		autoreconf
 GNU_CONFIGURE=	yes
 
 # OCTSRC is the name of the directory of the package.
