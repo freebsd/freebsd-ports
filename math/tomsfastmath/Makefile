@@ -1,8 +1,9 @@
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.13.1
 PORTREVISION=	4
-DISTVERSIONPREFIX=	v
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/libtom/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	tfm-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable fixed precision math library for fast exponentiations
@@ -10,34 +11,21 @@ WWW=		https://libtom.net/
 
 LICENSE=	PD WTFPL
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:features gmake tar:bzip2
-USE_GITHUB=	yes
-GH_ACCOUNT=	libtom
+USES=		gmake tar:xz
 
 MAKEFILE=	makefile
 ALL_TARGET=	default
 CFLAGS+=	-fPIC
 
-PLIST_FILES=	include/tfm.h lib/libtfm.a
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-# on clang:
-# src/mul/fp_mul_comba.c:349:11: error: inline assembly requires more registers than available
-USE_GCC=	yes
-.endif
-
-# Unbreak against Clang ("cc" is not a register)
-post-patch:
-	@${REINPLACE_CMD} -e 's,"%cc","cc",' \
-		${WRKSRC}/src/mont/fp_montgomery_reduce.c \
-		${WRKSRC}/src/mul/fp_mul_comba.c \
-		${WRKSRC}/src/sqr/fp_sqr_comba.c
+PLIST_FILES=	include/tfm.h \
+		lib/libtfm.a
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/headers/tfm.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libtfm.a ${STAGEDIR}${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
