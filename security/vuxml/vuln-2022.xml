@@ -1,3 +1,36 @@
+  <vuln vid="1225c888-56ea-11ed-b5c3-3065ec8fd3ec">
+    <topic>chromium -- Type confusion in V8</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>107.0.5304.87</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>107.0.5304.87</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/10/stable-channel-update-for-desktop_27.html">
+	  <p>This release contains 1 security fix:</p>
+	  <ul>
+	    <li>[1378239] High CVE-2022-3723: Type Confusion in V8. Reported by Jan Vojtešek, Milánek, and Przemek Gmerek of Avast on 2022-10-25</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3723</cvename>
+      <url>https://chromereleases.googleblog.com/2022/10/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2022-10-27</discovery>
+      <entry>2022-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1c5f3fd7-54bf-11ed-8d1e-005056a311d1">
     <topic>samba -- buffer overflow in Heimdal unwrap_des3()</topic>
     <affects>
