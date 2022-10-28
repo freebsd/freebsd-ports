@@ -1,6 +1,6 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.5.7
-PORTREVISION?=		3
+DISTVERSION=		2.5.8
+PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -41,7 +41,7 @@ OPTIONS_DEFAULT=	EASYRSA LZ4 LZO PKCS11 TEST
 ASYNC_PUSH_DESC=	Enable async-push support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 LZO_DESC=		LZO compression (incompatible with LibreSSL)
-PKCS11_DESC=		Use security/pkcs11-helper
+PKCS11_DESC=		Use security/pkcs11-helper, needs same SSL lib!
 SMALL_DESC=		Build a smaller executable with fewer features
 UNITTESTS_DESC=		Enable unit tests
 X509ALTUSERNAME_DESC=	Enable --x509-username-field
@@ -102,6 +102,9 @@ post-patch:
 		${WRKSRC}/doc/man-sections/generic-options.rst
 
 pre-configure:
+	# just too many of sign-compare; bitwise-instead-of-logical was audited and is intentional,
+	# and unused-function affects test---these are developer-side warnings, not relevant on end systems
+	${REINPLACE_CMD} 's/-Wsign-compare/-Wno-unknown-warning-option -Wno-sign-compare -Wno-bitwise-instead-of-logical -Wno-unused-function/' ${WRKSRC}/configure
 .ifdef (LOG_OPENVPN)
 	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
 .else
@@ -118,12 +121,13 @@ pre-configure:
 	@${ECHO} "### Do not report bugs without fixes/patches unless the issue ###"
 	@${ECHO} "### can be reproduced with a released OpenSSL version.        ###"
 	@${ECHO} "### --------------------------------------------------------- ###"
+	@sleep 10
 .endif
 
 post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
-	    ${WRKSRC}/src/plugins/auth-pam/Makefile \
-	    ${WRKSRC}/src/plugins/down-root/Makefile
+	 	${WRKSRC}/src/plugins/auth-pam/Makefile \
+	 	${WRKSRC}/src/plugins/down-root/Makefile
 
 # sanity check that we don't inherit incompatible SSL libs through,
 # for instance, pkcs11-helper:
@@ -131,7 +135,7 @@ _tlslibs=libssl libcrypto
 post-build:
 	@a=$$(LC_ALL=C ldd -f '%o\n' ${WRKSRC}/src/openvpn/openvpn \
 	|	${SORT} -u) ; set -- $$(for i in ${_tlslibs} ; do ${PRINTF} '%s\n' "$$a" | ${GREP} $${i}.so | wc -l ; done | ${SORT} -u) ;\
-	if test "$$*" != "1" ; then ${ECHO_CMD} >&2 "${.CURDIR} FAILED: either of ${_tlslibs} libraries linked multiple times" ; ${PRINTF} '%s\n' "$$a"; ${RM} ${BUILD_COOKIE} ; ( set -x ; ldd -a ${WRKSRC}/src/openvpn/openvpn ) ; exit 1 ; fi
+	if test "$$*" != "1" ; then ( set -x ; ldd -a ${WRKSRC}/src/openvpn/openvpn ) ; ${PRINTF} '%s\n' "$$a" ; ${ECHO_CMD} >&2 "${.CURDIR} FAILED: either of ${_tlslibs} libraries linked multiple times" ; ${RM} ${BUILD_COOKIE} ; exit 1 ; fi
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
