@@ -1,6 +1,6 @@
 PORTNAME=	cursor-crystal-theme
 DISTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.notmart.org/files/ \
 		http://pinguin.stttelkom.ac.id/gentoo/distfiles/
@@ -27,6 +27,7 @@ post-patch:
 		${WRKSRC}/green_src/Makefile \
 		${WRKSRC}/left-handed_templates/Makefile \
 		${WRKSRC}/white_src/Makefile
+	@${REINPLACE_CMD} -e '/cross/d' ${WRKSRC}/left-handed_templates/Makefile
 
 pre-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clean ${MAKE_ARGS})
