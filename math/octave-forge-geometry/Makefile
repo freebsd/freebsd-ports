@@ -20,7 +20,7 @@ OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 RUN_DEPENDS+=	${TARBALLS_DIR}/matgeom.tar.gz:math/octave-forge-matgeom
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
