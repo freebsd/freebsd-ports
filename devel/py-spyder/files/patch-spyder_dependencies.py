@@ -1,0 +1,15 @@
+--- spyder/dependencies.py.orig	2022-10-15 07:03:54 UTC
++++ spyder/dependencies.py
+@@ -57,10 +57,10 @@ PYLSP_BLACK_REQVER = '>=1.2.0'
+ PYLS_SPYDER_REQVER = '>=0.4.0'
+ PYXDG_REQVER = '>=0.26'
+ PYZMQ_REQVER = '>=22.1.0'
+-QDARKSTYLE_REQVER = '>=3.0.2;<3.1.0'
++QDARKSTYLE_REQVER = '>=3.0.2'
+ QSTYLIZER_REQVER = '>=0.1.10'
+ QTAWESOME_REQVER = '>=1.0.2'
+-QTCONSOLE_REQVER = '>=5.3.2;<5.4.0'
++QTCONSOLE_REQVER = '>0'
+ QTPY_REQVER = '>=2.1.0'
+ RTREE_REQVER = '>=0.9.7'
+ SETUPTOOLS_REQVER = '>=49.6.0'
