@@ -1,6 +1,7 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.3
+PORTREVISION=	1
 CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -35,7 +36,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pyls-spyder>=0.4.0:textproc/py-pyls-spyder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qt5-webengine>0:www/py-qt5-webengine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lsp-server>=1.5.0:textproc/py-python-lsp-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyxdg>=0.26:devel/py-pyxdg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0.26:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=22.1.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QDarkStyle>=3.0.2:textproc/py-QDarkStyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qstylizer>=0.1.10:devel/py-qstylizer@${PY_FLAVOR} \
