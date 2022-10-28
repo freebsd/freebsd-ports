@@ -1,5 +1,5 @@
 PORTNAME=	uiCA
-PORTVERSION=	g20220630+${INSTRVERSION}
+PORTVERSION=	g20221215+${INSTRVERSION}
 CATEGORIES=	benchmarks devel
 MASTER_SITES=	https://uops.info/instructions.xml?dummy=/:instructions \
 		https://uops.info/:instructions
@@ -15,12 +15,13 @@ LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plotly>0:graphics/py-plotly@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plotly>0:graphics/py-plotly@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydot>0:graphics/py-pydot@${PY_FLAVOR}
 
 USES=		compiler python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-abel
-GH_TAGNAME=	ba6ad5557ebd96a10fa0d0e076c9961ec5024574
+GH_TAGNAME=	e6421b5957ec53eaa05dc150b2a40c5e0abc6dd4
 GH_TUPLE=	andreas-abel:XED-to-XML:c71679ee893ae91db677056d542f305fcc433cb1:xed/XED-to-XML \
 		intelxed:mbuild:09b6654be0c52bf1df44e88c88b411a67b624cbd:mbuild/mbuild
 USE_PYTHON=	concurrent flavors
@@ -28,7 +29,7 @@ SHEBANG_FILES=	uiCA.py
 
 # manually build a file name like instructions_Apr2022.xml from
 # the machine-sortable INSTRVERSION.  Use := to have date run only once
-INSTRVERSION=	2022.04
+INSTRVERSION=	2022.12
 INSTRUCTIONS:=	instructions_${${SETENV} LC_ALL=C TZ=UTC date -j -f %Y.%m ${INSTRVERSION} +%b%Y:L:sh}.xml
 
 MFLAGS=		--compiler=${COMPILER_TYPE:S/gcc/gnu/} \
