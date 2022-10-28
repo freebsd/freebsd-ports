@@ -3,6 +3,7 @@ bin/yquake2
 lib/yquake2/baseq2/game.so
 lib/yquake2/ref_gl1.so
 lib/yquake2/ref_gl3.so
+lib/yquake2/ref_gles3.so
 lib/yquake2/ref_soft.so
 %%PORTDOCS%%%%DOCSDIR%%/010_index.md
 %%PORTDOCS%%%%DOCSDIR%%/020_installation.md
