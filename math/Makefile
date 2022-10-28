@@ -532,6 +532,7 @@
     SUBDIR += octave-forge-bioinfo
     SUBDIR += octave-forge-biosig
     SUBDIR += octave-forge-bsltl
+    SUBDIR += octave-forge-cfitsio
     SUBDIR += octave-forge-cgi
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-communications
