@@ -1,5 +1,5 @@
-TIMESTAMP = 1655481047
-SHA256 (google-draco-1.5.2_GH0.tar.gz) = a887e311ec04a068ceca0bd6f3865083042334fbff26e65bc809e8978b2ce9cd
-SIZE (google-draco-1.5.2_GH0.tar.gz) = 60006541
+TIMESTAMP = 1666974242
+SHA256 (google-draco-1.5.4_GH0.tar.gz) = 7698cce91c24725562fb73811d24823f0f0a25e3ac0941e792993c5191d3baee
+SIZE (google-draco-1.5.4_GH0.tar.gz) = 62925341
 SHA256 (google-googletest-16f637f_GH0.tar.gz) = 89a3acd83a83bbc7f0ec50751fee79ec9fb3eaec7d515bb57abeda89b70a8806
 SIZE (google-googletest-16f637f_GH0.tar.gz) = 831917
