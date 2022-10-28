@@ -10,8 +10,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/DateTimeHelper.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Enumerations/Charset.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Enumerations/Encoding.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Exceptions/Exception.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Exceptions/InvalidArgumentException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/HtmlUtils.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Http.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/LinkFinder.php
@@ -49,7 +47,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/ResponseStatus.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/ResponseType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/StoreAction.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/Exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/InvalidResponseException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/LoginBadCredentialsException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/LoginBadMethodException.php
@@ -57,7 +54,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/NegativeResponseException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/ResponseException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/ResponseNotFoundException.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/RuntimeException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/FetchResponse.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Folder.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/FolderInformation.php
@@ -82,9 +78,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Log/Logger.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Attachment.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/AttachmentCollection.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Exceptions/Exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Exceptions/NonEmptyFolder.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Exceptions/RuntimeException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Folder.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/FolderCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/MailClient.php
@@ -111,8 +105,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/ConnectSettings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Enumerations/ConnectionSecurityType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/ConnectionException.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/Exception.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/InvalidArgumentException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/SocketAlreadyConnectedException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/SocketCanNotConnectToHostException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/SocketConnectionDoesNotAvailableException.php
@@ -122,21 +114,18 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/SocketUnsuppoterdSecureConnectionException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/Exceptions/SocketWriteException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Net/NetClient.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/Exception.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/RuntimeException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/LoginBadCredentialsException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/LoginBadMethodException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/LoginException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/NegativeResponseException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/ResponseException.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/Exceptions/RuntimeException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Sieve/ManageSieveClient.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/Exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/LoginBadCredentialsException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/LoginBadMethodException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/LoginException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/NegativeResponseException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/ResponseException.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/RuntimeException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/SmtpClient.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Predis/Client.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Predis/ClientContextInterface.php
@@ -425,7 +414,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/TimeFormat.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/UploadError.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Exceptions/ClientException.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Exceptions/Exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/KeyPathHelper.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Model/Account.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Model/AdditionalAccount.php
