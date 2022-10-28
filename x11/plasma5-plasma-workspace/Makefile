@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 RUN_DEPENDS=	iceauth:x11/iceauth \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config
 
-USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gl \
+USES=		cmake compiler:c++11-lib cpe gettext gl \
 		kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		gl
 USE_KDE=	activities activities-stats activitymanagerd archive attica \
@@ -65,6 +65,7 @@ post-stage:
 	${INSTALL_SCRIPT} ${FILESDIR}/startplasma-wayland.sh ${STAGEDIR}/${LOCALBASE}/bin/
 
 .if !${ABI:Mpurecap}
+USES+=		desktop-file-utils
 USE_KDE+=	filemetadata kdewebkit js jsembed xmlrpcclient milou_run
 USE_QT+=	script webkit
 LIB_DEPENDS+=	libcln.so:math/cln
