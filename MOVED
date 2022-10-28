@@ -17605,3 +17605,4 @@ devel/msgpack|devel/msgpack-c|2022-10-16|MsgPack now separates C and C++ version
 games/arttime|deskutils/arttime|2022-10-18|Moved to a better category
 security/nextcloud-twofactor_totp|www/nextcloud|2022-10-21|Twofactor TOTP provider bundled with Nextcloud 25
 x11-toolkits/wxgtk31|x11-toolkits/wxgtk32|2022-10-25|Remove obsoleted port. Use x11-toolkits/wxgtk32 instead
+devel/py-pyxdg|devel/py-xdg|2022-10-28|Remove duplicate port
