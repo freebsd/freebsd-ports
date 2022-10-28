@@ -1,6 +1,6 @@
 Add pseudo transparency to the tray icon
 
---- src/GMTrayIcon.cpp.orig	2016-10-22 17:13:46 UTC
+--- src/GMTrayIcon.cpp.orig	2020-12-27 21:40:54 UTC
 +++ src/GMTrayIcon.cpp
 @@ -81,17 +81,17 @@ void GMTrayIcon::updateIcon() {
  
@@ -23,7 +23,7 @@ Add pseudo transparency to the tray icon
      icon->create();
  
      // Mark Dirty
-@@ -230,13 +230,8 @@ void GMTrayIcon::create(){
+@@ -230,14 +230,9 @@ void GMTrayIcon::dock() {
  
  void GMTrayIcon::dock() {
    if (findSystemTray()){
@@ -34,12 +34,13 @@ Add pseudo transparency to the tray icon
 -      else
 -        opaque=false;
 -      }
-+
-+    opaque=false;
  
++    opaque=false;
++
      if (!opaque) {
        /// Don't draw the background
-@@ -276,16 +271,16 @@ long GMTrayIcon::onConfigure(FXObject*,F
+       XSetWindowAttributes sattr;
+@@ -276,16 +271,16 @@ long GMTrayIcon::onConfigure(FXObject*,FXSelector,void
  
    if (icon==nullptr) {
      if (size<=16) {

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-06-10 02:18:06 UTC
+--- CMakeLists.txt.orig	2020-12-27 21:40:54 UTC
 +++ CMakeLists.txt
-@@ -57,6 +57,11 @@ if(HAS_CXX_OPTIMIZE_DEBUG AND CMAKE_BUILD_TYPE MATCHES
+@@ -67,6 +67,11 @@ endif()
    add_compile_options(-Og)
  endif()
  
@@ -12,7 +12,7 @@
  # FIXME Doesn't work on all platforms.
  #CHECK_CXX_COMPILER_FLAG(-flto HAS_CXX_OPTIMIZE_LINKTIME)
  if(HAS_CXX_OPTIMIZE_LINKTIME AND NOT CMAKE_BUILD_TYPE MATCHES Debug)
-@@ -81,11 +86,13 @@ add_subdirectory(src)
+@@ -100,11 +105,13 @@ add_subdirectory(src)
  #-------------------------------------------------------------------------------
  
  # Extra Installation Files
@@ -31,9 +31,9 @@
  
  install(FILES icons/gogglesmm_16.png DESTINATION share/icons/hicolor/16x16/apps RENAME gogglesmm.png)
  install(FILES extra/gogglesmm_22.png DESTINATION share/icons/hicolor/22x22/apps RENAME gogglesmm.png)
-@@ -96,7 +103,7 @@ install(FILES extra/gogglesmm_64.png DESTINATION share
+@@ -115,7 +122,7 @@ install(FILES extra/gogglesmm.desktop DESTINATION shar
  install(FILES extra/gogglesmm.svg DESTINATION share/icons/hicolor/scalable/apps RENAME gogglesmm.svg)
- install(FILES extra/gogglesmm.appdata.xml DESTINATION share/appdata)
+ install(FILES extra/gogglesmm.appdata.xml DESTINATION share/metainfo)
  install(FILES extra/gogglesmm.desktop DESTINATION share/applications)
 -install(FILES extra/gogglesmm.1 DESTINATION share/man/man1)
 +install(FILES extra/gogglesmm.1 DESTINATION man/man1)
