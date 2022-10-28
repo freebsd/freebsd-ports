@@ -2974,7 +2974,7 @@ lib/python%%XYDOT%%/lib-dynload/fcntl.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/grp.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/math.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/mmap.cpython-%%XY%%%%ABI%%.so
-%%NO_NIS%%lib/python%%XYDOT%%/lib-dynload/nis.cpython-%%XY%%.so
+%%NO_NIS%%lib/python%%XYDOT%%/lib-dynload/nis.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/ossaudiodev.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/pyexpat.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/readline.cpython-%%XY%%%%ABI%%.so
