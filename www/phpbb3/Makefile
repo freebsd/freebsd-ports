@@ -1,5 +1,5 @@
 PORTNAME=	phpbb
-DISTVERSION=	3.3.7
+DISTVERSION=	3.3.8
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpbb.com/pub/release/${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
 PKGNAMESUFFIX=	3
