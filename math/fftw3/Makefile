@@ -66,8 +66,10 @@ OPENMPI_CONFIGURE_ENV=		MPICC=${MPIDIR}/bin/mpicc \
 
 .include <bsd.port.options.mk>
 
-.if !${ABI:Mpurecap}
+.if ${PORT_OPTIONS:MDOCS}
 USES+=	makeinfo
+.else
+CONFIGURE_ARGS+=--disable-doc
 .endif
 
 # Enable cycle counter via the CNTVCT_EL0 register for all variants on arm64.
