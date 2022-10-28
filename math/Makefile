@@ -576,6 +576,7 @@
     SUBDIR += octave-forge-mechanics
     SUBDIR += octave-forge-miscellaneous
     SUBDIR += octave-forge-missing-functions
+    SUBDIR += octave-forge-mqtt
     SUBDIR += octave-forge-msh
     SUBDIR += octave-forge-multicore
     SUBDIR += octave-forge-mvn
