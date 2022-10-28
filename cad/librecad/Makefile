@@ -1,6 +1,10 @@
 PORTNAME=	librecad
 DISTVERSION=	2.2.0-rc4
+PORTREVISION=	1
 CATEGORIES=	cad
+
+PATCH_SITES=	https://github.com/BSDKaffee/LibreCAD/commit/
+PATCHFILES=	d81cd49db2421bb4ca9a283638500ebf1c7d02e5.patch:-p1 # Fix ortho tool with Clang
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2D CAD system
