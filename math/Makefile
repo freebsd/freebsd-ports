@@ -535,6 +535,7 @@
     SUBDIR += octave-forge-cfitsio
     SUBDIR += octave-forge-cgi
     SUBDIR += octave-forge-civil-engineering
+    SUBDIR += octave-forge-coder
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
     SUBDIR += octave-forge-data-smoothing
