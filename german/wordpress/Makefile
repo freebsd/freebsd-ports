@@ -1,5 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.0.2
+DISTVERSION=	6.0.3
 DISTVERSIONSUFFIX=	-de_DE
 CATEGORIES=	german www
 MASTER_SITES=	https://de.wordpress.org/
