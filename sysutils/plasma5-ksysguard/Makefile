@@ -10,8 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 utility to track and control the running processes
 WWW=		https://www.kde.org/plasma-desktop
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 \
-		localbase pathfix qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext kde:5 localbase pathfix qt:5 \
+		tar:xz xorg
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons emoticons i18n iconthemes init itemmodels itemviews \
 		jobwidgets kio libksysguard newstuff notifications service \
@@ -32,4 +32,10 @@ INOTIFY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Inotify
 
 KDE_PLASMA_VERSION=	5.22.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !${ABI:Mpurecap}
+USES+=		desktop-file-utils
+.endif
+
+.include <bsd.port.post.mk>
