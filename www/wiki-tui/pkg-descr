@@ -1,0 +1,22 @@
+* Search:
+
+Search for an article in Wikipedia. The search results feature
+pagination and a little preview is generated when you select a result.
+
+* Read:
+
+When opening an article wiki-tui generates and displays a table of
+contents where you can quickly jump to any section in the article. The
+main article currently supports links and lists with more features like
+tables and images planned. Although wiki-tui was designed to be used
+with a keyboard, it also supports mouse input.
+
+* Customize:
+
+- Themes (changing colors of the whole program and individual parts)
+- Keybindings (so you don't have to use the arrow keys for navigation)
+- Toggle specific features of wiki-tui:
+- Disable the table of contents
+- Disable links
+- Logging
+- Change the language of Wikipedia Articles

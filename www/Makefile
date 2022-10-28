@@ -2365,6 +2365,7 @@
     SUBDIR += webtrees20
     SUBDIR += wget2
     SUBDIR += wgetpaste
+    SUBDIR += wiki-tui
     SUBDIR += wikicalc
     SUBDIR += wordpress
     SUBDIR += wpebackend-fdo
