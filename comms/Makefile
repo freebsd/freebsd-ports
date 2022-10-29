@@ -73,6 +73,7 @@
     SUBDIR += kermit
     SUBDIR += klog
     SUBDIR += libconcord
+    SUBDIR += libdc
     SUBDIR += libfap
     SUBDIR += libfec
     SUBDIR += libimobiledevice
