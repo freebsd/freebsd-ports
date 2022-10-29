@@ -1,5 +1,6 @@
 PORTNAME=	keyring
 PORTVERSION=	23.9.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -12,7 +13,8 @@ WWW=		https://github.com/jaraco/keyring
 LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}entrypoints>=0:devel/py-entrypoints@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.classes>0:devel/py-jaraco.classes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR}
 
 USES=		cpe python:3.6+
 CPE_VENDOR=	python
