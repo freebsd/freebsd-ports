@@ -240,6 +240,7 @@
     SUBDIR += solanum
     SUBDIR += sowon
     SUBDIR += spice-gtk
+    SUBDIR += subsurface
     SUBDIR += synapse
     SUBDIR += syncthingtray
     SUBDIR += sysctlview

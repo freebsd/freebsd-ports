@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2022-10-03 20:49:09 UTC
++++ CMakeLists.txt
+@@ -732,6 +732,30 @@ elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	install(DIRECTORY printing_templates DESTINATION share/subsurface)
+ 	install(FILES ${TRANSLATIONS} DESTINATION share/subsurface/translations)
+ 	install(TARGETS ${SUBSURFACE_TARGET} DESTINATION bin)
++elseif (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	# the syntax is odd, but this searches for libqtgeoservices_googlemaps.so
++	# in the filesystem below our install-root
++	# different Linux flavors put the plugin in different directories
++	file(GLOB_RECURSE GOOGLEMAPS ${CMAKE_SOURCE_DIR}/../install-root/libqtgeoservices_googlemaps.so)
++	if (NOT GOOGLEMAPS)
++		message(STATUS "Cannot find libqtgeoservices_googlemaps.so")
++	else()
++		add_custom_target(link_googlemaps_plugin ALL COMMAND
++			rm -rf ${CMAKE_BINARY_DIR}/geoservices &&
++			mkdir -p ${CMAKE_BINARY_DIR}/geoservices &&
++			ln -sf ${GOOGLEMAPS} ${CMAKE_BINARY_DIR}/geoservices)
++	endif()
++	install(FILES subsurface.debug DESTINATION bin)
++	install(FILES subsurface.desktop DESTINATION share/applications)
++	install(CODE "execute_process(COMMAND sh ${CMAKE_SOURCE_DIR}/scripts/add-version-to-appdata.sh WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})")
++	install(FILES appdata/subsurface.appdata.xml DESTINATION share/metainfo)
++	install(FILES icons/subsurface-icon.svg DESTINATION share/icons/hicolor/scalable/apps)
++	install(DIRECTORY Documentation/images DESTINATION share/subsurface/Documentation)
++	#install(FILES ${DOCFILES} DESTINATION share/subsurface/Documentation)
++	install(DIRECTORY theme DESTINATION share/subsurface)
++	install(DIRECTORY printing_templates DESTINATION share/subsurface)
++	install(FILES ${TRANSLATIONS} DESTINATION share/subsurface/translations)
++	install(TARGETS ${SUBSURFACE_TARGET} DESTINATION bin)
+ endif()
+ 
+ if (MAKE_TESTS)
