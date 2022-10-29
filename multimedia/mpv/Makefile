@@ -1,7 +1,7 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio wayland
 MASTER_SITES=	https://waf.io/:waf
@@ -51,8 +51,8 @@ CONFIGURE_ARGS=	--docdir="${EXAMPLESDIR}" \
 		--disable-vapoursynth \
 		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS TEST UCHARDET EXAMPLES ZIMG
-OPTIONS_DEFAULT=	ARCHIVE DVDNAV LUA MANPAGES OPENGL UCHARDET \
+OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS NVDEC TEST UCHARDET EXAMPLES ZIMG
+OPTIONS_DEFAULT=	ARCHIVE DVDNAV LUA MANPAGES NVDEC OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDLP
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L
@@ -68,6 +68,7 @@ DVDNAV_DESC=		DVD menu navigation
 LUA_NONE_DESC=		Disable Lua scripting language support
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 MUJS_DESC=		Use MuJS for Javascript language support
+NVDEC_DESC=		NVIDIA decoder with CUDA support
 PIPEWIRE_DESC=		Pipewire sound server support
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
@@ -122,6 +123,9 @@ MANPAGES_CONFIGURE_OFF=		--disable-manpage
 MUJS_LIB_DEPENDS=		libmujs.so:lang/mujs
 MUJS_CONFIGURE_ON=		--enable-javascript
 MUJS_CONFIGURE_OFF=		--disable-javascript
+
+NVDEC_BUILD_DEPENDS=		${LOCALBASE}/include/ffnvcodec/dynlink_loader.h:multimedia/ffnvcodec-headers
+NVDEC_CONFIGURE_OFF=		--disable-ffnvcodec
 
 OPENAL_CONFIGURE_ENABLE=	openal
 OPENAL_USES=			openal
