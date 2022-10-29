@@ -1,5 +1,5 @@
 PORTNAME=	azure-mgmt-core
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/azure-mgmt-core/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.23.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.24.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
