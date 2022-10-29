@@ -6,7 +6,7 @@ DISTNAME=	${OCTAVE_PKGNAME}-octave-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
