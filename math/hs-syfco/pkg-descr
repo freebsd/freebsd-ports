@@ -1,0 +1,8 @@
+The tool interprets the high level constructs of TLSF 1.1 (functions, sets, ...)
+and supports the transformation of the specification to Linear Temporal Logic
+(LTL) in different output formats. The tool has been designed to be modular with
+respect to the supported output formats and semantics. Furthermore, the tool
+allows to identify and manipulate parameters, targets and semantics of a
+specification on the fly. This is especially thought to be useful for
+comparative studies, as they are for example needed in the Synthesis
+Competition.

@@ -386,6 +386,7 @@
     SUBDIR += hptt
     SUBDIR += hs-Agda
     SUBDIR += hs-penrose
+    SUBDIR += hs-syfco
     SUBDIR += hsl
     SUBDIR += ideep
     SUBDIR += ignition-math
