@@ -1,7 +1,6 @@
 PORTNAME=	slick-greeter
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.9
 CATEGORIES=	x11
-PORTREVISION=	2
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Slick-looking LightDM greeter
