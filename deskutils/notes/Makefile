@@ -1,7 +1,11 @@
 PORTNAME=	notes
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	eda71ecf0a9cd7122e8bacf895fb8214dcecb503.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Beautiful and powerful note-taking application
@@ -13,16 +17,13 @@ USES=		qmake qt:5
 USE_QT=		buildtools:build concurrent core gui network sql widgets
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	nuttyartist alex-spataru:qsu b00f:qas pbek:qmdte
-GH_PROJECT=	QSimpleUpdater:qsu qautostart:qas qmarkdowntextedit:qmdte
-GH_TAGNAME=	62567ee:qsu 5be8fea:qas f69e622:qmdte
-GH_SUBDIR=	3rdParty/QSimpleUpdater:qsu 3rdParty/qautostart:qas \
-		3rdParty/qmarkdowntextedit:qmdte
+GH_ACCOUNT=	nuttyartist b00f:qas pbek:qmdte
+GH_PROJECT=	qautostart:qas qmarkdowntextedit:qmdte
+GH_TAGNAME=	5be8fea:qas f69e622:qmdte
+GH_SUBDIR=	3rdParty/qautostart:qas 3rdParty/qmarkdowntextedit:qmdte
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^OBJECTS_DIR = obj/d' ${WRKSRC}/src/Notes.pro
-	@${REINPLACE_CMD} -e 's,Q_OS_LINUX,Q_OS_UNIX,' \
-		${WRKSRC}/src/updaterwindow.cpp
+	@${RM} ${WRKSRC}/src/updaterwindow.*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Notes \
