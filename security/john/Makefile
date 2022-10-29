@@ -35,7 +35,7 @@ BINLINKS=	base64conv gpg2john rar2john unafs undrop unique \
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS OPENCL OPENMP
+OPTIONS_DEFINE=	DOCS OPENCL OPENMP OPENMPI
 OPTIONS_DEFAULT=	OPENMP
 OPTIONS_SUB=	yes
 
@@ -46,6 +46,11 @@ OPENCL_USES=		perl5
 OPENCL_USE=		PERL5=build
 
 OPENMP_CONFIGURE_OFF=	--disable-openmp
+
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_CONFIGURE_ON=	--enable-mpi
+OPENMPI_CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/mpi/openmpi/include" \
+			LDFLAGS="-L${LOCALBASE}/mpi/openmpi/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h
