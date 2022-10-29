@@ -1,5 +1,5 @@
 PORTNAME=	draco
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	-3d-compression
 
@@ -10,7 +10,7 @@ WWW=		https://google.github.io/draco/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang # 1 test fails, see https://github.com/google/draco/issues/935
+USES=		cmake:testing compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
