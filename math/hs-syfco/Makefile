@@ -24,7 +24,4 @@ CABAL_FLAGS=	-relocatable
 CABAL_EXECUTABLES=	syfco
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
-PLIST_FILES=	bin/syfco \
-		libexec/cabal/syfco
-
 .include <bsd.port.mk>
