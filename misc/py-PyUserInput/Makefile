@@ -1,5 +1,6 @@
 PORTNAME=	PyUserInput
 DISTVERSION=	0.1.11
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ WWW=		https://github.com/PyUserInput/PyUserInput
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
