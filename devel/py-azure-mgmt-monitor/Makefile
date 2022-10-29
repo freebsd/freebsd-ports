@@ -1,5 +1,5 @@
 PORTNAME=	azure-mgmt-monitor
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,9 @@ WWW=		https://pypi.org/project/azure-mgmt-monitor/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.6.21:net-mgmt/py-msrest@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.7.1:net-mgmt/py-msrest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-core>=1.3.1<2.0.0:devel/py-azure-core@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}azure-core>=1.3.2<2.0.0:devel/py-azure-core@${PY_FLAVOR}
 
 USES=		azurepy python:3.7+ zip
 USE_PYTHON=	autoplist concurrent distutils
