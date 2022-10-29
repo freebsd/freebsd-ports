@@ -11,6 +11,8 @@ WWW=		http://octave.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+USES=		python
+
 BUILD_DEPENDS+=	isympy:math/py-sympy@${PY_FLAVOR}
 RUN_DEPENDS+=	isympy:math/py-sympy@${PY_FLAVOR}
 
