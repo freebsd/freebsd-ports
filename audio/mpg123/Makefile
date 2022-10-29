@@ -35,6 +35,7 @@ FPU_CONFIGURE_OFF=	--with-cpu=arm_nofpu
 SNDIO_CONFIGURE_ON=	--with-audio=sndio,oss
 SNDIO_CONFIGURE_OFF=	--with-audio=oss
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_USES=		pkgconfig
 
 OPTCPU_CONFIGURE_ON=	--with-cpu=x86
 OPTCPU_CONFIGURE_OFF=	--with-cpu=generic_fpu
