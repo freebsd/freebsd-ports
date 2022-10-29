@@ -11,7 +11,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		syfco:math/hs-syfco
 
 USES=		charsetfix compiler:c++17-lang gmake libtool python:test
 USE_LDCONFIG=	yes
@@ -29,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	tl.pdf
 
-TEST_TARGET=	check # one test fails because of missing test dependency math/hs-syfco
+TEST_TARGET=	check
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
