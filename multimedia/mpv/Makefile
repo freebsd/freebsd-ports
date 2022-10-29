@@ -125,7 +125,7 @@ MUJS_CONFIGURE_ON=		--enable-javascript
 MUJS_CONFIGURE_OFF=		--disable-javascript
 
 NVDEC_BUILD_DEPENDS=		${LOCALBASE}/include/ffnvcodec/dynlink_loader.h:multimedia/ffnvcodec-headers
-NVDEC_CONFIGURE_OFF=		--disable-ffnvcodec
+NVDEC_CONFIGURE_OFF=		--disable-cuda-hwaccel
 
 OPENAL_CONFIGURE_ENABLE=	openal
 OPENAL_USES=			openal
