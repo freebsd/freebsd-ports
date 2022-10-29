@@ -1,13 +1,13 @@
 https://github.com/obsproject/obs-studio/issues/7990
 
---- meson.build.orig	2020-09-01 01:24:25 UTC
+--- meson.build.orig	2022-10-29 22:39:09 UTC
 +++ meson.build
-@@ -2,7 +2,7 @@ wayland = dependency('wayland-client')
+@@ -4,7 +4,7 @@ wayland = dependency('wayland-client')
  
  inc = include_directories('inc')
  wayland = dependency('wayland-client')
 -obs = dependency('libobs')
 +obs = dependency('libobs', method: 'cmake', modules: ['OBS::libobs'])
+ dl = cc.find_library('dl')
  
  sources = ['src/main.c', 'proto/xdg-output-unstable-v1-protocol.c']
- 

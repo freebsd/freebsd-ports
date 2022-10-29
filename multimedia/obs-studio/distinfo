@@ -27,3 +27,5 @@ SHA256 (curl-curl-44b9b4d4f56d6f6de92c89636994c03984e9cd01_GH0.tar.gz) = e3b9aa0
 SIZE (curl-curl-44b9b4d4f56d6f6de92c89636994c03984e9cd01_GH0.tar.gz) = 2705576
 SHA256 (akheron-jansson-bc5741fb1ac730ead24e9bd08977fc6c248e04b0_GH0.tar.gz) = a285ed51c597b23d1f25de3bc5c9c128d55c6aa17af68e0680efa028f8b0437c
 SIZE (akheron-jansson-bc5741fb1ac730ead24e9bd08977fc6c248e04b0_GH0.tar.gz) = 127897
+SHA256 (e221bf8eedfc.patch) = a8c1d4614f2d019e967eb04d9214548491989c78f6df42dbbab610d3123f4eb1
+SIZE (e221bf8eedfc.patch) = 5766

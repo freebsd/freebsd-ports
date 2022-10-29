@@ -1,6 +1,10 @@
 PORTNAME=	obs-studio
 DISTVERSION=	28.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	e221bf8eedfc.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7989
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
