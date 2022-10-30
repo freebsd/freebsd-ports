@@ -1,20 +1,13 @@
 PORTNAME=	gap
-DISTVERSION=	4.12.0
-PORTREVISION=	1
+DISTVERSION=	4.12.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/gap-system/gap/commit/
-PATCHFILES=	adc76841750e3b0d39edf1315b5258bae119a928.diff:-p1 # Don't attempt to install the 'dev' manual, see https://github.com/gap-system/gap/pull/5091
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	System for computational discrete algebra
 WWW=		https://www.gap-system.org/
 
 LICENSE=	GPLv2+
-
-BROKEN_aarch64=		fails to link: undefined reference to SyAllocBags
-BROKEN_riscv64=		fails to link: undefined reference to SyAllocBags
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
@@ -52,9 +45,15 @@ post-install:
 	# install packages
 	cd ${WRKSRC} && ${COPYTREE_SHARE} pkg ${STAGEDIR}${DATADIR}
 	# remove redundant files
-	${RM} ${STAGEDIR}${DATADIR}/pkg/patternclass/lib/.DS_Store
+	@${RM} \
+		${STAGEDIR}${DATADIR}/pkg/patternclass/lib/.DS_Store \
+		${STAGEDIR}${DATADIR}/pkg/atlasrep/gap/utils.gi.new \
+		${STAGEDIR}${DATADIR}/pkg/*/*/pkgconfig.h.in \
+		${STAGEDIR}${DATADIR}/pkg/*/examples/.gitkeep
+	# remove empty directories
+	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 	# strip binary
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgap.so.8.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgap.so.8.0.0
 
 do-test:
 	@cd ${WRKSRC} && ./gap ${FILESDIR}/test.g
