@@ -101,8 +101,6 @@ MOZJS_ARCH=x86_64
 MOZJS_ARCH=ppc64le
 .elif ${ARCH} == aarch64
 MOZJS_ARCH=${ARCH}
-.else
-.error Unsupport architecture "${ARCH}"
 .endif
 
 post-patch:
