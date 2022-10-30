@@ -1,6 +1,6 @@
---- ui/base/ime/dummy_text_input_client.cc.orig	2022-10-01 07:40:07 UTC
+--- ui/base/ime/dummy_text_input_client.cc.orig	2022-10-29 17:50:56 UTC
 +++ ui/base/ime/dummy_text_input_client.cc
-@@ -158,7 +158,7 @@ bool DummyTextInputClient::ShouldDoLearning() {
+@@ -159,7 +159,7 @@ bool DummyTextInputClient::ShouldDoLearning() {
    return false;
  }
  

@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/common/chrome_features.cc.orig	2022-10-29 17:50:56 UTC
 +++ chrome/common/chrome_features.cc
-@@ -90,7 +90,7 @@ const base::Feature kAsyncDns {
+@@ -95,7 +95,7 @@ const base::Feature kAsyncDns {
  };
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Enables or disables the Autofill survey triggered by opening a prompt to
  // save address info.
  const base::Feature kAutofillAddressSurvey{"AutofillAddressSurvey",
-@@ -105,7 +105,7 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
+@@ -110,7 +110,7 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
                                              base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
@@ -27,7 +27,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -284,7 +284,7 @@ const base::Feature kDesktopPWAsWebBundles{"DesktopPWA
+@@ -289,7 +289,7 @@ const base::Feature kDesktopPWAsWebBundles{"DesktopPWA
                                             base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -317,7 +317,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+@@ -322,7 +322,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
  const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
    &kDnsOverHttps, "ShowUi",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -45,7 +45,7 @@
        true
  #else
        false
-@@ -603,7 +603,7 @@ const base::Feature kKioskEnableAppService("KioskEnabl
+@@ -622,7 +622,7 @@ const base::Feature kKAnonymityServiceOHTTPRequests{
  const base::Feature kUpdateHistoryEntryPointsInIncognito{
      "UpdateHistoryEntryPointsInIncognito", base::FEATURE_ENABLED_BY_DEFAULT};
  
@@ -54,7 +54,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  const base::Feature kLinuxLowMemoryMonitor{"LinuxLowMemoryMonitor",
                                             base::FEATURE_DISABLED_BY_DEFAULT};
-@@ -616,7 +616,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -635,7 +635,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

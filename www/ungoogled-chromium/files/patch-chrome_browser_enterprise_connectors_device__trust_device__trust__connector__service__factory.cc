@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2022-10-29 17:50:56 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc
 @@ -11,11 +11,11 @@
  #include "chrome/browser/profiles/profile.h"
@@ -14,7 +14,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/browser/browser_device_trust_connector_service.h"
  #endif  // BUILDFLAG(IS_MAC)
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
-@@ -40,7 +40,7 @@ DeviceTrustConnectorService* DeviceTrustConnectorServi
+@@ -44,7 +44,7 @@ DeviceTrustConnectorService* DeviceTrustConnectorServi
  
  bool DeviceTrustConnectorServiceFactory::ServiceIsCreatedWithBrowserContext()
      const {
@@ -23,7 +23,7 @@
    return IsDeviceTrustConnectorFeatureEnabled();
  #else
    return false;
-@@ -59,7 +59,7 @@ KeyedService* DeviceTrustConnectorServiceFactory::Buil
+@@ -75,7 +75,7 @@ KeyedService* DeviceTrustConnectorServiceFactory::Buil
  
    DeviceTrustConnectorService* service = nullptr;
  
@@ -32,7 +32,7 @@
    if (IsDeviceTrustConnectorFeatureEnabled()) {
      auto* key_manager = g_browser_process->browser_policy_connector()
                              ->chrome_browser_cloud_management_controller()
-@@ -67,7 +67,7 @@ KeyedService* DeviceTrustConnectorServiceFactory::Buil
+@@ -83,7 +83,7 @@ KeyedService* DeviceTrustConnectorServiceFactory::Buil
  #if BUILDFLAG(IS_MAC)
      service = new MacDeviceTrustConnectorService(
          key_manager, profile->GetPrefs(), g_browser_process->local_state());

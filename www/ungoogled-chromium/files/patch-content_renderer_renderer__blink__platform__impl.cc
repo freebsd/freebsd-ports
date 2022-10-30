@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2022-10-01 07:40:07 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2022-10-29 17:50:56 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
 @@ -108,7 +108,7 @@
  
@@ -27,7 +27,7 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -254,7 +254,7 @@ RendererBlinkPlatformImpl::WrapURLLoaderFactory(
+@@ -258,7 +258,7 @@ RendererBlinkPlatformImpl::WrapURLLoaderFactory(
        /*terminate_sync_load_event=*/nullptr);
  }
  
@@ -36,7 +36,7 @@
  void RendererBlinkPlatformImpl::SetThreadType(base::PlatformThreadId thread_id,
                                                base::ThreadType thread_type) {
    if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
-@@ -265,7 +265,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
+@@ -269,7 +269,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
  #endif
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {

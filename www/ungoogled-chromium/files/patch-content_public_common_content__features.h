@@ -1,6 +1,6 @@
---- content/public/common/content_features.h.orig	2022-10-01 07:40:07 UTC
+--- content/public/common/content_features.h.orig	2022-10-29 17:50:56 UTC
 +++ content/public/common/content_features.h
-@@ -282,7 +282,7 @@ CONTENT_EXPORT extern const base::Feature kV8VmFuture;
+@@ -284,7 +284,7 @@ CONTENT_EXPORT extern const base::Feature kJavaScriptE
  CONTENT_EXPORT extern const base::Feature kWebAppWindowControlsOverlay;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyBaseline;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtection;

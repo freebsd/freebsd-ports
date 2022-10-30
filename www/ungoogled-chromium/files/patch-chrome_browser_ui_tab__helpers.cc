@@ -1,6 +1,6 @@
---- chrome/browser/ui/tab_helpers.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/ui/tab_helpers.cc.orig	2022-10-29 17:50:56 UTC
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -200,7 +200,7 @@
+@@ -211,7 +211,7 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/autofill_assistant/common_dependencies_chrome.h"
  #include "chrome/browser/autofill_assistant/platform_dependencies_desktop.h"
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
-@@ -516,13 +516,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -545,13 +545,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -25,7 +25,7 @@
    if (base::FeatureList::IsEnabled(
            features::kHappinessTrackingSurveysForDesktopDemo) ||
        base::FeatureList::IsEnabled(features::kTrustSafetySentimentSurvey) ||
-@@ -537,7 +537,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -574,7 +574,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

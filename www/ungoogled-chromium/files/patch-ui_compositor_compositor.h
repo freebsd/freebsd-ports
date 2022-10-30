@@ -1,6 +1,6 @@
---- ui/compositor/compositor.h.orig	2022-10-01 07:40:07 UTC
+--- ui/compositor/compositor.h.orig	2022-10-29 17:50:56 UTC
 +++ ui/compositor/compositor.h
-@@ -414,7 +414,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
+@@ -419,7 +419,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

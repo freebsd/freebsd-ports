@@ -1,4 +1,4 @@
---- chrome/common/pref_names.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/common/pref_names.cc.orig	2022-10-29 17:50:56 UTC
 +++ chrome/common/pref_names.cc
 @@ -1249,7 +1249,7 @@ const char kUseAshProxy[] = "lacros.proxy.use_ash_prox
  
@@ -7,9 +7,9 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  // Linux specific preference on whether we should match the system theme.
- const char kUsesSystemTheme[] = "extensions.theme.use_system";
- #endif
-@@ -1348,7 +1348,7 @@ const char kShowUpdatePromotionInfoBar[] =
+ const char kUsesSystemThemeDeprecated[] = "extensions.theme.use_system";
+ const char kSystemTheme[] = "extensions.theme.system_theme";
+@@ -1363,7 +1363,7 @@ const char kShowUpdatePromotionInfoBar[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1854,7 +1854,7 @@ const char kDownloadDirUpgraded[] = "download.director
+@@ -1866,7 +1866,7 @@ const char kDownloadDirUpgraded[] = "download.director
  const char kDownloadLastCompleteTime[] = "download.last_complete_time";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2151,7 +2151,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
+@@ -2163,7 +2163,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
  // its isolation requirements.
  const char kWebAppsIsolationState[] = "web_apps.isolation_state";
  
@@ -36,7 +36,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  // Dictionary that maps origins to web apps that can act as URL handlers.
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
-@@ -2251,7 +2251,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2263,7 +2263,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -45,7 +45,7 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3275,7 +3275,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+@@ -3286,7 +3286,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
  const char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  

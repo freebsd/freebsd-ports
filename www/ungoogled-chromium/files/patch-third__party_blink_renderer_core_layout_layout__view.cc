@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2022-10-01 07:40:07 UTC
+--- third_party/blink/renderer/core/layout/layout_view.cc.orig	2022-10-29 17:50:56 UTC
 +++ third_party/blink/renderer/core/layout/layout_view.cc
-@@ -65,7 +65,7 @@
+@@ -66,7 +66,7 @@
  #include "ui/display/screen_info.h"
  #include "ui/gfx/geometry/quad_f.h"
  
@@ -9,7 +9,7 @@
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -359,7 +359,7 @@ void LayoutView::UpdateLayout() {
+@@ -365,7 +365,7 @@ void LayoutView::UpdateLayout() {
    DCHECK(!layout_state_);
    LayoutState root_layout_state(*this);
  

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-10-01 07:40:07 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-10-29 17:50:56 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -33,7 +33,7 @@
+@@ -36,7 +36,7 @@
      // shipped stable can have its runtime flag removed soon after.
      status: {
        valid_values: ["stable", "experimental", "test"],
@@ -9,16 +9,16 @@
      },
  
      // "implied_by" or "depends_on" specifies relationship to other features:
-@@ -1014,7 +1014,7 @@
-       depends_on: ["FileSystemAccess"],
-       status: {"Android": "test", "default": "experimental"},
+@@ -1180,7 +1180,7 @@
+       depends_on: ["FileSystemAccessLocal"],
+       status: {"Android": "test", "default": "stable"},
        origin_trial_feature_name: "FileHandling",
 -      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+       base_feature: "FileHandlingAPI",
      },
      {
-       name: "FileHandlingIcons",
-@@ -2329,7 +2329,7 @@
+@@ -2642,7 +2642,7 @@
      {
        name: "U2FSecurityKeyAPI",
        origin_trial_feature_name: "U2FSecurityKeyAPI",
@@ -27,7 +27,7 @@
        origin_trial_type: "deprecation",
      },
      {
-@@ -2344,7 +2344,7 @@
+@@ -2657,7 +2657,7 @@
      {
        name: "UnrestrictedSharedArrayBuffer",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -36,16 +36,16 @@
      },
      {
        name: "URLPatternCompareComponent",
-@@ -2362,7 +2362,7 @@
+@@ -2677,7 +2677,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
 -      origin_trial_os: ["android", "chromeos", "fuchsia", "linux", "mac", "win"],
 +      origin_trial_os: ["android", "chromeos", "fuchsia", "linux", "mac", "win", "openbsd", "freebsd"],
+       base_feature: "ReduceUserAgent",
      },
      {
-       name: "V8IdleTasks",
-@@ -2477,12 +2477,12 @@
+@@ -2802,12 +2802,12 @@
        name: "WebAppUrlHandling",
        status: "experimental",
        origin_trial_feature_name: "WebAppUrlHandling",

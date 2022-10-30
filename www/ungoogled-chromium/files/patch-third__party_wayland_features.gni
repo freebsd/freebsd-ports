@@ -1,7 +1,7 @@
---- third_party/wayland/features.gni.orig	2022-10-01 07:40:07 UTC
+--- third_party/wayland/features.gni.orig	2022-10-29 17:50:56 UTC
 +++ third_party/wayland/features.gni
-@@ -13,8 +13,12 @@ declare_args() {
-                           default_toolchain != "//build/toolchain/cros:target"
+@@ -17,8 +17,12 @@ declare_args() {
+   use_system_libwayland_server = false
  
    # Path to wayland-scanner. Has effect only when the system libwayland is used.
 -  assert(host_os == "linux")

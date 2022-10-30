@@ -1,6 +1,6 @@
---- ui/views/window/custom_frame_view.cc.orig	2022-10-01 07:40:07 UTC
+--- ui/views/window/custom_frame_view.cc.orig	2022-10-29 17:50:56 UTC
 +++ ui/views/window/custom_frame_view.cc
-@@ -265,7 +265,7 @@ int CustomFrameView::CaptionButtonY() const {
+@@ -266,7 +266,7 @@ int CustomFrameView::CaptionButtonY() const {
    // drawn flush with the screen edge, they still obey Fitts' Law.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2022-10-01 07:40:07 UTC
+--- media/base/media_switches.cc.orig	2022-10-29 17:50:56 UTC
 +++ media/base/media_switches.cc
 @@ -10,7 +10,7 @@
  #include "components/system_media_controls/linux/buildflags/buildflags.h"
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -452,7 +452,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
+@@ -448,7 +448,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
  // Show toolbar button that opens dialog for controlling media sessions.
  const base::Feature kGlobalMediaControls {
    "GlobalMediaControls",
@@ -18,7 +18,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -490,7 +490,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
+@@ -486,7 +486,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
  const base::Feature kGlobalMediaControlsPictureInPicture {
    "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -527,7 +527,7 @@ const base::Feature kUseR16Texture{"use-r16-texture",
+@@ -523,7 +523,7 @@ const base::Feature kUseR16Texture{"use-r16-texture",
  const base::Feature kUnifiedAutoplay{"UnifiedAutoplay",
                                       base::FEATURE_ENABLED_BY_DEFAULT};
  
@@ -36,7 +36,7 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  const base::Feature kVaapiVideoDecodeLinux{"VaapiVideoDecoder",
-@@ -942,7 +942,7 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
+@@ -944,7 +944,7 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
      "DeprecateLowUsageCodecs", base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
