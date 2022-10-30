@@ -5,7 +5,7 @@ CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	8
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Server-side data ingestion and transformation tool (8.x version)
 WWW=		https://www.elastic.co/products/logstash
 
