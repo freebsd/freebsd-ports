@@ -1,6 +1,7 @@
 PORTNAME=	tilda
 PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -10,17 +11,19 @@ WWW=		https://github.com/lanoxx/tilda
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	vte3>=0:x11-toolkits/vte3
-RUN_DEPENDS=	vte3>=0:x11-toolkits/vte3
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
+RUN_DEPENDS=	vte3>=0:x11-toolkits/vte3
+
+USES=		gmake gettext gnome pkgconfig autoreconf pathfix libtool xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	lanoxx
+USE_GNOME+=	glib20 gtk30 gdkpixbuf2 pango
+USE_XORG+=	x11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-rpath
-USES=		gmake gettext gnome pkgconfig autoreconf pathfix libtool xorg
-USE_XORG+=	x11
-USE_GNOME+=	glib20 gtk30 gdkpixbuf2 pango
+
 INSTALL_TARGET=	install-strip
-USE_GITHUB=	yes
-GH_ACCOUNT=	lanoxx
 
 DOCS=		AUTHORS ChangeLog HACKING.md README.md TODO.md
 
