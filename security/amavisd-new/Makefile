@@ -1,10 +1,8 @@
 PORTNAME=	amavisd-new
-PORTVERSION=	2.12.2
+DISTVERSION=	2.12.2
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	https://gitlab.com/amavis/amavis/-/archive/v${PORTVERSION}/
-DISTNAME=	amavis-v${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Mail scanner interface between mailer and content checkers
@@ -22,7 +20,11 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
 		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN
 
 USES=		perl5 shebangfix tar:bz2
+USE_GITLAB=	yes
 USE_PERL5=	run
+GL_ACCOUNT=	amavis
+GL_PROJECT=	amavis
+GL_COMMIT=	38f86957cfc161c23d12637ce206f5ae7ec3d0a8
 
 SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
 		amavisd-snmp-subagent amavisd
