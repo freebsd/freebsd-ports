@@ -23,15 +23,16 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/head.html
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/script.js
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/styles.scss
-%%PORTDOCS%%%%DOCSDIR%%/_includes/img.html
 %%PORTDOCS%%%%DOCSDIR%%/assets/css/clipboard.css
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/Naive_cluster_scheme.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/favicon.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/vm_logo.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/js/clipboard.min.js
+%%PORTDOCS%%%%DOCSDIR%%/enterprise.md
 %%PORTDOCS%%%%DOCSDIR%%/googlec3812dcf278679ec.html
 %%PORTDOCS%%%%DOCSDIR%%/guides/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/getting-started-with-vm-operator.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-delete-or-replace-metrics.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-dashes-agent.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-grafana-dash.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-dashboard.png
