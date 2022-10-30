@@ -2,7 +2,7 @@ PORTNAME=	purple-googlechat
 DISTVERSION=	g20211018
 CATEGORIES=	net-im
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Chat Plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-googlechat
 
