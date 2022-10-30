@@ -3,7 +3,7 @@ PORTVERSION=	1.4.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libpurple plugin for Telegram messenger
 WWW=		https://github.com/majn/telegram-purple
 

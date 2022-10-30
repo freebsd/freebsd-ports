@@ -4,7 +4,7 @@ PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
 WWW=		https://www.lesbonscomptes.com/recoll/
 

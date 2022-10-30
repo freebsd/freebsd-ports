@@ -2,7 +2,7 @@ PORTNAME=	purple-hangouts
 PORTVERSION=	20210630
 CATEGORIES=	net-im
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangouts plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-hangouts
 
