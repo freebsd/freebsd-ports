@@ -1,6 +1,6 @@
 PORTNAME=	gvmd
 DISTVERSION=	22.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -50,8 +50,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/manage_sql.c
 	${REINPLACE_CMD} -e 's|+660|660|g' ${WRKSRC}/tools/greenbone-feed-sync.in
 	${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/manage.c \
-		${WRKSRC}/src/gvmd.c ${WRKSRC}/src/manage_sql_secinfo.c \
-		${WRKSRC}/src/manage_sql.c ${WRKSRC}/src/manage_sql_report_formats.c
+		${WRKSRC}/src/gvmd.c ${WRKSRC}/src/manage_sql_secinfo.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/gvm/gvmd/gnupg
