@@ -1,6 +1,7 @@
 PORTNAME=	picom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -57,6 +58,7 @@ DOCS_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/man/${PORTNAME}.1.asciidoc \
 		${WRKSRC}/src/config_libconfig.c
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
