@@ -1,5 +1,5 @@
-TIMESTAMP = 1665334499
-SHA256 (go/misc_gobuster/gobuster-v3.2.0/v3.2.0.mod) = 183aecd6bc8e6312c782d168f8c4ba1a83efb4d087b3c5e70db94d7bc1eb04d7
-SIZE (go/misc_gobuster/gobuster-v3.2.0/v3.2.0.mod) = 480
-SHA256 (go/misc_gobuster/gobuster-v3.2.0/v3.2.0.zip) = a9a46625c64649bb2f4fb87c7bd45cd65bd391862e789c9320c0126b4e4bf155
-SIZE (go/misc_gobuster/gobuster-v3.2.0/v3.2.0.zip) = 104740
+TIMESTAMP = 1667155425
+SHA256 (go/misc_gobuster/gobuster-v3.3.0/v3.3.0.mod) = c5778d41847f141aceb22d18dffebc139da26433d1082f0e65994b528e4b0004
+SIZE (go/misc_gobuster/gobuster-v3.3.0/v3.3.0.mod) = 452
+SHA256 (go/misc_gobuster/gobuster-v3.3.0/v3.3.0.zip) = 7fb73159a858da74b5869ba4593687b21ccdd1fee7de529d0c456189da80b6e2
+SIZE (go/misc_gobuster/gobuster-v3.3.0/v3.3.0.zip) = 106789
