@@ -37,7 +37,7 @@ while getopts "fmrw" FLAG; do
 done
 shift $((OPTIND-1))
 
-validate_env PORTSDIR dp_OVERLAYS dp_PKGNAME
+validate_env PORTSDIR dp_OVERLAYS dp_PKGNAME dp_USE_PACKAGE_64_DEPENDS_ONLY
 if [ ${recursive} -eq 1 -o ${requires_wrkdir} -eq 1 ]; then
 	validate_env dp_MAKE
 	# Cache command executions to avoid looking them up again in every
@@ -55,6 +55,7 @@ fi
 
 check_dep() {
 	local _dep wrkdir show_dep
+	local usepkg64
 
 	for _dep ; do
 		unset FLAVOR
@@ -125,9 +126,19 @@ check_dep() {
 			set -- $(${dp_MAKE} -C ${d} -V_UNIFIED_DEPENDS)
 		fi
 
+		usepkg64=0
+		if [ -n "${dp_USE_PACKAGE_64_DEPENDS_ONLY}" ];  then
+			usepkg64=$(${dp_MAKE} -C ${d} -VUSE_PKG64)
+		fi
+
 		# If a WRKDIR is required to show the dependency, check for it.
 		show_dep=1
 		if [ ${requires_wrkdir} -eq 1 ] && ! [ -d "${wrkdir}" ]; then
+			show_dep=0
+		fi
+		# Don't list a port as a dependency if it's installed
+		# using a hybrid ABI package.
+		if [ ${usepkg64} -eq 1 ]; then
 			show_dep=0
 		fi
 		[ ${show_dep} -eq 1 ] && echo "${port_display}"
