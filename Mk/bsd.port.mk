@@ -617,6 +617,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # package		- Create a package from an _installed_ port.
 # package-recursive
 #				- Create a package for a port and _all_ of its dependencies.
+# package-recursive-actual
+#				  Create a package for a port and create packages for
+#				  dependencies required by the package.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
 # check-plist		- Checks for files missing from the plist, and files in the plist
@@ -4370,6 +4373,11 @@ package-recursive: package
 	@recursive_cmd="package-noinstall"; \
 	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
 		${_FLAVOR_RECURSIVE_SH}
+
+package-recursive-actual: package
+	@recursive_cmd="package-noinstall"; \
+	    recursive_dirs="$$(${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$2}')"; \
+	    ${_FLAVOR_RECURSIVE_SH}
 
 # Show missing dependencies
 missing:
