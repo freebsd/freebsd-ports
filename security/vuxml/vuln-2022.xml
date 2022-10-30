@@ -1,3 +1,78 @@
+  <vuln vid="4b9c1c17-587c-11ed-856e-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-connector-c++</name>
+	<range><lt>8.0.31</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-odbc</name>
+	<range><lt>8.0.31</lt></range>
+      </package>
+      <package>
+	<name>mysql-client57</name>
+	<range><lt>5.7.40</lt></range>
+      </package>
+      <package>
+	<name>mysql-server57</name>
+	<range><lt>5.7.40</lt></range>
+      </package>
+      <package>
+	<name>mysql-client80</name>
+	<range><lt>8.0.31</lt></range>
+      </package>
+      <package>
+	<name>mysql-server80</name>
+	<range><lt>8.0.31</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpuoct2022.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 37 new security patches for
+	    Oracle MySQL. 11 of these vulnerabilities may be remotely
+	    exploitable without authentication, i.e., may be exploited over a
+	    network without requiring user credentials</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21600</cvename>
+      <cvename>CVE-2022-21635</cvename>
+      <cvename>CVE-2022-39408</cvename>
+      <cvename>CVE-2022-39410</cvename>
+      <cvename>CVE-2022-2097</cvename>
+      <cvename>CVE-2022-21604</cvename>
+      <cvename>CVE-2022-21637</cvename>
+      <cvename>CVE-2022-21617</cvename>
+      <cvename>CVE-2022-21605</cvename>
+      <cvename>CVE-2022-21594</cvename>
+      <cvename>CVE-2022-21607</cvename>
+      <cvename>CVE-2022-21608</cvename>
+      <cvename>CVE-2022-21638</cvename>
+      <cvename>CVE-2022-21640</cvename>
+      <cvename>CVE-2022-21641</cvename>
+      <cvename>CVE-2022-39400</cvename>
+      <cvename>CVE-2022-21633</cvename>
+      <cvename>CVE-2022-21632</cvename>
+      <cvename>CVE-2022-21599</cvename>
+      <cvename>CVE-2022-21595</cvename>
+      <cvename>CVE-2022-21625</cvename>
+      <cvename>CVE-2022-21592</cvename>
+      <cvename>CVE-2022-21589</cvename>
+      <cvename>CVE-2022-39402</cvename>
+      <cvename>CVE-2022-39404</cvename>
+      <cvename>CVE-2022-21611</cvename>
+      <cvename>CVE-2022-39403</cvename>
+      <url>https://www.oracle.com/security-alerts/cpuoct2022.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2022-10-18</discovery>
+      <entry>2022-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1225c888-56ea-11ed-b5c3-3065ec8fd3ec">
     <topic>chromium -- Type confusion in V8</topic>
     <affects>
