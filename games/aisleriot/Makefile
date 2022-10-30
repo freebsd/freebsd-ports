@@ -1,11 +1,7 @@
 PORTNAME=	aisleriot
-DISTVERSION=	3.22.19
+DISTVERSION=	3.22.25
 CATEGORIES=	games gnome
-MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	4bf6fcf5c804.patch:-p1 # https://gitlab.gnome.org/GNOME/aisleriot/-/issues/916
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of patience games written in guile scheme
@@ -25,8 +21,13 @@ PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext meson gnome pkgconfig \
 		python:build,3.6+ shebangfix xorg
+USE_GITLAB=	yes
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
+
+GL_SITE=	https://gitlab.gnome.org/
+GL_ACCOUNT=	GNOME
+GL_COMMIT=	8a4542d2f44ee1425a56ac7595ed51449ae0290e
 
 MESON_ARGS=	-Dtheme_kde=false
 SHEBANG_FILES=	data/icons/meson_updateiconcache.py \

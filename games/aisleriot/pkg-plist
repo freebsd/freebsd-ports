@@ -2124,6 +2124,7 @@ share/icons/hicolor/32x32/apps/gnome-freecell.png
 share/icons/hicolor/48x48/apps/gnome-aisleriot.png
 share/icons/hicolor/48x48/apps/gnome-freecell.png
 share/icons/hicolor/symbolic/apps/gnome-aisleriot-symbolic.svg
+share/locale/ab/LC_MESSAGES/aisleriot.mo
 share/locale/af/LC_MESSAGES/aisleriot.mo
 share/locale/am/LC_MESSAGES/aisleriot.mo
 share/locale/ar/LC_MESSAGES/aisleriot.mo
