@@ -60,6 +60,7 @@ share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/server/docroot/images/readingMark@2x.png
 %%DATADIR%%/server/docroot/images/up.png
 %%DATADIR%%/server/docroot/images/up@2x.png
+%%DATADIR%%/server/docroot/images/webui/YACLibraryServer.svg
 %%DATADIR%%/server/docroot/login.html
 %%DATADIR%%/server/templates/folder.tpl
 %%DATADIR%%/server/templates/libraries.tpl
