@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.0
-PORTREVISION=	2
+DISTVERSION=	10.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libtbb.so:devel/onetbb
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lang localbase:ldflags pkgconfig
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

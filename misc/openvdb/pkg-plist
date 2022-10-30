@@ -160,6 +160,6 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.9.1
-lib/libopenvdb.so.9.1.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyopenvdb.so
+lib/libopenvdb.so.10.0
+lib/libopenvdb.so.10.0.0
+%%PYTHON_SITELIBDIR%%/pyopenvdb.so

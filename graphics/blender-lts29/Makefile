@@ -1,6 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	2.93.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -160,6 +160,7 @@ OPENVDB_IMPLIES=		TBB
 OPENVDB_CMAKE_BOOL=		WITH_OPENVDB WITH_OPENVDB_BLOSC
 OPENVDB_LIB_DEPENDS=		libblosc.so:archivers/c-blosc \
 				libopenvdb.so:misc/openvdb
+OPENVDB_BROKEN=			not compatible with OpenVDB-10
 RAYOPTIMIZATION_CMAKE_BOOL=	WITH_RAYOPTIMIZATION
 SDL_CMAKE_BOOL=			WITH_SDL
 SDL_USE=			SDL=sdl2
