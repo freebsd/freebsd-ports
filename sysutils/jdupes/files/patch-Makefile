@@ -1,0 +1,34 @@
+--- Makefile.orig	2022-09-03 18:09:32 UTC
++++ Makefile
+@@ -54,7 +54,7 @@ MKDIR   = mkdir -p
+ CC ?= gcc
+ COMPILER_OPTIONS = -Wall -Wwrite-strings -Wcast-align -Wstrict-aliasing -Wstrict-prototypes -Wpointer-arith -Wundef
+ COMPILER_OPTIONS += -Wshadow -Wfloat-equal -Waggregate-return -Wcast-qual -Wswitch-default -Wswitch-enum -Wconversion -Wunreachable-code -Wformat=2
+-COMPILER_OPTIONS += -std=gnu99 -O2 -g -D_FILE_OFFSET_BITS=64 -fstrict-aliasing -pipe
++COMPILER_OPTIONS += -std=gnu99 -D_FILE_OFFSET_BITS=64 -fstrict-aliasing -pipe
+ COMPILER_OPTIONS += -DSMA_MAX_FREE=11 -DNO_ATIME
+ 
+ #####################################################################
+@@ -62,10 +62,10 @@ COMPILER_OPTIONS += -DSMA_MAX_FREE=11 -DNO_ATIME
+ #####################################################################
+ 
+ # Don't use unsupported compiler options on gcc 3/4 (OS X 10.5.8 Xcode)
+-GCCVERSION = $(shell expr `LC_ALL=C gcc -v 2>&1 | grep 'gcc version ' | cut -d\  -f3 | cut -d. -f1` \>= 5)
+-ifeq "$(GCCVERSION)" "1"
++#GCCVERSION = $(shell expr `LC_ALL=C gcc -v 2>&1 | grep 'gcc version ' | cut -d\  -f3 | cut -d. -f1` \>= 5)
++#ifeq "$(GCCVERSION)" "1"
+ 	COMPILER_OPTIONS += -Wextra -Wstrict-overflow=5 -Winit-self
+-endif
++#endif
+ 
+ # Are we running on a Windows OS?
+ ifeq ($(OS), Windows_NT)
+@@ -167,7 +167,7 @@ INSTALL_DATA    = $(INSTALL) -m 0644
+ OBJS += jdupes.o jody_paths.o jody_sort.o jody_win_unicode.o jody_strtoepoch.o string_malloc.o oom.o
+ OBJS += jody_cacheinfo.o
+ OBJS += act_deletefiles.o act_linkfiles.o act_printmatches.o act_summarize.o act_printjson.o
+-OBJS += xxhash.o
++# OBJS += xxhash.o
+ OBJS += $(ADDITIONAL_OBJECTS)
+ 
+ all: $(PROGRAM_NAME)
