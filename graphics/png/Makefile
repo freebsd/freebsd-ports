@@ -27,6 +27,11 @@ OPTIONS_DEFAULT=APNG
 OPTIONS_DEFAULT_aarch64=	SIMD
 OPTIONS_DEFAULT_amd64=	SIMD
 OPTIONS_DEFAULT_powerpc64le=	SIMD
+# arm/arm_init.c:43:6: error: "No support for run-time ARM Neon checking; use compile-time options"
+.ifdef QEMU_EMULATING
+OPTIONS_EXCLUDE_armv6=	SIMD
+OPTIONS_EXCLUDE_armv7=	SIMD
+.endif
 
 APNG_DESC=Enable Animated PNG support
 
