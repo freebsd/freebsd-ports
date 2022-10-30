@@ -2,6 +2,7 @@ PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1	# remove openssl-src-* from CARGO-CRATES each update \
 			  remove patch-lapce-data_src_config.rs rust >= 1.64.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org

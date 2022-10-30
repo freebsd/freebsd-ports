@@ -1,5 +1,6 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
