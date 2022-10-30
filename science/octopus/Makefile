@@ -35,6 +35,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
+USE_GCC=	11 # pending resolution of https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266196 (see also https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266196)
 
 SHEBANG_FILES=	src/fdep/fortran_dependencies.pl testsuite/performance/create_combinations.py
 
