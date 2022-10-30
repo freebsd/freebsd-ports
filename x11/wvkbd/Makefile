@@ -2,10 +2,11 @@ PORTNAME=	wvkbd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11
 CATEGORIES=	x11 wayland
+MASTER_SITES=	https://git.sr.ht/~proycon/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	On-screen keyboard for wlroots
-WWW=		https://github.com/jjsullivan5196/wvkbd
+WWW=		https://git.sr.ht/~proycon/wvkbd
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,9 +16,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland
 
 USES=		gmake gnome pkgconfig
-USE_GITHUB=	yes
 USE_GNOME=	cairo pango
-GH_ACCOUNT=	jjsullivan5196
 MAKE_ARGS=	VERSION="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME}-mobintl \
 		share/man/man1/${PORTNAME}.1.gz
