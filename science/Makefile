@@ -201,6 +201,7 @@
     SUBDIR += nlcglib
     SUBDIR += nwchem
     SUBDIR += nwchem-data
+    SUBDIR += ocean
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openems

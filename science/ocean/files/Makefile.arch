@@ -1,0 +1,29 @@
+
+
+MPIFORT=${MPIFC}
+OPTIONS=-I${LOCALBASE}/include ${FCFLAGS}
+
+# enables fortran preprocessor
+OPTIONS += -cpp
+
+# Currently the bse solver needs MPI and BLAS
+OPTIONS += -DBLAS -DMPI
+
+# Some installations of MPI don't have latest calls
+# ( MPI_IALLREDUCE, etc. )
+OPTIONS += -D__OLD_MPI
+
+OPTIONS += -fallow-argument-mismatch
+
+OPTIONS += -ffree-line-length-512
+
+OPTIONS += -D__FFTW3
+FFTWI = -I$(PREFIX)/include/
+FFTWL = -L$(PREFIX)/lib/ -lfftw3
+
+BLAS = -L$(PREFIX) -lopenblas
+
+# Install Directory
+INSTDIR = $(DESTDIR)$(PREFIX)/bin
+
+MPI_LDFLAGS=	-L${MPI_HOME}/lib

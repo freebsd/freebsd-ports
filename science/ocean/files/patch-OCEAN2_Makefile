@@ -1,0 +1,11 @@
+--- OCEAN2/Makefile.orig	2022-10-30 02:16:56 UTC
++++ OCEAN2/Makefile
+@@ -35,7 +35,7 @@ OCEAN_constants.o: OCEAN_constants.f90 AI_kinds.o 
+ 	$(MPIFORT) $(FLAGS) -c -o OCEAN_constants.o OCEAN_constants.f90
+ 
+ ocean.x: $(OCEANOBJS)
+-	$(MPIFORT) $(LDFLAGS) -o ocean.x $(OCEANOBJS) $(FFTWL)  $(BLAS) $(OPENMP) $(FFTWL)
++	$(MPIFORT) $(MPI_LDFLAGS) $(LDFLAGS) -o ocean.x $(OCEANOBJS) $(FFTWL)  $(BLAS) $(OPENMP) $(FFTWL)
+ 
+ o_spect.x: o_spect.f90 AI_kinds.o gamfcn.o OCEAN_constants.o 
+ 	$(MPIFORT) $(FLAGS) -o o_spect.x o_spect.f90 AI_kinds.o gamfcn.o OCEAN_constants.o ../CNBSE/zcain/zobj/fancyvector.o
