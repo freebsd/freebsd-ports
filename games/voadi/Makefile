@@ -1,8 +1,6 @@
 PORTNAME=	voadi
-PORTVERSION=	0.3
+DISTVERSION=	0.3
 CATEGORIES=	games
-MASTER_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/archive/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Vegan on a Desert Island, 2D top-down adventure game
@@ -13,6 +11,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	solarus-run:games/solarus
+
+USE_GITLAB=	yes
+GL_COMMIT=	228b8ebf61afbd4f1c609224466d4fb10c11218a
 
 NO_ARCH=	yes
 NO_BUILD=	yes
