@@ -89,6 +89,7 @@
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += fastjet
+    SUBDIR += feff10
     SUBDIR += fisicalab
     SUBDIR += fleur
     SUBDIR += frontistr
