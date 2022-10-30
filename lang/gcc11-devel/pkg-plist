@@ -14,10 +14,10 @@ bin/gcc%%SUFFIX%%
 bin/gcc-ar%%SUFFIX%%
 bin/gcc-nm%%SUFFIX%%
 bin/gcc-ranlib%%SUFFIX%%
-bin/gdc%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gcov-dump%%SUFFIX%%
 bin/gcov-tool%%SUFFIX%%
+bin/gdc%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 bin/lto-dump%%SUFFIX%%
 include/libgccjit++.h
