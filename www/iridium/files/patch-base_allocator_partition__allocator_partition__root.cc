@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_root.cc.orig	2022-10-05 07:34:01 UTC
+--- base/allocator/partition_allocator/partition_root.cc.orig	2022-10-30 12:20:09 UTC
 +++ base/allocator/partition_allocator/partition_root.cc
 @@ -33,7 +33,7 @@
  #include "wow64apiset.h"
@@ -23,7 +23,7 @@
        (PartitionPageSize() * kMaxPartitionPagesPerRegularSlotSpan) /
        MaxPurgeableSlotSize();
 -#elif BUILDFLAG(IS_APPLE) || (BUILDFLAG(IS_LINUX) && defined(ARCH_CPU_ARM64))
-+#elif BUILDFLAG(IS_APPLE) || ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) && defined(ARCH_CPU_ARM64))
++#elif BUILDFLAG(IS_APPLE) || ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_ARM64))
    // It's better for slot_usage to be stack-allocated and fixed-size, which
    // demands that its size be constexpr. On IS_APPLE and Linux on arm64,
    // PartitionPageSize() is always SystemPageSize() << 2, so regardless of
