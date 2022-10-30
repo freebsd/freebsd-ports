@@ -1,13 +1,12 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.3.8
-PORTREVISION=	1
+DISTVERSION=	4.3.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/16/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/17/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
-		${PORTNAME}-cache-any${EXTRACT_SUFX}:wazuh_cache
+		${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}:wazuh_cache
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -31,7 +30,7 @@ USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes
 
-WAZUH_CACHEFILE=	${PORTNAME}-cache-any${EXTRACT_SUFX}
+WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
 EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
 			curl.tar.gz:wazuh_sources \
 			libdb.tar.gz:wazuh_sources \

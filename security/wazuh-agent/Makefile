@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.3.8
+DISTVERSION=	4.3.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/16/libraries/sources/:wazuh_sources
+MASTER_SITES=	https://packages.wazuh.com/deps/17/libraries/sources/:wazuh_sources
 PKGNAMESUFFIX=	-agent
 DISTFILES=	${EXTERNAL_DISTFILES}
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}

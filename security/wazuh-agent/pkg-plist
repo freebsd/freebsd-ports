@@ -311,7 +311,6 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2016.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2019.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2022.yml
-/var/ossec/packages_files/agent_installation_scripts/sca/windows/sca_win_audit.yml
 /var/ossec/packages_files/agent_installation_scripts/src/init/adduser.sh
 /var/ossec/packages_files/agent_installation_scripts/src/init/darwin-addusers.sh
 /var/ossec/packages_files/agent_installation_scripts/src/init/darwin-delete-oldusers.sh
@@ -400,7 +399,6 @@
 /var/ossec/ruleset/sca/cis_win2019.yml
 /var/ossec/ruleset/sca/cis_win2022.yml
 /var/ossec/ruleset/sca/sca_unix_audit.yml
-/var/ossec/ruleset/sca/sca_win_audit.yml
 /var/ossec/ruleset/sca/web_vulnerabilities.yml
 @mode 750
 @owner root
