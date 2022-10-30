@@ -10,7 +10,7 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-USES=		autoreconf
+USES=		autoreconf pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnu-octave
