@@ -1,5 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2022.10.106
+PORTVERSION=	2022.10.106.1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
