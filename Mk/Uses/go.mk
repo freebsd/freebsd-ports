@@ -90,7 +90,7 @@ GO_PKGNAME=	${PORTNAME}
 GO_TARGET?=	${GO_PKGNAME}
 GO_TESTTARGET?=	./...
 
-.if !defined(PIE_UNSAFE) && defined(WITH_PIE)
+.if !defined(PIE_UNSAFE) && defined(WITH_PIE) && ${ARCH} == amd64
 GO_BUILDFLAGS+= -buildmode=pie
 .else
 GO_BUILDFLAGS+= -buildmode=exe
