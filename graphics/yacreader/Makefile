@@ -2,6 +2,9 @@ PORTNAME=	yacreader
 DISTVERSION=	9.10.0
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a35cb979e4d3.patch:-p1 # https://github.com/YACReader/yacreader/pull/350
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Yet another comic reader
 WWW=		https://www.yacreader.com/
@@ -26,10 +29,5 @@ OPENGL_QMAKE_OFF=	CONFIG+=no_opengl
 
 POPPLER_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 POPPLER_QMAKE_OFF=	CONFIG+=no_pdf
-
-post-install:
-# https://github.com/YACReader/yacreader/issues/349
-	(cd ${WRKSRC}/release && ${COPYTREE_SHARE} \
-		"languages" ${STAGEDIR}${DATADIR} "! -name *_en.qm")
 
 .include <bsd.port.mk>

@@ -1,3 +1,5 @@
 TIMESTAMP = 1667115820
 SHA256 (yacreader-yacreader-9.10.0_GH0.tar.gz) = 60ebfa2c3f0269608f7f45d745bbb2041503c4c07329780a9101b0cdd4e771ba
 SIZE (yacreader-yacreader-9.10.0_GH0.tar.gz) = 1642945
+SHA256 (a35cb979e4d3.patch) = da8124c2d38c79ed9bdaf65167f74ceb782b068bba1e9ca64a2bddfa1285344b
+SIZE (a35cb979e4d3.patch) = 5102
