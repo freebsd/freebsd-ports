@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-10-31 00:26:54 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ all:
+ 	$(MKOCTFILE)       readObj.cc
+ 	$(MKOCTFILE)       writeObj.cc
+ 	$(MKOCTFILE)       longbone_maxDistance.cc
+-	$(MKOCTFILE)       longbone_Registration.cc
++	$(MKOCTFILE)       -stdlib=libstdc++ longbone_Registration.cc
+ 	$(MKOCTFILE)       meshArea.cc
+ 	$(MKOCTFILE)       meshBarycenter.cc
+ 	$(MKOCTFILE)       meshSection.cc
