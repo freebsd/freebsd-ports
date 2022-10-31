@@ -1,5 +1,5 @@
 PORTNAME=	doctl
-DISTVERSION=	1.82.2
+DISTVERSION=	1.84.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/digitalocean/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
