@@ -1,0 +1,3 @@
+An interface to the GNU D compiler (GDC), which recognizes flags normally
+used with the DMD D compiler and translates them to flags GDC can understand.
+This makes `gdmd` a drop-in replacement to the `dmd` compiler invocation.

@@ -714,6 +714,7 @@
     SUBDIR += gconfmm26
     SUBDIR += gdb
     SUBDIR += gdcm
+    SUBDIR += gdmd
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
     SUBDIR += geany-plugin-autoclose
