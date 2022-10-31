@@ -1,9 +1,3 @@
-TIMESTAMP = 1626777309
-SHA256 (jadahl-libdecor-3ec3fadd59a21835079fbb3046d2bec6c649d6fa_GL0.tar.gz) = 14fdf799035ec523be2ff7f87aacf5d9d7b6db985fc3983338f489fc3f4681dd
-SIZE (jadahl-libdecor-3ec3fadd59a21835079fbb3046d2bec6c649d6fa_GL0.tar.gz) = 45097
-SHA256 (ca1dd07bbdbd.patch) = fd83b8339a2e721e57417a0c407dd4448bee564fc12b0c0accd6a05736b0203a
-SIZE (ca1dd07bbdbd.patch) = 1246
-SHA256 (4b8b2865e1e5.patch) = 3f9401d7d7d5431ceab39e487140f4f18adab79facaff79a8176f6290c880def
-SIZE (4b8b2865e1e5.patch) = 14905
-SHA256 (51e9db022fe2.patch) = 74672d0206683a28da0a1083592908a6eda5bd8ff4316b6bbefabe85de6fd3d7
-SIZE (51e9db022fe2.patch) = 1232
+TIMESTAMP = 1667221661
+SHA256 (jadahl-libdecor-4db201134ab51950a1c673d77d7c4f2f7c7b48fd_GL0.tar.gz) = 39f1120874a95348cd56938898c6e0779fa7027ec15eb734ac12b652ad4eb7da
+SIZE (jadahl-libdecor-4db201134ab51950a1c673d77d7c4f2f7c7b48fd_GL0.tar.gz) = 47256
