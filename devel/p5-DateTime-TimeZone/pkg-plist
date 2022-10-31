@@ -102,7 +102,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Monterrey.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Montevideo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/New_York.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Nipigon.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Nome.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Noronha.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Beulah.pm
@@ -118,7 +117,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Porto_Velho.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Puerto_Rico.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Punta_Arenas.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Rainy_River.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Rankin_Inlet.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Recife.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Regina.pm
@@ -134,7 +132,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Swift_Current.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Tegucigalpa.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Thule.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Thunder_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Tijuana.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Toronto.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Vancouver.pm
