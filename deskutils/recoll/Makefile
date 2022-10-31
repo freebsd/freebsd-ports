@@ -1,10 +1,9 @@
 PORTNAME=	recoll
-PORTVERSION=	1.31.4
-PORTREVISION=	8
+PORTVERSION=	1.33.1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
 WWW=		https://www.lesbonscomptes.com/recoll/
 
@@ -28,11 +27,7 @@ PYDISTUTILS_PKGNAME=	Recoll
 PYDISTUTILS_PKGVERSION=	1.0
 USE_QT=		core gui printsupport widgets xml buildtools:build qmake:build
 
-SHEBANG_FILES=	desktop/hotrecoll.py filters/*.py filters/rcl7z \
-		filters/rclaudio filters/rclchm filters/rcldia filters/rclepub \
-		filters/rclepub1 filters/rclics filters/rclimg filters/rclinfo \
-		filters/rclkar filters/rclrar filters/rcltar filters/rclwar \
-		filters/rclzip
+SHEBANG_FILES=	desktop/hotrecoll.py filters/*.py filters/rclimg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-recollq \
@@ -78,6 +73,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|override const|const override|' \
+		${WRKSRC}/index/rclmonrcv.cpp
 
 pre-build-QT5-on:
 	@cd ${WRKSRC}/qtgui && \
