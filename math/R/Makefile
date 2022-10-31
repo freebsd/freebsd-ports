@@ -1,6 +1,5 @@
 PORTNAME=	R
-DISTVERSION=	4.2.1
-PORTREVISION=	1
+DISTVERSION=	4.2.2
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -16,8 +15,8 @@ BUILD_DEPENDS=	texi2any:print/texinfo
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2
 # R packages may require GNU make or cmake to build
-RUN_DEPENDS=	gmake:devel/gmake \
-		cmake:devel/cmake-core
+RUN_DEPENDS=	cmake:devel/cmake-core \
+		gmake:devel/gmake
 
 # possible TODO
 # - Use --with-recommended-packages=no by default
@@ -25,8 +24,8 @@ RUN_DEPENDS=	gmake:devel/gmake \
 # - Create ports for each of the recommended packages
 # - Create a meta-port for the recommended packages
 
-USES=		compiler:c++11-lang cpe gmake iconv libtool localbase pathfix \
-		perl5 readline
+USES=		compiler:c++11-lang cpe fortran gmake iconv libtool localbase \
+		pathfix perl5 readline
 CPE_VENDOR=	r-project
 USE_LDCONFIG=	${PREFIX}/lib/R/lib
 USE_PERL5=	build
@@ -40,17 +39,9 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB=	FULLVER=${DISTVERSION} \
 		MAJORVER=${_MAJORVER}
 
-OPTIONS_DEFINE=		ICU INFO LDOUBLE LETTER MEMPROF NLS RPROF X11
-OPTIONS_DEFINE_amd64=	FLANG OPENMP
-OPTIONS_DEFINE_i386=	OPENMP
-OPTIONS_DEFINE_powerpc64=	OPENMP
-OPTIONS_DEFINE_powerpc64le=	OPENMP
-OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE PNG RBLAS \
-			RPROF TCLTK TIFF X11
-OPTIONS_DEFAULT_amd64=	OPENMP
-OPTIONS_DEFAULT_i386=	OPENMP
-OPTIONS_DEFAULT_powerpc64=	OPENMP
-OPTIONS_DEFAULT_powerpc64le=	OPENMP
+OPTIONS_DEFINE=		ICU INFO LDOUBLE LETTER MEMPROF NLS OPENMP RPROF X11
+OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE OPENMP PNG \
+			RBLAS RPROF TCLTK TIFF X11
 OPTIONS_GROUP=		NEEDX11
 OPTIONS_GROUP_NEEDX11=	CAIROPANGO GHOSTSCRIPT JPEG PNG TCLTK TEXDOCS TIFF
 OPTIONS_SINGLE=		BLAS
@@ -59,7 +50,6 @@ OPTIONS_SINGLE_BLAS=	ATLAS NETLIB OPENBLAS RBLAS
 OPTIONS_SUB=	YES
 
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
-FLANG_DESC=		Use experimental flang Fortran compiler
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
@@ -80,9 +70,6 @@ CAIROPANGO_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
 CAIROPANGO_USES=		gettext gnome jpeg pkgconfig
 CAIROPANGO_USE=			GNOME=cairo,pango
 CAIROPANGO_CONFIGURE_WITH=	cairo
-FLANG_PREVENTS=			ATLAS NETLIB OPENBLAS
-FLANG_LIB_DEPENDS=		libpgmath.so:math/libpgmath
-FLANG_USES=			fortran:flang
 GHOSTSCRIPT_IMPLIES=		X11
 GHOSTSCRIPT_USES=		ghostscript
 ICU_LIB_DEPENDS=		libicui18n.so:devel/icu
@@ -134,11 +121,6 @@ X11_CONFIGURE_WITH=		x
 _MAJORVER=	${DISTVERSION:R:R}
 
 .include <bsd.port.options.mk>
-
-## Cannot use FLANG_USES_OFF=fortran because the FLANG option is only for amd64
-.if ! ${PORT_OPTIONS:MFLANG}
-USES+=		fortran
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
