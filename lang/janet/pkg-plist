@@ -1,5 +1,6 @@
 bin/janet
 include/janet/janet.h
+include/janet.h
 lib/janet/.keep
 lib/libjanet.a
 lib/libjanet.so
