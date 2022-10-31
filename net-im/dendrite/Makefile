@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
+DISTVERSION=	0.10.5
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -29,7 +29,7 @@ GO_TARGET+=	./cmd/$f:${PREFIX}/dendrite/bin/$f
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	matrix-org
-GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arceliar/ironwood \
+GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arceliar/ironwood \
 		Arceliar:phony:dde1a8dca979:arceliar_phony/vendor/github.com/Arceliar/phony \
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		HdrHistogram:hdrhistogram-go:v1.1.2:hdrhistogram_hdrhistogram_go/vendor/github.com/HdrHistogram/hdrhistogram-go \
@@ -107,8 +107,8 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:ceba4d9f7530:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:7c772f1b388a:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:3adc85477dd3:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:gomatrixserverlib:0885c35ebe74:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:639feeff74d6:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.15:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:v1.0.2:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -151,7 +151,7 @@ GH_TUPLE=	Arceliar:ironwood:ee60c16bcfcf:arceliar_ironwood/vendor/github.com/Arc
 		uber-go:atomic:v1.10.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber:jaeger-client-go:v2.30.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
-		yggdrasil-network:yggdrasil-go:4f2abece817c:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
+		yggdrasil-network:yggdrasil-go:v0.4.6:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor/github.com/golang
