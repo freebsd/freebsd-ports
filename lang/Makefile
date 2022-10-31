@@ -154,6 +154,7 @@
     SUBDIR += lci
     SUBDIR += ldc
     SUBDIR += lfe
+    SUBDIR += lfortran
     SUBDIR += libhx
     SUBDIR += libobjc2
     SUBDIR += librep
