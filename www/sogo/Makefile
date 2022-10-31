@@ -1,13 +1,12 @@
 PORTNAME=		sogo
-PORTVERSION=		5.7.0
-PORTREVISION=		2
+PORTVERSION=		5.7.1
 CATEGORIES=		www gnustep
-MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
+MASTER_SITES=		https://packages.sogo.nu/sources/
 DISTNAME=		SOGo-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Groupware server with a focus on scalability and open standards
-WWW=		https://sogo.nu/
+WWW=			https://sogo.nu/
 
 LICENSE=		GPLv2
 

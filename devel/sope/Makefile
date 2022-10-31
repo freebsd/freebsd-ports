@@ -1,12 +1,12 @@
 PORTNAME=		sope
-PORTVERSION=		5.7.0
+PORTVERSION=		5.7.1
 CATEGORIES=		devel gnustep
-MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
+MASTER_SITES=		https://packages.sogo.nu/sources/
 DISTNAME=		SOPE-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Extensive set of GNUstep web application frameworks
-WWW=		https://sogo.nu/
+WWW=			https://sogo.nu/
 
 LICENSE=		LGPL20
 
