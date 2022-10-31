@@ -23,17 +23,21 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gettext \
 		gettext-tools gnome pathfix pkgconfig python:3.5+ shebangfix \
 		ssl xorg
-USE_GNOME=	cairo gtk20 librsvg2
+USE_GNOME=	cairo librsvg2
 USE_XORG=	ice sm
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
 
 OPTIONS_DEFINE=		COMPFACE DEBUG DOCS ENCHANT IPV6 LDAP NLS STARTUP \
 			THEMES
-OPTIONS_DEFAULT=	COMPFACE ENCHANT STARTUP THEMES
+OPTIONS_DEFAULT=	COMPFACE ENCHANT GTK2 STARTUP THEMES
+OPTIONS_RADIO=		BRANCH
+OPTIONS_RADIO_BRANCH=	GTK2 GTK3
 OPTIONS_SUB=		yes
 
 COMPFACE_DESC=	X-Face support
 ENCHANT_DESC=	Spell checking support
+GTK2_DESC=	Build GTK2+ release
+GTK3_DESC=	Build GTK3+ release
 STARTUP_DESC=	Startup notification support
 THEMES_DESC=	Additional themes
 
@@ -58,7 +62,21 @@ STARTUP_CONFIGURE_ENABLE=	startup-notification
 
 THEMES_RUN_DEPENDS=	claws-mail-themes>0:x11-themes/claws-mail-themes
 
+.include <bsd.port.options.mk>
+MASTER_OPTIONS=	${PORT_OPTIONS}
 .include "Makefile.claws"
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME+=	gtk20
+
+PLIST_SUB+=	GTK2=""
+.else
+PLIST_SUB+=	GTK2="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

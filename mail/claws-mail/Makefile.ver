@@ -1,1 +1,10 @@
+.if !defined(MASTER_OPTIONS)
+MASTER_OPTIONS!=	${MAKE} -C ${.CURDIR}/../claws-mail -V PORT_OPTIONS
+.endif
+
+.if ${MASTER_OPTIONS:MGTK2}
 PORTVERSION=	3.19.0
+.endif
+.if ${MASTER_OPTIONS:MGTK3}
+PORTVERSION=	4.1.0
+.endif
