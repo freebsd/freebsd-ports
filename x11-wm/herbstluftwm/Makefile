@@ -1,7 +1,7 @@
 PORTNAME=	herbstluftwm
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 CATEGORIES=	x11-wm
+MASTER_SITES=	https://herbstluftwm.org/tarballs/
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Manual tiling window manager for X11
@@ -14,7 +14,6 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2
 
 USES=		cmake compiler:c++11-lang gnome \
 		localbase:ldflags pkgconfig shebangfix xorg
-USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_XORG=	x11 xext xfixes xft xinerama xrandr xrender
 
