@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	29.0.50.20221015
+DISTVERSION=	29.0.50.20221031
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	8300899
+GH_TAGNAME=	a691e811
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -69,7 +69,7 @@ SUB_LIST=	EMACS_VER=${DISTVERSION:R} \
 		NATIVECOMP_COMMENT_START=${NATIVECOMP_COMMENT_START}
 
 INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
-		ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime \
+		ediff edt efaq eglot eieio eintr elisp emacs emacs-gnutls emacs-mime \
 		epa erc ert eshell eudc eww flymake forms gnus htmlfontify \
 		idlwave ido info mairix-el message mh-e modus-themes newsticker \
 		nxml-mode octave-mode org pcl-cvs pgg rcirc reftex remember \

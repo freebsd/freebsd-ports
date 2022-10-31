@@ -3471,6 +3471,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ebnf2ps.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ebrowse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ebrowse.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/eglot.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/eglot.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elisp-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elisp-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/erts-mode.el.gz
@@ -3835,6 +3837,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/underline.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/word-wrap-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/word-wrap-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/theme-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/thread.el.gz
@@ -4149,6 +4152,8 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/insdel.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/intervals.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/intervals.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/itree.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/itree.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/json.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keyboard.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keyboard.h
