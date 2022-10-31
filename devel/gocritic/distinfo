@@ -1,5 +1,5 @@
-TIMESTAMP = 1649618484
-SHA256 (go/devel_gocritic/gocritic-v0.6.3/v0.6.3.mod) = 007d7dbf9c9f7e90cfd9845779af3c301885669b5699b17ece5c99c1c2cee6f5
-SIZE (go/devel_gocritic/gocritic-v0.6.3/v0.6.3.mod) = 751
-SHA256 (go/devel_gocritic/gocritic-v0.6.3/v0.6.3.zip) = 1f0b203e599dd1c3c67f1b71d8d63438e31b98ff8c82248cd528c33589164420
-SIZE (go/devel_gocritic/gocritic-v0.6.3/v0.6.3.zip) = 321094
+TIMESTAMP = 1667255224
+SHA256 (go/devel_gocritic/gocritic-v0.6.5/v0.6.5.mod) = 7d679dee25f7d3f0245b190eba1a51215fd2751360e59bd12a1721adaceeccae
+SIZE (go/devel_gocritic/gocritic-v0.6.5/v0.6.5.mod) = 725
+SHA256 (go/devel_gocritic/gocritic-v0.6.5/v0.6.5.zip) = 7f595b0d7e550c87be506c5810d94e81e2c3908b846b388421dac692a0b19a32
+SIZE (go/devel_gocritic/gocritic-v0.6.5/v0.6.5.zip) = 325383
