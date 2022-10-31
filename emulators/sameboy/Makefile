@@ -1,11 +1,7 @@
 PORTNAME=	sameboy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.6
-PORTREVISION=	1
+DISTVERSION=	0.15.7
 CATEGORIES=	emulators games
-
-PATCH_SITES=	https://github.com/LIJI32/SameBoy/commit/
-PATCHFILES=	c0966ceebaf1cf2518427ffa3c0189d8f96ab5aa.patch:-p1 # https://github.com/LIJI32/SameBoy/pull/501
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Game Boy and Game Boy Color emulator written in C
