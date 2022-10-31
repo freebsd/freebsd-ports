@@ -1,5 +1,5 @@
 PORTNAME=	swayfloatingswitcher
-PORTVERSION=	s20211208
+PORTVERSION=	s20221131
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,10 +16,10 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 
 USES=		gnome localbase:ldflags meson pkgconfig vala:build
 USE_GITHUB=	yes
-USE_GNOME=	gtk30
+USE_GNOME=	cairo gtk30
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayFloatingSwitcher
-GH_TAGNAME=	4f02259
+GH_TAGNAME=	56a9e35
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-client
 
