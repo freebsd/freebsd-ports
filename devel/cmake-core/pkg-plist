@@ -2939,6 +2939,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Windows-IntelLLVM-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-IntelLLVM-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-IntelLLVM.cmake
+%%DATADIR%%/Modules/Platform/Windows-LLVMFlang-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC.cmake
