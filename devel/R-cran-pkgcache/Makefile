@@ -1,5 +1,5 @@
 PORTNAME=	pkgcache
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,12 +15,12 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-callr>=2.0.4.9000:devel/R-cran-callr \
 		R-cran-cli>=3.2.0:devel/R-cran-cli \
 		R-cran-filelock>0:devel/R-cran-filelock \
-		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-prettyunits>0:devel/R-cran-prettyunits \
 		R-cran-rappdirs>0:devel/R-cran-rappdirs \
 		R-cran-curl>=3.2:ftp/R-cran-curl \
 		R-cran-processx>=3.3.0.9001:sysutils/R-cran-processx
-TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
+TEST_DEPENDS=	R-cran-zip>0:archivers/R-cran-zip \
+		R-cran-covr>0:devel/R-cran-covr \
 		R-cran-desc>0:devel/R-cran-desc \
 		R-cran-mockery>0:devel/R-cran-mockery \
 		R-cran-pillar>0:devel/R-cran-pillar \
