@@ -1,0 +1,3 @@
+A backport of Python 3.9's pkgutil.resolve_name.
+
+See python 3.9 documentation.
