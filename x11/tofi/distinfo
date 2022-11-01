@@ -1,3 +1,5 @@
-TIMESTAMP = 1662647634
-SHA256 (philj56-tofi-v0.6.0_GH0.tar.gz) = 65a3ddd202ae7b8bedeee2efb92253a4cca929654119ecdfd76f7d4c67315016
-SIZE (philj56-tofi-v0.6.0_GH0.tar.gz) = 305234
+TIMESTAMP = 1667305194
+SHA256 (philj56-tofi-v0.7.0_GH0.tar.gz) = b84680bb732434f622f66d71a2bcdf8f3ac03acaec1f856a683e13bbd78e63cd
+SIZE (philj56-tofi-v0.7.0_GH0.tar.gz) = 311311
+SHA256 (bd375c2f53e2.patch) = ac1cf1a1399663f0b1c12457506fa90c9ca6858b409113756dc15064a7ca3059
+SIZE (bd375c2f53e2.patch) = 900
