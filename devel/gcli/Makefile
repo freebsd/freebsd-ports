@@ -1,5 +1,5 @@
 PORTNAME=	gcli
-DISTVERSION=	0.9.9-beta
+DISTVERSION=	0.9.10-beta
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
@@ -12,9 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		pkgconfig tar:xz
+USES=		libtool pkgconfig tar:xz
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gcli
+GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
