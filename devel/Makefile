@@ -5585,6 +5585,7 @@
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zfp
     SUBDIR += py-zict
     SUBDIR += py-zipp
     SUBDIR += py-zope.app.basicskin
