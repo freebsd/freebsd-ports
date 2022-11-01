@@ -1,8 +1,7 @@
 PORTNAME=	lookatme
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Interactive, terminal-based markdown presenter
@@ -22,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FL
 
 USES=		cpe python:3.6+ pytest
 CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils noflavors
 NO_ARCH=	yes
 
 post-patch:
