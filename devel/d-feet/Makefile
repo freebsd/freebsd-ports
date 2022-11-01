@@ -31,10 +31,4 @@ post-patch:
 		-e 's|%%PYTHON_VERSION%%|${PYTHON_VERSION}|' \
 		${WRKSRC}/meson.build
 
-post-install:
-.for locale in cs de el es hu pl pt_BR sv
-	${RLN} ${STAGEDIR}${PREFIX}/share/help/C/d-feet/figures/icon.png \
-		${STAGEDIR}${PREFIX}/share/help/${locale}/d-feet/figures/icon.png
-.endfor
-
 .include <bsd.port.mk>
