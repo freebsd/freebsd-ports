@@ -1,7 +1,7 @@
 PORTNAME=	aqbanking
-PORTVERSION=	6.4.1
+PORTVERSION=	6.5.3
 CATEGORIES=	finance
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/400/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/467/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
@@ -40,7 +40,7 @@ EBICS_DESC=		Enable EBICS backend
 EBICS_LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
 EBICS_USES=		gnome
 EBICS_USE=		GNOME=libxml2,libxslt
-EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqofxconnect aqpaypal"
+EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqofxconnect aqpaypal aqnone"
 
 KTOBLZCHECK_DESC=	Enable KtoBlzCheck support
 
