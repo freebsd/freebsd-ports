@@ -1,0 +1,23 @@
+--- packetbeat/packetbeat.yml.orig	2022-10-24 06:49:31 UTC
++++ packetbeat/packetbeat.yml
+@@ -25,7 +25,8 @@
+ #   internal_networks:
+ #   - private
+ #
+-packetbeat.interfaces.device: any
++# On FreeBSD, you must specify particular interface to sniff on
++packetbeat.interfaces.device: em0
+ 
+ # Specify the amount of time between polling for changes in the default
+ # route. This option is only used when one of the default route devices
+@@ -173,6 +174,10 @@ setup.template.settings:
+ # versions, this URL points to the dashboard archive on the artifacts.elastic.co
+ # website.
+ #setup.dashboards.url:
++
++# The directory from where to read the dashboards. The default is the `kibana`
++# folder in the home path.
++#setup.dashboards.directory: %%DATADIR%%/packetbeat/kibana
+ 
+ # =================================== Kibana ===================================
+ 

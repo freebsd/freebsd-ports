@@ -120,6 +120,7 @@
     SUBDIR += beadm-devel
     SUBDIR += beats6
     SUBDIR += beats7
+    SUBDIR += beats8
     SUBDIR += bfs
     SUBDIR += bhyve+
     SUBDIR += bhyve-firmware

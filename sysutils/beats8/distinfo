@@ -1,0 +1,15 @@
+TIMESTAMP = 1669417041
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/go.mod) = 2fba3adaa4b2ab5f864bc2ff8eb4584a854bb9701f01a50814ed46f736b4d9a0
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/go.mod) = 18988
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/auditbeat-8.5.2-darwin-x86_64.tar.gz) = e5869103a1948c121b481b66aa3849355037e279a68a52093b1b5e8521dc1141
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/auditbeat-8.5.2-darwin-x86_64.tar.gz) = 27766683
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/filebeat-8.5.2-darwin-x86_64.tar.gz) = d35cc6bf587aad870779d69c7df90f5b4526bb01c31a7c953ecfb7bcf75c61dd
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/filebeat-8.5.2-darwin-x86_64.tar.gz) = 36503488
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/heartbeat-8.5.2-darwin-x86_64.tar.gz) = 0dcdfbdec5cabec79935c2d7fe9c1133a85eaed8c58bb3bbcdd00fd7b822ad08
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/heartbeat-8.5.2-darwin-x86_64.tar.gz) = 27844888
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/metricbeat-8.5.2-darwin-x86_64.tar.gz) = 5961b1b4e22675cadec41ea0bb05b604c30ca2038b4f54bb16b4aaa749191713
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/metricbeat-8.5.2-darwin-x86_64.tar.gz) = 42925666
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/packetbeat-8.5.2-darwin-x86_64.tar.gz) = 3e96e28c1dcc2a077a1d277f604531f72e5dcca361860089d74398a91eb7929d
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/packetbeat-8.5.2-darwin-x86_64.tar.gz) = 29124396
+SHA256 (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/elastic-beats-v8.5.2_GH0.tar.gz) = d86a9932cbb0030bce986e2b0a8bcea26d62acd689d45e81154fd188b0a4b8cb
+SIZE (go/sysutils_beats8/elastic-beats-v8.5.2_GH0/elastic-beats-v8.5.2_GH0.tar.gz) = 111493219
