@@ -4,7 +4,7 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/serviceworker.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/.htaccess
-%%WWWDIR%%/snappymail/v/%%VER%%/app/domains/default.ini
+%%WWWDIR%%/snappymail/v/%%VER%%/app/domains/default.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/disabled
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Collection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/DateTimeHelper.php
