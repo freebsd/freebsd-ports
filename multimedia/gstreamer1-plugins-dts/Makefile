@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer dts audio decode plugin
@@ -14,4 +14,4 @@ LIB_DEPENDS=	libdca.so:multimedia/libdca
 
 .include "${MASTERDIR}/Makefile"
 
-MESON_ARGS+=	-Dgpl=enabled
+MESON_ARGS+=	-Dgpl=enabled -Dv4l2codecs=disabled -Dsvthevcenc=disabled
