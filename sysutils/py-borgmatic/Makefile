@@ -1,6 +1,6 @@
 PORTNAME=	borgmatic
 PORTVERSION=	1.5.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +17,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borgbackup>=0:archivers/py-borgbackup@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pykwalify>=0:textproc/py-pykwalify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
-
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} == "3.8"
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pkgutil-resolve-name>=1.3.10:devel/py-pkgutil-resolve-name@${PY_FLAVOR}
+.endif
 
 post-patch:
 	@cd ${WRKSRC} && \
@@ -34,4 +39,4 @@ post-patch:
 		borgmatic/config/schema.yaml \
 		tests/unit/config/test_collect.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
