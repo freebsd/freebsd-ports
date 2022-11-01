@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	5.5.6
+PORTVERSION=	5.5.7
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 
@@ -94,6 +94,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base64-bytestring-type-1.0.1_15 \
 		basement-0.0.12_2 \
 		bech32-1.1.2 \
+		bech32-th-1.1.1 \
 		bifunctors-5.5.11_1 \
 		bimap-0.4.0_1 \
 		bin-0.1_2 \
@@ -171,7 +172,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		generic-deriving-1.14.1 \
 		generic-lens-2.2.1.0_1 \
 		generic-lens-core-2.2.1.0_1 \
-		generic-monoid-0.1.0.1_1 \
+		generic-monoid-0.1.0.1_2 \
 		generic-random-1.5.0.1 \
 		generics-sop-0.5.1.2_1 \
 		ghc-byteorder-4.11.0.0.10_3 \
@@ -276,7 +277,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		ral-0.1_2 \
 		random-1.2.1 \
 		random-shuffle-0.0.4 \
-		readable-0.3.1 \
+		readable-0.3.1_1 \
 		recursion-schemes-5.2.2.2_1 \
 		reducers-3.12.4_2 \
 		reflection-2.1.6_1 \
@@ -340,7 +341,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-utilities-0.2.4.3 \
 		these-1.1.1.1_6 \
 		time-compat-1.9.6.1_4 \
-		time-manager-0.0.0 \
+		time-manager-0.0.0_1 \
 		time-units-1.0.0 \
 		tls-1.5.7 \
 		transformers-base-0.4.6 \
@@ -368,7 +369,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		void-0.7.3 \
 		wai-3.2.3 \
 		wai-app-static-3.1.7.2_1 \
-		wai-extra-3.1.8 \
+		wai-extra-3.1.8_1 \
 		wai-logger-2.4.0 \
 		wai-websockets-3.0.1.2 \
 		warp-3.3.19 \
