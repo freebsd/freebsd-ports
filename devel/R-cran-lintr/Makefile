@@ -1,5 +1,5 @@
 PORTNAME=	lintr
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -34,6 +34,5 @@ USES=		cran:auto-plist
 
 post-install:
 	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
-
 
 .include <bsd.port.mk>
