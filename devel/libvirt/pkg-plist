@@ -150,6 +150,9 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/arm_FT-2000plus.xml
 %%DATADIR%%/cpu_map/arm_Falkor.xml
 %%DATADIR%%/cpu_map/arm_Kunpeng-920.xml
+%%DATADIR%%/cpu_map/arm_Neoverse-N1.xml
+%%DATADIR%%/cpu_map/arm_Neoverse-N2.xml
+%%DATADIR%%/cpu_map/arm_Neoverse-V1.xml
 %%DATADIR%%/cpu_map/arm_Tengyun-S2500.xml
 %%DATADIR%%/cpu_map/arm_ThunderX299xx.xml
 %%DATADIR%%/cpu_map/arm_a64fx.xml
@@ -268,6 +271,7 @@ share/augeas/lenses/virtvboxd.aug
 %%NLS%%share/locale/fr/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/id/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libvirt.mo
