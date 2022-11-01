@@ -46,6 +46,7 @@ include/gwenhywfar5/gwenhywfar/endianfns.h
 include/gwenhywfar5/gwenhywfar/error.h
 include/gwenhywfar5/gwenhywfar/fastbuffer.h
 include/gwenhywfar5/gwenhywfar/fslock.h
+include/gwenhywfar5/gwenhywfar/funcs.h
 include/gwenhywfar5/gwenhywfar/gui.h
 include/gwenhywfar5/gwenhywfar/gui_be.h
 include/gwenhywfar5/gwenhywfar/gwen_sar_fileheader.h
