@@ -23,6 +23,7 @@ USES=		alias cmake compiler:c++11-lang gl jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm xcursor xfixes xrender
 
+CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		VTK_INSTALL_NO_DOCUMENTATION \
 		Module_vtkTestingCore Module_vtkTestingRendering
