@@ -1,5 +1,6 @@
 PORTNAME=	xonotic
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -30,6 +31,7 @@ PORTDATA=	*
 OPTIONS_MULTI=		COMPONENTS
 OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=	CLIENT DEDICATED
+OPTIONS_SUB=		yes
 
 CLIENT_DESC=		Build client
 CLIENT_LIB_DEPENDS=	libtheora.so:multimedia/libtheora \
@@ -40,17 +42,9 @@ CLIENT_LIB_DEPENDS=	libtheora.so:multimedia/libtheora \
 CLIENT_USES=		sdl xorg
 CLIENT_USE=		SDL=sdl2 XORG=x11
 CLIENT_ALL_TARGET=	sdl-release
-CLIENT_PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.ico
-CLIENT_DESKTOP_ENTRIES=	"Xonotic" \
-			"" \
-			"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
-			"${PORTNAME}" \
-			"Game;Shooter;" \
-			""
 
 DEDICATED_DESC=		Build dedicated server
 DEDICATED_ALL_TARGET=	sv-release
-DEDICATED_PLIST_FILES=	bin/${PORTNAME}-dedicated
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
@@ -63,7 +57,13 @@ do-install:
 
 do-install-CLIENT-on:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-sdl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/misc/logos/icons_ico/xonotic.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/misc/logos/xonotic.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
+	${INSTALL_DATA} ${WRKSRC}/misc/logos/xonotic_icon.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/xonotic.svg
+.for s in 16 22 24 32 48 64 128 256 512
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/
+	${INSTALL_DATA} ${WRKSRC}/misc/logos/icons_png/xonotic_${s}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/xonotic.png
+.endfor
 
 do-install-DEDICATED-on:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated

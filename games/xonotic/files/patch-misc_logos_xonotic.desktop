@@ -1,0 +1,11 @@
+--- misc/logos/xonotic.desktop.orig	2022-06-27 17:32:04 UTC
++++ misc/logos/xonotic.desktop
+@@ -6,7 +6,7 @@ Comment=Multiplayer, deathmatch oriented first person 
+ Comment[de]=Deathmatch- und Mehrspieler-orientierter Ego-Shooter
+ Comment[fr]=Jeu de tir à la première personne multijoueur
+ Icon=xonotic
+-Exec=xonotic-sdl
++Exec=xonotic
+ Terminal=false
+ PrefersNonDefaultGPU=true
+ StartupNotify=false
