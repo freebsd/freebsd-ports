@@ -15,16 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-2.0
 
 BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__config:1141:6: No thread API
 
-PYTHON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-BUILD_DEPENDS=	msgpack>0:devel/msgpack-c \
+BUILD_DEPENDS=	msgpack-c>0:devel/msgpack-c \
 		msgpack-cxx>0:devel/msgpack-cxx \
-		${PYTHON_DEPENDS}
-RUN_DEPENDS=	${PYTHON_DEPENDS}
+		${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		cmake compiler python:3.6+ qt:5 shebangfix
+USES=		cmake compiler localbase python:3.6+ qt:5 shebangfix # localbase is for boost headers included from the headers installed by msgpack-cxx
 SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	python/plugin python/proxy resources/install/postinst python/test_dis
 USE_GITHUB=	yes
