@@ -1,4 +1,5 @@
 PORTNAME=	octave-forge-csg-toolkit
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.3
 CATEGORIES=	math
@@ -30,4 +31,8 @@ post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+CXXFLAGS+=	-stdlib=libstdc++
+
+.include <bsd.port.post.mk>
