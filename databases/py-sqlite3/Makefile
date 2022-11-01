@@ -35,6 +35,9 @@ post-extract:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_sqlite3*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_sqlite3*.so
+
+do-test:
+	@${PYTHON_CMD} -c 'import sqlite3'  # minimal smoke test
 
 .include <bsd.port.post.mk>
