@@ -1,6 +1,5 @@
 PORTNAME=	msgpack
 PORTVERSION=	4.1.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-cxx
@@ -11,8 +10,6 @@ WWW=		https://msgpack.org/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
-
-RUN_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
 
 USES=		cmake pathfix
 USE_GITHUB=	yes
