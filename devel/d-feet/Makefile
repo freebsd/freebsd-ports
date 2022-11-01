@@ -6,7 +6,7 @@ MASTER_SITES=	GNOME
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	05465d486afd.patch:-p1 # https://gitlab.gnome.org/GNOME/d-feet/-/merge_requests/32
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	D-Bus Python introspection debugger
 WWW=		https://wiki.gnome.org/Apps/DFeet
 
