@@ -1,8 +1,12 @@
 PORTNAME=	s2n-tls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.26
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
+
+PATCH_SITES=	https://github.com/aws/s2n-tls/pull/3586/commits/
+PATCHFILES=	d3eb1b478af7d86840f1e4e0150d34b46ddfed16.patch:-p1 # fix s2n_cipher_suites test, https://github.com/aws/s2n-tls/issues/3489
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 implementation of the TLS/SSL protocols
