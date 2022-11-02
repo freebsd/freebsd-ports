@@ -1,11 +1,11 @@
 PORTNAME=	dehydrated
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	security
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Pure BASH/ZSH Lets Encrypt client
-WWW=		https://github.com/dehydrated-io/dehydrated
+WWW=		https://dehydrated.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,28 +16,25 @@ USES=		shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	dehydrated-io
-NO_BUILD=	yes
-NO_ARCH=	yes
 SHEBANG_FILES=	docs/examples/hook.sh dehydrated
 
-PERIODIC_DIRS=	etc/periodic/weekly
-PERIODIC_FILES=	000.dehydrated
-
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	000.dehydrated pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_SINGLE=	SHELL
-OPTIONS_SINGLE_SHELL=	BASH ZSH
+OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	BASH
+OPTIONS_SINGLE=		SHELL
+OPTIONS_SINGLE_SHELL=	BASH ZSH
 
 BASH_DESC=	Use the Bourne Again shell (BASH)
 ZSH_DESC=	Use the Z shell (ZSH)
 
 BASH_RUN_DEPENDS=	bash:shells/bash
 ZSH_RUN_DEPENDS=	zsh:shells/zsh
-
-PORTDOCS=	*
+PERIODIC_DIRS=		etc/periodic/weekly
+PERIODIC_FILES=		000.dehydrated
 
 post-patch:
 .	for f in docs/examples/config dehydrated

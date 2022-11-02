@@ -1,2 +1,2 @@
-dehydrated is a pure BASH implementation of the ACME
-protocol used by Lets Encrypt.
+Dehydrated is a client for signing certificates with an ACME-server
+(e.g. Let's Encrypt or ZeroSSL) implemented as a relatively simple bash-script.
