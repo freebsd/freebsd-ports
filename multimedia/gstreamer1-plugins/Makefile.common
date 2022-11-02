@@ -180,6 +180,7 @@ BAD_GST_ALL_PLUGINS+= \
 		speed \
 		srtp \
 		subenc \
+		svthevcenc \
 		switchbin \
 		tests \
 		timecode \
@@ -190,6 +191,7 @@ BAD_GST_ALL_PLUGINS+= \
 		ttml \
 		uridownloader \
 		uvch264 \
+		v4l2codecs \
 		videofilters \
 		videoframe_audiolevel \
 		videoparsers \

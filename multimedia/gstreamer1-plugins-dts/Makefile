@@ -14,4 +14,4 @@ LIB_DEPENDS=	libdca.so:multimedia/libdca
 
 .include "${MASTERDIR}/Makefile"
 
-MESON_ARGS+=	-Dgpl=enabled -Dv4l2codecs=disabled -Dsvthevcenc=disabled
+MESON_ARGS+=	-Dgpl=enabled
