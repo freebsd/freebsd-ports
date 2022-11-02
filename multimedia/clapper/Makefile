@@ -1,6 +1,6 @@
 PORTNAME=	clapper
 DISTVERSION=	0.5.2
-CATEGORIES=	multimedia # wayland: requires WAYLAND=on in gstreamer1-plugins-gl
+CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple and modern GNOME media player

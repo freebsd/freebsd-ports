@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer GL graphics plugin
@@ -15,8 +15,6 @@ OPTIONS_DEFINE=	WAYLAND
 OPTIONS_DEFAULT=WAYLAND
 OPTIONS_SUB=	yes
 
-OPTIONS_UNSET=	WAYLAND
-
 GL_WINSYS=	"x11,egl"
 
 WAYLAND_VARS=			gl_winsys+=",wayland"
@@ -25,7 +23,7 @@ WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 
 USES=		gl
 USE_GL=		gl glu glesv2 egl
-USE_XORG+	=x11 \
+USE_XORG+=	x11 \
 		xext \
 		xcb
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
