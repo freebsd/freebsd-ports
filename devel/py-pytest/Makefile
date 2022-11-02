@@ -1,5 +1,5 @@
 PORTNAME=	pytest
-PORTVERSION=	7.1.3
+PORTVERSION=	7.2.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -17,8 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iniconfig>=0:devel/py-iniconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.12<2.0:devel/py-pluggy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py>=1.8.2:devel/py-py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=1.0.0:textproc/py-tomli@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}py>=1.8.2:devel/py-py@${PY_FLAVOR}
 TEST_DEPENDS=	bash:shells/bash \
 		lsof:sysutils/lsof \
 		${PYTHON_PKGNAMEPREFIX}argcomplete>=0:devel/py-argcomplete@${PY_FLAVOR} \
@@ -47,6 +46,10 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest4
 
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.12:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.0.0:textproc/py-tomli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}exceptiongroup>=0:devel/py-exceptiongroup@${PY_FLAVOR}
 .endif
 
 # XXX: test_pdb_custom_cls_with_set_trace fails
