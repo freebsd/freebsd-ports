@@ -1,8 +1,8 @@
 PORTNAME=	supertuxkart
-PORTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/supertuxkart/stk-code/releases/download/${PORTVERSION}/
-DISTNAME=	SuperTuxKart-${PORTVERSION}-src
+MASTER_SITES=	https://github.com/supertuxkart/stk-code/releases/download/${DISTVERSION}/
+DISTNAME=	SuperTuxKart-${DISTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
@@ -11,7 +11,6 @@ WWW=		http://supertuxkart.sourceforge.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_12_i386=	does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
 BROKEN_i386=	ld: error: cannot preempt symbol: alcOpenDevice
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
