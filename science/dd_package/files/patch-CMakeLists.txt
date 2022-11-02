@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-11-01 23:29:46 UTC
++++ CMakeLists.txt
+@@ -87,7 +87,7 @@ macro(enable_lto TARGET_NAME)
+ endmacro()
+ 
+ # add test code
+-if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR BUILD_DD_PACKAGE_TESTS)
++if (BUILD_DD_PACKAGE_TESTS)
+ 	if (NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/googletest/CMakeLists.txt")
+ 		message(FATAL_ERROR "GoogleTest submodule not cloned properly. Please run `git submodule update --init --recursive` from the main project directory")
+ 	endif ()

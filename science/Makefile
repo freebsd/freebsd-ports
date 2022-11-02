@@ -66,6 +66,7 @@
     SUBDIR += dakota
     SUBDIR += dalton
     SUBDIR += dcl
+    SUBDIR += dd_package
     SUBDIR += devisor
     SUBDIR += dftbplus
     SUBDIR += dftd4
