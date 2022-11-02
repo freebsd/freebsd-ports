@@ -1,3 +1,4 @@
+[
 { type: install
   message: <<EOM
 Default output selection is broken in qt6-multimedia. To workaround RPCS3 crash
