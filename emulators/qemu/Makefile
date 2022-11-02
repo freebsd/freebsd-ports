@@ -11,7 +11,7 @@ WWW=		https://wiki.qemu.org/Main_Page
 LICENSE=	GPLv2
 
 .if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
 # For i386 we have unknown type name 'vm_page_t'
 .endif
@@ -207,9 +207,9 @@ MAKE_ARGS+=	ARCH=ppc
 USE_GCC=	yes
 .endif
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc64*} || ${ARCH:Maarch64}
 CONFIGURE_ARGS+=	--disable-bsd-user
-MAKE_ARGS+=	ARCH=ppc64
+MAKE_ARGS+=	ARCH=${ARCH:C/powerpc64.*/ppc64/}
 PLIST_SUB+=	BSDUSER="@comment "
 .else
 PLIST_SUB+=	BSDUSER=""
@@ -226,7 +226,7 @@ post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE}
+	cd ${WRKSRC} && ${GMAKE} -j${MAKE_JOBS_NUMBER}
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
