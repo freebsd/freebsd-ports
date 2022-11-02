@@ -1,10 +1,10 @@
 PORTNAME=	pytest-asyncio
-PORTVERSION=	0.18.3
+PORTVERSION=	0.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Py.test plugin providing fixtures and markers for asyncio
 WWW=		https://pypi.org/project/pytest-asyncio/
 
@@ -27,5 +27,8 @@ USE_PYTHON=	autoplist distutils pytest
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${ECHO_CMD} 'from setuptools import setup; setup()' > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
