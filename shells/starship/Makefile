@@ -12,6 +12,8 @@ WWW=		https://starship.rs/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	cargo crashes on shells/starship on i386, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267529
+
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
