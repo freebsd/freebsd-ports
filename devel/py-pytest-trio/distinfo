@@ -1,3 +1,3 @@
-TIMESTAMP = 1603122012
-SHA256 (pytest-trio-0.7.0.tar.gz) = c01b741819aec2c419555f28944e132d3c711dae1e673d63260809bf92c30c31
-SIZE (pytest-trio-0.7.0.tar.gz) = 47784
+TIMESTAMP = 1667398018
+SHA256 (pytest-trio-0.8.0.tar.gz) = 8363db6336a79e6c53375a2123a41ddbeccc4aa93f93788651641789a56fb52e
+SIZE (pytest-trio-0.8.0.tar.gz) = 46525
