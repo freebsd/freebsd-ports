@@ -1,7 +1,8 @@
-PORTNAME=	py-pyjacklib
+PORTNAME=	pyjacklib
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.1.1
 CATEGORIES=	audio
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Python bindings for the Jack library
@@ -18,5 +19,7 @@ USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	jackaudio
 GH_PROJECT=	pyjacklib
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
