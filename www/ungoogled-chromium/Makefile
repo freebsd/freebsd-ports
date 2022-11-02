@@ -15,6 +15,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
+BROKEN_i386=	does not build due to 4k alignment
 
 PATCH_DEPENDS=	gpatch:devel/patch \
 		${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
@@ -224,7 +225,7 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 .include <bsd.port.pre.mk>
 
 .if ${OSREL} == "12.3"
-BROKEN=		does not compile, libc++ too old
+IGNORE=		does not compile, libc++ too old
 .endif
 
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
