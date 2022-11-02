@@ -15,9 +15,9 @@ OPTIONS_DEFINE=	WAYLAND
 OPTIONS_DEFAULT=WAYLAND
 OPTIONS_SUB=	yes
 
-GL_WINSYS=	"x11,egl"
+GL_WINSYS=	x11 egl
 
-WAYLAND_VARS=			gl_winsys+=",wayland"
+WAYLAND_VARS=			GL_WINSYS+=wayland
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libpng16.so:graphics/png
 
 MESON_ARGS+=	-Dgl=enabled \
-		-Dgl_winsys="${GL_WINSYS}" \
+		-Dgl_winsys=${GL_WINSYS:ts,} \
 		-Dgl_api=opengl,gles2 \
 		-Dgl_platform=glx,egl
 
