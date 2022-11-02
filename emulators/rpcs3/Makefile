@@ -13,6 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
+FLAVORS=	qt5 qt6
+
 BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
 		libcurl.so:ftp/curl \
@@ -46,6 +48,27 @@ CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
 LDFLAGS+=	-Wl,--as-needed # GLU
 ELF_FEATURES=	+noaslr,wxneeded:bin/${PORTNAME}
+
+.if ${FLAVOR:U} == qt6 || make(makesum) || make(fetch)
+PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:qt6
+PATCHFILES+=	052d8cceb679.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
+PKGNAMESUFFIX=	-${FLAVOR}
+USES:=		${USES:S/qt:5/qt:6/}
+USE_QT=		base multimedia svg
+PKGMESSAGE=	${.CURDIR}/pkg-message.${FLAVOR}
+
+CONFLICTS_INSTALL=	${PORTNAME}
+
+post-patch:	${FLAVOR}-post-patch
+${FLAVOR}-post-patch:
+# patch(1) doesn't support renames unlike git-apply(1)
+	@${MV}  ${WRKSRC}/rpcs3/rpcs3qt/qt_camera_video_surface.cpp \
+		${WRKSRC}/rpcs3/rpcs3qt/qt_camera_video_sink.cpp
+	@${MV}  ${WRKSRC}/rpcs3/rpcs3qt/qt_camera_video_surface.h \
+		${WRKSRC}/rpcs3/rpcs3qt/qt_camera_video_sink.h
+.else
+CONFLICTS_INSTALL=	${PORTNAME}-qt6
+.endif
 
 OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
 OPTIONS_DEFAULT=EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
