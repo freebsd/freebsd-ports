@@ -254,7 +254,7 @@ cardano:*:310:
 _arti:*:311:
 _sphinx:*:312:
 _fastdfs:*:313:
-# free: 314
+promscale:*:314:
 # free: 315
 # free: 316
 # free: 317

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: promscale
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable promscale
+# promscale_enable="YES"
+#
+# promscale_enable (bool):
+#     Set it to YES to enable promscale
+#     Set to NO by default
+# promscale_user (string):
+#     Set user that promscale will run under
+#     Default is "%%GRAFANA_USER%%"
+# promscale_group (string):
+#     Set group that own promscale files
+#     Default is "%%GRAFANA_GROUP%%"
+
+. /etc/rc.subr
+
+name=promscale
+rcvar=promscale_enable
+
+load_rc_config $name
+
+: ${promscale_enable:="NO"}
+: ${promscale_user:="%%USERS%%"}
+: ${promscale_group:="%%GROUPS%%"}
+
+pidfile="/var/run/${name}/${name}.pid"
+required_files="${promscale_config}"
+
+procname="%%PREFIX%%/bin/promscale"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -t ${name} /usr/bin/env ${promscale_env} ${procname} ${promscale_args}"
+
+start_precmd="promscale_start_precmd"
+
+promscale_start_precmd()
+{
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -m 0750 -o ${promscale_user} -g ${promscale_group} "/var/run/${name}"
+	fi
+}
+
+run_rc_command "$1"
