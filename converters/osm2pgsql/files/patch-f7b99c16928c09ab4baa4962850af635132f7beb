@@ -1,0 +1,50 @@
+From f7b99c16928c09ab4baa4962850af635132f7beb Mon Sep 17 00:00:00 2001
+From: Sarah Hoffmann <lonvia@denofr.de>
+Date: Sat, 22 Oct 2022 11:52:11 +0200
+Subject: [PATCH] always expect osm2pgsql in same path as osm2pgsql-replication
+
+Anything else causes issues with the installation process of cmake.
+---
+ CMakeLists.txt                | 3 +--
+ scripts/osm2pgsql-replication | 9 +++------
+ 2 files changed, 4 insertions(+), 8 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7fbc8ce06..dea959ed6 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -337,6 +337,5 @@ include(GNUInstallDirs)
+ if (ENABLE_INSTALL)
+     install(TARGETS osm2pgsql DESTINATION bin)
+     install(FILES default.style empty.style DESTINATION share/osm2pgsql)
+-    install(CODE "set(OSM2PGSQL_BINDIR ${CMAKE_INSTALL_FULL_BINDIR})
+-                  configure_file(${PROJECT_SOURCE_DIR}/scripts/osm2pgsql-replication ${CMAKE_INSTALL_FULL_BINDIR}/osm2pgsql-replication)")
++    install(PROGRAMS scripts/osm2pgsql-replication DESTINATION bin)
+ endif()
+diff --git a/scripts/osm2pgsql-replication b/scripts/osm2pgsql-replication
+index e721da350..0485169c8 100755
+--- scripts/osm2pgsql-replication
++++ scripts/osm2pgsql-replication
+@@ -51,10 +51,7 @@ except ImportError:
+ 
+ LOG = logging.getLogger()
+ 
+-# Will be replaced when installed via CMake.
+-INSTALL_PREFIX = '@OSM2PGSQL_BINDIR@/'
+-if INSTALL_PREFIX.startswith('@'):
+-    INSTALL_PREFIX = ''
++OSM2PGSQL_PATH = Path(__file__).parent.resolve() / 'osm2pgsql'
+ 
+ def pretty_format_timedelta(seconds):
+     minutes = int(seconds/60)
+@@ -493,8 +490,8 @@ def get_parser():
+                      help='File to save changes before they are applied to osm2pgsql.')
+     cmd.add_argument('--max-diff-size', type=int, default=500,
+                      help='Maximum data to load in MB (default: 500MB)')
+-    cmd.add_argument('--osm2pgsql-cmd', default=INSTALL_PREFIX + 'osm2pgsql',
+-                     help=f'Path to osm2pgsql command (default: {INSTALL_PREFIX}osm2pgsql)')
++    cmd.add_argument('--osm2pgsql-cmd', default=str(OSM2PGSQL_PATH),
++                     help=f'Path to osm2pgsql command (default: {OSM2PGSQL_PATH})')
+     cmd.add_argument('--once', action='store_true',
+                      help='Run updates only once, even when more data is available.')
+     cmd.add_argument('--post-processing', metavar='SCRIPT',

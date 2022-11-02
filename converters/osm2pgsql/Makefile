@@ -1,10 +1,12 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
-WWW=		https://wiki.openstreetmap.org/wiki/Osm2pgsql
+WWW=		https://osm2pgsql.org/ \
+		https://wiki.openstreetmap.org/wiki/Osm2pgsql \
+		https://github.com/openstreetmap/osm2pgsql
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
