@@ -22,7 +22,8 @@ TEST_DEPENDS=	p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
-
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	catdoc libxls xls2txt
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-root="${STAGEDIR}"
 CPE_VENDOR=	fossies
 
-CONFLICTS_INSTALL=	libxls
+CONFLICTS_INSTALL=	libxls p5-Spreadsheet-Read xls2txt
 
 PORTDATA=	*
 
