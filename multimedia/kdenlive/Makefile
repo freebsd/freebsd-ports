@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
-		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt5 \
+		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt@qt5 \
 		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools \
