@@ -1,7 +1,6 @@
 PORTNAME=	widelands
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0
-PORTREVISION=	4
+DISTVERSION=	1.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,18 +13,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libboost_system.so:devel/boost-libs \
-		libcurl.so:ftp/curl
+		libminizip.so:archivers/minizip
+BUILD_DEPENDS=	${PREFIX}/include/asio.hpp:net/asio
 
-USES=		cmake compiler:c++11-lib cpe gettext gl python:build sdl
+USES=		cmake compiler:c++11-lib cpe gettext gl pkgconfig \
+		python:build sdl
 USE_GITHUB=	yes
 USE_GL=		gl glew
 USE_SDL=	sdl2 mixer2 image2 ttf2
-CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
+CMAKE_ARGS=	-DWL_INSTALL_BINDIR=bin \
+		-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="${DATADIR}" \
 		-DWL_INSTALL_DOCDIR="${DOCSDIR}" \
 		-DWL_VERSION="${DISTVERSION}" \
 		-DWL_OPTIMIZE_FLAGS="" \
 		-Wno-dev
+CMAKE_BUILD_TYPE=None
 
 PORTSCOUT=	limit:^[0-9]+\.
 
