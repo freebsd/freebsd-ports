@@ -6,7 +6,7 @@ CATEGORIES=	databases
 MASTER_SITES=	https://binaries.cockroachdb.com/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Cloud-native SQL database that survive disasters
 WWW=		https://www.cockroachlabs.com/
 
