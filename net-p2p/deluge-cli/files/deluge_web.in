@@ -34,6 +34,8 @@ rcvar=${name}_enable
 command=%%PREFIX%%/bin/deluge-web
 command_interpreter=%%PYTHON_CMD%%
 
+pidfile=/var/run/${name}/pid
+
 start_precmd=${name}_prestart
 stop_postcmd=${name}_poststop
 
@@ -67,6 +69,9 @@ deluge_web_prestart()
 
 deluge_web_poststop()
 {
+	[ -e "$pidfile" ] && unlink $pidfile
+	[ -d "${pidfile%/pid}" ] && rmdir ${pidfile%/pid}
+
 	[ -e "$deluge_web_logfile" -a ! -s "$deluge_web_logfile" ] &&
 		unlink $deluge_web_logfile
 }
@@ -83,6 +88,6 @@ deluge_web_home=$(pw user show ${deluge_web_user} | cut -d : -f 9)
 : ${deluge_web_logfile:="/var/tmp/${name}.log"}
 
 required_dirs="$deluge_web_confdir"
-command_args="-f -c $required_dirs -L $deluge_web_loglevel -l $deluge_web_logfile"
+command_args="--config=$deluge_web_confdir --loglevel=$deluge_web_loglevel --logfile=$deluge_web_logfile --pidfile=$pidfile"
 
 run_rc_command "$1"

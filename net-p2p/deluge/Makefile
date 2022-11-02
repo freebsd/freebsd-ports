@@ -1,6 +1,6 @@
 PORTNAME=	deluge
-PORTVERSION=	2.0.3
-PORTREVISION=	5
+PORTVERSION=	2.1.1
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	net-p2p python
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${PY_FLAVOR} \
 		${PYGAME} \
+		${PY_PILLOW} \
 		xdg-utils>=1.0.2:devel/xdg-utils \
 		deluge:net-p2p/deluge-cli
 

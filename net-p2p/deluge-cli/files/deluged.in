@@ -74,6 +74,6 @@ load_rc_config $name
 : ${deluged_logfile:="/var/tmp/${name}.log"}
 
 required_dirs="$deluged_confdir"
-command_args="-c $required_dirs -L $deluged_loglevel -l $deluged_logfile -P $pidfile"
+command_args="--config=$deluged_confdir --loglevel=$deluged_loglevel --logfile=$deluged_logfile --pidfile=$pidfile"
 
 run_rc_command "$1"
