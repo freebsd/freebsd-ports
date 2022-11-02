@@ -669,6 +669,7 @@
     SUBDIR += postgresql-plproxy
     SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-prefix
+    SUBDIR += postgresql-promscale
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-rum
