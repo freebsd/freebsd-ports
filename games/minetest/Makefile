@@ -61,7 +61,7 @@ NCURSES_USES=		ncurses
 
 LUAJIT_DESC=		LuaJIT support
 LUAJIT_CMAKE_BOOL=	ENABLE_LUAJIT REQUIRE_LUAJIT
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUAJIT_USES=		luajit:luajit-openresty
 
 PGSQL_USES=		pgsql
 PGSQL_CMAKE_BOOL=	ENABLE_POSTGRESQL
