@@ -1,6 +1,5 @@
 PORTNAME=	spyder-kernels
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +11,7 @@ WWW=		https://github.com/spyder-ide/spyder-kernels
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# 2022-05-20:
-# Due to the increase of the minimum required version of jupyter_client to 7.3.1,
-# which is not yet included in the ports collection, and an actually required
-# version of ipykernel >= 6.9.2, which conflicts with ipykernel v5 (required for
-# other dependencies in the spyder universe), this port may misbehave in some
-# situations.
-# devel/py-ipykernel      should be >=6.9.2,<7, but is 5.5.6 (conflicts ...)
+# devel/py-ipykernel should be >=6.16.1,<7
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel>0:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipyparallel>0:devel/py-ipyparallel@${PY_FLAVOR} \
