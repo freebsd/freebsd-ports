@@ -1,6 +1,7 @@
 @dir libexec/couchdb3/lib/couch-%%VERSION%%/priv/couch_ejson_compare
 @dir(couchdb,couchdb,700) /var/db/couchdb3
 @dir(couchdb,couchdb,700) /var/log/couchdb3
+@dir(couchdb,couchdb,700) /var/run/couchdb3
 @sample(couchdb,couchdb,640) %%ETCDIR%%/local.ini.sample
 @sample(couchdb,couchdb,640) %%ETCDIR%%/vm.args.sample
 libexec/couchdb3/LICENSE

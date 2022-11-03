@@ -56,6 +56,7 @@ ERLVER?=	24
 LOGDIR?=	/var/log/${PORTNAME}
 LOGFILE?=	${LOGDIR}/couch.log
 RELDIR=		${APPDIR}/releases/${DISTVERSION}
+RUNDIR=		/var/run/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
@@ -113,7 +114,8 @@ post-install:
 		-exec ${STRIP_CMD} {} +
 	@${MKDIR} \
 		${STAGEDIR}${DBDIR} \
-		${STAGEDIR}${LOGDIR}
+		${STAGEDIR}${LOGDIR} \
+		${STAGEDIR}${RUNDIR}
 # fauxton UI is a required component
 	(cd ${WRKSRC}/share/www && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
