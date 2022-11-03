@@ -1,0 +1,6 @@
+include/libaiff/config.h
+include/libaiff/endian.h
+include/libaiff/libaiff.h
+lib/libaiff.so
+lib/libaiff.so.2
+lib/libaiff.so.2.0.0
