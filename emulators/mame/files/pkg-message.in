@@ -2,9 +2,11 @@
 { type: install
   message: <<EOM
 An example configuration file has been installed in
-"%%EXAMPLESDIR%%/%%MTARGET%%.ini"
-Should you create a "~/.%%MTARGET%%" directory and place it here or
-launch "%%MTARGET%% -createconfig" and place the %%MTARGET%%.ini created instead.
+"%%EXAMPLESDIR%%/%%MSUBTARGET%%.ini" This configuration can be copied to your
+"~/.%%MSUBTARGET%%" directory; alternatively, run "%%MSUBTARGET%% -createconfig" to
+create a clean copy of "%%MSUBTARGET%%.ini", which can be copied to
+"~/.%%MSUBTARGET%%", or elsewhere.
+To run %%MSUBTARGET%% with a custom path, run "%%MSUBTARGET%% -inipath path-to-%%MSUBTARGET%%.ini"
 EOM
 }
 ]

@@ -1,7 +1,3 @@
-MESS is an acronym that stands for Multi Emulator Super System. MESS will
-more or less faithfully reproduce computer and console systems on a PC.
-MESS can currently emulate over 250 systems from the last 5 decades.
-
-MESS emulates the hardware of the systems and sometimes utilizes ROM
-images to load programs and games. Therefore, these systems are NOT
-simulations, but the actual emulations of the hardware.
+Multi Emulator Super System (MESS), was a project extending MAME beyond
+documenting and emulating arcade machines and games. As of 2015-05-27 Both
+the MAME and MESS projects merged into MAME.

@@ -1,6 +1,5 @@
-MAME stands for Multiple Arcade Machine Emulator. When used in
-conjunction with images of the original arcade game's ROM and disk
-data, MAME attempts to reproduce that game as faithfully as possible
-on a more modern general-purpose computer. MAME can currently emulate
-several thousand different classic arcade video games from the late
-1970s through the modern era.
+MAME is a multi-purpose emulation framework, with the aim of documenting and
+preserving vintage software and hardware from becoming lost. When used with
+vintage firmware (or BIOS), and duplicated Read Only Memory (ROMs), on modern
+hardware, users are able to play and explore systems and games from
+approximately 1970 through to the modern era.
