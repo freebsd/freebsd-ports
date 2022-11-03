@@ -374,6 +374,7 @@
     SUBDIR += libepubgen
     SUBDIR += libextractor
     SUBDIR += libexttextcat
+    SUBDIR += libfyaml
     SUBDIR += libfo
     SUBDIR += libfolia
     SUBDIR += libgepub
