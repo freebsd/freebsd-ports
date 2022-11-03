@@ -1,6 +1,6 @@
---- spyder/dependencies.py.orig	2022-10-15 07:03:54 UTC
+--- spyder/dependencies.py.orig	2022-08-29 23:48:19 UTC
 +++ spyder/dependencies.py
-@@ -57,10 +57,10 @@ PYLSP_BLACK_REQVER = '>=1.2.0'
+@@ -57,15 +57,15 @@ PYZMQ_REQVER = '>=22.1.0'
  PYLS_SPYDER_REQVER = '>=0.4.0'
  PYXDG_REQVER = '>=0.26'
  PYZMQ_REQVER = '>=22.1.0'
@@ -13,3 +13,9 @@
  QTPY_REQVER = '>=2.1.0'
  RTREE_REQVER = '>=0.9.7'
  SETUPTOOLS_REQVER = '>=49.6.0'
+ SPHINX_REQVER = '>=0.6.6'
+-SPYDER_KERNELS_REQVER = '>=2.3.3;<2.4.0'
++SPYDER_KERNELS_REQVER = '>=2.3.3;<2.4.1'
+ TEXTDISTANCE_REQVER = '>=4.2.0'
+ THREE_MERGE_REQVER = '>=0.1.1'
+ # None for pynsist install for now

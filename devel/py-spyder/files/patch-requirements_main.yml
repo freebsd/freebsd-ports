@@ -1,4 +1,4 @@
---- requirements/main.yml.orig	2022-10-14 17:58:24 UTC
+--- requirements/main.yml.orig	2022-08-29 23:48:19 UTC
 +++ requirements/main.yml
 @@ -30,7 +30,7 @@ dependencies:
    - python-lsp-black >=1.2.0
@@ -9,3 +9,12 @@
    - qstylizer >=0.1.10
    - qtawesome >=1.0.2
    - qtconsole >=5.3.2,<5.4.0
+@@ -38,7 +38,7 @@ dependencies:
+   - rtree >=0.9.7
+   - setuptools >=49.6.0
+   - sphinx >=0.6.6
+-  - spyder-kernels >=2.3.3,<2.4.0
++  - spyder-kernels >=2.3.3,<2.4.1
+   - textdistance >=4.2.0
+   - three-merge >=0.1.1
+   - watchdog >=0.10.3

@@ -17,7 +17,7 @@
  )
  
  
-@@ -229,12 +228,12 @@ install_requires = [
+@@ -229,17 +228,17 @@ install_requires = [
      'pyqt5<5.16',
      'pyqtwebengine<5.16',
      'python-lsp-server[all]>=1.5.0,<1.6.0',
@@ -33,3 +33,9 @@
      'qtpy>=2.1.0',
      'rtree>=0.9.7',
      'setuptools>=49.6.0',
+     'sphinx>=0.6.6',
+-    'spyder-kernels>=2.3.3,<2.4.0',
++    'spyder-kernels>=2.3.3,<2.4.1',
+     'textdistance>=4.2.0',
+     'three-merge>=0.1.1',
+     'watchdog>=0.10.3'
