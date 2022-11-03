@@ -1,6 +1,6 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.0
+DISTVERSION=	1.20.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	0c99067b4bcfd12055965507b9fc797305c955f2
+GL_COMMIT=	a4e58aef6accef6f209fa7aec4130bf687086d18
 SHEBANG_FILES=	tools/entry.py
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
@@ -41,6 +41,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/sm.puri.Squeekboard.desktop \
 		share/locale/ca/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/el/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fa/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fi/LC_MESSAGES/${PORTNAME}.mo \
@@ -48,6 +49,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/fur/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/gl/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/he/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/hr/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/hu/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/it/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/ka/LC_MESSAGES/${PORTNAME}.mo \
@@ -66,6 +68,11 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/uk/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/zh_CN/LC_MESSAGES/${PORTNAME}.mo \
 		${NULL}
+
+post-extract:
+.if ${MESON_ARGS:M-Dnewer=true}
+	@${CP} -p ${WRKSRC}/Cargo.lock.newer ${WRKSRC}/Cargo.lock
+.endif
 
 post-patch:
 # Make each cargo subcommand very verbose
