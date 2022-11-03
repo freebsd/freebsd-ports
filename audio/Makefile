@@ -317,6 +317,7 @@
     SUBDIR += invada-studio-plugins-lv2
     SUBDIR += ir-lv2
     SUBDIR += jack
+    SUBDIR += jack-capture
     SUBDIR += jack-example-tools
     SUBDIR += jack-keyboard
     SUBDIR += jack-smf-utils

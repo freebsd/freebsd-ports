@@ -1,0 +1,9 @@
+jack_capture is a program for recording soundfiles with jack.
+
+The default operation of the program is executed by writing "jack_capture"
+in the terminal without any extra command line options:
+
+$ jack_capture
+
+...which will record what you hear in your loudspeakers
+into a stereo wav file.
