@@ -203,6 +203,7 @@ BAD_GST_ALL_PLUGINS+= \
 		webp \
 		webrtc \
 		webrtcdsp \
+		wildmidi \
 		winks \
 		winscreencap \
 		x265 \
