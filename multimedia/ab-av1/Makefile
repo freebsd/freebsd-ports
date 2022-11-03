@@ -1,6 +1,6 @@
 PORTNAME=	ab-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,78 +21,80 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
-CARGO_CRATES=	anyhow-1.0.65 \
+CARGO_CRATES=	anyhow-1.0.66 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bytes-1.2.1 \
-		cc-1.0.73 \
+		cc-1.0.74 \
 		cfg-if-1.0.0 \
-		clap-3.2.22 \
-		clap_complete-3.2.5 \
-		clap_derive-3.2.18 \
-		clap_lex-0.2.4 \
+		clap-4.0.18 \
+		clap_complete-4.0.3 \
+		clap_derive-4.0.18 \
+		clap_lex-0.3.0 \
 		console-0.15.1 \
 		encode_unicode-0.3.6 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		ffprobe-0.3.3 \
-		futures-0.3.24 \
-		futures-channel-0.3.24 \
-		futures-core-0.3.24 \
-		futures-executor-0.3.24 \
-		futures-io-0.3.24 \
-		futures-macro-0.3.24 \
-		futures-sink-0.3.24 \
-		futures-task-0.3.24 \
-		futures-util-0.3.24 \
-		getrandom-0.2.7 \
-		hashbrown-0.12.3 \
+		futures-0.3.25 \
+		futures-channel-0.3.25 \
+		futures-core-0.3.25 \
+		futures-executor-0.3.25 \
+		futures-io-0.3.25 \
+		futures-macro-0.3.25 \
+		futures-sink-0.3.25 \
+		futures-task-0.3.25 \
+		futures-util-0.3.25 \
+		getrandom-0.2.8 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
-		indexmap-1.9.1 \
 		indicatif-0.17.1 \
-		itoa-1.0.3 \
-		libc-0.2.134 \
+		io-lifetimes-0.7.5 \
+		itoa-1.0.4 \
+		libc-0.2.137 \
+		linux-raw-sys-0.0.46 \
 		log-0.4.17 \
 		memchr-2.5.0 \
-		mio-0.8.4 \
+		mio-0.8.5 \
 		num_cpus-1.13.1 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
-		once_cell-1.15.0 \
-		os_str_bytes-6.3.0 \
+		once_cell-1.16.0 \
+		os_str_bytes-6.3.1 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.46 \
+		proc-macro2-1.0.47 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
+		rustix-0.35.13 \
 		ryu-1.0.11 \
-		serde-1.0.145 \
-		serde_derive-1.0.145 \
-		serde_json-1.0.85 \
+		serde-1.0.147 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.87 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.7 \
 		strsim-0.10.0 \
-		syn-1.0.101 \
+		syn-1.0.103 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		textwrap-0.15.1 \
-		time-0.3.14 \
-		time-macros-0.2.4 \
+		terminal_size-0.2.1 \
+		time-0.3.16 \
+		time-core-0.1.0 \
+		time-macros-0.2.5 \
 		tokio-1.21.2 \
 		tokio-macros-1.8.0 \
 		tokio-process-stream-0.3.0 \
-		tokio-stream-0.1.10 \
+		tokio-stream-0.1.11 \
 		tokio-util-0.7.4 \
-		unicode-ident-1.0.4 \
+		unicode-ident-1.0.5 \
 		unicode-width-0.1.10 \
 		unix-named-pipe-0.2.0 \
 		version_check-0.9.4 \
@@ -102,11 +104,19 @@ CARGO_CRATES=	anyhow-1.0.65 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_msvc-0.36.1
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.0
 
 post-install:
 .for _shell in bash fish zsh
