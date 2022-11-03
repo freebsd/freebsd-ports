@@ -176,7 +176,6 @@ lib/emby-server/system/Microsoft.Win32.Registry.dll
 lib/emby-server/system/Microsoft.Win32.SystemEvents.dll
 lib/emby-server/system/NetVips.dll
 lib/emby-server/system/Newtonsoft.Json.dll
-lib/emby-server/system/PlaylistsNET.dll
 lib/emby-server/system/RSSDP.dll
 lib/emby-server/system/SMBLibrary.dll
 lib/emby-server/system/SQLitePCL.pretty.dll

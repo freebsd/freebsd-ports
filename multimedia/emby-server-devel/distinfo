@@ -1,6 +1,6 @@
-TIMESTAMP = 1666898679
-SHA256 (emby-server-devel/emby-server-freebsd13_4.8.0.15_amd64.tar.xz) = ecf081daee68f5501b87e8a163ad3c7141fcb8427fba7d84d84cc72d13a5adb9
-SIZE (emby-server-devel/emby-server-freebsd13_4.8.0.15_amd64.tar.xz) = 36778748
+TIMESTAMP = 1667500747
+SHA256 (emby-server-devel/emby-server-freebsd13_4.8.0.16_amd64.tar.xz) = 08e27b6705bb552845897fb0fde647deecc3ffd6e3ad8cc349a3f8350f5db2d7
+SIZE (emby-server-devel/emby-server-freebsd13_4.8.0.16_amd64.tar.xz) = 36770548
 SHA256 (emby-server-devel/ffdetect-2022_05_07-x64_freebsd13.tar.xz) = 88e82f76e5e82568bdd7800ec5c6d5c05d33c4c951dae0712d078112cee80e64
 SIZE (emby-server-devel/ffdetect-2022_05_07-x64_freebsd13.tar.xz) = 75308
 SHA256 (emby-server-devel/ffmpeg-2022_05_07.tar.gz) = 44506c7c4fa41c721819f9b530b021e11921ea2a1332ce947d8af5a06a2df01e
