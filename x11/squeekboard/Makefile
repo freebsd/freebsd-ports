@@ -29,6 +29,11 @@ GL_ACCOUNT=	World/Phosh
 GL_COMMIT=	2faa98d85f1142383ec8ad1487616c1a7ad1882f
 SHEBANG_FILES=	tools/entry.py
 MAKE_ENV=	${CARGO_ENV}
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+TARGET_ORDER_OVERRIDE=	750:cargo-configure
+CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 MESON_ARGS=	-Dstrict=false
 MESON_ARGS+=	-Donline=false # XXX Cargo.lock
 PLIST_FILES=	bin/${PORTNAME} \
@@ -49,57 +54,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/uk/LC_MESSAGES/${PORTNAME}.mo \
 		${NULL}
-
-CARGO_CRATES=	atk-0.7.0 \
-		atk-sys-0.9.1 \
-		autocfg-1.1.0 \
-		bitflags-1.2.1 \
-		cairo-rs-0.7.1 \
-		cairo-sys-rs-0.9.2 \
-		cc-1.0.73 \
-		clap-2.33.4 \
-		fragile-0.3.0 \
-		gdk-0.11.0 \
-		gdk-pixbuf-0.7.0 \
-		gdk-pixbuf-sys-0.9.1 \
-		gdk-sys-0.9.1 \
-		gio-0.7.0 \
-		gio-sys-0.9.1 \
-		glib-0.8.2 \
-		glib-sys-0.9.1 \
-		gobject-sys-0.9.1 \
-		gtk-0.7.0 \
-		gtk-sys-0.9.2 \
-		hashbrown-0.11.2 \
-		indexmap-1.8.0 \
-		lazy_static-1.4.0 \
-		libc-0.2.119 \
-		linked-hash-map-0.5.4 \
-		maplit-1.0.2 \
-		memmap-0.7.0 \
-		pango-0.7.0 \
-		pango-sys-0.9.1 \
-		pkg-config-0.3.24 \
-		proc-macro2-1.0.36 \
-		quote-1.0.15 \
-		ryu-1.0.9 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_yaml-0.8.23 \
-		syn-1.0.86 \
-		textwrap-0.11.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		xkbcommon-0.4.0 \
-		yaml-rust-0.4.5
-CARGO_BUILD=	no
-CARGO_INSTALL=	no
-CARGO_TEST=	no
-TARGET_ORDER_OVERRIDE=	750:cargo-configure
-CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 
 post-patch:
 # Make each cargo subcommand very verbose
