@@ -1253,6 +1253,7 @@
     SUBDIR += tor
     SUBDIR += tor-devel
     SUBDIR += totp-cli
+    SUBDIR += tpm-quote-tools
     SUBDIR += tpm-tools
     SUBDIR += tpm2-abrmd
     SUBDIR += tpm2-tools
