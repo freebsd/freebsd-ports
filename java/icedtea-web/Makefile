@@ -1,9 +1,7 @@
 PORTNAME=	icedtea-web
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.8
 DISTVERSIONPREFIX=	icedtea-web-
-PORTREVISION=	23
 CATEGORIES=	java www
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
@@ -18,17 +16,14 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		${JUNIT_JAR}:java/junit
 RUN_DEPENDS=	bash:shells/bash
 
-MAKE_JOBS_UNSAFE=yes
-
 GNU_CONFIGURE=	yes
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake \
+		pkgconfig shebangfix xorg
 USE_JAVA=	yes
 JAVA_VERSION=	8
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-USE_PERL5=	build
 USE_XORG=	x11
-USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake perl5 \
-		pkgconfig shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdoptOpenJDK
 GH_PROJECT=	IcedTea-Web
@@ -53,11 +48,12 @@ TEST_TARGET=	check
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
-OPTIONS_DEFINE=	DOCS PLUGIN RHINO RUST TAGSOUP
-OPTIONS_DEFAULT=PLUGIN RUST
+OPTIONS_DEFINE=	DOCS PLUGIN PLUGINJAR RHINO RUST TAGSOUP
+OPTIONS_DEFAULT=PLUGINJAR RUST
 OPTIONS_SUB=	yes
 
 PLUGIN_DESC=	Enable the browser plug-in
+PLUGINJAR_DESC=	Enable plugin.jar for itweb-javaws -html
 RHINO_DESC=	Add support for Proxy Auto Config files
 RUST_DESC=	Build modern launchers written in Rust
 TAGSOUP_DESC=	Enable cleaning up of malformed JNLP files
@@ -77,33 +73,25 @@ TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
 
-PLUGIN_CONFIGURE_ENABLE=native-plugin pluginjar
+PLUGIN_CONFIGURE_ENABLE=native-plugin
 PLUGIN_CONFIGURE_ENV=	MOZILLA_CFLAGS="-I${WRKDIR}/npapi-headers -DXP_UNIX" \
 			MOZILLA_LIBS=" " # needs to be set and non-empty!
 PLUGIN_DISTFILES=	libxul-npapi-headers-45.9.0${EXTRACT_SUFX}:npapi
 PLUGIN_MASTER_SITES=	LOCAL/tobik:npapi
-PLUGIN_PORTDOCS=	plugin
 PLUGIN_TEST_TARGET=	plugin-tests
 PLUGIN_USE=		GNOME=glib20
 PLUGIN_USES=		webplugin:native gnome
 PLUGIN_VARS=		WEBPLUGIN_DIR=${PREFIX}/lib \
 			WEBPLUGIN_FILES=IcedTeaPlugin.so
+PLUGIN_IMPLIES=	PLUGINJAR
+
+PLUGINJAR_CONFIGURE_ENABLE=	pluginjar
+PLUGINJAR_PORTDOCS=		plugin
 
 HAMCREST_JAR=	${JAVALIBDIR}/hamcrest.jar
 JUNIT_JAR=	${JAVALIBDIR}/junit.jar
 
 .include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION:M*6*}
-pre-extract:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "IMPORTANT: To build IcedTea-Web ${PORTVERSION}, you have to turn on 'ICEDTEA' option"
-	@${ECHO_MSG} "for ${JAVA_PORT} (default).  Otherwise, it will neither build nor work."
-	@${ECHO_MSG}
-.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
-	@sleep 5
-.  endif
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^sed\([[:space:]]\)|gsed\1|' \

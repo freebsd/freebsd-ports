@@ -1,6 +1,6 @@
---- Makefile.am.orig	2019-08-02 14:08:17.000000000 +0200
-+++ Makefile.am	2020-01-14 17:43:47.000000000 +0100
-@@ -331,9 +331,9 @@
+--- Makefile.am.orig	2021-05-17 09:24:37 UTC
++++ Makefile.am
+@@ -336,9 +336,9 @@ export EXPORTED_PACK200=$(SYSTEM_JDK_DIR)/bin/pack200
  #end of exported autoconf copies
  
  # binary names
@@ -12,7 +12,7 @@
  
  if WINDOWS_OR_INCLUDE_BATS
  # convert Unix newlines (LF) to DOS format:
-@@ -393,7 +393,7 @@
+@@ -398,7 +398,7 @@ if ENABLE_PLUGINJAR
  endif
  	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(NETX_JAR)
  	${INSTALL_DATA} $(NETX_SRCDIR)/javaws_splash.png $(DESTDIR)$(SPLASH_PNG)
@@ -21,7 +21,7 @@
  	mkdir -p $(DESTDIR)$(MODULARJDK_ARGS_DIR)
  	cp launcher.build/$(MODULARJDK_ARGS_FILE) $(MODULARJDK_ARGS_LOCATION)
  if ENABLE_NATIVE_LAUNCHERS
-@@ -402,9 +402,9 @@
+@@ -407,9 +407,9 @@ if ENABLE_NATIVE_LAUNCHERS
  	${INSTALL_PROGRAM} launcher.build/$(policyeditor) $(DESTDIR)$(bindir)
  endif
  if ENABLE_SHELL_LAUNCHERS
@@ -34,7 +34,7 @@
  if WINDOWS_OR_INCLUDE_BATS
  	${INSTALL_PROGRAM} launcher.build/$(javaws).bat $(DESTDIR)$(bindir)
  	${INSTALL_PROGRAM} launcher.build/$(itweb_settings).bat $(DESTDIR)$(bindir)
-@@ -426,13 +426,15 @@
+@@ -431,13 +431,15 @@ if ENABLE_DOCS
  	(cd ${TOP_BUILD_DIR}/docs/netx; \
  	 for files in $$(find . -type f); \
  	 do \
@@ -52,7 +52,7 @@
  	 done)
  endif
  endif
-@@ -544,7 +546,7 @@
+@@ -571,7 +573,7 @@ remove-empty-linux-only-dirs:
  # all generated manpages must be removed one by one
  # shell (only shell!) launchers must go away
  uninstall-linux-only:
@@ -61,7 +61,7 @@
  	KNOWN_DIRS="man1 de/man1 pl/man1 cs/man1" ; \
  	for file in $$KNOWN_MANS ; do \
  	  for dir in $$KNOWN_DIRS ; do \
-@@ -868,7 +870,7 @@
+@@ -901,7 +903,7 @@ stamps/generate-docs.stamp: stamps/netx.stamp
  	echo "<body><h3>$(PLUGIN_VERSION) docs:</h3>"  >> "$$HTML_DOCS_INDEX" ; \
  	for LANG_ID in en_US.UTF-8 cs_CZ.UTF-8 pl_PL.UTF-8 de_DE.UTF-8 ;  do \
  	  ID=`echo "$$LANG_ID" | head -c 2` ; \
@@ -70,7 +70,7 @@
  	  export LANG=$$LANG_ID; \
  	  mkdir "$$HTML_DOCS_TARGET_DIR/$$ID" ; \
  	  echo "<li><a href='$$ID/icedtea-web.html'>$$LANG_ID</a></li>"  >> "$$HTML_DOCS_INDEX" ; \
-@@ -910,7 +912,8 @@
+@@ -943,7 +945,8 @@ stamps/netx.stamp: netx-source-files.txt stamps/netx-h
  	(cd $(NETX_RESOURCE_DIR); \
  	 for files in $$(find . -type f); \
  	 do \
@@ -80,7 +80,7 @@
  	   $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}; \
  	 done)
  	cp $(CPA) $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
-@@ -940,9 +943,9 @@
+@@ -973,9 +976,9 @@ clean-netx:
  	rm -f $(NETX_RESOURCE_DIR)/{NEWS,AUTHORS,COPYING,ChangeLog}.html
  
  clean-desktop-files:
@@ -92,7 +92,7 @@
  
  
  # launcher run args:
-@@ -1123,7 +1126,7 @@
+@@ -1156,7 +1159,7 @@ endif
  	fi
  
  javaws.desktop: javaws.desktop.in
@@ -101,7 +101,7 @@
  
  itweb-settings.desktop: $(srcdir)/itweb-settings.desktop.in
  	sed "s#PATH_TO_ITWEB_SETTINGS#$(bindir)/$(ITWEB_SETTINGS)#" \
-@@ -1131,7 +1134,7 @@
+@@ -1164,7 +1167,7 @@ itweb-settings.desktop: $(srcdir)/itweb-settings.deskt
  
  policyeditor.desktop: $(srcdir)/policyeditor.desktop.in
  	sed "s#PATH_TO_POLICYEDITOR#$(bindir)/$(POLICYEDITOR)#" \
@@ -110,7 +110,7 @@
  
  # documentation
  
-@@ -1271,7 +1274,7 @@
+@@ -1304,7 +1307,7 @@ stamps/netx-dist-tests-prepare-reproducers.stamp: stam
  	      notSrcFiles=`find . -mindepth 1 -type f \! -name "*.java" | sed "s/.\/*//"` ; \
  	      $(SYSTEM_JDK_DIR)/bin/javac -cp $(NETX_DIR)/lib/classes.jar\$(CLASSPATH_SEPARATOR)$(TOP_BUILD_DIR)/liveconnect -d "$(REPRODUCERS_BUILD_DIR)/$$dir/" $$srcFiles ; \
  	      if [ -n "$$notSrcFiles" ] ; then \
@@ -119,7 +119,7 @@
  	      fi ; \
  	      cd "$(REPRODUCERS_BUILD_DIR)/$$dir/" ; \
  	      if [ -f $(META_MANIFEST) ]; \
-@@ -1339,7 +1342,7 @@
+@@ -1372,7 +1375,7 @@ stamps/change-dots-to-paths.stamp: stamps/netx-dist-te
  	      path="`dirname $$slashed_dir`" ; \
  	      file="`basename $$slashed_dir`.jar" ; \
  	      echo "copying $$dir.jar to $$path as $$file" ; \
@@ -128,7 +128,7 @@
  	      cp $$dir".jar" "$$path"/"$$file" ; \
  	    fi ; \
  	  done ; \
-@@ -1485,7 +1488,7 @@
+@@ -1518,7 +1521,7 @@ $(REPRODUCERS_CLASS_NAMES):
  	whiteListed=$(RUN_WHITELIST_FILTER); \
  	cd $(TEST_EXTENSIONS_TESTS_DIR) ; \
  	class_names= ; \
@@ -137,7 +137,7 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  INCLUDE="NO" ; \
-@@ -1674,7 +1677,7 @@
+@@ -1707,7 +1710,7 @@ $(TESTS_DIR)/$(REPORT_STYLES_DIRNAME):
  $(UNIT_CLASS_NAMES):
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names= ; \
@@ -146,7 +146,7 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  class_names="$$class_names $$class_name" ; \
-@@ -1685,10 +1688,7 @@
+@@ -1718,10 +1721,7 @@ stamps/run-netx-unit-tests.stamp: stamps/netx-unit-tes
   $(TESTS_DIR)/$(REPORT_STYLES_DIRNAME)  $(UNIT_CLASS_NAMES)
  	filename=" " ; \
  	cd $(NETX_UNIT_TEST_SRCDIR) ; \
@@ -158,7 +158,7 @@
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names=`cat $(UNIT_CLASS_NAMES)` ; \
  	CLASSPATH="$(call joinsegments, $(NETX_DIR)/lib/classes.jar $(TOP_BUILD_DIR)/liveconnect/lib/classes.jar $(JUNIT_RUNTIME) $(MSLINKS_JAR) $(JUNIT_RUNNER_JAR) $(TEST_EXTENSIONS_DIR) . $(TEST_EXTENSIONS_SRCDIR) $(TAGSOUP_JAR))" ; \
-@@ -2012,9 +2012,7 @@
+@@ -2045,9 +2045,7 @@ stamps/plugin-tests.stamp: $(PLUGIN_TEST_SRCS) stamps/
  	 $(PLUGIN_TEST_SRCS) ;
  	$(SYSTEM_JDK_DIR)/bin/jar cf plugin/tests/LiveConnect/PluginTest.jar \
  	  plugin/tests/LiveConnect/*.class ;

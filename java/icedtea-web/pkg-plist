@@ -34,6 +34,6 @@ share/applications/itweb-policyeditor.desktop
 share/applications/itweb-settings.desktop
 %%DATADIR%%/javaws.jar
 %%DATADIR%%/javaws_splash.png
-%%PLUGIN%%%%DATADIR%%/jsobject.jar
-%%PLUGIN%%%%DATADIR%%/plugin.jar
+%%PLUGINJAR%%%%DATADIR%%/jsobject.jar
+%%PLUGINJAR%%%%DATADIR%%/plugin.jar
 share/pixmaps/itweb-javaws.png

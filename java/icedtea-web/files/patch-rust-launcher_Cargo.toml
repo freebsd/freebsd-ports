@@ -1,5 +1,5 @@
---- rust-launcher/Cargo.toml.orig	2020-06-04 13:08:14.000000000 +0200
-+++ rust-launcher/Cargo.toml	2020-06-15 09:34:55.000000000 +0200
+--- rust-launcher/Cargo.toml.orig	2021-05-17 09:24:37 UTC
++++ rust-launcher/Cargo.toml
 @@ -2,7 +2,3 @@
  name = "launcher"
  version = "1.8.0"
