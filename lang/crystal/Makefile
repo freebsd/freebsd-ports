@@ -1,5 +1,5 @@
 PORTNAME=	crystal
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -33,6 +33,7 @@ USES=		compiler gmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 
+COMMIT_ID=		879691b2e326
 LLVM_VERSION?=		14
 BOOTSTRAP_LLVM_VERSION=	14
 BOOTSTRAP_VERSION=	1.5.1
@@ -40,6 +41,7 @@ BOOTSTRAP_NAME=		crystal-${BOOTSTRAP_VERSION}-${ARCH}-llvm${BOOTSTRAP_LLVM_VERSI
 
 MAKE_ARGS=	LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
 		CRYSTAL_CONFIG_PATH="lib:${PREFIX}/lib/${PORTNAME}" \
+		CRYSTAL_CONFIG_BUILD_COMMIT="${COMMIT_ID}" \
 		CRYSTAL_CACHE_DIR="${WRKDIR}/cache" \
 		FLAGS="--progress --stats --threads ${MAKE_JOBS_NUMBER} ${OPT_FLAGS}"
 
