@@ -1,7 +1,8 @@
 PORTNAME=	rsgain
-DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1
+DISTVERSIONSUFFIX=	-source
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/complexlogic/rsgain/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	ReplayGain 2.0 tagging utility
@@ -16,12 +17,9 @@ LIB_DEPENDS=	libebur128.so:audio/libebur128 \
 		libinih.so:devel/inih \
 		libavcodec.so:multimedia/ffmpeg
 
-USES=		cmake compiler:c++2b-lang pkgconfig
+USES=		cmake compiler:c++2b-lang pkgconfig tar:xz
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	complexlogic
-
-CXXFLAGS+=	-pthread
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
