@@ -85,6 +85,7 @@ USES+=		libedit
 # For building plugins (percona-pam-for-mysql, etc)
 # Currently do nothing special
 USES+=		libedit
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 .else
 LIB_DEPENDS+=	libcurl.so:ftp/curl
 
