@@ -11,8 +11,6 @@ EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	c17d71240b23.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/9042 mainline-merge
-PATCHFILES+=	717c8ded8210.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/9178
-PATCHFILES+=	d7d7ae821978.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/9181
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -41,7 +39,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	9fc1bcc7b
+GH_TAGNAME=	6f6be615f
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.3.213:Vulkan_Headers/externals/Vulkan-Headers \
