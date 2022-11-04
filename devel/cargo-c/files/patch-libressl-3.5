@@ -1,0 +1,252 @@
+Compatibility with LibreSSL 3.5, taken from
+<https://github.com/sfackler/rust-openssl/commit/ea03bc0200a5>
+
+--- cargo-crates/openssl-sys-0.9.72/build/cfgs.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/build/cfgs.rs
+@@ -34,6 +34,9 @@ pub fn get(openssl_version: Option<u64>, libressl_vers
+         if libressl_version >= 0x3_03_02_00_0 {
+             cfgs.push("libressl332");
+         }
++        if libressl_version >= 0x3_05_00_00_0 {
++            cfgs.push("libressl350");
++        }
+     } else {
+         let openssl_version = openssl_version.unwrap();
+ 
+--- cargo-crates/openssl-sys-0.9.72/build/main.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/build/main.rs
+@@ -254,6 +254,7 @@ See rust-openssl README for more information:
+             (3, 3, _) => ('3', '3', 'x'),
+             (3, 4, 0) => ('3', '4', '0'),
+             (3, 4, _) => ('3', '4', 'x'),
++            (3, 5, _) => ('3', '5', 'x'),
+             _ => version_error(),
+         };
+ 
+@@ -296,7 +297,7 @@ fn version_error() -> ! {
+         "
+ 
+ This crate is only compatible with OpenSSL (version 1.0.1 through 1.1.1, or 3.0.0), or LibreSSL 2.5
+-through 3.4.1, but a different version of OpenSSL was found. The build is now aborting
++through 3.5, but a different version of OpenSSL was found. The build is now aborting
+ due to this version mismatch.
+ 
+ "
+--- cargo-crates/openssl-sys-0.9.72/src/bn.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/src/bn.rs
+@@ -43,7 +43,7 @@ extern "C" {
+     pub fn BN_mul(r: *mut BIGNUM, a: *const BIGNUM, b: *const BIGNUM, ctx: *mut BN_CTX) -> c_int;
+     pub fn BN_sqr(r: *mut BIGNUM, a: *const BIGNUM, ctx: *mut BN_CTX) -> c_int;
+     pub fn BN_set_negative(bn: *mut BIGNUM, n: c_int);
+-    #[cfg(ossl110)]
++    #[cfg(any(ossl110, libressl350))]
+     pub fn BN_is_negative(b: *const ::BIGNUM) -> c_int;
+ 
+     pub fn BN_div(
+@@ -153,7 +153,7 @@ extern "C" {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         extern "C" {
+             pub fn BN_get_rfc2409_prime_768(bn: *mut BIGNUM) -> *mut BIGNUM;
+             pub fn BN_get_rfc2409_prime_1024(bn: *mut BIGNUM) -> *mut BIGNUM;
+--- cargo-crates/openssl-sys-0.9.72/src/hmac.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/src/hmac.rs
+@@ -3,7 +3,7 @@ use libc::*;
+ use *;
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         extern "C" {
+             pub fn HMAC_CTX_new() -> *mut HMAC_CTX;
+             pub fn HMAC_CTX_free(ctx: *mut HMAC_CTX);
+--- cargo-crates/openssl-sys-0.9.72/src/ossl_typ.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/src/ossl_typ.rs
+@@ -40,7 +40,7 @@ cfg_if! {
+     }
+ }
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum BIGNUM {}
+     } else {
+         #[repr(C)]
+@@ -1015,7 +1015,7 @@ cfg_if! {
+ pub enum COMP_CTX {}
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum COMP_METHOD {}
+     } else {
+         #[repr(C)]
+--- cargo-crates/openssl-sys-0.9.72/src/x509.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/src/x509.rs
+@@ -25,7 +25,7 @@ stack!(stack_st_X509_EXTENSION);
+ stack!(stack_st_X509_ATTRIBUTE);
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum X509_REQ_INFO {}
+     } else {
+         #[repr(C)]
+@@ -40,7 +40,7 @@ cfg_if! {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum X509_CRL {}
+     } else {
+         #[repr(C)]
+@@ -67,7 +67,7 @@ cfg_if! {
+ stack!(stack_st_X509_CRL);
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum X509_CRL_INFO {}
+     } else {
+         #[repr(C)]
+@@ -85,7 +85,7 @@ cfg_if! {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum X509_REVOKED {}
+     } else {
+         #[repr(C)]
+@@ -103,7 +103,7 @@ cfg_if! {
+ stack!(stack_st_X509_REVOKED);
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum X509_REQ {}
+     } else {
+         #[repr(C)]
+@@ -117,7 +117,7 @@ cfg_if! {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         pub enum X509_CINF {}
+     } else {
+         #[repr(C)]
+@@ -140,7 +140,7 @@ cfg_if! {
+ stack!(stack_st_X509);
+ 
+ cfg_if! {
+-    if #[cfg(not(ossl110))] {
++    if #[cfg(not(any(ossl110, libressl350)))] {
+         pub const X509_LU_FAIL: c_int = 0;
+         pub const X509_LU_X509: c_int = 1;
+         pub const X509_LU_CRL: c_int = 2;
+@@ -221,12 +221,12 @@ extern "C" {
+ 
+ const_ptr_api! {
+     extern "C" {
+-        #[cfg(ossl102)]
++        #[cfg(any(ossl102, libressl350))]
+         pub fn X509_ALGOR_get0(
+-            paobj: *mut #[const_ptr_if(ossl110)] ASN1_OBJECT,
++            paobj: *mut #[const_ptr_if(any(ossl110, libressl350))] ASN1_OBJECT,
+             pptype: *mut c_int,
+-            ppval: *mut #[const_ptr_if(ossl110)] c_void,
+-            alg: #[const_ptr_if(ossl110)] X509_ALGOR,
++            ppval: *mut #[const_ptr_if(any(ossl110, libressl350))] c_void,
++            alg: #[const_ptr_if(any(ossl110, libressl350))] X509_ALGOR,
+         );
+     }
+ }
+@@ -343,7 +343,7 @@ const_ptr_api! {
+     }
+ }
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         extern "C" {
+             pub fn X509_set1_notBefore(x: *mut ::X509, tm: *const ::ASN1_TIME) -> c_int;
+             pub fn X509_set1_notAfter(x: *mut ::X509, tm: *const ::ASN1_TIME) -> c_int;
+@@ -356,10 +356,10 @@ cfg_if! {
+     }
+ }
+ extern "C" {
+-    #[cfg(ossl110)]
++    #[cfg(any(ossl110, libressl350))]
+     pub fn X509_REQ_get_version(req: *const X509_REQ) -> c_long;
+     pub fn X509_REQ_set_version(req: *mut X509_REQ, version: c_long) -> c_int;
+-    #[cfg(ossl110)]
++    #[cfg(any(ossl110, libressl350))]
+     pub fn X509_REQ_get_subject_name(req: *const X509_REQ) -> *mut X509_NAME;
+ }
+ const_ptr_api! {
+@@ -632,7 +632,7 @@ extern "C" {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         extern "C" {
+             pub fn X509_OBJECT_free(a: *mut X509_OBJECT);
+         }
+--- cargo-crates/openssl-sys-0.9.72/src/x509_vfy.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-sys-0.9.72/src/x509_vfy.rs
+@@ -204,7 +204,7 @@ extern "C" {
+     pub fn X509_STORE_CTX_set_error(ctx: *mut X509_STORE_CTX, error: c_int);
+ }
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         const_ptr_api! {
+             extern "C" {
+                 pub fn X509_STORE_CTX_get0_chain(ctx: #[const_ptr_if(ossl300)] X509_STORE_CTX) -> *mut stack_st_X509;
+--- cargo-crates/openssl-0.10.38/build.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-0.10.38/build.rs
+@@ -78,5 +78,9 @@ fn main() {
+         if version >= 0x3_04_00_00_0 {
+             println!("cargo:rustc-cfg=libressl340");
+         }
++
++        if version >= 0x3_05_00_00_0 {
++            println!("cargo:rustc-cfg=libressl350");
++        }
+     }
+ }
+--- cargo-crates/openssl-0.10.38/src/bn.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-0.10.38/src/bn.rs
+@@ -36,7 +36,7 @@ use crate::string::OpensslString;
+ use crate::{cvt, cvt_n, cvt_p};
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         use ffi::{
+             BN_get_rfc2409_prime_1024, BN_get_rfc2409_prime_768, BN_get_rfc3526_prime_1536,
+             BN_get_rfc3526_prime_2048, BN_get_rfc3526_prime_3072, BN_get_rfc3526_prime_4096,
+--- cargo-crates/openssl-0.10.38/src/x509/mod.rs.orig	2022-09-19 15:35:02 UTC
++++ cargo-crates/openssl-0.10.38/src/x509/mod.rs
+@@ -1568,7 +1568,7 @@ cfg_if! {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         use ffi::{
+             X509_ALGOR_get0, ASN1_STRING_get0_data, X509_STORE_CTX_get0_chain, X509_set1_notAfter,
+             X509_set1_notBefore, X509_REQ_get_version, X509_REQ_get_subject_name,
+@@ -1623,7 +1623,7 @@ cfg_if! {
+ }
+ 
+ cfg_if! {
+-    if #[cfg(ossl110)] {
++    if #[cfg(any(ossl110, libressl350))] {
+         use ffi::X509_OBJECT_free;
+     } else {
+         #[allow(bad_style)]
