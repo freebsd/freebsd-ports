@@ -1,0 +1,11 @@
+--- config.h.cmake.in.orig	2022-10-30 20:20:09 UTC
++++ config.h.cmake.in
+@@ -67,7 +67,7 @@
+ #define ODE_PLATFORM_PS3
+ #elif defined(_MSC_VER) || defined(__CYGWIN32__) || defined(__MINGW32__)
+ #define ODE_PLATFORM_WINDOWS
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__FreeBSD__)
+ #define ODE_PLATFORM_LINUX
+ #elif defined(__APPLE__) && defined(__MACH__)
+ #define ODE_PLATFORM_OSX

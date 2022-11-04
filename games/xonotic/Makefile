@@ -1,6 +1,6 @@
 PORTNAME=	xonotic
 PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/

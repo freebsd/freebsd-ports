@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2020-07-30 13:27:35 UTC
++++ CMakeLists.txt
+@@ -568,8 +568,8 @@ endif()
+ if(ODE_WITH_LIBCCD)
+ 	if(ODE_WITH_LIBCCD_SYSTEM)
+ 		find_package(ccd)
+-		target_compile_definitions(ode PRIVATE -DdLIBCCD_ENABLED -DdLIBCCD_SYSTEM)
+-		target_link_libraries(ODE ccd::ccd)
++		target_compile_definitions(ODE PRIVATE -DdLIBCCD_ENABLED -DdLIBCCD_SYSTEM)
++		target_link_libraries(ODE ccd)
+ 	else()
+ 		target_compile_definitions(ODE PRIVATE -DdLIBCCD_ENABLED -DdLIBCCD_INTERNAL)
+ 		target_include_directories(
