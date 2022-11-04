@@ -514,6 +514,12 @@ bin/afni_seeds_per_space.txt
 bin/afni_skeleton.py
 bin/afni_system_check.py
 bin/afni_vcheck
+bin/afnisumafatcat_logo_128sq.png
+bin/afnisumafatcat_logo_905sq.png
+bin/afnisumagui_logo_128sq.jpg
+bin/afnisumagui_logo_128sq.png
+bin/afnisumagui_logo_905sq.jpg
+bin/afnisumagui_logo_905sq.png
 bin/aiv
 bin/align_epi_anat.py
 bin/ap_run_simple_rest.tcsh
@@ -556,6 +562,9 @@ bin/fat_proc_imit2w_from_t1w
 bin/fat_proc_map_to_dti
 bin/fat_proc_select_vols
 bin/fat_roi_row.py
+bin/fatcat_logo_128sq.jpg
+bin/fatcat_logo_128sq.png
+bin/fatcat_logo_orig1200sq.png
 bin/fdrval
 bin/fftest
 bin/file_tool
@@ -630,6 +639,10 @@ bin/stimband
 bin/strblast
 bin/suma
 bin/suma_change_spec
+bin/sumagui_logo_128sq.jpg
+bin/sumagui_logo_128sq.png
+bin/sumagui_logo_905sq.jpg
+bin/sumagui_logo_905sq.png
 bin/tedana_wrapper.py
 bin/tfim
 bin/timing_tool.py
@@ -1313,6 +1326,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_sudre_gustavo.jpg
 %%DATADIR%%/funstuff/face_sule_tinaz.jpg
 %%DATADIR%%/funstuff/face_sumabucks.jpg
+%%DATADIR%%/funstuff/face_sumagui_logo.jpg
 %%DATADIR%%/funstuff/face_tainan.jpg
 %%DATADIR%%/funstuff/face_tammy_tran.jpg
 %%DATADIR%%/funstuff/face_tang.jpg
