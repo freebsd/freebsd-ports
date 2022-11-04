@@ -4,7 +4,6 @@
 %%PORTNAME%%/bin/dendrite-monolith-server
 %%PORTNAME%%/bin/dendrite-polylith-multi
 %%PORTNAME%%/bin/dendrite-upgrade-tests
-%%PORTNAME%%/bin/dendritejs-pinecone
 %%PORTNAME%%/bin/furl
 %%PORTNAME%%/bin/generate-config
 %%PORTNAME%%/bin/generate-keys
