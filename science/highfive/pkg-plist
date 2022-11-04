@@ -16,7 +16,6 @@ include/highfive/H5Version.hpp
 include/highfive/bits/H5Annotate_traits.hpp
 include/highfive/bits/H5Annotate_traits_misc.hpp
 include/highfive/bits/H5Attribute_misc.hpp
-include/highfive/bits/H5ConverterEigen_misc.hpp
 include/highfive/bits/H5Converter_misc.hpp
 include/highfive/bits/H5DataSet_misc.hpp
 include/highfive/bits/H5DataType_misc.hpp
