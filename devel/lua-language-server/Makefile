@@ -65,4 +65,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/main.lua ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "locale meta script" ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
