@@ -1,6 +1,7 @@
 PORTNAME=	jack-capture
 DISTVERSION=	0.9.73-38
 DISTVERSIONSUFFIX=	-g10cec47
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libjack.so:audio/jack \
+		liblo.so:audio/liblo \
+		libmp3lame.so:audio/lame \
+		libogg.so:audio/libogg \
 		libsndfile.so:audio/libsndfile
 
 USES=		gmake localbase:ldflags pkgconfig
@@ -19,6 +23,8 @@ USES=		gmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	kmatheussen
 GH_PROJECT=	jack_capture
+
+MAKE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX}
 
