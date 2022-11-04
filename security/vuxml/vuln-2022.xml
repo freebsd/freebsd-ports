@@ -1,3 +1,29 @@
+  <vuln vid="b278783f-5c1d-11ed-a21f-001fc69cd6dc">
+    <topic>pixman -- heap overflow</topic>
+    <affects>
+      <package>
+	<name>pixman</name>
+	<range><lt>0.42.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pixman reports: for release 0.42.2</p>
+	<blockquote cite="https://lists.freedesktop.org/archives/pixman/2022-November/004994.html">
+	  <p>Avoid integer overflow leading to out-of-bounds write</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-44638</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-44638</url>
+    </references>
+    <dates>
+      <discovery>2022-11-02</discovery>
+      <entry>2022-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26b1100a-5a27-11ed-abfe-29ac76ec31b5">
     <topic>go -- syscall, os/exec: unsanitized NUL in environment variables</topic>
     <affects>
