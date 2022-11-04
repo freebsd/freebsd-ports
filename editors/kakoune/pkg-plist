@@ -3,6 +3,7 @@ libexec/kak/kak
 %%PORTDOCS%%%%DOCSDIR%%/README.asciidoc
 %%DATADIR%%/autoload
 %%DATADIR%%/colors/base16.kak
+%%DATADIR%%/colors/black-on-white.kak
 %%DATADIR%%/colors/default.kak
 %%DATADIR%%/colors/desertex.kak
 %%DATADIR%%/colors/github.kak
@@ -52,6 +53,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/clojure.kak
 %%DATADIR%%/rc/filetype/cmake.kak
 %%DATADIR%%/rc/filetype/coffee.kak
+%%DATADIR%%/rc/filetype/conf.kak
 %%DATADIR%%/rc/filetype/coq.kak
 %%DATADIR%%/rc/filetype/crystal.kak
 %%DATADIR%%/rc/filetype/css.kak
@@ -64,21 +66,25 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/dockerfile.kak
 %%DATADIR%%/rc/filetype/elixir.kak
 %%DATADIR%%/rc/filetype/elm.kak
+%%DATADIR%%/rc/filetype/elvish.kak
 %%DATADIR%%/rc/filetype/erlang.kak
 %%DATADIR%%/rc/filetype/eruby.kak
 %%DATADIR%%/rc/filetype/etc.kak
 %%DATADIR%%/rc/filetype/exherbo.kak
 %%DATADIR%%/rc/filetype/fennel.kak
+%%DATADIR%%/rc/filetype/fidl.kak
 %%DATADIR%%/rc/filetype/fish.kak
 %%DATADIR%%/rc/filetype/fsharp.kak
 %%DATADIR%%/rc/filetype/gas.kak
 %%DATADIR%%/rc/filetype/gdscript.kak
 %%DATADIR%%/rc/filetype/gentoo-linux.kak
 %%DATADIR%%/rc/filetype/git.kak
+%%DATADIR%%/rc/filetype/github.kak
 %%DATADIR%%/rc/filetype/gluon.kak
 %%DATADIR%%/rc/filetype/go.kak
 %%DATADIR%%/rc/filetype/graphql.kak
 %%DATADIR%%/rc/filetype/haml.kak
+%%DATADIR%%/rc/filetype/hare.kak
 %%DATADIR%%/rc/filetype/haskell.kak
 %%DATADIR%%/rc/filetype/hbs.kak
 %%DATADIR%%/rc/filetype/html.kak
@@ -138,6 +144,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/toml.kak
 %%DATADIR%%/rc/filetype/troff.kak
 %%DATADIR%%/rc/filetype/tupfile.kak
+%%DATADIR%%/rc/filetype/twig.kak
 %%DATADIR%%/rc/filetype/vhdl.kak
 %%DATADIR%%/rc/filetype/void-linux.kak
 %%DATADIR%%/rc/filetype/yaml.kak
@@ -170,6 +177,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/windowing/repl/tmux.kak
 %%DATADIR%%/rc/windowing/repl/x11.kak
 %%DATADIR%%/rc/windowing/screen.kak
+%%DATADIR%%/rc/windowing/sway.kak
 %%DATADIR%%/rc/windowing/tmux.kak
 %%DATADIR%%/rc/windowing/wayland.kak
 %%DATADIR%%/rc/windowing/x11.kak
