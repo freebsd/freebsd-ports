@@ -456,6 +456,7 @@
     SUBDIR += thermofun
     SUBDIR += tinker
     SUBDIR += trilinos
+    SUBDIR += ttk
     SUBDIR += tweedledum
     SUBDIR += udunits
     SUBDIR += ukrmol+

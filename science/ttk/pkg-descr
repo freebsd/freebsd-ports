@@ -1,0 +1,4 @@
+TTK - The Topology ToolKit - is an open-source library for efficient, generic
+and easy topological data analysis and visualization. TTK is written in C++ and
+comes with a variety of APIs (C++, VTK/C++, Python, PVPython), standalone
+programs and a ParaView plugin.
