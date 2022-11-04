@@ -1,5 +1,6 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim:jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -75,7 +76,6 @@ CONFIGURE_ARGS+=	--disable-ccache
 .endif
 CONFIGURE_ARGS+=	--disable-freetype-bundling \
 			--disable-zip-debug-info \
-			--with-cacerts-file=${FILESDIR}/cacerts \
 			--with-cups=${LOCALBASE} \
 			--with-debug-level=${JDK_BUILD_TYPE} \
 			--with-freetype=${LOCALBASE} \
