@@ -83,10 +83,10 @@ KDE_FRAMEWORKS_VERSION?=	5.99.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	22.08.2
-KDE_APPLICATIONS_SHLIB_VER?=	5.21.2
+KDE_APPLICATIONS_VERSION?=	22.08.3
+KDE_APPLICATIONS_SHLIB_VER?=	5.21.3
 # G as in KDE Gear, and as in "don't make the variable name longer than required"
-KDE_APPLICATIONS_SHLIB_G_VER?=	22.8.2
+KDE_APPLICATIONS_SHLIB_G_VER?=	22.8.3
 KDE_APPLICATIONS_BRANCH?=	stable
 
 # Extended KDE universe applications.

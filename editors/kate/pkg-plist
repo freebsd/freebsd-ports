@@ -628,10 +628,12 @@ share/locale/id/LC_MESSAGES/kate.mo
 share/locale/id/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/id/LC_MESSAGES/katebuild-plugin.mo
 share/locale/id/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/id/LC_MESSAGES/katecolorpickerplugin.mo
 share/locale/id/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/id/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/id/LC_MESSAGES/katefiletree.mo
 share/locale/id/LC_MESSAGES/kategdbplugin.mo
+share/locale/id/LC_MESSAGES/kategitblameplugin.mo
 share/locale/id/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/id/LC_MESSAGES/kateproject.mo
 share/locale/id/LC_MESSAGES/katesearch.mo
@@ -1039,6 +1041,7 @@ share/locale/ru/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ru/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ru/LC_MESSAGES/katefiletree.mo
 share/locale/ru/LC_MESSAGES/kategdbplugin.mo
+share/locale/ru/LC_MESSAGES/kategitblameplugin.mo
 share/locale/ru/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ru/LC_MESSAGES/kateproject.mo
 share/locale/ru/LC_MESSAGES/katesearch.mo

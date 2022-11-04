@@ -14,6 +14,7 @@ man/sv/man1/kbruch.1.gz
 man/uk/man1/kbruch.1.gz
 share/applications/org.kde.kbruch.desktop
 share/config.kcfg/kbruch.kcfg
+share/icons/hicolor/128x128/apps/kbruch.png
 share/icons/hicolor/16x16/apps/kbruch.png
 share/icons/hicolor/22x22/apps/kbruch.png
 share/icons/hicolor/32x32/apps/kbruch.png
