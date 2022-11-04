@@ -670,6 +670,7 @@
     SUBDIR += py-zita-audiotools
     SUBDIR += py-zita-jacktools
     SUBDIR += qaudiosonar
+    SUBDIR += qjackcapture
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
     SUBDIR += qmidictl
