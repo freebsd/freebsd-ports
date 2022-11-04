@@ -1,6 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20220721
-PORTREVISION=	1
+PORTVERSION=	s20221104
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -11,10 +10,9 @@ DISTFILES=	${PORTNAME}/compatibility_list.json:gamedb
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4a8a248b47a2.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6598 mainline-merge
-PATCHFILES+=	e919bea9c84e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7346 mainline-merge
-PATCHFILES+=	30e8876ea48a.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/8240 mainline-merge
-PATCHFILES+=	d657ea69c94c.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/8240 mainline-merge
+PATCHFILES+=	c17d71240b23.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/9042 mainline-merge
+PATCHFILES+=	717c8ded8210.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/9178
+PATCHFILES+=	d7d7ae821978.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/9181
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -23,7 +21,7 @@ WWW=		https://yuzu-emu.org/
 LICENSE=	APACHE20 BSD3CLAUSE GPLv3+ ISCL MIT UNLICENSE
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/inih/inih/LICENSE.txt
-LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE.txt
 LICENSE_FILE_ISCL=	${WRKSRC}/externals/cubeb/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
 
@@ -43,17 +41,19 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	6e36f4d23
+GH_TAGNAME=	9fc1bcc7b
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.3.213:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:6.2.0-7-g91d1f944:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:6.2.3:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:aa292d5:sirit/externals/sirit \
+		arun11299:cpp-jwt:v1.4-14-ge12ef06:cpp_jwt/externals/cpp-jwt \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r52:inih/externals/inih/inih \
 		fmtlib:fmt:8.1.1:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1350-gf79e0cf:cubeb/externals/cubeb \
+		lsalzman:enet:v1.3.13-14-g39a72ab:enet/externals/enet \
 		yhirose:cpp-httplib:v0.10.8-1-g305a7ab:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing compiler:c++17-lang elfctl localbase:ldflags pkgconfig sdl ssl
@@ -67,7 +67,8 @@ CMAKE_TESTING_ON=	YUZU_TESTS
 LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 ELF_FEATURES=	${PLIST_FILES:Mbin/*:S/^/+wxneeded:/}
-PLIST_FILES=	bin/${PORTNAME}-cmd
+PLIST_FILES=	bin/${PORTNAME}-cmd \
+		bin/${PORTNAME}-room
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK NLS QT5 SNDIO VAAPI VULKAN WEBENGINE
 OPTIONS_DEFAULT=PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
@@ -87,7 +88,7 @@ PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 QT5_USES=		desktop-file-utils qt:5 shared-mime-info
-QT5_USE=		QT=qmake:build,buildtools:build,concurrent:build,core,gui,widgets
+QT5_USE=		QT=qmake:build,buildtools:build,concurrent:build,core,dbus,gui,multimedia,widgets
 QT5_CMAKE_BOOL=		ENABLE_QT
 QT5_PLIST_FILES=	bin/${PORTNAME} \
 			share/applications/org.yuzu_emu.yuzu.desktop \
@@ -114,6 +115,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
+# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
+		-e 's,login1,ConsoleKit,' \
+		${WRKSRC}/src/${PORTNAME}/main.cpp
 
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
