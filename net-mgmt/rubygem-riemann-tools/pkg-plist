@@ -9,6 +9,7 @@ bin/riemann-fd
 bin/riemann-freeswitch
 bin/riemann-haproxy
 bin/riemann-health
+bin/riemann-http-check
 bin/riemann-kvminstance
 bin/riemann-md
 bin/riemann-memcached

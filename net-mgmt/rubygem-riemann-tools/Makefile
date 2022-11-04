@@ -1,9 +1,9 @@
 PORTNAME=	riemann-tools
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Collection of utilities which submit events to Riemann
 WWW=		https://github.com/riemann/riemann-tools
 
