@@ -6,8 +6,8 @@ atmospheric effects such as glories, fogbows, etc., as well as simulate
 unusual environments such as on Mars or an exoplanet orbiting a star with
 a non-solar spectrum of radiation.
 
-The simulation is based on E. Bruneton's Precomputed Atmospheric
-Scattering paper and the updated implementation of the demo.  This in
+The simulation is based on E. Bruneton's "Precomputed Atmospheric
+Scattering" paper and the updated implementation of the demo.  This in
 particular limits the atmosphere to spherical symmetry (which means
 localized clouds are not supported, and ground albedo is the same all
 around the globe).

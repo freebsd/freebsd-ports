@@ -1,10 +1,10 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Simulator of light scattering by planetary atmospheres
+COMMENT=	Planetary atmosphere light scattering simulator
 WWW=		https://github.com/10110111/CalcMySky
 
 LICENSE=	GPLv3
