@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -26,6 +26,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/xdg/${PORTNAME}/${PORTNAME}.ini.sample" \
 		man/man1/${PORTNAME}.1.gz \
 		man/man5/${PORTNAME}.ini.5.gz \
+		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
 OPTIONS_DEFINE=	CAIRO LIBRSVG2 PNG
