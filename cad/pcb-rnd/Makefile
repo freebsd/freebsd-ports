@@ -1,5 +1,5 @@
 PORTNAME=	pcb-rnd
-DISTVERSION=	3.0.5
+DISTVERSION=	3.0.6
 CATEGORIES=	cad
 MASTER_SITES=	http://repo.hu/projects/pcb-rnd/releases/
 
