@@ -1,6 +1,5 @@
 PORTNAME=	groonga
-PORTVERSION=	12.0.8
-PORTREVISION=	1
+PORTVERSION=	12.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -62,7 +61,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.23.1/auto/install
+		${WRKSRC}/vendor/nginx-1.23.2/auto/install
 # Avoid conflict with C++20 <version> by adding .txt suffix
 	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
 	@${REINPLACE_CMD} -Ei .c++20 '/test|cat/s/[[:<:]]version/&.txt/' \
