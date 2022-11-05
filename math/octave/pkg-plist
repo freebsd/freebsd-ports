@@ -983,6 +983,8 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/child_from_base_1.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/child_from_base_1_and_2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef-multiple-inheritance/classdef-multiple-inheritance.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/@class_bug62802/amethod.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/@class_bug62802/class_bug62802.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/bug_60763.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug52614A.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/class_bug52614B.m

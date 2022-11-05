@@ -35,6 +35,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libsuitesparseconfig.so:math/suitesparse-config \
 		libcxsparse.so:math/suitesparse-cxsparse \
 		libklu.so:math/suitesparse-klu \
+		libspqr.so:math/suitesparse-spqr \
 		libumfpack.so:math/suitesparse-umfpack \
 		libglpk.so:math/glpk \
 		libgl2ps.so:print/gl2ps \
