@@ -2,6 +2,7 @@ bin/heaptrack
 bin/heaptrack_gui
 bin/heaptrack_print
 include/heaptrack_api.h
+lib/heaptrack/libexec/heaptrack_env
 lib/heaptrack/libexec/heaptrack_interpret
 lib/heaptrack/libheaptrack_inject.so
 lib/heaptrack/libheaptrack_preload.so
@@ -31,6 +32,7 @@ share/locale/pt/LC_MESSAGES/heaptrack.mo
 share/locale/pt_BR/LC_MESSAGES/heaptrack.mo
 share/locale/ru/LC_MESSAGES/heaptrack.mo
 share/locale/sk/LC_MESSAGES/heaptrack.mo
+share/locale/sl/LC_MESSAGES/heaptrack.mo
 share/locale/sv/LC_MESSAGES/heaptrack.mo
 share/locale/tr/LC_MESSAGES/heaptrack.mo
 share/locale/uk/LC_MESSAGES/heaptrack.mo
