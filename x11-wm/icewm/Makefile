@@ -1,7 +1,10 @@
 PORTNAME=	icewm
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/bbidulock/icewm/commit/
+PATCHFILES=	9ca15cbc50b70f89a1183fda20ab18dbe359b0e5.patch:-p1
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Window manager designed for speed and usability
