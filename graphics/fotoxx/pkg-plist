@@ -190,10 +190,10 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/fix-motion-blur.jpg
 %%DATADIR%%/images/fix-motion-blur1.jpg
 %%DATADIR%%/images/fix-motion-blur2.jpg
-%%DATADIR%%/images/flatten-dist1.jpg
-%%DATADIR%%/images/flatten-dist2.jpg
 %%DATADIR%%/images/flatten-photo1.jpg
 %%DATADIR%%/images/flatten-photo2.jpg
+%%DATADIR%%/images/flatten1.jpg
+%%DATADIR%%/images/flatten2.jpg
 %%DATADIR%%/images/folder.png
 %%DATADIR%%/images/fotoxx-views.jpg
 %%DATADIR%%/images/fotoxx.png

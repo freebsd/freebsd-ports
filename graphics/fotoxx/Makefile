@@ -1,10 +1,10 @@
 PORTNAME=	fotoxx
-PORTVERSION=	22.35
+PORTVERSION=	22.41
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Application to organize and edit image collections
+COMMENT=	Image editing and collection management program
 WWW=		https://kornelix.net/fotoxx/fotoxx.html
 
 LICENSE=	GPLv3+
