@@ -1,7 +1,6 @@
 PORTNAME=	apertium
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,7 +15,7 @@ BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: *** unable t
 BUILD_DEPENDS=	bash:shells/bash \
 		utf8cpp>0:devel/utf8cpp
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		liblttoolbox3.so:textproc/lttoolbox \
+		liblttoolbox.so:textproc/lttoolbox \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
@@ -26,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	apertium:contrib
 GH_PROJECT=	apertium-get:contrib
 GH_SUBDIR=	apertium/apertium-get:contrib
-GH_TAGNAME=	465f053:contrib
+GH_TAGNAME=	74d7d35:contrib
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
@@ -43,12 +42,5 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
-PLIST_SUB=	APVER="${PORTVERSION:R}"
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^INCLUDES |AM_CPPFLAGS | ; \
-		 s|-lapertium$$(.*)|libapertium3.la|' \
-		${WRKSRC}/apertium/Makefile.am
 
 .include <bsd.port.mk>
