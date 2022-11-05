@@ -1,3 +1,56 @@
+  <vuln vid="16f7ec68-5cce-11ed-9be7-454b1dd82c64">
+    <topic>Gitlab -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.5.0</ge><lt>15.5.2</lt></range>
+	<range><ge>15.4.0</ge><lt>15.4.4</lt></range>
+	<range><ge>9.3.0</ge><lt>15.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/11/02/security-release-gitlab-15-5-2-released/">
+	  <p>DAST analyzer sends custom request headers with every request</p>
+	  <p>Stored-XSS with CSP-bypass via scoped labels' color</p>
+	  <p>Maintainer can leak Datadog API key by changing integration URL</p>
+	  <p>Uncontrolled resource consumption when parsing URLs</p>
+	  <p>Issue HTTP requests when users view an OpenAPI document and click buttons</p>
+	  <p>Command injection in CI jobs via branch name in CI pipelines</p>
+	  <p>Open redirection</p>
+	  <p>Prefill variables do not check permission of the project in external CI config</p>
+	  <p>Disclosure of audit events to insufficiently permissioned group and project members</p>
+	  <p>Arbitrary GFM references rendered in Jira issue description leak private/confidential resources</p>
+	  <p>Award emojis API for an internal note is accessible to users without access to the note</p>
+	  <p>Open redirect in pipeline artifacts when generating HTML documents</p>
+	  <p>Retrying a job in a downstream pipeline allows the retrying user to take ownership of the retried jobs in upstream pipelines</p>
+	  <p>Project-level Secure Files can be written out of the target directory</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3767</cvename>
+      <cvename>CVE-2022-3265</cvename>
+      <cvename>CVE-2022-3483</cvename>
+      <cvename>CVE-2022-3818</cvename>
+      <cvename>CVE-2022-3726</cvename>
+      <cvename>CVE-2022-2251</cvename>
+      <cvename>CVE-2022-3486</cvename>
+      <cvename>CVE-2022-3793</cvename>
+      <cvename>CVE-2022-3413</cvename>
+      <cvename>CVE-2022-2761</cvename>
+      <cvename>CVE-2022-3819</cvename>
+      <cvename>CVE-2022-3280</cvename>
+      <cvename>CVE-2022-3706</cvename>
+      <url>https://about.gitlab.com/releases/2022/11/02/security-release-gitlab-15-5-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-11-02</discovery>
+      <entry>2022-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b278783f-5c1d-11ed-a21f-001fc69cd6dc">
     <topic>pixman -- heap overflow</topic>
     <affects>
