@@ -1,3 +1,10 @@
-GoAccess is an open source real-time Apache web log analyzer and interactive
-viewer that runs in a terminal and provides fast and valuable HTTP statistics
-for system administrators that require a visual report on the fly.
+ GoAccess is an open source real-time web log analyzer and interactive
+ viewer that runs in a terminal or through your browser.
+
+ It can parse a variety of web log formats, including common and
+ combined log formats, caddy JSON, and many more. Because it is a log
+ parser, it does not inject anything into your website and does not
+ require any scripts or weird 1-pixel images.
+
+ GoAccess outputs HTML full of analytics, or runs interactively in
+ console, continually updated via websockets.

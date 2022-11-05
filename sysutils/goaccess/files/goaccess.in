@@ -4,14 +4,13 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following lines to /etc/rc.conf to enable goaccess.
+# To enable the goaccess daemon, add `goaccess_enable="YES"`' to
+# your /etc/rc.conf or /etc/rc.conf.local
 #
-# goaccess_html (path):		Set to /var/run/goaccess/goaccess.html
-#				by default.
-# goaccess_log (path):		Set to /var/log/httpd-access.log
-#				by default.
-# goaccess_config (str):	Set to %%PREFIX%%/etc/goaccess.conf
-#				by default. Only used if the file exists.
+# Optional settings:
+# goaccess_html (path):   Output file (/var/run/goaccess/goaccess.html)
+# goaccess_log (path):    Input log   (/var/log/httpd-access.log)
+# goaccess_config (path): Default: %%ETCDIR%%/goaccess.conf
 
 . /etc/rc.subr
 
@@ -22,22 +21,20 @@ load_rc_config $name
 
 : ${goaccess_html:=/var/run/goaccess/goaccess.html}
 : ${goaccess_log:=/var/log/httpd-access.log}
-: ${goaccess_config:=%%PREFIX%%/etc/goaccess/goaccess.conf}
+: ${goaccess_config:=%%ETCDIR%%/goaccess.conf}
 
-command=/usr/local/bin/${name}
+command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid
 
-# This is done to allow Directory be used for when configuring Apache
-# as Files does not allow for a full path.
 start_precmd=start_precmd
 start_precmd()
 {
-    if [ $goaccess_html = /var/run/goaccess/goaccess.html ]; then
-	if [ ! -d /var/run/goaccess ]; then
-	    mkdir /var/run/goaccess
-	fi
+    htmldir=$(dirname "$goaccess_html")
+    if ! [ -d "$htmldir" ]; then
+        echo "Creating HTML output dir $htmldir."
+        mkdir "$htmldir"
     fi
 }
 
-command_args="--daemonize --real-time-html --pid-file=$pidfile -p $goaccess_config -o $goaccess_html"
+command_args="--daemonize --real-time-html --pid-file='$pidfile' -p '$goaccess_config' -o '$goaccess_html'"
 run_rc_command "$1"
