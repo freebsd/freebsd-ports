@@ -4,15 +4,14 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/shntool/dist/src/
 
-PATCH_SITES=	https://github.com/max619/shntool/commit/
-PATCHFILES=	cfd06e4ed.patch:-p1
-
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multi-purpose WAVE data processing and reporting utility
 WWW=		http://www.etree.org/shnutils/shntool/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+EXTRA_PATCHES=	${FILESDIR}/cfd06e4ed.patch:-p1
 
 GNU_CONFIGURE=	yes
 
