@@ -1,9 +1,9 @@
 PORTNAME=	goaccess
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 
-MAINTAINER=	sbz@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Real-time Apache web log analyzer
 WWW=		https://goaccess.io
 
