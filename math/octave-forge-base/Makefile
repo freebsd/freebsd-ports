@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-base
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
