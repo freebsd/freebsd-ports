@@ -23,10 +23,6 @@ PLIST_FILES=	include/libimagequant.h \
 		lib/libimagequant.so.0.0.0 \
 		libdata/pkgconfig/imagequant.pc
 
-post-patch:
-# XXX Drop after devel/cargo-c >= 0.9.9 per https://github.com/rust-lang/cargo/commit/43a063c80a53
-	@${REINPLACE_CMD} 's/dep://g' ${WRKSRC:H}/Cargo.toml
-
 do-build:
 	@${CARGO_CARGO_RUN} cbuild \
 		--verbose \
