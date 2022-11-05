@@ -1,7 +1,6 @@
 PORTNAME=	sigi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.2
-PORTREVISION=	2
+DISTVERSION=	3.4.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	hiljusti@so.dang.cool
@@ -56,7 +55,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		memoffset-0.6.5 \
 		nibble_vec-0.1.0 \
 		nix-0.22.3 \
-		nix-0.23.1 \
+		nix-0.24.2 \
 		nom-5.1.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
@@ -81,7 +80,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
 		rustix-0.35.6 \
-		rustyline-9.1.2 \
+		rustyline-10.0.0 \
 		ryu-1.0.5 \
 		scopeguard-1.1.0 \
 		serde-1.0.123 \
