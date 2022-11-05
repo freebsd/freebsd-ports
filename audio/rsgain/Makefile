@@ -1,6 +1,7 @@
 PORTNAME=	rsgain
 DISTVERSION=	3.1
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/complexlogic/rsgain/releases/download/v${DISTVERSION}/
 
@@ -19,9 +20,13 @@ LIB_DEPENDS=	libebur128.so:audio/libebur128 \
 
 USES=		cmake compiler:c++2b-lang pkgconfig tar:xz
 
+CMAKE_ARGS=	-DMAXPROGBARWIDTH=80
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS UNICODE
+OPTIONS_DEFAULT=	UNICODE
+
+UNICODE_CMAKE_BOOL=	UCHECKMARKS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
