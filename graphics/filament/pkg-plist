@@ -1,8 +1,8 @@
 %%SAMPLES%%bin/assets/fonts/Roboto-License.txt
 %%SAMPLES%%bin/assets/fonts/Roboto-Medium.ttf
-%%SAMPLES%%bin/assets/lightroom_14b/lightroom_14b_ibl.ktx
-%%SAMPLES%%bin/assets/lightroom_14b/lightroom_14b_skybox.ktx
-%%SAMPLES%%bin/assets/lightroom_14b/sh.txt
+%%SAMPLES%%bin/assets/ibl/lightroom_14b/lightroom_14b_ibl.ktx
+%%SAMPLES%%bin/assets/ibl/lightroom_14b/lightroom_14b_skybox.ktx
+%%SAMPLES%%bin/assets/ibl/lightroom_14b/sh.txt
 bin/basisu
 bin/cmgen
 bin/filamesh
