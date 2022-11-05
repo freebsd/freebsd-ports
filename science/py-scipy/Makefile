@@ -43,7 +43,7 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${UNZIP_CMD} -d ${STAGEDIR}${DOCSDIR} ${DISTDIR}/scipy-html-${DISTVERSION}.zip
-	@${RM} ${STAGEDIR}${PREFIX}/share/doc/py39-scipy/.buildinfo
+	@${RM} ${STAGEDIR}${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}/.buildinfo
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py
