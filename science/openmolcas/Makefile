@@ -1,5 +1,6 @@
 PORTNAME=	openmolcas
 DISTVERSION=	22.06
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
