@@ -3,8 +3,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		adler-1.0.2 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.19 \
-		alacritty_config_derive-0.1.0 \
-		alacritty_terminal-0.16.1 \
+		alacritty_config-0.1.0 \
+		alacritty_config_derive-0.2.0 \
+		alacritty_terminal-0.17.0 \
 		ambient-authority-0.0.1 \
 		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
@@ -92,7 +93,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		digest-0.9.0 \
 		directories-4.0.1 \
 		directories-next-2.0.0 \
-		dirs-3.0.2 \
 		dirs-4.0.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
@@ -231,6 +231,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		kqueue-1.0.6 \
 		kqueue-sys-1.0.3 \
 		kurbo-0.8.3 \
+		lapce-xi-rope-0.3.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
@@ -276,7 +277,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nanorand-0.7.0 \
 		native-tls-0.2.10 \
 		net2-0.2.37 \
-		nix-0.22.3 \
+		nix-0.24.2 \
 		nom-7.1.1 \
 		notify-5.0.0 \
 		num-integer-0.1.45 \
@@ -370,7 +371,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-parser-0.10.2 \
 		serde-1.0.145 \
 		serde_derive-1.0.145 \
-		serde_json-1.0.85 \
+		serde_json-1.0.87 \
 		serde_repr-0.1.9 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.8.26 \
@@ -389,7 +390,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sled-0.34.7 \
 		slice-group-by-0.3.0 \
 		slotmap-1.0.6 \
-		smallvec-1.9.0 \
+		smallvec-1.10.0 \
 		socket2-0.4.7 \
 		spin-0.9.4 \
 		spinning-0.1.0 \
@@ -448,7 +449,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-python-0.20.2 \
 		tree-sitter-r-0.19.5 \
 		tree-sitter-rust-0.20.1 \
-		tree-sitter-swift-0.3.3 \
+		tree-sitter-swift-0.3.4 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.1 \
 		tree-sitter-vue-0.0.3 \
@@ -557,7 +558,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		yazi-0.1.4 \
 		yeslogic-fontconfig-sys-3.2.0 \
 		zeno-0.2.2 \
-		zip-0.6.2 \
+		zip-0.6.3 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2 \
@@ -567,6 +568,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-nix@git+https://github.com/panekj/tree-sitter-nix?branch=master\#59fc47150ab437e8bb356c7ab21e9531e87f7cc8 \
 		tree-sitter-glimmer@git+https://github.com/VixieTSQ/tree-sitter-glimmer\#7281caca2ba114e1960c5d944a37860ef0841426 \
 		tree-sitter-svelte@git+https://github.com/Himujjal/tree-sitter-svelte?branch=master\#52e122ae68b316d3aa960a0a422d3645ba717f42 \
+		tree-sitter-sql@git+https://github.com/oknozor/tree-sitter-sql?branch=main\#15dad0f3cae8a094a7dac17d712ea8fb25228011 \
 		tree-sitter-css@git+https://github.com/syntacti/tree-sitter-css?branch=master\#397aa132b9982fcdd2d473ed69343762a557f10a \
 		parley@git+https://github.com/lapce/parley\#c37477b889ff53b9a3033e2180becddf90b9bb17 \
 		tree-sitter-json@git+https://github.com/tree-sitter/tree-sitter-json.git?rev=11e2cc12d9b267766fb11a06e52952792fd8e3f0\#11e2cc12d9b267766fb11a06e52952792fd8e3f0 \
@@ -578,7 +580,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-java@git+https://github.com/tree-sitter/tree-sitter-java.git\#09d650def6cdf7f479f4b78f595e9ef5b58ce31e \
 		tree-sitter-dockerfile@git+https://github.com/panekj/tree-sitter-dockerfile?branch=queries\#c49d819e07685c90456270f1cc654d9cba640f53 \
 		tree-sitter-d@git+https://github.com/syntacti/tree-sitter-d?branch=master\#fdaa172d375f6c48987ce68ae01e8020acb9bc17 \
+		tree-sitter-xml@git+https://github.com/RenjiSann/tree-sitter-xml?branch=main\#422528a43630db6dcc1e222d1c5ee3babd559473 \
 		tree-sitter-bash@git+https://github.com/syntacti/tree-sitter-bash?branch=master\#ba3adca745943b71b0c84bb4e4977788cc6a867b \
+		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#bcc134e00834af23c67ac087dc445f4872c2d497 \
 		tree-sitter-kotlin@git+https://github.com/fwcd/tree-sitter-kotlin?branch=main\#a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569 \
 		swash@git+https://github.com/lapce/swash\#1d9b8c700a415f0f4216dd30026b3a2149db8e1e \
 		tree-sitter-haxe@git+https://github.com/vantreeseba/tree-sitter-haxe\#52e3d2b9c3955aca886bccc38b496ef99b603a09 \
@@ -586,17 +590,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fount@git+https://github.com/lapce/fount\#3bfdc689c0cfbeb498358c79c7be2cb3beb44efe \
 		tree-sitter-scheme@git+https://github.com/6cdh/tree-sitter-scheme.git?branch=main\#af0fd1fa452cb2562dc7b5c8a8c55551c39273b9 \
 		tree-sitter-ocaml@git+https://github.com/tree-sitter/tree-sitter-ocaml\#cc26b1ef111100f26a137bcbcd39fd4e35be9a59 \
-		druid,druid-derive,druid-shell@git+https://github.com/lapce/druid?branch=shell_opengl\#281fe4bc56a198c7b5da90f65d4047a88153170e \
 		tree-sitter-md@git+https://github.com/MDeiml/tree-sitter-markdown.git?branch=split_parser\#e375ba95ff9a12418f9b9e7c190f549d08b5380a \
 		tree-sitter-latex@git+https://github.com/latex-lsp/tree-sitter-latex?branch=master\#b3b2cf27f33e71438ebe46934900b1153901c6f2 \
 		tree-sitter-hcl@git+https://github.com/VixieTSQ/tree-sitter-hcl\#f4aa4553344e03e149ec459549a7f686d6846626 \
 		tree-sitter-zig@git+https://github.com/maxxnino/tree-sitter-zig?branch=main\#8d3224c3bd0890fe08358886ebf54fca2ed448a6 \
 		tree-sitter-scss@git+https://github.com/VixieTSQ/tree-sitter-scss?branch=patch-1\#3aac3391ede5098edbf4cc8a9f6d0cfdfe28e5dc \
+		tree-sitter-erlang@git+https://github.com/WhatsApp/tree-sitter-erlang?branch=main\#a8b8b0e16c4f5552f5e85af3dec976a5d16af8b9 \
 		font-kit@git+https://github.com/lapce/font-kit\#23e28b06b40f31fc53b82645b09ce6421768be23 \
 		tree-sitter-c-sharp@git+https://github.com/tree-sitter/tree-sitter-c-sharp?branch=master\#5b60f99545fea00a33bbfae5be956f684c4c69e2 \
 		psp-types@git+https://github.com/lapce/psp-types\#b7680c844e8faa1b79c800210b4d5526771e7de0 \
 		tree-sitter-dart@git+https://github.com/syntacti/tree-sitter-dart?branch=master\#78cad4503571d72666f78d5ba8ed6c1417653063 \
-		xi-rope@git+https://github.com/lapce/xi-editor\#06816cc92e97996c12ec048aa9190b4efc00d1a6 \
+		druid,druid-derive,druid-shell@git+https://github.com/lapce/druid?branch=shell_opengl\#0b9c00fcda238e392e758382f25166cd748fd305 \
 		structdesc@git+https://github.com/lapce/structdesc\#a6a2b8ab65d43475238f889736c4aa5dfff4500a \
-		tree-sitter-ruby@git+https://github.com/tree-sitter/tree-sitter-ruby.git?rev=656abef\#656abef0645caea793e33c1c773570722463e1d8 \
-		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#e5d9c4d5a69b3f9b0d34054d2a6a23df0724205e
+		tree-sitter-ruby@git+https://github.com/tree-sitter/tree-sitter-ruby.git?rev=656abef\#656abef0645caea793e33c1c773570722463e1d8
