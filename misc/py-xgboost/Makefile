@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
 USES=		compiler:c11 python:3.5+ localbase:ldflags
-USE_PYTHON=	distutils pytest # no Python tests are run, see https://github.com/dmlc/xgboost/issues/8208
+USE_PYTHON=	distutils pytest # Python tests are broken because py-scikit-learn is missing the py-threadpoolctl dependency which is also currently broken
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -32,6 +32,7 @@ PYDISTUTILS_INSTALLARGS=	--use-system-libxgboost # this is ignored so that setup
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/../tests/python
 
 post-install:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}

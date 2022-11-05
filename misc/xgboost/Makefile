@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +19,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dmlc
 GH_TUPLE=	\
 		NVlabs:cub:af39ee2:NVlabs_cub/cub \
-		rapidsai:gputreeshap:5bba198:rapidsai_gputreeshap/gputreeshap
+		rapidsai:gputreeshap:acb5be3:rapidsai_gputreeshap/gputreeshap
 
 LDFLAGS+=	${LOCALBASE}/lib/libdmlc.so -lexecinfo
 
-CMAKE_TESTING_ON=	GOOGLE_TEST
+CMAKE_TESTING_ON=	GOOGLE_TEST # 1 test fails, see https://github.com/dmlc/xgboost/issues/8425
 
 OPTIONS_DEFINE=		OPENMP
 
