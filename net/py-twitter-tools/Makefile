@@ -1,5 +1,5 @@
 PORTNAME=	twitter
-PORTVERSION=	1.19.3
+PORTVERSION=	1.19.6
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,19 +12,13 @@ WWW=		https://github.com/sixohsix/twitter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sixohsix
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils nose
 
 NO_ARCH=	yes
-
-# A number of test failures are (still) present in test_util
-# https://github.com/sixohsix/twitter/issues/166
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
