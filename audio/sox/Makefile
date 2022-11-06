@@ -1,11 +1,8 @@
 PORTNAME=	sox
-PORTVERSION=	14.4.2
-PORTREVISION=	7
+DISTVERSION=	14.4.2.20210509
 CATEGORIES=	audio
-MASTER_SITES=	SF
-
-PATCHFILES=	0001-Remove-pure-attribute-from-functions-with-side-effec.patch:-p1
-PATCH_SITES=	https://sourceforge.net/p/sox/patches/104/attachment/
+MASTER_SITES=	https://dev.gentoo.org/~fordfrog/distfiles/
+DISTNAME=	sox-code-42b3557e13e0fe01a83465b672d89faddbe65f49
 
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
@@ -14,34 +11,30 @@ WWW=		http://sox.sourceforge.net/
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 CONFLICTS=	play
 
+USES=		autoreconf cpe libtool localbase:ldflags pkgconfig zip
 GNU_CONFIGURE=	yes
-USES=		autoreconf cpe libtool localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS_DEFINE=	AMRNB AMRWB FLAC GSM ID3TAG LADSPA LAME MAD OPUS PNG \
 		SNDFILE TWOLAME VORBIS WAVPACK
-OPTIONS_DEFAULT=	AO FLAC GSM ID3TAG MAD OPUS OSS PNG SNDFILE VORBIS
+OPTIONS_DEFAULT=	AO FLAC GSM ID3TAG LAME MAD OPUS OSS PNG SNDFILE VORBIS
 OPTIONS_GROUP=	SOUND
 OPTIONS_GROUP_SOUND=	ALSA AO OSS PULSEAUDIO SNDIO
-# Default LAME to off for packages so we don't end up RESTRICTED
-.if !defined(PACKAGE_BUILDING)
-OPTIONS_DEFAULT+=	LAME
-.endif
 
 AMRNB_DESC=	AMR Speech Codec (Narrowband)
 AMRWB_DESC=	AMR Speech Codec (Wideband)
-GSM_DESC=	Use libgsm from ports (else use bundled lib)
 PNG_DESC=	PNG spectrogram creation
 
-LDFLAGS+=	-lpthread
-CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
-CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
-CONFIGURE_ARGS+=	--with-gsm
-CONFIGURE_ARGS+=	--disable-stack-protector
+CONFIGURE_ARGS=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
+		--with-distro="${CONFIGURE_TARGET} ${PKGNAME}" \
+		--disable-stack-protector --disable-static
 
 ALSA_CONFIGURE_WITH=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -86,6 +79,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 SNDIO_CONFIGURE_WITH=	sndio
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
+GSM_CONFIGURE_WITH=	gsm libgsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 ID3TAG_CONFIGURE_WITH=	id3tag
@@ -99,11 +93,6 @@ TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
 OPUS_CONFIGURE_WITH=	opus
 OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
-
-# We cannot ask for gsm to be enabled without it trying to use external gsm,
-# so force the autoconf checks to fail
-GSM_CONFIGURE_ENV_OFF=	ac_cv_header_gsm_h=no ac_cv_header_gsm_gsm_h=no \
-		ac_cv_lib_gsm_gsm_create=no
 
 INSTALL_TARGET=		install-strip
 
