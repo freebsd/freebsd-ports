@@ -147,22 +147,17 @@ MASTER_SITE_ECLIPSE+= \
 	http://eclipse.stu.edu.tw/%SUBDIR%/
 .endif
 
+# List: https://www.exim.org/mirmon/ftp_mirrors.html
 .if !defined(IGNORE_MASTER_SITE_EXIM)
 MASTER_SITE_EXIM+= \
-	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
-	ftp://mirror.easyname.at/exim-ftp/%SUBDIR%/ \
-	http://dl.ambiweb.de/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
-	ftp://exim.noris.de/exim/%SUBDIR%/ \
-	https://ftp.heanet.ie/pub/exim/%SUBDIR%/ \
-	http://washitake.com/mail/exim/mirror/exim/%SUBDIR%/ \
-	ftp://ftp.kaist.ac.kr/exim/%SUBDIR%/ \
-	http://ftp.kaist.ac.kr/exim/%SUBDIR%/ \
-	ftp://sunsite.uio.no/pub/mail/exim/exim/%SUBDIR%/ \
-	ftp://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
-	https://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
-	http://mirror.switch.ch/ftp/mirror/exim/exim/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.exim.org/pub/%SUBDIR%/ \
-	http://exim.telcom.net.ua/ftp/%SUBDIR/
+	https://exim.mirror.globo.tech/exim/%SUBDIR%/ \
+	https://mirror.easyname.at/exim-ftp/exim/%SUBDIR%/ \
+	https://www.mirrorservice.org/sites/ftp.exim.org/pub/exim/%SUBDIR%/ \
+	https://exim.mirror.iphh.net/ftp/exim/%SUBDIR%/ \
+	http://ftp.carnet.hr/misc/exim/exim/%SUBDIR%/ \
+	http://ftp.kaist.ac.kr/exim/exim/%SUBDIR%/ \
+	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
+	https://ftp.exim.org/pub/exim/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
