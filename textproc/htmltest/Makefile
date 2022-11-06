@@ -1,7 +1,6 @@
 PORTNAME=	htmltest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
-PORTREVISION=	5
+DISTVERSION=	0.17.0
 CATEGORIES=	textproc
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -18,7 +17,7 @@ GH_TUPLE=	\
 		daviddengcn:go-algs:fe23fabd9d06:daviddengcn_go_algs/vendor/github.com/daviddengcn/go-algs \
 		daviddengcn:go-assert:ba7e68aeeff6:daviddengcn_go_assert/vendor/github.com/daviddengcn/go-assert \
 		daviddengcn:go-villa:68107afb6d76:daviddengcn_go_villa/vendor/github.com/daviddengcn/go-villa \
-		docopt:docopt.go:ee0de3bc6815:docopt_docopt_go/vendor/github.com/docopt/docopt_go \
+		docopt:docopt.go:ee0de3bc6815:docopt_docopt_go/vendor/github.com/docopt/docopt-go \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
@@ -33,9 +32,5 @@ GH_TUPLE=	\
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-extract:
-	( cd ${WRKSRC} && ${MV} vendor/github.com/docopt/docopt_go \
-		vendor/github.com/docopt/docopt-go )
 
 .include <bsd.port.mk>
