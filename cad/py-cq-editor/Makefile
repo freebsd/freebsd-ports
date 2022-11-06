@@ -1,6 +1,6 @@
 PORTNAME=	cq-editor
 DISTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	cad
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/CadQuery/CQ-editor/
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cadquery>=0:cad/py-cadquery@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/spyder/__init__.py:devel/py-spyder
+		${PYTHON_SITELIBDIR}/spyder/__init__.py:devel/spyder
 
 USES=		pyqt:5 python:3.6+
 USE_PYTHON=	autoplist distutils
