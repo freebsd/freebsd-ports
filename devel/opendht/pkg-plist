@@ -11,6 +11,7 @@ include/opendht/dht_interface.h
 include/opendht/dht_proxy_client.h
 include/opendht/dht_proxy_server.h
 include/opendht/dhtrunner.h
+include/opendht/http.h
 include/opendht/indexation/pht.h
 include/opendht/infohash.h
 include/opendht/log.h

@@ -1,5 +1,6 @@
 PORTNAME=	opendht
-DISTVERSION=	1.10.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4.10
 CATEGORIES=	devel net
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,13 +11,14 @@ WWW=		https://github.com/savoirfairelinux/opendht/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/predef/other/endian.h:devel/boost-libs
 LIB_DEPENDS=	libopendht.so:devel/opendht \
 		libgnutls.so:security/gnutls
 
-USES=		cmake compiler:c++11-lib localbase python:3.4+
+USES=		cmake compiler:c++17-lang localbase python:3.4+
 USE_GITHUB=	yes
 GH_ACCOUNT=	savoirfairelinux
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest
 
 WRKSRC_SUBDIR=	python
 

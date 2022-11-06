@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2022-11-06 06:47:13 UTC
++++ CMakeLists.txt
+@@ -91,8 +91,8 @@ if (NOT MSVC)
+         endif()
+         if (OPENDHT_PROXY_OPENSSL)
+             # https://cmake.org/cmake/help/latest/module/FindOpenSSL.html
+-            pkg_search_module(OPENSSL REQUIRED openssl)
+-            if (OPENSSL_FOUND)
++            #pkg_search_module(OPENSSL REQUIRED openssl)
++            if (TRUE OR OPENSSL_FOUND)
+                 message(STATUS "Found OpenSSL ${OPENSSL_VERSION} ${OPENSSL_INCLUDE_DIRS}")
+                 include_directories(SYSTEM ${OPENSSL_INCLUDE_DIRS})
+                 link_directories (${OPENSSL_LIBRARY_DIRS})
