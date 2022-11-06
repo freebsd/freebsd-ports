@@ -1,12 +1,11 @@
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.9
-PORTREVISION=	6
+DISTVERSION=	4.4.12
 CATEGORIES=	security
 
-MAINTAINER=	swills@FreeBSD.org
-COMMENT=	Gravitational Teleport SSH
-WWW=		https://gravitational.com/teleport/
+MAINTAINER=	kraileth@elderlinux.org
+COMMENT=	Centralized access gateway using the SSH protocol
+WWW=		https://goteleport.com/teleport
 
 LICENSE=	APACHE20
 
@@ -15,11 +14,13 @@ NOT_FOR_ARCHS_REASON=	Uses 64bit types
 
 BUILD_DEPENDS=	zip:archivers/zip
 
+# If you need the auth service to work, you need to compile this port with
+# Go 1.17 or older. In case tsh is what you're after, Go 1.19 is fine.
 USES=		compiler gmake go
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		gravitational
-GH_TUPLE=		gravitational:webassets:eac734b:webassets/webassets
+GH_TUPLE=		gravitational:webassets:2ee76aa:webassets/webassets
 GH_COMMIT_SHORT=	fabee242d
 GH_TAG_COMMIT=		${DISTVERSIONPREFIX}${DISTVERSION}-0-g${GH_COMMIT_SHORT}
 

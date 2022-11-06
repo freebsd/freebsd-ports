@@ -1,4 +1,4 @@
---- lib/events/auditlog.go.orig	2020-07-08 18:08:40 UTC
+--- lib/events/auditlog.go.orig	2022-02-23 04:58:43 UTC
 +++ lib/events/auditlog.go
 @@ -45,7 +45,7 @@ import (
  const (
@@ -8,4 +8,4 @@
 +	// in /var/db/teleport/logs/sessions
  	SessionLogsDir = "sessions"
  
- 	// PlaybacksDir is a directory for playbacks
+	// StreamingLogsDir is a subdirectory of sessions /var/lib/teleport/logs/streaming

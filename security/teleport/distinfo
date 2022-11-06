@@ -1,5 +1,5 @@
-TIMESTAMP = 1609025109
-SHA256 (gravitational-teleport-v4.3.9_GH0.tar.gz) = 6b095366cfe788ca72ef7dc2bb052ff258b0e48de82b05b34f935f928b1aa776
-SIZE (gravitational-teleport-v4.3.9_GH0.tar.gz) = 54786284
-SHA256 (gravitational-webassets-eac734b_GH0.tar.gz) = 3f78270f137d690adafd3ec918e51cebc0c2f18c6b3879a57eaa19a267bfc64c
-SIZE (gravitational-webassets-eac734b_GH0.tar.gz) = 4683803
+TIMESTAMP = 1665730213
+SHA256 (gravitational-teleport-v4.4.12_GH0.tar.gz) = 097537273bd0579b3b833870cab74ce1da5432357a14c5501db7a2c525fbcb15
+SIZE (gravitational-teleport-v4.4.12_GH0.tar.gz) = 37824023
+SHA256 (gravitational-webassets-2ee76aa_GH0.tar.gz) = 16c5fbdc43723c392d46163073053c850cae7d355fb97b5ba8fd298246be85c4
+SIZE (gravitational-webassets-2ee76aa_GH0.tar.gz) = 4684443

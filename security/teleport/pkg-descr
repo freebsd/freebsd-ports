@@ -1,16 +1,13 @@
 What is Teleport?
 =================
-Gravitational Teleport ("Teleport") is a modern SSH server for remotely
-accessing clusters of servers via SSH or HTTPS. It is intended to be used
-instead of sshd. Teleport enables teams to easily adopt the best SSH practices
-like:
+Teleport is a gateway for managing access to clusters of *nix servers via
+SSH or the Kubernetes API. While it does also support connecting to
+servers running traditional OpenSSH, its own node deamon is intended to be
+used instead for additional functionality.
 
-Integrated SSH credentials with your organization Google Apps identities or
-other OAuth identitiy providers. No need to distribute keys: Teleport uses
-certificate-based access with automatic expiration time. Enforcement of 2nd
-factor authentication. Cluster introspection: every Teleport node becomes a part
-of a cluster and is visible on the Web UI. Record and replay SSH sessions for
-knowledge sharing and auditing purposes. Collaboratively troubleshoot issues
-through session sharing. Connect to clusters located behind firewalls without
-direct Internet access via SSH bastions. Teleport is built on top of the
-high-quality Golang SSH implementation and it is compatible with OpenSSH.
+With Teleport it is simple to adopt SSH best practices like using
+certificate-based access and enabling 2FA via TOTP (e.g. Google
+Authenticator), U2F or an SSO provider. Cluster nodes can be accessed via
+a CLI (tsh) or a Web UI which both allow for session sharing. Teleport
+provides centralized user management as well as full session recordings
+that can be played back for knowledge sharing or auditing purposes.

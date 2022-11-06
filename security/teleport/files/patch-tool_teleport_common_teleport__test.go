@@ -1,4 +1,4 @@
---- tool/teleport/common/teleport_test.go.orig	2020-07-08 18:08:40 UTC
+--- tool/teleport/common/teleport_test.go.orig	2022-02-23 04:58:43 UTC
 +++ tool/teleport/common/teleport_test.go
 @@ -62,7 +62,7 @@ func (s *MainTestSuite) SetUpSuite(c *check.C) {
  

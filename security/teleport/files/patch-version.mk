@@ -1,4 +1,4 @@
---- version.mk.orig	2020-07-08 18:08:40 UTC
+--- version.mk.orig	2022-02-23 04:58:43 UTC
 +++ version.mk
 @@ -1,4 +1,4 @@
 -GITREF=`git describe --dirty --long --tags`

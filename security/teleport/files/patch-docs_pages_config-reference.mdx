@@ -1,0 +1,68 @@
+--- docs/pages/config-reference.mdx.orig	2022-02-23 04:58:43 UTC
++++ docs/pages/config-reference.mdx
+@@ -21,7 +21,7 @@ teleport:
+
+     # Data directory where Teleport daemon keeps its data.
+     # See "Filesystem Layout" section above for more details.
+-    data_dir: /var/lib/teleport
++    data_dir: /var/db/teleport
+
+     # Invitation token used to join a cluster. it is not used on
+     # subsequent starts
+@@ -52,11 +52,11 @@ teleport:
+         max_connections: 1000
+         max_users: 250
+
+-    # Logging configuration. Possible output values to disk via '/var/lib/teleport/teleport.log',
++    # Logging configuration. Possible output values to disk via '/var/db/teleport/teleport.log',
+     # 'stdout', 'stderr' and 'syslog'. Possible severity values are INFO, WARN
+     # and ERROR (default). Possible format values include: timestamp, component, caller, and level.
+     log:
+-        output: /var/lib/teleport/teleport.log
++        output: /var/db/teleport/teleport.log
+         severity: ERROR
+         format: [level, timestamp, component, caller]
+     # Configuration for the storage back-end used for the cluster state and the
+@@ -68,11 +68,11 @@ teleport:
+         type: dir
+
+         # List of locations where the audit log events will be stored. By default,
+-        # they are stored in `/var/lib/teleport/log`
++        # they are stored in `/var/db/teleport/log`
+         # When specifying multiple destinations like this, make sure that any highly-available
+         # storage methods (like DynamoDB or Firestore) are specified first, as this is what the
+         # Teleport web UI uses as its source of events to display.
+-        audit_events_uri: ['dynamodb://events_table_name', 'firestore://events_table_name', 'file:///var/lib/teleport/log', 'stdout://']
++        audit_events_uri: ['dynamodb://events_table_name', 'firestore://events_table_name', 'file:///var/db/teleport/log', 'stdout://']
+
+         # Use this setting to configure teleport to store the recorded sessions in
+         # an AWS S3 bucket or use GCP Storage with 'gs://'. See "Using Amazon S3"
+@@ -131,7 +131,7 @@ auth_service:
+     # By default an automatically generated name is used (not recommended)
+     #
+     # IMPORTANT: if you change cluster_name, it will invalidate all generated
+-    # certificates and keys (may need to wipe out /var/lib/teleport directory)
++    # certificates and keys (may need to wipe out /var/db/teleport directory)
+     cluster_name: "main"
+
+     authentication:
+@@ -223,7 +223,7 @@ auth_service:
+     #
+     # If not set, by default Teleport will look for the `license.pem` file in
+     # the configured `data_dir` .
+-    license_file: /var/lib/teleport/license.pem
++    license_file: /var/db/teleport/license.pem
+
+ # This section configures the 'node service':
+ ssh_service:
+@@ -320,8 +320,8 @@ proxy_service:
+
+     # TLS certificate for the HTTPS connection. Configuring these properly is
+     # critical for Teleport security.
+-    https_key_file: /var/lib/teleport/webproxy_key.pem
+-    https_cert_file: /var/lib/teleport/webproxy_cert.pem
++    https_key_file: /var/db/teleport/webproxy_key.pem
++    https_cert_file: /var/db/teleport/webproxy_cert.pem
+
+     # This section configures the Kubernetes proxy service
+     kubernetes:
