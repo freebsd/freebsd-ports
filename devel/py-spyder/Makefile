@@ -1,7 +1,6 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.3
-PORTREVISION=	2
+DISTVERSION=	5.4.0
 CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,20 +31,21 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.3:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>=2.5.0:devel/pylint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pylint-venv>=2.1.1:devel/py-pylint-venv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lsp-black>=1.2.0:textproc/py-python-lsp-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyls-spyder>=0.4.0:textproc/py-pyls-spyder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qt5-webengine>0:www/py-qt5-webengine@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-lsp-server>=1.5.0:textproc/py-python-lsp-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-lsp-server>0:textproc/py-python-lsp-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0.26:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=22.1.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QDarkStyle>=3.0.2:textproc/py-QDarkStyle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qstylizer>=0.1.10:devel/py-qstylizer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}QtAwesome>=1.0.2:x11-fonts/py-QtAwesome@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qtconsole>=5.3.2:devel/py-qtconsole@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qstylizer>=0.2.2:devel/py-qstylizer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QtAwesome>0:x11-fonts/py-QtAwesome@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qtconsole>0:devel/py-qtconsole@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QtPy>=2.1.0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rtree>=0.9.7:devel/py-rtree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0.6.6:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spyder-kernels>=2.3.3:devel/py-spyder-kernels@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spyder-kernels>=2.4.0:devel/py-spyder-kernels@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textdistance>=4.2.0:textproc/py-textdistance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}three-merge>=0.1.1:textproc/py-three-merge@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchdog>=0.10.3:devel/py-watchdog@${PY_FLAVOR}
