@@ -11,6 +11,8 @@ WWW=		https://github.com/x42/x42-plugins/
 
 LICENSE=	GPLv2
 
+BROKEN_i386=	compilation fails: unsupported option '--fast-math'; did you mean '-ffast-math', reported to the author on 2022-11-06
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		bash:shells/bash
