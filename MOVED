@@ -17604,3 +17604,4 @@ security/nextcloud-twofactor_totp|www/nextcloud|2022-10-21|Twofactor TOTP provid
 x11-toolkits/wxgtk31|x11-toolkits/wxgtk32|2022-10-25|Remove obsoleted port. Use x11-toolkits/wxgtk32 instead
 devel/py-pyxdg|devel/py-xdg|2022-10-28|Remove duplicate port
 lang/chicken5|lang/chicken|2022-10-30|Has expired: Please use lang/chicken instead
+devel/py-spyder|devel/spyder|2022-11-06|Spyder is an application, and not a library

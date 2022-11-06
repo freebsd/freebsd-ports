@@ -2,7 +2,6 @@ PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.4.0
 CATEGORIES=	devel science python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific PYthon Development EnviRonment, an alternative to IDLE
