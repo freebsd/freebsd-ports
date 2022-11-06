@@ -1,6 +1,5 @@
 PORTNAME=	cheat
-DISTVERSION=	4.3.3
-PORTREVISION=	1
+DISTVERSION=	4.4.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
-		Microsoft:go-winio:v0.5.2:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		ProtonMail:go-crypto:4b6e5c587895:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		Microsoft:go-winio:v0.6.0:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		ProtonMail:go-crypto:cf6655e29de4:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
 		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		cloudflare:circl:v1.2.0:cloudflare_circl/vendor/github.com/cloudflare/circl \
@@ -26,11 +25,12 @@ GH_TUPLE=	\
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.4.2:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
-		go-yaml:yaml:9f9df34309c0:go_yaml_yaml/vendor/gopkg.in/yaml.v1 \
-		go-yaml:yaml:v2.4.0:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:bd7e27e6170d:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:83b083e8dc8b:golang_net/vendor/golang.org/x/net \
-		golang:sys:c680a09ffe64:golang_sys/vendor/golang.org/x/sys \
+		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:crypto:v0.1.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:mod:v0.6.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.1.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.1.0:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:v0.2.0:golang_tools/vendor/golang.org/x/tools \
 		imdario:mergo:v0.3.13:imdario_mergo/vendor/github.com/imdario/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:v1.2.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
