@@ -1010,6 +1010,7 @@
     SUBDIR += jsl
     SUBDIR += jsmin
     SUBDIR += json-c
+    SUBDIR += json-dto
     SUBDIR += json-glib
     SUBDIR += jsoncpp
     SUBDIR += jsonnet

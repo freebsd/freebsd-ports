@@ -1,0 +1,2 @@
+json_dto library is a small header-only helper for converting data between json
+representation and c++ structs. DTO here stands for data transfer object.
