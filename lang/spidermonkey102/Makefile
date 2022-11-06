@@ -1,13 +1,12 @@
 PORTNAME=	spidermonkey
-DISTVERSION=	102.3.0
-PORTREVISION=	2
+DISTVERSION=	102.4.0
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 PKGNAMESUFFIX=	${SP_VER}
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER=	nc@FreeBSD.org
-COMMENT=	Standalone JavaScript based from Mozilla 91-esr
+COMMENT=	Standalone JavaScript based from Mozilla 102-esr
 WWW=		https://spidermonkey.dev/
 
 LICENSE=	MPL20
