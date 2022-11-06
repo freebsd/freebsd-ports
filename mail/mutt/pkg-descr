@@ -5,5 +5,3 @@ program that supersedes Elm, Pine, mail and mailx.
 Features include color support, message threading, MIME support (including
 RFC1522 support for encoded headers), customizable key bindings, POP3,
 Delivery Status Notification (DSN) support, and PGP/MIME.
-
-Mutt FAQ:	http://dev.mutt.org/trac/wiki/MuttFaq
