@@ -34,6 +34,7 @@ include/rapidjson/reader.h
 include/rapidjson/schema.h
 include/rapidjson/stream.h
 include/rapidjson/stringbuffer.h
+include/rapidjson/uri.h
 include/rapidjson/writer.h
 lib/cmake/RapidJSON/RapidJSONConfig.cmake
 lib/cmake/RapidJSON/RapidJSONConfigVersion.cmake

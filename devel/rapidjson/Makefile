@@ -1,7 +1,7 @@
 PORTNAME=	rapidjson
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0-524
-DISTVERSIONSUFFIX=	-gc4c6a654
+DISTVERSION=	1.1.0-709
+DISTVERSIONSUFFIX=	-g06d58b9e
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,15 +13,20 @@ LICENSE_NAME=	RapidJSON
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+TEST_DEPENDS=	googletest>0:devel/googletest \
+		valgrind:devel/valgrind
+
+USES=		cmake:testing compiler:c++11-lang cpe pathfix
+CPE_VENDOR=	tencent
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tencent
 
-USES=		cmake compiler:c++11-lang cpe pathfix
-CPE_VENDOR=	tencent
-
 NO_ARCH=	yes
 
+CMAKE_ARGS=	-DGTEST_INCLUDE_DIR=${LOCALBASE}/include -DGTESTSRC_FOUND=TRUE
 CMAKE_OFF=	RAPIDJSON_BUILD_TESTS RAPIDJSON_BUILD_EXAMPLES
+CMAKE_TESTING_ON=	RAPIDJSON_BUILD_TESTS
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_DEFAULT=${OPTIONS_DEFINE}
