@@ -39,7 +39,6 @@
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_arrayclass.py
-%%PYTHON_SITELIBDIR%%/recordclass/test/test_dataobject_match.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_dataobject.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_litelist.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_litetuple.py
