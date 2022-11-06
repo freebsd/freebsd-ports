@@ -1,6 +1,6 @@
 PORTNAME=	uwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	20.29.0
+DISTVERSION=	20.30.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,8 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	uNetworking
 GH_PROJECT=	uWebSockets
+
+MAKEFILE=	GNUmakefile
 
 NO_BUILD=	yes
 NO_ARCH=	yes
