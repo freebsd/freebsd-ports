@@ -1,6 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36
+DISTVERSION=	1.45
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,10 +25,10 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	Surelog
-GH_TUPLE=	alainmarcel:antlr4:2846660:antlr4/third_party/antlr4 \
-		chipsalliance:UHDM:75eb335:UHDM/third_party/UHDM \
+GH_TUPLE=	alainmarcel:antlr4:16cfc6b:antlr4/third_party/antlr4 \
+		chipsalliance:UHDM:946a9c4:UHDM/third_party/UHDM \
 		capnproto:capnproto:14f24a4:UHDM_capnproto/third_party/UHDM/third_party/capnproto \
-		google:googletest:25cc577:googletest/third_party/googletest \
+		google:googletest:a4f02ef:googletest/third_party/googletest \
 		google:flatbuffers:799cc8f:flatbuffers/third_party/flatbuffers
 
 CMAKE_ON=	BUILD_SHARED_LIBS
@@ -45,5 +45,10 @@ PYTHON_USES=		python
 PYTHON_USES_OFF=	python:build
 PYTHON_CMAKE_BOOL=	SURELOG_WITH_PYTHON
 PYTHON_CMAKE_ON=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
+
+post-install:
+	@${RMDIR} \
+		${STAGEDIR}${PREFIX}/lib/surelog/pkg/work \
+		${STAGEDIR}${PREFIX}/lib/surelog/pkg
 
 .include <bsd.port.mk>

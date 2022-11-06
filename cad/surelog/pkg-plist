@@ -1,4 +1,5 @@
 bin/surelog
+bin/uhdm-cmp
 bin/uhdm-dump
 bin/uhdm-hier
 cmake/Surelog-%%CMAKE_BUILD_TYPE%%.cmake
@@ -10,7 +11,10 @@ include/Surelog/API/Surelog.h
 include/Surelog/CommandLine/CommandLineParser.h
 include/Surelog/Common/ClockingBlockHolder.h
 include/Surelog/Common/Containers.h
+include/Surelog/Common/FileSystem.h
 include/Surelog/Common/NodeId.h
+include/Surelog/Common/PathId.h
+include/Surelog/Common/PlatformFileSystem.h
 include/Surelog/Common/PortNetHolder.h
 include/Surelog/Common/RTTI.h
 include/Surelog/Common/SymbolId.h
@@ -60,6 +64,8 @@ include/Surelog/Expression/Value.h
 include/Surelog/Library/Library.h
 include/Surelog/Library/LibrarySet.h
 include/Surelog/Package/Package.h
+include/Surelog/SourceCompile/AstListener.h
+include/Surelog/SourceCompile/AstTraceListener.h
 include/Surelog/SourceCompile/SymbolTable.h
 include/Surelog/SourceCompile/VObjectTypes.h
 include/Surelog/Testbench/ClassDefinition.h
@@ -225,6 +231,7 @@ include/uhdm/mod_path.h
 include/uhdm/modport.h
 include/uhdm/module.h
 include/uhdm/module_array.h
+include/uhdm/module_typespec.h
 include/uhdm/multiclock_sequence_expr.h
 include/uhdm/named_begin.h
 include/uhdm/named_event.h
@@ -364,11 +371,4 @@ lib/libuhdm.so
 lib/surelog/libantlr4-runtime.a
 lib/surelog/libflatbuffers.a
 lib/surelog/libsurelog.a
-lib/surelog/pkg/work/ovm_pkg.sv.slpa
-lib/surelog/pkg/work/ovm_pkg.sv.slpp
-lib/surelog/pkg/work/uvm_pkg.sv.slpa
-lib/surelog/pkg/work/uvm_pkg.sv.slpp
-%%PYTHON%%lib/surelog/python/slSV3_1aPythonListener.py
-%%PYTHON%%lib/surelog/python/slformatmsg.py
-%%PYTHON%%lib/surelog/python/slwaivers.py
 lib/uhdm/UHDM.capnp
