@@ -1,5 +1,5 @@
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.41.0
+PORTVERSION=	2.42.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8:devel/py-argcomplete@${PY_F
 		${PYTHON_PKGNAMEPREFIX}humanfriendly>=10.0:textproc/py-humanfriendly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}knack>=0.10.0:devel/py-knack@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msal>=1.20.0.b1<2.0.0:devel/py-msal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msal>=1.20.0:devel/py-msal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msal-extensions>=1.0.0:devel/py-msal-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.0.8<3.0.0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.1.0:www/py-pyjwt@${PY_FLAVOR} \
