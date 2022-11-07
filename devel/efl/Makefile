@@ -19,8 +19,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
 		libcurl.so:ftp/curl \
-		libsndfile.so:audio/libsndfile \
-		libunwind.so:devel/libunwind
+		libsndfile.so:audio/libsndfile
 
 # lib/libeio.so.1
 CONFLICTS_INSTALL=	libeio
@@ -211,6 +210,10 @@ MESON_ARGS+=		-Dbindings="${EFL_BINDINGS:ts,}"
 # Work-around build failure, which is caused by subtle problem in lld and -as-needed flag
 .if ${ARCH} == i386
 MESON_ARGS+=	-Db_asneeded=false
+.endif
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+LIB_DEPENDS+=  libunwind.so:devel/libunwind
 .endif
 
 .if ${ARCH:Marmv?}
