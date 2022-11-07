@@ -1,6 +1,7 @@
 bin/ca-bundle-for-firefox
 bin/check-firefox-certificate-authorities
 bin/firefox-passwords
+bin/setup-for-firefox-marionette-build.sh
 bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette.pm
 %%SITE_PERL%%/Firefox/Marionette/Buttons.pm
@@ -23,6 +24,7 @@ bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette/Profile.pm
 %%SITE_PERL%%/Firefox/Marionette/Proxy.pm
 %%SITE_PERL%%/Firefox/Marionette/Response.pm
+%%SITE_PERL%%/Firefox/Marionette/ShadowRoot.pm
 %%SITE_PERL%%/Firefox/Marionette/Timeouts.pm
 %%SITE_PERL%%/Firefox/Marionette/UpdateStatus.pm
 %%SITE_PERL%%/Firefox/Marionette/Window/Rect.pm
@@ -53,6 +55,7 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN3%%/Firefox::Marionette::Profile.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Proxy.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Response.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::ShadowRoot.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Timeouts.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::UpdateStatus.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Window::Rect.3.gz
