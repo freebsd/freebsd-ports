@@ -15,13 +15,11 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
-		libnss3.so:security/nss \
 		libfontconfig.so:x11-fonts/fontconfig
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs \
-		gsed:textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cmake:insource compiler:c++17-lang cpe gnome gperf jpeg libtool \
+USES=		cmake:insource compiler:c++17-lang cpe gperf jpeg libtool \
 		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	cairo libxml2
@@ -57,9 +55,10 @@ USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
 PLIST_SUB+=	SHLIB_VER=124
 
-OPTIONS_DEFINE=		CURL OPENJPEG
+OPTIONS_DEFINE=		CAIRO CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG
 OPTIONS_SUB=		yes
+OPTIONS_EXCLUDE_purecap=CAIRO OPENJPEG
 .else
 PORTSCOUT=		ignore:1
 
@@ -97,6 +96,17 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_CMAKE_ON=	-DENABLE_LIBOPENJPEG:STRING="openjpeg2"
 OPENJPEG_CMAKE_OFF=	-DENABLE_LIBOPENJPEG:STRING="none"
+
+.include <bsd.port.options.mk>
+
+.if ${ABI:Mpurecap}
+CMAKE_ARGS+=	-DENABLE_BOOST=False
+CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Boost=True
+.else
+LIB_DEPENDS+=	libnss3.so:security/nss
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs
+USES+=		gnome
+.endif
 
 post-install:
 .if ${_SLAVE_PORT} == glib

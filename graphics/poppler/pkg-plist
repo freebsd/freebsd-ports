@@ -4,9 +4,9 @@ include/poppler/Array.h
 include/poppler/BBoxOutputDev.h
 include/poppler/CMap.h
 include/poppler/CachedFile.h
-include/poppler/CairoFontEngine.h
-include/poppler/CairoOutputDev.h
-include/poppler/CairoRescaleBox.h
+%%CAIRO%%include/poppler/CairoFontEngine.h
+%%CAIRO%%include/poppler/CairoOutputDev.h
+%%CAIRO%%include/poppler/CairoRescaleBox.h
 include/poppler/Catalog.h
 include/poppler/CertificateInfo.h
 include/poppler/CharCodeToUnicode.h
