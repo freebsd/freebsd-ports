@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-websockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -24,6 +25,8 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/sockets.tar.gz:math/octave-forge-sockets
 
 do-build:
 	@${DO_NADA}
+
+NO_ARCH=	yes
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
