@@ -1,6 +1,6 @@
 PORTNAME=	mclk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
+DISTVERSION=	0.2.2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -17,6 +17,8 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	x42
 GH_PROJECT=	mclk.lv2
+
+BINARY_ALIAS=	git=false
 
 PLIST_FILES=	lib/lv2/mclk.lv2/manifest.ttl \
 		lib/lv2/mclk.lv2/mclk.so \
