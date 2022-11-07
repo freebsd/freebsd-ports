@@ -1,0 +1,8 @@
+include/libfixmath/fix16.h
+include/libfixmath/fix16.hpp
+include/libfixmath/fix16_trig_sin_lut.h
+include/libfixmath/fixmath.h
+include/libfixmath/fract32.h
+include/libfixmath/int64.h
+include/libfixmath/uint32.h
+lib/libfixmath.so

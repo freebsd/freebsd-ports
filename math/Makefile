@@ -433,6 +433,7 @@
     SUBDIR += libbraiding
     SUBDIR += libccd
     SUBDIR += libdivide
+    SUBDIR += libfixmath
     SUBDIR += libflame
     SUBDIR += libhomfly
     SUBDIR += libmesh
