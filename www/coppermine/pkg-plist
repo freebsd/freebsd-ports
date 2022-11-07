@@ -1107,6 +1107,7 @@
 %%WWWDIR%%/lang/estonian.php
 %%WWWDIR%%/lang/french.php
 %%WWWDIR%%/lang/german.php
+%%WWWDIR%%/lang/spanish.php
 %%WWWDIR%%/lang_check.php
 %%WWWDIR%%/langmgr.php
 %%WWWDIR%%/login.php
