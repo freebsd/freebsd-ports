@@ -303,6 +303,7 @@
 %%WWWDIR%%/app/partials/monitoring.latest.subfilter.php
 %%WWWDIR%%/app/partials/monitoring.latest.view.html.php
 %%WWWDIR%%/app/partials/monitoring.problem.filter.php
+%%WWWDIR%%/app/partials/monitoring.problem.view.html.php
 %%WWWDIR%%/app/partials/popup.operations.php
 %%WWWDIR%%/app/partials/scheduledreport.formgrid.html.php
 %%WWWDIR%%/app/partials/scheduledreport.subscription.php
@@ -464,6 +465,7 @@
 %%WWWDIR%%/app/views/monitoring.latest.view.refresh.php
 %%WWWDIR%%/app/views/monitoring.map.view.php
 %%WWWDIR%%/app/views/monitoring.problem.view.php
+%%WWWDIR%%/app/views/monitoring.problem.view.refresh.php
 %%WWWDIR%%/app/views/monitoring.web.view.php
 %%WWWDIR%%/app/views/monitoring.widget.actionlog.view.php
 %%WWWDIR%%/app/views/monitoring.widget.clock.view.php
