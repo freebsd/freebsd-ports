@@ -11,11 +11,8 @@ WWW=		http://web.novalis.org/
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: Root
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: Root
-
 USES=		gmake xorg
-USE_XORG=	x11 xpm
+USE_XORG=	x11 xext xpm
 
 PLIST_FILES=	bin/wmflame
 
