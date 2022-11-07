@@ -1,5 +1,5 @@
-TIMESTAMP = 1656798950
-SHA256 (x42-avldrums.lv2-v0.5.0_GH0.tar.gz) = 4550634ce1aa00156dfb18feaa179b986b2683dfa3697571fe191147095295e0
-SIZE (x42-avldrums.lv2-v0.5.0_GH0.tar.gz) = 35245384
-SHA256 (x42-robtk-52e7789d1f013491d484cfe1a1adb2bde293e7a1_GH0.tar.gz) = ef7cfef4bcd43ab5979749f75482ecf0485cbeab60b1898c78c0d5d2f6cc3bd1
-SIZE (x42-robtk-52e7789d1f013491d484cfe1a1adb2bde293e7a1_GH0.tar.gz) = 116947
+TIMESTAMP = 1667858614
+SHA256 (x42-avldrums.lv2-v0.5.1_GH0.tar.gz) = 671e3f3a2ac547de7f57eec1fa890aefcf44b09373f790bfb25d56a86b1435c7
+SIZE (x42-avldrums.lv2-v0.5.1_GH0.tar.gz) = 35246009
+SHA256 (x42-robtk-1e82c83_GH0.tar.gz) = d92ba2f7b9f57328b97b52b30aa9c4744ca466698a38ee23e6ca102c5f964499
+SIZE (x42-robtk-1e82c83_GH0.tar.gz) = 118286
