@@ -1,6 +1,6 @@
 PORTNAME=	wmping
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net windowmaker
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -8,11 +8,11 @@ MAINTAINER=	serg@cad.kiev.ua
 COMMENT=	Windowmaker dock app to display network hosts status
 WWW=		https://sourceforge.net/projects/wmping/
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: display
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: display
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake xorg
-USE_XORG=	xpm
+USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	BUGS CHANGES README TODO
