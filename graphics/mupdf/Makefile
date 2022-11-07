@@ -1,7 +1,6 @@
 PORTNAME=	mupdf
-DISTVERSION=	1.18.0
+DISTVERSION=	1.20.3
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/ \
@@ -47,6 +46,7 @@ JS_LIB_DEPENDS=	libv8.so:lang/v8
 JS_MAKE_ARGS=	V8_PRESENT=1 V8LIBS=-lv8
 SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
 
+BINARY_ALIAS=	bash=/bin/sh
 PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 post-patch:
