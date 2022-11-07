@@ -1,9 +1,9 @@
 PORTNAME=	darkhttpd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13
+DISTVERSION=	1.14
 CATEGORIES=	www
 
-MAINTAINER=	henrichartzer@tuta.io
+MAINTAINER=	henrichhartzer@tuta.io
 COMMENT=	Simple, static web server
 WWW=		https://unix4lyfe.org/darkhttpd/
 
