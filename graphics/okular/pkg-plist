@@ -1,4 +1,5 @@
 bin/okular
+etc/xdg/okular.categories
 include/okular/core/action.h
 include/okular/core/annotations.h
 include/okular/core/area.h
@@ -1170,4 +1171,3 @@ share/metainfo/org.kde.okular.appdata.xml
 %%DATADIR%%/pics/upleftarrow.png
 %%DATADIR%%/tools.xml
 %%DATADIR%%/toolsQuick.xml
-share/qlogging-categories5/okular.categories

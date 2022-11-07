@@ -2,6 +2,7 @@ bin/amarok
 bin/amarok_afttagger
 bin/amarokcollectionscanner
 bin/amarokpkg
+etc/xdg/amarok.knsrc
 etc/xdg/amarok_homerc
 lib/libamarok-sqlcollection.so
 lib/libamarok-sqlcollection.so.1
@@ -651,7 +652,6 @@ share/icons/hicolor/64x64/apps/amarok.png
 share/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 share/kconf_update/amarok.upd
 share/knotifications5/amarok.notifyrc
-share/knsrcfiles/amarok.knsrc
 share/kpackage/amarok/org.kde.amarok.albums/contents.rcc
 share/kpackage/amarok/org.kde.amarok.albums/metadata.json
 share/kpackage/amarok/org.kde.amarok.analyzer/contents.rcc

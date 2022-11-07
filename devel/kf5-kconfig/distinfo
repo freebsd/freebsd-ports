@@ -1,3 +1,3 @@
-TIMESTAMP = 1664689098
-SHA256 (KDE/frameworks/5.99.0/kconfig-5.99.0.tar.xz) = 5dc7c3d22ff64579a234a9e7de22f2859158595cc4956db13608841ea0d258a6
-SIZE (KDE/frameworks/5.99.0/kconfig-5.99.0.tar.xz) = 283976
+TIMESTAMP = 1669099422
+SHA256 (KDE/frameworks/5.100.0/kconfig-5.100.1.tar.xz) = 8bbb7951d74e8e289f7b0599887ef328b2726fdbdaae18effda2c9d7f18a82da
+SIZE (KDE/frameworks/5.100.0/kconfig-5.100.1.tar.xz) = 290540

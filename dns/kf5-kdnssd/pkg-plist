@@ -43,7 +43,6 @@ lib/libKF5DNSSD.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/af/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/ar/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/as/LC_MESSAGES/kdnssd5_qt.qm
-share/locale/ast/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/az/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/be/LC_MESSAGES/kdnssd5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kdnssd5_qt.qm

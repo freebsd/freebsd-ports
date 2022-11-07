@@ -190,6 +190,7 @@ include/KF5/KIOGui/KIO/FavIconRequestJob
 include/KF5/KIOGui/KIO/KCoreUrlNavigator
 include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/KIO/OpenWithHandlerInterface
+include/KF5/KIOGui/KIO/ThumbnailCreator
 include/KF5/KIOGui/KTerminalLauncherJob
 include/KF5/KIOGui/kemailclientlauncherjob.h
 include/KF5/KIOGui/kio/applicationlauncherjob.h
@@ -198,6 +199,7 @@ include/KF5/KIOGui/kio/faviconrequestjob.h
 include/KF5/KIOGui/kio/kcoreurlnavigator.h
 include/KF5/KIOGui/kio/openurljob.h
 include/KF5/KIOGui/kio/openwithhandlerinterface.h
+include/KF5/KIOGui/kio/thumbnailcreator.h
 include/KF5/KIOGui/kiogui_export.h
 include/KF5/KIOGui/kterminallauncherjob.h
 include/KF5/KIOWidgets/KAbstractFileItemActionPlugin
@@ -210,6 +212,7 @@ include/KF5/KIOWidgets/KFile
 include/KF5/KIOWidgets/KFileItemActions
 include/KF5/KIOWidgets/KFileItemDelegate
 include/KF5/KIOWidgets/KIO/AccessManager
+include/KF5/KIOWidgets/KIO/DeleteOrTrashJob
 include/KF5/KIOWidgets/KIO/DndPopupMenuPlugin
 include/KF5/KIOWidgets/KIO/DropJob
 include/KF5/KIOWidgets/KIO/FileUndoManager
@@ -251,6 +254,7 @@ include/KF5/KIOWidgets/kfile.h
 include/KF5/KIOWidgets/kfileitemactions.h
 include/KF5/KIOWidgets/kfileitemdelegate.h
 include/KF5/KIOWidgets/kio/accessmanager.h
+include/KF5/KIOWidgets/kio/deleteortrashjob.h
 include/KF5/KIOWidgets/kio/dndpopupmenuplugin.h
 include/KF5/KIOWidgets/kio/dropjob.h
 include/KF5/KIOWidgets/kio/fileundomanager.h
@@ -999,7 +1003,6 @@ share/kservices5/webshortcuts.desktop
 share/kservicetypes5/kfileitemactionplugin.desktop
 share/kservicetypes5/konqpopupmenuplugin.desktop
 share/kservicetypes5/kpropertiesdialogplugin.desktop
-share/kservicetypes5/kurifilterplugin.desktop
 share/kservicetypes5/searchprovider.desktop
 share/locale/af/LC_MESSAGES/kio5.mo
 share/locale/ar/LC_MESSAGES/kio5.mo
@@ -1038,6 +1041,7 @@ share/locale/hsb/LC_MESSAGES/kio5.mo
 share/locale/hu/LC_MESSAGES/kio5.mo
 share/locale/ia/LC_MESSAGES/kio5.mo
 share/locale/id/LC_MESSAGES/kio5.mo
+share/locale/ie/LC_MESSAGES/kio5.mo
 share/locale/is/LC_MESSAGES/kio5.mo
 share/locale/it/LC_MESSAGES/kio5.mo
 share/locale/ja/LC_MESSAGES/kio5.mo

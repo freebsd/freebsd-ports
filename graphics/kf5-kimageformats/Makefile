@@ -1,12 +1,6 @@
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics kde kde-frameworks
-
-PATCH_SITES=	https://invent.kde.org/frameworks/${PORTNAME}/-/commit/
-PATCHFILES+=	f475a4b24a16.patch:-p1 # chase https://github.com/AOMediaCodec/libavif/commit/b3d441ad6d3f
-PATCHFILES+=	350ce1b990460cb2178f369f22fe80803f5645f3.diff:-p1 \
-		1190e53e9b69da6f9663ceb75c4813c5708b7cbd.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library providing support for additional image formats

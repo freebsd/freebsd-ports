@@ -124,6 +124,7 @@ lib/libKF5NewStuffWidgets.so.5
 lib/libKF5NewStuffWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KNewStuff.pri
 %%QT_MKSPECDIR%%/modules/qt_KNewStuffCore.pri
+%%QT_PLUGINDIR%%/designer/knewstuffwidgets.so
 %%QT_QMLDIR%%/org/kde/newstuff/Action.qml
 %%QT_QMLDIR%%/org/kde/newstuff/Button.qml
 %%QT_QMLDIR%%/org/kde/newstuff/Dialog.qml

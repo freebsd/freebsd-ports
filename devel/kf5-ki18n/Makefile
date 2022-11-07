@@ -2,9 +2,6 @@ PORTNAME=	ki18n
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
-PATCH_SITES=	https://invent.kde.org/frameworks/ki18n/-/commit/
-PATCHFILES=	12e1987598ab30a407219eabb4ce489db107d97c.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 advanced internationalization framework
 

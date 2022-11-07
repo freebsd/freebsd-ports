@@ -1,9 +1,3 @@
-TIMESTAMP = 1665857812
-SHA256 (KDE/frameworks/5.99.0/kimageformats-5.99.0.tar.xz) = 06e636d4fe03d8d1b0bfed728d00c83fa639e2990fd5664a7101bd77621db1ee
-SIZE (KDE/frameworks/5.99.0/kimageformats-5.99.0.tar.xz) = 12298368
-SHA256 (KDE/frameworks/5.99.0/f475a4b24a16.patch) = a9b4e458d237333cd3c638e9fea832ef2eb752149b3e9d12c0e8127a9f12565f
-SIZE (KDE/frameworks/5.99.0/f475a4b24a16.patch) = 1916
-SHA256 (KDE/frameworks/5.99.0/350ce1b990460cb2178f369f22fe80803f5645f3.diff) = ad31c7ed52ef23ace5a60c5d234ca6e4412addac7ccea490535167b45fc901e2
-SIZE (KDE/frameworks/5.99.0/350ce1b990460cb2178f369f22fe80803f5645f3.diff) = 547
-SHA256 (KDE/frameworks/5.99.0/1190e53e9b69da6f9663ceb75c4813c5708b7cbd.diff) = 0fede45390acd8fa166fb33ca03b52150ac4c217c11d7d1006a77fb5e72aa4cc
-SIZE (KDE/frameworks/5.99.0/1190e53e9b69da6f9663ceb75c4813c5708b7cbd.diff) = 504
+TIMESTAMP = 1667830742
+SHA256 (KDE/frameworks/5.100.0/kimageformats-5.100.0.tar.xz) = cbb5253d55c0ac09689b772f0723a42c290e8df3448116f556f5d320c6738827
+SIZE (KDE/frameworks/5.100.0/kimageformats-5.100.0.tar.xz) = 12669456
