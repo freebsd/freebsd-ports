@@ -1,6 +1,5 @@
 PORTNAME=	cooledit
-DISTVERSION=	3.17.28
-PORTREVISION=	4
+DISTVERSION=	4.1.2
 CATEGORIES=	editors
 MASTER_SITES=	SUNSITE/apps/editors/X/cooledit
 
@@ -8,23 +7,33 @@ MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	CoolEdit Programmers Code Editor
 WWW=		https://github.com/paulsheer/cooledit
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD2CLAUSE GPLv2
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/COPYRIGHT.bsd
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYRIGHT.gpl
 
-USES=		gettext-runtime libtool:build python xorg # gettext is linked to despite .mo files having been deleted
-USE_LDCONFIG=	yes
+LIB_DEPENDS=	libfreetype.so:print/freetype2
+RUN_DEPENDS=	font-misc-misc>0:x11-fonts/font-misc-misc \
+		noto-basic>0:x11-fonts/noto-basic \
+		noto-emoji>0:x11-fonts/noto-emoji \
+		noto-extra>0:x11-fonts/noto-extra
+
+USES=		gettext-runtime libtool:build pkgconfig python xorg
 USE_XORG=	x11 xt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-LDFLAGS+=	-lpthread
+OPTIONS_DEFINE=		CJK
+CJK_DESC=		Chinese, Japanese and Korean fonts
+CJK_RUN_DEPENDS=	noto-hk>0:x11-fonts/noto-hk \
+			noto-jp>0:x11-fonts/noto-jp \
+			noto-kr>0:x11-fonts/noto-kr \
+			noto-sc>0:x11-fonts/noto-sc \
+			noto-tc>0:x11-fonts/noto-tc
 
-OPTIONS_DEFINE=			NEXT_LOOK
-NEXT_LOOK_DESC=			Enable NeXT look
-NEXT_LOOK_CONFIGURE_ENABLE=	NeXT-look
-
+# Don't install bundled fonts
 post-patch:
-	@${REINPLACE_CMD} -e 's|po pixmap man|po man|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|man notosans|man|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

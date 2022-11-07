@@ -1,0 +1,11 @@
+--- configure.orig	2022-10-09 14:17:59 UTC
++++ configure
+@@ -13197,7 +13197,7 @@ else
+     echo "If you don't care about this then delete the exit command below" ;
+     echo "in the configure script" ;
+     echo "" ;
+-    exit 1 ;
++#    exit 1 ;
+ fi
+ TST_MAN_CMD='for i in `man -a -w ls` ; do man -Tutf8 -Z $i | grotty ; echo ; echo --- ; echo ; done' ;
+ THE_MAN_CMD='for i in `man -a -w %m` ; do man -Tutf8 -Z $i | grotty ; echo ; echo --- ; echo ; done' ;
