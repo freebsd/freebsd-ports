@@ -1,12 +1,12 @@
 PORTNAME=	sdl-sopwith
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classic WW1 biplane game
 WWW=		https://github.com/fragglet/sdl-sopwith \
-		http://sdl-sopwith.sourceforge.net/
+		https://sdl-sopwith.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
