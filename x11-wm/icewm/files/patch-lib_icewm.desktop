@@ -1,0 +1,13 @@
+--- lib/icewm.desktop.orig	2022-11-07 10:45:37.073745000 -0800
++++ lib/icewm.desktop	2022-11-07 10:46:22.473136000 -0800
+@@ -18,8 +18,8 @@
+ Comment[pt_BR]=Gerenciador simples e rápido de janelas
+ Comment[uk]=Простий та швидкий менеджер вікон
+ Icon=icewm
+-TryExec=/usr/bin/icewm
+-Exec=/usr/bin/icewm
++TryExec=/usr/local/bin/icewm
++Exec=/usr/local/bin/icewm
+ NoDisplay=false
+ Hidden=false
+ Categories=WindowManager;Application;System;
