@@ -1,5 +1,5 @@
 PORTNAME=	zabbix5
-DISTVERSION=	5.0.28
+DISTVERSION=	5.0.29
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
