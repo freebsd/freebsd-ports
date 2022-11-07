@@ -63,6 +63,7 @@
     SUBDIR += bosh-cli
     SUBDIR += bounce
     SUBDIR += bredbandskollen
+    SUBDIR += brynet
     SUBDIR += bsdec2-image-upload
     SUBDIR += bsdrcmds
     SUBDIR += bwi-firmware-kmod
