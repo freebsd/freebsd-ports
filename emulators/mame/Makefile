@@ -1,5 +1,6 @@
 PORTNAME?=	mame
 PORTVERSION=	0.249
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net

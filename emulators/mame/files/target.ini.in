@@ -1,5 +1,5 @@
 ﻿#
-ninn# CORE CONFIGURATION OPTIONS
+# CORE CONFIGURATION OPTIONS
 #
 readconfig                1
 writeconfig               0
