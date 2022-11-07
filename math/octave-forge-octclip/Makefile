@@ -1,8 +1,7 @@
 PORTNAME=	octave-forge-octclip
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.3
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+MASTER_SITES=	https://bitbucket.org/jgpallero/octclip/downloads/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,8 +16,6 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 OCTSRC=		${DISTNAME}
 
 WRKSRC=	${WRKDIR}/${OCTSRC}/src
-
-USES+=		compiler:gcc-c++11-lib
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
