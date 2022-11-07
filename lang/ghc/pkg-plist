@@ -1446,6 +1446,9 @@ lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/StaticPtr/Internal.hi
 %%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/Stats.dyn_hi
 lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/Stats.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/Stats.p_hi
+%%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/ghc-%%GHC_VERSION%%/GHC/StgToCmm/Lit.dyn_hi
+lib/ghc-%%GHC_VERSION%%/ghc-%%GHC_VERSION%%/GHC/StgToCmm/Lit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/ghc-%%GHC_VERSION%%/GHC/StgToCmm/Lit.p_hi
 %%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/Storable.dyn_hi
 lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/Storable.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/GHC/Storable.p_hi

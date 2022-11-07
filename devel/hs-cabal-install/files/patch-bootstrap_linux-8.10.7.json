@@ -140,7 +140,7 @@
          {
              "package": "base",
 -            "version": "4.14.3.0"
-+            "version": "4.16.3.0"
++            "version": "4.16.4.0"
          },
          {
              "package": "array",
@@ -191,11 +191,11 @@
          {
              "package": "ghc-boot-th",
 -            "version": "8.10.7"
-+            "version": "9.2.4"
++            "version": "9.2.5"
          },
          {
              "package": "pretty",
-@@ -329,15 +329,15 @@
+@@ -329,23 +329,23 @@
          },
          {
              "package": "template-haskell",
@@ -214,7 +214,8 @@
          },
          {
              "package": "process",
-@@ -345,7 +345,7 @@
+-            "version": "1.6.13.2"
++            "version": "1.6.16.0"
          },
          {
              "package": "stm",
