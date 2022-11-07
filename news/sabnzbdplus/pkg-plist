@@ -186,6 +186,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/glitter.queue.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/jquery-3.5.1.min.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/jquery-ui.min.js
+%%DATADIR%%/interfaces/Glitter/templates/static/javascripts/jquery.hotkeys.min.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/jquery.peity.min.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/knockout-3.5.1.min.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/knockout-extensions.js
@@ -205,6 +206,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/sr.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/sv.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/zh-cn.js
+%%DATADIR%%/interfaces/Glitter/templates/static/javascripts/search-query-parser.js
 %%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Auto.css
 %%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Light.css
 %%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Night.css
