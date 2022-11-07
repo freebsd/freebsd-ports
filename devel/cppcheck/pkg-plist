@@ -1,2 +1,6 @@
 bin/cppcheck
-%%MANPAGES%%man/man1/cppcheck.1.gz
+%%GUI%%bin/cppcheck-gui
+%%GUI%%share/applications/cppcheck-gui.desktop
+%%GUI%%share/icons/hicolor/64x64/apps/cppcheck-gui.png
+%%GUI%%share/icons/hicolor/scalable/apps/cppcheck-gui.svg
+%%MANPAGES%%share/man/man1/cppcheck.1.gz

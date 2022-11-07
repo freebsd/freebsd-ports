@@ -1,15 +1,15 @@
---- gui/CMakeLists.txt.orig	2022-03-19 11:35:06 UTC
+--- gui/CMakeLists.txt.orig	2022-08-28 12:43:18 UTC
 +++ gui/CMakeLists.txt
-@@ -36,7 +36,7 @@ if (BUILD_GUI)
-         target_link_libraries(cppcheck-gui ${Z3_LIBRARIES})
+@@ -34,7 +34,7 @@ if (BUILD_GUI)
+         target_link_libraries(cppcheck-gui ${PCRE_LIBRARY})
      endif()
      if(tinyxml2_FOUND AND NOT USE_BUNDLED_TINYXML2)
 -        target_link_libraries(cppcheck-gui ${tinyxml2_LIBRARIES})
 +        target_link_libraries(cppcheck-gui tinyxml2::tinyxml2)
      endif()
-     target_link_libraries(cppcheck-gui Qt5::Core Qt5::Gui Qt5::Widgets Qt5::PrintSupport Qt5::Help)
+     target_link_libraries(cppcheck-gui ${QT_CORE_LIB} ${QT_GUI_LIB} ${QT_WIDGETS_LIB} ${QT_PRINTSUPPORT_LIB} ${QT_HELP_LIB})
      if(WITH_QCHART)
-@@ -51,7 +51,7 @@ if (BUILD_GUI)
+@@ -49,7 +49,7 @@ if (BUILD_GUI)
      endif()
  
      install(TARGETS cppcheck-gui RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR} COMPONENT applications)

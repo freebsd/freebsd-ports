@@ -17605,3 +17605,4 @@ devel/py-pyxdg|devel/py-xdg|2022-10-28|Remove duplicate port
 lang/chicken5|lang/chicken|2022-10-30|Has expired: Please use lang/chicken instead
 devel/py-spyder|devel/spyder|2022-11-06|Spyder is an application, and not a library
 www/grafana7||2022-11-07|Has expired: EOLed upstream, unfixed vulnerabilities
+devel/cppcheck-gui|devel/cppcheck|2022-11-07|GUI is now included in devel/cppcheck port

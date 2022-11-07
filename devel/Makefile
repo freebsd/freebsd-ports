@@ -430,7 +430,6 @@
     SUBDIR += cpp-netlib
     SUBDIR += cpp2py
     SUBDIR += cppcheck
-    SUBDIR += cppcheck-gui
     SUBDIR += cppi
     SUBDIR += cpplint
     SUBDIR += cpprestsdk

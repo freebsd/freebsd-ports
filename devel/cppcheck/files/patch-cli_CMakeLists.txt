@@ -1,11 +1,11 @@
---- cli/CMakeLists.txt.orig	2022-03-19 11:35:06 UTC
+--- cli/CMakeLists.txt.orig	2022-08-28 12:43:18 UTC
 +++ cli/CMakeLists.txt
-@@ -35,7 +35,7 @@ if (WIN32 AND NOT BORLAND)
+@@ -37,7 +37,7 @@ if(tinyxml2_FOUND AND NOT USE_BUNDLED_TINYXML2)
      endif()
  endif()
  if(tinyxml2_FOUND AND NOT USE_BUNDLED_TINYXML2)
 -    target_link_libraries(cppcheck ${tinyxml2_LIBRARIES})
 +    target_link_libraries(cppcheck tinyxml2::tinyxml2)
  endif()
+ target_link_libraries(cppcheck ${CMAKE_THREAD_LIBS_INIT})
  
- add_dependencies(cppcheck copy_cfg)
