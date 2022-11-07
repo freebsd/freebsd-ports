@@ -1,0 +1,13 @@
+--- lib/icewm-session.desktop.orig	2022-11-07 10:45:52.521479000 -0800
++++ lib/icewm-session.desktop	2022-11-07 10:46:39.992803000 -0800
+@@ -60,8 +60,8 @@
+ Comment[zh_CN]=此会话使您登录到 IceWM
+ Comment[zh_TW]=選取這個作業階段後會進入 IceWM 環境
+ Icon=icewm
+-TryExec=/usr/bin/icewm-session
+-Exec=/usr/bin/icewm-session
++TryExec=/usr/local/bin/icewm-session
++Exec=/usr/local/bin/icewm-session
+ NoDisplay=false
+ Hidden=false
+ StartupNotify=false
