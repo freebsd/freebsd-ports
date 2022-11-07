@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-fda
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -22,6 +23,8 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 do-build:
 	@${DO_NADA}
+
+NO_ARCH=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
