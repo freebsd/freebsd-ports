@@ -146,6 +146,7 @@
     SUBDIR += eq10q-lv2
     SUBDIR += espeak-ng
     SUBDIR += espressivo-lv2
+    SUBDIR += essentia
     SUBDIR += etcd
     SUBDIR += eteroj-lv2
     SUBDIR += etktab
