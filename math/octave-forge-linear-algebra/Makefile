@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-linear-algebra
 PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 do-build:
 	@${DO_NADA}
+
+NO_ARCH=	yes
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
