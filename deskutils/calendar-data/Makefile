@@ -1,5 +1,5 @@
 PORTNAME=	calendar-data
-DISTVERSION=	2022.04
+DISTVERSION=	2022.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -8,6 +8,7 @@ COMMENT=	Calendar files for the BSD calendar program
 WWW=		https://www.freebsd.org
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
