@@ -3,3 +3,5 @@ SHA256 (hyprwm-Hyprland-v0.17.0beta-51-g1a55fb4_GH0.tar.gz) = 044b3da4456d053316
 SIZE (hyprwm-Hyprland-v0.17.0beta-51-g1a55fb4_GH0.tar.gz) = 683730
 SHA256 (74c6424a7e8b.patch) = 6a30db3bf98d4cad1c5107ebe5b830c047d580ceabc91f7eaf738f2c82fb6ca1
 SIZE (74c6424a7e8b.patch) = 713
+SHA256 (db4cbbb09226.patch) = 5159498c8ba88042a64588a18fb8a3ec053f34707b2c7d786cf18d272653ab2a
+SIZE (db4cbbb09226.patch) = 2323
