@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 
-MAINTAINER=	bhughes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server
 WWW=		https://nodejs.org/
 

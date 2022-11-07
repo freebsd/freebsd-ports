@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bhughes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-level, core functionality of boto 3
 WWW=		https://github.com/boto/botocore
 

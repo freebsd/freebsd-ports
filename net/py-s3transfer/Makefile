@@ -4,7 +4,7 @@ CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bhughes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amazon S3 Transfer Manager for Python
 WWW=		https://github.com/boto/s3transfer
 
