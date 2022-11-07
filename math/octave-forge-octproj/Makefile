@@ -1,8 +1,7 @@
 PORTNAME=	octave-forge-octproj
-PORTVERSION=	2.0.1
-PORTREVISION=	6
+PORTVERSION=	3.0.2
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+MASTER_SITES=	https://bitbucket.org/jgpallero/octproj/downloads/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -19,8 +18,6 @@ LIB_DEPENDS+=	libproj.so:graphics/proj
 OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
-
-USES+=		compiler:gcc-c++11-lib
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
