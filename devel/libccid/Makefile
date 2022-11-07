@@ -25,13 +25,13 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/RSA_SecurID_getpasswd \
 		lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so \
 		lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist \
-		man/man1/RSA_SecurID_getpasswd.1.gz
+		share/man/man1/RSA_SecurID_getpasswd.1.gz
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${MAN1PREFIX}/share/man/man1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
 
 .include <bsd.port.mk>
