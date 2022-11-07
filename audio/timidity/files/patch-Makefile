@@ -19,7 +19,7 @@
  
  # Where to install the manual pages
 -MAN_DIR = /usr/local/man/man1
-+MAN_DIR = ${PREFIX}/man/man1
++MAN_DIR = ${PREFIX}/share/man/man1
  
  # Where to install the patches, config files, and MIDI files.
  # If you change this, it's a good idea to recompile the binary,

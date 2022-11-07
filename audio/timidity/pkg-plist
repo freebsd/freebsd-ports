@@ -258,4 +258,4 @@ lib/timidity/midia.cfg
 lib/timidity/mt32.cfg
 lib/timidity/timidity.cfg
 lib/timidity/wowpats.cfg
-man/man1/timidity.1.gz
+share/man/man1/timidity.1.gz
