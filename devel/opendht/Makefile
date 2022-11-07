@@ -10,7 +10,8 @@ WWW=		https://github.com/savoirfairelinux/opendht/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio \
+		boost-libs>0:devel/boost-libs \
 		msgpack-cxx>0:devel/msgpack-cxx \
 		restinio>0:www/restinio
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
