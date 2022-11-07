@@ -10,7 +10,6 @@ WWW=		https://www.mono-project.com/docs/gui/libgdiplus/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	autoconf>0:devel/autoconf
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
@@ -19,8 +18,8 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		cpe gettext-runtime gmake gnome jpeg libtool:keepla pathfix \
-		pkgconfig
+USES=		autoreconf cpe gettext-runtime gmake gnome jpeg libtool:keepla \
+		pathfix pkgconfig
 USE_GNOME=	cairo glib20 pango
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -41,8 +40,5 @@ PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.so.0 \
 		lib/libgdiplus.so.0.0.0 \
 		libdata/pkgconfig/libgdiplus.pc
-
-pre-configure:
-	cd ${WRKSRC} && autoconf
 
 .include <bsd.port.mk>
