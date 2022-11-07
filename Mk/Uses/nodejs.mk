@@ -7,7 +7,7 @@
 # Default is:   build,run
 # Note:			if you define a version, you must provide run and/or build
 #
-# MAINTAINER: bhughes@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NODEJS_MK)
 _INCLUDE_USES_NODEJS_MK=	yes
