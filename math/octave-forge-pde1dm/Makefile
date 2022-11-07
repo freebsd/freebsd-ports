@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-pde1dm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -22,6 +23,8 @@ OCTSRC=		${GH_PROJECT}-${DISTVERSION}
 
 do-build:
 	@${DO_NADA}
+
+NO_ARCH=	yes
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
