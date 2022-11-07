@@ -9,6 +9,8 @@ WWW=		https://topology-tool-kit.github.io/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: cannot initialize a parameter of type 'const ttk::LongSimplexId *' (aka 'const long long *') with an lvalue ..., see https://github.com/topology-tool-kit/ttk/issues/852
+
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
