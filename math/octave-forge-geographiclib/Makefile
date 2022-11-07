@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-geographiclib
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://sourceforge.net/projects/geographiclib/files/distrib-Octave/
 DISTNAME=	${OCTAVE_PKGNAME}-octave-${DISTVERSIONFULL}
@@ -19,6 +20,8 @@ OCTSRC=		${DISTNAME}
 
 do-build:
 	@${DO_NADA}
+
+NO_ARCH=	yes
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
