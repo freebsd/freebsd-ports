@@ -14,8 +14,8 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-PATCH_SITES=	https://raw.githubusercontent.com/ungoogled-software/ungoogled-chromium/master/patches/core/ungoogled-chromium/
-PATCHFILES+=    disable-privacy-sandbox.patch:-p1
+PATCH_SITES=	https://nerd.hu/distfiles/
+PATCHFILES+=	disable-privacy-sandbox.patch:-p1
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
