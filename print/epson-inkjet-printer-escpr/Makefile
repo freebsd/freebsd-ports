@@ -1,8 +1,8 @@
 PORTNAME=	epson-inkjet-printer-escpr
-DISTVERSION=	1.7.21
+DISTVERSION=	1.7.22
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/77/93/e85dc2dc266e96fdc242bd95758bd88d1a51963e/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/96/55/c6fced63098ae1ba104f11f572794fd558ffca29/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
@@ -26,6 +26,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 PORTDOCS=	AUTHORS NEWS README README.ja
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	${FIND} -P -- ${STAGEDIR}${LOCALBASE}/share -ipath \*/${PORTNAME}/\* \
+		-type f -iname \*.ppd -exec ${GZIP_CMD} -- {} +
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
