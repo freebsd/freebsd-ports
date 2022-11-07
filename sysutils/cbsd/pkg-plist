@@ -75,6 +75,8 @@ cbsd/etc/defaults/DragonFly-kernel-GENERIC-x86_64-4.7
 cbsd/etc/defaults/DragonFly-kernel-GENERIC-x86_64-4.8
 cbsd/etc/defaults/DragonFly-srvbrowser.conf
 cbsd/etc/defaults/FreeBSD-bases.conf
+cbsd/etc/defaults/FreeBSD-base_in_pkg-14.0.conf
+cbsd/etc/defaults/FreeBSD-base_in_pkg.conf
 cbsd/etc/defaults/FreeBSD-baseupdate.conf
 cbsd/etc/defaults/FreeBSD-kernel-BHYVE-amd64-13.0
 cbsd/etc/defaults/FreeBSD-kernel-BHYVE-amd64-13.1
@@ -103,6 +105,7 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-13.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-13.1
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14.0
+cbsd/etc/defaults/FreeBSD-kernel-FIRE-amd64-14.0
 cbsd/etc/defaults/FreeBSD-kernels.conf
 cbsd/etc/defaults/FreeBSD-sources.conf
 cbsd/etc/defaults/FreeBSD-srvbrowser.conf
@@ -196,6 +199,7 @@ cbsd/etc/defaults/vm-freebsd-MidnightBSD-x64-2.conf
 cbsd/etc/defaults/vm-freebsd-OPNsense-22-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-CORE-x64-13.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-12.conf
+cbsd/etc/defaults/vm-freebsd-cloud-firestarter-ufs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-12.3.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.1.conf
@@ -231,6 +235,8 @@ cbsd/etc/defaults/vm-linux-Rocky-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-Tails-5.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-13.conf
 cbsd/etc/defaults/vm-linux-TrueNAS-Scale-22.conf
+cbsd/etc/defaults/vm-linux-VoidLinux-2022-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-firestarter-debian-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Arch-x86-2022.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
@@ -263,7 +269,7 @@ cbsd/etc/defaults/vm-linux-vyos-1.4.conf
 cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-9.conf
 cbsd/etc/defaults/vm-netbsd-x86-9.conf
 cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-7.conf
-cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-70.conf
+cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-71.conf
 cbsd/etc/defaults/vm-openbsd-x86-6.conf
 cbsd/etc/defaults/vm-openbsd-x86-7.conf
 cbsd/etc/defaults/vm-other-FreeDOS.conf
@@ -406,6 +412,16 @@ cbsd/modules/bsdconf.d/cloud-tpl/centos9/40-user-data-chpasswd-root
 cbsd/modules/bsdconf.d/cloud-tpl/centos9/40-user-data-chpasswd-user
 cbsd/modules/bsdconf.d/cloud-tpl/centos9/50-user-data-chpasswd
 cbsd/modules/bsdconf.d/cloud-tpl/centos9/meta-data
+cbsd/modules/bsdconf.d/cloud-tpl/fire-deb/10-network-config
+cbsd/modules/bsdconf.d/cloud-tpl/fire-deb/20-user-data-user-lockpassword
+cbsd/modules/bsdconf.d/cloud-tpl/fire-deb/20-user-data-user-password
+cbsd/modules/bsdconf.d/cloud-tpl/fire-deb/30-network-config-static
+cbsd/modules/bsdconf.d/cloud-tpl/fire-deb/50-resize
+cbsd/modules/bsdconf.d/cloud-tpl/fire-fbsd/10-network-config
+cbsd/modules/bsdconf.d/cloud-tpl/fire-fbsd/20-user-data-user-lockpassword
+cbsd/modules/bsdconf.d/cloud-tpl/fire-fbsd/20-user-data-user-password
+cbsd/modules/bsdconf.d/cloud-tpl/fire-fbsd/30-network-config-static
+cbsd/modules/bsdconf.d/cloud-tpl/fire-fbsd/50-resize
 cbsd/modules/bsdconf.d/cloud-tpl/windows/meta_data.json
 cbsd/modules/bsdconf.d/cloud-tpl/windows/meta_data.json-uid
 cbsd/modules/bsdconf.d/cloud-tpl/windows/network_data.json
@@ -674,6 +690,7 @@ cbsd/share/etcupdate_12.txt.xz
 cbsd/share/etcupdate_13.txt.xz
 cbsd/share/etcupdate_14.txt.xz
 cbsd/share/examples/bhyve/bhyverun.sh
+cbsd/share/examples/bhyve/iscsi.sh
 cbsd/share/examples/cbsdfile/CBSDfile
 cbsd/share/examples/cloud-init/centos/meta-data
 cbsd/share/examples/cloud-init/centos/network-config
@@ -698,6 +715,7 @@ cbsd/share/examples/env_start/nfsv4/env_start_nfs.conf
 cbsd/share/examples/env_start/nfsv4/env_start_nfs.sh
 cbsd/share/examples/jails-fstab/ntfs-3g.sh
 cbsd/share/examples/nodes/add.d/addhost.sh
+cbsd/share/grafana/CBSD_Jail_cluster_v0.0.json
 cbsd/share/forms.schema
 cbsd/share/forms_system.schema
 cbsd/share/forms_yesno.schema
@@ -923,6 +941,7 @@ cbsd/system/distribution
 cbsd/system/etcupdate
 cbsd/system/installkernel
 cbsd/system/installworld
+cbsd/system/install-pkg-world
 cbsd/system/kernel
 cbsd/system/mkdistribution
 cbsd/system/module
