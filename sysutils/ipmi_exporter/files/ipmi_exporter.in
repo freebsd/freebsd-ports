@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: ipmi_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ipmi_exporter_enable (bool):	Set to YES to enable the IPMI exporter.
+#			Default: NO
+# ipmi_exporter_config (str):	Set to the path of configuration file.
+#			Default: ""
+
+. /etc/rc.subr
+name=ipmi_exporter
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${impi_exporter_enable:="NO"}
+: ${impi_exporter_config:=""}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+command_args="-S -p ${pidfile} ${procname} --config.file=\"${impi_exporter_config}\""
+start_precmd="${name}_precmd"
+
+ipmi_exporter_precmd()
+{
+  export PATH=${PATH}:/usr/local/sbin
+}
+
+run_rc_command "$1"
