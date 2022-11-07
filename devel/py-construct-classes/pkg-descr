@@ -1,0 +1,7 @@
+Parse your binary data into dataclasses. Pack your dataclasses into
+binary data.
+
+construct-classes rely on construct for parsing and packing. The
+programmer needs to manually write the Construct expressions. There is
+also no type verification, so it is the programmer's responsibility that
+the dataclass and the Construct expression match.

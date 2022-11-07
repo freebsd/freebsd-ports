@@ -4403,6 +4403,7 @@
     SUBDIR += py-connection_pool
     SUBDIR += py-constantly
     SUBDIR += py-construct
+    SUBDIR += py-construct-classes
     SUBDIR += py-contextlib2
     SUBDIR += py-convertdate
     SUBDIR += py-cookiecutter
