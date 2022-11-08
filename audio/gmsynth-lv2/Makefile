@@ -1,6 +1,6 @@
 PORTNAME=	gmsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -15,10 +15,13 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 # FluidSynth is left bundled based on the project owner's request: https://github.com/x42/gmsynth.lv2/issues/2#issuecomment-441458303
 
 USES=		gmake gnome pkgconfig
+USE_GNOME=	glib20
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	x42
 GH_PROJECT=	${PORTNAME}.lv2
-USE_GNOME=	glib20
+
+BINARY_ALIAS=	git=false
 
 PLIST_FILES=	lib/lv2/${PORTNAME}.lv2/GeneralUser_LV2.sf2 \
 		lib/lv2/${PORTNAME}.lv2/${PORTNAME}.so \
