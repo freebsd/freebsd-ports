@@ -1,3 +1,34 @@
+  <vuln vid="9c399521-5f80-11ed-8ac4-b42e991fc52e">
+    <topic>darkhttpd -- DOS vulnerability</topic>
+    <affects>
+      <package>
+	<name>darkhttpd</name>
+	<range><lt>1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mitre reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25691">
+	  <p>
+	    flaw was found in darkhttpd. Invalid error handling allows
+	    remote attackers to cause denial-of-service by accessing a
+	    file with a large modification date. The highest threat
+	    from this vulnerability is to system availability.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25691</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25691</url>
+    </references>
+    <dates>
+      <discovery>2020-11-02</discovery>
+      <entry>2022-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3310014a-5ef9-11ed-812b-206a8a720317">
     <topic>sudo -- Potential out-of-bounds write for small passwords</topic>
     <affects>
