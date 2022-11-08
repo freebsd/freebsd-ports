@@ -1,14 +1,13 @@
 PORTNAME=	Jinja2
-PORTVERSION=	3.0.1
-PORTREVISION=	0
+DISTVERSION=	3.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX?=
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT?=	Fast and easy to use stand-alone template engine
-WWW?=		http://jinja.pocoo.org/
+COMMENT=	Fast and easy to use stand-alone template engine
+WWW=		http://jinja.pocoo.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
@@ -19,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.0.0:textproc/py-markupsafe@${
 NO_ARCH=	yes
 .if empty(PKGNAMESUFFIX)
 USES=		cpe python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest # 23 tests fail, see https://github.com/pallets/jinja/issues/1757
 
 CPE_VENDOR=	pocoo
 .endif
@@ -68,7 +67,7 @@ post-install:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
-check regression-test test: build
+check regression-test: build
 .if empty(PKGNAMESUFFIX)
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 .else
