@@ -8,7 +8,6 @@ WWW=		https://konsole.kde.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
-RUN_DEPENDS=	keditbookmarks:deskutils/keditbookmarks
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,11 +20,19 @@ USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		newstuff notifications notifyconfig parts pty service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \
+USE_QT=		concurrent core dbus gui network printsupport sql \
 		widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_EXCLUDE_purecap=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if !${ABI:Mpurecap}
+RUN_DEPENDS=	keditbookmarks:deskutils/keditbookmarks
+USE_QT+=	script scripttools
+.endif
 
 .include <bsd.port.mk>
