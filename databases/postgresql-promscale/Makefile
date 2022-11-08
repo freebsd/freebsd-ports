@@ -1,6 +1,6 @@
 PORTNAME=	promscale
 PORTVERSION=	0.7.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -35,6 +35,10 @@ MAKE_ENV+=	MAKE=gmake PATH=${PATH}:${WRKDIR}/.cargo/bin
 
 post-extract:
 	mv ${WRKDIR}/pgx-* ${WRKDIR}/pgx
+
+pre-configure:
+	@${PATCH} -d ${WRKDIR} ${PATCH_ARGS} < ${PATCHDIR}/pgx-include-patch
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKDIR}/pgx/pgx-pg-sys/build.rs
 
 pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} cargo install --offline --path ../pgx/cargo-pgx cargo-pgx
