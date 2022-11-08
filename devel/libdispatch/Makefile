@@ -1,5 +1,6 @@
 PORTNAME=	libdispatch
 DISTVERSION=	5.5
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
