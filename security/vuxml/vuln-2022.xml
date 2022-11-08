@@ -1,3 +1,35 @@
+  <vuln vid="3310014a-5ef9-11ed-812b-206a8a720317">
+    <topic>sudo -- Potential out-of-bounds write for small passwords</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><ge>1.8.0</ge><lt>1.9.12p1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>Sudo 1.8.0 through 1.9.12, with the crypt() password backend,
+	     contains a plugins/sudoers/auth/passwd.c array-out-of-bounds
+	     error that can result in a heap-based buffer over-read. This
+	     can be triggered by arbitrary local users with access to sudo
+	     by entering a password of seven characters or fewer. The impact
+	     could vary depending on the system libraries, compiler,
+	     and processor architecture.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-43995</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43995</url>
+    </references>
+    <dates>
+      <discovery>2022-11-07</discovery>
+      <entry>2022-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="16f7ec68-5cce-11ed-9be7-454b1dd82c64">
     <topic>Gitlab -- Multiple vulnerabilities</topic>
     <affects>
