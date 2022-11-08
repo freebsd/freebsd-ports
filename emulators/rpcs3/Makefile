@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.25-14363 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-ge98b07de03
+DISTVERSION=	0.0.25-14365 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gb875a86e1d
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
