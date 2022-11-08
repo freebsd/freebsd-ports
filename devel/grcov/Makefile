@@ -1,7 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.12
-PORTREVISION=	1
+DISTVERSION=	0.8.13
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,12 +28,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		block-buffer-0.10.3 \
 		bstr-0.2.17 \
 		bumpalo-3.11.0 \
+		bytecount-0.6.3 \
 		byteorder-1.4.3 \
 		camino-1.1.1 \
 		cargo-binutils-0.3.6 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.14.2 \
 		cc-1.0.73 \
+		cfb-0.7.3 \
 		cfg-if-1.0.0 \
 		chrono-0.4.22 \
 		chrono-tz-0.6.3 \
@@ -53,7 +54,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		debugid-0.8.0 \
 		deunicode-0.4.3 \
 		diff-0.1.13 \
-		digest-0.10.3 \
+		digest-0.10.5 \
 		either-1.8.0 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
@@ -66,19 +67,20 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		globset-0.4.9 \
 		globwalk-0.8.1 \
 		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humansize-1.1.1 \
 		iana-time-zone-0.1.47 \
 		ignore-0.4.18 \
+		infer-0.9.0 \
 		instant-0.1.12 \
-		is_executable-1.0.1 \
 		itoa-1.0.3 \
 		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
 		libc-0.2.132 \
 		libz-sys-1.1.8 \
 		log-0.4.17 \
-		md-5-0.10.4 \
+		md-5-0.10.5 \
 		memchr-2.5.0 \
 		memmap2-0.5.7 \
 		memoffset-0.6.5 \
@@ -91,6 +93,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		object-0.29.0 \
 		once_cell-1.14.0 \
 		output_vt100-0.1.3 \
+		papergrid-0.5.1 \
 		parse-zoneinfo-0.3.0 \
 		percent-encoding-2.2.0 \
 		pest-2.3.0 \
@@ -107,7 +110,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.43 \
-		quick-xml-0.25.0 \
+		quick-xml-0.26.0 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -125,26 +128,28 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.13 \
-		serde-1.0.144 \
-		serde_derive-1.0.144 \
-		serde_json-1.0.85 \
+		semver-1.0.14 \
+		serde-1.0.147 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.87 \
 		sha-1-0.10.0 \
 		simplelog-0.12.0 \
 		siphasher-0.3.10 \
 		slug-0.1.4 \
-		smallvec-1.9.0 \
+		smallvec-1.10.0 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		symbolic-common-9.1.1 \
-		symbolic-demangle-9.1.1 \
+		symbolic-common-9.2.1 \
+		symbolic-demangle-9.2.1 \
 		syn-1.0.99 \
 		synstructure-0.12.6 \
+		tabled-0.8.0 \
+		tabled_derive-0.4.0 \
 		tcmalloc-0.3.0 \
 		tempfile-3.3.0 \
-		tera-1.17.0 \
+		tera-1.17.1 \
 		termcolor-1.1.3 \
 		textwrap-0.11.0 \
 		thiserror-1.0.34 \
@@ -167,7 +172,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
-		uuid-1.1.2 \
+		uuid-1.2.1 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
@@ -184,7 +189,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yansi-0.5.1 \
-		zip-0.6.2
+		zip-0.6.3
 
 PLIST_FILES=	bin/grcov
 
