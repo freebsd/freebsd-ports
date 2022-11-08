@@ -1,5 +1,5 @@
 PORTNAME=	intel-pcm
-PORTVERSION=	202112
+PORTVERSION=	202210
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -11,15 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		gmake
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	opcm
 GH_PROJECT=	pcm
-
-CONFLICTS_INSTALL=	intel-pcm-devel
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/*.x ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
