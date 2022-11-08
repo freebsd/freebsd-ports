@@ -1,3 +1,3 @@
-TIMESTAMP = 1662027910
-SHA256 (jupyterlab_widgets-1.1.1.tar.gz) = 67d0ef1e407e0c42c8ab60b9d901cd7a4c68923650763f75bf17fb06c1943b79
-SIZE (jupyterlab_widgets-1.1.1.tar.gz) = 120059
+TIMESTAMP = 1667935934
+SHA256 (jupyterlab_widgets-3.0.3.tar.gz) = c767181399b4ca8b647befe2d913b1260f51bf9d8ef9b7a14632d4c1a7b536bd
+SIZE (jupyterlab_widgets-3.0.3.tar.gz) = 189425
