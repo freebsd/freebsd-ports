@@ -11,7 +11,7 @@ WWW=		https://www.eclipse.org/jetty/
 
 LICENSE=	APACHE20 EPL
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/license-eplv10-aslv20.html
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
