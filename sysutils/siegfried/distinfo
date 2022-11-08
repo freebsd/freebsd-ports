@@ -1,6 +1,6 @@
-TIMESTAMP = 1663069780
-SHA256 (richardlehane-siegfried-v1.9.5_GH0.tar.gz) = 514ae14e65f964e3ff06fa07a2d3aa65ee24eb09de992299ce47f2a048d12353
-SIZE (richardlehane-siegfried-v1.9.5_GH0.tar.gz) = 13662929
+TIMESTAMP = 1667949494
+SHA256 (richardlehane-siegfried-v1.9.6_GH0.tar.gz) = 57b2f6ba52a0103e7d633123efa65e1e84c0f8472eadd56eee58954b0b9083fe
+SIZE (richardlehane-siegfried-v1.9.6_GH0.tar.gz) = 13680165
 SHA256 (golang-image-e7cb96979f69_GH0.tar.gz) = 0708e1ad40e912309940faf245fb707958d483accd97da403e42cd359c0dbe15
 SIZE (golang-image-e7cb96979f69_GH0.tar.gz) = 5038672
 SHA256 (golang-sys-aba9fc2a8ff2_GH0.tar.gz) = 575b22726023065e9daaba22a4fe7a29323dbd43e27bdbe9ed38605295c563e6
