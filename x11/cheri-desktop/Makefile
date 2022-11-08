@@ -15,7 +15,10 @@ ONLY_FOR_ARCHS_REASON=	requires GPU support available only on the Morello platfo
 RUN_DEPENDS=	${LOCALBASE}/bin/eglinfo:graphics/mesa-demos
 RUN_DEPENDS+=	${LOCALBASE}/bin/foot:x11/foot
 RUN_DEPENDS+=	${LOCALBASE}/bin/kaccess:x11/plasma5-plasma-desktop
+RUN_DEPENDS+=	${LOCALBASE}/bin/kate:editors/kate
+RUN_DEPENDS+=	${LOCALBASE}/bin/konsole:x11/konsole
 RUN_DEPENDS+=	${LOCALBASE}/bin/kwin_wayland:x11-wm/plasma5-kwin
+RUN_DEPENDS+=	${LOCALBASE}/bin/okular:graphics/okular
 RUN_DEPENDS+=	${LOCALBASE}/bin/plasmashell:x11/plasma5-plasma-workspace
 RUN_DEPENDS+=	${LOCALBASE}/lib/libEGL.so:graphics/libglvnd
 RUN_DEPENDS+=	${LOCALBASE}/lib/libEGL_mesa.so:graphics/mesa-libs
@@ -26,6 +29,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libwayland-server.so:graphics/wayland
 RUN_DEPENDS+=	${LOCALBASE}/lib/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so:x11/plasma5-kwayland-integration
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/terminus-font/ter-112b.pcf.gz:x11-fonts/terminus-font
+RUN_DEPENDS+=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:misc/shared-mime-info
 RUN_DEPENDS+=	${LOCALBASE}/share/wallpapers/Elarun/metadata.desktop:x11-themes/plasma5-plasma-workspace-wallpapers
 
 .include <bsd.port.options.mk>
