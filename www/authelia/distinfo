@@ -1,7 +1,7 @@
-TIMESTAMP = 1664345975
-SHA256 (go/www_authelia/authelia-v4.36.9/authelia-v4.36.9-public_html.tar.gz) = c12bbd2c0e170859e1d2de95c22d2c1033bb11b91f90a7732c68351049471832
-SIZE (go/www_authelia/authelia-v4.36.9/authelia-v4.36.9-public_html.tar.gz) = 3287043
-SHA256 (go/www_authelia/authelia-v4.36.9/v4.36.9.mod) = ef93e54af096b0721f0b917a64b3bc47c5201fe0a24fc26f47e1751bee26a455
-SIZE (go/www_authelia/authelia-v4.36.9/v4.36.9.mod) = 5339
-SHA256 (go/www_authelia/authelia-v4.36.9/v4.36.9.zip) = fb2cddef569a12b7158ab95b806f9908842fac859e15fd50159834de636297ca
-SIZE (go/www_authelia/authelia-v4.36.9/v4.36.9.zip) = 5928344
+TIMESTAMP = 1667885182
+SHA256 (go/www_authelia/authelia-v4.37.2/authelia-v4.37.2-public_html.tar.gz) = 334b29e6e48d183a0769283512df2962a4f7a0fe7d47d54e205485a182f9f298
+SIZE (go/www_authelia/authelia-v4.37.2/authelia-v4.37.2-public_html.tar.gz) = 3281289
+SHA256 (go/www_authelia/authelia-v4.37.2/v4.37.2.mod) = e7b53c04231d5b3ea24643f60fa61034dcc7fa3547837eccb6388d1617c44f1f
+SIZE (go/www_authelia/authelia-v4.37.2/v4.37.2.mod) = 5008
+SHA256 (go/www_authelia/authelia-v4.37.2/v4.37.2.zip) = c04160068af965f1aafefac05758eff116cfaaba6f2377fc9572a4e271fe9dc3
+SIZE (go/www_authelia/authelia-v4.37.2/v4.37.2.zip) = 6188025
