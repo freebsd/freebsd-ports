@@ -1,6 +1,5 @@
 PORTNAME=	shairport-sync
-DISTVERSION=	3.3.9
-PORTREVISION=	1
+DISTVERSION=	4.1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -17,27 +16,41 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 
 USES=		autoreconf libtool pkgconfig ssl
 USE_GITHUB=	yes
-
-GNU_CONFIGURE=	yes
-
 GH_ACCOUNT=	mikebrady
-
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=	ALAC ALSA SNDIO PULSEAUDIO MQTT
-OPTIONS_DEFAULT=SNDIO
-ALAC_DESC=	Build with libalac support (experimental)
-MQTT_DESC=	Build with MQTT protocol support
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
-		--with-piddir=/var/run/shairport-sync --with-avahi \
-		--with-ssl=openssl --with-metadata --with-soxr \
-		--with-stdout --with-pipe --with-libdaemon
+		--with-avahi \
+		--with-libdaemon \
+		--with-metadata \
+		--with-piddir=/var/run/shairport-sync \
+		--with-pipe \
+		--with-soxr \
+		--with-ssl=openssl \
+		--with-stdout
+CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} \
+		SSL_LIBS=-L${OPENSSLLIB}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lcrypto
 
-CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} SSL_LIBS=-L${OPENSSLLIB}
+OPTIONS_DEFINE=		AIRPLAY2 ALAC ALSA MQTT PULSEAUDIO SNDIO
+OPTIONS_DEFAULT=	AIRPLAY2 SNDIO
+#OPTIONS_DEFAULT=	SNDIO
+AIRPLAY2_DESC=		Build with AirPlay 2 protocol support
+ALAC_DESC=		Build with libalac support (experimental)
+MQTT_DESC=		Build with MQTT protocol support
+
+AIRPLAY2_BUILD_DEPENDS=	vim:editors/vim
+AIRPLAY2_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+			libgcrypt.so:security/libgcrypt \
+			libplist-2.0.so:devel/libplist \
+			libsodium.so:security/libsodium \
+			libuuid.so:misc/e2fsprogs-libuuid
+AIRPLAY2_RUN_DEPENDS=	nqptp:net/nqptp
+AIRPLAY2_CONFIGURE_ON=	--with-airplay-2
+AIRPLAY2_SUB_FILES=	pkg-message
 
 ALAC_LIB_DEPENDS=	libalac.so:audio/alac
 ALAC_CONFIGURE_ON=	--with-apple-alac
@@ -48,11 +61,11 @@ ALSA_CONFIGURE_ON=	--with-alsa
 MQTT_LIB_DEPENDS=	libmosquitto.so:net/mosquitto
 MQTT_CONFIGURE_ON=	--with-mqtt-client
 
-SNDIO_CONFIGURE_ON=	--with-sndio
-SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ON=	--with-pa
 
-PULSEAUDIO_CONFIGURE_ON=--with-pa
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_ON=	--with-sndio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-Wno-clobbered -Wno-psabi //' \
