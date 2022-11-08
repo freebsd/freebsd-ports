@@ -1,4 +1,4 @@
-bin/update-mime-database
+%%TOOLS%%bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
 man/man1/update-mime-database.1.gz
 share/gettext/its/shared-mime-info.its

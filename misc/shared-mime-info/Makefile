@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gmake:devel/gmake
 
-USES=		gettext gnome localbase meson pathfix pkgconfig python:build shebangfix \
+USES=		gettext localbase meson pathfix pkgconfig python:build shebangfix \
 		tar:xz trigger
 CONFIGURE_ARGS=	-Dupdate-mimedb=false \
 		-Dxdgmime-path=${WRKSRC}/src/xdgmime
@@ -35,6 +35,22 @@ SHEBANG_FILES=	${WRKSRC}/tests/compare_iana.py \
 
 MIMESUBDIRS=	application audio image inode message model multipart \
 		packages text video x-epoc x-content font
+
+OPTIONS_DEFINE=			TOOLS
+OPTIONS_DEFAULT=		TOOLS
+OPTIONS_SUB=			yes
+# No glib2 support
+OPTIONS_EXCLUDE_purecap=	TOOLS
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MTOOLS}
+CONFIGURE_ARGS+=	-Dbuild-tools=false
+.endif
+
+.if !${ABI:Mpurecap}
+USES+=	gnome
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
