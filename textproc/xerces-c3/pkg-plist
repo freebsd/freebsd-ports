@@ -486,5 +486,5 @@ include/xercesc/xinclude/XIncludeUtils.hpp
 lib/libxerces-c-%%MAJOR_VER%%.so
 lib/libxerces-c.a
 lib/libxerces-c.so
-lib/libxerces-c.so.%%MAJOR_VER%%
+lib/libxerces-c.so.3
 libdata/pkgconfig/xerces-c.pc
