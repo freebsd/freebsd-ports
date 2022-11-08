@@ -523,6 +523,7 @@
     SUBDIR += nncp
     SUBDIR += nng
     SUBDIR += norm
+    SUBDIR += nqptp
     SUBDIR += ns3
     SUBDIR += nsq
     SUBDIR += nss-pam-ldapd
