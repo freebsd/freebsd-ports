@@ -1,10 +1,13 @@
 PORTNAME=	cherrypy
 PORTVERSION=	17.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	CherryPy-${PORTVERSION}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	8245a74aa4e0.patch:-p1 # https://github.com/cherrypy/cherrypy/pull/1945
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pythonic, object-oriented web development framework
