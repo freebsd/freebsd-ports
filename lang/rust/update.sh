@@ -13,8 +13,11 @@ fetch -qo - https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/s
 	"RUST_BOOTSTRAP_VERSION=\(.compiler.version)"
 ' | portedit merge -i .
 
-sed -i '' -E -e "s,(\\$\\{RUST_DEFAULT\\}>=).*(:lang/\\$\\{RUST_DEFAULT\\}),\\1${version}\\2," \
-	../../Mk/Uses/cargo.mk ../../Mk/bsd.gecko.mk
+cat <<EOF | sed -i '' -E -f - ../../Mk/Uses/cargo.mk ../../Mk/bsd.gecko.mk
+1,/\\$\\{RUST_DEFAULT\\}>=/ {
+	s,(\\$\\{RUST_DEFAULT\\}>=).*(:lang/\\$\\{RUST_DEFAULT\\}),\\1${version}\\2,
+}
+EOF
 
 portedit set-version -i "${version}" .
 portedit set-version -i "${version}" ../rust-bootstrap
