@@ -1,4 +1,4 @@
---- build.sh.orig	2021-06-11 17:24:22 UTC
+--- build.sh.orig	2021-09-06 06:22:24 UTC
 +++ build.sh
 @@ -72,7 +72,7 @@ echo -e "${RED}*** ${@}${NC}"
  
@@ -62,7 +62,7 @@
  		export XLIB64
  	fi
  	if [ ${MODEL} = 'ppc64le' ]; then
-@@ -163,11 +171,13 @@ if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64le' -o ${
+@@ -163,18 +171,20 @@ if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64le' -o ${
  	export SWT_PTR_CFLAGS
  fi
  
@@ -72,10 +72,18 @@
  	MAKE_CAIRO=make_cairo
  else
  	func_echo_error "Cairo not found: Advanced graphics support using cairo will not be compiled."
-+fi
  fi
++fi
  
  # Find AWT if available
+ if [ ${SWT_OS} = 'win32' ]; then
+ 	AWT_LIB_EXPR="jawt.dll"
+ else
+-	AWT_LIB_EXPR="libjawt.*"
++	AWT_LIB_EXPR="libjawt.so"
+ fi
+ 
+ if [ -z "${AWT_LIB_PATH}" ]; then
 @@ -332,4 +342,4 @@ elif [ "${GTK_VERSION}" = "4.0" ]; then
  elif [ "${GTK_VERSION}" = "3.0" -o "${GTK_VERSION}" = "" ]; then
  	export GTK_VERSION="3.0"
