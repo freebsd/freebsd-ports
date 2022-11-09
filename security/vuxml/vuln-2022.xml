@@ -1,3 +1,46 @@
+  <vuln vid="6b04476f-601c-11ed-92ce-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>107.0.5304.110</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>107.0.5304.110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/11/stable-channel-update-for-desktop.html">
+	  <p>This release contains 10 security fixes, including:</p>
+	  <ul>
+	    <li>[1377816] High CVE-2022-3885: Use after free in V8. Reported by gzobqq@ on 2022-10-24</li>
+	    <li>[1372999] High CVE-2022-3886: Use after free in Speech Recognition. Reported by anonymous on 2022-10-10</li>
+	    <li>[1372695] High CVE-2022-3887: Use after free in Web Workers. Reported by anonymous on 2022-10-08</li>
+	    <li>[1375059] High CVE-2022-3888: Use after free in WebCodecs. Reported by Peter Nemeth on 2022-10-16</li>
+	    <li>[1380063] High CVE-2022-3889: Type Confusion in V8. Reported by anonymous on 2022-11-01</li>
+	    <li>[1380083] High CVE-2022-3890: Heap buffer overflow in Crashpad. Reported by anonymous on 2022-11-01</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3885</cvename>
+      <cvename>CVE-2022-3886</cvename>
+      <cvename>CVE-2022-3887</cvename>
+      <cvename>CVE-2022-3888</cvename>
+      <cvename>CVE-2022-3889</cvename>
+      <cvename>CVE-2022-3890</cvename>
+      <url>https://chromereleases.googleblog.com/2022/11/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-11-08</discovery>
+      <entry>2022-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60d4d31a-a573-41bd-8c1e-5af7513c1ee9">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
