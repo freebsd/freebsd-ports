@@ -1,6 +1,5 @@
 PORTNAME=	Faker
-PORTVERSION=	0.8.15
-PORTREVISION=	3
+DISTVERSION=	15.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,20 +12,17 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.4:devel/py-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}text-unidecode>=1.2:converters/py-text-unidecode@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.1:devel/py-typing-extensions@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}random2>0:math/py-random2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}validators>0:devel/py-validators@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+USES=		pytest python:3.7+
+USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	rubygem-faker
 
 NO_ARCH=	yes
-
-do-test:
-	${RM} ${WRKSRC}/tests/providers/test_address.py # Needs ukpostcodeparser.parser port
-	${RM} ${WRKSRC}/tests/providers/test_internet.py # Needs email_validator port
-	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover -v
 
 .include <bsd.port.mk>
