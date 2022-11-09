@@ -1,3 +1,44 @@
+  <vuln vid="60d4d31a-a573-41bd-8c1e-5af7513c1ee9">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.3">
+	  <p> Fix an issue where a specially-crafted FTP packet can
+	  cause Zeek to spend large amounts of time attempting to
+	  search for valid commands in the data stream. </p>
+	  <p> Fix a possible overflow in the Zeek dictionary code
+	  that may lead to a memory leak. </p>
+	  <p> Fix an issue where a specially-crafted packet can
+	  cause Zeek to spend large amounts of time reporting
+	  analyzer violations. </p>
+	  <p> Fix a possible assert and crash in the HTTP analyzer
+	  when receiving a specially crafted packet. </p>
+	  <p> Fix an issue where a specially-crafted HTTP or SMTP
+	  packet can cause Zeek to spend a large amount of time
+	  attempting to search for filenames within the packet data.
+	  </p>
+	  <p> Fix two separate possible crashes when converting
+	  processed IP headers for logging via the raw_packet event
+	  handlers. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.3</url>
+    </references>
+    <dates>
+      <discovery>2022-11-09</discovery>
+      <entry>2022-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c399521-5f80-11ed-8ac4-b42e991fc52e">
     <topic>darkhttpd -- DOS vulnerability</topic>
     <affects>
