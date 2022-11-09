@@ -117,6 +117,7 @@
     SUBDIR += curator
     SUBDIR += curtail
     SUBDIR += cuttlefish
+    SUBDIR += cxxplot
     SUBDIR += darktable
     SUBDIR += dataplot
     SUBDIR += dbow2

@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2022-04-04 11:38:46 UTC
++++ CMakeLists.txt
+@@ -164,7 +164,7 @@ target_link_libraries( cxxplot
+ 
+ target_compile_options( cxxplot PRIVATE
+   $<$<CXX_COMPILER_ID:MSVC>:> # TODO ADD /W4 /WX here by fixing cxxplot_WARNOFF / ON
+-  $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -pedantic -Werror>
++  $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -pedantic>
+ )
+ 
+ # Install, export targets, cmake config and version
+@@ -224,9 +224,10 @@ install(
+   )
+ 
+ # tests/examples
+-if ( CXXPLOT_NOT_SUBPROJECT )
+-
++if (BUILD_TESTING)
+ add_subdirectory( tests )
+-add_subdirectory( examples )
++endif()
+ 
+-endif( CXXPLOT_NOT_SUBPROJECT )
++if (BUILD_EXAMPLES)
++add_subdirectory( examples )
++endif()
