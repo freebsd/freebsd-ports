@@ -126,6 +126,7 @@
     SUBDIR += ctpp2
     SUBDIR += cwtext
     SUBDIR += cy-aspell
+    SUBDIR += cy-hunspell
     SUBDIR += da-aspell
     SUBDIR += dadadodo
     SUBDIR += dasel
