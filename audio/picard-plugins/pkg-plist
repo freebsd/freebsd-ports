@@ -18,6 +18,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/collect_artists%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/compatible_TXXX%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/compatible_TXXX%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/critiquebrainz%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/critiquebrainz%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/cuesheet%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/cuesheet%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/decode_cyrillic%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -32,8 +34,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/featartistsintitles%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums%%PYTHON_EXT_SUFFIX%%.pyc
-@comment %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-@comment %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/happidev_lyrics%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/happidev_lyrics%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -119,6 +119,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/collect_artists.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/compatible_TXXX.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/critiquebrainz.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/decade/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/decade/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -159,7 +160,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/__pycache__/ui_options_format_performer_tags%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.ui
-@comment %%PYTHON_SITELIBDIR%%/picard/plugins/haikuattrs.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/happidev_lyrics.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py

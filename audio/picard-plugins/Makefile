@@ -1,5 +1,5 @@
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20221018
+PORTVERSION=	2.0.20221109
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		python:3.7+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	c1fae13
+GH_TAGNAME=	30648b9
 
 PORTSCOUT=	limit:^2\.
 
@@ -44,6 +44,9 @@ WAVPACK_RUN_DEPENDS=	wvgain:audio/wavpack
 
 REPLAYGAIN2_DESC=		ReplayGain 2.0 audio normalization
 REPLAYGAIN2_RUN_DEPENDS=	rsgain:audio/rsgain
+
+post-patch:
+	${RM} -rf ${WRKSRC}/plugins/haikuattrs
 
 do-build:
 # Plugins that include a separate UI (those with an __init__.py) must
