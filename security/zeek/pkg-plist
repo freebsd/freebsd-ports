@@ -380,7 +380,6 @@ include/broker/zeek.hh
 %%SPICY%%include/hilti/rt/iterator.h
 %%SPICY%%include/hilti/rt/json-fwd.h
 %%SPICY%%include/hilti/rt/json.h
-%%SPICY%%include/hilti/rt/lambda.h
 %%SPICY%%include/hilti/rt/libhilti.h
 %%SPICY%%include/hilti/rt/library.h
 %%SPICY%%include/hilti/rt/linker.h
