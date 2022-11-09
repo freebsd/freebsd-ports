@@ -20,7 +20,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL2
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPL3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
 
 USES=		python:3.5+ pyqt:sip
 USE_PYTHON=	autoplist concurrent distutils flavors py3kplist

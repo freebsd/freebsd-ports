@@ -158,6 +158,7 @@
     SUBDIR += py-guietta
     SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
+    SUBDIR += py-qt6-chart
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4

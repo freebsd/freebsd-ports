@@ -1119,6 +1119,7 @@
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt5-networkauth
+    SUBDIR += py-qt6-networkauth
     SUBDIR += py-rabbitpy
     SUBDIR += py-radix
     SUBDIR += py-raet

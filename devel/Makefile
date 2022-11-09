@@ -5244,9 +5244,13 @@
     SUBDIR += py-qcs-api-client
     SUBDIR += py-qstylizer
     SUBDIR += py-qt5
+    SUBDIR += py-qt6
     SUBDIR += py-qt5-pyqt
+    SUBDIR += py-qt6-pyqt
     SUBDIR += py-qt5-qscintilla2
+    SUBDIR += py-qt6-qscintilla2
     SUBDIR += py-qt5-sip
+    SUBDIR += py-qt6-sip
     SUBDIR += py-qtbuilder
     SUBDIR += py-qtconsole
     SUBDIR += py-questionary
@@ -5658,6 +5662,7 @@
     SUBDIR += qschematic
     SUBDIR += qscintilla2-designerplugin-qt5
     SUBDIR += qscintilla2-qt5
+    SUBDIR += qscintilla2-qt6
     SUBDIR += qt-maybe
     SUBDIR += qt5
     SUBDIR += qt5-assistant
