@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
 DISTNAME=	${PYQT_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Python bindings for the Qt5 toolkit, QtCore module
+COMMENT=	Python bindings for the Qt6 toolkit, QtCore module
 WWW=		https://riverbankcomputing.com/software/pyqt
 
 PYQT_DIST=	yes

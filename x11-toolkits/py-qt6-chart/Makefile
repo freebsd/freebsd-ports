@@ -8,7 +8,7 @@ DISTNAME=	${PYQTCHART_DISTNAME}
 PYQT_DIST=	yes
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Python bindings for the Qt5 toolkit, QtChart module
+COMMENT=	Python bindings for the Qt6 toolkit, QtChart module
 WWW=		https://riverbankcomputing.com/software/pyqtchart
 
 LICENSE=	${PYQT6_LICENSE}
