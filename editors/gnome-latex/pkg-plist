@@ -10,7 +10,6 @@ share/dbus-1/services/org.gnome.gnome-latex.service
 %%DATADIR%%/templates/book.xml
 %%DATADIR%%/templates/letter.xml
 %%DATADIR%%/templates/report.xml
-%%DATADIR%%/ui/preferences_dialog.ui
 %%DATADIR%%/ui/ui.xml
 share/gtk-doc/html/gnome-latex/LatexilaApp.html
 share/gtk-doc/html/gnome-latex/LatexilaBuildJob.html
@@ -39,6 +38,8 @@ share/gtk-doc/html/gnome-latex/ch04.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LaTeX-commands.html
 share/gtk-doc/html/gnome-latex/gnome-latex-Latexila-Initialization-and-Finalization.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaBuffer.html
+share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaDirs.html
+share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaPrefs.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaTemplatesDialogs.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaUtils.html
 share/gtk-doc/html/gnome-latex/gnome-latex-LatexilaView.html
