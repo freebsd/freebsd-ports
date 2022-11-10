@@ -29,6 +29,8 @@ include/libwmf/macro.h
 include/libwmf/svg.h
 include/libwmf/types.h
 include/libwmf/x.h
+lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/io-wmf.a
+lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/io-wmf.so
 lib/libwmf-0.2.so.7
 lib/libwmf-0.2.so.7.1.4
 lib/libwmf.a
