@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+QMC2 has been installed.
+
+An example configuration file, "qmc2.ini.sample", has been
+installed at "%%EXAMPLESDIR%%".
+
+To use, remove the .sample suffix, and copy to "%%ETCDIR%%".
+EOM
+}
+]
