@@ -1,5 +1,5 @@
 PORTNAME=	amtk
-PORTVERSION=	5.2.0
+PORTVERSION=	5.6.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -10,13 +10,9 @@ WWW=		https://wiki.gnome.org/Projects/Amtk
 
 LICENSE=	LGPL21
 
-USES=		gettext gmake gnome libtool pkgconfig tar:xz
-USE_GNOME=	cairo introspection gdkpixbuf2 gtk30
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc \
-		--disable-gtk-doc-html \
-		--disable-dependency-tracking
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+
+USES=		gettext gmake gnome libtool meson pkgconfig tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
 
 .include <bsd.port.mk>
