@@ -751,8 +751,8 @@ lib/libpgcommon.a
 %%NLS%%share/locale/es/LC_MESSAGES/pg_rewind-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_test_fsync-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_test_timing-%%PG_VERSION%%.mo
-%%NLS%%share/locale/es/LC_MESSAGES/pg_waldump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_upgrade-%%PG_VERSION%%.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_waldump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
@@ -819,6 +819,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_rewind-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
@@ -1329,6 +1330,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kaliningrad
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kiev
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kirov
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Kyiv
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Lisbon
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Ljubljana
 %%TZDATA%%%%DATADIR%%/timezone/Europe/London

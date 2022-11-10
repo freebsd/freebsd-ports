@@ -1377,6 +1377,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kaliningrad
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kiev
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kirov
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Kyiv
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Lisbon
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Ljubljana
 %%TZDATA%%%%DATADIR%%/timezone/Europe/London

@@ -883,6 +883,17 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/ka/LC_MESSAGES/pg_waldump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/plpgsql-15.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
+%%NLS%%share/locale/it/LC_MESSAGES/%%PG_USER%%-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/initdb-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_archivecleanup-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_basebackup-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_checksums-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_resetwal-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_rewind-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_test_fsync-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_test_timing-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_upgrade-15.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_waldump-15.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_controldata-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_ctl-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_resetwal-%%PG_VERSION%%.mo
@@ -1405,6 +1416,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kaliningrad
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kiev
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kirov
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Kyiv
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Lisbon
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Ljubljana
 %%TZDATA%%%%DATADIR%%/timezone/Europe/London

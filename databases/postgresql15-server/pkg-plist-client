@@ -1234,7 +1234,12 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/he/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
+%%NLS%%share/locale/it/LC_MESSAGES/psql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo

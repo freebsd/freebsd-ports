@@ -1,3 +1,3 @@
-TIMESTAMP = 1659997986
-SHA256 (postgresql/postgresql-10.22.tar.bz2) = 955977555c69df1a64f44b81d4a1987eb74abbd1870579f5ad9d946133dd8e4d
-SIZE (postgresql/postgresql-10.22.tar.bz2) = 19455874
+TIMESTAMP = 1667925756
+SHA256 (postgresql/postgresql-10.23.tar.bz2) = 94a4b2528372458e5662c18d406629266667c437198160a18cdfd2c4a4d6eee9
+SIZE (postgresql/postgresql-10.23.tar.bz2) = 19485297
