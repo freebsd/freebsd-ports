@@ -12,9 +12,11 @@
 name="foreman_proxy"
 rcvar="foreman_proxy_enable"
 
-command="%%PREFIX%%/sbin/smart-proxy"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/sbin/smart-proxy"
 command_interpreter="%%RUBY%%"
 pidfile="%%FOREMAN_PROXY_RUNDIR%%/foreman-proxy.pid"
+command_args="-p ${pidfile} -t ${procname} ${command_interpreter} ${procname}"
 
 foreman_proxy_enable=${foreman_proxy_enable:-"NO"}
 foreman_proxy_user=${foreman_proxy_user-"%%FOREMAN_PROXY_USER%%"}

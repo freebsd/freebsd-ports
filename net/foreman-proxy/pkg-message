@@ -1,17 +1,15 @@
 [
 { type: upgrade
-  maximum_version: 1.11
+  maximum_version: 3.4
   message: <<EOM
 WARNING:
 
-In version 1.11+ Foreman Smart Proxy splits its configuration in even smaller
-chunks located in:
+In version 3.4+ Foreman Smart Proxy on FreeBSD uses daemon(1), which
+requires the following setting in ${PREFIX}/etc/foreman-proxy/settings.yml:
 
-${PREFIX}/etc/foreman-proxy/settings.d
+  :daemon: false
 
-You can use a bundled script to convert your old settings to new settings:
-
-${PREFIX}/share/foreman-proxy/extra/migrate_settings.rb
+Otherwise the service will fail to start.
 EOM
 }
 ]

@@ -16,7 +16,6 @@
 @sample %%ETCDIR%%/settings.d/puppetca.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca_hostname_whitelisting.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca_http_api.yml.sample
-@sample %%ETCDIR%%/settings.d/puppetca_puppet_cert.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca_token_whitelisting.yml.sample
 @sample %%ETCDIR%%/settings.d/realm.yml.sample
 @sample %%ETCDIR%%/settings.d/realm_freeipa.yml.sample
@@ -213,10 +212,6 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppetca_http_api/puppetca_http_api.rb
 %%DATADIR%%/modules/puppetca_http_api/puppetca_http_api_plugin.rb
 %%DATADIR%%/modules/puppetca_http_api/puppetca_impl.rb
-%%DATADIR%%/modules/puppetca_puppet_cert/plugin_configuration.rb
-%%DATADIR%%/modules/puppetca_puppet_cert/puppetca_impl.rb
-%%DATADIR%%/modules/puppetca_puppet_cert/puppetca_puppet_cert.rb
-%%DATADIR%%/modules/puppetca_puppet_cert/puppetca_puppet_cert_plugin.rb
 %%DATADIR%%/modules/puppetca_token_whitelisting/plugin_configuration.rb
 %%DATADIR%%/modules/puppetca_token_whitelisting/puppetca_token_whitelisting.rb
 %%DATADIR%%/modules/puppetca_token_whitelisting/puppetca_token_whitelisting_autosigner.rb

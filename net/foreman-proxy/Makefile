@@ -1,5 +1,5 @@
 PORTNAME=	foreman-proxy
-PORTVERSION=	3.1.2
+PORTVERSION=	3.4.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-rsec>=0.4.3:devel/rubygem-rsec \
 		rubygem-sd_notify>=0.1.1:devel/rubygem-sd_notify \
 		rubygem-sinatra>=2.0:www/rubygem-sinatra \
+		rubygem-webrick>=1.7:www/rubygem-webrick \
 		curl:ftp/curl
 
 USES=		shebangfix tar:bzip2
@@ -34,8 +35,8 @@ USE_RUBY=	yes
 
 FOREMAN_PROXY_USER?=	foreman_proxy
 FOREMAN_PROXY_GROUP?=	foreman_proxy
-FOREMAN_PROXY_LOGDIR?=	/var/log/foreman-proxy
-FOREMAN_PROXY_RUNDIR?=	/var/run/foreman-proxy
+FOREMAN_PROXY_LOGDIR?=	${DESTDIR}/var/log/foreman-proxy
+FOREMAN_PROXY_RUNDIR?=	${DESTDIR}/var/run/foreman-proxy
 
 USERS=		${FOREMAN_PROXY_USER}
 GROUPS=		${FOREMAN_PROXY_GROUP}
@@ -93,11 +94,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
 .for cfg in bmc dhcp_isc dhcp_libvirt dhcp_native_ms dhcp dns_dnscmd \
-	dns_libvirt dns_nsupdate_gss dns_nsupdate dns facts httpboot \
-	logs puppet_proxy_puppet_api puppet \
-	puppetca_hostname_whitelisting puppetca_http_api \
-	puppetca_puppet_cert puppetca_token_whitelisting \
-	puppetca realm_freeipa realm registration templates tftp
+	dns_libvirt dns_nsupdate_gss dns_nsupdate dns facts httpboot logs \
+	puppet_proxy_puppet_api puppet puppetca_hostname_whitelisting \
+	puppetca_http_api puppetca_token_whitelisting puppetca realm_freeipa \
+	realm registration templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor
