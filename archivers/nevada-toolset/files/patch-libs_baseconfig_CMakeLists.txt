@@ -1,0 +1,36 @@
+--- libs/baseconfig/CMakeLists.txt.orig	2020-01-23 13:00:42 UTC
++++ libs/baseconfig/CMakeLists.txt
+@@ -18,7 +18,7 @@ find_package(Git)
+ # Locate git binary to provide information to the build environment
+ find_package(Git)
+ 
+-if(GIT_FOUND)
++if(GIT_FOUND AND FALSE)
+     # Define current git branch.
+     if(NOT GITINFO_BRANCH)
+         execute_process(
+@@ -90,15 +90,15 @@ else()
+     list(GET GITINFO_DATE_AND_TIME 2 GITINFO_COMMIT_TZONE)
+ else()
+     # Fallback information if git isn't found. This should never be present in official builds.
+-    set(GITINFO_BRANCH "netherrealm")
+-    set(GITINFO_COMMIT_SHA1 "DEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF")
+-    set(GITINFO_COMMIT_SHA1_SHORT "DEADBEEF")
+-    set(GITINFO_COMMIT_COUNT 0)
+-    set(GITINFO_COMMIT_TSTAMP 0)
+-    set(GITINFO_COMMIT_DATE "1955-11-12")
+-    set(GITINFO_COMMIT_TIME "22:04:00")
+-    set(GITINFO_COMMIT_TZONE "+0000")
+-    set(GITINFO_COMMIT_AUTHOR "Someone")
++    set(GITINFO_BRANCH "master")
++    set(GITINFO_COMMIT_SHA1 "d1ef34144e8b58046e43bd33b82e146aa53e65cb")
++    set(GITINFO_COMMIT_SHA1_SHORT "d1ef341")
++    set(GITINFO_COMMIT_COUNT 28)
++    set(GITINFO_COMMIT_TSTAMP 1597529192)
++    set(GITINFO_COMMIT_DATE "2020-08-15")
++    set(GITINFO_COMMIT_TIME "23:06:32")
++    set(GITINFO_COMMIT_TZONE "+0100")
++    set(GITINFO_COMMIT_AUTHOR "OmniBlade")
+ endif()
+ 
+ # Set default version info for the git version module.

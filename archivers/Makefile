@@ -92,6 +92,7 @@
     SUBDIR += minizip-ng
     SUBDIR += mscompress
     SUBDIR += mtf
+    SUBDIR += nevada-toolset
     SUBDIR += nfpm
     SUBDIR += nomarch
     SUBDIR += nwreckdum
