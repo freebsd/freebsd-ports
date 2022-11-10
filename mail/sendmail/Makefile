@@ -14,6 +14,10 @@ LICENSE_NAME=	Sendmail License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_SSL=	libressl libressl-devel
+BROKEN_SSL_REASON_libressl=	fails to compile: unknown struct dh_st
+BROKEN_SSL_REASON_libressl-devel=	${BROKEN_SSL_REASON_libressl}
+
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd
 
 USERS=		smmsp
