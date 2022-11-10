@@ -1,7 +1,6 @@
 PORTNAME=	kalker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	3
+DISTVERSION=	2.0.1
 CATEGORIES=	math
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,7 +19,7 @@ GH_ACCOUNT=	PaddiM8
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
-		az-1.0.0 \
+		az-1.2.0 \
 		bitflags-1.2.1 \
 		bumpalo-3.4.0 \
 		cc-1.0.66 \
@@ -34,6 +33,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		fs2-0.4.3 \
 		getrandom-0.1.15 \
 		getrandom-0.2.3 \
+		gmp-mpfr-sys-1.4.10 \
 		hermit-abi-0.1.18 \
 		js-sys-0.3.46 \
 		lazy_static-1.4.0 \
@@ -49,7 +49,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		redox_users-0.4.0 \
 		regex-1.4.2 \
 		regex-syntax-0.6.21 \
-		rug-1.11.0 \
+		rug-1.17.0 \
 		rustyline-7.1.0 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
@@ -78,8 +78,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winres-0.1.11 \
-		gmp-mpfr-sys@git+https://gitlab.com/tspiteri/gmp-mpfr-sys.git\#21966f4bfb56c87d407eb14c72e92ef4e55856aa
+		winres-0.1.11
 CARGO_CARGOTOML=	${WRKSRC}/cli/Cargo.toml
 CARGO_INSTALL_PATH=	./cli
 PLIST_FILES=	bin/kalker
