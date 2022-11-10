@@ -11,8 +11,6 @@ WWW=		https://sogo.nu/
 
 LICENSE=		LGPL20
 
-BROKEN_aarch64=		fails to build: bundle.make:301: STXSaxDriver.sax/Resources/Info-gnustep.plist] Abort trap (core dumped)
-
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 			libmemcached.so:databases/libmemcached
 
