@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.0
-PORTREVISION=	1
+DISTVERSION=	0.33.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -83,12 +82,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-queue-0.3.5 \
 		crossbeam-utils-0.8.8 \
-		csscolorparser-0.5.0 \
+		csscolorparser-0.6.2 \
 		ctor-0.1.22 \
 		daemonize-0.4.1 \
 		darling-0.13.4 \
 		darling_core-0.13.4 \
 		darling_macro-0.13.4 \
+		deltae-0.3.0 \
 		derivative-2.2.0 \
 		destructure_traitobject-0.2.0 \
 		dialoguer-0.10.1 \
@@ -108,6 +108,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		fallible-iterator-0.2.0 \
 		fastrand-1.7.0 \
 		filedescriptor-0.8.2 \
+		finl_unicode-1.2.0 \
+		fixedbitset-0.4.2 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		futures-0.3.21 \
@@ -150,6 +152,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		js-sys-0.3.58 \
 		kdl-4.5.0 \
 		kv-log-macro-1.0.7 \
+		lab-0.11.0 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
 		lev_distance-0.1.1 \
@@ -180,6 +183,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		more-asserts-0.2.2 \
 		names-0.13.0 \
 		nix-0.23.1 \
+		nix-0.24.2 \
 		nom-5.1.2 \
 		nom-7.1.1 \
 		ntapi-0.3.7 \
@@ -194,6 +198,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		opaque-debug-0.3.0 \
 		openssl-sys-0.9.74 \
 		ordered-float-2.10.0 \
+		ordered-float-3.3.0 \
 		os_str_bytes-6.1.0 \
 		owo-colors-3.4.0 \
 		parking-2.0.0 \
@@ -208,10 +213,15 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
 		phf-0.8.0 \
+		phf-0.10.1 \
+		phf-0.11.1 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
-		phf_macros-0.8.0 \
+		phf_generator-0.11.1 \
+		phf_macros-0.11.1 \
 		phf_shared-0.8.0 \
+		phf_shared-0.10.0 \
+		phf_shared-0.11.1 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
@@ -220,7 +230,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pretty-bytes-0.2.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.39 \
 		quote-1.0.18 \
 		rand-0.7.3 \
@@ -286,7 +295,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		terminal_size-0.1.17 \
 		terminfo-0.7.3 \
 		termios-0.3.3 \
-		termwiz-0.16.0 \
+		termwiz-0.19.0 \
 		textwrap-0.14.2 \
 		textwrap-0.15.0 \
 		thiserror-1.0.31 \
@@ -319,7 +328,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		vte-0.10.1 \
 		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
-		vtparse-0.6.1 \
+		vtparse-0.6.2 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
@@ -347,8 +356,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wat-1.0.44 \
 		web-sys-0.3.58 \
 		wepoll-ffi-0.1.2 \
-		wezterm-bidi-0.1.0 \
-		wezterm-color-types-0.1.0 \
+		wezterm-bidi-0.2.2 \
+		wezterm-color-types-0.2.0 \
+		wezterm-dynamic-0.1.0 \
+		wezterm-dynamic-derive-0.1.0 \
 		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
