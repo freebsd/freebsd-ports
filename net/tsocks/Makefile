@@ -1,6 +1,6 @@
 PORTNAME=	tsocks
 DISTVERSION=	1.8.b5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.8%20beta%205 \
 		http://ftp1.sourceforge.net/tsocks/ \
@@ -17,29 +17,27 @@ USES=		gmake
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b.*//}
-
-CONFIGURE_ARGS=	--with-conf=${PREFIX}/etc/tsocks.conf \
-		--libdir=${PREFIX}/lib
-
-OPTIONS_DEFINE=	DOCS EXAMPLES HOSTNAMES MUTE OLDMETHOD SOCKSDNS
-OPTIONS_DEFAULT=HOSTNAMES
-
-HOSTNAMES_DESC=	Enable DNS lookups
-OLDMETHOD_DESC=	Do not use RTLD_NEXT parameter to dlsym
-MUTE_DESC=	Disable all error messages
-SOCKSDNS_DESC=	Intercept DNS requests and attempt to force them to use TCP
-
-HOSTNAMES_CONFIGURE_OFF=	--disable-hostnames
-MUTE_CONFIGURE_ON=	--disable-debug
-OLDMETHOD_CONFIGURE_ON=	--enable-oldmethod
-SOCKSDNS_CONFIGURE_ON=	--enable-socksdns
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
+		--with-conf=${PREFIX}/etc/tsocks.conf
 
 SUB_FILES=	pkg-message
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b.*//}
+
+OPTIONS_DEFINE=		DOCS EXAMPLES HOSTNAMES MUTE OLDMETHOD SOCKSDNS
+OPTIONS_DEFAULT=	HOSTNAMES
+
+HOSTNAMES_DESC=	Enable DNS lookups
+MUTE_DESC=	Disable all error messages
+OLDMETHOD_DESC=	Do not use RTLD_NEXT parameter to dlsym
+SOCKSDNS_DESC=	Intercept DNS requests and attempt to force them to use TCP
+
+HOSTNAMES_CONFIGURE_OFF=	--disable-hostnames
+MUTE_CONFIGURE_ON=		--disable-debug
+OLDMETHOD_CONFIGURE_ON=		--enable-oldmethod
+SOCKSDNS_CONFIGURE_ON=		--enable-socksdns
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|ufds|fds|g' ${WRKSRC}/tsocks.c
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/tsocks
 
 post-install:

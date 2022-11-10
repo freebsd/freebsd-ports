@@ -1,0 +1,11 @@
+--- tsocks.orig	2002-03-16 10:27:18 UTC
++++ tsocks
+@@ -53,7 +53,7 @@ case "$1" in
+ 		fi
+ 	;;
+ 	off)
+-		export LD_PRELOAD=`echo -n $LD_PRELOAD | sed 's/\/usr\/lib\/libtsocks.so \?//'`
++		export LD_PRELOAD=`echo -n $LD_PRELOAD | sed 's|/usr/lib/libtsocks.so[[:blank:]]*||'`
+ 		if [ -z "$LD_PRELOAD" ]
+ 			then
+ 				unset LD_PRELOAD
