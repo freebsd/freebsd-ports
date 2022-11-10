@@ -1,7 +1,6 @@
 PORTNAME=	assh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.2
-PORTREVISION=	6
+DISTVERSION=	2.15.0
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,9 +19,9 @@ GH_TUPLE=	\
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
 		awalterschulze:gographviz:v2.0.3:awalterschulze_gographviz/vendor/github.com/awalterschulze/gographviz \
 		bugsnag:osext:0dd3f918b21b:bugsnag_osext/vendor/github.com/bugsnag/osext \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		deckarep:gosx-notifier:e127226297fb:deckarep_gosx_notifier/vendor/github.com/deckarep/gosx-notifier \
-		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
+		docker:go-units:v0.5.0:docker_go_units/vendor/github.com/docker/go-units \
 		docker:libcompose:v0.4.0:docker_libcompose/vendor/github.com/docker/libcompose \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		flynn:go-shlex:3f9db97f8568:flynn_go_shlex/vendor/github.com/flynn/go-shlex \
@@ -67,14 +66,13 @@ GH_TUPLE=	\
 		pelletier:go-toml:v1.9.3:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shirou:gopsutil:v3.21.11:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
-		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		smartystreets:assertions:v1.2.0:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		smartystreets:goconvey:v1.7.2:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.8.1:spf13_viper/vendor/github.com/spf13/viper \
@@ -83,9 +81,9 @@ GH_TUPLE=	\
 		tklauser:numcpus:v0.3.0:tklauser_numcpus/vendor/github.com/tklauser/numcpus \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.6.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		uber-go:zap:v1.19.1:uber_go_zap/vendor/go.uber.org/zap \
+		uber-go:zap:v1.21.0:uber_go_zap/vendor/go.uber.org/zap \
 		ugorji:go:v1.1.7:ugorji_go_codec/vendor/github.com/ugorji/go \
-		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
+		urfave:cli:v1.22.9:urfave_cli/vendor/github.com/urfave/cli \
 		yusufpapurcu:wmi:v1.2.2:yusufpapurcu_wmi/vendor/github.com/yusufpapurcu/wmi
 
 PLIST_FILES=	bin/assh
