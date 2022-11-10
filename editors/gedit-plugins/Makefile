@@ -1,5 +1,5 @@
 PORTNAME=	gedit-plugins
-PORTVERSION=	42.1
+PORTVERSION=	43.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
