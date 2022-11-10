@@ -1,12 +1,8 @@
 PORTNAME=	pysam
-DISTVERSION=	0.19.1
-PORTREVISION=	1
+DISTVERSION=	0.20.0
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/pysam-developers/pysam/commit/
-PATCHFILES=	064c8024395a15024fd590bd90f55f918e15545f.patch:-p1 # backport of symbols failure fix for arm and risc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading, manipulating and writing genomic data sets
@@ -16,6 +12,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake python:3.6-3.9
-USE_PYTHON=	autoplist distutils cython cython_run
+USE_PYTHON=	autoplist distutils cython cython_run pytest
+
+CFLAGS+=	-fPIC # workaround for https://github.com/pysam-developers/pysam/issues/1146
+
+BINARY_ALIAS=	make=${GMAKE}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pysam/lib*${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
