@@ -1,76 +1,101 @@
 PORTNAME=	qmc2
-PORTVERSION=	0.195
-PORTREVISION=	4
-CATEGORIES=	emulators
-MASTER_SITES=	SF
+PORTVERSION=	0.243
+DISTVERSIONPREFIX=	v
+CATEGORIES=	emulators games
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt based UNIX MAME/MESS frontend
+MAINTAINER=	agh@riseup.net
+COMMENT=	Qt based UNIX MAME frontend
 WWW=		https://qmc2.batcom-it.net/
 
-RUN_DEPENDS=	mame>=0.154:emulators/mame \
-		mess>=0.154:emulators/mess
+LICENSE=	GPLv2+
 
-OPTIONS_DEFINE=	DOCS
+BUILD_DEPENDS=	bash>0:shells/bash \
+		gawk>0:lang/gawk
+RUN_DEPENDS=	libglvnd>0:graphics/libglvnd \
+		mame>=0.249:emulators/mame \
+		mess>=0.249:emulators/mess
 
-NO_WRKSUBDIR=	yes
-
-USES=		compiler:c++11-lang dos2unix gl gmake qt:5 sdl tar:bzip2 xorg
-USE_XORG=	x11 xmu
+USES=		compiler:c++11-lang desktop-file-utils gmake gl qt:5 sdl \
+		shebangfix tar:bzip2 xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	qmc2
+GH_PROJECT=	qmc2-mame-fe
 USE_GL=		gl glu
-USE_QT=		buildtools:build core declarative gui multimedia \
-		network opengl qmake:build \
-		testlib script scripttools sql svg \
-		webkit widgets xml xmlpatterns
-USE_SDL=	sdl
+USE_QT=		buildtools core declarative gui multimedia network opengl qmake \
+		script scripttools sql svg testlib webkit widgets xml \
+		xmlpatterns
+USE_SDL=	sdl2
+USE_XORG=	x11 xmu
 
-CXXFLAGS+=	-I${LOCALBASE}/include/SDL/
-MAKE_ARGS=	QTDIR="${PREFIX}" QMAKE="${QMAKE}" \
-		SYSCONFDIR="${PREFIX}/etc" ARCH="${OPSYS}" \
+SHEBANG_FILES=	scripts/cleanup-category-ini.sh \
+		scripts/make-man-pages.sh \
+		scripts/plugin_helper.sh \
+		scripts/sdl-defines.sh \
+		scripts/sdl-includepath.sh \
+		scripts/sdl-libs.sh \
+		scripts/sdl-version.sh \
+		scripts/strip-png-headers.sh
+
+MAKE_ARGS=	ARCH="${OPSYS}" \
+		CC="${CC}" \
 		CC_FLAGS="${CFLAGS} -DUSE_FILE32API" \
+		CXX="${CXX}" \
 		CXX_FLAGS="${CXXFLAGS} -DUSE_FILE32API" \
-		CC="${CC}" CXX="${CXX}" LINK="${CXX}"
+		DATADIR="${DATADIR}" \
+		LINK="${CXX}" \
+		MAKE="${MAKE_CMD}" \
+		PHONON="0" \
+		QMAKE="${QMAKE}" \
+		QTDIR="${PREFIX}" \
+		SYSCONFDIR="${PREFIX}/etc"
 
-DESKTOP_ENTRIES="QMC2" "MAME frontend" "${DATADIR}/img/mame.png" \
-		"${PORTNAME}-sdlmame" "Game;Emulator;Qt;" "true" \
-		"QMC2 Arcade" "QMC2 Arcade Mode" "${DATADIR}/img/qmc2-arcade.png" \
-		"${PORTNAME}-arcade" "Game;Emulator;Qt;" "true" \
-		"CHDMAN GUI" "Qt CHDMAN GUI" "${DATADIR}/img/qchdman.png" \
-		"qchdman" "Game;Emulator;Qt;" "true" \
+ALL_TARGET=	all arcade tools
 
-# This seems to be third-party, and has DOS line-endings. It also
-# needs to be patched because of a confusing build error: #define True 1
-# is a bad idea in C++ code that *also* uses True as an identifier
-# in some scopes.
-DOS2UNIX_FILES=	qmc2/lzma/7zTypes.h
+OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCS_DESC=	Comprehensive qmc2 documentaion
+
+DOCS_ALL_TARGET=	doc
+DOCS_PORTDOCS=	html
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	@(cd ${WRKSRC}/qmc2/inst; ${SED} -e 's|DATADIR|${PREFIX}/share|' \
-		< qmc2.ini.template > qmc2.ini)
-	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKSRC}/qmc2/scripts/sdl-libs.sh
+	@${REINPLACE_CMD} -e 's|DATADIR/qmc2|${DATADIR}|g' \
+		${WRKSRC}/inst/*.template
 
 do-install:
-	(cd ${WRKSRC}/qmc2 && ${INSTALL_PROGRAM} qmc2-sdlmame \
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qmc2-sdlmame \
+		${STAGEDIR}${PREFIX}/bin/qmc2-mame)
+	(cd ${WRKSRC}/src/arcade && ${INSTALL_PROGRAM} qmc2-arcade \
 		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/qmc2/arcade && ${INSTALL_PROGRAM} qmc2-arcade \
+	(cd ${WRKSRC}/src/tools/qchdman && ${INSTALL_PROGRAM} qchdman \
 		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/qmc2/tools/qchdman && ${INSTALL_PROGRAM} qchdman \
-		${STAGEDIR}${PREFIX}/bin)
+
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+.for data in img lng opt
+	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${data} \
+		${STAGEDIR}${DATADIR})
+.endfor
+
+	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qchdman.6.gz \
+		${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qmc2-arcade.6.gz \
+		${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qmc2-main-gui.6.gz \
+		${STAGEDIR}${MANPREFIX}/man/man6/qmc2-mame.6.gz
+
+.for dsktop_entry in qchdman.desktop qmc2-arcade.desktop qmc2.desktop
+	(cd ${WRKSRC}/inst && ${INSTALL_DATA} ${dsktop_entry}.template \
+		${STAGEDIR}${LOCALBASE}/share/applications/${dsktop_entry})
+.endfor
+
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC}/qmc2/inst && ${INSTALL_DATA} qmc2.ini \
-		${STAGEDIR}${ETCDIR})
-	@${MKDIR} ${STAGEDIR}${DATADIR}/img
-	@(cd ${WRKSRC}/qmc2/data/img; ${COPYTREE_SHARE} . \
-		${STAGEDIR}${DATADIR}/img)
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lng
-	(cd ${WRKSRC}/qmc2/data/lng && ${INSTALL_DATA} qmc2_*.qm \
-		${STAGEDIR}${DATADIR}/lng)
-	@${MKDIR} ${STAGEDIR}${DATADIR}/opt
-	@(cd ${WRKSRC}/qmc2/data/opt; ${COPYTREE_SHARE} . \
-		${STAGEDIR}${DATADIR}/opt)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	@(cd ${WRKSRC}/qmc2/data/doc/html; ${COPYTREE_SHARE} . \
-		${STAGEDIR}${DOCSDIR}/html)
+	(cd ${WRKSRC}/inst && ${INSTALL_DATA} qmc2.ini.template \
+		${STAGEDIR}${ETCDIR}/qmc2.ini.sample)
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/data/doc && ${COPYTREE_SHARE} html \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
