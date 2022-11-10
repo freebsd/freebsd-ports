@@ -1,35 +1,41 @@
---- SConstruct.orig	2018-12-22 14:00:12 UTC
+--- SConstruct.orig	2022-08-16 08:30:35 UTC
 +++ SConstruct
-@@ -28,15 +28,18 @@ clang = int(ARGUMENTS.get("clang", 0))
- cycles = int(ARGUMENTS.get('cycles', 1))
- sound = False
+@@ -45,10 +45,6 @@ if os.environ.get('CC') == 'clang':
+ if os.environ.get('CC') == 'clang':
+     env.Replace(CC='clang', CXX='clang++')
  
--if os.environ.get('CC') == 'clang': clang = 1
-+import subprocess
-+if b'clang' in subprocess.check_output([os.environ.get('CC', 'cc'), '-v'],
-+                                      stderr=subprocess.STDOUT):
-+    clang = 1
-+print('clang', clang)
- if profile: debug = 0
- 
--env = Environment(ENV = os.environ)
-+
-+env = Environment(ENV = os.environ, CC = os.environ.get('CC', 'cc'),
-+                  CXX = os.environ.get('CXX', 'c++'))
- conf = env.Configure()
- 
--if clang:
--    env.Replace(CC='clang', CXX='clang++')
+-# Hack for gcc <= 5, since pragma diagnostic push doesn't seem to work.
+-if env['CCVERSION'] and int(env['CCVERSION'].split('.')[0]) <= 5:
+-    env.Append(CCFLAGS=['-Wno-unused-function'])
 -
  # Asan & Ubsan (need to come first).
- # Cycles doesn't like libasan with clang, so we only use it on
- # C code with clang.
-@@ -145,7 +148,7 @@ if cycles:
-     sources += glob.glob('ext_src/cycles/src/subd/*.cpp')
+ if env['mode'] == 'debug' and target_os == 'posix':
+     env.Append(CCFLAGS=['-fsanitize=address', '-fsanitize=undefined'],
+@@ -70,7 +66,7 @@ if env['mode'] not in ['debug', 'analyze']:
+     env.Append(CCFLAGS='-Werror')
  
-     env.Append(CPPPATH=['ext_src/cycles/src'])
--    env.Append(CPPPATH=['ext_src/cycles/third_party/atomic'])
-+    env.Prepend(CPPPATH=['ext_src/cycles/third_party/atomic'])
-     env.Append(CPPFLAGS=[
-         '-DCYCLES_STD_UNORDERED_MAP',
-         '-DCCL_NAMESPACE_BEGIN=namespace ccl {',
+ if env['mode'] not in ['debug', 'analyze']:
+-    env.Append(CPPDEFINES='NDEBUG', CCFLAGS='-Ofast')
++    env.Append(CPPDEFINES='NDEBUG')
+ 
+ if env['mode'] == 'debug':
+     env.Append(CCFLAGS=['-O0'])
+@@ -88,16 +84,14 @@ for root, dirnames, filenames in os.walk('src'):
+         if filename.endswith('.c') or filename.endswith('.cpp'):
+             sources.append(os.path.join(root, filename))
+ 
+-# Check for libpng.
+-if conf.CheckLibWithHeader('libpng', 'png.h', 'c'):
+-    env.Append(CPPDEFINES='HAVE_LIBPNG=1')
+-
+ # Linux compilation support.
+ if target_os == 'posix':
++    env.Append(CPPDEFINES='HAVE_LIBPNG=1')
+     env.Append(LIBS=['GL', 'm'])
+     # Note: add '--static' to link with all the libs needed by glfw3.
+     env.ParseConfig('pkg-config --libs glfw3')
+     env.ParseConfig('pkg-config --cflags --libs gtk+-3.0')
++    env.ParseConfig('pkg-config --libs libpng')
+ 
+ # Windows compilation support.
+ if target_os == 'msys':
