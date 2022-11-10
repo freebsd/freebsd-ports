@@ -1,3 +1,68 @@
+  <vuln vid="5b8d8dee-6088-11ed-8c5e-641c67a117d8">
+    <topic>varnish -- HTTP/2 Request Forgery Vulnerability</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.2.1</lt></range>
+      </package>
+      <package>
+	<name>varnish6</name>
+	<range><le>6.6.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00011.html">
+      <p>A request forgery attack can be performed on Varnish Cache servers that
+	 have the HTTP/2 protocol turned on. An attacker may introduce
+	 characters through the HTTP/2 pseudo-headers that are invalid in the
+	 context of an HTTP/1 request line, causing the Varnish server to
+	 produce invalid HTTP/1 requests to the backend. This may in turn be
+	 used to successfully exploit vulnerabilities in a server behind the
+	 Varnish server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://varnish-cache.org/security/VSV00011.html</url>
+    </references>
+    <dates>
+      <discovery>2022-11-08</discovery>
+      <entry>2022-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b10d1afa-6087-11ed-8c5e-641c67a117d8">
+    <topic>varnish -- Request Smuggling Vulnerability</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00010.html">
+      <p>A request smuggling attack can be performed on Varnish Cache servers by
+	 requesting that certain headers are made hop-by-hop, preventing the
+	 Varnish Cache servers from forwarding critical headers to the backend.
+	 Among the headers that can be filtered this way are both Content-Length
+	 and Host, making it possible for an attacker to both break the HTTP/1
+	 protocol framing, and bypass request to host routing in VCL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://varnish-cache.org/security/VSV00010.html</url>
+    </references>
+    <dates>
+      <discovery>2022-11-08</discovery>
+      <entry>2022-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b04476f-601c-11ed-92ce-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
