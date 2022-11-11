@@ -613,6 +613,7 @@
     SUBDIR += octave-forge-signal
     SUBDIR += octave-forge-simp
     SUBDIR += octave-forge-sockets
+    SUBDIR += octave-forge-sole
     SUBDIR += octave-forge-sparsersb
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
