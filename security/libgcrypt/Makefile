@@ -20,7 +20,8 @@ CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-drng-support
-CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
+HOSTARCH=	${ARCH:S/aarch64c/aarch64/:S/riscv64c/riscv64/}
+CONFIGURE_TARGET=${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
