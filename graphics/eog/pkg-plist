@@ -1379,6 +1379,7 @@ share/help/zh_TW/eog/zoom.page
 share/icons/hicolor/scalable/apps/org.gnome.eog.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.eog.svg
 share/icons/hicolor/symbolic/apps/org.gnome.eog-symbolic.svg
+share/locale/ab/LC_MESSAGES/eog.mo
 share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/an/LC_MESSAGES/eog.mo
