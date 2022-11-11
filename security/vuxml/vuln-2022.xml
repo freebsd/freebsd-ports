@@ -1,3 +1,33 @@
+  <vuln vid="f5a48a7a-61d3-11ed-9094-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2022-10-24">
+	  <p>a pre-auth SQL injection in then saving user comments</p>
+	  <p>a reflected cross-site scripting vulnerability in the search</p>
+	  <p>a stored cross-site scripting vulnerability in the meta data administration</p>
+	  <p>a weak password requirement</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/613143a1-8e51-449a-b214-12458308835d/</url>
+      <url>https://huntr.dev/bounties/d9666520-4ff5-43bb-aacf-50c8e5570983/</url>
+      <url>https://huntr.dev/bounties/f4711d7f-1368-48ab-9bef-45f32e356c47/</url>
+    </references>
+    <dates>
+      <discovery>2022-10-24</discovery>
+      <entry>2022-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b8d8dee-6088-11ed-8c5e-641c67a117d8">
     <topic>varnish -- HTTP/2 Request Forgery Vulnerability</topic>
     <affects>
