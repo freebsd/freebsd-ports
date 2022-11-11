@@ -169,7 +169,7 @@ EXTRACT_ONLY+= ${_CABAL_EXTRACT_ONLY}
 cabal-extract: check-cabal
 .  if ${_hackage_is_default} == no
 	@${ECHO_MSG} "===> Recursing down to make extract"
-	@${MAKE} -C ${.CURDIR} extract SKIP_CABAL_EXTRACT=yes
+	@${MAKE} -C ${.CURDIR} extract SKIP_CABAL_EXTRACT=yes USE_CABAL=
 	${RM} -rf ${CABAL_HOME}
 .  endif
 	@${ECHO_MSG} "===> Fetching Cabal package index into ${CABAL_HOME}/.cabal"
@@ -183,7 +183,9 @@ cabal-extract: check-cabal
 	@cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} ${HPACK_CMD}
 .    endif
 .  endif
+# Remove Haskell dependencies that come from GH_TUPLE
 	@${RM} -r ${WRKSRC}/dist-newstyle
+# Create a cookie for cabal-post-patch
 	@${TOUCH} ${EXTRACT_COOKIE} ${CABAL_COOKIE}
 
 # Calls cabal build --dry-run on the Haskell package located in ${WRKSRC}
