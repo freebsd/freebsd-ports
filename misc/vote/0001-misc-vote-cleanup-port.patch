@@ -1,0 +1,55 @@
+From 33a1a9ccf0df2fc73cd8d85ab4bcdbf585dce94b Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Fri, 11 Nov 2022 21:10:34 +0100
+Subject: [PATCH] misc/vote: cleanup port
+
+Reported by:	diizzy
+---
+ misc/vote/Makefile | 12 +++++++++---
+ misc/vote/distinfo |  6 +++---
+ 2 files changed, 12 insertions(+), 6 deletions(-)
+
+diff --git a/misc/vote/Makefile b/misc/vote/Makefile
+index 9f9a4b897479..e851900e94c7 100644
+--- a/misc/vote/Makefile
++++ b/misc/vote/Makefile
+@@ -1,16 +1,22 @@
+ PORTNAME=	vote
+-DISTVERSION=	1.1
++DISTVERSION=	1.2
+ CATEGORIES=	misc
+-MASTER_SITES=	https://codeberg.org/tcberner/${PORTNAME}/archive/
++MASTER_SITES=	https://codeberg.org/tcberner/${PORTNAME}/raw/v${DISTVERSION}/
++DISTFILES=	${PORTNAME}
++DIST_SUBDIR=	vote-${DISTVERSION}
++EXTRACT_ONLY=	
+ 
+ MAINTAINER=	tcberner@FreeBSD.org
+ COMMENT=	Transparent git based voting system
+ 
++LICENSE=	BSD2CLAUSE
++
++NO_ARCH=	yes
+ NO_BUILD=	yes
+ 
+ PLIST_FILES=	bin/vote
+ 
+ do-install:
+-	${INSTALL_SCRIPT} ${WRKDIR}/vote/vote ${STAGEDIR}${PREFIX}/bin
++	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/vote ${STAGEDIR}${PREFIX}/bin
+ 
+ .include <bsd.port.mk>
+diff --git a/misc/vote/distinfo b/misc/vote/distinfo
+index d9414c8ce104..05be2b48d93c 100644
+--- a/misc/vote/distinfo
++++ b/misc/vote/distinfo
+@@ -1,3 +1,3 @@
+-TIMESTAMP = 1668195518
+-SHA256 (vote-1.1.tar.gz) = de2ad0d28cf777239fdb7e6c7c44a5dda528283bef6b807ade5ca02246497705
+-SIZE (vote-1.1.tar.gz) = 5196
++TIMESTAMP = 1668197328
++SHA256 (vote-1.2/vote) = 4c0769cd4ea4578f4d72377afd1404ae0cc08cd8008486557aa4f17eadbeca0e
++SIZE (vote-1.2/vote) = 16615
+-- 
+2.38.1
+
