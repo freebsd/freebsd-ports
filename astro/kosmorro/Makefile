@@ -1,5 +1,5 @@
 PORTNAME=	kosmorro
-PORTVERSION=	0.10.10
+PORTVERSION=	0.10.11
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR}\
 
 #USE_GITHUB=	yes
 
-USES=		gettext-runtime:run python:3.7+ shebangfix
+USES=		gettext-runtime:run python:3.8+ shebangfix
 USE_PYTHON=	distutils noflavors
 SHEBANG_FILES=	${PORTNAME}
 
