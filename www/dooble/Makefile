@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2022.06.15
+DISTVERSION=	2022.10.15
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -9,14 +9,14 @@ WWW=		https://textbrowser.github.io/dooble/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++17-lang desktop-file-utils gmake qmake qt:5 ssl tar \
-		xorg
-
+USES=		compiler:c++17-lang desktop-file-utils gl gmake qmake qt:5 ssl \
+		tar xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	textbrowser
-
-USE_QT=		concurrent core gui network printsupport sql webengine widgets \
-		xml buildtools:build qmake:build
+USE_GL=		gl
+USE_QT=		concurrent core declarative gui location network printsupport \
+		sql webchannel webengine widgets xml buildtools:build \
+		qmake:build
 USE_XORG=	xcb
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
@@ -29,7 +29,7 @@ PLIST_FILES=	${PREFIX}/share/applications/${PORTNAME}.desktop \
 
 QT5_VER_MINOR=	${QT5_VERSION:C/^[0-9]+\.//:C/\..+$//}
 .if ${QT5_VER_MINOR} < 15
-BROKEN=		Qt 5.15 or higher required, using 5.${QT5_VER_MINOR} now.
+BROKEN=		Qt 5.15 or higher required, using 5.${QT5_VER_MINOR} now
 .endif
 
 do-install:
