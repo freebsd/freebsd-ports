@@ -1,5 +1,6 @@
 PORTNAME=	cagebreak
 DISTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -45,4 +46,5 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.c \
 		${WRKSRC}/meson.build
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>

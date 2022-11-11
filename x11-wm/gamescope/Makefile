@@ -1,5 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.11.48
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -48,4 +49,5 @@ post-extract:
 # Merge patch_directory for subprojects without meson.build
 	@(cd ${WRKSRC}/subprojects/packagefiles && ${COPYTREE_SHARE} . ..)
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>

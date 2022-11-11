@@ -1,6 +1,7 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -67,4 +68,5 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" \
 		${STAGEDIR}${DOCSDIR})
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>

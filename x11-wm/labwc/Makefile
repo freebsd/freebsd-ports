@@ -1,5 +1,6 @@
 PORTNAME=	labwc
 DISTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -53,4 +54,5 @@ post-patch:
 		${WRKSRC}/docs/${PORTNAME}-environment.5.scd \
 		${WRKSRC}/src/common/dir.c
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>

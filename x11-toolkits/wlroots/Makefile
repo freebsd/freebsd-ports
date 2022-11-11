@@ -1,13 +1,13 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.15.1
+DISTVERSION=	0.16.0
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
-PATCHFILES+=	7c0e2a271a4c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
-PATCHFILES+=	55a8d225cf8c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	fc0854d5f256.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	29cb694655db.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	91a8ff42d26e.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
@@ -16,12 +16,14 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.24:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols \
+		hwdata>0:misc/hwdata
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libseat.so:sysutils/seatd \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITLAB=	yes
@@ -29,7 +31,7 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	29938b74251e826f3778f6bf9c54974a30488cc1
+GL_COMMIT=	1712a7d27444d62f8da8eeedf0840b386a810e96
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
 OPTIONS_DEFINE=	DRM NVIDIA OPENGL VULKAN X11
@@ -42,8 +44,9 @@ DRM_VARS=		BACKENDS+="drm libinput"
 
 NVIDIA_DESC=		EGLStreams support for DRM backend (experimental)
 NVIDIA_PATCH_SITES=	https://github.com/danvd/${GL_PROJECT}-eglstreams/commit/:nvidia
-NVIDIA_PATCHFILES=	c0fc017207f0.patch:-p1:nvidia # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2769
+NVIDIA_PATCHFILES=	5bde12a6dbf4.patch:-p1:nvidia # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2769
 NVIDIA_IMPLIES=		DRM OPENGL X11
+NVIDIA_BROKEN=		fails to patch
 .if make(makesum)
 .MAKEFLAGS:		WITH+=NVIDIA
 .endif

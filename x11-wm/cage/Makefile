@@ -1,7 +1,7 @@
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -45,4 +45,5 @@ post-patch:
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>
