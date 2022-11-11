@@ -218,17 +218,14 @@ check-cabal2tuple:
 
 cabal-post-extract:
 .  if !defined(SKIP_CABAL_EXTRACT)
-# Remove the project file as requested
 .    if "${CABAL_PROJECT}" == "remove"
+# Remove the project file if requested
 	${RM} ${WRKSRC}/cabal.project
 .    endif
-# Save the original project file so that users can patch them
-.    if "${CABAL_PROJECT}" == "append"
-	${MV} ${WRKSRC}/cabal.project ${WRKSRC}/cabal.project.${PORTNAME}
-.    endif
-
+.    ifndef(CABAL_PROJECT)
 	@${TEST} ! -f ${WRKSRC}/cabal.project || \
 		(${ECHO_CMD} "cabal.project file is already present in WRKSRC! Set CABAL_PROJECT variable." && false)
+.    endif
 
 # Move extracted dependencies into ${CABAL_DEPSDIR} directory
 	${MKDIR} ${CABAL_DEPSDIR}
@@ -250,18 +247,13 @@ cabal-post-patch:
 .  if !defined(SKIP_CABAL_EXTRACT)
 	@${TEST} ! -f ${CABAL_COOKIE} || \
 		(${ECHO_CMD} "===> Patching done, skipping cabal-post-patch" && false)
-# Create our own cabal.project
-	${ECHO_CMD} "packages:" > ${WRKSRC}/cabal.project
-.    if "${CABAL_PROJECT}" != "append"
-	${ECHO_CMD} "        ." >> ${WRKSRC}/cabal.project
-.    endif
+# Append our stuff to possibly existing cabal.project.local
+	${ECHO_CMD} "" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "-- added by USES=cabal" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "packages:" >> ${WRKSRC}/cabal.project.local
 .    for package in ${_use_cabal}
-	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${package:C/_[0-9]+//}" >> ${WRKSRC}/cabal.project
+	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${package:C/_[0-9]+//}" >> ${WRKSRC}/cabal.project.local
 .    endfor
-# Append the (possibly patched) original cabal.project, if requested
-.    if "${CABAL_PROJECT}" == "append"
-	${CAT} ${WRKSRC}/cabal.project.${PORTNAME} >> ${WRKSRC}/cabal.project
-.    endif
 .  endif # SKIP_CABAL_EXTRACT && !CABAL_COOKIE
 
 cabal-pre-configure:
@@ -273,7 +265,7 @@ cabal-pre-configure:
 .  if !target(do-build)
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} new-build --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} build --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)

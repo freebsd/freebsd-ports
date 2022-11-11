@@ -390,9 +390,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 CABAL_PROJECT=		append
 
 post-patch:
-	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.${PORTNAME}
-	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.${PORTNAME}
-	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.${PORTNAME}
+	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.local
 
 pre-build:
 	cd ${WRKSRC_sodium} && ./autogen.sh

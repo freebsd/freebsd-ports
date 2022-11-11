@@ -409,9 +409,9 @@ post-patch:
 			-e '/Cardano.Db.RevFromGit/d' \
 			${WRKSRC}/cardano-db/src/Cardano/Db/Version.hs
 
-	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.${PORTNAME}
-	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.${PORTNAME}
-	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.${PORTNAME}
+	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.local
 
 pre-build:
 	cd ${WRKSRC_sodium} && ./autogen.sh
