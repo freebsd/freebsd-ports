@@ -31,6 +31,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bitmaps-2.1.0 \
 		block-0.1.6 \
 		block-buffer-0.9.0 \
+		block-buffer-0.10.3 \
 		blocking-1.2.0 \
 		bstr-0.2.17 \
 		bumpalo-3.11.0 \
@@ -86,11 +87,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.10 \
 		crossbeam-utils-0.8.11 \
+		crypto-common-0.1.6 \
 		darling-0.13.4 \
 		darling_core-0.13.4 \
 		darling_macro-0.13.4 \
 		data-url-0.1.1 \
 		digest-0.9.0 \
+		digest-0.10.5 \
 		directories-4.0.1 \
 		directories-next-2.0.0 \
 		dirs-4.0.0 \
@@ -376,6 +379,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.8.26 \
 		sha2-0.9.9 \
+		sha2-0.10.6 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.2 \
 		sid-0.6.1 \
@@ -582,7 +586,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-d@git+https://github.com/syntacti/tree-sitter-d?branch=master\#fdaa172d375f6c48987ce68ae01e8020acb9bc17 \
 		tree-sitter-xml@git+https://github.com/RenjiSann/tree-sitter-xml?branch=main\#422528a43630db6dcc1e222d1c5ee3babd559473 \
 		tree-sitter-bash@git+https://github.com/syntacti/tree-sitter-bash?branch=master\#ba3adca745943b71b0c84bb4e4977788cc6a867b \
-		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#bcc134e00834af23c67ac087dc445f4872c2d497 \
+		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#2024fe8f241dc95ad38f4024d39898bada8fe802 \
 		tree-sitter-kotlin@git+https://github.com/fwcd/tree-sitter-kotlin?branch=main\#a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569 \
 		swash@git+https://github.com/lapce/swash\#1d9b8c700a415f0f4216dd30026b3a2149db8e1e \
 		tree-sitter-haxe@git+https://github.com/vantreeseba/tree-sitter-haxe\#52e3d2b9c3955aca886bccc38b496ef99b603a09 \

@@ -1,5 +1,6 @@
 PORTNAME=	lapce
-DISTVERSION=	0.2.2	# remove openssl-src-* from CARGO-CRATES each update
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.3	# remove openssl-src-* from CARGO-CRATES each update
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
