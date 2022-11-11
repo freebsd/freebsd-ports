@@ -544,6 +544,7 @@
     SUBDIR += vifm
     SUBDIR += visp
     SUBDIR += viz
+    SUBDIR += vote
     SUBDIR += vxl
     SUBDIR += wego
     SUBDIR += whichman
