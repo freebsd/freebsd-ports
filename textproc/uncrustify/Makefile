@@ -5,7 +5,8 @@ CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Highly configurable source code beautifier
-WWW=		http://uncrustify.sourceforge.net/
+WWW=		https://uncrustify.sourceforge.net/ \
+		https://github.com/uncrustify/uncrustify
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
