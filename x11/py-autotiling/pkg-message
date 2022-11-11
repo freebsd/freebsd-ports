@@ -1,0 +1,9 @@
+To use x11/py-autotiling, add
+
+    exec_always autotiling
+
+or
+
+    exec_always --no-startup-id autotiling
+
+to the ~/.config/sway/config or ~/.config/i3/config file.
