@@ -10,6 +10,9 @@ WWW=		https://lfortran.org/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_12=	use of undeclared identifier '_Unwind_Backtrace'
+BROKEN_i386=	sizeof(YYSTYPE) != sizeof(Vec<AST::ast_t*>)
+
 BUILD_DEPENDS=	bash:shells/bash		\
 		re2c>0:devel/re2c		\
 		dwarfdump:devel/dwarfdump	\
