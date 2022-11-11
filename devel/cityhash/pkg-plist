@@ -3,6 +3,6 @@ lib/libcityhash.a
 lib/libcityhash.so
 lib/libcityhash.so.0
 lib/libcityhash.so.0.0.0
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
+@comment %%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
