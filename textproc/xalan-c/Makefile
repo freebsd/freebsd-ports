@@ -1,15 +1,18 @@
 PORTNAME=	xalan-c
 PORTVERSION=	1.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	APACHE/xalan/xalan-c/sources
 DISTNAME=	xalan_c-${PORTVERSION}
 
-MAINTAINER=	rleigh@apache.org
+MAINTAINER=	rleigh@codelibre.net
 COMMENT=	XSLT processor from the Apache XML Project
 WWW=		https://apache.github.io/xalan-c/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Upstream no longer continuing; please consider textproc/libxslt, textproc/qt5-xmlpatterns or SaxonC as potential alternatives
+EXPIRATION_DATE=	2023-10-28
 
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
