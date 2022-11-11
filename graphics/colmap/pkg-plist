@@ -50,6 +50,14 @@ include/colmap/estimators/translation_transform.h
 include/colmap/estimators/triangulation.h
 include/colmap/estimators/two_view_geometry.h
 include/colmap/estimators/utils.h
+include/colmap/exe/database.h
+include/colmap/exe/feature.h
+include/colmap/exe/gui.h
+include/colmap/exe/image.h
+include/colmap/exe/model.h
+include/colmap/exe/mvs.h
+include/colmap/exe/sfm.h
+include/colmap/exe/vocab_tree.h
 include/colmap/feature/extraction.h
 include/colmap/feature/matching.h
 include/colmap/feature/sift.h
