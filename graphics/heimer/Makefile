@@ -1,11 +1,7 @@
 PORTNAME=	heimer
-DISTVERSION=	3.6.1
-PORTREVISION=	1
+DISTVERSION=	3.6.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/juzzlin/Heimer/releases/download/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/juzzlin/Heimer/commit/
-PATCHFILES=	362882348743b360825fa95b690c05a21078a184.patch:-p1 # https://github.com/juzzlin/Heimer/pull/223
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple mind map, diagram, and note-taking tool
