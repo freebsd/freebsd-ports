@@ -65,5 +65,6 @@ pre-test:
 		${TOUCH} ${WRKDIR}/.meson_build_tests; \
 	fi
 
+# Keep override.mk in sync with x11/wcm + x11/wf-shell
 .include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>
