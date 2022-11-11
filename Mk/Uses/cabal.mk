@@ -186,10 +186,12 @@ cabal-extract: check-cabal
 	@${RM} -r ${WRKSRC}/dist-newstyle
 	@${TOUCH} ${EXTRACT_COOKIE} ${CABAL_COOKIE}
 
-# Calls cabal configure on the Haskell package located in ${WRKSRC}
+# Calls cabal build --dry-run on the Haskell package located in ${WRKSRC}
+# This is a Cabal way of doing configure step of the building process
+# This pulls in all source dependencies, resolves them and generates build plan
 cabal-configure: check-cabal
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CABAL_WITH_ARGS} ${CONFIGURE_ARGS}
+		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} build --dry-run --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CABAL_WITH_ARGS} ${BUILD_ARGS} ${BUILD_TARGET}
 
 # Calls cabal build on the Haskell package located in ${WRKSRC}
 cabal-build: check-cabal
