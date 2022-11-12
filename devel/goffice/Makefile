@@ -1,5 +1,5 @@
 PORTNAME=	goffice
-PORTVERSION=	0.10.52
+PORTVERSION=	0.10.53
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings \
 USE_PERL5=	build
 SHEBANG_FILES=	${WRKSRC}/tools/introspection-identifier-filter
 
-PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${PORTVERSION:R}
+PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${PORTVERSION:R} LIB_VER=${PORTVERSION:E}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/goffice/${SHORT_VER}/plugins
