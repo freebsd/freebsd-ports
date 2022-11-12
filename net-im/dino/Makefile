@@ -1,7 +1,6 @@
 PORTNAME=		dino
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.3.0
-PORTREVISION=		6
+DISTVERSION=		0.3.1
 CATEGORIES=		net-im
 
 MAINTAINER=		ashish@FreeBSD.org
@@ -26,8 +25,8 @@ USES=		cmake cpe desktop-file-utils gettext-tools gnome \
 
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=		OMEMO UPLOAD GNUPG ICE RTP
-OPTIONS_DEFAULT=	OMEMO UPLOAD GNUPG ICE RTP
+OPTIONS_DEFINE=		OMEMO UPLOAD GNUPG ICE RTP CANBERRA
+OPTIONS_DEFAULT=	OMEMO UPLOAD GNUPG ICE RTP CANBERRA
 OPTIONS_SUB=		yes
 
 HAS_CONFIGURE=	yes
@@ -37,6 +36,7 @@ USE_LDCONFIG=	yes
 
 USE_GNOME=	cairo gdkpixbuf2 glib20 gnomeprefix gtk30 intlhack
 
+CANBERRA_DESC=	Notifications sounds support
 ICE_DESC=		ICE NAT traversal plugin
 OMEMO_DESC=		OMEMO plugin
 RTP_DESC=		RTP plugin
@@ -44,6 +44,7 @@ UPLOAD_DESC=		HTTP file upload plugin
 ICE_LIB_DEPENDS=	libnice.so:net-im/libnice \
 			libgnutls.so:security/gnutls
 ICE_VARS=		ENABLED_PLUGINS+=ice
+ICE_CMAKE_ON=		-DSOUP_VERSION:INT=2
 ICE_VARS_OFF=		DISABLED_PLUGINS+=ice
 RTP_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
@@ -62,11 +63,14 @@ UPLOAD_VARS_OFF=	DISABLED_PLUGINS+=http-files
 GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GNUPG_VARS=		ENABLED_PLUGINS+=openpgp
 GNUPG_VARS_OFF=		DISABLED_PLUGINS+=openpgp
+CANBERRA_VARS=		ENABLED_PLUGINS+=notification-sound
+CANBERRA_VARS_OFF=		DISABLED_PLUGINS+=notification-sound
+CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 
 CMAKE_ARGS+=	-DENABLED_PLUGINS="${ENABLED_PLUGINS:S/ /;/gW}"
 CMAKE_ARGS+=	-DDISABLED_PLUGINS="${DISABLED_PLUGINS:S/ /;/gW}"
 
-pre-everything::
+pre-configure:
 	@if [ -z "${PACKAGE_BUILDING}" ]; then if ! ${PKG_BIN} query \
 			'%o-%Ok-%Od' databases/sqlite3 | \
 			${GREP} -F -wq databases/sqlite3-UNICODE61-on; then \

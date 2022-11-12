@@ -9,6 +9,7 @@ include/crypto-vala.h
 %%GNUPG%%lib/dino/plugins/openpgp.so
 %%ICE%%lib/dino/plugins/ice.so
 %%RTP%%lib/dino/plugins/rtp.so
+%%CANBERRA%%lib/dino/plugins/notification-sound.so
 lib/libdino.so
 lib/libdino.so.0
 lib/libdino.so.0.0
