@@ -1,6 +1,5 @@
 PORTNAME=	opencascade
-PORTVERSION=	7.6.0
-PORTREVISION=	10
+DISTVERSION=	7.7.0
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -19,6 +18,7 @@ BUILD_DEPENDS=	rapidjson>0:devel/rapidjson			\
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libfreetype.so:print/freetype2		\
 		libexpat.so:textproc/expat2		\
+		libdraco.so:archivers/draco		\
 		libpng16.so:graphics/png		\
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R}
 RUN_DEPENDS=	bash:shells/bash
@@ -59,7 +59,10 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DUSE_FREETYPE:BOOL=ON					\
 		-DUSE_TBB:BOOL=OFF					\
 		-DUSE_RAPIDJSON:BOOL=ON					\
+		-DUSE_DRACO:BOOL=ON					\
 		-DUSE_VTK:BOOL=ON					\
+		-D3RDPARTY_DRACO_LIBRARY_DIR:PATH=${LOCALBASE}/lib	\
+		-D3RDPARTY_DRACO_INCLUDE_DIR:PATH=${LOCALBASE}/include/draco	\
 		-D3RDPARTY_VTK_INCLUDE_DIR:PATH=${LOCALBASE}/include/vtk-${VTK_VER}
 CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
@@ -80,7 +83,7 @@ CONFLICTS_INSTALL=	opencascade740 # OpenCAS/bin/DRAWEXE
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
 PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}	\
-		VE=${PORTVERSION:R:R} VER=${PORTVERSION}
+		VE=${PORTVERSION:R} VER=${DISTVERSION:C/-beta//}
 
 FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
@@ -118,7 +121,7 @@ VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl	\
 VIS_USE=		GL=glesv2
 
 DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_USE=	TEX=latex:build
+DOXYGEN_USE=		TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen		\
 			dot:graphics/graphviz		\
@@ -158,7 +161,7 @@ post-build-DOXYGEN-on:
 	(cd ${WRKSRC} && ./gendoc -overview)
 
 post-install:
-	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/DRAWEXE
+	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${DISTVERSION:C/-beta//} ${STAGEDIR}${PREFIX}/bin/DRAWEXE
 	(cd ${STAGEDIR}${PREFIX}/bin &&							\
 	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bin/DRAWEXE)
 
