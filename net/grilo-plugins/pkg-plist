@@ -1,5 +1,7 @@
 lib/grilo-0.3/libgrlbookmarks.so
 lib/grilo-0.3/libgrlchromaprint.so
+%%DMAP%%lib/grilo-0.3/libgrldaap.so
+%%DMAP%%lib/grilo-0.3/libgrldpap.so
 lib/grilo-0.3/libgrldleyna.so
 lib/grilo-0.3/libgrlfilesystem.so
 lib/grilo-0.3/libgrlflickr.so
@@ -39,6 +41,15 @@ share/help/es/grilo-plugins/legal.xml
 share/help/eu/examples/example-tmdb.c
 share/help/eu/grilo-plugins/grilo-plugins.xml
 share/help/eu/grilo-plugins/legal.xml
+share/help/gl/examples/example-tmdb.c
+share/help/gl/grilo-plugins/grilo-plugins.xml
+share/help/gl/grilo-plugins/legal.xml
+share/help/hu/examples/example-tmdb.c
+share/help/hu/grilo-plugins/grilo-plugins.xml
+share/help/hu/grilo-plugins/legal.xml
+share/help/nl/examples/example-tmdb.c
+share/help/nl/grilo-plugins/grilo-plugins.xml
+share/help/nl/grilo-plugins/legal.xml
 share/help/pl/examples/example-tmdb.c
 share/help/pl/grilo-plugins/grilo-plugins.xml
 share/help/pl/grilo-plugins/legal.xml
@@ -51,6 +62,7 @@ share/help/sv/grilo-plugins/legal.xml
 share/help/uk/examples/example-tmdb.c
 share/help/uk/grilo-plugins/grilo-plugins.xml
 share/help/uk/grilo-plugins/legal.xml
+share/locale/ab/LC_MESSAGES/grilo-plugins.mo
 share/locale/as/LC_MESSAGES/grilo-plugins.mo
 share/locale/be/LC_MESSAGES/grilo-plugins.mo
 share/locale/bg/LC_MESSAGES/grilo-plugins.mo
@@ -75,6 +87,7 @@ share/locale/hu/LC_MESSAGES/grilo-plugins.mo
 share/locale/id/LC_MESSAGES/grilo-plugins.mo
 share/locale/it/LC_MESSAGES/grilo-plugins.mo
 share/locale/ja/LC_MESSAGES/grilo-plugins.mo
+share/locale/ka/LC_MESSAGES/grilo-plugins.mo
 share/locale/ko/LC_MESSAGES/grilo-plugins.mo
 share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
