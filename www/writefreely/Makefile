@@ -1,12 +1,9 @@
 PORTNAME=	writefreely
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
-PORTREVISION=	6
+DISTVERSION=	0.13.2
 CATEGORIES=	www textproc
-MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks \
-		https://git.mills.io/prologic/go-gopher/archive/:go_gopher
-DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks \
-		b7ebb55feece2abb74a651c217db6f7ead778170.tar.gz:go_gopher
+MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks
+DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks
 DIST_SUBDIR=	writeas
 
 MAINTAINER=	fuz@fuz.su
@@ -15,7 +12,7 @@ WWW=		https://writefreely.org
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_DISTFILES_CC-BY-NC-SA-4.0=	writefreely-documentation-${DISTVERSIONPREFIX}${DISTVERSION}_GH0.tar.gz
+LICENSE_DISTFILES_CC-BY-NC-SA-4.0=	writefreely-documentation-v0.13.1_GH0.tar.gz
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
@@ -24,25 +21,25 @@ USE_GITHUB=	yes
 GH_TUPLE=	aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		beevik:etree:v1.1.0:beevik_etree/vendor/github.com/beevik/etree \
 		captncraig:cors:e80254a89df1:captncraig_cors/vendor/github.com/captncraig/cors \
-		chris-ramon:douceur:v0.2.0:chris_ramon_douceur \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		clbanning:mxj:v1.8.4:clbanning_mxj/vendor/github.com/clbanning/mxj \
-		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dchest:uniuri:7aecb25e1fe5:dchest_uniuri/vendor/github.com/dchest/uniuri \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-fed:httpsig:0ef28562fabe:go_fed_httpsig/vendor/github.com/go-fed/httpsig \
-		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.62.0:go_ini_ini_1/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.66.4:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-test:deep:v1.0.1:go_test_deep/vendor/github.com/go-test/deep \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gofrs:uuid:v3.3.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
-		golang:sys:04245dca01da:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:net:bcab6841153b:golang_net/vendor/golang.org/x/net \
+		golang:sys:3c1f35247d10:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		gologme:log:v1.2.0:gologme_log/vendor/github.com/gologme/log \
 		gopherjs:gopherjs:d547d1d9531e:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		gorilla:csrf:v1.7.0:gorilla_csrf/vendor/github.com/gorilla/csrf \
@@ -64,20 +61,23 @@ GH_TUPLE=	aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/do
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-sqlite3:v1.14.6:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
-		microcosm-cc:bluemonday:v1.0.5:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
+		microcosm-cc:bluemonday:v1.0.21:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-wordwrap:v1.0.1:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nu7hatch:gouuid:179d4d0c4d8d:nu7hatch_gouuid/vendor/github.com/nu7hatch/gouuid \
+		petermattis:goid:b0b1615b78e5:petermattis_goid/vendor/github.com/petermattis/goid \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rainycape:unidecode:cb7f23ec59be:rainycape_unidecode/vendor/github.com/rainycape/unidecode \
-		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		sasha-s:go-deadlock:v0.3.1:sasha_s_go_deadlock/vendor/github.com/sasha-s/go-deadlock \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		smartystreets:assertions:b6c0e53d7304:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		smartystreets:goconvey:044398e4856c:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2 \
+		urfave:cli:v2.5.1:urfave_cli_v2/vendor/github.com/urfave/cli/v2 \
 		writeas:activity:v0.1.2:writeas_activity/vendor/github.com/writeas/activity \
 		writeas:activityserve:d7ab3eaa4481:writeas_activityserve/vendor/github.com/writeas/activityserve \
+		writeas:go-strip-markdown:v2.0.1:writeas_go_strip_markdown/vendor/github.com/writeas/go-strip-markdown \
 		writeas:go-strip-markdown:v2.1.1:writeas_go_strip_markdown_v2/vendor/github.com/writeas/go-strip-markdown/v2 \
 		writeas:go-webfinger:v1.1.0:writeas_go_webfinger/vendor/github.com/writeas/go-webfinger \
 		writeas:go-writeas:v2.0.2:writeas_go_writeas_v2/vendor/github.com/writeas/go-writeas/v2 \
@@ -88,8 +88,10 @@ GH_TUPLE=	aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/do
 		writeas:openssl-go:v1.0.0:writeas_openssl_go/vendor/github.com/writeas/openssl-go \
 		writeas:saturday:392b95a03320:writeas_saturday/vendor/github.com/writeas/saturday \
 		writeas:slug:v1.2.0:writeas_slug/vendor/github.com/writeas/slug \
-		writeas:web-core:95a3a717ed8f:writeas_web_core/vendor/github.com/writeas/web-core \
+		writeas:web-core:v1.4.1:writeas_web_core/vendor/github.com/writeas/web-core \
+		writefreely:go-gopher:40127126f83b:writefreely_go_gopher/vendor/github.com/writefreely/go-gopher \
 		writefreely:go-nodeinfo:v1.2.0:writefreely_go_nodeinfo/vendor/github.com/writefreely/go-nodeinfo
+
 USE_RC_SUBR=	writefreely
 GO_TARGET=	./cmd/writefreely
 
@@ -110,28 +112,24 @@ CSS_DIST_DISTFILES=		writefreely-css-${DISTVERSION}.tar.gz:css
 CSS_LESSC_BUILD_DEPENDS=	npm:www/npm
 CSS_LESSC_VARS=			LEGAL_PACKAGE=yes \
 				NO_PACKAGE="uses www/npm to fetch files at build time (option CSS_LESSC)"
-DOCS_GH_TUPLE=			writefreely:documentation:${DISTVERSIONPREFIX}${DISTVERSION}:docs
+DOCS_GH_TUPLE=			writefreely:documentation:v0.13.1:docs
 DOCS_VARS=			LICENSE+=CC-BY-NC-SA-4.0 \
 				LICENSE_COMB=multi
 SQLITE3_VARS=			GO_BUILDFLAGS+=-tags=sqlite
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/vendor/github.com/chris-ramon
-	@${RLN} ${WRKSRC_aymerick_douceur} ${WRKSRC}/vendor/github.com/chris-ramon/douceur
 	@${MKDIR} ${WRKSRC}/vendor/code.as/core
 	@${RLN} ${WRKDIR}/socks ${WRKSRC}/vendor/code.as/core/socks
-	@${MKDIR} ${WRKSRC}/vendor/git.mills.io/prologic
-	@${RLN} ${WRKDIR}/go-gopher ${WRKSRC}/vendor/git.mills.io/prologic/go-gopher
-
-# download the lessc program with npm for rolling the writefreely-css distfile
-${WRKDIR}/npm/bin/lessc:
-		@${ECHO_MSG} "=> downloading the lessc utility with NPM"
-		${MKDIR} ${WRKDIR}/npm
-		npm -C ${WRKDIR}/npm -g install less@3.5.3
-		npm -C ${WRKDIR}/npm -g install less-plugin-clean-css
 
 pre-build:
 	cd ${WRKSRC} && go-bindata -pkg writefreely -ignore=\\.gitignore schema.sql sqlite.sql
+
+# download the lessc program with npm for rolling the writefreely-css distfile
+${WRKDIR}/npm/bin/lessc:
+	@${ECHO_MSG} "=> downloading the lessc utility with NPM"
+	${MKDIR} ${WRKDIR}/npm
+	npm -C ${WRKDIR}/npm -g install less@3.5.3
+	npm -C ${WRKDIR}/npm -g install less-plugin-clean-css
 
 # Packaging node.js applications is a PITA, so supply pre-generated CSS files as
 # a custom distfile using lessc, a node.js application.
