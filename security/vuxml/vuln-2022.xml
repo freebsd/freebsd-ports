@@ -1,3 +1,36 @@
+  <vuln vid="35d1e192-628e-11ed-8c5e-641c67a117d8">
+    <topic>ipython -- Execution with Unnecessary Privileges</topic>
+    <affects>
+      <package>
+	<name>py37-ipython</name>
+	<name>py38-ipython</name>
+	<name>py39-ipython</name>
+	<name>py310-ipython</name>
+	<name>py311-ipython</name>
+	<range><lt>7.31.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>IPython project reports:</p>
+	<blockquote cite="https://ipython.readthedocs.io/en/stable/whatsnew/version8.html#ipython-8-0-1-cve-2022-21699">
+	  <p>IPython 8.0.1, 7.31.1 and 5.11 are security releases that change some
+	    default values in order to prevent potential Execution with Unnecessary
+	    Privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21699</cvename>
+      <url>https://github.com/ipython/ipython/security/advisories/GHSA-pq7m-3gw7-gq5x</url>
+      <url>https://ipython.readthedocs.io/en/stable/whatsnew/version8.html#ipython-8-0-1-cve-2022-21699</url>
+    </references>
+    <dates>
+      <discovery>2022-01-19</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5a48a7a-61d3-11ed-9094-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
