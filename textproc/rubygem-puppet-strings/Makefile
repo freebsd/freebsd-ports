@@ -1,5 +1,5 @@
 PORTNAME=	puppet-strings
-PORTVERSION=	2.9.0
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
