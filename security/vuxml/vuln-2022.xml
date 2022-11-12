@@ -1,3 +1,300 @@
+  <vuln vid="0a80f159-629b-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Username enumeration</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.5.15</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.4</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.15</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/11/08/security-release-new-versions-of-grafana-with-critical-and-moderate-fixes-for-cve-2022-39328-cve-2022-39307-and-cve-2022-39306/">
+	  <p>When using the forget password on the login page, a POST request is made
+	  to the <code>/api/user/password/sent-reset-email</code> URL. When the username
+	  or email does not exist, a JSON response contains a “user not found” message.
+	  </p>
+	  <p>The CVSS score for this vulnerability is 5.3 Moderate</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39307</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-3p62-42x7-gxg5</url>
+    </references>
+    <dates>
+      <discovery>2022-10-24</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6eb6a442-629a-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Privilege escalation</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.5.15</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.4</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.15</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/11/08/security-release-new-versions-of-grafana-with-critical-and-moderate-fixes-for-cve-2022-39328-cve-2022-39307-and-cve-2022-39306/">
+	  <p>Grafana admins can invite other members to the organization they are
+	  an admin for. When admins add members to the organization, non existing users
+	  get an email invite, existing members are added directly to the organization.
+	  When an invite link is sent, it allows users to sign up with whatever
+	  username/email address the user chooses and become a member of the organization.
+	  </p>
+	  <p>The CVSS score for this vulnerability is 6.4 Moderate</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39306</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-2x6g-h2hg-rq84</url>
+    </references>
+    <dates>
+      <discovery>2022-10-24</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="db895ed0-6298-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Privilege escalation</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>9.2.0</ge><lt>9.2.4</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.2.0</ge><lt>9.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/11/08/security-release-new-versions-of-grafana-with-critical-and-moderate-fixes-for-cve-2022-39328-cve-2022-39307-and-cve-2022-39306/">
+	  <p>Internal security audit identified a race condition in the Grafana codebase,
+	  which allowed an unauthenticated user to query an arbitrary endpoint in Grafana.
+	  A race condition in the <a href="https://github.com/grafana/grafana/blob/main/pkg/web/router.go#L153">
+	  HTTP context</a> creation could make a HTTP request being assigned
+	  the authentication/authorization middlewares of another call. Under heavy load
+	  it is possible that a call protected by a privileged middleware receives instead
+	  the middleware of a public query. As a result, an unauthenticated user can
+	  successfully query protected endpoints.</p>
+	  <p>The CVSS score for this vulnerability is 9.8 Critical</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39328</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-vqc4-mpj8-jxch</url>
+    </references>
+    <dates>
+      <discovery>2022-11-08</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4e60d660-6298-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Plugin signature bypass</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>7.0.0</ge><lt>8.5.14</lt></range>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.14</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/10/12/grafana-security-releases-new-versions-with-fixes-for-cve-2022-39229-cve-2022-39201-cve-2022-31130-cve-2022-31123/">
+	  <p>On July 4th as a result of an internal security audit we have discovered
+	  a bypass in the plugin signature verification by exploiting a versioning flaw.</p>
+	  <p>We believe that this vulnerability is rated at CVSS 6.1
+	  (CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:L).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31123</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-rhxj-gh46-jvw8</url>
+    </references>
+    <dates>
+      <discovery>2022-07-04</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f6c9420-6297-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Data source and plugin proxy endpoints leaking authentication tokens to some destination plugins</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>7.0.0</ge><lt>8.5.14</lt></range>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.14</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/10/12/grafana-security-releases-new-versions-with-fixes-for-cve-2022-39229-cve-2022-39201-cve-2022-31130-cve-2022-31123/">
+	  <p>On June 26 a security researcher contacted Grafana Labs to disclose
+	  a vulnerability with the GitLab data source plugin that could leak the API key
+	  to GitLab. After further analysis the vulnerability impacts data source
+	  and plugin proxy endpoints with authentication tokens but under some conditions.</p>
+	  <p>We believe that this vulnerability is rated at CVSS 4.9
+	  (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31130</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-jv32-5578-pxjc</url>
+    </references>
+    <dates>
+      <discovery>2022-06-26</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6877e164-6296-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Data source and plugin proxy endpoints leaking authentication tokens to some destination plugins</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>5.0.0</ge><lt>8.5.14</lt></range>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.14</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/10/12/grafana-security-releases-new-versions-with-fixes-for-cve-2022-39229-cve-2022-39201-cve-2022-31130-cve-2022-31123/">
+	  <p>On September 7th as a result of an internal security audit we have discovered
+	  that Grafana could leak the authentication cookie of users to plugins. After
+	  further analysis the vulnerability impacts data source and plugin proxy
+	  endpoints under certain conditions.</p>
+	  <p>We believe that this vulnerability is rated at CVSS 6.8
+	  (CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39201</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-x744-mm8v-vpgr</url>
+    </references>
+    <dates>
+      <discovery>2022-09-07</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="909a80ba-6294-11ed-9ca2-6c3be5272acd">
+    <topic>Grafana -- Improper authentication</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.5.14</lt></range>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.14</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/10/12/grafana-security-releases-new-versions-with-fixes-for-cve-2022-39229-cve-2022-39201-cve-2022-31130-cve-2022-31123/">
+	  <p>On September 7, as a result of an internal security audit, we discovered
+	  a security vulnerability in Grafana’s basic authentication related to the usage
+	  of username and email address.</p>
+	  <p>n Grafana, a user’s username and email address are unique fields, which
+	  means no other user can have the same username or email address as another user.
+	  </p>
+	  <p>In addition, a user can have an email address as a username, and the Grafana
+	  login allows users to sign in with either username or email address. This
+	  creates an unusual behavior, where <em>user_1</em> can register with one email
+	  address and <em>user_2</em> can register their username as <em>user_1</em>’s
+	  email address. As a result, <em>user_1</em> would be prevented from signing
+	  in to Grafana, since <em>user_1</em> password won’t match with <em>user_2</em>
+	  email address.</p>
+	  <p>The CVSS score for this vulnerability is 4.3 moderate
+	  (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39229</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-gj7m-853r-289r</url>
+    </references>
+    <dates>
+      <discovery>2022-09-07</discovery>
+      <entry>2022-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35d1e192-628e-11ed-8c5e-641c67a117d8">
     <topic>ipython -- Execution with Unnecessary Privileges</topic>
     <affects>
