@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+**** You need to adapt /usr/local/etc/kubernetes/scheduler.yaml
+     and provide a valid kubeconfig file in order to make Kubernetes scheduler
+     work properly.
+EOM
+}
+]
