@@ -4,7 +4,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fox@FreeBSD.org
-COMMENT=	Fast irc daemon with a number of new features
+COMMENT=	Fast IRC daemon with a number of new features
 WWW=		https://www.ircd-hybrid.org/
 
 LICENSE=	GPLv2
