@@ -35,7 +35,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 GLIB_SCHEMAS=	org.gnome.gedit.plugins.drawspaces.gschema.xml \
 		org.gnome.gedit.plugins.wordcompletion.gschema.xml \
-		org.gnome.gedit.plugins.terminal.gschema.xml \
-		org.gnome.gedit.plugins.translate.gschema.xml
+		org.gnome.gedit.plugins.terminal.gschema.xml
 
 .include <bsd.port.mk>
