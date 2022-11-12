@@ -1,7 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.17.1
-PORTREVISION=	1
+DISTVERSION=	16.18.1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	16
@@ -113,5 +112,9 @@ post-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
+
+post-install-DTRACE-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/dtrace
+	${INSTALL_DATA} ${WRKSRC}/out/Release/node.d ${STAGEDIR}${PREFIX}/lib/dtrace
 
 .include <bsd.port.mk>
