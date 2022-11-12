@@ -1,13 +1,12 @@
 bin/mpv
 %%ETCDIR%%/encoding-profiles.conf
 include/mpv/client.h
-include/mpv/opengl_cb.h
 include/mpv/render.h
 include/mpv/render_gl.h
 include/mpv/stream_cb.h
 lib/libmpv.so
-lib/libmpv.so.1
-lib/libmpv.so.1.109.0
+lib/libmpv.so.2
+lib/libmpv.so.2.0.0
 libdata/pkgconfig/mpv.pc
 %%MANPAGES%%man/man1/mpv.1.gz
 share/applications/mpv.desktop
@@ -23,4 +22,5 @@ share/icons/hicolor/symbolic/apps/mpv-symbolic.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplayer-input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mpv.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/restore-old-bindings.conf
+share/metainfo/mpv.metainfo.xml
 share/zsh/site-functions/_mpv

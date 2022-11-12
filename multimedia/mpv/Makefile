@@ -1,21 +1,10 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.1
-PORTREVISION=	4
+DISTVERSION=	0.35.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio wayland
 MASTER_SITES=	https://waf.io/:waf
 DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b030cfe05f58.patch:-p1 # https://github.com/mpv-player/mpv/pull/9440
-PATCHFILES+=	edf0039d7621.patch:-p1 # https://github.com/mpv-player/mpv/pull/9298
-PATCHFILES+=	5319731526fb.patch:-p1 # https://github.com/mpv-player/mpv/pull/9298
-PATCHFILES+=	82390d212123.patch:-p1 # https://github.com/mpv-player/mpv/pull/9587
-PATCHFILES+=	22b0bac28e6c.patch:-p1 # https://github.com/mpv-player/mpv/pull/9587
-PATCHFILES+=	b7a71ea70671.patch:-p1 # https://github.com/mpv-player/mpv/pull/9734
-PATCHFILES+=	09343bc86e8b.patch:-p1 # https://github.com/mpv-player/mpv/pull/9734
-PATCHFILES+=	bc9805c71a67.patch:-p1 # https://github.com/mpv-player/mpv/pull/9830
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -183,7 +172,7 @@ WAYLAND_CONFIGURE_OFF=		--disable-wayland
 WAYLAND_IMPLIES=		OPENGL
 
 X11_USES=			gnome xorg
-X11_USE=			XORG=x11,xext,xinerama,xorgproto,xrandr,xscrnsaver,xv,xxf86vm
+X11_USE=			XORG=x11,xext,xinerama,xorgproto,xpresent,xrandr,xscrnsaver,xv,xxf86vm
 X11_CONFIGURE_OFF=		--disable-x11
 
 YTDLP_RUN_DEPENDS=		yt-dlp:www/yt-dlp

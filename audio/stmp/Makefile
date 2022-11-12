@@ -1,6 +1,6 @@
 PORTNAME=	stmp
 PORTVERSION=	0.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libHLSL.a:graphics/glslang
-LIB_DEPENDS=	libmpv.so:multimedia/mpv
+LIB_DEPENDS=	libmpv.so.1:multimedia/mpv034 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267114
 
 USES=		go:modules xorg gl
 
