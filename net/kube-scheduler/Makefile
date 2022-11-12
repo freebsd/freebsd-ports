@@ -1,7 +1,6 @@
 PORTNAME=	kube-scheduler
-PORTVERSION=	1.13.3
+PORTVERSION=	1.26.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
 CATEGORIES=	net
 
 MAINTAINER=	loic.blot@unix-experience.fr
@@ -20,15 +19,34 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes
 GH_PROJECT=	kubernetes
 
-BUILD_DATE=	2019-01-30T00:00:00Z
-
 GO_PKGNAME=	k8s.io/kubernetes
 GO_TARGET=	${GO_PKGNAME}/cmd/kube-scheduler
-GO_BUILDFLAGS=	-ldflags="-X k8s.io/kubernetes/pkg/version.gitMajor=${PORTVERSION:R:R} \
-		-X k8s.io/kubernetes/pkg/version.gitMinor=${PORTVERSION:R:E} \
-		-X k8s.io/kubernetes/pkg/version.buildDate=${BUILD_DATE} \
-		-X k8s.io/kubernetes/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION}"
+
+BUILD_DATE=	$$(date +'%Y-%m-%dT%H:%M:%SZ')
+
+GO_BUILDFLAGS=	-ldflags="-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.buildDate=${BUILD_DATE} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.buildDate=${BUILD_DATE} \
+      		-X k8s.io/client-go/pkg/version.buildDate=${BUILD_DATE} \
+      		-X k8s.io/component-base/version.buildDate=${BUILD_DATE} \
+		-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.gitMinor=${PORTVERSION:R:E} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.gitMinor=${PORTVERSION:R:E} \
+      		-X k8s.io/client-go/pkg/version.gitMinor=${PORTVERSION:R:E} \
+      		-X k8s.io/component-base/version.gitMinor=${PORTVERSION:R:E} \
+		-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.gitMajor=${PORTVERSION:R:R} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.gitMajor=${PORTVERSION:R:R} \
+      		-X k8s.io/client-go/pkg/version.gitMajor=${PORTVERSION:R:R} \
+      		-X k8s.io/component-base/version.gitMajor=${PORTVERSION:R:R} \
+		-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+      		-X k8s.io/client-go/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+      		-X k8s.io/component-base/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION}"
+
+USE_RC_SUBR=	kube-scheduler
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/kubernetes
+	${CP} ${FILESDIR}/*.sample ${STAGEDIR}${PREFIX}/etc/kubernetes
 
 .include <bsd.port.mk>
