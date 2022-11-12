@@ -335,6 +335,7 @@
     SUBDIR += eclat
     SUBDIR += edid-decode
     SUBDIR += edk2
+    SUBDIR += egress-monitor
     SUBDIR += eject
     SUBDIR += eksctl
     SUBDIR += endian

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: egress-monitor
+# KEYWORD: shutdown
+# REQUIRE: NETWORKING
+# BEFORE: pf
+
+. /etc/rc.subr
+
+name=egress_monitor
+desc="default route monitor"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${egress_monitor_enable:="NO"}
+
+procname="%%PREFIX%%/sbin/egress-monitor"
+command="/usr/sbin/daemon"
+command_args="-S -T ${name} ${procname}"
+
+run_rc_command $*
+
