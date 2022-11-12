@@ -1,7 +1,6 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
-DISTVERSION=	13-4-0
-PORTREVISION=	2
+DISTVERSION=	13-4-1
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,7 +37,8 @@ SHEBANG_FILES=	packages/kokkos/bin/kokkos_launch_compiler \
 CXXFLAGS+=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # fails otherwise with backtrace-related symbol error explicitly printed by Boost
 LDFLAGS+=	-lexecinfo # only for kokkos (?), to prevent missing symbols
 
-CONFLICTS_INSTALL=	kokkos # installs bundled kokkos, need to figure out how to prevent this
+CONFLICTS=	kokkos # installs bundled kokkos, need to figure out how to prevent this
+CONFLICTS_INSTALL=	googletest # see https://github.com/trilinos/Trilinos/issues/11271
 
 ## configure Trilinos
 
