@@ -1,6 +1,5 @@
 PORTNAME=	pms-devel
-PORTVERSION=	0.0.20220831
-PORTREVISION=	2
+PORTVERSION=	0.0.20221112
 CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -15,7 +14,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ambientsound
 GH_PROJECT=	pms
-GH_TAGNAME=	78c5210
+GH_TAGNAME=	40d6e37
 
 GH_TUPLE=	\
 		RoaringBitmap:roaring:v0.9.4:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
@@ -40,19 +39,21 @@ GH_TUPLE=	\
 		etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		fhs:gompd:v2.0.0:fhs_gompd/vendor/github.com/fhs/gompd \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		gdamore:tcell:v2.5.3:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		json-iterator:go:f7279a603ede:json_iterator_go/vendor/github.com/json-iterator/go \
-		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		stretchr:testify:v1.7.1:stretchr_testify/vendor/github.com/stretchr/testify
 
 GO_BUILDFLAGS=	-ldflags "-X main.buildVersion=${DISTVERSION}"
