@@ -4016,7 +4016,11 @@ pre-repackage:
 # install package cookie
 
 .    if !target(package-noinstall)
+.      if defined(_BROKEN_ABI) && ${USE_PKG64} == 1
+package-noinstall:
+.      else
 package-noinstall: package
+.      endif
 .    endif
 
 ################################################################
