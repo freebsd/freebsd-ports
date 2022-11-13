@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-11-13 18:41:37 UTC
++++ CMakeLists.txt
+@@ -285,7 +285,7 @@ if(CIFPP_DOWNLOAD_CCD)
+ 		find_program(GUNZIP gunzip)
+ 
+ 		if(GUNZIP)
+-			file(DOWNLOAD ftp://ftp.wwpdb.org/pub/pdb/data/monomers/components.cif.gz ${COMPONENTS_CIF}.gz
++			file(DOWNLOAD file://${DISTDIR_FULL}/components.cif.gz ${COMPONENTS_CIF}.gz
+ 				SHOW_PROGRESS)
+ 			add_custom_command(OUTPUT ${COMPONENTS_CIF}
+ 				COMMAND ${GUNZIP} ${COMPONENTS_CIF}.gz
