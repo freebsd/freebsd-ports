@@ -74,7 +74,7 @@ _USES_POST+=	autoreconf
 .if defined(AUTORECONF_CMD)
 AUTORECONF=	${AUTORECONF_CMD}
 .else
-AUTORECONF?=	${LOCALBASE}/bin/autoreconf${_AUTORECONF}
+AUTORECONF?=	${LOCALBASE64}/bin/autoreconf${_AUTORECONF}
 .endif
 AUTORECONF_WRKSRC?=	${WRKSRC}
 
