@@ -1,5 +1,5 @@
 PORTNAME=	nsd
-DISTVERSION=	4.6.0
+DISTVERSION=	4.6.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -86,8 +86,7 @@ ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
 NSDMAX_IPS?=	512
 
 post-build-MUNIN_PLUGIN-on:
-	${REINPLACE_CMD} \
-		-e 's|/usr/local|${LOCALBASE}|g' \
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|/usr/local/etc/nsd.conf|${ETCDIR}/nsd.conf|g' \
 		-e 's|/usr/local/var/munin/plugin-state|/var/munin/plugin-state/root|g' \
 		-e '90s|/var/munin/plugin-state/root|$${MUNIN_PLUGSTATE}|' \
@@ -103,7 +102,8 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} \
+		${STAGEDIR}${DOCSDIR}
 
 post-install-MUNIN_PLUGIN-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
