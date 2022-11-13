@@ -108,7 +108,7 @@ BUILD_DEPENDS+=	automake>=1.16.5:devel/automake
 .  endif
 
 .  if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
-BUILD_DEPENDS+=	libtoolize:devel/libtool
+BUILD_DEPENDS+=	${LOCALBASE64}/bin/libtoolize:devel/libtool:usepkg64
 .  endif
 
 # In case autoconf-switch wrapper scripts are used during build.
