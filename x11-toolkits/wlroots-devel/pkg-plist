@@ -96,6 +96,8 @@ include/wlr/util/region.h
 include/wlr/version.h
 include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
+%%X11%%include/wlr/xwayland/server.h
+%%X11%%include/wlr/xwayland/xwayland.h
 lib/libwlroots.so
 lib/libwlroots.so.11
 libdata/pkgconfig/wlroots.pc
