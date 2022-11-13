@@ -9,8 +9,8 @@ WWW=		https://kate-editor.org/
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
-		pkgconfig kde:5 qt:5 tar:xz cpe xorg
+USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 qt:5 tar:xz \
+		cpe xorg
 USE_KDE=	activities attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons \
 		guiaddons i18n iconthemes init itemmodels itemviews \
@@ -29,6 +29,7 @@ OPTIONS_EXCLUDE_purecap=	DOCS
 .include <bsd.port.options.mk>
 
 .if !${ABI:Mpurecap}
+USES+=		desktop-file-utils
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 USE_QT+=	script
 .endif
