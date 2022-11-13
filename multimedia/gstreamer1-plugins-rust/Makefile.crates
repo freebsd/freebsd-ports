@@ -14,10 +14,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		async-attributes-1.1.2 \
 		async-channel-1.7.1 \
 		async-compression-0.3.15 \
-		async-executor-1.4.1 \
-		async-global-executor-2.3.0 \
-		async-io-1.9.0 \
-		async-lock-2.5.0 \
+		async-executor-1.5.0 \
+		async-global-executor-2.3.1 \
+		async-io-1.10.0 \
+		async-lock-2.6.0 \
 		async-native-tls-0.4.0 \
 		async-process-1.5.0 \
 		async-std-1.12.0 \
@@ -28,26 +28,26 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		atomic_refcell-0.1.8 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		aws-config-0.49.0 \
-		aws-endpoint-0.49.0 \
-		aws-http-0.49.0 \
-		aws-sdk-s3-0.19.0 \
-		aws-sdk-sso-0.19.0 \
-		aws-sdk-sts-0.19.0 \
-		aws-sdk-transcribe-0.19.0 \
-		aws-sig-auth-0.49.0 \
-		aws-sigv4-0.49.0 \
-		aws-smithy-async-0.49.0 \
-		aws-smithy-checksums-0.49.0 \
-		aws-smithy-client-0.49.0 \
-		aws-smithy-eventstream-0.49.0 \
-		aws-smithy-http-0.49.0 \
-		aws-smithy-http-tower-0.49.0 \
-		aws-smithy-json-0.49.0 \
-		aws-smithy-query-0.49.0 \
-		aws-smithy-types-0.49.0 \
-		aws-smithy-xml-0.49.0 \
-		aws-types-0.49.0 \
+		aws-config-0.51.0 \
+		aws-endpoint-0.51.0 \
+		aws-http-0.51.0 \
+		aws-sdk-s3-0.21.0 \
+		aws-sdk-sso-0.21.0 \
+		aws-sdk-sts-0.21.0 \
+		aws-sdk-transcribe-0.21.0 \
+		aws-sig-auth-0.51.0 \
+		aws-sigv4-0.51.0 \
+		aws-smithy-async-0.51.0 \
+		aws-smithy-checksums-0.51.0 \
+		aws-smithy-client-0.51.0 \
+		aws-smithy-eventstream-0.51.0 \
+		aws-smithy-http-0.51.0 \
+		aws-smithy-http-tower-0.51.0 \
+		aws-smithy-json-0.51.0 \
+		aws-smithy-query-0.51.0 \
+		aws-smithy-types-0.51.0 \
+		aws-smithy-xml-0.51.0 \
+		aws-types-0.51.0 \
 		backoff-0.4.0 \
 		backtrace-0.3.66 \
 		base32-0.4.0 \
@@ -62,22 +62,22 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		blocking-1.2.0 \
 		build_const-0.2.2 \
 		bumpalo-3.11.1 \
-		byte-slice-cast-1.2.1 \
-		bytemuck-1.12.1 \
+		byte-slice-cast-1.2.2 \
+		bytemuck-1.12.3 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
 		bytes-utils-0.1.3 \
 		cache-padded-1.2.0 \
-		cc-1.0.73 \
+		cc-1.0.76 \
 		cdg-0.1.0 \
 		cdg_renderer-0.7.0 \
 		cfg-expr-0.7.4 \
 		cfg-expr-0.11.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.22 \
+		chrono-0.4.23 \
 		cipher-0.2.5 \
-		clap-4.0.18 \
-		clap_derive-4.0.18 \
+		clap-4.0.23 \
+		clap_derive-4.0.21 \
 		clap_lex-0.3.0 \
 		claxon-0.4.3 \
 		codespan-reporting-0.11.1 \
@@ -85,6 +85,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		color-thief-0.2.2 \
 		color_quant-1.1.0 \
 		concurrent-queue-1.2.4 \
+		concurrent-queue-2.0.0 \
 		cookie-0.16.1 \
 		cookie_store-0.16.1 \
 		core-foundation-0.9.3 \
@@ -104,13 +105,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		crypto-mac-0.11.1 \
 		csound-0.1.8 \
 		csound-sys-0.1.2 \
-		ct-logs-0.8.0 \
 		ctor-0.1.26 \
 		ctr-0.6.0 \
-		cxx-1.0.80 \
-		cxx-build-1.0.80 \
-		cxxbridge-flags-1.0.80 \
-		cxxbridge-macro-1.0.80 \
+		cxx-1.0.81 \
+		cxx-build-1.0.81 \
+		cxxbridge-flags-1.0.81 \
+		cxxbridge-macro-1.0.81 \
 		dasp_frame-0.11.0 \
 		dasp_sample-0.11.0 \
 		dav1d-0.9.1 \
@@ -119,11 +119,11 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		digest-0.9.0 \
 		digest-0.10.5 \
 		dssim-core-3.2.5 \
-		ebur128-0.1.6 \
+		ebur128-0.1.7 \
 		ed25519-1.5.2 \
 		either-1.8.0 \
 		encoding_rs-0.8.31 \
-		env_logger-0.9.1 \
+		env_logger-0.9.3 \
 		event-listener-2.5.3 \
 		exr-1.5.2 \
 		fastrand-1.8.0 \
@@ -170,40 +170,40 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		human_bytes-0.3.1 \
+		human_bytes-0.4.1 \
 		humantime-2.1.0 \
-		hyper-0.14.20 \
+		hyper-0.14.23 \
 		hyper-proxy-0.9.1 \
-		hyper-rustls-0.22.1 \
+		hyper-rustls-0.23.0 \
 		hyper-tls-0.5.0 \
 		hyphenation-0.8.4 \
 		hyphenation_commons-0.8.4 \
-		iana-time-zone-0.1.51 \
+		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.2.3 \
 		idna-0.3.0 \
 		if-addrs-0.7.0 \
-		image-0.24.4 \
+		image-0.24.5 \
 		image_hasher-1.1.0 \
 		imgref-1.9.4 \
 		indexmap-1.9.1 \
 		instant-0.1.12 \
 		interpolate_name-0.2.3 \
-		ipnet-2.5.0 \
+		ipnet-2.5.1 \
 		itertools-0.10.5 \
 		itoa-1.0.4 \
 		jobserver-0.1.25 \
-		jpeg-decoder-0.2.6 \
+		jpeg-decoder-0.3.0 \
 		js-sys-0.3.60 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
 		lewton-0.10.2 \
-		libc-0.2.136 \
+		libc-0.2.137 \
 		libfuzzer-sys-0.3.5 \
-		libloading-0.7.3 \
-		libm-0.2.5 \
-		libmdns-0.7.2 \
+		libloading-0.7.4 \
+		libm-0.2.6 \
+		libmdns-0.7.3 \
 		librespot-0.4.2 \
 		librespot-audio-0.4.2 \
 		librespot-connect-0.4.2 \
@@ -228,13 +228,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
 		miniz_oxide-0.6.2 \
-		mio-0.8.4 \
+		mio-0.8.5 \
 		more-asserts-0.3.1 \
-		muldiv-1.0.0 \
+		muldiv-1.0.1 \
 		multimap-0.8.3 \
 		nanorand-0.7.0 \
 		nasm-rs-0.2.4 \
-		native-tls-0.2.10 \
+		native-tls-0.2.11 \
+		nix-0.23.1 \
 		nnnoiseless-0.5.0 \
 		nom-7.1.1 \
 		noop_proc_macro-0.3.0 \
@@ -245,42 +246,41 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
-		num_cpus-1.13.1 \
-		num_threads-0.1.6 \
+		num_cpus-1.14.0 \
 		object-0.29.0 \
 		ogg-0.8.0 \
-		once_cell-1.15.0 \
+		once_cell-1.16.0 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.42 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.77 \
 		option-operations-0.5.0 \
-		os_str_bytes-6.3.0 \
+		os_str_bytes-6.4.0 \
 		output_vt100-0.1.3 \
 		overload-0.1.1 \
 		parking-2.0.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.4 \
-		parse_link_header-0.3.2 \
+		parse_link_header-0.3.3 \
 		paste-1.0.9 \
 		pbkdf2-0.8.0 \
 		percent-encoding-2.2.0 \
-		pest-2.4.0 \
+		pest-2.4.1 \
 		petgraph-0.6.2 \
 		pin-project-1.0.12 \
 		pin-project-internal-1.0.12 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.25 \
-		png-0.17.6 \
+		pkg-config-0.3.26 \
+		png-0.17.7 \
 		pocket-resources-0.3.2 \
 		polling-2.4.0 \
-		ppv-lite86-0.2.16 \
+		ppv-lite86-0.2.17 \
 		pretty-hex-0.3.0 \
 		pretty_assertions-1.3.0 \
 		primal-check-0.3.3 \
-		priority-queue-1.2.3 \
+		priority-queue-1.3.0 \
 		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -302,9 +302,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rayon-core-1.9.3 \
 		realfft-2.0.1 \
 		redox_syscall-0.2.16 \
-		regex-1.6.0 \
+		regex-1.7.0 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
+		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.12 \
 		rgb-0.8.34 \
@@ -317,17 +317,18 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.3.3 \
 		rustc_version-0.4.0 \
-		rustdct-0.7.0 \
-		rustfft-6.0.1 \
-		rustls-0.19.1 \
-		rustls-native-certs-0.5.0 \
+		rustdct-0.7.1 \
+		rustfft-6.1.0 \
+		rustls-0.20.7 \
+		rustls-native-certs-0.6.2 \
+		rustls-pemfile-1.0.1 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
 		scratch-1.0.2 \
-		sct-0.6.1 \
+		sct-0.7.0 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
 		semver-0.11.0 \
@@ -356,7 +357,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		sodiumoxide-0.2.7 \
 		spin-0.5.2 \
 		spin-0.9.4 \
-		strength_reduce-0.2.3 \
+		strength_reduce-0.2.4 \
 		strsim-0.10.0 \
 		strum-0.21.0 \
 		strum_macros-0.21.1 \
@@ -374,17 +375,17 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		thread-id-4.0.0 \
 		thread_local-1.1.4 \
 		threadpool-1.8.1 \
-		tiff-0.7.3 \
+		tiff-0.8.0 \
 		time-0.1.44 \
-		time-0.3.16 \
+		time-0.3.17 \
 		time-core-0.1.0 \
-		time-macros-0.2.5 \
+		time-macros-0.2.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		tokio-1.21.2 \
 		tokio-macros-1.8.0 \
 		tokio-native-tls-0.3.0 \
-		tokio-rustls-0.22.0 \
+		tokio-rustls-0.23.4 \
 		tokio-stream-0.1.11 \
 		tokio-util-0.7.4 \
 		toml-0.5.9 \
@@ -396,7 +397,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		tracing-core-0.1.30 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.16 \
-		transpose-0.2.1 \
+		transpose-0.2.2 \
 		try-lock-0.2.3 \
 		tungstenite-0.17.3 \
 		typenum-1.15.0 \
@@ -419,7 +420,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		vcpkg-0.2.15 \
 		vergen-3.2.0 \
 		version-compare-0.0.11 \
-		version-compare-0.1.0 \
+		version-compare-0.1.1 \
 		version_check-0.9.4 \
 		waker-fn-1.1.0 \
 		walkdir-2.3.2 \
@@ -433,7 +434,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
 		web-sys-0.3.60 \
-		webpki-0.21.4 \
+		webpki-0.22.0 \
 		weezl-0.1.7 \
 		wepoll-ffi-0.1.2 \
 		winapi-0.3.9 \
@@ -456,14 +457,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		windows_x86_64_msvc-0.42.0 \
 		winreg-0.10.1 \
 		xml-rs-0.8.4 \
-		xmlparser-0.13.3 \
+		xmlparser-0.13.5 \
 		xmltree-0.10.3 \
 		yansi-0.5.1 \
 		zerocopy-0.6.1 \
 		zerocopy-derive-0.3.2 \
 		zeroize-1.5.7 \
-		gstreamer,gstreamer-app,gstreamer-app-sys,gstreamer-audio,gstreamer-audio-sys,gstreamer-base,gstreamer-base-sys,gstreamer-check,gstreamer-check-sys,gstreamer-net,gstreamer-net-sys,gstreamer-pbutils,gstreamer-pbutils-sys,gstreamer-rtp,gstreamer-rtp-sys,gstreamer-sdp,gstreamer-sdp-sys,gstreamer-sys,gstreamer-utils,gstreamer-video,gstreamer-video-sys,gstreamer-webrtc,gstreamer-webrtc-sys@git+https://gitlab.freedesktop.org/gstreamer/gstreamer-rs?branch=0.19\#f440534c6d2b5d2a26b31ddb977dd89870156166 \
-		cairo-rs,cairo-sys-rs,gdk-pixbuf,gdk-pixbuf-sys,gio,gio-sys,glib,glib-macros,glib-sys,gobject-sys,graphene-rs,graphene-sys,pango,pango-sys,pangocairo,pangocairo-sys@git+https://github.com/gtk-rs/gtk-rs-core?branch=0.16\#3ea71513e0c276be4d497482236844e1f8d8b486 \
+		gdk4,gdk4-sys,gsk4,gsk4-sys,gtk4,gtk4-macros,gtk4-sys@git+https://github.com/gtk-rs/gtk4-rs?branch=0.5\#6e0746c5ddff5918b536ca8a294099b5a508eb45 \
+		gstreamer,gstreamer-app,gstreamer-app-sys,gstreamer-audio,gstreamer-audio-sys,gstreamer-base,gstreamer-base-sys,gstreamer-check,gstreamer-check-sys,gstreamer-net,gstreamer-net-sys,gstreamer-pbutils,gstreamer-pbutils-sys,gstreamer-rtp,gstreamer-rtp-sys,gstreamer-sdp,gstreamer-sdp-sys,gstreamer-sys,gstreamer-utils,gstreamer-video,gstreamer-video-sys,gstreamer-webrtc,gstreamer-webrtc-sys@git+https://gitlab.freedesktop.org/gstreamer/gstreamer-rs?branch=0.19\#5dd56d8c439c6dc811806c2f9a08874bf7113800 \
 		ffv1@git+https://github.com/rust-av/ffv1.git?rev=2afb025a327173ce891954c052e804d0f880368a\#2afb025a327173ce891954c052e804d0f880368a \
 		flavors@git+https://github.com/rust-av/flavors\#c48542aef94b7da36d6f306f4016bee9c79e09ba \
-		gdk4,gdk4-sys,gsk4,gsk4-sys,gtk4,gtk4-macros,gtk4-sys@git+https://github.com/gtk-rs/gtk4-rs?branch=0.5\#7c76d1e51bef21700945a373690532ee23b6dcc2
+		cairo-rs,cairo-sys-rs,gdk-pixbuf,gdk-pixbuf-sys,gio,gio-sys,glib,glib-macros,glib-sys,gobject-sys,graphene-rs,graphene-sys,pango,pango-sys,pangocairo,pangocairo-sys@git+https://github.com/gtk-rs/gtk-rs-core?branch=0.16\#0fff9d90c9226514e96ee46a82cb54e3da7cf91c
