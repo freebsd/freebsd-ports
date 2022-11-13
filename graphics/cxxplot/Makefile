@@ -11,6 +11,8 @@ WWW=		https://github.com/USNavalResearchLaboratory/cxxplot
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_FreeBSD_12=	build error: 'concepts' file not found
+
 USES=		cmake:testing compiler:c++20-lang gl qt:5
 USE_QT=		core gui opengl printsupport widgets buildtools:build qmake:build
 USE_GL=		gl opengl
