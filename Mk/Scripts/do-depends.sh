@@ -183,11 +183,14 @@ for _line in ${dp_RAWDEPENDS} ; do
 
 	depends_args="${dp_DEPENDS_ARGS}"
 	target=${dp_DEPENDS_TARGET}
+	usepkg64=0
 	if [ -n "${last}" ]; then
 		# In case we depend on the fetch stage, actually run checksum,
 		# this prevent a MITM attack.
 		if [ "${last}" = "fetch" ]; then
 			target=checksum
+		elif [ "${last}" = "usepkg64" ]; then
+			usepkg64=1
 		else
 			target=${last}
 		fi
@@ -201,8 +204,10 @@ for _line in ${dp_RAWDEPENDS} ; do
 		fi
 	fi
 
-	port_var_fetch "${origin}" "${depends_args}" \
-	    USE_PKG64 usepkg64
+	if [ "${usepkg64}" -eq 0 ]; then
+		port_var_fetch "${origin}" "${depends_args}" \
+		    USE_PKG64 usepkg64
+	fi
 
 	case ${dp_DEPTYPE} in
 	  LIB_DEPENDS)
