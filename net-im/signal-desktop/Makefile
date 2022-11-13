@@ -38,22 +38,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libexpat.so:textproc/expat2 \
 		libFLAC.so:audio/flac \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libharfbuzz-subset.so:print/harfbuzz \
 		libharfbuzz.so:print/harfbuzz \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
-		libnssutil3.so:security/nss \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
-		libplc4.so:devel/nspr \
-		libplds4.so:devel/nspr \
 		libpng16.so:graphics/png \
-		libsmime3.so:security/nss \
 		libsnappy.so:archivers/snappy \
 		libwebp.so:graphics/webp \
-		libwebpdemux.so:graphics/webp \
-		libwebpmux.so:graphics/webp \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxshmfence.so:x11/libxshmfence
 
