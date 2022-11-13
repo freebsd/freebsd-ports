@@ -1,6 +1,7 @@
-@dir(%%DB_USER%%,%%DB_GROUP%%,) %%DB_DIR%%
-@dir(%%DB_USER%%,%%DB_GROUP%%,) %%LOG_DIR%%
-@sample etc/foundationdb/foundationdb.conf.sample
+@dir(%%FOUNDATIONDB_USER%%,%%FOUNDATIONDB_GROUP%%,755) %%FOUNDATIONDB_ETCDIR%%
+@dir(%%FOUNDATIONDB_USER%%,%%FOUNDATIONDB_GROUP%%,755) %%FOUNDATIONDB_DBDIR%%
+@dir(%%FOUNDATIONDB_USER%%,%%FOUNDATIONDB_GROUP%%,755) %%FOUNDATIONDB_LOGDIR%%
+@sample %%FOUNDATIONDB_ETCDIR%%/foundationdb.conf.sample
 bin/actor_flamegraph
 bin/backup_agent
 bin/dr_agent

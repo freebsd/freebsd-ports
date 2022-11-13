@@ -18,13 +18,25 @@
 
 name="foundationdb"
 rcvar="${name}_enable"
-foundationdb_enable=${foundationdb_enable:-"NO"}
-command=%%PREFIX%%/bin/fdbmonitor
-pidfile="/var/run/fdbmonitor.pid"
 
 load_rc_config "$name"
+
 : ${foundationdb_enable="NO"}
+: ${foundationdb_user="%%FOUNDATIONDB_USER%%"}
+: ${foundationdb_group="%%FOUNDATIONDB_GROUP%%"}
 : ${foundationdb_config="%%PREFIX%%/etc/foundationdb/foundationdb.conf"}
 
+start_precmd="foundationdb_start_precmd"
+
+pidfile="/var/run/fdbmonitor.pid"
+command=%%PREFIX%%/bin/fdbmonitor
 command_args="--conffile ${foundationdb_config} --lockfile ${pidfile} --daemonize"
+
+foundationdb_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${foundationdb_user}" -g "${foundationdb_group}" /dev/null "${pidfile}"
+	fi
+}
+
 run_rc_command $1

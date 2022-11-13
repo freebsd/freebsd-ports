@@ -1,6 +1,5 @@
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0
-PORTREVISION=	2
+DISTVERSION=	7.1.25
 CATEGORIES=	databases
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
@@ -12,17 +11,17 @@ WWW=		https://www.foundationdb.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	invalid asm rdtsc
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
 
-BUILD_DEPENDS=	${LOCALBASE}/include/doctest/doctest.h:devel/doctest \
+BUILD_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack-cxx \
 		${LOCALBASE}/include/toml.hpp:devel/toml11 \
 		bash:shells/bash \
 		git:devel/git
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
-
 USES=		cmake compiler:c++17-lang mono:build python:build shebangfix \
 		ssl
 USE_GITHUB=	yes
@@ -31,8 +30,6 @@ GH_PROJECT=	foundationdb
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
-CONFLICTS_INSTALL=	foundationdb
-
 SHEBANG_FILES=	bindings/c/generate_asm.py
 
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLLIB}
@@ -40,16 +37,27 @@ CMAKE_OFF=	DISABLE_TLS USE_DTRACE USE_JEMALLOC WITH_CONTRIB WITH_FLOWBENCH
 
 MAKE_ENV=	MONO_REGISTRY_PATH=/tmp/registry
 
+CONFLICTS_INSTALL=	foundationdb
+
+FOUNDATIONDB_USER?=	foundationdb
+FOUNDATIONDB_GROUP?=	foundationdb
+FOUNDATIONDB_ETCDIR?=	${PREFIX}/etc/foundationdb
+FOUNDATIONDB_DBDIR?=	/var/db/foundationdb
+FOUNDATIONDB_LOGDIR?=	/var/log/foundationdb
+
+SUB_FDB=	FOUNDATIONDB_DBDIR=${FOUNDATIONDB_DBDIR} \
+		FOUNDATIONDB_ETCDIR=${FOUNDATIONDB_ETCDIR} \
+		FOUNDATIONDB_GROUP=${FOUNDATIONDB_GROUP} \
+		FOUNDATIONDB_LOGDIR=${FOUNDATIONDB_LOGDIR} \
+		FOUNDATIONDB_USER=${FOUNDATIONDB_USER}
+
+SUB_FILES=	foundationdb.conf
+SUB_LIST=	${SUB_FDB}
+
 USERS=		foundationdb
 GROUPS=		foundationdb
-DBDIR?=		/var/db/foundationdb
-LOGDIR?=	/var/log/foundationdb
 
-SUB_FDB=	DB_USER=${USERS} DB_GROUP=${GROUPS} DB_DIR=${DBDIR} \
-		LOG_DIR=${LOGDIR}
-SUB_FILES+=	foundationdb.conf
-SUB_LIST+=	${SUB_FDB}
-PLIST_SUB+=	${SUB_FDB}
+PLIST_SUB=	${SUB_FDB}
 
 post-patch:
 		${REINPLACE_CMD} 's/OPENSSL_USE_STATIC_LIBS TRUE/OPENSSL_USE_STATIC_LIBS FALSE/' \
@@ -59,8 +67,8 @@ post-patch:
 
 do-install:
 # commands on first line, dev tools on next two
-.for f in fdbbackup fdbcli fdbmonitor fdbserver \
-	actor_flamegraph fdb_flow_tester fdbconvert fdbdecode tutorial
+.for f in fdbbackup fdbcli fdbmonitor fdbserver actor_flamegraph fdb_flow_tester \
+	fdbconvert fdbdecode tutorial
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .for s in backup_agent dr_agent fastrestore_agent fdbr fdbrestore
@@ -81,10 +89,10 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/.build/bindings/c/foundationdb/fdb_c_options.g.h \
 	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
 # runtime related
-	${MKDIR} ${STAGEDIR}${DBDIR} \
-	    ${STAGEDIR}${LOGDIR} \
-	    ${STAGEDIR}${PREFIX}/etc/foundationdb
+	${MKDIR} ${STAGEDIR}${FOUNDATIONDB_ETCDIR}
+	${MKDIR} ${STAGEDIR}${FOUNDATIONDB_DBDIR}
+	${MKDIR} ${STAGEDIR}${FOUNDATIONDB_LOGDIR}
 	${INSTALL_DATA} ${WRKDIR}/foundationdb.conf \
-	    ${STAGEDIR}${PREFIX}/etc/foundationdb/foundationdb.conf.sample
+	    ${STAGEDIR}${FOUNDATIONDB_ETCDIR}/foundationdb.conf.sample
 
 .include <bsd.port.mk>
