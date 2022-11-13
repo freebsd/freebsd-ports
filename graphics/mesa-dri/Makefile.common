@@ -84,10 +84,11 @@ PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
-.if !${ABI:Mpurecap}
 BUILD_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
-USE_BINUTILS=		yes
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
+
+.if !${ABI:Mpurecap}
+USE_BINUTILS=		yes
 
 LLVM_DEFAULT=	13
 BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
