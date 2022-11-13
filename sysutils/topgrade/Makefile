@@ -1,27 +1,31 @@
 PORTNAME=	topgrade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.1
-PORTREVISION=	2
+DISTVERSION=	10.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@scd-systems.net
 COMMENT=	Tool for upgrade everything
-WWW=		https://github.com/r-darwish/topgrade
+WWW=		https://crates.io/crates/topgrade-rs/
 
 LICENSE=	GPLv3
-
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	failed to run custom build command for `sys-info v0.9.1`
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	r-darwish
+GH_ACCOUNT=	topgrade-rs
 
 PLIST_FILES=	bin/topgrade \
 		man/man8/topgrade.8.gz
 PORTEXAMPLES=	config.example.toml
 
 OPTIONS_DEFINE=	EXAMPLES
+
+# sys-info-0.9.1 crate fix: https://github.com/FillZpp/sys-info-rs/issues/80
+post-patch:
+	@${REINPLACE_CMD} \
+	-e '/get_cpu/s|unsigned long|uint64_t|' \
+	-e '/get_proc_total/s|unsigned long|uint64_t|' \
+	${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
