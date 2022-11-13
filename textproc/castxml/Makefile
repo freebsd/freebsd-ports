@@ -1,6 +1,6 @@
 PORTNAME=	castxml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.6
+DISTVERSION=	0.4.7
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +49,7 @@ post-stage: # autoplist: plist changes with llvm versions
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l | ${SED} 's|castxml\.1|castxml.1.gz|' > ${TMPPLIST}
 
-do-test: # tests fail: https://github.com/CastXML/CastXML/issues/130
+do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
