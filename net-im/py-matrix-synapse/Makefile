@@ -1,6 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.69.0
-PORTREVISION=	1
+DISTVERSION=	1.71.0
 CATEGORIES=	net-im python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,19 +52,20 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_F
 		${PYTHON_PKGNAMEPREFIX}tox>=2.3.1:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>=0.7.4:devel/py-parameterized@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}authlib>=0.14.0:security/py-authlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}authlib>=0.15.1:security/py-authlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.5:dns/py-idna@${PY_FLAVOR}
 
 USES=		python:3.7+ cargo
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	synapse
+WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}
 CARGO_CONFIGURE=	yes
 CARGO_BUILD=	no
 CARGO_TEST=	no
 CARGO_INSTALL=	no
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
 CARGO_CRATES=	aho-corasick-0.7.19 \
-		anyhow-1.0.65 \
+		anyhow-1.0.66 \
 		arc-swap-1.5.1 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -77,23 +77,23 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		generic-array-0.14.6 \
 		hex-0.4.3 \
 		indoc-1.0.7 \
-		itoa-1.0.3 \
+		itoa-1.0.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.132 \
-		lock_api-0.4.7 \
+		libc-0.2.135 \
+		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
-		once_cell-1.13.1 \
+		once_cell-1.15.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.3 \
-		proc-macro2-1.0.43 \
-		pyo3-0.17.1 \
-		pyo3-build-config-0.17.1 \
-		pyo3-ffi-0.17.1 \
+		proc-macro2-1.0.46 \
+		pyo3-0.17.2 \
+		pyo3-build-config-0.17.2 \
+		pyo3-ffi-0.17.2 \
 		pyo3-log-0.7.0 \
-		pyo3-macros-0.17.1 \
-		pyo3-macros-backend-0.17.1 \
+		pyo3-macros-0.17.2 \
+		pyo3-macros-backend-0.17.2 \
 		pythonize-0.17.0 \
 		quote-1.0.21 \
 		redox_syscall-0.2.16 \
@@ -101,15 +101,15 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		regex-syntax-0.6.27 \
 		ryu-1.0.11 \
 		scopeguard-1.1.0 \
-		serde-1.0.145 \
-		serde_derive-1.0.145 \
-		serde_json-1.0.85 \
-		smallvec-1.9.0 \
+		serde-1.0.147 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.87 \
+		smallvec-1.10.0 \
 		subtle-2.4.1 \
-		syn-1.0.99 \
+		syn-1.0.102 \
 		target-lexicon-0.12.4 \
 		typenum-1.15.0 \
-		unicode-ident-1.0.3 \
+		unicode-ident-1.0.5 \
 		unindent-0.1.10 \
 		version_check-0.9.4 \
 		windows-sys-0.36.1 \
@@ -142,9 +142,9 @@ OIDC_DESC=		Add dependencies for OpenID Connect based logins
 REDIS_DESC=		Add support replication over Redis for synapse workers
 URLPREVIEW_DESC=	Add dependencies necessary for URL previews
 
-JWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.14.0:security/py-authlib@${PY_FLAVOR}
+JWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.15.1:security/py-authlib@${PY_FLAVOR}
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matrix-synapse-ldap3@${PY_FLAVOR}
-OIDC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.14.0:security/py-authlib@${PY_FLAVOR}
+OIDC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.15.1:security/py-authlib@${PY_FLAVOR}
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>2.8:databases/py-psycopg2@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}txredisapi>=1.4.7:databases/py-txredisapi@${PY_FLAVOR}
@@ -167,6 +167,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	cd ${WRKSRC} && PYTHONPATH="${STAGEDIR}/${PYTHON_SITELIBDIR}:." trial-${PYTHON_VER} tests
+	cd ${WRKSRC} && PYTHONPATH="${STAGEDIR}/${PYTHON_SITELIBDIR}:." trial-${PYTHON_VER} -j 4 tests
 
 .include <bsd.port.post.mk>
