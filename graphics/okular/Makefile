@@ -14,8 +14,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
-		gettext jpeg kde:5 cpe pkgconfig qca qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext jpeg kde:5 cpe pkgconfig qca \
+		qt:5 tar:xz xorg
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons emoticons i18n \
 		iconthemes init itemmodels itemviews jobwidgets \
@@ -87,6 +87,7 @@ CMAKE_ARGS+=	-DBUILD_DESKTOP=True
 NOT_REQ_DEPS+=	Discount KF5DocTools KF5JS KF5KHtml KF5KExiv2 KF5Purpose \
 		LibZip Qt5TextToSpeech
 .else
+USES+=		desktop-file-utils
 LIB_DEPENDS+=	libzip.so:archivers/libzip
 USE_QT+=	speech xml
 USE_KDE+=	js kdelibs4support khtml libkexiv2
