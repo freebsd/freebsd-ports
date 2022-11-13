@@ -1,6 +1,6 @@
 PORTNAME=	minitube
 DISTVERSION=	3.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://flavio.tordini.org/minitube
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpv.so.1:multimedia/mpv034 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267115
+LIB_DEPENDS=	libmpv.so.2:multimedia/mpv
 
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
