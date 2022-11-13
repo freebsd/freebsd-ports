@@ -129,10 +129,12 @@ PKG_QUERY?=		${PKG_BIN} query
 PKG_INSTALL?=		${PKG_BIN} install
 PKG_RQUERY?=		${PKG_BIN} rquery
 
+PKG64_BOOTSTRAP?=	/usr/sbin/pkg64 bootstrap
 PKG64_BIN?=		${LOCALBASE64}/sbin/pkg-static
 PKG64_INFO?=		${PKG64_BIN} info
 PKG64_INSTALL?=		${PKG64_BIN} install
 PKG64_QUERY?=		${PKG64_BIN} query
 PKG64_RQUERY?=		${PKG64_BIN} rquery
+PKG64_UPDATE?=		${PKG64_BIN} update
 
 .endif

@@ -13,8 +13,9 @@ validate_env dp_RAWDEPENDS dp_DEPTYPE dp_DEPENDS_TARGET dp_DEPENDS_PRECLEAN \
 	dp_PKG_INFO dp_PKG_INSTALL dp_PKG_RQUERY dp_WRKDIR dp_PKGNAME \
 	dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH dp_SCRIPTSDIR \
 	PORTSDIR dp_MAKE dp_MAKEFLAGS dp_OVERLAYS \
-	dp_USE_PACKAGE_64_DEPENDS_ONLY dp_PKG64_INFO dp_PKG64_INSTALL \
-	dp_PKG64_QUERY dp_PKG64_RQUERY
+	dp_USE_PACKAGE_64_DEPENDS_ONLY dp_PKG64_BIN dp_PKG64_BOOTSTRAP \
+	dp_PKG64_INFO dp_PKG64_INSTALL dp_PKG64_QUERY dp_PKG64_RQUERY \
+	dp_PKG64_UPDATE
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_DEPENDS}" ] && set -x
 
@@ -35,6 +36,13 @@ install_depends()
 	if [ "${target}" = "${dp_DEPENDS_TARGET}"  -a \
 	    "${usepkg64}" -eq 1 -a \
 	    -n "${dp_USE_PACKAGE_64_DEPENDS_ONLY}" ];  then
+		if [ ! -f ${dp_PKG64_BIN} ]; then
+			echo "===>   Bootstrapping pkg64"
+			${dp_PKG64_BOOTSTRAP} -y
+			if [ $? -eq 0 ]; then
+				${dp_PKG64_UPDATE} -q
+			fi
+		fi
 		if ${dp_PKG64_QUERY} %n "${pkgname}" 2>&1 >/dev/null; then
 			# Don't do anything.
 			# A dependency is already installed as a hybrid ABI
