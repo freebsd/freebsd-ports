@@ -5,7 +5,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Py.test plugin providing fixtures and markers for asyncio (legacy version for pytest 4)
 WWW=		https://pypi.org/project/pytest-asyncio/
 
