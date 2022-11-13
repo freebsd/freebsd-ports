@@ -1827,6 +1827,7 @@ lib/wine/%%WINEARCH%%-unix/libmsvcrt.a
 lib/wine/%%WINEARCH%%-unix/libmsvcrtd.a
 lib/wine/%%WINEARCH%%-unix/libmsvfw32.a
 lib/wine/%%WINEARCH%%-unix/libmswsock.a
+lib/wine/%%WINEARCH%%-unix/libncrypt.a
 lib/wine/%%WINEARCH%%-unix/libnddeapi.a
 lib/wine/%%WINEARCH%%-unix/libnetapi32.a
 lib/wine/%%WINEARCH%%-unix/libnetio.a
