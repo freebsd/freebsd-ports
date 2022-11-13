@@ -21,4 +21,25 @@ your friend, choose them wisely.
 
 EOM
 }
+{ type: upgrade
+  maximum_version: "3.26"
+  message: <<EOM
+When upgrading from before 3.26 these variables, if used, should be replaced:
+* seaweedfs_syslog_output_enable replaces seaweedfs_syslog_enable
+  (seaweedfs_syslog_enable, seaweedfs_syslog_output_priority
+  and seaweedfs_syslog_output_facility still work),
+* seaweedfs_syslog_output_priority replaces seaweedfs_syslog_priority
+  (seaweedfs_syslog_priority still works only when seaweedfs_syslog_enable
+  is set),
+* seaweedfs_syslog_output_facility replaces seaweedfs_syslog_facility
+  (seaweedfs_syslog_facility still works only when seaweedfs_syslog_enable
+  is set).
+
+Also default directory to store data files ("${seaweedfs_dir}/data"), if need,
+should be moved to "${seaweedfs_dir}" (ex, %%SEAWEEDFS_DIR%%/data
+to %%SEAWEEDFS_DIR%%).
+
+And weed executable has been moved from %%PREFIX%%/sbin to %%PREFIX%%/bin.
+EOM
+}
 ]
