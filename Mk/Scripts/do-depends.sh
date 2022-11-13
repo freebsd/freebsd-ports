@@ -25,12 +25,12 @@ install_depends()
 	origin=$1
 	target=$2
 	depends_args=$3
+	usepkg64=$4
 
 	port_var_fetch "${origin}" "${depends_args}" \
 	    PKGFILE pkgfile \
 	    PKGBASE pkgbase \
-	    PKGNAME pkgname \
-	    USE_PKG64 usepkg64
+	    PKGNAME pkgname
 
 	if [ "${target}" = "${dp_DEPENDS_TARGET}"  -a \
 	    "${usepkg64}" -eq 1 -a \
@@ -238,7 +238,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	fi
 
 	# Now actually install the dependencies
-	install_depends "${origin}" "${target}" "${depends_args}"
+	install_depends "${origin}" "${target}" "${depends_args}" "${usepkg64}"
 	# Recheck if the installed dependency validates the pattern except for /nonexistent
 	[ "${fct}" = "false" ] || ${fct} "${pattern}" "${usepkg64}"
 	echo "===>   Returning to build of ${dp_PKGNAME}"
