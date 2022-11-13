@@ -59,7 +59,7 @@ sqlite_CONFLICTS_INSTALL=	postfix postfix-base \
 				postfix-pgsql postfix-base-pgsql \
 				postfix-sasl postfix-base-sasl
 
-COMMENT_ldap=	(with OpenLDAP and Cyrus SASL support)
+COMMENT_ldap=	(with OpenLDAP support)
 COMMENT_mysql=	(with MySQL support)
 COMMENT_pgsql=	(with PostgreSQL support)
 COMMENT_sasl=	(with Cyrus SASL support)
@@ -305,7 +305,7 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 . endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -L${LOCALBASE}/lib -llber"
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -llber"
 _REQUIRE+=		slapd
 .endif
 
