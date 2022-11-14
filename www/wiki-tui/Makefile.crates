@@ -27,6 +27,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		crossterm-0.22.1 \
 		crossterm_winapi-0.9.0 \
 		cursive-0.17.0 \
+		cursive-aligned-view-0.6.0 \
 		cursive_buffered_backend-0.6.0 \
 		cursive_core-0.3.2 \
 		darling-0.12.4 \
@@ -191,7 +192,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		tokio-1.12.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.6.8 \
-		toml-0.5.8 \
+		toml-0.5.9 \
 		tower-service-0.3.1 \
 		tracing-0.1.29 \
 		tracing-core-0.1.21 \
