@@ -1,5 +1,5 @@
---- cmake/BuildLibUnwind.cmake.old	2022-10-12 15:38:58.856661600 +0300
-+++ cmake/BuildLibUnwind.cmake	2022-10-12 15:38:42.031660740 +0300
+--- cmake/BuildLibUnwind.cmake.orig	2022-11-14 13:17:09.046425000 +0100
++++ cmake/BuildLibUnwind.cmake	2022-11-14 13:18:30.382852000 +0100
 @@ -18,6 +18,11 @@
    The paths to the libunwind libraries.
  #]========================================================================]
@@ -9,7 +9,7 @@
 +	set(SYSTEM_ARCH x86_64)
 +endif()
 +
- macro(libunwind_build CFLAGS)
+ macro(libunwind_build)
      set(LIBUNWIND_SOURCE_DIR ${PROJECT_SOURCE_DIR}/third_party/libunwind)
      set(LIBUNWIND_BUILD_DIR ${PROJECT_BINARY_DIR}/build/libunwind)
 @@ -91,12 +96,12 @@
