@@ -620,6 +620,10 @@
 %%WWWDIR%%/core/Updates/4.10.0-b1.php
 %%WWWDIR%%/core/Updates/4.11.0-b1.php
 %%WWWDIR%%/core/Updates/4.11.0-rc2.php
+%%WWWDIR%%/core/Updates/4.12.0-b1.php
+%%WWWDIR%%/core/Updates/4.12.0-b2.php
+%%WWWDIR%%/core/Updates/4.12.0-b3.php
+%%WWWDIR%%/core/Updates/4.12.0-b4.php
 %%WWWDIR%%/core/Updates/4.3.0-b3.php
 %%WWWDIR%%/core/Updates/4.3.0-b4.php
 %%WWWDIR%%/core/Updates/4.3.0-rc2.php
@@ -901,6 +905,7 @@
 %%WWWDIR%%/libs/jqplot/plugins/jqplot.canvasTextRenderer.js
 %%WWWDIR%%/libs/jqplot/plugins/jqplot.categoryAxisRenderer.js
 %%WWWDIR%%/libs/upgradephp/README
+%%WWWDIR%%/libs/upgradephp/dev.php
 %%WWWDIR%%/libs/upgradephp/upgrade.php
 %%WWWDIR%%/matomo.php
 %%WWWDIR%%/misc/How to install Matomo.html
@@ -2077,6 +2082,8 @@
 %%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/FormField/utilities.ts
 %%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/GroupedSettings/GroupedSetting.vue
 %%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/GroupedSettings/GroupedSettings.vue
+%%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/PasswordConfirmation/PasswordConfirmation.less
+%%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/PasswordConfirmation/PasswordConfirmation.vue
 %%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/PluginSettings/PluginSettings.adapter.ts
 %%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/PluginSettings/PluginSettings.less
 %%WWWDIR%%/plugins/CorePluginsAdmin/vue/src/PluginSettings/PluginSettings.vue
@@ -5672,6 +5679,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/studivz.net.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/stumbleupon.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/taringa.net.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/socials/tiktok.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/tuenti.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/tumblr.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/twitter.com.png
@@ -6132,6 +6140,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/Tasks.php
 %%WWWDIR%%/plugins/PrivacyManager/Tracker/RequestProcessor.php
 %%WWWDIR%%/plugins/PrivacyManager/Validators/VisitsDataSubject.php
+%%WWWDIR%%/plugins/PrivacyManager/changes.json
 %%WWWDIR%%/plugins/PrivacyManager/config/config.php
 %%WWWDIR%%/plugins/PrivacyManager/config/tracker.php
 %%WWWDIR%%/plugins/PrivacyManager/lang/am.json
@@ -7119,7 +7128,12 @@
 %%WWWDIR%%/plugins/TagManager/Template/Variable/UrlVariable.php
 %%WWWDIR%%/plugins/TagManager/Template/Variable/UrlVariable.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Variable/VariablesProvider.php
+%%WWWDIR%%/plugins/TagManager/Updates/4.12.3-b1.php
+%%WWWDIR%%/plugins/TagManager/Updates/5.0.0-b1.php
+%%WWWDIR%%/plugins/TagManager/Updates/NewTagParameterMigrator.php
+%%WWWDIR%%/plugins/TagManager/Updates/NewVariableParameterMigrator.php
 %%WWWDIR%%/plugins/TagManager/Validators/LookupTable.php
+%%WWWDIR%%/plugins/TagManager/Validators/Numeric.php
 %%WWWDIR%%/plugins/TagManager/Validators/TriggerConditions.php
 %%WWWDIR%%/plugins/TagManager/Validators/TriggerIds.php
 %%WWWDIR%%/plugins/TagManager/angularjs/form-field/field-textarea-variable-template.html
@@ -7241,6 +7255,7 @@
 %%WWWDIR%%/plugins/TagManager/templates/dashboard.twig
 %%WWWDIR%%/plugins/TagManager/templates/debug.twig
 %%WWWDIR%%/plugins/TagManager/templates/gettingStarted.twig
+%%WWWDIR%%/plugins/TagManager/templates/helpContent.twig
 %%WWWDIR%%/plugins/TagManager/templates/manageContainers.twig
 %%WWWDIR%%/plugins/TagManager/templates/manageTags.twig
 %%WWWDIR%%/plugins/TagManager/templates/manageTriggers.twig
@@ -7266,6 +7281,7 @@
 %%WWWDIR%%/plugins/TagManager/vue/src/Container/ContainerManage.vue
 %%WWWDIR%%/plugins/TagManager/vue/src/Container/Containers.store.ts
 %%WWWDIR%%/plugins/TagManager/vue/src/ContainerDashboard/ContainerDashboard.adapter.ts
+%%WWWDIR%%/plugins/TagManager/vue/src/ContainerDashboard/ContainerDashboard.less
 %%WWWDIR%%/plugins/TagManager/vue/src/ContainerDashboard/ContainerDashboard.vue
 %%WWWDIR%%/plugins/TagManager/vue/src/ContainerSelector/ContainerSelector.adapter.ts
 %%WWWDIR%%/plugins/TagManager/vue/src/ContainerSelector/ContainerSelector.less
@@ -8683,7 +8699,6 @@
 %%WWWDIR%%/vendor/davaxi/sparkline/src/Sparkline/PointTrait.php
 %%WWWDIR%%/vendor/davaxi/sparkline/src/Sparkline/StyleTrait.php
 %%WWWDIR%%/vendor/davaxi/sparkline/src/autoload.php
-%%WWWDIR%%/vendor/geoip2/geoip2/.php-cs-fixer.php
 %%WWWDIR%%/vendor/geoip2/geoip2/CHANGELOG.md
 %%WWWDIR%%/vendor/geoip2/geoip2/LICENSE
 %%WWWDIR%%/vendor/geoip2/geoip2/README.md
@@ -8766,6 +8781,7 @@
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/PSR16Bridge.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/PSR6Bridge.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/StaticCache.php
+%%WWWDIR%%/vendor/matomo/device-detector/ClientHints.php
 %%WWWDIR%%/vendor/matomo/device-detector/DeviceDetector.php
 %%WWWDIR%%/vendor/matomo/device-detector/LICENSE
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/AbstractBotParser.php
@@ -8776,6 +8792,8 @@
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/Browser/Engine.php
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/Browser/Engine/Version.php
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/FeedReader.php
+%%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/Hints/AppHints.php
+%%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/Hints/BrowserHints.php
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/Library.php
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/MediaPlayer.php
 %%WWWDIR%%/vendor/matomo/device-detector/Parser/Client/MobileApp.php
@@ -8801,6 +8819,8 @@
 %%WWWDIR%%/vendor/matomo/device-detector/regexes/client/browser_engine.yml
 %%WWWDIR%%/vendor/matomo/device-detector/regexes/client/browsers.yml
 %%WWWDIR%%/vendor/matomo/device-detector/regexes/client/feed_readers.yml
+%%WWWDIR%%/vendor/matomo/device-detector/regexes/client/hints/apps.yml
+%%WWWDIR%%/vendor/matomo/device-detector/regexes/client/hints/browsers.yml
 %%WWWDIR%%/vendor/matomo/device-detector/regexes/client/libraries.yml
 %%WWWDIR%%/vendor/matomo/device-detector/regexes/client/mediaplayers.yml
 %%WWWDIR%%/vendor/matomo/device-detector/regexes/client/mobile_apps.yml
@@ -8860,7 +8880,6 @@
 %%WWWDIR%%/vendor/matomo/matomo-php-tracker/MatomoTracker.php
 %%WWWDIR%%/vendor/matomo/matomo-php-tracker/PiwikTracker.php
 %%WWWDIR%%/vendor/matomo/matomo-php-tracker/README.md
-%%WWWDIR%%/vendor/matomo/matomo-php-tracker/run_tests.sh
 %%WWWDIR%%/vendor/matomo/network/LICENSE
 %%WWWDIR%%/vendor/matomo/network/README.md
 %%WWWDIR%%/vendor/matomo/network/src/IP.php
@@ -9136,7 +9155,6 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
-%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php
@@ -9162,6 +9180,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mn.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
@@ -9372,6 +9391,7 @@
 %%WWWDIR%%/vendor/szymach/c-pchart/LICENSE
 %%WWWDIR%%/vendor/szymach/c-pchart/README.md
 %%WWWDIR%%/vendor/szymach/c-pchart/constants.php
+%%WWWDIR%%/vendor/szymach/c-pchart/docker-compose.yml
 %%WWWDIR%%/vendor/szymach/c-pchart/resources/barcode/128B.db
 %%WWWDIR%%/vendor/szymach/c-pchart/resources/barcode/39.db
 %%WWWDIR%%/vendor/szymach/c-pchart/resources/fonts/GeosansLight.ttf

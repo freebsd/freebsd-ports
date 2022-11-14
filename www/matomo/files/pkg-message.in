@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-1) Create a user and a empty database for Matomo to store all
+1) Create a user and an empty database for Matomo to store all
    its tables in (or choose an existing database).
 
 2) Add the following to your Apache configuration, and
@@ -36,7 +36,7 @@ EOM
 {
   type: upgrade
   message: <<EOM
-Console upgrade recommended on medium and hight traffic sites:
+Console upgrade recommended on medium and high traffic sites:
 
 1) Disable Matomo Tracking
     In config/config.ini.php, add the following

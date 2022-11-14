@@ -1,9 +1,8 @@
 PORTNAME=	matomo
-DISTVERSION=	4.11.0
+PORTVERSION=	4.12.3
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
-DISTNAME=	piwik-${DISTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
@@ -13,16 +12,18 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe shebangfix php:flavors
-
-NO_BUILD=	yes
-SUB_FILES=	pkg-message
-
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json \
-		mbstring mcrypt memcache mysqli openssl pcre pdo posix readline session \
-		simplexml soap sockets sqlite3 tidy tokenizer xml opcache zlib
-NO_ARCH=yes
+		mbstring mcrypt memcache mysqli opcache openssl pcre pdo \
+		pdo_mysql posix readline session simplexml soap sockets \
+		sqlite3 tidy tokenizer xml zlib
 
-WRKSRC=		${WRKDIR}/piwik
+NO_ARCH=	yes
+NO_BUILD=	yes
+SHEBANG_FILES=	misc/log-analytics/import_logs.py
+SUB_FILES=	pkg-message
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	PHPPDOMYSQL PHPMYSQLI
 OPTIONS_DEFAULT=	PHPPDOMYSQL
@@ -31,16 +32,12 @@ PHPPDOMYSQL_USE=	PHP=pdo_mysql
 PHPMYSQLI_DESC=	Use mysqli php module
 PHPMYSQLI_USE=	PHP=mysqli
 
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-SHEBANG_FILES=	misc/log-analytics/import_logs.py
-
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
-		echo " It seems you installed php without CLI enabled. "; \
-		echo " This will cause problems when using piwik. "; \
+		echo " It seems you installed PHP without CLI enabled. "; \
+		echo " This will cause problems when using Matomo. "; \
 		echo " If you want to reconsider, press Ctrl-C now to cancel. "; \
-		echo " Then reinstall php with CLI enabled. "; \
+		echo " Then reinstall PHP with CLI enabled. "; \
 		sleep 3; \
 	fi
 
