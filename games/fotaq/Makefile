@@ -5,7 +5,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/scummvm/extras/Flight%20of%20the%20Amazon%20Queen
 DISTNAME=	FOTAQ_Talkie-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 WWW=		https://www.scummvm.org/
 

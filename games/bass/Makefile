@@ -8,7 +8,7 @@ MASTER_SITES=	http://de2.eu.scummvm.net/extras/Beneath%20a%20Steel%20Sky/ \
 		http://lt1.eu.scummvm.net/extras/Beneath%20a%20Steel%20Sky/
 DISTNAME=	bass-cd-1.2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 WWW=		https://www.scummvm.org/games/ #sky
 
