@@ -11,6 +11,8 @@ WWW=		https://mpv.io
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE.GPL
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.LGPL
 
 BUILD_DEPENDS=	ffmpeg>=4.0.2,1:multimedia/ffmpeg
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
