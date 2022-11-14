@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	5.13.0
+SSPVERSION=	6.0.1
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -19,10 +19,12 @@ DIST_SUBDIR=	${SSPNAME}
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${SSPVERSION}
 
 .if ${MPORTNAME} != config
-BUILD_WRKSRC=	${WRKSRC}/${MPORTNAME}
+CONFIGURE_WRKSRC=${WRKSRC}/${MPORTNAME}
 .else
-BUILD_WRKSRC=	${WRKSRC}/SuiteSparse_config
+CONFIGURE_WRKSRC=${WRKSRC}/SuiteSparse_config
 .endif
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
+CMAKE_SOURCE_PATH=	${CONFIGURE_WRKSRC}
 
 .if ${MPORTNAME} != config &&	\
 	${MPORTNAME} != CSparse &&	\
@@ -33,23 +35,17 @@ LIB_DEPENDS+=	libsuitesparseconfig.so:math/suitesparse-config
 	${MPORTNAME} != BTF &&	\
 	${MPORTNAME} != ssget
 OPTIONS_DEFINE+=DEMOS
-.else
-ALL_TARGET=	library
 .endif
 
-USES+=		gmake
+USES+=		blaslapack:openblas cmake:insource fortran gmake
 
 DOCSDIR=	${PREFIX}/share/doc/${SSPNAME}
-MAKE_ENV=	BLAS="${BLASLIB}" LAPACK="${LAPACKLIB}" \
-		OPTIMIZATION="${OPTIMIZATION}" \
-		MY_METIS_LIB="-lmetis" \
-		JOBS="${MAKE_JOBS_NUMBER}" \
+MAKE_ENV=	JOBS="${MAKE_JOBS_NUMBER}" \
 		CMAKE_OPTIONS='${CMAKE_ARGS}' \
 		INSTALL="${STAGEDIR}${PREFIX}" \
 		INSTALL_DOC="${STAGEDIR}${DOCSDIR}" \
 		INSTALL_INCLUDE="${STAGEDIR}${PREFIX}/include/${SSPNAME}"
-CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${SSPNAME}"	\
-		-DBUILD_GRB_STATIC_LIBRARY:BOOL=ON
+CMAKE_ARGS+=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${SSPNAME}"
 LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 
 INSTALL_TARGET=	install # skip USES=cmake
@@ -61,7 +57,6 @@ DISTINFO_FILE=	${.CURDIR}/../../math/suitesparse/distinfo
 OPTIONS_DEFINE+=	DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT+=	OPTIMIZED_CFLAGS
 
-.if defined(BLAS_NEEDED)
 OPTIONS_RADIO+=		BLAS
 OPTIONS_RADIO_BLAS+=	ATLAS GOTOBLAS NETLIB OPENBLAS
 OPTIONS_DEFAULT+=	OPENBLAS
@@ -71,9 +66,7 @@ GOTOBLAS_DESC=		Goto blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
 NETLIB_USES=		blaslapack:netlib
 OPENBLAS_USES=		blaslapack:openblas
-.endif
 
-.if defined(OMP_NEEDED)
 OPTIONS_DEFINE+=	OPENMP
 OPTIONS_EXCLUDE_aarch64=	OPENMP
 OPTIONS_EXCLUDE_armv7=	OPENMP
@@ -85,45 +78,20 @@ OPENMP_MAKE_ENV_OFF=	CFOPENMP=
 # XXX ports/199603: LLVM openmp in base doesn't support armv6, armv7 yet
 OPENMP_VARS=		OPENMP=gcc-
 . endif
-.endif
+OPENMP_CMAKE_BOOL=	OPENMP
+OPENMP_CMAKE_BOOL_OFF=	NOPENMP
 
 DEMOS_DESC=		Build the demonstrations
-.if ${MPORTNAME} == Mongoose
-DEMOS_ALL_TARGET=	default
-.else
-DEMOS_ALL_TARGET=	all
-.endif
-DEMOS_ALL_TARGET_OFF=	library
+DEMOS_CMAKE_BOOL=	DEMO
 
 .if !defined(WITH_DEBUG)
-OPTIMIZED_CFLAGS_VARS=	OPTIMIZATION="-O3"
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
+OPTIMIZED_CFLAGS_CXXFLAGS=	-O3
 LDFLAGS+=	-s
 .endif
 
 post-extract:
 	${RM} -r ${WRKSRC}/metis-*
-
-.if ${MPORTNAME} == AMD ||	\
-	${MPORTNAME} == CAMD ||	\
-	${MPORTNAME} == CCOLAMD ||	\
-	${MPORTNAME} == CHOLMOD ||	\
-	${MPORTNAME} == COLAMD ||	\
-	${MPORTNAME} == CSparse ||	\
-	${MPORTNAME} == CXSparse_newfiles ||	\
-	${MPORTNAME} == CXSparse ||	\
-	${MPORTNAME} == GPUQREngine ||	\
-	${MPORTNAME} == KLU ||	\
-	${MPORTNAME} == LDL ||	\
-	${MPORTNAME} == RBio ||	\
-	${MPORTNAME} == SPQR ||	\
-	${MPORTNAME} == UMFPACK
-pre-configure:
-	${REINPLACE_CMD} -e 's|-I../../include|-I${STAGEDIR}${PREFIX}/include/suitesparse -I../../SuiteSparse_config -I../../AMD/Include -I../../COLAMD/Include -I../../BTF/Include -I../../CHOLMOD/Include|;\
-		s|-lsuitesparseconfig|-lsuitesparseconfig -L${LOCALBASE}/lib|'	\
-		${BUILD_WRKSRC}/Demo/Makefile
-.endif
-
-do-configure: # skip USES=cmake
 
 post-install:
 .if ! ${MPORTNAME} == config
