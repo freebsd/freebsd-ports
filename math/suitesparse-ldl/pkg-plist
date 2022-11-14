@@ -1,6 +1,8 @@
 include/suitesparse/ldl.h
+lib/cmake/SuiteSparse/FindLDL.cmake
+lib/libldl.a
 lib/libldl.so
-lib/libldl.so.2
-lib/libldl.so.2.2.6
+lib/libldl.so.3
+lib/libldl.so.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/LDL_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ldl_userguide.pdf
