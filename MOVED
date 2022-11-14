@@ -17608,3 +17608,4 @@ devel/cppcheck-gui|devel/cppcheck|2022-11-07|GUI is now included in devel/cppche
 devel/py-types-termcolor||2022-11-11|No longer needed, type annotations are now available in termcolor module
 x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2022-11-11|Out of date: use x11-toolkits/wlroots for now
 multimedia/mpv034||2022-11-14|No longer needed
+devel/py-types-xxhash||2022-11-15|No longer needed, type annotations are now available in xxhash module
