@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.22
+DISTVERSION=	4.2.23
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -11,7 +11,7 @@ PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME:S/db//}/commit/
 PATCHFILES+=	a0a70c53cc7a.patch:-p1 # https://jira.mongodb.org/browse/SERVER-41827
 PATCHFILES+=	edf4ab0f8174.patch:-p1 # https://jira.mongodb.org/browse/SERVER-43979
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Distributed document-oriented "NoSQL" database (4.2.x Branch)
 WWW=		https://docs.mongodb.com/v4.2/
 
@@ -26,8 +26,7 @@ ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		${LOCALBASE}/bin/ar:devel/binutils
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
@@ -55,7 +54,7 @@ MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		-j ${MAKE_JOBS_NUMBER} \
 		--disable-warnings-as-errors \
 		VERBOSE=on \
-		AR=${PREFIX}/bin/ar
+		AR=llvm-ar
 
 USERS=		mongodb
 GROUPS=		mongodb
