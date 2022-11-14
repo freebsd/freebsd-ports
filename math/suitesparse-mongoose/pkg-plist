@@ -1,7 +1,8 @@
 bin/mongoose
 include/suitesparse/Mongoose.hpp
+lib/cmake/SuiteSparse/FindMongoose.cmake
 lib/libmongoose.a
 lib/libmongoose.so
-lib/libmongoose.so.2
-lib/libmongoose.so.2.0.4
+lib/libmongoose.so.3
+lib/libmongoose.so.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/Mongoose_UserGuide.pdf
