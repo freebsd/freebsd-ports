@@ -1,7 +1,6 @@
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
-PORTREVISION=	1
+DISTVERSION=	0.17.4
 CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -28,7 +27,7 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.19 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.65 \
+		anyhow-1.0.66 \
 		arc-swap-1.5.1 \
 		askama_derive-0.11.2 \
 		askama_escape-0.10.3 \
@@ -37,16 +36,16 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		atom_syndication-0.11.0 \
 		atty-0.2.14 \
 		auditable-extract-0.3.2 \
-		auditable-info-0.5.0 \
-		auditable-serde-0.5.1 \
+		auditable-info-0.6.2 \
+		auditable-serde-0.5.2 \
 		autocfg-1.1.0 \
 		backtrace-0.3.66 \
-		base64-0.13.0 \
+		base64-0.13.1 \
 		base64-0.5.1 \
 		binfarce-0.2.1 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
-		bumpalo-3.11.0 \
+		bumpalo-3.11.1 \
 		byteorder-1.3.1 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
@@ -56,13 +55,13 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		cargo-edit-0.9.1 \
 		cargo-lock-8.0.2 \
 		cargo-platform-0.1.2 \
-		cc-1.0.73 \
+		cc-1.0.76 \
 		cfg-if-1.0.0 \
-		chrono-0.4.22 \
+		chrono-0.4.23 \
 		chunked_transfer-1.4.0 \
 		clap_derive-3.2.18 \
 		clap_lex-0.2.4 \
-		clap-3.2.22 \
+		clap-3.2.23 \
 		codespan-reporting-0.11.1 \
 		color-eyre-0.6.2 \
 		combine-4.6.6 \
@@ -72,16 +71,16 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
-		crates-index-0.18.10 \
+		crates-index-0.18.11 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.11 \
 		crossbeam-utils-0.8.12 \
 		crypto-common-0.1.6 \
-		cxx-1.0.78 \
-		cxx-build-1.0.78 \
-		cxxbridge-flags-1.0.78 \
-		cxxbridge-macro-1.0.78 \
+		cxx-1.0.81 \
+		cxx-build-1.0.81 \
+		cxxbridge-flags-1.0.81 \
+		cxxbridge-macro-1.0.81 \
 		darling_core-0.12.4 \
 		darling_macro-0.12.4 \
 		darling-0.12.4 \
@@ -110,9 +109,9 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		form_urlencoded-1.1.0 \
-		fs-err-2.8.1 \
+		fs-err-2.9.0 \
 		generic-array-0.14.6 \
-		getrandom-0.2.7 \
+		getrandom-0.2.8 \
 		gimli-0.26.2 \
 		git2-0.14.4 \
 		gumdrop_derive-0.8.1 \
@@ -122,12 +121,12 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
-		home-0.5.3 \
+		home-0.5.4 \
 		humansize-1.1.1 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
-		iana-time-zone-0.1.51 \
-		iana-time-zone-haiku-0.1.0 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		idna-0.3.0 \
@@ -135,14 +134,14 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		indexmap-1.8.1 \
 		indexmap-1.9.1 \
 		instant-0.1.12 \
-		io-lifetimes-0.7.3 \
+		io-lifetimes-0.7.5 \
 		itertools-0.10.5 \
 		itoa-1.0.4 \
 		jobserver-0.1.25 \
 		js-sys-0.3.60 \
 		kstring-1.0.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.135 \
+		libc-0.2.137 \
 		libgit2-sys-0.13.4+1.4.2 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.8 \
@@ -158,38 +157,38 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
 		miniz_oxide-0.6.2 \
-		native-tls-0.2.10 \
+		native-tls-0.2.11 \
 		never-0.1.0 \
 		nom-7.1.1 \
 		nu-ansi-term-0.46.0 \
-		num_cpus-1.13.1 \
+		num_cpus-1.14.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		object-0.29.0 \
-		once_cell-1.15.0 \
+		once_cell-1.16.0 \
 		openssl-0.10.42 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.22.0+1.1.1q \
-		openssl-sys-0.9.76 \
-		os_str_bytes-6.3.0 \
+		openssl-src-111.24.0+1.1.1s \
+		openssl-sys-0.9.77 \
+		os_str_bytes-6.4.0 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.1.0 \
 		percent-encoding-2.2.0 \
-		pest_derive-2.4.0 \
-		pest_generator-2.4.0 \
-		pest_meta-2.4.0 \
-		pest-2.4.0 \
+		pest_derive-2.4.1 \
+		pest_generator-2.4.1 \
+		pest_meta-2.4.1 \
+		pest-2.4.1 \
 		petgraph-0.6.0 \
 		petgraph-0.6.2 \
 		pin-project-lite-0.2.9 \
-		pkg-config-0.3.25 \
+		pkg-config-0.3.26 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.37 \
-		proc-macro2-1.0.46 \
+		proc-macro2-1.0.47 \
 		quick-xml-0.22.0 \
 		quote-1.0.18 \
 		quote-1.0.21 \
@@ -197,18 +196,18 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.6.0 \
+		regex-1.7.0 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
+		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		ring-0.16.20 \
-		rust-embed-6.4.1 \
-		rust-embed-impl-6.3.0 \
+		rust-embed-6.4.2 \
+		rust-embed-impl-6.3.1 \
 		rust-embed-utils-7.3.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		rustix-0.35.11 \
-		rustls-0.20.6 \
+		rustix-0.35.13 \
+		rustls-0.20.7 \
 		rustsec-example-crate-0.0.1 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
@@ -222,10 +221,10 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		semver-1.0.14 \
 		semver-1.0.7 \
 		serde_derive-1.0.136 \
-		serde_derive-1.0.145 \
-		serde_json-1.0.86 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.87 \
 		serde-1.0.136 \
-		serde-1.0.145 \
+		serde-1.0.147 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
 		sharded-slab-0.1.4 \
@@ -237,13 +236,13 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		subprocess-0.2.9 \
-		syn-1.0.102 \
+		syn-1.0.103 \
 		syn-1.0.91 \
 		synstructure-0.12.6 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		terminal_size-0.2.1 \
-		textwrap-0.15.1 \
+		terminal_size-0.2.2 \
+		textwrap-0.16.0 \
 		thiserror-1.0.37 \
 		thiserror-impl-1.0.37 \
 		thread_local-1.1.4 \
@@ -293,12 +292,20 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
 		xdg-2.4.1 \
 		xml-rs-0.8.4 \
 		zeroize-1.5.7
