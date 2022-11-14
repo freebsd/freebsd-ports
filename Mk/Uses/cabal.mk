@@ -136,19 +136,15 @@ BUILD_TARGET?=	${CABAL_EXECUTABLES:S/^/exe:&/}
 _use_cabal=	${USE_CABAL:O:u}
 
 .  for package in ${_use_cabal}
-_PKG_GROUP=		${package:C/[\.-]//g}
-_PKG_WITHOUT_REV=	${package:C/_[0-9]+//}
-_REV=			${package:C/[^_]*//:S/_//}
-
-MASTER_SITES+=	https://hackage.haskell.org/package/:${package:C/[\.-]//g} \
-		http://hackage.haskell.org/package/:${package:C/[\.-]//g}
-DISTFILES+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}:${package:C/[\.-]//g}
-
-.    if ${package:C/[^_]*//:S/_//} != ""
-DISTFILES+=	${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal:${package:C/[\.-]//g}
+.    for pkg_group pkg_name xrev in ${package:C/[\.-]//g} ${package:C/_[0-9]+//} x${package:C/[^_]*//:S/_//}
+MASTER_SITES+=	https://hackage.haskell.org/package/:${pkg_group} \
+		http://hackage.haskell.org/package/:${pkg_group}
+DISTFILES+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}:${pkg_group}
+.    if ${xrev} != "x"
+DISTFILES+=	${pkg_name}/revision/${xrev:S/x//}.cabal:${pkg_group}
 .    endif
-
-_CABAL_EXTRACT_ONLY+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}
+_CABAL_EXTRACT_ONLY+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}
+.    endfor
 .  endfor
 
 .  if !defined(EXTRACT_ONLY)
@@ -232,13 +228,15 @@ cabal-post-extract:
 # Move extracted dependencies into ${CABAL_DEPSDIR} directory
 	${MKDIR} ${CABAL_DEPSDIR}
 .    for package in ${_use_cabal}
+.      for pkg_name xrev in ${package:C/_[0-9]+//} x${package:C/[^_]*//:S/_//}
 # Copy revised .cabal file if present
-.      if ${package:C/[^_]*//:S/_//} != ""
-		cp ${DISTDIR}/${DIST_SUBDIR}/${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal `find ${WRKDIR}/${package:C/_[0-9]+//} -name '*.cabal' -depth 1`
-.      endif
+.        if ${xrev} != "x"
+		cp ${DISTDIR}/${DIST_SUBDIR}/${pkg_name}/revision/${xrev:S/x//}.cabal `find ${WRKDIR}/${pkg_name} -name '*.cabal' -depth 1`
+.        endif
 # Move the dependency source itself
 	cd ${WRKDIR} && \
-		mv ${package:C/_[0-9]+//} ${CABAL_DEPSDIR}/
+		mv ${pkg_name} ${CABAL_DEPSDIR}/
+.      endfor
 .    endfor
 # Create the cabal-install config
 	${MKDIR} ${CABAL_HOME}/.cabal
@@ -254,7 +252,9 @@ cabal-post-patch:
 	${ECHO_CMD} "-- added by USES=cabal" >> ${WRKSRC}/cabal.project.local
 	${ECHO_CMD} "packages:" >> ${WRKSRC}/cabal.project.local
 .    for package in ${_use_cabal}
-	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${package:C/_[0-9]+//}" >> ${WRKSRC}/cabal.project.local
+.      for pkg_name in ${package:C/_[0-9]+//}
+	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${pkg_name}" >> ${WRKSRC}/cabal.project.local
+.      endfor
 .    endfor
 .  endif # SKIP_CABAL_EXTRACT && !CABAL_COOKIE
 
