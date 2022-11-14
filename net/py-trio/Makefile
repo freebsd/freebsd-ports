@@ -1,5 +1,6 @@
 PORTNAME=	trio
 PORTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +34,14 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.0.0rc9:devel/py-exceptiongroup@${PY_FLAVOR}
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.0.0rc9:devel/py-exceptiongroup@${PY_FLAVOR}
+.endif
+
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
