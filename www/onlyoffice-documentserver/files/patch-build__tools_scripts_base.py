@@ -1,6 +1,6 @@
 --- build_tools/scripts/base.py.orig	2021-11-16 08:07:24 UTC
 +++ build_tools/scripts/base.py
-@@ -1092,9 +1092,15 @@ def copy_sdkjs_plugins_server(dst_dir, is_name_as_guid
+@@ -1144,9 +1144,15 @@ def support_old_versions_plugins(out_dir):
  def support_old_versions_plugins(out_dir):
    if is_file(out_dir + "/pluginBase.js"):
      return
@@ -19,3 +19,12 @@
    content_plugin_base = ""
    with open(get_path(out_dir + "/plugins.js"), "r") as file:
      content_plugin_base += file.read()
+@@ -1282,7 +1288,7 @@ def clone_marketplace_plugin(out_dir, is_name_as_guid=
+ def clone_marketplace_plugin(out_dir, is_name_as_guid=False):
+   old_cur = os.getcwd()
+   os.chdir(out_dir)
+-  git_update("onlyoffice.github.io", False, True)
++#  git_update("onlyoffice.github.io", False, True)
+   os.chdir(old_cur)
+ 
+   dst_dir_name = "marketplace"

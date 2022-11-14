@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.1.1.23
-PORTREVISION=	2
+DISTVERSION=	7.2.1.34
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -12,7 +11,7 @@ DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 		node-v${NODE_VERSION_PKGFETCH}.tar.gz:source3 \
 		node-v${NODE_VERSION_PORTS}.tar.gz:source3 \
 		optipng-0.7.7.tar.gz:source4 \
-		onlyoffice-${DISTVERSION}-npm-cache.tar.gz:source2
+		${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz:source2
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Secure office and productivity apps
@@ -32,8 +31,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		npm:www/npm-node16
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
+		libharfbuzz.so:print/harfbuzz \
 		libiconv.so:converters/libiconv \
 		libicutu.so:devel/icu
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
 		gsed:textproc/gsed \
 		nginx:www/nginx \
@@ -41,12 +42,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		webfonts>=0:x11-fonts/webfonts
 
 USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase nodejs:16,build pkgconfig \
-		python:3.7+,build qt:5 trigger
+		python:3.9+,build qt:5 trigger
 USE_QT=		qmake:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
 GH_PROJECT=	DocumentServer
-GH_TAGNAME=	v7.1.1
+GH_TAGNAME=	v7.2.1
 GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:core-fonts:v${DISTVERSION}:corefonts/core-fonts \
 		ONLYOFFICE:dictionaries:v${DISTVERSION}:dictionaries/dictionaries \
@@ -55,19 +56,10 @@ GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:sdkjs:v${DISTVERSION}:sdkjs/sdkjs \
 		ONLYOFFICE:server:v${DISTVERSION}:server/server \
 		ONLYOFFICE:web-apps:v${DISTVERSION}:webapps/web-apps \
-		ONLYOFFICE:plugin-highlightcode:v${DISTVERSION}:sdkjs_plugins_highlightcode/sdkjs-plugins/plugin-highlightcode \
-		ONLYOFFICE:plugin-macros:v${DISTVERSION}:sdkjs_plugins_macros/sdkjs-plugins/plugin-macros \
-		ONLYOFFICE:plugin-mendeley:v${DISTVERSION}:sdkjs_plugins_mendeley/sdkjs-plugins/plugin-mendeley \
-		ONLYOFFICE:plugin-ocr:v${DISTVERSION}:sdkjs_plugins_ocr/sdkjs-plugins/plugin-ocr \
-		ONLYOFFICE:plugin-photoeditor:v${DISTVERSION}:sdkjs_plugins_photoeditor/sdkjs-plugins/plugin-photoeditor \
-		ONLYOFFICE:plugin-speech:v${DISTVERSION}:sdkjs_plugins_speech/sdkjs-plugins/plugin-speech \
-		ONLYOFFICE:plugin-thesaurus:v${DISTVERSION}:sdkjs_plugins_thesaurus/sdkjs-plugins/plugin-thesaurus \
-		ONLYOFFICE:plugin-translator:v${DISTVERSION}:sdkjs_plugins_translator/sdkjs-plugins/plugin-translator \
-		ONLYOFFICE:plugin-youtube:v${DISTVERSION}:sdkjs_plugins_youtube/sdkjs-plugins/plugin-youtube \
-		ONLYOFFICE:plugin-zotero:v${DISTVERSION}:sdkjs_plugins_zotero/sdkjs-plugins/plugin-zotero \
+		ONLYOFFICE:plugin-mendeley:v${PLUGIN_VERSION}:sdkjs_plugins_mendeley/sdkjs-plugins/plugin-mendeley \
 		ONLYOFFICE:build_tools:v${DISTVERSION}:buildtools/build_tools \
-		ONLYOFFICE:DocumentBuilder:v${DISTVERSION}:document_builder/DocumentBuilder \
-		ONLYOFFICE:onlyoffice.github.io:342e8f66:sdkjs_plugins_v1/onlyoffice.github.io \
+		ONLYOFFICE:DocumentBuilder:626d1e44db3d06ceb8298215a67ef0475912d89a:document_builder/DocumentBuilder \
+		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
 		ONLYOFFICE:document-server-package:v${DISTVERSION}:dsp/document-server-package \
 		hackers-painters:katana-parser:499118d3:hackers_painters_katana/core/Common/3dParty/html/katana-parser \
 		google:gumbo-parser:aa91b27:google_gumbo/core/Common/3dParty/html/gumbo-parser
@@ -100,10 +92,11 @@ SUB_LIST=	ETCDIR=${ETCDIR} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
 
+PLUGIN_VERSION=	7.2.0.8
 # node version used with "npm install pkg@5.5.1"
 NODE_VERSION_PKGFETCH=	16.13.0
 # node version used in the ports tree
-NODE_VERSION_PORTS=	16.17.1
+NODE_VERSION_PORTS=	16.16.0
 
 MAKE_ENV=	BUILD_NUMBER="1" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
@@ -164,7 +157,8 @@ post-patch:
 		${WRKSRC}/server/Common/config/development-freebsd.json
 	@${REINPLACE_CMD} -e 's|bash|sh|' -e 's|sed|gsed|' \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4
 	@${REINPLACE_CMD} 's|%%DISTDIR%%|${DISTDIR}|' \
 		${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
@@ -177,15 +171,17 @@ post-patch:
 	@${ECHO} "checkout_google_benchmark = false" >> ${WRKSRC}/core/Common/3dParty/v8/v8/build/config/gclient_args.gni
 
 do-build:
+	${INSTALL_SCRIPT} ${FILESDIR}/npm ${BINARY_LINKDIR}/npm
+
 	@${CP} ${FILESDIR}/packagejsons/server/package-lock.json ${WRKSRC}/server
-	@${CP} ${FILESDIR}/packagejsons/server/Common/package-lock.json ${WRKSRC}/server/Common
+#	@${CP} ${FILESDIR}/packagejsons/server/Common/package-lock.json ${WRKSRC}/server/Common
 
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install optipng-bin@5.1.0
 	@cd ${WRKSRC}/web-apps/build ; node_modules/.bin/patch-package
 	@cd ${WRKSRC}/web-apps/build/node_modules/optipng-bin ; ${SETENV} ${MAKE_ENV} npm run postinstall optipng-bin
 
-	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
+#	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install pkg@5.5.1
@@ -234,5 +230,13 @@ do-install:
 		 ${STAGEDIR}/var/db/onlyoffice/documentserver/App_Data/docbuilder \
 		 ${STAGEDIR}${WWWDIR}/Data \
 		 ${STAGEDIR}${WWWDIR}/documentserver/fonts
+
+create-caches-tarball:
+	# do some cleanup first
+	${RM} -r  ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked ${WRKDIR}/.cache/yarn/v6/.tmp
+	${FIND} ${WRKDIR}/.cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
+
+	cd ${WRKDIR} && \
+		${TAR} czf ${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz .npm .cache .pkg-cache
 
 .include <bsd.port.mk>

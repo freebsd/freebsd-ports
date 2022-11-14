@@ -9,12 +9,12 @@
  #include <unistd.h>
  #include <sys/wait.h>
  #include <stdio.h>
-@@ -178,7 +178,7 @@ namespace NSX2T
+@@ -347,7 +347,7 @@ namespace NSX2T
  
  #endif
  
 -#ifdef LINUX
 +#if defined(LINUX) || defined(__FreeBSD__)
-         pid_t pid = fork(); // create child process
-         int status;
+ 		pid_t pid = fork(); // create child process
+ 		int status;
  
