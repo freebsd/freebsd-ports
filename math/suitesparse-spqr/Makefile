@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.1
 CATEGORIES=	math
 
 COMMENT=	Sparse QR factorization
@@ -14,18 +14,17 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd		\
 		libcholmod.so:math/suitesparse-cholmod
 
 USES=		localbase:ldflags
-BLAS_NEEDED=	yes
-OMP_NEEDED=	yes
 
 MPORTNAME=	SPQR
 USE_LDCONFIG=	yes
 
-# See https://github.com/DrTimothyAldenDavis/SuiteSparse/issues/72 and PR 252651
-#OPTIONS_DEFINE+=	TBB
-#OPTIONS_DEFAULT+=	TBB
-#TBB_DESC=		Intel threading building blocks
-#TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
-#TBB_MAKE_ENV=		TBB="-ltbb" SPQR_CONFIG="-DHAVE_TBB"
-
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"
+
+post-stage-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/README.txt	\
+		${STAGEDIR}${DOCSDIR}/${MPORTNAME}_README.txt
+	${INSTALL_DATA} ${BUILD_WRKSRC}/Doc/spqr_user_guide.pdf	\
+		${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.post.mk>
