@@ -185,8 +185,4 @@ post-patch-MANPAGES-on:
 pre-install-TEST-on:
 	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} build/mpv --unittest=all-simple)
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpv.so
-
 .include <bsd.port.mk>
