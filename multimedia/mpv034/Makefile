@@ -17,7 +17,7 @@ PATCHFILES+=	b7a71ea70671.patch:-p1 # https://github.com/mpv-player/mpv/pull/973
 PATCHFILES+=	09343bc86e8b.patch:-p1 # https://github.com/mpv-player/mpv/pull/9734
 PATCHFILES+=	bc9805c71a67.patch:-p1 # https://github.com/mpv-player/mpv/pull/9830
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
 WWW=		https://mpv.io
 
