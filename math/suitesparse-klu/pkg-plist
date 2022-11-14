@@ -1,6 +1,14 @@
+include/suitesparse/klu_cholmod.h
 include/suitesparse/klu.h
+lib/cmake/SuiteSparse/FindKLU_CHOLMOD.cmake
+lib/cmake/SuiteSparse/FindKLU.cmake
+lib/libklu_cholmod.a
+lib/libklu_cholmod.so
+lib/libklu_cholmod.so.2
+lib/libklu_cholmod.so.2.0.0
+lib/libklu.a
 lib/libklu.so
-lib/libklu.so.1
-lib/libklu.so.1.3.8
+lib/libklu.so.2
+lib/libklu.so.2.0.0
 %%PORTDOCS%%%%DOCSDIR%%/KLU_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/KLU_UserGuide.pdf
