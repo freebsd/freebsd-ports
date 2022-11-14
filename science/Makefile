@@ -190,6 +190,7 @@
     SUBDIR += mopac
     SUBDIR += mpb
     SUBDIR += mpqc
+    SUBDIR += mrcpp
     SUBDIR += msms
     SUBDIR += mstore
     SUBDIR += multicharge
