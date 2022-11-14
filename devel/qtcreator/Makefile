@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	8.0.1
+DISTVERSION=	8.0.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -55,10 +55,14 @@ SHEBANG_FILES=		bin/qtcreator.sh \
 
 # Provide library paths, default llvm first as a hint to the clang code model.
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${PREFIX}/llvm${LLVM_DEFAULT};${PREFIX}"
-# Prevent accidental pickup of devel/elfutils libraries.
-CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils
-# Disable precompiled headers for now, they are missing compile flags.
-CMAKE_OFF=	BUILD_WITH_PCH
+# - Prevent accidental pickup of devel/elfutils libraries.
+# - Prevent accidental use of devel/googletest headers, use bundled.
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils \
+		CMAKE_DISABLE_FIND_PACKAGE_Googletest
+# - Disable precompiled headers for now, they are missing compile flags.
+# - Suppress installed yaml-cpp, use bundled.
+CMAKE_OFF=	BUILD_WITH_PCH \
+		yaml-cpp_FOUND
 # Disable Qt6 suport for now
 CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6
 

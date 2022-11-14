@@ -334,6 +334,8 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qml/qmlpuppet/mockfiles/images/floor_tex.png
 %%DATADIR%%/qml/qmlpuppet/mockfiles/images/point.png
 %%DATADIR%%/qml/qmlpuppet/mockfiles/images/point@2x.png
+%%DATADIR%%/qml/qmlpuppet/mockfiles/images/preview_landscape.hdr
+%%DATADIR%%/qml/qmlpuppet/mockfiles/images/preview_studio.hdr
 %%DATADIR%%/qml/qmlpuppet/mockfiles/images/spot.png
 %%DATADIR%%/qml/qmlpuppet/mockfiles/images/spot@2x.png
 %%DATADIR%%/qml/qmlpuppet/mockfiles/images/static_floor.png
