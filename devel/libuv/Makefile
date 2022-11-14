@@ -8,10 +8,8 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Multi-platform support library with a focus on asynchronous I/O
 WWW=		https://github.com/libuv/libuv
 
-LICENSE=	NODE
-LICENSE_NAME=	NODE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		autoreconf cpe libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
