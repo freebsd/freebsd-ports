@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.37.0
-PORTREVISION=	1
+DISTVERSION=	0.38.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -86,7 +85,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		terminal_size-0.2.1 \
 		textwrap-0.15.0 \
 		tree-sitter-0.20.9 \
-		tree_magic_mini-3.0.3 \
 		typed-arena-2.0.1 \
 		unicode-ident-1.0.0 \
 		unicode-width-0.1.9 \
@@ -103,7 +101,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		windows_i686_msvc-0.36.1 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_msvc-0.36.1 \
-		wu-diff-0.1.2
+		wu-diff-0.1.2 \
+		tree_magic_mini@git+https://github.com/Wilfred/tree_magic?branch=fix-panic-for-empty-strings\#13dd6dda15c7062bd8f7dd5bc9bb5b16ce9ee613
 
 PORTDOCS=	*
 
