@@ -10,7 +10,7 @@ WWW=		https://flavio.tordini.org/minitube
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpv.so.2:multimedia/mpv
+LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
