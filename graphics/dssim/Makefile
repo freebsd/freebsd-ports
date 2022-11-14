@@ -1,6 +1,5 @@
 PORTNAME=	dssim
-DISTVERSION=	3.2.3
-PORTREVISION=	1
+DISTVERSION=	3.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
