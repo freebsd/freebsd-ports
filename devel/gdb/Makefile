@@ -11,9 +11,6 @@ WWW=		https://www.gnu.org/software/gdb/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
-# untested on sparc64, might work
-NOT_FOR_ARCHS=	sparc64
-
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 TEST_DEPENDS=	runtest:misc/dejagnu
@@ -105,7 +102,7 @@ PORT_ICONV_USES=	iconv:wchar_t
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python:3.6+
-SOURCE_HIGHLIGHT_WITH=	source-highlight
+SOURCE_HIGHLIGHT_CONFIGURE_ENABLE=	source-highlight
 SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
 	libsource-highlight.so:textproc/source-highlight
 SYSTEM_ICONV_USES=	iconv
