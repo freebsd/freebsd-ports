@@ -17615,3 +17615,4 @@ devel/py-pytest4-asyncio||2022-11-19|Has expired: legacy version for pytest4 no 
 devel/tokamak||2022-11-20|Has expired: Last release in 2008, abandoned upstream, not used, website disappeared
 net/libutp|net-p2p/libutp|2022-11-20|Moved to a more adequated category
 x11-wm/sway-devel|x11-wm/sway|2022-11-26|Out of date: use x11-wm/sway for now
+math/suitesparse-slip_lu|math/suitesparse-spex|2022-12-26|Renamed by upstream

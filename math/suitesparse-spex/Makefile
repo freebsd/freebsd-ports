@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.0
 CATEGORIES=	math
 
 COMMENT=	Sparse Left-looking Integer-Preserving LU Factorization
@@ -7,7 +7,7 @@ WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	GPLv2+ LGPL3+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${BUILD_WRKSRC}/License/license.txt
+LICENSE_FILE=	${BUILD_WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libmpfr.so:math/mpfr	\
@@ -15,10 +15,17 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libcolamd.so:math/suitesparse-colamd
 
 USES=		localbase:ldflags
-OMP_NEEDED=	yes
 
-MPORTNAME=	SLIP_LU
+MPORTNAME=	SPEX
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"
+
+post-stage-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/README.md	\
+		${STAGEDIR}${DOCSDIR}/${MPORTNAME}_README.md
+	${INSTALL_DATA} ${BUILD_WRKSRC}/Doc/${MPORTNAME}_UserGuide.pdf	\
+		${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.post.mk>

@@ -1122,7 +1122,7 @@
     SUBDIR += suitesparse-ldl
     SUBDIR += suitesparse-mongoose
     SUBDIR += suitesparse-rbio
-    SUBDIR += suitesparse-slip_lu
+    SUBDIR += suitesparse-spex
     SUBDIR += suitesparse-spqr
     SUBDIR += suitesparse-umfpack
     SUBDIR += sundials
