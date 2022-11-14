@@ -183,6 +183,7 @@ post-patch-MANPAGES-on:
 		-e 's|/usr/local|${PREFIX}|g'
 
 pre-install-TEST-on:
-	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} build/mpv --unittest=all-simple)
+	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} \
+		${MESON_BUILD_DIR}/${PORTNAME} --unittest=all-simple)
 
 .include <bsd.port.mk>
