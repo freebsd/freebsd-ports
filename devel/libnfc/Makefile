@@ -1,9 +1,7 @@
 PORTNAME=	libnfc
-PORTVERSION=	1.7.1
-PORTREVISION=	5
+PORTVERSION=	1.8.0
 CATEGORIES=	devel
-MASTER_SITES=	http://dl.bintray.com/nfc-tools/sources/ \
-		http://romain.blogreen.org/distfiles/
+MASTER_SITES=	https://github.com/nfc-tools/libnfc/releases/download/libnfc-${PORTVERSION}/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
@@ -25,8 +23,8 @@ PN532_UART_DESC=PN532 UART driver
 PN53X_USB_DESC=	PN53X USB driver
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig readline tar:bzip2
+USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 CFLAGS+= 	-D__BSD_VISIBLE
 
