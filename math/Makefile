@@ -170,6 +170,7 @@
     SUBDIR += apc
     SUBDIR += apron
     SUBDIR += arb
+    SUBDIR += arborx
     SUBDIR += aribas
     SUBDIR += armadillo
     SUBDIR += arpack++
