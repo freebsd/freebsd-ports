@@ -39,8 +39,10 @@ MIMESUBDIRS=	application audio image inode message model multipart \
 OPTIONS_DEFINE=			TOOLS
 OPTIONS_DEFAULT=		TOOLS
 OPTIONS_SUB=			yes
+
 # No glib2 support
 OPTIONS_EXCLUDE_purecap=	TOOLS
+TOOLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/cheribsd-tools-off.patch
 
 .include <bsd.port.options.mk>
 
