@@ -10,8 +10,10 @@ WWW=		https://github.com/wildeyedskies/stmp/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with mpv 0.35, see bug 267114
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libHLSL.a:graphics/glslang
-LIB_DEPENDS=	libmpv.so.1:multimedia/mpv034 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267114
+LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USES=		go:modules xorg gl
 
