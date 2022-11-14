@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	5.7.9
+PORTVERSION=	6.0.1
 CATEGORIES=	math
 
 COMMENT=	Sparse multifrontal LU factorization
@@ -15,11 +15,19 @@ LIB_DEPENDS=	libmetis.so:math/metis	\
 		libcholmod.so:math/suitesparse-cholmod
 
 USES=		localbase:ldflags
-BLAS_NEEDED=	yes
-OMP_NEEDED=	yes
 
 MPORTNAME=	UMFPACK
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"
+
+post-stage-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/README.txt	\
+		${STAGEDIR}${DOCSDIR}/${MPORTNAME}_README.txt
+	${INSTALL_DATA} ${BUILD_WRKSRC}/Doc/${MPORTNAME}_QuickStart.pdf	\
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/Doc/${MPORTNAME}_UserGuide.pdf	\
+		${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.post.mk>
