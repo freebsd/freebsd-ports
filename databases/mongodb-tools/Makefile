@@ -1,5 +1,5 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.6.0
+DISTVERSION=	100.6.1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
