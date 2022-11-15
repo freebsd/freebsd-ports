@@ -1,6 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -93,6 +93,9 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|from werkzeug import url_encode|from werkzeug.urls import url_encode|g' \
 		${WRKSRC}/odoo/addons/mail/models/mail_thread.py \
 		${WRKSRC}/odoo/addons/hr/models/hr_employee.py
+	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
+		${WRKSRC}/odoo/addons/web/static/src/legacy/js/libs/content-disposition.js \
+		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/

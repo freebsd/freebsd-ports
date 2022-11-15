@@ -40,7 +40,7 @@ initdb_cmd="odoo_initdb"
 start_precmd="odoo_start_precmd"
 
 command=/usr/local/bin/odoo
-command_args="--database=${odoo_database} --data-dir=${odoo_datadir} --logfile=/var/log/${name}.log --config=%%LOCALBASE%%/etc/odoo.conf ${odoo_flags}"
+command_args="--database=${odoo_database} --data-dir=${odoo_datadir} --logfile=/var/log/${name}.log --config=%%LOCALBASE%%/etc/odoo/odoo.conf ${odoo_flags}"
 
 odoo_start_precmd() {
 	odoo_datadir_check
