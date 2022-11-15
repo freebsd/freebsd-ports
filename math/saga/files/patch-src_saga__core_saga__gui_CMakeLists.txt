@@ -5,7 +5,7 @@
  			OUTPUT_STRIP_TRAILING_WHITESPACE
  		)
 -		message("git hash: ${GIT_HASH} to ${PROJECT_SOURCE_DIR}/git_hash.h")
-+		message("git hash: "https://sourceforge.net/p/saga-gis/code/ci/GIT_TAGNAME" to ${PROJECT_SOURCE_DIR}/git_hash.h")
++		message("git hash: https://sourceforge.net/p/saga-gis/code/ci/GIT_TAGNAME to ${PROJECT_SOURCE_DIR}/git_hash.h")
  	else()
  		message("not a git repository, git hash not found")
  	endif()
