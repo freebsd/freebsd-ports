@@ -1,3 +1,46 @@
+  <vuln vid="094e4a5b-6511-11ed-8c5e-206a8a720317">
+    <topic>krb5 -- Integer overflow vulnerabilities in PAC parsing</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.20_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-120</name>
+	<range><lt>1.20_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-119</name>
+	<range><lt>1.19.3_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-devel</name>
+	<range><lt>2022.11.03</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITKRB5-SA-2022-001 Vulnerabilities in PAC parsing:</p>
+	<blockquote cite="https://web.mit.edu/kerberos/advisories/MITKRB5-SA-2022-001.txt">
+	  <p>Due to an integer overflow vulnerabilities in PAC parsing
+	     An authenticated attacker may be able to cause a KDC or kadmind
+	     process to crash by reading beyond the bounds of allocated memory,
+	     creating a denial of service.</p>
+	  <p>On 32-bit platforms an authenticated attacker may be able to
+	     cause heap corruption resulting in an RCE.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-42898</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42898</url>
+    </references>
+    <dates>
+      <discovery>2022-11-05</discovery>
+      <entry>2022-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a80f159-629b-11ed-9ca2-6c3be5272acd">
     <topic>Grafana -- Username enumeration</topic>
     <affects>
