@@ -29,12 +29,11 @@ SHEBANG_FILES=	*.py TOOLS/*.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 MESON_ARGS=	-Dpdf-build=disabled \
-		-Drubberband=disabled \
 		-Dshaderc=disabled \
 		-Dvapoursynth=disabled \
 		-Dlibmpv=true
 
-OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS TEST UCHARDET EXAMPLES ZIMG
+OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND TEST UCHARDET EXAMPLES ZIMG
 OPTIONS_DEFAULT=	ARCHIVE DVDNAV LUAJIT MANPAGES NVDEC OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDLP
 OPTIONS_GROUP=		IN VO AO
@@ -53,6 +52,7 @@ LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 MUJS_DESC=		Use MuJS for Javascript language support
 NVDEC_DESC=		NVIDIA decoder with CUDA support
 PIPEWIRE_DESC=		Pipewire sound server support
+RUBBERBAND_DESC=	High quality pitch correction with librubberband
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VULKAN_DESC=		Vulkan output support
@@ -122,6 +122,9 @@ PIPEWIRE_MESON_ENABLED=		pipewire
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	pulse
+
+RUBBERBAND_LIB_DEPENDS=		librubberband.so:audio/rubberband
+RUBBERBAND_MESON_ENABLED=	rubberband
 
 SDL_USES=			sdl
 SDL_USE=			SDL=sdl2
