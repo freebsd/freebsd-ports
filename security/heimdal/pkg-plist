@@ -54,7 +54,6 @@ include/heimdal/hcrypto/evp-openssl.h
 include/heimdal/hcrypto/evp-pkcs11.h
 include/heimdal/hcrypto/evp.h
 include/heimdal/hcrypto/hmac.h
-include/heimdal/hcrypto/md2.h
 include/heimdal/hcrypto/md4.h
 include/heimdal/hcrypto/md5.h
 include/heimdal/hcrypto/pkcs12.h
@@ -986,6 +985,7 @@ man/man3/krb5_password_key_proc.3.gz
 man/man3/krb5_plugin_register.3.gz
 man/man3/krb5_prepend_config_files.3.gz
 man/man3/krb5_prepend_config_files_default.3.gz
+man/man3/krb5_prepend_error_message.3.gz
 man/man3/krb5_princ_realm.3.gz
 man/man3/krb5_princ_set_realm.3.gz
 man/man3/krb5_principal.3.gz
