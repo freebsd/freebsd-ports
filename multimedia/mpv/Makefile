@@ -5,6 +5,9 @@ PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b95111dda879.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
 WWW=		https://mpv.io
