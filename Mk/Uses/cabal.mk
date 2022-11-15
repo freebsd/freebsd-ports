@@ -120,10 +120,13 @@ _hackage_is_default=	yes
 _hackage_is_default=	no
 .  endif
 
+MASTER_SITES+=	https://hackage.haskell.org/package/${_hackage_group} \
+		http://hackage.haskell.org/package/${_hackage_group}
+
 .  if ${_hackage_is_default} == yes
-MASTER_SITES=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
-		http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
-DISTFILES+=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+.  else
+_hackage_group=	:cabal_mk_hackage
 .  endif
 
 _USES_extract=	701:cabal-post-extract
@@ -136,12 +139,10 @@ BUILD_TARGET?=	${CABAL_EXECUTABLES:S/^/exe:&/}
 _use_cabal=	${USE_CABAL:O:u}
 
 .  for package in ${_use_cabal}
-.    for pkg_group pkg_name xrev in ${package:C/[\.-]//g} ${package:C/_[0-9]+//} x${package:C/[^_]*//:S/_//}
-MASTER_SITES+=	https://hackage.haskell.org/package/:${pkg_group} \
-		http://hackage.haskell.org/package/:${pkg_group}
-DISTFILES+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}:${pkg_group}
+.    for pkg_name xrev in ${package:C/_[0-9]+//} x${package:C/[^_]*//:S/_//}
+DISTFILES+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}${_hackage_group}
 .    if ${xrev} != "x"
-DISTFILES+=	${pkg_name}/revision/${xrev:S/x//}.cabal:${pkg_group}
+DISTFILES+=	${pkg_name}/revision/${xrev:S/x//}.cabal${_hackage_group}
 .    endif
 _CABAL_EXTRACT_ONLY+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}
 .    endfor

@@ -1,6 +1,6 @@
-TIMESTAMP = 1652095414
-SHA256 (cabal/arbtt-0.11.1.tar.gz) = 782d9081704f788257dd9a829e2db49d65288709350dfad76f8b9b8125bc9c76
-SIZE (cabal/arbtt-0.11.1.tar.gz) = 89736
+TIMESTAMP = 1668451865
+SHA256 (cabal/arbtt-0.11.1/arbtt-0.11.1.tar.gz) = 782d9081704f788257dd9a829e2db49d65288709350dfad76f8b9b8125bc9c76
+SIZE (cabal/arbtt-0.11.1/arbtt-0.11.1.tar.gz) = 89736
 SHA256 (cabal/OneTuple-0.3.1/OneTuple-0.3.1.tar.gz) = 98853682d52fb4cc37a45cd186fbd77cf2565d3df5171acc4cf026427e103eef
 SIZE (cabal/OneTuple-0.3.1/OneTuple-0.3.1.tar.gz) = 5148
 SHA256 (cabal/OneTuple-0.3.1/revision/2.cabal) = a848c096c9d29e82ffdd30a9998aa2931cbccb3a1bc137539d80f6174d31603e

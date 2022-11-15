@@ -1,5 +1,6 @@
 PORTNAME=	purescript
 PORTVERSION=	0.15.4
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +18,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		OneTuple-0.3.1_3 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		adjunctions-4.4.1 \
+		adjunctions-4.4.2 \
 		aeson-2.0.3.0_1 \
 		aeson-better-errors-0.9.1.1_1 \
 		aeson-pretty-0.8.9_2 \
@@ -25,29 +26,29 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		ansi-terminal-0.11.3 \
 		ansi-wl-pprint-0.6.9_3 \
 		assoc-1.0.2_3 \
-		async-2.2.4_1 \
+		async-2.2.4_2 \
 		attoparsec-0.14.4_2 \
 		auto-update-0.1.6 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
 		base-orphans-0.8.7 \
-		basement-0.0.14 \
-		bifunctors-5.5.12_1 \
+		basement-0.0.15 \
+		bifunctors-5.5.13 \
 		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_2 \
+		blaze-markup-0.8.2.8_3 \
 		bower-json-1.1.0.0 \
 		boxes-0.1.5 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.7.0_1 \
+		cborg-0.2.8.0_1 \
 		cheapskate-0.1.1.2_1 \
 		clock-0.8.3 \
 		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
-		conduit-1.3.4.2 \
+		conduit-1.3.4.3_1 \
 		conduit-extra-1.3.6 \
 		constraints-0.13.4 \
 		contravariant-1.5.5 \
@@ -81,14 +82,14 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		kan-extensions-5.2.5 \
 		language-javascript-0.7.0.0 \
 		lens-5.1.1_1 \
-		lifted-async-0.10.2.2 \
+		lifted-async-0.10.2.3 \
 		lifted-base-0.2.3.12 \
-		memory-0.17.0 \
+		memory-0.17.0_1 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.36_2 \
+		monad-logger-0.3.37_2 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.15.3 \
-		monoidal-containers-0.6.2.0_1 \
+		monoidal-containers-0.6.3.0 \
 		mtl-compat-0.2.2 \
 		network-3.1.2.7 \
 		network-uri-2.6.4.1 \
@@ -98,7 +99,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		optparse-applicative-0.17.0.0 \
 		parallel-3.2.2.0_5 \
 		pattern-arrows-0.0.2_1 \
-		primitive-0.7.3.0_2 \
+		primitive-0.7.4.0 \
 		process-1.6.13.1_1 \
 		profunctors-5.6.2_2 \
 		protolude-0.3.2 \
@@ -106,25 +107,25 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		reflection-2.1.6_1 \
 		regex-base-0.94.0.2_1 \
 		regex-tdfa-1.3.2 \
-		resourcet-1.2.6 \
+		resourcet-1.3.0 \
 		safe-0.3.19 \
 		scientific-0.3.7.0_3 \
 		semialign-1.2.0.1_3 \
 		semigroupoids-5.3.7 \
 		semigroups-0.20 \
-		serialise-0.2.5.0 \
+		serialise-0.2.6.0_1 \
 		sourcemap-0.1.7 \
-		split-0.2.3.4_2 \
+		split-0.2.3.5 \
 		splitmix-0.1.0.4_1 \
 		stm-chans-3.0.0.6 \
-		streaming-commons-0.2.2.4 \
+		streaming-commons-0.2.2.5 \
 		strict-0.4.0.1_4 \
 		stringsearch-0.3.6.6_1 \
-		syb-0.7.2.1 \
+		syb-0.7.2.2 \
 		tagged-0.8.6.1_3 \
 		tagsoup-0.14.8 \
 		text-short-0.1.5_1 \
-		th-abstraction-0.4.4.0 \
+		th-abstraction-0.4.5.0 \
 		th-compat-0.1.4 \
 		these-1.1.1.1_6 \
 		time-compat-1.9.6.1_4 \
@@ -133,14 +134,14 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		type-equality-1_4 \
 		typed-process-0.2.10.1 \
 		uniplate-1.6.13_1 \
-		unix-compat-0.6 \
-		unix-time-0.4.7 \
+		unix-compat-0.6_1 \
+		unix-time-0.4.8 \
 		unliftio-core-0.2.0.1_2 \
 		unordered-containers-0.2.19.1_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5_3 \
 		vector-0.12.3.1_2 \
-		vector-algorithms-0.9.0.1 \
+		vector-algorithms-0.9.0.1_1 \
 		void-0.7.3 \
 		witherable-0.4.2_3 \
 		xss-sanitize-0.3.7_1 \

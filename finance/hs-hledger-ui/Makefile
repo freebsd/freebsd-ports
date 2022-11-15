@@ -1,5 +1,6 @@
 PORTNAME=	hledger-ui
 DISTVERSION=	1.25
+PORTREVISION=	1
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,35 +15,36 @@ USE_LOCALE=	en_US.UTF-8
 USE_CABAL=	Decimal-0.5.2 \
 		Diff-0.4.1 \
 		Glob-0.10.2_3 \
-		OneTuple-0.3.1_2 \
+		OneTuple-0.3.1_3 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		aeson-2.0.3.0 \
-		aeson-pretty-0.8.9_1 \
+		aeson-2.1.1.0 \
+		aeson-pretty-0.8.9_2 \
 		ansi-terminal-0.11.3 \
 		ansi-wl-pprint-0.6.9_3 \
-		assoc-1.0.2_2 \
-		async-2.2.4_1 \
-		attoparsec-0.14.4_1 \
-		base-compat-0.12.1 \
-		base-compat-batteries-0.12.1_2 \
-		base-orphans-0.8.6 \
-		bifunctors-5.5.12 \
+		assoc-1.0.2_3 \
+		async-2.2.4_2 \
+		attoparsec-0.14.4_2 \
+		base-compat-0.12.2 \
+		base-compat-batteries-0.12.2 \
+		base-orphans-0.8.7 \
+		bifunctors-5.5.13 \
+		bimap-0.5.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_2 \
+		blaze-markup-0.8.2.8_3 \
 		brick-0.68.1 \
-		cabal-doctest-1.0.9 \
+		cabal-doctest-1.0.9_2 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.2.0_7 \
+		cassava-0.5.3.0 \
 		cassava-megaparsec-2.0.4 \
 		clock-0.8.3 \
 		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
-		config-ini-0.2.4.0_2 \
+		config-ini-0.2.5.0 \
 		contravariant-1.5.5 \
 		control-monad-free-0.6.2 \
 		csv-0.1.2 \
@@ -52,76 +54,77 @@ USE_CABAL=	Decimal-0.5.2 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.2_2 \
+		data-fix-0.3.2_3 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		doclayout-0.3.1.1 \
 		emojis-0.1.2 \
-		extra-1.7.10 \
+		extra-1.7.12 \
 		file-embed-0.0.15.0 \
 		fsnotify-0.3.0.1_2 \
-		githash-0.1.6.2 \
-		hashable-1.4.0.2 \
-		hashtables-1.3 \
+		generically-0.1 \
+		githash-0.1.6.3 \
+		hashable-1.4.1.0 \
+		hashtables-1.3.1 \
 		hledger-1.25 \
 		hledger-lib-1.25 \
 		html-1.0.1.2 \
-		indexed-traversable-0.1.2_1 \
-		indexed-traversable-instances-0.1.1 \
-		integer-logarithms-1.0.3.1_2 \
-		lucid-2.11.1 \
+		indexed-traversable-0.1.2_2 \
+		indexed-traversable-instances-0.1.1.1 \
+		integer-logarithms-1.0.3.1_3 \
+		lucid-2.11.1_1 \
 		math-functions-0.3.4.2 \
-		megaparsec-9.2.0_2 \
-		microlens-0.4.12.0 \
-		microlens-ghc-0.4.13.1 \
-		microlens-mtl-0.2.0.1 \
-		microlens-platform-0.4.2.1 \
-		microlens-th-0.4.3.10 \
-		mmorph-1.2.0_2 \
+		megaparsec-9.2.2 \
+		microlens-0.4.13.0 \
+		microlens-ghc-0.4.14.0 \
+		microlens-mtl-0.2.0.2 \
+		microlens-platform-0.4.3.2 \
+		microlens-th-0.4.3.10_1 \
+		mmorph-1.2.0_3 \
 		old-locale-1.0.0.7_2 \
 		optparse-applicative-0.17.0.0 \
-		parallel-3.2.2.0_4 \
+		parallel-3.2.2.0_5 \
 		parser-combinators-1.3.0 \
-		pretty-simple-4.1.0.0 \
+		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.7.3.0 \
-		random-1.2.1 \
-		regex-base-0.94.0.2 \
-		regex-tdfa-1.3.1.2 \
+		primitive-0.7.4.0 \
+		random-1.2.1.1 \
+		regex-base-0.94.0.2_1 \
+		regex-tdfa-1.3.2 \
 		safe-0.3.19 \
-		scientific-0.3.7.0_2 \
-		semialign-1.2.0.1_1 \
+		scientific-0.3.7.0_3 \
+		semialign-1.2.0.1_3 \
 		semigroupoids-5.3.7 \
-		shakespeare-2.0.27 \
-		split-0.2.3.4_2 \
-		splitmix-0.1.0.4 \
+		shakespeare-2.0.30 \
+		split-0.2.3.5 \
+		splitmix-0.1.0.4_1 \
 		strict-0.4.0.1_4 \
 		tabular-0.2.2.8 \
-		tagged-0.8.6.1_2 \
-		tasty-1.4.2.1_2 \
+		tagged-0.8.6.1_3 \
+		tasty-1.4.2.3 \
 		tasty-hunit-0.10.0.3 \
 		temporary-1.3 \
-		text-short-0.1.5 \
-		text-zipper-0.11 \
-		th-abstraction-0.4.3.0 \
-		th-compat-0.1.3_1 \
-		th-lift-0.8.2_1 \
-		these-1.1.1.1_5 \
-		time-compat-1.9.6.1_3 \
+		text-short-0.1.5_1 \
+		text-zipper-0.12 \
+		th-abstraction-0.4.5.0 \
+		th-compat-0.1.4 \
+		th-lift-0.8.2_2 \
+		these-1.1.1.1_6 \
+		time-compat-1.9.6.1_4 \
 		timeit-2.0_2 \
-		transformers-compat-0.7.1_1 \
+		transformers-compat-0.7.2 \
 		uglymemo-0.1.0.1 \
 		unbounded-delays-0.1.1.1 \
-		unix-compat-0.5.4_1 \
-		unordered-containers-0.2.19.1 \
+		unix-compat-0.6_1 \
+		unordered-containers-0.2.19.1_1 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.16 \
-		uuid-types-1.0.5_2 \
-		vector-0.12.3.1_1 \
-		vty-5.35.1 \
+		uuid-types-1.0.5_3 \
+		vector-0.12.3.1_2 \
+		vty-5.37 \
 		wcwidth-0.0.2 \
-		witherable-0.4.2_2 \
+		witherable-0.4.2_3 \
 		wizards-1.0.3_1 \
 		word-wrap-0.5
 

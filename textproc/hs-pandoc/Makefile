@@ -1,5 +1,6 @@
 PORTNAME=	pandoc
 PORTVERSION=	2.19.2
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,7 +24,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.1.0.0_2 \
+		aeson-2.1.1.0 \
 		aeson-pretty-0.8.9_2 \
 		ansi-terminal-0.11.3 \
 		ansi-wl-pprint-0.6.9_3 \
@@ -34,7 +35,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		assoc-1.0.2_3 \
 		async-2.2.4_2 \
 		attoparsec-0.14.4_2 \
-		attoparsec-iso8601-1.0.2.1 \
+		attoparsec-iso8601-1.1.0.0 \
 		auto-update-0.1.6 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
@@ -55,14 +56,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.3 \
-		citeproc-0.8.0.1 \
+		citeproc-0.8.0.2 \
 		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		commonmark-0.2.2 \
-		commonmark-extensions-0.2.3.2 \
+		commonmark-extensions-0.2.3.3 \
 		commonmark-pandoc-0.2.1.2 \
 		comonad-5.0.8_1 \
-		conduit-1.3.4.2 \
+		conduit-1.3.4.3_1 \
 		conduit-extra-1.3.6 \
 		connection-0.3.1_1 \
 		constraints-0.13.4 \
@@ -87,7 +88,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		file-embed-0.0.15.0 \
 		generically-0.1 \
 		gridtables-0.0.3.0_1 \
-		haddock-library-1.11.0 \
+		haddock-library-1.11.0_1 \
 		happy-1.20.0_1 \
 		hashable-1.4.1.0 \
 		haskell-lexer-1.1 \
@@ -105,7 +106,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hslua-module-version-1.0.3 \
 		hslua-objectorientation-2.2.1 \
 		hslua-packaging-2.2.1 \
-		http-api-data-0.4.3_6 \
+		http-api-data-0.5_1 \
 		http-client-0.7.13.1 \
 		http-client-tls-0.3.6.1 \
 		http-date-0.0.11 \
@@ -118,7 +119,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		iproute-1.7.12 \
 		ipynb-0.2_1 \
 		jira-wiki-markup-1.4.0_1 \
-		libyaml-0.1.2 \
+		libyaml-0.1.2_1 \
 		lpeg-1.0.3 \
 		lua-2.2.1 \
 		memory-0.18.0 \
@@ -139,33 +140,35 @@ USE_CABAL=	Glob-0.10.2_3 \
 		primitive-0.7.4.0 \
 		psqueues-0.2.7.3 \
 		random-1.2.1.1 \
+		recv-0.0.0 \
 		resourcet-1.2.6 \
 		safe-0.3.19 \
+		safe-exceptions-0.1.7.3 \
 		scientific-0.3.7.0_3 \
 		semialign-1.2.0.1_3 \
 		semigroupoids-5.3.7 \
-		servant-0.19_4 \
-		servant-server-0.19.1_2 \
+		servant-0.19.1 \
+		servant-server-0.19.2 \
 		simple-sendfile-0.2.30 \
 		singleton-bool-0.1.6_2 \
-		skylighting-0.13 \
-		skylighting-core-0.13_1 \
+		skylighting-0.13.1.1 \
+		skylighting-core-0.13.1.1 \
 		skylighting-format-ansi-0.1 \
-		skylighting-format-blaze-html-0.1 \
+		skylighting-format-blaze-html-0.1.1 \
 		skylighting-format-latex-0.1 \
 		socks-0.6.1 \
-		some-1.0.4_1 \
+		some-1.0.4.1 \
 		sop-core-0.5.0.2_1 \
 		split-0.2.3.5 \
 		splitmix-0.1.0.4_1 \
-		streaming-commons-0.2.2.4 \
+		streaming-commons-0.2.2.5 \
 		strict-0.4.0.1_4 \
 		string-conversions-0.4.0.1 \
 		syb-0.7.2.2 \
 		tagged-0.8.6.1_3 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
-		texmath-0.12.5.2 \
+		texmath-0.12.5.4 \
 		text-conversions-0.3.1.1 \
 		text-short-0.1.5_1 \
 		th-abstraction-0.4.5.0 \
@@ -174,32 +177,32 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-lift-instances-0.1.20 \
 		these-1.1.1.1_6 \
 		time-compat-1.9.6.1_4 \
-		time-manager-0.0.0 \
+		time-manager-0.0.0_1 \
 		tls-1.6.0 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		type-equality-1_4 \
 		typed-process-0.2.10.1 \
-		unicode-collation-0.1.3.2 \
-		unicode-data-0.3.0_2 \
-		unicode-transforms-0.4.0.1_1 \
+		unicode-collation-0.1.3.3 \
+		unicode-data-0.4.0 \
+		unicode-transforms-0.4.0.1_2 \
 		uniplate-1.6.13_1 \
-		unix-compat-0.6 \
+		unix-compat-0.6_1 \
 		unix-time-0.4.8 \
-		unliftio-0.2.22.0 \
+		unliftio-0.2.23.0 \
 		unliftio-core-0.2.0.1_2 \
 		unordered-containers-0.2.19.1_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5_3 \
 		vault-0.3.1.5_2 \
 		vector-0.13.0.0_1 \
-		vector-algorithms-0.9.0.1 \
+		vector-algorithms-0.9.0.1_1 \
 		vector-stream-0.1.0.0_1 \
 		wai-3.2.3 \
 		wai-app-static-3.1.7.4 \
-		wai-extra-3.1.12.1 \
+		wai-extra-3.1.13.0_1 \
 		wai-logger-2.4.0 \
-		warp-3.3.22 \
+		warp-3.3.23 \
 		witherable-0.4.2_3 \
 		word8-0.1.3 \
 		x509-1.7.7 \
@@ -207,10 +210,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
 		xml-1.3.14_2 \
-		xml-conduit-1.9.1.1_1 \
+		xml-conduit-1.9.1.1_2 \
 		xml-types-0.3.8 \
-		yaml-0.11.8.0 \
-		zip-archive-0.4.2.1 \
+		yaml-0.11.8.0_2 \
+		zip-archive-0.4.2.2 \
 		zlib-0.6.3.0
 
 CABAL_PROJECT=		remove

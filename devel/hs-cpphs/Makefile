@@ -11,6 +11,6 @@ LICENSE=	LGPL21
 
 USES=		cabal
 
-USE_CABAL=	polyparse-1.13_4
+USE_CABAL=	polyparse-1.13_5
 
 .include <bsd.port.mk>

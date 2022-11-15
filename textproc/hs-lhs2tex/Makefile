@@ -13,9 +13,9 @@ USES=		cabal
 
 USE_TEX=	latex dvipsk
 
-USE_CABAL=	regex-base-0.94.0.2 \
-		regex-compat-0.95.2.1_1 \
-		regex-posix-0.96.0.1
+USE_CABAL=	regex-base-0.94.0.2_1 \
+		regex-compat-0.95.2.1_2 \
+		regex-posix-0.96.0.1_1
 
 CABAL_EXECUTABLES=	lhs2TeX
 

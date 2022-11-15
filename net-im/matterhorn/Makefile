@@ -1,6 +1,6 @@
 PORTNAME=	matterhorn
 PORTVERSION=	50200.16.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,136 +11,135 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	HTTP-4000.4.0 \
+USE_CABAL=	HTTP-4000.4.1_1 \
 		Hclip-3.0.0.4 \
-		OneTuple-0.3.1_2 \
+		OneTuple-0.3.1_3 \
 		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.0.3.0 \
+		aeson-2.0.3.0_1 \
 		ansi-terminal-0.11.3 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		aspell-pipe-0.6 \
-		assoc-1.0.2_2 \
-		async-2.2.4_1 \
-		attoparsec-0.14.4_1 \
-		base-compat-0.12.1 \
-		base-compat-batteries-0.12.1_2 \
-		base-orphans-0.8.6 \
+		assoc-1.0.2_3 \
+		async-2.2.4_2 \
+		attoparsec-0.14.4_2 \
+		base-compat-0.12.2 \
+		base-compat-batteries-0.12.2 \
+		base-orphans-0.8.7 \
 		base64-bytestring-1.2.1.0 \
-		basement-0.0.14 \
-		bifunctors-5.5.12 \
+		basement-0.0.15 \
+		bifunctors-5.5.13 \
+		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_2 \
+		blaze-markup-0.8.2.8_3 \
 		brick-0.68.1 \
 		brick-skylighting-0.3 \
 		bytestring-builder-0.10.8.2.0 \
-		cabal-doctest-1.0.9 \
+		cabal-doctest-1.0.9_2 \
 		case-insensitive-1.2.1.0 \
-		cereal-0.5.8.2 \
+		cereal-0.5.8.3 \
 		clock-0.8.3 \
 		colour-2.3.6 \
 		commonmark-0.2.2 \
-		commonmark-extensions-0.2.3.1 \
+		commonmark-extensions-0.2.3.3 \
 		comonad-5.0.8_1 \
-		conduit-1.3.4.2 \
-		conduit-extra-1.3.5 \
-		config-ini-0.2.4.0_2 \
+		conduit-1.3.4.3_1 \
+		conduit-extra-1.3.6 \
+		config-ini-0.2.5.0 \
 		connection-0.3.1_1 \
 		contravariant-1.5.5 \
-		cryptohash-md5-0.11.101.0 \
-		cryptohash-sha1-0.11.101.0 \
+		cryptohash-md5-0.11.101.0_1 \
+		cryptohash-sha1-0.11.101.0_1 \
 		cryptonite-0.30 \
 		data-clist-0.1.2.3_1 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_2 \
+		data-fix-0.3.2_3 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		emojis-0.1.2 \
-		entropy-0.4.1.7 \
+		entropy-0.4.1.10 \
 		extensible-exceptions-0.1.1.4 \
 		gitrev-1.3.1 \
 		happy-1.20.0_1 \
 		hashable-1.3.5.0_1 \
 		haskell-lexer-1.1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.8 \
-		http-media-0.8.0.0_6 \
-		indexed-traversable-0.1.2_1 \
-		indexed-traversable-instances-0.1.1 \
-		integer-logarithms-1.0.3.1_2 \
+		hsc2hs-0.68.8_1 \
+		http-media-0.8.0.0_7 \
+		indexed-traversable-0.1.2_2 \
+		indexed-traversable-instances-0.1.1.1 \
+		integer-logarithms-1.0.3.1_3 \
 		mattermost-api-50200.12.0 \
-		megaparsec-9.2.1 \
-		memory-0.17.0 \
+		megaparsec-9.2.2 \
+		memory-0.18.0 \
 		microlens-0.4.12.0 \
-		microlens-ghc-0.4.13.1 \
-		microlens-mtl-0.2.0.1 \
+		microlens-ghc-0.4.13.2 \
+		microlens-mtl-0.2.0.2 \
 		microlens-platform-0.4.2.1 \
-		microlens-th-0.4.3.10 \
-		modern-uri-0.3.4.4 \
-		monad-control-1.0.3.1 \
+		microlens-th-0.4.3.10_1 \
+		modern-uri-0.3.6.0 \
 		mono-traversable-1.0.15.3 \
 		network-3.1.2.7 \
 		network-info-0.2.1 \
 		network-uri-2.6.4.1 \
-		parallel-3.2.2.0_4 \
+		parallel-3.2.2.0_5 \
 		parser-combinators-1.3.0 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
-		primitive-0.7.3.0 \
+		primitive-0.7.4.0 \
 		profunctors-5.6.2_2 \
 		random-1.1_1 \
 		reflection-2.1.6_1 \
-		resource-pool-0.2.3.2 \
-		resourcet-1.2.4.3_1 \
+		resource-pool-0.3.1.0 \
+		resourcet-1.3.0 \
 		safe-0.3.19 \
-		scientific-0.3.7.0_2 \
-		semialign-1.2.0.1_1 \
+		scientific-0.3.7.0_3 \
+		semialign-1.2.0.1_3 \
 		semigroupoids-5.3.7 \
 		semigroups-0.19.2_2 \
-		skylighting-core-0.12.3 \
+		skylighting-core-0.12.3.1 \
 		socks-0.6.1 \
-		split-0.2.3.4_2 \
-		splitmix-0.1.0.4 \
+		split-0.2.3.5 \
+		splitmix-0.1.0.4_1 \
 		stm-delay-0.1.1.1 \
-		streaming-commons-0.2.2.4 \
+		streaming-commons-0.2.2.5 \
 		strict-0.4.0.1_4 \
-		tagged-0.8.6.1_2 \
+		tagged-0.8.6.1_3 \
 		temporary-1.3 \
-		text-short-0.1.5 \
+		text-short-0.1.5_1 \
 		text-zipper-0.11 \
-		th-abstraction-0.4.3.0 \
-		th-compat-0.1.3_1 \
-		these-1.1.1.1_5 \
-		time-compat-1.9.6.1_3 \
+		th-abstraction-0.4.5.0 \
+		th-compat-0.1.4 \
+		these-1.1.1.1_6 \
+		time-compat-1.9.6.1_4 \
 		timezone-olson-0.2.1 \
 		timezone-series-0.1.13_1 \
-		tls-1.5.7 \
-		transformers-base-0.4.6 \
-		transformers-compat-0.7.1_1 \
-		typed-process-0.2.8.0_1 \
-		unicode-data-0.3.0_1 \
-		unicode-transforms-0.4.0.1 \
+		tls-1.6.0 \
+		transformers-compat-0.7.2 \
+		typed-process-0.2.10.1 \
+		unicode-data-0.4.0 \
+		unicode-transforms-0.4.0.1_2 \
 		unliftio-core-0.2.0.1_2 \
-		unordered-containers-0.2.19.1 \
+		unordered-containers-0.2.19.1_1 \
 		utf8-string-1.0.2 \
-		uuid-1.3.15_1 \
-		uuid-types-1.0.5_2 \
-		vector-0.12.3.1_1 \
-		vector-algorithms-0.8.0.4_1 \
+		uuid-1.3.15_2 \
+		uuid-types-1.0.5_3 \
+		vector-0.12.3.1_2 \
+		vector-algorithms-0.9.0.1_1 \
 		vty-5.35.1 \
 		websockets-0.12.7.3_1 \
-		witherable-0.4.2_2 \
+		witherable-0.4.2_3 \
 		word-wrap-0.4.1_1 \
-		x509-1.7.6 \
+		x509-1.7.7 \
 		x509-store-1.6.9 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
 		xdg-basedir-0.2.2 \
-		xml-conduit-1.9.1.1 \
+		xml-conduit-1.9.1.1_2 \
 		xml-types-0.3.8 \
 		zlib-0.6.3.0
 
