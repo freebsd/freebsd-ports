@@ -190,6 +190,7 @@
     SUBDIR += mopac
     SUBDIR += mpb
     SUBDIR += mpqc
+    SUBDIR += mrchem
     SUBDIR += mrcpp
     SUBDIR += msms
     SUBDIR += mstore

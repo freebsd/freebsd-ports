@@ -1,0 +1,6 @@
+MRChem is a numerical real-space code for molecular electronic structure
+calculations within the self-consistent field (SCF) approximations of quantum
+chemistry (Hartree-Fock and Density Functional Theory).
+
+The code is being developed at the Hylleraas Centre for Quantum Molecular
+Sciences at UiT - The Arctic University of Norway.
