@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+  <appender name="jetty" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <File>/var/log/shibboleth/jetty.log</File>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>/var/log/shibboleth/jetty-%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+    </rollingPolicy>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <charset>UTF-8</charset>
+      <Pattern>%date{ISO8601} - %level [%logger:%line] - %msg%n</Pattern>
+    </encoder>
+  </appender>
+  <root level="INFO">
+    <appender-ref ref="jetty" />
+  </root>
+  <logger name="org.springframework" level="OFF" />
+  <logger name="ch.qos.logback" level="WARN" />
+</configuration>

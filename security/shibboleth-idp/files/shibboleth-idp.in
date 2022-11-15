@@ -1,0 +1,87 @@
+#!/bin/sh
+
+# PROVIDE: shibboleth-idp
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable shibboleth_idp:
+#
+# shibboleth_idp_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=shibboleth_idp
+rcvar=shibboleth_idp_enable
+
+command="%%PREFIX%%/sbin/shibboleth-idp.sh"
+command_args="start"
+extra_commands="idpstatus initupgrade"
+start_precmd="shibboleth_idp_start_precmd"
+initupgrade_cmd="shibboleth_idp_initupgrade"
+
+# set defaults
+shibboleth_idp_enable=${shibboleth_idp_enable:-"NO"}
+shibboleth_idp_entityid=${shibboleth_idp_entityid:-""}
+shibboleth_idp_hostname=${shibboleth_idp_hostname:-""}
+shibboleth_idp_keysize=${shibboleth_idp_keysize:-"3072"}
+shibboleth_idp_scope=${shibboleth_idp_scope:-""}
+shibboleth_idp_user=${shibboleth_idp_user:-"%%SHIBUSER%%"}
+shibboleth_idp_group=${shibboleth_idp_group:-"%%SHIBGROUP%%"}
+
+load_rc_config ${name}
+
+if test -n "${shibboleth_idp_java_version}" ; then
+    JAVA_HOME=$(JAVA_VERSION="${shibboleth_idp_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    procname=$(JAVA_VERSION="${shibboleth_idp_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+else
+    JAVA_HOME=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    procname=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+fi
+
+export JAVA_HOME
+
+shibboleth_idp_precmd() {
+    if [ -z ${shibboleth_idp_scope} ]; then
+	echo "$0: WARNING: shibboleth_idp_scope is not defined in rc.conf."
+	echo "$0: Example: sysrc shibboleth_idp_scope=\"example.com\""
+	exit 1
+    fi
+    if [ -z ${shibboleth_idp_entityid} ]; then
+	echo "$0: WARNING: shibboleth_idp_entityid is not defined in rc.conf."
+	echo "$0: Example: sysrc shibboleth_idp_entityid=\"https://shib.example.com/idp/shibboleth\""
+	exit 1
+    fi
+    if [ -z ${shibboleth_idp_hostname} ]; then
+	echo "$0: WARNING: shibboleth_idp_hostname is not defined in rc.conf."
+	echo "$0: Example: sysrc shibboleth_idp_hostname=\"shibboleth.example.com\""
+	exit 1
+    fi
+}
+
+shibboleth_idp_start_precmd() {
+    shibboleth_idp_precmd
+
+    if [ ! -r "%%WWWDIR%%/war/idp.war" ]; then
+	echo "$0: WARNING: /usr/local/www/shibboleth/war/idp.war is not readable."
+	echo "$0: You must run: service $(basename $0) initupgrade first"
+	exit 1
+    fi
+}
+
+shibboleth_idp_initupgrade() {
+    shibboleth_idp_precmd
+
+    KEYSTORE=`/usr/bin/openssl rand -base64 32`
+    COOKIE=`/usr/bin/openssl rand -base64 32`
+
+    /usr/bin/sed -i'.bak' -e "s|%%KEYSTORE%%|${KEYSTORE}|g" -e "s|%%KEYMANAGER%%|${KEYMANAGER}|g" %%WWWDIR%%/start.d/idp.ini
+    /bin/rm -f %%WWWDIR%%/idp.ini.bak
+
+    PATH="${PATH}:%%LOCALBASE%%/bin"
+    %%DATADIR%%/bin/install.sh -Didp.keysize=${shibboleth_idp_keysize} -Didp.target.dir=%%WWWDIR%% -Didp.src.dir=%%DATADIR%% -Didp.conf.credentials.group=%%SHIBUSER%% -Didp.conf.credentials.filemode=640 -Didp.keystore.password=${KEYSTORE} -Didp.sealer.password=${COOKIE} -Didp.host.name=${shibboleth_idp_hostname} -Didp.scope=${shibboleth_idp_scope} -Didp.entityID=${shibboleth_idp_entityid} -Didp.noprompt
+    /usr/bin/sed -i'.bak' -e "s|:8443||g" %%WWWDIR%%/metadata/idp-metadata.xml
+}
+
+run_rc_command "$1"

@@ -1,0 +1,42 @@
+[
+{ type: install
+  message: <<EOM
+This package makes the following assumptions:
+- The idP listens on 127.0.0.1
+- Another webserver (such as nginx or apache) will handle TLS termination
+- This is the only jetty-based application on this host
+- idP backchannel communication is not required
+
+To get started:
+    # sysrc shibboleth_idp_scope="example.com"
+    # sysrc shibboleth_idp_hostname="shibboleth.example.com"
+    # sysrc shibboleth_idp_entityid="shibboleth.example.com/idp/shibboleth"
+    # sysrc shibboleth-idp_enable="YES"
+
+Upgrade/create the deployment by running:
+    # service shibboleth-idp initupgrade
+
+Review the configuration files in %%WWWDIR%%:
+- start.d/idp.ini
+- start.d/http.ini
+
+Start Shibboleth:
+    # service shibboleth-idp start
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+You must run the following to complete the upgrade:
+    # service shibboleth-idp initupgrade
+    # service shibboleth-idp restart
+EOM
+}
+{ type: remove
+  message: <<EOM
+If Shibboleth is removed, and no longer needed, you can
+safely delete this directory:
+
+    %%WWWDIR%%
+EOM
+}
+]
