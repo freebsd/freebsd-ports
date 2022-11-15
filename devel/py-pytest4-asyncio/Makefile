@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/pytest-asyncio/
 LICENSE=	APACHE20
 
 DEPRECATED=	legacy version for pytest4 no longer used by any port
-EXPIRATION_DATA=2022-11-19
+EXPIRATION_DATE=2022-11-19
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio
 
