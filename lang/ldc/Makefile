@@ -19,7 +19,8 @@ BROKEN_riscv64=	fails to compile: unable to get target for 'riscv64-portbld-free
 BUILD_DEPENDS=	gdmd>0:devel/gdmd
 RUN_DEPENDS=	llvm${_LLVM_VER}>0:devel/llvm${_LLVM_VER}
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
-		libgphobos.so:lang/gcc${_GCC_VER}
+		libgphobos.so:lang/gcc${_GCC_VER} \
+		libLLVM-${_LLVM_VER}.so:devel/llvm${_LLVM_VER}
 
 USES=		ninja cmake:insource pkgconfig
 
