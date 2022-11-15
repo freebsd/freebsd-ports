@@ -1,5 +1,5 @@
 PORTNAME=	mkvtoolnix
-PORTVERSION=	71.1.0
+PORTVERSION=	72.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -29,7 +29,6 @@ USES=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env qt:5 tar:xz
 USE_QT=		buildtools:build concurrent core linguisttools:build multimedia svg
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-docbook-xsl-root=${PREFIX}/share/xsl/docbook \
 		--disable-qt6
