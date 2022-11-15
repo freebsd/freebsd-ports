@@ -1,5 +1,5 @@
 PORTNAME=	ocsinventory-ocsreports
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
