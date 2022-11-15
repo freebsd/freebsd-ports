@@ -1,6 +1,5 @@
 PORTNAME=		krb5
-PORTVERSION=		1.19.3
-PORTREVISION=		1
+PORTVERSION=		1.19.4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -9,7 +8,6 @@ PKGNAMESUFFIX=		-119
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
-PATCHFILES=		2022-001-patch-r119.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
