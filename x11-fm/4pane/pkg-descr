@@ -1,0 +1,6 @@
+4Pane is a multi-pane, detailed-list file manager for Unix-like systems.
+It is designed to be fully-featured without bloat, and aims for speed
+rather than visual effects.  In addition to standard file manager things,
+it offers multiple undo and redo of most operations (including deletions),
+archive management including "virtual browsing" inside archives, multiple
+renaming/duplication of files, terminal emulator, and user-defined tools.
