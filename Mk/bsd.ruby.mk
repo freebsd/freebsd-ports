@@ -155,8 +155,8 @@ RUBY_PORTEPOCH=		1
 #
 # Ruby 3.2
 #
-RUBY_DISTVERSION=	3.2.0-preview2
-RUBY_PORTREVISION=	1
+RUBY_DISTVERSION=	3.2.0-rc1
+RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 
 # When adding a version, please keep the comment in
