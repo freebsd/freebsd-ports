@@ -1,7 +1,6 @@
 PORTNAME=	grex
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
-PORTREVISION=	2
+DISTVERSION=	1.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -15,7 +14,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pemistahl
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		assert_cmd-2.0.4 \
+		anes-0.1.6 \
+		assert_cmd-2.0.5 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bit-set-0.5.2 \
@@ -24,25 +24,29 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		bstr-0.2.15 \
 		bumpalo-3.9.1 \
 		byteorder-1.3.4 \
-		cast-0.2.7 \
 		cast-0.3.0 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-2.34.0 \
-		clap-3.2.15 \
-		clap_derive-3.2.15 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clap-3.2.17 \
+		clap-4.0.18 \
+		clap_derive-4.0.18 \
 		clap_lex-0.2.2 \
+		clap_lex-0.3.0 \
 		console_error_panic_hook-0.1.7 \
-		criterion-0.3.6 \
-		criterion-plot-0.4.4 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.4 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		fastrand-1.6.0 \
 		fixedbitset-0.4.0 \
 		float-cmp-0.9.0 \
@@ -63,20 +67,21 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		heck-0.4.0 \
 		hermit-abi-0.1.17 \
 		indexmap-1.7.0 \
-		indoc-1.0.6 \
+		indoc-1.0.7 \
 		instant-0.1.12 \
-		itertools-0.10.3 \
-		itoa-0.4.8 \
+		io-lifetimes-0.7.3 \
+		itertools-0.10.5 \
 		itoa-1.0.1 \
 		js-sys-0.3.58 \
 		lazy_static-1.4.0 \
-		libc-0.2.125 \
+		libc-0.2.135 \
+		linux-raw-sys-0.0.46 \
 		log-0.4.17 \
 		matches-0.1.8 \
 		matrixmultiply-0.3.2 \
 		memchr-2.4.0 \
 		memoffset-0.6.5 \
-		ndarray-0.15.4 \
+		ndarray-0.15.6 \
 		normalize-line-endings-0.3.0 \
 		num-complex-0.4.0 \
 		num-integer-0.1.44 \
@@ -97,7 +102,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		predicates-tree-1.0.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.36 \
+		proc-macro2-1.0.47 \
 		proptest-1.0.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.0 \
@@ -117,14 +122,14 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rstest-0.15.0 \
 		rstest_macros-0.14.0 \
 		rustc_version-0.4.0 \
+		rustix-0.35.11 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		serde-1.0.137 \
-		serde_cbor-0.11.2 \
+		serde-1.0.136 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.80 \
 		slab-0.4.6 \
@@ -132,8 +137,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		syn-1.0.86 \
 		tempfile-3.3.0 \
 		termcolor-1.1.2 \
-		terminal_size-0.1.17 \
-		textwrap-0.11.0 \
+		terminal_size-0.2.1 \
 		textwrap-0.15.0 \
 		tinytemplate-1.2.1 \
 		treeline-0.1.0 \
@@ -142,8 +146,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unic-common-0.9.0 \
 		unic-ucd-category-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-segmentation-1.9.0 \
-		unicode-width-0.1.9 \
+		unicode-ident-1.0.5 \
+		unicode-segmentation-1.10.0 \
 		unicode-xid-0.2.1 \
 		version_check-0.9.2 \
 		wait-timeout-0.2.0 \
@@ -161,7 +165,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1
 
 PLIST_FILES=	bin/grex
 PORTDOCS=	README.md RELEASE_NOTES.md
