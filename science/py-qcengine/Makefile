@@ -18,13 +18,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>0:sysutils/py-py-cpuinfo@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		mopac:science/mopac \
-		mrchem:science/${PYTHON_PKGNAMEPREFIX}mrchem \
+		mrchem:science/py-mrchem@${PY_FLAVOR} \
 		nwchem:science/nwchem \
 		rdkit>0:science/rdkit \
 		xtb:science/xtb \
 		${PYTHON_PKGNAMEPREFIX}pyberny>0:science/py-pyberny@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}geometric>0:science/py-geometric@${PY_FLAVOR}
-		# last dependencies above are for specific quantum chemistry packages to test with TODO torchani,mopac,openmm,psi4,torsiondrive,mdi
+		# last dependencies above are for specific quantum chemistry packages to test with TODO torchani,openmm,psi4,torsiondrive,mdi
 
 USES=		python:3.8+
 USE_PYTHON=	distutils concurrent autoplist pytest # 1 test fails, see https://github.com/MolSSI/QCEngine/issues/377
