@@ -1,7 +1,7 @@
 PORTNAME=	cmake
 # Remember to update devel/cmake-doc and devel/cmake-gui as well.
 DISTVERSION=	${_CMAKE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
 
-USES=		cmake:_internal compiler:c++11-lang cpe ncurses
+USES=		cmake:_internal compiler:c++11-lang cpe ncurses ssl
 
 CPE_VENDOR=	cmake_project
 HAS_CONFIGURE=	yes
