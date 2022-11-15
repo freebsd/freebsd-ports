@@ -30,14 +30,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 MESON_ARGS=	-Dpdf-build=disabled \
 		-Dshaderc=disabled \
-		-Dvapoursynth=disabled \
 		-Dlibmpv=true
 
 OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND TEST UCHARDET EXAMPLES ZIMG
 OPTIONS_DEFAULT=	ARCHIVE DVDNAV LUAJIT MANPAGES NVDEC OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDLP
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L
+OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L VAPOURSYNTH
 OPTIONS_GROUP_VO=	CACA NVDEC OPENGL SIXEL VAAPI VDPAU VULKAN WAYLAND X11
 OPTIONS_GROUP_AO=	ALSA JACK OPENAL PIPEWIRE PULSEAUDIO SDL SNDIO
 OPTIONS_RADIO=		YOUTUBE
@@ -55,6 +54,7 @@ PIPEWIRE_DESC=		Pipewire sound server support
 RUBBERBAND_DESC=	High quality pitch correction with librubberband
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
+VAPOURSYNTH_DESC=	VapourSynth filter bridge
 VULKAN_DESC=		Vulkan output support
 YTDLP_DESC=		Install yt-dlp (youtube-dl fork)
 YTDL_DESC=		Install youtube-dl
@@ -146,6 +146,9 @@ V4L_MESON_ENABLED=		dvbin
 
 VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
 VAAPI_MESON_ENABLED=		vaapi
+
+VAPOURSYNTH_LIB_DEPENDS=	libvapoursynth-script.so:multimedia/vapoursynth
+VAPOURSYNTH_MESON_ENABLED=	vapoursynth
 
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_MESON_ENABLED=		vdpau
