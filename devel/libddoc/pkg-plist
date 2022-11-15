@@ -5,4 +5,6 @@ include/d/ddoc/macros.d
 include/d/ddoc/package.d
 include/d/ddoc/sections.d
 include/d/ddoc/standalone.d
+include/d/ddoc/types.d
+include/d/ddoc/unhighlight.d
 lib/d/libddoc.a
