@@ -1,5 +1,5 @@
 PORTNAME=	dimod
-DISTVERSION=	0.11.6
+DISTVERSION=	0.12.2
 CATEGORIES=	science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,11 +18,6 @@ GH_ACCOUNT=	dwavesystems
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-PLIST_FILES=	include/dimod/iterators.h \
-		include/dimod/lp.h \
-		include/dimod/quadratic_model.h \
-		include/dimod/utils.h
 
 BINARY_ALIAS=	g++=${CXX} git=true
 
