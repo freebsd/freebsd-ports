@@ -1,5 +1,6 @@
 PORTNAME=	gpu-firmware-kmod
 PORTVERSION=	20220511
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -9,7 +10,20 @@ WWW=		https://github.com/freebsd/drm-kmod
 
 USES=		metaport
 
-RUN_DEPENDS=	gpu-firmware-radeon-kmod-aruba>0:graphics/gpu-firmware-radeon-kmod@aruba \
+OPTIONS_DEFINE=	RADEON AMD
+OPTIONS_DEFAULT=RADEON AMD
+OPTIONS_DEFINE_i386=	INTEL
+OPTIONS_DEFAULT_i386=	INTEL
+OPTIONS_DEFINE_amd64=	INTEL
+OPTIONS_DEFAULT_amd64=	INTEL
+OPTIONS_EXCLUDE_powerpc64=	AMD
+
+RADEON_DESC=	Firmware modules for Radeon GPUs
+AMD_DESC=	Firmware modules for AMD GPUs
+INTEL_DESC=	Firmware modules for Intel GPUs
+
+RADEON_RUN_DEPENDS= \
+		gpu-firmware-radeon-kmod-aruba>0:graphics/gpu-firmware-radeon-kmod@aruba \
 		gpu-firmware-radeon-kmod-barts>0:graphics/gpu-firmware-radeon-kmod@barts \
 		gpu-firmware-radeon-kmod-bonaire>0:graphics/gpu-firmware-radeon-kmod@bonaire \
 		gpu-firmware-radeon-kmod-btc>0:graphics/gpu-firmware-radeon-kmod@btc \
@@ -52,10 +66,8 @@ RUN_DEPENDS=	gpu-firmware-radeon-kmod-aruba>0:graphics/gpu-firmware-radeon-kmod@
 		gpu-firmware-radeon-kmod-turks>0:graphics/gpu-firmware-radeon-kmod@turks \
 		gpu-firmware-radeon-kmod-verde>0:graphics/gpu-firmware-radeon-kmod@verde
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-RUN_DEPENDS+=	gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod@skylake \
+INTEL_RUN_DEPENDS= \
+		gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod@skylake \
 		gpu-firmware-intel-kmod-broxton>0:graphics/gpu-firmware-intel-kmod@broxton \
 		gpu-firmware-intel-kmod-kabylake>0:graphics/gpu-firmware-intel-kmod@kabylake \
 		gpu-firmware-intel-kmod-geminilake>0:graphics/gpu-firmware-intel-kmod@geminilake \
@@ -64,10 +76,9 @@ RUN_DEPENDS+=	gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod
 		gpu-firmware-intel-kmod-elkhartlake>0:graphics/gpu-firmware-intel-kmod@elkhartlake \
 		gpu-firmware-intel-kmod-tigerlake>0:graphics/gpu-firmware-intel-kmod@tigerlake \
 		gpu-firmware-intel-kmod-rocketlake>0:graphics/gpu-firmware-intel-kmod@rocketlake
-.endif
 
-.if ${ARCH} != powerpc64
-RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks \
+AMD_RUN_DEPENDS= \
+		gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks \
 		gpu-firmware-amd-kmod-bonaire>0:graphics/gpu-firmware-amd-kmod@bonaire \
 		gpu-firmware-amd-kmod-carrizo>0:graphics/gpu-firmware-amd-kmod@carrizo \
 		gpu-firmware-amd-kmod-fiji>0:graphics/gpu-firmware-amd-kmod@fiji \
@@ -98,10 +109,13 @@ RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks
 		gpu-firmware-amd-kmod-vega20>0:graphics/gpu-firmware-amd-kmod@vega20 \
 		gpu-firmware-amd-kmod-vegam>0:graphics/gpu-firmware-amd-kmod@vegam \
 		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde
+
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 1301000
-RUN_DEPENDS+=	gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
+AMD_RUN_DEPENDS+= \
+		gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
 		gpu-firmware-amd-kmod-sienna-cichlid>0:graphics/gpu-firmware-amd-kmod@sienna_cichlid
-.endif
 .endif
 
 .include <bsd.port.post.mk>
