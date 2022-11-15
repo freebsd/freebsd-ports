@@ -1,6 +1,6 @@
 PORTNAME=	xtb
-PORTVERSION=	6.4.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	6.5.1
 CATEGORIES=	science
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -14,7 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-USES=		fortran cmake blaslapack:openblas
+LIB_DEPENDS=	libmctc-lib.so:science/mctc-lib
+TEST_DEPENDS=	test-drive>0:devel/test-drive
+
+USES=		blaslapack:openblas cmake:testing fortran blaslapack:openblas
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grimme-lab
