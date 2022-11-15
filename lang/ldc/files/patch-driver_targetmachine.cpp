@@ -1,4 +1,4 @@
---- driver/targetmachine.cpp.orig	2020-06-16 18:15:55 UTC
+--- driver/targetmachine.cpp	2020-06-16 18:15:55 UTC
 +++ driver/targetmachine.cpp
 @@ -444,6 +444,10 @@ createTargetMachine(const std::string targetTriple, co
        // these OSes.
