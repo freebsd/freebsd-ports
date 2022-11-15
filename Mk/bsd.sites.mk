@@ -917,7 +917,7 @@ MASTER_SITE_SAVANNAH+= \
 .  for p in https http
 MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
 .    for m in excellmedia freefr jaist nchc \
-	netcologne netix superb-dca2 superb-sea2 ufpr vorboss
+	netcologne netix ufpr vorboss versaweb
 MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
 .    endfor
 .  endfor
