@@ -1,5 +1,5 @@
 PORTNAME=	dwave-samplers
-DISTVERSION=	1.0.0.dev1
+DISTVERSION=	1.0.0.dev2
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,14 +11,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>0:science/py-dimod@${PY_FLAVOR} \
-		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}reno>0:textproc/py-reno@${PY_FLAVOR}
+		${PYNUMPY}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils cython unittest
+USE_PYTHON=	distutils cython autoplist unittest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
