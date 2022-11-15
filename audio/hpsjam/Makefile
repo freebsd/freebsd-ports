@@ -1,6 +1,7 @@
 PORTNAME=	hpsjam
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.2.6
+PORTREVISION=		1
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -19,6 +20,10 @@ USE_QT=		buildtools:build core gui widgets svg
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 GH_TUPLE=	mborgerding:kissfft:131.1.0:a/kissfft
+
+USER=           nobody
+SUB_LIST=       USER=${USER}
+USE_RC_SUBR=    ${PORTNAME}_server
 
 PLIST_FILES= \
 	bin/HpsJam \
