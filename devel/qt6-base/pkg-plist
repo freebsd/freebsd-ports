@@ -64,6 +64,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_wasm_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventloop_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfactorycacheregistration_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfactoryloader_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfile_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfiledevice_p.h
@@ -174,6 +175,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtextstream_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qthread_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qthreadpool_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimer_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimerinfo_unix_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimezoneprivate_data_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimezoneprivate_p.h

@@ -67,6 +67,7 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsaudioutils_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsiupointer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsmediadevices_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsmediafoundation_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsmfdefs_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsmultimediautils_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwindowsresampler_p.h
