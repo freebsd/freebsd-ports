@@ -6,7 +6,7 @@
 
 parse_options()
 {
-	local _proxylist
+	local OPT _proxylist
 
 	while getopts ap:P:vw: OPT; do
 		# escape meta
@@ -61,7 +61,7 @@ usage()
 	echo '	-P pageprefix when numpages specified (*PA, PP, PR, PT)'
 	echo '	-p https://proxy.tld:port,proxy.tld,ip:port | https-proxylist.txt'
 	echo '	-v verbose'
-	echo '	-w pagewidth (800, *1024, 1280, 1440, 1680, ...)'
+	echo '	-w pagewidth (800, *1024, 1280, 1440, 1680, ... 2500)'
 	echo
 	exit 1
 }
@@ -106,22 +106,16 @@ out()
 
 get_cookie()
 {
-	local cookie_str _return
-
-	# remove old cookie
-	rm "${cookie}" 2>/dev/null
-
 	# get cookie
-	wget ${optcommon} -U"${ua}" --keep-session-cookies \
-		--save-cookies "${cookie}" -O/dev/null \
-		"${baseurl}${bookid}&pg=PA1&jscmd=click3"
+	unset cookie_str
+	cookie_str=$(wget ${optcommon} -S -U"${ua}" -O/dev/null \
+	 "${baseurl}${bookid}&pg=PA1&jscmd=click3" 2>&1 | \
+	sed -ne '/Set-Cookie:/s/^.*\(NID[^=]*=.*domain=.google.com; HttpOnly\).*$/\1/p')
 
-	# fail if non-zero exitcode returned or cookie has wrong format
-	_return=$?
-	cookie_str="$(sed -ne \
-		'/^.google.com[[:space:]]/s/^.*\(NID[^=]*=.*\)$/\1/p' "${cookie}")"
-	if [ ${_return} -ne 0 -o -z "${cookie_str}" ]; then
-		rm "${cookie}" 2>/dev/null
+	# fail only if cookie has wrong format
+	# don't care about non-zero exitcode, redirection from google.com
+	# to national googletld can fail, especially if under the proxy
+	if [ -z "${cookie_str}" ]; then
 		out 'E\n' "cannot get cookie: ${cookie_str}"
 		return 1
 	fi
@@ -146,16 +140,16 @@ get_page()
 	got_pages=$((${got_pages} + 1))
 
 	url="${baseurl}${bookid}&pg=${page}&jscmd=click3"
-	out "$(progress ${got_pages})" "${page}: ${url}&w=${pagewidth} TRY"
+	out "$(progress ${got_pages})" "${page}: ${url} TRY"
 
 	# fetch urls
 	# NB! signatures tied to cookie and ip
-	urls=$(wget ${optcommon} -U"${ua}" --load-cookies "${cookie}" -O- \
+	urls=$(wget ${optcommon} -U"${ua}" --header "Cookie: ${cookie_str}" -O- \
 		"${url}" | tr '}' '\n' | \
 		sed -ne 's/^.*"src":"\(https:\/\/[^"]*\)".*$/\1/; /pg=/s/\\u0026/\&/gp')
 
 	# fetch pages
-	for	url in ${urls}; do
+	for url in ${urls}; do
 		page=${url##*&pg=}; page=${page%%&*}
 
 		# check again if page already downloaded, we usually get a few
@@ -163,7 +157,7 @@ get_page()
 		if [ ! -f "${bookid}/${page}.png" ]; then
 			got_pages=$((${got_pages} + 1))
 
-			wget ${optcommon} -U"${ua}" --load-cookies "${cookie}" \
+			wget ${optcommon} -U"${ua}" --header "Cookie: ${cookie_str}" \
 				-O"${bookid}/${page}.png" "${url}&w=${pagewidth}"
 
 			_return=$?
@@ -245,7 +239,6 @@ make_pagelist()
 	done
 }
 
-
 #
 # MAIN
 #
@@ -297,12 +290,8 @@ if [ ! -d "${bookid}" ]; then
 	mkdir -- "${bookid}" || err 2 "cannot create dir ${bookid}"
 fi
 
-cookie=`mktemp -t cookie` || err 2 'mktemp error'
-
-trap "rm ${cookie} 2>/dev/null; exit 1" 1 2 3 10 13 15
-
 get_retpages
-echo "pages total/retrieved: ~${numpages}/${retpages}"
+echo "pages available/fetched: ${numpages}+/${retpages}"
 
 if [ -z "${proxylist}" ]; then
 	get_pages
@@ -315,5 +304,3 @@ else
 		echo
 	done
 fi
-
-rm "${cookie}" 2>/dev/null
