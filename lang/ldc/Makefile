@@ -1,5 +1,6 @@
 PORTNAME=	ldc
 PORTVERSION=	1.30.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTVERSIONSUFFIX=	-src
@@ -15,11 +16,10 @@ BROKEN_armv7=	fails to compile: Error: undefined identifier _jmp_buf, did you me
 BROKEN_i386=	function core.bitop.bsf (uint v) is not callable using argument types (ulong)
 BROKEN_riscv64=	fails to compile: unable to get target for 'riscv64-portbld-freebsd13.0', see -version and -mtriple.
 
-LLVM_VERSION=	13
-BUILD_DEPENDS=	gdmd>0:devel/gdmd \
-		gdc11:lang/gcc11
-RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
-LIB_DEPENDS=	libconfig.so:devel/libconfig
+BUILD_DEPENDS=	gdmd>0:devel/gdmd
+RUN_DEPENDS=	llvm${_LLVM_VER}>0:devel/llvm${_LLVM_VER}
+LIB_DEPENDS=	libconfig.so:devel/libconfig \
+		libgphobos.so:lang/gcc${_GCC_VER}
 
 USES=		ninja cmake:insource pkgconfig
 
@@ -29,10 +29,12 @@ USES=		ninja cmake:insource pkgconfig
 
 USE_LDCONFIG=	yes
 
-CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}
-LLVM_CONFIG=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
-LDCVER=		${PORTVERSION}
+CC=		${LOCALBASE}/bin/clang${_LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${_LLVM_VER}
+LLVM_CONFIG=	${LOCALBASE}/bin/llvm-config${_LLVM_VER}
+
+_GCC_VER=	11
+_LLVM_VER=	13
 
 .include <bsd.port.pre.mk>
 
@@ -47,5 +49,12 @@ CMAKE_ARGS+=	-DLDC_INSTALL_PREFIX="${PREFIX}" \
 		-DLLVM_CONFIG=${LLVM_CONFIG} \
 		-DBUILD_SHARED_LIBS="BOTH" \
 		-DBUILD_LTO_LIBS=ON
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc-build-runtime
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc-profdata
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc-prune-cache
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldmd2
 
 .include <bsd.port.post.mk>
