@@ -145,6 +145,7 @@
     SUBDIR += tuxnes
     SUBDIR += uae
     SUBDIR += ucon64
+    SUBDIR += uconvert
     SUBDIR += ukncbtl
     SUBDIR += unicorn
     SUBDIR += vba
