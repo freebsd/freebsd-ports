@@ -1,6 +1,6 @@
 PORTNAME=	vuxml
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security textproc
 MASTER_SITES=	http://www.vuxml.org/dtd/vuxml-1/
 DISTFILES=	vuxml-10.dtd  vuxml-model-10.mod \
@@ -32,7 +32,7 @@ dir_DTD=	share/xml/dtd/vuxml
 VUXML_FILE?=	${PKGDIR}/vuln.xml
 VUXML_FLAT_FILE?=	${PKGDIR}/vuln-flat.xml
 _YEAR!=	date +%Y
-VUXML_CURRENT_FILE?=	${PKGDIR}/vuln-${_YEAR}.xml
+VUXML_CURRENT_FILE?=	${PKGDIR}/vuln/${_YEAR}.xml
 
 post-clean:
 	@${RM} "${VUXML_FILE}.tidy"
@@ -53,10 +53,10 @@ do-install:
 
 do-test:
 	@${MKDIR} ${WRKDIR}/test
-	@${CP} ${.CURDIR}/vuln*.xml ${WRKDIR}/test
+	@${CP} -R ${.CURDIR}/vuln.xml ${.CURDIR}/vuln ${WRKDIR}/test
 	@cd ${.CURDIR} && make validate PKGDIR=${WRKDIR}/test
 
-${VUXML_FLAT_FILE}: ${VUXML_FILE} vuln-20??.xml
+${VUXML_FLAT_FILE}: ${VUXML_FILE} vuln/*.xml
 	xmllint -noent ${.ALLSRC:[1]} > ${.TARGET}
 
 validate: tidy
