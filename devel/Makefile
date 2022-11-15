@@ -7325,6 +7325,7 @@
     SUBDIR += termbox
     SUBDIR += termcolor
     SUBDIR += terminality
+    SUBDIR += test-drive
     SUBDIR += tevent
     SUBDIR += tex-kpathsea
     SUBDIR += tex-libtexlua
