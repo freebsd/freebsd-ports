@@ -1,7 +1,12 @@
 PORTNAME=	vulkan-caps-viewer
 DISTVERSION=	3.25
 DISTVERSIONSUFFIX=	_fixed
+PORTREVISION=	1
 CATEGORIES=	graphics wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0b3cd2200019.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
+PATCHFILES+=	f1eb47376404.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan Hardware Capability Viewer
