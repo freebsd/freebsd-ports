@@ -7,7 +7,8 @@ PKGNAMESUFFIX=		-118
 .endif
 
 DEPECATED=		Desupported by MIT following 1.20
-EXPIRY=			2023-05-26
+EXPIRY=			2022-11-30
+IGNORE=			Affected by CVE-2022-42898: integer overflow vulnerabilities in PAC parsing
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
