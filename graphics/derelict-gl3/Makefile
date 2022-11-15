@@ -1,6 +1,6 @@
 PORTNAME=	derelict-gl3
 PORTVERSION=	1.0.24
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -21,12 +21,13 @@ GH_PROJECT=	DerelictGL3
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 post-patch:
 	@${REINPLACE_CMD} -e '13,15d' ${WRKSRC}/dub.json
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${D_INCLUDE_DIR}
