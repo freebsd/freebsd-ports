@@ -37,7 +37,6 @@ LDFLAGS+=	-lcrypto
 
 OPTIONS_DEFINE=		AIRPLAY2 ALAC ALSA MQTT PULSEAUDIO SNDIO
 OPTIONS_DEFAULT=	AIRPLAY2 SNDIO
-#OPTIONS_DEFAULT=	SNDIO
 AIRPLAY2_DESC=		Build with AirPlay 2 protocol support
 ALAC_DESC=		Build with libalac support (experimental)
 MQTT_DESC=		Build with MQTT protocol support
