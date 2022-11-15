@@ -28,8 +28,7 @@ SHEBANG_FILES=	*.py TOOLS/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
-MESON_ARGS=	-Dpdf-build=disabled \
-		-Dshaderc=disabled \
+MESON_ARGS=	-Dshaderc=disabled \
 		-Dlibmpv=true
 
 OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND TEST UCHARDET EXAMPLES ZIMG
