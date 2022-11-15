@@ -1,7 +1,8 @@
 PORTNAME=	mrcpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1.20221026
-CATEGORIES=	science
+PORTREVISION=	1
+CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MultiResolution Computation Program Package
@@ -25,7 +26,7 @@ BINARY_ALIAS=	git=false
 OPTIONS_DEFINE=		ARCH_FLAGS
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	NOMPI MPICH OPENMPI
-OPTIONS_DEFAULT=	OPENMPI
+OPTIONS_DEFAULT=	MPICH # should be same default as in science/mrchem
 
 ARCH_FLAGS_DESC=	Enable architecture-specific compiler flags
 ARCH_FLAGS_CMAKE_BOOL=	ENABLE_ARCH_FLAGS
