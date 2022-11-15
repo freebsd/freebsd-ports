@@ -44,7 +44,6 @@ UPLOAD_DESC=		HTTP file upload plugin
 ICE_LIB_DEPENDS=	libnice.so:net-im/libnice \
 			libgnutls.so:security/gnutls
 ICE_VARS=		ENABLED_PLUGINS+=ice
-ICE_CMAKE_ON=		-DSOUP_VERSION:INT=2
 ICE_VARS_OFF=		DISABLED_PLUGINS+=ice
 RTP_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
@@ -58,6 +57,7 @@ OMEMO_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 OMEMO_VARS=		ENABLED_PLUGINS+=omemo
 OMEMO_CMAKE_BOOL=	BUILD_LIBSIGNAL_IN_TREE
 OMEMO_VARS_OFF=		DISABLED_PLUGINS+=omemo
+UPLOAD_CMAKE_ON=		-DSOUP_VERSION:INT=2
 UPLOAD_VARS=		ENABLED_PLUGINS+=http-files
 UPLOAD_VARS_OFF=	DISABLED_PLUGINS+=http-files
 GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
