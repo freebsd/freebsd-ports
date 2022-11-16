@@ -1,0 +1,21 @@
+@sample etc/containers/containers.conf.sample
+@sample etc/containers/policy.json.sample
+@sample etc/containers/registries.conf.sample
+@sample etc/containers/storage.conf.sample
+share/man/man5/.containerignore.5.gz
+share/man/man5/Containerfile.5.gz
+share/man/man5/containerignore.5.gz
+share/man/man5/containers-auth.json.5.gz
+share/man/man5/containers-certs.d.5.gz
+share/man/man5/containers-mounts.conf.5.gz
+share/man/man5/containers-policy.json.5.gz
+share/man/man5/containers-registries.conf.5.gz
+share/man/man5/containers-registries.conf.d.5.gz
+share/man/man5/containers-registries.d.5.gz
+share/man/man5/containers-signature.5.gz
+share/man/man5/containers-storage.conf.5.gz
+share/man/man5/containers-transports.5.gz
+share/man/man5/containers.conf.5.gz
+@dir etc/containers/certs.d
+@dir etc/containers/hooks.d
+@dir etc/containers/registries.d

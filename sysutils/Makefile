@@ -212,6 +212,7 @@
     SUBDIR += conky-awesome
     SUBDIR += conman
     SUBDIR += consolehm
+    SUBDIR += containers-common
     SUBDIR += consolekit2
     SUBDIR += consul
     SUBDIR += consul-alerts
