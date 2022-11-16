@@ -67,6 +67,9 @@ DEFAULT_FONTPATH_LIST= \
 OPTIONS_DEFINE=	CSD NVIDIA
 OPTIONS_DEFAULT=CSD
 
+# libdecor needs cairo which isn't ported yet (needs to discover intptr_t)
+OPTIONS_EXCLUDE_purecap=	CSD
+
 CSD_DESC=		Client-side decorations via libdecor
 CSD_LIB_DEPENDS=	libdecor-0.so:x11-toolkits/libdecor
 CSD_MESON_TRUE=		libdecor
