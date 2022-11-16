@@ -595,6 +595,7 @@ include/wine/windows/mediaobj.h
 include/wine/windows/mediaobj.idl
 include/wine/windows/medparam.h
 include/wine/windows/medparam.idl
+include/wine/windows/memoryapi.h
 include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
 include/wine/windows/mfapi.h
