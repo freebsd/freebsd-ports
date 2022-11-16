@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230111:
+AUTHOR: vishwin@FreeBSD.org
+
+  USE_PYTHON=pep517 has been added to facilitate building using the
+  new format.
+
+  USE_PYTHON=pep517 takes no arguments. Operation is similar to
+  USE_PYTHON=distutils, although the build backend specified in
+  pyproject.toml shall be specified in BUILD_DEPENDS.
+
+  A usage guide and implementation primer is available at:
+        https://wiki.freebsd.org/Python/PEP-517
+
 20221217:
 AUTHOR: tcberner@FreeBSD.org
 

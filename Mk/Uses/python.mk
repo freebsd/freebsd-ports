@@ -103,6 +103,9 @@
 #	distutils	- Use distutils as do-configure, do-build and
 #			  do-install targets. implies flavors.
 #
+#	pep517		- Follow the PEP-517 standard to build and install wheels
+#			  as do-build and do-install targets. implies flavors.
+#
 #	autoplist	- Automatically generates the packaging list for a
 #			  port that uses distutils when defined.
 #			  requires: distutils
@@ -174,6 +177,18 @@
 # PYDISTUTILS_EGGINFO
 #			- Canonical name for egg-info.
 #			  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}.egg-info
+#
+# PEP517_BUILD_CMD	- Command sequence for a PEP-517 build frontend that builds a wheel.
+#			  default: ${PYTHON_CMD} -m build -n -w
+#
+# PEP517_BUILD_DEPEND	- Port needed to execute ${PEP517_BUILD_CMD}.
+#			  default: ${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR}
+#
+# PEP517_INSTALL_CMD	- Command sequence for a PEP-517 install frontend that installs a wheel.
+#			  default: ${PYTHON_CMD} -m installer -d ${STAGEDIR} --no-compile-bytecode ${BUILD_WRKSRC}/dist/${PORTNAME}-${PORTVERSION}-*.whl
+#
+# PEP517_INSTALL_DEPEND	- Port needed to execute ${PEP517_INSTALL_CMD}.
+#			  default: ${PYTHON_PKGNAMEPREFIX}installer>0:devel/py-installer@${PY_FLAVOR}
 #
 # PYTEST_BROKEN_TESTS	- Lists of 'pytest -k' patterns to skip tests which
 #			  require fixing.
@@ -283,7 +298,7 @@ _PYTHON_RELPORTDIR=		lang/python
 # List all valid USE_PYTHON features here
 _VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run \
 			distutils flavors noegginfo noflavors nose nose2 \
-			optsuffix py3kplist pytest pytest4 pythonprefix \
+			optsuffix pep517 py3kplist pytest pytest4 pythonprefix \
 			unittest unittest2
 _INVALID_PYTHON_FEATURES=
 .  for var in ${USE_PYTHON}
@@ -306,6 +321,12 @@ IGNORE=		uses either USE_PYTHON=pytest or USE_PYTHON=pytest4, not both of them
 # distutils automatically generates flavors depending on the supported
 # versions.
 .  if defined(_PYTHON_FEATURE_DISTUTILS)
+_PYTHON_FEATURE_FLAVORS=	yes
+.  endif
+
+# pep517 automatically generates flavors depending on the supported
+# versions.
+.  if defined(_PYTHON_FEATURE_PEP517)
 _PYTHON_FEATURE_FLAVORS=	yes
 .  endif
 
@@ -595,6 +616,21 @@ RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${P
 .    endif
 .  endif
 
+.  if defined(_PYTHON_FEATURE_PEP517)
+.    if ${PYTHON_VER} == 2.7
+DEV_ERROR+=		"USES=python:2.7 is incompatible with USE_PYTHON=pep517"
+.    endif
+.    if defined(_PYTHON_FEATURE_DISTUTILS)
+DEV_ERROR+=		"USE_PYTHON=distutils is incompatible with USE_PYTHON=pep517"
+.    endif
+.    if defined(_PYTHON_FEATURE_PY3KPLIST)
+DEV_ERROR+=		"USE_PYTHON=py3kplist is incompatible with USE_PYTHON=pep517"
+.    endif
+.    if defined(_PYTHON_FEATURE_NOEGGINFO)
+DEV_ERROR+=		"USE_PYTHON=noegginfo is incompatible with USE_PYTHON=pep517"
+.    endif
+.  endif
+
 # distutils support
 PYSETUP?=		setup.py
 PYDISTUTILS_SETUP?=	-c \
@@ -617,6 +653,12 @@ PYDISTUTILS_PKGNAME?=	${PORTNAME}
 PYDISTUTILS_PKGVERSION?=${PORTVERSION}
 PYDISTUTILS_EGGINFO?=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}.egg-info
 PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# PEP-517 support
+PEP517_BUILD_CMD?=	${PYTHON_CMD} -m build -n -w
+PEP517_BUILD_DEPEND?=	${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR}
+PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer -d ${STAGEDIR} --no-compile-bytecode ${BUILD_WRKSRC}/dist/${PORTNAME}-${PORTVERSION}-*.whl
+PEP517_INSTALL_DEPEND?=	${PYTHON_PKGNAMEPREFIX}installer>0:devel/py-installer@${PY_FLAVOR}
 
 # nose support
 .  if defined(_PYTHON_FEATURE_NOSE)
@@ -669,7 +711,7 @@ add-plist-egginfo:
 .    endfor
 .  endif
 
-.  if defined(_PYTHON_FEATURE_AUTOPLIST) && defined(_PYTHON_FEATURE_DISTUTILS)
+.  if defined(_PYTHON_FEATURE_AUTOPLIST) && (defined(_PYTHON_FEATURE_DISTUTILS) || defined(_PYTHON_FEATURE_PEP517))
 _RELSITELIBDIR=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 _RELLIBDIR=		${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 
@@ -701,7 +743,7 @@ add-plist-python:
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
 .    endif # ${PYTHON_REL} >= 30200 && defined(_PYTHON_FEATURE_PY3KPLIST)
-.  endif # defined(_PYTHON_FEATURE_AUTOPLIST) && defined(_PYTHON_FEATURE_DISTUTILS)
+.  endif # defined(_PYTHON_FEATURE_AUTOPLIST) && (defined(_PYTHON_FEATURE_DISTUTILS) || defined(_PYTHON_FEATURE_PEP517))
 
 # Fix for programs that build python from a GNU auto* environment
 CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
@@ -789,6 +831,35 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 .    endif
 .  endif # defined(_PYTHON_FEATURE_DISTUTILS)
+
+.  if defined(_PYTHON_FEATURE_PEP517)
+.    if !empty(PEP517_BUILD_DEPEND)
+BUILD_DEPENDS+=	${PEP517_BUILD_DEPEND}
+.    endif
+.    if !empty(PEP517_INSTALL_DEPEND)
+BUILD_DEPENDS+=	${PEP517_INSTALL_DEPEND}
+.    endif
+
+.    if !target(do-configure)
+do-configure:
+	@${DO_NADA}
+.    endif
+
+.    if !target(do-build)
+do-build:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_BUILD_CMD}
+.    endif
+
+.    if !target(do-install)
+do-install:
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
+	@${SED} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../bin/|bin/|' \
+		-e 's|\,.*$$||' \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}-${PORTVERSION}.dist-info/RECORD >> ${_PYTHONPKGLIST}
+.    endif
+.  endif # defined(_PYTHON_FEATURE_PEP517)
 
 .  if defined(_PYTHON_FEATURE_NOSE)
 .    if !target(do-test)
