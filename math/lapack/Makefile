@@ -1,5 +1,5 @@
 PORTNAME?=	lapack
-PORTVERSION=	3.10.1
+PORTVERSION=	3.11.0
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
 PORTREVISION=	0
 .else
@@ -9,7 +9,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://github.com/Reference-LAPACK/lapack/archive/refs/tags/:src	\
 		http://www.netlib.org/lapack/:man	\
 		LOCAL/thierry/lapack-${PORTVERSION}/:man
-DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}:src
+DISTFILES=	v${PORTVERSION:R}${EXTRACT_SUFX}:src
 .if make(makesum) || !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
 DISTFILES+=	manpages.tgz:man
 .endif
@@ -22,7 +22,7 @@ WWW?=		https://www.netlib.org/lapack/
 LICENSE?=	BSD3CLAUSE
 
 USES=		cmake:testing cpe fortran
-WRKSRC=		${WRKDIR}/lapack-${PORTVERSION}
+WRKSRC=		${WRKDIR}/lapack-${PORTVERSION:R}
 # The actual math/scilab needs deprecated functions - to be removed later
 CMAKE_ON=	BUILD_SHARED_LIBS BUILD_DEPRECATED
 USE_LDCONFIG=	yes
@@ -51,7 +51,7 @@ LIBS=			cblas
 PLIST_SUB+=		BLAS="@comment " CBLAS="" LAPACK="@comment " XLAPACK="@comment " LAPACKE="@comment "
 .elif defined(LAPACKE_SLAVEPORT)
 USES+=			blaslapack
-CMAKE_ON+=		USE_OPTIMIZED_BLAS USE_OPTIMIZED_LAPACK LAPACKE
+CMAKE_ON+=		USE_OPTIMIZED_LAPACK LAPACKE
 CMAKE_ARGS+=		-DBLAS_LIBRARIES="${LOCALBASE}/lib/libblas.so"		\
 			-DLAPACK_LIBRARIES="${LOCALBASE}/lib/liblapack.so"
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}/LAPACKE
@@ -63,7 +63,7 @@ LIB_DEPENDS+=		libblas.so:math/blas		\
 			liblapack.so:math/lapack	\
 			libxblas.so:math/xblas
 FFLAGS+=		-fallow-argument-mismatch
-CMAKE_ON+=		USE_OPTIMIZED_BLAS USE_XBLAS  BUILD_TESTING
+CMAKE_ON+=		USE_XBLAS  BUILD_TESTING
 CMAKE_ARGS+=		-DBLAS_LIBRARIES="${LOCALBASE}/lib/libblas.so"
 PLIST_SUB+=		BLAS="@comment " CBLAS="@comment " LAPACK="@comment " XLAPACK="" LAPACKE="@comment "
 .else
