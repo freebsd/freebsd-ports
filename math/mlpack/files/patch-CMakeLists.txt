@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-04-25 03:10:15 UTC
+--- CMakeLists.txt.orig	2022-10-24 13:40:50 UTC
 +++ CMakeLists.txt
-@@ -534,7 +534,7 @@ endif ()
+@@ -420,7 +420,7 @@ endif ()
  
  # Determine whether or not this is a git repository, so that we can set the
  # version number if necessary.
