@@ -1,6 +1,6 @@
 --- setup.py.orig	2022-07-21 12:47:45 UTC
 +++ setup.py
-@@ -0,0 +1,76 @@
+@@ -0,0 +1,75 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +
@@ -32,7 +32,7 @@
 +    # Versions should comply with PEP440.  For a discussion on single-sourcing
 +    # the version across setup.py and the project code, see
 +    # https://packaging.python.org/en/latest/single_source_version.html
-+    version="1.9.9",
++    version="1.9.14",
 +    description=description,
 +    long_description=long_description,
 +    # The project's main homepage.
@@ -56,7 +56,7 @@
 +        "Programming Language :: Python :: 3",
 +    ],
 +    # What does your project relate to?
-+    keywords="email,SMTP,IMAP, YARA",
++    keywords="email,SMTP,IMAP",
 +    # You can just specify the packages manually here if your project is
 +    # simple. Or you can use find_packages().
 +    packages=["mailsuite"],
@@ -74,6 +74,5 @@
 +        "html2text>=2020.1.16",
 +        "publicsuffix2>=2.20190812",
 +        "expiringdict==1.2.2",
-+        "yara-python>=4.2.0",
 +    ],
 +)
