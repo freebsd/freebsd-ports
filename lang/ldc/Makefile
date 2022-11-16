@@ -1,9 +1,9 @@
 PORTNAME=	ldc
 PORTVERSION=	1.30.0
+DISTVERSIONSUFFIX=	-src
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
-DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	LLVM-based D compiler

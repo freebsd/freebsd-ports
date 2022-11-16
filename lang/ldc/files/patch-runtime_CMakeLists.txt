@@ -1,6 +1,6 @@
---- runtime/CMakeLists.txt	2022-07-20 12:05:27.000000000 -0500
-+++ runtime/CMakeLists.txt	2022-11-13 19:53:33.442980000 -0500
-@@ -123,6 +123,8 @@
+--- runtime/CMakeLists.txt.orig	2022-07-20 17:05:27 UTC
++++ runtime/CMakeLists.txt
+@@ -123,6 +123,8 @@ if("${C_SYSTEM_LIBS}" STREQUAL "AUTO")
              set(C_SYSTEM_LIBS m c)
          elseif("${TARGET_SYSTEM}" MATCHES "Linux")
              set(C_SYSTEM_LIBS m pthread rt dl)
