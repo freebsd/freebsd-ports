@@ -17,7 +17,7 @@ if [ $? -eq 0 ] ; then
 		category=$(echo "${newish_file}" | awk -F '/' '{print $1}')
 		port=$(echo "${newish_file}" | awk -F '/' '{print $2}')
 		file=$(echo "${newish_file}" | awk -F '/' '{print $3}')
-		valid=$(echo "${file}" | grep -q '^((Makefile|distinfo|pkg-)(.*))|(.*\.mk)$')
+		valid=$(echo "${file}" | grep -Eq '^((Makefile|distinfo|pkg-)(.*))|(.*\.mk)$')
 		if [ $? -ne 0 ] ; then
 			echo "[pre-commit] ERROR: invalid file '${file}' in '${category}/${port}'"
 			status=1
