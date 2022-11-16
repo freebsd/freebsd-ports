@@ -1,9 +1,9 @@
 PORTNAME=	gopherus
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	www
 MASTER_SITES=	SF/gopherus/v${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Classic text interface to the gopherspace
 WWW=		http://gopherus.sourceforge.net/
 
