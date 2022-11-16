@@ -1,0 +1,26 @@
+PORTNAME=	elastix
+DISTVERSION=	5.0.1.20220218
+CATEGORIES=	graphics
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Image registration toolbox
+WWW=		https://elastix.lumc.nl/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
+		libhdf5.so:science/hdf5 \
+		libITKCommon-${ITK_VER}.so:science/InsightToolkit
+
+USES=		cmake:testing compiler:c++14-lang eigen:3
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	SuperElastix
+GH_TAGNAME=	last-itk5.2-support
+
+CMAKE_ON=	ELASTIX_USE_EIGEN
+
+.include <../../science/InsightToolkit/Makefile.version>
+.include <bsd.port.mk>

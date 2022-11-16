@@ -1,0 +1,4 @@
+elastix is open source software, based on the well-known Insight Segmentation
+and Registration Toolkit (ITK). The software consists of a collection of
+algorithms that are commonly used to solve (medical) image registration
+problems.
