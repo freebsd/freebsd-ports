@@ -1,6 +1,5 @@
 PORTNAME=	threadscope
-PORTVERSION=	0.2.14
-PORTREVISION=	2
+PORTVERSION=	0.2.14.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -25,15 +24,15 @@ USE_CABAL=	alex-3.2.7.1 \
 		gtk-0.15.7 \
 		gtk2hs-buildtools-0.13.8.3 \
 		happy-1.20.0_1 \
-		hashable-1.4.0.2 \
-		hashtables-1.3 \
+		hashable-1.4.1.0 \
+		hashtables-1.3.1 \
 		pango-0.13.8.2 \
-		primitive-0.7.3.0 \
+		primitive-0.7.4.0 \
 		random-1.2.1.1 \
-		splitmix-0.1.0.4 \
+		splitmix-0.1.0.4_1 \
 		temporary-1.3 \
 		utf8-string-1.0.2 \
-		vector-0.12.3.1_1
+		vector-0.12.3.1_2
 
 BROKEN_aarch64=	 ld.lld: error: relocation R_AARCH64_PREL64 cannot be used against symbol ... recompile with -fPIC
 
