@@ -151,6 +151,7 @@ VAPOURSYNTH_MESON_ENABLED=	vapoursynth
 
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_MESON_ENABLED=		vdpau
+VDPAU_IMPLIES=			X11
 
 VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
