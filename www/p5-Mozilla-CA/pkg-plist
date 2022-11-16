@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Mozilla/CA.pm
 %%SITE_PERL%%/Mozilla/CA/cacert.pem
-%%SITE_PERL%%/Mozilla/mk-ca-bundle.pl
 %%PERL5_MAN3%%/Mozilla::CA.3.gz
