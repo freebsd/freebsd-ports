@@ -1,6 +1,5 @@
 PORTNAME=	django-registration
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +12,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confusable_homoglyphs>=3.0<4.0:devel/py-confusable_homoglyphs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-registration-redux
