@@ -1,6 +1,8 @@
-TIMESTAMP = 1668511740
-SHA256 (cabal/dhall-1.41.1/dhall-1.41.1.tar.gz) = 9bea36ab0e1c965aef7474fabea67c3cfa3ca272007508ecd7bf22eaaae8d425
-SIZE (cabal/dhall-1.41.1/dhall-1.41.1.tar.gz) = 639147
+TIMESTAMP = 1668589293
+SHA256 (cabal/dhall-1.41.2/dhall-1.41.2.tar.gz) = 6a9a026e698e5c1a1e103fcb376e8494615b03ef2450f0b6c5e6b43877cea592
+SIZE (cabal/dhall-1.41.2/dhall-1.41.2.tar.gz) = 640162
+SHA256 (cabal/dhall-1.41.2/revision/3.cabal) = 21ba5384d9806b936f3eaa3baf0bb61f4447cae5a9295a200d6fff2ecd8310c9
+SIZE (cabal/dhall-1.41.2/revision/3.cabal) = 16281
 SHA256 (cabal/Diff-0.4.1/Diff-0.4.1.tar.gz) = fd5e4aaac7219bcbb14834fb8580ebe0aae905958d0ad74f5338ea290b372670
 SIZE (cabal/Diff-0.4.1/Diff-0.4.1.tar.gz) = 8759
 SHA256 (cabal/OneTuple-0.3.1/OneTuple-0.3.1.tar.gz) = 98853682d52fb4cc37a45cd186fbd77cf2565d3df5171acc4cf026427e103eef

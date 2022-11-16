@@ -1,6 +1,5 @@
 PORTNAME=	dhall
-PORTVERSION=	1.41.1
-PORTREVISION=	1
+PORTVERSION=	1.41.2
 CATEGORIES=	lang haskell
 
 MAINTAINER=	malcolm.matalka@acsl.se
@@ -11,6 +10,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
+CABAL_REVISION=	3
 USE_CABAL=	Diff-0.4.1 \
 		OneTuple-0.3.1_3 \
 		QuickCheck-2.14.2 \
