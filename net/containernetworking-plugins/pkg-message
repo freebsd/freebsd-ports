@@ -1,0 +1,8 @@
+Container networking relies on NAT to allow container network packets
+out to the host's network. This requires a PF firewall to perform the
+translation. A simple example is included - to use it:
+
+# cp /usr/local/etc/containers/pf.conf.sample /etc/pf.conf
+... edit /etc/pf.conf and set egress_if to your network interface ...
+# sysrc pf_enable=YES
+# service pf start
