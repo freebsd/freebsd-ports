@@ -414,7 +414,6 @@ man/man8/winbindd.8.gz
 @comment Use bundled libraries
 %%SAMBA4_BUNDLED_CMOCKA%%%%SAMBA4_LIBDIR%%/private/libcmocka-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
-%%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libldb-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/ldb%%PYTHON_EXT_SUFFIX%%.so
 %%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpyldb-util%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdump
@@ -426,6 +425,7 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbsearch
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_LIBDIR%%/private/libldb-cmdline-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_LIBDIR%%/private/libldb-key-value-samba4.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_LIBDIR%%/private/libldb-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_LIBDIR%%/private/libldb-tdb-err-map-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_LIBDIR%%/private/libldb-tdb-int-samba4.so
 %%AD_DC%%%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/count_attrs.so

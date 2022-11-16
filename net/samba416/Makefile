@@ -50,7 +50,7 @@ EXTRA_PATCHES=			\
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.16.6
+SAMBA4_VERSION=			4.16.7
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -647,6 +647,7 @@ post-install-rm-junk:
 				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party
 				${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name __pycache__ \
 					-type d -print0 | ${XARGS} -0 -n 1 -t ${RM} -r
+				${FIND} ${STAGEDIR} -type f -empty -delete
 
 post-install-fix-manpages:
 .for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8

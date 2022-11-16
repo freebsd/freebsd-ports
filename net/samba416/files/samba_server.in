@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: samba_server
-# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv ntpd avahi_daemon
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv ntpd %%SAMBA4_SERVICES%%
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
