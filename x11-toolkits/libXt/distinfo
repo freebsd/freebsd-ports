@@ -1,3 +1,7 @@
-TIMESTAMP = 1612385864
+TIMESTAMP = 1668629251
 SHA256 (xorg/lib/libXt-1.2.1.tar.bz2) = 679cc08f1646dbd27f5e48ffe8dd49406102937109130caab02ca32c083a3d60
 SIZE (xorg/lib/libXt-1.2.1.tar.bz2) = 784610
+SHA256 (xorg/lib/46.patch) = 2fc46db0d4c1739087d9768a215e1f9cb04b86721ec184cb5c93abf38caa926d
+SIZE (xorg/lib/46.patch) = 1188
+SHA256 (xorg/lib/47.patch) = 56018c69fe7622d09382f7ddd871ade132abe14516a22049a519b43f851e1a96
+SIZE (xorg/lib/47.patch) = 13084

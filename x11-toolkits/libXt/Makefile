@@ -3,6 +3,10 @@ DISTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
+# CHERI support (merged upstream)
+PATCH_SITES=	https://gitlab.freedesktop.org/xorg/lib/libxt/-/merge_requests/
+PATCHFILES=	46.patch:-p1 47.patch:-p1
+
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Toolkit library
 WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
