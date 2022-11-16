@@ -31,5 +31,6 @@ PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" \
 		SHLIB_SHVER="${SHLIB_VER:R:R}"
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_EXCLUDE_purecap=	DOCS
 
 .include <bsd.port.mk>
