@@ -1,16 +1,16 @@
 PORTNAME=	InsightToolkit
-PORTVERSION=	5.0.1
-DISTVERSIONPREFIX=v
-PORTREVISION=	9
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.2.1
 CATEGORIES=	science biology
-MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.0.1/:data
-DISTFILES=	InsightData-5.0.1.tar.gz:data
+MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v${DISTVERSION}/:data
+DISTFILES=	InsightData-${DISTVERSION}.tar.gz:data
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Insight Toolkit
 WWW=		https://www.itk.org
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	googletest>=0:devel/googletest
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
@@ -21,36 +21,42 @@ LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lang eigen:3 jpeg pkgconfig
+USES=		cmake:testing compiler:c++11-lang eigen:3 jpeg pkgconfig python:test
+USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	InsightSoftwareConsortium
 GH_PROJECT=	ITK
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
-		-DITK_FORBID_DOWNLOADS:BOOL=ON \
-		-DITK_LEGACY_SILENT:BOOL=ON \
-		-DITK_USE_KWSTYLE:BOOL=OFF \
-		-DITK_USE_SYSTEM_EXPAT:BOOL=ON \
-		-DITK_USE_SYSTEM_FFTW:BOOL=ON \
-		-DITK_USE_SYSTEM_GDCM:BOOL=ON \
-		-DITK_USE_SYSTEM_HDF5:BOOL=ON \
-		-DITK_USE_SYSTEM_JPEG:BOOL=ON \
-		-DITK_USE_SYSTEM_LIBRARIES:BOOL=ON \
-		-DITK_USE_SYSTEM_PNG:BOOL=ON \
-		-DITK_USE_SYSTEM_TIFF:BOOL=ON \
-		-DITK_USE_SYSTEM_ZLIB:BOOL=ON \
-		-DModule_ITKIOMIC:BOOL=ON \
-		-DModule_ITKIOTransformMINC:BOOL=ON \
-		-DModule_ITKReview:BOOL=ON
-USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
+
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		ITK_FORBID_DOWNLOADS \
+		ITK_LEGACY_SILENT \
+		ITK_USE_SYSTEM_EXPAT \
+		ITK_USE_SYSTEM_FFTW \
+		ITK_USE_SYSTEM_GDCM \
+		ITK_USE_SYSTEM_HDF5 \
+		ITK_USE_SYSTEM_JPEG \
+		ITK_USE_SYSTEM_LIBRARIES \
+		ITK_USE_SYSTEM_PNG \
+		ITK_USE_SYSTEM_TIFF \
+		ITK_USE_SYSTEM_ZLIB \
+		Module_ITKIOMIC \
+		Module_ITKIOTransformMINC \
+		Module_ITKReview
+CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
+CMAKE_OFF=	ITK_USE_KWSTYLE BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING # 3 tests are known to fail, see https://github.com/InsightSoftwareConsortium/ITK/issues/3739
+
 ITK_VER=	${PORTVERSION:R}
+
 PLIST_SUB+=	ITK_VER=${ITK_VER}
 
 OPTIONS_DEFINE=	EXAMPLES TESTING
 EXAMPLES_DESC=	Build examples (very time consuming)
 TESTING_DESC=	Build testing programs (very time consuming)
 
-EXAMPLES_CMAKE_ON=	-DBUILD_EXAMPLES:BOOL=ON
-TESTING_CMAKE_ON=	-DBUILD_TESTING:BOOL=ON
+EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
+TESTING_CMAKE_BOOL=	BUILD_TESTING
 
 .include <bsd.port.pre.mk>
 
