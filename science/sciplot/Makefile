@@ -1,7 +1,7 @@
 PORTNAME=	sciplot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
-CATEGORIES=	graphics
+CATEGORIES=	science graphics
 PKGNAMESUFFIX=	-plotting-library
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -17610,3 +17610,4 @@ x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2022-11-11|Out of date: use x11-
 multimedia/mpv034||2022-11-14|No longer needed
 devel/py-types-xxhash||2022-11-15|No longer needed, type annotations are now available in xxhash module
 devel/awscli|devel/py-awscli|2022-11-15|Renamed comply with Python Ports Policy and flavored
+graphics/sciplot|science/sciplot|2022-11-15|Move to avoid conflict with graphics/SciPlot

@@ -431,6 +431,7 @@
     SUBDIR += rubygem-ruby-dcl
     SUBDIR += rubygem-ruby-netcdf
     SUBDIR += scidavis
+    SUBDIR += sciplot
     SUBDIR += segyio
     SUBDIR += serac
     SUBDIR += shelxle
