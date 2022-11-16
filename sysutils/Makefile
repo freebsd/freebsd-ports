@@ -147,6 +147,7 @@
     SUBDIR += bstack
     SUBDIR += btop
     SUBDIR += btsixad
+    SUBDIR += buildah
     SUBDIR += bulk_extractor
     SUBDIR += bupstash
     SUBDIR += burp

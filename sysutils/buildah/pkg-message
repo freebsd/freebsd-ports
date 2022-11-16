@@ -1,0 +1,8 @@
+This port of the buildah image building tool is based on unreleased
+sources and should be used for evaluation and testing purposes only.
+
+Basic usage follows:
+
+$ export c=$(sudo buildah from quay.io/dougrabson/freebsd-minimal:13.1)
+$ sudo buildah run $c freebsd-version -run
+$ sudo buildah run $c ping -c 3 9.9.9.9
