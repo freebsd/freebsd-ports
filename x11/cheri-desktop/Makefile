@@ -12,7 +12,8 @@ USES=		metaport
 ONLY_FOR_ARCHS=		aarch64 aarch64c
 ONLY_FOR_ARCHS_REASON=	requires GPU support available only on the Morello platform
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eglinfo:graphics/mesa-demos
+RUN_DEPENDS=	${LOCALBASE}/bin/dolphin:x11-fm/dolphin
+RUN_DEPENDS+=	${LOCALBASE}/bin/eglinfo:graphics/mesa-demos
 RUN_DEPENDS+=	${LOCALBASE}/bin/kaccess:x11/plasma5-plasma-desktop
 RUN_DEPENDS+=	${LOCALBASE}/bin/kate:editors/kate
 RUN_DEPENDS+=	${LOCALBASE}/bin/konsole:x11/konsole
