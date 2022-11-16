@@ -1017,6 +1017,7 @@
     SUBDIR += plconfig
     SUBDIR += pmt
     SUBDIR += pnscan
+    SUBDIR += podman
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
