@@ -1,11 +1,265 @@
 --- lib/tachyon/unix/Make-arch.orig	2013-04-21 19:09:28 UTC
 +++ lib/tachyon/unix/Make-arch
-@@ -1103,7 +1103,7 @@ bsd:
+@@ -134,7 +134,7 @@ android-armv7a-thr:
+ linux-carma-thr:
+ 	$(MAKE) all \
+ 	"ARCH = linux-carma-thr" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9 -mfpu=vfpv3-d16 -ffast-math -fomit-frame-pointer -fno-strict-aliasing -O3 -DLinux $(THREADSFLAGS) -DUSEPHYSCPUCOUNT -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -145,7 +145,7 @@ linux-carma-thr:
+ linux-carma-thr-fast:
+ 	$(MAKE) all \
+ 	"ARCH = linux-carma-thr-fast" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -fexpensive-optimizations -funsafe-math-optimizations -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9 -mfpu=vfpv3 -ffast-math -fomit-frame-pointer -fno-strict-aliasing -O3 -DLinux $(THREADSFLAGS) -DUSEPHYSCPUCOUNT -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -156,7 +156,7 @@ linux-carma-thr-fast:
+ linux-carma-thr-neon:
+ 	$(MAKE) all \
+ 	"ARCH = linux-carma-thr-neon" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -fexpensive-optimizations -funsafe-math-optimizations -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9 -mfpu=neon -ffast-math -fomit-frame-pointer -fno-strict-aliasing -O3 -DLinux $(THREADSFLAGS) -DUSEPHYSCPUCOUNT -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -174,7 +174,7 @@ linux-carma-thr-neon:
+ linux-carma-softfp-thr:
+ 	$(MAKE) all \
+ 	"ARCH = linux-carma-softfp-thr" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9 -msoft-float -mfpu=vfpv3-d16 -ffast-math -fomit-frame-pointer -fno-strict-aliasing -finline-limit=64 -Wa,--noexecstack -O -DLinux $(THREADSFLAGS) -DUSEPHYSCPUCOUNT -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -611,7 +611,7 @@ solaris-thr:
+ solaris-pthreads-gcc:
+ 	$(MAKE) all \
+ 	"ARCH = solaris-pthreads-gcc" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -D_REENTRANT -DSunOS $(MISCFLAGS) $(THREADSFLAGS) -DUSEPOSIXTHREADS" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -791,7 +791,7 @@ solaris-apcc-ultra-thr:
+ solaris-gcc-thr:
+ 	$(MAKE) all \
+ 	"ARCH = solaris-gcc-thr" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -ansi -Wall -pedantic -O4 -mv8 -msupersparc -DSunOS $(MISCFLAGS) $(THREADSFLAGS) -D_REENTRANT" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -801,7 +801,7 @@ solaris-gcc-thr:
+ solaris-gcc-thr-x11:
+ 	$(MAKE) all \
+ 	"ARCH = solaris-gcc-thr-x11" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -ansi -Wall -pedantic -O4 -mv8 -msupersparc $(X11INC) -DSunOS $(MISCFLAGS) $(THREADSFLAGS) -D_REENTRANT -DUSEX11" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1086,7 +1086,7 @@ macosx-x86-thr-ogl:
+ beos:
+ 	$(MAKE) all \
+ 	"ARCH = beos" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -O3 -fomit-frame-pointer -ffast-math $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1102,8 +1102,8 @@ beos:
+ bsd:
  	$(MAKE) all \
  	"ARCH = bsd" \
- 	"CC = gcc" \
+-	"CC = gcc" \
 -	"CFLAGS = -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
++	"CC = cc" \
 +	"CFLAGS += -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
  	"AR = ar" \
  	"ARFLAGS = r" \
  	"STRIP = strip" \
+@@ -1113,7 +1113,7 @@ bsd:
+ bsd-sparc:
+ 	$(MAKE) all \
+ 	"ARCH = bsd-sparc" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -mv8 -msupersparc -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1128,7 +1128,7 @@ bsd-sparc:
+ win32:
+ 	$(MAKE) all \
+ 	"ARCH = win32" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -mpentium -Wall -O3 -fomit-frame-pointer -ffast-math -DWIN32 $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1139,7 +1139,7 @@ win32:
+ win32-mpi:
+ 	$(MAKE) all \
+ 	"ARCH = win32-mpi" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -mpentium -Wall -O3 -fomit-frame-pointer -ffast-math -DWIN32 $(MISCFLAGS) -I'/Program files/MPIPro/INCLUDE' $(MPIFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1155,7 +1155,7 @@ win32-mpi:
+ linux:
+ 	$(MAKE) all \
+ 	"ARCH = linux" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m32 -Wall -O3 -g -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1167,7 +1167,7 @@ linux:
+ linux-profile:
+ 	$(MAKE) all \
+ 	"ARCH = linux-profile" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m32 -Wall -O3 -g -pg -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1179,7 +1179,7 @@ linux-profile:
+ linux-debug:
+ 	$(MAKE) all \
+ 	"ARCH = linux-debug" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m32 -Wall -g -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1191,7 +1191,7 @@ linux-debug:
+ linux-64:
+ 	$(MAKE) all \
+ 	"ARCH = linux-64" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m64 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux  $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1203,7 +1203,7 @@ linux-64:
+ linux-64-debug:
+ 	$(MAKE) all \
+ 	"ARCH = linux-64-debug" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m64 -Wall -O -g -DLinux  $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1216,7 +1216,7 @@ linux-64-debug:
+ linux-64-thr:
+ 	$(MAKE) all \
+ 	"ARCH = linux-64-thr" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m64 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux  $(THREADSFLAGS) -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1240,7 +1240,7 @@ linux-icc-64-thr:
+ linux-64-openmp:
+ 	$(MAKE) all \
+ 	"ARCH = linux-64-openmp" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m64 -Wall -O3 -fopenmp -fomit-frame-pointer -ffast-math -DLinux -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1277,7 +1277,7 @@ linux-mic-thr:
+ linux-p4:
+ 	$(MAKE) all \
+ 	"ARCH = linux-p4" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -mcpu=i686 -march=i686 -funroll-loops -fexpensive-optimizations -malign-double -fschedule-insns2 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1315,7 +1315,7 @@ linux-p4-icc-thr:
+ linux-athlon:
+ 	$(MAKE) all \
+ 	"ARCH = linux-athlon" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -mcpu=athlon -march=athlon -funroll-loops -fexpensive-optimizations -malign-double -fschedule-insns2 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1326,7 +1326,7 @@ linux-athlon:
+ linux-athlon-thr:
+ 	$(MAKE) all \
+ 	"ARCH = linux-athlon-thr" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -mcpu=athlon -march=athlon -funroll-loops -fexpensive-optimizations -malign-double -fschedule-insns2 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(THREADSFLAGS) -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1363,7 +1363,7 @@ linux-athlon-pgcc:
+ linux-thr:
+ 	$(MAKE) all \
+ 	"ARCH = linux-thr" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m32 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(THREADSFLAGS) -D_REENTRANT $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1422,7 +1422,7 @@ linux-icc-thr-ogl:
+ linux-beowulf-mpi-ogl:
+ 	$(MAKE) all \
+ 	"ARCH = linux-beowulf-mpi" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m32 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS) $(MPIFLAGS) -DUSEOPENGL $(LINUX_GLX_INCS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1434,7 +1434,7 @@ linux-beowulf-mpi-ogl:
+ linux-beowulf-mpi:
+ 	$(MAKE) all \
+ 	"ARCH = linux-beowulf-mpi" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -m32 -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS) $(MPIFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1551,7 +1551,7 @@ linux-lam-thr:
+ linux-ipaq:
+ 	$(MAKE) all \
+ 	"ARCH = linux-ipaq" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1563,7 +1563,7 @@ linux-ipaq:
+ linux-ppc:
+ 	$(MAKE) all \
+ 	"ARCH = linux-ppc" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1575,7 +1575,7 @@ linux-ppc:
+ linux-ps2:
+ 	$(MAKE) all \
+ 	"ARCH = linux-ps2" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+@@ -1587,7 +1587,7 @@ linux-ps2:
+ linux-alpha:
+ 	$(MAKE) all \
+ 	"ARCH = linux-alpha" \
+-	"CC = gcc" \
++	"CC = cc" \
+ 	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \

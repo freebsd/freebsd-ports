@@ -1,6 +1,6 @@
 PORTNAME=	vmd
-DISTVERSION=	1.9.3
-PORTREVISION=	11
+DISTVERSION=	1.9.4
+DISTVERSIONSUFFIX=	a57
 CATEGORIES=	science graphics python tcl tk
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b6/:tachyon \
 		http://www.photonlimited.com/~johns/tachyon/files/0.99b6/:tachyon \
@@ -17,12 +17,21 @@ WWW=		http://www.ks.uiuc.edu/Research/vmd/
 LICENSE=	VMD BSD3CLAUSE STRIDE
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PYNUMPY}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfltk.so:x11-toolkits/fltk \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
+
+USES=		gl gmake perl5 python shebangfix sqlite tcl tk xorg
+SHEBANG_FILES=	${WRKDIR}/plugins/topotools/*.tcl \
+		${WRKDIR}/plugins/mdff/resetmaps.sh
+USE_PERL5=	build
+USE_GL=		gl glu
+USE_XORG=	x11
 
 LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
 LICENSE_PERMS_VMD=	no-auto-accept
@@ -36,14 +45,6 @@ LICENSE_TEXT_STRIDE=	${FILESDIR}/stride.txt
 LICENSE_PERMS_STRIDE=	dist-mirror pkg-mirror auto-accept
 LICENSE_NAME_STRIDE=	Stride Copyright Notice
 LICENSE_DISTFILES_STRIDE=${STRIDE_DIST}
-
-USES=		gl gmake perl5 python shebangfix sqlite tcl tk xorg
-SHEBANG_FILES=	${WRKDIR}/plugins/topotools/*.tcl
-USE_PERL5=	build
-USE_GL=		gl glu
-USE_XORG=	x11
-
-ONLY_FOR_ARCHS=	amd64 i386
 
 CONFIGURE_ENV=	PYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
 		PYTHON_LIBRARY_DIR=${PYTHON_LIBDIR} \
@@ -71,12 +72,20 @@ MAKE_ENV=	EXPATINC=-I${LOCALBASE}/include \
 		TCLLDFLAGS=-ltcl${TCL_VER:S/.//} \
 		TKLDFLAGS="-ltk${TK_VER:S/.//} -lX11"
 
-VMD_DIST=	${PORTNAME}-${DISTVERSION}.src.tar.gz
+VMD_DIST=	${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}.src.tar.gz
 TACHYON_DIST=	tachyon-0.99b6.tar.gz
 STRIDE_DIST=	stride.tar.gz
 STRIDE_DOC=	stride.doc
 
 .include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${VMD_DIST})
+IGNORE=	license restrictions require manual fetching of the distribution\
+	source.  Please visit http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD\
+	with a browser.  You will be required to register, log in, and accept\
+	the University of Illinois agreement before you can download the\
+	${VMD_DIST} source.  Place this distfile in ${DISTDIR} and try again.
+.endif
 
 .if ${ARCH} == "amd64"
 VMD_ARCH=		FREEBSDAMD64
@@ -85,15 +94,6 @@ VMD_ARCH=		FREEBSD
 .endif
 
 PLIST_SUB+=		VMD_ARCH=${VMD_ARCH}
-
-# Check for VMD sources
-.if !exists(${DISTDIR}/${VMD_DIST})
-IGNORE=	license restrictions require manual fetching of the distribution\
-	source.  Please visit http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD\
-	with a browser.  You will be required to register, log in, and accept\
-	the University of Illinois agreement before you can download the\
-	${VMD_DIST} source file.  Place this file in ${DISTDIR} and try again.
-.endif
 
 do-extract:
 	${MKDIR} ${WRKDIR} ${WRKSRC}/lib/stride
@@ -148,9 +148,9 @@ post-install:
 	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' ${STAGEDIR}${PREFIX}/bin/vmd
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/vmd/*${VMD_ARCH} \
 	    ${STAGEDIR}${LOCALBASE}/lib/vmd/plugins/${VMD_ARCH}/molfile/*.so
-.for f in tcl/autopsf1.6/psfcheck.so tcl/hesstrans1.0/hesstrans.so \
+.for f in tcl/autopsf1.8/psfcheck.so tcl/hesstrans1.0/hesstrans.so \
 	  tcl/mutator1.5/libalchemify.so tcl/pmepot1.0/libpmepot.so \
-	  tcl/psfgen1.6/libpsfgen.so tcl/rnaview1.1/rnaview \
+	  tcl/psfgen2.0/libpsfgen.so tcl/rnaview1.1/rnaview \
 	  tcl/signalproc1.1/specden.so tcl/signalproc1.1/fftcmds.so \
 	  tcl/signalproc1.1/sgsmooth.so tcl/volutil1.3/volutil \
 	  tcl/clustalw1.1/clustalw tcl/libbiokit1.1/tcl_libbiokit.so \
@@ -159,7 +159,7 @@ post-install:
 	  tcl/libbiokit1.1/rmsd tcl/libbiokit1.1/percid \
 	  tcl/phylotree1.2/upgmaclu tcl/stamp1.2/stamp \
 	  tcl/bossconvert1.0/Topology \
-	  bin/catdcd5.1/catdcd bin/cionize1.0/cionize
+	  bin/catdcd5.2/catdcd bin/cionize1.0/cionize
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/vmd/plugins/${VMD_ARCH}/${f}
 .endfor
 

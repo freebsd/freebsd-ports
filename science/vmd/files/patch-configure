@@ -1,4 +1,4 @@
---- configure.orig	2016-12-01 07:11:33 UTC
+--- configure.orig	2022-04-27 06:21:11 UTC
 +++ configure
 @@ -13,10 +13,10 @@
  $install_name = "vmd";
@@ -13,7 +13,27 @@
  
  
  # optionally override hard-coded defaults above with environment variables
-@@ -729,8 +729,8 @@ $tcl_include      = "-I$stock_tcl_includ
+@@ -491,7 +491,7 @@ $arch_deletedir   = "rm -rf";
+ $arch_echo        = "echo";
+ $arch_tar         = "tar";
+ $arch_compress    = "compress";
+-$arch_gnucompress = "/usr/local/bin/gzip";
++$arch_gnucompress = "/usr/bin/gzip";
+ $arch_latex       = "latex";
+ $arch_compilerc   = $arch_echo;
+ $arch_rcflags     = "No resource compiler required on this platform.";
+@@ -511,8 +511,8 @@ $arch_nvccflags   = "-lineinfo --ptxas-options=-v " . 
+                     "-gencode arch=compute_70,code=sm_70 " .
+                     "--ftz=true ";
+ #                    "-gencode arch=compute_75,code=sm_75 " .
+-$arch_gcc         = "gcc";
+-$arch_gccpp       = "g++";
++$arch_gcc         = "cc";
++$arch_gccpp       = "c++";
+ $arch_lex         = "lex";
+ $arch_yacc        = "yacc";
+ $arch_yflags      = "-d";
+@@ -783,9 +783,10 @@ $tcl_include      = "-I$stock_tcl_include_dir";
  if ($config_tk) { $tcl_include .= " -I$stock_tk_include_dir"; }
  $tcl_library      = "-L$stock_tcl_library_dir";
  if ($config_tk) { $tcl_library .= " -L$stock_tk_library_dir"; }
@@ -22,9 +42,11 @@
 +$tcl_libs         = "\${TCLLDFLAGS}";
 +if ($config_tk) { $tcl_libs = "\${TKLDFLAGS} " . $tcl_libs; }
  
++
  @tcl_cc           = ();
  @tcl_cu           = ();
-@@ -1105,8 +1105,8 @@ if ($config_liboptix) {
+ @tcl_ccpp         = ('ColorInfo.C',
+@@ -1353,8 +1354,8 @@ if ($config_liboptix) {
  # This may be commented out if not required.
  $libtachyon_defines     = "-DVMDLIBTACHYON";
  $libtachyon_dir         = "$vmd_library_dir/tachyon";
@@ -35,7 +57,174 @@
  $libtachyon_libs        = "-ltachyon";
  @libtachyon_cc          = ();
  @libtachyon_cu          = ();
-@@ -3187,10 +3187,10 @@ DEFINES     = $DEFINES
+@@ -1673,7 +1674,7 @@ if ($ENV{_CONDA_ROOT}) {
+ #  $stock_numpy_library_dir=$ENV{"NUMPY_LIBRARY_DIR"} || "/usr/local/lib";
+   $stock_numpy_include_dir=$ENV{"NUMPY_INCLUDE_DIR"} || "$vmd_library_dir/numpy/lib_$config_arch/include";
+   $stock_numpy_library_dir=$ENV{"NUMPY_LIBRARY_DIR"} || "$vmd_library_dir/python/lib_$config_arch/lib/python2.5/site-packages/numpy/core/include";
+-  $python_libs        = "-lpython2.5 -lpthread";
++  $python_libs        = "-lpython3.9 -lpthread";
+ }
+ 
+ $python_defines     = "-DVMDPYTHON";
+@@ -2147,8 +2148,8 @@ if ($config_arch eq "ANDROIDARMV7A") {
+   $androidlibs = "-L/home/kvandivo/Proj/android-ndk-r8b/platforms/android-14/arch-arm/usr/lib -L/home/kvandivo/Proj/android-ndk-r8b/sources/cxx-stl/stlport/libs/armeabi-v7a/";
+   $androidsysroot = "--sysroot=/home/kvandivo/Proj/android-ndk-r8b/platforms/android-14/arch-arm";
+   $androidabi = "arm-linux-androideabi-";
+-  $arch_cc       = $androidbins . $androidabi . "gcc";
+-  $arch_ccpp     = $androidbins . $androidabi . "g++";
++  $arch_cc       = $androidbins . $androidabi . "cc";
++  $arch_ccpp     = $androidbins . $androidabi . "c++";
+   $arch_copts       = "-Wall -Wno-unknown-pragmas -Wno-psabi -MMD -MP -fpic -ffunction-sections -funwind-tables -fstack-protector -D__ARM_ARCH_5__ -D__ARM_ARCH_5T__ -D__ARM_ARCH_5E__ -D__ARM_ARCH_5TE__ -march=armv7-a -msoft-float -mfpu=vfp -fno-exceptions -mthumb -Os -fomit-frame-pointer -fno-strict-aliasing -finline-limit=64 -Wa,--noexecstac";
+   $arch_opt_flag    = "-Wall -Wno-unknown-pragmas -Wno-psabi -MMD -MP -fpic -ffunction-sections -funwind-tables -fstack-protector -D__ARM_ARCH_5__ -D__ARM_ARCH_5T__ -D__ARM_ARCH_5E__ -D__ARM_ARCH_5TE__ -march=armv7-a -msoft-float -mfpu=vfp -fno-exceptions -mthumb -Os -fomit-frame-pointer -fno-strict-aliasing -finline-limit=64 -Wa,--noexecstac";
+   $arch_copts    = $androidincs;
+@@ -2220,7 +2221,7 @@ if ($config_arch eq "BLUEWATERS" || 
+     $arch_cc          = "cc";
+     $arch_ccpp        = "CC";
+     $arch_copts       = "-m64 -Wall -Wno-unknown-pragmas -O6 -ffast-math";
+-    $arch_opt_flag    = "-m64 -fno-for-scope -Wno-deprecated -Wall -Wno-unknown-pragmas -O6 -ffast-math";
++    $arch_opt_flag    = "-m64  -Wno-deprecated -Wall -Wno-unknown-pragmas -O6 -ffast-math";
+   }
+ 
+   if ($config_mpi) {
+@@ -2321,15 +2322,15 @@ if ($config_arch eq "FREEBSD") {
+     $arch_lex      = "flex";
+     $arch_yacc     = "bison -b y -d ";  # If standard yacc doesn't work
+ 
+-    $arch_cc          = "gcc";
+-    $arch_ccpp        = "g++";
++    $arch_cc          = "cc";
++    $arch_ccpp        = "c++";
+     $arch_depend_flag = "-MM";
+     $arch_shld        = "g++ -shared";
+     $arch_shlibname   = "so";
+     $arch_shcppopts   = "-fPIC";
+     $arch_shldopts    = "-L/usr/local/lib";
+ 
+-    $arch_opt_flag    = "-m32 -fno-for-scope -Wno-deprecated -Wall -Wno-unknown-pragmas -O3";
++    $arch_opt_flag    = "-m32  -Wno-deprecated -Wall -Wno-unknown-pragmas -O3";
+     $arch_copts       = "-m32 -Wall -Wno-unknown-pragmas -O3";
+ 
+     if ($config_static) {
+@@ -2377,8 +2378,8 @@ if ($config_arch eq "FREEBSDAMD64") {
+     $arch_lex      = "flex";
+     $arch_yacc     = "bison -b y -d ";  # If standard yacc doesn't work
+ 
+-    $arch_cc          = "gcc";
+-    $arch_ccpp        = "g++";
++    $arch_cc          = "cc";
++    $arch_ccpp        = "c++";
+     $arch_depend_flag = "-MM";
+     $arch_shld        = "ld -shared";
+     $arch_shlibname   = "so";
+@@ -2456,14 +2457,14 @@ if ($config_arch eq "LINUX") {
+       $arch_lopts       .= "-i-static ";
+     } else {
+       # compling with GCC
+-      $arch_cc          = "gcc";
+-      $arch_ccpp        = "g++";
++      $arch_cc          = "cc";
++      $arch_ccpp        = "c++";
+       $arch_depend_flag = "-MM";
+       $arch_shld        = "g++ -shared";
+       $arch_shlibname   = "so";
+       $arch_shcppopts   = "-fPIC";
+       $arch_shldopts    = "";
+-      $arch_opt_flag    = "-m32 -fno-for-scope -Wno-deprecated -Wall -Wno-unknown-pragmas -O3";
++      $arch_opt_flag    = "-m32  -Wno-deprecated -Wall -Wno-unknown-pragmas -O3";
+       $arch_copts       = "-m32 -Wall -Wno-unknown-pragmas -O3";
+ 
+       if ($config_static) {
+@@ -2573,9 +2574,9 @@ if ($config_arch eq "LINUXAMD64") {
+       $arch_depend_flag = "-MM";
+     } else {
+       # for compiling with g++:
+-      $arch_cc		= "gcc";
+-      $arch_ccpp  	= "g++";
+-      $arch_opt_flag	= "-m64 -fno-for-scope -Wno-deprecated -Wall -Wno-unknown-pragmas -O6 -ffast-math";
++      $arch_cc		= "cc";
++      $arch_ccpp  	= "c++";
++      $arch_opt_flag	= "-m64  -Wno-deprecated -Wall -Wno-unknown-pragmas -O6 -ffast-math";
+       $arch_depend_flag   = "-MM";
+       $arch_copts       = "-m64 -Wall -Wno-unknown-pragmas -O6 -ffast-math";
+ 
+@@ -2680,8 +2681,8 @@ if ($config_arch eq "LINUXPPC64") {
+       print "No LP64 ABI on this platform currently.\n";
+     }
+ 
+-    $arch_cc          = "gcc";
+-    $arch_ccpp        = "g++";
++    $arch_cc          = "cc";
++    $arch_ccpp        = "c++";
+     $arch_depend_flag = "-MM";
+     $arch_opt_flag    = "-m64 -Wall -Wno-unknown-pragmas -O3 -ffast-math";
+     $arch_copts       = "-m64 -Wall -Wno-unknown-pragmas -O3 -ffast-math";
+@@ -3056,8 +3057,8 @@ if ($config_arch eq "SUMMIT") {
+ #      $arch_cppopts     = "-D_H_ACCESS=1";
+       $arch_depend_flag = "-MM";
+     } elsif ($config_gcc) {
+-      $arch_cc          = "gcc";
+-      $arch_ccpp        = "g++";
++      $arch_cc          = "cc";
++      $arch_ccpp        = "c++";
+       $arch_opt_flag    = "-m64 -Wall -Wno-unknown-pragmas -O3 -ffast-math -mtune=power8";
+       $arch_copts       = "-m64 -Wall -Wno-unknown-pragmas -O3 -ffast-math -mtune=power8";
+       $arch_depend_flag = "-MM";
+@@ -3131,8 +3132,8 @@ if ($config_arch eq "OPENPOWER" || $config_arch eq "SU
+ #      $arch_cppopts     = "-D_H_ACCESS=1";
+       $arch_depend_flag = "-MM";
+     } else {
+-      $arch_cc          = "gcc";
+-      $arch_ccpp        = "g++";
++      $arch_cc          = "cc";
++      $arch_ccpp        = "c++";
+       $arch_opt_flag    = "-m64 -Wall -Wno-unknown-pragmas -O3 -ffast-math -mtune=power8";
+       $arch_copts       = "-m64 -Wall -Wno-unknown-pragmas -O3 -ffast-math -mtune=power8";
+       $arch_depend_flag = "-MM";
+@@ -3185,8 +3186,8 @@ if ($config_arch eq "SOLARIS2" || $config_arch eq "SOL
+       if ($config_lp64) {
+         print "GCC doesn't support LP64 ABI on this platform currently.\n";
+       }
+-      $arch_ccpp        = "g++";
+-      $arch_cc	        = "gcc";
++      $arch_ccpp        = "c++";
++      $arch_cc	        = "cc";
+       $arch_opt_flag    = "-O";
+       $arch_copts       = "-O";
+       $arch_debug_flag  = "-g";
+@@ -3258,8 +3259,8 @@ if ($config_arch eq "SOLARISX86" || $config_arch eq "S
+       if ($config_lp64) {
+         die "No LP64 gcc for this platform currently.\n";
+       }
+-      $arch_ccpp        = "g++";
+-      $arch_cc	        = "gcc";
++      $arch_ccpp        = "c++";
++      $arch_cc	        = "cc";
+ # XXX gcc/g++ 2.95 and newer need -fpermissive since the X11 headers 
+ # on Solaris (and other systems) are broken and still assume that missing
+ # types will default to int....  When they fix this in future revs of Solaris,
+@@ -3349,8 +3350,8 @@ if ($config_arch eq "WIN32") {
+       $arch_cppopts     = "/TP";
+       $arch_coptout     = "/Fo";
+     } else {
+-      $arch_ccpp        = "g++";
+-      $arch_cc	        = "gcc";
++      $arch_ccpp        = "c++";
++      $arch_cc	        = "cc";
+       $arch_opt_flag    = "-O";
+       $arch_debug_flag  = "-g";
+       $arch_depend_flag = "-M";
+@@ -3366,8 +3367,8 @@ if ($config_arch eq "WIN32") {
+ 
+ 
+ if ($config_arch eq "WIN64") {
+-    $arch_ccpp	      = "g++";
+-    $arch_cc	      = "gcc";
++    $arch_ccpp	      = "c++";
++    $arch_cc	      = "cc";
+     $arch_opt_flag    = "-O";
+     $arch_debug_flag  = "-g";
+     $arch_depend_flag = "-M";
+@@ -3721,10 +3722,10 @@ DEFINES     = $DEFINES
  
  # compiler and compiler directives 
  CC          = $arch_cc
@@ -44,7 +233,7 @@
  
  CCPP	    = $arch_ccpp
 -CPPFLAGS    = $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
-+CPPFLAGS    = \${CXXFLAGS} $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
- 
- NVCC        = $arch_nvcc
- NVCCFLAGS   = $arch_nvccflags -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
++CPPFLAGS    = \${CXXFLAGS} $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
+ CPPAVXFLAGS = $arch_opt_flag $arch_cppopts -mavx -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
+ CPPAVX2FLAGS = $arch_opt_flag $arch_cppopts -mfma -mavx -mavx2 -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
+ CPPAVX512FLAGS = $arch_opt_flag $arch_cppopts -mavx512f -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
