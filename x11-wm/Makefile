@@ -45,7 +45,7 @@
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad
-    SUBDIR += hyprland-devel
+    SUBDIR += hyprland
     SUBDIR += i3
     SUBDIR += i3-gaps
     SUBDIR += icewm

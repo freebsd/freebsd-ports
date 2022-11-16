@@ -2,7 +2,6 @@ PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.0beta
 CATEGORIES=	x11-wm wayland
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
