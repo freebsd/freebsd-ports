@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSION=	4.3.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/17/libraries/sources/:wazuh_sources
 PKGNAMESUFFIX=	-agent
@@ -16,6 +17,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
+LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 USES=		cpe gmake perl5 readline shebangfix sqlite:3 uidfix
 
