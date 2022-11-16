@@ -104,6 +104,7 @@
     SUBDIR += udpt
     SUBDIR += uhub
     SUBDIR += vuze
+    SUBDIR += xbt
     SUBDIR += xmrig
     SUBDIR += zetacoin
     SUBDIR += zetacoin-daemon

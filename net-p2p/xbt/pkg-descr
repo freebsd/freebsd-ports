@@ -1,0 +1,6 @@
+XBT (Extended BitTorrent) tracker is a BitTorrent tracker written in
+modern C++.  It's designed to offer high performance while consuming
+little resources (CPU and RAM).  It's a pure tracker, so it doesn't
+offer a frontend; please use any (e.g. PHP-based) frontend you want.
+The tracker stores statistics in a MySQL database/table; version 5 or
+higher is required.
