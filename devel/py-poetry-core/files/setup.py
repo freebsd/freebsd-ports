@@ -21,6 +21,8 @@ packages = \
  'poetry.core._vendor.pyparsing.diagram',
  'poetry.core._vendor.pyrsistent',
  'poetry.core._vendor.tomlkit',
+ 'poetry.core.constraints.generic',
+ 'poetry.core.constraints.version',
  'poetry.core.exceptions',
  'poetry.core.json',
  'poetry.core.masonry',
