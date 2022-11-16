@@ -1,6 +1,8 @@
-TIMESTAMP = 1668511709
+TIMESTAMP = 1668587368
 SHA256 (cabal/aeson-pretty-0.8.9/aeson-pretty-0.8.9.tar.gz) = 5dbc4f451dfa1e667b2c6ec5170714fed1905dc9cae6a1134b3376f355fa2a08
 SIZE (cabal/aeson-pretty-0.8.9/aeson-pretty-0.8.9.tar.gz) = 5802
+SHA256 (cabal/aeson-pretty-0.8.9/revision/2.cabal) = f7b1808efab1b9edd0efbdfc2cd47e7dfe8bbd42ee970d1d3780112a4de125a1
+SIZE (cabal/aeson-pretty-0.8.9/revision/2.cabal) = 2559
 SHA256 (cabal/OneTuple-0.3.1/OneTuple-0.3.1.tar.gz) = 98853682d52fb4cc37a45cd186fbd77cf2565d3df5171acc4cf026427e103eef
 SIZE (cabal/OneTuple-0.3.1/OneTuple-0.3.1.tar.gz) = 5148
 SHA256 (cabal/OneTuple-0.3.1/revision/3.cabal) = fc32cb744477befa450a538ea4975cc523f0a2f1585cb5a36e9936a3d18e9a3c

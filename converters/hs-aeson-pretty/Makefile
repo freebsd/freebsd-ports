@@ -11,6 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
+CABAL_REVISION=	2
 USE_CABAL=	OneTuple-0.3.1_3 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \

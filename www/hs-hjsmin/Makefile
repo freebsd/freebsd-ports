@@ -13,6 +13,7 @@ USES=		cabal
 
 USE_LOCALE=	en_US.UTF-8
 
+CABAL_REVISION=	2
 USE_CABAL=	alex-3.2.7.1 \
 		ansi-terminal-0.11.3 \
 		ansi-wl-pprint-0.6.9_3 \

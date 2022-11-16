@@ -1,6 +1,8 @@
-TIMESTAMP = 1668511823
+TIMESTAMP = 1668598670
 SHA256 (cabal/hjsmin-0.2.0.4/hjsmin-0.2.0.4.tar.gz) = 81b9947714d8d2b73d0aba9e2e02af7e30c13b2cf8144df8904564d9642e57e4
 SIZE (cabal/hjsmin-0.2.0.4/hjsmin-0.2.0.4.tar.gz) = 5233
+SHA256 (cabal/hjsmin-0.2.0.4/revision/2.cabal) = 4e81260f019081f1bdd7e4e285b35f2f09eea83ff9cd721aaa4e0ba979228fa0
+SIZE (cabal/hjsmin-0.2.0.4/revision/2.cabal) = 2237
 SHA256 (cabal/alex-3.2.7.1/alex-3.2.7.1.tar.gz) = 9bd2f1a27e8f1b2ffdb5b2fbd3ed82b6f0e85191459a1b24ffcbef4e68a81bec
 SIZE (cabal/alex-3.2.7.1/alex-3.2.7.1.tar.gz) = 108229
 SHA256 (cabal/ansi-terminal-0.11.3/ansi-terminal-0.11.3.tar.gz) = f4d563ecf71fb1d304bcdcad478d97efd9f61f6d9d4797a5d56e7722a92a9e6b

@@ -1,6 +1,8 @@
-TIMESTAMP = 1668511776
+TIMESTAMP = 1668595900
 SHA256 (cabal/hasktags-0.72.0/hasktags-0.72.0.tar.gz) = adadb5800ab2996f0198a6fc6af959dee6d69339c204cc9789f83e67024fe726
 SIZE (cabal/hasktags-0.72.0/hasktags-0.72.0.tar.gz) = 59000
+SHA256 (cabal/hasktags-0.72.0/revision/2.cabal) = 1d3cb246cf1b374bcbf5dfab2dd0f99c9c0898412281583ef89fe9bdc6347b38
+SIZE (cabal/hasktags-0.72.0/revision/2.cabal) = 2866
 SHA256 (cabal/ansi-terminal-0.11.3/ansi-terminal-0.11.3.tar.gz) = f4d563ecf71fb1d304bcdcad478d97efd9f61f6d9d4797a5d56e7722a92a9e6b
 SIZE (cabal/ansi-terminal-0.11.3/ansi-terminal-0.11.3.tar.gz) = 37868
 SHA256 (cabal/ansi-wl-pprint-0.6.9/ansi-wl-pprint-0.6.9.tar.gz) = a7b2e8e7cd3f02f2954e8b17dc60a0ccd889f49e2068ebb15abfa1d42f7a4eac

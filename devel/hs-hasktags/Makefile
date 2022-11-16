@@ -11,6 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
+CABAL_REVISION=	2
 USE_CABAL=	ansi-terminal-0.11.3 \
 		ansi-wl-pprint-0.6.9_3 \
 		colour-2.3.6 \

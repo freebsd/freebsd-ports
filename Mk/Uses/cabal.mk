@@ -19,6 +19,9 @@
 #			When creating a new port, the initial list can be built
 #			using make-use-cabal auxiliary target.
 #
+#  CABAL_REVISION	Specifies a Haskell package revision. Set this to an
+#			integer to pull in revised .cabal file from Hackage.
+#
 #  CABAL_FLAGS		List of Cabal flags to be passed verbatim into --flags
 #			argument of cabal-install utility. Used for both
 #			cabal configure and cabal build.
@@ -125,6 +128,9 @@ MASTER_SITES+=	https://hackage.haskell.org/package/${_hackage_group} \
 
 .  if ${_hackage_is_default} == yes
 DISTFILES+=	${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+.    ifdef CABAL_REVISION
+DISTFILES+=	${PORTNAME}-${PORTVERSION}/revision/${CABAL_REVISION}.cabal
+.    endif
 .  else
 _hackage_group=	:cabal_mk_hackage
 .  endif
@@ -201,6 +207,11 @@ cabal-build: check-cabal
 make-use-cabal: check-cabal2tuple
 	@${ECHO_MSG} "===> Processing plan.json"
 	@${_CABAL2TUPLE_CMD} ${WRKSRC} || (${ECHO_CMD} "Did you forget to make cabal-configure ?" ; exit 1)
+.  if ${_hackage_is_default} == yes
+	@if ${GREP} -q 'x-revision' ${WRKSRC}/*.cabal; then \
+		${ECHO_MSG} "Downloaded .cabal file contains x-revision, make sure to add CABAL_REVISION=" `${GREP} 'x-revision' ${WRKSRC}/*.cabal | ${SED} -e s/x-revision://`; \
+	fi
+.  endif
 
 check-cabal:
 	@if ! type ${CABAL_CMD} > /dev/null 2>&1; then \
@@ -225,6 +236,10 @@ cabal-post-extract:
 	@${TEST} ! -f ${WRKSRC}/cabal.project || \
 		(${ECHO_CMD} "cabal.project file is already present in WRKSRC! Set CABAL_PROJECT variable." && false)
 .    endif
+# Copy revised .cabal file if present
+.    if defined(CABAL_REVISION) && ${_hackage_is_default} == yes
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${PORTVERSION}/revision/${CABAL_REVISION}.cabal `find ${WRKSRC} -name '*.cabal' -depth 1`
+.    endif
 
 # Move extracted dependencies into ${CABAL_DEPSDIR} directory
 	${MKDIR} ${CABAL_DEPSDIR}
@@ -232,11 +247,11 @@ cabal-post-extract:
 .      for pkg_name xrev in ${package:C/_[0-9]+//} x${package:C/[^_]*//:S/_//}
 # Copy revised .cabal file if present
 .        if ${xrev} != "x"
-		cp ${DISTDIR}/${DIST_SUBDIR}/${pkg_name}/revision/${xrev:S/x//}.cabal `find ${WRKDIR}/${pkg_name} -name '*.cabal' -depth 1`
+		${CP} ${DISTDIR}/${DIST_SUBDIR}/${pkg_name}/revision/${xrev:S/x//}.cabal `find ${WRKDIR}/${pkg_name} -name '*.cabal' -depth 1`
 .        endif
 # Move the dependency source itself
 	cd ${WRKDIR} && \
-		mv ${pkg_name} ${CABAL_DEPSDIR}/
+		${MV} ${pkg_name} ${CABAL_DEPSDIR}/
 .      endfor
 .    endfor
 # Create the cabal-install config
