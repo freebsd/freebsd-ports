@@ -1,11 +1,11 @@
 PORTNAME=	iowow
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Persistent key-value database engine
-WWW=		https://iowow.io/
+WWW=		https://iowow.softmotions.com/
 
 LICENSE=	MIT
 
