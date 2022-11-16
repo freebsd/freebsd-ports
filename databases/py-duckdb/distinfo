@@ -1,3 +1,3 @@
-TIMESTAMP = 1663713613
-SHA256 (duckdb-0.5.1.tar.gz) = 975d84303e70ec376dee98292dfbf8915ed2fb5a434fcbf5d1cd28e08dfbab38
-SIZE (duckdb-0.5.1.tar.gz) = 13511354
+TIMESTAMP = 1668578959
+SHA256 (duckdb-0.6.0.tar.gz) = 74e0e4cd1b77aaec9f76e3a0b4cf8535d80f2282f38c6248d4ec826a9606fe81
+SIZE (duckdb-0.6.0.tar.gz) = 10338171
