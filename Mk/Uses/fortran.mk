@@ -14,7 +14,11 @@ fortran_ARGS=	${FORTRAN_DEFAULT}
 .  endif
 
 .  if ${fortran_ARGS} == gfortran
+.    if empty(USE_GCC)
 _GCC_VER=	${GCC_DEFAULT:S/.//}
+.    else
+_GCC_VER=	${_USE_GCC}
+.    endif
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
 RUN_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
 F77=		gfortran${_GCC_VER}
