@@ -11,3 +11,14 @@
  
  conf_data = configuration_data()
  conf_data.set('VERSION', meson.project_version())
+@@ -158,6 +156,10 @@ if compiler.has_header('fcntl.h')
+ 
+ if compiler.has_header('fcntl.h')
+     conf_data.set('HAVE_FCNTL_H', 1)
++endif
++
++if compiler.has_header('execinfo.h')
++    conf_data.set('HAVE_EXECINFO_H', 1)
+ endif
+ 
+ if compiler.has_header('libgen.h')
