@@ -1,0 +1,9 @@
+--- DESCRIPTION.orig	2022-11-16 17:29:56 UTC
++++ DESCRIPTION
+@@ -1,5 +1,5 @@
+ Name: psychrometrics
+-Version: 0.1.0-alpha
++Version: 0.1.0
+ Date: 2022-12-15
+ Author: Alexandre Umpierre (aumpierre@gmail.com)
+ Maintainer: Alexandre Umpierre
