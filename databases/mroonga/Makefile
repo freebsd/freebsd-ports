@@ -1,5 +1,5 @@
 PORTNAME=	mroonga
-PORTVERSION=	12.08
+PORTVERSION=	12.09
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 

@@ -44,6 +44,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/docker.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/fedora.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/macos.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/install/oracle-linux.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/others.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/ubuntu.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/windows.html
@@ -121,6 +122,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/docker.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/fedora.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/macos.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/oracle-linux.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/others.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/ubuntu.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/windows.html
@@ -186,6 +188,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/source/install/fedora.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/macos.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/others.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/install/oracle-linux.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/ubuntu.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/windows.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/news.rst
