@@ -40,17 +40,3 @@
  if(DEFINED IWNET_INCLUDE_DIR)
    set(PCLIBS "-liwnet ${PCLIBS}")
  endif()
-@@ -349,13 +347,6 @@ if(DO_INSTALL_CORE)
-       FILES_MATCHING
-       PATTERN "*.h")
-   endif()
--
--  install(
--    DIRECTORY ${IOWOW_INCLUDE_DIR}/iowow
--    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
--    COMPONENT headers
--    FILES_MATCHING
--    PATTERN "*.h")
- 
-   install(FILES ${CMAKE_SOURCE_DIR}/LICENSE ${CMAKE_SOURCE_DIR}/Changelog
-           DESTINATION ${CMAKE_INSTALL_DOCDIR})

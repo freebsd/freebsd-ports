@@ -1,5 +1,5 @@
---- src/util/sort_r.h.orig	2022-02-23 10:00:23 UTC
-+++ src/util/sort_r.h
+--- src/jbi/sort_r.h.orig	2022-02-23 10:00:23 UTC
++++ src/jbi/sort_r.h
 @@ -25,10 +25,11 @@
  #define _SORT_R_INLINE inline
  
