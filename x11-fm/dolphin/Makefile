@@ -9,13 +9,8 @@ WWW=		https://userbase.kde.org/Dolphin
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${QT_PLUGINDIR}/ffmpegthumbs.so:multimedia/kdemultimedia-ffmpegthumbs \
-		${QT_PLUGINDIR}/gsthumbnail.so:graphics/kdegraphics-thumbnailers \
-		${QT_PLUGINDIR}/kf5/kio/thumbnail.so:devel/kio-extras
-
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 qt:5 \
-		tar:xz xorg
-USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
+USE_KDE=	activities attica auth bookmarks codecs \
 		completion config configwidgets coreaddons crash dbusaddons \
 		emoticons filemetadata i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kde-cli-tools \
@@ -33,4 +28,14 @@ PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" \
 OPTIONS_DEFINE=	DOCS
 OPTIONS_EXCLUDE_purecap=	DOCS
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !${ABI:Mpurecap}
+RUN_DEPENDS=	${QT_PLUGINDIR}/kf5/kio/thumbnail.so:devel/kio-extras \
+		${QT_PLUGINDIR}/gsthumbnail.so:graphics/kdegraphics-thumbnailers \
+		${QT_PLUGINDIR}/ffmpegthumbs.so:multimedia/kdemultimedia-ffmpegthumbs
+USES+=		desktop-file-utils
+USE_KDE+=	baloo baloo-widgets
+.endif
+
+.include <bsd.port.post.mk>
