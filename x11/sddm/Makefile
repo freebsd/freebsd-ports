@@ -20,12 +20,18 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 
-BUILD_DEPENDS=	rst2man.py-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR}
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+
+OPTIONS_DEFAULT=	DOCS
+
+DOCS_BUILD_DEPENDS=	rst2man.py-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	dbus-run-session:devel/dbus \
 		xauth:x11/xauth \
 		xmessage:x11/xmessage
 
-USES=		cmake compiler:c++11-lang cpe kde:5 pkgconfig python:build qt:5 xorg
+USES=		cmake compiler:c++11-lang cpe kde:5 pkgconfig qt:5 xorg
+DOCS_USES=	python:build
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_KDE=	ecm:build
@@ -35,11 +41,12 @@ USE_XORG=	xcb
 
 CONFLICTS_INSTALL=	lightdm
 
-CMAKE_ON=	BUILD_MAN_PAGES
 CMAKE_ARGS=	-DUID_MIN=1000 \
 		-DUID_MAX=65000 \
-		-DCMAKE_INSTALL_SYSCONFDIR:PATH=${LOCALBASE}/etc \
-		-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER}
+		-DCMAKE_INSTALL_SYSCONFDIR:PATH=${LOCALBASE}/etc
+
+DOCS_CMAKE_ON=	BUILD_MAN_PAGES
+DOCS_CMAKE_ARGS=	-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER}
 
 USE_RC_SUBR=	sddm
 SUB_FILES=	xinitrc.desktop
