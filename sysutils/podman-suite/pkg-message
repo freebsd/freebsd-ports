@@ -1,0 +1,6 @@
+Optionally, to host your own image registry, or to
+create cross-platform images, install in addition:
+
+- sysutils/docker-registry
+- emulators/qemu-user-static
+

@@ -1018,6 +1018,7 @@
     SUBDIR += pmt
     SUBDIR += pnscan
     SUBDIR += podman
+    SUBDIR += podman-suite
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
