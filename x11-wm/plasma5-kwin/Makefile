@@ -24,7 +24,9 @@ LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxkbcommon.so:x11/libxkbcommon
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+		xwayland-devel>0:x11-servers/xwayland-devel
+RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 
 CONFLICTS_INSTALL=	kwinft # bin/kwin_wayland
 
@@ -56,8 +58,6 @@ OPTIONS_SUB=		yes
 .include <bsd.port.pre.mk>
 
 .if !${ABI:Mpurecap}
-BUILD_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
-RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
 USES+=		gnome python:3.7+,run
 USE_QT+=	multimedia script
 .endif
