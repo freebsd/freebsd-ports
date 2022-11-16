@@ -11,6 +11,7 @@ include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
 include/curl/urlapi.h
+include/curl/websockets.h
 %%STATIC%%lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
@@ -398,6 +399,7 @@ man/man3/CURLOPT_VERBOSE.3.gz
 man/man3/CURLOPT_WILDCARDMATCH.3.gz
 man/man3/CURLOPT_WRITEDATA.3.gz
 man/man3/CURLOPT_WRITEFUNCTION.3.gz
+man/man3/CURLOPT_WS_OPTIONS.3.gz
 man/man3/CURLOPT_XFERINFODATA.3.gz
 man/man3/CURLOPT_XFERINFOFUNCTION.3.gz
 man/man3/CURLOPT_XOAUTH2_BEARER.3.gz
@@ -483,6 +485,9 @@ man/man3/curl_url_set.3.gz
 man/man3/curl_url_strerror.3.gz
 man/man3/curl_version.3.gz
 man/man3/curl_version_info.3.gz
+man/man3/curl_ws_meta.3.gz
+man/man3/curl_ws_recv.3.gz
+man/man3/curl_ws_send.3.gz
 man/man3/libcurl-easy.3.gz
 man/man3/libcurl-env.3.gz
 man/man3/libcurl-errors.3.gz
@@ -540,6 +545,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/TheArtOfHttpScripting.md
 %%PORTDOCS%%%%DOCSDIR%%/URL-SYNTAX.md
 %%PORTDOCS%%%%DOCSDIR%%/VERSIONS.md
+%%PORTDOCS%%%%DOCSDIR%%/WEBSOCKET.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/ABI.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/mksymbolsmanpage.pl
