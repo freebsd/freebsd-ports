@@ -212,6 +212,7 @@
     SUBDIR += conky
     SUBDIR += conky-awesome
     SUBDIR += conman
+    SUBDIR += conmon
     SUBDIR += consolehm
     SUBDIR += containers-common
     SUBDIR += consolekit2
