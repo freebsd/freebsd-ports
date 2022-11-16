@@ -1328,6 +1328,7 @@
     SUBDIR += signon-plugin-oauth2
     SUBDIR += signon-qt5
     SUBDIR += signon-ui
+    SUBDIR += skopeo
     SUBDIR += slack
     SUBDIR += sleuthkit
     SUBDIR += slst
