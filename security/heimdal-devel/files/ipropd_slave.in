@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: ipropd_slave
+# REQUIRE: kerberos
+# KEYWORD: shutdown
+
+# ipropd_slave_keytab:
+#	Keytab file for iprop service.
+# ipropd_slave_master:
+#	Hostname of the master node.
+
+. /etc/rc.subr
+
+name=ipropd_slave
+rcvar=${name}_enable
+: ${ipropd_slave_enable:=NO}
+: ${ipropd_slave_program:=%%PREFIX%%/libexec/ipropd-slave}
+: ${ipropd_slave_keytab:="/etc/krb5.keytab"}
+required_files="$ipropd_slave_keytab"
+start_precmd=${name}_start_precmd
+
+ipropd_slave_start_precmd()
+{
+
+	if [ -z "$ipropd_slave_master" ]; then
+		warn "\$ipropd_slave_master is empty."
+		return 1
+	fi
+	command_args=" \
+	    $command_args \
+	    --keytab=\"$ipropd_slave_keytab\" \
+	    --detach \
+	    $ipropd_slave_master"
+}
+
+load_rc_config $name
+run_rc_command "$1"
