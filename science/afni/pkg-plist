@@ -569,6 +569,7 @@ bin/fdrval
 bin/fftest
 bin/file_tool
 bin/fim2
+bin/find_variance_lines.tcsh
 bin/float_scan
 bin/from3d
 bin/gen_epi_review.py
@@ -793,6 +794,7 @@ lib/afni/plug_vol2surf.so
 lib/afni/plug_volreg.so
 lib/afni/plug_wavelets.so
 lib/afni/plug_zeropad.so
+ %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_instacorr_tcat.py
 %%PYTHON_SITELIBDIR%%/afnipy/__init__.py
 %%PYTHON_SITELIBDIR%%/afnipy/abids_lib.py
 %%PYTHON_SITELIBDIR%%/afnipy/afni_base.py
