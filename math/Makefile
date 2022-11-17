@@ -1157,6 +1157,7 @@
     SUBDIR += universal
     SUBDIR += unuran
     SUBDIR += vampire
+    SUBDIR += verdict
     SUBDIR += viennacl
     SUBDIR += vinci
     SUBDIR += visualpolylib
