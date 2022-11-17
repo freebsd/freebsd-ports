@@ -1,4 +1,4 @@
---- src/slic3r/GUI/InstanceCheck.cpp.orig	2021-01-11 13:01:51 UTC
+--- src/slic3r/GUI/InstanceCheck.cpp.orig	2022-09-06 07:09:19 UTC
 +++ src/slic3r/GUI/InstanceCheck.cpp
 @@ -23,7 +23,7 @@
  #include <strsafe.h>
@@ -9,7 +9,7 @@
  #include <dbus/dbus.h> /* Pull in all of D-Bus headers. */
  #endif //__linux__
  
-@@ -169,7 +169,7 @@ namespace instance_check_internal
+@@ -222,7 +222,7 @@ namespace instance_check_internal
  		return false;
  	}
  

@@ -1,6 +1,6 @@
---- src/libslic3r/CMakeLists.txt.orig	2021-07-16 10:14:03 UTC
+--- src/libslic3r/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
 +++ src/libslic3r/CMakeLists.txt
-@@ -300,7 +300,6 @@ target_include_directories(libslic3r PUBLIC ${EXPAT_IN
+@@ -395,7 +395,6 @@ find_package(JPEG REQUIRED)
  target_link_libraries(libslic3r
      libnest2d
      admesh

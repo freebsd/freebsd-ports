@@ -1,4 +1,4 @@
---- src/avrdude/main.c.orig	2021-08-13 03:29:34 UTC
+--- src/avrdude/main.c.orig	2022-09-06 07:09:19 UTC
 +++ src/avrdude/main.c
 @@ -806,7 +806,7 @@ int avrdude_main(int argc, char * argv [])
    avrdude_message(MSG_NOTICE, "\n%s: Version %s, compiled on %s at %s\n"

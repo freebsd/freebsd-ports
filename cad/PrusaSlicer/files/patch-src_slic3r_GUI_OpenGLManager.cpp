@@ -1,6 +1,6 @@
---- src/slic3r/GUI/OpenGLManager.cpp.orig	2021-04-16 11:41:00 UTC
+--- src/slic3r/GUI/OpenGLManager.cpp.orig	2022-09-06 07:09:19 UTC
 +++ src/slic3r/GUI/OpenGLManager.cpp
-@@ -239,7 +239,8 @@ bool OpenGLManager::init_gl()
+@@ -236,7 +236,8 @@ bool OpenGLManager::init_gl()
      if (!m_gl_initialized) {
          if (glewInit() != GLEW_OK) {
              BOOST_LOG_TRIVIAL(error) << "Unable to init glew library";

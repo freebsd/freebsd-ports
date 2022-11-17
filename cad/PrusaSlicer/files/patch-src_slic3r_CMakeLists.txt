@@ -1,14 +1,16 @@
---- src/slic3r/CMakeLists.txt.orig	2021-01-11 13:01:51 UTC
+--- src/slic3r/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
 +++ src/slic3r/CMakeLists.txt
-@@ -232,9 +232,9 @@ add_library(libslic3r_gui STATIC ${SLIC3R_GUI_SOURCES}
+@@ -260,11 +260,11 @@ add_library(libslic3r_gui STATIC ${SLIC3R_GUI_SOURCES}
  
  encoding_check(libslic3r_gui)
  
--target_link_libraries(libslic3r_gui libslic3r avrdude cereal imgui GLEW::GLEW OpenGL::GL OpenGL::GLU hidapi libcurl ${wxWidgets_LIBRARIES})
+-target_link_libraries(libslic3r_gui libslic3r avrdude cereal imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES})
 +target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL OpenGL::GLU hidapi libcurl ${wxWidgets_LIBRARIES})
  
--if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
-+if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+ if (MSVC)
+     target_link_libraries(libslic3r_gui Setupapi.lib)
+-elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
      target_link_libraries(libslic3r_gui ${DBUS_LIBRARIES}) 
- endif()
- 
+ elseif (APPLE)
+     target_link_libraries(libslic3r_gui ${DISKARBITRATION_LIBRARY})

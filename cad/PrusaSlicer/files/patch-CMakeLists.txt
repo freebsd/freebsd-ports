@@ -1,14 +1,14 @@
---- CMakeLists.txt.orig	2021-04-16 11:41:00 UTC
+--- CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
 +++ CMakeLists.txt
-@@ -3,6 +3,7 @@ project(PrusaSlicer)
- 
+@@ -4,6 +4,7 @@ project(PrusaSlicer)
  include("version.inc")
  include(GNUInstallDirs)
+ include(CMakeDependentOption)
 +add_compile_options(-DNDEBUG)
  
  set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
  file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
-@@ -166,7 +167,7 @@ if (APPLE)
+@@ -197,7 +198,7 @@ if (APPLE)
      endif ()
  endif ()
  
@@ -17,14 +17,24 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -525,8 +526,8 @@ elseif (SLIC3R_FHS)
-     # CMAKE_INSTALL_FULL_DATAROOTDIR: read-only architecture-independent data root (share)
-     set(SLIC3R_FHS_RESOURCES "${CMAKE_INSTALL_FULL_DATAROOTDIR}/PrusaSlicer")
-     install(DIRECTORY "${SLIC3R_RESOURCES_DIR}/" DESTINATION "${SLIC3R_FHS_RESOURCES}")
--    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${SLIC3R_FHS_RESOURCES}/applications)
--    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${SLIC3R_FHS_RESOURCES}/applications)
-+    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION share/applications)
-+    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION share/applications)
+@@ -597,8 +598,8 @@ elseif (SLIC3R_FHS)
+     install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
+         PATTERN "*/udev" EXCLUDE
+     )
+-    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+-    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
++	install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION share/applications)
++	install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION share/applications)
+     foreach(SIZE 32 128 192)
+         install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
+             DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
+@@ -607,7 +608,8 @@ elseif (SLIC3R_FHS)
+             DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
+         )
+     endforeach()
+-    install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
++	#FreeBSD doesn't have a udev
++	#install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
  else ()
      install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)
      install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)

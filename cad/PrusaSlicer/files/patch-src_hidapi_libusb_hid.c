@@ -1,4 +1,4 @@
---- src/hidapi/libusb/hid.c.orig	2020-03-31 19:30:48 UTC
+--- src/hidapi/libusb/hid.c.orig	2022-11-13 14:36:46 UTC
 +++ src/hidapi/libusb/hid.c
 @@ -0,0 +1,1514 @@
 +/*******************************************************
