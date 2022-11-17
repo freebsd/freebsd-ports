@@ -1,0 +1,5 @@
+Stc is a command line tool for Syncthing. It can be used to quickly check
+status of Syncthing from a terminal / command line without need of a Web
+Browser. For example on a remote machine over ssh, without port forwarding or
+if you have large number of machines to query. Also run from a script,
+crontab, scheduled task, etc.
