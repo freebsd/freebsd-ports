@@ -17,7 +17,7 @@ BUILD_DEPENDS=	xmlto:textproc/xmlto
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkd77
 
-LIBS+=		-lexecinfo
+LDFLAGS+=	-lexecinfo
 MESON_ARGS=	-Dgpm=false -Dperl=true
 
 OPTIONS_DEFINE=		256COLORS 88COLORS TRUECOLORS BITTORRENT BROTLI EXMODE \
