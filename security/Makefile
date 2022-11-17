@@ -204,6 +204,7 @@
     SUBDIR += heaan
     SUBDIR += headscale
     SUBDIR += heimdal
+    SUBDIR += heimdal-devel
     SUBDIR += helib
     SUBDIR += hexl
     SUBDIR += highwayhash
