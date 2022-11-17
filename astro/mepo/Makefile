@@ -1,5 +1,5 @@
 PORTNAME=	mepo
-DISTVERSION=	1.1
+DISTVERSION=	1.1.1
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -11,7 +11,9 @@ LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.9.0:lang/zig
+BROKEN=		https://github.com/ziglang/zig/issues/12170
+
+BUILD_DEPENDS=	zig>=0.10.0:lang/zig
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
 
