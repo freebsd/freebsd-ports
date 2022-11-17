@@ -1,6 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -26,11 +26,11 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		caarlos0:env:v6.10.1:caarlos0_env_v6/vendor/github.com/caarlos0/env/v6 \
 		caarlos0:sshmarshal:v0.1.0:caarlos0_sshmarshal/vendor/github.com/caarlos0/sshmarshal \
 		charmbracelet:bubbles:v0.14.0:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
-		charmbracelet:bubbletea:v0.22.1:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
+		charmbracelet:bubbletea:v0.23.1:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:glamour:c4cd9ed13e4c:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:keygen:v0.3.0:charmbracelet_keygen/vendor/github.com/charmbracelet/keygen \
 		charmbracelet:lipgloss:v0.6.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
-		charmbracelet:wish:v0.6.0:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
+		charmbracelet:wish:v0.7.0:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
 		containerd:console:v1.0.3:containerd_console/vendor/github.com/containerd/console \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
