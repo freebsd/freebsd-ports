@@ -1,6 +1,6 @@
 PORTNAME=	cloud-init
-DISTVERSION=	22.3-79
-DISTVERSIONSUFFIX=	-g9a2eb975
+DISTVERSION=	22.4-26
+DISTVERSIONSUFFIX=	-g5e6ecc61
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -55,6 +55,7 @@ NO_ARCH=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cloudinit/settings.py
+	${REINPLACE_CMD} -e 's|@@PACKAGED_VERSION@@|${DISTVERSION}${DISTVERSIONSUFFIX}|g' ${WRKSRC}/cloudinit/version.py
 	${RM} ${WRKSRC}/config/cloud.cfg.d/99_freebsd.cfg.orig
 
 post-install:

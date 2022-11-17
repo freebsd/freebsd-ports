@@ -1,3 +1,3 @@
-TIMESTAMP = 1666192896
-SHA256 (canonical-cloud-init-22.3-79-g9a2eb975_GH0.tar.gz) = fa2fdb05a5b9bc7c8a947093136515930d29862b65c838cdafc5dc0141a77ca8
-SIZE (canonical-cloud-init-22.3-79-g9a2eb975_GH0.tar.gz) = 1458244
+TIMESTAMP = 1670248668
+SHA256 (canonical-cloud-init-22.4-26-g5e6ecc61_GH0.tar.gz) = 809fa96858a2dc8d31c41f895fe74ea733306056383c6c5938a5bfa1d3187688
+SIZE (canonical-cloud-init-22.4-26-g5e6ecc61_GH0.tar.gz) = 1513968
