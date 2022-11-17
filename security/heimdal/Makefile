@@ -1,5 +1,6 @@
 PORTNAME=	heimdal
 PORTVERSION=	7.8.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CONFLICTS=	krb5 krb5-*
 
 USES=		cpe gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
-		pkgconfig python readline makeinfo ssl
+		pkgconfig readline makeinfo ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	${GSSAPILIBDIR}
 
@@ -30,7 +31,8 @@ CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
 		ac_cv_header_db4_db_h=no \
 		ac_cv_header_db5_db_h=no \
 		ac_cv_header_db6_db_h=no \
-		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et
+		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et \
+		PYTHON="${TRUE}"
 CONFIGURE_ARGS=	--with-berkeley-db \
 		--with-libintl \
 		--with-libintl-include="${LOCALBASE}/include" \
