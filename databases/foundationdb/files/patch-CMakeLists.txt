@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-12-29 09:04:08 UTC
+--- CMakeLists.txt.orig	2022-09-19 11:42:41 UTC
 +++ CMakeLists.txt
-@@ -172,9 +172,13 @@ else()
+@@ -183,9 +183,13 @@ add_subdirectory(fdbbackup)
    add_subdirectory(fdbservice)
  endif()
  add_subdirectory(fdbbackup)

@@ -17613,3 +17613,4 @@ devel/awscli|devel/py-awscli|2022-11-15|Renamed comply with Python Ports Policy 
 graphics/sciplot|science/sciplot|2022-11-15|Move to avoid conflict with graphics/SciPlot
 x11-wm/hyprland-devel|x11-wm/hyprland|2022-11-16|Updated to the latest stable version
 net/rabbitmq-c-devel|net/rabbitmq-c|2022-11-16|Remove obsolete devel port, use net/rabbitmq-c instead
+databases/foundationdb-devel|databases/foundationdb|2022-11-16|Remove obsolete devel port, use databases/foundationdb instead
