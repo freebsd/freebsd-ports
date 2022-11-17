@@ -1075,6 +1075,7 @@
     SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += simple-scan
+    SUBDIR += simpleitk
     SUBDIR += simpleviewer
     SUBDIR += skanlite
     SUBDIR += skanpage
