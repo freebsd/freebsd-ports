@@ -1,0 +1,38 @@
+--- src/Xrender.c.orig	2022-11-17 00:04:44.572129000 +0000
++++ src/Xrender.c	2022-11-17 00:07:27.768743000 +0000
+@@ -414,6 +414,7 @@
+     int				nf, ns, nd, nv;
+     unsigned long		rlength;
+     unsigned long		nbytes;
++    unsigned long		padFormats;
+ 
+     RenderCheckExtension (dpy, info, 0);
+     LockDisplay (dpy);
+@@ -465,8 +466,17 @@
+ 	(rep.numVisuals < ((INT_MAX / 4) / sizeof (XRenderVisual))) &&
+ 	(rep.numSubpixel < ((INT_MAX / 4) / 4)) &&
+ 	(rep.length < (INT_MAX >> 2)) ) {
++	/*
++	 * XXX: Use proper generalised aligning, not hard-coded padding based
++	 * on struct layout and pointer size knowledge.
++	 */
++#ifdef __CHERI_PURE_CAPABILITY__
++	padFormats = rep.numFormats % 2;
++#else
++	padFormats = 0;
++#endif
+ 	xri = Xmalloc (sizeof (XRenderInfo) +
+-		       (rep.numFormats * sizeof (XRenderPictFormat)) +
++		       ((rep.numFormats + padFormats) * sizeof (XRenderPictFormat)) +
+ 		       (rep.numScreens * sizeof (XRenderScreen)) +
+ 		       (rep.numDepths * sizeof (XRenderDepth)) +
+ 		       (rep.numVisuals * sizeof (XRenderVisual)));
+@@ -496,7 +506,7 @@
+     xri->minor_version = async_state.minor_version;
+     xri->format = (XRenderPictFormat *) (xri + 1);
+     xri->nformat = rep.numFormats;
+-    xri->screen = (XRenderScreen *) (xri->format + rep.numFormats);
++    xri->screen = (XRenderScreen *) (xri->format + rep.numFormats + padFormats);
+     xri->nscreen = rep.numScreens;
+     xri->depth = (XRenderDepth *) (xri->screen + rep.numScreens);
+     xri->ndepth = rep.numDepths;
