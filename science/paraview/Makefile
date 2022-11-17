@@ -1,8 +1,7 @@
 PORTNAME=	paraview
-DISTVERSION=	5.10.1
-PORTREVISION=	9
+DISTVERSION=	${PARAVIEW_VER}.0
 CATEGORIES=	science graphics
-MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
+MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,6 +18,7 @@ BROKEN_aarch64=	fails to link: undefined reference to `sbrk'
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cli11>0:devel/cli11	\
 		utf8cpp>0:devel/utf8cpp	\
+		nlohmann-json>0:devel/nlohmann-json	\
 		${LOCALBASE}/include/exprtk.hpp:math/exprtk	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
@@ -39,10 +39,12 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libhpdf.so:print/libharu \
+		libproj.so:graphics/proj \
 		libpdal_base.so:math/pdal \
 		libdrm.so:graphics/libdrm \
 		libcgns.so:science/cgnslib \
 		liblz4.so:archivers/liblz4 \
+		libverdict.so:math/verdict \
 		libnetcdf.so:science/netcdf \
 		libjsoncpp.so:devel/jsoncpp \
 		libprotobuf.so:devel/protobuf \
@@ -60,11 +62,11 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		alias cmake compiler:c11 eigen:3 fortran gl gnome jpeg localbase	\
-		pkgconfig python qt:5 shebangfix tar:xz xorg
+		pkgconfig python qt:5 shebangfix sqlite tar:xz xorg
 USE_GL=		gl glew glu glut
 USE_GNOME=	libxml2
 USE_QT=		buildtools:build core gui help network opengl qmake:build sql svg	\
-		widgets x11extras xmlpatterns
+		webengine widgets x11extras xmlpatterns
 USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xorgproto xrender	\
 		xxf86vm
 USE_LDCONFIG=	yes
@@ -99,8 +101,6 @@ SHEBANG_FILES=	VTK/Examples/SearchScript.sh	\
 		VTK/Utilities/Maintenance/*.sh	\
 		Clients/CommandLineExecutables/paraview-config.in
 
-VERMAJORMINOR=	${PORTVERSION:R}
-
 OPTIONS_DEFINE=	DOCS EXAMPLES MPI OSMESA
 OPTIONS_SUB=	yes
 OSMESA_DESC=	Use Mesa for off-screen rendering
@@ -120,7 +120,7 @@ OSMESA_CMAKE_ON=	-DVTK_USE_X:BOOL="OFF" \
 			-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
 OSMESA_CMAKE_OFF=	-DVTK_USE_X:BOOL="ON"
 
-EXAMPLES_CMAKE_BOOL=	PARAVIEW_BUILD_EXAMPLES
+EXAMPLES_CMAKE_BOOL=	PARAVIEW_ENABLE_EXAMPLES
 PORTEXAMPLES=		*
 
 #TEST_CMAKE_ON=		-DPARAVIEW_BUILD_TESTING=WANT	\
@@ -139,12 +139,12 @@ PORTEXAMPLES=		*
 #LIB_DEPENDS+=	libospray.so:graphics/ospray
 #CMAKE_ARGS+=	-DPARAVIEW_ENABLE_RAYTRACING
 
-PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
+PLIST_SUB+=	VERMAJORMINOR=${PARAVIEW_VER}
 
 VTK9_CONFLICTS=	vtk.py vtkmodules/__init__.py vtkmodules/all.py	\
 		vtkmodules/gtk vtkmodules/numpy_interface	\
 		vtkmodules/qt vtkmodules/test vtkmodules/tk	\
-		vtkmodules/util vtkmodules/wx
+		vtkmodules/util vtkmodules/wx vtkmodules/generate_pyi.py
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
@@ -162,5 +162,6 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
+.include <./Makefile.version>
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
