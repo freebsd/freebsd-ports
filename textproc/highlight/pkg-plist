@@ -2,9 +2,9 @@ bin/highlight
 %%GUI%%bin/highlight-gui
 @sample %%ETCDIR%%/filetypes.conf.sample
 @sample %%ETCDIR%%/lsp.conf.sample
-man/man1/highlight.1.gz
-man/man5/filetypes.conf.5.gz
 %%GUI%%share/applications/highlight.desktop
+share/bash-completion/completions/highlight
+share/fish/vendor_completions.d/highlight.fish
 %%GUI%%share/icons/hicolor/256x256/apps/highlight.png
 %%GUI%%%%DATADIR%%/gui_files/ext/fileopenfilter.conf
 %%GUI%%%%DATADIR%%/gui_files/l10n/highlight_bg_BG.qm
@@ -51,6 +51,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/bnf.lang
 %%DATADIR%%/langDefs/boo.lang
 %%DATADIR%%/langDefs/c.lang
+%%DATADIR%%/langDefs/carbon.lang
 %%DATADIR%%/langDefs/ceylon.lang
 %%DATADIR%%/langDefs/charmm.lang
 %%DATADIR%%/langDefs/chill.lang
@@ -263,6 +264,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/yaiff.lang
 %%DATADIR%%/langDefs/yaml.lang
 %%DATADIR%%/langDefs/yang.lang
+%%DATADIR%%/langDefs/zig.lang
 %%DATADIR%%/langDefs/znn.lang
 %%DATADIR%%/plugins/asciidoc_html_add_links.lua
 %%DATADIR%%/plugins/bash_functions.lua
@@ -506,3 +508,6 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/themes/zellner.theme
 %%DATADIR%%/themes/zenburn.theme
 %%DATADIR%%/themes/zmrok.theme
+share/man/man1/highlight.1.gz
+share/man/man5/filetypes.conf.5.gz
+share/zsh/site-functions/_highlight
