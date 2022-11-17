@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.25-14375 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g99ae561caa
+DISTVERSION=	0.0.25-14382 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gc4b259e0f8
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -32,11 +32,11 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.12.0-2-gc2aa9dd:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:06d0bad:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
-		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-172-g36c0c15:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
-		KhronosGroup:SPIRV-Tools:v2022.2-71-g5e61ea20:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
-		KhronosGroup:glslang:11.11.0-2-g10423ec6:glslang/3rdparty/glslang/glslang \
+		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
+		KhronosGroup:SPIRV-Tools:v2022.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
+		KhronosGroup:glslang:11.12.0:glslang/3rdparty/glslang/glslang \
 		kinetiknz:cubeb:cubeb-0.2-1391-gdc511c6:cubeb/3rdparty/cubeb/cubeb \
-		wolfSSL:wolfssl:v5.4.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
+		wolfSSL:wolfssl:v5.5.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
 USES=		cmake compiler:c++17-lang elfctl gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
