@@ -1,6 +1,7 @@
 PORTNAME=	icedtea-web
 PORTVERSION=	1.8.8
 DISTVERSIONPREFIX=	icedtea-web-
+PORTREVISION=	1
 CATEGORIES=	java www
 
 MAINTAINER=	java@FreeBSD.org

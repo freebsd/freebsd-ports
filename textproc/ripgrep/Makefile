@@ -1,6 +1,6 @@
 PORTNAME=	ripgrep
 DISTVERSION=	13.0.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
