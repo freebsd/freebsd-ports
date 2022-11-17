@@ -198,9 +198,6 @@ GID!=	id -g
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
 	                  ${WRKSRC}/site/Makefile
-	@${REINPLACE_CMD} -e 's!et/com_err\.h!com_err.h!g'	\
-	                  -e 's!-lk5crypto!!g'			\
-	                  ${WRKSRC}/configure ${WRKSRC}/authprogs/auth_krb5.c
 	@${REINPLACE_CMD} -e '/^#pragma/d' ${WRKSRC}/*/*.c
 .if ${PORT_OPTIONS:MBERKELEYDB}
 	@${REINPLACE_CMD} -e 's!-ldb!-ldb-${BDB_VER}!' ${WRKSRC}/configure
