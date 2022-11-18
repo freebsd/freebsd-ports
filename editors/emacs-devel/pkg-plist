@@ -1638,6 +1638,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-vc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-vc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pp.el.gz
@@ -1758,6 +1760,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-button.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-capab.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-capab.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-common.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-common.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-dcc.el.gz
@@ -2774,10 +2778,14 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-bbdb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-bbdb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ecomplete.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ecomplete.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ldap.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ldap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mailabbrev.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mailabbrev.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-macos-contacts.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-macos-contacts.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eww.el.gz
