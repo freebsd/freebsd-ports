@@ -1,7 +1,8 @@
 PORTNAME=	smokeping
 PORTVERSION=	2.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt www
+MASTER_SITES=	https://oss.oetiker.ch/smokeping/pub/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Latency logging and graphing system
@@ -9,7 +10,6 @@ WWW=		https://oss.oetiker.ch/smokeping/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librrd.so:databases/rrdtool
 BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		p5-CGI-Session>=0:www/p5-CGI-Session \
 		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
@@ -29,54 +29,48 @@ BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-OrePAN2>=0:devel/p5-OrePAN2 \
 		curl>=0:ftp/curl
+LIB_DEPENDS=	librrd.so:databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe gmake perl5 autoreconf
+USE_RC_SUBR=	smokeping
 
-CONFLICTS_INSTALL=	nfsping
-
-SUB_FILES=	pkg-deinstall pkg-message
-SUB_LIST=	USERS=${USERS} \
-		GROUPS=${GROUPS}
-
-NO_ARCH=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	PERL=${PERL} PERL5LIB=${PREFIX}/smokeping/lib
 CONFIGURE_ARGS+=	\
 		--sysconfdir=${ETCDIR} \
 		--localstatedir="${PREFIX}/var" \
 		--with-htdocs-dir=${PREFIX}/smokeping/htdocs \
 		--libdir=${PREFIX}/smokeping/lib
+CONFIGURE_ENV+=	PERL=${PERL} PERL5LIB=${PREFIX}/smokeping/lib
+
+CONFLICTS_INSTALL=	nfsping
+
+NO_ARCH=	yes
+SUB_FILES=	pkg-deinstall pkg-message
+SUB_LIST=	USERS=${USERS} \
+			GROUPS=${GROUPS}
+
 HTDOCSDIR=	${PREFIX}/smokeping/htdocs
-
-USE_RC_SUBR=	smokeping
-
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 USERS=		smokeping
 GROUPS=		smokeping
 
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
 OPTIONS_DEFINE=	ECHOPING RADIUS TELNET DNS FPING EXAMPLES
 OPTIONS_DEFAULT=	FPING
 
-FPING_DESC=	Support for fping probes
-FPING_RUN_DEPENDS=	${LOCALBASE}/sbin/fping:net/fping
-
-ECHOPING_DESC=	Support for EchoPing probes
-ECHOPING_RUN_DEPENDS=	${LOCALBASE}/bin/echoping:net/echoping
-
-RADIUS_DESC=	Support for Radius probes
-RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
-
-TELNET_DESC=	Support for TelnetIOSPing probes
-TELNET_RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
-
 DNS_DESC=	Support for AnotherDNS probes
-DNS_RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
+ECHOPING_DESC=	Support for EchoPing probes
+FPING_DESC=	Support for fping probes
+RADIUS_DESC=	Support for Radius probes
+TELNET_DESC=	Support for TelnetIOSPing probes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	oetiker
-GH_PROJECT=	SmokePing
+DNS_RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
+ECHOPING_RUN_DEPENDS=	${LOCALBASE}/bin/echoping:net/echoping
+FPING_RUN_DEPENDS=	${LOCALBASE}/sbin/fping:net/fping
+RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
+TELNET_RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
 
 # We will take these from CPAN instead
 post-extract:
