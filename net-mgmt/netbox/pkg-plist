@@ -582,6 +582,7 @@
 %%DATADIR%%/netbox/configuration_example.py
 %%DATADIR%%/netbox/configuration_testing.py
 %%DATADIR%%/netbox/constants.py
+%%DATADIR%%/netbox/context.py
 %%DATADIR%%/netbox/context_processors.py
 %%DATADIR%%/netbox/denormalized.py
 %%DATADIR%%/netbox/filtersets.py
@@ -599,7 +600,6 @@
 %%DATADIR%%/netbox/models/features.py
 %%DATADIR%%/netbox/navigation_menu.py
 %%DATADIR%%/netbox/preferences.py
-%%DATADIR%%/netbox/request_context.py
 %%DATADIR%%/netbox/search.py
 %%DATADIR%%/netbox/settings.py
 %%DATADIR%%/netbox/signals.py
@@ -663,6 +663,7 @@
 %%DATADIR%%/project-static/img/netbox_touch-icon-180.png
 %%DATADIR%%/project-static/img/rest-api.ico
 %%DATADIR%%/project-static/img/tint_20.png
+%%DATADIR%%/project-static/js/setmode.js
 %%DATADIR%%/project-static/netbox-graphiql/graphiql.scss
 %%DATADIR%%/project-static/netbox-graphiql/index.ts
 %%DATADIR%%/project-static/netbox-graphiql/package.json
