@@ -111,8 +111,8 @@ IGNORE=		is only for FreeBSD
 .if ${ARCH} == powerpc
 # bfd to link rustc_driver; lld currently can't
 BUILD_DEPENDS+=	ld.bfd:devel/binutils
-LIB_DEPENDS+=	libatomic.so:lang/gcc12
-MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc12"
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
 .else
 MAKE_ENV+=	RUST_BACKTRACE=1
 .endif
