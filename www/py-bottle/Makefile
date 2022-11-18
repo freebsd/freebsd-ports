@@ -1,5 +1,5 @@
 PORTNAME=	bottle
-PORTVERSION=	0.12.19
+PORTVERSION=	0.12.20
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -13,10 +13,9 @@ LICENSE=	MIT
 
 USES=		cpe python:3.6+
 
-NO_ARCH=	yes
-
+CPE_VENDOR=	bottlepy
 USE_PYTHON=	autoplist concurrent distutils
 
-CPE_VENDOR=	bottlepy
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
