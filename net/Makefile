@@ -199,6 +199,7 @@
     SUBDIR += gnu-radius
     SUBDIR += go-bapu
     SUBDIR += go-cs
+    SUBDIR += go-tcping
     SUBDIR += gobgp
     SUBDIR += gofish
     SUBDIR += google-cloud-sdk

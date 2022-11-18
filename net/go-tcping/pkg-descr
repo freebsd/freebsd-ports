@@ -1,0 +1,5 @@
+A cross-platform ping program for TCP ports.
+
+This program will send TCP probes to an IP address or a hostname
+specified by you and prints the result. It works with both IPv4 and
+IPv6.
