@@ -1,5 +1,5 @@
 PORTNAME=	lfcbase
-PORTVERSION=	1.16.6
+PORTVERSION=	1.17.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
