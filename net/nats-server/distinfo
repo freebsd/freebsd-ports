@@ -1,6 +1,6 @@
-TIMESTAMP = 1667667596
-SHA256 (nats-io-nats-server-v2.9.6_GH0.tar.gz) = 7f1e9bccd2dde8ad48b9318f14a2356038b372168d8e30fd7a0c907caa5a4057
-SIZE (nats-io-nats-server-v2.9.6_GH0.tar.gz) = 1623515
+TIMESTAMP = 1668806441
+SHA256 (nats-io-nats-server-v2.9.7_GH0.tar.gz) = eaf5fbfac1e5a07aef4d187dce8eabdffc564a60309bf7070694651cba1f5049
+SIZE (nats-io-nats-server-v2.9.7_GH0.tar.gz) = 1630230
 SHA256 (golang-crypto-eccd6366d1be_GH0.tar.gz) = 62db5700a46fa0ad1f9129134dbfa98da4701f3b2cc91d569315b9d39918e145
 SIZE (golang-crypto-eccd6366d1be_GH0.tar.gz) = 1631561
 SHA256 (golang-protobuf-v1.4.2_GH0.tar.gz) = a1e486b3ed6f502c43e10cb28bde4e8f020a420ef9958d3fbe61801492c07c87
