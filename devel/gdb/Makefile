@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--program-suffix=${DISTVERSION:S/.//g} \
 		--enable-targets=all --enable-64-bit-bfd \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
-		--with-expat=yes --with-libexpat-prefix=${LOCALBASE} \
 		--without-libunwind-ia64 --with-system-zlib
 CONFIGURE_OUTSOURCE=	yes
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
@@ -63,14 +62,14 @@ EXTRA_PATCHES=	${FILESDIR}/commit-711b0b6698f \
 		${FILESDIR}/commit-f9fbb7636a5 \
 		${FILESDIR}/commit-b7fe5463cf0 \
 		${FILESDIR}/commit-b2fdd31b03e
-LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${DISTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT TUI
-
-OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT TUI
+OPTIONS_DEFINE=	EXPAT GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT \
+		TUI XXHASH
+OPTIONS_DEFAULT=	EXPAT GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
+			TUI XXHASH
 OPTIONS_DEFAULT+=	PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 
 OPTIONS_SINGLE=	READLINE ICONV ZLIB
@@ -79,21 +78,22 @@ OPTIONS_SINGLE_ICONV=	PORT_ICONV SYSTEM_ICONV
 OPTIONS_SINGLE_ZLIB=	BUNDLED_ZLIB SYSTEM_ZLIB
 
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
-KGDB_DESC=		Kernel Debugging Support
+KGDB_DESC=		Kernel debugging support
 BUNDLED_READLINE_DESC=	from gdb distfile
 BUNDLED_ZLIB_DESC=	from gdb distfile
 PORT_READLINE_DESC=	from devel/readline port
 PORT_ICONV_DESC=	use libiconv, with wider charset support
-SOURCE_HIGHLIGHT_DESC=	Source Code Styling
+SOURCE_HIGHLIGHT_DESC=	Syntax highlighting support
 SYSTEM_ICONV_DESC=	use libc iconv, with no wchar support
 SYSTEM_ZLIB_DESC=	use system zlib
-TUI_DESC=		Text User Interface enabled
+TUI_DESC=		Text User Interface support
+XXHASH_DESC=		Use xxHash for hashing (faster)
 
 OPTIONS_SUB=	yes
 
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
-DEBUG_CFLAGS=		-g
-DEBUG_VARS=	STRIP=
+EXPAT_CONFIGURE_OFF=	--with-expat=no
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 GUILE_CONFIGURE_WITH=	guile
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 NLS_USES=	gettext-runtime
@@ -108,6 +108,8 @@ SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
 SYSTEM_ICONV_USES=	iconv
 SYSTEM_ZLIB_WITH=	system-zlib
 TUI_CONFIGURE_ENABLE=	tui
+XXHASH_CONFIGURE_OFF=	--with-xxhash=no
+XXHASH_LIB_DEPENDS=	libxxhash.so:devel/xxhash
 
 .include <bsd.port.pre.mk>
 
