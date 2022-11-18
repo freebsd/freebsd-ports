@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-psychrometrics
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
