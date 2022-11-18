@@ -8,6 +8,8 @@ WWW=		https://github.com/labwc/labwc
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_12=	static_assert not visible with -D_POSIX_C_SOURCE=200809L
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
