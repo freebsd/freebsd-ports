@@ -1,3 +1,55 @@
+  <vuln vid="556fdf03-6785-11ed-953b-002b67dfc673">
+    <topic>Tomcat -- Request Smuggling</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><ge>8.5.0</ge><lt>8.5.83</lt></range>
+	<range><ge>9.0.0-M1</ge><lt>9.0.68</lt></range>
+	<range><ge>10.0.0-M1</ge><lt>10.0.27</lt></range>
+	<range><ge>10.1.0-M1</ge><lt>10.1.1</lt></range>
+      </package>
+      <package>
+	<name>tomcat85</name>
+	<range><ge>8.5.0</ge><lt>8.5.83</lt></range>
+      </package>
+      <package>
+	<name>tomcat9</name>
+	<range><ge>9.0.0-M1</ge><lt>9.0.68</lt></range>
+      </package>
+      <package>
+	<name>tomcat10</name>
+	<range><ge>10.0.0-M1</ge><lt>10.0.27</lt></range>
+      </package>
+      <package>
+	<name>tomcat101</name>
+	<range><ge>10.1.0-M1</ge><lt>10.1.1</lt></range>
+      </package>
+      <package>
+	<name>tomcat-devel</name>
+	<range><ge>10.1.0-M1</ge><lt>10.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Tomcat reports:</p>
+	<blockquote cite="https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq">
+	  <p>
+	  If Tomcat was configured to ignore invalid HTTP headers via setting rejectIllegalHeader to false (the default for 8.5.x only), Tomcat did not reject a request containing an invalid Content-Length header making a request smuggling attack possible if Tomcat was located behind a reverse proxy that also failed to reject the request with the invalid header.
+	  </p>
+	  <p>The CVSS score for this vulnerability is 7.5 High</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-42252</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-42252</url>
+    </references>
+    <dates>
+      <discovery>2022-10-31</discovery>
+      <entry>2022-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="094e4a5b-6511-11ed-8c5e-206a8a720317">
     <topic>krb5 -- Integer overflow vulnerabilities in PAC parsing</topic>
     <affects>
