@@ -11,8 +11,6 @@ WWW=		https://github.com/labwc/labwc
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_12=	static_assert not visible with -D_POSIX_C_SOURCE=200809L
-
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
@@ -60,5 +58,10 @@ post-patch:
 		-e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/docs/${PORTNAME}-config.5.scd \
 		${WRKSRC}/src/common/dir.c
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01
+# https://cgit.freebsd.org/src/commit/?id=773538247007
+	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1203501 ]; then \
+		${REINPLACE_CMD} -e '/_POSIX_C_SOURCE/d' ${WRKSRC}/src/cursor.c; \
+	fi
 
 .include <bsd.port.mk>
