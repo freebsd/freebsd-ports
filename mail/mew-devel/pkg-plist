@@ -81,6 +81,8 @@ man/man1/smew.1.gz
 %%EMACS_SITE_LISPDIR%%/mew/mew-encode.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew-env.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-env.elc
+%%EMACS_SITE_LISPDIR%%/mew/mew-env0.el
+%%EMACS_SITE_LISPDIR%%/mew/mew-env0.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew-exec.el
 %%EMACS_SITE_LISPDIR%%/mew/mew-exec.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew-ext.el
