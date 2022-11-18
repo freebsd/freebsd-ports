@@ -93,7 +93,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/DkimStatus.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/Header.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/MessagePriority.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/MimeType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/Parameter.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Header.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/HeaderCollection.php
@@ -576,6 +575,9 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/crypt.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dav/client.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dns.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/magic.mime
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/magic.mime.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/mimetype.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/csp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/request.php
