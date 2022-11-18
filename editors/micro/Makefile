@@ -1,7 +1,7 @@
 PORTNAME=	micro
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://micro-editor.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		desktop-file-utils go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	zyedidia
 GH_TUPLE=	blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
@@ -55,7 +55,12 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X 'github.com/${GH_ACCOUNT}/${GH_PROJECT}/v2/internal/util.CompileDate=${_BUILD_DATE}' \
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/v2/internal/util.Debug=${_BUILD_DEBUG}"
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/micro \
+		share/applications/micro.desktop \
+		share/man/man1/micro.1.gz \
+		share/pixmaps/micro-logo-drop.svg \
+		share/pixmaps/micro-logo-mark.svg \
+		share/pixmaps/micro-logo.svg
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DEBUG DOCS
@@ -63,9 +68,19 @@ OPTIONS_DEFINE=	DEBUG DOCS
 DEBUG_DESC=	Enable debug logging
 DEBUG_VARS=	_BUILD_DEBUG=ON
 
+pre-build:
+	cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} generate ./runtime
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.1 \
+		${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/assets/*.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} \
-		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
