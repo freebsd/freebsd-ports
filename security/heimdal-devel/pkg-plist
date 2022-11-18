@@ -261,6 +261,7 @@ lib/heimdal/test_negoex_mech.a
 lib/heimdal/test_negoex_mech.so
 lib/heimdal/test_negoex_mech.so.0
 lib/heimdal/test_negoex_mech.so.0.0.0
+%%MICROHTTPD%%libexec/bx509d
 libdata/pkgconfig/heimdal-gssapi.pc
 libdata/pkgconfig/heimdal-kadm-client.pc
 libdata/pkgconfig/heimdal-kadm-server.pc
@@ -274,6 +275,7 @@ libexec/digest-service
 libexec/heimdal/slc
 libexec/hprop
 libexec/hpropd
+%%MICROHTTPD%%libexec/httpkadmind
 libexec/ipropd-master
 libexec/ipropd-slave
 libexec/kadmind
