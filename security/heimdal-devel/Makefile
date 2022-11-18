@@ -18,14 +18,15 @@ GH_TAGNAME=	${HASH}
 
 CONFLICTS=	krb5 krb5-*
 
-USES=		cpe gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
-		pkgconfig python:build readline makeinfo ssl
+USES=		autoreconf:build cpe gettext-runtime gssapi:bootstrap,heimdal \
+		libtool pathfix pkgconfig python:build readline makeinfo ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	${GSSAPILIBDIR}
 
 # Needs clang-format which is only provided by the port.
 # Else asm1_fails resulting in a command not found error.
-BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+		p5-JSON>0:converters/p5-JSON
 
 LIB_DEPENDS=	liblockfile.so:devel/liblockfile
 
@@ -53,7 +54,8 @@ CONFIGURE_ARGS=	--with-berkeley-db \
 		--with-hdbdir="/var/${PORTNAME}" \
 		--sysconfdir="${PREFIX}/etc" \
 		CLANG_FORMAT="${LOCALBASE}/bin/clang-format${LLVM_DEFAULT}" \
-		--enable-kx509
+		--enable-kx509 \
+		--without-microhttpd
 # XXX --with-readline picks up libreadline even if found in /usr/lib.
 MAKE_ENV=	INSTALL_CATPAGES=no
 INSTALL_TARGET=	install-strip
