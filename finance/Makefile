@@ -49,6 +49,7 @@
     SUBDIR += nextcloud-cospend
     SUBDIR += odoo
     SUBDIR += odoo14
+    SUBDIR += odoo15
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
     SUBDIR += p5-Business-OCV
