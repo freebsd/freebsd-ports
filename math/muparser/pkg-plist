@@ -13,5 +13,5 @@ include/muParserToken.h
 include/muParserTokenReader.h
 lib/libmuparser.so
 lib/libmuparser.so.2
-lib/libmuparser.so.2.3.2
+lib/libmuparser.so.%%MUPARSER_VERSION%%
 libdata/pkgconfig/muparser.pc
