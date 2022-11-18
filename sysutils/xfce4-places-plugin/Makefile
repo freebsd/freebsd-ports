@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-places-plugin
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -11,7 +11,8 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnotify.so:devel/libnotify
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
