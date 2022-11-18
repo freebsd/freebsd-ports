@@ -1,28 +1,28 @@
---- core/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
-+++ core/CMakeLists.txt	2021-12-21 20:45:08.474921000 -0500
+--- core/CMakeLists.txt	2022-11-09 08:14:10.000000000 -0500
++++ core/CMakeLists.txt	2022-11-18 00:11:43.670601000 -0500
 @@ -283,7 +283,9 @@
    set(HAVE_FREEBSD_OS 1)
    include_directories(/usr/local/include)
    link_directories(/usr/local/lib)
 -  link_libraries(intl)
-+  IF(nls)
++  if(nls)
 +    link_libraries(intl)
-+  ENDIF()
- endif()
- 
- if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-@@ -347,7 +349,9 @@
++  endif()
+   check_cxx_compiler_flag(
+     -Wunused-but-set-variable compiler_will_warn_of_unused_but_set_variable
+   )
+@@ -350,7 +352,9 @@
    add_definitions("-D_FILE_OFFSET_BITS=64")
  endif()
  
 -include(FindIntl)
-+IF(nls)
++if(nls)
 +  include(FindIntl)
-+ENDIF()
++endif()
  
  if(developer)
    add_definitions("-DDEVELOPER=1")
-@@ -365,7 +369,7 @@
+@@ -368,7 +372,7 @@
  include(BareosFindStaticCodeAnalysisTools)
  
  if(NOT client-only
@@ -31,7 +31,7 @@
     AND CMAKE_SIZEOF_VOID_P EQUAL 8
  )
    # droplet does not build on solaris because of sys/cdefs.h: No such file or
-@@ -779,7 +783,6 @@
+@@ -782,7 +786,6 @@
  
  add_subdirectory(scripts)
  add_subdirectory(manpages)
