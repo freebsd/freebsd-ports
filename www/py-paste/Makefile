@@ -1,5 +1,5 @@
 PORTNAME=	Paste
-PORTVERSION=	3.4.6
+PORTVERSION=	3.5.2
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -15,11 +15,11 @@ LICENSE_FILE=	${WRKSRC}/docs/license.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
