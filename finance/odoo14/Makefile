@@ -1,6 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	14
@@ -95,6 +95,10 @@ post-patch:
 		${WRKSRC}/odoo/addons/mail/models/mail_thread.py \
 		${WRKSRC}/odoo/addons/mail/controllers/main.py \
 		${WRKSRC}/odoo/addons/hr/models/hr_employee.py
+	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
+		${WRKSRC}/odoo/addons/web/static/src/js/libs/content-disposition.js
+	@${REINPLACE_CMD} -i "" -e 's|BaseResponse|Response|g' \
+		${WRKSRC}/odoo/http.py
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
