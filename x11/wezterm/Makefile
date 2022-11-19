@@ -1,6 +1,5 @@
 PORTNAME=	wezterm
-DISTVERSION=	20220905-102802-7d4b8249
-PORTREVISION=	2
+DISTVERSION=	20221119-145034-49b9839f
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,10 +21,10 @@ USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	wez
-GH_TUPLE=	harfbuzz:harfbuzz:5.1.0:harfbuzz/deps/harfbuzz/harfbuzz \
+GH_TUPLE=	harfbuzz:harfbuzz:5.3.1:harfbuzz/deps/harfbuzz/harfbuzz \
 		glennrp:libpng:v1.6.36-805-g8439534da:libpng/deps/freetype/libpng \
 		madler:zlib:v1.2.11:zlib/deps/freetype/zlib \
-		fcitx:xcb-imdkit:1.0.3:xcb_imdkit/../xcb-imdkit-rs-ede7c71b85fe2537efef6cf999a45690316211cf/deps/xcb-imdkit \
+		fcitx:xcb-imdkit:1.0.3:xcb_imdkit/../xcb-imdkit-rs-0135194dea52e88c6ba830762fdcc7db99b68839/deps/xcb-imdkit \
 		freetype:freetype:VER-2-10-2-605-g3f83daeec:freetype/deps/freetype/freetype2
 GL_TUPLE=	wez1:libssh-mirror:56e1b0a43a7601d3b2989299262a09db5d81eea0:libssh/../libssh-rs-d36e5648274063c187968fd5ce0b1a7aa350a025/libssh-rs-sys/vendored
 PLIST_FILES=	bin/strip-ansi-escapes \
