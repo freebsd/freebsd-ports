@@ -11,14 +11,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		google_oslogin_control:sysutils/google-compute-engine-oslogin \
 		sudo:security/sudo
-
-.if ${FLAVOR:Upy36:Mpy3*}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR}
-.endif
 
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
