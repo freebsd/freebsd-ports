@@ -46,7 +46,6 @@ post-patch:
 		-e '/bin|share/s,/usr,$$$$PREFIX,' \
 		${WRKSRC}/vulkanCapsViewer.pro
 	@${REINPLACE_CMD} -e 's/__linux/__unix/' \
-		${WRKSRC}/vulkancapsviewer.cpp \
-		${WRKSRC}/Vulkan-Headers/include/vulkan/vulkan.hpp
+		${WRKSRC}/vulkancapsviewer.cpp
 
 .include <bsd.port.mk>
