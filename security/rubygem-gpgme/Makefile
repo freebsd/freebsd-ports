@@ -1,5 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,10 +9,12 @@ WWW=		https://github.com/ueno/ruby-gpgme
 
 LICENSE=	LGPL21+
 
-BUILD_DEPENDS=	gpgme-config:security/gpgme
+BUILD_DEPENDS=	gpgme>=gpgme:security/gpgme \
+		libassuan>=2.5.5:security/libassuan \
+		libgpg-error>=1.45:security/libgpg-error
 LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libgpg-error.so:security/libgpg-error
-RUN_DEPENDS=	gpgme-config:security/gpgme
+		libgpg-error.so:security/libgpg-error \
+		libgpgme.so:security/gpgme
 
 USES=		gem shebangfix
 USE_RUBY=	yes
@@ -20,8 +22,5 @@ USE_RUBY=	yes
 CONFIGURE_ARGS=	--use-system-libraries
 
 SHEBANG_FILES=	test/pinentry
-
-post-patch:
-	@${REINPLACE_CMD} -e '/mini_portile2/d' ${WRKSRC}/gpgme.gemspec ${WRKSRC}/ext/gpgme/extconf.rb
 
 .include <bsd.port.mk>
