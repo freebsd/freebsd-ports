@@ -11,7 +11,7 @@ WWW=		https://github.com/harfbuzz/uharfbuzz
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	harfbuzz>=5.3.0:print/harfbuzz \
+BUILD_DEPENDS=	harfbuzz>=5.3.1:print/harfbuzz \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
