@@ -40,6 +40,7 @@
     SUBDIR += SciPlot
     SUBDIR += a2png
     SUBDIR += aalib
+    SUBDIR += alizams
     SUBDIR += aaphoto
     SUBDIR += acidwarp
     SUBDIR += acidwarp-sdl
