@@ -1,0 +1,4 @@
+This module accepts an input HTML and/or CSS string and removes any
+executable code including scripting, embedded objects, applets, etc.,
+and neutralises any XSS attacks. A whitelist based approach is used
+which means only HTML known to be safe is allowed through.
