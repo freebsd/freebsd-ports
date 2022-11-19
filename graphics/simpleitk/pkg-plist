@@ -1,6 +1,6 @@
 include/SimpleITK-%%VER%%/Ancillary/FunctionTraits.h
-include/SimpleITK-%%VER%%/Ancillary/TypeList.h
 include/SimpleITK-%%VER%%/Ancillary/hl_sha1.h
+include/SimpleITK-%%VER%%/Ancillary/type_list2.h
 include/SimpleITK-%%VER%%/SimpleITK.h
 include/SimpleITK-%%VER%%/SimpleITKBasicFiltersGeneratedHeaders.h
 include/SimpleITK-%%VER%%/SimpleITKBasicFiltersGeneratedHeaders.i
@@ -83,10 +83,12 @@ include/SimpleITK-%%VER%%/sitkConnectedThresholdImageFilter.h
 include/SimpleITK-%%VER%%/sitkConstantPadImageFilter.h
 include/SimpleITK-%%VER%%/sitkConvolutionImageFilter.h
 include/SimpleITK-%%VER%%/sitkCosImageFilter.h
+include/SimpleITK-%%VER%%/sitkCreateInterpolator.hxx
 include/SimpleITK-%%VER%%/sitkCropImageFilter.h
 include/SimpleITK-%%VER%%/sitkCurvatureAnisotropicDiffusionImageFilter.h
 include/SimpleITK-%%VER%%/sitkCurvatureFlowImageFilter.h
 include/SimpleITK-%%VER%%/sitkCyclicShiftImageFilter.h
+include/SimpleITK-%%VER%%/sitkDICOMOrientImageFilter.h
 include/SimpleITK-%%VER%%/sitkDanielssonDistanceMapImageFilter.h
 include/SimpleITK-%%VER%%/sitkDemonsRegistrationFilter.h
 include/SimpleITK-%%VER%%/sitkDerivativeImageFilter.h
@@ -197,6 +199,8 @@ include/SimpleITK-%%VER%%/sitkLabelMapToLabelImageFilter.h
 include/SimpleITK-%%VER%%/sitkLabelMapToRGBImageFilter.h
 include/SimpleITK-%%VER%%/sitkLabelOverlapMeasuresImageFilter.h
 include/SimpleITK-%%VER%%/sitkLabelOverlayImageFilter.h
+include/SimpleITK-%%VER%%/sitkLabelSetDilateImageFilter.h
+include/SimpleITK-%%VER%%/sitkLabelSetErodeImageFilter.h
 include/SimpleITK-%%VER%%/sitkLabelShapeStatisticsImageFilter.h
 include/SimpleITK-%%VER%%/sitkLabelStatisticsImageFilter.h
 include/SimpleITK-%%VER%%/sitkLabelToRGBImageFilter.h
@@ -255,6 +259,7 @@ include/SimpleITK-%%VER%%/sitkNormalizedCorrelationImageFilter.h
 include/SimpleITK-%%VER%%/sitkNotEqualImageFilter.h
 include/SimpleITK-%%VER%%/sitkNotImageFilter.h
 include/SimpleITK-%%VER%%/sitkObjectOwnedBase.h
+include/SimpleITK-%%VER%%/sitkObjectnessMeasureImageFilter.h
 include/SimpleITK-%%VER%%/sitkOpeningByReconstructionImageFilter.h
 include/SimpleITK-%%VER%%/sitkOrImageFilter.h
 include/SimpleITK-%%VER%%/sitkOtsuMultipleThresholdsImageFilter.h
@@ -337,6 +342,7 @@ include/SimpleITK-%%VER%%/sitkTikhonovDeconvolutionImageFilter.h
 include/SimpleITK-%%VER%%/sitkTileImageFilter.h
 include/SimpleITK-%%VER%%/sitkTobogganImageFilter.h
 include/SimpleITK-%%VER%%/sitkTransform.h
+include/SimpleITK-%%VER%%/sitkTransformGeometryImageFilter.h
 include/SimpleITK-%%VER%%/sitkTransformToDisplacementFieldFilter.h
 include/SimpleITK-%%VER%%/sitkTranslationTransform.h
 include/SimpleITK-%%VER%%/sitkTriangleThresholdImageFilter.h
@@ -463,3 +469,7 @@ lib/libSimpleITK_ITKTransform-%%VER%%.so
 lib/libSimpleITK_ITKTransform-%%VER%%.so.1
 lib/libSimpleITK_ITKWatersheds-%%VER%%.so
 lib/libSimpleITK_ITKWatersheds-%%VER%%.so.1
+lib/libSimpleITK_LabelErodeDilate-%%VER%%.so
+lib/libSimpleITK_LabelErodeDilate-%%VER%%.so.1
+lib/libSimpleITK_SimpleITKFilters-%%VER%%.so
+lib/libSimpleITK_SimpleITKFilters-%%VER%%.so.1

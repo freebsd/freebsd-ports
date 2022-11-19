@@ -1,6 +1,6 @@
 PORTNAME=	simpleitk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1 # last version compatible with InsightToolkit-5.2.1, next versions require InsightToolkit-5.3-RC*
+DISTVERSION=	2.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,11 +10,12 @@ WWW=		https://simpleitk.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
+		libhdf5.so:science/hdf5 \
 		libITKCommon-${ITK_VER}.so:science/InsightToolkit
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++14-lang eigen:3 lua:53 # tests fail to configure due to GTest::GTest related issues, tests might work in newer versions
+USES=		cmake:testing compiler:c++14-lang eigen:3 lua:53 # tests fail to configure due to GTest::GTest related issues, see also https://github.com/SimpleITK/SimpleITK/issues/1765
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
