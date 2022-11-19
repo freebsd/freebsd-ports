@@ -9,7 +9,7 @@ WWW=		https://github.com/ueno/ruby-gpgme
 
 LICENSE=	LGPL21+
 
-BUILD_DEPENDS=	gpgme>=gpgme:security/gpgme \
+BUILD_DEPENDS=	gpgme>=1.1.2:security/gpgme \
 		libassuan>=2.5.5:security/libassuan \
 		libgpg-error>=1.45:security/libgpg-error
 LIB_DEPENDS=	libassuan.so:security/libassuan \
