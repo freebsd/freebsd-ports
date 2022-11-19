@@ -6770,6 +6770,7 @@
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-nsa-rails5
+    SUBDIR += rubygem-nsa-rails61
     SUBDIR += rubygem-numerizer
     SUBDIR += rubygem-oci
     SUBDIR += rubygem-octopress-hooks
