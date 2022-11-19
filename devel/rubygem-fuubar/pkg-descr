@@ -1,0 +1,2 @@
+fuubar is an instafailing RSpec formatter that uses a progress bar instead of a
+string of letters and dots as feedback.
