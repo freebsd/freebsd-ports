@@ -1,0 +1,5 @@
+Fabrication generates objects in Ruby. Fabricators are schematics for your
+objects, and can be created as needed anywhere in your app or specs.
+
+Fabrication can generate anything, but has specific support for ActiveRecord
+Models, Mongoid Documents, Sequel Models, and DataMapper Resources.

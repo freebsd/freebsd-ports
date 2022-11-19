@@ -949,6 +949,7 @@
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-em-redis-unified
+    SUBDIR += rubygem-fabrication
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-flipper-active_record
     SUBDIR += rubygem-flipper-active_record-rails61
