@@ -73,15 +73,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core-text-19.2.0 \
 		cpp_demangle-0.3.5 \
 		cpufeatures-0.2.5 \
-		cranelift-bforest-0.86.1 \
-		cranelift-codegen-0.86.1 \
-		cranelift-codegen-meta-0.86.1 \
-		cranelift-codegen-shared-0.86.1 \
-		cranelift-entity-0.86.1 \
-		cranelift-frontend-0.86.1 \
-		cranelift-isle-0.86.1 \
-		cranelift-native-0.86.1 \
-		cranelift-wasm-0.86.1 \
+		cranelift-bforest-0.88.2 \
+		cranelift-codegen-0.88.2 \
+		cranelift-codegen-meta-0.88.2 \
+		cranelift-codegen-shared-0.88.2 \
+		cranelift-entity-0.88.2 \
+		cranelift-frontend-0.88.2 \
+		cranelift-isle-0.88.2 \
+		cranelift-native-0.88.2 \
+		cranelift-wasm-0.88.2 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
@@ -223,7 +223,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is-terminal-0.3.0 \
 		itertools-0.10.5 \
 		itoa-1.0.3 \
-		ittapi-rs-0.2.0 \
+		ittapi-0.3.2 \
+		ittapi-sys-0.3.2 \
 		jobserver-0.1.25 \
 		jpeg-decoder-0.2.6 \
 		js-sys-0.3.60 \
@@ -276,7 +277,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mio-uds-0.6.8 \
 		miow-0.2.2 \
 		miow-0.3.7 \
-		more-asserts-0.2.2 \
 		nanorand-0.7.0 \
 		native-tls-0.2.10 \
 		net2-0.2.37 \
@@ -291,7 +291,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		object-0.28.4 \
 		object-0.29.0 \
 		once_cell-1.15.0 \
 		opaque-debug-0.3.0 \
@@ -347,7 +346,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-1.6.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
-		region-2.2.0 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.12 \
 		resvg-0.22.0 \
@@ -410,7 +408,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		svgtypes-0.8.1 \
 		syn-1.0.101 \
 		system-deps-3.2.0 \
-		system-interface-0.21.0 \
+		system-interface-0.22.0 \
 		tar-0.4.38 \
 		target-lexicon-0.12.4 \
 		tempfile-3.3.0 \
@@ -450,6 +448,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-hare-0.20.7 \
 		tree-sitter-html-0.19.0 \
 		tree-sitter-javascript-0.20.0 \
+		tree-sitter-prisma-io-1.3.0 \
 		tree-sitter-python-0.20.2 \
 		tree-sitter-r-0.19.5 \
 		tree-sitter-rust-0.20.1 \
@@ -499,8 +498,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		want-0.3.0 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-cap-std-sync-0.39.1 \
-		wasi-common-0.39.1 \
+		wasi-cap-std-sync-1.0.2 \
+		wasi-common-1.0.2 \
 		wasm-bindgen-0.2.83 \
 		wasm-bindgen-backend-0.2.83 \
 		wasm-bindgen-futures-0.4.33 \
@@ -508,26 +507,27 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
 		wasm-encoder-0.17.0 \
-		wasmparser-0.86.0 \
-		wasmtime-0.39.1 \
-		wasmtime-cache-0.39.1 \
-		wasmtime-cranelift-0.39.1 \
-		wasmtime-environ-0.39.1 \
-		wasmtime-fiber-0.39.1 \
-		wasmtime-jit-0.39.1 \
-		wasmtime-jit-debug-0.39.1 \
-		wasmtime-runtime-0.39.1 \
-		wasmtime-types-0.39.1 \
-		wasmtime-wasi-0.39.1 \
+		wasmparser-0.89.1 \
+		wasmtime-1.0.2 \
+		wasmtime-asm-macros-1.0.2 \
+		wasmtime-cache-1.0.2 \
+		wasmtime-cranelift-1.0.2 \
+		wasmtime-environ-1.0.2 \
+		wasmtime-fiber-1.0.2 \
+		wasmtime-jit-1.0.2 \
+		wasmtime-jit-debug-1.0.2 \
+		wasmtime-runtime-1.0.2 \
+		wasmtime-types-1.0.2 \
+		wasmtime-wasi-1.0.2 \
 		wast-35.0.2 \
 		wast-47.0.0 \
 		wat-1.0.49 \
 		web-sys-0.3.60 \
 		weezl-0.1.7 \
 		which-4.3.0 \
-		wiggle-0.39.1 \
-		wiggle-generate-0.39.1 \
-		wiggle-macro-0.39.1 \
+		wiggle-1.0.2 \
+		wiggle-generate-1.0.2 \
+		wiggle-macro-1.0.2 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
@@ -580,10 +580,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-php@git+https://github.com/tree-sitter/tree-sitter-php.git\#ab2e72179ceb8bb0b249c8ac9162a148e911b3dc \
 		tree-sitter-lua@git+https://github.com/syntacti/tree-sitter-lua?branch=main\#a29f646c14ed800aaeef1ca58a9bacc6d92922e8 \
 		tree-sitter-julia@git+https://github.com/varlad/tree-sitter-julia?branch=master\#eff3e0f57512ecb2e72024732d66dba64bdeaecf \
-		wasi-experimental-http-wasmtime@git+https://github.com/lapce/wasi-experimental-http\#3685f0893ef19c1cca5b16a11ba01ff7ade14a5f \
+		psp-types@git+https://github.com/lapce/psp-types\#2513ff3c510377b2c2a003892d07bc91bec00c7a \
 		tree-sitter-java@git+https://github.com/tree-sitter/tree-sitter-java.git\#09d650def6cdf7f479f4b78f595e9ef5b58ce31e \
 		tree-sitter-dockerfile@git+https://github.com/panekj/tree-sitter-dockerfile?branch=queries\#c49d819e07685c90456270f1cc654d9cba640f53 \
 		tree-sitter-d@git+https://github.com/syntacti/tree-sitter-d?branch=master\#fdaa172d375f6c48987ce68ae01e8020acb9bc17 \
+		tree-sitter-md@git+https://github.com/MDeiml/tree-sitter-markdown.git?branch=split_parser\#272e080bca0efd19a06a7f4252d746417224959e \
 		tree-sitter-xml@git+https://github.com/RenjiSann/tree-sitter-xml?branch=main\#422528a43630db6dcc1e222d1c5ee3babd559473 \
 		tree-sitter-bash@git+https://github.com/syntacti/tree-sitter-bash?branch=master\#ba3adca745943b71b0c84bb4e4977788cc6a867b \
 		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#2024fe8f241dc95ad38f4024d39898bada8fe802 \
@@ -592,9 +593,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-haxe@git+https://github.com/vantreeseba/tree-sitter-haxe\#52e3d2b9c3955aca886bccc38b496ef99b603a09 \
 		tree-sitter-elixir@git+https://github.com/elixir-lang/tree-sitter-elixir.git\#05e3631c6a0701c1fa518b0fee7be95a2ceef5e2 \
 		fount@git+https://github.com/lapce/fount\#3bfdc689c0cfbeb498358c79c7be2cb3beb44efe \
+		wasi-experimental-http-wasmtime@git+https://github.com/lapce/wasi-experimental-http\#5c6d970fe0750932f76979678384bf1c5ab5be2e \
 		tree-sitter-scheme@git+https://github.com/6cdh/tree-sitter-scheme.git?branch=main\#af0fd1fa452cb2562dc7b5c8a8c55551c39273b9 \
 		tree-sitter-ocaml@git+https://github.com/tree-sitter/tree-sitter-ocaml\#cc26b1ef111100f26a137bcbcd39fd4e35be9a59 \
-		tree-sitter-md@git+https://github.com/MDeiml/tree-sitter-markdown.git?branch=split_parser\#e375ba95ff9a12418f9b9e7c190f549d08b5380a \
 		tree-sitter-latex@git+https://github.com/latex-lsp/tree-sitter-latex?branch=master\#b3b2cf27f33e71438ebe46934900b1153901c6f2 \
 		tree-sitter-hcl@git+https://github.com/VixieTSQ/tree-sitter-hcl\#f4aa4553344e03e149ec459549a7f686d6846626 \
 		tree-sitter-zig@git+https://github.com/maxxnino/tree-sitter-zig?branch=main\#8d3224c3bd0890fe08358886ebf54fca2ed448a6 \
@@ -602,7 +603,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-erlang@git+https://github.com/WhatsApp/tree-sitter-erlang?branch=main\#a8b8b0e16c4f5552f5e85af3dec976a5d16af8b9 \
 		font-kit@git+https://github.com/lapce/font-kit\#23e28b06b40f31fc53b82645b09ce6421768be23 \
 		tree-sitter-c-sharp@git+https://github.com/tree-sitter/tree-sitter-c-sharp?branch=master\#5b60f99545fea00a33bbfae5be956f684c4c69e2 \
-		psp-types@git+https://github.com/lapce/psp-types\#b7680c844e8faa1b79c800210b4d5526771e7de0 \
 		tree-sitter-dart@git+https://github.com/syntacti/tree-sitter-dart?branch=master\#78cad4503571d72666f78d5ba8ed6c1417653063 \
 		druid,druid-derive,druid-shell@git+https://github.com/lapce/druid?branch=shell_opengl\#0b9c00fcda238e392e758382f25166cd748fd305 \
 		structdesc@git+https://github.com/lapce/structdesc\#a6a2b8ab65d43475238f889736c4aa5dfff4500a \
