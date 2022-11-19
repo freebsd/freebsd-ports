@@ -1,7 +1,7 @@
 https://github.com/metrics-rs/quanta/issues/69
 
---- cargo-crates/raw-cpuid-10.5.0/src/lib.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/raw-cpuid-10.5.0/src/lib.rs
+--- cargo-crates/raw-cpuid-10.6.0/src/lib.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/raw-cpuid-10.6.0/src/lib.rs
 @@ -68,7 +68,7 @@ extern crate bitflags;
  #[cfg(all(
      feature = "serialize",
@@ -54,7 +54,7 @@ https://github.com/metrics-rs/quanta/issues/69
      all(target_arch = "x86_64", not(target_env = "sgx"))
  ))]
  impl Default for CpuId {
-@@ -332,7 +332,7 @@ impl CpuId {
+@@ -334,7 +334,7 @@ impl CpuId {
  impl CpuId {
      /// Return new CpuId struct.
      #[cfg(any(
