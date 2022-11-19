@@ -42,7 +42,7 @@ COROSYNC_DEFAULT?=	2
 #EMACS_DEFAULT?=	let the flavor be the default if not explicitly set
 # Possible values: 2.5, 3.0, 4.0
 FIREBIRD_DEFAULT?=	2.5
-# Possible values: flang (experimental), gfortran
+# Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.2.2
 FPC_DEFAULT?=		3.2.2
