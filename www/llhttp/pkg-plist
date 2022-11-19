@@ -3,6 +3,6 @@ lib/cmake/llhttp/llhttp-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/llhttp/llhttp-config.cmake
 lib/libllhttp.a
 lib/libllhttp.so
-lib/libllhttp.so.8.0
+lib/libllhttp.so.%%SHLIB_VER%%
 lib/libllhttp.so.%%PORTVERSION%%
 libdata/pkgconfig/libllhttp.pc
