@@ -1113,6 +1113,7 @@
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pbkdf2-ruby
     SUBDIR += rubygem-pundit
+    SUBDIR += rubygem-pundit61
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
