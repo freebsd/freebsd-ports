@@ -1,8 +1,9 @@
 PORTNAME=	pymdown-extensions
-DISTVERSION=	9.3
+DISTVERSION=	9.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pymdown_extensions-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Extension pack for Python Markdown
@@ -17,5 +18,9 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+# Avoid that pyproject.toml is read during setup otherwise build fails
+post-extract:
+	@${MV} ${WRKSRC}/pyproject.toml ${WRKSRC}/pyproject.toml.dist
 
 .include <bsd.port.mk>
