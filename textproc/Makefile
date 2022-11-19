@@ -1663,6 +1663,7 @@
     SUBDIR += rubygem-babel-transpiler
     SUBDIR += rubygem-babosa
     SUBDIR += rubygem-case_transform
+    SUBDIR += rubygem-case_transform61
     SUBDIR += rubygem-character_set
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-chewy
