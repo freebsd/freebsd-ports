@@ -1,6 +1,6 @@
 PORTNAME=	InsightToolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.2.1
+DISTVERSION=	5.3rc04
 CATEGORIES=	science biology
 MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v${DISTVERSION}/:data
 DISTFILES=	InsightData-${DISTVERSION}.tar.gz:data
@@ -12,16 +12,23 @@ WWW=		https://www.itk.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	googletest>=0:devel/googletest
-LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
+BUILD_DEPENDS=	googletest>=0:devel/googletest # gtest required for build, see https://github.com/InsightSoftwareConsortium/ITK/issues/3750
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libgdcmCommon.so:devel/gdcm \
 		libexpat.so:textproc/expat2 \
 		libfftw.so:math/fftw \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff
+# dependencies for optional modules
+LIB_DEPENDS+=	libdcmjpls.so:graphics/dcmtk \
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lang eigen:3 jpeg pkgconfig python:test
+USES=		cmake:testing compiler:c++11-lang eigen:3 gl jpeg localbase:ldflags pkgconfig python:run,test xorg
+USE_GL=		opengl
+USE_XORG=	x11
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
 
 USE_GITHUB=	yes
@@ -29,8 +36,8 @@ GH_ACCOUNT=	InsightSoftwareConsortium
 GH_PROJECT=	ITK
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
-		ITK_FORBID_DOWNLOADS \
 		ITK_LEGACY_SILENT \
+		ITK_USE_SYSTEM_DCMTK \
 		ITK_USE_SYSTEM_EXPAT \
 		ITK_USE_SYSTEM_FFTW \
 		ITK_USE_SYSTEM_GDCM \
@@ -40,23 +47,26 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		ITK_USE_SYSTEM_PNG \
 		ITK_USE_SYSTEM_TIFF \
 		ITK_USE_SYSTEM_ZLIB \
-		Module_ITKIOMIC \
 		Module_ITKIOTransformMINC \
+		Module_ITKIOPNG \
 		Module_ITKReview
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_OFF=	ITK_USE_KWSTYLE BUILD_TESTING
-CMAKE_TESTING_ON=	BUILD_TESTING # 3 tests are known to fail, see https://github.com/InsightSoftwareConsortium/ITK/issues/3739
+CMAKE_TESTING_ON=	BUILD_TESTING # 4 tests are known to fail, see https://github.com/InsightSoftwareConsortium/ITK/issues/3739
+
+#LDFLAGS+=	-lcompat # workaround for: ld: error: lib/liblpsolve55.so.5.5.2: undefined reference to ftime
+LDFLAGS+=	-L${WRKSRC} -lftime # workaround for: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257789, otherwise the above line should suffice
 
 ITK_VER=	${PORTVERSION:R}
 
 PLIST_SUB+=	ITK_VER=${ITK_VER}
 
-OPTIONS_DEFINE=	EXAMPLES TESTING
+OPTIONS_DEFINE=	EXAMPLES
 EXAMPLES_DESC=	Build examples (very time consuming)
-TESTING_DESC=	Build testing programs (very time consuming)
 
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
-TESTING_CMAKE_BOOL=	BUILD_TESTING
+
+BINARY_ALIAS=	git=${FILESDIR}/fake-git fetch=false
 
 .include <bsd.port.pre.mk>
 
@@ -67,7 +77,16 @@ PLIST_SUB+=	CHOSEN_COMPILER_TYPE="Clang"
 .endif
 
 post-extract:
-	${MV} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/.ExternalData/* ${WRKSRC}/.ExternalData/
-	${RM} -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+	@${MV} ${WRKDIR}/${PORTNAME}-${DISTVERSION}/.ExternalData/* ${WRKSRC}/.ExternalData/
+	@${RM} -r ${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
+pre-configure: # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257789
+	@${SETENV} ${MAKE_ENV} ${CC} -c -fPIC ${FILESDIR}/ftime.c -o ${WRKSRC}/libftime.o
+	@${AR} -rcs ${WRKSRC}/libftime.a ${WRKSRC}/libftime.o
+
+post-install: # remove contentless docs
+	@${RM} -r ${STAGEDIR}${PREFIX}/share
+
+.include <Makefile.remote_modules>
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.post.mk>
