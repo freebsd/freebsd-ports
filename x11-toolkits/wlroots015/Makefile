@@ -1,6 +1,7 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.15.1
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	015
 
@@ -9,6 +10,7 @@ PATCHFILES+=	7c0e2a271a4c.patch:-p1:github # https://gitlab.freedesktop.org/wlro
 PATCHFILES+=	55a8d225cf8c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
+PATCHFILES+=	7b8609eeb67b.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3857
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (deprecated 0.15.* series)
