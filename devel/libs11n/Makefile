@@ -1,13 +1,15 @@
 PORTNAME=	libs11n
 PORTVERSION=	1.2.10
+DISTVERSIONSUFFIX=	-nobuildfiles
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/s11n/s11n/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for easily serializing a wide variety of objects
-WWW=		http://s11n.net
+WWW=		http://s11n.net/
+
+LICENSE=	PD
 
 USES=		uidfix zip
 WRKSRC_SUBDIR=	src
