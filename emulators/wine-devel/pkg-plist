@@ -849,6 +849,7 @@ include/wine/windows/schannel.h
 include/wine/windows/schemadef.h
 include/wine/windows/schnlsp.h
 include/wine/windows/sddl.h
+include/wine/windows/sdkddkver.h
 include/wine/windows/secext.h
 include/wine/windows/security.h
 include/wine/windows/sensapi.h
@@ -1031,6 +1032,8 @@ include/wine/windows/windows.gaming.input.forcefeedback.h
 include/wine/windows/windows.gaming.input.forcefeedback.idl
 include/wine/windows/windows.gaming.input.h
 include/wine/windows/windows.gaming.input.idl
+include/wine/windows/windows.gaming.ui.h
+include/wine/windows/windows.gaming.ui.idl
 include/wine/windows/windows.globalization.h
 include/wine/windows/windows.globalization.idl
 include/wine/windows/windows.h
@@ -1454,8 +1457,7 @@ lib/wine/%%WINEARCH%%-unix/ntdll.so
 %%WINE32%%%%STAGING%%lib/wine/%%WINEARCH%%-unix/nvencodeapi.dll.so
 %%WINE64%%%%STAGING%%lib/wine/%%WINEARCH%%-unix/nvencodeapi64.dll.so
 lib/wine/%%WINEARCH%%-unix/odbc32.so
-%%OPENAL%%lib/wine/%%WINEARCH%%-unix/openal32.dll.so
-lib/wine/%%WINEARCH%%-unix/opengl32.dll.so
+lib/wine/%%WINEARCH%%-unix/opengl32.so
 lib/wine/%%WINEARCH%%-unix/qcap.so
 lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
@@ -1507,6 +1509,7 @@ lib/wine/%%WINEARCH%%-windows/cabinet.dll
 lib/wine/%%WINEARCH%%-windows/cacls.exe
 lib/wine/%%WINEARCH%%-windows/cards.dll
 lib/wine/%%WINEARCH%%-windows/cdosys.dll
+lib/wine/%%WINEARCH%%-windows/certutil.exe
 lib/wine/%%WINEARCH%%-windows/cfgmgr32.dll
 lib/wine/%%WINEARCH%%-windows/chcp.com
 lib/wine/%%WINEARCH%%-windows/clock.exe
@@ -2141,7 +2144,6 @@ lib/wine/%%WINEARCH%%-windows/olesvr32.dll
 lib/wine/%%WINEARCH%%-windows/olethk32.dll
 lib/wine/%%WINEARCH%%-windows/oleview.exe
 lib/wine/%%WINEARCH%%-windows/opcservices.dll
-%%OPENAL%%lib/wine/%%WINEARCH%%-windows/openal32.dll
 lib/wine/%%WINEARCH%%-windows/opengl32.dll
 lib/wine/%%WINEARCH%%-windows/packager.dll
 lib/wine/%%WINEARCH%%-windows/pdh.dll
@@ -2214,6 +2216,7 @@ lib/wine/%%WINEARCH%%-windows/servicemodelreg.exe
 lib/wine/%%WINEARCH%%-windows/services.exe
 lib/wine/%%WINEARCH%%-windows/setupapi.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/setupx.dll16
+lib/wine/%%WINEARCH%%-windows/setx.exe
 lib/wine/%%WINEARCH%%-windows/sfc.dll
 lib/wine/%%WINEARCH%%-windows/sfc_os.dll
 lib/wine/%%WINEARCH%%-windows/shcore.dll
@@ -2328,6 +2331,7 @@ lib/wine/%%WINEARCH%%-windows/win32u.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/windebug.dll16
 lib/wine/%%WINEARCH%%-windows/windows.devices.enumeration.dll
 lib/wine/%%WINEARCH%%-windows/windows.gaming.input.dll
+lib/wine/%%WINEARCH%%-windows/windows.gaming.ui.gamebar.dll
 lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
