@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.15:graphics/wayland-protocols \
-		wlroots>=0.14.1<0.15.0:x11-toolkits/wlroots
+		wlroots>=0.15.1<0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
