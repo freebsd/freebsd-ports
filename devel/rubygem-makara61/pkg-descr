@@ -1,0 +1,3 @@
+Makara is generic primary/replica proxy. It handles the heavy lifting of
+managing, choosing, blacklisting, and cycling through connections. It comes with
+an ActiveRecord database adapter implementation.
