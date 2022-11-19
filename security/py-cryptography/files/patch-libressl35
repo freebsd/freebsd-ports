@@ -1,0 +1,298 @@
+--- src/_cffi_src/openssl/cryptography.py.orig	2022-10-17 10:52:36 UTC
++++ src/_cffi_src/openssl/cryptography.py
+@@ -33,17 +33,17 @@ INCLUDES = """
+ #endif
+ 
+ #define CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER \
+-    (OPENSSL_VERSION_NUMBER >= 0x1010006f && !CRYPTOGRAPHY_IS_LIBRESSL)
++    OPENSSL_VERSION_NUMBER >= 0x1010006f
+ 
+ #define CRYPTOGRAPHY_OPENSSL_LESS_THAN_110J \
+-    (OPENSSL_VERSION_NUMBER < 0x101000af || CRYPTOGRAPHY_IS_LIBRESSL)
++    OPENSSL_VERSION_NUMBER < 0x101000af
+ #define CRYPTOGRAPHY_OPENSSL_LESS_THAN_111 \
+-    (OPENSSL_VERSION_NUMBER < 0x10101000 || CRYPTOGRAPHY_IS_LIBRESSL)
++    OPENSSL_VERSION_NUMBER < 0x10101000
+ #define CRYPTOGRAPHY_OPENSSL_LESS_THAN_111B \
+-    (OPENSSL_VERSION_NUMBER < 0x10101020 || CRYPTOGRAPHY_IS_LIBRESSL)
++    OPENSSL_VERSION_NUMBER < 0x10101020
+ #define CRYPTOGRAPHY_OPENSSL_LESS_THAN_111D \
+-    (OPENSSL_VERSION_NUMBER < 0x10101040 || CRYPTOGRAPHY_IS_LIBRESSL)
+-#if (CRYPTOGRAPHY_OPENSSL_LESS_THAN_111D && !CRYPTOGRAPHY_IS_LIBRESSL && \
++    OPENSSL_VERSION_NUMBER < 0x10101040
++#if (CRYPTOGRAPHY_OPENSSL_LESS_THAN_111D && \
+     !defined(OPENSSL_NO_ENGINE)) || defined(USE_OSRANDOM_RNG_FOR_TESTING)
+ #define CRYPTOGRAPHY_NEEDS_OSRANDOM_ENGINE 1
+ #else
+--- src/_cffi_src/openssl/dh.py.orig	2022-10-17 11:10:57 UTC
++++ src/_cffi_src/openssl/dh.py
+@@ -37,117 +37,9 @@ int Cryptography_i2d_DHxparams_bio(BIO *bp, DH *x);
+ """
+ 
+ CUSTOMIZATIONS = """
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-#ifndef DH_CHECK_Q_NOT_PRIME
+-#define DH_CHECK_Q_NOT_PRIME            0x10
+-#endif
+-
+-#ifndef DH_CHECK_INVALID_Q_VALUE
+-#define DH_CHECK_INVALID_Q_VALUE        0x20
+-#endif
+-
+-#ifndef DH_CHECK_INVALID_J_VALUE
+-#define DH_CHECK_INVALID_J_VALUE        0x40
+-#endif
+-
+-/* DH_check implementation taken from OpenSSL 1.1.0pre6 */
+-
+-/*-
+- * Check that p is a safe prime and
+- * if g is 2, 3 or 5, check that it is a suitable generator
+- * where
+- * for 2, p mod 24 == 11
+- * for 3, p mod 12 == 5
+- * for 5, p mod 10 == 3 or 7
+- * should hold.
+- */
+-
+-int Cryptography_DH_check(const DH *dh, int *ret)
+-{
+-    int ok = 0, r;
+-    BN_CTX *ctx = NULL;
+-    BN_ULONG l;
+-    BIGNUM *t1 = NULL, *t2 = NULL;
+-
+-    *ret = 0;
+-    ctx = BN_CTX_new();
+-    if (ctx == NULL)
+-        goto err;
+-    BN_CTX_start(ctx);
+-    t1 = BN_CTX_get(ctx);
+-    if (t1 == NULL)
+-        goto err;
+-    t2 = BN_CTX_get(ctx);
+-    if (t2 == NULL)
+-        goto err;
+-
+-    if (dh->q) {
+-        if (BN_cmp(dh->g, BN_value_one()) <= 0)
+-            *ret |= DH_NOT_SUITABLE_GENERATOR;
+-        else if (BN_cmp(dh->g, dh->p) >= 0)
+-            *ret |= DH_NOT_SUITABLE_GENERATOR;
+-        else {
+-            /* Check g^q == 1 mod p */
+-            if (!BN_mod_exp(t1, dh->g, dh->q, dh->p, ctx))
+-                goto err;
+-            if (!BN_is_one(t1))
+-                *ret |= DH_NOT_SUITABLE_GENERATOR;
+-        }
+-        r = BN_is_prime_ex(dh->q, BN_prime_checks, ctx, NULL);
+-        if (r < 0)
+-            goto err;
+-        if (!r)
+-            *ret |= DH_CHECK_Q_NOT_PRIME;
+-        /* Check p == 1 mod q  i.e. q divides p - 1 */
+-        if (!BN_div(t1, t2, dh->p, dh->q, ctx))
+-            goto err;
+-        if (!BN_is_one(t2))
+-            *ret |= DH_CHECK_INVALID_Q_VALUE;
+-        if (dh->j && BN_cmp(dh->j, t1))
+-            *ret |= DH_CHECK_INVALID_J_VALUE;
+-
+-    } else if (BN_is_word(dh->g, DH_GENERATOR_2)) {
+-        l = BN_mod_word(dh->p, 24);
+-        if (l == (BN_ULONG)-1)
+-            goto err;
+-        if (l != 11)
+-            *ret |= DH_NOT_SUITABLE_GENERATOR;
+-    } else if (BN_is_word(dh->g, DH_GENERATOR_5)) {
+-        l = BN_mod_word(dh->p, 10);
+-        if (l == (BN_ULONG)-1)
+-            goto err;
+-        if ((l != 3) && (l != 7))
+-            *ret |= DH_NOT_SUITABLE_GENERATOR;
+-    } else
+-        *ret |= DH_UNABLE_TO_CHECK_GENERATOR;
+-
+-    r = BN_is_prime_ex(dh->p, BN_prime_checks, ctx, NULL);
+-    if (r < 0)
+-        goto err;
+-    if (!r)
+-        *ret |= DH_CHECK_P_NOT_PRIME;
+-    else if (!dh->q) {
+-        if (!BN_rshift1(t1, dh->p))
+-            goto err;
+-        r = BN_is_prime_ex(t1, BN_prime_checks, ctx, NULL);
+-        if (r < 0)
+-            goto err;
+-        if (!r)
+-            *ret |= DH_CHECK_P_NOT_SAFE_PRIME;
+-    }
+-    ok = 1;
+- err:
+-    if (ctx != NULL) {
+-        BN_CTX_end(ctx);
+-        BN_CTX_free(ctx);
+-    }
+-    return (ok);
+-}
+-#else
+ int Cryptography_DH_check(const DH *dh, int *ret) {
+     return DH_check(dh, ret);
+ }
+-#endif
+ 
+ /* These functions were added in OpenSSL 1.1.0f commit d0c50e80a8 */
+ /* Define our own to simplify support across all versions. */
+--- src/_cffi_src/openssl/fips.py.orig	2022-10-17 11:12:47 UTC
++++ src/_cffi_src/openssl/fips.py
+@@ -17,11 +17,5 @@ int FIPS_mode(void);
+ """
+ 
+ CUSTOMIZATIONS = """
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-static const long Cryptography_HAS_FIPS = 0;
+-int (*FIPS_mode_set)(int) = NULL;
+-int (*FIPS_mode)(void) = NULL;
+-#else
+ static const long Cryptography_HAS_FIPS = 1;
+-#endif
+ """
+--- src/_cffi_src/openssl/ocsp.py.orig	2022-10-17 11:14:50 UTC
++++ src/_cffi_src/openssl/ocsp.py
+@@ -77,7 +77,6 @@ int i2d_OCSP_RESPDATA(OCSP_RESPDATA *, unsigned char *
+ 
+ CUSTOMIZATIONS = """
+ #if ( \
+-    !CRYPTOGRAPHY_IS_LIBRESSL && \
+     CRYPTOGRAPHY_OPENSSL_LESS_THAN_110J \
+     )
+ /* These structs come from ocsp_lcl.h and are needed to de-opaque the struct
+@@ -104,62 +103,15 @@ struct ocsp_basic_response_st {
+ };
+ #endif
+ 
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-/* These functions are all taken from ocsp_cl.c in OpenSSL 1.1.0 */
+-const OCSP_CERTID *OCSP_SINGLERESP_get0_id(const OCSP_SINGLERESP *single)
+-{
+-    return single->certId;
+-}
+-const Cryptography_STACK_OF_X509 *OCSP_resp_get0_certs(
+-    const OCSP_BASICRESP *bs)
+-{
+-    return bs->certs;
+-}
+-int OCSP_resp_get0_id(const OCSP_BASICRESP *bs,
+-                      const ASN1_OCTET_STRING **pid,
+-                      const X509_NAME **pname)
+-{
+-    const OCSP_RESPID *rid = bs->tbsResponseData->responderId;
+-
+-    if (rid->type == V_OCSP_RESPID_NAME) {
+-        *pname = rid->value.byName;
+-        *pid = NULL;
+-    } else if (rid->type == V_OCSP_RESPID_KEY) {
+-        *pid = rid->value.byKey;
+-        *pname = NULL;
+-    } else {
+-        return 0;
+-    }
+-    return 1;
+-}
+-const ASN1_GENERALIZEDTIME *OCSP_resp_get0_produced_at(
+-    const OCSP_BASICRESP* bs)
+-{
+-    return bs->tbsResponseData->producedAt;
+-}
+-const ASN1_OCTET_STRING *OCSP_resp_get0_signature(const OCSP_BASICRESP *bs)
+-{
+-    return bs->signature;
+-}
+-#endif
+-
+ #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110J
+ const X509_ALGOR *OCSP_resp_get0_tbs_sigalg(const OCSP_BASICRESP *bs)
+ {
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-    return bs->signatureAlgorithm;
+-#else
+     return &bs->signatureAlgorithm;
+-#endif
+ }
+ 
+ const OCSP_RESPDATA *OCSP_resp_get0_respdata(const OCSP_BASICRESP *bs)
+ {
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-    return bs->tbsResponseData;
+-#else
+     return &bs->tbsResponseData;
+-#endif
+ }
+ #endif
+ """
+--- src/_cffi_src/openssl/ssl.py.orig	2022-10-17 11:17:08 UTC
++++ src/_cffi_src/openssl/ssl.py
+@@ -515,12 +515,7 @@ CUSTOMIZATIONS = """
+ // users have upgraded. PersistentlyDeprecated2020
+ static const long Cryptography_HAS_TLSEXT_HOSTNAME = 1;
+ 
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-static const long Cryptography_HAS_VERIFIED_CHAIN = 0;
+-Cryptography_STACK_OF_X509 *(*SSL_get0_verified_chain)(const SSL *) = NULL;
+-#else
+ static const long Cryptography_HAS_VERIFIED_CHAIN = 1;
+-#endif
+ 
+ #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
+ static const long Cryptography_HAS_KEYLOG = 0;
+@@ -583,13 +578,6 @@ static const long Cryptography_HAS_TLS_ST = 1;
+ static const long Cryptography_HAS_TLS_ST = 0;
+ static const long TLS_ST_BEFORE = 0;
+ static const long TLS_ST_OK = 0;
+-#endif
+-
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-static const long SSL_OP_NO_DTLSv1 = 0;
+-static const long SSL_OP_NO_DTLSv1_2 = 0;
+-long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
+-long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+ #endif
+ 
+ static const long Cryptography_HAS_DTLS = 1;
+--- src/_cffi_src/openssl/x509.py.orig	2022-10-17 11:26:23 UTC
++++ src/_cffi_src/openssl/x509.py
+@@ -276,33 +276,8 @@ void X509_REQ_get0_signature(const X509_REQ *, const A
+ """
+ 
+ CUSTOMIZATIONS = """
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-int i2d_re_X509_tbs(X509 *x, unsigned char **pp)
+-{
+-    /* in 1.0.2+ this function also sets x->cert_info->enc.modified = 1
+-       but older OpenSSLs don't have the enc ASN1_ENCODING member in the
+-       X509 struct.  Setting modified to 1 marks the encoding
+-       (x->cert_info->enc.enc) as invalid, but since the entire struct isn't
+-       present we don't care. */
+-    return i2d_X509_CINF(x->cert_info, pp);
+-}
+-#endif
+-
+ /* Being kept around for pyOpenSSL */
+ X509_REVOKED *Cryptography_X509_REVOKED_dup(X509_REVOKED *rev) {
+     return X509_REVOKED_dup(rev);
+ }
+-/* Added in 1.1.0 but we need it in all versions now due to the great
+-   opaquing. */
+-#if CRYPTOGRAPHY_IS_LIBRESSL
+-int i2d_re_X509_REQ_tbs(X509_REQ *req, unsigned char **pp)
+-{
+-    req->req_info->enc.modified = 1;
+-    return i2d_X509_REQ_INFO(req->req_info, pp);
+-}
+-int i2d_re_X509_CRL_tbs(X509_CRL *crl, unsigned char **pp) {
+-    crl->crl->enc.modified = 1;
+-    return i2d_X509_CRL_INFO(crl->crl, pp);
+-}
+-#endif
+ """
