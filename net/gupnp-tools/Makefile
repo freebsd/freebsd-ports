@@ -1,5 +1,5 @@
 PORTNAME=	gupnp-tools
-PORTVERSION=	0.10.3
+PORTVERSION=	0.12.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -10,14 +10,14 @@ WWW=		https://gitlab.gnome.org/GNOME/gupnp-tools
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib>=2.24:devel/glib20 \
-		gssdp14>=1.2.0:net/gssdp14 \
+BUILD_DEPENDS=	glib>=2.68:devel/glib20 \
+		gssdp>=1.6.0:net/gssdp \
 		gtk3>=3.10:x11-toolkits/gtk30 \
-		gupnp14>=1.4.0:net/gupnp14 \
-		libsoup>=2.42:devel/libsoup
-LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp14 \
-		libgupnp-1.2.so:net/gupnp14 \
-		libsoup-2.4.so:devel/libsoup
+		gupnp>=1.6.0:net/gupnp \
+		libsoup3>=3.0:devel/libsoup3
+LIB_DEPENDS=	libgssdp-1.6.so:net/gssdp \
+		libgupnp-1.6.so:net/gupnp \
+		libsoup-3.0.so:devel/libsoup3
 
 USES=		gettext-tools gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 libxml2
