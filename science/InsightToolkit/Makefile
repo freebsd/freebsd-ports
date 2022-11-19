@@ -1,6 +1,7 @@
 PORTNAME=	InsightToolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3rc04
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v${DISTVERSION}/:data
 DISTFILES=	InsightData-${DISTVERSION}.tar.gz:data
@@ -13,20 +14,22 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	googletest>=0:devel/googletest # gtest required for build, see https://github.com/InsightSoftwareConsortium/ITK/issues/3750
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
+		libfreetype.so:print/freetype2 \
 		libgdcmCommon.so:devel/gdcm \
 		libexpat.so:textproc/expat2 \
 		libfftw.so:math/fftw \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
 		libsz.so:science/libaec \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libvcl.so:misc/vxl
 # dependencies for optional modules
 LIB_DEPENDS+=	libdcmjpls.so:graphics/dcmtk \
 		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lang eigen:3 gl jpeg localbase:ldflags pkgconfig python:run,test xorg
+USES=		cmake:testing compiler:c++11-lang eigen:3,build,run gl jpeg localbase:ldflags pkgconfig python:run,test xorg
 USE_GL=		opengl
 USE_XORG=	x11
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
@@ -38,6 +41,8 @@ GH_PROJECT=	ITK
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		ITK_LEGACY_SILENT \
 		ITK_USE_SYSTEM_DCMTK \
+		ITK_USE_SYSTEM_DOUBLECONVERSION \
+		ITK_USE_SYSTEM_EIGEN \
 		ITK_USE_SYSTEM_EXPAT \
 		ITK_USE_SYSTEM_FFTW \
 		ITK_USE_SYSTEM_GDCM \
@@ -46,6 +51,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		ITK_USE_SYSTEM_LIBRARIES \
 		ITK_USE_SYSTEM_PNG \
 		ITK_USE_SYSTEM_TIFF \
+		ITK_USE_SYSTEM_VXL \
 		ITK_USE_SYSTEM_ZLIB \
 		Module_ITKIOTransformMINC \
 		Module_ITKIOPNG \
