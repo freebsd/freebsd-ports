@@ -51,7 +51,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 PORTS_READLINE_BUILD_DEPENDS=	readline>=8.2:devel/readline
-#PORTS_READLINE_USES=	readline
+PORTS_READLINE_USES=	readline
 PORTS_READLINE_CONFIGURE_WITH=	installed-readline
 
 .if empty(PKGNAMESUFFIX)
