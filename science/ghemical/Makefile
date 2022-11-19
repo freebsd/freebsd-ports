@@ -20,7 +20,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libint.so:science/libint \
 		liblapack.so:math/lapack \
 		liboglappth.so:science/liboglappth \
-		libmopac7.so:science/mopac \
+		libmopac.so:science/mopac \
 		libmpqc.so:science/mpqc
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
