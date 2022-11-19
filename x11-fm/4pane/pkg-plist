@@ -192,5 +192,7 @@ share/icons/hicolor/scalable/apps/4Pane.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/4Pane.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/4Pane.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/4Pane.mo
+%%NLS%%share/locale/zh/LC_MESSAGES/4Pane.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/4Pane.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/4Pane.mo
 share/metainfo/4Pane.appdata.xml
