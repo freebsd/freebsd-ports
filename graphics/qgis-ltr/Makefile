@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.22.12
-PORTREVISION=	1
+DISTVERSION=	3.22.13
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -116,7 +115,6 @@ USE_QT=		3d buildtools:build core concurrent dbus declarative \
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW \
 		-DLazPerf_INCLUDE_DIR:PATH=${LOCALBASE}/include/lazperf \
 		-DWITH_INTERNAL_MDAL:BOOL=false \
 		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
