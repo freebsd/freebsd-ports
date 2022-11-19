@@ -4958,6 +4958,7 @@
     SUBDIR += py-pebble
     SUBDIR += py-pefile
     SUBDIR += py-pendulum
+    SUBDIR += py-pep440
     SUBDIR += py-pep517
     SUBDIR += py-pep562
     SUBDIR += py-pep621
