@@ -7,7 +7,7 @@ PKGNAMESUFFIX?=
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Fast and easy to use stand-alone template engine
-WWW=		http://jinja.pocoo.org/
+WWW=		https://jinja.palletsprojects.com/en/3.1.x/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
@@ -23,7 +23,7 @@ USE_PYTHON=	autoplist distutils pytest # 23 tests fail, see https://github.com/p
 CPE_VENDOR=	pocoo
 .endif
 .if ${PKGNAMESUFFIX} == -doc
-USES=		gmake python:3.6+
+USES=		gmake python:3.7+
 USE_PYTHON=	flavors
 .endif
 
