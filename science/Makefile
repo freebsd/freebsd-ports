@@ -400,6 +400,7 @@
     SUBDIR += py-scimath
     SUBDIR += py-scipy
     SUBDIR += py-scoria
+    SUBDIR += py-sdf
     SUBDIR += py-segregation
     SUBDIR += py-segyio
     SUBDIR += py-sklearn-pandas
