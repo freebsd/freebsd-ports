@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601 \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-XML-Descent>=0:textproc/p5-XML-Descent
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
