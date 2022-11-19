@@ -13,6 +13,8 @@ WWW=		https://wiki.winehq.org/Mono
 LICENSE=	MIT GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 PORTSCOUT=	ignore:1	# for newer versions see emulators/wine-mono-devel
 
 CONFLICTS_INSTALL=	wine-mono-devel
