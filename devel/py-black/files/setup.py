@@ -53,6 +53,10 @@ setup(
             'blackd = blackd:patched_main [d]',
         ],
     },
-    package_dir={'': 'src'},
-    package_data={'': ['*']},
+    package_dir={
+        '': 'src',
+    },
+    package_data={
+        '': ['*'],
+    },
 )

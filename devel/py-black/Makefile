@@ -5,9 +5,6 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-PATCH_SITES=	https://github.com/psf/black/commit/
-PATCHFILES=	d923945513d8f679f43aec44aa8b777e5f9aab14.diff:-p1
-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Uncompromising code formatter
 WWW=		https://github.com/psf/black
@@ -62,6 +59,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0:textproc/py-tomli@${PY_FLAVOR}
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/pyproject.toml
 	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
