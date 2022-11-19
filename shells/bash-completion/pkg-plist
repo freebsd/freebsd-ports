@@ -408,7 +408,6 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/mailmanctl
 %%DATADIR%%/completions/mailsnarf
 %%DATADIR%%/completions/make
-%%DATADIR%%/completions/makepkg
 %%DATADIR%%/completions/man
 %%DATADIR%%/completions/mc
 %%DATADIR%%/completions/mcrypt
