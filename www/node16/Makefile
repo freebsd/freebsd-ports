@@ -21,7 +21,6 @@ USES=		compiler:c++11-lib gmake python:3.6-3.10,build pkgconfig \
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE COREPACK
 OPTIONS_DEFAULT=	DTRACE COREPACK
-OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
 OPTIONS_SUB=		yes
 
 .if !exists(/usr/sbin/dtrace)
