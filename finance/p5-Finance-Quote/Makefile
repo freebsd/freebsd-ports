@@ -1,5 +1,5 @@
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.52
+PORTVERSION=	1.53
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,6 @@ RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-HTTP-Cookies>=0:www/p5-HTTP-Cookies \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-JSON>=0:converters/p5-JSON \
-		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Mozilla-CA>=0:www/p5-Mozilla-CA \
 		p5-Spreadsheet-XLSX>=0:textproc/p5-Spreadsheet-XLSX \
 		p5-String-Util>=0:textproc/p5-String-Util \
@@ -30,7 +29,7 @@ RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-Web-Scraper>=0:www/p5-Web-Scraper \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-libwww>=0:www/p5-libwww
+		p5-libwww>=6.48:www/p5-libwww
 TEST_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Date-Range>=0:devel/p5-Date-Range \
 		p5-Date-Simple>=0:devel/p5-Date-Simple \

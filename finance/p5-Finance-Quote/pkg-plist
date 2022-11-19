@@ -41,11 +41,10 @@
 %%SITE_PERL%%/Finance/Quote/TesouroDireto.pm
 %%SITE_PERL%%/Finance/Quote/Tiaacref.pm
 %%SITE_PERL%%/Finance/Quote/Tradeville.pm
+%%SITE_PERL%%/Finance/Quote/TreasuryDirect.pm
 %%SITE_PERL%%/Finance/Quote/Troweprice.pm
-%%SITE_PERL%%/Finance/Quote/USFedBonds.pm
 %%SITE_PERL%%/Finance/Quote/Union.pm
 %%SITE_PERL%%/Finance/Quote/UserAgent.pm
-%%SITE_PERL%%/Finance/Quote/XETRA.pm
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
 %%PERL5_MAN3%%/Finance::Quote.3.gz
@@ -91,9 +90,8 @@
 %%PERL5_MAN3%%/Finance::Quote::TesouroDireto.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Tiaacref.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Tradeville.3.gz
+%%PERL5_MAN3%%/Finance::Quote::TreasuryDirect.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Troweprice.3.gz
-%%PERL5_MAN3%%/Finance::Quote::USFedBonds.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Union.3.gz
-%%PERL5_MAN3%%/Finance::Quote::XETRA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA.3.gz
