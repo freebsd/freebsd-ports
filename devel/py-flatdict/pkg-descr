@@ -1,0 +1,4 @@
+FlatDict and FlatterDict are a dict classes that allows for single level,
+delimited key/value pair mapping of nested dictionaries. You can interact with
+FlatDict and FlatterDict like a normal dictionary and access child dictionaries
+as you normally would or with the composite key.
