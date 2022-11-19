@@ -165,6 +165,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 post-patch:
 	${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling.pc.in > ${WRKSRC}/datadog_profiling.pc
 	${SED} -e 's|@DDog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling_with_rpath.pc.in > ${WRKSRC}/datadog_profiling_with_rpath.pc
+	# Fix sys-info-0.9.1 on 32-bit architectures, see also https://github.com/FillZpp/sys-info-rs/issues/80
+	@${SED} -i '' -e '/get_cpu/ s|unsigned long|uint64_t|; /get_proc_total/ s|unsigned long|uint64_t|' ${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
 post-build:
 	@cd ${WRKSRC} && cbindgen --crate ddcommon-ffi --config ddcommon-ffi/cbindgen.toml --output ${WRKSRC}/common.h
