@@ -1,24 +1,23 @@
 PORTNAME=	ctypesgen
-PORTVERSION=	1.0.2
-DISTVERSIONPREFIX=	ctypesgen-
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python wrapper generator for ctypes
-WWW=		https://github.com/davidjamesca/ctypesgen
+WWW=		https://github.com/ctypesgen/ctypesgen
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ shebangfix
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.3:devel/py-setuptools_scm@${PY_FLAVOR}
+
+USES=		python:3.7+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	davidjamesca
-
-SHEBANG_FILES=	ctypesgen/test/testsuite.py
+SHEBANG_FILES=	tests/testsuite.py
 
 .include <bsd.port.mk>
