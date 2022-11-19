@@ -40,7 +40,6 @@
     SUBDIR += SciPlot
     SUBDIR += a2png
     SUBDIR += aalib
-    SUBDIR += alizams
     SUBDIR += aaphoto
     SUBDIR += acidwarp
     SUBDIR += acidwarp-sdl
@@ -48,6 +47,7 @@
     SUBDIR += airsaned
     SUBDIR += akira
     SUBDIR += alembic
+    SUBDIR += alizams
     SUBDIR += aloadimage
     SUBDIR += alpng
     SUBDIR += ampasACES-container
