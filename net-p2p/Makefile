@@ -50,6 +50,7 @@
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar2
+    SUBDIR += libutp
     SUBDIR += lidarr
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
