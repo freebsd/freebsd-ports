@@ -64,3 +64,20 @@ diff -ru shell/main.cpp shell/main.cpp
      // Plasma scales itself to font DPI
      // on X, where we don't have compositor scaling, this generally works fine.
      // also there are bugs on older Qt, especially when it comes to fractional scaling
+--- startkde/startplasma.cpp.orig	2022-07-11 12:02:54.000000000 +0100
++++ startkde/startplasma.cpp	2022-11-17 21:33:33.271277000 +0000
+@@ -363,6 +363,14 @@
+     const auto extraConfigDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation).toUtf8() + "/kdedefaults";
+     QDir().mkpath(QString::fromUtf8(extraConfigDir));
+     qputenv("XDG_CONFIG_DIRS", extraConfigDir + ":" + currentConfigDirs);
++
++    // Wayland sockets live in XDG_RUNTIME_DIR so make sure it's set. Other
++    // uses, including X applications, should have fallbacks, but can still
++    // benefit from it, and Qt will warn when it's not set.
++    if (!qEnvironmentVariableIsSet("XDG_RUNTIME_DIR")) {
++        const auto runtimeDir = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation).toUtf8();
++        qputenv("XDG_RUNTIME_DIR", runtimeDir);
++    }
+ 
+     const KConfig globals;
+     const QString currentLnf = KConfigGroup(&globals, QStringLiteral("KDE")).readEntry("LookAndFeelPackage", QStringLiteral("org.kde.breeze.desktop"));
