@@ -1,0 +1,8 @@
+ITK is an open-source software toolkit for performing registration and
+segmentation. Segmentation is the process of identifying and classifying
+data found in a digitally sampled representation. Typically the sampled
+representation is an image acquired from such medical instrumentation as
+CT or MRI scanners. Registration is the task of aligning or developing
+correspondences between data. For example, in the medical environment,
+a CT scan may be aligned with a MRI scan in order to combine the
+information contained in both.

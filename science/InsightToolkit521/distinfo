@@ -1,0 +1,5 @@
+TIMESTAMP = 1668411091
+SHA256 (InsightData-5.2.1.tar.gz) = b5fcd209f456af289473ccc78f935b910168b852f3d4707d0c1e9dfd508b1757
+SIZE (InsightData-5.2.1.tar.gz) = 293448802
+SHA256 (InsightSoftwareConsortium-ITK-v5.2.1_GH0.tar.gz) = 6022b2b64624b8bcec3333fe48d5f74ff6ebceb3bdf98258ba7d7fbbc76b99ab
+SIZE (InsightSoftwareConsortium-ITK-v5.2.1_GH0.tar.gz) = 20955613
