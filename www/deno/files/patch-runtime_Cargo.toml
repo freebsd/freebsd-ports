@@ -1,0 +1,12 @@
+--- runtime/Cargo.toml.orig	2022-11-19 09:04:18 UTC
++++ runtime/Cargo.toml
+@@ -91,6 +91,9 @@ rustyline = "10.0.0"
+ uuid = { version = "1.0.0", features = ["v4"] }
+ rustyline = "10.0.0"
+ 
++#[target.'cfg(freebsd)'.dependencies]
++sysinfo = "0.26"
++
+ [target.'cfg(windows)'.dependencies]
+ fwdansi = "1.1.0"
+ winapi = { version = "0.3.9", features = ["commapi", "knownfolders", "mswsock", "objbase", "shlobj", "tlhelp32", "winbase", "winerror", "winsock2"] }

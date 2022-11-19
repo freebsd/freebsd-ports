@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.26.1
-PORTREVISION=	2
+DISTVERSION=	1.28.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -24,7 +23,7 @@ GH_TUPLE=	tinycc:tinycc:afc136262e93a:deno/ext/ffi/tinycc
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.51.0
+V8_VERS=	0.55.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -58,7 +57,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		auto_impl-0.5.0 \
 		autocfg-1.1.0 \
 		base16ct-0.1.1 \
-		base64-0.13.0 \
+		base32-0.4.0 \
+		base64-0.13.1 \
 		base64-simd-0.7.0 \
 		base64ct-1.5.2 \
 		bencher-0.1.5 \
@@ -74,8 +74,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		block-padding-0.3.2 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.2 \
-		bstr-0.2.17 \
-		bumpalo-3.11.0 \
+		bumpalo-3.11.1 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
 		cache_control-0.2.0 \
@@ -103,11 +102,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crc-catalog-1.1.1 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.11 \
 		crossbeam-utils-0.8.11 \
 		crypto-bigint-0.4.8 \
 		crypto-common-0.1.6 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
 		ctor-0.1.23 \
 		ctr-0.9.1 \
 		cty-0.2.2 \
@@ -119,14 +118,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_macro-0.13.4 \
 		dashmap-5.4.0 \
 		data-encoding-2.3.2 \
-		data-url-0.1.1 \
+		data-url-0.2.0 \
 		debug_unreachable-0.1.1 \
-		deno_ast-0.19.0 \
-		deno_doc-0.46.0 \
-		deno_emit-0.9.0 \
-		deno_graph-0.34.0 \
-		deno_lint-0.33.0 \
-		deno_task_shell-0.5.2 \
+		deno_ast-0.20.0 \
+		deno_ast-0.21.0 \
+		deno_doc-0.49.0 \
+		deno_emit-0.11.0 \
+		deno_graph-0.38.0 \
+		deno_lint-0.35.0 \
+		deno_task_shell-0.7.2 \
 		der-0.6.0 \
 		derive_more-0.99.17 \
 		diff-0.1.13 \
@@ -140,8 +140,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dprint-core-0.59.0 \
 		dprint-plugin-json-0.15.6 \
 		dprint-plugin-markdown-0.14.1 \
-		dprint-plugin-typescript-0.74.0 \
-		dprint-swc-ext-0.4.0 \
+		dprint-plugin-typescript-0.78.0 \
+		dprint-swc-ext-0.5.0 \
 		dyn-clone-1.0.9 \
 		dynasm-1.2.3 \
 		dynasmrt-1.2.3 \
@@ -158,7 +158,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
-		eszip-0.28.0 \
+		eszip-0.30.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
@@ -194,9 +194,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.7 \
 		ghash-0.5.0 \
+		glibc_version-0.1.2 \
 		glob-0.3.0 \
 		glow-0.11.2 \
-		google-storage1-3.1.0+20220228 \
 		gpu-alloc-0.5.3 \
 		gpu-alloc-types-0.2.0 \
 		gpu-descriptor-0.2.3 \
@@ -220,7 +220,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hyper-rustls-0.23.0 \
 		iana-time-zone-0.1.48 \
 		ident_case-1.0.1 \
-		idna-0.1.5 \
 		idna-0.2.3 \
 		idna-0.3.0 \
 		if_chain-1.0.2 \
@@ -237,7 +236,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ipnet-2.5.0 \
 		is-macro-0.2.1 \
 		itertools-0.10.4 \
-		itoa-0.4.8 \
 		itoa-1.0.3 \
 		jobserver-0.1.24 \
 		js-sys-0.3.60 \
@@ -264,10 +262,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.0.46 \
 		lock_api-0.4.8 \
-		log-0.3.9 \
 		log-0.4.17 \
 		lru-cache-0.1.2 \
-		lsp-types-0.93.1 \
+		lsp-types-0.93.2 \
 		lzzzz-1.0.3 \
 		malloc_buf-0.0.6 \
 		match_cfg-0.1.0 \
@@ -276,12 +273,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		memmap2-0.5.7 \
 		memoffset-0.6.5 \
 		metal-0.24.0 \
-		mime-0.2.6 \
 		mime-0.3.16 \
 		miniz_oxide-0.5.4 \
 		mio-0.8.4 \
 		mitata-0.0.7 \
-		monch-0.2.0 \
+		monch-0.4.0 \
 		naga-0.9.0 \
 		napi-build-1.2.1 \
 		napi-sys-2.2.2 \
@@ -290,6 +286,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nibble_vec-0.1.0 \
 		nix-0.24.2 \
 		notify-5.0.0 \
+		ntapi-0.4.0 \
 		num-bigint-0.4.3 \
 		num-bigint-dig-0.8.1 \
 		num-integer-0.1.45 \
@@ -317,7 +314,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		path-dedot-3.0.17 \
 		pathdiff-0.2.1 \
 		pem-rfc7468-0.6.0 \
-		percent-encoding-1.0.1 \
 		percent-encoding-2.2.0 \
 		petgraph-0.6.2 \
 		phf-0.10.1 \
@@ -336,6 +332,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ppv-lite86-0.2.16 \
 		precomputed-hash-0.1.1 \
 		pretty_assertions-1.3.0 \
+		prettyplease-0.1.21 \
 		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -356,9 +353,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_core-0.6.4 \
 		range-alloc-0.1.2 \
 		raw-window-handle-0.4.3 \
+		rayon-1.6.0 \
+		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
 		regex-1.6.0 \
-		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
 		relative-path-1.7.2 \
 		remove_dir_all-0.5.3 \
@@ -377,7 +375,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustix-0.35.9 \
 		rustls-0.20.6 \
 		rustls-native-certs-0.6.2 \
-		rustls-pemfile-0.3.0 \
 		rustls-pemfile-1.0.1 \
 		rustyline-10.0.0 \
 		rustyline-derive-0.7.0 \
@@ -387,7 +384,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
-		seahash-4.1.0 \
 		sec1-0.3.0 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
@@ -416,47 +412,49 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		spin-0.5.2 \
 		spirv-0.2.0+1.5.4 \
 		spki-0.6.0 \
+		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		str-buf-1.0.6 \
 		string_cache-0.8.4 \
 		string_cache_codegen-0.5.2 \
-		string_enum-0.3.1 \
+		string_enum-0.3.2 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
-		swc_atoms-0.4.10 \
-		swc_bundler-0.185.5 \
-		swc_common-0.27.13 \
-		swc_config-0.1.2 \
+		swc_atoms-0.4.23 \
+		swc_bundler-0.192.45 \
+		swc_common-0.29.10 \
+		swc_config-0.1.4 \
 		swc_config_macro-0.1.0 \
-		swc_ecma_ast-0.90.17 \
-		swc_ecma_codegen-0.123.2 \
+		swc_ecma_ast-0.94.14 \
+		swc_ecma_codegen-0.127.23 \
 		swc_ecma_codegen_macros-0.7.1 \
-		swc_ecma_dep_graph-0.90.1 \
-		swc_ecma_loader-0.39.4 \
-		swc_ecma_parser-0.118.7 \
-		swc_ecma_transforms_base-0.106.4 \
-		swc_ecma_transforms_classes-0.95.1 \
+		swc_ecma_dep_graph-0.94.19 \
+		swc_ecma_loader-0.41.11 \
+		swc_ecma_parser-0.122.19 \
+		swc_ecma_transforms_base-0.111.33 \
+		swc_ecma_transforms_classes-0.100.32 \
 		swc_ecma_transforms_macros-0.5.0 \
-		swc_ecma_transforms_optimization-0.160.9 \
-		swc_ecma_transforms_proposal-0.137.1 \
-		swc_ecma_transforms_react-0.148.1 \
-		swc_ecma_transforms_typescript-0.152.1 \
-		swc_ecma_utils-0.101.3 \
-		swc_ecma_visit-0.76.7 \
+		swc_ecma_transforms_optimization-0.167.26 \
+		swc_ecma_transforms_proposal-0.144.20 \
+		swc_ecma_transforms_react-0.155.21 \
+		swc_ecma_transforms_typescript-0.159.22 \
+		swc_ecma_utils-0.105.24 \
+		swc_ecma_visit-0.80.14 \
 		swc_eq_ignore_macros-0.1.1 \
-		swc_fast_graph-0.15.6 \
-		swc_graph_analyzer-0.16.4 \
+		swc_fast_graph-0.17.11 \
+		swc_graph_analyzer-0.18.11 \
 		swc_macros_common-0.3.6 \
-		swc_visit-0.5.2 \
-		swc_visit_macros-0.5.3 \
+		swc_visit-0.5.3 \
+		swc_visit_macros-0.5.4 \
 		syn-0.15.44 \
 		syn-1.0.99 \
 		synstructure-0.12.6 \
-		sys-info-0.9.1 \
+		sysinfo-0.26.7 \
 		tar-0.4.38 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
+		testing_macros-0.2.7 \
 		text-size-1.1.0 \
 		text_lines-0.6.0 \
 		textwrap-0.15.1 \
@@ -481,6 +479,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-0.1.36 \
 		tracing-attributes-0.1.22 \
 		tracing-core-0.1.29 \
+		triomphe-0.1.8 \
 		trust-dns-client-0.22.0 \
 		trust-dns-proto-0.22.0 \
 		trust-dns-resolver-0.22.0 \
@@ -508,13 +507,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		universal-hash-0.5.0 \
 		unreachable-0.1.1 \
 		untrusted-0.7.1 \
-		url-1.7.2 \
 		url-2.3.1 \
 		urlpattern-0.2.0 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.1.2 \
-		v8-0.51.0 \
+		v8-0.55.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
@@ -554,7 +552,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		x25519-dalek-2.0.0-pre.1 \
 		xattr-0.2.3 \
 		yansi-0.5.1 \
-		yup-oauth2-6.7.1 \
 		zeroize-1.5.7 \
 		zeroize_derive-1.3.2 \
 		zstd-0.11.2+zstd.1.5.2 \

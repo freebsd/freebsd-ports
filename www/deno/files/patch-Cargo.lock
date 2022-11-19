@@ -1,0 +1,93 @@
+--- Cargo.lock.orig	2022-11-18 18:34:39 UTC
++++ Cargo.lock
+@@ -603,6 +603,30 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "crossbeam-deque"
++version = "0.8.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "715e8152b692bba2d374b53d4875445368fdf21a94751410af607a5ac677d1fc"
++dependencies = [
++ "cfg-if",
++ "crossbeam-epoch",
++ "crossbeam-utils",
++]
++
++[[package]]
++name = "crossbeam-epoch"
++version = "0.9.11"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "f916dfc5d356b0ed9dae65f1db9fc9770aa2851d2662b988ccf4fe3516e86348"
++dependencies = [
++ "autocfg",
++ "cfg-if",
++ "crossbeam-utils",
++ "memoffset",
++ "scopeguard",
++]
++
++[[package]]
+ name = "crossbeam-utils"
+ version = "0.8.11"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -1257,6 +1281,7 @@ dependencies = [
+  "ring",
+  "serde",
+  "signal-hook-registry",
++ "sysinfo",
+  "termcolor",
+  "test_util",
+  "tokio",
+@@ -3568,6 +3593,29 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "rayon"
++version = "1.6.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "1e060280438193c554f654141c9ea9417886713b7acd75974c85b18a69a88e0b"
++dependencies = [
++ "crossbeam-deque",
++ "either",
++ "rayon-core",
++]
++
++[[package]]
++name = "rayon-core"
++version = "1.10.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "cac410af5d00ab6884528b4ab69d1e8e146e8d471201800fa1b4524126de6ad3"
++dependencies = [
++ "crossbeam-channel",
++ "crossbeam-deque",
++ "crossbeam-utils",
++ "num_cpus",
++]
++
++[[package]]
+ name = "redox_syscall"
+ version = "0.2.16"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -4714,6 +4762,21 @@ dependencies = [
+  "quote 1.0.21",
+  "syn 1.0.99",
+  "unicode-xid 0.2.4",
++]
++
++[[package]]
++name = "sysinfo"
++version = "0.26.7"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "c375d5fd899e32847b8566e10598d6e9f1d9b55ec6de3cdf9e7da4bdc51371bc"
++dependencies = [
++ "cfg-if",
++ "core-foundation-sys",
++ "libc",
++ "ntapi",
++ "once_cell",
++ "rayon",
++ "winapi 0.3.9",
+ ]
+ 
+ [[package]]
