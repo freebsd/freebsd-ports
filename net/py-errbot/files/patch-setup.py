@@ -21,12 +21,12 @@
 +    "setuptools>=60.5.0",
 +    "flask>=2.0.2",
 +    "requests>=2.27.1",
-+    "jinja2>=3.0.1",
++    "jinja2>=3.0.3",
 +    "pyOpenSSL>=21.0.0",
 +    "colorlog>=6.6.0",
 +    "markdown>=3.3.6",
 +    "ansi>=0.2.0",
-+    "Pygments>=2.9.0",
++    "Pygments>=2.11.2",
 +    "pygments-markdown-lexer>=0.1.0.dev39",  # sytax coloring to debug md
 +    "dulwich>=0.19.16",  # python implementation of git
 +    "deepmerge>=1.0.1",
