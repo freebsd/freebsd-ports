@@ -1,0 +1,4 @@
+Soft deletes for ActiveRecord done right.
+
+A simple ActiveRecord mixin to add conventions for flagging records as
+discarded.
