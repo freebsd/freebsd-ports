@@ -1,5 +1,5 @@
 PORTNAME=	pytest-checkdocs
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.1:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docutils>=0.15,1:textproc/py-docutils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4:devel/py-importlib-metadata@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.15,1:textproc/py-docutils@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-black>=0.3.7:devel/py-pytest-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-enabler>=1.3.0:devel/py-pytest-enabler@${PY_FLAVOR} \
@@ -27,7 +26,13 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
 post-patch:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
