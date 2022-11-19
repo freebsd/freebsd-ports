@@ -14,6 +14,7 @@ lib/libreadline.a
 lib/libreadline.so
 lib/libreadline.so.8
 lib/libreadline.so.%%PORTVERSION%%
+libdata/pkgconfig/history.pc
 libdata/pkgconfig/readline.pc
 man/man3/history.3.gz
 man/man3/readline.3.gz
