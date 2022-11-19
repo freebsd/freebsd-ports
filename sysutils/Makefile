@@ -214,7 +214,6 @@
     SUBDIR += conman
     SUBDIR += conmon
     SUBDIR += consolehm
-    SUBDIR += containers-common
     SUBDIR += consolekit2
     SUBDIR += consul
     SUBDIR += consul-alerts
@@ -222,6 +221,7 @@
     SUBDIR += consul_exporter
     SUBDIR += container-diff
     SUBDIR += containerd
+    SUBDIR += containers-common
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreos-ct
@@ -570,8 +570,8 @@
     SUBDIR += ipfs-go
     SUBDIR += ipfs-go-fs-repo-migrations
     SUBDIR += ipget
-    SUBDIR += ipmitool
     SUBDIR += ipmi_exporter
+    SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += isc-cron
     SUBDIR += isomaster
