@@ -1,5 +1,5 @@
 PORTNAME=	mutagen
-DISTVERSION=	1.45.1
+PORTVERSION=	1.46.0
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,9 @@ WWW=		https://github.com/quodlibet/mutagen
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
