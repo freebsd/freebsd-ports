@@ -1,6 +1,5 @@
 PORTNAME=	picocrypt
-DISTVERSION=	1.30
-PORTREVISION=	1
+DISTVERSION=	1.31
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -23,13 +22,12 @@ USE_XORG=	x11 xau xcb xdmcp
 USE_GITHUB=	yes
 GH_ACCOUNT=	HACKERALERT
 GH_PROJECT=	Picocrypt
-GH_TUPLE=	HACKERALERT:clipboard:cccec4a4226a:hackeralert_clipboard/vendor/github.com/HACKERALERT/clipboard \
-		HACKERALERT:crypto:aa0dd62d8f67:hackeralert_crypto/vendor/github.com/HACKERALERT/crypto \
+GH_TUPLE=	HACKERALERT:crypto:aa0dd62d8f67:hackeralert_crypto/vendor/github.com/HACKERALERT/crypto \
 		HACKERALERT:dialog:af3bc34fe379:hackeralert_dialog/vendor/github.com/HACKERALERT/dialog \
-		HACKERALERT:giu:1141d2b849c4:hackeralert_giu/vendor/github.com/HACKERALERT/giu \
+		HACKERALERT:giu:211c1da061d9:hackeralert_giu/vendor/github.com/HACKERALERT/giu \
 		HACKERALERT:gl:73af36e130d3:hackeralert_gl/vendor/github.com/HACKERALERT/gl \
-		HACKERALERT:glfw:2c5dd2490d18:hackeralert_glfw_glfw/vendor/github.com/HACKERALERT/glfw \
-		HACKERALERT:imgui-go:ccba9a3ad6fa:hackeralert_imgui_go/vendor/github.com/HACKERALERT/imgui-go \
+		HACKERALERT:glfw:c08d79e41abe:hackeralert_glfw_glfw/vendor/github.com/HACKERALERT/glfw \
+		HACKERALERT:imgui-go:1d1c00423178:hackeralert_imgui_go/vendor/github.com/HACKERALERT/imgui-go \
 		HACKERALERT:infectious:2c37b99f37ff:hackeralert_infectious/vendor/github.com/HACKERALERT/infectious \
 		HACKERALERT:mainthread:2ec9e701cc14:hackeralert_mainthread/vendor/github.com/HACKERALERT/mainthread \
 		HACKERALERT:serpent:293b29869c66:hackeralert_serpent/vendor/github.com/HACKERALERT/serpent \
