@@ -1,5 +1,5 @@
 PORTNAME=	rspec-rails
-PORTVERSION=	5.1.2
+PORTVERSION=	6.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +10,13 @@ WWW=		https://github.com/rspec/rspec-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-actionpack52>=5.2:www/rubygem-actionpack52 \
-		rubygem-activesupport52>=5.2:devel/rubygem-activesupport52 \
-		rubygem-railties52>=5.2:www/rubygem-railties52 \
-		rubygem-rspec-core>=3.10<4:devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=3.10<4:devel/rubygem-rspec-expectations \
-		rubygem-rspec-mocks>=3.10<4:devel/rubygem-rspec-mocks \
-		rubygem-rspec-support>=3.10<4:devel/rubygem-rspec-support
+RUN_DEPENDS=	rubygem-actionpack61>=6.1:www/rubygem-actionpack61 \
+		rubygem-activesupport61>=6.1:devel/rubygem-activesupport61 \
+		rubygem-railties61>=6.1:www/rubygem-railties61 \
+		rubygem-rspec-core>=3.11<4:devel/rubygem-rspec-core \
+		rubygem-rspec-expectations>=3.11<4:devel/rubygem-rspec-expectations \
+		rubygem-rspec-mocks>=3.11<4:devel/rubygem-rspec-mocks \
+		rubygem-rspec-support>=3.11<4:devel/rubygem-rspec-support
 
 USES=		gem
 USE_RUBY=	yes
