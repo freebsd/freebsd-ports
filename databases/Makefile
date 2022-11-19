@@ -1005,6 +1005,7 @@
     SUBDIR += rubygem-redis-namespace18
     SUBDIR += rubygem-redis4
     SUBDIR += rubygem-sdbm
+    SUBDIR += rubygem-scenic61
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
