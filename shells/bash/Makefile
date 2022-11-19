@@ -50,8 +50,8 @@ HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-PORTS_READLINE_BROKEN=	needs a newer version of devel/readline, disable PORTS_READLINE and retry
-PORTS_READLINE_USES=	readline
+PORTS_READLINE_BUILD_DEPENDS=	readline>=8.2:devel/readline
+#PORTS_READLINE_USES=	readline
 PORTS_READLINE_CONFIGURE_WITH=	installed-readline
 
 .if empty(PKGNAMESUFFIX)
