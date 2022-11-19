@@ -24,7 +24,7 @@ setup(
     install_requires=[
         'babel',
         'importlib-metadata>=3.6; python_version < "3.10"',
-        'jinja2>=3.0.1',
+        'jinja2>=3.0.3',
         'json5',
         'jsonschema>=3.0.1',
         'jupyter-server<2,>=1.8',
