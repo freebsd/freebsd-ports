@@ -909,6 +909,7 @@ lib/emby-server/system/dashboard-ui/modules/toast/toast.css
 lib/emby-server/system/dashboard-ui/modules/toast/toast.js
 lib/emby-server/system/dashboard-ui/modules/transparencymanagement.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/baseview.js
+lib/emby-server/system/dashboard-ui/modules/viewmanager/basewidget.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/viewmanager.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.template.html
