@@ -1,5 +1,5 @@
 PORTNAME=	URI
-PORTVERSION=	5.13
+PORTVERSION=	5.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Needs>=0:devel/p5-Test-Needs
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-Needs>=0:devel/p5-Test-Needs \
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USES=		perl5
 USE_PERL5=	configure
