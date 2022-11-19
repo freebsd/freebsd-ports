@@ -34,7 +34,7 @@ CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}
 GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
 
-.if ${FLAVOR:U} == phosh
+.if ${FLAVOR:U} == phosh || make(makesum)
 PKGNAMESUFFIX=	-${FLAVOR}
 COMMENT+=	(with patched wlroots from PureOS)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-private-wlroots
