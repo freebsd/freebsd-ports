@@ -17,8 +17,6 @@ WWW=		https://www.yacreader.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libunarr.so:archivers/unarr
-
 FLAVORS=	qt5 qt6
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:5
@@ -36,8 +34,13 @@ CONFLICTS_INSTALL=	${PORTNAME}
 CONFLICTS_INSTALL=	${PORTNAME}-qt6
 .endif
 
-OPTIONS_DEFINE=	OPENGL POPPLER
+OPTIONS_DEFINE=	ARCHIVE OPENGL POPPLER
 OPTIONS_DEFAULT=OPENGL POPPLER
+
+ARCHIVE_DESC=		libarchive instead of unarr for reading compressed formats
+ARCHIVE_USES=		libarchive
+ARCHIVE_QMAKE_ON=	CONFIG+=libarchive
+ARCHIVE_LIB_DEPENDS_OFF=libunarr.so:archivers/unarr
 
 OPENGL_USES=		gl
 OPENGL_USE=		GL=gl
