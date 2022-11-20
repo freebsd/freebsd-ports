@@ -1,7 +1,6 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.14.06
-PORTREVISION=	0
+DISTVERSION=	0.15.00
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		http://kernel.ubuntu.com/~cking/stress-ng/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gmake localbase:ldflags
+USES=		compiler:c11 gmake jpeg localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	ColinIanKing
 
@@ -19,26 +18,50 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
-OPTIONS_DEFINE=		JUDY LIBINOTIFY
+OPTIONS_DEFINE=		JUDY LIBINOTIFY XXHASH
 OPTIONS_DEFINE_amd64=	INTELIPSEC
-OPTIONS_DEFAULT=	JUDY LIBINOTIFY
+OPTIONS_DEFAULT=	JUDY LIBINOTIFY XXHASH
 OPTIONS_DEFAULT_amd64=	INTELIPSEC
 
 INTELIPSEC_DESC=	Enable support for Intel's IPsec library
 JUDY_DESC=		Enable support for (lib)Judy
 LIBINOTIFY_DESC=	Enable support for libinotify
+XXHASH_DESC=	Enable support for libxxhash
 
 INTELIPSEC_LIB_DEPENDS=		libIPSec_MB.so:security/intel-ipsec-mb
-INTELIPSEC_MAKE_ARGS_OFF=	HAVE_LIB_IPSEC_MB=0
 
 JUDY_LIB_DEPENDS=		libJudy.so:devel/judy
-JUDY_MAKE_ARGS_OFF=		HAVE_LIB_JUDY=0
 
 LIBINOTIFY_LIB_DEPENDS=		libinotify.so:devel/libinotify
 LIBINOTIFY_LDFLAGS=		-linotify
-LIBINOTIFY_MAKE_ARGS_OFF=	HAVE_SYS_INOTIFY_H=0
+
+XXHASH_LIB_DEPENDS=	libxxhash.so:devel/xxhash
+XXHASH_LDFLAGS=	-lxxhash
 
 MAKE_ARGS=	VERBOSE=1
+
+pre-patch:
+	${MKDIR} ${WRKSRC}/configs
+
+#to dsiable Intel IPSEC detection
+post-patch-INTELIPSEC-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_IPSEC_MB
+	${TOUCH} ${WRKSRC}/configs/HAVE_INTEL_IPSEC_MB_H
+
+#to dsiable judy detection
+post-patch-JUDY-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_JUDY_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_JUDY
+
+#to dsiable libinotify detection
+post-patch-LIBINOTIFY-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_INOTIFY
+	${TOUCH} ${WRKSRC}/configs/HAVE_SYS_INOTIFY
+
+# To disable libxxhash
+post-patch-XXHASH-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_XXHASH
+	${TOUCH} ${WRKSRC}/configs/HAVE_XXHASH_H
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
