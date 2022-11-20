@@ -1,3 +1,3 @@
-TIMESTAMP = 1584066374
-SHA256 (gnome/libgit2-glib-0.99.0.1.tar.xz) = e05a75c444d9c8d5991afc4a5a64cd97d731ce21aeb7c1c651ade1a3b465b9de
-SIZE (gnome/libgit2-glib-0.99.0.1.tar.xz) = 140996
+TIMESTAMP = 1668962696
+SHA256 (gnome/libgit2-glib-1.1.0.tar.xz) = c38dd7575daf8141e1e422333a575faf65f3c9210c08e83e981b88dd41bf1ef3
+SIZE (gnome/libgit2-glib-1.1.0.tar.xz) = 140128
