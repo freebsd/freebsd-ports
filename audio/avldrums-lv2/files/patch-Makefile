@@ -1,4 +1,4 @@
---- Makefile.orig	2022-08-10 04:43:58 UTC
+--- Makefile.orig	2022-11-08 08:05:45 UTC
 +++ Makefile
 @@ -22,7 +22,7 @@ RW ?= robtk/
  ###############################################################################
@@ -9,12 +9,3 @@
    HAVE_SSE=yes
  endif
  ifneq (,$(findstring 86,$(MACHINE)))
-@@ -30,7 +30,7 @@ ifneq (,$(findstring 86,$(MACHINE)))
- endif
- 
- ifeq ($(HAVE_SSE),yes)
--  OPTIMIZATIONS ?= -msse -msse2 -mfpmath=sse --fast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
-+  OPTIMIZATIONS ?= $(PORT_SIMD_FLAGS) -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
- else
-   OPTIMIZATIONS ?= -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
- endif
