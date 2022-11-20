@@ -1,0 +1,7 @@
+Traversal over Python's objects subtree and calculate the total size of the
+subtree in bytes (deep size).
+
+This module traverses all child objects using Python's internal GC
+implementation. It attempts to ignore shared objects (i.e., None, types,
+modules, classes, functions, lambdas), as they are common among all objects.
+It is implemented without recursive calls for high performance.
