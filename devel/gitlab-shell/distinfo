@@ -1,5 +1,5 @@
-TIMESTAMP = 1658819477
-SHA256 (go/devel_gitlab-shell/gitlab-org-gitlab-shell-28188013f53673b0870e44b082b93d855082be49_GL0/go.mod) = 8beeb04e9174824fe48b5f2b6555370cda1fa3159ff9f74b8ad0cc7465a1b541
-SIZE (go/devel_gitlab-shell/gitlab-org-gitlab-shell-28188013f53673b0870e44b082b93d855082be49_GL0/go.mod) = 4044
-SHA256 (go/devel_gitlab-shell/gitlab-org-gitlab-shell-28188013f53673b0870e44b082b93d855082be49_GL0/gitlab-org-gitlab-shell-28188013f53673b0870e44b082b93d855082be49_GL0.tar.gz) = d5320b29b7eebb880e59d399361a329a4b785c5fa928d8b292ce01be6b72a287
-SIZE (go/devel_gitlab-shell/gitlab-org-gitlab-shell-28188013f53673b0870e44b082b93d855082be49_GL0/gitlab-org-gitlab-shell-28188013f53673b0870e44b082b93d855082be49_GL0.tar.gz) = 163723
+TIMESTAMP = 1668844538
+SHA256 (go/devel_gitlab-shell/gitlab-org-gitlab-shell-6888aaeeb3ebf7fa9e9958384df1ccb315b0e7f8_GL0/go.mod) = 333750775c8a0103d6aacb61f48dc8743ed2fdaf3ff8f6a4d8759b2334b0be57
+SIZE (go/devel_gitlab-shell/gitlab-org-gitlab-shell-6888aaeeb3ebf7fa9e9958384df1ccb315b0e7f8_GL0/go.mod) = 4164
+SHA256 (go/devel_gitlab-shell/gitlab-org-gitlab-shell-6888aaeeb3ebf7fa9e9958384df1ccb315b0e7f8_GL0/gitlab-org-gitlab-shell-6888aaeeb3ebf7fa9e9958384df1ccb315b0e7f8_GL0.tar.gz) = f4fea8793dc4a75d9dbd21c1193b18869db0db120bba76d5eeaf3afc6a22414d
+SIZE (go/devel_gitlab-shell/gitlab-org-gitlab-shell-6888aaeeb3ebf7fa9e9958384df1ccb315b0e7f8_GL0/gitlab-org-gitlab-shell-6888aaeeb3ebf7fa9e9958384df1ccb315b0e7f8_GL0.tar.gz) = 163502
