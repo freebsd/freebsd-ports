@@ -1,6 +1,5 @@
 PORTNAME=	arr-pm
-PORTVERSION=	0.0.10
-PORTREVISION=	1
+PORTVERSION=	0.0.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +9,9 @@ WWW=		https://rubygems.org/gems/arr-pm
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-cabin>=0:devel/rubygem-cabin
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
