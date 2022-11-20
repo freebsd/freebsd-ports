@@ -3876,7 +3876,6 @@ java/jdk16|java/openjdk6|2012-12-10|Has expired: Outdated, consider using openjd
 java/linux-sun-jre15|java/linux-sun-jre16|2012-12-10|Has expired: EOLed upstream since October 2009
 java/linux-sun-jdk15|java/linux-sun-jdk16|2012-12-10|Has expired: EOLed upstream since October 2009
 java/jdk15-doc|java/jdk16-doc|2012-12-10|Has expired: EOLed upstream since October 2009
-science/py-openbabel||2012-12-11|Merged to science/openbabel
 www/moodle2|www/moodle23|2012-12-11|Renamed
 deskutils/horde-hermes|deskutils/horde3-hermes|2012-12-12|Rename of old horde apps
 deskutils/horde-klutz|deskutils/horde3-klutz|2012-12-12|Rename of old horde apps

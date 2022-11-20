@@ -351,6 +351,7 @@
     SUBDIR += py-nilearn
     SUBDIR += py-obspy
     SUBDIR += py-oddt
+    SUBDIR += py-openbabel
     SUBDIR += py-openpiv
     SUBDIR += py-paida
     SUBDIR += py-paramz
