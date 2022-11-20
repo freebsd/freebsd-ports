@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-PORTVERSION=	15.4.0.pre.rc2
+PORTVERSION=	15.5.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,7 @@ WWW=		https://gitlab.com/gitlab-org/gitaly
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-grpc142>=1.0<2.0:net/rubygem-grpc142 \
-		gitaly>=15.4:devel/gitaly
+RUN_DEPENDS=	rubygem-grpc142>=1.0<2.0:net/rubygem-grpc142
 
 USES=		cpe gem
 USE_RUBY=	yes
