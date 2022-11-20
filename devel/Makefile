@@ -6598,6 +6598,7 @@
     SUBDIR += rubygem-grape-path-helpers
     SUBDIR += rubygem-grape-route-helpers
     SUBDIR += rubygem-grape-swagger
+    SUBDIR += rubygem-grape-swagger-entity
     SUBDIR += rubygem-grape15
     SUBDIR += rubygem-grape_logging
     SUBDIR += rubygem-graphiql-rails

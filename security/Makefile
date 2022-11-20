@@ -1039,6 +1039,7 @@
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-cose
+    SUBDIR += rubygem-cvss-suite
     SUBDIR += rubygem-declarative_policy
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
@@ -1109,6 +1110,7 @@
     SUBDIR += rubygem-openssl-cmac
     SUBDIR += rubygem-openssl-signature_algorithm
     SUBDIR += rubygem-openssl2
+    SUBDIR += rubygem-openssl221
     SUBDIR += rubygem-openvas-omp
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pbkdf2-ruby

@@ -1,0 +1,4 @@
+This Ruby gem helps you to process the vector of the Common Vulnerability Scoring System
+(https://www.first.org/cvss/specification-document). Besides calculating the Base, Temporal
+and Environmental Score, you are able to extract the selected option.
+

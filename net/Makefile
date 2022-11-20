@@ -1307,6 +1307,7 @@
     SUBDIR += rubygem-http_parser.rb
     SUBDIR += rubygem-httpauth
     SUBDIR += rubygem-ipaddr
+    SUBDIR += rubygem-ipaddr122
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-iproto
     SUBDIR += rubygem-kas-grpc
