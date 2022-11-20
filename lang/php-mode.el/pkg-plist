@@ -1,7 +1,13 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/php-align.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-align.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-complete.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-complete.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-defs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-defs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-face.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-face.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-flymake.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-flymake.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-local-manual.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-local-manual.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode-debug.el
