@@ -1,6 +1,5 @@
 PORTNAME=	omniauth-azure-activedirectory-v2
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/RIPGlobal/omniauth-azure-activedirectory-v2
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.7<3:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.8<3:net/rubygem-omniauth-oauth2
 
 USES=		gem
 USE_RUBY=	yes
