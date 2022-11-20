@@ -1,6 +1,7 @@
 PORTNAME=	uconvert
 DISTVERSION=	1.01
 CATEGORIES=	emulators graphics
+DISTVERSIONPREFIX=	v
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Bitmap converter into Atari-specific formats
@@ -9,15 +10,13 @@ WWW=		https://github.com/mikrosk/uconvert
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 
 USES=		compiler:c++17-lang gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikrosk
 GH_PROJECT=	uconvert
-GH_TAGNAME=	v${DISTVERSION}
 
 PLIST_FILES=	bin/uconvert
 
