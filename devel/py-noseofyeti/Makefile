@@ -1,6 +1,6 @@
 PORTNAME=	noseofyeti
 DISTVERSIONPREFIX=release-
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,6 +20,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	delfick
 GH_PROJECT=	nose-of-yeti
+
+PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/noy_black.pth
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts= \
