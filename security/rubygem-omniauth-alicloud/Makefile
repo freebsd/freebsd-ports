@@ -1,6 +1,5 @@
 PORTNAME=	omniauth-alicloud
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://gitlab.com/gitlab-jh/jh-team/omniauth-alicloud
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.7<2:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.8<2:net/rubygem-omniauth-oauth2
 
 USES=		gem
 USE_RUBY=	yes
