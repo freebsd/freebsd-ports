@@ -109,6 +109,7 @@ get_cookie()
 	# get cookie
 	unset cookie_str
 	cookie_str=$(wget ${optcommon} -S -U"${ua}" -O/dev/null \
+	 --header 'Cookie: CONSENT=YES+' \
 	 "${baseurl}${bookid}&pg=PA1&jscmd=click3" 2>&1 | \
 	sed -ne '/Set-Cookie:/s/^.*\(NID[^=]*=.*domain=.google.com; HttpOnly\).*$/\1/p')
 
@@ -145,6 +146,7 @@ get_page()
 	# fetch urls
 	# NB! signatures tied to cookie and ip
 	urls=$(wget ${optcommon} -U"${ua}" --header "Cookie: ${cookie_str}" -O- \
+		--header 'Cookie: CONSENT=YES+' \
 		"${url}" | tr '}' '\n' | \
 		sed -ne 's/^.*"src":"\(https:\/\/[^"]*\)".*$/\1/; /pg=/s/\\u0026/\&/gp')
 
@@ -158,6 +160,7 @@ get_page()
 			got_pages=$((${got_pages} + 1))
 
 			wget ${optcommon} -U"${ua}" --header "Cookie: ${cookie_str}" \
+				--header 'Cookie: CONSENT=YES+' \
 				-O"${bookid}/${page}.png" "${url}&w=${pagewidth}"
 
 			_return=$?
