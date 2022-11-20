@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	15.4.4
+DISTVERSION=	15.5.4
 PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
@@ -25,14 +25,16 @@ MY_DEPENDS=	git>=2.36.1:devel/git \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.2<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc142>=1.42.0.pre1<2:net/rubygem-grpc142 \
+		rubygem-grpc142>=1.42.0<2:net/rubygem-grpc142 \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday1>=1.0.1<2:www/rubygem-faraday1 \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.24.0<1:devel/rubygem-gitlab-labkit \
+		rubygem-gitaly>=15.5.0<15.6:net/rubygem-gitaly \
+		rubygem-gitlab-labkit>=0.25.0<1:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.15<10:devel/rubygem-licensee \
-		rubygem-google-protobuf>=3.21.0<3.22:devel/rubygem-google-protobuf \
-		rubygem-license_finder>=7.0<8:devel/rubygem-license_finder
+		rubygem-google-protobuf>=3.21.7<3.22:devel/rubygem-google-protobuf \
+		rubygem-license_finder>=7.0<8:devel/rubygem-license_finder \
+		rubygem-redis4>=4.7<5:databases/rubygem-redis4
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
@@ -52,7 +54,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	cb734b28e9ae84d2320c73b168dd1c97f561d99b
+GL_COMMIT=	631c94433ca5017be566bb65f4ac792ab672e956
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy

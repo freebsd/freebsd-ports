@@ -1,6 +1,6 @@
---- ruby/Gemfile.orig	2022-09-29 08:34:44 UTC
+--- ruby/Gemfile.orig	2022-11-11 19:21:41 UTC
 +++ ruby/Gemfile
-@@ -1,15 +1,15 @@ gem 'rugged', '~> 1.2'
+@@ -1,15 +1,15 @@
  source 'https://rubygems.org'
  
  gem 'rugged', '~> 1.2'
@@ -19,10 +19,13 @@
 +gem 'faraday', '~> 1.10.2'
  gem 'rbtrace', require: false
  
- # Labkit provides observability functionality
-@@ -21,21 +21,10 @@ gem 'google-protobuf', '~> 3.21.0'
- 
- gem 'google-protobuf', '~> 3.21.0'
+ # The Gitaly Gem contains the Protobuf and gRPC definitions required by the
+@@ -28,21 +28,12 @@ gem 'google-protobuf', '~> 3.21.7'
+ # Rails is currently blocked on the upgrade to the new major version for Redis,
+ # so we don't upgrade either until the issue is resolved. This is an indirect
+ # dependency and can thus be removed when the version constraint is gone.
+-gem 'redis', '~> 4.7.1'
++gem 'redis', '~> 4.7'
  
 -group :development, :test do
 -  gem 'rubocop', '~> 0.69', require: false
@@ -31,8 +34,6 @@
 -  gem 'timecop', require: false
 -  gem 'factory_bot', require: false
 -  gem 'pry', '~> 0.12.2', require: false
--
--  gem 'grpc-tools', '~> 1.42.0'
 -end
 -
  # Gems required in omnibus-gitlab pipeline
