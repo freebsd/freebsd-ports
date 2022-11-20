@@ -71,6 +71,7 @@
     SUBDIR += ldview
     SUBDIR += leocad
     SUBDIR += lepton-eda
+    SUBDIR += libgdsii
     SUBDIR += libopencad
     SUBDIR += librecad
     SUBDIR += libredwg
