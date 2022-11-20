@@ -1,7 +1,7 @@
 PORTNAME=	topologic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.6.0-3
+DISTVERSIONSUFFIX=	-gdbddce9
 CATEGORIES=	math
 PKGNAMESUFFIX=	-space-modeling-library
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libTKernel.so:cad/opencascade \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake localbase:ldflags
+USES=		cmake compiler:c++14-lang localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
