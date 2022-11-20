@@ -18,6 +18,7 @@
     SUBDIR += cconv
     SUBDIR += celvis
     SUBDIR += chiconv
+    SUBDIR += chinese-calendar
     SUBDIR += cless
     SUBDIR += cnprint
     SUBDIR += dictd-database
