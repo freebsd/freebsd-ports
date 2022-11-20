@@ -32,7 +32,7 @@ lib/cmake/cifpp/cifppTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cifpp/cifppTargets.cmake
 lib/libcifpp.so
 lib/libcifpp.so.5
-lib/libcifpp.so.5.0.3
+lib/libcifpp.so.5.0.5
 libdata/pkgconfig/libcifpp.pc
 %%DATADIR%%/components.cif
 %%DATADIR%%/mmcif_ddl.dic
