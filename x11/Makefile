@@ -111,6 +111,7 @@
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
     SUBDIR += hyprpaper
+    SUBDIR += hyprpicker
     SUBDIR += i3blocks
     SUBDIR += i3lock-color
     SUBDIR += iceauth
