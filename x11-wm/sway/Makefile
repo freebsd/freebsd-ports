@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,6 +22,8 @@ PATCHFILES+=	440d0bc22d57.patch:-p1 # wlroots 0.16
 PATCHFILES+=	6c4c0387a24b.patch:-p1 # wlroots 0.16
 PATCHFILES+=	acdb48a59c26.patch:-p1 # wlroots 0.16
 PATCHFILES+=	3f600565e4dd.patch:-p1 # wlroots 0.16
+PATCHFILES+=	f0d57da315ec.patch:-p1 # wlroots 0.16
+PATCHFILES+=	d0b9bf94a5c6.patch:-p1 # wlroots 0.16
 PATCHFILES+=	26a0e97634dc.patch:-p1 # wlroots 0.16
 PATCHFILES+=	1c69d0e72fe8.patch:-p1 # wlroots 0.16
 PATCHFILES+=	94dbc6a92a03.patch:-p1 # wlroots 0.16
