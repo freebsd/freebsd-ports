@@ -552,7 +552,6 @@ share/fonts/xscreensaver/luximr.ttf
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/README
-%%DATADIR%%/ui/xscreensaver.ui
 %%DATADIR%%/config/abstractile.xml
 %%DATADIR%%/config/anemone.xml
 %%DATADIR%%/config/anemotaxis.xml
@@ -807,9 +806,3 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/xspirograph.xml
 %%DATADIR%%/config/zoom.xml
 %%DATADIR%%/xscreensaver.service
-%%DATADIR%%/ui/screensaver-cmndln.png
-%%DATADIR%%/ui/screensaver-colorselector.png
-%%DATADIR%%/ui/screensaver-diagnostic.png
-%%DATADIR%%/ui/screensaver-locking.png
-%%DATADIR%%/ui/screensaver-power.png
-%%DATADIR%%/ui/screensaver-snap.png
