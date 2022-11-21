@@ -1,7 +1,8 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2021-11-09
+DISTVERSION=	a2022-11-21
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/tobik:${FLAVOR} \
+MASTER_SITES=	LOCAL/pkubaj:${FLAVOR} \
+		LOCAL/tobik:${FLAVOR} \
 		${_SYSROOT_DIST:@f@https://download.freebsd.org/ftp/$f?dummy=/:${FLAVOR}@}
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
 DISTFILES=	${_SYSROOT_DIST:@f@rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${f:T}:${FLAVOR}@}
@@ -64,7 +65,8 @@ _SYSROOT_DIST_powerpc64_elfv1=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.
 					gcc9-9.3.0_1.txz
 _SYSROOT_DIST_powerpc64_elfv2=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
-_SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz
+_SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz \
+					gcc11-11.3.0_5.pkg
 _SYSROOT_DIST_riscv64=			releases/riscv/riscv64/${_SYSROOT_VER}/base.txz
 _SYSROOT_INCLUDE=			COPYRIGHT lib/* usr/include/* usr/lib/* \
 					usr/libdata/* \
@@ -141,6 +143,10 @@ post-extract:
 	cd ${EXTRACT_WRKDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${_SYSROOT_DIST_${FLAVOR}:[2]} \
 		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc9
+.elif ${FLAVOR} == powerpc
+	cd ${EXTRACT_WRKDIR} && \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${_SYSROOT_DIST_${FLAVOR}:[2]} \
+		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc11
 .endif
 	@${FIND} ${STAGEDIR}${_SYSROOT} -type d -empty -delete
 	@${MV} ${STAGEDIR}${_SYSROOT}/COPYRIGHT ${WRKDIR}
@@ -151,6 +157,9 @@ do-install:
 		${STAGEDIR}${_SYSROOT}/usr/lib/libstdc++.a
 	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc9/libstdc++.a \
 		${STAGEDIR}${_SYSROOT}/usr/lib/libc++.a
+.elif ${FLAVOR} == powerpc
+	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc11/libatomic.so \
+		${STAGEDIR}${_SYSROOT}/usr/lib/libatomic.so
 .endif
 	@${MKDIR} ${STAGEDIR}${_SYSROOT}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/${exists(${FILESDIR}/${FLAVOR}-cc.in):?${FLAVOR}-cc:cc} \
