@@ -528,7 +528,7 @@ DEPRECATED?=	Uses Python 2.7 which is EOLed upstream
 
 .  if !defined(PYTHONBASE)
 PYTHONBASE!=	(${PYTHON_CMD} -c 'import sys; print(sys.prefix)' \
-			2> /dev/null || ${ECHO_CMD} ${LOCALBASE}) | ${TAIL} -1
+			2> /dev/null || ${ECHO_CMD} ${LOCALBASE64}) | ${TAIL} -1
 .  endif
 _EXPORTED_VARS+=	PYTHONBASE
 
