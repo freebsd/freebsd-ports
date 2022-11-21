@@ -1,5 +1,6 @@
 PORTNAME=	sympy
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	PYGLET
 PYGLET_DESC=	Enable plotting support
 
-PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:graphics/py-pyglet@${PY_FLAVOR}
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet1>=1.1.2:graphics/py-pyglet1@${PY_FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#share/man/man1#man/man1#" ${WRKSRC}/setup.py
