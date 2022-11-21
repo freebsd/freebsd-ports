@@ -1,15 +1,15 @@
 - .git/ is missing in archive, so use version from environment
 
---- build/gen.py.orig	2021-12-21 20:25:21 UTC
+--- build/gen.py.orig	2022-11-19 16:33:38 UTC
 +++ build/gen.py
-@@ -213,25 +213,16 @@ def main(argv):
+@@ -216,25 +216,16 @@ def main(argv):
  
  
  def GenerateLastCommitPosition(host, header):
 -  ROOT_TAG = 'initial-commit'
 -  describe_output = subprocess.check_output(
--      ['git', 'describe', 'HEAD', '--match', ROOT_TAG], shell=host.is_windows(),
--      cwd=REPO_ROOT)
+-      ['git', 'describe', 'HEAD', '--abbrev=12', '--match', ROOT_TAG],
+-      shell=host.is_windows(), cwd=REPO_ROOT)
 -  mo = re.match(ROOT_TAG + '-(\d+)-g([0-9a-f]+)', describe_output.decode())
 -  if not mo:
 -    raise ValueError(
@@ -30,7 +30,7 @@
  
    # Only write/touch this file if the commit position has changed.
    old_contents = ''
-@@ -274,7 +265,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -277,7 +268,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'msys': 'build_linux.ninja.template',
        'darwin': 'build_mac.ninja.template',
        'linux': 'build_linux.ninja.template',
