@@ -1,5 +1,5 @@
 PORTNAME=       ruby-install
-PORTVERSION=    0.8.3
+PORTVERSION=    0.8.5
 DISTVERSIONPREFIX=      v
 CATEGORIES=     devel ruby
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/postmodern/ruby-install
 LICENSE=        MIT
 LICENSE_FILE=   ${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=    bash:shells/bash curl:ftp/curl
+RUN_DEPENDS=    bash:shells/bash curl:ftp/curl sudo:security/sudo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	postmodern
