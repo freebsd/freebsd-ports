@@ -52,10 +52,12 @@ CARGO_CRATES=	ahash-0.7.6 \
 		nix-0.23.1 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
+		num_cpus-1.13.1 \
 		number_prefix-0.4.0 \
 		once_cell-1.10.0 \
 		path-clean-0.1.0 \
 		pkg-config-0.3.24 \
+		plmap-0.3.0 \
 		ppv-lite86-0.2.16 \
 		proc-macro2-1.0.36 \
 		quote-1.0.15 \
