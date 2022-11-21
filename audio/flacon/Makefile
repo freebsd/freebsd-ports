@@ -1,5 +1,5 @@
 PORTNAME=	flacon
-PORTVERSION=	9.2.0
+PORTVERSION=	9.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -16,7 +16,7 @@ TEST_DEPENDS=	alacenc:audio/alacenc \
 		lame:audio/lame mac:audio/mac \
 		mediainfo:multimedia/mediainfo \
 		oggenc:audio/vorbis-tools \
-		opusenc:audio/opus-tools \
+		opusenc:audio/opus-tools sox:audio/sox \
 		ttaenc:audio/tta wavpack:audio/wavpack
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5
