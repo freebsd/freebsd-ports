@@ -1,5 +1,5 @@
 PORTNAME=	flare
-PORTVERSION=	1.13.04
+PORTVERSION=	1.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 PKGNAMESUFFIX=	-game
@@ -12,11 +12,10 @@ LICENSE=	CC-BY-SA-3.0
 
 RUN_DEPENDS=	flare:games/flare-engine
 
+USES=		cmake gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	flareteam
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
-
-USES=		cmake gnome
 CMAKE_BUILD_TYPE=	#empty
 NO_ARCH=	yes
 INSTALL_TARGET=	install
