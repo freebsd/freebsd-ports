@@ -1,7 +1,6 @@
 PORTNAME=	fts-flatcurve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.3.3
 CATEGORIES=	mail
 PKGNAMEPREFIX=	dovecot-
 
@@ -11,10 +10,10 @@ WWW=		https://github.com/slusarz/dovecot-fts-flatcurve
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	dovecot>=2.3.10:mail/dovecot
+BUILD_DEPENDS=	dovecot>=2.3.17:mail/dovecot
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libxapian.so:databases/xapian-core
-RUN_DEPENDS=	dovecot>=2.3.10:mail/dovecot
+RUN_DEPENDS=	dovecot>=2.3.17:mail/dovecot
 
 USES=		autoreconf libtool pkgconfig
 USE_GITHUB=	yes
