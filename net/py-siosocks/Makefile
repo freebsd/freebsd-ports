@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-trio>=0:devel/py-pytest-trio@${PY_FLAVOR}
 
-USES=		python:3.8+ pytest
-USE_PYTHON=	autoplist distutils
+USES=		python:3.8+
+USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

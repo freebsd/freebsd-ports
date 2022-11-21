@@ -12,8 +12,8 @@ WWW=		https://pycodestyle.readthedocs.io/en/latest/ \
 
 LICENSE=	MIT # mentioned as "Expat"
 
-USES=		python:3.6+ pytest
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

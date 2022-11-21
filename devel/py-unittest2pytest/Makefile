@@ -12,8 +12,8 @@ WWW=		https://pypi.org/project/unittest2pytest/ \
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING-GPLv3.txt
 
-USES=		python pytest
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

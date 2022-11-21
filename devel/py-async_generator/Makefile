@@ -13,8 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.MIT
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.APACHE2
 
-USES=		python:3.5+ pytest
-USE_PYTHON=	autoplist distutils
+USES=		python:3.5+
+USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

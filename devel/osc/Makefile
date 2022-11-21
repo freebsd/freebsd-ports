@@ -16,8 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0:security/py-m2crypto@${PY_FLAVOR
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
 
-USES=		cpe python pytest
-USE_PYTHON=	autoplist distutils noflavors
+USES=		cpe python
+USE_PYTHON=	autoplist distutils noflavors pytest
 PLIST_FILES=	bin/osc
 NO_ARCH=	yes
 PYTEST_BROKEN_TESTS=	testPrdiffDiffstat
