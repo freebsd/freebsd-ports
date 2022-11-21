@@ -12,10 +12,9 @@ WWW=		https://sympy.org/
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpmath>=0.19:math/py-mpmath@${PY_FLAVOR}
-TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.8+
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	distutils concurrent autoplist pytest
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PYGLET
@@ -25,8 +24,5 @@ PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet1>=1.1.2:graphics/py-pyglet1@${
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#share/man/man1#man/man1#" ${WRKSRC}/setup.py
-
-do-test: install
-	(cd ${WRKSRC} && py.test)
 
 .include <bsd.port.mk>
