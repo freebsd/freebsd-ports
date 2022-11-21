@@ -1,6 +1,6 @@
-TIMESTAMP = 1662248763
-SHA256 (ddosify-ddosify-v0.8.1_GH0.tar.gz) = 12d04640cf582b409961e23dbf1faa33168dcba65d9485db4a5e3aa89ccbed25
-SIZE (ddosify-ddosify-v0.8.1_GH0.tar.gz) = 554670
+TIMESTAMP = 1668470290
+SHA256 (ddosify-ddosify-v0.9.0_GH0.tar.gz) = a54041250067a5f46dfd0300910153601b028e23d86d6e6f331c8543f42d932d
+SIZE (ddosify-ddosify-v0.9.0_GH0.tar.gz) = 565969
 SHA256 (asaskevich-govalidator-f21760c49a8d_GH0.tar.gz) = 8d22a0b8a8870f814314637343ba97d598aed64c026ab1dab045ee43eb34d416
 SIZE (asaskevich-govalidator-f21760c49a8d_GH0.tar.gz) = 62652
 SHA256 (ddosify-go-faker-v0.1.1_GH0.tar.gz) = 3a1e236d54da66f40563143b4d4401157bdfd5efddc0ddaf48f33670750ff256
