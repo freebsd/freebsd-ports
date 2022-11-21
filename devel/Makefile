@@ -7052,6 +7052,7 @@
     SUBDIR += rubygem-strings
     SUBDIR += rubygem-strings-ansi
     SUBDIR += rubygem-strong_migrations
+    SUBDIR += rubygem-strong_migrations61
     SUBDIR += rubygem-strptime
     SUBDIR += rubygem-strscan
     SUBDIR += rubygem-structured_warnings
