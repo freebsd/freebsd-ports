@@ -146,6 +146,7 @@ share/foomatic/db/source/PPD/Epson/eplp920c.ppd.gz
 share/foomatic/db/source/PPD/Epson/eplp950c.ppd.gz
 share/foomatic/db/source/PPD/Epson/eplp960s.ppd.gz
 share/foomatic/db/source/PPD/Epson/eplp980c.ppd.gz
+share/foomatic/db/source/PPD/Epson/secc3900.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-C7521n_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-C7526dn_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-C7531dn_PDF.ppd.gz
@@ -224,6 +225,7 @@ share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-IM_C3500_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-IM_C400_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-IM_C4500_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-IM_C6000_PDF.ppd.gz
+share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-IM_CW2200_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-MP1100_DSm7110_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-MP1350_DSm7135_PDF.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PDF/Gestetner-MP1600_DSm716_PDF.ppd.gz
@@ -510,6 +512,7 @@ share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-IM_C3500_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-IM_C400_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-IM_C4500_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-IM_C6000_PS.ppd.gz
+share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-IM_CW2200_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP1100_DSm7110_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP1350_DSm7135_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP1600_DSm716_PS.ppd.gz
@@ -2196,6 +2199,7 @@ share/foomatic/db/source/PPD/Lanier/PDF/Lanier-IM_C530F_PDF.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PDF/Lanier-IM_C6000_PDF.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PDF/Lanier-IM_C6500_PDF.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PDF/Lanier-IM_C8000_PDF.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PDF/Lanier-IM_CW2200_PDF.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PDF/Lanier-LC155_PDF.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PDF/Lanier-LD124c_PDF.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PDF/Lanier-LD132c_PDF.ppd.gz
@@ -2483,6 +2487,7 @@ share/foomatic/db/source/PPD/Lanier/PS/Lanier-IM_C530F_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-IM_C6000_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-IM_C6500_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-IM_C8000_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-IM_CW2200_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-LC155_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-LD0105_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-LD015_PS.ppd.gz
@@ -3183,6 +3188,7 @@ share/foomatic/db/source/PPD/NRG/PDF/NRG-IM_C5500_PDF.ppd.gz
 share/foomatic/db/source/PPD/NRG/PDF/NRG-IM_C6000_PDF.ppd.gz
 share/foomatic/db/source/PPD/NRG/PDF/NRG-IM_C6500_PDF.ppd.gz
 share/foomatic/db/source/PPD/NRG/PDF/NRG-IM_C8000_PDF.ppd.gz
+share/foomatic/db/source/PPD/NRG/PDF/NRG-IM_CW2200_PDF.ppd.gz
 share/foomatic/db/source/PPD/NRG/PDF/NRG-MP_1100_PDF.ppd.gz
 share/foomatic/db/source/PPD/NRG/PDF/NRG-MP_1350_PDF.ppd.gz
 share/foomatic/db/source/PPD/NRG/PDF/NRG-MP_1600_PDF.ppd.gz
@@ -3497,6 +3503,7 @@ share/foomatic/db/source/PPD/NRG/PS/NRG-IM_C5500_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-IM_C6000_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-IM_C6500_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-IM_C8000_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-IM_CW2200_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_1100_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_1350_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_1600_PS.ppd.gz
@@ -4172,6 +4179,7 @@ share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-IM_C5500_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-IM_C6000_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-IM_C6500_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-IM_C8000_PDF.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-IM_CW2200_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-MP_2001J_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-MP_2001_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-MP_2501_PDF.ppd.gz
@@ -4571,6 +4579,9 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_C6500_JPN.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_C6500_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_C8000_JPN.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_C8000_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_CW1200_JPN.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_CW2200_JPN.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IM_CW2200_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IPSiO_SP_4210.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IPSiO_SP_4300.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IPSiO_SP_4310.ppd.gz
@@ -4612,6 +4623,8 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IPSiO_SP_C830M.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IPSiO_SP_C831.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IPSiO_SP_C831M.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IP_500SF.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IP_C6020M_JPN.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-IP_C6020_JPN.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-LASER_AP2600N_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-LASER_AP2600_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-LASER_AP2610N_PS.ppd.gz
@@ -4756,6 +4769,8 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-P_C301SF_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-P_C301W_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-P_C301_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-P_C600_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-P_C6010M_JPN.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-P_C6010_JPN.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_1106EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_1107EXP.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_1107EX_PS.ppd.gz
@@ -5400,6 +5415,7 @@ share/foomatic/db/source/PPD/Savin/PDF/Savin-IM_C530F_PDF.ppd.gz
 share/foomatic/db/source/PPD/Savin/PDF/Savin-IM_C6000_PDF.ppd.gz
 share/foomatic/db/source/PPD/Savin/PDF/Savin-IM_C6500_PDF.ppd.gz
 share/foomatic/db/source/PPD/Savin/PDF/Savin-IM_C8000_PDF.ppd.gz
+share/foomatic/db/source/PPD/Savin/PDF/Savin-IM_CW2200_PDF.ppd.gz
 share/foomatic/db/source/PPD/Savin/PDF/Savin-MLP145_PDF.ppd.gz
 share/foomatic/db/source/PPD/Savin/PDF/Savin-MLP150DN_PDF.ppd.gz
 share/foomatic/db/source/PPD/Savin/PDF/Savin-MLP175n_PDF.ppd.gz
@@ -5713,6 +5729,7 @@ share/foomatic/db/source/PPD/Savin/PS/Savin-IM_C530F_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-IM_C6000_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-IM_C6500_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-IM_C8000_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-IM_CW2200_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MLP145_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MLP150DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MLP175n_PS.ppd.gz
@@ -6297,45 +6314,342 @@ share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST4511_451c_CUPS.ppd.gz
 share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST850_CUPS.ppd.gz
 share/foomatic/db/source/PPD/Toshiba/Toshiba_GL1010_CUPS.ppd.gz
 share/foomatic/db/source/PPD/Toshiba/Toshiba_GL1020_CUPS.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA300ci
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/English/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/English/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/English/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/French/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/French/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/French/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/German/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/German/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/German/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Italian/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Italian/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Italian/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Portuguese/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Portuguese/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Portuguese/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Spanish/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Spanish/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/EU/Spanish/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/English/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/English/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/English/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/French/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/French/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/French/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/German/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/German/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/German/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Italian/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Italian/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Italian/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Portuguese/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Portuguese/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Portuguese/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Spanish/TA300ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Spanish/TA350ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/Global/Spanish/TA400ci.ppd.gz
-share/foomatic/db/source/PPD/Utax/TA350ci/ReadMe.htm
-share/foomatic/db/source/PPD/Utax/TA400ci
+share/foomatic/db/source/PPD/Utax/EU/English/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/English/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/French/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/German/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Italian/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Portuguese/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/EU/Spanish/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/English/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/French/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/German/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Italian/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Portuguese/TAPC4072DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA2506ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA300ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA301ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA3206ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA3262i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA350ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA356ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA4006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA400ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA4056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA4062i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA5006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA5056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA6006ci.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TA6056i.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAP-4531 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAP-4531i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAP-4536 MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAP-4536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAP-5536i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAP-6036i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC3062DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC3062i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC3066i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC3562DN.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC3562i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC3566i MFP.ppd.gz
+share/foomatic/db/source/PPD/Utax/Global/Spanish/TAPC4072DN.ppd.gz
 share/foomatic/db/source/driver/PDF-Gestetner.xml
 share/foomatic/db/source/driver/PDF-Infotec.xml
 share/foomatic/db/source/driver/PDF-Lanier.xml
@@ -7390,6 +7704,7 @@ share/foomatic/db/source/printer/Epson-AL-MX21.xml
 share/foomatic/db/source/printer/Epson-ActionLaser_1100.xml
 share/foomatic/db/source/printer/Epson-ActionLaser_II.xml
 share/foomatic/db/source/printer/Epson-ActionPrinter_3250.xml
+share/foomatic/db/source/printer/Epson-AcuLaser_C3900.xml
 share/foomatic/db/source/printer/Epson-AcuLaser_CX17NF.xml
 share/foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 share/foomatic/db/source/printer/Epson-Artisan_1430_Series.xml
@@ -8414,6 +8729,7 @@ share/foomatic/db/source/printer/Gestetner-IM_C3500.xml
 share/foomatic/db/source/printer/Gestetner-IM_C400.xml
 share/foomatic/db/source/printer/Gestetner-IM_C4500.xml
 share/foomatic/db/source/printer/Gestetner-IM_C6000.xml
+share/foomatic/db/source/printer/Gestetner-IM_CW2200.xml
 share/foomatic/db/source/printer/Gestetner-MP1100_DSm7110.xml
 share/foomatic/db/source/printer/Gestetner-MP1350_DSm7135.xml
 share/foomatic/db/source/printer/Gestetner-MP1600_DSm716.xml
@@ -9656,6 +9972,7 @@ share/foomatic/db/source/printer/Lanier-IM_C530FB.xml
 share/foomatic/db/source/printer/Lanier-IM_C6000.xml
 share/foomatic/db/source/printer/Lanier-IM_C6500.xml
 share/foomatic/db/source/printer/Lanier-IM_C8000.xml
+share/foomatic/db/source/printer/Lanier-IM_CW2200.xml
 share/foomatic/db/source/printer/Lanier-LC155.xml
 share/foomatic/db/source/printer/Lanier-LD0105.xml
 share/foomatic/db/source/printer/Lanier-LD015.xml
@@ -10602,6 +10919,7 @@ share/foomatic/db/source/printer/NRG-IM_C5500.xml
 share/foomatic/db/source/printer/NRG-IM_C6000.xml
 share/foomatic/db/source/printer/NRG-IM_C6500.xml
 share/foomatic/db/source/printer/NRG-IM_C8000.xml
+share/foomatic/db/source/printer/NRG-IM_CW2200.xml
 share/foomatic/db/source/printer/NRG-MP_1100.xml
 share/foomatic/db/source/printer/NRG-MP_1350.xml
 share/foomatic/db/source/printer/NRG-MP_1600.xml
@@ -11367,6 +11685,9 @@ share/foomatic/db/source/printer/Ricoh-IM_C6500.xml
 share/foomatic/db/source/printer/Ricoh-IM_C6500_JPN.xml
 share/foomatic/db/source/printer/Ricoh-IM_C8000.xml
 share/foomatic/db/source/printer/Ricoh-IM_C8000_JPN.xml
+share/foomatic/db/source/printer/Ricoh-IM_CW1200_JPN.xml
+share/foomatic/db/source/printer/Ricoh-IM_CW2200.xml
+share/foomatic/db/source/printer/Ricoh-IM_CW2200_JPN.xml
 share/foomatic/db/source/printer/Ricoh-IPSiO_SP_3400L.xml
 share/foomatic/db/source/printer/Ricoh-IPSiO_SP_3410.xml
 share/foomatic/db/source/printer/Ricoh-IPSiO_SP_3410SF.xml
@@ -11413,6 +11734,8 @@ share/foomatic/db/source/printer/Ricoh-IPSiO_SP_C830M.xml
 share/foomatic/db/source/printer/Ricoh-IPSiO_SP_C831.xml
 share/foomatic/db/source/printer/Ricoh-IPSiO_SP_C831M.xml
 share/foomatic/db/source/printer/Ricoh-IP_500SF.xml
+share/foomatic/db/source/printer/Ricoh-IP_C6020M_JPN.xml
+share/foomatic/db/source/printer/Ricoh-IP_C6020_JPN.xml
 share/foomatic/db/source/printer/Ricoh-LASER_AP2600.xml
 share/foomatic/db/source/printer/Ricoh-LASER_AP2600N.xml
 share/foomatic/db/source/printer/Ricoh-LASER_AP2610.xml
@@ -11558,6 +11881,8 @@ share/foomatic/db/source/printer/Ricoh-P_C301.xml
 share/foomatic/db/source/printer/Ricoh-P_C301SF.xml
 share/foomatic/db/source/printer/Ricoh-P_C301W.xml
 share/foomatic/db/source/printer/Ricoh-P_C600.xml
+share/foomatic/db/source/printer/Ricoh-P_C6010M_JPN.xml
+share/foomatic/db/source/printer/Ricoh-P_C6010_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_1106EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_1107EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_1107EXP.xml
@@ -12139,6 +12464,7 @@ share/foomatic/db/source/printer/Savin-IM_C530FB.xml
 share/foomatic/db/source/printer/Savin-IM_C6000.xml
 share/foomatic/db/source/printer/Savin-IM_C6500.xml
 share/foomatic/db/source/printer/Savin-IM_C8000.xml
+share/foomatic/db/source/printer/Savin-IM_CW2200.xml
 share/foomatic/db/source/printer/Savin-MLP145.xml
 share/foomatic/db/source/printer/Savin-MLP150DN.xml
 share/foomatic/db/source/printer/Savin-MLP175n.xml
