@@ -1,3 +1,3 @@
-TIMESTAMP = 1668425241
-SHA256 (wayland-protocols-1.29.tar.xz) = e25e9ab75ac736704ddefe92e8f9ac8730beab6f564db62f7ad695bba4ff9ed8
-SIZE (wayland-protocols-1.29.tar.xz) = 84116
+TIMESTAMP = 1669046904
+SHA256 (wayland-protocols-1.30.tar.xz) = 3c1498fb65fd2b80b0376d7e87cf215e6ae957b2ccdba5da45a448718831bc60
+SIZE (wayland-protocols-1.30.tar.xz) = 84776
