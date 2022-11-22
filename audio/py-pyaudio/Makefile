@@ -1,6 +1,5 @@
 PORTNAME=	pyaudio
-PORTVERSION=	0.2.11
-PORTREVISION=	2
+PORTVERSION=	0.2.12
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +13,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-USES=		python:3.6+ gmake
-USE_PYTHON=	distutils concurrent autoplist
+USES=		gmake python:3.6+
+USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	PYTHON=${PYTHON_CMD} \
 		SPHINX=sphinx-build-${PYTHON_VER}
@@ -31,10 +30,12 @@ post-patch:
 		${WRKSRC}/setup.py
 
 post-build-DOCS-on:
-	(cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} docs)
+	(cd ${BUILD_WRKSRC} && \
+		${DO_MAKE_BUILD} docs)
 
 post-install-DOCS-on:
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -path *doctrees*")
+	(cd ${WRKSRC}/docs && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -path *doctrees*")
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_portaudio*.so
