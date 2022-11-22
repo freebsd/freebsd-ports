@@ -3,7 +3,7 @@ DISTVERSION=	1.13.1
 PORTREVISION=	6
 CATEGORIES=	science
 
-MAINTAINER=	aehlig@linta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities for visualization and conversion of HDF5 format
 WWW=		https://github.com/stevengj/h5utils
 

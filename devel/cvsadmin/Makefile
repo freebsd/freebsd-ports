@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/gabor
 
-MAINTAINER=	aehlig@linta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to administrate users of a CVS repository
 
 GNU_CONFIGURE=	yes
