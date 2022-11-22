@@ -1,5 +1,5 @@
 PORTNAME=	unison
-PORTVERSION=	2.52.1
+PORTVERSION=	2.53.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -17,12 +17,12 @@ nox11_PKGNAMESUFFIX=		-nox11
 nox11_CONFLICTS_INSTALL=	unison
 
 x11_CONFLICTS_INSTALL=		unison-nox11
-x11_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2 \
+x11_BUILD_DEPENDS=	ocaml-lablgtk3>0:x11-toolkits/ocaml-lablgtk3 \
 			icotool:graphics/icoutils
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
-x11_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+x11_RUN_DEPENDS=	ocaml-lablgtk3>0:x11-toolkits/ocaml-lablgtk3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake localbase
@@ -52,9 +52,9 @@ MAKE_ARGS=		UISTYLE=text
 PKGMESSAGE=		${PKGDIR}/pkg-message.nox11
 PLIST_SUB+=		X11="@comment "
 .else
-MAKE_ARGS=		UISTYLE=gtk2
+MAKE_ARGS=		UISTYLE=gtk3
 SUB_FILES=		${PORTNAME}.desktop
-USE_GNOME+=		atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME+=		atk cairo gdkpixbuf2 glib20 gtk30 pango
 USES+=			gettext-runtime gnome
 PLIST_SUB+=		X11=""
 .endif
@@ -68,7 +68,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/CFLAGS/COFLAGS/g' \
 		${WRKSRC}/Makefile.OCaml ${WRKSRC}/fsmonitor/linux/Makefile
 .else
-	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
+	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk3)@\1site-lib/\2@' \
 		-e 's/CFLAGS/COFLAGS/g' \
 		${WRKSRC}/Makefile.OCaml ${WRKSRC}/fsmonitor/linux/Makefile
 .endif
