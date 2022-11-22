@@ -1,3 +1,31 @@
+  <vuln vid="e0f26ac5-6a17-11ed-93e7-901b0e9408dc">
+    <topic>tailscale -- Security vulnerability in the client</topic>
+    <affects>
+      <package>
+	<name>tailscale</name>
+	<range><lt>1.32.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tailscale team reports:</p>
+	<blockquote cite="https://tailscale.com/security-bulletins/#ts-2022-005">
+	<p>A vulnerability identified in the Tailscale client allows a
+	malicious website to access the peer API, which can then be used
+	to access Tailscale environment variables.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41925</cvename>
+      <url>https://tailscale.com/security-bulletins/#ts-2022-005</url>
+    </references>
+    <dates>
+      <discovery>2022-11-21</discovery>
+      <entry>2022-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="556fdf03-6785-11ed-953b-002b67dfc673">
     <topic>Tomcat -- Request Smuggling</topic>
     <affects>
