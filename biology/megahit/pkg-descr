@@ -1,0 +1,4 @@
+MEGAHIT is a single node assembler for large and complex metagenomics NGS
+reads, such as soil. It makes use of succinct de Bruijn graph (SdBG) to achieve
+low memory assembly. MEGAHIT can optionally utilize a CUDA-enabled GPU to
+accelerate its SdBG contstruction.

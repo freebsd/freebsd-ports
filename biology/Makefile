@@ -90,6 +90,7 @@
     SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
+    SUBDIR += megahit
     SUBDIR += migrate
     SUBDIR += minimap2
     SUBDIR += mmseqs2
