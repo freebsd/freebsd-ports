@@ -1,5 +1,6 @@
 PORTNAME=	heimdal
 PORTVERSION=	${HEIMDAL_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
 HASH=		8f9c2d115
@@ -26,8 +27,6 @@ USE_LDCONFIG=	${GSSAPILIBDIR}
 # Else asm1_fails resulting in a command not found error.
 BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		p5-JSON>0:converters/p5-JSON
-
-LIB_DEPENDS=	liblockfile.so:devel/liblockfile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
