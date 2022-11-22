@@ -1,5 +1,5 @@
 PORTNAME=	obspy
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +11,16 @@ WWW=		https://www.obspy.org/
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.0.0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.12.4:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.2.0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		fortran python:3.7+ shebangfix
+USES=		fortran python:3.8+ shebangfix
 SHEBANG_FILES=	obspy/taup/tests/data/TauP_test_data/gendata.sh
 USE_LDCONFIG=	yes
 LDFLAGS+=	-shared
