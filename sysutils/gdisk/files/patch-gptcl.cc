@@ -1,4 +1,4 @@
---- gptcl.cc.orig	2022-11-22 09:31:13 UTC
+--- gptcl.cc.orig	2022-04-14 23:17:12 UTC
 +++ gptcl.cc
 @@ -71,7 +71,7 @@ int GPTDataCL::DoOptions(int argc, char* argv[]) {
     uint64_t low, high, startSector, endSector, sSize, mainTableLBA;
@@ -9,7 +9,7 @@
     PartType typeHelper;
  
     struct poptOption theOptions[] =
-@@ -156,9 +156,11 @@ int GPTDataCL::DoOptions(int argc, char* argv[]) {
+@@ -156,12 +156,14 @@ int GPTDataCL::DoOptions(int argc, char* argv[]) {
  
     // Assume first non-option argument is the device filename....
     device = (char*) poptGetArg(poptCon);
@@ -18,10 +18,14 @@
     poptResetContext(poptCon);
  
 -   if (device != NULL) {
-+   if (devstr.empty()) {
++   if (!devstr.empty()) {
        JustLooking(); // reset as necessary
        BeQuiet(); // Tell called functions to be less verbose & interactive
-       if (LoadPartitions(devstr)) {
+-      if (LoadPartitions((string) device)) {
++      if (LoadPartitions(devstr)) {
+          if ((WhichWasUsed() == use_mbr) || (WhichWasUsed() == use_bsd))
+             saveNonGPT = 0; // flag so we don't overwrite unless directed to do so
+          sSize = GetBlockSize();
 @@ -498,7 +500,7 @@ int GPTDataCL::DoOptions(int argc, char* argv[]) {
           cerr << "Error encountered; not saving changes.\n";
           retval = 4;
