@@ -4,7 +4,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
 
-MAINTAINER=	aehlig@linta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and correct build system
 WWW=		https://bazel.build/
 

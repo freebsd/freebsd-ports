@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	aehlig@linta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp mode for editing haskell programs
 WWW=		https://projects.haskell.org/haskellmode-emacs/
 
