@@ -277,7 +277,8 @@ _INCLUDE_USES_PYTHON_MK=	yes
 # Mk/bsd.default-versions.mk in sync.
 _PYTHON_VERSIONS=		3.9 3.8 3.7 3.10 3.11 2.7 # preferred first
 _PYTHON_PORTBRANCH=		3.9		# ${_PYTHON_VERSIONS:[1]}
-_PYTHON_BASECMD=		${LOCALBASE64}/bin/python
+_PYTHON_LOCALBASE=		${LOCALBASE64}
+_PYTHON_BASECMD=		${_PYTHON_LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
 
 # List all valid USE_PYTHON features here
@@ -528,7 +529,7 @@ DEPRECATED?=	Uses Python 2.7 which is EOLed upstream
 
 .  if !defined(PYTHONBASE)
 PYTHONBASE!=	(${PYTHON_CMD} -c 'import sys; print(sys.prefix)' \
-			2> /dev/null || ${ECHO_CMD} ${LOCALBASE64}) | ${TAIL} -1
+			2> /dev/null || ${ECHO_CMD} ${_PYTHON_LOCALBASE}) | ${TAIL} -1
 .  endif
 _EXPORTED_VARS+=	PYTHONBASE
 
