@@ -28,6 +28,7 @@ share/locale/pa/LC_MESSAGES/neochat.mo
 share/locale/pl/LC_MESSAGES/neochat.mo
 share/locale/pt/LC_MESSAGES/neochat.mo
 share/locale/pt_BR/LC_MESSAGES/neochat.mo
+share/locale/ru/LC_MESSAGES/neochat.mo
 share/locale/sk/LC_MESSAGES/neochat.mo
 share/locale/sl/LC_MESSAGES/neochat.mo
 share/locale/sv/LC_MESSAGES/neochat.mo
@@ -35,7 +36,6 @@ share/locale/ta/LC_MESSAGES/neochat.mo
 share/locale/tok/LC_MESSAGES/neochat.mo
 share/locale/tr/LC_MESSAGES/neochat.mo
 share/locale/uk/LC_MESSAGES/neochat.mo
-share/locale/x-test/LC_MESSAGES/neochat.mo
 share/locale/zh_CN/LC_MESSAGES/neochat.mo
+share/locale/zh_TW/LC_MESSAGES/neochat.mo
 share/metainfo/org.kde.neochat.appdata.xml
-
