@@ -1,5 +1,5 @@
 PORTNAME=	extract-msg
-PORTVERSION=	0.36.4
+PORTVERSION=	0.37.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	extract_msg-${PORTVERSION}
 
 MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Extracts emails and attachments saved in MS Outlook's .msg files
-WWW=	https://github.com/TeamMsgExtractor/msg-extractor
+WWW=		https://github.com/TeamMsgExtractor/msg-extractor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.11.1:www/py-beautifulsoup@$
 		${PYTHON_PKGNAMEPREFIX}RTFDE>=0.0.2:textproc/py-RTFDE@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=4.2:devel/py-tzlocal@${PY_FLAVOR}
 
-USES=	python:3.6+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
