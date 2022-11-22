@@ -1,6 +1,6 @@
 PORTNAME=	xbyak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.64
+DISTVERSION=	6.65
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 TEST_DEPENDS=	gmake:devel/gmake \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		yasm:devel/yasm
 
 USES=		cmake
 
@@ -28,6 +29,8 @@ PLIST_FILES=	include/xbyak/xbyak.h \
 		lib/cmake/xbyak/xbyak-config-version.cmake \
 		lib/cmake/xbyak/xbyak-config.cmake \
 		lib/cmake/xbyak/xbyak-targets.cmake
+
+BINARY_ALIAS=	g++=${CXX} # workaround for https://github.com/herumi/xbyak/issues/166
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sed |gsed |g' ${WRKSRC}/gen/Makefile
