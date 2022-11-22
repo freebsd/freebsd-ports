@@ -1,7 +1,7 @@
 PORTNAME=	ldc
 PORTVERSION=	1.30.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
 
