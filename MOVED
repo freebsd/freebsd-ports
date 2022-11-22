@@ -17615,3 +17615,4 @@ net/rabbitmq-c-devel|net/rabbitmq-c|2022-11-16|Remove obsolete devel port, use n
 databases/foundationdb-devel|databases/foundationdb|2022-11-16|Remove obsolete devel port, use databases/foundationdb instead
 devel/py-pytest4-asyncio||2022-11-19|Has expired: legacy version for pytest4 no longer used by any port
 devel/tokamak||2022-11-20|Has expired: Last release in 2008, abandoned upstream, not used, website disappeared
+net/libutp|net-p2p/libutp|2022-11-19|Moved to a more adequated category
