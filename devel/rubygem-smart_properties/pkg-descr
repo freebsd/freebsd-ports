@@ -1,0 +1,3 @@
+SmartProperties are a more flexible and feature-rich alternative to traditional
+Ruby accessors. They provide support for input conversion, input validation,
+specifying default values and presence checking.
