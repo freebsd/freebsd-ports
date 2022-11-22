@@ -1,4 +1,4 @@
---- etc/routinator.conf.example.orig	2020-12-09 20:29:45 UTC
+--- etc/routinator.conf.example.orig	2022-11-10 12:01:55 UTC
 +++ etc/routinator.conf.example
 @@ -19,7 +19,7 @@
  #
@@ -7,15 +7,14 @@
 -repository-dir = "..."
 +repository-dir = "/var/routinator"
  
- # Trust Anchor Locator (TAL) directory
+ # Do not use bundled RIR TALs.
+ #no-rir-tals = false
+@@ -35,7 +35,7 @@ repository-dir = "..."
+ # A relative path is interpreted with respect to the directory this config
+ # lives in.
  #
-@@ -31,7 +31,8 @@ repository-dir = "..."
- #
- # This setting is mandatory.
- #
--tal-dir = "..."
-+# tal-dir = "tals"
-+tal-dir = "/var/routinator/tals"
+-#extra-tals-dir = "..."
++#extra-tals-dir = "tals"
  
  # Local exceptions files
  #

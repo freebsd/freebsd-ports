@@ -7,11 +7,6 @@
 
     sudo mkdir -p /var/routinator
     sudo chown %%GROUPS%%:%%USERS%% /var/routinator
-    sudo -u %%USERS%% -g %%GROUPS%% routinator -c %%ETCDIR%%/routinator.conf init
-
-  and rerun as needed e.g.:
-
-    sudo -u %%USERS%% -g %%GROUPS%% routinator -c %%ETCDIR%%/routinator.conf init --accept-arin-rpa
 
   See also man(1) routinator
 
