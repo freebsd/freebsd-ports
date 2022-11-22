@@ -919,6 +919,7 @@
     SUBDIR += p5-HTTP-MobileAgent-Plugin-Locator
     SUBDIR += p5-HTTP-MultiPartParser
     SUBDIR += p5-HTTP-Negotiate
+    SUBDIR += p5-HTTP-OAI
     SUBDIR += p5-HTTP-Parser
     SUBDIR += p5-HTTP-Parser-XS
     SUBDIR += p5-HTTP-Proxy
