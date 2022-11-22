@@ -1,0 +1,35 @@
+PORTNAME=	babelflow
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Embedded Domain Specific Language to describe task graph abstraction
+WWW=		https://github.com/sci-visus/BabelFlow
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake compiler:c++11-lang
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sci-visus
+GH_PROJECT=	BabelFlow
+
+CMAKE_ARGS=	-DRUNTIME_TYPE:STRING="MPI"
+
+OPTIONS_SINGLE=		MPI
+OPTIONS_SINGLE_MPI=	MPICH OPENMPI
+OPTIONS_SINGLE_MPI=	MPICH OPENMPI
+OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_DEFAULT=	EXAMPLES MPICH
+OPTIONS_SUB=		yes
+
+EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
+
+MPICH_USES=		mpi:mpich
+
+OPENMPI_USES=		mpi:openmpi
+
+.include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2022-11-22 22:42:05 UTC
++++ CMakeLists.txt
+@@ -101,7 +101,9 @@ endif()
+ 
+ add_subdirectory(src)
+ 
+-add_subdirectory(examples)
++if (BUILD_EXAMPLES)
++  add_subdirectory(examples)
++endif()
+ 
+ install(EXPORT BabelFlow NAMESPACE BabelFlow:: DESTINATION lib/cmake)
+ install(FILES BabelFlowConfig.cmake DESTINATION lib/cmake)

@@ -1,0 +1,3 @@
+BabelFlow is an Embedded Domain Specific Language to describe algorithms using
+a task graph abstraction which allows them to be executed on top of one of
+several available runtime systems.
