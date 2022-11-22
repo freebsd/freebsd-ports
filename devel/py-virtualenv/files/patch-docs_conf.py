@@ -1,15 +1,15 @@
---- docs/conf.py.orig	2019-09-03 16:32:54 UTC
+--- docs/conf.py.orig	2022-11-12 21:38:58 UTC
 +++ docs/conf.py
-@@ -4,7 +4,11 @@ import os
- import re
+@@ -1,9 +1,12 @@
++import os
  import subprocess
  import sys
--from pathlib import Path
-+if sys.version_info[0] == 2:
-+    from pathlib2 import Path
-+else:
-+    from pathlib import Path
+ from datetime import date, datetime
+ from pathlib import Path
+ 
+ import sphinx_rtd_theme
++
 +sys.path.insert(0, os.path.abspath('../build/lib'))
  
- from virtualenv import __version__
+ from virtualenv.version import __version__
  
