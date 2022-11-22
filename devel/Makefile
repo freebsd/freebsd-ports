@@ -6317,6 +6317,7 @@
     SUBDIR += rubygem-baf
     SUBDIR += rubygem-batch-loader
     SUBDIR += rubygem-benelux
+    SUBDIR += rubygem-better_html-rails61
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
     SUBDIR += rubygem-bindex
