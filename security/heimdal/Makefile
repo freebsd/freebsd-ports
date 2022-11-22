@@ -1,6 +1,6 @@
 PORTNAME=	heimdal
 PORTVERSION=	7.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
@@ -21,8 +21,6 @@ USE_LDCONFIG=	${GSSAPILIBDIR}
 # Needs clang-format which is only provided by the port.
 # Else asm1_fails resulting in a command not found error.
 BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-
-LIB_DEPENDS=	liblockfile.so:devel/liblockfile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
