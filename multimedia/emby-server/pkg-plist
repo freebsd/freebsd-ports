@@ -354,7 +354,6 @@ lib/emby-server/system/dashboard-ui/apikeys/apikeys.js
 lib/emby-server/system/dashboard-ui/app.js
 lib/emby-server/system/dashboard-ui/apploader.js
 lib/emby-server/system/dashboard-ui/bower_components/abortcontroller-polyfill/umd-polyfill.js
-lib/emby-server/system/dashboard-ui/bower_components/css-vars-ponyfill/css-vars-ponyfill.js
 lib/emby-server/system/dashboard-ui/bower_components/fetch/fetch.js
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.js
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.js.mem
@@ -367,7 +366,6 @@ lib/emby-server/system/dashboard-ui/bower_components/libjass/libjass.js
 lib/emby-server/system/dashboard-ui/components/accessschedule/accessschedule.js
 lib/emby-server/system/dashboard-ui/components/accessschedule/accessschedule.template.html
 lib/emby-server/system/dashboard-ui/components/activitylog.js
-lib/emby-server/system/dashboard-ui/components/directorybrowser/directorybrowser.css
 lib/emby-server/system/dashboard-ui/components/directorybrowser/directorybrowser.js
 lib/emby-server/system/dashboard-ui/components/imageoptionseditor/imageoptionseditor.js
 lib/emby-server/system/dashboard-ui/components/imageoptionseditor/imageoptionseditor.template.html
@@ -448,8 +446,6 @@ lib/emby-server/system/dashboard-ui/livetv/schedule.js
 lib/emby-server/system/dashboard-ui/livetv/series.js
 lib/emby-server/system/dashboard-ui/livetv/suggestions.js
 lib/emby-server/system/dashboard-ui/livetvsetup/channels.js
-lib/emby-server/system/dashboard-ui/livetvsetup/embydata.html
-lib/emby-server/system/dashboard-ui/livetvsetup/embydata.js
 lib/emby-server/system/dashboard-ui/livetvsetup/guideprovider.html
 lib/emby-server/system/dashboard-ui/livetvsetup/guideprovider.js
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvsettings.html
@@ -458,8 +454,6 @@ lib/emby-server/system/dashboard-ui/livetvsetup/livetvstatus.html
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvstatus.js
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvtuner.html
 lib/emby-server/system/dashboard-ui/livetvsetup/livetvtuner.js
-lib/emby-server/system/dashboard-ui/livetvsetup/xmltv.html
-lib/emby-server/system/dashboard-ui/livetvsetup/xmltv.js
 lib/emby-server/system/dashboard-ui/logs/log.css
 lib/emby-server/system/dashboard-ui/logs/log.js
 lib/emby-server/system/dashboard-ui/logs/logs.js
@@ -552,6 +546,7 @@ lib/emby-server/system/dashboard-ui/modules/common/strings/ro.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/ru.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/sk.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/sl-SI.json
+lib/emby-server/system/dashboard-ui/modules/common/strings/sq.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/sv.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/tr.json
 lib/emby-server/system/dashboard-ui/modules/common/strings/uk.json
@@ -565,6 +560,7 @@ lib/emby-server/system/dashboard-ui/modules/common/usersettings/usersettings.js
 lib/emby-server/system/dashboard-ui/modules/common/usersettings/usersettingsbuilder.js
 lib/emby-server/system/dashboard-ui/modules/confirmstillplaying/plugin.js
 lib/emby-server/system/dashboard-ui/modules/controlbox.js
+lib/emby-server/system/dashboard-ui/modules/css-vars-ponyfill/css-vars-ponyfill.js
 lib/emby-server/system/dashboard-ui/modules/datagrid/datagrid.css
 lib/emby-server/system/dashboard-ui/modules/datagrid/datagrid.js
 lib/emby-server/system/dashboard-ui/modules/dialog/dialog.js
@@ -705,6 +701,7 @@ lib/emby-server/system/dashboard-ui/modules/flvjs/utils/logger.js
 lib/emby-server/system/dashboard-ui/modules/flvjs/utils/logging-control.js
 lib/emby-server/system/dashboard-ui/modules/flvjs/utils/utf8-conv.js
 lib/emby-server/system/dashboard-ui/modules/focusmanager.js
+lib/emby-server/system/dashboard-ui/modules/fonts/GoNotoCurrent.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/fonts.css
 lib/emby-server/system/dashboard-ui/modules/fonts/material-icons/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmJ_3.woff
 lib/emby-server/system/dashboard-ui/modules/fonts/material-icons/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmP_3.woff2
@@ -730,7 +727,6 @@ lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu72xKOzY
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7GxKOzY.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7WxKOzY.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7mxKOzY.woff2
-lib/emby-server/system/dashboard-ui/modules/fonts/subfont.woff2
 lib/emby-server/system/dashboard-ui/modules/formdialog.css
 lib/emby-server/system/dashboard-ui/modules/formhelper.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreen-dc.js
@@ -909,6 +905,7 @@ lib/emby-server/system/dashboard-ui/modules/toast/toast.css
 lib/emby-server/system/dashboard-ui/modules/toast/toast.js
 lib/emby-server/system/dashboard-ui/modules/transparencymanagement.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/baseview.js
+lib/emby-server/system/dashboard-ui/modules/viewmanager/basewidget.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/viewmanager.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.template.html
@@ -1040,6 +1037,7 @@ lib/emby-server/system/dashboard-ui/strings/ro.json
 lib/emby-server/system/dashboard-ui/strings/ru.json
 lib/emby-server/system/dashboard-ui/strings/sk.json
 lib/emby-server/system/dashboard-ui/strings/sl-SI.json
+lib/emby-server/system/dashboard-ui/strings/sq.json
 lib/emby-server/system/dashboard-ui/strings/sv.json
 lib/emby-server/system/dashboard-ui/strings/th.json
 lib/emby-server/system/dashboard-ui/strings/tr.json
@@ -1136,6 +1134,7 @@ lib/emby-server/system/plugins/StudioImages.dll
 lib/emby-server/system/plugins/Tvdb.dll
 lib/emby-server/system/traystrings/ar.json
 lib/emby-server/system/traystrings/bg-BG.json
+lib/emby-server/system/traystrings/ca.json
 lib/emby-server/system/traystrings/cs.json
 lib/emby-server/system/traystrings/da.json
 lib/emby-server/system/traystrings/de.json
@@ -1165,6 +1164,7 @@ lib/emby-server/system/traystrings/pt-BR.json
 lib/emby-server/system/traystrings/pt-PT.json
 lib/emby-server/system/traystrings/ru.json
 lib/emby-server/system/traystrings/sk.json
+lib/emby-server/system/traystrings/sq.json
 lib/emby-server/system/traystrings/sv.json
 lib/emby-server/system/traystrings/tr.json
 lib/emby-server/system/traystrings/uk.json
