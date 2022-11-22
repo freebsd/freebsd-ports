@@ -1,0 +1,14 @@
+i18n-tasks helps you find and manage missing and unused translations.
+
+This gem analyses code statically for key usages, such as I18n.t('some.key'), in
+order to:
+
+* Report keys that are missing or unused.
+* Pre-fill missing keys, optionally from Google Translate or DeepL Pro.
+* Remove unused keys.
+
+Thus addressing the two main problems of i18n gem design:
+
+* Missing keys only blow up at runtime.
+* Keys no longer in use may accumulate and introduce overhead, without you
+knowing it.
