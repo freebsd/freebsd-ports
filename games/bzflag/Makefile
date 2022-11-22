@@ -1,5 +1,5 @@
 PORTNAME=	bzflag
-PORTVERSION=	2.4.24
+PORTVERSION=	2.4.26
 CATEGORIES=	games
 MASTER_SITES=	https://download.bzflag.org/bzflag/source/${PORTVERSION}/
 
