@@ -55,6 +55,7 @@
 %%DATADIR%%/Discovery/Web-Content/CMS/joomla-plugins.fuzz.txt
 %%DATADIR%%/Discovery/Web-Content/CMS/joomla-themes.fuzz.txt
 %%DATADIR%%/Discovery/Web-Content/CMS/kentico-cms-modules-themes.txt
+%%DATADIR%%/Discovery/Web-Content/CMS/liferay_dxp_default_portlets.txt
 %%DATADIR%%/Discovery/Web-Content/CMS/modx-revolution-plugins
 %%DATADIR%%/Discovery/Web-Content/CMS/php-nuke.fuzz.txt
 %%DATADIR%%/Discovery/Web-Content/CMS/piwik-3.0.4.txt
@@ -172,6 +173,7 @@
 %%DATADIR%%/Discovery/Web-Content/URLs/urls-wordpress-3.3.1.txt
 %%DATADIR%%/Discovery/Web-Content/UnixDotfiles.fuzz.txt
 %%DATADIR%%/Discovery/Web-Content/Vignette.fuzz.txt
+%%DATADIR%%/Discovery/Web-Content/WEB-INF-dict.txt
 %%DATADIR%%/Discovery/Web-Content/Web-Services/README.md
 %%DATADIR%%/Discovery/Web-Content/Web-Services/SOAP-functions.txt
 %%DATADIR%%/Discovery/Web-Content/aem2.txt
@@ -180,12 +182,14 @@
 %%DATADIR%%/Discovery/Web-Content/api/actions-lowercase.txt
 %%DATADIR%%/Discovery/Web-Content/api/actions-uppercase.txt
 %%DATADIR%%/Discovery/Web-Content/api/actions.txt
+%%DATADIR%%/Discovery/Web-Content/api/api-endpoints-res.txt
 %%DATADIR%%/Discovery/Web-Content/api/api-endpoints.txt
 %%DATADIR%%/Discovery/Web-Content/api/api-seen-in-wild.txt
 %%DATADIR%%/Discovery/Web-Content/api/objects-lowercase.txt
 %%DATADIR%%/Discovery/Web-Content/api/objects-uppercase.txt
 %%DATADIR%%/Discovery/Web-Content/api/objects.txt
 %%DATADIR%%/Discovery/Web-Content/api/ispsystem_billmanager_api.txt
+%%DATADIR%%/Discovery/Web-Content/api/salesforce-aura-objects.txt
 %%DATADIR%%/Discovery/Web-Content/axis.txt
 %%DATADIR%%/Discovery/Web-Content/big.txt
 %%DATADIR%%/Discovery/Web-Content/burp-parameter-names.txt
@@ -218,6 +222,7 @@
 %%DATADIR%%/Discovery/Web-Content/frontpage.txt
 %%DATADIR%%/Discovery/Web-Content/golang.txt
 %%DATADIR%%/Discovery/Web-Content/graphql.txt
+%%DATADIR%%/Discovery/Web-Content/hashicorp-consul-api.txt
 %%DATADIR%%/Discovery/Web-Content/hashicorp-vault.txt
 %%DATADIR%%/Discovery/Web-Content/hpsmh.txt
 %%DATADIR%%/Discovery/Web-Content/hyperion.txt
@@ -4857,6 +4862,7 @@
 %%DATADIR%%/Fuzzing/extensions-compressed.fuzz.txt
 %%DATADIR%%/Fuzzing/extensions-most-common.fuzz.txt
 %%DATADIR%%/Fuzzing/extensions-skipfish.fuzz.txt
+%%DATADIR%%/Fuzzing/fuzz-Bo0oM-friendly.txt
 %%DATADIR%%/Fuzzing/fuzz-Bo0oM.txt
 %%DATADIR%%/Fuzzing/http-request-methods.txt
 %%DATADIR%%/Fuzzing/numeric-fields-only.txt
