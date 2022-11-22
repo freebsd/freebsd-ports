@@ -7247,7 +7247,7 @@
     SUBDIR += rudiments
     SUBDIR += ruff
     SUBDIR += rust-analyzer
-    SUBDIR += rust-bindgen
+    SUBDIR += rust-bindgen-cli
     SUBDIR += rust-cbindgen
     SUBDIR += rustc-demangle
     SUBDIR += rvi
