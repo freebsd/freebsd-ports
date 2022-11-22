@@ -13,6 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-Apache
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_aarch64=	fails to compile: Cannot find an intrinsic module named 'ieee_arithmetic' at (1)
+
 USES=		cmake:testing fortran
 USE_LDCONFIG=	yes
 
