@@ -1,0 +1,12 @@
+PDF Mix Tool is a simple and lightweight application that allows you to perform
+common editing operations on PDF files.
+
+Base operations it can perform are the following:
+* Merge two or more files specifying a page set for each of them
+* Rotate pages
+* Composite more pages onto a single one (N-up)
+* Combinations of all of the above
+
+Besides, it can also mix files alternating their pages, generate booklets,
+add white pages to a PDF file, delete pages from a PDF file, extract pages from
+a PDF file, edit the PDF document information, extract images from a PDF file.

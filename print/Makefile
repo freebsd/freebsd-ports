@@ -147,6 +147,7 @@
     SUBDIR += pdfchain
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
+    SUBDIR += pdfmixtool
     SUBDIR += pdfstitch
     SUBDIR += pdftk
     SUBDIR += pear-File_PDF
