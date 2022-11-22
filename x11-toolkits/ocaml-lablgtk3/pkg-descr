@@ -1,0 +1,7 @@
+LablGtk2 is an OCaml interface to GTK+ 3.x.  It provides a strongly-typed,
+yet comfortable, object-oriented interface compatible with GTK+'s dynamic
+typing through OCaml's rich type system.  Most widgets and methods are
+available, along with many examples.
+
+Objective Caml threads are supported, including for the toplevel, which
+allows for interactive use of the library.
