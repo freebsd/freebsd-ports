@@ -588,6 +588,7 @@
     SUBDIR += nsxiv
     SUBDIR += nurbs++
     SUBDIR += nvidia-texture-tools
+    SUBDIR += ocaml-cairo
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad

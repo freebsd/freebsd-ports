@@ -1,0 +1,2 @@
+This is an OCaml binding for the Cairo library, a 2D graphics library
+with support for multiple output devices.
