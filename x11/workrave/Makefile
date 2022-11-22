@@ -10,12 +10,13 @@ WWW=		https://www.workrave.org/
 
 LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libgdome.so:textproc/gdome2
+LIB_DEPENDS=	libgdome.so:textproc/gdome2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lang gettext gmake gnome libtool localbase \
 		pkgconfig xorg
 USE_CXXSTD=	c++11
-USE_GNOME=	gtkmm30 intlhack intltool introspection:build
+USE_GNOME=	gdkpixbuf2 gtkmm30 intlhack intltool introspection:build
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xmu xorgproto xscrnsaver xtst
 
