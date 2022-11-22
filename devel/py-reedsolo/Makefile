@@ -1,6 +1,7 @@
 PORTNAME=	reedsolo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,19 +12,16 @@ WWW=		https://github.com/tomerfiliba/reedsolomon
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR}
-
-USES=		python:3.6-3.9
+USES=		python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython distutils pytest
 
 GH_ACCOUNT=	tomerfiliba
 GH_PROJECT=	reedsolomon
 TEST_ENV+=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-do-test:
-	@cd ${TEST_WRKSRC} && \
-	${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} --with-coverage -d -v
+# PR 267882: regenerate creedsolo.c with Cython
+post-patch:
+	@${RM} ${WRKSRC}/creedsolo.c
 
 .include <bsd.port.mk>
