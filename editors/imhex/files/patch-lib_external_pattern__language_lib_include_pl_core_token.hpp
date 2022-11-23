@@ -1,4 +1,4 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-10-15 20:26:43 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-11-19 17:06:38 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
 @@ -148,9 +148,9 @@ namespace pl::core {
  
@@ -17,7 +17,7 @@
      namespace tkn {
  
 -        constexpr inline Token createToken(const core::Token::Type type, const core::Token::ValueTypes &value) {
-+        inline Token createToken(const core::Token::Type type, const core::Token::ValueTypes &value) {
++        inline pl::core::Token createToken(const core::Token::Type type, const core::Token::ValueTypes &value) {
              return { type, value, 1, 1 };
          }
  

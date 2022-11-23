@@ -1,5 +1,5 @@
 bin/imhex
-lib/libimhex.so.1.24.3
+lib/libimhex.so.1.25.0
 share/applications/imhex.desktop
 %%DATADIR%%/constants/_schema.json
 %%DATADIR%%/constants/crc16.json

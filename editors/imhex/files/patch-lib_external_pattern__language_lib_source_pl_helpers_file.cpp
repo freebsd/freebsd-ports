@@ -1,22 +1,15 @@
---- lib/external/pattern_language/lib/source/pl/helpers/file.cpp.orig	2022-08-14 15:37:26 UTC
+--- lib/external/pattern_language/lib/source/pl/helpers/file.cpp.orig	2022-11-16 14:22:38 UTC
 +++ lib/external/pattern_language/lib/source/pl/helpers/file.cpp
-@@ -19,12 +19,12 @@ namespace pl::hlp::fs {
-                 this->m_file = _wfopen(path.c_str(), L"w+b");
-         #else
-             if (mode == File::Mode::Read)
--                    this->m_file = fopen64(path.string().c_str(), "rb");
-+                    this->m_file = fopen(path.string().c_str(), "rb");
-                 else if (mode == File::Mode::Write)
--                    this->m_file = fopen64(path.string().c_str(), "r+b");
-+                    this->m_file = fopen(path.string().c_str(), "r+b");
+@@ -8,7 +8,7 @@
  
-                 if (mode == File::Mode::Create || (mode == File::Mode::Write && this->m_file == nullptr))
--                    this->m_file = fopen64(path.string().c_str(), "w+b");
-+                    this->m_file = fopen(path.string().c_str(), "w+b");
-         #endif
-     }
+ namespace pl::hlp::fs {
  
-@@ -52,7 +52,7 @@ namespace pl::hlp::fs {
+-#if defined(OS_MACOS)
++#if defined(OS_MACOS) || defined(__FreeBSD__)
+     #define fopen64 fopen
+     #define ftruncate64 ftruncate
+ #endif
+@@ -57,7 +57,7 @@ namespace pl::hlp::fs {
  
  
      void File::seek(u64 offset) {
@@ -25,7 +18,7 @@
      }
  
      void File::close() {
-@@ -137,10 +137,10 @@ namespace pl::hlp::fs {
+@@ -142,10 +142,10 @@ namespace pl::hlp::fs {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,7 +33,7 @@
  
          if (size < 0)
              return 0;
-@@ -151,7 +151,7 @@ namespace pl::hlp::fs {
+@@ -156,7 +156,7 @@ namespace pl::hlp::fs {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  
