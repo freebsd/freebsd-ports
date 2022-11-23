@@ -681,6 +681,7 @@
     SUBDIR += numptyphysics-npcomplete
     SUBDIR += nwndata
     SUBDIR += nxengine
+    SUBDIR += oblige
     SUBDIR += odamex
     SUBDIR += oldrunner
     SUBDIR += omega
