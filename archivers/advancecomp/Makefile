@@ -1,11 +1,11 @@
 PORTNAME=	advancecomp
-DISTVERSION=	2.3
+DISTVERSION=	2.4
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/amadvance/advancecomp/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG, and .GZ files
-WWW=		http://advancemame.sourceforge.net/comp-readme.html
+WWW=		http://www.advancemame.it/comp-readme.html
 
 LICENSE=	GPLv3
 
