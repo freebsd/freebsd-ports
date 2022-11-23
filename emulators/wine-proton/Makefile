@@ -1,6 +1,5 @@
 PORTNAME=	wine-proton
-DISTVERSION=	6.3-2
-PORTREVISION=	6
+DISTVERSION=	7.0-4
 CATEGORIES=	emulators
 
 MAINTAINER=	iwtcex@gmail.com
@@ -13,24 +12,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
-LIB_DEPENDS=	libFAudio.so:audio/faudio \
-		libfontconfig.so:x11-fonts/fontconfig \
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgnutls.so:security/gnutls \
-		libjpegxr.so:graphics/libjxr \
-		liblcms2.so:graphics/lcms2 \
-		libpng.so:graphics/png \
-		libvulkan.so:graphics/vulkan-loader \
-		libxml2.so:textproc/libxml2
+		libvulkan.so:graphics/vulkan-loader
 
-USES=		bison desktop-file-utils gettext-runtime gl gmake gnome gstreamer jpeg localbase openal pkgconfig sdl shebangfix tar:xz xorg
+USES=		autoreconf bison desktop-file-utils gettext-runtime gl gmake gnome gstreamer localbase openal pkgconfig python:build sdl shebangfix tar:xz xorg
 USE_GCC=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	97f962cd469ee9b9b68d32e79849bf94cfe15581
+GH_TAGNAME=	fb6e6af8928a29660e8cf797d43e028ea5bf8d23
 
 USE_GL=		gl
 USE_GNOME=	glib20
@@ -48,17 +44,13 @@ CONFIGURE_ARGS=	--verbose \
 		--libdir=${PREFIX}/${PORTNAME}/lib \
 		--disable-kerberos \
 		--disable-tests \
-		--with-cms \
 		--with-fontconfig \
 		--with-freetype \
 		--with-gnutls \
 		--with-gstreamer \
-		--with-jpeg \
-		--with-jxrlib \
 		--with-openal \
 		--with-opengl \
 		--with-oss \
-		--with-png \
 		--with-sdl \
 		--with-vulkan \
 		--with-x \
@@ -66,44 +58,69 @@ CONFIGURE_ARGS=	--verbose \
 		--with-xinput2 \
 		--with-xrandr \
 		--with-xrender \
+		--with-pcap \
+		--with-pthread \
+		--with-mingw CROSSCC="clang" CROSSCFLAGS="-isystem ${FILESDIR}/clang" \
 		--without-alsa \
 		--without-capi \
+		--without-coreaudio \
 		--without-cups \
 		--without-dbus \
 		--without-gettext \
 		--without-gettextpo \
 		--without-gphoto \
-		--without-gsm \
+		--without-gssapi \
 		--without-inotify \
 		--without-krb5 \
 		--without-ldap \
-		--without-mingw \
-		--without-mpg123 \
+		--without-netapi \
 		--without-opencl \
 		--without-osmesa \
-		--without-pulse \
 		--without-sane \
-		--without-tiff \
 		--without-udev \
 		--without-unwind \
 		--without-usb \
 		--without-v4l2 \
-		--without-vkd3d \
-		--without-xslt
+		--without-vkd3d
 
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex" JXRLIB_CFLAGS="-I${LOCALBASE}/include/jxrlib"
 
+CFLAGS+=	-D__NR_futex="-1"
+
+BINARY_ALIAS+=	clang=${LOCALBASE}/bin/clang${_LLVM_VERSION} \
+		lld-link=${LOCALBASE}/bin/lld-link${_LLVM_VERSION}
+
+OPTIONS_DEFINE=	PULSEAUDIO
+OPTIONS_DEFAULT=PULSEAUDIO
+OPTIONS_SUB=	yes
+
+PULSEAUDIO_DESC=		Build winepulse.drv
+
+PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ON=	--with-pulse
+PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
+
 .include <bsd.port.pre.mk>
 
+.if (${LLVM_DEFAULT} == 90 || ${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
+_LLVM_VERSION=	12
+.else
+_LLVM_VERSION=	${LLVM_DEFAULT}
+.endif
+
 .if ${ARCH} == amd64
-PLIST_SUB+=	WINE32="@comment " WINE64=""
+PLIST_SUB+=	WINE32="@comment " WINE64="" WINEARCH="x86_64"
 CONFIGURE_ARGS+=--enable-win64
 .else
-PLIST_SUB+=	WINE32="" WINE64="@comment "
+PLIST_SUB+=	WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
+
+pre-configure:
+	cd ${WRKSRC} && ${PYTHON_CMD} dlls/winevulkan/make_vulkan --xml vk.xml
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
+	cd ${WRKSRC} && tools/make_requests
 
 post-install:
 .if ${ARCH} == i386
