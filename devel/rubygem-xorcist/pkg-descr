@@ -1,0 +1,5 @@
+Blazing-fast-cross-platform-monkey-patch-free string XOR. Yes, that means JRubys
+too.
+
+Supported platforms: MRI (v2+), JRuby (v9.2+), Truffle (v21+), Truffle+GraalVM
+(v21+).
