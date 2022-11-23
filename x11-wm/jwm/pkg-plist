@@ -4,6 +4,7 @@ man/man1/jwm.1.gz
 %%DATADIR%%/jwm-blue.svg
 %%DATADIR%%/jwm-gray.svg
 %%DATADIR%%/jwm-orange.svg
+%%DATADIR%%/jwm-red.svg
 %%DATADIR%%/jwm.xbm
 %%NLS%%share/locale/da/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/jwm.mo
@@ -11,10 +12,13 @@ man/man1/jwm.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jwm.mo

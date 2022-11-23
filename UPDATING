@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221123:
+  AFFECTS: x11-wm/jwm
+  AUTHOR: fernape@FreeBSD.org
+
+  jwm 2.4 introduces changes in the configuration.  To convert an existing v2.3
+  configuration file using xsltproc, run:
+
+  cp ~/.jwmrc ~/.jwmrc.old
+  xsltproc jwm-2.4.xslt ~/.jwmrc.old > ~/.jwmrc
+
+  If you have multiple configuration files, it may be necessary to apply the
+  XSLT to some or all of them depending on what configuration options are stored
+  in the file.
+
 20221017:
   AFFECTS: archivers/star
   AUTHOR: fernape@FreeBSD.org
