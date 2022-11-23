@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2022.10.15
+DISTVERSION=	2022.11.15
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -15,8 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	textbrowser
 USE_GL=		gl
 USE_QT=		concurrent core declarative gui location network printsupport \
-		sql webchannel webengine widgets xml buildtools:build \
-		qmake:build
+		sql webchannel webengine widgets xml sql-sqlite3:run \
+		buildtools:build qmake:build
 USE_XORG=	xcb
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
