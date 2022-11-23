@@ -6,6 +6,7 @@ bin/rpmbuild
 bin/rpmdb
 bin/rpmgraph
 bin/rpmkeys
+bin/rpmlua
 bin/rpmquery
 bin/rpmsign
 bin/rpmspec
@@ -18,6 +19,7 @@ include/rpm/rpmbase64.h
 include/rpm/rpmbuild.h
 include/rpm/rpmcallback.h
 include/rpm/rpmcli.h
+include/rpm/rpmcrypto.h
 include/rpm/rpmdb.h
 include/rpm/rpmds.h
 include/rpm/rpmfc.h
@@ -49,16 +51,16 @@ include/rpm/rpmutil.h
 include/rpm/rpmver.h
 lib/librpm.so
 lib/librpm.so.9
-lib/librpm.so.9.2.0
+lib/librpm.so.9.3.0
 lib/librpmbuild.so
 lib/librpmbuild.so.9
-lib/librpmbuild.so.9.2.0
+lib/librpmbuild.so.9.3.0
 lib/librpmio.so
 lib/librpmio.so.9
-lib/librpmio.so.9.2.0
+lib/librpmio.so.9.3.0
 lib/librpmsign.so
 lib/librpmsign.so.9
-lib/librpmsign.so.9.2.0
+lib/librpmsign.so.9.3.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpm.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
@@ -66,8 +68,8 @@ lib/librpmsign.so.9.2.0
 %%PLUGINS%%lib/rpm-plugins/prioreset.so
 %%PLUGINS%%lib/rpm-plugins/syslog.so
 %%PLUGINS%%lib/rpm-plugins/systemd_inhibit.so
-lib/rpm/brp-elfperms
 lib/rpm/brp-compress
+lib/rpm/brp-elfperms
 lib/rpm/brp-remove-la-files
 lib/rpm/brp-strip
 lib/rpm/brp-strip-comment-note
@@ -86,6 +88,7 @@ lib/rpm/fileattrs/ocaml.attr
 lib/rpm/fileattrs/perl.attr
 lib/rpm/fileattrs/perllib.attr
 lib/rpm/fileattrs/pkgconfig.attr
+lib/rpm/fileattrs/rpm_macro.attr
 lib/rpm/fileattrs/script.attr
 lib/rpm/find-lang.sh
 lib/rpm/find-provides
@@ -126,6 +129,7 @@ lib/rpm/platform/i586-%%OPSYS%%/macros
 lib/rpm/platform/i686-%%OPSYS%%/macros
 lib/rpm/platform/ia32e-%%OPSYS%%/macros
 lib/rpm/platform/ia64-%%OPSYS%%/macros
+lib/rpm/platform/loongarch64-%%OPSYS%%/macros
 lib/rpm/platform/m68k-%%OPSYS%%/macros
 lib/rpm/platform/mips-%%OPSYS%%/macros
 lib/rpm/platform/mips64-%%OPSYS%%/macros
@@ -167,11 +171,13 @@ lib/rpm/rpm.daily
 lib/rpm/rpm.log
 lib/rpm/rpm.supp
 lib/rpm/rpm2cpio.sh
+lib/rpm/rpm_macros_provides.sh
 lib/rpm/rpmdb_dump
 lib/rpm/rpmdb_load
 lib/rpm/rpmdeps
 lib/rpm/rpmpopt-%%VERSION%%
 lib/rpm/rpmrc
+lib/rpm/rpmuncompress
 lib/rpm/script.req
 lib/rpm/tgpg
 libdata/pkgconfig/rpm.pc
@@ -197,6 +203,7 @@ man/man8/rpmdb.8.gz
 man/man8/rpmdeps.8.gz
 man/man8/rpmgraph.8.gz
 man/man8/rpmkeys.8.gz
+man/man8/rpmlua.8.gz
 man/man8/rpmsign.8.gz
 man/man8/rpmspec.8.gz
 man/pl/man1/gendiff.1.gz
@@ -226,6 +233,7 @@ man/sk/man8/rpm.8.gz
 %%NLS%%share/locale/is/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/rpm.mo

@@ -1,8 +1,7 @@
 PORTNAME=	rpm
-PORTVERSION=	4.17.0
-PORTREVISION=	2
+PORTVERSION=	4.18.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.17.x/
+MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -21,15 +20,16 @@ RUN_DEPENDS=	bash:shells/bash \
 		gxargs:misc/findutils
 
 USES=		alias bdb sqlite cpe gmake iconv libarchive libtool \
-		lua:53+ pathfix pkgconfig shebangfix tar:bzip2
+		lua pathfix pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pkgconfigdeps.sh \
-		scripts/fontconfig.prov scripts/perl.prov scripts/perl.req  \
-		scripts/find-lang.sh scripts/ocamldeps.sh
+		scripts/fontconfig.prov scripts/perl.prov scripts/perl.req \
+		scripts/find-lang.sh scripts/ocamldeps.sh \
+		scripts/rpm_macros_provides.sh
 CONFIGURE_ARGS=	--enable-sqlite=yes\
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \
