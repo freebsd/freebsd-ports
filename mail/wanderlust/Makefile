@@ -19,10 +19,10 @@ RUN_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
 
 USES=		emacs
 USE_GITHUB=	yes
-GH_TAGNAME=	d99ffe0
+GH_TAGNAME=	f5cb2f0
 
 NO_ARCH=	yes
-SNAPDATE=	20220904
+SNAPDATE=	20221117
 
 MAKE_ARGS+=	EMACS=${EMACS_CMD} \
 		FLAGS="-batch -q -no-site-file" \
