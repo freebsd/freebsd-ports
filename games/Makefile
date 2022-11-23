@@ -922,6 +922,7 @@
     SUBDIR += solarconquest
     SUBDIR += solarus
     SUBDIR += solarus-quest-editor
+    SUBDIR += solver
     SUBDIR += spacejunk
     SUBDIR += spacezero
     SUBDIR += speak
