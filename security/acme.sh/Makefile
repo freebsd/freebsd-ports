@@ -1,6 +1,6 @@
 PORTNAME=	acme.sh
-PORTVERSION=	3.0.4
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+PORTVERSION=	3.0.5
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/Neilpang/acme.sh/
 LICENSE=	GPLv3+
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Neilpang
+GH_ACCOUNT=	acmesh-official
 
 USERS=		acme
 GROUPS=		acme
