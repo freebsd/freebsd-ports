@@ -144,6 +144,7 @@ include/snort/service_inspectors/http_inspect/http_common.h
 include/snort/service_inspectors/http_inspect/http_field.h
 include/snort/service_inspectors/http_inspect/http_inspect_base.h
 include/snort/service_inspectors/http_inspect/http_stream_splitter_base.h
+include/snort/service_inspectors/netflow/netflow.h
 include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
@@ -294,6 +295,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/http_inspect.txt
 %%PORTDOCS%%%%DOCSDIR%%/http2_inspect.txt
 %%PORTDOCS%%%%DOCSDIR%%/iec104.txt
+%%PORTDOCS%%%%DOCSDIR%%/js_norm.txt
 %%PORTDOCS%%%%DOCSDIR%%/mms.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/params.txt
