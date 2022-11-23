@@ -1,6 +1,6 @@
 bin/textadept
 %%NCURSES%%bin/textadept-curses
-share/applications/textadept-curses.desktop
+%%NCURSES%%share/applications/textadept-curses.desktop
 share/applications/textadept.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_layouts/default.html
 %%PORTDOCS%%%%DOCSDIR%%/api.html
@@ -147,11 +147,13 @@ share/pixmaps/textadept.svg
 %%DATADIR%%/lexers/gap.lua
 %%DATADIR%%/lexers/gettext.lua
 %%DATADIR%%/lexers/gherkin.lua
+%%DATADIR%%/lexers/gleam.lua
 %%DATADIR%%/lexers/glsl.lua
 %%DATADIR%%/lexers/gnuplot.lua
 %%DATADIR%%/lexers/go.lua
 %%DATADIR%%/lexers/groovy.lua
 %%DATADIR%%/lexers/gtkrc.lua
+%%DATADIR%%/lexers/hare.lua
 %%DATADIR%%/lexers/haskell.lua
 %%DATADIR%%/lexers/html.lua
 %%DATADIR%%/lexers/icon.lua
@@ -231,6 +233,7 @@ share/pixmaps/textadept.svg
 %%DATADIR%%/lexers/text.lua
 %%DATADIR%%/lexers/toml.lua
 %%DATADIR%%/lexers/txt2tags.lua
+%%DATADIR%%/lexers/typescript.lua
 %%DATADIR%%/lexers/vala.lua
 %%DATADIR%%/lexers/vb.lua
 %%DATADIR%%/lexers/vcard.lua

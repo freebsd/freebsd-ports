@@ -1,16 +1,17 @@
 PORTNAME=	textadept
-PORTVERSION=	11.1
+PORTVERSION=	11.4
 DISTVERSIONPREFIX=	${PORTNAME}_
 CATEGORIES=	editors
 MASTER_SITES=	https://www.scintilla.org/:sci \
 		http://www.lua.org/ftp/:lua \
 		http://www.inf.puc-rio.br/~roberto/lpeg/:lpeg
-DISTFILES=	scintilla${SCI_VER}.tgz:sci \
+DISTFILES=	scintilla${SCINTILLA_VER}.tgz:sci \
+		lexilla${LEXILLA_VER}.tgz:sci \
 		lua-${LUA_VER}.tar.gz:lua \
 		lpeg-${LPEG_VER}.tar.gz:lpeg
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Fast, minimalist, extensible cross-platform text editor
+COMMENT=	Fast, minimalist, extensible text editor
 WWW=		https://orbitalquark.github.io/textadept/
 
 LICENSE=	MIT
@@ -24,18 +25,18 @@ USE_GNOME=	cairo gdkpixbuf2 glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	orbitalquark keplerproject:lfs
 GH_PROJECT=	scintillua:scilua luafilesystem:lfs gtdialog:gtd
-GH_TAGNAME=	scintillua_${SCILUA_VER}:scilua v${LFS_VER}:lfs \
-		${GTD_HASH}:gtd
+GH_TAGNAME=	${SCILUA_HASH}:scilua v${LFS_VER}:lfs ${GTD_HASH}:gtd
 
-SCI_VER=	446
-SCILUA_VER=	4.4.5-2
-SCINTERM_HASH=	6a77415
-LUA_VER=	5.3.5
+SCINTILLA_VER=	524
+LEXILLA_VER=	510
+SCINTERM_HASH=	475d8d4
+SCILUA_HASH=	9088723
+LUA_VER=	5.4.4
 LPEG_VER=	1.0.2
 LFS_VER=	1_8_0
-GTD_HASH=	6458754
+GTD_HASH=	444af9c
 CDK_VER=	5.0-20200923
-TERMKEY_VER=	0.20
+TERMKEY_VER=	0.22
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -49,8 +50,8 @@ OPTIONS_SUB=		yes
 
 UI_DESC=	GTK version
 GTK2_USE=	GNOME=gtk20
+GTK2_MAKE_ARGS=	GTK2=1
 GTK3_USE=	GNOME=gtk30
-GTK3_MAKE_ARGS=	GTK3=yes
 _TARGETS=	gtk
 
 # HTML files require patched https://keplerproject.github.io/luadoc/ to
@@ -71,6 +72,7 @@ post-patch:
 	${LN} -s ${WRKDIR}/scintilla ${BUILD_WRKSRC}
 	${PATCH} -d ${BUILD_WRKSRC}/scintilla -N -p1 < \
 		${BUILD_WRKSRC}/scintilla.patch
+	${LN} -s ${WRKDIR}/lexilla ${BUILD_WRKSRC}
 	${LN} -s ${WRKDIR}/lua-${LUA_VER} ${BUILD_WRKSRC}/lua
 	${PATCH} -d ${BUILD_WRKSRC}/lua -N -p1 < \
 		${BUILD_WRKSRC}/lua.patch
@@ -83,9 +85,9 @@ post-patch:
 	${LN} -s ${WRKDIR}/luafilesystem-${LFS_VER}/src/*.[ch] \
 		${BUILD_WRKSRC}/lua/src/lib
 	${LN} -s ${WRKDIR}/gtdialog-${GTD_HASH} ${BUILD_WRKSRC}/gtdialog
-# Fix build with glib 2.68.3: see https://github.com/orbitalquark/textadept/issues/110
-	${REINPLACE_CMD} -e '/static volatile/s|volatile||g' \
-		${BUILD_WRKSRC}/scintilla/gtk/ScintillaGTKAccessible.cxx
+# On FreeBSD, ``__progname'' and ``environ'' symbols originated from
+# /lib/crt*.o must stay global (see https://bugs.freebsd.org/220103).
+	@${PRINTF} '%s\n%s\n' __progname environ >> ${WRKSRC}/src/lua.sym
 
 post-patch-NCURSES-on:
 	@${MKDIR} ${BUILD_WRKSRC}/scintilla/curses

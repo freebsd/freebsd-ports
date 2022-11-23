@@ -1,79 +1,75 @@
---- src/Makefile.orig	2021-01-29 18:38:35 UTC
+--- src/Makefile.orig	2022-08-01 13:36:01 UTC
 +++ src/Makefile
-@@ -1,10 +1,9 @@
- # Copyright 2007-2021 Mitchell. See LICENSE.
+@@ -2,9 +2,7 @@
  
--CC = gcc
--CFLAGS = -Os
--CXX = g++
--CXXFLAGS = -Os -std=c++17
--MAKE = make
-+CC ?= gcc
-+CFLAGS ?= -Os
-+CXX ?= g++
-+CXXFLAGS ?= -Os -std=c++17
- ifeq (win, $(findstring win, $(MAKECMDGOALS)))
-   # Cross-compile for Win32.
-   CROSS = i686-w64-mingw32-
-@@ -62,20 +61,21 @@ else ifeq (osx, $(findstring osx, $(MAKECMDGOALS)))
- else
-   # Build for Linux/BSD.
-   LUA_CFLAGS = -DLUA_USE_LINUX
--  LDFLAGS = -rdynamic -Wl,--retain-symbols-file -Wl,$(shell pwd)/lua.sym
-+  # See PR https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220103
-+  #LDFLAGS = -rdynamic -Wl,--retain-symbols-file -Wl,$(shell pwd)/lua.sym
-   ifeq (Linux, $(shell uname -s))
-     LDFLAGS += -ldl
-   else
--    CC = cc
--    CXX = c++
--    LDFLAGS += -liconv
--    MAKE = gmake
-+    CC ?= cc
-+    CXX ?= c++
-+    # Correct spelling on FreeBSD is USES+=iconv :)
-+    #LDFLAGS += -liconv
-   endif
-   PREFIX ?= /usr/local
-   bin_dir = $(PREFIX)/bin
-   data_dir = $(PREFIX)/share/textadept
-   XDG_DATA_DIR ?= $(PREFIX)/share/applications
--  PIXMAPS_DIR ?= /usr/share/pixmaps
-+  PIXMAPS_DIR ?= $(PREFIX)/share/pixmaps
-   desktop_files := $(wildcard *.desktop)
-   ifeq (, $(findstring curses, $(MAKECMDGOALS)))
-     plat_flag = -DGTK
-@@ -103,7 +103,7 @@ else
- endif
- version = $(shell grep -m 1 _RELEASE ../core/init.lua | cut -d ' ' -f4- | \
-                   tr ' ' '_' | tr -d "'")
+ # Base flags and options.
+ 
+-CFLAGS := -Os
+-CXXFLAGS := -Os -std=c++17
 -WGET = wget -O $@
 +WGET = : wget-is-forbidden-during-build -O $@
  
- # Scintilla.
+ # Define these once for speed and reference them later.
+ ifdef GTK2
+@@ -194,9 +192,6 @@ $(linux_objs): CXX := g++
+ ifeq (Linux, $(shell uname -s))
+ $(linux_objs): CC := gcc
+ $(linux_objs): CXX := g++
+-else
+-$(linux_objs): CC := cc
+-$(linux_objs): CXX := c++
+ endif
+ $(linux_objs): lua_flags += -DLUA_USE_LINUX
+ $(linux_objs): gtk_flags := $(gtk_flags_linux)
+@@ -231,7 +226,11 @@ osx_exes := $(addprefix ../, textadept-osx textadept-o
  
-@@ -164,7 +164,11 @@ endif
- 
- # Build.
- 
--all: textadept
+ .PHONY: all curses win osx
+ .DEFAULT_GOAL := all
+-all: $(linux_exes)
 +all:
-+	for tgt in $(TA_TARGETS) ; do $(MAKE) $$tgt ; \
-+	find . -type f -name \*.o -delete ; done
-+
-+gtk: textadept
- curses: textadept-curses
- win32: textadept.exe
- win32-curses: textadept-curses.exe
-@@ -239,20 +243,21 @@ textadept-curses.exe: $(sci_objs) $(sci_lex_objs) LexL
++	for tgt in $(TA_TARGETS) ; do \
++		find . -type f -name \*.o -delete ; \
++		$(MAKE) $$tgt ; done
++gtk: ../textadept
+ curses: ../textadept-curses
+ win: $(win_exes)
+ osx: $(osx_exes)
+@@ -244,8 +243,6 @@ $(linux_exes): CXX := g++
  
- # Install/uninstall.
+ ifeq (Linux, $(shell uname -s))
+ $(linux_exes): CXX := g++
+-else
+-$(linux_exes): CXX := c++
+ endif
+ $(linux_exes): LDFLAGS := -rdynamic
+ ifndef PROFILE
+@@ -261,8 +258,6 @@ $(linux_exes): LDLIBS := -ldl
+   echo -lncursesw) -lpthread
+ ifeq (Linux, $(shell uname -s))
+ $(linux_exes): LDLIBS := -ldl
+-else
+-$(linux_exes): LDLIBS := -liconv
+ endif
+ ifdef PROFILE
+ $(linux_exes): LDLIBS += -lgcov
+@@ -309,7 +304,7 @@ XDG_DATA_DIR ?= $(PREFIX)/share/applications
+ bin_dir := $(PREFIX)/bin
+ data_dir := $(PREFIX)/share/textadept
+ XDG_DATA_DIR ?= $(PREFIX)/share/applications
+-PIXMAPS_DIR ?= /usr/share/pixmaps
++PIXMAPS_DIR ?= $(PREFIX)/share/pixmaps
+ desktop_files := $(wildcard *.desktop)
+ ifeq (, $(findstring curses, $(MAKECMDGOALS)))
+   install_targets := ../textadept
+@@ -318,19 +313,19 @@ endif
+ endif
  
--install: $(install_targets) | ../core ../docs ../init.lua ../lexers ../LICENSE \
-+install: $(wildcard ../textadept*) | ../core ../docs ../init.lua ../lexers \
-                               ../modules ../themes
+ .PHONY: install uninstall
+-install: $(install_targets) | ../core ../docs ../init.lua ../lexers ../LICENSE ../modules ../themes
++install: $(wildcard ../textadept*) | ../core ../docs ../init.lua ../lexers ../modules ../themes
  	install -d $(DESTDIR)$(bin_dir) $(DESTDIR)$(data_dir)
- 	install $^ $(DESTDIR)$(data_dir)
+-	install $^ $(DESTDIR)$(data_dir)
++	$(BSD_INSTALL_PROGRAM) $^ $(DESTDIR)$(data_dir)
  	cp -rL $| $(DESTDIR)$(data_dir)
 -	ln -s $(subst .., $(data_dir), $^) $(DESTDIR)$(bin_dir)
 -	if [ -d "$(XDG_DATA_DIR)" ]; then \
@@ -86,10 +82,9 @@
 +	if : ; then \
  		install -d $(DESTDIR)$(PIXMAPS_DIR); \
 -		ln -s $(data_dir)/core/images/textadept.svg $(DESTDIR)$(PIXMAPS_DIR); \
--		ln -s $(data_dir)/core/images/ta_48x48.png \
-+		ln -s ../..$(subst $(PREFIX),,$(data_dir))/core/images/textadept.svg \
-+			$(DESTDIR)$(PIXMAPS_DIR); \
-+		ln -s ../..$(subst $(PREFIX),,$(data_dir))/core/images/ta_48x48.png \
- 			$(DESTDIR)$(PIXMAPS_DIR)/textadept.png; \
+-		ln -s $(data_dir)/core/images/ta_48x48.png $(DESTDIR)$(PIXMAPS_DIR)/textadept.png; \
++		ln -s ../..$(subst $(PREFIX),,$(data_dir))/core/images/textadept.svg $(DESTDIR)$(PIXMAPS_DIR); \
++		ln -s ../..$(subst $(PREFIX),,$(data_dir))/core/images/ta_48x48.png $(DESTDIR)$(PIXMAPS_DIR)/textadept.png; \
  	fi
  uninstall:
+ 	rm -r $(DESTDIR)$(bin_dir)/textadept* $(DESTDIR)$(data_dir)
