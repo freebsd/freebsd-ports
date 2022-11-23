@@ -1,14 +1,11 @@
 PORTNAME=	firebird
-PORTVERSION=	4.0.0
-PORTREVISION=	4
+PORTVERSION=	4.0.2
+PORTREVISION=	0
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.2496-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.2816-0
 DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	https://github.com/FirebirdSQL/firebird/commit/
-PATCHFILES=	96931200340c8e0abcd3529b8e443d5ab62adfa5.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-4 relational database (server)
