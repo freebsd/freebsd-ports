@@ -1,0 +1,11 @@
+bin/mkdssp
+include/dssp.hpp
+lib/cmake/dssp/dsspConfig.cmake
+lib/cmake/dssp/dsspConfigVersion.cmake
+lib/cmake/dssp/dsspTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dssp/dsspTargets.cmake
+lib/libdssp.so
+lib/libdssp.so.4
+lib/libdssp.so.4.2.0
+libdata/pkgconfig/libdssp.pc
+share/man/man1/mkdssp.1.gz
