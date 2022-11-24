@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	r
 DISTVERSION=	4.2.23
 CATEGORIES=	databases
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Tools for MongoDB 4.2.x
 WWW=		https://github.com/mongodb/mongo-tools
 

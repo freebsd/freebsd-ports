@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.klop.ws/distfiles/ \
 		ftp://ftp.uni-duisburg.de/Unix/networking/LDAP/frontends/
 DISTNAME=	Browser282b2
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP browser and editor
 WWW=		https://web.archive.org/web/20081218031210/http://www.mcs.anl.gov/~gawor/ldap/
 

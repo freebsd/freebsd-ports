@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Save real-time clock on reboot
 WWW=		https://github.com/ronaldklop/fakertc
 
