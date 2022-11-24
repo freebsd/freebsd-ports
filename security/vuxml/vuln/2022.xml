@@ -1,3 +1,46 @@
+  <vuln vid="b6a84729-6bd0-11ed-8d9a-b42e991fc52e">
+    <topic>advancecomp -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>advancecomp</name>
+	<range><lt>2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GitHub advisories reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-8xqx-5mpr-g8xj">
+	<p>Multiple vulnerabilities found in advancecomp including:</p>
+	<ul>
+	  <li>Three segmentation faults.</li>
+	  <li>Heap buffer overflow via le_uint32_read at /lib/endianrw.h.</li>
+	  <li>Three more heap buffer overflows.</li>
+	</ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35014</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35014</url>
+      <cvename>CVE-2022-35015</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35015</url>
+      <cvename>CVE-2022-35016</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35016</url>
+      <cvename>CVE-2022-35017</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35017</url>
+      <cvename>CVE-2022-35018</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35018</url>
+      <cvename>CVE-2022-35019</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35019</url>
+      <cvename>CVE-2022-35020</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-35020</url>
+    </references>
+    <dates>
+      <discovery>2022-08-29</discovery>
+      <entry>2022-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e0f26ac5-6a17-11ed-93e7-901b0e9408dc">
     <topic>tailscale -- Security vulnerability in the client</topic>
     <affects>
