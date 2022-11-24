@@ -1,6 +1,5 @@
 PORTNAME=	yesod-bin
-PORTVERSION=	1.6.2.1
-PORTREVISION=	1
+PORTVERSION=	1.6.2.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +16,7 @@ USE_CABAL=	HUnit-1.6.2.0 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
 		aeson-2.1.1.0 \
-		ansi-terminal-0.11.3 \
+		ansi-terminal-0.11.4 \
 		ansi-wl-pprint-0.6.9_3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
@@ -57,7 +56,7 @@ USE_CABAL=	HUnit-1.6.2.0 \
 		easy-file-0.2.2 \
 		fast-logger-3.1.1 \
 		file-embed-0.0.15.0 \
-		fsnotify-0.3.0.1_2 \
+		fsnotify-0.4.1.0 \
 		generically-0.1 \
 		hashable-1.4.1.0 \
 		hourglass-0.2.12 \
@@ -75,6 +74,7 @@ USE_CABAL=	HUnit-1.6.2.0 \
 		libyaml-0.1.2_1 \
 		memory-0.18.0 \
 		mime-types-0.1.1.0 \
+		monad-control-1.0.3.1 \
 		mono-traversable-1.0.15.3 \
 		network-3.1.2.7 \
 		network-byte-order-0.1.6_1 \
@@ -110,6 +110,7 @@ USE_CABAL=	HUnit-1.6.2.0 \
 		time-manager-0.0.0_1 \
 		tls-1.6.0 \
 		tls-session-manager-0.0.4 \
+		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.10.1 \
 		unix-compat-0.6_1 \
@@ -136,6 +137,7 @@ USE_CABAL=	HUnit-1.6.2.0 \
 		yaml-0.11.8.0_2 \
 		zlib-0.6.3.0
 
+CABAL_REVISION=		1
 CABAL_EXECUTABLES=	yesod
 
 .include <bsd.port.mk>
