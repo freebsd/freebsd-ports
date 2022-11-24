@@ -41,8 +41,7 @@ CONFIGURE_ARGS=	--with-berkeley-db \
 		--enable-pthread-support \
 		--with-readline="${LOCALBASE}" \
 		--with-hdbdir="/var/${PORTNAME}" \
-		--sysconfdir="${PREFIX}/etc" \
-		CLANG_FORMAT="${LOCALBASE}/bin/clang-format${LLVM_DEFAULT}"
+		--sysconfdir="${PREFIX}/etc"
 # XXX --with-readline picks up libreadline even if found in /usr/lib.
 MAKE_ENV=	INSTALL_CATPAGES=no
 INSTALL_TARGET=	install-strip
