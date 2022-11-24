@@ -67,6 +67,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/jbr/include/jvmticmlr.h
 %%DATADIR%%/jbr/include/linux/jawt_md.h
 %%DATADIR%%/jbr/include/linux/jni_md.h
+%%DATADIR%%/jbr/include/sizecalc.h
 %%DATADIR%%/jbr/legal/java.base/ADDITIONAL_LICENSE_INFO
 %%DATADIR%%/jbr/legal/java.base/ASSEMBLY_EXCEPTION
 %%DATADIR%%/jbr/legal/java.base/LICENSE
@@ -444,7 +445,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-tree-9.2.jar
 %%DATADIR%%/lib/asm-util-9.2.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-RM-222.4345.14
+%%DATADIR%%/lib/build-marker-RM-222.4459.24
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
