@@ -1,4 +1,0 @@
-bin/glbsp
-man/man1/glbsp.1.gz
-%%GUI%%bin/glBSPX
-%%PLUGIN%%lib/libglbsp.a
