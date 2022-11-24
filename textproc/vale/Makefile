@@ -1,5 +1,5 @@
 PORTNAME=	vale
-PORTVERSION=	2.21.0
+PORTVERSION=	2.21.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -23,10 +23,11 @@ GH_TUPLE=	\
 		go-check:check:788fd7840127:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
+		golang:net:4f30a5c0130f:golang_net/vendor/golang.org/x/net \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:97ac67df715c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:a9b59b0215f8:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gookit:color:v1.4.2:gookit_color/vendor/github.com/gookit/color \
 		jdkato:prose:v1.2.1:jdkato_prose/vendor/github.com/jdkato/prose \
 		jdkato:regexp:v0.1.0:jdkato_regexp/vendor/github.com/jdkato/regexp \
