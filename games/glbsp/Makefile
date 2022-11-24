@@ -5,9 +5,9 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	BSP node builder for OpenGL ports of the DOOM game engine
-WWW=		http://glbsp.sourceforge.net/
+WWW=		https://glbsp.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
