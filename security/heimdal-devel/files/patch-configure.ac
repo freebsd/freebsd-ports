@@ -1,15 +1,6 @@
---- configure.ac.orig	2022-11-17 16:55:32.000000000 -0800
-+++ configure.ac	2022-11-24 07:19:25.053801000 -0800
-@@ -19,7 +19,7 @@
- AM_PROG_CC_C_O
- AC_PROG_CPP
- AM_PATH_PYTHON
--AC_CHECK_PROG(CLANG_FORMAT, clang-format, [clang-format], [no])
-+AC_CHECK_PROG(CLANG_FORMAT, clang-format, [clang-format], [])
- test "$CLANG_FORMAT" = no && CLANG_FORMAT=true
- 
- m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
-@@ -177,6 +177,7 @@
+--- configure.ac.orig	2019-06-07 06:21:39 UTC
++++ configure.ac
+@@ -153,6 +153,7 @@ AC_ARG_ENABLE(kx509, 
  if test "$enable_kx509" != no ;then
  	AC_DEFINE([KX509], 1, [Define to enable kx509.])
  fi
