@@ -1,0 +1,6 @@
+libclipboard is a lightweight, cross-platform clipboard library.
+Currently supported actions:
+
+  - Checking clipboard data ownership
+  - Clearing the clipboard
+  - Retrieving and setting text (UTF-8)
