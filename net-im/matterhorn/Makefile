@@ -1,6 +1,5 @@
 PORTNAME=	matterhorn
-PORTVERSION=	50200.16.0
-PORTREVISION=	2
+PORTVERSION=	50200.17.0
 CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,7 +17,7 @@ USE_CABAL=	HTTP-4000.4.1_1 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
 		aeson-2.0.3.0_1 \
-		ansi-terminal-0.11.3 \
+		ansi-terminal-0.11.4 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
@@ -36,7 +35,7 @@ USE_CABAL=	HTTP-4000.4.1_1 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
 		blaze-markup-0.8.2.8_3 \
-		brick-0.68.1 \
+		brick-0.70.1 \
 		brick-skylighting-0.3 \
 		bytestring-builder-0.10.8.2.0 \
 		cabal-doctest-1.0.9_2 \
@@ -73,7 +72,7 @@ USE_CABAL=	HTTP-4000.4.1_1 \
 		indexed-traversable-0.1.2_2 \
 		indexed-traversable-instances-0.1.1.1 \
 		integer-logarithms-1.0.3.1_3 \
-		mattermost-api-50200.12.0 \
+		mattermost-api-50200.13.0 \
 		megaparsec-9.2.2 \
 		memory-0.18.0 \
 		microlens-0.4.12.0 \
