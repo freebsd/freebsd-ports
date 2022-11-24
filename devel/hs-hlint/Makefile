@@ -1,11 +1,10 @@
 PORTNAME=	hlint
-PORTVERSION=	3.4
-PORTREVISION=	2
+PORTVERSION=	3.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Source code suggestions
-WWW=		http://community.haskell.org/~ndm/hlint/
+WWW=		https://github.com/ndmitchell/hlint
 
 LICENSE=	BSD3CLAUSE
 
@@ -15,7 +14,8 @@ USE_CABAL=	OneTuple-0.3.1_3 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
 		aeson-2.1.1.0 \
-		ansi-terminal-0.11.3 \
+		alex-3.2.7.1 \
+		ansi-terminal-0.11.4 \
 		assoc-1.0.2_3 \
 		attoparsec-0.14.4_2 \
 		base-compat-0.12.2 \
@@ -36,13 +36,16 @@ USE_CABAL=	OneTuple-0.3.1_3 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
 		data-fix-0.3.2_3 \
+		deriving-aeson-0.2.8_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		extra-1.7.12 \
 		file-embed-0.0.15.0 \
 		filepattern-0.1.3 \
 		generically-0.1 \
-		ghc-lib-parser-ex-9.2.0.4 \
+		ghc-lib-parser-9.4.3.20221104 \
+		ghc-lib-parser-ex-9.4.0.0 \
+		happy-1.20.0_1 \
 		hashable-1.4.1.0 \
 		hscolour-1.24.4 \
 		indexed-traversable-0.1.2_2 \
