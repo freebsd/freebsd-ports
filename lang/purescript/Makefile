@@ -1,6 +1,5 @@
 PORTNAME=	purescript
-PORTVERSION=	0.15.4
-PORTREVISION=	1
+PORTVERSION=	0.15.6
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,7 +22,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		aeson-better-errors-0.9.1.1_1 \
 		aeson-pretty-0.8.9_2 \
 		alex-3.2.7.1 \
-		ansi-terminal-0.11.3 \
+		ansi-terminal-0.11.4 \
 		ansi-wl-pprint-0.6.9_3 \
 		assoc-1.0.2_3 \
 		async-2.2.4_2 \
