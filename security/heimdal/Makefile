@@ -1,6 +1,6 @@
 PORTNAME=	heimdal
 PORTVERSION=	7.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
@@ -17,10 +17,6 @@ USES=		cpe gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
 		pkgconfig readline makeinfo ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	${GSSAPILIBDIR}
-
-# Needs clang-format which is only provided by the port.
-# Else asm1_fails resulting in a command not found error.
-BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
