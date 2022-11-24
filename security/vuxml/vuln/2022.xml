@@ -1,3 +1,66 @@
+  <vuln vid="84ab03b6-6c20-11ed-b519-080027f5fec9">
+    <topic>rubygem-cgi -- HTTP response splitting vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-cgi</name>
+	<range><lt>0.3.4</lt></range>
+      </package>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.7,1</lt></range>
+	<range><ge>3.0.0,1</ge><lt>3.0.5,1</lt></range>
+	<range><ge>3.1.0,1</ge><lt>3.1.3,1</lt></range>
+	<range><ge>3.2.0.p1,1</ge></range>
+      </package>
+      <package>
+	<name>ruby27</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.7,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.5,1</lt></range>
+      </package>
+      <package>
+	<name>ruby31</name>
+	<range><ge>3.1.0,1</ge><lt>3.1.3,1</lt></range>
+      </package>
+      <package>
+	<name>ruby32</name>
+	<range><ge>3.2.0.p1,1</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hiroshi Tokumaru reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2022/11/22/http-response-splitting-in-cgi-cve-2021-33621/">
+	  <p>
+	    If an application that generates HTTP responses using the
+	    cgi gem with untrusted user input, an attacker can exploit
+	    it to inject a malicious HTTP response header and/or body.
+	    </p>
+	  <p>
+	    Also, the contents for a <code>CGI::Cookie</code> object
+	    were not checked properly. If an application creates a
+	    <code>CGI::Cookie</code> object based on user input, an
+	    attacker may exploit it to inject invalid attributes in
+	    <code>Set-Cookie</code> header. We think such applications
+	    are unlikely, but we have included a change to check
+	    arguments for <code>CGI::Cookie#initialize</code>
+	    preventatively.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33621</cvename>
+      <url>https://www.ruby-lang.org/en/news/2022/11/22/http-response-splitting-in-cgi-cve-2021-33621/</url>
+    </references>
+    <dates>
+      <discovery>2022-11-22</discovery>
+      <entry>2022-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="658b9198-8106-4c3d-a2aa-dc4a0a7cc3b6">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
