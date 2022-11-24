@@ -1,3 +1,34 @@
+  <vuln vid="658b9198-8106-4c3d-a2aa-dc4a0a7cc3b6">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.4">
+	  <p> A specially-crafted series of HTTP 0.9 packets can
+	  cause Zeek to spend large amounts of time processing the
+	  packets. </p>
+	  <p> A specially-crafted FTP packet can cause Zeek to spend
+	  large amounts of time processing the command. </p>
+	  <p> A specially-crafted IPv6 packet can cause Zeek to
+	  overflow memory and potentially crash. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.4</url>
+    </references>
+    <dates>
+      <discovery>2022-11-24</discovery>
+      <entry>2022-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6a84729-6bd0-11ed-8d9a-b42e991fc52e">
     <topic>advancecomp -- Multiple vulnerabilities</topic>
     <affects>
