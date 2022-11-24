@@ -5709,14 +5709,17 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Binding/receiver-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Binding/source_location-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/cdesc-Cookie.ri
+%%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/domain%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/domain-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/expires-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/httponly%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/httponly-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/inspect-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/name%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/parse-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/path%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/secure%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Cookie/secure-i.ri
@@ -5816,6 +5819,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Util/unescapeHTML-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Util/unescape_element-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/Util/unescape_html-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/CGI/_no_crlf_check-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/accept_charset%3d-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/accept_charset-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/CGI/accept_charset-i.ri
