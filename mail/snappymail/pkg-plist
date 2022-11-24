@@ -664,6 +664,10 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/et-EE/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/et-EE/static.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/et-EE/user.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/eu/admin.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/eu/relativetimeformat.js
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/eu/static.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/eu/user.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/fa-IR/admin.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/fa-IR/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/fa-IR/static.json
@@ -831,6 +835,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SettingsSecurity.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SettingsThemes.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SystemDropDown.html
+%%WWWDIR%%/snappymail/v/%%VER%%/cpanel.php
 %%WWWDIR%%/snappymail/v/%%VER%%/include.php
 %%WWWDIR%%/snappymail/v/%%VER%%/index.php
 %%WWWDIR%%/snappymail/v/%%VER%%/setup.php
