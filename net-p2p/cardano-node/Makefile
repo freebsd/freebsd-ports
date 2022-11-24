@@ -1,5 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	1.35.4
+PORTREVISION=	1
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 CATEGORIES=	net-p2p
 
@@ -24,7 +25,7 @@ GH_TUPLE=	denisshevchenko:threepenny-gui:4ec92ded05ccf59ba4a874be4b404ac1b6d666b
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium \
 		bitcoin-core:secp256k1:${SECP256K1_HASH}:secp
 
-CARDANO_NODE_HASH=	950c4e222086fed5ca53564e642434ce9307b0b9
+CARDANO_NODE_HASH=	ebc7be471b30e5931b35f9bbc236d21c375b91bb
 LIBSODIUM_HASH=		66f017f16633f2060db25e17c170c2afa0f2a8a1
 # Obtained from https://github.com/input-output-hk/cardano-node/blob/master/.github/workflows/github-page.yml#L21
 SECP256K1_HASH=		ac83be33d0956faf6b7f61a60ab524ef7d6a473a
