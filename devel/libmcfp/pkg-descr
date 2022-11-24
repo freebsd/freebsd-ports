@@ -1,0 +1,2 @@
+libmcfp is a library for parsing command line arguments and configuration files
+and making them available throughout a program.

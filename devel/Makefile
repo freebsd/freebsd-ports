@@ -1258,6 +1258,7 @@
     SUBDIR += libmatheval
     SUBDIR += libmatthew
     SUBDIR += libmba
+    SUBDIR += libmcfp
     SUBDIR += libmill
     SUBDIR += libmimedir
     SUBDIR += libmodi
