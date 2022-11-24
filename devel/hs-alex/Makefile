@@ -1,6 +1,5 @@
 PORTNAME=	alex
-PORTVERSION=	3.2.6
-PORTREVISION=	2
+PORTVERSION=	3.2.7.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +14,12 @@ CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
 OPTIONS_DEFINE=	EXAMPLES
 
-PORTEXAMPLES=	Makefile *.x *.y
+PORTEXAMPLES=	examples/*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ALEX=../dist/build/alex/alex|ALEX=${PREFIX}/bin/alex|' \
+		-e 's|--template=..||g' \
+		${WRKSRC}/examples/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

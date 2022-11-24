@@ -1,3 +1,3 @@
-TIMESTAMP = 1668452149
-SHA256 (cabal/alex-3.2.6/alex-3.2.6.tar.gz) = 91aa08c1d3312125fbf4284815189299bbb0be34421ab963b1f2ae06eccc5410
-SIZE (cabal/alex-3.2.6/alex-3.2.6.tar.gz) = 108832
+TIMESTAMP = 1669303496
+SHA256 (cabal/alex-3.2.7.1/alex-3.2.7.1.tar.gz) = 9bd2f1a27e8f1b2ffdb5b2fbd3ed82b6f0e85191459a1b24ffcbef4e68a81bec
+SIZE (cabal/alex-3.2.7.1/alex-3.2.7.1.tar.gz) = 108229
