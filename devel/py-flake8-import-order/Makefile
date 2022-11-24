@@ -1,13 +1,14 @@
 PORTNAME=	flake8-import-order
 PORTVERSION=	0.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flake8 and pylama plugin that checks the ordering of import statements
-WWW=		https://pypi.org/project/flake8-import-order/
+WWW=		https://pypi.org/project/flake8-import-order/ \
+		https://github.com/PyCQA/flake8-import-order
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
