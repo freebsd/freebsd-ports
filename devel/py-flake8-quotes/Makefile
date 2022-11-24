@@ -6,10 +6,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flake8 lint for quotes
-WWW=		https://pypi.org/project/flake8-quotes/
+WWW=		https://pypi.org/project/flake8-quotes/ \
+		https://github.com/zheller/flake8-quotes/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		does not work with flake8 6.x  # https://github.com/zheller/flake8-quotes/issues/110
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR}
 
