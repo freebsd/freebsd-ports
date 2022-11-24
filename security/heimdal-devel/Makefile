@@ -23,7 +23,10 @@ USES=		autoreconf:build cpe gettext-runtime gssapi:bootstrap,heimdal \
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	${GSSAPILIBDIR}
 
-BUILD_DEPENDS=	p5-JSON>0:converters/p5-JSON
+# Needs clang-format which is only provided by the port.
+# Else asm1_fails resulting in a command not found error.
+BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+		p5-JSON>0:converters/p5-JSON
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
