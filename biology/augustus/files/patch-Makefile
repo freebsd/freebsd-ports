@@ -1,0 +1,30 @@
+- workaround for The 'install' target doesn't work when stage directory is necessary, see https://github.com/Gaius-Augustus/Augustus/issues/366
+
+--- Makefile.orig	2022-09-23 17:06:14 UTC
++++ Makefile
+@@ -30,16 +30,16 @@ PREFIX = /usr/local
+ INSTALLDIR = /opt/augustus-$(AUGVERSION)
+ 
+ install:
+-	if [ ! $(PWD) -ef $(INSTALLDIR) ] ; then \
+-		install -d $(INSTALLDIR) && \
+-		cp -a config bin scripts $(INSTALLDIR) ; \
++	if [ ! $(PWD) -ef $(DESTDIR)$(INSTALLDIR) ] ; then \
++		install -d $(DESTDIR)$(INSTALLDIR) && \
++		cp -a config bin scripts $(DESTDIR)$(INSTALLDIR) ; \
+ 	fi
+-	ln -sf $(INSTALLDIR)/bin/augustus $(PREFIX)/bin/augustus
+-	ln -sf $(INSTALLDIR)/bin/etraining $(PREFIX)/bin/etraining
+-	ln -sf $(INSTALLDIR)/bin/prepareAlign $(PREFIX)/bin/prepareAlign
+-	ln -sf $(INSTALLDIR)/bin/fastBlockSearch $(PREFIX)/bin/fastBlockSearch
+-	if [ -f $(INSTALLDIR)/bin/load2db ] ; then ln -sf $(INSTALLDIR)/bin/load2db $(PREFIX)/bin/load2db ; fi
+-	if [ -f $(INSTALLDIR)/bin/getSeq ] ; then ln -sf $(INSTALLDIR)/bin/getSeq $(PREFIX)/bin/getSeq ; fi
++	$(RLN) $(DESTDIR)$(INSTALLDIR)/bin/augustus $(DESTDIR)$(PREFIX)/bin/augustus
++	$(RLN) $(DESTDIR)$(INSTALLDIR)/bin/etraining $(DESTDIR)$(PREFIX)/bin/etraining
++	$(RLN) $(DESTDIR)$(INSTALLDIR)/bin/prepareAlign $(DESTDIR)$(PREFIX)/bin/prepareAlign
++	$(RLN) $(DESTDIR)$(INSTALLDIR)/bin/fastBlockSearch $(DESTDIR)$(PREFIX)/bin/fastBlockSearch
++	if [ -f $(DESTDIR)$(INSTALLDIR)/bin/load2db ] ; then $(RLN) $(DESTDIR)$(INSTALLDIR)/bin/load2db $(DESTDIR)$(PREFIX)/bin/load2db ; fi
++	if [ -f $(DESTDIR)$(INSTALLDIR)/bin/getSeq ] ; then $(RLN) $(DESTDIR)$(INSTALLDIR)/bin/getSeq $(DESTDIR)$(PREFIX)/bin/getSeq ; fi
+ 
+ # for internal purposes:
+ release:

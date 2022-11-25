@@ -3,6 +3,7 @@
     SUBDIR += abyss
     SUBDIR += ad2vcf
     SUBDIR += artemis
+    SUBDIR += augustus
     SUBDIR += avida
     SUBDIR += babel
     SUBDIR += bamtools
