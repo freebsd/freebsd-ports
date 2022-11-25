@@ -1,5 +1,6 @@
 PORTNAME=	unison
 PORTVERSION=	2.53.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -22,7 +23,6 @@ x11_BUILD_DEPENDS=	ocaml-lablgtk3>0:x11-toolkits/ocaml-lablgtk3 \
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
-x11_RUN_DEPENDS=	ocaml-lablgtk3>0:x11-toolkits/ocaml-lablgtk3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake localbase
