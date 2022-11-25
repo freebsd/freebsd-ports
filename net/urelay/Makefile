@@ -11,4 +11,6 @@ USES=		uidfix
 PLIST_FILES=	bin/urelay \
 		man/man1/urelay.1.gz
 
+MAKE_ENV+=      NO_WDATE_TIME=yes
+
 .include <bsd.port.mk>
