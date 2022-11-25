@@ -1,6 +1,6 @@
 PORTNAME=	msktutil
-PORTVERSION=	1.2
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.2.1
+#DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -35,7 +35,6 @@ CONFIGURE_ARGS+=		--with-krb5-config=${KRB5CONFIG}
 PLIST_FILES=	man/man1/msktutil.1.gz sbin/msktutil
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/msktutil ${STAGEDIR}${PREFIX}/sbin/msktutil
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/msktutil
 
 .include <bsd.port.mk>
