@@ -1,6 +1,6 @@
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.26.0
+DISTVERSION=	2.27.1
 CATEGORIES=	sysutils
 EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
@@ -32,7 +32,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		aws:smithy-go:v1.13.4:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		aymanbagabas:go-osc52:v1.2.1:aymanbagabas_go_osc52/vendor/github.com/aymanbagabas/go-osc52 \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
-		bmatcuk:doublestar:v4.2.0:bmatcuk_doublestar_v4/vendor/github.com/bmatcuk/doublestar/v4 \
+		bmatcuk:doublestar:v4.3.1:bmatcuk_doublestar_v4/vendor/github.com/bmatcuk/doublestar/v4 \
 		bradenhilton:cityhash:v1.0.0:bradenhilton_cityhash/vendor/github.com/bradenhilton/cityhash \
 		bradenhilton:mozillainstallhash:v1.0.0:bradenhilton_mozillainstallhash/vendor/github.com/bradenhilton/mozillainstallhash \
 		charmbracelet:bubbles:v0.14.0:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
@@ -58,7 +58,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:v0.1.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:83b7d23a625f:golang_exp/vendor/golang.org/x/exp \
+		golang:exp:f9659909a136:golang_exp/vendor/golang.org/x/exp \
 		golang:mod:v0.6.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:v0.1.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.1.0:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -90,7 +90,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mitchellh:reflectwalk:v1.0.2:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
-		muesli:ansi:c9f0611b6c70:muesli_ansi/vendor/github.com/muesli/ansi \
+		muesli:ansi:61f0cd9a192a:muesli_ansi/vendor/github.com/muesli/ansi \
 		muesli:cancelreader:v0.2.2:muesli_cancelreader/vendor/github.com/muesli/cancelreader \
 		muesli:combinator:v0.3.0:muesli_combinator/vendor/github.com/muesli/combinator \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
