@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2022-11-25 21:14:38 UTC
++++ Makefile.in
+@@ -313,7 +313,8 @@ COND_USE_SOTWOSYMLINKS_1___mysqlpp___so_symlinks_unins
+ 
+ ### Targets: ###
+ 
+-all: $(DLLPREFIX)mysqlpp$(__mysqlpp___targetsuf3) $(LIBPREFIX)mysqlpp_ssqls2parse$(LIBEXT) ssqlsxlat$(EXEEXT) test_array_index$(EXEEXT) test_cpool$(EXEEXT) test_datetime$(EXEEXT) test_inttypes$(EXEEXT) test_insertpolicy$(EXEEXT) test_manip$(EXEEXT) test_null_comparison$(EXEEXT) test_query_copy$(EXEEXT) test_qssqls$(EXEEXT) test_qstream$(EXEEXT) test_sqlstream$(EXEEXT) test_ssqls2$(EXEEXT) test_string$(EXEEXT) test_tcp$(EXEEXT) test_uds$(EXEEXT) test_wnp$(EXEEXT) $(LIBPREFIX)mysqlpp_excommon$(LIBEXT) cgi_jpeg$(EXEEXT) cpool$(EXEEXT) dbinfo$(EXEEXT) deadlock$(EXEEXT) fieldinf$(EXEEXT) for_each$(EXEEXT) load_jpeg$(EXEEXT) multiquery$(EXEEXT) resetdb$(EXEEXT) simple1$(EXEEXT) simple2$(EXEEXT) simple3$(EXEEXT) ssqls1$(EXEEXT) ssqls2$(EXEEXT) ssqls3$(EXEEXT) ssqls4$(EXEEXT) ssqls5$(EXEEXT) ssqls6$(EXEEXT) store_if$(EXEEXT) tquery1$(EXEEXT) tquery2$(EXEEXT) tquery3$(EXEEXT) tquery4$(EXEEXT) transaction$(EXEEXT)
++all: $(DLLPREFIX)mysqlpp$(__mysqlpp___targetsuf3) $(LIBPREFIX)mysqlpp_ssqls2parse$(LIBEXT) ssqlsxlat$(EXEEXT) $(LIBPREFIX)mysqlpp_excommon$(LIBEXT) cgi_jpeg$(EXEEXT) cpool$(EXEEXT) dbinfo$(EXEEXT) deadlock$(EXEEXT) fieldinf$(EXEEXT) for_each$(EXEEXT) load_jpeg$(EXEEXT) multiquery$(EXEEXT) resetdb$(EXEEXT) simple1$(EXEEXT) simple2$(EXEEXT) simple3$(EXEEXT) ssqls1$(EXEEXT) ssqls2$(EXEEXT) ssqls3$(EXEEXT) ssqls4$(EXEEXT) ssqls5$(EXEEXT) ssqls6$(EXEEXT) store_if$(EXEEXT) tquery1$(EXEEXT) tquery2$(EXEEXT) tquery3$(EXEEXT) tquery4$(EXEEXT) transaction$(EXEEXT)
++tests: test_array_index$(EXEEXT) test_cpool$(EXEEXT) test_datetime$(EXEEXT) test_inttypes$(EXEEXT) test_insertpolicy$(EXEEXT) test_manip$(EXEEXT) test_null_comparison$(EXEEXT) test_query_copy$(EXEEXT) test_qssqls$(EXEEXT) test_qstream$(EXEEXT) test_sqlstream$(EXEEXT) test_ssqls2$(EXEEXT) test_string$(EXEEXT) test_tcp$(EXEEXT) test_uds$(EXEEXT) test_wnp$(EXEEXT)
+ 
+ install: install_mysqlpp
+ 	$(INSTALL_DIR) $(DESTDIR)$(prefix)/include/mysql++
