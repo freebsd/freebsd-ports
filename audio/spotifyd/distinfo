@@ -1,4 +1,4 @@
-TIMESTAMP = 1639912890
+TIMESTAMP = 1664577482
 SHA256 (rust/crates/addr2line-0.14.1.crate) = a55f82cfe485775d02112886f4169bde0c5894d75e79ead7eafe7e40a25e45f7
 SIZE (rust/crates/addr2line-0.14.1.crate) = 31201
 SHA256 (rust/crates/adler-0.2.3.crate) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
@@ -143,6 +143,8 @@ SHA256 (rust/crates/derive_builder_core-0.5.0.crate) = 0288a23da9333c246bb18c143
 SIZE (rust/crates/derive_builder_core-0.5.0.crate) = 18313
 SHA256 (rust/crates/digest-0.9.0.crate) = d3dd60d1080a57a05ab032377049e0591415d2b31afd7028356dbf3cc6dcb066
 SIZE (rust/crates/digest-0.9.0.crate) = 13247
+SHA256 (rust/crates/dns-sd-0.1.3.crate) = d748509dea20228f63ba519bf142ce2593396386125b01f5b0d6412dab972087
+SIZE (rust/crates/dns-sd-0.1.3.crate) = 6201
 SHA256 (rust/crates/dotenv-0.13.0.crate) = c0d0a1279c96732bc6800ce6337b6a614697b0e74ae058dc03c62ebeb78b4d86
 SIZE (rust/crates/dotenv-0.13.0.crate) = 8807
 SHA256 (rust/crates/dtoa-0.4.4.crate) = ea57b42383d091c85abcc2706240b94ab2a8fa1fc81c10ff23c4de06e2a90b5e

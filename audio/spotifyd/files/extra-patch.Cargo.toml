@@ -8,4 +8,4 @@
 +librespot-connect = { version = "0.2.0", features = ["with-dns-sd"]}
  toml = "0.5.8"
  color-eyre = "0.5"
-
+ 
