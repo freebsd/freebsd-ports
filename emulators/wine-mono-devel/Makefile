@@ -14,6 +14,8 @@ WWW=		https://wiki.winehq.org/Mono
 LICENSE=	MIT GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 CONFLICTS_INSTALL=	wine-mono
 
 NO_BUILD=	yes
