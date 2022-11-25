@@ -207,7 +207,7 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \
 		${STAGEDIR}${RUBY_DOCDIR}/${FILE:C|^([^/]+)/.*|\1|}/
 .endfor
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_DOCDIR}/)
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_DOCDIR}/ "! -name .timestamp")
 	${INSTALL_DATA} ${WRKSRC}/COPYING*	\
 			${WRKSRC}/ChangeLog	\
 			${WRKSRC}/LEGAL		\
