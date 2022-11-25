@@ -1,5 +1,6 @@
 PORTNAME=	unison
 PORTVERSION=	2.51.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -25,7 +26,6 @@ x11_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2 \
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
-x11_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSIONSUFFIX=${VERSIONSUFFIX}
 USES=		gmake localbase
