@@ -17567,7 +17567,6 @@ net/libmms||2022-09-30|Has expired: Obsolete, Microsoft deprecated MMS protocol 
 audio/mctoolame-decoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
 audio/mctoolame-encoder||2022-09-30|Has expired: Legacy and obscure audio format that never gained any traction
 www/py-ws4py||2022-09-30|Has expired: Upstream abandoned
-ftp/axel||2022-09-30|Has expired: Last release in 2009 and dead upstream, please consider using www/aria2
 databases/py-bsddb3|databases/py-berkeleydb|2022-09-30|Has expired: Requires upstream EOLd db5. Use py-berkeleydb
 graphics/megapov|graphics/povray37|2022-10-01|Has expired: Abandoned upstream. graphics/povray37 is the recommended replacement
 x11-toolkits/gstreamer1-plugins-gtk4||2022-10-01|No consumers left and deprecated in favor gtk4 plugin from multimedia/gstreamer1-plugins-rust >= 0.8.0
@@ -17615,4 +17614,4 @@ net/rabbitmq-c-devel|net/rabbitmq-c|2022-11-16|Remove obsolete devel port, use n
 databases/foundationdb-devel|databases/foundationdb|2022-11-16|Remove obsolete devel port, use databases/foundationdb instead
 devel/py-pytest4-asyncio||2022-11-19|Has expired: legacy version for pytest4 no longer used by any port
 devel/tokamak||2022-11-20|Has expired: Last release in 2008, abandoned upstream, not used, website disappeared
-net/libutp|net-p2p/libutp|2022-11-19|Moved to a more adequated category
+net/libutp|net-p2p/libutp|2022-11-20|Moved to a more adequated category
