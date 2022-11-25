@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2022-03-02 17:46:29 UTC
+--- CMakeLists.txt.orig	2022-10-04 16:52:36 UTC
 +++ CMakeLists.txt
-@@ -98,7 +98,7 @@ install(FILES
+@@ -122,7 +122,7 @@ endif ()
  # Install documentation
  install(FILES
    README.md
--  DESTINATION ${CMAKE_INSTALL_DOCDIR}/verdict/${verdict_VERSION}/ COMPONENT VerdictDevelopment)
-+  DESTINATION ${CMAKE_INSTALL_DOCDIR}/ COMPONENT VerdictDevelopment)
+-  DESTINATION ${verdict_INSTALL_DOC_DIR}/verdict/${verdict_VERSION}/ COMPONENT VerdictDevelopment)
++  DESTINATION ${verdict_INSTALL_DOC_DIR}/ COMPONENT VerdictDevelopment)
  
  # Install required header files
  install(FILES
