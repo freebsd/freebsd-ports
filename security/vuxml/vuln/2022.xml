@@ -1,3 +1,37 @@
+  <vuln vid="8d3838b0-6ca8-11ed-92ce-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>107.0.5304.121</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>107.0.5304.121</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/11/stable-channel-update-for-desktop_24.html">
+	  <p>This release contains 1 security fix:</p>
+	  <ul>
+	    <li>[1392715] High CVE-2022-4135: Heap buffer overflow in GPU. Reported by Clement Lecigne of Google's Threat Analysis Group on 2022-11-22</li>
+	  </ul>
+	  <p>Google is aware that an exploit for CVE-2022-4135 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4135</cvename>
+      <url>https://chromereleases.googleblog.com/2022/11/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2022-11-24</discovery>
+      <entry>2022-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84ab03b6-6c20-11ed-b519-080027f5fec9">
     <topic>rubygem-cgi -- HTTP response splitting vulnerability</topic>
     <affects>
