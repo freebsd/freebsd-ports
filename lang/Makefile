@@ -32,6 +32,7 @@
     SUBDIR += clover
     SUBDIR += cocor
     SUBDIR += coffeescript
+    SUBDIR += colm
     SUBDIR += cparser
     SUBDIR += crystal
     SUBDIR += csharp-mode.el
