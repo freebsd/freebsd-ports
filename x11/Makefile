@@ -317,6 +317,7 @@
     SUBDIR += rgb
     SUBDIR += rofi
     SUBDIR += rofi-calc
+    SUBDIR += rofi-emoji
     SUBDIR += rofi-pass
     SUBDIR += rofi-wayland
     SUBDIR += roxterm

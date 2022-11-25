@@ -1,0 +1,3 @@
+lib/rofi/emoji.so
+%%DATADIR%%/all_emojis.txt
+%%DATADIR%%/clipboard-adapter.sh

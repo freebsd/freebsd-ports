@@ -1,0 +1,12 @@
+An emoji selector plugin for Rofi that copies the selected emoji to the
+clipboard, among other things.
+
+The plugin adds a Rofi mode that displays a menu of emojis and allows
+searching by emoji names and their tags. The selected emoji can be
+copied or inserted. See the project web site or the optional port
+documentation for more features and configuration options.
+
+The plugin can be used, for example, by running Rofi with the following
+flags:
+
+  rofi -modi emoji -show emoji

@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+For copy and insert support on Wayland, install the following ports:
+  * x11/wl-clipboard
+  * x11/wtype
+EOM
+}
+]
