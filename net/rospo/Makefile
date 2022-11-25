@@ -1,7 +1,6 @@
 PORTNAME=	rospo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	2
+DISTVERSION=	0.10.1
 CATEGORIES=	net net-vpn sysutils
 MASTER_SITES=	https://github.com/ferama/rospo/releases/download/v${DISTVERSION}/ui-artifacts.tar.gz?dummy=/:artifacts
 DISTFILES=	${PORTNAME}-ui-artifacts-${DISTVERSION}.tar.gz:artifacts
@@ -14,45 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	ferama
-GH_TUPLE=	VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		cheggaaa:pb:v3.1.0:cheggaaa_pb_v3/vendor/github.com/cheggaaa/pb \
-		creack:pty:v1.1.18:creack_pty/vendor/github.com/creack/pty \
-		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
-		gin-contrib:cors:v1.4.0:gin_contrib_cors/vendor/github.com/gin-contrib/cors \
-		gin-contrib:sse:v0.1.0:gin_contrib_sse/vendor/github.com/gin-contrib/sse \
-		gin-gonic:gin:v1.8.1:gin_gonic_gin/vendor/github.com/gin-gonic/gin \
-		go-playground:locales:v0.14.0:go_playground_locales/vendor/github.com/go-playground/locales \
-		go-playground:universal-translator:v0.18.0:go_playground_universal_translator/vendor/github.com/go-playground/universal-translator \
-		go-playground:validator:v10.11.0:go_playground_validator_v10/vendor/github.com/go-playground/validator/v10 \
-		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
-		goccy:go-json:v0.9.10:goccy_go_json/vendor/github.com/goccy/go-json \
-		golang:crypto:630584e8d5aa:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:41545e8bf201:golang_net/vendor/golang.org/x/net \
-		golang:sys:8e32c043e418:golang_sys/vendor/golang.org/x/sys \
-		golang:term:a9ba230a4035:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
-		judwhite:go-svc:v1.2.1:judwhite_go_svc/vendor/github.com/judwhite/go-svc \
-		kr:fs:v0.1.0:kr_fs/vendor/github.com/kr/fs \
-		leodido:go-urn:v1.2.1:leodido_go_urn/vendor/github.com/leodido/go-urn \
-		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
-		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
-		pelletier:go-toml:v2.0.2:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
-		pkg:sftp:v1.13.5:pkg_sftp/vendor/github.com/pkg/sftp \
-		protocolbuffers:protobuf-go:v1.28.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		rivo:uniseg:v0.3.1:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		spf13:cobra:v1.5.0:spf13_cobra/vendor/github.com/spf13/cobra \
-		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		ugorji:go:v1.2.7:ugorji_go_codec/vendor/github.com/ugorji/go
-
-GO_BUILDFLAGS=	-ldflags="-X github.com/ferama/rospo/cmd.Version=${DISTVERSION}"
+GO_MODULE=	github.com/ferama/rospo
+GO_BUILDFLAGS=	-ldflags="-X github.com/ferama/rospo/cmd.Version=${DISTVERSION} ${STRIP}"
 
 PLIST_FILES=	bin/rospo \
 		etc/bash_completion.d/rospo \
