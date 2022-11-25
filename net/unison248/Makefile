@@ -1,6 +1,6 @@
 PORTNAME=	unison
 PORTVERSION=	2.48.15
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	v4
 CATEGORIES=	net
@@ -26,7 +26,6 @@ x11_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2 \
 			icotool:graphics/icoutils
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
-x11_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSIONSUFFIX=${VERSIONSUFFIX}
 USES=		gmake localbase
