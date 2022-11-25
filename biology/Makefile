@@ -7,6 +7,7 @@
     SUBDIR += babel
     SUBDIR += bamtools
     SUBDIR += bamutil
+    SUBDIR += barrnap
     SUBDIR += bbmap
     SUBDIR += bcftools
     SUBDIR += bedtools
