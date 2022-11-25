@@ -1,5 +1,6 @@
 PORTNAME=	sox
 DISTVERSION=	14.4.2.20210509
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://dev.gentoo.org/~fordfrog/distfiles/
 DISTNAME=	sox-code-42b3557e13e0fe01a83465b672d89faddbe65f49
@@ -95,5 +96,13 @@ OPUS_CONFIGURE_WITH=	opus
 OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 
 INSTALL_TARGET=		install-strip
+
+post-patch:
+	# rename sox's custom EX/EE macros so they don't get overridden by
+	# the default ones
+	${REINPLACE_CMD} \
+		-e 's/EX$$/soxEX/' \
+		-e 's/EE$$/soxEE/' \
+		${WRKSRC}/*.[0-9]
 
 .include <bsd.port.mk>

@@ -1,0 +1,26 @@
+--- sox.1.orig	2021-05-09 20:19:07 UTC
++++ sox.1
+@@ -3531,8 +3531,7 @@ The average of the absolute value of each sample in th
+ T}
+ Mean amplitude	\(S1/\s-2n\s+2\^\(*S\^\fIx\s-2\dk\u\s0\fR	T{
+ The average of each sample in the audio.  If this figure is non-zero, then it indicates the
+-presence of a D.C. offset (which could be removed using the
+-.B dcshift
++presence of a D.C. offset (which could be removed using the \fBdcshift\fR
+ effect).
+ T}
+ RMS amplitude	\(sr(\(S1/\s-2n\s+2\^\(*S\^\fIx\s-2\dk\u\s0\fR\(S2)	T{
+@@ -3545,11 +3544,9 @@ Mean delta	\(S1/\s-2n\-1\s+2\^\(*S\^\^\(br\^\fIx\s-2\d
+ RMS delta	\(sr(\(S1/\s-2n\-1\s+2\^\(*S\^(\fIx\s-2\dk\u\s0\fR\^\-\^\fIx\s-2\dk\-1\u\s0\fR)\(S2)
+ Rough frequency	\ 	In Hz.
+ Volume Adjustment	\ 	T{
+-The parameter to the
+-.B vol
++The parameter to the \fBvol\fR
+ effect which would make the audio as loud as possible without clipping.
+-Note: See the discussion on
+-.B Clipping
++Note: See the discussion on \fBClipping\fR
+ above for reasons why it is rarely a good idea actually to do this.
+ T}
+ .TE
