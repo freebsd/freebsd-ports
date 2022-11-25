@@ -34,6 +34,7 @@ NO_WRKSUBDIR=	yes
 MAKE_ARGS+=	-D$o
 .	endif
 .endfor
+MAKE_ARGS+=	NO_WDATE_TIME=yes
 
 post-patch:
 	@${REINPLACE_CMD} -E 's/char[[:blank:]]+c;/int c;/' ${WRKSRC}/milter.c
