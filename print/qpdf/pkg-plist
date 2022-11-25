@@ -71,7 +71,7 @@ include/qpdf/qpdfjob-c.h
 include/qpdf/qpdflogger-c.h
 lib/libqpdf.so
 lib/libqpdf.so.29
-lib/libqpdf.so.29.1.1
+lib/libqpdf.so.29.2.0
 lib/cmake/qpdf/libqpdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qpdf/libqpdfTargets.cmake
 lib/cmake/qpdf/qpdfConfig.cmake
