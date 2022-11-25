@@ -42,6 +42,7 @@ MAKE_ENV+=	LDADD="-lrt"
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300134
 MAKE_ARGS+=	NO_WERROR=yes
 .endif
+MAKE_ARGS+=	NO_WDATE_TIME=yes
 
 .if ${ARCH} == amd64
 PLIST_FILES+=	usr/lib/libusb.so.3 \
