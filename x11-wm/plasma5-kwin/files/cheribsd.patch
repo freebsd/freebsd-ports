@@ -232,3 +232,402 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
          const bool trusted = !localSha.isEmpty() && fullPathSha == localSha;
  
          if (!trusted) {
+--- cmake/modules/FindLibseat.cmake.orig	2022-11-22 01:59:37.302917000 +0000
++++ cmake/modules/FindLibseat.cmake	2022-11-22 01:53:11.475968000 +0000
+@@ -0,0 +1,37 @@
++#.rst:
++# FindLibseat
++# -------
++#
++# Try to find libseat on a Unix system.
++#
++# This will define the following variables:
++#
++# ``Libseat_FOUND``
++#     True if (the requested version of) libseat is available
++# ``Libseat_VERSION``
++#     The version of libseat
++
++#=============================================================================
++# SPDX-FileCopyrightText: 2016 Martin Gräßlin <mgraesslin@kde.org>
++# SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
++# SPDX-FileCopyrightText: 2022 Jessica Clarke <jrtc27@jrtc27.com>
++#
++# SPDX-License-Identifier: BSD-3-Clause
++#=============================================================================
++
++find_package(PkgConfig)
++pkg_check_modules(PKG_libseat QUIET libseat)
++
++set(Libseat_VERSION ${PKG_libseat_VERSION})
++
++find_library(Libseat_LIBRARY NAMES seat HINTS ${PKG_Libseat_LIBRARY_DIRS})
++
++find_package_handle_standard_args(Libseat
++    FOUND_VAR Libseat_FOUND
++    REQUIRED_VARS Libseat_LIBRARY
++    VERSION_VAR Libseat_VERSION
++)
++
++mark_as_advanced(
++    Libseat_VERSION
++)
+--- CMakeLists.txt.orig	2022-07-11 11:52:25.000000000 +0100
++++ CMakeLists.txt	2022-11-22 04:07:08.361789000 +0000
+@@ -222,6 +222,11 @@
+     PURPOSE "Required for input handling on Wayland."
+ )
+ 
++find_package(Libseat)
++set_package_properties(Libseat PROPERTIES
++    TYPE OPTIONAL
++)
++
+ if (KWIN_BUILD_DRM_BACKEND OR HAVE_WAYLAND_EGL)
+     find_package(Libdrm 2.4.62)
+     set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
+--- src/config-kwin.h.cmake.orig	2022-11-22 01:57:35.534476000 +0000
++++ src/config-kwin.h.cmake	2022-11-22 01:58:03.029351000 +0000
+@@ -46,3 +46,5 @@
+ #cmakedefine PipeWire_FOUND 1
+ 
+ #cmakedefine HAVE_XWAYLAND_LISTENFD
++
++#cmakedefine Libseat_FOUND 1
+--- src/CMakeLists.txt.orig	2022-11-22 01:36:09.794868000 +0000
++++ src/CMakeLists.txt	2022-11-22 01:58:20.269641000 +0000
+@@ -258,6 +258,11 @@
+     target_link_libraries(kwin Qt::GuiPrivate)
+ endif()
+ 
++if (Libseat_FOUND)
++    target_sources(kwin PRIVATE session_libseat.cpp)
++    target_link_libraries(kwin ${Libseat_LIBRARY})
++endif()
++
+ qt5_generate_dbus_interface(virtualkeyboard_dbus.h org.kde.kwin.VirtualKeyboard.xml OPTIONS -A)
+ qt5_generate_dbus_interface(tabletmodemanager.h org.kde.KWin.TabletModeManager.xml OPTIONS -A)
+ 
+--- src/session_libseat.cpp.orig	2022-11-22 04:53:36.562516000 +0000
++++ src/session_libseat.cpp	2022-11-22 05:01:42.498993000 +0000
+@@ -0,0 +1,216 @@
++/*
++    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
++    SPDX-FileCopyrightText: 2022 Jessica Clarke <jrtc27@jrtc27.com>
++
++    SPDX-License-Identifier: GPL-2.0-or-later
++*/
++
++#include "session_libseat.h"
++#include "main.h"
++#include "utils/common.h"
++#include "wayland_server.h"
++
++#include <KWaylandServer/display.h>
++
++#include <fcntl.h>
++#include <string.h>
++#include <sys/stat.h>
++#include <unistd.h>
++
++#include <libseat.h>
++
++#include <wayland-server-core.h>
++
++namespace KWin
++{
++
++class LibseatSessionPrivate {
++public:
++    static void handleEnableSeat(struct libseat *seat, void *data)
++    {
++        LibseatSession *session = (LibseatSession *)data;
++        Q_EMIT session->handleEnableSeat();
++        Q_UNUSED(seat);
++    }
++
++    static void handleDisableSeat(struct libseat *seat, void *data)
++    {
++        LibseatSession *session = (LibseatSession *)data;
++        Q_EMIT session->handleDisableSeat();
++        Q_UNUSED(seat);
++    }
++};
++
++static const struct libseat_seat_listener s_listener = {
++    .enable_seat = &LibseatSessionPrivate::handleEnableSeat,
++    .disable_seat = &LibseatSessionPrivate::handleDisableSeat,
++};
++
++static int libseatEvent(int fd, uint32_t mask, void *data)
++{
++    struct libseat *seat = (struct libseat *)data;
++    if (libseat_dispatch(seat, 0) == -1) {
++        qCDebug(KWIN_CORE, "Failed to dispatch libseat event (%s)",
++                strerror(errno));
++    }
++    Q_UNUSED(fd);
++    Q_UNUSED(mask);
++    return 1;
++}
++
++LibseatSession *LibseatSession::create(QObject *parent)
++{
++    // We're lazy and abuse Wayland event loop since we don't care about
++    // X11, rather than dealing with creating our own thread as is used
++    // for D-Bus behind the scenes.
++    if (!waylandServer()) {
++        return nullptr;
++    }
++
++    LibseatSession *session = new LibseatSession(parent);
++    struct libseat *seat = libseat_open_seat(&s_listener, (void *)session);
++    if (!seat) {
++        delete session;
++        return nullptr;
++    }
++
++    struct wl_event_loop *eventLoop = wl_display_get_event_loop(*waylandServer()->display());
++    struct wl_event_source *eventSource =
++        wl_event_loop_add_fd(eventLoop, libseat_get_fd(seat), WL_EVENT_READABLE,
++                             libseatEvent, seat);
++    if (!eventSource) {
++        qCDebug(KWIN_CORE, "Failed to add libseat event source (%s)",
++                strerror(errno));
++        libseat_close_seat(seat);
++        delete session;
++        return nullptr;
++    }
++
++    if (libseat_dispatch(seat, 0) == -1) {
++        qCDebug(KWIN_CORE, "Failed to dispatch libseat event (%s)",
++                strerror(errno));
++        libseat_close_seat(seat);
++        wl_event_source_remove(eventSource);
++        delete session;
++        return nullptr;
++    }
++
++    session->initialize(seat, eventSource);
++    return session;
++}
++
++LibseatSession::LibseatSession(QObject *parent)
++    : Session(parent)
++    , m_seat(nullptr)
++    , m_eventSource(nullptr)
++{
++}
++
++void LibseatSession::initialize(struct libseat *seat, struct wl_event_source *eventSource)
++{
++    m_seat = seat;
++    m_eventSource = eventSource;
++}
++
++LibseatSession::~LibseatSession()
++{
++    if (m_seat) {
++        libseat_close_seat(m_seat);
++    }
++    if (m_eventSource) {
++        wl_event_source_remove(m_eventSource);
++    }
++}
++
++bool LibseatSession::isActive() const
++{
++    return m_isActive;
++}
++
++LibseatSession::Capabilities LibseatSession::capabilities() const
++{
++    return Capability::SwitchTerminal;
++}
++
++QString LibseatSession::seat() const
++{
++    return QString::fromUtf8(libseat_seat_name(m_seat));
++}
++
++uint LibseatSession::terminal() const
++{
++    return 0;
++}
++
++int LibseatSession::openRestricted(const QString &fileName)
++{
++    struct stat st;
++    if (stat(fileName.toUtf8(), &st) < 0) {
++        return -1;
++    }
++
++    int fileDescriptor;
++    int libseatId = libseat_open_device(m_seat, fileName.toUtf8(), &fileDescriptor);
++    if (libseatId == -1) {
++        qCDebug(KWIN_CORE, "Failed to open %s device (%s)",
++                qPrintable(fileName), strerror(errno));
++        return -1;
++    }
++
++    m_devices.push_back({libseatId, fileDescriptor, st.st_rdev});
++    return fileDescriptor;
++}
++
++void LibseatSession::closeRestricted(int fileDescriptor)
++{
++    auto it = std::find_if(m_devices.begin(), m_devices.end(),
++        [fileDescriptor](const LibseatDevice &device) {
++            return device.fileDescriptor == fileDescriptor;
++        }
++    );
++    if (it == m_devices.end()) {
++        qCDebug(KWIN_CORE, "Tried to close unknown device FD %d",
++                fileDescriptor);
++        close(fileDescriptor);
++        return;
++    }
++
++    libseat_close_device(m_seat, it->libseatId);
++    m_devices.erase(it);
++    close(fileDescriptor);
++}
++
++void LibseatSession::switchTo(uint terminal)
++{
++    if (libseat_switch_session(m_seat, terminal) == -1) {
++        qCDebug(KWIN_CORE, "Failed to switch to terminal %d (%s)",
++                terminal, strerror(errno));
++    }
++}
++
++void LibseatSession::updateActive(bool active)
++{
++    if (m_isActive != active) {
++        m_isActive = active;
++        Q_EMIT activeChanged(active);
++    }
++}
++
++void LibseatSession::handleEnableSeat()
++{
++    for (const LibseatDevice &device : m_devices) {
++        Q_EMIT deviceResumed(device.deviceId);
++    }
++    updateActive(true);
++}
++
++void LibseatSession::handleDisableSeat()
++{
++    updateActive(false);
++    for (const LibseatDevice &device : m_devices) {
++        Q_EMIT devicePaused(device.deviceId);
++    }
++    libseat_disable_seat(m_seat);
++}
++
++} // namespace KWin
+--- src/session_libseat.h.orig	2022-11-22 04:53:36.563592000 +0000
++++ src/session_libseat.h	2022-11-22 04:58:40.901318000 +0000
+@@ -0,0 +1,65 @@
++/*
++    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
++    SPDX-FileCopyrightText: 2022 Jessica Clarke <jrtc27@jrtc27.com>
++
++    SPDX-License-Identifier: GPL-2.0-or-later
++*/
++
++#pragma once
++
++#include "session.h"
++
++struct libseat;
++struct wl_event_source;
++
++namespace KWin
++{
++
++namespace Wayland
++{
++class WaylandBackend;
++}
++
++class LibseatSessionPrivate;
++
++class LibseatSession : public Session
++{
++    Q_OBJECT
++
++    struct LibseatDevice {
++        int libseatId;
++        int fileDescriptor;
++        dev_t deviceId;
++    };
++
++public:
++    static LibseatSession *create(QObject *parent = nullptr);
++    ~LibseatSession() override;
++
++    bool isActive() const override;
++    Capabilities capabilities() const override;
++    QString seat() const override;
++    uint terminal() const override;
++    int openRestricted(const QString &fileName) override;
++    void closeRestricted(int fileDescriptor) override;
++    void switchTo(uint terminal) override;
++
++private Q_SLOTS:
++    void handleEnableSeat();
++    void handleDisableSeat();
++
++private:
++    explicit LibseatSession(QObject *parent = nullptr);
++
++    void initialize(struct libseat *seat, struct wl_event_source *eventSource);
++    void updateActive(bool active);
++
++    struct libseat *m_seat;
++    struct wl_event_source *m_eventSource;
++    QList<LibseatDevice> m_devices;
++    bool m_isActive = false;
++
++    friend class LibseatSessionPrivate;
++};
++
++} // namespace KWin
+--- src/session.cpp.orig	2022-11-22 04:03:50.987686000 +0000
++++ src/session.cpp	2022-11-22 04:05:38.058479000 +0000
+@@ -5,7 +5,13 @@
+ */
+ 
+ #include "session.h"
++
++#include <config-kwin.h>
++
+ #include "session_consolekit.h"
++#ifdef Libseat_FOUND
++#include "session_libseat.h"
++#endif
+ #include "session_logind.h"
+ #include "session_noop.h"
+ 
+@@ -18,6 +20,9 @@
+ } s_availableSessions[] = {
+     { Session::Type::Logind, &LogindSession::create },
+     { Session::Type::ConsoleKit, &ConsoleKitSession::create },
++#ifdef Libseat_FOUND
++    { Session::Type::Libseat, &LibseatSession::create },
++#endif
+     { Session::Type::Noop, &NoopSession::create },
+ };
+ 
+--- src/session.h.orig	2022-11-22 04:05:52.236773000 +0000
++++ src/session.h	2022-11-22 04:06:39.247407000 +0000
+@@ -34,6 +34,7 @@
+     enum class Type {
+         Noop,
+         ConsoleKit,
++        Libseat,
+         Logind,
+     };
+ 

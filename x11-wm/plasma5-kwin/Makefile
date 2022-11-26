@@ -51,9 +51,11 @@ USE_XORG=	ice sm x11 xcb xext xi
 SHEBANG_FILES=	kconf_update/*.py \
 		kconf_update/*.pl
 
-OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
+OPTIONS_DEFINE=		DOCS LIBSEAT
+OPTIONS_DEFAULT=	DOCS LIBSEAT
 OPTIONS_SUB=		yes
+
+LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
 
 .include <bsd.port.pre.mk>
 
