@@ -93,6 +93,7 @@
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += megahit
+    SUBDIR += metaeuk
     SUBDIR += migrate
     SUBDIR += minimap2
     SUBDIR += mmseqs2

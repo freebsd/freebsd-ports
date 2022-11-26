@@ -1,0 +1,8 @@
+MetaEuk is a modular toolkit designed for large-scale gene discovery and
+annotation in eukaryotic metagenomic contigs. MetaEuk combines the fast and
+sensitive homology search capabilities of MMseqs2 with a dynamic programming
+procedure to recover optimal exons sets. It reduces redundancies in multiple
+discoveries of the same gene and resolves conflicting gene predictions on the
+same strand. MetaEuk is GPLv3-licensed open source software that is implemented
+in C++ and available for Linux and macOS. The software is designed to run
+efficiently on multiple cores.
