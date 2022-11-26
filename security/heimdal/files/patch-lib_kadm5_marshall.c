@@ -1,6 +1,33 @@
 --- lib/kadm5/marshall.c.orig	2022-09-15 16:54:19.000000000 -0700
-+++ lib/kadm5/marshall.c	2022-11-24 08:47:40.099673000 -0800
-@@ -407,10 +407,40 @@
++++ lib/kadm5/marshall.c	2022-11-26 08:20:41.302104000 -0800
+@@ -261,9 +261,9 @@
+     int i;
+     int32_t tmp;
+ 
+-    if (mask & KADM5_PRINCIPAL)
+-	krb5_ret_principal(sp, &princ->principal);
+-
++    if (mask & KADM5_PRINCIPAL) 
++	if (krb5_ret_principal(sp, &princ->principal))
++	    return EINVAL;
+     if (mask & KADM5_PRINC_EXPIRE_TIME) {
+ 	krb5_ret_int32(sp, &tmp);
+ 	princ->princ_expire_time = tmp;
+@@ -282,9 +282,10 @@
+     }
+     if (mask & KADM5_MOD_NAME) {
+ 	krb5_ret_int32(sp, &tmp);
+-	if(tmp)
+-	    krb5_ret_principal(sp, &princ->mod_name);
+-	else
++	if(tmp) {
++	    if (krb5_ret_principal(sp, &princ->mod_name))
++		return EINVAL;
++	} else
+ 	    princ->mod_name = NULL;
+     }
+     if (mask & KADM5_MOD_TIME) {
+@@ -407,10 +408,40 @@
      ret = krb5_ret_int32(sp, &mask);
      if (ret)
  	goto out;
