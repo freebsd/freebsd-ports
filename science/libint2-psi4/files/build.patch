@@ -1,0 +1,13 @@
+- workaround for clang hanging on unity_1935_cxx.cxx, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265809
+
+--- build.ninja.orig	2022-11-25 16:11:30.230881000 -0800
++++ build.ninja	2022-11-25 16:10:18.165198000 -0800
+@@ -890,7 +890,7 @@
+ build CMakeFiles/int-obj.dir/Unity/unity_1935_cxx.cxx.o: CXX_COMPILER__int-obj_Release %%BUILD_WRKSRC%%/CMakeFiles/int-obj.dir/Unity/unity_1935_cxx.cxx || cmake_object_order_depends_target_int-obj
+   DEFINES = -D__COMPILING_LIBINT2=1
+   DEP_FILE = CMakeFiles/int-obj.dir/Unity/unity_1935_cxx.cxx.o.d
+-  FLAGS = -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -DNDEBUG -fPIC
++  FLAGS = -pipe -fstack-protector-strong -fno-strict-aliasing -pipe -fstack-protector-strong -fno-strict-aliasing   -DNDEBUG -fPIC
+   INCLUDES = -I%%BUILD_WRKSRC%%/include -I%%WRKDIR%%/libint-2.7.1/src -I%%WRKDIR%%/libint-2.7.1/include -I%%WRKDIR%%/libint-2.7.1/include/libint2
+   OBJECT_DIR = CMakeFiles/int-obj.dir
+   OBJECT_FILE_DIR = CMakeFiles/int-obj.dir/Unity

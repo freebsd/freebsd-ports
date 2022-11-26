@@ -152,6 +152,7 @@
     SUBDIR += libgridxc
     SUBDIR += libint
     SUBDIR += libint2
+    SUBDIR += libint2-psi4
     SUBDIR += libkml
     SUBDIR += liblinear
     SUBDIR += libmbd
