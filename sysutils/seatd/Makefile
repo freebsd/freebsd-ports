@@ -22,7 +22,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/libseat.so.1 \
 		libdata/pkgconfig/libseat.pc
 
-EXTRA_PATCHES=	${PATCHDIR}/cpp.patch:-p1
+EXTRA_PATCHES=	${PATCHDIR}/cpp.patch:-p1 \
+		${PATCHDIR}/dri.patch:-p1
 
 OPTIONS_DEFINE=	BASU MANPAGES
 OPTIONS_DEFAULT=BASU MANPAGES
