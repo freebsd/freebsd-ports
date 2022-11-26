@@ -1,0 +1,183 @@
+--- src/common/VirtualTerminal.cpp.orig	2020-11-03 09:55:31.000000000 +0000
++++ src/common/VirtualTerminal.cpp	2022-11-26 21:05:15.164612000 +0000
+@@ -27,8 +27,12 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <signal.h>
++#ifdef __FreeBSD__
++#include <sys/consio.h>
++#else
+ #include <linux/vt.h>
+ #include <linux/kd.h>
++#endif
+ #include <sys/ioctl.h>
+ 
+ #define RELEASE_DISPLAY_SIGNAL (SIGRTMAX)
+@@ -36,14 +40,29 @@
+ 
+ namespace SDDM {
+     namespace VirtualTerminal {
++#ifdef __FreeBSD__
++        static const char *defaultVtPath = "/dev/ttyv0";
++
++        QString getVtPath(int vt) {
++            char c = (vt <= 10 ? '0' : 'a') + (vt - 1);
++            return QStringLiteral("/dev/ttyv%1").arg(c);
++        }
++#else
++        static const char *defaultVtPath = "/dev/tty0";
++
++        QString getVtPath(int vt) {
++            return QStringLiteral("/dev/tty%1").arg(vt);
++        }
++#endif
++
+         static void onAcquireDisplay(int signal) {
+-            int fd = open("/dev/tty0", O_RDWR | O_NOCTTY);
++            int fd = open(defaultVtPath, O_RDWR | O_NOCTTY);
+             ioctl(fd, VT_RELDISP, VT_ACKACQ);
+             close(fd);
+         }
+ 
+         static void onReleaseDisplay(int signal) {
+-            int fd = open("/dev/tty0", O_RDWR | O_NOCTTY);
++            int fd = open(defaultVtPath, O_RDWR | O_NOCTTY);
+             ioctl(fd, VT_RELDISP, 1);
+             close(fd);
+         }
+@@ -117,18 +136,28 @@
+ 
+         int setUpNewVt() {
+             // open VT master
+-            int fd = open("/dev/tty0", O_RDWR | O_NOCTTY);
++            int fd = open(defaultVtPath, O_RDWR | O_NOCTTY);
+             if (fd < 0) {
+                 qCritical() << "Failed to open VT master:" << strerror(errno);
+                 return -1;
+             }
+ 
++#ifdef __FreeBSD__
++            int vtActive = 0;
++            if (ioctl(fd, VT_GETACTIVE, &vtActive) < 0) {
++                qCritical() << "Failed to get current VT:" << strerror(errno);
++                close(fd);
++                return -1;
++            }
++#else
+             vt_stat vtState = { 0 };
+             if (ioctl(fd, VT_GETSTATE, &vtState) < 0) {
+                 qCritical() << "Failed to get current VT:" << strerror(errno);
+                 close(fd);
+                 return -1;
+             }
++            int vtActive = vtState.v_active;
++#endif
+ 
+             int vt = 0;
+             if (ioctl(fd, VT_OPENQRY, &vt) < 0) {
+@@ -141,8 +170,8 @@
+ 
+             // fallback to active VT
+             if (vt <= 0) {
+-                qWarning() << "New VT" << vt << "is not valid, fall back to" << vtState.v_active;
+-                return vtState.v_active;
++                qWarning() << "New VT" << vt << "is not valid, fall back to" << vtActive;
++                return vtActive;
+             }
+ 
+             return vt;
+@@ -153,9 +182,9 @@
+ 
+             int fd;
+ 
+-            int activeVtFd = open("/dev/tty0", O_RDWR | O_NOCTTY);
++            int activeVtFd = open(defaultVtPath, O_RDWR | O_NOCTTY);
+ 
+-            QString ttyString = QStringLiteral("/dev/tty%1").arg(vt);
++            QString ttyString = getVtPath(vt);
+             int vtFd = open(qPrintable(ttyString), O_RDWR | O_NOCTTY);
+             if (vtFd != -1) {
+                 fd = vtFd;
+@@ -171,7 +200,7 @@
+                 fixVtMode(activeVtFd, vt_auto);
+             } else {
+                 qWarning("Failed to open %s: %s", qPrintable(ttyString), strerror(errno));
+-                qDebug("Using /dev/tty0 instead of %s!", qPrintable(ttyString));
++                qDebug("Using %s instead of %s!", defaultVtPath, qPrintable(ttyString));
+                 fd = activeVtFd;
+             }
+ 
+--- src/common/VirtualTerminal.h.orig	2022-11-26 21:03:34.680909000 +0000
++++ src/common/VirtualTerminal.h	2022-11-26 21:05:10.901276000 +0000
+@@ -22,6 +22,7 @@
+ 
+ namespace SDDM {
+     namespace VirtualTerminal {
++        QString getVtPath(int vt);
+         int setUpNewVt();
+         void jumpToVt(int vt, bool vt_auto);
+     }
+--- src/daemon/CMakeLists.txt.orig	2020-11-03 09:55:31.000000000 +0000
++++ src/daemon/CMakeLists.txt	2022-11-26 02:52:38.410116000 +0000
+@@ -31,13 +31,7 @@
+     SocketServer.cpp
+ )
+ 
+-# Different implementations of the VT switching code
+-# (where the FreeBSD version does nothing).
+-if(${CMAKE_SYSTEM} MATCHES "FreeBSD")
+-    list(APPEND DAEMON_SOURCES ${CMAKE_SOURCE_DIR}/src/common/VirtualTerminal_FreeBSD.cpp)
+-else()
+-    list(APPEND DAEMON_SOURCES ${CMAKE_SOURCE_DIR}/src/common/VirtualTerminal.cpp)
+-endif()
++list(APPEND DAEMON_SOURCES ${CMAKE_SOURCE_DIR}/src/common/VirtualTerminal.cpp)
+ 
+ qt5_add_dbus_adaptor(DAEMON_SOURCES "${CMAKE_SOURCE_DIR}/data/interfaces/org.freedesktop.DisplayManager.xml"          "DisplayManager.h" SDDM::DisplayManager)
+ qt5_add_dbus_adaptor(DAEMON_SOURCES "${CMAKE_SOURCE_DIR}/data/interfaces/org.freedesktop.DisplayManager.Seat.xml"     "DisplayManager.h" SDDM::DisplayManagerSeat)
+--- src/helper/CMakeLists.txt.orig	2020-11-03 09:55:31.000000000 +0000
++++ src/helper/CMakeLists.txt	2022-11-26 02:52:38.410292000 +0000
+@@ -15,13 +15,7 @@
+     UserSession.cpp
+ )
+ 
+-# Different implementations of the VT switching code
+-# (where the FreeBSD version does nothing).
+-if(${CMAKE_SYSTEM} MATCHES "FreeBSD")
+-    list(APPEND HELPER_SOURCES ${CMAKE_SOURCE_DIR}/src/common/VirtualTerminal_FreeBSD.cpp)
+-else()
+-    list(APPEND HELPER_SOURCES ${CMAKE_SOURCE_DIR}/src/common/VirtualTerminal.cpp)
+-endif()
++list(APPEND HELPER_SOURCES ${CMAKE_SOURCE_DIR}/src/common/VirtualTerminal.cpp)
+ 
+ if(PAM_FOUND)
+     set(HELPER_SOURCES
+--- src/helper/UserSession.cpp.orig	2020-11-03 09:55:31.000000000 +0000
++++ src/helper/UserSession.cpp	2022-11-26 21:05:48.133615000 +0000
+@@ -82,7 +82,7 @@
+         if (sessionType == QLatin1String("wayland")) {
+             // open VT and get the fd
+             int vtNumber = processEnvironment().value(QStringLiteral("XDG_VTNR")).toInt();
+-            QString ttyString = QStringLiteral("/dev/tty%1").arg(vtNumber);
++            QString ttyString = VirtualTerminal::getVtPath(vtNumber);
+             int vtFd = ::open(qPrintable(ttyString), O_RDWR | O_NOCTTY);
+ 
+             // when this is true we'll take control of the tty
+--- src/helper/backend/PamBackend.cpp.orig	2022-11-26 21:03:28.044383000 +0000
++++ src/helper/backend/PamBackend.cpp	2022-11-26 21:06:34.443847000 +0000
+@@ -23,6 +23,7 @@
+ #include "HelperApp.h"
+ #include "UserSession.h"
+ #include "Auth.h"
++#include "VirtualTerminal.h"
+ 
+ #include <QtCore/QString>
+ #include <QtCore/QDebug>
+@@ -257,7 +258,7 @@
+                 m_pam->setItem(PAM_TTY, qPrintable(display));
+             }
+         } else if (sessionEnv.value(QStringLiteral("XDG_SESSION_TYPE")) == QLatin1String("wayland")) {
+-            QString tty = QStringLiteral("/dev/tty%1").arg(sessionEnv.value(QStringLiteral("XDG_VTNR")));
++            QString tty = VirtualTerminal::getVtPath(sessionEnv.value(QStringLiteral("XDG_VTNR")).toInt());
+             m_pam->setItem(PAM_TTY, qPrintable(tty));
+         }
+ 
