@@ -20,6 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/konsole:x11/konsole
 RUN_DEPENDS+=	${LOCALBASE}/bin/kwin_wayland:x11-wm/plasma5-kwin
 RUN_DEPENDS+=	${LOCALBASE}/bin/okular:graphics/okular
 RUN_DEPENDS+=	${LOCALBASE}/bin/plasmashell:x11/plasma5-plasma-workspace
+RUN_DEPENDS+=	${LOCALBASE}/bin/sddm:x11/sddm
 RUN_DEPENDS+=	${LOCALBASE}/bin/seatd:sysutils/seatd
 RUN_DEPENDS+=	${LOCALBASE}/lib/libEGL.so:graphics/libglvnd
 RUN_DEPENDS+=	${LOCALBASE}/lib/libEGL_mesa.so:graphics/mesa-libs
