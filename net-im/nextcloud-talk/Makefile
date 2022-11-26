@@ -1,5 +1,5 @@
 PORTNAME=	talk
-PORTVERSION=	15.0.0
+PORTVERSION=	15.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im www
 MASTER_SITES=	https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
