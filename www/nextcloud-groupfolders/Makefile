@@ -1,12 +1,11 @@
 PORTNAME=	groupfolders
-PORTVERSION=	13.0.0
+PORTVERSION=	13.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
+DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Groupfolders app for Nextcloud
