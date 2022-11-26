@@ -1,10 +1,10 @@
---- stdlib/OpenLibm_jll/src/OpenLibm_jll.jl.orig	2021-11-25 11:01:50 UTC
+--- stdlib/OpenLibm_jll/src/OpenLibm_jll.jl.orig	2022-11-21 01:47:29 UTC
 +++ stdlib/OpenLibm_jll/src/OpenLibm_jll.jl
-@@ -22,7 +22,7 @@ if Sys.iswindows()
+@@ -22,7 +22,7 @@ else
  elseif Sys.isapple()
-     const libopenlibm = "@rpath/libopenlibm.3.dylib"
+     const libopenlibm = "@rpath/libopenlibm.4.dylib"
  else
--    const libopenlibm = "libopenlibm.so.3"
+-    const libopenlibm = "libopenlibm.so.4"
 +    const libopenlibm = "libopenlibm.so"
  end
  
