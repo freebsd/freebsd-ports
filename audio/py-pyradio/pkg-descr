@@ -1,0 +1,12 @@
+Curses based Internet radio player.
+
+PyRadio provides the following features:
+
+  * vi like keys in addition to arrows and special keys
+  * Station editor (add/edit) with CJK characters support
+  * Configuration editor
+  * Multiple playlist support
+  * vi like station registers
+  * Search function
+  * Theming support
+  * RadioBrowser support
