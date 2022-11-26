@@ -32,11 +32,13 @@ bin/blueprint-compiler
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/lsp.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/lsp_utils.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/main.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/outputs/__init__.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/outputs/xml/__init__.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/outputs/xml/xml_emitter.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/parse_tree.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/parser.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/tokenizer.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/typelib.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/utils.py
-%%PYTHON_SITELIBDIR%%/blueprintcompiler/xml_emitter.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/xml_reader.py
 share/pkgconfig/blueprint-compiler.pc

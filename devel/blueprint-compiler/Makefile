@@ -1,6 +1,6 @@
 PORTNAME=	blueprint-compiler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITLAB=	yes
 USE_GNOME=	pygobject3
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	jwestman
-GL_COMMIT=	75a6d95988736ec0471d22ceb07579c0cedac2ad
+GL_COMMIT=	9adcab2d225fd6435edc85c72a0b67e33880e00b
 SHEBANG_FILES=	${PORTNAME}.py
 NO_ARCH=	yes
 

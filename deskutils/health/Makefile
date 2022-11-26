@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	864d961a3c4e.patch:-p1 # https://gitlab.gnome.org/World/Health/-/issues/167
+PATCHFILES+=	04e0a01f5e20.patch:-p1 # https://gitlab.gnome.org/World/Health/-/merge_requests/190
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Track your fitness goals
