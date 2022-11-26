@@ -26,6 +26,9 @@ OPTIONS_DEFINE=	BASU MANPAGES
 OPTIONS_DEFAULT=BASU MANPAGES
 OPTIONS_SUB=	yes
 
+# Not yet ported, and not needed since we lack ConsoleKit2
+OPTIONS_EXCLUDE_purecap=	BASU
+
 # https://lists.sr.ht/~kennylevinsen/seatd-devel/%3CQHZRRQ.73ZI29COPK131%40unrelenting.technology%3E
 BASU_DESC=		ConsoleKit2 support via basu (experimental)
 BASU_PATCH_SITES=	https://github.com/DankBSD/${PORTNAME}/commit/:ck2
