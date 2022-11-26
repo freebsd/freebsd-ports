@@ -1,0 +1,84 @@
+#!/bin/sh
+
+# PROVIDE: kibana
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=kibana
+rcvar=kibana_enable
+
+load_rc_config $name
+
+: ${kibana_enable:="NO"}
+: ${kibana_config:="%%ETCDIR%%/kibana.yml"}
+: ${kibana_user:="www"}
+: ${kibana_group:="www"}
+: ${kibana_log:="/var/log/kibana.log"}
+: ${kibana_syslog_output_enable:="NO"}
+
+start_precmd="kibana_start_precmd"
+reload_cmd="kibana_reload_cmd"
+extra_commands="reload"
+
+if checkyesno kibana_syslog_output_enable; then
+	if [ -n "${kibana_syslog_output_tag}" ]; then
+		kibana_syslog_output_flags="-T ${kibana_syslog_output_tag}"
+	else
+		kibana_syslog_output_flags="-T ${name}"
+	fi
+	if [ -n "${kibana_syslog_output_priority}" ]; then
+		kibana_syslog_output_flags="${kibana_syslog_output_flags} -s ${kibana_syslog_output_priority}"
+	fi
+	if [ -n "${kibana_syslog_output_facility}" ]; then
+		kibana_syslog_output_flags="${kibana_syslog_output_flags} -l ${kibana_syslog_output_facility}"
+	fi
+fi
+
+NODE="%%LOCALBASE%%/bin/node"
+
+required_files="${kibana_config}"
+pidfile="/var/run/${name}-daemon.pid"
+_kpidfile="/var/run/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-f ${kibana_syslog_output_flags} -P ${pidfile} -t ${name} \
+	/usr/bin/env BABEL_DISABLE_CACHE=1 NODE_ENV=production ${kibana_env} \
+	${NODE} --no-warnings --max-http-header-size=65536 \
+	%%WWWDIR%%/src/cli/dist serve \
+	--config ${kibana_config} --log-file ${kibana_log} \
+	--xpack.reporting.enabled=false ${kibana_args}"
+
+kibana_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o ${kibana_user} -g ${kibana_group} /dev/null ${pidfile}
+	fi
+	if [ ! -e "${_kpidfile}" ]; then
+		install -m 0600 -o ${kibana_user} -g ${kibana_group} /dev/null ${_kpidfile}
+	fi
+	if [ ! -f ${kibana_log} ]; then
+		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}
+	fi
+	if [ ! -d %%WWWDIR%%/optimize ]; then
+		install -d -o ${kibana_user} -g ${kibana_group} %%WWWDIR%%/optimize
+	else
+		# We may have installed a plugin as root which will cause files in here
+		# to be owned by root:wheel. Fix with a chown.
+		chown -R ${kibana_user}:${kibana_group} %%WWWDIR%%/optimize
+	fi
+}
+
+kibana_reload_cmd()
+{
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	else
+		pkill -HUP -P ${rc_pid}
+	fi
+}
+
+run_rc_command "$1"

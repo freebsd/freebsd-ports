@@ -6,6 +6,28 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20221126:
+  AFFECTS: textproc/kibana8
+  AUTHOR: otis@FreeBSD.org
+
+  kibana8 now installs kibana-specific utilities into LOCALBASE/bin as symbolic
+  links.
+
+  Please check whether it will overwrite your local files with names same as
+  these utilities and if so, please rename them or move out of the way in a
+  different manner.
+
+20221126:
+  AFFECTS: textproc/elasticsearch8
+  AUTHOR: otis@FreeBSD.org
+
+  elasticsearch8 now installs elasticsearch-specific utilities into
+  LOCALBASE/bin as symbolic links (i.e. elasticsearch-cli and similar).
+
+  Please check whether it will overwrite your local files with names same
+  as these utilities and if so, please rename them or move out of the way
+  in a different manner.
+
+20221126:
   AFFECTS: users of lang/php80
   AUTHOR: bofh@FreeBSD.org
 

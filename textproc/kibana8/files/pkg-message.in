@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+NOTICE: kibana port now installs kibana-specific utilities
+as symbolic links into %%BINDIR%%.
+EOM
+}
+]
+
