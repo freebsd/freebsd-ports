@@ -1,5 +1,5 @@
 PORTNAME=	pg_query
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
