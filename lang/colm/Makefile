@@ -26,4 +26,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check # 1 tests fails, see https://github.com/adrian-thurston/colm/issues/153
 
+PORTSCOUT=	limit:^[0-9]+\.[0-9]+ # ignore alpha-numeric tags like colm-barracuda-v5
+
 .include <bsd.port.mk>
