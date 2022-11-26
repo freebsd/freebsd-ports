@@ -1,7 +1,6 @@
 PORTNAME=	julia
-DISTVERSION=	1.7.3
+DISTVERSION=	1.8.3
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	1
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -117,11 +116,11 @@ post-configure:
 	)
 
 pre-install:
-	${CP} ${WRKSRC}/deps/srccache/cacert-2020-10-14.pem ${WRKSRC}/usr/share/julia/cert.pem
+	${CP} ${WRKSRC}/deps/srccache/cacert-2022-02-01.pem ${WRKSRC}/usr/share/julia/cert.pem
 
 post-install:
 	# clean up for Pkg3.jl
-.for file in .codecov.yml .travis.yml appveyor.yml bors.toml .gitignore source-extracted
+.for file in .codecov.yml .travis.yml appveyor.yml bors.toml .gitignore source-extracted *.orig
 	${FIND} ${STAGEDIR}${PREFIX}/share/julia/ -name ${file} -delete
 .endfor
 .for dir in Statistics SuiteSparse ArgTools Pkg Downloads LibCURL NetworkOptions Tar
@@ -134,7 +133,7 @@ post-install-DOCS-off:
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
-.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so
+.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
 
