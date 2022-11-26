@@ -1,5 +1,6 @@
 PORTNAME=	bzflag
 PORTVERSION=	2.4.26
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://download.bzflag.org/bzflag/source/${PORTVERSION}/
 
@@ -10,11 +11,13 @@ WWW=		https://bzflag.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	objdump:devel/binutils \
+		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libcares.so:dns/c-ares
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib libtool localbase ncurses tar:bzip2
+USES=		autoreconf compiler:c++11-lib libtool localbase ncurses pkgconfig tar:bzip2
 INSTALL_TARGET=	install-strip
 
 .ifndef SERVER_ONLY
@@ -35,6 +38,7 @@ DESKTOP_ENTRIES=	"BZFlag" "Battle enemy tanks" \
 			"${DATADIR}/bzflag-256x256.png" \
 			"bzflag" "Game;ActionGame;" false
 PLIST_SUB+=		CLIENT=""
+USES+=			desktop-file-utils
 .endif
 
 .include <bsd.port.mk>
