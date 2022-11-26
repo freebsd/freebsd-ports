@@ -5,6 +5,9 @@ MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9]+)(.*)/\1/}/v
 PKGNAMESUFFIX=	10
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
+DEPRECATED=	EOLd, potential security issues (https://tomcat.apache.org/tomcat-10.0-eol.html), use www/tomcat101 instead
+EXPIRATION_DATE=2023-06-30
+
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Open-source Java web server by Apache, 10.0.x branch
 WWW=		https://tomcat.apache.org/
