@@ -1,6 +1,5 @@
 PORTNAME=	invisible_captcha
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/markets/invisible_captcha
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rails61>=4.2:www/rubygem-rails61
+RUN_DEPENDS=	rubygem-rails61>=5.0:www/rubygem-rails61
 
 USES=		gem
 USE_RUBY=	yes
