@@ -11,6 +11,9 @@ WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	No longer maintained and supported.
+EXPIRATION_DATE=	2023-01-01
+
 BROKEN_aarch64=	fails to build: vendor/golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
 
 USES=		gmake go
