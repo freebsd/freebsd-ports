@@ -18,7 +18,7 @@
 +    packages=['pyradio'],
 +    package_dir={'pyradio':'pyradio'},
 +    package_data={
-+      'pyradio': ['themes/*'],
++      'pyradio': ['stations.csv', 'config', 'themes/*'],
 +    },
      entry_points={
          'console_scripts': [
