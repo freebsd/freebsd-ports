@@ -1,0 +1,1 @@
+Embeds start and end byte offsets of JSON objects into generated Ruby hashes.
