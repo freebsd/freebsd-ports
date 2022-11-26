@@ -1,0 +1,30 @@
+commit 84b24bf7c1534f4c7967217b723b0560b20b36a3
+Author: Jessica Clarke <jrtc27@jrtc27.com>
+Date:   Tue Nov 22 05:44:44 2022 +0000
+
+    libseat: Allow library to be used from C++
+
+diff --git a/include/libseat.h b/include/libseat.h
+index 385acd9..e01786a 100644
+--- a/include/libseat.h
++++ b/include/libseat.h
+@@ -3,6 +3,10 @@
+ 
+ #include <stdarg.h>
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ /*
+  * An opaque struct containing an opened seat, created by libseat_open_seat and
+  * destroyed by libseat_close_seat.
+@@ -172,4 +176,8 @@ void libseat_set_log_handler(libseat_log_func handler);
+  */
+ void libseat_set_log_level(enum libseat_log_level level);
+ 
++#ifdef __cplusplus
++} /* extern "C" */
++#endif
++
+ #endif
