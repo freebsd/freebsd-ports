@@ -1,0 +1,8 @@
+--- external/upstream/libxc/CMakeLists.txt.orig	2022-11-24 03:25:13 UTC
++++ external/upstream/libxc/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-find_package(Libxc 5.1.2 CONFIG QUIET COMPONENTS C)
++find_package(Libxc CONFIG REQUIRED COMPONENTS C)
+ 
+ if(${Libxc_FOUND})
+     get_property(_loc TARGET Libxc::xc PROPERTY LOCATION)

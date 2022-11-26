@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2022-11-22 21:26:37 UTC
++++ CMakeLists.txt
+@@ -187,10 +190,14 @@ message(STATUS "Psi4 install: ${CMAKE_INSTALL_PREFIX}"
+ # * library: not at all
+ 
+ set(Python_ADDITIONAL_VERSIONS 3.11 3.10 3.9 3.8)  # adjust with CMake minimum FindPythonInterp
++
++
+ if(DEFINED ENV{LGTM_SRC})
+-    find_package(Python 3.8 EXACT COMPONENTS Interpreter Development REQUIRED)
++    #find_package(Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development REQUIRED)
++    find_package(Python $ENV{FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development REQUIRED)
+ else()
+-    find_package(Python 3.8 COMPONENTS Interpreter Development NumPy REQUIRED)
++    #find_package(Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development NumPy REQUIRED)
++    find_package(Python $ENV{FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development NumPy REQUIRED)
+ endif()
+ message(STATUS "${Cyan}Found Python ${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}${ColourReset}: ${Python_EXECUTABLE} (found version ${Python_VERSION})")
+ 
+@@ -302,9 +309,10 @@ ExternalProject_Add(psi4-core
+               -DOpenMP_LIBRARY_DIRS=${OpenMP_LIBRARY_DIRS}
+               -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+               -DENABLE_CYTHONIZE=${ENABLE_CYTHONIZE}
++              -DFREEBSD_PYTHON_VER=${FREEBSD_PYTHON_VER}
+    CMAKE_CACHE_ARGS -DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}
+-   USES_TERMINAL_BUILD 1
+-   BUILD_ALWAYS 1)
++   #USES_TERMINAL_BUILD 1
++   BUILD_ALWAYS 0)
+ 
+ add_subdirectory(external/downstream)
+ add_subdirectory(doc)

@@ -265,6 +265,7 @@
     SUBDIR += plumed
     SUBDIR += pnetcdf
     SUBDIR += precice
+    SUBDIR += psi4
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy
