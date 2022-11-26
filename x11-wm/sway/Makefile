@@ -26,8 +26,6 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	swaybg:x11/swaybg
 
-CONFLICTS_INSTALL=	${PORTNAME}-devel
-
 USES=		compiler:c11 gl gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		glesv2
