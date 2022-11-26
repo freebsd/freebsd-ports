@@ -1,5 +1,5 @@
 PORTNAME=	regexp_parser
-PORTVERSION=	2.1.1
+PORTVERSION=	2.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
