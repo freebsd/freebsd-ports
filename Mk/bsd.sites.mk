@@ -912,12 +912,14 @@ MASTER_SITE_SAVANNAH+= \
 .endif
 
 # List:		https://sourceforge.net/p/forge/documentation/Mirrors/
-# Updated:	2017-03-13
+# Updated:	2022-11-26
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
 .  for p in https http
 MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
-.    for m in excellmedia freefr jaist nchc \
-	netcologne netix ufpr vorboss versaweb
+.    for m in cfhcable cytranet deac-ams deac-fra deac-riga excellmedia \
+	freefr gigenet ixpeering jaist jztkft kumisystems liquidtelecom \
+	nchc netactuate netcologne netix onboardcloud phoenixnap \
+	razaoinfo sinalbr sitsa sonik tenet udomain ufpr versaweb
 MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
 .    endfor
 .  endfor
