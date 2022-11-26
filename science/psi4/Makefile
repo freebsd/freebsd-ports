@@ -1,5 +1,6 @@
 PORTNAME=	psi4
 DISTVERSION=	1.6.1.20221122
+PORTREVISION=	1
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,6 +22,7 @@ LIB_DEPENDS=	libgg.so:math/gau2grid \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${PY_DEPENDS} \
 		libint2-psi4>0:science/libint2-psi4
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		blaslapack:openblas cmake compiler:c++17-lang eigen:3 fortran localbase:ldflags python:3.8+
 
@@ -29,14 +31,18 @@ GH_TAGNAME=	0889d6d34
 
 CMAKE_ARGS=	-DLibxc_DIR=${LOCALBASE} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER} \
-		-DPython_EXECUTABLE=${PYTHON_CMD}
+		-DPython_EXECUTABLE=${PYTHON_CMD} \
+		-DPYMOD_INSTALL_LIBDIR=${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/lib||}
 CONFIGURE_ENV=	FREEBSD_PYTHON_VER=${PYTHON_VER}
 
 LDFLAGS+=	-lexecinfo # for backtrace_symbols
 
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}:${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psi4/tests \
-		PSIDATADIR=${STAGEDIR}${DATADIR}
+		PSIDATADIR=${STAGEDIR}${DATADIR} \
+		PSIPATH=${STAGEDIR}${DATADIR}/basis
+
+BINARY_ALIAS=	python=${PYTHON_CMD} # only for tests
 
 post-patch:
 	# correct the default data dir
@@ -58,17 +64,22 @@ do-install: # project fails to install itself into a stage directory due to a co
 	${FIND} ${STAGEDIR} -type d -empty -delete
 	# set executable flag
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/psi4
-	# move python module to a proper place
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${MV} ${STAGEDIR}${PREFIX}/lib/psi4 ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${RLN} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psi4 ${STAGEDIR}${PREFIX}/lib/psi4 # for the path-calculating logic in psi4/__init__.py
 	# correct version number
 	@${REINPLACE_CMD} -i '' -e "s|__version__ = 'undefined'|__version__ = '${DISTVERSION}'|" \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psi4/metadata.py
 	@${REINPLACE_CMD} -i '' -e "s|__version_long = 'undefined+11'|__version_long = '${DISTVERSION}'|" \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psi4/metadata.py
 
-do-test: # based on https://psicode.org/psi4manual/master/build_planning.html#faq-minutetests - most tests fail due to path mismatches
-	@cd ${WRKSRC}/tests/isapt2 && ${SETENV} ${TEST_ENV} pytest
+do-test:
+	# based on https://psicode.org/psi4manual/master/build_planning.html#faq-minutetests
+	#@cd ${WRKSRC}/tests/cc36 && ${SETENV} ${TEST_ENV} pytest # pytest-based tests fail, see https://github.com/psi4/psi4/issues/2802
+
+	# run samples as tests, this also fails down the line: https://github.com/psi4/psi4/issues/2803
+	@cd ${WRKSRC} && ( \
+		for f in $$(${FIND} samples/cc24 -name test.in | ${XARGS} dirname); do \
+			echo "===> runing test in $$f"; \
+			(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 test.in) \
+		done \
+	)
 
 .include <bsd.port.mk>
