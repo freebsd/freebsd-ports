@@ -1,5 +1,5 @@
 PORTNAME=	js_regex
-PORTVERSION=	3.7.1
+PORTVERSION=	3.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/jaynetics/js_regex
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-character_set>=1.4<2:textproc/rubygem-character_set \
-		rubygem-regexp_parser>=2.1<3:textproc/rubygem-regexp_parser \
+		rubygem-regexp_parser>=2.5<3:textproc/rubygem-regexp_parser \
 		rubygem-regexp_property_values>=1.0<2:textproc/rubygem-regexp_property_values
 
 USES=		gem
