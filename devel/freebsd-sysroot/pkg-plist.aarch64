@@ -954,7 +954,9 @@
 %%ROOT%%/usr/include/libifconfig.h
 %%ROOT%%/usr/include/libmilter/mfapi.h
 %%ROOT%%/usr/include/libmilter/mfdef.h
+%%ROOT%%/usr/include/libnetmap.h
 %%ROOT%%/usr/include/libnvpair.h
+%%ROOT%%/usr/include/libpfctl.h
 %%ROOT%%/usr/include/libpmcstat.h
 %%ROOT%%/usr/include/libproc.h
 %%ROOT%%/usr/include/libprocstat.h
@@ -1016,6 +1018,7 @@
 %%ROOT%%/usr/include/machine/floatingpoint.h
 %%ROOT%%/usr/include/machine/fpu.h
 %%ROOT%%/usr/include/machine/frame.h
+%%ROOT%%/usr/include/machine/gdb_machdep.h
 %%ROOT%%/usr/include/machine/hypervisor.h
 %%ROOT%%/usr/include/machine/ieeefp.h
 %%ROOT%%/usr/include/machine/ifunc.h
@@ -1128,6 +1131,7 @@
 %%ROOT%%/usr/include/net/iflib.h
 %%ROOT%%/usr/include/net/iflib_private.h
 %%ROOT%%/usr/include/net/ifq.h
+%%ROOT%%/usr/include/net/infiniband.h
 %%ROOT%%/usr/include/net/mp_ring.h
 %%ROOT%%/usr/include/net/mppc.h
 %%ROOT%%/usr/include/net/netisr.h
@@ -1259,6 +1263,8 @@
 %%ROOT%%/usr/include/netgraph/ng_tty.h
 %%ROOT%%/usr/include/netgraph/ng_vjc.h
 %%ROOT%%/usr/include/netgraph/ng_vlan.h
+%%ROOT%%/usr/include/netgraph/ng_vlan_rotate.h
+%%ROOT%%/usr/include/netgraph/qos.h
 %%ROOT%%/usr/include/netinet/cc/cc.h
 %%ROOT%%/usr/include/netinet/cc/cc_cubic.h
 %%ROOT%%/usr/include/netinet/cc/cc_module.h
@@ -1411,6 +1417,7 @@
 %%ROOT%%/usr/include/netpfil/pf/pf.h
 %%ROOT%%/usr/include/netpfil/pf/pf_altq.h
 %%ROOT%%/usr/include/netpfil/pf/pf_mtag.h
+%%ROOT%%/usr/include/netpfil/pf/pf_nv.h
 %%ROOT%%/usr/include/netsmb/netbios.h
 %%ROOT%%/usr/include/netsmb/smb.h
 %%ROOT%%/usr/include/netsmb/smb_conn.h
@@ -1789,6 +1796,8 @@
 %%ROOT%%/usr/include/string_m.h
 %%ROOT%%/usr/include/stringlist.h
 %%ROOT%%/usr/include/strings.h
+%%ROOT%%/usr/include/sys/_atomic64e.h
+%%ROOT%%/usr/include/sys/_atomic_subword.h
 %%ROOT%%/usr/include/sys/_bitset.h
 %%ROOT%%/usr/include/sys/_bus_dma.h
 %%ROOT%%/usr/include/sys/_callout.h
@@ -1822,6 +1831,7 @@
 %%ROOT%%/usr/include/sys/_uio.h
 %%ROOT%%/usr/include/sys/_umtx.h
 %%ROOT%%/usr/include/sys/_unrhdr.h
+%%ROOT%%/usr/include/sys/_winsize.h
 %%ROOT%%/usr/include/sys/aac_ioctl.h
 %%ROOT%%/usr/include/sys/abi_compat.h
 %%ROOT%%/usr/include/sys/acct.h
@@ -2342,6 +2352,7 @@
 %%ROOT%%/usr/lib/dtrace/errno.d
 %%ROOT%%/usr/lib/dtrace/io.d
 %%ROOT%%/usr/lib/dtrace/ip.d
+%%ROOT%%/usr/lib/dtrace/ipfw.d
 %%ROOT%%/usr/lib/dtrace/mbuf.d
 %%ROOT%%/usr/lib/dtrace/psinfo.d
 %%ROOT%%/usr/lib/dtrace/sctp.d
@@ -2642,6 +2653,9 @@
 %%ROOT%%/usr/lib/libnetgraph.a
 %%ROOT%%/usr/lib/libnetgraph.so
 %%ROOT%%/usr/lib/libnetgraph.so.4
+%%ROOT%%/usr/lib/libnetmap.a
+%%ROOT%%/usr/lib/libnetmap.so
+%%ROOT%%/usr/lib/libnetmap.so.5
 %%ROOT%%/usr/lib/libngatm.a
 %%ROOT%%/usr/lib/libngatm.so
 %%ROOT%%/usr/lib/libngatm.so.4
