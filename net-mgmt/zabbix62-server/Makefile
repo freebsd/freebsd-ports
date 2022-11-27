@@ -1,5 +1,6 @@
 PORTNAME=	zabbix62
 DISTVERSION=	6.2.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -12,49 +13,46 @@ WWW=		https://www.zabbix.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
-
 CONFLICTS_INSTALL=	zabbix5[0-9]${PKGNAMESUFFIX} \
-		zabbix[0-9]${PKGNAMESUFFIX}
+			zabbix[0-9]${PKGNAMESUFFIX}
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
-CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --cache-file=${WRKSRC}/config.cache
-LIB_DEPENDS+=	libevent.so:devel/libevent
-USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}
+CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
+			--with-libevent=${LOCALBASE}
+LIB_DEPENDS+=		libevent.so:devel/libevent
+USE_RC_SUBR=		zabbix_${ZABBIX_BUILD}
 .else
-USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
+USE_RC_SUBR=		zabbix_${ZABBIX_BUILD}d
 .endif
 
-USES=		pkgconfig iconv
+USES=		iconv pkgconfig
 
 USERS=		zabbix
 GROUPS=		zabbix
 
-.if ${ZABBIX_BUILD} != "proxy"
-PLIST_SUB=	PROXY="@comment "
-.else
+.if ${ZABBIX_BUILD} == "proxy"
 PLIST_SUB=	PROXY=""
-PLIST_FILES+=	bin/zabbix_proxy_js
+.else
+PLIST_SUB=	PROXY="@comment "
 .endif
-
 .if ${ZABBIX_BUILD} == "server"
 PLIST_SUB+=	SERVER=""
-PLIST_FILES+=	bin/zabbix_js
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-PLIST_SUB+=	ZABBIX_BUILD=${ZABBIX_BUILD} DISTVERSION=${DISTVERSION}
+PLIST_SUB+=	DISTVERSION=${DISTVERSION} \
+		ZABBIX_BUILD=${ZABBIX_BUILD}
 SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD}
 
-MAKE_ARGS+=	ARCH=freebsd
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
+MAKE_ARGS+=		ARCH=freebsd
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--datadir=${ETCDIR} \
+			--enable-${ZABBIX_BUILD} \
 			--sysconfdir=${ETCDIR} \
-			--datadir=${ETCDIR} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
@@ -68,24 +66,26 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp
 
-OPTIONS_DEFINE=		IPV6 FPING CURL LDAP IPMI SSH NMAP LIBXML2 UNIXODBC
-
-OPTIONS_DEFAULT=	FPING CURL UNIXODBC MYSQL OPENSSL
+OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP LIBXML2 NMAP SSH UNIXODBC
+OPTIONS_DEFAULT=	CURL FPING MYSQL OPENSSL PCRE2 UNIXODBC
 OPTIONS_SUB=		yes
+OPTIONS_SINGLE=		DB PCRE SSL
+OPTIONS_SINGLE_DB?=	MDB5 MDB6 MYSQL MYSQLDV ORACLE PGSQL
+OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
+OPTIONS_SINGLE_PCRE=	PCRE1 PCRE2
 
-FPING_DESC=		Build/install fping for ping checks
-IPMI_DESC=		Support for IPMI checks
-LDAP_DESC=		Support for LDAP server checks
-NMAP_DESC=		Build/install nmap for o/s detection
-SSH_DESC=		Support for SSH-based checks
-UNIXODBC_DESC=		Support for database checks via ODBC
-LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
-MYSQL_DESC=		MySQL 8.0 database support
-MYSQLDV_DESC=		MYSQL DEFAULT_VERSIONS= (poudriere)
-
-OPTIONS_SINGLE=		DB SSL
-OPTIONS_SINGLE_DB?=	MDB5 MDB6 MYSQL MYSQLDV PGSQL ORACLE
-OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
+FPING_DESC=	Build/install fping for ping checks
+IPMI_DESC=	Support for IPMI checks
+LDAP_DESC=	Support for LDAP server checks
+NMAP_DESC=	Build/install nmap for o/s detection
+PCRE_DESC=	PCRE library to use
+PCRE1_DESC=	Use PCRE v1 library
+PCRE2_DESC=	Use PCRE v2 library
+SSH_DESC=	Support for SSH-based checks
+UNIXODBC_DESC=	Support for database checks via ODBC
+LIBXML2_DESC=	Support for libxml2 (required by monitoring VMware)
+MYSQL_DESC=	MySQL 8.0 database support
+MYSQLDV_DESC=	MYSQL DEFAULT_VERSIONS= (poudriere)
 
 MYSQL_CONFIGURE_ON=	--with-mysql
 MYSQL_USES+=		compiler:c11 mysql:80
@@ -100,6 +100,11 @@ MDB5_DESC=		Mariadb 10.5 database support
 MDB6_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MDB6_USES+=		compiler:c11 mysql:106m
 MDB6_DESC=		Mariadb 10.6 database support
+
+PCRE1_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE1_CONFIGURE_WITH=	libpcre
+PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+PCRE2_CONFIGURE_WITH=	libpcre2
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql
@@ -120,11 +125,11 @@ FPING_RUN_DEPENDS=	fping:net/fping
 SSH_CONFIGURE_WITH=	ssh2
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 
-UNIXODBC_CONFIGURE_WITH=unixodbc
-UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+UNIXODBC_CONFIGURE_WITH=	unixodbc
+UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 .elif ${ZABBIX_BUILD} == "agent"
-OPTIONS_SINGLE=	SSL
-OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
+OPTIONS_SINGLE=			SSL
+OPTIONS_SINGLE_SSL=		GNUTLS OPENSSL
 .endif # if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 
 CURL_DESC=		Support for web monitoring

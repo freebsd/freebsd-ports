@@ -28,7 +28,9 @@
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/images.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/schema.sql
 @sample %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
+%%PROXY%%bin/zabbix_proxy_js
 %%PROXY%%@dir %%ETCDIR%%/zabbix_proxy.conf.d
+%%SERVER%%bin/zabbix_js
 %%SERVER%%@dir %%ETCDIR%%/zabbix_server.conf.d
 %%SERVER%%@dir %%ETCDIR%%/zabbix/alertscripts
 man/man8/zabbix_%%ZABBIX_BUILD%%.8.gz
