@@ -28,6 +28,7 @@
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
     SUBDIR += apbs
+    SUBDIR += arbor
     SUBDIR += ascent
     SUBDIR += atompaw
     SUBDIR += avogadro2
