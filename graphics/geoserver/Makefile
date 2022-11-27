@@ -1,5 +1,5 @@
 PORTNAME=	geoserver
-PORTVERSION=	2.21.1
+PORTVERSION=	2.22.0
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -10,7 +10,7 @@ WWW=		https://geoserver.org/
 
 LICENSE=	APACHE20 BSD2CLAUSE EPL GPLv2 GPLv3 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/NOTICE.md
+LICENSE_FILE=	${WRKSRC}/license/NOTICE.txt
 
 USES=		cpe zip
 USE_JAVA=	yes
@@ -30,17 +30,17 @@ GEODIRS=	data_dir etc lib logs modules resources webapps
 PLIST_SUB=	BATIK=1.14 \
 		ECLIPSE=2.15.0 \
 		G="${GEOSERVERDIR:S,^${PREFIX}/,,}" \
-		GWC=1.21.1 \
-		IMAGEIO=1.4.5 \
+		GWC=1.22.0 \
+		IMAGEIO=1.4.7 \
 		JETTY=9.4.48.v20220622 \
 		JNA=5.12.1 \
 		JT1=1.6.0 \
-		JT=1.1.23 \
+		JT=1.1.24 \
 		MVER=${PORTVERSION} \
 		SI=2.0.1 \
 		SPRING=5.2.22 \
 		SPRINGS=5.1.13 \
-		VER1=27.1 \
+		VER1=28.0 \
 		VER3=1.1.3 \
 		WICKET=7.18.0
 
@@ -58,7 +58,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.sh ${STAGEDIR}${GEOSERVERDIR}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/start.jar ${STAGEDIR}${GEOSERVERDIR}/
 	${INSTALL_DATA} ${WRKSRC}/start.ini ${STAGEDIR}${GEOSERVERDIR}/
-	(cd ${WRKSRC} && ${INSTALL_DATA} NOTICE.md README.txt RUNNING.txt license/* \
+	(cd ${WRKSRC} && ${INSTALL_DATA} README.html RUNNING.html license/* \
 		VERSION.txt start.jar ${STAGEDIR}${GEOSERVERDIR})
 .for dir in ${GEODIRS}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${GEOSERVERDIR})
