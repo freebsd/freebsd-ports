@@ -27,3 +27,14 @@
  #else
    strcpy(buf, "./lite");
  #endif
+@@ -91,6 +98,10 @@ void set_macos_bundle_resources(lua_State *L);
+     #define ARCH_PROCESSOR "aarch64"
+   #elif __arm__
+     #define ARCH_PROCESSOR "arm"
++  #elif __powerpc64__
++    #define ARCH_PROCESSOR "ppc64"
++  #elif __powerpc__
++    #define ARCH_PROCESSOR "ppc"
+   #endif
+ 
+   #if _WIN32
