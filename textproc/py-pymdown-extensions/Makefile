@@ -1,5 +1,5 @@
 PORTNAME=	pymdown-extensions
-DISTVERSION=	9.4
+DISTVERSION=	9.5
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +22,8 @@ NO_ARCH=	yes
 # Avoid that pyproject.toml is read during setup otherwise build fails
 post-extract:
 	@${MV} ${WRKSRC}/pyproject.toml ${WRKSRC}/pyproject.toml.dist
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ to setup.py and then run "hatchling build".
 +
 +setup(
 +    name='pymdown-extensions',
-+    version='9.4',
++    version='%%DISTVERSION%%',
 +    description='Extension pack for Python Markdown.',
 +    long_description='',
 +    author_email='Isaac Muse <Isaac.Muse@gmail.com>',
