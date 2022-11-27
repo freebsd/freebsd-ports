@@ -10,6 +10,8 @@ WWW=		https://xgboost.ai/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: non-constant-expression cannot be narrowed from type 'unsigned long long' to 'size_t', see https://github.com/dmlc/xgboost/issues/8489
+
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
 
 USES=		cmake:testing compiler:c++11-lang localbase:ldflags
