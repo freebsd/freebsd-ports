@@ -1,3 +1,9 @@
+===>  License APACHE20 accepted by the user
+===>   gleam-0.25.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by gleam-0.25.0 for building
+===>  Extracting for gleam-0.25.0
+=> SHA256 Checksum OK for gleam-lang-gleam-v0.25.0_GH0.tar.gz.
+===>  Moving crates to /tmp//usr/ports/lang/gleam/work/gleam-0.25.0/cargo-crates
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.19 \
