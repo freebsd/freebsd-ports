@@ -1,6 +1,6 @@
 PORTNAME=	thermofun
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,10 +29,11 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 PYTHON_USES=		python
-PYTHON_USE=		PYTHON=pytest # 2 tests fail, see https://github.com/thermohub/thermofun/issues/37
+PYTHON_USE=		PYTHON=pytest
 PYTHON_CMAKE_BOOL=	TFUN_BUILD_PYTHON
 PYTHON_CMAKE_ON=	-DFREEBSD_STAGEDIR=${STAGEDIR}
-PYTHON_BUILD_DEPENDS=	pybind11>0:devel/pybind11
+PYTHON_BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
+			${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
 post-install-PYTHON-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/thermofun/PyThermoFun${PYTHON_EXT_SUFFIX}.so
