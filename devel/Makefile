@@ -5710,6 +5710,7 @@
     SUBDIR += radian
     SUBDIR += ragel
     SUBDIR += raknet
+    SUBDIR += random123
     SUBDIR += rang
     SUBDIR += range-v3
     SUBDIR += rapidcheck
