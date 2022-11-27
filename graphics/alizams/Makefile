@@ -28,5 +28,11 @@ CMAKE_ARGS=	-DALIZA_QT_VERSION=5
 
 CXXFLAGS_i386=	-msse2 # to fix this error: always_inline function '_mm_set1_ps' requires target feature 'sse'
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CXXFLAGS+=	-DDISABLE_SIMDMATH
+.endif
+
 .include <../../science/InsightToolkit/Makefile.version>
 .include <bsd.port.mk>
