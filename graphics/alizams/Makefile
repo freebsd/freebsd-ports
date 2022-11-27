@@ -11,6 +11,8 @@ WWW=		https://github.com/AlizaMedicalImaging/AlizaMS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: use of undeclared identifier '_mm_cvtsd_si64', see https://github.com/InsightSoftwareConsortium/ITK/issues/3771
+
 LIB_DEPENDS=	libITKCommon-${ITK_VER}.so:science/InsightToolkit
 TEST_DEPENDS=	googletest>0:devel/googletest
 
