@@ -1,6 +1,6 @@
-TIMESTAMP = 1651684893
-SHA256 (uim-uim-1.8.9.b.20220318-6d8fcc8_GH0.tar.gz) = 5fc53cca4e8505d71ea8e54cf5a0ad6398c7435be7fbbd7016623f36c5b2a565
-SIZE (uim-uim-1.8.9.b.20220318-6d8fcc8_GH0.tar.gz) = 4052477
+TIMESTAMP = 1669528723
+SHA256 (uim-uim-1.9.0.b.20220927-15f0788_GH0.tar.gz) = 263ee5f19320274c251bf817213e9e19c8d563ff7cebfb2064374890cfaf59b7
+SIZE (uim-uim-1.9.0.b.20220927-15f0788_GH0.tar.gz) = 4054813
 SHA256 (uim-sigscheme-beb8fbd_GH0.tar.gz) = c3ad5cbec2ff32bb97aed4273e7a61ee74b2a0da301490349798e475c894a25c
 SIZE (uim-sigscheme-beb8fbd_GH0.tar.gz) = 570745
 SHA256 (uim-libgcroots-d362356_GH0.tar.gz) = ae01589f5a7b49cf78418aca8679a7cd46a177a37d7776a4353b517d88cef451

@@ -1,5 +1,5 @@
 PORTNAME=	uim
-PORTVERSION=	1.8.9.b.${SNAPDATE}
+PORTVERSION=	1.9.0.b.${SNAPDATE}
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
@@ -21,11 +21,11 @@ USE_LDCONFIG=	yes
 USE_GNOME+=	glib20 intltool
 
 USE_GITHUB=	yes
-GH_TAGNAME=	6d8fcc8
+GH_TAGNAME=	15f0788
 GH_TUPLE=	uim:sigscheme:beb8fbd:sigscheme \
 		uim:libgcroots:d362356:libgcroots
 
-SNAPDATE=	20220318
+SNAPDATE=	20220927
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-maintainer-mode
