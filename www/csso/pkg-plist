@@ -1,5 +1,6 @@
 bin/csso
 %%DATADIR%%/USAGE
+%%DATADIR%%/VERSION
 %%DATADIR%%/bin/csso
 %%DATADIR%%/lib/compressor.js
 %%DATADIR%%/lib/csso.js
