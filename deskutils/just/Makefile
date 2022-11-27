@@ -10,6 +10,8 @@ WWW=		https://just.systems/
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: error[E0308]: mismatched types, see https://github.com/dotenv-rs/dotenv/issues/83
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	casey
