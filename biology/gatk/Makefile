@@ -1,6 +1,5 @@
 PORTNAME=	gatk
-DISTVERSION=	4.2.6.1
-PORTREVISION=	1
+DISTVERSION=	4.3.0.0
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -11,7 +10,6 @@ WWW=		https://gatk.broadinstitute.org/hc/en-us
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BROKEN=		fails to build: Build failed with an exception
 BROKEN_FreeBSD_12_powerpc64=	fails to build: String index out of range: -1
 
 BUILD_DEPENDS=	gradle:devel/gradle
