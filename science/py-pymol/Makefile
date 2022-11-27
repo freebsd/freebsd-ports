@@ -1,7 +1,7 @@
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
-PORTREVISION=	7
+DISTVERSION=	2.5.0-97
+DISTVERSIONSUFFIX=	-gd24468af
 CATEGORIES=	science biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,23 +25,25 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		compiler:c++11-lang gl gnome python:3.5+ shebangfix tar:bz2
-USE_GITHUB=	yes
-GH_ACCOUNT=	schrodinger
-GH_PROJECT=	${PORTNAME}-open-source
+USES=		compiler:c++11-lang gl gnome python:3.5+ tar:bz2
 USE_GL=		gl glew glu glut
 USE_GNOME=	libxml2
 USE_PYTHON=	distutils concurrent # autoplist is broken: https://github.com/schrodinger/pymol-open-source/issues/99
-SHEBANG_FILES=	test/show test/run test/cyg
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}chempy # https://github.com/schrodinger/pymol-open-source/issues/100
+USE_GITHUB=	yes
+GH_ACCOUNT=	schrodinger
+GH_PROJECT=	${PORTNAME}-open-source
 
-OPTIONS_SINGLE=	GUI
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}chempy # chempy port is unrelated, see https://github.com/schrodinger/pymol-open-source/issues/100
+
+CXXFLAGS+=	-DMSGPACK_NO_BOOST # in line with MSGPACK_USE_BOOST=OFF in devel/msgpack-cxx
+
+OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	QT5 TK
 OPTIONS_DEFAULT=	QT5
 
-QT5_USES=	pyqt:5
-QT5_USE=	PYQT=pyqt5:run
+QT5_USES=		pyqt:5
+QT5_USE=		PYQT=pyqt5:run
 
 post-patch-TK-on:
 	@${REINPLACE_CMD} -e ' \
