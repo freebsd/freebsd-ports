@@ -10,7 +10,7 @@ WWW=		https://www.moodle.org/
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle39-3.9.[0-9]* moodle310-3.10.[0-9]* moodle311-3.11.[0-9]*
+CONFLICTS=	moodle39-3.9.[0-9]* moodle311-3.11.[0-9]* moodle41-4.1
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd hash \
