@@ -1,29 +1,40 @@
 --- lib/ds_ldap_pla.php.orig	2021-12-12 02:35:51 UTC
 +++ lib/ds_ldap_pla.php
-@@ -371,7 +371,7 @@ class ldap_pla extends ldap {
+@@ -248,7 +248,7 @@ class ldap_pla extends ldap {
+ 		# Next, compare strictly by name first
+ 		else
+ 			foreach ($_SESSION[APPCONFIG]->getValue('appearance','multi_line_attributes') as $multi_line_attr_name)
+-				if (strcasecmp($multi_line_attr_name,$attr_name) == 0) {
++				if (strcasecmp((string) $multi_line_attr_name,(string) $attr_name) == 0) {
+ 					$return = true;
+ 					break;
+ 				}
+@@ -285,8 +285,8 @@ class ldap_pla extends ldap {
+ 	 * @return boolean
+ 	 */
+ 	private function isAttrTest($attr,$attrs,$except_dn) {
+-		$attr = trim($attr);
+-		if (! trim($attr) || ! count($attrs))
++		$attr = trim((string) $attr);
++		if (! trim((string) $attr) || ! count($attrs))
+ 			return false;
  
- 				$tree->addEntry($dn);
+ 		# Is the user excluded?
+@@ -294,7 +294,7 @@ class ldap_pla extends ldap {
+ 			return false;
  
--				set_cached_item($this->index,'tree','null',$tree);
-+				set_cached_item($this->index,$tree,'tree','null');
+ 		foreach ($attrs as $attr_name)
+-			if (strcasecmp($attr,trim($attr_name)) == 0)
++			if (strcasecmp((string) $attr,trim((string) (string) $attr_name)) == 0)
+ 				return true;
  
- 				run_hook('post_entry_create',array('server_id'=>$this->index,'method'=>$method,'dn'=>$dn,'attrs'=>$entry_array));
- 
-@@ -403,7 +403,7 @@ class ldap_pla extends ldap {
- 				$tree = get_cached_item($this->index,'tree');
- 				$tree->delEntry($dn);
- 
--				set_cached_item($this->index,'tree','null',$tree);
-+				set_cached_item($this->index,$tree,'tree','null');
- 
- 				run_hook('post_entry_delete',array('server_id'=>$this->index,'method'=>$method,'dn'=>$dn));
- 			}
-@@ -430,7 +430,7 @@ class ldap_pla extends ldap {
- 				$newdn = sprintf('%s,%s',$new_rdn,$container);
- 				$tree->renameEntry($dn,$newdn);
- 
--				set_cached_item($this->index,'tree','null',$tree);
-+				set_cached_item($this->index,$tree,'tree','null');
- 
- 				run_hook('post_entry_rename',array('server_id'=>$this->index,'method'=>$method,'dn'=>$dn,'rdn'=>$new_rdn,'container'=>$container));
- 			}
+ 		return false;
+@@ -674,7 +674,7 @@ class ldap_pla extends ldap {
+ 		if ($this->getValue('appearance', 'show_authz') && function_exists('ldap_exop_whoami')) {
+ 			$result = @ldap_exop_whoami($this->connect($method));
+ 			if ($result) // strip any dn: or u: prefix
+-				$result = preg_replace('/^(u|dn):/i', '', $result);
++				$result = preg_replace('/^(u|dn):/i', '',is_null( $result)? "": $result);
+ 			else // fall back to login on error
+ 				$result = $this->getLogin($method);
+ 			return $result;
