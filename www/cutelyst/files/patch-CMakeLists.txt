@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2022-11-27 12:59:53 UTC
++++ CMakeLists.txt
+@@ -160,7 +160,7 @@ if(UNIX AND NOT (APPLE OR HAIKU))
+     set(LINUX TRUE)
+ endif()
+ 
+-if (LINUX)
++if (LINUX OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+     if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+         # FreeBSD isn't Linux, but it gets claimed as Linux, because it is
+         # UNIX and not APPLE (see just above).
+@@ -179,7 +179,7 @@ if (LINUX)
+             get_filename_component(EPOLL_SYS_DIR ${EPOLL_H} DIRECTORY)
+             get_filename_component(EPOLL_DIR ${EPOLL_SYS_DIR} DIRECTORY)
+             include_directories(${EPOLL_DIR})
+-            # add_subdirectory(EventLoopEPoll)
++            add_subdirectory(EventLoopEPoll)
+         endif()
+         set(LINUX FALSE)
+     else()

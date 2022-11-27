@@ -1,0 +1,20 @@
+--- server/CMakeLists.txt.orig	2022-11-27 13:00:17 UTC
++++ server/CMakeLists.txt
+@@ -91,7 +91,7 @@ target_link_libraries(Cutelyst${PROJECT_VERSION_MAJOR}
+     PRIVATE Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::Core
+ )
+ 
+-if (LINUX)
++if (TARGET Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::EventLoopEPoll)
+ target_link_libraries(Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}Server
+     PRIVATE Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::EventLoopEPoll
+ )
+@@ -130,7 +130,7 @@ target_link_libraries(cutelystd
+     PRIVATE Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::Server
+ )
+ 
+-if (LINUX)
++if (TARGET Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::EventLoopEPoll)
+ target_link_libraries(cutelystd
+     PRIVATE Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::EventLoopEPoll
+ )

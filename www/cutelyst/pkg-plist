@@ -133,6 +133,9 @@ lib/libCutelyst3Qt5Authentication.so.%%SOVER%%
 lib/libCutelyst3Qt5CSRFProtection.so
 lib/libCutelyst3Qt5CSRFProtection.so.3
 lib/libCutelyst3Qt5CSRFProtection.so.%%SOVER%%
+lib/libCutelyst3Qt5EventLoopEpoll.so
+lib/libCutelyst3Qt5EventLoopEpoll.so.3
+lib/libCutelyst3Qt5EventLoopEpoll.so.%%SOVER%%
 lib/libCutelyst3Qt5Server.so
 lib/libCutelyst3Qt5Server.so.3
 lib/libCutelyst3Qt5Server.so.%%SOVER%%
