@@ -1,6 +1,6 @@
 PORTNAME=	scikit-sparse
 DISTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack
+LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack	\
+		libcholmod.so:math/suitesparse-cholmod
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
