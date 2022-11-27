@@ -1,3 +1,3 @@
-TIMESTAMP = 1569356099
-SHA256 (lightning-2.1.3.tar.gz) = ed856b866dc6f68678dc1151579118fab1c65fad687cf847fc2d94ca045efdc9
-SIZE (lightning-2.1.3.tar.gz) = 1074303
+TIMESTAMP = 1669560600
+SHA256 (lightning-2.2.0.tar.gz) = 4e3984ff1ccf0ba30a985211d40fc5c06b25f014ebdf3d80d0fe3d0c80dd7c0e
+SIZE (lightning-2.2.0.tar.gz) = 1386226
