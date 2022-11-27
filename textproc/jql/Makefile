@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.2
-PORTREVISION=	1
+DISTVERSION=	5.1.3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	anes-0.1.6 \
-		anyhow-1.0.65 \
+		anyhow-1.0.66 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -43,7 +42,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.20 \
-		clap-4.0.15 \
+		clap-4.0.27 \
 		clap_lex-0.2.3 \
 		clap_lex-0.3.0 \
 		colored_json-3.0.1 \
@@ -59,6 +58,8 @@ CARGO_CRATES=	anes-0.1.6 \
 		ctor-0.1.22 \
 		digest-0.10.5 \
 		either-1.6.1 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		event-listener-2.5.2 \
 		fastrand-1.7.0 \
 		futures-channel-0.3.21 \
@@ -70,14 +71,18 @@ CARGO_CRATES=	anes-0.1.6 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		indexmap-1.8.1 \
 		instant-0.1.12 \
+		io-lifetimes-1.0.2 \
+		is-terminal-0.4.0 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.121 \
+		libc-0.2.137 \
+		linux-raw-sys-0.1.3 \
 		log-0.4.16 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
@@ -87,10 +92,10 @@ CARGO_CRATES=	anes-0.1.6 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
-		pest-2.4.0 \
-		pest_derive-2.4.0 \
-		pest_generator-2.4.0 \
-		pest_meta-2.4.0 \
+		pest-2.5.0 \
+		pest_derive-2.5.0 \
+		pest_generator-2.5.0 \
+		pest_meta-2.5.0 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
 		plotters-0.3.1 \
@@ -99,10 +104,11 @@ CARGO_CRATES=	anes-0.1.6 \
 		polling-2.2.0 \
 		proc-macro2-1.0.36 \
 		quote-1.0.17 \
-		rayon-1.5.3 \
-		rayon-core-1.9.2 \
+		rayon-1.6.0 \
+		rayon-core-1.10.1 \
 		regex-1.5.5 \
 		regex-syntax-0.6.25 \
+		rustix-0.36.3 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
@@ -118,11 +124,11 @@ CARGO_CRATES=	anes-0.1.6 \
 		syn-1.0.90 \
 		termcolor-1.1.3 \
 		textwrap-0.15.0 \
-		thiserror-1.0.32 \
-		thiserror-impl-1.0.32 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
 		tinytemplate-1.2.1 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.3 \
+		ucd-trie-0.1.5 \
 		unicode-xid-0.2.2 \
 		value-bag-1.0.0-alpha.8 \
 		version_check-0.9.4 \
@@ -140,6 +146,14 @@ CARGO_CRATES=	anes-0.1.6 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 
