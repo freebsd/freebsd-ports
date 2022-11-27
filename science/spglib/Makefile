@@ -16,6 +16,8 @@ USE_LDCONFIG=	yes
 
 .if !exists(/usr/include/omp.h)
 CMAKE_OFF+=	USE_OMP
+.else
+FORTRAN_LDFLAGS=	-lomp # workaround for: undefined reference to `__kmpc_fork_call'
 .endif
 
 OPTIONS_DEFINE=		FORTRAN
@@ -24,7 +26,6 @@ OPTIONS_SUB=		yes
 
 FORTRAN_USES=		fortran
 FORTRAN_CMAKE_BOOL=	WITH_Fortran
-FORTRAN_LDFLAGS=	-lomp # workaround for: undefined reference to `__kmpc_fork_call'
 
 do-test: # from test/README.md
 	cd ${WRKSRC}/test && \
