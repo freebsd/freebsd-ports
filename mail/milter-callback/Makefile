@@ -28,10 +28,6 @@ LDFLAGS+=	-lmilter -lthr -L${LOCALBASE}/lib -lspf2
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	-fnested-functions
-.endif
-
 do-build:
 .for f in ${SRC_FILES}
 	${CC} ${CFLAGS} -c ${WRKSRC}/${f} -o ${WRKSRC}/${f:C/\.c/.o/}
