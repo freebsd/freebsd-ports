@@ -1,6 +1,6 @@
 PORTNAME=	scilab
 PORTVERSION=	6.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math cad java
 MASTER_SITES=	https://cgit.scilab.org/scilab/snapshot/
 

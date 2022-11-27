@@ -1,5 +1,6 @@
 PORTNAME=	igraph
 DISTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
