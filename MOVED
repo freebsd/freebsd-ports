@@ -17616,3 +17616,4 @@ devel/tokamak||2022-11-20|Has expired: Last release in 2008, abandoned upstream,
 net/libutp|net-p2p/libutp|2022-11-20|Moved to a more adequated category
 x11-wm/sway-devel|x11-wm/sway|2022-11-26|Out of date: use x11-wm/sway for now
 math/suitesparse-slip_lu|math/suitesparse-spex|2022-11-26|Renamed by upstream
+graphics/giblib||2022-11-27|Has expired: Last release in 2004, abandoned upstream, not used, website disappeared
