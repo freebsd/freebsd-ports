@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2022-11-15 15:19:19 UTC
++++ CMakeLists.txt
+@@ -1,3 +1,7 @@
++cmake_minimum_required(VERSION 3.19)
++
++find_package(Python3 ${arb_py_version} COMPONENTS Interpreter Development REQUIRED)
++
+ include(GNUInstallDirs)
+ 
+ set(PYBIND11_CPP_STANDARD -std=c++17)
+@@ -79,14 +83,14 @@ if (ARB_WITH_MPI)
+ endif()
+ 
+ # For unit tests on C++ side of Python wrappers
+-add_subdirectory(test)
++#add_subdirectory(test)
+ 
+ # Create the Python module in the build directory.
+ # The module contains the dynamic library, __init__.py and VERSION information.
+ set(python_mod_path "${CMAKE_CURRENT_BINARY_DIR}/arbor")
+ set_target_properties(pyarb PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${python_mod_path}")
+-file(COPY "${PROJECT_SOURCE_DIR}/python/__init__.py" DESTINATION "${python_mod_path}")
+-file(COPY "${PROJECT_SOURCE_DIR}/VERSION" DESTINATION "${python_mod_path}")
++file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/__init__.py" DESTINATION "${python_mod_path}")
++file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/VERSION" DESTINATION "${python_mod_path}")
+ 
+ # Set the installation path
+ 
