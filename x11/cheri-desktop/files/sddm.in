@@ -1,0 +1,2 @@
+. "%%PREFIX%%/etc/rc.conf.d/cheri-desktop"
+sddm_enable_defval="${cheri_desktop_enable}"

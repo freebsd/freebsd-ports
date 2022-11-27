@@ -40,4 +40,13 @@ RUN_DEPENDS+=	${LOCALBASE}/share/wallpapers/Elarun/metadata.desktop:x11-themes/p
 RUN_DEPENDS+=	${LOCALBASE}/lib/dri/panfrost_dri.so:graphics/mesa-dri
 .endif
 
+SUB_FILES=	sddm \
+		seatd
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.conf.d
+	${INSTALL_DATA} ${FILESDIR}/cheri-desktop ${STAGEDIR}${PREFIX}/etc/rc.conf.d
+	${INSTALL_DATA} ${WRKDIR}/sddm ${STAGEDIR}${PREFIX}/etc/rc.conf.d
+	${INSTALL_DATA} ${WRKDIR}/seatd ${STAGEDIR}${PREFIX}/etc/rc.conf.d
+
 .include <bsd.port.mk>

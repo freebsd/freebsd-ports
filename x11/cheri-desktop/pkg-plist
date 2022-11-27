@@ -1,0 +1,3 @@
+etc/rc.conf.d/cheri-desktop
+etc/rc.conf.d/sddm
+etc/rc.conf.d/seatd

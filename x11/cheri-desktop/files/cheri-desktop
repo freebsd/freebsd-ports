@@ -1,0 +1,1 @@
+: ${cheri_desktop_enable:=YES}
