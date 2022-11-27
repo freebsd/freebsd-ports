@@ -4,7 +4,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Client-side decorations library for Wayland client
-WWW=		https://gitlab.gnome.org/jadahl/libdecor
+WWW=		https://gitlab.freedesktop.org/libdecor/libdecor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,8 +17,7 @@ USES=		gnome meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo pango
 USE_LDCONFIG=	yes
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	jadahl
+GL_SITE=	https://gitlab.freedesktop.org
 GL_COMMIT=	4db201134ab51950a1c673d77d7c4f2f7c7b48fd
 MESON_ARGS=	-Ddemo=false
 
