@@ -8,17 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	MeCab IPA dictionary meta-port
 WWW=		https://taku910.github.io/mecab/
 
-LICENSE=	NAIST ICOT
-LICENSE_COMB=	multi
-LICENSE_NAME_NAIST=	NAIST
-LICENSE_NAME_ICOT=	ICOT
-LICENSE_PERMS_NAIST=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
 .if empty(PKGNAMESUFFIX)
-LICENSE_TEXT_NAIST=	See https://github.com/taku910/mecab/blob/master/mecab-ipadic/COPYING
-LICENSE_TEXT_ICOT=	See https://github.com/taku910/mecab/blob/master/mecab-ipadic/COPYING
-
 USES=	metaport
 OPTIONS_RADIO=	CHARSET
 OPTIONS_RADIO_CHARSET=	EUCJP SHIFTJIS UTF8
@@ -33,6 +23,12 @@ UTF8_RUN_DEPENDS=	ja-mecab-ipadic-utf8>0:japanese/mecab-ipadic-utf8
 .endif
 
 .if !empty(PKGNAMESUFFIX)
+LICENSE=	NAIST ICOT
+LICENSE_COMB=	multi
+LICENSE_NAME_NAIST=	NAIST
+LICENSE_NAME_ICOT=	ICOT
+LICENSE_PERMS_NAIST=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_NAIST=	${WRKSRC}/COPYING
 LICENSE_FILE_ICOT=	${WRKSRC}/COPYING
 
