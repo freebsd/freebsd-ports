@@ -1,1 +1,9 @@
 A script for cloning a non-relocatable virtualenv.
+
+Virtualenv provides a way to make virtualenv's relocatable which could then be
+copied as we wanted. However making a virtualenv relocatable this way breaks
+the no-site-packages isolation of the virtualenv as well as other aspects that
+come with relative paths and /usr/bin/env shebangs that may be undesirable.
+
+This script attempts to overcome these and other issues and provide a way to
+easily clone an existing virtualenv.
