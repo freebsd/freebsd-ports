@@ -5,7 +5,7 @@
  #include <unistd.h>
  #include <netinet/in.h>
 +#ifdef __FreeBSD__
-+#include <machine/exec.h>
++#define __LDPGSZ        4096
 +#endif
  
  #ifdef SOLARIS
