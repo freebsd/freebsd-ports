@@ -1,5 +1,6 @@
 PORTNAME=	libvmod-querystring
 DISTVERSION=	v2.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
