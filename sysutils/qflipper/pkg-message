@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+qFlipper must have access to /dev/cuaU* serial ports.
+Either add a user to the "dialer" group, or run it with sudo.
+EOM
+}
+]
