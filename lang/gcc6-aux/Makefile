@@ -7,16 +7,12 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot LOCAL/ericbsd:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.xz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 WWW=		http://www.dragonlace.net/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
-
-# PR 248674
-DEPRECATED=	Based on way end-of-life version of GCC, has issues, and is unmaintained
-EXPIRATION_DATE=2022-12-31
 
 .include "${.CURDIR}/Makefile.common"
 
