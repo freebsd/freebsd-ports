@@ -54,6 +54,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/brentsolve.cal
 %%FULL%%%%DATADIR%%/chi.cal
 %%FULL%%%%DATADIR%%/chrem.cal
+%%FULL%%%%DATADIR%%/comma.cal
 %%FULL%%%%DATADIR%%/constants.cal
 %%HELP%%%%DATADIR%%/custhelp/argv
 %%HELP%%%%DATADIR%%/custhelp/devnull
