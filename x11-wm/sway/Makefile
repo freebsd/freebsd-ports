@@ -24,7 +24,6 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	swaybg:x11/swaybg
 
 USES=		compiler:c11 gl gnome meson pkgconfig xorg
 USE_GITHUB=	yes
@@ -34,8 +33,8 @@ USE_XORG=	pixman
 GH_ACCOUNT=	swaywm
 MESON_ARGS=	-Dsd-bus-provider=basu
 
-OPTIONS_DEFINE=	BASU MANPAGES PIXBUF X11
-OPTIONS_DEFAULT=BASU MANPAGES PIXBUF X11
+OPTIONS_DEFINE=	BASU MANPAGES PIXBUF SWAYBG X11
+OPTIONS_DEFAULT=BASU MANPAGES PIXBUF SWAYBG X11
 OPTIONS_SUB=	yes
 
 BASU_DESC=		Tray in swaybar via basu
@@ -47,6 +46,9 @@ MANPAGES_MESON_ENABLED=	man-pages
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	gdk-pixbuf
+
+SWAYBG_DESC=		Default command to set background
+SWAYBG_RUN_DEPENDS=	swaybg:x11/swaybg
 
 X11_USE=		XORG=xcb
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
