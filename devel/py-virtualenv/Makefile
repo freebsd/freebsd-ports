@@ -1,6 +1,6 @@
 PORTNAME=	virtualenv
 PORTVERSION=	20.16.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -53,7 +53,8 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>0:devel/py-click-
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}towncrier>=22.8.0:textproc/py-towncrier@${PY_FLAVOR}
 DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
-DOCS_PORTDOCS=		*
+DOCS_PLIST_FILES=	man/man1/virtualenv.1.gz
+DOCS_PORTDOCS=		* .buildinfo
 # Note: we install a temporary egg_info so that virtualenv can discover its stuff,
 # while sphinx builds docs. Otherwise an Exception occurs:
 #
@@ -61,12 +62,11 @@ DOCS_PORTDOCS=		*
 #    default=next(iter(choices)),
 # StopIteration
 #
-DOCS_VARS=	PYDISTUTILS_BUILD_TARGET="build install_egg_info --install-dir build/lib build_sphinx"
+DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="install_egg_info --install-dir build/lib"
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/build/sphinx/html && \
-	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -or -name objects.inv")
+	${LOCALBASE}/bin/sphinx-build -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
+	${LOCALBASE}/bin/sphinx-build -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.pre.mk>
 
