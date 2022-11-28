@@ -495,6 +495,9 @@ lib/nim/wrappers/pcre.nim
 lib/nim/wrappers/postgres.nim
 lib/nim/wrappers/sqlite3.nim
 lib/nim/wrappers/tinyc.nim
+share/nim/dochack/dochack.nim
+share/nim/dochack/dochack.js
+share/nim/dochack/fuzzysearch.nim
 %%PORTDOCS%%%%DOCSDIR%%/advopt.txt
 %%PORTDOCS%%%%DOCSDIR%%/apis.rst
 %%PORTDOCS%%%%DOCSDIR%%/astspec.txt

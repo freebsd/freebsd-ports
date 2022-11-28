@@ -1,5 +1,5 @@
 PORTNAME=	nim
-DISTVERSION=	1.6.8
+DISTVERSION=	1.6.10
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -18,8 +18,6 @@ TEST_DEPENDS=	node>=0:www/node
 USES=		compiler:c11 cpe tar:xz
 
 CPE_VENDOR=	nim-lang
-
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DOCS TOOLS
 OPTIONS_DEFAULT=	TOOLS
@@ -46,6 +44,13 @@ post-patch:
 	@${REINPLACE_CMD} -e s/%%GCC_DEFAULT%%/${GCC_DEFAULT}/ \
 		${WRKSRC}/build.sh ${WRKSRC}/config/nim.cfg
 .endif
+	# Make a fake nimdoc.css so that we can change the expected target
+	# to where it should be, instead of where the nim project hard
+	# code it to be.
+	${MKDIR} ${WRKSRC}/share/doc/nim
+	${LN} -s ${WRKSRC}/doc/nimdoc.css ${WRKSRC}/share/doc/nim/nimdoc.css
+	${MKDIR} ${WRKSRC}/share/nim
+	${LN} -s ${WRKSRC}/tools/dochack ${WRKSRC}/share/nim/dochack
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
@@ -93,6 +98,10 @@ do-install-TOOLS-on:
 .for t in ${TLIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${t} ${STAGEDIR}${PREFIX}/bin
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.js ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/fuzzysearch.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release \
