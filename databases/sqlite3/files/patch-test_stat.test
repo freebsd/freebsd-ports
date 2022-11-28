@@ -1,0 +1,11 @@
+--- test/stat.test.orig	2022-11-27 11:50:01 UTC
++++ test/stat.test
+@@ -140,7 +140,7 @@ do_execsql_test stat-2.1agg {
+   SELECT * FROM dbstat WHERE aggregate=TRUE ORDER BY name;
+ } [list \
+   sqlite_autoindex_t3_1 {}  5 {} 32  3898 1065 132 {}  5120 \
+-  sqlite_schema         {}  1 {}  2    84  824  49 {}  1024 \
++  sqlite_schema         {}  1 {}  2    83  825  49 {}  1024 \
+   t3                    {} 17 {} 47 11188 5815 370 {} 17408 \
+ ]
+ 

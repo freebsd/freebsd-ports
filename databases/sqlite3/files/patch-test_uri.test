@@ -1,0 +1,15 @@
+--- test/uri.test.orig	2022-11-27 09:14:11 UTC
++++ test/uri.test
+@@ -301,9 +301,9 @@ foreach {tn uri res} {
+   1     "file://localhost/PWD/test.db"   {not an error}
+   2     "file:///PWD/test.db"            {not an error}
+   3     "file:/PWD/test.db"              {not an error}
+-  4     "file://l%6Fcalhost/PWD/test.db" {invalid uri authority: l%6Fcalhost}
+-  5     "file://lbcalhost/PWD/test.db"   {invalid uri authority: lbcalhost}
+-  6     "file://x/PWD/test.db"           {invalid uri authority: x}
++  4     "file://l%6Fcalhost/PWD/test.db" {unable to open database file}
++  5     "file://lbcalhost/PWD/test.db"   {unable to open database file}
++  6     "file://x/PWD/test.db"           {unable to open database file}
+ } {
+ 
+   if {$tcl_platform(platform)=="windows"} {
