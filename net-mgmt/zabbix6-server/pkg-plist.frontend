@@ -815,7 +815,6 @@
 %%WWWDIR%%/include/classes/html/CSelectOption.php
 %%WWWDIR%%/include/classes/html/CSelectOptionGroup.php
 %%WWWDIR%%/include/classes/html/CSeverity.php
-%%WWWDIR%%/include/classes/html/CSeverityCheckBoxList.php
 %%WWWDIR%%/include/classes/html/CSimpleButton.php
 %%WWWDIR%%/include/classes/html/CSortable.php
 %%WWWDIR%%/include/classes/html/CSpan.php

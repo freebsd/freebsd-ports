@@ -28,18 +28,17 @@ zabbix to log in as a Zabbix superuser.
 
 For use NMAP please edit sudoers.
 
-This is a Zabbix Standard release!
+This is a Zabbix LTS release!
 
-Standard Zabbix releases are supported for Zabbix customers during six (6)
-months of Full Support (general, critical and security issues) until the next
-Zabbix stable release, plus one (1) additional month of Limited Support
-(critical and security issues only). Zabbix Standard version release will result
-in change of the second version number.
+Zabbix LTS releases are supported for Zabbix customers during five (5) years
+i.e. 3 years of Full Support (general, critical and security issues) and 2
+additional years of Limited Support (critical and security issues only).
+Zabbix LTS version release will result in change of the first version number.
 
-Stable release:         Zabbix 6.0
-Release date:           May 17, 2021
-End of Full Support:    Nov 30, 2021
-End of Limited Support: Dec 31, 2021
+Release name:           Zabbix 6.0 LTS
+Release date:           2022-02-08
+End of Full Support:    2025-02-28
+End of Limited Support: 2027-02-28
 
 Zabbix Life Cycle & Release Policy:
 https://www.zabbix.com/life_cycle_and_release_policy

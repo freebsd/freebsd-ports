@@ -1,6 +1,5 @@
 PORTNAME=	zabbix6
-DISTVERSION=	6.0.10
-PORTREVISION=	1
+DISTVERSION=	6.0.11
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -56,37 +55,54 @@ CONFIGURE_ARGS+=	--datadir=${ETCDIR} \
 			--sysconfdir=${ETCDIR} \
 			--with-iconv=${ICONV_PREFIX}
 
-.if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
+PORTSCOUT=	limit:^6\.0\.
+
+.if ${ZABBIX_BUILD} != "java"
+OPTIONS_DEFAULT+=	PCRE2
+OPTIONS_SINGLE+=	PCRE
+OPTIONS_SINGLE_PCRE=	PCRE1 PCRE2
+PCRE_DESC=		PCRE library to use
+PCRE1_DESC=		Use PCRE v1 library
+PCRE2_DESC=		Use PCRE v2 library
+
+PCRE1_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE1_CONFIGURE_WITH=	libpcre
+PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+PCRE2_CONFIGURE_WITH=	libpcre2
+
+.if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-PORTSCOUT=	limit:^6\.0\.
 
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp
 
+OPTIONS_DEFAULT+=	CURL FPING MYSQL OPENSSL UNIXODBC
 OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP LIBXML2 NMAP SSH UNIXODBC
-OPTIONS_DEFAULT=	CURL FPING MYSQL OPENSSL PCRE2 UNIXODBC
-OPTIONS_SUB=		yes
-OPTIONS_SINGLE=		DB PCRE SSL
+OPTIONS_SINGLE+=	DB SSL
 OPTIONS_SINGLE_DB?=	MDB5 MDB6 MYSQL MYSQLDV ORACLE PGSQL
 OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
-OPTIONS_SINGLE_PCRE=	PCRE1 PCRE2
+OPTIONS_SUB=		yes
 
 FPING_DESC=	Build/install fping for ping checks
 IPMI_DESC=	Support for IPMI checks
 LDAP_DESC=	Support for LDAP server checks
 NMAP_DESC=	Build/install nmap for o/s detection
-PCRE_DESC=	PCRE library to use
-PCRE1_DESC=	Use PCRE v1 library
-PCRE2_DESC=	Use PCRE v2 library
 SSH_DESC=	Support for SSH-based checks
 UNIXODBC_DESC=	Support for database checks via ODBC
 LIBXML2_DESC=	Support for libxml2 (required by monitoring VMware)
 MYSQL_DESC=	MySQL 8.0 database support
 MYSQLDV_DESC=	MYSQL DEFAULT_VERSIONS= (poudriere)
+
+FPING_RUN_DEPENDS=	fping:net/fping
+
+IPMI_CONFIGURE_WITH=	openipmi
+IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
+
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
 
 MYSQL_CONFIGURE_ON=	--with-mysql
 MYSQL_USES+=		compiler:c11 mysql:80
@@ -102,10 +118,7 @@ MDB6_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MDB6_USES+=		compiler:c11 mysql:106m
 MDB6_DESC=		Mariadb 10.6 database support
 
-PCRE1_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE1_CONFIGURE_WITH=	libpcre
-PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
-PCRE2_CONFIGURE_WITH=	libpcre2
+ORACLE_CONFIGURE_WITH=	oracle
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql
@@ -113,34 +126,22 @@ PGSQL_USES+=		pgsql
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_USES+=		sqlite:3
 
-ORACLE_CONFIGURE_WITH=	oracle
-
-LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
-
-IPMI_CONFIGURE_WITH=	openipmi
-IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
-
-FPING_RUN_DEPENDS=	fping:net/fping
-
 SSH_CONFIGURE_WITH=	ssh2
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 UNIXODBC_CONFIGURE_WITH=	unixodbc
 UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 .elif ${ZABBIX_BUILD} == "agent"
-OPTIONS_SINGLE=			SSL
+OPTOINS_DEFINE+=		PCRE
+OPTIONS_SINGLE+=		SSL
 OPTIONS_SINGLE_SSL=		GNUTLS OPENSSL
-.endif # if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
+.endif # if ${ZABBIX_BUILD} != "agent"
 
 CURL_DESC=		Support for web monitoring
 CURL_CONFIGURE_WITH=	libcurl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 IPV6_CONFIGURE_ENABLE=	ipv6
-
-NMAP_RUN_DEPENDS=	nmap:security/nmap \
-			sudo:security/sudo
 
 LIBXML2_CONFIGURE_WITH=	libxml2=${LOCALBASE}
 LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
@@ -149,6 +150,9 @@ MODBUS_DESC=		Support for Modbus checks
 MODBUS_CONFIGURE_WITH=	libmodbus
 MODBUS_LIB_DEPENDS=	libmodbus.so:comms/libmodbus
 
+NMAP_RUN_DEPENDS=	nmap:security/nmap \
+			sudo:security/sudo
+
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USES=		ssl
 OPENSSL_VARS=		BROKEN_SSL="libressl libressl-devel" \
@@ -156,6 +160,8 @@ OPENSSL_VARS=		BROKEN_SSL="libressl libressl-devel" \
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+
+.endif # if ${ZABBIX_BUILD} != "java"
 
 .include <bsd.port.pre.mk>
 
@@ -172,18 +178,24 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/tmp/zabbix_server.pid#/var/run/zabbix/zabbix_server.pid#g' \
 		${WRKSRC}/conf/zabbix_server.conf \
 		${WRKSRC}/src/zabbix_server/server.c
+	@${REINPLACE_CMD} -e 's#/tmp/zabbix_server.log#/var/log/zabbix/zabbix_server.log#g' \
+		${WRKSRC}/conf/zabbix_server.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "proxy"
 	@${REINPLACE_CMD} -e 's#/tmp/zabbix_proxy.pid#/var/run/zabbix/zabbix_proxy.pid#g' \
 		${WRKSRC}/conf/zabbix_proxy.conf \
 		${WRKSRC}/src/zabbix_proxy/proxy.c
+	@${REINPLACE_CMD} -e 's#/tmp/zabbix_proxy.log#/var/log/zabbix/zabbix_proxy.log#g' \
+		${WRKSRC}/conf/zabbix_proxy.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "agent"
 	@${REINPLACE_CMD} -e 's#/tmp/zabbix_agentd.pid#/var/run/zabbix/zabbix_agentd.pid#g' \
 		${WRKSRC}/conf/zabbix_agentd.conf \
 		${WRKSRC}/src/zabbix_agent/zabbix_agentd.c
+	@${REINPLACE_CMD} -e 's#/tmp/zabbix_agentd.log#/var/log/zabbix/zabbix_agentd.log#g' \
+		${WRKSRC}/conf/zabbix_agentd.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "java"
