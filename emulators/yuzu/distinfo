@@ -21,5 +21,7 @@ SHA256 (kinetiknz-cubeb-cubeb-0.2-1350-gf79e0cf_GH0.tar.gz) = 8629757290774a34ed
 SIZE (kinetiknz-cubeb-cubeb-0.2-1350-gf79e0cf_GH0.tar.gz) = 220847
 SHA256 (yhirose-cpp-httplib-v0.10.8-1-g305a7ab_GH0.tar.gz) = 2b8ebbe60c5fab1254e454518108cb8da5ee3a07e1cf9f432448d985efe4a003
 SIZE (yhirose-cpp-httplib-v0.10.8-1-g305a7ab_GH0.tar.gz) = 620778
+SHA256 (llvm-llvm-project-llvmorg-13.0.1_GH0.tar.gz) = 09c50d558bd975c41157364421820228df66632802a4a6a7c9c17f86a7340802
+SIZE (llvm-llvm-project-llvmorg-13.0.1_GH0.tar.gz) = 147290251
 SHA256 (c17d71240b23.patch) = 4aaf5522ec3f7d393cec59638220d6142489c4e946060ec94444ca3f47e2b2a7
 SIZE (c17d71240b23.patch) = 7562

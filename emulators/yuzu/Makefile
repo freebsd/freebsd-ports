@@ -1,5 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20221216
+PORTREVISION=	1
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -35,6 +36,8 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libopus.so:audio/opus \
+		libinih.so:devel/inih \
+		libfmt.so:devel/libfmt \
 		libavcodec.so:multimedia/ffmpeg \
 		libenet.so:net/enet
 TEST_DEPENDS=	catch>0:devel/catch
@@ -53,15 +56,13 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		yhirose:cpp-httplib:v0.10.8-1-g305a7ab:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing compiler:c++17-lang elfctl localbase:ldflags pkgconfig sdl ssl
-USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
 USE_SDL=	sdl2
 CMAKE_ON=	Boost_USE_STATIC_LIBS
 CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_OFF=	YUZU_CHECK_SUBMODULES YUZU_USE_EXTERNAL_SDL2
-CMAKE_OFF+=	YUZU_USE_PRECOMPILED_HEADERS DYNARMIC_USE_PRECOMPILED_HEADERS # GCC
 CMAKE_OFF+=	${CMAKE_TESTING_ON}
 CMAKE_TESTING_ON=	YUZU_TESTS
-LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict, requires files/patch-fmt
+CXXFLAGS+=	-D_LIBCPP_HAS_NO_INCOMPLETE_RANGES # common/polyfill_ranges.h
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 ELF_FEATURES=	${PLIST_FILES:Mbin/*:S/^/+wxneeded:/}
 PLIST_FILES=	bin/${PORTNAME}-cmd \
@@ -122,5 +123,21 @@ post-patch:
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
 		${WRKSRC}/CMakeLists.txt
+
+# libc++ >= 14 defines std::ranges outside -D_LIBCPP_HAS_NO_INCOMPLETE_RANGES
+.if exists(/usr/include/c++/v1/__memory/concepts.h)
+# XXX Move into separate port and standardize via USES
+GH_TUPLE+=	llvm:llvm-project:llvmorg-13.0.1:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
+# Don't link against old libc++ to avoid ABI mismatch in Qt
+#LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
+
+pre-configure:	bundled-libcxx
+bundled-libcxx:
+	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS:M*Ninja*} \
+		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
+		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
+.endif
 
 .include <bsd.port.mk>
