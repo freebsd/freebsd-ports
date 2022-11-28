@@ -26,12 +26,10 @@ GH_PROJECT=	AlizaMS
 
 CMAKE_ARGS=	-DALIZA_QT_VERSION=5
 
-CXXFLAGS_i386=	-msse2 # to fix this error: always_inline function '_mm_set1_ps' requires target feature 'sse'
-
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != amd64 && ${ARCH} != i386
-CXXFLAGS+=	-DDISABLE_SIMDMATH
+.if ${ARCH} != amd64
+CXXFLAGS+=	-DDISABLE_SIMDMATH # i386 also needs disabling SIND, see https://github.com/InsightSoftwareConsortium/ITK/issues/3771#issuecomment-1328839390
 .endif
 
 .include <../../science/InsightToolkit/Makefile.version>
