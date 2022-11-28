@@ -1,12 +1,12 @@
 PORTNAME=		hitch
-PORTVERSION=		1.7.2
+PORTVERSION=		1.7.3
 CATEGORIES=		security
 MASTER_SITES=		http://hitch-tls.org/source/ \
 			ZI
 
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		TLS proxy to forward connections to an unencrypted backend
-WWW=		https://github.com/varnish/hitch/
+WWW=			https://github.com/varnish/hitch/
 
 LICENSE=		BSD2CLAUSE
 
