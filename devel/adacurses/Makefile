@@ -1,19 +1,21 @@
 PORTNAME=	adacurses
-DISTVERSION=	20180127
+DISTVERSION=	20211021
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Ada95 bindings for ncurses
 WWW=		https://invisible-island.net/ncurses/ncurses-Ada95.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README
 
-EXPIRATION_DATE=2022-12-31
+#BUILD_DEPENDS=	gsed:textproc/gsed
+#BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
-USES=		ada gmake pkgconfig tar:tgz
+USES=		ada autoreconf gmake pkgconfig tar:tgz
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
 		--with-ada-objects=${PREFIX}/lib/adacurses \
