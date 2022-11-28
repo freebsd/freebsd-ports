@@ -1,5 +1,5 @@
 PORTNAME=	girara
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/ \
 		https://pwmt.org/projects/girara/download/
@@ -10,18 +10,19 @@ WWW=		https://pwmt.org/projects/girara/
 
 USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_LDCONFIG=	yes
 
 PATHFIX_MAKEFILEIN=	Makefile
 LIBDIR=			${PREFIX}/lib
 
-OPTIONS_DEFINE=		JSONC NLS NOTIFY
+OPTIONS_DEFINE=		JSON NLS NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
-JSONC_DESC=		Support json configuration dump
+JSON_DESC=		Support json configuration dump
 
 OPTIONS_SUB=		yes
 
-JSONC_LIB_DEPENDS=	libjson-c.so:devel/json-c
-JSONC_MESON_ENABLED=	json
+JSON_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
+JSON_MESON_ENABLED=	json
 
 NLS_USES=		gettext
 
