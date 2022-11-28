@@ -89,6 +89,6 @@ lib/cmake/spdlog/spdlogConfigTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/spdlog/spdlogConfigTargets.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
 lib/libspdlog.so
-lib/libspdlog.so.1
+lib/libspdlog.so.1.11
 lib/libspdlog.so.%%SOVERSION%%
 libdata/pkgconfig/spdlog.pc
