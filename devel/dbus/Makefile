@@ -10,6 +10,10 @@ WWW=		https://www.freedesktop.org/Software/dbus
 
 LICENSE=	GPLv2
 
+# Fix for bounded varargs
+PATCH_SITES=	https://gitlab.freedesktop.org/dbus/dbus/-/commit/
+PATCHFILES=	ae03bcdb1116a953d4d33661cf878e68cdfbb9fd.patch:-p1
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cpe gmake libtool localbase pkgconfig python:build shebangfix tar:xz
