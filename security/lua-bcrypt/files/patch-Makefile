@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-11-29 22:22:33 UTC
++++ Makefile
+@@ -1,5 +1,7 @@
++CFLAGS+=-fPIC -Wall -Wextra
++
+ all:
+-	luarocks make CFLAGS="-O2 -fPIC -Wall -Wextra" --local
++	luarocks make --pack-binary-rock CFLAGS="${CFLAGS}"
+
+ debug:
+ 	luarocks make CFLAGS="-fPIC -g -Wall -Wextra" --local
