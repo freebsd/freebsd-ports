@@ -48,8 +48,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 19;
-my $micro = 14;
+my $minor = 20;
+my $micro = 0;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -131,7 +131,7 @@ if (defined $ENV{'PORTSDIR'}) {
 		$portsdir = $mconf_portsdir;
 	}
 }
-$ENV{'PL_SVN_IGNORE'} //= '';
+$ENV{'PL_GIT_IGNORE'} //= '';
 my $mfile_moved = "${portsdir}/MOVED";
 my $mfile_uids = "${portsdir}/UIDs";
 my $mfile_gids = "${portsdir}/GIDs";
@@ -338,12 +338,12 @@ if ($committer) {
 				    "If it still needs to be there, put a dummy comment ".
 					"to state that the file is intentionally left empty.");
 		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) {
-			&perror("FATAL", $fullname, -1, "empty directory should be removed.") unless ($fullname =~ /^\.svn/ || $fullname =~ /^\.git/);
+			&perror("FATAL", $fullname, -1, "empty directory should be removed.") unless ($fullname =~ /^\.git/);
 		} elsif (/^\./) {
 			&perror("WARN", $fullname, -1, "dotfiles are not preferred. ".
 					"If this file is a dotfile to be installed as an example, ".
 					"consider importing it as \"dot$_\".") unless
-					(-d && ($_ eq '.svn' || $_ eq '.git'));
+					(-d && $_ eq '.git');
 		} elsif (/[^-.a-zA-Z0-9_\+]/) {
 			&perror("WARN", $fullname, -1, "only use characters ".
 					"[-_.a-zA-Z0-9+] for patch or script names.");
@@ -356,27 +356,20 @@ if ($committer) {
 		} elsif (/README.html/) {
 			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
 					"README.html files before committing the port.");
-		} elsif (($_ eq '.svn' || $_ eq '.git') && -d) {
+		} elsif ($_ eq '.git' && -d) {
 			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
-				"Subversion files before committing the port.");
-
-			$File::Find::prune = 1;
-		} elsif ($_ eq 'CVS' && -d) {
-			if ($newport) {
-				&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
-						"CVS directories before importing the new port.");
-			}
+				"git files before committing the port.");
 
 			$File::Find::prune = 1;
 		} elsif (-f) {
 			my $fullpath = $makevar{'.CURDIR'}.'/'.$fullname;
-			my $result = `type svn >/dev/null 2>&1 && svn -q status $fullpath`;
+			my $result = `type git >/dev/null 2>&1 && git status --porcelain $fullpath`;
 
 			chomp $result;
 			if (substr($result, 0, 1) eq '?') {
-				&perror("FATAL", "", -1, "$fullname not under SVN.")
-					unless (eval { /$ENV{'PL_SVN_IGNORE'}/, 1 } &&
-						/$ENV{'PL_SVN_IGNORE'}/);
+				&perror("FATAL", "", -1, "$fullname not under git.")
+					unless (eval { /$ENV{'PL_GIT_IGNORE'}/, 1 } &&
+						/$ENV{'PL_GIT_IGNORE'}/);
 			}
 		}
 	}
@@ -445,6 +438,9 @@ sub checkdistinfo {
 		}
 		if (/(\S+)\s+\((\S+)\)\s+=\s+(\S+)/) {
 			my ($tag, $path, $value) = ($1, $2, $3);
+			if ($records{$path}{$tag}) {
+				&perror("FATAL", $file, $., "duplicate file listed.");
+			}
 			$records{$path}{$tag} = $value;
 
 			if (!$algorithms{$tag} && $tag ne "SIZE") {
