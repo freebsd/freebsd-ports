@@ -5,6 +5,7 @@ bin/ffdec
 %%DATADIR%%/lib/avi.jar
 %%DATADIR%%/lib/avi.montemedia.license.txt
 %%DATADIR%%/lib/cmykjpeg.jar
+%%DATADIR%%/lib/ddsreader.jar
 %%DATADIR%%/lib/ffdec_lib.jar
 %%DATADIR%%/lib/ffdec_lib.license.txt
 %%DATADIR%%/lib/flamingo-6.2.jar
