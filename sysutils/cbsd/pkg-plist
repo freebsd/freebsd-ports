@@ -198,7 +198,7 @@ cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-13-STABLE.conf
 cbsd/etc/defaults/vm-freebsd-MidnightBSD-x64-2.conf
 cbsd/etc/defaults/vm-freebsd-OPNsense-22-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-CORE-x64-13.conf
-cbsd/etc/defaults/vm-freebsd-XigmaNAS-12.conf
+cbsd/etc/defaults/vm-freebsd-XigmaNAS-13.conf
 cbsd/etc/defaults/vm-freebsd-cloud-firestarter-ufs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-12.3.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.0.conf
@@ -246,6 +246,7 @@ cbsd/etc/defaults/vm-linux-cloud-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-36-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-Fedora-37-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-FreePBX-16-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-HomeAssistant-8.conf
 cbsd/etc/defaults/vm-linux-cloud-Kali-2022-amd64.conf
