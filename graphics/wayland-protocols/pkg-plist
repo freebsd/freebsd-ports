@@ -6,6 +6,7 @@ libdata/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/staging/drm-lease/drm-lease-v1.xml
 %%DATADIR%%/staging/ext-idle-notify/ext-idle-notify-v1.xml
 %%DATADIR%%/staging/ext-session-lock/ext-session-lock-v1.xml
+%%DATADIR%%/staging/fractional-scale/fractional-scale-v1.xml
 %%DATADIR%%/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
 %%DATADIR%%/staging/tearing-control/tearing-control-v1.xml
 %%DATADIR%%/staging/xdg-activation/xdg-activation-v1.xml
