@@ -1,5 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.19.8
+PORTVERSION=	2.19.10
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
