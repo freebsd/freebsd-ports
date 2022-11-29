@@ -320,8 +320,8 @@ include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
 include/thrift/lib/cpp2/op/detail/Compare.h
 include/thrift/lib/cpp2/op/detail/ContainerOp.h
-include/thrift/lib/cpp2/op/detail/Copy.h
 include/thrift/lib/cpp2/op/detail/ContainerPatch.h
+include/thrift/lib/cpp2/op/detail/Copy.h
 include/thrift/lib/cpp2/op/detail/Create.h
 include/thrift/lib/cpp2/op/detail/Encode.h
 include/thrift/lib/cpp2/op/detail/Get.h
@@ -463,6 +463,7 @@ include/thrift/lib/cpp2/transport/core/ClientConnectionIf.h
 include/thrift/lib/cpp2/transport/core/EnvelopeUtil.h
 include/thrift/lib/cpp2/transport/core/ManagedConnectionIf.h
 include/thrift/lib/cpp2/transport/core/RequestStateMachine.h
+include/thrift/lib/cpp2/transport/core/RpcMetadataPlugins.h
 include/thrift/lib/cpp2/transport/core/RpcMetadataUtil.h
 include/thrift/lib/cpp2/transport/core/ThriftChannelIf.h
 include/thrift/lib/cpp2/transport/core/ThriftClient.h
@@ -527,6 +528,7 @@ include/thrift/lib/cpp2/type/Any.h
 include/thrift/lib/cpp2/type/AnyValue.h
 include/thrift/lib/cpp2/type/BaseType.h
 include/thrift/lib/cpp2/type/Id.h
+include/thrift/lib/cpp2/type/Json.h
 include/thrift/lib/cpp2/type/Name.h
 include/thrift/lib/cpp2/type/NativeType.h
 include/thrift/lib/cpp2/type/Protocol.h
@@ -541,6 +543,7 @@ include/thrift/lib/cpp2/type/UniversalHashAlgorithm.h
 include/thrift/lib/cpp2/type/UniversalName.h
 include/thrift/lib/cpp2/type/detail/AnyType.h
 include/thrift/lib/cpp2/type/detail/AnyValue.h
+include/thrift/lib/cpp2/type/detail/Json.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/NativeType.h
 include/thrift/lib/cpp2/type/detail/Runtime.h
