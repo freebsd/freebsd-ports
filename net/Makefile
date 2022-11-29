@@ -983,7 +983,6 @@
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-xmlrpc
-    SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += php74-ldap
     SUBDIR += php74-soap
