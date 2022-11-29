@@ -2081,6 +2081,7 @@
     SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rack22
     SUBDIR += rubygem-rack_csrf
+    SUBDIR += rubygem-rackup
     SUBDIR += rubygem-rails-settings-cached
     SUBDIR += rubygem-rails-settings-cached-rails5
     SUBDIR += rubygem-rails-settings-cached-rails50
