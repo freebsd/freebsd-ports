@@ -1,5 +1,5 @@
 PORTNAME=	libspiro
-DISTVERSION=	20200505
+DISTVERSION=	20221101
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/fontforge/${PORTNAME}/releases/download/${DISTVERSION}/
@@ -13,13 +13,13 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool pathfix
-
 CPE_VENDOR=	libspiro_project
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.mk>
