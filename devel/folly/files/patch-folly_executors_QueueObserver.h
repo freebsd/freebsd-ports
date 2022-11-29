@@ -1,10 +1,10 @@
 - workaround for https://github.com/facebook/folly/issues/1637
 
---- folly/executors/QueueObserver.h.orig	2021-08-26 23:37:53 UTC
+--- folly/executors/QueueObserver.h.orig	2022-11-25 05:13:23 UTC
 +++ folly/executors/QueueObserver.h
-@@ -23,6 +23,8 @@
- 
- #include <folly/Portability.h>
+@@ -26,6 +26,8 @@
+ #include <folly/Synchronized.h>
+ #include <folly/portability/SysTypes.h>
  
 +#include <signal.h>
 +

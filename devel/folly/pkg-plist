@@ -311,10 +311,10 @@ include/folly/experimental/channels/Transform.h
 include/folly/experimental/channels/detail/AtomicQueue.h
 include/folly/experimental/channels/detail/ChannelBridge.h
 include/folly/experimental/channels/detail/FunctionTraits.h
+include/folly/experimental/channels/detail/IntrusivePtr.h
 include/folly/experimental/channels/detail/MultiplexerTraits.h
 include/folly/experimental/channels/detail/PointerVariant.h
 include/folly/experimental/channels/detail/Utility.h
-include/folly/experimental/channels/detail/IntrusivePtr.h
 include/folly/experimental/coro/Accumulate-inl.h
 include/folly/experimental/coro/Accumulate.h
 include/folly/experimental/coro/AsyncGenerator.h
@@ -348,6 +348,7 @@ include/folly/experimental/coro/RustAdaptors.h
 include/folly/experimental/coro/ScopeExit.h
 include/folly/experimental/coro/SharedLock.h
 include/folly/experimental/coro/SharedMutex.h
+include/folly/experimental/coro/SharedPromise.h
 include/folly/experimental/coro/Sleep-inl.h
 include/folly/experimental/coro/Sleep.h
 include/folly/experimental/coro/SmallUnboundedQueue.h
@@ -389,9 +390,9 @@ include/folly/experimental/io/AsyncIoUringSocketFactory.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
+include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
-include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/SimpleAsyncIO.h
 include/folly/experimental/observer/Observable-inl.h
 include/folly/experimental/observer/Observable.h
@@ -534,6 +535,7 @@ include/folly/io/async/AsyncSignalHandler.h
 include/folly/io/async/AsyncSocket.h
 include/folly/io/async/AsyncSocketBase.h
 include/folly/io/async/AsyncSocketException.h
+include/folly/io/async/AsyncSocketTransport.h
 include/folly/io/async/AsyncTimeout.h
 include/folly/io/async/AsyncTransport.h
 include/folly/io/async/AsyncTransportCertificate.h

@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.11.14.00
+DISTVERSION=	2022.11.28.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ BROKEN_i386=	error: use of undeclared identifier 'DCHECK': https://github.com/fa
 
 BUILD_DEPENDS=	elfutils>0:devel/elfutils # workaround for missing symbols like DW_UT_compile: https://github.com/facebook/folly/issues/1654
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
+		libbzip2.so:misc/vxl \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfmt.so:devel/libfmt \
@@ -37,6 +38,7 @@ GH_ACCOUNT=	facebook
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	FREEBSD_BUILD_EXAMPLES FREEBSD_FOLLY_USE_SYMBOLIZER # enabling symbolizer causes undefined symbol _r_debug, see https://github.com/facebook/folly/issues/1373
+#CMAKE_OFF+=	FOLLY_USE_JEMALLOC # Build fails with FOLLY_USE_JEMALLOC=OFF, see https://github.com/facebook/folly/issues/1893
 
 CXXFLAGS+=	-fPIC
 CXXFLAGS_powerpc64=	-DFOLLY_QUOTIENT_MULTI_SET_SUPPORTED=0
