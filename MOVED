@@ -17622,3 +17622,4 @@ www/phalcon4||2022-11-29|Requires php74 which was EOL on 2022-11-28
 www/ilias6||2022-11-29|Requires php74 which was EOL on 2022-11-28
 net/pecl-zmq||2022-11-29|Requires php74 which was EOL on 2022-11-28
 textproc/php-mecab||2022-11-29|Requires php74 which was EOL on 2022-11-28
+sysutils/ganglia-webfrontend||2022-11-29|Requires php74 which was EOL on 2022-11-28
