@@ -17619,3 +17619,4 @@ math/suitesparse-slip_lu|math/suitesparse-spex|2022-11-26|Renamed by upstream
 graphics/giblib||2022-11-27|Has expired: Last release in 2004, abandoned upstream, not used, website disappeared
 www/typo3-10||2022-11-29|Requires php74 which was EOL on 2022-11-28
 www/phalcon4||2022-11-29|Requires php74 which was EOL on 2022-11-28
+www/ilias6||2022-11-29|Requires php74 which was EOL on 2022-11-28
