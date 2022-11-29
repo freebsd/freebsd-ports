@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2022-11-15 13:24:59 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,6 @@ endif()
+ 
+ if(NOT MSVC)
+   add_definitions(-Wall)
+-  add_definitions(-Werror)
+   add_definitions(-Wsign-compare)
+   add_definitions(-Wconversion)
+   add_definitions(-Wno-sign-conversion)
+@@ -58,7 +57,7 @@ endif()
+ LIST (APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
+ 
+ option(ENABLE_PLUGIN_LOADING "Support loading of plugins" ON)
+-set(PLUGIN_DIRECTORY "/usr/local/lib/libheif" CACHE STRING "Plugin install directory")
++set(PLUGIN_DIRECTORY "${CMAKE_INSTALL_LIBDIR}/libheif" CACHE STRING "Plugin install directory")
+ 
+ macro(plugin_option variableName packageName displayName displayType defaultPlugin)
+     option(WITH_${variableName} "Build ${displayName} ${displayType}" ON)
