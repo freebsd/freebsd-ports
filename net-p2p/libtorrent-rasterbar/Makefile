@@ -1,6 +1,5 @@
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.16 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
-PORTREVISION=	2
+DISTVERSION=	1.2.18 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
 PORTEPOCH=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
+USES=		cmake compiler:c++17-lang iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 SHEBANG_FILES=	test/socks.py test/web_server.py
 USE_LDCONFIG=	yes
 
@@ -49,12 +48,6 @@ post-patch:
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/libtorrent/Makefile*
-	# Workaround for -DTHREADS_HAVE_PTHREAD_ARG:BOOL=YES being set in
-	# Mk/Uses/cmake.mk
-	# References:   https://mariadb.atlassian.net/browse/MDEV-9388
-	#               https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=206169
-	@${REINPLACE_CMD} 's/-l-pthread/-lpthread/' \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libtorrent-rasterbar.pc
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
