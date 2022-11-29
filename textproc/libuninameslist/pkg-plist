@@ -7,7 +7,7 @@ include/uninameslist.h
 lib/libuninameslist.a
 lib/libuninameslist.so
 lib/libuninameslist.so.1
-lib/libuninameslist.so.1.0.10
+lib/libuninameslist.so.1.0.12
 libdata/pkgconfig/libuninameslist.pc
 %%FRENCH%%man/man3/libuninameslist-fr.3.gz
 man/man3/libuninameslist.3.gz
