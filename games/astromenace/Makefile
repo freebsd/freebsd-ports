@@ -1,6 +1,5 @@
 PORTNAME=	astromenace
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -21,11 +20,10 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbisfile.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
+USES=		cmake compiler:c++11-lib dos2unix gl openal:al,alut sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	viewizard
-
-USES=		cmake compiler:c++11-lib dos2unix gl openal:al,alut sdl
-DOS2UNIX_FILES=	CMakeLists.txt src/config/config.cpp
+DOS2UNIX_FILES=	CMakeLists.txt
 USE_GL=		gl glu
 USE_SDL=	sdl2
 CMAKE_ARGS=	-DDATADIR="${DATADIR}"
@@ -36,20 +34,14 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/gamedata.vfs ${STAGEDIR}${DATADIR}/
+post-install:
 .for s in 64 128
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/
-	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}_${s}.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}_${s}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/${PORTNAME}.png
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata/
-	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}.appdata.xml \
-		${STAGEDIR}${PREFIX}/share/appdata/
+	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
