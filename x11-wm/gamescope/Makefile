@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.11.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm # wayland: depends on https://github.com/Plagman/gamescope/issues/543
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -10,6 +10,7 @@ PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/Plagman/gamescope/issue
 PATCHFILES+=	91fbb22bda68.patch:-p1 # https://github.com/Plagman/gamescope/pull/677
 PATCHFILES+=	f4a33bd37e49.patch:-p1 # https://github.com/Plagman/gamescope/pull/632
 PATCHFILES+=	be5e7d23e49e.patch:-p1 # wlroots 0.16 (black screen fix)
+PATCHFILES+=	bb67298e95a1.patch:-p1 # wlroots 0.16 (xwayland hang fix)
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Micro-compositor from SteamOS
