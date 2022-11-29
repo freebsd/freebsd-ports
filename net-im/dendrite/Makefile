@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.7
+DISTVERSION=	0.10.8
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -58,7 +58,7 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		cespare:xxhash:v2.1.2:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		codeclysm:extract:v2.2.0:codeclysm_extract/vendor/github.com/codeclysm/extract \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgraph-io:ristretto:8e850b710d6d:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
+		dgraph-io:ristretto:v0.1.1:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		docker:distribution:v2.8.1:docker_distribution/vendor/github.com/docker/distribution \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.5.0:docker_go_units/vendor/github.com/docker/go-units \
@@ -109,8 +109,8 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:ceba4d9f7530:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:0e4a8bb6db7e:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:37f2e9b9ba37:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:gomatrixserverlib:8835f6db16b8:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:fef26631b847:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-sqlite3:v1.14.15:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
@@ -123,8 +123,8 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		nats-io:jwt:v2.3.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:v2.9.4:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:v1.19.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:v2.9.8:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:v1.20.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
@@ -156,7 +156,8 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
 		yggdrasil-network:yggdrasil-go:v0.4.6:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
 
-GL_TUPLE=	cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/modernc.org/cc/v3 \
+GL_TUPLE=	\
+		cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:261537637ce8941f62642fdcc5bf35f770328f26:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
 		cznic:libc:fb68bf378cdc24605253253d3e57488f10694dba:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:b13e5b5643328f15fd2fcedc85f647f0d8f9180f:cznic_mathutil/vendor/modernc.org/mathutil \
