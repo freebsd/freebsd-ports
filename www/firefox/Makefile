@@ -48,7 +48,7 @@ MOZ_OPTIONS=	--enable-application=browser \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64 || ${ARCH} == aarch64
+.if ${ARCH:Maarch64*} || ${ARCH} == powerpc64
 MOZ_OPTIONS+=	--disable-webrtc --without-wasm-sandboxed-libraries
 MOZ_OPTIONS+=	AS=${LOCALBASE}/bin/clang
 .else
