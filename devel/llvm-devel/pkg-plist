@@ -5419,7 +5419,7 @@ llvm-devel/lib/cmake/llvm/llvm-driver-template.cpp.in
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortranSemantics.a
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortran_main.a
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libHLFIRDialect.a
-%%STATIC_LIBS%%llvm-devel/lib/libHLFIRTransforms.a
+%%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libHLFIRTransforms.a
 llvm-devel/lib/libLLVM-%%LLVM_MAJOR%%git.so
 llvm-devel/lib/libLLVM-%%LLVM_RELEASE%%git.so
 llvm-devel/lib/libLLVM.so
