@@ -75,6 +75,7 @@ include/openssl/ssl.h
 include/openssl/ssl3.h
 include/openssl/stack.h
 include/openssl/thread.h
+include/openssl/time.h
 include/openssl/tls1.h
 include/openssl/trust_token.h
 include/openssl/type_check.h
