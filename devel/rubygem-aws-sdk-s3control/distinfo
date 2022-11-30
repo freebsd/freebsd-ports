@@ -1,3 +1,3 @@
-TIMESTAMP = 1665073190
-SHA256 (rubygem/aws-sdk-s3control-1.52.0.gem) = 66df64dfc92a15b1d1aba06b1149a4ca6ce9d163ea77c3a1dd40758c7b2d90e4
-SIZE (rubygem/aws-sdk-s3control-1.52.0.gem) = 91136
+TIMESTAMP = 1669058049
+SHA256 (rubygem/aws-sdk-s3control-1.56.0.gem) = b72e07a6294355184580f58d2f7d15899e5451759167a692359e4d1761b4ef70
+SIZE (rubygem/aws-sdk-s3control-1.56.0.gem) = 101376
