@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-core
-PORTVERSION=	3.159.0
+PORTVERSION=	3.168.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-eventstream>=1.0.2<2:devel/rubygem-aws-eventstream \
-		rubygem-aws-partitions>=1.525.0<2:devel/rubygem-aws-partitions \
-		rubygem-aws-sigv4>=1.1<2:devel/rubygem-aws-sigv4 \
+		rubygem-aws-partitions>=1.651.0<2:devel/rubygem-aws-partitions \
+		rubygem-aws-sigv4>=1.5<2:devel/rubygem-aws-sigv4 \
 		rubygem-jmespath>=1.6.1<2:devel/rubygem-jmespath
 
 USES=		gem
