@@ -45,6 +45,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.26
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.27
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.28
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.29
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORG-NEWS
@@ -1808,6 +1809,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-replace.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-ring.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-ring.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-sasl.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-sasl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-services.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-services.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-sound.el.gz
@@ -3419,6 +3422,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/bat-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/bug-reference.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/bug-reference.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/c-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/c-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-align.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-align.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-awk.el.gz
@@ -3457,6 +3462,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cperl-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cpp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cpp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/csharp-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/csharp-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cwarn.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cwarn.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/dcl-mode.el.gz
@@ -3525,8 +3532,12 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlwave.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/inf-lisp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/inf-lisp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/java-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/java-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/js.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/js.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/json-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/json-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ld-script.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ld-script.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/m4-mode.el.gz
@@ -3571,6 +3582,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/subword.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/tcl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/tcl.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/typescript-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/typescript-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/vera-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/vera-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/verilog-mode.el.gz
@@ -3866,6 +3879,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/transient.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/treesit.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/treesit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/type-break.el.gz
@@ -4185,6 +4200,7 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-27.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-28.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-29.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-30.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h
@@ -4240,6 +4256,8 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/timefns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/tparam.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/tparam.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/treesit.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/treesit.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/undo.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexaix.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexcoff.c
