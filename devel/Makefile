@@ -6120,6 +6120,7 @@
     SUBDIR += rubygem-aws-sdk-sagemakerfeaturestoreruntime
     SUBDIR += rubygem-aws-sdk-sagemakerruntime
     SUBDIR += rubygem-aws-sdk-savingsplans
+    SUBDIR += rubygem-aws-sdk-scheduler
     SUBDIR += rubygem-aws-sdk-schemas
     SUBDIR += rubygem-aws-sdk-secretsmanager
     SUBDIR += rubygem-aws-sdk-securityhub
