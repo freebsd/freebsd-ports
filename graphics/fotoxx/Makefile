@@ -1,5 +1,5 @@
 PORTNAME=	fotoxx
-PORTVERSION=	22.41
+PORTVERSION=	22.50
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
@@ -29,8 +29,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's,= thread,= cartoon::thread,' ${WRKSRC}/f.effects.cc
 	@${REINPLACE_CMD} -e \
 		'/#include <sys\/prctl\.h>/d' ${WRKSRC}/f.meta.cc
 	@${REINPLACE_CMD} -e \

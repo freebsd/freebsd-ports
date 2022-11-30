@@ -6,7 +6,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/data/colorwheel.jpg
 %%DATADIR%%/data/custom_kernel/blur5
 %%DATADIR%%/data/custom_kernel/brighten3
-%%DATADIR%%/data/custom_kernel/color lines
+%%DATADIR%%/data/custom_kernel/color lines 3
+%%DATADIR%%/data/custom_kernel/color lines 5
 %%DATADIR%%/data/custom_kernel/colors3
 %%DATADIR%%/data/custom_kernel/darken3
 %%DATADIR%%/data/custom_kernel/denoise3
@@ -90,7 +91,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/KB-shortcuts2.jpg
 %%DATADIR%%/images/RGB-dist.jpg
 %%DATADIR%%/images/add-meta-items.jpg
-%%DATADIR%%/images/add-motionblur.jpg
 %%DATADIR%%/images/add-motionblur1.jpg
 %%DATADIR%%/images/add-motionblur2.jpg
 %%DATADIR%%/images/add-noise.jpg
@@ -123,7 +123,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/blackball.png
 %%DATADIR%%/images/blank-image.jpg
 %%DATADIR%%/images/blueball.png
-%%DATADIR%%/images/blur-background.jpg
 %%DATADIR%%/images/blur.jpg
 %%DATADIR%%/images/bookmarks.jpg
 %%DATADIR%%/images/brightness-steps.png
@@ -371,3 +370,4 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/whiteball.png
 %%DATADIR%%/images/zoom.png
 share/man/man1/fotoxx.1.gz
+share/metainfo/kornelix.fotoxx.metainfo.xml
