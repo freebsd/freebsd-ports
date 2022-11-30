@@ -3,6 +3,8 @@ out to the host's network. This requires a PF firewall to perform the
 translation. A simple example is included - to use it:
 
 # cp /usr/local/etc/containers/pf.conf.sample /etc/pf.conf
-... edit /etc/pf.conf and set egress_if to your network interface ...
+...
+Edit /etc/pf.conf and set v4egress_if, v6egress_if to your network interface(s)s
+...
 # sysrc pf_enable=YES
 # service pf start

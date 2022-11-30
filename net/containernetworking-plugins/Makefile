@@ -1,5 +1,5 @@
 PORTNAME=	containernetworking-plugins
-DISTVERSION=	0.1
+DISTVERSION=	0.2.1
 CATEGORIES=	net
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	dfr
 GH_PROJECT=	plugins
-GH_TAGNAME=	60b0a2b
+GH_TAGNAME=	freebsd-v0.2.1
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} XDG_CACHE_HOME=${WRKDIR}/.cache GO=${GO_CMD} ./build_freebsd.sh

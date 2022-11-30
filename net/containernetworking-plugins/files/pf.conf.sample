@@ -1,8 +1,9 @@
-# Change this to the interface with the default route
-egress_if = "ix0"
+# Change these to the interface(s) with the default route
+v4egress_if = "ix0"
+v6egress_if = "ix0"
 
-nat on $egress_if inet from <cni-nat> to any -> ($egress_if)
-nat on $egress_if inet6 from <cni-nat> to !ff00::/8 -> ($egress_if)
+nat on $v4egress_if inet from <cni-nat> to any -> ($v4egress_if)
+nat on $v6egress_if inet6 from <cni-nat> to !ff00::/8 -> ($v6egress_if)
 
 rdr-anchor "cni-rdr/*"
 table <cni-nat>
