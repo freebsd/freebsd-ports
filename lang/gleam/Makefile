@@ -26,6 +26,8 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
+PORTSCOUT=	limit:[0-9.]+
+
 do-build:
 	(cd ${WRKSRC} && \
 		cargo build --release)
