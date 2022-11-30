@@ -5,9 +5,10 @@ MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
-WWW=		https://www.npmjs.com/package/npm
+WWW=		https://www.npmjs.com/package/npm \
+		https://github.com/npm/cli
 
-LICENSE=	APACHE20
+LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 
 RUN_DEPENDS=	gmake:devel/gmake
