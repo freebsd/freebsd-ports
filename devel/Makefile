@@ -6099,6 +6099,7 @@
     SUBDIR += rubygem-aws-sdk-redshiftserverless
     SUBDIR += rubygem-aws-sdk-rekognition
     SUBDIR += rubygem-aws-sdk-resiliencehub
+    SUBDIR += rubygem-aws-sdk-resourceexplorer2
     SUBDIR += rubygem-aws-sdk-resourcegroups
     SUBDIR += rubygem-aws-sdk-resourcegroupstaggingapi
     SUBDIR += rubygem-aws-sdk-resources
