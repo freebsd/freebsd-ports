@@ -1,5 +1,5 @@
 PORTNAME=	webstorm
-PORTVERSION=	2022.2.3
+PORTVERSION=	2022.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -19,11 +19,10 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		lsof:sysutils/lsof
 
 USES=		cpe python:run shebangfix
+CPE_VENDOR=	jetbrains
 
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-
-CPE_VENDOR=	jetbrains
 
 SHEBANG_FILES=	bin/restart.py
 
@@ -31,7 +30,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/WebStorm-222.4345.14
+WRKSRC=		${WRKDIR}/WebStorm-223.7571.168
 
 do-install:
 # Linux/Windows/OS X only so remove them
