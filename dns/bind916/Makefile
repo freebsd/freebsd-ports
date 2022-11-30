@@ -189,7 +189,7 @@ SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 .endif
 
 post-patch:
-.for FILE in named-checkconf.8 named.8 nsupdate.1 \
+.for FILE in named-checkconf.8 named.8 named.conf.5 nsupdate.1 \
 	rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
