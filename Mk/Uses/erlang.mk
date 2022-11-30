@@ -40,7 +40,7 @@ BUILD_DEPENDS+=	erl:lang/erlang
 RUN_DEPENDS+=	erl:lang/erlang
 
 .  if ${erlang_ARGS:Menc}
-BUILD_DEPENDS+=	enc>=0:devel/erlang-native-compiler
+BUILD_DEPENDS+=	enc:devel/erlang-native-compiler
 .  endif
 
 .  if ${erlang_ARGS:Mrebar}
