@@ -1,4 +1,2 @@
 Official AWS Ruby gem for Amazon CloudWatch Application Insights (Application
 Insights).
-
-See also: https://github.com/aws/aws-sdk-ruby
