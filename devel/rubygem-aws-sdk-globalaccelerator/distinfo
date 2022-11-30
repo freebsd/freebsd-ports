@@ -1,3 +1,3 @@
-TIMESTAMP = 1659161235
-SHA256 (rubygem/aws-sdk-globalaccelerator-1.40.0.gem) = e63c631f72a347228076af5cbfb674e755fb7e2d2cc53ab06db191258b18f52e
-SIZE (rubygem/aws-sdk-globalaccelerator-1.40.0.gem) = 53248
+TIMESTAMP = 1669057777
+SHA256 (rubygem/aws-sdk-globalaccelerator-1.42.0.gem) = f846c0e4536d9d4ff1ed6f620ee8db78615cc88e08e5730a75498c3956dc1c1b
+SIZE (rubygem/aws-sdk-globalaccelerator-1.42.0.gem) = 58880
