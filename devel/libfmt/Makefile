@@ -1,8 +1,7 @@
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
-PORTVERSION=	8.1.1
+PORTVERSION=	9.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,9 +11,12 @@ WWW=		https://fmt.dev/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		cmake compiler:c++11-lang cpe zip
+USES=		cmake compiler:c++11-lang cpe
 
-CMAKE_OFF=	FMT_CUDA_TEST FMT_DOC FMT_FUZZ FMT_MODULE FMT_PEDANTIC FMT_SYSTEM_HEADERS FMT_TEST FMT_WERROR
+USE_GITHUB=	yes
+GH_ACCOUNT=	fmtlib
+
+CMAKE_OFF=	FMT_DOC FMT_FUZZ FMT_MODULE FMT_PEDANTIC FMT_SYSTEM_HEADERS FMT_TEST FMT_WERROR
 CMAKE_ON=	BUILD_SHARED_LIBS FMT_OS
 USE_LDCONFIG=	yes
 
