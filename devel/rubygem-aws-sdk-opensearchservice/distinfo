@@ -1,3 +1,3 @@
-TIMESTAMP = 1659161249
-SHA256 (rubygem/aws-sdk-opensearchservice-1.11.0.gem) = 349c1eb80780dafa4d85d8978a049afda24ed259219ed4ea45b5188a3a648937
-SIZE (rubygem/aws-sdk-opensearchservice-1.11.0.gem) = 70656
+TIMESTAMP = 1669057963
+SHA256 (rubygem/aws-sdk-opensearchservice-1.13.0.gem) = fae55ed776411a295615cd547e7dce4e2156d3f8dce3f90d2ac9781e1fdcc606
+SIZE (rubygem/aws-sdk-opensearchservice-1.13.0.gem) = 82432
