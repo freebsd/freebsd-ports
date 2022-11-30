@@ -1,5 +1,6 @@
 PORTNAME=	podman
-DISTVERSION=	4.4.0.dev
+PORTVERSION=	4.4.0.dev
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -28,7 +29,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 GH_PROJECT=	podman
-GH_TAGNAME=	d319860
+GH_TAGNAME=	b294b7c3
 
 INSTALL_TARGET=	install install.completions
 
@@ -37,6 +38,5 @@ do-install:
 	${GMAKE} -C ${WRKSRC} DESTDIR=${STAGEDIR} GO=${GO_CMD} install
 	${GMAKE} -C ${WRKSRC} DESTDIR=${STAGEDIR} GO=${GO_CMD} install.completions
 	${RM} ${STAGEDIR}${PREFIX}/lib/tmpfiles.d/podman.conf
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/tmpfiles.d
 
 .include <bsd.port.mk>

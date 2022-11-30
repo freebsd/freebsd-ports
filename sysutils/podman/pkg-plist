@@ -93,6 +93,7 @@ share/man/man1/podman-info.1.gz
 share/man/man1/podman-init.1.gz
 share/man/man1/podman-inspect.1.gz
 share/man/man1/podman-kill.1.gz
+share/man/man1/podman-kube-apply.1.gz
 share/man/man1/podman-kube-down.1.gz
 share/man/man1/podman-kube-generate.1.gz
 share/man/man1/podman-kube-play.1.gz
@@ -177,6 +178,7 @@ share/man/man1/podman-system-connection-list.1.gz
 share/man/man1/podman-system-connection-remove.1.gz
 share/man/man1/podman-system-connection-rename.1.gz
 share/man/man1/podman-system-connection.1.gz
+share/man/man1/podman-system-events.1.gz
 share/man/man1/podman-system-df.1.gz
 share/man/man1/podman-system-info.1.gz
 share/man/man1/podman-system-migrate.1.gz
