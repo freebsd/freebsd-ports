@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2022-08-31 12:19:35 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2022-11-30 08:12:58 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -13,6 +13,7 @@
  #include "base/callback_helpers.h"
@@ -46,7 +46,7 @@
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -483,7 +488,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
+@@ -475,7 +480,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -55,7 +55,7 @@
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -515,7 +520,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -507,7 +512,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  
  void DownloadPrefs::ResetAutoOpenByUser() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -64,7 +64,7 @@
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -546,7 +551,7 @@ void DownloadPrefs::SaveAutoOpenState() {
+@@ -538,7 +543,7 @@ void DownloadPrefs::SaveAutoOpenState() {
  bool DownloadPrefs::CanPlatformEnableAutoOpenForPdf() const {
  #if BUILDFLAG(IS_CHROMEOS)
    return false;  // There is no UI for auto-open on ChromeOS.
@@ -73,7 +73,7 @@
    return ShouldOpenPdfInSystemReader();
  #else
    return false;
-@@ -670,7 +675,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -662,7 +667,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
  #else
    // If the stored download directory is an absolute path, we presume it's
    // correct; there's not really much more validation we can do here.

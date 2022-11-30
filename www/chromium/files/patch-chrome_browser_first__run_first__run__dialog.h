@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run_dialog.h.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/first_run/first_run_dialog.h.orig	2022-11-30 08:12:58 UTC
 +++ chrome/browser/first_run/first_run_dialog.h
 @@ -12,7 +12,7 @@
  // Hide this function on platforms where the dialog does not exist.
@@ -7,5 +7,5 @@
 -#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
 +#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
  
- class Profile;
+ namespace first_run {
  

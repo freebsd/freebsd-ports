@@ -1,6 +1,6 @@
---- sandbox/policy/sandbox_type.cc.orig	2022-06-17 14:20:10 UTC
+--- sandbox/policy/sandbox_type.cc.orig	2022-11-30 08:12:58 UTC
 +++ sandbox/policy/sandbox_type.cc
-@@ -39,7 +39,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
+@@ -38,7 +38,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
  #endif
      case Sandbox::kAudio:
        return false;
@@ -9,7 +9,7 @@
      case Sandbox::kVideoCapture:
        return false;
  #endif
-@@ -62,7 +62,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
+@@ -61,7 +61,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
      case Sandbox::kMirroring:
      case Sandbox::kNaClLoader:
  #endif
@@ -18,7 +18,7 @@
      case Sandbox::kHardwareVideoDecoding:
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -127,7 +127,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -126,7 +126,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
  #endif
      case Sandbox::kPrintCompositor:
      case Sandbox::kAudio:
@@ -27,7 +27,7 @@
      case Sandbox::kVideoCapture:
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -138,7 +138,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -137,7 +137,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
      case Sandbox::kMediaFoundationCdm:
      case Sandbox::kWindowsSystemProxyResolver:
  #endif  // BUILDFLAG(IS_WIN)
@@ -36,7 +36,7 @@
      case Sandbox::kHardwareVideoDecoding:
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -257,7 +257,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -256,7 +256,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
        return switches::kUtilitySandbox;
      case Sandbox::kAudio:
        return switches::kAudioSandbox;
@@ -45,7 +45,7 @@
      case Sandbox::kVideoCapture:
        return switches::kVideoCaptureSandbox;
  #endif
-@@ -287,7 +287,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -286,7 +286,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
      case Sandbox::kMirroring:
        return switches::kMirroringSandbox;
  #endif
@@ -54,7 +54,7 @@
      case Sandbox::kHardwareVideoDecoding:
        return switches::kHardwareVideoDecodingSandbox;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -375,11 +375,11 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+@@ -374,11 +374,11 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
    if (sandbox_string == switches::kScreenAISandbox)
      return Sandbox::kScreenAI;
  #endif

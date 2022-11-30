@@ -1,5 +1,5 @@
---- components/cast_channel/cast_message_util.cc.orig	2022-10-24 13:33:33 UTC
-+++ components/cast_channel/cast_message_util.cc
+--- components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2022-11-30 08:12:58 UTC
++++ components/media_router/common/providers/cast/channel/cast_message_util.cc
 @@ -170,7 +170,7 @@ int GetVirtualConnectPlatformValue() {
    return 4;
  #elif BUILDFLAG(IS_CHROMEOS_ASH)

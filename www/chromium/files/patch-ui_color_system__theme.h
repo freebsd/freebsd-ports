@@ -1,4 +1,4 @@
---- ui/color/system_theme.h.orig	2022-10-24 13:33:33 UTC
+--- ui/color/system_theme.h.orig	2022-11-30 08:12:58 UTC
 +++ ui/color/system_theme.h
 @@ -15,7 +15,7 @@ namespace ui {
  enum class SystemTheme {
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    kGtk = 1,
    kQt = 2,
- #endif
+   kMaxValue = kQt,

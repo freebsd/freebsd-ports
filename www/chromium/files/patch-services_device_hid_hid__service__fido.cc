@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_fido.cc.orig	2022-10-28 16:39:00 UTC
+--- services/device/hid/hid_service_fido.cc.orig	2022-11-30 08:12:58 UTC
 +++ services/device/hid/hid_service_fido.cc
-@@ -0,0 +1,392 @@
+@@ -0,0 +1,399 @@
 +// Copyright 2014 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -11,6 +11,7 @@
 +#include <poll.h>
 +#include <stdint.h>
 +
++#include <dlfcn.h>
 +#include <fido.h>
 +
 +#include <limits>
@@ -36,14 +37,9 @@
 +#include "build/build_config.h"
 +#include "build/chromeos_buildflags.h"
 +#include "components/device_event_log/device_event_log.h"
++#include "device/udev_linux/scoped_udev.h"
++#include "device/udev_linux/udev_watcher.h"
 +#include "services/device/hid/hid_connection_fido.h"
-+
-+// TODO(huangs): Enable for IS_CHROMEOS_LACROS. This will simplify crosapi so
-+// that it won't need to pass HidManager around (crbug.com/1109621).
-+#if BUILDFLAG(IS_CHROMEOS_ASH)
-+#include "base/system/sys_info.h"
-+#include "chromeos/dbus/permission_broker/permission_broker_client.h"  // nogncheck
-+#endif  // BUILDFLAG(IS_CHROMEOS_ASH)
 +
 +namespace device {
 +
@@ -147,7 +143,7 @@
 +  base::ScopedFD fd;
 +};
 +
-+class HidServiceFido::BlockingTaskRunnerHelper {
++class HidServiceFido::BlockingTaskRunnerHelper : public UdevWatcher::Observer {
 + public:
 +  BlockingTaskRunnerHelper(base::WeakPtr<HidServiceFido> service)
 +      : service_(std::move(service)),
@@ -158,59 +154,22 @@
 +  BlockingTaskRunnerHelper(const BlockingTaskRunnerHelper&) = delete;
 +  BlockingTaskRunnerHelper& operator=(const BlockingTaskRunnerHelper&) = delete;
 +
-+  ~BlockingTaskRunnerHelper() = default;
++  ~BlockingTaskRunnerHelper() override {
++    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
++  }
 +
 +  void Start() {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +
-+    fido_dev_info_t *devlist = NULL;
-+    fido_dev_t *dev = NULL;
-+    size_t devlist_len = 0, i;
-+    const char *path;
-+    int r;
-+    const int MAX_FIDO_DEVICES = 256;
-+          
-+    if ((devlist = fido_dev_info_new(MAX_FIDO_DEVICES)) == NULL) {
-+      HID_LOG(ERROR) << "fido_dev_info_new failed";
-+      goto out;
++    void *library = dlopen("libudev.so", RTLD_NOW | RTLD_LOCAL);
++    if (library) {
++      dlclose(library);
++      watcher_ = UdevWatcher::StartWatching(this);
++      watcher_->EnumerateExistingDevices();
++    } else {
++      HID_LOG(ERROR) << "No udev available, failling back to single enumeration";
++      WalkFidoDevices(nullptr);
 +    }
-+    if ((r = fido_dev_info_manifest(devlist, MAX_FIDO_DEVICES, &devlist_len)) !=   
-+        FIDO_OK) {
-+      HID_LOG(ERROR) << "fido_dev_info_manifest: " << fido_strerr(r);
-+      goto out;
-+    }
-+ 
-+    HID_LOG(EVENT) << "fido_dev_info_manifest found " << devlist_len
-+                   << " device(s)";
-+
-+    for (i = 0; i < devlist_len; i++) {
-+      const fido_dev_info_t *di = fido_dev_info_ptr(devlist, i);
-+      if (di == NULL) {
-+        HID_LOG(ERROR) << "fido_dev_info_ptr " << i << " failed";
-+        continue;
-+      }
-+      if ((path = fido_dev_info_path(di)) == NULL) { 
-+        HID_LOG(ERROR) << "fido_dev_info_path " << i << " failed";
-+        continue;
-+      }
-+      HID_LOG(EVENT) << "trying device " << i << ": " << path;
-+      if ((dev = fido_dev_new()) == NULL) {
-+        HID_LOG(ERROR) << "fido_dev_new failed";
-+        continue;
-+      }
-+      if ((r = fido_dev_open(dev, path)) != FIDO_OK) {
-+        HID_LOG(ERROR) << "fido_dev_open failed " << path;
-+        fido_dev_free(&dev);
-+        continue;
-+      }
-+      OnDeviceAdded(di);
-+      fido_dev_close(dev);
-+      fido_dev_free(&dev);
-+    }
-+
-+  out:
-+    if (devlist != NULL)
-+      fido_dev_info_free(&devlist, MAX_FIDO_DEVICES);
 +
 +    task_runner_->PostTask(
 +        FROM_HERE,
@@ -218,37 +177,122 @@
 +  }
 +
 + private:
-+  void OnDeviceAdded(const fido_dev_info_t *di) {
-+    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-+    base::ScopedBlockingCall scoped_blocking_call(
-+        FROM_HERE, base::BlockingType::MAY_BLOCK);
++  void WalkFidoDevices(const char *name) {
++    fido_dev_info_t *devlist = NULL;
++    fido_dev_t *dev = NULL;
++    size_t devlist_len = 0, i;
++    const char *path;
++    int r;
++    const int MAX_FIDO_DEVICES = 256;
 +
++    if ((devlist = fido_dev_info_new(MAX_FIDO_DEVICES)) == NULL) {
++      HID_LOG(ERROR) << "fido_dev_info_new failed";
++      goto out;
++    }
++    if ((r = fido_dev_info_manifest(devlist, MAX_FIDO_DEVICES, &devlist_len)) !=
++        FIDO_OK) {
++      HID_LOG(ERROR) << "fido_dev_info_manifest: " << fido_strerr(r);
++      goto out;
++    }
++
++    HID_LOG(EVENT) << "fido_dev_info_manifest found " << devlist_len
++                   << " device(s)";
++
++    for (i = 0; i < devlist_len; i++) {
++      const fido_dev_info_t *di = fido_dev_info_ptr(devlist, i);
++
++      if (di == NULL) {
++        HID_LOG(ERROR) << "fido_dev_info_ptr " << i << " failed";
++        continue;
++      }
++
++      if ((path = fido_dev_info_path(di)) == NULL) {
++        HID_LOG(ERROR) << "fido_dev_info_path " << i << " failed";
++        continue;
++      }
++
++      if (name != nullptr && !strcmp(path, name)) {
++        HID_LOG(EVENT) << "hotplug device " << i << ": " << path;
++        OnFidoDeviceAdded(di);
++        break;
++      }
++
++      HID_LOG(EVENT) << "trying device " << i << ": " << path;
++      if ((dev = fido_dev_new()) == NULL) {
++        HID_LOG(ERROR) << "fido_dev_new failed";
++        continue;
++      }
++
++      if ((r = fido_dev_open(dev, path)) != FIDO_OK) {
++        HID_LOG(ERROR) << "fido_dev_open failed " << path;
++        fido_dev_free(&dev);
++        continue;
++      }
++
++      fido_dev_close(dev);
++      fido_dev_free(&dev);
++
++      OnFidoDeviceAdded(di);
++    }
++  out:
++    if (devlist != NULL)
++      fido_dev_info_free(&devlist, MAX_FIDO_DEVICES);
++  }
++
++  void OnFidoDeviceAdded(const fido_dev_info_t *di) {
 +    auto null_as_empty = [](const char *r) -> std::string {
 +      return (r != nullptr) ? r : "";
 +    };
 +    std::string device_node(null_as_empty(fido_dev_info_path(di)));  
 +    std::vector<uint8_t> report_descriptor(
 +        kU2fReportDesc, kU2fReportDesc + sizeof(kU2fReportDesc));
-+    scoped_refptr<HidDeviceInfo> device_info(new HidDeviceInfo(
-+        device_node, /*physical_device_id=*/"", fido_dev_info_vendor(di),
++
++    auto device_info = base::MakeRefCounted<HidDeviceInfo>(
++        device_node, /*physical_device_id*/"", fido_dev_info_vendor(di),
 +        fido_dev_info_product(di), null_as_empty(fido_dev_info_product_string(di)),
 +        null_as_empty(fido_dev_info_manufacturer_string(di)),
-+        device::mojom::HidBusType::kHIDBusTypeUSB, report_descriptor,
-+        device_node));
-+    
-+    task_runner_->PostTask(FROM_HERE, base::BindOnce(&HidServiceFido::AddDevice,
-+                                                 service_, device_info));
++	device::mojom::HidBusType::kHIDBusTypeUSB, report_descriptor,
++        device_node);
++
++    task_runner_->PostTask(
++        FROM_HERE,
++        base::BindOnce(&HidServiceFido::AddDevice, service_, device_info));
 +  }
 +
-+  void OnDeviceRemoved(std::string device_node) {
++  // UdevWatcher::Observer
++  void OnDeviceAdded(ScopedUdevDevicePtr device) override {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    base::ScopedBlockingCall scoped_blocking_call(
 +        FROM_HERE, base::BlockingType::MAY_BLOCK);
-+    task_runner_->PostTask(FROM_HERE, base::BindOnce(&HidServiceFido::RemoveDevice,
-+                                                 service_, device_node));
++
++    const char* subsystem = udev_device_get_subsystem(device.get());
++    if (!subsystem || strcmp(subsystem, "fido") != 0)
++      return;
++
++    const char* device_path = udev_device_get_syspath(device.get());
++    if (!device_path)
++      return;
++
++    WalkFidoDevices(device_path);
 +  }
 +
++  void OnDeviceRemoved(ScopedUdevDevicePtr device) override {
++    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
++    base::ScopedBlockingCall scoped_blocking_call(
++        FROM_HERE, base::BlockingType::MAY_BLOCK);
++
++    const char* device_path = udev_device_get_syspath(device.get());
++    if (device_path) {
++      task_runner_->PostTask(
++          FROM_HERE, base::BindOnce(&HidServiceFido::RemoveDevice, service_,
++                                    std::string(device_path)));
++    }
++  }
++
++  void OnDeviceChanged(ScopedUdevDevicePtr) override {}
++
 +  SEQUENCE_CHECKER(sequence_checker_);
++  std::unique_ptr<UdevWatcher> watcher_;
 +
 +  // This weak pointer is only valid when checked on this task runner.
 +  base::WeakPtr<HidServiceFido> service_;
@@ -287,19 +331,6 @@
 +  }
 +  scoped_refptr<HidDeviceInfo> device_info = map_entry->second;
 +
-+// TODO(huangs): Enable for IS_CHROMEOS_LACROS for crbug.com/1223456.
-+#if BUILDFLAG(IS_CHROMEOS_ASH)
-+  auto split_callback = base::SplitOnceCallback(std::move(callback));
-+  chromeos::PermissionBrokerClient::Get()->OpenPath(
-+      device_info->device_node(),
-+      base::BindOnce(&HidServiceFido::OnPathOpenComplete,
-+                     std::make_unique<ConnectParams>(
-+                         device_info, allow_protected_reports,
-+                         allow_fido_reports, std::move(split_callback.first))),
-+      base::BindOnce(&HidServiceFido::OnPathOpenError,
-+                     device_info->device_node(),
-+                     std::move(split_callback.second)));
-+#else
 +  auto params =
 +      std::make_unique<ConnectParams>(device_info, allow_protected_reports,
 +                                      allow_fido_reports, std::move(callback));
@@ -308,29 +339,7 @@
 +  blocking_task_runner->PostTask(
 +      FROM_HERE, base::BindOnce(&HidServiceFido::OpenOnBlockingThread,
 +                                std::move(params)));
-+#endif  // BUILDFLAG(IS_CHROMEOS_ASH)
 +}
-+
-+#if BUILDFLAG(IS_CHROMEOS_ASH)
-+
-+// static
-+void HidServiceFido::OnPathOpenComplete(std::unique_ptr<ConnectParams> params,
-+                                         base::ScopedFD fd) {
-+  params->fd = std::move(fd);
-+  FinishOpen(std::move(params));
-+}
-+
-+// static
-+void HidServiceFido::OnPathOpenError(const std::string& device_path,
-+                                      ConnectCallback callback,
-+                                      const std::string& error_name,
-+                                      const std::string& error_message) {
-+  HID_LOG(EVENT) << "Permission broker failed to open '" << device_path
-+                 << "': " << error_name << ": " << error_message;
-+  std::move(callback).Run(nullptr);
-+}
-+
-+#else
 +
 +// static
 +void HidServiceFido::OpenOnBlockingThread(
@@ -372,8 +381,6 @@
 +  task_runner->PostTask(FROM_HERE, base::BindOnce(&HidServiceFido::FinishOpen,
 +                                                  std::move(params)));
 +}
-+
-+#endif  // BUILDFLAG(IS_CHROMEOS_ASH)
 +
 +// static
 +void HidServiceFido::FinishOpen(std::unique_ptr<ConnectParams> params) {

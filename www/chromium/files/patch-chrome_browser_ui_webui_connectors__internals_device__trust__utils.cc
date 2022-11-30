@@ -1,15 +1,15 @@
---- chrome/browser/ui/webui/connectors_internals/zero_trust_utils.cc.orig	2022-06-17 14:20:10 UTC
-+++ chrome/browser/ui/webui/connectors_internals/zero_trust_utils.cc
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2022-11-30 08:12:58 UTC
++++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -6,7 +6,7 @@
  
  #include "build/build_config.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #include "base/base64url.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
- #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
-@@ -22,7 +22,7 @@ namespace utils {
+@@ -24,7 +24,7 @@ namespace utils {
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -53,7 +53,7 @@ connectors_internals::mojom::KeyType AlgorithmToType(
+@@ -63,7 +63,7 @@ std::string HashAndEncodeString(const std::string& spk
  }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {

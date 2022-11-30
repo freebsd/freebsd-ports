@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.cc.orig	2022-10-24 13:33:33 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2022-11-30 08:12:58 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -118,7 +118,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -120,7 +120,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHOverflowMenuTipFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
      &kIPHBatterySaverModeFeature,
      &kIPHDesktopTabGroupsNewGroupFeature,
      &kIPHExtensionsMenuFeature,
-@@ -145,7 +145,8 @@ const base::Feature* const kAllFeatures[] = {
+@@ -152,7 +152,8 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

@@ -1,4 +1,4 @@
---- third_party/libusb/BUILD.gn.orig	2022-02-07 13:39:41 UTC
+--- third_party/libusb/BUILD.gn.orig	2022-11-30 08:12:58 UTC
 +++ third_party/libusb/BUILD.gn
 @@ -3,7 +3,7 @@
  # found in the LICENSE file.
@@ -18,7 +18,7 @@
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -127,6 +127,16 @@ static_library("libusb") {
+@@ -127,11 +127,21 @@ static_library("libusb") {
      ]
    }
  
@@ -35,6 +35,12 @@
    if (is_chromeos_ash) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
+ 
+-  if (use_udev) {
++  if (use_udev && !is_bsd) {
+     sources += [ "src/libusb/os/linux_udev.cc" ]
+     defines += [
+       "HAVE_LIBUDEV=1",
 @@ -140,7 +150,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }

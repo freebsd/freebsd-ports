@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	107.0.5304.121
+PORTVERSION=	108.0.5359.71
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -84,7 +84,8 @@ SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-
 MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+BINARY_ALIAS=	python3=${PYTHON_CMD} \
+		moc=${PREFIX}/bin/moc-qt5
 
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
 #
