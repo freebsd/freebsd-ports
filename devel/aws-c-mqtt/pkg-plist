@@ -2,6 +2,9 @@ include/aws/mqtt/client.h
 include/aws/mqtt/exports.h
 include/aws/mqtt/mqtt.h
 include/aws/mqtt/private/mqtt_client_test_helper.h
+include/aws/mqtt/v5/mqtt5_client.h
+include/aws/mqtt/v5/mqtt5_packet_storage.h
+include/aws/mqtt/v5/mqtt5_types.h
 lib/aws-c-mqtt/cmake/aws-c-mqtt-config.cmake
 lib/aws-c-mqtt/cmake/shared/aws-c-mqtt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-mqtt/cmake/shared/aws-c-mqtt-targets.cmake

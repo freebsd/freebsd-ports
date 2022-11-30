@@ -1,3 +1,3 @@
-TIMESTAMP = 1668017812
-SHA256 (awslabs-aws-c-mqtt-v0.7.13_GH0.tar.gz) = 04503c704f6d4fba5b0a470a01a96fa2ed702bfa897b0d38071477b0b70ccf82
-SIZE (awslabs-aws-c-mqtt-v0.7.13_GH0.tar.gz) = 97842
+TIMESTAMP = 1669834592
+SHA256 (awslabs-aws-c-mqtt-v0.8.0_GH0.tar.gz) = 22ce443a8714fa70c2c7dc6086c2690574971ebc42e2fb2be2855683b7bf721e
+SIZE (awslabs-aws-c-mqtt-v0.8.0_GH0.tar.gz) = 282013
