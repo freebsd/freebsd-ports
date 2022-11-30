@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2022-08-31 12:19:35 UTC
+--- content/browser/renderer_host/render_message_filter.cc.orig	2022-11-30 08:12:58 UTC
 +++ content/browser/renderer_host/render_message_filter.cc
 @@ -66,7 +66,7 @@
  #if BUILDFLAG(IS_MAC)
@@ -9,8 +9,8 @@
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -128,7 +128,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
-   std::move(callback).Run(routing_id, frame_token, devtools_frame_token);
+@@ -130,7 +130,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
+                           document_token);
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -18,7 +18,7 @@
  void RenderMessageFilter::SetThreadTypeOnWorkerThread(
      base::PlatformThreadId ns_tid,
      base::ThreadType thread_type) {
-@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
+@@ -151,7 +151,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
  }
  #endif
  

@@ -1,9 +1,10 @@
---- services/device/hid/BUILD.gn.orig	2022-02-28 16:54:41 UTC
+--- services/device/hid/BUILD.gn.orig	2022-11-30 08:12:58 UTC
 +++ services/device/hid/BUILD.gn
-@@ -35,6 +35,25 @@ source_set("hid") {
+@@ -35,7 +35,26 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  
+-  if ((is_linux || is_chromeos) && use_udev) {
 +  if (is_openbsd) {
 +    sources += [
 +      "hid_connection_fido.cc",
@@ -23,6 +24,7 @@
 +    ]
 +  }
 +
-   if ((is_linux || is_chromeos) && use_udev) {
++  if ((is_linux || is_chromeos) && !is_bsd && use_udev) {
      sources += [
        "hid_connection_linux.cc",
+       "hid_connection_linux.h",

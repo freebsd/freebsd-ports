@@ -1,6 +1,6 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2022-09-24 10:57:32 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2022-11-30 08:12:58 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
-@@ -74,12 +74,12 @@
+@@ -73,12 +73,12 @@
  #include "third_party/blink/renderer/controller/oom_intervention_impl.h"
  #endif
  
@@ -15,7 +15,7 @@
  #include "third_party/blink/renderer/controller/highest_pmf_reporter.h"
  #include "third_party/blink/renderer/controller/user_level_memory_pressure_signal_generator.h"
  #endif
-@@ -172,7 +172,7 @@ void InitializeCommon(Platform* platform, mojo::Binder
+@@ -173,7 +173,7 @@ void InitializeCommon(Platform* platform, mojo::Binder
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -24,7 +24,7 @@
    // Initialize UserLevelMemoryPressureSignalGenerator so it starts monitoring.
    if (UserLevelMemoryPressureSignalGenerator::Enabled())
      UserLevelMemoryPressureSignalGenerator::Instance();
-@@ -253,7 +253,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+@@ -244,7 +244,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
        main_thread_task_runner);
  #endif
  

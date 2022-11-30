@@ -1,4 +1,4 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2022-11-30 08:12:58 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -9,7 +9,7 @@
  // Native headless is currently available on Linux, Windows and Mac platforms.
@@ -15,10 +15,10 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/gl/gl_switches.h"
  #include "ui/ozone/public/ozone_switches.h"
  #endif  // BUILDFLAG(IS_LINUX)
- 
-@@ -51,7 +51,7 @@ void SetUpCommandLine(const base::CommandLine* command
+@@ -52,7 +52,7 @@ void SetUpCommandLine(const base::CommandLine* command
      base::CommandLine::ForCurrentProcess()->AppendSwitch(
          ::switches::kNoErrorDialogs);
    }

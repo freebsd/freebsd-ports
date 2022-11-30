@@ -1,21 +1,21 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2022-10-24 13:33:33 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2022-11-30 08:12:58 UTC
 +++ components/feature_engagement/public/feature_constants.cc
-@@ -24,7 +24,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
-                                      base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -24,7 +24,7 @@ BASE_FEATURE(kUseClientConfigIPH,
+ BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- const base::Feature kIPHBatterySaverModeFeature{
-     "IPH_BatterySaverMode", base::FEATURE_DISABLED_BY_DEFAULT};
- const base::Feature kIPHDesktopSharedHighlightingFeature{
-@@ -301,7 +301,8 @@ const base::Feature kIPHOverflowMenuTipFeature{
+ BASE_FEATURE(kIPHBatterySaverModeFeature,
+              "IPH_BatterySaverMode",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -418,7 +418,8 @@ BASE_FEATURE(kIPHOverflowMenuTipFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
 +    BUILDFLAG(IS_BSD)
- const base::Feature kIPHAutofillVirtualCardSuggestionFeature{
-     "IPH_AutofillVirtualCardSuggestion", base::FEATURE_ENABLED_BY_DEFAULT};
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
+ BASE_FEATURE(kIPHAutofillVirtualCardSuggestionFeature,
+              "IPH_AutofillVirtualCardSuggestion",
+              base::FEATURE_ENABLED_BY_DEFAULT);

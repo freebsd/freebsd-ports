@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2022-10-24 13:33:33 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2022-11-30 08:12:58 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -257,7 +257,7 @@
+@@ -258,7 +258,7 @@
  #include "chrome/browser/ui/cocoa/screentime/screentime_features.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/idle/idle_service_factory.h"
  #endif
  
-@@ -438,11 +438,11 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -439,11 +439,11 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.h.orig	2022-03-25 21:59:56 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.h.orig	2022-11-30 08:12:58 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.h
 @@ -0,0 +1,282 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -16,7 +16,7 @@
 +#include "sandbox/policy/export.h"
 +#include "sandbox/policy/linux/sandbox_seccomp_bpf_linux.h"
 +#include "sandbox/policy/mojom/sandbox.mojom.h"
-+#include "sandbox/policy/sanitizer_buildflags.h"
++#include "base/sanitizer_buildflags.h"
 +
 +#if BUILDFLAG(USING_SANITIZER)
 +#include <sanitizer/common_interface_defs.h>

@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-10-24 13:33:33 UTC
+--- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-11-30 08:12:58 UTC
 +++ base/allocator/partition_allocator/partition_alloc_constants.h
 @@ -91,7 +91,7 @@ PartitionPageShift() {
    return 18;  // 256 KiB
@@ -9,9 +9,9 @@
  PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR PA_ALWAYS_INLINE size_t
  PartitionPageShift() {
    return PageAllocationGranularityShift() + 2;
-@@ -272,7 +272,7 @@ constexpr size_t kNumPools = 3;
+@@ -270,7 +270,7 @@ constexpr size_t kNumPools = 3;
  // Special-case Android and iOS, which incur test failures with larger
- // GigaCage. Regardless, allocating >8GiB with malloc() on these platforms is
+ // pools. Regardless, allocating >8GiB with malloc() on these platforms is
  // unrealistic as of 2022.
 -#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
 +#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)

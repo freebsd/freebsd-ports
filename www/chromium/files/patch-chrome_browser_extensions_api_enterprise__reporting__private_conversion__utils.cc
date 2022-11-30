@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/conversion_utils.cc.orig	2022-09-24 10:57:32 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/conversion_utils.cc.orig	2022-11-30 08:12:58 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/conversion_utils.cc
-@@ -6,7 +6,7 @@
+@@ -8,7 +8,7 @@
  
  #include "build/build_config.h"
  

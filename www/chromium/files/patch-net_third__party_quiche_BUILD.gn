@@ -1,4 +1,4 @@
---- net/third_party/quiche/BUILD.gn.orig	2022-10-24 13:33:33 UTC
+--- net/third_party/quiche/BUILD.gn.orig	2022-11-30 08:12:58 UTC
 +++ net/third_party/quiche/BUILD.gn
 @@ -28,7 +28,7 @@ import("//build/config/chromeos/ui_mode.gni")
  import("//testing/libfuzzer/fuzzer_test.gni")
@@ -7,5 +7,5 @@
 -build_epoll_based_tools = is_linux || is_chromeos
 +build_epoll_based_tools = (is_linux && !is_bsd) || is_chromeos
  
- # TODO(crbug.com/1344231): Set this to always true. At which point, this
- # variable can go away and the conditionals below that depends on it can be
+ config("quiche_internal_config") {
+   cflags = []
