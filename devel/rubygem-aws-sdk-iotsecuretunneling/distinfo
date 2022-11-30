@@ -1,3 +1,3 @@
-TIMESTAMP = 1652122727
-SHA256 (rubygem/aws-sdk-iotsecuretunneling-1.21.0.gem) = 61ac31a4c4e6941c327f24d9d370f91998b5d0e82f2b5a08ad50e35fc7bda040
-SIZE (rubygem/aws-sdk-iotsecuretunneling-1.21.0.gem) = 20992
+TIMESTAMP = 1669057831
+SHA256 (rubygem/aws-sdk-iotsecuretunneling-1.22.0.gem) = b548ca48d944c13b2e21a0093d983862f45a0528a641213184cc3ca4add4a4a7
+SIZE (rubygem/aws-sdk-iotsecuretunneling-1.22.0.gem) = 25088
