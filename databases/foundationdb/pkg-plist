@@ -18,6 +18,7 @@ bin/fdbserver
 bin/tutorial
 include/foundationdb/fdb.options
 include/foundationdb/fdb_c.h
+include/foundationdb/fdb_c_types.h
 include/foundationdb/fdb_c_options.g.h
 lib/libfdb_c.so
 lib/libfdb_flow.a

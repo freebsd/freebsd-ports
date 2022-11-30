@@ -1,5 +1,6 @@
 PORTNAME=	foundationdb
 DISTVERSION=	7.1.25
+PORTREVISION=	1
 CATEGORIES=	databases
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
@@ -81,6 +82,8 @@ do-install:
 # exposed headers - confirm with upstream
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/foundationdb
 	${INSTALL_DATA} ${WRKSRC}/bindings/c/foundationdb/fdb_c.h \
+	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
+	${INSTALL_DATA} ${WRKSRC}/bindings/c/foundationdb/fdb_c_types.h \
 	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
 	${INSTALL_DATA} ${WRKSRC}/fdbclient/vexillographer/fdb.options \
 	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
