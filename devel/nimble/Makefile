@@ -1,6 +1,6 @@
 PORTNAME=	nimble
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	ports@nicandneal.net
@@ -15,7 +15,6 @@ RUN_DEPENDS=	nim:lang/nim
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nim-lang
-GH_TAGNAME=	d13f3b8
 
 PLIST_FILES=	bin/nimble
 
