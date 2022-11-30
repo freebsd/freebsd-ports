@@ -1430,6 +1430,7 @@
     SUBDIR += sl2tps
     SUBDIR += slackcat
     SUBDIR += smb4k
+    SUBDIR += smbldap-tools
     SUBDIR += smcroute
     SUBDIR += smm++
     SUBDIR += sngrep
