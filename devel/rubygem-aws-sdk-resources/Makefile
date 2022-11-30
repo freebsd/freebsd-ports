@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.143.0
+PORTVERSION=	3.147.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -51,6 +51,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-chimesdkmediapipelines>=1<2:devel/rubygem-aws-sdk-chimesdkmediapipelines \
 		rubygem-aws-sdk-chimesdkmeetings>=1<2:devel/rubygem-aws-sdk-chimesdkmeetings \
 		rubygem-aws-sdk-chimesdkmessaging>=1<2:devel/rubygem-aws-sdk-chimesdkmessaging \
+		rubygem-aws-sdk-chimesdkvoice>=1<2:devel/rubygem-aws-sdk-chimesdkvoice \
 		rubygem-aws-sdk-cloud9>=1<2:devel/rubygem-aws-sdk-cloud9 \
 		rubygem-aws-sdk-cloudcontrolapi>=1<2:devel/rubygem-aws-sdk-cloudcontrolapi \
 		rubygem-aws-sdk-clouddirectory>=1<2:devel/rubygem-aws-sdk-clouddirectory \
@@ -166,6 +167,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-iotfleethub>=1<2:devel/rubygem-aws-sdk-iotfleethub \
 		rubygem-aws-sdk-iotfleetwise>=1<2:devel/rubygem-aws-sdk-iotfleetwise \
 		rubygem-aws-sdk-iotjobsdataplane>=1<2:devel/rubygem-aws-sdk-iotjobsdataplane \
+		rubygem-aws-sdk-iotroborunner>=1<2:devel/rubygem-aws-sdk-iotroborunner \
 		rubygem-aws-sdk-iotsecuretunneling>=1<2:devel/rubygem-aws-sdk-iotsecuretunneling \
 		rubygem-aws-sdk-iotsitewise>=1<2:devel/rubygem-aws-sdk-iotsitewise \
 		rubygem-aws-sdk-iotthingsgraph>=1<2:devel/rubygem-aws-sdk-iotthingsgraph \
@@ -263,6 +265,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-redshiftserverless>=1<2:devel/rubygem-aws-sdk-redshiftserverless \
 		rubygem-aws-sdk-rekognition>=1<2:devel/rubygem-aws-sdk-rekognition \
 		rubygem-aws-sdk-resiliencehub>=1<2:devel/rubygem-aws-sdk-resiliencehub \
+		rubygem-aws-sdk-resourceexplorer2>=1<2:devel/rubygem-aws-sdk-resourceexplorer2 \
 		rubygem-aws-sdk-resourcegroups>=1<2:devel/rubygem-aws-sdk-resourcegroups \
 		rubygem-aws-sdk-resourcegroupstaggingapi>=1<2:devel/rubygem-aws-sdk-resourcegroupstaggingapi \
 		rubygem-aws-sdk-robomaker>=1<2:devel/rubygem-aws-sdk-robomaker \
@@ -281,6 +284,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-sagemakerfeaturestoreruntime>=1<2:devel/rubygem-aws-sdk-sagemakerfeaturestoreruntime \
 		rubygem-aws-sdk-sagemakerruntime>=1<2:devel/rubygem-aws-sdk-sagemakerruntime \
 		rubygem-aws-sdk-savingsplans>=1<2:devel/rubygem-aws-sdk-savingsplans \
+		rubygem-aws-sdk-scheduler>=1<2:devel/rubygem-aws-sdk-scheduler \
 		rubygem-aws-sdk-schemas>=1<2:devel/rubygem-aws-sdk-schemas \
 		rubygem-aws-sdk-secretsmanager>=1<2:devel/rubygem-aws-sdk-secretsmanager \
 		rubygem-aws-sdk-securityhub>=1<2:devel/rubygem-aws-sdk-securityhub \
@@ -301,6 +305,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-ssm>=1<2:devel/rubygem-aws-sdk-ssm \
 		rubygem-aws-sdk-ssmcontacts>=1<2:devel/rubygem-aws-sdk-ssmcontacts \
 		rubygem-aws-sdk-ssmincidents>=1<2:devel/rubygem-aws-sdk-ssmincidents \
+		rubygem-aws-sdk-ssmsap>=1<2:devel/rubygem-aws-sdk-ssmsap \
 		rubygem-aws-sdk-ssoadmin>=1<2:devel/rubygem-aws-sdk-ssoadmin \
 		rubygem-aws-sdk-states>=1<2:devel/rubygem-aws-sdk-states \
 		rubygem-aws-sdk-storagegateway>=1<2:devel/rubygem-aws-sdk-storagegateway \
