@@ -1,5 +1,5 @@
 PORTNAME=	buildah
-DISTVERSION=	1.28.1.dev
+PORTVERSION=	1.29.0.dev
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		gmake go:no_targets pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 GH_PROJECT=	buildah
-GH_TAGNAME=	c2cf9fa
+GH_TAGNAME=	cf661299
 INSTALL_TARGET=	install install.completions
 
 .include <bsd.port.mk>
