@@ -1,3 +1,3 @@
-TIMESTAMP = 1662820108
-SHA256 (rubygem/aws-sdk-route53-1.65.0.gem) = 168dcb7be43a4ea21e70b7c93e579593c17cf03987abc7b664fdcd40befb28aa
-SIZE (rubygem/aws-sdk-route53-1.65.0.gem) = 128512
+TIMESTAMP = 1669058035
+SHA256 (rubygem/aws-sdk-route53-1.68.0.gem) = 91028f1080d79ecf7875044a05def3542d69e0f4c79a10aa6ef82099ea346ec6
+SIZE (rubygem/aws-sdk-route53-1.68.0.gem) = 136192
