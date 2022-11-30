@@ -1,11 +1,11 @@
---- lib/node_modules/npm/node_modules/@npmcli/run-script/lib/make-spawn-args.js.orig	2022-08-27 11:30:45 UTC
-+++ lib/node_modules/npm/node_modules/@npmcli/run-script/lib/make-spawn-args.js
-@@ -67,7 +67,7 @@ const makeSpawnArgs = options => {
+--- lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js.orig	2022-11-18 17:24:11 UTC
++++ lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js
+@@ -117,7 +117,7 @@ const spawnWithShell = (cmd, args, opts, extra) => {
+     for (const arg of args) {
+       script += ` ${escape.sh(arg)}`
+     }
+-    realArgs.push('-c', script)
++    realArgs.push('-c', '--', script)
    }
-   const spawnArgs = isCmd
-     ? ['/d', '/s', '/c', script]
--    : ['-c', '--', script]
-+    : ['-c', script]
  
-   const spawnOpts = {
-     env: spawnEnv,
+   return promiseSpawn(command, realArgs, options, extra)

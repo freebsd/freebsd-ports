@@ -1,5 +1,5 @@
 PORTNAME=	npm
-PORTVERSION=	8.19.2
+PORTVERSION=	9.1.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -20,7 +20,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 
-CONFLICTS_INSTALL?=	npm-node14 npm-node16 npm-node18
+CONFLICTS_INSTALL?=	npm-node[0-9][0-9]
 
 CPE_VENDOR=	npmjs
 
