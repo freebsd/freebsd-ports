@@ -2,7 +2,7 @@
 #
 # Feature:	erlang
 # Usage:	USES=erlang
-# Valid ARGS:	rebar, rebar3, or no argument (custom build)
+# Valid ARGS:	rebar, rebar3, enc or no argument (custom build)
 #
 # Additional variables:
 #
@@ -38,6 +38,10 @@ PLIST_SUB+=		VERSION="${PORTVERSION}"
 
 BUILD_DEPENDS+=	erl:lang/erlang
 RUN_DEPENDS+=	erl:lang/erlang
+
+.  if ${erlang_ARGS:Menc}
+BUILD_DEPENDS+=	enc>=0:devel/erlang-native-compiler
+.  endif
 
 .  if ${erlang_ARGS:Mrebar}
 BUILD_DEPENDS+=	rebar>=0:devel/rebar
