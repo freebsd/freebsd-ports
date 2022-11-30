@@ -7,7 +7,6 @@ bin/gids-tool
 bin/goid-tool
 bin/iasecc-tool
 bin/netkey-tool
-bin/npa-tool
 bin/openpgp-tool
 bin/opensc-asn1
 bin/opensc-explorer
@@ -49,10 +48,10 @@ etc/xdg/autostart/pkcs11-register.desktop
 lib/libopensc.a
 lib/libopensc.so
 lib/libopensc.so.8
-lib/libopensc.so.8.0.0
+lib/libopensc.so.8.1.0
 %%SM%%lib/libsmm-local.so
 %%SM%%lib/libsmm-local.so.8
-%%SM%%lib/libsmm-local.so.8.0.0
+%%SM%%lib/libsmm-local.so.8.1.0
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
@@ -79,8 +78,6 @@ share/applications/org.opensc.notify.desktop
 %%DATADIR%%/iasecc.profile
 %%DATADIR%%/incrypto34.profile
 %%DATADIR%%/isoApplet.profile
-%%DATADIR%%/jcop.profile
-%%DATADIR%%/miocos.profile
 %%DATADIR%%/muscle.profile
 %%DATADIR%%/myeid.profile
 %%DATADIR%%/oberthur.profile
