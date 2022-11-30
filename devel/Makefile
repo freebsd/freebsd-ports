@@ -3988,7 +3988,6 @@
     SUBDIR += pecl-jsond
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-mustache
-    SUBDIR += pecl-propro2
     SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
     SUBDIR += pecl-raphf2
