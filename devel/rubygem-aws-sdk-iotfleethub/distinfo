@@ -1,3 +1,3 @@
-TIMESTAMP = 1646058480
-SHA256 (rubygem/aws-sdk-iotfleethub-1.11.0.gem) = 0983c628d9354bcc768c44862ca250e2c6a2dfd43cf328e5b0bd7b22aaea36d5
-SIZE (rubygem/aws-sdk-iotfleethub-1.11.0.gem) = 19456
+TIMESTAMP = 1669057825
+SHA256 (rubygem/aws-sdk-iotfleethub-1.12.0.gem) = c1e5e5e9241b5e1e2196d73d7d6402e8f7348d03d2c1b36de7438b2166614092
+SIZE (rubygem/aws-sdk-iotfleethub-1.12.0.gem) = 23552
