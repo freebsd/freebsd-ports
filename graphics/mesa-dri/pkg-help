@@ -1,5 +1,0 @@
-VAAPI and VDPAU options enable building Gallium based VA-API and VDPAU
-drivers to decode video on the GPU via libva and libvdpau, respectively.
-Gallium based VAAPI and VDPAU drivers are only available for Radeon GPUs.
-
-VAAPI and VDPAU on FreeBSD require graphics/drm-kmod.
