@@ -1,0 +1,41 @@
+commit 367d06ec7edbfa3e3c4c6d565fc32085102c4f6b
+Author: Jessica Clarke <jrtc27@jrtc27.com>
+Date:   Wed Nov 30 00:11:45 2022 +0000
+
+    panfrost/blend: Fix invalid const values leading to NIR validation errors
+    
+    Using a designated initializer like this leaves padding bits, which form
+    part of the aliasing u64/f64 member of the union, uninitialised, but a
+    nir_const_value must always have the unused bits zeroed out. Thus, use
+    the nir_const_value_for_float helper instead like everywhere else which
+    will do a memset 0 for us first.
+    
+    Without this, using the pan_blend shader in a build with validation
+    enabled fails with:
+    
+      NIR validation failed after nir_lower_vars_to_ssa
+      ...
+                vec4 32 ssa_58 = load_const (0x3f7cfcfd /* 0.988235 */, 0x3f7cfcfd /* 0.988235 */, 0x3f7cfcfd /* 0.988235 */, 0x3f800000 /* 1.000000 */)
+      error: memcmp(val, &cmp_val, sizeof(cmp_val)) == 0 (../src/compiler/nir/nir_validate.c:976)
+    
+    Fixes: 1378c67bcf9e ("panfrost/blend: Inline blend constants")
+
+diff --git a/src/panfrost/lib/pan_blend.c b/src/panfrost/lib/pan_blend.c
+index 811b22e015a..f6e6bf671b0 100644
+--- a/src/panfrost/lib/pan_blend.c
++++ b/src/panfrost/lib/pan_blend.c
+@@ -587,10 +587,10 @@ pan_inline_blend_constants(nir_builder *b, nir_instr *instr, void *data)
+ 
+         float *floats = data;
+         const nir_const_value constants[4] = {
+-                { .f32 = floats[0] },
+-                { .f32 = floats[1] },
+-                { .f32 = floats[2] },
+-                { .f32 = floats[3] }
++                nir_const_value_for_float(floats[0], 32),
++                nir_const_value_for_float(floats[1], 32),
++                nir_const_value_for_float(floats[2], 32),
++                nir_const_value_for_float(floats[3], 32)
+         };
+ 
+         b->cursor = nir_after_instr(instr);

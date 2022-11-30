@@ -82,6 +82,8 @@ PKGHELP=	${.CURDIR}/pkg-help
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
+EXTRA_PATCHES+=	${PATCHDIR}/panfrost-blend-zero-padding.patch:-p1
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
