@@ -83,6 +83,8 @@ PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 EXTRA_PATCHES+=	${PATCHDIR}/panfrost-blend-zero-padding.patch:-p1
+# Assertion hit by Xwayland
+EXTRA_PATCHES+=	${PATCHDIR}/5da8c280b7451335c915d9be0a25d0d3a8055d3e.patch:-p1
 
 .include <bsd.port.pre.mk>
 

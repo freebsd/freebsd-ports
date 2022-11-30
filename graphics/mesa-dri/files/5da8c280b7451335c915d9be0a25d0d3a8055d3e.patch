@@ -1,0 +1,40 @@
+From 5da8c280b7451335c915d9be0a25d0d3a8055d3e Mon Sep 17 00:00:00 2001
+From: Icecream95 <ixn@disroot.org>
+Date: Fri, 8 Apr 2022 23:05:02 +1200
+Subject: [PATCH] panfrost: Remove BO mapping from import
+
+BOs will be mapped when needed, so there is no need to mmap BOs when
+importing them.
+
+Fixes crashes when exporting a non-AFBC resource and importing it back
+in the same context.
+
+Part-of: <https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/15818>
+---
+ src/panfrost/lib/pan_bo.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/src/panfrost/lib/pan_bo.c b/src/panfrost/lib/pan_bo.c
+index 93db292acd94..26a7b6bf884d 100644
+--- a/src/panfrost/lib/pan_bo.c
++++ b/src/panfrost/lib/pan_bo.c
+@@ -494,8 +494,6 @@ panfrost_bo_import(struct panfrost_device *dev, int fd)
+                 bo->flags = PAN_BO_SHARED;
+                 bo->gem_handle = gem_handle;
+                 p_atomic_set(&bo->refcnt, 1);
+-                // TODO map and unmap on demand?
+-                panfrost_bo_mmap(bo);
+         } else {
+                 /* bo->refcnt == 0 can happen if the BO
+                  * was being released but panfrost_bo_import() acquired the
+@@ -511,7 +509,6 @@ panfrost_bo_import(struct panfrost_device *dev, int fd)
+                         p_atomic_set(&bo->refcnt, 1);
+                 else
+                         panfrost_bo_reference(bo);
+-                assert(bo->ptr.cpu);
+         }
+         pthread_mutex_unlock(&dev->bo_map_lock);
+ 
+-- 
+GitLab
+
