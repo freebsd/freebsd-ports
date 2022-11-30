@@ -1,4 +1,2 @@
 Official AWS Ruby gem for AWS Systems Manager Incident Manager Contacts (SSM
 Contacts).
-
-See also: https://github.com/aws/aws-sdk-ruby
