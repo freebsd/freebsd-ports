@@ -1,4 +1,2 @@
 Official AWS Ruby gem for AWS Certificate Manager Private Certificate Authority
 (ACM-PCA).
-
-See also: https://github.com/aws/aws-sdk-ruby
