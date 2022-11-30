@@ -466,6 +466,7 @@
     SUBDIR += mod_amd
     SUBDIR += mopd
     SUBDIR += mosh
+	SUBDIR += mosquitto
     SUBDIR += motsognir
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
@@ -976,7 +977,6 @@
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-amqp
-    SUBDIR += pecl-mosquitto
     SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
