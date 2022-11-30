@@ -1,4 +1,4 @@
-TIMESTAMP = 1669815136
+TIMESTAMP = 1669847672
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
 SIZE (rust/crates/addr2line-0.17.0.crate) = 32260
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -449,5 +449,5 @@ SHA256 (rust/crates/y4m-0.7.0.crate) = a72a9921af8237fe25097a1ae31c92a05c1d39b24
 SIZE (rust/crates/y4m-0.7.0.crate) = 12045
 SHA256 (rust/crates/yansi-0.5.1.crate) = 09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec
 SIZE (rust/crates/yansi-0.5.1.crate) = 16525
-SHA256 (xiph-rav1e-v0.6.0_GH0.tar.gz) = 67bc022b16942079e0a4859eed7ac96eefc70f2b24dc69844fc08d7c007cc9b1
-SIZE (xiph-rav1e-v0.6.0_GH0.tar.gz) = 2915857
+SHA256 (xiph-rav1e-v0.6.1_GH0.tar.gz) = dd12132ad9dac229ce00a9caad132c4ad23d7db2b3ad4b5a59e89658fee04d9a
+SIZE (xiph-rav1e-v0.6.1_GH0.tar.gz) = 2915861
