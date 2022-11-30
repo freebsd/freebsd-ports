@@ -79,6 +79,8 @@ include/OpenMVS/Math/Common.h
 include/OpenMVS/Math/IBFS/IBFS.h
 include/OpenMVS/Math/LBP.h
 include/OpenMVS/Math/LMFit/lmmin.h
+include/OpenMVS/Math/RobustNorms.h
+include/OpenMVS/Math/SimilarityTransform.h
 include/OpenMVS/Math/TRWS/MRFEnergy.h
 include/OpenMVS/Math/TRWS/MRFEnergy.inl
 include/OpenMVS/Math/TRWS/instances.h

@@ -1,7 +1,6 @@
 PORTNAME=	openmvs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
-PORTREVISION=	2
+DISTVERSION=	2.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,13 +17,15 @@ BUILD_DEPENDS=	cgal>0:math/cgal \
 		vcglib>0:devel/vcglib
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libceres.so:math/ceres-solver \
+		libgflags.so:devel/gflags \
+		libglog.so:devel/glog \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libopencv_core.so:graphics/opencv \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++17-lang eigen:3 jpeg
+USES=		cmake:testing compiler:c++17-lang eigen:3 jpeg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cdcseacave
@@ -32,7 +33,9 @@ GH_PROJECT=	openMVS
 
 CMAKE_ON=	BUILD_SHARED_LIBS OpenMVS_USE_CERES
 CMAKE_OFF=	OpenMVS_BUILD_TOOLS # tools can't be built because of https://github.com/cdcseacave/openMVS/issues/846
+CMAKE_OFF+=	OpenMVS_ENABLE_TESTS
 CMAKE_ARGS=	-DVCG_ROOT=${LOCALBASE}/include/vcglib
+CMAKE_TESTING_ON=	OpenMVS_ENABLE_TESTS # tests fail to configure, see https://github.com/cdcseacave/openMVS/issues/911
 
 .include <bsd.port.options.mk>
 
