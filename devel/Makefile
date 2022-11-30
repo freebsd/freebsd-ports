@@ -3985,7 +3985,6 @@
     SUBDIR += pecl-inotify
     SUBDIR += pecl-jsmin
     SUBDIR += pecl-json_post
-    SUBDIR += pecl-jsond
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-mustache
     SUBDIR += pecl-protobuf
