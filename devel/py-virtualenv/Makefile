@@ -65,8 +65,8 @@ DOCS_PORTDOCS=		* .buildinfo
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="install_egg_info --install-dir build/lib"
 
 post-install-DOCS-on:
-	${LOCALBASE}/bin/sphinx-build -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
-	${LOCALBASE}/bin/sphinx-build -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${MANPREFIX}/man/man1
+	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
+	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.pre.mk>
 
