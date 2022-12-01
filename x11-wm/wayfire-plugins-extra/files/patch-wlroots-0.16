@@ -1,0 +1,24 @@
+https://github.com/damianatorrpm/wayfire-plugin_dbus_interface/issues/50
+
+--- subprojects/dbus/dbus_interface.cpp.orig	2020-12-25 14:04:08 UTC
++++ subprojects/dbus/dbus_interface.cpp
+@@ -198,15 +198,15 @@ class dbus_interface_t
+ #endif
+             wf::pointf_t cursor_position;
+             GVariant* signal_data;
+-            wf::input_event_signal<wlr_event_pointer_button>* wf_ev;
+-            wlr_event_pointer_button* wlr_signal;
++            wf::input_event_signal<wlr_pointer_button_event>* wf_ev;
++            wlr_pointer_button_event* wlr_signal;
+             wlr_button_state button_state;
+             bool button_released;
+             uint32_t button;
+ 
+             cursor_position = core.get_cursor_position();
+-            wf_ev = static_cast<wf::input_event_signal<wlr_event_pointer_button>*> (data);
+-            wlr_signal = static_cast<wlr_event_pointer_button*> (wf_ev->event);
++            wf_ev = static_cast<wf::input_event_signal<wlr_pointer_button_event>*> (data);
++            wlr_signal = static_cast<wlr_pointer_button_event*> (wf_ev->event);
+             button_state = wlr_signal->state;
+             button = wlr_signal->button;
+             button_released = (button_state == WLR_BUTTON_RELEASED);
