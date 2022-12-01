@@ -52,5 +52,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
 
-# Keep override.mk in sync with x11/wcm + x11/wf-shell
 .include <bsd.port.mk>
