@@ -1,6 +1,6 @@
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.3
+DISTVERSION=	2022.4
 CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cmake:testing compiler:c++11-lib localbase:ldflags python:3.4+,build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	google
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:headers/third_party/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-201-gc214f6f:headers/third_party/spirv-headers
 CMAKE_ON+=	${CMAKE_TESTING_OFF}
 CMAKE_TESTING_OFF=	SHADERC_SKIP_TESTS
 CMAKE_ARGS=	-Dglslang_SOURCE_DIR:PATH="${LOCALBASE}/include/glslang" \
