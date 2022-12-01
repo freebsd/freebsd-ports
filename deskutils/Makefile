@@ -48,7 +48,6 @@
     SUBDIR += dosage
     SUBDIR += dstask
     SUBDIR += easystroke
-    SUBDIR += egroupware
     SUBDIR += elementary-calendar
     SUBDIR += fasd
     SUBDIR += fbreader
