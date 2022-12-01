@@ -1029,6 +1029,7 @@
 %%DATADIR%%/users/api/serializers.py
 %%DATADIR%%/users/api/urls.py
 %%DATADIR%%/users/api/views.py
+%%DATADIR%%/users/apps.py
 %%DATADIR%%/users/constants.py
 %%DATADIR%%/users/filtersets.py
 %%DATADIR%%/users/forms.py
@@ -1041,6 +1042,7 @@
 %%DATADIR%%/users/migrations/__init__.py
 %%DATADIR%%/users/models.py
 %%DATADIR%%/users/preferences.py
+%%DATADIR%%/users/signals.py
 %%DATADIR%%/users/tables.py
 %%DATADIR%%/users/tests/__init__.py
 %%DATADIR%%/users/tests/test_api.py
@@ -1083,6 +1085,7 @@
 %%DATADIR%%/utilities/query_functions.py
 %%DATADIR%%/utilities/querysets.py
 %%DATADIR%%/utilities/request.py
+%%DATADIR%%/utilities/serializers/json.py
 %%DATADIR%%/utilities/tables.py
 %%DATADIR%%/utilities/templates/builtins/badge.html
 %%DATADIR%%/utilities/templates/builtins/checkmark.html
