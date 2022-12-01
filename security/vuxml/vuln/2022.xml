@@ -1,3 +1,49 @@
+  <vuln vid="3cde510a-7135-11ed-a28b-bff032704f00">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.6.0</ge><lt>15.6.1</lt></range>
+	<range><ge>15.5.0</ge><lt>15.5.5</lt></range>
+	<range><ge>9.3.0</ge><lt>15.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/11/30/security-release-gitlab-15-6-1-released/">
+	  <p>DAST API scanner exposes Authorization headers in vulnerabilities</p>
+	  <p>Group IP allow-list not fully respected by the Package Registry</p>
+	  <p>Deploy keys and tokens may bypass External Authorization service if it is enabled</p>
+	  <p>Repository import still allows to import 40 hexadecimal branches</p>
+	  <p>Webhook secret tokens leaked in webhook logs</p>
+	  <p>Maintainer can leak webhook secret token by changing the webhook URL</p>
+	  <p>Cross-site scripting in Jira Integration affecting self-hosted instances without strict CSP</p>
+	  <p>Release names visible in public projects despite release set as project members only</p>
+	  <p>Sidekiq background job DoS by uploading malicious NuGet packages</p>
+	  <p>SSRF in Web Terminal advertise_address</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4206</cvename>
+      <cvename>CVE-2022-3820</cvename>
+      <cvename>CVE-2022-3740</cvename>
+      <cvename>CVE-2022-4205</cvename>
+      <cvename>CVE-2022-3902</cvename>
+      <cvename>CVE-2022-4054</cvename>
+      <cvename>CVE-2022-3572</cvename>
+      <cvename>CVE-2022-3482</cvename>
+      <cvename>CVE-2022-3478</cvename>
+      <cvename>CVE-2022-4201</cvename>
+      <url>https://about.gitlab.com/releases/2022/11/30/security-release-gitlab-15-6-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-11-30</discovery>
+      <entry>2022-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f7ed6ea-70a7-11ed-92ce-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
