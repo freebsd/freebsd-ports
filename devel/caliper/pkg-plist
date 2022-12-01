@@ -75,13 +75,13 @@ include/caliper/wrapConfigManager.h
 include/caliper/wrapScopeAnnotation.h
 lib/libcaliper-serial.so
 lib/libcaliper-serial.so.2
-lib/libcaliper-serial.so.2.8.0
+lib/libcaliper-serial.so.2.9.0
 lib/libcaliper-tools-util.so
 lib/libcaliper-tools-util.so.2
-lib/libcaliper-tools-util.so.2.8.0
+lib/libcaliper-tools-util.so.2.9.0
 lib/libcaliper.so
 lib/libcaliper.so.2
-lib/libcaliper.so.2.8.0
+lib/libcaliper.so.2.9.0
 libdata/pkgconfig/caliper.pc
 share/cmake/caliper/caliper-config.cmake
 share/cmake/caliper/caliper-targets-%%CMAKE_BUILD_TYPE%%.cmake
