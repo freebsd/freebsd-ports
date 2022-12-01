@@ -1,5 +1,6 @@
 PORTNAME=	kt-paperclip
 PORTVERSION=	7.1.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
@@ -19,7 +20,7 @@ RUN_DEPENDS=	rubygem-activemodel61>0:databases/rubygem-activemodel61 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		cpe gem magick:7,nox11,run
+USES=		cpe gem magick:7,run
 CPE_VENDOR=	thoughtbot
 
 .include <bsd.port.mk>
