@@ -390,6 +390,7 @@
     SUBDIR += openconnect-gui
     SUBDIR += opencryptoki
     SUBDIR += openct
+    SUBDIR += openfhe
     SUBDIR += openfortivpn
     SUBDIR += openiked
     SUBDIR += openiked-portable
