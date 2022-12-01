@@ -1,5 +1,5 @@
---- ../DESCRIPTION.orig	2022-10-25 00:32:14.447435000 -0500
-+++ ../DESCRIPTION	2022-10-25 00:32:21.641290000 -0500
+--- ../DESCRIPTION.orig	2022-10-24 04:22:27.000000000 -0500
++++ ../DESCRIPTION	2022-11-30 19:04:20.442043000 -0600
 @@ -1,5 +1,5 @@
  name: statistics-bootstrap
 -version: 5.0.1
@@ -7,3 +7,9 @@
  date: 2022-10-10
  author: Andrew Penn <andy.c.penn@gmail.com>
  maintainer: Andrew Penn <andy.c.penn@gmail.com>
+@@ -11,4 +11,4 @@
+  of the bootstrap are included that improve the coverage and 
+  accuracy of bootstrap confidence intervals for small samples.
+ License: GPLv3+
+-depends: octave (>= 6.1.0), statistics (>= 1.5.0)
++Depends: octave (>= 6.1.0), statistics (>= 1.5.0)
