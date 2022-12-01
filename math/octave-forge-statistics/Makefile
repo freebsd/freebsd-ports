@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-statistics
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/CONTRIBUTE.md
+LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnu-octave
