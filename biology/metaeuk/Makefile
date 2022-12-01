@@ -28,7 +28,7 @@ PLIST_FILES=	bin/metaeuk
 
 CMAKE_OFF=	NATIVE_ARCH
 
-.if !exists(/usr/include/omp.h
+.if !exists(/usr/include/omp.h)
 CMAKE_ARGS+=	-DREQUIRE_OPENMP:BOOL=OFF
 .endif
 
