@@ -1,6 +1,6 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.2.20220224
+DISTVERSION=	7.0.2-20220224
 DISTVERSIONSUFFIX=	-release
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
 		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3 \
