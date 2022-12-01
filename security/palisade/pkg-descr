@@ -18,4 +18,4 @@ efficient implementations of the following lattice cryptography capabilities:
 PALISADE is in the maintenance-only mode, and no new features will be added.
 Please use security/openfhe for new development.
 Existing projects should consider switching to security/openfhe.
-PALISADE will be deprecated in the future in vavor of security/openfhe.
+PALISADE will be deprecated in the future in favor of security/openfhe.
