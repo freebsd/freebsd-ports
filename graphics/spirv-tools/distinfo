@@ -3,3 +3,5 @@ SHA256 (KhronosGroup-SPIRV-Tools-v2022.4_GH0.tar.gz) = a156215a2d7c6c5b267933ed6
 SIZE (KhronosGroup-SPIRV-Tools-v2022.4_GH0.tar.gz) = 3043339
 SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-187-g85a1ed2_GH0.tar.gz) = 2a8b49657434cbb96c20e0c1558a70d32fc8eadf80e1d611c73ff721fb3d8212
 SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-187-g85a1ed2_GH0.tar.gz) = 440065
+SHA256 (381e3987b329.patch) = cef03b21d1f443dde94e4300062ff3dbe2fa574e2b52740adca104b89b4ac4df
+SIZE (381e3987b329.patch) = 83117
