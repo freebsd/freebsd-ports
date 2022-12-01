@@ -1,3 +1,32 @@
+  <vuln vid="0c52abde-717b-11ed-98ca-40b034429ecf">
+    <topic>rpm4 -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rpm4</name>
+	<range><lt>4.18.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>rpm project reports:</p>
+	<blockquote cite="https://rpm.org/wiki/Releases/4.18.0">
+	  <p>Fix intermediate symlinks not verified (CVE-2021-35939).</p>
+	  <p>Fix subkey binding signatures not checked on PGP public keys (CVE-2021-3521).</p>
+	  <p>Refactor file and directory operations to use fd-based APIs throughout (CVE-2021-35938)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-35939</cvename>
+      <cvename>CVE-2021-3521</cvename>
+      <cvename>CVE-2021-35938</cvename>
+    </references>
+    <dates>
+      <discovery>2022-08-22</discovery>
+      <entry>2022-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3cde510a-7135-11ed-a28b-bff032704f00">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
