@@ -30,7 +30,6 @@ ZSTD_MESON_ENABLED=	zstd
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 MESON_ARGS+=	-Dgallium-vdpau=disabled \
-		-Dgallium-xvmc=disabled \
 		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
 		-Dgallium-xa=disabled \

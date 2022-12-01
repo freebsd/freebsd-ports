@@ -22,7 +22,6 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
 		-Dgallium-opencl=disabled \
-		-Dgallium-xvmc=disabled \
 		-Dgallium-nine=false \
 		-Degl=disabled \
 		-Dgbm=disabled \

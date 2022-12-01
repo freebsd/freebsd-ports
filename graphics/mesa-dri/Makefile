@@ -43,10 +43,6 @@ GALLIUM_DRIVERS+=	PANFROST
 GALLIUM_DRIVERS+=	R300 R600 RADEONSI
 VULKAN_DRIVERS+=	AMD
 BUILD_DEPENDS+=		glslangValidator:graphics/glslang
-. if ${PORT_OPTIONS:MPLATFORM_X11}
-USE_XORG+=		xv xvmc
-MESON_ARGS+=		-Dgallium-xvmc=enabled
-. endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 GALLIUM_DRIVERS+=	CROCUS IRIS SVGA

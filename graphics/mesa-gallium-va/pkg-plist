@@ -1,5 +1,6 @@
 @comment include/EGL/egl.h
 @comment include/EGL/eglext.h
+@comment include/EGL/eglext_angle.h
 @comment include/EGL/eglextchromium.h
 @comment include/EGL/eglmesaext.h
 @comment include/EGL/eglplatform.h
