@@ -17624,3 +17624,4 @@ sysutils/ganglia-webfrontend||2022-11-29|Requires php74 which was EOL on 2022-11
 net/pecl-mosquitto||2022-11-30|Requires php74 which was EOL on 2022-11-28
 devel/pecl-propro2||2022-11-30|Requires php74 which was EOL on 2022-11-28
 devel/pecl-jsond||2022-11-30|Requires php74 which was EOL on 2022-11-28
+databases/pecl-cassandra||2022-11-30|Requires php74 which was EOL on 2022-11-28
