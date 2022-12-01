@@ -1,6 +1,7 @@
 PORTNAME=	openfhe
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,5 +29,17 @@ CMAKE_TESTING_ON=	BUILD_UNITTESTS
 CMAKE_TESTING_TARGET=	testall
 
 BINARY_ALIAS=	git=false
+
+OPTIONS_DEFINE=		HEXL NTL
+OPTIONS_DEFAULT=	NTL
+
+HEXL_DESC=		Buld with Intel hexl
+HEXL_CMAKE_BOOL=	WITH_INTEL_HEXL
+HEXL_BROKEN=		Fails to find hexl package and no hexl submodule
+
+NTL_DESC=		Build with libntl
+NTL_CMAKE_BOOL=		WITH_NTL
+NTL_LIB_DEPENDS=	libgmp.so:math/gmp \
+			libntl.so:math/ntl
 
 .include <bsd.port.mk>
