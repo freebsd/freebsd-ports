@@ -1090,6 +1090,7 @@
     SUBDIR += slatec
     SUBDIR += sleef
     SUBDIR += slgrace
+    SUBDIR += slicot
     SUBDIR += snns
     SUBDIR += solitaire
     SUBDIR += sound-of-sorting
