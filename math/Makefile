@@ -389,6 +389,7 @@
     SUBDIR += hs-penrose
     SUBDIR += hs-syfco
     SUBDIR += hsl
+    SUBDIR += hydrogen
     SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
