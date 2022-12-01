@@ -50,7 +50,7 @@ load_rc_config ${name}
 pidfile="/var/run/unifi/${name}.pid"
 procname=${unifi_java_home}/bin/java
 command=/usr/sbin/daemon
-command_args="-f -p ${pidfile} ${unifi_java_home}/bin/java ${unifi_javaflags} com.ubnt.ace.Launcher start"
+command_args="-f -p ${pidfile} ${unifi_java_home}/bin/java ${unifi_javaflags} -jar lib/ace.jar start"
 start_precmd=start_precmd
 stop_precmd=stop_precmd
 stop_postcmd=stop_postcmd

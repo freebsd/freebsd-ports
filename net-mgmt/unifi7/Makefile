@@ -1,5 +1,5 @@
 PORTNAME=	unifi7
-PORTVERSION=	7.2.95
+PORTVERSION=	7.3.76
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -21,7 +21,7 @@ USES=		cpe
 CPE_VENDOR=	ui
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	11+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
