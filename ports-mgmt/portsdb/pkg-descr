@@ -1,0 +1,2 @@
+PortsDB is a program that imports the FreeBSD ports tree into an
+SQLite database.

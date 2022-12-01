@@ -57,6 +57,7 @@
     SUBDIR += portrac
     SUBDIR += ports-tools
     SUBDIR += portscout
+    SUBDIR += portsdb
     SUBDIR += portsearch
     SUBDIR += portshaker
     SUBDIR += portshaker-config

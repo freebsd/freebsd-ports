@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+PortsDB needs this patch in the ports tree:
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268070
+EOM
+}
+]
