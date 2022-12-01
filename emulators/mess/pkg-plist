@@ -1694,6 +1694,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/msx1_cart.xml
 %%DATADIR%%/hash/msx1_cass.xml
 %%DATADIR%%/hash/msx1_flop.xml
+%%DATADIR%%/hash/msx1_flop_525.xml
 %%DATADIR%%/hash/msx2.hsi
 %%DATADIR%%/hash/msx2_cart.xml
 %%DATADIR%%/hash/msx2_cass.xml
