@@ -1,6 +1,7 @@
 PORTNAME=	SLICOT
 PORTVERSION=	5.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -43,8 +44,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libslicot.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libslicot.so.0.0 ${STAGEDIR}${PREFIX}/lib
-	${RLN} ${WRKSRC}/libslicot.so ${STAGEDIR}${PREFIX}/lib
-	${RLN} ${WRKSRC}/libslicot.so.0 ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libslicot.so.0.0	\
+		${STAGEDIR}${PREFIX}/lib/libslicot.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libslicot.so.0.0	\
+		${STAGEDIR}${PREFIX}/lib/libslicot.so.0
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
