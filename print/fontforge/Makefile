@@ -1,6 +1,5 @@
 PORTNAME=	fontforge
-DISTVERSION=	20201107
-PORTREVISION=	3
+DISTVERSION=	20220308
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -46,6 +45,7 @@ FREETYPE_CMAKE_ON=	-DENABLE_FREETYPE_DEBUGGER:PATH=${WRKSRC}/freetype
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CMAKE_BOOL=	ENABLE_LIBGIF
 
+GTK3_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 GTK3_USE=	gnome=gdkpixbuf2,gtk30
 
 JPEG_USES=	jpeg
@@ -91,7 +91,8 @@ WRITEPFM_CMAKE_BOOL=	ENABLE_WRITE_PFM
 
 X11_USES=	xorg
 X11_USE=	gnome=pango xorg=ice,sm,x11,xext,xft,xi
-X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libharfbuzz.so:print/harfbuzz
 X11_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:x11-fonts/gnu-unifont
 X11_CMAKE_BOOL=	ENABLE_X11
 
