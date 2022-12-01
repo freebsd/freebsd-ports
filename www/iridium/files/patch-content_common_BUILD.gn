@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2022-10-05 07:34:01 UTC
+--- content/common/BUILD.gn.orig	2022-12-01 10:35:46 UTC
 +++ content/common/BUILD.gn
-@@ -428,6 +428,9 @@ if (is_linux || is_chromeos) {
+@@ -430,6 +430,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]

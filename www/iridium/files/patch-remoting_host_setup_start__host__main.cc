@@ -1,6 +1,6 @@
---- remoting/host/setup/start_host_main.cc.orig	2022-10-05 07:34:01 UTC
+--- remoting/host/setup/start_host_main.cc.orig	2022-12-01 10:35:46 UTC
 +++ remoting/host/setup/start_host_main.cc
-@@ -31,7 +31,7 @@
+@@ -33,7 +33,7 @@
  #include <unistd.h>
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -9,7 +9,7 @@
  #include "remoting/host/setup/daemon_controller_delegate_linux.h"
  #include "remoting/host/setup/start_host_as_root.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -125,7 +125,7 @@ void OnDone(HostStarter::Result result) {
+@@ -127,7 +127,7 @@ void OnDone(HostStarter::Result result) {
  }  // namespace
  
  int StartHostMain(int argc, char** argv) {
@@ -18,7 +18,7 @@
    // Minimize the amount of code that runs as root on Posix systems.
    if (getuid() == 0) {
      return remoting::StartHostAsRoot(argc, argv);
-@@ -162,7 +162,7 @@ int StartHostMain(int argc, char** argv) {
+@@ -170,7 +170,7 @@ int StartHostMain(int argc, char** argv) {
    // for the account which generated |code|.
    std::string host_owner = command_line->GetSwitchValueASCII("host-owner");
  

@@ -1,6 +1,6 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
-@@ -604,7 +604,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
+@@ -606,7 +606,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
    crash_keys_ = std::make_unique<crash_keys::ScopedPrinterInfo>(
        print_backend_->GetPrinterDriverInfo(*printer_name));
  

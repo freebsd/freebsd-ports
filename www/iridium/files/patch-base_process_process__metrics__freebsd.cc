@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2022-10-05 07:34:01 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2022-12-01 10:35:46 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,20 +3,39 @@
  // found in the LICENSE file.
@@ -42,31 +42,37 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -26,17 +45,18 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+@@ -24,22 +43,19 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+   return WrapUnique(new ProcessMetrics(process));
+ }
  
- double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+-double ProcessMetrics::GetPlatformIndependentCPUUsage() {
++TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
 -  size_t length = sizeof(info);
 +  size_t length = sizeof(struct kinfo_proc);
++  struct timeval tv;
  
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
 +
    if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
 -    return 0;
-+    return 0.0;
++    return TimeDelta();
  
 -  return (info.ki_pctcpu / FSCALE) * 100.0;
-+  return static_cast<double>((info.ki_pctcpu * 100.0) / FSCALE);
++  return Microseconds(info.ki_runtime);
  }
  
- TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+-TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
 -  NOTREACHED();
-+  NOTIMPLEMENTED();
-   return TimeDelta();
+-  return TimeDelta();
+-}
+-
+ bool ProcessMetrics::GetIOCounters(IoCounters* io_counters) const {
+   return false;
  }
- 
-@@ -67,4 +87,221 @@ size_t GetSystemCommitCharge() {
+@@ -67,4 +83,221 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

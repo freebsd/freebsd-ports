@@ -1,6 +1,6 @@
---- chrome/updater/installer.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/updater/installer.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/updater/installer.cc
-@@ -243,7 +243,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
+@@ -242,7 +242,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
    return path->AppendASCII(pv_.GetString());
  }
  

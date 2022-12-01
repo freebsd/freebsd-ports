@@ -1,6 +1,6 @@
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
-@@ -1552,7 +1552,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -1551,7 +1551,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
    if (path.MatchesExtension(FILE_PATH_LITERAL(".pdf"))) {
      return !download_prefs_->ShouldOpenPdfInSystemReader();
    }
-@@ -1668,7 +1668,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
+@@ -1667,7 +1667,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
      content::CheckDownloadAllowedCallback check_download_allowed_cb) {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -18,16 +18,7 @@
    // Don't download pdf if it is a file URL, as that might cause an infinite
    // download loop if Chrome is not the system pdf viewer.
    if (url.SchemeIsFile() && download_prefs_->ShouldOpenPdfInSystemReader()) {
-@@ -1710,7 +1710,7 @@ std::unique_ptr<download::DownloadItemRenameHandler>
- ChromeDownloadManagerDelegate::GetRenameHandlerForDownload(
-     download::DownloadItem* download_item) {
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
--    BUILDFLAG(IS_MAC)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   return enterprise_connectors::FileSystemRenameHandler::CreateIfNeeded(
-       download_item);
- #else
-@@ -1726,7 +1726,7 @@ void ChromeDownloadManagerDelegate::CheckSavePackageAl
+@@ -1713,7 +1713,7 @@ void ChromeDownloadManagerDelegate::CheckSavePackageAl
    DCHECK(download_item->IsSavePackageDownload());
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

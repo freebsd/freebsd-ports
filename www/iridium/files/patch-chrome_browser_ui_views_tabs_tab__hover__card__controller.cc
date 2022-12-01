@@ -1,9 +1,9 @@
---- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -72,7 +72,7 @@ GetMemoryPressureOverride() {
- // Fetches the Omnibox drop-down widget, or returns null if the drop-down is
- // not visible.
- void FixWidgetStackOrder(views::Widget* widget, const Browser* browser) {
+@@ -79,7 +79,7 @@ void FixWidgetStackOrder(views::Widget* widget, const 
+     return;
+   }
+ 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Ensure the hover card Widget assumes the highest z-order to avoid occlusion

@@ -1,20 +1,11 @@
---- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.cc
-@@ -29,7 +29,7 @@ void AppearanceHandler::RegisterMessages() {
+@@ -28,7 +28,7 @@ void AppearanceHandler::RegisterMessages() {
        "useDefaultTheme",
-       base::BindRepeating(&AppearanceHandler::HandleUseDefaultTheme,
-                           base::Unretained(this)));
+       base::BindRepeating(&AppearanceHandler::HandleUseTheme,
+                           base::Unretained(this), ui::SystemTheme::kDefault));
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    web_ui()->RegisterMessageCallback(
-       "useSystemTheme",
-       base::BindRepeating(&AppearanceHandler::HandleUseSystemTheme,
-@@ -43,7 +43,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
- void AppearanceHandler::HandleUseSystemTheme(const base::Value::List& args) {
-   if (profile_->IsChild())
-     NOTREACHED();
+       "useGtkTheme",
+       base::BindRepeating(&AppearanceHandler::HandleUseTheme,

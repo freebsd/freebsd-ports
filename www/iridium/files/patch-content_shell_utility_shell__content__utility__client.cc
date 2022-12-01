@@ -1,6 +1,6 @@
---- content/shell/utility/shell_content_utility_client.cc.orig	2022-10-05 07:34:01 UTC
+--- content/shell/utility/shell_content_utility_client.cc.orig	2022-12-01 10:35:46 UTC
 +++ content/shell/utility/shell_content_utility_client.cc
-@@ -32,7 +32,7 @@
+@@ -33,7 +33,7 @@
  #include "sandbox/policy/sandbox.h"
  #include "services/test/echo/echo_service.h"
  
@@ -9,7 +9,7 @@
  #include "content/test/sandbox_status_service.h"
  #endif
  
-@@ -143,7 +143,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
+@@ -146,7 +146,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
    binders->Add<mojom::PowerMonitorTest>(
        base::BindRepeating(&PowerMonitorTestImpl::MakeSelfOwnedReceiver),
        base::ThreadTaskRunnerHandle::Get());
