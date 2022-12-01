@@ -72,7 +72,7 @@ sbin/maiad
 %%WWWDIR%%/images/view-raw.png
 %%WWWDIR%%/images/white-black-list.png
 %%WWWDIR%%/index.php
-%%WWWDIR%%/libs/Smarty
+%%WEBHOST%%%%WWWDIR%%/libs/Smarty
 %%WWWDIR%%/libs/jquery/images/arrowdown.gif
 %%WWWDIR%%/libs/jquery/images/arrowleft.gif
 %%WWWDIR%%/libs/jquery/images/arrowright.gif

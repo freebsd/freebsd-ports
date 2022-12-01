@@ -1,6 +1,6 @@
 PORTNAME=	maia
 DISTVERSION=	1.0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 
 MAINTAINER=	ek@purplehat.org
@@ -317,7 +317,9 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${WWWDIR}/web
 	@cd ${WRKSRC}/php && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+.if ${PORT_OPTIONS:MWEBHOST}
 	${LN} -s ${PREFIX}/share/smarty3-${PHP_FLAVOR} ${STAGEDIR}${WWWDIR}/libs/Smarty
+.endif
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripts
 	${MKDIR} ${STAGEDIR}${ETCDIR}/templates
