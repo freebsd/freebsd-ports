@@ -1,5 +1,5 @@
 PORTNAME=	libretro-snes9x2010
-PORTVERSION=	0.20220328
+PORTVERSION=	g20220725
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	snes9x2010
-GH_TAGNAME=	b12f3ba
+GH_TAGNAME=	e86e546
 
 PLIST_FILES=	lib/libretro/snes9x2010_libretro.so
 
