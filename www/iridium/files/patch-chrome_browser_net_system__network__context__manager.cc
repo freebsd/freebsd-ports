@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -91,7 +91,7 @@
  
@@ -18,7 +18,7 @@
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -484,7 +484,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -451,7 +451,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kAllHttpAuthSchemesAllowedForOrigins,
                               auth_pref_callback);
  
@@ -27,7 +27,7 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -556,7 +556,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -523,7 +523,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  

@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2022-10-05 07:34:01 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2022-12-01 10:35:46 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
 @@ -54,7 +54,7 @@
  #        include "libANGLE/renderer/gl/wgl/DisplayWGL.h"
@@ -36,7 +36,7 @@
  #        if defined(ANGLE_USE_GBM)
              if (platformType == EGL_PLATFORM_GBM_KHR && rx::IsVulkanGbmDisplayAvailable())
              {
-@@ -1986,7 +1986,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2011,7 +2011,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

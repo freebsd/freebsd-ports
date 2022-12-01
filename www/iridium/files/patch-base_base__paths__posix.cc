@@ -1,4 +1,4 @@
---- base/base_paths_posix.cc.orig	2022-10-05 07:34:01 UTC
+--- base/base_paths_posix.cc.orig	2022-12-01 10:35:46 UTC
 +++ base/base_paths_posix.cc
 @@ -15,6 +15,7 @@
  #include <ostream>
@@ -84,10 +84,10 @@
 +        kvm_close(kd);
 +      if (!ret) {
 +#endif
-+        if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
++        if ((cpath = getenv("IRIDIUM_EXE_PATH")) != NULL)
 +          *result = FilePath(cpath);
 +        else
-+          *result = FilePath("/usr/local/chrome/chrome");
++          *result = FilePath("/usr/local/iridium/iridium");
 +        return true;
 +#if !BUILDFLAG(IS_AIX)
 +      }

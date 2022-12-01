@@ -1,11 +1,20 @@
---- remoting/host/ipc_constants.cc.orig	2022-03-28 18:11:04 UTC
+--- remoting/host/ipc_constants.cc.orig	2022-12-01 10:35:46 UTC
 +++ remoting/host/ipc_constants.cc
-@@ -16,7 +16,7 @@ namespace remoting {
+@@ -17,7 +17,7 @@ namespace remoting {
  
  namespace {
  
--#if !defined(NDEBUG) && BUILDFLAG(IS_LINUX)
-+#if !defined(NDEBUG) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
- // Use a different IPC name for Linux debug builds so that we can run the host
- // directly from out/Debug without interfering with the production host that
- // might also be running.
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ 
+ #if !defined(NDEBUG)
+ // Use a different IPC name for debug builds so that we can run the host
+@@ -65,7 +65,7 @@ const mojo::NamedPlatformChannel::ServerName&
+ GetChromotingHostServicesServerName() {
+   static const base::NoDestructor<mojo::NamedPlatformChannel::ServerName>
+       server_name(WorkingDirectoryIndependentServerNameFromUTF8(
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+           // Linux host creates the socket file in /tmp, and it won't be deleted
+           // until reboot, so we put username in the path in case the user
+           // switches the host owner.

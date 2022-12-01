@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc
-@@ -18,14 +18,14 @@
+@@ -19,14 +19,14 @@
  #include "chrome/common/chrome_paths.h"
  #include "components/version_info/version_info.h"
  

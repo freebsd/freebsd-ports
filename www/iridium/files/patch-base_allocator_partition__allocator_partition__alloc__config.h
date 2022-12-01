@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc_config.h.orig	2022-10-05 07:34:01 UTC
+--- base/allocator/partition_allocator/partition_alloc_config.h.orig	2022-12-01 10:35:46 UTC
 +++ base/allocator/partition_allocator/partition_alloc_config.h
 @@ -76,7 +76,7 @@ static_assert(sizeof(void*) != 8, "");
  
@@ -9,7 +9,7 @@
  #define PA_HAS_LINUX_KERNEL
  #endif
  
-@@ -195,7 +195,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -197,7 +197,7 @@ constexpr bool kUseLazyCommit = false;
  
  // On these platforms, lock all the partitions before fork(), and unlock after.
  // This may be required on more platforms in the future.
@@ -18,7 +18,7 @@
  #define PA_HAS_ATFORK_HANDLER
  #endif
  
-@@ -235,7 +235,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -238,7 +238,7 @@ constexpr bool kUseLazyCommit = false;
  //
  // Also enabled on ARM64 macOS, as the 16kiB pages on this platform lead to
  // larger slot spans.

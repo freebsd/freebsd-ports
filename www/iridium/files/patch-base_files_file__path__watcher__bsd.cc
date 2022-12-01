@@ -1,4 +1,4 @@
---- base/files/file_path_watcher_bsd.cc.orig	2022-03-28 18:11:04 UTC
+--- base/files/file_path_watcher_bsd.cc.orig	2022-12-01 10:35:46 UTC
 +++ base/files/file_path_watcher_bsd.cc
 @@ -0,0 +1,54 @@
 +// Copyright 2021 The Chromium Authors. All rights reserved.
@@ -50,7 +50,7 @@
 +}  // namespace
 +
 +FilePathWatcher::FilePathWatcher() {
-+  sequence_checker_.DetachFromSequence();
++  DETACH_FROM_SEQUENCE(sequence_checker_);
 +  impl_ = std::make_unique<FilePathWatcherImpl>();
 +}
 +

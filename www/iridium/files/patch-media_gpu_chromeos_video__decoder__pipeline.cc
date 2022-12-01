@@ -1,6 +1,6 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2022-10-05 07:34:01 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2022-12-01 10:35:46 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -747,7 +747,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -748,7 +748,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
      }
    }
  
@@ -9,7 +9,7 @@
    // Linux should always use a custom allocator (to allocate buffers using
    // libva) and a PlatformVideoFramePool.
    CHECK(allocator.has_value());
-@@ -769,7 +769,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -770,7 +770,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
  #error "Unsupported platform"
  #endif
  

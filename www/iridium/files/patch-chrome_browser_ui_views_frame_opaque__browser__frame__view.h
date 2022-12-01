@@ -1,6 +1,15 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.h.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.h.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.h
-@@ -226,7 +226,7 @@ class OpaqueBrowserFrameView : public BrowserNonClient
+@@ -114,7 +114,7 @@ class OpaqueBrowserFrameView : public BrowserNonClient
+       const gfx::Rect& bounding_rect) const override;
+   bool IsTranslucentWindowOpacitySupported() const override;
+   bool ShouldDrawRestoredFrameShadow() const override;
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+   ui::WindowTiledEdges GetTiledEdges() const override;
+ #endif
+ 
+@@ -230,7 +230,7 @@ class OpaqueBrowserFrameView : public BrowserNonClient
    // Background painter for the window frame.
    std::unique_ptr<views::FrameBackground> frame_background_;
  

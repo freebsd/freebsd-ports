@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2022-10-05 07:34:01 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2022-12-01 10:35:46 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
@@ -33,7 +33,7 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   ui::LinuxUi::SetInstance(ui::CreateLinuxUi());
+   ui::LinuxUi::SetInstance(ui::GetDefaultLinuxUi());
  #endif
  }
 @@ -196,7 +196,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
