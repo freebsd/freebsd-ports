@@ -4,7 +4,10 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	High quality, full featured hex editor
+COMMENT=	High-quality, full-featured hexadecimal editor
+WWW=		https://github.com/afrantzis/bless
+
+LICENSE=	GPLv2+
 
 USES=		gnome meson mono pkgconfig
 USE_GNOME=	gtksharp20
