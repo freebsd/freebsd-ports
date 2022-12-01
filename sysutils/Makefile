@@ -543,6 +543,7 @@
     SUBDIR += hs-cputype
     SUBDIR += hstr
     SUBDIR += htop
+    SUBDIR += httm
     SUBDIR += httplog
     SUBDIR += hw-probe
     SUBDIR += hwstat
