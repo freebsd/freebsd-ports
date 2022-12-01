@@ -18,14 +18,14 @@ USE_GNOME=	gdkpixbuf2 glib20
 USE_LDCONFIG=	yes
 PLIST_SUB=	LIB_VER=${DISTVERSION}.0
 
-OPTIONS_DEFINE=		AOM DAV1D EXAMPLES LIBDE265 SVT RAV1E X265
+OPTIONS_DEFINE=		AOM DAV1D EXAMPLES LIBDE265 SVTAV1 RAV1E X265
 OPTIONS_DEFAULT=	AOM DAV1D LIBDE265 X265
 OPTIONS_SUB=	yes
 
 AOM_DESC=		AV1 encoding/decoding via libaom
 DAV1D_DESC=		Build dav1e decoder
 LIBDE265_DESC=		Use libde265 (support for HEVC decoding)
-SVT_DESC=		Build svt-av1 encoder
+SVTAV1_DESC=		Build svt-av1 encoder
 RAV1E_DESC=		Build rav1e encoder
 X265_DESC=		Use x265 (support for HEVC encoding)
 
@@ -42,9 +42,9 @@ EXAMPLES_CMAKE_BOOL=	WITH_EXAMPLES
 LIBDE265_LIB_DEPENDS=	libde265.so:multimedia/libde265
 LIBDE265_CMAKE_BOOL=	WITH_LIBDE265
 
-SVT_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
-SVT_CMAKE_BOOL=		WITH_SvtEnc
-SVT_BROKEN=		breaks some dependent ports
+SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
+SVTAV1_CMAKE_BOOL=	WITH_SvtEnc
+SVTAV1_BROKEN=		breaks some dependent ports
 
 RAV1E_LIB_DEPENDS=	librav1e.so:multimedia/librav1e
 RAV1E_CMAKE_BOOL=	WITH_RAV1E
