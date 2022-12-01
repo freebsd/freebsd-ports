@@ -313,6 +313,7 @@ bin/gedkeeper
 %%DATADIR%%/locales/russian.lng
 %%DATADIR%%/locales/special/GKFlowInputPlugin_manual_ru.docx
 %%DATADIR%%/locales/special/GKPedigreeImporterPlugin_manual_ru.docx
+%%DATADIR%%/locales/tips_rus.yaml
 %%DATADIR%%/locales/ukrainian.lng
 %%DATADIR%%/nVLC.dll
 %%DATADIR%%/plugins/BSLib.DataViz.Model.dll
@@ -414,7 +415,6 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKWordsCloudPlugin.pol
 %%DATADIR%%/plugins/GKWordsCloudPlugin.rus
 %%DATADIR%%/plugins/GKWordsCloudPlugin.ukr
-%%DATADIR%%/plugins/GWTreePlugin.dll
 %%DATADIR%%/plugins/KopiLua.dll
 %%DATADIR%%/plugins/Mono.Nat.dll
 %%DATADIR%%/plugins/NLog.dll
@@ -428,6 +428,7 @@ bin/gedkeeper
 %%DATADIR%%/plugins/_XapianSharp.dll
 %%DATADIR%%/plugins/csgl.dll
 %%DATADIR%%/plugins/csgl.native.dll
+%%DATADIR%%/plugins/gedmill-bg.png
 %%DATADIR%%/plugins/itextsharp.dll
 %%DATADIR%%/plugins/log4net.dll
 %%DATADIR%%/plugins/nVLC.dll
