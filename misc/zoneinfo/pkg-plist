@@ -48,6 +48,7 @@
 %%DATADIR%%/America/Cayenne
 %%DATADIR%%/America/Chicago
 %%DATADIR%%/America/Chihuahua
+%%DATADIR%%/America/Ciudad_Juarez
 %%DATADIR%%/America/Costa_Rica
 %%DATADIR%%/America/Cuiaba
 %%DATADIR%%/America/Danmarkshavn
@@ -109,7 +110,6 @@
 %%DATADIR%%/America/Nuuk
 %%DATADIR%%/America/Ojinaga
 %%DATADIR%%/America/Panama
-%%DATADIR%%/America/Pangnirtung
 %%DATADIR%%/America/Paramaribo
 %%DATADIR%%/America/Phoenix
 %%DATADIR%%/America/Port-au-Prince
@@ -421,6 +421,7 @@
 %%BACKWARD%%%%DATADIR%%/America/Montserrat
 %%BACKWARD%%%%DATADIR%%/America/Nassau
 %%BACKWARD%%%%DATADIR%%/America/Nipigon
+%%BACKWARD%%%%DATADIR%%/America/Pangnirtung
 %%BACKWARD%%%%DATADIR%%/America/Port_of_Spain
 %%BACKWARD%%%%DATADIR%%/America/Porto_Acre
 %%BACKWARD%%%%DATADIR%%/America/Rainy_River
