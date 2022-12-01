@@ -1,5 +1,6 @@
 PORTNAME=	libretro-snes9x
-PORTVERSION=	0.20220405
+DISTVERSION=	1.53-2017
+DISTVERSIONSUFFIX=	-g2ed8d68
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +19,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	snes9x
-GH_TAGNAME=	92e5907
 
 PLIST_FILES=	lib/libretro/snes9x_libretro.so
 
