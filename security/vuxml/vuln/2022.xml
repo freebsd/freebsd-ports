@@ -3964,6 +3964,7 @@
 	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
 	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
 	<range><ge>9.0.0</ge><lt>9.0.3</lt></range>
+	<range><ge>9.1.0</ge><lt>9.2.7</lt></range>
       </package>
       <package>
 	<name>grafana8</name>
@@ -3974,6 +3975,7 @@
       <package>
 	<name>grafana9</name>
 	<range><lt>9.0.3</lt></range>
+	<range><ge>9.1.0</ge><lt>9.2.7</lt></range>
       </package>
     </affects>
     <description>
