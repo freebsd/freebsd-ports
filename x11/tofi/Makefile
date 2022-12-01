@@ -1,10 +1,7 @@
 PORTNAME=	tofi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	bd375c2f53e2.patch:-p1 # https://github.com/philj56/tofi/pull/61
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tiny dynamic menu for Wayland
