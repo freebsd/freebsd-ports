@@ -12,6 +12,7 @@
     SUBDIR += bee-host
     SUBDIR += biew
     SUBDIR += bitedit
+    SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bpatch
     SUBDIR += bvi
