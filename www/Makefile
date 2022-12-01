@@ -242,6 +242,7 @@
     SUBDIR += httpcore
     SUBDIR += httptunnel
     SUBDIR += httrack
+    SUBDIR += hurl
     SUBDIR += hypermail
     SUBDIR += igal2
     SUBDIR += ikiwiki
