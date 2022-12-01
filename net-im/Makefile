@@ -38,6 +38,7 @@
     SUBDIR += jitsi-prosody-plugins
     SUBDIR += jitsi-srtp-native
     SUBDIR += jitsi-videobridge
+    SUBDIR += jsxc
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
