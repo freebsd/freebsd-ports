@@ -1,7 +1,7 @@
 PORTNAME=	julia
 DISTVERSION=	1.8.3
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -37,21 +37,10 @@ USES=		gmake compiler:c++14-lang cpe fortran python perl5 \
 
 CPE_VENDOR=	julialang
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
-CFLAGS+=	-fpic
 
 SHEBANG_GLOB=	*.sh
-
-WRKSRC=		${WRKDIR}/julia-${DISTVERSION}
-
-ALL_TARGET=	default
-INSTALL_TARGET=	install
-TEST_TARGET=	test
-
-PORTDOCS=	html
-PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 MAKE_ARGS+=	NO_GIT=1 \
 		USE_BINARYBUILDER=0 \
@@ -77,25 +66,32 @@ MAKE_ARGS+=	NO_GIT=1 \
 		USE_SYSTEM_CSL=1 \
 		USE_SYSTEM_ZLIB=1 \
 		USE_SYSTEM_LIBUNWIND=1
+ALL_TARGET=	default
+INSTALL_TARGET=	install
+TEST_TARGET=	test
 
-OPTIONS_DEFINE=		DEBUG DOCS NATIVE GPL_LIBS
-OPTIONS_DEFAULT=	DOCS GPL_LIBS
+CFLAGS+=	-fpic
+
+BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
+
+WRKSRC=		${WRKDIR}/julia-${DISTVERSION}
+
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+PORTDOCS=	html
+
+OPTIONS_DEFINE=		DEBUG DOCS NATIVE
+OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
+
+
+NATIVE_DESC=		Build with native CPU JIT tuning
+NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native
 
 DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
 			ALL_TARGET=all \
 			BUNDLE_DEBUG_LIBS=1
 
 DOCS_VARS=		INSTALL_TARGET+=install-docs
-
-GPL_LIBS_DESC=		Build with GPL library suitesparse
-GPL_LIBS_LIB_DEPENDS=	libspqr.so:math/suitesparse-spqr \
-			libumfpack.so:math/suitesparse-umfpack
-GPL_LIBS_MAKE_ARGS=	USE_SYSTEM_LIBSUITESPARSE=1 \
-			USE_GPL_LIBS=1
-
-NATIVE_DESC=		Build with native CPU JIT tuning
-NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native
 
 post-patch:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
@@ -122,14 +118,11 @@ pre-install:
 post-install:
 	# clean up for Pkg3.jl
 .for file in .codecov.yml .travis.yml appveyor.yml bors.toml .gitignore source-extracted *.orig
-	${FIND} ${STAGEDIR}${PREFIX}/share/julia/ -name ${file} -delete
+	${FIND} ${STAGEDIR}${PREFIX}/share/julia/ -name "${file}" -delete
 .endfor
 .for dir in Statistics SuiteSparse ArgTools Pkg Downloads LibCURL NetworkOptions Tar
 	${RM} -fr ${STAGEDIR}${PREFIX}/share/julia/stdlib/v${PORTVERSION:R}/${dir}/.github/
 .endfor
-
-post-install-DOCS-off:
-	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
 
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
@@ -137,5 +130,8 @@ post-install-DEBUG-off:
 .for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
+
+post-install-DOCS-off:
+	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
 
 .include <bsd.port.mk>
