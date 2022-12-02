@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Remember to check
+
+%%MEDIAWIKIDIR%%/INSTALL
+
+and
+
+%%MEDIAWIKIDIR%%/UPGRADE
+
+for details
+EOM
+}
+]
