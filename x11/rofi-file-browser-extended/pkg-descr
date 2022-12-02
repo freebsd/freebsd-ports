@@ -1,0 +1,3 @@
+rofi-file-browser-extended is a configurable file browser plugin for rofi.
+Its main use case is to quickly open files without having to open a window
+to navigate to the file.
