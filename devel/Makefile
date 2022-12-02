@@ -286,6 +286,7 @@
     SUBDIR += boehm-gc-threaded
     SUBDIR += boost-all
     SUBDIR += boost-docs
+    SUBDIR += boost-headers
     SUBDIR += boost-jam
     SUBDIR += boost-libs
     SUBDIR += boost-python-libs
