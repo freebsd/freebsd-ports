@@ -211,6 +211,7 @@ include/snort/pub_sub/http_events.h
 include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
+include/snort/pub_sub/packet_events.h
 include/snort/pub_sub/reputation_events.h
 include/snort/pub_sub/rna_events.h
 include/snort/pub_sub/sip_events.h
