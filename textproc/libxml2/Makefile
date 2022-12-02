@@ -2,6 +2,11 @@ PORTNAME=	libxml2
 DISTVERSION=	2.10.2
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
+
+# CHERI support
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/
+PATCHFILES=	200.patch:-p1 202.patch:-p1
+
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
 
