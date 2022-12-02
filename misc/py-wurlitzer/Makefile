@@ -1,5 +1,5 @@
 PORTNAME=	wurlitzer
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.6+ pytest
 USE_PYTHON=	autoplist concurrent distutils
+PYTEST_ARGS=	test.py
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -x -v test.py
 
 .include <bsd.port.mk>
