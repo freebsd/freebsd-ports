@@ -1,5 +1,5 @@
-TIMESTAMP = 1649644728
-SHA256 (djpohly-dwl-v0.3.1_GH0.tar.gz) = 5d550b0ee6d99d0b537269b8389af4b95d1ab0b63e7bb8c2309f6c57a2d6c9c9
-SIZE (djpohly-dwl-v0.3.1_GH0.tar.gz) = 51347
-SHA256 (cba259e9bf4a.patch) = bc2aed48b3652ae2a00ebc04a40654d1b22676c6bd6a001f23dd52801bac8696
-SIZE (cba259e9bf4a.patch) = 1348
+TIMESTAMP = 1669998789
+SHA256 (djpohly-dwl-v0.4-rc1_GH0.tar.gz) = eedfc6ce112d1c28d780ff1c96b593f4c37c29d95fb9a9e5a4538777a6ab4374
+SIZE (djpohly-dwl-v0.4-rc1_GH0.tar.gz) = 53966
+SHA256 (cb53dfd1fd6e.patch) = f772cd61ad5ff2d8b0d3bd59c7282cc075edf537d2a5f219002a6261effc5c10
+SIZE (cb53dfd1fd6e.patch) = 710
