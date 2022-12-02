@@ -7,7 +7,7 @@
 -        ts = {secs.count(),
 -              std::chrono::duration_cast<std::chrono::nanoseconds>(timeout)
 +        ts = {(time_t)secs.count(),
-+              (time_t)std::chrono::duration_cast<std::chrono::nanoseconds>(timeout)
++              (long)std::chrono::duration_cast<std::chrono::nanoseconds>(timeout)
                    .count()};
  
          p_ts = &ts;
