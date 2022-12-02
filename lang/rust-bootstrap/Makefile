@@ -22,10 +22,11 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	untested on other architectures
 
+RUST_BOOTSTRAP_LOCALBASE?=${LOCALBASE}
 BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysroot@${FLAVOR} \
 		cmake:devel/cmake-core \
 		gmake:devel/gmake \
-		rust>=${PORTVERSION}:lang/rust
+		${RUST_BOOTSTRAP_LOCALBASE}/bin/rustc:lang/rust
 
 FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
 		powerpc64le powerpc riscv64
@@ -106,8 +107,8 @@ do-configure:
 	@${ECHO_CMD} 'docs=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cargo-native-static=true' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'cargo="${LOCALBASE}/bin/cargo"' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'rustc="${LOCALBASE}/bin/rustc"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cargo="${RUST_BOOTSTRAP_LOCALBASE}/bin/cargo"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'rustc="${RUST_BOOTSTRAP_LOCALBASE}/bin/rustc"' >> ${WRKSRC}/config.toml
 .if ${_RUST_HOST} != ${_RUST_TARGET}
 	@${ECHO_CMD} 'host=["${_RUST_HOST}","${_RUST_TARGET}"]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'target=["${_RUST_TARGET}"]' >> ${WRKSRC}/config.toml
