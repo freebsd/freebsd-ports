@@ -28,6 +28,11 @@ MASTER_SITE_LOCAL+= \
 	http://distcache.eu.FreeBSD.org/local-distfiles/%SUBDIR%/ \
 	http://distcache.us-west.FreeBSD.org/local-distfiles/%SUBDIR%/
 
+.if !defined(IGNORE_MASTER_SITE_LOCAL_CHERIBSD)
+MASTER_SITE_LOCAL_CHERIBSD+= \
+	http://pkg.CheriBSD.org/local-distfiles/%SUBDIR%/
+.endif
+
 MASTER_SITE_PORTS_JP+= \
 	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
