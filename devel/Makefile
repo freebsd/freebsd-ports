@@ -5714,6 +5714,7 @@
     SUBDIR += rapidfuzz-cpp
     SUBDIR += rapidjson
     SUBDIR += rapidyaml
+    SUBDIR += rationl
     SUBDIR += raylib
     SUBDIR += rbenv
     SUBDIR += rbtools
