@@ -4,7 +4,7 @@ PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
-		LOCAL/rust:bootstrap \
+		LOCAL_CHERIBSD/rust:bootstrap \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_DATE:D${NIGHTLY_DATE}/}${DISTNAME}${EXTRACT_SUFX}:src \
@@ -23,8 +23,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 IGNORE_FreeBSD_12_powerpc=	is missing a bootstrap for FreeBSD 12.x powerpc
-ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le \
-			powerpc riscv64
+ONLY_FOR_ARCHS?=	aarch64
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
@@ -69,8 +68,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2022-09-22
-RUST_BOOTSTRAP_VERSION?=	1.64.0
+BOOTSTRAPS_DATE?=		2022-12-01
+RUST_BOOTSTRAP_VERSION?=	1.65.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -78,6 +77,7 @@ BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
 # Rust's target arch string might be different from *BSD arch strings
+_RUST_ARCH_aarch64=	aarch64
 _RUST_ARCH_amd64=	x86_64
 _RUST_ARCH_i386=	i686
 _RUST_ARCH_riscv64=	riscv64gc
