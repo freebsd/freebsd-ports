@@ -17627,3 +17627,4 @@ devel/pecl-jsond||2022-11-30|Requires php74 which was EOL on 2022-11-28
 databases/pecl-cassandra||2022-11-30|Requires php74 which was EOL on 2022-11-28
 deskutils/egroupware||2022-12-01|Requires php74 which was EOL on 2022-11-28
 devel/pecl-APCu_bc||2022-12-01|Requires php74 which was EOL on 2022-11-28
+textproc/google-translate-cli|textproc/translate-shell|2022-12-02|Renamed by upstream

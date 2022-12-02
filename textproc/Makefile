@@ -240,7 +240,6 @@
     SUBDIR += gojq
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
-    SUBDIR += google-translate-cli
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += grc-aspell
@@ -1961,6 +1960,7 @@
     SUBDIR += toml-f
     SUBDIR += tr-aspell
     SUBDIR += trang
+    SUBDIR += translate-shell
     SUBDIR += translate-toolkit
     SUBDIR += trdsql
     SUBDIR += ts-hunspell

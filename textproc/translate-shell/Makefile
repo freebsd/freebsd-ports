@@ -1,11 +1,11 @@
-PORTNAME=	google-translate-cli
+PORTNAME=	translate-shell
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6.12
 PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Google Translate to serve as a command line tool
+COMMENT=	Command line interface to translation engines
 WWW=		https://www.soimort.org/translate-shell/
 
 LICENSE=	UNLICENSE
@@ -21,7 +21,6 @@ TEST_DEPENDS=	curl:ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	soimort
-GH_PROJECT=	translate-shell
 
 ALL_TARGET=	build
 TEST_ENV=	LC_ALL=C.UTF-8
