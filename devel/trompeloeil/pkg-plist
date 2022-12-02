@@ -1,0 +1,11 @@
+include/boost/trompeloeil.hpp
+include/catch2/trompeloeil.hpp
+include/criterion/trompeloeil.hpp
+include/crpcut/trompeloeil.hpp
+include/cxxtest/trompeloeil.hpp
+include/doctest/trompeloeil.hpp
+include/gtest/trompeloeil.hpp
+include/trompeloeil.hpp
+lib/cmake/trompeloeil/trompeloeil-config-version.cmake
+lib/cmake/trompeloeil/trompeloeil-config.cmake
+lib/cmake/trompeloeil/trompeloeil-targets.cmake

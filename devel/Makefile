@@ -7392,6 +7392,7 @@
     SUBDIR += treepy.el
     SUBDIR += trellis
     SUBDIR += trio
+    SUBDIR += trompeloeil
     SUBDIR += truc
     SUBDIR += tup
     SUBDIR += ua_parser-core
