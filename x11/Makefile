@@ -33,6 +33,7 @@
     SUBDIR += cde-25
     SUBDIR += cde-devel
     SUBDIR += cheri-desktop
+    SUBDIR += cheri-desktop-hybrid-extras
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
     SUBDIR += cinnamon-menus
