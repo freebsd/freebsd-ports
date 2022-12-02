@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Copy sfwbar.config from %%DATADIR%% to ~/.config/sfwbar/.
+If you prefer to start with something more like tint2 bar, you can copy t2.config into ~/.config/sfwbar/sfwbar.config instead.
+If you want something like waybar, you can copy wbar.config and if you prefer something from the darker side, w10.config could be for you.
+For more information on the format of configuration file, please see the man page
+
+If you're using sway, you may want to add the following lines to your sway config file to open windows as floating by default:
+
+# open new windows as floating by default
+for_window [app_id="[.]*"] floating enable
+# set Alt-tab as a task switcher combo
+bindsym Alt+Tab bar hidden_state toggle 
+# set $mod+c to hide/unhide taskbar 
+bindsym $mod+c bar mode toggle
+
+EOM
+}
+]
