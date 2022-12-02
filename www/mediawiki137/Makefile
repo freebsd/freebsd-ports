@@ -10,6 +10,9 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	End of life upstream, users are recommended to upgrade to 1.39 or higher
+EXPIRATION_DATE=2023-02-28
+
 CONFLICTS=	mediawiki135 mediawiki13[8-9]
 
 USES=		cpe php:flavors shebangfix
