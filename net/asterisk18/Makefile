@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	18.15.0
+PORTVERSION=	18.15.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
