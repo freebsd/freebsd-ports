@@ -1,6 +1,6 @@
---- ui/base/ui_base_types.h.orig	2022-10-29 17:50:56 UTC
+--- ui/base/ui_base_types.h.orig	2022-12-02 17:56:32 UTC
 +++ ui/base/ui_base_types.h
-@@ -37,7 +37,7 @@ enum WindowShowState {
+@@ -32,7 +32,7 @@ enum WindowShowState {
    SHOW_STATE_END = 6  // The end of show state enum.
  };
  

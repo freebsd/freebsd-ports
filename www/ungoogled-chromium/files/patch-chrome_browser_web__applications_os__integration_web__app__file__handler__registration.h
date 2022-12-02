@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h
-@@ -44,7 +44,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
+@@ -45,7 +45,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
                                    Profile* profile,
                                    ResultCallback callback);
  

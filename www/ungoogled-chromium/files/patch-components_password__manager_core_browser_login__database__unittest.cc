@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/login_database_unittest.cc.orig	2022-10-01 07:40:07 UTC
+--- components/password_manager/core/browser/login_database_unittest.cc.orig	2022-12-02 17:56:32 UTC
 +++ components/password_manager/core/browser/login_database_unittest.cc
-@@ -2092,7 +2092,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
+@@ -2093,7 +2093,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
    base::HistogramTester histogram_tester;
    ASSERT_TRUE(db.Init());
  
@@ -9,7 +9,7 @@
    // Make sure that we can't get any logins when database is corrupted.
    // Disabling the checks in chromecast because encryption is unavailable.
    std::vector<std::unique_ptr<PasswordForm>> result;
-@@ -2118,7 +2118,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
+@@ -2119,7 +2119,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
  #endif
  
  // Check histograms.
@@ -18,7 +18,7 @@
    histogram_tester.ExpectUniqueSample("PasswordManager.CleanedUpPasswords", 2,
                                        1);
    histogram_tester.ExpectUniqueSample(
-@@ -2170,7 +2170,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, KeychainL
+@@ -2171,7 +2171,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, KeychainL
  }
  #endif  // BUILDFLAG(IS_MAC)
  

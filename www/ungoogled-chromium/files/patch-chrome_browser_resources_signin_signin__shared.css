@@ -1,7 +1,7 @@
---- chrome/browser/resources/signin/signin_shared.css.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/resources/signin/signin_shared.css.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/resources/signin/signin_shared.css
-@@ -34,7 +34,7 @@ a {
-   padding: var(--action-container-padding);
+@@ -54,7 +54,7 @@ a {
+   border-radius: var(--scrollbar-width);
  }
  
 -<if expr="is_macosx or is_linux or is_chromeos">

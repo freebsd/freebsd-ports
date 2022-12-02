@@ -1,4 +1,4 @@
---- content/ppapi_plugin/ppapi_plugin_main.cc.orig	2022-10-01 07:40:07 UTC
+--- content/ppapi_plugin/ppapi_plugin_main.cc.orig	2022-12-02 17:56:32 UTC
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
 @@ -53,6 +53,11 @@
  #include "gin/v8_initializer.h"
@@ -12,7 +12,7 @@
  #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -136,7 +141,7 @@ int PpapiPluginMain(MainFunctionParams parameters) {
+@@ -146,7 +151,7 @@ int PpapiPluginMain(MainFunctionParams parameters) {
    gin::V8Initializer::LoadV8Snapshot();
  #endif
  

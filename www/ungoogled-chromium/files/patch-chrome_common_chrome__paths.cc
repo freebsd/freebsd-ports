@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2022-10-29 17:50:56 UTC
+--- chrome/common/chrome_paths.cc.orig	2022-12-02 17:56:32 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -49,14 +49,14 @@
  
@@ -11,7 +11,7 @@
  const base::FilePath::CharType kFilepathSinglePrefExtensions[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 -    FILE_PATH_LITERAL("/usr/share/google-chrome/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
++    FILE_PATH_LITERAL("/usr/local/share/ungoogled-chromium/extensions");
  #else
 -    FILE_PATH_LITERAL("/usr/share/chromium/extensions");
 +    FILE_PATH_LITERAL("/usr/local/share/ungoogled-chromium/extensions");

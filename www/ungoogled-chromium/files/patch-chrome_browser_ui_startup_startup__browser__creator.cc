@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -128,7 +128,7 @@
+@@ -129,7 +129,7 @@
  #include "chrome/credential_provider/common/gcp_strings.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/startup/web_app_info_recorder_utils.h"
  #endif
  
-@@ -1006,7 +1006,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -1007,7 +1007,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
      silent_launch = true;
    }
  
@@ -18,7 +18,7 @@
    // Writes open and installed web apps to the specified file without
    // launching a new browser window or tab.
    if (base::FeatureList::IsEnabled(features::kListWebAppsSwitch) &&
-@@ -1196,7 +1196,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -1197,7 +1197,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
      CHECK_EQ(profile_info.mode, StartupProfileMode::kBrowserWindow)
          << "Failed launch with app: couldn't pick a profile";
      std::string app_id = command_line.GetSwitchValueASCII(switches::kAppId);

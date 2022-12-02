@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2022-11-09 11:19:08 UTC
+--- build/config/compiler/BUILD.gn.orig	2022-12-02 17:56:32 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -222,13 +222,16 @@ config("default_include_dirs") {
+@@ -219,13 +219,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -18,7 +18,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -452,6 +455,10 @@ config("compiler") {
+@@ -449,6 +452,10 @@ config("compiler") {
      }
    }
  
@@ -29,7 +29,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -527,7 +534,7 @@ config("compiler") {
+@@ -524,7 +531,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -38,7 +38,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -913,7 +920,7 @@ config("compiler_cpu_abi") {
+@@ -924,7 +931,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -47,7 +47,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -928,7 +935,7 @@ config("compiler_cpu_abi") {
+@@ -939,7 +946,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -56,7 +56,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1256,7 +1263,7 @@ config("compiler_deterministic") {
+@@ -1277,7 +1284,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -65,7 +65,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1307,7 +1314,7 @@ config("compiler_deterministic") {
+@@ -1329,7 +1336,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -74,7 +74,7 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1544,7 +1551,7 @@ config("default_warnings") {
+@@ -1570,7 +1577,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -83,7 +83,7 @@
          cflags += [
            # TODO(crbug.com/1343975) Evaluate and possibly enable.
            "-Wno-deprecated-builtins",
-@@ -1727,7 +1734,7 @@ config("no_chromium_code") {
+@@ -1749,7 +1756,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -92,7 +92,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2249,7 +2256,7 @@ config("afdo_optimize_size") {
+@@ -2271,7 +2278,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -101,7 +101,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2265,7 +2272,7 @@ config("afdo") {
+@@ -2287,7 +2294,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -110,7 +110,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2413,7 +2420,8 @@ config("symbols") {
+@@ -2436,7 +2443,8 @@ config("symbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  

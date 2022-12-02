@@ -1,6 +1,6 @@
---- chrome/browser/sync/chrome_sync_client.cc.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/sync/chrome_sync_client.cc.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -440,7 +440,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -445,7 +445,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  
  // Chrome prefers OS provided spell checkers where they exist. So only sync the
  // custom dictionary on platforms that typically don't provide one.

@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2022-10-01 07:40:07 UTC
+--- content/utility/utility_main.cc.orig	2022-12-02 17:56:32 UTC
 +++ content/utility/utility_main.cc
 @@ -31,17 +31,19 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -33,7 +33,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "ash/services/ime/ime_sandbox_hook.h"
  #include "chromeos/ash/components/assistant/buildflags.h"
-@@ -129,7 +135,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -130,7 +136,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -42,7 +42,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -157,7 +163,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -158,7 +164,7 @@ int UtilityMain(MainFunctionParams parameters) {
        pre_sandbox_hook = base::BindOnce(&screen_ai::ScreenAIPreSandboxHook);
        break;
  #endif
@@ -51,7 +51,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -180,10 +186,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -181,10 +187,11 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -64,7 +64,7 @@
      if (sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding) {
        // The kHardwareVideoDecoding sandbox needs to know the GPU type in order
        // to select the right policy.
-@@ -196,6 +203,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -197,6 +204,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

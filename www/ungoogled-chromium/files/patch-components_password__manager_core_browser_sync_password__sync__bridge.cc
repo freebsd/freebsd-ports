@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/sync/password_sync_bridge.cc.orig	2022-10-29 17:50:56 UTC
+--- components/password_manager/core/browser/sync/password_sync_bridge.cc.orig	2022-12-02 17:56:32 UTC
 +++ components/password_manager/core/browser/sync/password_sync_bridge.cc
-@@ -178,7 +178,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
+@@ -187,7 +187,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
    // Delete the local undecryptable copy when this is MacOS only.
  #if BUILDFLAG(IS_MAC)
    return true;
@@ -9,7 +9,7 @@
    return base::FeatureList::IsEnabled(
        features::kSyncUndecryptablePasswordsLinux);
  #else
-@@ -187,7 +187,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
+@@ -196,7 +196,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
  }
  
  bool ShouldCleanSyncMetadataDuringStartupWhenDecryptionFails() {

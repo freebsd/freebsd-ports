@@ -1,6 +1,6 @@
---- sandbox/policy/BUILD.gn.orig	2022-10-01 07:40:07 UTC
+--- sandbox/policy/BUILD.gn.orig	2022-12-02 17:56:32 UTC
 +++ sandbox/policy/BUILD.gn
-@@ -36,7 +36,7 @@ component("policy") {
+@@ -35,7 +35,7 @@ component("policy") {
      "//sandbox/policy/mojom",
    ]
    public_deps = [ "//sandbox:common" ]
@@ -9,7 +9,7 @@
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -95,6 +95,27 @@ component("policy") {
+@@ -94,6 +94,27 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",

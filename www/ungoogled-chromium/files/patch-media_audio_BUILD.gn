@@ -1,6 +1,6 @@
---- media/audio/BUILD.gn.orig	2022-10-29 17:50:56 UTC
+--- media/audio/BUILD.gn.orig	2022-12-02 17:56:32 UTC
 +++ media/audio/BUILD.gn
-@@ -250,9 +250,20 @@ source_set("audio") {
+@@ -259,9 +259,20 @@ source_set("audio") {
      ]
    }
  

@@ -1,4 +1,4 @@
---- base/threading/platform_thread_linux.cc.orig	2022-10-01 07:40:07 UTC
+--- base/threading/platform_thread_linux.cc.orig	2022-12-02 17:56:32 UTC
 +++ base/threading/platform_thread_linux.cc
 @@ -29,7 +29,9 @@
  
@@ -10,7 +10,7 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -132,7 +134,7 @@ long sched_setattr(pid_t pid,
+@@ -134,7 +136,7 @@ long sched_setattr(pid_t pid,
  #endif  // !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_AIX)
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -19,7 +19,7 @@
  const FilePath::CharType kCgroupDirectory[] =
      FILE_PATH_LITERAL("/sys/fs/cgroup");
  
-@@ -304,7 +306,7 @@ void SetThreadCgroupsForThreadType(PlatformThreadId th
+@@ -306,7 +308,7 @@ void SetThreadCgroupsForThreadType(PlatformThreadId th
  namespace internal {
  
  namespace {
@@ -28,7 +28,7 @@
  const struct sched_param kRealTimePrio = {8};
  #endif
  }  // namespace
-@@ -330,7 +332,7 @@ const ThreadTypeToNiceValuePair kThreadTypeToNiceValue
+@@ -332,7 +334,7 @@ const ThreadTypeToNiceValuePair kThreadTypeToNiceValue
  };
  
  bool CanSetThreadTypeToRealtimeAudio() {
@@ -37,7 +37,7 @@
    // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
    // pthread_setschedparam in SetCurrentThreadTypeForPlatform().
    struct rlimit rlim;
-@@ -342,7 +344,7 @@ bool CanSetThreadTypeToRealtimeAudio() {
+@@ -344,7 +346,7 @@ bool CanSetThreadTypeToRealtimeAudio() {
  
  bool SetCurrentThreadTypeForPlatform(ThreadType thread_type,
                                       MessagePumpType pump_type_hint) {
@@ -46,7 +46,7 @@
    // For legacy schedtune interface
    SetThreadCgroupsForThreadType(PlatformThread::CurrentId(), thread_type);
  
-@@ -361,7 +363,7 @@ bool SetCurrentThreadTypeForPlatform(ThreadType thread
+@@ -363,7 +365,7 @@ bool SetCurrentThreadTypeForPlatform(ThreadType thread
  
  absl::optional<ThreadPriorityForTest>
  GetCurrentThreadPriorityForPlatformForTest() {
@@ -55,7 +55,7 @@
    int maybe_sched_rr = 0;
    struct sched_param maybe_realtime_prio = {0};
    if (pthread_getschedparam(pthread_self(), &maybe_sched_rr,
-@@ -380,7 +382,7 @@ GetCurrentThreadPriorityForPlatformForTest() {
+@@ -382,7 +384,7 @@ GetCurrentThreadPriorityForPlatformForTest() {
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
  
@@ -64,7 +64,7 @@
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -410,8 +412,10 @@ void PlatformThread::SetThreadType(ProcessId process_i
+@@ -412,8 +414,10 @@ void PlatformThread::SetThreadType(ProcessId process_i
    // priority.
    CHECK_NE(thread_id, process_id);
  

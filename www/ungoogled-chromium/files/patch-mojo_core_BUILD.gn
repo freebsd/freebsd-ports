@@ -1,6 +1,6 @@
---- mojo/core/BUILD.gn.orig	2022-10-29 17:50:56 UTC
+--- mojo/core/BUILD.gn.orig	2022-12-02 17:56:32 UTC
 +++ mojo/core/BUILD.gn
-@@ -159,7 +159,7 @@ template("core_impl_source_set") {
+@@ -163,7 +163,7 @@ template("core_impl_source_set") {
          ]
        }
  

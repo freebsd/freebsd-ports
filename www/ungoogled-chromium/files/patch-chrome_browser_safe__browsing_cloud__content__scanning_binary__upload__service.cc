@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/cloud_content_scanning/binary_upload_service.cc.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/safe_browsing/cloud_content_scanning/binary_upload_service.cc.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/safe_browsing/cloud_content_scanning/binary_upload_service.cc
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  #include "net/base/url_util.h"
  #include "third_party/abseil-cpp/absl/types/variant.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/connectors/analysis/local_binary_upload_service_factory.h"
  #endif
  
-@@ -297,7 +297,7 @@ BinaryUploadService* BinaryUploadService::GetForProfil
+@@ -321,7 +321,7 @@ BinaryUploadService* BinaryUploadService::GetForProfil
      Profile* profile,
      const enterprise_connectors::AnalysisSettings& settings) {
    // Local content analysis is supported only on desktop platforms.

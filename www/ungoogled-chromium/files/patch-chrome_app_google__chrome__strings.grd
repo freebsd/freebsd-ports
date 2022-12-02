@@ -1,4 +1,4 @@
---- chrome/app/google_chrome_strings.grd.orig	2022-10-01 07:40:07 UTC
+--- chrome/app/google_chrome_strings.grd.orig	2022-12-02 17:56:32 UTC
 +++ chrome/app/google_chrome_strings.grd
 @@ -301,7 +301,7 @@ chromium_strings.grd. -->
            Welcome to Chrome; new browser window opened
@@ -9,8 +9,8 @@
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Google Chrome
          </message>
-@@ -438,7 +438,7 @@ chromium_strings.grd. -->
-           This computer will no longer receive Google Chrome updates because Windows XP and Windows Vista are no longer supported
+@@ -453,7 +453,7 @@ chromium_strings.grd. -->
+                     To get future Google Chrome updates, you'll need Windows 10 or later. This computer is using Windows 8.1.
          </message>
        </if>
 -      <if expr="is_linux">

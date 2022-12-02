@@ -1,11 +1,11 @@
---- chrome/browser/browser_features.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/browser_features.cc.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/browser_features.cc
-@@ -29,7 +29,7 @@ const base::Feature kColorProviderRedirectionForThemeP
+@@ -30,7 +30,7 @@ BASE_FEATURE(kColorProviderRedirectionForThemeProvider
  // the browser exits.
- const base::Feature kDestroyProfileOnBrowserClose {
-   "DestroyProfileOnBrowserClose",
+ BASE_FEATURE(kDestroyProfileOnBrowserClose,
+              "DestroyProfileOnBrowserClose",
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
- };
+              base::FEATURE_ENABLED_BY_DEFAULT);
  #else
+              base::FEATURE_DISABLED_BY_DEFAULT);

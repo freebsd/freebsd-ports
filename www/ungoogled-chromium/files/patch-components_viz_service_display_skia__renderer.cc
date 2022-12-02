@@ -1,6 +1,6 @@
---- components/viz/service/display/skia_renderer.cc.orig	2022-10-29 17:50:56 UTC
+--- components/viz/service/display/skia_renderer.cc.orig	2022-12-02 17:56:32 UTC
 +++ components/viz/service/display/skia_renderer.cc
-@@ -1135,7 +1135,7 @@ void SkiaRenderer::ClearFramebuffer() {
+@@ -1129,7 +1129,7 @@ void SkiaRenderer::ClearFramebuffer() {
    if (current_frame()->current_render_pass->has_transparent_background) {
      ClearCanvas(SkColors::kTransparent);
    } else {

@@ -1,6 +1,6 @@
---- remoting/base/chromoting_event.cc.orig	2022-10-01 07:40:07 UTC
+--- remoting/base/chromoting_event.cc.orig	2022-12-02 17:56:32 UTC
 +++ remoting/base/chromoting_event.cc
-@@ -190,7 +190,7 @@ void ChromotingEvent::AddSystemInfo() {
+@@ -192,7 +192,7 @@ void ChromotingEvent::AddSystemInfo() {
    SetString(kCpuKey, base::SysInfo::OperatingSystemArchitecture());
    SetString(kOsVersionKey, base::SysInfo::OperatingSystemVersion());
    SetString(kWebAppVersionKey, STRINGIZE(VERSION));

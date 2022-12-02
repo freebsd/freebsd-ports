@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2022-10-29 17:50:56 UTC
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2022-12-02 17:56:32 UTC
 +++ content/browser/renderer_host/render_process_host_impl.h
 @@ -83,7 +83,7 @@
  #include "content/public/browser/android/child_process_importance.h"
@@ -9,7 +9,7 @@
  #include "media/mojo/mojom/stable/stable_video_decoder.mojom.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -479,7 +479,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -480,7 +480,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // Sets this RenderProcessHost to be guest only. For Testing only.
    void SetForGuestsOnlyForTesting();
  
@@ -18,7 +18,7 @@
    // Launch the zygote early in the browser startup.
    static void EarlyZygoteLaunch();
  #endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_MAC)
-@@ -678,7 +678,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -679,7 +679,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
        mojo::PendingReceiver<blink::mojom::WebSocketConnector> receiver)
        override;
  
@@ -27,7 +27,7 @@
    void CreateStableVideoDecoder(
        mojo::PendingReceiver<media::stable::mojom::StableVideoDecoder> receiver)
        override;
-@@ -1133,7 +1133,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -1134,7 +1134,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // RenderProcessHost. This is destroyed early in ResetIPC() method.
    std::unique_ptr<PermissionServiceContext> permission_service_context_;
  

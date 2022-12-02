@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2022-12-02 17:56:32 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
-@@ -22,7 +22,7 @@
+@@ -21,7 +21,7 @@
  #include "components/policy/core/common/management/management_service.h"
  #include "content/public/browser/browser_context.h"
  

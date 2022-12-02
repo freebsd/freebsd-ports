@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2022-10-29 17:50:56 UTC
+--- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2022-12-02 17:56:32 UTC
 +++ gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc
-@@ -600,7 +600,7 @@ bool AngleVulkanImageBackingFactory::CanUseAngleVulkan
+@@ -94,7 +94,7 @@ bool AngleVulkanImageBackingFactory::CanUseAngleVulkan
    // TODO(penghuang): verify the scanout is the right usage for video playback.
    // crbug.com/1280798
    constexpr auto kSupportedUsages =
