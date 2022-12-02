@@ -50,7 +50,6 @@ MOZ_OPTIONS=	--enable-application=browser \
 
 .if ${ARCH:Maarch64*} || ${ARCH} == powerpc64
 MOZ_OPTIONS+=	--disable-webrtc --without-wasm-sandboxed-libraries
-MOZ_OPTIONS+=	AS=${LOCALBASE}/bin/clang
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
 		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \
