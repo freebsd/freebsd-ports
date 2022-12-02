@@ -1,5 +1,5 @@
 PORTNAME=	cone
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -14,22 +14,26 @@ WWW=		https://www.courier-mta.org/cone/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-LIB_DEPENDS=	libaspell.so:textproc/aspell \
-		libidn.so:dns/libidn \
-		libcourier-unicode.so:devel/courier-unicode \
-		libldap_r.so:net/openldap24-client
-
 BUILD_DEPENDS=	gpgv:security/gnupg1
+LIB_DEPENDS=	libaspell.so:textproc/aspell \
+		libcourier-unicode.so:devel/courier-unicode \
+		libidn.so:dns/libidn \
+		libldap_r.so:net/openldap24-client
 RUN_DEPENDS=	gpgv:security/gnupg1
 
 USES=		compiler:c++11-lang fam gettext gmake gnome iconv \
 		localbase:ldflags ncurses perl5 pkgconfig shebangfix ssl \
 		tar:bzip2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-certdb=${PREFIX}/share/cone/rootcerts --exec-prefix=${PREFIX} \
-		--with-notice=unicode
-SHEBANG_FILES=	sysconftool
 USE_GNOME=	libxml2
+
+SHEBANG_FILES=	sysconftool
+
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
+		--with-certdb=${PREFIX}/share/cone/rootcerts \
+		--with-notice=unicode
+
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
