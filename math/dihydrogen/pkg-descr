@@ -1,0 +1,4 @@
+DiHydrogen is the second version of the Hydrogen fork of the well-known
+distributed linear algebra library, Elemental. DiHydrogen aims to be a basic
+distributed multilinear algebra interface with a particular emphasis on the
+needs of the distributed machine learning effort, LBANN.
