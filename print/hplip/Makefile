@@ -120,8 +120,4 @@ post-install-X11-on:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 .endfor
 
-post-install-X11-off:
-	${RMDIR} ${STAGEDIR}${DATADIR}/data/images/* \
-		${STAGEDIR}${DATADIR}/data/images
-
 .include <bsd.port.mk>
