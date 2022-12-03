@@ -1,7 +1,6 @@
 bin/glewlwyd
-%%ETCDIR%%/config.json.sample
-%%ETCDIR%%/glewlwyd.conf
-%%ETCDIR%%/glewlwyd.conf.sample
+@sample(root,glewlwyd,0640) %%ETCDIR%%/config.json.sample
+@sample(root,glewlwyd,0640) %%ETCDIR%%/glewlwyd.conf.sample
 etc/rc.d/glewlwyd
 lib/glewlwyd/client/libclientmoddatabase.so
 lib/glewlwyd/plugin/libprotocol_oauth2.so
