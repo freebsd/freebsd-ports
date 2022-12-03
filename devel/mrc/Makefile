@@ -1,7 +1,6 @@
 PORTNAME=	mrc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.4-7
-DISTVERSIONSUFFIX=	-g68069da
+DISTVERSION=	1.3.6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +10,7 @@ WWW=		https://github.com/mhekkel/mrc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libmcfp>0:devel/libmcfp
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 USES=		cmake
