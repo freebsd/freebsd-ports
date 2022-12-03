@@ -10,16 +10,17 @@ WWW=		https://www.timescale.com/promscale
 
 LICENSE=	PostgreSQL
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+
+RUN_DEPENDS=	timescaledb>0:databases/timescaledb
+BUILD_DEPENDS=	bash>0:shells/bash
+
+USES=		cargo gmake pgsql:12+
+
 # Depends on an unpublished crate. Can't use cargo.mk to fetch it.
 PGX_REV=	96ece243
 DISTFILES+=	pgx-${PGX_REV}.tar.gz
 SITES.pgx-${PGX_REV}.tar.gz+=	${MASTER_SITE_GITHUB:=timescale/}pgx/archive/${PGX_REV}.tar.gz
-
-USES=		cargo gmake pgsql:12+
-
-BUILD_DEPENDS=	bash>0:shells/bash
-
-RUN_DEPENDS=	timescaledb>0:databases/timescaledb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	timescale timescale:pgx
@@ -34,7 +35,7 @@ MAKE_ENV+=	MAKE=gmake PATH=${PATH}:${WRKDIR}/.cargo/bin
 .include "${.CURDIR}/crates.mk"
 
 post-extract:
-	mv ${WRKDIR}/pgx-* ${WRKDIR}/pgx
+	${MV} ${WRKDIR}/pgx-* ${WRKDIR}/pgx
 
 pre-configure:
 	@${PATCH} -d ${WRKDIR} ${PATCH_ARGS} < ${PATCHDIR}/pgx-include-patch
@@ -42,7 +43,7 @@ pre-configure:
 
 pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} cargo install --offline --path ../pgx/cargo-pgx cargo-pgx
-	mkdir -p ${WRKDIR}/.pgx
+	${MKDIR} ${WRKDIR}/.pgx
 	${PRINTF} '[configs]\npg${PGSQL_VERSION}="${LOCALBASE}/bin/pg_config"\n' > ${WRKDIR}/.pgx/config.toml
 
 do-build:
