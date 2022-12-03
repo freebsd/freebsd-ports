@@ -58,7 +58,7 @@ USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
 USE_SDL=	sdl2
 CMAKE_ON=	Boost_USE_STATIC_LIBS
 CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
-CMAKE_OFF=	YUZU_USE_BUNDLED_OPUS YUZU_USE_EXTERNAL_SDL2
+CMAKE_OFF=	YUZU_CHECK_SUBMODULES YUZU_USE_BUNDLED_OPUS YUZU_USE_EXTERNAL_SDL2
 CMAKE_OFF+=	${CMAKE_TESTING_ON}
 CMAKE_TESTING_ON=	YUZU_TESTS
 LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict, requires files/patch-fmt
@@ -107,8 +107,6 @@ WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
 WEBENGINE_IMPLIES=	QT5
 
 post-patch:
-	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
-		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
