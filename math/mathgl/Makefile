@@ -11,6 +11,8 @@ WWW=		http://mathgl.sourceforge.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv7=	error: unknown FP unit 'sse', see https://sourceforge.net/p/mathgl/bugs/49/
+
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
