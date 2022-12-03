@@ -24,6 +24,7 @@ SHEBANG_GLOB=	*.sh *.in *.py
 
 CMAKE_OFF=	ENABLE_STATIC_BOOST_LIBS ENABLE_TESTS ENABLE_ALL_TESTS
 
+CXXFLAGS_armv7=	-fPIC # attempt to work around compilation failure, see https://jira.ecmwf.int/browse/SUP-3688
 CXXFLAGS_i386=	-fPIC # attempt to work around compilation failure, see https://jira.ecmwf.int/browse/SUP-3688
 
 CONFLICTS_BUILD=	python27 # build attempts to find python-2.7 and use it
