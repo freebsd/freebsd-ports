@@ -11,6 +11,10 @@ WWW=		https://github.com/soedinglab/metaeuk
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DREQUIRE_OPENMP=0
+.endif
+
 BUILD_DEPENDS=	xxd:editors/vim
 TEST_DEPENDS=	bash:shells/bash
 
