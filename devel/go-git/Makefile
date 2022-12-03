@@ -1,6 +1,7 @@
 PORTNAME=	go-git
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,8 +11,9 @@ WWW=		https://github.com/go-git/go-git
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	pjbgf:sha1cd:v0.2.0 fails to build, issue https://github.com/pjbgf/sha1cd/issues/6
+#NOT_FOR_ARCHS=	i386
+#NOT_FOR_ARCHS_REASON=	pjbgf:sha1cd:v0.2.0 fails to build, issue https://github.com/pjbgf/sha1cd/issues/6
+# Fixed in 0.2.3 version, remove comments when upstream uses it
 
 USES=		go:modules
 #GO_MODULE=	github.com/go-git/go-git/v5 # Fails to build, see https://github.com/go-git/go-git/issues/626
@@ -40,7 +42,7 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.2:microsoft_go_winio/vendor/github.com/Microso
 		kevinburke:ssh_config:v1.2.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		kr:pretty:v0.2.1:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
-		pjbgf:sha1cd:v0.2.0:pjbgf_sha1cd/vendor/github.com/pjbgf/sha1cd \
+		pjbgf:sha1cd:v0.2.3:pjbgf_sha1cd/vendor/github.com/pjbgf/sha1cd \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		skeema:knownhosts:v1.1.0:skeema_knownhosts/vendor/github.com/skeema/knownhosts \
 		xanzy:ssh-agent:v0.3.2:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent
