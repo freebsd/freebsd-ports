@@ -29,15 +29,9 @@ GH_ACCOUNT=	mmottl
 GH_PROJECT=	${PORTNAME}-ocaml
 USE_GITHUB=	yes
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /var/null" :: findlib_name,' \
 		${WRKSRC}/setup.ml
-.if ${COMPILER_TYPE} == gcc & ${COMPILER_VERSION} <= 42
-	@${REINPLACE_CMD} -e 's|-Wno-keyword-macro||' ${WRKSRC}/_oasis \
-		${WRKSRC}/myocamlbuild.ml ${WRKSRC}/setup.ml
-.endif
 
 do-configure:
 	(cd ${WRKSRC} && ocaml setup.ml -configure ${CONFIGURE_ARGS})
@@ -48,4 +42,4 @@ do-build:
 do-install:
 	(cd ${WRKSRC} && ocaml setup.ml -install)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
