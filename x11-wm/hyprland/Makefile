@@ -19,7 +19,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c++11-lib gl gnome meson pkgconfig xorg
-USE_GCC=	12+:build
+USE_GCC=	yes:build
 USE_GITHUB=	yes
 USE_GL=		egl gl
 USE_GNOME=	cairo
