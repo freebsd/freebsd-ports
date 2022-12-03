@@ -1,5 +1,5 @@
 PORTNAME=	haiti-hash
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
