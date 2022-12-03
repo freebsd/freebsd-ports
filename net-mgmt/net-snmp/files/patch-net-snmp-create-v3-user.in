@@ -1,0 +1,10 @@
+--- net-snmp-create-v3-user.in.orig	2022-12-03 13:29:45 UTC
++++ net-snmp-create-v3-user.in
+@@ -135,6 +135,7 @@ if test ! -d "$outfile"; then
+ fi
+ echo "$line" >> "$outfile"
+ # Avoid that configure complains that this script ignores @datarootdir@
++datarootdir="@datarootdir@"
+ echo "@datarootdir@" >/dev/null
+ outfile="@datadir@/snmp/snmpd.conf"
+ line="$token $user"
