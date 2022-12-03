@@ -3,6 +3,6 @@ include/rhonabwy-cfg.h
 include/rhonabwy.h
 lib/librhonabwy.so
 lib/librhonabwy.so.1.1
-lib/librhonabwy.so.1.1.8
+lib/librhonabwy.so.%%DISTVERSION%%
 libdata/pkgconfig/librhonabwy.pc
 share/man/man1/rnbyc.1.gz
