@@ -40,18 +40,9 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  _xa = get_option('gallium-xa')
---- src/amd/vulkan/meson.build.orig	2022-08-08 22:10:24 UTC
+--- src/amd/vulkan/meson.build.orig	2022-12-03 14:41:29 UTC
 +++ src/amd/vulkan/meson.build
-@@ -97,7 +97,7 @@ libradv_files = files(
-   'vk_format.h',
- )
- 
--files_drirc = files('00-radv-defaults.conf')
-+files_drirc = files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
- 
- install_data(files_drirc, install_dir : join_paths(get_option('datadir'), 'drirc.d'))
- 
-@@ -163,7 +163,7 @@ libvulkan_radeon = shared_library(
+@@ -162,7 +162,7 @@ libvulkan_radeon = shared_library(
  endif
  
  libvulkan_radeon = shared_library(
@@ -169,23 +160,18 @@ Library selection is handled by libglvnd and/or libmap.conf.
    [files_mapi_glapi, files_mapi_util, shared_glapi_mapi_tmp_h],
    c_args : [
      _glapi_c_args,
---- src/util/meson.build.orig	2021-02-24 18:55:02 UTC
+--- src/util/meson.build.orig	2022-12-03 14:41:29 UTC
 +++ src/util/meson.build
-@@ -135,7 +135,7 @@ files_mesa_util = files(
-   'xxhash.h',
+@@ -170,10 +170,10 @@ files_mesa_util = files(
+   'mesa_cache_db.h',
  )
  
 -files_drirc = files('00-mesa-defaults.conf')
 +files_drirc = files('00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
  
- install_data(files_drirc, install_dir : join_paths(get_option('datadir'), 'drirc.d'))
+ if with_amd_vk
+-  files_drirc += files('00-radv-defaults.conf')
++  files_drirc += files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
+ endif
  
-@@ -158,7 +158,7 @@ files_xmlconfig = files(
- 
- files_xmlconfig += custom_target(
-   'driconf_static.h',
--  input: ['driconf_static.py', '00-mesa-defaults.conf'],
-+  input: ['driconf_static.py', '00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix'))],
-   output: 'driconf_static.h',
-   command: [
-     prog_python, '@INPUT0@', '@INPUT1@', '@OUTPUT@'
+ if with_tests
