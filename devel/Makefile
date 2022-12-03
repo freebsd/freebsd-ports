@@ -4117,6 +4117,7 @@
     SUBDIR += py-Jinja2
     SUBDIR += py-Jinja2-doc
     SUBDIR += py-Js2Py
+    SUBDIR += py-PYB11Generator
     SUBDIR += py-PeachPy
     SUBDIR += py-Products.ExternalEditor
     SUBDIR += py-Products.PloneLanguageTool
