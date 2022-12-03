@@ -265,6 +265,7 @@
     SUBDIR += phonopy
     SUBDIR += plumed
     SUBDIR += pnetcdf
+    SUBDIR += polytope
     SUBDIR += precice
     SUBDIR += psi4
     SUBDIR += pulseview
