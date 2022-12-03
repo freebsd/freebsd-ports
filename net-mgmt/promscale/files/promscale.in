@@ -12,10 +12,13 @@
 #     Set to NO by default
 # promscale_user (string):
 #     Set user that promscale will run under
-#     Default is "%%GRAFANA_USER%%"
+#     Default is "%%USERS%%"
 # promscale_group (string):
 #     Set group that own promscale files
-#     Default is "%%GRAFANA_GROUP%%"
+#     Default is "%%GROUPS%%"
+# promscale_args (string):
+#     Extra arguments for to pass to promscale
+#     Default is ""
 
 . /etc/rc.subr
 
@@ -27,13 +30,13 @@ load_rc_config $name
 : ${promscale_enable:="NO"}
 : ${promscale_user:="%%USERS%%"}
 : ${promscale_group:="%%GROUPS%%"}
+: ${promscale_args:=""}
 
 pidfile="/var/run/${name}/${name}.pid"
-required_files="${promscale_config}"
 
 procname="%%PREFIX%%/bin/promscale"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} -t ${name} /usr/bin/env ${promscale_env} ${procname} ${promscale_args}"
+command_args="-f -p ${pidfile} -t ${name} -T ${name} /usr/bin/env ${promscale_env} ${procname} ${promscale_args}"
 
 start_precmd="promscale_start_precmd"
 

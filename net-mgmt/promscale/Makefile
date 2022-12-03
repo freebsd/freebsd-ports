@@ -1,5 +1,6 @@
 PORTNAME=	promscale
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=   https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=      go.mod:gomod
