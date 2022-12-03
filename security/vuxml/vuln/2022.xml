@@ -1,3 +1,37 @@
+  <vuln vid="2899da38-7300-11ed-92ce-3065ec8fd3ec">
+    <topic>chromium -- Type confusion in V8</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>108.0.5359.94</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>108.0.5359.94</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/12/stable-channel-update-for-desktop.html">
+	  <p>This release contains 1 security fix:</p>
+	  <ul>
+	    <li>[1394403] High CVE-2022-4262: Type Confusion in V8. Reported by Clement Lecigne of Google's Threat Analysis Group on 2022-11-29</li>
+	  </ul>
+	  <p>Google is aware that an exploit for CVE-2022-4262 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4262</cvename>
+      <url>https://chromereleases.googleblog.com/2022/12/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-12-02</discovery>
+      <entry>2022-12-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0c52abde-717b-11ed-98ca-40b034429ecf">
     <topic>rpm4 -- Multiple Vulnerabilities</topic>
     <affects>
