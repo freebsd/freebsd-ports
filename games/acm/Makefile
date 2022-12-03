@@ -10,6 +10,9 @@ COMMENT=	Aerial combat simulator for X11
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream. Does not work.
+EXPIRATION_DATE=	2023-03-31
+
 USES=		perl5 xorg
 USE_PERL5=	build
 USE_XORG=	x11 xext
