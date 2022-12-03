@@ -106,6 +106,10 @@ WEBENGINE_USE=		QT=webengine
 WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
 WEBENGINE_IMPLIES=	QT5
 
+post-extract:
+	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
+		${WRKSRC}/dist/compatibility_list/
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
@@ -118,9 +122,5 @@ post-patch:
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
 		${WRKSRC}/CMakeLists.txt
-
-post-configure:
-	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
-		${BUILD_WRKSRC}/dist/compatibility_list/
 
 .include <bsd.port.mk>
