@@ -250,6 +250,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/schemas/nwfilter.rng
 %%DATADIR%%/schemas/nwfilter_params.rng
 %%DATADIR%%/schemas/nwfilterbinding.rng
+%%DATADIR%%/schemas/privatedata.rng
 %%DATADIR%%/schemas/secret.rng
 %%DATADIR%%/schemas/storagecommon.rng
 %%DATADIR%%/schemas/storagepool.rng
