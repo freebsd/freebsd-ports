@@ -1,6 +1,6 @@
 PORTNAME=	firebird
 PORTVERSION=	3.0.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--prefix=${LOCALSTATEDIR} \
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
 		ac_cv_header_atomic_ops_h="no" \
 		ac_cv_lib_atomic_ops_main="no"
-CPPFLAGS+=	-DU_NOEXCEPT= # For USE_CXXSTD=gnu++98
+CPPFLAGS+=	-DU_NOEXCEPT= -fno-delete-null-pointer-checks # For USE_CXXSTD=gnu++98
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	etc/firebird
