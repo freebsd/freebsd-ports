@@ -3,4 +3,6 @@
 TMPPATH=$(/usr/bin/mktemp -d '/tmp/lua-language-server.XXXXXX' || exit 1)
 
 exec '%%DATADIR%%/bin/lua-language-server' \
-    --logpath="${TMPPATH}/log" "$@"
+    --logpath="${TMPPATH}/log" \
+    --metapath="${TMPPATH}/meta" \
+    "$@"
