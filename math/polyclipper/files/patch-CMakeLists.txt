@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2021-12-29 18:25:59 UTC
++++ CMakeLists.txt
+@@ -22,18 +22,18 @@ option(ENABLE_DOCS "enable the sphinx documentation" O
+ #-------------------------------------------------------------------------------
+ set(ENABLE_OPENMP ON CACHE BOOL "")
+ 
+-if (NOT POLYCLIPPER_BLT_DIR) 
++if (FALSE AND NOT POLYCLIPPER_BLT_DIR) 
+   set (POLYCLIPPER_BLT_REL_DIR "${PROJECT_SOURCE_DIR}/cmake/blt" CACHE PATH "")
+   get_filename_component(POLYCLIPPER_BLT_DIR "${POLYCLIPPER_BLT_REL_DIR}" ABSOLUTE)
+ endif()
+ 
+-if (NOT EXISTS "${POLYCLIPPER_BLT_DIR}/SetupBLT.cmake")
++if (FALSE AND NOT EXISTS "${POLYCLIPPER_BLT_DIR}/SetupBLT.cmake")
+     message(FATAL_ERROR 
+             "${POLYCLIPPER_BLT_DIR} is not present.\n"
+             "call cmake with -DPOLYCLIPPER_BLT_DIR=/your/installation/of/blt\n")
+ endif()
+ 
+-include(${POLYCLIPPER_BLT_DIR}/SetupBLT.cmake)
++#include(${POLYCLIPPER_BLT_DIR}/SetupBLT.cmake)
+ 
+ #-------------------------------------------------------------------------------
+ # Install
+@@ -118,4 +118,6 @@ endif()
+ #-------------------------------------------------------------------------------
+ # Add any tests
+ #-------------------------------------------------------------------------------
+-add_subdirectory(test/test_array_vector)
++if (BUILD_TESTING)
++  add_subdirectory(test/test_array_vector)
++endif()

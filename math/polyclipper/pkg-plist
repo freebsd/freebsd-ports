@@ -1,0 +1,11 @@
+include/polyclipper2d.hh
+include/polyclipper2dImpl.hh
+include/polyclipper3d.hh
+include/polyclipper3dImpl.hh
+include/polyclipper_adapter.hh
+include/polyclipper_plane.hh
+include/polyclipper_serialize.hh
+include/polyclipper_serializeImpl.hh
+include/polyclipper_utilities.hh
+include/polyclipper_vector2d.hh
+include/polyclipper_vector3d.hh

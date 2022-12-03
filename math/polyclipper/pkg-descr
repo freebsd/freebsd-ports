@@ -1,0 +1,8 @@
+Polytope is a C++ library for generating polygonal and polyhedral meshes.
+It makes use of various 2D and 3D tessellation techniques, but provides
+a single representation for these tessellations, and a simple interface
+for generating them.
+
+Polytope has a simple C interface for use with other languages. It also
+includes bindings for Python. These bindings allow you to easily incorporate
+Polytope into your own mesh generation tools.

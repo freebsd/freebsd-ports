@@ -842,6 +842,7 @@
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += poly2tri
+    SUBDIR += polyclipper
     SUBDIR += polylib
     SUBDIR += polymake
     SUBDIR += primecount
