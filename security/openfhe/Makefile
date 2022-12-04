@@ -11,6 +11,8 @@ WWW=		https://github.com/openfheorg/openfhe-development
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: __int128 is not supported on this target
+
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
 USES=		cmake:noninja,testing compiler:c++17-lang # cmake refuses to work with ninja
