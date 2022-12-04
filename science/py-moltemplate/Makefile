@@ -1,6 +1,6 @@
 PORTNAME=	moltemplate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.15
+DISTVERSION=	2.20.17
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,7 +21,7 @@ USE_PYTHON=	distutils concurrent autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	jewettaij
 
-SHEBANG_FILES=	moltemplate/scripts/molc.sh
+SHEBANG_FILES=	moltemplate/scripts/molc.sh #shunit2/shunit2
 
 NO_ARCH=	yes
 
@@ -30,9 +30,9 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} PATH=${STAGEDIR}${LOCALBASE}/bin:${PATH}
 
 do-test: # testsuite instructions: https://github.com/jewettaij/moltemplate/issues/65#issuecomment-1022740972
-	# 1 test fails, see https://github.com/jewettaij/moltemplate/issues/65
+	# 1 test fails, see https://github.com/jewettaij/moltemplate/issues/86
 	@cd ${WRKSRC} && \
-		([ -e shunit2 ] || (${MKDIR} shunit2 && ${LN} -s ${LOCALBASE}/bin/shunit2 shunit2/shunit2)) && \
+		([ -e shunit2 ] || (${MKDIR} tests/shunit2 && ${RM} tests/shunit2/shunit2 && ${LN} -s ${LOCALBASE}/bin/shunit2 tests/shunit2/shunit2)) && \
 		${SETENV} ${TEST_ENV} bash tests/test_read_coords_pdb.sh && \
 		${SETENV} ${TEST_ENV} bash tests/test_ltemplify.sh && \
 		${SETENV} ${TEST_ENV} bash tests/test_oplsaa.sh && \
