@@ -13,6 +13,8 @@ WWW=		https://www.itk.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: always_inline function '_mm_cvtsd_si32' requires target feature 'sse2' (i386 doesn't have SSE2 enabled by default, and adding -msse2 doesn't help)
+
 BUILD_DEPENDS=	googletest>=0:devel/googletest
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libexpat.so:textproc/expat2 \
@@ -47,8 +49,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_OFF=	ITK_USE_KWSTYLE BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING # 3 tests are known to fail, see https://github.com/InsightSoftwareConsortium/ITK/issues/3739
-
-CXXFLAGS_i386=	-msse2 # to fix this error: always_inline function '_mm_cvtsd_si32' requires target feature 'sse2' (i386 doesn't have SSE2 enabled by default)
 
 ITK_VER=	${PORTVERSION:R}
 
