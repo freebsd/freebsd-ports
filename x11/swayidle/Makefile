@@ -1,12 +1,11 @@
 PORTNAME=	swayidle
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	28950f787813.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
-PATCHFILES+=	ff7569ad1129.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
+PATCHFILES+=	26e192a5f1b2.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
 PATCHFILES+=	f2f7e4d0a7c8.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
-PATCHFILES+=	e81d40fca753.patch:-p1 # https://github.com/swaywm/swayidle/pull/115
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Idle management daemon for Wayland
@@ -15,7 +14,7 @@ WWW=		https://github.com/swaywm/swayidle
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 meson pkgconfig
