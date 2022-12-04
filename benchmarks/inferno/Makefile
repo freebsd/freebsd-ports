@@ -1,7 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.12
-PORTREVISION=	2
+DISTVERSION=	0.11.13
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jonhoo
 
 CARGO_CRATES=	adler32-1.2.0 \
-		ahash-0.7.6 \
+		ahash-0.8.0 \
 		anes-0.1.6 \
 		arrayvec-0.7.2 \
 		assert_cmd-2.0.4 \
@@ -86,7 +85,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.43 \
-		quick-xml-0.23.1 \
+		quick-xml-0.26.0 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -112,7 +111,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		termcolor-1.1.3 \
 		termtree-0.2.4 \
 		testing_logger-0.1.1 \
-		textwrap-0.15.1 \
+		textwrap-0.15.2 \
 		tinytemplate-1.2.1 \
 		unicode-ident-1.0.4 \
 		version_check-0.9.4 \
