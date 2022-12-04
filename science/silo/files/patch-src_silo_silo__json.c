@@ -1,6 +1,6 @@
---- src/silo/silo_json.c.orig	2014-10-14 00:22:33 UTC
+--- src/silo/silo_json.c.orig	2022-12-03 02:30:10 UTC
 +++ src/silo/silo_json.c
-@@ -441,12 +441,8 @@ json_object_from_binary_file(char const 
+@@ -441,11 +441,7 @@ json_object_from_binary_file(char const *filename)
  #ifndef SIZEOF_OFF64_T
  #error missing definition for SIZEOF_OFF64_T in silo_private.h
  #else
@@ -8,8 +8,7 @@
 -    struct stat64 s;
 -#else
      struct stat s;
- #endif
 -#endif
+ #endif
  
      errno = 0;
-     memset(&s, 0, sizeof(s));
