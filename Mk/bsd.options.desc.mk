@@ -361,6 +361,7 @@ MYSQL_DESC?=		MySQL database support
 MYSQL_JDBC_DESC?=	JDBC connection to MySQL databases
 NAGPLUGINS_DESC?=	Plugins from nagios-plugins.org
 NAS_DESC?=		Network Audio System support
+NATIVE_DESC?=		Use native optimization (-march=native)
 NCURSES_DESC?=		Console (text) interface support
 NETCDF_DESC?=		NetCDF data format support
 NETLIB_DESC?=		Blas implementation from Netlib
