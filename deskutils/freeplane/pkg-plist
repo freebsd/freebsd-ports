@@ -21,7 +21,7 @@ bin/freeplane
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jortho-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/kitfox-svg-salamander-1.1.1-p1.jar
-%%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.18.9.jar
+%%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.18.10.jar
 %%DATADIR%%/core/org.freeplane.core/lib/twemoji-12.1.4.jar
 %%DATADIR%%/doc/Freeplane_LaTeX.mm
 %%DATADIR%%/doc/Images/Preferences_Joining nodes.png
@@ -84,6 +84,7 @@ bin/freeplane
 %%DATADIR%%/doc/api/org/freeplane/api/AttributeValueSerializer.html
 %%DATADIR%%/doc/api/org/freeplane/api/Attributes.html
 %%DATADIR%%/doc/api/org/freeplane/api/AttributesRO.html
+%%DATADIR%%/doc/api/org/freeplane/api/ChildNodesAlignment.html
 %%DATADIR%%/doc/api/org/freeplane/api/Cloud.html
 %%DATADIR%%/doc/api/org/freeplane/api/Connector.html
 %%DATADIR%%/doc/api/org/freeplane/api/ConnectorRO.html
@@ -133,6 +134,7 @@ bin/freeplane
 %%DATADIR%%/doc/api/org/freeplane/api/Reminder.html
 %%DATADIR%%/doc/api/org/freeplane/api/ReminderRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Script.html
+%%DATADIR%%/doc/api/org/freeplane/api/Side.html
 %%DATADIR%%/doc/api/org/freeplane/api/package-summary.html
 %%DATADIR%%/doc/api/org/freeplane/api/package-tree.html
 %%DATADIR%%/doc/api/org/freeplane/core/ui/components/UITools.Defaults.html
@@ -254,7 +256,7 @@ bin/freeplane
 %%DATADIR%%/plugins/org.freeplane.plugin.formula/lib/plugin-%%PORTVERSION%%.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/plugin-%%PORTVERSION%%.jar
-%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/syntaxpane-1.2.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/syntaxpane-1.2.3.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-1.0.7.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-font-cyrillic-1.0.7.jar
