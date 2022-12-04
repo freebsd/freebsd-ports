@@ -31,3 +31,5 @@ SHA256 (yhirose-cpp-httplib-v0.10.8-1-g305a7ab_GH0.tar.gz) = 2b8ebbe60c5fab1254e
 SIZE (yhirose-cpp-httplib-v0.10.8-1-g305a7ab_GH0.tar.gz) = 620778
 SHA256 (c17d71240b23.patch) = 4aaf5522ec3f7d393cec59638220d6142489c4e946060ec94444ca3f47e2b2a7
 SIZE (c17d71240b23.patch) = 7562
+SHA256 (14440b195c66.patch) = 277b6655172fb223052061a684298ab4d86c725f1c16704b675f7ba3a33da405
+SIZE (14440b195c66.patch) = 1118
