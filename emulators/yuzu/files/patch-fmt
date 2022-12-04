@@ -47,35 +47,13 @@ microinstruction.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR6Opcod
 microinstruction.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR4TypeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE[_ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR4TypeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE]+0x10f): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
 collect2: error: ld returned 1 exit status
 
---- CMakeLists.txt.orig	2022-11-30 15:41:32 UTC
+--- CMakeLists.txt.orig	2022-12-05 17:26:09 UTC
 +++ CMakeLists.txt
-@@ -1,7 +1,7 @@
- # SPDX-FileCopyrightText: 2018 yuzu Emulator Project
- # SPDX-License-Identifier: GPL-2.0-or-later
- 
--cmake_minimum_required(VERSION 3.22)
-+cmake_minimum_required(VERSION 3.15)
- 
- list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules")
- list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/externals/cmake-modules")
-@@ -180,7 +179,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DI
- # System imported libraries
+@@ -200,7 +200,6 @@ find_package(enet 1.3)
  # =======================================================================
  
--find_package(fmt 8.0.1 REQUIRED CONFIG)
- find_package(nlohmann_json 3.8 REQUIRED CONFIG)
- find_package(ZLIB 1.2 REQUIRED)
- 
---- externals/CMakeLists.txt.orig	2021-02-22 04:23:45 UTC
-+++ externals/CMakeLists.txt
-@@ -15,6 +15,10 @@ endif()
- add_library(catch-single-include INTERFACE)
- target_include_directories(catch-single-include INTERFACE catch/single_include)
- 
-+# libfmt
-+add_subdirectory(fmt)
-+add_library(fmt::fmt ALIAS fmt)
-+
- # Dynarmic
- if (ARCHITECTURE_x86_64)
-     set(DYNARMIC_TESTS OFF)
+ find_package(enet 1.3)
+-find_package(fmt 9 REQUIRED)
+ find_package(inih)
+ find_package(lz4 1.8 REQUIRED)
+ find_package(nlohmann_json 3.8 REQUIRED)
