@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
-MAINTAINER=	lukas.slebodnik@intrak.sk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Security Services Daemon
 WWW=		https://pagure.io/SSSD/sssd
 
