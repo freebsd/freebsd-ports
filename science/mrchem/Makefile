@@ -1,6 +1,6 @@
 PORTNAME=	mrchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0-20221026
+DISTVERSION=	1.1.1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,6 @@ USES=		cmake:testing compiler:c++14-lang eigen:3 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MRChemSoft
-GH_TAGNAME=	40042fd7
 
 SHEBANG_FILES=	python/mrchem.in tests/*/test
 
@@ -48,6 +47,12 @@ PYTHON_CMAKE_ON=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
 post-install-PYTHON-on:
 	@${RMDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mrchem/input_parser/docs
 
-# tests require the port to be built with PYTHON=ON
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MPYTHON}
+pre-test:
+	@${ECHO} "tests require the port to be built with PYTHON=ON" && false
+
+.endif
 
 .include <bsd.port.mk>

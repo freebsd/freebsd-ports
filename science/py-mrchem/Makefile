@@ -1,6 +1,6 @@
 PORTNAME=	mrchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0-20221026
+DISTVERSION=	1.1.1
 CATEGORIES=	science python # chemistry
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,6 @@ USE_PYTHON=	concurrent flavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MRChemSoft
-GH_TAGNAME=	40042fd7
 
 SHEBANG_FILES=	mrchem.in ../tests/*/test
 
