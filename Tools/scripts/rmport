@@ -366,7 +366,7 @@ else
 	cd "${git_dir}/.." || exit 1
 fi
 if ! ${GIT} diff --exit-code remotes/origin/main ; then
-	echo "you have local commits, exiting" >&2
+	echo "you have local commits or are behind origin/main, exiting" >&2
 	exit 65
 fi
 
