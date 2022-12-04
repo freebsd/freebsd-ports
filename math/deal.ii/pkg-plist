@@ -725,7 +725,7 @@ lib/cmake/deal.II/deal.IIFeatureConfig.cmake
 lib/cmake/deal.II/deal.IITargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/deal.II/deal.IITargets.cmake
 lib/libdeal_II.so
-lib/libdeal_II.so.9.4.0
+lib/libdeal_II.so.9.4.1
 libdata/pkgconfig/deal.II_%%CMAKE_BUILD_TYPE%%.pc
 %%DATADIR%%/macros/macro_deal_ii_add_test.cmake
 %%DATADIR%%/macros/macro_deal_ii_initialize_cached_variables.cmake
