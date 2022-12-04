@@ -2,8 +2,7 @@ PORTNAME=	hedgewars
 PORTVERSION=	1.0.0
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	http://www.hedgewars.org/download/releases/
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

@@ -2,7 +2,7 @@ PORTNAME=	acm
 PORTVERSION=	5.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	# none known
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aerial combat simulator for X11
@@ -10,6 +10,7 @@ COMMENT=	Aerial combat simulator for X11
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
 DEPRECATED=	Abandoned upstream. Does not work.
 EXPIRATION_DATE=	2023-03-31
 

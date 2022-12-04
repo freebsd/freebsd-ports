@@ -3,8 +3,7 @@ PORTVERSION=	1.2b
 PORTREVISION=	9
 CATEGORIES=	games
 # mastersite disappeared in December 2000
-MASTER_SITES=	LOCAL/thierry \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	LOCAL/thierry
 DISTNAME=	Columns-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

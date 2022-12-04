@@ -1,11 +1,13 @@
 PORTNAME=	black-and-white
 PORTVERSION=	2.0.a
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
+MASTER_SITES=	# none known
 DISTNAME=	black%20and%20white
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	KDE Black And White iconset
 WWW=		http://www.kde-look.org/content/show.php?content=24645
+
+BROKEN=		unfetchable
 
 LICENSE=	theme
 LICENSE_NAME=	theme
