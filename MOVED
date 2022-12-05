@@ -10711,7 +10711,6 @@ games/kajongg||2018-12-21|Has expired: Broken for more than 6 months
 games/netspades||2018-12-21|Has expired: Uses obsolete glib12
 games/gtklife||2018-12-21|Has expired: Uses obsolete glib12
 biology/xmolwt||2018-12-21|Has expired: Uses obsolete glib12
-x11-clocks/wmclockmon||2018-12-21|Has expired: Uses obsolete glib12
 x11-clocks/asclock-gtk||2018-12-21|Has expired: Uses obsolete glib12
 net-im/gale||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-ahx||2018-12-21|Has expired: Uses obsolete glib12, use audio/hvl2wav instead

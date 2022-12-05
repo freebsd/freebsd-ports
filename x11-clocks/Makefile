@@ -34,6 +34,7 @@
     SUBDIR += wmblueclock
     SUBDIR += wmcalclock
     SUBDIR += wmclock
+    SUBDIR += wmclockmon
     SUBDIR += wmfishtime
     SUBDIR += wmtime
     SUBDIR += wmtimer
