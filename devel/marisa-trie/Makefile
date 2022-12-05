@@ -1,6 +1,7 @@
-PORTNAME=	marisa-tire
+PORTNAME=	marisa-trie
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -12,7 +13,7 @@ LICENSE=	BSD2CLAUSE LGPL21+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-USES=	autoreconf libtool:build pathfix
+USES=		autoreconf libtool:build pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	s-yata
 GH_PROJECT=	marisa-trie
