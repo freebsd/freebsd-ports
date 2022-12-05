@@ -1,18 +1,16 @@
 PORTNAME=	stunnel
-DISTVERSION=	5.65
+DISTVERSION=	5.67
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
 		https://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
-		http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/
+		http://www.usenix.org.uk/mirrors/stunnel/archive/5.x/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 WWW=		https://www.stunnel.org/
 
-# FIXME: IMHO, there really ought to be a GPL-2+ option or some such.
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 BROKEN_SSL=	libressl libressl-devel
 BROKEN_SSL_REASON=	missing upstream support
