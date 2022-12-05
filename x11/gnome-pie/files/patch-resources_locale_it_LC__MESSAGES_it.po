@@ -1,0 +1,47 @@
+--- resources/locale/it/LC_MESSAGES/it.po.orig	2021-07-17 09:00:37 UTC
++++ resources/locale/it/LC_MESSAGES/it.po
+@@ -21,7 +21,7 @@ msgstr ""
+ 
+ #: ../ui/pie_options.ui:53
+ msgid "Activation Settings"
+-msgstr "Impostazioni di attivazione""
++msgstr "Impostazioni di attivazione"
+ 
+ #: ../ui/pie_options.ui:153
+ msgid "Unamed Pie"
+@@ -248,8 +248,8 @@ msgid ""
+ "For manual and advanced configuration click on the plus sign."
+ msgstr "Inizia ad aggiungere fette! </ B> Questo può essere fatto trascinando roba nella "
+ "più il segno sotto. Puoi provare molto! Ad esempio, i lanciatori di applicazioni o"
+-"cartelle. Sono possibili anche gli URL del tuo browser ... \ n"
+-"\ N"
++"cartelle. Sono possibili anche gli URL del tuo browser...\n"
++"\n"
+ "Per la configurazione manuale e avanzata fare clic sul segno più."
+ 
+ #: ../ui/preferences.ui:655
+@@ -540,7 +540,7 @@ msgstr "_Inoformazioni su"
+ 
+ #: ../../src/gui/indicator.vala:150
+ msgid "_Quit"
+-msgstr _Abbandona"
++msgstr "_Abbandona"
+ 
+ #: ../../src/gui/newsWindow.vala:64
+ msgid "_Close"
+@@ -603,13 +603,13 @@ msgstr "Mezza torta"
+ 
+ #: ../../src/themes/theme.vala:169
+ msgid "Successfully exported the theme \"%s\"!"
+-msgstr "Esportato correttamente il tema \ "% s \"!"
++msgstr "Esportato correttamente il tema \"%s\"!"
+ 
+ #: ../../src/themes/theme.vala:176
+ msgid ""
+ "An error occurred while exporting the theme \"%s\"! Please check the console "
+ "output."
+-msgstr "Si è verificato un errore durante l'esportazione del tema \ "% s \"! Si prega di controllare la console "
++msgstr "Si è verificato un errore durante l'esportazione del tema \"%s\"! Si prega di controllare la console "
+ "Uscita."
+ 
+ #: ../../src/actionGroups/windowListGroup.vala:34

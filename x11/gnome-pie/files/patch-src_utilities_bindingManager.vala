@@ -1,6 +1,6 @@
---- src/utilities/bindingManager.vala.orig	2015-01-23 11:49:05 UTC
+--- src/utilities/bindingManager.vala.orig	2021-07-17 09:00:37 UTC
 +++ src/utilities/bindingManager.vala
-@@ -228,12 +228,12 @@ public class BindingManager : GLib.Objec
+@@ -341,12 +341,12 @@ public class BindingManager : GLib.Object {
  
      private Gdk.FilterReturn event_filter(Gdk.XEvent gdk_xevent, Gdk.Event gdk_event) {
  
@@ -15,5 +15,5 @@
 -        #endif
 +        //#endif
  
-         if(xevent->type == X.EventType.KeyPress) {
-             foreach(var binding in bindings) {
+ 
+         if (xevent->type == X.EventType.KeyPress) {

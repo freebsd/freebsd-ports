@@ -6,7 +6,11 @@ binding commands such as:
 
   gnome-pie -o ID
 
-(Open Preferences to take the value of the pie ID)
+In a terminal run the command
+
+  gnome-pie -p
+
+to see the available IDs.
 EOM
 }
 ]
