@@ -20,7 +20,6 @@ CONFLICTS_INSTALL=	zabbix[0-35-9]${PKGNAMESUFFIX} \
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
-.if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
 			--with-libevent=${LOCALBASE}
@@ -206,10 +205,6 @@ post-install:
 .if ${ZABBIX_BUILD} == "agent"
 	${MV} ${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf \
 		${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf.sample
-.endif
-
-.else # frontend
-.include <bsd.port.pre.mk>
 .endif
 
 .include <bsd.port.post.mk>
