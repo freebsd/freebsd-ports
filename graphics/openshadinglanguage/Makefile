@@ -7,6 +7,9 @@ MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Advanced shading language for production GI renderers
 WWW=		https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
 
+PATCH_SITES=	https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/commit/
+PATCHFILES=	41cc6d78dba4115b7d4adcae7e4759ffa43c3833.patch:-p1
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 

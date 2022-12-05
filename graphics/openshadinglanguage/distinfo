@@ -1,3 +1,5 @@
-TIMESTAMP = 1665081363
+TIMESTAMP = 1670254834
 SHA256 (AcademySoftwareFoundation-OpenShadingLanguage-v1.12.6.2_GH0.tar.gz) = 0115a0a09ac9ef0ade88f2434e1472323b335c3f0ddcca0ffd062f9cc822e629
 SIZE (AcademySoftwareFoundation-OpenShadingLanguage-v1.12.6.2_GH0.tar.gz) = 20247666
+SHA256 (41cc6d78dba4115b7d4adcae7e4759ffa43c3833.patch) = e14769a4baf170e5af02b4f8ef3e26522ef4d9e120142f43fc7c8b175fc57e14
+SIZE (41cc6d78dba4115b7d4adcae7e4759ffa43c3833.patch) = 1382
