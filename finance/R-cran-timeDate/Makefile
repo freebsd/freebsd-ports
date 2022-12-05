@@ -1,10 +1,9 @@
 PORTNAME=	timeDate
-DISTVERSION=	3043.102
-PORTREVISION=	3
+DISTVERSION=	4021.106
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Rmetrics - Chronological and Calendar Objects
 WWW=		https://www.rmetrics.org
 
