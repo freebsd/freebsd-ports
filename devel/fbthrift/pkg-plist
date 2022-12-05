@@ -449,7 +449,6 @@ include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
-include/thrift/lib/cpp2/test/Matcher-inl.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
 include/thrift/lib/cpp2/test/ProtoBufStructs-inl.h
@@ -564,6 +563,9 @@ include/thrift/lib/cpp2/util/MethodMetadata.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread-inl.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread.h
 include/thrift/lib/cpp2/util/ScopedServerThread.h
+include/thrift/lib/cpp2/util/gtest/Matcher-inl.h
+include/thrift/lib/cpp2/util/gtest/Matcher.h
+include/thrift/lib/cpp2/util/gtest/Printer.h
 include/thrift/lib/cpp2/visitation/ShrinkToFit.h
 include/thrift/lib/cpp2/visitation/for_each.h
 include/thrift/lib/cpp2/visitation/metadata.h
