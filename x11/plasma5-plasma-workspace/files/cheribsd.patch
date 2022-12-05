@@ -66,7 +66,7 @@ diff -ru shell/main.cpp shell/main.cpp
      // also there are bugs on older Qt, especially when it comes to fractional scaling
 --- startkde/startplasma.cpp.orig	2022-07-11 12:02:54.000000000 +0100
 +++ startkde/startplasma.cpp	2022-11-17 21:33:33.271277000 +0000
-@@ -363,6 +363,14 @@
+@@ -363,6 +363,20 @@
      const auto extraConfigDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation).toUtf8() + "/kdedefaults";
      QDir().mkpath(QString::fromUtf8(extraConfigDir));
      qputenv("XDG_CONFIG_DIRS", extraConfigDir + ":" + currentConfigDirs);
@@ -78,6 +78,12 @@ diff -ru shell/main.cpp shell/main.cpp
 +        const auto runtimeDir = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation).toUtf8();
 +        qputenv("XDG_RUNTIME_DIR", runtimeDir);
 +    }
++
++#ifdef __CHERI_PURE_CAPABILITY__
++    if (!qEnvironmentVariableIsSet("XDG_DATA_DIRS")) {
++        qputenv("XDG_DATA_DIRS", "/usr/local/share:/usr/local64/share:/usr/share");
++    }
++#endif
  
      const KConfig globals;
      const QString currentLnf = KConfigGroup(&globals, QStringLiteral("KDE")).readEntry("LookAndFeelPackage", QStringLiteral("org.kde.breeze.desktop"));
