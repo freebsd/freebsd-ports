@@ -1,5 +1,5 @@
 PORTNAME=	xvinfo
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -8,6 +8,7 @@ COMMENT=	Print out X-Video extension adaptor information
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+EXTRACT_SUFX=	.tar.xz
 USES=		xorg xorg-cat:app
 USE_XORG=	xv x11
 
