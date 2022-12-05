@@ -42,6 +42,13 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libenet.so:net/enet
 TEST_DEPENDS=	catch>0:devel/catch
 
+FLAVORS=	qt5 qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
+qt6_PKGNAMESUFFIX=	-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}
+qt6_OPTIONS_SLAVE=	QT6
+qt6_OPTIONS_EXCLUDE=	QT5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
 GH_TAGNAME=	bbb202cee
@@ -68,31 +75,49 @@ ELF_FEATURES=	${PLIST_FILES:Mbin/*:S/^/+wxneeded:/}
 PLIST_FILES=	bin/${PORTNAME}-cmd \
 		bin/${PORTNAME}-room
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK NLS QT5 SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_DEFINE=	ALSA GUI PULSEAUDIO JACK NLS SNDIO VAAPI VULKAN WEBENGINE
 OPTIONS_DEFAULT=PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_SINGLE=	GUI
+OPTIONS_SINGLE_GUI=	QT5 QT6
+OPTIONS_SLAVE=		${${FLAVOR}_OPTIONS_SLAVE}
+OPTIONS_EXCLUDE=	${${FLAVOR}_OPTIONS_EXCLUDE}
 
 ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 ALSA_CMAKE_BOOL=	USE_ALSA
 
-JACK_BUILD_DEPENDS=	jackit>0:audio/jack
-JACK_CMAKE_BOOL=	USE_JACK
-
-NLS_DESC=		UI translations (implies QT5)
-NLS_USE=		QT=linguisttools:build
-NLS_CMAKE_BOOL=		ENABLE_QT_TRANSLATION
-NLS_IMPLIES=		QT5
-
-PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
-PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
-
-QT5_USES=		desktop-file-utils qt:5 shared-mime-info
-QT5_USE=		QT=qmake:build,buildtools:build,concurrent:build,core,dbus,gui,multimedia,widgets
-QT5_CMAKE_BOOL=		ENABLE_QT
-QT5_PLIST_FILES=	bin/${PORTNAME} \
+GUI_USES=		desktop-file-utils shared-mime-info
+GUI_CMAKE_BOOL=		ENABLE_QT
+GUI_PLIST_FILES=	bin/${PORTNAME} \
 			share/applications/org.yuzu_emu.yuzu.desktop \
 			share/icons/hicolor/scalable/apps/org.yuzu_emu.yuzu.svg \
 			share/metainfo/org.yuzu_emu.yuzu.metainfo.xml \
 			share/mime/packages/org.yuzu_emu.yuzu.xml
+
+JACK_BUILD_DEPENDS=	jackit>0:audio/jack
+JACK_CMAKE_BOOL=	USE_JACK
+
+NLS_DESC=		UI translations (implies ${NLS_IMPLIES})
+NLS_USE=		QT=${"${PORT_OPTIONS:MQT5}":?linguist:}tools:build
+NLS_CMAKE_BOOL=		ENABLE_QT_TRANSLATION
+NLS_IMPLIES=		GUI
+
+PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
+PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
+
+QT5_USES=		qt:5
+QT5_USE=		QT=qmake:build,buildtools:build,concurrent:build,core,dbus,gui,multimedia,widgets
+QT5_IMPLIES=		GUI
+
+QT6_USES=		qt:6
+QT6_USE=		QT=base
+QT6_CMAKE_BOOL=		ENABLE_QT6
+QT6_IMPLIES=		GUI
+.if !exists(${.CURDIR:H:H}/www/qt6-webengine)
+qt6_OPTIONS_EXCLUDE+=	WEBENGINE
+QT6_PREVENTS=		WEBENGINE
+QT6_PREVENTS_MSG=	www/qt6-webengine is missing
+QT6_VARS+=		WEBENGINE_USE= # Silence "unknown USE_QT component"
+.endif
 
 SNDIO_BUILD_DEPENDS=	sndio>0:audio/sndio
 SNDIO_CMAKE_BOOL=	USE_SNDIO
@@ -102,10 +127,10 @@ VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VULKAN_DESC=		Vulkan renderer
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
-WEBENGINE_DESC=		Web applet support (implies QT5)
+WEBENGINE_DESC=		Web applet support (implies ${NLS_IMPLIES})
 WEBENGINE_USE=		QT=webengine
 WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
-WEBENGINE_IMPLIES=	QT5
+WEBENGINE_IMPLIES=	GUI
 
 post-extract:
 	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
