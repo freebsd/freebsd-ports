@@ -1083,6 +1083,7 @@
     SUBDIR += scalapackfx
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-swt
+    SUBDIR += scorec-core
     SUBDIR += scs
     SUBDIR += sdpa
     SUBDIR += secp256k1
