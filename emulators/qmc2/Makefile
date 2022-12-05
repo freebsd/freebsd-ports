@@ -1,6 +1,7 @@
 PORTNAME=	qmc2
 PORTVERSION=	0.243
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -12,8 +13,8 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	bash>0:shells/bash \
 		gawk>0:lang/gawk
 RUN_DEPENDS=	libglvnd>0:graphics/libglvnd \
-		mame>=0.249:emulators/mame \
-		mess>=0.249:emulators/mess
+		mame>=0.250:emulators/mame \
+		mess>=0.250:emulators/mess
 
 USES=		compiler:c++11-lang desktop-file-utils gmake gl qt:5 sdl \
 		shebangfix tar:bzip2 xorg
@@ -28,8 +29,10 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xmu
 
 SHEBANG_FILES=	scripts/cleanup-category-ini.sh \
+		scripts/generate-option-lists.sh \
 		scripts/make-man-pages.sh \
 		scripts/plugin_helper.sh \
+		scripts/romalyzer.pl \
 		scripts/sdl-defines.sh \
 		scripts/sdl-includepath.sh \
 		scripts/sdl-libs.sh \
@@ -58,6 +61,10 @@ DOCS_ALL_TARGET=	doc
 DOCS_PORTDOCS=	html
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+EXTRA_PATCHES=	${PATCHDIR}/extra-scripts-sdl-includepaths
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATADIR/qmc2|${DATADIR}|g' \
