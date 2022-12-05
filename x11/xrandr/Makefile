@@ -1,5 +1,5 @@
 PORTNAME=	xrandr
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -8,6 +8,7 @@ COMMENT=	Primitive command line interface to the RandR extension
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+EXTRACT_SUFX=	.tar.xz
 USES=		tar:xz xorg xorg-cat:app
 USE_XORG=	xrandr xrender x11
 
