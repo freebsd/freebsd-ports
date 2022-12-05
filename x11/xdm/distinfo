@@ -1,3 +1,3 @@
-TIMESTAMP = 1560812972
-SHA256 (xorg/app/xdm-1.1.12.tar.bz2) = 0dd283f72dda098d09e2925b9278c95e21551e693a5802ab442d1b577d8327f4
-SIZE (xorg/app/xdm-1.1.12.tar.bz2) = 512074
+TIMESTAMP = 1670268359
+SHA256 (xorg/app/xdm-1.1.14.tar.xz) = 3e9bf25636797ec9e595286dd6820ecc33901439f07705eaf608ecda012c3d5f
+SIZE (xorg/app/xdm-1.1.14.tar.xz) = 419324
