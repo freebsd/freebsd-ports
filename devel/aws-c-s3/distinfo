@@ -1,3 +1,3 @@
-TIMESTAMP = 1666905107
-SHA256 (awslabs-aws-c-s3-v0.1.51_GH0.tar.gz) = 46b8ef3d42a1973ffcd17ea25540baecc4b4e35216a276c7f93bc8e8e9dc3d9e
-SIZE (awslabs-aws-c-s3-v0.1.51_GH0.tar.gz) = 181643
+TIMESTAMP = 1670271875
+SHA256 (awslabs-aws-c-s3-v0.2.0_GH0.tar.gz) = 3c80527550571119cb8528b163bf2aa00da5014c0fa65a09b5f72bc484d11e48
+SIZE (awslabs-aws-c-s3-v0.2.0_GH0.tar.gz) = 185635
