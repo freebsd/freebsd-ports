@@ -1,6 +1,7 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +51,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}watchdog>=0.10.3:devel/py-watchdog@${PY_FLAVOR}
 
 USES=		desktop-file-utils python:3.7+ pyqt:5
-USE_PYTHON=	distutils concurrent autoplist noflavors
+USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	pyqt5 sip
 
 USE_GITHUB=	yes
@@ -59,5 +60,8 @@ GH_ACCOUNT=	spyder-ide
 NO_ARCH=	yes
 
 DOCSDIR=	${PYTHON_SITELIBDIR}/spyder
+
+post-extract: # remove bundled dependencies
+	@${RM} -r ${WRKSRC}/external-deps/*
 
 .include <bsd.port.mk>
