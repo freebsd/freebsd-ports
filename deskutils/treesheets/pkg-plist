@@ -2,5 +2,7 @@ bin/treesheets
 share/applications/treesheets.desktop
 share/icons/hicolor/scalable/apps/treesheets.svg
 share/locale/de/LC_MESSAGES/ts.mo
+share/locale/fr_FR/LC_MESSAGES/ts.mo
 share/locale/it/LC_MESSAGES/ts.mo
+share/locale/pt_BR/LC_MESSAGES/ts.mo
 share/locale/zh_CN/LC_MESSAGES/ts.mo
