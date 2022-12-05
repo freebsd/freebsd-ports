@@ -14,8 +14,8 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
-#IGNORE=		please use dns/dnsmasq, which is newer # re-enable after 2.88 release
-DEPRECATED=	Short-lived test branch, to be removed after v2.88 release
+IGNORE=		please use dns/dnsmasq, which is newer
+#DEPRECATED=	Short-lived test branch, to be removed after v2.88 release
 
 LICENSE=	GPLv2
 

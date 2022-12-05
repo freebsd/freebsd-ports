@@ -1,5 +1,5 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.87
+DISTVERSION=	2.88
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	1
