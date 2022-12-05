@@ -28,6 +28,8 @@ steam-utils/lxbin/lsu-proton
 steam-utils/lxbin/tar
 steam-utils/lxbin/zenity
 @comment steam-utils/lxbin/python3
+steam-utils/lxbin/patch-steam
+steam-utils/lxbin/patch-steam.rb
 steam-utils/lxbin/upgrade-steam-runtime
 steam-utils/lxbin/upgrade-steam-runtime.rb
 steam-utils/lxbin/xrandr
