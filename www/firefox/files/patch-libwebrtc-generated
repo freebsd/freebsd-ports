@@ -1,8 +1,8 @@
-commit 798fee7dc5e46be98cf353e90548f560642199ef
+commit 3dd423be3774ef9e3e9e9a8f0252a378520918fd
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Mon Nov 7 20:21:22 2022 +0000
+Date:   Sun Dec 4 21:38:16 2022 +0000
 
-    Regenerate libwebrtc build config for Firefox 107.0
+    regenerate libwebrtc patch for Firefox 108
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index 8fbfa680375d..ae63fb378f55 100644
@@ -52132,10 +52132,10 @@ index 0c90f71d76bc..3c1d109d7338 100644
      DEFINES["WEBRTC_USE_X11"] = True
 diff --git third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build
 deleted file mode 100644
-index e6788f779eb4..000000000000
+index e884abb54d56..000000000000
 --- third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build
 +++ /dev/null
-@@ -1,68 +0,0 @@
+@@ -1,72 +0,0 @@
 -# This Source Code Form is subject to the terms of the Mozilla Public
 -# License, v. 2.0. If a copy of the MPL was not distributed with this
 -# file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -52143,6 +52143,10 @@ index e6788f779eb4..000000000000
 -
 -  ### This moz.build was AUTOMATICALLY GENERATED from a GN config,  ###
 -  ### DO NOT edit it by hand.                                       ###
+-
+-CMMFLAGS += [
+-    "-fobjc-arc"
+-]
 -
 -COMPILE_FLAGS["OS_INCLUDES"] = []
 -AllowCompilerWarnings()
@@ -77551,10 +77555,10 @@ index 890c29b07adb..ad43616a002b 100644
  Library("assume_gn")
 diff --git third_party/libwebrtc/rtc_base/system/cocoa_threading_gn/moz.build third_party/libwebrtc/rtc_base/system/cocoa_threading_gn/moz.build
 deleted file mode 100644
-index e2451bcdfedd..000000000000
+index 9885a84ac85a..000000000000
 --- third_party/libwebrtc/rtc_base/system/cocoa_threading_gn/moz.build
 +++ /dev/null
-@@ -1,58 +0,0 @@
+@@ -1,62 +0,0 @@
 -# This Source Code Form is subject to the terms of the Mozilla Public
 -# License, v. 2.0. If a copy of the MPL was not distributed with this
 -# file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -77562,6 +77566,10 @@ index e2451bcdfedd..000000000000
 -
 -  ### This moz.build was AUTOMATICALLY GENERATED from a GN config,  ###
 -  ### DO NOT edit it by hand.                                       ###
+-
+-CMMFLAGS += [
+-    "-fobjc-arc"
+-]
 -
 -COMPILE_FLAGS["OS_INCLUDES"] = []
 -AllowCompilerWarnings()
