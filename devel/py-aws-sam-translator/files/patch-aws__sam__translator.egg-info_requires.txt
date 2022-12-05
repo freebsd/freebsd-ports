@@ -1,0 +1,9 @@
+--- aws_sam_translator.egg-info/requires.txt.orig	2022-11-29 03:23:53 UTC
++++ aws_sam_translator.egg-info/requires.txt
+@@ -1,5 +1,5 @@
+ boto3==1.*,>=1.19.5
+-jsonschema~=3.2
++jsonschema>=3.2<5
+ 
+ [dev]
+ coverage~=5.3

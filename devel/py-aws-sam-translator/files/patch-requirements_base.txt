@@ -1,0 +1,6 @@
+--- requirements/base.txt.orig	2022-11-29 03:18:13 UTC
++++ requirements/base.txt
+@@ -1,2 +1,2 @@
+ boto3>=1.19.5,==1.*
+-jsonschema~=3.2
++jsonschema>=3.2<5
