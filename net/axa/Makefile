@@ -13,6 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/COPYRIGHT
 LICENSE_FILE_PD=	${WRKSRC}/license_pd
 
+BROKEN_aarch64=	alignment error at link time
+
 BUILD_DEPENDS=	bash:shells/bash \
 		sie-nmsg>0:net/sie-nmsg
 LIB_DEPENDS=	liblmdb.so:databases/lmdb \
