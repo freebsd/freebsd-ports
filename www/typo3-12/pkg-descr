@@ -1,0 +1,14 @@
+The latest version with Long Term Support (LTS). It will have full support until
+31 October 2024 and security bugfixes until 30 April 2026.
+
+* Unified editor experience
+* Advanced filelist module
+* Sharable Deep Links in the TYPO3 Backend
+* Improved collaboration and Workflow features
+* Flexible and Secure Multi-factor Authentication
+* And a lot of Improvements for Developers
+
+System requirements
+* PHP 8.1
+* MySQL 8.0+ / MariaDB / Postgres / SQLite support
+* Modern Browsers
