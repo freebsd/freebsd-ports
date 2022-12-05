@@ -1,4 +1,3 @@
-PORTREVISION=	0
 
 COMMENT=	GLib bindings to poppler
 
