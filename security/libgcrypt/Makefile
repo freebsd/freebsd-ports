@@ -45,6 +45,10 @@ STATIC_CONFIGURE_ENABLE=	static
 CONFIGURE_ARGS+=	--disable-jent-support
 .endif
 
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DWITH_DEBUG
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/doc/gcrypt.info*
 	@${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
