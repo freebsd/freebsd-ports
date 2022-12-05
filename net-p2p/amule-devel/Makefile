@@ -13,6 +13,9 @@ WWW=		https://www.amule.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
+DEPRECATED=	Superseded by non development port
+EXPIRATION_DATE=2022-12-31
+
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 CONFLICTS=	amule
