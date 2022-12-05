@@ -1,20 +1,30 @@
 --- pyproject.toml.orig	2022-11-02 23:27:35 UTC
 +++ pyproject.toml
-@@ -27,7 +27,7 @@ all = [
+@@ -27,10 +27,10 @@ all = [
  
  [project.optional-dependencies]
  all = [
 -    "autopep8>=1.6.0,<1.7.0",
+-    "flake8>=5.0.0,<5.1.0",
 +    "autopep8>=1.6.0",
-     "flake8>=5.0.0,<5.1.0",
++    "flake8>=5.0.0",
      "mccabe>=0.7.0,<0.8.0",
-     "pycodestyle>=2.9.0,<2.10.0",
-@@ -38,7 +38,7 @@ all = [
+-    "pycodestyle>=2.9.0,<2.10.0",
++    "pycodestyle>=2.9.0",
+     "pydocstyle>=2.0.0",
+     "pyflakes>=2.5.0,<2.6.0",
+     "pylint>=2.5.0",
+@@ -38,10 +38,10 @@ all = [
      "yapf",
      "whatthepatch"
  ]
 -autopep8 = ["autopep8>=1.6.0,<1.7.0"]
+-flake8 = ["flake8>=5.0.0,<5.1.0"]
 +autopep8 = ["autopep8>=1.6.0"]
- flake8 = ["flake8>=5.0.0,<5.1.0"]
++flake8 = ["flake8>=5.0.0"]
  mccabe = ["mccabe>=0.7.0,<0.8.0"]
- pycodestyle = ["pycodestyle>=2.9.0,<2.10.0"]
+-pycodestyle = ["pycodestyle>=2.9.0,<2.10.0"]
++pycodestyle = ["pycodestyle>=2.9.0"]
+ pydocstyle = ["pydocstyle>=2.0.0"]
+ pyflakes = ["pyflakes>=2.5.0,<2.6.0"]
+ pylint = ["pylint>=2.5.0"]
