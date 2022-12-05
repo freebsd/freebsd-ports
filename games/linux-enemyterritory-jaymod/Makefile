@@ -6,7 +6,7 @@ MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://www.zenenterprises.biz/bud/jaymod/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
-MAINTAINER=	bar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 WWW=		https://jaymod.clanfu.org/
 

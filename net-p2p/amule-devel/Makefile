@@ -6,7 +6,7 @@ MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	aMule-SVN-r${PORTVERSION}
 
-MAINTAINER=	bar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-platform eMule p2p client
 WWW=		https://www.amule.org/
 

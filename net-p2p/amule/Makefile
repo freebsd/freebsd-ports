@@ -5,7 +5,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
 
-MAINTAINER=	bar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-platform eMule p2p client
 WWW=		https://www.amule.org/
 

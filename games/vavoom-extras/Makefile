@@ -10,7 +10,7 @@ MASTER_SITES=	SF/vavoom/Resources/vmodels-doom/1.4.3:vmd \
 		SF/vavoom/Resources/vtextures/1.0:vt10 \
 		SF/vavoom/Resources/vtextures/1.1:vt11
 
-MAINTAINER=	bar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port (extras)
 WWW=		https://www.vavoom-engine.com/
 

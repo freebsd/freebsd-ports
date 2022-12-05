@@ -5,7 +5,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.xiph.org/releases/kate/ \
 		https://ftp.osuosl.org/pub/xiph/releases/kate/
 
-MAINTAINER=	bar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
 WWW=		https://wiki.xiph.org/index.php/OggKate
 
