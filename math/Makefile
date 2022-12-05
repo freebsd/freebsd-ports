@@ -819,7 +819,6 @@
     SUBDIR += pear-Math_BigInteger
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-bitset
-    SUBDIR += pecl-stats2
     SUBDIR += permlib
     SUBDIR += petanque
     SUBDIR += petiga
