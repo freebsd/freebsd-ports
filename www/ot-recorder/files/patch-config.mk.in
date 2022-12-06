@@ -1,6 +1,16 @@
---- config.mk.in.orig	2022-05-24 07:25:09 UTC
+--- config.mk.in.orig	2022-09-29 12:04:51 UTC
 +++ config.mk.in
-@@ -20,10 +20,10 @@
+@@ -13,17 +13,19 @@
+ #	$ cd /usr/ports/devel/libconfig; make install
+ #	$ cd /usr/ports/net/mosquitto; make install
+ #	$ cd /usr/ports/devel/gmake; make install
++#	$ cd /usr/ports/devel/pkgconf; make install
++#	$ cd /usr/ports/misc/e2fsprogs-libuuid; make install
+ #
+ # Or as a package:
+ #
+-#	$ sudo pkg install lmdb curl libconfig mosquitto gmake
++#	$ sudo pkg install pkgconf lmdb curl libconfig mosquitto gmake e2fsprogs-libuuid
  #
  # Uncomment the following lines and replace "no" with "yes":
  #
@@ -10,12 +20,12 @@
 -FREEBSD ?= no
 +CC      = clang
 +CFLAGS += -I/usr/local/include
-+MORELIBS += -L /usr/local/lib
++MORELIBS += -L /usr/local/lib -luuid
 +FREEBSD ?= YES
  #
  # Now build recorder with the "gmake" command:
  #
-@@ -57,10 +57,10 @@ WITH_GREENWICH ?= no
+@@ -61,10 +63,10 @@ WITH_GREENWICH ?= no
  
  # Where should the recorder store its data? This directory must
  # exist and be writeable by recorder (and readable by ocat)
@@ -28,7 +38,7 @@
  
  # Define the precision for reverse-geo lookups. The higher
  # the number, the more granular reverse-geo will be:
-@@ -83,7 +83,7 @@ GHASHPREC = 7
+@@ -87,7 +89,7 @@ GHASHPREC = 7
  JSON_INDENT ?= no
  
  # Location of optional default configuration file
@@ -36,4 +46,4 @@
 +CONFIGFILE = /usr/local/etc/ot-recorder/ot-recorder.conf
  
  # Optionally specify the path to the Mosquitto libs, include here
- MOSQUITTO_INC = -I/usr/include
+ MOSQUITTO_CFLAGS = `$(PKG_CONFIG) --cflags libmosquitto`
