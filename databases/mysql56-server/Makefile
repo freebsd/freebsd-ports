@@ -11,6 +11,9 @@ WWW=		https://www.mysql.com/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream support ended on Febuary 2021
+EXPIRATION_DATE=	2023-06-30
+
 BROKEN_armv6=	qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 
 SLAVEDIRS=	databases/mysql56-client
