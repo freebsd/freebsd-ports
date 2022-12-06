@@ -1,5 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2022.11.107
+PORTVERSION=	2022.12.108.1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 PATCH_SITES=	https://nerd.hu/distfiles/
-PATCHFILES+=	disable-privacy-sandbox.patch:-p1
+PATCHFILES+=	disable-privacy-sandbox-352a8844b01a05a786ba76da599d106487f1533f.patch:-p1
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \

@@ -1,5 +1,5 @@
-TIMESTAMP = 1669891478
-SHA256 (iridium-browser-2022.11.107.tar.xz) = 7795b28672850fd4218138d6d9242fe246160065a474b26448733af08975e6ff
-SIZE (iridium-browser-2022.11.107.tar.xz) = 1409151040
-SHA256 (disable-privacy-sandbox.patch) = 9797e71f4a6700d9a675ec90c9b03487532de68af568fd010eec3fc0cd97c4de
-SIZE (disable-privacy-sandbox.patch) = 4772
+TIMESTAMP = 1670314377
+SHA256 (iridium-browser-2022.12.108.1.tar.xz) = bc8e923f3003a601a51daa0c5aa6d846742e000f86c7187c55369909bb7ce227
+SIZE (iridium-browser-2022.12.108.1.tar.xz) = 1641474124
+SHA256 (disable-privacy-sandbox-352a8844b01a05a786ba76da599d106487f1533f.patch) = 643103d1d8d8d57a0403a5f048cbbc15422e539f8334cde158e83530aa67257d
+SIZE (disable-privacy-sandbox-352a8844b01a05a786ba76da599d106487f1533f.patch) = 4702

@@ -1,6 +1,6 @@
---- components/storage_monitor/BUILD.gn.orig	2022-12-01 10:35:46 UTC
+--- components/storage_monitor/BUILD.gn.orig	2022-12-06 08:09:13 UTC
 +++ components/storage_monitor/BUILD.gn
-@@ -71,7 +71,7 @@ static_library("storage_monitor") {
+@@ -74,7 +74,7 @@ static_library("storage_monitor") {
        deps += [ "//services/device/public/mojom" ]
      }
    } else if (is_linux || is_chromeos_lacros) {
@@ -9,7 +9,7 @@
        sources += [
          "mtab_watcher_linux.cc",
          "mtab_watcher_linux.h",
-@@ -175,7 +175,7 @@ source_set("unit_tests") {
+@@ -178,7 +178,7 @@ source_set("unit_tests") {
          "storage_monitor_chromeos_unittest.cc",
        ]
      }

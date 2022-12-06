@@ -1,6 +1,6 @@
---- components/device_signals/core/common/signals_features.cc.orig	2022-10-05 07:34:01 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2022-12-06 08:09:13 UTC
 +++ components/device_signals/core/common/signals_features.cc
-@@ -18,7 +18,7 @@ const base::FeatureParam<bool> kDisableAntiVirus{&kNew
+@@ -19,7 +19,7 @@ const base::FeatureParam<bool> kDisableAntiVirus{&kNew
  const base::FeatureParam<bool> kDisableHotfix{&kNewEvSignalsEnabled,
                                                "DisableHotfix", false};
  

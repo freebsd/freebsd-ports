@@ -1,6 +1,6 @@
---- ui/platform_window/platform_window_delegate.h.orig	2022-12-01 10:35:46 UTC
+--- ui/platform_window/platform_window_delegate.h.orig	2022-12-06 08:09:13 UTC
 +++ ui/platform_window/platform_window_delegate.h
-@@ -95,7 +95,7 @@ class COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindow
+@@ -96,7 +96,7 @@ class COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindow
    virtual void OnWindowStateChanged(PlatformWindowState old_state,
                                      PlatformWindowState new_state) = 0;
  
