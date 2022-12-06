@@ -11,11 +11,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=		fails to build: a declaration of 'Mul128' must be available
-BROKEN_powerpc64=	fails to build: math/native_int/binint.h:510:11: error: Architecture not supported for MultD()
-BROKEN_riscv64=		fails to build: math/bigintnat/ubintnat.h:2250:2: error: Architecture not supported for MultD()
-.if !exists(/usr/include/omp.h)
-BROKEN=			requires OpenMP support that is missing on this architecture
-.endif
 
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
@@ -43,7 +38,9 @@ BINARY_ALIAS=	git=false
 LDFLAGS+=	-pthread # only for tests: see https://gitlab.com/palisade/palisade-release/-/issues/23
 
 OPTIONS_DEFINE=		OPENMP HEXL
+.if exists(/usr/include/omp.h)
 OPTIONS_DEFAULT=	OPENMP
+.endif
 
 HEXL_DESC=		Use Intel Hexl Library
 
