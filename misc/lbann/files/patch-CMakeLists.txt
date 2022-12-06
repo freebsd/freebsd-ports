@@ -1,0 +1,14 @@
+- workaround for the clang crash: https://github.com/llvm/llvm-project/issues/59308
+- clang crashes in debug info generation
+
+--- CMakeLists.txt.orig	2022-12-06 02:37:48 UTC
++++ CMakeLists.txt
+@@ -725,7 +725,7 @@ if (LBANN_HAS_CUDA)
+ endif (LBANN_HAS_CUDA)
+ 
+ # Fix the -g issue with Clang on OSX
+-if (APPLE)
++if (TRUE OR APPLE)
+   # Remove -g from the options
+   string(REPLACE  "-g" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   string(REPLACE  "-g" "" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")

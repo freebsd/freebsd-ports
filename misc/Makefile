@@ -206,6 +206,7 @@
     SUBDIR += lastools
     SUBDIR += latex-mk
     SUBDIR += lazyread
+    SUBDIR += lbann
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += lf
