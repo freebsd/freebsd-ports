@@ -5441,6 +5441,7 @@
     SUBDIR += py-trimesh
     SUBDIR += py-trove-classifiers
     SUBDIR += py-ttictoc
+    SUBDIR += py-ttkbootstrap
     SUBDIR += py-ttystatus
     SUBDIR += py-twiggy
     SUBDIR += py-twilio

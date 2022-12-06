@@ -1,0 +1,22 @@
+A supercharged theme extension for Tkinter that enables on-demand modern flat
+style themes inspired by Bootstrap.
+
+Features
+
+  * Over a dozen curated dark and light themes.
+
+  * Loads of beautiful pre-defined widget styles such as outline and round
+    toggle buttons.
+
+  * Apply colors and types using simple keywords such as primary and striped
+    instead of the legacy approach of primary.Striped.Horizontal.TProgressbar.
+    If you've used Bootstrap for web development, you are already familiar with
+    this approach using css classes.
+
+  * ttkbootstrap comes with several new beautifully designed widgets such as
+    Meter, DateEntry, and Floodgauge. Additionally, dialogs are now themed and
+    fully customizable.
+
+  * Want to create your own theme? Easy! ttkboostrap includes a built-in theme
+    creator that enables you to easily build, load, expore, and apply your own
+    custom themes.
