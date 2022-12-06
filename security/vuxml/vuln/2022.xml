@@ -1,3 +1,54 @@
+  <vuln vid="6f5192f5-75a7-11ed-83c0-411d43ce7fe4">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.9</lt></range>
+      </package>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/56694">
+	  <p>os, net/http: avoid escapes from os.DirFS and http.Dir on Windows</p>
+	  <p>The os.DirFS function and http.Dir type provide access to a
+	   tree of files rooted at a given directory. These functions
+	   permitted access to Windows device files under that root. For
+	   example, os.DirFS("C:/tmp").Open("COM1") would open the COM1 device.
+	   Both os.DirFS and http.Dir only provide read-only filesystem access.</p>
+	  <p>In addition, on Windows, an os.DirFS for the directory \(the root
+	   of the current drive) can permit a maliciously crafted path to escape
+	   from the drive and access any path on the system.</p>
+	  <p>The behavior of os.DirFS("") has changed. Previously, an empty root
+	   was treated equivalently to "/", so os.DirFS("").Open("tmp") would
+	   open the path "/tmp". This now returns an error.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/56350">
+	  <p>net/http: limit canonical header cache by bytes, not entries</p>
+	  <p>An attacker can cause excessive memory growth in a Go server
+	    accepting HTTP/2 requests. HTTP/2 server connections contain a
+	    cache of HTTP header keys sent by the client. While the total number
+	    of entries in this cache is capped, an attacker sending very large
+	    keys can cause the server to allocate approximately 64 MiB per open
+	    connection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41720</cvename>
+      <cvename>CVE-2022-41717</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/G9Jj4cO4Gpk/m/kOkLVG6TAgAJ</url>
+    </references>
+    <dates>
+      <discovery>2022-10-20</discovery>
+      <entry>2022-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2899da38-7300-11ed-92ce-3065ec8fd3ec">
     <topic>chromium -- Type confusion in V8</topic>
     <affects>
