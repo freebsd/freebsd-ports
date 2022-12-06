@@ -1,0 +1,22 @@
+--- record/set.c.orig	2022-12-06 01:06:34.235410000 +0000
++++ record/set.c	2022-12-06 01:08:13.986016000 +0000
+@@ -179,7 +179,8 @@
+ {
+     int nlongs;
+ 
+-    *alignment = sizeof(unsigned long);
++    /* XXX: Proper _Alignof? */
++    *alignment = max(sizeof(unsigned long), sizeof(void *));
+     nlongs = (maxMember + BITS_PER_LONG) / BITS_PER_LONG;
+     return (sizeof(BitVectorSet) + nlongs * sizeof(unsigned long));
+ }
+@@ -289,7 +290,8 @@
+ IntervalListMemoryRequirements(RecordSetInterval * pIntervals, int nIntervals,
+                                int maxMember, int *alignment)
+ {
+-    *alignment = sizeof(unsigned long);
++    /* XXX: Proper _Alignof? */
++    *alignment = max(sizeof(unsigned long), sizeof(void *));
+     return sizeof(IntervalListSet) + nIntervals * sizeof(RecordSetInterval);
+ }
+ 
