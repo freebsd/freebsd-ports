@@ -1,0 +1,11 @@
+--- python/Makefile.in.orig	2022-11-18 10:22:41 UTC
++++ python/Makefile.in
+@@ -483,7 +483,7 @@ all-local:
+ 	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-base py$(PYTHONREV)
+ 
+ install-exec-local:
+-	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-base py$(PYTHONREV) install --prefix=${DESTDIR}${prefix}
++	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-base py$(PYTHONREV) install --root=${DESTDIR} --single-version-externally-managed
+ 
+ clean-local:
+ 	rm -rf py$(PYTHONREV)
