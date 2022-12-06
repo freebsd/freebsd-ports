@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# $FreeBSD$
+# PROVIDE: mastodon_sidekiq
+# REQUIRE: DAEMON postgresql
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mastodon_sidekiq"
+desc="Mastodon Sidekiq Service"
+rcvar="mastodon_sidekiq_enable"
+
+load_rc_config ${name}
+
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+
+mastodon_sidekiq_user="mastodon"
+mastodon_sidekiq_chdir="%%WWWDIR%%"
+mastodon_sidekiq_env="RAILS_ENV=production \
+DB_POOL=25 \
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin:~/bin \
+MALLOC_ARENA_MAX=2"
+pidfile="/var/run/mastodon/${name##mastodon_}.pid"
+ppidfile="/var/run/mastodon/${name##mastodon_}_supervisor.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/bundle"
+procname_args="exec sidekiq -c 25"
+command_args="-f -T ${name} -P ${ppidfile} -p ${pidfile} -S -r ${procname} ${procname_args}"
+
+mastodon_sidekiq_prestart()
+{
+	if [ ! -d "/var/run/mastodon" ]; then
+		install -d -o "${mastodon_sidekiq_user}" -g "${mastodon_sidekiq_user}" -m 750 "/var/run/mastodon"
+	fi
+}
+
+mastodon_sidekiq_stop()
+{
+	/bin/kill -9 `cat ${ppidfile}`
+	/bin/kill -15 `cat ${pidfile}`
+}
+
+run_rc_command "$1"

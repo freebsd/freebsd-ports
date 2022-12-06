@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+############################################################
+Visit this URL to get started with Mastodon.
+https://wiki.freebsd.org/Ports/net-im/mastodon
+############################################################
+EOM
+}
+]

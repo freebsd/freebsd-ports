@@ -70,6 +70,7 @@
     SUBDIR += libstrophe
     SUBDIR += loudmouth
     SUBDIR += lurch
+    SUBDIR += mastodon
     SUBDIR += matterbridge
     SUBDIR += matterhorn
     SUBDIR += matterircd
