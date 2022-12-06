@@ -182,7 +182,7 @@ NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 NOTIFYEMAIL_CONFIGURE_ENABLE=	notify_email
 NOTIFYEMAIL_CONFIGURE_WITH=	libesmtp=${LOCALBASE}
 
-NUTUPS_LIB_DEPENDS=		libupsclient.so:sysutils/nut
+NUTUPS_LIB_DEPENDS=		libnutclient.so:sysutils/nut
 NUTUPS_CONFIGURE_ENABLE=	nut
 NUTUPS_CONFIGURE_WITH=		upsclient=${LOCALBASE}
 
