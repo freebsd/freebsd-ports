@@ -1,5 +1,5 @@
 PORTNAME=	shairport-sync
-DISTVERSION=	4.1
+DISTVERSION=	4.1.1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
