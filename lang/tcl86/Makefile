@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
+LDFLAGS+=	-Wl,-z,muldefs
 
 OPTIONS_DEFINE=	TCLMAN TZDATA THREADS DEBUG
 OPTIONS_DEFINE_amd64=	DTRACE
