@@ -20,12 +20,6 @@ PLIST_FILES=	bin/rubix
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	-fnested-functions
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rubix ${STAGEDIR}${PREFIX}/bin
 
@@ -35,4 +29,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
