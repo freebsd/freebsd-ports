@@ -31,8 +31,13 @@ include/aws/crt/io/SocketOptions.h
 include/aws/crt/io/Stream.h
 include/aws/crt/io/TlsOptions.h
 include/aws/crt/io/Uri.h
+include/aws/crt/mqtt/Mqtt5Client.h
+include/aws/crt/mqtt/Mqtt5Packets.h
+include/aws/crt/mqtt/Mqtt5Types.h
 include/aws/crt/mqtt/MqttClient.h
+include/aws/iot/Mqtt5Client.h
 include/aws/iot/MqttClient.h
+include/aws/iot/MqttCommon.h
 lib/aws-crt-cpp/cmake/aws-crt-cpp-config-version.cmake
 lib/aws-crt-cpp/cmake/aws-crt-cpp-config.cmake
 lib/aws-crt-cpp/cmake/shared/aws-crt-cpp-targets-%%CMAKE_BUILD_TYPE%%.cmake
