@@ -40,8 +40,11 @@ include/glslang/MachineIndependent/preprocessor/PpContext.h
 include/glslang/MachineIndependent/preprocessor/PpTokens.h
 include/glslang/MachineIndependent/propagateNoContraction.h
 include/glslang/MachineIndependent/reflection.h
+include/glslang/Public/ResourceLimits.h
 include/glslang/Public/ShaderLang.h
+include/glslang/Public/resource_limits_c.h
 include/glslang/SPIRV/GLSL.ext.AMD.h
+include/glslang/SPIRV/GLSL.ext.ARM.h
 include/glslang/SPIRV/GLSL.ext.EXT.h
 include/glslang/SPIRV/GLSL.ext.KHR.h
 include/glslang/SPIRV/GLSL.ext.NV.h
