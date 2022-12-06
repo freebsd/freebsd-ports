@@ -1,6 +1,7 @@
 PORTNAME=	dihydrogen
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1-36
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g4bda15e
 CATEGORIES=	math
 
@@ -10,8 +11,13 @@ WWW=		https://github.com/LLNL/DiHydrogen
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libfmt.so:devel/libfmt \
-		libspdlog.so:devel/spdlog
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+		libfabric.so:net/libfabric \
+		libfmt.so:devel/libfmt \
+		libhwloc.so:devel/hwloc2 \
+		libjson-c.so:devel/json-c \
+		libspdlog.so:devel/spdlog \
+		libze_loader.so:devel/level-zero
 TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake:testing compiler:c++17-lang
@@ -28,7 +34,7 @@ CMAKE_TESTING_ON=	H2_ENABLE_TESTS
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
-OPTIONS_DEFAULT=	OPENMPI
+OPTIONS_DEFAULT=	MPICH # should be same as in misc/lbann
 
 MPICH_USES=		mpi:mpich
 
