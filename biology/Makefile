@@ -175,6 +175,7 @@
     SUBDIR += py-py2bit
     SUBDIR += py-pybigwig
     SUBDIR += py-pyfaidx
+    SUBDIR += py-pyrodigal
     SUBDIR += py-pysam
     SUBDIR += py-python-libsbml
     SUBDIR += py-pywgsim
