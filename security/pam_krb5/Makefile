@@ -6,7 +6,7 @@ MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		Pluggable Authentication Module for Kerberos 5
+COMMENT=		Pluggable Authentication Module for ${FLAVOR:U} Kerberos 5
 WWW=		https://www.eyrie.org/~eagle/software/pam-krb5/
 
 LICENSE=		BSD3CLAUSE GPLv1+
@@ -24,19 +24,24 @@ CONFIGURE_ARGS+=	--with-krb5="${GSSAPIBASEDIR}" \
 CONFIGURE_ENV=		PATH_KRB5_CONFIG="${KRB5CONFIG}"
 INSTALL_TARGET=		install-strip
 
-OPTIONS_SINGLE=		LINK
-OPTIONS_SINGLE_LINK=	MIT HEIMDAL_BASE HEIMDAL_PORT
-OPTIONS_DEFAULT=	MIT
+FLAVORS=		mit heimdal_base heimdal_port
+FLAVOR?=		${FLAVORS:[1]}
 
-MIT_DESC=		Link against MIT Kerberos
-HEIMDAL_PORT_DESC=	Link against Heimdal in ports Kerberos
-HEIMDAL_BASE_DESC=	Link against Heimdal in base Kerberos
+.for f in ${FLAVORS:Nmit}
+${f}_PKGNAMESUFFIX=	-${f}
+.endfor
 
-MIT_USES=		gssapi:mit
-HEIMDAL_PORT_USES=	gssapi:heimdal
-HEIMDAL_BASE_USES=	gssapi:base
+.if ${FLAVOR:U} == mit
+USES=		gssapi:mit
+.elif ${FLAVOR:U} == heimdal_port
+USES=		gssapi:heimdal
+.elif ${FLAVOR:U} == heimdal_base
+USES=		gssapi:base
+.endif
+
+.include <bsd.port.pre.mk>
 
 post-install:
 	cd ${WRKSRC} && ${MAKE_CMD} install-man DESTDIR=${STAGEDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
