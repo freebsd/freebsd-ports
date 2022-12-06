@@ -1,0 +1,15 @@
+--- src/XListDev.c.orig	2022-12-06 00:00:03.974874000 +0000
++++ src/XListDev.c	2022-12-06 00:04:01.417798000 +0000
+@@ -68,7 +68,11 @@
+  */
+ static int pad_to_xid(int base_size)
+ {
+-    int padsize = sizeof(XID);
++    /*
++     * XXX: XValuatorInfo contains a pointer so needs more than XID padding
++     * XXX: Do proper _Alignof (polyfill via offsetof)?
++     */
++    int padsize = sizeof(void *) > sizeof(XID) ? sizeof(void *) : sizeof(XID);
+ 
+     return ((base_size + padsize - 1)/padsize) * padsize;
+ }
