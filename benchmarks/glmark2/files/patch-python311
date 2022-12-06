@@ -1,0 +1,33 @@
+https://gitlab.com/ita1024/waf/-/commit/68997828c850
+
+--- waflib/ConfigSet.py.orig	2021-12-23 14:46:11 UTC
++++ waflib/ConfigSet.py
+@@ -140,7 +140,7 @@ class ConfigSet(object):
+ 		Utils.writef(filename,''.join(buf))
+ 	def load(self,filename):
+ 		tbl=self.table
+-		code=Utils.readf(filename,m='rU')
++		code=Utils.readf(filename,m='r')
+ 		for m in re_imp.finditer(code):
+ 			g=m.group
+ 			tbl[g(2)]=eval(g(3))
+--- waflib/Context.py.orig	2021-12-23 14:46:11 UTC
++++ waflib/Context.py
+@@ -109,7 +109,7 @@ class Context(ctx):
+ 				cache[node]=True
+ 				self.pre_recurse(node)
+ 				try:
+-					function_code=node.read('rU',encoding)
++					function_code=node.read('r',encoding)
+ 					exec(compile(function_code,node.abspath(),'exec'),self.exec_dict)
+ 				finally:
+ 					self.post_recurse(node)
+@@ -340,7 +340,7 @@ def load_module(path,encoding=None):
+ 		pass
+ 	module=imp.new_module(WSCRIPT_FILE)
+ 	try:
+-		code=Utils.readf(path,m='rU',encoding=encoding)
++		code=Utils.readf(path,m='r',encoding=encoding)
+ 	except EnvironmentError:
+ 		raise Errors.WafError('Could not read the file %r'%path)
+ 	module_dir=os.path.dirname(path)
