@@ -10,9 +10,6 @@ WWW=		https://github.com/biolab/orange3-network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired security/py-keyrings.alt (via msic/orange3)
-EXPIRATION_DATE=2022-12-31
-
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \

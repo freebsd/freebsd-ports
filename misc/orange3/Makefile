@@ -9,9 +9,6 @@ WWW=		https://orange.biolab.si/
 
 LICENSE=	GPLv3
 
-DEPRECATED=	Depends on expired security/py-keyrings.alt
-EXPIRATION_DATE=2022-12-31
-
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}AnyQt>=0.0.11:x11-toolkits/py-AnyQt@${PY_FLAVOR} \
