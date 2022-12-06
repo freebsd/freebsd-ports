@@ -1,10 +1,7 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4-rc1
+DISTVERSION=	0.4-rc2
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	cb53dfd1fd6e.patch:-p1 # https://github.com/djpohly/dwl/pull/342
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	dwm for Wayland
