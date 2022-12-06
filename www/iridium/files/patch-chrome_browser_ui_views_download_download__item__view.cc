@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/download/download_item_view.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/ui/views/download/download_item_view.cc.orig	2022-12-06 08:09:13 UTC
 +++ chrome/browser/ui/views/download/download_item_view.cc
-@@ -188,7 +188,7 @@ bool UseNewWarnings() {
+@@ -190,7 +190,7 @@ bool UseNewWarnings() {
  }
  
  int GetFilenameStyle(const views::Label& label) {
@@ -9,7 +9,7 @@
    if (UseNewWarnings())
      return views::style::STYLE_EMPHASIZED;
  #endif
-@@ -196,7 +196,7 @@ int GetFilenameStyle(const views::Label& label) {
+@@ -198,7 +198,7 @@ int GetFilenameStyle(const views::Label& label) {
  }
  
  int GetFilenameStyle(const views::StyledLabel& label) {

@@ -1,6 +1,6 @@
---- base/cpu.h.orig	2022-03-28 18:11:04 UTC
+--- base/cpu.h.orig	2022-12-06 08:09:13 UTC
 +++ base/cpu.h
-@@ -108,7 +108,7 @@ class BASE_EXPORT CPU final {
+@@ -115,7 +115,7 @@ class BASE_EXPORT CPU final {
    const std::string& cpu_brand() const { return cpu_brand_; }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

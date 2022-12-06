@@ -1,13 +1,13 @@
---- sandbox/policy/features.cc.orig	2022-10-05 07:34:01 UTC
+--- sandbox/policy/features.cc.orig	2022-12-06 08:09:13 UTC
 +++ sandbox/policy/features.cc
-@@ -14,7 +14,11 @@ namespace sandbox::policy::features {
- // Enables network service sandbox.
+@@ -15,7 +15,11 @@ namespace sandbox::policy::features {
  // (Only causes an effect when feature kNetworkService is enabled.)
- const base::Feature kNetworkServiceSandbox{"NetworkServiceSandbox",
+ BASE_FEATURE(kNetworkServiceSandbox,
+              "NetworkServiceSandbox",
 +#if BUILDFLAG(IS_BSD)
-+                                           base::FEATURE_ENABLED_BY_DEFAULT};
++             base::FEATURE_ENABLED_BY_DEFAULT);
 +#else
-                                            base::FEATURE_DISABLED_BY_DEFAULT};
+              base::FEATURE_DISABLED_BY_DEFAULT);
 +#endif
  #endif  // !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_FUCHSIA)
  

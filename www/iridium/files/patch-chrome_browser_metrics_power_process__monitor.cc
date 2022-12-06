@@ -1,4 +1,4 @@
---- chrome/browser/metrics/power/process_monitor.cc.orig	2022-12-01 10:35:46 UTC
+--- chrome/browser/metrics/power/process_monitor.cc.orig	2022-12-06 08:09:13 UTC
 +++ chrome/browser/metrics/power/process_monitor.cc
 @@ -64,7 +64,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
  #endif
@@ -18,7 +18,7 @@
    metrics->idle_wakeups *= factor;
  #endif
  
-@@ -147,7 +147,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+@@ -168,7 +168,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
    lhs.cpu_usage += rhs.cpu_usage;
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

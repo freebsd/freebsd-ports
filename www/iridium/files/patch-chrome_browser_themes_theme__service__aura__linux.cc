@@ -1,6 +1,6 @@
---- chrome/browser/themes/theme_service_aura_linux.cc.orig	2022-12-01 10:35:46 UTC
+--- chrome/browser/themes/theme_service_aura_linux.cc.orig	2022-12-06 08:09:13 UTC
 +++ chrome/browser/themes/theme_service_aura_linux.cc
-@@ -22,7 +22,7 @@ namespace {
+@@ -24,7 +24,7 @@ namespace {
  ui::SystemTheme ValidateSystemTheme(ui::SystemTheme system_theme) {
    switch (system_theme) {
      case ui::SystemTheme::kDefault:

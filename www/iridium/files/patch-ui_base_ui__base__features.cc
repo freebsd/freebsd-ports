@@ -1,20 +1,20 @@
---- ui/base/ui_base_features.cc.orig	2022-10-05 07:34:01 UTC
+--- ui/base/ui_base_features.cc.orig	2022-12-06 08:09:13 UTC
 +++ ui/base/ui_base_features.cc
-@@ -185,7 +185,7 @@ const base::Feature kExperimentalFlingAnimation {
+@@ -205,7 +205,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
+              "ExperimentalFlingAnimation",
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
- #if BUILDFLAG(IS_WIN) ||                                   \
+-#if BUILDFLAG(IS_WIN) ||                                   \
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) ||              \
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
--     !BUILDFLAG(IS_CHROMEOS_LACROS))
-+     !BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
- #else
-       base::FEATURE_DISABLED_BY_DEFAULT
-@@ -283,7 +283,7 @@ bool IsForcedColorsEnabled() {
+      !BUILDFLAG(IS_CHROMEOS_LACROS))
+              base::FEATURE_ENABLED_BY_DEFAULT
+@@ -310,7 +310,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
- const base::Feature kEyeDropper {
-   "EyeDropper",
+ BASE_FEATURE(kEyeDropper,
+              "EyeDropper",
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
+              base::FEATURE_ENABLED_BY_DEFAULT
  #else
-       base::FEATURE_DISABLED_BY_DEFAULT
+              base::FEATURE_DISABLED_BY_DEFAULT

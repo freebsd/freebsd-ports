@@ -1,6 +1,6 @@
---- extensions/renderer/bindings/argument_spec.cc.orig	2022-10-05 07:34:01 UTC
+--- extensions/renderer/bindings/argument_spec.cc.orig	2022-12-06 08:09:13 UTC
 +++ extensions/renderer/bindings/argument_spec.cc
-@@ -16,6 +16,8 @@
+@@ -18,6 +18,8 @@
  #include "gin/data_object_builder.h"
  #include "gin/dictionary.h"
  
