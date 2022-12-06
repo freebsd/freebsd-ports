@@ -1,6 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0beta
+DISTVERSION=	0.19.1beta
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,6 +26,7 @@ USE_GNOME=	cairo
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
+GH_TUPLE=	hyprwm:hyprland-protocols:0dcff94:hyprland_protocols/subprojects/hyprland-protocols
 LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 
 OPTIONS_DEFINE=	X11
@@ -44,5 +45,12 @@ post-patch:
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/render/OpenGL.cpp
+
+.ifdef GH_TUPLE
+post-install:
+# XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/protocols
+.endif
 
 .include <bsd.port.mk>

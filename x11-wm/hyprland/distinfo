@@ -1,3 +1,5 @@
-TIMESTAMP = 1668612936
-SHA256 (hyprwm-Hyprland-v0.18.0beta_GH0.tar.gz) = 6b2c07263fbd874faa498d211f801191a947ea41b370cbd0f1fa0a58b7fe5a54
-SIZE (hyprwm-Hyprland-v0.18.0beta_GH0.tar.gz) = 686959
+TIMESTAMP = 1670439422
+SHA256 (hyprwm-Hyprland-v0.19.1beta_GH0.tar.gz) = 69b3fac34ec565bb4b3ae5d89c264e65f196d8eb08cfb4b4214bf541fe81c2b6
+SIZE (hyprwm-Hyprland-v0.19.1beta_GH0.tar.gz) = 697744
+SHA256 (hyprwm-hyprland-protocols-0dcff94_GH0.tar.gz) = 8a98166d88af0a59dd57ead5b3991f774eac6846f3fe713a6ef9d5754137d025
+SIZE (hyprwm-hyprland-protocols-0dcff94_GH0.tar.gz) = 4689
