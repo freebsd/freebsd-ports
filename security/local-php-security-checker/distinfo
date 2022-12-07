@@ -1,0 +1,15 @@
+TIMESTAMP = 1670419416
+SHA256 (fabpot-local-php-security-checker-v2.0.6_GH0.tar.gz) = 7fe2748d148a6ff1922f148a0141f727161996dcbda2037ea84d466f0c719fc2
+SIZE (fabpot-local-php-security-checker-v2.0.6_GH0.tar.gz) = 22337
+SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
+SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
+SHA256 (go-yaml-yaml-v3.0.1_GH0.tar.gz) = cf05411540d3e6ef8f1fd88434b34f94cedaceb540329031d80e23b74540c4e5
+SIZE (go-yaml-yaml-v3.0.1_GH0.tar.gz) = 91173
+SHA256 (hashicorp-go-version-v1.6.0_GH0.tar.gz) = bac1ea761f4f5818f9966d7a3ecbd97d3dcc277ad5f0c4832081d36b4b0b1991
+SIZE (hashicorp-go-version-v1.6.0_GH0.tar.gz) = 15892
+SHA256 (mitchellh-go-homedir-v1.1.0_GH0.tar.gz) = 646671c73a84a8dfb4a5a76b80c7b63549ffefa906524d45077301bc7da76600
+SIZE (mitchellh-go-homedir-v1.1.0_GH0.tar.gz) = 3362
+SHA256 (pmezard-go-difflib-v1.0.0_GH0.tar.gz) = 28f3dc1b5c0efd61203ab07233f774740d3bf08da4d8153fb5310db6cea0ebda
+SIZE (pmezard-go-difflib-v1.0.0_GH0.tar.gz) = 11398
+SHA256 (stretchr-testify-v1.8.1_GH0.tar.gz) = 6749fede6c26ae66b7e7500136dbe56913b4e0679099b6c1154d2210a9a1ec00
+SIZE (stretchr-testify-v1.8.1_GH0.tar.gz) = 97670
