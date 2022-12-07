@@ -21,6 +21,9 @@
 #			Default: %%PREFIX%%/share/nzbhydra2
 # nzbhydra2_data_dir:	Data directory for nzbhydra (DB, Logs, config)
 #			Default: %%PREFIX%%/nzbhydra2
+# nzbhydra2_java_home:	Home directory for Java. Up to OpenJDK 17
+#			can be used.
+#			Default: %%JAVA_HOME%%
 
 . /etc/rc.subr
 
@@ -34,10 +37,11 @@ load_rc_config ${name}
 : ${nzbhydra2_group:="nzbhydra2"}
 : ${nzbhydra2_dir:="%%PREFIX%%/share/nzbhydra2"}
 : ${nzbhydra2_data_dir:="%%PREFIX%%/nzbhydra2"}
+: ${nzbhydra2_java_home:="%%JAVA_HOME%%"}
 
 pidfile="/var/run/nzbhydra2/nzbhydra2.pid"
 command="%%PYTHON_CMD%%"
-command_args="${nzbhydra2_dir}/nzbhydra2wrapperPy3.py --datafolder ${nzbhydra2_data_dir} --pidfile ${pidfile} --daemon --nobrowser --java %%JAVA%%"
+command_args="${nzbhydra2_dir}/nzbhydra2wrapperPy3.py --datafolder ${nzbhydra2_data_dir} --pidfile ${pidfile} --daemon --nobrowser --java ${nzbhydra2_java_home}/bin/java"
 start_precmd=nzbhydra2_precmd
 
 nzbhydra2_precmd() 
