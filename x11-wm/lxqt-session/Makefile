@@ -1,5 +1,5 @@
 PORTNAME=	lxqt-session
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/lxqt/lxqt-session/
 
 LICENSE=	LGPL21+
 
-BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs
+BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs \
+		qtxdg-mat:sysutils/qtxdg-tools
 
 USES=	cmake compiler:c++14-lang kde:5 lxqt qt:5 \
 	pkgconfig tar:xz xorg gnome
