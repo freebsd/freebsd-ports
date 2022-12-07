@@ -1,6 +1,5 @@
 PORTNAME=	sdl2
-DISTVERSION=	2.26.0
-PORTREVISION=	1
+DISTVERSION=	2.26.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -87,7 +86,7 @@ ALSA_CONFIGURE_ENABLE=		alsa alsa-shared
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ASM_CONFIGURE_ENABLE=		assembly
 CSD_CONFIGURE_ENABLE=		libdecor libdecor-shared
-CSD_LIB_DEPENDS=		libdecor.so:x11-toolkits/libdecor
+CSD_LIB_DEPENDS=		libdecor-0.so:x11-toolkits/libdecor
 CSD_IMPLIES=			WAYLAND
 HIDAPI_CONFIGURE_ENABLE=	hidapi
 HIDAPI_IMPLIES=			JOYSTICK
