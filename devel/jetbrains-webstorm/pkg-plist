@@ -43,11 +43,13 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/intellij-coverage-agent-1.0.682.jar
 %%DATADIR%%/lib/intellij-test-discovery.jar
 %%DATADIR%%/lib/jetbrains-annotations.jar
+%%DATADIR%%/lib/jna/amd64/libjnidispatch.so
 %%DATADIR%%/lib/jps-model.jar
 %%DATADIR%%/lib/jsch-agent.jar
 %%DATADIR%%/lib/platform-objectSerializer-annotations.jar
 %%DATADIR%%/lib/platform-statistics-devkit.jar
 %%DATADIR%%/lib/protobuf.jar
+%%DATADIR%%/lib/pty4j
 %%DATADIR%%/lib/rd.jar
 %%DATADIR%%/lib/stats.jar
 %%DATADIR%%/lib/util.jar
@@ -100,12 +102,6 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/gateway-plugin/lib/gateway-plugin.jar
 %%DATADIR%%/plugins/gateway-plugin/lib/gateway-standalone/gateway.core.jar
 %%DATADIR%%/plugins/gateway-plugin/lib/gateway-standalone/gateway.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-darwin-amd64
-%%DATADIR%%/plugins/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-darwin-arm64
-%%DATADIR%%/plugins/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-linux-amd64
-%%DATADIR%%/plugins/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-linux-arm64
-%%DATADIR%%/plugins/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-windows-amd64.exe
-%%DATADIR%%/plugins/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-windows-arm64.exe
 %%DATADIR%%/plugins/gateway-plugin/resources/gateway.vmoptions
 %%DATADIR%%/plugins/gateway-terminal/lib/gateway-terminal.jar
 %%DATADIR%%/plugins/gherkin/lib/gherkin.jar
@@ -810,5 +806,3 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/xml-refactoring/lib/xml-refactoring.jar
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
-@dir %%DATADIR%%/lib/jna/amd64
-@dir %%DATADIR%%/lib/pty4j/linux/x86-64
