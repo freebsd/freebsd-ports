@@ -1,0 +1,115 @@
+#!/bin/sh
+
+# PROVIDE: opensearch
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable opensearch:
+#
+# opensearch_enable="YES"
+#
+# opensearch_user (username): Set to opensearch by default.
+#               Set it to required username.
+# opensearch_group (group):   Set to opensearch by default.
+#               Set it to required group.
+# opensearch_config (path):   Set to %%PREFIX%%/etc/opensearch/opensearch.yml by default.
+#               Set it to the config file location.
+# opensearch_java_home (path): Set to %%JAVA_HOME%% by default.
+#               Set it to the root of the JDK to use.
+#
+. /etc/rc.subr
+
+name=opensearch
+rcvar=opensearch_enable
+
+load_rc_config ${name}
+
+: ${opensearch_enable:=NO}
+: ${opensearch_user=opensearch}
+: ${opensearch_group=opensearch}
+: ${opensearch_config=%%PREFIX%%/etc/opensearch}
+: ${opensearch_login_class=root}
+: ${opensearch_java_home="%%JAVA_HOME%%"}
+
+required_files="${opensearch_config}/opensearch.yml"
+_pidprefix=/var/run/opensearch/opensearch
+pidfile=${_pidprefix}.pid
+procname=${opensearch_java_home}/bin/java
+
+extra_commands="console status"
+console_cmd=opensearch_console
+start_precmd=opensearch_precmd
+command=%%PREFIX%%/lib/opensearch/bin/opensearch
+command_args="-d --pidfile=${pidfile}"
+
+export OPENSEARCH_PATH_CONF=${opensearch_config}
+export JAVA_HOME=${opensearch_java_home}
+
+opensearch_precmd()
+{
+    /usr/bin/install -d -o ${opensearch_user} -g ${opensearch_group} -m 755 ${pidfile%/*}
+    /usr/bin/install -d -o ${opensearch_user} -g ${opensearch_group} -m 755 /var/db/opensearch
+    /usr/bin/install -d -o ${opensearch_user} -g ${opensearch_group} -m 755 /var/log/opensearch
+}
+
+opensearch_console()
+{
+    command_args=""
+    run_rc_command "start"
+}
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${opensearch_profiles}" != "x" ]; then
+        eval opensearch_config="\${opensearch_${profile}_config:-}"
+        if [ "x${opensearch_config}" = "x" ]; then
+            echo "You must define a configuration  (opensearch_${profile}_config)"
+            exit 1
+        fi
+	export OPENSEARCH_PATH_CONF=${opensearch_config}
+        required_files="${opensearch_config}/opensearch.yml"
+        required_files="${opensearch_config}/jvm.options"
+        eval opensearch_enable="\${opensearch_${profile}_enable:-${opensearch_enable}}"
+        pidfile="${_pidprefix}.${profile}.pid"
+	command_args="-d --pidfile=${pidfile}"
+	echo "===> opensearch profile: ${profile}"
+    else
+        echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${opensearch_profiles}" != "x" -a "x$1" != "x" ]; then
+        for profile in ${opensearch_profiles}; do
+            eval _enable="\${opensearch_${profile}_enable}"
+            case "x${_enable:-${opensearch_enable}}" in
+            x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+                continue
+                ;;
+            x[Yy][Ee][Ss])
+                ;;
+            *)
+                if test -z "$_enable"; then
+                    _var=opensearch_enable
+                else
+                    _var=opensearch_"${profile}"_enable
+                fi
+                echo "Bad value" \
+                    "'${_enable:-${opensearch_enable}}'" \
+                    "for ${_var}. " \
+                    "Profile ${profile} skipped."
+                continue
+                ;;
+            esac
+            %%PREFIX%%/etc/rc.d/opensearch $1 ${profile}
+            retcode="$?"
+            if [ "0${retcode}" -ne 0 ]; then
+                failed="${profile} (${retcode}) ${failed:-}"
+            else
+                success="${profile} ${success:-}"
+            fi
+        done
+        exit 0
+    fi
+fi
+
+run_rc_command "$1"

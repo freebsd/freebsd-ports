@@ -503,6 +503,7 @@
     SUBDIR += openfts
     SUBDIR += openjade
     SUBDIR += opensearch
+    SUBDIR += opensearch13
     SUBDIR += opensearch-dashboards
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
