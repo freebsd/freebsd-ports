@@ -74,7 +74,7 @@ post-patch:
 	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${FILESDIR}/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
+	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} ${AUTORECONF_ARGS}
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:
@@ -86,6 +86,14 @@ post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/vncserver.ports ${STAGEDIR}${PREFIX}/bin/vncserver
 
 .include "${.CURDIR}/Makefile.common.mk"
+
+AUTORECONF_ARGS=-fiv
+.if ${ABI:Mpurecap}
+# Hybrid ABI autoreconf used for CheriABI builds looks for autoconf macros in
+# ${LOCALBASE64}/share/aclocal. Add a directory with CheriABI autoconf macros to
+# search paths.
+AUTORECONF_ARGS+=-I${LOCALBASE}/share/aclocal
+.endif
 
 # import from x11-server/xorg-server/Makefile
 .if ${SSL_DEFAULT} == base
