@@ -24,6 +24,7 @@ etc/xdg/autostart/lxqt-runner.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ia.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_it.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_hi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ja.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_lt.qm
