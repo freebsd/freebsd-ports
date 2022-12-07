@@ -1,8 +1,7 @@
 PORTNAME=	hurl
 DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/Orange-OpenSource/${PORTNAME}/archive/
-DISTFILES=	${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	CLI to run HTTP requests defined in a simple plain text format
@@ -11,12 +10,11 @@ WWW=		https://hurl.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2
+USES=		cargo ssl gnome
+USE_GITHUB=	yes
+GH_ACCOUNT=	Orange-OpenSource
+USE_GNOME=	libxml2
 
-USES=		cargo ssl
-
-CARGO_INSTALL_PATH=	packages/hurl packages/hurlfmt
-CARGO_ENV=	OPENSSL_LIB_DIR=${OPENSSLLIB} OPENSSL_INCLUDE_DIR=${OPENSSLINC}
 CARGO_CRATES=	adler32-1.2.0 \
 				aho-corasick-0.7.19 \
 				alloc-no-stdlib-2.0.4 \
@@ -172,8 +170,12 @@ CARGO_CRATES=	adler32-1.2.0 \
 				winres-0.1.12 \
 				xml-rs-0.8.4 \
 				xmltree-0.10.3
+CARGO_INSTALL_PATH=	packages/hurl packages/hurlfmt
 
-PLIST_FILES=	bin/hurl bin/hurlfmt
+PLIST_FILES=	bin/hurl \
+				bin/hurlfmt \
+				man/man1/hurl.1.gz \
+				man/man1/hurlfmt.1.gz
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/manual/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/

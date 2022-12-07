@@ -1,4 +1,4 @@
-TIMESTAMP = 1669828764
+TIMESTAMP = 1670275349
 SHA256 (1.8.0.tar.gz) = 9c6c1d4175e7ea5fa040e66dd5623e29ece301e3e52b53da1daa0edb156b6e66
 SIZE (1.8.0.tar.gz) = 1127681
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
@@ -311,3 +311,5 @@ SHA256 (rust/crates/xml-rs-0.8.4.crate) = d2d7d3948613f75c98fd9328cfdcc45acc4d36
 SIZE (rust/crates/xml-rs-0.8.4.crate) = 52690
 SHA256 (rust/crates/xmltree-0.10.3.crate) = d7d8a75eaf6557bb84a65ace8609883db44a29951042ada9b393151532e41fcb
 SIZE (rust/crates/xmltree-0.10.3.crate) = 9219
+SHA256 (Orange-OpenSource-hurl-1.8.0_GH0.tar.gz) = 9c6c1d4175e7ea5fa040e66dd5623e29ece301e3e52b53da1daa0edb156b6e66
+SIZE (Orange-OpenSource-hurl-1.8.0_GH0.tar.gz) = 1127681
