@@ -1,6 +1,6 @@
-TIMESTAMP = 1668167982
-SHA256 (intel-gmmlib-intel-gmmlib-22.3.1_GH0.tar.gz) = 4adcd33a07617e1c95c4bc6d85bac2e3a881ba19ffcca2857da765248295fd2c
-SIZE (intel-gmmlib-intel-gmmlib-22.3.1_GH0.tar.gz) = 843148
+TIMESTAMP = 1670428381
+SHA256 (intel-gmmlib-intel-gmmlib-22.3.2_GH0.tar.gz) = f725fbb4291ab67bbc7b31e1a268f523df384667360c931b40144db861be53d7
+SIZE (intel-gmmlib-intel-gmmlib-22.3.2_GH0.tar.gz) = 843310
 SHA256 (f17dd87c7f57.patch) = 0bdfd22e8f36a097c875796c7bbf7003a16cc7535fdf5d3caa3a7de9dc21c28e
 SIZE (f17dd87c7f57.patch) = 1485
 SHA256 (4356a33c787c.patch) = bfcb39e72f470bc695a6c356bc0ad06c7ac6b8f0f4b64b41deb3d0678ec29171
