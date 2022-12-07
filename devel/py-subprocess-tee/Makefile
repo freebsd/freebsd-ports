@@ -1,5 +1,5 @@
 PORTNAME=	subprocess-tee
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,9 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
