@@ -1,6 +1,6 @@
 PORTNAME=	redland-bindings
 PORTVERSION=	1.0.17.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
@@ -13,7 +13,9 @@ WWW=		https://librdf.org/bindings/
 LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	librdf.so:textproc/redland
+LIB_DEPENDS=	librdf.so:textproc/redland \
+		libraptor2.so:textproc/raptor2 \
+		librasqal.so:textproc/rasqal
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
@@ -24,7 +26,7 @@ OPTIONS_SUB=	yes
 
 PHP_CONFIGURE_WITH=	php
 PHP_USES=		php:build
-PYTHON_CONFIGURE_WITH=	python
+PYTHON_CONFIGURE_WITH=	python python-libext=${PYTHON_EXT_SUFFIX}.so
 PYTHON_USES=		python
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_USE=		RUBY=yes
