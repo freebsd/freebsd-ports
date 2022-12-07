@@ -1,5 +1,6 @@
 bin/pavucontrol-qt
 share/applications/pavucontrol-qt.desktop
+%%DATADIR%%/translations/pavucontrol-qt_ar.qm
 %%DATADIR%%/translations/pavucontrol-qt_arn.qm
 %%DATADIR%%/translations/pavucontrol-qt_as.qm
 %%DATADIR%%/translations/pavucontrol-qt_ast.qm
