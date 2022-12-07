@@ -1,3 +1,41 @@
+  <vuln vid="050eba46-7638-11ed-820d-080027d3a315">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python311</name>
+	<range><lt>3.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/3/whatsnew/changelog.html#changelog">
+	  <p>gh-100001: python -m http.server no longer allows terminal control characters sent
+	    within a garbage request to be printed to the stderr server log.
+	    This is done by changing the http.server BaseHTTPRequestHandler .log_message method
+	    to replace control characters with a \xHH hex escape before printing.</p>
+	  <p>gh-87604: Avoid publishing list of active per-interpreter audit hooks via the gc module.</p>
+	  <p>gh-98433: The IDNA codec decoder used on DNS hostnames by socket or asyncio related
+	    name resolution functions no longer involves a quadratic algorithm. This prevents a
+	    potential CPU denial of service if an out-of-spec excessive length hostname involving
+	    bidirectional characters were decoded. Some protocols such as urllib http 3xx redirects
+	    potentially allow for an attacker to supply such a name.</p>
+	  <p>gh-98739: Update bundled libexpat to 2.5.0.</p>
+	  <p>gh-97612: Fix a shell code injection vulnerability in the get-remote-certificate.py example
+	    script. The script no longer uses a shell to run openssl commands. Issue reported and
+	    initial fix by Caleb Shortt. Patch by Victor Stinner.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.python.org/3/whatsnew/changelog.html#changelog</url>
+    </references>
+    <dates>
+      <discovery>2022-09-28</discovery>
+      <entry>2022-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f5192f5-75a7-11ed-83c0-411d43ce7fe4">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
