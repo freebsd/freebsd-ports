@@ -34,9 +34,12 @@ CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 
-USES=		tar:xz
+USES=		elfctl tar:xz
 # helpful when testing beta
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+ELF_FEATURES=	+noprotmax:dist/bin/firefox \
+		+noprotmax:dist/bin/firefox-bin
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
