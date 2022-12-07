@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f8f1cd0ca7cd13fa25864f9a20666e43d160dbe6.patch:-p1 # include <cerrno> where required for the sake of FreeBSD, see https://github.com/psi4/psi4/pull/2811
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source suite of ab initio quantum chemistry programs
 WWW=		https://psicode.org/
