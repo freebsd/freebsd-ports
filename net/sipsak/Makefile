@@ -1,20 +1,23 @@
 PORTNAME=	sipsak
-PORTVERSION=	0.9.6
+DISTVERSION=	0.9.8.1
 CATEGORIES=	net
-MASTER_SITES=	BERLIOS
-DISTFILES=	sipsak-0.9.6-1.tar.gz
+MASTER_SITES=	https://github.com/nils-ohlmeier/sipsak/releases/download/${DISTVERSION}/
 
 MAINTAINER=	jesusr@FreeBSD.org
 COMMENT=	Small command line tool for SIP testing
-WWW=		http://sipsak.berlios.de/
+WWW=		https://github.com/nils-ohlmeier/sipsak
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: address
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: address
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_CSTD=	gnu89
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sipsak \
 		man/man1/sipsak.1.gz
 
+OPTIONS_DEFINE=		CARES GNUTLS
+OPTIONS_DEFAULT=	CARES GNUTLS
+CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 .include <bsd.port.mk>
