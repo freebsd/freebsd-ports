@@ -1,6 +1,5 @@
 PORTNAME=	oxipng
-DISTVERSION=	6.0.1
-PORTREVISION=	1
+DISTVERSION=	7.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
