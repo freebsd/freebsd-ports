@@ -2,6 +2,10 @@
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>python310</name>
+	<range><lt>3.10.9</lt></range>
+      </package>
+      <package>
 	<name>python311</name>
 	<range><lt>3.11.1</lt></range>
       </package>
