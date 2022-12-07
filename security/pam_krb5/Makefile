@@ -1,5 +1,5 @@
 PORTNAME=		pam_krb5
-PORTVERSION=		4.9
+PORTVERSION=		4.11
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
