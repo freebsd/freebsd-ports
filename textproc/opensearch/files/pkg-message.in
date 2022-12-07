@@ -1,6 +1,8 @@
 [
 { type: install
   message: <<EOM
+Opensearch was installed
+
 Please see %%ETCDIR%% for a sample version of
 opensearch.yml.
 
