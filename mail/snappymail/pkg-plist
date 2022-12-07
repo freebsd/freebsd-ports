@@ -39,7 +39,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Commands/Quota.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/FetchType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/FolderACL.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/FolderResponseStatus.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/FolderStatus.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/FolderType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Enumerations/MessageFlag.php
