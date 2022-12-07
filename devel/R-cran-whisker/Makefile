@@ -1,10 +1,10 @@
 PORTNAME=	whisker
-DISTVERSION=	0.4
+DISTVERSION=	0.4.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
-COMMENT=	Logicless Mustache Templating for R
+COMMENT=	{{mustache}} for R, Logicless Templating
 WWW=		https://github.com/edwindj/whisker
 
 LICENSE=	GPLv3
