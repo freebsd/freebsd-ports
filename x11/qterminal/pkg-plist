@@ -22,6 +22,7 @@ share/metainfo/qterminal.metainfo.xml
 %%DATADIR%%/translations/qterminal_fr.qm
 %%DATADIR%%/translations/qterminal_gl.qm
 %%DATADIR%%/translations/qterminal_he.qm
+%%DATADIR%%/translations/qterminal_hi.qm
 %%DATADIR%%/translations/qterminal_hr.qm
 %%DATADIR%%/translations/qterminal_hu.qm
 %%DATADIR%%/translations/qterminal_id.qm
