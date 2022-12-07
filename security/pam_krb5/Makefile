@@ -1,5 +1,6 @@
 PORTNAME=		pam_krb5
 PORTVERSION=		4.11
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
@@ -32,11 +33,11 @@ ${f}_PKGNAMESUFFIX=	-${f}
 .endfor
 
 .if ${FLAVOR:U} == mit
-USES=		gssapi:mit
+USES+=		gssapi:mit
 .elif ${FLAVOR:U} == heimdal_port
-USES=		gssapi:heimdal
+USES+=		gssapi:heimdal
 .elif ${FLAVOR:U} == heimdal_base
-USES=		gssapi:base
+USES+=		gssapi:base
 .endif
 
 .include <bsd.port.pre.mk>
