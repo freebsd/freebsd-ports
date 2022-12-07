@@ -1,4 +1,4 @@
-TIMESTAMP = 1666169964
+TIMESTAMP = 1670332277
 SHA256 (rust/crates/adler-0.2.3.crate) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
 SIZE (rust/crates/adler-0.2.3.crate) = 12168
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
@@ -367,5 +367,5 @@ SHA256 (rust/crates/xml-rs-0.8.3.crate) = b07db065a5cf61a7e4ba64f29e67db906fb178
 SIZE (rust/crates/xml-rs-0.8.3.crate) = 52547
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (dandavison-delta-0.14.0_GH0.tar.gz) = 7d1ab2949d00f712ad16c8c7fc4be500d20def9ba70394182720a36d300a967c
-SIZE (dandavison-delta-0.14.0_GH0.tar.gz) = 496467
+SHA256 (dandavison-delta-0.15.1_GH0.tar.gz) = b9afd2f80ae1d57991a19832d6979c7080a568d42290a24e59d6a2a82cbc1728
+SIZE (dandavison-delta-0.15.1_GH0.tar.gz) = 499576
