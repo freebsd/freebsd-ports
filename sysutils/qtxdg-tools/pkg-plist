@@ -1,0 +1,5 @@
+bin/qtxdg-mat
+share/cmake/qtxdg-tools/qtxdg-tools-config-version.cmake
+share/cmake/qtxdg-tools/qtxdg-tools-config.cmake
+share/cmake/qtxdg-tools/qtxdg-tools-targets-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/qtxdg-tools/qtxdg-tools-targets.cmake
