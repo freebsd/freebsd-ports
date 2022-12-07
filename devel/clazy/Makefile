@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.txt
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		cmake compiler:c++17-lang tar:xz
+USES=		cmake tar:xz
 
 CMAKE_ARGS=	-DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 
@@ -25,8 +25,6 @@ CMAKE_ARGS=	-DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 OPTIONS_DEFINE=	DOCS
 
 DOCS_CMAKE_BOOL=	CLAZY_MAN_PAGE
-
-.include <bsd.port.options.mk>
 
 CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
 CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
