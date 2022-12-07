@@ -1,5 +1,5 @@
 PORTNAME=	clion
-PORTVERSION=	2022.2.4
+PORTVERSION=	2022.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
@@ -15,7 +15,9 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
+		jetbrains-pty4j>=0.12.10:devel/jetbrains-pty4j \
 		lsof:sysutils/lsof
 
 USES=		cpe python:run shebangfix
@@ -29,6 +31,7 @@ SHEBANG_FILES=	bin/restart.py \
 		plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh
 
 NO_ARCH=	yes
+NO_ARCH_IGNORE=	libjnidispatch.so
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
@@ -48,18 +51,26 @@ do-install:
 		${WRKSRC}/bin/repair \
 		${WRKSRC}/jbr \
 		${WRKSRC}/jre64 \
-		${WRKSRC}/lib/pty4j-native \
+		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
+		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
 		${WRKSRC}/plugins/performanceTesting \
 		${WRKSRC}/plugins/remote-dev-server
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
+		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh ! -name *\.exe")
 	@(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR} "-name *\.sh")
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
 	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+# Install FreeBSD native lib provided by devel/jna
+	@${MKDIR} ${WRKDIR}/jna
+	@(cd ${WRKDIR}/jna && ${JAR} xf ${JAVAJARDIR}/jna.jar com/sun/jna/freebsd-x86-64/libjnidispatch.so)
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib/jna/amd64
+	${INSTALL_LIB} ${WRKDIR}/jna/com/sun/jna/freebsd-x86-64/libjnidispatch.so ${STAGEDIR}${DATADIR}/lib/jna/amd64/
+# Use pty4j replacement provided by devel/jetbrains-pty4j
+	${LN} -sf ../../../lib/pty4j ${STAGEDIR}${DATADIR}/lib/pty4j
 
 .include <bsd.port.mk>
