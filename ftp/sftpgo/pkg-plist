@@ -30,6 +30,7 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/bootstrap/js/bootstrap.min.js
 %%DATADIR%%/static/vendor/codemirror/addon/dialog/dialog.css
 %%DATADIR%%/static/vendor/codemirror/addon/dialog/dialog.js
+%%DATADIR%%/static/vendor/codemirror/addon/scroll/annotatescrollbar.js
 %%DATADIR%%/static/vendor/codemirror/addon/search/jump-to-line.js
 %%DATADIR%%/static/vendor/codemirror/addon/search/match-highlighter.js
 %%DATADIR%%/static/vendor/codemirror/addon/search/matchesonscrollbar.css
@@ -59,6 +60,8 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/datatables/responsive.bootstrap4.min.css
 %%DATADIR%%/static/vendor/datatables/responsive.bootstrap4.min.js
 %%DATADIR%%/static/vendor/datatables/select.bootstrap4.min.css
+%%DATADIR%%/static/vendor/filepond/filepond.min.css
+%%DATADIR%%/static/vendor/filepond/filepond.min.js
 %%DATADIR%%/static/vendor/fontawesome-free/css/fontawesome.min.css
 %%DATADIR%%/static/vendor/fontawesome-free/css/regular.min.css
 %%DATADIR%%/static/vendor/fontawesome-free/css/solid.min.css
@@ -96,7 +99,6 @@ bin/sftpgo
 %%DATADIR%%/templates/common/reset-password.html
 %%DATADIR%%/templates/common/sftpgo.css
 %%DATADIR%%/templates/email/reset-password.html
-%%DATADIR%%/templates/email/retention-check-report.html
 %%DATADIR%%/templates/webadmin/admin.html
 %%DATADIR%%/templates/webadmin/admins.html
 %%DATADIR%%/templates/webadmin/adminsetup.html
@@ -105,6 +107,10 @@ bin/sftpgo
 %%DATADIR%%/templates/webadmin/changepassword.html
 %%DATADIR%%/templates/webadmin/connections.html
 %%DATADIR%%/templates/webadmin/defender.html
+%%DATADIR%%/templates/webadmin/eventaction.html
+%%DATADIR%%/templates/webadmin/eventactions.html
+%%DATADIR%%/templates/webadmin/eventrule.html
+%%DATADIR%%/templates/webadmin/eventrules.html
 %%DATADIR%%/templates/webadmin/folder.html
 %%DATADIR%%/templates/webadmin/folders.html
 %%DATADIR%%/templates/webadmin/fsconfig.html
