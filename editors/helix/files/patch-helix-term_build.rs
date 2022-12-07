@@ -1,11 +1,11 @@
---- helix-term/build.rs.orig	2022-03-30 19:59:17 UTC
+--- helix-term/build.rs.orig	2022-12-07 02:54:50 UTC
 +++ helix-term/build.rs
 @@ -5,12 +5,7 @@ use std::process::Command;
  const VERSION: &str = include_str!("../VERSION");
  
  fn main() {
 -    let git_hash = Command::new("git")
--        .args(&["rev-parse", "HEAD"])
+-        .args(["rev-parse", "HEAD"])
 -        .output()
 -        .ok()
 -        .filter(|output| output.status.success())

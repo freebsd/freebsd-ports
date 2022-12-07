@@ -1,6 +1,6 @@
---- helix-loader/src/grammar.rs.orig	2022-09-01 17:07:46 UTC
+--- helix-loader/src/grammar.rs.orig	2022-12-07 02:54:50 UTC
 +++ helix-loader/src/grammar.rs
-@@ -89,60 +89,6 @@ pub fn fetch_grammars() -> Result<()> {
+@@ -88,60 +88,6 @@ pub fn fetch_grammars() -> Result<()> {
      let mut grammars = get_grammar_configs()?;
      grammars.retain(|grammar| !matches!(grammar.source, GrammarSource::Local { .. }));
  
@@ -54,7 +54,7 @@
 -        let len = errors.len();
 -        println!("{} grammars failed to fetch", len);
 -        for (i, error) in errors.into_iter().enumerate() {
--            println!("\tFailure {}/{}: {}", i, len, error);
+-            println!("\tFailure {}/{}: {}", i + 1, len, error);
 -        }
 -    }
 -
