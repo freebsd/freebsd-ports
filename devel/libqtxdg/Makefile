@@ -1,5 +1,5 @@
 PORTNAME=	libqtxdg
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	devel
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -15,5 +15,4 @@ USE_GNOME=	glib20
 USE_QT=		buildtools:build qmake:build core dbus gui svg widgets \
 		xml
 USE_LXQT=	buildtools
-
 .include <bsd.port.mk>
