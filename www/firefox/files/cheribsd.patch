@@ -21,3 +21,14 @@
  
    // Try to allocate the region. If the returned address is aligned,
    // either we OOMed (region is nullptr) or we're done.
+--- toolkit/xre/nsAppRunner.cpp.orig
++++ toolkit/xre/nsAppRunner.cpp
+@@ -4514,7 +4514,7 @@
+       return true;
+     }
+   }
+-#  ifdef EARLY_BETA_OR_EARLIER
++#  if 1
+   // Enable by default when we're running on a recent enough GTK version. We'd
+   // like to check further details like compositor version and so on ideally
+   // to make sure we don't enable it on old Mutter or what not, but we can't,
