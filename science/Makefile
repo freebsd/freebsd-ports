@@ -192,6 +192,7 @@
     SUBDIR += molscript
     SUBDIR += molsketch
     SUBDIR += mopac
+    SUBDIR += mp2d
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mrchem
