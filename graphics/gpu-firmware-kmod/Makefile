@@ -1,5 +1,5 @@
 PORTNAME=	gpu-firmware-kmod
-PORTVERSION=	20220511
+PORTVERSION=	20221207
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -93,6 +93,7 @@ RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks
 		gpu-firmware-amd-kmod-tahiti>0:graphics/gpu-firmware-amd-kmod@tahiti \
 		gpu-firmware-amd-kmod-tonga>0:graphics/gpu-firmware-amd-kmod@tonga \
 		gpu-firmware-amd-kmod-topaz>0:graphics/gpu-firmware-amd-kmod@topaz \
+		gpu-firmware-amd-kmod-vangogh>0:graphics/gpu-firmware-amd-kmod@vangogh \
 		gpu-firmware-amd-kmod-vega10>0:graphics/gpu-firmware-amd-kmod@vega10 \
 		gpu-firmware-amd-kmod-vega12>0:graphics/gpu-firmware-amd-kmod@vega12 \
 		gpu-firmware-amd-kmod-vega20>0:graphics/gpu-firmware-amd-kmod@vega20 \

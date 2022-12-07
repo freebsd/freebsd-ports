@@ -294,6 +294,17 @@
 %%TOPAZ%%/%%KMODDIR%%/amdgpu_topaz_sdma1_bin.ko
 %%TOPAZ%%/%%KMODDIR%%/amdgpu_topaz_sdma_bin.ko
 %%TOPAZ%%/%%KMODDIR%%/amdgpu_topaz_smc_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_asd_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_me_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_pfp_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_toc_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_ce_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_mec2_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_rlc_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_vcn_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_dmcub_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_mec_bin.ko
+%%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_sdma_bin.ko
 %%VEGA10%%/%%KMODDIR%%/amdgpu_vega10_acg_smc_bin.ko
 %%VEGA10%%/%%KMODDIR%%/amdgpu_vega10_asd_bin.ko
 %%VEGA10%%/%%KMODDIR%%/amdgpu_vega10_ce_bin.ko

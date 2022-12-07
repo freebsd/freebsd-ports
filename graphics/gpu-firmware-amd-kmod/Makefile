@@ -1,5 +1,5 @@
 PORTNAME=	gpu-firmware-amd-kmod
-PORTVERSION=	20220511
+PORTVERSION=	20221207
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -41,6 +41,7 @@ FLAVORS=	banks \
 		tahiti \
 		tonga \
 		topaz \
+		vangogh \
 		vega10 \
 		vega12 \
 		vega20 \
@@ -57,7 +58,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod-firmware
-GH_TAGNAME=	20220511
+GH_TAGNAME=	20221207
 
 MAKE_ENV=	KMODS="amdgpukmsfw"
 MAKE_ENV+=	AMDGPUKMODS="${FLAVOR}"
