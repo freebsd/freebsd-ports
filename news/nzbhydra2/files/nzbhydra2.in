@@ -24,6 +24,8 @@
 # nzbhydra2_java_home:	Home directory for Java. Up to OpenJDK 17
 #			can be used.
 #			Default: %%JAVA_HOME%%
+# nzbhydra2_python_cmd:	Path to Python3 executable to use.
+#			Default: %%PYTHON_CMD%%
 
 . /etc/rc.subr
 
@@ -38,9 +40,10 @@ load_rc_config ${name}
 : ${nzbhydra2_dir:="%%PREFIX%%/share/nzbhydra2"}
 : ${nzbhydra2_data_dir:="%%PREFIX%%/nzbhydra2"}
 : ${nzbhydra2_java_home:="%%JAVA_HOME%%"}
+: ${nzbhydra2_python_cmd:="%%PYTHON_CMD%%"}
 
 pidfile="/var/run/nzbhydra2/nzbhydra2.pid"
-command="%%PYTHON_CMD%%"
+command="${nzbhydra2_python_cmd}"
 command_args="${nzbhydra2_dir}/nzbhydra2wrapperPy3.py --datafolder ${nzbhydra2_data_dir} --pidfile ${pidfile} --daemon --nobrowser --java ${nzbhydra2_java_home}/bin/java"
 start_precmd=nzbhydra2_precmd
 
