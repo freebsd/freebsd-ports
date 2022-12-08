@@ -206,6 +206,7 @@
     SUBDIR += mailman-postfix
     SUBDIR += mailman3
     SUBDIR += mailscanner
+    SUBDIR += mailslurper
     SUBDIR += mailsync
     SUBDIR += mailutils
     SUBDIR += mailx

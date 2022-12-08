@@ -1,0 +1,12 @@
+MailSlurper is a small SMTP mail server that slurps mail into oblivion!
+
+MailSlurper is perfect for individual developers or small teams writing
+mail-enabled applications that wish to test email functionality without
+the risk or hassle of installing and configuring a full blown email server.
+
+It's simple to use! Simply setup MailSlurper, configure your code and/or
+application server to send mail through the address where MailSlurper is
+running, and start sending emails!
+
+MailSlurper will capture those emails into a database for you to view at
+your leisure.
