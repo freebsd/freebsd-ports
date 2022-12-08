@@ -1,6 +1,6 @@
 PORTNAME=	xbyak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.65
+DISTVERSION=	6.68
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 TEST_DEPENDS=	gmake:devel/gmake \
 		gsed:textproc/gsed \
+		nasm:devel/nasm \
 		yasm:devel/yasm
 
 USES=		cmake
