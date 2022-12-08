@@ -1,6 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.8-20221023
-PORTREVISION=	1
+DISTVERSION=	3.8-20221207
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -10,7 +9,6 @@ MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://mirror.lhsolutions.nl/postfix-release/ \
 		ftp://postfix.mirrors.pair.com/
 MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
-#MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 PKGNAMESUFFIX=	-current
 DIST_SUBDIR=	${PORTNAME}
 
@@ -68,11 +66,10 @@ OPTIONS_SLAVE=		LDAP
 .elif ${FLAVOR:U} == sasl
 OPTIONS_SLAVE=		SASL
 .endif
-OPTIONS_SUB=		yes
-
 .if !empty(FLAVOR) && ${FLAVOR:U} != default
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 .endif
+OPTIONS_SUB=		yes
 
 BLACKLISTD_DESC=	Enable blacklistd support
 CDB_DESC=		CDB maps lookups
@@ -80,7 +77,7 @@ EAI_DESC=		Email Address Internationalization (SMTPUTF8) support
 INST_BASE_DESC=		Install into /usr and /etc/postfix
 LDAP_DESC=		LDAP maps (uses WITH_OPENLDAP_VER)
 LMDB_DESC=		LMDB maps
-PCRE2_DESC=             Use Perl Compatible Regular Expressions, version 2
+PCRE2_DESC=		Use Perl Compatible Regular Expressions, version 2
 RG1_DESC=		Kerberos network authentication protocol type
 SASLKMIT_DESC=		If your SASL req. MIT Kerberos5, select this
 SASLKRB5_DESC=		If your SASL req. Kerberos5, select this
