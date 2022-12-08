@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.2.4
-PORTREVISION=	1
+DISTVERSION=	4.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -33,10 +32,12 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libhunspell-1.7.so:textproc/hunspell \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
+		libminizip.so:archivers/minizip \
 		libopenal.so:audio/openal-soft \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
+		libprotobuf.so:devel/protobuf \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librnnoise.so:audio/rnnoise \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
@@ -52,7 +53,7 @@ qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl \
-		gnome pkgconfig python:3.7+,build ssl xorg
+		gnome localbase pkgconfig python:3.7+,build ssl xorg
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
@@ -69,7 +70,7 @@ USE_QT=		5compat base imageformats lottie shadertools svg tools:build wayland
 .endif
 
 USE_GL=		gl
-USE_GNOME=	glib20 glibmm
+USE_GNOME=	glib20 glibmm26
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xtst
 
 CMAKE_ARGS=	-DDESKTOP_APP_SPECIAL_TARGET="" -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop" \
