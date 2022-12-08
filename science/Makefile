@@ -361,6 +361,7 @@
     SUBDIR += py-oddt
     SUBDIR += py-openbabel
     SUBDIR += py-openpiv
+    SUBDIR += py-optking
     SUBDIR += py-paida
     SUBDIR += py-paramz
     SUBDIR += py-penaltymodel
