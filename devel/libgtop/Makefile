@@ -1,8 +1,12 @@
 PORTNAME=	libgtop
 PORTVERSION=	2.40.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	df6393ac0cd7.patch:-p1 # https://gitlab.gnome.org/GNOME/libgtop/-/merge_requests/35
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME top library
