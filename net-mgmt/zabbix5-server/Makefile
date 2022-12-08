@@ -19,7 +19,6 @@ CONFLICTS_INSTALL=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-46-9]${PKGNAMESUFFI
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
-.if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --cache-file=${WRKSRC}/config.cache
 LIB_DEPENDS+=	libevent.so:devel/libevent
@@ -214,10 +213,6 @@ post-install:
 .if ${ZABBIX_BUILD} == "proxy"
 	${MV} ${STAGEDIR}${LOCALBASE}/bin/zabbix_js \
 		${STAGEDIR}${LOCALBASE}/bin/zabbix_proxy_js
-.endif
-
-.else # frontend
-.include <bsd.port.pre.mk>
 .endif
 
 .include <bsd.port.post.mk>
