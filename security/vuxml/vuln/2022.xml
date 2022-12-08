@@ -2,6 +2,18 @@
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>python37</name>
+	<range><lt>3.7.16</lt></range>
+      </package>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.16</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.16</lt></range>
+      </package>
+      <package>
 	<name>python310</name>
 	<range><lt>3.10.9</lt></range>
       </package>
