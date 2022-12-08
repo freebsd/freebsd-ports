@@ -72,6 +72,7 @@
     SUBDIR += dd_package
     SUBDIR += devisor
     SUBDIR += dftbplus
+    SUBDIR += dftd3
     SUBDIR += dftd4
     SUBDIR += dimod
     SUBDIR += dirac
