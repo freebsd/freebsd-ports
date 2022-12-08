@@ -41,9 +41,6 @@ USES+=	xorg
 .if ${COMPONENT} != osmesa
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .endif
-.if ${COMPONENT} != libs
-LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
-.endif
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
