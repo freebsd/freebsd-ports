@@ -1,5 +1,5 @@
 PORTNAME=	nzbhydra2
-DISTVERSION=	4.3.0
+DISTVERSION=	4.7.2
 DISTVERSIONSUFFIX=	-linux
 CATEGORIES=	news java
 MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -11,7 +11,7 @@ WWW=		https://github.com/theotherp/nzbhydra2
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 USES=		python:3.5+ zip
 USE_JAVA=	yes
