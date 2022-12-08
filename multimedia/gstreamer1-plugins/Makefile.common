@@ -122,7 +122,6 @@ BAD_GST_ALL_PLUGINS+= \
 		ivtc \
 		jp2kdecimator \
 		jpegformat \
-		kate \
 		kms \
 		ladspa \
 		libde265 \
