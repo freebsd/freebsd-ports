@@ -1,5 +1,6 @@
 PORTNAME=	vkd3d
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.winehq.org/${PORTNAME}/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -35,5 +36,15 @@ CONFIGURE_ENV+=	NCURSES_CFLAGS=" " NCURSES_LIBS="-lncurses"
 USE_GITHUB=	nodefault
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-177-g87d5b78:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include
+
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
+
+EXAMPLES_BUILD_DEPENDS=	x11/xcb-util-wm>0:x11/xcb-util-wm
+EXAMPLES_LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
+EXAMPLES_USES=		xorg
+EXAMPLES_USE=		XORG=xcb
+EXAMPLES_CONFIGURE_ENABLE=	demos
+EXAMPLES_LDFLAGS=	-Wl,--as-needed # xcb-util, xcb-util-wm
 
 .include <bsd.port.mk>

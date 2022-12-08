@@ -1,4 +1,6 @@
 bin/vkd3d-compiler
+%%EXAMPLES%%bin/vkd3d-gears
+%%EXAMPLES%%bin/vkd3d-triangle
 include/vkd3d/vkd3d.h
 include/vkd3d/vkd3d_d3d12.h
 include/vkd3d/vkd3d_d3d12sdklayers.h
