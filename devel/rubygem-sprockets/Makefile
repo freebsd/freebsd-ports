@@ -1,5 +1,6 @@
 PORTNAME=	sprockets
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/rails/sprockets
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-rack>=1,3<3,3:www/rubygem-rack
+		rubygem-rack22>=1,3<3,3:www/rubygem-rack22
 
 USES=		cpe gem
 USE_RUBY=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	smashing
 PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-coffee-script>=2.4<3:devel/rubygem-coffee-script \
 		rubygem-execjs>=2.7<3:devel/rubygem-execjs \
-		rubygem-rack>=2.2,3<3,3:www/rubygem-rack \
+		rubygem-rack22>=2.2,3<3,3:www/rubygem-rack22 \
 		rubygem-rufus-scheduler>=3.6<4:devel/rubygem-rufus-scheduler \
 		rubygem-sassc>=2.0<3:textproc/rubygem-sassc \
 		rubygem-sinatra2>=2.0<3:www/rubygem-sinatra2 \
