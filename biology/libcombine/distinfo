@@ -1,7 +1,7 @@
-TIMESTAMP = 1666331339
-SHA256 (sbmlteam-libCombine-v0.2.19_GH0.tar.gz) = a9ac562cca70cd8862b3f3cd65c98e8e455896732a8e1d3ee1ff32bf8ec02ac5
-SIZE (sbmlteam-libCombine-v0.2.19_GH0.tar.gz) = 1524012
-SHA256 (fbergmann-zipper-6f54c03_GH0.tar.gz) = 61aba13ecc2cb23617cf6496bc67739820a7b8c203b3dbb0ce9fddd0a68598d6
-SIZE (fbergmann-zipper-6f54c03_GH0.tar.gz) = 124726
+TIMESTAMP = 1670484063
+SHA256 (sbmlteam-libCombine-v0.2.20_GH0.tar.gz) = 2b4f76d479490b6b503217bb8135cf05a924c22fc8307e6829b82a586f67d3c1
+SIZE (sbmlteam-libCombine-v0.2.20_GH0.tar.gz) = 1525273
+SHA256 (fbergmann-zipper-c56a27f_GH0.tar.gz) = 32375fc560c2419603de4b1f4dfc30e99434e8fdc285537219571f77899e037a
+SIZE (fbergmann-zipper-c56a27f_GH0.tar.gz) = 124812
 SHA256 (sebastiandev-minizip-e3a8cb7_GH0.tar.gz) = 14492faf0694bf075312626ffba0fe6fcfccb450001db5b01fece2134d69a75d
 SIZE (sebastiandev-minizip-e3a8cb7_GH0.tar.gz) = 85593

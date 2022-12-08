@@ -39,5 +39,5 @@ lib/cmake/Combine-targets.cmake
 lib/libCombine-static.a
 lib/libCombine.so
 lib/libCombine.so.0
-lib/libCombine.so.0.2.19
+lib/libCombine.so.0.2.20
 share/cmake/Modules/FindLIBCOMBINE.cmake
