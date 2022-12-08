@@ -12,6 +12,7 @@ LIB_DEPENDS+=	libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		xorg
 USE_XORG=	xorgproto
+USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"

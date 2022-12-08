@@ -54,8 +54,6 @@ LIB_DEPENDS+=	libelf.so:devel/libelf
 USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
 		python:3.6+,build shebangfix tar:xz
 
-USE_LDCONFIG=	yes
-
 .if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # --build-id isn't supported by old GNU ld.bfd in base
 # Also ld.bfd have problems that seems related to --as-needed
