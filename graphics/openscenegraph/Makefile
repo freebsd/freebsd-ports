@@ -1,6 +1,7 @@
 PORTNAME=	openscenegraph
 DISTVERSIONPREFIX=	OpenSceneGraph-
 DISTVERSION=	3.6.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jwb@FreeBSD.org
