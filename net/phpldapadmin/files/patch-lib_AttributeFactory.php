@@ -39,7 +39,7 @@
  			return $this->newShadowAttribute($name,$values,$server_id,$source);
  
  		} elseif ($app['server']->isAttrBoolean($name)) {
-@@ -129,7 +129,7 @@ class AttributeFactory {
+@@ -129,11 +129,11 @@ class AttributeFactory {
  		} elseif ($app['server']->isMultiLineAttr($name)) {
  			return $this->newMultiLineAttribute($name,$values,$server_id,$source);
  
@@ -48,3 +48,8 @@
  			return $this->newGidAttribute($name,$values,$server_id,$source);
  
  		} else {
+-			return new Attribute($name,$values,$server_id,$source);
++			return new PLAAttribute($name,$values,$server_id,$source);
+ 		}
+ 	}
+ 

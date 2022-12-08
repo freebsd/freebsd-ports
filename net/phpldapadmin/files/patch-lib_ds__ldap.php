@@ -182,7 +182,7 @@
  					continue;
  
  				$object_class = new ObjectClass($line,$this);
-@@ -1762,8 +1765,8 @@ class ldap extends DS {
+@@ -1762,13 +1765,13 @@ class ldap extends DS {
  			# Now go through and reference the parent/child relationships
  			foreach ($return as $oclass)
  				foreach ($oclass->getSupClasses() as $parent_name)
@@ -193,6 +193,12 @@
  
  			ksort($return);
  
+ 			# cache the schema to prevent multiple schema fetches from LDAP server
+-			set_cached_item($this->index,'schema','objectclasses',$return);
++			set_cached_item($this->index,$return,'schema','objectclasses');
+ 		}
+ 
+ 		if (DEBUG_ENABLED)
 @@ -1816,7 +1819,7 @@ class ldap extends DS {
  			 */
  			$attrs_oid = array();
@@ -241,7 +247,7 @@
  
  							/* Since this attribute's superior attribute does not have another superior
  							 * attribute, clone its properties for this attribute. Then, replace
-@@ -1936,18 +1939,18 @@ class ldap extends DS {
+@@ -1936,24 +1939,24 @@ class ldap extends DS {
  
  				# Add Used In.
  				foreach ($oclass_attrs as $attr_name)
@@ -266,6 +272,13 @@
  			}
  
  			$return = $attrs;
+ 
+ 			# cache the schema to prevent multiple schema fetches from LDAP server
+-			set_cached_item($this->index,'schema','attributes',$return);
++			set_cached_item($this->index,$return,'schema','attributes');
+ 		}
+ 
+ 		if (DEBUG_ENABLED)
 @@ -1987,7 +1990,7 @@ class ldap extends DS {
  			$rules = array();
  
@@ -293,6 +306,15 @@
  
  						if (isset($rules[$rule_key]))
  							$rules[$rule_key]->addUsedByAttr($attr->getName(false));
+@@ -2029,7 +2032,7 @@ class ldap extends DS {
+ 			$return = $rules;
+ 
+ 			# cache the schema to prevent multiple schema fetches from LDAP server
+-			set_cached_item($this->index,'schema','matchingrules',$return);
++			set_cached_item($this->index,$return,'schema','matchingrules');
+ 		}
+ 
+ 		if (DEBUG_ENABLED)
 @@ -2063,11 +2066,11 @@ class ldap extends DS {
  			$return = array();
  
@@ -307,6 +329,15 @@
  
  				if (! $key)
  					continue;
+@@ -2078,7 +2081,7 @@ class ldap extends DS {
+ 			ksort($return);
+ 
+ 			# cache the schema to prevent multiple schema fetches from LDAP server
+-			set_cached_item($this->index,'schema','syntaxes',$return);
++			set_cached_item($this->index,$return,'schema','syntaxes');
+ 		}
+ 
+ 		if (DEBUG_ENABLED)
 @@ -2097,7 +2100,7 @@ class ldap extends DS {
  		if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
  			debug_log('Entered (%%)',17,0,__FILE__,__LINE__,__METHOD__,$fargs);

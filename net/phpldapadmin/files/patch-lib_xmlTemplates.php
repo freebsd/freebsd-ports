@@ -18,6 +18,15 @@
  					$this->templates[$counter] = new $class['name']($this->server_id,$templatename,$filename,$type,$counter);
  					$counter++;
  				}
+@@ -140,7 +140,7 @@ abstract class xmlTemplates {
+ 
+ 		if ($changed) {
+ 			masort($this->templates,'title');
+-			set_cached_item($server_id,$class['item'],'null',$this->templates);
++			set_cached_item($server_id,$this->templates,$class['item'],'null');
+ 		}
+ 	}
+ 
 @@ -304,7 +304,7 @@ abstract class xmlTemplate {
  			debug_log('Entered (%%)',5,0,__FILE__,__LINE__,__METHOD__,$fargs);
  

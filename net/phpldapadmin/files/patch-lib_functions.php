@@ -113,6 +113,15 @@
  
  	if ($length > 0) { // str_repeat doesn't like negatives
  		if ($pad_type == STR_PAD_RIGHT) { // STR_PAD_RIGHT == 1
+@@ -928,7 +929,7 @@ function get_cached_item($index,$item,$subitem='null')
+  *
+  * Returns true on success of false on failure.
+  */
+-function set_cached_item($index,$item,$subitem='null',$data) {
++function set_cached_item($index,$data,$item,$subitem='null') {
+ 	if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
+ 		debug_log('Entered (%%)',1,0,__FILE__,__LINE__,__METHOD__,$fargs);
+ 
 @@ -1090,7 +1091,7 @@ function masort(&$data,$sortby,$rev=0) {
  			$code .= "	\$a = array_change_key_case(\$a);\n";
  			$code .= "	\$b = array_change_key_case(\$b);\n";
@@ -254,6 +263,26 @@
  			}
  		}
  	}
+@@ -2032,8 +2033,8 @@ function ldap_error_msg($msg,$errnum) {
+  *
+  * Usage Examples:
+  *  <code>
+- *   draw_jpeg_photo(0,'cn=Bob,ou=People,dc=example,dc=com',"jpegPhoto",0,true,array('img_opts'=>"border: 1px; width: 150px"));
+- *   draw_jpeg_photo(1,'cn=Fred,ou=People,dc=example,dc=com',null,1);
++ *   draw_jpeg_photo(0,'cn=Bob,ou=People,dc=example,dc=com',0,"jpegPhoto",true,array('img_opts'=>"border: 1px; width: 150px"));
++ *   draw_jpeg_photo(1,'cn=Fred,ou=People,dc=example,dc=com',1,null);
+  *  </code>
+  *
+  * @param object The Server to get the image from.
+@@ -2046,7 +2047,7 @@ function ldap_error_msg($msg,$errnum) {
+  * @param array Specifies optional image and CSS style attributes for the table tag. Supported keys are
+  *                fixed_width, fixed_height, img_opts.
+  */
+-function draw_jpeg_photo($server,$dn,$attr_name='jpegphoto',$index,$draw_delete_buttons=false,$options=array()) {
++function draw_jpeg_photo($server,$dn,$index,$attr_name='jpegphoto',$draw_delete_buttons=false,$options=array()) {
+ 	if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
+ 		debug_log('Entered (%%)',1,0,__FILE__,__LINE__,__METHOD__,$fargs);
+ 
 @@ -2164,7 +2165,7 @@ function pla_password_hash($password_clear,$enc_type) 
  	if (DEBUG_ENABLED && (($fargs=func_get_args())||$fargs='NOARGS'))
  		debug_log('Entered (%%)',1,0,__FILE__,__LINE__,__METHOD__,$fargs);
