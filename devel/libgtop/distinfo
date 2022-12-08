@@ -1,3 +1,5 @@
 TIMESTAMP = 1591951268
 SHA256 (gnome2/libgtop-2.40.0.tar.xz) = 78f3274c0c79c434c03655c1b35edf7b95ec0421430897fb1345a98a265ed2d4
 SIZE (gnome2/libgtop-2.40.0.tar.xz) = 744316
+SHA256 (gnome2/df6393ac0cd7.patch) = c262b98834f07f524959a240dc41ff7711dd6f38920b6ce86299e8bb9dcf79bd
+SIZE (gnome2/df6393ac0cd7.patch) = 784
