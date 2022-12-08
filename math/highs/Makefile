@@ -1,11 +1,8 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.4.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	616280ac3f2a894cfcd138a9883a7e0df6355187.patch:-p1 # backport https://github.com/ERGO-Code/HiGHS/pull/817
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for large scale sparse linear programming (LP) problems
