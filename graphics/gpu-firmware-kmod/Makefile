@@ -1,5 +1,6 @@
 PORTNAME=	gpu-firmware-kmod
 PORTVERSION=	20221207
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -93,15 +94,17 @@ RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks
 		gpu-firmware-amd-kmod-tahiti>0:graphics/gpu-firmware-amd-kmod@tahiti \
 		gpu-firmware-amd-kmod-tonga>0:graphics/gpu-firmware-amd-kmod@tonga \
 		gpu-firmware-amd-kmod-topaz>0:graphics/gpu-firmware-amd-kmod@topaz \
-		gpu-firmware-amd-kmod-vangogh>0:graphics/gpu-firmware-amd-kmod@vangogh \
 		gpu-firmware-amd-kmod-vega10>0:graphics/gpu-firmware-amd-kmod@vega10 \
 		gpu-firmware-amd-kmod-vega12>0:graphics/gpu-firmware-amd-kmod@vega12 \
 		gpu-firmware-amd-kmod-vega20>0:graphics/gpu-firmware-amd-kmod@vega20 \
 		gpu-firmware-amd-kmod-vegam>0:graphics/gpu-firmware-amd-kmod@vegam \
 		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde
 .if ${OSVERSION} >= 1301000
-RUN_DEPENDS+=	gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
-		gpu-firmware-amd-kmod-sienna-cichlid>0:graphics/gpu-firmware-amd-kmod@sienna_cichlid
+RUN_DEPENDS+=	gpu-firmware-amd-kmod-dimgrey-cavefish>0:graphics/gpu-firmware-amd-kmod@dimgrey_cavefish \
+		gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
+		gpu-firmware-amd-kmod-navy-flounder>0:graphics/gpu-firmware-amd-kmod@navy_flounder \
+		gpu-firmware-amd-kmod-sienna-cichlid>0:graphics/gpu-firmware-amd-kmod@sienna_cichlid \
+		gpu-firmware-amd-kmod-vangogh>0:graphics/gpu-firmware-amd-kmod@vangogh
 .endif
 .endif
 
