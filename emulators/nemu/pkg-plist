@@ -1,10 +1,10 @@
 bin/nemu
 bin/ntty
-share/man/man1/nemu.1.gz
 share/bash-completion/completions/nemu
 share/locale/ru/LC_MESSAGES/nemu.mo
+share/man/man1/nemu.1.gz
 %%DATADIR%%/scripts/42-net-macvtap-perm.rules
-%%DATADIR%%/scripts/nemu.bash
 %%DATADIR%%/scripts/setup_nemu_nonroot.sh
 %%DATADIR%%/scripts/upgrade_db.sh
+share/zsh/site-functions/_nemu
 @sample %%DATADIR%%/templates/config/nemu.cfg.sample
