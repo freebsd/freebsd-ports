@@ -6,6 +6,9 @@ CATEGORIES=	graphics
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 WWW=		https://www.mesa3d.org/
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/license.rst
+
 LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
 
 OPTIONS_GROUP=			PLATFORM
