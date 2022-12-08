@@ -155,6 +155,7 @@
     SUBDIR += qt6-serialbus
     SUBDIR += qt6-serialport
     SUBDIR += qtel
+    SUBDIR += quisk
     SUBDIR += redsea
     SUBDIR += remserial
     SUBDIR += rtl-433
