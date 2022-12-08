@@ -17632,3 +17632,4 @@ security/py-certbot-dns-cloudxns||2022-12-06|The CloudXNS DNS service is defunct
 security/pam_krb5|security/pam_krb5@mit|2022-12-06|The pam_krb5 package is now the (default) mit flavor
 devel/pecl-hrtime||2022-12-08|Requires php74 which was EOL on 2022-11-28
 net-mgmt/zabbix5-frontend||2022-12-08|Requires php74 which was EOL on 2022-11-28
+multimedia/php-pHash||2022-12-08|Requires php74 which was EOL on 2022-11-28
