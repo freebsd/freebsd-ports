@@ -849,6 +849,7 @@
     SUBDIR += primecount
     SUBDIR += primegen
     SUBDIR += primesieve
+    SUBDIR += primesum
     SUBDIR += primme
     SUBDIR += prng
     SUBDIR += pspp
