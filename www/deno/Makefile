@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.1
+DISTVERSION=	1.28.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -23,7 +23,7 @@ GH_TUPLE=	tinycc:tinycc:afc136262e93a:deno/ext/ffi/tinycc
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.55.0
+V8_VERS=	0.58.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -120,13 +120,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-encoding-2.3.2 \
 		data-url-0.2.0 \
 		debug_unreachable-0.1.1 \
-		deno_ast-0.20.0 \
 		deno_ast-0.21.0 \
-		deno_doc-0.49.0 \
+		deno_doc-0.50.0 \
 		deno_emit-0.11.0 \
 		deno_graph-0.38.0 \
 		deno_lint-0.35.0 \
-		deno_task_shell-0.7.2 \
+		deno_task_shell-0.7.3 \
 		der-0.6.0 \
 		derive_more-0.99.17 \
 		diff-0.1.13 \
@@ -138,8 +137,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen_derive-0.1.4 \
 		dotenv-0.15.0 \
 		dprint-core-0.59.0 \
-		dprint-plugin-json-0.15.6 \
-		dprint-plugin-markdown-0.14.1 \
+		dprint-plugin-json-0.16.0 \
+		dprint-plugin-markdown-0.14.3 \
 		dprint-plugin-typescript-0.78.0 \
 		dprint-swc-ext-0.5.0 \
 		dyn-clone-1.0.9 \
@@ -223,7 +222,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.2.3 \
 		idna-0.3.0 \
 		if_chain-1.0.2 \
-		import_map-0.12.1 \
+		import_map-0.13.0 \
 		indexmap-1.9.1 \
 		indicatif-0.17.1 \
 		inotify-0.9.6 \
@@ -485,7 +484,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		trust-dns-resolver-0.22.0 \
 		trust-dns-server-0.22.0 \
 		try-lock-0.2.3 \
-		trybuild-1.0.64 \
+		trybuild-1.0.71 \
 		tungstenite-0.16.0 \
 		twox-hash-1.6.3 \
 		typed-arena-2.0.1 \
@@ -512,7 +511,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.1.2 \
-		v8-0.55.0 \
+		v8-0.58.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
