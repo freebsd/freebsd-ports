@@ -5,6 +5,8 @@ CATEGORIES=	graphics
 COMMENT=	Mesa Gallium XA state tracker
 WWW=		https://www.mesa3d.org/
 
+LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT}
+
 USES=		xorg
 USE_XORG=	xorgproto
 

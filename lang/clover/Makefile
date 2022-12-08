@@ -8,6 +8,7 @@ WWW=		https://dri.freedesktop.org/wiki/GalliumCompute/
 BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
+		libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT} \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl

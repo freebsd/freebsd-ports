@@ -6,6 +6,7 @@ COMMENT=	Mesa Gallium VDPAU drivers
 WWW=		https://www.mesa3d.org/
 
 LIB_DEPENDS=	libva.so:multimedia/libva \
+		libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT} \
 		libvdpau.so:multimedia/libvdpau \
 		libzstd.so:archivers/zstd
 
