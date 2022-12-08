@@ -50,11 +50,5 @@ PIPEWIRE_MESON_ENABLED=	pipewire
 post-extract:
 # Merge patch_directory for subprojects without meson.build
 	@(cd ${WRKSRC}/subprojects/packagefiles && ${COPYTREE_SHARE} . ..)
-.if defined(PATCHFILES) && ${PATCHFILES:M91fbb22bda68*}
-# Pretend to be a regular file for vendor patch to apply as is
-	@${RMDIR} ${WRKSRC}/subprojects/wlroots
-	@${ECHO_CMD} "Subproject commit 9f41627aa10a94d9427bc315fa3d363a61b94d7c" \
-		>${WRKSRC}/subprojects/wlroots
-.endif
 
 .include <bsd.port.mk>
