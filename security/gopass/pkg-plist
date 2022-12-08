@@ -51,7 +51,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/showcase.png
 %%PORTDOCS%%%%DOCSDIR%%/usecases/gpaste.md
 %%PORTDOCS%%%%DOCSDIR%%/usecases/multi-store.md
-%%PORTDOCS%%%%DOCSDIR%%/usecases/readyonly-store.md
+%%PORTDOCS%%%%DOCSDIR%%/usecases/readonly-store.md
 %%PORTDOCS%%%%DOCSDIR%%/usecases/secure-otp.md
 %%PORTDOCS%%%%DOCSDIR%%/usecases/secure-otp/Sign-In.png
 %%PORTDOCS%%%%DOCSDIR%%/usecases/secure-otp/Sign-Up.png
