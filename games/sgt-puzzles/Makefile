@@ -1,6 +1,7 @@
 PORTNAME=	puzzles
-PORTVERSION=	20221125
+PORTVERSION=	20221208
 CATEGORIES=	games
+# upstream does not preserve older versions, mirroring is mandatory
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
 		https://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	sgt-
@@ -13,7 +14,7 @@ WWW=		https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-COMMITHASH=	5a2ea91
+COMMITHASH=	0b036c9
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick6-nox11 \
 		halibut:textproc/halibut
