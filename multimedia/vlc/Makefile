@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--disable-alsa --disable-archive --disable-chromaprint --disable-crystalhd \
 		--disable-dc1394 --disable-decklink --disable-dsm \
 		--disable-dv1394 --disable-fdkaac --disable-gst-decode \
-		--disable-gles2 --disable-kai --disable-kva --disable-mpg123 \
+		--disable-gles2 --disable-kai --disable-kate --disable-kva --disable-mpg123 \
 		--disable-vnc --disable-opencv --disable-projectm --disable-schroedinger \
 		--disable-secret --disable-soxr --disable-telx \
 		--disable-tiger --disable-tremor --disable-udev \
@@ -65,7 +65,7 @@ CFLAGS_i386=	-fomit-frame-pointer
 
 OPTIONS_DEFINE=	A52 AALIB AOM ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA DOCS DVDREAD \
 		DEBUG DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNUTLS \
-		GOOM HARFBUZZ JACK JPEG KATE LIBBLURAY LIBPLACEBO LIBRSVG2 LIBSSH2 LIRC \
+		GOOM HARFBUZZ JACK JPEG LIBBLURAY LIBPLACEBO LIBRSVG2 LIBSSH2 LIRC \
 		LIVEMEDIA LUA MAD MFX MODPLUG MPEG2 MTP MUSEPACK \
 		NCURSES NFS NLS NOTIFY OGG OGGSPOTS OPTIMIZED_CFLAGS OPUS PNG PULSEAUDIO \
 		QT5 REALRTSP RUNROOT SAMPLERATE SIDPLAY \
@@ -93,7 +93,6 @@ FREERDP_DESC=	RDP support
 GME_DESC=	Game Music Emu (libgme) support
 GOOM_DESC=	Goom visualisation plugin
 HARFBUZZ_DESC=	OpenType text shaping engine
-KATE_DESC=	Kate codec support
 LIBPLACEBO_DESC=HDR tonemapping support through libplacebo
 LIBSSH2_DESC=	SCP/SFTP support via libssh2
 MFX_DESC=	Intel MediaSDK (aka Quick Sync Video)
@@ -184,9 +183,6 @@ JACK_CONFIGURE_ENABLE=	jack
 
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
-
-KATE_LIB_DEPENDS=	libkate.so:multimedia/libkate
-KATE_CONFIGURE_ENABLE=	kate
 
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	bluray
