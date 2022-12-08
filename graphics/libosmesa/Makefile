@@ -5,6 +5,9 @@ CATEGORIES=	graphics
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 WWW=		https://www.mesa3d.org/
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/license.rst
+
 LIB_DEPENDS+=	libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		xorg
