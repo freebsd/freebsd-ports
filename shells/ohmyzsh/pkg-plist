@@ -228,6 +228,8 @@
 %%DATADIR%%/plugins/firewalld/firewalld.plugin.zsh
 %%DATADIR%%/plugins/flutter/README.md
 %%DATADIR%%/plugins/flutter/flutter.plugin.zsh
+%%DATADIR%%/plugins/fluxcd/README.md
+%%DATADIR%%/plugins/fluxcd/fluxcd.plugin.zsh
 %%DATADIR%%/plugins/fnm/README.md
 %%DATADIR%%/plugins/fnm/fnm.plugin.zsh
 %%DATADIR%%/plugins/forklift/README.md
@@ -318,6 +320,8 @@
 %%DATADIR%%/plugins/gulp/gulp.plugin.zsh
 %%DATADIR%%/plugins/hanami/README.md
 %%DATADIR%%/plugins/hanami/hanami.plugin.zsh
+%%DATADIR%%/plugins/hasura/README.md
+%%DATADIR%%/plugins/hasura/hasura.plugin.zsh
 %%DATADIR%%/plugins/helm/README.md
 %%DATADIR%%/plugins/helm/helm.plugin.zsh
 %%DATADIR%%/plugins/heroku/README.md
@@ -441,6 +445,8 @@
 %%DATADIR%%/plugins/mix-fast/mix-fast.plugin.zsh
 %%DATADIR%%/plugins/mix/README.md
 %%DATADIR%%/plugins/mix/_mix
+%%DATADIR%%/plugins/mongo-atlas/README.md
+%%DATADIR%%/plugins/mongo-atlas/mongo-atlas.plugin.zsh
 %%DATADIR%%/plugins/mongocli/README.md
 %%DATADIR%%/plugins/mongocli/mongocli.plugin.zsh
 %%DATADIR%%/plugins/mosh/README.md
@@ -519,6 +525,8 @@
 %%DATADIR%%/plugins/powder/_powder
 %%DATADIR%%/plugins/powify/README.md
 %%DATADIR%%/plugins/powify/_powify
+%%DATADIR%%/plugins/pre-commit/README.md
+%%DATADIR%%/plugins/pre-commit/pre-commit.plugin.zsh
 %%DATADIR%%/plugins/profiles/README.md
 %%DATADIR%%/plugins/profiles/profiles.plugin.zsh
 %%DATADIR%%/plugins/pyenv/README.md
@@ -599,8 +607,12 @@
 %%DATADIR%%/plugins/shell-proxy/ssh-proxy.py
 %%DATADIR%%/plugins/shrink-path/README.md
 %%DATADIR%%/plugins/shrink-path/shrink-path.plugin.zsh
+%%DATADIR%%/plugins/sigstore/README.md
+%%DATADIR%%/plugins/sigstore/sigstore.plugin.zsh
 %%DATADIR%%/plugins/singlechar/README.md
 %%DATADIR%%/plugins/singlechar/singlechar.plugin.zsh
+%%DATADIR%%/plugins/skaffold/README.md
+%%DATADIR%%/plugins/skaffold/skaffold.plugin.zsh
 %%DATADIR%%/plugins/spring/README.md
 %%DATADIR%%/plugins/spring/_spring
 %%DATADIR%%/plugins/sprunge/README.md
@@ -646,7 +658,6 @@
 %%DATADIR%%/plugins/terminitor/README.md
 %%DATADIR%%/plugins/terminitor/_terminitor
 %%DATADIR%%/plugins/terraform/README.md
-%%DATADIR%%/plugins/terraform/_terraform
 %%DATADIR%%/plugins/terraform/terraform.plugin.zsh
 %%DATADIR%%/plugins/textastic/README.md
 %%DATADIR%%/plugins/textastic/textastic.plugin.zsh
@@ -733,12 +744,11 @@
 %%DATADIR%%/plugins/yii2/yii2.plugin.zsh
 %%DATADIR%%/plugins/yum/README.md
 %%DATADIR%%/plugins/yum/yum.plugin.zsh
-%%DATADIR%%/plugins/z/Makefile
-%%DATADIR%%/plugins/z/README
+%%DATADIR%%/plugins/z/LICENSE
+%%DATADIR%%/plugins/z/MANUAL.md
 %%DATADIR%%/plugins/z/README.md
-%%DATADIR%%/plugins/z/z.1
+%%DATADIR%%/plugins/z/_z
 %%DATADIR%%/plugins/z/z.plugin.zsh
-%%DATADIR%%/plugins/z/z.sh
 %%DATADIR%%/plugins/zbell/README.md
 %%DATADIR%%/plugins/zbell/zbell.plugin.zsh
 %%DATADIR%%/plugins/zeus/README.md
