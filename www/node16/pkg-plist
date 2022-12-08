@@ -514,6 +514,7 @@ include/node/v8-version.h
 include/node/v8.h
 include/node/v8config.h
 %%DTRACE%%lib/dtrace/node.d
+%%COREPACK%%lib/node_modules/corepack/CHANGELOG.md
 %%COREPACK%%lib/node_modules/corepack/LICENSE.md
 %%COREPACK%%lib/node_modules/corepack/README.md
 %%COREPACK%%lib/node_modules/corepack/dist/corepack.js
@@ -522,6 +523,7 @@ include/node/v8config.h
 %%COREPACK%%lib/node_modules/corepack/dist/pnpm.js
 %%COREPACK%%lib/node_modules/corepack/dist/pnpx.js
 %%COREPACK%%lib/node_modules/corepack/dist/vcc.js
+%%COREPACK%%lib/node_modules/corepack/dist/vendors-_yarn_berry_cache_proxy-agent-npm-5_0_0-41772f4b01-9_zip_node_modules_proxy-agent_index_js.js
 %%COREPACK%%lib/node_modules/corepack/dist/yarn.js
 %%COREPACK%%lib/node_modules/corepack/dist/yarnpkg.js
 %%COREPACK%%lib/node_modules/corepack/package.json
@@ -543,9 +545,6 @@ include/node/v8config.h
 %%COREPACK%%lib/node_modules/corepack/shims/nodewin/pnpx
 %%COREPACK%%lib/node_modules/corepack/shims/nodewin/pnpx.cmd
 %%COREPACK%%lib/node_modules/corepack/shims/nodewin/pnpx.ps1
-%%COREPACK%%lib/node_modules/corepack/shims/nodewin/vcc
-%%COREPACK%%lib/node_modules/corepack/shims/nodewin/vcc.cmd
-%%COREPACK%%lib/node_modules/corepack/shims/nodewin/vcc.ps1
 %%COREPACK%%lib/node_modules/corepack/shims/nodewin/yarn
 %%COREPACK%%lib/node_modules/corepack/shims/nodewin/yarn.cmd
 %%COREPACK%%lib/node_modules/corepack/shims/nodewin/yarn.ps1
