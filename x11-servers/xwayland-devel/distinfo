@@ -1,6 +1,6 @@
-TIMESTAMP = 1669845167
-SHA256 (freedesktop-xorg-xserver-xorg-server-21.0.99.1-304-gfdebbc60d_GH0.tar.gz) = 19d866186ddf627c7a7c575f6b4065c387baf878d1142cd99e835a379269f7df
-SIZE (freedesktop-xorg-xserver-xorg-server-21.0.99.1-304-gfdebbc60d_GH0.tar.gz) = 5469705
+TIMESTAMP = 1670598609
+SHA256 (freedesktop-xorg-xserver-xorg-server-21.0.99.1-312-g4781f2a5a_GH0.tar.gz) = ffb85ddc588aa16f0a02cc52fb67cfc6da1c28182a10861d0a36a0cf6acf0e14
+SIZE (freedesktop-xorg-xserver-xorg-server-21.0.99.1-312-g4781f2a5a_GH0.tar.gz) = 5472369
 SHA256 (freedesktop-xorg-xorgproto-xorgproto-2022.2_GH0.tar.gz) = 407311f6fab7cd17404ee0a25eb11cbee0aac0347ddc36ae841070490116a204
 SIZE (freedesktop-xorg-xorgproto-xorgproto-2022.2_GH0.tar.gz) = 983580
 SHA256 (537acb3eb02f.patch) = 721835b2c7f5e531f9f1781dcf6d91e4a3ffbf7f9138710438045b0ca8e71d8f
