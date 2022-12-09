@@ -1,5 +1,5 @@
 PORTNAME=	duckdb
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 TEST_WRKSRC=	${WRKDIR} # tests fail when run from the build directory due to a name collision with duckdb directory
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} # 2 tests fail, see https://github.com/duckdb/duckdb/issues/5642
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/duckdb.cpython-${PYTHON_SUFFIX}.so
