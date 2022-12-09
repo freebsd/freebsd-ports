@@ -343,7 +343,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  #endif
  #ifdef HAVE_RULE_STATES
 +#ifdef HAVE_PFSYNC_KEY
-+	print_fld_size(FLD_STATS, pr->states_tot);
++	print_fld_size(FLD_STATS, *pr->states_tot);
 +#else
  	print_fld_size(FLD_STATS, pr->states);
  #endif
