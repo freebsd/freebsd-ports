@@ -53,7 +53,6 @@
     SUBDIR += pavuk
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
-    SUBDIR += php-fastdfs
     SUBDIR += php74-curl
     SUBDIR += php74-ftp
     SUBDIR += php80-curl
