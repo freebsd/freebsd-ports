@@ -391,7 +391,7 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		soap sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER74=	${_USE_PHP_ALL} pdf zephir_parser
+_USE_PHP_VER74=	${_USE_PHP_ALL} zephir_parser
 _USE_PHP_VER80=	${_USE_PHP_ALL} zephir_parser
 _USE_PHP_VER81=	${_USE_PHP_ALL} zephir_parser
 _USE_PHP_VER82=	${_USE_PHP_ALL}
@@ -432,7 +432,6 @@ opcache_DEPENDS=	www/php${PHP_VER}-opcache
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 .    endif
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
-pdf_DEPENDS=	print/pecl-pdflib@${PHP_FLAVOR}
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_dblib_DEPENDS=	databases/php${PHP_VER}-pdo_dblib
 pdo_firebird_DEPENDS=	databases/php${PHP_VER}-pdo_firebird
