@@ -1,6 +1,6 @@
-TIMESTAMP = 1587382069
-SHA256 (mailslurper-mailslurper-1.14.1_GH0.tar.gz) = bc695b37a3fcc05fa6832b436a90568d1f898e39897c176338098c24f1458aa9
-SIZE (mailslurper-mailslurper-1.14.1_GH0.tar.gz) = 2534998
+TIMESTAMP = 1676035680
+SHA256 (mailslurper-mailslurper-1.14.2.g20201217-3231e9f9_GH0.tar.gz) = 7102870081e73b85252b5a6e9559397646f3af0316d3bb3eb4a6bdb83d06cb6c
+SIZE (mailslurper-mailslurper-1.14.2.g20201217-3231e9f9_GH0.tar.gz) = 2545305
 SHA256 (adampresley-webframework-0c93acb6716f_GH0.tar.gz) = 5d145f9dc678351f55420443b47c67097619a52dab87f4ae41963d6c412e6a25
 SIZE (adampresley-webframework-0c93acb6716f_GH0.tar.gz) = 10574
 SHA256 (denisenkom-go-mssqldb-bbfc9a55622e_GH0.tar.gz) = f2bb76e4aebbb3dc7ead766a9e2b543c5e7490b28cc744aee92c6984b2383cee
