@@ -1,7 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.2.2
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -54,7 +53,7 @@ CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_wavpack=system \
 		-Daudacity_use_wxwidgets:STRING=system \
 		-Daudacity_use_zlib:STRING=system
-		
+
 CMAKE_ON=	audacity_bundle_gplv3 audacity_conan_allow_prebuilt_binaries audacity_obey_system_dependencies
 CMAKE_OFF=	audacity_has_audiocom_upload audacity_conan_enabled audacity_conan_force_build_dependencies \
 		audacity_has_crashreports audacity_has_networking audacity_has_updates_check audacity_has_url_schemes_support \
