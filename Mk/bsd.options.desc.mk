@@ -151,6 +151,7 @@ GSTREAMER_DESC?=	Multimedia support via GStreamer
 GTA_DESC?=		Generic Tagged Array (GTA) support
 GTK2_DESC?=		GTK+ 2 GUI toolkit support
 GTK3_DESC?=		GTK+ 3 GUI toolkit support
+GTKDOC_DESC?=		Build Developement Documentation with gtkdoc
 GUI_DESC?=		GUI (Graphical User Interface) support
 GUILE_DESC?=		Guile extension language support
 GVFS_DESC?=		Virtual filesystems support via GVFS
