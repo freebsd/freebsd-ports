@@ -1,5 +1,5 @@
 PORTNAME=	end_to_end_encryption
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX}releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
