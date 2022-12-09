@@ -1,6 +1,6 @@
 PORTNAME=	waynergy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.13
+DISTVERSION=	0.0.15
 CATEGORIES=	sysutils wayland
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -20,6 +20,7 @@ GH_ACCOUNT=	r-c-f
 
 PLIST_FILES=	bin/waynergy \
 		bin/waynergy-clip-update \
+		bin/waynergy-mapper \
 		share/applications/waynergy.desktop
 
 .include <bsd.port.mk>

@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221128:
+  AFFECTS: devel/py-proxmoxer
+  AUTHOR: einar@isnic.is
+
+  AuthenticationError Moved
+
+  proxmoxer.backends.https.AuthenticationError was moved to
+  proxmoxer.AuthenticationError (the class itself is the same).
+  Any imports or references to proxmoxer.backends.https.AuthenticationError
+  should be changed to proxmoxer.AuthenticationError.
+
+  ProxmoxResourceBase Removed
+
+  While this should be a fully internal change, the ProxmoxResourceBase
+  class was removed. Use ProxmoxResource instead.
+
+  Removed ProxmoxHTTPTicketAuth
+
+  The auth_token and csrf_token arguments are no longer supported. If an
+  existing (still valid) token needs to be used, you can pass the token
+  as password and proxmoxer will attempt to renew the ticket and retrieve
+  a new token and CSRF token.
+
 20221126:
   AFFECTS: textproc/kibana8
   AUTHOR: otis@FreeBSD.org

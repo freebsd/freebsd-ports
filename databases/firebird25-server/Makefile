@@ -1,6 +1,6 @@
 PORTNAME=	firebird
 PORTVERSION=	2.5.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R2_5_9/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -19,6 +19,9 @@ LICENSE_FILE_IDPL=	${WRKSRC}/builds/install/misc/IDPLicense.txt
 LICENSE_FILE_IPL=	${WRKSRC}/builds/install/misc/IPLicense.txt
 LICENSE_PERMS_IDPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Upstream Support ends on 2019-06-24
+EXPIRATION_DATE=2022-12-31
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
@@ -44,7 +47,7 @@ CONFIGURE_ARGS=	--with-system-icu \
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
 		ac_cv_header_atomic_ops_h="no" \
 		ac_cv_lib_atomic_ops_main="no"
-CPPFLAGS+=	-DU_NOEXCEPT= # For USE_CXXSTD=gnu++98
+CPPFLAGS+=	-DU_NOEXCEPT= -fno-delete-null-pointer-checks # For USE_CXXSTD=gnu++98
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	etc/firebird

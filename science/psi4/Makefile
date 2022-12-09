@@ -1,11 +1,8 @@
 PORTNAME=	psi4
-DISTVERSION=	1.6.1-20221122
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	f8f1cd0ca7cd13fa25864f9a20666e43d160dbe6.patch:-p1 # include <cerrno> where required for the sake of FreeBSD, see https://github.com/psi4/psi4/pull/2811
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source suite of ab initio quantum chemistry programs
@@ -15,6 +12,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gau2grid>0:math/py-gau2grid@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}optking>0:science/py-optking@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qcelemental>0:science/py-qcelemental@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qcengine>0:science/py-qcengine@${PY_FLAVOR}
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
@@ -28,9 +26,7 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		blaslapack:openblas cmake compiler:c++17-lang eigen:3 fortran localbase:ldflags python:3.8+
-
 USE_GITHUB=	yes
-GH_TAGNAME=	0889d6d34
 
 CMAKE_ARGS=	-DLibxc_DIR=${LOCALBASE} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER} \
@@ -47,13 +43,14 @@ TEST_ENV=	${MAKE_ENV} \
 
 BINARY_ALIAS=	python=${PYTHON_CMD} # only for tests
 
+OPTIONS_DEFINE=	NATIVE
+
+NATIVE_CMAKE_BOOL=	ENABLE_XHOST
+
 post-patch:
 	# correct the default data dir
 	@${REINPLACE_CMD} \
-		-E 's|os.path.sep.join\(\[os.path.abspath\(os.path.dirname\(__file__\)\), "share", "psi4"\]\)|"${DATADIR}"|' \
-		${WRKSRC}/psi4/run_psi4.py
-	@${REINPLACE_CMD} \
-		-E 's|from pathlib import Path|&; os.environ["PSIDATADIR"] = "${DATADIR}"|' \
+		-E 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/psi4/run_psi4.py
 
 do-install: # project fails to install itself into a stage directory due to a convoluted cmake code structure (DESTDIR isn't handled correctly)
@@ -73,16 +70,29 @@ do-install: # project fails to install itself into a stage directory due to a co
 	@${REINPLACE_CMD} -i '' -e "s|__version_long = 'undefined+11'|__version_long = '${DISTVERSION}'|" \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psi4/metadata.py
 
-do-test:
-	# based on https://psicode.org/psi4manual/master/build_planning.html#faq-minutetests
-	#@cd ${WRKSRC}/tests/cc36 && ${SETENV} ${TEST_ENV} pytest # pytest-based tests fail, see https://github.com/psi4/psi4/issues/2802
+	# psi4 sometimes fails to print its version: https://github.com/psi4/psi4/issues/2831
 
-	# run samples as tests, this also fails down the line: https://github.com/psi4/psi4/issues/2803
-	@cd ${WRKSRC} && ( \
-		for f in $$(${FIND} samples/cc24 -name test.in | ${XARGS} dirname); do \
-			echo "===> runing test in $$f"; \
-			(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 test.in) \
-		done \
-	)
+do-test: # tests are generally broken, but virtually all individual tests pass separately
+	# based on https://psicode.org/psi4manual/master/build_planning.html#faq-minutetests
+	#@cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} pytest # pytest-based tests fail, see https://github.com/psi4/psi4/issues/2802 https://github.com/psi4/psi4/issues/2830
+
+	# samples as tests, this also fails down the line: https://github.com/psi4/psi4/issues/2803
+	#@cd ${WRKSRC} && ( \
+	#	for f in $$(${FIND} samples/cc24 -name test.in | ${XARGS} dirname); do \
+	#		echo "===> runing test in $$f"; \
+	#		(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 test.in) \
+	#	done \
+	#)
+
+	# api tests
+	@cd ${WRKSRC}/tests/pytests && ${SETENV} ${TEST_ENV} pytest
+
+	# cli tests
+	#@cd ${WRKSRC}/tests && ( \
+	#	for f in $$(${FIND} . -name input.dat | ${XARGS} dirname); do \
+	#		echo "===> runing input.dat $$f"; \
+	#		(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 input.dat) \
+	#	done \
+	#)
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:S/sparc64/sparc/:C/powerpc.C/ppc/:C/armv./arm/}
+PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:S/sparc64/sparc/:C/powerpc.*/ppc/:C/armv./arm/}
 
 INFO=		lightning
 

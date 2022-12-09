@@ -29,6 +29,7 @@ USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
+CXXFLAGS_powerpc64=	-mvsx
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	CGNS DOCS MED OCC SHARED STATIC

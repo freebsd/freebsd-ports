@@ -1,3 +1,3 @@
-TIMESTAMP = 1660576806
-SHA256 (pyflakes-2.5.0.tar.gz) = 491feb020dca48ccc562a8c0cbe8df07ee13078df59813b83959cbdada312ea3
-SIZE (pyflakes-2.5.0.tar.gz) = 66388
+TIMESTAMP = 1670595405
+SHA256 (pyflakes-3.0.1.tar.gz) = ec8b276a6b60bd80defed25add7e439881c19e64850afd9b346283d4165fd0fd
+SIZE (pyflakes-3.0.1.tar.gz) = 63554

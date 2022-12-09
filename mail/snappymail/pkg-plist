@@ -592,6 +592,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/image/gd2/imagerotate.inc
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/image/gmagick.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/image/imagick.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/imap/sync.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/intl/LICENSE
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/intl/idn.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/intl/unidata/canonicalComposition.php
@@ -617,9 +618,10 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/cram.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/login.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/oauth.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/oauthbearer.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/plain.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/scram.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/xoauth2.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/zip.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/tar.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/totp.php

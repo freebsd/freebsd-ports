@@ -145,6 +145,7 @@
     SUBDIR += p5-Net-DNS-Codes
     SUBDIR += p5-Net-DNS-Lite
     SUBDIR += p5-Net-DNS-Match
+    SUBDIR += p5-Net-DNS-Paranoid
     SUBDIR += p5-Net-DNS-RR-SRV-Helper
     SUBDIR += p5-Net-DNS-Resolver-Mock
     SUBDIR += p5-Net-DNS-Resolver-Programmable

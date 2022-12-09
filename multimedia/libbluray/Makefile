@@ -1,10 +1,10 @@
 PORTNAME=	libbluray
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Blu-Ray discs playback library for media players
 WWW=		https://www.videolan.org/developers/libbluray.html
 
@@ -44,11 +44,9 @@ JAVA_VERSION=	8
 JAVA_BUILD=	yes
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME} \
 		PATH=${JAVA_HOME}/bin:${PATH}
-
 .endif
 
-post-patch:
-	@${RLN} ${WRKSRC}/jni/linux ${WRKSRC}/jni/freebsd
+pre-build:
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' ${WRKSRC}/src/libbluray/bdj/bdj.c
 
 .include <bsd.port.mk>
