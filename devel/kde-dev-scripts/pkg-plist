@@ -3,6 +3,8 @@ bin/build-progress.sh
 bin/c++-copy-class-and-file
 bin/c++-rename-class-and-file
 bin/cheatmake
+bin/clean-forward-declaration.sh
+bin/clean-includes.sh
 bin/colorsvn
 bin/create_cvsignore
 bin/create_makefile

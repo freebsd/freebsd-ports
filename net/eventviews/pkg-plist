@@ -44,7 +44,6 @@ lib/libKF5EventViews.so
 lib/libKF5EventViews.so.5
 lib/libKF5EventViews.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_EventViews.pri
-share/kservicetypes5/calendardecoration.desktop
 share/locale/ar/LC_MESSAGES/libeventviews.mo
 share/locale/bg/LC_MESSAGES/libeventviews.mo
 share/locale/bs/LC_MESSAGES/libeventviews.mo
@@ -67,6 +66,7 @@ share/locale/hu/LC_MESSAGES/libeventviews.mo
 share/locale/ia/LC_MESSAGES/libeventviews.mo
 share/locale/it/LC_MESSAGES/libeventviews.mo
 share/locale/ja/LC_MESSAGES/libeventviews.mo
+share/locale/ka/LC_MESSAGES/libeventviews.mo
 share/locale/kk/LC_MESSAGES/libeventviews.mo
 share/locale/ko/LC_MESSAGES/libeventviews.mo
 share/locale/lt/LC_MESSAGES/libeventviews.mo

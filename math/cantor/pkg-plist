@@ -153,6 +153,7 @@ share/locale/hu/LC_MESSAGES/cantor.mo
 share/locale/ia/LC_MESSAGES/cantor.mo
 share/locale/it/LC_MESSAGES/cantor.mo
 share/locale/ja/LC_MESSAGES/cantor.mo
+share/locale/ka/LC_MESSAGES/cantor.mo
 share/locale/kk/LC_MESSAGES/cantor.mo
 share/locale/ko/LC_MESSAGES/cantor.mo
 share/locale/lt/LC_MESSAGES/cantor.mo
@@ -172,6 +173,7 @@ share/locale/ru/LC_MESSAGES/cantor.mo
 share/locale/sk/LC_MESSAGES/cantor.mo
 share/locale/sl/LC_MESSAGES/cantor.mo
 share/locale/sv/LC_MESSAGES/cantor.mo
+share/locale/th/LC_MESSAGES/cantor.mo
 share/locale/tr/LC_MESSAGES/cantor.mo
 share/locale/ug/LC_MESSAGES/cantor.mo
 share/locale/uk/LC_MESSAGES/cantor.mo

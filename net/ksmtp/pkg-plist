@@ -37,6 +37,7 @@ share/locale/hu/LC_MESSAGES/libksmtp5.mo
 share/locale/ia/LC_MESSAGES/libksmtp5.mo
 share/locale/it/LC_MESSAGES/libksmtp5.mo
 share/locale/ja/LC_MESSAGES/libksmtp5.mo
+share/locale/ka/LC_MESSAGES/libksmtp5.mo
 share/locale/km/LC_MESSAGES/libksmtp5.mo
 share/locale/ko/LC_MESSAGES/libksmtp5.mo
 share/locale/lt/LC_MESSAGES/libksmtp5.mo
@@ -52,6 +53,9 @@ share/locale/ru/LC_MESSAGES/libksmtp5.mo
 share/locale/sk/LC_MESSAGES/libksmtp5.mo
 share/locale/sl/LC_MESSAGES/libksmtp5.mo
 share/locale/sr/LC_MESSAGES/libksmtp5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libksmtp5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libksmtp5.mo
+share/locale/sr@latin/LC_MESSAGES/libksmtp5.mo
 share/locale/sv/LC_MESSAGES/libksmtp5.mo
 share/locale/ta/LC_MESSAGES/libksmtp5.mo
 share/locale/tr/LC_MESSAGES/libksmtp5.mo

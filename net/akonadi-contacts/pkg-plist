@@ -175,6 +175,9 @@ share/locale/it/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ja/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/ja/LC_MESSAGES/akonadicontact5.mo
 share/locale/ja/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/ka/LC_MESSAGES/akonadicontact5-serializer.mo
+share/locale/ka/LC_MESSAGES/akonadicontact5.mo
+share/locale/ka/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/kk/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/kk/LC_MESSAGES/akonadicontact5.mo
 share/locale/kk/LC_MESSAGES/kcm_akonadicontact_actions.mo
@@ -190,6 +193,7 @@ share/locale/lt/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/lv/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/lv/LC_MESSAGES/akonadicontact5.mo
 share/locale/lv/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/mai/LC_MESSAGES/akonadicontact5.mo
 share/locale/mr/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/mr/LC_MESSAGES/akonadicontact5.mo
 share/locale/mr/LC_MESSAGES/kcm_akonadicontact_actions.mo
@@ -231,9 +235,19 @@ share/locale/sl/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/sr/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/sr/LC_MESSAGES/akonadicontact5.mo
 share/locale/sr/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/sr@ijekavian/LC_MESSAGES/akonadicontact5-serializer.mo
+share/locale/sr@ijekavian/LC_MESSAGES/akonadicontact5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadicontact5-serializer.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadicontact5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/sr@latin/LC_MESSAGES/akonadicontact5-serializer.mo
+share/locale/sr@latin/LC_MESSAGES/akonadicontact5.mo
+share/locale/sr@latin/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/sv/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/sv/LC_MESSAGES/akonadicontact5.mo
 share/locale/sv/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/th/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/tr/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/tr/LC_MESSAGES/akonadicontact5.mo
 share/locale/tr/LC_MESSAGES/kcm_akonadicontact_actions.mo

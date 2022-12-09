@@ -1,3 +1,3 @@
-TIMESTAMP = 1667539666
-SHA256 (KDE/release-service/22.08.3/libksieve-22.08.3.tar.xz) = e0fb0d6066f095a479ca521383c65fb32b81a781ead8876c2ad0edf8d4378680
-SIZE (KDE/release-service/22.08.3/libksieve-22.08.3.tar.xz) = 577032
+TIMESTAMP = 1670513326
+SHA256 (KDE/release-service/22.12.0/libksieve-22.12.0.tar.xz) = c9e4b2ea727bd28b52dfd4847bbd32f0b7d4dc0c67f9b95868a43529975d91b0
+SIZE (KDE/release-service/22.12.0/libksieve-22.12.0.tar.xz) = 553528

@@ -24,7 +24,6 @@ share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.desktop
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.json
 share/locale/ar/LC_MESSAGES/kaccounts-providers.mo
-share/locale/ast/LC_MESSAGES/kaccounts-providers.mo
 share/locale/az/LC_MESSAGES/kaccounts-providers.mo
 share/locale/bg/LC_MESSAGES/kaccounts-providers.mo
 share/locale/bs/LC_MESSAGES/kaccounts-providers.mo
@@ -45,6 +44,7 @@ share/locale/hu/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ia/LC_MESSAGES/kaccounts-providers.mo
 share/locale/it/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ja/LC_MESSAGES/kaccounts-providers.mo
+share/locale/ka/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ko/LC_MESSAGES/kaccounts-providers.mo
 share/locale/lt/LC_MESSAGES/kaccounts-providers.mo
 share/locale/nl/LC_MESSAGES/kaccounts-providers.mo
@@ -58,6 +58,9 @@ share/locale/ru/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sk/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sl/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sr/LC_MESSAGES/kaccounts-providers.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kaccounts-providers.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kaccounts-providers.mo
+share/locale/sr@latin/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sv/LC_MESSAGES/kaccounts-providers.mo
 share/locale/tr/LC_MESSAGES/kaccounts-providers.mo
 share/locale/uk/LC_MESSAGES/kaccounts-providers.mo

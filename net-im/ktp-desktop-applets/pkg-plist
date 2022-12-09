@@ -58,6 +58,9 @@ share/locale/it/LC_MESSAGES/plasma_applet_org.kde.person.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.person.mo
+share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
+share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
+share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.person.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.person.mo
@@ -94,6 +97,15 @@ share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.person.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.person.mo
+share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
+share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
+share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.person.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.person.mo
+share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
+share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
+share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.person.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.person.mo

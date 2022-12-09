@@ -20,7 +20,6 @@ lib/libKF5KontactInterface.so
 lib/libKF5KontactInterface.so.5
 lib/libKF5KontactInterface.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KontactInterface.pri
-share/kservicetypes5/kontactplugin.desktop
 share/locale/ar/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/az/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/bg/LC_MESSAGES/kontactinterfaces5.mo
@@ -46,6 +45,7 @@ share/locale/hu/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/ia/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/it/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/ja/LC_MESSAGES/kontactinterfaces5.mo
+share/locale/ka/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/kk/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/km/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/ko/LC_MESSAGES/kontactinterfaces5.mo
@@ -66,6 +66,9 @@ share/locale/sk/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/sl/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/sq/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/sr/LC_MESSAGES/kontactinterfaces5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kontactinterfaces5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kontactinterfaces5.mo
+share/locale/sr@latin/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/sv/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/tr/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/ug/LC_MESSAGES/kontactinterfaces5.mo

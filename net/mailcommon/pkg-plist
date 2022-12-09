@@ -43,7 +43,6 @@ include/KF5/MailCommon/MailCommon/SearchPattern
 include/KF5/MailCommon/MailCommon/SearchPatternEdit
 include/KF5/MailCommon/MailCommon/SearchRule
 include/KF5/MailCommon/MailCommon/SearchRuleStatus
-include/KF5/MailCommon/MailCommon/SendMdnHandler
 include/KF5/MailCommon/MailCommon/SnippetTreeView
 include/KF5/MailCommon/MailCommon/SnippetWidget
 include/KF5/MailCommon/MailCommon/SnippetsManager
@@ -98,7 +97,6 @@ include/KF5/MailCommon/mailcommon/searchpattern.h
 include/KF5/MailCommon/mailcommon/searchpatternedit.h
 include/KF5/MailCommon/mailcommon/searchrule.h
 include/KF5/MailCommon/mailcommon/searchrulestatus.h
-include/KF5/MailCommon/mailcommon/sendmdnhandler.h
 include/KF5/MailCommon/mailcommon/snippetsmanager.h
 include/KF5/MailCommon/mailcommon/snippetsmodel.h
 include/KF5/MailCommon/mailcommon/snippettreeview.h
@@ -138,6 +136,7 @@ share/locale/hu/LC_MESSAGES/libmailcommon.mo
 share/locale/ia/LC_MESSAGES/libmailcommon.mo
 share/locale/it/LC_MESSAGES/libmailcommon.mo
 share/locale/ja/LC_MESSAGES/libmailcommon.mo
+share/locale/ka/LC_MESSAGES/libmailcommon.mo
 share/locale/kk/LC_MESSAGES/libmailcommon.mo
 share/locale/ko/LC_MESSAGES/libmailcommon.mo
 share/locale/lt/LC_MESSAGES/libmailcommon.mo
@@ -156,6 +155,9 @@ share/locale/se/LC_MESSAGES/libmailcommon.mo
 share/locale/sk/LC_MESSAGES/libmailcommon.mo
 share/locale/sl/LC_MESSAGES/libmailcommon.mo
 share/locale/sr/LC_MESSAGES/libmailcommon.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libmailcommon.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libmailcommon.mo
+share/locale/sr@latin/LC_MESSAGES/libmailcommon.mo
 share/locale/sv/LC_MESSAGES/libmailcommon.mo
 share/locale/tr/LC_MESSAGES/libmailcommon.mo
 share/locale/ug/LC_MESSAGES/libmailcommon.mo

@@ -85,6 +85,7 @@ share/locale/en_GB/LC_MESSAGES/libkpimtextedit.mo
 share/locale/eo/LC_MESSAGES/libkpimtextedit.mo
 share/locale/es/LC_MESSAGES/libkpimtextedit.mo
 share/locale/et/LC_MESSAGES/libkpimtextedit.mo
+share/locale/eu/LC_MESSAGES/libkpimtextedit.mo
 share/locale/fi/LC_MESSAGES/libkpimtextedit.mo
 share/locale/fr/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ga/LC_MESSAGES/libkpimtextedit.mo
@@ -93,6 +94,7 @@ share/locale/hu/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ia/LC_MESSAGES/libkpimtextedit.mo
 share/locale/it/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ja/LC_MESSAGES/libkpimtextedit.mo
+share/locale/ka/LC_MESSAGES/libkpimtextedit.mo
 share/locale/kk/LC_MESSAGES/libkpimtextedit.mo
 share/locale/km/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ko/LC_MESSAGES/libkpimtextedit.mo
@@ -113,6 +115,9 @@ share/locale/sk/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sl/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sq/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sr/LC_MESSAGES/libkpimtextedit.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkpimtextedit.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkpimtextedit.mo
+share/locale/sr@latin/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sv/LC_MESSAGES/libkpimtextedit.mo
 share/locale/tr/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ug/LC_MESSAGES/libkpimtextedit.mo

@@ -48,6 +48,7 @@ share/locale/hu/LC_MESSAGES/libgrantleetheme.mo
 share/locale/ia/LC_MESSAGES/libgrantleetheme.mo
 share/locale/it/LC_MESSAGES/libgrantleetheme.mo
 share/locale/ja/LC_MESSAGES/libgrantleetheme.mo
+share/locale/ka/LC_MESSAGES/libgrantleetheme.mo
 share/locale/kk/LC_MESSAGES/libgrantleetheme.mo
 share/locale/ko/LC_MESSAGES/libgrantleetheme.mo
 share/locale/lt/LC_MESSAGES/libgrantleetheme.mo
@@ -63,6 +64,9 @@ share/locale/ru/LC_MESSAGES/libgrantleetheme.mo
 share/locale/sk/LC_MESSAGES/libgrantleetheme.mo
 share/locale/sl/LC_MESSAGES/libgrantleetheme.mo
 share/locale/sr/LC_MESSAGES/libgrantleetheme.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libgrantleetheme.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libgrantleetheme.mo
+share/locale/sr@latin/LC_MESSAGES/libgrantleetheme.mo
 share/locale/sv/LC_MESSAGES/libgrantleetheme.mo
 share/locale/tr/LC_MESSAGES/libgrantleetheme.mo
 share/locale/ug/LC_MESSAGES/libgrantleetheme.mo

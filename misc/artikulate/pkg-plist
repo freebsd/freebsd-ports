@@ -3,7 +3,6 @@ bin/artikulate_editor
 lib/libartikulatecore.so.0
 lib/libartikulatelearnerprofile.so.0
 lib/libartikulatesound.so.0
-%%QT_PLUGINDIR%%/artikulate/libsound/qtmultimediabackend.so
 share/applications/org.kde.artikulate.desktop
 share/config.kcfg/artikulate.kcfg
 share/icons/hicolor/16x16/apps/artikulate.png
@@ -34,6 +33,7 @@ share/locale/hu/LC_MESSAGES/artikulate.mo
 share/locale/ia/LC_MESSAGES/artikulate.mo
 share/locale/it/LC_MESSAGES/artikulate.mo
 share/locale/ja/LC_MESSAGES/artikulate.mo
+share/locale/ka/LC_MESSAGES/artikulate.mo
 share/locale/ko/LC_MESSAGES/artikulate.mo
 share/locale/lt/LC_MESSAGES/artikulate.mo
 share/locale/ml/LC_MESSAGES/artikulate.mo

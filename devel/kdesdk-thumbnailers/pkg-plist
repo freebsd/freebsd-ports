@@ -1,6 +1,5 @@
-%%QT_PLUGINDIR%%/pothumbnail.so
+%%QT_PLUGINDIR%%/kf5/thumbcreator/pothumbnail.so
 share/config.kcfg/pocreatorsettings.kcfg
-share/kservices5/pothumbnail.desktop
 share/locale/ar/LC_MESSAGES/pothumbnail.mo
 share/locale/bg/LC_MESSAGES/pothumbnail.mo
 share/locale/bs/LC_MESSAGES/pothumbnail.mo
@@ -22,6 +21,7 @@ share/locale/hi/LC_MESSAGES/pothumbnail.mo
 share/locale/hu/LC_MESSAGES/pothumbnail.mo
 share/locale/it/LC_MESSAGES/pothumbnail.mo
 share/locale/ja/LC_MESSAGES/pothumbnail.mo
+share/locale/ka/LC_MESSAGES/pothumbnail.mo
 share/locale/kk/LC_MESSAGES/pothumbnail.mo
 share/locale/ko/LC_MESSAGES/pothumbnail.mo
 share/locale/lt/LC_MESSAGES/pothumbnail.mo

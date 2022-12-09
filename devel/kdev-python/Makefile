@@ -21,7 +21,7 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 USE_XORG=	x11
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	37
+PLATFORM_VER=	510
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER}
 
 # Does not build with jobs.

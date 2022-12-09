@@ -1,12 +1,12 @@
 bin/kamoso
 lib/gstreamer-1.0/gstkamosoqt5videosink.so
 share/applications/org.kde.kamoso.desktop
+share/icons/hicolor/128x128/apps/kamoso.png
 share/icons/hicolor/16x16/apps/kamoso.png
 share/icons/hicolor/22x22/apps/kamoso.png
 share/icons/hicolor/32x32/apps/kamoso.png
 share/icons/hicolor/48x48/apps/kamoso.png
 share/icons/hicolor/64x64/apps/kamoso.png
-share/icons/hicolor/128x128/apps/kamoso.png
 share/icons/hicolor/scalable/actions/burst.svgz
 share/icons/hicolor/scalable/apps/kamoso.svgz
 share/knotifications5/kamoso.notifyrc
@@ -34,10 +34,12 @@ share/locale/id/LC_MESSAGES/kamoso.mo
 share/locale/is/LC_MESSAGES/kamoso.mo
 share/locale/it/LC_MESSAGES/kamoso.mo
 share/locale/ja/LC_MESSAGES/kamoso.mo
+share/locale/ka/LC_MESSAGES/kamoso.mo
 share/locale/kk/LC_MESSAGES/kamoso.mo
 share/locale/ko/LC_MESSAGES/kamoso.mo
 share/locale/lt/LC_MESSAGES/kamoso.mo
 share/locale/lv/LC_MESSAGES/kamoso.mo
+share/locale/mai/LC_MESSAGES/kamoso.mo
 share/locale/mr/LC_MESSAGES/kamoso.mo
 share/locale/nb/LC_MESSAGES/kamoso.mo
 share/locale/nds/LC_MESSAGES/kamoso.mo

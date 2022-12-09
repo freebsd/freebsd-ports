@@ -91,8 +91,6 @@ lib/libkpmcore.so.%%KDE_APPLICATIONS_VERSION%%
 share/dbus-1/system-services/org.kde.kpmcore.helperinterface.service
 share/dbus-1/system.d/org.kde.kpmcore.helperinterface.conf
 share/locale/ar/LC_MESSAGES/kpmcore.mo
-share/locale/ast/LC_MESSAGES/kpmcore._policy_.mo
-share/locale/ast/LC_MESSAGES/kpmcore.mo
 share/locale/bg/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/bg/LC_MESSAGES/kpmcore.mo
 share/locale/bs/LC_MESSAGES/kpmcore.mo
@@ -133,11 +131,14 @@ share/locale/it/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/it/LC_MESSAGES/kpmcore.mo
 share/locale/ja/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ja/LC_MESSAGES/kpmcore.mo
+share/locale/ka/LC_MESSAGES/kpmcore._policy_.mo
+share/locale/ka/LC_MESSAGES/kpmcore.mo
 share/locale/ko/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ko/LC_MESSAGES/kpmcore.mo
 share/locale/lt/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/lt/LC_MESSAGES/kpmcore.mo
 share/locale/lv/LC_MESSAGES/kpmcore.mo
+share/locale/mai/LC_MESSAGES/kpmcore.mo
 share/locale/mr/LC_MESSAGES/kpmcore.mo
 share/locale/nb/LC_MESSAGES/kpmcore.mo
 share/locale/nds/LC_MESSAGES/kpmcore.mo
@@ -159,8 +160,12 @@ share/locale/sk/LC_MESSAGES/kpmcore.mo
 share/locale/sl/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sl/LC_MESSAGES/kpmcore.mo
 share/locale/sr/LC_MESSAGES/kpmcore.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kpmcore.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kpmcore.mo
+share/locale/sr@latin/LC_MESSAGES/kpmcore.mo
 share/locale/sv/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sv/LC_MESSAGES/kpmcore.mo
+share/locale/th/LC_MESSAGES/kpmcore.mo
 share/locale/tr/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/tr/LC_MESSAGES/kpmcore.mo
 share/locale/ug/LC_MESSAGES/kpmcore.mo

@@ -1,11 +1,11 @@
 bin/kubrick
 share/applications/org.kde.kubrick.desktop
+share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/22x22/apps/kubrick.png
 share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/64x64/apps/kubrick.png
-share/icons/hicolor/128x128/apps/kubrick.png
 %%DATADIR%%/m333CTwirl2.kbk
 %%DATADIR%%/m333Complete.kbk
 %%DATADIR%%/m333E2prX.kbk
@@ -30,7 +30,6 @@ share/icons/hicolor/128x128/apps/kubrick.png
 %%DATADIR%%/p333X2.kbk
 %%DATADIR%%/p333X6.kbk
 %%DATADIR%%/themes/default.svgz
-share/kxmlgui5/kubrick/kubrickui.rc
 share/locale/bg/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo
 share/locale/ca/LC_MESSAGES/kubrick.mo
@@ -54,11 +53,13 @@ share/locale/id/LC_MESSAGES/kubrick.mo
 share/locale/is/LC_MESSAGES/kubrick.mo
 share/locale/it/LC_MESSAGES/kubrick.mo
 share/locale/ja/LC_MESSAGES/kubrick.mo
+share/locale/ka/LC_MESSAGES/kubrick.mo
 share/locale/kk/LC_MESSAGES/kubrick.mo
 share/locale/km/LC_MESSAGES/kubrick.mo
 share/locale/ko/LC_MESSAGES/kubrick.mo
 share/locale/lt/LC_MESSAGES/kubrick.mo
 share/locale/lv/LC_MESSAGES/kubrick.mo
+share/locale/mai/LC_MESSAGES/kubrick.mo
 share/locale/ml/LC_MESSAGES/kubrick.mo
 share/locale/mr/LC_MESSAGES/kubrick.mo
 share/locale/nb/LC_MESSAGES/kubrick.mo
@@ -73,6 +74,9 @@ share/locale/ru/LC_MESSAGES/kubrick.mo
 share/locale/sk/LC_MESSAGES/kubrick.mo
 share/locale/sl/LC_MESSAGES/kubrick.mo
 share/locale/sr/LC_MESSAGES/kubrick.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kubrick.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kubrick.mo
+share/locale/sr@latin/LC_MESSAGES/kubrick.mo
 share/locale/sv/LC_MESSAGES/kubrick.mo
 share/locale/tr/LC_MESSAGES/kubrick.mo
 share/locale/ug/LC_MESSAGES/kubrick.mo

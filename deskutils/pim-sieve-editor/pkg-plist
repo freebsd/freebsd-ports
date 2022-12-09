@@ -22,6 +22,7 @@ share/locale/hu/LC_MESSAGES/sieveeditor.mo
 share/locale/ia/LC_MESSAGES/sieveeditor.mo
 share/locale/it/LC_MESSAGES/sieveeditor.mo
 share/locale/ja/LC_MESSAGES/sieveeditor.mo
+share/locale/ka/LC_MESSAGES/sieveeditor.mo
 share/locale/ko/LC_MESSAGES/sieveeditor.mo
 share/locale/lt/LC_MESSAGES/sieveeditor.mo
 share/locale/nb/LC_MESSAGES/sieveeditor.mo
@@ -35,6 +36,9 @@ share/locale/ru/LC_MESSAGES/sieveeditor.mo
 share/locale/sk/LC_MESSAGES/sieveeditor.mo
 share/locale/sl/LC_MESSAGES/sieveeditor.mo
 share/locale/sr/LC_MESSAGES/sieveeditor.mo
+share/locale/sr@ijekavian/LC_MESSAGES/sieveeditor.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/sieveeditor.mo
+share/locale/sr@latin/LC_MESSAGES/sieveeditor.mo
 share/locale/sv/LC_MESSAGES/sieveeditor.mo
 share/locale/tr/LC_MESSAGES/sieveeditor.mo
 share/locale/uk/LC_MESSAGES/sieveeditor.mo

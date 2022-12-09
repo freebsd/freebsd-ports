@@ -1,3 +1,3 @@
-TIMESTAMP = 1667539577
-SHA256 (KDE/release-service/22.08.3/kqtquickcharts-22.08.3.tar.xz) = d9c5545781e59f5d506bcb2da577fdf8251eec3d076b509f363727050abd8fed
-SIZE (KDE/release-service/22.08.3/kqtquickcharts-22.08.3.tar.xz) = 30196
+TIMESTAMP = 1670513210
+SHA256 (KDE/release-service/22.12.0/kqtquickcharts-22.12.0.tar.xz) = 343edb8629ab8e8e38574904d422fd3b3ddf7352b21888304659745f1fcf3981
+SIZE (KDE/release-service/22.12.0/kqtquickcharts-22.12.0.tar.xz) = 30856

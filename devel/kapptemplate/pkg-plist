@@ -1,12 +1,12 @@
 bin/kapptemplate
 share/applications/org.kde.kapptemplate.desktop
 share/config.kcfg/kapptemplate.kcfg
+share/icons/hicolor/128x128/apps/kapptemplate.png
 share/icons/hicolor/16x16/apps/kapptemplate.png
 share/icons/hicolor/22x22/apps/kapptemplate.png
 share/icons/hicolor/32x32/apps/kapptemplate.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
-share/icons/hicolor/128x128/apps/kapptemplate.png
 share/icons/hicolor/scalable/apps/kapptemplate.svg
 share/kdevappwizard/templates/kde-frameworks5-simple.tar.bz2
 share/kdevappwizard/templates/kde-frameworks5.tar.bz2
@@ -30,6 +30,7 @@ share/locale/gl/LC_MESSAGES/kapptemplate.mo
 share/locale/hu/LC_MESSAGES/kapptemplate.mo
 share/locale/it/LC_MESSAGES/kapptemplate.mo
 share/locale/ja/LC_MESSAGES/kapptemplate.mo
+share/locale/ka/LC_MESSAGES/kapptemplate.mo
 share/locale/kk/LC_MESSAGES/kapptemplate.mo
 share/locale/ko/LC_MESSAGES/kapptemplate.mo
 share/locale/lt/LC_MESSAGES/kapptemplate.mo
@@ -47,7 +48,11 @@ share/locale/sk/LC_MESSAGES/kapptemplate.mo
 share/locale/sl/LC_MESSAGES/kapptemplate.mo
 share/locale/sq/LC_MESSAGES/kapptemplate.mo
 share/locale/sr/LC_MESSAGES/kapptemplate.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kapptemplate.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kapptemplate.mo
+share/locale/sr@latin/LC_MESSAGES/kapptemplate.mo
 share/locale/sv/LC_MESSAGES/kapptemplate.mo
+share/locale/th/LC_MESSAGES/kapptemplate.mo
 share/locale/tr/LC_MESSAGES/kapptemplate.mo
 share/locale/ug/LC_MESSAGES/kapptemplate.mo
 share/locale/uk/LC_MESSAGES/kapptemplate.mo

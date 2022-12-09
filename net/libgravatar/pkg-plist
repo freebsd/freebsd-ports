@@ -38,8 +38,10 @@ share/locale/gl/LC_MESSAGES/libgravatar.mo
 share/locale/hi/LC_MESSAGES/libgravatar.mo
 share/locale/hu/LC_MESSAGES/libgravatar.mo
 share/locale/ia/LC_MESSAGES/libgravatar.mo
+share/locale/is/LC_MESSAGES/libgravatar.mo
 share/locale/it/LC_MESSAGES/libgravatar.mo
 share/locale/ja/LC_MESSAGES/libgravatar.mo
+share/locale/ka/LC_MESSAGES/libgravatar.mo
 share/locale/ko/LC_MESSAGES/libgravatar.mo
 share/locale/lt/LC_MESSAGES/libgravatar.mo
 share/locale/nl/LC_MESSAGES/libgravatar.mo
@@ -52,6 +54,9 @@ share/locale/ru/LC_MESSAGES/libgravatar.mo
 share/locale/sk/LC_MESSAGES/libgravatar.mo
 share/locale/sl/LC_MESSAGES/libgravatar.mo
 share/locale/sr/LC_MESSAGES/libgravatar.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libgravatar.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libgravatar.mo
+share/locale/sr@latin/LC_MESSAGES/libgravatar.mo
 share/locale/sv/LC_MESSAGES/libgravatar.mo
 share/locale/tr/LC_MESSAGES/libgravatar.mo
 share/locale/uk/LC_MESSAGES/libgravatar.mo

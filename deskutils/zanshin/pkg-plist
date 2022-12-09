@@ -9,7 +9,6 @@ share/icons/hicolor/256x256/apps/zanshin.png
 share/icons/hicolor/48x48/apps/zanshin.png
 share/icons/hicolor/64x64/apps/zanshin.png
 share/icons/hicolor/scalable/apps/zanshin.svgz
-share/kservices5/kontact/zanshin_plugin.desktop
 share/kservices5/plasma-runner-zanshin.desktop
 share/kservices5/zanshin_part.desktop
 share/kxmlgui5/zanshin/zanshin_part.rc
@@ -32,9 +31,11 @@ share/locale/hu/LC_MESSAGES/zanshin.mo
 share/locale/ia/LC_MESSAGES/zanshin.mo
 share/locale/it/LC_MESSAGES/zanshin.mo
 share/locale/ja/LC_MESSAGES/zanshin.mo
+share/locale/ka/LC_MESSAGES/zanshin.mo
 share/locale/ko/LC_MESSAGES/zanshin.mo
 share/locale/lt/LC_MESSAGES/zanshin.mo
 share/locale/mr/LC_MESSAGES/zanshin.mo
+share/locale/my/LC_MESSAGES/zanshin.mo
 share/locale/nb/LC_MESSAGES/zanshin.mo
 share/locale/nds/LC_MESSAGES/zanshin.mo
 share/locale/nl/LC_MESSAGES/zanshin.mo

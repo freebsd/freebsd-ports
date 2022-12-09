@@ -48,10 +48,12 @@ share/locale/hu/LC_MESSAGES/libkcalutils5.mo
 share/locale/ia/LC_MESSAGES/libkcalutils5.mo
 share/locale/it/LC_MESSAGES/libkcalutils5.mo
 share/locale/ja/LC_MESSAGES/libkcalutils5.mo
+share/locale/ka/LC_MESSAGES/libkcalutils5.mo
 share/locale/kk/LC_MESSAGES/libkcalutils5.mo
 share/locale/km/LC_MESSAGES/libkcalutils5.mo
 share/locale/ko/LC_MESSAGES/libkcalutils5.mo
 share/locale/lt/LC_MESSAGES/libkcalutils5.mo
+share/locale/mai/LC_MESSAGES/libkcalutils5.mo
 share/locale/mr/LC_MESSAGES/libkcalutils5.mo
 share/locale/nb/LC_MESSAGES/libkcalutils5.mo
 share/locale/nds/LC_MESSAGES/libkcalutils5.mo
@@ -67,6 +69,9 @@ share/locale/se/LC_MESSAGES/libkcalutils5.mo
 share/locale/sk/LC_MESSAGES/libkcalutils5.mo
 share/locale/sl/LC_MESSAGES/libkcalutils5.mo
 share/locale/sr/LC_MESSAGES/libkcalutils5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkcalutils5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkcalutils5.mo
+share/locale/sr@latin/LC_MESSAGES/libkcalutils5.mo
 share/locale/sv/LC_MESSAGES/libkcalutils5.mo
 share/locale/ta/LC_MESSAGES/libkcalutils5.mo
 share/locale/tr/LC_MESSAGES/libkcalutils5.mo

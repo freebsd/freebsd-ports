@@ -52,6 +52,10 @@ share/locale/et/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/et/LC_MESSAGES/contactthemeeditor.mo
 share/locale/et/LC_MESSAGES/headerthemeeditor.mo
 share/locale/et/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/eu/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/eu/LC_MESSAGES/contactthemeeditor.mo
+share/locale/eu/LC_MESSAGES/headerthemeeditor.mo
+share/locale/eu/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/fi/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/fi/LC_MESSAGES/contactthemeeditor.mo
 share/locale/fi/LC_MESSAGES/headerthemeeditor.mo
@@ -79,6 +83,10 @@ share/locale/ja/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/ja/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ja/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ja/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/ka/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/ka/LC_MESSAGES/contactthemeeditor.mo
+share/locale/ka/LC_MESSAGES/headerthemeeditor.mo
+share/locale/ka/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/kk/LC_MESSAGES/contactthemeeditor.mo
 share/locale/kk/LC_MESSAGES/headerthemeeditor.mo
 share/locale/kk/LC_MESSAGES/libgrantleethemeeditor.mo
@@ -129,6 +137,12 @@ share/locale/sl/LC_MESSAGES/headerthemeeditor.mo
 share/locale/sl/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/sr/LC_MESSAGES/headerthemeeditor.mo
 share/locale/sr/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/sr@ijekavian/LC_MESSAGES/headerthemeeditor.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/headerthemeeditor.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/sr@latin/LC_MESSAGES/headerthemeeditor.mo
+share/locale/sr@latin/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/sv/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/sv/LC_MESSAGES/contactthemeeditor.mo
 share/locale/sv/LC_MESSAGES/headerthemeeditor.mo

@@ -21,6 +21,7 @@ share/locale/hu/LC_MESSAGES/mboximporter.mo
 share/locale/ia/LC_MESSAGES/mboximporter.mo
 share/locale/it/LC_MESSAGES/mboximporter.mo
 share/locale/ja/LC_MESSAGES/mboximporter.mo
+share/locale/ka/LC_MESSAGES/mboximporter.mo
 share/locale/kk/LC_MESSAGES/mboximporter.mo
 share/locale/ko/LC_MESSAGES/mboximporter.mo
 share/locale/lt/LC_MESSAGES/mboximporter.mo
@@ -36,6 +37,9 @@ share/locale/ru/LC_MESSAGES/mboximporter.mo
 share/locale/sk/LC_MESSAGES/mboximporter.mo
 share/locale/sl/LC_MESSAGES/mboximporter.mo
 share/locale/sr/LC_MESSAGES/mboximporter.mo
+share/locale/sr@ijekavian/LC_MESSAGES/mboximporter.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/mboximporter.mo
+share/locale/sr@latin/LC_MESSAGES/mboximporter.mo
 share/locale/sv/LC_MESSAGES/mboximporter.mo
 share/locale/tr/LC_MESSAGES/mboximporter.mo
 share/locale/ug/LC_MESSAGES/mboximporter.mo

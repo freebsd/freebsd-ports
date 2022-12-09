@@ -46,10 +46,12 @@ share/locale/fr/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ga/LC_MESSAGES/libkpimidentities5.mo
 share/locale/gl/LC_MESSAGES/libkpimidentities5.mo
 share/locale/hi/LC_MESSAGES/libkpimidentities5.mo
+share/locale/hne/LC_MESSAGES/libkpimidentities5.mo
 share/locale/hu/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ia/LC_MESSAGES/libkpimidentities5.mo
 share/locale/it/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ja/LC_MESSAGES/libkpimidentities5.mo
+share/locale/ka/LC_MESSAGES/libkpimidentities5.mo
 share/locale/kk/LC_MESSAGES/libkpimidentities5.mo
 share/locale/km/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ko/LC_MESSAGES/libkpimidentities5.mo
@@ -71,7 +73,11 @@ share/locale/sk/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sl/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sq/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sr/LC_MESSAGES/libkpimidentities5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkpimidentities5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkpimidentities5.mo
+share/locale/sr@latin/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sv/LC_MESSAGES/libkpimidentities5.mo
+share/locale/th/LC_MESSAGES/libkpimidentities5.mo
 share/locale/tr/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ug/LC_MESSAGES/libkpimidentities5.mo
 share/locale/uk/LC_MESSAGES/libkpimidentities5.mo

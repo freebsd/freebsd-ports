@@ -1,10 +1,10 @@
---- core/backends/lan/lanlinkprovider.cpp.orig	2018-05-30 21:41:03 UTC
+--- core/backends/lan/lanlinkprovider.cpp.orig	2022-11-30 00:45:32 UTC
 +++ core/backends/lan/lanlinkprovider.cpp
-@@ -196,6 +196,17 @@ void LanLinkProvider::newUdpConnection() //udpBroadcas
+@@ -255,6 +255,16 @@ void LanLinkProvider::udpBroadcastReceived()
+         }
  
          int tcpPort = receivedPacket->get<int>(QStringLiteral("tcpPort"));
- 
-+        // convert IPv6 addresses of type "v4-mapped" to IPv4 
++        // convert IPv6 addresses of type "v4-mapped" to IPv4
 +        QHostAddress addr = sender;
 +        if (addr.protocol() == QAbstractSocket::IPv6Protocol) {
 +            bool success;
@@ -14,7 +14,6 @@
 +                sender = convertedAddr;
 +            }
 +        }
-+
-         //qCDebug(KDECONNECT_CORE) << "Received Udp identity packet from" << sender << " asking for a tcp connection on port " << tcpPort;
- 
-         QSslSocket* socket = new QSslSocket(this);
+         if (tcpPort < MIN_TCP_PORT || tcpPort > MAX_TCP_PORT) {
+             qCDebug(KDECONNECT_CORE) << "TCP port outside of kdeconnect's range";
+             delete receivedPacket;

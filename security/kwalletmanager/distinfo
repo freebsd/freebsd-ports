@@ -1,3 +1,3 @@
-TIMESTAMP = 1667539620
-SHA256 (KDE/release-service/22.08.3/kwalletmanager-22.08.3.tar.xz) = ee56745b916d464c49220afbf694bd706f7c260e311943cbe41818aa99de0a01
-SIZE (KDE/release-service/22.08.3/kwalletmanager-22.08.3.tar.xz) = 804040
+TIMESTAMP = 1670513275
+SHA256 (KDE/release-service/22.12.0/kwalletmanager-22.12.0.tar.xz) = bc8753c458f24a69425f99592ddef8821b5d05048d7316d0648cf693f6c0257d
+SIZE (KDE/release-service/22.12.0/kwalletmanager-22.12.0.tar.xz) = 838684

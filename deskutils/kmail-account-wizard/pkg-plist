@@ -52,6 +52,8 @@ share/locale/it/LC_MESSAGES/accountwizard.mo
 share/locale/it/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/ja/LC_MESSAGES/accountwizard.mo
 share/locale/ja/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/ka/LC_MESSAGES/accountwizard.mo
+share/locale/ka/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/kk/LC_MESSAGES/accountwizard.mo
 share/locale/kk/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/km/LC_MESSAGES/accountwizard.mo
@@ -61,6 +63,7 @@ share/locale/ko/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/lt/LC_MESSAGES/accountwizard.mo
 share/locale/lt/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/lv/LC_MESSAGES/accountwizard.mo
+share/locale/mai/LC_MESSAGES/accountwizard.mo
 share/locale/mr/LC_MESSAGES/accountwizard.mo
 share/locale/mr/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/nb/LC_MESSAGES/accountwizard.mo
@@ -89,8 +92,15 @@ share/locale/sl/LC_MESSAGES/accountwizard.mo
 share/locale/sl/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/sr/LC_MESSAGES/accountwizard.mo
 share/locale/sr/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr@ijekavian/LC_MESSAGES/accountwizard.mo
+share/locale/sr@ijekavian/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/sr@latin/LC_MESSAGES/accountwizard.mo
+share/locale/sr@latin/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/sv/LC_MESSAGES/accountwizard.mo
 share/locale/sv/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/th/LC_MESSAGES/accountwizard.mo
 share/locale/tr/LC_MESSAGES/accountwizard.mo
 share/locale/tr/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/ug/LC_MESSAGES/accountwizard.mo
