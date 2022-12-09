@@ -1,6 +1,5 @@
 PORTNAME=	wget2
-DISTVERSION=	2.0.0
-PORTREVISION=	4
+DISTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	GNU/wget
 
@@ -13,19 +12,22 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
-USES=		autoreconf charsetfix cpe iconv libtool:build localbase pkgconfig tar:lz
+USES=		autoreconf charsetfix cpe gmake iconv libtool:build localbase pkgconfig tar:lz
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	wget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-lz  # not in ports yet
+CONFIGURE_ARGS+=--without-libidn  # only libidn2 is used
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	IDN MANPAGES DOXYGEN NLS PSL NGHTTP2 BROTLI ZSTD GPGME TEST HSTS
-OPTIONS_RADIO=	SSL PCRE
-OPTIONS_RADIO_SSL=GNUTLS OPENSSL NOSSL # WOLFSSL
+OPTIONS_DEFINE=	IDN MANPAGES DOXYGEN NLS PSL NGHTTP2 GPGME TEST HSTS
+OPTIONS_GROUP=	COMPRESSION
+OPTIONS_GROUP_COMPRESSION=	BROTLI ZSTD LZMA BZIP2
+OPTIONS_SINGLE=	SSL
+OPTIONS_SINGLE_SSL=GNUTLS OPENSSL NOSSL # WOLFSSL
+OPTIONS_RADIO=	PCRE
 OPTIONS_RADIO_PCRE=PCRE1 PCRE2
-OPTIONS_DEFAULT=IDN MANPAGES OPENSSL NLS PSL NGHTTP2 BROTLI ZSTD GPGME TEST HSTS
+OPTIONS_DEFAULT=IDN MANPAGES OPENSSL NLS PSL NGHTTP2 BROTLI ZSTD GPGME TEST HSTS LZMA BZIP2
 OPTIONS_SUB=	yes
 
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
@@ -61,20 +63,13 @@ NGHTTP2_DESC=		Support HTTP/2.0 through libnghttp2
 NGHTTP2_CONFIGURE_WITH=	libnghttp2
 NGHTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-BROTLI_CONFIGURE_WITH=	brotlidec
-BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
-
-ZSTD_CONFIGURE_WITH=	zstd
-ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
-
 GPGME_DESC=		Support signature verification with gpgme
 GPGME_CONFIGURE_WITH=	gpgme
 GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 TEST_TEST_TARGET=	check
 TEST_CONFIGURE_WITH=	libmicrohttpd
-TEST_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd \
-			libgnutls.so:security/gnutls
+TEST_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 TEST_TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 			p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
@@ -93,6 +88,18 @@ WOLFSSL_BROKEN=		does not build: use of undeclared identifier WOLFSSL_ALPN_CONTI
 NOSSL_DESC=		Disable SSL support
 NOSSL_LIB_DEPENDS=	libnettle.so:security/nettle  # still required libnettle for hashing and checksumming
 NOSSL_CONFIGURE_ON=	--with-ssl=none
+
+COMPRESSION_DESC=	Compression algorithms support
+
+BROTLI_CONFIGURE_WITH=	brotlidec
+BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
+
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+LZMA_CONFIGURE_WITH=	lzma
+
+BZIP2_CONFIGURE_WITH=	bzip2
 
 post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -e '/AC_CHECK_PROGS/ s|pandoc|&-not-found|' ${WRKSRC}/configure.ac
