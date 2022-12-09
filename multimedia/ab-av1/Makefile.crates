@@ -1,7 +1,12 @@
 CARGO_CRATES=	anyhow-1.0.66 \
+		arrayref-0.3.6 \
+		arrayvec-0.7.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
+		blake3-1.3.3 \
+		block-buffer-0.10.3 \
+		byteorder-1.4.3 \
 		bytes-1.3.0 \
 		cc-1.0.77 \
 		cfg-if-1.0.0 \
@@ -10,10 +15,19 @@ CARGO_CRATES=	anyhow-1.0.66 \
 		clap_derive-4.0.21 \
 		clap_lex-0.3.0 \
 		console-0.15.1 \
+		constant_time_eq-0.2.4 \
+		crc32fast-1.3.2 \
+		crossbeam-epoch-0.9.13 \
+		crossbeam-utils-0.8.14 \
+		crypto-common-0.1.6 \
+		digest-0.10.6 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
 		encode_unicode-0.3.6 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		ffprobe-0.3.3 \
+		fs2-0.4.3 \
 		futures-0.3.25 \
 		futures-channel-0.3.25 \
 		futures-core-0.3.25 \
@@ -23,24 +37,31 @@ CARGO_CRATES=	anyhow-1.0.66 \
 		futures-sink-0.3.25 \
 		futures-task-0.3.25 \
 		futures-util-0.3.25 \
+		fxhash-0.2.1 \
+		generic-array-0.14.6 \
 		getrandom-0.2.8 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
 		humantime-2.1.0 \
 		indicatif-0.17.2 \
+		instant-0.1.12 \
 		io-lifetimes-1.0.3 \
 		is-terminal-0.4.1 \
 		itoa-1.0.4 \
 		libc-0.2.138 \
 		linux-raw-sys-0.1.3 \
+		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
+		memoffset-0.7.1 \
 		mio-0.8.5 \
 		num_cpus-1.14.0 \
 		number_prefix-0.4.0 \
 		once_cell-1.16.0 \
 		os_str_bytes-6.4.1 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		portable-atomic-0.3.15 \
@@ -52,28 +73,37 @@ CARGO_CRATES=	anyhow-1.0.66 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rustix-0.36.4 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		rustix-0.36.5 \
 		ryu-1.0.11 \
-		serde-1.0.148 \
-		serde_derive-1.0.148 \
+		scopeguard-1.1.0 \
+		serde-1.0.149 \
+		serde_derive-1.0.149 \
 		serde_json-1.0.89 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.7 \
+		sled-0.34.7 \
+		smallvec-1.10.0 \
 		socket2-0.4.7 \
 		strsim-0.10.0 \
+		subtle-2.4.1 \
 		syn-1.0.105 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		terminal_size-0.2.3 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
-		tokio-1.22.0 \
+		tokio-1.23.0 \
 		tokio-macros-1.8.2 \
 		tokio-process-stream-0.3.0 \
 		tokio-stream-0.1.11 \
 		tokio-util-0.7.4 \
+		typenum-1.16.0 \
 		unicode-ident-1.0.5 \
 		unicode-width-0.1.10 \
 		unix-named-pipe-0.2.0 \
