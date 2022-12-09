@@ -1,3 +1,4 @@
+@(,,4555) lib/libexec/kcheckpass
 bin/ck-unlock-session
 include/KScreenLocker/KScreenLocker/KsldApp
 include/KScreenLocker/KScreenLocker/kscreenlocker_export.h
@@ -10,7 +11,6 @@ lib/cmake/ScreenSaverDBusInterface/ScreenSaverDBusInterfaceConfig.cmake
 lib/libKScreenLocker.so
 lib/libKScreenLocker.so.5
 lib/libKScreenLocker.so.%%KDE_PLASMA_VERSION%%
-@(,,4555) lib/libexec/kcheckpass
 lib/libexec/kscreenlocker_greet
 %%QT_PLUGINDIR%%/kcms/kcm_screenlocker.so
 share/dbus-1/interfaces/kf5_org.freedesktop.ScreenSaver.xml
@@ -30,6 +30,9 @@ share/locale/ar/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/ar/LC_MESSAGES/kscreenlocker.mo
 share/locale/ar/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/ast/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/bg/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/bg/LC_MESSAGES/kscreenlocker.mo
+share/locale/bg/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/bs/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/bs/LC_MESSAGES/kscreenlocker.mo
 share/locale/bs/LC_MESSAGES/kscreenlocker_greet.mo

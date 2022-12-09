@@ -9,6 +9,7 @@ share/kpackage/kcms/plasma_disks/contents/ui/ReportPage.qml
 share/kpackage/kcms/plasma_disks/metadata.desktop
 share/kpackage/kcms/plasma_disks/metadata.json
 share/locale/az/LC_MESSAGES/plasma_disks.mo
+share/locale/bg/LC_MESSAGES/plasma_disks.mo
 share/locale/ca/LC_MESSAGES/plasma_disks.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_disks.mo
 share/locale/cs/LC_MESSAGES/plasma_disks.mo

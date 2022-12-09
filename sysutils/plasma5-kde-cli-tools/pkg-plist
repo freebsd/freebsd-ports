@@ -22,7 +22,6 @@ bin/plasma-open-settings
 lib/libexec/kf5/kdeeject
 lib/libexec/kf5/kdesu
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_filetypes.so
-share/locale/hu/LC_MESSAGES/plasma-open-settings.mo
 man/ca/man1/kdesu.1.gz
 man/de/man1/kdesu.1.gz
 man/es/man1/kdesu.1.gz
@@ -137,6 +136,7 @@ share/locale/be@latin/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/be@latin/LC_MESSAGES/kdesu5.mo
 share/locale/be@latin/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/be@latin/LC_MESSAGES/kstart5.mo
+share/locale/bg/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/bg/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/bg/LC_MESSAGES/kcmshell5.mo
 share/locale/bg/LC_MESSAGES/kdesu5.mo
@@ -144,6 +144,7 @@ share/locale/bg/LC_MESSAGES/kioclient.mo
 share/locale/bg/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/bg/LC_MESSAGES/kstart5.mo
 share/locale/bg/LC_MESSAGES/ktraderclient5.mo
+share/locale/bg/LC_MESSAGES/plasma-open-settings.mo
 share/locale/bn/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/bn/LC_MESSAGES/kcmshell5.mo
 share/locale/bn/LC_MESSAGES/kstart5.mo
@@ -369,6 +370,7 @@ share/locale/hu/LC_MESSAGES/kioclient.mo
 share/locale/hu/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/hu/LC_MESSAGES/kstart5.mo
 share/locale/hu/LC_MESSAGES/ktraderclient5.mo
+share/locale/hu/LC_MESSAGES/plasma-open-settings.mo
 share/locale/ia/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/ia/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ia/LC_MESSAGES/kcmshell5.mo
@@ -410,6 +412,7 @@ share/locale/ja/LC_MESSAGES/kioclient.mo
 share/locale/ja/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/ja/LC_MESSAGES/kstart5.mo
 share/locale/ja/LC_MESSAGES/ktraderclient5.mo
+share/locale/ja/LC_MESSAGES/plasma-open-settings.mo
 share/locale/kk/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/kk/LC_MESSAGES/kcmshell5.mo
 share/locale/kk/LC_MESSAGES/kdesu5.mo

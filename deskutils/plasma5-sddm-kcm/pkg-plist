@@ -11,6 +11,7 @@ share/kpackage/kcms/kcm_sddm/contents/ui/main.qml
 share/locale/ar/LC_MESSAGES/kcm_sddm.mo
 share/locale/ast/LC_MESSAGES/kcm_sddm.mo
 share/locale/az/LC_MESSAGES/kcm_sddm.mo
+share/locale/bg/LC_MESSAGES/kcm_sddm.mo
 share/locale/bs/LC_MESSAGES/kcm_sddm.mo
 share/locale/ca/LC_MESSAGES/kcm_sddm.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_sddm.mo

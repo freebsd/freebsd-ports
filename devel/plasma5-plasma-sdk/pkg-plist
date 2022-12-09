@@ -69,6 +69,11 @@ share/locale/az/LC_MESSAGES/plasmoidviewer.mo
 share/locale/be/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/be@latin/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/be@latin/LC_MESSAGES/plasmoidviewer.mo
+share/locale/bg/LC_MESSAGES/cuttlefish.mo
+share/locale/bg/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/bg/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
+share/locale/bg/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
+share/locale/bg/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/bg/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/bg/LC_MESSAGES/plasmoidviewer.mo
 share/locale/bn_IN/LC_MESSAGES/plasmaengineexplorer.mo

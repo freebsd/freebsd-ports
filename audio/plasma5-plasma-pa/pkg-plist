@@ -48,6 +48,8 @@ share/locale/ast/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/az/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/bg/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ca/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_pulseaudio.mo

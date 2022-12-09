@@ -17,6 +17,9 @@ share/locale/ar/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ar/LC_MESSAGES/kscreen.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/ast/LC_MESSAGES/kcm_kscreen.mo
+share/locale/bg/LC_MESSAGES/kcm_kscreen.mo
+share/locale/bg/LC_MESSAGES/kscreen.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/bs/LC_MESSAGES/kcm_kscreen.mo
 share/locale/bs/LC_MESSAGES/kscreen.mo
 share/locale/ca/LC_MESSAGES/kcm_kscreen.mo

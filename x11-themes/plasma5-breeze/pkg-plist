@@ -4,8 +4,8 @@ lib/cmake/Breeze/BreezeConfigVersion.cmake
 lib/kconf_update_bin/breezehighcontrasttobreezedark
 lib/kconf_update_bin/breezetobreezeclassic
 lib/kconf_update_bin/breezetobreezelight
-lib/libbreezecommon5.so.%%KDE_PLASMA_VERSION%%
 lib/libbreezecommon5.so.5
+lib/libbreezecommon5.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kstyle_breeze_config.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/breezedecoration.so
 %%QT_PLUGINDIR%%/styles/breeze.so
@@ -256,6 +256,8 @@ share/locale/ar/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ar/LC_MESSAGES/breeze_style_config.mo
 share/locale/az/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/az/LC_MESSAGES/breeze_style_config.mo
+share/locale/bg/LC_MESSAGES/breeze_kwin_deco.mo
+share/locale/bg/LC_MESSAGES/breeze_style_config.mo
 share/locale/bs/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/bs/LC_MESSAGES/breeze_style_config.mo
 share/locale/ca/LC_MESSAGES/breeze_kwin_deco.mo

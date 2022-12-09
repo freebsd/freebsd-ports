@@ -509,6 +509,8 @@ share/locale/be/LC_MESSAGES/oxygen_style_config.mo
 share/locale/be/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/be@latin/LC_MESSAGES/oxygen_style_config.mo
 share/locale/be@latin/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/bg/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/bg/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/bg/LC_MESSAGES/oxygen_style_config.mo
 share/locale/bg/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/bn_IN/LC_MESSAGES/oxygen_style_config.mo

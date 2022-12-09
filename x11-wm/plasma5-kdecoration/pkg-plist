@@ -33,6 +33,7 @@ lib/libkdecorations2private.so
 lib/libkdecorations2private.so.%%KDE_PLASMA_VERSION%%
 lib/libkdecorations2private.so.9
 share/locale/az/LC_MESSAGES/kdecoration.mo
+share/locale/bg/LC_MESSAGES/kdecoration.mo
 share/locale/ca/LC_MESSAGES/kdecoration.mo
 share/locale/ca@valencia/LC_MESSAGES/kdecoration.mo
 share/locale/cs/LC_MESSAGES/kdecoration.mo

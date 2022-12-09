@@ -15,10 +15,10 @@ share/icons/hicolor/16x16/apps/plasmadiscover.png
 share/icons/hicolor/22x22/apps/plasmadiscover.png
 share/icons/hicolor/32x32/apps/plasmadiscover.png
 share/icons/hicolor/48x48/apps/plasmadiscover.png
+share/icons/hicolor/scalable/apps/plasmadiscover.svg
 share/knotifications5/discoverabstractnotifier.notifyrc
 share/kpackage/kcms/kcm_updates/contents/ui/main.qml
 share/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
-share/icons/hicolor/scalable/apps/plasmadiscover.svg
 share/locale/ar/LC_MESSAGES/kcm_updates.mo
 share/locale/ar/LC_MESSAGES/libdiscover.mo
 share/locale/ar/LC_MESSAGES/plasma-discover-notifier.mo
@@ -30,7 +30,10 @@ share/locale/az/LC_MESSAGES/kcm_updates.mo
 share/locale/az/LC_MESSAGES/libdiscover.mo
 share/locale/az/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/az/LC_MESSAGES/plasma-discover.mo
+share/locale/bg/LC_MESSAGES/kcm_updates.mo
 share/locale/bg/LC_MESSAGES/libdiscover.mo
+share/locale/bg/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/bg/LC_MESSAGES/plasma-discover.mo
 share/locale/bs/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/plasma-discover.mo
 share/locale/ca/LC_MESSAGES/kcm_updates.mo

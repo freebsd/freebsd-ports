@@ -10,6 +10,8 @@ lib/libmilou.so.%%KDE_PLASMA_VERSION%%
 share/kservices5/plasma-applet-org.kde.milou.desktop
 share/locale/ast/LC_MESSAGES/milou.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/locale/bg/LC_MESSAGES/milou.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/ca/LC_MESSAGES/milou.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/ca@valencia/LC_MESSAGES/milou.mo
