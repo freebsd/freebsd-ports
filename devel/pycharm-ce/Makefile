@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-DISTVERSION=	2022.2.4
+DISTVERSION=	2022.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -16,7 +16,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 
 USES=		python:run shebangfix
 USE_JAVA=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 SHEBANG_FILES=	bin/restart.py
 
 NO_ARCH=	yes
@@ -30,7 +30,8 @@ SUB_LIST+=	IDEA_HOME=${IDEA_HOME}
 # Remove non-native binaries
 post-extract:
 	@${RM} ${WRKSRC}/bin/*fsnotifier* ${WRKSRC}/bin/*.so ${WRKSRC}/bin/repair
-	@${FIND} ${WRKSRC}/plugins -name '*.so' -delete
+	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -name '*.so' -delete
+	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -type d -empty -delete
 	@${RM} -r ${WRKSRC}/plugins/cwm-plugin/quiche-native
 	@${RM} -r ${WRKSRC}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process
 # Remove the bundled native Pty4J support libraries, they are replaced
