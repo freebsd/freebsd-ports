@@ -224,9 +224,7 @@ include/wine/windows/ctfutb.h
 include/wine/windows/ctfutb.idl
 include/wine/windows/ctxtcall.h
 include/wine/windows/ctxtcall.idl
-%%STAGING%%include/wine/windows/cuda.h
 include/wine/windows/custcntl.h
-%%STAGING%%include/wine/windows/cuviddec.h
 include/wine/windows/cvconst.h
 include/wine/windows/cvttyp.idl
 include/wine/windows/d2d1.h
@@ -725,9 +723,6 @@ include/wine/windows/ntsecapi.h
 include/wine/windows/ntsecpkg.h
 include/wine/windows/ntstatus.h
 include/wine/windows/ntuser.h
-%%STAGING%%include/wine/windows/nvapi.h
-%%STAGING%%include/wine/windows/nvcuvid.h
-%%STAGING%%include/wine/windows/nvencodeapi.h
 include/wine/windows/oaidl.h
 include/wine/windows/oaidl.idl
 include/wine/windows/objbase.h
@@ -1148,6 +1143,7 @@ include/wine/windows/wsdxmldom.h
 include/wine/windows/wshisotp.h
 include/wine/windows/wsipx.h
 include/wine/windows/wsnwlink.h
+include/wine/windows/wspiapi.h
 include/wine/windows/wtsapi32.h
 include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
@@ -1452,10 +1448,6 @@ lib/wine/%%WINEARCH%%-unix/msv1_0.so
 lib/wine/%%WINEARCH%%-unix/netapi32.so
 lib/wine/%%WINEARCH%%-unix/nsiproxy.so
 lib/wine/%%WINEARCH%%-unix/ntdll.so
-%%STAGING%%lib/wine/%%WINEARCH%%-unix/nvcuda.dll.so
-%%STAGING%%lib/wine/%%WINEARCH%%-unix/nvcuvid.dll.so
-%%WINE32%%%%STAGING%%lib/wine/%%WINEARCH%%-unix/nvencodeapi.dll.so
-%%WINE64%%%%STAGING%%lib/wine/%%WINEARCH%%-unix/nvencodeapi64.dll.so
 lib/wine/%%WINEARCH%%-unix/odbc32.so
 lib/wine/%%WINEARCH%%-unix/opengl32.so
 lib/wine/%%WINEARCH%%-unix/qcap.so
@@ -1468,7 +1460,6 @@ lib/wine/%%WINEARCH%%-unix/winebus.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/winex11.so
 lib/wine/%%WINEARCH%%-unix/winspool.so
-lib/wine/%%WINEARCH%%-unix/wldap32.so
 lib/wine/%%WINEARCH%%-unix/wpcap.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.so
 lib/wine/%%WINEARCH%%-windows/acledit.dll
@@ -2114,12 +2105,6 @@ lib/wine/%%WINEARCH%%-windows/ntdll.dll
 lib/wine/%%WINEARCH%%-windows/ntdsapi.dll
 lib/wine/%%WINEARCH%%-windows/ntoskrnl.exe
 lib/wine/%%WINEARCH%%-windows/ntprint.dll
-%%WINE32%%%%STAGING%%lib/wine/%%WINEARCH%%-windows/nvapi.dll
-%%WINE64%%%%STAGING%%lib/wine/%%WINEARCH%%-windows/nvapi64.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/nvcuda.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/nvcuvid.dll
-%%WINE32%%%%STAGING%%lib/wine/%%WINEARCH%%-windows/nvencodeapi.dll
-%%WINE64%%%%STAGING%%lib/wine/%%WINEARCH%%-windows/nvencodeapi64.dll
 lib/wine/%%WINEARCH%%-windows/objsel.dll
 lib/wine/%%WINEARCH%%-windows/odbc32.dll
 lib/wine/%%WINEARCH%%-windows/odbcbcp.dll
@@ -2334,6 +2319,7 @@ lib/wine/%%WINEARCH%%-windows/windows.gaming.input.dll
 lib/wine/%%WINEARCH%%-windows/windows.gaming.ui.gamebar.dll
 lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
+lib/wine/%%WINEARCH%%-windows/windows.media.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 %%STAGING%%lib/wine/%%WINEARCH%%-windows/windows.networking.connectivity
 lib/wine/%%WINEARCH%%-windows/windows.networking.dll
@@ -2372,6 +2358,7 @@ lib/wine/%%WINEARCH%%-windows/winmm.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winnls.dll16
 lib/wine/%%WINEARCH%%-windows/winnls32.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winoldap.mod16
+lib/wine/%%WINEARCH%%-windows/winprint.dll
 lib/wine/%%WINEARCH%%-windows/winscard.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winsock.dll16
 lib/wine/%%WINEARCH%%-windows/winspool.drv
@@ -2454,6 +2441,7 @@ lib/wine/%%WINEARCH%%-windows/xinput1_2.dll
 lib/wine/%%WINEARCH%%-windows/xinput1_3.dll
 lib/wine/%%WINEARCH%%-windows/xinput1_4.dll
 lib/wine/%%WINEARCH%%-windows/xinput9_1_0.dll
+lib/wine/%%WINEARCH%%-windows/xinputuap.dll
 lib/wine/%%WINEARCH%%-windows/xmllite.dll
 lib/wine/%%WINEARCH%%-windows/xolehlp.dll
 lib/wine/%%WINEARCH%%-windows/xpsprint.dll
