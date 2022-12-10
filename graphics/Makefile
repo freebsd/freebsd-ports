@@ -1124,6 +1124,7 @@
     SUBDIR += tweeny
     SUBDIR += ufraw
     SUBDIR += unpaper
+    SUBDIR += upscaler
     SUBDIR += urho3d
     SUBDIR += urt
     SUBDIR += vapoursynth-fmtconv

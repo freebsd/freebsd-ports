@@ -1,0 +1,2 @@
+Upscaler is a GTK4 + libadwaita application that allows you to upscale
+and enhance a given image. It is a front-end for Real-ESRGAN ncnn Vulkan.
