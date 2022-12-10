@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.8.9.31
+DISTVERSION=	0.8.9.32
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,11 +21,13 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}dnspython>=2.2.1:dns/py-dnspython@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}wheel>=0.38.4:devel/py-wheel@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		python:3.7+
+USES=		desktop-file-utils python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	coderholic
 USE_PYTHON=	autoplist distutils
 
+PLIST_FILES=	share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 
 OPTIONS_DEFINE=			DOCS
@@ -43,9 +45,18 @@ MPLAYER_RUN_DEPENDS+=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
 VLC_RUN_DEPENDS+=	vlc:multimedia/vlc
 
+post-patch:
+	${SED} -i.bak -e 's/\(distro =\) None/\1 ${OPSYS}/' \
+	 -e 's/\(enable_notifications =\) -1/\1 0/' \
+	 	${WRKSRC}/pyradio/config
+
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/pyradio*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}/${PORTNAME}.desktop
+	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.png \
+	       	${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
