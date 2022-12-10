@@ -11,10 +11,6 @@ WWW=		https://github.com/soedinglab/metaeuk
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
-.if !exists(/usr/include/omp.h)
-CMAKE_ARGS+=	-DREQUIRE_OPENMP=0
-.endif
-
 BUILD_DEPENDS=	xxd:editors/vim
 TEST_DEPENDS=	bash:shells/bash
 
@@ -34,6 +30,10 @@ CMAKE_OFF=	NATIVE_ARCH
 
 .if !exists(/usr/include/omp.h)
 CMAKE_ARGS+=	-DREQUIRE_OPENMP:BOOL=OFF
+
+post-patch: # workaround for https://github.com/soedinglab/metaeuk/issues/55
+	@${REINPLACE_CMD} -e 's|set(REQUIRE_OPENMP 1 |set(REQUIRE_OPENMP 0 |' ${WRKSRC}/lib/mmseqs/src/CMakeLists.txt
+	
 .endif
 
 do-test:
