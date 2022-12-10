@@ -8,6 +8,7 @@ include/KF5/KWindowSystem/KWindowInfo
 include/KF5/KWindowSystem/KWindowShadow
 include/KF5/KWindowSystem/KWindowShadowTile
 include/KF5/KWindowSystem/KWindowSystem
+include/KF5/KWindowSystem/KX11Extras
 include/KF5/KWindowSystem/KXMessages
 include/KF5/KWindowSystem/NETWM
 include/KF5/KWindowSystem/config-kwindowsystem.h
@@ -25,6 +26,7 @@ include/KF5/KWindowSystem/kwindowshadow.h
 include/KF5/KWindowSystem/kwindowsystem.h
 include/KF5/KWindowSystem/kwindowsystem_export.h
 include/KF5/KWindowSystem/kwindowsystem_version.h
+include/KF5/KWindowSystem/kx11extras.h
 include/KF5/KWindowSystem/kxmessages.h
 include/KF5/KWindowSystem/netwm.h
 include/KF5/KWindowSystem/netwm_def.h

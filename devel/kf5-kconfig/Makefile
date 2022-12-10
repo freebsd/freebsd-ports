@@ -1,5 +1,5 @@
 PORTNAME=	kconfig
-DISTVERSION=	5.100.1
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

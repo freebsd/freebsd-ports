@@ -1,5 +1,5 @@
 PORTNAME=	plasma-framework
-DISTVERSION=	5.100.1
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

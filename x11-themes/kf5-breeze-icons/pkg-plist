@@ -1,3 +1,6 @@
+@dir share/icons/breeze-dark/animations/24
+@dir share/icons/breeze/animations/24
+@dir share/icons/breeze/emotes/24
 share/icons/breeze-dark/actions/12/object-fill.svg
 share/icons/breeze-dark/actions/12/object-stroke-style.svg
 share/icons/breeze-dark/actions/12/object-stroke.svg
@@ -6288,6 +6291,7 @@ share/icons/breeze-dark/apps/16/accessories-text-editor.svg
 share/icons/breeze-dark/apps/16/anydesk.svg
 share/icons/breeze-dark/apps/16/hotspot.svg
 share/icons/breeze-dark/apps/16/kdeconnect.svg
+share/icons/breeze-dark/apps/16/kdesrc-build.svg
 share/icons/breeze-dark/apps/16/kmymoney.svg
 share/icons/breeze-dark/apps/16/konversation.svg
 share/icons/breeze-dark/apps/16/kwrite.svg
@@ -6513,6 +6517,7 @@ share/icons/breeze-dark/apps/48/kde-im-log-viewer.svg
 share/icons/breeze-dark/apps/48/kde.svg
 share/icons/breeze-dark/apps/48/kdeapp.svg
 share/icons/breeze-dark/apps/48/kdenlive.svg
+share/icons/breeze-dark/apps/48/kdesrc-build.svg
 share/icons/breeze-dark/apps/48/kdesvn.svg
 share/icons/breeze-dark/apps/48/kdevelop.svg
 share/icons/breeze-dark/apps/48/kdiamond.svg
@@ -6698,6 +6703,7 @@ share/icons/breeze-dark/apps/48/scanner.svg
 share/icons/breeze-dark/apps/48/scribus.svg
 share/icons/breeze-dark/apps/48/sheets.svg
 share/icons/breeze-dark/apps/48/showfoto.svg
+share/icons/breeze-dark/apps/48/simplescreenrecorder.svg
 share/icons/breeze-dark/apps/48/skanlite.svg
 share/icons/breeze-dark/apps/48/skanpage.svg
 share/icons/breeze-dark/apps/48/skrooge-black.svg
@@ -6819,6 +6825,7 @@ share/icons/breeze-dark/devices/16/input-keyboard.svg
 share/icons/breeze-dark/devices/16/input-mouse.svg
 share/icons/breeze-dark/devices/16/input-tablet.svg
 share/icons/breeze-dark/devices/16/input-touchpad.svg
+share/icons/breeze-dark/devices/16/input-touchscreen.svg
 share/icons/breeze-dark/devices/16/input-tvremote.svg
 share/icons/breeze-dark/devices/16/keyboard-caps-disabled.svg
 share/icons/breeze-dark/devices/16/keyboard-caps-enabled.svg
@@ -6895,6 +6902,7 @@ share/icons/breeze-dark/devices/22/input-keyboard.svg
 share/icons/breeze-dark/devices/22/input-mouse.svg
 share/icons/breeze-dark/devices/22/input-tablet.svg
 share/icons/breeze-dark/devices/22/input-touchpad.svg
+share/icons/breeze-dark/devices/22/input-touchscreen.svg
 share/icons/breeze-dark/devices/22/input-tvremote.svg
 share/icons/breeze-dark/devices/22/keyboard-caps-disabled.svg
 share/icons/breeze-dark/devices/22/keyboard-caps-enabled.svg
@@ -6963,6 +6971,7 @@ share/icons/breeze-dark/devices/24/input-keyboard.svg
 share/icons/breeze-dark/devices/24/input-mouse.svg
 share/icons/breeze-dark/devices/24/input-tablet.svg
 share/icons/breeze-dark/devices/24/input-touchpad.svg
+share/icons/breeze-dark/devices/24/input-touchscreen.svg
 share/icons/breeze-dark/devices/24/input-tvremote.svg
 share/icons/breeze-dark/devices/24/keyboard-caps-disabled.svg
 share/icons/breeze-dark/devices/24/keyboard-caps-enabled.svg
@@ -7028,6 +7037,7 @@ share/icons/breeze-dark/devices/64/input-keyboard.svg
 share/icons/breeze-dark/devices/64/input-mouse.svg
 share/icons/breeze-dark/devices/64/input-tablet.svg
 share/icons/breeze-dark/devices/64/input-touchpad.svg
+share/icons/breeze-dark/devices/64/input-touchscreen.svg
 share/icons/breeze-dark/devices/64/input-tvremote.svg
 share/icons/breeze-dark/devices/64/media-flash-memory-stick.svg
 share/icons/breeze-dark/devices/64/media-flash-sd-mmc.svg
@@ -10005,6 +10015,7 @@ share/icons/breeze-dark/preferences/22/preferences-desktop-theme-global.svg
 share/icons/breeze-dark/preferences/22/preferences-desktop-theme-windowdecorations.svg
 share/icons/breeze-dark/preferences/22/preferences-desktop-thunderbolt.svg
 share/icons/breeze-dark/preferences/22/preferences-desktop-touchpad.svg
+share/icons/breeze-dark/preferences/22/preferences-desktop-touchscreen.svg
 share/icons/breeze-dark/preferences/22/preferences-desktop-user-password.svg
 share/icons/breeze-dark/preferences/22/preferences-desktop-user.svg
 share/icons/breeze-dark/preferences/22/preferences-desktop-virtual.svg
@@ -10116,6 +10127,7 @@ share/icons/breeze-dark/preferences/32/preferences-desktop-theme-windowdecoratio
 share/icons/breeze-dark/preferences/32/preferences-desktop-theme.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-thunderbolt.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-touchpad.svg
+share/icons/breeze-dark/preferences/32/preferences-desktop-touchscreen.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-user-password.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-user.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-virtual.svg
@@ -17318,6 +17330,7 @@ share/icons/breeze/apps/16/accessories-text-editor.svg
 share/icons/breeze/apps/16/anydesk.svg
 share/icons/breeze/apps/16/hotspot.svg
 share/icons/breeze/apps/16/kdeconnect.svg
+share/icons/breeze/apps/16/kdesrc-build.svg
 share/icons/breeze/apps/16/kmymoney.svg
 share/icons/breeze/apps/16/konversation.svg
 share/icons/breeze/apps/16/kwrite.svg
@@ -17550,6 +17563,7 @@ share/icons/breeze/apps/48/kde-im-log-viewer.svg
 share/icons/breeze/apps/48/kde.svg
 share/icons/breeze/apps/48/kdeapp.svg
 share/icons/breeze/apps/48/kdenlive.svg
+share/icons/breeze/apps/48/kdesrc-build.svg
 share/icons/breeze/apps/48/kdesvn.svg
 share/icons/breeze/apps/48/kdevelop.svg
 share/icons/breeze/apps/48/kdiamond.svg
@@ -17735,6 +17749,7 @@ share/icons/breeze/apps/48/scanner.svg
 share/icons/breeze/apps/48/scribus.svg
 share/icons/breeze/apps/48/sheets.svg
 share/icons/breeze/apps/48/showfoto.svg
+share/icons/breeze/apps/48/simplescreenrecorder.svg
 share/icons/breeze/apps/48/skanlite.svg
 share/icons/breeze/apps/48/skanpage.svg
 share/icons/breeze/apps/48/skrooge-black.svg
@@ -17856,6 +17871,7 @@ share/icons/breeze/devices/16/input-keyboard.svg
 share/icons/breeze/devices/16/input-mouse.svg
 share/icons/breeze/devices/16/input-tablet.svg
 share/icons/breeze/devices/16/input-touchpad.svg
+share/icons/breeze/devices/16/input-touchscreen.svg
 share/icons/breeze/devices/16/input-tvremote.svg
 share/icons/breeze/devices/16/keyboard-caps-disabled.svg
 share/icons/breeze/devices/16/keyboard-caps-enabled.svg
@@ -17932,6 +17948,7 @@ share/icons/breeze/devices/22/input-keyboard.svg
 share/icons/breeze/devices/22/input-mouse.svg
 share/icons/breeze/devices/22/input-tablet.svg
 share/icons/breeze/devices/22/input-touchpad.svg
+share/icons/breeze/devices/22/input-touchscreen.svg
 share/icons/breeze/devices/22/input-tvremote.svg
 share/icons/breeze/devices/22/keyboard-caps-disabled.svg
 share/icons/breeze/devices/22/keyboard-caps-enabled.svg
@@ -18000,6 +18017,7 @@ share/icons/breeze/devices/24/input-keyboard.svg
 share/icons/breeze/devices/24/input-mouse.svg
 share/icons/breeze/devices/24/input-tablet.svg
 share/icons/breeze/devices/24/input-touchpad.svg
+share/icons/breeze/devices/24/input-touchscreen.svg
 share/icons/breeze/devices/24/input-tvremote.svg
 share/icons/breeze/devices/24/keyboard-caps-disabled.svg
 share/icons/breeze/devices/24/keyboard-caps-enabled.svg
@@ -18066,6 +18084,7 @@ share/icons/breeze/devices/64/input-keyboard.svg
 share/icons/breeze/devices/64/input-mouse.svg
 share/icons/breeze/devices/64/input-tablet.svg
 share/icons/breeze/devices/64/input-touchpad.svg
+share/icons/breeze/devices/64/input-touchscreen.svg
 share/icons/breeze/devices/64/input-tvremote.svg
 share/icons/breeze/devices/64/media-flash-memory-stick.svg
 share/icons/breeze/devices/64/media-flash-sd-mmc.svg
@@ -21585,6 +21604,7 @@ share/icons/breeze/preferences/22/preferences-desktop-theme-global.svg
 share/icons/breeze/preferences/22/preferences-desktop-theme-windowdecorations.svg
 share/icons/breeze/preferences/22/preferences-desktop-thunderbolt.svg
 share/icons/breeze/preferences/22/preferences-desktop-touchpad.svg
+share/icons/breeze/preferences/22/preferences-desktop-touchscreen.svg
 share/icons/breeze/preferences/22/preferences-desktop-user-password.svg
 share/icons/breeze/preferences/22/preferences-desktop-user.svg
 share/icons/breeze/preferences/22/preferences-desktop-virtual.svg
@@ -21675,6 +21695,7 @@ share/icons/breeze/preferences/24/preferences-desktop-theme-global.svg
 share/icons/breeze/preferences/24/preferences-desktop-theme-windowdecorations.svg
 share/icons/breeze/preferences/24/preferences-desktop-thunderbolt.svg
 share/icons/breeze/preferences/24/preferences-desktop-touchpad.svg
+share/icons/breeze/preferences/24/preferences-desktop-touchscreen.svg
 share/icons/breeze/preferences/24/preferences-desktop-user-password.svg
 share/icons/breeze/preferences/24/preferences-desktop-user.svg
 share/icons/breeze/preferences/24/preferences-desktop-virtual.svg
@@ -21787,6 +21808,7 @@ share/icons/breeze/preferences/32/preferences-desktop-theme-windowdecorations.sv
 share/icons/breeze/preferences/32/preferences-desktop-theme.svg
 share/icons/breeze/preferences/32/preferences-desktop-thunderbolt.svg
 share/icons/breeze/preferences/32/preferences-desktop-touchpad.svg
+share/icons/breeze/preferences/32/preferences-desktop-touchscreen.svg
 share/icons/breeze/preferences/32/preferences-desktop-user-password.svg
 share/icons/breeze/preferences/32/preferences-desktop-user.svg
 share/icons/breeze/preferences/32/preferences-desktop-virtual.svg
@@ -22781,6 +22803,3 @@ share/icons/breeze/status/symbolic/user-status-pending-symbolic.svg
 share/icons/breeze/status/symbolic/user-trash-full-symbolic.svg
 share/icons/breeze/status/symbolic/view-wrapped-symbolic-rtl.svg
 share/icons/breeze/status/symbolic/view-wrapped-symbolic.svg
-@dir share/icons/breeze-dark/animations/24
-@dir share/icons/breeze/animations/24
-@dir share/icons/breeze/emotes/24
