@@ -1,5 +1,5 @@
 PORTNAME=	lout
-PORTVERSION=	3.42.1
+PORTVERSION=	3.42.2
 CATEGORIES=	print
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -8,7 +8,7 @@ WWW=		https://savannah.nongnu.org/projects/lout/
 
 LICENSE=	GPLv3+
 
-USES=		cpe gmake
+USES=		cpe ghostscript:run gmake magick:run
 CPE_VENDOR=	lout_project
 
 USE_GITHUB=	yes
