@@ -1,5 +1,5 @@
 PORTNAME=	pydevd
-PORTVERSION=	1.3.0
+PORTVERSION=	2.9.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,10 @@ WWW=		https://pypi.org/project/pydevd/
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		dos2unix python:3.6+
+#USES=		dos2unix python:3.6+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils pytest
 
-DOS2UNIX_GLOB=	*
+#DOS2UNIX_GLOB=	*
 
 .include <bsd.port.mk>
