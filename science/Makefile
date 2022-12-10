@@ -171,6 +171,7 @@
     SUBDIR += liggghts
     SUBDIR += linux-zotero
     SUBDIR += luscus
+    SUBDIR += m-aneos
     SUBDIR += madness
     SUBDIR += maeparser
     SUBDIR += massxpert
