@@ -1,3 +1,51 @@
+  <vuln vid="ba94433c-7890-11ed-859e-1c61b4739ac9">
+    <topic>xrdp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xrdp</name>
+	<range><lt>0.9.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xrdp project reports:</p>
+	<blockquote cite="https://github.com/neutrinolabs/xrdp/releases/tag/v0.9.21">
+	  <p>This update is recommended for all xrdp users and provides following important security fixes:</p>
+	  <ul>
+            <li>CVE-2022-23468</li>
+            <li>CVE-2022-23477</li>
+            <li>CVE-2022-23478</li>
+            <li>CVE-2022-23479</li>
+            <li>CVE-2022-23480</li>
+            <li>CVE-2022-23481</li>
+            <li>CVE-2022-23483</li>
+            <li>CVE-2022-23482</li>
+            <li>CVE-2022-23484</li>
+            <li>CVE-2022-23493</li>
+	  </ul>
+          <p>These security issues are reported by Team BT5 (BoB 11th). We appreciate their great help with making and reviewing patches.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23468</cvename>
+      <cvename>CVE-2022-23477</cvename>
+      <cvename>CVE-2022-23478</cvename>
+      <cvename>CVE-2022-23479</cvename>
+      <cvename>CVE-2022-23480</cvename>
+      <cvename>CVE-2022-23481</cvename>
+      <cvename>CVE-2022-23483</cvename>
+      <cvename>CVE-2022-23482</cvename>
+      <cvename>CVE-2022-23484</cvename>
+      <cvename>CVE-2022-23493</cvename>
+      <url>https://github.com/neutrinolabs/xrdp/releases/tag/v0.9.21</url>
+    </references>
+    <dates>
+      <discovery>2022-12-01</discovery>
+      <entry>2022-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="050eba46-7638-11ed-820d-080027d3a315">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
