@@ -1,6 +1,5 @@
 PORTNAME=	amberol
-DISTVERSION=	0.9.1
-PORTREVISION=	2
+DISTVERSION=	0.9.2
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +23,7 @@ USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER=	bad good libav
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_COMMIT=	2b2fc127f63acf69f795b657d4721188bd5d145e
+GL_COMMIT=	c23ec2f11fa441c402b80f7a1733ac9aea65c81d
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -38,8 +37,8 @@ post-patch:
 		${WRKSRC}/Cargo.toml
 # Make each cargo subcommand very verbose
 # Add explicit <triple> subdir for --target from USES=cargo
-	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
-		-Ee '/cp/s,/(release|debug)/,/${CARGO_BUILD_TARGET}&,' \
-		${WRKSRC}/build-aux/cargo.sh
+	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
+		-e "/cp/s,'src',& / '${CARGO_BUILD_TARGET}'," \
+		${WRKSRC}/src/meson.build
 
 .include <bsd.port.mk>

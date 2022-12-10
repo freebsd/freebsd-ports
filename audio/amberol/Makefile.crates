@@ -104,15 +104,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		itertools-0.9.0 \
 		itoa-1.0.2 \
 		lazy_static-1.4.0 \
-		libadwaita-0.1.0 \
-		libadwaita-sys-0.1.0 \
+		libadwaita-0.2.0-alpha.2 \
+		libadwaita-sys-0.2.0-alpha.2 \
 		libc-0.2.121 \
 		libdbus-sys-0.2.2 \
 		locale_config-0.3.0 \
 		lock_api-0.4.7 \
-		lofty-0.8.0 \
-		lofty_attr-0.3.0 \
-		log-0.4.16 \
+		lofty-0.9.0 \
+		lofty_attr-0.4.0 \
+		log-0.4.17 \
 		malloc_buf-0.0.6 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
