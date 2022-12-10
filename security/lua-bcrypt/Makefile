@@ -11,7 +11,7 @@ WWW=		https://github.com/mikejsavage/lua-bcrypt/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	luarocks${LUA_VER_STR}:devel/lua-luarocks
+BUILD_DEPENDS=	luarocks${LUA_VER_STR}:devel/lua-luarocks@${FLAVOR}
 
 USES=		lua:module
 USE_GITHUB=	yes
