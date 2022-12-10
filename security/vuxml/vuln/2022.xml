@@ -12,18 +12,18 @@
 	<blockquote cite="https://github.com/neutrinolabs/xrdp/releases/tag/v0.9.21">
 	  <p>This update is recommended for all xrdp users and provides following important security fixes:</p>
 	  <ul>
-            <li>CVE-2022-23468</li>
-            <li>CVE-2022-23477</li>
-            <li>CVE-2022-23478</li>
-            <li>CVE-2022-23479</li>
-            <li>CVE-2022-23480</li>
-            <li>CVE-2022-23481</li>
-            <li>CVE-2022-23483</li>
-            <li>CVE-2022-23482</li>
-            <li>CVE-2022-23484</li>
-            <li>CVE-2022-23493</li>
+	    <li>CVE-2022-23468</li>
+	    <li>CVE-2022-23477</li>
+	    <li>CVE-2022-23478</li>
+	    <li>CVE-2022-23479</li>
+	    <li>CVE-2022-23480</li>
+	    <li>CVE-2022-23481</li>
+	    <li>CVE-2022-23483</li>
+	    <li>CVE-2022-23482</li>
+	    <li>CVE-2022-23484</li>
+	    <li>CVE-2022-23493</li>
 	  </ul>
-          <p>These security issues are reported by Team BT5 (BoB 11th). We appreciate their great help with making and reviewing patches.</p>
+	  <p>These security issues are reported by Team BT5 (BoB 11th). We appreciate their great help with making and reviewing patches.</p>
 	</blockquote>
       </body>
     </description>
