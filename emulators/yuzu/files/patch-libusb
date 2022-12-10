@@ -5,10 +5,7 @@ compatibility with newer versions of the reference implementation.
 
 --- CMakeLists.txt.orig	2022-12-07 02:08:14 UTC
 +++ CMakeLists.txt
-@@ -200,7 +200,7 @@
- find_package(enet 1.3)
- find_package(fmt 9 REQUIRED)
- find_package(inih)
+@@ -203,4 +203,4 @@
 -find_package(libusb 1.0.24)
 +find_package(libusb)
  find_package(lz4 REQUIRED)
