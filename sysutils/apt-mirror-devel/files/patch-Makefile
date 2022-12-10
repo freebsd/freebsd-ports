@@ -1,0 +1,17 @@
+--- Makefile.orig	2022-11-29 17:03:44 UTC
++++ Makefile
+@@ -8,10 +8,12 @@ all:
+ dist: apt-mirror-$(VERSION).tar.xz
+ 
+ install:
+-	install -m 755 -D apt-mirror $(DESTDIR)$(PREFIX)/bin/apt-mirror
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	install -m 755 apt-mirror $(DESTDIR)$(PREFIX)/bin/apt-mirror
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1/
+ 	pod2man apt-mirror > $(DESTDIR)$(PREFIX)/share/man/man1/apt-mirror.1
+-	if test ! -f $(DESTDIR)/etc/apt/mirror.list; then install -m 644 -D mirror.list $(DESTDIR)/etc/apt/mirror.list; fi
++	mkdir -p $(DESTDIR)/etc/apt
++	if test ! -f $(DESTDIR)/etc/apt/mirror.list; then install -m 644 mirror.list $(DESTDIR)/etc/apt/mirror.list; fi
+ 	mkdir -p $(DESTDIR)$(BASE_PATH)/mirror
+ 	mkdir -p $(DESTDIR)$(BASE_PATH)/skel
+ 	mkdir -p $(DESTDIR)$(BASE_PATH)/var

@@ -52,6 +52,7 @@
     SUBDIR += apcctrl
     SUBDIR += apcpwr
     SUBDIR += apcupsd
+    SUBDIR += apt-mirror-devel
     SUBDIR += aptly
     SUBDIR += arc_summary
     SUBDIR += arcconf

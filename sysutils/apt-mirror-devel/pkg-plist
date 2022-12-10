@@ -1,0 +1,8 @@
+/etc/apt/mirror.list
+bin/apt-mirror
+share/man/man1/apt-mirror.1.gz
+@dir /etc/apt
+@dir /var/spool/apt-mirror/mirror
+@dir /var/spool/apt-mirror/skel
+@dir /var/spool/apt-mirror/var
+@dir /var/spool/apt-mirror
