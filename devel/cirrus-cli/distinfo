@@ -1,6 +1,6 @@
-TIMESTAMP = 1669559511
-SHA256 (cirruslabs-cirrus-cli-v0.91.2_GH0.tar.gz) = ba38e20647476b9a6251d4e1b692aa8729f4c0cd53d28ecaa9b0bb261cf8128a
-SIZE (cirruslabs-cirrus-cli-v0.91.2_GH0.tar.gz) = 749689
+TIMESTAMP = 1670681769
+SHA256 (cirruslabs-cirrus-cli-v0.92.1_GH0.tar.gz) = 06e6822c52254823f86492aacfcf45e73938afb25042d9441c0b09182df285e3
+SIZE (cirruslabs-cirrus-cli-v0.92.1_GH0.tar.gz) = 749738
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (BurntSushi-toml-v1.2.0_GH0.tar.gz) = 9b1d4e09cc3f2e6f64245efffbd3a3b18a6a04d7e477b134d2c4fde19c922019
