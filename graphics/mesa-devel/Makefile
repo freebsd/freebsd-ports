@@ -43,7 +43,6 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-xa=disabled \
 		-Dglvnd=true \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
-		${BINARY_ALIAS:D--native-file=binary_alias.ini} \
 		${NULL}
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 
@@ -97,8 +96,8 @@ LIBUNWIND_MESON_ENABLED=	libunwind
 
 LLVM_DESC=		Build with LLVM support (see implies)
 LLVM_LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT:C/^([6-9])0/\1/:S/-devel/16git/}.so:devel/llvm${LLVM_DEFAULT}
+LLVM_CONFIGURE_ENV=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 LLVM_MESON_ENABLED=	llvm
-LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
 .for i in r600 radeonsi radv
 ${i}_IMPLIES+=		LLVM
 .endfor
@@ -138,15 +137,6 @@ ZSTD_MESON_ENABLED=	zstd
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
 LLVM_DEFAULT=	15 # chase mesa-dri
-.endif
-
-post-extract:
-# Work around Meson lookup order e.g., llvm-config
-.if defined(BINARY_ALIAS)
-	@${ECHO_CMD} '[binaries]' >${WRKSRC}/binary_alias.ini
-	@for f in ${BINARY_ALIAS}; do \
-		${ECHO_CMD} "$${f%%=*} = '$${f#*=}'"; \
-	done >>${WRKSRC}/binary_alias.ini
 .endif
 
 post-patch:
