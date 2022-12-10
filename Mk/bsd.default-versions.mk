@@ -86,7 +86,7 @@ LLVM_DEFAULT?=		10
 LLVM_DEFAULT?=		90
 .  endif
 # Possible values: 5.1, 5.2, 5.3, 5.4
-LUA_DEFAULT?=		5.2
+LUA_DEFAULT?=		5.4
 # Possible values: luajit, luajit-devel, luajit-openresty
 .  if ${ARCH:Mpowerpc64*}
 LUAJIT_DEFAULT?=	luajit-openresty
