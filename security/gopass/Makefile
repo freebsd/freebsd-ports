@@ -1,6 +1,7 @@
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/gopasspw/gopass/pull/2456/commits/

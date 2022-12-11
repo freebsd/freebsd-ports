@@ -1,6 +1,7 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.5.15
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public
 PKGNAMESUFFIX=	${DISTVERSION:C/([0-9]).*/\1/1}
