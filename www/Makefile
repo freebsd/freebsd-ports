@@ -978,6 +978,7 @@
     SUBDIR += p5-LWP-Protocol-http10
     SUBDIR += p5-LWP-Protocol-https
     SUBDIR += p5-LWP-Protocol-socks
+    SUBDIR += p5-LWP-UserAgent-Cached
     SUBDIR += p5-LWP-UserAgent-Determined
     SUBDIR += p5-LWP-UserAgent-POE
     SUBDIR += p5-LWP-UserAgent-WithCache
