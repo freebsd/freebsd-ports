@@ -34,6 +34,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-lexecinfo
 
 CONFIGURE_ARGS=	--with-llvm=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
+
+.include <bsd.port.options.mk>
 .if ${ARCH} == "i386" # see the bug#268319 for the LTO failure on i386
 CONFIGURE_ARGS+=	--disable-lto # workaround for https://github.com/nickg/nvc/issues/579 (undefined symbol: _GLOBAL_OFFSET_TABLE_, see error: undefined symbol: _GLOBAL_OFFSET_TABLE_)
 .endif
