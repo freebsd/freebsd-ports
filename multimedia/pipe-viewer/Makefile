@@ -1,5 +1,5 @@
 PORTNAME=	pipe-viewer
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.4
 CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	DtxdF@disroot.org
@@ -46,7 +46,7 @@ GTK3_USES=			desktop-file-utils
 GTK3_CONFIGURE_ON=		--gtk
 JSON_XS_RUN_DEPENDS=		p5-JSON-XS>0:converters/p5-JSON-XS
 LINE_BREAK_RUN_DEPENDS=		p5-Unicode-LineBreak>0:textproc/p5-Unicode-LineBreak
-LOCAL_CACHE_RUN_DEPENDS=	p5-LWP-UserAgent-WithCache>0:www/p5-LWP-UserAgent-WithCache
+LOCAL_CACHE_RUN_DEPENDS=	p5-LWP-UserAgent-Cached>0:www/p5-LWP-UserAgent-Cached
 READLINE_RUN_DEPENDS=		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu
 SHARE_DIR_RUN_DEPENDS=		p5-File-ShareDir>0:devel/p5-File-ShareDir
 YOUTUBE_DL_RUN_DEPENDS=		youtube_dl>0:www/youtube_dl
