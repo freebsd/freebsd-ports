@@ -1,2 +1,6 @@
-Fastq-trim is a lightening fast read trimming tool for QA of DNA and RNA
-reads prior to analyses such as RNA-Seq.
+Fastq-trim is a lightening fast read trimming tool for QA of
+DNA and RNA reads prior to analyses such as RNA-Seq.  it runs
+in a fraction of the time required by popular trimmers and uses
+only a few megabytes of RAM, so it will run almost entirely in
+cache.  The design supports adding any number of alignment
+functions, so it can be easily adapted to any trimming needs.
