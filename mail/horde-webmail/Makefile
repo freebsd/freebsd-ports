@@ -7,9 +7,9 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware Webmail Edition
 WWW=		https://www.horde.org/apps/webmail/
 
-CONFLICTS=	horde-groupware-[456]*
+IGNORE_WITH_PHP=80 81 82
 
-USES=		horde cpe
+USES=		horde cpe php
 CPE_PRODUCT=	groupware
 CPE_EDITION=	webmail
 USE_HORDE_BUILD=	Horde_Role
@@ -25,5 +25,7 @@ USE_HORDE_RUN=	Horde_Role \
 		timeobjects \
 		trean \
 		turba
+
+CONFLICTS=	horde-groupware-[456]*
 
 .include <bsd.port.mk>

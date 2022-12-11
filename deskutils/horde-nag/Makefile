@@ -10,8 +10,9 @@ WWW=		https://www.horde.org/apps/nag/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+IGNORE_WITH_PHP=80 81 82
+
 USES=		horde php cpe
-USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		content \
@@ -37,5 +38,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Url \
 		Horde_Util \
 		Horde_View
+USE_PHP=	gettext
 
 .include <bsd.port.mk>

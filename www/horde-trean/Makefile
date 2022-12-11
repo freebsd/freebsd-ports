@@ -10,8 +10,9 @@ WWW=		https://www.horde.org/apps/trean/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_WITH_PHP=80 81 82
+
 USES=		horde cpe php
-USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		horde \
@@ -30,5 +31,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_Vfs \
 		Horde_View
+USE_PHP=	gettext json
 
 .include <bsd.port.mk>

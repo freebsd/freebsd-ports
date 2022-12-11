@@ -10,6 +10,8 @@ WWW=		https://www.horde.org/apps/ansel/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+IGNORE_WITH_PHP=80 81 82
+
 USES=		horde cpe php
 USE_PHP=	gettext hash
 USE_HORDE_BUILD=	Horde_Role

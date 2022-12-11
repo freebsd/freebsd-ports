@@ -10,6 +10,8 @@ WWW=		https://www.horde.org/apps/whups/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_WITH_PHP=80 81 82
+
 USES=		horde php cpe
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role

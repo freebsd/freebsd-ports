@@ -11,7 +11,9 @@ WWW=		https://www.horde.org/apps/imp/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		horde cpe
+IGNORE_WITH_PHP=80 81 82
+
+USES=		horde cpe php
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		horde \

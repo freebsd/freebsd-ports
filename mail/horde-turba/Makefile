@@ -10,13 +10,9 @@ WWW=		https://www.horde.org/apps/turba/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	FACEBOOK IMSP LDAP
-FACEBOOK_DESC=	Support connections with Facebook
-IMSP_DSC=	Support IMSP addressbooks
-LDAP_DESC=	Support LDAP Addressbooks
+IGNORE_WITH_PHP=80 81 82
 
 USES=		horde php cpe
-USE_PHP=	gettext hash json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		horde \
@@ -41,8 +37,15 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Url \
 		Horde_Util \
 		Horde_View
+USE_PHP=	gettext hash json
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	FACEBOOK IMSP LDAP
+
+FACEBOOK_DESC=	Support connections with Facebook
+IMSP_DESC=	Support IMSP addressbooks
+LDAP_DESC=	Support LDAP Addressbooks
 
 FACEBOOK_USE=	HORDE_RUN=Horde_Service_Facebook
 IMSP_USE=	HORDE_RUN=Horde_Imsp
