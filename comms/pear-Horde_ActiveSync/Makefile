@@ -1,5 +1,5 @@
 PORTNAME=	Horde_ActiveSync
-DISTVERSION=	2.41.5
+DISTVERSION=	2.41.9
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -17,5 +17,7 @@ USE_HORDE_RUN=	Horde_Compress \
 		Horde_Stream \
 		Horde_Support \
 		Horde_Util
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
