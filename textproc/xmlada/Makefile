@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	xmlada
 PORTVERSION=	17.0.0
 PORTREVISION=	2
@@ -7,8 +5,9 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adacore XML suite for the Ada language
+WWW=		https://github.com/AdaCore/xmlada
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3RLE
 
 USES=		ada:run
 USE_GITHUB=	yes

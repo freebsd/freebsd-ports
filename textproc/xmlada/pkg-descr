@@ -8,5 +8,3 @@ validation of the documents is performed based on those.
 It provides support for a number of standards associated with XML such as
 SAX, DOM, and XML schemas.  Additionally, it includes a module to manipulate
 unicode streams since this is required by the XML standard.
-
-WWW: http://libre.adacore.com/libre/tools/xmlada/
