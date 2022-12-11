@@ -104,6 +104,7 @@
     SUBDIR += ghc810
     SUBDIR += gjs
     SUBDIR += gleam
+    SUBDIR += gnat12
     SUBDIR += gnatcross-binutils-aarch64
     SUBDIR += gnatcross-sysroot-aarch64
     SUBDIR += gnatdroid-binutils
