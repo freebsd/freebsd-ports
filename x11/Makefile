@@ -367,6 +367,7 @@
     SUBDIR += slop
     SUBDIR += slurp
     SUBDIR += smproxy
+    SUBDIR += somebar
     SUBDIR += sprop
     SUBDIR += squeekboard
     SUBDIR += srandrd
