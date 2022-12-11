@@ -968,6 +968,10 @@ lib/emby-server/system/dashboard-ui/settings/keyboard.html
 lib/emby-server/system/dashboard-ui/settings/keyboard.js
 lib/emby-server/system/dashboard-ui/settings/managedownloads.html
 lib/emby-server/system/dashboard-ui/settings/managedownloads.js
+lib/emby-server/system/dashboard-ui/settings/notificationeditor.js
+lib/emby-server/system/dashboard-ui/settings/notificationeditor.template.html
+lib/emby-server/system/dashboard-ui/settings/notifications.html
+lib/emby-server/system/dashboard-ui/settings/notifications.js
 lib/emby-server/system/dashboard-ui/settings/password.html
 lib/emby-server/system/dashboard-ui/settings/password.js
 lib/emby-server/system/dashboard-ui/settings/playback.html
