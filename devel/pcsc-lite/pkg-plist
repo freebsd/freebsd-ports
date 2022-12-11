@@ -14,6 +14,8 @@ lib/libpcscspy.so.0.0.0
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
 %%PORTDOCS%%%%DOCSDIR%%/README.polkit
+%%PORTDOCS%%%%DOCSDIR%%/install_spy.sh
+%%PORTDOCS%%%%DOCSDIR%%/uninstall_spy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
