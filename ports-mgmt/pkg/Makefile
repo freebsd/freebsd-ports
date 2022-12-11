@@ -1,11 +1,7 @@
 PORTNAME=	pkg
-DISTVERSION=	1.18.4
+DISTVERSION=	1.19.0
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
-#MASTER_SITES=	\
-#		http://files.etoilebsd.net/${PORTNAME}/ \
-#		LOCAL/portmgr \
-#		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
