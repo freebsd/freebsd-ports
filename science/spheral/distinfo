@@ -1,0 +1,7 @@
+TIMESTAMP = 1670638084
+SHA256 (LLNL-spheral-v2022.6.1-680-g23ce0f156_GH0.tar.gz) = 2287693db6e2b9c78cc8fc20b96e0b25571e660c371fec6f1cb2f14743629a82
+SIZE (LLNL-spheral-v2022.6.1-680-g23ce0f156_GH0.tar.gz) = 6529830
+SHA256 (llnl-blt-ddd5a0c_GH0.tar.gz) = 5c235a9b160f1cc3f6ce4d7c80bf72772ac10839909f4f96075d08b3edd8f540
+SIZE (llnl-blt-ddd5a0c_GH0.tar.gz) = 1220052
+SHA256 (llnl-uberenv-126f8de_GH0.tar.gz) = 6a403e722dc023d87dd69f8235fa631ab96a7b1ff328929b9c969e7c113ce9f7
+SIZE (llnl-uberenv-126f8de_GH0.tar.gz) = 25345

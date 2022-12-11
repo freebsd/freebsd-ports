@@ -467,6 +467,7 @@
     SUBDIR += smoldyn
     SUBDIR += sparta
     SUBDIR += spglib
+    SUBDIR += spheral
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += tblite
