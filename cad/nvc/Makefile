@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=	compilation fails: no member named '_gregs' in 'mcontext_t'; did you mean '__gregs', see https://github.com/nickg/nvc/issues/534
 BROKEN_armv7=	compilation fails: no member named '_gregs' in 'mcontext_t'; did you mean '__gregs', see https://github.com/nickg/nvc/issues/534
-BROKEN_i386=	link fails: error: undefined symbol: _GLOBAL_OFFSET_TABLE_, see error: undefined symbol: _GLOBAL_OFFSET_TABLE_
 BROKEN_FreeBSD_14_i386=	clang creashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265826
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
@@ -35,6 +34,9 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-lexecinfo
 
 CONFIGURE_ARGS=	--with-llvm=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
+.if ${ARCH} == "i386" # see the bug#268319 for the LTO failure on i386
+CONFIGURE_ARGS+=	--disable-lto # workaround for https://github.com/nickg/nvc/issues/579 (undefined symbol: _GLOBAL_OFFSET_TABLE_, see error: undefined symbol: _GLOBAL_OFFSET_TABLE_)
+.endif
 
 TEST_TARGET=	check # several tests fail, see https://github.com/nickg/nvc/issues/530
 TEST_WRKSRC=	${WRKSRC}/.build
