@@ -8,6 +8,8 @@ WWW=		https://daltonprogram.org/
 
 LICENSE=	LGPL21
 
+BROKEN_armv7=	fortran runs out of memory
+
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	bash:shells/bash
