@@ -23,6 +23,8 @@ WWW=		https://pyne.io/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_armv7=	clang runs out of memory
+
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
