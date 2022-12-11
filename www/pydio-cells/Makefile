@@ -1,7 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.9
-PORTREVISION=	3
+DISTVERSION=	4.0.5
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -15,16 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Not supported on i386
 
-BUILD_DEPENDS=	pydio-packr:devel/pydio-packr
-
-USES=		cpe go gmake
+USES=		cpe go:modules gmake
 CPE_VENDOR=	pydio
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	pydio
 
-GO_PKGNAME=	github.com/pydio/cells
-GO_BUILDFLAGS=	-ldflags "-X github.com/pydio/cells/common.version=${DISTVERSION}"
+GO_MODULE=	github.com/pydio/cells/v4
+GO_BUILDFLAGS=	-ldflags "-X github.com/pydio/cells/v4/common.version=${DISTVERSION}\
+		-X github.com/pydio/cells/v4/common.BuildStamp=1970-01-01T00:00:00"
 
 USERS=		pydio
 GROUPS=		pydio
@@ -35,17 +33,6 @@ OPTIONS_DEFAULT=	BASH ZSH
 
 BASH_PLIST_FILES=	etc/bash_completion.d/${PORTNAME}
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
-
-post-patch:
-	${REINPLACE_CMD} -e "s|\$${GOPATH}/bin/packr|${LOCALBASE}/bin/pydio-packr|g" \
-		${WRKSRC}/Makefile
-	# Linux keyring code is compatible with FreeBSD
-	cd ${WRKSRC}/vendor/github.com/zalando/go-keyring && \
-		${LN} -s keyring_linux.go keyring_freebsd.go
-
-pre-build:
-	@cd ${WRKSRC} && \
-		${MAKE_CMD} generate
 
 post-build-BASH-on:
 	${SETENV} CELLS_WORKING_DIR=${WRKDIR}/wrkdir \
