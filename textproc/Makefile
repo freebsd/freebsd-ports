@@ -2032,6 +2032,7 @@
     SUBDIR += xml-format
     SUBDIR += xml-lite.el
     SUBDIR += xml2rfc
+    SUBDIR += xmlada
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
     SUBDIR += xmlenc
