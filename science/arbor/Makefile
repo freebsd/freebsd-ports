@@ -11,6 +11,8 @@ WWW=		https://arbor-sim.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: unknown type name 'float64x2_t'
+
 BUILD_DEPENDS=	bash:shells/bash \
 		libfmt>0:devel/libfmt \
 		nlohmann-json>0:devel/nlohmann-json \
