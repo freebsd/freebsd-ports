@@ -1,6 +1,6 @@
 PORTNAME=	xmlada
-PORTVERSION=	17.0.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=v
+DISTVERSION=	23.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +13,6 @@ USES=		ada:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_PROJECT=	xmlada
-GH_TAGNAME=	e5bbafe
 
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
 		LIBVER=${PORTVERSION}
@@ -119,6 +118,9 @@ do-install-DOCS-on:
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${RM} -r ${STAGEDIR}${DOCSDIR}/_sources \
 		${STAGEDIR}${DOCSDIR}/.buildinfo
+post-install:
+	(cd ${STAGEDIR}${PREFIX}/lib/xmlada/relocatable && \
+		${STRIP_CMD} libxmlada* )
 
 dummy-unicode:
 	@${GREP} ^package ${WRKSRC}/unicode/unicode-*.ads | \
