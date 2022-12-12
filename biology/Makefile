@@ -41,6 +41,7 @@
     SUBDIR += emboss
     SUBDIR += erminej
     SUBDIR += exonerate
+    SUBDIR += fasda
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastahack
