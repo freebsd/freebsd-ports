@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdivecomputer.so:comms/libdc \
 		libcurl.so:ftp/curl \
 		libssh2.so:security/libssh2
 
-USES=		cmake:noninja desktop-file-utils pkgconfig qt:5 gnome qmake:no_configure sqlite
+USES=		cmake:noninja desktop-file-utils gmake pkgconfig qt:5 gnome qmake:no_configure sqlite
 USE_GITHUB=	yes
 GH_TUPLE=	subsurface:googlemaps:7ce7124b385b2ebac0f72c38b094f436d4fe5c58:subsurface/googlemaps
 USE_GNOME=	libxml2 libxslt
