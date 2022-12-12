@@ -1,5 +1,5 @@
 PORTNAME=	elementary-videos
-DISTVERSION=	2.8.4
+DISTVERSION=	2.9.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -20,7 +20,7 @@ USES=		desktop-file-utils gettext gnome gstreamer meson pkgconfig vala:build xor
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	videos
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
 USE_GSTREAMER=	core faad libav ogg opus plugins theora vorbis x x264 ximagesrc
 USE_XORG=	x11
