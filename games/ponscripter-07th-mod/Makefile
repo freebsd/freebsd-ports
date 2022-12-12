@@ -60,6 +60,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/src/Makefile.ponscripter
 
+post-patch-MANPAGES-off:
+	@${REINPLACE_CMD} -i .manpages.bak \
+		-e '/install-man/d' \
+		${WRKSRC}/configure
+
 post-patch-TREMOR-on:
 	@${REINPLACE_CMD} -i .tremor.bak \
 		-e 's/"libogg, libvorbis"/libvorbisidec/' \
