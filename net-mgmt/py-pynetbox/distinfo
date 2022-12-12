@@ -1,3 +1,3 @@
-TIMESTAMP = 1651311550
-SHA256 (pynetbox-6.6.2.tar.gz) = 83b840aeaed49bacde6962d29f4550e4bd35b2e273e9f65c1f8cbe0883fe74db
-SIZE (pynetbox-6.6.2.tar.gz) = 62703
+TIMESTAMP = 1670766829
+SHA256 (pynetbox-7.0.0.tar.gz) = 6506c95f056755f7d20532dce68af52787b8d3acca034f9db8643d7457655ed3
+SIZE (pynetbox-7.0.0.tar.gz) = 63611
