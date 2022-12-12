@@ -1,0 +1,11 @@
+--- OMCompiler/3rdParty/Ipopt-3.13.4/ThirdParty/MUMPS/CMakeLists.txt.orig	2022-12-09 19:22:30 UTC
++++ OMCompiler/3rdParty/Ipopt-3.13.4/ThirdParty/MUMPS/CMakeLists.txt
+@@ -143,7 +143,7 @@ endif ()
+ target_link_libraries(coinmumps PUBLIC ${LAPACK_LIBRARIES})
+ 
+ if(THREADS_HAVE_PTHREAD_ARG)
+-  target_compile_options(coinmumps PUBLIC pthread)
++  target_compile_options(coinmumps PUBLIC ${CMAKE_THREAD_LIBS_INIT})
+ endif()
+ if(CMAKE_THREAD_LIBS_INIT)
+   target_link_libraries(coinmumps PUBLIC ${CMAKE_THREAD_LIBS_INIT})

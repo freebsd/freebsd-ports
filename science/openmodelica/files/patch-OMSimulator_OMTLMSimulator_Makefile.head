@@ -1,0 +1,15 @@
+--- OMSimulator/OMTLMSimulator/Makefile.head.orig	2022-12-11 03:25:38 UTC
++++ OMSimulator/OMTLMSimulator/Makefile.head
+@@ -100,7 +100,12 @@ ifeq ($(detected_OS),Darwin)
+ EXTRAFLAGS += -DNO_RTIME
+ RTIMELIB =
+ else
++ifeq ($(detected_OS),FreeBSD)
++EXTRAFLAGS += -DNO_RTIME
++RTIMELIB =
++else
+ RTIMELIB = -lrtime
++endif
+ endif
+ 
+ override CC += $(CFLAGS) $(EXTRAFLAGS)

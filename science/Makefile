@@ -218,6 +218,7 @@
     SUBDIR += openems
     SUBDIR += openkim-models
     SUBDIR += openmc
+    SUBDIR += openmodelica
     SUBDIR += openmolcas
     SUBDIR += openmx
     SUBDIR += opensim-core
