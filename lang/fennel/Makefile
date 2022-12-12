@@ -1,5 +1,5 @@
 PORTNAME=	fennel
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~technomancy/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
@@ -10,7 +10,7 @@ WWW=		https://fennel-lang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake lua:build
+USES=		gmake lua:51+
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LUA=${LUA_CMD} \
@@ -24,5 +24,11 @@ ALL_TARGET=	build
 TEST_TARGET=	test
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
