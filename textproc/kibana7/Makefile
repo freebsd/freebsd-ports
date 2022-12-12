@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-PORTVERSION=	7.17.7
+PORTVERSION=	7.17.8
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -36,7 +36,7 @@ SUB_LIST+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 # Set node-nan version here
 _NODE_NAN_VER=	2.17.0
 # Set node-re version here
-_NODE_RE2_VER=	1.17.7
+_NODE_RE2_VER=	1.18.0
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
@@ -46,6 +46,9 @@ _RE2DIR=	${WRKDIR}/node-re2-${_NODE_RE2_VER}
 
 # Extra patch files must be updated whenever node-re2 changes
 _RE2PATCHES=	${PATCHDIR}/extra-node-re2-binding-gyp.patch
+
+post-extract:
+	${RM} -rf ${WRKSRC}/node
 
 post-patch:
 	${FIND} -s ${WRKSRC}/node_modules -type d -empty -delete
