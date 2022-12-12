@@ -14,6 +14,8 @@ LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
 FLAVORS=	qt5 qt6
+qt6_BROKEN=	Qt6 patch requires rebase after \
+		https://github.com/RPCS3/rpcs3/commit/681a6ef73ca1
 
 BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
