@@ -1,5 +1,5 @@
 PORTNAME=	cloud-init
-DISTVERSION=	22.3.4
+DISTVERSION=	22.4.2
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -28,13 +28,12 @@ RUN_DEPENDS=	sudo>0:security/sudo \
 USES=		python:3.6+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	canonical
+USE_PYTHON=	autoplist distutils
+PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 
 SHEBANG_FILES=	tools/validate-yaml.py tools/read-dependencies \
 		tools/read-version tools/hook-hotplug
-USE_PYTHON=	autoplist distutils
 ETCDIR=		${PREFIX}/etc/cloud
-
-PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 
 NO_ARCH=	yes
 
