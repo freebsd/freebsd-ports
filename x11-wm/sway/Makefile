@@ -1,5 +1,5 @@
 PORTNAME=	sway
-DISTVERSION=	1.8-rc2
+DISTVERSION=	1.8-rc3
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

@@ -1,6 +1,6 @@
-TIMESTAMP = 1670086590
-SHA256 (swaywm-sway-1.8-rc2_GH0.tar.gz) = edfac0584c421c630fd36fc4567740b8905be522209c233409e25108b9ecf157
-SIZE (swaywm-sway-1.8-rc2_GH0.tar.gz) = 5577021
+TIMESTAMP = 1670840800
+SHA256 (swaywm-sway-1.8-rc3_GH0.tar.gz) = ec0fdb0b2c4d5a1ee26189473cbe03988c1c1fc34fd2462c47d754d4c8ff8d0d
+SIZE (swaywm-sway-1.8-rc3_GH0.tar.gz) = 5577115
 SHA256 (cd9d1038a822.patch) = 266891cbe27a67f81740879dbe39819e3bf0f17b681bdc93087ae05987c2f88d
 SIZE (cd9d1038a822.patch) = 8968
 SHA256 (f98ca3ab7ca1.patch) = b3a427b6edbf1c89bbf5fdeb5e3fc4c6708478e6d2031fcead87d29bf5c409fa
