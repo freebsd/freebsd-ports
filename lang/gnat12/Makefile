@@ -13,6 +13,8 @@ WWW=		https://www.adacore.com/community
 LICENSE=	GPLv2 GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+IGNORE=	does not run without gcc12 built from this port
+
 LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libmpc.so:math/mpc	\
 		libisl.so:devel/isl	\
@@ -102,8 +104,8 @@ pre-configure:
 	${ECHO} "release" > ${PHASEFILE}
 
 pre-configure-PREVASSET-on:
-	cd ${PATHAUX} ; for f in *${GCCVER} ; do	\
-	${LN} -sf $${f} $${f%${GCCVER}} ;			\
+	cd ${PATHAUX} ; for f in *${PREV_ASSET_VER} ; do	\
+	${LN} -sf $${f} $${f%${PREV_ASSET_VER}} ;			\
 	done
 
 post-install-ASSETS-on:
