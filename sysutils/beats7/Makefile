@@ -1,7 +1,6 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.17.7
-PORTREVISION=	1
+DISTVERSION=	7.17.8
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -266,7 +265,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		prometheus:prometheus:v2.5.0:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
-		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.28.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:cf1acfcdf475:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		samuel:go-parser:ca8abbf65d0e:samuel_go_parser/vendor/github.com/samuel/go-parser \
 		samuel:go-thrift:2187045faa54:samuel_go_thrift/vendor/github.com/samuel/go-thrift \
