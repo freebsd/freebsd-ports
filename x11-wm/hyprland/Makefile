@@ -1,6 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.1beta
+DISTVERSION=	0.19.2beta
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +26,7 @@ USE_GNOME=	cairo
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
-GH_TUPLE=	hyprwm:hyprland-protocols:0dcff94:hyprland_protocols/subprojects/hyprland-protocols
+GH_TUPLE=	hyprwm:hyprland-protocols:301733a:hyprland_protocols/subprojects/hyprland-protocols
 LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 
 OPTIONS_DEFINE=	X11
