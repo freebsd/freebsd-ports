@@ -1,5 +1,5 @@
 MASTERDIR=	${.CURDIR}/../bitcoin
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-utils
 
 COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)
