@@ -23,12 +23,6 @@ PLIST_FILES=	include/sysctlmibinfo.h \
 		lib/libsysctlmibinfo.so.1.0.2 \
 		man/man3/sysctlmibinfo.3.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400071
-IGNORE=		uses struct sysctl_oid definition previous FreeBSD 1400071
-.endif
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/sysctlmibinfo.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libsysctlmibinfo.a ${STAGEDIR}${PREFIX}/lib
@@ -36,4 +30,4 @@ do-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo.so.1.0.2 ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo.so
 	${INSTALL_MAN} ${WRKSRC}/sysctlmibinfo.3.gz ${STAGEDIR}${MAN3PREFIX}/man/man3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -29,9 +29,6 @@ DESKTOP_ENTRIES=	"Sysctlview" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400071
-IGNORE=		uses struct sysctl_oid definition previous FreeBSD 1400071
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
 .endif

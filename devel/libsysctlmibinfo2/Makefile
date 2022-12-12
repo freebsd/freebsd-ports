@@ -31,12 +31,6 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400071
-IGNORE=		uses struct sysctl_oid definition previous FreeBSD 1400071
-.endif
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/sysctlmibinfo2.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libsysctlmibinfo2.a ${STAGEDIR}${PREFIX}/lib
@@ -50,4 +44,4 @@ do-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/examples/${e} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
