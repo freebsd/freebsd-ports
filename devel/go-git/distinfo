@@ -1,6 +1,6 @@
-TIMESTAMP = 1670078048
-SHA256 (go-git-go-git-v5.5.0_GH0.tar.gz) = bced346146d530857f79005847236ee8cfab55f56374e7f048c718fbb5977df9
-SIZE (go-git-go-git-v5.5.0_GH0.tar.gz) = 475844
+TIMESTAMP = 1670839140
+SHA256 (go-git-go-git-v5.5.1_GH0.tar.gz) = a09aec336df0be0355108d91b707b5324a976e96e8ae501a4971deb9671f8b61
+SIZE (go-git-go-git-v5.5.1_GH0.tar.gz) = 476088
 SHA256 (Microsoft-go-winio-v0.5.2_GH0.tar.gz) = d56abf127ac26d287b522ddde3d2a94efbbfeec6c8936f1f3179d038b4062be6
 SIZE (Microsoft-go-winio-v0.5.2_GH0.tar.gz) = 91639
 SHA256 (ProtonMail-go-crypto-cf6655e29de4_GH0.tar.gz) = 366162021ef0cdd8d4e05a1c355897bf033f8d552fad48507bc9bc187eeb5a2b
@@ -55,5 +55,5 @@ SHA256 (sergi-go-diff-v1.1.0_GH0.tar.gz) = 3d4362670655e970366d555418f3c8d179c21
 SIZE (sergi-go-diff-v1.1.0_GH0.tar.gz) = 43552
 SHA256 (skeema-knownhosts-v1.1.0_GH0.tar.gz) = 6583a034554ab85bfa392026aac79b2bf26b38d9d47ba7dd556888c74939f336
 SIZE (skeema-knownhosts-v1.1.0_GH0.tar.gz) = 10564
-SHA256 (xanzy-ssh-agent-v0.3.2_GH0.tar.gz) = 8aa35a2f953caf83f8ff919a596a6222bcfa3d15cad9a657c7a7251045dbb78b
-SIZE (xanzy-ssh-agent-v0.3.2_GH0.tar.gz) = 8622
+SHA256 (xanzy-ssh-agent-v0.3.3_GH0.tar.gz) = e15d693dd9aaa7647e1ca4b2fd7051047aa4ad6b3678ecb1ca95cd93c3c34ec9
+SIZE (xanzy-ssh-agent-v0.3.3_GH0.tar.gz) = 8620
