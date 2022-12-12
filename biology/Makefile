@@ -190,6 +190,7 @@
     SUBDIR += rampler
     SUBDIR += readseq
     SUBDIR += recombine
+    SUBDIR += rna-seq
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio
     SUBDIR += rubygem-bio-executables
