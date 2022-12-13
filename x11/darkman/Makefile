@@ -41,6 +41,9 @@ post-patch:
 # Respect LOCALBASE for {dark,light}-mode.d scripts
 	@${REINPLACE_CMD} 's,/usr/share,${LOCALBASE}/share,' \
 		${WRKSRC}/vendor/github.com/adrg/xdg/paths_unix.go
+# Respect PREFIX for DBus activation
+	@${REINPLACE_CMD} 's,/usr/bin,${PREFIX}/bin,' \
+		${WRKSRC}/contrib/dbus/*.service
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/services
