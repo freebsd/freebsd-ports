@@ -72,6 +72,9 @@ SUB_LIST=	ETCDIR=${ETCDIR} \
 		JAVA_HOME=${JAVA_HOME} \
 		BINDIR=${PREFIX}/bin
 
+post-extract:
+	${RM} -rf ${WRKSRC}/jdk.app
+
 post-patch:
 	${RM} ${WRKSRC}/lib/jna-*.jar
 # ML plugin not supported on FreeBSD
