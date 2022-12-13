@@ -1,7 +1,5 @@
 PORTNAME=	nanopb
-DISTVERSION=	0.4.6.4-3
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gf84ad7f
+DISTVERSION=	0.4.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +9,9 @@ WWW=		https://jpa.kapsi.fi/nanopb/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	protoc:devel/protobuf
+BUILD_DEPENDS=	protoc:devel/protobuf \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR}
 TEST_DEPENDS=	scons:devel/scons
 
 USES=		cmake python shebangfix
@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	generator/nanopb_generator.py
+SHEBANG_FILES=	generator/nanopb_generator.py generator/protoc-gen-nanopb
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
