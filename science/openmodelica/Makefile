@@ -21,8 +21,7 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		gmake:devel/gmake \
 		libtool>0:devel/libtool \
 		${LOCALBASE}/include/readline/readline.h:devel/readline
-LIB_DEPENDS=	\
-		libboost_filesystem.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libosg.so:graphics/osg \
 		libuuid.so:misc/e2fsprogs-libuuid
@@ -58,8 +57,8 @@ GH_TUPLE=	\
 			OpenModelica:OMTLMSimulator:07d5353:OMSimulator_OMTLMSimulator/OMSimulator/OMTLMSimulator \
 		OpenModelica:OMCompiler-3rdParty:a60ba6c:OMCompiler_3rdParty/OMCompiler/3rdParty \
 		OpenModelica:OMSens:66b920b:OMSens/OMSens \
-		OpenModelica:OMSens_Qt:ef85128:OMSens_Qt/OMSens_Qt \
-			OpenModelica:OpenModelica-common:08a0180:OMSens_Qt_common/OMSens_Qt/common
+		OpenModelica:OMSens_Qt:ef85128:OMSens_Qt/OMSens_Qt
+			#OpenModelica:OpenModelica-common:08a0180:OMSens_Qt_common/OMSens_Qt/common
 
 # this should change make program everywhere, but it doesn't,
 # hence the patches in OMCompiler/Compiler/runtime/CMakeLists.txt, OMEdit/OMEditLIB/Simulation/SimulationOutputWidget.cpp
@@ -80,6 +79,8 @@ post-extract:
 	# create symlink for sources.tar.gz
 	@${MKDIR} ${WRKSRC}/OMCompiler/Compiler/boot/bomc
 	@${LN} -s ${DISTDIR}/${DIST_SUBDIR}/sources.tar.gz ${WRKSRC}/OMCompiler/Compiler/boot/bomc/sources.tar.gz
+	# workaround for broken fetch
+	@${RLN} ${WRKSRC}/OMOptim/common ${WRKSRC}/OMSens_Qt/common
 
 post-patch:
 	# fix bash shebangs
