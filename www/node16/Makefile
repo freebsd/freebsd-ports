@@ -1,6 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.18.1
+DISTVERSION=	16.19.0
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	16
@@ -110,6 +110,7 @@ post-configure:
 		| ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
 
 post-install:
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/systemtap
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
 post-install-DTRACE-on:
