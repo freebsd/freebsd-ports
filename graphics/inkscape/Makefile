@@ -1,11 +1,7 @@
 PORTNAME=	inkscape
-DISTVERSION=	1.2.1
-PORTREVISION=	11
+DISTVERSION=	1.2.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
-
-PATCH_SITES=	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/inkscape/trunk/
-PATCHFILES=	inkscape-1.2.1-poppler-22.09.0.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -58,7 +54,7 @@ USE_LDCONFIG=	yes
 
 CXXSTD=		gnu++17
 
-DATETAG=	2022-07-14_9c6d41e410
+DATETAG=	2022-12-01_b0a8486541
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
