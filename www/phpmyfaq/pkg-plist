@@ -607,6 +607,8 @@
 %%WWWDIR%%/src/libs/egulias/email-validator/src/Result/SpoofEmail.php
 %%WWWDIR%%/src/libs/egulias/email-validator/src/Result/ValidEmail.php
 %%WWWDIR%%/src/libs/egulias/email-validator/src/Validation/DNSCheckValidation.php
+%%WWWDIR%%/src/libs/egulias/email-validator/src/Validation/DNSGetRecordWrapper.php
+%%WWWDIR%%/src/libs/egulias/email-validator/src/Validation/DNSRecords.php
 %%WWWDIR%%/src/libs/egulias/email-validator/src/Validation/EmailValidation.php
 %%WWWDIR%%/src/libs/egulias/email-validator/src/Validation/Exception/EmptyValidationList.php
 %%WWWDIR%%/src/libs/egulias/email-validator/src/Validation/Extra/SpoofCheckValidation.php
@@ -1425,8 +1427,8 @@
 %%WWWDIR%%/src/libs/erusev/parsedown/Parsedown.php
 %%WWWDIR%%/src/libs/erusev/parsedown/README.md
 %%WWWDIR%%/src/libs/erusev/parsedown/composer.json
+%%WWWDIR%%/src/libs/ezimuel/guzzlestreams/.github/workflows/test.yml
 %%WWWDIR%%/src/libs/ezimuel/guzzlestreams/.gitignore
-%%WWWDIR%%/src/libs/ezimuel/guzzlestreams/.travis.yml
 %%WWWDIR%%/src/libs/ezimuel/guzzlestreams/CHANGELOG.rst
 %%WWWDIR%%/src/libs/ezimuel/guzzlestreams/LICENSE
 %%WWWDIR%%/src/libs/ezimuel/guzzlestreams/Makefile
@@ -1503,6 +1505,7 @@
 %%WWWDIR%%/src/libs/monolog/monolog/README.md
 %%WWWDIR%%/src/libs/monolog/monolog/UPGRADE.md
 %%WWWDIR%%/src/libs/monolog/monolog/composer.json
+%%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/DateTimeImmutable.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/ErrorHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
@@ -1512,6 +1515,7 @@
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/FluentdFormatter.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/FormatterInterface.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php
+%%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/GoogleCloudLoggingFormatter.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/LineFormatter.php
@@ -1587,6 +1591,7 @@
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/SqsHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/StreamHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php
+%%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/SymfonyMailerHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/SyslogHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/SyslogUdp/UdpSocket.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/SyslogUdpHandler.php
@@ -1595,6 +1600,7 @@
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/WebRequestRecognizerTrait.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/WhatFailureGroupHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Handler/ZendMonitorHandler.php
+%%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/LogRecord.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Logger.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Processor/GitProcessor.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Processor/HostnameProcessor.php
@@ -1615,6 +1621,7 @@
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Test/TestCase.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Utils.php
 %%WWWDIR%%/src/libs/myclabs/deep-copy/.github/FUNDING.yml
+%%WWWDIR%%/src/libs/myclabs/deep-copy/.github/workflows/ci.yaml
 %%WWWDIR%%/src/libs/myclabs/deep-copy/LICENSE
 %%WWWDIR%%/src/libs/myclabs/deep-copy/README.md
 %%WWWDIR%%/src/libs/myclabs/deep-copy/composer.json
@@ -1643,7 +1650,6 @@
 %%WWWDIR%%/src/libs/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php
 %%WWWDIR%%/src/libs/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php
 %%WWWDIR%%/src/libs/myclabs/deep-copy/src/DeepCopy/deep_copy.php
-%%WWWDIR%%/src/libs/paragonie/constant_time_encoding/.gitattributes
 %%WWWDIR%%/src/libs/paragonie/constant_time_encoding/LICENSE.txt
 %%WWWDIR%%/src/libs/paragonie/constant_time_encoding/README.md
 %%WWWDIR%%/src/libs/paragonie/constant_time_encoding/composer.json
@@ -1667,12 +1673,10 @@
 %%WWWDIR%%/src/libs/paragonie/random_compat/other/build_phar.php
 %%WWWDIR%%/src/libs/paragonie/random_compat/psalm-autoload.php
 %%WWWDIR%%/src/libs/paragonie/random_compat/psalm.xml
-%%WWWDIR%%/src/libs/phpseclib/phpseclib/.github/FUNDING.yml
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/AUTHORS
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/BACKERS.md
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/LICENSE
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/README.md
-%%WWWDIR%%/src/libs/phpseclib/phpseclib/appveyor.yml
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/composer.json
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Common/Functions/Strings.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/AES.php
@@ -1680,6 +1684,7 @@
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/ChaCha20.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/Common/AsymmetricKey.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/Common/BlockCipher.php
+%%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/Common/Formats/Keys/JWK.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/Common/Formats/Keys/OpenSSH.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/Common/Formats/Keys/PKCS.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/Common/Formats/Keys/PKCS1.php
@@ -1790,6 +1795,7 @@
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/sect571k1.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/sect571r1.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/Common.php
+%%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/JWK.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/MontgomeryPrivate.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/MontgomeryPublic.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/OpenSSH.php
@@ -1809,6 +1815,7 @@
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RC2.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RC4.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RSA.php
+%%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RSA/Formats/Keys/JWK.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RSA/Formats/Keys/MSBLOB.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RSA/Formats/Keys/OpenSSH.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/RSA/Formats/Keys/PKCS1.php
@@ -2005,7 +2012,6 @@
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/System/SSH/Common/Traits/ReadBytes.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/bootstrap.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/openssl.cnf
-%%WWWDIR%%/src/libs/phpseclib/phpseclib/psalm.xml
 %%WWWDIR%%/src/libs/psr/log/LICENSE
 %%WWWDIR%%/src/libs/psr/log/Psr/Log/AbstractLogger.php
 %%WWWDIR%%/src/libs/psr/log/Psr/Log/InvalidArgumentException.php
@@ -2422,6 +2428,7 @@
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/example_064.php
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/example_065.php
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/example_066.php
+%%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/example_067.php
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/images/_blank.png
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/images/alpha.png
 %%WWWDIR%%/src/libs/tecnickcom/tcpdf/examples/images/image_demo.jpg
