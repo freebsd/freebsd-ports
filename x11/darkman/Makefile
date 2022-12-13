@@ -1,7 +1,7 @@
 PORTNAME=	darkman
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for dark-mode and light-mode transitions
