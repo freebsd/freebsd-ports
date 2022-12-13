@@ -25,9 +25,4 @@ GROUPS=		_bgpd
 
 CONFLICTS=	zebra quagga
 
-OPTIONS_DEFINE=		IPV6LLPEER
-OPTIONS_DEFAULT=	IPV6LLPEER
-IPV6LLPEER_DESC=	Support nexthop using IPv6 link-local address
-IPV6LLPEER_MAKE_ARGS=	-DIPV6_LINKLOCAL_PEER
-
 .include <bsd.port.mk>
