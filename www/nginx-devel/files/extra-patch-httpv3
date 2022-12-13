@@ -1,7 +1,7 @@
 diff -r aa901551a7eb README
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/README	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,250 @@
++++ b/README	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,251 @@
 +Experimental QUIC support for nginx
 +-----------------------------------
 +
@@ -19,8 +19,8 @@ diff -r aa901551a7eb README
 +
 +    The code is developed in a separate "quic" branch available
 +    at https://hg.nginx.org/nginx-quic.  Currently it is based
-+    on nginx mainline 1.23.x.  We merge new nginx releases into
-+    this branch regularly.
++    on nginx mainline 1.23.x.  NGINX Development team merges new
++    nginx releases into this branch regularly.
 +
 +    The project code base is under the same BSD license as nginx.
 +
@@ -131,7 +131,7 @@ diff -r aa901551a7eb README
 +        quic_host_key <filename>;
 +
 +
-+    By default, GSO Linux-specific optimization [10] is disabled.
++    By default, GSO Linux-specific optimization [11] is disabled.
 +    Enable it in case a corresponding network interface is configured to
 +    support GSO.
 +
@@ -217,12 +217,12 @@ diff -r aa901551a7eb README
 +    + Ensure a client is actually sending requests over QUIC
 +      (see "Clients" section about browsers and cache)
 +
-+      We recommend to start with simple console client like ngtcp2
++      Please start with a simple console client such as ngtcp2 [9]
 +      to ensure the server is configured properly before trying
 +      with real browsers that may be very picky with certificates,
 +      for example.
 +
-+    + Build nginx with debug support [9] and check the debug log.
++    + Build nginx with debug support [10] and check the debug log.
 +      It should contain all details about connection and why it
 +      failed. All related messages contain "quic " prefix and can
 +      be easily filtered out.
@@ -250,11 +250,12 @@ diff -r aa901551a7eb README
 +    [6] https://github.com/quictls/openssl
 +    [7] https://github.com/libressl-portable/portable/releases/tag/v3.6.0
 +    [8] https://nginx.org/en/docs/http/ngx_http_core_module.html#listen
-+    [9] https://nginx.org/en/docs/debugging_log.html
-+    [10] http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf
++    [9] https://github.com/ngtcp2/ngtcp2
++    [10] https://nginx.org/en/docs/debugging_log.html
++    [11] http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf
 diff -r aa901551a7eb auto/lib/openssl/conf
 --- a/auto/lib/openssl/conf	Wed Oct 19 10:56:20 2022 +0300
-+++ b/auto/lib/openssl/conf	Thu Oct 20 13:21:28 2022 -0400
++++ b/auto/lib/openssl/conf	Tue Dec 13 12:15:22 2022 -0500
 @@ -5,12 +5,16 @@
  
  if [ $OPENSSL != NONE ]; then
@@ -316,7 +317,7 @@ diff -r aa901551a7eb auto/lib/openssl/conf
  fi
 diff -r aa901551a7eb auto/make
 --- a/auto/make	Wed Oct 19 10:56:20 2022 +0300
-+++ b/auto/make	Thu Oct 20 13:21:28 2022 -0400
++++ b/auto/make	Tue Dec 13 12:15:22 2022 -0500
 @@ -6,9 +6,10 @@
  echo "creating $NGX_MAKEFILE"
  
@@ -332,7 +333,7 @@ diff -r aa901551a7eb auto/make
           $NGX_OBJS/src/misc
 diff -r aa901551a7eb auto/modules
 --- a/auto/modules	Wed Oct 19 10:56:20 2022 +0300
-+++ b/auto/modules	Thu Oct 20 13:21:28 2022 -0400
++++ b/auto/modules	Tue Dec 13 12:15:22 2022 -0500
 @@ -102,7 +102,7 @@ if [ $HTTP = YES ]; then
      fi
  
@@ -495,7 +496,7 @@ diff -r aa901551a7eb auto/modules
      ngx_module_name=ngx_regex_module
 diff -r aa901551a7eb auto/options
 --- a/auto/options	Wed Oct 19 10:56:20 2022 +0300
-+++ b/auto/options	Thu Oct 20 13:21:28 2022 -0400
++++ b/auto/options	Tue Dec 13 12:15:22 2022 -0500
 @@ -45,6 +45,8 @@ USE_THREADS=NO
  
  NGX_FILE_AIO=NO
@@ -585,7 +586,7 @@ diff -r aa901551a7eb auto/options
    --with-stream_geoip_module=dynamic enable dynamic ngx_stream_geoip_module
 diff -r aa901551a7eb auto/os/linux
 --- a/auto/os/linux	Wed Oct 19 10:56:20 2022 +0300
-+++ b/auto/os/linux	Thu Oct 20 13:21:28 2022 -0400
++++ b/auto/os/linux	Tue Dec 13 12:15:22 2022 -0500
 @@ -232,6 +232,50 @@ ngx_feature_test="struct crypt_data  cd;
  ngx_include="sys/vfs.h";     . auto/include
  
@@ -639,7 +640,7 @@ diff -r aa901551a7eb auto/os/linux
  ngx_feature="UDP_SEGMENT"
 diff -r aa901551a7eb auto/sources
 --- a/auto/sources	Wed Oct 19 10:56:20 2022 +0300
-+++ b/auto/sources	Thu Oct 20 13:21:28 2022 -0400
++++ b/auto/sources	Tue Dec 13 12:15:22 2022 -0500
 @@ -83,7 +83,7 @@ CORE_SRCS="src/core/nginx.c \
  
  EVENT_MODULES="ngx_events_module ngx_event_core_module"
@@ -651,7 +652,7 @@ diff -r aa901551a7eb auto/sources
              src/event/ngx_event_timer.h \
 diff -r aa901551a7eb src/core/nginx.c
 --- a/src/core/nginx.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/core/nginx.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/core/nginx.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -680,6 +680,9 @@ ngx_exec_new_binary(ngx_cycle_t *cycle, 
  
      ls = cycle->listening.elts;
@@ -664,7 +665,7 @@ diff -r aa901551a7eb src/core/nginx.c
  
 diff -r aa901551a7eb src/core/ngx_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/core/ngx_bpf.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,143 @@
 +
 +/*
@@ -811,7 +812,7 @@ diff -r aa901551a7eb src/core/ngx_bpf.c
 +}
 diff -r aa901551a7eb src/core/ngx_bpf.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/core/ngx_bpf.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -858,7 +859,7 @@ diff -r aa901551a7eb src/core/ngx_bpf.h
 +#endif /* _NGX_BPF_H_INCLUDED_ */
 diff -r aa901551a7eb src/core/ngx_connection.c
 --- a/src/core/ngx_connection.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/core/ngx_connection.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/core/ngx_connection.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -72,10 +72,6 @@ ngx_create_listening(ngx_conf_t *cf, str
  
      ngx_memcpy(ls->addr_text.data, text, len);
@@ -885,7 +886,7 @@ diff -r aa901551a7eb src/core/ngx_connection.c
          if (c) {
 diff -r aa901551a7eb src/core/ngx_connection.h
 --- a/src/core/ngx_connection.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/core/ngx_connection.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/core/ngx_connection.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -73,6 +73,7 @@ struct ngx_listening_s {
      unsigned            reuseport:1;
      unsigned            add_reuseport:1;
@@ -907,7 +908,7 @@ diff -r aa901551a7eb src/core/ngx_connection.h
  #endif
 diff -r aa901551a7eb src/core/ngx_core.h
 --- a/src/core/ngx_core.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/core/ngx_core.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/core/ngx_core.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -27,6 +27,7 @@ typedef struct ngx_connection_s      ngx
  typedef struct ngx_thread_task_s     ngx_thread_task_t;
  typedef struct ngx_ssl_s             ngx_ssl_t;
@@ -938,7 +939,7 @@ diff -r aa901551a7eb src/core/ngx_core.h
  #define LF     (u_char) '\n'
 diff -r aa901551a7eb src/event/ngx_event.c
 --- a/src/event/ngx_event.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/event/ngx_event.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/ngx_event.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -267,6 +267,18 @@ ngx_process_events_and_timers(ngx_cycle_
  ngx_int_t
  ngx_handle_read_event(ngx_event_t *rev, ngx_uint_t flags)
@@ -997,7 +998,7 @@ diff -r aa901551a7eb src/event/ngx_event.c
  
 diff -r aa901551a7eb src/event/ngx_event_openssl.c
 --- a/src/event/ngx_event_openssl.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/event/ngx_event_openssl.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/ngx_event_openssl.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -3197,6 +3197,13 @@ ngx_ssl_shutdown(ngx_connection_t *c)
      ngx_err_t   err;
      ngx_uint_t  tries;
@@ -1014,7 +1015,7 @@ diff -r aa901551a7eb src/event/ngx_event_openssl.c
      ngx_ssl_ocsp_cleanup(c);
 diff -r aa901551a7eb src/event/ngx_event_openssl.h
 --- a/src/event/ngx_event_openssl.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/event/ngx_event_openssl.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/ngx_event_openssl.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -24,6 +24,14 @@
  #include <openssl/engine.h>
  #endif
@@ -1032,7 +1033,7 @@ diff -r aa901551a7eb src/event/ngx_event_openssl.h
  #include <openssl/ocsp.h>
 diff -r aa901551a7eb src/event/ngx_event_udp.c
 --- a/src/event/ngx_event_udp.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/event/ngx_event_udp.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/ngx_event_udp.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -12,13 +12,6 @@
  
  #if !(NGX_WIN32)
@@ -1049,7 +1050,7 @@ diff -r aa901551a7eb src/event/ngx_event_udp.c
      size_t size);
 diff -r aa901551a7eb src/event/ngx_event_udp.h
 --- a/src/event/ngx_event_udp.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/event/ngx_event_udp.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/ngx_event_udp.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -23,6 +23,13 @@
  #endif
  
@@ -1066,7 +1067,7 @@ diff -r aa901551a7eb src/event/ngx_event_udp.h
  typedef union {
 diff -r aa901551a7eb src/event/quic/bpf/bpfgen.sh
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/bpfgen.sh	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/bpf/bpfgen.sh	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,113 @@
 +#!/bin/bash
 +
@@ -1183,7 +1184,7 @@ diff -r aa901551a7eb src/event/quic/bpf/bpfgen.sh
 +
 diff -r aa901551a7eb src/event/quic/bpf/makefile
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/makefile	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/bpf/makefile	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,30 @@
 +CFLAGS=-O2 -Wall
 +
@@ -1217,7 +1218,7 @@ diff -r aa901551a7eb src/event/quic/bpf/makefile
 +.DELETE_ON_ERROR:
 diff -r aa901551a7eb src/event/quic/bpf/ngx_quic_reuseport_helper.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,140 @@
 +#include <errno.h>
 +#include <linux/string.h>
@@ -1361,8 +1362,8 @@ diff -r aa901551a7eb src/event/quic/bpf/ngx_quic_reuseport_helper.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,1459 @@
++++ b/src/event/quic/ngx_event_quic.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,1444 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -1380,8 +1381,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +static ngx_int_t ngx_quic_handle_stateless_reset(ngx_connection_t *c,
 +    ngx_quic_header_t *pkt);
 +static void ngx_quic_input_handler(ngx_event_t *rev);
-+
-+static void ngx_quic_close_timer_handler(ngx_event_t *ev);
++static void ngx_quic_close_handler(ngx_event_t *ev);
 +
 +static ngx_int_t ngx_quic_handle_datagram(ngx_connection_t *c, ngx_buf_t *b,
 +    ngx_quic_conf_t *conf);
@@ -1438,7 +1438,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +
 +    if (qc) {
 +
-+        if (qc->error) {
++        if (qc->error != (ngx_uint_t) -1) {
 +            p = ngx_slprintf(p, last, "%s", qc->error_app ? " app" : "");
 +            p = ngx_slprintf(p, last, " error:%ui", qc->error);
 +
@@ -1641,17 +1641,18 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +    qc->pto.log = c->log;
 +    qc->pto.data = c;
 +    qc->pto.handler = ngx_quic_pto_handler;
-+    qc->pto.cancelable = 1;
 +
 +    qc->push.log = c->log;
 +    qc->push.data = c;
 +    qc->push.handler = ngx_quic_push_handler;
-+    qc->push.cancelable = 1;
++
++    qc->close.log = c->log;
++    qc->close.data = c;
++    qc->close.handler = ngx_quic_close_handler;
 +
 +    qc->path_validation.log = c->log;
 +    qc->path_validation.data = c;
 +    qc->path_validation.handler = ngx_quic_path_validation_handler;
-+    qc->path_validation.cancelable = 1;
 +
 +    qc->conf = conf;
 +
@@ -1701,6 +1702,9 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +    if (ngx_quic_open_sockets(c, qc, pkt) != NGX_OK) {
 +        return NULL;
 +    }
++
++    c->idle = 1;
++    ngx_reusable_connection(c, 1);
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, c->log, 0,
 +                   "quic connection created");
@@ -1779,23 +1783,26 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +    }
 +
 +    if (c->close) {
-+        qc->error_reason = "graceful shutdown";
-+        ngx_quic_close_connection(c, NGX_OK);
-+        return;
-+    }
++        c->close = 0;
 +
-+    if (!rev->ready) {
-+        if (qc->closing) {
-+            ngx_quic_close_connection(c, NGX_OK);
++        if (!ngx_exiting) {
++            qc->error = NGX_QUIC_ERR_NO_ERROR;
++            qc->error_reason = "graceful shutdown";
++            ngx_quic_close_connection(c, NGX_ERROR);
++            return;
++        }
 +
-+        } else if (qc->shutdown) {
-+            ngx_quic_shutdown_quic(c);
++        if (!qc->closing && qc->conf->shutdown) {
++            qc->conf->shutdown(c);
 +        }
 +
 +        return;
 +    }
 +
 +    b = c->udp->buffer;
++    if (b == NULL) {
++        return;
++    }
 +
 +    rc = ngx_quic_handle_datagram(c, b, NULL);
 +
@@ -1871,31 +1878,21 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +            qc->error_level = c->ssl ? SSL_quic_read_level(c->ssl->connection)
 +                                     : ssl_encryption_initial;
 +
++            if (qc->error == (ngx_uint_t) -1) {
++                qc->error = NGX_QUIC_ERR_INTERNAL_ERROR;
++                qc->error_app = 0;
++            }
++
++            ngx_log_debug5(NGX_LOG_DEBUG_EVENT, c->log, 0,
++                           "quic close immediate term:%d drain:%d "
++                           "%serror:%ui \"%s\"",
++                           rc == NGX_ERROR ? 1 : 0, qc->draining,
++                           qc->error_app ? "app " : "", qc->error,
++                           qc->error_reason ? qc->error_reason : "");
++
 +            if (rc == NGX_OK) {
-+                ngx_log_debug1(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                               "quic close immediate drain:%d",
-+                               qc->draining);
-+
-+                qc->close.log = c->log;
-+                qc->close.data = c;
-+                qc->close.handler = ngx_quic_close_timer_handler;
-+                qc->close.cancelable = 1;
-+
 +                ctx = ngx_quic_get_send_ctx(qc, qc->error_level);
-+
 +                ngx_add_timer(&qc->close, 3 * ngx_quic_pto(c, ctx));
-+
-+                qc->error = NGX_QUIC_ERR_NO_ERROR;
-+
-+            } else {
-+                if (qc->error == 0 && !qc->error_app) {
-+                    qc->error = NGX_QUIC_ERR_INTERNAL_ERROR;
-+                }
-+
-+                ngx_log_debug3(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                               "quic close immediate due to %serror: %ui %s",
-+                               qc->error_app ? "app " : "", qc->error,
-+                               qc->error_reason ? qc->error_reason : "");
 +            }
 +
 +            (void) ngx_quic_send_cc(c);
@@ -1939,6 +1936,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +        return;
 +    }
 +
++    if (qc->close.posted) {
++        ngx_delete_posted_event(&qc->close);
++    }
++
 +    ngx_quic_close_sockets(c);
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, c->log, 0, "quic close completed");
@@ -1977,12 +1978,17 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
++
++    if (qc->closing) {
++        return;
++    }
++
 +    qc->error = err;
 +    qc->error_reason = reason;
 +    qc->error_app = 1;
 +    qc->error_ftype = 0;
 +
-+    ngx_quic_close_connection(c, NGX_ERROR);
++    ngx_post_event(&qc->close, &ngx_posted_events);
 +}
 +
 +
@@ -2002,14 +2008,15 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +
 +
 +static void
-+ngx_quic_close_timer_handler(ngx_event_t *ev)
++ngx_quic_close_handler(ngx_event_t *ev)
 +{
 +    ngx_connection_t  *c;
 +
-+    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, ev->log, 0, "quic close timer");
++    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, ev->log, 0, "quic close handler");
 +
 +    c = ev->data;
-+    ngx_quic_close_connection(c, NGX_DONE);
++
++    ngx_quic_close_connection(c, NGX_OK);
 +}
 +
 +
@@ -2304,7 +2311,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +
 +    qc = ngx_quic_get_connection(c);
 +
-+    qc->error = 0;
++    qc->error = (ngx_uint_t) -1;
 +    qc->error_reason = 0;
 +
 +    c->log->action = "decrypting packet";
@@ -2794,38 +2801,17 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.c
 +void
 +ngx_quic_shutdown_quic(ngx_connection_t *c)
 +{
-+    ngx_rbtree_t           *tree;
-+    ngx_rbtree_node_t      *node;
-+    ngx_quic_stream_t      *qs;
 +    ngx_quic_connection_t  *qc;
 +
-+    qc = ngx_quic_get_connection(c);
-+
-+    if (qc->closing) {
-+        return;
++    if (c->reusable) {
++        qc = ngx_quic_get_connection(c);
++        ngx_quic_finalize_connection(c, qc->shutdown_code, qc->shutdown_reason);
 +    }
-+
-+    tree = &qc->streams.tree;
-+
-+    if (tree->root != tree->sentinel) {
-+        for (node = ngx_rbtree_min(tree->root, tree->sentinel);
-+             node;
-+             node = ngx_rbtree_next(tree, node))
-+        {
-+            qs = (ngx_quic_stream_t *) node;
-+
-+            if (!qs->cancelable) {
-+                return;
-+            }
-+        }
-+    }
-+
-+    ngx_quic_finalize_connection(c, qc->shutdown_code, qc->shutdown_reason);
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.h	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,123 @@
++++ b/src/event/quic/ngx_event_quic.h	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,133 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -2854,6 +2840,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 +
 +#define NGX_QUIC_STREAM_SERVER_INITIATED     0x01
 +#define NGX_QUIC_STREAM_UNIDIRECTIONAL       0x02
++
++
++typedef ngx_int_t (*ngx_quic_init_pt)(ngx_connection_t *c);
++typedef void (*ngx_quic_shutdown_pt)(ngx_connection_t *c);
 +
 +
 +typedef enum {
@@ -2902,6 +2892,9 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 +    ngx_int_t                      stream_reject_code_uni;
 +    ngx_int_t                      stream_reject_code_bidi;
 +
++    ngx_quic_init_pt               init;
++    ngx_quic_shutdown_pt           shutdown;
++
 +    u_char                         av_token_key[NGX_QUIC_AV_KEY_LEN];
 +    u_char                         sr_token_key[NGX_QUIC_SR_KEY_LEN];
 +} ngx_quic_conf_t;
@@ -2913,6 +2906,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 +    ngx_connection_t              *parent;
 +    ngx_connection_t              *connection;
 +    uint64_t                       id;
++    uint64_t                       sent;
 +    uint64_t                       acked;
 +    uint64_t                       send_max_data;
 +    uint64_t                       send_offset;
@@ -2926,7 +2920,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 +    ngx_quic_buffer_t              recv;
 +    ngx_quic_stream_send_state_e   send_state;
 +    ngx_quic_stream_recv_state_e   recv_state;
-+    ngx_uint_t                     cancelable;  /* unsigned  cancelable:1; */
++    unsigned                       cancelable:1;
++    unsigned                       fin_acked:1;
 +};
 +
 +
@@ -2941,6 +2936,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 +    const char *reason);
 +ngx_int_t ngx_quic_reset_stream(ngx_connection_t *c, ngx_uint_t err);
 +ngx_int_t ngx_quic_shutdown_stream(ngx_connection_t *c, int how);
++void ngx_quic_cancelable_stream(ngx_connection_t *c);
 +ngx_int_t ngx_quic_handle_read_event(ngx_event_t *rev, ngx_uint_t flags);
 +ngx_int_t ngx_quic_handle_write_event(ngx_event_t *wev, size_t lowat);
 +ngx_int_t ngx_quic_get_packet_dcid(ngx_log_t *log, u_char *data, size_t len,
@@ -2951,8 +2947,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic.h
 +#endif /* _NGX_EVENT_QUIC_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_ack.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,1193 @@
++++ b/src/event/quic/ngx_event_quic_ack.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,1194 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -3150,7 +3146,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ack.c
 +    } else {
 +        qc->min_rtt = ngx_min(qc->min_rtt, latest_rtt);
 +
-+        ack_delay = ack->delay * (1 << qc->ctp.ack_delay_exponent) / 1000;
++        ack_delay = (ack->delay << qc->ctp.ack_delay_exponent) / 1000;
 +
 +        if (c->ssl->handshaked) {
 +            ack_delay = ngx_min(ack_delay, qc->ctp.max_ack_delay);
@@ -3208,6 +3204,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ack.c
 +                break;
 +
 +            case NGX_QUIC_FT_STREAM:
++            case NGX_QUIC_FT_RESET_STREAM:
 +                ngx_quic_handle_stream_ack(c, f);
 +                break;
 +            }
@@ -4148,7 +4145,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ack.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_ack.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ack.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,30 @@
 +
 +/*
@@ -4182,7 +4179,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ack.h
 +#endif /* _NGX_EVENT_QUIC_ACK_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_bpf.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,657 @@
 +
 +/*
@@ -4843,7 +4840,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_bpf.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_bpf_code.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf_code.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_bpf_code.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,88 @@
 +/* AUTO-GENERATED, DO NOT EDIT. */
 +
@@ -4935,7 +4932,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_bpf_code.c
 +};
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_connection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connection.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connection.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,276 @@
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -5215,7 +5212,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_connection.h
 +#endif /* _NGX_EVENT_QUIC_CONNECTION_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_connid.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connid.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,502 @@
 +
 +/*
@@ -5721,7 +5718,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_connid.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_connid.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connid.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,29 @@
 +
 +/*
@@ -5754,7 +5751,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_connid.h
 +#endif /* _NGX_EVENT_QUIC_CONNID_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_frames.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_frames.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,844 @@
 +
 +/*
@@ -6602,7 +6599,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_frames.c
 +#endif
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_frames.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_frames.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -6649,7 +6646,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_frames.h
 +#endif /* _NGX_EVENT_QUIC_FRAMES_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_migration.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_migration.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,671 @@
 +
 +/*
@@ -7324,7 +7321,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_migration.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_migration.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_migration.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,42 @@
 +
 +/*
@@ -7370,7 +7367,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_migration.h
 +#endif /* _NGX_EVENT_QUIC_MIGRATION_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_output.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_output.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,1292 @@
 +
 +/*
@@ -8666,7 +8663,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_output.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_output.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_output.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,40 @@
 +
 +/*
@@ -8710,7 +8707,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_output.h
 +#endif /* _NGX_EVENT_QUIC_OUTPUT_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_protection.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,1126 @@
 +
 +/*
@@ -8762,12 +8759,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +    const u_char             *label;
 +} ngx_quic_hkdf_t;
 +
-+#define ngx_quic_hkdf_set(label, out, prk)                                    \
-+    {                                                                         \
-+        (out)->len, (out)->data,                                              \
-+        (prk)->len, (prk)->data,                                              \
-+        (sizeof(label) - 1), (u_char *)(label),                               \
-+    }
++#define ngx_quic_hkdf_set(seq, _label, _out, _prk)                            \
++    (seq)->out_len = (_out)->len; (seq)->out = (_out)->data;                  \
++    (seq)->prk_len = (_prk)->len, (seq)->prk = (_prk)->data,                  \
++    (seq)->label_len = (sizeof(_label) - 1); (seq)->label = (u_char *)(_label);
 +
 +
 +static ngx_int_t ngx_hkdf_expand(u_char *out_key, size_t out_len,
@@ -8863,8 +8858,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +{
 +    size_t              is_len;
 +    uint8_t             is[SHA256_DIGEST_LENGTH];
++    ngx_str_t           iss;
 +    ngx_uint_t          i;
 +    const EVP_MD       *digest;
++    ngx_quic_hkdf_t     seq[8];
 +    ngx_quic_secret_t  *client, *server;
 +
 +    static const uint8_t salt[20] =
@@ -8891,10 +8888,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +        return NGX_ERROR;
 +    }
 +
-+    ngx_str_t iss = {
-+        .data = is,
-+        .len = is_len
-+    };
++    iss.len = is_len;
++    iss.data = is;
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, log, 0,
 +                   "quic ngx_quic_set_initial_secret");
@@ -8917,17 +8912,15 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +    client->iv.len = NGX_QUIC_IV_LEN;
 +    server->iv.len = NGX_QUIC_IV_LEN;
 +
-+    ngx_quic_hkdf_t seq[] = {
-+        /* labels per RFC 9001, 5.1. Packet Protection Keys */
-+        ngx_quic_hkdf_set("tls13 client in", &client->secret, &iss),
-+        ngx_quic_hkdf_set("tls13 quic key",  &client->key,    &client->secret),
-+        ngx_quic_hkdf_set("tls13 quic iv",   &client->iv,     &client->secret),
-+        ngx_quic_hkdf_set("tls13 quic hp",   &client->hp,     &client->secret),
-+        ngx_quic_hkdf_set("tls13 server in", &server->secret, &iss),
-+        ngx_quic_hkdf_set("tls13 quic key",  &server->key,    &server->secret),
-+        ngx_quic_hkdf_set("tls13 quic iv",   &server->iv,     &server->secret),
-+        ngx_quic_hkdf_set("tls13 quic hp",   &server->hp,     &server->secret),
-+    };
++    /* labels per RFC 9001, 5.1. Packet Protection Keys */
++    ngx_quic_hkdf_set(&seq[0], "tls13 client in", &client->secret, &iss);
++    ngx_quic_hkdf_set(&seq[1], "tls13 quic key", &client->key, &client->secret);
++    ngx_quic_hkdf_set(&seq[2], "tls13 quic iv", &client->iv, &client->secret);
++    ngx_quic_hkdf_set(&seq[3], "tls13 quic hp", &client->hp, &client->secret);
++    ngx_quic_hkdf_set(&seq[4], "tls13 server in", &server->secret, &iss);
++    ngx_quic_hkdf_set(&seq[5], "tls13 quic key", &server->key, &server->secret);
++    ngx_quic_hkdf_set(&seq[6], "tls13 quic iv", &server->iv, &server->secret);
++    ngx_quic_hkdf_set(&seq[7], "tls13 quic hp", &server->hp, &server->secret);
 +
 +    for (i = 0; i < (sizeof(seq) / sizeof(seq[0])); i++) {
 +        if (ngx_quic_hkdf_expand(&seq[i], digest, log) != NGX_OK) {
@@ -9353,6 +9346,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +    ngx_int_t            key_len;
 +    ngx_str_t            secret_str;
 +    ngx_uint_t           i;
++    ngx_quic_hkdf_t      seq[3];
 +    ngx_quic_secret_t   *peer_secret;
 +    ngx_quic_ciphers_t   ciphers;
 +
@@ -9384,11 +9378,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +    secret_str.len = secret_len;
 +    secret_str.data = (u_char *) secret;
 +
-+    ngx_quic_hkdf_t seq[] = {
-+        ngx_quic_hkdf_set("tls13 quic key", &peer_secret->key, &secret_str),
-+        ngx_quic_hkdf_set("tls13 quic iv", &peer_secret->iv, &secret_str),
-+        ngx_quic_hkdf_set("tls13 quic hp", &peer_secret->hp, &secret_str),
-+    };
++    ngx_quic_hkdf_set(&seq[0], "tls13 quic key",
++                      &peer_secret->key, &secret_str);
++    ngx_quic_hkdf_set(&seq[1], "tls13 quic iv", &peer_secret->iv, &secret_str);
++    ngx_quic_hkdf_set(&seq[2], "tls13 quic hp", &peer_secret->hp, &secret_str);
 +
 +    for (i = 0; i < (sizeof(seq) / sizeof(seq[0])); i++) {
 +        if (ngx_quic_hkdf_expand(&seq[i], ciphers.d, log) != NGX_OK) {
@@ -9434,6 +9427,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +ngx_quic_keys_update(ngx_connection_t *c, ngx_quic_keys_t *keys)
 +{
 +    ngx_uint_t           i;
++    ngx_quic_hkdf_t      seq[6];
 +    ngx_quic_ciphers_t   ciphers;
 +    ngx_quic_secrets_t  *current, *next;
 +
@@ -9458,20 +9452,18 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +    next->server.iv.len = NGX_QUIC_IV_LEN;
 +    next->server.hp = current->server.hp;
 +
-+    ngx_quic_hkdf_t seq[] = {
-+        ngx_quic_hkdf_set("tls13 quic ku",
-+                          &next->client.secret, &current->client.secret),
-+        ngx_quic_hkdf_set("tls13 quic key",
-+                          &next->client.key, &next->client.secret),
-+        ngx_quic_hkdf_set("tls13 quic iv",
-+                          &next->client.iv, &next->client.secret),
-+        ngx_quic_hkdf_set("tls13 quic ku",
-+                          &next->server.secret, &current->server.secret),
-+        ngx_quic_hkdf_set("tls13 quic key",
-+                          &next->server.key, &next->server.secret),
-+        ngx_quic_hkdf_set("tls13 quic iv",
-+                          &next->server.iv, &next->server.secret),
-+    };
++    ngx_quic_hkdf_set(&seq[0], "tls13 quic ku",
++                      &next->client.secret, &current->client.secret);
++    ngx_quic_hkdf_set(&seq[1], "tls13 quic key",
++                      &next->client.key, &next->client.secret);
++    ngx_quic_hkdf_set(&seq[2], "tls13 quic iv",
++                      &next->client.iv, &next->client.secret);
++    ngx_quic_hkdf_set(&seq[3], "tls13 quic ku",
++                      &next->server.secret, &current->server.secret);
++    ngx_quic_hkdf_set(&seq[4], "tls13 quic key",
++                      &next->server.key, &next->server.secret);
++    ngx_quic_hkdf_set(&seq[5], "tls13 quic iv",
++                      &next->server.iv, &next->server.secret);
 +
 +    for (i = 0; i < (sizeof(seq) / sizeof(seq[0])); i++) {
 +        if (ngx_quic_hkdf_expand(&seq[i], ciphers.d, c->log) != NGX_OK) {
@@ -9683,10 +9675,14 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +static void
 +ngx_quic_compute_nonce(u_char *nonce, size_t len, uint64_t pn)
 +{
-+    nonce[len - 4] ^= (pn & 0xff000000) >> 24;
-+    nonce[len - 3] ^= (pn & 0x00ff0000) >> 16;
-+    nonce[len - 2] ^= (pn & 0x0000ff00) >> 8;
-+    nonce[len - 1] ^= (pn & 0x000000ff);
++    nonce[len - 8] ^= (pn >> 56) & 0x3f;
++    nonce[len - 7] ^= (pn >> 48) & 0xff;
++    nonce[len - 6] ^= (pn >> 40) & 0xff;
++    nonce[len - 5] ^= (pn >> 32) & 0xff;
++    nonce[len - 4] ^= (pn >> 24) & 0xff;
++    nonce[len - 3] ^= (pn >> 16) & 0xff;
++    nonce[len - 2] ^= (pn >> 8) & 0xff;
++    nonce[len - 1] ^= pn & 0xff;
 +}
 +
 +
@@ -9707,8 +9703,9 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +    u_char              *p, *sample;
 +    size_t               len;
 +    uint64_t             pn, lpn;
-+    ngx_int_t            pnl, rc, key_phase;
++    ngx_int_t            pnl, rc;
 +    ngx_str_t            in, ad;
++    ngx_uint_t           key_phase;
 +    ngx_quic_secret_t   *secret;
 +    ngx_quic_ciphers_t   ciphers;
 +    uint8_t              nonce[NGX_QUIC_IV_LEN], mask[NGX_QUIC_HP_LEN];
@@ -9840,7 +9837,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_protection.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,75 @@
 +
 +/*
@@ -9919,7 +9916,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_protection.h
 +#endif /* _NGX_EVENT_QUIC_PROTECTION_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_socket.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_socket.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,237 @@
 +
 +/*
@@ -10160,7 +10157,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_socket.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_socket.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_socket.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,28 @@
 +
 +/*
@@ -10192,7 +10189,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_socket.h
 +#endif /* _NGX_EVENT_QUIC_SOCKET_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,610 @@
 +
 +/*
@@ -10233,19 +10230,6 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.c
 +static int ngx_quic_send_alert(ngx_ssl_conn_t *ssl_conn,
 +    enum ssl_encryption_level_t level, uint8_t alert);
 +static ngx_int_t ngx_quic_crypto_input(ngx_connection_t *c, ngx_chain_t *data);
-+
-+
-+static SSL_QUIC_METHOD quic_method = {
-+#if defined OPENSSL_IS_BORINGSSL || defined LIBRESSL_VERSION_NUMBER
-+    .set_read_secret = ngx_quic_set_read_secret,
-+    .set_write_secret = ngx_quic_set_write_secret,
-+#else
-+    .set_encryption_secrets = ngx_quic_set_encryption_secrets,
-+#endif
-+    .add_handshake_data = ngx_quic_add_handshake_data,
-+    .flush_flight = ngx_quic_flush_flight,
-+    .send_alert = ngx_quic_send_alert,
-+};
 +
 +
 +#if defined OPENSSL_IS_BORINGSSL || defined LIBRESSL_VERSION_NUMBER
@@ -10729,13 +10713,14 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.c
 +ngx_int_t
 +ngx_quic_init_connection(ngx_connection_t *c)
 +{
-+    u_char                 *p;
-+    size_t                  clen;
-+    ssize_t                 len;
-+    ngx_str_t               dcid;
-+    ngx_ssl_conn_t         *ssl_conn;
-+    ngx_quic_socket_t      *qsock;
-+    ngx_quic_connection_t  *qc;
++    u_char                  *p;
++    size_t                   clen;
++    ssize_t                  len;
++    ngx_str_t                dcid;
++    ngx_ssl_conn_t          *ssl_conn;
++    ngx_quic_socket_t       *qsock;
++    ngx_quic_connection_t   *qc;
++    static SSL_QUIC_METHOD   quic_method;
 +
 +    qc = ngx_quic_get_connection(c);
 +
@@ -10746,6 +10731,18 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.c
 +    c->ssl->no_wait_shutdown = 1;
 +
 +    ssl_conn = c->ssl->connection;
++
++    if (!quic_method.send_alert) {
++#if defined OPENSSL_IS_BORINGSSL || defined LIBRESSL_VERSION_NUMBER
++        quic_method.set_read_secret = ngx_quic_set_read_secret;
++        quic_method.set_write_secret = ngx_quic_set_write_secret;
++#else
++        quic_method.set_encryption_secrets = ngx_quic_set_encryption_secrets;
++#endif
++        quic_method.add_handshake_data = ngx_quic_add_handshake_data;
++        quic_method.flush_flight = ngx_quic_flush_flight;
++        quic_method.send_alert = ngx_quic_send_alert;
++    }
 +
 +    if (SSL_set_quic_method(ssl_conn, &quic_method) == 0) {
 +        ngx_log_error(NGX_LOG_INFO, c->log, 0,
@@ -10806,7 +10803,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,19 @@
 +
 +/*
@@ -10829,8 +10826,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_ssl.h
 +#endif /* _NGX_EVENT_QUIC_SSL_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,1654 @@
++++ b/src/event/quic/ngx_event_quic_streams.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,1775 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -10854,6 +10851,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +static ngx_int_t ngx_quic_reject_stream(ngx_connection_t *c, uint64_t id);
 +static void ngx_quic_init_stream_handler(ngx_event_t *ev);
 +static void ngx_quic_init_streams_handler(ngx_connection_t *c);
++static ngx_int_t ngx_quic_do_init_streams(ngx_connection_t *c);
 +static ngx_quic_stream_t *ngx_quic_create_stream(ngx_connection_t *c,
 +    uint64_t id);
 +static void ngx_quic_empty_handler(ngx_event_t *ev);
@@ -10866,6 +10864,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +static ngx_int_t ngx_quic_stream_flush(ngx_quic_stream_t *qs);
 +static void ngx_quic_stream_cleanup_handler(void *data);
 +static ngx_int_t ngx_quic_close_stream(ngx_quic_stream_t *qs);
++static ngx_int_t ngx_quic_can_shutdown(ngx_connection_t *c);
 +static ngx_int_t ngx_quic_control_flow(ngx_quic_stream_t *qs, uint64_t last);
 +static ngx_int_t ngx_quic_update_flow(ngx_quic_stream_t *qs, uint64_t last);
 +static ngx_int_t ngx_quic_update_max_stream_data(ngx_quic_stream_t *qs);
@@ -10883,6 +10882,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +
 +    pc = c->quic ? c->quic->parent : c;
 +    qc = ngx_quic_get_connection(pc);
++
++    if (qc->closing) {
++        return NULL;
++    }
 +
 +    if (bidi) {
 +        if (qc->streams.server_streams_bidi
@@ -10994,12 +10997,9 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +    ngx_pool_t         *pool;
 +    ngx_queue_t        *q;
 +    ngx_rbtree_t       *tree;
++    ngx_connection_t   *sc;
 +    ngx_rbtree_node_t  *node;
 +    ngx_quic_stream_t  *qs;
-+
-+#if (NGX_DEBUG)
-+    ngx_uint_t          ns;
-+#endif
 +
 +    while (!ngx_queue_empty(&qc->streams.uninitialized)) {
 +        q = ngx_queue_head(&qc->streams.uninitialized);
@@ -11018,34 +11018,34 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +        return NGX_OK;
 +    }
 +
-+#if (NGX_DEBUG)
-+    ns = 0;
-+#endif
-+
 +    node = ngx_rbtree_min(tree->root, tree->sentinel);
 +
 +    while (node) {
 +        qs = (ngx_quic_stream_t *) node;
 +        node = ngx_rbtree_next(tree, node);
++        sc = qs->connection;
 +
 +        qs->recv_state = NGX_QUIC_STREAM_RECV_RESET_RECVD;
 +        qs->send_state = NGX_QUIC_STREAM_SEND_RESET_SENT;
 +
-+        if (qs->connection == NULL) {
++        if (sc == NULL) {
 +            ngx_quic_close_stream(qs);
 +            continue;
 +        }
 +
-+        ngx_quic_set_event(qs->connection->read);
-+        ngx_quic_set_event(qs->connection->write);
++        ngx_quic_set_event(sc->read);
++        ngx_quic_set_event(sc->write);
 +
-+#if (NGX_DEBUG)
-+        ns++;
-+#endif
++        sc->close = 1;
++        sc->read->handler(sc->read);
 +    }
 +
-+    ngx_log_debug1(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic connection has %ui active streams", ns);
++    if (tree->root == tree->sentinel) {
++        return NGX_OK;
++    }
++
++    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, c->log, 0,
++                   "quic connection has active streams");
 +
 +    return NGX_AGAIN;
 +}
@@ -11386,14 +11386,21 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +        return NGX_OK;
 +    }
 +
-+    ngx_quic_init_streams_handler(c);
-+
-+    return NGX_OK;
++    return ngx_quic_do_init_streams(c);
 +}
 +
 +
 +static void
 +ngx_quic_init_streams_handler(ngx_connection_t *c)
++{
++    if (ngx_quic_do_init_streams(c) != NGX_OK) {
++        ngx_quic_close_connection(c, NGX_ERROR);
++    }
++}
++
++
++static ngx_int_t
++ngx_quic_do_init_streams(ngx_connection_t *c)
 +{
 +    ngx_queue_t            *q;
 +    ngx_quic_stream_t      *qs;
@@ -11402,6 +11409,12 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +    ngx_log_debug0(NGX_LOG_DEBUG_EVENT, c->log, 0, "quic init streams");
 +
 +    qc = ngx_quic_get_connection(c);
++
++    if (qc->conf->init) {
++        if (qc->conf->init(c) != NGX_OK) {
++            return NGX_ERROR;
++        }
++    }
 +
 +    for (q = ngx_queue_head(&qc->streams.uninitialized);
 +         q != ngx_queue_sentinel(&qc->streams.uninitialized);
@@ -11412,6 +11425,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +    }
 +
 +    qc->streams.initialized = 1;
++
++    return NGX_OK;
 +}
 +
 +
@@ -11420,6 +11435,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +{
 +    ngx_log_t              *log;
 +    ngx_pool_t             *pool;
++    ngx_uint_t              reusable;
 +    ngx_queue_t            *q;
 +    ngx_connection_t       *sc;
 +    ngx_quic_stream_t      *qs;
@@ -11472,10 +11488,14 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +    *log = *c->log;
 +    pool->log = log;
 +
++    reusable = c->reusable;
++    ngx_reusable_connection(c, 0);
++
 +    sc = ngx_get_connection(c->fd, log);
 +    if (sc == NULL) {
 +        ngx_destroy_pool(pool);
 +        ngx_queue_insert_tail(&qc->streams.free, &qs->queue);
++        ngx_reusable_connection(c, reusable);
 +        return NULL;
 +    }
 +
@@ -11545,6 +11565,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +        ngx_close_connection(sc);
 +        ngx_destroy_pool(pool);
 +        ngx_queue_insert_tail(&qc->streams.free, &qs->queue);
++        ngx_reusable_connection(c, reusable);
 +        return NULL;
 +    }
 +
@@ -11554,6 +11575,31 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +    ngx_rbtree_insert(&qc->streams.tree, &qs->node);
 +
 +    return qs;
++}
++
++
++void
++ngx_quic_cancelable_stream(ngx_connection_t *c)
++{
++    ngx_connection_t       *pc;
++    ngx_quic_stream_t      *qs;
++    ngx_quic_connection_t  *qc;
++
++    qs = c->quic;
++    pc = qs->parent;
++    qc = ngx_quic_get_connection(pc);
++
++    if (!qs->cancelable) {
++        qs->cancelable = 1;
++
++        if (ngx_quic_can_shutdown(pc) == NGX_OK) {
++            ngx_reusable_connection(pc, 1);
++
++            if (qc->shutdown) {
++                ngx_quic_shutdown_quic(pc);
++            }
++        }
++    }
 +}
 +
 +
@@ -11687,7 +11733,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +
 +    qs->send_state = NGX_QUIC_STREAM_SEND_SEND;
 +
-+    flow = qs->acked + qc->conf->stream_buffer_size - c->sent;
++    flow = qs->acked + qc->conf->stream_buffer_size - qs->sent;
 +
 +    if (flow == 0) {
 +        wev->ready = 0;
@@ -11700,13 +11746,14 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +
 +    n = qs->send.size;
 +
-+    in = ngx_quic_write_buffer(pc, &qs->send, in, limit, c->sent);
++    in = ngx_quic_write_buffer(pc, &qs->send, in, limit, qs->sent);
 +    if (in == NGX_CHAIN_ERROR) {
 +        return NGX_CHAIN_ERROR;
 +    }
 +
 +    n = qs->send.size - n;
 +    c->sent += n;
++    qs->sent += n;
 +    qc->streams.sent += n;
 +
 +    if (flow == n) {
@@ -11845,9 +11892,12 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +    if (!qc->closing) {
 +        /* make sure everything is sent and final size is received */
 +
-+        if (qs->recv_state == NGX_QUIC_STREAM_RECV_RECV
-+            || qs->send_state == NGX_QUIC_STREAM_SEND_READY
-+            || qs->send_state == NGX_QUIC_STREAM_SEND_SEND)
++        if (qs->recv_state == NGX_QUIC_STREAM_RECV_RECV) {
++            return NGX_OK;
++        }
++
++        if (qs->send_state != NGX_QUIC_STREAM_SEND_DATA_RECVD
++            && qs->send_state != NGX_QUIC_STREAM_SEND_RESET_RECVD)
 +        {
 +            return NGX_OK;
 +        }
@@ -11864,7 +11914,16 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +
 +    if (qc->closing) {
 +        /* schedule handler call to continue ngx_quic_close_connection() */
-+        ngx_post_event(pc->read, &ngx_posted_events);
++        ngx_post_event(&qc->close, &ngx_posted_events);
++        return NGX_OK;
++    }
++
++    if (!pc->reusable && ngx_quic_can_shutdown(pc) == NGX_OK) {
++        ngx_reusable_connection(pc, 1);
++    }
++
++    if (qc->shutdown) {
++        ngx_quic_shutdown_quic(pc);
 +        return NGX_OK;
 +    }
 +
@@ -11889,9 +11948,34 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +        ngx_quic_queue_frame(qc, frame);
 +    }
 +
-+    if (qc->shutdown) {
-+        ngx_post_event(pc->read, &ngx_posted_events);
-+    }
++    return NGX_OK;
++}
++
++
++static ngx_int_t
++ngx_quic_can_shutdown(ngx_connection_t *c)
++{
++    ngx_rbtree_t           *tree;
++    ngx_rbtree_node_t      *node;
++    ngx_quic_stream_t      *qs;
++    ngx_quic_connection_t  *qc;
++
++    qc = ngx_quic_get_connection(c);
++
++    tree = &qc->streams.tree;
++
++    if (tree->root != tree->sentinel) {
++        for (node = ngx_rbtree_min(tree->root, tree->sentinel);
++             node;
++             node = ngx_rbtree_next(tree, node))
++        {
++            qs = (ngx_quic_stream_t *) node;
++
++            if (!qs->cancelable) {
++                return NGX_DECLINED;
++            }
++        }
++     }
 +
 +    return NGX_OK;
 +}
@@ -11980,7 +12064,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +        return ngx_quic_close_stream(qs);
 +    }
 +
-+    if (f->offset == qs->recv_offset) {
++    if (f->offset <= qs->recv_offset) {
 +        ngx_quic_set_event(qs->connection->read);
 +    }
 +
@@ -12255,36 +12339,70 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +void
 +ngx_quic_handle_stream_ack(ngx_connection_t *c, ngx_quic_frame_t *f)
 +{
-+    uint64_t                sent, unacked;
++    uint64_t                acked;
 +    ngx_quic_stream_t      *qs;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
 +
-+    qs = ngx_quic_find_stream(&qc->streams.tree, f->u.stream.stream_id);
-+    if (qs == NULL) {
++    switch (f->type) {
++
++    case NGX_QUIC_FT_RESET_STREAM:
++
++        qs = ngx_quic_find_stream(&qc->streams.tree, f->u.reset_stream.id);
++        if (qs == NULL) {
++            return;
++        }
++
++        qs->send_state = NGX_QUIC_STREAM_SEND_RESET_RECVD;
++
++        ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
++                       "quic stream id:0x%xL ack reset final_size:%uL",
++                       qs->id, f->u.reset_stream.final_size);
++
++        break;
++
++    case NGX_QUIC_FT_STREAM:
++
++        qs = ngx_quic_find_stream(&qc->streams.tree, f->u.stream.stream_id);
++        if (qs == NULL) {
++            return;
++        }
++
++        acked = qs->acked;
++        qs->acked += f->u.stream.length;
++
++        if (f->u.stream.fin) {
++            qs->fin_acked = 1;
++        }
++
++        if (qs->send_state == NGX_QUIC_STREAM_SEND_DATA_SENT
++            && qs->acked == qs->sent && qs->fin_acked)
++        {
++            qs->send_state = NGX_QUIC_STREAM_SEND_DATA_RECVD;
++        }
++
++        ngx_log_debug4(NGX_LOG_DEBUG_EVENT, c->log, 0,
++                       "quic stream id:0x%xL ack len:%uL fin:%d unacked:%uL",
++                       qs->id, f->u.stream.length, f->u.stream.fin,
++                       qs->sent - qs->acked);
++
++        if (qs->connection
++            && qs->sent - acked == qc->conf->stream_buffer_size
++            && f->u.stream.length > 0)
++        {
++            ngx_quic_set_event(qs->connection->write);
++        }
++
++        break;
++
++    default:
 +        return;
 +    }
 +
 +    if (qs->connection == NULL) {
-+        qs->acked += f->u.stream.length;
-+        return;
++        ngx_quic_close_stream(qs);
 +    }
-+
-+    sent = qs->connection->sent;
-+    unacked = sent - qs->acked;
-+    qs->acked += f->u.stream.length;
-+
-+    ngx_log_debug4(NGX_LOG_DEBUG_EVENT, c->log, 0,
-+                   "quic stream id:0x%xL ack len:%uL acked:%uL unacked:%uL",
-+                   qs->id, f->u.stream.length, qs->acked, sent - qs->acked);
-+
-+    if (unacked != qc->conf->stream_buffer_size) {
-+        /* not blocked on buffer size */
-+        return;
-+    }
-+
-+    ngx_quic_set_event(qs->connection->write);
 +}
 +
 +
@@ -12487,7 +12605,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_streams.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,44 @@
 +
 +/*
@@ -12535,8 +12653,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_streams.h
 +#endif /* _NGX_EVENT_QUIC_STREAMS_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_tokens.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,285 @@
++++ b/src/event/quic/ngx_event_quic_tokens.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,289 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -12717,6 +12835,10 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_tokens.c
 +    u_char             addr_hash[20];
 +    u_char             tdec[NGX_QUIC_MAX_TOKEN_SIZE];
 +
++#if NGX_SUPPRESS_WARN
++    ngx_str_null(&odcid);
++#endif
++
 +    /* Retry token or NEW_TOKEN in a previous connection */
 +
 +    cipher = EVP_aes_256_cbc();
@@ -12824,7 +12946,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_tokens.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_tokens.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_tokens.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,35 @@
 +
 +/*
@@ -12863,8 +12985,8 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_tokens.h
 +#endif /* _NGX_EVENT_QUIC_TOKENS_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,2164 @@
++++ b/src/event/quic/ngx_event_quic_transport.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,2192 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -13671,11 +13793,23 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.c
 +    case NGX_QUIC_FT_ACK:
 +    case NGX_QUIC_FT_ACK_ECN:
 +
-+        if (!((p = ngx_quic_parse_int(p, end, &f->u.ack.largest))
-+              && (p = ngx_quic_parse_int(p, end, &f->u.ack.delay))
-+              && (p = ngx_quic_parse_int(p, end, &f->u.ack.range_count))
-+              && (p = ngx_quic_parse_int(p, end, &f->u.ack.first_range))))
-+        {
++        p = ngx_quic_parse_int(p, end, &f->u.ack.largest);
++        if (p == NULL) {
++            goto error;
++        }
++
++        p = ngx_quic_parse_int(p, end, &f->u.ack.delay);
++        if (p == NULL) {
++            goto error;
++        }
++
++        p = ngx_quic_parse_int(p, end, &f->u.ack.range_count);
++        if (p == NULL) {
++            goto error;
++        }
++
++        p = ngx_quic_parse_int(p, end, &f->u.ack.first_range);
++        if (p == NULL) {
 +            goto error;
 +        }
 +
@@ -13685,10 +13819,11 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.c
 +        for (i = 0; i < f->u.ack.range_count; i++) {
 +
 +            p = ngx_quic_parse_int(p, end, &varint);
-+            if (p) {
-+                p = ngx_quic_parse_int(p, end, &varint);
++            if (p == NULL) {
++                goto error;
 +            }
 +
++            p = ngx_quic_parse_int(p, end, &varint);
 +            if (p == NULL) {
 +                goto error;
 +            }
@@ -13700,10 +13835,18 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.c
 +
 +        if (f->type == NGX_QUIC_FT_ACK_ECN) {
 +
-+            if (!((p = ngx_quic_parse_int(p, end, &f->u.ack.ect0))
-+                  && (p = ngx_quic_parse_int(p, end, &f->u.ack.ect1))
-+                  && (p = ngx_quic_parse_int(p, end, &f->u.ack.ce))))
-+            {
++            p = ngx_quic_parse_int(p, end, &f->u.ack.ect0);
++            if (p == NULL) {
++                goto error;
++            }
++
++            p = ngx_quic_parse_int(p, end, &f->u.ack.ect1);
++            if (p == NULL) {
++                goto error;
++            }
++
++            p = ngx_quic_parse_int(p, end, &f->u.ack.ce);
++            if (p == NULL) {
 +                goto error;
 +            }
 +
@@ -13856,11 +13999,18 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.c
 +
 +    case NGX_QUIC_FT_RESET_STREAM:
 +
-+        if (!((p = ngx_quic_parse_int(p, end, &f->u.reset_stream.id))
-+              && (p = ngx_quic_parse_int(p, end, &f->u.reset_stream.error_code))
-+              && (p = ngx_quic_parse_int(p, end,
-+                                         &f->u.reset_stream.final_size))))
-+        {
++        p = ngx_quic_parse_int(p, end, &f->u.reset_stream.id);
++        if (p == NULL) {
++            goto error;
++        }
++
++        p = ngx_quic_parse_int(p, end, &f->u.reset_stream.error_code);
++        if (p == NULL) {
++            goto error;
++        }
++
++        p = ngx_quic_parse_int(p, end, &f->u.reset_stream.final_size);
++        if (p == NULL) {
 +            goto error;
 +        }
 +
@@ -15031,7 +15181,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.c
 +}
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_transport.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,398 @@
 +
 +/*
@@ -15433,7 +15583,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_transport.h
 +#endif /* _NGX_EVENT_QUIC_TRANSPORT_H_INCLUDED_ */
 diff -r aa901551a7eb src/event/quic/ngx_event_quic_udp.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_udp.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/event/quic/ngx_event_quic_udp.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,473 @@
 +
 +/*
@@ -15910,7 +16060,7 @@ diff -r aa901551a7eb src/event/quic/ngx_event_quic_udp.c
 +}
 diff -r aa901551a7eb src/http/modules/ngx_http_ssl_module.c
 --- a/src/http/modules/ngx_http_ssl_module.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/modules/ngx_http_ssl_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/modules/ngx_http_ssl_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -419,16 +419,19 @@ ngx_http_ssl_alpn_select(ngx_ssl_conn_t 
      unsigned char *outlen, const unsigned char *in, unsigned int inlen,
      void *arg)
@@ -16037,7 +16187,7 @@ diff -r aa901551a7eb src/http/modules/ngx_http_ssl_module.c
          }
 diff -r aa901551a7eb src/http/ngx_http.c
 --- a/src/http/ngx_http.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -1200,7 +1200,10 @@ ngx_http_add_listen(ngx_conf_t *cf, ngx_
      port = cmcf->ports->elts;
      for (i = 0; i < cmcf->ports->nelts; i++) {
@@ -16138,7 +16288,7 @@ diff -r aa901551a7eb src/http/ngx_http.c
          if (addr[i].hash.buckets == NULL
 diff -r aa901551a7eb src/http/ngx_http.h
 --- a/src/http/ngx_http.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -20,6 +20,8 @@ typedef struct ngx_http_file_cache_s  ng
  typedef struct ngx_http_log_ctx_s     ngx_http_log_ctx_t;
  typedef struct ngx_http_chunked_s     ngx_http_chunked_t;
@@ -16181,8 +16331,16 @@ diff -r aa901551a7eb src/http/ngx_http.h
  size_t ngx_http_huff_encode(u_char *src, size_t len, u_char *dst,
 diff -r aa901551a7eb src/http/ngx_http_core_module.c
 --- a/src/http/ngx_http_core_module.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_core_module.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -3989,6 +3989,7 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
++++ b/src/http/ngx_http_core_module.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -3008,6 +3008,7 @@ ngx_http_core_server(ngx_conf_t *cf, ngx
+         lsopt.socklen = sizeof(struct sockaddr_in);
+ 
+         lsopt.backlog = NGX_LISTEN_BACKLOG;
++        lsopt.type = SOCK_STREAM;
+         lsopt.rcvbuf = -1;
+         lsopt.sndbuf = -1;
+ #if (NGX_HAVE_SETFIB)
+@@ -3989,6 +3990,7 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
      ngx_memzero(&lsopt, sizeof(ngx_http_listen_opt_t));
  
      lsopt.backlog = NGX_LISTEN_BACKLOG;
@@ -16190,7 +16348,7 @@ diff -r aa901551a7eb src/http/ngx_http_core_module.c
      lsopt.rcvbuf = -1;
      lsopt.sndbuf = -1;
  #if (NGX_HAVE_SETFIB)
-@@ -4187,6 +4188,19 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
+@@ -4187,6 +4189,19 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
  #endif
          }
  
@@ -16210,7 +16368,7 @@ diff -r aa901551a7eb src/http/ngx_http_core_module.c
          if (ngx_strncmp(value[n].data, "so_keepalive=", 13) == 0) {
  
              if (ngx_strcmp(&value[n].data[13], "on") == 0) {
-@@ -4288,6 +4302,12 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
+@@ -4288,6 +4303,12 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
          return NGX_CONF_ERROR;
      }
  
@@ -16225,7 +16383,7 @@ diff -r aa901551a7eb src/http/ngx_http_core_module.c
          lsopt.socklen = u.addrs[n].socklen;
 diff -r aa901551a7eb src/http/ngx_http_core_module.h
 --- a/src/http/ngx_http_core_module.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_core_module.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http_core_module.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -75,6 +75,7 @@ typedef struct {
      unsigned                   wildcard:1;
      unsigned                   ssl:1;
@@ -16260,7 +16418,7 @@ diff -r aa901551a7eb src/http/ngx_http_core_module.h
  } ngx_http_conf_port_t;
 diff -r aa901551a7eb src/http/ngx_http_request.c
 --- a/src/http/ngx_http_request.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_request.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http_request.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -29,10 +29,6 @@ static ngx_int_t ngx_http_process_connec
  static ngx_int_t ngx_http_process_user_agent(ngx_http_request_t *r,
      ngx_table_elt_t *h, ngx_uint_t offset);
@@ -16286,7 +16444,7 @@ diff -r aa901551a7eb src/http/ngx_http_request.c
  
 +#if (NGX_HTTP_V3)
 +    if (hc->addr_conf->http3) {
-+        ngx_http_v3_init(c);
++        ngx_http_v3_init_stream(c);
 +        return;
 +    }
 +#endif
@@ -16391,7 +16549,7 @@ diff -r aa901551a7eb src/http/ngx_http_request.c
  
 +#if (NGX_HTTP_V3)
 +    if (c->quic) {
-+        ngx_http_v3_reset_connection(c);
++        ngx_http_v3_reset_stream(c);
 +    }
 +#endif
 +
@@ -16400,7 +16558,7 @@ diff -r aa901551a7eb src/http/ngx_http_request.c
  #endif
 diff -r aa901551a7eb src/http/ngx_http_request.h
 --- a/src/http/ngx_http_request.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_request.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http_request.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -24,6 +24,7 @@
  #define NGX_HTTP_VERSION_10                1000
  #define NGX_HTTP_VERSION_11                1001
@@ -16438,7 +16596,7 @@ diff -r aa901551a7eb src/http/ngx_http_request.h
      unsigned                          done:1;
 diff -r aa901551a7eb src/http/ngx_http_request_body.c
 --- a/src/http/ngx_http_request_body.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_request_body.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http_request_body.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -92,6 +92,13 @@ ngx_http_read_client_request_body(ngx_ht
      }
  #endif
@@ -16497,7 +16655,7 @@ diff -r aa901551a7eb src/http/ngx_http_request_body.c
          return NGX_OK;
 diff -r aa901551a7eb src/http/ngx_http_upstream.c
 --- a/src/http/ngx_http_upstream.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_upstream.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http_upstream.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -521,6 +521,13 @@ ngx_http_upstream_init(ngx_http_request_
      }
  #endif
@@ -16534,7 +16692,7 @@ diff -r aa901551a7eb src/http/ngx_http_upstream.c
      if (ngx_event_flags & NGX_USE_KQUEUE_EVENT) {
 diff -r aa901551a7eb src/http/ngx_http_write_filter_module.c
 --- a/src/http/ngx_http_write_filter_module.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/http/ngx_http_write_filter_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/ngx_http_write_filter_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -240,6 +240,10 @@ ngx_http_write_filter(ngx_http_request_t
              r->out = NULL;
              c->buffered &= ~NGX_HTTP_WRITE_BUFFERED;
@@ -16559,8 +16717,8 @@ diff -r aa901551a7eb src/http/ngx_http_write_filter_module.c
      }
 diff -r aa901551a7eb src/http/v3/ngx_http_v3.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,123 @@
++++ b/src/http/v3/ngx_http_v3.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,126 @@
 +
 +/*
 + * Copyright (C) Roman Arutyunyan
@@ -16580,21 +16738,18 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3.c
 +ngx_int_t
 +ngx_http_v3_init_session(ngx_connection_t *c)
 +{
-+    ngx_connection_t       *pc;
-+    ngx_pool_cleanup_t     *cln;
-+    ngx_http_connection_t  *hc;
-+    ngx_http_v3_session_t  *h3c;
++    ngx_pool_cleanup_t      *cln;
++    ngx_http_connection_t   *hc;
++    ngx_http_v3_session_t   *h3c;
++#if (NGX_HTTP_V3_HQ)
++    ngx_http_v3_srv_conf_t  *h3scf;
++#endif
 +
-+    pc = c->quic->parent;
-+    hc = pc->data;
-+
-+    if (hc->v3_session) {
-+        return NGX_OK;
-+    }
++    hc = c->data;
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 init session");
 +
-+    h3c = ngx_pcalloc(pc->pool, sizeof(ngx_http_v3_session_t));
++    h3c = ngx_pcalloc(c->pool, sizeof(ngx_http_v3_session_t));
 +    if (h3c == NULL) {
 +        goto failed;
 +    }
@@ -16602,19 +16757,25 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3.c
 +    h3c->max_push_id = (uint64_t) -1;
 +    h3c->goaway_push_id = (uint64_t) -1;
 +
++#if (NGX_HTTP_V3_HQ)
++    h3scf = ngx_http_get_module_srv_conf(hc->conf_ctx, ngx_http_v3_module);
++    if (h3scf->hq) {
++        h3c->hq = 1;
++    }
++#endif
++
 +    ngx_queue_init(&h3c->blocked);
 +    ngx_queue_init(&h3c->pushing);
 +
-+    h3c->keepalive.log = pc->log;
-+    h3c->keepalive.data = pc;
++    h3c->keepalive.log = c->log;
++    h3c->keepalive.data = c;
 +    h3c->keepalive.handler = ngx_http_v3_keepalive_handler;
-+    h3c->keepalive.cancelable = 1;
 +
-+    h3c->table.send_insert_count.log = pc->log;
-+    h3c->table.send_insert_count.data = pc;
++    h3c->table.send_insert_count.log = c->log;
++    h3c->table.send_insert_count.data = c;
 +    h3c->table.send_insert_count.handler = ngx_http_v3_inc_insert_count_handler;
 +
-+    cln = ngx_pool_cleanup_add(pc->pool, 0);
++    cln = ngx_pool_cleanup_add(c->pool, 0);
 +    if (cln == NULL) {
 +        goto failed;
 +    }
@@ -16624,7 +16785,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3.c
 +
 +    hc->v3_session = h3c;
 +
-+    return ngx_http_v3_send_settings(c);
++    return NGX_OK;
 +
 +failed:
 +
@@ -16686,8 +16847,8 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.h	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,166 @@
++++ b/src/http/v3/ngx_http_v3.h	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,172 @@
 +
 +/*
 + * Copyright (C) Roman Arutyunyan
@@ -16831,20 +16992,26 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3.h
 +    uint64_t                      next_push_id;
 +    uint64_t                      max_push_id;
 +    uint64_t                      goaway_push_id;
++    uint64_t                      next_request_id;
 +
 +    off_t                         total_bytes;
 +    off_t                         payload_bytes;
 +
-+    ngx_uint_t                    goaway;  /* unsigned  goaway:1; */
++    unsigned                      goaway:1;
++#if (NGX_HTTP_V3_HQ)
++    unsigned                      hq:1;
++#endif
 +
 +    ngx_connection_t             *known_streams[NGX_HTTP_V3_MAX_KNOWN_STREAM];
 +};
 +
 +
-+void ngx_http_v3_init(ngx_connection_t *c);
-+void ngx_http_v3_reset_connection(ngx_connection_t *c);
++void ngx_http_v3_init_stream(ngx_connection_t *c);
++void ngx_http_v3_reset_stream(ngx_connection_t *c);
 +ngx_int_t ngx_http_v3_init_session(ngx_connection_t *c);
 +ngx_int_t ngx_http_v3_check_flood(ngx_connection_t *c);
++ngx_int_t ngx_http_v3_init(ngx_connection_t *c);
++void ngx_http_v3_shutdown(ngx_connection_t *c);
 +
 +ngx_int_t ngx_http_v3_read_request_body(ngx_http_request_t *r);
 +ngx_int_t ngx_http_v3_read_unbuffered_request_body(ngx_http_request_t *r);
@@ -16856,7 +17023,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3.h
 +#endif /* _NGX_HTTP_V3_H_INCLUDED_ */
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_encode.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_encode.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,304 @@
 +
 +/*
@@ -17164,7 +17331,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_encode.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_encode.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_encode.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,34 @@
 +
 +/*
@@ -17202,7 +17369,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_encode.h
 +#endif /* _NGX_HTTP_V3_ENCODE_H_INCLUDED_ */
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_filter_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_filter_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_filter_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,1536 @@
 +
 +/*
@@ -18742,8 +18909,8 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_filter_module.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_module.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,551 @@
++++ b/src/http/v3/ngx_http_v3_module.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,554 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -18994,6 +19161,9 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_module.c
 +    h3scf->quic.stream_close_code = NGX_HTTP_V3_ERR_NO_ERROR;
 +    h3scf->quic.stream_reject_code_bidi = NGX_HTTP_V3_ERR_REQUEST_REJECTED;
 +    h3scf->quic.active_connection_id_limit = NGX_CONF_UNSET_UINT;
++
++    h3scf->quic.init = ngx_http_v3_init;
++    h3scf->quic.shutdown = ngx_http_v3_shutdown;
 +
 +    return h3scf;
 +}
@@ -19297,7 +19467,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_module.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_parse.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_parse.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,2013 @@
 +
 +/*
@@ -21314,7 +21484,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_parse.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_parse.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_parse.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,146 @@
 +
 +/*
@@ -21464,8 +21634,8 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_parse.h
 +#endif /* _NGX_HTTP_V3_PARSE_H_INCLUDED_ */
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_request.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,1689 @@
++++ b/src/http/v3/ngx_http_v3_request.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,1694 @@
 +
 +/*
 + * Copyright (C) Roman Arutyunyan
@@ -21478,11 +21648,9 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +#include <ngx_http.h>
 +
 +
-+#if (NGX_HTTP_V3_HQ)
-+static void ngx_http_v3_init_hq_stream(ngx_connection_t *c);
-+#endif
 +static void ngx_http_v3_init_request_stream(ngx_connection_t *c);
 +static void ngx_http_v3_wait_request_handler(ngx_event_t *rev);
++static void ngx_http_v3_cleanup_connection(void *data);
 +static void ngx_http_v3_cleanup_request(void *data);
 +static void ngx_http_v3_process_request(ngx_event_t *rev);
 +static ngx_int_t ngx_http_v3_process_header(ngx_http_request_t *r,
@@ -21526,20 +21694,31 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +
 +
 +void
-+ngx_http_v3_init(ngx_connection_t *c)
++ngx_http_v3_init_stream(ngx_connection_t *c)
 +{
++    ngx_http_v3_session_t     *h3c;
 +    ngx_http_connection_t     *hc, *phc;
 +    ngx_http_v3_srv_conf_t    *h3scf;
 +    ngx_http_core_loc_conf_t  *clcf;
++    ngx_http_core_srv_conf_t  *cscf;
 +
 +    hc = c->data;
 +
 +    hc->ssl = 1;
 +
 +    clcf = ngx_http_get_module_loc_conf(hc->conf_ctx, ngx_http_core_module);
++    cscf = ngx_http_get_module_srv_conf(hc->conf_ctx, ngx_http_core_module);
 +    h3scf = ngx_http_get_module_srv_conf(hc->conf_ctx, ngx_http_v3_module);
 +
 +    if (c->quic == NULL) {
++        if (ngx_http_v3_init_session(c) != NGX_OK) {
++            ngx_http_close_connection(c);
++            return;
++        }
++
++        h3c = hc->v3_session;
++        ngx_add_timer(&h3c->keepalive, cscf->client_header_timeout);
++
 +        h3scf->quic.timeout = clcf->keepalive_timeout;
 +        ngx_quic_run(c, &h3scf->quic);
 +        return;
@@ -21549,21 +21728,12 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +
 +    if (phc->ssl_servername) {
 +        hc->ssl_servername = phc->ssl_servername;
++#if (NGX_PCRE)
++        hc->ssl_servername_regex = phc->ssl_servername_regex;
++#endif
 +        hc->conf_ctx = phc->conf_ctx;
 +
 +        ngx_set_connection_log(c, clcf->error_log);
-+    }
-+
-+#if (NGX_HTTP_V3_HQ)
-+    if (h3scf->hq) {
-+        ngx_http_v3_init_hq_stream(c);
-+        return;
-+    }
-+#endif
-+
-+    if (ngx_http_v3_init_session(c) != NGX_OK) {
-+        ngx_http_close_connection(c);
-+        return;
 +    }
 +
 +    if (c->quic->id & NGX_QUIC_STREAM_UNIDIRECTIONAL) {
@@ -21575,76 +21745,57 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +}
 +
 +
-+#if (NGX_HTTP_V3_HQ)
-+
-+static void
-+ngx_http_v3_init_hq_stream(ngx_connection_t *c)
++ngx_int_t
++ngx_http_v3_init(ngx_connection_t *c)
 +{
-+    uint64_t                   n;
-+    ngx_event_t               *rev;
-+    ngx_http_connection_t     *hc;
++    ngx_http_v3_session_t     *h3c;
 +    ngx_http_core_loc_conf_t  *clcf;
-+    ngx_http_core_srv_conf_t  *cscf;
 +
-+    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 init hq stream");
++    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 init");
 +
-+#if (NGX_STAT_STUB)
-+    (void) ngx_atomic_fetch_add(ngx_stat_active, 1);
++    h3c = ngx_http_v3_get_session(c);
++    clcf = ngx_http_v3_get_module_loc_conf(c, ngx_http_core_module);
++    ngx_add_timer(&h3c->keepalive, clcf->keepalive_timeout);
++
++#if (NGX_HTTP_V3_HQ)
++    if (h3c->hq) {
++        return NGX_OK;
++    }
 +#endif
 +
-+    hc = c->data;
-+
-+    /* Use HTTP/3 General Protocol Error Code 0x101 for finalization */
-+
-+    if (c->quic->id & NGX_QUIC_STREAM_UNIDIRECTIONAL) {
-+        ngx_quic_finalize_connection(c->quic->parent,
-+                                     NGX_HTTP_V3_ERR_GENERAL_PROTOCOL_ERROR,
-+                                     "unexpected uni stream");
-+        ngx_http_close_connection(c);
-+        return;
-+    }
-+
-+    clcf = ngx_http_get_module_loc_conf(hc->conf_ctx, ngx_http_core_module);
-+
-+    n = c->quic->id >> 2;
-+
-+    if (n >= clcf->keepalive_requests) {
-+        ngx_quic_finalize_connection(c->quic->parent,
-+                                     NGX_HTTP_V3_ERR_GENERAL_PROTOCOL_ERROR,
-+                                     "reached maximum number of requests");
-+        ngx_http_close_connection(c);
-+        return;
-+    }
-+
-+    if (ngx_current_msec - c->quic->parent->start_time
-+        > clcf->keepalive_time)
-+    {
-+        ngx_quic_finalize_connection(c->quic->parent,
-+                                     NGX_HTTP_V3_ERR_GENERAL_PROTOCOL_ERROR,
-+                                     "reached maximum time for requests");
-+        ngx_http_close_connection(c);
-+        return;
-+    }
-+
-+    rev = c->read;
-+
-+    if (rev->ready) {
-+        rev->handler(rev);
-+        return;
-+    }
-+
-+    cscf = ngx_http_get_module_srv_conf(hc->conf_ctx, ngx_http_core_module);
-+
-+    ngx_add_timer(rev, cscf->client_header_timeout);
-+    ngx_reusable_connection(c, 1);
-+
-+    if (ngx_handle_read_event(rev, 0) != NGX_OK) {
-+        ngx_http_close_connection(c);
-+        return;
-+    }
++    return ngx_http_v3_send_settings(c);
 +}
 +
++
++void
++ngx_http_v3_shutdown(ngx_connection_t *c)
++{
++    ngx_http_v3_session_t  *h3c;
++
++    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 shutdown");
++
++    h3c = ngx_http_v3_get_session(c);
++
++    if (h3c == NULL) {
++        ngx_quic_finalize_connection(c, NGX_HTTP_V3_ERR_NO_ERROR,
++                                     "connection shutdown");
++        return;
++    }
++
++    if (!h3c->goaway) {
++        h3c->goaway = 1;
++
++#if (NGX_HTTP_V3_HQ)
++        if (!h3c->hq)
 +#endif
++        {
++            (void) ngx_http_v3_send_goaway(c, h3c->next_request_id);
++        }
++
++        ngx_http_v3_shutdown_connection(c, NGX_HTTP_V3_ERR_NO_ERROR,
++                                        "connection shutdown");
++    }
++}
 +
 +
 +static void
@@ -21652,6 +21803,8 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +{
 +    uint64_t                   n;
 +    ngx_event_t               *rev;
++    ngx_connection_t          *pc;
++    ngx_pool_cleanup_t        *cln;
 +    ngx_http_connection_t     *hc;
 +    ngx_http_v3_session_t     *h3c;
 +    ngx_http_core_loc_conf_t  *clcf;
@@ -21684,24 +21837,53 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +        return;
 +    }
 +
++    pc = c->quic->parent;
++
++    h3c->next_request_id = c->quic->id + 0x04;
++
 +    if (n + 1 == clcf->keepalive_requests
-+        || ngx_current_msec - c->quic->parent->start_time
-+           > clcf->keepalive_time)
++        || ngx_current_msec - pc->start_time > clcf->keepalive_time)
 +    {
 +        h3c->goaway = 1;
 +
-+        if (ngx_http_v3_send_goaway(c, (n + 1) << 2) != NGX_OK) {
-+            ngx_http_close_connection(c);
-+            return;
++#if (NGX_HTTP_V3_HQ)
++        if (!h3c->hq)
++#endif
++        {
++            if (ngx_http_v3_send_goaway(c, h3c->next_request_id) != NGX_OK) {
++                ngx_http_close_connection(c);
++                return;
++            }
 +        }
 +
 +        ngx_http_v3_shutdown_connection(c, NGX_HTTP_V3_ERR_NO_ERROR,
 +                                        "reached maximum number of requests");
 +    }
 +
++    cln = ngx_pool_cleanup_add(c->pool, 0);
++    if (cln == NULL) {
++        ngx_http_close_connection(c);
++        return;
++    }
++
++    cln->handler = ngx_http_v3_cleanup_connection;
++    cln->data = c;
++
++    h3c->nrequests++;
++
++    if (h3c->keepalive.timer_set) {
++        ngx_del_timer(&h3c->keepalive);
++    }
++
 +    rev = c->read;
-+    rev->handler = ngx_http_v3_wait_request_handler;
-+    c->write->handler = ngx_http_empty_handler;
++
++#if (NGX_HTTP_V3_HQ)
++    if (!h3c->hq)
++#endif
++    {
++        rev->handler = ngx_http_v3_wait_request_handler;
++        c->write->handler = ngx_http_empty_handler;
++    }
 +
 +    if (rev->ready) {
 +        rev->handler(rev);
@@ -21730,7 +21912,6 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +    ngx_pool_cleanup_t        *cln;
 +    ngx_http_request_t        *r;
 +    ngx_http_connection_t     *hc;
-+    ngx_http_v3_session_t     *h3c;
 +    ngx_http_core_srv_conf_t  *cscf;
 +
 +    c = rev->data;
@@ -21850,32 +22031,22 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +    cln->handler = ngx_http_v3_cleanup_request;
 +    cln->data = r;
 +
-+    h3c = ngx_http_v3_get_session(c);
-+    h3c->nrequests++;
-+
-+    if (h3c->keepalive.timer_set) {
-+        ngx_del_timer(&h3c->keepalive);
-+    }
-+
 +    rev->handler = ngx_http_v3_process_request;
 +    ngx_http_v3_process_request(rev);
 +}
 +
 +
 +void
-+ngx_http_v3_reset_connection(ngx_connection_t *c)
++ngx_http_v3_reset_stream(ngx_connection_t *c)
 +{
 +    ngx_http_v3_srv_conf_t  *h3scf;
 +
 +    h3scf = ngx_http_v3_get_module_srv_conf(c, ngx_http_v3_module);
 +
-+#if (NGX_HTTP_V3_HQ)
-+    if (h3scf->hq) {
-+        return;
-+    }
-+#endif
-+
 +    if (h3scf->max_table_capacity > 0 && !c->read->eof
++#if (NGX_HTTP_V3_HQ)
++        && !h3scf->hq
++#endif
 +        && (c->quic->id & NGX_QUIC_STREAM_UNIDIRECTIONAL) == 0)
 +    {
 +        (void) ngx_http_v3_send_cancel_stream(c, c->quic->id);
@@ -21894,25 +22065,29 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +
 +
 +static void
-+ngx_http_v3_cleanup_request(void *data)
++ngx_http_v3_cleanup_connection(void *data)
 +{
-+    ngx_http_request_t  *r = data;
++    ngx_connection_t  *c = data;
 +
-+    ngx_connection_t          *c;
 +    ngx_http_v3_session_t     *h3c;
 +    ngx_http_core_loc_conf_t  *clcf;
-+
-+    c = r->connection;
-+
-+    if (!r->response_sent) {
-+        c->error = 1;
-+    }
 +
 +    h3c = ngx_http_v3_get_session(c);
 +
 +    if (--h3c->nrequests == 0) {
 +        clcf = ngx_http_v3_get_module_loc_conf(c, ngx_http_core_module);
 +        ngx_add_timer(&h3c->keepalive, clcf->keepalive_timeout);
++    }
++}
++
++
++static void
++ngx_http_v3_cleanup_request(void *data)
++{
++    ngx_http_request_t  *r = data;
++
++    if (!r->response_sent) {
++        r->connection->error = 1;
 +    }
 +}
 +
@@ -23157,7 +23332,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_request.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_table.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_table.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,720 @@
 +
 +/*
@@ -23881,7 +24056,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_table.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_table.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_table.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,58 @@
 +
 +/*
@@ -23943,8 +24118,8 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_table.h
 +#endif /* _NGX_HTTP_V3_TABLE_H_INCLUDED_ */
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.c	Thu Oct 20 13:21:28 2022 -0400
-@@ -0,0 +1,760 @@
++++ b/src/http/v3/ngx_http_v3_uni.c	Tue Dec 13 12:15:22 2022 -0500
+@@ -0,0 +1,785 @@
 +
 +/*
 + * Copyright (C) Roman Arutyunyan
@@ -23984,7 +24159,22 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 +ngx_http_v3_init_uni_stream(ngx_connection_t *c)
 +{
 +    uint64_t                   n;
++#if (NGX_HTTP_V3_HQ)
++    ngx_http_v3_session_t     *h3c;
++#endif
 +    ngx_http_v3_uni_stream_t  *us;
++
++#if (NGX_HTTP_V3_HQ)
++    h3c = ngx_http_v3_get_session(c);
++    if (h3c->hq) {
++        ngx_http_v3_finalize_connection(c,
++                                        NGX_HTTP_V3_ERR_STREAM_CREATION_ERROR,
++                                        "uni stream in hq mode");
++        c->data = NULL;
++        ngx_http_v3_close_uni_stream(c);
++        return;
++    }
++#endif
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 init uni stream");
 +
@@ -23999,7 +24189,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 +        return;
 +    }
 +
-+    c->quic->cancelable = 1;
++    ngx_quic_cancelable_stream(c);
 +
 +    us = ngx_pcalloc(c->pool, sizeof(ngx_http_v3_uni_stream_t));
 +    if (us == NULL) {
@@ -24129,6 +24319,11 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 read handler");
 +
++    if (c->close) {
++        ngx_http_v3_close_uni_stream(c);
++        return;
++    }
++
 +    ngx_memzero(&b, sizeof(ngx_buf_t));
 +
 +    while (rev->ready) {
@@ -24208,6 +24403,11 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 +    c = rev->data;
 +
 +    ngx_log_debug0(NGX_LOG_DEBUG_HTTP, c->log, 0, "http3 dummy read handler");
++
++    if (c->close) {
++        ngx_http_v3_close_uni_stream(c);
++        return;
++    }
 +
 +    if (rev->ready) {
 +        if (c->recv(c, &ch, 1) != 0) {
@@ -24351,7 +24551,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 +        goto failed;
 +    }
 +
-+    sc->quic->cancelable = 1;
++    ngx_quic_cancelable_stream(sc);
 +
 +    ngx_log_debug1(NGX_LOG_DEBUG_HTTP, c->log, 0,
 +                   "http3 create uni stream, type:%ui", type);
@@ -24707,7 +24907,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.c
 +}
 diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/http/v3/ngx_http_v3_uni.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,38 @@
 +
 +/*
@@ -24749,7 +24949,7 @@ diff -r aa901551a7eb src/http/v3/ngx_http_v3_uni.h
 +#endif /* _NGX_HTTP_V3_UNI_H_INCLUDED_ */
 diff -r aa901551a7eb src/os/unix/ngx_socket.h
 --- a/src/os/unix/ngx_socket.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/os/unix/ngx_socket.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/os/unix/ngx_socket.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -13,6 +13,8 @@
  
  
@@ -24759,9 +24959,21 @@ diff -r aa901551a7eb src/os/unix/ngx_socket.h
  
  typedef int  ngx_socket_t;
  
+diff -r aa901551a7eb src/os/win32/ngx_socket.h
+--- a/src/os/win32/ngx_socket.h	Wed Oct 19 10:56:20 2022 +0300
++++ b/src/os/win32/ngx_socket.h	Tue Dec 13 12:15:22 2022 -0500
+@@ -14,6 +14,8 @@
+ 
+ 
+ #define NGX_WRITE_SHUTDOWN SD_SEND
++#define NGX_READ_SHUTDOWN  SD_RECEIVE
++#define NGX_RDWR_SHUTDOWN  SD_BOTH
+ 
+ 
+ typedef SOCKET  ngx_socket_t;
 diff -r aa901551a7eb src/stream/ngx_stream.c
 --- a/src/stream/ngx_stream.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/stream/ngx_stream.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -518,6 +518,24 @@ ngx_stream_optimize_servers(ngx_conf_t *
              ls->reuseport = addr[i].opt.reuseport;
  #endif
@@ -24809,7 +25021,7 @@ diff -r aa901551a7eb src/stream/ngx_stream.c
      }
 diff -r aa901551a7eb src/stream/ngx_stream.h
 --- a/src/stream/ngx_stream.h	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/stream/ngx_stream.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -16,6 +16,10 @@
  #include <ngx_stream_ssl_module.h>
  #endif
@@ -24839,7 +25051,7 @@ diff -r aa901551a7eb src/stream/ngx_stream.h
  
 diff -r aa901551a7eb src/stream/ngx_stream_core_module.c
 --- a/src/stream/ngx_stream_core_module.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/stream/ngx_stream_core_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream_core_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -760,6 +760,29 @@ ngx_stream_core_listen(ngx_conf_t *cf, n
  #endif
          }
@@ -24885,7 +25097,7 @@ diff -r aa901551a7eb src/stream/ngx_stream_core_module.c
          }
 diff -r aa901551a7eb src/stream/ngx_stream_handler.c
 --- a/src/stream/ngx_stream_handler.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/stream/ngx_stream_handler.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream_handler.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -129,6 +129,10 @@ ngx_stream_init_connection(ngx_connectio
      s->ssl = addr_conf->ssl;
  #endif
@@ -24921,7 +25133,7 @@ diff -r aa901551a7eb src/stream/ngx_stream_handler.c
  
 diff -r aa901551a7eb src/stream/ngx_stream_proxy_module.c
 --- a/src/stream/ngx_stream_proxy_module.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/stream/ngx_stream_proxy_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream_proxy_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -1771,6 +1771,21 @@ ngx_stream_proxy_process(ngx_stream_sess
          if (dst->type == SOCK_STREAM && pscf->half_close
              && src->read->eof && !u->half_closed && !dst->buffered)
@@ -24946,7 +25158,7 @@ diff -r aa901551a7eb src/stream/ngx_stream_proxy_module.c
                                       ngx_shutdown_socket_n " failed");
 diff -r aa901551a7eb src/stream/ngx_stream_quic_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream_quic_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,377 @@
 +
 +/*
@@ -25327,7 +25539,7 @@ diff -r aa901551a7eb src/stream/ngx_stream_quic_module.c
 +}
 diff -r aa901551a7eb src/stream/ngx_stream_quic_module.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.h	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream_quic_module.h	Tue Dec 13 12:15:22 2022 -0500
 @@ -0,0 +1,20 @@
 +
 +/*
@@ -25351,7 +25563,7 @@ diff -r aa901551a7eb src/stream/ngx_stream_quic_module.h
 +#endif /* _NGX_STREAM_QUIC_H_INCLUDED_ */
 diff -r aa901551a7eb src/stream/ngx_stream_ssl_module.c
 --- a/src/stream/ngx_stream_ssl_module.c	Wed Oct 19 10:56:20 2022 +0300
-+++ b/src/stream/ngx_stream_ssl_module.c	Thu Oct 20 13:21:28 2022 -0400
++++ b/src/stream/ngx_stream_ssl_module.c	Tue Dec 13 12:15:22 2022 -0500
 @@ -1194,7 +1194,10 @@ ngx_stream_ssl_conf_command_check(ngx_co
  static ngx_int_t
  ngx_stream_ssl_init(ngx_conf_t *cf)
