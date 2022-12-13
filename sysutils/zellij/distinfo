@@ -1,4 +1,4 @@
-TIMESTAMP = 1670699828
+TIMESTAMP = 1670959458
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
 SIZE (rust/crates/addr2line-0.17.0.crate) = 32260
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -785,5 +785,5 @@ SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
 SHA256 (rust/crates/zeroize-1.5.5.crate) = 94693807d016b2f2d2e14420eb3bfcca689311ff775dcf113d74ea624b7cdf07
 SIZE (rust/crates/zeroize-1.5.5.crate) = 18550
-SHA256 (zellij-org-zellij-v0.34.3_GH0.tar.gz) = 1cf1e5a87eb3bd458487b2db91cd8918b6df308de2809041fc62df30c50a735c
-SIZE (zellij-org-zellij-v0.34.3_GH0.tar.gz) = 9043928
+SHA256 (zellij-org-zellij-v0.34.4_GH0.tar.gz) = 687e30a3e6916cdd7189ab04ff4b170bc5e09edd937637f0388b3f8432d0fc49
+SIZE (zellij-org-zellij-v0.34.4_GH0.tar.gz) = 9043987
