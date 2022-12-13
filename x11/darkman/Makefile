@@ -47,9 +47,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/services
-	${INSTALL_DATA} ${WRKSRC}/contrib/dbus/nl.whynothugo.darkman.service \
-		${STAGEDIR}${PREFIX}/share/dbus-1/services/
-	${INSTALL_DATA} ${WRKSRC}/contrib/dbus/org.freedesktop.impl.portal.desktop.darkman.service \
+	${INSTALL_DATA} ${WRKSRC}/contrib/dbus/*.service \
 		${STAGEDIR}${PREFIX}/share/dbus-1/services/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xdg-desktop-portal/portals
 	${INSTALL_DATA} ${WRKSRC}/contrib/portal/${PORTNAME}.portal \
