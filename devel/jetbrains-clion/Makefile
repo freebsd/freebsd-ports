@@ -1,5 +1,6 @@
 PORTNAME=	clion
 PORTVERSION=	2022.3
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
@@ -22,10 +23,9 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 
 USES=		cpe python:run shebangfix
 
+CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-
-CPE_VENDOR=	jetbrains
 
 SHEBANG_FILES=	bin/restart.py \
 		plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh
@@ -34,6 +34,7 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	libjnidispatch.so
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
+SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
 WRKSRC=		${WRKDIR}/clion-${PORTVERSION}
 
