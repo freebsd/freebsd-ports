@@ -1,6 +1,6 @@
 PORTNAME=	guile
 PORTVERSION=	3.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 
@@ -63,7 +63,9 @@ post-patch:
 post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure
 
-post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.go" | ${XARGS} ${STRIP_CMD}
+# Currently guile fails to run if libs are stripped. Will need to debug
+# the case.
+#post-install:
+#	@${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.go" | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
