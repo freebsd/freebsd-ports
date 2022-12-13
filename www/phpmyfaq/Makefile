@@ -1,5 +1,5 @@
 PORTNAME=	phpmyfaq
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpmyfaq.de/files/
 
