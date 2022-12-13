@@ -24,32 +24,23 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X main.commit=${_BUILD_COMMIT} \
 		-X main.date=${_BUILD_DATE}"
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
 PORTEXAMPLES=	.golangci.reference.yml
 
 OPTIONS_DEFINE=		COMPLETIONS DOCS EXAMPLES
 OPTIONS_DEFAULT=	COMPLETIONS
-OPTIONS_SUB=		yes
 
-COMPLETIONS_DESC=	Build and install shell completions
-
-do-build-COMPLETIONS-on:
-.for SHELL in bash fish zsh
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_WRKDIR_BIN}/${PORTNAME} completion \
-		${SHELL} > ${WRKSRC}/${SHELL}
-.endfor
+COMPLETIONS_DESC=		Build and install bash, fish and zsh shell completions
+COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
+				share/fish/vendor_completions.d/${PORTNAME}.fish \
+				share/zsh/site-functions/_${PORTNAME}
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-
-	${INSTALL_DATA} ${WRKSRC}/bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/fish \
-		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
-	${INSTALL_DATA} ${WRKSRC}/zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+.for _shell in bash fish zsh
+	${GO_WRKDIR_BIN}/${PORTNAME} completion ${_shell} \
+		>${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
