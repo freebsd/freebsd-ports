@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Additional packages recommended for new users:
+- hyprpaper
+- hyprpicker
+- xdg-desktop-portal-hyprland
+EOM
+}
+]
