@@ -34,7 +34,7 @@ MAKE_ENV+=	MAN_PREFIX=${PREFIX}/man \
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
 
-ERLANG_VER=	24
+ERLANG_VER?=	24
 
 .include <bsd.port.options.mk>
 
