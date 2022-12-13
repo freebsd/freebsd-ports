@@ -1,3 +1,48 @@
+  <vuln vid="439f3f81-7a49-11ed-97ac-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2022-10-24">
+	  <p>an authenticated SQL injection when adding categories in the admin backend</p>
+	  <p>a stored cross-site scripting vulnerability in the category name</p>
+	  <p>a stored cross-site scripting vulnerability in the admin logging</p>
+	  <p>a stored cross-site scripting vulnerability in the FAQ title</p>
+	  <p>a PostgreSQL based SQL injection for the lang parameter </p>
+	  <p>a SQL injection when storing an instance name in the admin backend</p>
+	  <p>a SQL injection when adding attachments in the admin backend</p>
+	  <p>a stored cross-site scripting vulnerability when adding users by admins</p>
+	  <p>a missing "secure" flag for cookies when using TLS</p>
+	  <p>a cross-site request forgery / cross-site scripting vulnerability when saving new questions</p>
+	  <p>a reflected cross-site scripting vulnerability in the admin backend</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/a1649f43-78c9-4927-b313-36911872a84b/</url>
+      <url>https://huntr.dev/bounties/2ec4ddd4-de22-4f2d-ba92-3382b452bfea/</url>
+      <url>https://huntr.dev/bounties/5915ed4c-5fe2-42e7-8fac-5dd0d032727c/</url>
+      <url>https://huntr.dev/bounties/5944f154-c0ab-4547-9d9d-3101e86eb975/</url>
+      <url>https://huntr.dev/bounties/315aa78d-7bd2-4b14-86f2-b5c211e62034/</url>
+      <url>https://huntr.dev/bounties/eb3a8ea3-daea-4555-a3e6-80b82f533792/</url>
+      <url>https://huntr.dev/bounties/faac0c92-8d4b-4901-a933-662b661a3f99/</url>
+      <url>https://huntr.dev/bounties/56499a60-2358-41fe-9b38-8cb23cdfc17c/</url>
+      <url>https://huntr.dev/bounties/f531bbf2-32c8-4efe-8156-ae9bc6b5d3aa/</url>
+      <url>https://huntr.dev/bounties/322c12b1-08d5-4ee3-9d94-d4bb40366c7a/</url>
+      <url>https://huntr.dev/bounties/f2857bc7-8fbc-489a-9a38-30b93300eec5/</url>
+    </references>
+    <dates>
+      <discovery>2022-12-11</discovery>
+      <entry>2022-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="508da89c-78b9-11ed-854f-5404a68ad561">
     <topic>traefik -- multiple vulnerabilities</topic>
     <affects>
