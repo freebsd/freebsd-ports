@@ -25,7 +25,7 @@ required_files="%%PREFIX%%/etc/bgpd.conf"
 
 check_process()
 {
-	/bin/pgrep -f 'bgpd: parent.*'
+	/bin/pgrep -j none -U 0 -f %%PREFIX%%/sbin/bgpd
 }
 
 load_rc_config $name
