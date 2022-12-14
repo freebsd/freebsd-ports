@@ -1,6 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.92.1
-PORTREVISION=	1
+PORTVERSION=	0.93.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cirruslabs
+
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		BurntSushi:toml:v1.2.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
@@ -48,10 +48,11 @@ GH_TUPLE=	\
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fvbommel:sortorder:v1.0.2:fvbommel_sortorder/vendor/github.com/fvbommel/sortorder \
+		getsentry:sentry-go:v0.16.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:a5bbcd278ab1:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
-		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.67.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-test:deep:v1.0.1:go_test_deep/vendor/github.com/go-test/deep \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -138,7 +139,6 @@ GH_TUPLE=	\
 		yudai:gojsondiff:v1.0.0:yudai_gojsondiff/vendor/github.com/yudai/gojsondiff \
 		yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs \
 		yudai:pp:v2.0.1:yudai_pp/vendor/github.com/yudai/pp
-
 GO_TARGET=	./cmd/cirrus
 
 PLIST_FILES=	bin/cirrus
