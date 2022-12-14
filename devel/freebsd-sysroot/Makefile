@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKDIR}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le riscv64
-FLAVOR?=	${ARCH}
+FLAVOR?=	${FLAVORS:[1]}
 
 powerpc_BUILD_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
 powerpc_RUN_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
