@@ -82,6 +82,7 @@
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon
+    SUBDIR += icinga-ipl-i18n
     SUBDIR += icinga-php-library
     SUBDIR += icinga-php-thirdparty
     SUBDIR += icinga2
