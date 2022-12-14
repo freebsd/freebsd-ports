@@ -1,0 +1,11 @@
+--- lib/sound/CMakeLists.txt.orig	2022-11-02 16:53:49 UTC
++++ lib/sound/CMakeLists.txt
+@@ -47,7 +47,7 @@ target_link_libraries(sound PRIVATE Ogg::ogg Opus::opu
+ target_link_libraries(sound PUBLIC optional-lite)
+ 
+ # Opusfile
+-find_package(Opusfile QUIET)
++find_package(Opusfile REQUIRED)
+ if (NOT WZ_FORCE_MINIMAL_OPUSFILE AND Opusfile_FOUND)
+ 	# Link the found Opusfile
+ 	message(STATUS "Found Opusfile library: ${OPUSFILE_LIBRARY}")
