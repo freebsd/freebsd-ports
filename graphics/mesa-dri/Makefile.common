@@ -85,7 +85,7 @@ BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 LLVM_DEFAULT=	15
 BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-config=llvm-config${LLVM_DEFAULT}
+CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 MESON_ARGS+=	-Dllvm=enabled
