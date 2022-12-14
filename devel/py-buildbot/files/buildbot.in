@@ -7,19 +7,21 @@
 #
 # Add the following lines to /etc/rc.conf to enable buildbot:
 # buildbot_enable (bool):	Set to "NO" by default
-# buildbot_basedir (path):	Must be set to the path of the buildbot directory
-#				file, e.g. /var/www/buildbot
-# buildbot_user (str):		Set to "root" by default.  Change it to run
-#				buildbot as a different user.
+# buildbot_basedir (path):	Set to "/var/www/buildbot" by default
+# buildbot_user (str):		Set to "buildbot" by default.
 
 . /etc/rc.subr
 
 export PATH=${PATH}:%%PREFIX%%/bin
 
 name="buildbot"
+desc="Buildbot Master"
 rcvar=buildbot_enable
 command="%%PREFIX%%/bin/buildbot-%%PYTHON_VER%%"
 load_rc_config $name
+
+: ${buildbot_user:="buildbot"}
+: ${buildbot_basedir:="/var/db/buildbot"}
 
 check_cmd="${name}_check"
 extra_commands="check reload"
@@ -39,6 +41,12 @@ buildbot_check()
 
 buildbot_prestart()
 {
+    if [ ! -f "${buildbot_basedir}/${name}.tac" ]; then
+        su -m ${buildbot_user} -c "exec ${command} create-master ${buildbot_basedir}"
+    fi
+    if [ ! -f "${buildbot_basedir}/master.cfg" ]; then
+        install -o ${buildbot_user} -g ${buildbot_user} -m 750 ${buildbot_basedir}/master.cfg.sample ${buildbot_basedir}/master.cfg
+    fi
 	rc_flags="start ${buildbot_basedir} ${rc_flags}"
 }
 
