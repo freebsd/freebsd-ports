@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.11.0
-PORTREVISION=	2
+DISTVERSION=	1.12.0
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -21,6 +20,7 @@ USES=		cargo ssl
 
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.7.6 \
+		ahash-0.8.1 \
 		aho-corasick-0.7.18 \
 		android_system_properties-0.1.4 \
 		anyhow-1.0.62 \
@@ -30,19 +30,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		async-channel-1.7.1 \
 		async-executor-1.4.1 \
 		async-io-1.8.0 \
-		async-lock-2.5.0 \
-		async-recursion-0.3.2 \
+		async-lock-2.6.0 \
+		async-recursion-1.0.0 \
 		async-task-4.3.0 \
-		async-trait-0.1.57 \
+		async-trait-0.1.59 \
 		atoi-1.0.0 \
-		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.0 \
 		bitflags-1.3.2 \
 		block-0.1.6 \
 		block-buffer-0.9.0 \
 		block-buffer-0.10.2 \
-		bstr-0.2.17 \
 		bstr-1.0.1 \
 		btoi-0.4.2 \
 		bumpalo-3.11.0 \
@@ -55,10 +53,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.22 \
-		clap-4.0.15 \
-		clap_complete-4.0.2 \
-		clap_derive-4.0.13 \
+		chrono-0.4.23 \
+		clap-4.0.29 \
+		clap_complete-4.0.6 \
+		clap_derive-4.0.21 \
 		clap_lex-0.3.0 \
 		clru-0.5.0 \
 		cmake-0.1.48 \
@@ -82,7 +80,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		derivative-2.2.0 \
 		difflib-0.4.0 \
 		digest-0.9.0 \
-		digest-0.10.3 \
+		digest-0.10.6 \
 		dirs-2.0.2 \
 		dirs-4.0.0 \
 		dirs-next-2.0.0 \
@@ -106,76 +104,78 @@ CARGO_CRATES=	adler-1.0.2 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		fragile-1.2.1 \
-		futures-core-0.3.23 \
+		futures-core-0.3.25 \
 		futures-io-0.3.23 \
 		futures-lite-1.12.0 \
-		futures-sink-0.3.23 \
-		futures-task-0.3.23 \
-		futures-util-0.3.23 \
+		futures-sink-0.3.25 \
+		futures-task-0.3.25 \
+		futures-util-0.3.25 \
 		generic-array-0.14.6 \
-		gethostname-0.3.0 \
+		gethostname-0.4.1 \
 		getrandom-0.1.16 \
 		getrandom-0.2.7 \
-		git-actor-0.13.0 \
-		git-attributes-0.5.0 \
-		git-bitmap-0.1.2 \
-		git-chunk-0.3.2 \
-		git-command-0.1.0 \
-		git-config-0.9.0 \
-		git-config-value-0.8.0 \
-		git-credentials-0.6.0 \
-		git-date-0.2.0 \
-		git-diff-0.20.0 \
-		git-discover-0.6.0 \
-		git-features-0.23.0 \
-		git-glob-0.4.0 \
-		git-hash-0.9.11 \
-		git-index-0.6.0 \
-		git-lock-2.1.1 \
-		git-mailmap-0.5.0 \
-		git-object-0.22.0 \
-		git-odb-0.34.0 \
-		git-pack-0.24.0 \
-		git-path-0.5.0 \
-		git-prompt-0.1.0 \
-		git-quote-0.3.0 \
-		git-ref-0.17.0 \
-		git-refspec-0.3.0 \
-		git-repository-0.25.0 \
-		git-revision-0.6.0 \
-		git-sec-0.4.1 \
-		git-tempfile-2.0.4 \
-		git-traverse-0.18.0 \
-		git-url-0.10.0 \
-		git-validate-0.6.0 \
-		git-worktree-0.6.0 \
+		git-actor-0.14.0 \
+		git-attributes-0.6.0 \
+		git-bitmap-0.2.0 \
+		git-chunk-0.4.0 \
+		git-command-0.2.0 \
+		git-config-0.12.0 \
+		git-config-value-0.9.0 \
+		git-credentials-0.7.0 \
+		git-date-0.3.0 \
+		git-diff-0.23.0 \
+		git-discover-0.9.0 \
+		git-features-0.24.1 \
+		git-glob-0.5.0 \
+		git-hash-0.10.0 \
+		git-index-0.9.0 \
+		git-lock-3.0.0 \
+		git-mailmap-0.6.0 \
+		git-object-0.23.0 \
+		git-odb-0.37.0 \
+		git-pack-0.27.0 \
+		git-path-0.6.0 \
+		git-prompt-0.2.0 \
+		git-quote-0.4.0 \
+		git-ref-0.20.0 \
+		git-refspec-0.4.0 \
+		git-repository-0.29.0 \
+		git-revision-0.7.0 \
+		git-sec-0.5.0 \
+		git-tempfile-3.0.0 \
+		git-traverse-0.19.0 \
+		git-url-0.11.0 \
+		git-validate-0.7.0 \
+		git-worktree-0.9.0 \
 		guess_host_triple-0.1.3 \
 		hash_hasher-2.0.3 \
 		hashbrown-0.12.3 \
 		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		hex-0.4.3 \
 		home-0.5.4 \
 		human_format-1.0.3 \
 		iana-time-zone-0.1.46 \
 		idna-0.2.3 \
-		indexmap-1.9.1 \
+		imara-diff-0.1.5 \
+		indexmap-1.9.2 \
 		instant-0.1.12 \
 		io-close-0.3.7 \
-		io-lifetimes-0.7.3 \
+		io-lifetimes-1.0.1 \
+		is-terminal-0.4.1 \
 		is_debug-1.0.1 \
-		itertools-0.10.3 \
+		itertools-0.10.5 \
 		itoa-1.0.3 \
 		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.132 \
+		libc-0.2.137 \
 		libz-ng-sys-1.1.8 \
 		libz-sys-1.1.8 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.0.46 \
-		local_ipaddress-0.1.3 \
+		linux-raw-sys-0.1.3 \
 		lock_api-0.4.8 \
 		log-0.4.17 \
 		mac-notification-sys-0.5.6 \
@@ -192,10 +192,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		mockall_derive-0.11.2 \
 		nix-0.23.1 \
 		nix-0.25.0 \
+		nix-0.26.1 \
 		nom-5.1.2 \
 		nom-7.1.1 \
 		normalize-line-endings-0.3.0 \
-		notify-rust-4.5.10 \
+		notify-rust-4.6.0 \
 		nu-ansi-term-0.46.0 \
 		num-derive-0.3.3 \
 		num-integer-0.1.45 \
@@ -205,12 +206,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		once_cell-1.15.0 \
+		once_cell-1.16.0 \
 		opaque-debug-0.3.0 \
-		open-3.0.3 \
+		open-3.2.0 \
 		ordered-float-2.10.0 \
 		ordered-multimap-0.4.3 \
-		ordered-stream-0.0.1 \
+		ordered-stream-0.1.2 \
 		os_info-3.5.1 \
 		os_str_bytes-6.3.0 \
 		overload-0.1.1 \
@@ -221,10 +222,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		pathdiff-0.2.1 \
 		pathsearch-0.2.0 \
 		percent-encoding-2.1.0 \
-		pest-2.4.0 \
-		pest_derive-2.4.0 \
-		pest_generator-2.4.0 \
-		pest_meta-2.4.0 \
+		pest-2.5.1 \
+		pest_derive-2.5.1 \
+		pest_generator-2.5.1 \
+		pest_meta-2.5.1 \
 		phf-0.8.0 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
@@ -240,12 +241,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.43 \
+		proc-macro2-1.0.47 \
 		process_control-4.0.0 \
-		prodash-20.2.0 \
+		prodash-21.1.0 \
 		quick-error-2.0.1 \
 		quick-xml-0.23.1 \
-		quick-xml-0.25.0 \
+		quick-xml-0.26.0 \
 		quote-1.0.21 \
 		rand-0.7.3 \
 		rand-0.8.5 \
@@ -255,16 +256,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
-		rayon-1.5.3 \
-		rayon-core-1.9.3 \
+		rayon-1.6.1 \
+		rayon-core-1.10.0 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.6.0 \
+		regex-1.7.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		rust-ini-0.18.0 \
-		rustix-0.35.9 \
+		rustix-0.36.4 \
 		rustversion-1.0.9 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
@@ -274,24 +275,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		semver-0.11.0 \
 		semver-1.0.14 \
 		semver-parser-0.10.2 \
-		serde-1.0.145 \
-		serde_derive-1.0.145 \
+		serde-1.0.150 \
+		serde_derive-1.0.150 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.86 \
+		serde_json-1.0.89 \
 		serde_repr-0.1.9 \
-		sha-1-0.10.0 \
-		sha1-0.6.1 \
-		sha1-0.10.1 \
+		sha1-0.10.5 \
 		sha1-asm-0.5.1 \
 		sha1_smol-1.0.0 \
 		sha2-0.9.9 \
-		shadow-rs-0.16.3 \
+		shadow-rs-0.18.0 \
 		shared_library-0.1.9 \
 		shell-words-1.1.0 \
 		signal-hook-0.1.17 \
 		signal-hook-0.3.14 \
 		signal-hook-registry-1.4.0 \
-		similar-2.2.0 \
 		siphasher-0.3.10 \
 		slab-0.4.7 \
 		smallvec-1.9.0 \
@@ -301,30 +299,31 @@ CARGO_CRATES=	adler-1.0.2 \
 		strsim-0.10.0 \
 		strum-0.22.0 \
 		strum_macros-0.22.0 \
-		syn-1.0.99 \
-		systemstat-0.2.1 \
+		syn-1.0.104 \
+		systemstat-0.2.2 \
 		tauri-winrt-notification-0.1.0 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		terminal_size-0.2.1 \
+		terminal_size-0.2.3 \
 		terminfo-0.7.3 \
 		termios-0.3.3 \
 		termtree-0.2.4 \
 		termwiz-0.15.0 \
-		thiserror-1.0.35 \
-		thiserror-impl-1.0.35 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
 		time-0.1.44 \
 		time-0.3.14 \
 		time-macros-0.2.4 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.9 \
-		toml_edit-0.14.4 \
-		tracing-0.1.36 \
-		tracing-attributes-0.1.22 \
-		tracing-core-0.1.29 \
+		toml_datetime-0.5.0 \
+		toml_edit-0.15.0 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
+		tracing-core-0.1.30 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.4 \
+		ucd-trie-0.1.5 \
 		uds_windows-1.0.2 \
 		uluru-3.0.0 \
 		unicase-2.6.0 \
@@ -362,8 +361,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.39.0 \
 		windows-0.40.0 \
-		windows-0.42.0 \
+		windows-0.43.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
 		windows_aarch64_gnullvm-0.40.0 \
 		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
@@ -390,11 +390,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_msvc-0.42.0 \
 		winres-0.1.12 \
 		yaml-rust-0.4.5 \
-		zbus-2.3.2 \
-		zbus_macros-2.3.2 \
+		zbus-3.5.0 \
+		zbus_macros-3.5.0 \
 		zbus_names-2.2.0 \
-		zvariant-3.6.0 \
-		zvariant_derive-3.6.0
+		zvariant-3.8.0 \
+		zvariant_derive-3.8.0
 #CARGO_FEATURES=	notify-rust
 PLIST_FILES=	bin/${PORTNAME}
 
