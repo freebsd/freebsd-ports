@@ -3,7 +3,6 @@ Direct Rendering Manager (DRM) modules for LinuxKPI-based kernel mode setting
 and radeonkms modules from the former base DRM component on other
 architectures). This metaport encompasses recommended versions of DRM, based
 on the most recent updates to the LinuxKPI in specific versions of FreeBSD.
-Generally, the main branch (CURRENT) receives the most recent development DRM.
 
 Installing this metaport will:
 
