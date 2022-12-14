@@ -662,6 +662,8 @@
 %%WWWDIR%%/install/resources/upgrade51.php
 %%WWWDIR%%/install/resources/upgrade52.php
 %%WWWDIR%%/install/resources/upgrade53.php
+%%WWWDIR%%/install/resources/upgrade54.php
+%%WWWDIR%%/install/resources/upgrade55.php
 %%WWWDIR%%/install/resources/upgrade6.php
 %%WWWDIR%%/install/resources/upgrade7.php
 %%WWWDIR%%/install/resources/upgrade8.php
