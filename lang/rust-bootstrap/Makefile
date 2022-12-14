@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysr
 		gmake:devel/gmake \
 		rust>=${PORTVERSION}:lang/rust
 
-FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
+FLAVORS=	aarch64 amd64 armv7 i386 \
 		powerpc64le powerpc riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
