@@ -1,8 +1,7 @@
 Direct Rendering Manager (DRM) modules for LinuxKPI-based kernel mode setting
-(KMS) components. Modules for amdgpu, i915, and radeon (based on amd64, i915
-and radeonkms modules from the former base DRM component on other
-architectures). This metaport encompasses recommended versions of DRM, based
-on the most recent updates to the LinuxKPI in specific versions of FreeBSD.
+(KMS) components. Modules for amdgpu, i915, and radeon. This metaport
+encompasses recommended versions of DRM, based on the most recent updates to
+the LinuxKPI in specific versions of FreeBSD.
 
 Installing this metaport will:
 
