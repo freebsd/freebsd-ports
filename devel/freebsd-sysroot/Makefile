@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2022-11-21
+DISTVERSION=	a2022-12-14
 CATEGORIES=	devel
 MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
 		LOCAL/rust:${FLAVOR}
