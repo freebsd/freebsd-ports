@@ -1,0 +1,2 @@
+This project bundles all 3rd party PHP libraries used by Icinga Web products into one piece,
+which can be integrated as library into Icinga Web 2.

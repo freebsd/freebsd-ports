@@ -83,6 +83,7 @@
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon
     SUBDIR += icinga-php-library
+    SUBDIR += icinga-php-thirdparty
     SUBDIR += icinga2
     SUBDIR += icingaweb2
     SUBDIR += icingaweb2-module-businessprocess
