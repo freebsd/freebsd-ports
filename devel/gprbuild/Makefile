@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	gprbuild
 PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	1
@@ -7,8 +5,10 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adacore multi-language software build tool
+WWW=		https://www.adacore.com/gems/gem-65
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3+ GPLv3RLE
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
 BUILD_DEPENDS=	xmlada>=4.4:textproc/xmlada
