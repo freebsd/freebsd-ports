@@ -6,6 +6,7 @@
     SUBDIR += atk
     SUBDIR += atkmm
     SUBDIR += caribou
+    SUBDIR += darkman
     SUBDIR += eflite
     SUBDIR += feedbackd
     SUBDIR += gammy
