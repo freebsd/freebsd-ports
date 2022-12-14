@@ -1,5 +1,6 @@
 PORTNAME=	hyprpicker
 PORTVERSION=	s20221120
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 GH_TAGNAME=	f6c24d9
 LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 # Extract (snapshot) version from the port instead of Git
@@ -45,5 +47,7 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
