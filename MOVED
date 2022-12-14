@@ -16894,7 +16894,6 @@ devel/ahven||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/alog||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/aunit||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/florist-gpl||2022-02-28|Removed, depends on expired lang/gcc6-aux
-devel/gprbuild||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/libspark2012||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/matreshka||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/pcsc-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
