@@ -19,7 +19,6 @@ USES=		cargo compiler:c++17-lang cpe gmake gnome ninja:build pkgconfig:build pyt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
-GH_TUPLE=	tinycc:tinycc:afc136262e93a:deno/ext/ffi/tinycc
 
 USE_GNOME=	glib20
 
