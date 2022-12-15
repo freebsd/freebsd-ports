@@ -1,6 +1,6 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20221214
-CATEGORIES=	emulators
+PORTVERSION=	s20221216
+CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
 .else
@@ -41,7 +41,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	a222f02c7
+GH_TAGNAME=	bbb202cee
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		yuzu-emu:sirit:d7ad93a:sirit/externals/sirit \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-201-gc214f6f:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
