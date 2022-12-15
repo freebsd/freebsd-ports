@@ -1,6 +1,6 @@
---- src/ui/image_backends/iterm.rs.orig	2021-07-13 09:56:48 UTC
-+++ src/ui/image_backends/iterm.rs
-@@ -27,7 +27,7 @@ impl super::ImageBackend for ITermBackend {
+--- image/src/kitty.rs.orig	2022-12-15 04:55:51 UTC
++++ image/src/kitty.rs
+@@ -92,7 +92,7 @@ impl super::ImageBackend for KittyBackend {
      ) -> Result<String> {
          let tty_size = unsafe {
              let tty_size: winsize = std::mem::zeroed();

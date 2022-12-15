@@ -1,6 +1,6 @@
---- src/ui/image_backends/sixel.rs.orig	2021-07-13 09:57:28 UTC
-+++ src/ui/image_backends/sixel.rs
-@@ -74,7 +74,7 @@ impl super::ImageBackend for SixelBackend {
+--- image/src/sixel.rs.orig	2022-12-15 04:56:28 UTC
++++ image/src/sixel.rs
+@@ -82,7 +82,7 @@ impl super::ImageBackend for SixelBackend {
      fn add_image(&self, lines: Vec<String>, image: &DynamicImage, colors: usize) -> Result<String> {
          let tty_size = unsafe {
              let tty_size: winsize = std::mem::zeroed();
