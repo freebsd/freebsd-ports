@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	math
 
 COMMENT=	Symmetric approximate minimum degree
@@ -7,7 +7,7 @@ WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	BSD3CLAUSE
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags fortran
 
 MPORTNAME=	AMD
 USE_LDCONFIG=	yes
