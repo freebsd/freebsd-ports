@@ -1,7 +1,6 @@
 PORTNAME=	vgrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
-PORTREVISION=	7
+DISTVERSION=	2.6.1
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	vrothberg
-GH_TUPLE=	golang:sys:dee7805ff2e1:golang_sys/vendor/golang.org/x/sys \
+GH_TUPLE=	golang:sys:c0bba94af5f8:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
+		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -25,9 +25,9 @@ GH_TUPLE=	golang:sys:dee7805ff2e1:golang_sys/vendor/golang.org/x/sys \
 		nightlyone:lockfile:v1.0.0:nightlyone_lockfile/vendor/github.com/nightlyone/lockfile \
 		peterh:liner:v1.2.2:peterh_liner/vendor/github.com/peterh/liner \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus
+		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 
-_BUILD_VERSION=	${DISTVERSION}-6fb7acc
+_BUILD_VERSION=	${DISTVERSION}-0d61b95
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
