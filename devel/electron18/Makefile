@@ -186,7 +186,6 @@ GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_VERSION} < 130
 LLVM_DEFAULT=	13
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=	cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
@@ -195,10 +194,6 @@ BINARY_ALIAS+=	cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 		ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
 		nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT} \
 		ld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-.else
-BINARY_ALIAS+=	ar=/usr/bin/llvm-ar \
-		nm=/usr/bin/llvm-nm
-.endif
 
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64=""
