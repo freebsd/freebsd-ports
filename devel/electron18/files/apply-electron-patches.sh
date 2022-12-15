@@ -1,6 +1,6 @@
 #! /bin/sh
 
-PATH=/bin:/usr/bin:/usr/local/bin
+PATH=/bin:/usr/bin:/usr/local/bin:/usr/local64/bin
 
 GIT_CMD="git"
 PATCH_CMD="${GIT_CMD} apply"
