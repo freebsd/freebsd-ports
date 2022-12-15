@@ -1,6 +1,7 @@
 PORTNAME=	gprbuild
-PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	23.0.0
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,30 +12,96 @@ LICENSE=	GPLv3+ GPLv3RLE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
-BUILD_DEPENDS=	xmlada>=4.4:textproc/xmlada
+USES=		ada:12,run gmake
+USE_BINUTILS=	yes
 
-SNAPSHOT=	20160609
-USES=		ada
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
-GH_TAGNAME=	376670f
+GH_PROJECT=	gprconfig_kb:kb xmlada:xa
 
+BOOTPATH=	${WRKSRC}/bootstrap/bin
+MAKE_JOBS_NUMBER_LIMIT=	4
+MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}	\
+		ENABLE_SHARED=yes
+XMLADA_SRC=	${WRKDIR}/xmlada-${PORTVERSION}
+PLATFORM=	${OPSYS:tl}${OSREL}
+GARCH=		${ARCH:S/amd64/x86_64/}
+CONFIGURE_TARGET=	${GARCH}-portbld-${PLATFORM}
+MAKE_ENV+=	GPR_PROJECT_PATH=${WRKSRC}/bootstrap/share/gpr
+ALL_TARGET=	all	# libgpr.build.static
+INSTALL_TARGET=	install	# libgpr.install
+P2STRIP=	libexec/gprbuild/gprbind bin/gprname bin/gprslave bin/gprbuild	\
+		bin/gprconfig bin/gprls bin/gprinstall bin/gprclean
+
+GCC_VER=	12
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCSDIR=	${PREFIX}/gnat${GCC_VER}/share/doc/${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/gnat${GCC_VER}/share/examples/${PORTNAME}
 PORTDOCS=	*
-MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
-BUILD_WRKSRC=	${WRKSRC}/construction
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-INSTALL_TARGET=	install
+PORTEXAMPLES=	*
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
-OPTIONS_DEFINE=	DOCS
-#DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-#DOCS_ALL_TARGET=	gen-docs
-#DOCS_INSTALL_TARGET=	install-docs
+pre-configure:
+	${REINPLACE_CMD} -e '/^LIB_INSTALLER/s|prefix=|prefix=${STAGEDIR}|'	\
+		${WRKSRC}/${MAKEFILE}
+	@${ECHO} "*** Build the boostrap script"
+	(cd ${WRKSRC} &&	\
+	${SETENV} ${CONFIGURE_ENV} ./bootstrap.sh	\
+		--with-xmlada=${XMLADA_SRC}	\
+		--with-kb=${WRKDIR}/gprconfig_kb-${PORTVERSION}	\
+		--prefix=./bootstrap )
 
-post-patch:
-	@${MKDIR} ${BUILD_WRKSRC}
-	@${CP} ${FILESDIR}/Makefile.BSD ${BUILD_WRKSRC}/Makefile
-	@${REINPLACE_CMD} -i "" -e "s,@AUXPREFIX@,${PREFIX}/${ADAXX}-aux," \
-		${WRKSRC}/share/gprconfig/compilers.xml
-	@${RM} ${WRKSRC}/share/gprconfig/*.orig
+do-configure:
+	@${ECHO} "*** Make setup"
+	(cd ${WRKSRC} &&	\
+	${DO_MAKE_BUILD} setup )
+	@${ECHO} "*** Register our Ada compiler gnat${GCC_VER}"
+	(cd ${WRKSRC} &&	\
+	${SETENV} PATH=${PATH}:${LOCALBASE}/gnat${GCC_VER}/bin	\
+	./gprconfig --batch --target=${CONFIGURE_TARGET}	\
+	--config=Ada,,default,${LOCALBASE}/gnat${GCC_VER}/bin,GNAT )
+
+pre-build:
+	@${ECHO} "*** Bootstrap xmlada (configure)"
+	(cd ${XMLADA_SRC} &&	\
+	${SETENV} ${CONFIGURE_ENV} ./configure --prefix=${WRKSRC}/bootstrap )
+	@${ECHO} "*** Bootstrap xmlada (build)"
+	(cd ${XMLADA_SRC} &&	\
+	${DO_MAKE_BUILD:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} all )
+	@${ECHO} "*** Bootstrap xmlada (install)"
+	(cd ${XMLADA_SRC} &&	\
+	${DO_MAKE_BUILD:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} install )
+
+do-build:
+	@${ECHO} "*** Final build of gprbuild"
+	(cd ${WRKSRC} &&	\
+	${DO_MAKE_BUILD:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${ALL_TARGET} )
+
+do-build-DOCS-on:
+	@${ECHO} "*** Build docs"
+	(cd ${WRKSRC}/doc &&	\
+	${DO_MAKE_BUILD} html )
+
+do-build-EXAMPLES-on:
+	@${ECHO} "*** Build examples"
+	# Fortran is not yet supported on FreeBSD
+.for d in ada_f77 matrix
+	${MV} ${WRKSRC}/examples/${d} ${WRKDIR}
+.endfor
+	(cd ${WRKSRC}/examples &&	\
+	${DO_MAKE_BUILD:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${ALL_TARGET} )
+.for d in ada_f77 matrix
+	${MV} ${WRKDIR}/${d} ${WRKSRC}/examples/
+.endfor
+
+do-install:
+	@${ECHO} "*** Installation of gprbuild"
+	(cd ${WRKSRC} &&	\
+	${SETENV} ${MAKE_ENV:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${FAKEROOT}	\
+	${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
+.for p in ${P2STRIP}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/gnat${GCC_VER}/${p}
+.endfor
 
 .include <bsd.port.mk>
