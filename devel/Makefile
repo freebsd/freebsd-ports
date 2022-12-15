@@ -5643,6 +5643,7 @@
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
+    SUBDIR += pydeps
     SUBDIR += pydio-packr
     SUBDIR += pyenv
     SUBDIR += pygobject3-common
