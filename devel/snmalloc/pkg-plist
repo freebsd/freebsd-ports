@@ -1,0 +1,3 @@
+lib/snmalloc%%PKGNAMESUFFIX%%/libsnmallocshim.so
+lib/snmalloc%%PKGNAMESUFFIX%%/libsnmallocshim-checks.so
+lib/snmalloc%%PKGNAMESUFFIX%%/libsnmallocshim-checks-memcpy-only.so

@@ -1,0 +1,6 @@
+snmalloc is a high-performance memory allocator.  It is particularly well
+suited for producer-consumer workloads where memory is allocated in one thread
+and freed in another.
+
+The shims in this package are drop-in replacements for the libc malloc via
+LD_PRELOAD.

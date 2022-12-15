@@ -7198,6 +7198,7 @@
     SUBDIR += smc
     SUBDIR += smooth
     SUBDIR += smv
+    SUBDIR += snmalloc
     SUBDIR += soapui
     SUBDIR += sobjectizer
     SUBDIR += socket_wrapper
