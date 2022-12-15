@@ -1,3 +1,6 @@
 #!/bin/sh
 
+export WEBIDE_JDK=${WEBIDE_JDK:-"%%JAVA_HOME%%"}
+export SHELL="/bin/sh"
+
 exec "%%DATADIR%%/bin/webstorm.sh" "$@"
