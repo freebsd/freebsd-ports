@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--disable-coverage \
 # Dtrace option disabled until it is fixed upstream
 OPTIONS_DEFINE=		DOCS SASL
 OPTIONS_DEFAULT=	SASL
+# cyrus-sasl2 isn't available for CheriABI yet.
+OPTIONS_EXCLUDE_purecap=SASL
 OPTIONS_DEFINE_amd64=	DTRACE
 OPTIONS_DEFAULT_amd64=	DTRACE
 OPTIONS_DEFINE_powerpc64=	DTRACE
