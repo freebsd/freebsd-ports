@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+
+crowdsec-blocklist-mirror is installed.
+
+If you are running crowdsec on this machine, the bouncer will register itself with
+the Local API when it's started the first time.
+
+If the LAPI is on another machine, you need to manually register the bouncer
+and fill lapi_key and lapi_url in %%ETCDIR%%/crowdsec-blocklist-mirror.yaml before
+starting the service.
+
+Please refer to the documentation at
+https://docs.crowdsec.net/docs/bouncers/blocklist-mirror/
+
+Then activate the bouncer via sysrc and run it:
+
+----------
+# sysrc crowdsec_mirror_enable="YES"
+crowdsec_mirror_enable: NO -> YES
+# service crowdsec_mirror start
+----------
+
+The blocklist is available by default at
+'http://127.0.0.1:41412/security/blocklist', check the configuration file to
+change address, endpoint or add some authentication.
+
+EOM
+}
+]
