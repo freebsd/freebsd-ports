@@ -1,6 +1,6 @@
 PORTNAME=	gnat12
 PORTVERSION=	12.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}:gcc	\
 		LOCAL/thierry:gnat
@@ -59,7 +59,6 @@ CONFIGURE_ARGS=	--enable-languages="c,ada"	\
 		--enable-gnu-indirect-function	\
 		--with-as=${LOCALBASE}/bin/as	\
 		--with-ld=${LOCALBASE}/bin/ld	\
-		--program-suffix=${GCCVER}	\
 		--enable-threads=posix	\
 		--disable-libquadmath	\
 		--enable-host-shared	\
@@ -87,7 +86,7 @@ REVFILE=	${WRKSRC}/gcc/REVISION
 PHASEFILE=	${WRKSRC}/gcc/DEV-PHASE
 ASSET_FILE=	gnat-${GARCH}-${OPSYS:tl}.${OSREL:R}-${PKGVERSION}
 PREV_ASSET_VER?=	${PORTVERSION}
-PREV_ASSET_REV?=	_1
+PREV_ASSET_REV?=	_2
 PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
 PREV_ASSET_OSREL?=	${OSREL:R}
 PREV_ASSET_FILE=gnat-${GARCH}-${OPSYS:tl}.${PREV_ASSET_OSREL}-${PREV_ASSET_VER}${PREV_ASSET_REV}
@@ -101,11 +100,6 @@ INFOS=		cpp cppinternals gcc gccinstall gccint gnat_rm gnat_ugn	\
 pre-configure:
 	${ECHO} "-=> GNAT ${OS_LABEL4VERS}" > ${REVFILE}
 	${ECHO} "release" > ${PHASEFILE}
-
-pre-configure-PREVASSET-on:
-	cd ${PATHAUX} ; for f in *${PREV_ASSET_GCC} ; do	\
-	${LN} -sf $${f} $${f%${PREV_ASSET_GCC}} ;			\
-	done
 
 post-install-ASSETS-on:
 	${MKDIR} ${WRKDIR}/${ASSET_FILE} ${STAGEDIR}${DATADIR}/assets

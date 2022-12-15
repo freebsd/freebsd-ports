@@ -39,12 +39,9 @@ CC=		ada
 .  else
 _ADAPATH=	${LOCALBASE}/gnat${_ada_version}/bin
 _ADAPORT=	lang/gnat${_ada_version}
-_BINDEP=	${_ADAPATH}/gnat${_ada_version}
-CC=		gnatmake${_ada_version} -f -u
-BINARY_ALIAS+=	gcc=${_ADAPATH}/gcc12	\
-		ada=${_ADAPATH}/gcc12	\
-		gnatmake=${_ADAPATH}/gnatmake${_ada_version}	\
-		gnatbind=${_ADAPATH}/gnatbind${_ada_version}
+_BINDEP=	${_ADAPATH}/gnat
+CC=		gnatmake -f -u
+BINARY_ALIAS+=	ada=${_ADAPATH}/gcc
 .  endif
 
 .  if ${ada_ARGS:Mrun}
