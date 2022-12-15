@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	math
 
 COMMENT=	Read/write sparse matrices
