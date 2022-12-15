@@ -442,6 +442,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		trash-2.1.5 \
 		tree-sitter-0.20.9 \
 		tree-sitter-c-0.20.2 \
+		tree-sitter-cmake-0.1.0 \
 		tree-sitter-cpp-0.20.0 \
 		tree-sitter-elm-5.6.3 \
 		tree-sitter-go-0.19.1 \
@@ -567,6 +568,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2 \
 		tree-sitter-wgsl@git+https://github.com/szebniok/tree-sitter-wgsl?branch=master\#272e89ef2aeac74178edb9db4a83c1ffef80a463 \
+		tree-sitter-bash@git+https://github.com/tree-sitter/tree-sitter-bash?branch=master\#4488aa41406547e478636a4fcfd24f5bbc3f2f74 \
 		tree-sitter-ql@git+https://github.com/tree-sitter/tree-sitter-ql\#bd087020f0d8c183080ca615d38de0ec827aeeaf \
 		tree-sitter-haskell@git+https://github.com/tree-sitter/tree-sitter-haskell\#e30bdfd53eb28c73f26a68b77d436fd2140af167 \
 		tree-sitter-nix@git+https://github.com/panekj/tree-sitter-nix?branch=master\#59fc47150ab437e8bb356c7ab21e9531e87f7cc8 \
@@ -583,10 +585,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		psp-types@git+https://github.com/lapce/psp-types\#2513ff3c510377b2c2a003892d07bc91bec00c7a \
 		tree-sitter-java@git+https://github.com/tree-sitter/tree-sitter-java.git\#09d650def6cdf7f479f4b78f595e9ef5b58ce31e \
 		tree-sitter-dockerfile@git+https://github.com/panekj/tree-sitter-dockerfile?branch=queries\#c49d819e07685c90456270f1cc654d9cba640f53 \
-		tree-sitter-d@git+https://github.com/syntacti/tree-sitter-d?branch=master\#fdaa172d375f6c48987ce68ae01e8020acb9bc17 \
 		tree-sitter-md@git+https://github.com/MDeiml/tree-sitter-markdown.git?branch=split_parser\#272e080bca0efd19a06a7f4252d746417224959e \
 		tree-sitter-xml@git+https://github.com/RenjiSann/tree-sitter-xml?branch=main\#422528a43630db6dcc1e222d1c5ee3babd559473 \
-		tree-sitter-bash@git+https://github.com/syntacti/tree-sitter-bash?branch=master\#ba3adca745943b71b0c84bb4e4977788cc6a867b \
 		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#2024fe8f241dc95ad38f4024d39898bada8fe802 \
 		tree-sitter-kotlin@git+https://github.com/fwcd/tree-sitter-kotlin?branch=main\#a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569 \
 		swash@git+https://github.com/lapce/swash\#1d9b8c700a415f0f4216dd30026b3a2149db8e1e \
@@ -598,11 +598,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-ocaml@git+https://github.com/tree-sitter/tree-sitter-ocaml\#cc26b1ef111100f26a137bcbcd39fd4e35be9a59 \
 		tree-sitter-latex@git+https://github.com/latex-lsp/tree-sitter-latex?branch=master\#b3b2cf27f33e71438ebe46934900b1153901c6f2 \
 		tree-sitter-hcl@git+https://github.com/VixieTSQ/tree-sitter-hcl\#f4aa4553344e03e149ec459549a7f686d6846626 \
+		tree-sitter-d@git+https://github.com/ghishadow/tree-sitter-d?branch=main\#36603135ecb37ac6494c520efff91b875815d6f7 \
 		tree-sitter-zig@git+https://github.com/maxxnino/tree-sitter-zig?branch=main\#8d3224c3bd0890fe08358886ebf54fca2ed448a6 \
 		tree-sitter-scss@git+https://github.com/VixieTSQ/tree-sitter-scss?branch=patch-1\#3aac3391ede5098edbf4cc8a9f6d0cfdfe28e5dc \
 		tree-sitter-erlang@git+https://github.com/WhatsApp/tree-sitter-erlang?branch=main\#a8b8b0e16c4f5552f5e85af3dec976a5d16af8b9 \
 		font-kit@git+https://github.com/lapce/font-kit\#23e28b06b40f31fc53b82645b09ce6421768be23 \
+		tree-sitter-glsl@git+https://github.com/theHamsta/tree-sitter-glsl?branch=add-highlights.scm\#74329feb2605deccd32b1c644af507daa6fb82f1 \
 		tree-sitter-c-sharp@git+https://github.com/tree-sitter/tree-sitter-c-sharp?branch=master\#5b60f99545fea00a33bbfae5be956f684c4c69e2 \
+		tree-sitter-protobuf@git+https://github.com/yusdacra/tree-sitter-protobuf?branch=main\#5aef38d655f76a6b0d172340eed3766c93b3124c \
 		tree-sitter-dart@git+https://github.com/syntacti/tree-sitter-dart?branch=master\#78cad4503571d72666f78d5ba8ed6c1417653063 \
 		druid,druid-derive,druid-shell@git+https://github.com/lapce/druid?branch=shell_opengl\#0b9c00fcda238e392e758382f25166cd748fd305 \
 		structdesc@git+https://github.com/lapce/structdesc\#a6a2b8ab65d43475238f889736c4aa5dfff4500a \
