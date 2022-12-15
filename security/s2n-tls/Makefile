@@ -1,6 +1,6 @@
 PORTNAME=	s2n-tls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.30
+DISTVERSION=	1.3.31
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -42,7 +42,5 @@ post-install:
 	${CP} -r ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/*.c ${STAGEDIR}${EXAMPLESDIR}
-
-# testunit fails: https://github.com/aws/s2n-tls/issues/3489
 
 .include <bsd.port.mk>
