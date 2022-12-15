@@ -3,19 +3,17 @@
 #       python setup.py install
 #
 
-import os
-import sys
-
 try:
-    import setuptools
-    from setuptools.command.install import install
-    from setuptools import setup, Extension
+    import distutils
+    from distutils import sysconfig
+    from distutils.command.install import install
+    from distutils.core import setup, Extension
 except:
     raise SystemExit("Distutils problem")
 
 install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
 
-prefix = os.path.normpath(sys.prefix)
+prefix = sysconfig.PREFIX
 inc_dirs = [prefix + "/include"]
 lib_dirs = [prefix + "/lib"]
 libs = ["gdbm"]
