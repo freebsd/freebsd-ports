@@ -1,0 +1,11 @@
+--- build/config/compiler/pgo/pgo.gni.orig	2022-12-03 09:23:06.609476000 +0100
++++ build/config/compiler/pgo/pgo.gni	2022-12-03 09:23:28.402670000 +0100
+@@ -24,7 +24,7 @@ declare_args() {
+       # to chromecast and determine whether chromeos_is_browser_only is
+       # obsolete.
+       (is_win || is_mac ||
+-       (is_linux && !is_castos && !chromeos_is_browser_only))) {
++       (is_linux && !is_castos && !chromeos_is_browser_only && !is_bsd))) {
+     chrome_pgo_phase = 2
+   }
+ 
