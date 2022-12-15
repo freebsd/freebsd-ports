@@ -3,19 +3,20 @@
 #       python setup.py install
 #
 
+import os
 import platform
+import sys
 
 try:
-    import distutils
-    from distutils import sysconfig
-    from distutils.command.install import install
-    from distutils.core import setup, Extension
+    import setuptools
+    from setuptools.command.install import install
+    from setuptools import setup, Extension
 except:
-    raise SystemExit("Distutils problem")
+    raise SystemExit("Setuptools problem")
 
 install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
 
-prefix = sysconfig.PREFIX
+prefix = os.path.normpath(sys.prefix)
 inc_dirs = [prefix + "/include", "Modules/_sqlite"]
 lib_dirs = [prefix + "/lib"]
 libs = ["sqlite3"]

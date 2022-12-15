@@ -3,20 +3,20 @@
 #       python setup.py install
 #
 
-import os, string
+import os
+import sys
 
 try:
-    import distutils
-    from distutils import sysconfig
-    from distutils.command.install import install
-    from distutils.core import setup, Extension
+    import setuptools
+    from setuptools.command.install import install
+    from setuptools import setup, Extension
 except:
     raise SystemExit("Distutils problem")
 
 install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
 
 tkversion = "%%TK_VER%%"
-prefix = sysconfig.PREFIX
+prefix = os.path.normpath(sys.prefix)
 # Python 1.5 doesn't have os.getenv()?
 x11base = os.environ['LOCALBASE'] or '/usr/X11R6'
 inc_dirs = [prefix + "/include",
