@@ -11,6 +11,10 @@ WWW=		http://www.openscenegraph.com
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+IGNORE=		duplicate of graphics/osg, please use that instead
+DEPRECATED=	duplicate of graphics/osg
+EXPIRATION_DATE=2023-02-15
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libcurl.so:ftp/curl \
 		libavformat.so:multimedia/ffmpeg \
