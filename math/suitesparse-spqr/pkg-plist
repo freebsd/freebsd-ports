@@ -3,9 +3,13 @@ include/suitesparse/SuiteSparseQR_C.h
 include/suitesparse/SuiteSparseQR_definitions.h
 lib/cmake/SuiteSparse/FindSPQR.cmake
 lib/cmake/SuiteSparse/FindSPQR_CUDA.cmake
+lib/libspqr_cuda.so
+lib/libspqr_cuda.so.3
+lib/libspqr_cuda.so.3.0.2
+lib/libspqr_cuda_static.a
 lib/libspqr.a
 lib/libspqr.so
 lib/libspqr.so.3
-lib/libspqr.so.3.0.1
+lib/libspqr.so.3.0.2
 %%PORTDOCS%%%%DOCSDIR%%/SPQR_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/spqr_user_guide.pdf
