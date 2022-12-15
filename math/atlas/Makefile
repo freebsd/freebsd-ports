@@ -1,6 +1,5 @@
 PORTNAME=	atlas
-PORTVERSION=	3.8.4
-PORTREVISION=	18
+PORTVERSION=	3.10.3
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/math-${PORTNAME}/Stable/${PORTVERSION}
@@ -19,6 +18,7 @@ USES=		fortran gmake tar:bzip2
 USE_GCC=	yes
 
 CONFLICTS=	cblas
+CONFLICTS_INSTALL=	openblas	# $PREFIX/include/cblas.h
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
 OPTIONS_DEFINE=		DOCS DATA ARCHDEF TSC WALL_TIMER
@@ -70,36 +70,34 @@ SHARED_LAPACK_WRKSRC=	WRKSRC
 STATIC_LAPACK_WRKSRC=	WRKSRC
 PICFLAG?=	-fPIC
 CFLAGS+=	${PICFLAG}
-MAKE_ENV+=	MAKE=${GMAKE}
-BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake
+CONFIGURE_ENV+=	PATH="${WRKDIR}/.bin:${PATH}"
+MAKE_ENV+=	MAKE=${GMAKE} PATH="${WRKDIR}/.bin:${PATH}"
+BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake	\
+		gcc=${CC} gfortran=${FC} f77=${FC}
 
-post-patch:
-	@cd ${WRKSRC}/CONFIG/ARCHS ; for t in *.tgz ; do \
-		${MV} $${t} $${t}.bak ; \
-		${TAR} -s '/gcc/${CC}/' -xf $${t}.bak ; \
-		${TAR} -czf $${t} $${t%.tgz} ; \
-		${RM} -r $${t%.tgz} $${t}.bak ; \
-		done
-	@${REINPLACE_CMD} -e 's|$$(ARCH)|$$(ATLAS_ARCH)|g' \
+pre-everything:
+	@${CAT} ${FILESDIR}/tuning-message
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|$$(ARCH)|$$(ATLAS_ARCH)|g' \
 		${WRKSRC}/Make.top \
 		${WRKSRC}/makes/Make.bin \
 		${WRKSRC}/makes/Make.lib \
 		${WRKSRC}/makes/Make.sysinfo \
 		${WRKSRC}/CONFIG/src/Makefile \
 		${WRKSRC}/CONFIG/ARCHS/Makefile
-	@${REINPLACE_CMD} -e "s|gcc|${CC}|" ${WRKSRC}/CONFIG/ARCHS/Makefile
-	@${REINPLACE_CMD} -e "\|OS=ALL|{N; s|'gcc'|'${CC}'|; \
-		s|'gfortran'|'${FC}'|; s|-mavx|-msse3|;s|'| ${EXTRA_FLAGS}'|4;}" \
+	${REINPLACE_CMD} -e "\|OS=ALL|{N; \
+		s|-mavx|-msse3|;s|'| ${EXTRA_FLAGS}'|4;}" \
 		${WRKSRC}/CONFIG/src/atlcomp.txt
-	@${REINPLACE_CMD} -e "s|%%CC%%|${CC}|" \
-		${WRKSRC}/CONFIG/src/SpewMakeInc.c
-	@${REINPLACE_CMD} -E -e \
+	${REINPLACE_CMD} -E -e \
 	"\|(#define ATL_MaxMalloc[[:blank:]]+)([[:digit:]]+)|s||\1${ATLAS_MAXMALLOC}|" \
 		${WRKSRC}/include/atlas_lvl3.h
-	@${CAT} ${FILESDIR}/tuning-message
+	${REINPLACE_CMD} -e 's|%%WRKBIN%%|${WRKDIR}/.bin|'	\
+		${WRKSRC}/CONFIG/src/probe_comp.c
 
 do-configure:
-	@if [ ${PORT_OPTIONS:MWALL_TIMER} ] ; then \
+	echo "PATH=${PATH} *****************************************"
+	if [ ${PORT_OPTIONS:MWALL_TIMER} ] ; then \
 		TIMEFLAG= ; \
 		if [ \( ${ARCH} = "i386" -o ${ARCH} = "amd64" \) -a ${PORT_OPTIONS:MTSC} ] ; then \
 			freq=`${SYSCTL} -ni machdep.tsc_freq` ; \
@@ -118,11 +116,11 @@ do-configure:
 		> ${WRKSRC}/saved_flags ; \
 	${ECHO_CMD} "Dummy configuration of ATLAS to obtain compiler flags:" ; \
 	${MKDIR} ${WRKSRC}/static ; cd ${WRKSRC}/static ; \
-		../configure --cc="${CC}" --cflags="${CFLAGS}" \
+		${SETENV} ${CONFIGURE_ENV} ../configure --cc="${CC}" --cflags="${CFLAGS}" \
 		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
 		-Ss f77lib " " -Ss pmake "${MAKE} ${_MAKE_JOBS}" \
 		-Fa alg "${STATIC_FLAGS} " -b ${POINTER}
-	@${SED} -ne "\|F77FLAGS =|p" ${WRKSRC}/static/Make.inc \
+	${SED} -ne "\|F77FLAGS =|p" ${WRKSRC}/static/Make.inc \
 		>> ${WRKSRC}/saved_flags
 
 post-configure:
@@ -143,9 +141,9 @@ do-build:
 	${MV} $${LW}/liblapack.a liblapack_${opt}.a ; \
 	${MAKE} -C ${PORTSDIR}/math/lapack clean ; \
 	${ECHO_CMD} "Configuring ${opt} ATLAS:" ; \
-		../configure --cc="${CC}" --cflags="${CFLAGS}" \
-		--with-netlib-lapack="${WRKSRC}/${opt}/liblapack_${opt}.a" \
+		${SETENV} ${CONFIGURE_ENV} ../configure --cc="${CC}" --cflags="${CFLAGS}" \
 		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
+		-Ss flapack "${WRKSRC}/${opt}/liblapack_${opt}.a" \
 		-Ss f77lib " " -Ss pmake "${MAKE_CMD} ${_MAKE_JOBS}" \
 		-Fa alg "${${opt:tu}_FLAGS} " -b ${POINTER} ; \
 	if [ "x${WITH_ARCHDEF}" != "x" ] ; then \
@@ -179,7 +177,7 @@ post-build:
 			${MAKE_CMD} ${MAKE_ARGS} ArchNew tarfile)
 .endfor
 	@${ECHO_CMD} "Building ATLAS shared libraries:"
-	@F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FLAGS}" ; \
+	F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FLAGS}" ; \
 	cd ${WRKSRC}/shared/lib ; \
 	${L1}libatlas.so.2 -o libatlas.so.2 libatlas.a ${L2} ; \
 	${L1}libf77blas.so.2 -o libf77blas.so.2 libf77blas.a ${L2} libatlas.so.2 ; \
@@ -192,7 +190,7 @@ post-build:
 STATIC_BLAS=	${LOCALBASE}/lib/libblas.a
 SHARED_BLAS=	-L${LOCALBASE}/lib -lblas
 
-check regression-test test: build
+test: build
 .  for opt in shared static
 	@${ECHO_CMD} "Testing ${opt} ATLAS:"
 	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} BLAS="${${opt:tu}_BLAS}" \
@@ -231,5 +229,12 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
+
+post-install:
+.for d in shared static
+.  for f in xnegmm xnegmv xnegr1
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${d}/${f}
+.  endfor
+.endfor
 
 .include <bsd.port.mk>
