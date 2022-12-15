@@ -1,12 +1,13 @@
 PORTNAME=	luaunbound
-PORTVERSION=	1.0.0
+DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://code.zash.se/dl/luaunbound/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	thomas@beingboiled.info
 COMMENT=	Lua binding to libunbound
-WWW=		https://github.com/brunoos/luasec
+WWW=		https://www.zash.se/luaunbound.html
 
 LICENSE=	MIT
 
