@@ -255,6 +255,8 @@ pre-patch:
 	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
 	# ${FIND} ${WRKSRC} -type f -name '*.orig' -print -delete
 	# ${FIND} ${WRKSRC} -type f -name '*~' -print -delete
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/third_party/wayland/features.gni
 
 pre-configure:
 # We used to remove bundled libraries to be sure that chromium uses
