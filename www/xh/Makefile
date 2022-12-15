@@ -1,7 +1,6 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
-PORTREVISION=	2
+DISTVERSION=	0.17.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -93,7 +92,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		idna-0.2.3 \
 		indexmap-1.7.0 \
 		indicatif-0.16.2 \
-		indoc-1.0.3 \
+		indoc-1.0.7 \
 		ipnet-2.3.1 \
 		itertools-0.10.1 \
 		itoa-0.4.8 \
@@ -161,6 +160,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.10 \
 		ring-0.16.20 \
+		roff-0.2.1 \
 		rpassword-5.0.1 \
 		rustc_version-0.2.3 \
 		rustls-0.20.4 \
@@ -221,7 +221,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
-		unindent-0.1.7 \
 		untrusted-0.7.1 \
 		url-2.2.2 \
 		vcpkg-0.2.15 \
