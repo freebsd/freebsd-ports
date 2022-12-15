@@ -249,7 +249,7 @@ post-extract:
 	${MV} ${WRKSRC}/electron/package.json ${WRKSRC}/electron/package.json.bak
 	${CP} ${FILESDIR}/package.json ${WRKSRC}/electron
 	cd ${WRKSRC}/electron && \
-		${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache yarn --frozen-lockfile --offline
+		${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache yarn --use-yarnrc=${WRKDR}/.yarnrc --frozen-lockfile --offline
 
 pre-patch:
 	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
