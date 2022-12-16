@@ -995,6 +995,7 @@
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
     SUBDIR += jech-dht
+    SUBDIR += jemalloc-mrs
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
     SUBDIR += jetbrains-clion

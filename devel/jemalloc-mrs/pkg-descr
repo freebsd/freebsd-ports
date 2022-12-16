@@ -1,0 +1,4 @@
+This is jemalloc, modified to expose more of is internal state for
+compatibility with devel/mrs, packaged as a LD_PRELOAD-able shim library.
+**This exposure weakens security** and so this package is useful
+**exclusively** for experimentation.
