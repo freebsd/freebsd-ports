@@ -1,0 +1,39 @@
+This "Malloc Revocation Shim" allows researchers to experiment with CHERI Heap
+Temporal Safety technologies (including "CHERIvoke", "Cornucopia", and
+"Cornucopia with Load Barriers") in concert with a suitably extended heap
+allocator (devel/snmalloc-mrs or devel/jemalloc-mrs, for example).
+
+This shim encapsulates many of the policy decisions for driving the kernel's
+revocation subsystem, and, so, it is built in a variety of FLAVORs:
+
+- `-cornucopia_load` is the default and is what we expect to be the usual
+  desired configuration:
+
+  - An "offload thread" that manages quarantine and revocation
+  - A quarantine threshold of 25% of the allocated heap (grows the heap by 33%)
+  - Minimal statistics and printouts
+  - Use the "Cornucopia with Load Barriers" approach to revocation with a
+    brief stop-the-world phase and a single concurrent phase.
+
+- `-cornucopia` configures the shim to behave as per Cornucopia
+  (https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/2020oakland-cornucopia.pdf).
+  That is, like above, but rather than the "with Load Barriers" approach, it
+  runs
+
+  - A single concurrent pass, during which pages are marked during the
+    revocation sweep to catch subsequent capability stores.
+  - A subsequent, stop-the-world pass that revisits pages that caught stores
+
+- `-cherivoke` configures the shim to behave as per CHERIvoke
+  (https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201910micro-cheri-temporal-safety.pdf).
+  That is, rather than either of the concurrent strategies above, it runs a
+  single, blocking pass through the address space, without offload thread.
+
+The FLAVORs ending in `_stats` are as above but also configured to additionally
+be quite chatty about the revocations performed.  You will likely want to be
+running under a caprevoke-stats kernel for the output to be of interest.  The
+caprevoke-benchmark kernels do not keep statistics in order to minimize probe
+effects, and so most of the reported values will be zero.
+
+Researchers are encouraged to build their own variants as well.  We hope that
+the pre-packaged versions here are useful starting points.
