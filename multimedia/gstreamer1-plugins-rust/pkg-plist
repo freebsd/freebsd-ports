@@ -13,6 +13,7 @@ lib/gstreamer-1.0/libgsthlssink3.so
 lib/gstreamer-1.0/libgsthsv.so
 lib/gstreamer-1.0/libgstjson.so
 lib/gstreamer-1.0/libgstlewton.so
+lib/gstreamer-1.0/libgstlivesync.so
 lib/gstreamer-1.0/libgstmp4.so
 lib/gstreamer-1.0/libgstndi.so
 lib/gstreamer-1.0/libgstraptorq.so
@@ -52,6 +53,7 @@ libdata/pkgconfig/gsthlssink3.pc
 libdata/pkgconfig/gsthsv.pc
 libdata/pkgconfig/gstjson.pc
 libdata/pkgconfig/gstlewton.pc
+libdata/pkgconfig/gstlivesync.pc
 libdata/pkgconfig/gstmp4.pc
 libdata/pkgconfig/gstndi.pc
 libdata/pkgconfig/gstraptorq.pc
