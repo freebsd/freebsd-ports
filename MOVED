@@ -17637,6 +17637,5 @@ ftp/php-fastdfs||2022-12-09|Requires php74 which was EOL on 2022-11-28
 multimedia/mlt7-qt5|multimedia/mlt7-qt|2022-12-10|Flavorized for Qt5 and Qt6
 sysutils/cfengine317||2022-12-10|Has expired: Expire one year after cfengine 3.19.0 released
 sysutils/cfengine-masterfiles317||2022-12-10|Has expired: Expire one year after cfengine-masterfiles 3.19.0 released
-www/ilias|www/ilias|2022-12-11|Flavorized for php
 net-mgmt/icingaweb2-module-ipl|net-mgmt/icinga-php-library|2022-12-13|Renamed by project
 x11/darkman|accessibility/darkman|2022-12-14|Moved to a better category
