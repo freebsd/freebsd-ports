@@ -1,7 +1,11 @@
 PORTNAME=	form
 PORTVERSION=	4.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	28e15eaf0856a0a012795298d6a4b570e764a8b1.patch:-p1 # https://github.com/vermaseren/form/issues/422
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Symbolic Manipulation System
@@ -9,10 +13,6 @@ WWW=		https://www.nikhef.nl/~form/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-# https://github.com/vermaseren/form/issues/422
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	fails to compile: error: no member named 'numinprimelist' in 'struct R_const'
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
