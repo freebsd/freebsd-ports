@@ -1,2 +1,2 @@
-The Xfce development tools are a collection of tools and macros for
-Xfce developers and people that want to build Xfce from Git.
+The Xfce Development Tools are a set of scripts and m4/autoconf
+macros that ease build system maintenance.

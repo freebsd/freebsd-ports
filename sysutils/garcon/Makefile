@@ -1,5 +1,5 @@
 PORTNAME=	garcon
-PORTVERSION=	4.16.1
+PORTVERSION=	4.18.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -13,7 +13,8 @@ WWW=		https://www.xfce.org/
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce

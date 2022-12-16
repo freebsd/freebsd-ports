@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.16.1
+PORTVERSION=	4.18.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DISTNAME=	xfdesktop-${DISTVERSIONFULL}
@@ -12,11 +12,12 @@ WWW=		https://www.xfce.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnotify.so:devel/libnotify
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
 		xfce xorg
-USE_GNOME=	cairo glib20 gtk30 intltool libwnck3
+USE_GNOME=	cairo glib20 gdkpixbuf2 gtk30 intltool libwnck3
 USE_XFCE=	garcon libexo
 USE_XORG=	ice sm x11
 
