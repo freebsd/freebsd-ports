@@ -1,0 +1,4 @@
+snmalloc is a high-performance memory allocator.  This is a small extension to
+expose internal state, intended for use with the devel/mrs shim library.
+**This exposure weakens security** and so this package is useful
+**exclusively** for experimentation.

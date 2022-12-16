@@ -7200,6 +7200,7 @@
     SUBDIR += smooth
     SUBDIR += smv
     SUBDIR += snmalloc
+    SUBDIR += snmalloc-mrs
     SUBDIR += soapui
     SUBDIR += sobjectizer
     SUBDIR += socket_wrapper
