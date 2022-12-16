@@ -1,5 +1,5 @@
 PORTNAME=	contacts
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
