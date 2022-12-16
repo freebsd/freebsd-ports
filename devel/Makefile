@@ -1274,6 +1274,7 @@
     SUBDIR += libnaji
     SUBDIR += libnest2d-ultimaker
     SUBDIR += libnfc
+    SUBDIR += libnjs
     SUBDIR += libnotify
     SUBDIR += libnsutils
     SUBDIR += liboil
