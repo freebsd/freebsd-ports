@@ -1,6 +1,6 @@
 PORTNAME=		barman
 DISTVERSIONPREFIX=	release/
-DISTVERSION=		3.2.0
+DISTVERSION=		3.3.0
 CATEGORIES=		databases
 PKGNAMEPREFIX=		pg
 PKGNAMESUFFIX=		${PYTHON_PKGNAMESUFFIX}
@@ -38,11 +38,7 @@ DOCS_VARS=	PORTDOCS=barman-${DISTVERSION}-manual.pdf \
 
 .include <bsd.port.pre.mk>
 
-.if ${PGSQL_VER:M9\.[12345]}
 PGUSER=		pgsql
-.else
-PGUSER=		postgres
-.endif
 
 post-extract-DOCS-on:
 	${CP} ${DISTDIR}/${PORTDOCS} ${WRKDIR}/
