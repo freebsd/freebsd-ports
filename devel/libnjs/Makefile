@@ -1,6 +1,6 @@
 PORTNAME=	libnjs
 DISTVERSION=	0.7.9
-CATEGORIES=	lang www
+CATEGORIES=	devel www
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	NGINX JavaScript static library
