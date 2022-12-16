@@ -1,10 +1,7 @@
 PORTNAME=	azure-agent
-PORTVERSION=	2.2.54.2
+PORTVERSION=	2.8.0.11
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/Azure/WALinuxAgent/commit/
 
 MAINTAINER=	weh@microsoft.com
 COMMENT=	Microsoft Azure Linux Agent
