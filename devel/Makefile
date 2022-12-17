@@ -4165,6 +4165,7 @@
     SUBDIR += py-arpeggio
     SUBDIR += py-arrow
     SUBDIR += py-asciimatics
+    SUBDIR += py-asgi-lifespan
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspy.yaml
     SUBDIR += py-asteval
