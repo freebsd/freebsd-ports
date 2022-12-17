@@ -172,6 +172,7 @@ lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/caching_sha2_password.so
 lib/mysql/plugin/debug_key_management.so
 @comment lib/mysql/plugin/dialog.so
+lib/mysql/plugin/disks.so
 lib/mysql/plugin/file_key_management.so
 lib/mysql/plugin/ha_archive.so
 lib/mysql/plugin/ha_blackhole.so
