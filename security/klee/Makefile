@@ -1,7 +1,7 @@
 PORTNAME=	klee
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 NOT_FOR_ARCHS=	i386
 
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+BUILD_DEPENDS=	llvm-config13:devel/llvm13 \
 		gmake:devel/gmake
 # Should be a LIB_DEPEND, but hard to express in a generic manner
-RUN_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+RUN_DEPENDS=	llvm-config13:devel/llvm13 \
 		${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
 
 USES=		cmake compiler:c++14-lang localbase pkgconfig python:3.5+,run \
@@ -26,10 +26,9 @@ SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool tools/kle
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_POSIX_RUNTIME ENABLE_UNIT_TESTS ENABLE_SYSTEM_TESTS
-CMAKE_ARGS=	-DLLVM_CONFIG_BINARY=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} \
+CMAKE_ARGS=	-DLLVM_CONFIG_BINARY=${LOCALBASE}/bin/llvm-config13 \
 		-DMAKE_BINARY=${LOCALBASE}/bin/gmake
 
-# TODO METASMT
 OPTIONS_DEFINE=		TCMALLOC
 OPTIONS_DEFAULT=	TCMALLOC Z3 STP
 OPTIONS_MULTI=		BACKEND
