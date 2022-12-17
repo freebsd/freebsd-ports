@@ -10,5 +10,3 @@ code.
 This package is based on a subset of the Mellanox Firmware Tools (MFT) package.
 For a full documentation of the MFT package, please refer to the downloads page
 in Mellanox web site.
-
-See also: https://github.com/Mellanox/mstflint
