@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.56.0
-PORTREVISION=	1
+DISTVERSION=	6.1.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn \
 		LOCAL/mikael/signal-desktop/:electron_gyp \
@@ -78,13 +77,14 @@ MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	19
+ELECTRON_VER_MAJOR=	21
 
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.19.2-319da45eac91fe0809bd602528f841346050b7f4-integrity
-NPM_RINGRTC_DIR=	npm-ringrtc-2.20.14-928dae72e8009c5cc4dfb218d3007e2808acf5ab
-NPM_SQLITE3_DIR=	npm-better-sqlite3-7.5.0-3c4a7eebba3d5f5d8cb88fe83be1c01b8c0dea7d
+# ll work/.cache/yarn/v6 | egrep "ringrtc|signal-client|npm-better-sqlite3|esbuild-freebsd-64"
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.21.1-381d6162ae0e7719dc625780c1d6c3f9f558c33d-integrity
+NPM_RINGRTC_DIR=	npm-ringrtc-2.22.0-9a9d9fbc1ca43e7a0707a960ce9642dbf82dc64a/
+NPM_SQLITE3_DIR=	npm-better-sqlite3-7.5.1-afdbd49cf18d0046d7385ca4d23da20c66f00d50/
 NPM_PLAYWRITE_DIR=	npm-playwright-core-1.17.1-a16e0f89284a0ed8ae6d77e1c905c84b8a2ba022-integrity
-NPM_ESBUILD_VERS=	0.14.28
+NPM_ESBUILD_VERS=	0.15.8
 
 ESBUILD_ARCH=		${ARCH:S/aarch64/arm/:S/amd64//}
 NODE_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
@@ -100,8 +100,8 @@ post-patch:
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
 
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron19/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron19 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron21/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron21 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
@@ -141,7 +141,7 @@ do-build:
 #	cd ${WRKSRC} && \
 #		${SETENV} ${MAKE_ENV} yarn build:webpack
 
- 	# For offline build
+	# For offline build
 	${ECHO_CMD} offline=true > ${WRKDIR}/.npmrc
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
