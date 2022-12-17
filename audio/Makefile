@@ -667,6 +667,7 @@
     SUBDIR += py-sounddevice
     SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
+    SUBDIR += py-spotipy
     SUBDIR += py-tagpy
     SUBDIR += py-wavio
     SUBDIR += py-webrtcvad
