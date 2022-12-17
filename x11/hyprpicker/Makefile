@@ -1,6 +1,5 @@
 PORTNAME=	hyprpicker
-PORTVERSION=	s20221120
-PORTREVISION=	1
+PORTVERSION=	s20221217
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GCC=	yes:build # C++23
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
-GH_TAGNAME=	f6c24d9
+GH_TAGNAME=	aa3c2ac
 LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
