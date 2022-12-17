@@ -181,6 +181,7 @@ lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
 lib/mysql/plugin/auth_pam_v1.so
 @comment lib/mysql/plugin/caching_sha2_password.so
 lib/mysql/plugin/debug_key_management.so
+lib/mysql/plugin/disks.so
 lib/mysql/plugin/file_key_management.so
 lib/mysql/plugin/func_test.so
 lib/mysql/plugin/ha_archive.so
