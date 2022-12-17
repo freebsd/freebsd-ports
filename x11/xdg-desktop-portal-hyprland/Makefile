@@ -18,7 +18,12 @@ LIB_DEPENDS=	libbasu.so:devel/basu \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
 RUN_DEPENDS=	grim:x11/grim \
-		hyprland-share-picker:x11/hyprland-share-picker
+		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR}
+
+FLAVORS=	qt5 qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}
+qt6_PKGNAMESUFFIX=	-qt6
 
 USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
