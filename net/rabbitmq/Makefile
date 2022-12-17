@@ -1,6 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	3.9.17
-PORTREVISION=	1
+DISTVERSION=	3.10.13
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -12,13 +11,13 @@ WWW=		https://www.rabbitmq.com/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
-BUILD_DEPENDS=	erlang-runtime${ERLANG_VER}>=${ERLANG_VER}.0:lang/erlang-runtime${ERLANG_VER} \
-		elixir>=1.10:lang/elixir \
+BUILD_DEPENDS=	erlang-runtime${ERLANG_VER}>=${ERLANG_VER}.2:lang/erlang-runtime${ERLANG_VER} \
+		elixir>=1.13.4:lang/elixir \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR} \
 		xmlto:textproc/xmlto \
 		zip:archivers/zip \
 		rsync:net/rsync
-RUN_DEPENDS=	erlang-runtime${ERLANG_VER}>=${ERLANG_VER}.0:lang/erlang-runtime${ERLANG_VER}
+RUN_DEPENDS=	erlang-runtime${ERLANG_VER}>=${ERLANG_VER}.2:lang/erlang-runtime${ERLANG_VER}
 
 USES=		cpe gmake shebangfix tar:xz
 USE_LOCALE=	en_US.UTF-8
