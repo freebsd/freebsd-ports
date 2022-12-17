@@ -1,3 +1,43 @@
+  <vuln vid="d9e154c9-7de9-11ed-adca-080027d3a315">
+    <topic>typo3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3-11-php81</name>
+	<range><lt>11.5.20</lt></range>
+      </package>
+      <package>
+	<name>typo3-12-php81</name>
+	<range><lt>12.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TYPO3 reports:</p>
+	<blockquote cite="https://typo3.org/article/typo3-1211-11520-and-10433-security-releases-published">
+	  <p>TYPO3-CORE-SA-2022-012: Denial of Service in Page Error Handling.</p>
+	  <p>TYPO3-CORE-SA-2022-013: Weak Authentication in Frontend Login.</p>
+	  <p>TYPO3-CORE-SA-2022-014: Insufficient Session Expiration after Password Reset.</p>
+	  <p>TYPO3-CORE-SA-2022-015: Arbitrary Code Execution via Form Framework.</p>
+	  <p>TYPO3-CORE-SA-2022-016: Sensitive Information Disclosure via YAML Placeholder Expressions in Site Configuration.</p>
+	  <p>TYPO3-CORE-SA-2022-017: By-passing Cross-Site Scripting Protection in HTML Sanitizer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23499</cvename>
+      <cvename>CVE-2022-23500</cvename>
+      <cvename>CVE-2022-23501</cvename>
+      <cvename>CVE-2022-23502</cvename>
+      <cvename>CVE-2022-23503</cvename>
+      <cvename>CVE-2022-23504</cvename>
+      <url>https://typo3.org/article/typo3-1211-11520-and-10433-security-releases-published</url>
+    </references>
+    <dates>
+      <discovery>2022-12-13</discovery>
+      <entry>2022-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83eb9374-7b97-11ed-be8f-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
