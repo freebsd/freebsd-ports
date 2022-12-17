@@ -80,7 +80,7 @@ OPTIONS_DEFAULT=	CLANG
 CLANG_DESC=		Build the clang plugin
 CLANG_MESON_TRUE=	plugin_clang
 CLANG_USES=		llvm:9,build,run
-CLANG_BINARY_ALIAS=	llvm-config=${LLVM_CONFIG}
+CLANG_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 
 # 11.1 and older has issues with vala generated code.
 post-patch:
