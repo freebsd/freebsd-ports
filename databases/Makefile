@@ -44,6 +44,7 @@
     SUBDIR += credis
     SUBDIR += cutelyst-asql
     SUBDIR += dalmp
+    SUBDIR += datasette
     SUBDIR += db
     SUBDIR += db18
     SUBDIR += db5
