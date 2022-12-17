@@ -4692,6 +4692,7 @@
     SUBDIR += py-itemloaders
     SUBDIR += py-iteration-utilities
     SUBDIR += py-itypes
+    SUBDIR += py-janus
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
