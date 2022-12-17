@@ -77,11 +77,10 @@ OPTIONS_DEFINE=		CLANG DOCS
 OPTIONS_DEFAULT=	CLANG
 
 # track the latest llvm/clang version, the config script picks the newest available
-LLVM_VER=		${LLVM_DEFAULT}
 CLANG_DESC=		Build the clang plugin
 CLANG_MESON_TRUE=	plugin_clang
-CLANG_BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
-CLANG_RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+CLANG_USES=		llvm:build,run
+CLANG_BINARY_ALIAS=	llvm-config=${LLVM_CONFIG}
 
 # 11.1 and older has issues with vala generated code.
 post-patch:
