@@ -1,5 +1,5 @@
 PORTNAME=	font-awesome
-DISTVERSION=	6.1.1
+DISTVERSION=	6.2.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://use.fontawesome.com/releases/v${DISTVERSION}/
 DISTNAME=	fontawesome-free-${DISTVERSION}-desktop
