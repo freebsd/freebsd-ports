@@ -1,0 +1,1 @@
+Extends click.Group to invoke a command without explicit subcommand name.
