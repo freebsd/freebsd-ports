@@ -1,5 +1,6 @@
 PORTNAME=	kafka
 DISTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
@@ -27,6 +28,7 @@ SHEBANG_FILES=	bin/*.sh
 KAFKA_USER?=	kafka
 KAFKA_GROUP?=	kafka
 KAFKA_DBDIR?=	/var/db/${PORTNAME}
+KAFKA_DBDIR_KRAFT?=	${KAFKA_DBDIR}-kraft
 KAFKA_LOGDIR?=	/var/log/${PORTNAME}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -39,7 +41,8 @@ SUB_LIST=	JAVA=${JAVA} \
 		KAFKA_USER=${KAFKA_USER} \
 		KAFKA_GROUP=${KAFKA_GROUP} \
 		KAFKA_LOGDIR=${KAFKA_LOGDIR} \
-		KAFKA_DBDIR=${KAFKA_DBDIR}
+		KAFKA_DBDIR=${KAFKA_DBDIR} \
+		KAFKA_DBDIR_KRAFT=${KAFKA_DBDIR_KRAFT}
 USERS=		${KAFKA_USER}
 GROUPS=		${KAFKA_GROUP}
 
@@ -66,13 +69,14 @@ KAFKA_CONFIGS=	connect-console-sink.properties \
 		connect-mirror-maker.properties connect-standalone.properties \
 		consumer.properties log4j.properties producer.properties \
 		server.properties tools-log4j.properties trogdor.conf
-KAFKA_KRAFT=	broker.properties controller.properties server.properties
+KAFKA_CONFIGS_KRAFT=	broker.properties controller.properties server.properties
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		KAFKA_USER=${KAFKA_USER} \
 		KAFKA_GROUP=${KAFKA_GROUP} \
 		KAFKA_LOGDIR=${KAFKA_LOGDIR} \
-		KAFKA_DBDIR=${KAFKA_DBDIR}
+		KAFKA_DBDIR=${KAFKA_DBDIR} \
+		KAFKA_DBDIR_KRAFT=${KAFKA_DBDIR_KRAFT}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -82,15 +86,15 @@ post-patch:
 	@${REINPLACE_CMD} "s|\$$base_dir.*/config|${ETCDIR}|" ${WRKSRC}/bin/*.sh
 	@${REINPLACE_CMD} "s|ps ax|ps axww|" ${WRKSRC}/bin/kafka-server-stop.sh
 	@${REINPLACE_CMD} "/log.dirs/s|=.*|=${KAFKA_DBDIR}|" ${WRKSRC}/config/server.properties
-.for f in ${KAFKA_KRAFT}
-	@${REINPLACE_CMD} "/log.dirs/s|=.*|=${KAFKA_DBDIR}/kraft/|" ${WRKSRC}/config/kraft/${f}
+.for f in ${KAFKA_CONFIGS_KRAFT}
+	@${REINPLACE_CMD} "/log.dirs/s|=.*|=${KAFKA_DBDIR_KRAFT}|" ${WRKSRC}/config/kraft/${f}
 .endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}/kraft
 	${MKDIR} ${STAGEDIR}${KAFKA_DBDIR}
-	${MKDIR} ${STAGEDIR}${KAFKA_DBDIR}/kraft
+	${MKDIR} ${STAGEDIR}${KAFKA_DBDIR_KRAFT}
 	${MKDIR} ${STAGEDIR}${KAFKA_LOGDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin
 .for f in ${KAFKA_BINS}
@@ -104,7 +108,7 @@ do-install:
 .for f in ${KAFKA_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
-.for f in ${KAFKA_KRAFT}
+.for f in ${KAFKA_CONFIGS_KRAFT}
 	${INSTALL_DATA} ${WRKSRC}/config/kraft/${f} ${STAGEDIR}${ETCDIR}/kraft/${f}.sample
 .endfor
 
