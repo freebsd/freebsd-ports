@@ -50,6 +50,8 @@
 %%DATADIR%%/symbols/Driver_Motor.kicad_sym
 %%DATADIR%%/symbols/Driver_Relay.kicad_sym
 %%DATADIR%%/symbols/Driver_TEC.kicad_sym
+%%DATADIR%%/symbols/FPGA_CologneChip_GateMate.kicad_sym
+%%DATADIR%%/symbols/FPGA_Efinix_Trion.kicad_sym
 %%DATADIR%%/symbols/FPGA_Lattice.kicad_sym
 %%DATADIR%%/symbols/FPGA_Microsemi.kicad_sym
 %%DATADIR%%/symbols/FPGA_Xilinx.kicad_sym
@@ -178,6 +180,7 @@
 %%DATADIR%%/symbols/Sensor_Audio.kicad_sym
 %%DATADIR%%/symbols/Sensor_Current.kicad_sym
 %%DATADIR%%/symbols/Sensor_Distance.kicad_sym
+%%DATADIR%%/symbols/Sensor_Energy.kicad_sym
 %%DATADIR%%/symbols/Sensor_Gas.kicad_sym
 %%DATADIR%%/symbols/Sensor_Humidity.kicad_sym
 %%DATADIR%%/symbols/Sensor_Magnetic.kicad_sym

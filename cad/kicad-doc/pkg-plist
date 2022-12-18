@@ -184,7 +184,6 @@
 %%DOCSDIR%%/help/de/images/Pcbnew_zoom_factor_dropdown.png
 %%DOCSDIR%%/help/de/images/Right-click_legacy_menu.png
 %%DOCSDIR%%/help/de/images/Sample_3D_board.png
-%%DOCSDIR%%/help/de/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/de/images/bus_junction.png
 %%DOCSDIR%%/help/de/images/copypaste11.png
 %%DOCSDIR%%/help/de/images/copypaste12.png
@@ -598,7 +597,6 @@
 %%DOCSDIR%%/help/de/images/icons/preference.png
 %%DOCSDIR%%/help/de/images/icons/print_button.png
 %%DOCSDIR%%/help/de/images/icons/ps_router.png
-%%DOCSDIR%%/help/de/images/icons/py_script.png
 %%DOCSDIR%%/help/de/images/icons/ratsnest.png
 %%DOCSDIR%%/help/de/images/icons/read_setup.png
 %%DOCSDIR%%/help/de/images/icons/red.png
@@ -859,7 +857,6 @@
 %%DOCSDIR%%/help/en/images/Pcbnew_zoom_factor_dropdown.png
 %%DOCSDIR%%/help/en/images/Right-click_legacy_menu.png
 %%DOCSDIR%%/help/en/images/Sample_3D_board.png
-%%DOCSDIR%%/help/en/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/en/images/bus_junction.png
 %%DOCSDIR%%/help/en/images/configure_path_dlg.png
 %%DOCSDIR%%/help/en/images/copypaste11.png
@@ -1250,7 +1247,6 @@
 %%DOCSDIR%%/help/en/images/icons/preference.png
 %%DOCSDIR%%/help/en/images/icons/print_button.png
 %%DOCSDIR%%/help/en/images/icons/ps_router.png
-%%DOCSDIR%%/help/en/images/icons/py_script.png
 %%DOCSDIR%%/help/en/images/icons/ratsnest.png
 %%DOCSDIR%%/help/en/images/icons/read_setup.png
 %%DOCSDIR%%/help/en/images/icons/red.png
@@ -1525,7 +1521,6 @@
 %%DOCSDIR%%/help/es/images/Pcbnew_zoom_factor_dropdown.png
 %%DOCSDIR%%/help/es/images/Right-click_legacy_menu.png
 %%DOCSDIR%%/help/es/images/Sample_3D_board.png
-%%DOCSDIR%%/help/es/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/es/images/bus_junction.png
 %%DOCSDIR%%/help/es/images/configure_path_dlg.png
 %%DOCSDIR%%/help/es/images/copypaste11.png
@@ -1834,7 +1829,6 @@
 %%DOCSDIR%%/help/es/images/icons/preference.png
 %%DOCSDIR%%/help/es/images/icons/print_button.png
 %%DOCSDIR%%/help/es/images/icons/ps_router.png
-%%DOCSDIR%%/help/es/images/icons/py_script.png
 %%DOCSDIR%%/help/es/images/icons/ratsnest.png
 %%DOCSDIR%%/help/es/images/icons/read_setup.png
 %%DOCSDIR%%/help/es/images/icons/red.png
@@ -2103,7 +2097,6 @@
 %%DOCSDIR%%/help/fr/images/Pcbnew_zoom_factor_dropdown.png
 %%DOCSDIR%%/help/fr/images/Right-click_legacy_menu.png
 %%DOCSDIR%%/help/fr/images/Sample_3D_board.png
-%%DOCSDIR%%/help/fr/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/fr/images/bus_junction.png
 %%DOCSDIR%%/help/fr/images/copypaste11.png
 %%DOCSDIR%%/help/fr/images/copypaste12.png
@@ -2434,7 +2427,6 @@
 %%DOCSDIR%%/help/fr/images/icons/preference.png
 %%DOCSDIR%%/help/fr/images/icons/print_button.png
 %%DOCSDIR%%/help/fr/images/icons/ps_router.png
-%%DOCSDIR%%/help/fr/images/icons/py_script.png
 %%DOCSDIR%%/help/fr/images/icons/ratsnest.png
 %%DOCSDIR%%/help/fr/images/icons/read_setup.png
 %%DOCSDIR%%/help/fr/images/icons/red.png
@@ -2532,7 +2524,6 @@
 %%DOCSDIR%%/help/id/eeschema.pdf
 %%DOCSDIR%%/help/id/getting_started_in_kicad.html
 %%DOCSDIR%%/help/id/getting_started_in_kicad.pdf
-%%DOCSDIR%%/help/id/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/id/images/bus_junction.png
 %%DOCSDIR%%/help/id/images/configure_path_dlg.png
 %%DOCSDIR%%/help/id/images/copypaste11.png
@@ -3039,7 +3030,6 @@
 %%DOCSDIR%%/help/it/images/icons/preference.png
 %%DOCSDIR%%/help/it/images/icons/print_button.png
 %%DOCSDIR%%/help/it/images/icons/ps_router.png
-%%DOCSDIR%%/help/it/images/icons/py_script.png
 %%DOCSDIR%%/help/it/images/icons/ratsnest.png
 %%DOCSDIR%%/help/it/images/icons/read_setup.png
 %%DOCSDIR%%/help/it/images/icons/red.png
@@ -3145,7 +3135,6 @@
 %%DOCSDIR%%/help/it/images/it/block_constraints.png
 %%DOCSDIR%%/help/it/images/it/boardclasses.png
 %%DOCSDIR%%/help/it/images/it/bom-netlist-tab.png
-%%DOCSDIR%%/help/it/images/it/bom_extra_option_windows.png
 %%DOCSDIR%%/help/it/images/it/color_settings.png
 %%DOCSDIR%%/help/it/images/it/colorcode.png
 %%DOCSDIR%%/help/it/images/it/commands_overview.png
@@ -3382,7 +3371,6 @@
 %%DOCSDIR%%/help/ja/images/Pcbnew_zone_priority_example_after_filling.png
 %%DOCSDIR%%/help/ja/images/Pcbnew_zone_thermal_relief.png
 %%DOCSDIR%%/help/ja/images/Pcbnew_zone_unfilled_cutout_outline.png
-%%DOCSDIR%%/help/ja/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/ja/images/bus_junction.png
 %%DOCSDIR%%/help/ja/images/copypaste11.png
 %%DOCSDIR%%/help/ja/images/copypaste12.png
@@ -3655,7 +3643,6 @@
 %%DOCSDIR%%/help/ja/images/icons/preference.png
 %%DOCSDIR%%/help/ja/images/icons/print_button.png
 %%DOCSDIR%%/help/ja/images/icons/ps_router.png
-%%DOCSDIR%%/help/ja/images/icons/py_script.png
 %%DOCSDIR%%/help/ja/images/icons/ratsnest.png
 %%DOCSDIR%%/help/ja/images/icons/read_setup.png
 %%DOCSDIR%%/help/ja/images/icons/red.png
@@ -4103,7 +4090,6 @@
 %%DOCSDIR%%/help/pl/images/Pcbnew_zone_thermal_relief.png
 %%DOCSDIR%%/help/pl/images/Pcbnew_zone_unfilled_cutout_outline.png
 %%DOCSDIR%%/help/pl/images/Pcbnew_zoom_factor_dropdown.png
-%%DOCSDIR%%/help/pl/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/pl/images/bus_junction.png
 %%DOCSDIR%%/help/pl/images/copypaste11.png
 %%DOCSDIR%%/help/pl/images/copypaste12.png
@@ -4371,7 +4357,6 @@
 %%DOCSDIR%%/help/pl/images/icons/preference.png
 %%DOCSDIR%%/help/pl/images/icons/print_button.png
 %%DOCSDIR%%/help/pl/images/icons/ps_router.png
-%%DOCSDIR%%/help/pl/images/icons/py_script.png
 %%DOCSDIR%%/help/pl/images/icons/ratsnest.png
 %%DOCSDIR%%/help/pl/images/icons/read_setup.png
 %%DOCSDIR%%/help/pl/images/icons/red.png
@@ -5110,7 +5095,6 @@
 %%DOCSDIR%%/help/ru/images/icons/preference.png
 %%DOCSDIR%%/help/ru/images/icons/print_button.png
 %%DOCSDIR%%/help/ru/images/icons/ps_router.png
-%%DOCSDIR%%/help/ru/images/icons/py_script.png
 %%DOCSDIR%%/help/ru/images/icons/ratsnest.png
 %%DOCSDIR%%/help/ru/images/icons/read_setup.png
 %%DOCSDIR%%/help/ru/images/icons/red.png
@@ -5308,7 +5292,6 @@
 %%DOCSDIR%%/help/ru/images/ru/block_constraints.png
 %%DOCSDIR%%/help/ru/images/ru/boardclasses.png
 %%DOCSDIR%%/help/ru/images/ru/bom-netlist-tab.png
-%%DOCSDIR%%/help/ru/images/ru/bom_extra_option_windows.png
 %%DOCSDIR%%/help/ru/images/ru/color_settings.png
 %%DOCSDIR%%/help/ru/images/ru/colorcode.png
 %%DOCSDIR%%/help/ru/images/ru/commands_overview.png
@@ -5566,7 +5549,6 @@
 %%DOCSDIR%%/help/zh/images/Pcbnew_zone_priority_example_after_filling.png
 %%DOCSDIR%%/help/zh/images/Pcbnew_zone_thermal_relief.png
 %%DOCSDIR%%/help/zh/images/Pcbnew_zone_unfilled_cutout_outline.png
-%%DOCSDIR%%/help/zh/images/bom_extra_option_windows.png
 %%DOCSDIR%%/help/zh/images/bus_junction.png
 %%DOCSDIR%%/help/zh/images/copypaste11.png
 %%DOCSDIR%%/help/zh/images/copypaste12.png
@@ -5865,7 +5847,6 @@
 %%DOCSDIR%%/help/zh/images/icons/preference.png
 %%DOCSDIR%%/help/zh/images/icons/print_button.png
 %%DOCSDIR%%/help/zh/images/icons/ps_router.png
-%%DOCSDIR%%/help/zh/images/icons/py_script.png
 %%DOCSDIR%%/help/zh/images/icons/ratsnest.png
 %%DOCSDIR%%/help/zh/images/icons/read_setup.png
 %%DOCSDIR%%/help/zh/images/icons/red.png
