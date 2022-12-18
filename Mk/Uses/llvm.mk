@@ -70,7 +70,7 @@ _LLVM_MK_VERSION=	${LLVM_DEFAULT}
 .  for _constraint in ${_LLVM_MK_VALID_CONSTRAINTS}
 _version=	${llvm_ARGS:M${_constraint}=[0-9]*:S/${_constraint}=//}
 .    if !empty(_version)
-_LLVM_MK_CONSTRAINT_${_constraint}=	${_version}
+_LLVM_MK_CONSTRAINT_${_constraint}:=	${_version}
 .    endif
 .  endfor
 
