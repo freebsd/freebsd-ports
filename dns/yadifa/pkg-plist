@@ -20,6 +20,7 @@ include/dnscore/buffered-file.h
 include/dnscore/bytearray_input_stream.h
 include/dnscore/bytearray_output_stream.h
 include/dnscore/bytezarray_output_stream.h
+include/dnscore/checked_output_stream.h
 include/dnscore/chroot.h
 include/dnscore/circular-file.h
 include/dnscore/clone_input_output_stream.h
@@ -36,6 +37,7 @@ include/dnscore/digest.h
 include/dnscore/dns-udp.h
 include/dnscore/dns_resource_record.h
 include/dnscore/dnscore.h
+include/dnscore/dnscore-config-features.h
 include/dnscore/dnscore-release-date.h
 include/dnscore/dnsformat.h
 include/dnscore/dnskey-keyring.h
@@ -150,7 +152,6 @@ include/dnscore/zone_reader.h
 include/dnscore/zone_reader_axfr.h
 include/dnscore/zone_reader_text.h
 include/dnscore/zonefile_reader.h
-include/dnscore-config-features.h
 include/dnsdb/avl.h
 include/dnsdb/btree.h
 include/dnsdb/chain-replay.h
@@ -191,6 +192,7 @@ include/dnsdb/nsec_collection.h
 include/dnsdb/nsec_common.h
 include/dnsdb/rrsig.h
 include/dnsdb/xfr_copy.h
+include/dnsdb/zdb-config-features.h
 include/dnsdb/zdb-lock.h
 include/dnsdb/zdb-packed-ttlrdata.h
 include/dnsdb/zdb-zone-answer-axfr.h
@@ -226,10 +228,9 @@ include/dnsdb/zdb_zone_write.h
 include/dnslg/config-load.h
 include/dnslg/config-resolver.h
 include/dnslg/dns.h
+include/dnslg/dnslg-config-features.h
 include/dnslg/resolv-conf.h
 include/dnslg/resolv.h
-include/dnslg-config-features.h
-include/zdb-config-features.h
 lib/libdnscore.a
 lib/libdnsdb.a
 lib/libdnslg.a
