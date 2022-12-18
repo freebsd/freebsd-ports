@@ -17,10 +17,9 @@ BROKEN_riscv64=		fails to compile: __threading_support:135:3: Unsupported archit
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		git>0:devel/git
-LIB_DEPENDS=	libclang.so.${LLVM_DEFAULT:C/^([6-9])0/\1/}:devel/llvm${LLVM_DEFAULT} \
-		libxslt.so:textproc/libxslt
+LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++11-lang gnome python:3.5-3.9 qt:5 shebangfix tar:xz
+USES=		cmake compiler:c++11-lang gnome llvm:lib python:3.5-3.9 qt:5 shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
@@ -33,7 +32,7 @@ CMAKE_ARGS+=	"-DCMAKE_CXX_FLAGS=-lexecinfo" \
 		"-DCMAKE_STANDARD_LIBRARIES=-lexecinfo" \
 		"-DCMAKE_CXX_STANDARD_LIBRARIES=-lexecinfo" \
 		"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
-		"-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}"
+		"-DLLVM_CONFIG=${LLVM_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
