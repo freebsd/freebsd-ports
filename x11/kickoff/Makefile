@@ -11,7 +11,6 @@ WWW=		https://github.com/j0ru/kickoff
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cargo
