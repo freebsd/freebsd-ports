@@ -1,6 +1,5 @@
 PORTNAME=	chamfer
-DISTVERSION=	s20210622
-PORTREVISION=	2
+DISTVERSION=	s20221218
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR} \
+		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
 		spirv-opt:graphics/spirv-tools \
 		vulkan-headers>0:graphics/vulkan-headers \
 		glslc:graphics/shaderc \
@@ -31,7 +31,7 @@ USE_GITHUB=	yes
 USE_XORG=	xcb
 GH_ACCOUNT=	jaelpark
 GH_PROJECT=	${PORTNAME}wm
-GH_TAGNAME=	d0916ee
+GH_TAGNAME=	e5b310f
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \

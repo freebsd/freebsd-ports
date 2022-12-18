@@ -4,6 +4,7 @@ bin/chamfer
 %%DATADIR%%/shaders/default_geometry.spv
 %%DATADIR%%/shaders/default_vertex.spv
 %%DATADIR%%/shaders/frame_fragment.spv
+%%DATADIR%%/shaders/frame_fragment_basic.spv
 %%DATADIR%%/shaders/frame_geometry.spv
 %%DATADIR%%/shaders/frame_vertex.spv
 %%DATADIR%%/shaders/solid_fragment.spv
