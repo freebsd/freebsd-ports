@@ -1,17 +1,33 @@
 # Provides support to depend on LLVM
 #
-# It chooses the llvm port to be used based on the following constraint:
-#	1) no constraints given						=> ${LLVM_DEFAULT}
-#	2) exact constraint given					=> ${exact}
-#	2) max constraint given && ${max} < ${LLVM_DEFAULT}		=> ${max}
-#	3) min constraint given && ${LLVM_DEFAULT} < ${LLVM_DEFAULT}	=> ${LLVM_DEFAULT}
-
-# Usage:
-# 	USES=	llvm			- default version chosen
-# 	USES=	llvm:15			- exact constraint
-# 	USES=	llvm:min=9		- min constraint: max(min,default)
-# 	USES=	llvm:max=10		- max constraint: min(max,default)
-# 	USES=	llvm:min=10,max=11	- all constraint: max(min(max,default),default)
+# USES=llvm supports two kinds of arguments:
+#
+# * mode
+#         <none>:         defaults to build
+#         build:          add a BUILD_DEPENDS on chosen llvm-port
+#         run:            add a RUN_DEPENDS on chosen llvm-port
+#         lib:            add a LIB_DEPENDS on chosen llvm-port
+#
+# * version
+#         <none>:         defaults to ${LLVM_DEFAULT}
+#         number:         use explicitly the specified version
+#         min=number:     use specified min if ${LLVM_DEFAULT} is lower
+#         max=number:     use specified max if ${LLVM_DEFAULT} is higher
+#
+# An example usage might be:
+#         USES=   llvm
+#   or
+#         USES=   llvm:13,build
+#   or
+#         USES=   llvm:min=14,lib
+#
+# The following variables are exposed to be used in the ports tree at the moment:
+#         * LLVM_VERSION  version chosen from the arguments to llvm.mk
+#         * LLVM_PORT     chosen llvm port
+#         * LLVM_CONFIG   llvm-config of the chosen port
+#         * LLVM_LIBLLVM  libLLVM.so of the chosen port
+#         * LLVM_PREFIX   installation prefix of the chosen port
+#
 
 .if !defined(_INCLUDE_USES_LLVM_MK)
 _INCLUDE_USES_LLVM_MK=	YES
