@@ -1,6 +1,5 @@
 PORTNAME=	zathura-pdf-poppler
-DISTVERSION=	0.3.0
-PORTREVISION=	10
+DISTVERSION=	0.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -11,12 +10,14 @@ WWW=		https://pwmt.org/projects/zathura/plugins/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 BUILD_DEPENDS=	zathura:graphics/zathura
+LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
+		libpoppler-glib.so:graphics/poppler-glib
 RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo glib20 gtk30
+USE_LDCONFIG=	${PREFIX}/lib/zathura
 
 CONFLICTS=	zathura-pdf-mupdf
 
