@@ -1,17 +1,18 @@
 PORTNAME=	rdiff-backup
-DISTVERSION=	2.0.5
+DISTVERSION=	2.2.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Easy to use and efficient backup and restore utility
-WWW=		https://www.nongnu.org/rdiff-backup/
+WWW=		https://rdiff-backup.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		rubygem-asciidoctor>0:textproc/rubygem-asciidoctor
 LIB_DEPENDS=	librsync.so:net/librsync
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
