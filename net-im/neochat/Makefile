@@ -1,5 +1,5 @@
 PORTNAME=	neochat
-DISTVERSION=	22.09
+DISTVERSION=	22.11
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}
 
@@ -14,18 +14,22 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libqt5keychain.so:security/qtkeychain@qt5
 BUILD_DEPENDS=	libquotient>=0.6.11:net-im/libquotient \
 		kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
+		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons \
 		${LOCALBASE}/include/qcoro5/qcoro/qcoro.h:devel/qcoro
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
-RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor
+RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
+		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
 
-USES=		cmake compiler:c++17-lang gl kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		gl
-USE_QT=		core dbus declarative graphicaleffects gui imageformats \
+USE_QT=		concurrent core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 \
 		svg widgets xml \
 		buildtools:build linguist:build qmake:build
-USE_KDE=	config coreaddons dbusaddons i18n itemmodels kirigami2 notifications \
-		qqc2-desktop-style \
+USE_KDE=	auth codecs completion config configwidgets coreaddons dbusaddons \
+		i18n itemmodels jobwidgets kio kirigami2 service solid sonnet \
+		syntaxhighlighting notifications qqc2-desktop-style \
+		widgetsaddons windowsystem \
 		ecm:build
 
 .include <bsd.port.mk>
