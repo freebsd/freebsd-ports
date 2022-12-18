@@ -16,6 +16,7 @@ man/man1/remind.1.gz
 %%TCLTK%%man/man1/tkremind.1.gz
 %%DATADIR%%/ansitext.rem
 %%DATADIR%%/holidays/ca.rem
+%%DATADIR%%/holidays/fr.rem
 %%DATADIR%%/holidays/jewish.rem
 %%DATADIR%%/holidays/us.rem
 %%DATADIR%%/lang/auto.rem
