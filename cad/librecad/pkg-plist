@@ -1508,5 +1508,5 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_uk.qm
 %%DATADIR%%/qm/plugins_zh_cn.qm
 %%DATADIR%%/qm/plugins_zh_tw.qm
-share/metainfo/librecad.appdata.xml
+share/metainfo/org.librecad.librecad.appdata.xml
 share/pixmaps/librecad.png
