@@ -43,7 +43,11 @@ _LLVM_MK_VERSION=	${_ver}
 .    endif
 .  endfor
 .  if empty(_LLVM_MK_VERSION)
+.    if ${LLVM_DEFAULT:N1[0-9]*}
+_LLVM_MK_VERSION=	${LLVM_DEFAULT:S/0$//}
+.    else
 _LLVM_MK_VERSION=	${LLVM_DEFAULT}
+.    endif
 .  endif
 
 # === handle constraints ===
