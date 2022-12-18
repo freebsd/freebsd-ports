@@ -1,0 +1,13 @@
+--- libshiboken/CMakeLists.txt.orig	2020-11-11 12:51:30 UTC
++++ libshiboken/CMakeLists.txt
+@@ -72,7 +72,9 @@ signature/signature_helper.cpp
+ signature/signature_helper.cpp
+ )
+ 
+-get_numpy_location()
++if (WANT_NUMPY)
++  get_numpy_location()
++endif()
+ 
+ if (NOT "${PYTHON_NUMPY_LOCATION}" STREQUAL "")
+     list(APPEND libshiboken_SRC sbknumpyarrayconverter.cpp)
