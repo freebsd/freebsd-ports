@@ -1,5 +1,5 @@
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
