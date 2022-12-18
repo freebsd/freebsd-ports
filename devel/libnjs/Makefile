@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
 
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+
 PLIST_FILES=	include/njs_addr2line.h \
 		include/njs_arr.h \
 		include/njs_array_buffer.h \
