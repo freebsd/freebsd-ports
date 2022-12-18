@@ -79,7 +79,7 @@ OPTIONS_DEFAULT=	CLANG
 # track the latest llvm/clang version, the config script picks the newest available
 CLANG_DESC=		Build the clang plugin
 CLANG_MESON_TRUE=	plugin_clang
-CLANG_USES=		llvm:9,build,run
+CLANG_USES=		llvm:build,run
 CLANG_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 
 # 11.1 and older has issues with vala generated code.
