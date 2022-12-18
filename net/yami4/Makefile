@@ -1,6 +1,5 @@
 PORTNAME=	yami4
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.inspirel.com/yami4/files/
 DISTNAME=	yami4-gpl-${PORTVERSION}
@@ -12,11 +11,11 @@ WWW=		http://www.inspirel.com/yami4/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
-BROKEN_FreeBSD_13=	unknown type name 'sem_t'
-BROKEN_FreeBSD_14=	unknown type name 'sem_t'
-
 USES=		compiler:c++11-lang zip
 
+CXXFLAGS+=	-I${WRKSRC}/include
+# Fixes "unknown type name 'sem_t'" on FreeBSD 13
+CXXFLAGS+=	-D_LIBCPP_NO_NATIVE_SEMAPHORES
 MAKE_ARGS=	COMPILER="${CXX}" OPTIONS="${CXXFLAGS}"
 
 PORTDOCS=	*
