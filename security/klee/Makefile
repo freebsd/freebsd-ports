@@ -13,14 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 NOT_FOR_ARCHS=	i386
 
-BUILD_DEPENDS=	llvm-config13:devel/llvm13 \
-		gmake:devel/gmake
-# Should be a LIB_DEPEND, but hard to express in a generic manner
-RUN_DEPENDS=	llvm-config13:devel/llvm13 \
-		${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
+BUILD_DEPENDS=	gmake:devel/gmake
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
 
-USES=		cmake compiler:c++14-lang localbase pkgconfig python:3.5+,run \
-		shebangfix sqlite
+USES=		cmake compiler:c++14-lang llvm:min=9,max=13,build,run localbase \
+		pkgconfig python:3.5+,run shebangfix sqlite
 USE_GITHUB=	yes
 SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool tools/klee-zesti/klee-zesti
 USE_LDCONFIG=	yes
