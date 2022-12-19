@@ -65,7 +65,7 @@ GH_TUPLE=	\
 CMAKE_ARGS=	-DCMAKE_MAKE_PROGRAM=gmake \
 		-DPython_EXECUTABLE=${PYTHON_CMD}
 
-CMAKE_ARGS+=	-DDOM_USE_CCACHE:BOOL=${CCACHE_ENABLED:S/yes/ON/:S/no/OFF/} # if refuses to build w/out ccache by default
+CMAKE_ARGS+=	-DOM_USE_CCACHE:BOOL=${CCACHE_ENABLED:S/yes/ON/:S/no/OFF/} # if refuses to build w/out ccache by default
 
 LDFLAGS+=	-lexecinfo -lintl -pthread
 
