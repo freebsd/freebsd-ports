@@ -97,6 +97,16 @@ PLIST_SUB=	CONFTRGT=${CONFIGURE_TARGET} VER=${PORTVERSION}	\
 INFOS=		cpp cppinternals gcc gccinstall gccint gnat_rm gnat_ugn	\
 		gnat-style libitm
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+LIB_DIR_32=	""
+PLIST_SUB+=	64BITS="@comment "
+.else
+LIB_DIR_32=	"" 32
+PLIST_SUB+=	64BITS=""
+.endif
+
 pre-configure:
 	${ECHO} "-=> GNAT ${OS_LABEL4VERS}" > ${REVFILE}
 	${ECHO} "release" > ${PHASEFILE}
@@ -109,7 +119,7 @@ post-install-ASSETS-on:
 
 post-stage:
 	${RM} -rf ${STAGEDIR}${PKG_PREFIX}/share/info
-.for d in "" 32
+.for d in ${LIB_DIR_32}
 .  for l in libgnarl-${GCCVER} libgnat-${GCCVER}
 	${STRIP_CMD}	\
 		${STAGEDIR}${PKG_PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}/${d}/adalib/${l}.so
@@ -125,4 +135,4 @@ post-stage-ASSETS-on:
 	@${ECHO_CMD} "(and adjust distinfo)"	\
 		>> ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
