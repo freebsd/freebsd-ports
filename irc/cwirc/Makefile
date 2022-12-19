@@ -2,14 +2,16 @@ PORTNAME=	cwirc
 PORTVERSION=	2.0.0
 PORTREVISION=	7
 CATEGORIES=	irc comms hamradio
-MASTER_SITES=	http://myspace.voo.be/pcoupard/cwirc/download/ \
-		LOCAL/db
+MASTER_SITES=	LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	X-Chat Morse plugin
 WWW=		http://myspace.voo.be/pcoupard/cwirc
 
 LICENSE=	GPLv2
+
+DEPRECATED=	No upstream, no apparent use seen online
+EXPIRATION_DATE=	2023-01-19
 
 BUILD_DEPENDS=	hexchat:irc/hexchat
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
