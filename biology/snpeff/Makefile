@@ -1,5 +1,5 @@
 PORTNAME=	snpeff
-DISTVERSION=	5.0
+DISTVERSION=	5.1
 CATEGORIES=	biology java python
 MASTER_SITES=	https://snpeff.blob.core.windows.net/versions/
 DISTNAME=	snpEff_latest_core
