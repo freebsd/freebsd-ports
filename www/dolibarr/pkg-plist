@@ -2129,7 +2129,6 @@
 %%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/LICENSE.md
 %%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/README.md
 %%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/SECURITY.md
-%%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/adapters/jquery.js
 %%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/bender-runner.config.json
 %%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/build-config.js
 %%WWWDIR%%/htdocs/includes/ckeditor/ckeditor/ckeditor.js
