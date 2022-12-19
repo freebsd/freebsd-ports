@@ -1413,9 +1413,11 @@
 +				if (error != 0)
 +					goto out;
 +
++#if __FreeBSD_version < 1400068
 +				/* Keep the component name in the buffer for
 +				 * future uses. */
 +				cnp->cn_flags |= SAVENAME;
++#endif
 +
 +				error = EJUSTRETURN;
 +			} else
