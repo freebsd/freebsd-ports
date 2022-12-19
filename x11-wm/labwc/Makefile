@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	1e66ba8fd75e.patch:-p1 # https://github.com/labwc/labwc/pull/629
+PATCHFILES+=	ae17cd2c8d57.patch:-p1 # https://github.com/labwc/labwc/pull/682
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
