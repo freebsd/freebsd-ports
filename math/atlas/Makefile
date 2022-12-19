@@ -1,5 +1,6 @@
 PORTNAME=	atlas
 PORTVERSION=	3.10.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/math-${PORTNAME}/Stable/${PORTVERSION}
@@ -75,7 +76,7 @@ MAKE_ENV+=	MAKE=${GMAKE} PATH="${WRKDIR}/.bin:${PATH}"
 BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake	\
 		gcc=${CC} gfortran=${FC} f77=${FC}
 
-pre-everything:
+pre-everything::
 	@${CAT} ${FILESDIR}/tuning-message
 
 pre-configure:
@@ -137,14 +138,17 @@ do-build:
 		FFLAGS="-pipe $${F77FLAGS}" ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} \
 		ARCH="${AR}" lapacklib ; \
 	TIMEFLAG=`${MAKE} -f ${WRKSRC}/saved_flags -V TIMEFLAG` ; \
-	${MKDIR} ${WRKSRC}/${opt} ; cd ${WRKSRC}/${opt} ; \
+	${MKDIR} ${WRKSRC}/${opt}/lib ; cd ${WRKSRC}/${opt} ; \
 	${MV} $${LW}/liblapack.a liblapack_${opt}.a ; \
+	${AR} -dv liblapack_${opt}.a lsame.o xerbla.o csrot.o zdrot.o ; \
+	${CP} liblapack_${opt}.a lib/liblapack.a ; \
 	${MAKE} -C ${PORTSDIR}/math/lapack clean ; \
 	${ECHO_CMD} "Configuring ${opt} ATLAS:" ; \
 		${SETENV} ${CONFIGURE_ENV} ../configure --cc="${CC}" --cflags="${CFLAGS}" \
 		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
 		-Ss flapack "${WRKSRC}/${opt}/liblapack_${opt}.a" \
 		-Ss f77lib " " -Ss pmake "${MAKE_CMD} ${_MAKE_JOBS}" \
+		-Si lapackref 1 -D c -DATL_FULL_LAPACK \
 		-Fa alg "${${opt:tu}_FLAGS} " -b ${POINTER} ; \
 	if [ "x${WITH_ARCHDEF}" != "x" ] ; then \
 		if [ "x${ARCHDEF}" != "xNONE" ] ; then \
