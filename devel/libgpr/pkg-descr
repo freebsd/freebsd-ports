@@ -1,0 +1,3 @@
+libgpr is a part of GPRbuild (see devel/gprbuild). It is requested by various
+Ada projects, like GNATCOLL (GNAT Collection Library) or AWS (a framework to
+develop Web based applications in Ada).

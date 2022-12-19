@@ -1224,6 +1224,7 @@
     SUBDIR += libgnuregex
     SUBDIR += libgpc
     SUBDIR += libgpkg
+    SUBDIR += libgpr
     SUBDIR += libgrading
     SUBDIR += libgraphqlparser
     SUBDIR += libgsf

@@ -1,6 +1,6 @@
 PORTNAME=	gprbuild
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.0
+DISTVERSION=	23.0.0	# Upgrade with devel/libgpr
 PORTEPOCH=	1
 CATEGORIES=	devel
 
