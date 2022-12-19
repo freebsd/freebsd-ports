@@ -18,4 +18,9 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
 CMAKE_OFF=	BUILD_TESTS
 
+.if ${DISTVERSION:E} < 238
+GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.237:vkheaders/Vulkan-Headers
+CFLAGS+=	-I${WRKSRC_vkheaders}/include
+.endif
+
 .include <bsd.port.mk>
