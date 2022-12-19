@@ -423,6 +423,7 @@
     SUBDIR += ossec-hids-server
     SUBDIR += ossec-hids-server-config
     SUBDIR += osslsigncode
+    SUBDIR += osv-scanner
     SUBDIR += otpw
     SUBDIR += owasp-dependency-check
     SUBDIR += p11-kit
