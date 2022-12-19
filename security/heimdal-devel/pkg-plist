@@ -253,10 +253,6 @@ lib/heimdal/negotiate_token_validator.a
 lib/heimdal/negotiate_token_validator.so
 lib/heimdal/negotiate_token_validator.so.0
 lib/heimdal/negotiate_token_validator.so.0.0.0
-lib/heimdal/simple_csr_authorizer.a
-lib/heimdal/simple_csr_authorizer.so
-lib/heimdal/simple_csr_authorizer.so.0
-lib/heimdal/simple_csr_authorizer.so.0.0.0
 lib/heimdal/test_negoex_mech.a
 lib/heimdal/test_negoex_mech.so
 lib/heimdal/test_negoex_mech.so.0
