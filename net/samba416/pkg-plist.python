@@ -274,12 +274,14 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/as_canonicalization_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/as_req_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/compatability_tests.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/etype_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/fast_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kcrypto.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_base_test.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tgs_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kpasswd_tests.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/lockout_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/ms_kile_client_principal_lookup_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/pac_align_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/raw_testcase.py

@@ -913,20 +913,15 @@ diff --git a/source4/selftest/tests.py b/source4/selftest/tests.py
 index 3af8e92d7f2..f451ad1cec2 100755
 --- a/source4/selftest/tests.py
 +++ b/source4/selftest/tests.py
-@@ -963,7 +963,12 @@ for env in ['fileserver_smb1', 'nt4_member', 'clusteredmember', 'ktest', 'nt4_dc
+@@ -964,7 +964,7 @@ for env in ['fileserver_smb1', 'nt4_member', 'clustere
  have_fast_support = 1
  claims_support = 0
  compound_id_support = 0
 -tkt_sig_support = int('SAMBA4_USES_HEIMDAL' in config_hash)
-+if ('SAMBA4_USES_HEIMDAL' in config_hash or
-+    'HAVE_MIT_KRB5_1_20' in config_hash):
-+    tkt_sig_support = 1
-+else:
-+    tkt_sig_support = 0
-+
++tkt_sig_support = 1 if('SAMBA4_USES_HEIMDAL' in config_hash or 'HAVE_MIT_KRB5_1_20' in config_hash) else 0
+ full_sig_support = int('SAMBA4_USES_HEIMDAL' in config_hash)
  expect_pac = int('SAMBA4_USES_HEIMDAL' in config_hash)
  extra_pac_buffers = int('SAMBA4_USES_HEIMDAL' in config_hash)
- check_cname = int('SAMBA4_USES_HEIMDAL' in config_hash)
 diff --git a/wscript_configure_system_mitkrb5 b/wscript_configure_system_mitkrb5
 index efdbced6e78..b0640654260 100644
 --- a/wscript_configure_system_mitkrb5
