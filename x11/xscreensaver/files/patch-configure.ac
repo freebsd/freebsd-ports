@@ -1,15 +1,6 @@
---- configure.ac.orig	2022-09-02 16:10:15 UTC
+--- configure.ac.orig	2022-12-19 10:45:37 UTC
 +++ configure.ac
-@@ -2822,7 +2822,7 @@ if test "$with_gtk" = yes; then
- 
-   GTK_DATADIR=""
-   if test "$have_gtk" = yes; then
--    GTK_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
-+    GTK_DATADIR=`$pkg_config --variable=prefix gtk+-3.0`
-     GTK_DATADIR="$GTK_DATADIR/share"
-   fi
- 
-@@ -4031,7 +4031,7 @@ fi
+@@ -4003,7 +4003,7 @@ fi
  ###############################################################################
  
  PTY_LIBS=

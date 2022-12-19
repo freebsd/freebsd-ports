@@ -1,8 +1,7 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.05
+DISTVERSION=	6.06
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
-EXTRACT_SUFX=	.1.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat

@@ -115,6 +115,7 @@ bin/xscreensaver-hacks/headroom
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hexadrop
 bin/xscreensaver-hacks/hexstrut
+bin/xscreensaver-hacks/hextrail
 bin/xscreensaver-hacks/hilbert
 bin/xscreensaver-hacks/hopalong
 bin/xscreensaver-hacks/hydrostat
@@ -229,7 +230,6 @@ bin/xscreensaver-hacks/surfaces
 bin/xscreensaver-hacks/swirl
 bin/xscreensaver-hacks/tangram
 bin/xscreensaver-hacks/tessellimage
-bin/xscreensaver-hacks/thornbird
 bin/xscreensaver-hacks/timetunnel
 bin/xscreensaver-hacks/topblock
 bin/xscreensaver-hacks/triangle
@@ -386,6 +386,7 @@ man/man6/headroom.6.gz
 man/man6/helix.6.gz
 man/man6/hexadrop.6.gz
 man/man6/hexstrut.6.gz
+man/man6/hextrail.6.gz
 man/man6/hilbert.6.gz
 man/man6/hopalong.6.gz
 man/man6/hydrostat.6.gz
@@ -490,7 +491,6 @@ man/man6/surfaces.6.gz
 man/man6/swirl.6.gz
 man/man6/tangram.6.gz
 man/man6/tessellimage.6.gz
-man/man6/thornbird.6.gz
 man/man6/timetunnel.6.gz
 man/man6/topblock.6.gz
 man/man6/triangle.6.gz
@@ -666,6 +666,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/helix.xml
 %%DATADIR%%/config/hexadrop.xml
 %%DATADIR%%/config/hexstrut.xml
+%%DATADIR%%/config/hextrail.xml
 %%DATADIR%%/config/hilbert.xml
 %%DATADIR%%/config/hopalong.xml
 %%DATADIR%%/config/hydrostat.xml
@@ -772,7 +773,6 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/swirl.xml
 %%DATADIR%%/config/tangram.xml
 %%DATADIR%%/config/tessellimage.xml
-%%DATADIR%%/config/thornbird.xml
 %%DATADIR%%/config/timetunnel.xml
 %%DATADIR%%/config/topblock.xml
 %%DATADIR%%/config/triangle.xml
