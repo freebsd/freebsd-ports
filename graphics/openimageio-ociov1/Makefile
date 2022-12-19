@@ -1,7 +1,7 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.21.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics multimedia
 PKGNAMESUFFIX=	-ociov1
 # special port to link oiio libs with ociov1

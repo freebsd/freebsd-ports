@@ -1,6 +1,6 @@
 PORTNAME=	fcitx5
 DISTVERSION=	5.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict
 DISTFILES=	${SPELL_EN_DICT_TAR}:dict
