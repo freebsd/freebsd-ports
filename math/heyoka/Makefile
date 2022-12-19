@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
-PORTREVISION=	3
+DISTVERSION=	0.20.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
+		libgmp.so:math/gmp \
 		libmp++.so:math/mppp \
+		libmpfr.so:math/mpfr \
 		libtbb.so:devel/onetbb \
 		libsleef.so:math/sleef \
 		libspdlog.so:devel/spdlog
@@ -28,7 +29,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 
-LLVM_VERSION=	12
+LLVM_VERSION=	14
 
 CMAKE_ON=		HEYOKA_WITH_MPPP HEYOKA_WITH_SLEEF
 CMAKE_ARGS=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}
