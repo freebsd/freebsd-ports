@@ -80,5 +80,5 @@ lib/cmake/obake/obake-config.cmake
 lib/cmake/obake/obake_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/obake/obake_export.cmake
 lib/libobake.so
-lib/libobake.so.7
-lib/libobake.so.7.0
+lib/libobake.so.8
+lib/libobake.so.8.0
