@@ -33,7 +33,7 @@ Please see http://drupal.org/requirements for important information on
 system requirements for Drupal 9.  In particular, please ensure that your
 configuration:
 
-- uses PHP 7.3 or later
+- uses PHP 8.0 or later
 - PHP "memory_limit" is set to "32Mb" or larger
 - PHP "register_globals" is set to "Off"
 - PHP "safe_mode" is set to "Off"
