@@ -1,10 +1,7 @@
 PORTNAME=	av1an
-DISTVERSION=	0.3.1
-PORTREVISION=	10
+DISTVERSION=	0.4.0
+DISTVERSIONSUFFIX=	-release
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2fc2ea51f2b6.patch:-p1 # https://github.com/master-of-zen/Av1an/pull/557
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Command-line encoding framework with per scene quality
@@ -23,6 +20,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	master-of-zen
 GH_PROJECT=	Av1an
 PLIST_FILES=	bin/${PORTNAME}
+
+# XXX https://github.com/rust-lang/cargo/issues/4101
+CARGO_INSTALL_PATH=	${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
