@@ -54,6 +54,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS THANKS
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPASSIVETEX}
+USES+=		tex
 USE_TEX+=	xmltex
 .endif
 

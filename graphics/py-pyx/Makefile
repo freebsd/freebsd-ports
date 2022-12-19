@@ -12,7 +12,7 @@ WWW=		https://pyx-project.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.4+
+USES=		python:3.4+ tex
 USE_PYTHON=	autoplist concurrent distutils
 USE_TEX=	latex:build
 

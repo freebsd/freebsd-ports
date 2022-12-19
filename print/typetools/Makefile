@@ -10,6 +10,7 @@ WWW=		https://www.lcdf.org/type/ #typetools
 
 LICENSE=	GPLv2
 
+USES=		tex
 USE_TEX=	kpathsea
 
 GNU_CONFIGURE=	yes

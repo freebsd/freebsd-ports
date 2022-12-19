@@ -47,6 +47,7 @@ ATLAS_USES_OFF=		blaslapack:netlib
 DOXYGEN_CONFIGURE_ENABLE=	doxygen-man
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
+DOXYGEN_USES=		tex
 DOXYGEN_USE=		TEX=base,dvipsk,pdftex
 
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc

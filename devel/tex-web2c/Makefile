@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libpng.so:graphics/png \
 		libzzip.so:devel/zziplib
 
-USES=		gnome libtool localbase pathfix pkgconfig tar:xz xorg
+USES=		gnome libtool localbase pathfix pkgconfig tar:xz tex xorg
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 USE_TEX=	kpathsea ptexenc

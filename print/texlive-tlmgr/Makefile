@@ -13,9 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-extra${EXTRACT_SUFX}
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeXLive manager modules
 
-RUN_DEPENDS=	tex-kpathsea>=6.3.3:devel/tex-kpathsea
-
-USES=		cpe perl5 tar:xz
+USES=		cpe perl5 tar:xz tex
 CPE_VENDOR=	tug
 USE_PERL5=	run
 USE_TEX=	kpathsea

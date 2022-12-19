@@ -52,8 +52,8 @@ CHM_LIB_DEPENDS=		libchm.so:misc/chmlib
 CHM_CONFIGURE_OFF=		--disable-python-chm
 DJVU_RUN_DEPENDS=		djvutxt:graphics/djvulibre
 IMAGE_RUN_DEPENDS=		exiftool:graphics/p5-Image-ExifTool
-LATEX_USE=			dvipsk:run \
-				latex:run
+LATEX_USES=			tex
+LATEX_USE=			TEX=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=		pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=			pstotext:print/pstotext
 QT5_USES=			gl qt:5

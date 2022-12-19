@@ -17,7 +17,7 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang cmake desktop-file-utils pkgconfig \
-		qt:5
+		qt:5 tex
 USE_GITHUB=	yes
 GH_ACCOUNT=	TeXworks
 USE_QT=		buildtools:build designer:build qmake:build \

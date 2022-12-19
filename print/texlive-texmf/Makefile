@@ -11,7 +11,7 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 WWW=		https://tug.org/texlive/
 
-USES=		cpe python:run shebangfix tar:xz
+USES=		cpe python:run shebangfix tar:xz tex
 CPE_VENDOR=	tug
 USE_TEX=	base basic:extract texhash tlmgr:run
 

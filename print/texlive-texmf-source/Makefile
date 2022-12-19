@@ -10,10 +10,10 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree (source)
 WWW=		https://tug.org/texlive/
 
-USES=		cpe perl5 python:build tar:xz
+USES=		cpe perl5 python:build tar:xz tex
 CPE_VENDOR=	tug
 USE_PERL5=	build
-USE_TEX=	texmf>=${PORTVERSION}
+USE_TEX=	texmf
 
 CONFLICTS_INSTALL=	texlive-base-202[0-9]*
 

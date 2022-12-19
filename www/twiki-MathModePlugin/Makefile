@@ -7,8 +7,7 @@ MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 COMMENT=	Include LaTeX formatted math in your TWiki pages
 WWW=		https://twiki.org/cgi-bin/view/Plugins/MathModePlugin
 
-USES=		magick:6,run
-
+USES=		magick:6,run tex
 USE_TEX=	base latex
 
 post-patch:

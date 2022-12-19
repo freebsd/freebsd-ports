@@ -9,6 +9,7 @@ MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX base fonts
 WWW=		http://project.ktug.or.kr/ko.TeX/
 
+USES=		tex
 USE_TEX=	dvipsk latex
 CONFLICTS=	hlatex
 

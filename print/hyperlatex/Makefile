@@ -11,7 +11,7 @@ WWW=		http://hyperlatex.sourceforge.net/
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
-USES=		emacs
+USES=		emacs tex
 USE_TEX=	latex
 
 CONFLICTS_INSTALL=	 Hyperlatex Hyperlatex-emacs_*

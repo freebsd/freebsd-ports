@@ -100,6 +100,7 @@ CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
+USES+=		tex
 USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:print/fig2dev		\
 		doxygen:devel/doxygen		\

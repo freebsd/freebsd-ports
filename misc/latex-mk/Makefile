@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	texi2dvi:print/texinfo
 
+USES=		gmake tex
 USE_TEX=	latex
-USES=		gmake
 GNU_CONFIGURE=	yes
 
 INFO=		latex-mk

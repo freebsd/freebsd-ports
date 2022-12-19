@@ -15,6 +15,7 @@ LICENSE_NAME=	foiltex
 LICENSE_TEXT=	Redistribution on a not-for-profit basis only
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+USES=		tex
 USE_TEX=	latex
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes

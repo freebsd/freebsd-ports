@@ -15,7 +15,7 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		gmake gnome magick:6,run pkgconfig tar:bzip2
+USES=		gmake gnome magick:6,run pkgconfig tar:bzip2 tex
 USE_TEX=	latex
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}"

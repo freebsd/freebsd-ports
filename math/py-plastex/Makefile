@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.5+ tex
 USE_PYTHON=	autoplist concurrent distutils
 USE_TEX=	base:run
 

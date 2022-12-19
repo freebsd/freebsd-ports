@@ -1,37 +1,34 @@
-# bsd.tex.mk - Common part for TeX related ports
-#
-TEX_MAINTAINER=	freebsd-tex@FreeBSD.org
+# Feature: tex
+# Usage:   USES=tex
+# Valid ARGS:	(none)
+# MAINTAINER:	tex@FreeBSD.org
 
-#
-# Ports which depend on TeX should use USE_TEX.
-#
-# USE_TEX=	yes
-# imports variables only, and
-# USE_TEX=	full
+# This imports variables only, and USE_TEX=	full
 # means full TeXLive dependency except for documentation and source.
 #
-# The other valid keywords
+# USE_TEX is used to enable additional specific features and
+# fnctionalities for tex.
 #
-#  base:	base part
-#  texmf:	texmf tree (except for documentation and source)
-#  source:	source 
-#  docs:	documentation
-#
-#  web2c:	WEB2C toolchain and TeX engines
+# Valid keywords for USE_TEX are as following:
+
+#  base:		base part
+#  texmf:		texmf tree (except for documentation and source)
+#  source:		source
+#  docs:		documentation
+#  web2c:		WEB2C toolchain and TeX engines
 #  kpathsea:	kpathsea library
-#  ptexenc:	character code conversion library for pTeX
-#  basic:	basic TeX engines including tex and pdftex
-#  tlmgr:	tlmgr dependency (Perl modules)
-#  texlua:	texlua53 library
+#  ptexenc:		character code conversion library for pTeX
+#  basic:		basic TeX engines including tex and pdftex
+#  tlmgr:		tlmgr dependency (Perl modules)
+#  texlua:		texlua53 library
 #  texluajit:	texluajit library
-#  synctex:	synctex library
+#  synctex:		synctex library
 #  xpdfopen:	pdfopen/pdfclose utility
-#
-#  dvipsk:	dvipsk
+#  dvipsk:		dvipsk
 #  dvipdfmx:	DVIPDFMx
-#  xdvik:	XDvi
+#  xdvik:		XDvi
 #  gbklatex:	gbklatex
-#
+
 #  formats:	TeX, LaTeX, AMSTeX, ConTeXT, EplainTeX,
 #		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
@@ -51,6 +48,34 @@ TEX_MAINTAINER=	freebsd-tex@FreeBSD.org
 # USE_TEX=	latex:build
 # USE_TEX=	formats
 # USE_TEX=	latex:build dvipsk:build
+
+.if !defined(_INCLUDE_USES_TEX_MK)
+_INCLUDE_USES_TEX_MK=    yes
+
+# List all valid USE_TEX features here
+_VALID_TEX_FEATURES= base texmf source docs web2c kpathsea ptexenc basic \
+					tlmgr texlua texluajit synctex xpdfopen dvipsk dvipdfmx \
+					xdvik gbklatex formats tex latex pdftex jadetex luatex \
+					ptex xetex xmltex texhash texhash-bootstrap updmap fmtutil full
+
+_INVALID_TEX_FEATURES=
+.  for var in ${USE_TEX:O:u:C/:(build|extract|lib|run|test)$//}
+.    if empty(_VALID_TEX_FEATURES:M${var})
+_INVALID_TEX_FEATURES+=  ${var}
+.    endif
+.  endfor
+.  if !empty(_INVALID_TEX_FEATURES)
+IGNORE= uses unknown USE_TEX features: ${_INVALID_TEX_FEATURES}
+.  endif
+
+.  if !empty(tex_ARGS)
+IGNORE=	USES=tex takes no arguments
+.  endif
+
+# Make each individual feature available as _TEX_FEATURE_<FEATURENAME>
+.  for var in ${USE_TEX}
+_TEX_FEATURE_${var:C/=.*$//:tu}= ${var:C/.*=//:S/,/ /g}
+.  endfor
 
 # default TeX distribution.  "texlive"
 TEX_DEFAULT?=	texlive
@@ -72,10 +97,6 @@ TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0325
 .for V in TEXMFDIR TEXMFDISTDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR FMTUTIL_CNF
 PLIST_SUB+=	$V="${$V}"
 .endfor
-
-.if !empty(USE_TEX:tu:MTEXLIVE)
-IGNORE=		"texlive" must not be defined in USE_TEX 
-.endif
 
 _USE_TEX_TEXMF_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/README
 _USE_TEX_TEXMF_PORT=	print/${_USE_TEX_TEXMF_PKGNAME}
@@ -186,7 +207,6 @@ _C:=	BUILD RUN
 .  else
 _C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
 .  endif
-#. warning DEBUG: ${_U}: _VOP=${_VOP}, _C=${_C}
 .  for _CC in ${_C:tu}
 _V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
 .    if defined(_USE_TEX_${_V}_PORT)
@@ -203,7 +223,7 @@ TEX_${_CC}_DEPENDS+=	${_T}
 .  endfor
 .endfor
 
-.for _C in EXTRACT BUILD LIB RUN
+.for _C in EXTRACT BUILD LIB RUN TEST
 ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
 .endfor
 
@@ -626,3 +646,5 @@ TEX_FORMAT_XMLTEX_DIRS= \
 post-install-xmltex:
 	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/xmltex
 	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/pdfxmltex
+
+.endif # !defined(_INCLUDE_USES_TEX_MK)

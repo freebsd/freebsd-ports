@@ -141,6 +141,7 @@ LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .if ${PORT_OPTIONS:MMANUAL}
 DBKXMLDIR=	${LOCALBASE}/share/xml/docbook/4.4
 DBKXSLDIR=	${LOCALBASE}/share/xsl/docbook
+USES+=		tex
 USE_TEX=	dvipsk:build formats:build
 .endif
 

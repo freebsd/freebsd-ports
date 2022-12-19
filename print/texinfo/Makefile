@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz
+USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz tex
 
 CONFIGURE_ARGS=	--with-external-libintl-perl \
 		--with-external-Text-Unidecode \
@@ -38,7 +38,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip install-tex
 MAKE_ARGS=	PERL=${PERL} TEXMF=${LOCALBASE}/${TEXMFDIR}
 PKGDEINSTALL=	${PKGINSTALL}
-USE_TEX=	yes
 
 INFO=		info-stnd texinfo
 

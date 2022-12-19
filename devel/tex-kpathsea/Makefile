@@ -11,9 +11,8 @@ COMMENT=	Path searching library for TeX
 
 LICENSE=	LGPL21+
 
-USES=		libtool pathfix tar:xz
+USES=		libtool pathfix tar:xz tex
 USE_LDCONFIG=	yes
-USE_TEX=	yes
 
 GNU_CONFIGURE=	yes
 

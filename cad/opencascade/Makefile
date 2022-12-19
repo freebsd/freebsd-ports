@@ -121,6 +121,7 @@ VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl	\
 VIS_USE=		GL=glesv2
 
 DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_USES=		tex
 DOXYGEN_USE=		TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen		\

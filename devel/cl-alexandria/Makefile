@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sbcl:lang/sbcl \
 			texi2pdf:print/texinfo
-
+DOCS_USES=	tex
 DOCS_USE=	TEX=latex:build
 DOCS_INFO=	doc/${PORTNAME}
 

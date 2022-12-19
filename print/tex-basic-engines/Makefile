@@ -12,7 +12,7 @@ WWW=		https://tug.org/texlive/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		libtool localbase pkgconfig tar:xz
+USES=		libtool localbase pkgconfig tar:xz tex
 USE_TEX=	kpathsea web2c
 
 GNU_CONFIGURE=		yes

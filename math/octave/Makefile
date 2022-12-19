@@ -105,6 +105,7 @@ QT5_CONFIGURE_WITH=	qt=5 qscintilla
 
 QT5_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
+DOCS_USES=	tex
 DOCS_USE=	TEX=dvipsk:build,formats:build
 JAVA_USE=	JAVA=yes
 JAVA_CFLAGS=	-I${JAVA_HOME}/include/${OPSYS:tl}

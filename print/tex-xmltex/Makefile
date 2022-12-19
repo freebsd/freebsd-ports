@@ -11,7 +11,7 @@ EXTRACT_ONLY=
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Non-validating XML parser, written in TeX
 
-USES=		tar:xz
+USES=		tar:xz tex
 USE_TEX=	texmf pdftex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \

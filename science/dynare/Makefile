@@ -23,7 +23,7 @@ RUN_DEPENDS=	epstool:graphics/epstool \
 		pstoedit:graphics/pstoedit \
 		xfig:graphics/xfig # README says that these executables are required for the test suite
 
-USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz
+USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz tex
 USE_TEX=	pdftex
 
 GNU_CONFIGURE=	yes

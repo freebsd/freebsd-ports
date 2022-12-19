@@ -14,13 +14,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=1.4.8:devel/py-pyparsing@${PY_FLA
 		dot:graphics/graphviz
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.6+ tex
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist concurrent
 
-# Enable this before running test target
-# bsd.tex.mk doesnt support :test (only) depends
-#USE_TEX=	latex
+USE_TEX=	latex:test
 
 GH_ACCOUNT=	kjellmf
 

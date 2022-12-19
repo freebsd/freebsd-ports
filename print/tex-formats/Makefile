@@ -11,6 +11,7 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Formats for basic TeX engines and the 'latex' command
 WWW=		https://tug.org/texlive/
 
+USES=		tex
 USE_TEX=	basic fmtutil texhash texmf web2c
 
 NO_ARCH=	yes

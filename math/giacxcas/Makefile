@@ -41,7 +41,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		blaslapack compiler:c++14-lang desktop-file-utils fortran \
 		gettext gl gmake gnome jpeg libtool localbase ncurses perl5 \
-		python readline shebangfix xorg
+		python readline shebangfix tex xorg
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_XORG=	x11 xcursor xext xft xi xinerama

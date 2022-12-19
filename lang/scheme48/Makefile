@@ -19,7 +19,8 @@ CPE_VENDOR=	s48
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+DOCS_USES=	tex
+DOCS_CONFIGURE_ON=	--docdir="${DOCSDIR}"
 
 PLIST_SUB+=	VER=${PORTVERSION}
 
@@ -32,17 +33,14 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/INSTALL.*COPYING/d' \
 		${WRKSRC}/Makefile.in
-.if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	yes
-CONFIGURE_ARGS+=--docdir="${DOCSDIR}"
-.else
+
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} \
 		-e 's/install-doc$$//' \
 		-e 's/go doc$$/go/' \
 		${WRKSRC}/Makefile.in
-.endif
 
-test:
+do-test:
 	${MAKE} -C ${WRKSRC} check
 
 .include <bsd.port.mk>

@@ -83,8 +83,9 @@ MAKE_ARGS=	DESTDIR='' MLTON_VERSION=${PORTVERSION} \
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	htmldoc:textproc/htmldoc
 MAKE_ARGS+=	MLTON_BINARY_RELEASE_WITH_DOCS=true
-#USE_TEX=	latex:build
-USE_TEX=	latex:formats
+USES+=		tex
+USE_TEX=	latex:build
+#USE_TEX=	latex:formats
 INSTALL_TARGET=	install-docs install
 ALL_TARGET=	install-docs all
 .else

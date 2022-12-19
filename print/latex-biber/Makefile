@@ -52,7 +52,7 @@ __DEPENDS=	ja-p5-Encode-EUCJPASCII>0:japanese/p5-Encode-EUCJPASCII \
 BUILD_DEPENDS=	${__DEPENDS}
 RUN_DEPENDS=	${__DEPENDS}
 
-USES=		perl5
+USES=		perl5 tex
 USE_GITHUB=	yes
 GH_ACCOUNT=	plk
 USE_PERL5=	modbuild

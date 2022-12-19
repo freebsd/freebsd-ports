@@ -21,9 +21,9 @@ RUN_DEPENDS+=	potrace:graphics/potrace
 .endif
 
 # Python3 ready
+USES=		gmake python tex
 USE_TEX=	base texmf
 GNU_CONFIGURE=	yes
-USES=		gmake python
 MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	\
