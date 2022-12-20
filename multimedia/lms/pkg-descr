@@ -1,2 +1,14 @@
 LMS is a self-hosted music streaming software: it allows users to access their
 music collections from anywhere using a web interface.
+
+Main features
+* Recommendation engine
+* Audio transcode for maximum interoperability and low bandwith requirements
+* Multi-value tags: artist, genre, composer, lyricist, mood, performer, ...
+* MusicBrainz Identifier support to handle duplicated artist and release names
+* ListenBrainz support for:
+     Scrobbling and synchronizing listens
+     Synchronizing 'love' feedbacks
+* ReplayGain support
+* User management, with several authentication backends, see Deployment
+* Subsonic API

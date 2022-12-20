@@ -1,10 +1,10 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.33.0
+DISTVERSION=	3.34.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Lightweight Music Server
+COMMENT=	Lightweight Music Server to access music using a web interface
 WWW=		https://github.com/epoupon/lms
 
 LICENSE=	GPLv3
