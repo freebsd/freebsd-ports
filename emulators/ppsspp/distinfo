@@ -1,8 +1,8 @@
-TIMESTAMP = 1671109298
+TIMESTAMP = 1671542746
 SHA256 (ppsspp.1) = 64a7cca4c3a5fc6ad5b63399edef9056b0c85ea68fed00fb7e97f4b2724e503b
 SIZE (ppsspp.1) = 1598
-SHA256 (hrydgard-ppsspp-v1.14_GH0.tar.gz) = b1bf79abff30418f382bdbeae866b8572c25d0b732393d34d3d044deeffdc5dc
-SIZE (hrydgard-ppsspp-v1.14_GH0.tar.gz) = 37146002
+SHA256 (hrydgard-ppsspp-v1.14.1_GH0.tar.gz) = 0cea760987e06ed5acb1140901d182feaef1c79341fbd5947ce7f474a306b670
+SIZE (hrydgard-ppsspp-v1.14.1_GH0.tar.gz) = 37139754
 SHA256 (hrydgard-glslang-8.13.3743-339-gdc11adde_GH0.tar.gz) = ced8f91c3b07f0c1227649732c9ba047d89b09038a446a3c0636f909fb40ab24
 SIZE (hrydgard-glslang-8.13.3743-339-gdc11adde_GH0.tar.gz) = 3297180
 SHA256 (hrydgard-miniupnp-miniupnpd_2_1-502-g3a87be3_GH0.tar.gz) = 3aefaee9eb86e5f44267aa9e8d37b46d2be8f1c72879cebefa365690a9348190
@@ -17,5 +17,3 @@ SHA256 (Kingcom-armips-v0.11.0-184-g6719ede_GH0.tar.gz) = 0c584c3a7712e6cdbe1707
 SIZE (Kingcom-armips-v0.11.0-184-g6719ede_GH0.tar.gz) = 222945
 SHA256 (Kingcom-filesystem-v1.3.2-12-g3f1c185_GH0.tar.gz) = 9fa5a690e341bea1935a7f6b256e1bbd864abee988f834f10307f646dc38e604
 SIZE (Kingcom-filesystem-v1.3.2-12-g3f1c185_GH0.tar.gz) = 163401
-SHA256 (6a9334e6f01b.patch) = 4c1c2975dfe99a449758b4edafb9a525c85f483b5321bb1b4abf9fac6919b9f0
-SIZE (6a9334e6f01b.patch) = 1079
