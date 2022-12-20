@@ -23,6 +23,16 @@ CMAKE_ON=	ALSOFT_BACKEND_WAVE
 LDFLAGS+=	-Wl,--as-needed
 LDFLAGS_i386=	-Wl,-z,notext
 
+.include <bsd.port.pre.mk>
+
+# The following is actually meant for lld 15.0 and later, but the ports
+# framework does not support LINKER_TYPE and LINKER_VERSION yet.
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+# Turn off checking of dynamic relocations, to avoid lld diagnostics about
+# possibly incorrect addend values.
+LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
+.endif
+
 PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		CONFIG EXAMPLES JACK OSS PORTAUDIO PULSEAUDIO \
