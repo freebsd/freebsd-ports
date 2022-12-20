@@ -67,6 +67,7 @@ share/applications/org.freeciv.server.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.actions
 %%PORTDOCS%%%%DOCSDIR%%/README.agents
 %%PORTDOCS%%%%DOCSDIR%%/README.attributes
+%%PORTDOCS%%%%DOCSDIR%%/README.crosser
 %%PORTDOCS%%%%DOCSDIR%%/README.delta
 %%PORTDOCS%%%%DOCSDIR%%/README.effects
 %%PORTDOCS%%%%DOCSDIR%%/README.fcdb
