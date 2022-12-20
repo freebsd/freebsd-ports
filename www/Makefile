@@ -1421,6 +1421,7 @@
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp_cors
     SUBDIR += py-aioquic
+    SUBDIR += py-aiostream
     SUBDIR += py-arxiv
     SUBDIR += py-asgi-csrf
     SUBDIR += py-asgiref
