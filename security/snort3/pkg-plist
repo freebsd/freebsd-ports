@@ -198,6 +198,7 @@ include/snort/protocols/vlan.h
 include/snort/protocols/wlan.h
 include/snort/pub_sub/appid_debug_log_event.h
 include/snort/pub_sub/appid_events.h
+include/snort/pub_sub/appid_event_ids.h
 include/snort/pub_sub/assistant_gadget_event.h
 include/snort/pub_sub/cip_events.h
 include/snort/pub_sub/daq_message_event.h
@@ -206,9 +207,12 @@ include/snort/pub_sub/dcerpc_events.h
 include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
+include/snort/pub_sub/external_event_ids.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
+include/snort/pub_sub/http_event_ids.h
 include/snort/pub_sub/http_request_body_event.h
+include/snort/pub_sub/intrinsic_event_ids.h
 include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/packet_events.h
@@ -217,6 +221,7 @@ include/snort/pub_sub/rna_events.h
 include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
 include/snort/pub_sub/ssh_events.h
+include/snort/pub_sub/stream_event_ids.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
 include/snort/service_inspectors/http2_inspect/http2_huffman_state_machine.h
