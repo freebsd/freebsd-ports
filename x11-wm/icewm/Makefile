@@ -1,5 +1,5 @@
 PORTNAME=	icewm
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
