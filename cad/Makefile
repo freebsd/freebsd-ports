@@ -106,6 +106,7 @@
     SUBDIR += py-cq-editor
     SUBDIR += py-ezdxf
     SUBDIR += py-gdspy
+    SUBDIR += py-gmsh
     SUBDIR += py-lcapy
     SUBDIR += py-ocp
     SUBDIR += py-phidl
