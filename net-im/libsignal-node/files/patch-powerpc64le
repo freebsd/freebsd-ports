@@ -1,5 +1,5 @@
---- ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/CMakeLists.txt.orig  2021-09-03 00:17:34.000000000 +0200
-+++ ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/CMakeLists.txt       2022-09-06 09:18:01.142118000 +0200
+--- ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/CMakeLists.txt.orig  2021-09-03 00:17:34 UTC
++++ ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/CMakeLists.txt
 @@ -86,7 +89,7 @@
  elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "mips")
    # Just to avoid the “unknown processor” error.
