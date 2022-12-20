@@ -1,6 +1,5 @@
 PORTNAME=	knxd
-PORTVERSION=	0.14.39
-PORTREVISION=	5
+PORTVERSION=	0.14.56
 CATEGORIES=	net
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -24,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	knxd
 
 INSTALL_TARGET=	install-strip
-GH_TAGNAME=	746a8d85dfdc4c456a9b832eca358a062a2b351d
+GH_TAGNAME=	10b76ffe7ee1027dadbaf7178c92cd30422f5f41
 
 post-patch:
 	# Replace script for version detection with PORTREVISION as the repository does not have a .git repo and therefor the script fails
