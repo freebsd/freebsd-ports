@@ -43,6 +43,7 @@ start_precmd=nzbhydra2_precmd
 nzbhydra2_precmd() 
 {
 	export XDG_CONFIG_HOME=${nzbhydra2_data_dir}
+	export NZBHYDRA_DISABLE_UPDATE=1
 
 	if [ -f ${pidfile} ]; then
 		rm -f ${pidfile}

@@ -1,10 +1,10 @@
 PORTNAME=	nzbhydra2
-DISTVERSION=	4.7.2
+DISTVERSION=	4.7.4
 DISTVERSIONSUFFIX=	-linux
 CATEGORIES=	news java
 MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	daniel@shafer.cc
+MAINTAINER=	marcel@herrbischoff.com
 COMMENT=	Usenet meta search
 WWW=		https://github.com/theotherp/nzbhydra2
 
@@ -24,7 +24,7 @@ SUB_FILES=	nzbhydra2
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		JAVA=${JAVA}
 
-JAVA_VERSION=	8+
+JAVA_VERSION=	17+
 JAVA_VENDOR=	openjdk
 JAVA_RUN=	yes
 
@@ -41,6 +41,10 @@ PLIST_FILES=	${DATADIR}/lib/core-${DISTVERSION}-exec.jar \
 post-extract:
 	# Cleanup unnecessary files
 	@${RM} -r ${WRKSRC}/systemd ${WRKSRC}/sysv ${WRKSRC}/rc.d ${WRKSRC}/upstart ${WRKSRC}/nzbhydra2wrapper.py
+
+pre-install:
+	# temp fix for https://github.com/theotherp/nzbhydra2/issues/812
+	${RM} -r ${WRKSRC}/data
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${DATADIR}
