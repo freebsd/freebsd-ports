@@ -18,12 +18,11 @@ configuration file (%%PREFIX%%/etc/apache(2)/httpd.conf).
 
 A typical configuration might read:
 
-    Alias /drupal "%%DRUPAL_DIR%%"
-    <Directory "%%DRUPAL_DIR%%">
-        Options Indexes FollowSymlinks MultiViews
-        AllowOverride None
-        Order allow,deny
-        Allow from all
+    Alias /drupal "%%WWWDIR%%"
+    <Directory "%%WWWDIR%%">
+	Options Indexes FollowSymlinks MultiViews
+	AllowOverride all
+	Require all granted
     </Directory>
 
 Please see http://drupal.org/cron for important information on setting up
