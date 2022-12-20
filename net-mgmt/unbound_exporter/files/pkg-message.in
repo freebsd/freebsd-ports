@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.4.1"
+  message: <<EOM
+The config defaults for the log file and certificates have been changed.
+See %%PREFIX%%/etc/rc.d/unbound_exporter for possible options
+and adjust your rc.conf accordingly.
+EOM
+}
+]

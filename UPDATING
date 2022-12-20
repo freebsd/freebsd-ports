@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221220:
+  AFFECTS: users of net-mgmt/unbound_exporter
+  AUTHOR: thomas@beingboiled.info
+
+  The config defaults for the log file and certificates have been changed.
+  See /usr/local/etc/rc.d/unbound_exporter for possible options and adjust
+  your rc.conf accordingly.
+
 20221215:
   AFFECTS: users of security/clamav
   AUTHOR: yasu@FreeBSD.org
