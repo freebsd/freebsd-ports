@@ -111,6 +111,7 @@
     SUBDIR += py-ocp
     SUBDIR += py-phidl
     SUBDIR += py-pyfda
+    SUBDIR += py-pygmsh
     SUBDIR += py-pymtl
     SUBDIR += python-gdsii
     SUBDIR += qcad
