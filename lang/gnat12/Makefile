@@ -99,7 +99,7 @@ INFOS=		cpp cppinternals gcc gccinstall gccint gnat_rm gnat_ugn	\
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == aarch64
 LIB_DIR_32=	""
 PLIST_SUB+=	64BITS="@comment "
 .else
