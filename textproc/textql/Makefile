@@ -1,6 +1,6 @@
 PORTNAME=	textql
-PORTVERSION=	g20200203
-PORTREVISION=	8
+PORTVERSION=	g20210706
+PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	ume@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinedal
-GH_TAGNAME=	1d6fef5
+GH_TAGNAME=	fca00ec
 GH_TUPLE=	mattn:go-runewidth:v0.0.2:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		olekukonko:tablewriter:d4647c9c7a84:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter
