@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-08-31 16:04:08 UTC
+--- CMakeLists.txt.orig	2022-12-20 16:40:07 UTC
 +++ CMakeLists.txt
 @@ -66,7 +66,7 @@ endif()
  # Support for ccache
@@ -9,11 +9,3 @@
      set(C_LAUNCHER   "${CCACHE_PROGRAM}")
      set(CXX_LAUNCHER "${CCACHE_PROGRAM}")
  
-@@ -99,6 +99,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
- # ==================================================================================================
- if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT WEBGL)
-     set(LINUX TRUE)
-+    message("setting LINUX=TRUE ... will treat the system as Linux-compatible")
- endif()
- 
- if (LINUX)
