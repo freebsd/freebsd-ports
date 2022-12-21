@@ -14,6 +14,9 @@ include/dnnl_types.h
 include/dnnl_version.h
 include/oneapi/dnnl/dnnl.h
 include/oneapi/dnnl/dnnl.hpp
+include/oneapi/dnnl/dnnl_common.h
+include/oneapi/dnnl/dnnl_common.hpp
+include/oneapi/dnnl/dnnl_common_types.h
 include/oneapi/dnnl/dnnl_config.h
 include/oneapi/dnnl/dnnl_debug.h
 include/oneapi/dnnl/dnnl_ocl.h
@@ -32,5 +35,5 @@ lib/cmake/dnnl/dnnl-config.cmake
 lib/cmake/dnnl/dnnl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dnnl/dnnl-targets.cmake
 lib/libdnnl.so
-lib/libdnnl.so.2
-lib/libdnnl.so.2.7
+lib/libdnnl.so.3
+lib/libdnnl.so.3.0
