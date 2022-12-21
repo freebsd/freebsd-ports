@@ -1623,7 +1623,6 @@
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += resume-extensions
-    SUBDIR += retext
     SUBDIR += rfcdiff
     SUBDIR += ripgrep
     SUBDIR += ripgrep-all

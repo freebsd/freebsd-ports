@@ -1,6 +1,6 @@
 PORTNAME=	retext
 DISTVERSION=	8.0.0
-CATEGORIES=	textproc
+CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Markdown editor
