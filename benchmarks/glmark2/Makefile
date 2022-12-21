@@ -1,6 +1,6 @@
 PORTNAME=	glmark2
 PORTVERSION=	2021.12
-CATEGORIES=	benchmarks wayland
+CATEGORIES=	benchmarks
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Benchmark for OpenGL (ES) 2.0
@@ -31,6 +31,7 @@ DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 DRM_USE=		GL=gbm
 DRM_VARS=		PLATFORMS+="drm-gl drm-glesv2"
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 			wayland-protocols>=1.12:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
