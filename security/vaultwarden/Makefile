@@ -383,7 +383,7 @@ CARGO_CRATES=   addr2line-0.17.0 \
                 multer@git+https://github.com/BlackDex/multer-rs?rev=477d16b7fa0f361b5c2a5ba18a5b28bec6d26a8a\#477d16b7fa0f361b5c2a5ba18a5b28bec6d26a8a
 
 CARGO_FEATURES=	mysql postgresql sqlite #vendored_openssl
-CARGO_ENV+=	RUSTC_BOOTSTRAP=1
+#CARGO_ENV+=	RUSTC_BOOTSTRAP=1
 
 INSTALL_TARGET=	install-strip
 
