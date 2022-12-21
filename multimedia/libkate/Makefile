@@ -12,6 +12,9 @@ WWW=		https://wiki.xiph.org/index.php/OggKate
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete format that never got any traction and no development in over 10 years
+EXPIRATION_DATE=2022-12-31
+
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libpng.so:graphics/png
 
