@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.35.0
 PORTREVISION=	6
 PORTEPOCH=	1
-CATEGORIES=	multimedia audio wayland
+CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	b95111dda879.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
@@ -161,6 +161,7 @@ VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
 				libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=		vulkan libplacebo
 
+WAYLAND_CATEGORIES=		wayland
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 				${LOCALBASE}/include/linux/input-event-codes.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
