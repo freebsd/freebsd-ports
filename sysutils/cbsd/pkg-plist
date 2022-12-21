@@ -212,7 +212,9 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-12.4.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.1.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.conf
+cbsd/etc/defaults/vm-freebsd-cloud-GhostBSD-ufs-x64-22.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-22-RELEASE-amd64-22.conf
+cbsd/etc/defaults/vm-freebsd-cloud-XigmaNAS-13-amd64.conf
 cbsd/etc/defaults/vm-freebsd-helloSystem-x64.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-linux-AlmaLinux-9-x86_64.conf
@@ -260,7 +262,7 @@ cbsd/etc/defaults/vm-linux-cloud-Oracle-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Parrot-5-amd64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-9-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-kubernetes-25.conf
+cbsd/etc/defaults/vm-linux-cloud-kubernetes-26.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntudesktop-amd64-22.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-22.04.conf
