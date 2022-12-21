@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	lev@FreeBSD.org
@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	\
 
 OPTIONS_DEFAULT=SERF TOOLS
 
-FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GPG_AGENT_DESC=		Enable GPG agent password store
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 STATIC_DESC=		Build static version (no shared libs)
@@ -34,8 +33,6 @@ SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
 TOOLS_DESC=		Install several tools
 
-# Patches required for use with the FreeBSD Project repository only
-FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
 SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
 
 USES+=			shebangfix python:2.7,env
