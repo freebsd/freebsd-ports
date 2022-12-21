@@ -1,7 +1,6 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +22,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		bumpalo-3.11.1 \
-		cc-1.0.77 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		clap-4.0.29 \
@@ -33,10 +32,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		core-foundation-sys-0.8.3 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
-		cxx-1.0.82 \
-		cxx-build-1.0.82 \
-		cxxbridge-flags-1.0.82 \
-		cxxbridge-macro-1.0.82 \
+		cxx-1.0.83 \
+		cxx-build-1.0.83 \
+		cxxbridge-flags-1.0.83 \
+		cxxbridge-macro-1.0.83 \
 		directories-next-2.0.0 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
@@ -60,10 +59,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		itoa-0.4.8 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.137 \
+		libc-0.2.138 \
 		libsqlite3-sys-0.25.2 \
 		link-cplusplus-1.0.7 \
-		linux-raw-sys-0.1.3 \
+		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		num-integer-0.1.45 \
@@ -88,14 +87,14 @@ CARGO_CRATES=	ahash-0.7.6 \
 		regex-syntax-0.6.28 \
 		relative-path-1.7.2 \
 		rusqlite-0.28.0 \
-		rustix-0.36.4 \
+		rustix-0.36.5 \
 		ryu-1.0.11 \
 		scratch-1.0.2 \
-		serde-1.0.148 \
+		serde-1.0.150 \
 		shellexpand-2.1.2 \
 		smallvec-1.10.0 \
 		strsim-0.10.0 \
-		syn-1.0.104 \
+		syn-1.0.105 \
 		termcolor-1.1.3 \
 		termion-1.5.6 \
 		thiserror-1.0.37 \
