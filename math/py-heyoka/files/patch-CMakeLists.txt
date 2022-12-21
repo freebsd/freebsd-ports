@@ -1,16 +1,15 @@
---- CMakeLists.txt.orig	2022-09-19 07:53:52 UTC
+--- CMakeLists.txt.orig	2022-12-18 12:54:30 UTC
 +++ CMakeLists.txt
-@@ -144,7 +144,7 @@ else()
-     # and Python3 is *not* found, we try again, this time with the full Development
-     # component (rather than only Development.Module). This seems to work around the
-     # issue, for now at least.
--    find_package(Python3 QUIET COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
-+    find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} QUIET COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
+@@ -140,14 +140,14 @@ set(_HEYOKA_PY_PYTHON3_COMPONENTS Interpreter NumPy De
+ # and Python3 is *not* found, we try again, this time with the full Development
+ # component (rather than only Development.Module). This seems to work around the
+ # issue, for now at least.
+-find_package(Python3 QUIET COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
++find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} QUIET COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})
  
-     if(NOT Python3_FOUND)
-         list(POP_BACK _HEYOKA_PY_PYTHON3_COMPONENTS)
-@@ -152,7 +152,7 @@ else()
-     endif()
+ if(NOT Python3_FOUND)
+     list(POP_BACK _HEYOKA_PY_PYTHON3_COMPONENTS)
+     list(APPEND _HEYOKA_PY_PYTHON3_COMPONENTS Development)
  endif()
  
 -find_package(Python3 QUIET REQUIRED COMPONENTS ${_HEYOKA_PY_PYTHON3_COMPONENTS})

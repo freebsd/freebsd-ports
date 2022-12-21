@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
-PORTREVISION=	4
+DISTVERSION=	0.20.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,8 +15,10 @@ BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
+		libgmp.so:math/gmp \
 		libheyoka.so:math/heyoka \
 		libmp++.so:math/mppp \
+		libmpfr.so:math/mpfr \
 		libtbb.so:devel/onetbb \
 		libspdlog.so:devel/spdlog
 RUN_DEPENDS=	${PYNUMPY} \
