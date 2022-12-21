@@ -1,6 +1,6 @@
 PORTNAME=	openscad
-PORTVERSION=	2022.09.03
-PORTREVISION=	1
+PORTVERSION=	2022.12.20
+#PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -39,7 +39,7 @@ USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake:build 
 USE_XORG=	x11
 GH_ACCOUNT=	microsoft:mimalloc
 GH_PROJECT=	MCAD:mcad mimalloc:mimalloc
-GH_TAGNAME=	ea8950bd3cd7f06da333c15463492e484098e591 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
+GH_TAGNAME=	b621fa6d3d2d2d795b30d1b6aade6ff1b3c8ba29 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
 GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc
 #QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
