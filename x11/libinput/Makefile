@@ -1,6 +1,6 @@
 PORTNAME=	libinput
 DISTVERSION=	1.23.0
-CATEGORIES=	x11 wayland
+CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Generic input library
