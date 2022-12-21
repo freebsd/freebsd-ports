@@ -22,6 +22,8 @@ GH_TUPLE=	gismo:gsElasticity:a94347d:gsElasticity/extensions/gsElasticity \
 		gismo:gsStructuralAnalysis:f18c4b7:gsStructuralAnalysis/extensions/gsStructuralAnalysis \
 		gismo:gsUnitTest:7c42e58:gsUnitTest/extensions/gsUnitTest
 
+CXXFLAGS_powerpc64=	-mvsx
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64
