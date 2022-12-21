@@ -2609,7 +2609,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Web/XMLBrowser.pm
 %%SLIMDIR%%/Slim/bootstrap.pm
 %%SLIMDIR%%/cleanup.pl
-%%SLIMDIR%%/convert.conf.sample
+@sample %%SLIMDIR%%/convert.conf.sample %%SLIMDIR%%/convert.conf
 %%SLIMDIR%%/custom-convert.conf
 %%SLIMDIR%%/gdresize.pl
 %%SLIMDIR%%/gdresized.pl
@@ -2645,7 +2645,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/slimserver.pl
 %%SLIMDIR%%/strings.txt
 %%SLIMDIR%%/t/00_smoketest.sh
-%%SLIMDIR%%/types.conf.sample
+@sample %%SLIMDIR%%/types.conf.sample %%SLIMDIR%%/types.conf
 @dir %%SLIMDIR%%/Bin
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Audio/Cuefile/Parser
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Data/Dump
