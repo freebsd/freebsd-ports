@@ -2271,6 +2271,7 @@
     SUBDIR += tomcat85
     SUBDIR += tomcat9
     SUBDIR += tomee
+    SUBDIR += tor-browser
     SUBDIR += trac-devel
     SUBDIR += trafficserver
     SUBDIR += transmission-web
