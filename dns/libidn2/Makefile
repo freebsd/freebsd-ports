@@ -1,6 +1,5 @@
 PORTNAME=	libidn2
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.3.4
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
@@ -24,5 +23,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 INFO=		libidn2
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
