@@ -71,6 +71,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBarewordDirHandles.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitExplicitStdin.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitInteractiveTest.pm
@@ -192,7 +193,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Utils/DataConversion.pm
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
 %%SITE_PERL%%/Perl/Critic/Utils/POD.pm
-%%SITE_PERL%%/Perl/Critic/Utils/POD/ParseInteriorSequence.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
 %%SITE_PERL%%/Perl/Critic/Utils/Perl.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
@@ -270,6 +270,7 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Policy::ErrorHandling::RequireCarping.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::ErrorHandling::RequireCheckingReturnValueOfEval.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::InputOutput::ProhibitBarewordDirHandles.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::InputOutput::ProhibitExplicitStdin.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::InputOutput::ProhibitInteractiveTest.3.gz
@@ -391,7 +392,6 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Utils::DataConversion.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::McCabe.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::POD.3.gz
-%%PERL5_MAN3%%/Perl::Critic::Utils::POD::ParseInteriorSequence.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::PPI.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::Perl.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Violation.3.gz
