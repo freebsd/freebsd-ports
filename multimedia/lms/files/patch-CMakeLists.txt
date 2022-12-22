@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2022-12-22 07:55:50 UTC
++++ CMakeLists.txt
+@@ -19,10 +19,14 @@ find_package(Boost REQUIRED COMPONENTS system program_
+ find_package(Wt REQUIRED COMPONENTS Wt Dbo DboSqlite3 HTTP)
+ pkg_check_modules(Taglib REQUIRED IMPORTED_TARGET taglib)
+ pkg_check_modules(Config++ REQUIRED IMPORTED_TARGET libconfig++)
+-pkg_check_modules(GraphicsMagick++ IMPORTED_TARGET GraphicsMagick++)
++if (FREEBSD_USE_MAGICK)
++	pkg_check_modules(GraphicsMagick++ IMPORTED_TARGET GraphicsMagick++)
++endif()
+ pkg_check_modules(LIBAV IMPORTED_TARGET libavcodec libavutil libavformat)
+ find_package(PAM)
+-find_package(STB)
++if (FREEBSD_USE_STB)
++	find_package(STB)
++endif()
+ 
+ # WT
+ if (NOT Wt_FOUND)

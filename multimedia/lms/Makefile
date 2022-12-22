@@ -1,6 +1,7 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.34.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,12 +11,10 @@ WWW=		https://github.com/epoupon/lms
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	googletest>0:devel/googletest \
-		${LOCALBASE}/include/stb/stb_image.h:devel/stb
+BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
-		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
@@ -31,6 +30,19 @@ SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_SUB=	USER="${USER}" GROUP="${GROUP}"
+
+OPTIONS_RADIO=			IMAGE_LIB
+OPTIONS_RADIO_IMAGE_LIB=	STB MAGICK
+OPTIONS_DEFAULT=		MAGICK
+
+STB_DESC=			Use STB as image library (uses less memory)
+STB_BUILD_DEPENDS=		${LOCALBASE}/include/stb/stb_image.h:devel/stb
+STB_CMAKE_BOOL=			FREEBSD_USE_STB
+STB_BROKEN=			bug#268487 (crash when transcoding is activated for subsonic API when using STB as image library)
+
+MAGICK_DESC=			Use GraphicsMagick++ as image library
+MAGICK_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
+MAGICK_CMAKE_BOOL=		FREEBSD_USE_MAGICK
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc/lms.conf"|"${PREFIX}/etc/lms.conf"|' \
