@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	1
+DISTVERSION=	1.18.0	
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -24,8 +23,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
-		ansi_colours-1.1.1 \
-		anyhow-1.0.66 \
+		ansi_colours-1.2.1 \
+		anyhow-1.0.68 \
 		argh-0.1.9 \
 		argh_derive-0.1.9 \
 		argh_shared-0.1.9 \
@@ -40,7 +39,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bumpalo-3.11.1 \
 		bytemuck-1.12.3 \
 		byteorder-1.4.3 \
-		cc-1.0.77 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		char_reader-0.1.1 \
 		chrono-0.4.23 \
@@ -70,11 +69,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		csv-core-0.1.10 \
 		csv2svg-0.1.8 \
 		custom_error-1.9.2 \
-		cxx-1.0.83 \
-		cxx-build-1.0.83 \
-		cxxbridge-flags-1.0.83 \
-		cxxbridge-macro-1.0.83 \
-		deser-hjson-1.0.2 \
+		cxx-1.0.85 \
+		cxx-build-1.0.85 \
+		cxxbridge-flags-1.0.85 \
+		cxxbridge-macro-1.0.85 \
+		deser-hjson-1.1.0 \
 		directories-4.0.1 \
 		directories-next-2.0.0 \
 		dirs-sys-0.3.7 \
@@ -96,7 +95,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		getrandom-0.2.8 \
 		gif-0.11.4 \
 		git2-0.14.4 \
-		glassbench-0.3.3 \
+		glassbench-0.3.4 \
 		glob-0.3.0 \
 		half-2.1.0 \
 		hashbrown-0.9.1 \
@@ -104,6 +103,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		hashlink-0.6.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		id-arena-2.2.1 \
@@ -115,7 +115,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		instant-0.1.12 \
 		is_executable-1.0.1 \
 		itoa-0.4.8 \
-		itoa-1.0.4 \
+		itoa-1.0.5 \
 		jobserver-0.1.25 \
 		jpeg-decoder-0.3.0 \
 		js-sys-0.3.60 \
@@ -123,13 +123,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy-regex-proc_macros-2.3.1 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
-		lfs-core-0.11.0 \
+		lfs-core-0.11.1 \
 		libc-0.2.138 \
 		libgit2-sys-0.13.4+1.4.2 \
 		libsqlite3-sys-0.20.1 \
 		libz-sys-1.1.8 \
 		line-wrap-0.1.1 \
-		link-cplusplus-1.0.7 \
+		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
@@ -145,7 +145,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
-		num_cpus-1.14.0 \
+		num_cpus-1.15.0 \
 		once_cell-1.16.0 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
@@ -168,15 +168,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		ppv-lite86-0.2.17 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.47 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.49 \
 		proc-status-0.1.1 \
 		quick-xml-0.22.0 \
-		quote-1.0.21 \
+		quote-1.0.23 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.6.0 \
+		rayon-1.6.1 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
@@ -186,23 +186,23 @@ CARGO_CRATES=	adler-1.0.2 \
 		remove_dir_all-0.5.3 \
 		rgb-0.8.34 \
 		rusqlite-0.24.2 \
-		ryu-1.0.11 \
+		ryu-1.0.12 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
-		scratch-1.0.2 \
+		scratch-1.0.3 \
 		secular-1.0.1 \
-		serde-1.0.149 \
-		serde_derive-1.0.149 \
-		serde_json-1.0.89 \
+		serde-1.0.151 \
+		serde_derive-1.0.151 \
+		serde_json-1.0.91 \
 		signal-hook-0.3.14 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		siphasher-0.3.10 \
 		smallvec-1.10.0 \
-		snafu-0.7.3 \
-		snafu-derive-0.7.3 \
+		snafu-0.7.4 \
+		snafu-derive-0.7.4 \
 		spin-0.9.4 \
 		splitty-1.0.1 \
 		str-buf-1.0.6 \
@@ -210,29 +210,29 @@ CARGO_CRATES=	adler-1.0.2 \
 		strsim-0.10.0 \
 		svg-0.8.2 \
 		svg-0.10.0 \
-		syn-1.0.105 \
+		syn-1.0.107 \
 		syntect-no-panic-4.6.1 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		termimad-0.20.4 \
+		termimad-0.20.6 \
 		terminal-clipboard-0.3.1 \
 		terminal-light-1.0.1 \
 		termux-clipboard-0.1.0 \
 		textwrap-0.16.0 \
-		thiserror-1.0.37 \
-		thiserror-impl-1.0.37 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		threadpool-1.8.1 \
-		tiff-0.8.0 \
+		tiff-0.8.1 \
 		time-0.1.45 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.9 \
+		toml-0.5.10 \
 		umask-2.0.0 \
 		unicode-bidi-0.3.8 \
-		unicode-ident-1.0.5 \
+		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
