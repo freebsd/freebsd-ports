@@ -1,3 +1,3 @@
-TIMESTAMP = 1654884255
-SHA256 (cfn-lint-0.61.0.tar.gz) = 7461ca7e447e6092a75bec640397dbeccbe3f2b197f98da6c69ba264d95c0dcd
-SIZE (cfn-lint-0.61.0.tar.gz) = 8296188
+TIMESTAMP = 1671311905
+SHA256 (cfn-lint-0.72.5.tar.gz) = 2d40e03a453a531486e5a75a47c2aa281a73296a9fcdfefe9f95f720d0b1667e
+SIZE (cfn-lint-0.72.5.tar.gz) = 2416667
