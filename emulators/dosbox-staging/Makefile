@@ -1,6 +1,6 @@
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.79.1
+DISTVERSION=	0.80.0
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libiir.so:audio/iir1 \
 USES=		compiler:c++14-lang gl meson pkgconfig sdl
 
 USE_GL=		gl
-USE_SDL=	sdl2 net2
+USE_SDL=	sdl2 image2 net2
 USE_GITHUB=	yes
 
 MESON_ARGS=	-Duse_mt32emu=false
