@@ -1,6 +1,6 @@
---- modules/freebsd/vmblock/vfsops.c.orig	2022-03-04 21:01:24 UTC
+--- modules/freebsd/vmblock/vfsops.c.orig	2022-11-29 21:17:22 UTC
 +++ modules/freebsd/vmblock/vfsops.c
-@@ -171,14 +171,22 @@ VMBlockVFSMount(struct mount *mp,        // IN: mount(
+@@ -171,14 +171,21 @@ VMBlockVFSMount(struct mount *mp,        // IN: mount(
      * Find lower node and lock if not already locked.
      */
  
@@ -11,11 +11,11 @@
 +#endif
     error = namei(ndp);
     if (error) {
-       NDFREE(ndp, 0);
+-      NDFREE(ndp, 0);
        uma_zfree(VMBlockPathnameZone, pathname);
        return error;
     }
-+#ifdef NDF_ONLY_PNBUF
++#if __FreeBSD_version < 1400054
     NDFREE(ndp, NDF_ONLY_PNBUF);
 +#else
 +   NDFREE_PNBUF(ndp);
