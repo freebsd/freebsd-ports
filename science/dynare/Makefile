@@ -1,6 +1,5 @@
 PORTNAME=	dynare
-DISTVERSION=	5.2
-PORTREVISION=	2
+DISTVERSION=	5.3
 CATEGORIES=	science # economics
 MASTER_SITES=	https://www.dynare.org/release/source/
 
@@ -46,7 +45,8 @@ OCTAVE_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 				libfftw3f.so:math/fftw3-float \
 				libgsl.so:math/gsl \
 				libumfpack.so:math/suitesparse-umfpack
-OCTAVE_RUN_DEPENDS=		octave:math/octave
+OCTAVE_RUN_DEPENDS=		octave:math/octave \
+				octave-forge-statistics>0:math/octave-forge-statistics
 
 .include <bsd.port.options.mk>
 .if (${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc) && ${OSVERSION} < 1301510 # support added in e09d209d1a74a3caca95dea303db9bc605fce1a7
