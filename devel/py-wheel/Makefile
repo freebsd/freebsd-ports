@@ -13,6 +13,8 @@ LICENSE=	MIT
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268500
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PIP SIGNATURE
