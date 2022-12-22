@@ -1296,6 +1296,7 @@
     SUBDIR += py-chameleon
     SUBDIR += py-chardet
     SUBDIR += py-charset-normalizer
+    SUBDIR += py-chevron
     SUBDIR += py-citeproc-py
     SUBDIR += py-citeproc-py-styles
     SUBDIR += py-cjkwrap
