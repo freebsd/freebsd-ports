@@ -1,6 +1,5 @@
 PORTNAME=	git
-DISTVERSION=	2.38.1
-PORTREVISION=	4
+DISTVERSION=	2.39.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -258,6 +257,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scalar \
+		${STAGEDIR}${PREFIX}/libexec/git-core/scalar
 
 post-install-HTMLDOCS-on:
 	# Manually remove the index.html symlink before installing, and then
