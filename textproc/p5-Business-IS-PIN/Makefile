@@ -4,7 +4,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	einar@isnic.is
 COMMENT=	Validate Icelandic ID numbers
 
 LICENSE=	ART10 GPLv1+
