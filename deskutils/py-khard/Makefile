@@ -1,12 +1,12 @@
 PORTNAME=	khard
-DISTVERSION=	0.17.0
+DISTVERSION=	0.18.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andreas@bilke.org
 COMMENT=	Console carddav client
-WWW=		https://github.com/scheibler/khard/
+WWW=		https://github.com/lucc/khard/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 		${PYTHON_PKGNAMEPREFIX}sphinx-autodoc-typehints>0:textproc/py-sphinx-autodoc-typehints@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 
-USES=		python:3.6+ gmake
+USES=		python:3.7+ gmake
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
