@@ -1,5 +1,5 @@
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.5.19
+PORTVERSION=	0.5.20
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
