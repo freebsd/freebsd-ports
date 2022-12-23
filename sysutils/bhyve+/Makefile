@@ -50,6 +50,7 @@ IGNORE+=	cannot build: unsupported system
 WRKSRC=		${WRKDIR}
 
 _LINKS=		sys/cam/ctl \
+		sys/contrib/dev/acpica \
 		sys/dev/e1000 \
 		sys/dev/mii \
 		sys/dev/usb/controller \
