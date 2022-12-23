@@ -724,6 +724,7 @@
 %%QT_INCDIR%%/QtCore/qtimezone.h
 %%QT_INCDIR%%/QtCore/qtranslator.h
 %%QT_INCDIR%%/QtCore/qtransposeproxymodel.h
+%%QT_INCDIR%%/QtCore/qtsan_impl.h
 %%QT_INCDIR%%/QtCore/qtypeinfo.h
 %%QT_INCDIR%%/QtCore/qtypetraits.h
 %%QT_INCDIR%%/QtCore/qurl.h

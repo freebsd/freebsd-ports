@@ -1,4 +1,4 @@
---- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	2022-06-22 10:58:13 UTC
+--- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	2022-12-09 10:58:56 UTC
 +++ src/network/ssl/qsslsocket_openssl_symbols.cpp
 @@ -142,14 +142,21 @@ DEFINEFUNC2(int, OPENSSL_init_ssl, uint64_t opts, opts
  DEFINEFUNC2(int, OPENSSL_init_crypto, uint64_t opts, opts, const OPENSSL_INIT_SETTINGS *settings, settings, return 0, return)
@@ -25,7 +25,7 @@
 @@ -158,8 +165,18 @@ DEFINEFUNC(void, OPENSSL_sk_free, OPENSSL_STACK *a, a,
  DEFINEFUNC2(void *, OPENSSL_sk_value, OPENSSL_STACK *a, a, int b, b, return nullptr, return)
  DEFINEFUNC(int, SSL_session_reused, SSL *a, a, return 0, return)
- DEFINEFUNC2(unsigned long, SSL_CTX_set_options, SSL_CTX *ctx, ctx, unsigned long op, op, return 0, return)
+ DEFINEFUNC2(qssloptions, SSL_CTX_set_options, SSL_CTX *ctx, ctx, qssloptions op, op, return 0, return)
 +#else
 +DEFINEFUNC(int, sk_num, STACK *a, a, return -1, return)
 +DEFINEFUNC2(void, sk_pop_free, STACK *a, a, void (*b)(void*), b, return, DUMMYARG)
@@ -51,7 +51,7 @@
  
  DEFINEFUNC(const SSL_METHOD *, TLS_method, DUMMYARG, DUMMYARG, return nullptr, return)
  DEFINEFUNC(const SSL_METHOD *, TLS_client_method, DUMMYARG, DUMMYARG, return nullptr, return)
-@@ -183,7 +202,11 @@ DEFINEFUNC2(void, X509_STORE_set_verify_cb, X509_STORE
+@@ -185,7 +204,11 @@ DEFINEFUNC2(void, X509_STORE_set_verify_cb, X509_STORE
  DEFINEFUNC3(int, X509_STORE_set_ex_data, X509_STORE *a, a, int idx, idx, void *data, data, return 0, return)
  DEFINEFUNC2(void *, X509_STORE_get_ex_data, X509_STORE *r, r, int idx, idx, return nullptr, return)
  DEFINEFUNC(STACK_OF(X509) *, X509_STORE_CTX_get0_chain, X509_STORE_CTX *a, a, return nullptr, return)
@@ -63,7 +63,7 @@
  DEFINEFUNC(long, OpenSSL_version_num, void, DUMMYARG, return 0, return)
  DEFINEFUNC(const char *, OpenSSL_version, int a, a, return nullptr, return)
  DEFINEFUNC(unsigned long, SSL_SESSION_get_ticket_lifetime_hint, const SSL_SESSION *session, session, return 0, return)
-@@ -223,7 +246,9 @@ DEFINEFUNC5(int, OCSP_id_get0_info, ASN1_OCTET_STRING 
+@@ -225,7 +248,9 @@ DEFINEFUNC5(int, OCSP_id_get0_info, ASN1_OCTET_STRING 
              ASN1_OCTET_STRING **piKeyHash, piKeyHash, ASN1_INTEGER **pserial, pserial, OCSP_CERTID *cid, cid,
              return 0, return)
  DEFINEFUNC2(OCSP_RESPONSE *, OCSP_response_create, int status, status, OCSP_BASICRESP *bs, bs, return nullptr, return)
@@ -73,7 +73,7 @@
  DEFINEFUNC2(int, OCSP_id_cmp, OCSP_CERTID *a, a, OCSP_CERTID *b, b, return -1, return)
  DEFINEFUNC7(OCSP_SINGLERESP *, OCSP_basic_add1_status, OCSP_BASICRESP *r, r, OCSP_CERTID *c, c, int s, s,
              int re, re, ASN1_TIME *rt, rt, ASN1_TIME *t, t, ASN1_TIME *n, n, return nullptr, return)
-@@ -355,12 +380,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
+@@ -358,12 +383,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
  DEFINEFUNC2(int, SSL_CTX_use_RSAPrivateKey, SSL_CTX *a, a, RSA *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return nullptr, return)
@@ -88,7 +88,7 @@
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -385,7 +412,11 @@ DEFINEFUNC3(void, SSL_set_bio, SSL *a, a, BIO *b, b, B
+@@ -388,7 +415,11 @@ DEFINEFUNC3(void, SSL_set_bio, SSL *a, a, BIO *b, b, B
  DEFINEFUNC(void, SSL_set_accept_state, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(void, SSL_set_connect_state, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(int, SSL_shutdown, SSL *a, a, return -1, return)
@@ -100,9 +100,9 @@
  DEFINEFUNC(int, SSL_get_shutdown, const SSL *ssl, ssl, return 0, return)
  DEFINEFUNC2(int, SSL_set_session, SSL* to, to, SSL_SESSION *session, session, return -1, return)
  DEFINEFUNC(void, SSL_SESSION_free, SSL_SESSION *ses, ses, return, DUMMYARG)
-@@ -854,20 +885,35 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(ASN1_STRING_get0_data)
+@@ -863,20 +894,35 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(EVP_CIPHER_CTX_reset)
+     RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
      RESOLVEFUNC(EVP_PKEY_up_ref)
 +#ifdef OPENSSL_NO_DEPRECATED_3_0
      RESOLVEFUNC(EVP_PKEY_CTX_new)
@@ -136,7 +136,7 @@
  #ifdef TLS1_3_VERSION
      RESOLVEFUNC(SSL_CTX_set_ciphersuites)
      RESOLVEFUNC(SSL_set_psk_use_session_callback)
-@@ -877,9 +923,13 @@ bool q_resolveOpenSslSymbols()
+@@ -886,9 +932,13 @@ bool q_resolveOpenSslSymbols()
  
      RESOLVEFUNC(SSL_get_client_random)
      RESOLVEFUNC(SSL_SESSION_get_master_key)
@@ -150,7 +150,7 @@
      RESOLVEFUNC(CRYPTO_get_ex_new_index)
      RESOLVEFUNC(TLS_method)
      RESOLVEFUNC(TLS_client_method)
-@@ -906,7 +956,9 @@ bool q_resolveOpenSslSymbols()
+@@ -929,7 +979,9 @@ bool q_resolveOpenSslSymbols()
  
      RESOLVEFUNC(SSL_SESSION_get_ticket_lifetime_hint)
      RESOLVEFUNC(DH_bits)
@@ -160,7 +160,7 @@
  
  #if QT_CONFIG(dtls)
      RESOLVEFUNC(DTLSv1_listen)
-@@ -936,7 +988,9 @@ bool q_resolveOpenSslSymbols()
+@@ -959,7 +1011,9 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(OCSP_check_validity)
      RESOLVEFUNC(OCSP_cert_to_id)
      RESOLVEFUNC(OCSP_id_get0_info)
@@ -170,7 +170,7 @@
      RESOLVEFUNC(OCSP_basic_sign)
      RESOLVEFUNC(OCSP_response_create)
      RESOLVEFUNC(i2d_OCSP_RESPONSE)
-@@ -973,7 +1027,9 @@ bool q_resolveOpenSslSymbols()
+@@ -996,7 +1050,9 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(EC_GROUP_get_degree)
  #endif
      RESOLVEFUNC(BN_num_bits)
@@ -180,7 +180,7 @@
      RESOLVEFUNC(BN_mod_word)
      RESOLVEFUNC(DSA_new)
      RESOLVEFUNC(DSA_free)
-@@ -1066,12 +1122,14 @@ bool q_resolveOpenSslSymbols()
+@@ -1089,12 +1145,14 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_CTX_use_RSAPrivateKey)
      RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
      RESOLVEFUNC(SSL_CTX_get_cert_store);
@@ -195,7 +195,7 @@
      RESOLVEFUNC(SSL_accept)
      RESOLVEFUNC(SSL_clear)
      RESOLVEFUNC(SSL_connect)
-@@ -1099,7 +1157,11 @@ bool q_resolveOpenSslSymbols()
+@@ -1122,7 +1180,11 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_set_bio)
      RESOLVEFUNC(SSL_set_connect_state)
      RESOLVEFUNC(SSL_shutdown)

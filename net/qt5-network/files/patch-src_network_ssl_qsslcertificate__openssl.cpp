@@ -1,6 +1,6 @@
---- src/network/ssl/qsslcertificate_openssl.cpp.orig	2022-06-22 10:58:13 UTC
+--- src/network/ssl/qsslcertificate_openssl.cpp.orig	2022-12-09 10:58:56 UTC
 +++ src/network/ssl/qsslcertificate_openssl.cpp
-@@ -691,7 +691,7 @@ static QMultiMap<QByteArray, QString> _q_mapFromX509Na
+@@ -727,7 +727,7 @@ static QMultiMap<QByteArray, QString> _q_mapFromX509Na
          unsigned char *data = nullptr;
          int size = q_ASN1_STRING_to_UTF8(&data, q_X509_NAME_ENTRY_get_data(e));
          info.insert(name, QString::fromUtf8((char*)data, size));

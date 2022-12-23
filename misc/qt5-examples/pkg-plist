@@ -284,6 +284,7 @@
 %%QT_EXAMPLEDIR%%/bluetooth/btfiletransfer/remoteselector.cpp
 %%QT_EXAMPLEDIR%%/bluetooth/btfiletransfer/remoteselector.h
 %%QT_EXAMPLEDIR%%/bluetooth/btfiletransfer/remoteselector.ui
+%%QT_EXAMPLEDIR%%/bluetooth/btscanner/Info.plist
 %%QT_EXAMPLEDIR%%/bluetooth/btscanner/btscanner.pro
 %%QT_EXAMPLEDIR%%/bluetooth/btscanner/device.cpp
 %%QT_EXAMPLEDIR%%/bluetooth/btscanner/device.h
@@ -306,6 +307,7 @@
 %%QT_EXAMPLEDIR%%/bluetooth/chat/images/default.png
 %%QT_EXAMPLEDIR%%/bluetooth/chat/images/lineedit-bg.png
 %%QT_EXAMPLEDIR%%/bluetooth/chat/qmlchat.cpp
+%%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/Info.plist
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/README.md
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/bluetoothbaseclass.cpp
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/bluetoothbaseclass.h
@@ -344,9 +346,11 @@
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/qml/images/logo.png
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/qml/main.qml
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-game/qml/qmldir
+%%QT_EXAMPLEDIR%%/bluetooth/heartrate-server/Info.plist
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-server/doc/src/heartrate-server.qdoc
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-server/heartrate-server.pro
 %%QT_EXAMPLEDIR%%/bluetooth/heartrate-server/main.cpp
+%%QT_EXAMPLEDIR%%/bluetooth/lowenergyscanner/Info.plist
 %%QT_EXAMPLEDIR%%/bluetooth/lowenergyscanner/assets/Characteristics.qml
 %%QT_EXAMPLEDIR%%/bluetooth/lowenergyscanner/assets/Dialog.qml
 %%QT_EXAMPLEDIR%%/bluetooth/lowenergyscanner/assets/Header.qml
@@ -2712,6 +2716,7 @@
 %%QT_EXAMPLEDIR%%/positioning/weatherinfo/weatherinfo.qml
 %%QT_EXAMPLEDIR%%/positioning/weatherinfo/weatherinfo.qrc
 %%QT_EXAMPLEDIR%%/purchasing/purchasing.pro
+%%QT_EXAMPLEDIR%%/purchasing/qthangman/android/build.gradle
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/doc/images/qthangman-example.png
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/doc/images/qthangman-store-example.png
 %%QT_EXAMPLEDIR%%/purchasing/qthangman/doc/src/qthangman.qdoc

@@ -1,4 +1,4 @@
---- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig	2022-06-22 10:58:13 UTC
+--- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig	2022-12-09 10:58:56 UTC
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
 @@ -80,6 +80,13 @@ QT_BEGIN_NAMESPACE
  
@@ -14,7 +14,7 @@
  #if !defined QT_LINKED_OPENSSL
  // **************** Shared declarations ******************
  // ret func(arg)
-@@ -230,13 +237,20 @@ const unsigned char * q_ASN1_STRING_get0_data(const AS
+@@ -230,14 +237,21 @@ const unsigned char * q_ASN1_STRING_get0_data(const AS
  Q_AUTOTEST_EXPORT BIO *q_BIO_new(const BIO_METHOD *a);
  Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
  
@@ -23,6 +23,7 @@
 +#else
 +#define q_DSA_bits(dsa) q_BN_num_bits((dsa)->p)
 +#endif
+ void q_AUTHORITY_INFO_ACCESS_free(AUTHORITY_INFO_ACCESS *a);
  int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
  Q_AUTOTEST_EXPORT int q_EVP_PKEY_up_ref(EVP_PKEY *a);
 +#ifdef OPENSSL_NO_DEPRECATED_3_0
@@ -35,10 +36,10 @@
  Q_AUTOTEST_EXPORT int q_OPENSSL_sk_num(OPENSSL_STACK *a);
  Q_AUTOTEST_EXPORT void q_OPENSSL_sk_pop_free(OPENSSL_STACK *a, void (*b)(void *));
  Q_AUTOTEST_EXPORT OPENSSL_STACK *q_OPENSSL_sk_new_null();
-@@ -245,6 +259,24 @@ Q_AUTOTEST_EXPORT void q_OPENSSL_sk_free(OPENSSL_STACK
+@@ -246,6 +260,24 @@ Q_AUTOTEST_EXPORT void q_OPENSSL_sk_free(OPENSSL_STACK
  Q_AUTOTEST_EXPORT void * q_OPENSSL_sk_value(OPENSSL_STACK *a, int b);
  int q_SSL_session_reused(SSL *a);
- unsigned long q_SSL_CTX_set_options(SSL_CTX *ctx, unsigned long op);
+ qssloptions q_SSL_CTX_set_options(SSL_CTX *ctx, qssloptions op);
 +#else // LIBRESSL_VERSION_NUMBER
 +int q_sk_num(STACK *a);
 +#define q_OPENSSL_sk_num(a) q_sk_num(a)
@@ -60,7 +61,7 @@
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
  size_t q_SSL_get_client_random(SSL *a, unsigned char *out, size_t outlen);
  size_t q_SSL_SESSION_get_master_key(const SSL_SESSION *session, unsigned char *out, size_t outlen);
-@@ -268,8 +300,13 @@ int q_DH_bits(DH *dh);
+@@ -271,8 +303,13 @@ int q_DH_bits(DH *dh);
  # define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS \
                                                         | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
  
@@ -74,17 +75,7 @@
  
  #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS \
-@@ -278,13 +315,22 @@ int q_DH_bits(DH *dh);
-                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS, NULL)
- 
- int q_OPENSSL_init_crypto(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-+#ifndef LIBRESSL_VERSION_NUMBER
- void q_CRYPTO_free(void *str, const char *file, int line);
-+#else
-+void q_CRYPTO_free(void *a);
-+#endif
- 
- long q_OpenSSL_version_num();
+@@ -285,7 +322,12 @@ long q_OpenSSL_version_num();
  const char *q_OpenSSL_version(int type);
  
  unsigned long q_SSL_SESSION_get_ticket_lifetime_hint(const SSL_SESSION *session);
@@ -97,7 +88,7 @@
  
  #ifdef TLS1_3_VERSION
  int q_SSL_CTX_set_ciphersuites(SSL_CTX *ctx, const char *str);
-@@ -373,7 +419,12 @@ BIO *q_BIO_new_mem_buf(void *a, int b);
+@@ -374,7 +416,12 @@ BIO *q_BIO_new_mem_buf(void *a, int b);
  int q_BIO_read(BIO *a, void *b, int c);
  Q_AUTOTEST_EXPORT int q_BIO_write(BIO *a, const void *b, int c);
  int q_BN_num_bits(const BIGNUM *a);
@@ -110,7 +101,7 @@
  BN_ULONG q_BN_mod_word(const BIGNUM *a, BN_ULONG w);
  
  #ifndef OPENSSL_NO_EC
-@@ -496,12 +547,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+@@ -497,12 +544,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
@@ -125,7 +116,7 @@
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -517,7 +570,12 @@ void q_SSL_set_bio(SSL *a, BIO *b, BIO *c);
+@@ -518,7 +567,12 @@ void q_SSL_set_bio(SSL *a, BIO *b, BIO *c);
  void q_SSL_set_accept_state(SSL *a);
  void q_SSL_set_connect_state(SSL *a);
  int q_SSL_shutdown(SSL *a);
@@ -138,7 +129,7 @@
  int q_SSL_get_shutdown(const SSL *ssl);
  int q_SSL_set_session(SSL *to, SSL_SESSION *session);
  void q_SSL_SESSION_free(SSL_SESSION *ses);
-@@ -723,7 +781,11 @@ int q_OCSP_check_validity(ASN1_GENERALIZEDTIME *thisup
+@@ -724,7 +778,11 @@ int q_OCSP_check_validity(ASN1_GENERALIZEDTIME *thisup
  int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash, ASN1_OBJECT **pmd, ASN1_OCTET_STRING **pikeyHash,
                          ASN1_INTEGER **pserial, OCSP_CERTID *cid);
  
@@ -150,9 +141,17 @@
  Q_AUTOTEST_EXPORT OCSP_CERTID *q_OCSP_cert_to_id(const EVP_MD *dgst, X509 *subject, X509 *issuer);
  Q_AUTOTEST_EXPORT void q_OCSP_CERTID_free(OCSP_CERTID *cid);
  int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
-@@ -743,8 +805,10 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
+@@ -743,11 +801,18 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
+ 
  void *q_CRYPTO_malloc(size_t num, const char *file, int line);
  #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)
++#ifndef LIBRESSL_VERSION_NUMBER
+ void q_CRYPTO_free(void *str, const char *file, int line);
+ #define q_OPENSSL_free(addr) q_CRYPTO_free(addr, "", 0)
++#else
++void q_CRYPTO_free(void *a);
++#define q_OPENSSL_free(addr) q_CRYPTO_free(addr)
++#endif
  
 +#ifdef SSL_SECOP_PEER
  int q_SSL_CTX_get_security_level(const SSL_CTX *ctx);

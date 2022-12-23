@@ -22,7 +22,7 @@ _QT_MK_INCLUDED=	qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
-QT5_VERSION?=		5.15.5
+QT5_VERSION?=		5.15.7
 QT6_VERSION?=		6.4.1
 
 # We accept the Qt version to be passed by either or all of the three mk files.

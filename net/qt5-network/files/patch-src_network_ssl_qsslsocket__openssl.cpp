@@ -1,6 +1,6 @@
---- src/network/ssl/qsslsocket_openssl.cpp.orig	2022-07-05 09:21:21 UTC
+--- src/network/ssl/qsslsocket_openssl.cpp.orig	2022-12-09 10:58:56 UTC
 +++ src/network/ssl/qsslsocket_openssl.cpp
-@@ -239,6 +239,12 @@ static int q_ssl_psk_use_session_callback(SSL *ssl, co
+@@ -246,6 +246,12 @@ static int q_ssl_psk_use_session_callback(SSL *ssl, co
      return 1; // need to return 1 or else "the connection setup fails."
  }
  
@@ -13,7 +13,7 @@
  int q_ssl_sess_set_new_cb(SSL *ssl, SSL_SESSION *session)
  {
      if (!ssl) {
-@@ -254,10 +260,8 @@ int q_ssl_sess_set_new_cb(SSL *ssl, SSL_SESSION *sessi
+@@ -261,10 +267,8 @@ int q_ssl_sess_set_new_cb(SSL *ssl, SSL_SESSION *sessi
                                                                   QSslSocketBackendPrivate::s_indexForSSLExtraData));
      return socketPrivate->handleNewSessionTicket(ssl);
  }
@@ -25,7 +25,7 @@
  #if QT_CONFIG(ocsp)
  
  int qt_OCSP_status_server_callback(SSL *ssl, void *ocspRequest)
-@@ -653,7 +657,7 @@ bool QSslSocketBackendPrivate::initSslContext()
+@@ -660,7 +664,7 @@ bool QSslSocketBackendPrivate::initSslContext()
      else if (mode == QSslSocket::SslServerMode)
          q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
  
