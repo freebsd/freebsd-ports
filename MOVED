@@ -15703,7 +15703,6 @@ security/py-pyptlib||2020-12-29|Has expired: Uses deprecated version of python
 japanese/py-zinnia||2020-12-29|Has expired: Uses deprecated version of python
 www/py-pastescript||2020-12-29|Has expired: Uses deprecated version of python
 databases/ldb14||2020-12-29|Has expired: Uses deprecated version of python
-math/py-slepc4py||2020-12-29|Has expired: Depends on broken and expiring math/slepc
 multimedia/py-kaa-base||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-ydbf||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-SymbolType||2020-12-29|Has expired: Uses deprecated version of python

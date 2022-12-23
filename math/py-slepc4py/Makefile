@@ -1,0 +1,31 @@
+PORTNAME=	slepc4py
+DISTVERSION=	3.18.1
+CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	SLEPc for Python
+WWW=		https://bitbucket.org/slepc/slepc4py
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+
+PY_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}petsc4py>0:math/py-petsc4py@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS}
+LIB_DEPENDS=	libmpich.so:net/mpich \
+		libpetsc.so:science/PETSc \
+		libslepc.so:math/slepc
+RUN_DEPENDS=	${PYNUMPY}
+
+USES=		fortran python:3.6+
+USE_PYTHON=	distutils autoplist
+
+MAKE_ENV=	PETSC_DIR=${LOCALBASE} SLEPC_DIR=${LOCALBASE}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/slepc4py/lib/SLEPc${PYTHON_EXT_SUFFIX}.so
+
+.include <bsd.port.mk>
