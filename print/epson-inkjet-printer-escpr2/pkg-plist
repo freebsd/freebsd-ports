@@ -22,12 +22,15 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EP-882A_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EP-883A_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EP-884A_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EP-885A_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-EP-982A3_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-15000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-16150_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-16600_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-16650_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-16680_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-2830_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-2840_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3700_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3710_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ET-3750_Series-epson-inkjet-printer-escpr2.ppd.gz
@@ -73,6 +76,9 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L15150_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L15160_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L15180_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L3550_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L3560_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L5590_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L6160_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L6170_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L6190_Series-epson-inkjet-printer-escpr2.ppd.gz
@@ -84,6 +90,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L6550_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L6570_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L6580_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L8050_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L8160_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-L8180_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-M1140_Series-epson-inkjet-printer-escpr2.ppd.gz
@@ -121,6 +128,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-M884F-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-M885F-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-M886FL-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-M887F-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S270T_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S380-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S381L-epson-inkjet-printer-escpr2.ppd.gz
@@ -132,9 +140,11 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S7090X-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S7110-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S7110P-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S730_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S880X-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S884-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S885-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S887-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-3000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-4000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-C4100_Series-epson-inkjet-printer-escpr2.ppd.gz
@@ -160,6 +170,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-7820_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-7830_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-7840_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C4310_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C4810_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5210_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5290BA-epson-inkjet-printer-escpr2.ppd.gz
@@ -168,6 +179,9 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C529RB-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C529RBAM-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C529R_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5310_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5390BAM-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5390_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5710_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5790BA-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5790BAM-epson-inkjet-printer-escpr2.ppd.gz
@@ -175,6 +189,9 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C579RB-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C579RBAM-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C579R_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5810_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5890BAM-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C5890_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C8190B-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C8190_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-C8610_Series-epson-inkjet-printer-escpr2.ppd.gz
