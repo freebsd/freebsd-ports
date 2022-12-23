@@ -1,20 +1,19 @@
 PORTNAME=	Time-Period
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:PRYAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Period-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that contains code to deal with time periods
-WWW=		https://metacpan.org/release/PRYAN/Period-1.20
+WWW=		https://metacpan.org/dist/Time-Period
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
