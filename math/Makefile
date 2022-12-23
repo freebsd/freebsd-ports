@@ -1095,6 +1095,7 @@
     SUBDIR += sisl
     SUBDIR += slatec
     SUBDIR += sleef
+    SUBDIR += slepc
     SUBDIR += slgrace
     SUBDIR += slicot
     SUBDIR += snns

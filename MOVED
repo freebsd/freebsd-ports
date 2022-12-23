@@ -15701,7 +15701,6 @@ databases/py-bsddb||2020-12-29|Has expired: Uses deprecated version of python
 www/py-webhelpers||2020-12-29|Has expired: Uses deprecated version of python
 security/py-pyptlib||2020-12-29|Has expired: Uses deprecated version of python
 japanese/py-zinnia||2020-12-29|Has expired: Uses deprecated version of python
-math/slepc||2020-12-29|Has expired: Broken, uses deprecated version of python
 www/py-pastescript||2020-12-29|Has expired: Uses deprecated version of python
 databases/ldb14||2020-12-29|Has expired: Uses deprecated version of python
 math/py-slepc4py||2020-12-29|Has expired: Depends on broken and expiring math/slepc
