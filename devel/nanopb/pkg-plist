@@ -11,6 +11,7 @@ lib/cmake/nanopb/nanopb-targets.cmake
 lib/libprotobuf-nanopb.a
 lib/libprotobuf-nanopb.so
 lib/libprotobuf-nanopb.so.0
+%%PYTHON_SITELIBDIR%%/proto/__init__.py
 %%PYTHON_SITELIBDIR%%/proto/_utils.py
 %%PYTHON_SITELIBDIR%%/proto/nanopb.proto
 %%PYTHON_SITELIBDIR%%/proto/nanopb_pb2.py
