@@ -1,6 +1,6 @@
---- ./postfix-policyd-spf-perl.orig	2012-06-18 03:50:55.000000000 +0000
-+++ ./postfix-policyd-spf-perl	2014-05-08 00:22:28.000000000 +0000
-@@ -284,7 +284,7 @@
+--- postfix-policyd-spf-perl.orig	2018-07-29 19:23:55 UTC
++++ postfix-policyd-spf-perl
+@@ -358,7 +358,7 @@ sub sender_policy_framework {
                  $attr->{helo_name} || '<UNKNOWN>'
              );
          };
@@ -9,7 +9,7 @@
      }
      elsif ($helo_result->is_code('temperror')) {
          if ($VERBOSE) {
-@@ -294,7 +294,7 @@
+@@ -368,7 +368,7 @@ sub sender_policy_framework {
                  $attr->{helo_name} || '<UNKNOWN>'
              );
          };
@@ -18,7 +18,7 @@
      }
      elsif ($attr->{sender} eq '') {
          if ($VERBOSE) {
-@@ -368,10 +368,10 @@
+@@ -442,10 +442,10 @@ sub sender_policy_framework {
          );
      };
      if ($mfrom_result->is_code('fail')) {
