@@ -1,6 +1,6 @@
 PORTNAME=	gnat12
 PORTVERSION=	12.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}:gcc	\
 		LOCAL/thierry:gnat
@@ -108,6 +108,8 @@ PLIST_SUB+=	64BITS=""
 .endif
 
 pre-configure:
+	${FIND} ${WRKSRC}/gcc/config -name "*freebsd.h" | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|!static:[[:blank:]]|!static: --hash-style=gnu -rpath ${PREFIX}/gnat${GCCVER}/lib |'
 	${ECHO} "-=> GNAT ${OS_LABEL4VERS}" > ${REVFILE}
 	${ECHO} "release" > ${PHASEFILE}
 
