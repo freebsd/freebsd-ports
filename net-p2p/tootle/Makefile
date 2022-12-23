@@ -3,7 +3,7 @@ PORTVERSION=	g20221222
 CATEGORIES=	net-p2p
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Simple Mastodon client for Linux
+COMMENT=	Simple Mastodon client
 WWW=		https://gitlab.gnome.org/World/tootle
 
 LICENSE=	GPLv3
