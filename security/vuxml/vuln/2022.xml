@@ -1,3 +1,31 @@
+  <vuln vid="d0da046a-81e6-11ed-96ca-0800277bb8a8">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.17.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21849">
+	  <p>Do not allow Ghost access to limited visible user/org</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21580">
+	  <p>Fix package access for admins and inactive users</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.17.4</url>
+    </references>
+    <dates>
+      <discovery>2022-10-24</discovery>
+      <entry>2022-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9e154c9-7de9-11ed-adca-080027d3a315">
     <topic>typo3 -- multiple vulnerabilities</topic>
     <affects>
