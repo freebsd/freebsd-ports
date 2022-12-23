@@ -1,6 +1,5 @@
 PORTNAME=	petsc4py
-DISTVERSION=	3.10.0
-PORTREVISION=	3
+DISTVERSION=	3.18.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,16 +11,26 @@ WWW=		https://bitbucket.org/petsc/petsc4py
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libmpich.so:net/mpich \
-		libpetsc.so:science/PETSc
+LIB_DEPENDS=	libpetsc.so:science/PETSc
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://gitlab.com/petsc/petsc/-/issues/1301
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE}
+
+OPTIONS_SINGLE=		MPI
+OPTIONS_SINGLE_MPI=	MPICH OPENMPI
+OPTIONS_DEFAULT=	MPICH
+
+MPICH_USES=		mpi:mpich
+
+OPENMPI_USES=		mpi:openmpi
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/petsc4py/lib/PETSc${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
