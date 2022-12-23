@@ -1,0 +1,10 @@
+bin/tootle
+bin/com.github.bleakgrey.tootle
+share/applications/com.github.bleakgrey.tootle.desktop
+share/glib-2.0/schemas/com.github.bleakgrey.tootle.gschema.xml
+share/icons/hicolor/scalable/apps/com.github.bleakgrey.tootle.svg
+share/icons/hicolor/symbolic/apps/com.github.bleakgrey.tootle-symbolic.svg
+share/locale/de_DE/LC_MESSAGES/com.github.bleakgrey.tootle.mo
+share/locale/es/LC_MESSAGES/com.github.bleakgrey.tootle.mo
+share/locale/ru_RU/LC_MESSAGES/com.github.bleakgrey.tootle.mo
+share/metainfo/com.github.bleakgrey.tootle.appdata.xml
