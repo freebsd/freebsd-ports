@@ -7,7 +7,7 @@ Look for omp.h in LOCALBASE and pass suitable -I and -L flags
 if those are necessary. Also use OpenMP flags when linking.
 PR 223678 and PR 234050.
 
---- Modules/FindOpenMP.cmake.orig	2021-07-14 14:10:23 UTC
+--- Modules/FindOpenMP.cmake.orig	2022-11-17 13:55:41 UTC
 +++ Modules/FindOpenMP.cmake
 @@ -97,6 +97,33 @@ cmake_policy(SET CMP0012 NEW) # if() recognizes number
  cmake_policy(SET CMP0054 NEW) # if() quoted variables not dereferenced
@@ -43,7 +43,7 @@ PR 223678 and PR 234050.
  function(_OPENMP_FLAG_CANDIDATES LANG)
    if(NOT OpenMP_${LANG}_FLAG)
      unset(OpenMP_FLAG_CANDIDATES)
-@@ -212,6 +239,15 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
+@@ -211,6 +238,15 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
      if(OpenMP_VERBOSE_COMPILE_OPTIONS)
        string(APPEND OPENMP_FLAGS_TEST " ${OpenMP_VERBOSE_COMPILE_OPTIONS}")
      endif()
@@ -57,8 +57,8 @@ PR 223678 and PR 234050.
 +    set(_need_extra FALSE)
 +
      string(REGEX REPLACE "[-/=+]" "" OPENMP_PLAIN_FLAG "${OPENMP_FLAG}")
-     try_compile( OpenMP_COMPILE_RESULT_${FLAG_MODE}_${OPENMP_PLAIN_FLAG} ${CMAKE_BINARY_DIR} ${_OPENMP_TEST_SRC}
-       CMAKE_FLAGS "-DCOMPILE_DEFINITIONS:STRING=${OPENMP_FLAGS_TEST}"
+     try_compile( OpenMP_COMPILE_RESULT_${FLAG_MODE}_${OPENMP_PLAIN_FLAG}
+       SOURCE_FROM_VAR "${_OPENMP_TEST_SRC_NAME}" _OPENMP_TEST_SRC_CONTENT
 @@ -219,8 +255,23 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
        OUTPUT_VARIABLE OpenMP_TRY_COMPILE_OUTPUT
      )
@@ -84,7 +84,7 @@ PR 223678 and PR 234050.
  
        if(CMAKE_${LANG}_VERBOSE_FLAG)
          unset(OpenMP_${LANG}_IMPLICIT_LIBRARIES)
-@@ -567,9 +618,16 @@ foreach(LANG IN LISTS OpenMP_FINDLIST)
+@@ -603,9 +654,16 @@ foreach(LANG IN LISTS OpenMP_FINDLIST)
          add_library(OpenMP::OpenMP_${LANG} INTERFACE IMPORTED)
        endif()
        if(OpenMP_${LANG}_FLAGS)
@@ -100,6 +100,6 @@ PR 223678 and PR 234050.
 +          INTERFACE_COMPILE_OPTIONS "$<$<COMPILE_LANGUAGE:${LANG}>:${_OpenMP_${LANG}_COMPILE_OPTIONS}>")
 +        set_property(TARGET OpenMP::OpenMP_${LANG} PROPERTY
 +          INTERFACE_LINK_OPTIONS "$<$<COMPILE_LANGUAGE:${LANG}>:${_OpenMP_${LANG}_LINK_OPTIONS}>")
-         if(CMAKE_${LANG}_COMPILER_ID STREQUAL "Fujitsu")
+         if(CMAKE_${LANG}_COMPILER_ID STREQUAL "Fujitsu"
+           OR ${CMAKE_${LANG}_COMPILER_ID} STREQUAL "IntelLLVM")
            set_property(TARGET OpenMP::OpenMP_${LANG} PROPERTY
-             INTERFACE_LINK_OPTIONS "${OpenMP_${LANG}_FLAGS}")

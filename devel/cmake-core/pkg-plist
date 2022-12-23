@@ -2,10 +2,6 @@ bin/ccmake
 bin/cmake
 bin/cpack
 bin/ctest
-share/aclocal/cmake.m4
-share/bash-completion/completions/cmake
-share/bash-completion/completions/cpack
-share/bash-completion/completions/ctest
 %%DATADIR%%/Help/command/DEVICE_LINK_OPTIONS.txt
 %%DATADIR%%/Help/command/FIND_XXX.txt
 %%DATADIR%%/Help/command/FIND_XXX_ORDER.txt
@@ -25,6 +21,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/command/add_subdirectory.rst
 %%DATADIR%%/Help/command/add_test.rst
 %%DATADIR%%/Help/command/aux_source_directory.rst
+%%DATADIR%%/Help/command/block.rst
 %%DATADIR%%/Help/command/break.rst
 %%DATADIR%%/Help/command/build_command.rst
 %%DATADIR%%/Help/command/build_name.rst
@@ -55,6 +52,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/command/elseif.rst
 %%DATADIR%%/Help/command/enable_language.rst
 %%DATADIR%%/Help/command/enable_testing.rst
+%%DATADIR%%/Help/command/endblock.rst
 %%DATADIR%%/Help/command/endforeach.rst
 %%DATADIR%%/Help/command/endfunction.rst
 %%DATADIR%%/Help/command/endif.rst
@@ -198,6 +196,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/HIPFLAGS.rst
 %%DATADIR%%/Help/envvar/ISPC.rst
 %%DATADIR%%/Help/envvar/ISPCFLAGS.rst
+%%DATADIR%%/Help/envvar/LANG_FLAGS.txt
 %%DATADIR%%/Help/envvar/LDFLAGS.rst
 %%DATADIR%%/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
 %%DATADIR%%/Help/envvar/OBJC.rst
@@ -205,6 +204,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/PackageName_ROOT.rst
 %%DATADIR%%/Help/envvar/RC.rst
 %%DATADIR%%/Help/envvar/RCFLAGS.rst
+%%DATADIR%%/Help/envvar/SSL_CERT_DIR.rst
+%%DATADIR%%/Help/envvar/SSL_CERT_FILE.rst
 %%DATADIR%%/Help/envvar/SWIFTC.rst
 %%DATADIR%%/Help/envvar/VERBOSE.rst
 %%DATADIR%%/Help/generator/Borland Makefiles.rst
@@ -435,6 +436,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/module/FindOpenCL.rst
 %%DATADIR%%/Help/module/FindOpenGL.rst
 %%DATADIR%%/Help/module/FindOpenMP.rst
+%%DATADIR%%/Help/module/FindOpenSP.rst
 %%DATADIR%%/Help/module/FindOpenSSL.rst
 %%DATADIR%%/Help/module/FindOpenSceneGraph.rst
 %%DATADIR%%/Help/module/FindOpenThreads.rst
@@ -463,6 +465,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/module/FindRTI.rst
 %%DATADIR%%/Help/module/FindRuby.rst
 %%DATADIR%%/Help/module/FindSDL.rst
+%%DATADIR%%/Help/module/FindSDL_gfx.rst
 %%DATADIR%%/Help/module/FindSDL_image.rst
 %%DATADIR%%/Help/module/FindSDL_mixer.rst
 %%DATADIR%%/Help/module/FindSDL_net.rst
@@ -677,6 +680,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/policy/CMP0137.rst
 %%DATADIR%%/Help/policy/CMP0138.rst
 %%DATADIR%%/Help/policy/CMP0139.rst
+%%DATADIR%%/Help/policy/CMP0140.rst
+%%DATADIR%%/Help/policy/CMP0141.rst
+%%DATADIR%%/Help/policy/CMP0142.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -714,6 +720,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_dir/RULE_LAUNCH_LINK.rst
 %%DATADIR%%/Help/prop_dir/SOURCE_DIR.rst
 %%DATADIR%%/Help/prop_dir/SUBDIRECTORIES.rst
+%%DATADIR%%/Help/prop_dir/SYSTEM.rst
 %%DATADIR%%/Help/prop_dir/TESTS.rst
 %%DATADIR%%/Help/prop_dir/TEST_INCLUDE_FILE.rst
 %%DATADIR%%/Help/prop_dir/TEST_INCLUDE_FILES.rst
@@ -924,6 +931,16 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/CUDA_STANDARD.rst
 %%DATADIR%%/Help/prop_tgt/CUDA_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/CXX_EXTENSIONS.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_DIRS.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_DIRS_NAME.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_DIRS_NAME.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_SET.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_SETS.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_HEADER_UNIT_SET_NAME.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_SET.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_SETS.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_SET_NAME.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/C_EXTENSIONS.rst
@@ -944,6 +961,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/EXPORT_COMPILE_COMMANDS.rst
 %%DATADIR%%/Help/prop_tgt/EXPORT_NAME.rst
+%%DATADIR%%/Help/prop_tgt/EXPORT_NO_SYSTEM.rst
 %%DATADIR%%/Help/prop_tgt/EXPORT_PROPERTIES.rst
 %%DATADIR%%/Help/prop_tgt/EchoString.rst
 %%DATADIR%%/Help/prop_tgt/FOLDER.rst
@@ -1006,6 +1024,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_COMPILE_FEATURES.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_COMPILE_OPTIONS.rst
+%%DATADIR%%/Help/prop_tgt/INTERFACE_CXX_MODULE_HEADER_UNIT_SETS.rst
+%%DATADIR%%/Help/prop_tgt/INTERFACE_CXX_MODULE_SETS.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_HEADER_SETS.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_HEADER_SETS_TO_VERIFY.rst
 %%DATADIR%%/Help/prop_tgt/INTERFACE_INCLUDE_DIRECTORIES.rst
@@ -1073,6 +1093,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/MACOSX_RPATH.rst
 %%DATADIR%%/Help/prop_tgt/MANUALLY_ADDED_DEPENDENCIES.rst
 %%DATADIR%%/Help/prop_tgt/MAP_IMPORTED_CONFIG_CONFIG.rst
+%%DATADIR%%/Help/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT-VALUES.txt
+%%DATADIR%%/Help/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT.rst
 %%DATADIR%%/Help/prop_tgt/MSVC_RUNTIME_LIBRARY-VALUES.txt
 %%DATADIR%%/Help/prop_tgt/MSVC_RUNTIME_LIBRARY.rst
 %%DATADIR%%/Help/prop_tgt/NAME.rst
@@ -1121,6 +1143,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/STATIC_LIBRARY_FLAGS_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/STATIC_LIBRARY_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/SUFFIX.rst
+%%DATADIR%%/Help/prop_tgt/SYSTEM.rst
 %%DATADIR%%/Help/prop_tgt/Swift_DEPENDENCIES_FILE.rst
 %%DATADIR%%/Help/prop_tgt/Swift_LANGUAGE_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/Swift_MODULE_DIRECTORY.rst
@@ -1198,10 +1221,14 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_ENVIRONMENT.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_GUARD_MALLOC.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_LAUNCH_CONFIGURATION.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_LAUNCH_MODE.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_MALLOC_GUARD_EDGES.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_SCHEME_MALLOC_SCRIBBLE.rst
@@ -1234,6 +1261,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/release/3.22.rst
 %%DATADIR%%/Help/release/3.23.rst
 %%DATADIR%%/Help/release/3.24.rst
+%%DATADIR%%/Help/release/3.25.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1246,6 +1274,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/ANDROID.rst
 %%DATADIR%%/Help/variable/APPLE.rst
 %%DATADIR%%/Help/variable/BORLAND.rst
+%%DATADIR%%/Help/variable/BSD.rst
 %%DATADIR%%/Help/variable/BUILD_SHARED_LIBS.rst
 %%DATADIR%%/Help/variable/CACHE.rst
 %%DATADIR%%/Help/variable/CMAKE_ABSOLUTE_DESTINATION_FILES.rst
@@ -1455,6 +1484,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_HIP_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_HOME_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_APPLE.rst
+%%DATADIR%%/Help/variable/CMAKE_HOST_BSD.rst
+%%DATADIR%%/Help/variable/CMAKE_HOST_LINUX.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SOLARIS.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SYSTEM.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SYSTEM_NAME.rst
@@ -1611,6 +1642,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_MODULE_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_MSVCIDE_RUN_PATH.rst
+%%DATADIR%%/Help/variable/CMAKE_MSVC_DEBUG_INFORMATION_FORMAT.rst
 %%DATADIR%%/Help/variable/CMAKE_MSVC_RUNTIME_LIBRARY.rst
 %%DATADIR%%/Help/variable/CMAKE_NETRC.rst
 %%DATADIR%%/Help/variable/CMAKE_NETRC_FILE.rst
@@ -1705,6 +1737,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_Swift_LANGUAGE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_Swift_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_Swift_NUM_THREADS.rst
+%%DATADIR%%/Help/variable/CMAKE_TASKING_TOOLSET.rst
 %%DATADIR%%/Help/variable/CMAKE_TLS_CAINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_TLS_VERIFY.rst
 %%DATADIR%%/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
@@ -1770,9 +1803,13 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_DISABLE_MAIN_THREAD_CHECKER.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LIBRARY_LOADS.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_DYNAMIC_LINKER_API_USAGE.rst
+%%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_API_VALIDATION.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_FRAME_CAPTURE_MODE.rst
+%%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_ENABLE_GPU_SHADER_VALIDATION.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_ENVIRONMENT.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_GUARD_MALLOC.rst
+%%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_LAUNCH_CONFIGURATION.rst
+%%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_LAUNCH_MODE.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_MALLOC_GUARD_EDGES.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_MALLOC_SCRIBBLE.rst
@@ -1883,6 +1920,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/LIBRARY_OUTPUT_PATH.rst
 %%DATADIR%%/Help/variable/LINK_GROUP_PREDEFINED_FEATURES.txt
 %%DATADIR%%/Help/variable/LINK_LIBRARY_PREDEFINED_FEATURES.txt
+%%DATADIR%%/Help/variable/LINUX.rst
 %%DATADIR%%/Help/variable/MINGW.rst
 %%DATADIR%%/Help/variable/MSVC.rst
 %%DATADIR%%/Help/variable/MSVC10.rst
@@ -2259,6 +2297,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/IntelLLVM-C.cmake
 %%DATADIR%%/Modules/Compiler/IntelLLVM-CXX.cmake
 %%DATADIR%%/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM-FindBinUtils.cmake
 %%DATADIR%%/Modules/Compiler/IntelLLVM-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/IntelLLVM.cmake
 %%DATADIR%%/Modules/Compiler/LCC-C-DetermineCompiler.cmake
@@ -2325,6 +2364,12 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/TI-CXX.cmake
 %%DATADIR%%/Modules/Compiler/TI-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/TI.cmake
+%%DATADIR%%/Modules/Compiler/Tasking-ASM.cmake
+%%DATADIR%%/Modules/Compiler/Tasking-C.cmake
+%%DATADIR%%/Modules/Compiler/Tasking-CXX.cmake
+%%DATADIR%%/Modules/Compiler/Tasking-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/Tasking-FindBinUtils.cmake
+%%DATADIR%%/Modules/Compiler/Tasking.cmake
 %%DATADIR%%/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/TinyCC-C.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake
@@ -2475,6 +2520,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/FindOpenCL.cmake
 %%DATADIR%%/Modules/FindOpenGL.cmake
 %%DATADIR%%/Modules/FindOpenMP.cmake
+%%DATADIR%%/Modules/FindOpenSP.cmake
 %%DATADIR%%/Modules/FindOpenSSL.cmake
 %%DATADIR%%/Modules/FindOpenSceneGraph.cmake
 %%DATADIR%%/Modules/FindOpenThreads.cmake
@@ -2504,6 +2550,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/FindRTI.cmake
 %%DATADIR%%/Modules/FindRuby.cmake
 %%DATADIR%%/Modules/FindSDL.cmake
+%%DATADIR%%/Modules/FindSDL_gfx.cmake
 %%DATADIR%%/Modules/FindSDL_image.cmake
 %%DATADIR%%/Modules/FindSDL_mixer.cmake
 %%DATADIR%%/Modules/FindSDL_net.cmake
@@ -2789,7 +2836,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Darwin.cmake
 %%DATADIR%%/Modules/Platform/DragonFly.cmake
 %%DATADIR%%/Modules/Platform/Euros.cmake
-%%DATADIR%%/Modules/Platform/FreeBSD-CXX.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD-Determine-CXX.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD.cmake
 %%DATADIR%%/Modules/Platform/Fuchsia.cmake
@@ -2891,6 +2937,14 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/RISCos.cmake
 %%DATADIR%%/Modules/Platform/SCO_SV.cmake
 %%DATADIR%%/Modules/Platform/SINIX.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-Clang-ASM.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-Clang-C.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-Clang-CXX.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-GNU-ASM.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS-GNU.cmake
+%%DATADIR%%/Modules/Platform/SerenityOS.cmake
 %%DATADIR%%/Modules/Platform/SunOS-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/SunOS-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/SunOS-GNU-C.cmake
@@ -2913,6 +2967,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Windows-Clang-ASM.cmake
 %%DATADIR%%/Modules/Platform/Windows-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Clang-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-Clang-HIP.cmake
 %%DATADIR%%/Modules/Platform/Windows-Clang.cmake
 %%DATADIR%%/Modules/Platform/Windows-Determine-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-C.cmake
@@ -3094,6 +3149,10 @@ share/bash-completion/completions/ctest
 %%PORTDOCS%%%%DOCSDIR%%/cmcurl/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/cmnghttp2/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
+share/aclocal/cmake.m4
+share/bash-completion/completions/cmake
+share/bash-completion/completions/cpack
+share/bash-completion/completions/ctest
 share/emacs/site-lisp/cmake-mode.el
 share/vim/vimfiles/indent/cmake.vim
 share/vim/vimfiles/syntax/cmake.vim
