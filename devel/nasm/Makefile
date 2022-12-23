@@ -1,6 +1,6 @@
 PORTNAME=	nasm
 PORTVERSION=	2.15.05
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	https://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \
 		https://mirror.sobukus.de/files/src/nasm/
