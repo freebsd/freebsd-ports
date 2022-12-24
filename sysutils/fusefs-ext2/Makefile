@@ -1,7 +1,7 @@
 PORTNAME=	fusefs-ext2
 PORTVERSION=	0.0.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,8 +11,8 @@ WWW=		https://github.com/alperakcan/fuse-ext2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mke2fs:sysutils/e2fsprogs
-RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs
+BUILD_DEPENDS=	mke2fs:sysutils/e2fsprogs-core
+RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs-core
 
 USES=		autoreconf fuse libtool localbase:ldflags pkgconfig
 USE_GITHUB=	yes
