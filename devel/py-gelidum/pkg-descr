@@ -1,0 +1,3 @@
+gelidum is inspired by the method freeze found in other languages like
+Javascript. gelidum tries to make immutable objects to make it easier
+avoiding accidental modifications in your code.
