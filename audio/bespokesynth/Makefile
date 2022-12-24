@@ -1,5 +1,6 @@
 PORTNAME=	bespokesynth
 DISTVERSION=	1.1.0-20221006
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,8 @@ BUILD_DEPENDS=	juce>0:devel/juce \
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
 		libjack.so:audio/jack \
-		libjsoncpp.so:devel/jsoncpp
+		libjsoncpp.so:devel/jsoncpp \
+		libpng16.so:graphics/png
 
 USES=		cmake:noninja desktop-file-utils gl localbase:ldflags pkgconfig python
 USE_GL=		gl
@@ -35,5 +37,8 @@ GH_TUPLE=	chriskohlhoff:asio:01b4e87c04abd4daec58e40463bcdc150085b269:chriskohlh
 CMAKE_ON=	BESPOKE_SYSTEM_JUCE \
 		BESPOKE_SYSTEM_PYBIND11 \
 		BESPOKE_SYSTEM_JSONCPP
+
+CXXFLAGS+=	-DJUCE_INCLUDE_PNGLIB_CODE=0
+LDFLAGS+=	-lpng
 
 .include <bsd.port.mk>
