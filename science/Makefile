@@ -38,6 +38,7 @@
     SUBDIR += bddsolve
     SUBDIR += berkeleygw
     SUBDIR += bodr
+    SUBDIR += bout++
     SUBDIR += buddy
     SUBDIR += cantera
     SUBDIR += cardioid

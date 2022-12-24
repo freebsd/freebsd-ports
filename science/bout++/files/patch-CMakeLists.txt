@@ -1,0 +1,20 @@
+- workaround for: find_package(netCDFCxx REQUIRED) fails to find it because netcdf-cxx is built w/out cmake support
+
+--- CMakeLists.txt.orig	2022-03-03 17:36:51 UTC
++++ CMakeLists.txt
+@@ -556,10 +556,12 @@ if (BOUT_USE_NETCDF)
+     find_package(netCDF REQUIRED)
+     FetchContent_MakeAvailable(netcdf-cxx4)
+   else()
+-    find_package(netCDFCxx REQUIRED)
+-    set(CONFIG_LDFLAGS "${CONFIG_LDFLAGS} ${netCDF_CXX_LIBRARY} ${netCDF_LIBRARIES}")
++    find_package(PkgConfig REQUIRED)
++    #find_package(netCDFCxx REQUIRED)
++    pkg_check_modules(NETCDF REQUIRED IMPORTED_TARGET netcdf-cxx4)
++    set(CONFIG_LDFLAGS "${CONFIG_LDFLAGS} ${netCDF_CXX_LIBRARY} ${NETCDF_LDFLAGS}")
+   endif()
+-  target_link_libraries(bout++ PUBLIC netCDF::netcdf-cxx4)
++  target_link_libraries(bout++ PUBLIC ${NETCDF_LDFLAGS})
+   target_compile_definitions(bout++
+     PUBLIC "NCDF4"
+     PUBLIC "BOUT_HAS_NETCDF")
