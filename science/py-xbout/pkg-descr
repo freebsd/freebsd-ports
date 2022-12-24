@@ -1,0 +1,3 @@
+xBOUT provides an interface for collecting the output data from a BOUT++
+simulation into an xarray dataset in an efficient and scalable way, as well
+as accessor methods for common BOUT++ analysis and plotting tasks.
