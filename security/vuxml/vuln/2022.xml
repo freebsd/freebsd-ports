@@ -1,3 +1,47 @@
+  <vuln vid="1f0421b1-8398-11ed-973d-002b67dfc673">
+    <topic>freerdp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freerdp</name>
+	<range><lt>2.9.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FreeRDP reports:</p>
+	<blockquote cite="https://www.freerdp.com/2022/11/16/2_9_0-release">
+	  <p>GHSA-5w4j-mrrh-jjrm: Out of bound read in zgfx decoder.</p>
+	  <p>GHSA-99cm-4gw7-c8jh: Undefined behaviour in zgfx decoder.</p>
+	  <p>GHSA-387j-8j96-7q35: Division by zero in urbdrc channel.</p>
+	  <p>GHSA-mvxm-wfj2-5fvh: Missing length validation in urbdrc channel.</p>
+	  <p>GHSA-qfq2-82qr-7f4j: Heap buffer overflow in urbdrc channel.</p>
+	  <p>GHSA-c5xq-8v35-pffg: Missing path sanitation with `drive` channel.</p>
+	  <p>GHSA-pmv3-wpw4-pw5h: Missing input length validation in `drive` channel.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39316</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39316</url>
+      <cvename>CVE-2022-39317</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39317</url>
+      <cvename>CVE-2022-39318</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39318</url>
+      <cvename>CVE-2022-39319</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39319</url>
+      <cvename>CVE-2022-39320</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39320</url>
+      <cvename>CVE-2022-39347</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39347</url>
+      <cvename>CVE-2022-41877</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-41877</url>
+    </references>
+    <dates>
+      <discovery>2022-12-24</discovery>
+      <entry>2022-12-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d0da046a-81e6-11ed-96ca-0800277bb8a8">
     <topic>gitea -- multiple issues</topic>
     <affects>
