@@ -1,5 +1,5 @@
 PORTNAME=	purescript
-PORTVERSION=	0.15.6
+PORTVERSION=	0.15.7
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,7 +22,6 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		adjunctions-4.4.2 \
 		aeson-2.0.3.0_1 \
 		aeson-better-errors-0.9.1.1_1 \
-		aeson-pretty-0.8.9_2 \
 		alex-3.2.7.1 \
 		ansi-terminal-0.11.4 \
 		ansi-wl-pprint-0.6.9_3 \
@@ -34,7 +33,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		base-compat-batteries-0.12.2 \
 		base-orphans-0.8.7 \
 		basement-0.0.15 \
-		bifunctors-5.5.13 \
+		bifunctors-5.5.14 \
 		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
@@ -42,11 +41,9 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		bower-json-1.1.0.0 \
 		boxes-0.1.5 \
 		call-stack-0.4.0 \
-		case-insensitive-1.2.1.0 \
 		cborg-0.2.8.0_1 \
 		cheapskate-0.1.1.2_1 \
 		clock-0.8.3 \
-		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
 		conduit-1.3.4.3_1 \
@@ -68,14 +65,12 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		edit-distance-0.2.2.1_1 \
 		fast-logger-3.1.1 \
 		file-embed-0.0.15.0 \
-		free-5.1.9_1 \
-		fsnotify-0.3.0.1_2 \
+		free-5.1.10 \
 		half-0.3.1 \
 		happy-1.20.0_1 \
 		hashable-1.4.1.0 \
-		haskeline-0.8.2_2 \
+		haskeline-0.8.2_3 \
 		hsc2hs-0.68.8_1 \
-		http-types-0.12.3 \
 		indexed-traversable-0.1.2_2 \
 		indexed-traversable-instances-0.1.1.1 \
 		integer-logarithms-1.0.3.1_3 \
@@ -87,7 +82,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		lifted-base-0.2.3.12 \
 		memory-0.17.0_1 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.37_2 \
+		monad-logger-0.3.37_3 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.15.3 \
 		monoidal-containers-0.6.3.0 \
@@ -145,7 +140,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		vector-algorithms-0.9.0.1_1 \
 		void-0.7.3 \
 		witherable-0.4.2_3 \
-		xss-sanitize-0.3.7_1 \
+		xss-sanitize-0.3.7.1 \
 		zlib-0.6.3.0
 
 CABAL_EXECUTABLES=	purs
