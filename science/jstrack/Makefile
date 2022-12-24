@@ -1,8 +1,8 @@
 PORTNAME=	jstrack
 PORTVERSION=	3.4.0
 CATEGORIES=	science
-MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
-		http://www.bayofrum.net/dist/${PORTNAME}/
+MASTER_SITES=	https://jstrack.org/${PORTNAME}/downloads/ \
+		LOCAL/bofh
 DISTNAME=	JStrack-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
