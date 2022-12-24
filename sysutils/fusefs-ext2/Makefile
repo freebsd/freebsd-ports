@@ -14,20 +14,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	mke2fs:sysutils/e2fsprogs
 RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs
 
-USES=		autoreconf libtool fuse pkgconfig localbase:ldflags
+USES=		autoreconf fuse libtool localbase:ldflags pkgconfig
 USE_GITHUB=	yes
-
-GH_PROJECT=	fuse-ext2
 GH_ACCOUNT=	alperakcan
+GH_PROJECT=	fuse-ext2
 GH_TAGNAME=	ea7bacf
 
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/e2fsprogs
-LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs
+LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath \
+		-Wl,${LOCALBASE}/lib/e2fsprogs
 
-PLIST_FILES=	bin/fuse-ext2 bin/fuse-ext2.probe \
-		man/man1/fuse-ext2.1.gz \
-		libdata/pkgconfig/fuse-ext2.pc
+PLIST_FILES=	bin/fuse-ext2 \
+		bin/fuse-ext2.probe \
+		libdata/pkgconfig/fuse-ext2.pc \
+		man/man1/fuse-ext2.1.gz
 
 .include <bsd.port.mk>
