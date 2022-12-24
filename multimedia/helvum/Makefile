@@ -23,7 +23,7 @@ MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_VERSION},' \
+	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 # Make each cargo subcommand very verbose

@@ -71,7 +71,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_VERSION},' \
+	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 
