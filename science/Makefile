@@ -297,6 +297,7 @@
     SUBDIR += py-ase
     SUBDIR += py-atomium
     SUBDIR += py-avogadrolibs
+    SUBDIR += py-boutdata
     SUBDIR += py-boututils
     SUBDIR += py-cdo
     SUBDIR += py-chainer
