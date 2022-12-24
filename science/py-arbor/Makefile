@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8
+DISTVERSION=	0.8.1
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libarbor.so:science/arbor
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
+USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
