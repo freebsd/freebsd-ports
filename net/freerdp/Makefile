@@ -1,10 +1,8 @@
 PORTNAME=	freerdp
-DISTVERSION=	2.8.1
-CATEGORIES=	net comms wayland
+DISTVERSION=	2.9.0
+CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
-
-#PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
