@@ -1,10 +1,13 @@
---- tools/cbc-proxy.cc.orig	2020-06-17 13:30:27 UTC
+--- tools/cbc-proxy.cc.orig	2022-12-09 14:19:12 UTC
 +++ tools/cbc-proxy.cc
-@@ -18,6 +18,7 @@
+@@ -35,6 +35,10 @@
+ #include <event2/bufferevent.h>
+ #include <event2/buffer.h>
  
- #include "config.h"
- #include <sys/types.h>
++#ifdef __FreeBSD__
 +#include <netinet/in.h>
- #include <libcouchbase/couchbase.h>
- #include <libcouchbase/vbucket.h>
- #include <libcouchbase/api3.h>
++#endif
++
+ using namespace cbc;
+ using namespace cliopts;
+ 
