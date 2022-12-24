@@ -5,7 +5,6 @@ bin/bout-config.in
 bin/bout-log-color
 bin/bout-pylib-cmd-to-bin
 bin/bout-sonnet
-bin/bout-squashoutput
 bin/bout-stop-script
 bin/bout_3to4.py
 bin/bout_4to5

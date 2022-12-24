@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+
+You installed BOUT++, plasma fluid finite-difference simulation code.
+
+BOUT++ is a framework that allows to solve a variety of partial differential
+equations, with or without physical meaning.
+
+You can use BOUT++ in one of these ways:
+1. Build with included examples: make WITH_EXAMPLES=yes
+   These examples showcase what BOUT++ can do on simple PDE systems,
+2. Build and run any of the dependent ports: science/bout++-*
+3. Write your own BOUT++ applications solving your equations.
+
+EOM
+}
+]

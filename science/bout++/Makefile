@@ -1,6 +1,7 @@
 PORTNAME=	bout++
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.2
+PORTREVISION=	1
 CATEGORIES=	science math # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -106,5 +107,10 @@ post-install:
 		-e 's|${BUILD_WRKSRC}/lib|${PREFIX}/lib|' \
 		-e 's|${PORTSDIR}/.*/BOUT-dev-${PORTVERSION}/externalpackages/PVODE/include|${PREFIX}/include|g' \
 		${STAGEDIR}${PREFIX}/lib/cmake/PVODE/*
+	@${REINPLACE_CMD} -i '' \
+		-e 's|INTERFACE_INCLUDE_DIRECTORIES .*|INTERFACE_INCLUDE_DIRECTORIES "${PREFIX}/include"|' \
+		${STAGEDIR}${PREFIX}/lib/cmake/PVODE/PVODEConfig.cmake
+	# remove broken link, see https://github.com/boutproject/BOUT-dev/issues/2623
+	@${RM} ${STAGEDIR}${PREFIX}/bin/bout-squashoutput
 
 .include <bsd.port.mk>
