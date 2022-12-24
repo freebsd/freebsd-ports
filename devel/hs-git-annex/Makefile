@@ -9,6 +9,8 @@ WWW=		https://git-annex.branchable.com/
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=	compiler crashes
+
 BUILD_DEPENDS=	rsync:net/rsync \
 		git:devel/git \
 		gsha256sum:sysutils/coreutils

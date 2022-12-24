@@ -8,6 +8,8 @@ WWW=		https://github.com/haskell/haskell-language-server/
 
 LICENSE=	APACHE20
 
+BROKEN_aarch64=	compiler crashes
+
 FLAVORS=	default ghc810
 FLAVOR?=	${FLAVORS:[1]}
 .if ${FLAVOR:U} != default
