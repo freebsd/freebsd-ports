@@ -106,6 +106,11 @@ PLIST_SUB+=	64BITS="@comment "
 LIB_DIR_32=	"" 32
 PLIST_SUB+=	64BITS=""
 .endif
+.if ${ARCH} == aarch64
+PLIST_SUB+=	ARM="" NOARM="@comment "
+.else
+PLIST_SUB+=	ARM="@comment " NOARM=""
+.endif
 
 pre-configure:
 	${FIND} ${WRKSRC}/gcc/config -name "*freebsd.h" | ${XARGS}	\
