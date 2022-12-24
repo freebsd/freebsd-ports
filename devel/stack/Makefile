@@ -1,5 +1,5 @@
 PORTNAME=	stack
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel haskell
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321 \
 		${LOCALBASE}/lib/compat/libffi.so.7:devel/libffi33
 
-USES=		cabal gmake perl5
+USES=		cabal gmake perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	commercialhaskell
 USE_PERL5=	run
@@ -31,7 +31,7 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		StateVar-1.2.2 \
 		aeson-2.0.3.0_1 \
 		annotated-wl-pprint-0.7.0_1 \
-		ansi-terminal-0.11.3 \
+		ansi-terminal-0.11.4 \
 		ansi-wl-pprint-0.6.9_3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
@@ -48,7 +48,7 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		base16-bytestring-1.0.2.0 \
 		base64-bytestring-1.2.1.0 \
 		basement-0.0.15 \
-		bifunctors-5.5.13 \
+		bifunctors-5.5.14 \
 		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
@@ -62,7 +62,7 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
-		conduit-1.3.4.2 \
+		conduit-1.3.4.3_1 \
 		conduit-combinators-1.3.0 \
 		conduit-extra-1.3.6 \
 		connection-0.3.1_1 \
@@ -73,24 +73,24 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		cryptonite-conduit-0.2.2_1 \
 		data-default-class-0.1.2.0 \
 		data-fix-0.3.2_3 \
-		digest-0.0.1.3 \
+		digest-0.0.1.4 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		easy-file-0.2.2 \
 		echo-0.1.4 \
-		ed25519-0.0.5.0_5 \
+		ed25519-0.0.5.0_6 \
 		extra-1.7.12 \
 		fast-logger-3.1.1 \
 		file-embed-0.0.15.0 \
 		filelock-0.1.1.5 \
-		fsnotify-0.3.0.1_2 \
+		fsnotify-0.4.1.0 \
 		generic-deriving-1.14.2 \
-		githash-0.1.6.2 \
-		hackage-security-0.6.2.2_1 \
+		githash-0.1.6.3 \
+		hackage-security-0.6.2.3 \
 		hashable-1.4.1.0 \
 		hi-file-parser-0.1.3.0 \
 		hourglass-0.2.12 \
-		hpack-0.35.0 \
+		hpack-0.35.1 \
 		hsc2hs-0.68.8_1 \
 		http-api-data-0.5_1 \
 		http-client-0.7.13.1 \
@@ -103,19 +103,19 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		infer-license-0.2.0 \
 		integer-logarithms-1.0.3.1_3 \
 		iproute-1.7.12 \
-		libyaml-0.1.2 \
-		lift-type-0.1.0.1 \
+		libyaml-0.1.2_1 \
+		lift-type-0.1.1.1 \
 		lifted-base-0.2.3.12 \
 		lukko-0.1.1.3_3 \
-		megaparsec-9.2.2 \
+		megaparsec-9.3.0 \
 		memory-0.18.0 \
-		microlens-0.4.13.0 \
-		microlens-mtl-0.2.0.2 \
-		microlens-th-0.4.3.10_1 \
+		microlens-0.4.13.1 \
+		microlens-mtl-0.2.0.3 \
+		microlens-th-0.4.3.11 \
 		mime-types-0.1.1.0 \
 		mintty-0.1.4 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.37 \
+		monad-logger-0.3.37_3 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.15.3 \
 		mtl-compat-0.2.2 \
@@ -128,24 +128,24 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		open-browser-0.2.1.0 \
 		optparse-applicative-0.17.0.0 \
 		optparse-simple-0.1.1.4 \
-		pantry-0.5.7 \
+		pantry-0.8.1 \
 		parser-combinators-1.3.0 \
 		path-0.9.2 \
 		path-io-1.7.0 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.13.3.5_2 \
+		persistent-2.13.3.5_3 \
 		persistent-sqlite-2.13.1.0 \
 		persistent-template-2.12.0.0 \
 		primitive-0.7.4.0 \
 		project-template-0.2.1.0 \
 		random-1.2.1.1 \
 		resource-pool-0.3.1.0 \
-		resourcet-1.2.6 \
+		resourcet-1.3.0 \
 		retry-0.9.3.0 \
 		rio-0.1.22.0 \
 		rio-orphans-0.1.2.0 \
-		rio-prettyprint-0.1.1.0 \
+		rio-prettyprint-0.1.4.0 \
 		safe-0.3.19 \
 		safe-exceptions-0.1.7.3 \
 		scientific-0.3.7.0_3 \
@@ -157,14 +157,14 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		split-0.2.3.5 \
 		splitmix-0.1.0.4_1 \
 		stm-chans-3.0.0.6 \
-		streaming-commons-0.2.2.4 \
+		streaming-commons-0.2.2.5 \
 		strict-0.4.0.1_4 \
 		syb-0.7.2.2 \
 		tagged-0.8.6.1_3 \
 		tar-0.5.1.1_5 \
 		tar-conduit-0.3.2 \
 		temporary-1.3 \
-		text-metrics-0.3.2_1 \
+		text-metrics-0.3.2_2 \
 		text-short-0.1.5_1 \
 		th-abstraction-0.4.5.0 \
 		th-compat-0.1.4 \
@@ -178,24 +178,25 @@ USE_CABAL=	Cabal-syntax-3.8.1.0_1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.10.1 \
-		unicode-data-0.3.0_2 \
-		unicode-transforms-0.4.0.1_1 \
-		unix-compat-0.6 \
+		unicode-data-0.4.0.1 \
+		unicode-transforms-0.4.0.1_2 \
+		unix-compat-0.6_1 \
 		unix-time-0.4.8 \
-		unliftio-0.2.22.0 \
+		unliftio-0.2.23.0 \
 		unliftio-core-0.2.0.1_2 \
 		unordered-containers-0.2.19.1_1 \
 		uuid-types-1.0.5_3 \
 		vault-0.3.1.5_2 \
-		vector-0.12.3.1_2 \
-		vector-algorithms-0.9.0.1 \
+		vector-0.13.0.0_1 \
+		vector-algorithms-0.9.0.1_1 \
+		vector-stream-0.1.0.0_1 \
 		witherable-0.4.2_3 \
 		x509-1.7.7 \
 		x509-store-1.6.9 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
-		yaml-0.11.8.0 \
-		zip-archive-0.4.2.1 \
+		yaml-0.11.8.0_2 \
+		zip-archive-0.4.2.2 \
 		zlib-0.6.3.0
 
 .include <bsd.port.pre.mk>
