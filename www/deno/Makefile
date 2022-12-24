@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.3
-PORTREVISION=	1
+DISTVERSION=	1.29.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -23,7 +22,7 @@ GH_ACCOUNT=	denoland
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.58.0
+V8_VERS=	0.60.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -45,7 +44,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.65 \
+		anyhow-1.0.66 \
 		arrayvec-0.7.2 \
 		ash-0.37.0+1.3.209 \
 		ast_node-0.8.6 \
@@ -90,7 +89,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		clap_lex-0.1.1 \
 		clipboard-win-4.4.2 \
 		codespan-reporting-0.11.1 \
-		console-0.15.1 \
+		console_static_text-0.3.3 \
 		const-oid-0.9.0 \
 		convert_case-0.4.0 \
 		copyless-0.1.5 \
@@ -121,11 +120,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-url-0.2.0 \
 		debug_unreachable-0.1.1 \
 		deno_ast-0.21.0 \
-		deno_doc-0.50.0 \
-		deno_emit-0.11.0 \
-		deno_graph-0.38.0 \
+		deno_doc-0.51.0 \
+		deno_emit-0.12.0 \
+		deno_graph-0.39.0 \
 		deno_lint-0.35.0 \
-		deno_task_shell-0.7.3 \
+		deno_task_shell-0.8.2 \
 		der-0.6.0 \
 		derive_more-0.99.17 \
 		diff-0.1.13 \
@@ -136,10 +135,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
 		dotenv-0.15.0 \
-		dprint-core-0.59.0 \
-		dprint-plugin-json-0.16.0 \
-		dprint-plugin-markdown-0.14.3 \
-		dprint-plugin-typescript-0.78.0 \
+		dprint-core-0.60.0 \
+		dprint-plugin-json-0.17.0 \
+		dprint-plugin-markdown-0.15.1 \
+		dprint-plugin-typescript-0.79.0 \
 		dprint-swc-ext-0.5.0 \
 		dyn-clone-1.0.9 \
 		dynasm-1.2.3 \
@@ -147,7 +146,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ecdsa-0.14.7 \
 		either-1.8.0 \
 		elliptic-curve-0.12.3 \
-		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
 		endian-type-0.1.2 \
 		enum-as-inner-0.5.1 \
@@ -157,7 +155,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
-		eszip-0.30.0 \
+		eszip-0.31.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
@@ -223,8 +221,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.3.0 \
 		if_chain-1.0.2 \
 		import_map-0.13.0 \
-		indexmap-1.9.1 \
-		indicatif-0.17.1 \
+		indexmap-1.9.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
@@ -293,10 +290,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		num_threads-0.1.6 \
-		number_prefix-0.4.0 \
 		objc-0.2.7 \
 		objc_exception-0.1.2 \
-		once_cell-1.14.0 \
+		once_cell-1.16.0 \
 		opaque-debug-0.3.0 \
 		openssl-probe-0.1.5 \
 		os_pipe-1.0.1 \
@@ -337,7 +333,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.43 \
+		proc-macro2-1.0.47 \
 		profiling-1.0.6 \
 		pty-0.2.2 \
 		pulldown-cmark-0.9.2 \
@@ -389,9 +385,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-0.9.0 \
 		semver-1.0.14 \
 		semver-parser-0.7.0 \
-		serde-1.0.144 \
+		serde-1.0.149 \
 		serde_bytes-0.11.7 \
-		serde_derive-1.0.144 \
+		serde_derive-1.0.149 \
 		serde_json-1.0.85 \
 		serde_repr-0.1.9 \
 		serde_urlencoded-0.7.1 \
@@ -446,13 +442,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_visit-0.5.3 \
 		swc_visit_macros-0.5.4 \
 		syn-0.15.44 \
-		syn-1.0.99 \
+		syn-1.0.105 \
 		synstructure-0.12.6 \
 		sysinfo-0.26.7 \
 		tar-0.4.38 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
 		testing_macros-0.2.7 \
 		text-size-1.1.0 \
 		text_lines-0.6.0 \
@@ -484,7 +479,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		trust-dns-resolver-0.22.0 \
 		trust-dns-server-0.22.0 \
 		try-lock-0.2.3 \
-		trybuild-1.0.71 \
+		trybuild-1.0.72 \
 		tungstenite-0.16.0 \
 		twox-hash-1.6.3 \
 		typed-arena-2.0.1 \
@@ -511,10 +506,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.1.2 \
-		v8-0.58.0 \
+		v8-0.60.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
+		vte-0.11.0 \
+		vte_generate_state_changes-0.1.1 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
