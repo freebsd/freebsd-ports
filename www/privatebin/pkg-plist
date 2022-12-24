@@ -6,6 +6,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY.md
 %%WWWDIR%%/.htaccess.disabled
 %%WWWDIR%%/Procfile
+%%WWWDIR%%/bin/administration
 %%WWWDIR%%/bin/migrate
 %%WWWDIR%%/browserconfig.xml
 %%WWWDIR%%/cfg/.htaccess
