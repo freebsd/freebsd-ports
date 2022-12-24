@@ -17640,3 +17640,4 @@ net/samba412||2022-12-18|Has expired: Reached its EoL on September 20, 2021
 graphics/opencoloriov1|graphics/opencolorio|2022-12-20|Used by blender-lts28 which is EOL'd
 graphics/openimageio-ociov1|graphics/openimageio|2022-12-20|Used by blender-lts28 which is EOL'd
 textproc/retext|editors/retext|2022-12-21|Moved to a better category
+math/vtk6||2022-12-24|Has expired: Old version not used anywhere in the ports tree
