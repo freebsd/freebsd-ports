@@ -8,6 +8,8 @@ WWW=		https://www.purescript.org/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=	compiler crashes
+
 USES=		cabal
 
 USE_LOCALE=	en_US.UTF-8
