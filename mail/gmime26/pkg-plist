@@ -58,5 +58,5 @@ lib/libgmime-2.6.so.0
 lib/libgmime-2.6.so.0.623.0
 libdata/pkgconfig/gmime-2.6.pc
 %%GINTRO%%share/gir-1.0/GMime-2.6.gir
-%%VALA%%share/vala/vapi/gmime-2.6.deps
-%%VALA%%share/vala/vapi/gmime-2.6.vapi
+%%VAPI%%share/vala/vapi/gmime-2.6.deps
+%%VAPI%%share/vala/vapi/gmime-2.6.vapi

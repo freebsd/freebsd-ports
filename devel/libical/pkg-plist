@@ -164,4 +164,4 @@ libdata/pkgconfig/libical.pc
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%VALA%%%%GLIB%%share/vala/vapi/libical-glib.vapi
+%%VAPI%%%%GLIB%%share/vala/vapi/libical-glib.vapi

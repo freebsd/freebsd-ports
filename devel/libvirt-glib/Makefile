@@ -1,6 +1,6 @@
 PORTNAME=	libvirt-glib
 PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
@@ -15,14 +15,13 @@ LIB_DEPENDS=	libvirt.so:devel/libvirt
 USES=		gettext gmake gnome libtool meson pathfix pkgconfig \
 		python:3.6+ tar:xz
 
-OPTIONS_DEFINE=	DOCS VALA
-OPTIONS_DEFAULT=	DOCS VALA
+OPTIONS_DEFINE=	DOCS VAPI
+OPTIONS_DEFAULT=	DOCS VAPI
 OPTIONS_SUB=	yes
 DOCS_MESON_ENABLED=	docs
 DOCS_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
-VALA_DESC=	Vala binding
-VALA_MESON_ENABLED=	vapi
-VALA_USES=		vala:build
+VAPI_MESON_ENABLED=	vapi
+VAPI_USES=		vala:build
 
 MESON_ARGS+=	-Dintrospection=enabled
 USE_LDCONFIG=	yes

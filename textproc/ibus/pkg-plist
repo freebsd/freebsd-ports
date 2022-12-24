@@ -300,8 +300,8 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus10.mo
-%%VALA%%share/vala/vapi/ibus-1.0.deps
-%%VALA%%share/vala/vapi/ibus-1.0.vapi
+%%VAPI%%share/vala/vapi/ibus-1.0.deps
+%%VAPI%%share/vala/vapi/ibus-1.0.vapi
 share/bash-completion/completions/ibus.bash
 %%DCONF%%share/GConf/gsettings/ibus.convert
 @dir %%DATADIR%%/setup

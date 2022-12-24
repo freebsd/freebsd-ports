@@ -1,5 +1,6 @@
 PORTNAME=	ibus
 PORTVERSION=	1.5.27
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -37,8 +38,8 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/src/tests
 
-OPTIONS_DEFINE=	ENGINE VALA GTK2 GTK3 GINTRO DCONF XIM EMOJI DOCS NLS WAYLAND
-OPTIONS_DEFAULT=	GTK2 GTK3 VALA GINTRO DCONF XIM ENGINE EMOJI
+OPTIONS_DEFINE=	ENGINE VAPI GTK2 GTK3 GINTRO DCONF XIM EMOJI DOCS NLS WAYLAND
+OPTIONS_DEFAULT=	GTK2 GTK3 VAPI GINTRO DCONF XIM ENGINE EMOJI
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
 
@@ -48,7 +49,6 @@ ENGINE_DESC=	Install ibus simple engine
 GINTRO_DESC=	Install GObject Introspection data
 GTK2_DESC=	Install GTK2 client
 GTK3_DESC=	Install GTK3 client and panel
-VALA_DESC=	Install vala binding
 WAYLAND_DESC=	Enable Wayland support
 XIM_DESC=	Install XIM server
 
@@ -80,9 +80,9 @@ GTK3_LIBS=		-lX11
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
-VALA_IMPLIES=		GINTRO
-VALA_USES=		vala:build
-VALA_CONFIGURE_ENABLE=	vala
+VAPI_IMPLIES=		GINTRO
+VAPI_USES=		vala:build
+VAPI_CONFIGURE_ENABLE=	vala
 WAYLAND_BUILD_DEPENDS=	wayland>1.14:graphics/wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon

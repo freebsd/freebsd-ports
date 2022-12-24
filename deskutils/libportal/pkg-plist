@@ -38,7 +38,7 @@ libdata/pkgconfig/libportal-qt5.pc
 libdata/pkgconfig/libportal.pc
 share/gir-1.0/Xdp-1.0.gir
 share/gir-1.0/XdpGtk3-1.0.gir
-%%VALA%%share/vala/vapi/libportal-gtk3.deps
-%%VALA%%share/vala/vapi/libportal-gtk3.vapi
-%%VALA%%share/vala/vapi/libportal.deps
-%%VALA%%share/vala/vapi/libportal.vapi
+%%VAPI%%share/vala/vapi/libportal-gtk3.deps
+%%VAPI%%share/vala/vapi/libportal-gtk3.vapi
+%%VAPI%%share/vala/vapi/libportal.deps
+%%VAPI%%share/vala/vapi/libportal.vapi
