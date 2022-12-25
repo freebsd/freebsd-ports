@@ -39,6 +39,7 @@
     SUBDIR += berkeleygw
     SUBDIR += bodr
     SUBDIR += bout++
+    SUBDIR += bout++-merging-filaments
     SUBDIR += buddy
     SUBDIR += cantera
     SUBDIR += cardioid
