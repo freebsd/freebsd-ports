@@ -1,20 +1,19 @@
---- CMakeLists.txt.orig	2021-09-04 23:24:41 UTC
+--- CMakeLists.txt.orig	2022-12-01 22:02:54 UTC
 +++ CMakeLists.txt
-@@ -171,6 +171,13 @@ set_target_properties(openshot-audio PROPERTIES
+@@ -184,6 +184,12 @@ set_target_properties(openshot-audio PROPERTIES
    EXPORT_NAME Audio  # Exports as OpenShot::Audio target
  )
  
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+	find_package(Threads REQUIRED)
-+	if(Threads_FOUND)
-+		target_link_libraries(openshot-audio PRIVATE ${CMAKE_THREAD_LIBS_INIT})
-+	endif(Threads_FOUND)
-+endif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++# Thread library
++find_package(Threads REQUIRED)
++if(Threads_FOUND)
++	target_link_libraries(openshot-audio PRIVATE ${CMAKE_THREAD_LIBS_INIT})
++endif(Threads_FOUND)
 +
  # Require language features we use
  if(CMAKE_VERSION VERSION_GREATER 3.8)
    target_compile_features(openshot-audio PUBLIC
-@@ -189,7 +196,8 @@ endif()
+@@ -202,7 +208,8 @@ endif()
  # Enable stack-unwinding support in c objects on gcc-based platforms.
  # Failing to do so will cause your program to be terminated when a png
  # or a jpeg exception is thrown on linux or macosx.
@@ -24,7 +23,7 @@
    target_compile_options(openshot-audio PRIVATE -fexceptions)
  endif()
  
-@@ -252,8 +260,8 @@ if(UNIX AND NOT APPLE)
+@@ -265,8 +272,8 @@ if(UNIX AND NOT APPLE)
        INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
        INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
    endif()
@@ -35,7 +34,7 @@
  else()
    # For EXPORTED Config
    set(NEED_ALSA FALSE)
-@@ -261,10 +269,24 @@ endif()
+@@ -274,10 +281,22 @@ endif()
  
  # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
  find_package(ZLIB REQUIRED)
@@ -43,18 +42,16 @@
 +target_link_libraries(openshot-audio PRIVATE ZLIB::ZLIB)
  
 +# EXECINFO, SYSINFO
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+	find_library(EXECINFO_LIBRARY NAMES execinfo)
-+	if(NOT EXECINFO_LIBRARY)
-+		message(FATAL_ERROR "${EXECINFO_LIBRARY}")
-+	endif(NOT EXECINFO_LIBRARY)
-+	target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
-+	find_library(SYSINFO_LIBRARY NAMES sysinfo)
-+	if(NOT SYSINFO_LIBRARY)
-+		message(FATAL_ERROR "${SYSINFO_LIBRARY}")
-+	endif(NOT SYSINFO_LIBRARY)
-+	target_link_libraries(openshot-audio PRIVATE ${SYSINFO_LIBRARY})
-+endif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++find_library(EXECINFO_LIBRARY NAMES execinfo)
++if(NOT EXECINFO_LIBRARY)
++	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++endif(NOT EXECINFO_LIBRARY)
++target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
++find_library(SYSINFO_LIBRARY NAMES sysinfo)
++if(NOT SYSINFO_LIBRARY)
++	message(FATAL_ERROR "${SYSINFO_LIBRARY}")
++endif(NOT SYSINFO_LIBRARY)
++target_link_libraries(openshot-audio PRIVATE ${SYSINFO_LIBRARY})
 +
  # Link with dynamic loader for platform
 -target_link_libraries(openshot-audio PUBLIC ${CMAKE_DL_LIBS})
