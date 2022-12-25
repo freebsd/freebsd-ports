@@ -46,6 +46,7 @@ include/gemmi/merge.hpp
 include/gemmi/metadata.hpp
 include/gemmi/mmcif.hpp
 include/gemmi/mmcif_impl.hpp
+include/gemmi/mmdb.hpp
 include/gemmi/mmread.hpp
 include/gemmi/model.hpp
 include/gemmi/modify.hpp
@@ -220,7 +221,6 @@ include/gemmi/to_chemcomp.hpp
 include/gemmi/to_cif.hpp
 include/gemmi/to_json.hpp
 include/gemmi/to_mmcif.hpp
-include/gemmi/to_mmdb.hpp
 include/gemmi/to_pdb.hpp
 include/gemmi/topo.hpp
 include/gemmi/twin.hpp
