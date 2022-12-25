@@ -7,7 +7,9 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware Webmail Edition
 WWW=		https://www.horde.org/apps/webmail/
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 USES=		horde cpe php
 CPE_PRODUCT=	groupware
@@ -25,6 +27,7 @@ USE_HORDE_RUN=	Horde_Role \
 		timeobjects \
 		trean \
 		turba
+IGNORE_WITH_PHP=81 82
 
 CONFLICTS=	horde-groupware-[456]*
 

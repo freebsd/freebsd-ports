@@ -10,7 +10,9 @@ WWW=		https://www.horde.org/apps/passwd/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 USES=		horde cpe php
 USE_PHP=	gettext
@@ -23,5 +25,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Injector \
 		Horde_Util \
 		Horde_View
+IGNORE_WITH_PHP=81 82
 
 .include <bsd.port.mk>

@@ -9,7 +9,9 @@ WWW=		https://www.horde.org/apps/horde/
 
 LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 RUN_DEPENDS=	${PEARDIR}/Net/DNS2.php:dns/pear-Net_DNS2@${PHP_FLAVOR}
 
@@ -49,6 +51,7 @@ USE_HORDE_RUN=	Horde_Role \
 # Optional in package but we want them in
 USE_HORDE_RUN+=	Horde_Feed
 USE_PHP=	filter gettext hash
+IGNORE_WITH_PHP=81 82
 
 CONFLICTS_INSTALL=	php*-horde
 

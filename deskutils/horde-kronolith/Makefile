@@ -10,7 +10,9 @@ WWW=		https://www.horde.org/apps/kronolith/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 RUN_DEPENDS+=	${PEARDIR}/Date.php:devel/pear-Date@${PHP_FLAVOR}
 
@@ -49,6 +51,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View
 USE_PHP=	gettext json simplexml
+IGNORE_WITH_PHP=81 82
 
 OPTIONS_DEFINE=		DATE_HOLIDAYS TIMEOBJECTS XMLWRITER
 OPTIONS_DEFAULT=	DATE_HOLIDAYS TIMEOBJECTS

@@ -10,7 +10,9 @@ WWW=		https://www.horde.org/apps/gollem/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 USES=		horde php cpe
 USE_HORDE_BUILD=	Horde_Role
@@ -35,5 +37,6 @@ USE_HORDE_RUN=	Horde_Role \
 USE_HORDE_RUN+=	Horde_Db \
 		Horde_Share
 USE_PHP=	gettext json
+IGNORE_WITH_PHP=81 82
 
 .include <bsd.port.mk>

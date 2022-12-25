@@ -10,7 +10,9 @@ WWW=		https://www.horde.org/apps/wicked/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:www/pear-Text_Wiki@${PHP_FLAVOR}
 
@@ -37,5 +39,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_Vfs
 USE_PHP=	gettext
+IGNORE_WITH_PHP=81 82
 
 .include <bsd.port.mk>

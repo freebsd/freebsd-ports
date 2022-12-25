@@ -10,7 +10,9 @@ WWW=		https://www.horde.org/apps/ingo/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=80 81 82
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
 
 # Optional but we want it
 RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:net/pear-Net_Sieve@${PHP_FLAVOR} \
@@ -32,6 +34,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Share \
 		Horde_Util
 USE_PHP=	gettext
+IGNORE_WITH_PHP=81 82
 
 CONFLICTS_INSTALL=	php*-horde-ingo
 
