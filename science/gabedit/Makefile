@@ -13,9 +13,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License
 
 BROKEN_i386=	undefined reference to `__atomic_load'
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -39,8 +36,8 @@ ICON_SIZES=	16 24 32 48
 PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/${PORTNAME}.png
 .endfor
 
-.if exists(/usr/include/omp.h)
 OPTIONS_DEFINE=		OPENMP
+.if exists(/usr/include/omp.h)
 OPTIONS_DEFAULT=	OPENMP
 .endif
 
