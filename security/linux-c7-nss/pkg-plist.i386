@@ -16,6 +16,7 @@ usr/lib/libsoftokn3.so
 usr/lib/libssl3.so
 usr/lib/nss/libnssckbi.so
 usr/lib/nss/unsupported-tools/bltest
+usr/lib/nss/unsupported-tools/dbtool
 usr/lib/nss/unsupported-tools/fipstest
 usr/lib/nss/unsupported-tools/shlibsign
 usr/share/licenses/nss-pem-1.0.3/COPYING
