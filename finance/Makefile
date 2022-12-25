@@ -99,6 +99,7 @@
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-ebaysdk
+    SUBDIR += py-finvizfinance
     SUBDIR += py-fundamentalanalysis
     SUBDIR += py-investiny
     SUBDIR += py-investpy
