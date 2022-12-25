@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2022-12-01 22:04:03 UTC
++++ CMakeLists.txt
+@@ -135,7 +135,7 @@ endif()
+ ### Process subdirectories
+ ###
+ add_subdirectory(src)
+-add_subdirectory(examples)
++#add_subdirectory(examples)
+ add_subdirectory(bindings)
+ 
+ ###
+@@ -193,6 +193,8 @@ if (ENABLE_LIB_DOCS AND CMAKE_VERSION VERSION_GREATER 
+     set(DOXYGEN_INTERACTIVE_SVG YES)
+     set(DOXYGEN_DOT_TRANSPARENT YES)
+ 
++    set(DOXYGEN_DOT_GRAPH_MAX_NODES "100")
++
+     doxygen_add_docs(${PROJECT_NAME}-doc
+       ${PROJECT_SOURCE_DIR}/src
+       ${PROJECT_SOURCE_DIR}/doc
+@@ -213,7 +215,7 @@ if (TARGET ${PROJECT_NAME}-doc)
+     OPTIONAL )    # No error if the docs aren't found
+ 
+   if(NOT TARGET doc)
+-    add_custom_target(doc)
++    add_custom_target(doc ALL)
+   endif()
+   if(TARGET doc)
+     add_dependencies(doc ${PROJECT_NAME}-doc)

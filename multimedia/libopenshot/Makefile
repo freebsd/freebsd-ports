@@ -1,7 +1,6 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.7
-PORTREVISION=	5
+DISTVERSION=	0.3.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,35 +8,38 @@ MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	OpenShot Video Library
 WWW=		https://www.openshot.org/
 
-LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD3CLAUSE LGPL3+
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSES/BSD-3-Clause.txt
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt
 
 BUILD_DEPENDS=	swig:devel/swig \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
-LIB_DEPENDS=	libopenshot-audio.so:audio/libopenshot-audio \
+LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libbabl-0.1.so:x11/babl \
 		libjsoncpp.so:devel/jsoncpp \
-		libavformat.so:multimedia/ffmpeg \
+		libopenshot-audio.so:audio/libopenshot-audio \
 		libzmq.so:net/libzmq4
 
-USES=		cmake pkgconfig python:3.6+ qt:5
+USES=		cmake pkgconfig python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
-USE_QT=		core gui network multimedia widgets qmake:build buildtools:build
+USE_QT=		core gui svg widgets buildtools:build qmake:build
 CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
 		USE_HW_ACCEL ENABLE_PYTHON\
 		CMAKE_DISABLE_FIND_PACKAGE_Catch2\
 		CMAKE_DISABLE_FIND_PACKAGE_Resvg\
 		CMAKE_DISABLE_FIND_PACKAGE_Ruby
-CMAKE_OFF=	ENABLE_COVERAGE BUILD_TESTING ENABLE_TESTS\
-		ENABLE_RUBY
+CMAKE_OFF=	ENABLE_PARALLEL_CTEST VERBOSE_TESTS ENABLE_COVERAGE\
+		APPIMAGE_BUILD BUILD_TESTING ENABLE_TESTS ENABLE_RUBY
 
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK OPENCV
-OPTIONS_DEFAULT=	IMAGEMAGICK
+OPTIONS_DEFAULT=	IMAGEMAGICK OPENCV
 OPTIONS_SUB=	yes
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_CMAKE_BOOL=	ENABLE_DOCS
+DOCS_CMAKE_BOOL=	ENABLE_LIB_DOCS
 DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen
 DOCS_CMAKE_ON=	-DCMAKE_INSTALL_DOCDIR:PATH=${DOCSDIR_REL:Q}
 DOCS_PORTDOCS=	*
@@ -52,15 +54,10 @@ OPENCV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenCV\
 OPENCV_CMAKE_ON=	-DOpenCV_DIR:STRING=${LOCALBASE:Q}/cmake/opencv4
 
 .if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
+USES+=		compiler:c++14-lang
+USE_GCC=	yes
 .else
-USES+=		compiler:c++11-lang
+USES+=		compiler:c++14-lang
 .endif
-
-do-build-DOCS-on:
-	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} doc; then \
-		(${ECHO_CMD} "===> ${.TARGET} failed unexpectedly.") | ${FMT_80} ; \
-		${FALSE}; \
-		fi)
 
 .include <bsd.port.mk>
