@@ -46,4 +46,6 @@ MPICH_USES=		mpi:mpich
 
 OPENMPI_USES=		mpi:openmpi
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].* # prevent tags like remove_viz
+
 .include <bsd.port.mk>
