@@ -11,11 +11,7 @@ WWW=		https://www.opennn.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
-
-USES=		cmake:testing compiler:c++11-lang dos2unix
+USES=		cmake:testing dos2unix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -27,7 +23,16 @@ CMAKE_OFF=	OpenNN_BUILD_EXAMPLES OpenNN_BUILD_TESTS
 CMAKE_TESTING_ON=	OpenNN_BUILD_TESTS # some tests fail, see https://github.com/Artelnics/opennn/issues/229
 CMAKE_TESTING_TARGET=	tests
 
-LDFLAGS+=	-lomp -pthread # https://github.com/Artelnics/opennn/issues/182
+LDFLAGS+=	-pthread
+LDFLAGS_powerpc=	-latomic
+
+.if !exists(/usr/include/omp.h)
+LDFLAGS+=	-fopenmp
+USES+=		compiler:gcc-c++11-lib
+.else
+LDFLAGS+=	-lomp # https://github.com/Artelnics/opennn/issues/182
+USES+=		compiler:c++11-lang
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME} && ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
