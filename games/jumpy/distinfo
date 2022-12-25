@@ -211,5 +211,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (fishfight-fishsticks-95b45b717e427fb5fa1671f3bdf686d7270ad8a1_GH0.tar.gz) = 1ddea5417e7f8aa753545ff66edb2229e7ab33401b59d69c133c4de5988f476d
 SIZE (fishfight-fishsticks-95b45b717e427fb5fa1671f3bdf686d7270ad8a1_GH0.tar.gz) = 10170
-SHA256 (fishfolks-jumpy-v0.4.3_GH0.tar.gz) = a271780ac77309b34adc6521c0133b1f828e29c0af0dca1cd69098ec584c6992
-SIZE (fishfolks-jumpy-v0.4.3_GH0.tar.gz) = 37001761
+SHA256 (fishfolk-jumpy-v0.4.3_GH0.tar.gz) = a271780ac77309b34adc6521c0133b1f828e29c0af0dca1cd69098ec584c6992
+SIZE (fishfolk-jumpy-v0.4.3_GH0.tar.gz) = 37001761

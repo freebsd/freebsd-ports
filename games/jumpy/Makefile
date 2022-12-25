@@ -20,7 +20,7 @@ USES=		cargo gl localbase:ldflags xorg
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_XORG=	x11 xi
-GH_ACCOUNT=	fishfolks
+GH_ACCOUNT=	fishfolk
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
