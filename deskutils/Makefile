@@ -208,6 +208,7 @@
     SUBDIR += preferences
     SUBDIR += presage
     SUBDIR += projectlibre
+    SUBDIR += pueue
     SUBDIR += puush
     SUBDIR += py-autokey
     SUBDIR += py-bugwarrior

@@ -1,0 +1,104 @@
+--- Cargo.lock.orig	2022-12-12 21:03:18 UTC
++++ Cargo.lock
+@@ -463,7 +463,6 @@ dependencies = [
+ [[package]]
+ name = "darwin-libproc"
+ version = "0.2.0"
+-source = "git+https://github.com/jamwaffles/darwin-libproc.git?rev=cbd571e4be87a6603de328d1f1f0ad54d7bdfedf#cbd571e4be87a6603de328d1f1f0ad54d7bdfedf"
+ dependencies = [
+  "darwin-libproc-sys",
+  "libc",
+@@ -473,7 +472,6 @@ dependencies = [
+ [[package]]
+ name = "darwin-libproc-sys"
+ version = "0.2.0"
+-source = "git+https://github.com/jamwaffles/darwin-libproc.git?rev=cbd571e4be87a6603de328d1f1f0ad54d7bdfedf#cbd571e4be87a6603de328d1f1f0ad54d7bdfedf"
+ 
+ [[package]]
+ name = "diff"
+@@ -763,12 +761,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "hex"
+-version = "0.4.3"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+-
+-[[package]]
+ name = "humantime"
+ version = "2.1.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -943,15 +935,6 @@ source = "registry+https://github.com/rust-lang/crates
+ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
+ 
+ [[package]]
+-name = "memoffset"
+-version = "0.7.1"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4"
+-dependencies = [
+- "autocfg",
+-]
+-
+-[[package]]
+ name = "minimal-lexical"
+ version = "0.2.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -987,8 +970,6 @@ dependencies = [
+  "bitflags",
+  "cfg-if",
+  "libc",
+- "memoffset",
+- "pin-utils",
+  "static_assertions",
+ ]
+ 
+@@ -1252,19 +1233,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "procfs"
+-version = "0.14.2"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b1de8dacb0873f77e6aefc6d71e044761fcc68060290f5b1089fcdf84626bb69"
+-dependencies = [
+- "bitflags",
+- "byteorder",
+- "hex",
+- "lazy_static",
+- "rustix",
+-]
+-
+-[[package]]
+ name = "pueue"
+ version = "3.0.0"
+ dependencies = [
+@@ -1283,11 +1251,9 @@ dependencies = [
+  "env_logger",
+  "handlebars",
+  "log",
+- "nix",
+  "pest",
+  "pest_derive",
+  "pretty_assertions",
+- "procfs",
+  "pueue-lib",
+  "rstest",
+  "serde",
+@@ -1301,7 +1267,6 @@ dependencies = [
+  "tempfile",
+  "test-log",
+  "tokio",
+- "whoami",
+ ]
+ 
+ [[package]]
+@@ -1320,7 +1285,6 @@ dependencies = [
+  "log",
+  "portpicker",
+  "pretty_assertions",
+- "procfs",
+  "rand 0.8.5",
+  "rcgen",
+  "rev_buf_reader",
