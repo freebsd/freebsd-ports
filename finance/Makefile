@@ -100,6 +100,7 @@
     SUBDIR += py-bitcoin
     SUBDIR += py-ebaysdk
     SUBDIR += py-fundamentalanalysis
+    SUBDIR += py-investiny
     SUBDIR += py-mplfinance
     SUBDIR += py-ofxparse
     SUBDIR += py-pycoin
