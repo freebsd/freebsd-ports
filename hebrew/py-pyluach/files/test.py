@@ -1,0 +1,16 @@
+from pyluach import dates, hebrewcal, parshios
+
+today = dates.HebrewDate.today()
+lastweek_gregorian = (today - 7).to_greg()
+print(f"lastweek_gregorian<today: ={lastweek_gregorian < today}")
+print(f"today-lastweek_gregorian={today - lastweek_gregorian}")
+greg = dates.GregorianDate(1986, 3, 21)
+heb = dates.HebrewDate(5746, 13, 10)
+print(f"greg==heb: {greg == heb}")
+purim = dates.HebrewDate(5781, 12, 14)
+print(f"purim.hebrew_day()={purim.hebrew_day()}")
+print(f"purim.hebrew_date_string()={purim.hebrew_date_string()}")
+print(f"purim.hebrew_date_string(True)={purim.hebrew_date_string(True)}")
+rosh_hashana = dates.HebrewDate(5782, 7, 1)
+print(f"rosh_hashana.holiday={rosh_hashana.holiday()}")
+print(f"rosh_hashana.holiday={rosh_hashana.holiday(hebrew=True)}")
