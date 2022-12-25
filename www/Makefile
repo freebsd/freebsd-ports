@@ -386,7 +386,6 @@
     SUBDIR += mod_mono
     SUBDIR += mod_mpm_itk
     SUBDIR += mod_perl2
-    SUBDIR += mod_php74
     SUBDIR += mod_php80
     SUBDIR += mod_php81
     SUBDIR += mod_php82
@@ -1373,9 +1372,6 @@
     SUBDIR += persepolis
     SUBDIR += pglogd
     SUBDIR += phalcon
-    SUBDIR += php74-opcache
-    SUBDIR += php74-session
-    SUBDIR += php74-tidy
     SUBDIR += php80-opcache
     SUBDIR += php80-session
     SUBDIR += php80-tidy

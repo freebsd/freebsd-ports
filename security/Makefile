@@ -776,9 +776,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php74-filter
-    SUBDIR += php74-openssl
-    SUBDIR += php74-sodium
     SUBDIR += php80-filter
     SUBDIR += php80-sodium
     SUBDIR += php81-filter

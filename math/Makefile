@@ -825,8 +825,6 @@
     SUBDIR += petanque
     SUBDIR += petiga
     SUBDIR += pffft
-    SUBDIR += php74-bcmath
-    SUBDIR += php74-gmp
     SUBDIR += php80-bcmath
     SUBDIR += php80-gmp
     SUBDIR += php81-bcmath
