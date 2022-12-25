@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-git-devtools
-PORTVERSION=	20220504
+PORTVERSION=	20221107
 CATEGORIES=	devel
 MASTER_SITES=	https://cgit.freebsd.org/src/plain/tools/tools/git/
 DISTFILES=	git-arc.sh?id=${_REV} \
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/git-arc \
 		bin/mfc-candidates \
 		man/man1/git-arc.1.gz
 
-_REV=		4b3bf909005a8b89d55fb27b8dde6128dda61751
+_REV=		613aaf59afa307fc77c8eed01962a59423b1c5f3
 
 post-patch:
 	for f in ${WRKSRC}/*\?id=*; do \
