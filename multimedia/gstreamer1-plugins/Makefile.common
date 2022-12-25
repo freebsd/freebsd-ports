@@ -177,6 +177,7 @@ BAD_GST_ALL_PLUGINS+= \
 		soundtouch \
 		spandsp \
 		speed \
+		srt \
 		srtp \
 		subenc \
 		svthevcenc \
