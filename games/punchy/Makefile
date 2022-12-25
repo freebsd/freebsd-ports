@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	fishfolks
+GH_ACCOUNT=	fishfolk
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 

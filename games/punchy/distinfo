@@ -841,5 +841,5 @@ SHA256 (rust/crates/xi-unicode-0.3.0.crate) = a67300977d3dc3f8034dae89778f502b6b
 SIZE (rust/crates/xi-unicode-0.3.0.crate) = 87001
 SHA256 (rust/crates/xml-rs-0.8.4.crate) = d2d7d3948613f75c98fd9328cfdcc45acc4d360655289d0a7d4ec931392200a3
 SIZE (rust/crates/xml-rs-0.8.4.crate) = 52690
-SHA256 (fishfolks-punchy-v0.0.4_GH0.tar.gz) = a2b956c6dd632a8cdc9a3b626598aa3b99e656070cfb9c8c4dc1b9e18e50add4
-SIZE (fishfolks-punchy-v0.0.4_GH0.tar.gz) = 28802628
+SHA256 (fishfolk-punchy-v0.0.4_GH0.tar.gz) = a2b956c6dd632a8cdc9a3b626598aa3b99e656070cfb9c8c4dc1b9e18e50add4
+SIZE (fishfolk-punchy-v0.0.4_GH0.tar.gz) = 28802628
