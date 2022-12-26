@@ -22,7 +22,8 @@ OPTIONS_DEFINE=	FZF
 OPTIONS_DEFAULT=FZF
 
 FZF_DESC=		Script with only unique lines and previews
-FZF_RUN_DEPENDS=	fzf:textproc/fzf
+FZF_RUN_DEPENDS=	fzf:textproc/fzf \
+			wl-copy:x11/wl-clipboard
 FZF_PLIST_FILES=	bin/${PORTNAME}-fzf
 
 post-install-FZF-on:
