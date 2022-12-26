@@ -26,7 +26,7 @@ FZF_RUN_DEPENDS=	fzf:textproc/fzf
 FZF_PLIST_FILES=	bin/${PORTNAME}-fzf
 
 post-install-FZF-on:
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/${FZF_PLIST_FILES:T} \
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${FZF_PLIST_FILES:T} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
