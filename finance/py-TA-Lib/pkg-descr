@@ -1,0 +1,8 @@
+Python-TA-Lib is a Python wrapper for TA-LIB based on Cython instead of SWIG.
+
+TA-Lib is widely used by trading software developers requiring to perform
+technical analysis of financial market data.
+* Includes 150+ indicators such as ADX, MACD, RSI, Stochastic, Bollinger Bands,
+  etc.
+* Candlestick pattern recognition
+* Open-source API for C/C++, Java, Perl, Python and 100% Managed .NET

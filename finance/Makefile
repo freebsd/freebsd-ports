@@ -96,6 +96,7 @@
     SUBDIR += pear_Payment_DTA
     SUBDIR += prestashop
     SUBDIR += py-Nasdaq-Data-Link
+    SUBDIR += py-TA-Lib
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-ebaysdk
