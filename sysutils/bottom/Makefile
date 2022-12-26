@@ -39,5 +39,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs/content && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include "${.CURDIR}/Makefile.crates"
 .include <bsd.port.mk>
