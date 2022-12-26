@@ -1,5 +1,5 @@
-TIMESTAMP = 1664937692
-SHA256 (grame-cncm-faust-2.50.6_GH0.tar.gz) = fc5b50d4bd1cbb142153406f4a2a8d534a816f4c37f207adae8c3dc397529ab9
-SIZE (grame-cncm-faust-2.50.6_GH0.tar.gz) = 69639553
+TIMESTAMP = 1672024334
+SHA256 (grame-cncm-faust-2.54.9_GH0.tar.gz) = 14648f020d77874e6f7411d7ff605820015645bbd4b891b24bee3d3a898e48d2
+SIZE (grame-cncm-faust-2.54.9_GH0.tar.gz) = 70137859
 SHA256 (grame-cncm-faustlibraries-f9efea9_GH0.tar.gz) = 19c98d857edee00ae7682c222377c9e4fcc51d54029d7fe59bb66b2e2cdaf77c
 SIZE (grame-cncm-faustlibraries-f9efea9_GH0.tar.gz) = 7810456
