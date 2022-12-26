@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/brndnmtthws/conky
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-USES=		cpe cmake:noninja compiler:c++11-lib gettext-runtime iconv \
+USES=		cpe cmake compiler:c++11-lib gettext-runtime iconv \
 		localbase lua:52-53 pkgconfig tar:bzip2
 
 CMAKE_ARGS=	-DBUILD_PORT_MONITORS:BOOL=false \
