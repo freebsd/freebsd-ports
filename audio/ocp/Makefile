@@ -1,12 +1,8 @@
 PORTNAME=	ocp
-PORTVERSION=	0.2.100
-PORTREVISION=	1
+PORTVERSION=	0.2.101
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
-
-PATCH_SITES=	https://github.com/mywave82/opencubicplayer/commit/
-PATCHFILES+=	b57f0279fb952db99b11006edb44ed7cb4658bed.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Legendary Open Cubic Player
