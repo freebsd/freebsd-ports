@@ -8,6 +8,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 WWW=		https://old.ed.zehome.com/?page=cpige
 
+BROKEN=		segfaults on startup
+DEPRECATED=	Doesn't work, newer versions also fails
+EXPIRATION_DATE=2023-03-31
+
 USES=		gmake
 
 MAKE_ARGS=	CC="${CC}"
