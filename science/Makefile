@@ -292,6 +292,7 @@
     SUBDIR += py-abipy
     SUBDIR += py-access
     SUBDIR += py-arbor
+    SUBDIR += py-arch
     SUBDIR += py-asap3
     SUBDIR += py-asdf
     SUBDIR += py-asdf-standard
