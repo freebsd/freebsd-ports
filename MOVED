@@ -15865,7 +15865,6 @@ editors/atom||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 devel/electron4||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 devel/electron5||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 devel/electron6||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
-audio/ardour|audio/ardour6|2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 audio/mixxx21|audio/mixxx|2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 databases/arangodb32||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 databases/arangodb33||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
@@ -17703,3 +17702,4 @@ devel/php74-pcntl|devel/php80-pcntl|2022-12-25|Has expired: Security support end
 devel/php74-sysvshm|devel/php80-sysvshm|2022-12-25|Has expired: Security support ended on 2022-11-22
 devel/php74-gettext|devel/php80-gettext|2022-12-25|Has expired: Security support ended on 2022-11-22
 devel/php74-readline|devel/php80-readline|2022-12-25|Has expired: Security support ended on 2022-11-22
+audio/ardour6|audio/ardour|2022-12-26|Remove major version from portname as we update from 6.9.0 to 7.2.0

@@ -30,7 +30,7 @@
     SUBDIR += ample
     SUBDIR += amsynth
     SUBDIR += aqualung
-    SUBDIR += ardour6
+    SUBDIR += ardour
     SUBDIR += ario
     SUBDIR += arss
     SUBDIR += artyfx-lv2
