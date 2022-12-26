@@ -5032,6 +5032,7 @@
     SUBDIR += py-prompt-toolkit
     SUBDIR += py-prompt-toolkit1
     SUBDIR += py-prompt-toolkit2
+    SUBDIR += py-property-cached
     SUBDIR += py-proselint
     SUBDIR += py-proto-plus
     SUBDIR += py-protobuf
