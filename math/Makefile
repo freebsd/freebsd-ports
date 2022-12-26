@@ -1167,6 +1167,7 @@
     SUBDIR += universal
     SUBDIR += unuran
     SUBDIR += vampire
+    SUBDIR += vdt
     SUBDIR += verdict
     SUBDIR += viennacl
     SUBDIR += vinci
