@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20221015
+PORTVERSION=	g20221225
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://git-gitea.tt-rss.org/fox/tt-rss/archive/
@@ -16,12 +16,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 
 USES=		gettext-tools php:cli,web shebangfix
 USE_PHP=	ctype dom exif fileinfo filter hash iconv intl json mbstring \
-		openssl pcntl pdo posix session tokenizer xml zip
+		openssl pcntl pdo phar posix session simplexml tokenizer xml \
+		xmlwriter zip
 USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php
 
-_GIT_TAGNAME=	602e86842
+_GIT_TAGNAME=	22f8a2274
 
 REINPLACE_ARGS=	-i ""
 
