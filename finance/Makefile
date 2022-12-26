@@ -111,6 +111,7 @@
     SUBDIR += py-mplfinance
     SUBDIR += py-ofxparse
     SUBDIR += py-pandas-market-calendars
+    SUBDIR += py-pandas-ta
     SUBDIR += py-pycoin
     SUBDIR += py-python-bitcoinlib
     SUBDIR += py-python-obelisk
