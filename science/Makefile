@@ -108,6 +108,7 @@
     SUBDIR += gbtolib
     SUBDIR += gchemutils
     SUBDIR += gdma
+    SUBDIR += geant4
     SUBDIR += gemmi
     SUBDIR += getdp
     SUBDIR += ghemical
