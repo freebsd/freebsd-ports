@@ -1,11 +1,11 @@
---- fog-vsphere.gemspec.orig	2021-10-27 13:46:00 UTC
+--- fog-vsphere.gemspec.orig	2023-01-05 21:50:05 UTC
 +++ fog-vsphere.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
  
-   if s.respond_to? :add_runtime_dependency then
-     s.add_runtime_dependency(%q<fog-core>.freeze, [">= 0"])
--    s.add_runtime_dependency(%q<rbvmomi>.freeze, [">= 1.9", "< 3"])
-+    s.add_runtime_dependency(%q<rbvmomi>.freeze, [">= 1.9", "< 4"])
-     s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
-     s.add_development_dependency(%q<pry>.freeze, ["~> 0.10"])
-     s.add_development_dependency(%q<rake>.freeze, [">= 12.3.3"])
+   s.add_runtime_dependency(%q<fog-core>.freeze, [">= 0"])
+-  s.add_runtime_dependency(%q<rbvmomi>.freeze, [">= 1.9", "< 3"])
++  s.add_runtime_dependency(%q<rbvmomi>.freeze, [">= 1.9", "< 4"])
+   s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
+   s.add_development_dependency(%q<pry>.freeze, ["~> 0.10"])
+   s.add_development_dependency(%q<rake>.freeze, [">= 12.3.3"])

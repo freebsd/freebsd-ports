@@ -1,11 +1,11 @@
---- cf-uaa-lib.gemspec.orig	2021-10-25 11:53:11 UTC
+--- cf-uaa-lib.gemspec.orig	2023-01-05 18:27:39 UTC
 +++ cf-uaa-lib.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
-   end
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
  
-   if s.respond_to? :add_runtime_dependency then
--    s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.12.0", ">= 1.12.1"])
-+    s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.12", ">= 1.12.1"])
-     s.add_runtime_dependency(%q<httpclient>.freeze, ["~> 2.8", ">= 2.8.2.4"])
-     s.add_development_dependency(%q<bundler>.freeze, ["~> 1.14"])
-     s.add_development_dependency(%q<rake>.freeze, ["~> 10.3", ">= 10.3.2"])
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.12.0", ">= 1.12.1"])
++  s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.12", ">= 1.12.1"])
+   s.add_runtime_dependency(%q<httpclient>.freeze, ["~> 2.8", ">= 2.8.2.4"])
+   s.add_development_dependency(%q<bundler>.freeze, ["~> 1.14"])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 10.3", ">= 10.3.2"])
