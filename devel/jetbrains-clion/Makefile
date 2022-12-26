@@ -1,6 +1,5 @@
 PORTNAME=	clion
-PORTVERSION=	2022.3
-PORTREVISION=	1
+PORTVERSION=	2022.3.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
