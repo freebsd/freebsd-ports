@@ -1690,6 +1690,7 @@
     SUBDIR += py-mwoauth
     SUBDIR += py-nevow
     SUBDIR += py-notebook
+    SUBDIR += py-onetimepass
     SUBDIR += py-openbrokerapi
     SUBDIR += py-pafy
     SUBDIR += py-paste
