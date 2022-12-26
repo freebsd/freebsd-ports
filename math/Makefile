@@ -477,6 +477,7 @@
     SUBDIR += mathlibtools
     SUBDIR += mathmod
     SUBDIR += mathomatic
+    SUBDIR += mathpresso
     SUBDIR += matio
     SUBDIR += matlab-installer
     SUBDIR += maxima
