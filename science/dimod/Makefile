@@ -1,5 +1,5 @@
 PORTNAME=	dimod
-DISTVERSION=	0.12.2
+DISTVERSION=	0.12.3
 CATEGORIES=	science python
 
 MAINTAINER=	yuri@FreeBSD.org
