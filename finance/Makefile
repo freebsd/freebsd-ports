@@ -110,6 +110,7 @@
     SUBDIR += py-finnhub-python
     SUBDIR += py-finviz
     SUBDIR += py-finvizfinance
+    SUBDIR += py-fredapi
     SUBDIR += py-fundamentalanalysis
     SUBDIR += py-investiny
     SUBDIR += py-investpy
