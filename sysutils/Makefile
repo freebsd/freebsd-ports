@@ -829,6 +829,7 @@
     SUBDIR += ntpstat
     SUBDIR += nut
     SUBDIR += nut-devel
+    SUBDIR += nut_exporter
     SUBDIR += nvclock
     SUBDIR += nvimpager
     SUBDIR += nvme-cli

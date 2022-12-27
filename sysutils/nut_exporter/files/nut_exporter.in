@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# PROVIDE: nut_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable nut_exporter:
+# nut_exporter_enable="YES"
+#
+# nut_exporter_enable (bool):
+#     Set it to YES to enable nut_exporter.
+#     Set to NO by default.
+# nut_exporter_listen_address (string):
+#     IP address and port to listen on.
+#     Default is ":9199".
+# nut_exporter_user (string):
+#     User to run as.
+#     Default is "www".
+# nut_exporter_metrics_namespace (string):
+#     Metrics namespace.
+#     Default is "network_ups_tools".
+# nut_exporter_tls_cert_file (string):
+#     Path to a file that contains the TLS certificate (PEM format).
+#     Default is "".
+# nut_exporter_tls_key_file (string):
+#     Path to a file that contains the TLS private key (PEM format).
+#     Default is "".
+
+. /etc/rc.subr
+
+name=nut_exporter
+rcvar=nut_exporter_enable
+
+load_rc_config $name
+
+nut_exporter_enable=${nut_exporter_enable:-"NO"}
+nut_exporter_listen_address=${nut_exporter_listen_address:-":9199"}
+nut_exporter_user=${nut_exporter_user:-"www"}
+nut_exporter_metrics_namespace=${nut_exporter_metrics_namespace:-"network_ups_tools"}
+nut_exporter_tls_cert_file=${nut_exporter_tls_cert_file:-""}
+nut_exporter_tls_key_file=${nut_exporter_tls_key_file:-""}
+
+pidfile="/var/run/${name}/${name}.pid"
+
+if [ -z ${nut_exporter_tls_cert_file} ] ; then
+        cert_arg=""
+else
+        cert_arg="--web.tls.cert_file=${nut_exporter_tls_cert_file}"
+fi
+if [ -z ${nut_exporter_tls_key_file} ] ; then
+        key_arg=""
+else
+        key_arg="--web.tls.key_file=${nut_exporter_tls_key_file}"
+fi
+
+procname=%%PREFIX%%/bin/nut_exporter
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} -t ${name} -T ${name} ${procname} \
+        --web.listen-address=${nut_exporter_listen_address} \
+        --metrics.namespace=${nut_exporter_metrics_namespace} \
+        ${cert_arg} ${key_arg}"
+
+start_precmd=start_precmd
+start_precmd()
+{
+        if [ ! -e "/var/run/${name}" ] ; then
+		# Note that ownership of the pidfile determines the user daemon runs under.
+                install -d -o ${nut_exporter_user} /var/run/${name};
+        fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
