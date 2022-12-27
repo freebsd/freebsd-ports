@@ -8,6 +8,9 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Terminal-based ripper/encoder/tagger
 WWW=		http://bach.dynet.com/crip/
 
+DEPRECATED=	Abandonware, last release in 2007. Please consider using audio/cyanrip or audio/abcde
+EXPIRATION_DATE=2023-03-31
+
 OPTIONS_DEFINE=	SOX DOCS
 SOX_DESC=	SoX audio support
 
