@@ -1,5 +1,5 @@
 PORTNAME=	pika
-DISTVERSION=	0.9.0
+DISTVERSION=	0.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
+		libfmt.so:devel/libfmt \
 		libhwloc.so:devel/hwloc2 \
 		libtcmalloc_minimal.so:devel/google-perftools
 
