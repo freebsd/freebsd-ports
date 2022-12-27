@@ -1,5 +1,5 @@
 PORTNAME=	onionshare-cli
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 DISTNAME=	onionshare_cli-${PORTVERSION}
 CATEGORIES=	www security python
 MASTER_SITES=   CHEESESHOP
