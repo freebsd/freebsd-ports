@@ -4290,6 +4290,7 @@
     SUBDIR += py-banal
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
+    SUBDIR += py-beartype
     SUBDIR += py-beautifultable
     SUBDIR += py-behave
     SUBDIR += py-beniget
