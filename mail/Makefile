@@ -521,6 +521,7 @@
     SUBDIR += py-pyspf
     SUBDIR += py-python-slimta
     SUBDIR += py-pyzmail
+    SUBDIR += py-rfc6555
     SUBDIR += py-spf-engine
     SUBDIR += py-validate_email
     SUBDIR += pymsgauth
