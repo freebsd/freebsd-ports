@@ -505,6 +505,7 @@
     SUBDIR += py-flufl.bounce
     SUBDIR += py-fuglu
     SUBDIR += py-imapclient
+    SUBDIR += py-imaplib2
     SUBDIR += py-mail-parser
     SUBDIR += py-mailmanclient
     SUBDIR += py-mailnag
