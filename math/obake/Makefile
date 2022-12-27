@@ -1,8 +1,8 @@
 PORTNAME=	obake
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0-24
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gb8cc71c
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://bluescarni.github.io/obake/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		https://github.com/bluescarni/obake/issues/148
 
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libboost_serialization.so:devel/boost-libs \
