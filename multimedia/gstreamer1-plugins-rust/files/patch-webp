@@ -1,0 +1,17 @@
+Allow using system libwebpdemux. pkg-config --libs usually adds
+-L/usr/local/lib (same as OpenSSL from ports) rather than -L/usr/lib
+and the path can be omitted via PKG_CONFIG_SYSTEM_LIBRARY_PATH.
+
+--- cargo-crates/libwebp-sys2-0.1.4/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/libwebp-sys2-0.1.4/build.rs
+@@ -18,9 +18,7 @@ fn main() {
+         cfg!(feature = "static") || env::var("LIBWEBP_SYS_STATIC").unwrap_or(String::new()) == "1";
+     if !want_static &&
+        !target.contains("msvc") && // pkg-config just never works here
+-       !(host_and_target_contain("apple") ||
+-         host_and_target_contain("freebsd") ||
+-         host_and_target_contain("dragonfly"))
++       !host_and_target_contain("apple")
+     {
+         let mut config = pkg_config::Config::new();
+         config.cargo_metadata(true);
