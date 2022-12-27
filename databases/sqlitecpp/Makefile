@@ -1,5 +1,5 @@
 PORTNAME=	sqlitecpp
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	databases devel
 
 MAINTAINER=	yuri@FreeBSD.org
