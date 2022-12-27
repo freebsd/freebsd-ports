@@ -1,6 +1,5 @@
 PORTNAME=	authenticator
-DISTVERSION=	4.1.6
-PORTREVISION=	3
+DISTVERSION=	4.2.0
 CATEGORIES=	security
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,11 +17,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gstreamer-1.0/libgstgtk4.so:multimedia/gstreamer1-
 USES=		cargo desktop-file-utils gettext gnome gstreamer llvm meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
-USE_GSTREAMER=	zbar
+USE_GSTREAMER=	gl zbar
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Authenticator
-GL_COMMIT=	fc8624342b3b4aa599b4efdefdda84514c223b18
+GL_COMMIT=	f7634a38883d055e40449383f04bc38289caf132
 CARGO_ENV=	ZBAR_INCLUDE_DIRS="${LOCALBASE}/include" ZBAR_LIB_DIRS="${LOCALBASE}/lib"
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
