@@ -1,6 +1,5 @@
 PORTNAME=	webstorm
-PORTVERSION=	2022.3
-PORTREVISION=	2
+PORTVERSION=	2022.3.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -35,7 +34,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/WebStorm-223.7571.168
+WRKSRC=		${WRKDIR}/WebStorm-223.8214.51
 
 do-install:
 # Linux/Windows/OS X only so remove them
