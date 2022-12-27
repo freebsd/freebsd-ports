@@ -1,7 +1,6 @@
 PORTNAME=		snowflake
 DISTVERSIONPREFIX=	v
-PORTVERSION=		2.3.0
-PORTREVISION=	4
+PORTVERSION=		2.4.1
 CATEGORIES=		security net
 PKGNAMESUFFIX=		-tor
 
@@ -21,7 +20,7 @@ USE_GITHUB=	nodefault
 USE_GITLAB=	nodefault
 CPE_VENDOR=	torproject
 TPO_GEOIP=	7ce4b3d98d01ff33bad8007db3f488d5b172382a
-TPO_SNOWFLAKE=	c983c13a84554d0ba1ffcdd054491090c0eafc54
+TPO_SNOWFLAKE=	7c154e5fd06693ddc4feb5962cab4a13aeebd405
 
 GO_MODULE=      git.torproject.org/pluggable-transports/snowflake.git/v2
 GO_BUILDFLAGS=  -ldflags '-s -w -extldflags "-static"'
