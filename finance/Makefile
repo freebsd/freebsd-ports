@@ -101,6 +101,7 @@
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-bt
+    SUBDIR += py-ccxt
     SUBDIR += py-ebaysdk
     SUBDIR += py-exchange-calendars
     SUBDIR += py-ffn
