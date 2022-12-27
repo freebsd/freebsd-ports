@@ -102,6 +102,7 @@
     SUBDIR += py-bitcoin
     SUBDIR += py-bt
     SUBDIR += py-ccxt
+    SUBDIR += py-degiro-connector
     SUBDIR += py-ebaysdk
     SUBDIR += py-exchange-calendars
     SUBDIR += py-ffn

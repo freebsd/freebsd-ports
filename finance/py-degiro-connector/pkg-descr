@@ -1,0 +1,4 @@
+degiro-connector is yet another library to access Degiro's API.
+
+It allows access to bond, ETF, futures, stocks, options, etc
+information.
