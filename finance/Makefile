@@ -100,6 +100,7 @@
     SUBDIR += py-alpha-vantage
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
+    SUBDIR += py-bt
     SUBDIR += py-ebaysdk
     SUBDIR += py-exchange-calendars
     SUBDIR += py-ffn
