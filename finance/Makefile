@@ -102,6 +102,7 @@
     SUBDIR += py-bitcoin
     SUBDIR += py-ebaysdk
     SUBDIR += py-exchange-calendars
+    SUBDIR += py-ffn
     SUBDIR += py-financedatabase
     SUBDIR += py-finnhub-python
     SUBDIR += py-finviz
