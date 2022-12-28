@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20221215
+DISTVERSION=	g20221228
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_COMMIT=	566c0791caddc52e45c18b19cd650f79fe312e37
+GL_COMMIT=	84e70c479e81eebe9933bec586c5fd144456294d
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
