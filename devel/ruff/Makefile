@@ -321,6 +321,6 @@ CARGO_CRATES=	adler-1.0.2 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.*PORTSCOUT=	limit:^.*0\.0\.2[56789].* # don't report before 0.0.25x+
+PORTSCOUT=	limit:^.*0\.0\.2[56789].* # don't report before 0.0.25x+
 
 .include <bsd.port.mk>
