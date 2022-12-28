@@ -1,3 +1,30 @@
+  <vuln vid="4b60c3d9-8640-11ed-a762-482ae324f959">
+    <topic>netdata -- multiple vulnerabilities with streaming</topic>
+    <affects>
+      <package>
+	<name>netdata</name>
+	<range><lt>1.37.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Netdata reports:</p>
+	<blockquote cite="https://github.com/netdata/netdata/security/advisories">
+	  <p>GHSA-xg38-3vmw-2978: Netdata Streaming Alert Command Injection</p>
+	  <p>GHSA-jx85-39cw-66f2: Netdata Streaming Authentication Bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/netdata/netdata/security/advisories/GHSA-xg38-3vmw-2978</url>
+      <url>https://github.com/netdata/netdata/security/advisories/GHSA-jx85-39cw-66f2</url>
+    </references>
+    <dates>
+      <discovery>2022-11-30</discovery>
+      <entry>2022-12-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f0421b1-8398-11ed-973d-002b67dfc673">
     <topic>freerdp -- multiple vulnerabilities</topic>
     <affects>
