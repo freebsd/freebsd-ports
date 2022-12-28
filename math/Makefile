@@ -980,6 +980,7 @@
     SUBDIR += py-pycosat
     SUBDIR += py-pygsl
     SUBDIR += py-pygslodeiv2
+    SUBDIR += py-pyhdfe
     SUBDIR += py-pyhull
     SUBDIR += py-pymc3
     SUBDIR += py-pynauty
