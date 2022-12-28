@@ -7203,6 +7203,7 @@
     SUBDIR += rubymine
     SUBDIR += rudeconfig
     SUBDIR += rudiments
+    SUBDIR += ruff
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen
     SUBDIR += rust-cbindgen
