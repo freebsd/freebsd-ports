@@ -1,6 +1,5 @@
 PORTNAME=	chemicalfun
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.1.7
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${PORTNAME}/get/${BB_COMMIT}${EXTRACT_SUFX}?dummy=/:src
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:src
@@ -9,14 +8,14 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for working with chemical reactions and formulas
 WWW=		https://bitbucket.org/gems4/chemicalfun/src/master/
 
-BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
-		spdlog>0:devel/spdlog
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libfmt.so:devel/libfmt # due to SPDLOG_FMT_EXTERNAL
+LIB_DEPENDS+=	libspdlog.so:devel/spdlog
 
 USES=		cmake:testing compiler:c++17-lang eigen:3 localbase
 
 BB_ACCOUNT=	gems4
-BB_COMMIT=	0e0edc84688c
+BB_COMMIT=	7b43744ec72d
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${PORTNAME}-${BB_COMMIT}
 
