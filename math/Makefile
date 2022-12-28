@@ -905,6 +905,7 @@
     SUBDIR += py-fenics-ffcx
     SUBDIR += py-fenics-ufl
     SUBDIR += py-flax
+    SUBDIR += py-formulaic
     SUBDIR += py-fpylll
     SUBDIR += py-fraction
     SUBDIR += py-fvcore
