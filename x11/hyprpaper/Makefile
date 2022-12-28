@@ -1,5 +1,5 @@
 PORTNAME=	hyprpaper
-PORTVERSION=	s20221218
+PORTVERSION=	s20221228
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GCC=	yes:build # C++23
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
-GH_TAGNAME=	60013ee
+GH_TAGNAME=	aefd638
 LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 PLIST_FILES=	bin/${PORTNAME}
 
