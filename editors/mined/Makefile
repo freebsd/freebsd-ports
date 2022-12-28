@@ -5,7 +5,7 @@ MASTER_SITES=	http://towo.net/mined/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
-WWW=		http://towo.net/mined/
+WWW=		https://mined.github.io/
 
 LICENSE=	GPLv3
 
