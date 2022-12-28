@@ -40,4 +40,6 @@ GH_ACCOUNT=	nteract
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].*$$ # prevent tags like push
+
 .include <bsd.port.mk>
