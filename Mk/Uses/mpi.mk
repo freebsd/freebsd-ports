@@ -28,12 +28,7 @@ USES+=	pkgconfig
 .  endif
 
 .  if ${mpi_ARGS} == mpich
-LIB_DEPENDS+=	libmpich.so:net/mpich	\
-		libhwloc.so:devel/hwloc2	\
-		libjson-c.so:devel/json-c	\
-		libfabric.so:net/libfabric	\
-		libze_loader.so:devel/level-zero\
-		libepoll-shim.so:devel/libepoll-shim
+LIB_DEPENDS+=	libmpich.so:net/mpich
 MPI_HOME=	${LOCALBASE}
 MPI_LIBS+=	`pkgconf --libs mpich`
 .    if ${USES:Mfortran}
