@@ -1,6 +1,6 @@
 PORTNAME=	coreterminal
 DISTVERSION=	4.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libqtermwidget5.so:x11-toolkits/qtermwidget \
 		libcprime-core.so:deskutils/libcprime
 RUN_DEPENDS=	coregarage:deskutils/coregarage
 
-USES=		cmake localbase:ldflags qt:5
+USES=		cmake desktop-file-utils localbase:ldflags qt:5
 USE_QT=		buildtools:build core gui qmake:build serialport widgets
 USE_GITLAB=	yes
 
