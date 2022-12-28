@@ -1,8 +1,10 @@
-TIMESTAMP = 1672048596
+TIMESTAMP = 1672218660
 SHA256 (gcc-12.2.0.tar.xz) = e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff
 SIZE (gcc-12.2.0.tar.xz) = 84645292
 SHA256 (gnat-aarch64-freebsd.13-12.2.0_2.tar.xz) = 93d625979ffdaf4a6a320e92cca902c1298773e8e57a77987af5f06ed8f84b4d
 SIZE (gnat-aarch64-freebsd.13-12.2.0_2.tar.xz) = 62352064
+SHA256 (gnat-i386-freebsd.12-12.2.0_2.tar.xz) = c741417c4c16c3849ac515b98f2505edb960bd7b16aeb79d3bbb223a9a2b8c68
+SIZE (gnat-i386-freebsd.12-12.2.0_2.tar.xz) = 71535936
 SHA256 (gnat-i386-freebsd.13-12.2.0_2.tar.xz) = 77a7d3cfb8e4b7cb19de6eb85706baec2b62f86be759548a7c876fd4e81bc42a
 SIZE (gnat-i386-freebsd.13-12.2.0_2.tar.xz) = 71342768
 SHA256 (gnat-i386-freebsd.14-12.2.0_2.tar.xz) = ef5d5d17b32b4c9c4115c59d1061a1f82334f336bd12f424ad8ad9673f5c63fd
