@@ -412,6 +412,7 @@
     SUBDIR += py-orange3-network
     SUBDIR += py-orange3-timeseries
     SUBDIR += py-palettable
+    SUBDIR += py-papermill
     SUBDIR += py-pexpect
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
