@@ -266,7 +266,6 @@
     SUBDIR += obs-scrab
     SUBDIR += obs-streamfx
     SUBDIR += obs-studio
-    SUBDIR += obs-transition-matrix
     SUBDIR += obs-v4l2sink
     SUBDIR += obs-waveform
     SUBDIR += obs-websocket
