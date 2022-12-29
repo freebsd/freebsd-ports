@@ -1,3 +1,28 @@
+  <vuln vid="140a20e1-8769-11ed-b074-002b67dfc673">
+    <topic>webtrees -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>webtrees</name>
+	<range><lt>1.7.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Webtrees reports:</p>
+	<blockquote cite="https://webtrees.net/blog/2022/06/04/new-webtrees-release-1-7-20.html">
+	  <p>GEDCOM imports containing errors and HTML displayed unescaped.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <url>https://webtrees.net/blog/2022/06/04/new-webtrees-release-1-7-20.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-04</discovery>
+      <entry>2022-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d379aa14-8729-11ed-b988-080027d3a315">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
