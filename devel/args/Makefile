@@ -1,5 +1,5 @@
 PORTNAME=	args
-DISTVERSION=	6.3.0
+DISTVERSION=	6.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,24 +9,19 @@ WWW=		https://github.com/Taywee/args
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake:testing
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Taywee
 
 CMAKE_OFF=	ARGS_BUILD_EXAMPLE ARGS_BUILD_UNITTESTS
+CMAKE_TESTING_ON=	ARGS_BUILD_UNITTESTS
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	include/args.hxx
-
-do-install: # https://github.com/reconquest/args/issues/1
-	${INSTALL_DATA} ${WRKSRC}/args.hxx ${STAGEDIR}${PREFIX}/include
-
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DARGS_BUILD_UNITTESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+PLIST_FILES=	include/args.hxx \
+		lib/cmake/args/args-config.cmake \
+		libdata/pkgconfig/args.pc
 
 .include <bsd.port.mk>
