@@ -1,11 +1,17 @@
---- plugins/CMakeLists.txt.orig	2021-06-11 14:20:50 UTC
+--- plugins/CMakeLists.txt.orig	2022-08-31 19:05:07 UTC
 +++ plugins/CMakeLists.txt
-@@ -51,7 +51,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
- 	add_subdirectory(linux-pulseaudio)
- 	add_subdirectory(linux-v4l2)
- 	add_subdirectory(linux-jack)
--	add_subdirectory(linux-alsa)
-+	#add_subdirectory(linux-alsa)
- 	add_subdirectory(vlc-video)
- 	add_subdirectory(oss-audio)
- 	add_subdirectory(sndio)
+@@ -67,7 +67,7 @@ elseif(OS_FREEBSD)
+   add_subdirectory(linux-pulseaudio)
+   add_subdirectory(linux-v4l2)
+   add_subdirectory(linux-jack)
+-  add_subdirectory(linux-alsa)
++  #add_subdirectory(linux-alsa)
+   add_subdirectory(vlc-video)
+   add_subdirectory(oss-audio)
+   add_subdirectory(sndio)
+@@ -97,4 +97,4 @@ add_subdirectory(obs-filters)
+ add_subdirectory(obs-transitions)
+ add_subdirectory(rtmp-services)
+ add_subdirectory(text-freetype2)
+-add_subdirectory(aja)
++#add_subdirectory(aja) # this requires libajantv2 which might be difficult to port
