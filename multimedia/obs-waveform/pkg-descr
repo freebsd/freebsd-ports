@@ -1,0 +1,2 @@
+Waveform is an audio spectral analysis plugin for OBS Studio.
+It is based on FFTW and optimized for AVX2/FMA3.
