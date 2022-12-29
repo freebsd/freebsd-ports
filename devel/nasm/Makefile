@@ -1,5 +1,5 @@
 PORTNAME=	nasm
-PORTVERSION=	2.15.05
+PORTVERSION=	2.16.01
 PORTEPOCH=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	https://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \
@@ -21,19 +21,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_strspn=yes
 
 MAKE_ARGS+=	INSTALLROOT=${STAGEDIR}
-INSTALL_TARGET=	install #needed for RDOFF_INSTALL_TARGET
 
+PLIST_FILES=	bin/nasm \
+		bin/ndisasm \
+		man/man1/nasm.1.gz \
+		man/man1/ndisasm.1.gz
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS RDOFF
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-RDOFF_DESC=	Install tools to handle RDOFF object files
 
 DOCS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-xdoc${EXTRACT_SUFX}
-
-RDOFF_INSTALL_TARGET=	install_rdf
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
