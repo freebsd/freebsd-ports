@@ -16,7 +16,8 @@ LICENSE_NAME=	FreeBSD base licenses
 LICENSE_FILE=	${WRKDIR}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le riscv64
+FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le \
+		powerpcspe riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
 powerpc_BUILD_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
@@ -47,6 +48,7 @@ _SYSROOT_VER=				${_SYSROOT_VER_${FLAVOR}:U12.3-RELEASE}
 _SYSROOT_VER_powerpc=			13.1-RELEASE
 _SYSROOT_VER_powerpc64=			13.1-RELEASE
 _SYSROOT_VER_powerpc64le=		13.1-RELEASE
+_SYSROOT_VER_powerpcspe=		13.1-RELEASE
 _SYSROOT_VER_riscv64=			13.1-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
@@ -57,6 +59,7 @@ _SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz \
 					gcc12-12.2.0_5.pkg
 _SYSROOT_DIST_powerpc64=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
+_SYSROOT_DIST_powerpcspe=		releases/powerpc/powerpcspe/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_riscv64=			releases/riscv/riscv64/${_SYSROOT_VER}/base.txz
 _SYSROOT_INCLUDE=			COPYRIGHT lib/* usr/include/* usr/lib/* \
 					usr/libdata/* \

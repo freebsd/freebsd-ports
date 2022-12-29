@@ -1,4 +1,4 @@
-TIMESTAMP = 1669136531
+TIMESTAMP = 1672257589
 SHA256 (rust/bootstrap/aarch64/12.3-RELEASE/base.txz) = 31b16128fc1ed5fd46b2e7716ad33c2d5e7c8f4ebe1730f60672272c0586afb5
 SIZE (rust/bootstrap/aarch64/12.3-RELEASE/base.txz) = 158532436
 SHA256 (rust/bootstrap/amd64/12.3-RELEASE/base.txz) = e85b256930a2fbc04b80334106afecba0f11e52e32ffa197a88d7319cf059840
@@ -7,13 +7,15 @@ SHA256 (rust/bootstrap/armv7/12.3-RELEASE/FreeBSD-12.3-RELEASE-arm-armv7-WANDBOA
 SIZE (rust/bootstrap/armv7/12.3-RELEASE/FreeBSD-12.3-RELEASE-arm-armv7-WANDBOARD.img.xz) = 376958060
 SHA256 (rust/bootstrap/i386/12.3-RELEASE/base.txz) = 789c9a08bdf9ece4a6e73454daf4940f79889efdc0e8b37db02cc26147a93a47
 SIZE (rust/bootstrap/i386/12.3-RELEASE/base.txz) = 171833512
-SHA256 (rust/bootstrap/powerpc/13.1-RELEASE/gcc12-12.2.0_5.pkg) = 5dd4b50414dbae7931866277a9e10806895de53ead9d468084c1f9134de3e74e
-SIZE (rust/bootstrap/powerpc/13.1-RELEASE/gcc12-12.2.0_5.pkg) = 66298724
 SHA256 (rust/bootstrap/powerpc/13.1-RELEASE/base.txz) = 8a6c0e610abdf8c62d835db8fecc4ecd40d17ed33af329b710dbdbbbba165aef
 SIZE (rust/bootstrap/powerpc/13.1-RELEASE/base.txz) = 170885352
+SHA256 (rust/bootstrap/powerpc/13.1-RELEASE/gcc12-12.2.0_5.pkg) = 5dd4b50414dbae7931866277a9e10806895de53ead9d468084c1f9134de3e74e
+SIZE (rust/bootstrap/powerpc/13.1-RELEASE/gcc12-12.2.0_5.pkg) = 66298724
 SHA256 (rust/bootstrap/powerpc64/13.1-RELEASE/base.txz) = 5d4e205ca371fbbdb517e1f92277d613a666d58f9321258f5ecccd9961157e32
 SIZE (rust/bootstrap/powerpc64/13.1-RELEASE/base.txz) = 182419696
 SHA256 (rust/bootstrap/powerpc64le/13.1-RELEASE/base.txz) = 356ab5c4b84b931aee45f38e5aaffa0abb5fc4e14669a1e627696623623845d3
 SIZE (rust/bootstrap/powerpc64le/13.1-RELEASE/base.txz) = 188932732
+SHA256 (rust/bootstrap/powerpcspe/13.1-RELEASE/base.txz) = 886aab6f347fe62fc71e68c363c3475e81ebbde9df5b458e301de21d2dc90b35
+SIZE (rust/bootstrap/powerpcspe/13.1-RELEASE/base.txz) = 175008132
 SHA256 (rust/bootstrap/riscv64/13.1-RELEASE/base.txz) = 2bbdb0157271ed3a89471cf731ce98aade0d723f6cf32ba6c2bc58b9077a8bce
 SIZE (rust/bootstrap/riscv64/13.1-RELEASE/base.txz) = 179325560
