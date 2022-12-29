@@ -301,6 +301,7 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/libuserenv.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libusp10.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libuuid.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libuxtheme.a
+wine-proton/lib/wine/%%WINEARCH%%-unix/libvcruntime140.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libvdmdbg.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libversion.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libvulkan-1.a
@@ -660,6 +661,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/cryptdlg.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/cryptdll.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/cryptext.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/cryptnet.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/cryptowinrt.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/cryptsp.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/cryptui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/cscript.exe
@@ -854,6 +856,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/gameux.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gamingtcui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gdi32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gdiplus.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/getminidump.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/glu32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gpkcsp.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/hal.dll
@@ -1091,6 +1094,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/libuserenv.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libusp10.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libuuid.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libuxtheme.a
+wine-proton/lib/wine/%%WINEARCH%%-windows/libvcruntime140.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libvdmdbg.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libversion.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libvulkan-1.a
@@ -1385,6 +1389,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/tbs.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/tdh.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/tdi.sys
 wine-proton/lib/wine/%%WINEARCH%%-windows/termsv.exe
+wine-proton/lib/wine/%%WINEARCH%%-windows/threadpoolwinrt.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/traffic.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/twain_32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/twinapi.appcore.dll
@@ -1437,6 +1442,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/wimgapi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/win32u.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.devices.enumeration.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.gaming.input.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.gaming.ui.gamebar.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
