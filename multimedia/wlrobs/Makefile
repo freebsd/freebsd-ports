@@ -12,6 +12,8 @@ WWW=		https://hg.sr.ht/~scoopta/wlrobs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+BROKEN=		fails to build with obs-studio-28.1.2
+
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libobs.so:multimedia/obs-studio
 
