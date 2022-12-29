@@ -1,7 +1,6 @@
 PORTNAME=	julia
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.4
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	3
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -32,15 +31,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopenlibm.so:math/openlibm
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		gmake compiler:c++14-lang cpe fortran python perl5 \
-		shebangfix blaslapack:openblas
+USES=		gmake cpe fortran python perl5 blaslapack:openblas
 
 CPE_VENDOR=	julialang
 
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
-
-SHEBANG_GLOB=	*.sh
 
 MAKE_ARGS+=	NO_GIT=1 \
 		USE_BINARYBUILDER=0 \
@@ -82,7 +78,6 @@ PORTDOCS=	html
 OPTIONS_DEFINE=		DEBUG DOCS NATIVE
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
-
 
 NATIVE_DESC=		Build with native CPU JIT tuning
 NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native

@@ -753,8 +753,7 @@ libexec/7z
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/repl.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/resolve.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/resolve_utils.jl
-%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/resolvedata1.jl
-%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/resolvedata2.jl
+%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/resolvedata.tar.gz
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/runtests.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/sandbox.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/subdir.jl
