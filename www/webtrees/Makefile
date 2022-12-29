@@ -1,20 +1,19 @@
 PORTNAME=	webtrees
-PORTVERSION=	1.7.18
+PORTVERSION=	1.7.20
 CATEGORIES=	www
 MASTER_SITES=	http://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Online genealogy viewer (for PHP 5.3-7.3)
 WWW=		https://webtrees.net/
 
 LICENSE=	GPLv3+
 
+USES=		cpe gettext php shebangfix zip
+
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=		cpe php shebangfix zip
-SHEBANG_FILES=	webtrees/vendor/ezyang/htmlpurifier/maintenance/*.php \
-		webtrees/vendor/ezyang/htmlpurifier/maintenance/*.sh \
-		webtrees/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
+SHEBANG_FILES=	webtrees/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 USE_PHP=	calendar dom filter gd json pcre pdo_mysql session simplexml xml
 NO_BUILD=	yes
@@ -25,8 +24,6 @@ SUB_LIST=	VERSION_SUFFIX=${PKGNAMESUFFIX}
 
 post-patch: .SILENT
 	${RM} -r ${WRKSRC}/webtrees/vendor/michelf/php-markdown/test
-	${RM} ${WRKSRC}/webtrees/vendor/michelf/php-markdown/.editorconfig
-	${RM} ${WRKSRC}/webtrees/vendor/michelf/php-markdown/.scrutinizer.yml
 	${RM} ${WRKSRC}/webtrees/vendor/michelf/php-markdown/phpunit.xml.dist
 
 do-install:
