@@ -1,5 +1,6 @@
 PORTNAME=	neochat
 DISTVERSION=	22.11
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 BUILD_DEPENDS=	libquotient>=0.6.11:net-im/libquotient \
 		kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
 		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons \
-		${LOCALBASE}/include/qcoro5/qcoro/qcoro.h:devel/qcoro
+		${LOCALBASE}/include/qcoro5/qcoro/qcoro.h:devel/qcoro@qt5
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
 RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
 		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
