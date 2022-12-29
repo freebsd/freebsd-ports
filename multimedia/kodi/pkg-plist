@@ -129,6 +129,7 @@ include/kodi/tools/StringUtils.h
 include/kodi/tools/Thread.h
 include/kodi/tools/Timer.h
 include/kodi/versions.h
+lib/kodi/cmake/KodiConfig.cmake
 %%KODIGBM%%lib/kodi/kodi-gbm
 %%KODIWAYLAND%%lib/kodi/kodi-wayland
 %%KODIX11%%lib/kodi/kodi-x11
@@ -136,8 +137,6 @@ include/kodi/versions.h
 %%X11%%lib/kodi/kodi-xrandr
 %%SSE4_1%%lib/kodi/system/libsse4-%%ARCH%%-freebsd.so
 lib/kodi/system/players/VideoPlayer/libdvdnav-%%ARCH%%-freebsd.so
-share/man/man1/kodi.1.gz
-share/man/man1/kodi.bin.1.gz
 share/applications/kodi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.Linux.md
@@ -162,7 +161,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/game.controller.default/resources/icon.png
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.af_za/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.am_et/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ar_ma/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ar_sa/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ast_es/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.az_az/strings.po
@@ -188,6 +186,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fa_af/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fa_ir/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fil/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fo_fo/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fr_ca/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fr_fr/strings.po
@@ -219,10 +218,8 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.pl_pl/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.pt_br/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.pt_pt/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ro_md/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ro_ro/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ru_ru/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.scn/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.si_lk/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.sk_sk/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.sl_si/strings.po
@@ -247,7 +244,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/game.controller.snes/resources/icon.png
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.af_za/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.am_et/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ar_ma/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ar_sa/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ast_es/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.az_az/strings.po
@@ -273,6 +269,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fa_af/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fa_ir/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fil/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fo_fo/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fr_ca/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fr_fr/strings.po
@@ -304,10 +301,8 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.pl_pl/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.pt_br/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.pt_pt/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ro_md/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ro_ro/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ru_ru/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.scn/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.si_lk/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.sk_sk/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.sl_si/strings.po
@@ -1719,7 +1714,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/cmake/GenerateVersionedFiles.cmake
 %%DATADIR%%/cmake/GeneratorSetup.cmake
 %%DATADIR%%/cmake/HandleDepends.cmake
-%%DATADIR%%/cmake/KodiConfig.cmake
 %%DATADIR%%/cmake/Macros.cmake
 %%DATADIR%%/cmake/PathSetup.cmake
 %%DATADIR%%/cmake/PrepareEnv.cmake
@@ -1955,5 +1949,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/userdata/ModeLines_template.xml
 %%DATADIR%%/userdata/RssFeeds.xml
 %%DATADIR%%/userdata/iOS/sources.xml
+share/man/man1/kodi.1.gz
+share/man/man1/kodi.bin.1.gz
 share/metainfo/org.xbmc.kodi.metainfo.xml
 share/xsessions/kodi.desktop
