@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-02-07 19:42:24 UTC
+--- CMakeLists.txt.orig	2022-11-17 13:03:00 UTC
 +++ CMakeLists.txt
 @@ -18,7 +18,7 @@ project(onnx C CXX)
  option(ONNX_BUILD_BENCHMARKS "Build ONNX micro-benchmarks" OFF)
