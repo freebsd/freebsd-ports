@@ -17707,3 +17707,4 @@ multimedia/obs-transition-matrix||2022-12-29|Removed: not compatible with obs-st
 multimedia/obs-websocket||2022-12-29|Removed: included in obs-studio-28.1.2
 multimedia/obs-ndi||2022-12-29|Removed: it depends on a closed commercial library
 multimedia/obs-v4l2sink||2022-12-29|Removed: obs-studio-28.1.2 now contains same functionality
+multimedia/obs-audio-spectralizer|multimedia/obs-waveform|2022-12-29|Removed obsolete port in favor of multimedia/obs-waveform

@@ -260,7 +260,6 @@
     SUBDIR += nymphcast
     SUBDIR += nymphcastlib
     SUBDIR += nymphrpc
-    SUBDIR += obs-audio-spectralizer
     SUBDIR += obs-qtwebkit
     SUBDIR += obs-scrab
     SUBDIR += obs-streamfx
