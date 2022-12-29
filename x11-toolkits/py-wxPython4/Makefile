@@ -6,6 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	42
 DIST_SUBDIR=	python
 
+PATCH_SITES=	https://github.com/wxWidgets/Phoenix/commit/
+PATCHFILES=	2e9169effa9abf14f34f8436a791b8829eea7774.patch:-p1
+
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit for the Python programming language
 WWW=		https://www.wxpython.org
@@ -16,8 +19,7 @@ LICENSE_NAME_WXWINDOWS=	wxWindows Library Licence, Version 3.1
 LICENSE_FILE_WXWINDOWS=	${WRKSRC}/license/licence.txt
 LICENSE_PERMS_WXWINDOWS=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}attrdict>0:devel/py-attrdict@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gl localbase pkgconfig python:3.6+
 USE_GL=		glu
