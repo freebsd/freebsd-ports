@@ -9,6 +9,9 @@ WWW=		https://webtrees.net/
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Uses obsolete PHP version; use www/webtrees21 instead
+EXPIRATION_DATE=	2023-01-30
+
 USES=		cpe gettext php shebangfix zip
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
