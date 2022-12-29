@@ -690,6 +690,7 @@
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
+    SUBDIR += lua-puremagic
     SUBDIR += luckybackup
     SUBDIR += lxinput
     SUBDIR += lxqt-admin
