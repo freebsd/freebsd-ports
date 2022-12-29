@@ -1,4 +1,4 @@
---- base/Makefile.orig	2022-01-04 19:47:19 UTC
+--- base/Makefile.orig	2022-12-23 22:14:27 UTC
 +++ base/Makefile
 @@ -190,7 +190,7 @@ symlink_p7zip: $(build_bindir)/7z$(EXE)
  
@@ -9,3 +9,12 @@
  endif
  
  $(build_bindir)/7z$(EXE):
+@@ -218,6 +218,8 @@ else
+ $(eval $(call symlink_system_library,CSL,libgcc_s,1))
+ endif
+ endif
++else
++$(eval $(call symlink_system_library,CSL,libgcc_s,1))
+ endif
+ ifneq (,$(LIBGFORTRAN_VERSION))
+ $(eval $(call symlink_system_library,CSL,libgfortran,$(LIBGFORTRAN_VERSION)))

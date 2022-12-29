@@ -1,6 +1,6 @@
---- Makefile.orig	2022-11-18 12:39:16 UTC
+--- Makefile.orig	2022-12-23 22:14:27 UTC
 +++ Makefile
-@@ -229,7 +229,7 @@ endef
+@@ -229,7 +229,7 @@ define stringreplace
  endef
  
  
@@ -31,7 +31,7 @@
  
  	# Update RPATH entries and JL_SYSTEM_IMAGE_PATH if $(private_libdir_rel) != $(build_private_libdir_rel)
  ifneq ($(private_libdir_rel),$(build_private_libdir_rel))
-@@ -392,26 +384,15 @@ endif
+@@ -402,26 +394,15 @@ endif
  endif
  endif
  
