@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 .if ${FLAVOR:U} != tools
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
-# For i386 we have unknown type name 'vm_page_t'
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
