@@ -1,6 +1,6 @@
---- source/encoders/handlers/amf_shared.cpp.orig	2022-06-19 17:00:02 UTC
+--- source/encoders/handlers/amf_shared.cpp.orig	2022-12-02 04:28:08 UTC
 +++ source/encoders/handlers/amf_shared.cpp
-@@ -109,7 +109,7 @@ bool streamfx::encoder::ffmpeg::handler::amf::is_avail
+@@ -113,7 +113,7 @@ bool streamfx::encoder::ffmpeg::handler::amf::is_avail
  #else
  	std::filesystem::path lib_name = std::filesystem::u8path("amfrt32.dll");
  #endif
