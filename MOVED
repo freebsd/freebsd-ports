@@ -17705,3 +17705,4 @@ devel/php74-readline|devel/php80-readline|2022-12-25|Has expired: Security suppo
 audio/ardour6|audio/ardour|2022-12-26|Remove major version from portname as we update from 6.9.0 to 7.2.0
 multimedia/obs-transition-matrix||2022-12-29|Removed: not compatible with obs-studio-28.1.2
 multimedia/obs-websocket||2022-12-29|Removed: included in obs-studio-28.1.2
+multimedia/obs-ndi||2022-12-29|Removed: it depends on a closed commercial library
