@@ -17706,3 +17706,4 @@ audio/ardour6|audio/ardour|2022-12-26|Remove major version from portname as we u
 multimedia/obs-transition-matrix||2022-12-29|Removed: not compatible with obs-studio-28.1.2
 multimedia/obs-websocket||2022-12-29|Removed: included in obs-studio-28.1.2
 multimedia/obs-ndi||2022-12-29|Removed: it depends on a closed commercial library
+multimedia/obs-v4l2sink||2022-12-29|Removed: obs-studio-28.1.2 now contains same functionality
