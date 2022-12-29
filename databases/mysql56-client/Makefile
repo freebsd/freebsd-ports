@@ -6,7 +6,7 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
-DEPRECATED=	Upstream support ended on Febuary 2021
+DEPRECATED=	Upstream support ended in February 2021
 EXPIRATION_DATE=	2023-06-30
 
 BROKEN_sparc64=	Does not build: reports unsupported compiler
