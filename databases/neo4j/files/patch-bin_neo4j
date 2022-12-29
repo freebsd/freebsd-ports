@@ -14,8 +14,8 @@
    [ -n "$REPO" ] && REPO=`cygpath --path --windows "$REPO"`
  fi
 +
-+NEO4J_CONF_ENV='NEO4J_CONF=%%NEO4J_CONFDIR%%'
-+export NEO4J_CONF_ENV
++NEO4J_CONF=%%NEO4J_CONFDIR%%
++export NEO4J_CONF
  
  exec "$JAVACMD" -Xmx128m \
    -classpath "$CLASSPATH" \
