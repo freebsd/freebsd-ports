@@ -1,0 +1,8 @@
+Discover and Listen to your favourite internet radio stations.
+
+ - Uses radio-browser.info catalog
+ - Presets various selection of stations (random, top, trending, genres)
+ - Save favourite stations
+ - Sends a click count to radio-browser.info on station click
+ - Sends a vote count to radio-browser.info when you star a station
+ - DBus integration to pause/resume playing and show station info in Wingpanel

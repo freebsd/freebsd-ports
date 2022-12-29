@@ -1,0 +1,17 @@
+TIMESTAMP = 1669145549
+SHA256 (adrg-xdg-v0.3.3_GH0.tar.gz) = 07493a0702766a2f713321928a0f304c34f900dee445f5de3a4e43c715d2e21d
+SIZE (adrg-xdg-v0.3.3_GH0.tar.gz) = 16502
+SHA256 (go-check-check-41f04d3bba15_GH0.tar.gz) = 2d5b1036909b241e44f0d6a7cfa936cf9f875efb4f0af077cd61585c6d0c0432
+SIZE (go-check-check-41f04d3bba15_GH0.tar.gz) = 31614
+SHA256 (go-yaml-yaml-496545a6307b_GH0.tar.gz) = ed0e11dc14bbbd4127031d7e8b9e58dad885e2c44a16359d2f64b71d1d1f692a
+SIZE (go-yaml-yaml-496545a6307b_GH0.tar.gz) = 90156
+SHA256 (godbus-dbus-v5.0.4_GH0.tar.gz) = cc43459f4c165c1f782aea9a1b79405b5a07cab9694a637246dacde9c889bc56
+SIZE (godbus-dbus-v5.0.4_GH0.tar.gz) = 69965
+SHA256 (integrii-flaggy-v1.5.2_GH0.tar.gz) = 87ea4cf3fbee1ed283ebd768ed81f953f5e61df8ca00aa0bca870cf3ff650e1c
+SIZE (integrii-flaggy-v1.5.2_GH0.tar.gz) = 48225
+SHA256 (kr-pretty-v0.2.0_GH0.tar.gz) = 6dc2207cfe03d3b9d65460cbada52c533ed273726a78d9f485c439ad813fe990
+SIZE (kr-pretty-v0.2.0_GH0.tar.gz) = 8760
+SHA256 (sj14-astral-v0.1.2_GH0.tar.gz) = e3305b66e64505f763ff5d87b31bef8dae78a0780ad93864d09341aebdd7466a
+SIZE (sj14-astral-v0.1.2_GH0.tar.gz) = 266290
+SHA256 (WhyNotHugo-darkman-227df1b16cfda5a2c6e8916cf9c51f40d827fabc_GL0.tar.gz) = f7716b37cd6c6fc6854ae40f471d61c7bb5d194d5326d92617585da0f0f4577a
+SIZE (WhyNotHugo-darkman-227df1b16cfda5a2c6e8916cf9c51f40d827fabc_GL0.tar.gz) = 24107

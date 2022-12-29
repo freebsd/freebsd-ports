@@ -1,7 +1,7 @@
 PORTNAME=	dunst
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.0
-CATEGORIES=	sysutils wayland
+CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Lightweight notification daemon
@@ -33,6 +33,7 @@ DUNSTIFY_DESC=	Install dunstify (alternative to the notify-send)
 DUNSTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 DUNSTIFY_PLIST_FILES=	bin/dunstify
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_MAKE_ENV_OFF=	WAYLAND=0

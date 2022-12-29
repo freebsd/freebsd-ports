@@ -20,7 +20,7 @@ SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 
 USE_PERL5=	run
 USE_TEX=	latex dvipsk
-USES=		magick:6,run perl5 shebangfix zip
+USES=		magick:6,run perl5 shebangfix tex zip
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

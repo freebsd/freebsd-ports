@@ -1,6 +1,7 @@
 PORTNAME=	zaproxy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -35,11 +36,13 @@ DESKTOP_ENTRIES="ZAP" "OWASP ZAP" "${PREFIX}/share/pixmaps/zaproxy.png" "${PORTN
 DEV_UPDATE_MODE=	no
 
 DEPS_CACHE_DIR=	${WRKDIR}
+EXCLUDE_TASK=	--exclude-task :zap:downloadMainAddOns
 
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
 .if (${DEV_UPDATE_MODE} == "yes")
+EXCLUDE_TASK=	#
 post-build:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
 	@cd ${WRKSRC}/zap/build && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-plugins${EXTRACT_SUFX} mainAddOns
@@ -63,7 +66,7 @@ post-patch:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
-		${GRADLE_ARGS} --build-cache :zap:distCore --exclude-task :zap:downloadMainAddOns
+		${GRADLE_ARGS} --build-cache :zap:distCore ${EXCLUDE_TASK}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zap/build/distFiles/zap.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2022-09-16 07:46:17 UTC
++++ CMakeLists.txt
+@@ -49,3 +49,5 @@ include(G4CMakeMain)
+ #
+ include(G4CMakeMain)
+ 
++find_library(EXECINFO NAMES execinfo)
++target_link_libraries(G4run PUBLIC ${EXECINFO})

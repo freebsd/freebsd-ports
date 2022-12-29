@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.4
 #PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
@@ -40,7 +40,8 @@ WEBENGINE_DESC=		QT5 Webengine support
 
 #DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 #			doxygen:devel/doxygen
-#DOCS_USE=		tex=dvipsk:build,latex:build
+#DOCS_USES=		tex
+#DOCS_USE=		TEX=dvipsk:build,latex:build
 #DOCS_CMAKE_ON=		-DWITH_DOC:BOOL=ON
 
 WEBENGINE_VARS=		USE_QT+=webengine

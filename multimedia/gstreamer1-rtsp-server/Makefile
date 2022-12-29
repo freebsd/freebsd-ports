@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer1-rtsp-server
-PORTVERSION=	1.20.4
+PORTVERSION=	1.20.5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gst-rtsp-server/
 DISTNAME=	gst-rtsp-server-${PORTVERSION}
@@ -18,6 +18,6 @@ USE_GSTREAMER=	good bad
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-PLIST_SUB=	VERSION=1.0 SOVERSION=0.2004.0
+PLIST_SUB=	VERSION=1.0 SOVERSION=0.2005.0
 
 .include <bsd.port.mk>

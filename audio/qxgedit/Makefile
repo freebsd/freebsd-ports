@@ -1,5 +1,5 @@
 PORTNAME=	qxgedit
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6
+USES=		cmake compiler:c++17-lang gl pkgconfig qt:6
 USE_QT=		base svg tools:build
 USE_GL=		gl opengl
 

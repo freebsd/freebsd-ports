@@ -1,3 +1,3 @@
-TIMESTAMP = 1660454526
-SHA256 (dwave-neal-0.6.0.dev0.tar.gz) = 209e872c325cbdd79f05364624ff562abdf7e3cd0c52ac8b7657fa4ae165b742
-SIZE (dwave-neal-0.6.0.dev0.tar.gz) = 6500
+TIMESTAMP = 1671954060
+SHA256 (dwave-neal-0.6.0.tar.gz) = 8ce51fee3339195df1ab69920fdb5afc496b5fd945e487fad3547c983d90c564
+SIZE (dwave-neal-0.6.0.tar.gz) = 6418

@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	LATEX2PNG
 LATEX2PNG_DESC=	Install latex2png utility
 OPTIONS_SUB=	yes
 
-LATEX2PNG_USES=		magick:6,run
+LATEX2PNG_USES=		magick:6,run tex
 LATEX2PNG_USE=		TEX=dvipsk,latex,xetex
 
 MAKE_ARGS+=	MANDIR=${PREFIX}/man/man1 CFGDIR=${DATADIR}/cfg \

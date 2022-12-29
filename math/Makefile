@@ -477,6 +477,7 @@
     SUBDIR += mathlibtools
     SUBDIR += mathmod
     SUBDIR += mathomatic
+    SUBDIR += mathpresso
     SUBDIR += matio
     SUBDIR += matlab-installer
     SUBDIR += maxima
@@ -825,8 +826,6 @@
     SUBDIR += petanque
     SUBDIR += petiga
     SUBDIR += pffft
-    SUBDIR += php74-bcmath
-    SUBDIR += php74-gmp
     SUBDIR += php80-bcmath
     SUBDIR += php80-gmp
     SUBDIR += php81-bcmath
@@ -867,6 +866,8 @@
     SUBDIR += py-algopy
     SUBDIR += py-altgraph
     SUBDIR += py-amply
+    SUBDIR += py-animatplot
+    SUBDIR += py-animatplot-ng
     SUBDIR += py-apgl
     SUBDIR += py-arviz
     SUBDIR += py-arybo
@@ -904,6 +905,7 @@
     SUBDIR += py-fenics-ffcx
     SUBDIR += py-fenics-ufl
     SUBDIR += py-flax
+    SUBDIR += py-formulaic
     SUBDIR += py-fpylll
     SUBDIR += py-fraction
     SUBDIR += py-fvcore
@@ -930,6 +932,7 @@
     SUBDIR += py-kiwisolver
     SUBDIR += py-levmar
     SUBDIR += py-libpoly
+    SUBDIR += py-linearmodels
     SUBDIR += py-lmfit
     SUBDIR += py-luminol
     SUBDIR += py-mathics
@@ -978,6 +981,7 @@
     SUBDIR += py-pycosat
     SUBDIR += py-pygsl
     SUBDIR += py-pygslodeiv2
+    SUBDIR += py-pyhdfe
     SUBDIR += py-pyhull
     SUBDIR += py-pymc3
     SUBDIR += py-pynauty
@@ -1012,6 +1016,7 @@
     SUBDIR += py-secp256k1
     SUBDIR += py-seriate
     SUBDIR += py-simhash
+    SUBDIR += py-slepc4py
     SUBDIR += py-snuggs
     SUBDIR += py-spectral
     SUBDIR += py-spglm
@@ -1095,6 +1100,7 @@
     SUBDIR += sisl
     SUBDIR += slatec
     SUBDIR += sleef
+    SUBDIR += slepc
     SUBDIR += slgrace
     SUBDIR += slicot
     SUBDIR += snns
@@ -1164,12 +1170,12 @@
     SUBDIR += universal
     SUBDIR += unuran
     SUBDIR += vampire
+    SUBDIR += vdt
     SUBDIR += verdict
     SUBDIR += viennacl
     SUBDIR += vinci
     SUBDIR += visualpolylib
     SUBDIR += vowpal_wabbit
-    SUBDIR += vtk6
     SUBDIR += vtk8
     SUBDIR += vtk9
     SUBDIR += wavelib

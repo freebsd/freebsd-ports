@@ -49,6 +49,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Cayenne.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Chicago.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Chihuahua.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Ciudad_Juarez.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Costa_Rica.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cuiaba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Danmarkshavn.pm
@@ -110,7 +111,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Nuuk.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Ojinaga.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Panama.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Pangnirtung.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Paramaribo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Phoenix.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Port_au_Prince.pm

@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	2022-11-02 23:27:35 UTC
 +++ pyproject.toml
-@@ -27,10 +27,10 @@ all = [
+@@ -27,23 +27,23 @@ all = [
  
  [project.optional-dependencies]
  all = [
@@ -12,9 +12,10 @@
 -    "pycodestyle>=2.9.0,<2.10.0",
 +    "pycodestyle>=2.9.0",
      "pydocstyle>=2.0.0",
-     "pyflakes>=2.5.0,<2.6.0",
+-    "pyflakes>=2.5.0,<2.6.0",
++    "pyflakes>=2.5.0",
      "pylint>=2.5.0",
-@@ -38,10 +38,10 @@ all = [
+     "rope>=0.10.5",
      "yapf",
      "whatthepatch"
  ]
@@ -26,5 +27,8 @@
 -pycodestyle = ["pycodestyle>=2.9.0,<2.10.0"]
 +pycodestyle = ["pycodestyle>=2.9.0"]
  pydocstyle = ["pydocstyle>=2.0.0"]
- pyflakes = ["pyflakes>=2.5.0,<2.6.0"]
+-pyflakes = ["pyflakes>=2.5.0,<2.6.0"]
++pyflakes = ["pyflakes>=2.5.0"]
  pylint = ["pylint>=2.5.0"]
+ rope = ["rope>0.10.5"]
+ yapf = ["yapf", "whatthepatch>=1.0.2,<2.0.0"]

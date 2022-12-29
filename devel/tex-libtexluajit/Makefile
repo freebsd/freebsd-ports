@@ -18,9 +18,8 @@ BROKEN_powerpc64=	Does not build: uninitialized constant Config (NameError)
 BROKEN_riscv64=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_sparc64=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz tex
 USE_LDCONFIG=	yes
-USE_TEX=	yes
 
 GNU_CONFIGURE=	yes
 

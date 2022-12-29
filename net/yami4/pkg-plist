@@ -1,3 +1,4 @@
+include/yami4-core/Doxygen.cfg
 include/yami4-core/agent.h
 include/yami4-core/allocator.h
 include/yami4-core/channel_descriptor.h
@@ -11,6 +12,7 @@ include/yami4-core/parameter_type.h
 include/yami4-core/parameters.h
 include/yami4-core/raw_buffer_data_source.h
 include/yami4-core/serializable.h
+include/yami4-cpp/Doxygen.cfg
 include/yami4-cpp/activity_statistics_monitor.h
 include/yami4-cpp/agent.h
 include/yami4-cpp/agent_impl_base.h

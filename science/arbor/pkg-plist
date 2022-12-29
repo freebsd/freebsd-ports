@@ -103,7 +103,6 @@ include/arborio/label_parse.hpp
 include/arborio/neurolucida.hpp
 include/arborio/neuroml.hpp
 include/arborio/swcio.hpp
-include/arborio/xml.hpp
 lib/cmake/arbor/arbor-config-version.cmake
 lib/cmake/arbor/arbor-config.cmake
 lib/cmake/arbor/arbor-targets-%%CMAKE_BUILD_TYPE%%.cmake

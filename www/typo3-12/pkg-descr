@@ -1,14 +1,19 @@
-The latest version with Long Term Support (LTS). It will have full support until
-31 October 2024 and security bugfixes until 30 April 2026.
+We support each TYPO3 sprint release until the next minor version is published.
+Once released in April 2023, the long-term support version of TYPO3 12 will receive
+bug fixes until October 2024, and we will provide security updates until April 2026.
 
-* Unified editor experience
-* Advanced filelist module
-* Sharable Deep Links in the TYPO3 Backend
-* Improved collaboration and Workflow features
-* Flexible and Secure Multi-factor Authentication
-* And a lot of Improvements for Developers
+We encourage users and agencies to install and use the sprint releases until the
+LTS release is available. Further details about the releases and planned release
+dates are available in the roadmap.
+
+* Increased performance
+* Improved backend usability
+* Create custom content types quickly and easily
+* Top-modern dependent libraries (CKEditor v5, Symfony v6, Doctrine v3)
+* And many improvements for developers
 
 System requirements
 * PHP 8.1
-* MySQL 8.0+ / MariaDB / Postgres / SQLite support
+* MariaDB 10.3+ / MySQL 8.0+ / PostgreSQL 10.0+ / SQLite 3.8.3+
 * Modern Browsers
+* Detailed list of requirements: https://get.typo3.org/version/12#system-requirements

@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.25-14442 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g809e880bd1
+DISTVERSION=	0.0.25-14507 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g9d432187aa
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,11 +34,11 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.12.0-2-gc2aa9dd:hidapi/3rdparty/hidapi/hidapi \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2022.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
-		KhronosGroup:glslang:11.12.0:glslang/3rdparty/glslang/glslang \
+		KhronosGroup:glslang:11.11.0-2-g10423ec6:glslang/3rdparty/glslang/glslang \
 		kinetiknz:cubeb:cubeb-0.2-1391-gdc511c6:cubeb/3rdparty/cubeb/cubeb \
 		wolfSSL:wolfssl:v5.5.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
-USES=		cmake compiler:c++17-lang elfctl gl iconv:wchar_t localbase:ldflags \
+USES=		cmake elfctl gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
 USE_GL=		gl glew
 USE_QT=		qmake:build buildtools:build core concurrent dbus gui multimedia svg widgets
@@ -51,7 +51,7 @@ ELF_FEATURES=	+noaslr,wxneeded:bin/${PORTNAME}
 
 .if ${FLAVOR:U} == qt6 || make(makesum) || make(fetch)
 PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:qt6
-PATCHFILES+=	052d8cceb679.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
+PATCHFILES+=	59e69944056b.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
 PKGNAMESUFFIX=	-${FLAVOR}
 USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
@@ -105,29 +105,24 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
-.include <bsd.port.pre.mk>
-
-# Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
-.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
-LLVM_DEFAULT=	15 # bump if not latest release
-.endif
-BUILD_DEPENDS+=	clang++${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-USES:=		${USES:Ncompiler*}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
+.if !exists(/usr/include/c++/v1/concepts) || make(makesum) || make(fetch)
+USES+=		llvm:13,build
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
 
 # XXX Move into separate port and standardize via USES
-GH_TUPLE+=	llvm:llvm-project:llvmorg-15.0.6:libcxx
+GH_TUPLE+=	llvm:llvm-project:llvmorg-13.0.1:libcxx
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
 LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
 
 pre-configure:	bundled-libcxx
 bundled-libcxx:
 	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS:M*Ninja*} \
-		-DLIBCXX_INCLUDE_BENCHMARKS:BOOL=OFF \
 		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
 		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

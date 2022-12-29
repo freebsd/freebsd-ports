@@ -3,25 +3,19 @@
 # PROVIDE: buildbot-worker
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
+
 #
-# Add the following lines to /etc/rc.conf to run buildbot-worker:
+# Add the following lines to /etc/rc.conf to enable buildbot-worker:
 #
 # buildbot_worker_enable (bool):	Set to "YES" to enable buildbot-worker.
-#					Default: "NO"
-#
+#               					Default: "NO"
 # buildbot_worker_flags (flags):	Set extra command flags here. See buildbot-worker(8)
-#					Default: Empty ("").
-#
-# buildbot_worker_uid (user):		User to run buildbot-worker as.
-#					Default: "buildbot"
-#
-# buildbot_worker_gid (group):		Group to run buildbot-worker as.
-#					Default: "buildbot"
-#
-# buildbot_worker_basedir (path):    	Location for buildbot-worker base directory
-#                               	Default: %%PREFIX%%/etc/buildbot-worker
-#
-# buildbot_worker_profiles (str):    	Define profiles names. Space-delimited.
+#               					Default: Empty ("").
+# buildbot_worker_user (user):		User to run buildbot-worker as.
+#               					Default: "buildbot"
+# buildbot_worker_basedir (path):   Location for buildbot-worker base directory
+#                               	Default: /usr/local/etc/buildbot-worker
+# buildbot_worker_profiles (str):   Define profiles names. Space-delimited.
 #                               	Default: Empty ("")
 #
 # This rc.d script supports multiple "profiles". When profiles are
@@ -32,33 +26,34 @@
 # buildbot_worker_profiles="foo bar"
 #
 # buildbot_worker_foo_enable="YES"
-# buildbot_worker_foo_basedir="/usr/home/foo/buildbot"
-# buildbot_worker_foo_uid="foo"
-# buildbot_worker_foo_gid="foo"
+# buildbot_worker_foo_basedir="/var/db/buildbot/workers/foo"
+# buildbot_worker_foo_user="foo"
 #
 # buildbot_worker_bar_enable="YES"
-# buildbot_worker_bar_basedir="/usr/home/buildbot/"
+# buildbot_worker_bar_basedir="/var/db/buildbot/workers/bar"
 
 . /etc/rc.subr
 
 export PATH=${PATH}:%%LOCALBASE%%/bin
 
-name=buildbot_worker
+name="buildbot_worker"
 desc="Buildbot Buildworker"
 rcvar=buildbot_worker_enable
-
+command="/usr/local/bin/buildbot-worker-3.9"
 load_rc_config ${name}
 
 # These are just the defaults, they might get overriden for a specific profile.
 eval ": \${${name}_enable:=\"NO\"}"
 eval ": \${${name}_flags:=\"\"}"
-eval ": \${${name}_uid:=\"buildbot\"}"
-eval ": \${${name}_gid:=\"buildbot\"}"
-eval ": \${${name}_basedir:=\"%%PREFIX%%/etc/${name}\"}"
+eval ": \${${name}_user:=\"buildbot\"}"
+eval ": \${${name}_basedir:=\"/var/db/buildbot/workers\"}"
 
-command="%%PREFIX%%/bin/twistd-%%PYTHON_VER%%"
-command_interpreter="%%PYTHON_CMD%%"
+reload_cmd="${name}_reload"
+start_precmd="${name}_prestart"
+stop_precmd="${name}_prestop"
+
 pidfile="${buildbot_worker_basedir}/twistd.pid"
+procname="%%PYTHON_CMD%%"
 
 	# A specific profile is specified in the command
 	if [ -n "$2" ]; then
@@ -67,9 +62,8 @@ pidfile="${buildbot_worker_basedir}/twistd.pid"
 		if [ -n "${buildbot_worker_profiles}" ]; then
 			eval buildbot_worker_enable="\${buildbot_worker_${profile}_enable:-${buildbot_worker_enable}}"
 			eval buildbot_worker_flags="\${buildbot_worker_${profile}_flags:-${buildbot_worker_flags}}"
-			eval buildbot_worker_uid="\${buildbot_worker_${profile}_uid:-${buildbot_worker_uid}}"
-			eval buildbot_worker_gid="\${buildbot_worker_${profile}_gid:-${buildbot_worker_gid}}"
-			eval buildbot_worker_basedir="\${buildbot_worker_${profile}_basedir:-${buildbot_worker_basedir}}"
+			eval buildbot_worker_user="\${buildbot_worker_${profile}_user:-${buildbot_worker_user}}"
+			eval buildbot_worker_basedir="\${buildbot_worker_${profile}_basedir:-${buildbot_worker_basedir}/${profile}}"
 			eval pidfile="\${buildbot_worker_${profile}_basedir:-${buildbot_worker_basedir}}/twistd.pid"
 		else
 			echo "$0: extra argument ignored"
@@ -112,9 +106,26 @@ pidfile="${buildbot_worker_basedir}/twistd.pid"
 		fi
 	fi
 
-# run_rc_command would send ${name}_flags as parameters to $command (daemon)
-# This ensures they are actually passed to fcgiwrap instead.
-actual_buildbot_worker_flags="${buildbot_worker_flags}"
-buildbot_worker_flags=""
-command_args="--uid=${buildbot_worker_uid} --gid=${buildbot_worker_gid} --pidfile=${pidfile} --python=${buildbot_worker_basedir}/buildbot.tac ${actual_buildbot_worker_flags}"
+buildbot_worker_prestart()
+{
+    if [ ! -f "${buildbot_worker_basedir}/buildbot.tac" ]; then
+        echo "Worker is not configured."
+        echo "Run the following command to create a new worker:"
+        echo "su -m ${buildbot_worker_user} -c \"exec ${command} create-worker ${buildbot_worker_basedir} <MASTER HOST> <MASTER USER> <MASTER_PASS>\""
+        exit 1
+    fi
+	rc_flags="start ${buildbot_worker_basedir} ${rc_flags}"
+}
+
+buildbot_worker_prestop()
+{
+	rc_flags="stop ${buildbot_worker_basedir} ${rc_flags}"
+}
+
+buildbot_worker_reload()
+{
+	rc_flags="${buildbot_worker_basedir} ${rc_flags}"
+	${command} sighup ${rc_flags}
+}
+
 run_rc_command "$1"

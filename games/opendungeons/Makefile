@@ -25,6 +25,8 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libOgreMain.so:graphics/ogre3d19
 
 BROKEN=		error: no template named 'conditional_t' in namespace 'std'
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=2023-02-14
 
 USES=		cmake pkgconfig
 

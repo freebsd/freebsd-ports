@@ -1,11 +1,8 @@
 PORTNAME=	freerdp
-DISTVERSION=	2.8.1
-PORTREVISION=	1
-CATEGORIES=	net comms wayland
+DISTVERSION=	2.9.0
+CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
-
-#PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -126,6 +123,7 @@ SWSCALE_LIB_DEPENDS=	libswscale.so:multimedia/ffmpeg
 SWSCALE_CMAKE_BOOL=	WITH_SWSCALE
 
 WAYLAND_DESC=		Build FreeRDP Wayland client
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-cursor.so:graphics/wayland \

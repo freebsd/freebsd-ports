@@ -42,6 +42,7 @@ lib/libKF5FileMetaData.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KFileMetaData.pri
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_epubextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
+%%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_fb2extractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_ffmpegextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_odfextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_office2007extractor.so
@@ -75,6 +76,7 @@ share/locale/gl/LC_MESSAGES/kfilemetadata5.mo
 share/locale/hu/LC_MESSAGES/kfilemetadata5.mo
 share/locale/ia/LC_MESSAGES/kfilemetadata5.mo
 share/locale/id/LC_MESSAGES/kfilemetadata5.mo
+share/locale/ie/LC_MESSAGES/kfilemetadata5.mo
 share/locale/it/LC_MESSAGES/kfilemetadata5.mo
 share/locale/ja/LC_MESSAGES/kfilemetadata5.mo
 share/locale/ka/LC_MESSAGES/kfilemetadata5.mo

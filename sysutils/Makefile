@@ -690,6 +690,7 @@
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
+    SUBDIR += lua-puremagic
     SUBDIR += luckybackup
     SUBDIR += lxinput
     SUBDIR += lxqt-admin
@@ -829,6 +830,7 @@
     SUBDIR += ntpstat
     SUBDIR += nut
     SUBDIR += nut-devel
+    SUBDIR += nut_exporter
     SUBDIR += nvclock
     SUBDIR += nvimpager
     SUBDIR += nvme-cli
@@ -989,8 +991,6 @@
     SUBDIR += pfstat
     SUBDIR += pftables
     SUBDIR += pftop
-    SUBDIR += php74-fileinfo
-    SUBDIR += php74-posix
     SUBDIR += php80-fileinfo
     SUBDIR += php80-posix
     SUBDIR += php81-fileinfo

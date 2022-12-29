@@ -82,6 +82,9 @@
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon
+    SUBDIR += icinga-ipl-i18n
+    SUBDIR += icinga-php-library
+    SUBDIR += icinga-php-thirdparty
     SUBDIR += icinga2
     SUBDIR += icingaweb2
     SUBDIR += icingaweb2-module-businessprocess
@@ -94,7 +97,6 @@
     SUBDIR += icingaweb2-module-graphite
     SUBDIR += icingaweb2-module-idoreports
     SUBDIR += icingaweb2-module-incubator
-    SUBDIR += icingaweb2-module-ipl
     SUBDIR += icingaweb2-module-jira
     SUBDIR += icingaweb2-module-map
     SUBDIR += icingaweb2-module-pdfexport
@@ -283,7 +285,6 @@
     SUBDIR += pandorafms_server
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
-    SUBDIR += php74-snmp
     SUBDIR += php80-snmp
     SUBDIR += php81-snmp
     SUBDIR += php82-snmp

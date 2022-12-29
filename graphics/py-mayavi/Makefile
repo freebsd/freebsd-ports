@@ -1,6 +1,6 @@
 PORTNAME=	mayavi
 DISTVERSION=	4.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}traitsui>=7.0.0:graphics/py-traitsui@${PY_FLAVOR} # list is in mayavi/__init__.py
 
 USES=		python:3.6+ shebangfix
-USE_PYTHON=	noflavors distutils autoplist # noflavors to force python to be of the same version as in vtk9, which always has default python version
+USE_PYTHON=	distutils autoplist
 
 USE_WX=		3.2
 WX_COMPS=	python:run

@@ -164,6 +164,8 @@ post-patch:
 	# issue 220865: MySQL developers forgot that FreeBSD != Linux
 	@${REINPLACE_CMD} -e 's|%%FREEBSD_LOCAL_LIB%%|${LOCALBASE}/lib|g' \
 	    ${WRKSRC}/configure.cmake
+	@${REINPLACE_CMD} -e 's|__clang__|__undefined__|g' \
+	    ${WRKSRC}/boost/boost_1_59_0/boost/atomic/detail/ops_gcc_x86_dcas.hpp
 
 .if !defined(CLIENT_ONLY)
 post-install:

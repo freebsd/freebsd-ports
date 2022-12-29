@@ -1,12 +1,11 @@
 PORTNAME=	libidn2
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.3.4
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of IDNA2008 internationalized domain names
-WWW=		https://www.gnu.org/software/libidn/ #libidn2
+WWW=		https://www.gnu.org/software/libidn/\#libidn2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,5 +23,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 INFO=		libidn2
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

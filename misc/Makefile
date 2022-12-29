@@ -360,7 +360,6 @@
     SUBDIR += pecl-timezonedb
     SUBDIR += perkeep
     SUBDIR += pfm
-    SUBDIR += php74-calendar
     SUBDIR += php80-calendar
     SUBDIR += php81-calendar
     SUBDIR += php82-calendar
@@ -377,11 +376,14 @@
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
     SUBDIR += py-apache-beam
+    SUBDIR += py-ascii-magic
     SUBDIR += py-boost-histogram
+    SUBDIR += py-censys
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-crudini
+    SUBDIR += py-detecta
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
     SUBDIR += py-emoji
@@ -410,6 +412,7 @@
     SUBDIR += py-orange3-network
     SUBDIR += py-orange3-timeseries
     SUBDIR += py-palettable
+    SUBDIR += py-papermill
     SUBDIR += py-pexpect
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar

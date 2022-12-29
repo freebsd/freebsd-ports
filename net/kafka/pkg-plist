@@ -285,5 +285,5 @@
 @sample %%ETCDIR%%/kraft/controller.properties.sample
 @sample %%ETCDIR%%/kraft/server.properties.sample
 @dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_DBDIR%%
-@dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_DBDIR%%/kraft
+@dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_DBDIR_KRAFT%%
 @dir(%%KAFKA_USER%%,%%KAFKA_GROUP%%,755) %%KAFKA_LOGDIR%%

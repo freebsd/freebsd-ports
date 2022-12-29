@@ -1,5 +1,5 @@
---- ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/src/crypto/CMakeLists.txt.orig	2022-08-16 17:41:13.291238000 +0200
-+++ ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/src/crypto/CMakeLists.txt	2022-08-16 17:41:48.826715000 +0200
+--- ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/src/crypto/CMakeLists.txt.orig	2022-08-16 17:41:13 UTC
++++ ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/src/crypto/CMakeLists.txt
 @@ -264,6 +264,7 @@ add_library(
    cipher_extra/tls_cbc.c
    cmac/cmac.c
@@ -8,8 +8,8 @@
    cpu-aarch64-fuchsia.c
    cpu-aarch64-linux.c
    cpu-aarch64-win.c
---- ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/src/crypto/cpu-aarch64-freebsd.c.orig	2022-08-16 17:42:08.418245000 +0200
-+++ ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/src/crypto/cpu-aarch64-freebsd.c	2022-08-16 17:40:34.409448000 +0200
+--- ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/src/crypto/cpu-aarch64-freebsd.c.orig	2022-08-16 17:42:08 UTC
++++ ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/src/crypto/cpu-aarch64-freebsd.c
 @@ -0,0 +1,62 @@
 +/* Copyright (c) 2016, Google Inc.
 + *

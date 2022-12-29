@@ -1,3 +1,351 @@
+  <vuln vid="d379aa14-8729-11ed-b988-080027d3a315">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.9</lt></range>
+      </package>
+      <package>
+	<name>mediawiki138</name>
+	<range><lt>1.38.5</lt></range>
+      </package>
+      <package>
+	<name>mediawiki139</name>
+	<range><lt>1.39.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawikwi reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/UEMW64LVEH3BEXCJV43CVS6XPYURKWU3/">
+	  <p>(T322637, CVE-2022-PENDING) SECURITY: Make sqlite DB files not world readable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-PENDING</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/UEMW64LVEH3BEXCJV43CVS6XPYURKWU3/</url>
+    </references>
+    <dates>
+      <discovery>2022-12-01</discovery>
+      <entry>2022-12-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b60c3d9-8640-11ed-a762-482ae324f959">
+    <topic>netdata -- multiple vulnerabilities with streaming</topic>
+    <affects>
+      <package>
+	<name>netdata</name>
+	<range><lt>1.37.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Netdata reports:</p>
+	<blockquote cite="https://github.com/netdata/netdata/security/advisories">
+	  <p>GHSA-xg38-3vmw-2978: Netdata Streaming Alert Command Injection</p>
+	  <p>GHSA-jx85-39cw-66f2: Netdata Streaming Authentication Bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/netdata/netdata/security/advisories/GHSA-xg38-3vmw-2978</url>
+      <url>https://github.com/netdata/netdata/security/advisories/GHSA-jx85-39cw-66f2</url>
+    </references>
+    <dates>
+      <discovery>2022-11-30</discovery>
+      <entry>2022-12-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1f0421b1-8398-11ed-973d-002b67dfc673">
+    <topic>freerdp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freerdp</name>
+	<range><lt>2.9.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FreeRDP reports:</p>
+	<blockquote cite="https://www.freerdp.com/2022/11/16/2_9_0-release">
+	  <p>GHSA-5w4j-mrrh-jjrm: Out of bound read in zgfx decoder.</p>
+	  <p>GHSA-99cm-4gw7-c8jh: Undefined behaviour in zgfx decoder.</p>
+	  <p>GHSA-387j-8j96-7q35: Division by zero in urbdrc channel.</p>
+	  <p>GHSA-mvxm-wfj2-5fvh: Missing length validation in urbdrc channel.</p>
+	  <p>GHSA-qfq2-82qr-7f4j: Heap buffer overflow in urbdrc channel.</p>
+	  <p>GHSA-c5xq-8v35-pffg: Missing path sanitation with `drive` channel.</p>
+	  <p>GHSA-pmv3-wpw4-pw5h: Missing input length validation in `drive` channel.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39316</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39316</url>
+      <cvename>CVE-2022-39317</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39317</url>
+      <cvename>CVE-2022-39318</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39318</url>
+      <cvename>CVE-2022-39319</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39319</url>
+      <cvename>CVE-2022-39320</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39320</url>
+      <cvename>CVE-2022-39347</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-39347</url>
+      <cvename>CVE-2022-41877</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-41877</url>
+    </references>
+    <dates>
+      <discovery>2022-12-24</discovery>
+      <entry>2022-12-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d0da046a-81e6-11ed-96ca-0800277bb8a8">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.17.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21849">
+	  <p>Do not allow Ghost access to limited visible user/org</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21580">
+	  <p>Fix package access for admins and inactive users</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.17.4</url>
+    </references>
+    <dates>
+      <discovery>2022-10-24</discovery>
+      <entry>2022-12-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d9e154c9-7de9-11ed-adca-080027d3a315">
+    <topic>typo3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3-11-php81</name>
+	<range><lt>11.5.20</lt></range>
+      </package>
+      <package>
+	<name>typo3-12-php81</name>
+	<range><lt>12.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TYPO3 reports:</p>
+	<blockquote cite="https://typo3.org/article/typo3-1211-11520-and-10433-security-releases-published">
+	  <p>TYPO3-CORE-SA-2022-012: Denial of Service in Page Error Handling.</p>
+	  <p>TYPO3-CORE-SA-2022-013: Weak Authentication in Frontend Login.</p>
+	  <p>TYPO3-CORE-SA-2022-014: Insufficient Session Expiration after Password Reset.</p>
+	  <p>TYPO3-CORE-SA-2022-015: Arbitrary Code Execution via Form Framework.</p>
+	  <p>TYPO3-CORE-SA-2022-016: Sensitive Information Disclosure via YAML Placeholder Expressions in Site Configuration.</p>
+	  <p>TYPO3-CORE-SA-2022-017: By-passing Cross-Site Scripting Protection in HTML Sanitizer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23499</cvename>
+      <cvename>CVE-2022-23500</cvename>
+      <cvename>CVE-2022-23501</cvename>
+      <cvename>CVE-2022-23502</cvename>
+      <cvename>CVE-2022-23503</cvename>
+      <cvename>CVE-2022-23504</cvename>
+      <url>https://typo3.org/article/typo3-1211-11520-and-10433-security-releases-published</url>
+    </references>
+    <dates>
+      <discovery>2022-12-13</discovery>
+      <entry>2022-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83eb9374-7b97-11ed-be8f-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>108.0.5359.124</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>108.0.5359.124</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/12/stable-channel-update-for-desktop_13.html">
+	  <p>This release contains 8 security fixes, including:</p>
+	  <ul>
+	    <li>[1383991] High CVE-2022-4436: Use after free in Blink Media. Reported by Anonymous on 2022-11-15</li>
+	    <li>[1394692] High CVE-2022-4437: Use after free in Mojo IPC. Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability Research Institute on 2022-11-30</li>
+	    <li>[1381871] High CVE-2022-4438: Use after free in Blink Frames. Reported by Anonymous on 2022-11-07</li>
+	    <li>[1392661] High CVE-2022-4439: Use after free in Aura. Reported by Anonymous on 2022-11-22</li>
+	    <li>[1382761] Medium CVE-2022-4440: Use after free in Profiles. Reported by Anonymous on 2022-11-09</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4436</cvename>
+      <cvename>CVE-2022-4437</cvename>
+      <cvename>CVE-2022-4438</cvename>
+      <cvename>CVE-2022-4439</cvename>
+      <cvename>CVE-2022-4440</cvename>
+      <url>https://chromereleases.googleblog.com/2022/12/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2022-12-13</discovery>
+      <entry>2022-12-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0f99a30c-7b4b-11ed-9168-080027f5fec9">
+    <topic>curl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.86.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Stenberg reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <dl>
+	    <dt>CVE-2022-32221: POST following PUT confusion</dt>
+	    <dd>
+	      When doing HTTP(S) transfers, libcurl might erroneously
+	      use the read callback
+	      (<code>CURLOPT_READFUNCTION</code>) to ask for data to
+	      send, even when the <code>CURLOPT_POSTFIELDS</code>
+	      option has been set, if the same handle previously was
+	      used to issue a <code>PUT</code> request which used that
+	      callback. This flaw may surprise the application and
+	      cause it to misbehave and either send off the wrong data
+	      or use memory after free or similar in the subsequent
+	      <code>POST</code> request. The problem exists in the
+	      logic for a reused handle when it is changed from a PUT
+	      to a POST.
+	    </dd>
+	    <dt>CVE-2022-35260: .netrc parser out-of-bounds access</dt>
+	    <dd>
+	      curl can be told to parse a .netrc file for
+	      credentials. If that file ends in a line with
+	      consecutive non-white space letters and no newline, curl
+	      could read past the end of the stack-based buffer, and
+	      if the read works, write a zero byte possibly beyond its
+	      boundary. This will in most cases cause a segfault or
+	      similar, but circumstances might also cause different
+	      outcomes. If a malicious user can provide a custom netrc
+	      file to an application or otherwise affect its contents,
+	      this flaw could be used as denial-of-service.
+	    </dd>
+	    <dt>CVE-2022-42915: HTTP proxy double-free</dt>
+	    <dd>
+	      f curl is told to use an HTTP proxy for a transfer with
+	      a non-HTTP(S) URL, it sets up the connection to the
+	      remote server by issuing a CONNECT request to the proxy,
+	      and then tunnels the rest of protocol through. An HTTP
+	      proxy might refuse this request (HTTP proxies often only
+	      allow outgoing connections to specific port numbers,
+	      like 443 for HTTPS) and instead return a non-200
+	      response code to the client. Due to flaws in the
+	      error/cleanup handling, this could trigger a double-free
+	      in curl if one of the following schemes were used in the
+	      URL for the transfer: dict, gopher, gophers, ldap,
+	      ldaps, rtmp, rtmps, telnet
+	    </dd>
+	    <dt>CVE-2022-42916: HSTS bypass via IDN</dt>
+	    <dd>
+	      curl's HSTS check could be bypassed to trick it to keep
+	      using HTTP. Using its HSTS support, curl can be
+	      instructed to use HTTPS directly instead of using an
+	      insecure clear-text HTTP step even when HTTP is provided
+	      in the URL. This mechanism could be bypassed if the host
+	      name in the given URL uses IDN characters that get
+	      replaced to ASCII counterparts as part of the IDN
+	      conversion. Like using the character UTF-8 U+3002
+	      (IDEOGRAPHIC FULL STOP) instead of the common ASCII full
+	      stop (U+002E) .. Like this: http://curl。se。
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32221</cvename>
+      <cvename>CVE-2022-35260</cvename>
+      <cvename>CVE-2022-42915</cvename>
+      <cvename>CVE-2022-42916</cvename>
+      <url>https://curl.se/docs/CVE-2022-32221.html</url>
+      <url>https://curl.se/docs/CVE-2022-35260.html</url>
+      <url>https://curl.se/docs/CVE-2022-42915.html</url>
+      <url>https://curl.se/docs/CVE-2022-42916.html</url>
+    </references>
+    <dates>
+      <discovery>2022-10-26</discovery>
+      <entry>2022-12-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="439f3f81-7a49-11ed-97ac-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2022-10-24">
+	  <p>an authenticated SQL injection when adding categories in the admin backend</p>
+	  <p>a stored cross-site scripting vulnerability in the category name</p>
+	  <p>a stored cross-site scripting vulnerability in the admin logging</p>
+	  <p>a stored cross-site scripting vulnerability in the FAQ title</p>
+	  <p>a PostgreSQL based SQL injection for the lang parameter </p>
+	  <p>a SQL injection when storing an instance name in the admin backend</p>
+	  <p>a SQL injection when adding attachments in the admin backend</p>
+	  <p>a stored cross-site scripting vulnerability when adding users by admins</p>
+	  <p>a missing "secure" flag for cookies when using TLS</p>
+	  <p>a cross-site request forgery / cross-site scripting vulnerability when saving new questions</p>
+	  <p>a reflected cross-site scripting vulnerability in the admin backend</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/a1649f43-78c9-4927-b313-36911872a84b/</url>
+      <url>https://huntr.dev/bounties/2ec4ddd4-de22-4f2d-ba92-3382b452bfea/</url>
+      <url>https://huntr.dev/bounties/5915ed4c-5fe2-42e7-8fac-5dd0d032727c/</url>
+      <url>https://huntr.dev/bounties/5944f154-c0ab-4547-9d9d-3101e86eb975/</url>
+      <url>https://huntr.dev/bounties/315aa78d-7bd2-4b14-86f2-b5c211e62034/</url>
+      <url>https://huntr.dev/bounties/eb3a8ea3-daea-4555-a3e6-80b82f533792/</url>
+      <url>https://huntr.dev/bounties/faac0c92-8d4b-4901-a933-662b661a3f99/</url>
+      <url>https://huntr.dev/bounties/56499a60-2358-41fe-9b38-8cb23cdfc17c/</url>
+      <url>https://huntr.dev/bounties/f531bbf2-32c8-4efe-8156-ae9bc6b5d3aa/</url>
+      <url>https://huntr.dev/bounties/322c12b1-08d5-4ee3-9d94-d4bb40366c7a/</url>
+      <url>https://huntr.dev/bounties/f2857bc7-8fbc-489a-9a38-30b93300eec5/</url>
+    </references>
+    <dates>
+      <discovery>2022-12-11</discovery>
+      <entry>2022-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="508da89c-78b9-11ed-854f-5404a68ad561">
     <topic>traefik -- multiple vulnerabilities</topic>
     <affects>

@@ -1,6 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.002
+DISTVERSION=	5.004
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,6 +53,7 @@ post-build:
 	@${STRIP_CMD} ${WRKSRC}/bin/verilator_bin
 
 post-install-INSTALL_DBG_EXECUTABLES-off:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/verilator_bin
 	@${RM} ${STAGEDIR}${PREFIX}/bin/verilator_bin_dbg ${STAGEDIR}${PREFIX}/bin/verilator_coverage_bin_dbg
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+include/xtend/array.h
 include/xtend/common.h
 include/xtend/ctype.h
 include/xtend/dsv-accessors.h
@@ -49,11 +50,13 @@ man/man3/dsv_skip_rest_of_line.3.gz
 man/man3/ffclose.3.gz
 man/man3/ffdopen.3.gz
 man/man3/ffgetc.3.gz
+man/man3/ffgets.3.gz
 man/man3/ffopen.3.gz
 man/man3/ffpclose.3.gz
 man/man3/ffpopen.3.gz
 man/man3/ffprintf.3.gz
 man/man3/ffputc.3.gz
+man/man3/ffputs.3.gz
 man/man3/ffread_line_malloc.3.gz
 man/man3/ffstdin.3.gz
 man/man3/ffstdout.3.gz
@@ -94,6 +97,7 @@ man/man3/tsv_read_field_malloc.3.gz
 man/man3/tsv_skip_field.3.gz
 man/man3/tsv_skip_rest_of_line.3.gz
 man/man3/va_usage.3.gz
+man/man3/xt_dprintf.3.gz
 man/man3/xt_factorial.3.gz
 man/man3/xt_fast_cp.3.gz
 man/man3/xt_fclose.3.gz
@@ -111,6 +115,7 @@ man/man3/xt_n_choose_k.3.gz
 man/man3/xt_read_line_malloc.3.gz
 man/man3/xt_realloc.3.gz
 man/man3/xt_rmkdir.3.gz
+man/man3/xt_shuffle.3.gz
 man/man3/xt_tic.3.gz
 man/man3/xt_toc.3.gz
 man/man3/xt_valid_extension.3.gz

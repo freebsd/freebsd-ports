@@ -8,5 +8,6 @@
     SUBDIR += khotot
     SUBDIR += libitl
     SUBDIR += libreoffice
+    SUBDIR += py-hijri-converter
 
 .include <bsd.port.subdir.mk>

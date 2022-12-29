@@ -20,6 +20,9 @@ LICENSE_NAME=	win32-codec
 LICENSE_TEXT=	Unsure of codec's license
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Obsolete and users are recommended to utilize ffmpeg instead
+EXPIRATION_DATE=2023-03-31
+
 USES=		tar:bzip2
 
 ONLY_FOR_ARCHS=	i386

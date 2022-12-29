@@ -55,6 +55,7 @@ ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 
 
 # Warnings only when DEVELOPER=yes
+.if defined(DEVELOPER)
 
 .if exists(${.CURDIR}/../../Mk/bsd.port.mk) || ${OVERLAYS:tA:M${.CURDIR:H:H}} == ${.CURDIR:H:H}
 .  if ${.CURDIR:H:T} != ${PKGCATEGORY}
@@ -311,3 +312,5 @@ DEV_WARNING+=	"${a} is not needed: ${${a}_REASON}"
 DEV_ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 .  endif
 .endfor
+
+.endif # defined(DEVELOPER)

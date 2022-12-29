@@ -1,0 +1,4 @@
+ffn is a library that contains many useful functions for those who work in
+quantitative finance. It stands on the shoulders of giants (Pandas, Numpy,
+Scipy, etc.) and provides a vast array of utilities, from performance
+measurement and evaluation to graphing and common data transformations.

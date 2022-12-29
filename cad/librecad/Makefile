@@ -1,10 +1,6 @@
 PORTNAME=	librecad
-DISTVERSION=	2.2.0-rc4
-PORTREVISION=	1
+DISTVERSION=	2.2.0
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/BSDKaffee/LibreCAD/commit/
-PATCHFILES=	d81cd49db2421bb4ca9a283638500ebf1c7d02e5.patch:-p1 # Fix ortho tool with Clang
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2D CAD system
@@ -42,9 +38,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/ttf2lff ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/unix/resources && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
-	${INSTALL_DATA} ${WRKSRC}/unix/appdata/librecad.appdata.xml \
+	${INSTALL_DATA} ${WRKSRC}/unix/appdata/org.librecad.librecad.appdata.xml \
 		${STAGEDIR}${PREFIX}/share/metainfo
-	${INSTALL_DATA} ${WRKSRC}/desktop/librecad.desktop \
+	${INSTALL_DATA} ${WRKSRC}/unix/appdata/librecad.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/librecad/res/main/librecad.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps

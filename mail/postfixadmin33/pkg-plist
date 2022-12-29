@@ -149,9 +149,9 @@
 %%WWWDIR%%/lib/smarty/COPYING.lib
 %%WWWDIR%%/lib/smarty/libs/Autoloader.php
 %%WWWDIR%%/lib/smarty/libs/Smarty.class.php
-%%WWWDIR%%/lib/smarty/libs/SmartyBC.class.php
 %%WWWDIR%%/lib/smarty/libs/bootstrap.php
 %%WWWDIR%%/lib/smarty/libs/debug.tpl
+%%WWWDIR%%/lib/smarty/libs/functions.php
 %%WWWDIR%%/lib/smarty/libs/plugins/block.textformat.php
 %%WWWDIR%%/lib/smarty/libs/plugins/function.counter.php
 %%WWWDIR%%/lib/smarty/libs/plugins/function.cycle.php
@@ -166,10 +166,13 @@
 %%WWWDIR%%/lib/smarty/libs/plugins/function.mailto.php
 %%WWWDIR%%/lib/smarty/libs/plugins/function.math.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.capitalize.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifier.count.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.date_format.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.debug_print_var.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.escape.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifier.explode.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.mb_wordwrap.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifier.number_format.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.regex_replace.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.replace.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.spacify.php
@@ -184,10 +187,14 @@
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.from_charset.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.indent.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.lower.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.nl2br.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.noprint.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.round.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.str_repeat.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.string_format.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.strip.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.strip_tags.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.strlen.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.to_charset.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.unescape.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.upper.php
@@ -224,7 +231,6 @@
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_function.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_if.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_include.php
-%%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_include_php.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_insert.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_ldelim.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_make_nocache.php
@@ -236,7 +242,6 @@
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_modifier.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_object_function.php
-%%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_php.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_print_expression.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_registered_block.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_compile_private_registered_function.php
@@ -314,7 +319,6 @@
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_resource_extends.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_resource_file.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_resource_php.php
-%%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_resource_registered.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_resource_stream.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_resource_string.php
 %%WWWDIR%%/lib/smarty/libs/sysplugins/smarty_internal_runtime_cachemodify.php

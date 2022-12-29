@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libpaper.so:print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:print/adobe-cmaps
 
-USES=		localbase:ldflags pkgconfig tar:xz
+USES=		localbase:ldflags pkgconfig tar:xz tex
 USE_TEX=	kpathsea web2c texmf dvipsk luatex texhash
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

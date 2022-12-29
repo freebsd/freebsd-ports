@@ -1,6 +1,6 @@
 PORTNAME=	restinio
 DISTVERSION=	0.6.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v.${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-full

@@ -1,0 +1,13 @@
+--- lib/Cargo.toml.orig	2022-12-25 20:25:24 UTC
++++ lib/Cargo.toml
+@@ -65,8 +65,8 @@ winapi = { version = "0.3", features = [
+ whoami = "1"
+ 
+ # Linux only
+-[target.'cfg(target_os = "linux")'.dependencies]
+-procfs = { version = "0.14.2", default-features = false }
++#[target.'cfg(target_os = "linux")'.dependencies]
++#procfs = { version = "0.14.2", default-features = false }
+ 
+ # Apple only
+ [target.'cfg(target_vendor = "apple")'.dependencies]

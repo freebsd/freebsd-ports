@@ -1,6 +1,5 @@
 PORTNAME=	authenticator
-DISTVERSION=	4.1.6
-PORTREVISION=	2
+DISTVERSION=	4.2.0
 CATEGORIES=	security
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,20 +9,19 @@ WWW=		https://gitlab.gnome.org/World/Authenticator
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libzbar.so:graphics/zbar \
 		libpipewire-0.3.so:multimedia/pipewire
 RUN_DEPENDS=	${LOCALBASE}/lib/gstreamer-1.0/libgstgtk4.so:multimedia/gstreamer1-plugins-rust
 
-USES=		cargo desktop-file-utils gettext gnome gstreamer meson pkgconfig sqlite ssl
+USES=		cargo desktop-file-utils gettext gnome gstreamer llvm meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
-USE_GSTREAMER=	zbar
+USE_GSTREAMER=	gl zbar
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Authenticator
-GL_COMMIT=	fc8624342b3b4aa599b4efdefdda84514c223b18
+GL_COMMIT=	f7634a38883d055e40449383f04bc38289caf132
 CARGO_ENV=	ZBAR_INCLUDE_DIRS="${LOCALBASE}/include" ZBAR_LIB_DIRS="${LOCALBASE}/lib"
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
@@ -32,7 +30,7 @@ CARGO_TEST=	no
 GLIB_SCHEMAS=	com.belmoussaoui.Authenticator.gschema.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
+	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \

@@ -1,6 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	8.4.1
-PORTREVISION=	1
+PORTVERSION=	8.5.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -22,7 +21,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
 		libhpdf.so:print/libharu \
-		libjasper.so:graphics/jasper \
 		libodbc.so:databases/unixODBC \
 		libopencv_core.so:graphics/opencv \
 		libpdal_base.so:math/pdal \
@@ -39,7 +37,7 @@ DOS2UNIX_GLOB=	*.cpp *.h
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	e0cb3e2f0
+GIT_TAGNAME=	570fadfa8
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
 CMAKE_ON=	WITH_DEV_TOOLS WITH_EXCERCISES WITH_MRMR WITH_SYSTEM_SVM

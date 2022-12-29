@@ -1,9 +1,9 @@
---- ext/cdparanoia/meson.build.orig	2022-09-08 19:40:48 UTC
+--- ext/cdparanoia/meson.build.orig	2022-12-19 23:34:46 UTC
 +++ ext/cdparanoia/meson.build
-@@ -33,7 +33,7 @@ if cdparanoia_found
+@@ -42,7 +42,7 @@ if cdparanoia_found
      ['gstcdparanoiasrc.c'],
      include_directories: [configinc, libsinc],
-     c_args : gst_plugins_base_args,
+     c_args : gst_plugins_base_args + extra_args,
 -    dependencies : cdparanoia_deps + glib_deps + [audio_dep, gst_dep, gst_base_dep],
 +    dependencies : cdparanoia_deps + glib_deps + [dependency('gstreamer-audio-1.0'), gst_dep, gst_base_dep],
      install : true,

@@ -3,8 +3,12 @@
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/adapters%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/adapters%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/package_info%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/package_info%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/proxies%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/proxies%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/server%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/storage%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -14,7 +18,9 @@
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/viewers%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/__pycache__/viewers%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/inspector/adapters.py
+%%PYTHON_SITELIBDIR%%/dwave/inspector/config.py
 %%PYTHON_SITELIBDIR%%/dwave/inspector/package_info.py
+%%PYTHON_SITELIBDIR%%/dwave/inspector/proxies.py
 %%PYTHON_SITELIBDIR%%/dwave/inspector/server.py
 %%PYTHON_SITELIBDIR%%/dwave/inspector/storage.py
 %%PYTHON_SITELIBDIR%%/dwave/inspector/utils.py

@@ -76,6 +76,7 @@ VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl		\
 			libfreeimageplus.so:graphics/freeimage
 
 DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_USES=	tex
 DOXYGEN_USE=	TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen		\

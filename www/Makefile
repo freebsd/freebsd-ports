@@ -122,6 +122,7 @@
     SUBDIR += drupal7-wysiwyg
     SUBDIR += drupal8
     SUBDIR += drupal9
+    SUBDIR += drupal10
     SUBDIR += drush
     SUBDIR += dtse
     SUBDIR += dufs
@@ -204,6 +205,7 @@
     SUBDIR += groupoffice
     SUBDIR += grr
     SUBDIR += gstreamer1-plugins-neon
+    SUBDIR += gstreamer1-plugins-srt
     SUBDIR += gtkhtml4
     SUBDIR += guacamole-client
     SUBDIR += guile-www
@@ -384,7 +386,6 @@
     SUBDIR += mod_mono
     SUBDIR += mod_mpm_itk
     SUBDIR += mod_perl2
-    SUBDIR += mod_php74
     SUBDIR += mod_php80
     SUBDIR += mod_php81
     SUBDIR += mod_php82
@@ -978,6 +979,7 @@
     SUBDIR += p5-LWP-Protocol-http10
     SUBDIR += p5-LWP-Protocol-https
     SUBDIR += p5-LWP-Protocol-socks
+    SUBDIR += p5-LWP-UserAgent-Cached
     SUBDIR += p5-LWP-UserAgent-Determined
     SUBDIR += p5-LWP-UserAgent-POE
     SUBDIR += p5-LWP-UserAgent-WithCache
@@ -1370,9 +1372,6 @@
     SUBDIR += persepolis
     SUBDIR += pglogd
     SUBDIR += phalcon
-    SUBDIR += php74-opcache
-    SUBDIR += php74-session
-    SUBDIR += php74-tidy
     SUBDIR += php80-opcache
     SUBDIR += php80-session
     SUBDIR += php80-tidy
@@ -1419,7 +1418,9 @@
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp_cors
     SUBDIR += py-aioquic
+    SUBDIR += py-aiostream
     SUBDIR += py-arxiv
+    SUBDIR += py-asgi-csrf
     SUBDIR += py-asgiref
     SUBDIR += py-autobahn
     SUBDIR += py-azure-common
@@ -1689,6 +1690,7 @@
     SUBDIR += py-mwoauth
     SUBDIR += py-nevow
     SUBDIR += py-notebook
+    SUBDIR += py-onetimepass
     SUBDIR += py-openbrokerapi
     SUBDIR += py-pafy
     SUBDIR += py-paste
@@ -1816,6 +1818,8 @@
     SUBDIR += radicale
     SUBDIR += rearx
     SUBDIR += redmine42
+    SUBDIR += redmine50
+    SUBDIR += remark42
     SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += repos-style
@@ -2074,7 +2078,9 @@
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rack-timeout
     SUBDIR += rubygem-rack16
+    SUBDIR += rubygem-rack22
     SUBDIR += rubygem-rack_csrf
+    SUBDIR += rubygem-rackup
     SUBDIR += rubygem-rails-settings-cached
     SUBDIR += rubygem-rails-settings-cached-rails5
     SUBDIR += rubygem-rails-settings-cached-rails50
@@ -2266,6 +2272,7 @@
     SUBDIR += tomcat85
     SUBDIR += tomcat9
     SUBDIR += tomee
+    SUBDIR += tor-browser
     SUBDIR += trac-devel
     SUBDIR += trafficserver
     SUBDIR += transmission-web
@@ -2328,6 +2335,7 @@
     SUBDIR += varnish-ip2proxy
     SUBDIR += varnish-libvmod-digest
     SUBDIR += varnish-libvmod-dynamic
+    SUBDIR += varnish-libvmod-fileserver
     SUBDIR += varnish-libvmod-geoip2
     SUBDIR += varnish-libvmod-maxminddb
     SUBDIR += varnish-libvmod-querystring

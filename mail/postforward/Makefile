@@ -1,6 +1,7 @@
 PORTNAME=	postforward
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 
 PATCH_SITES=	https://github.com/arbales/postforward/commit/

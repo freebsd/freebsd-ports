@@ -48,9 +48,10 @@ PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt \
 # a backport of amongst other tings:
 # https://github.com/mysql/mysql-server/commit/08f46b3c00ee70e7ed7825daeb91df2289f80f50
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+_LLVM_VERSION=	10
+BUILD_DEPENDS+=	clang${_LLVM_VERSION}:devel/llvm${_LLVM_VERSION}
+CC=		${LOCALBASE}/bin/clang${_LLVM_VERSION}
+CXX=		${LOCALBASE}/bin/clang++${_LLVM_VERSION}
 .endif
 
 # Not sure why it's trying to install mysql client libraries now

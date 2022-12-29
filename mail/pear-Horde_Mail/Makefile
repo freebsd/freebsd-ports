@@ -1,10 +1,15 @@
 PORTNAME=	Horde_Mail
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Mail Library
 WWW=		https://pear.horde.org
+
+LICENSE=	BSD2CLAUSE
+
+# Optional but we want it
+RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:net/pear-Net_SMTP@${PHP_FLAVOR}
 
 USES=	horde cpe
 USE_HORDE_RUN=	Horde_Exception \
@@ -14,7 +19,6 @@ USE_HORDE_RUN=	Horde_Exception \
 # Disabled due to circular dependency
 #USE_HORDE_RUN+=	Horde_Mime
 
-# Optional but we want it
-RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:net/pear-Net_SMTP@${PHP_FLAVOR}
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

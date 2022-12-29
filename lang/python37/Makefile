@@ -12,6 +12,9 @@ WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 
+DEPRECATED=	Upgrade to a newer Python version. 3.7 is in maintenance status and gets security fixes only. End-of-Life: 2023-06-27. See https://devguide.python.org/versions/
+EXPIRATION_DATE=	2023-06-27
+
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libmpdec.so:math/mpdecimal
 

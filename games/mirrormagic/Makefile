@@ -1,7 +1,8 @@
 PORTNAME=	mirrormagic
-PORTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	games
-MASTER_SITES=	https://www.artsoft.org/RELEASES/unix/mirrormagic/
+MASTER_SITES=	https://www.artsoft.org/RELEASES/linux/mirrormagic/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade style game with stereo sound for X Window System
@@ -15,15 +16,17 @@ USE_SDL=	sdl2 mixer2 image2 net2
 USE_PERL5=	build
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	TARGET=sdl2 \
-		RO_GAME_DIR="${DATADIR}" \
-		RW_GAME_DIR="/var/games/${PORTNAME}"
+		BASE_PATH="${DATADIR}"
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 PORTDOCS=	*
 
 DESKTOP_ENTRIES="Mirror Magic" \
 		"" \
-		"" \
+		"${DATADIR}/graphics/gfx_mirrormagic/icons/icon.png" \
 		"${PORTNAME}" \
 		"Game;LogicGame;" \
 		""
@@ -34,11 +37,8 @@ post-extract:
 	@${RM} -r ${WRKSRC}/lib ${WRKSRC}/mirrormagic # linux binaries
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds \
-		${STAGEDIR}${PREFIX}/bin/mirrormagic
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "conf docs graphics levels music sounds" \
-		${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}/var/games/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${STAGEDIR}${PREFIX}/bin/mirrormagic
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "conf docs graphics levels music sounds" ${STAGEDIR}${DATADIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

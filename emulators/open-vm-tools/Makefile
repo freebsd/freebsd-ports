@@ -1,5 +1,5 @@
 PORTNAME=	open-vm-tools
-PORTVERSION=	12.1.0
+PORTVERSION=	12.1.5
 DISTVERSIONPREFIX=	stable-
 PORTREVISION=	1
 PORTEPOCH=	2
@@ -63,7 +63,8 @@ FUSE_USES=		fuse
 LIBNOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 OPENSSL_CONFIGURE_WITH=	ssl
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
+			libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz
 X11_USES=		xorg
 X11_USE=		GNOME=gdkpixbuf2,gdkpixbuf2xlib,gtk30,gtkmm30 \
 			XORG=ice,sm,x11,xext,xi,xinerama,xorgproto,xrandr,xrender,xtst

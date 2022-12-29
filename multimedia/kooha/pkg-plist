@@ -5,9 +5,11 @@ share/icons/hicolor/symbolic/apps/io.github.seadve.Kooha-symbolic.svg
 %%DATADIR%%/resources.gresource
 share/locale/ar/LC_MESSAGES/kooha.mo
 share/locale/bg/LC_MESSAGES/kooha.mo
+share/locale/ca/LC_MESSAGES/kooha.mo
 share/locale/cs/LC_MESSAGES/kooha.mo
 share/locale/da/LC_MESSAGES/kooha.mo
 share/locale/de/LC_MESSAGES/kooha.mo
+share/locale/el/LC_MESSAGES/kooha.mo
 share/locale/eo/LC_MESSAGES/kooha.mo
 share/locale/es/LC_MESSAGES/kooha.mo
 share/locale/et/LC_MESSAGES/kooha.mo

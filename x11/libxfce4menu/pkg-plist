@@ -1,6 +1,8 @@
 bin/xfce4-about
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcut-dialog.h
+include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-editor-dialog.h
+include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-editor.h
 include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-grabber.h
 include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-provider.h
 include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-xfwm4.h
@@ -41,6 +43,7 @@ share/icons/hicolor/scalable/apps/xfce4-logo.svg
 %%NLS%%share/locale/am/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/libxfce4ui.mo
+%%NLS%%share/locale/az/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/be/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/libxfce4ui.mo

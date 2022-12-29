@@ -1,7 +1,7 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.2
-PORTREVISION=	3
+DISTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn
 PKGNAMESUFFIX=	-node
@@ -9,7 +9,6 @@ DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz:yarn
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
-WWW=		https://github.com/signalapp/libsignal
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -31,6 +30,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		aes-gcm-0.9.4 \
 		aes-gcm-siv-0.10.3 \
 		aho-corasick-0.7.18 \
+		anes-0.1.6 \
 		anyhow-1.0.56 \
 		arrayref-0.3.6 \
 		asn1-0.9.1 \
@@ -47,11 +47,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		block-buffer-0.9.0 \
 		block-modes-0.8.1 \
 		block-padding-0.2.1 \
-		bstr-0.2.17 \
 		bumpalo-3.7.1 \
 		byteorder-1.4.3 \
 		bytes-1.1.0 \
-		cast-0.2.7 \
+		cast-0.3.0 \
 		cc-1.0.73 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
@@ -59,22 +58,24 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		chacha20-0.7.3 \
 		chacha20poly1305-0.8.2 \
 		chrono-0.4.19 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
 		cipher-0.3.0 \
 		clang-sys-1.3.2 \
-		clap-2.34.0 \
+		clap-3.2.20 \
+		clap_lex-0.2.4 \
 		cmake-0.1.48 \
 		combine-4.6.3 \
 		cpufeatures-0.2.2 \
-		criterion-0.3.5 \
-		criterion-plot-0.4.4 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.4 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
 		crypto-mac-0.8.0 \
 		crypto-mac-0.11.1 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
 		ctr-0.8.0 \
 		digest-0.9.0 \
 		displaydoc-0.2.3 \
@@ -105,7 +106,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		indexmap-1.8.0 \
 		instant-0.1.12 \
 		itertools-0.10.3 \
-		itoa-0.4.8 \
 		itoa-1.0.1 \
 		jni-0.19.0 \
 		jni-sys-0.3.0 \
@@ -137,6 +137,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		object-0.27.1 \
 		oorandom-11.1.3 \
 		opaque-debug-0.3.0 \
+		os_str_bytes-6.3.0 \
 		paste-1.0.6 \
 		peeking_take_while-0.1.2 \
 		pest-2.1.3 \
@@ -167,23 +168,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.2.11 \
 		regex-1.5.5 \
-		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.3.3 \
-		rustc_version-0.4.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-0.11.0 \
-		semver-1.0.6 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
 		serde-1.0.136 \
-		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.79 \
 		sha-1-0.9.8 \
@@ -198,7 +195,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		syn-mid-0.5.3 \
 		synstructure-0.12.6 \
 		tempfile-3.3.0 \
-		textwrap-0.11.0 \
+		textwrap-0.15.0 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		time-0.1.44 \
@@ -207,7 +204,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
 		unicode-segmentation-1.9.0 \
-		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		universal-hash-0.4.1 \
 		unzip3-1.0.0 \
@@ -231,10 +227,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		x25519-dalek-1.1.1 \
 		zeroize-1.3.0 \
 		zeroize_derive-1.3.2 \
-		boring,boring-sys@git+https://github.com/signalapp/boring?branch=libsignal\#e1c719c0964ba37e6935355e9bf19821b072797e \
-		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek?branch=lizard2\#4f0aa6653c51598daa0a2f53b8ba54ce0eedfbdd
+		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek?branch=lizard2\#4f0aa6653c51598daa0a2f53b8ba54ce0eedfbdd \
+		boring,boring-sys@git+https://github.com/signalapp/boring?branch=libsignal\#b95cb545b97395cdf5da36814f7dfb6e3856a99c
 
-MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron18 \
+MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron21 \
 		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		HOME=${WRKDIR} \
 		PYTHON=${PYTHON_CMD} \
@@ -261,13 +257,13 @@ post-patch:
 
 # Check hash here: https://github.com/signalapp/boring/tree/libsignal/boring-sys/deps
 post-extract:
-	${MV} ${WRKDIR}/boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d/* ${WRKDIR}/boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-ae223d6138807a13006342edfeef32e813246b39/* ${WRKDIR}/boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d/* ${WRKDIR}/boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl
+	${MV} ${WRKDIR}/boringssl-ae223d6138807a13006342edfeef32e813246b39/* ${WRKDIR}/boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl-fips
 
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
 	cd ${WRKSRC}/node && \
-		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional #--offline
+		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} yarn tsc
 

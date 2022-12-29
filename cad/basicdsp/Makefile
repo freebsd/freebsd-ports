@@ -9,6 +9,9 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Program for experimenting with simple audio DSP algorithms
 WWW=		https://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/
 
+DEPRECATED=	Abandoned project and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2
 
 USES=		compiler:c++11-lang dos2unix tar:tgz

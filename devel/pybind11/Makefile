@@ -1,6 +1,6 @@
 PORTNAME=	pybind11
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.1
+DISTVERSION=	2.10.2
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	pybind
 
 CMAKE_OFF=	PYBIND11_TEST
 
-CMAKE_TESTING_ON=	PYBIND11_TEST # one test is known to fail: https://github.com/pybind/pybind11/issues/3537
+CMAKE_TESTING_ON=	PYBIND11_TEST # two tests are known to fail: https://github.com/pybind/pybind11/issues/3537, https://github.com/pybind/pybind11/issues/4416
 CMAKE_TESTING_TARGET=	pytest
 
 NO_ARCH=	yes

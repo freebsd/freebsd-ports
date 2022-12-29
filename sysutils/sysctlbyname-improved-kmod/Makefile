@@ -1,5 +1,5 @@
 PORTNAME=	sysctlbyname-improved-kmod
-DISTVERSION=	20210223
+DISTVERSION=	20221211
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -13,7 +13,7 @@ USES=		kmod
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlbyname-improved
-GL_COMMIT=	1d6119756931d05cc2526308c941c979e475d3a7
+GL_COMMIT=	22bdff50867ff927edd098091608e871503291b6
 
 PLIST_FILES=	${KMODDIR}/sysctlbyname_improved.ko
 
@@ -24,9 +24,6 @@ OPTIONS_DEFAULT=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400071
-IGNORE=		uses struct sysctl_oid definition previous FreeBSD 1400071
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
 .endif

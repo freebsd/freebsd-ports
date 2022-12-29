@@ -1,8 +1,9 @@
 PORTNAME=	libcst
-PORTVERSION=	0.3.23
+PORTVERSION=	0.4.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Concrete syntax tree with AST-like properties
@@ -11,14 +12,131 @@ WWW=		https://github.com/Instagram/LibCST
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=0:devel/py-setuptools-rust@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=5.2:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.2:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-inspect>=0.4.0:devel/py-typing-inspect@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cargo python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/libcst/native%%PYTHON_EXT_SUFFIX%%.so
 
-NO_ARCH=	yes
+BINARY_ALIAS=   python3="${PYTHON_CMD}"
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_CARGOTOML=	${WRKSRC}/native/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/native/Cargo.lock
+CARGO_TARGET_DIR=	${WRKSRC}/native
+CARGO_CRATES=	aho-corasick-0.7.18 \
+		anes-0.1.6 \
+		annotate-snippets-0.6.1 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
+		bumpalo-3.10.0 \
+		cast-0.2.7 \
+		cast-0.3.0 \
+		cfg-if-1.0.0 \
+		chic-1.2.2 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clap-2.34.0 \
+		clap-3.2.22 \
+		clap_lex-0.2.4 \
+		criterion-0.3.6 \
+		criterion-0.4.0 \
+		criterion-cycles-per-byte-0.1.2 \
+		criterion-plot-0.4.4 \
+		criterion-plot-0.5.0 \
+		crossbeam-channel-0.5.5 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.9 \
+		crossbeam-utils-0.8.10 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
+		difference-2.0.0 \
+		either-1.6.1 \
+		glob-0.3.0 \
+		half-1.8.2 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		indexmap-1.9.1 \
+		indoc-1.0.6 \
+		instant-0.1.12 \
+		itertools-0.10.5 \
+		itoa-0.4.8 \
+		itoa-1.0.2 \
+		js-sys-0.3.58 \
+		lazy_static-1.4.0 \
+		libc-0.2.126 \
+		lock_api-0.4.7 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		memoffset-0.6.5 \
+		num-traits-0.2.15 \
+		num_cpus-1.13.1 \
+		once_cell-1.16.0 \
+		oorandom-11.1.3 \
+		os_str_bytes-6.3.0 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		paste-1.0.9 \
+		peg-0.8.1 \
+		peg-macros-0.8.1 \
+		peg-runtime-0.8.1 \
+		plotters-0.3.1 \
+		plotters-backend-0.3.2 \
+		plotters-svg-0.3.1 \
+		proc-macro2-1.0.46 \
+		pyo3-0.17.3 \
+		pyo3-build-config-0.17.3 \
+		pyo3-ffi-0.17.3 \
+		pyo3-macros-0.17.3 \
+		pyo3-macros-backend-0.17.3 \
+		quote-1.0.21 \
+		rayon-1.5.3 \
+		rayon-core-1.9.3 \
+		redox_syscall-0.2.13 \
+		regex-1.7.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.27 \
+		rustc_version-0.4.0 \
+		ryu-1.0.10 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-1.0.10 \
+		serde-1.0.145 \
+		serde_cbor-0.11.2 \
+		serde_derive-1.0.145 \
+		serde_json-1.0.81 \
+		smallvec-1.8.1 \
+		syn-1.0.103 \
+		target-lexicon-0.12.4 \
+		termcolor-1.1.3 \
+		textwrap-0.11.0 \
+		textwrap-0.15.1 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
+		tinytemplate-1.2.1 \
+		toml-0.5.9 \
+		trybuild-1.0.71 \
+		unicode-ident-1.0.1 \
+		unicode-width-0.1.9 \
+		unindent-0.1.9 \
+		walkdir-2.3.2 \
+		wasm-bindgen-0.2.81 \
+		wasm-bindgen-backend-0.2.81 \
+		wasm-bindgen-macro-0.2.81 \
+		wasm-bindgen-macro-support-0.2.81 \
+		wasm-bindgen-shared-0.2.81 \
+		web-sys-0.3.58 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
 
 .include <bsd.port.mk>

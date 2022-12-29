@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.0
+DISTVERSION=	0.34.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -23,6 +23,7 @@ PLIST_FILES=	bin/zellij
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
+		ahash-0.7.6 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.57 \
@@ -42,8 +43,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.65 \
+		base-x-0.2.11 \
 		base64-0.13.0 \
-		bincode-1.3.3 \
 		bitflags-1.3.2 \
 		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
@@ -52,6 +53,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		boxfnonce-0.1.1 \
 		bumpalo-3.10.0 \
 		byte-tools-0.3.1 \
+		bytecheck-0.6.9 \
+		bytecheck_derive-0.6.9 \
 		byteorder-1.4.3 \
 		cache-padded-1.2.0 \
 		cassowary-0.3.0 \
@@ -68,14 +71,16 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		colorsys-0.6.5 \
 		concurrent-queue-1.2.2 \
 		console-0.15.0 \
+		const_fn-0.4.9 \
 		core-foundation-sys-0.8.3 \
+		corosensei-0.1.3 \
 		cpufeatures-0.2.2 \
-		cranelift-bforest-0.68.0 \
-		cranelift-codegen-0.68.0 \
-		cranelift-codegen-meta-0.68.0 \
-		cranelift-codegen-shared-0.68.0 \
-		cranelift-entity-0.68.0 \
-		cranelift-frontend-0.68.0 \
+		cranelift-bforest-0.82.3 \
+		cranelift-codegen-0.82.3 \
+		cranelift-codegen-meta-0.82.3 \
+		cranelift-codegen-shared-0.82.3 \
+		cranelift-entity-0.82.3 \
+		cranelift-frontend-0.82.3 \
 		crc32fast-1.3.2 \
 		crossbeam-0.8.1 \
 		crossbeam-channel-0.5.4 \
@@ -99,8 +104,11 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
+		discard-1.0.4 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
+		enum-iterator-0.7.0 \
+		enum-iterator-derive-0.7.0 \
 		enumset-1.0.11 \
 		enumset_derive-0.6.0 \
 		erased-serde-0.3.20 \
@@ -130,10 +138,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		getrandom-0.1.16 \
 		getrandom-0.2.7 \
 		ghost-0.1.4 \
-		gimli-0.22.0 \
 		gimli-0.26.1 \
 		gloo-timers-0.2.4 \
 		hashbrown-0.11.2 \
+		hashbrown-0.12.3 \
 		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
@@ -158,7 +166,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		leb128-0.2.5 \
 		lev_distance-0.1.1 \
 		libc-0.2.126 \
-		libloading-0.6.7 \
+		libloading-0.7.4 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.8 \
 		linked-hash-map-0.5.4 \
@@ -166,11 +174,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		log-0.4.17 \
 		log-mdc-0.1.0 \
 		log4rs-1.2.0 \
+		loupe-0.1.3 \
+		loupe-derive-0.1.3 \
 		mach-0.3.2 \
 		maplit-1.0.2 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
-		memmap2-0.2.3 \
+		memmap2-0.5.7 \
 		memmem-0.1.1 \
 		memoffset-0.6.5 \
 		miette-3.3.0 \
@@ -192,7 +202,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		object-0.22.0 \
 		object-0.28.4 \
 		once_cell-1.12.0 \
 		opaque-debug-0.2.3 \
@@ -231,7 +240,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pretty-bytes-0.2.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.39 \
+		ptr_meta-0.1.4 \
+		ptr_meta_derive-0.1.4 \
 		quote-1.0.18 \
 		rand-0.7.3 \
 		rand-0.8.5 \
@@ -245,18 +257,26 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		regalloc-0.0.31 \
+		regalloc-0.0.34 \
 		regex-1.5.6 \
 		regex-syntax-0.6.26 \
-		region-2.2.0 \
+		region-3.0.0 \
 		remove_dir_all-0.5.3 \
+		rend-0.3.6 \
+		rkyv-0.7.39 \
+		rkyv_derive-0.7.39 \
 		rmp-0.8.11 \
 		rmp-serde-1.1.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
+		rustc_version-0.2.3 \
+		rustversion-1.0.9 \
 		ryu-1.0.10 \
 		scopeguard-1.1.0 \
+		seahash-4.1.0 \
+		semver-0.9.0 \
 		semver-0.11.0 \
+		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
 		serde-1.0.137 \
 		serde-value-0.7.0 \
@@ -265,6 +285,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		serde_json-1.0.81 \
 		serde_yaml-0.8.24 \
 		sha-1-0.8.2 \
+		sha1-0.6.1 \
+		sha1_smol-1.0.0 \
 		sha2-0.9.9 \
 		signal-hook-0.1.17 \
 		signal-hook-0.3.14 \
@@ -280,6 +302,11 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		spinning-0.1.0 \
 		ssh2-0.9.3 \
 		stable_deref_trait-1.2.0 \
+		standback-0.2.17 \
+		stdweb-0.4.20 \
+		stdweb-derive-0.5.3 \
+		stdweb-internal-macros-0.2.9 \
+		stdweb-internal-runtime-0.1.5 \
 		strip-ansi-escapes-0.1.1 \
 		strsim-0.10.0 \
 		strum-0.20.0 \
@@ -290,7 +317,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		supports-unicode-1.0.2 \
 		syn-1.0.96 \
 		sysinfo-0.22.5 \
-		target-lexicon-0.11.2 \
+		target-lexicon-0.12.5 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
@@ -303,6 +330,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		thiserror-impl-1.0.31 \
 		thread-id-4.0.0 \
 		time-0.1.44 \
+		time-0.2.27 \
+		time-macros-0.1.1 \
+		time-macros-impl-0.1.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		tracing-0.1.35 \
@@ -341,18 +371,22 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasm-bindgen-macro-support-0.2.81 \
 		wasm-bindgen-shared-0.2.81 \
 		wasm-encoder-0.13.0 \
-		wasmer-1.0.2 \
-		wasmer-compiler-1.0.2 \
-		wasmer-compiler-cranelift-1.0.2 \
-		wasmer-derive-1.0.2 \
-		wasmer-engine-1.0.2 \
-		wasmer-engine-jit-1.0.2 \
-		wasmer-engine-native-1.0.2 \
-		wasmer-object-1.0.2 \
-		wasmer-types-1.0.2 \
-		wasmer-vm-1.0.2 \
-		wasmer-wasi-1.0.2 \
-		wasmparser-0.65.0 \
+		wasmer-2.3.0 \
+		wasmer-artifact-2.3.0 \
+		wasmer-compiler-2.3.0 \
+		wasmer-compiler-cranelift-2.3.0 \
+		wasmer-derive-2.3.0 \
+		wasmer-engine-2.3.0 \
+		wasmer-engine-dylib-2.3.0 \
+		wasmer-engine-universal-2.3.0 \
+		wasmer-engine-universal-artifact-2.3.0 \
+		wasmer-object-2.3.0 \
+		wasmer-types-2.3.0 \
+		wasmer-vfs-2.3.0 \
+		wasmer-vm-2.3.0 \
+		wasmer-wasi-2.3.0 \
+		wasmer-wasi-types-2.3.0 \
+		wasmparser-0.83.0 \
 		wast-42.0.0 \
 		wat-1.0.44 \
 		web-sys-0.3.58 \
@@ -366,11 +400,17 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.33.0 \
 		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.33.0 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.33.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.33.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.33.0 \
 		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.33.0 \
 		windows_x86_64_msvc-0.36.1 \
 		yaml-rust-0.4.5 \
 		zeroize-1.5.5

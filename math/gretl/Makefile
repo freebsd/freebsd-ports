@@ -36,7 +36,8 @@ OPTIONS_SUB=		yes
 
 ADDONS_DESC=		Build gretl addons
 ADDONS_CONFIGURE_ENABLE=	build-addons
-ADDONS_VARS=		USE_TEX="formats dvipsk:build"
+ADDONS_USES=		tex
+ADDONS_USE=			TEX=formats,dvipsk:build
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas

@@ -1,12 +1,12 @@
 PORTNAME=	PyNE
 DISTVERSION=	0.7.7
 PORTREVISION=	3
-CATEGORIES=	science
-MASTER_SITES=	http://raw.githubusercontent.com/pyne/data/master/:decay \
-		http://raw.githubusercontent.com/pyne/data/master/:cram \
-		http://raw.githubusercontent.com/pyne/data/master/:dlc \
-		http://raw.githubusercontent.com/pyne/data/master/:clc \
-		https://github.com/pyne/data/raw/master/:nuc_data
+CATEGORIES=	science # physics
+MASTER_SITES=	https://raw.githubusercontent.com/pyne/data/master/:decay \
+		https://raw.githubusercontent.com/pyne/data/master/:cram \
+		https://raw.githubusercontent.com/pyne/data/master/:dlc \
+		https://raw.githubusercontent.com/pyne/data/master/:clc \
+		https://github.com/pyne/data/master/:nuc_data
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	decay.tar.gz:decay \
 		cram.tar.gz:cram \

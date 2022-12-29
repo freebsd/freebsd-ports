@@ -1,3 +1,6 @@
 #!/bin/sh
 
+export CLION_JDK=${CLION_JDK:-"%%JAVA_HOME%%"}
+export SHELL="/bin/sh"
+
 exec "%%DATADIR%%/bin/clion.sh" "$@"

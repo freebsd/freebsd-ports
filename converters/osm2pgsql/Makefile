@@ -17,8 +17,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
 		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
-		${LOCALBASE}/include/rapidjson/stringbuffer.h:devel/rapidjson \
-		${LOCALBASE}/include/fmt/core.h:devel/libfmt
+		${LOCALBASE}/include/rapidjson/stringbuffer.h:devel/rapidjson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
@@ -28,8 +27,8 @@ SHEBANG_FILES=	scripts/osm2pgsql-replication
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		EXTERNAL_LIBOSMIUM \
 		EXTERNAL_PROTOZERO \
-		EXTERNAL_FMT \
 		EXTERNAL_RAPIDJSON
+#		EXTERNAL_FMT  # XXX: does not build with libfmt 9.x from ports, so use bundled version until upstream fixes
 CMAKE_ARGS=	-DLUA_EXE="${LOCALBASE}/bin/${LUA_CMD}"
 
 PORTDOCS=	AUTHORS CONTRIBUTING.md README.md

@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	1.20.4
+PORTVERSION=	1.20.5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}

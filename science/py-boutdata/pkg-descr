@@ -1,0 +1,2 @@
+boutdata is a Python library that manipulates simulation data produced by
+BOUT++, plasma fluid finite-difference simulation code.

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case $2 in
+       "DEINSTALL")
+               service crowdsec_mirror status 2>/dev/null && touch /var/run/crowdsec_mirror.running
+               service crowdsec_mirror stop 2>/dev/null || :
+               ;;
+esac
+

@@ -8,6 +8,9 @@ WWW=		https://github.com/sebcode/id3ren
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware and obsolete, doesn't support ID3v2 tagging
+EXPIRATION_DATE=2023-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebcode
 GH_TAGNAME=	322ee77

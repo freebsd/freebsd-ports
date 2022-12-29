@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch
-PORTVERSION=	8.5.2
+PORTVERSION=	8.5.3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	8
@@ -71,6 +71,9 @@ SUB_FILES=	pkg-message
 SUB_LIST=	ETCDIR=${ETCDIR} \
 		JAVA_HOME=${JAVA_HOME} \
 		BINDIR=${PREFIX}/bin
+
+post-extract:
+	${RM} -rf ${WRKSRC}/jdk.app
 
 post-patch:
 	${RM} ${WRKSRC}/lib/jna-*.jar

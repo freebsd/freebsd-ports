@@ -49,11 +49,11 @@ lib/cmake/KF5KHtml/KF5KHtmlTargets.cmake
 lib/libKF5KHtml.so
 lib/libKF5KHtml.so.5
 lib/libKF5KHtml.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_MKSPECDIR%%/modules/qt_KHtml.pri
 %%QT_PLUGINDIR%%/kf5/parts/khtmladaptorpart.so
 %%QT_PLUGINDIR%%/kf5/parts/khtmlimagepart.so
 %%QT_PLUGINDIR%%/kf5/parts/khtmlpart.so
 %%QT_PLUGINDIR%%/kf5/parts/kmultipart.so
-%%QT_MKSPECDIR%%/modules/qt_KHtml.pri
 share/kf5/khtml/css/html4.css
 share/kf5/khtml/css/presentational.css
 share/kf5/khtml/css/quirks.css
@@ -105,6 +105,7 @@ share/locale/hu/LC_MESSAGES/khtml5.mo
 share/locale/hy/LC_MESSAGES/khtml5.mo
 share/locale/ia/LC_MESSAGES/khtml5.mo
 share/locale/id/LC_MESSAGES/khtml5.mo
+share/locale/ie/LC_MESSAGES/khtml5.mo
 share/locale/is/LC_MESSAGES/khtml5.mo
 share/locale/it/LC_MESSAGES/khtml5.mo
 share/locale/ja/LC_MESSAGES/khtml5.mo

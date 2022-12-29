@@ -1,0 +1,36 @@
+--- tools/mkimap.orig	2022-10-06 22:58:05 UTC
++++ tools/mkimap
+@@ -75,6 +75,9 @@ sub read_conf {
+ 
+ $imapdconf = shift || "/etc/imapd.conf";
+ 
++$cyrus_user = $ENV{CYRUS_USER} || "%%CYRUS_USER%%";
++$cyrus_group = $ENV{CYRUS_GROUP} || "%%CYRUS_GROUP%%";
++
+ push @configs, $imapdconf;
+ 
+ while ($conf = shift @configs) {
+@@ -87,6 +90,7 @@ $d = $confdir;
+ 
+ print "configuring $d...\n";
+ 
++mkdir $d, 0755;
+ chdir $d or die "couldn't change to $d";
+ 
+ mkdir "proc", 0755 || warn "can't create $d/proc: $!";
+@@ -97,12 +101,15 @@ mkdir "msg", 0755 || warn "can't create $d/msg: $!";
+ mkdir "ptclient", 0755 || warn "can't create $d/ptclient: $!";
+ mkdir "sync", 0755 || warn "can't create $d/sync: $!";
+ 
++system "/usr/sbin/chown -R $cyrus_user:$cyrus_group .";
++
+ while ($part = shift @parts) {
+     print "creating $part...\n";
+     mkdir $part, 0755 || warn "can't create $part: $!";
+     chdir $part or die "couldn't change to partition $part";
+     mkdir "stage.", 0755 || warn "can't create $part/stage.: $!";
+     mkdir "sync.", 0755 || warn "can't create $part/sync.: $!";
++    system "/usr/sbin/chown -R $cyrus_user:$cyrus_group $part";
+ }
+ 
+ print "done\n";

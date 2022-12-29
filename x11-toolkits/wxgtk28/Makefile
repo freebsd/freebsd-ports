@@ -10,6 +10,9 @@ MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 WWW=		https://www.wxwidgets.org/
 
+DEPRECATED=	Abandoned project, use wx 3.x
+EXPIRATION_DATE=	2022-12-31
+
 LIB_DEPENDS+=	libpng.so:graphics/png\
 		libtiff.so:graphics/tiff\
 		libexpat.so:textproc/expat2

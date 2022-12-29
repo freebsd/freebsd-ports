@@ -1,0 +1,3 @@
+Synchronous Python implementation of the Happy Eyeballs Algorithm
+described in RFC 6555. Provided with a single file and dead-simple
+API to allow easy vendoring and integration into other projects.

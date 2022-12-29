@@ -1,11 +1,11 @@
 PORTNAME=	mstflint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.18.0-1
+DISTVERSION=	4.22.0-1
 CATEGORIES=	sysutils
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT?=	Firmware Burning and Diagnostics Tools for Mellanox devices
-WWW=		https://www.mellanox.com/page/management_tools
+WWW=		https://github.com/Mellanox/mstflint
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual
@@ -37,6 +37,10 @@ GH_ACCOUNT=	Mellanox
 
 .include <bsd.port.options.mk>
 
+pre-patch:
+	@${ECHO} '#define TOOLS_GIT_SHA "N/A"' >  ${WRKSRC}/common/gitversion.h
+	@${MKDIR} ${WRKSRC}/config
+
 .if ${PORT_OPTIONS:MSTATIC}
 .else
 USES+=	ssl
@@ -45,7 +49,7 @@ USES+=	ssl
 .if ${PORT_OPTIONS:MADAB}
 CONFIGURE_ARGS+=	--enable-adb-generic-tools
 .if ${PORT_OPTIONS:MSTATIC}
-BROKEN=		does not link: expat2 no longer provides static library
+BROKEN=		does not link: expat2 no longer provides static library by default
 BUILD_DEPENDS+=	xmlwf:textproc/expat2 \
 		boost-libs>0:devel/boost-libs
 .else

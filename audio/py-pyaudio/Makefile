@@ -1,5 +1,5 @@
 PORTNAME=	pyaudio
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.13
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,10 @@ USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	PYTHON=${PYTHON_CMD} \
 		SPHINX=sphinx-build-${PYTHON_VER}
-PORTDOCS=	*
+
 WRKSRC=		${WRKDIR}/PyAudio-${PORTVERSION}
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
@@ -36,8 +38,5 @@ post-build-DOCS-on:
 post-install-DOCS-on:
 	(cd ${WRKSRC}/docs && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -path *doctrees*")
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_portaudio*.so
 
 .include <bsd.port.mk>

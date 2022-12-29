@@ -1,6 +1,6 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.13.2
+DISTVERSION?=	1.14.1
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -28,14 +28,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3743-339-gdc11adde:glslang/ext/glslang \
 		hrydgard:miniupnp:miniupnpd_2_1-502-g3a87be3:miniupnp/ext/miniupnp \
-		facebook:zstd:v1.5.0:zstd/ext/zstd \
+		facebook:zstd:v1.4.7-1276-g096dccbc:zstd/ext/zstd \
 		unknownbrackets:ppsspp-debugger:9776332:debugger/assets/debugger \
 		KhronosGroup:SPIRV-Cross:2021-01-15:SPIRV/ext/SPIRV-Cross \
-		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
+		Kingcom:armips:v0.11.0-184-g6719ede:armips/ext/armips \
+		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
-USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig shared-mime-info
 EXCLUDE=	libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		glew opengl
@@ -82,6 +83,12 @@ post-patch:
 		${WRKSRC}/UI/NativeApp.cpp
 	@${REINPLACE_CMD} -e 's/"unknown"/"${DISTVERSIONFULL}"/' \
 		${WRKSRC}/git-version.cmake
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01
+# https://cgit.freebsd.org/src/commit/?id=773538247007
+	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1203501 ]; then \
+		${REINPLACE_CMD} -e '/if.*__STDC_/,/XXH/s/static_assert/_Static_assert/' \
+			${WRKSRC}/ext/xxhash.h; \
+	fi
 
 do-install-QT5-on do-install-SDL-on:
 	${MV} ${STAGEDIR}${PREFIX}/bin/${EXENAME} \

@@ -15,10 +15,12 @@ BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 
-USES=		magick:6,build perl5 shebangfix tar:bzip2
-SHEBANG_FILES=	src/eqe src/eqedit
+USES=		magick:6,build perl5 shebangfix tar:bzip2 tex
 USE_TEX=	tex
+
 NO_ARCH=	yes
+
+SHEBANG_FILES=	src/eqe src/eqedit
 
 OPTIONS_DEFINE=	DOCS
 

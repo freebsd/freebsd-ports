@@ -27,15 +27,17 @@
  gem "rbpdf", "~> 1.20.0"
  gem 'addressable'
  gem 'rubyzip', '~> 2.3.0'
-@@ -45,68 +45,6 @@ end
+@@ -45,75 +45,11 @@ end
    gem "rack-openid"
  end
  
 -# Optional gem for exporting the gantt to a PNG file
 -group :minimagick do
 -  gem 'mini_magick', '~> 4.11.0'
--end
--
++Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
++  self.instance_eval(Bundler.read_file(bundle))
+ end
+ 
 -# Optional Markdown support, not for JRuby
 -group :markdown do
 -  gem 'redcarpet', '~> 3.5.1'
@@ -79,13 +81,14 @@
 -
 -group :test do
 -  gem "rails-dom-testing"
--  gem 'mocha', '>= 1.4.0'
+-  gem 'mocha', (Gem.ruby_version < Gem::Version.new('2.7.0') ? ['>= 1.4.0', '< 2.0.0'] : '>= 1.4.0')
 -  gem 'simplecov', '~> 0.18.5', :require => false
 -  gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
 -  # For running system tests
--  gem 'puma'
+-  # TODO: Remove version specification once Capybara supports Puma 6
+-  gem 'puma', '< 6.0.0'
 -  gem 'capybara', '~> 3.31.0'
--  gem "selenium-webdriver"
+-  gem "selenium-webdriver", "~> 3.142.7"
 -  gem 'webdrivers', '~> 4.4', require: false
 -  # RuboCop
 -  gem 'rubocop', '~> 1.12.0'
@@ -96,12 +99,9 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -115,4 +53,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
- # Load plugins' Gemfiles
- Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
-   eval_gemfile file
-+end
-+
-+Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
-+  self.instance_eval(Bundler.read_file(bundle))
+-end
+-
+-# Load plugins' Gemfiles
+-Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
+-  eval_gemfile file
  end

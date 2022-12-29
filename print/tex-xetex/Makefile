@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libTECkit.so:textproc/teckit
 
-USES=		compiler:c++11-lib gnome perl5 pkgconfig python:build tar:xz xorg
+USES=		compiler:c++11-lib gnome perl5 pkgconfig python:build tar:xz tex xorg
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo
 USE_PERL5=	build

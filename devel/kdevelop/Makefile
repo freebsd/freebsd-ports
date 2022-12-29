@@ -12,18 +12,16 @@ WWW=		https://www.kdevelop.org/
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt \
-		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt
 LIB_DEPENDS=	libKasten4Controllers.so:devel/okteta \
 		libapr-1.so:devel/apr1 \
 		libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
 		libkomparediff2.so:textproc/libkomparediff2
-RUN_DEPENDS=	gmake:devel/gmake \
-		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 \
-		kde:5 qt:5 shared-mime-info shebangfix tar:xz xorg
+		kde:5 llvm:build,run qt:5 shared-mime-info shebangfix tar:xz xorg
 USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons emoticons i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kdeclarative \
@@ -44,7 +42,7 @@ SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 USE_KDE+=	ecm
 USE_QT+=	testlib
 
-CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
+CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LLVM_PREFIX}
 
 # Versioning values, to reduce plist churn
 SO_VER=		510

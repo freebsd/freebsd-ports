@@ -24,6 +24,5 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2@${PH
 
 USES=		php:pecl
 USE_PHP=	hash:build iconv:build zlib:build
-IGNORE_WITH_PHP=	74
 
 .include <bsd.port.mk>

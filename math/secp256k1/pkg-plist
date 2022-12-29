@@ -6,6 +6,6 @@ include/secp256k1_recovery.h
 include/secp256k1_schnorrsig.h
 lib/libsecp256k1.a
 lib/libsecp256k1.so
-lib/libsecp256k1.so.0
-lib/libsecp256k1.so.0.0.0
+lib/libsecp256k1.so.1
+lib/libsecp256k1.so.1.0.0
 libdata/pkgconfig/libsecp256k1.pc

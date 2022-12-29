@@ -1,0 +1,18 @@
+--- Cargo.toml.orig	2022-12-12 21:03:18 UTC
++++ Cargo.toml
+@@ -99,7 +99,11 @@ env_logger = "0.10"
+ test-log = "0.2"
+ 
+ # Test specific dev-dependencies
+-[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
+-nix = "0.26"
+-whoami = "1"
+-procfs = { version = "0.14", default-features = false }
++#[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
++#nix = "0.26"
++#whoami = "1"
++#procfs = { version = "0.14", default-features = false }
++
++[profile.release]
++opt-level = 2
++debug = false

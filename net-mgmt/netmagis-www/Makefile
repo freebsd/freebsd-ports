@@ -17,6 +17,7 @@ RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 NO_ARCH=	# no
+USES=	tex
 USE_TEX=	full
 
 MASTERDIR=	${.CURDIR}/../netmagis-common

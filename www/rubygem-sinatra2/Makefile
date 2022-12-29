@@ -1,5 +1,6 @@
 PORTNAME=	sinatra
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mustermann>=2.0:devel/rubygem-mustermann \
-		rubygem-rack>=2.2,3<3,3:www/rubygem-rack \
+		rubygem-rack22>=2.2,3<3,3:www/rubygem-rack22 \
 		rubygem-rack-protection2>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-rack-protection2 \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 

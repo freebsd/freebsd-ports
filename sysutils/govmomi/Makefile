@@ -1,11 +1,10 @@
 PORTNAME=	govmomi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
-PORTREVISION=	4
+DISTVERSION=	0.30.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	alex@i.org.ua
-COMMENT=	vSphere CLI and vSphere API mock framework
+COMMENT=	Go library for the VMware vSphere API
 WWW=		https://github.com/vmware/govmomi/
 
 LICENSE=	APACHE20

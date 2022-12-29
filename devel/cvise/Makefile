@@ -30,6 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 # 260 passed, 1 skipped in 64.82 seconds
 
 USES=		cmake python:3.6+ shebangfix
+CMAKE_ARGS+=	-DLLVM_DIR:PATH=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/llvm
 CMAKE_ARGS+=	-DClang_DIR:PATH=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/clang
 LLVM_VER=	13
 SHEBANG_FILES=	cvise-delta.py cvise.py

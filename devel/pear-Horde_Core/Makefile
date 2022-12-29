@@ -1,24 +1,15 @@
 PORTNAME=	Horde_Core
-DISTVERSION=	2.31.16
-PORTREVISION=	1
+DISTVERSION=	2.31.18
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Core Framework libraries
 WWW=		https://pear.horde.org
 
-CONFLICTS=	horde-3*
-
-OPTIONS_DEFINE=	KOLAB LZF SOCKETS
-KOLAB_DESC=	Enable Kolab server support
-LZF_DESC=	Depend on lzf PHP extension
-SOCKETS_DESC=	Depend on sockets PHP extension
+LICENSE=	LGPL21
 
 USES=		horde php cpe
-USE_PHP=	session
-
 USE_HORDE_BUILD=	Horde_Role
-
 USE_HORDE_RUN=	Horde_Role \
 		Horde_ActiveSync \
 		Horde_Alarm \
@@ -61,9 +52,18 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Url \
 		Horde_Util \
 		Horde_View
-
 # Not required but wanted
 USE_HORDE_RUN+=	Horde_Routes
+USE_PHP=	session
+
+CONFLICTS=	horde-3*
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	KOLAB LZF SOCKETS
+KOLAB_DESC=	Enable Kolab server support
+LZF_DESC=	Depend on lzf PHP extension
+SOCKETS_DESC=	Depend on sockets PHP extension
 
 KOLAB_USE=	HORDE_RUN=Horde_Kolab_Server,Horde_Kolab_Session,Horde_Kolab_Storage
 LZF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/lzf.so:archivers/pecl-lzf@${PHP_FLAVOR}

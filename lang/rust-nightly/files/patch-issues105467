@@ -1,0 +1,281 @@
+https://github.com/rust-lang/rust/issues/105467
+
+revert of https://github.com/rust-lang/rust/commit/8f1e6eba343452ac48412f11d57aa7d206c8c3dd
+
+
+--- library/std/src/os/android/net.rs.orig	2022-12-26 09:18:12 UTC
++++ library/std/src/os/android/net.rs
+@@ -1,9 +1,4 @@
+ //! Android-specific networking functionality.
+ 
+ #![unstable(feature = "tcp_quickack", issue = "96256")]
+-
+-#[unstable(feature = "unix_socket_abstract", issue = "85410")]
+-pub use crate::os::net::linux_ext::addr::SocketAddrExt;
+-
+-#[unstable(feature = "tcp_quickack", issue = "96256")]
+ pub use crate::os::net::linux_ext::tcp::TcpStreamExt;
+--- library/std/src/os/linux/net.rs.orig	2022-12-26 09:18:17 UTC
++++ library/std/src/os/linux/net.rs
+@@ -1,9 +1,4 @@
+ //! Linux-specific networking functionality.
+ 
+ #![unstable(feature = "tcp_quickack", issue = "96256")]
+-
+-#[unstable(feature = "unix_socket_abstract", issue = "85410")]
+-pub use crate::os::net::linux_ext::addr::SocketAddrExt;
+-
+-#[unstable(feature = "tcp_quickack", issue = "96256")]
+ pub use crate::os::net::linux_ext::tcp::TcpStreamExt;
+--- library/std/src/os/net/linux_ext/mod.rs.orig	2022-12-26 09:15:03 UTC
++++ library/std/src/os/net/linux_ext/mod.rs
+@@ -2,9 +2,6 @@
+ 
+ #![doc(cfg(any(target_os = "linux", target_os = "android")))]
+ 
+-#[unstable(feature = "unix_socket_abstract", issue = "85410")]
+-pub(crate) mod addr;
+-
+ #[unstable(feature = "tcp_quickack", issue = "96256")]
+ pub(crate) mod tcp;
+ 
+--- library/std/src/os/unix/net/addr.rs.orig	2022-12-24 20:24:15 UTC
++++ library/std/src/os/unix/net/addr.rs
+@@ -1,9 +1,6 @@ use crate::ffi::OsStr;
+ use crate::ffi::OsStr;
+-#[cfg(any(doc, target_os = "android", target_os = "linux"))]
+-use crate::os::net::linux_ext;
+ use crate::os::unix::ffi::OsStrExt;
+ use crate::path::Path;
+-use crate::sealed::Sealed;
+ use crate::sys::cvt;
+ use crate::{fmt, io, mem, ptr};
+ 
+@@ -227,6 +224,31 @@ impl SocketAddr {
+         if let AddressKind::Pathname(path) = self.address() { Some(path) } else { None }
+     }
+ 
++    /// Returns the contents of this address if it is an abstract namespace
++    /// without the leading null byte.
++    ///
++    /// # Examples
++    ///
++    /// ```no_run
++    /// #![feature(unix_socket_abstract)]
++    /// use std::os::unix::net::{UnixListener, SocketAddr};
++    ///
++    /// fn main() -> std::io::Result<()> {
++    ///     let namespace = b"hidden";
++    ///     let namespace_addr = SocketAddr::from_abstract_namespace(&namespace[..])?;
++    ///     let socket = UnixListener::bind_addr(&namespace_addr)?;
++    ///     let local_addr = socket.local_addr().expect("Couldn't get local address");
++    ///     assert_eq!(local_addr.as_abstract_namespace(), Some(&namespace[..]));
++    ///     Ok(())
++    /// }
++    /// ```
++    #[doc(cfg(any(target_os = "android", target_os = "linux")))]
++    #[cfg(any(doc, target_os = "android", target_os = "linux",))]
++    #[unstable(feature = "unix_socket_abstract", issue = "85410")]
++    pub fn as_abstract_namespace(&self) -> Option<&[u8]> {
++        if let AddressKind::Abstract(name) = self.address() { Some(name) } else { None }
++    }
++
+     fn address(&self) -> AddressKind<'_> {
+         let len = self.len as usize - sun_path_offset(&self.addr);
+         let path = unsafe { mem::transmute::<&[libc::c_char], &[u8]>(&self.addr.sun_path) };
+@@ -243,41 +265,62 @@ impl SocketAddr {
+             AddressKind::Pathname(OsStr::from_bytes(&path[..len - 1]).as_ref())
+         }
+     }
+-}
+ 
+-#[unstable(feature = "unix_socket_abstract", issue = "85410")]
+-impl Sealed for SocketAddr {}
+-
+-#[doc(cfg(any(target_os = "android", target_os = "linux")))]
+-#[cfg(any(doc, target_os = "android", target_os = "linux"))]
+-#[unstable(feature = "unix_socket_abstract", issue = "85410")]
+-impl linux_ext::addr::SocketAddrExt for SocketAddr {
+-    fn as_abstract_name(&self) -> Option<&[u8]> {
+-        if let AddressKind::Abstract(name) = self.address() { Some(name) } else { None }
+-    }
+-
+-    fn from_abstract_name<N>(name: &N) -> crate::io::Result<Self>
+-    where
+-        N: AsRef<[u8]>,
+-    {
+-        let name = name.as_ref();
++    /// Creates an abstract domain socket address from a namespace
++    ///
++    /// An abstract address does not create a file unlike traditional path-based
++    /// Unix sockets. The advantage of this is that the address will disappear when
++    /// the socket bound to it is closed, so no filesystem clean up is required.
++    ///
++    /// The leading null byte for the abstract namespace is automatically added.
++    ///
++    /// This is a Linux-specific extension. See more at [`unix(7)`].
++    ///
++    /// [`unix(7)`]: https://man7.org/linux/man-pages/man7/unix.7.html
++    ///
++    /// # Errors
++    ///
++    /// This will return an error if the given namespace is too long
++    ///
++    /// # Examples
++    ///
++    /// ```no_run
++    /// #![feature(unix_socket_abstract)]
++    /// use std::os::unix::net::{UnixListener, SocketAddr};
++    ///
++    /// fn main() -> std::io::Result<()> {
++    ///     let addr = SocketAddr::from_abstract_namespace(b"hidden")?;
++    ///     let listener = match UnixListener::bind_addr(&addr) {
++    ///         Ok(sock) => sock,
++    ///         Err(err) => {
++    ///             println!("Couldn't bind: {err:?}");
++    ///             return Err(err);
++    ///         }
++    ///     };
++    ///     Ok(())
++    /// }
++    /// ```
++    #[doc(cfg(any(target_os = "android", target_os = "linux")))]
++    #[cfg(any(doc, target_os = "android", target_os = "linux",))]
++    #[unstable(feature = "unix_socket_abstract", issue = "85410")]
++    pub fn from_abstract_namespace(namespace: &[u8]) -> io::Result<SocketAddr> {
+         unsafe {
+             let mut addr: libc::sockaddr_un = mem::zeroed();
+             addr.sun_family = libc::AF_UNIX as libc::sa_family_t;
+ 
+-            if name.len() + 1 > addr.sun_path.len() {
++            if namespace.len() + 1 > addr.sun_path.len() {
+                 return Err(io::const_io_error!(
+                     io::ErrorKind::InvalidInput,
+-                    "abstract socket name must be shorter than SUN_LEN",
++                    "namespace must be shorter than SUN_LEN",
+                 ));
+             }
+ 
+             crate::ptr::copy_nonoverlapping(
+-                name.as_ptr(),
++                namespace.as_ptr(),
+                 addr.sun_path.as_mut_ptr().add(1) as *mut u8,
+-                name.len(),
++                namespace.len(),
+             );
+-            let len = (sun_path_offset(&addr) + 1 + name.len()) as libc::socklen_t;
++            let len = (sun_path_offset(&addr) + 1 + namespace.len()) as libc::socklen_t;
+             SocketAddr::from_parts(addr, len)
+         }
+     }
+--- library/std/src/os/unix/net/tests.rs.orig	2022-12-24 20:24:15 UTC
++++ library/std/src/os/unix/net/tests.rs
+@@ -7,12 +7,6 @@ use crate::time::Duration;
+ use crate::thread;
+ use crate::time::Duration;
+ 
+-#[cfg(target_os = "android")]
+-use crate::os::android::net::SocketAddrExt;
+-
+-#[cfg(target_os = "linux")]
+-use crate::os::linux::net::SocketAddrExt;
+-
+ macro_rules! or_panic {
+     ($e:expr) => {
+         match $e {
+@@ -410,7 +404,7 @@ fn test_abstract_stream_connect() {
+     let msg1 = b"hello";
+     let msg2 = b"world";
+ 
+-    let socket_addr = or_panic!(SocketAddr::from_abstract_name(b"name"));
++    let socket_addr = or_panic!(SocketAddr::from_abstract_namespace(b"namespace"));
+     let listener = or_panic!(UnixListener::bind_addr(&socket_addr));
+ 
+     let thread = thread::spawn(move || {
+@@ -424,7 +418,7 @@ fn test_abstract_stream_connect() {
+     let mut stream = or_panic!(UnixStream::connect_addr(&socket_addr));
+ 
+     let peer = or_panic!(stream.peer_addr());
+-    assert_eq!(peer.as_abstract_name().unwrap(), b"name");
++    assert_eq!(peer.as_abstract_namespace().unwrap(), b"namespace");
+ 
+     or_panic!(stream.write_all(msg1));
+     let mut buf = vec![];
+@@ -438,7 +432,7 @@ fn test_abstract_stream_iter() {
+ #[cfg(any(target_os = "android", target_os = "linux"))]
+ #[test]
+ fn test_abstract_stream_iter() {
+-    let addr = or_panic!(SocketAddr::from_abstract_name(b"hidden"));
++    let addr = or_panic!(SocketAddr::from_abstract_namespace(b"hidden"));
+     let listener = or_panic!(UnixListener::bind_addr(&addr));
+ 
+     let thread = thread::spawn(move || {
+@@ -460,13 +454,13 @@ fn test_abstract_datagram_bind_send_to_addr() {
+ #[cfg(any(target_os = "android", target_os = "linux"))]
+ #[test]
+ fn test_abstract_datagram_bind_send_to_addr() {
+-    let addr1 = or_panic!(SocketAddr::from_abstract_name(b"ns1"));
++    let addr1 = or_panic!(SocketAddr::from_abstract_namespace(b"ns1"));
+     let sock1 = or_panic!(UnixDatagram::bind_addr(&addr1));
+ 
+     let local = or_panic!(sock1.local_addr());
+-    assert_eq!(local.as_abstract_name().unwrap(), b"ns1");
++    assert_eq!(local.as_abstract_namespace().unwrap(), b"ns1");
+ 
+-    let addr2 = or_panic!(SocketAddr::from_abstract_name(b"ns2"));
++    let addr2 = or_panic!(SocketAddr::from_abstract_namespace(b"ns2"));
+     let sock2 = or_panic!(UnixDatagram::bind_addr(&addr2));
+ 
+     let msg = b"hello world";
+@@ -475,13 +469,13 @@ fn test_abstract_datagram_bind_send_to_addr() {
+     let (len, addr) = or_panic!(sock2.recv_from(&mut buf));
+     assert_eq!(msg, &buf[..]);
+     assert_eq!(len, 11);
+-    assert_eq!(addr.as_abstract_name().unwrap(), b"ns1");
++    assert_eq!(addr.as_abstract_namespace().unwrap(), b"ns1");
+ }
+ 
+ #[cfg(any(target_os = "android", target_os = "linux"))]
+ #[test]
+ fn test_abstract_datagram_connect_addr() {
+-    let addr1 = or_panic!(SocketAddr::from_abstract_name(b"ns3"));
++    let addr1 = or_panic!(SocketAddr::from_abstract_namespace(b"ns3"));
+     let bsock1 = or_panic!(UnixDatagram::bind_addr(&addr1));
+ 
+     let sock = or_panic!(UnixDatagram::unbound());
+@@ -495,7 +489,7 @@ fn test_abstract_datagram_connect_addr() {
+     assert_eq!(addr.is_unnamed(), true);
+     assert_eq!(msg, &buf[..]);
+ 
+-    let addr2 = or_panic!(SocketAddr::from_abstract_name(b"ns4"));
++    let addr2 = or_panic!(SocketAddr::from_abstract_namespace(b"ns4"));
+     let bsock2 = or_panic!(UnixDatagram::bind_addr(&addr2));
+ 
+     or_panic!(sock.connect_addr(&addr2));
+@@ -505,8 +499,8 @@ fn test_abstract_datagram_connect_addr() {
+ 
+ #[cfg(any(target_os = "android", target_os = "linux"))]
+ #[test]
+-fn test_abstract_name_too_long() {
+-    match SocketAddr::from_abstract_name(
++fn test_abstract_namespace_too_long() {
++    match SocketAddr::from_abstract_namespace(
+         b"abcdefghijklmnopqrstuvwxyzabcdefghijklmn\
+         opqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghi\
+         jklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",
+@@ -519,11 +513,11 @@ fn test_abstract_name_too_long() {
+ 
+ #[cfg(any(target_os = "android", target_os = "linux"))]
+ #[test]
+-fn test_abstract_no_pathname_and_not_unnamed() {
+-    let name = b"local";
+-    let addr = or_panic!(SocketAddr::from_abstract_name(name));
++fn test_abstract_namespace_no_pathname_and_not_unnamed() {
++    let namespace = b"local";
++    let addr = or_panic!(SocketAddr::from_abstract_namespace(&namespace[..]));
+     assert_eq!(addr.as_pathname(), None);
+-    assert_eq!(addr.as_abstract_name(), Some(&name[..]));
++    assert_eq!(addr.as_abstract_namespace(), Some(&namespace[..]));
+     assert_eq!(addr.is_unnamed(), false);
+ }
+ 

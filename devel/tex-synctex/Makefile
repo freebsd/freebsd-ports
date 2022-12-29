@@ -14,7 +14,7 @@ WWW=		http://itexmac.sourceforge.net/SyncTeX.html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/synctexdir/README.txt
 
-USES=		libtool localbase pathfix pkgconfig tar:xz
+USES=		libtool localbase pathfix pkgconfig tar:xz tex
 USE_LDCONFIG=	yes
 USE_TEX=	kpathsea
 

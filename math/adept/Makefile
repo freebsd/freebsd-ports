@@ -20,6 +20,7 @@ OPTIONS_DEFINE=		PDFTEXDOCS
 OPTIONS_SUB=		yes
 
 PDFTEXDOCS_DESC=	Build and install PDF documentation from LaTeX sources
+PDFTEXDOCS_USES=	tex
 PDFTEXDOCS_USE=		TEX=pdftex:build,dvipsk:build
 
 post-build-PDFTEXDOCS-on:

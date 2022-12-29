@@ -1,0 +1,2 @@
+Implementation of GOST R 34.11-94, GOST R 34.11-2012 (STRIBOG-256/512),
+SHA, SHA2 hash functions and hash based algorithms: HMAC, PBKDF, SSHA.

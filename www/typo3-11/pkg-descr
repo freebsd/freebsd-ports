@@ -1,17 +1,18 @@
-The latest version with Long Term Support (LTS). It will have full support until
-March 2023 and security bugfixes until October 2024.
+This is the stable version with long-term support (LTS). We provide free
+maintenance bug fixes until April 2023 and security updates until October 2024.
 
 * Unified editor experience
-* Advanced filelist module
-* Sharable Deep Links in the TYPO3 Backend
-* Improved collaboration and Workflow features
-* Flexible and Secure Multi-factor Authentication
-* And a lot of Improvements for Developers
+* Advanced Filelist module
+* Sharable deep links in the TYPO3 backend
+* Improved collaboration and workflow features
+* Flexible and secure multi-factor authentication (MFA)
+* And many improvements for developers
 
 System requirements
-* PHP 7.4 or 8.0
-* MySQL 5.7+ / MariaDB / Postgres / SQLite support
+* PHP 7.4, 8.0, 8.1
+* MariaDB 10.2.7+ / Microsoft SQL Server / MySQL 5.7.9+ / PostgreSQL / SQLite
 * Modern Browsers
+* Detailed list of requirements: https://get.typo3.org/version/11#system-requirements
 
 Supported Until
 Free: 2024-10-31

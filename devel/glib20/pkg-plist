@@ -941,6 +941,7 @@ share/gettext/its/gschema.loc
 %%NLS%%share/locale/hu/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/hy/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/id/LC_MESSAGES/glib20.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/is/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/it/LC_MESSAGES/glib20.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/glib20.mo

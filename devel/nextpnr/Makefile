@@ -1,6 +1,6 @@
 PORTNAME=	nextpnr
-DISTVERSION=	g20200804
-PORTREVISION=	4
+DISTVERSION=	0.4
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	manu@FreeBSD.org
@@ -26,8 +26,8 @@ USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
-GH_TAGNAME=	48cd407
-GH_TUPLE=	YosysHQ:nextpnr-tests:8f93e7e:tests/tests
+GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
+GH_TUPLE=	YosysHQ:nextpnr-tests:00c55a9e:tests/tests
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

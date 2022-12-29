@@ -41,6 +41,7 @@ DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_ALL_TARGET=	html
 DOCS_BINARY_ALIAS=	sed=gsed
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
 PDF_ALL_TARGET=		pdf
 PDF_PLIST_FILES=	${DOCSDIR}/with-editor.pdf

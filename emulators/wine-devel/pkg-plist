@@ -1455,7 +1455,6 @@ lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
-%%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/winex11.so
@@ -2325,6 +2324,7 @@ lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
+%%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
 lib/wine/%%WINEARCH%%-windows/wineboot.exe
 lib/wine/%%WINEARCH%%-windows/winebrowser.exe
 lib/wine/%%WINEARCH%%-windows/winebus.sys

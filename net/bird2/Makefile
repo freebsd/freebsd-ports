@@ -1,5 +1,5 @@
 PORTNAME=	bird
-DISTVERSION=	2.0.10
+DISTVERSION=	2.0.11
 CATEGORIES=	net
 MASTER_SITES=	https://bird.network.cz/download/
 PKGNAMESUFFIX=	2
@@ -9,6 +9,9 @@ COMMENT=	Dynamic IP routing daemon
 WWW=		https://bird.network.cz/
 
 LICENSE=	GPLv2
+
+FLAVORS=	base netlink
+netlink_PKGNAMESUFFIX=	2-netlink
 
 USES=		bison cpe gmake ncurses readline
 
@@ -56,5 +59,15 @@ STATIC_VARS=	rt_prot+=static
 
 CONFIGURE_ARGS+=--with-protocols="${RT_PROT}"
 RPKI_LIB_DEPENDS=	libssh.so:security/libssh
+
+.include <bsd.port.options.mk>
+
+.if ${FLAVOR:U} == netlink
+CONFIGURE_ARGS+=--with-sysconfig=bsd-netlink
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-netlink
+.if ${OSVERSION} < 1400073
+BROKEN=No netlink support
+.endif
+.endif
 
 .include <bsd.port.mk>

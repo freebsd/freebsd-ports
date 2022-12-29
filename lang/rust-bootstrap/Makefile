@@ -2,7 +2,7 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.65.0
+PORTVERSION=	1.66.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysr
 		gmake:devel/gmake \
 		rust>=${PORTVERSION}:lang/rust
 
-FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
+FLAVORS=	aarch64 amd64 armv7 i386 \
 		powerpc64le powerpc riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
@@ -115,9 +115,6 @@ do-configure:
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="stable"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
-.if ${FLAVOR} == riscv64
-	@${ECHO_CMD} 'debug=true' >> ${WRKSRC}/config.toml
-.endif
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'link-shared=false' >> ${WRKSRC}/config.toml

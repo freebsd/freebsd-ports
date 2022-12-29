@@ -28,7 +28,7 @@ cd "${dp_DISTDIR}"
 # So, we extract the content of the distinfo file minus the TIMESTAMP, if it
 # contains a TIMESTAMP.
 if [ -f "${dp_DISTINFO_FILE}" ] && grep -q "^TIMESTAMP " ${dp_DISTINFO_FILE}; then
-	grep -v "^TIMESTAMP " ${dp_DISTINFO_FILE} > ${DISTINFO_OLD}
+	grep -v "^TIMESTAMP " ${dp_DISTINFO_FILE} > ${DISTINFO_OLD} || true
 fi
 
 for file in ${dp_CKSUMFILES}; do

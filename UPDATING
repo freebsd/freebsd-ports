@@ -5,6 +5,45 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20221226:
+  AFFECTS: users of sysutils/zrepl
+  AUTHOR: driesm@FreeBSD.org
+
+  The Prometheus metric zrepl_version_daemon has been converted to the
+  zrepl_start_time metric. The metric still reports the zrepl verison in a
+  label. But the metric value is now the Unix timestamp at the time the
+  daemon was started. The Grafana dashboard in dist/grafana has been
+  updated.
+
+  The RPC protocol version has also been bumped; all zrepl daemons in a
+  setup must be updated and restarted before replication can resume.
+
+20221220:
+  AFFECTS: users of net-mgmt/unbound_exporter
+  AUTHOR: thomas@beingboiled.info
+
+  The config defaults for the log file and certificates have been changed.
+  See /usr/local/etc/rc.d/unbound_exporter for possible options and adjust
+  your rc.conf accordingly.
+
+20221215:
+  AFFECTS: users of security/clamav
+  AUTHOR: yasu@FreeBSD.org
+
+  Many users report that after updating ClamAV to 1.0.0 clamd and
+  freshclam fails to start with integrity check error of
+  databases. According to the result of investigation it happens with
+  following conditions.
+
+  1. ClamAV is built on non-cleanroom environment (that is, neither
+     FreeBSD official ClamAV package is used nor the package is built
+     by user with poudriere).
+  2. math/tomsfastmath is installed in the system that ClamAV is
+     built.
+
+  So if the errror happens on you system, uninstall TomsFastMath first
+  and then rebuild and reinstall ClamAV. The problem should disappear.
+
 20221128:
   AFFECTS: devel/py-proxmoxer
   AUTHOR: einar@isnic.is

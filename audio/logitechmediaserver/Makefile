@@ -1,6 +1,7 @@
 
 PORTNAME=	logitechmediaserver
 DISTVERSION=	8.2.0.g2021.11.13
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -74,7 +75,7 @@ SUB_LIST=	PERL=${PERL} \
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
 OPTIONS_DEFINE=	APE FAAD FLAC LAME SOX TEST DOCS
-OPTIONS_DEFAULT=APE FAAD FLAX SOX TEST
+OPTIONS_DEFAULT=APE FAAD FLAC SOX TEST
 SOX_DESC=	Support OGG Vorbis input via SoX (SliMP3 and SB1)
 APE_RUN_DEPENDS=	mac:audio/mac
 FAAD_RUN_DEPENDS=	faad:audio/faad
@@ -116,6 +117,8 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR})
+	chmod +x ${STAGEDIR}${PREFIX}/${SLIMDIR}/scanner.pl \
+	    ${STAGEDIR}${PREFIX}/${SLIMDIR}/slimserver.pl
 	(cd ${WRKSRC_vendor}/CPAN/build && \
 		${COPYTREE_SHARE} arch ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN)
 	(cd ${WRKSRC_vendor}/CPAN/build/${PERL_VER}/lib/perl5 && \

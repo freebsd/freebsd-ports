@@ -1,5 +1,5 @@
 PORTNAME=	thunar
-DISTVERSION=	4.16.11
+DISTVERSION=	4.18.1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -14,7 +14,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libtumbler-1.so:deskutils/xfce4-tumbler \
-		libharfbuzz.so:print/harfbuzz
+		libharfbuzz.so:print/harfbuzz \
+		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	pkexec:sysutils/polkit
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-tools gmake gnome \

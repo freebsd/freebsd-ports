@@ -1,5 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	108.0.5359.98
+PORTVERSION=	108.0.5359.124
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
@@ -114,7 +114,6 @@ GN_ARGS+=	fatal_linker_warnings=false \
 		use_system_libjpeg=true \
 		use_system_libwayland=true \
 		use_system_wayland_scanner=true \
-		use_system_libwayland_server=true \
 		use_udev=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}"

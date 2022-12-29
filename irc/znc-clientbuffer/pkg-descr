@@ -1,0 +1,2 @@
+ZNC Clientbuffer is a module for ZNC that allows to maintain client specific
+buffers for identified clients.

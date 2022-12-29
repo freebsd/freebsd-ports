@@ -1,6 +1,5 @@
 PORTNAME=	dynare
-DISTVERSION=	5.2
-PORTREVISION=	2
+DISTVERSION=	5.3
 CATEGORIES=	science # economics
 MASTER_SITES=	https://www.dynare.org/release/source/
 
@@ -23,7 +22,7 @@ RUN_DEPENDS=	epstool:graphics/epstool \
 		pstoedit:graphics/pstoedit \
 		xfig:graphics/xfig # README says that these executables are required for the test suite
 
-USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz
+USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz tex
 USE_TEX=	pdftex
 
 GNU_CONFIGURE=	yes
@@ -46,7 +45,14 @@ OCTAVE_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 				libfftw3f.so:math/fftw3-float \
 				libgsl.so:math/gsl \
 				libumfpack.so:math/suitesparse-umfpack
-OCTAVE_RUN_DEPENDS=		octave:math/octave
+OCTAVE_RUN_DEPENDS=		octave:math/octave \
+				octave-forge-statistics>0:math/octave-forge-statistics
+
+.include <bsd.port.options.mk>
+.if (${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc) && ${OSVERSION} < 1301510 # support added in e09d209d1a74a3caca95dea303db9bc605fce1a7
+BROKEN_powerpc64=	Cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+BROKEN_powerpc64le=	Cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+.endif
 
 post-install:
 	# remove empty directories, see https://git.dynare.org/Dynare/dynare/-/issues/1835

@@ -76,6 +76,7 @@ DBUS_MESON_TRUE=	dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 DVI_DESC=		DVI viewer support
+DVI_USES=		tex
 DVI_USE=		TEX=kpathsea,latex
 DVI_MESON_ENABLED=	dvi
 

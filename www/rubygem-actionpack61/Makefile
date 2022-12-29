@@ -1,5 +1,6 @@
 PORTNAME=	actionpack
 PORTVERSION=	6.1.6.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionview61>=${PORTVERSION}:devel/rubygem-actionview61 \
 		rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport61 \
-		rubygem-rack>=2.0.9,3<3,3:www/rubygem-rack \
+		rubygem-rack22>=2.0.9,3<3,3:www/rubygem-rack22 \
 		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
 		rubygem-rails-dom-testing-rails61>=2.0<3:textproc/rubygem-rails-dom-testing-rails61 \
 		rubygem-rails-html-sanitizer>=1.2.0<2:textproc/rubygem-rails-html-sanitizer

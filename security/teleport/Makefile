@@ -1,6 +1,7 @@
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.12
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	kraileth@elderlinux.org

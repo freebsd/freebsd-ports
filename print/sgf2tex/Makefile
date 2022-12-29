@@ -8,7 +8,7 @@ MAINTAINER=	spcoltri@omcl.org
 COMMENT=	Convert a Go game record in SGF format into TeX and provide fonts to make a dvi
 WWW=		http://match.stanford.edu/~bump/sgf2tex.html
 
-USES=		shebangfix
+USES=		shebangfix tex
 SHEBANG_FILES=	sgf2tex
 USE_TEX=	tex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR}

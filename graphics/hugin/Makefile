@@ -1,6 +1,5 @@
 PORTNAME=	hugin
-DISTVERSION=	2021.0.0
-PORTREVISION=	2
+DISTVERSION=	2022.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -19,7 +18,9 @@ LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 		libpano13.so:graphics/libpano13 \
 		libvigraimpex.so:graphics/vigra \
 		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libflann.so:math/flann \
+		liblz4.so:archivers/liblz4
 # gmake is really needed at _runtime_.   Do not remove it from this list.
 RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		exiftool:graphics/p5-Image-ExifTool \

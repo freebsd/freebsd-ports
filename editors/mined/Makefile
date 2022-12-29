@@ -1,11 +1,11 @@
 PORTNAME=	mined
-PORTVERSION=	2022.26
+PORTVERSION=	2022.27
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	http://towo.net/mined/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
-WWW=		http://towo.net/mined/
+WWW=		https://mined.github.io/
 
 LICENSE=	GPLv3
 

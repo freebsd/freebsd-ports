@@ -1,0 +1,20 @@
+This software is a filter program used with Common UNIX Printing
+System (CUPS) from the Linux. This can supply the high quality print
+with Seiko Epson Color Ink Jet Printers.
+
+This printer driver is supporting the following printers.
+L110
+L111
+L210
+L211
+L300
+L301
+L303
+L350
+L351
+L353
+L355
+L356
+L550
+L551
+L555

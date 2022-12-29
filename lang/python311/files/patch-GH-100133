@@ -1,0 +1,24 @@
+commit ae8520c70992710903819f24dbce4e7dd05d7ea8
+Author: Miss Islington (bot) <31488909+miss-islington@users.noreply.github.com>
+Date:   Wed Dec 21 02:24:19 2022 -0800
+
+    GH-100133: fix `asyncio` subprocess losing `stderr` and `stdout` output (GH-100154)
+    
+    (cherry picked from commit a7715ccfba5b86ab09f86ec56ac3755c93b46b48)
+    
+    Co-authored-by: Kumar Aditya <59607654+kumaraditya303@users.noreply.github.com>
+
+diff --git Lib/asyncio/base_subprocess.py Lib/asyncio/base_subprocess.py
+index e15bb4141f..4c9b0dd565 100644
+--- Lib/asyncio/base_subprocess.py
++++ Lib/asyncio/base_subprocess.py
+@@ -215,9 +215,6 @@ def _process_exited(self, returncode):
+             # object. On Python 3.6, it is required to avoid a ResourceWarning.
+             self._proc.returncode = returncode
+         self._call(self._protocol.process_exited)
+-        for p in self._pipes.values():
+-            if p is not None:
+-                p.pipe.close()
+ 
+         self._try_finish()
+ 

@@ -1,7 +1,6 @@
 PORTNAME=	openfhe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
-PORTREVISION=	2
+DISTVERSION=	1.0.2
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
-USES=		cmake:noninja,testing compiler:c++17-lang # cmake refuses to work with ninja
+USES=		cmake:noninja,testing compiler:c++17-lang localbase:ldflags # cmake refuses to work with ninja
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -53,5 +52,8 @@ OPTIONS_DEFAULT+=	OPENMP
 .else
 OPENMP_BROKEN=		OpenMP isn't enabled on this architecture
 .endif
+
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/include/*.orig
 
 .include <bsd.port.mk>

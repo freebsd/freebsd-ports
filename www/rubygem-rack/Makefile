@@ -1,5 +1,5 @@
 PORTNAME=	rack
-PORTVERSION=	2.2.4
+PORTVERSION=	3.0.2
 PORTEPOCH=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
@@ -15,8 +15,6 @@ USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-PLIST_FILES=	bin/rackup
 
 CPE_VENDOR=	rack_project
 

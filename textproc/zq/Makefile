@@ -2,7 +2,8 @@ PORTNAME=	zq
 
 COMMENT=	Easier and faster alternative to jq
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/zed/cmd/zq
+GO_MODULE=	github.com/brimdata/zq
+GO_PKGNAME=	github.com/brimdata/zed/cmd/zq
 
 PLIST_FILES=	bin/zq
 

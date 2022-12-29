@@ -203,7 +203,6 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @mode 1775
 @dir etc/gdm/home
 @mode
-@postunexec rm -rf %D/etc/gdm/home/.gconf*
 @dir %%ETCDIR%%/Sessions
 @dir etc/dm
 @dir etc/dm/Sessions

@@ -196,6 +196,7 @@ include/gnucash/qof-string-cache.h
 include/gnucash/qof.h
 include/gnucash/qofbackend.h
 include/gnucash/qofbook.h
+include/gnucash/qofbook.hpp
 include/gnucash/qofbookslots.h
 include/gnucash/qofchoice.h
 include/gnucash/qofclass.h
@@ -1381,6 +1382,7 @@ share/icons/hicolor/scalable/apps/gnucash-icon.svg
 %%NLS%%share/locale/lt/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mai/LC_MESSAGES/gnucash.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mni/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mni@bengali/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/gnucash.mo

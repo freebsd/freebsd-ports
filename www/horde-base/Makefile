@@ -7,22 +7,15 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Application Framework
 WWW=		https://www.horde.org/apps/horde/
 
+LICENSE=	GPLv2
+
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
+
 RUN_DEPENDS=	${PEARDIR}/Net/DNS2.php:dns/pear-Net_DNS2@${PHP_FLAVOR}
 
-OPTIONS_DEFAULT=	ICONV
-OPTIONS_DEFINE=	FACEBOOK ICONV TWITTER WEATHER
-
-FACEBOOK_DESC=	Support connections to Facebook
-ICONV_DESC=	Depend on PHP iconv extension
-TWITTER_DESC=	Support connections to Twitter
-WEATHER_DESC=	Support weather forecast display
-
-USES=	horde cpe php
-USE_PHP=	filter gettext hash
-IGNORE_WITH_PHP=80 81 82
-
-CONFLICTS_INSTALL=	php*-horde
-
+USES=	horde cpe php:flavors
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		Horde_Alarm \
@@ -55,9 +48,20 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View \
 		Horde_Vfs
-
 # Optional in package but we want them in
 USE_HORDE_RUN+=	Horde_Feed
+USE_PHP=	filter gettext hash
+IGNORE_WITH_PHP=81 82
+
+CONFLICTS_INSTALL=	php*-horde
+
+OPTIONS_DEFINE=	FACEBOOK ICONV TWITTER WEATHER
+OPTIONS_DEFAULT=	ICONV
+
+FACEBOOK_DESC=	Support connections to Facebook
+ICONV_DESC=	Depend on PHP iconv extension
+TWITTER_DESC=	Support connections to Twitter
+WEATHER_DESC=	Support weather forecast display
 
 FACEBOOK_USE=	HORDE_RUN=Horde_Service_Facebook
 ICONV_USE=	PHP=iconv

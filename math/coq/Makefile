@@ -47,6 +47,7 @@ IDE_DESC=		Include desktop environment (coqide)
 IDE_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 IDE_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 IDE_CONFIGURE_OFF=	-coqide no
+DOCS_USES=		tex
 DOCS_USE=		TEX=latex:build,dvipsk:build,texmf:build
 DOCS_BUILD_DEPENDS=	hevea:textproc/hevea
 DOCS_CONFIGURE_OFF=	-with-doc no

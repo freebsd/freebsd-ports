@@ -12,7 +12,6 @@ MASTER_SITES?=	https://pear.horde.org/get/
 HORDE_DIR?=	www/horde
 
 CPE_VENDOR?=	horde
-IGNORE_WITH_PHP=80 81 82
 
 DIST_SUBDIR=	Horde
 PEAR_CHANNEL=	horde

@@ -1,0 +1,13 @@
+PyHDFE is a Python 3 implementation of algorithms for absorbing high dimensional
+fixed effects. This package was created by Jeff Gortmaker in collaboration with
+Anya Tarascina.
+
+What PyHDFE won't do is provide a convenient interface for running regressions.
+Instead, the package is meant to be incorporated into statistical projects that
+would benefit from performant fixed effect absorption. Another goal is
+facilitating fair comparison of algorithms that have been previously implemented
+in various languages with different convergence criteria.
+
+Development of the package has been guided by code made publicly available by
+many researchers and practitioners. For a full list of papers and software cited
+in this documentation, refer to the references section of the documentation.

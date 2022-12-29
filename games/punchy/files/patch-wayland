@@ -1,8 +1,8 @@
 https://github.com/bevyengine/bevy/issues/4106
 
---- Cargo.lock.orig	2022-08-29 21:51:17 UTC
+--- Cargo.lock.orig	2022-10-11 09:02:43 UTC
 +++ Cargo.lock
-@@ -1012,6 +1012,16 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
+@@ -1109,6 +1109,16 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
  checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f4710dc03ceb8748637775692c"
  
  [[package]]
@@ -19,7 +19,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "cc"
  version = "1.0.73"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1502,6 +1512,15 @@ checksum = "bd0c93bb4b0c6d9b77f4435b0ae98c24d17f1c45b2
+@@ -1686,6 +1696,15 @@ checksum = "bd0c93bb4b0c6d9b77f4435b0ae98c24d17f1c45b2
  checksum = "bd0c93bb4b0c6d9b77f4435b0ae98c24d17f1c45b2ff844c6151a07256ca923b"
  
  [[package]]
@@ -35,7 +35,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "downcast-rs"
  version = "1.2.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2395,6 +2414,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
+@@ -2794,6 +2813,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
  checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
  
  [[package]]
@@ -51,7 +51,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "memoffset"
  version = "0.6.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2639,6 +2667,7 @@ dependencies = [
+@@ -3044,6 +3072,7 @@ dependencies = [
   "bitflags",
   "cfg-if 1.0.0",
   "libc",
@@ -59,20 +59,7 @@ https://github.com/bevyengine/bevy/issues/4106
  ]
  
  [[package]]
-@@ -3335,6 +3364,12 @@ dependencies = [
- ]
- 
- [[package]]
-+name = "scoped-tls"
-+version = "1.0.0"
-+source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "ea6a9290e3c9cf0f18145ef7ffa62d68ee0bf5fcd651017e586dc7fd5da448c2"
-+
-+[[package]]
- name = "scopeguard"
- version = "1.1.0"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3441,6 +3476,25 @@ dependencies = [
+@@ -4083,6 +4112,25 @@ dependencies = [
  ]
  
  [[package]]
@@ -98,8 +85,8 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "spade"
  version = "2.0.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4017,6 +4071,78 @@ checksum = "6598dd0bd3c7d51095ff6531a5b23e02acdc81804e
- checksum = "6598dd0bd3c7d51095ff6531a5b23e02acdc81804e30d8f07afb77b7215a140a"
+@@ -5069,6 +5117,78 @@ dependencies = [
+ ]
  
  [[package]]
 +name = "wayland-client"
@@ -175,9 +162,9 @@ https://github.com/bevyengine/bevy/issues/4106
 +
 +[[package]]
  name = "web-sys"
- version = "0.3.59"
+ version = "0.3.60"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4263,7 +4389,10 @@ dependencies = [
+@@ -5326,7 +5446,10 @@ dependencies = [
   "parking_lot 0.11.2",
   "percent-encoding",
   "raw-window-handle",
@@ -188,7 +175,7 @@ https://github.com/bevyengine/bevy/issues/4106
   "web-sys",
   "winapi",
   "x11-dl",
-@@ -4293,7 +4422,22 @@ dependencies = [
+@@ -5356,7 +5479,22 @@ dependencies = [
  ]
  
  [[package]]

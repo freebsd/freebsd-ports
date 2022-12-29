@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	6.0.1
+SSPVERSION=	6.0.3
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -37,7 +37,7 @@ LIB_DEPENDS+=	libsuitesparseconfig.so:math/suitesparse-config
 OPTIONS_DEFINE+=DEMOS
 .endif
 
-USES+=		cmake:insource fortran gmake
+USES+=		cmake:insource
 
 DOCSDIR=	${PREFIX}/share/doc/${SSPNAME}
 MAKE_ENV=	JOBS="${MAKE_JOBS_NUMBER}" \

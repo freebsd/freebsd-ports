@@ -1,6 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.4
-PORTREVISION=	4
+DISTVERSION=	1.4.1
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,13 +13,15 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec
 
-USES=		compiler:c++17-lang cmake python:build shebangfix
+USES=		compiler:c++17-lang cmake:testing python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	salilab
 
 SHEBANG_GLOB=	*.py
+
+LDFLAGS+=	-lhdf5
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 

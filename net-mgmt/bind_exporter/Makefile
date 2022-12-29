@@ -1,7 +1,7 @@
 PORTNAME=	bind_exporter
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt dns
 
 MAINTAINER=	matt@mattmoriarity.com

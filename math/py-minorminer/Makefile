@@ -1,5 +1,5 @@
 PORTNAME=	minorminer
-DISTVERSION=	0.2.9
+DISTVERSION=	0.2.10
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,10 +21,13 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	@${STRIP_CMD} \

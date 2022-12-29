@@ -1,0 +1,288 @@
+#!/bin/sh
+
+# PROVIDE: remark
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable remark
+# remark_enable="YES"
+#
+# Required settings:
+# remark_enable (bool): 	Set to YES to enable remark
+#				Default: NO
+# remark_url (str): 		URL to Remark42 server, required
+#
+# Options:
+# remark_secret (str):	256-bit shared key used to sign JWT.
+#				Default: random string
+# remark_site (str):		site name(s), multi
+#				Default: remark
+# remark_store_type (str):	type of storage, bolt or rpc
+#				Default: bolt
+# remark_store_bolt_path (str):	parent directory for the bolt files
+#				Default: %%REMARK42_DATADIR%%
+# remark_backup_path (str):	backups location
+#				Default: %%REMARK_DATADIR%%/backup
+# remark_avatar_fs_path (str):	avatars location for fs store
+#				Default: %%REMARK_DATADIR%%/avatars
+# remark_avatar_bolt_file (str):
+#				avatars bolt file location
+#				Default: %%REMARK_DATADIR%%/avatars.db
+# remark_avatar_uri (str):	avatars store URI
+#				Default: %%REMARK_DATADIR%%/avatars
+# remark_image_fs_path (str):	permanent location of images
+#				Default: %%REMARK_DATADIR%%/pictures
+# remark_image_fs_staging (str):
+#				staging location of images
+#				Default: %%REMARK_DATADIR%%/pictures.staging
+# remark_image_bolt_file (str):	images bolt file location
+#				Default: %%REMARK_DATADIR%%/pictures.db
+#
+# Additional configuration variables available at https://remark42.com/docs/configuration/parameters/
+# are exposed with similar naming convention.
+
+. /etc/rc.subr
+
+name=remark
+rcvar=remark_enable
+load_rc_config ${name}
+
+: ${remark_enable:="NO"}
+: ${remark_secret:="$(head -c32 /dev/urandom| uuencode -r -m -)"}
+: ${remark_url:=""}
+: ${remark_site:="remark"}
+: ${remark_store_type:="bolt"}
+: ${remark_store_bolt_path:="%%REMARK_DATADIR%%"}
+: ${remark_store_bolt_timeout:="30s"}
+: ${remark_store_rpc_api:=""}
+: ${remark_store_rpc_timeout:=""}
+: ${remark_store_rpc_auth_user:=""}
+: ${remark_store_rpc_auth_passwd:=""}
+: ${remark_admin_type:="shared"}
+: ${remark_admin_rpc_api:=""}
+: ${remark_admin_rpc_timeout:="5s"}
+: ${remark_admin_shared_id:=""}
+: ${remark_admin_shared_email:=""}
+: ${remark_backup_path:="%%REMARK_DATADIR%%/backup"}
+: ${remark_backup_max:="10"}
+: ${remark_cache_type:="mem"}
+: ${remark_avatar_type:="fs"}
+: ${remark_avatar_fs_path:="%%REMARK_DATADIR%%/avatars"}
+: ${remark_avatar_bolt_file:="%%REMARK_DATADIR%%/avatars.db"}
+: ${remark_avatar_uri:=""}
+: ${remark_avatar_resize_limit:="0"}
+: ${remark_image_type:="fs"}
+: ${remark_image_fs_path:="%%REMARK_DATADIR%%/pictures"}
+: ${remark_image_fs_staging:="%%REMARK_DATADIR%%/pictures.staging"}
+: ${remark_image_fs_partitions:="100"}
+: ${remark_image_bolt_file:="%%REMARK_DATADIR%%/pictures.db"}
+: ${remark_image_rpc_api:=""}
+: ${remark_image_rpc_timeout:="5s"}
+: ${remark_image_rpc_auth_user:=""}
+: ${remark_image_rpc_auth_passwd:=""}
+: ${remark_image_max_size:="5000000"}
+: ${remark_image_resize_width:="2400"}
+: ${remark_image_resize_height:="900"}
+: ${remark_auth_same_site:="default"}
+: ${remark_auth_google_cid:=""}
+: ${remark_auth_google_csec:=""}
+: ${remark_auth_facebook_cid:=""}
+: ${remark_auth_facebook_csec:=""}
+: ${remark_auth_microsoft_cid:=""}
+: ${remark_auth_microsoft_csec:=""}
+: ${remark_auth_github_cid:=""}
+: ${remark_auth_github_csec:=""}
+: ${remark_auth_twitter_cid:=""}
+: ${remark_auth_twitter_csec:=""}
+: ${remark_auth_patreon_cid:=""}
+: ${remark_auth_patreon_csec:=""}
+: ${remark_auth_yandex_cid:=""}
+: ${remark_auth_yandex_csec:=""}
+: ${remark_auth_telegram:=""}
+: ${remark_user:="%%REMARK_USER%%"}
+: ${remark_auth_anon:="false"}
+: ${remark_auth_enable:="false"}
+: ${remark_auth_email_from:=""}
+: ${remark_auth_email_subject:="remark42 confirmation"}
+: ${remark_auth_email_content_type:="text/html"}
+: ${remark_notify_users:=""}
+: ${remark_notify_admins:=""}
+: ${remark_notify_queue:=""}
+: ${remark_notify_telegram_chan:=""}
+: ${remark_notify_slack_token:=""}
+: ${remark_notify_slack_chan:=""}
+: ${remark_notify_webhook_url:=""}
+: ${remark_notify_webhook_template:=""}
+: ${remark_notify_webhook_headers:=""}
+: ${remark_notify_webhook_timeout:=""}
+: ${remark_notify_email_from:=""}
+: ${remark_notify_email_verification_subj:=""}
+: ${remark_telegram_token:=""}
+: ${remark_telegram_timeout:=""}
+: ${remark_smtp_host:=""}
+: ${remark_smtp_port:=""}
+: ${remark_smtp_username:=""}
+: ${remark_smtp_password:=""}
+: ${remark_smtp_login_auth:=""}
+: ${remark_smtp_tls:=""}
+: ${remark_smtp_starttls:=""}
+: ${remark_smtp_timeout:=""}
+: ${remark_ssl_type:=""}
+: ${remark_ssl_port:=""}
+: ${remark_ssl_cert:=""}
+: ${remark_ssl_key:=""}
+: ${remark_ssl_acme_location:=""}
+: ${remark_ssl_acme_email:=""}
+: ${remark_max_comment_size:=""}
+: ${remark_max_votes:=""}
+: ${remark_votes_ip:=""}
+: ${remark_anon_vote:=""}
+: ${remark_votes_ip_time:=""}
+: ${remark_low_score:=""}
+: ${remark_critical_score:=""}
+: ${remark_positive_score:=""}
+: ${remark_restricted_words:=""}
+: ${remark_restricted_names:=""}
+: ${remark_edit_time:=""}
+: ${remark_admin_edit:=""}
+: ${remark_readonly_age:=""}
+: ${remark_image_proxy_http2https:=""}
+: ${remark_image_proxy_cache_external:=""}
+: ${remark_emoji:=""}
+: ${remark_simple_view:=""}
+: ${remark_proxy_cors:=""}
+: ${remark_allowed_hosts:=""}
+: ${remark_remark_address:=""}
+: ${remark_remark_port:=""}
+: ${remark_remark_web_root:=""}
+: ${remark_update_limit:=""}
+: ${remark_subscribers_only:=""}
+: ${remark_disable_signature:=""}
+: ${remark_admin_passwd:=""}
+: ${remark_debug:=""}
+
+export_variable()
+{
+	_var="remark_$(echo $1 | tr A-Z a-z)"
+	eval _val="\$${_var}"
+	[ -z "${_val}" ] || export "${1}"="${_val}"
+}
+
+export_variables()
+{
+	for _v in $@; do
+		export_variable "${_v}"
+	done
+}
+
+remark_precmd()
+{
+	install -d -o ${remark_user} %%REMARK_PIDDIR%%
+        install -o ${remark_user} /dev/null ${pidfile}
+	install -d -o ${remark_user} ${remark_store_bolt_path}
+
+	if [ -z "${remark_url}" ]; then
+		err 1 "remark_url must be set"
+	fi
+	export REMARK_URL="${remark_url}"
+	export REMARK_SITE="${remark_site}"
+	export_variables SECRET SITE STORE_TYPE
+	case "${STORE_TYPE}" in
+	bolt)
+		export_variables STORE_BOLT_PATH STORE_BOLT_TIMEOUT
+                ;;
+	rpc)
+		export_variables STORE_RPC_API STORE_RPC_TIMEOUT STORE_RPC_AUTH_USER STORE_RPC_AUTH_PASSWD
+		;;
+        *)
+                err 1 "remark_store_type has to be either 'bolt' or 'rpc'"
+                ;;
+        esac
+	export_variable ADMIN_TYPE
+	case "${ADMIN_TYPE}" in
+	shared)
+		;;
+	rpc)
+		export_variables ADMIN_RPC_API ADMIN_RPC_TIMEOUT ADMIN_RPC_AUTH_USER ADMIN_RPC_AUTH_PASSWD
+		;;
+	*)
+                err 1 "remark_admin_type has to be either 'shared' or 'rpc'"
+                ;;
+        esac
+	export_variables ADMIN_SHARED_ID ADMIN_SHARED_EMAIL BACKUP_PATH
+	export MAX_BACKUP_FILES="${remark_backup_max}"
+	export_variables CACHE_TYPE AVATAR_TYPE
+	case "${AVATAR_TYPE}" in
+	fs)
+		export_variable AVATAR_FS_PATH
+		;;
+	bolt)
+		export_variable AVATAR_BOLT_FILE
+		;;
+	uri)
+		export_variable AVATAR_URI
+		;;
+	*)
+                err 1 "remark_avatar_path has to be 'fs', 'bolt' or 'uri'"
+                ;;
+        esac
+	export AVATAR_RESIZE="${remark_avatar_resize_limit}"
+	export_variable IMAGE_TYPE
+	case "${remark_image_type}" in
+	fs)
+		export_variables IMAGE_FS_PATH IMAGE_FS_STAGING IMAGE_FS_PARTITIONS
+		;;
+	bolt)
+		export_variable IMAGE_BOLT_FILE
+		;;
+	rpc)
+		export_variables IMAGE_RPC_API IMAGE_RPC_TIMEOUT IMAGE_RPC_AUTH_USER IMAGE_RPC_AUTH_PASSWD
+		;;
+	*)
+		err 1 "remark_image_type has to be 'fs', 'bolt' or 'rpc'"
+		;;
+	esac
+	export_variables IMAGE_MAX_SIZE IMAGE_RESIZE_WIDTH IMAGE_RESIZE_HEIGHT AUTH_SAME_SITE AUTH_TELEGRAM
+	for _provider in google facebook microsoft github twitter patreon yandex; do
+		_provider_upper="$(echo ${_provider} | tr a-z A-Z)"
+		export_variables "AUTH_${_provider_upper}_CID" "AUTH_${_provider_upper}_CSEC"
+	done
+	export_variables AUTH_ANON AUTH_EMAIL_ENABLE AUTH_EMAIL_FROM AUTH_EMAIL_SUBJ AUTH_EMAIL_CONTENT_TYPE
+	export_variables NOTIFY_USERS NOTIFY_ADMINS NOTIFY_QUEUE NOTIFY_TELEGRAM_CHAN NOTIFY_SLACK_TOKEN NOTIFY_SLACK_CHAN
+	export_variables NOTIFY_WEBHOOK_URL NOTIFY_WEBHOOK_TEMPLATE NOTIFY_WEBHOOK_HEADERS NOTIFY_WEBHOOK_TIMEOUT
+	export_variables NOTIFY_EMAIL_FROM NOTIFY_EMAIL_VERIFICATION_SUBJ TELEGRAM_TOKEN TELEGRAM_TIMEOUT
+	export_variables SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_LOGIN_AUTH SMTP_TLS
+	export_variables SMTP_STARTTLS SMTP_TIMEOUT SSL_TYPE SSL_PORT SSL_CERT SSL_KEY SSL_ACME_LOCATION
+	export_variables SSL_ACME_EMAIL MAX_COMMENT_SIZE MAX_VOTES VOTES_IP ANON_VOTE VOTES_IP_TIME
+	export_variables LOW_SCORE CRITICAL_SCORE POSITIVE_SCORE RESTRICTED_WORDS RESTRICTED_NAMES
+	export_variables EDIT_TIME ADMIN_EDIT READONLY_AGE IMAGE_PROXY_HTTP2HTTPS IMAGE_PROXY_CACHE_EXTERNAL
+	export_variables EMOJI SIMPLE_VIEW PROXY_CORS ALLOWED_HOSTS REMARK_ADDRESS REMARK_PORT REMARK_WEB_ROOT
+	export_variables UPDATE_LIMIT SUBSCRIBERS_ONLY DISABLE_SIGNATURE ADMIN_PASSWD DEBUG
+}
+
+pidfile="%%REMARK_PIDDIR%%${name}.pid"
+procname="%%PREFIX%%/libexec/remark42"
+command=/usr/sbin/daemon
+command_args="-c -p ${pidfile} -T ${name} ${procname} server ${remark_options}"
+start_precmd="remark_precmd"
+extra_commands="backup restore cleanup"
+cleanup_cmd="cleanup"
+cleanup_precmd="remark_precmd"
+backup_cmd="backup"
+backup_precmd="remark_precmd"
+restore_cmd="restore"
+restore_precmd="remark_precmd"
+
+cleanup() {
+	su -m ${remark_user} -c "${procname} cleanup $@"
+}
+
+backup() {
+	su -m ${remark_user} -c "${procname} backup $@"
+}
+
+restore() {
+	su -m ${remark_user} -c "${procname} restore $@"
+}
+
+run_rc_command $@

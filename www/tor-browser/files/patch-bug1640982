@@ -1,0 +1,17 @@
+Unbreak build with Rust 1.45.0
+
+error: options `-C embed-bitcode=no` and `-C lto` are incompatible
+
+diff --git config/makefiles/rust.mk config/makefiles/rust.mk
+index 75570d3..94ec33f 100644
+--- config/makefiles/rust.mk
++++ config/makefiles/rust.mk
+@@ -97,7 +97,7 @@ ifndef rustflags_sancov
+ # Never enable when coverage is enabled to work around https://github.com/rust-lang/rust/issues/90045.
+ ifndef MOZ_CODE_COVERAGE
+ ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
+-cargo_rustc_flags += -Clto
++cargo_rustc_flags += 
+ endif
+ # We need -Cembed-bitcode=yes for all crates when using -Clto.
+ RUSTFLAGS += -Cembed-bitcode=yes

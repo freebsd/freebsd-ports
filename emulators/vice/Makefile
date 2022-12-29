@@ -1,6 +1,6 @@
 PORTNAME=	vice
-PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTVERSION=	3.7
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -38,8 +38,9 @@ USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 CFLAGS+=	-fcommon
-CONFIGURE_ARGS+=	--enable-ipv6 \
-			--enable-external-ffmpeg \
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--enable-ipv6 \
+			--enable-ffmpeg \
 			--enable-x64 \
 			--disable-realdevice \
 			--disable-pdf-docs \
@@ -58,11 +59,11 @@ SDLUI2_DESC=	use SDL2 user interface
 SDLSOUND_DESC=	build with SDL2 sound system support
 
 GTK3UI_USES=			desktop-file-utils
-GTK3UI_CONFIGURE_ENABLE=	native-gtk3ui desktop-files
+GTK3UI_CONFIGURE_ENABLE=	gtk3ui desktop-files
 GTK3UI_BUILD_DEPENDS=		bash:shells/bash
 SDLUI2_USES=			sdl
 SDLUI2_USE=			SDL=sdl2 SDL=image2
-SDLUI2_CONFIGURE_ENABLE=	sdlui2
+SDLUI2_CONFIGURE_ENABLE=	sdl2ui
 SDLSOUND_USES=			sdl
 SDLSOUND_USE=			SDL=sdl2
 SDLSOUND_CONFIGURE_ON=		--with-sdlsound

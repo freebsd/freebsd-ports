@@ -1,6 +1,5 @@
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.2.6.3
-PORTREVISION=	2
+PORTVERSION=	1.2.6.4
 CATEGORIES=	net www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -44,7 +43,6 @@ SUB_FILES+=	pkg-message
 
 post-patch:
 	cd ${WRKSRC} ;							    \
-	${CP} lib/Attribute.php lib/PLAAttribute.php;			    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore   \
 	    ! -name .gitignore ! -name *.orig 				    \
 	    ! -name Attribute.php | ${SORT} |				    \

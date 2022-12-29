@@ -1,9 +1,8 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2022-11-21
+DISTVERSION=	a2022-12-14
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/pkubaj:${FLAVOR} \
-		LOCAL/tobik:${FLAVOR} \
-		${_SYSROOT_DIST:@f@https://download.freebsd.org/ftp/$f?dummy=/:${FLAVOR}@}
+MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
+		LOCAL/rust:${FLAVOR}
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
 DISTFILES=	${_SYSROOT_DIST:@f@rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${f:T}:${FLAVOR}@}
 EXTRACT_ONLY=	${DISTFILES:[1]:S/:${FLAVOR}$$//}
@@ -17,12 +16,10 @@ LICENSE_NAME=	FreeBSD base licenses
 LICENSE_FILE=	${WRKDIR}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
-		powerpc64le powerpc riscv64
+FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le \
+		powerpcspe riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
-powerpc64_elfv1_BUILD_DEPENDS=	powerpc64-gcc9>0:devel/freebsd-gcc9@powerpc64
-powerpc64_elfv1_RUN_DEPENDS=	powerpc64-gcc9>0:devel/freebsd-gcc9@powerpc64
 powerpc_BUILD_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
 powerpc_RUN_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
 
@@ -40,33 +37,29 @@ SUB_FILES=	${exists(${FILESDIR}/${FLAVOR}-c++.in):?${FLAVOR}-c++:} \
 		${exists(${FILESDIR}/${FLAVOR}-cc.in):?${FLAVOR}-cc:} c++ cc
 SUB_LIST=	FREEBSD_SYSROOT="${_SYSROOT}" \
 		FREEBSD_SYSROOT_CC="${CC}" \
-		FREEBSD_SYSROOT_CC_ELFV1="$$(${ECHO_CMD} ${LOCALBASE}/bin/powerpc64-unknown-${OPSYS:tl}*[0-9]-gcc9)" \
 		FREEBSD_SYSROOT_CXX="${CXX}" \
-		FREEBSD_SYSROOT_CXX_ELFV1="$$(${ECHO_CMD} ${LOCALBASE}/bin/powerpc64-unknown-${OPSYS:tl}*[0-9]-g\+\+9)" \
-		FREEBSD_SYSROOT_CXXINC_ELFV1="/$$(cd ${STAGEDIR}${_SYSROOT} && ${ECHO_CMD} usr/local/lib/gcc9/include/c++/powerpc64-*)" \
 		FREEBSD_SYSROOT_LLVM_TRIPLE="${_SYSROOT_LLVM_TRIPLE}" \
 		FREEBSD_SYSROOT_POWERPC_LD="$$(${ECHO_CMD} ${LOCALBASE}/bin/powerpc-unknown-${OPSYS:tl}*[0-9]-ld.bfd)"
 PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
 PLIST_SUB=	ROOT=${_SYSROOT:S,^${PREFIX}/,,}
 
 _SYSROOT=				${PREFIX}/${PORTNAME}/${FLAVOR:S/_/-/g}
-_SYSROOT_VER=				${_SYSROOT_VER_${FLAVOR}:U12.2-RELEASE}
-_SYSROOT_VER_powerpc64_elfv2=		13.0-RELEASE
-_SYSROOT_VER_powerpc64le=		13.0-RELEASE
-_SYSROOT_VER_powerpc=			13.0-RELEASE
-_SYSROOT_VER_riscv64=			13.0-RELEASE
+_SYSROOT_VER=				${_SYSROOT_VER_${FLAVOR}:U12.3-RELEASE}
+_SYSROOT_VER_powerpc=			13.1-RELEASE
+_SYSROOT_VER_powerpc64=			13.1-RELEASE
+_SYSROOT_VER_powerpc64le=		13.1-RELEASE
+_SYSROOT_VER_powerpcspe=		13.1-RELEASE
+_SYSROOT_VER_riscv64=			13.1-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
-_SYSROOT_DIST_armv6=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv6-RPI-B.img.xz
 _SYSROOT_DIST_armv7=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv7-WANDBOARD.img.xz
 _SYSROOT_DIST_amd64=			releases/amd64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_i386=			releases/i386/${_SYSROOT_VER}/base.txz
-_SYSROOT_DIST_powerpc64_elfv1=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz \
-					gcc9-9.3.0_1.txz
-_SYSROOT_DIST_powerpc64_elfv2=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
-_SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz \
-					gcc11-11.3.0_5.pkg
+					gcc12-12.2.0_5.pkg
+_SYSROOT_DIST_powerpc64=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
+_SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
+_SYSROOT_DIST_powerpcspe=		releases/powerpc/powerpcspe/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_riscv64=			releases/riscv/riscv64/${_SYSROOT_VER}/base.txz
 _SYSROOT_INCLUDE=			COPYRIGHT lib/* usr/include/* usr/lib/* \
 					usr/libdata/* \
@@ -76,58 +69,47 @@ _SYSROOT_EXCLUDE=			lib/geom/* lib/casper/* lib/libalias_* \
 					usr/lib/pam_* usr/lib/snmp_* \
 					usr/lib/libprivate* *_p.a \
 					${_SYSROOT_EXCLUDE_${FLAVOR}}
-_SYSROOT_EXCLUDE_armv6=			usr/lib/debug/*
 _SYSROOT_EXCLUDE_armv7=			usr/lib/debug/*
-_SYSROOT_EXCLUDE_powerpc64_elfv1=	usr/include/c++/* usr/lib/libstdc++.* \
-					usr/lib/libsupc++.* usr/include/gcc/* \
-					usr/libdata/ldscripts/*
 _SYSROOT_ARCH_amd64=			x86_64
 _SYSROOT_ARCH_i386=			i686
-_SYSROOT_ARCH_powerpc64_elfv1=		powerpc64
-_SYSROOT_ARCH_powerpc64_elfv2=		powerpc64
+_SYSROOT_ARCH_powerpc64=		powerpc64
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
-_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd12.0
-_SYSROOT_LLVM_TRIPLE_armv6=		armv6-unknown-freebsd12.2-gnueabihf
-_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd12.2-gnueabihf
-_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.0 # secure-plt
+_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd12.3
+_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd12.3-gnueabihf
+_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.1 # secure-plt
 
 .if make(distclean) || make(makesum)
 MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
 DISTFILES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DISTFILES'!}@}
 .endif
 
-# to be removed if the port ever switched to base.txz for armv*
-.if ${FLAVOR:Marmv*}
-BROKEN_mips=	little-endian UFS fails to be read on big-endian architectures
-BROKEN_mips64=	little-endian UFS fails to be read on big-endian architectures
+# to be removed if the port ever switched to base.txz for armv7
+.if ${FLAVOR} == armv7
 BROKEN_powerpc=	little-endian UFS fails to be read on big-endian architectures
 BROKEN_powerpcspe=	little-endian UFS fails to be read on big-endian architectures
 BROKEN_powerpc64=	little-endian UFS fails to be read on big-endian architectures
-BROKEN_sparc64=	little-endian UFS fails to be read on big-endian architectures
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD
-.elif ${FLAVOR} == powerpc64le && ${OSVERSION} < 1300139
-IGNORE=		is only for FreeBSD 13.0-RELEASE or greater
+.elif ${FLAVOR} == powerpc64le && ${OSVERSION} < 1301000
+IGNORE=		is only for FreeBSD 13.1-RELEASE or greater
 .endif
 
 pre-extract:
 	@${MKDIR} ${STAGEDIR}${_SYSROOT}
 
-# No base.txz for armv* so extract what we need from the available *.img files
-.if ${FLAVOR:Marmv*}
+# No base.txz for armv7 so extract what we need from the available *.img files
+.if ${FLAVOR} == armv7
 # for label offset: unxz -c $img | file -
 # for UFS slice offset: unxz -c $img | dd skip=$label_offset count=8192 >label; bsdlabel -f label; rm label
 # skip = label_offset + slice_offset
 # check if detected as UFS: unxz -c $img | dd skip=$skip | file -
-_SKIP_armv6=	103424
-_SKIP_armv7=	118784
 do-extract:
 	@unxz -c ${_DISTDIR}/${EXTRACT_ONLY} | \
-		dd skip=${_SKIP_${FLAVOR}} >${WRKDIR}/base.img
+		dd skip=118784 >${WRKDIR}/base.img
 	@${MKDIR} ${WRKDIR}/base
 	@cd ${WRKDIR}/base; \
 		dump -0f - ${WRKDIR}/base.img | \
@@ -139,26 +121,17 @@ do-extract:
 .endif
 
 post-extract:
-.if ${FLAVOR} == powerpc64_elfv1
+.if ${FLAVOR} == powerpc
 	cd ${EXTRACT_WRKDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${_SYSROOT_DIST_${FLAVOR}:[2]} \
-		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc9
-.elif ${FLAVOR} == powerpc
-	cd ${EXTRACT_WRKDIR} && \
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${_SYSROOT_DIST_${FLAVOR}:[2]} \
-		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc11
+		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc12
 .endif
 	@${FIND} ${STAGEDIR}${_SYSROOT} -type d -empty -delete
 	@${MV} ${STAGEDIR}${_SYSROOT}/COPYRIGHT ${WRKDIR}
 
 do-install:
-.if ${FLAVOR} == powerpc64_elfv1
-	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc9/libstdc++.a \
-		${STAGEDIR}${_SYSROOT}/usr/lib/libstdc++.a
-	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc9/libstdc++.a \
-		${STAGEDIR}${_SYSROOT}/usr/lib/libc++.a
-.elif ${FLAVOR} == powerpc
-	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc11/libatomic.so \
+.if ${FLAVOR} == powerpc
+	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc12/libatomic.so \
 		${STAGEDIR}${_SYSROOT}/usr/lib/libatomic.so
 .endif
 	@${MKDIR} ${STAGEDIR}${_SYSROOT}/bin

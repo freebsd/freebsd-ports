@@ -6,13 +6,14 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/.htaccess
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/default.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/disabled
+%%WWWDIR%%/snappymail/v/%%VER%%/app/domains/gmail.com.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/domains/hotmail.com.ini
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Collection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/DateTimeHelper.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Enumerations/Charset.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Enumerations/Encoding.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/HtmlUtils.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Http.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/LinkFinder.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Locale.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/ResourceRegistry.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/StreamFilters/LineEndings.php
@@ -21,7 +22,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/SubStreams.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/TempFile.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Utils.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Validator.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Xxtea.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Cache/CacheClient.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Cache/DriverInterface.php
@@ -30,7 +30,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Cache/Drivers/Memcache.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Cache/Drivers/Redis.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Config.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Hooks.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/BodyStructure.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Commands/ACL.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Commands/Folders.php
@@ -79,7 +78,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Attachment.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/AttachmentCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Exceptions/NonEmptyFolder.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Folder.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/FolderCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/MailClient.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Message.php
@@ -391,6 +389,8 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Accounts.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Admin.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/AdminDomains.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/AdminExtensions.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Attachments.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Contacts.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Filters.php
@@ -837,6 +837,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SettingsThemes.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SystemDropDown.html
 %%WWWDIR%%/snappymail/v/%%VER%%/cpanel.php
+%%WWWDIR%%/snappymail/v/%%VER%%/imapsync.php
 %%WWWDIR%%/snappymail/v/%%VER%%/include.php
 %%WWWDIR%%/snappymail/v/%%VER%%/index.php
 %%WWWDIR%%/snappymail/v/%%VER%%/setup.php

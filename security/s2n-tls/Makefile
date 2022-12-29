@@ -1,6 +1,7 @@
 PORTNAME=	s2n-tls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.30
+DISTVERSION=	1.3.31
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -19,6 +20,9 @@ GH_ACCOUNT=	aws
 USE_LDCONFIG=	yes
 CMAKE_OFF=	BUILD_TESTING
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+# Fix llvm15 build, PR 268413
+CFLAGS+=	-Wno-strict-prototypes
 
 SUB_FILES=	pkg-message
 
@@ -42,7 +46,5 @@ post-install:
 	${CP} -r ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/*.c ${STAGEDIR}${EXAMPLESDIR}
-
-# testunit fails: https://github.com/aws/s2n-tls/issues/3489
 
 .include <bsd.port.mk>

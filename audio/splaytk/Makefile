@@ -9,6 +9,9 @@ COMMENT=	Tk based interface for splay
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, no development in 20 years and uses obsolete decoding library
+EXPIRATION_DATE=2023-03-31
+
 RUN_DEPENDS=	splay:audio/splay
 
 NO_BUILD=	yes

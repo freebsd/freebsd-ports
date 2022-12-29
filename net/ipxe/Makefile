@@ -1,5 +1,5 @@
 PORTNAME=	ipxe
-DISTVERSION=	g20220610
+DISTVERSION=	g20221222
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	d3c8944d5c3ab262
+GH_TAGNAME=	7147532c3fbf9a70
 USE_PERL5=	build
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
@@ -95,6 +95,11 @@ _IPXE_BUILDCFG+=	${IPXE_BUILDCFG}
 BUILD_DEPENDS+=	gcsplit:sysutils/coreutils
 MAKE_ARGS+=	CSPLIT=gcsplit
 .endif
+
+# https://github.com/ipxe/ipxe/pull/794
+post-patch:
+	${REINPLACE_CMD} "s|VERSION_MINOR.*0|VERSION_MINOR=21|; s|VERSION_PATCH.*0|VERSION_PATCH=1|" \
+		${WRKSRC}/Makefile
 
 do-configure:
 .for _cat _opt in ${_IPXE_BUILDCFG:C/\:/ /}

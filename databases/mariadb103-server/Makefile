@@ -1,6 +1,6 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.36
-PORTREVISION?=	1
+PORTVERSION=	10.3.37
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -19,6 +19,9 @@ PKGNAMESUFFIX?=	103-server
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 WWW=		https://mariadb.org/
+
+DEPRECATED=		Use databases/mariadb106-server
+EXPIRATION_DATE=	2023-05-25
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

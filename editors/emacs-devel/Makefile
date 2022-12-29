@@ -1,6 +1,6 @@
 PORTNAME=	emacs
-DISTVERSION=	30.0.50.202211128
-PORTEPOCH=	2
+DISTVERSION=	30.0.50.20221216
+PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
 
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	7939184f
+GH_TAGNAME=	4331771
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -74,20 +74,21 @@ INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 		idlwave ido info mairix-el message mh-e modus-themes newsticker \
 		nxml-mode octave-mode org pcl-cvs pgg rcirc reftex remember \
 		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
-		tramp transient url vhdl-mode vip viper vtable widget wisent \
-		woman
+		tramp transient url use-package vhdl-mode vip viper vtable widget \
+		wisent woman
 INFO_PATH=	${DATADIR_REL}/info
 PLIST_SUB=	EMACS_VER=${DISTVERSION:R} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
 OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON \
 				LCMS2 M17N MAILUTILS MODULES NATIVECOMP OTF \
-				PGTK SCROLLBARS SOURCES SQLITE3 THREADS XFT XIM \
-				XML XWIDGETS
+				PGTK SCROLLBARS SOURCES SQLITE3 THREADS \
+				TREESITTER XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
 				HARFBUZZ JPEG JSON KQUEUE LCMS2 MAILUTILS \
 				MODULES NATIVECOMP OSS PGTK PNG SCROLLBARS \
-				SOURCES SQLITE3 SVG THREADS TIFF WEBP XML
+				SOURCES SQLITE3 SVG THREADS TREESITTER \
+				TIFF WEBP XML
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
@@ -120,6 +121,7 @@ PGTK_DESC=		Pure GTK GUI [implies CAIRO, GTK3]
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOURCES_DESC=		Install sources
 SVG_DESC=		Scalable vector graphics support [implies PNG]
+TREESITTER_DESC=	tree-sitter support
 X11TOOLKIT_DESC=	X11 toolkit
 XAW3D_DESC=		Athena3D widgets
 XAW_DESC=		Athena widgets
@@ -179,6 +181,7 @@ OTF_LIB_DEPENDS=		libotf.so:print/libotf
 OTF_CONFIGURE_WITH=		libotf
 PGTK_IMPLIES=			CAIRO GTK3
 PGTK_PREVENTS=			M17N XFT XPM
+PGTK_CATEGORIES=		wayland
 PGTK_CONFIGURE_WITH=		pgtk
 PNG_LIB_DEPENDS=		libpng.so:graphics/png
 PNG_CONFIGURE_WITH=		png
@@ -191,6 +194,8 @@ SVG_CONFIGURE_WITH=		rsvg
 THREADS_CONFIGURE_WITH=		threads
 TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=		tiff
+TREESITTER_CONFIGURE_WITH=	tree-sitter
+TREESITTER_LIB_DEPENDS=		libtree-sitter.so:devel/tree-sitter
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 WEBP_CONFIGURE_WITH=		webp
 XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d

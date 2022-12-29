@@ -9,6 +9,9 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Gui front end for ebooks2cw
 WWW=		http://fkurz.net/ham/ebook2cw.html #graphicaluserinterface
 
+DEPRECATED=	Abandoned project, last update 2013-01-23 and use deprecated wxgtk28
+EXPIRATION_DATE=	2022-12-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

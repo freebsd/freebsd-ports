@@ -1,5 +1,5 @@
 PORTNAME=	exhale
-DISTVERSION=	1.1.9
+DISTVERSION=	1.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -15,13 +15,14 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	ecodis
-GL_COMMIT=	00423757b1f266f9164eff35e69b6e7d4d967f41
+GL_COMMIT=	cfbcd5b7cc488d84fb01fa9699586d89c8c4b320
 
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_FILES=	bin/exhale \
+		include/exhaleDecl.h \
 		lib/libexhale.so
 
 .include <bsd.port.mk>

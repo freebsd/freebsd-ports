@@ -23,6 +23,12 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+.include <bsd.port.options.mk>
+.if (${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc) && ${OSVERSION} < 1301510 # support added in e09d209d1a74a3caca95dea303db9bc605fce1a7
+BROKEN_powerpc64=	Cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+BROKEN_powerpc64le=	Cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+.endif
+
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
 

@@ -1,5 +1,3 @@
-TIMESTAMP = 1639652154
-SHA256 (flatpak-xdg-desktop-portal-1.10.1_GH0.tar.gz) = f058d528d035e4c6d9a3edb95a717fa537311169608654fd77319954a9738082
-SIZE (flatpak-xdg-desktop-portal-1.10.1_GH0.tar.gz) = 281119
-SHA256 (552.patch) = 56367dfe4ad481eb7156e2400f861a2dc43ec39a1f622febcc5c7168da5ab3b5
-SIZE (552.patch) = 5606
+TIMESTAMP = 1671020502
+SHA256 (flatpak-xdg-desktop-portal-1.16.0_GH0.tar.gz) = 42498cd9e9ff6ee0e0b9d53c62b106713830ee29b763289976d612885e4f6f2f
+SIZE (flatpak-xdg-desktop-portal-1.16.0_GH0.tar.gz) = 348569

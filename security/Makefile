@@ -103,6 +103,7 @@
     SUBDIR += create-cert
     SUBDIR += crlfuzz
     SUBDIR += crowdsec
+    SUBDIR += crowdsec-blocklist-mirror
     SUBDIR += crowdsec-firewall-bouncer
     SUBDIR += cryptlib
     SUBDIR += cryptopp
@@ -179,10 +180,12 @@
     SUBDIR += gnutls
     SUBDIR += go-cve-dictionary
     SUBDIR += gokart
+    SUBDIR += gokey
     SUBDIR += gonepass
     SUBDIR += gopass
     SUBDIR += gorilla
     SUBDIR += gost-engine
+    SUBDIR += gostsum
     SUBDIR += gpa
     SUBDIR += gpg-gui
     SUBDIR += gpg-tui
@@ -421,6 +424,7 @@
     SUBDIR += ossec-hids-server
     SUBDIR += ossec-hids-server-config
     SUBDIR += osslsigncode
+    SUBDIR += osv-scanner
     SUBDIR += otpw
     SUBDIR += owasp-dependency-check
     SUBDIR += p11-kit
@@ -773,9 +777,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php74-filter
-    SUBDIR += php74-openssl
-    SUBDIR += php74-sodium
     SUBDIR += php80-filter
     SUBDIR += php80-sodium
     SUBDIR += php81-filter

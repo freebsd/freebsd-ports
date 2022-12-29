@@ -14,13 +14,9 @@ WWW=		https://github.com/KDE/clazy
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.txt
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
-RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+USES=		cmake llvm:build,run tar:xz
 
-USES=		cmake tar:xz
-
-CMAKE_ARGS=	-DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
-
+CMAKE_ARGS=	-DLLVM_ROOT=${LLVM_PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 

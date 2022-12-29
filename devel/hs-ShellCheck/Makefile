@@ -1,6 +1,5 @@
 PORTNAME=	ShellCheck
-DISTVERSION=	0.8.0
-PORTREVISION=	3
+DISTVERSION=	0.9.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -22,12 +21,13 @@ USE_CABAL=	Diff-0.4.1 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
 		base-orphans-0.8.7 \
-		bifunctors-5.5.13 \
+		bifunctors-5.5.14 \
 		comonad-5.0.8_1 \
 		contravariant-1.5.5 \
 		data-fix-0.3.2_3 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
+		fgl-5.8.0.0 \
 		generically-0.1 \
 		hashable-1.4.1.0 \
 		indexed-traversable-0.1.2_2 \

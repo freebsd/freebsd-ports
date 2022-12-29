@@ -577,6 +577,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += electron18
     SUBDIR += electron19
+    SUBDIR += electron21
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -876,6 +877,7 @@
     SUBDIR += gpds
     SUBDIR += gperf
     SUBDIR += gpm
+    SUBDIR += gprbuild
     SUBDIR += gputils
     SUBDIR += gradle
     SUBDIR += gradle-completion
@@ -1222,6 +1224,7 @@
     SUBDIR += libgnuregex
     SUBDIR += libgpc
     SUBDIR += libgpkg
+    SUBDIR += libgpr
     SUBDIR += libgrading
     SUBDIR += libgraphqlparser
     SUBDIR += libgsf
@@ -1274,6 +1277,7 @@
     SUBDIR += libnaji
     SUBDIR += libnest2d-ultimaker
     SUBDIR += libnfc
+    SUBDIR += libnjs
     SUBDIR += libnotify
     SUBDIR += libnsutils
     SUBDIR += liboil
@@ -4011,17 +4015,6 @@
     SUBDIR += php-ice37
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
-    SUBDIR += php74-ffi
-    SUBDIR += php74-gettext
-    SUBDIR += php74-intl
-    SUBDIR += php74-json
-    SUBDIR += php74-pcntl
-    SUBDIR += php74-readline
-    SUBDIR += php74-shmop
-    SUBDIR += php74-sysvmsg
-    SUBDIR += php74-sysvsem
-    SUBDIR += php74-sysvshm
-    SUBDIR += php74-tokenizer
     SUBDIR += php80-ffi
     SUBDIR += php80-gettext
     SUBDIR += php80-intl
@@ -4164,6 +4157,7 @@
     SUBDIR += py-arpeggio
     SUBDIR += py-arrow
     SUBDIR += py-asciimatics
+    SUBDIR += py-asgi-lifespan
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspy.yaml
     SUBDIR += py-asteval
@@ -4287,6 +4281,7 @@
     SUBDIR += py-babelfish
     SUBDIR += py-babi_grammars
     SUBDIR += py-backcall
+    SUBDIR += py-backoff
     SUBDIR += py-backports
     SUBDIR += py-backports.cached-property
     SUBDIR += py-backports.csv
@@ -4295,6 +4290,7 @@
     SUBDIR += py-banal
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
+    SUBDIR += py-beartype
     SUBDIR += py-beautifultable
     SUBDIR += py-behave
     SUBDIR += py-beniget
@@ -4370,6 +4366,7 @@
     SUBDIR += py-click
     SUBDIR += py-click-completion
     SUBDIR += py-click-default-group
+    SUBDIR += py-click-default-group-wheel
     SUBDIR += py-click-log
     SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
@@ -4589,6 +4586,7 @@
     SUBDIR += py-game_sdl2
     SUBDIR += py-gapic-generator
     SUBDIR += py-gast
+    SUBDIR += py-gelidum
     SUBDIR += py-genson
     SUBDIR += py-genty
     SUBDIR += py-geojson
@@ -4648,6 +4646,7 @@
     SUBDIR += py-homebase
     SUBDIR += py-http-prompt
     SUBDIR += py-humanize
+    SUBDIR += py-hupper
     SUBDIR += py-hvac
     SUBDIR += py-hypothesis
     SUBDIR += py-hypothesmith
@@ -4691,6 +4690,7 @@
     SUBDIR += py-itemloaders
     SUBDIR += py-iteration-utilities
     SUBDIR += py-itypes
+    SUBDIR += py-janus
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
@@ -4792,6 +4792,7 @@
     SUBDIR += py-logzero
     SUBDIR += py-louie
     SUBDIR += py-lru-dict
+    SUBDIR += py-lsprotocol
     SUBDIR += py-lunardate
     SUBDIR += py-lxml
     SUBDIR += py-lxml-stubs
@@ -5034,6 +5035,7 @@
     SUBDIR += py-prompt-toolkit
     SUBDIR += py-prompt-toolkit1
     SUBDIR += py-prompt-toolkit2
+    SUBDIR += py-property-cached
     SUBDIR += py-proselint
     SUBDIR += py-proto-plus
     SUBDIR += py-protobuf
@@ -5643,6 +5645,7 @@
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
+    SUBDIR += pydeps
     SUBDIR += pydio-packr
     SUBDIR += pyenv
     SUBDIR += pygobject3-common
@@ -7201,6 +7204,7 @@
     SUBDIR += rubymine
     SUBDIR += rudeconfig
     SUBDIR += rudiments
+    SUBDIR += ruff
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen
     SUBDIR += rust-cbindgen

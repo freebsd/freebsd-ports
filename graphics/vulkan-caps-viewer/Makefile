@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-caps-viewer
 DISTVERSION=	3.27
-CATEGORIES=	graphics wayland
+CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	0b3cd2200019.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
@@ -29,6 +29,7 @@ PLIST_FILES=	bin/vulkanCapsViewer \
 OPTIONS_DEFINE=	WAYLAND X11
 OPTIONS_DEFAULT=WAYLAND X11
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_USE=		QT=wayland:build
 WAYLAND_QMAKE_ON=	DEFINES+=WAYLAND

@@ -1,5 +1,5 @@
 PORTNAME=	elgg
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.5
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
@@ -13,7 +13,6 @@ USES=		cpe gettext shebangfix zip php
 USE_PHP=	curl dom fileinfo filter gd hash intl \
 		json mbstring pdo_mysql \
 		session simplexml soap sqlite3 xml xmlrpc
-IGNORE_WITH_PHP=	81 82
 
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

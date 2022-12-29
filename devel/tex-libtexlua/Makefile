@@ -12,9 +12,8 @@ COMMENT=	Lua library for TeXLive
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/LICENSE.MIT
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz tex
 USE_LDCONFIG=	yes
-USE_TEX=	yes
 
 GNU_CONFIGURE=	yes
 

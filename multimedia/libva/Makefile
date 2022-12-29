@@ -1,10 +1,6 @@
 PORTNAME=	libva
-DISTVERSION=	2.16.0
+DISTVERSION=	2.17.0
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0c9e5f2fff22.patch:-p1 # https://github.com/intel/libva/pull/292
-PATCHFILES+=	657d77406161.patch:-p1 # https://github.com/intel/libva/pull/292
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
@@ -35,7 +31,7 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_MESON_YES=	with_wayland
 
 X11_USES=		xorg
-X11_USE=		XORG=x11,xorgproto,xext,xfixes
+X11_USE=		XORG=x11,xcb,xext,xfixes,xorgproto
 X11_MESON_YES=		with_x11
 
 .include <bsd.port.mk>

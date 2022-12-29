@@ -18,8 +18,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libspiro.so:graphics/libspiro
 
-USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig shebangfix qt:5
+USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig shebangfix qt:5 tex
 USE_GNOME=	cairo
+USE_LDCONFIG=	yes
 USE_QT=		buildtools:build core gui qmake:build widgets
 USE_TEX=	pdftex
 
@@ -39,7 +40,6 @@ MAKE_ENV=	DL_LIBS="" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		LUA_PACKAGE="lua-${LUA_VER}" \
 		MOC="${MOC}"
-USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

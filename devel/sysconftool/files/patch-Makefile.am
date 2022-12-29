@@ -1,4 +1,4 @@
---- Makefile.am.orig	2022-08-25 01:32:14 UTC
+--- Makefile.am.orig	2022-11-26 01:55:08 UTC
 +++ Makefile.am
 @@ -85,12 +85,12 @@ check:
  check:
@@ -9,8 +9,8 @@
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	rm -f $(DESTDIR)$(bindir)/sysconftoolize
  	rm -f $(DESTDIR)$(bindir)/sysconftoolcheck
--	$(LN_S) $(datadir)/sysconftool/sysconftoolize.pl $(DESTDIR)$(bindir)/sysconftoolize
--	$(LN_S) $(datadir)/sysconftool/sysconftoolcheck $(DESTDIR)$(bindir)/sysconftoolcheck
+-	$(LN_S) `realpath --relative-to $(bindir) -m $(datadir)/sysconftool/sysconftoolize.pl` $(DESTDIR)$(bindir)/sysconftoolize
+-	$(LN_S) `realpath --relative-to $(bindir) -m $(datadir)/sysconftool/sysconftoolcheck` $(DESTDIR)$(bindir)/sysconftoolcheck
 +	install -l rs $(DESTDIR)$(datadir)/sysconftool/sysconftoolize.pl $(DESTDIR)$(bindir)/sysconftoolize
 +	install -l rs $(DESTDIR)$(datadir)/sysconftool/sysconftoolcheck $(DESTDIR)$(bindir)/sysconftoolcheck
  

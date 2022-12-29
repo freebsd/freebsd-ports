@@ -1,6 +1,7 @@
 PORTNAME=	termshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	textproc graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org

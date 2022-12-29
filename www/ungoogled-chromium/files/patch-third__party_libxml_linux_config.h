@@ -1,6 +1,6 @@
---- third_party/libxml/linux/config.h.orig	2022-10-01 07:40:07 UTC
+--- third_party/libxml/linux/config.h.orig	2022-12-15 12:03:44 UTC
 +++ third_party/libxml/linux/config.h
-@@ -81,6 +81,9 @@
+@@ -72,6 +72,9 @@
  /* Define to 1 if you have the `putenv' function. */
  #define HAVE_PUTENV 1
  

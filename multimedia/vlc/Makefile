@@ -117,6 +117,7 @@ ASS_LIB_DEPENDS=	libass.so:multimedia/libass
 ASS_CONFIGURE_ENABLE=	libass
 
 ALTIVEC_CONFIGURE_ENABLE=	altivec
+ALTIVEC_CFLAGS=		-maltivec
 
 AOM_LIB_DEPENDS=	libaom.so:multimedia/aom
 AOM_CONFIGURE_ENABLE=	aom
@@ -369,9 +370,6 @@ WITH_CDROM_DEVICE?=/dev/cd0
 WITH_DVD_DEVICE?=/dev/cd0
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 WITH_DEBUG=yes

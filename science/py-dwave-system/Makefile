@@ -1,5 +1,5 @@
 PORTNAME=	dwave-system
-DISTVERSION=	1.16.0
+DISTVERSION=	1.18.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,11 +10,12 @@ WWW=		https://github.com/dwavesystems/dwave-system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.10.0:science/py-dimod@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.10.:science/py-dwave-cloud-client@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.0:science/py-dimod@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.9.1:science/py-dwave-cloud-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-greedy>=0.2.5:science/py-dwave-greedy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-networkx>=0.8.12:science/py-dwave-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-preprocessing>=0.4.0:science/py-dwave-preprocessing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-networkx>=0.8.10:science/py-dwave-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-preprocessing>=0.5.0:science/py-dwave-preprocessing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-samplers>=1.0.0:science/py-dwave-samplers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}homebase>=1.0.1:devel/py-homebase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}minorminer>=0.2.9:math/py-minorminer@${PY_FLAVOR} \
 		${PYNUMPY} \

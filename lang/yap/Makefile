@@ -26,6 +26,7 @@ OPTIONS_DEFINE=		DOCS BUILDDOCS
 BUILDDOCS_DESC=	Rebuild documentation (requires TeX)
 DOCS_DESC=	Install documentation
 
+BUILDDOCS_USES=		tex
 BUILDDOCS_USE=		TEX=formats:build,dvipsk:build
 BUILDDOCS_BUILD_DEPENDS=${LOCALBASE}/bin/texi2html:textproc/texi2html \
 			${LOCALBASE}/bin/texi2pdf:print/texinfo

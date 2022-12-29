@@ -1,5 +1,5 @@
 PORTNAME=	twofactor_admin
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/

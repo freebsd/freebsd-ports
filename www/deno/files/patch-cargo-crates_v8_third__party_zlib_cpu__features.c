@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.58.0/third_party/zlib/cpu_features.c.orig	2022-11-20 11:40:38 UTC
-+++ cargo-crates/v8-0.58.0/third_party/zlib/cpu_features.c
+--- cargo-crates/v8-0.60.0/third_party/zlib/cpu_features.c.orig	2022-11-20 11:40:38 UTC
++++ cargo-crates/v8-0.60.0/third_party/zlib/cpu_features.c
 @@ -31,11 +31,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  
  #ifndef CPU_NO_SIMD

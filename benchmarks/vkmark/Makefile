@@ -2,7 +2,7 @@ PORTNAME=	vkmark
 DISTVERSION=	2017.08-29
 DISTVERSIONSUFFIX=	-gd872846
 PORTREVISION=	2
-CATEGORIES=	benchmarks wayland
+CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	27fa846e34ed.patch:-p1 # https://github.com/vkmark/vkmark/pull/29
@@ -35,6 +35,7 @@ DRM_USES=		gl
 DRM_USE=		GL=gbm
 DRM_MESON_TRUE=		kms
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>=1.12:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland

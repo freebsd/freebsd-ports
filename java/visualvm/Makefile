@@ -1,7 +1,7 @@
 PORTNAME=	visualvm
-PORTVERSION=	2.0.6
+DISTVERSION=	2.1.5
 CATEGORIES=	java devel
-MASTER_SITES=	https://github.com/visualvm/visualvm.src/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/oracle/visualvm/releases/download/${PORTVERSION}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}
 
 MAINTAINER=	swills@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_NAME=	VISUALVM with ClassPath Exception
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		zip:infozip
+USES=		desktop-file-utils zip:infozip
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
@@ -27,15 +27,15 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/visualvm
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/visualvm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/visualvm ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/visualvm
 .for i in platform visualvm
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PREFIX}/share/visualvm/)
 .endfor
-.for i in visualvm.conf visualvm.clusters visualvm.icns
-	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${PREFIX}/etc/${i}.sample
+.for i in visualvm.conf visualvm.clusters visualvm.icns visualvm.import
+	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${PREFIX}/etc/${i}.sample
 .endfor
 	@${UNZIP_CMD} -q -j -d ${STAGEDIR}${DATADIR} ${WRKSRC}/visualvm/modules/org-graalvm-visualvm-application.jar org/graalvm/visualvm/application/resources/visualvm.png
-	@${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

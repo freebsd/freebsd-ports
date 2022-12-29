@@ -1,0 +1,17 @@
+#!/bin/sh
+
+test -x /usr/local/bin/cscli || exit 0
+
+# favor the opnsense plugin's cron if it's there
+test -e /usr/local/etc/cron.d/oscrowdsec.cron && exit 0
+
+/usr/local/bin/cscli --error hub update
+
+upgraded=$(/usr/local/bin/cscli --error hub upgrade)
+if [ -n "$upgraded" ]; then
+    # splay initial metrics push
+    sleep $(jot -r 1 1 60)
+    service crowdsec reload
+fi
+
+exit 0

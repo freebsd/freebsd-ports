@@ -2,19 +2,20 @@
 bin/crowdsec
 bin/cscli
 bin/crowdsec-cli
+libexec/crowdsec/upgrade-hub
 @mode 0600
+@sample %%ETCDIR%%/config.yaml.sample
 @sample %%ETCDIR%%/local_api_credentials.yaml.sample
 @sample %%ETCDIR%%/online_api_credentials.yaml.sample
-@mode 0644
-@sample %%ETCDIR%%/acquis.yaml.sample
-@sample %%ETCDIR%%/config.yaml.sample
-@sample %%ETCDIR%%/console.yaml.sample
-@sample %%ETCDIR%%/profiles.yaml.sample
-@sample %%ETCDIR%%/simulation.yaml.sample
 @sample %%ETCDIR%%/notifications/email.yaml.sample
 @sample %%ETCDIR%%/notifications/http.yaml.sample
 @sample %%ETCDIR%%/notifications/slack.yaml.sample
 @sample %%ETCDIR%%/notifications/splunk.yaml.sample
+@mode 0644
+@sample %%ETCDIR%%/acquis.yaml.sample
+@sample %%ETCDIR%%/console.yaml.sample
+@sample %%ETCDIR%%/profiles.yaml.sample
+@sample %%ETCDIR%%/simulation.yaml.sample
 %%ETCDIR%%/patterns/aws
 %%ETCDIR%%/patterns/bacula
 %%ETCDIR%%/patterns/bro
@@ -39,6 +40,7 @@ bin/crowdsec-cli
 %%ETCDIR%%/patterns/smb
 %%ETCDIR%%/patterns/ssh
 %%ETCDIR%%/patterns/tcpdump
+etc/cron.d/crowdsec
 @mode 0755
 lib/crowdsec/plugins/notification-email
 lib/crowdsec/plugins/notification-http

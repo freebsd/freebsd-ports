@@ -15701,10 +15701,8 @@ databases/py-bsddb||2020-12-29|Has expired: Uses deprecated version of python
 www/py-webhelpers||2020-12-29|Has expired: Uses deprecated version of python
 security/py-pyptlib||2020-12-29|Has expired: Uses deprecated version of python
 japanese/py-zinnia||2020-12-29|Has expired: Uses deprecated version of python
-math/slepc||2020-12-29|Has expired: Broken, uses deprecated version of python
 www/py-pastescript||2020-12-29|Has expired: Uses deprecated version of python
 databases/ldb14||2020-12-29|Has expired: Uses deprecated version of python
-math/py-slepc4py||2020-12-29|Has expired: Depends on broken and expiring math/slepc
 multimedia/py-kaa-base||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-ydbf||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-SymbolType||2020-12-29|Has expired: Uses deprecated version of python
@@ -15867,7 +15865,6 @@ editors/atom||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 devel/electron4||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 devel/electron5||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 devel/electron6||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
-audio/ardour|audio/ardour6|2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 audio/mixxx21|audio/mixxx|2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 databases/arangodb32||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 databases/arangodb33||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
@@ -16894,7 +16891,6 @@ devel/ahven||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/alog||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/aunit||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/florist-gpl||2022-02-28|Removed, depends on expired lang/gcc6-aux
-devel/gprbuild||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/libspark2012||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/matreshka||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/pcsc-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
@@ -16914,7 +16910,6 @@ security/libadacrypt||2022-02-28|Removed, depends on expired lang/gcc6-aux
 textproc/adabrowse||2022-02-28|Removed, depends on expired lang/gcc6-aux
 textproc/templates_parser||2022-02-28|Removed, depends on expired lang/gcc6-aux
 textproc/words||2022-02-28|Removed, depends on expired lang/gcc6-aux
-textproc/xmlada||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada3||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/py-zsm-lib|sysutils/zsm|2022-03-07|Remove obsoleted port. Use sysutils/zsm instead
@@ -17638,3 +17633,73 @@ ftp/php-fastdfs||2022-12-09|Requires php74 which was EOL on 2022-11-28
 multimedia/mlt7-qt5|multimedia/mlt7-qt|2022-12-10|Flavorized for Qt5 and Qt6
 sysutils/cfengine317||2022-12-10|Has expired: Expire one year after cfengine 3.19.0 released
 sysutils/cfengine-masterfiles317||2022-12-10|Has expired: Expire one year after cfengine-masterfiles 3.19.0 released
+net-mgmt/icingaweb2-module-ipl|net-mgmt/icinga-php-library|2022-12-13|Renamed by project
+x11/darkman|accessibility/darkman|2022-12-14|Moved to a better category
+net/samba412||2022-12-18|Has expired: Reached its EoL on September 20, 2021
+graphics/opencoloriov1|graphics/opencolorio|2022-12-20|Used by blender-lts28 which is EOL'd
+graphics/openimageio-ociov1|graphics/openimageio|2022-12-20|Used by blender-lts28 which is EOL'd
+textproc/retext|editors/retext|2022-12-21|Moved to a better category
+math/vtk6||2022-12-24|Has expired: Old version not used anywhere in the ports tree
+misc/php74-calendar|misc/php80-calendar|2022-12-25|Has expired: Security support ended on 2022-11-22
+graphics/php74-gd|graphics/php80-gd|2022-12-25|Has expired: Security support ended on 2022-11-22
+graphics/php74-exif|graphics/php80-exif|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-xmlreader|textproc/php80-xmlreader|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-simplexml|textproc/php80-simplexml|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-enchant|textproc/php80-enchant|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-xml|textproc/php80-xml|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-xmlwriter|textproc/php80-xmlwriter|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-pspell|textproc/php80-pspell|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-ctype|textproc/php80-ctype|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-dom|textproc/php80-dom|2022-12-25|Has expired: Security support ended on 2022-11-22
+textproc/php74-xsl|textproc/php80-xsl|2022-12-25|Has expired: Security support ended on 2022-11-22
+mail/php74-imap|mail/php80-imap|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-odbc|databases/php80-odbc|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo_dblib|databases/php80-pdo_dblib|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-dba|databases/php80-dba|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo|databases/php80-pdo|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo_firebird|databases/php80-pdo_firebird|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pgsql|databases/php80-pgsql|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-mysqli|databases/php80-mysqli|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo_pgsql|databases/php80-pdo_pgsql|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo_odbc|databases/php80-pdo_odbc|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo_mysql|databases/php80-pdo_mysql|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-pdo_sqlite|databases/php80-pdo_sqlite|2022-12-25|Has expired: Security support ended on 2022-11-22
+databases/php74-sqlite3|databases/php80-sqlite3|2022-12-25|Has expired: Security support ended on 2022-11-22
+security/php74-sodium|security/php80-sodium|2022-12-25|Has expired: Security support ended on 2022-11-22
+security/php74-filter|security/php80-filter|2022-12-25|Has expired: Security support ended on 2022-11-22
+security/php74-openssl||2022-12-25|Has expired: Security support ended on 2022-11-22
+net-mgmt/php74-snmp|net-mgmt/php80-snmp|2022-12-25|Has expired: Security support ended on 2022-11-22
+net/php74-ldap|net/php80-ldap|2022-12-25|Has expired: Security support ended on 2022-11-22
+net/php74-sockets|net/php80-sockets|2022-12-25|Has expired: Security support ended on 2022-11-22
+net/php74-xmlrpc||2022-12-25|Has expired: Security support ended on 2022-11-22
+net/php74-soap|net/php80-soap|2022-12-25|Has expired: Security support ended on 2022-11-22
+converters/php74-mbstring|converters/php80-mbstring|2022-12-25|Has expired: Security support ended on 2022-11-22
+converters/php74-iconv|converters/php80-iconv|2022-12-25|Has expired: Security support ended on 2022-11-22
+lang/php74-extensions|lang/php80-extensions|2022-12-25|Has expired: Security support ended on 2022-11-22
+lang/php74|lang/php80|2022-12-25|Has expired: Security support ended on 2022-11-22
+archivers/php74-zip|archivers/php80-zip|2022-12-25|Has expired: Security support ended on 2022-11-22
+archivers/php74-zlib|archivers/php80-zlib|2022-12-25|Has expired: Security support ended on 2022-11-22
+archivers/php74-bz2|archivers/php80-bz2|2022-12-25|Has expired: Security support ended on 2022-11-22
+archivers/php74-phar|archivers/php80-phar|2022-12-25|Has expired: Security support ended on 2022-11-22
+ftp/php74-ftp|ftp/php80-ftp|2022-12-25|Has expired: Security support ended on 2022-11-22
+ftp/php74-curl|ftp/php80-curl|2022-12-25|Has expired: Security support ended on 2022-11-22
+sysutils/php74-posix|sysutils/php80-posix|2022-12-25|Has expired: Security support ended on 2022-11-22
+sysutils/php74-fileinfo|sysutils/php80-fileinfo|2022-12-25|Has expired: Security support ended on 2022-11-22
+math/php74-bcmath|math/php80-bcmath|2022-12-25|Has expired: Security support ended on 2022-11-22
+math/php74-gmp|math/php80-gmp|2022-12-25|Has expired: Security support ended on 2022-11-22
+www/php74-opcache|www/php80-opcache|2022-12-25|Has expired: Security support ended on 2022-11-22
+www/mod_php74|www/mod_php80|2022-12-25|Has expired: Security support ended on 2022-11-22
+www/php74-tidy|www/php80-tidy|2022-12-25|Has expired: Security support ended on 2022-11-22
+www/php74-session|www/php80-session|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-shmop|devel/php80-shmop|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-sysvsem|devel/php80-sysvsem|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-json||2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-sysvmsg|devel/php80-sysvmsg|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-intl|devel/php80-intl|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-tokenizer|devel/php80-tokenizer|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-ffi|devel/php80-ffi|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-pcntl|devel/php80-pcntl|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-sysvshm|devel/php80-sysvshm|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-gettext|devel/php80-gettext|2022-12-25|Has expired: Security support ended on 2022-11-22
+devel/php74-readline|devel/php80-readline|2022-12-25|Has expired: Security support ended on 2022-11-22
+audio/ardour6|audio/ardour|2022-12-26|Remove major version from portname as we update from 6.9.0 to 7.2.0

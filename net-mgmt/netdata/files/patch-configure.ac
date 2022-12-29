@@ -1,4 +1,4 @@
---- configure.ac.orig	2022-06-08 15:50:20 UTC
+--- configure.ac.orig	2022-12-28 00:24:19 UTC
 +++ configure.ac
 @@ -5,11 +5,11 @@
  AC_PREREQ(2.60)
@@ -16,7 +16,7 @@
  
  AM_MAINTAINER_MODE([disable])
  if test x"$USE_MAINTAINER_MODE" = xyes; then
-@@ -1449,15 +1449,15 @@ AM_CONDITIONAL([ENABLE_CXX_LINKER], [test "${enable_ba
+@@ -1571,14 +1571,14 @@ AC_SUBST([OPTIONAL_DL_LIBS])
  
  AC_DEFINE_UNQUOTED([NETDATA_USER], ["${with_user}"], [use this user to drop privileged])
  
@@ -34,5 +34,5 @@
 -logdir="${localstatedir}/log/netdata"
 +logdir="%%NETDATA_LOG%%"
  pluginsdir="${libexecdir}/netdata/plugins.d"
- 
- AC_SUBST([build_target])
+ netdata_user="${with_user}"
+ libsysdir="${libdir}/netdata/system"

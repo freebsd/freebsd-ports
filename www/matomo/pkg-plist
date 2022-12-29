@@ -392,6 +392,7 @@
 %%WWWDIR%%/core/SettingsServer.php
 %%WWWDIR%%/core/Singleton.php
 %%WWWDIR%%/core/Site.php
+%%WWWDIR%%/core/SiteContentDetector.php
 %%WWWDIR%%/core/SupportedBrowser.php
 %%WWWDIR%%/core/TCPDF.php
 %%WWWDIR%%/core/Theme.php
@@ -1927,6 +1928,8 @@
 %%WWWDIR%%/plugins/CoreHome/vue/src/Segmentation/Segments.store.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/SelectOnFocus/SelectOnFocus.adapter.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/SelectOnFocus/SelectOnFocus.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/ShowHelpLink/ShowHelpLink.adapter.ts
+%%WWWDIR%%/plugins/CoreHome/vue/src/ShowHelpLink/ShowHelpLink.vue
 %%WWWDIR%%/plugins/CoreHome/vue/src/ShowSensitiveData/ShowSensitiveData.adapter.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/ShowSensitiveData/ShowSensitiveData.ts
 %%WWWDIR%%/plugins/CoreHome/vue/src/SideNav/SideNav.adapter.ts
@@ -3379,10 +3382,9 @@
 %%WWWDIR%%/plugins/Goals/lang/vi.json
 %%WWWDIR%%/plugins/Goals/lang/zh-cn.json
 %%WWWDIR%%/plugins/Goals/lang/zh-tw.json
-%%WWWDIR%%/plugins/Goals/stylesheets/goals.css
+%%WWWDIR%%/plugins/Goals/stylesheets/goals.less
 %%WWWDIR%%/plugins/Goals/templates/_addEditGoal.twig
 %%WWWDIR%%/plugins/Goals/templates/_listTopDimension.twig
-%%WWWDIR%%/plugins/Goals/templates/_listTopDimensionPage.twig
 %%WWWDIR%%/plugins/Goals/templates/addNewGoal.twig
 %%WWWDIR%%/plugins/Goals/templates/conversionOverview.twig
 %%WWWDIR%%/plugins/Goals/templates/editGoals.twig
@@ -7129,6 +7131,7 @@
 %%WWWDIR%%/plugins/TagManager/Template/Variable/UrlVariable.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Variable/VariablesProvider.php
 %%WWWDIR%%/plugins/TagManager/Updates/4.12.3-b1.php
+%%WWWDIR%%/plugins/TagManager/Updates/4.12.4-b1.php
 %%WWWDIR%%/plugins/TagManager/Updates/5.0.0-b1.php
 %%WWWDIR%%/plugins/TagManager/Updates/NewTagParameterMigrator.php
 %%WWWDIR%%/plugins/TagManager/Updates/NewVariableParameterMigrator.php
@@ -7358,6 +7361,7 @@
 %%WWWDIR%%/plugins/Tour/Engagement/ChallengeFlattenActions.php
 %%WWWDIR%%/plugins/Tour/Engagement/ChallengeScheduledReport.php
 %%WWWDIR%%/plugins/Tour/Engagement/ChallengeSelectDateRange.php
+%%WWWDIR%%/plugins/Tour/Engagement/ChallengeSetupConsentManager.php
 %%WWWDIR%%/plugins/Tour/Engagement/ChallengeSetupTwoFa.php
 %%WWWDIR%%/plugins/Tour/Engagement/ChallengeTrackingCode.php
 %%WWWDIR%%/plugins/Tour/Engagement/ChallengeViewRowEvolution.php

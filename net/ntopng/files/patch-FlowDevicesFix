@@ -1,0 +1,41 @@
+From 9d7bdc36a0d9cf7f06fd66f1ee26d7bb79c7c109 Mon Sep 17 00:00:00 2001
+From: Luca Deri <deri@ntop.org>
+Date: Mon, 12 Dec 2022 10:37:13 +0100
+Subject: [PATCH] Fixes #7029
+
+---
+ scripts/lua/inc/menu.lua   | 2 +-
+ src/LuaEngineInterface.cpp | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/scripts/lua/inc/menu.lua b/scripts/lua/inc/menu.lua
+index 24bfbabd3b3..081c7729171 100644
+--- scripts/lua/inc/menu.lua
++++ scripts/lua/inc/menu.lua
+@@ -305,7 +305,7 @@ else
+    
+    -- Exporters
+ 
+-   local has_exporters = (ifs.type == "zmq") or (ifs.type == "custom") or (table.len(interface.getFlowDevices()) > 0)
++   local has_exporters = (ifs.type == "zmq") or (ifs.type == "custom") or (ntop.isPro() and (table.len(interface.getFlowDevices()) > 0))
+ 
+    page_utils.add_menubar_section(
+       {
+diff --git a/src/LuaEngineInterface.cpp b/src/LuaEngineInterface.cpp
+index fa1cc582fa1..9dfc147effd 100644
+--- src/LuaEngineInterface.cpp
++++ src/LuaEngineInterface.cpp
+@@ -4657,10 +4657,12 @@ static luaL_Reg _ntop_interface_reg[] = {
+   /* SNMP */
+   { "getSNMPStats",                     ntop_interface_get_snmp_stats         },
+ 
++#ifdef NTOPNG_PRO
+   /* Flow Devices */
+   { "getFlowDevices",                   ntop_get_flow_devices                  },
+   { "getFlowDeviceInfo",                ntop_get_flow_device_info              },
+-
++#endif
++  
+ #ifdef HAVE_NEDGE
+   /* L7 */
+   { "reloadL7Rules",                    ntop_reload_l7_rules                   },

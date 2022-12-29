@@ -1,6 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.18.1
+DISTVERSION=	16.19.0
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	16
@@ -16,7 +16,7 @@ BROKEN_SSL=		libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x LTS requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
-USES=		compiler:c++11-lib gmake python:3.6-3.10,build pkgconfig \
+USES=		compiler:c++11-lib gmake python:3.6+,build pkgconfig \
 		localbase shebangfix
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE COREPACK
@@ -110,6 +110,7 @@ post-configure:
 		| ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
 
 post-install:
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/systemtap
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
 post-install-DTRACE-on:

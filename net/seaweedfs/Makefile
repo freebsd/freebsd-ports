@@ -1,5 +1,5 @@
 PORTNAME=	seaweedfs
-DISTVERSION=	3.35
+DISTVERSION=	3.37
 CATEGORIES=	net sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
@@ -20,10 +20,14 @@ GO_MODULE=	github.com/seaweedfs/seaweedfs
 GO_TARGET=	./weed
 CGO_CFLAGS=	-I.
 
+SEAWEEDFS_DIR?=		/var/db/${PORTNAME}
+SEAWEEDFS_USER?=	seaweedfs
+SEAWEEDFS_GROUP?=	seaweedfs
+
 SUB_FILES=	pkg-message
-SUB_LIST=	GROUP=${SEAWEEDFS_GROUP} \
-		SEAWEEDFS_DIR=${SEAWEEDFS_DIR} \
-		USER=${SEAWEEDFS_USER}
+SUB_LIST=	SEAWEEDFS_DIR=${SEAWEEDFS_DIR} \
+		USER=${SEAWEEDFS_USER} \
+		GROUP=${SEAWEEDFS_GROUP}
 
 USERS=		${SEAWEEDFS_USER}
 GROUPS=		${SEAWEEDFS_GROUP}
@@ -44,10 +48,6 @@ GOCDK_VARS=	GO_TAGS+=gocdk
 SQLITE_VARS=	GO_TAGS+=sqlite
 TIKV_VARS=	GO_TAGS+=tikv
 YDB_VARS=	GO_TAGS+=ydb
-
-SEAWEEDFS_DIR?=		/var/db/${PORTNAME}
-SEAWEEDFS_GROUP?=	seaweedfs
-SEAWEEDFS_USER?=	seaweedfs
 
 .include <bsd.port.pre.mk>
 .if !empty (GO_TAGS)

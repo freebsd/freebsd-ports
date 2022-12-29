@@ -1,0 +1,12 @@
+--- src/packaging/pkgconfig/mpich.pc.in.orig	2021-12-16 16:59:29 UTC
++++ src/packaging/pkgconfig/mpich.pc.in
+@@ -9,7 +9,8 @@ Requires:
+ Version: @MPICH_VERSION@
+ URL: http://www.mcs.anl.gov/research/projects/mpich
+ Requires:
+-Libs: @WRAPPER_C_DYNAMIC_LOADING_FLAGS@ @WRAPPER_LDFLAGS@ -L${libdir} -l@MPILIBNAME@ @LPMPILIBNAME@ @WRAPPER_LIBS@
++Libs: @WRAPPER_C_DYNAMIC_LOADING_FLAGS@ @WRAPPER_LDFLAGS@ -L${libdir} -l@MPILIBNAME@ @LPMPILIBNAME@
++Libs.private: @WRAPPER_LIBS@
+ Cflags: @WRAPPER_CPPFLAGS@ @WRAPPER_CFLAGS@ -I${includedir}
+ 
+ # pkg-config does not understand Cxxflags, etc. So we allow users to

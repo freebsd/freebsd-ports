@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/*.[chl]
+	@${REINPLACE_CMD} -e '/#define _XOPEN_SOURCE 700/d' ${WRKSRC}/configure
 
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/

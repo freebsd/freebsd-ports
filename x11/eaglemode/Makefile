@@ -1,12 +1,11 @@
 PORTNAME=	eaglemode
-PORTVERSION=	0.95.2
-PORTREVISION=	5
+PORTVERSION=	0.96.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic zoomable user environment
-WWW=		http://eaglemode.sourceforge.net/
+WWW=		https://eaglemode.sourceforge.net/
 
 LICENSE=	GPLv3
 

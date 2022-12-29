@@ -31,7 +31,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-GO-223.7571.176
+%%DATADIR%%/lib/build-marker-GO-223.8214.59
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -97,8 +97,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-0846d0dfc558.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-0846d0dfc558.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-65897df8a340.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-65897df8a340.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
@@ -152,8 +152,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-9b322a0dfcec.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-9b322a0dfcec.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -216,6 +216,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.full.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.intl.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.object.d.ts
+%%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.sharedmemory.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.string.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es5.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es6.d.ts

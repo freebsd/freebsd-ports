@@ -3,8 +3,8 @@ PORTVERSION=	${HEIMDAL_COMMIT_DATE}
 PORTREVISION=	5
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
-HASH=		8f9c2d115
-HEIMDAL_COMMIT_DATE=	2022.11.18
+HASH=		e2e7eacb6
+HEIMDAL_COMMIT_DATE=	2022.12.15
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular BSD-licensed implementation of Kerberos 5
@@ -25,8 +25,8 @@ USE_LDCONFIG=	${GSSAPILIBDIR}
 
 # Needs clang-format which is only provided by the port.
 # Else asm1_fails resulting in a command not found error.
-BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
-		p5-JSON>0:converters/p5-JSON
+USES+=		llvm
+BUILD_DEPENDS=	p5-JSON>0:converters/p5-JSON
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \

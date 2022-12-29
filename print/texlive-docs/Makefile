@@ -10,7 +10,7 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, documentation
 WWW=		https://tug.org/texlive/
 
-USES=		perl5 tar:xz
+USES=		perl5 tar:xz tex
 USE_TEX=	texmf
 
 EXTRACT_AFTER_ARGS=	| ${TAR} xf - \

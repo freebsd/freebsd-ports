@@ -1,7 +1,8 @@
 include/libopenshot/AudioBufferSource.h
-include/libopenshot/AudioDeviceInfo.h
+include/libopenshot/AudioDevices.h
 include/libopenshot/AudioReaderSource.h
 include/libopenshot/AudioResampler.h
+include/libopenshot/AudioWaveformer.h
 include/libopenshot/CVObjectDetection.h
 include/libopenshot/CVStabilization.h
 include/libopenshot/CVTracker.h
@@ -17,10 +18,6 @@ include/libopenshot/ClipProcessingJobs.h
 include/libopenshot/Color.h
 include/libopenshot/Coordinate.h
 include/libopenshot/CrashHandler.h
-include/libopenshot/DecklinkInput.h
-include/libopenshot/DecklinkOutput.h
-include/libopenshot/DecklinkReader.h
-include/libopenshot/DecklinkWriter.h
 include/libopenshot/DummyReader.h
 include/libopenshot/EffectBase.h
 include/libopenshot/EffectInfo.h
@@ -96,17 +93,10 @@ include/libopenshot/effects/Shift.h
 include/libopenshot/effects/Stabilizer.h
 include/libopenshot/effects/Tracker.h
 include/libopenshot/effects/Wave.h
-%%OPENCV%%include/libopenshot/protobuf_messages/objdetectdata.pb.h
-%%OPENCV%%include/libopenshot/protobuf_messages/stabilizedata.pb.h
-%%OPENCV%%include/libopenshot/protobuf_messages/trackerdata.pb.h
 include/libopenshot/sort_filter/Hungarian.h
 include/libopenshot/sort_filter/KalmanTracker.h
 lib/libopenshot.so
-lib/libopenshot.so.0.2.7
-lib/libopenshot.so.21
-%%OPENCV%%lib/libopenshot_protobuf.so
-%%OPENCV%%lib/libopenshot_protobuf.so.0.2.7
-%%OPENCV%%lib/libopenshot_protobuf.so.21
+lib/libopenshot.so.0.3.0
+lib/libopenshot.so.23
 %%PYTHON_SITELIBDIR%%/_openshot.so
 %%PYTHON_SITELIBDIR%%/openshot.py
-%%NO_OPENCV%%@dir include/libopenshot/protobuf_messages

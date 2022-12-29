@@ -52,14 +52,8 @@ SOUND_USES=	openal:al,alut
 SOUND_CONFIGURE_ON=	--with-sound=openal
 SOUND_CONFIGURE_OFF=	--with-sound=no
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_VERSION} == 42
-CFLAGS+=	-fnested-functions
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Werror,,g; s,-ldl,,g' ${WRKSRC}/configure
 	@${MV} ${WRKSRC}/etc/xneurrc ${WRKSRC}/etc/xneurrc.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	audio
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -90,6 +90,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		derive_builder-0.7.2 \
 		derive_builder_core-0.5.0 \
 		digest-0.9.0 \
+		dns-sd-0.1.3 \
 		dotenv-0.13.0 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
@@ -416,16 +417,20 @@ PLIST_FILES=	bin/spotifyd \
 		"@sample etc/spotifyd.conf.sample"
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		DBUS DOCS PORTAUDIO PULSEAUDIO ALSA
+OPTIONS_DEFINE=		DBUS DOCS PORTAUDIO PULSEAUDIO ALSA DNS-SD
 OPTIONS_DEFAULT=	PORTAUDIO
 
 DBUS_DESC=		D-Bus MPRIS support
+DNS-SD_DESC=		Avahi mDNSS support
+
+ALSA_LIB_DEPENDS=	libasound_module_pcm_oss.so:audio/alsa-plugins
+ALSA_VARS=			CARGO_FEATURES+=alsa_backend
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_VARS=		CARGO_FEATURES+=dbus_mpris
 
-ALSA_LIB_DEPENDS=	libasound_module_pcm_oss.so:audio/alsa-plugins
-ALSA_VARS=			CARGO_FEATURES+=alsa_backend
+DNS-SD_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
+DNS-SD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch.Cargo.toml
 
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_VARS=		CARGO_FEATURES+=portaudio_backend

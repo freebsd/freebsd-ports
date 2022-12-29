@@ -1,5 +1,6 @@
 PORTNAME=	buildah
 PORTVERSION=	1.29.0.dev
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org

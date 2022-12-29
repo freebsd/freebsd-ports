@@ -1,13 +1,8 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36.1
-PORTREVISION=	2
+DISTVERSION=	1.37.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
-		https://github.com/forkbomb9/netdata/commit/:dashboard
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		23f374d499f3cfc87530989c4e44aeaa1b888a22.patch:dashboard
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
@@ -16,8 +11,6 @@ WWW=		https://github.com/netdata/netdata
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Used to patch the custom dashboard
-PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libuv.so:devel/libuv
@@ -51,7 +44,7 @@ PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_PERST=${NETDATA_PERST}
 
 OPTIONS_DEFINE=		CLOUD CUPS DBENGINE FREEIPMI GOPLUGIN LTO
-OPTIONS_DEFAULT=	DBENGINE LTO
+OPTIONS_DEFAULT=	CLOUD DBENGINE LTO
 OPTIONS_EXCLUDE_powerpc64=	LTO
 OPTIONS_EXCLUDE_riscv64=	LTO
 OPTIONS_SUB=		YES
@@ -98,9 +91,6 @@ post-patch:
 	    ${PATCH_WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|g' \
 	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
-
-post-patch-CLOUD-off:
-	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/23f374d499f3cfc87530989c4e44aeaa1b888a22.patch
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

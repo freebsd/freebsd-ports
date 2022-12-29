@@ -1,7 +1,6 @@
 PORTNAME=	kodi
 DISTVERSION=	19.4
-DISTVERSIONSUFFIX=	-${KODI_CODENAME}
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	multimedia java
 
 MAINTAINER=	yzrh@noema.org
@@ -24,8 +23,6 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libcrossguid.so:devel/libcrossguid \
 		libcurl.so:ftp/curl \
 		libdav1d.so:multimedia/dav1d \
-		libdvdnav.so:multimedia/libdvdnav \
-		libdvdread.so:multimedia/libdvdread \
 		libexpat.so:textproc/expat2 \
 		libfmt.so:devel/libfmt \
 		libfreetype.so:print/freetype2 \
@@ -43,14 +40,20 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libtinyxml.so:textproc/tinyxml \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cpe cmake compiler:c++14-lang gettext \
-		gnome iconv jpeg pkgconfig python:3.5+ sqlite ssl
+USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
+		desktop-file-utils gettext gmake gnome iconv jpeg libtool \
+		pkgconfig python:3.7+ sqlite ssl
 
 KODI_CODENAME=	Matrix
+LIBDVDCSS_VERSION=	1.4.2-Leia-Beta-5
+LIBDVDNAV_VERSION=	6.0.0-Leia-Alpha-3
+LIBDVDREAD_VERSION=	6.0.0-Leia-Alpha-3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	xbmc
-GH_PROJECT=	xbmc
+GH_TUPLE=	xbmc:xbmc:${DISTVERSION}-${KODI_CODENAME} \
+		xbmc:libdvdcss:${LIBDVDCSS_VERSION}:libdvdcss/tools/depends/target/libdvdcss/native \
+		xbmc:libdvdnav:${LIBDVDNAV_VERSION}:libdvdnav/tools/depends/target/libdvdnav/native \
+		xbmc:libdvdread:${LIBDVDREAD_VERSION}:libdvdread/tools/depends/target/libdvdread/native
 
 KODI_ARCH_aarch64=	aarch64
 KODI_ARCH_amd64=	x86_64
@@ -66,10 +69,10 @@ USE_LDCONFIG=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 USE_GNOME=	libxml2
-CMAKE_ARGS=	-DGIT_VERSION="${GH_TAGNAME}" \
-		-DDVDNAV_LIBRARY="${LOCALBASE}/lib/libdvdnav.so" \
-		-DDVDREAD_LIBRARY="${LOCALBASE}/lib/libdvdread.so" \
-		-DLIBDVD_INCLUDE_DIRS="${LOCALBASE}/include"
+CMAKE_ARGS=	-DGIT_VERSION="${DISTVERSION}-${KODI_CODENAME}" \
+		-DLIBDVDCSS_URL="${DISTDIR}/xbmc-libdvdcss-${LIBDVDCSS_VERSION}_GH0.tar.gz" \
+		-DLIBDVDNAV_URL="${DISTDIR}/xbmc-libdvdnav-${LIBDVDNAV_VERSION}_GH0.tar.gz" \
+		-DLIBDVDREAD_URL="${DISTDIR}/xbmc-libdvdread-${LIBDVDREAD_VERSION}_GH0.tar.gz"
 CMAKE_OFF=	ENABLE_INTERNAL_CROSSGUID
 CONFIGURE_ENV=	_CPU_FEATURE="${CPU_FEATURE}"
 
@@ -141,9 +144,7 @@ CEC_CMAKE_BOOL=		ENABLE_CEC
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
 
-DVDCSS_LIB_DEPENDS=	libdvdcss.so:multimedia/libdvdcss
 DVDCSS_CMAKE_BOOL=	ENABLE_DVDCSS
-DVDCSS_CMAKE_ON=	-DDVDCSS_LIBRARY="${LOCALBASE}/lib/libdvdcss.so"
 
 LCMS2_LIB_DEPENDS=	liblcms2.so.2:graphics/lcms2
 LCMS2_CMAKE_BOOL=	ENABLE_LCMS2
@@ -278,8 +279,6 @@ PLIST_SUB+=	KODIX11="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's|KODI_DEPENDSBUILD|true|' \
-		${WRKSRC}/cmake/modules/FindLibDvd.cmake
 	${REINPLACE_CMD} 's|/usr/share|${LOCALBASE}/share|' \
 		${WRKSRC}/xbmc/platform/linux/input/LibInputSettings.cpp
 

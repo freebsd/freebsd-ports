@@ -91,12 +91,6 @@ MASTER_SITE_BERLIOS+= \
 	${MASTER_SITE_SOURCEFORGE}
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
-MASTER_SITE_CHEESESHOP+= \
-	https://files.pythonhosted.org/packages/%SUBDIR%/ \
-	https://pypi.org/packages/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
 MASTER_SITE_COMP_SOURCES+= \
 	http://ftp.isc.org/pub/usenet/comp.sources.%SUBDIR%/ \
@@ -851,6 +845,12 @@ MASTER_SITE_PHP+= \
 	https://raw.githubusercontent.com/php/web-php-distributions/master/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_PYPI)
+MASTER_SITE_PYPI+= \
+	https://files.pythonhosted.org/packages/%SUBDIR%/ \
+	https://pypi.org/packages/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
 MASTER_SITE_PYTHON+= \
 	https://www.python.org/%SUBDIR%/
@@ -1098,12 +1098,12 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
 			RG:RUBYGEMS \
-			SF:SOURCEFORGE
+			SF:SOURCEFORGE \
+			CHEESESHOP:PYPI
 MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			APACHE_COMMONS_SOURCE:${PORTNAME:S,commons-,,} \
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:tl}.berlios \
-			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:S/-${DISTVERSIONFULL}$//} \
 			CRATESIO:${PORTNAME}/${DISTVERSIONFULL} \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			FARSIGHT:${PORTNAME} \
@@ -1123,6 +1123,7 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			MOZDEV:${PORTNAME:tl} \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
+			PYPI:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:S/-${DISTVERSIONFULL}$//} \
 			QT:archive/qt/${PORTVERSION:R} \
 			SAMBA:${PORTNAME} \
 			SAVANNAH:${PORTNAME:tl} \

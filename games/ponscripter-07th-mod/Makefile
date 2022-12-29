@@ -1,6 +1,6 @@
 PORTNAME=	ponscripter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
 CATEGORIES=	games
 PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
@@ -39,6 +39,7 @@ OPTIONS_DEFINE=	DOCS MANPAGES NOTIFY TREMOR
 OPTIONS_DEFAULT=MANPAGES NOTIFY ${MACHINE_CPU:Msoftfp:C/.+/TREMOR/}
 
 MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
+MANPAGES_CONFIGURE_OFF=	--no-docs
 MANPAGES_PLIST_FILES=\
 	man/man6/ponscr.6.gz \
 	man/man7/ponscr-ext.7.gz \
@@ -46,6 +47,8 @@ MANPAGES_PLIST_FILES=\
 	man/man7/ponscripter.7.gz
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_USES=		gnome
+NOTIFY_USE=		GNOME=glib20 # g_object_unref
 NOTIFY_CONFIGURE_WITH=	libnotify
 
 TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
@@ -62,7 +65,6 @@ post-patch:
 post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -i .manpages.bak \
 		-e '/install-man/d' \
-		-e 's/xmlto/${FALSE}/' \
 		${WRKSRC}/configure
 
 post-patch-TREMOR-on:

@@ -12,9 +12,10 @@ COMMENT=	Library for Japanese pTeX and its tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		iconv libtool pathfix pkgconfig tar:xz
+USES=		iconv libtool pathfix pkgconfig tar:xz tex
 USE_TEX=	kpathsea
 USE_LDCONFIG=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S/^/${DISTNAME}\//}
 EXTRACT_FILES=	build-aux texk/ptexenc

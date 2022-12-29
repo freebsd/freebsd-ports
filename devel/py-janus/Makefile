@@ -1,0 +1,21 @@
+PORTNAME=	janus
+PORTVERSION=	1.0.0
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Mixed sync-async queue to interoperate between asyncio tasks & threads
+WWW=		https://github.com/aio-libs/janus
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
+
+USES=		python:3.6+
+USE_PYTHON=	distutils autoplist pytest
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

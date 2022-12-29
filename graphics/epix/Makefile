@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake makeinfo tar:bzip2
+USES=		gmake makeinfo tar:bzip2 tex
 USE_TEX=	dvipsk:build latex texmf:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \

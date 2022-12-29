@@ -46,7 +46,6 @@ lib/saga/libdev_exercises.so
 lib/saga/libdev_tools.so
 lib/saga/libdocs_html.so
 lib/saga/libdocs_pdf.so
-lib/saga/libgarden_3d_viewer.so
 lib/saga/libgarden_fractals.so
 lib/saga/libgarden_games.so
 lib/saga/libgarden_webservices.so
@@ -82,7 +81,6 @@ lib/saga/libpj_georeference.so
 lib/saga/libpj_geotrans.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
-lib/saga/libpointcloud_viewer.so
 lib/saga/libshapes_grid.so
 lib/saga/libshapes_lines.so
 lib/saga/libshapes_points.so
@@ -116,7 +114,7 @@ lib/saga/libta_slope_stability.so
 lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
-lib/saga/libtin_viewer.so
+lib/saga/libvis_3d_viewer.so
 share/applications/saga.desktop
 share/icons/hicolor/128x128/apps/saga.png
 share/icons/hicolor/16x16/apps/saga.png
@@ -136,6 +134,7 @@ share/man/man1/saga_gui.1.gz
 share/metainfo/org.saga-gis.saga-gui.appdata.xml
 share/pixmaps/saga.png
 %%DATADIR%%/docs/saga_on_mac.md
+%%DATADIR%%/docs/saga_on_mac_build.sh
 %%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
 %%DATADIR%%/docs/saga_toolchains_manual.odt
 @mode 0777

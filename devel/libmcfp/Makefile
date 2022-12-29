@@ -21,4 +21,6 @@ CMAKE_TESTING_ON=	ENABLE_TESTING
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
+
 .include <bsd.port.mk>

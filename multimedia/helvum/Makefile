@@ -1,6 +1,6 @@
 PORTNAME=	helvum
 DISTVERSION=	0.3.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,11 +10,10 @@ WWW=		https://gitlab.freedesktop.org/ryuukyu/helvum
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libpipewire-0.3.so:multimedia/pipewire
 
-USES=		cargo desktop-file-utils gnome meson pkgconfig
+USES=		cargo desktop-file-utils gnome llvm meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo gtk40
 GL_SITE=	https://gitlab.freedesktop.org
@@ -24,7 +23,7 @@ MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
+	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 # Make each cargo subcommand very verbose

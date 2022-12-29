@@ -1,5 +1,6 @@
 PORTNAME=	mailslurper
 PORTVERSION=	1.14.1
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	einar@isnic.is

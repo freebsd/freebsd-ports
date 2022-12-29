@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpaper.so:print/libpaper
 
-USES=		gmake localbase:ldflags pkgconfig tar:xz
+USES=		gmake localbase:ldflags pkgconfig tar:xz tex
 USE_TEX=	kpathsea texhash texmf web2c
 
 GNU_CONFIGURE=	yes

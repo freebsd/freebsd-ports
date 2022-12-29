@@ -51,6 +51,7 @@ EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 CXXFLAGS+=	-I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
+CXXFLAGS_powerpc=	-O0
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \

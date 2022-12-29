@@ -1,0 +1,24 @@
+Linear (regression) models for Python. Extends statsmodels with Panel
+regression, instrumental variable estimators, system estimators and
+models for estimating asset prices:
+* Panel models:
+  - Fixed effects (maximum two-way)
+  - First difference regression
+  - Between estimator for panel data
+  - Pooled regression for panel data
+  - Fama-MacBeth estimation of panel models
+* High-dimensional Regresssion:
+  - Absorbing Least Squares
+* Instrumental Variable estimators
+  - Two-stage Least Squares
+  - Limited Information Maximum Likelihood
+  - k-class Estimators
+  - Generalized Method of Moments, also with continuously updating
+* Factor Asset Pricing Models:
+  - 2- and 3-step estimation
+  - Time-series estimation
+  - GMM estimation
+* System Regression:
+  - Seemingly Unrelated Regression (SUR/SURE)
+  - Three-Stage Least Squares (3SLS)
+  - Generalized Method of Moments (GMM) System Estimation

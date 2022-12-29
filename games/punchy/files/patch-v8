@@ -1,0 +1,592 @@
+Based on www/deno + www/chromium.
+
+error[E0308]: mismatched types
+   --> cargo-crates/v8-0.47.1/build.rs:252:18
+    |
+252 | fn platform() -> &'static str {
+    |    --------      ^^^^^^^^^^^^ expected `&str`, found `()`
+    |    |
+    |    implicitly returns `()` as its body has no tail or `return` expression
+
+--- cargo-crates/v8-0.47.1/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build.rs
+@@ -262,6 +262,14 @@ fn platform() -> &'static str {
+   {
+     "mac"
+   }
++  #[cfg(target_os = "freebsd")]
++  {
++    "freebsd"
++  }
++  #[cfg(target_os = "openbsd")]
++  {
++    "openbsd"
++  }
+ }
+ 
+ fn download_ninja_gn_binaries() {
+@@ -642,6 +658,7 @@ fn ninja(gn_out_dir: &Path, maybe_env: Option<NinjaEnv
+ fn ninja(gn_out_dir: &Path, maybe_env: Option<NinjaEnv>) -> Command {
+   let cmd_string = env::var("NINJA").unwrap_or_else(|_| "ninja".to_owned());
+   let mut cmd = Command::new(cmd_string);
++  cmd.arg("-v");
+   cmd.arg("-C");
+   cmd.arg(&gn_out_dir);
+   if let Some(env) = maybe_env {
+--- cargo-crates/v8-0.47.1/build/config/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/config/BUILD.gn
+@@ -218,13 +218,17 @@ config("default_libs") {
+       "CoreText.framework",
+       "Foundation.framework",
+     ]
+-  } else if (is_linux || is_chromeos) {
++  } else if ((is_linux && !is_bsd) || is_chromeos) {
+     libs = [
+       "dl",
+       "pthread",
+       "rt",
+     ]
+-  }
++  } else if (is_bsd) {
++    libs = [
++      "pthread",
++    ]
++ }
+ }
+ 
+ group("common_deps") {
+--- cargo-crates/v8-0.47.1/build/config/BUILDCONFIG.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/config/BUILDCONFIG.gn
+@@ -136,7 +136,8 @@ declare_args() {
+   is_official_build = false
+ 
+   # Set to true when compiling with the Clang compiler.
+-  is_clang = current_os != "linux" ||
++  is_clang = current_os != "linux" || current_os == "openbsd" ||
++             current_os == "freebsd" ||
+              (current_cpu != "s390x" && current_cpu != "s390" &&
+               current_cpu != "ppc64" && current_cpu != "ppc" &&
+               current_cpu != "mips" && current_cpu != "mips64" &&
+@@ -191,8 +192,8 @@ if (host_toolchain == "") {
+   # TODO(dpranke): Add some sort of assert here that verifies that
+   # no toolchain omitted host_toolchain from its toolchain_args().
+ 
+-  if (host_os == "linux") {
+-    if (target_os != "linux") {
++  if (host_os == "linux" || host_os == "openbsd" || host_os == "freebsd") {
++    if (target_os != "linux" && target_os != "openbsd" && target_os != "freebsd") {
+       host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
+     } else if (is_clang) {
+       host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
+@@ -231,7 +232,8 @@ if (target_os == "android") {
+   assert(host_os == "linux" || host_os == "mac",
+          "Android builds are only supported on Linux and Mac hosts.")
+   _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
+-} else if (target_os == "chromeos" || target_os == "linux") {
++} else if (target_os == "chromeos" || target_os == "linux" ||
++           target_os == "openbsd" || target_os == "freebsd") {
+   # See comments in build/toolchain/cros/BUILD.gn about board compiles.
+   if (is_clang) {
+     _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
+@@ -298,7 +300,11 @@ is_ios = current_os == "ios"
+ is_chromeos = current_os == "chromeos"
+ is_fuchsia = current_os == "fuchsia"
+ is_ios = current_os == "ios"
+-is_linux = current_os == "linux"
++is_linux = current_os == "linux" || current_os == "openbsd" ||
++           current_os == "freebsd"
++is_openbsd = current_os == "openbsd"
++is_freebsd = current_os == "freebsd"
++is_bsd = current_os == "openbsd" || current_os == "freebsd"
+ is_mac = current_os == "mac"
+ is_nacl = current_os == "nacl"
+ is_win = current_os == "win" || current_os == "winuwp"
+--- cargo-crates/v8-0.47.1/build/config/compiler/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/config/compiler/BUILD.gn
+@@ -245,13 +245,16 @@ config("no_unresolved_symbols") {
+ # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+ # the executable they are loaded into, so they are unresolved at link-time.
+ config("no_unresolved_symbols") {
+-  if (!using_sanitizer &&
++  if (!using_sanitizer && !is_bsd &&
+       (is_linux || is_chromeos || is_android || is_fuchsia)) {
+     ldflags = [
+       "-Wl,-z,defs",
+       "-Wl,--as-needed",
+     ]
+   }
++  if (current_cpu == "x86" && is_openbsd) {
++    ldflags = [ "-Wl,-z,notext" ]
++  }
+ }
+ 
+ # compiler ---------------------------------------------------------------------
+@@ -461,6 +464,10 @@ config("compiler") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    ldflags += [ "-Wl,-z,wxneeded" ]
++  }
++
+   # Linux-specific compiler flags setup.
+   # ------------------------------------
+   if (use_gold) {
+@@ -536,7 +543,7 @@ config("compiler") {
+     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
+   }
+ 
+-  if (is_clang && !is_nacl && current_os != "zos") {
++  if (is_clang && !is_nacl && current_os != "zos" && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
+ 
+     # TODO(hans): Remove this once Clang generates better optimized debug info
+@@ -917,7 +924,7 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+@@ -931,7 +938,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1252,7 +1259,7 @@ config("compiler_deterministic") {
+     # different build directory like "out/feature_a" and "out/feature_b" if
+     # we build same files with same compile flag.
+     # Other paths are already given in relative, no need to normalize them.
+-    if (is_nacl) {
++    if (is_nacl || is_bsd) {
+       # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
+       cflags += [
+         "-Xclang",
+@@ -1303,7 +1310,7 @@ config("clang_revision") {
+ }
+ 
+ config("clang_revision") {
+-  if (is_clang && clang_base_path == default_clang_base_path) {
++  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path) {
+     update_args = [
+       "--print-revision",
+       "--verify-version=$clang_version",
+@@ -1750,7 +1757,7 @@ config("no_chromium_code") {
+       # third-party libraries.
+       "-Wno-c++11-narrowing",
+     ]
+-    if (!is_nacl) {
++    if (!is_nacl && !is_freebsd) {
+       cflags += [
+         # Disabled for similar reasons as -Wunused-variable.
+         "-Wno-unused-but-set-variable",
+@@ -2264,7 +2271,7 @@ config("afdo") {
+ # There are some targeted places that AFDO regresses, so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags = []
+     if (clang_emit_debug_info_for_profiling) {
+       # Add the following flags to generate debug info for profiling.
+@@ -2280,7 +2287,7 @@ config("afdo") {
+       cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+       inputs = [ _clang_sample_profile ]
+     }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
+     cflags = [ "-fauto-profile=${auto_profile_path}" ]
+     inputs = [ auto_profile_path ]
+   }
+@@ -2423,7 +2430,8 @@ config("symbols") {
+     }
+   }
+ 
+-  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {
++  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos" &&
++      !is_bsd) {
+     if (is_apple) {
+       # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+       # Make sure we don't use constructor homing on mac.
+--- cargo-crates/v8-0.47.1/build/config/linux/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/config/linux/BUILD.gn
+@@ -41,7 +41,7 @@ config("runtime_library") {
+   }
+ 
+   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
+-      (!use_custom_libcxx || current_cpu == "mipsel")) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
+     libs = [ "atomic" ]
+   }
+ }
+@@ -55,16 +55,5 @@ if (use_glib) {
+ }
+ 
+ if (use_glib) {
+-  pkg_config("glib") {
+-    packages = [
+-      "glib-2.0",
+-      "gmodule-2.0",
+-      "gobject-2.0",
+-      "gthread-2.0",
+-    ]
+-    defines = [
+-      "GLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_40",
+-      "GLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_40",
+-    ]
+-  }
++  # unused by rusty_v8
+ }
+--- cargo-crates/v8-0.47.1/build/config/linux/pkg-config.py.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/config/linux/pkg-config.py
+@@ -109,7 +109,7 @@ def main():
+   # If this is run on non-Linux platforms, just return nothing and indicate
+   # success. This allows us to "kind of emulate" a Linux build from other
+   # platforms.
+-  if "linux" not in sys.platform:
++  if not sys.platform.startswith(tuple(['linux', 'openbsd', 'freebsd'])):
+     print("[[],[],[],[],[]]")
+     return 0
+ 
+--- cargo-crates/v8-0.47.1/build/detect_host_arch.py.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/detect_host_arch.py
+@@ -21,6 +21,8 @@ def HostArch():
+     host_arch = 'ia32'
+   elif host_arch in ['x86_64', 'amd64']:
+     host_arch = 'x64'
++  elif host_arch.startswith('arm64'):
++    host_arch = 'arm64'
+   elif host_arch.startswith('arm'):
+     host_arch = 'arm'
+   elif host_arch.startswith('aarch64'):
+--- cargo-crates/v8-0.47.1/build/linux/chrome.map.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/linux/chrome.map
+@@ -20,6 +20,10 @@ global:
+   # Program entry point.
+   _start;
+ 
++  # FreeBSD specific variables.
++  __progname;
++  environ;
++
+   # Memory allocation symbols.  We want chrome and any libraries to
+   # share the same heap, so it is correct to export these symbols.
+   aligned_alloc;
+--- cargo-crates/v8-0.47.1/build/linux/libpci/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/linux/libpci/BUILD.gn
+@@ -3,20 +3,36 @@ import("//tools/generate_library_loader/generate_libra
+ # found in the LICENSE file.
+ 
+ import("//tools/generate_library_loader/generate_library_loader.gni")
++import("//build/config/linux/pkg_config.gni")
+ 
+-# This generates a target named "libpci".
+-generate_library_loader("libpci") {
+-  name = "LibPciLoader"
+-  output_h = "libpci.h"
+-  output_cc = "libpci_loader.cc"
+-  header = "<pci/pci.h>"
++declare_args() {
++  use_system_libpci = is_bsd
++}
+ 
+-  functions = [
+-    "pci_alloc",
+-    "pci_init",
+-    "pci_cleanup",
+-    "pci_scan_bus",
+-    "pci_fill_info",
+-    "pci_lookup_name",
+-  ]
++if (use_system_libpci) {
++  pkg_config("system_libpci") {
++    packages = [ "libpci" ]
++  }
++
++  source_set("libpci") {
++    public_configs = [ ":system_libpci" ]
++  }
++
++} else {
++  # This generates a target named "libpci".
++  generate_library_loader("libpci") {
++    name = "LibPciLoader"
++    output_h = "libpci.h"
++    output_cc = "libpci_loader.cc"
++    header = "<pci/pci.h>"
++
++    functions = [
++      "pci_alloc",
++      "pci_init",
++      "pci_cleanup",
++      "pci_scan_bus",
++      "pci_fill_info",
++      "pci_lookup_name",
++    ]
++  }
+ }
+--- cargo-crates/v8-0.47.1/build/linux/unbundle/libusb.gn.orig	2021-04-15 08:12:30 UTC
++++ cargo-crates/v8-0.47.1/build/linux/unbundle/libusb.gn
+@@ -0,0 +1,24 @@
++# Copyright 2016 The Chromium Authors. All rights reserved.
++# Use of this source code is governed by a BSD-style license that can be
++# found in the LICENSE file.
++
++import("//build/config/linux/pkg_config.gni")
++import("//build/shim_headers.gni")
++
++pkg_config("system_libusb") {
++  packages = [ "libusb-1.0" ]
++}
++
++shim_headers("libusb_shim") {
++  root_path = "src/libusb"
++  headers = [
++    "libusb.h",
++  ]
++}
++
++source_set("libusb") {
++  deps = [
++    ":libusb_shim",
++  ]
++  public_configs = [ ":system_libusb" ]
++}
+--- cargo-crates/v8-0.47.1/build/linux/unbundle/replace_gn_files.py.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/linux/unbundle/replace_gn_files.py
+@@ -25,6 +25,7 @@ REPLACEMENTS = {
+   'libevent': 'base/third_party/libevent/BUILD.gn',
+   'libjpeg': 'third_party/libjpeg.gni',
+   'libpng': 'third_party/libpng/BUILD.gn',
++  'libusb': 'third_party/libusb/BUILD.gn',
+   'libvpx': 'third_party/libvpx/BUILD.gn',
+   'libwebp': 'third_party/libwebp/BUILD.gn',
+   'libxml': 'third_party/libxml/BUILD.gn',
+--- cargo-crates/v8-0.47.1/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/toolchain/gcc_toolchain.gni
+@@ -786,13 +786,17 @@ template("clang_toolchain") {
+ # use_gold too.
+ template("clang_toolchain") {
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "${prefix}/clang"
+-    cxx = "${prefix}/clang++"
++    cc = getenv("CC")
++    cxx = getenv("CXX")
+     ld = cxx
+-    readelf = "${prefix}/llvm-readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${prefix}/llvm-nm"
++    readelf = "llvm-readelf"
++    ar = "llvm-ar"
++    nm = "llvm-nm"
++
++    extra_cflags = getenv("CFLAGS")
++    extra_cppflags = getenv("CPPFLAGS")
++    extra_cxxflags = getenv("CXXFLAGS")
++    extra_ldflags = getenv("LDFLAGS")
+ 
+     forward_variables_from(invoker,
+                            [
+--- cargo-crates/v8-0.47.1/build/toolchain/get_concurrent_links.py.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/toolchain/get_concurrent_links.py
+@@ -53,6 +53,14 @@ def _GetTotalMemoryInBytes():
+       return int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))
+     except Exception:
+       return 0
++  elif sys.platform.startswith('freebsd'):
++    try:
++      avail_bytes = int(subprocess.check_output(['sysctl', '-n', 'hw.physmem']))
++      # With -fuse-lld it doesn't take a lot of ram, feel free to change that
++      # 1 * ... to needed amount
++      return max(1, avail_bytes / (1 * (2 ** 30)))  # total / 4GB
++    except Exception:
++      return 1
+   # TODO(scottmg): Implement this for other platforms.
+   return 0
+ 
+--- cargo-crates/v8-0.47.1/third_party/zlib/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/third_party/zlib/BUILD.gn
+@@ -119,6 +119,8 @@ if (use_arm_neon_optimizations) {
+       defines = [ "CRC32_ARMV8_CRC32" ]
+       if (is_android) {
+         defines += [ "ARMV8_OS_ANDROID" ]
++      } else if (is_bsd) {
++        defines += [ "ARMV8_OS_FREEBSD" ]
+       } else if (is_linux || is_chromeos) {
+         defines += [ "ARMV8_OS_LINUX" ]
+       } else if (is_mac) {
+--- cargo-crates/v8-0.47.1/third_party/zlib/cpu_features.c.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/third_party/zlib/cpu_features.c
+@@ -31,11 +31,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
+ 
+ #ifndef CPU_NO_SIMD
+ 
+-#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_FUCHSIA)
++#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_FUCHSIA) || defined(ARMV8_OS_FREEBSD)
+ #include <pthread.h>
+ #endif
+ 
+-#if defined(ARMV8_OS_ANDROID)
++#if defined(ARMV8_OS_FREEBSD)
++#include <machine/armreg.h>
++#include <sys/types.h>
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
++#endif
++#ifndef ID_AA64ISAR0_CRC32_VAL
++#define ID_AA64ISAR0_CRC32_VAL ID_AA64ISAR0_CRC32
++#endif
++#elif defined(ARMV8_OS_ANDROID)
+ #include <cpu-features.h>
+ #elif defined(ARMV8_OS_LINUX)
+ #include <asm/hwcap.h>
+@@ -56,7 +65,7 @@ static void _cpu_check_features(void);
+ static void _cpu_check_features(void);
+ #endif
+ 
+-#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_MACOS) || defined(ARMV8_OS_FUCHSIA) || defined(X86_NOT_WINDOWS)
++#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_MACOS) || defined(ARMV8_OS_FUCHSIA) || defined(X86_NOT_WINDOWS) || defined(ARMV8_OS_FREEBSD)
+ #if !defined(ARMV8_OS_MACOS)
+ // _cpu_check_features() doesn't need to do anything on mac/arm since all
+ // features are known at build time, so don't call it.
+@@ -123,6 +132,13 @@ static void _cpu_check_features(void)
+ #elif defined(ARMV8_OS_WINDOWS)
+     arm_cpu_enable_crc32 = IsProcessorFeaturePresent(PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE);
+     arm_cpu_enable_pmull = IsProcessorFeaturePresent(PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE);
++#elif defined(ARMV8_OS_FREEBSD)
++    uint64_t id_aa64isar0;
++    id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++    if (ID_AA64ISAR0_AES_VAL(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL)
++        arm_cpu_enable_pmull = 1;
++    if (ID_AA64ISAR0_CRC32_VAL(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE)
++        arm_cpu_enable_crc32 = 1;
+ #endif
+ }
+ #endif
+--- cargo-crates/v8-0.47.1/v8/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/v8/BUILD.gn
+@@ -5348,7 +5348,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -5359,6 +5359,18 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_openbsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
++  } else if (is_freebsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+--- cargo-crates/v8-0.47.1/v8/src/api/api.cc.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/v8/src/api/api.cc
+@@ -138,7 +138,7 @@
+ #include "src/wasm/wasm-serialization.h"
+ #endif  // V8_ENABLE_WEBASSEMBLY
+ 
+-#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD
++#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD || V8_OS_OPENBSD
+ #include <signal.h>
+ 
+ #if V8_ENABLE_WEBASSEMBLY
+@@ -6060,7 +6060,7 @@ bool v8::V8::Initialize(const int build_config) {
+   return true;
+ }
+ 
+-#if V8_OS_LINUX || V8_OS_DARWIN
++#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD || V8_OS_OPENBSD
+ bool TryHandleWebAssemblyTrapPosix(int sig_code, siginfo_t* info,
+                                    void* context) {
+ #if V8_ENABLE_WEBASSEMBLY && V8_TRAP_HANDLER_SUPPORTED
+--- cargo-crates/v8-0.47.1/v8/src/base/platform/platform-freebsd.cc.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/v8/src/base/platform/platform-freebsd.cc
+@@ -82,8 +82,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+             lib_name = std::string(path);
+           }
+           result.push_back(SharedLibraryAddress(
+-              lib_name, reinterpret_cast<uintptr_t>(map->kve_start),
+-              reinterpret_cast<uintptr_t>(map->kve_end)));
++              lib_name, static_cast<uintptr_t>(map->kve_start),
++              static_cast<uintptr_t>(map->kve_end)));
+         }
+ 
+         start += ssize;
+--- cargo-crates/v8-0.47.1/v8/src/base/platform/platform-posix.cc.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/v8/src/base/platform/platform-posix.cc
+@@ -294,8 +294,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+   }
+ }
+ 
++#if V8_OS_OPENBSD
++// Allow OpenBSD's mmap to select a random address on OpenBSD 
+ // static
+ void* OS::GetRandomMmapAddr() {
++  return nullptr;
++}
++#else
++// static
++void* OS::GetRandomMmapAddr() {
+   uintptr_t raw_addr;
+   {
+     MutexGuard guard(rng_mutex.Pointer());
+@@ -386,6 +393,7 @@ void* OS::GetRandomMmapAddr() {
+ #endif
+   return reinterpret_cast<void*>(raw_addr);
+ }
++#endif
+ 
+ // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
+ #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
+@@ -634,7 +642,7 @@ bool OS::HasLazyCommits() {
+ 
+ // static
+ bool OS::HasLazyCommits() {
+-#if V8_OS_AIX || V8_OS_LINUX || V8_OS_DARWIN
++#if V8_OS_AIX || V8_OS_LINUX || V8_OS_DARWIN || V8_OS_BSD
+   return true;
+ #else
+   // TODO(bbudge) Return true for all POSIX platforms.
+@@ -773,6 +781,12 @@ int OS::GetCurrentThreadId() {
+   return static_cast<int>(syscall(__NR_gettid));
+ #elif V8_OS_ANDROID
+   return static_cast<int>(gettid());
++#elif V8_OS_DRAGONFLYBSD || defined(__DragonFly__)
++  return static_cast<int>(lwp_gettid());
++#elif V8_OS_FREEBSD
++  return static_cast<int>(pthread_getthreadid_np());
++#elif V8_OS_NETBSD
++  return static_cast<int>(_lwp_self());
+ #elif V8_OS_AIX
+   return static_cast<int>(thread_self());
+ #elif V8_OS_FUCHSIA
+@@ -1209,7 +1223,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+ // keep this version in POSIX as most Linux-compatible derivatives will
+ // support it. MacOS and FreeBSD are different here.
+ #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \
+-    !defined(V8_OS_SOLARIS)
++    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
+ 
+ // static
+ Stack::StackSlot Stack::GetStackStart() {

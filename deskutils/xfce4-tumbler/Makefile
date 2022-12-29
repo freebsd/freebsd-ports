@@ -1,6 +1,5 @@
 PORTNAME=	tumbler
-PORTVERSION=	4.16.1
-PORTREVISION=	4
+PORTVERSION=	4.18.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE
 PKGNAMEPREFIX=	xfce4-
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		compiler:c11 gettext-tools gmake gnome libtool \
 		localbase:ldflags pathfix pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 glib20 intltool libgsf librsvg2
+USE_XFCE=	libutil
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

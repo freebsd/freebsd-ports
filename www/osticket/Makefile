@@ -1,6 +1,6 @@
 PORTNAME=	osticket
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.1
+DISTVERSION=	1.17.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/osTicket/osTicket/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -18,7 +18,7 @@ USES=		cpe php:web zip
 CPE_VENDOR=	enhancesoft
 USE_PHP=	ctype curl dom fileinfo filter gd gettext iconv imap intl json \
 		mbstring mysqli opcache phar session xml zip
-IGNORE_WITH_PHP=	74 82
+IGNORE_WITH_PHP=	82
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

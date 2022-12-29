@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBRTC_REV=4896g
+WEBRTC_REV=5005b
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
@@ -20,42 +20,55 @@ fetch -q -o /tmp/DEPS https://raw.githubusercontent.com/signalapp/webrtc/${WEBRT
 
 base_hash=$(grep 'base@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "BASE_REV=\t${base_hash}\n"
+printf "BASE_REV=\t${base_hash}\n" | portedit merge -i Makefile
 
 boringssl_hash=$(grep 'boringssl.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "BORINGSSL_REV=\t${boringssl_hash}\n"
+printf "BORINGSSL_REV=\t${boringssl_hash}\n" | portedit merge -i Makefile
 
 build_hash=$(grep 'build@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "BUILD_REV=\t${build_hash}\n"
+printf "BUILD_REV=\t${build_hash}\n" | portedit merge -i Makefile
 
 buildtools_hash=$(grep 'buildtools@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "BUILDTOOLS_REV=\t${buildtools_hash}\n"
+printf "BUILDTOOLS_REV=\t${buildtools_hash}\n" | portedit merge -i Makefile
 
 catapult_hash=$(grep 'catapult.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "CATAPULT_REV=\t${catapult_hash}\n"
+printf "CATAPULT_REV=\t${catapult_hash}\n" | portedit merge -i Makefile
 
 icu_hash=$(grep 'icu.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "ICU_REV=\t${icu_hash}\n"
+printf "ICU_REV=\t${icu_hash}\n" | portedit merge -i Makefile
 
 libjpeg_turbo_hash=$(grep 'libjpeg_turbo.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "LIBJPEG_TURBO_REV=\t${libjpeg_turbo_hash}\n"
+printf "LIBJPEG_TURBO_REV=\t${libjpeg_turbo_hash}\n" | portedit merge -i Makefile
 
 libsrtp_hash=$(grep 'libsrtp.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "LIBSRTP_REV=\t${libsrtp_hash}\n"
+printf "LIBSRTP_REV=\t${libsrtp_hash}\n" | portedit merge -i Makefile
 
 libvpx_hash=$(grep 'libvpx.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "LIBVPX_REV=\t${libvpx_hash}\n"
+printf "LIBVPX_REV=\t${libvpx_hash}\n" | portedit merge -i Makefile
 
 libyuv_hash=$(grep 'libyuv.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "LIBYUV_REV=\t${libyuv_hash}\n"
+printf "LIBYUV_REV=\t${libyuv_hash}\n" | portedit merge -i Makefile
 
 nasm_hash=$(grep 'nasm.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "NASM_REV=\t${nasm_hash}\n"
+printf "NASM_REV=\t${nasm_hash}\n" | portedit merge -i Makefile
 
 testing_hash=$(grep 'testing@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "TESTING_REV=\t${testing_hash}\n"
+printf "TESTING_REV=\t${testing_hash}\n" | portedit merge -i Makefile
 
 third_party_hash=$(grep 'third_party@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n"
+printf "THIRD_PARTY_REV=\t${third_party_hash}\n" | portedit merge -i Makefile
 
 echo "fetch -o base-${base_hash}.tar.gz ${base_url}${base_hash}.tar.gz"
 echo "fetch -o boringssl-${boringssl_hash}.tar.gz ${boringssl_url}${boringssl_hash}.tar.gz"
@@ -70,8 +83,6 @@ echo "fetch -o libyuv-${libyuv_hash}.tar.gz ${libyuv_url}${libyuv_hash}.tar.gz"
 echo "fetch -o nasm-${nasm_hash}.tar.gz ${nasm_url}${nasm_hash}.tar.gz"
 echo "fetch -o testing-${testing_hash}.tar.gz ${testing_url}${testing_hash}.tar.gz"
 echo "fetch -o third_party-${third_party_hash}.tar.gz ${third_party_url}${third_party_hash}.tar.gz"
-
-exit
 
 mkdir -p base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm testing third_party
 tar xf base-${base_hash}.tar.gz -C base
@@ -103,5 +114,3 @@ tar czf /tmp/testing-${testing_hash}.tar.gz testing
 tar czf /tmp/third_party-${third_party_hash}.tar.gz third_party
 
 rm -rf base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm testing third_party
-
-exit 

@@ -1,6 +1,5 @@
 PORTNAME=	dwave-neal
-DISTVERSION=	0.6.0.dev0
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,7 @@ WWW=		https://github.com/dwavesystems/dwave-neal
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dwave-samplers>0:science/py-dwave-samplers@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dwave-samplers>=1.0.0:science/py-dwave-samplers@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist unittest

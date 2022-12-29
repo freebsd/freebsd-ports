@@ -8787,7 +8787,7 @@ In limited circumstances it was possible for users to authenticate using variati
   </vuln>
 
   <vuln vid="75aae50b-9e3c-11eb-9bc3-8c164582fbac">
-    <topic>AccountService -- Insufficient path check in user_change_icon_file_authorized_cb()</topic>
+    <topic>AccountsService -- Insufficient path check in user_change_icon_file_authorized_cb()</topic>
     <affects>
       <package>
 	<name>accountsservice</name>

@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	undefined symbol: lsp::aarch64::dsp_init(), see https://github.com/sadko4u/timbre-mill/issues/4
+BROKEN_armv6=	clang crashes after printing "Unable to encode MCOperand!"
 BROKEN_armv7=	compilation fails: operand must be an immediate in the range, see https://github.com/sadko4u/timbre-mill/issues/5
 BROKEN_i386=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265680
 

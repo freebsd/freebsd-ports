@@ -1,7 +1,7 @@
 PORTNAME=	dog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	dns net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -94,27 +94,25 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		winreg-0.6.2 \
 		mutagen,mutagen-core,mutagen-transform@git+https://github.com/llogiq/mutagen\#c7abc956a10e8a3e2cc71f21279ea0a42f7b7c10
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		COMPLETIONS DOCS
 OPTIONS_DEFAULT=	COMPLETIONS
-OPTIONS_SUB=		yes
 
-COMPLETIONS_DESC=	Install shell completions for bash, fish and zsh
+COMPLETIONS_DESC=		Install bash, fish and zsh shell completions
+COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
+				share/fish/vendor_completions.d/${PORTNAME}.fish \
+				share/zsh/site-functions/_${PORTNAME}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+.for _shell in bash fish zsh
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.${_shell} \
+		${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

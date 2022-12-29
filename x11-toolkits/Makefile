@@ -63,6 +63,7 @@
     SUBDIR += kf5-ktextwidgets
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
+    SUBDIR += kirigami-addons
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw

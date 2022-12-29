@@ -8,6 +8,8 @@ CONFLICTS_INSTALL=	mstflint
 LITE=		yes
 MASTERDIR=	${.CURDIR}/../mstflint
 
+PIE_UNSAFE=	yes
+
 PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

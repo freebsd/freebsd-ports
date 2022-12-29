@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.50.6
+DISTVERSION=	2.54.9
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++14-lang cmake ncurses python pkgconfig shebangfix
+USES=		compiler:c++14-lang cmake llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -21,8 +21,6 @@ GH_TUPLE=	\
 		grame-cncm:faustlibraries:f9efea9:grame_cncm_faustlibraries/libraries
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
-
-LLVM_VERSION=	13 # versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs without INCLUDE_DYNAMIC or INCLUDE_STATIC: https://github.com/grame-cncm/faust/issues/553

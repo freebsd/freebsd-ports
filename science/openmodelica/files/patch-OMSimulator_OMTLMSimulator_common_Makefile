@@ -1,0 +1,24 @@
+--- OMSimulator/OMTLMSimulator/common/Makefile.orig	2022-12-11 03:01:49 UTC
++++ OMSimulator/OMTLMSimulator/common/Makefile
+@@ -13,7 +13,7 @@ endif
+ include $(MAKEFILEHEADHOME)/Makefile.head
+ 
+ MISCHOME = ../3rdParty/misc
+-TIMEHOME = ../3rdParty/rtime
++#TIMEHOME = ../3rdParty/rtime
+ 
+ SRCCLT= Plugin/PluginImplementer.cc \
+ 	Plugin/MonitoringPluginImplementer.cc \
+@@ -74,11 +74,10 @@ OBJS = $(SRC:%.cc=$(ABI)/%.o)
+ 
+ INCLUDES= -I. \
+ 	-I$(MISCHOME)/include \
+-	-I$(TIMEHOME) \
++	-DNO_RTIME \
+ 	$(INCLPTHREAD)
+ 
+ LIBS = 	-L$(MISCHOME)/lib/$(ABI) \
+-	-L$(TIMEHOME)/lib/$(ABI) \
+ 	-L$(ABI) \
+ 	-lmisc $(RTIMELIB)
+ 

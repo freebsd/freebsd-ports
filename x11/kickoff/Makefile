@@ -1,7 +1,7 @@
 PORTNAME=	kickoff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	4
+DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,6 @@ WWW=		https://github.com/j0ru/kickoff
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cargo

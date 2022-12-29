@@ -1,7 +1,7 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.10.3
 DISTVERSIONPREFIX=	v
-CATEGORIES=	games emulators wayland
+CATEGORIES=	games emulators
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform entertainment system based on libretro API
@@ -67,6 +67,7 @@ V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=	v4l2
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 			${LOCALBASE}/include/linux/kd.h:graphics/svgalib
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland

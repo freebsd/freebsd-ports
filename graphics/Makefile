@@ -599,7 +599,6 @@
     SUBDIR += opencollada
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools
-    SUBDIR += opencoloriov1
     SUBDIR += opencsg
     SUBDIR += opencv
     SUBDIR += opendx
@@ -610,7 +609,6 @@
     SUBDIR += opengv
     SUBDIR += openicc-config
     SUBDIR += openimageio
-    SUBDIR += openimageio-ociov1
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
     SUBDIR += openjph
@@ -775,8 +773,6 @@
     SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-geos
-    SUBDIR += php74-exif
-    SUBDIR += php74-gd
     SUBDIR += php80-exif
     SUBDIR += php80-gd
     SUBDIR += php81-exif

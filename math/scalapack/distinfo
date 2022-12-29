@@ -1,3 +1,3 @@
-TIMESTAMP = 1592035305
-SHA256 (Reference-ScaLAPACK-scalapack-v2.1.0_GH0.tar.gz) = f03fda720a152030b582a237f8387014da878b84cbd43c568390e9f05d24617f
-SIZE (Reference-ScaLAPACK-scalapack-v2.1.0_GH0.tar.gz) = 4766223
+TIMESTAMP = 1672152375
+SHA256 (Reference-ScaLAPACK-scalapack-v2.2.0_GH0.tar.gz) = 8862fc9673acf5f87a474aaa71cd74ae27e9bbeee475dbd7292cec5b8bcbdcf3
+SIZE (Reference-ScaLAPACK-scalapack-v2.2.0_GH0.tar.gz) = 4769477

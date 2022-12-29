@@ -12,6 +12,8 @@ include/heyoka/detail/llvm_fwd.hpp
 include/heyoka/detail/llvm_helpers.hpp
 include/heyoka/detail/llvm_vector_type.hpp
 include/heyoka/detail/logging_impl.hpp
+include/heyoka/detail/num_utils.hpp
+include/heyoka/detail/real_helpers.hpp
 include/heyoka/detail/simple_timer.hpp
 include/heyoka/detail/sleef.hpp
 include/heyoka/detail/string_conv.hpp
@@ -78,5 +80,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.19
-lib/libheyoka.so.19.0
+lib/libheyoka.so.20
+lib/libheyoka.so.20.0

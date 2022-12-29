@@ -2,7 +2,7 @@ PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.1
 PORTREVISION=	3
-CATEGORIES=	graphics wayland
+CATEGORIES=	graphics
 MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -67,6 +67,7 @@ TEST_MESON_ENABLED=	test
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MESON_ENABLED=	libtiff
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-egl.so:graphics/wayland
 WAYLAND_MESON_ON=	-Dwindows=wayland

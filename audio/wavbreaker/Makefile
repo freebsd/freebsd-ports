@@ -1,5 +1,5 @@
 PORTNAME=	wavbreaker
-DISTVERSION=	0.15
+DISTVERSION=	0.16
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,8 +18,8 @@ GH_ACCOUNT=	thp
 
 CONFLICTS_INSTALL=	aften # bin/wavinfo
 
-OPTIONS_DEFINE=	MOODBAR MPG123
-OPTIONS_DEFAULT=MOODBAR MPG123
+OPTIONS_DEFINE=	MOODBAR MPG123 VORBIS
+OPTIONS_DEFAULT=MOODBAR MPG123 VORBIS
 
 MOODBAR_DESC=		Visual representation from .mood files
 MOODBAR_RUN_DEPENDS=	moodbar:audio/moodbar
@@ -27,5 +27,8 @@ MOODBAR_MESON_TRUE=	moodbar
 
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_MESON_TRUE=	mp3
+
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
+VORBIS_MESON_TRUE=	ogg_vorbis
 
 .include <bsd.port.mk>

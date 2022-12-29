@@ -363,8 +363,8 @@ lib/cmake/OpenShotAudio/OpenShotAudioConfigVersion.cmake
 lib/cmake/OpenShotAudio/OpenShotAudioTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenShotAudio/OpenShotAudioTargets.cmake
 lib/libopenshot-audio.so
-lib/libopenshot-audio.so.0.2.2
-lib/libopenshot-audio.so.8
+lib/libopenshot-audio.so.0.3.0
+lib/libopenshot-audio.so.9
 share/man/man1/openshot-audio-demo.1.gz
 @dir include/libopenshot-audio/juce_audio_devices/native/java/app/com/roli/juce
 @dir include/libopenshot-audio/juce_core/native/java/app/com/roli/juce

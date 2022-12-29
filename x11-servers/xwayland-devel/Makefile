@@ -1,7 +1,7 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-304
-DISTVERSIONSUFFIX=	-gfdebbc60d
+DISTVERSION=	21.0.99.1-337
+DISTVERSIONSUFFIX=	-g87e5db75f
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
-		wayland-protocols>=1.18:graphics/wayland-protocols
+		wayland-protocols>=1.28:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libwayland-client.so:graphics/wayland \

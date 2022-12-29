@@ -172,16 +172,16 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.361.0
+lib/libpipewire-0.3.so.0.362.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.361.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.362.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.361.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.362.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.361.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.362.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -223,7 +223,6 @@ lib/spa-0.2/support/libspa-support.so
 lib/spa-0.2/v4l2/libspa-v4l2.so
 lib/spa-0.2/videoconvert/libspa-videoconvert.so
 lib/spa-0.2/videotestsrc/libspa-videotestsrc.so
-lib/spa-0.2/volume/libspa-volume.so
 %%VULKAN%%lib/spa-0.2/vulkan/libspa-vulkan.so
 @comment lib/udev/rules.d/90-pipewire-alsa.rules
 libdata/pkgconfig/libpipewire-0.3.pc

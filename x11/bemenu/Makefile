@@ -1,6 +1,6 @@
 PORTNAME=	bemenu
 DISTVERSION=	0.6.7
-CATEGORIES=	x11 wayland
+CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Cloudef/bemenu/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,6 +31,7 @@ NCURSES_USES=		ncurses
 NCURSES_MAKE_ARGS=	curses_CFLAGS="-I${NCURSESINC}" \
 			curses_LIBS="-L${NCURSESLIB} ${NCURSESLIBS}"
 NCURSES_VARS=		_BEMENU_RENDERERS+=curses
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \

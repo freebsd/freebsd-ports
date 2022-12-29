@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# PROVIDE: crowdsec_mirror
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# crowdsec_mirror_enable (bool):	Set it to YES to enable the blocklist mirror.
+#					Default is "NO"
+# crowdsec_mirror_config (str):		Set the config path.
+#					Default is "%%ETCDIR%%/crowdsec-blocklist-mirror.yaml"
+# crowdsec_mirror_flags (str):		extra flags to run bouncer.
+#					Default is ""
+
+. /etc/rc.subr
+
+name=crowdsec_mirror
+desc="Crowdsec Blocklist Mirror"
+rcvar=crowdsec_mirror_enable
+
+load_rc_config $name
+
+: "${crowdsec_mirror_enable:=NO}"
+: "${crowdsec_mirror_config:=%%ETCDIR%%/crowdsec-blocklist-mirror.yaml}"
+: "${crowdsec_mirror_flags:=}"
+
+pidfile=/var/run/${name}.pid
+required_files="$crowdsec_mirror_config"
+command="%%PREFIX%%/bin/crowdsec-blocklist-mirror"
+start_cmd="${name}_start"
+start_precmd="${name}_precmd"
+
+crowdsec_mirror_precmd() {
+    CSCLI=%%PREFIX%%/bin/cscli
+    orig_line="lapi_key: \${API_KEY}"
+    # IF the bouncer is not configured
+    if grep -q "${orig_line}" "${crowdsec_mirror_config}"; then
+        SUFFIX=$(jot -r -c 10 a z | rs -g0)
+        BOUNCER="cs-blocklist-mirror-${SUFFIX}"
+        # AND crowdsec is installed..
+        if command -v "$CSCLI" >/dev/null; then
+            # THEN, register it to the local API
+            API_KEY="$($CSCLI bouncers add "${BOUNCER}" -o raw)"
+            if [ -n "$API_KEY" ]; then
+                sed -i "" "s/${orig_line}/lapi_key: ${API_KEY}     # ${BOUNCER}/" "${crowdsec_mirror_config}"
+                echo "Registered: ${BOUNCER}"
+            fi
+        fi
+    fi
+
+    orig_line="lapi_url: \${CROWDSEC_LAPI_URL}"
+    # IF the lapi endpoint is not configured
+    if grep -q "${orig_line}" "${crowdsec_mirror_config}"; then
+        # AND crowdsec is installed..
+        if command -v "$CSCLI" >/dev/null; then
+            # THEN, use the listen address
+            CROWDSEC_LAPI_ENDPOINT="$($CSCLI config show --key Config.API.Server.ListenURI)"
+            if [ -n "$CROWDSEC_LAPI_ENDPOINT" ]; then
+                sed -i "" "s#${orig_line}#lapi_url: http://${CROWDSEC_LAPI_ENDPOINT}#" "${crowdsec_mirror_config}"
+                echo "LAPI listen address set up."
+            fi
+        fi
+    fi
+}
+
+crowdsec_mirror_start() {
+    /usr/sbin/daemon -f -p ${pidfile} -t "${desc}" -- \
+        ${command} -c "${crowdsec_mirror_config}" ${crowdsec_mirror_flags}
+}
+
+run_rc_command "$1"

@@ -1,7 +1,5 @@
 PORTNAME=	dar
-PORTVERSION=	2.7.7
-PORTREVISION=	1
-
+PORTVERSION=	2.7.8
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -10,6 +8,8 @@ COMMENT=	Command-line backup tool, aimed for disks
 WWW=		http://dar.linux.free.fr/
 
 LICENSE=	GPLv2+
+
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 
 USES=		compiler:c++14-lang libtool localbase pathfix shebangfix
 USE_LDCONFIG=	yes

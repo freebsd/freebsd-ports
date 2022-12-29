@@ -12,7 +12,7 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX backend for Jade, DSSSL processor for SGML/XML documents
 WWW=		http://jadetex.sourceforge.net/
 
-USES=		tar:xz
+USES=		tar:xz tex
 USE_TEX=	texmf pdftex xmltex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \

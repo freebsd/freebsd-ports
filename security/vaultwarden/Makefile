@@ -1,7 +1,6 @@
 PORTNAME=	vaultwarden
 DISTVERSION=	1.26.0
-PORTREVISION=	2
-#PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web
 DISTFILES=	${WV_DISTFILE}:web
@@ -19,7 +18,7 @@ LIB_DEPENDS+=	libcapnp.so:devel/capnproto \
 
 USES=		cargo mysql:client pgsql ssl
 
-DISTVERSION_WV=	2022.10.0
+DISTVERSION_WV=	2022.12.0
 WV_DISTFILE=	bw_web_v${DISTVERSION_WV}.tar.gz
 
 # make makeplist > pkg-plist #One has to edit/review the generated plist
@@ -384,7 +383,7 @@ CARGO_CRATES=   addr2line-0.17.0 \
                 multer@git+https://github.com/BlackDex/multer-rs?rev=477d16b7fa0f361b5c2a5ba18a5b28bec6d26a8a\#477d16b7fa0f361b5c2a5ba18a5b28bec6d26a8a
 
 CARGO_FEATURES=	mysql postgresql sqlite #vendored_openssl
-CARGO_ENV+=	RUSTC_BOOTSTRAP=1
+#CARGO_ENV+=	RUSTC_BOOTSTRAP=1
 
 INSTALL_TARGET=	install-strip
 

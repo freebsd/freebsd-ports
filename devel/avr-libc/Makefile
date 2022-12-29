@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	DOXYGEN
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
+USES+=		tex
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:devel/doxygen \
 		fig2dev:print/fig2dev \

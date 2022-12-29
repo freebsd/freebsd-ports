@@ -13,7 +13,7 @@
 # MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -25,7 +25,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcourier-unicode.so:devel/courier-unicode \
-		libidn.so:dns/libidn \
+		libidn2.so:dns/libidn2 \
 		libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c++11-lang cpe iconv localbase:ldflags perl5 pkgconfig \

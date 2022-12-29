@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-shell
 PORTVERSION=	14.12.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org

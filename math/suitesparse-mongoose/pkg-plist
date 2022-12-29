@@ -4,5 +4,5 @@ lib/cmake/SuiteSparse/FindMongoose.cmake
 lib/libmongoose.a
 lib/libmongoose.so
 lib/libmongoose.so.3
-lib/libmongoose.so.3.0.0
+lib/libmongoose.so.3.0.3
 %%PORTDOCS%%%%DOCSDIR%%/Mongoose_UserGuide.pdf

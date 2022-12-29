@@ -10,6 +10,10 @@ WWW=		https://www.horde.org/apps/whups/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Requires php74
+EXPIRATION_DATE=	2023-03-31
+BROKEN=	runtime error with php80
+
 USES=		horde php cpe
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
@@ -37,5 +41,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_Vfs \
 		Horde_View
+IGNORE_WITH_PHP=81 82
 
 .include <bsd.port.mk>

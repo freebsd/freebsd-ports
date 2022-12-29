@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 
 BROKEN=		does not build: Failed to load "fontloader" module "basics-gen"
 
+USES=	tex
 USE_TEX=	latex:build luatex:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea

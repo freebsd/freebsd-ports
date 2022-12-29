@@ -1,0 +1,31 @@
+From d890c5cca7f6239ddd7ea605e45854658f50d39b Mon Sep 17 00:00:00 2001
+From: Alexander Chernikov <melifaro@FreeBSD.org>
+Date: Tue, 13 Sep 2022 12:08:58 +0000
+Subject: [PATCH 1/1] FreeBSD: add netlink support
+
+Netlink can be enabled by picking new sysconfig target:
+./configure --with-sysconfig=bsd-netlink
+---
+ sysdep/bsd-netlink/Makefile |  9 +++++++++
+ sysdep/cf/bsd-netlink.h     | 34 ++++++++++++++++++++++++++++++++++
+ sysdep/cf/linux.h           |  2 ++
+ sysdep/linux/netlink.c      |  7 ++++++-
+ 4 files changed, 51 insertions(+), 1 deletion(-)
+ create mode 100644 sysdep/bsd-netlink/Makefile
+ create mode 100644 sysdep/cf/bsd-netlink.h
+
+diff --git sysdep/bsd-netlink/Makefile sysdep/bsd-netlink/Makefile
+new file mode 100644
+index 00000000..90b639a4
+--- /dev/null
++++ sysdep/bsd-netlink/Makefile
+@@ -0,0 +1,9 @@
++src := $(s)../linux/netlink.c
++obj := $(objdir)/sysdep/bsd-netlink/netlink.o
++$(obj): $(src)
++	$(E)echo CC -o $@ -c $<
++	$(Q)$(CC) $(CFLAGS) -MMD -MP -o $@ -c $<
++$(all-daemon)
++$(conf-y-targets): $(s)../linux/netlink.Y
++
++tests_objs := $(tests_objs) $(obj)

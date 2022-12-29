@@ -1,5 +1,6 @@
 PORTNAME=	libgusb
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,8 +19,8 @@ GH_ACCOUNT=	hughsie
 
 USE_GNOME=	glib20 introspection:build
 
-OPTIONS_DEFINE=		DOCS VALA
-OPTIONS_DEFAULT=	DOCS VALA
+OPTIONS_DEFINE=		DOCS VAPI
+OPTIONS_DEFAULT=	DOCS VAPI
 OPTIONS_SUB=		yes
 
 .include <bsd.port.options.mk>
@@ -27,8 +28,8 @@ OPTIONS_SUB=		yes
 .if !${PORT_OPTIONS:MDOCS}
 MESON_ARGS+=	-Ddocs=false
 .endif
-.if !${PORT_OPTIONS:MVALA}
-MESON_ARGS+=	-Dvala=false
+.if !${PORT_OPTIONS:MVAPI}
+MESON_ARGS+=	-Dvapi=false
 .endif
 
 .include <bsd.port.mk>

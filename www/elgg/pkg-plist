@@ -16711,7 +16711,6 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/SignalHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Test/TestCase.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
-%%WWWDIR%%/vendor/npm-asset/cropperjs/CHANGELOG.md
 %%WWWDIR%%/vendor/npm-asset/cropperjs/LICENSE
 %%WWWDIR%%/vendor/npm-asset/cropperjs/README.md
 %%WWWDIR%%/vendor/npm-asset/cropperjs/dist/cropper.common.js

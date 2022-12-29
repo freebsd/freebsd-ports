@@ -929,7 +929,7 @@ tvheadend:*:984:
 puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
-# free: 988
+pot:*:988:
 emby:*:989:
 oozie:*:990:
 sguil:*:991:

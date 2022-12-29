@@ -1,9 +1,6 @@
 PORTNAME=	xdg-desktop-portal
-PORTVERSION=	1.10.1
+PORTVERSION=	1.16.0
 CATEGORIES=	deskutils wayland
-
-PATCH_SITES=	https://arrowd.name/:freebsd_compat
-PATCHFILES=	552.patch:-p1:freebsd_compat
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Portal frontend service for Flatpak
@@ -11,17 +8,15 @@ WWW=		https://github.com/flatpak/xdg-desktop-portal
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs \
+LIB_DEPENDS=	libfuse3.so:sysutils/fusefs-libs3 \
 		libgeoclue-2.so:net/geoclue \
 		libjson-glib-1.0.so:devel/json-glib \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libportal.so:deskutils/libportal
 
-USES=		autoreconf gettext-tools gmake gnome libtool pkgconfig
+USES=		gettext-tools gmake gnome meson pkgconfig
 
 USE_GNOME=	glib20
-
-GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
@@ -32,5 +27,8 @@ GH_ACCOUNT=	flatpak
  || ${OSVERSION} < 1300000
 IGNORE=		requires O_PATH support in open(2)
 .endif
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.post.mk>

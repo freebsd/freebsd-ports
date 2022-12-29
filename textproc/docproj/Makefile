@@ -1,5 +1,5 @@
 PORTNAME=	docproj
-PORTVERSION=	4.1.4
+PORTVERSION=	4.1.5
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -12,19 +12,17 @@ RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 
 USES=		metaport
 
-OPTIONS_DEFINE=	EPUB GIT IGOR NOTO-TC PDF TRANSLATOR VALE
-OPTIONS_DEFAULT=	GIT IGOR NOTO-TC PDF TRANSLATOR VALE
+OPTIONS_DEFINE=	EPUB GIT IGOR PDF TRANSLATOR VALE
+OPTIONS_DEFAULT=	GIT IGOR PDF TRANSLATOR VALE
 
 EPUB_DESC=	EPUB document support
 IGOR_DESC=		Igor automated proofreader for documentation
-NOTO-TC_DESC=	Google Noto Fonts family (Traditional Chinese)
 TRANSLATOR_DESC=	Tools for translators
 VALE_DESC=	VALE Linting support
 
 EPUB_RUN_DEPENDS=	asciidoctor-epub3:textproc/rubygem-asciidoctor-epub3
 GIT_RUN_DEPENDS=	git:devel/git
 IGOR_RUN_DEPENDS=	igor:textproc/igor
-NOTO-TC_RUN_DEPENDS=	noto-tc>0:x11-fonts/noto-tc
 PDF_RUN_DEPENDS=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
 TRANSLATOR_RUN_DEPENDS=	po4a>=0.67:textproc/po4a
 VALE_RUN_DEPENDS=	vale>0:textproc/vale

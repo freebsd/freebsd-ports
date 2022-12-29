@@ -11,6 +11,7 @@ bin/hb-view
 @comment include/harfbuzz/hb-deprecated.h
 @comment include/harfbuzz/hb-draw.h
 @comment include/harfbuzz/hb-face.h
+@comment include/harfbuzz/hb-features.h
 @comment include/harfbuzz/hb-font.h
 @comment include/harfbuzz/hb-ft.h
 @comment include/harfbuzz/hb-glib.h

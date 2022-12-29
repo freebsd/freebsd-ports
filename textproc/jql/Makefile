@@ -1,6 +1,7 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.3
+DISTVERSION=	5.1.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	anes-0.1.6 \
-		anyhow-1.0.66 \
+		anyhow-1.0.67 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -42,7 +43,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.20 \
-		clap-4.0.27 \
+		clap-4.0.29 \
 		clap_lex-0.2.3 \
 		clap_lex-0.3.0 \
 		colored_json-3.0.1 \
@@ -75,7 +76,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		indexmap-1.8.1 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.2 \
-		is-terminal-0.4.0 \
+		is-terminal-0.4.1 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
@@ -92,10 +93,10 @@ CARGO_CRATES=	anes-0.1.6 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
-		pest-2.5.0 \
-		pest_derive-2.5.0 \
-		pest_generator-2.5.0 \
-		pest_meta-2.5.0 \
+		pest-2.5.1 \
+		pest_derive-2.5.1 \
+		pest_generator-2.5.1 \
+		pest_meta-2.5.1 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
 		plotters-0.3.1 \
@@ -104,17 +105,17 @@ CARGO_CRATES=	anes-0.1.6 \
 		polling-2.2.0 \
 		proc-macro2-1.0.36 \
 		quote-1.0.17 \
-		rayon-1.6.0 \
+		rayon-1.6.1 \
 		rayon-core-1.10.1 \
 		regex-1.5.5 \
 		regex-syntax-0.6.25 \
-		rustix-0.36.3 \
+		rustix-0.36.5 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.86 \
+		serde_json-1.0.90 \
 		sha1-0.10.5 \
 		signal-hook-0.3.13 \
 		signal-hook-registry-1.4.0 \

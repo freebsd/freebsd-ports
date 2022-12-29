@@ -1,6 +1,6 @@
 PORTNAME=	just
-DISTVERSION=	1.6.0
-PORTREVISION=	2
+DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	casey
 
-CARGO_CRATES=	aho-corasick-0.7.19 \
+CARGO_CRATES=	aho-corasick-0.7.20 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -33,17 +33,17 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		ctrlc-3.2.3 \
 		derivative-2.2.0 \
 		diff-0.1.13 \
-		digest-0.10.5 \
+		digest-0.10.6 \
 		doc-comment-0.3.3 \
 		dotenv-0.15.0 \
 		edit-distance-2.1.0 \
 		either-1.8.0 \
-		env_logger-0.9.1 \
+		env_logger-0.9.3 \
 		executable-path-1.0.0 \
 		fastrand-1.8.0 \
 		generic-array-0.14.6 \
 		getopts-0.2.21 \
-		getrandom-0.2.7 \
+		getrandom-0.2.8 \
 		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
@@ -52,12 +52,12 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		itoa-1.0.4 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.135 \
+		libc-0.2.137 \
 		linked-hash-map-0.5.6 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		nix-0.25.0 \
-		once_cell-1.15.0 \
+		once_cell-1.16.0 \
 		output_vt100-0.1.3 \
 		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
@@ -67,25 +67,25 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.21 \
 		redox_syscall-0.2.16 \
-		regex-1.6.0 \
+		regex-1.7.0 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
+		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		rustversion-1.0.9 \
 		ryu-1.0.11 \
-		serde-1.0.145 \
-		serde_derive-1.0.145 \
-		serde_json-1.0.87 \
+		serde-1.0.147 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.89 \
 		sha2-0.10.6 \
-		similar-2.2.0 \
-		snafu-0.7.2 \
-		snafu-derive-0.7.2 \
+		similar-2.2.1 \
+		snafu-0.7.3 \
+		snafu-derive-0.7.3 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
-		syn-1.0.102 \
+		syn-1.0.103 \
 		target-2.0.0 \
 		tempfile-3.3.0 \
 		temptree-0.2.0 \
@@ -98,7 +98,7 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		unicode-ident-1.0.5 \
 		unicode-segmentation-1.10.0 \
 		unicode-width-0.1.10 \
-		uuid-1.2.1 \
+		uuid-1.2.2 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.5.0:net-mgmt/icingaweb2@${PHP_FLAVOR} \
 		icingaweb2-module-incubator${PHP_PKGNAMESUFFIX}>0:net-mgmt/icingaweb2-module-incubator@${PHP_FLAVOR} \
-		icingaweb2-module-ipl${PHP_PKGNAMESUFFIX}>0:net-mgmt/icingaweb2-module-ipl@${PHP_FLAVOR} \
+		icinga-php-library${PHP_PKGNAMESUFFIX}>0:net-mgmt/icinga-php-library@${PHP_FLAVOR} \
 		icingaweb2-module-reactbundle${PHP_PKGNAMESUFFIX}>0:net-mgmt/icingaweb2-module-reactbundle@${PHP_FLAVOR}
 
 USES=		mysql php:web,flavors

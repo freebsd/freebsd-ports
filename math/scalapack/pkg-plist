@@ -27,8 +27,6 @@ libdata/pkgconfig/scalapack.pc
 %%DATADIR%%/TESTING/SEPR.dat
 %%DATADIR%%/TESTING/SVD.dat
 %%DATADIR%%/TESTING/TRD.dat
-%%DATADIR%%/TESTING/xCbtest
-%%DATADIR%%/TESTING/xFbtest
 %%DATADIR%%/TESTING/xcbrd
 %%DATADIR%%/TESTING/xcdblu
 %%DATADIR%%/TESTING/xcdtlu
