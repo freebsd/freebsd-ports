@@ -1,7 +1,6 @@
 PORTNAME=	ospray-studio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	3
+DISTVERSION=	0.11.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,8 @@ WWW=		https://www.ospray.org/ospray_studio/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libglfw.so:graphics/glfw \
+LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
+		libglfw.so:graphics/glfw \
 		libospray.so:graphics/ospray \
 		librkcommon.so:devel/rkcommon \
 		libtbb.so:devel/onetbb
