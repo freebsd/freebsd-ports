@@ -6,7 +6,4 @@ and letters in the Basic Multilingual Plane of Unicode. It also provides limited
 coverage of CJK Ideographs in Plane 2 of Unicode as necessary to support
 standards from China and Japan.
 
-This port is the set of Japanese fonts which supports all of the kanji in JIS X
-0208, JIS X 0213, and JIS X 0212 to include all kanji in Adobe-Japan1-6.
-
-See also: https://github.com/googlefonts/noto-cjk
+This port is the meta port for Japanese fonts.
