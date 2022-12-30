@@ -1,3 +1,3 @@
-TIMESTAMP = 1619164853
-SHA256 (rubygem/rotp-6.2.0.gem) = 239a2eefba6f1bd4157b2c735d0f975598e0ef94823eea2f35d103d2e5cc0787
-SIZE (rubygem/rotp-6.2.0.gem) = 63488
+TIMESTAMP = 1669058373
+SHA256 (rubygem/rotp-6.2.1.gem) = e7e25b3360e6c0397283e1ac6321690fa4c63a67095629aa78ec246bc333d181
+SIZE (rubygem/rotp-6.2.1.gem) = 20480
