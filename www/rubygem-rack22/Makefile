@@ -21,4 +21,6 @@ PLIST_FILES=	bin/rackup
 
 CPE_VENDOR=	rack_project
 
+PORTSCOUT=	limit:^2\.2\.
+
 .include <bsd.port.mk>
