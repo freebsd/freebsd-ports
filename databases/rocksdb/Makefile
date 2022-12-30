@@ -1,11 +1,12 @@
 PORTNAME=	rocksdb
-PORTVERSION=	7.7.2
+PORTVERSION=	7.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Persistent key-value store for fast storage environments
-WWW=		https://rocksdb.org/
+WWW=		https://rocksdb.org/ \
+		https://github.com/facebook/rocksdb
 
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	dual
