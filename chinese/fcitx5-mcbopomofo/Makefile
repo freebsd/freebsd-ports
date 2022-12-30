@@ -19,6 +19,6 @@ GH_ACCOUNT=	openvanilla
 
 USE_KDE=	ecm
 
-CMAKE_ARGS=	-DENABLE_TEST=Off
+CMAKE_OFF=	ENABLE_TEST
 
 .include <bsd.port.mk>
