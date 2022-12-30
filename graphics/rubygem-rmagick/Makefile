@@ -1,5 +1,5 @@
 PORTNAME=	rmagick
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/rmagick/rmagick
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-pkg-config>=1.4<2:devel/rubygem-pkg-config
 
 USES=		gem pkgconfig shebangfix
 USE_RUBY=	yes
