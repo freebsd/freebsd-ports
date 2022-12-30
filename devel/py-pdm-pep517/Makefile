@@ -1,12 +1,12 @@
 PORTNAME=	pdm-pep517
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEP 517 backend for PDM that supports PEP 621 metadata
-WWW=		https://github.com/pdm-project/pdm-pep517
+WWW=		https://github.com/pdm-project/pdm-backend
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
