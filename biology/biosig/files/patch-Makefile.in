@@ -1,0 +1,49 @@
+--- Makefile.in.orig	2022-12-30 07:04:03 UTC
++++ Makefile.in
+@@ -11,7 +11,7 @@ exec_prefix ?= $(prefix)
+ first :: lib tools
+ 
+ java: lib
+-	$(MAKE) -C biosig4c++/java
++	#$(MAKE) -C biosig4c++/java
+ 
+ lib:
+ 	$(MAKE) -C biosig4c++ lib
+@@ -52,8 +52,8 @@ distclean : clean
+ 		biosig4c++/python/setup.py \
+ 		biosig4c++/R/DESCRIPTION
+ 
+-ifneq (:,@JAVA@)
+-ifneq (:,@JAVAC@)
++ifneq (:,:)
++ifneq (:,:)
+ first :: lib
+ 	-$(MAKE) -C biosig4c++/java
+ endif
+@@ -91,7 +91,7 @@ biosig4octave ::
+ 	$(MAKE) -C biosig4c++ biosig4octave
+ 	ln -sf biosig4c++/mex/biosig4octave-@PACKAGE_VERSION@.src.tar.gz
+ 
+-ifneq (:,@OCTAVE@)
++ifneq (:,:)
+ ifneq (:,@MKOCTFILE@)
+ BIOSIG_MEX_DIR = $(DESTDIR)$(shell octave-config -p LOCALOCTFILEDIR)/biosig
+ BIOSIG_DIR     = $(DESTDIR)$(shell octave-config -p LOCALFCNFILEDIR)/biosig
+@@ -127,7 +127,7 @@ clean ::
+ 	-$(MAKE) -C biosig4c++/php clean
+ endif
+ 
+-ifneq (:,@PYTHON3@)
++ifneq (:,:)
+ first :: python
+ python ::
+ 	-PYTHON=@PYTHON3@ $(MAKE) -C biosig4c++/python sdist
+@@ -145,7 +145,7 @@ clean ::
+ 	$(MAKE) -C biosig4c++/python clean
+ endif
+ 
+-ifneq (:,@R@)
++ifneq (:,:)
+ first ::
+ 	-$(MAKE) -C biosig4c++/R build
+ install ::
