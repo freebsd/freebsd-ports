@@ -6,12 +6,13 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolkit for building modeling frameworks like Active Record
-WWW=		https://github.com/rails/rails/tree/main/activemodel
+WWW=		https://github.com/rails/rails/tree/main/activemodel \
+		https://rubyonrails.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport70>=${PORTVERSION}:devel/rubygem-activesupport70
+RUN_DEPENDS=	rubygem-activesupport70>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport70
 
 USES=		gem
 USE_RUBY=	yes
