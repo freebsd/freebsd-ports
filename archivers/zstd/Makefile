@@ -6,7 +6,8 @@ MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast real-time compression algorithm
-WWW=		https://facebook.github.io/zstd/
+WWW=		https://facebook.github.io/zstd/ \
+		https://github.com/facebook/zstd
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
