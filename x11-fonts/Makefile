@@ -188,6 +188,7 @@
     SUBDIR += noto-hk
     SUBDIR += noto-jp
     SUBDIR += noto-kr
+    SUBDIR += noto-sans-hk
     SUBDIR += noto-sc
     SUBDIR += noto-tc
     SUBDIR += nucleus
