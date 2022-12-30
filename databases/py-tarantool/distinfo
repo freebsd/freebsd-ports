@@ -1,3 +1,3 @@
-TIMESTAMP = 1655829826
-SHA256 (tarantool-0.9.0.tar.gz) = e546ccdc04e4239a74078938ec05891e8db3707d4d4a803fbad8c6c06147c709
-SIZE (tarantool-0.9.0.tar.gz) = 34869
+TIMESTAMP = 1669057671
+SHA256 (tarantool-0.10.0.tar.gz) = dfeb24bd17aa1bdf439db5e024a71f2c3e0ac06e5ec25e43bb43f996abac32e3
+SIZE (tarantool-0.10.0.tar.gz) = 257041
