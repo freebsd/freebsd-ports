@@ -15,8 +15,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}MDAnalysis>0:science/py-MDAnalysis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		pytest python:3.8+
-USE_PYTHON=	distutils autoplist
+USES=		python:3.8+
+USE_PYTHON=	distutils autoplist pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
