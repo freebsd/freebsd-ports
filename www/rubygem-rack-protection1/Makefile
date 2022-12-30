@@ -11,7 +11,7 @@ WWW=		https://github.com/sinatra/rack-protection/tree/stable-1.5
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License
 
-RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0,3:www/rubygem-rack
 
 USES=		gem
 USE_RUBY=	yes
