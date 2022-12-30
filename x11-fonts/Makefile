@@ -198,6 +198,7 @@
     SUBDIR += noto-serif-jp
     SUBDIR += noto-serif-kr
     SUBDIR += noto-serif-sc
+    SUBDIR += noto-serif-tc
     SUBDIR += noto-tc
     SUBDIR += nucleus
     SUBDIR += office-code-pro
