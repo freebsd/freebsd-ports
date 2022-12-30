@@ -28,7 +28,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libmpfr.so:math/mpfr \
 		libtbb.so:devel/onetbb
 
-USES=		cmake:testing compiler:c++17-lang # need compiler:c++20-lang
+USES=		cmake:testing compiler:c++20-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
