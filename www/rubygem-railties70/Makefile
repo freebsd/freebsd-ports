@@ -6,13 +6,14 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rails internals: application bootup, plugins, generators, and rake tasks
-WWW=		https://github.com/rails/rails/tree/master/railties
+WWW=		https://github.com/rails/rails/tree/master/railties \
+		https://rubyonrails.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}:www/rubygem-actionpack70 \
-		rubygem-activesupport70>=${PORTVERSION}:devel/rubygem-activesupport70 \
+RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actionpack70 \
+		rubygem-activesupport70>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport70 \
 		rubygem-method_source>=0:devel/rubygem-method_source \
 		rubygem-rake>=12.2:devel/rubygem-rake \
 		rubygem-thor>=1.0<2:devel/rubygem-thor \
