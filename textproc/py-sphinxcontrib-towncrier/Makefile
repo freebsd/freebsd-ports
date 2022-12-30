@@ -1,5 +1,5 @@
 PORTNAME=	sphinxcontrib-towncrier
-PORTVERSION=	0.3.1a3
+PORTVERSION=	0.3.2a0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,8 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(PYTHON_VER) && ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8.1:devel/py-importlib-metadata@${PY_FLAVOR}
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
