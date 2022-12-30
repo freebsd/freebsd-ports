@@ -28,6 +28,7 @@
     SUBDIR += fava
     SUBDIR += fixc
     SUBDIR += frontaccounting
+    SUBDIR += frontaccounting24
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
