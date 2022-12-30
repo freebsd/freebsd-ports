@@ -17713,3 +17713,4 @@ devel/rubygem-aws-sdk-core3159|devel/rubygem-aws-sdk-core|2022-12-30|Remove obso
 devel/rubygem-aws-sdk-s31114|devel/rubygem-aws-sdk-s3|2022-12-30|Remove obsoleted port. Use devel/rubygem-aws-sdk-s3 instead
 devel/rubygem-google-protobuf319|devel/rubygem-google-protobuf|2022-12-30|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
 databases/pgpool-II-37|databases/pgpool-II-43|2022-12-30|Has expired: Upstream EOL reaches on 2022-11 use pgpool-II-43
+shells/ksh2020||2022-12-30|Has expired: Upstream ksh2020 branch archived, development continues under new ksh93 project

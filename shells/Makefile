@@ -26,7 +26,6 @@
     SUBDIR += klish
     SUBDIR += ksh
     SUBDIR += ksh-devel
-    SUBDIR += ksh2020
     SUBDIR += ksh93
     SUBDIR += mksh
     SUBDIR += modernish
