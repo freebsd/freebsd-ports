@@ -6,7 +6,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	f7f983e1e709.patch:-p1
 
 MAINTAINER=	khng@FreeBSD.org
-COMMENT=	Fcitx support for Qt (${FLAVOR})
+COMMENT?=	Fcitx support for Qt (${FLAVOR})
 WWW=		https://github.com/fcitx/fcitx5-qt
 
 LICENSE=	LGPL21+ BSD3CLAUSE
