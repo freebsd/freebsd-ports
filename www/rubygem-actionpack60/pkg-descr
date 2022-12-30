@@ -18,5 +18,3 @@ Controller module. Necessary Action Dispatch functionality is activated by
 default and Action View rendering is implicitly triggered by Action Controller.
 However, these modules are designed to function on their own and can be used
 outside of Rails.
-
-See also: https://rubyonrails.org/
