@@ -445,6 +445,7 @@
     SUBDIR += py-wurlitzer
     SUBDIR += py-xgboost
     SUBDIR += pyobd
+    SUBDIR += pytorch
     SUBDIR += qbrew
     SUBDIR += qlas
     SUBDIR += qt5-doc
