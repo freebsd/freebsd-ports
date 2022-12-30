@@ -1,5 +1,5 @@
 PORTNAME=	asciidoctor
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.18
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
