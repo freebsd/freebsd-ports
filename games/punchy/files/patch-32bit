@@ -1,0 +1,264 @@
+https://github.com/denoland/deno/commit/09c256d5eb92
+https://github.com/denoland/rusty_v8/commit/fa01b39f3213
+https://github.com/denoland/rusty_v8/commit/403d6c525d3c
+
+--- cargo-crates/serde_v8-0.57.0/magic/bytestring.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/serde_v8-0.57.0/magic/bytestring.rs
+@@ -5,6 +5,8 @@ use std::mem::size_of;
+ use smallvec::SmallVec;
+ use std::mem::size_of;
+ 
++const USIZE2X: usize = size_of::<usize>() * 2;
++
+ #[derive(
+   PartialEq,
+   Eq,
+@@ -18,14 +20,15 @@ use std::mem::size_of;
+ )]
+ #[as_mut(forward)]
+ #[as_ref(forward)]
+-pub struct ByteString(SmallVec<[u8; 16]>);
++pub struct ByteString(SmallVec<[u8; USIZE2X]>);
+ impl_magic!(ByteString);
+ 
+-// const-assert that Vec<u8> and SmallVec<[u8; 16]> have a same size.
++// const-assert that Vec<u8> and SmallVec<[u8; size_of::<usize>() * 2]> have a same size.
+ // Note from https://docs.rs/smallvec/latest/smallvec/#union -
+ //   smallvec can still be larger than Vec if the inline buffer is
+ //   larger than two machine words.
+-const _: () = assert!(size_of::<Vec<u8>>() == size_of::<SmallVec<[u8; 16]>>());
++const _: () =
++  assert!(size_of::<Vec<u8>>() == size_of::<SmallVec<[u8; USIZE2X]>>());
+ 
+ impl ToV8 for ByteString {
+   fn to_v8<'a>(
+--- cargo-crates/serde_v8-0.57.0/magic/transl8.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/serde_v8-0.57.0/magic/transl8.rs
+@@ -105,13 +105,13 @@ pub(crate) unsafe fn opaque_deref<'a, T>(ptr: u64) -> 
+ 
+ /// Transmutes an "opaque" ptr back into a reference
+ pub(crate) unsafe fn opaque_deref<'a, T>(ptr: u64) -> &'a T {
+-  std::mem::transmute(ptr)
++  std::mem::transmute(ptr as usize)
+ }
+ 
+ /// Transmutes & copies the value from the "opaque" ptr
+ /// NOTE: takes ownership & requires other end to forget its ownership
+ pub(crate) unsafe fn opaque_take<T>(ptr: u64) -> T {
+-  std::mem::transmute_copy::<T, T>(std::mem::transmute(ptr))
++  std::mem::transmute_copy::<T, T>(std::mem::transmute(ptr as usize))
+ }
+ 
+ macro_rules! impl_magic {
+--- cargo-crates/v8-0.47.1/src/binding.cc.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/src/binding.cc
+@@ -22,6 +22,11 @@ using namespace support;
+ 
+ using namespace support;
+ 
++template<typename T>
++constexpr size_t align_to(size_t size) {
++    return (size + sizeof(T) - 1) & ~(sizeof(T) - 1);
++}
++
+ static_assert(sizeof(two_pointers_t) ==
+                   sizeof(std::shared_ptr<v8::BackingStore>),
+               "std::shared_ptr<v8::BackingStore> size mismatch");
+@@ -40,7 +45,7 @@ static_assert(sizeof(v8::Locker) == sizeof(size_t) * 2
+ 
+ static_assert(sizeof(v8::Locker) == sizeof(size_t) * 2, "Locker size mismatch");
+ 
+-static_assert(sizeof(v8::ScriptCompiler::Source) <= sizeof(size_t) * 8,
++static_assert(sizeof(v8::ScriptCompiler::Source) == align_to<size_t>(sizeof(size_t) * 6 + sizeof(int) * 3),
+               "Source size mismatch");
+ 
+ static_assert(sizeof(v8::FunctionCallbackInfo<v8::Value>) == sizeof(size_t) * 3,
+--- cargo-crates/v8-0.47.1/src/isolate.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/src/isolate.rs
+@@ -194,13 +194,19 @@ pub type PrepareStackTraceCallback<'s> = extern "C" fn
+ ) -> *mut *const Value;
+ 
+ // System V ABI: MaybeLocal<Value> returned in a register.
++// System V i386 ABI: Local<Value> returned in hidden pointer (struct).
+ #[cfg(not(target_os = "windows"))]
+-pub type PrepareStackTraceCallback<'s> = extern "C" fn(
+-  Local<'s, Context>,
+-  Local<'s, Value>,
+-  Local<'s, Array>,
+-) -> *const Value;
++#[repr(C)]
++pub struct PrepareStackTraceCallbackRet(*const Value);
+ 
++#[cfg(not(target_os = "windows"))]
++pub type PrepareStackTraceCallback<'s> =
++  extern "C" fn(
++    Local<'s, Context>,
++    Local<'s, Value>,
++    Local<'s, Array>,
++  ) -> PrepareStackTraceCallbackRet;
++
+ extern "C" {
+   fn v8__Isolate__New(params: *const raw::CreateParams) -> *mut Isolate;
+   fn v8__Isolate__Dispose(this: *mut Isolate);
+@@ -1160,13 +1166,13 @@ where
+     f.to_c_fn()
+   }
+ 
+-  // System V ABI: MaybeLocal<Value> returned in a register.
++  // System V ABI
+   #[cfg(not(target_os = "windows"))]
+   fn mapping() -> Self {
+     let f = |context, error, sites| {
+       let mut scope: CallbackScope = unsafe { CallbackScope::new(context) };
+       let r = (F::get())(&mut scope, error, sites);
+-      &*r as *const _
++      PrepareStackTraceCallbackRet(&*r as *const _)
+     };
+     f.to_c_fn()
+   }
+@@ -1214,7 +1220,7 @@ const _: () = {
+ 
+ const _: () = {
+   assert!(size_of::<TypeId>() == size_of::<u64>());
+-  assert!(align_of::<TypeId>() == size_of::<u64>());
++  assert!(align_of::<TypeId>() == align_of::<u64>());
+ };
+ 
+ pub(crate) struct RawSlot {
+--- cargo-crates/v8-0.47.1/src/module.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/src/module.rs
+@@ -38,14 +38,18 @@ use crate::Value;
+ ///   }
+ /// ```
+ 
+-// System V AMD64 ABI: Local<Module> returned in a register.
++// System V ABI
+ #[cfg(not(target_os = "windows"))]
++#[repr(C)]
++pub struct ResolveModuleCallbackRet(*const Module);
++
++#[cfg(not(target_os = "windows"))]
+ pub type ResolveModuleCallback<'a> = extern "C" fn(
+   Local<'a, Context>,
+   Local<'a, String>,
+   Local<'a, FixedArray>,
+   Local<'a, Module>,
+-) -> *const Module;
++) -> ResolveModuleCallbackRet;
+ 
+ // Windows x64 ABI: Local<Module> returned on the stack.
+ #[cfg(target_os = "windows")]
+@@ -70,9 +74,11 @@ where
+   #[cfg(not(target_os = "windows"))]
+   fn mapping() -> Self {
+     let f = |context, specifier, import_assertions, referrer| {
+-      (F::get())(context, specifier, import_assertions, referrer)
+-        .map(|r| -> *const Module { &*r })
+-        .unwrap_or(null())
++      ResolveModuleCallbackRet(
++        (F::get())(context, specifier, import_assertions, referrer)
++          .map(|r| -> *const Module { &*r })
++          .unwrap_or(null()),
++      )
+     };
+     f.to_c_fn()
+   }
+@@ -90,10 +96,17 @@ where
+   }
+ }
+ 
+-// System V AMD64 ABI: Local<Value> returned in a register.
++// System V ABI.
+ #[cfg(not(target_os = "windows"))]
++#[repr(C)]
++pub struct SyntheticModuleEvaluationStepsRet(*const Value);
++
++#[cfg(not(target_os = "windows"))]
+ pub type SyntheticModuleEvaluationSteps<'a> =
+-  extern "C" fn(Local<'a, Context>, Local<'a, Module>) -> *const Value;
++  extern "C" fn(
++    Local<'a, Context>,
++    Local<'a, Module>,
++  ) -> SyntheticModuleEvaluationStepsRet;
+ 
+ // Windows x64 ABI: Local<Value> returned on the stack.
+ #[cfg(target_os = "windows")]
+@@ -112,9 +125,11 @@ where
+   #[cfg(not(target_os = "windows"))]
+   fn mapping() -> Self {
+     let f = |context, module| {
+-      (F::get())(context, module)
+-        .map(|r| -> *const Value { &*r })
+-        .unwrap_or(null())
++      SyntheticModuleEvaluationStepsRet(
++        (F::get())(context, module)
++          .map(|r| -> *const Value { &*r })
++          .unwrap_or(null()),
++      )
+     };
+     f.to_c_fn()
+   }
+@@ -139,8 +154,8 @@ extern "C" {
+   fn v8__Module__SourceOffsetToLocation(
+     this: *const Module,
+     offset: int,
+-    out: *mut MaybeUninit<Location>,
+-  ) -> Location;
++    out: *mut Location,
++  );
+   fn v8__Module__GetModuleNamespace(this: *const Module) -> *const Value;
+   fn v8__Module__GetIdentityHash(this: *const Module) -> int;
+   fn v8__Module__ScriptId(this: *const Module) -> int;
+@@ -236,7 +251,7 @@ impl Module {
+   pub fn source_offset_to_location(&self, offset: int) -> Location {
+     let mut out = MaybeUninit::<Location>::uninit();
+     unsafe {
+-      v8__Module__SourceOffsetToLocation(self, offset, &mut out);
++      v8__Module__SourceOffsetToLocation(self, offset, out.as_mut_ptr());
+       out.assume_init()
+     }
+   }
+--- cargo-crates/v8-0.47.1/src/script_compiler.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/src/script_compiler.rs
+@@ -1,4 +1,5 @@
+ // Copyright 2019-2021 the Deno authors. All rights reserved. MIT license.
++use std::os::raw::c_int;
+ use std::{marker::PhantomData, mem::MaybeUninit};
+ 
+ use crate::Function;
+@@ -61,7 +62,17 @@ extern "C" {
+ /// Source code which can then be compiled to a UnboundScript or Script.
+ #[repr(C)]
+ #[derive(Debug)]
+-pub struct Source([usize; 8]);
++pub struct Source {
++  _source_string: usize,
++  _resource_name: usize,
++  _resource_line_offset: c_int,
++  _resource_column_offset: c_int,
++  _resource_options: c_int,
++  _source_map_url: usize,
++  _host_defined_options: usize,
++  _cached_data: usize,
++  _consume_cache_task: usize,
++}
+ 
+ /// Compilation data that the embedder can cache and pass back to speed up future
+ /// compilations. The data is produced if the CompilerOptions passed to the compilation
+--- cargo-crates/v8-0.47.1/tests/test_api.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/tests/test_api.rs
+@@ -3713,8 +3713,13 @@ fn typed_array_constructors() {
+   let t = v8::BigInt64Array::new(scope, ab, 0, 0).unwrap();
+   assert!(t.is_big_int64_array());
+ 
+-  // TypedArray::max_length() ought to be >= 2^30 < 2^32
++  // TypedArray::max_length() ought to be >= 2^30 < 2^32 in 64 bits
++  #[cfg(target_pointer_width = "64")]
+   assert!(((2 << 30)..(2 << 32)).contains(&v8::TypedArray::max_length()));
++
++  // TypedArray::max_length() ought to be >= 2^28 < 2^30 in 32 bits
++  #[cfg(target_pointer_width = "32")]
++  assert!(((2 << 28)..(2 << 30)).contains(&v8::TypedArray::max_length()));
+ 
+   // v8::ArrayBuffer::new raises a fatal if the length is > kMaxLength, so we test this behavior
+   // through the JS side of things, where a non-fatal RangeError is thrown in such cases.

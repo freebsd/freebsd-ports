@@ -10,8 +10,6 @@ WWW=		https://fishfight.org/
 LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 
-BROKEN_i386=	static_assert fails with "Source size mismatch"
-
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
