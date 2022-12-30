@@ -1,13 +1,13 @@
 PORTNAME=	grpc
-PORTVERSION=	1.49.1
+PORTVERSION=	1.50.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2-based RPC framework
-WWW=		https://grpc.io/
+WWW=		https://grpc.io/ \
+		https://github.com/grpc/grpc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
