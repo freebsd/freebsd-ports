@@ -14,11 +14,9 @@ install_requires = \
 
 extras_require = \
 {'doc': ['sphinx', 'sphinx_rtd_theme'],
- 'test': ['pytest',
-          'pytest-cov',
-          'pytest-flake8',
-          'pytest-isort',
-          'coverage[toml]']}
+ 'test': ['flake8',
+          'isort',
+          'pytest']}
 
 setup(name='tinycss2',
       version='%%PORTVERSION%%',
@@ -30,5 +28,5 @@ setup(name='tinycss2',
       package_data=package_data,
       install_requires=install_requires,
       extras_require=extras_require,
-      python_requires='>=3.6',
+      python_requires='>=3.7',
      )
