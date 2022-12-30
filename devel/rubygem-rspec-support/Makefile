@@ -1,5 +1,5 @@
 PORTNAME=	rspec-support
-PORTVERSION=	3.11.1
+PORTVERSION=	3.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
