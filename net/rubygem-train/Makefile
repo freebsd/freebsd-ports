@@ -1,5 +1,5 @@
 PORTNAME=	train
-PORTVERSION=	3.10.1
+PORTVERSION=	3.10.7
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-activesupport60>=6.0.3.1:devel/rubygem-activesupport60 \
 		rubygem-google-api-client>=0.23.9:devel/rubygem-google-api-client \
 		rubygem-googleauth>=0.6.6:security/rubygem-googleauth \
 		rubygem-inifile>=3.0<4:textproc/rubygem-inifile \
-		rubygem-train-core>=${PORTVERSION}:net/rubygem-train-core \
+		rubygem-train-core>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-train-core \
 		rubygem-train-winrm>=0.2<1:net/rubygem-train-winrm
 
 USES=		gem
