@@ -1,7 +1,7 @@
 PORTNAME=	caterva
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
-GH_TUPLE=	Blosc:caterva:1f82f42 \
-		Blosc:c-blosc2:v2.3.0:c_blosc2/contribs/c-blosc2
+GH_TUPLE=	Blosc:caterva:2db4e9c \
+		Blosc:c-blosc2:v2.4.3:c_blosc2/contribs/c-blosc2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/CMakeLists.txt
