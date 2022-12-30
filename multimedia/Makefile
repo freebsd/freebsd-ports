@@ -264,6 +264,7 @@
     SUBDIR += obs-scrab
     SUBDIR += obs-streamfx
     SUBDIR += obs-studio
+    SUBDIR += obs-text-pthread
     SUBDIR += obs-waveform
     SUBDIR += oggvideotools
     SUBDIR += ogmrip

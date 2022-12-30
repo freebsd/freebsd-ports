@@ -1,0 +1,18 @@
+This plugin displays text with many advanced features.
+* Markup
+* Text alignment
+  - Left, center, and right
+  - Justification
+* Outline
+  - Configurable width, color, and opacity
+  - Configurable shape of corners
+  - Blur
+* Transition
+  - Fade-in, fade-out, cross-fade
+  - Slide
+* Threaded glyph drawing
+  - Lower priority to draw glyphs so that other sources and encoders are not
+    impacted
+  - More frequent polling of the text file
+* Automatic line-break supporting East Asian languages
+* Saving as PNG files for post production
