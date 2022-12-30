@@ -30,10 +30,10 @@ OPTIONS_SUB=		yes
 OCTAVE_DESC=		With Octave support
 OCTAVE_CONFIGURE_WITH=	octave
 OCTAVE_BUILD_DEPENDS=	${LOCALBASE}/include/octave-${OCTAVE_VERSION}/octave/octave.h:math/octave
+OCTAVE_USES=		octave:env
 OCTAVE_VARS=		PLIST_SUB+="OCTAVE_VERSION=${OCTAVE_VERSION} CONFIGURE_TARGET=${CONFIGURE_TARGET}"
 
 post-install-OCTAVE-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/octave/${OCTAVE_VERSION}/site/oct/${CONFIGURE_TARGET}/h5read.oct
 
-.include "../../math/octave/Makefile.version"
 .include <bsd.port.mk>
