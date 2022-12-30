@@ -1,5 +1,6 @@
 PORTNAME=	rack-contrib
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/rack/rack-contrib
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-rack>=2.0,3<3,3:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack22>=2.0,3<3,3:www/rubygem-rack22
 
 USES=		gem
 USE_RUBY=	yes
