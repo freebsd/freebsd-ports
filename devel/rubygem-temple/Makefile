@@ -1,5 +1,5 @@
 PORTNAME=	temple
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Template compilation framework in Ruby
 WWW=		https://github.com/judofyr/temple
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 USE_RUBY=	yes
