@@ -1,3 +1,3 @@
-TIMESTAMP = 1665330638
-SHA256 (pip-tools-6.9.0.tar.gz) = b4762359978fd81a2b4b666e6dca15266bdc65680d06900c4da34243f35e4b5d
-SIZE (pip-tools-6.9.0.tar.gz) = 120420
+TIMESTAMP = 1669057813
+SHA256 (pip-tools-6.10.0.tar.gz) = 7f9f7356052db6942b5aaabc8eba29983591ca0ad75affbf2f0a25d9361be624
+SIZE (pip-tools-6.10.0.tar.gz) = 123093
