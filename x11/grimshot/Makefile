@@ -30,7 +30,7 @@ CLIPBOARD_DESC=		Copy to clipboard support
 CLIPBOARD_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 
