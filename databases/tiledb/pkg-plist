@@ -1,3 +1,9 @@
+include/tiledb/api/c_api/api_external_common.h
+include/tiledb/api/c_api/config/config_api_external.h
+include/tiledb/api/c_api/context/context_api_external.h
+include/tiledb/api/c_api/error/error_api_external.h
+include/tiledb/api/c_api/filter/filter_api_enum.h
+include/tiledb/api/c_api/filter/filter_api_external.h
 include/tiledb/array.h
 include/tiledb/array_schema.h
 include/tiledb/array_schema_evolution.h
@@ -37,6 +43,7 @@ include/tiledb/type.h
 include/tiledb/utils.h
 include/tiledb/version.h
 include/tiledb/vfs.h
+include/tiledb_export.h
 lib/cmake/TileDB/TileDBConfig.cmake
 lib/cmake/TileDB/TileDBConfigVersion.cmake
 lib/cmake/TileDB/TileDBTargets-%%CMAKE_BUILD_TYPE%%.cmake
