@@ -1,5 +1,5 @@
 PORTNAME=	jemoji
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/jekyll/jemoji
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-gemoji>=3.0<4:textproc/rubygem-gemoji \
+RUN_DEPENDS=	rubygem-gemoji>=3<5:textproc/rubygem-gemoji \
 		rubygem-html-pipeline>=2.2<3:textproc/rubygem-html-pipeline \
 		rubygem-jekyll>=3.0<5.0:www/rubygem-jekyll
 
