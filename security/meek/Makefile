@@ -36,6 +36,8 @@ PLIST_FILES=	bin/meek-client \
 
 SUB_FILES=	pkg-message
 
+PORTSCOUT=	skipv:rm
+
 do-test:
 .for t in ${GO_TARGET}
 	cd ${GO_WRKSRC}; \
