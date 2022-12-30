@@ -10,7 +10,7 @@ WWW=		https://github.com/soveran/cuba
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rack>=1.6.0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=1.6.0,3:www/rubygem-rack
 
 USES=		gem
 USE_RUBY=	yes
