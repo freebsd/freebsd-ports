@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud DNS
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-dns
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-dns
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
