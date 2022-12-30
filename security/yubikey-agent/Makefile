@@ -1,7 +1,6 @@
 PORTNAME=	yubikey-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.5
-PORTREVISION=	8
+DISTVERSION=	0.1.6
 CATEGORIES=	security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -18,12 +17,12 @@ USES=		go:modules
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	FiloSottile
-GH_TUPLE=	go-piv:piv-go:v1.7.0:go_piv_piv_go/vendor/github.com/go-piv/piv-go \
-	golang:crypto:83a5a9bb288b:golang_crypto/vendor/golang.org/x/crypto \
-	golang:sys:9a76102bfb43:golang_sys/vendor/golang.org/x/sys \
-	golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
-	gopasspw:pinentry:v0.0.2:gopasspw_pinentry/vendor/github.com/gopasspw/pinentry \
-	pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors
+GH_TUPLE=	go-piv:piv-go:v1.10.0:go_piv_piv_go/vendor/github.com/go-piv/piv-go \
+		golang:crypto:v0.4.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:v0.3.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.3.0:golang_term/vendor/golang.org/x/term \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		twpayne:go-pinentry-minimal:2a5dc4396c2a:twpayne_go_pinentry_minimal/vendor/github.com/twpayne/go-pinentry-minimal
 
 PLIST_FILES=	bin/${PORTNAME}
 
