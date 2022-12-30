@@ -164,7 +164,7 @@ Index: src/phys.c
  	}
 -        (*l->type->open)(l);
 +	/* Redial may result in MSG_OPEN for just opened device */
-+	if (l->state == PHYS_STATE_DOWN || l->state == PHYS_STATE_CONNECTING)
++	if (l->state != PHYS_STATE_UP)
 +	    (*l->type->open)(l);
 +	else
 +	    Log(LG_PHYS2, ("[%s] device: OPEN event ignored",
