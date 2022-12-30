@@ -1,0 +1,18 @@
+What: Automatically generate shell tab completion scripts for Python CLI apps
+Why: Speed & correctness. Alternatives like argcomplete and pyzshcomplete are
+slow and have side-effects
+How: shtab processes an argparse.ArgumentParser object to generate a tab
+completion script for your shell
+
+Features:
+- Outputs tab completion scripts for
+  - bash
+  - zsh
+  - tcsh
+- Supports
+  - argparse
+  - docopt (via argopt)
+- Supports arguments, options and subparsers
+- Supports choices (e.g. --say={hello,goodbye})
+- Supports file and directory path completion
+- Supports custom path completion (e.g. --file={*.txt})
