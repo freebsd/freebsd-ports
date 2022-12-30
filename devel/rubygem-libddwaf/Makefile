@@ -1,11 +1,11 @@
 PORTNAME=	libddwaf
-PORTVERSION=	1.3.0.2.0
+PORTVERSION=	1.5.1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WAF implementation in C++, exposed to Ruby
-WWW=		https://github.com/DataDog/libddwaf
+WWW=		https://github.com/DataDog/libddwaf-rb
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
