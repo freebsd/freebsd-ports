@@ -1,5 +1,5 @@
 PORTNAME=	arp-scan
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
