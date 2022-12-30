@@ -1586,6 +1586,7 @@
     SUBDIR += py-xmldiff
     SUBDIR += py-xmlschema
     SUBDIR += py-yapf
+    SUBDIR += py-youseedee
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zope.structuredtext
     SUBDIR += py-zope.tal
