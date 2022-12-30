@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Define error classes for google-cloud-ruby
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-errors
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-errors
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
