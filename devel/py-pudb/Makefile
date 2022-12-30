@@ -23,4 +23,9 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	COMPLETION
+COMPLETION_DESC=Tab completion in debugger
+
+COMPLETION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}shtab>=0:devel/py-shtab@${PY_FLAVOR}
+
 .include <bsd.port.mk>
