@@ -1,5 +1,5 @@
 PORTNAME=	google-re2
-PORTVERSION=	0.2.20220601
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,7 @@ WWW=		https://github.com/google/re2/tree/abseil/python
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
-		re2>=${PORTVERSION:E}:devel/re2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR}
 LIB_DEPENDS=	libre2.so:devel/re2
 
 USES=		compiler:c11 localbase python:3.7+
