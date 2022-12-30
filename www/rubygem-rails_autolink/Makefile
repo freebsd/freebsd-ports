@@ -1,5 +1,5 @@
 PORTNAME=	rails_autolink
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rails4>=${PORTVERSION}:www/rubygem-rails4
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
