@@ -7201,6 +7201,7 @@
     SUBDIR += rubygem-xdg5
     SUBDIR += rubygem-xorcist
     SUBDIR += rubygem-xpath
+    SUBDIR += rubygem-xxhash
     SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zeitwerk
