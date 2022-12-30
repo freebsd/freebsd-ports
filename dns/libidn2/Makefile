@@ -5,7 +5,8 @@ MASTER_SITES=	GNU/libidn
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of IDNA2008 internationalized domain names
-WWW=		https://www.gnu.org/software/libidn/\#libidn2
+WWW=		https://www.gnu.org/software/libidn/\#libidn2 \
+		https://gitlab.com/libidn/libidn2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,9 +21,9 @@ CONFIGURE_ARGS=	--disable-nls \
 		ac_cv_prog_RONN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 INFO=		libidn2
-TEST_TARGET=	check
 
 .include <bsd.port.mk>
