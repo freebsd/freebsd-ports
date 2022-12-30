@@ -194,6 +194,7 @@
     SUBDIR += noto-sans-sc
     SUBDIR += noto-sans-tc
     SUBDIR += noto-sc
+    SUBDIR += noto-serif-hk
     SUBDIR += noto-tc
     SUBDIR += nucleus
     SUBDIR += office-code-pro
