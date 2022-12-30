@@ -11,7 +11,6 @@ bin/amon2-setup.pl
 %%SITE_PERL%%/Amon2/Plugin/Web/WebSocket.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/Blueprint.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/Bootstrap.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/ES5Shim.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/MicroDispatcherJS.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/MicroLocationJS.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/MicroTemplateJS.pm
@@ -104,7 +103,6 @@ bin/amon2-setup.pl
 %%PERL5_MAN3%%/Amon2::Plugin::Web::WebSocket.3.gz
 %%PERL5_MAN3%%/Amon2::Setup::Asset::Blueprint.3.gz
 %%PERL5_MAN3%%/Amon2::Setup::Asset::Bootstrap.3.gz
-%%PERL5_MAN3%%/Amon2::Setup::Asset::ES5Shim.3.gz
 %%PERL5_MAN3%%/Amon2::Setup::Asset::MicroDispatcherJS.3.gz
 %%PERL5_MAN3%%/Amon2::Setup::Asset::MicroLocationJS.3.gz
 %%PERL5_MAN3%%/Amon2::Setup::Asset::MicroTemplateJS.3.gz
