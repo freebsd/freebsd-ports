@@ -20,12 +20,17 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CONVERTERS LXML
+OPTIONS_DEFINE=	CONVERTERS JSON LXML MSGPACK
 CONVERTERS_DESC=Converters support
 LXML_DESC=	XML support
+MSGPACK_DESC=	MessagePack support
 
 CONVERTERS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cattrs>=1.10.0:devel/py-cattrs@${PY_FLAVOR}
+JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cattrs>=22.2.0:devel/py-cattrs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}orjson>=0:devel/py-orjson@${PY_FLAVOR}
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
+MSGPACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cattrs>=22.2.0:devel/py-cattrs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
