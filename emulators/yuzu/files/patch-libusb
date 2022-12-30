@@ -3,11 +3,14 @@ compatibility with newer versions of the reference implementation.
 
 -- Could NOT find libusb: Found unsuitable version "1.0.13", but required is at least "1.0.24" (found /usr/lib/libusb.so)
 
---- CMakeLists.txt.orig	2022-12-07 02:08:14 UTC
+--- CMakeLists.txt.orig	2022-12-30 08:26:41 UTC
 +++ CMakeLists.txt
-@@ -203,4 +203,4 @@
--find_package(libusb 1.0.24)
-+find_package(libusb)
- find_package(lz4 REQUIRED)
- find_package(nlohmann_json 3.8 REQUIRED)
- find_package(Opus 1.3)
+@@ -221,7 +221,7 @@ if (ENABLE_LIBUSB)
+ endif()
+ 
+ if (ENABLE_LIBUSB)
+-    find_package(libusb 1.0.24)
++    find_package(libusb)
+ endif()
+ 
+ if (ARCHITECTURE_x86 OR ARCHITECTURE_x86_64)
