@@ -259,6 +259,7 @@
     SUBDIR += p5-Geo-Calc
     SUBDIR += p5-Geo-Coordinates-Converter
     SUBDIR += p5-Geo-Coordinates-Converter-iArea
+    SUBDIR += p5-Geo-Coordinates-Transform
     SUBDIR += p5-Geo-WebService-Elevation-USGS
     SUBDIR += p5-Mcstas-Tools
     SUBDIR += p5-PerlMol
