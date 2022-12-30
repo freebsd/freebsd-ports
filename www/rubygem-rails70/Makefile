@@ -6,23 +6,24 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full-stack web application framework
-WWW=		https://github.com/rails/rails
+WWW=		https://github.com/rails/rails \
+		https://rubyonrails.org/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actioncable70>=${PORTVERSION}:www/rubygem-actioncable70 \
-		rubygem-actionmailbox70>=${PORTVERSION}:mail/rubygem-actionmailbox70 \
-		rubygem-actionmailer70>=${PORTVERSION}:mail/rubygem-actionmailer70 \
-		rubygem-actionpack70>=${PORTVERSION}:www/rubygem-actionpack70 \
-		rubygem-actiontext70>=${PORTVERSION}:textproc/rubygem-actiontext70 \
-		rubygem-actionview70>=${PORTVERSION}:devel/rubygem-actionview70 \
-		rubygem-activejob70>=${PORTVERSION}:devel/rubygem-activejob70 \
-		rubygem-activemodel70>=${PORTVERSION}:databases/rubygem-activemodel70 \
-		rubygem-activerecord70>=${PORTVERSION}:databases/rubygem-activerecord70 \
-		rubygem-activestorage70>=${PORTVERSION}:net/rubygem-activestorage70 \
-		rubygem-activesupport70>=${PORTVERSION}:devel/rubygem-activesupport70 \
+RUN_DEPENDS=	rubygem-actioncable70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actioncable70 \
+		rubygem-actionmailbox70>=${PORTVERSION}<${PORTVERSION}_99:mail/rubygem-actionmailbox70 \
+		rubygem-actionmailer70>=${PORTVERSION}<${PORTVERSION}_99:mail/rubygem-actionmailer70 \
+		rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actionpack70 \
+		rubygem-actiontext70>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-actiontext70 \
+		rubygem-actionview70>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-actionview70 \
+		rubygem-activejob70>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activejob70 \
+		rubygem-activemodel70>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activemodel70 \
+		rubygem-activerecord70>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activerecord70 \
+		rubygem-activestorage70>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-activestorage70 \
+		rubygem-activesupport70>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport70 \
 		rubygem-bundler>=1.15.0:sysutils/rubygem-bundler \
-		rubygem-railties70>=${PORTVERSION}:www/rubygem-railties70 \
+		rubygem-railties70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-railties70 \
 		rubygem-bootsnap>=1.4.4:devel/rubygem-bootsnap \
 		rubygem-capybara>=3.26:devel/rubygem-capybara \
 		rubygem-connection_pool>=0:net/rubygem-connection_pool \
