@@ -4763,6 +4763,7 @@
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
     SUBDIR += py-libcst
+    SUBDIR += py-libcst03
     SUBDIR += py-libioc
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
