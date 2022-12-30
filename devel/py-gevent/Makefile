@@ -1,5 +1,5 @@
 PORTNAME=	gevent
-PORTVERSION=	21.12.0
+PORTVERSION=	22.10.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	c-ares>=1.15.0:dns/c-ares \
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libev.so:devel/libev \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=1.1.0<2.0:devel/py-greenlet@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=2.0.0:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}

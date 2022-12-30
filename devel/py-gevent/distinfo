@@ -1,3 +1,3 @@
-TIMESTAMP = 1643971054
-SHA256 (gevent-21.12.0.tar.gz) = f48b64578c367b91fa793bf8eaaaf4995cb93c8bc45860e473bf868070ad094e
-SIZE (gevent-21.12.0.tar.gz) = 6201851
+TIMESTAMP = 1669057739
+SHA256 (gevent-22.10.2.tar.gz) = 1ca01da176ee37b3527a2702f7d40dbc9ffb8cfc7be5a03bfa4f9eec45e55c46
+SIZE (gevent-22.10.2.tar.gz) = 6551607
