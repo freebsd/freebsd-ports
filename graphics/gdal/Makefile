@@ -1,6 +1,5 @@
 PORTNAME=	gdal
-PORTVERSION=	3.5.2
-PORTREVISION=	4
+PORTVERSION=	3.5.3
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
