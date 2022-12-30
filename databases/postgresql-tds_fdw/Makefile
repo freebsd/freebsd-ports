@@ -1,8 +1,8 @@
 PORTNAME=	tds_fdw
+PORTVERSION=	2.0.3
 DISTVERSIONPREFIX=	v
-PORTVERSION=	2.0.2
 CATEGORIES=	databases
-PKGNAMEPREFIX=	postgresql${PGSQL_VER:S|.||}-
+PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper to connect to TDS databases
@@ -12,7 +12,7 @@ LICENSE=	PostgreSQL
 
 LIB_DEPENDS=	libsybdb.so:databases/freetds
 
-USES=		gmake pgsql:9.2+
+USES=		gmake pgsql:9.6+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tds-fdw
