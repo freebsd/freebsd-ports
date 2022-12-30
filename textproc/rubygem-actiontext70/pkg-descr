@@ -5,5 +5,3 @@ editor is saved in its own RichText model that's associated with any existing
 Active Record model in the application. Any embedded images (or other
 attachments) are automatically stored using Active Storage and associated with
 the included RichText model.
-
-See also: https://rubyonrails.org/
