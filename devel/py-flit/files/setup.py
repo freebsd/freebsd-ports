@@ -10,11 +10,11 @@ package_data = \
 {'': ['*'], 'flit': ['license_templates/*']}
 
 install_requires = \
-['flit_core >= %%PORTVERSION%%', 'requests', 'docutils', 'tomli', 'tomli-w']
+['flit_core >= %%PORTVERSION%%', 'requests', 'docutils', 'tomli-w']
 
 extras_require = \
 {'doc': ['sphinx', 'sphinxcontrib_github_alt', 'pygments-github-lexers'],
- 'test': ['testpath', 'responses', 'pytest>=2.7.3', 'pytest-cov']}
+ 'test': ['testpath', 'responses', 'pytest>=2.7.3', 'pytest-cov', 'tomli']}
 
 entry_points = \
 {'console_scripts': ['flit = flit:main']}
