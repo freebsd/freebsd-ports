@@ -83,6 +83,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sphinx_highlight.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/sphinx_paramlinks.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/underscore-1.13.1.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
