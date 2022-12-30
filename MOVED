@@ -17712,3 +17712,4 @@ www/py-werkzeug21|www/py-werkzeug|2022-12-30|Remove obsoleted port. Use www/py-w
 devel/rubygem-aws-sdk-core3131|devel/rubygem-aws-sdk-core|2022-12-30|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead
 devel/rubygem-aws-sdk-core3159|devel/rubygem-aws-sdk-core|2022-12-30|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead
 devel/rubygem-aws-sdk-s31114|devel/rubygem-aws-sdk-s3|2022-12-30|Remove obsoleted port. Use devel/rubygem-aws-sdk-s3 instead
+devel/rubygem-google-protobuf319|devel/rubygem-google-protobuf|2022-12-30|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
