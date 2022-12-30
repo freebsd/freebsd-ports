@@ -18,6 +18,8 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/FreeBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/GNUkFreeBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/HPUX.pm
+%%SITE_PERL%%/Devel/AssertOS/HWCapabilities/Int32.pm
+%%SITE_PERL%%/Devel/AssertOS/HWCapabilities/Int64.pm
 %%SITE_PERL%%/Devel/AssertOS/Haiku.pm
 %%SITE_PERL%%/Devel/AssertOS/Hurd.pm
 %%SITE_PERL%%/Devel/AssertOS/Interix.pm
@@ -107,6 +109,8 @@ bin/use-devel-assertos
 %%PERL5_MAN3%%/Devel::AssertOS::FreeBSD.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::GNUkFreeBSD.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::HPUX.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::HWCapabilities::Int32.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::HWCapabilities::Int64.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Haiku.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Hurd.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Interix.3.gz
