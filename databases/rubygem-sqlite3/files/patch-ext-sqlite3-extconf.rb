@@ -1,4 +1,4 @@
---- ext/sqlite3/extconf.rb.orig	2022-10-13 10:19:00 UTC
+--- ext/sqlite3/extconf.rb.orig	2022-11-27 23:59:11 UTC
 +++ ext/sqlite3/extconf.rb
 @@ -1,5 +1,4 @@
  require "mkmf"
@@ -49,19 +49,23 @@
        end
  
        def configure_extension
-@@ -125,11 +88,6 @@ module Sqlite3
+@@ -125,15 +88,6 @@ module Sqlite3
        end
  
        def minimal_recipe
 -        MiniPortile.new(libname, sqlite3_config[:version]).tap do |recipe|
--          recipe.files = sqlite3_config[:files]
--          recipe.target = File.join(package_root_dir, "ports")
--          recipe.patch_files = Dir[File.join(package_root_dir, "patches", "*.patch")].sort
+-          if sqlite_source_dir
+-            recipe.source_directory = sqlite_source_dir
+-          else
+-            recipe.files = sqlite3_config[:files]
+-            recipe.target = File.join(package_root_dir, "ports")
+-            recipe.patch_files = Dir[File.join(package_root_dir, "patches", "*.patch")].sort
+-          end
 -        end
        end
  
        def package_root_dir
-@@ -137,12 +95,9 @@ module Sqlite3
+@@ -141,12 +95,9 @@ module Sqlite3
        end
  
        def sqlite3_config
@@ -74,11 +78,15 @@
        end
  
        def abort_could_not_find(missing)
-@@ -154,11 +109,9 @@ module Sqlite3
+@@ -158,7 +109,6 @@ module Sqlite3
        end
  
        def cross_build?
 -        enable_config("cross-build")
+       end
+ 
+       def sqlite_source_dir
+@@ -166,7 +116,6 @@ module Sqlite3
        end
  
        def download
