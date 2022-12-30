@@ -1,0 +1,6 @@
+Feature rich TUI file transfer and explorer with support for SCP/SFTP/FTP/S3.
+
+Termscp is a feature rich terminal file transfer and explorer, with support for
+SCP/SFTP/FTP/S3.
+So basically it is a terminal utility with an TUI to connect to a remote server
+to retrieve and upload files and to interact with the local file system.
