@@ -1,5 +1,5 @@
 PORTNAME=	httplog
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
