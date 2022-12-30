@@ -1,5 +1,5 @@
 PORTNAME=	flit-core
-PORTVERSION=	3.7.1
+PORTVERSION=	3.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,7 @@ COMMENT=	Distribution-building parts of Flit
 WWW=		https://github.com/pypa/flit/tree/main/flit_core
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testpath>=0:devel/py-testpath@${PY_FLAVOR}
 
