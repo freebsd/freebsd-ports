@@ -1,6 +1,7 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -54,8 +55,7 @@ OPENCV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenCV\
 OPENCV_CMAKE_ON=	-DOpenCV_DIR:STRING=${LOCALBASE:Q}/cmake/opencv4
 
 .if !exists(/usr/include/omp.h)
-USES+=		compiler:c++14-lang
-USE_GCC=	yes
+USES+=		gcc-c++11-lib
 .else
 USES+=		compiler:c++14-lang
 .endif
