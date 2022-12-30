@@ -1,5 +1,5 @@
 PORTNAME=	azure-cli
-PORTVERSION=	2.42.0
+PORTVERSION=	2.43.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,7 +53,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-hdinsight>=9.0.0:devel/py-azure-mgmt-hdinsight@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-imagebuilder>=1.1.0:devel/py-azure-mgmt-imagebuilder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iotcentral>=10.0.0.b1:devel/py-azure-mgmt-iotcentral@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iothub>=2.2.0:devel/py-azure-mgmt-iothub@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iothub>=2.3.0:devel/py-azure-mgmt-iothub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iothubprovisioningservices>=1.1.0:devel/py-azure-mgmt-iothubprovisioningservices@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-keyvault>=10.1.0:devel/py-azure-mgmt-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-kusto>=0.3.0:devel/py-azure-mgmt-kusto@${PY_FLAVOR} \
@@ -83,9 +83,9 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-servicefabricmanagedclusters>=1.0.0:devel/py-azure-mgmt-servicefabricmanagedclusters@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-servicelinker>=1.0.0:devel/py-azure-mgmt-servicelinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-signalr>=1.1.0:devel/py-azure-mgmt-signalr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sql>=4.0.0.b4:devel/py-azure-mgmt-sql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sqlvirtualmachine>=1.0.0.b3:devel/py-azure-mgmt-sqlvirtualmachine@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=20.1.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sql>=4.0.0.b5:devel/py-azure-mgmt-sql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sqlvirtualmachine>=1.0.0.b4:devel/py-azure-mgmt-sqlvirtualmachine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=21.0.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-trafficmanager>=1.0.0:devel/py-azure-mgmt-trafficmanager@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-web>=7.0.0:devel/py-azure-mgmt-web@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-synapse>=2.1.0.b5:devel/py-azure-mgmt-synapse@${PY_FLAVOR} \
@@ -115,7 +115,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}semver>=2.13.0:devel/py-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygithub>=1.55:devel/py-pygithub@${PY_FLAVOR}
 
-USES=		azurepy python:3.6+
+USES=		azurepy python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
