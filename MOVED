@@ -17710,3 +17710,4 @@ multimedia/obs-v4l2sink||2022-12-29|Removed: obs-studio-28.1.2 now contains same
 multimedia/obs-audio-spectralizer|multimedia/obs-waveform|2022-12-29|Removed obsolete port in favor of multimedia/obs-waveform
 www/py-werkzeug21|www/py-werkzeug|2022-12-30|Remove obsoleted port. Use www/py-werkzeug instead
 devel/rubygem-aws-sdk-core3131|devel/rubygem-aws-sdk-core|2022-12-30|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead
+devel/rubygem-aws-sdk-core3159|devel/rubygem-aws-sdk-core|2022-12-30|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead
