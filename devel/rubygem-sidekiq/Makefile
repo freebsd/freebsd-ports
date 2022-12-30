@@ -1,6 +1,5 @@
 PORTNAME=	sidekiq
-PORTVERSION=	6.5.7
-PORTREVISION=	1
+PORTVERSION=	6.5.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://sidekiq.org/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-connection_pool>=2.2.5:net/rubygem-connection_pool \
+RUN_DEPENDS=	rubygem-connection_pool>=2.2.5<3:net/rubygem-connection_pool \
 		rubygem-rack22>=2.0,3<3,3:www/rubygem-rack22 \
 		rubygem-redis4>=4.5.0<5:databases/rubygem-redis4
 
