@@ -1,5 +1,5 @@
 PORTNAME=	gssdp
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -10,7 +10,7 @@ WWW=		https://wiki.gnome.org/Projects/GUPnP
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib>=2.69:devel/glib20 \
+BUILD_DEPENDS=	glib>=2.70:devel/glib20 \
 		gobject-introspection>=1.36:devel/gobject-introspection \
 		libsoup3>=2.99.0:devel/libsoup3
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
 USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
-MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
+MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true -Dmanpages=false
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	gssdp14
