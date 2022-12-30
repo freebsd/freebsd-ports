@@ -10,22 +10,15 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+RUN_DEPENDS=	dx:graphics/opendx
 
-RUN_DEPENDS+=	dx:graphics/opendx
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
+USES=		octave
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-post-build:
-	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
+OCTAVE_SRC=		${OCTAVE_PKGNAME}
 
 .include <bsd.port.mk>

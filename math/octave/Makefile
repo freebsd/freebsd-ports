@@ -10,81 +10,77 @@ WWW=		https://www.octave.org/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gnuplot:math/gnuplot \
-		${LOCALBASE}/bin/gperf:devel/gperf \
-		gsed:textproc/gsed \
-		${LOCALBASE}/bin/makeinfo:print/texinfo
-RUN_DEPENDS=	gnuplot:math/gnuplot \
-		gsed:textproc/gsed \
-		${LOCALBASE}/bin/makeinfo:print/texinfo
-LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
+BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:devel/gperf \
+		${LOCALBASE}/bin/makeinfo:print/texinfo \
+		gnuplot:math/gnuplot \
+		gsed:textproc/gsed
+RUN_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo \
+		gnuplot:math/gnuplot \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libarpack.so:math/arpack-ng \
-		libcurl.so:ftp/curl \
-		libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float \
-		libfltk.so:x11-toolkits/fltk \
-		libftgl.so:graphics/ftgl \
-		libhdf5.so:science/hdf5 \
-		libpcre.so:devel/pcre \
-		libqhull_r.so:math/qhull \
-		libqrupdate.so:math/qrupdate \
-		libamd.so:math/suitesparse-amd \
 		libcamd.so:math/suitesparse-camd \
 		libccolamd.so:math/suitesparse-ccolamd \
 		libcholmod.so:math/suitesparse-cholmod \
 		libcolamd.so:math/suitesparse-colamd \
-		libsuitesparseconfig.so:math/suitesparse-config \
+		libcurl.so:ftp/curl \
 		libcxsparse.so:math/suitesparse-cxsparse \
-		libklu.so:math/suitesparse-klu \
-		libspqr.so:math/suitesparse-spqr \
-		libumfpack.so:math/suitesparse-umfpack \
-		libglpk.so:math/glpk \
-		libgl2ps.so:print/gl2ps \
+		libdrm.so:graphics/libdrm \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libdrm.so:graphics/libdrm \
+		libftgl.so:graphics/ftgl \
+		libgl2ps.so:print/gl2ps \
+		libglpk.so:math/glpk \
+		libGraphicsMagick.so:graphics/GraphicsMagick \
+		libhdf5.so:science/hdf5 \
+		libklu.so:math/suitesparse-klu \
 		libOSMesa.so:graphics/libosmesa \
+		libpcre.so:devel/pcre \
+		libportaudio.so:audio/portaudio \
+		libqhull_r.so:math/qhull \
+		libqrupdate.so:math/qrupdate \
+		libspqr.so:math/suitesparse-spqr \
+		libsuitesparseconfig.so:math/suitesparse-config \
 		libsundials_arkode.so:math/sundials \
-		libportaudio.so:audio/portaudio
+		libumfpack.so:math/suitesparse-umfpack
 
-USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
-		tar:xz compiler:c++14-lang \
-		desktop-file-utils gl iconv ncurses xorg
+USES=		charsetfix compiler:c++14-lang desktop-file-utils fortran gl \
+		gmake iconv libtool localbase:ldflags ncurses octave:env perl5 \
+		pkgconfig readline tar:xz xorg
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_QT=		core gui help network opengl \
-		qmake:build buildtools:build linguist:build \
-		printsupport sql widgets \
-		xml
-USE_XORG=	x11 xext xfixes xft \
-		xcursor xinerama xrender
+USE_QT=		core gui help network opengl printsupport sql widgets xml \
+		buildtools:build linguist:build qmake:build
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 
-OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
-PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt5
-CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf" \
+PLIST_SUB=	GNU_HOST=${GNU_HOST} \
+		OCTAVE_VERSION=${OCTAVE_VERSION}
+LDFLAGS+=	-L${LOCALBASE}/lib/qt5
+CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
+		ac_cv_type_max_align_t=yes \
+		GPERF="${LOCALBASE}/bin/gperf" \
 		JAVA_HOME=${JAVA_HOME} \
+		LRELEASE_QTVER=${LRELEASE} \
 		MAKEINFO=${LOCALBASE}/bin/makeinfo \
 		MKINFO=${LOCALBASE}/bin/makeinfo \
 		MOC_QTVER=${MOC} \
-		UIC_QTVER=${UIC} \
-		RCC_QTVER=${RCC} \
-		LRELEASE_QTVER=${LRELEASE} \
 		QCOLLECTIONGENERATOR_QTVER=${QCOLLECTIONGENERATOR} \
 		QHELPGENERATOR_QTVER=${QHELPGENERATOR} \
-		ac_cv_type_max_align_t=yes \
-		ac_cv_path_SED=${LOCALBASE}/bin/gsed
+		RCC_QTVER=${RCC} \
+		UIC_QTVER=${UIC}
 
-CONFIGURE_ARGS=	--host=${GNU_HOST} \
+CONFIGURE_ARGS=	--disable-jit \
+		--disable-openmp \
+		--enable-shared \
+		--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}" \
-		--enable-shared \
-		--disable-jit \
-		--disable-openmp \
 		--with-osmesa
 
 INFO=		octave liboctave
@@ -95,13 +91,13 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=	DOCS JAVA QT5
 
 OPTIONS_RADIO=		BLAS
-OPTIONS_RADIO_BLAS=	OPENBLAS NETLIB ATLAS
+OPTIONS_RADIO_BLAS=	ATLAS NETLIB OPENBLAS
 OPTIONS_DEFAULT=	JAVA OPENBLAS QT5
 OPTIONS_SUB=		yes
 
 DOCS_CONFIGURE_ENABLE=	docs
 JAVA_CONFIGURE_ENABLE=	java
-QT5_CONFIGURE_WITH=	qt=5 qscintilla
+QT5_CONFIGURE_WITH=	qscintilla qt=5
 
 QT5_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
@@ -112,7 +108,7 @@ JAVA_CFLAGS=	-I${JAVA_HOME}/include/${OPSYS:tl}
 QT5_USES=	qt:5
 OPENBLAS_USES=	blaslapack:openblas
 NETLIB_USES=	blaslapack:netlib
-ATLAS_USES=		blaslapack:atlas
+ATLAS_USES=	blaslapack:atlas
 
 pre-configure:
 	${REINPLACE_CMD} 's+"makeinfo"+"${LOCALBASE}/bin/makeinfo"+' ${WRKSRC}/libinterp/corefcn/help.cc
@@ -124,9 +120,8 @@ pre-configure:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in liboctave/liboctave.ps \
-	refcard/refcard-a4.ps refcard/refcard-legal.ps \
-	refcard/refcard-letter.ps interpreter/octave.ps
+.for file in liboctave/liboctave.ps refcard/refcard-a4.ps \
+	refcard/refcard-legal.ps refcard/refcard-letter.ps interpreter/octave.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
@@ -137,5 +132,4 @@ post-install-DOCS-on:
 check regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
 
-.include "Makefile.version"
 .include <bsd.port.mk>

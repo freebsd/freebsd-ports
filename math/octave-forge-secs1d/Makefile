@@ -10,23 +10,15 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/bim.tar.gz:math/octave-forge-bim
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:math/octave-forge-bim
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
+USES=		octave
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
+WRKSRC=	${WRKDIR}/${OCTAVE_SRC}
 
 .include <bsd.port.mk>

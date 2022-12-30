@@ -35,18 +35,18 @@ OPTIONS_DEFINE=	AUDIO ACTUARIAL AUTOMATIC_DIFFERENTIATION \
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-TARBALLS_DIR=		${LOCALBASE}/share/octave/tarballs
+OCTAVE_TARBALLS_DIR=		${LOCALBASE}/share/octave/tarballs
 
 .for OPT in ${OPTIONS_DEFINE}
 . if ${OPTIONS_DEFINE:MGENERATE_HTML} == ${OPT}
 ${OPT}_DESC=		Install package: ${OPT:tl}
-${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl}.tar.gz:math/octave-forge-${OPT:tl}
+${OPT}_RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/${OPT:tl}.tar.gz:math/octave-forge-${OPT:tl}
 . else
 ${OPT}_DESC=		Install package: ${OPT:tl:S/_/-/g}
 .  if ${OPTIONS_DEFINE:MBENCHMARK} == ${OPT}
-${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:benchmarks/octave-forge-${OPT:tl:S/_/-/g}
+${OPT}_RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:benchmarks/octave-forge-${OPT:tl:S/_/-/g}
 .  else
-${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:math/octave-forge-${OPT:tl:S/_/-/g}
+${OPT}_RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:math/octave-forge-${OPT:tl:S/_/-/g}
 .  endif
 . endif
 .endfor

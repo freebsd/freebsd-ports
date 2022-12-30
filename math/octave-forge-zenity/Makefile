@@ -12,9 +12,12 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-
 RUN_DEPENDS+=	zenity:x11/zenity
 
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+USES=			octave
+
+GNU_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/${OCTAVE_SRC}
+
 .include <bsd.port.mk>

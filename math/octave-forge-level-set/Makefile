@@ -11,20 +11,12 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 
-ALL_TARGET=	oct
-USES=		compiler:c++0x
+USES=		compiler:c++0x octave
+
 GNU_CONFIGURE=	yes
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+ALL_TARGET=	oct
 
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${OCTAVE_DISTNAME}.tar.gz ${OCTSRC}
+OCTAVE_SRC=		${OCTAVE_PKGNAME}
 
 .include <bsd.port.mk>

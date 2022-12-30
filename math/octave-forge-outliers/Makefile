@@ -12,7 +12,10 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		octave
+
 GNU_CONFIGURE=	yes
 
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+WRKSRC=	${WRKDIR}/${OCTAVE_SRC}
+
 .include <bsd.port.mk>
