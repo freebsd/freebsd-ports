@@ -4,8 +4,8 @@
  {'': ['*']}
  
  install_requires = \
--['redis<4.4', 'sortedcontainers>=2.4.0,<3.0.0']
-+['redis<4.4', 'sortedcontainers>=2.3.0,<3.0.0']
+-['redis<4.5', 'sortedcontainers>=2.4.0,<3.0.0']
++['redis<4.5', 'sortedcontainers>=2.3.0,<3.0.0']
  
  extras_require = \
 -{'aioredis': ['aioredis>=2.0.1,<3.0.0'], 'lua': ['lupa>=1.13,<2.0']}
