@@ -6,7 +6,7 @@ MASTER_SITES=	SF/gallery/gallery2/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}-full
 DIST_SUBDIR=	gallery2
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based photo album organizer written in PHP
 WWW=		http://gallery.sourceforge.net/
 
