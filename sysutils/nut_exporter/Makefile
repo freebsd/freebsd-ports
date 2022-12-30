@@ -1,20 +1,19 @@
-PORTNAME=       nut_exporter
-DISTVERSIONPREFIX=      v
-DISTVERSION=    2.5.0
-CATEGORIES=     sysutils
+PORTNAME=	nut_exporter
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.5.0
+CATEGORIES=	sysutils
 
-MAINTAINER=     bsd@j-star.org
-COMMENT=        Prometheus exporter for the Network UPS Tools server
-WWW=            https://github.com/DRuggeri/nut_exporter
+MAINTAINER=	bsd@j-star.org
+COMMENT=	Prometheus exporter for the Network UPS Tools server
+WWW=		https://github.com/DRuggeri/nut_exporter
 
-LICENSE=        APACHE20
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=           go:modules
-USE_GITHUB=     yes
-GH_ACCOUNT=     DRuggeri
-GH_TUPLE=       \
-		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
+USES=		go:modules
+USE_GITHUB=	yes
+GH_ACCOUNT=	DRuggeri
+GH_TUPLE=	alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
@@ -32,7 +31,7 @@ GH_TUPLE=       \
 		protocolbuffers:protobuf-go:v1.26.0-rc.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		robbiet480:go.nut:bd8f121e1fa1:robbiet480_go_nut/vendor/github.com/robbiet480/go.nut
 
-USE_RC_SUBR=    nut_exporter
-PLIST_FILES=    bin/nut_exporter
+USE_RC_SUBR=	nut_exporter
+PLIST_FILES=	bin/nut_exporter
 
 .include <bsd.port.mk>
