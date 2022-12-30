@@ -1,7 +1,7 @@
 PORTNAME=	padthv1
-DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_27
+DISTVERSION=	0.9.28
 CATEGORIES=	audio
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +21,6 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 \
 		shared-mime-info
 USE_GL=		gl
 USE_QT=		core gui svg widgets xml buildtools:build linguisttools:build qmake:build
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	rncbc
 
 CMAKE_OFF=	CONFIG_ALSA_MIDI
 
