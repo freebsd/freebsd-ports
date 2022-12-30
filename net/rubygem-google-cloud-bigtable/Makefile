@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Cloud Bigtable API
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-bigtable
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-bigtable
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
