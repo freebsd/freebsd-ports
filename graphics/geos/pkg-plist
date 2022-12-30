@@ -253,6 +253,7 @@ include/geos/noding/snapround/MCIndexPointSnapper.h
 include/geos/noding/snapround/MCIndexSnapRounder.h
 include/geos/noding/snapround/SnapRoundingIntersectionAdder.h
 include/geos/noding/snapround/SnapRoundingNoder.h
+include/geos/operation/BoundaryOp.h
 include/geos/operation/GeometryGraphOperation.h
 include/geos/operation/buffer/BufferBuilder.h
 include/geos/operation/buffer/BufferCurveSetBuilder.h
@@ -451,5 +452,5 @@ lib/libgeos.so
 lib/libgeos.so.%%PORTVERSION%%
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.17.0
+lib/libgeos_c.so.1.17.1
 libdata/pkgconfig/geos.pc

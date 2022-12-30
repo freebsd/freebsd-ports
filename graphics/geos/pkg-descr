@@ -3,5 +3,3 @@ GEOS (Geometry Engine - Open Source) is a C++ port of the JTS Topology Suite
 includes all the OpenGIS Simple Features for SQL spatial predicate functions and
 spatial operators, as well as specific JTS enhanced functions. GEOS provides
 spatial functionality to many other projects and products.
-
-See also: https://github.com/libgeos/geos
