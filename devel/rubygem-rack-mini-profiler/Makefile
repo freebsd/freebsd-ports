@@ -1,18 +1,20 @@
 PORTNAME=	rack-mini-profiler
-PORTVERSION=	0.10.7
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Profiles loading speed for rack applications
-WWW=		https://miniprofiler.com/
+WWW=		https://miniprofiler.com/ \
+		https://github.com/MiniProfiler/rack-mini-profiler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=1.2.0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=1.2.0,3:www/rubygem-rack
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
