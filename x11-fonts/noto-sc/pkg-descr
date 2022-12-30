@@ -6,7 +6,4 @@ and letters in the Basic Multilingual Plane of Unicode. It also provides limited
 coverage of CJK Ideographs in Plane 2 of Unicode as necessary to support
 standards from China and Japan.
 
-This port is the set of Simplified Chinese fonts which supports GB 18030 and
-China's latest standard Table of General Chinese Characters published in 2013.
-
-See also: https://github.com/googlefonts/noto-cjk
+This port is the meta port for Simplified Chinese fonts.
