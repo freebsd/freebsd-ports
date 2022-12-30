@@ -1,28 +1,29 @@
 PORTNAME=	rails
-PORTVERSION=	6.1.6.1
+PORTVERSION=	6.1.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full-stack web application framework
-WWW=		https://github.com/rails/rails
+WWW=		https://github.com/rails/rails \
+		https://rubyonrails.org/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actioncable61>=${PORTVERSION}:www/rubygem-actioncable61 \
-		rubygem-actionmailbox61>=${PORTVERSION}:mail/rubygem-actionmailbox61 \
-		rubygem-actionmailer61>=${PORTVERSION}:mail/rubygem-actionmailer61 \
-		rubygem-actionpack61>=${PORTVERSION}:www/rubygem-actionpack61 \
-		rubygem-actiontext61>=${PORTVERSION}:textproc/rubygem-actiontext61 \
-		rubygem-actionview61>=${PORTVERSION}:devel/rubygem-actionview61 \
-		rubygem-activejob61>=${PORTVERSION}:devel/rubygem-activejob61 \
-		rubygem-activemodel61>=${PORTVERSION}:databases/rubygem-activemodel61 \
-		rubygem-activerecord61>=${PORTVERSION}:databases/rubygem-activerecord61 \
-		rubygem-activestorage61>=${PORTVERSION}:net/rubygem-activestorage61 \
-		rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport61 \
+RUN_DEPENDS=	rubygem-actioncable61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actioncable61 \
+		rubygem-actionmailbox61>=${PORTVERSION}<${PORTVERSION}_99:mail/rubygem-actionmailbox61 \
+		rubygem-actionmailer61>=${PORTVERSION}<${PORTVERSION}_99:mail/rubygem-actionmailer61 \
+		rubygem-actionpack61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actionpack61 \
+		rubygem-actiontext61>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-actiontext61 \
+		rubygem-actionview61>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-actionview61 \
+		rubygem-activejob61>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activejob61 \
+		rubygem-activemodel61>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activemodel61 \
+		rubygem-activerecord61>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activerecord61 \
+		rubygem-activestorage61>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-activestorage61 \
+		rubygem-activesupport61>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport61 \
 		rubygem-bundler>=1.15.0:sysutils/rubygem-bundler \
-		rubygem-railties61>=${PORTVERSION}:www/rubygem-railties61 \
+		rubygem-railties61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-railties61 \
 		rubygem-sprockets-rails-rails61>=2.0.0:devel/rubygem-sprockets-rails-rails61 \
 		rubygem-bootsnap>=1.4.4:devel/rubygem-bootsnap \
 		rubygem-byebug>=0:devel/rubygem-byebug \
