@@ -1,6 +1,5 @@
 PORTNAME=	fcgi
-PORTVERSION=	0.9.2.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2.2
 CATEGORIES=	www ruby
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfcgi.so:www/fcgi
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
