@@ -10,7 +10,7 @@ WWW=		https://github.com/mjackson/rack-accept
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=0.4:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0.4,3:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes
