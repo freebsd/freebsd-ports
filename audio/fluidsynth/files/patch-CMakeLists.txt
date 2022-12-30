@@ -1,22 +1,22 @@
---- CMakeLists.txt.orig	2019-02-03 07:13:31 UTC
+--- CMakeLists.txt.orig	2022-12-28 11:43:59 UTC
 +++ CMakeLists.txt
-@@ -71,6 +71,7 @@ option ( enable-dsound "compile DirectSound support (i
- option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
- option ( enable-pkgconfig "use pkg-config to locate fluidsynth's (mostly optional) dependencies" on )
+@@ -90,6 +90,7 @@ option ( enable-winmidi "compile Windows MIDI support 
+ option ( enable-sdl2 "compile SDL2 audio support (if it is available)" on )
  option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
+ option ( enable-pipewire "compile PipeWire support (if it is available)" on )
 +option ( enable-sndio "compile Sndio support (if it is available)" on )
  option ( enable-readline "compile readline lib line editing (if it is available)" on )
  option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
- 
-@@ -481,6 +482,11 @@ else(NOT enable-pkgconfig)
-     else ( enable-pulseaudio )
+ option ( enable-openmp "enable OpenMP support (parallelization of soundfont decoding, vectorization of voice mixing, etc.)" on )
+@@ -530,6 +531,11 @@ if ( enable-pulseaudio )
+ else ( enable-pulseaudio )
      unset_pkg_config ( PULSE )
-     endif ( enable-pulseaudio )
+ endif ( enable-pulseaudio )
 +
-+    unset ( SNDIO_SUPPORT CACHE )
-+    if ( enable-sndio )
-+      set ( SNDIO_SUPPORT 1 )
-+    endif ( enable-sndio )
++unset ( SNDIO_SUPPORT CACHE )
++if ( enable-sndio )
++    set ( SNDIO_SUPPORT 1 )
++endif ( enable-sndio )
  
-     unset ( ALSA_SUPPORT CACHE )
-     if ( enable-alsa )
+ unset ( ALSA_SUPPORT CACHE )
+ if ( enable-alsa )
