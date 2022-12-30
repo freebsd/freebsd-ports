@@ -18,6 +18,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP',
@@ -30,12 +31,12 @@ setup(
     extras_require={
         'standard': [
             'colorama>=0.4; sys_platform == "win32"',
-            'httptools>=0.4.0',
+            'httptools>=0.5.0',
             'python-dotenv>=0.13',
             'pyyaml>=5.1',
             'uvloop!=0.15.0,!=0.15.1,>=0.14.0; sys_platform != "win32" and (sys_platform != "cygwin" and platform_python_implementation != "PyPy")',
             'watchfiles>=0.13',
-            'websockets>=10.0',
+            'websockets>=10.4',
         ],
     },
     entry_points={
