@@ -14,10 +14,10 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     install_requires=[
         'appnope; platform_system == "Darwin"',
@@ -33,13 +33,19 @@ setup(
         'traitlets>=5.1.0',
     ],
     extras_require={
+        'doc': [
+            'myst_parser',
+            'pydata_sphinx_theme',
+            'sphinx',
+            'sphinxcontrib_github_alt',
+        ],
         'test': [
             'flaky',
             'ipyparallel',
             'pre-commit',
             'pytest-cov',
             'pytest-timeout',
-            'pytest>=6.0',
+            'pytest>=7.0',
         ],
     },
     py_modules=['ipykernel_launcher'],

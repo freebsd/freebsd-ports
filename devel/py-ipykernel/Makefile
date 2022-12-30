@@ -1,6 +1,5 @@
 PORTNAME=	ipykernel
-PORTVERSION=	6.16.0
-PORTREVISION=	1
+PORTVERSION=	6.17.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debugpy>=1.0:devel/py-debugpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.1:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.1.0:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
