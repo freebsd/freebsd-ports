@@ -1,11 +1,11 @@
 PORTNAME=	cinnamon-desktop
-PORTVERSION=	4.8.1
+PORTVERSION=	5.4.2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for cinnamon
-WWW=		http://cinnamon.linuxmint.com/
+WWW=		https://github.com/linuxmint/cinnamon-desktop
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 RUN_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 		libxkbfile>=0:x11/libxkbfile
 
-USES=		gettext gnome localbase meson pkgconfig python:3.5+,build shebangfix xorg
+USES=		gettext gnome localbase meson pkgconfig python:build shebangfix xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection
 USE_XORG=	x11 xext xrandr
 USE_LDCONFIG=	yes
@@ -43,6 +43,7 @@ GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.lockdown.gschema.xml \
 		org.cinnamon.desktop.media-handling.gschema.xml \
 		org.cinnamon.desktop.notifications.gschema.xml \
+		org.cinnamon.desktop.peripherals.gschema.xml \
 		org.cinnamon.desktop.privacy.gschema.xml \
 		org.cinnamon.desktop.screensaver.gschema.xml \
 		org.cinnamon.desktop.session.gschema.xml \

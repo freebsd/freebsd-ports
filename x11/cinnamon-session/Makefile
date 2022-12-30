@@ -1,12 +1,11 @@
 PORTNAME=	cinnamon-session
-PORTVERSION=	4.8.0
-PORTREVISION=	2
+PORTVERSION=	5.4.0
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the cinnamon desktop
-WWW=		http://cinnamon.linuxmint.com/
+WWW=		https://github.com/linuxmint/cinnamon-session
 
 LICENSE=	GPLv2
 
@@ -16,12 +15,10 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libcanberra.so:audio/libcanberra
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2
 
-USES=		gl gnome meson pkgconfig python:3.5+,build shebangfix xorg
+USES=		gl gnome meson pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-
-CONFIGURE_ARGS=	-Dgconf=false
 
 SHEBANG_FILES=	data/meson_install_schemas.py
 
@@ -31,11 +28,8 @@ USE_GL=		gl
 
 GLIB_SCHEMAS=	org.cinnamon.SessionManager.gschema.xml
 
-OPTIONS_DEFINE=	DOCS IPV6
+OPTIONS_DEFINE=	IPV6
 OPTIONS_DEFAULT=	IPV6
-
-DOCS_BUILD_DEPENDS=	xmlto:textproc/xmlto
-DOCS_MESON_TRUE=	docbook
 
 IPV6_MESON_TRUE=	ipv6
 

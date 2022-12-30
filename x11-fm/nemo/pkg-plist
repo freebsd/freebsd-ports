@@ -2,7 +2,11 @@ bin/nemo
 bin/nemo-autorun-software
 bin/nemo-connect-server
 bin/nemo-desktop
+bin/nemo-epub2text
+bin/nemo-mso-to-txt
 bin/nemo-open-with
+bin/nemo-ppt-to-txt
+bin/nemo-xls-to-txt
 include/nemo/libnemo-extension/nemo-column-provider.h
 include/nemo/libnemo-extension/nemo-column.h
 include/nemo/libnemo-extension/nemo-desktop-preferences.h
@@ -25,6 +29,7 @@ libdata/pkgconfig/libnemo-extension.pc
 libexec/nemo-convert-metadata
 libexec/nemo-extensions-list
 man/man1/nemo-connect-server.1.gz
+man/man1/nemo-desktop.1.gz
 man/man1/nemo.1.gz
 share/applications/nemo-autorun-software.desktop
 share/applications/nemo-autostart.desktop
@@ -58,7 +63,11 @@ share/gir-1.0/Nemo-3.0.gir
 %%PORTDOCS%%share/gtk-doc/html/libnemo-extension/up-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/libnemo-extension/up.png
 share/gtksourceview-2.0/language-specs/nemo_action.lang
+share/gtksourceview-2.0/language-specs/nemo_search_helper.lang
 share/gtksourceview-3.0/language-specs/nemo_action.lang
+share/gtksourceview-3.0/language-specs/nemo_search_helper.lang
+share/gtksourceview-4/language-specs/nemo_action.lang
+share/gtksourceview-4/language-specs/nemo_search_helper.lang
 share/icons/hicolor/16x16/actions/menu-bullet.png
 share/icons/hicolor/16x16/actions/menu-none.png
 share/icons/hicolor/16x16/actions/menu-sort-down-free.png
@@ -92,6 +101,7 @@ share/icons/hicolor/scalable/actions/nemo-auto-arrange-symbolic.svg
 share/icons/hicolor/scalable/actions/nemo-desktop-scale-symbolic.svg
 share/icons/hicolor/scalable/actions/nemo-horizontal-layout-symbolic.svg
 share/icons/hicolor/scalable/actions/nemo-horizontal-layout-wide-symbolic.svg
+share/icons/hicolor/scalable/actions/nemo-recursive-search-symbolic.svg
 share/icons/hicolor/scalable/actions/nemo-vertical-layout-symbolic.svg
 share/icons/hicolor/scalable/actions/nemo-vertical-layout-wide-symbolic.svg
 share/icons/hicolor/scalable/actions/sidebar-hide-symbolic.svg
@@ -117,4 +127,16 @@ share/mime/packages/nemo.xml
 %%DATADIR%%/icons/hicolor/24x24/emblems/emblem-note.png
 %%DATADIR%%/icons/hicolor/48x48/emblems/emblem-note.png
 %%DATADIR%%/script-info.md
+%%DATADIR%%/search-helpers/exif.nemo_search_helper
+%%DATADIR%%/search-helpers/epub2text.nemo_search_helper
+%%DATADIR%%/search-helpers/id3.nemo_search_helper
+%%DATADIR%%/search-helpers/libreoffice.nemo_search_helper
+%%DATADIR%%/search-helpers/mso-doc.nemo_search_helper
+%%DATADIR%%/search-helpers/mso-ppt.nemo_search_helper
+%%DATADIR%%/search-helpers/mso-xls.nemo_search_helper
+%%DATADIR%%/search-helpers/mso.nemo_search_helper
+%%DATADIR%%/search-helpers/pdf2txt.nemo_search_helper
+%%DATADIR%%/search-helpers/pdftotext.nemo_search_helper
+%%DATADIR%%/search-helpers/ps2ascii.nemo_search_helper
+%%DATADIR%%/search-helpers/untex.nemo_search_helper
 share/polkit-1/actions/org.nemo.root.policy

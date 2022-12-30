@@ -1,28 +1,27 @@
 PORTNAME=	cinnamon
-PORTVERSION=	4.8.6
-PORTREVISION=	3
+PORTVERSION=	5.4.9
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	aa0bf5b13078.patch:-p1 # https://github.com/linuxmint/cinnamon/pull/10606
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of GNOME Shell with layout similar to GNOME 2
-WWW=		http://cinnamon.linuxmint.com/
+WWW=		https://github.com/linuxmint/cinnamon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	ca_root_nss>0:security/ca_root_nss
+BUILD_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri
 LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libmuffin.so:x11-wm/muffin \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
 		libdbus-1.so:devel/dbus \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
-		libstartup-notification-1.so:x11/startup-notification \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-2.4.so:devel/libsoup \
+		libxapp.so:x11/xapp
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		ca_root_nss>0:security/ca_root_nss \
 		gnome-themes-extra>3.0.0:x11-themes/gnome-themes-extra \
@@ -39,22 +38,29 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss>0:textproc/py-tinycss@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		gkbd-keyboard-display:x11/libgnomekbd \
+		gucharmap:deskutils/gucharmap \
+		keybinder-gtk3>0:x11/keybinder-gtk3 \
 		timezonemap>0:misc/timezonemap \
+		${LOCALBASE}/lib/girepository-1.0/GSound-1.0.typelib:audio/gsound \
 		gnome-backgrounds>0:x11-themes/gnome-backgrounds \
 		metacity:x11-wm/metacity \
 		tint2:x11/tint
 
-USES=		compiler:c11 cpe gettext gl gnome gstreamer meson pkgconfig python:3.5+ shebangfix xorg
+USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome gstreamer \
+		meson perl5 pkgconfig python shebangfix xorg
 CPE_VENDOR=	linuxmint
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool introspection libxml2 pygobject3
 USE_XORG=	x11 xfixes
 USE_GL=		gl
+USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
 SHEBANG_GLOB=	*.py
-SHEBANG_FILES=	files/*
+SHEBANG_FILES=	files/* src/data-to-c.pl
 
 USE_LDCONFIG=	yes
 
@@ -108,13 +114,5 @@ post-patch:
 .	for i in bin share
 		@${MV} ${WRKSRC}/files/usr/${i} ${WRKSRC}/files${PREFIX}
 .	endfor
-
-post-install:
-	# Ship the GNOME Backgrounds set
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cinnamon-background-properties
-	@${LN} -s ${PREFIX}/share/gnome-background-properties/adwaita.xml \
-		${STAGEDIR}${PREFIX}/share/cinnamon-background-properties/adwaita.xml
-	@${LN} -s ${PREFIX}/share/gnome-background-properties/gnome-backgrounds.xml \
-		${STAGEDIR}${PREFIX}/share/cinnamon-background-properties/gnome-backgrounds.xml
 
 .include <bsd.port.mk>

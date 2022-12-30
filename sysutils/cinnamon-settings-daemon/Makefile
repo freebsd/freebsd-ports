@@ -1,12 +1,11 @@
 PORTNAME=	cinnamon-settings-daemon
-PORTVERSION=	4.8.5
-PORTREVISION=	2
+PORTVERSION=	5.4.4
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cinnamon desktop settings daemon
-WWW=		http://cinnamon.linuxmint.com/
+WWW=		https://github.com/linuxmint/cinnamon-settings-daemon
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -14,14 +13,11 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	cinnamon-session:x11/cinnamon-session \
-		xf86-input-wacom>0:x11-drivers/xf86-input-wacom \
 		gln:sysutils/coreutils
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libgudev-1.0.so:devel/libgudev \
-		libdbus-1.so:devel/dbus \
-		libdbus-glib-1.so:devel/dbus-glib \
 		libcolord.so:graphics/colord \
 		liblcms2.so:graphics/lcms2 \
 		libcinnamon-desktop.so:x11/cinnamon-desktop \
@@ -36,9 +32,9 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session
 
 USES=		compiler:c11 gettext-tools gnome localbase meson pkgconfig \
-		python:3.5+,build shebangfix xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libgnomekbd librsvg2
-USE_XORG=	x11 xext xfixes xi xtst
+		python:build shebangfix xorg
+USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool libgnomekbd pango
+USE_XORG=	x11 xext xfixes xi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
@@ -69,11 +65,13 @@ CUPS_MESON_ENABLED=	use_cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 SMARTCARD_DESC=	Smartcard support
-SMARTCARD_MESON_ENABLED=	enable_smartcard
+SMARTCARD_MESON_ENABLED=	use_smartcard
 SMARTCARD_LIB_DEPENDS=	libnss3.so:security/nss
 
 WACOM_DESC=	Tablet support with libwacom
+WACOM_MESON_ENABLED=	use_wacom
 WACOM_LIB_DEPENDS=	libwacom.so:x11/libwacom
+WACOM_USE=	gnome=librsvg2
 
 post-patch:
 	# Adhere to our hier(7).

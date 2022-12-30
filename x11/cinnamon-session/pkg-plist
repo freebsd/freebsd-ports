@@ -6,7 +6,6 @@ man/man1/cinnamon-session-quit.1.gz
 man/man1/cinnamon-session.1.gz
 %%DATADIR%%/csm-inhibit-dialog.glade
 %%DATADIR%%/hardware-compatibility
-%%PORTDOCS%%%%DOCSDIR%%/dbus/cinnamon-session.html
 share/icons/hicolor/16x16/apps/cinnamon-session-properties.png
 share/icons/hicolor/22x22/apps/cinnamon-session-properties.png
 share/icons/hicolor/24x24/apps/cinnamon-session-properties.png

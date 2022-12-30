@@ -1,6 +1,11 @@
 bin/cinnamon
+bin/cinnamon-calendar-server
+bin/cinnamon-close-dialog
+bin/cinnamon-dbus-command
 bin/cinnamon-desktop-editor
+bin/cinnamon-display-changes-dialog
 bin/cinnamon-file-dialog
+bin/cinnamon-hover-click
 bin/cinnamon-install-spice
 bin/cinnamon-json-makepot
 bin/cinnamon-killer-daemon
@@ -14,6 +19,7 @@ bin/cinnamon-session-cinnamon2d
 bin/cinnamon-settings
 bin/cinnamon-settings-users
 bin/cinnamon-slideshow
+bin/cinnamon-spice-updater
 bin/cinnamon-subprocess-wrapper
 bin/cinnamon-xlet-makepot
 bin/cinnamon2d
@@ -24,6 +30,12 @@ lib/cinnamon/Cinnamon-0.1.typelib
 lib/cinnamon/St-1.0.typelib
 lib/cinnamon/libcinnamon.so
 lib/cinnamon/libst.so
+%%PYTHON_SITELIBDIR%%/cinnamon/__init__.py
+%%PYTHON_SITELIBDIR%%/cinnamon/harvester.py
+%%PYTHON_SITELIBDIR%%/cinnamon/logger.py
+%%PYTHON_SITELIBDIR%%/cinnamon/proxygsettings.py
+%%PYTHON_SITELIBDIR%%/cinnamon/updates.py
+libexec/cinnamon-calendar-server.py
 libexec/cinnamon-hotplug-sniffer
 libexec/cinnamon-perf-helper
 man/man1/cinnamon-launcher.1.gz
@@ -70,14 +82,13 @@ share/applications/cinnamon-settings-workspaces.desktop
 share/applications/cinnamon-settings.desktop
 share/applications/cinnamon.desktop
 share/applications/cinnamon2d.desktop
-%%DATADIR%%-background-properties/adwaita.xml
-%%DATADIR%%-background-properties/gnome-backgrounds.xml
 %%DATADIR%%-session/sessions/cinnamon.session
 %%DATADIR%%-session/sessions/cinnamon2d.session
 %%DATADIR%%/applets/a11y@cinnamon.org/applet.js
 %%DATADIR%%/applets/a11y@cinnamon.org/metadata.json
 %%DATADIR%%/applets/calendar@cinnamon.org/applet.js
 %%DATADIR%%/applets/calendar@cinnamon.org/calendar.js
+%%DATADIR%%/applets/calendar@cinnamon.org/eventView.js
 %%DATADIR%%/applets/calendar@cinnamon.org/metadata.json
 %%DATADIR%%/applets/calendar@cinnamon.org/settings-schema.json
 %%DATADIR%%/applets/expo@cinnamon.org/applet.js
@@ -207,7 +218,6 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/bumpmaps/frost.png
 %%DATADIR%%/bumpmaps/hex.png
 %%DATADIR%%/bumpmaps/lizard.png
-%%DATADIR%%/cinnamon-dbus-command
 %%DATADIR%%/cinnamon-desktop-editor/cinnamon-desktop-editor.py
 %%DATADIR%%/cinnamon-desktop-editor/directory-editor.ui
 %%DATADIR%%/cinnamon-desktop-editor/launcher-editor.ui
@@ -246,6 +256,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/cinnamon-settings/bin/scrollbar-test-widget.glade
 %%DATADIR%%/cinnamon-settings/bin/scrollbar-test-widget.py
 %%DATADIR%%/cinnamon-settings/bin/tweenEquations.py
+%%DATADIR%%/cinnamon-settings/bin/util.py
 %%DATADIR%%/cinnamon-settings/cinnamon-online-accounts-info.ui
 %%DATADIR%%/cinnamon-settings/cinnamon-settings.py
 %%DATADIR%%/cinnamon-settings/cinnamon-settings.ui
@@ -290,7 +301,6 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/desklets/launcher@cinnamon.org/editorDialog.ui
 %%DATADIR%%/desklets/launcher@cinnamon.org/metadata.json
 %%DATADIR%%/desklets/photoframe@cinnamon.org/desklet.js
-%%DATADIR%%/desklets/photoframe@cinnamon.org/icon.png
 %%DATADIR%%/desklets/photoframe@cinnamon.org/metadata.json
 %%DATADIR%%/desklets/photoframe@cinnamon.org/settings-schema.json
 %%DATADIR%%/desklets/photoframe@cinnamon.org/stylesheet.css
@@ -335,6 +345,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/misc/gnomeSession.js
 %%DATADIR%%/js/misc/gridNavigator.js
 %%DATADIR%%/js/misc/history.js
+%%DATADIR%%/js/misc/inputMethod.js
 %%DATADIR%%/js/misc/interfaces.js
 %%DATADIR%%/js/misc/modemManager.js
 %%DATADIR%%/js/misc/params.js
@@ -373,7 +384,6 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/ui/flashspot.js
 %%DATADIR%%/js/ui/hotCorner.js
 %%DATADIR%%/js/ui/keybindings.js
-%%DATADIR%%/js/ui/keyboard.js
 %%DATADIR%%/js/ui/layout.js
 %%DATADIR%%/js/ui/lightbox.js
 %%DATADIR%%/js/ui/lookingGlass.js
@@ -391,6 +401,8 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/ui/popupMenu.js
 %%DATADIR%%/js/ui/radioButton.js
 %%DATADIR%%/js/ui/runDialog.js
+%%DATADIR%%/js/ui/screenRecorder.js
+%%DATADIR%%/js/ui/screenshot.js
 %%DATADIR%%/js/ui/search.js
 %%DATADIR%%/js/ui/searchProviderManager.js
 %%DATADIR%%/js/ui/separator.js
@@ -404,9 +416,11 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/ui/themeManager.js
 %%DATADIR%%/js/ui/tooltips.js
 %%DATADIR%%/js/ui/tweener.js
+%%DATADIR%%/js/ui/virtualKeyboard.js
 %%DATADIR%%/js/ui/windowAttentionHandler.js
-%%DATADIR%%/js/ui/windowEffects.js
 %%DATADIR%%/js/ui/windowManager.js
+%%DATADIR%%/js/ui/windowMenu.js
+%%DATADIR%%/js/ui/wmGtkDialogs.js
 %%DATADIR%%/js/ui/workspace.js
 %%DATADIR%%/js/ui/workspacesView.js
 %%DATADIR%%/js/ui/xdndHandler.js
@@ -419,6 +433,8 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/theme/add-workspace.png
 %%DATADIR%%/theme/calendar-arrow-left.svg
 %%DATADIR%%/theme/calendar-arrow-right.svg
+%%DATADIR%%/theme/calendar-selected.svg
+%%DATADIR%%/theme/calendar-today-selected.svg
 %%DATADIR%%/theme/calendar-today.svg
 %%DATADIR%%/theme/checkbox-off.svg
 %%DATADIR%%/theme/checkbox.svg
@@ -470,6 +486,7 @@ share/applications/cinnamon2d.desktop
 share/dbus-1/services/org.Cinnamon.HotplugSniffer.service
 share/dbus-1/services/org.Cinnamon.Melange.service
 share/dbus-1/services/org.Cinnamon.Slideshow.service
+share/dbus-1/services/org.cinnamon.CalendarServer.service
 share/desktop-directories/cinnamon-audio-video.directory
 share/desktop-directories/cinnamon-c.directory
 share/desktop-directories/cinnamon-development.directory
@@ -592,7 +609,6 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StScrollView.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StScrollable.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StTable.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StTextureCache.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StTheme.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StThemeContext.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StThemeNode.html
@@ -601,6 +617,7 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/annotation-glossary.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/api-index-full.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/base.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/cinnamon-st-st-texture-cache.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/cinnamon-st.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/containers.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/deprecated-api-index.html
@@ -647,12 +664,9 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonGenericContainer.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonGlobal.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonGtkEmbed.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonRecorder.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonSlicer.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonStack.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonTrayIcon.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonTrayManager.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonWM.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonWindowTracker.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/annotation-glossary.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/api-index-full.html
@@ -662,7 +676,9 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/ch04.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/ch05.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/ch06.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon-cinnamon-tray-manager.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon-cinnamon-util.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon-cinnamon-wm.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/deprecated-api-index.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/home.png
@@ -675,11 +691,15 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/style.css
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/up-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/up.png
-share/icons/hicolor/scalable/actions/caps-lock-off-symbolic.svg
-share/icons/hicolor/scalable/actions/caps-lock-symbolic.svg
+share/icons/hicolor/24x24/actions/cinnamon-hc-double-click.png
+share/icons/hicolor/24x24/actions/cinnamon-hc-drag-click.png
+share/icons/hicolor/24x24/actions/cinnamon-hc-right-click.png
+share/icons/hicolor/24x24/actions/cinnamon-hc-single-click.png
+share/icons/hicolor/scalable/actions/cinnamon-caps-lock-off-symbolic.svg
+share/icons/hicolor/scalable/actions/cinnamon-caps-lock-symbolic.svg
+share/icons/hicolor/scalable/actions/cinnamon-num-lock-off-symbolic.svg
+share/icons/hicolor/scalable/actions/cinnamon-num-lock-symbolic.svg
 share/icons/hicolor/scalable/actions/list-edit-symbolic.svg
-share/icons/hicolor/scalable/actions/num-lock-off-symbolic.svg
-share/icons/hicolor/scalable/actions/num-lock-symbolic.svg
 share/icons/hicolor/scalable/actions/pan-down-symbolic.svg
 share/icons/hicolor/scalable/actions/pan-end-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/pan-end-symbolic.svg

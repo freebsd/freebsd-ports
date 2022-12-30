@@ -1,0 +1,67 @@
+diff --git src/backends/native/meta-cursor-renderer-native.c src/backends/native/meta-cursor-renderer-native.c
+index 578a9a0a..76254485 100644
+--- src/backends/native/meta-cursor-renderer-native.c
++++ src/backends/native/meta-cursor-renderer-native.c
+@@ -1165,8 +1165,8 @@ load_cursor_sprite_gbm_buffer_for_gpu (MetaCursorRendererNative *native,
+                                        MetaGpuKms               *gpu_kms,
+                                        MetaCursorSprite         *cursor_sprite,
+                                        uint8_t                  *pixels,
+-                                       uint                      width,
+-                                       uint                      height,
++                                       unsigned int              width,
++                                       unsigned int              height,
+                                        int                       rowstride,
+                                        uint32_t                  gbm_format)
+ {
+diff --git src/backends/x11/meta-seat-x11.c src/backends/x11/meta-seat-x11.c
+index ff028bfa..9e7421e1 100644
+--- src/backends/x11/meta-seat-x11.c
++++ src/backends/x11/meta-seat-x11.c
+@@ -783,7 +783,7 @@ relate_slaves (gpointer key,
+   _clutter_input_device_add_slave (master, slave);
+ }
+ 
+-static uint
++static unsigned int
+ device_get_tool_serial (ClutterInputDevice *device)
+ {
+   gulong nitems, bytes_after;
+diff --git src/core/keybindings-private.h src/core/keybindings-private.h
+index 1d42a8c5..54f29061 100644
+--- src/core/keybindings-private.h
++++ src/core/keybindings-private.h
+@@ -142,7 +142,7 @@ gboolean meta_keybindings_process_event     (MetaDisplay        *display,
+ int      meta_keybindings_get_mouse_zoom_modifiers (MetaDisplay *display);
+ ClutterModifierType meta_display_get_window_grab_modifiers (MetaDisplay *display);
+ 
+-uint     meta_keybindings_get_ignored_modifier_mask (MetaDisplay *display);
++unsigned int     meta_keybindings_get_ignored_modifier_mask (MetaDisplay *display);
+ 
+ gboolean meta_prefs_add_keybinding          (const char           *name,
+                                              GSettings            *settings,
+diff --git src/core/keybindings.c src/core/keybindings.c
+index ab3ec963..55c8284c 100644
+--- src/core/keybindings.c
++++ src/core/keybindings.c
+@@ -3885,7 +3885,7 @@ meta_keybindings_get_mouse_zoom_modifiers (MetaDisplay *display)
+     return keys->mouse_zoom_modifiers;
+ }
+ 
+-uint
++unsigned int
+ meta_keybindings_get_ignored_modifier_mask (MetaDisplay *display)
+ {
+     MetaKeyBindingManager *keys = &display->key_binding_manager;
+diff --git src/core/startup-notification.c src/core/startup-notification.c
+index 99c0d9d0..b183674a 100644
+--- src/core/startup-notification.c
++++ src/core/startup-notification.c
+@@ -100,7 +100,7 @@ typedef struct {
+   char *id;
+   uint64_t timestamp;
+   int workspace;
+-  uint completed : 1;
++  unsigned int completed : 1;
+ } MetaStartupSequencePrivate;
+ 
+ G_DEFINE_TYPE (MetaStartupNotification,

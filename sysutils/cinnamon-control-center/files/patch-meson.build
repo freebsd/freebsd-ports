@@ -1,0 +1,11 @@
+--- meson.build.orig	2022-07-04 07:39:25 UTC
++++ meson.build
+@@ -38,7 +38,7 @@ upower_glib_dep = dependency('upower-glib', version: '
+ libxklavier = dependency('libxklavier',     version: '>=5.1')
+ upower_glib_dep = dependency('upower-glib', version: '>= 0.99.8')
+ 
+-config.set('HAVE_X11_EXTENSIONS_XKB_H', cc.has_header('X11/extensions/XKB.h'))
++config.set('HAVE_X11_EXTENSIONS_XKB_H', dependency('kbproto', required: false).found())
+ 
+ ###############################################################################
+ # This is a hard-dependency for the region and user-accounts panels
