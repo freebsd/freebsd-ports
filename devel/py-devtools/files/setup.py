@@ -30,7 +30,7 @@ setup(
     ],
     install_requires=[
         'asttokens<3.0.0,>=2.0.0',
-        'executing<1.0.0,>=0.8.0',
+        'executing>=0.8.0',
     ],
     extras_require={
         'pygments': [
