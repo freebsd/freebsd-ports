@@ -158,6 +158,7 @@
     SUBDIR += docbook2odf
     SUBDIR += docbookrx
     SUBDIR += docproj
+    SUBDIR += docproj-fonts-cjk
     SUBDIR += docproj-legacy
     SUBDIR += dom4j
     SUBDIR += domc

@@ -1,0 +1,5 @@
+The FreeBSD Documentation Project maintains the FAQ, Handbook and tutorials.
+
+This port contains the required CJK font files for the FreeBSD Documentation
+Project. They are required to build PDF files without tofu. Currently we use
+Noto Sans Medium.
