@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Avro.pm
+%%SITE_PERL%%/Avro/BinaryDecoder.pm
+%%SITE_PERL%%/Avro/BinaryEncoder.pm
+%%SITE_PERL%%/Avro/DataFile.pm
+%%SITE_PERL%%/Avro/DataFileReader.pm
+%%SITE_PERL%%/Avro/DataFileWriter.pm
+%%SITE_PERL%%/Avro/Protocol.pm
+%%SITE_PERL%%/Avro/Protocol/Message.pm
+%%SITE_PERL%%/Avro/Schema.pm
+%%PERL5_MAN3%%/Avro.3.gz
+%%PERL5_MAN3%%/Avro::BinaryDecoder.3.gz
+%%PERL5_MAN3%%/Avro::BinaryEncoder.3.gz

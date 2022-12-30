@@ -1777,6 +1777,7 @@
     SUBDIR += p5-Attribute-Persistent
     SUBDIR += p5-AutoLoader
     SUBDIR += p5-AutoXS-Header
+    SUBDIR += p5-Avro
     SUBDIR += p5-B-C
     SUBDIR += p5-B-COW
     SUBDIR += p5-B-Compiling
