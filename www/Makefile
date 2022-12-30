@@ -118,11 +118,11 @@
     SUBDIR += dolibarr15
     SUBDIR += domoticz
     SUBDIR += dooble
+    SUBDIR += drupal10
     SUBDIR += drupal7
     SUBDIR += drupal7-wysiwyg
     SUBDIR += drupal8
     SUBDIR += drupal9
-    SUBDIR += drupal10
     SUBDIR += drush
     SUBDIR += dtse
     SUBDIR += dufs
@@ -1819,8 +1819,8 @@
     SUBDIR += rearx
     SUBDIR += redmine42
     SUBDIR += redmine50
-    SUBDIR += remark42
     SUBDIR += rejik
+    SUBDIR += remark42
     SUBDIR += reportmagic
     SUBDIR += repos-style
     SUBDIR += reproxy
