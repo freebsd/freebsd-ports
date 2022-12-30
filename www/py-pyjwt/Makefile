@@ -1,5 +1,5 @@
 PORTNAME=	pyjwt
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,6 @@ CPE_VENDOR=	pyjwt_project
 OPTIONS_DEFINE=	CRYPTO
 OPTIONS_DEFAULT=CRYPTO
 
-CRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=3.3.1:security/py-cryptography@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}types-cryptography>=3.3.21:devel/py-types-cryptography@${PY_FLAVOR}
+CRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=3.4.0,1:security/py-cryptography@${PY_FLAVOR}
 
 .include <bsd.port.mk>
