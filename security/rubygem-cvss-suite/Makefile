@@ -14,6 +14,9 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		gem shebangfix
 USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>
