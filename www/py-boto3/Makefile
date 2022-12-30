@@ -1,5 +1,5 @@
 PORTNAME=	boto3
-PORTVERSION=	1.24.30
+PORTVERSION=	1.26.13
 CATEGORIES=	www python devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/boto/boto3
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.27.${PORTVERSION:E}<1.28.0:devel/py-botocore@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.29.${PORTVERSION:E}<1.30.0:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1<2.0.0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}s3transfer>=0.6.0<0.7.0:net/py-s3transfer@${PY_FLAVOR}
 
