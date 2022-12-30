@@ -1,5 +1,5 @@
 PORTNAME=	erb
-PORTVERSION=	2.2.3
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,16 +11,13 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-cgi>=0:www/rubygem-cgi
+RUN_DEPENDS=	rubygem-cgi>=0.3.3:www/rubygem-cgi
 
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-#PLIST_FILES=	bin/erb
-
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/erb
+PLIST_FILES=	bin/erb
 
 .include <bsd.port.mk>
