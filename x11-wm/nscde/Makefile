@@ -1,5 +1,6 @@
 PORTNAME=	nscde
 DISTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/NsCDE/NsCDE/releases/download/${DISTVERSION}/
 
@@ -8,9 +9,7 @@ COMMENT=	Modern CDE clone based on fvwm
 WWW=		https://github.com/NsCDE/NsCDE
 
 LICENSE=	GPLv3
-
-DEPRECATED=	Depends on expired shells/ksh2020
-EXPIRATION_DATE=2022-12-31
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAV
 		font-bh-lucidatypewriter-100dpi>0:x11-fonts/font-bh-lucidatypewriter-100dpi \
 		fvwm2:x11-wm/fvwm2 \
 		gsed:textproc/gsed \
-		ksh93:shells/ksh2020 \
+		ksh93:shells/ksh93 \
 		qt5-style-plugins>=5.0.0:x11-themes/qt5-style-plugins \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		stalonetray:x11/stalonetray \
@@ -52,8 +51,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR
 		xsettingsd:x11/xsettingsd \
 		xterm:x11/xterm
 
-USES=		gettext magick pkgconfig:build pyqt:5 python:3.7+ shebangfix \
-		xorg
+USES=		desktop-file-utils gettext magick pkgconfig:build pyqt:5 \
+		python:3.7+ shebangfix xorg
 USE_PYQT=	pyqt5
 USE_XORG=	x11 xext xpm
 
@@ -83,15 +82,15 @@ SUDO_DESC=			Use sudo to elevate privileges
 
 ASTKSH_RUN_DEPENDS=	ksh93:shells/ast-ksh93
 DOAS_RUN_DEPENDS=	doas:security/doas
-KSH2020_RUN_DEPENDS=	ksh93:shells/ksh2020
+KSH2020_RUN_DEPENDS=	ksh93:shells/ksh93
 SUDO_RUN_DEPENDS=	sudo:security/sudo
 
 _SUDOFILES=	data/fvwm/Functions.fvwmconf.in lib/scripts/SysActionDialog
 
 .include <bsd.port.pre.mk>
 
-UNAME_M!=	${UNAME} -m
-PLIST_SUB+=	ARCH=${UNAME_M}
+UNAME_M_CMD=	${UNAME} -m
+PLIST_SUB+=	ARCH="$$(${UNAME_M_CMD})"
 
 post-patch-DOAS-on:
 	( for SUDOF in ${_SUDOFILES}; do ${REINPLACE_CMD} -e "s@sudo \\-n@doas@g" ${WRKSRC}/$${SUDOF}; done )
