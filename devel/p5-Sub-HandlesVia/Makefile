@@ -1,5 +1,5 @@
 PORTNAME=	Sub-HandlesVia
-PORTVERSION=	0.037
+PORTVERSION=	0.045
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:devel/p5-Class-Method-Modifiers \
 		p5-Role-Hooks>=0.008:devel/p5-Role-Hooks \
 		p5-Role-Tiny>=0:devel/p5-Role-Tiny \
 		p5-Type-Tiny>=1.004000:devel/p5-Type-Tiny
-TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+TEST_DEPENDS=	p5-Object-Pad>=0.70:devel/p5-Object-Pad \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
