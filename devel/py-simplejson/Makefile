@@ -1,5 +1,5 @@
 PORTNAME=	simplejson
-PORTVERSION=	3.17.6
+PORTVERSION=	3.18.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe python:3.6+
-CPE_VENDOR=	simplejson_project
 USE_PYTHON=	autoplist concurrent distutils unittest
+
+CPE_VENDOR=	simplejson_project
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
