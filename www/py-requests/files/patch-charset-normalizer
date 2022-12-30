@@ -1,0 +1,37 @@
+Obtained from:	https://github.com/psf/requests/commit/c57f1f0ca10e61771b459c857182c23626607312
+
+--- requests/__init__.py.orig	2022-06-29 15:09:45 UTC
++++ requests/__init__.py
+@@ -80,8 +80,8 @@ def check_compatibility(urllib3_version, chardet_versi
+     elif charset_normalizer_version:
+         major, minor, patch = charset_normalizer_version.split(".")[:3]
+         major, minor, patch = int(major), int(minor), int(patch)
+-        # charset_normalizer >= 2.0.0 < 3.0.0
+-        assert (2, 0, 0) <= (major, minor, patch) < (3, 0, 0)
++        # charset_normalizer >= 2.0.0 < 4.0.0
++        assert (2, 0, 0) <= (major, minor, patch) < (4, 0, 0)
+     else:
+         raise Exception("You need either charset_normalizer or chardet installed")
+ 
+--- setup.cfg.orig	2022-06-29 15:13:33 UTC
++++ setup.cfg
+@@ -5,7 +5,7 @@ provides-extra = 
+ 	use_chardet_on_py3
+ requires-dist = 
+ 	certifi>=2017.4.17
+-	charset_normalizer>=2,<3
++	charset_normalizer>=2,<4
+ 	idna>=2.5,<4
+ 	urllib3>=1.21.1,<1.27
+ 
+--- setup.py.orig	2022-06-29 15:09:45 UTC
++++ setup.py
+@@ -59,7 +59,7 @@ if sys.argv[-1] == "publish":
+     sys.exit()
+ 
+ requires = [
+-    "charset_normalizer>=2,<3",
++    "charset_normalizer>=2,<4",
+     "idna>=2.5,<4",
+     "urllib3>=1.21.1,<1.27",
+     "certifi>=2017.4.17",
