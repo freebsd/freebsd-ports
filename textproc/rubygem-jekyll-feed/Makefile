@@ -1,5 +1,5 @@
 PORTNAME=	jekyll-feed
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
