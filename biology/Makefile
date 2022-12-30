@@ -151,6 +151,7 @@
     SUBDIR += py-bcbio-gff
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
+    SUBDIR += py-biosig
     SUBDIR += py-bx-python
     SUBDIR += py-crossmap
     SUBDIR += py-cutadapt
