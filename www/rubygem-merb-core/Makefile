@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-erubis>=2.6.2:www/rubygem-erubis \
 		rubygem-extlib>=0.9.13:devel/rubygem-extlib \
 		rubygem-mime-types>=1.16:misc/rubygem-mime-types \
-		rubygem-rack>=0:www/rubygem-rack \
+		rubygem-rack>=0,3:www/rubygem-rack \
 		rubygem-rake>=0:devel/rubygem-rake
 
 USE_RUBY=	yes
