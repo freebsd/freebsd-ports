@@ -55,7 +55,7 @@ OPENCV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenCV\
 OPENCV_CMAKE_ON=	-DOpenCV_DIR:STRING=${LOCALBASE:Q}/cmake/opencv4
 
 .if !exists(/usr/include/omp.h)
-USES+=		gcc-c++11-lib
+USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++14-lang
 .endif
