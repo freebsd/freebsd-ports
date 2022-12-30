@@ -1,17 +1,18 @@
 PORTNAME=	actionview
-PORTVERSION=	6.1.6.1
+PORTVERSION=	6.1.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rendering framework putting the V in MVC (part of Rails)
-WWW=		https://github.com/rails/rails/tree/main/actionview
+WWW=		https://github.com/rails/rails/tree/main/actionview \
+		https://rubyonrails.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport61 \
+RUN_DEPENDS=	rubygem-activesupport61>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport61 \
 		rubygem-builder>=3.1<4:devel/rubygem-builder \
 		rubygem-erubi>=1.4<2:www/rubygem-erubi \
 		rubygem-rails-dom-testing-rails61>=2.0<3:textproc/rubygem-rails-dom-testing-rails61 \
