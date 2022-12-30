@@ -192,6 +192,7 @@
     SUBDIR += noto-sans-jp
     SUBDIR += noto-sans-kr
     SUBDIR += noto-sans-sc
+    SUBDIR += noto-sans-tc
     SUBDIR += noto-sc
     SUBDIR += noto-tc
     SUBDIR += nucleus
