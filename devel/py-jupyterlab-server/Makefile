@@ -1,5 +1,5 @@
 PORTNAME=	jupyterlab-server
-PORTVERSION=	2.15.2
+PORTVERSION=	2.16.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/jupyterlab/jupyterlab_server/releases/download/v${PORTVERSION}/
@@ -35,7 +35,7 @@ OPENAPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openapi-core>=0.14.2:devel/py-openap
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8.1:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
 post-patch:
