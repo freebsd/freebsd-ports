@@ -1,5 +1,6 @@
 PORTNAME=	chef
 PORTVERSION=	16.18.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -32,7 +33,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-mixlib-cli>=2.1.1<3.0:devel/rubygem-mixlib-cli \
 		rubygem-mixlib-log>=2.0.3<4.0:devel/rubygem-mixlib-log \
 		rubygem-mixlib-shellout>=3.1.1<4.0:devel/rubygem-mixlib-shellout \
-		rubygem-net-sftp>=2.1.2<4.0:security/rubygem-net-sftp \
+		rubygem-net-sftp>=2.1.2<5.0:security/rubygem-net-sftp \
 		rubygem-net-ssh6>=5.1<7:security/rubygem-net-ssh6 \
 		rubygem-net-ssh-multi>=1.2.1<2:security/rubygem-net-ssh-multi \
 		rubygem-ohai>=16.0<17:sysutils/rubygem-ohai \
