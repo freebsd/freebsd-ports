@@ -1,8 +1,6 @@
 PORTNAME=	wolf-shaper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8-33
-DISTVERSIONSUFFIX=	-ge84de58
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,16 +12,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
-LIB_DEPENDS=	liblo.so:audio/liblo # not used other than in makefiles, see https://github.com/wolf-plugins/wolf-shaper/issues/148
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libpulse.so:audio/pulseaudio
+LIB_DEPENDS+=	liblo.so:audio/liblo # not used other than in makefiles, see https://github.com/wolf-plugins/wolf-shaper/issues/148
 
-USES=		gl gmake localbase pkgconfig shebangfix xorg
+USES=		gl gmake localbase pkgconfig sdl shebangfix xorg
 USE_GL=		gl
 USE_XORG=	x11 xext xrandr
+USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolf-plugins
-GH_TUPLE=	DISTRHO:DPF:d592c24:DISTRHO_DPF/dpf \
-		DISTRHO:pugl:13cd61b:DISTRHO_DPF_pugl/dpf/dgl/src/pugl-upstream
+GH_TUPLE=	DISTRHO:DPF:c9e9fe3:DISTRHO_DPF/dpf \
+		DISTRHO:pugl:844528e:DISTRHO_DPF_pugl/dpf/dgl/src/pugl-upstream
 
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 
