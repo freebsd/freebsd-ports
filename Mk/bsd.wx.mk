@@ -11,9 +11,9 @@
 # USE_WX	- Set to the list of wxWidgets versions that can be used by
 #		  the port. The syntax allows the following elements:
 #		  - Single version (e.g. "3.0").
-#		  - Range of versions (e.g. "2.8-3.0"). Must be ascending.
-#		  - Partial range: single version and upper (e.g. "2.8+").
-#		  - Partial range: single version and lower (e.g. "-2.8").
+#		  - Range of versions (e.g. "3.0-3.2"). Must be ascending.
+#		  - Partial range: single version and upper (e.g. "3.2+").
+#		  - Partial range: single version and lower (e.g. "-3.2").
 #		  Multiple elements can be specified separated by spaces.
 # USE_WX_NOT	- Set to the list of wxWidgets versions that can't be used by
 #		  the port. In other words, it removes some versions from
@@ -26,7 +26,6 @@
 #		  dependency type.
 #		  The available components are:
 #		  wx		- The wxWidgets library.
-#		  contrib	- The wxWidgets contributed libraries.
 #		  python	- The wxWidgets API for Python.
 #		  The available dependency types are:
 #		  build		- Requires component for building.
@@ -49,7 +48,7 @@
 #		  components and add them to the variable HAVE_WX. If a
 #		  version is selected, HAVE_WX will contain a list of
 #		  components in the other case it will contain a list of
-#		  "component-version" pairs (e.g. wx-2.8, contrib-2.8, etc).
+#		  "component-version" pairs (e.g. wx-3.0, etc).
 #		  It has to be used before bsd.port.pre.mk.
 # WANT_WX_VER	- Set to the preferred wxWidgets version for the port. It must
 #		  be present in USE_WX or missing in USE_WX_NOT. This is
@@ -72,23 +71,23 @@
 #		  set to "yes".
 #
 # Examples:
-# - A port that needs wxWidgets 2.8 and contributed libraries
-#	USE_WX=		2.8
-#	WX_COMPS=	wx contrib
-# - A port that needs WxPython 2.8 for running.
+# - A port that needs wxWidgets 3.0
+#	USE_WX=		3.0
+#	WX_COMPS=	wx
+# - A port that needs WxPython 3.0 for running.
 #	USE_PYTHON=	yes
-#	USE_WX=		2.8
+#	USE_WX=		3.0
 #	WX_COMPS=	python:run
-# - A port that needs WxPython 2.8 or 3.0 for building.
+# - A port that needs WxPython 3.0 or 3.2 for building.
 #	USE_PYTHON=	yes
-#	USE_WX=		2.8 3.0
+#	USE_WX=		3.0 3.2
 #	WX_COMPS=	python:build
-# - A port that needs wxWidgets version 2.8 or higher and contributed
+# - A port that needs wxWidgets version 3.0 or higher
 #	libraries.
-#	USE_WX=		2.8+
-#	WX_COMPS=	wx contrib
-# - A port that needs wxWidgets of any version other than 2.8.
-#	USE_WX_NOT=	2.8
+#	USE_WX=		3.0+
+#	WX_COMPS=	wx
+# - A port that needs wxWidgets of any version other than 3.0.
+#	USE_WX_NOT=	3.0
 #
 
 WX_Include_MAINTAINER=	desktop@FreeBSD.org
@@ -109,10 +108,10 @@ _WX_Definitions_Done=	yes
 # _WX_VERS_LISTS	- Reverse lists preference order.
 #
 
-_WX_COMPS_ALL=		wx contrib python
+_WX_COMPS_ALL=		wx python
 _WX_DEP_TYPES_ALL=	build lib run
-_WX_VERS_ALL=		2.8 3.0 3.2
-_WX_VERS_UC_ALL=	2.8 3.0 3.2
+_WX_VERS_ALL=		3.0 3.2
+_WX_VERS_UC_ALL=	3.0 3.2
 _WX_VERS_SKIP=		3.0 3.2
 _WX_VERS_LISTS=		WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
@@ -124,13 +123,6 @@ _WX_VERS_LISTS=		WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 # _WX_FILE_comp_ver	- File installed by that component.
 # _WX_DEPTYPE_comp_ver	- Default dependency type (optional).
 #
-
-# wxgtk 2.8
-_WX_PORT_wx_2.8=	x11-toolkits/wxgtk28
-_WX_LIB_wx_2.8=		wx_base${_WX_UC}-2.8
-
-_WX_PORT_contrib_2.8=	x11-toolkits/wxgtk28-contrib
-_WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 
 # wxgtk 3.0
 _WX_PORT_wx_3.0=	x11-toolkits/wxgtk30@${_GTKFLAVOR}
@@ -411,8 +403,6 @@ _GTKVER=	3
 .  elif ${_WX_VER} == 3.0
 _GTKVER=	${WANT_WXGTK_VER:U3}
 _GTKFLAVOR=	gtk${_GTKVER}
-.  else
-_GTKVER=	2
 .  endif
 
 WX_CONFIG?=		${LOCALBASE}/bin/wxgtk${_GTKVER}${_WX_UC}-${_WX_VER}-config

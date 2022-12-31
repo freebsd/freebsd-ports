@@ -229,10 +229,6 @@
     SUBDIR += wlroots
     SUBDIR += wlroots015
     SUBDIR += wmapp
-    SUBDIR += wxgtk28
-    SUBDIR += wxgtk28-common
-    SUBDIR += wxgtk28-contrib
-    SUBDIR += wxgtk28-contrib-common
     SUBDIR += wxgtk30
     SUBDIR += wxgtk32
     SUBDIR += xbae
