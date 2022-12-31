@@ -1,4 +1,0 @@
-Compiler-callable math intrinsics library
-
-This is the companion math library for the flang compiler. It features some
-optimized libm-style functions and has vectorization support.

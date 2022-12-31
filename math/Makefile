@@ -446,7 +446,6 @@
     SUBDIR += libnormaliz
     SUBDIR += libocas
     SUBDIR += liborigin
-    SUBDIR += libpgmath
     SUBDIR += libpoly
     SUBDIR += libqalculate
     SUBDIR += libranlip

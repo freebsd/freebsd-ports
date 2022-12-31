@@ -17720,3 +17720,4 @@ comms/tkhylafax||2022-12-31|Has expired: Depends on expired comms/hylafax
 lang/ponyc||2022-12-31|Has expired: Very outdated and unsupported upstream, depends on end of life devel/llvm70
 www/varnish4|www/varnish6|2022-12-31|Has expired: End of life upstream, users are recommended to upgrade to 6.x or higher
 devel/unittest-cpp||2022-12-31|Has expired: Upstream have declared hiatus status since 2+ years back. Please consider using devel/googletest instead
+math/libpgmath||2022-12-31|Has expired: Depends on end of life devel/llvm70
