@@ -10,37 +10,38 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free 3D real-time customizable strategy game
 WWW=		https://www.glest.org/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/code_license.txt
+
+BUILD_DEPENDS=	jam:devel/jam
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
-BUILD_DEPENDS=	jam:devel/jam
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/servers.ini:games/glest-data
 
 USES=		autoreconf:build compiler:c++11-lang dos2unix gl localbase \
 		lua:51 openal:al,alut pkgconfig sdl xorg zip
-USE_SDL=	sdl
 USE_GL=		gl glu
+USE_SDL=	sdl
 USE_XORG=	x11
+
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	mk/linux/configure
-LDFLAGS_i386=	-Wl,-znotext
-SUB_FILES=		glest-wrapper pkg-message
 
-JAM_CMD=		${LOCALBASE}/bin/jam -q -a -dx
+LDFLAGS_i386=	-Wl,-znotext
+
+EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
+SUB_FILES=		glest-wrapper pkg-message
 
 OPTIONS_DEFINE=	DOCS EDITOR
 OPTIONS_SUB=	yes
+
 EDITOR_DESC=	Build map editor
 
-EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
+EDITOR_USE=		WX=3.0+
+EDITOR_VARS=	WX_CONF_ARGS=relative,HAVE_EDITOR=true
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEDITOR}
-USE_WX=		2.6+
-WX_CONF_ARGS=	relative
-HAVE_EDITOR=	true
-.endif
+JAM_CMD=		${LOCALBASE}/bin/jam -q -a -dx
 
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
@@ -53,8 +54,8 @@ post-patch:
 		-e 's|-llua5.1|-llua-5.1|g' \
 		${WRKSRC}/mk/linux/configure.ac \
 		${WRKSRC}/mk/linux/mk/autoconf/*
-	@${FIND} ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | \
-		${XARGS} ${RM}
+	#@${FIND} ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | \
+	#	${XARGS} ${RM}
 
 pre-configure:
 	@(cd ${WRKSRC}/mk/linux && ${SH} autogen.sh && \

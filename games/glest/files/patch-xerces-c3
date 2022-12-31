@@ -1,6 +1,6 @@
---- source/shared_lib/sources/xml/xml_parser.cpp.orig	2014-02-24 15:26:00.412992000 +0100
-+++ source/shared_lib/sources/xml/xml_parser.cpp	2014-02-24 15:28:23.623987237 +0100
-@@ -87,10 +87,17 @@
+--- source/shared_lib/sources/xml/xml_parser.cpp.orig	2022-12-31 03:15:04 UTC
++++ source/shared_lib/sources/xml/xml_parser.cpp
+@@ -87,10 +87,17 @@ XmlNode *XmlIo::load(const string &path){
  	
  	try{
  		ErrorHandler errorHandler;
@@ -22,7 +22,7 @@
  		DOMDocument *document= parser->parseURI(path.c_str());
  		
  		if(document==NULL){
-@@ -119,9 +126,20 @@
+@@ -119,9 +126,20 @@ void XmlIo::save(const string &path, const XmlNode *no
  		}
  		
  		LocalFileFormatTarget file(path.c_str());

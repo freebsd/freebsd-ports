@@ -1,6 +1,6 @@
---- ./source/shared_lib/include/graphics/math_util.h.bak	2014-08-10 15:21:32.000000000 -0400
-+++ ./source/shared_lib/include/graphics/math_util.h	2014-08-10 15:23:08.000000000 -0400
-@@ -23,6 +23,16 @@
+--- source/shared_lib/include/graphics/math_util.h.orig	2022-12-31 03:15:04 UTC
++++ source/shared_lib/include/graphics/math_util.h
+@@ -23,6 +23,16 @@ const float sqrt2= 1.41421356f;
  const float zero= 1e-6f;
  const float infinity= 1e6f;
  
