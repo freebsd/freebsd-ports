@@ -14,7 +14,7 @@ FIREBIRD_VER=	${FIREBIRD_DEFAULT}
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-VALID_FIREBIRD_VER=        2.5 3.0 4.0
+VALID_FIREBIRD_VER=        3.0 4.0
 
 .  if ! ${VALID_FIREBIRD_VER:M${FIREBIRD_DEFAULT}}
 IGNORE=		Invalid Firebird default version ${FIREBIRD_DEFAULT}; valid versions are ${VALID_FIREBIRD_VER}
