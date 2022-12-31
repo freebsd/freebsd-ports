@@ -1,5 +1,5 @@
 PORTNAME=	reportlab
-PORTVERSION=	3.6.11
+PORTVERSION=	3.6.12
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		https://www.reportlab.com/ftp/
