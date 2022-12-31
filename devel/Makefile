@@ -7416,7 +7416,6 @@
     SUBDIR += umbrello
     SUBDIR += umlgraph
     SUBDIR += unibilium
-    SUBDIR += unittest-cpp
     SUBDIR += universal-ctags
     SUBDIR += upnp
     SUBDIR += upp
