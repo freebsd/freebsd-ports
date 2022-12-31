@@ -267,6 +267,7 @@
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += x026
+    SUBDIR += xannotate
     SUBDIR += xcalendar
     SUBDIR += xcbautolock
     SUBDIR += xdg-desktop-portal
