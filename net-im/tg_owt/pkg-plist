@@ -62,6 +62,8 @@ include/tg_owt/api/dtls_transport_interface.h
 include/tg_owt/api/dtmf_sender_interface.h
 include/tg_owt/api/fec_controller.h
 include/tg_owt/api/fec_controller_override.h
+include/tg_owt/api/field_trials.h
+include/tg_owt/api/field_trials_view.h
 include/tg_owt/api/frame_transformer_interface.h
 include/tg_owt/api/function_view.h
 include/tg_owt/api/ice_transport_factory.h
@@ -69,6 +71,7 @@ include/tg_owt/api/ice_transport_interface.h
 include/tg_owt/api/jsep.h
 include/tg_owt/api/jsep_ice_candidate.h
 include/tg_owt/api/jsep_session_description.h
+include/tg_owt/api/make_ref_counted.h
 include/tg_owt/api/media_stream_interface.h
 include/tg_owt/api/media_stream_track.h
 include/tg_owt/api/media_types.h
@@ -114,7 +117,7 @@ include/tg_owt/api/stats/rtc_stats_report.h
 include/tg_owt/api/stats/rtcstats_objects.h
 include/tg_owt/api/stats_types.h
 include/tg_owt/api/task_queue/default_task_queue_factory.h
-include/tg_owt/api/task_queue/queued_task.h
+include/tg_owt/api/task_queue/pending_task_safety_flag.h
 include/tg_owt/api/task_queue/task_queue_base.h
 include/tg_owt/api/task_queue/task_queue_factory.h
 include/tg_owt/api/task_queue/task_queue_test.h
@@ -129,18 +132,30 @@ include/tg_owt/api/test/create_simulcast_test_fixture.h
 include/tg_owt/api/test/create_time_controller.h
 include/tg_owt/api/test/create_video_quality_test_fixture.h
 include/tg_owt/api/test/create_videocodec_test_fixture.h
-include/tg_owt/api/test/dummy_peer_connection.h
 include/tg_owt/api/test/fake_frame_decryptor.h
 include/tg_owt/api/test/fake_frame_encryptor.h
 include/tg_owt/api/test/frame_generator_interface.h
+include/tg_owt/api/test/metrics/chrome_perf_dashboard_metrics_exporter.h
+include/tg_owt/api/test/metrics/global_metrics_logger_and_exporter.h
+include/tg_owt/api/test/metrics/metric.h
+include/tg_owt/api/test/metrics/metrics_accumulator.h
+include/tg_owt/api/test/metrics/metrics_exporter.h
+include/tg_owt/api/test/metrics/metrics_logger.h
+include/tg_owt/api/test/metrics/metrics_logger_and_exporter.h
+include/tg_owt/api/test/metrics/metrics_set_proto_file_exporter.h
+include/tg_owt/api/test/metrics/print_result_proxy_metrics_exporter.h
+include/tg_owt/api/test/metrics/stdout_metrics_exporter.h
 include/tg_owt/api/test/mock_async_dns_resolver.h
 include/tg_owt/api/test/mock_audio_mixer.h
 include/tg_owt/api/test/mock_audio_sink.h
 include/tg_owt/api/test/mock_data_channel.h
+include/tg_owt/api/test/mock_dtmf_sender.h
+include/tg_owt/api/test/mock_encoder_selector.h
 include/tg_owt/api/test/mock_fec_controller_override.h
 include/tg_owt/api/test/mock_frame_decryptor.h
 include/tg_owt/api/test/mock_frame_encryptor.h
 include/tg_owt/api/test/mock_media_stream_interface.h
+include/tg_owt/api/test/mock_packet_socket_factory.h
 include/tg_owt/api/test/mock_peer_connection_factory_interface.h
 include/tg_owt/api/test/mock_peerconnectioninterface.h
 include/tg_owt/api/test/mock_rtp_transceiver.h
@@ -170,6 +185,7 @@ include/tg_owt/api/test/time_controller.h
 include/tg_owt/api/test/track_id_stream_info_map.h
 include/tg_owt/api/test/video/function_video_decoder_factory.h
 include/tg_owt/api/test/video/function_video_encoder_factory.h
+include/tg_owt/api/test/video/video_frame_writer.h
 include/tg_owt/api/test/video_quality_analyzer_interface.h
 include/tg_owt/api/test/video_quality_test_fixture.h
 include/tg_owt/api/test/videocodec_test_fixture.h
@@ -188,7 +204,6 @@ include/tg_owt/api/transport/stun.h
 include/tg_owt/api/transport/test/create_feedback_generator.h
 include/tg_owt/api/transport/test/feedback_generator_interface.h
 include/tg_owt/api/transport/test/mock_network_control.h
-include/tg_owt/api/transport/webrtc_key_value_config.h
 include/tg_owt/api/turn_customizer.h
 include/tg_owt/api/uma_metrics.h
 include/tg_owt/api/units/data_rate.h
@@ -200,15 +215,20 @@ include/tg_owt/api/video/builtin_video_bitrate_allocator_factory.h
 include/tg_owt/api/video/color_space.h
 include/tg_owt/api/video/encoded_frame.h
 include/tg_owt/api/video/encoded_image.h
+include/tg_owt/api/video/frame_buffer.h
 include/tg_owt/api/video/hdr_metadata.h
 include/tg_owt/api/video/i010_buffer.h
+include/tg_owt/api/video/i210_buffer.h
 include/tg_owt/api/video/i420_buffer.h
+include/tg_owt/api/video/i422_buffer.h
 include/tg_owt/api/video/i444_buffer.h
 include/tg_owt/api/video/nv12_buffer.h
 include/tg_owt/api/video/recordable_encoded_frame.h
 include/tg_owt/api/video/render_resolution.h
+include/tg_owt/api/video/resolution.h
 include/tg_owt/api/video/rtp_video_frame_assembler.h
 include/tg_owt/api/video/test/mock_recordable_encoded_frame.h
+include/tg_owt/api/video/test/video_frame_matchers.h
 include/tg_owt/api/video/video_adaptation_counters.h
 include/tg_owt/api/video/video_adaptation_reason.h
 include/tg_owt/api/video/video_bitrate_allocation.h
@@ -227,22 +247,28 @@ include/tg_owt/api/video/video_sink_interface.h
 include/tg_owt/api/video/video_source_interface.h
 include/tg_owt/api/video/video_stream_decoder.h
 include/tg_owt/api/video/video_stream_decoder_create.h
-include/tg_owt/api/video/video_stream_encoder_interface.h
-include/tg_owt/api/video/video_stream_encoder_observer.h
 include/tg_owt/api/video/video_stream_encoder_settings.h
 include/tg_owt/api/video/video_timing.h
+include/tg_owt/api/video_codecs/av1_profile.h
 include/tg_owt/api/video_codecs/bitstream_parser.h
 include/tg_owt/api/video_codecs/builtin_video_decoder_factory.h
 include/tg_owt/api/video_codecs/builtin_video_encoder_factory.h
 include/tg_owt/api/video_codecs/h264_profile_level_id.h
+include/tg_owt/api/video_codecs/scalability_mode.h
+include/tg_owt/api/video_codecs/scalability_mode_helper.h
 include/tg_owt/api/video_codecs/sdp_video_format.h
+include/tg_owt/api/video_codecs/simulcast_stream.h
 include/tg_owt/api/video_codecs/spatial_layer.h
 include/tg_owt/api/video_codecs/video_codec.h
 include/tg_owt/api/video_codecs/video_decoder.h
 include/tg_owt/api/video_codecs/video_decoder_factory.h
+include/tg_owt/api/video_codecs/video_decoder_factory_template.h
+include/tg_owt/api/video_codecs/video_decoder_factory_template_dav1d_adapter.h
+include/tg_owt/api/video_codecs/video_decoder_factory_template_libvpx_vp8_adapter.h
+include/tg_owt/api/video_codecs/video_decoder_factory_template_libvpx_vp9_adapter.h
+include/tg_owt/api/video_codecs/video_decoder_factory_template_open_h264_adapter.h
 include/tg_owt/api/video_codecs/video_decoder_software_fallback_wrapper.h
 include/tg_owt/api/video_codecs/video_encoder.h
-include/tg_owt/api/video_codecs/video_encoder_config.h
 include/tg_owt/api/video_codecs/video_encoder_factory.h
 include/tg_owt/api/video_codecs/video_encoder_factory_template.h
 include/tg_owt/api/video_codecs/video_encoder_factory_template_libaom_av1_adapter.h
@@ -279,7 +305,6 @@ include/tg_owt/audio/channel_send.h
 include/tg_owt/audio/channel_send_frame_transformer_delegate.h
 include/tg_owt/audio/conversion.h
 include/tg_owt/audio/mock_voe_channel_proxy.h
-include/tg_owt/audio/null_audio_poller.h
 include/tg_owt/audio/remix_resample.h
 include/tg_owt/audio/test/audio_bwe_integration_test.h
 include/tg_owt/audio/test/audio_end_to_end_test.h
@@ -408,13 +433,11 @@ include/tg_owt/common_video/h265/h265_sps_parser.h
 include/tg_owt/common_video/h265/h265_vps_parser.h
 include/tg_owt/common_video/h265/legacy_bit_buffer.h
 include/tg_owt/common_video/include/bitrate_adjuster.h
-include/tg_owt/common_video/include/incoming_video_stream.h
 include/tg_owt/common_video/include/quality_limitation_reason.h
 include/tg_owt/common_video/include/video_frame_buffer.h
 include/tg_owt/common_video/include/video_frame_buffer_pool.h
 include/tg_owt/common_video/libyuv/include/webrtc_libyuv.h
 include/tg_owt/common_video/test/utilities.h
-include/tg_owt/common_video/video_render_frames.h
 include/tg_owt/logging/rtc_event_log/encoder/bit_writer.h
 include/tg_owt/logging/rtc_event_log/encoder/blob_encoding.h
 include/tg_owt/logging/rtc_event_log/encoder/delta_encoding.h
@@ -502,7 +525,6 @@ include/tg_owt/media/engine/internal_encoder_factory.h
 include/tg_owt/media/engine/multiplex_codec_factory.h
 include/tg_owt/media/engine/null_webrtc_video_engine.h
 include/tg_owt/media/engine/payload_type_mapper.h
-include/tg_owt/media/engine/simulcast.h
 include/tg_owt/media/engine/simulcast_encoder_adapter.h
 include/tg_owt/media/engine/unhandled_packets_buffer.h
 include/tg_owt/media/engine/webrtc_media_engine.h
@@ -512,7 +534,6 @@ include/tg_owt/media/engine/webrtc_voice_engine.h
 include/tg_owt/media/sctp/dcsctp_transport.h
 include/tg_owt/media/sctp/sctp_transport_factory.h
 include/tg_owt/media/sctp/sctp_transport_internal.h
-include/tg_owt/media/sctp/usrsctp_transport.h
 include/tg_owt/modules/async_audio_processing/async_audio_processing.h
 include/tg_owt/modules/audio_coding/acm2/acm_receive_test.h
 include/tg_owt/modules/audio_coding/acm2/acm_receiver.h
@@ -722,12 +743,12 @@ include/tg_owt/modules/audio_coding/neteq/nack_tracker.h
 include/tg_owt/modules/audio_coding/neteq/neteq_impl.h
 include/tg_owt/modules/audio_coding/neteq/normal.h
 include/tg_owt/modules/audio_coding/neteq/packet.h
+include/tg_owt/modules/audio_coding/neteq/packet_arrival_history.h
 include/tg_owt/modules/audio_coding/neteq/packet_buffer.h
 include/tg_owt/modules/audio_coding/neteq/post_decode_vad.h
 include/tg_owt/modules/audio_coding/neteq/preemptive_expand.h
 include/tg_owt/modules/audio_coding/neteq/random_vector.h
 include/tg_owt/modules/audio_coding/neteq/red_payload_splitter.h
-include/tg_owt/modules/audio_coding/neteq/relative_arrival_delay_tracker.h
 include/tg_owt/modules/audio_coding/neteq/reorder_optimizer.h
 include/tg_owt/modules/audio_coding/neteq/statistics_calculator.h
 include/tg_owt/modules/audio_coding/neteq/sync_buffer.h
@@ -836,6 +857,7 @@ include/tg_owt/modules/audio_processing/aec3/aec3_fft.h
 include/tg_owt/modules/audio_processing/aec3/aec_state.h
 include/tg_owt/modules/audio_processing/aec3/alignment_mixer.h
 include/tg_owt/modules/audio_processing/aec3/api_call_jitter_metrics.h
+include/tg_owt/modules/audio_processing/aec3/block.h
 include/tg_owt/modules/audio_processing/aec3/block_buffer.h
 include/tg_owt/modules/audio_processing/aec3/block_delay_buffer.h
 include/tg_owt/modules/audio_processing/aec3/block_framer.h
@@ -844,6 +866,7 @@ include/tg_owt/modules/audio_processing/aec3/block_processor_metrics.h
 include/tg_owt/modules/audio_processing/aec3/clockdrift_detector.h
 include/tg_owt/modules/audio_processing/aec3/coarse_filter_update_gain.h
 include/tg_owt/modules/audio_processing/aec3/comfort_noise_generator.h
+include/tg_owt/modules/audio_processing/aec3/config_selector.h
 include/tg_owt/modules/audio_processing/aec3/decimator.h
 include/tg_owt/modules/audio_processing/aec3/delay_estimate.h
 include/tg_owt/modules/audio_processing/aec3/dominant_nearend_detector.h
@@ -868,6 +891,7 @@ include/tg_owt/modules/audio_processing/aec3/mock/mock_echo_remover.h
 include/tg_owt/modules/audio_processing/aec3/mock/mock_render_delay_buffer.h
 include/tg_owt/modules/audio_processing/aec3/mock/mock_render_delay_controller.h
 include/tg_owt/modules/audio_processing/aec3/moving_average.h
+include/tg_owt/modules/audio_processing/aec3/multi_channel_content_detector.h
 include/tg_owt/modules/audio_processing/aec3/nearend_detector.h
 include/tg_owt/modules/audio_processing/aec3/refined_filter_update_gain.h
 include/tg_owt/modules/audio_processing/aec3/render_buffer.h
@@ -896,18 +920,13 @@ include/tg_owt/modules/audio_processing/aec_dump/aec_dump_factory.h
 include/tg_owt/modules/audio_processing/aec_dump/aec_dump_impl.h
 include/tg_owt/modules/audio_processing/aec_dump/capture_stream_info.h
 include/tg_owt/modules/audio_processing/aec_dump/mock_aec_dump.h
-include/tg_owt/modules/audio_processing/aec_dump/write_to_file_task.h
 include/tg_owt/modules/audio_processing/aecm/aecm_core.h
 include/tg_owt/modules/audio_processing/aecm/aecm_defines.h
 include/tg_owt/modules/audio_processing/aecm/echo_control_mobile.h
 include/tg_owt/modules/audio_processing/agc/agc.h
 include/tg_owt/modules/audio_processing/agc/agc_manager_direct.h
 include/tg_owt/modules/audio_processing/agc/analog_gain_stats_reporter.h
-include/tg_owt/modules/audio_processing/agc/clipping_predictor.h
-include/tg_owt/modules/audio_processing/agc/clipping_predictor_evaluator.h
-include/tg_owt/modules/audio_processing/agc/clipping_predictor_level_buffer.h
 include/tg_owt/modules/audio_processing/agc/gain_control.h
-include/tg_owt/modules/audio_processing/agc/gain_map_internal.h
 include/tg_owt/modules/audio_processing/agc/legacy/analog_agc.h
 include/tg_owt/modules/audio_processing/agc/legacy/digital_agc.h
 include/tg_owt/modules/audio_processing/agc/legacy/gain_control.h
@@ -920,10 +939,13 @@ include/tg_owt/modules/audio_processing/agc2/adaptive_mode_level_estimator.h
 include/tg_owt/modules/audio_processing/agc2/agc2_common.h
 include/tg_owt/modules/audio_processing/agc2/agc2_testing_common.h
 include/tg_owt/modules/audio_processing/agc2/biquad_filter.h
+include/tg_owt/modules/audio_processing/agc2/clipping_predictor.h
+include/tg_owt/modules/audio_processing/agc2/clipping_predictor_level_buffer.h
 include/tg_owt/modules/audio_processing/agc2/compute_interpolated_gain_curve.h
 include/tg_owt/modules/audio_processing/agc2/cpu_features.h
 include/tg_owt/modules/audio_processing/agc2/fixed_digital_level_estimator.h
 include/tg_owt/modules/audio_processing/agc2/gain_applier.h
+include/tg_owt/modules/audio_processing/agc2/gain_map_internal.h
 include/tg_owt/modules/audio_processing/agc2/interpolated_gain_curve.h
 include/tg_owt/modules/audio_processing/agc2/limiter.h
 include/tg_owt/modules/audio_processing/agc2/limiter_db_gain_curve.h
@@ -946,6 +968,7 @@ include/tg_owt/modules/audio_processing/agc2/rnn_vad/test_utils.h
 include/tg_owt/modules/audio_processing/agc2/rnn_vad/vector_math.h
 include/tg_owt/modules/audio_processing/agc2/saturation_protector.h
 include/tg_owt/modules/audio_processing/agc2/saturation_protector_buffer.h
+include/tg_owt/modules/audio_processing/agc2/speech_probability_buffer.h
 include/tg_owt/modules/audio_processing/agc2/vad_wrapper.h
 include/tg_owt/modules/audio_processing/agc2/vector_float_frame.h
 include/tg_owt/modules/audio_processing/audio_buffer.h
@@ -1022,10 +1045,10 @@ include/tg_owt/modules/audio_processing/transient/moving_moments.h
 include/tg_owt/modules/audio_processing/transient/transient_detector.h
 include/tg_owt/modules/audio_processing/transient/transient_suppressor.h
 include/tg_owt/modules/audio_processing/transient/transient_suppressor_impl.h
+include/tg_owt/modules/audio_processing/transient/voice_probability_delay_unit.h
 include/tg_owt/modules/audio_processing/transient/windows_private.h
 include/tg_owt/modules/audio_processing/transient/wpd_node.h
 include/tg_owt/modules/audio_processing/transient/wpd_tree.h
-include/tg_owt/modules/audio_processing/typing_detection.h
 include/tg_owt/modules/audio_processing/utility/cascaded_biquad_filter.h
 include/tg_owt/modules/audio_processing/utility/delay_estimator.h
 include/tg_owt/modules/audio_processing/utility/delay_estimator_internal.h
@@ -1076,7 +1099,9 @@ include/tg_owt/modules/congestion_controller/rtp/transport_feedback_demuxer.h
 include/tg_owt/modules/desktop_capture/blank_detector_desktop_capturer_wrapper.h
 include/tg_owt/modules/desktop_capture/cropped_desktop_frame.h
 include/tg_owt/modules/desktop_capture/cropping_window_capturer.h
+include/tg_owt/modules/desktop_capture/delegated_source_list_controller.h
 include/tg_owt/modules/desktop_capture/desktop_and_cursor_composer.h
+include/tg_owt/modules/desktop_capture/desktop_capture_metadata.h
 include/tg_owt/modules/desktop_capture/desktop_capture_metrics_helper.h
 include/tg_owt/modules/desktop_capture/desktop_capture_options.h
 include/tg_owt/modules/desktop_capture/desktop_capture_types.h
@@ -1098,9 +1123,15 @@ include/tg_owt/modules/desktop_capture/full_screen_window_detector.h
 include/tg_owt/modules/desktop_capture/linux/wayland/base_capturer_pipewire.h
 include/tg_owt/modules/desktop_capture/linux/wayland/egl_dmabuf.h
 include/tg_owt/modules/desktop_capture/linux/wayland/mouse_cursor_monitor_pipewire.h
+include/tg_owt/modules/desktop_capture/linux/wayland/portal_request_response.h
+include/tg_owt/modules/desktop_capture/linux/wayland/restore_token_manager.h
 include/tg_owt/modules/desktop_capture/linux/wayland/scoped_glib.h
+include/tg_owt/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.h
 include/tg_owt/modules/desktop_capture/linux/wayland/screencast_portal.h
+include/tg_owt/modules/desktop_capture/linux/wayland/screencast_stream_utils.h
 include/tg_owt/modules/desktop_capture/linux/wayland/shared_screencast_stream.h
+include/tg_owt/modules/desktop_capture/linux/wayland/xdg_desktop_portal_utils.h
+include/tg_owt/modules/desktop_capture/linux/wayland/xdg_session_details.h
 include/tg_owt/modules/desktop_capture/linux/x11/mouse_cursor_monitor_x11.h
 include/tg_owt/modules/desktop_capture/linux/x11/screen_capturer_x11.h
 include/tg_owt/modules/desktop_capture/linux/x11/shared_x_display.h
@@ -1125,6 +1156,7 @@ include/tg_owt/modules/desktop_capture/mouse_cursor_monitor.h
 include/tg_owt/modules/desktop_capture/resolution_tracker.h
 include/tg_owt/modules/desktop_capture/rgba_color.h
 include/tg_owt/modules/desktop_capture/screen_capture_frame_queue.h
+include/tg_owt/modules/desktop_capture/screen_capturer_fuchsia.h
 include/tg_owt/modules/desktop_capture/screen_capturer_helper.h
 include/tg_owt/modules/desktop_capture/screen_drawer.h
 include/tg_owt/modules/desktop_capture/screen_drawer_lock_posix.h
@@ -1163,16 +1195,14 @@ include/tg_owt/modules/desktop_capture/win/window_capturer_win_gdi.h
 include/tg_owt/modules/desktop_capture/window_finder.h
 include/tg_owt/modules/desktop_capture/window_finder_mac.h
 include/tg_owt/modules/desktop_capture/window_finder_win.h
-include/tg_owt/modules/include/module.h
 include/tg_owt/modules/include/module_common_types.h
 include/tg_owt/modules/include/module_common_types_public.h
 include/tg_owt/modules/include/module_fec_types.h
 include/tg_owt/modules/pacing/bitrate_prober.h
 include/tg_owt/modules/pacing/interval_budget.h
-include/tg_owt/modules/pacing/paced_sender.h
 include/tg_owt/modules/pacing/pacing_controller.h
 include/tg_owt/modules/pacing/packet_router.h
-include/tg_owt/modules/pacing/round_robin_packet_queue.h
+include/tg_owt/modules/pacing/prioritized_packet_queue.h
 include/tg_owt/modules/pacing/rtp_packet_pacer.h
 include/tg_owt/modules/pacing/task_queue_paced_sender.h
 include/tg_owt/modules/remote_bitrate_estimator/aimd_rate_control.h
@@ -1199,7 +1229,6 @@ include/tg_owt/modules/rtp_rtcp/include/rtp_header_extension_map.h
 include/tg_owt/modules/rtp_rtcp/include/rtp_packet_sender.h
 include/tg_owt/modules/rtp_rtcp/include/rtp_rtcp.h
 include/tg_owt/modules/rtp_rtcp/include/rtp_rtcp_defines.h
-include/tg_owt/modules/rtp_rtcp/include/ulpfec_receiver.h
 include/tg_owt/modules/rtp_rtcp/mocks/mock_recovered_packet_receiver.h
 include/tg_owt/modules/rtp_rtcp/mocks/mock_rtcp_bandwidth_observer.h
 include/tg_owt/modules/rtp_rtcp/mocks/mock_rtcp_rtt_stats.h
@@ -1229,7 +1258,6 @@ include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/bye.h
 include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/common_header.h
 include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/compound_packet.h
 include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/dlrr.h
-include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/extended_jitter_report.h
 include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/extended_reports.h
 include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/fir.h
 include/tg_owt/modules/rtp_rtcp/source/rtcp_packet/loss_notification.h
@@ -1294,7 +1322,7 @@ include/tg_owt/modules/rtp_rtcp/source/time_util.h
 include/tg_owt/modules/rtp_rtcp/source/tmmbr_help.h
 include/tg_owt/modules/rtp_rtcp/source/ulpfec_generator.h
 include/tg_owt/modules/rtp_rtcp/source/ulpfec_header_reader_writer.h
-include/tg_owt/modules/rtp_rtcp/source/ulpfec_receiver_impl.h
+include/tg_owt/modules/rtp_rtcp/source/ulpfec_receiver.h
 include/tg_owt/modules/rtp_rtcp/source/video_fec_generator.h
 include/tg_owt/modules/rtp_rtcp/source/video_rtp_depacketizer.h
 include/tg_owt/modules/rtp_rtcp/source/video_rtp_depacketizer_av1.h
@@ -1312,12 +1340,10 @@ include/tg_owt/modules/third_party/portaudio/pa_memorybarrier.h
 include/tg_owt/modules/third_party/portaudio/pa_ringbuffer.h
 include/tg_owt/modules/utility/include/helpers_android.h
 include/tg_owt/modules/utility/include/jvm_android.h
-include/tg_owt/modules/utility/include/mock/mock_process_thread.h
-include/tg_owt/modules/utility/include/process_thread.h
-include/tg_owt/modules/utility/source/process_thread_impl.h
+include/tg_owt/modules/utility/maybe_worker_thread.h
 include/tg_owt/modules/video_capture/device_info_impl.h
-include/tg_owt/modules/video_capture/linux/device_info_linux.h
-include/tg_owt/modules/video_capture/linux/video_capture_linux.h
+include/tg_owt/modules/video_capture/linux/device_info_v4l2.h
+include/tg_owt/modules/video_capture/linux/video_capture_v4l2.h
 include/tg_owt/modules/video_capture/video_capture.h
 include/tg_owt/modules/video_capture/video_capture_config.h
 include/tg_owt/modules/video_capture/video_capture_defines.h
@@ -1328,12 +1354,9 @@ include/tg_owt/modules/video_capture/windows/help_functions_ds.h
 include/tg_owt/modules/video_capture/windows/sink_filter_ds.h
 include/tg_owt/modules/video_capture/windows/video_capture_ds.h
 include/tg_owt/modules/video_coding/chain_diff_calculator.h
-include/tg_owt/modules/video_coding/codec_timer.h
 include/tg_owt/modules/video_coding/codecs/av1/av1_svc_config.h
 include/tg_owt/modules/video_coding/codecs/av1/dav1d_decoder.h
-include/tg_owt/modules/video_coding/codecs/av1/libaom_av1_decoder.h
 include/tg_owt/modules/video_coding/codecs/av1/libaom_av1_encoder.h
-include/tg_owt/modules/video_coding/codecs/av1/libaom_av1_encoder_supported.h
 include/tg_owt/modules/video_coding/codecs/h264/h264_color_space.h
 include/tg_owt/modules/video_coding/codecs/h264/h264_decoder_impl.h
 include/tg_owt/modules/video_coding/codecs/h264/h264_encoder_impl.h
@@ -1362,6 +1385,7 @@ include/tg_owt/modules/video_coding/codecs/vp8/libvpx_vp8_decoder.h
 include/tg_owt/modules/video_coding/codecs/vp8/libvpx_vp8_encoder.h
 include/tg_owt/modules/video_coding/codecs/vp8/screenshare_layers.h
 include/tg_owt/modules/video_coding/codecs/vp8/temporal_layers.h
+include/tg_owt/modules/video_coding/codecs/vp8/vp8_scalability.h
 include/tg_owt/modules/video_coding/codecs/vp9/include/vp9.h
 include/tg_owt/modules/video_coding/codecs/vp9/include/vp9_globals.h
 include/tg_owt/modules/video_coding/codecs/vp9/libvpx_vp9_decoder.h
@@ -1370,14 +1394,12 @@ include/tg_owt/modules/video_coding/codecs/vp9/svc_config.h
 include/tg_owt/modules/video_coding/codecs/vp9/vp9_frame_buffer_pool.h
 include/tg_owt/modules/video_coding/decoder_database.h
 include/tg_owt/modules/video_coding/decoding_state.h
-include/tg_owt/modules/video_coding/deprecated/nack_module.h
 include/tg_owt/modules/video_coding/encoded_frame.h
 include/tg_owt/modules/video_coding/event_wrapper.h
 include/tg_owt/modules/video_coding/fec_controller_default.h
 include/tg_owt/modules/video_coding/fec_rate_table.h
 include/tg_owt/modules/video_coding/frame_buffer.h
 include/tg_owt/modules/video_coding/frame_buffer2.h
-include/tg_owt/modules/video_coding/frame_buffer3.h
 include/tg_owt/modules/video_coding/frame_dependencies_calculator.h
 include/tg_owt/modules/video_coding/frame_helpers.h
 include/tg_owt/modules/video_coding/frame_object.h
@@ -1392,11 +1414,9 @@ include/tg_owt/modules/video_coding/include/video_codec_interface.h
 include/tg_owt/modules/video_coding/include/video_coding.h
 include/tg_owt/modules/video_coding/include/video_coding_defines.h
 include/tg_owt/modules/video_coding/include/video_error_codes.h
-include/tg_owt/modules/video_coding/inter_frame_delay.h
 include/tg_owt/modules/video_coding/internal_defines.h
 include/tg_owt/modules/video_coding/jitter_buffer.h
 include/tg_owt/modules/video_coding/jitter_buffer_common.h
-include/tg_owt/modules/video_coding/jitter_estimator.h
 include/tg_owt/modules/video_coding/loss_notification_controller.h
 include/tg_owt/modules/video_coding/media_opt_util.h
 include/tg_owt/modules/video_coding/nack_requester.h
@@ -1409,9 +1429,9 @@ include/tg_owt/modules/video_coding/rtp_generic_ref_finder.h
 include/tg_owt/modules/video_coding/rtp_seq_num_only_ref_finder.h
 include/tg_owt/modules/video_coding/rtp_vp8_ref_finder.h
 include/tg_owt/modules/video_coding/rtp_vp9_ref_finder.h
-include/tg_owt/modules/video_coding/rtt_filter.h
 include/tg_owt/modules/video_coding/session_info.h
 include/tg_owt/modules/video_coding/svc/create_scalability_structure.h
+include/tg_owt/modules/video_coding/svc/scalability_mode_util.h
 include/tg_owt/modules/video_coding/svc/scalability_structure_full_svc.h
 include/tg_owt/modules/video_coding/svc/scalability_structure_key_svc.h
 include/tg_owt/modules/video_coding/svc/scalability_structure_l2t2_key_shift.h
@@ -1421,9 +1441,13 @@ include/tg_owt/modules/video_coding/svc/scalable_video_controller.h
 include/tg_owt/modules/video_coding/svc/scalable_video_controller_no_layering.h
 include/tg_owt/modules/video_coding/svc/svc_rate_allocator.h
 include/tg_owt/modules/video_coding/test/stream_generator.h
-include/tg_owt/modules/video_coding/timestamp_map.h
-include/tg_owt/modules/video_coding/timing.h
-include/tg_owt/modules/video_coding/unique_timestamp_counter.h
+include/tg_owt/modules/video_coding/timing/codec_timer.h
+include/tg_owt/modules/video_coding/timing/frame_delay_variation_kalman_filter.h
+include/tg_owt/modules/video_coding/timing/inter_frame_delay.h
+include/tg_owt/modules/video_coding/timing/jitter_estimator.h
+include/tg_owt/modules/video_coding/timing/rtt_filter.h
+include/tg_owt/modules/video_coding/timing/timestamp_extrapolator.h
+include/tg_owt/modules/video_coding/timing/timing.h
 include/tg_owt/modules/video_coding/utility/bandwidth_quality_scaler.h
 include/tg_owt/modules/video_coding/utility/decoded_frames_history.h
 include/tg_owt/modules/video_coding/utility/frame_dropper.h
@@ -1436,18 +1460,12 @@ include/tg_owt/modules/video_coding/utility/quality_scaler.h
 include/tg_owt/modules/video_coding/utility/simulcast_rate_allocator.h
 include/tg_owt/modules/video_coding/utility/simulcast_test_fixture_impl.h
 include/tg_owt/modules/video_coding/utility/simulcast_utility.h
+include/tg_owt/modules/video_coding/utility/vp8_constants.h
 include/tg_owt/modules/video_coding/utility/vp8_header_parser.h
 include/tg_owt/modules/video_coding/utility/vp9_constants.h
 include/tg_owt/modules/video_coding/utility/vp9_uncompressed_header_parser.h
 include/tg_owt/modules/video_coding/video_coding_impl.h
 include/tg_owt/modules/video_coding/video_receiver2.h
-include/tg_owt/modules/video_processing/util/denoiser_filter.h
-include/tg_owt/modules/video_processing/util/denoiser_filter_c.h
-include/tg_owt/modules/video_processing/util/denoiser_filter_neon.h
-include/tg_owt/modules/video_processing/util/denoiser_filter_sse2.h
-include/tg_owt/modules/video_processing/util/noise_estimation.h
-include/tg_owt/modules/video_processing/util/skin_detection.h
-include/tg_owt/modules/video_processing/video_denoiser.h
 include/tg_owt/net/dcsctp/common/handover_testing.h
 include/tg_owt/net/dcsctp/common/internal_types.h
 include/tg_owt/net/dcsctp/common/math.h
@@ -1512,11 +1530,13 @@ include/tg_owt/net/dcsctp/public/dcsctp_options.h
 include/tg_owt/net/dcsctp/public/dcsctp_socket.h
 include/tg_owt/net/dcsctp/public/dcsctp_socket_factory.h
 include/tg_owt/net/dcsctp/public/mock_dcsctp_socket.h
+include/tg_owt/net/dcsctp/public/mock_dcsctp_socket_factory.h
 include/tg_owt/net/dcsctp/public/packet_observer.h
 include/tg_owt/net/dcsctp/public/text_pcap_packet_observer.h
 include/tg_owt/net/dcsctp/public/timeout.h
 include/tg_owt/net/dcsctp/public/types.h
 include/tg_owt/net/dcsctp/rx/data_tracker.h
+include/tg_owt/net/dcsctp/rx/interleaved_reassembly_streams.h
 include/tg_owt/net/dcsctp/rx/reassembly_queue.h
 include/tg_owt/net/dcsctp/rx/reassembly_streams.h
 include/tg_owt/net/dcsctp/rx/traditional_reassembly_streams.h
@@ -1543,6 +1563,9 @@ include/tg_owt/net/dcsctp/tx/retransmission_queue.h
 include/tg_owt/net/dcsctp/tx/retransmission_timeout.h
 include/tg_owt/net/dcsctp/tx/rr_send_queue.h
 include/tg_owt/net/dcsctp/tx/send_queue.h
+include/tg_owt/net/dcsctp/tx/stream_scheduler.h
+include/tg_owt/p2p/base/active_ice_controller_factory_interface.h
+include/tg_owt/p2p/base/active_ice_controller_interface.h
 include/tg_owt/p2p/base/async_stun_tcp_socket.h
 include/tg_owt/p2p/base/basic_async_resolver_factory.h
 include/tg_owt/p2p/base/basic_ice_controller.h
@@ -1558,11 +1581,16 @@ include/tg_owt/p2p/base/fake_dtls_transport.h
 include/tg_owt/p2p/base/fake_ice_transport.h
 include/tg_owt/p2p/base/fake_packet_transport.h
 include/tg_owt/p2p/base/fake_port_allocator.h
+include/tg_owt/p2p/base/ice_agent_interface.h
 include/tg_owt/p2p/base/ice_controller_factory_interface.h
 include/tg_owt/p2p/base/ice_controller_interface.h
 include/tg_owt/p2p/base/ice_credentials_iterator.h
+include/tg_owt/p2p/base/ice_switch_reason.h
 include/tg_owt/p2p/base/ice_transport_internal.h
+include/tg_owt/p2p/base/mock_active_ice_controller.h
 include/tg_owt/p2p/base/mock_async_resolver.h
+include/tg_owt/p2p/base/mock_ice_agent.h
+include/tg_owt/p2p/base/mock_ice_controller.h
 include/tg_owt/p2p/base/mock_ice_transport.h
 include/tg_owt/p2p/base/p2p_constants.h
 include/tg_owt/p2p/base/p2p_transport_channel.h
@@ -1586,6 +1614,7 @@ include/tg_owt/p2p/base/transport_info.h
 include/tg_owt/p2p/base/turn_port.h
 include/tg_owt/p2p/base/turn_server.h
 include/tg_owt/p2p/base/udp_port.h
+include/tg_owt/p2p/base/wrapping_active_ice_controller.h
 include/tg_owt/p2p/client/basic_port_allocator.h
 include/tg_owt/p2p/client/relay_port_factory_interface.h
 include/tg_owt/p2p/client/turn_port_factory.h
@@ -1594,7 +1623,6 @@ include/tg_owt/pc/audio_rtp_receiver.h
 include/tg_owt/pc/audio_track.h
 include/tg_owt/pc/channel.h
 include/tg_owt/pc/channel_interface.h
-include/tg_owt/pc/channel_manager.h
 include/tg_owt/pc/connection_context.h
 include/tg_owt/pc/data_channel_controller.h
 include/tg_owt/pc/data_channel_utils.h
@@ -1608,6 +1636,8 @@ include/tg_owt/pc/jitter_buffer_delay.h
 include/tg_owt/pc/jsep_transport.h
 include/tg_owt/pc/jsep_transport_collection.h
 include/tg_owt/pc/jsep_transport_controller.h
+include/tg_owt/pc/legacy_stats_collector.h
+include/tg_owt/pc/legacy_stats_collector_interface.h
 include/tg_owt/pc/local_audio_source.h
 include/tg_owt/pc/media_protocol_names.h
 include/tg_owt/pc/media_session.h
@@ -1621,6 +1651,7 @@ include/tg_owt/pc/peer_connection_factory_proxy.h
 include/tg_owt/pc/peer_connection_internal.h
 include/tg_owt/pc/peer_connection_message_handler.h
 include/tg_owt/pc/peer_connection_proxy.h
+include/tg_owt/pc/peer_connection_sdp_methods.h
 include/tg_owt/pc/peer_connection_wrapper.h
 include/tg_owt/pc/proxy.h
 include/tg_owt/pc/remote_audio_source.h
@@ -1638,7 +1669,6 @@ include/tg_owt/pc/rtp_transmission_manager.h
 include/tg_owt/pc/rtp_transport.h
 include/tg_owt/pc/rtp_transport_internal.h
 include/tg_owt/pc/sctp_data_channel.h
-include/tg_owt/pc/sctp_data_channel_transport.h
 include/tg_owt/pc/sctp_transport.h
 include/tg_owt/pc/sctp_utils.h
 include/tg_owt/pc/sdp_offer_answer.h
@@ -1650,12 +1680,10 @@ include/tg_owt/pc/simulcast_description.h
 include/tg_owt/pc/srtp_filter.h
 include/tg_owt/pc/srtp_session.h
 include/tg_owt/pc/srtp_transport.h
-include/tg_owt/pc/stats_collector.h
-include/tg_owt/pc/stats_collector_interface.h
 include/tg_owt/pc/stream_collection.h
 include/tg_owt/pc/test/android_test_initializer.h
 include/tg_owt/pc/test/fake_audio_capture_module.h
-include/tg_owt/pc/test/fake_data_channel_provider.h
+include/tg_owt/pc/test/fake_data_channel_controller.h
 include/tg_owt/pc/test/fake_peer_connection_base.h
 include/tg_owt/pc/test/fake_peer_connection_for_stats.h
 include/tg_owt/pc/test/fake_periodic_video_source.h
@@ -1667,6 +1695,7 @@ include/tg_owt/pc/test/frame_generator_capturer_video_track_source.h
 include/tg_owt/pc/test/integration_test_helpers.h
 include/tg_owt/pc/test/mock_channel_interface.h
 include/tg_owt/pc/test/mock_data_channel.h
+include/tg_owt/pc/test/mock_peer_connection_internal.h
 include/tg_owt/pc/test/mock_peer_connection_observers.h
 include/tg_owt/pc/test/mock_rtp_receiver_internal.h
 include/tg_owt/pc/test/mock_rtp_sender_internal.h
@@ -1689,15 +1718,12 @@ include/tg_owt/pc/video_track_source_proxy.h
 include/tg_owt/pc/webrtc_sdp.h
 include/tg_owt/pc/webrtc_session_description_factory.h
 include/tg_owt/rtc_base/arraysize.h
-include/tg_owt/rtc_base/async_invoker.h
-include/tg_owt/rtc_base/async_invoker_inl.h
 include/tg_owt/rtc_base/async_packet_socket.h
 include/tg_owt/rtc_base/async_resolver.h
 include/tg_owt/rtc_base/async_resolver_interface.h
 include/tg_owt/rtc_base/async_socket.h
 include/tg_owt/rtc_base/async_tcp_socket.h
 include/tg_owt/rtc_base/async_udp_socket.h
-include/tg_owt/rtc_base/atomic_ops.h
 include/tg_owt/rtc_base/bit_buffer.h
 include/tg_owt/rtc_base/bitstream_reader.h
 include/tg_owt/rtc_base/boringssl_certificate.h
@@ -1711,15 +1737,12 @@ include/tg_owt/rtc_base/byte_order.h
 include/tg_owt/rtc_base/callback_list.h
 include/tg_owt/rtc_base/checks.h
 include/tg_owt/rtc_base/compile_assert_c.h
-include/tg_owt/rtc_base/containers/as_const.h
 include/tg_owt/rtc_base/containers/flat_map.h
 include/tg_owt/rtc_base/containers/flat_set.h
 include/tg_owt/rtc_base/containers/flat_tree.h
 include/tg_owt/rtc_base/containers/identity.h
 include/tg_owt/rtc_base/containers/invoke.h
 include/tg_owt/rtc_base/containers/move_only_int.h
-include/tg_owt/rtc_base/containers/not_fn.h
-include/tg_owt/rtc_base/containers/void_t.h
 include/tg_owt/rtc_base/copy_on_write_buffer.h
 include/tg_owt/rtc_base/cpu_time.h
 include/tg_owt/rtc_base/crc32.h
@@ -1737,7 +1760,6 @@ include/tg_owt/rtc_base/experiments/encoder_info_settings.h
 include/tg_owt/rtc_base/experiments/field_trial_list.h
 include/tg_owt/rtc_base/experiments/field_trial_parser.h
 include/tg_owt/rtc_base/experiments/field_trial_units.h
-include/tg_owt/rtc_base/experiments/jitter_upper_bound_experiment.h
 include/tg_owt/rtc_base/experiments/keyframe_interval_settings.h
 include/tg_owt/rtc_base/experiments/min_video_bitrate_experiment.h
 include/tg_owt/rtc_base/experiments/normalize_simulcast_size_experiment.h
@@ -1754,7 +1776,6 @@ include/tg_owt/rtc_base/fake_network.h
 include/tg_owt/rtc_base/fake_ssl_identity.h
 include/tg_owt/rtc_base/file_rotating_stream.h
 include/tg_owt/rtc_base/firewall_socket_server.h
-include/tg_owt/rtc_base/format_macros.h
 include/tg_owt/rtc_base/gtest_prod_util.h
 include/tg_owt/rtc_base/gunit.h
 include/tg_owt/rtc_base/helpers.h
@@ -1764,16 +1785,15 @@ include/tg_owt/rtc_base/ifaddrs_converter.h
 include/tg_owt/rtc_base/ignore_wundef.h
 include/tg_owt/rtc_base/internal/default_socket_server.h
 include/tg_owt/rtc_base/ip_address.h
-include/tg_owt/rtc_base/location.h
 include/tg_owt/rtc_base/log_sinks.h
 include/tg_owt/rtc_base/logging.h
 include/tg_owt/rtc_base/mdns_responder_interface.h
 include/tg_owt/rtc_base/memory/aligned_malloc.h
+include/tg_owt/rtc_base/memory/always_valid_pointer.h
 include/tg_owt/rtc_base/memory/fifo_buffer.h
 include/tg_owt/rtc_base/memory_stream.h
 include/tg_owt/rtc_base/memory_usage.h
 include/tg_owt/rtc_base/message_digest.h
-include/tg_owt/rtc_base/message_handler.h
 include/tg_owt/rtc_base/nat_server.h
 include/tg_owt/rtc_base/nat_socket_factory.h
 include/tg_owt/rtc_base/nat_types.h
@@ -1795,7 +1815,7 @@ include/tg_owt/rtc_base/numerics/math_utils.h
 include/tg_owt/rtc_base/numerics/mod_ops.h
 include/tg_owt/rtc_base/numerics/moving_average.h
 include/tg_owt/rtc_base/numerics/moving_max_counter.h
-include/tg_owt/rtc_base/numerics/moving_median_filter.h
+include/tg_owt/rtc_base/numerics/moving_percentile_filter.h
 include/tg_owt/rtc_base/numerics/percentile_filter.h
 include/tg_owt/rtc_base/numerics/running_statistics.h
 include/tg_owt/rtc_base/numerics/safe_compare.h
@@ -1835,7 +1855,6 @@ include/tg_owt/rtc_base/rtc_certificate.h
 include/tg_owt/rtc_base/rtc_certificate_generator.h
 include/tg_owt/rtc_base/sanitizer.h
 include/tg_owt/rtc_base/server_socket_adapters.h
-include/tg_owt/rtc_base/sigslot_repeater.h
 include/tg_owt/rtc_base/sigslot_tester.h
 include/tg_owt/rtc_base/socket.h
 include/tg_owt/rtc_base/socket_adapters.h
@@ -1876,10 +1895,10 @@ include/tg_owt/rtc_base/system/file_wrapper.h
 include/tg_owt/rtc_base/system/gcd_helpers.h
 include/tg_owt/rtc_base/system/ignore_warnings.h
 include/tg_owt/rtc_base/system/inline.h
+include/tg_owt/rtc_base/system/no_cfi_icall.h
 include/tg_owt/rtc_base/system/no_unique_address.h
 include/tg_owt/rtc_base/system/rtc_export.h
 include/tg_owt/rtc_base/system/rtc_export_template.h
-include/tg_owt/rtc_base/system/thread_registry.h
 include/tg_owt/rtc_base/system/unused.h
 include/tg_owt/rtc_base/system/warn_current_thread_is_deadlocked.h
 include/tg_owt/rtc_base/system_time.h
@@ -1889,9 +1908,7 @@ include/tg_owt/rtc_base/task_queue_gcd.h
 include/tg_owt/rtc_base/task_queue_libevent.h
 include/tg_owt/rtc_base/task_queue_stdlib.h
 include/tg_owt/rtc_base/task_queue_win.h
-include/tg_owt/rtc_base/task_utils/pending_task_safety_flag.h
 include/tg_owt/rtc_base/task_utils/repeating_task.h
-include/tg_owt/rtc_base/task_utils/to_queued_task.h
 include/tg_owt/rtc_base/test_base64.h
 include/tg_owt/rtc_base/test_certificate_verifier.h
 include/tg_owt/rtc_base/test_client.h
@@ -1901,8 +1918,6 @@ include/tg_owt/rtc_base/third_party/base64/base64.h
 include/tg_owt/rtc_base/third_party/sigslot/sigslot.h
 include/tg_owt/rtc_base/thread.h
 include/tg_owt/rtc_base/thread_annotations.h
-include/tg_owt/rtc_base/thread_message.h
-include/tg_owt/rtc_base/time/timestamp_extrapolator.h
 include/tg_owt/rtc_base/time_utils.h
 include/tg_owt/rtc_base/timestamp_aligner.h
 include/tg_owt/rtc_base/trace_event.h
@@ -1947,8 +1962,6 @@ include/tg_owt/sdk/android/src/jni/audio_device/audio_track_jni.h
 include/tg_owt/sdk/android/src/jni/audio_device/opensles_common.h
 include/tg_owt/sdk/android/src/jni/audio_device/opensles_player.h
 include/tg_owt/sdk/android/src/jni/audio_device/opensles_recorder.h
-include/tg_owt/sdk/android/src/jni/class_loader.h
-include/tg_owt/sdk/android/src/jni/class_reference_holder.h
 include/tg_owt/sdk/android/src/jni/encoded_image.h
 include/tg_owt/sdk/android/src/jni/jni_generator_helper.h
 include/tg_owt/sdk/android/src/jni/jni_helpers.h
@@ -2101,6 +2114,7 @@ include/tg_owt/sdk/objc/base/RTCLogging.h
 include/tg_owt/sdk/objc/base/RTCMacros.h
 include/tg_owt/sdk/objc/base/RTCMutableI420Buffer.h
 include/tg_owt/sdk/objc/base/RTCMutableYUVPlanarBuffer.h
+include/tg_owt/sdk/objc/base/RTCSSLCertificateVerifier.h
 include/tg_owt/sdk/objc/base/RTCVideoCapturer.h
 include/tg_owt/sdk/objc/base/RTCVideoCodecInfo.h
 include/tg_owt/sdk/objc/base/RTCVideoDecoder.h
@@ -2113,6 +2127,7 @@ include/tg_owt/sdk/objc/base/RTCVideoFrame.h
 include/tg_owt/sdk/objc/base/RTCVideoFrameBuffer.h
 include/tg_owt/sdk/objc/base/RTCVideoRenderer.h
 include/tg_owt/sdk/objc/base/RTCYUVPlanarBuffer.h
+include/tg_owt/sdk/objc/components/audio/RTCAudioDevice.h
 include/tg_owt/sdk/objc/components/audio/RTCAudioSession+Private.h
 include/tg_owt/sdk/objc/components/audio/RTCAudioSession.h
 include/tg_owt/sdk/objc/components/audio/RTCAudioSessionConfiguration.h
@@ -2162,6 +2177,8 @@ include/tg_owt/sdk/objc/helpers/UIDevice+RTCDevice.h
 include/tg_owt/sdk/objc/helpers/scoped_cftyperef.h
 include/tg_owt/sdk/objc/native/api/audio_device_module.h
 include/tg_owt/sdk/objc/native/api/network_monitor_factory.h
+include/tg_owt/sdk/objc/native/api/objc_audio_device_module.h
+include/tg_owt/sdk/objc/native/api/ssl_certificate_verifier.h
 include/tg_owt/sdk/objc/native/api/video_capturer.h
 include/tg_owt/sdk/objc/native/api/video_decoder_factory.h
 include/tg_owt/sdk/objc/native/api/video_encoder_factory.h
@@ -2174,6 +2191,8 @@ include/tg_owt/sdk/objc/native/src/audio/audio_session_observer.h
 include/tg_owt/sdk/objc/native/src/audio/helpers.h
 include/tg_owt/sdk/objc/native/src/audio/voice_processing_audio_unit.h
 include/tg_owt/sdk/objc/native/src/network_monitor_observer.h
+include/tg_owt/sdk/objc/native/src/objc_audio_device.h
+include/tg_owt/sdk/objc/native/src/objc_audio_device_delegate.h
 include/tg_owt/sdk/objc/native/src/objc_frame_buffer.h
 include/tg_owt/sdk/objc/native/src/objc_network_monitor.h
 include/tg_owt/sdk/objc/native/src/objc_video_decoder_factory.h
@@ -2204,6 +2223,7 @@ include/tg_owt/third_party/abseil-cpp/absl/base/internal/atomic_hook.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/atomic_hook_test_helper.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/cycleclock.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/direct_mmap.h
+include/tg_owt/third_party/abseil-cpp/absl/base/internal/dynamic_annotations.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/endian.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/errno_saver.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/exception_safety_testing.h
@@ -2217,6 +2237,7 @@ include/tg_owt/third_party/abseil-cpp/absl/base/internal/invoke.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/low_level_alloc.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/low_level_scheduling.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/per_thread_tls.h
+include/tg_owt/third_party/abseil-cpp/absl/base/internal/prefetch.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/pretty_function.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/raw_logging.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/scheduling_mode.h
@@ -2225,6 +2246,7 @@ include/tg_owt/third_party/abseil-cpp/absl/base/internal/spinlock.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/spinlock_wait.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/strerror.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/sysinfo.h
+include/tg_owt/third_party/abseil-cpp/absl/base/internal/thread_annotations.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/thread_identity.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/throw_delegate.h
 include/tg_owt/third_party/abseil-cpp/absl/base/internal/tsan_mutex_interface.h
@@ -2259,10 +2281,9 @@ include/tg_owt/third_party/abseil-cpp/absl/container/internal/hash_policy_traits
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/hashtable_debug.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/hashtable_debug_hooks.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/hashtablez_sampler.h
-include/tg_owt/third_party/abseil-cpp/absl/container/internal/have_sse.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/inlined_vector.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/layout.h
-include/tg_owt/third_party/abseil-cpp/absl/container/internal/node_hash_policy.h
+include/tg_owt/third_party/abseil-cpp/absl/container/internal/node_slot_policy.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/raw_hash_map.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/raw_hash_set.h
 include/tg_owt/third_party/abseil-cpp/absl/container/internal/test_instance_tracker.h
@@ -2307,8 +2328,10 @@ include/tg_owt/third_party/abseil-cpp/absl/flags/parse.h
 include/tg_owt/third_party/abseil-cpp/absl/flags/reflection.h
 include/tg_owt/third_party/abseil-cpp/absl/flags/usage.h
 include/tg_owt/third_party/abseil-cpp/absl/flags/usage_config.h
+include/tg_owt/third_party/abseil-cpp/absl/functional/any_invocable.h
 include/tg_owt/third_party/abseil-cpp/absl/functional/bind_front.h
 include/tg_owt/third_party/abseil-cpp/absl/functional/function_ref.h
+include/tg_owt/third_party/abseil-cpp/absl/functional/internal/any_invocable.h
 include/tg_owt/third_party/abseil-cpp/absl/functional/internal/front_binder.h
 include/tg_owt/third_party/abseil-cpp/absl/functional/internal/function_ref.h
 include/tg_owt/third_party/abseil-cpp/absl/hash/hash.h
@@ -2378,12 +2401,15 @@ include/tg_owt/third_party/abseil-cpp/absl/status/statusor.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/ascii.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/charconv.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/cord.h
+include/tg_owt/third_party/abseil-cpp/absl/strings/cord_analysis.h
+include/tg_owt/third_party/abseil-cpp/absl/strings/cord_buffer.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/cord_test_helpers.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/cordz_test_helpers.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/escaping.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/internal/char_map.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/internal/charconv_bigint.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/internal/charconv_parse.h
+include/tg_owt/third_party/abseil-cpp/absl/strings/internal/cord_data_edge.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/internal/cord_internal.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/internal/cord_rep_btree.h
 include/tg_owt/third_party/abseil-cpp/absl/strings/internal/cord_rep_btree_navigator.h
@@ -2593,6 +2619,7 @@ include/tg_owt/third_party/libyuv/include/libyuv/convert_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/convert_from.h
 include/tg_owt/third_party/libyuv/include/libyuv/convert_from_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/cpu_id.h
+include/tg_owt/third_party/libyuv/include/libyuv/loongson_intrinsics.h
 include/tg_owt/third_party/libyuv/include/libyuv/macros_msa.h
 include/tg_owt/third_party/libyuv/include/libyuv/mjpeg_decoder.h
 include/tg_owt/third_party/libyuv/include/libyuv/planar_functions.h
@@ -2602,6 +2629,7 @@ include/tg_owt/third_party/libyuv/include/libyuv/rotate_row.h
 include/tg_owt/third_party/libyuv/include/libyuv/row.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale_argb.h
+include/tg_owt/third_party/libyuv/include/libyuv/scale_rgb.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale_row.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale_uv.h
 include/tg_owt/third_party/libyuv/include/libyuv/version.h
@@ -2791,14 +2819,15 @@ include/tg_owt/video/adaptation/video_stream_encoder_resource.h
 include/tg_owt/video/adaptation/video_stream_encoder_resource_manager.h
 include/tg_owt/video/alignment_adjuster.h
 include/tg_owt/video/buffered_frame_decryptor.h
-include/tg_owt/video/call_stats.h
 include/tg_owt/video/call_stats2.h
+include/tg_owt/video/config/encoder_stream_factory.h
+include/tg_owt/video/config/simulcast.h
+include/tg_owt/video/config/video_encoder_config.h
 include/tg_owt/video/decode_synchronizer.h
 include/tg_owt/video/encoder_bitrate_adjuster.h
 include/tg_owt/video/encoder_overshoot_detector.h
 include/tg_owt/video/encoder_rtcp_feedback.h
 include/tg_owt/video/end_to_end_tests/multi_stream_tester.h
-include/tg_owt/video/frame_buffer_proxy.h
 include/tg_owt/video/frame_cadence_adapter.h
 include/tg_owt/video/frame_decode_scheduler.h
 include/tg_owt/video/frame_decode_timing.h
@@ -2806,11 +2835,11 @@ include/tg_owt/video/frame_dumping_decoder.h
 include/tg_owt/video/frame_encode_metadata_writer.h
 include/tg_owt/video/quality_limitation_reason_tracker.h
 include/tg_owt/video/quality_threshold.h
-include/tg_owt/video/receive_statistics_proxy.h
 include/tg_owt/video/receive_statistics_proxy2.h
+include/tg_owt/video/render/incoming_video_stream.h
+include/tg_owt/video/render/video_render_frames.h
 include/tg_owt/video/report_block_stats.h
 include/tg_owt/video/rtp_streams_synchronizer2.h
-include/tg_owt/video/rtp_video_stream_receiver.h
 include/tg_owt/video/rtp_video_stream_receiver2.h
 include/tg_owt/video/rtp_video_stream_receiver_frame_transformer_delegate.h
 include/tg_owt/video/send_delay_stats.h
@@ -2820,9 +2849,9 @@ include/tg_owt/video/stream_synchronization.h
 include/tg_owt/video/task_queue_frame_decode_scheduler.h
 include/tg_owt/video/test/mock_video_stream_encoder.h
 include/tg_owt/video/transport_adapter.h
+include/tg_owt/video/unique_timestamp_counter.h
 include/tg_owt/video/video_analyzer.h
 include/tg_owt/video/video_loopback.h
-include/tg_owt/video/video_quality_observer.h
 include/tg_owt/video/video_quality_observer2.h
 include/tg_owt/video/video_quality_test.h
 include/tg_owt/video/video_receive_stream2.h
@@ -2830,10 +2859,12 @@ include/tg_owt/video/video_receive_stream_timeout_tracker.h
 include/tg_owt/video/video_send_stream.h
 include/tg_owt/video/video_send_stream_impl.h
 include/tg_owt/video/video_source_sink_controller.h
-include/tg_owt/video/video_stream_decoder.h
+include/tg_owt/video/video_stream_buffer_controller.h
 include/tg_owt/video/video_stream_decoder2.h
 include/tg_owt/video/video_stream_decoder_impl.h
 include/tg_owt/video/video_stream_encoder.h
+include/tg_owt/video/video_stream_encoder_interface.h
+include/tg_owt/video/video_stream_encoder_observer.h
 lib/cmake/tg_owt/tg_owtConfig.cmake
 lib/cmake/tg_owt/tg_owtTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/tg_owt/tg_owtTargets.cmake
@@ -2841,6 +2872,7 @@ lib/libtg_owt.a
 @dir include/tg_owt/api/audio/test
 @dir include/tg_owt/api/audio_codecs/test
 @dir include/tg_owt/api/g3doc
+@dir include/tg_owt/api/test/metrics/proto
 @dir include/tg_owt/api/video_codecs/test
 @dir include/tg_owt/audio/test/unittests
 @dir include/tg_owt/logging/g3doc
@@ -2865,6 +2897,7 @@ lib/libtg_owt.a
 @dir include/tg_owt/modules/audio_processing/transient/test
 @dir include/tg_owt/modules/desktop_capture/win/cursor_test_data
 @dir include/tg_owt/modules/pacing/g3doc
+@dir include/tg_owt/modules/utility/source
 @dir include/tg_owt/modules/video_capture/test
 @dir include/tg_owt/modules/video_coding/codecs/h264/test
 @dir include/tg_owt/modules/video_coding/codecs/multiplex/test
@@ -2872,7 +2905,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/modules/video_coding/codecs/vp8/test
 @dir include/tg_owt/modules/video_coding/codecs/vp9/test
 @dir include/tg_owt/modules/video_coding/g3doc
-@dir include/tg_owt/modules/video_processing/test
 @dir include/tg_owt/p2p/g3doc
 @dir include/tg_owt/pc/g3doc
 @dir include/tg_owt/pc/scenario_tests
@@ -2888,6 +2920,7 @@ lib/libtg_owt.a
 @dir include/tg_owt/sdk/android/src/java/org/webrtc/audio
 @dir include/tg_owt/sdk/android/tests/resources
 @dir include/tg_owt/sdk/android/tests/src/org/webrtc/audio
+@dir include/tg_owt/stats/g3doc
 @dir include/tg_owt/system_wrappers/source
 @dir include/tg_owt/third_party/abseil-cpp/.github/ISSUE_TEMPLATE
 @dir include/tg_owt/third_party/abseil-cpp/CMake/Googletest
@@ -2912,7 +2945,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/third_party/abseil-cpp/absl/time/internal/cctz/testdata/zoneinfo/Mexico
 @dir include/tg_owt/third_party/abseil-cpp/absl/time/internal/cctz/testdata/zoneinfo/Pacific
 @dir include/tg_owt/third_party/abseil-cpp/absl/time/internal/cctz/testdata/zoneinfo/US
-@dir include/tg_owt/third_party/abseil-cpp/patches
 @dir include/tg_owt/third_party/crc32c/src/.github/workflows
 @dir include/tg_owt/third_party/crc32c/src/third_party/benchmark
 @dir include/tg_owt/third_party/crc32c/src/third_party/glog
@@ -2926,11 +2958,11 @@ lib/libtg_owt.a
 @dir include/tg_owt/third_party/libsrtp/srtp
 @dir include/tg_owt/third_party/libyuv/build_overrides
 @dir include/tg_owt/third_party/libyuv/docs
+@dir include/tg_owt/third_party/libyuv/infra/config
 @dir include/tg_owt/third_party/libyuv/source
 @dir include/tg_owt/third_party/libyuv/tools_libyuv/autoroller/unittests/testdata
 @dir include/tg_owt/third_party/libyuv/tools_libyuv/msan
 @dir include/tg_owt/third_party/libyuv/tools_libyuv/ubsan
-@dir include/tg_owt/third_party/libyuv/tools_libyuv/valgrind/memcheck
 @dir include/tg_owt/third_party/libyuv/unit_test/testdata
 @dir include/tg_owt/third_party/openh264/src/autotest/codec_comparision
 @dir include/tg_owt/third_party/openh264/src/autotest/performanceTest/android

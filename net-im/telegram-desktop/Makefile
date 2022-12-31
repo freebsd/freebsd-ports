@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.4.1
+DISTVERSION=	4.5.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -28,7 +28,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libdispatch.so:devel/libdispatch \
-		libenchant-2.so:textproc/enchant2 \
 		libhunspell-1.7.so:textproc/hunspell \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
@@ -73,9 +72,7 @@ USE_GL=		gl
 USE_GNOME=	glib20 glibmm26
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xtst
 
-CMAKE_ARGS=	-DDESKTOP_APP_SPECIAL_TARGET="" -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop" \
-		-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
-		-Ddisable_autoupdate=1
+CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH}
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
 CMAKE_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS
@@ -89,19 +86,14 @@ NO_CCACHE=	yes
 # Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
 # If both of them are not installed, then voice calls do not work, but other functionalities still work.
-OPTIONS_DEFINE=		WEBKIT
 OPTIONS_DEFAULT=	ALSA
 OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
 
 AUDIO_DESC=	Audio backend for voice calls
-WEBKIT_DESC=	WebKit-gtk integration for payments
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-WEBKIT_CMAKE_BOOL_OFF=	DESKTOP_APP_DISABLE_WEBKITGTK
-WEBKIT_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
-WEBKIT_USE=	GNOME=cairo,gtk30
 
 # Telegram asks each custom build to have its own API ID and hash.
 TELEGRAM_API_HASH=	20a3432aab43f24bb4460fceac5ba38d
