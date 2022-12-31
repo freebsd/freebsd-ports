@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	7.1.0.20220805
+DISTVERSION=	7.2.0.20221221
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -30,10 +30,10 @@ USE_PERL5=	build
 USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
-GL_COMMIT=	09ed077d7fae5f825e18ff9a2004dcdd1b165edb
-GL_TUPLE=	qemu-project:keycodemapdb:e15649b83a78f89f57205927022115536d2c1698:keycodemapdb/ui/keycodemapdb \
-		qemu-project:dtc:e37c25677dc946a025002a394172788b3169b3ce:dtc/dtc \
-		qemu-project:meson:3fbcff1c2722988d05c5248f7ab54c53001b1ee1:meson/meson \
+GL_COMMIT=	222059a0fccf4af3be776fe35a5ea2d6a68f9a0b
+GL_TUPLE=	qemu-project:keycodemapdb:0c3623cfd9ecbcfe60bb8584a0e4c10bd48a4378:keycodemapdb/ui/keycodemapdb \
+		qemu-project:dtc:2cd89f862cdb04d91c5d59c5b39647f7d5d5b3b8:dtc/dtc \
+		qemu-project:meson:0544ffabf1f252494f6b9699a2b9007682fc322e:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:5a59dcec19327396a011a17fd924aed4fec416b3:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 
@@ -112,7 +112,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --mandir=man --extra-ldflags=-L\"/usr/lib\"
 		--extra-ldflags=-L\"${LOCALBASE}/lib\" --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
-		--enable-debug-info --python=${PYTHON_CMD} \
+		--enable-debug-info --python=${PYTHON_CMD} --disable-guest-agent \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .include <bsd.port.options.mk>
