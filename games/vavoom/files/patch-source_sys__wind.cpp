@@ -1,6 +1,6 @@
---- source/sys_wind.cpp.orig	2018-03-20 22:47:18.413282000 +0100
-+++ source/sys_wind.cpp	2018-03-20 22:51:38.847080000 +0100
-@@ -307,7 +307,7 @@
+--- source/sys_wind.cpp.orig	2022-12-31 03:37:54 UTC
++++ source/sys_wind.cpp
+@@ -307,7 +307,7 @@ int main(int argc, char **argv)
  {
  	try
  	{

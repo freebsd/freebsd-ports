@@ -1,6 +1,6 @@
---- source/misc.cpp.orig	2010-09-01 20:26:05.000000000 +0200
-+++ source/misc.cpp	2017-06-04 09:42:27.118366000 +0200
-@@ -119,7 +119,7 @@
+--- source/misc.cpp.orig	2022-12-31 03:37:54 UTC
++++ source/misc.cpp
+@@ -119,7 +119,7 @@ void FOutputDevice::Logf(EName Type, const char* Fmt, 
  
  void VLogSysError::Serialise(const char* V, EName)
  {
@@ -9,7 +9,7 @@
  }
  
  //==========================================================================
-@@ -130,7 +130,7 @@
+@@ -130,7 +130,7 @@ void VLogSysError::Serialise(const char* V, EName)
  
  void VLogHostError::Serialise(const char* V, EName)
  {

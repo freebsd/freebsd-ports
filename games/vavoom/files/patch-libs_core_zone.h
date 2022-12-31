@@ -1,5 +1,5 @@
---- libs/core/zone.h.orig	2017-06-04 12:56:34.206722000 +0200
-+++ libs/core/zone.h	2017-06-04 13:08:27.959596000 +0200
+--- libs/core/zone.h.orig	2022-12-31 03:37:53 UTC
++++ libs/core/zone.h
 @@ -27,88 +27,21 @@
  //**
  //**************************************************************************
@@ -15,20 +15,27 @@
 -void Z_Free(void* ptr, const char* FileName, int LineNumber);
 -
 -inline void* operator new(size_t Size, const char* FileName, int LineNumber)
--{
++static inline void* Z_Malloc(int size)
+ {
 -	return Z_Malloc(Size, FileName, LineNumber);
--}
--
++	return static_cast<void *>(operator new(size));
+ }
+ 
 -inline void operator delete(void* Ptr, const char* FileName, int LineNumber)
--{
++static inline void* Z_Calloc(int size)
+ {
 -	Z_Free(Ptr, FileName, LineNumber);
--}
--
++	return memset(Z_Malloc(size), 0, size);
+ }
+ 
 -inline void* operator new[](size_t Size, const char* FileName, int LineNumber)
--{
++static inline void Z_Free(void* ptr)
+ {
 -	return Z_Malloc(Size, FileName, LineNumber);
--}
--
++	char *p = (char *)ptr;
++	delete p;
+ }
+ 
 -inline void operator delete[](void* Ptr, const char* FileName, int LineNumber)
 -{
 -	Z_Free(Ptr, FileName, LineNumber);
@@ -74,25 +81,18 @@
 -}
 -
 -inline void operator delete(void* Ptr)
-+static inline void* Z_Malloc(int size)
- {
+-{
 -	Z_Free(Ptr);
-+	return static_cast<void *>(operator new(size));
- }
- 
+-}
+-
 -inline void* operator new[](size_t Size)
-+static inline void* Z_Calloc(int size)
- {
+-{
 -	return Z_Malloc(int(Size));
-+	return memset(Z_Malloc(size), 0, size);
- }
- 
+-}
+-
 -inline void operator delete[](void* Ptr)
-+static inline void Z_Free(void* ptr)
- {
+-{
 -	Z_Free(Ptr);
-+	char *p = (char *)ptr;
-+	delete p;
- }
- 
+-}
+-
 -#endif

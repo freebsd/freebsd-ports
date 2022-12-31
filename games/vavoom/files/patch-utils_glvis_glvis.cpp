@@ -1,6 +1,6 @@
---- utils/glvis/glvis.cpp.orig	2010-12-23 20:47:55.000000000 +0100
-+++ utils/glvis/glvis.cpp	2018-03-15 03:06:38.264012000 +0100
-@@ -158,7 +158,7 @@
+--- utils/glvis/glvis.cpp.orig	2022-12-31 03:37:54 UTC
++++ utils/glvis/glvis.cpp
+@@ -158,7 +158,7 @@ void TConsoleGLVis::DisplayMapDone(int accepts, int to
  static void ShowUsage()
  {
  	fprintf(stderr, "\nGLVIS version 1.6, Copyright (c)2000-2006 Janis "

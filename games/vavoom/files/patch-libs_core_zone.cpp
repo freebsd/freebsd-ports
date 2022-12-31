@@ -1,5 +1,5 @@
---- libs/core/zone.cpp.orig	2017-06-04 12:56:34.206304000 +0200
-+++ libs/core/zone.cpp	2017-06-04 13:02:53.920038000 +0200
+--- libs/core/zone.cpp.orig	2022-12-31 03:37:53 UTC
++++ libs/core/zone.cpp
 @@ -33,6 +33,8 @@
  
  #include "core.h"
@@ -9,8 +9,9 @@
  // MACROS ------------------------------------------------------------------
  
  #define SMALLID				0x22
-@@ -516,3 +518,4 @@
+@@ -515,4 +517,5 @@ void Z_Free(void* ptr)
+ 	unguard;
  }
  
- #endif
 +#endif
+ #endif

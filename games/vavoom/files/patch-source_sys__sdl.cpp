@@ -1,6 +1,6 @@
---- source/sys_sdl.cpp.orig	2017-06-04 12:56:34.438609000 +0200
-+++ source/sys_sdl.cpp	2017-06-04 13:11:31.567597000 +0200
-@@ -530,7 +530,7 @@
+--- source/sys_sdl.cpp.orig	2022-12-31 03:37:54 UTC
++++ source/sys_sdl.cpp
+@@ -530,7 +530,7 @@ int main(int argc,char** argv)
  	catch (VavoomError &e)
  	{
  		Host_Shutdown();
