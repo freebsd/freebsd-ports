@@ -568,7 +568,6 @@
     SUBDIR += openmpi
     SUBDIR += openmpi3
     SUBDIR += openntpd
-    SUBDIR += opennx
     SUBDIR += openpgm
     SUBDIR += openradius
     SUBDIR += openrsync
