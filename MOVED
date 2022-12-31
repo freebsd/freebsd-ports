@@ -17732,3 +17732,4 @@ editors/madedit||2022-12-31|Has expired: Abandoned project and use deprecated wx
 comms/ebook2cwgui||2022-12-31|Has expired: Abandoned project, last update 2013-01-23 and use deprecated wxgtk28
 databases/firebird25-client||2022-12-31|Has expired: Upstream Support ends on 2019-06-24
 databases/firebird25-server||2022-12-31|Has expired: Upstream Support ends on 2019-06-24
+multimedia/libkate||2022-12-31|Has expired: Obsolete format that never got any traction and no development in over 10 years

@@ -175,7 +175,6 @@
     SUBDIR += libfame
     SUBDIR += libgav1
     SUBDIR += libhdhomerun
-    SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmediaart
     SUBDIR += libmediainfo
