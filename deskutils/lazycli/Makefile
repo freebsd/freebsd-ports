@@ -1,0 +1,105 @@
+PORTNAME=	lazycli
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.15
+CATEGORIES=	deskutils
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Turn static CLI commands into TUIs with ease
+WWW=		https://github.com/jesseduffield/lazycli
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	jesseduffield
+
+CARGO_CRATES=	aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		arrayref-0.3.6 \
+		arrayvec-0.5.2 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.11 \
+		cassowary-0.3.0 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		clap-3.0.0-beta.2 \
+		clap_derive-3.0.0-beta.2 \
+		constant_time_eq-0.1.5 \
+		crossbeam-utils-0.8.3 \
+		crossterm-0.18.2 \
+		crossterm-0.19.0 \
+		crossterm_winapi-0.6.2 \
+		crossterm_winapi-0.7.0 \
+		ctor-0.1.17 \
+		difference-2.0.0 \
+		directories-3.0.1 \
+		dirs-sys-0.3.5 \
+		dtoa-0.4.7 \
+		either-1.6.1 \
+		getrandom-0.1.16 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.17 \
+		indexmap-1.6.1 \
+		instant-0.1.9 \
+		itertools-0.10.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.81 \
+		linked-hash-map-0.5.4 \
+		lock_api-0.4.2 \
+		log-0.4.11 \
+		memchr-2.3.4 \
+		mio-0.7.7 \
+		miow-0.3.6 \
+		ntapi-0.3.6 \
+		os_str_bytes-2.4.0 \
+		output_vt100-0.1.2 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.2 \
+		pretty_assertions-0.6.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.24 \
+		quote-1.0.8 \
+		redox_syscall-0.1.57 \
+		redox_users-0.3.5 \
+		regex-1.4.2 \
+		regex-syntax-0.6.21 \
+		rust-argon2-0.8.3 \
+		scopeguard-1.1.0 \
+		serde-1.0.118 \
+		serde_derive-1.0.118 \
+		serde_yaml-0.8.15 \
+		signal-hook-0.1.17 \
+		signal-hook-registry-1.3.0 \
+		smallvec-1.6.0 \
+		socket2-0.3.19 \
+		strsim-0.10.0 \
+		syn-1.0.57 \
+		termcolor-1.1.2 \
+		textwrap-0.12.1 \
+		thread_local-1.0.1 \
+		ticker-0.1.1 \
+		tui-0.14.0 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yaml-rust-0.4.5
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
