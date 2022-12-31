@@ -3,7 +3,7 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.07.2+576
+DISTVERSION=	2022.12.0+353
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -61,6 +61,7 @@ MAKE_ENV=	HOME=${WRKDIR} \
 		JAVA_HOME=${JAVA_HOME} \
 		PATH=${JAVA_HOME}/bin:${PATH} \
 		ANT_OPTS="-Duser.home=${WRKDIR}"
+LDFLAGS+=	-lexecinfo
 
 GWT_VERSION=	2.8.1
 GIN_VERSION=	2.1.2

@@ -1,22 +1,18 @@
---- src/cpp/core/system/PosixChildProcess.cpp.orig	2022-07-06 19:59:49 UTC
+--- src/cpp/core/system/PosixChildProcess.cpp.orig	2022-12-30 20:28:33 UTC
 +++ src/cpp/core/system/PosixChildProcess.cpp
-@@ -25,9 +25,12 @@
- #include <sys/ttycom.h>
- #include <sys/ioctl.h>
- #else
--#include <pty.h>
--#include <asm/ioctls.h>
--#include <sys/prctl.h>
-+//#include <pty.h>
-+//#include <asm/ioctls.h>
-+//#include <sys/prctl.h>
-+#include <sys/tty.h>
-+#include <sys/ttycom.h>
+@@ -28,6 +28,11 @@
+ #include <pty.h>
+ #include <asm/ioctls.h>
+ #include <sys/prctl.h>
++#elif defined(__FreeBSD__) // for forkpty
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <termios.h>
 +#include <libutil.h>
  #endif
  
  #include <sys/wait.h>
-@@ -807,7 +810,7 @@ Error ChildProcess::run()
+@@ -807,7 +812,7 @@ Error ChildProcess::run()
  
        if (options_.exitWithParent)
        {
