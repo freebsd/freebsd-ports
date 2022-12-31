@@ -592,19 +592,14 @@ MASTER_SITE_GNU+= \
 	https://ftp.gnu.org/gnu/%SUBDIR%/
 .endif
 
+# List: https://gnupg.org/download/mirrors.html (contains stale information)
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
-	https://gnupg.org/ftp/gcrypt/%SUBDIR%/ \
-	https://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
 	https://mirrors.dotsrc.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
+	https://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	https://artfiles.org/gnupg.org/%SUBDIR%/ \
-	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/
+	http://www.ring.gr.jp/pub/net/gnupg/%SUBDIR%/ \
+	https://gnupg.org/ftp/gcrypt/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
