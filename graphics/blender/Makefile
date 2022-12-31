@@ -80,11 +80,11 @@ CYCLESEMBR_ONLY_FOR_ARCHS_REASON=	embree only supports amd64
 CYCLESOSL_IMPLIES=		CYCLES
 CYCLESOSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
 CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
-				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}" \
+				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
 				-DOSL_SHADER_DIR:STRING="${LOCALBASE}/share/openshadinglanguage/shaders"
-CYCLESOSL_BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+CYCLESOSL_BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 CYCLESOSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
-CYCLESOSL_RUN_DEPENDS=		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+CYCLESOSL_RUN_DEPENDS=		llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 DDS_CMAKE_BOOL=			WITH_IMAGE_DDS
 DRACO_CMAKE_BOOL=		WITH_DRACO
 DRACO_USE=			LDCONFIG=${PYTHON_SITELIBDIR}
@@ -198,7 +198,7 @@ CMAKE_ARGS+=	-DWITH_CPU_SSE:BOOL=OFF
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LLVM_VER%%|${LLVM_VER}|g' \
+	${REINPLACE_CMD} -e 's|%%LLVM_VER%%|${LLVM_VERSION}|g' \
 		${WRKSRC}/intern/cycles/kernel/osl/CMakeLists.txt
 
 post-build:
