@@ -17726,3 +17726,4 @@ security/fprint_demo||2022-12-31|Has expired: Depends on deprecated library libf
 security/fprintd||2022-12-31|Has expired: Very outdated, unsupported upstream which now have systemd as a non optional requirement
 cad/linux-eagle5||2022-12-31|Has expired: Deprecated upstream, superseded by Autodesk EAGLE 9
 net-p2p/amule-devel|net-p2p/amule|2022-12-31|Has expired: Superseded by non development port
+graphics/comical||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28

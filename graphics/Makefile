@@ -108,7 +108,6 @@
     SUBDIR += colmap
     SUBDIR += colord
     SUBDIR += colord-gtk
-    SUBDIR += comical
     SUBDIR += compupic
     SUBDIR += converseen
     SUBDIR += corrupter
