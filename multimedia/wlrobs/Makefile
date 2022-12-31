@@ -1,7 +1,7 @@
 PORTNAME=	wlrobs
 DISTVERSIONPREFIX=	v
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL:C/.*-//}${EXTRACT_SUFX}?dummy=/
 
@@ -12,8 +12,7 @@ WWW=		https://hg.sr.ht/~scoopta/wlrobs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-BROKEN=		fails to build with obs-studio-28.1.2
-
+BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libobs.so:multimedia/obs-studio
 
