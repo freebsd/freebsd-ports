@@ -1,5 +1,5 @@
 PORTNAME=	tiffgt
-DISTVERSION=	4.4.0
+DISTVERSION=	4.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${DISTVERSION}
@@ -9,7 +9,7 @@ COMMENT=	X11 Tools for working with TIFF images
 WWW=		http://www.simplesystems.org/libtiff/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
@@ -38,6 +38,6 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/.libs/tiffgt ${STAGEDIR}/${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/tiffgt.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man-prebuilt/tiffgt.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
