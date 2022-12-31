@@ -12,7 +12,8 @@ USE_QT=		core gui script widgets buildtools:build
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 
-QT5_VERSION=	5.15.10
+# Source version from qt-dist.mk
+QT5_VERSION=	${_KDE_script_VERSION}
 
 # Link in QtScript port
 _QT5_ADDITIONAL_LINK=	script
