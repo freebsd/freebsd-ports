@@ -1847,6 +1847,7 @@ include/ITK-%%ITK_VER%%/itkMahalanobisDistanceMetric.hxx
 include/ITK-%%ITK_VER%%/itkMahalanobisDistanceThresholdImageFunction.h
 include/ITK-%%ITK_VER%%/itkMahalanobisDistanceThresholdImageFunction.hxx
 include/ITK-%%ITK_VER%%/itkMakeFilled.h
+include/ITK-%%ITK_VER%%/itkMakeUniqueForOverwrite.h
 include/ITK-%%ITK_VER%%/itkMalcolmSparseLevelSetImage.h
 include/ITK-%%ITK_VER%%/itkMalcolmSparseLevelSetImage.hxx
 include/ITK-%%ITK_VER%%/itkManhattanDistanceMetric.h

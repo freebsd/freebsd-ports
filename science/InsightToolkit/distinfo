@@ -1,8 +1,8 @@
-TIMESTAMP = 1668730575
-SHA256 (InsightData-5.3rc04.tar.gz) = 05d50103048d54e316df599ffb56a9a4d1cb7086618a052136500100a6ddaf10
-SIZE (InsightData-5.3rc04.tar.gz) = 297871255
-SHA256 (InsightSoftwareConsortium-ITK-v5.3rc04_GH0.tar.gz) = 0859ec9aaa02bf23366287c5a5b15ebea16b84e4f428c8b649067c93cf462030
-SIZE (InsightSoftwareConsortium-ITK-v5.3rc04_GH0.tar.gz) = 21608648
+TIMESTAMP = 1672472473
+SHA256 (InsightData-5.3.0.tar.gz) = 53f8be9e5b9945993a23985ea6d2a18724b5ccbd47103e1a6c13fbd3cf00d9c7
+SIZE (InsightData-5.3.0.tar.gz) = 366826437
+SHA256 (InsightSoftwareConsortium-ITK-v5.3.0_GH0.tar.gz) = 64e7e8094a5023c8f68ee042459d6319581fadb35e2fe90a4ae230ce36369db1
+SIZE (InsightSoftwareConsortium-ITK-v5.3.0_GH0.tar.gz) = 21844157
 SHA256 (ntustison-ITKAdaptiveDenoising-674218fae611184d4168bd0c7b027f1a0d1a8a18_GH0.tar.gz) = 603675ffdc9735ede763ca9453525efa59ecc27417ec698ffaa87d28a750807c
 SIZE (ntustison-ITKAdaptiveDenoising-674218fae611184d4168bd0c7b027f1a0d1a8a18_GH0.tar.gz) = 757851
 SHA256 (InsightSoftwareConsortium-itkAnalyzeObjectMap-6501909759a0de4ba99905d0f8e36005150f444a_GH0.tar.gz) = e55627b40927a38df35a5514848987c786069507bb432d0a129360c3dc589275
