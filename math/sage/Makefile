@@ -1,6 +1,6 @@
 PORTNAME=	sage
 PORTVERSION=	9.2
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\
@@ -197,7 +197,6 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libplanarity.so:math/planarity	\
 		libpng.so:graphics/png		\
 		libppl.so:devel/ppl		\
-		libpynac.so:math/pynac		\
 		libR.so:math/R			\
 		librw.so:math/rankwidth		\
 		libSingular.so:math/singular	\
