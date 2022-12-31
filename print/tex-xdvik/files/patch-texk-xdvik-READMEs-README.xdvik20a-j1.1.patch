@@ -1,0 +1,276 @@
+--- texk/xdvik/READMEs/README.xdvik20a-j1.1.patch.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.xdvik20a-j1.1.patch
+@@ -0,0 +1,273 @@
++*xdvik20a-j1.1.patch について
++
++					千葉大学 総合情報処理センター
++					山賀正人 (yamaga@ipc.chiba-u.ac.jp)
++
++
++  このパッチは xdvi (xdvik-20a) で日本語 (ASCII-pTeX および NTT-JTeX) 
++を表示できるようにするパッチです。
++
++このパッチは xdvik-18f に対する日本語化および機能拡張パッチ
++xdvik18f-j1.1p5.patch を xdvik-20a に適用したものです。
++# この作業は 籠谷＠岡山大 さん によって行われました。
++
++xdvik18f-j1.1p5.patch については添付の READMEs/README.xdvik18f-j1.1p5.patch
++を参照してください。
++
++
++
++[1] コンパイル・インストール
++
++ (1) ソースを展開
++
++     % gunzip -c xdvik-20a.tar.gz | tar xvf -
++
++
++ (2) パッチをあてる
++
++     % cd xdvik-20a/xdvik
++     % patch -p < (somewhere)/xdvik20a-j1.1*.patch
++
++
++ (3) トップディレクトリで configure を実行し Makefile を作成する
++
++     % cd ..
++     % ./configure
++
++     ただし日本語フォントに何を使うか、また xdvi から直接プリントアウトする
++     場合に用いる dvi --> ps フィルタとして何を使うかで configure 実行時の
++     オプションが以下のように異なるので注意してください。
++
++     何もオプションを付けないで configure を実行した場合は ASCII, NTT 双方で
++     日本語フォントに VFlib を用い、明朝体とゴシック体以外の日本語も使えるよう
++     になります。また dvi --> ps フィルタとしては dvips を使います。
++
++   (3-1) ASCII, NTT 双方で pk フォントを使う場合
++
++          --without-vflib
++
++   (3-2) NTT では pk フォント、ASCII では VFlib を使う場合
++
++          --with-vflib=asciionly または --with-vflib=nontt
++
++   (3-3) 明朝体とゴシック体以外の日本語を使わない場合
++
++          --without-vfontmap
++
++       ただし --without-vflib を指定している場合は自動的にこのオプションが
++       指定されたのと同義になります。
++
++   (3-4) dvi --> ps フィルタとして dvi2ps を使う場合
++
++          --with-dvifilter=dvi2ps
++
++   (3-5) dvi --> ps フィルタとして jdvi2kps を使う場合
++
++          --with-dvifilter=jdvi2kps
++
++
++ (4) Makefile を環境に合わせて変更 (デフォルトの解像度と Shrink サイズの指定)
++
++    % vi xdvik/Makefile または mule xdvik/Makefile
++
++     XDEFS にオプションを加えて指定します。デフォルトでは 600dpi で Shrink
++     サイズ "6" になっていますが、多くの場合 "8" くらいが適当だと思います。
++     また小さなディスプレイ用に SMALL_PANEL を指定した場合は "10" くらい
++     がよいと思います。適当に変更してください。
++
++        (例 1) -DSHRINK=\"8\"
++        (例 2) -DSHRINK=\"10\" -DSMALL_PANEL
++        (例 3) -DBDPI=300 -DSHRINK=\"4\"
++        (例 4) -DBDPI=300 -DSHRINK=\"5\" -DSMALL_PANEL
++
++
++ (5) config.h を自分の環境に合わせて変更
++
++     % vi xdvik/config.h または mule xdvik/config.h
++
++   (5-1) プリントアウトに関する設定
++
++     default のプリンタやプリントアウトコマンドを変更したい場合は
++     DVIPRINTER や PRINTCMD をそれぞれ変更してください。
++
++     更に xdvi から直接プリントアウトする場合に用いる dvi --> ps フィルタ
++     コマンドのオプション変換テーブルファイル xdvipaper.* の置き場所
++     (default では /usr/local/share/texmf/xdvi) を変えたい場合は config.h
++     の FILTOPTTBLFILE を変更するだけでなく、xdvik/Makefile の
++     FILTOPTTBLDIR も変更してください。
++
++     この markpage+toc+printdvi+paper パッチ部分の機能についての詳細は 
++     READMEs/README.markpage+toc+printdvi+paper を参照してください。
++
++   (5-2) 日本語多書体表示機能に関する設定
++
++     configure 実行時に --without-vfontmap を指定している場合は
++     ここでの変更は必要ありません。
++
++     DEFAULT_FONTMAP を自分の環境に合わせて変更します。default では
++     /usr/local/share/texmf/xdvi/vfontmap です。
++
++  *********************************************************************
++  *  DEFAULT_FONTMAP で指定するファイル名は日本語フォントを VFlib の  *
++  *  どのフォントにマップするかを指定するファイルです。               *
++  *                                                                   *
++  *          vfontmap は VFlib の vfontcap とは別のものです。         *
++  *                                                                   *
++  *  詳しいことは [3] で説明します。                                  *
++  *********************************************************************
++
++
++ (6) コンパイルしてインストール
++
++     % make
++     % su
++
++     # make install
++
++
++
++[2] color special の表示
++
++    起動時にオプションで -usecolor と指定するか、リソースに
++
++        xdvi*colorSpecial: on
++
++    と記述しておいてください。詳しくは竹中＠東大さんによる
++    READMEs/README.jp-patch をご覧ください。
++
++
++
++[3] 明朝体とゴシック体以外の日本語を表示させる方法
++
++  まずマップファイル (デフォルトでは /usr/local/share/texmf/xdvi/vfontmap) 
++に以下のように記述しておきます。
++
++	mgoth	maru
++	fmin	fmin
++	fgoth	goth
++
++間にスペース、もしくはタブを入れて第一カラムに "dvi ファイル中のフォント名"、
++第二カラムに "VFlib の vfontcap に登録されたフォント名" のように記述しておく
++だけで新たに xdvi を再コンパイルすることなく、自由に日本語の書体を追加する
++ことができます。
++
++またこのマップファイル中に明朝体とゴシック体の二書体を指定しない場合は
++デフォルトで
++
++	min	min	# for ASCII
++	nmin	min	# for ASCII
++	goth	goth	# for ASCII
++	ngoth	goth	# for ASCII
++	dm	min	# for NTT
++	dg	goth	# for NTT
++
++と設定されます。
++
++このマップファイル中では # 以降がコメントとして扱われます。またこのマッ
++プファイルは環境変数 VFONTMAP および起動時のオプション 
++
++	-vfontmap [マップファイル名]
++
++または X の resource
++
++	xdvi*vfontmap:	[マップファイル名]
++
++で変更可能です。ただし優先準位は
++
++	1. カレントディレクトリの vfontmap
++	2. 起動時のオプション
++	3. X の resource (xdvi*vfontmap)
++	4. 環境変数 VFONTMAP
++
++の順に低くなっていきます。
++
++  この vfontmap を用いた機能のうち NTT-JTeX への対応部分は 川地＠東大 
++さん による xdvik18f-j1.0+vfontmap-ntt.patch を参考にさせていただいて
++おります。
++
++# NTT-JTeX で日本語の多書体を扱うためのスタイルファイルなどについては
++# 川地さんの作成なさった Web page
++#
++# 	http://www.cim.pe.u-tokyo.ac.jp/~kawachi/software/xdvik18f.html
++#
++# を参照してください。
++#
++# また ASCII-pTeX で多書体を扱う方法は VFlib に付属の jTeX/README.euc 
++# や doc/QA.txt などをご覧ください。
++
++
++
++[4] 著作権について
++
++  本パッチは東大の中山さんのパッチ xdvik18f-j1.0.patch を含んでおりま
++すが、その中山さんのパッチに含まれていた部分および本パッチから新たに組
++み込まれたコードの著作権は以下の方々にあります。
++
++          miyu patch に起因する部分
++                 杉浦茂樹さん <miyu@akiu.gw.tohoku.ac.jp>
++                 他
++
++                 (詳細は竹中さんによる READMEs/README.jp-patch
++                  をご覧ください)
++
++          pTeX 縦書き対応部分および color special 対応部分
++                 竹中浩さん <lh36112@hongo.ecc.u-tokyo.ac.jp>
++                 (xdvi-17jp.960209 より)
++
++          markpage+toc+printdvi+paper パッチに起因する部分 
++                 松浦俊さん <syun@fuka.info.waseda.ac.jp>
++                 平原厚志さん <hirahara@fuka.info.waseda.ac.jp>
++                 小野康一さん <onono@fuka.info.waseda.ac.jp>
++                 他
++
++                 (詳細は小野さんによる
++                  READMEs/README.markpage+toc+printdvi+paper
++                  をご覧ください)
++
++  また本パッチのうち vfontmap に関わる部分 (vfontmap.c) の著作権は山賀
++(yamaga@ipc.chiba-u.ac.jp)にありますが、それ以外の部分に関しては山賀は
++パッチのとりまとめを行っただけですので著作権を一切主張いたしません。
++
++
++
++[5] 変更履歴
++
++  xdvik18f-j1.1p5.patch からの機能面での変更点については
++ChangeLog.xdvik20a-j1.1 をご覧ください。
++
++
++
++[6] 注意事項
++
++  本パッチの再配布は自由に行って構いませんが付属のドキュメント類 
++(READMEs 以下のファイル)は必ずそのままの形で添付してください。また改変
++も自由に行って構いませんが、改変したものを配布する場合は山賀
++(yamaga@ipc.chiba-u.ac.jp)まで御連絡ください。またその際にも私からお願
++いすることになると思いますが、上で上げた各パッチの著作権保有者には必ず
++連絡をしてください。
++
++
++
++[7] 最後に
++
++  本パッチ作成にあたりご協力いただいた多くの皆様に感謝いたします。特に
++電子メールにより御助言を賜わった以下の方々に対し、そのお名前を列挙する
++ことで感謝の意を表したいと思います。
++
++      内山 孝憲 様
++      小野 康一 様
++      籠谷 裕人 様
++      杉浦 茂樹 様
++      竹野 茂治 様
++      竹中 浩   様
++      中山 一昭 様
++      萩原 斉   様
++
++      (五十音順)
++
++このパッチに関する質問やご意見ご感想は
++
++		yamaga@ipc.chiba-u.ac.jp
++
++まで。
++						平成９年１２月３１日（水）

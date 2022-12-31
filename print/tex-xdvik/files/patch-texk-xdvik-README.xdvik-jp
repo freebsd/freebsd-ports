@@ -1,0 +1,87 @@
+--- texk/xdvik/README.xdvik-jp.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/README.xdvik-jp
+@@ -0,0 +1,84 @@
++
++		<< xdvik-22.84.16-jp patch について >>
++
++		                               http://xdvi.sourceforge.jp/
++					       $Date: 2008/07/09 17:01:20 $
++
++
++[1] xdvik-22.84.16-jp patch とは
++
++xdvik-22.84.16 に対する日本語化パッチです．ただし，従来の日本語化パッチ
++とは大きく異なり，日本語化を本家に統合してもらうための提案としてまとめ
++ようとしています．
++
++従来の日本語化パッチには，
++
++  ・表示中の用紙サイズの変更
++  ・使いやすいページリスト
++  ・Zoom ボタン
++  ・Vi 類似のキーバインド
++
++などの様々な拡張機能が含まれていましたが，これらは全て削除され，単なる
++日本語化部分のみを残しています．
++
++[2] コンパイル・インストール
++
++xdvik-22.84.16.tar.gz にパッチを適用して，./configure ; make して下さい．
++以下のオプションが利用可能です．
++
++    --disable-ptex
++	日本語化しない
++
++和文フォントのラスタライザとして，FreeType 2.1.10 以降が必須です．
++従来の VFlib では動作しません．
++なお，FreeType 2.2.1 以降では，GSUB テーブルを得るモジュールが
++ディフォルトではコンパイルされなくなっているので，modules.cfg の
++'# AUX_MODULES \+= otvalid' のコメントをやめて有効にしておいて下さい．
++これを忘れていると縦書きができなくなります．
++
++従来の vfontmap に対応するものは，xdvi.cfg の中で
++
++	ptexmap xdvi-ptex.map
++
++のように指定します．xdvi.cfg で複数の map ファイルを指定することが
++できるようになりましたが，代わりに VFONTMAP の環境変数や，
++コマンドライン引数の -vfontmap での指定はできなくなりました．
++また，map ファイルの書式も変更しました．
++
++NTT JTeX のフォント (dm*/dg*) の直接のサポートはなくなりましたが，
++以下の仮想フォントを用いると表示できます．
++dvips/dvipdfmx にも必要なものなので入手は容易でしょう．
++ftp://ftp.math.s.chiba-u.ac.jp/tex/dvips-usage/n2bk.tar.gz
++角藤氏の W32TeX にも同様のものがあります．
++ftp://jupiter.fsci.fuk.kindai.ac.jp/pub/ptex/win32/current/vf-n2bk.tar.gz
++
++[3] メンテナ向けのメモ
++
++新しい upstream を import する手順は以下の通り．
++
++    tar xzf xdvik-x.y.tar.gz
++    cd xdvik-x.y
++    cvs -d :ext:user@cvs.sourceforge.jp:/cvsroot/xdvi import -I ! -I CVS -m "Import xdvik-x.y." xdvik xdvik xdvik-x_y
++
++configure スクリプトを更新する手順は以下の通り．
++
++    autoconf --macrodir=../etc/autoconf configure.in > configure
++
++[4] 著作権について
++
++本パッチはかなり多くの方々の総合著作物です．パッチの著作権はそれぞれの
++パッチ作成者にあります．詳しくは READMEs/ 以下のドキュメント群を参照し
++て下さい．
++
++本パッチの再配布は自由に行って構いませんが付属のドキュメント類 
++(READMEs/ 以下のファイル)はそのままの形で添付してください．また改変も
++自由に行って構いませんが，改変したものを配布する場合は，
++
++	xdvi-jp メーリングリスト <xdvi-users(at)lists.sourceforge.jp>
++
++まで連絡頂けると幸いです．バグ報告，提案，その他の連絡等も上記までお願
++いします．また，メーリングリストに参加を希望される方は
++http://lists.sourceforge.jp/mailman/listinfo/xdvi-users で手続きしてく
++ださい．
++
++/* xdvi-jp メーリングリスト <xdvi-users(at)lists.sourceforge.jp> */

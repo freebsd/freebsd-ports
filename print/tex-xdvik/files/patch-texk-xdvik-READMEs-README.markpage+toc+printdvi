@@ -1,0 +1,203 @@
+--- texk/xdvik/READMEs/README.markpage+toc+printdvi.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.markpage+toc+printdvi
+@@ -0,0 +1,200 @@
++
++        << xdvi-17+markpage+toc+printdvi patch について >>
++
++					1993/09/13
++					小野 康一
++					onono@fuka.info.waseda.ac.jp
++
++○xdvi-17+markpage+toc+printdvi patch とは
++  xdvi-17 + miyu-patch for xdvi PL17 に対するパッチです。このパッチをあ
++  てて作った xdvi では、以下のような機能を使うことができます。
++
++  1) Use_MARKPAGE
++  ページマーキング機能を、GNU Emacs のマークリング風に実現したものです。
++  ページのマーク(`m',`a')/アンマーク(`U',`A')、マークしたページへの移動
++  (`'',``')、マークしたページとカレントページとの交換('"')、マークを伴う
++  ページジャンプ('<','>')などを行なえます。
++  また、2) の toc からのマーキングも可能です。
++
++  2) Use_TOC
++  ページ番号リストを表示し、マウスでそのページをクリックすることで、その
++  ページへ移動(左ボタン)、そのページをマーク(真中ボタン)、アンマーク(右
++  ボタン)することができます。ドラッグにより、連続するページをマーク/アン
++  マークすることもできます。
++
++  3) Use_PRINTDVI
++  `o' または Print ボタンで Print-out メニューがポップアップします。ファ
++  イル全体の出力やカレントページ、最後にマークしたページ、リージョン(カ
++  レントページと最後にマークしたページとの間のページ)、マークした全部の
++  ページをメニューから選択して出力できます。
++
++○動作を確認した環境
++	SunOS 4.1.3 / sun4c マシン(SPARCstationシリーズ)
++
++○インストールについて
++
++  まず, xdvi PL17 のソース・ファイルである xdvi-17.tar.gz と
++  それに対するパッチ xdvi-17miyu.patch-beta4.gz (*1)、そして
++  当該パッチ xdvi-17+markpage+toc+printdvi.patch を用意します。
++
++  次に, 作業ディレクトリを作成して, そのディレクトリに移った後, 
++  xdvi-17.tar.gz を展開します。そのまま, ディレクトリを移動しないで, 
++  xdvi-17miyu.patch-beta4.gz を用いてパッチをあてます。
++  このとき, GNU のツールである gzip および patch が必要となります (*2)。
++  さらに xdvi-17+markpage+toc+printdvi.patch を用いてパッチをあてます。
++
++  あとは, システムに応じて Imakefile を編集した後, 
++  xmkmf を実行して Makefile を生成して, make を実行します。
++
++  なお、miyu-patch for xdvi PL17 については、README.miyu-patch をよく読
++  んでください。
++
++  (*1) これらは, 
++       ftp.tohoku.ac.jp[130.34.8.9]:~ftp/pub/tex/dviwares/xdvi/PL17 などの
++       anonymous ftp などから入手できます。
++  (*2) これらは, 
++       ftp.waseda.ac.jp[133.9.1.32]:~ftp/pub/GNU/prep 以下、または、
++       ftp.ecei.tohoku.ac.jp[130.34.222.67]:~ftp/pub/GNU/gzip および
++       ftp.ecei.tohoku.ac.jp[130.34.222.67]:~ftp/pub/GNU/patch 以下にあります。
++
++○Use_MARKPAGE および Use_TOC について
++  つけられるマークの最大数を 1024、DVI ファイルの最大ページ数も同じく 
++  1024 としてあります。これを越えることはまずないと思いますが、もし変更
++  する場合は、Imakefile の RINGSIZE および MAX_PAGE を修正してください。
++
++○Use_PRINTDVI について
++  Imakefile の Use_PRINTDVI のところは、自己サイトの環境に合わせて変更し
++  てください。%d などの意味については、print.h の最初の方のコメントに書
++  いてあります。また、デフォルトでは dvi2ps や dviselect を用いるように
++  書いてあります。このように、必要なページを切り出したり、プリンタ出力形
++  式へ変換する作業は xdvi の内部で行なわず、外部コマンドで処理するような
++  仕様にしました。したがって、これらのコマンドをあらかじめインストールし
++  ておかないと、xdvi からの出力ができません。dvi2ps, dvips, jdvi2kps,
++  dviselect など、自己サイトの環境に合ったコマンドをインストールし、それ
++  に合わせて Imakefile を修正した上で xdvi を作ってください。
++  また、デフォルトでは lpr に -v オプションを与えていません。PostScript 
++  プリンタ用のフィルタによっては -v オプションをつける必要があるかも知れ
++  ません。
++  また、デフォルトでは dvi2ps の出力を lpr の標準入力にパイプで与えてい
++  ます。lpr によっては、出力データが 1Mbyte を越えるとそれ以降を切り捨て
++  て出力するような仕様になっているかも知れません。そのような場合は、
++  dvi2ps の出力を一旦テンポラリファイル(/tmp/%F:%c@%r.ps など)にリダイレ
++  クトし、それを lpr -s で出力し、終了後に rm するようにすればいいでしょ
++  う。ただし、-s の場合、スプーリングせずに出力するため、出力が完了する
++  までそのファイルを消せません。出力完了まで待って rm する、という手続き
++  を簡単には書けないと思うので、デフォルトでは lpr の標準入力に与える方
++  法を採りました。1Mbyte を越えるくらいたくさんのページを出力するような
++  場合は、xdvi の中から出力せずにシェルのコマンドラインから
++	% dvi2ps file.dvi > /tmp/file.ps
++	% lpr -s /tmp/file.ps
++	(出力完了後)
++	% rm /tmp/file.ps
++  とした方がいいような気がします:-)
++
++○内部変数(%f など)の意味
++  print.h の最初の方のコメントにも書いてありますが、簡単に説明しておきま
++  す。Imakefile 中の PRCMD??? という変数は
++	PRCMDLST="(cd %d; dviselect -i %F -o /tmp/%F:%t@%r.dvi %A; dvi2ps /tmp/%F:%t@%r.dvi) | lpr -P%p -J'%F (Page %t)'; /bin/rm /tmp/%F:%t@%r.dvi"
++	/* all marked pages */
++  のように、% 表記の内部変数が用いられています。これは、DVI ファイルの出
++  力時に解釈されて実行されるコマンド文字列です。
++    PRCMDALL  DVI ファイルの全部を出力(する時に用いられるコマンド文字列)
++    PRCMDCUR  カレントページ(現在表示しているページ)を出力
++    PRCMDMRK  最後にマークしたページを出力
++    PRCMDRGN  リージョン(カレントページと最後にマークしたページで挟まれ
++              ている区間)内のすべてのページを出力
++    PRCMDLST  マークしたすべてのページを出力
++  これらのコマンドは、Print-out メニューで選択する項目
++	All pages
++	Current page
++	Marked page
++	Region
++	All marked pages
++  にそれぞれ対応しています。
++  コマンド文字列の解釈は、% 表記の内部変数を展開することによって行なわれ
++  ます。各内部変数の意味は次の通りです。
++    %f : 現在参照している DVI ファイルのファイル名(フルパス名)
++    %F : 現在参照している DVI ファイルのファイル名(basename)
++    %d : 現在参照している DVI ファイルが置かれているディレクトリ名
++         ( %f = %d/%F )
++    %p : プリンタ名(環境変数 PRINTER が定義されていればその値。また、
++         Print-menu で設定されるならその値)
++    %r : xdvi のプロセス ID
++  以下はページ番号に関する内部変数です。すべて絶対ページ番号(先頭ページ
++  を1として単調増加するページ番号。\count に左右されない)で表記します。
++    %c : カレントページ番号
++    %m : 最後にマークしたページ番号
++    %s : リージョンの開始ページ番号(%c と %m の最小値)
++    %e : リージョンの終了ページ番号(%c と %m の最大値)
++    %l : マークしたページ番号リスト(マーク順); 各ページ番号は ',' で区切
++         られている
++    %L : マークしたページ番号リスト(マーク順); 各ページ番号は ' ' で区切
++         られている
++    %t : マークしたページ番号リスト(ソートされている); 各ページ番号は
++         ',' で区切られている
++    %T : マークしたページ番号リスト(ソートされている); 各ページ番号は
++         ' ' で区切られている
++    %k : %l と同様、ただし、各ページ番号の前に '=' が置かれている
++         (dviselect を仮定している)
++    %K : %L と同様、ただし、各ページ番号の前に '=' が置かれている
++         (dviselect を仮定している)
++    %a : %t と同様、ただし、各ページ番号の前に '=' が置かれている
++         (dviselect を仮定している)
++    %A : %T と同様、ただし、各ページ番号の前に '=' が置かれている
++         (dviselect を仮定している)
++  たとえば、上記の PRCMDLST の定義で、/home/onono/doc/sample.dvi をプレ
++  ビューしていて、3,6,11,17ページをマークしている時に、Print-out メニュー
++  から all marked pages を選択すると、実行される文字列は以下のようになり
++  ます。
++	(cd /home/onono/doc;
++	 dviselect -i sample.dvi -o /tmp/sample.dvi:3,6,11,17@3255.dvi
++		 =3 =6 =11 =17;
++	 dvi2ps /tmp/sample.dvi:3,6,11,17@3255.dvi)
++	| lpr -Plp -J'sample.dvi (Page 3.6.11.17)';
++	/bin/rm /tmp/sample.dvi:3,6,11,17@3255.dvi
++  ただし、xdvi のプロセス ID = 3255、プリンタ名 = lp とします。
++
++○独立性
++  Use_MARKPAGE, Use_TOC, Use_PRINTDVI は、相互に独立して#define/#undefで
++  きるはずです(試していません)。もちろん、
++	#undef	Use_MARKPAGE
++	#define	Use_TOC
++	#define	Use_PRINTDVI
++  で作った場合は、toc 上でのマーキングができませんし(ページ移動はできる)、
++  Print-out メニューは All pages と current page の二つだけになるでしょ
++  う。
++
++○著作権
++  当該パッチの中のファイル
++	markring.c
++	markring.h
++	markpage.c
++	markpage.h
++	toc.c
++	toc.h
++	print.c
++	print.h
++  の著作権は、作者である
++	松浦 俊     MATSUURA Syun      syun@fuka.info.waseda.ac.jp
++	平原 厚志   HIRAHARA Atsushi   hirahara@fuka.info.waseda.ac.jp
++	小野 康一   ONO Kouichi        onono@fuka.info.waseda.ac.jp
++  に帰属します。なお、著作者を明らかにする限り、当該パッチの一部または全
++  体を改造、転送、再配布するのは自由とします。
++
++○ヒマがあればやろうかな
++
++1. 環境変数, オプション, リソースによる指定
++			-printer	*printer
++	XDVIPRALL	-prall		*print.all
++	XDVIPRCUR	-prcur		*print.currentPage
++	XDVIPRMKD	-prmarked	*print.markedPage
++	XDVIPRRGN	-prregion	*print.region
++	XDVIPRLST	-prlist		*print.list
++
++2. ページ移動に伴う toc のスクロールバー移動
++
++3. toc に表示するページ番号を \count0 を考慮した(実際の)ページ番号にする
++
++4. マークページリストの表記を
++	5,8-12,27,29,35-36,41
++   のようにする

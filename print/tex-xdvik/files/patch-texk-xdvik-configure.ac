@@ -1,9 +1,23 @@
 --- texk/xdvik/configure.ac.orig	2022-02-17 21:05:33 UTC
 +++ texk/xdvik/configure.ac
-@@ -67,6 +67,14 @@ AS_IF([test "x$enable_a4" = xno],
+@@ -54,6 +54,11 @@ dnl AC_ARG_ENABLE([freetype],
+ dnl               AS_HELP_STRING([--disable-freetype],
+ dnl                              [Do not use FreeType2 (direct rendering of Type1 fonts)]))
+ AC_DEFINE([FREETYPE], 1, [Define to compile in the FreeType2 library.])
++if pkg-config freetype2 --modversion > /dev/null 2>&1; then
++  AC_MSG_RESULT(adding freetype2-`pkg-config freetype2 --modversion` library)
++  CPPFLAGS="$CPPFLAGS `pkg-config freetype2 --cflags`"
++  LIBS="`pkg-config freetype2 --libs` $LIBS"
++fi
+ 
+ dnl OBSOLETE AC_ARG_ENABLE([gf],
+ dnl OBSOLETE               AS_HELP_STRING([--enable-gf],
+@@ -67,6 +72,16 @@ AS_IF([test "x$enable_a4" = xno],
        [AC_MSG_NOTICE([Disabled a4/cm, using letter/in instead])],
        [AC_DEFINE([A4], 1, [Define to use A4 as the default paper size.])])
  
++dnl Kanji support
++AC_DEFINE([PTEX], 1, [Enabled Japanese pTeX support.])
 +if pkg-config fontconfig --modversion > /dev/null 2>&1; then
 +  AC_MSG_RESULT(adding fontconfig-`pkg-config fontconfig --modversion` library)
 +  FONTCONFIGCPPFLAGS="`pkg-config fontconfig --cflags`"
@@ -15,7 +29,7 @@
  AC_CONFIG_HEADERS([c-auto.h:c-auto.in])
  
  AC_FUNC_FORK
-@@ -263,6 +271,7 @@ KPSE_FREETYPE2_FLAGS
+@@ -263,6 +278,7 @@ fi
  
  KPSE_KPATHSEA_FLAGS
  KPSE_FREETYPE2_FLAGS

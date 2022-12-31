@@ -1,0 +1,70 @@
+--- texk/xdvik/Makefile.am.orig	2020-02-25 20:42:58 UTC
++++ texk/xdvik/Makefile.am
+@@ -86,6 +86,19 @@ libxdvi_a_SOURCES = \
+ 	xdvi-debug.h \
+ 	xserver-info.c \
+ 	xdvi.h \
++	ptexvf.c \
++	ptexvf.h \
++	ptexmap.c \
++	ptexmap.h \
++	ft2.c \
++	ft2.h \
++	jfm.c \
++	jfm.h \
++	fontconfig.c \
++	fontconfig.h \
++	ft2vert.c \
++	ft2vert.h \
++	AJ16.c \
+ 	xserver-info.h
+ 
+ ## We cannot easily use two different libraries due to the mutual
+@@ -172,10 +185,15 @@ bin_PROGRAMS = xdvi-bin
+ 
+ xdvi_bin_SOURCES = main.c
+ 
+-$(xdvi_bin_OBJECTS): libxdvi.a $(common_dependencies)
++$(xdvi_bin_OBJECTS): libxdvi.a $(common_dependencies) $(FREETYPE2_DEPEND) $(ZLIB_DEPEND)
+ 
+-LDADD = libxdvi.a $(common_ldadd)
++LDADD = libxdvi.a $(common_ldadd) $(FREETYPE2_LIBS) $(ZLIB_LIBS) -lpaper
+ 
++## Rebuild libfreetype
++@FREETYPE2_RULE@
++## Rebuild libz
++@ZLIB_RULE@
++
+ # When cross-compiling, EXEEXT for the build and host systems may differ.
+ # Thus we depend on the auxiliary file squeeze/stamp-squeeze.
+ psheader.c: psheader.txt squeeze/stamp-squeeze
+@@ -205,19 +223,24 @@ pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmap
+ dist_pixmap_DATA = pixmaps/toolbar.xpm pixmaps/toolbar2.xpm
+ 
+ dvipsconfdir = $(datarootdir)/texmf-dist/dvips/xdvi
+-dist_noinst_DATA = texmf/config.xdvi
++dist_noinst_DATA = texmf/config.xdvi xdvi-ptex.map
+ 
++xdvimapdir = $(datarootdir)/texmf-dist/fonts/map/xdvi
++
+ desktopdir = $(datarootdir)/applications
+ desktop_DATA = xdvi.desktop
+ 
+ install-data-hook:
+ 	@echo " $(MKDIR_P) '$(DESTDIR)$(dvipsconfdir)'"; \
+ 	$(MKDIR_P) "$(DESTDIR)$(dvipsconfdir)" || exit 1; \
+-	if grep "original config.xdvi --" "$(DESTDIR)$(dvipsconfdir)/config.xdvi" >/dev/null 2>&1 \
+-	    || test ! -r "$(DESTDIR)$(dvipsconfdir)/config.xdvi"; then \
+-	  echo " $(INSTALL_DATA) '$(srcdir)/texmf/config.xdvi' '$(DESTDIR)$(dvipsconfdir)/config.xdvi'"; \
+-	  $(INSTALL_DATA) "$(srcdir)/texmf/config.xdvi" "$(DESTDIR)$(dvipsconfdir)/config.xdvi"; \
++	if grep "original config.xdvi --" "$(DESTDIR)$(dvipsconfdir)/config.xdvi.sample" >/dev/null 2>&1 \
++	    || test ! -r "$(DESTDIR)$(dvipsconfdir)/config.xdvi.sample"; then \
++	  echo " $(INSTALL_DATA) '$(srcdir)/texmf/config.xdvi' '$(DESTDIR)$(dvipsconfdir)/config.xdvi.sample'"; \
++	  $(INSTALL_DATA) "$(srcdir)/texmf/config.xdvi" "$(DESTDIR)$(dvipsconfdir)/config.xdvi.sample"; \
+ 	else :; fi
++	@echo " $(MKDIR_P) '$(DESTDIR)$(xdvimapdir)'"; \
++	$(MKDIR_P) '$(DESTDIR)$(xdvimapdir)' || exit 1; \
++	$(INSTALL_DATA) "$(srcdir)/xdvi-ptex.map" "$(DESTDIR)$(xdvimapdir)/xdvi-ptex.map.sample"
+ 
+ uninstall-hook:
+ 	@if grep "original config.xdvi --" "$(DESTDIR)$(dvipsconfdir)/config.xdvi" >/dev/null 2>&1 \
