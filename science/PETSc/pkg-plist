@@ -4228,6 +4228,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/output/ex59_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex59_2_baij.out
 %%DATADIR%%/examples/src/mat/tests/output/ex59_2_sbaij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex59_kok.out
 %%DATADIR%%/examples/src/mat/tests/output/ex5_11_A.out
 %%DATADIR%%/examples/src/mat/tests/output/ex5_11_B.out
 %%DATADIR%%/examples/src/mat/tests/output/ex5_12_A.out
@@ -5792,7 +5793,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/tao/constrained/tutorials/makefile
 %%DATADIR%%/examples/src/tao/constrained/tutorials/maros.c
 %%DATADIR%%/examples/src/tao/constrained/tutorials/output/ex1_1.out
-%%DATADIR%%/examples/src/tao/constrained/tutorials/output/ex1_10.out
 %%DATADIR%%/examples/src/tao/constrained/tutorials/output/ex1_2.out
 %%DATADIR%%/examples/src/tao/constrained/tutorials/output/ex1_3.out
 %%DATADIR%%/examples/src/tao/constrained/tutorials/output/ex1_4.out
