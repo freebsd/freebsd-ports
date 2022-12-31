@@ -152,8 +152,6 @@
     SUBDIR += flawfinder
     SUBDIR += fpc-gnutls
     SUBDIR += fpc-openssl
-    SUBDIR += fprint_demo
-    SUBDIR += fprintd
     SUBDIR += fragroute
     SUBDIR += fragrouter
     SUBDIR += fswatch
@@ -275,7 +273,6 @@
     SUBDIR += libdecaf
     SUBDIR += libecc
     SUBDIR += libfido2
-    SUBDIR += libfprint
     SUBDIR += libgcrypt
     SUBDIR += libgnome-keyring
     SUBDIR += libgpg-error

@@ -1,6 +1,0 @@
-include/libfprint/fprint.h
-lib/libfprint.a
-lib/libfprint.so
-lib/libfprint.so.0
-lib/libfprint.so.0.0.0
-libdata/pkgconfig/libfprint.pc
