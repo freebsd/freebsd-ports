@@ -3,7 +3,7 @@
 # PROVIDE: egress-monitor
 # KEYWORD: shutdown
 # REQUIRE: NETWORKING
-# BEFORE: pf
+# BEFORE: pf ipfw
 
 . /etc/rc.subr
 
@@ -13,10 +13,11 @@ rcvar=${name}_enable
 load_rc_config $name
 
 : ${egress_monitor_enable:="NO"}
+: ${egress_monitor_flags:=""}
 
 procname="%%PREFIX%%/sbin/egress-monitor"
 command="/usr/sbin/daemon"
-command_args="-S -T ${name} ${procname}"
+command_args="-S -T ${name} ${procname} ${egress_monitor_flags}"
 
 run_rc_command $*
 

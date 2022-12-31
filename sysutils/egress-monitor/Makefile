@@ -1,6 +1,5 @@
 PORTNAME=	egress-monitor
-DISTVERSION=	0.0.3
-PORTREVISION=	1
+DISTVERSION=	0.0.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
