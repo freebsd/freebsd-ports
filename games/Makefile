@@ -878,7 +878,6 @@
     SUBDIR += sauerbraten
     SUBDIR += scare
     SUBDIR += scid
-    SUBDIR += scorched3d
     SUBDIR += scourge
     SUBDIR += scourge-data
     SUBDIR += scramble
