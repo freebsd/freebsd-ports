@@ -17724,3 +17724,4 @@ math/libpgmath||2022-12-31|Has expired: Depends on end of life devel/llvm70
 security/libfprint||2022-12-31|Has expired: Very outdated, unsupported upstream which now have systemd as a non optional requirement
 security/fprint_demo||2022-12-31|Has expired: Depends on deprecated library libfprint
 security/fprintd||2022-12-31|Has expired: Very outdated, unsupported upstream which now have systemd as a non optional requirement
+cad/linux-eagle5||2022-12-31|Has expired: Deprecated upstream, superseded by Autodesk EAGLE 9
