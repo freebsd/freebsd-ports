@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Abandonware, no development in 20 years. Please consider using audio/cmus or audio/musicpd
-EXPIRATION_DATE=2033-03-31
+EXPIRATION_DATE=2023-03-31
 
 RUN_DEPENDS=	mpg123:audio/mpg123
 
