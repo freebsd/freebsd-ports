@@ -4,15 +4,12 @@ PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/Quagga/quagga/releases/download/${DISTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 WWW=		https://www.quagga.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Abandonware, last release in 2018 and no development in years. Consider using net/frr* , net/bird2 or net/openbgpd*
-EXPIRATION_DATE=2023-03-31
 
 USES=		compiler:c11 cpe gmake libtool makeinfo \
 		perl5 readline ssl
