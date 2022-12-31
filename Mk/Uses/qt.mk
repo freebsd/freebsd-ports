@@ -130,13 +130,13 @@ _USES_POST+=		qt
 _QT_MK_POST_INCLUDED=	qt.mk
 
 # The Qt components supported by qt.mk: list of shared, and version specific ones
-_USE_QT_COMMON=		3d charts datavis3d declarative doc imageformats multimedia \
-			networkauth quick3d quicktimeline remoteobjects scxml \
+_USE_QT_COMMON=		3d charts datavis3d declarative doc examples imageformats \
+			multimedia networkauth quick3d quicktimeline remoteobjects scxml \
 			sensors serialbus serialport svg virtualkeyboard wayland \
 			webchannel webengine websockets
 
 _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
-			declarative-test designer diag examples gamepad \
+			declarative-test designer diag gamepad \
 			graphicaleffects gui help l10n linguist linguisttools location \
 			network opengl paths phonon4 pixeltool plugininfo printsupport \
 			qdbus qdbusviewer qdoc qdoc-data qev qmake quickcontrols \
