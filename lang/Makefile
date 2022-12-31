@@ -269,7 +269,6 @@
     SUBDIR += plexil
     SUBDIR += pocl
     SUBDIR += polyml
-    SUBDIR += ponyc
     SUBDIR += ptoc
     SUBDIR += purescript
     SUBDIR += py-hy

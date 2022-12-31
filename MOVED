@@ -17717,3 +17717,4 @@ shells/ksh2020||2022-12-30|Has expired: Upstream ksh2020 branch archived, develo
 games/scorched3d/||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 comms/hylafax||2022-12-31|Has expired: dead upstream, someone port hylafax+ from sourceforge.net instead
 comms/tkhylafax||2022-12-31|Has expired: Depends on expired comms/hylafax
+lang/ponyc||2022-12-31|Has expired: Very outdated and unsupported upstream, depends on end of life devel/llvm70

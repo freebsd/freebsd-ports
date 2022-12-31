@@ -1,5 +1,0 @@
-Pony is an object-oriented, actor-model, capabilities-secure programming
-language. It's object-oriented because it has classes and objects, like
-Python, Java, C++, and many other languages. It's actor-model because it has
-actors (similar to Erlang or Akka). These behave like objects, but they can
-also execute code asynchronously.
