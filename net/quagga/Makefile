@@ -11,6 +11,9 @@ WWW=		https://www.quagga.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2018 and no development in years. Consider using net/frr* , net/bird2 or net/openbgpd*
+EXPIRATION_DATE=2023-03-31
+
 USES=		compiler:c11 cpe gmake libtool makeinfo \
 		perl5 readline ssl
 
