@@ -938,7 +938,6 @@
     SUBDIR += py-pyaxo
     SUBDIR += py-pyblake2
     SUBDIR += py-pyclamd
-    SUBDIR += py-pycrypto
     SUBDIR += py-pycryptodome
     SUBDIR += py-pycryptodome-test-vectors
     SUBDIR += py-pycryptodomex
