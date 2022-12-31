@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2019-07-31 13:12:04 UTC
+--- CMakeLists.txt.orig	2022-11-18 15:14:53 UTC
 +++ CMakeLists.txt
-@@ -705,11 +705,6 @@ endif()
- set_and_warn_dependency(WITH_PYTHON WITH_CYCLES        OFF)
+@@ -824,11 +824,6 @@ set_and_warn_dependency(WITH_PYTHON WITH_CYCLES       
  set_and_warn_dependency(WITH_PYTHON WITH_DRACO         OFF)
+ set_and_warn_dependency(WITH_PYTHON WITH_MOD_FLUID     OFF)
  
 -if(WITH_DRACO AND NOT WITH_PYTHON_INSTALL)
 -  message(STATUS "WITH_DRACO requires WITH_PYTHON_INSTALL to be ON, disabling WITH_DRACO for now")

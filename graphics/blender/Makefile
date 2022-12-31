@@ -1,6 +1,6 @@
 PORTNAME=	blender
-DISTVERSION=	3.2.2
-PORTREVISION=	4
+DISTVERSION=	3.4.1
+PORTREVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -18,6 +18,7 @@ NOT_FOR_ARCHS_REASON=	uses 64bit atomic functions
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libpng.so:graphics/png \
+		libepoxy.so:graphics/libepoxy \
 		libfreetype.so:print/freetype2 \
 		libboost_regex.so:devel/boost-libs \
 		libzstd.so:archivers/zstd
@@ -26,8 +27,8 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++17-lang cpe gl jpeg python:3.10 shebangfix \
-		tar:xz xorg
+USES=		cmake compiler:c++17-lang cpe gl jpeg llvm:min=9 \
+		python:3.10 shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
@@ -146,12 +147,18 @@ OPENJPEG_CMAKE_BOOL=		WITH_IMAGE_OPENJPEG
 OPENJPEG_LIB_DEPENDS=		libopenjp2.so:graphics/openjpeg
 # openmp usually works on amd64
 OPENMP_CMAKE_BOOL=		WITH_OPENMP
+OPENPGL_ONLY_FOR_ARCHS=		amd64 armv6 armv7
+OPENPGL_ONLY_FOR_ARCHS_REASON=	requires supported SIMD ISA
+OPENPGL_CMAKE_BOOL=		WITH_CYCLES_PATH_GUIDING
+OPENPGL_LIB_DEPENDS=		libopenpgl.so:graphics/openpgl
 OPENSUBDIV_CMAKE_BOOL=		WITH_OPENSUBDIV
 OPENSUBDIV_LIB_DEPENDS=		libosdCPU.so:graphics/opensubdiv
 OPENVDB_IMPLIES=		TBB
 OPENVDB_CMAKE_BOOL=		WITH_OPENVDB WITH_OPENVDB_BLOSC
 OPENVDB_LIB_DEPENDS=		libblosc.so:archivers/c-blosc \
 				libopenvdb.so:misc/openvdb
+POTRACE_CMAKE_BOOL=		WITH_POTRACE
+POTRACE_LIB_DEPENDS=		libpotrace.so:graphics/libpotrace
 PUGIXML_CMAKE_BOOL=		WITH_PUGIXML
 PUGIXML_LIB_DEPENDS=		libpugixml.so:textproc/pugixml
 PULSEAUDIO_CMAKE_BOOL=		WITH_PULSEAUDIO WITH_PULSEAUDIO_DYNLOAD
@@ -170,6 +177,11 @@ TIFF_CMAKE_BOOL=		WITH_IMAGE_TIFF
 TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TRACE_CMAKE_BOOL=		WITH_POTRACE
 TRACE_LIB_DEPENDS=		libpotrace.so:graphics/libpotrace
+WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND
+WAYLAND_LIB_DEPENDS=		libdecor-0.so:x11-toolkits/libdecor \
+				libxkbcommon.so:x11/libxkbcommon
+WEBP_CMAKE_BOOL=		WITH_IMAGE_WEBP
+WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 XINPUT_CMAKE_BOOL=		WITH_X11_XINPUT
 XINPUT_USE=			XORG=xi
 XF86VMODE_CMAKE_BOOL=		WITH_X11_XF86VMODE
@@ -181,15 +193,13 @@ CMAKE_ARGS+=		-DWITH_GHOST_DEBUG:BOOL=ON
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*} || ${ARCH:Mriscv64*}
-CMAKE_ARGS+=		-DWITH_CPU_SIMD:BOOL=OFF
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DWITH_CPU_SSE:BOOL=OFF
 .endif
 
-.if ${LLVM_DEFAULT:M[678]0}
-LLVM_VER=	90
-.else
-LLVM_VER=	${LLVM_DEFAULT}
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LLVM_VER%%|${LLVM_VER}|g' \
+		${WRKSRC}/intern/cycles/kernel/osl/CMakeLists.txt
 
 post-build:
 	@(cd ${WRKSRC}/doc/manpage && \
