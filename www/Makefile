@@ -2341,7 +2341,6 @@
     SUBDIR += varnish-libvmod-redis
     SUBDIR += varnish-modules
     SUBDIR += varnish-nagios
-    SUBDIR += varnish4
     SUBDIR += varnish6
     SUBDIR += varnish7
     SUBDIR += varnish_exporter
