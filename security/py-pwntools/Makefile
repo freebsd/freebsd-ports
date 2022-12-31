@@ -1,5 +1,5 @@
 PORTNAME=	pwntools
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,9 +31,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>=3.0.5rc2:devel/py-capstone@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>0:devel/py-sortedcontainers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicorn>=1.0.2rc1:emulators/py-unicorn@${PY_FLAVOR}
 
-USES=		python cpe
-USE_PYTHON=	autoplist concurrent distutils
-
+USES=		cpe python
 CPE_VENDOR=	pwntools_project
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
