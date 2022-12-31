@@ -322,6 +322,7 @@
     SUBDIR += cargo-generate
     SUBDIR += cask
     SUBDIR += catch
+    SUBDIR += catch2
     SUBDIR += cbang
     SUBDIR += cbrowser
     SUBDIR += cc65
