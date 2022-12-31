@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	7.1.0
+PORTVERSION=	7.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -51,6 +51,7 @@ USE_GNOME+=	cairo
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--cc=${CC} \
+			--disable-guest-agent \
 			--disable-kvm \
 			--disable-linux-aio \
 			--disable-linux-user \
