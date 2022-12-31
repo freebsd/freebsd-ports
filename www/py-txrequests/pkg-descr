@@ -1,4 +1,0 @@
-Small add-on for the python requests http library. Makes use twisted's
-ThreadPool, so that the requests API returns deferred.
-
-The additional API and changes are minimal and strives to avoid surprises.

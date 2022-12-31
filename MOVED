@@ -17739,3 +17739,4 @@ x11-toolkits/wxgtk28-contrib-common||2022-12-31|Has expired: Upstream support en
 x11-toolkits/wxgtk28-contrib||2022-12-31|Has expired: Upstream support ended
 x11-toolkits/wxgtk28-common||2022-12-31|Has expired: Upstream support ended
 x11-toolkits/wxgtk28|x11-toolkits/wxgtk30|2022-12-31|Has expired: Upstream support ended, use wx 3.x
+www/py-txrequests|www/py-requests-futures|2022-12-31|Has expired: Use www/py-requests-futures as upstream is unmaintained since 2018
