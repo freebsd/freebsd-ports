@@ -17738,4 +17738,4 @@ math/pynac||2022-12-31|Project merged with SageMath
 x11-toolkits/wxgtk28-contrib-common||2022-12-31|Has expired: Upstream support ended
 x11-toolkits/wxgtk28-contrib||2022-12-31|Has expired: Upstream support ended
 x11-toolkits/wxgtk28-common||2022-12-31|Has expired: Upstream support ended
-x11-toolkits/wxgtk28|x11-toolkits/wxgtk30||2022-12-31|Has expired: Upstream support ended, use wx 3.x
+x11-toolkits/wxgtk28|x11-toolkits/wxgtk30|2022-12-31|Has expired: Upstream support ended, use wx 3.x
