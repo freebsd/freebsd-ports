@@ -1,0 +1,11 @@
+Mutmut is a mutation testing system for Python, with a strong focus on ease of
+use. If you don't know what mutation testing is try starting with this article.
+
+Some highlight features:
+* Found mutants can be applied on disk with a simple command making it very easy
+  to work with the results
+* Remembers work that has been done, so you can work incrementally
+* Supports all test runners (because mutmut only needs an exit code from the
+  test command)
+* Can use coverage data to only do mutation testing on covered lines
+* Battle tested on real libraries by multiple companies
