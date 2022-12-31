@@ -1040,7 +1040,6 @@
     SUBDIR += py-vincenty
     SUBDIR += py-yt
     SUBDIR += py-z3-solver
-    SUBDIR += pynac
     SUBDIR += qalculate-gtk
     SUBDIR += qalculate-qt
     SUBDIR += qd
