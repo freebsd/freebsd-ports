@@ -1,6 +1,6 @@
 PORTNAME=	quagga
 PORTVERSION=	1.2.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/Quagga/quagga/releases/download/${DISTNAME}/
 
