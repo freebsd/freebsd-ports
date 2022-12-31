@@ -12,9 +12,6 @@ WWW=		https://ceph.com/
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
-DEPRECATED=	Depends on expired www/py-pyjwt1
-EXPIRATION_DATE=2022-12-31
-
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 

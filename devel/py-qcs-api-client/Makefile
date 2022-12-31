@@ -11,9 +11,6 @@ WWW=		https://github.com/rigetti/pyquil
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired www/py-pyjwt1
-EXPIRATION_DATE=2022-12-31
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=20.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.15.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.13:devel/py-iso8601@${PY_FLAVOR} \
