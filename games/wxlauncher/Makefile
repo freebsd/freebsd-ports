@@ -14,36 +14,35 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		cmake openal pkgconfig python:build sdl
-USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open
 GH_PROJECT=	wxLauncher
+USE_SDL=	sdl2
 
 CMAKE_ARGS+=	-DRESOURCES_PATH:STRING="${DATADIR}"
-
-PORTDATA=	*
-PORTDOCS=	Authors.md License.txt ReadMe*.md Thanks.txt
-
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
 
 DESKTOP_ENTRIES="wxLauncher" "${COMMENT}" \
 		"${PORTNAME}" "${PORTNAME}" \
 		"Game;" false
 
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
+PORTDATA=	*
+PORTDOCS=	Authors.md License.txt ReadMe*.md Thanks.txt
+
 OPTIONS_DEFINE=	DEBUG DOCS JOYSTICK WX3
 OPTIONS_DEFAULT=	JOYSTICK WX3
-DEBUG_CXXFLAGS_OFF=	-DNDEBUG
+
 JOYSTICK_DESC=	Build with joystick support
+WX3_DESC=	Build with using wxWidgets 3.0+ version
+
+DEBUG_CXXFLAGS_OFF=	-DNDEBUG
 JOYSTICK_CMAKE_ON=	-DUSE_JOYSTICK:BOOL=ON
 JOYSTICK_CMAKE_OFF=	-DUSE_JOYSTICK:BOOL=OFF
-WX3_DESC=	Build with using wxWidgets 3.0+ version (2.8 otherwise)
-WX3_CXXFLAGS=	-std=c++11
 WX3_USES=	compiler:c++11-lib
 WX3_USE=	WX=3.0+
-WX3_USE_OFF=	WX=2.8
 WX3_CMAKE_ON=	-DWXVER:STRING="3.0"
-WX3_CMAKE_OFF=	-DWXVER:STRING="2.8"
+WX3_CXXFLAGS=	-std=c++11
 
 post-patch: .SILENT
 # Change version_strings.cpp.in file, based on GH_TAGNAME, without using git
