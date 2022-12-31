@@ -268,7 +268,6 @@
     SUBDIR += x026
     SUBDIR += xcalendar
     SUBDIR += xcbautolock
-    SUBDIR += xchm
     SUBDIR += xdg-desktop-portal
     SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin
