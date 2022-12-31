@@ -17729,3 +17729,4 @@ net-p2p/amule-devel|net-p2p/amule|2022-12-31|Has expired: Superseded by non deve
 graphics/comical||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 emulators/lisaem||2022-12-31|Broken for more than a year and use deprecated wxgtk28
 editors/madedit||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
+comms/ebook2cwgui||2022-12-31|Has expired: Abandoned project, last update 2013-01-23 and use deprecated wxgtk28

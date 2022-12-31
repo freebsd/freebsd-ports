@@ -35,7 +35,6 @@
     SUBDIR += dsd
     SUBDIR += dump1090
     SUBDIR += ebook2cw
-    SUBDIR += ebook2cwgui
     SUBDIR += ebusd
     SUBDIR += echolinux
     SUBDIR += ems-flasher
