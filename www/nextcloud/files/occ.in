@@ -9,5 +9,8 @@ for arg in "$@" ; do
     fi
 done
 
+(
 cd %%WWWDIR%%
-su -m %%NEXTCLOUD_USERNAME%% -c "%%LOCALBASE%%/bin/php %%WWWDIR%%/occ ${args}"
+su -m %%NEXTCLOUD_USERNAME%% -c \
+    "%%LOCALBASE%%/bin/php --define apc.enable_cli=1 %%WWWDIR%%/occ ${args}"
+)
