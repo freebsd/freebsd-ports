@@ -1,5 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.93.0
+PORTVERSION=	0.94.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cirruslabs
-
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		BurntSushi:toml:v1.2.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
@@ -139,6 +138,7 @@ GH_TUPLE=	\
 		yudai:gojsondiff:v1.0.0:yudai_gojsondiff/vendor/github.com/yudai/gojsondiff \
 		yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs \
 		yudai:pp:v2.0.1:yudai_pp/vendor/github.com/yudai/pp
+
 GO_TARGET=	./cmd/cirrus
 
 PLIST_FILES=	bin/cirrus
