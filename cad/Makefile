@@ -11,7 +11,6 @@
     SUBDIR += astk-client
     SUBDIR += astk-serveur
     SUBDIR += atlc
-    SUBDIR += basicdsp
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += calculix-ccx

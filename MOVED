@@ -17734,3 +17734,4 @@ databases/firebird25-client||2022-12-31|Has expired: Upstream Support ends on 20
 databases/firebird25-server||2022-12-31|Has expired: Upstream Support ends on 2019-06-24
 multimedia/libkate||2022-12-31|Has expired: Obsolete format that never got any traction and no development in over 10 years
 net/opennx||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
+cad/basicdsp||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
