@@ -623,6 +623,7 @@
     SUBDIR += fbthrift
     SUBDIR += fc++
     SUBDIR += fccf
+    SUBDIR += fcppt
     SUBDIR += fhist
     SUBDIR += fifechan
     SUBDIR += fire-hpp
