@@ -77,6 +77,7 @@
     SUBDIR += delay
     SUBDIR += diction
     SUBDIR += digitemp
+    SUBDIR += dijo
     SUBDIR += dive
     SUBDIR += dnetc
     SUBDIR += dtach

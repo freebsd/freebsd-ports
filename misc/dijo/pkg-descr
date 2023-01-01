@@ -1,0 +1,3 @@
+dijo is a habit tracker. It is curses-based, it runs in your terminal. dijo is
+scriptable, hook it up with external programs to track events without moving a
+finger. dijo is modal, much like a certain text editor.
