@@ -7417,6 +7417,7 @@
     SUBDIR += truc
     SUBDIR += tup
     SUBDIR += twiggy
+    SUBDIR += typeshare
     SUBDIR += ua_parser-core
     SUBDIR += uclcmd
     SUBDIR += ucommon
