@@ -1,0 +1,5 @@
+runiq offers an efficient way (in both time and space) to filter duplicate
+entries (lines) from texual input. This project was born from neek, but
+optimized for both speed and memory. Several filtering options are supported
+depending on your data and tradeoffs you wish to make between speed and memory
+usage.

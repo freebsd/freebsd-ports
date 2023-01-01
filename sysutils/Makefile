@@ -1280,6 +1280,7 @@
     SUBDIR += rubygem-yell
     SUBDIR += rundeck2
     SUBDIR += rundeck3
+    SUBDIR += runiq
     SUBDIR += runit
     SUBDIR += runit-faster
     SUBDIR += runj
