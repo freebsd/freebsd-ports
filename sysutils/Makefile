@@ -363,6 +363,7 @@
     SUBDIR += f3
     SUBDIR += facter
     SUBDIR += fakertc
+    SUBDIR += faketty
     SUBDIR += fand
     SUBDIR += fanout
     SUBDIR += fatback
