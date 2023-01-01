@@ -1,5 +1,6 @@
 PORTNAME=	portsdb
 DISTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +10,9 @@ WWW=		https://github.com/yurivict/freebsd-portsdb
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	sqlite3:databases/sqlite3
+RUN_DEPENDS=	gsed:textproc/gsed \
+		git:devel/git \
+		sqlite3:databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
