@@ -1856,6 +1856,7 @@
     SUBDIR += rxp
     SUBDIR += s5
     SUBDIR += sablotron
+    SUBDIR += sad
     SUBDIR += sansi
     SUBDIR += sarep
     SUBDIR += sary
