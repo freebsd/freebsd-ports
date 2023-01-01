@@ -7405,6 +7405,7 @@
     SUBDIR += transient-devel
     SUBDIR += transwarp
     SUBDIR += tree-sitter
+    SUBDIR += treefmt
     SUBDIR += treepy.el
     SUBDIR += trellis
     SUBDIR += trio

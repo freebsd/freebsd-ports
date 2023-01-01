@@ -1,0 +1,132 @@
+PORTNAME=	treefmt
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	One CLI to format the code tree
+WWW=		https://numtide.github.io/treefmt/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	numtide
+
+CARGO_CRATES=	aho-corasick-0.7.18 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.57 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		block-buffer-0.9.0 \
+		bstr-0.2.17 \
+		bumpalo-3.9.1 \
+		cast-0.2.7 \
+		cfg-if-1.0.0 \
+		clap-2.34.0 \
+		console-0.13.0 \
+		cpufeatures-0.2.2 \
+		criterion-0.3.5 \
+		criterion-plot-0.4.4 \
+		crossbeam-channel-0.5.4 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.8 \
+		crossbeam-utils-0.8.8 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
+		digest-0.9.0 \
+		directories-3.0.2 \
+		dirs-sys-0.3.7 \
+		either-1.6.1 \
+		encode_unicode-0.3.6 \
+		fastrand-1.7.0 \
+		filetime-0.2.16 \
+		fnv-1.0.7 \
+		generic-array-0.14.5 \
+		getrandom-0.2.6 \
+		globset-0.4.8 \
+		half-1.8.2 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		ignore-0.4.18 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-0.4.8 \
+		itoa-1.0.1 \
+		js-sys-0.3.57 \
+		lazy_static-1.4.0 \
+		libc-0.2.125 \
+		log-0.4.16 \
+		memchr-2.5.0 \
+		memoffset-0.6.5 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.1 \
+		once_cell-1.10.0 \
+		oorandom-11.1.3 \
+		opaque-debug-0.3.0 \
+		path-clean-0.1.0 \
+		plotters-0.3.1 \
+		plotters-backend-0.3.2 \
+		plotters-svg-0.3.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.37 \
+		quote-1.0.18 \
+		rayon-1.5.2 \
+		rayon-core-1.9.2 \
+		redox_syscall-0.2.13 \
+		redox_users-0.4.3 \
+		regex-1.5.5 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.25 \
+		remove_dir_all-0.5.3 \
+		rustc_version-0.4.0 \
+		ryu-1.0.9 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-1.0.9 \
+		serde-1.0.137 \
+		serde_cbor-0.11.2 \
+		serde_derive-1.0.137 \
+		serde_json-1.0.80 \
+		sha-1-0.9.8 \
+		strsim-0.8.0 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.92 \
+		tempfile-3.3.0 \
+		terminal_size-0.1.17 \
+		textwrap-0.11.0 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
+		thread_local-1.1.4 \
+		tinytemplate-1.2.1 \
+		toml-0.5.9 \
+		typenum-1.15.0 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.3 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.80 \
+		wasm-bindgen-backend-0.2.80 \
+		wasm-bindgen-macro-0.2.80 \
+		wasm-bindgen-macro-support-0.2.80 \
+		wasm-bindgen-shared-0.2.80 \
+		web-sys-0.3.57 \
+		which-4.2.5 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
