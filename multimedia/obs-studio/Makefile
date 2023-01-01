@@ -9,7 +9,6 @@ PATCHFILES+=	0dcc3a1696c0.patch:-p1 # https://github.com/obsproject/obs-studio/p
 PATCHFILES+=	2cebc65ad7f8.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
 PATCHFILES+=	90c476983ce9.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
 
-
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
 WWW=		https://obsproject.com/
