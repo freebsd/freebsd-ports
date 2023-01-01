@@ -7396,6 +7396,7 @@
     SUBDIR += tmake
     SUBDIR += tnt
     SUBDIR += tokei
+    SUBDIR += tokio-console
     SUBDIR += toml11
     SUBDIR += tortoisehg
     SUBDIR += tpasm

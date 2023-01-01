@@ -1,0 +1,217 @@
+PORTNAME=	tokio-console
+DISTVERSIONPREFIX=	tokio-console-v
+DISTVERSION=	0.1.7
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Debugger for async rust
+WWW=		https://github.com/tokio-rs/console
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	tokio-rs
+GH_PROJECT=	console
+
+WRKSRC_SUBDIR=	${PORTNAME}
+
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		aho-corasick-0.7.18 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.56 \
+		async-stream-0.3.3 \
+		async-stream-impl-0.3.3 \
+		async-trait-0.1.53 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		axum-0.5.0 \
+		axum-core-0.2.0 \
+		backtrace-0.3.64 \
+		base64-0.13.0 \
+		bitflags-1.3.2 \
+		byteorder-1.4.3 \
+		bytes-1.1.0 \
+		cassowary-0.3.0 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		clap-3.1.18 \
+		clap_complete-3.1.4 \
+		clap_derive-3.1.18 \
+		clap_lex-0.2.0 \
+		color-eyre-0.5.11 \
+		color-spantrace-0.1.6 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.4 \
+		crossbeam-utils-0.8.8 \
+		crossterm-0.20.0 \
+		crossterm_winapi-0.8.0 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
+		either-1.6.1 \
+		eyre-0.6.7 \
+		fastrand-1.7.0 \
+		fixedbitset-0.4.1 \
+		flate2-1.0.22 \
+		fnv-1.0.7 \
+		form_urlencoded-1.0.1 \
+		futures-0.3.21 \
+		futures-channel-0.3.21 \
+		futures-core-0.3.21 \
+		futures-executor-0.3.21 \
+		futures-io-0.3.21 \
+		futures-macro-0.3.21 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
+		futures-util-0.3.21 \
+		getrandom-0.2.6 \
+		gimli-0.26.1 \
+		h2-0.3.13 \
+		hashbrown-0.11.2 \
+		hdrhistogram-7.5.0 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		http-0.2.6 \
+		http-body-0.4.4 \
+		http-range-header-0.3.0 \
+		httparse-1.6.0 \
+		httpdate-1.0.2 \
+		humantime-2.1.0 \
+		hyper-0.14.18 \
+		hyper-timeout-0.4.1 \
+		idna-0.2.3 \
+		indenter-0.3.3 \
+		indexmap-1.8.1 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-1.0.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.121 \
+		lock_api-0.4.7 \
+		log-0.4.16 \
+		matchers-0.1.0 \
+		matches-0.1.9 \
+		matchit-0.5.0 \
+		memchr-2.4.1 \
+		mime-0.3.16 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.4.4 \
+		mio-0.7.14 \
+		mio-0.8.2 \
+		miow-0.3.7 \
+		multimap-0.8.3 \
+		nom-7.1.1 \
+		ntapi-0.3.7 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.1 \
+		object-0.27.1 \
+		once_cell-1.10.0 \
+		os_str_bytes-6.0.0 \
+		owo-colors-1.3.0 \
+		parking_lot-0.11.2 \
+		parking_lot-0.12.0 \
+		parking_lot_core-0.8.5 \
+		parking_lot_core-0.9.2 \
+		percent-encoding-2.1.0 \
+		petgraph-0.6.0 \
+		pin-project-1.0.10 \
+		pin-project-internal-1.0.10 \
+		pin-project-lite-0.2.8 \
+		pin-utils-0.1.0 \
+		ppv-lite86-0.2.16 \
+		prettyplease-0.1.9 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.36 \
+		prost-0.11.0 \
+		prost-build-0.11.1 \
+		prost-derive-0.11.0 \
+		prost-types-0.11.0 \
+		quote-1.0.17 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		redox_syscall-0.2.13 \
+		redox_users-0.4.3 \
+		regex-1.5.5 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.25 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.21 \
+		ryu-1.0.9 \
+		scopeguard-1.1.0 \
+		serde-1.0.136 \
+		serde_derive-1.0.136 \
+		serde_json-1.0.79 \
+		sharded-slab-0.1.4 \
+		signal-hook-0.3.13 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.0 \
+		slab-0.4.6 \
+		smallvec-1.8.0 \
+		socket2-0.4.4 \
+		strsim-0.10.0 \
+		syn-1.0.90 \
+		sync_wrapper-0.1.1 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		textwrap-0.15.0 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		thread_local-1.1.4 \
+		tinyvec-1.5.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.17.0 \
+		tokio-io-timeout-1.2.0 \
+		tokio-macros-1.7.0 \
+		tokio-stream-0.1.8 \
+		tokio-util-0.7.1 \
+		toml-0.5.8 \
+		tonic-0.8.0 \
+		tonic-build-0.8.0 \
+		tower-0.4.12 \
+		tower-http-0.2.5 \
+		tower-layer-0.3.1 \
+		tower-service-0.3.1 \
+		tracing-0.1.32 \
+		tracing-attributes-0.1.20 \
+		tracing-core-0.1.24 \
+		tracing-error-0.1.2 \
+		tracing-futures-0.2.5 \
+		tracing-journald-0.2.4 \
+		tracing-log-0.1.2 \
+		tracing-subscriber-0.2.25 \
+		tracing-subscriber-0.3.11 \
+		try-lock-0.2.3 \
+		tui-0.16.0 \
+		unicode-bidi-0.3.7 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.2 \
+		url-2.2.2 \
+		valuable-0.1.0 \
+		version_check-0.9.4 \
+		want-0.3.0 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		which-4.2.5 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.34.0 \
+		windows_aarch64_msvc-0.34.0 \
+		windows_i686_gnu-0.34.0 \
+		windows_i686_msvc-0.34.0 \
+		windows_x86_64_gnu-0.34.0 \
+		windows_x86_64_msvc-0.34.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
