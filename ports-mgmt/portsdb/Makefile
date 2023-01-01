@@ -1,5 +1,5 @@
 PORTNAME=	portsdb
-DISTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,18 +18,18 @@ GH_PROJECT=	freebsd-portsdb
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/portsdb-import \
-		libexec/${PORTNAME}/add-port-standalone.sh \
-		libexec/${PORTNAME}/add-port.sh \
-		libexec/${PORTNAME}/import.sh \
-		libexec/${PORTNAME}/schema.sql
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
-.for f in import.sh add-port.sh add-port-standalone.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	# create folder
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec
+	# copy files
+	${CP} -r ${WRKSRC} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	# remove unnecessary files
+.for file in .gitignore LICENSE README.md
+	${RM} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/${file}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/schema.sql ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
-	${RLN} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/import.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-import
+	# create symlinks
+.for prog in import update
+	${RLN} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/${prog}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${prog}
+.endfor
 
 .include <bsd.port.mk>
