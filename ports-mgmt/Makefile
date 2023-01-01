@@ -2,7 +2,6 @@
 
     SUBDIR += bsdadminscripts2
     SUBDIR += caronade
-    SUBDIR += chucky
     SUBDIR += create-rb-port
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static

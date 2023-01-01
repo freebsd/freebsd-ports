@@ -17743,3 +17743,4 @@ www/py-txrequests|www/py-requests-futures|2022-12-31|Has expired: Use www/py-req
 sysutils/py-ansible-core211||2022-12-31|Has expired: Depends on expired security/py-pycrypto
 sysutils/ansible4||2022-12-31|Has expired: Depends on expired security/py-pycrypto (via sysutils/py-ansible-core211)
 security/py-pycrypto|security/py-pycryptodome|2022-12-31|Has expired: Unmaintained, obsolete, and contains security vulnerabilities. Use security/py-pycryptodome instead
+ports-mgmt/chucky||2023-01-01|Has expired: Uses the obsoleted reeBSD tag
