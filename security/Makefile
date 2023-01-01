@@ -34,6 +34,7 @@
     SUBDIR += asignify
     SUBDIR += assh
     SUBDIR += authenticator
+    SUBDIR += authoscope
     SUBDIR += autossh
     SUBDIR += aws-c-auth
     SUBDIR += aws-c-cal
