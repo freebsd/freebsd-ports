@@ -1,0 +1,164 @@
+PORTNAME=	pomsky
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8
+CATEGORIES=	lang textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Portable, modern regular expression language
+WWW=		https://pomsky-lang.org
+
+LICENSE=	MIT APACHE20
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	rulex-rs
+
+WRKSRC_SUBDIR=	pomsky-bin
+
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		ahash-0.7.6 \
+		aho-corasick-0.7.20 \
+		anes-0.1.6 \
+		arbitrary-1.2.0 \
+		assert_cmd-2.0.7 \
+		assert_fs-1.0.10 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		backtrace-0.3.66 \
+		bitflags-1.3.2 \
+		block-buffer-0.10.3 \
+		bstr-0.2.17 \
+		bstr-1.0.1 \
+		bumpalo-3.11.1 \
+		cast-0.3.0 \
+		cc-1.0.77 \
+		cfg-if-1.0.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clap-3.2.23 \
+		clap_lex-0.2.4 \
+		cpufeatures-0.2.5 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.13 \
+		crossbeam-utils-0.8.14 \
+		crypto-common-0.1.6 \
+		derive_arbitrary-1.2.0 \
+		difflib-0.4.0 \
+		digest-0.10.6 \
+		doc-comment-0.3.3 \
+		either-1.8.0 \
+		fastrand-1.8.0 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		generic-array-0.14.6 \
+		getrandom-0.2.8 \
+		gimli-0.26.2 \
+		globset-0.4.9 \
+		globwalk-0.8.1 \
+		half-1.8.2 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		ignore-0.4.18 \
+		indexmap-1.9.2 \
+		instant-0.1.12 \
+		is_ci-1.1.1 \
+		itertools-0.10.5 \
+		itoa-1.0.4 \
+		jobserver-0.1.25 \
+		js-sys-0.3.60 \
+		lazy_static-1.4.0 \
+		lexopt-0.2.1 \
+		libc-0.2.138 \
+		log-0.4.17 \
+		melody_compiler-0.18.1 \
+		memchr-2.5.0 \
+		memoffset-0.7.1 \
+		miette-5.5.0 \
+		miette-derive-5.5.0 \
+		miniz_oxide-0.5.4 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.15 \
+		num_cpus-1.14.0 \
+		object-0.29.0 \
+		once_cell-1.16.0 \
+		oorandom-11.1.3 \
+		os_str_bytes-6.4.1 \
+		owo-colors-3.5.0 \
+		pcre2-0.2.3 \
+		pcre2-sys-0.2.5 \
+		pest-2.5.1 \
+		pest_derive-2.5.1 \
+		pest_generator-2.5.1 \
+		pest_meta-2.5.1 \
+		pkg-config-0.3.26 \
+		plotters-0.3.4 \
+		plotters-backend-0.3.4 \
+		plotters-svg-0.3.3 \
+		predicates-2.1.4 \
+		predicates-core-1.0.5 \
+		predicates-tree-1.0.7 \
+		proc-macro2-1.0.47 \
+		quote-1.0.21 \
+		rayon-1.6.0 \
+		rayon-core-1.10.1 \
+		redox_syscall-0.2.16 \
+		regex-1.7.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.28 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.21 \
+		ryu-1.0.11 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		serde-1.0.149 \
+		serde_derive-1.0.149 \
+		serde_json-1.0.89 \
+		sha1-0.10.5 \
+		smawk-0.3.1 \
+		strsim-0.10.0 \
+		supports-color-1.3.1 \
+		supports-hyperlinks-1.2.0 \
+		supports-unicode-1.0.2 \
+		syn-1.0.105 \
+		tempfile-3.3.0 \
+		terminal_size-0.1.17 \
+		termtree-0.4.0 \
+		textwrap-0.15.2 \
+		textwrap-0.16.0 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
+		thread_local-1.1.4 \
+		tinytemplate-1.2.1 \
+		typenum-1.16.0 \
+		ucd-trie-0.1.5 \
+		unicode-ident-1.0.5 \
+		unicode-linebreak-0.1.4 \
+		unicode-width-0.1.10 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		criterion,criterion-plot@git+https://github.com/bheisler/criterion.rs?branch=version-0.4\#935c6327e152e44f2b9178797682b9b99b5123a5
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
