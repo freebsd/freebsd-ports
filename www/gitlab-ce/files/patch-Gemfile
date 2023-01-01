@@ -1,14 +1,17 @@
 --- Gemfile.orig	2022-12-07 19:22:40 UTC
 +++ Gemfile
-@@ -13,7 +13,7 @@ gem 'bundler-checksum', '~> 0.1.0', path: 'vendor/gems
+@@ -13,9 +13,9 @@ gem 'bundler-checksum', '~> 0.1.0', path: 'vendor/gems
  # NOTE: When incrementing the major or minor version here, also increment activerecord_version
  # in vendor/gems/attr_encrypted/attr_encrypted.gemspec until we resolve
  # https://gitlab.com/gitlab-org/gitlab/-/issues/375713
 -gem 'rails', '~> 6.1.6.1'
 +gem 'rails', '~> 6.1.6'
  
- gem 'bootsnap', '~> 1.13.0', require: false
+-gem 'bootsnap', '~> 1.13.0', require: false
++gem 'bootsnap', '~> 1.14.0', require: false
  
+ # Pin openssl to match the version bundled with our supported Rubies.
+ # See https://stdgems.org/openssl/#gem-version.
 @@ -57,18 +57,18 @@ gem 'doorkeeper-openid_connect', '~> 1.7.5'
  gem 'rexml', '~> 3.2.5'
  gem 'ruby-saml', '~> 1.13.0'
