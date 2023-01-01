@@ -1,0 +1,2 @@
+comrak 100% CommonMark and GFM compatible Markdown parser.
+The design is based on cmark, so familiarity with that will help.
