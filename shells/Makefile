@@ -45,6 +45,7 @@
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += scponly
+    SUBDIR += shellharden
     SUBDIR += starship
     SUBDIR += switchBashZsh
     SUBDIR += tcsh_nls
