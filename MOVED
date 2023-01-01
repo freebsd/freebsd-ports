@@ -17744,3 +17744,6 @@ sysutils/py-ansible-core211||2022-12-31|Has expired: Depends on expired security
 sysutils/ansible4||2022-12-31|Has expired: Depends on expired security/py-pycrypto (via sysutils/py-ansible-core211)
 security/py-pycrypto|security/py-pycryptodome|2022-12-31|Has expired: Unmaintained, obsolete, and contains security vulnerabilities. Use security/py-pycryptodome instead
 ports-mgmt/chucky||2023-01-01|Has expired: Uses the obsoleted reeBSD tag
+sysutils/beats6||2023-01-01|Has expired: No longer maintained and supported
+sysutils/logstash6||2023-01-01|Has expired: No longer maintained and supported
+textproc/elasticsearch6||2023-01-01|Has expired: No longer maintained and supported

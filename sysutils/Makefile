@@ -119,7 +119,6 @@
     SUBDIR += bchunk
     SUBDIR += beadm
     SUBDIR += beadm-devel
-    SUBDIR += beats6
     SUBDIR += beats7
     SUBDIR += beats8
     SUBDIR += bfs
@@ -672,7 +671,6 @@
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash-forwarder
-    SUBDIR += logstash6
     SUBDIR += logstash7
     SUBDIR += logstash8
     SUBDIR += logtool

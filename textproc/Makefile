@@ -175,7 +175,6 @@
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch-plugin-head
-    SUBDIR += elasticsearch6
     SUBDIR += elasticsearch7
     SUBDIR += elasticsearch8
     SUBDIR += en-aspell
