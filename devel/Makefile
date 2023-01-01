@@ -7300,6 +7300,7 @@
     SUBDIR += spin
     SUBDIR += spirv-llvm-translator
     SUBDIR += splint
+    SUBDIR += spr
     SUBDIR += spread-sheet-widget
     SUBDIR += spyder
     SUBDIR += srecord
