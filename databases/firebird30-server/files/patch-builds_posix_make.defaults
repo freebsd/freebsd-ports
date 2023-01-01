@@ -1,6 +1,6 @@
---- builds/posix/make.defaults	2020-10-20 03:40:05.000000000 -0500
-+++ builds/posix/make.defaults	2021-06-25 00:23:49.718147000 -0500
-@@ -134,7 +134,7 @@
+--- builds/posix/make.defaults.orig	2022-06-07 08:18:52 UTC
++++ builds/posix/make.defaults
+@@ -134,7 +134,7 @@ CAS_OPTIONS=@CAS_OPTIONS@
  MATHLIB=@MATHLIB@
  
  # switch to make sed edit files inplace
@@ -9,7 +9,7 @@
  
  # Default programs and tools to be used in the build process
  
-@@ -144,7 +144,7 @@
+@@ -144,7 +144,7 @@ RM_R=		rm -rf
  CHMOD=			chmod
  CHMOD_6=		chmod 666
  CHMOD_7=		chmod 777
@@ -18,7 +18,7 @@
  MV=			mv -f
  TOUCH=			touch
  CP=			cp
-@@ -219,7 +219,7 @@
+@@ -219,7 +219,7 @@ vpath %.dll $(LIB)
  #LibraryFileName=libfbclient
  LibraryFileName=libfbclient
  LibraryFullName=$(LibraryFileName).${SHRLIB_EXT}.${FirebirdVersion}
@@ -27,7 +27,7 @@
  LibraryBaseName=$(LibraryFileName).${SHRLIB_EXT}
  
  LIBFIREBIRD_FULLNAME = $(LIB)/$(LibraryFullName)
-@@ -240,7 +240,7 @@
+@@ -240,7 +240,7 @@ LIBFBINTL_SO = $(FB_BUILD)/intl/$(LIB_PREFIX)fbintl.$(
  
  ifeq ($(EDITLINE_FLG),Y)
    ifeq ($(STD_EDITLINE), true)
@@ -36,7 +36,7 @@
    else
  	LIBEDITLINE := $(LIB)/libedit.a
    endif
-@@ -362,7 +362,7 @@
+@@ -362,7 +362,7 @@ CREATE_DB	= $(RBIN)/create_db$(EXEC_EXT)
  GDS_DROP	= $(BIN)/gds_drop$(EXEC_EXT)
  FBSVCMGR	= $(BIN)/fbsvcmgr$(EXEC_EXT)
  FBTRACEMGR	= $(BIN)/fbtracemgr$(EXEC_EXT)
@@ -45,7 +45,7 @@
  NBACKUP		= $(BIN)/nbackup$(EXEC_EXT)
  LOCKPRINT	= $(BIN)/fb_lock_print$(EXEC_EXT)
  GSEC		= $(BIN)/gsec$(EXEC_EXT)
-@@ -383,13 +383,13 @@
+@@ -383,13 +383,13 @@ SECURITY_FDB	= $(FIREBIRD)/security3.fdb
  QLI            = $(BIN)/qli$(EXEC_EXT)
  
  # From isql

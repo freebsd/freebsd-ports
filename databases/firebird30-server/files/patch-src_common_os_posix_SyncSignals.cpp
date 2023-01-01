@@ -1,4 +1,4 @@
---- src/common/os/posix/SyncSignals.cpp.orig	2020-10-12 00:02:22 UTC
+--- src/common/os/posix/SyncSignals.cpp.orig	2022-06-07 08:18:52 UTC
 +++ src/common/os/posix/SyncSignals.cpp
 @@ -54,9 +54,6 @@
  #include <errno.h>
@@ -10,4 +10,3 @@
  
  namespace {
  
-

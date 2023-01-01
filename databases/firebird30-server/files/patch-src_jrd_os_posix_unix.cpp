@@ -1,5 +1,5 @@
---- src/jrd/os/posix/unix.cpp	2021-06-22 00:38:07.434896000 -0500
-+++ src/jrd/os/posix/unix.cpp	2021-06-22 00:43:54.988645000 -0500
+--- src/jrd/os/posix/unix.cpp.orig	2022-06-07 08:18:52 UTC
++++ src/jrd/os/posix/unix.cpp
 @@ -56,6 +56,13 @@
  #include <linux/fs.h>
  #endif
@@ -14,7 +14,7 @@
  #endif //SUPPORT_RAW_DEVICES
  
  #include "../jrd/jrd.h"
-@@ -495,7 +502,7 @@
+@@ -496,7 +503,7 @@ ULONG PIO_get_number_of_pages(const jrd_file* file, co
  // Looks like any OS needs own ioctl() to determine raw device size
  #undef HAS_RAW_SIZE
  

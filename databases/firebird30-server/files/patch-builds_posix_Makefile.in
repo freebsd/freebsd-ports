@@ -1,6 +1,6 @@
---- builds/posix/Makefile.in	2020-10-20 03:40:05.000000000 -0500
-+++ builds/posix/Makefile.in	2021-06-25 00:25:25.389776000 -0500
-@@ -186,16 +186,18 @@
+--- builds/posix/Makefile.in.orig	2022-06-07 08:18:52 UTC
++++ builds/posix/Makefile.in
+@@ -191,16 +191,16 @@ master_process:
  	$(MAKE) preliminaryCheck
  	$(MAKE) boot
  	$(MAKE) yvalve
@@ -10,10 +10,8 @@
  	$(MAKE) ids
  endif
 -	$(MAKE) engine
-+ifeq ($(IsServer), Y)
  	$(MAKE) fbintl
  	$(MAKE) utilities
-+endif
  # Now having ready such useful tools as gbak and isql, we may restore / create
  # required databases and switch to full-featured gpre
 -	$(MAKE) gpre
@@ -21,14 +19,3 @@
  # Pay attention - after build force gpre_current to point to gpre
  # even if gpre itself was not rebuilt
  	-$(RM) $(GPRE_CURRENT)
-@@ -204,8 +206,10 @@
- # In developer mode we must regenerate various files in include/gen
- 	$(MAKE) codes
- endif
-+ifeq ($(IsServer), Y)
- 	$(MAKE) plugins
- 	$(MAKE) examples
-+endif
- 	$(MAKE) rest
- 
- 

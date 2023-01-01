@@ -1,4 +1,4 @@
---- builds/posix/Makefile.in.plugins_examples.orig	2021-03-27 11:14:37 UTC
+--- builds/posix/Makefile.in.plugins_examples.orig	2022-06-07 08:18:52 UTC
 +++ builds/posix/Makefile.in.plugins_examples
 @@ -99,7 +99,7 @@ AllObjects += $(CA_Objects)
  crypt_app: $(CRYPT_APP)
@@ -9,4 +9,3 @@
  
  
  include $(ROOT)/gen/make.shared.targets
-

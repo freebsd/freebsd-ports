@@ -1,6 +1,6 @@
 PORTNAME=	firebird
 PORTVERSION=	3.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -96,7 +96,7 @@ CONFIGURE_ENV+=	ac_cv_lib_edit_readline="yes"
 
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli
-CLIENT_HEADER=	extlib/ib_util.h include/ibase.h include/iberror.h yvalve/perf.h
+CLIENT_HEADER=	ib_util.h ibase.h iberror.h perf.h
 
 OPTIONS_DEFINE=	DOCS
 
@@ -120,7 +120,7 @@ CFLAGS+=	-DAMD64
 USERS=	${PORTNAME}
 GROUPS=	${USERS}
 
-MAKE_ENV+=	IsServer=Y
+#MAKE_ENV+=	IsServer=Y
 .endif
 
 post-patch:
@@ -177,12 +177,12 @@ do-install:
 	${LN} -fs libfbclient.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libfbclient.so
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/firebird
-	${INSTALL_DATA} ${CLIENT_HEADER:S!^!${WRKSRC}/src/!} ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${CLIENT_HEADER:S!^!${WRKSRC}/gen/Release/firebird/include/!} ${STAGEDIR}${PREFIX}/include
 
-	@cd ${WRKSRC}/src/include/firebird && \
+	@cd ${WRKSRC}/gen/Release/firebird/include/firebird && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/include/firebird/{}" \;
 
-	@cd ${WRKSRC}/src/include/firebird && \
+	@cd ${WRKSRC}/gen/Release/firebird/include/firebird && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/include/firebird/{}" \;
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}
