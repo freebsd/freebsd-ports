@@ -43,10 +43,10 @@ MAKE_ARGS=	--cxx-std=17 \
 		--libc++ \
 		--runtime-hardening=on \
 		--use-system-boost \
+		--use-system-libunwind \
 		--use-system-pcre \
 		--use-system-snappy \
 		--use-system-stemmer \
-		--use-system-libunwind \
 		--use-system-yaml \
 		--use-system-zlib \
 		--use-system-zstd \
@@ -59,10 +59,14 @@ CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 USERS=		mongodb
 GROUPS=		mongodb
 
-OPTIONS_DEFINE=			LTO SASL SSL
-OPTIONS_DEFAULT=		LTO SASL SSL
+OPTIONS_DEFINE=		LTO SASL SSL NOAVX
+OPTIONS_DEFAULT=	LTO SASL SSL
+
+NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
 
 LTO_MAKE_ARGS=	--lto=on
+
+NOAVX_MAKE_ARGS=	--experimental-optimization="-sandybridge"
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
