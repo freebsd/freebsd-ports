@@ -1,0 +1,12 @@
+The Way is a code snippets manager for your terminal.
+
+Record and retrieve snippets you use every day, or once in a blue moon, without
+having to spin up a browser. Just call the-way new to add a snippet with a
+description, a language, and some tags attached.
+
+'the-way search' fuzzy searches your snippets library (with optional filters on
+language and tags) and lets you:
+* edit a snippet with Shift-Right
+* delete a snippet with Shift-Left
+* copy a particular snippet to your clipboard (with Enter), so you can paste it
+  into whatever editor or IDE you're working with.

@@ -7373,6 +7373,7 @@
     SUBDIR += tex-synctex
     SUBDIR += tex-web2c
     SUBDIR += texlab
+    SUBDIR += the-way
     SUBDIR += thonny
     SUBDIR += thrift
     SUBDIR += thrift-c_glib
