@@ -14,6 +14,8 @@ WWW=		https://mesos.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build, configure: error: Cannot find the ELFIO headers
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		elfio>0:devel/elfio \
 		http-parser>0:www/http-parser \
