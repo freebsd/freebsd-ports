@@ -781,6 +781,7 @@
     SUBDIR += gfold
     SUBDIR += gh
     SUBDIR += ghidra
+    SUBDIR += ghostie
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += ghub-devel
