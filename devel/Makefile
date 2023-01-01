@@ -7242,6 +7242,7 @@
     SUBDIR += sdlskk
     SUBDIR += sdts++
     SUBDIR += sedsed
+    SUBDIR += selene
     SUBDIR += sentry-cli
     SUBDIR += serd
     SUBDIR += serdisplib
