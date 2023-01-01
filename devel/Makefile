@@ -7410,6 +7410,7 @@
     SUBDIR += trompeloeil
     SUBDIR += truc
     SUBDIR += tup
+    SUBDIR += twiggy
     SUBDIR += ua_parser-core
     SUBDIR += uclcmd
     SUBDIR += ucommon
