@@ -1,7 +1,6 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.4
-PORTREVISION=	1
+DISTVERSION=	9.5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,7 +51,7 @@ SCIP_LIB_DEPENDS=	libscip.so:math/SCIP
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-//}
 PORTDOCS=	*
 
-# 4 tests are known to fail, see https://github.com/google/or-tools/issues/3429
+# 3 tests are known to fail, see https://github.com/google/or-tools/issues/3429
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
