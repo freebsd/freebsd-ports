@@ -1,5 +1,5 @@
 PORTNAME=	onioncat
-DISTVERSION=	0.3.9
+DISTVERSION=	0.4.7
 CATEGORIES=	net security
 MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/current/
 
