@@ -118,6 +118,7 @@
     SUBDIR += dolibarr15
     SUBDIR += domoticz
     SUBDIR += dooble
+    SUBDIR += drill
     SUBDIR += drupal10
     SUBDIR += drupal7
     SUBDIR += drupal7-wysiwyg
