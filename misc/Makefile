@@ -44,6 +44,7 @@
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += colortail
+    SUBDIR += coloursum
     SUBDIR += colwide
     SUBDIR += compat.el
     SUBDIR += compat10x
