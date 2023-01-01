@@ -47,10 +47,10 @@ etc/rc.conf.d/vaultwarden.sample
 %%WWWDIR%%/web-vault/connectors/sso.1b902be61e235185bf41.css.map
 %%WWWDIR%%/web-vault/connectors/sso.d88c527da5ac4ab2e950.js
 %%WWWDIR%%/web-vault/connectors/sso.d88c527da5ac4ab2e950.js.map
-%%WWWDIR%%/web-vault/connectors/webauthn-fallback.cc837e9c9d56fcf4ef60.css
-%%WWWDIR%%/web-vault/connectors/webauthn-fallback.cc837e9c9d56fcf4ef60.css.map
 %%WWWDIR%%/web-vault/connectors/webauthn-fallback.3692c5cfac073ad12263.js
 %%WWWDIR%%/web-vault/connectors/webauthn-fallback.3692c5cfac073ad12263.js.map
+%%WWWDIR%%/web-vault/connectors/webauthn-fallback.cc837e9c9d56fcf4ef60.css
+%%WWWDIR%%/web-vault/connectors/webauthn-fallback.cc837e9c9d56fcf4ef60.css.map
 %%WWWDIR%%/web-vault/connectors/webauthn.b50e3a9527b3e4de41eb.js
 %%WWWDIR%%/web-vault/connectors/webauthn.b50e3a9527b3e4de41eb.js.map
 %%WWWDIR%%/web-vault/connectors/webauthn.cc837e9c9d56fcf4ef60.css

@@ -37,3 +37,6 @@ export SMTP_SSL
 # SMTP_PASSWORD=
 # export SMTP_PASSWORD
 
+# Beta feature
+# ORG_GROUPS_ENABLED=false
+# export ORG_GROUPS_ENABLED
