@@ -5,6 +5,10 @@ CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	e221bf8eedfc.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7989
+PATCHFILES+=	0dcc3a1696c0.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7986
+PATCHFILES+=	2cebc65ad7f8.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
+PATCHFILES+=	90c476983ce9.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
+
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
@@ -72,13 +76,12 @@ GH_TUPLE=	obsproject:obs-amd-encoder:d5a136c6834c39293ad749cf8f07bdaa772fe44b:ob
 			akheron:jansson:bc5741fb1ac730ead24e9bd08977fc6c248e04b0:akheron_jansson/plugins/obs-outputs/ftl-sdk/libjansson
 
 CMAKE_ON=	UNIX_STRUCTURE
-CMAKE_OFF=	ENABLE_PIPEWIRE # beginning with 27.0.1 (PR#4287) the linux-capture plugin optionally requires the piperware library and in this case expects the linux/dma-buf.h header
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
 		-DQT_VERSION=6
 
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
-OPTIONS_DEFINE=		BROWSER VLC VST
+OPTIONS_DEFINE=		BROWSER PIPEWIRE VLC VST
 OPTIONS_DEFAULT=	VLC VST
 OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	JACK PULSEAUDIO SNDIO
@@ -93,6 +96,10 @@ BROWSER_BROKEN=		Needs CEF (Chromium Embedded Framework) which isn't yet ported
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DENABLE_JACK=TRUE
 JACK_CMAKE_OFF=		-DDISABLE_JACK=TRUE
+
+PIPEWIRE_DESC=		Screen capture via PipeWire
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_CMAKE_BOOL=	ENABLE_PIPEWIRE
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DENABLE_PULSEAUDIO=TRUE
