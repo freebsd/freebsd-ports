@@ -90,6 +90,7 @@
     SUBDIR += gnatsweb4
     SUBDIR += go-carbon
     SUBDIR += go-pgweb
+    SUBDIR += gobang
     SUBDIR += gom
     SUBDIR += gqlplus
     SUBDIR += grass7

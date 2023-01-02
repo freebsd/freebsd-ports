@@ -1,0 +1,212 @@
+PORTNAME=	gobang
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0-alpha.5
+CATEGORIES=	databases
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Cross-platform TUI database management tool written in Rust
+WWW=		https://github.com/tako8ki/gobang
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	tako8ki
+
+CARGO_CRATES=	ahash-0.7.4 \
+		aho-corasick-0.7.18 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.41 \
+		arrayvec-0.5.2 \
+		async-trait-0.1.50 \
+		atoi-0.4.0 \
+		atty-0.2.14 \
+		autocfg-0.1.7 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		bitvec-0.19.5 \
+		block-buffer-0.9.0 \
+		bumpalo-3.7.0 \
+		byteorder-1.4.3 \
+		bytes-1.1.0 \
+		cassowary-0.3.0 \
+		cc-1.0.68 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		cpufeatures-0.1.5 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-queue-0.3.2 \
+		crossbeam-utils-0.8.5 \
+		crossterm-0.19.0 \
+		crossterm-0.20.0 \
+		crossterm_winapi-0.7.0 \
+		crossterm_winapi-0.8.0 \
+		crypto-mac-0.10.1 \
+		digest-0.9.0 \
+		dirs-3.0.2 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.3.6 \
+		dirs-sys-next-0.1.2 \
+		dotenv-0.15.0 \
+		easy-cast-0.4.4 \
+		either-1.6.1 \
+		form_urlencoded-1.0.1 \
+		funty-1.1.0 \
+		futures-0.3.15 \
+		futures-channel-0.3.15 \
+		futures-core-0.3.15 \
+		futures-executor-0.3.15 \
+		futures-intrusive-0.4.0 \
+		futures-io-0.3.15 \
+		futures-macro-0.3.15 \
+		futures-sink-0.3.15 \
+		futures-task-0.3.15 \
+		futures-util-0.3.15 \
+		generic-array-0.14.4 \
+		getrandom-0.2.3 \
+		hashbrown-0.11.2 \
+		hashlink-0.7.0 \
+		heck-0.3.3 \
+		hermit-abi-0.1.18 \
+		hex-0.4.3 \
+		hmac-0.10.1 \
+		idna-0.2.3 \
+		indexmap-1.7.0 \
+		instant-0.1.9 \
+		itertools-0.10.1 \
+		itoa-0.4.7 \
+		js-sys-0.3.51 \
+		lazy_static-1.4.0 \
+		lexical-core-0.7.6 \
+		libc-0.2.97 \
+		libm-0.2.1 \
+		libsqlite3-sys-0.22.2 \
+		lock_api-0.4.4 \
+		log-0.4.14 \
+		maplit-1.0.2 \
+		matches-0.1.8 \
+		md-5-0.9.1 \
+		memchr-2.4.0 \
+		mio-0.7.13 \
+		miow-0.3.7 \
+		nom-6.1.2 \
+		ntapi-0.3.6 \
+		num-bigint-0.3.2 \
+		num-bigint-0.4.2 \
+		num-bigint-dig-0.7.0 \
+		num-integer-0.1.44 \
+		num-iter-0.1.42 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		once_cell-1.8.0 \
+		opaque-debug-0.3.0 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
+		pem-0.8.3 \
+		percent-encoding-2.1.0 \
+		pin-project-lite-0.2.6 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		ppv-lite86-0.2.10 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.27 \
+		quote-1.0.9 \
+		radium-0.5.3 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		redox_syscall-0.2.9 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		ring-0.16.20 \
+		rsa-0.4.1 \
+		rust_decimal-1.15.0 \
+		rustls-0.19.1 \
+		ryu-1.0.5 \
+		scopeguard-1.1.0 \
+		sct-0.6.1 \
+		serde-1.0.126 \
+		serde_derive-1.0.126 \
+		serde_json-1.0.64 \
+		sha-1-0.9.6 \
+		sha2-0.9.5 \
+		signal-hook-0.1.17 \
+		signal-hook-0.3.10 \
+		signal-hook-mio-0.2.1 \
+		signal-hook-registry-1.4.0 \
+		simple_asn1-0.5.4 \
+		slab-0.4.3 \
+		smallvec-1.6.1 \
+		spin-0.5.2 \
+		sqlformat-0.1.6 \
+		sqlx-0.5.7 \
+		sqlx-core-0.5.7 \
+		sqlx-macros-0.5.7 \
+		sqlx-rt-0.5.7 \
+		static_assertions-1.1.0 \
+		stringprep-0.1.2 \
+		strsim-0.8.0 \
+		structopt-0.3.22 \
+		structopt-derive-0.4.15 \
+		strum-0.21.0 \
+		strum_macros-0.21.1 \
+		subtle-2.4.0 \
+		syn-1.0.73 \
+		synstructure-0.12.4 \
+		tap-1.0.1 \
+		textwrap-0.11.0 \
+		thiserror-1.0.25 \
+		thiserror-impl-1.0.25 \
+		time-0.1.43 \
+		tinyvec-1.2.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.11.0 \
+		tokio-macros-1.3.0 \
+		tokio-rustls-0.22.0 \
+		tokio-stream-0.1.7 \
+		toml-0.4.10 \
+		tui-0.15.0 \
+		typenum-1.13.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		unicode_categories-0.1.1 \
+		untrusted-0.7.1 \
+		url-2.2.2 \
+		vcpkg-0.2.15 \
+		vec_map-0.8.2 \
+		version_check-0.9.3 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.74 \
+		wasm-bindgen-backend-0.2.74 \
+		wasm-bindgen-macro-0.2.74 \
+		wasm-bindgen-macro-support-0.2.74 \
+		wasm-bindgen-shared-0.2.74 \
+		web-sys-0.3.51 \
+		webpki-0.21.4 \
+		webpki-roots-0.21.1 \
+		which-4.2.2 \
+		whoami-1.1.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wyz-0.2.0 \
+		zeroize-1.3.0 \
+		zeroize_derive-1.1.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
