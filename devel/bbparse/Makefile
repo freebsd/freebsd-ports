@@ -15,6 +15,8 @@ ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix
 
+PIE_UNSAFE=	yes
+
 PLIST_FILES=	lib/libbbparse.a \
 		include/bbparse.h \
 		man/man3/libbbparse.3.gz
