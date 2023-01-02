@@ -1,5 +1,5 @@
 PORTNAME=	locfit
-DISTVERSION=	1.5-9.6
+DISTVERSION=	1.5-9.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,6 +9,6 @@ WWW=		https://cran.r-project.org/package=locfit
 
 LICENSE=	GPLv2+
 
-USES=		cran:compiles
+USES=		compiler:c++17-lang cran:compiles
 
 .include <bsd.port.mk>
