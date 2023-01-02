@@ -535,6 +535,7 @@
     SUBDIR += ncmpcpp
     SUBDIR += ncpamixer
     SUBDIR += ncspot
+    SUBDIR += netease-music-tui
     SUBDIR += noise-repellent-lv2
     SUBDIR += noise-suppression-for-voice-lv2
     SUBDIR += normalize
