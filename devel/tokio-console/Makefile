@@ -211,6 +211,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	limit:^tokio-console-v[0-9].*
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
