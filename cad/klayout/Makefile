@@ -1,5 +1,5 @@
 PORTNAME=	klayout
-PORTVERSION=	0.27.9
+PORTVERSION=	0.28.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -38,7 +38,6 @@ do-configure:
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${SH} build.sh \
 		-with-qtbinding \
-		-qt5 \
 		-rpath "${PREFIX}/lib/klayout" \
 		-prefix "${PREFIX}" \
 		-python ${PYTHON_CMD} \

@@ -1,4 +1,4 @@
---- src/pymod/pymod.pri.orig	2021-07-23 08:00:26 UTC
+--- src/pymod/pymod.pri.orig	2022-12-22 22:17:08 UTC
 +++ src/pymod/pymod.pri
 @@ -9,7 +9,7 @@ include($$PWD/../klayout.pri)
  
@@ -26,7 +26,7 @@
  }
  INSTALLS = lib_target
  
-@@ -58,14 +58,14 @@ INSTALLS = lib_target
+@@ -70,14 +70,14 @@ INSTALLS = lib_target
    }
  
    # INSTALLS needs to be inside a lib or app templates.

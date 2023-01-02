@@ -1,6 +1,6 @@
---- src/pymod/tl/tl.pro.orig	2021-07-23 08:00:26 UTC
+--- src/pymod/tl/tl.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/pymod/tl/tl.pro
-@@ -32,14 +32,14 @@ msvc {
+@@ -33,14 +33,14 @@ msvc {
  }
  
  # INSTALLS needs to be inside a lib or app templates.
@@ -17,7 +17,7 @@
  }
  INSTALLS += init_target
  
-@@ -52,13 +52,13 @@ msvc {
+@@ -53,13 +53,13 @@ msvc {
  }
  
  # INSTALLS needs to be inside a lib or app templates.

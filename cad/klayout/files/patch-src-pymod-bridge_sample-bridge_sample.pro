@@ -1,6 +1,6 @@
---- src/pymod/bridge_sample/bridge_sample.pro.orig	2021-08-28 20:02:06 UTC
+--- src/pymod/bridge_sample/bridge_sample.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/pymod/bridge_sample/bridge_sample.pro
-@@ -62,12 +62,12 @@ equals(HAVE_QT, "0") {
+@@ -65,12 +65,12 @@ equals(HAVE_QT, "0") {
  }
  INCLUDEPATH += "$$PYTHONINCLUDE" $$INC/tl/tl $$INC/pya/pya $$INC/gsi/gsi
  DEPENDPATH += "$$PYTHONINCLUDE" $$INC/tl/tl $$INC/pya/pya $$INC/gsi/gsi

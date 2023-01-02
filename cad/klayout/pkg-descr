@@ -1,1 +1,3 @@
-KLayout is a viewer for GDS2 files.
+KLayout is a viewing and editing tool for GDS and OASIS files.  It supports
+parametrized cells, and Ruby or Python-based scripting environment to
+automate various tasks of the chip design engineers.

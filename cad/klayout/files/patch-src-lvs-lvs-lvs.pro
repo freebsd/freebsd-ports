@@ -1,6 +1,6 @@
---- src/lvs/lvs/lvs.pro.orig	2021-08-28 16:57:38 UTC
+--- src/lvs/lvs/lvs.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/lvs/lvs/lvs.pro
-@@ -18,5 +18,5 @@ RESOURCES = \
+@@ -20,5 +20,5 @@ HEADERS = \
  
  INCLUDEPATH += $$TL_INC $$DB_INC $$GSI_INC $$LYM_INC $$RDB_INC
  DEPENDPATH += $$TL_INC $$DB_INC $$GSI_INC $$LYM_INC $$RDB_INC

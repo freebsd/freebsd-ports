@@ -1,6 +1,6 @@
---- build.sh.orig	2021-07-23 08:00:26 UTC
+--- build.sh.orig	2022-12-22 22:17:08 UTC
 +++ build.sh
-@@ -576,7 +576,7 @@ echo "    Build directory: $BUILD"
+@@ -583,7 +583,7 @@ echo "      RPATH=$RPATH"
  mkdir -p $BUILD
  
  # source the version script
@@ -9,7 +9,7 @@
  
  # qmake needs absolute paths, so we get them now:
  #   OSX does not have `readlink -f` command. Use equivalent Perl script.
-@@ -589,11 +589,7 @@ else
+@@ -596,11 +596,7 @@ else
  fi
  
  if [ "$IS_MAC" = "no" ]; then
@@ -21,25 +21,11 @@
  else
    MAKE_PRG=make
  fi
-@@ -615,9 +611,9 @@ cd $BUILD
- 
- # chose the right qmake
- if [ $HAVE_QT5 = 0 ]; then
--  export QT_SELECT=4
-+  export QT_SELECT=qt4
- else
--  export QT_SELECT=5
-+  export QT_SELECT=qt5
- fi
- 
- $QMAKE -v
-@@ -625,82 +621,85 @@ $QMAKE -v
+@@ -625,83 +621,85 @@ $QMAKE -v
  # Force a minimum rebuild because of version info
  touch $CURR_DIR/src/version/version.h
  
 -qmake_options=(
-+# XXX
-+#  CONFIG=\"$CONFIG\"
 +qmake_options="
    -recursive
 -  CONFIG+="$CONFIG"
@@ -62,15 +48,16 @@
 -  HAVE_QT_XML="$HAVE_QT_XML"
 -  HAVE_64BIT_COORD="$HAVE_64BIT_COORD"
 -  HAVE_QT="$HAVE_QT"
--  HAVE_QT5="$HAVE_QT5"
 -  HAVE_CURL="$HAVE_CURL"
 -  HAVE_EXPAT="$HAVE_EXPAT"
+-  HAVE_PNG="$HAVE_PNG"
 -  PREFIX="$BIN"
 -  RPATH="$RPATH"
 -  KLAYOUT_VERSION="$KLAYOUT_VERSION"
 -  KLAYOUT_VERSION_DATE="$KLAYOUT_VERSION_DATE"
 -  KLAYOUT_VERSION_REV="$KLAYOUT_VERSION_REV"
 -)
++  CONFIG+=\"$CONFIG\"
 +  RUBYLIBFILE=\"$RUBYLIBFILE\"
 +  RUBYVERSIONCODE=\"$RUBYVERSIONCODE\"
 +  HAVE_RUBY=\"$HAVE_RUBY\"
@@ -90,9 +77,9 @@
 +  HAVE_QT_XML=\"$HAVE_QT_XML\"
 +  HAVE_64BIT_COORD=\"$HAVE_64BIT_COORD\"
 +  HAVE_QT=\"$HAVE_QT\"
-+  HAVE_QT5=\"$HAVE_QT5\"
 +  HAVE_CURL=\"$HAVE_CURL\"
 +  HAVE_EXPAT=\"$HAVE_EXPAT\"
++  HAVE_PNG=\"$HAVE_PNG\"
 +  PREFIX=\"$BIN\"
 +  RPATH=\"$RPATH\"
 +  KLAYOUT_VERSION=\"$KLAYOUT_VERSION\"
@@ -131,7 +118,7 @@
 -    QMAKE_LINK="$CXX"
 -    QMAKE_LINK_SHLIB="$CXX"
 -    QMAKE_OBJCOPY="$OBJCOPY"
-+  qmake_options="$qmake_options
++  qmake_options="
 +    QMAKE_AR=\"$AR cqs\"
 +    QMAKE_LINK_C=\"$CC\"
 +    QMAKE_LINK_C_SHLIB=\"$CC\"
@@ -152,7 +139,9 @@
 +    QMAKE_CXXFLAGS=\"$CXXFLAGS\"
      QMAKE_CXXFLAGS_RELEASE=
      QMAKE_CXXFLAGS_DEBUG=
+-    QMAKE_LIBS="$LIBS"
 -    QMAKE_LFLAGS="$LDFLAGS"
++    QMAKE_LIBS=\"$LIBS\"
 +    QMAKE_LFLAGS=\"$LDFLAGS\"
      QMAKE_LFLAGS_RELEASE=
      QMAKE_LFLAGS_DEBUG=
@@ -163,9 +152,9 @@
 -echo $QMAKE "$CURR_DIR/src/klayout.pro" "${qmake_options[@]}"
 -$QMAKE "$CURR_DIR/src/klayout.pro" "${qmake_options[@]}"
 +echo $QMAKE "$CURR_DIR/src/klayout.pro" ${qmake_options} \
-+  QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
++    QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
 +$QMAKE "$CURR_DIR/src/klayout.pro" ${qmake_options} \
-+  QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
++    QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
  
  cd $CURR_DIR
  echo ""
