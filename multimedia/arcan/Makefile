@@ -69,6 +69,7 @@ UVC_CMAKE_BOOL=		FSRV_DECODE_UVC
 VNC_DESC=		VNC client/server support
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 			libxcb-icccm.so:x11/xcb-util-wm \
