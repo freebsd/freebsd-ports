@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+ATTENTION! This version of Teleport is very old and likely to contain unfixed
+ATTENTION! vulnerabilities. It's only provided to allow for a working upgrade
+ATTENTION! path from 4.4. Watch for an upgrade to teleport6 next.
+ATTENTION! New installations are STRONGLY discouraged (wait for version 7).
+
+Quick getting started guide:
+
+1. Read through the Quick Start Guide (see below).
+2. Start teleport: su -c 'sysrc teleport_enable=YES'
+3. If not just setting up a node: su -c 'sysrc teleport_roles=auth,proxy,node'
+4. Review and edit /usr/local/etc/teleport.yaml
+5. Start teleport: su -c 'service teleport start'
+6. Add yourself as a user on the auth server: su -c "tctl users add $USER"
+7. Create a password and 2FA code using the URL emitted during
+   the previous step.
+
+To add a new node to the cluster, on the auth server:
+
+   $ tctl nodes add --ttl=5m --roles=node,proxy
+
+See the docs for additional details:
+
+Quick start:	https://github.com/gravitational/teleport/blob/branch/5.0/docs/pages/quickstart.mdx
+Admin Manual:	https://github.com/gravitational/teleport/blob/branch/5.0/docs/pages/admin-guide.mdx
+User Manual:	https://github.com/gravitational/teleport/blob/branch/5.0/docs/pages/user-manual.mdx
+Architecture:	https://github.com/gravitational/teleport/blob/branch/5.0/docs/pages/architecture/overview.mdx
+FAQ:		https://github.com/gravitational/teleport/blob/branch/5.0/docs/pages/faq.mdx
+EOM
+}
+]
