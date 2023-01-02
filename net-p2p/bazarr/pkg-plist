@@ -429,10 +429,10 @@
 %%DATADIR%%/bin/frontend/build/assets/@mantine/hooks.be5a3aa0.js
 %%DATADIR%%/bin/frontend/build/assets/@mantine/modals.341ec399.js
 %%DATADIR%%/bin/frontend/build/assets/@mantine/notifications.1bfeef2e.js
+%%DATADIR%%/bin/frontend/build/assets/index.0fe3abb0.js
 %%DATADIR%%/bin/frontend/build/assets/index.83e0c6f3.css
-%%DATADIR%%/bin/frontend/build/assets/index.a3eedeb0.js
-%%DATADIR%%/bin/frontend/build/assets/index.eaa19b2b.js
-%%DATADIR%%/bin/frontend/build/assets/index.f6490f94.js
+%%DATADIR%%/bin/frontend/build/assets/index.8cf74b5c.js
+%%DATADIR%%/bin/frontend/build/assets/index.d8773383.js
 %%DATADIR%%/bin/frontend/build/assets/roboto-all-300-normal.6d79427c.woff
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-300-normal.47aa3bfa.woff2
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-ext-300-normal.435e4b7f.woff2
@@ -8506,8 +8506,6 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/ktuvit%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/legendasdivx%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/legendasdivx%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/legendastv%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/legendastv%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/mixins%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/mixins%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/napiprojekt%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -8592,7 +8590,6 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/karagarga.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/ktuvit.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/legendasdivx.py
-%%DATADIR%%/bin/libs/subliminal_patch/providers/legendastv.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/mixins.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/napiprojekt.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/napisy24.py
