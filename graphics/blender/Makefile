@@ -177,6 +177,7 @@ TIFF_CMAKE_BOOL=		WITH_IMAGE_TIFF
 TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TRACE_CMAKE_BOOL=		WITH_POTRACE
 TRACE_LIB_DEPENDS=		libpotrace.so:graphics/libpotrace
+WAYLAND_CATEGORIES=		wayland
 WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND
 WAYLAND_USES=			pkgconfig
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols
