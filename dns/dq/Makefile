@@ -1,12 +1,15 @@
 PORTNAME=	dq
-PORTVERSION=	20220822
+PORTVERSION=	20230101
 CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Recursive DNS/DNSCurve server
 WWW=		https://mojzis.com/software/dq/
 
-LICENSE=	PD
+LICENSE=	CC0
+LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_NAME=	Creative Commons Zero v1.0 Universal
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 RUN_DEPENDS=	envuidgid:sysutils/daemontools
 
