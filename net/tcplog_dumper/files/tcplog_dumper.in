@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: tcplog_dumper
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# tcplog_dumper_enable (bool):   Set to NO by default.
+#               Set it to YES to enable tcplog_dumper.
+# tcplog_dumper_pidfile (file): Set to /var/run/tcplog_dumper.pid by default.
+# tcplog_dumper_basedir (path): Set to /var/log/tcplog_dumps by default.
+# tcplog_dumper_basedir_owner:	Set to nobody by default.
+
+. /etc/rc.subr
+
+name=tcplog_dumper
+rcvar=tcplog_dumper_enable
+
+load_rc_config ${name}
+
+: ${tcplog_dumper_enable:=NO}
+: ${tcplog_dumper_pidfile=/var/run/${name}.pid}
+: ${tcplog_dumper_basedir=/var/log/tcplog_dumps}
+: ${tcplog_dumper_basedir_owner=nobody}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-d -D ${tcplog_dumper_basedir} -u ${tcplog_dumper_basedir_owner} -p ${tcplog_dumper_pidfile}"
+
+pidfile="${tcplog_dumper_pidfile}"
+start_precmd="${name}_prestart"
+
+tcplog_dumper_prestart()
+{
+	if [ ! -d "${tcplog_dumper_basedir}" ]; then
+		mkdir -p "${tcplog_dumper_basedir}"
+	fi
+	if [ ! "x$(stat -f '%Su' ${tcplog_dumper_basedir})" = "x${tcplog_dumper_basedir_owner}" ] ; then
+		chown "${tcplog_dumper_basedir_owner}" "${tcplog_dumper_basedir}"
+	fi
+}
+
+run_rc_command "$1"
