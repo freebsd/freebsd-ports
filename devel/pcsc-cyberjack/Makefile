@@ -16,7 +16,8 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYRIGHT.LGPL
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libxml2.so:textproc/libxml2
 
-USES=		dos2unix gmake libtool tar:bzip2 autoreconf compiler:gcc-c++11-lib
+USES=		autoreconf compiler:gcc-c++11-lib dos2unix gmake libtool pkgconfig \
+		tar:bzip2
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
