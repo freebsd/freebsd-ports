@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpaper.so:print/libpaper
 RUN_DEPENDS=	tex-dvipsk>=5.995:print/tex-dvipsk
 
-USES=		autoreconf iconv motif pkgconfig tex xorg
+USES=		autoreconf iconv libtool:build motif pkgconfig tex xorg
 USE_TEX=	kpathsea texhash texmf web2c
 USE_XORG=	ice sm x11 xext xi xmu xpm xt
 
