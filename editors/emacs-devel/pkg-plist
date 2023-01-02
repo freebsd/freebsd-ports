@@ -861,9 +861,13 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/light-blue-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/manoj-dark-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/misterioso-theme.el
-%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-themes.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-deuteranopia-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-tinted-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-themes.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-deuteranopia-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-tinted-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-dark-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tsdh-dark-theme.el
@@ -3587,6 +3591,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/rust-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/rust-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/sh-script.el.gz
@@ -3599,8 +3605,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/subword.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/tcl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/tcl.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/toml-ts-mode.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/toml-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/typescript-ts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/typescript-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/vera-mode.el.gz
@@ -3615,6 +3619,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/xref.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/xscheme.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/xscheme.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/toml-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/toml-ts-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/yaml-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/yaml-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-bdf.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-bdf.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-mule.el.gz
