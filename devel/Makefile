@@ -253,6 +253,7 @@
     SUBDIR += b2
     SUBDIR += babelflow
     SUBDIR += babeltrace
+    SUBDIR += bacon
     SUBDIR += bam
     SUBDIR += bashdb
     SUBDIR += basu

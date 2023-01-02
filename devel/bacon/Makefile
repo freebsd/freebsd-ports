@@ -1,0 +1,256 @@
+PORTNAME=	bacon
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Background rust code check
+WWW=		https://dystroy.org/bacon/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Canop
+
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.8.2 \
+		aho-corasick-0.7.20 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.68 \
+		arc-swap-1.5.1 \
+		arrayvec-0.5.2 \
+		arrayvec-0.7.2 \
+		atoi-2.0.0 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bstr-1.1.0 \
+		btoi-0.4.2 \
+		bumpalo-3.11.1 \
+		bytes-1.3.0 \
+		bytesize-1.1.0 \
+		camino-1.1.1 \
+		cargo-platform-0.1.2 \
+		cargo_metadata-0.14.2 \
+		castaway-0.2.2 \
+		cc-1.0.78 \
+		cfg-if-1.0.0 \
+		chrono-0.4.23 \
+		clap-3.2.23 \
+		clap_derive-3.2.18 \
+		clap_lex-0.2.4 \
+		cli-log-2.0.0 \
+		clru-0.6.1 \
+		codespan-reporting-0.11.1 \
+		compact_str-0.6.1 \
+		coolor-0.5.0 \
+		core-foundation-sys-0.8.3 \
+		crc32fast-1.3.2 \
+		crokey-0.4.3 \
+		crokey-proc_macros-0.4.0 \
+		crossbeam-0.8.2 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.13 \
+		crossbeam-queue-0.3.8 \
+		crossbeam-utils-0.8.14 \
+		crossterm-0.23.2 \
+		crossterm_winapi-0.9.0 \
+		cxx-1.0.83 \
+		cxx-build-1.0.83 \
+		cxxbridge-flags-1.0.83 \
+		cxxbridge-macro-1.0.83 \
+		dashmap-5.4.0 \
+		directories-next-2.0.0 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
+		dirs-sys-next-0.1.2 \
+		either-1.8.0 \
+		fastrand-1.8.0 \
+		file-size-1.0.3 \
+		filetime-0.2.19 \
+		flate2-1.0.25 \
+		form_urlencoded-1.1.0 \
+		fsevent-sys-4.1.0 \
+		getrandom-0.2.8 \
+		git-actor-0.15.0 \
+		git-attributes-0.7.0 \
+		git-bitmap-0.2.0 \
+		git-chunk-0.4.0 \
+		git-command-0.2.0 \
+		git-config-0.13.0 \
+		git-config-value-0.10.0 \
+		git-credentials-0.8.0 \
+		git-date-0.3.1 \
+		git-diff-0.24.0 \
+		git-discover-0.10.0 \
+		git-features-0.25.1 \
+		git-glob-0.5.1 \
+		git-hash-0.10.1 \
+		git-hashtable-0.1.0 \
+		git-index-0.10.0 \
+		git-lock-3.0.1 \
+		git-mailmap-0.7.0 \
+		git-object-0.24.0 \
+		git-odb-0.38.1 \
+		git-pack-0.28.0 \
+		git-path-0.7.0 \
+		git-prompt-0.3.0 \
+		git-quote-0.4.0 \
+		git-ref-0.21.0 \
+		git-refspec-0.5.0 \
+		git-repository-0.30.2 \
+		git-revision-0.8.0 \
+		git-sec-0.6.0 \
+		git-tempfile-3.0.0 \
+		git-traverse-0.20.0 \
+		git-url-0.12.2 \
+		git-validate-0.7.1 \
+		git-worktree-0.10.0 \
+		hashbrown-0.12.3 \
+		hashbrown-0.13.1 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		hex-0.4.3 \
+		home-0.5.4 \
+		human_format-1.0.3 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
+		idna-0.3.0 \
+		imara-diff-0.1.5 \
+		indexmap-1.9.2 \
+		inotify-0.9.6 \
+		inotify-sys-0.1.5 \
+		instant-0.1.12 \
+		io-close-0.3.7 \
+		itoa-1.0.4 \
+		js-sys-0.3.60 \
+		jwalk-0.8.1 \
+		kqueue-1.0.7 \
+		kqueue-sys-1.0.3 \
+		lazy-regex-2.3.1 \
+		lazy-regex-proc_macros-2.3.1 \
+		libc-0.2.138 \
+		link-cplusplus-1.0.7 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		memmap2-0.5.8 \
+		memoffset-0.7.1 \
+		minimad-0.9.1 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.6.2 \
+		mio-0.8.5 \
+		nix-0.26.1 \
+		nom-7.1.1 \
+		notify-5.0.0 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		num_threads-0.1.6 \
+		once_cell-1.16.0 \
+		os_str_bytes-6.4.1 \
+		parking_lot-0.11.2 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.8.6 \
+		parking_lot_core-0.9.5 \
+		percent-encoding-2.2.0 \
+		pin-project-lite-0.2.9 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.47 \
+		proc-status-0.1.1 \
+		prodash-22.1.0 \
+		quick-error-2.0.1 \
+		quote-1.0.21 \
+		rayon-1.6.1 \
+		rayon-core-1.10.1 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.7.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.28 \
+		remove_dir_all-0.5.3 \
+		rustversion-1.0.11 \
+		ryu-1.0.11 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		scratch-1.0.2 \
+		semver-1.0.14 \
+		serde-1.0.150 \
+		serde_derive-1.0.150 \
+		serde_json-1.0.89 \
+		sha1_smol-1.0.0 \
+		signal-hook-0.3.14 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.0 \
+		smallvec-1.10.0 \
+		socket2-0.4.7 \
+		static_assertions-1.1.0 \
+		strsim-0.10.0 \
+		syn-1.0.105 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		termimad-0.20.6 \
+		textwrap-0.16.0 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
+		time-0.1.45 \
+		time-0.3.17 \
+		time-core-0.1.0 \
+		time-macros-0.2.6 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.23.0 \
+		tokio-macros-1.8.2 \
+		toml-0.5.10 \
+		uluru-3.0.0 \
+		unicode-bidi-0.3.8 \
+		unicode-bom-1.1.4 \
+		unicode-ident-1.0.5 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		url-2.3.1 \
+		utf8parse-0.2.0 \
+		version_check-0.9.4 \
+		vte-0.8.0 \
+		vte_generate_state_changes-0.1.1 \
+		walkdir-2.3.2 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.40.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.40.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.40.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.40.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.40.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.40.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.40.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.40.0 \
+		windows_x86_64_msvc-0.42.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
