@@ -79,6 +79,7 @@
     SUBDIR += bibtex2html
     SUBDIR += bibtool
     SUBDIR += bibutils
+    SUBDIR += biodiff
     SUBDIR += bn-aspell
     SUBDIR += br-aspell
     SUBDIR += bsddiff

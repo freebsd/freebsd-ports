@@ -1,0 +1,10 @@
+biodiff is a tool for binary diffing.
+
+The tool is able to show two binary files side by side so that similar places
+will be at the same position on both sides and bytes missing from one side are
+padded.
+
+It uses bio-informatics algorithms from the rust-bio library, typically used
+for DNA sequence alignment, for that.
+The dialog boxes for configuration are done using the github.com/gyscos/cursive
+library.

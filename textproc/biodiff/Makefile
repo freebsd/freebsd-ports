@@ -1,0 +1,169 @@
+PORTNAME=	biodiff
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.3
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Hex diff viewer using alignment algorithms from biology
+WWW=		https://github.com/8051Enthusiast/biodiff
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	8051Enthusiast
+
+CARGO_CRATES=	ahash-0.7.6 \
+		aho-corasick-0.7.18 \
+		anyhow-1.0.58 \
+		approx-0.5.1 \
+		autocfg-1.1.0 \
+		bio-0.41.0 \
+		bio-types-0.12.1 \
+		bit-set-0.5.2 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
+		bv-0.11.1 \
+		bytecount-0.6.3 \
+		byteorder-1.4.3 \
+		cfg-if-1.0.0 \
+		crossbeam-channel-0.5.5 \
+		crossbeam-utils-0.8.10 \
+		crossterm-0.24.0 \
+		crossterm_winapi-0.9.0 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
+		cursive-0.19.0 \
+		cursive_buffered_backend-0.6.0 \
+		cursive_core-0.3.4 \
+		custom_derive-0.1.7 \
+		darling-0.13.4 \
+		darling_core-0.13.4 \
+		darling_macro-0.13.4 \
+		derive-new-0.5.9 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
+		either-1.7.0 \
+		enum-map-1.1.1 \
+		enum-map-2.4.0 \
+		enum-map-derive-0.6.0 \
+		enum-map-derive-0.9.0 \
+		enumset-1.0.11 \
+		enumset_derive-0.6.0 \
+		feature-probe-0.1.1 \
+		fixedbitset-0.4.2 \
+		fnv-1.0.7 \
+		fxhash-0.2.1 \
+		getrandom-0.2.7 \
+		getset-0.1.2 \
+		hashbrown-0.12.3 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		hex-0.4.3 \
+		ident_case-1.0.1 \
+		indexmap-1.9.1 \
+		itertools-0.10.3 \
+		itertools-num-0.1.3 \
+		itoa-0.4.8 \
+		itoa-1.0.2 \
+		lazy_static-1.4.0 \
+		libc-0.2.126 \
+		libm-0.2.2 \
+		lock_api-0.4.7 \
+		log-0.4.17 \
+		matrixmultiply-0.3.2 \
+		memchr-2.5.0 \
+		memmap2-0.5.5 \
+		mio-0.8.4 \
+		multimap-0.8.3 \
+		nalgebra-0.27.1 \
+		nalgebra-macros-0.1.0 \
+		ndarray-0.15.4 \
+		newtype_derive-0.1.6 \
+		num-0.4.0 \
+		num-complex-0.4.2 \
+		num-integer-0.1.45 \
+		num-iter-0.1.43 \
+		num-rational-0.4.1 \
+		num-traits-0.2.15 \
+		num_cpus-1.13.1 \
+		num_threads-0.1.6 \
+		once_cell-1.13.0 \
+		ordered-float-1.1.1 \
+		owning_ref-0.4.1 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.3 \
+		paste-1.0.7 \
+		petgraph-0.6.2 \
+		ppv-lite86-0.2.16 \
+		primal-check-0.3.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.40 \
+		quote-1.0.20 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_distr-0.4.3 \
+		rawpointer-0.2.1 \
+		realfft-3.0.0 \
+		redox_syscall-0.2.13 \
+		redox_users-0.4.3 \
+		regex-1.6.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.27 \
+		rustc_version-0.1.7 \
+		rustfft-6.0.1 \
+		rustversion-1.0.8 \
+		ryu-1.0.10 \
+		scopeguard-1.1.0 \
+		semver-0.1.20 \
+		serde-1.0.140 \
+		serde_derive-1.0.140 \
+		serde_json-1.0.82 \
+		signal-hook-0.3.14 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.0 \
+		simba-0.5.1 \
+		smallvec-1.9.0 \
+		stable_deref_trait-1.2.0 \
+		statrs-0.15.0 \
+		strength_reduce-0.2.3 \
+		strum-0.23.0 \
+		strum_macros-0.23.1 \
+		syn-1.0.98 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
+		time-0.3.11 \
+		transpose-0.2.1 \
+		triple_accel-0.4.0 \
+		typenum-1.15.0 \
+		unicode-ident-1.0.2 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
+		xi-unicode-0.3.0
+
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/git-biodiff
+
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/git-biodiff
+
+.include <bsd.port.mk>
