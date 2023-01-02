@@ -126,7 +126,6 @@
     SUBDIR += ibus-skk
     SUBDIR += icanna
     SUBDIR += ipadic
-    SUBDIR += ja-tex-xdvik
     SUBDIR += jacode.pl
     SUBDIR += japana
     SUBDIR += japaneseAFM
