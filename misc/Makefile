@@ -6,6 +6,7 @@
     SUBDIR += actiona
     SUBDIR += adios2
     SUBDIR += aichat
+    SUBDIR += air
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
