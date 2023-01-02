@@ -144,12 +144,16 @@
 %%DATABASE%%lib/kamailio/modules/usrloc.so
 %%DIALPLAN%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.dialplan
 %%DIALPLAN%%lib/kamailio/modules/dialplan.so
+%%DLGS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.dlgs
+%%DLGS%%lib/kamailio/modules/dlgs.so
 %%EVAPI%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.evapi
 %%EVAPI%%lib/kamailio/modules/evapi.so
 %%JWT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.jwt
 %%JWT%%lib/kamailio/modules/jwt.so
 %%KAFKA%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.kafka
 %%KAFKA%%lib/kamailio/modules/kafka.so
+%%LOST%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.lost
+%%LOST%%lib/kamailio/modules/lost.so
 %%LUAJIT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.app_lua
 %%LUAJIT%%lib/kamailio/modules/app_lua.so
 %%LWSC%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.lwsc
@@ -318,10 +322,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.kex
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.log_custom
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.lrkproxy
-%%PORTDOCS%%%%DOCSDIR%%/modules/README.malloc_test
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.mangler
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.maxfwd
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.mediaproxy
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.misctest
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.mqueue
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.msrp
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.nat_traversal
@@ -374,6 +378,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xhttp_rpc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xlog
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xprint
+%%POSOPS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.posops
+%%POSOPS%%lib/kamailio/modules/posops.so
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.presence
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.presence_conference
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.presence_dialoginfo
@@ -423,6 +429,10 @@
 %%SCTP%%lib/kamailio/modules/sctp.so
 %%SECSIPID%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.secsipid
 %%SECSIPID%%lib/kamailio/modules/secsipid.so
+%%SIPREPO%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.siprepo
+%%SIPREPO%%lib/kamailio/modules/siprepo.so
+%%SLACK%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.slack
+%%SLACK%%lib/kamailio/modules/slack.so
 %%SQLITE%%%%DATADIR%%/db_sqlite/acc-create.sql
 %%SQLITE%%%%DATADIR%%/db_sqlite/alias_db-create.sql
 %%SQLITE%%%%DATADIR%%/db_sqlite/auth_db-create.sql
@@ -471,6 +481,8 @@
 %%SQLITE%%lib/kamailio/kamctl/kamctl.sqlite
 %%SQLITE%%lib/kamailio/kamctl/kamdbctl.sqlite
 %%SQLITE%%lib/kamailio/modules/db_sqlite.so
+%%SWORKER%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.sworker
+%%SWORKER%%lib/kamailio/modules/sworker.so
 %%TLS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.tls
 %%TLS%%@sample %%ETCDIR%%/tls.cfg.sample
 %%TLS%%lib/kamailio/modules/tls.so
@@ -527,10 +539,10 @@ lib/kamailio/modules/kemix.so
 lib/kamailio/modules/kex.so
 lib/kamailio/modules/log_custom.so
 lib/kamailio/modules/lrkproxy.so
-lib/kamailio/modules/malloc_test.so
 lib/kamailio/modules/mangler.so
 lib/kamailio/modules/maxfwd.so
 lib/kamailio/modules/mediaproxy.so
+lib/kamailio/modules/misctest.so
 lib/kamailio/modules/mqueue.so
 lib/kamailio/modules/msrp.so
 lib/kamailio/modules/nat_traversal.so

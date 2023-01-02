@@ -1,6 +1,5 @@
 PORTNAME=	kamailio
-PORTVERSION=	5.5.4
-PORTREVISION=	3
+PORTVERSION=	5.6.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -39,9 +38,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USERS=		${KAMAILIO_USER}
 GROUPS=		${KAMAILIO_GROUP}
 
-OPTIONS_DEFINE=			DATABASE DIALPLAN DOCS EVAPI JWT KAFKA LWSC \
-				MQTT OUTBOUND PERL PHONENUM PRESENCE RADIUS \
-				SCTP SECSIPID TLS WEBSOCKET
+OPTIONS_DEFINE=			DATABASE DIALPLAN DLGS DOCS EVAPI JWT KAFKA \
+				LOST LWSC MQTT OUTBOUND PERL PHONENUM POSOPS \
+				PRESENCE RADIUS SCTP SECSIPID SIPREPO SLACK \
+				SWORKER TLS WEBSOCKET
 OPTIONS_DEFAULT=		MYSQL PRESENCE RADIUS SQLITE TLS
 OPTIONS_GROUP=			DATABASE_DRIVERS KEMI_LANGS
 OPTIONS_GROUP_DATABASE_DRIVERS=	MYSQL PGSQL SQLITE UNIXODBC
@@ -51,25 +51,33 @@ OPTIONS_SUB=			YES
 DATABASE_DESC=		Database support
 DATABASE_DRIVERS_DESC=	Database drivers
 DIALPLAN_DESC=		String translations based on rules
+DLGS_DESC=		Lightweight, stateless dialog tracking and statistics
 EVAPI_DESC=		Network event broadcast API
 JWT_DESC=		JSON Web Token generation and validation
 KAFKA_DESC=		Produces and sends messages to a Kafka server
 KEMI_LANGS_DESC=	Kamailio Embedded Interface Interpreters
+LOST_DESC=		HELD (RFC6155) and LOST (RFC5222) location-based routing
 LUAJIT_DESC=		Execute embedded Lua scripts
 LWSC_DESC=		Websocket client connector using libwebsockets
 MQTT_DESC=		MQTT connector for bi-directional publish-subscribe communication
 OUTBOUND_DESC=		SIP Outbound support
 PHONENUM_DESC=		Phone number lookup and normalization using libphonenumber
+POSOPS_DESC=		Operations using the position in the SIP message buffer
 PRESENCE_DESC=		Presence support
 PYTHON3_DESC=		Execute embedded Python3 scripts
 SCTP_DESC=		SCTP support
 SECSIPID_DESC=		Secure SIP/Telephony Identity (STIR/SHAKEN) extensions
+SIPREPO_DESC=		In-memory SIP message storage
+SLACK_DESC=		Connector to Slack channels
+SWORKER_DESC=		Tasks management for specialized workers
 WEBSOCKET_DESC=		WebSocket transport layer
 
 DATABASE_VARS=	EXTRA_GROUPS+=db
 
 DIALPLAN_LIB_DEPENDS=	libpcre.so:devel/pcre
 DIALPLAN_VARS=		EXTRA_MODULES+=dialplan
+
+DLGS_VARS=	EXTRA_MODULES+=dlgs
 
 EVAPI_LIB_DEPENDS=	libev.so:devel/libev
 EVAPI_VARS=		EXTRA_MODULES+=evapi
@@ -79,6 +87,10 @@ JWT_VARS=		EXTRA_MODULES+=jwt
 
 KAFKA_LIB_DEPENDS=	librdkafka.so:net/librdkafka
 KAFKA_VARS=		EXTRA_MODULES+=kafka
+
+LOST_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libxml2.so:textproc/libxml2
+LOST_VARS=		EXTRA_MODULES+=lost
 
 LUAJIT_USES=		luajit
 LUAJIT_MAKE_ARGS=	LUAJIT=yes
@@ -110,6 +122,8 @@ PGSQL_VARS=	EXTRA_GROUPS+=postgres
 PHONENUM_LIB_DEPENDS=	libphonenumber.so:devel/libphonenumber
 PHONENUM_VARS=		EXTRA_MODULES+=phonenum
 
+POSOPS_VARS=	EXTRA_MODULES+=posops
+
 PRESENCE_LIB_DEPENDS=	libcurl.so:ftp/curl \
 			libxml2.so:textproc/libxml2
 PRESENCE_VARS=		EXTRA_GROUPS+=presence
@@ -125,9 +139,16 @@ SCTP_VARS=	EXTRA_MODULES+=sctp
 
 SECSIPID_VARS=	EXTRA_MODULES+=secsipid
 
+SIPREPO_VARS=	EXTRA_MODULES+=siprepo
+
+SLACK_LIB_DEPENDS=	libcurl.so:ftp/curl
+SLACK_VARS=		EXTRA_MODULES+=slack
+
 SQLITE_IMPLIES=	DATABASE
 SQLITE_USES=	sqlite
 SQLITE_VARS=	EXTRA_MODULES+=db_sqlite
+
+SWORKER_VARS=	EXTRA_MODULES+=sworker
 
 TLS_USES=	ssl
 TLS_VARS=	EXTRA_MODULES+=tls
