@@ -421,6 +421,7 @@
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += containers
+    SUBDIR += convco
     SUBDIR += cook
     SUBDIR += corrade
     SUBDIR += courier-unicode
