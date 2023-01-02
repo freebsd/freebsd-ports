@@ -1,5 +1,6 @@
 PORTNAME=	chromium
 PORTVERSION=	116.0.5845.96
+PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -137,8 +138,8 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8"
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=		CODECS CUPS DEBUG DRIVER KERBEROS LTO TEST
-OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS SNDIO
+OPTIONS_DEFINE=		CODECS CUPS DEBUG DRIVER KERBEROS LTO PIPEWIRE TEST
+OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE SNDIO
 OPTIONS_EXCLUDE_aarch64=LTO
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
@@ -192,6 +193,14 @@ LTO_VARS=		GN_ARGS+=use_thin_lto=true \
 LTO_VARS_OFF=		GN_ARGS+=use_thin_lto=false
 
 MIT_LIB_DEPENDS=	libkrb.so.3:security/krb5
+
+PIPEWIRE_DESC=		Screen capture via PipeWire
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_VARS=		GN_ARGS+=rtc_use_pipewire=true \
+			GN_ARGS+=rtc_link_pipewire=true
+PIPEWIRE_VARS_OFF=	GN_ARGS+=rtc_use_pipewire=false \
+			GN_ARGS+=rtc_link_pipewire=false
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true
 PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
