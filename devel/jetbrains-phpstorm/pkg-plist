@@ -31,7 +31,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-PS-223.7571.212
+%%DATADIR%%/lib/build-marker-PS-223.8214.64
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -174,8 +174,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-9b322a0dfcec.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-9b322a0dfcec.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -238,6 +238,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.full.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.intl.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.object.d.ts
+%%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.sharedmemory.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es2022.string.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es5.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es6.d.ts
@@ -351,8 +352,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php-docker/lib/php-docker.jar
 %%DATADIR%%/plugins/php-grazie/lib/php-grazie.jar
 %%DATADIR%%/plugins/php-impl/lib/php.jar
-%%DATADIR%%/plugins/php-impl/php/php-predefined-a9dfff28de4e-ee06eac2f0d2.ijx
-%%DATADIR%%/plugins/php-impl/php/php-predefined-a9dfff28de4e-ee06eac2f0d2.txt
+%%DATADIR%%/plugins/php-impl/php/php-predefined-a9dfff28de4e-46d52890cf04.ijx
+%%DATADIR%%/plugins/php-impl/php/php-predefined-a9dfff28de4e-46d52890cf04.txt
 %%DATADIR%%/plugins/php-markdown/lib/php-markdown.jar
 %%DATADIR%%/plugins/php-remoteInterpreter/lib/php-remoteInterpreter.jar
 %%DATADIR%%/plugins/php-workshop/lib/php-workshop.jar
