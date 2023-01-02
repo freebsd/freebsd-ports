@@ -860,6 +860,7 @@
     SUBDIR += redis_exporter
     SUBDIR += redisdesktopmanager
     SUBDIR += redisjson
+    SUBDIR += replibyte
     SUBDIR += retcl
     SUBDIR += rocksdb
     SUBDIR += rocksdb-lite
