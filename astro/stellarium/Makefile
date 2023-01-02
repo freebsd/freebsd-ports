@@ -1,7 +1,7 @@
 PORTNAME=	stellarium
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	astro
-MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION:R}/
+MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
 
@@ -11,35 +11,33 @@ WWW=		https://www.stellarium.org/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libQXlsx.so:devel/qxlsx
-
 USES=		cmake compiler:c++11-lang desktop-file-utils \
-		qt:5 shared-mime-info
+		qt:5 shared-mime-info tar:xz
 USE_QT=		qmake:build buildtools:build \
 		charts concurrent core gui network opengl \
 		printsupport widgets
 CMAKE_OFF=	ENABLE_QT6
 
-GUIDE_VERSION=	${PORTVERSION:R}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+GUIDE_VERSION=	${PORTVERSION}
 
 PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
-			SHOWMYSKY TELESCOPE TEST TEXTURES WEBENGINE
+			SHOWMYSKY TELESCOPE TEST TEXTURES WEBENGINE XLSX
 OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS SHOWMYSKY TELESCOPE \
-			WEBENGINE
+			WEBENGINE XLSX
 OPTIONS_SUB=		yes
 
 GPS_DESC=		GPS (NMEA handling) support
 MORE_STARS_DESC=	Install additional star catalogs (1.0GB)
 MULTIMEDIA_DESC=	Sound and video support
 SCRIPTS_DESC=		Remote control and scripting support
-SHOWMYSKY_DESC=		ShowMySky atmosphere light scattering model
+SHOWMYSKY_DESC=		Realistic atmosphere light scattering
 TELESCOPE_DESC=		Build telescope control plugin
 TEXTURES_DESC=		Install better quality textures
 WEBENGINE_DESC=		Get and show extra object information
+XLSX_DESC=		Data export to Excel files support
 
 DOCS_MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${GUIDE_VERSION}/:ug
 DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
@@ -73,6 +71,9 @@ TEXTURES_DISTFILES=	textures-1K.zip:gfx
 
 WEBENGINE_USE=		QT=declarative,webchannel,webengine
 WEBENGINE_CMAKE_OFF=	-DENABLE_QTWEBENGINE:BOOL=OFF
+
+XLSX_LIB_DEPENDS=	libQXlsx.so:devel/qxlsx
+XLSX_CMAKE_OFF=		-DENABLE_XLSX:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
