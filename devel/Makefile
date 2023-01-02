@@ -324,6 +324,7 @@
     SUBDIR += catch
     SUBDIR += catch2
     SUBDIR += cbang
+    SUBDIR += cbfmt
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache

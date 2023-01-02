@@ -1,0 +1,4 @@
+cbfmt is a tool to format codeblocks inside markdown, org, and restructured
+text documents.
+It iterates over all codeblocks, and formats them with the tool(s) specified
+for the language of the block.
