@@ -1,0 +1,3 @@
+dot-http is a text-based scriptable HTTP client. It is a simple language that
+resembles the actual HTTP protocol but with just a smidgen of magic to make it
+more practical for someone who builds and tests APIs.

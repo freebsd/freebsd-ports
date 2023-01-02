@@ -1,0 +1,180 @@
+PORTNAME=	dot-http
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+CATEGORIES=	www
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Text-based scriptable HTTP client
+WWW=		https://github.com/bayne/dot-http
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	bayne
+
+CARGO_CRATES=	Boa-0.5.1 \
+		aho-corasick-0.7.6 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.25 \
+		atty-0.2.13 \
+		autocfg-0.1.6 \
+		base64-0.11.0 \
+		bitflags-1.1.0 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.4 \
+		bumpalo-2.6.0 \
+		byte-tools-0.3.1 \
+		byteorder-1.3.2 \
+		bytes-0.5.3 \
+		c2-chacha-0.2.2 \
+		cc-1.0.45 \
+		cfg-if-0.1.9 \
+		clap-2.33.0 \
+		core-foundation-0.6.4 \
+		core-foundation-sys-0.6.2 \
+		digest-0.8.1 \
+		dtoa-0.4.4 \
+		encoding_rs-0.8.22 \
+		fake-simd-0.1.2 \
+		fnv-1.0.6 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-channel-0.3.1 \
+		futures-core-0.3.1 \
+		futures-io-0.3.1 \
+		futures-sink-0.3.1 \
+		futures-task-0.3.1 \
+		futures-util-0.3.1 \
+		gc-0.3.3 \
+		gc_derive-0.3.2 \
+		generic-array-0.12.3 \
+		getrandom-0.1.12 \
+		h2-0.2.1 \
+		heck-0.3.1 \
+		http-0.2.0 \
+		http-body-0.3.1 \
+		http-test-server-1.0.0 \
+		httparse-1.3.4 \
+		hyper-0.13.1 \
+		hyper-tls-0.4.0 \
+		idna-0.2.0 \
+		indexmap-1.3.0 \
+		iovec-0.1.4 \
+		itoa-0.4.4 \
+		js-sys-0.3.33 \
+		kernel32-sys-0.2.2 \
+		lazy_static-1.4.0 \
+		libc-0.2.62 \
+		log-0.4.8 \
+		maplit-1.0.2 \
+		matches-0.1.8 \
+		memchr-2.2.1 \
+		mime-0.3.14 \
+		mime_guess-2.0.1 \
+		mio-0.6.21 \
+		miow-0.2.1 \
+		native-tls-0.2.3 \
+		net2-0.2.33 \
+		nom-4.2.3 \
+		num_cpus-1.10.1 \
+		opaque-debug-0.2.3 \
+		openssl-0.10.26 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.53 \
+		percent-encoding-2.1.0 \
+		pest-2.1.2 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.1 \
+		pest_meta-2.1.2 \
+		pin-project-0.4.6 \
+		pin-project-internal-0.4.6 \
+		pin-project-lite-0.1.2 \
+		pin-utils-0.1.0-alpha.4 \
+		pkg-config-0.3.16 \
+		ppv-lite86-0.2.5 \
+		proc-macro-error-0.2.6 \
+		proc-macro2-1.0.3 \
+		quote-0.3.15 \
+		quote-1.0.2 \
+		rand-0.7.2 \
+		rand_chacha-0.2.1 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		redox_syscall-0.1.56 \
+		regex-1.3.1 \
+		regex-syntax-0.6.12 \
+		remove_dir_all-0.5.2 \
+		reqwest-0.10.0 \
+		ryu-1.0.0 \
+		schannel-0.1.16 \
+		security-framework-0.3.4 \
+		security-framework-sys-0.3.3 \
+		serde-1.0.101 \
+		serde_derive-1.0.102 \
+		serde_json-1.0.40 \
+		serde_urlencoded-0.6.1 \
+		sha-1-0.8.1 \
+		slab-0.4.2 \
+		smallvec-0.6.10 \
+		sourcefile-0.1.4 \
+		strsim-0.8.0 \
+		structopt-0.3.3 \
+		structopt-derive-0.3.3 \
+		syn-0.11.11 \
+		syn-1.0.5 \
+		synom-0.11.3 \
+		synstructure-0.6.1 \
+		tempfile-3.1.0 \
+		textwrap-0.11.0 \
+		thread_local-0.3.6 \
+		time-0.1.42 \
+		tokio-0.2.8 \
+		tokio-tls-0.3.0 \
+		tokio-util-0.2.0 \
+		tower-service-0.3.0 \
+		try-lock-0.2.2 \
+		typenum-1.11.2 \
+		ucd-trie-0.1.2 \
+		unicase-2.5.1 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.8 \
+		unicode-segmentation-1.3.0 \
+		unicode-width-0.1.6 \
+		unicode-xid-0.0.4 \
+		unicode-xid-0.2.0 \
+		url-2.1.0 \
+		vcpkg-0.2.7 \
+		vec_map-0.8.1 \
+		version_check-0.1.5 \
+		want-0.3.0 \
+		wasi-0.7.0 \
+		wasm-bindgen-0.2.56 \
+		wasm-bindgen-backend-0.2.56 \
+		wasm-bindgen-futures-0.4.6 \
+		wasm-bindgen-macro-0.2.56 \
+		wasm-bindgen-macro-support-0.2.56 \
+		wasm-bindgen-shared-0.2.56 \
+		wasm-bindgen-webidl-0.2.56 \
+		web-sys-0.3.33 \
+		weedle-0.10.0 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.6.2 \
+		ws2_32-sys-0.2.1
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
