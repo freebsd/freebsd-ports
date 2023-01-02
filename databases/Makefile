@@ -192,6 +192,7 @@
     SUBDIR += mongodb44
     SUBDIR += mongodb50
     SUBDIR += mongodb60
+    SUBDIR += movine
     SUBDIR += mroonga
     SUBDIR += mtop
     SUBDIR += mydumper

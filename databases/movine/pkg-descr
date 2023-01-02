@@ -1,0 +1,8 @@
+Movine is a simple database migration manager that aims to be compatible with
+real-world migration work. Many migration managers get confused with
+complicated development strategies for migrations. Oftentimes migration managers
+do not warn you if the SQL saved in git differs from what was actually run on
+the database. Movine solves this issue by keeping track of the unique hashes for
+the up.sql and down.sql for each migration, and provides tools for fixing
+issues. This allows users to easily keep track of whether their local migration
+history matches the one on the database.

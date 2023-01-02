@@ -1,0 +1,183 @@
+PORTNAME=	movine
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.11.0
+CATEGORIES=	databases
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Database migration manager written in Rust
+WWW=		https://github.com/byronwasti/movine
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	byronwasti
+
+CARGO_CRATES=	aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		async-trait-0.1.41 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		block-buffer-0.9.0 \
+		bumpalo-3.6.1 \
+		byteorder-1.3.4 \
+		bytes-1.0.1 \
+		cc-1.0.62 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		cloudabi-0.1.0 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
+		cpuid-bool-0.1.2 \
+		crypto-mac-0.10.0 \
+		digest-0.9.0 \
+		dotenv-0.15.0 \
+		env_logger-0.7.1 \
+		envy-0.4.1 \
+		fallible-iterator-0.2.0 \
+		fallible-streaming-iterator-0.1.9 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		futures-0.3.8 \
+		futures-channel-0.3.8 \
+		futures-core-0.3.8 \
+		futures-executor-0.3.8 \
+		futures-io-0.3.8 \
+		futures-macro-0.3.8 \
+		futures-sink-0.3.8 \
+		futures-task-0.3.8 \
+		futures-util-0.3.8 \
+		generic-array-0.14.4 \
+		getrandom-0.2.2 \
+		heck-0.3.1 \
+		hermit-abi-0.1.17 \
+		hmac-0.10.1 \
+		humantime-1.3.0 \
+		instant-0.1.8 \
+		js-sys-0.3.50 \
+		lazy_static-1.4.0 \
+		libc-0.2.93 \
+		libsqlite3-sys-0.18.0 \
+		linked-hash-map-0.5.3 \
+		lock_api-0.4.1 \
+		log-0.4.11 \
+		lru-cache-0.1.2 \
+		matches-0.1.8 \
+		md-5-0.9.1 \
+		memchr-2.3.4 \
+		mio-0.7.11 \
+		miow-0.3.7 \
+		native-tls-0.2.7 \
+		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		once_cell-1.5.2 \
+		opaque-debug-0.3.0 \
+		openssl-0.10.33 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.61 \
+		parking_lot-0.11.0 \
+		parking_lot_core-0.8.0 \
+		percent-encoding-2.1.0 \
+		phf-0.8.0 \
+		phf_shared-0.8.0 \
+		pin-project-1.0.1 \
+		pin-project-internal-1.0.1 \
+		pin-project-lite-0.2.6 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		postgres-0.19.1 \
+		postgres-native-tls-0.5.0 \
+		postgres-protocol-0.6.1 \
+		postgres-types-0.2.1 \
+		ppv-lite86-0.2.10 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.6 \
+		proc-macro2-1.0.26 \
+		quick-error-1.2.3 \
+		quote-1.0.7 \
+		rand-0.8.3 \
+		rand_chacha-0.3.0 \
+		rand_core-0.6.2 \
+		rand_hc-0.3.0 \
+		redox_syscall-0.1.57 \
+		redox_syscall-0.2.5 \
+		regex-1.4.2 \
+		regex-syntax-0.6.21 \
+		remove_dir_all-0.5.3 \
+		ring-0.16.20 \
+		rusqlite-0.23.1 \
+		rustls-0.19.0 \
+		schannel-0.1.19 \
+		scopeguard-1.1.0 \
+		sct-0.6.0 \
+		security-framework-2.2.0 \
+		security-framework-sys-2.2.0 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
+		sha2-0.9.2 \
+		siphasher-0.3.3 \
+		slab-0.4.2 \
+		smallvec-1.5.0 \
+		socket2-0.4.0 \
+		spin-0.5.2 \
+		stringprep-0.1.2 \
+		strsim-0.8.0 \
+		structopt-0.3.20 \
+		structopt-derive-0.4.13 \
+		subtle-2.3.0 \
+		syn-1.0.69 \
+		tempfile-3.2.0 \
+		termcolor-1.1.0 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		time-0.1.44 \
+		tinyvec-1.0.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.4.0 \
+		tokio-native-tls-0.3.0 \
+		tokio-postgres-0.7.1 \
+		tokio-postgres-rustls-0.8.0 \
+		tokio-rustls-0.22.0 \
+		tokio-util-0.6.5 \
+		toml-0.5.7 \
+		typenum-1.12.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.14 \
+		unicode-segmentation-1.7.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		untrusted-0.7.1 \
+		vcpkg-0.2.10 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.73 \
+		wasm-bindgen-backend-0.2.73 \
+		wasm-bindgen-macro-0.2.73 \
+		wasm-bindgen-macro-support-0.2.73 \
+		wasm-bindgen-shared-0.2.73 \
+		web-sys-0.3.50 \
+		webpki-0.21.4 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
