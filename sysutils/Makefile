@@ -62,6 +62,7 @@
     SUBDIR += asmctl
     SUBDIR += asmem
     SUBDIR += asusoled
+    SUBDIR += async
     SUBDIR += atf-fvp
     SUBDIR += atf-master
     SUBDIR += atf-rk3328
