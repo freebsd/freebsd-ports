@@ -178,6 +178,8 @@ TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TRACE_CMAKE_BOOL=		WITH_POTRACE
 TRACE_LIB_DEPENDS=		libpotrace.so:graphics/libpotrace
 WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND
+WAYLAND_USES=			pkgconfig
+WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libdecor-0.so:x11-toolkits/libdecor \
 				libxkbcommon.so:x11/libxkbcommon
 WEBP_CMAKE_BOOL=		WITH_IMAGE_WEBP
