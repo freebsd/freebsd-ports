@@ -747,6 +747,7 @@
     SUBDIR += solfege
     SUBDIR += somafm-cli
     SUBDIR += sonata
+    SUBDIR += songrec
     SUBDIR += sonic-visualiser
     SUBDIR += sonivox
     SUBDIR += sonivox-eas
