@@ -130,6 +130,7 @@
     SUBDIR += stm32flash
     SUBDIR += sumo
     SUBDIR += surelog
+    SUBDIR += svlint
     SUBDIR += sweethome3d
     SUBDIR += tkgate
     SUBDIR += tochnog

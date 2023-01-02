@@ -1,0 +1,4 @@
+svlint is a SystemVerilog linter.
+
+svlint uses supplied .svlint.toml to specify enabled rules.
+Configuration file is searched to the upper directory until /.
