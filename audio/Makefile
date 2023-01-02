@@ -481,6 +481,7 @@
     SUBDIR += mixxx
     SUBDIR += mixxx22
     SUBDIR += mkcue
+    SUBDIR += mmtc
     SUBDIR += moc
     SUBDIR += modplug-tools
     SUBDIR += moodbar
