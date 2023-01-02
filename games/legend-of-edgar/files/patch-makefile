@@ -1,9 +1,8 @@
-- Make sure the build can find SDL's headers
 - Properly stage things to make sure the binary does not refer to
   the stage directory and that the game can actually find its assets
   at runtime
 
---- makefile.orig	2019-03-16 12:57:53 UTC
+--- makefile.orig	2023-01-01 07:44:56 UTC
 +++ makefile
 @@ -22,7 +22,7 @@ PO_PROG   = po_creator
  TILE_PROG = tile_creator
@@ -14,15 +13,7 @@
  BIN_DIR = $(PREFIX)/games/
  DOC_DIR = $(PREFIX)/share/doc/$(PROG)/
  ICON_DIR = $(PREFIX)/share/icons/hicolor/
-@@ -42,6 +42,7 @@ CFLAGS += -Wall -pedantic
- ifeq ($(DEV),1)
- CFLAGS += -Werror -g
- endif
-+CFLAGS += $(shell sdl2-config --cflags)
- 
- DEFINES = -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DDEV=$(DEV) -DINSTALL_PATH=\"$(DATA_DIR)\" -DLOCALE_DIR=\"$(LOCALE_DIR)\" -DUNIX=$(UNIX)
- ifndef NO_PAK
-@@ -104,11 +105,11 @@ endif
+@@ -104,11 +104,11 @@ endif
  all : $(PROG) makefile.dep $(ED_PROG) $(PAK_PROG) $(LOCALE_MO) $(PO_PROG)
  
  makefile.dep : src/*/*.h src/*.h
@@ -36,7 +27,7 @@
  
  %.mo: %.po
  	msgfmt -c -o $@ $<
-@@ -148,37 +149,37 @@ install: all buildpak
+@@ -148,39 +148,39 @@ install: all buildpak
  ifeq ($(DEV),1)
  	echo Cannot install if DEV is set to 1!
  else
@@ -47,6 +38,7 @@
 -	mkdir -p $(ICON_DIR)32x32/apps
 -	mkdir -p $(ICON_DIR)48x48/apps
 -	mkdir -p $(ICON_DIR)64x64/apps
+-	mkdir -p $(ICON_DIR)128x128/apps
 -	mkdir -p $(DESKTOP_DIR)
 -	mkdir -p $(APPDATA_DIR)
 -	mkdir -p $(MAN_DIR)
@@ -57,6 +49,7 @@
 +	mkdir -p $(DESTDIR)$(ICON_DIR)32x32/apps
 +	mkdir -p $(DESTDIR)$(ICON_DIR)48x48/apps
 +	mkdir -p $(DESTDIR)$(ICON_DIR)64x64/apps
++	mkdir -p $(DESTDIR)$(ICON_DIR)128x128/apps
 +	mkdir -p $(DESTDIR)$(DESKTOP_DIR)
 +	mkdir -p $(DESTDIR)$(APPDATA_DIR)
 +	mkdir -p $(DESTDIR)$(MAN_DIR)
@@ -75,6 +68,7 @@
 -	cp $(ICONS)32x32.png $(ICON_DIR)32x32/apps/$(PROG).png
 -	cp $(ICONS)48x48.png $(ICON_DIR)48x48/apps/$(PROG).png
 -	cp $(ICONS)64x64.png $(ICON_DIR)64x64/apps/$(PROG).png
+-	cp $(ICONS)128x128.png $(ICON_DIR)128x128/apps/$(PROG).png
 -	cp $(ICONS)$(PROG).desktop $(DESKTOP_DIR)
 -	cp $(ICONS)$(PROG).appdata.xml $(APPDATA_DIR)
 -	install -m 0644 $(MAN)$(PROG).6 $(MAN_DIR)
@@ -83,6 +77,7 @@
 +	$(BSD_INSTALL_DATA) $(ICONS)32x32.png $(DESTDIR)$(ICON_DIR)32x32/apps/$(PROG).png
 +	$(BSD_INSTALL_DATA) $(ICONS)48x48.png $(DESTDIR)$(ICON_DIR)48x48/apps/$(PROG).png
 +	$(BSD_INSTALL_DATA) $(ICONS)64x64.png $(DESTDIR)$(ICON_DIR)64x64/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)128x128.png $(DESTDIR)$(ICON_DIR)128x128/apps/$(PROG).png
 +	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).desktop $(DESTDIR)$(DESKTOP_DIR)
 +	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).appdata.xml $(DESTDIR)$(APPDATA_DIR)
 +	$(BSD_INSTALL_MAN) $(MAN)$(PROG).6 $(DESTDIR)$(MAN_DIR)

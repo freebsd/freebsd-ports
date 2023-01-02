@@ -1,5 +1,5 @@
 PORTNAME=	edgar
-DISTVERSION=	1.35
+DISTVERSION=	1.36
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/riksweeney/edgar/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	legend-of-
@@ -19,7 +19,6 @@ USE_SDL=	image2 mixer2 sdl2 ttf2
 MAKEFILE=	makefile
 MAKE_ARGS=	BIN_DIR=${PREFIX}/bin/ \
 		DATA_DIR=${DATADIR}/ \
-		MAN_DIR=${PREFIX}/man/man6/ \
 		PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -33,7 +32,7 @@ post-patch:
 		${WRKSRC}/icons/${PORTNAME}.desktop
 
 post-install:
-	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png \
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
