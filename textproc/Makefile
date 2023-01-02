@@ -319,6 +319,7 @@
     SUBDIR += itstool
     SUBDIR += jade
     SUBDIR += jalingo
+    SUBDIR += jaq
     SUBDIR += jarnal
     SUBDIR += jarowinkler-cpp
     SUBDIR += java2html
