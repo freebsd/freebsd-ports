@@ -76,6 +76,7 @@
     SUBDIR += fpc-postgres
     SUBDIR += fpc-pxlib
     SUBDIR += fpc-sqlite
+    SUBDIR += frece
     SUBDIR += freetds
     SUBDIR += freetds-devel
     SUBDIR += frontbase-jdbc
