@@ -1,0 +1,144 @@
+PORTNAME=	ouch
+DISTVERSION=	0.4.0
+CATEGORIES=	archivers
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Painless compression and decompression for your terminal
+WWW=		https://github.com/ouch-org/ouch
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	ouch-org
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-0.7.20 \
+		assert_cmd-2.0.6 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
+		bstr-1.0.1 \
+		byteorder-1.4.3 \
+		bzip2-0.4.3 \
+		bzip2-sys-0.1.11+1.0.8 \
+		cc-1.0.77 \
+		cfb-0.7.3 \
+		cfg-if-1.0.0 \
+		clap-4.0.26 \
+		clap_complete-4.0.5 \
+		clap_derive-4.0.21 \
+		clap_lex-0.3.0 \
+		clap_mangen-0.2.4 \
+		crc32fast-1.3.2 \
+		crossbeam-utils-0.8.14 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.8.0 \
+		fastrand-1.8.0 \
+		filetime-0.2.18 \
+		flate2-1.0.24 \
+		fnv-1.0.7 \
+		fs-err-2.9.0 \
+		getrandom-0.2.8 \
+		globset-0.4.9 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		humansize-2.1.2 \
+		ignore-0.4.18 \
+		infer-0.11.0 \
+		instant-0.1.12 \
+		is_executable-1.0.1 \
+		itertools-0.10.5 \
+		itoa-1.0.4 \
+		jobserver-0.1.25 \
+		lazy_static-1.4.0 \
+		libc-0.2.137 \
+		libm-0.2.6 \
+		libz-sys-1.1.8 \
+		linked-hash-map-0.5.6 \
+		log-0.4.17 \
+		lzma-sys-0.1.20 \
+		lzzzz-1.0.4 \
+		memchr-2.5.0 \
+		miniz_oxide-0.5.4 \
+		num-traits-0.2.15 \
+		once_cell-1.16.0 \
+		os_str_bytes-6.4.1 \
+		parse-display-0.6.0 \
+		parse-display-derive-0.6.0 \
+		pkg-config-0.3.26 \
+		ppv-lite86-0.2.17 \
+		predicates-2.1.3 \
+		predicates-core-1.0.5 \
+		predicates-tree-1.0.7 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.47 \
+		proptest-1.0.0 \
+		quick-error-1.2.3 \
+		quick-error-2.0.1 \
+		quote-1.0.21 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rand_xorshift-0.3.0 \
+		redox_syscall-0.2.16 \
+		regex-1.7.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.28 \
+		remove_dir_all-0.5.3 \
+		roff-0.2.1 \
+		rusty-fork-0.3.0 \
+		same-file-1.0.6 \
+		serde-1.0.147 \
+		snap-1.1.0 \
+		strsim-0.10.0 \
+		structmeta-0.1.5 \
+		structmeta-derive-0.1.5 \
+		syn-1.0.103 \
+		tar-0.4.38 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		termtree-0.4.0 \
+		test-strategy-0.2.1 \
+		thread_local-1.1.4 \
+		time-0.3.17 \
+		time-core-0.1.0 \
+		time-macros-0.2.6 \
+		unicode-ident-1.0.5 \
+		uuid-1.2.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0 \
+		xattr-0.2.3 \
+		xz2-0.1.7 \
+		zip-0.6.3 \
+		zstd-0.12.0+zstd.1.5.2 \
+		zstd-safe-6.0.2+zstd.1.5.2 \
+		zstd-sys-2.0.1+zstd.1.5.2
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
