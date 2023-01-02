@@ -1,0 +1,205 @@
+PORTNAME=	cocogitto
+DISTVERSION=	5.2.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Conventional commits toolbox
+WWW=		https://github.com/cocogitto/cocogitto
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.64 \
+		assert_cmd-1.0.8 \
+		async-trait-0.1.57 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		block-buffer-0.10.3 \
+		bstr-0.2.17 \
+		bumpalo-3.11.0 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		chrono-0.4.22 \
+		chrono-tz-0.6.3 \
+		chrono-tz-build-0.0.3 \
+		clap-3.2.20 \
+		clap_complete-3.2.4 \
+		clap_derive-3.2.18 \
+		clap_lex-0.2.4 \
+		cmd_lib-1.3.0 \
+		cmd_lib_macros-1.3.0 \
+		colored-2.0.0 \
+		config-0.12.0 \
+		conventional_commit_parser-0.9.4 \
+		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.5 \
+		crossbeam-utils-0.8.11 \
+		crypto-common-0.1.6 \
+		ctor-0.1.23 \
+		deunicode-0.4.3 \
+		diff-0.1.13 \
+		difference-2.0.0 \
+		difflib-0.4.0 \
+		digest-0.10.3 \
+		doc-comment-0.3.3 \
+		edit-0.1.4 \
+		either-1.8.0 \
+		faccess-0.2.4 \
+		fastrand-1.8.0 \
+		float-cmp-0.8.0 \
+		fnv-1.0.7 \
+		form_urlencoded-1.1.0 \
+		fuchsia-cprng-0.1.1 \
+		generic-array-0.14.6 \
+		getrandom-0.1.16 \
+		getrandom-0.2.7 \
+		git2-0.15.0 \
+		globset-0.4.9 \
+		globwalk-0.8.1 \
+		hashbrown-0.12.3 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		humansize-1.1.1 \
+		iana-time-zone-0.1.47 \
+		idna-0.3.0 \
+		ignore-0.4.18 \
+		indexmap-1.9.1 \
+		indoc-1.0.7 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-1.0.3 \
+		jobserver-0.1.24 \
+		js-sys-0.3.59 \
+		lazy_static-1.4.0 \
+		libc-0.2.132 \
+		libgit2-sys-0.14.0+1.5.0 \
+		libz-sys-1.1.8 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		minimal-lexical-0.2.1 \
+		nom-7.1.1 \
+		normalize-line-endings-0.3.0 \
+		num-0.1.42 \
+		num-bigint-0.1.44 \
+		num-complex-0.1.43 \
+		num-integer-0.1.45 \
+		num-iter-0.1.43 \
+		num-rational-0.1.42 \
+		num-traits-0.2.15 \
+		once_cell-1.14.0 \
+		os_pipe-0.9.2 \
+		os_str_bytes-6.3.0 \
+		output_vt100-0.1.3 \
+		parse-zoneinfo-0.3.0 \
+		pathdiff-0.2.1 \
+		percent-encoding-2.2.0 \
+		pest-2.3.0 \
+		pest_derive-2.3.0 \
+		pest_generator-2.3.0 \
+		pest_meta-2.3.0 \
+		phf-0.11.1 \
+		phf_codegen-0.11.1 \
+		phf_generator-0.11.1 \
+		phf_shared-0.11.1 \
+		pkg-config-0.3.25 \
+		ppv-lite86-0.2.16 \
+		predicates-1.0.8 \
+		predicates-2.1.1 \
+		predicates-core-1.0.3 \
+		predicates-tree-1.0.5 \
+		pretty_assertions-1.3.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.43 \
+		quick-error-1.2.3 \
+		quote-1.0.21 \
+		rand-0.4.6 \
+		rand-0.7.3 \
+		rand-0.8.5 \
+		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.2.0 \
+		rdrand-0.4.0 \
+		redox_syscall-0.2.16 \
+		regex-1.6.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.27 \
+		remove_dir_all-0.5.3 \
+		rustc-serialize-0.3.24 \
+		rusty-forkfork-0.4.0 \
+		ryu-1.0.11 \
+		same-file-1.0.6 \
+		sealed_test-0.2.0 \
+		sealed_test_derive-0.1.0 \
+		semver-1.0.13 \
+		serde-1.0.144 \
+		serde_derive-1.0.144 \
+		serde_json-1.0.85 \
+		sha-1-0.10.0 \
+		shell-words-1.1.0 \
+		siphasher-0.3.10 \
+		slug-0.1.4 \
+		speculoos-0.8.0 \
+		stderrlog-0.5.3 \
+		strsim-0.10.0 \
+		syn-1.0.99 \
+		tempfile-3.3.0 \
+		tera-1.17.0 \
+		termcolor-1.1.3 \
+		termtree-0.2.4 \
+		textwrap-0.15.0 \
+		thiserror-1.0.34 \
+		thiserror-impl-1.0.34 \
+		thread_local-1.1.4 \
+		time-0.1.44 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		toml-0.5.9 \
+		typenum-1.15.0 \
+		ucd-trie-0.1.5 \
+		uncased-0.9.7 \
+		unic-char-property-0.9.0 \
+		unic-char-range-0.9.0 \
+		unic-common-0.9.0 \
+		unic-segment-0.9.0 \
+		unic-ucd-segment-0.9.0 \
+		unic-ucd-version-0.9.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.3 \
+		unicode-normalization-0.1.21 \
+		url-2.3.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.82 \
+		wasm-bindgen-backend-0.2.82 \
+		wasm-bindgen-macro-0.2.82 \
+		wasm-bindgen-macro-support-0.2.82 \
+		wasm-bindgen-shared-0.2.82 \
+		which-4.3.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yansi-0.5.1
+
+PLIST_FILES=	bin/cog
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cog
+
+.include <bsd.port.mk>

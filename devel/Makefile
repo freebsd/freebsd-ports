@@ -400,6 +400,7 @@
     SUBDIR += cmph
     SUBDIR += cmunge
     SUBDIR += coccinelle
+    SUBDIR += cocogitto
     SUBDIR += codeblocks
     SUBDIR += codequery
     SUBDIR += codesearch-py
