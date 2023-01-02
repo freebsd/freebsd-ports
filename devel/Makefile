@@ -187,6 +187,7 @@
     SUBDIR += arduino-tools
     SUBDIR += arduino18
     SUBDIR += arduinoOTA
+    SUBDIR += argc
     SUBDIR += argdata
     SUBDIR += argobots
     SUBDIR += argouml

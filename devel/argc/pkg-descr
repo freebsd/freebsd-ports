@@ -1,0 +1,6 @@
+argc allows to easily parse command line arguments in bash.
+
+To write a command-line program with argc, we only need to do two things:
+1. Describe options, flags, positional parameters and subcommands in comments.
+2. Insert `eval $(argc "$0" "$@")` into script to let argc to parse command line
+   arguments.
