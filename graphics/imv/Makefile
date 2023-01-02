@@ -37,6 +37,7 @@ FREEIMAGE_DESC=	FreeImage backend (support for many image formats)
 NSGIF_DESC=	NetSurf GIF backend (support for animated GIF)
 WIN_DESC=	Windowing system
 
+ALL_CATEGORIES=		wayland
 ALL_LIB_DEPENDS+=	libwayland-client.so:graphics/wayland
 ALL_USES=		xorg
 ALL_USE=		GL=glu \
