@@ -1,0 +1,1 @@
+bunyan-rs is a Rust port of (a subset of) the original NodeJS bunyan CLI.

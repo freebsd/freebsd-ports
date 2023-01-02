@@ -305,6 +305,7 @@
     SUBDIR += buildkite-agent
     SUBDIR += buildstream
     SUBDIR += bullet
+    SUBDIR += bunyan
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
