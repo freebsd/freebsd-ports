@@ -1,5 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.20.2
+PORTREVISION=	1
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -35,7 +36,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
-		localbase:ldflags mpi:openmpi pkgconfig python:3.7+ localbase qt:5 xorg
+		localbase:ldflags mpi:openmpi pkgconfig python:3.7+ localbase qt:5 xorg \
+		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
@@ -49,6 +51,7 @@ CPE_VENDOR=	freecad_project
 VTK_VER=	9.2
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
+SHEBANG_FILES=	src/Tools/freecad-thumbnailer
 
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DOPENMPI_INCLUDE_DIRS="${LOCALBASE}/mpi/openmpi/include" \
@@ -68,14 +71,13 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DBUILD_ENABLE_CXX_STD=C++17
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
+# Install XDG icons and files to the standard path
+CMAKE_ARGS+=	-DXDG_DATADIR="${PREFIX}/share"
 
 OPTIONS_DEFINE=	COLLADA
 
 COLLADA_DESC=		Install pycollada for Collada files import
 COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${PY_FLAVOR}
-
-DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
-		${PORTNAME} "Graphics;Engineering;" false
 
 .include <bsd.port.options.mk>
 
@@ -88,9 +90,15 @@ USE_QT+=	webkit
 post-patch:
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
 		${WRKSRC}/src/Tools/SubWCRev.py
+# Install XDG icons and files to the standard path
+	@${REINPLACE_CMD} -e 's/CMAKE_INSTALL_DATAROOTDIR/XDG_DATADIR/g' \
+		${WRKSRC}/src/XDGData/CMakeLists.txt \
+		${WRKSRC}/src/Gui/CMakeLists.txt
 
 post-install:
 	${LN} -s ../${PORTNAME}/bin/FreeCAD ${STAGEDIR}${LOCALBASE}/bin/FreeCAD
 	${LN} -s ../${PORTNAME}/bin/FreeCADCmd ${STAGEDIR}${LOCALBASE}/bin/FreeCADCmd
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Tools/freecad-thumbnailer \
+		${STAGEDIR}${PREFIX}/bin/freecad-thumbnailer
 
 .include <bsd.port.mk>

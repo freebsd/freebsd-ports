@@ -1959,7 +1959,8 @@ FreeCAD/share/Mod/TechDraw/Templates/zh_CN/portrait/A3_Portrait_CN_CLIP.svg
 FreeCAD/share/Mod/TechDraw/Templates/zh_CN/portrait/A4_Portrait_CN_CLIP.svg
 FreeCAD/share/Mod/Test/Resources/icons/TestWorkbench.svg
 FreeCAD/share/Mod/Web/Resources/icons/WebWorkbench.svg
-FreeCAD/share/applications/org.freecadweb.FreeCAD.desktop
+@comment FreeCAD/share/doc/FreeCAD/LICENSE.html
+@comment FreeCAD/share/doc/FreeCAD/ThirdPartyLibraries.html
 FreeCAD/share/examples/ArchDetail.FCStd
 FreeCAD/share/examples/EngineBlock.FCStd
 FreeCAD/share/examples/FemCalculixCantilever2D.FCStd
@@ -1969,19 +1970,21 @@ FreeCAD/share/examples/PartDesignExample.FCStd
 FreeCAD/share/examples/RobotExample.FCStd
 FreeCAD/share/examples/Schenkel.stp
 FreeCAD/share/examples/draft_test_objects.FCStd
-FreeCAD/share/icons/hicolor/16x16/apps/freecad.png
-FreeCAD/share/icons/hicolor/32x32/apps/freecad.png
-FreeCAD/share/icons/hicolor/48x48/apps/freecad.png
-FreeCAD/share/icons/hicolor/64x64/apps/freecad.png
-FreeCAD/share/icons/hicolor/scalable/apps/freecad.svg
-FreeCAD/share/icons/hicolor/scalable/apps/org.freecadweb.FreeCAD.svg
-FreeCAD/share/icons/hicolor/scalable/mimetypes/application-x-extension-fcstd.svg
-FreeCAD/share/metainfo/org.freecadweb.FreeCAD.appdata.xml
-FreeCAD/share/mime/packages/org.freecadweb.FreeCAD.xml
-FreeCAD/share/pixmaps/freecad.xpm
-FreeCAD/share/thumbnailers/FreeCAD.thumbnailer
 bin/FreeCAD
 bin/FreeCADCmd
+bin/freecad-thumbnailer
+share/applications/org.freecadweb.FreeCAD.desktop
+share/icons/hicolor/16x16/apps/freecad.png
+share/icons/hicolor/32x32/apps/freecad.png
+share/icons/hicolor/48x48/apps/freecad.png
+share/icons/hicolor/64x64/apps/freecad.png
+share/icons/hicolor/scalable/apps/freecad.svg
+share/icons/hicolor/scalable/apps/org.freecadweb.FreeCAD.svg
+share/icons/hicolor/scalable/mimetypes/application-x-extension-fcstd.svg
+share/metainfo/org.freecadweb.FreeCAD.appdata.xml
+share/mime/packages/org.freecadweb.FreeCAD.xml
+share/pixmaps/freecad.xpm
+share/thumbnailers/FreeCAD.thumbnailer
 @dir FreeCAD
 @dir FreeCAD/share
 @dir FreeCAD/share/Mod/Material/StandardMaterial/Tools
