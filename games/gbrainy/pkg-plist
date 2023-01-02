@@ -4,7 +4,6 @@ lib/gbrainy/gbrainy.Core.dll.config
 lib/gbrainy/gbrainy.Games.dll
 lib/gbrainy/gbrainy.exe
 lib/gbrainy/gbrainy.exe.config
-libdata/pkgconfig/gbrainy.pc
 man/man6/gbrainy.6.gz
 share/applications/gbrainy.desktop
 share/games/gbrainy/box.svg
@@ -57,6 +56,7 @@ share/icons/hicolor/scalable/apps/gbrainy.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/gbrainy.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gbrainy.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gbrainy.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gbrainy.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gbrainy.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/gbrainy.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gbrainy.mo
