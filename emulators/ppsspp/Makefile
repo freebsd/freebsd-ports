@@ -1,6 +1,6 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.14.2
+DISTVERSION?=	1.14.3
 PORTREVISION?=	0
 CATEGORIES=	emulators wayland
 # XXX Get from Debian once #697821 lands
