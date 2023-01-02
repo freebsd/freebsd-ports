@@ -27,7 +27,7 @@ include/sqfs/xattr_writer.h
 lib/libsquashfs.a
 lib/libsquashfs.so
 lib/libsquashfs.so.1
-lib/libsquashfs.so.1.3.0
+lib/libsquashfs.so.1.4.0
 libdata/pkgconfig/libsquashfs1.pc
 %%TOOLS%%man/man1/gensquashfs.1.gz
 %%TOOLS%%man/man1/rdsquashfs.1.gz
