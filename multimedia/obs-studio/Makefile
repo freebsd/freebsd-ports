@@ -116,6 +116,7 @@ VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 VST_DESC=		Build VST submodule
 VST_CMAKE_BOOL=		BUILD_VST
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 
