@@ -1,0 +1,32 @@
+  <vuln vid="86c330fe-bbae-4ca7-85f7-5321e627a4eb">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.18.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/22219">
+	  <p>Remove ReverseProxy authentication from the API</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/21139">
+	  <p>Support Go Vulnerability Management</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20935">
+	  <p>Forbid HTML string tooltips</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.io/2022/12/gitea-1.18.0-is-released/</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.18.0</url>
+    </references>
+    <dates>
+      <discovery>2022-08-23</discovery>
+      <entry>2023-01-02</entry>
+    </dates>
+  </vuln>
+
