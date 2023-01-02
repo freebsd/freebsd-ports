@@ -10,6 +10,9 @@ WWW=		https://goteleport.com/teleport
 
 LICENSE=	APACHE20
 
+DEPRECATED=	End of life, users are recommended to use security/teleport5 as an upgrade path
+EXPIRATION_DATE=2023-03-31
+
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Uses 64bit types
 
