@@ -6,6 +6,7 @@ bin/urxvtcd
 %%PERL%%lib/urxvt/perl/background
 %%PERL%%lib/urxvt/perl/bell-command
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
+%%PERL%%lib/urxvt/perl/clickthrough
 %%PERL%%lib/urxvt/perl/clipboard-osc
 %%PERL%%lib/urxvt/perl/confirm-paste
 %%PERL%%lib/urxvt/perl/digital-clock
@@ -32,6 +33,7 @@ man/man1/urclock.1.gz
 %%PERL%%man/man1/urxvt-background.1.gz
 %%PERL%%man/man1/urxvt-bell-command.1.gz
 %%PERL%%man/man1/urxvt-block-graphics-to-ascii.1.gz
+%%PERL%%man/man1/urxvt-clickthrough.1.gz
 %%PERL%%man/man1/urxvt-clipboard-osc.1.gz
 %%PERL%%man/man1/urxvt-confirm-paste.1.gz
 %%PERL%%man/man1/urxvt-digital-clock.1.gz
