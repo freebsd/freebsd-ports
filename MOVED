@@ -14895,7 +14895,6 @@ devel/py-django-tastypie-mongoengine||2020-05-17|Has expired: Not necessary anym
 sysutils/py-cpuinfo|sysutils/py-py-cpuinfo|2020-05-18|Rename to match PyPI name
 devel/py-jupyterlab_server|devel/py-jupyterlab-server|2020-05-19|Rename to match upstream naming
 math/py-onnx|misc/py-onnx|2020-05-23|Move to misc category because it's not related to math
-misc/onnx|misc/py-onnx|2020-05-23|Remove duplicate
 net/get_iplayer|multimedia/get_iplayer|2020-05-24|Move to a proper category
 lang/gnatdroid-armv7||2020-05-24|Has expired: Broken for more than 6 months
 devel/breakpad||2020-05-24|Has expired: Broken for more than 6 months
