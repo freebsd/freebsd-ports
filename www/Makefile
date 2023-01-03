@@ -87,6 +87,7 @@
     SUBDIR += clearsilver
     SUBDIR += closure-compiler
     SUBDIR += cntlm
+    SUBDIR += cobalt
     SUBDIR += codeigniter
     SUBDIR += colly
     SUBDIR += coppermine
