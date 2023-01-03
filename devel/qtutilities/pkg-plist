@@ -33,7 +33,7 @@ include/qtutilities/widgets/iconbutton.h
 include/qtutilities/widgets/pathselection.h
 lib/libqtutilities.so
 lib/libqtutilities.so.6
-lib/libqtutilities.so.6.13.1
+lib/libqtutilities.so.6.13.4
 libdata/pkgconfig/qtutilities.pc
 %%DATADIR%%/cmake/modules/AndroidApk.cmake
 %%DATADIR%%/cmake/modules/QtConfig.cmake
