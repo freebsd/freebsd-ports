@@ -24,6 +24,7 @@
     SUBDIR += bibletime
     SUBDIR += biblical-curse
     SUBDIR += binclock
+    SUBDIR += binocle
     SUBDIR += biosfont-demos
     SUBDIR += birthday
     SUBDIR += bogosort

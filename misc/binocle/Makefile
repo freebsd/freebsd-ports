@@ -1,0 +1,236 @@
+PORTNAME=	binocle
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.0
+CATEGORIES=	misc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Graphical tool to visualize binary data
+WWW=		https://github.com/sharkdp/binocle
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sharkdp
+
+CARGO_CRATES=	ab_glyph-0.2.13 \
+		ab_glyph_rasterizer-0.1.5 \
+		ahash-0.7.6 \
+		aho-corasick-0.7.18 \
+		andrew-0.3.1 \
+		anyhow-1.0.53 \
+		arrayvec-0.7.2 \
+		ash-0.33.3+1.2.191 \
+		atomic_refcell-0.1.8 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		bit-set-0.5.2 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		block-0.1.6 \
+		bumpalo-3.9.1 \
+		bytemuck-1.7.3 \
+		byteorder-1.4.3 \
+		calloop-0.6.5 \
+		cc-1.0.72 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
+		clap-3.0.12 \
+		clap_derive-3.0.12 \
+		cocoa-0.24.0 \
+		cocoa-foundation-0.1.0 \
+		codespan-reporting-0.11.1 \
+		colorgrad-0.5.0 \
+		copyless-0.1.5 \
+		core-foundation-0.7.0 \
+		core-foundation-0.9.2 \
+		core-foundation-sys-0.7.0 \
+		core-foundation-sys-0.8.3 \
+		core-graphics-0.19.2 \
+		core-graphics-0.22.3 \
+		core-graphics-types-0.1.1 \
+		core-video-sys-0.1.4 \
+		crossbeam-0.8.1 \
+		crossbeam-channel-0.5.2 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.6 \
+		crossbeam-queue-0.3.3 \
+		crossbeam-utils-0.8.6 \
+		csscolorparser-0.5.0 \
+		cty-0.2.2 \
+		d3d12-0.4.1 \
+		darling-0.10.2 \
+		darling_core-0.10.2 \
+		darling_macro-0.10.2 \
+		dirs-3.0.2 \
+		dirs-sys-0.3.6 \
+		dispatch-0.2.0 \
+		dlib-0.4.2 \
+		dlib-0.5.0 \
+		downcast-rs-1.2.0 \
+		egui-0.14.2 \
+		egui_wgpu_backend-0.13.0 \
+		egui_winit_platform-0.10.0 \
+		emath-0.14.0 \
+		env_logger-0.9.0 \
+		epaint-0.14.0 \
+		epi-0.14.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		fxhash-0.2.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.4 \
+		glow-0.11.2 \
+		gpu-alloc-0.5.3 \
+		gpu-alloc-types-0.2.0 \
+		gpu-descriptor-0.2.2 \
+		gpu-descriptor-types-0.1.1 \
+		hashbrown-0.11.2 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		hexf-parse-0.2.1 \
+		humansize-1.1.1 \
+		humantime-2.1.0 \
+		ident_case-1.0.1 \
+		indexmap-1.8.0 \
+		inplace_it-0.3.3 \
+		instant-0.1.12 \
+		jni-sys-0.3.0 \
+		js-sys-0.3.56 \
+		khronos-egl-4.1.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.113 \
+		libloading-0.6.7 \
+		libloading-0.7.3 \
+		lock_api-0.4.5 \
+		log-0.4.14 \
+		malloc_buf-0.0.6 \
+		memchr-2.4.1 \
+		memmap2-0.1.0 \
+		memmap2-0.5.2 \
+		memoffset-0.6.5 \
+		metal-0.23.1 \
+		minimal-lexical-0.2.1 \
+		mio-0.7.14 \
+		mio-misc-1.2.2 \
+		miow-0.3.7 \
+		naga-0.7.3 \
+		ndk-0.3.0 \
+		ndk-glue-0.3.0 \
+		ndk-macro-0.2.0 \
+		ndk-sys-0.2.2 \
+		nix-0.18.0 \
+		nix-0.20.0 \
+		nom-7.1.0 \
+		ntapi-0.3.6 \
+		num-traits-0.2.14 \
+		num_enum-0.5.6 \
+		num_enum_derive-0.5.6 \
+		objc-0.2.7 \
+		objc_exception-0.1.2 \
+		once_cell-1.9.0 \
+		ordered-float-2.10.0 \
+		os_str_bytes-6.0.0 \
+		owned_ttf_parser-0.6.0 \
+		owned_ttf_parser-0.14.0 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		percent-encoding-2.1.0 \
+		phf-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
+		phf_shared-0.8.0 \
+		pixels-0.7.0 \
+		pkg-config-0.3.24 \
+		pollster-0.2.5 \
+		ppv-lite86-0.2.16 \
+		proc-macro-crate-0.1.5 \
+		proc-macro-crate-1.1.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.36 \
+		profiling-1.0.5 \
+		quote-1.0.15 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rand_pcg-0.2.1 \
+		range-alloc-0.1.2 \
+		raw-window-handle-0.3.4 \
+		raw-window-handle-0.4.2 \
+		redox_syscall-0.2.10 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		renderdoc-sys-0.7.1 \
+		rusttype-0.9.2 \
+		safe_arch-0.5.2 \
+		same-file-1.0.6 \
+		scoped-tls-1.0.0 \
+		scopeguard-1.1.0 \
+		serde-1.0.135 \
+		siphasher-0.3.9 \
+		slotmap-1.0.6 \
+		smallvec-1.8.0 \
+		smithay-client-toolkit-0.12.3 \
+		spirv-0.2.0+1.5.4 \
+		strsim-0.9.3 \
+		strsim-0.10.0 \
+		syn-1.0.86 \
+		termcolor-1.1.2 \
+		textwrap-0.14.2 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		toml-0.5.8 \
+		ttf-parser-0.6.2 \
+		ttf-parser-0.14.0 \
+		ultraviolet-0.8.1 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.2 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.79 \
+		wasm-bindgen-backend-0.2.79 \
+		wasm-bindgen-futures-0.4.29 \
+		wasm-bindgen-macro-0.2.79 \
+		wasm-bindgen-macro-support-0.2.79 \
+		wasm-bindgen-shared-0.2.79 \
+		wayland-client-0.28.6 \
+		wayland-commons-0.28.6 \
+		wayland-cursor-0.28.6 \
+		wayland-protocols-0.28.6 \
+		wayland-scanner-0.28.6 \
+		wayland-sys-0.28.6 \
+		web-sys-0.3.56 \
+		wgpu-0.11.1 \
+		wgpu-core-0.11.3 \
+		wgpu-hal-0.11.5 \
+		wgpu-types-0.11.0 \
+		wide-0.6.5 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winit-0.25.0 \
+		winit_input_helper-0.10.0 \
+		x11-dl-2.19.1 \
+		xcursor-0.3.4 \
+		xdg-2.4.0 \
+		xml-rs-0.8.4
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
