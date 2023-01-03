@@ -10,6 +10,7 @@
     SUBDIR += amanda-server
     SUBDIR += ansiweather
     SUBDIR += apparix
+    SUBDIR += arrow-datafusion
     SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
