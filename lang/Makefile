@@ -82,6 +82,7 @@
     SUBDIR += fpc-source
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
+    SUBDIR += frawk
     SUBDIR += fsharp
     SUBDIR += fth
     SUBDIR += gambit-c

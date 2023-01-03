@@ -1,0 +1,6 @@
+frawk is a small programming language for writing short programs processing
+textual data. To a first approximation, it is an implementation of the
+AWK language; many common Awk programs produce equivalent output when passed
+to frawk. You might be interested in frawk if you want your scripts to handle
+escaped CSV/TSV like standard Awk fields, or if you want your scripts to
+execute faster.
