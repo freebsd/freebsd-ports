@@ -1,0 +1,16 @@
+Clipcat is a clipboard manager written in Rust Programming Language.
+
+Clipcat uses the Client-Server architecture. There are two role types in this
+architecture: `Server` and `Client`.
+
+A `clipcat` server (as known as daemon) is running as the background process
+and does the following routines:
+- Watching the changes of `X11 clipboard`.
+- Caching the content of `X11 clipboard`.
+- Inserting content into `X11 clipboard`.
+- Serving as a `gRPC` server and waiting for remote procedure call from clients.
+
+A `clipcat` client sends requests to the server for the following operations:
+- List: list the cached clips from server.
+- Insert: replace the current content of `X11 clipboard` with a clip.
+- Remove: remove the cached clips from server.

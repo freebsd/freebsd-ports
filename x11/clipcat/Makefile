@@ -1,0 +1,253 @@
+PORTNAME=	clipcat
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.0
+CATEGORIES=	x11
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Clipcat is a clipboard manager written in Rust
+WWW=		https://github.com/xrelkd/clipcat
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	protoc:devel/protobuf
+
+USES=		cargo localbase:ldflags llvm:min=13,build python:build xorg
+USE_XORG=	xcb
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	xrelkd
+
+MAKE_ENV=	LLVM_CONFIG_PATH=${LLVM_CONFIG}
+
+CARGO_CRATES=	aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.38 \
+		app_dirs-1.2.1 \
+		arrayref-0.3.6 \
+		arrayvec-0.5.2 \
+		async-stream-0.3.0 \
+		async-stream-impl-0.3.0 \
+		async-trait-0.1.42 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		beef-0.4.4 \
+		bincode-1.3.1 \
+		bindgen-0.54.0 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.11 \
+		boxfnonce-0.1.1 \
+		byteorder-1.4.2 \
+		bytes-1.0.1 \
+		cc-1.0.66 \
+		cexpr-0.4.0 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clang-sys-0.29.3 \
+		clap-2.33.3 \
+		const_fn-0.4.5 \
+		constant_time_eq-0.1.5 \
+		crossbeam-0.7.3 \
+		crossbeam-channel-0.4.4 \
+		crossbeam-channel-0.5.0 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-deque-0.8.0 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-epoch-0.9.1 \
+		crossbeam-queue-0.2.3 \
+		crossbeam-utils-0.7.2 \
+		crossbeam-utils-0.8.1 \
+		daemonize-0.4.1 \
+		darling-0.10.2 \
+		darling_core-0.10.2 \
+		darling_macro-0.10.2 \
+		defer-drop-1.0.1 \
+		derive_builder-0.9.0 \
+		derive_builder_core-0.9.0 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.5 \
+		doc-comment-0.3.3 \
+		either-1.6.1 \
+		env_logger-0.6.2 \
+		env_logger-0.7.1 \
+		fixedbitset-0.2.0 \
+		fnv-1.0.7 \
+		futures-0.3.12 \
+		futures-channel-0.3.12 \
+		futures-core-0.3.12 \
+		futures-executor-0.3.12 \
+		futures-io-0.3.12 \
+		futures-macro-0.3.12 \
+		futures-sink-0.3.12 \
+		futures-task-0.3.12 \
+		futures-util-0.3.12 \
+		fuzzy-matcher-0.3.7 \
+		getrandom-0.1.16 \
+		getrandom-0.2.2 \
+		glob-0.3.0 \
+		h2-0.3.0 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.18 \
+		http-0.2.3 \
+		http-body-0.4.0 \
+		httparse-1.3.5 \
+		httpdate-0.3.2 \
+		humantime-1.3.0 \
+		hyper-0.14.4 \
+		ident_case-1.0.1 \
+		indexmap-1.6.1 \
+		itertools-0.9.0 \
+		itoa-0.4.7 \
+		jobserver-0.1.21 \
+		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
+		libc-0.2.85 \
+		libloading-0.5.2 \
+		librocksdb-sys-6.11.4 \
+		log-0.4.14 \
+		matchers-0.0.1 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.4 \
+		memoffset-0.5.6 \
+		memoffset-0.6.1 \
+		mio-0.7.7 \
+		miow-0.3.6 \
+		multimap-0.8.2 \
+		nix-0.14.1 \
+		nom-5.1.2 \
+		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		ole32-sys-0.2.0 \
+		once_cell-1.5.2 \
+		peeking_take_while-0.1.2 \
+		percent-encoding-2.1.0 \
+		petgraph-0.5.1 \
+		pin-project-0.4.27 \
+		pin-project-1.0.5 \
+		pin-project-internal-0.4.27 \
+		pin-project-internal-1.0.5 \
+		pin-project-lite-0.2.4 \
+		pin-utils-0.1.0 \
+		ppv-lite86-0.2.10 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.24 \
+		prost-0.7.0 \
+		prost-build-0.7.0 \
+		prost-derive-0.7.0 \
+		prost-types-0.7.0 \
+		quick-error-1.2.3 \
+		quote-1.0.8 \
+		rand-0.8.3 \
+		rand_chacha-0.3.0 \
+		rand_core-0.6.1 \
+		rand_hc-0.3.0 \
+		rayon-1.5.0 \
+		rayon-core-1.9.0 \
+		redox_syscall-0.1.57 \
+		redox_syscall-0.2.4 \
+		redox_users-0.3.5 \
+		regex-1.4.3 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.22 \
+		remove_dir_all-0.5.3 \
+		rocksdb-0.15.0 \
+		rust-argon2-0.8.3 \
+		rustc-hash-1.1.0 \
+		ryu-1.0.5 \
+		scopeguard-1.1.0 \
+		serde-1.0.123 \
+		serde_derive-1.0.123 \
+		serde_json-1.0.62 \
+		serde_with-1.6.2 \
+		serde_with_macros-1.3.0 \
+		sharded-slab-0.1.1 \
+		shell32-sys-0.1.2 \
+		shlex-0.1.1 \
+		signal-hook-registry-1.3.0 \
+		skim-0.9.3 \
+		slab-0.4.2 \
+		smallvec-1.6.1 \
+		snafu-0.6.10 \
+		snafu-derive-0.6.10 \
+		socket2-0.3.19 \
+		strsim-0.8.0 \
+		strsim-0.9.3 \
+		structopt-0.3.21 \
+		structopt-derive-0.4.14 \
+		syn-1.0.60 \
+		tempfile-3.2.0 \
+		term-0.6.1 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.23 \
+		thiserror-impl-1.0.23 \
+		thread_local-1.1.3 \
+		time-0.1.43 \
+		timer-0.2.0 \
+		tokio-1.2.0 \
+		tokio-macros-1.1.0 \
+		tokio-stream-0.1.3 \
+		tokio-util-0.6.3 \
+		toml-0.5.8 \
+		tonic-0.4.0 \
+		tonic-build-0.4.0 \
+		tower-0.4.4 \
+		tower-layer-0.3.1 \
+		tower-service-0.3.1 \
+		tracing-0.1.23 \
+		tracing-attributes-0.1.12 \
+		tracing-core-0.1.17 \
+		tracing-futures-0.2.4 \
+		tracing-journald-0.1.0 \
+		tracing-log-0.1.1 \
+		tracing-serde-0.1.2 \
+		tracing-subscriber-0.2.15 \
+		try-lock-0.2.3 \
+		tuikit-0.4.3 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		utf8parse-0.1.1 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		void-1.0.2 \
+		vte-0.3.3 \
+		want-0.3.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		which-3.1.1 \
+		which-4.0.2 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		xcb-0.9.0 \
+		xdg-2.2.0 \
+		x11-clipboard@git+https://github.com/xrelkd/x11-clipboard?tag=v0.6.0\#de648ede312e6b236e3b92119a014cac064b9e38
+
+PLIST_FILES=	bin/clipcat-menu \
+		bin/clipcatctl \
+		bin/clipcatd
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+# rebuilds rocksdb - maybe it can link with external rocksdb?
+
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/clipcat-menu \
+		${STAGEDIR}${PREFIX}/bin/clipcatctl \
+		${STAGEDIR}${PREFIX}/bin/clipcatd
+
+.include <bsd.port.mk>

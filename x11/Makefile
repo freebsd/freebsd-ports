@@ -39,6 +39,7 @@
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
+    SUBDIR += clipcat
     SUBDIR += cliphist
     SUBDIR += clipman
     SUBDIR += compton-conf
