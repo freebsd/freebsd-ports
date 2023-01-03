@@ -1,6 +1,6 @@
 bin/fotoxx
 share/applications/fotoxx.desktop
-%%DATADIR%%/data/KB_shortcuts_D
+%%DATADIR%%/data/KB_shortcuts_E
 %%DATADIR%%/data/README
 %%DATADIR%%/data/capskeys
 %%DATADIR%%/data/colorwheel.jpg
@@ -29,7 +29,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/data/custom_scripts/line-drawing-emboss
 %%DATADIR%%/data/custom_scripts/painting-texture
 %%DATADIR%%/data/custom_scripts/sketch-cartoon-emboss
-%%DATADIR%%/data/meta_picklist_D
+%%DATADIR%%/data/meta_picklist_E
 %%DATADIR%%/data/netmap_locations
 %%DATADIR%%/data/palettes/Golden Heavy Body Acrylics.gpl
 %%DATADIR%%/data/palettes/Liquitex Heavy Body Artist colors.gpl
@@ -82,6 +82,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/data/tags_defined
 %%DATADIR%%/data/userguide
 %%DATADIR%%/data/widgets.css
+%%DATADIR%%/data/worldcities.txt
 %%DATADIR%%/icons/fotoxx.png
 %%DATADIR%%/images/HDF-paint.jpg
 %%DATADIR%%/images/HDF.jpg
@@ -248,8 +249,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/mirror2.jpg
 %%DATADIR%%/images/moncolor-small.png
 %%DATADIR%%/images/moncolor.png
-%%DATADIR%%/images/mongamma-small.png
-%%DATADIR%%/images/mongamma.png
 %%DATADIR%%/images/mosaic1.jpg
 %%DATADIR%%/images/mosaic2.jpg
 %%DATADIR%%/images/netmap-locs.jpg
@@ -297,8 +296,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/saturation.jpg
 %%DATADIR%%/images/save.png
 %%DATADIR%%/images/search-images-metadata.jpg
-%%DATADIR%%/images/search-images1.jpg
-%%DATADIR%%/images/search-images2.jpg
+%%DATADIR%%/images/search-images.jpg
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg
 %%DATADIR%%/images/select.png
