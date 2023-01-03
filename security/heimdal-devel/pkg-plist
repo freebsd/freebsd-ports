@@ -187,8 +187,8 @@ lib/heimdal/libgssapi.so.3
 lib/heimdal/libgssapi.so.3.0.0
 lib/heimdal/libhcrypto.a
 lib/heimdal/libhcrypto.so
-lib/heimdal/libhcrypto.so.4
-lib/heimdal/libhcrypto.so.4.1.0
+lib/heimdal/libhcrypto.so.5
+lib/heimdal/libhcrypto.so.5.0.0
 lib/heimdal/libhdb.a
 lib/heimdal/libhdb.so
 lib/heimdal/libhdb.so.9
