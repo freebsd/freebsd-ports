@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	7zz:archivers/7-zip \
 		syslinux:sysutils/syslinux \
-		mke2fs:sysutils/e2fsprogs
+		mke2fs:sysutils/e2fsprogs-core
 
 USES=		qt:5
 USE_QT=		buildtools:build linguisttools:build qmake:build \
