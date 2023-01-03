@@ -837,6 +837,7 @@
     SUBDIR += glib20
     SUBDIR += glibmm
     SUBDIR += glibmm26
+    SUBDIR += glitter
     SUBDIR += gllvm
     SUBDIR += global
     SUBDIR += glog
