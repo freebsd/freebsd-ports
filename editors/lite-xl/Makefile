@@ -1,14 +1,11 @@
 PORTNAME=	lite-xl
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight text editor written mostly in Lua
 WWW=		https://lite-xl.com/
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	56e465c35183e5bea6c10fcf346ccba946aa60c1.patch:-p1
 
 LICENSE=	MIT
 
@@ -20,7 +17,7 @@ USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-colors:colors ${PORTNAME}-plugins:plugins
-GH_TAGNAME=	b245158:colors 62f8740:plugins
+GH_TAGNAME=	b3a9cdd:colors b1eb39c:plugins
 
 OPTIONS_DEFINE=	DOCS
 
