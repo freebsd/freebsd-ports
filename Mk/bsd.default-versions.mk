@@ -77,13 +77,11 @@ LIBRSVG2_DEFAULT?=	legacy
 .  endif
 # Possible values: c7
 LINUX_DEFAULT?=		c7
-# Possible values: 70, 80, 90, 10, 11, 12, 13, 14, -devel (to be used when non-base compiler is required)
-# Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before
-# bumping the LLVM version.
+# Possible values: 70, 80, 90, 10, 11, 12, 13, 14, 15, -devel (to be used when non-base compiler is required)
 .  if ${ARCH} == powerpc
 LLVM_DEFAULT?=		10
 .  else
-LLVM_DEFAULT?=		90
+LLVM_DEFAULT?=		15
 .  endif
 # Possible values: 5.1, 5.2, 5.3, 5.4
 LUA_DEFAULT?=		5.4
