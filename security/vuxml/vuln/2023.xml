@@ -1,3 +1,32 @@
+  <vuln vid="5b2eac07-8b4d-11ed-8b23-a0f3c100ae18">
+    <topic>rxvt-unicode is vulnerable to a remote code execution</topic>
+    <affects>
+      <package>
+	<name>rxvt-unicode</name>
+	<range><lt>9.31</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marc Lehmann reports:</p>
+	<blockquote cite="http://lists.schmorp.de/pipermail/rxvt-unicode/2023q1/002638.html">
+	  <p>The biggest issue is resolving CVE-2022-4170, which allows command
+	     execution inside urxvt from within the terminal (that means anything that
+	     can output text in the terminal can start commands in the context of the
+	     urxvt process, even remotely).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4170</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-4170</url>
+    </references>
+    <dates>
+      <discovery>2022-12-05</discovery>
+      <entry>2023-01-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86c330fe-bbae-4ca7-85f7-5321e627a4eb">
     <topic>gitea -- multiple issues</topic>
     <affects>
