@@ -1,0 +1,143 @@
+PORTNAME=	dotenv-linter
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.0
+CATEGORIES=	misc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Linter for .env files. Written in Rust
+WWW=		https://dotenv-linter.github.io
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+
+CARGO_CRATES=	adler-1.0.2 \
+		anes-0.1.6 \
+		assert_cmd-2.0.5 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
+		bumpalo-3.8.0 \
+		cast-0.3.0 \
+		cc-1.0.72 \
+		cfg-if-1.0.0 \
+		chunked_transfer-1.4.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clap-3.1.10 \
+		clap_lex-0.1.1 \
+		colored-2.0.0 \
+		crc32fast-1.3.0 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.5 \
+		crossbeam-utils-0.8.8 \
+		difflib-0.4.0 \
+		directories-4.0.1 \
+		dirs-sys-0.3.6 \
+		doc-comment-0.3.3 \
+		dunce-1.0.3 \
+		either-1.6.1 \
+		fastrand-1.7.0 \
+		filedescriptor-0.8.1 \
+		flate2-1.0.22 \
+		form_urlencoded-1.0.1 \
+		gag-1.0.0 \
+		getrandom-0.2.3 \
+		half-1.8.2 \
+		hashbrown-0.11.2 \
+		hermit-abi-0.1.19 \
+		idna-0.2.3 \
+		indexmap-1.8.0 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-1.0.1 \
+		js-sys-0.3.55 \
+		lazy_static-1.4.0 \
+		libc-0.2.112 \
+		log-0.4.14 \
+		matches-0.1.9 \
+		memchr-2.4.1 \
+		memoffset-0.6.5 \
+		miniz_oxide-0.4.4 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.1 \
+		once_cell-1.10.0 \
+		oorandom-11.1.3 \
+		os_str_bytes-6.0.0 \
+		percent-encoding-2.1.0 \
+		plotters-0.3.1 \
+		plotters-backend-0.3.2 \
+		plotters-svg-0.3.1 \
+		predicates-2.1.0 \
+		predicates-core-1.0.2 \
+		predicates-tree-1.0.4 \
+		proc-macro2-1.0.36 \
+		quote-1.0.14 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
+		redox_syscall-0.2.10 \
+		redox_users-0.4.0 \
+		regex-1.5.6 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.26 \
+		remove_dir_all-0.5.3 \
+		ring-0.16.20 \
+		rustls-0.20.2 \
+		ryu-1.0.9 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		sct-0.7.0 \
+		semver-1.0.4 \
+		serde-1.0.133 \
+		serde_derive-1.0.133 \
+		serde_json-1.0.74 \
+		spin-0.5.2 \
+		strsim-0.10.0 \
+		syn-1.0.84 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		termtree-0.2.3 \
+		textwrap-0.15.0 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		tinytemplate-1.2.1 \
+		tinyvec-1.5.1 \
+		tinyvec_macros-0.1.0 \
+		unicode-bidi-0.3.7 \
+		unicode-normalization-0.1.19 \
+		unicode-xid-0.2.2 \
+		untrusted-0.7.1 \
+		update-informer-0.6.0 \
+		ureq-2.4.0 \
+		url-2.2.2 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.78 \
+		wasm-bindgen-backend-0.2.78 \
+		wasm-bindgen-macro-0.2.78 \
+		wasm-bindgen-macro-support-0.2.78 \
+		wasm-bindgen-shared-0.2.78 \
+		web-sys-0.3.55 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

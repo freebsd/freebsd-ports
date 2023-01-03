@@ -80,6 +80,7 @@
     SUBDIR += dijo
     SUBDIR += dive
     SUBDIR += dnetc
+    SUBDIR += dotenv-linter
     SUBDIR += dtach
     SUBDIR += dvorak7min
     SUBDIR += dynomite
