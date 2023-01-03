@@ -1,0 +1,191 @@
+PORTNAME=	reddsaver
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.0
+CATEGORIES=	www
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	CLI tool to download saved and upvoted media from Reddit
+WWW=		https://github.com/manojkarthick/reddsaver
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	manojkarthick
+
+CARGO_CRATES=	aho-corasick-0.7.18 \
+		ansi_term-0.11.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		bumpalo-3.7.0 \
+		bytes-0.5.6 \
+		bytes-1.0.1 \
+		cc-1.0.68 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		clap-2.33.3 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
+		dotenv-0.15.0 \
+		either-1.6.1 \
+		encoding_rs-0.8.28 \
+		env_logger-0.8.4 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.1 \
+		fuchsia-cprng-0.1.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.3.15 \
+		futures-channel-0.3.15 \
+		futures-core-0.3.15 \
+		futures-executor-0.3.15 \
+		futures-io-0.3.15 \
+		futures-macro-0.3.15 \
+		futures-sink-0.3.15 \
+		futures-task-0.3.15 \
+		futures-util-0.3.15 \
+		getrandom-0.1.16 \
+		getrandom-0.2.3 \
+		h2-0.2.7 \
+		hashbrown-0.9.1 \
+		hermit-abi-0.1.18 \
+		http-0.2.4 \
+		http-body-0.3.1 \
+		httparse-1.4.1 \
+		httpdate-0.3.2 \
+		humantime-2.1.0 \
+		hyper-0.13.10 \
+		hyper-tls-0.4.3 \
+		idna-0.2.3 \
+		indexmap-1.6.2 \
+		iovec-0.1.4 \
+		ipnet-2.3.1 \
+		itoa-0.4.7 \
+		js-sys-0.3.51 \
+		kernel32-sys-0.2.2 \
+		lazy_static-1.4.0 \
+		libc-0.2.97 \
+		log-0.4.14 \
+		matches-0.1.8 \
+		md5-0.7.0 \
+		memchr-2.4.0 \
+		mime-0.3.16 \
+		mime_guess-2.0.3 \
+		mio-0.6.23 \
+		mio-named-pipes-0.1.7 \
+		mio-uds-0.6.8 \
+		miow-0.2.2 \
+		miow-0.3.7 \
+		native-tls-0.2.7 \
+		net2-0.2.37 \
+		num_cpus-1.13.0 \
+		once_cell-1.8.0 \
+		openssl-0.10.35 \
+		openssl-probe-0.1.4 \
+		openssl-sys-0.9.65 \
+		percent-encoding-2.1.0 \
+		pin-project-1.0.7 \
+		pin-project-internal-1.0.7 \
+		pin-project-lite-0.1.12 \
+		pin-project-lite-0.2.6 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		ppv-lite86-0.2.10 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.27 \
+		quote-1.0.9 \
+		rand-0.3.23 \
+		rand-0.4.6 \
+		rand-0.7.3 \
+		rand-0.8.4 \
+		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.2.0 \
+		rand_hc-0.3.1 \
+		random-names-0.1.3 \
+		rdrand-0.4.0 \
+		redox_syscall-0.2.9 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.10.10 \
+		ryu-1.0.5 \
+		schannel-0.1.19 \
+		security-framework-2.3.1 \
+		security-framework-sys-2.3.0 \
+		serde-1.0.126 \
+		serde_derive-1.0.126 \
+		serde_json-1.0.64 \
+		serde_urlencoded-0.7.0 \
+		signal-hook-registry-1.4.0 \
+		slab-0.4.3 \
+		socket2-0.3.19 \
+		strsim-0.8.0 \
+		syn-1.0.73 \
+		tempfile-3.2.0 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.25 \
+		thiserror-impl-1.0.25 \
+		tinyvec-1.2.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-0.2.25 \
+		tokio-macros-0.2.6 \
+		tokio-tls-0.3.1 \
+		tokio-util-0.3.1 \
+		tower-service-0.3.1 \
+		tracing-0.1.26 \
+		tracing-core-0.1.18 \
+		tracing-futures-0.2.5 \
+		try-lock-0.2.3 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.19 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		url-2.2.2 \
+		vcpkg-0.2.15 \
+		vec_map-0.8.2 \
+		version_check-0.9.3 \
+		want-0.3.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.74 \
+		wasm-bindgen-backend-0.2.74 \
+		wasm-bindgen-futures-0.4.24 \
+		wasm-bindgen-macro-0.2.74 \
+		wasm-bindgen-macro-support-0.2.74 \
+		wasm-bindgen-shared-0.2.74 \
+		web-sys-0.3.51 \
+		which-4.2.2 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.7.0 \
+		ws2_32-sys-0.2.1
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
