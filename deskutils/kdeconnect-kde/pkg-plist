@@ -468,6 +468,7 @@ share/locale/ka/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/ka/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/ka/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo

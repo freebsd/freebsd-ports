@@ -1,6 +1,5 @@
 bin/kdenlive
 bin/kdenlive_render
-%%QT_PLUGINDIR%%/designer/kdenlivewidgets.so
 %%QT_PLUGINDIR%%/mltpreview.so
 man/man1/kdenlive.1.gz
 man/man1/kdenlive_render.1.gz

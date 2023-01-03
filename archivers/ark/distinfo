@@ -1,5 +1,3 @@
-TIMESTAMP = 1670942990
-SHA256 (KDE/release-service/22.12.0/ark-22.12.0.tar.xz) = ad1009b6651542046ce20e4bcb697430cb7d0138b046454fb38afd243c04ea51
-SIZE (KDE/release-service/22.12.0/ark-22.12.0.tar.xz) = 2871412
-SHA256 (KDE/release-service/22.12.0/d2d631aa1a4a8f61e80ae5bf28f7632a9cb876b0.diff) = d1731905a097d7bf138ddc721867b27a926e23162c139dcfeb473c99fdbb61db
-SIZE (KDE/release-service/22.12.0/d2d631aa1a4a8f61e80ae5bf28f7632a9cb876b0.diff) = 375
+TIMESTAMP = 1672932263
+SHA256 (KDE/release-service/22.12.1/ark-22.12.1.tar.xz) = 270c245b3be8fd373704a05889507a6b36ec6de760339b30766beede591b7e0c
+SIZE (KDE/release-service/22.12.1/ark-22.12.1.tar.xz) = 2873148

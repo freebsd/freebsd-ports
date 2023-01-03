@@ -1,3 +1,3 @@
-TIMESTAMP = 1670513314
-SHA256 (KDE/release-service/22.12.0/kio-zeroconf-22.12.0.tar.xz) = 4af36b2bb0222ef99a0fd2712d3eac79269e3bc77811a81e58408022a31e1518
-SIZE (KDE/release-service/22.12.0/kio-zeroconf-22.12.0.tar.xz) = 42568
+TIMESTAMP = 1672732034
+SHA256 (KDE/release-service/22.12.1/kio-zeroconf-22.12.1.tar.xz) = 562763fe5411f7e4d1a203c28f85a618f84c1a837cf9d1ac297a09fdbc171462
+SIZE (KDE/release-service/22.12.1/kio-zeroconf-22.12.1.tar.xz) = 42580

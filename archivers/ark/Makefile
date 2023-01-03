@@ -2,9 +2,6 @@ PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	archivers kde kde-applications
 
-PATCH_SITES=	https://invent.kde.org/utilities/ark/-/commit/
-PATCHFILES=	d2d631aa1a4a8f61e80ae5bf28f7632a9cb876b0.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
 WWW=		https://utils.kde.org/projects/ark/
