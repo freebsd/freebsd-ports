@@ -1025,6 +1025,7 @@
     SUBDIR += polkit-qt
     SUBDIR += pot
     SUBDIR += potnet
+    SUBDIR += poweralertd
     SUBDIR += powerdxx
     SUBDIR += powerman
     SUBDIR += powermon
