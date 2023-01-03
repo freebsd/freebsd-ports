@@ -1,5 +1,5 @@
 PORTNAME=	rssguard
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.7
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -23,6 +23,8 @@ OPTIONS_DEFAULT_i386=	WEBENGINE
 WEBENGINE_DESC=	Use QtWebEngine module for internal web browser
 WEBENGINE_USE=	QT=location,printsupport,webchannel,webengine
 WEBENGINE_CMAKE_OFF=	-DUSE_WEBENGINE:BOOL=OFF
+WEBENGINE_PLIST_SUB=		PROGNAME=${PORTNAME}
+WEBENGINE_PLIST_SUB_OFF=	PROGNAME=${PORTNAME}lite
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so
