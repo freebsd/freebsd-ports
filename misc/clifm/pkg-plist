@@ -5,7 +5,6 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/actions.clifm
 %%DATADIR%%/clifmrc
 %%DATADIR%%/colors/amber-256.clifm
-%%DATADIR%%/colors/aqua.clifm
 %%DATADIR%%/colors/base16.clifm
 %%DATADIR%%/colors/c64.clifm
 %%DATADIR%%/colors/cga.clifm

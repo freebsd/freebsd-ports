@@ -1,11 +1,11 @@
 PORTNAME=	clifm
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Non-curses, KISS file manager for the terminal
-WWW=		https://github.com/leo-arch/clifm
+WWW=		https://github.com/leo-arch/clifm/wiki
 
 LICENSE=	GPLv2+
 
@@ -16,7 +16,7 @@ USES=		desktop-file-utils gettext-runtime python:run \
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
 GH_PROJECT=	${PORTNAME}-colors:cfmc
-GH_TAGNAME=	b0e2dea:cfmc
+GH_TAGNAME=	5a9d1ed:cfmc
 ALL_TARGET=	build
 SHEBANG_FILES=	misc/tools/manpages_comp_gen.py
 
