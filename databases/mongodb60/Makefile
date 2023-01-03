@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	6.0.2
+DISTVERSION=	6.0.3
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -14,6 +14,7 @@ LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+#IGNORE=		segmentation fault at runtime: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267668
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
 
@@ -28,10 +29,10 @@ BUILD_DEPENDS+=	autoconf2.13:devel/autoconf2.13 \
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libicuuc.so:devel/icu \
-		libunwind.so:devel/libunwind \
 		libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy \
 		libstemmer.so:textproc/snowballstemmer \
+		libunwind.so:devel/libunwind \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
 
@@ -64,7 +65,7 @@ MAKE_ARGS=	--cxx-std=17 \
 		--use-system-yaml \
 		--use-system-zlib \
 		--use-system-zstd \
-		-j ${MAKE_JOBS_NUMBER} \
+		-j${MAKE_JOBS_NUMBER} \
 		AR=llvm-ar \
 		MONGO_VERSION=${DISTVERSION} \
 		VERBOSE=on
@@ -74,10 +75,14 @@ CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 USERS=		mongodb
 GROUPS=		mongodb
 
-OPTIONS_DEFINE=			LTO SASL SSL
-OPTIONS_DEFAULT=		LTO SASL SSL
+OPTIONS_DEFINE=		LTO SASL SSL NOAVX
+OPTIONS_DEFAULT=	LTO SASL SSL
+
+NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
 
 LTO_MAKE_ARGS=	--lto=on
+
+NOAVX_MAKE_ARGS=	--experimental-optimization="-sandybridge"
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
@@ -100,11 +105,11 @@ PORTSCOUT=	limit:^6\.0\.
 CPE_PRODUCT=	mongodb
 
 .if ${ARCH} == amd64
-MOZJS_ARCH=x86_64
+MOZJS_ARCH=	x86_64
 .elif ${ARCH} == powerpc64le
-MOZJS_ARCH=ppc64le
+MOZJS_ARCH=	ppc64le
 .elif ${ARCH} == aarch64
-MOZJS_ARCH=${ARCH}
+MOZJS_ARCH=	${ARCH}
 .endif
 
 post-patch:
@@ -119,7 +124,7 @@ post-patch:
 	${RM} -rf ${WRKSRC}/src/third_party/zstandard
 
 do-configure:
-	# Replacement of ${WRKSRC}/src/third_party/mozjs/get-sources.sh
+# Replacement of ${WRKSRC}/src/third_party/mozjs/get-sources.sh
 	${LN} -sF ${WRKDIR}/spidermonkey-${MOZJS_TAG} ${WRKSRC}/src/third_party/mozjs/mozilla-release
 	cd ${WRKSRC}/src/third_party/mozjs/mozilla-release/js/src && ${LOCALBASE}/bin/autoconf2.13
 	cd ${WRKSRC}/src/third_party/mozjs && PYTHON3="${PYTHON_CMD}" ${SH} ./gen-config.sh ${MOZJS_ARCH} freebsd
