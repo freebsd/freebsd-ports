@@ -8,6 +8,7 @@
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
+    SUBDIR += amazon-qldb-shell
     SUBDIR += ansiweather
     SUBDIR += apparix
     SUBDIR += arrow-datafusion
