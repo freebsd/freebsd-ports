@@ -833,7 +833,6 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/UnsafeBufferUsage.h
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/UnsafeBufferUsageGadgets.def
 %%CLANG%%llvm-devel/include/clang/Analysis/AnalysisDeclContext.h
-%%CLANG%%llvm-devel/include/clang/Analysis/AnalysisDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Analysis/AnyCall.h
 %%CLANG%%llvm-devel/include/clang/Analysis/BodyFarm.h
 %%CLANG%%llvm-devel/include/clang/Analysis/CFG.h
@@ -2454,6 +2453,7 @@ llvm-devel/include/llvm/BinaryFormat/ELFRelocs/RISCV.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/Sparc.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/SystemZ.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/VE.def
+llvm-devel/include/llvm/BinaryFormat/ELFRelocs/Xtensa.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/i386.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/x86_64.def
 llvm-devel/include/llvm/BinaryFormat/GOFF.h
@@ -2679,6 +2679,7 @@ llvm-devel/include/llvm/CodeGen/TargetRegisterInfo.h
 llvm-devel/include/llvm/CodeGen/TargetSchedule.h
 llvm-devel/include/llvm/CodeGen/TargetSubtargetInfo.h
 llvm-devel/include/llvm/CodeGen/TileShapeInfo.h
+llvm-devel/include/llvm/CodeGen/TypePromotion.h
 llvm-devel/include/llvm/CodeGen/UnreachableBlockElim.h
 llvm-devel/include/llvm/CodeGen/VLIWMachineScheduler.h
 llvm-devel/include/llvm/CodeGen/ValueTypes.h
@@ -3719,7 +3720,6 @@ llvm-devel/include/llvm/TargetParser/CSKYTargetParser.h
 llvm-devel/include/llvm/TargetParser/Host.h
 llvm-devel/include/llvm/TargetParser/LoongArchTargetParser.def
 llvm-devel/include/llvm/TargetParser/LoongArchTargetParser.h
-llvm-devel/include/llvm/TargetParser/RISCVISAInfo.h
 llvm-devel/include/llvm/TargetParser/RISCVTargetParser.def
 llvm-devel/include/llvm/TargetParser/TargetParser.h
 llvm-devel/include/llvm/TargetParser/Triple.h
@@ -4546,6 +4546,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/Transforms/Passes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/Transforms/RuntimeOpVerification.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/Utils/MemRefUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/NVGPU/IR/NVGPU.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/NVGPU/IR/NVGPU.h.inc
@@ -5038,6 +5039,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.h.inc
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.td
+%%MLIR%%llvm-devel/include/mlir/Interfaces/RuntimeVerifiableOpInterface.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Interfaces/RuntimeVerifiableOpInterface.h
+%%MLIR%%llvm-devel/include/mlir/Interfaces/RuntimeVerifiableOpInterface.h.inc
+%%MLIR%%llvm-devel/include/mlir/Interfaces/RuntimeVerifiableOpInterface.td
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ShapedOpInterfaces.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ShapedOpInterfaces.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ShapedOpInterfaces.h.inc
@@ -5116,6 +5121,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/All.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/ArmNeon/ArmNeonToLLVMIRTranslation.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/ArmSVE/ArmSVEToLLVMIRTranslation.h
+%%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/LLVMIR/LLVMIRToLLVMTranslation.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/LLVMIR/LLVMToLLVMIRTranslation.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/NVVM/NVVMToLLVMIRTranslation.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/OpenACC/OpenACCToLLVMIRTranslation.h
@@ -5124,6 +5130,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Dialect/X86Vector/X86VectorToLLVMIRTranslation.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Export.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/Import.h
+%%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/LLVMImportInterface.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/LLVMTranslationInterface.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/ModuleImport.h
 %%MLIR%%llvm-devel/include/mlir/Target/LLVMIR/ModuleTranslation.h
@@ -5718,6 +5725,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIREmitCDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRExecutionEngine.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRExecutionEngineUtils.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFromLLVMIRTranslationRegistration.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncToLLVM.a
@@ -5740,6 +5748,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRJitRunner.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLLVMCommonConversion.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLLVMDialect.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLLVMIRToLLVMTranslation.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLLVMIRTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLLVMTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRLLVMToLLVMIRTranslation.a
@@ -5805,6 +5814,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRReduce.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRReduceLib.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRRewrite.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRRuntimeVerifiableOpInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSCFDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSCFTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSCFToControlFlow.a
