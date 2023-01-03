@@ -81,11 +81,11 @@ bin/scan-build-py%%COMMAND_SUFFIX%%
 bin/scan-view%%COMMAND_SUFFIX%%
 %%LLD%%bin/ld.lld%%COMMAND_SUFFIX%%
 %%LLD%%bin/ld64.lld%%COMMAND_SUFFIX%%
-%%LLD%%bin/ld64.lld.darwinnew%%COMMAND_SUFFIX%%
-%%LLD%%bin/ld64.lld.darwinold%%COMMAND_SUFFIX%%
 %%LLD%%bin/lld%%COMMAND_SUFFIX%%
 %%LLD%%bin/lld-link%%COMMAND_SUFFIX%%
 %%LLD%%bin/wasm-ld%%COMMAND_SUFFIX%%
+%%LLD%%bin/ld64.lld.darwinnew%%COMMAND_SUFFIX%%
+%%LLD%%bin/ld64.lld.darwinold%%COMMAND_SUFFIX%%
 %%LIT%%bin/FileCheck%%COMMAND_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/FileCheck
 %%LIT%%bin/lit%%COMMAND_SUFFIX%%
