@@ -15,10 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	spamhaus
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	etc/mail/spamassassin/SH.pm \
-		"@sample etc/mail/spamassassin/sh.cf.sample" \
+PLIST_FILES=	"@sample etc/mail/spamassassin/sh.cf.sample" \
 		etc/mail/spamassassin/sh_scores.cf \
-		etc/mail/spamassassin/sh.pre \
 		share/doc/spamassassin-dqs/README.md
 
 NO_ARCH=	yes
@@ -30,9 +28,6 @@ HBL_DESC=	enable HBL lookups (PAID OPTION)
 HBL_PLIST_FILES=	"@sample etc/mail/spamassassin/sh_hbl.cf.sample" \
 			etc/mail/spamassassin/hbltest.sh \
 			etc/mail/spamassassin/sh_hbl_scores.cf
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<config_directory>|${PREFIX}/etc/mail/spamassassin|' ${WRKSRC}/sh.pre
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail/spamassassin
