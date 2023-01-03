@@ -320,6 +320,7 @@
     SUBDIR += remontoire
     SUBDIR += rendercheck
     SUBDIR += rgb
+    SUBDIR += rlaunch
     SUBDIR += rofi
     SUBDIR += rofi-calc
     SUBDIR += rofi-emoji
