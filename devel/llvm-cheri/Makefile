@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -92,7 +92,7 @@ LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 
-LLVM_TARGETS?=		AArch64;ARM;Mips;PowerPC;RISCV;X86
+LLVM_TARGETS?=		AArch64;ARM;PowerPC;RISCV;X86
 
 PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 		LLVM_MAJOR=${LLVM_MAJOR} \
@@ -173,7 +173,15 @@ post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github
 
 post-install-DOCS-on:
+.if ${LLVM_MAJOR} == 13
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc ${STAGEDIR}${DOCSDIR}
+.else
+	${RM} -r ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM/* ${STAGEDIR}${DOCSDIR}
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc
+.endif
 .for _man in ${MAN1SRCS}
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man:R}${LLVM_SUFFIX}.1
