@@ -10,6 +10,7 @@ DIST_SUBDIR=	vuxml
 
 MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Vulnerability and eXposure Markup Language DTD
+WWW=		https://vuxml.freebsd.org/
 
 LICENSE=	BSD2CLAUSE
 
