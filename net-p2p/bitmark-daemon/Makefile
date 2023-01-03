@@ -1,13 +1,14 @@
-MASTERDIR=	${.CURDIR}/../bitmark
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Bitmark distributed property system daemon
 
-CONFLICTS?=	bitmark
+CONFLICTS=	bitmark
 
+DISTINFO_FILE=	${.CURDIR}/distinfo
+
+OPTIONS_SLAVE=		DAEMON
 OPTIONS_EXCLUDE=	CLI DUMPER RECORDER
-OPTIONS_DEFAULT=	DAEMON
 
-_SLAVE_PORT=	yes
+MASTERDIR=	${.CURDIR}/../../net-p2p/bitmark
 
 .include "${MASTERDIR}/Makefile"
