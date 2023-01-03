@@ -1,5 +1,6 @@
 PORTNAME=	nushell
 DISTVERSION=	0.73.0
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://www.nushell.sh/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo ssl
+USES=		cargo localbase ssl
 
 USE_GITHUB=	yes
 
@@ -572,7 +573,16 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/nu
 
+OPTIONS_DEFINE=		DATAFRAME
+
+DATAFRAME_DESC=		Include the dataframe feature
+DATAFRAME_VARS=		CARGO_BUILD_ARGS+=--features=dataframe
+DATAFRAME_BROKEN=	see https://github.com/nushell/nushell/issues/7665
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nu
+
+do-test:
+	@${CARGO_CARGO_RUN} test --workspace
 
 .include <bsd.port.mk>
