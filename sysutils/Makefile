@@ -755,6 +755,7 @@
     SUBDIR += minipot
     SUBDIR += minipro
     SUBDIR += minirsyslogd
+    SUBDIR += mise
     SUBDIR += mixer
     SUBDIR += mkdesktop
     SUBDIR += mkfwimage
@@ -1214,7 +1215,6 @@
     SUBDIR += rsyslog8
     SUBDIR += rtsx-kmod
     SUBDIR += rtty
-    SUBDIR += rtx
     SUBDIR += rubygem-backup
     SUBDIR += rubygem-bolt
     SUBDIR += rubygem-bosh-gen

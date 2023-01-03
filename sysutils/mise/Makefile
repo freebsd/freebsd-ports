@@ -1,11 +1,11 @@
-PORTNAME=	rtx
+PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.40
+DISTVERSION=	2024.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Runtime Executor (asdf rust clone)
-WWW=		https://github.com/jdxcode/rtx
+WWW=		https://github.com/jdxcode/mise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	jdxcode
+GH_ACCOUNT=	jdx
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
@@ -36,7 +36,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
 		block-buffer-0.10.4 \
-		bstr-1.8.0 \
+		bstr-1.9.0 \
 		built-0.7.1 \
 		bumpalo-3.14.0 \
 		bytecount-0.6.7 \
@@ -45,12 +45,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.11 \
-		clap_builder-4.4.11 \
+		clap-4.4.12 \
+		clap_builder-4.4.12 \
 		clap_complete-4.4.5 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
-		clap_mangen-0.2.15 \
+		clap_mangen-0.2.16 \
 		color-eyre-0.6.2 \
 		color-print-0.3.5 \
 		color-print-proc-macro-0.3.5 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		curve25519-dalek-derive-0.1.1 \
 		demand-0.3.0 \
 		der-0.7.8 \
-		deranged-0.3.10 \
+		deranged-0.3.11 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
@@ -130,7 +130,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-0.14.28 \
 		hyper-rustls-0.24.2 \
 		hyper-tls-0.5.0 \
-		iana-time-zone-0.1.58 \
+		iana-time-zone-0.1.59 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		ignore-0.4.21 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
@@ -171,7 +171,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.98 \
-		os_pipe-1.1.4 \
+		os_pipe-1.1.5 \
 		owo-colors-3.5.0 \
 		papergrid-0.11.0 \
 		paste-1.0.14 \
@@ -187,16 +187,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.28 \
-		platforms-3.2.0 \
+		platforms-3.3.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.71 \
+		proc-macro2-1.0.72 \
 		quick-xml-0.23.1 \
-		quote-1.0.33 \
+		quote-1.0.34 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -240,7 +240,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
 		signature-2.2.0 \
-		similar-2.3.0 \
+		similar-2.4.0 \
 		simplelog-0.12.1 \
 		slab-0.4.9 \
 		socket2-0.5.5 \
@@ -262,8 +262,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.52 \
-		thiserror-impl-1.0.52 \
+		thiserror-1.0.53 \
+		thiserror-impl-1.0.53 \
 		thread_local-1.1.7 \
 		time-0.3.31 \
 		time-core-0.1.2 \
@@ -322,7 +322,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-core-0.51.1 \
+		windows-core-0.52.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \

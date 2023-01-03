@@ -2927,3 +2927,4 @@ www/qt5-webkit||2023-12-31|Has expired: No longer actively maintained, increasin
 textproc/py-grako||2023-12-31|Project is abandoned
 math/p5-Math-BigRat|math/p5-Math-BigInt|2024-01-01|Subsumed into math/p5-Math-BigInt
 www/trac-devel|www/trac|2024-01-02|Trac released stable version with py3 support, so removing -devel port
+sysutils/rtx|sysutils/mise|2024-01-03|Project renamed
