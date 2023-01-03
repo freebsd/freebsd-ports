@@ -31,6 +31,7 @@
     SUBDIR += modernish
     SUBDIR += nologinmsg
     SUBDIR += nsh
+    SUBDIR += nushell
     SUBDIR += ohmyzsh
     SUBDIR += oksh
     SUBDIR += p5-Bash-Completion
