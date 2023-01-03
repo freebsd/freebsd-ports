@@ -1,10 +1,11 @@
 PORTNAME=	mu
-PORTVERSION=	1.6.10
+PORTVERSION=	1.8.13
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Mail searching frontend for Xapian
-WWW=		http://www.djcbsoftware.nl/code/mu/
+WWW=		https://www.djcbsoftware.nl/code/mu/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,13 +22,14 @@ GH_ACCOUNT=	djcb
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk --disable-mu4e
+CONFIGURE_ARGS=	--disable-mu4e
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		DOCS GUILE
+OPTIONS_DEFAULT=	DOCS GUILE
 OPTIONS_SUB=		yes
 
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-3.0.so:lang/guile
 GUILE_USE=		ldconfig=yes
 GUILE_CONFIGURE_ENABLE=	guile
 GUILE_INFO=		mu-guile
