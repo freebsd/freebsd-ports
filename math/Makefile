@@ -458,6 +458,7 @@
     SUBDIR += libxsmm
     SUBDIR += lidia
     SUBDIR += linbox
+    SUBDIR += lingeling
     SUBDIR += linpack
     SUBDIR += lis
     SUBDIR += lll_spect
