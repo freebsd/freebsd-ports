@@ -1,0 +1,6 @@
+OpenAPI::Client can generate classes that can talk to an Open API
+server.  This is done by generating a custom class, based on a Open API
+specification, with methods that transform parameters into a HTTP request.
+
+The generated class will perform input validation, so invalid data
+won't be sent to the server.

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Mojolicious/Command/openapi.pm
+%%SITE_PERL%%/OpenAPI/Client.pm
+%%PERL5_MAN3%%/OpenAPI::Client.3.gz
+%%PERL5_MAN3%%/Mojolicious::Command::openapi.3.gz
