@@ -7349,6 +7349,7 @@
     SUBDIR += tabulate
     SUBDIR += tailor
     SUBDIR += talloc
+    SUBDIR += tarpaulin
     SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
