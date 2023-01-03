@@ -2237,6 +2237,7 @@
     SUBDIR += srg
     SUBDIR += srt
     SUBDIR += stagit
+    SUBDIR += stork
     SUBDIR += subsonic-standalone
     SUBDIR += suphp
     SUBDIR += surf

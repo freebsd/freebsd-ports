@@ -1,0 +1,249 @@
+PORTNAME=	stork
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.0
+CATEGORIES=	www
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Impossibly fast web search, made for static sites
+WWW=		https://stork-search.net
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/../license.txt
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jameslittle230
+
+WRKSRC_SUBDIR=	stork-cli
+
+CARGO_CRATES=	aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		arrayvec-0.4.12 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bincode-1.3.3 \
+		bitflags-1.2.1 \
+		bstr-0.2.15 \
+		bumpalo-3.6.1 \
+		byteorder-1.4.3 \
+		bytes-1.1.0 \
+		cast-0.2.7 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		clap-2.33.3 \
+		colored-2.0.0 \
+		console-0.15.0 \
+		console_error_panic_hook-0.1.7 \
+		convert_case-0.4.0 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		criterion-0.3.5 \
+		criterion-plot-0.4.4 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.5 \
+		crossbeam-utils-0.8.5 \
+		cssparser-0.27.2 \
+		cssparser-macros-0.6.0 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
+		ctor-0.1.21 \
+		derive_more-0.99.17 \
+		diff-0.1.12 \
+		dtoa-0.4.8 \
+		dtoa-short-0.3.3 \
+		either-1.6.1 \
+		encode_unicode-0.3.6 \
+		encoding_rs-0.8.30 \
+		fastrand-1.7.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.1 \
+		frontmatter-0.4.0 \
+		futf-0.1.5 \
+		futures-channel-0.3.21 \
+		futures-core-0.3.21 \
+		futures-io-0.3.21 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
+		futures-util-0.3.21 \
+		fxhash-0.2.1 \
+		getopts-0.2.21 \
+		getrandom-0.1.16 \
+		h2-0.3.11 \
+		half-1.8.2 \
+		hashbrown-0.11.2 \
+		hermit-abi-0.1.18 \
+		hex-literal-0.3.4 \
+		html5ever-0.25.1 \
+		http-0.2.6 \
+		http-body-0.4.4 \
+		httparse-1.6.0 \
+		httpdate-1.0.2 \
+		hyper-0.14.17 \
+		hyper-tls-0.5.0 \
+		idna-0.2.3 \
+		indexmap-1.8.0 \
+		indicatif-0.16.2 \
+		instant-0.1.12 \
+		ipnet-2.3.1 \
+		itertools-0.10.1 \
+		itoa-0.4.7 \
+		itoa-1.0.1 \
+		js-sys-0.3.55 \
+		kuchiki-0.8.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.119 \
+		linked-hash-map-0.5.4 \
+		lock_api-0.4.6 \
+		log-0.4.14 \
+		mac-0.1.1 \
+		markup5ever-0.10.1 \
+		matches-0.1.9 \
+		memchr-2.3.4 \
+		memoffset-0.6.4 \
+		mime-0.3.16 \
+		mio-0.8.0 \
+		miow-0.3.7 \
+		native-tls-0.2.8 \
+		new_debug_unreachable-1.0.4 \
+		nodrop-0.1.14 \
+		ntapi-0.3.7 \
+		num-format-0.4.0 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		number_prefix-0.4.0 \
+		once_cell-1.8.0 \
+		oorandom-11.1.3 \
+		openssl-0.10.38 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.72 \
+		output_vt100-0.1.2 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.5 \
+		percent-encoding-2.1.0 \
+		phf-0.8.0 \
+		phf_codegen-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
+		phf_shared-0.8.0 \
+		phf_shared-0.10.0 \
+		pin-project-lite-0.2.8 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.24 \
+		plotters-0.3.1 \
+		plotters-backend-0.3.2 \
+		plotters-svg-0.3.1 \
+		ppv-lite86-0.2.16 \
+		precomputed-hash-0.1.1 \
+		pretty_assertions-1.0.0 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.32 \
+		pulldown-cmark-0.9.1 \
+		quote-1.0.9 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rand_pcg-0.2.1 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
+		redox_syscall-0.2.11 \
+		regex-1.4.3 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.22 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.11.9 \
+		rmp-0.8.10 \
+		rmp-serde-0.15.5 \
+		rust-stemmers-1.2.0 \
+		rustc_version-0.4.0 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		schannel-0.1.19 \
+		scopeguard-1.1.0 \
+		security-framework-2.3.1 \
+		security-framework-sys-2.6.1 \
+		selectors-0.22.0 \
+		semver-1.0.4 \
+		serde-1.0.130 \
+		serde_cbor-0.11.2 \
+		serde_derive-1.0.130 \
+		serde_json-1.0.72 \
+		serde_urlencoded-0.7.1 \
+		servo_arc-0.1.1 \
+		signal-hook-registry-1.4.0 \
+		siphasher-0.3.10 \
+		slab-0.4.5 \
+		smallvec-1.8.0 \
+		smart-default-0.6.0 \
+		smawk-0.3.1 \
+		socket2-0.4.4 \
+		srtparse-0.2.0 \
+		stable_deref_trait-1.2.0 \
+		string_cache-0.8.3 \
+		string_cache_codegen-0.5.1 \
+		strsim-0.8.0 \
+		syn-1.0.82 \
+		tempfile-3.3.0 \
+		tendril-0.4.2 \
+		terminal_size-0.1.16 \
+		textwrap-0.11.0 \
+		textwrap-0.14.2 \
+		thin-slice-0.1.1 \
+		thiserror-1.0.30 \
+		thiserror-impl-1.0.30 \
+		thread_local-1.1.3 \
+		tinytemplate-1.2.1 \
+		tinyvec-1.5.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.17.0 \
+		tokio-native-tls-0.3.0 \
+		tokio-util-0.6.9 \
+		toml-0.5.8 \
+		tower-service-0.3.1 \
+		tracing-0.1.31 \
+		tracing-core-0.1.22 \
+		try-lock-0.2.3 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.7 \
+		unicode-linebreak-0.1.2 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.1 \
+		url-2.2.2 \
+		utf-8-0.7.6 \
+		vcpkg-0.2.15 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		want-0.3.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.78 \
+		wasm-bindgen-backend-0.2.78 \
+		wasm-bindgen-futures-0.4.28 \
+		wasm-bindgen-macro-0.2.78 \
+		wasm-bindgen-macro-support-0.2.78 \
+		wasm-bindgen-shared-0.2.78 \
+		web-sys-0.3.55 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.7.0 \
+		yaml-rust-0.4.5
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

@@ -1,0 +1,13 @@
+Stork is a library for creating beautiful, fast, and accurate full-text search
+interfaces on the web.
+
+It comes in two parts. First, it's a command-line tool that indexes content and
+creates a search index file that you can upload to a web server. Second, it's a
+Javascript library that uses that index file to build an interactive search
+interface that displays optimal search results immediately to your user, as they
+type.
+
+Stork is built with Rust, and the Javascript library uses WebAssembly behind the
+scenes. It's easy to get started and is even easier to customize so it fits your
+needs. It's perfect for Jamstack sites and personal blogs, but can be used
+wherever you need an interactive search bar.
