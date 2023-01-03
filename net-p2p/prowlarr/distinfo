@@ -1,3 +1,3 @@
-TIMESTAMP = 1672060959
-SHA256 (Prowlarr.develop.1.0.0.2171.freebsd-core-x64.tar.gz) = 70ed68a0ce8ba2147aeb6f33d7af63ef1baf1975f5effa895411bb4b1e13e91d
-SIZE (Prowlarr.develop.1.0.0.2171.freebsd-core-x64.tar.gz) = 49072023
+TIMESTAMP = 1672740466
+SHA256 (Prowlarr.master.1.0.1.2220.freebsd-core-x64.tar.gz) = 2fb408e2baccd339c191f28649989e6683c93cb930eae64ee7b58617e5d9b549
+SIZE (Prowlarr.master.1.0.1.2220.freebsd-core-x64.tar.gz) = 49089257
