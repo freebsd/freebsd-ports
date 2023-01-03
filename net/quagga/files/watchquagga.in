@@ -21,7 +21,7 @@ stop_postcmd="rm -f $pidfile"
 
 watchquagga_enable=${watchquagga_enable:-"NO"}
 
-command=%%PREFIX%%/sbin/watchquagga
+command=%%PREFIX%%/%%N%%sbin/watchquagga
 pidfile=%%LOCALSTATE_DIR%%/watchquagga.pid
 
 run_rc_command "$1"

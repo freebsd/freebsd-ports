@@ -82,7 +82,7 @@ do_cmd()
 	local ret
 	ret=0
 	for daemon in ${quagga_daemons}; do
-	    command=%%PREFIX%%/sbin/${daemon}
+	    command=%%PREFIX%%/%%N%%sbin/${daemon}
 	    required_files=%%SYSCONF_DIR%%/${daemon}.conf
 	    pidfile=%%LOCALSTATE_DIR%%/${daemon}.pid
 	    if [ ${quagga_cmd} = "restart" -o ${quagga_cmd} = "start" ]; then
@@ -101,7 +101,7 @@ do_cmd()
 	done
 	if checkyesno quagga_vtysh_boot; then
 	    echo "Booting for integrated-vtysh-config..."
-	    %%PREFIX%%/bin/vtysh -b
+	    %%PREFIX%%/bin/%%VTYSH%% -b
 	fi
 	return ${ret}
 }

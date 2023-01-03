@@ -1,6 +1,8 @@
 [
 { type: install
   message: <<EOM
+vtysh is installed as %%PREFIX%%/bin/%%VTYSH%%
+
 To enable quagga, add the following lines to rc.conf:
 
 defaultrouter="NO"

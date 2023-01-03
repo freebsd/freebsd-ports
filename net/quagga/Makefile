@@ -1,8 +1,10 @@
 PORTNAME=	quagga
 PORTVERSION=	1.2.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/Quagga/quagga/releases/download/${DISTNAME}/
+MASTER_SITES=	https://github.com/Quagga/quagga/releases/download/${DISTNAME}/ \
+		http://www.grosbein.net/freebsd/distfiles/ \
+		LOCAL/eugen
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
@@ -12,27 +14,26 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 cpe gmake libtool makeinfo \
-		perl5 readline ssl
+		perl5 readline
 
-CONFLICTS=	frr7 openbgpd pimd zebra
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GAWK=${AWK}
 
 CFLAGS+=	-fcommon
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 INFO=		quagga
 
-OPTIONS_DEFINE=	ISISD PIMD PAM RTADV SNMP TCPSOCKETS DLMALLOC \
+OPTIONS_DEFINE=	LEGACY ISISD PIMD PAM RTADV SNMP TCPSOCKETS DLMALLOC \
 		NO_BGP_ANNOUNCE OSPF_NEXTHOP ISIS_TOPOLOGY EXAMPLES
 # IRDP needs something freebsd does not seem to have:
 # configure: error: 'IRDP requires in_pktinfo at the moment!'
-OPTIONS_DEFAULT=	ISISD PIMD RTADV
+OPTIONS_DEFAULT=	LEGACY ISISD PIMD RTADV
 OPTIONS_SUB=	yes
 
+LEGACY_DESC=		Install to legacy paths (conflicts with FRR etc.)
 PIMD_DESC=		PIM-SSM multicast routing
 IRDP_DESC=		Enable IRDP server support
 ISISD_DESC=		Enable ISIS daemon (beta)
@@ -84,6 +85,11 @@ NO_BGP_ANNOUNCE_CONFIGURE_OFF=	--enable-bgp-announce
 
 USE_RC_SUBR=	quagga watchquagga
 
+LEGACY_SUB_LIST=	VTYSH=vtysh  N=
+LEGACY_SUB_LIST_OFF=	VTYSH=qvtysh N=${PORTNAME}/
+LEGACY_PLIST_SUB=	VTYSH=vtysh  N=
+LEGACY_PLIST_SUB_OFF=	VTYSH=qvtysh N=${PORTNAME}/
+
 SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
 		SYSCONF_DIR=${SYSCONF_DIR}
 
@@ -105,5 +111,27 @@ pre-everything::
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LOCALSTATE_DIR} ${STAGEDIR}${SYSCONF_DIR}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLEGACY}
+CONFLICTS=		frr7 openbgpd pimd
+USE_LDCONFIG=		yes
+.else
+PKGNAMESUFFIX=		-compat
+QPREFIX=		${PREFIX}/${PORTNAME}
+GNU_CONFIGURE_PREFIX=	${QPREFIX}
+MANPREFIX=		${QPREFIX}
+MANDIRS=		${QPREFIX}/man
+USE_LDCONFIG=		${QPREFIX}/lib
+CONFIGURE_ARGS+=	--datarootdir=${QPREFIX} \
+			--bindir=${PREFIX}/bin \
+			--includedir=${PREFIX}/include
+
+post-install-LEGACY-off:
+	${MV} ${STAGEDIR}${PREFIX}/bin/vtysh ${STAGEDIR}${PREFIX}/bin/qvtysh
+	${MV} ${STAGEDIR}${QPREFIX}/${INFO_PATH}/${PORTNAME}* ${STAGEDIR}${PREFIX}/${INFO_PATH}/
+
+.endif
 
 .include <bsd.port.mk>
