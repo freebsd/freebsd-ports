@@ -1,39 +1,39 @@
-PORTNAME=		vzvol
+PORTNAME=	vzvol
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.7.0
+DISTVERSION=	0.7.0
 PORTREVISION=	2
-CATEGORIES=		sysutils
+CATEGORIES=	sysutils
 
-MAINTAINER=		rainbow@sanitylinux.org
-COMMENT=		Feature-rich ZFS zvol management tool
+MAINTAINER=	rainbow@sanitylinux.org
+COMMENT=	Feature-rich ZFS zvol management tool
 WWW=		https://github.com/RainbowHackerHorse/vzvol
 
-LICENSE=		BSD2CLAUSE
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GROUPS=			operator
+GROUPS=		operator
 
-USE_GITHUB=		yes
-GH_ACCOUNT=		RainbowHackerHorse
-NO_BUILD=		yes
-NO_ARCH=		yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	RainbowHackerHorse
+NO_BUILD=	yes
+NO_ARCH=	yes
 
-PORTDOCS=		README.md CONTRIBUTORS
+PORTDOCS=	README.md CONTRIBUTORS
 
-OPTIONS_DEFINE=			DOCS PROGRESS VIRTUALBOX
-OPTIONS_GROUP=			FILESYSTEMS
+OPTIONS_DEFINE=	DOCS PROGRESS VIRTUALBOX
+OPTIONS_GROUP=	FILESYSTEMS
 OPTIONS_GROUP_FILESYSTEMS=	EXT XFS
-OPTIONS_DEFAULT=		EXT PROGRESS VIRTUALBOX XFS
+OPTIONS_DEFAULT=	EXT PROGRESS VIRTUALBOX XFS
 
-EXT_RUN_DEPENDS=		mke2fs:sysutils/e2fsprogs
-PROGRESS_RUN_DEPENDS=		pv:sysutils/pv
-VIRTUALBOX_RUN_DEPENDS=		VBoxManage:emulators/virtualbox-ose
-XFS_RUN_DEPENDS=		mkfs.xfs:sysutils/xfsprogs
+EXT_RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs-core
+PROGRESS_RUN_DEPENDS=	pv:sysutils/pv
+VIRTUALBOX_RUN_DEPENDS=	VBoxManage:emulators/virtualbox-ose
+XFS_RUN_DEPENDS=	mkfs.xfs:sysutils/xfsprogs
 
-EXT_DESC=			Install support for ext2, ext3, and ext4
-PROGRESS_DESC=			Enables progress bars for import
-VIRTUALBOX_DESC=		Support .VMDK creation with VirtualBox tools
-XFS_DESC=			Install support for XFS Filesystem
+EXT_DESC=		Install support for ext2, ext3, and ext4
+PROGRESS_DESC=		Enables progress bars for import
+VIRTUALBOX_DESC=	Support .VMDK creation with VirtualBox tools
+XFS_DESC=		Install support for XFS filesystem
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/freebsd/vzvol.8 ${STAGEDIR}${PREFIX}/man/man8/
