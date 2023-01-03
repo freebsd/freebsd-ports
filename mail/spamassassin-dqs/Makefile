@@ -1,6 +1,6 @@
 PORTNAME=		spamassassin-dqs
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.2.2
+DISTVERSION=		1.4.0
 CATEGORIES=		mail
 
 MAINTAINER=	ler@FreeBSD.org
@@ -36,15 +36,13 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail/spamassassin
-	${INSTALL_DATA} ${WRKSRC}/sh.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh.cf.sample
-	${INSTALL_DATA} ${WRKSRC}/sh.pre ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
-	${INSTALL_DATA} ${WRKSRC}/SH.pm ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
-	${INSTALL_DATA} ${WRKSRC}/sh_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh.cf.sample
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN}  ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 do-install-HBL-on:
-	${INSTALL_DATA} ${WRKSRC}/sh_hbl.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh_hbl.cf.sample
-	${INSTALL_DATA} ${WRKSRC}/sh_hbl_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh_hbl.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh_hbl.cf.sample
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh_hbl_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
 
 .include <bsd.port.mk>
