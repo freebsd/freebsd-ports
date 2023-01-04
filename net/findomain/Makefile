@@ -10,6 +10,8 @@ WWW=		https://github.com/Findomain/findomain
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Findomain
