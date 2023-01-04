@@ -1,6 +1,6 @@
 PORTNAME=	kvazaar
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	2.1.0
+DISTVERSION=	2.1.0
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	ultravideo
 GH_TUPLE=	silentbicycle:greatest:v1.0.0:greatest/greatest
-
-CONFLICTS_INSTALL?=	${PORTNAME}-devel
 
 USES=		autoreconf compiler:c11 libtool pathfix
 GNU_CONFIGURE=	yes
