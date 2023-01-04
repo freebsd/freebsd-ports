@@ -1,6 +1,6 @@
 PORTNAME=	rrdtool
 DISTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases graphics
 MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}/
 
@@ -9,6 +9,7 @@ COMMENT=	Round Robin Database Tools
 WWW=		https://oss.oetiker.ch/rrdtool/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gmake gnome libtool pathfix pkgconfig shebangfix
 CPE_VENDOR=	rrdtool_project
@@ -18,12 +19,11 @@ USE_RC_SUBR=	rrdcached
 SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl examples/stripes.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcl
-
+CONFIGURE_ENV=	RRDDOCDIR=${DOCSDIR:Q}
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-
 CONFLICTS=	rrdtool12
-
+PORTDOCS=	*
 PORTEXAMPLES=	cgi-demo.cgi
 
 OPTIONS_DEFINE=		DEJAVU DOCS EXAMPLES GRAPH LOCKTIMEOUT MMAP NLS PERL \
@@ -41,7 +41,9 @@ RUBY_DESC=		Build RUBY bindings
 DEJAVU_RUN_DEPENDS=		dejavu>0:x11-fonts/dejavu
 DOCS_USES=			groff
 DOCS_CONFIGURE_ENABLE=		docs
+EXAMPLES_CONFIGURE_ENABLE=	examples
 GRAPH_LIB_DEPENDS=		libfreetype.so:print/freetype2 \
+				libharfbuzz.so:print/harfbuzz \
 				libpng.so:graphics/png
 GRAPH_USE=			GNOME=cairo,pango
 GRAPH_CONFIGURE_OFF=		--disable-rrd_graph \
@@ -60,8 +62,9 @@ PERL_PORTEXAMPLES=		4charts.pl bigtops.pl minmax.pl perftest.pl \
 				piped-demo.pl rrdcached/rrdcached-size.pl \
 				rrdcached/RRDCached.pm shared-demo.pl \
 				stripes.pl
+PYTHON_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
 PYTHON_USES=			python
-PYTHON_USE=			flavors,optsuffix
+PYTHON_USE=			PYTHON=flavors,optsuffix
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_PORTEXAMPLES=		stripes.py
 RUBY_USE=			RUBY=yes
@@ -70,10 +73,6 @@ RUBY_CONFIGURE_ENABLE=		ruby
 post-extract:
 	@${REINPLACE_CMD} -E 's|(^rrdtool_LDADD = librrd.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
-
-post-extract-EXAMPLES-off:
-	@${REINPLACE_CMD} -e '/^DIST_SUBDIRS = /s| examples||' \
-		${WRKSRC}/Makefile.in
 
 post-install-EXAMPLES-on:
 .if !defined(BATCH)
