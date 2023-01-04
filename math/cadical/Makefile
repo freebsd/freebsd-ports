@@ -1,9 +1,7 @@
 PORTNAME=	cadical
-DISTVERSION=	1.0.3
-DISTVERSIONSUFFIX=	-cb89cbf
-PORTREVISION=	1
+DISTVERSIONPREFIX=	rel-
+DISTVERSION=	1.5.3
 CATEGORIES=	math devel
-MASTER_SITES=	http://fmv.jku.at/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple CDCL satisfiability solver
@@ -13,6 +11,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++0x gmake tar:xz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	arminbiere
+
 GNU_CONFIGURE=	yes
 
 CXXFLAGS+=	-fPIC
@@ -23,14 +25,18 @@ BINARY_ALIAS=	make=${GMAKE}
 
 EXES=		cadical mobical
 
+TEST_TARGET=	test
+
 PLIST_FILES=	${EXES:S/^/bin\//} \
+		include/cadical.hpp \
 		include/ccadical.h \
 		lib/libcadical.a
 
-do-install:
+do-install: # workaround for https://github.com/arminbiere/cadical/issues/49
 .for e in ${EXES}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${e} ${STAGEDIR}${PREFIX}/bin
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/src/cadical.hpp ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/src/ccadical.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/build/libcadical.a ${STAGEDIR}${PREFIX}/lib
 
