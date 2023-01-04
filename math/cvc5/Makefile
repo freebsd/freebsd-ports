@@ -1,54 +1,46 @@
-PORTNAME=	cvc4
-DISTVERSION=	1.7
-PORTREVISION=	6
+PORTNAME=	cvc5
+DISTVERSIONPREFIX=	cvc5-
+DISTVERSION=	1.0.3
 CATEGORIES=	math java
 MASTER_SITES+=	http://www.antlr3.org/download/:antlr3
 DISTFILES+=	antlr-3.4-complete.jar:antlr3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	fc8907afc08d.patch:-p1 # Install Java bindings
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automatic theorem prover for SMT (Satisfiability Modulo Theories)
-WWW=		https://cvc4.cs.stanford.edu/web/
+WWW=		https://cvc5.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Doesn't build, src/expr/expr_template.h:0: error: undefined replacement ${getConst_instantiations}
-
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/lib/libcadical.a:math/cadical \
+		${LOCALBASE}/lib/symfpu.a:math/symfpu \
+		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR}
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libboost_system.so:devel/boost-libs
 
 USES=		cmake ncurses compiler:c++17-lang \
-		pkgconfig python:3.5+,build shebangfix
-
-SHEBANG_FILES=	src/base/mktagheaders \
-		src/base/mktags
-
+		localbase:ldflags pkgconfig python:3.5+,build
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	CVC4
-GH_PROJECT=	CVC4
 
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 
-USE_LDCONFIG=		yes
-
 CMAKE_BUILD_TYPE=	Production
-CMAKE_ARGS+=		-DANTLR_BINARY=${WRKDIR}/antlr3
+CMAKE_ARGS+=		-DANTLR_BINARY=${WRKDIR}/antlr3 \
+			-DFREEBSD_DISTDIR=${DISTDIR}
+CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_OFF=		BUILD_BINDINGS_PYTHON USE_PYTHON3 # Python binding should be a separate port
 
-OPTIONS_DEFINE=		CRYPTOMINISAT JAVA PYTHON READLINE
+OPTIONS_DEFINE=		CRYPTOMINISAT JAVA EDITLINE
 OPTIONS_RADIO=		NUMLIB
 OPTIONS_RADIO_NUMLIB=	GMP CLN
-OPTIONS_DEFAULT=	CRYPTOMINISAT JAVA PYTHON READLINE GMP
+OPTIONS_DEFAULT=	CRYPTOMINISAT JAVA EDITLINE GMP
 OPTIONS_SUB=		yes
 
 CRYPTOMINISAT_DESC=	Use CryptoMiniSat as the SAT solver
-GMP_DESC=		Use GMP numeric library
-CLN_DESC=		Use CLN numeric library (disables portfolio mode)
 
 CRYPTOMINISAT_CMAKE_BOOL=	USE_CRYPTOMINISAT
 CRYPTOMINISAT_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
@@ -59,25 +51,22 @@ JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 			-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ATCH}/libjava.so
 JAVA_BUILD_DEPENDS=	swig:devel/swig
 
-PYTHON_CMAKE_BOOL=	BUILD_BINDINGS_PYTHON USE_PYTHON3
-PYTHON_BUILD_DEPENDS=	swig:devel/swig
+EDITLINE_DESC=		Use Editline for better interactive support
+EDITLINE_CMAKE_BOOL=	USE_EDITLINE
+EDITLINE_BUILD_DEPENDS=	libedit>0:devel/libedit
+EDITLINE_RUN_DEPENDS=	libedit>0:devel/libedit
 
-READLINE_CMAKE_BOOL=	USE_READLINE
-READLINE_USES=		readline
+GMP_DESC=		Use GMP numeric library
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
-GMP_CMAKE_BOOL=		ENABLE_PORTFOLIO
-GMP_CMAKE_ON=		-DENABLE_DUMPING=OFF
-GMP_LIB_DEPENDS=	libgmp.so:math/gmp \
-			libboost_thread.so:devel/boost-libs
-# note: CVC4 already depends on boost-libs, so portfolio mode is "free" in terms of pkg dependencies
-
+CLN_DESC=		Use CLN numeric library
 CLN_CMAKE_BOOL=		USE_CLN
 CLN_LIB_DEPENDS=	libcln.so:math/cln \
 			libgmp.so:math/gmp
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MCLN}
+.if ${PORT_OPTIONS:MCLN}
 LICENSE=		GPLv3
 CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
@@ -89,11 +78,7 @@ post-extract:
 	@${CHMOD} +x ${WRKDIR}/antlr3
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|sed -i 's|sed -i '' 's|g" \
-	${WRKSRC}/src/fix-install-headers.sh
-
-# make a relative symlink instead of absolute to build dir
-post-install-JAVA-on:
-	@${LN} -sf CVC4-1.7.0.jar ${STAGEDIR}${PREFIX}/share/java/cvc4/CVC4.jar
+	@${REINPLACE_CMD} -e "s|sed -i'' -e 's|sed -i '' -e 's|g" \
+		${WRKSRC}/src/fix-install-headers.sh
 
 .include <bsd.port.mk>

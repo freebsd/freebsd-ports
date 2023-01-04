@@ -1,0 +1,7 @@
+TIMESTAMP = 1672779263
+SHA256 (antlr-3.4-complete.jar) = 9d3e866b610460664522520f73b81777b5626fb0a282a5952b9800b751550bf7
+SIZE (antlr-3.4-complete.jar) = 2388361
+SHA256 (cvc5-cvc5-cvc5-1.0.3_GH0.tar.gz) = bf787b74c35ef61958865902e21dcb8f98f79d910b00a9e762a00ff8fcd2c462
+SIZE (cvc5-cvc5-cvc5-1.0.3_GH0.tar.gz) = 8335175
+SHA256 (fc8907afc08d.patch) = dfb42f7c9fbc4091d21ce4804f11c72945ccc9131f3d79dbc275fd9238ff55d4
+SIZE (fc8907afc08d.patch) = 1156

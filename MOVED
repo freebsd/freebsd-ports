@@ -17747,3 +17747,4 @@ sysutils/beats6||2023-01-01|Has expired: No longer maintained and supported
 sysutils/logstash6||2023-01-01|Has expired: No longer maintained and supported
 textproc/elasticsearch6||2023-01-01|Has expired: No longer maintained and supported
 japanese/ja-tex-xdvik|print/tex-xdvik|2023-01-02|pTeX support has been integrated
+math/cvc4|math/cvc5|2023-01-03|CVC4 was succeeded by CVC5

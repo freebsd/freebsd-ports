@@ -264,7 +264,7 @@
     SUBDIR += cudd
     SUBDIR += curv
     SUBDIR += cvc3
-    SUBDIR += cvc4
+    SUBDIR += cvc5
     SUBDIR += dbcsr
     SUBDIR += deal.ii
     SUBDIR += dieharder
