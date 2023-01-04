@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
-WWW=		http://ultravideo.cs.tut.fi/ #encoder
+WWW=		https://ultravideo.fi/#encoder_x
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
