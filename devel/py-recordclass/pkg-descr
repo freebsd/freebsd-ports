@@ -1,4 +1,4 @@
-Recordclass is MIT Licensed python library. It was started as a "proof of
+Recordclass is a MIT Licensed python library. It was started as a "proof of
 concept" for the problem of fast "mutable" alternative of namedtuple. It
 implements a factory function recordclass (a variant of collection.namedtuple)
 in order to create record-like classes with the same API as
