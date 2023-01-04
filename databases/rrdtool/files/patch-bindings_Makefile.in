@@ -1,0 +1,16 @@
+--- bindings/Makefile.in.orig	2022-03-14 14:29:39 UTC
++++ bindings/Makefile.in
+@@ -727,11 +727,11 @@ all-local:  @COMP_PERL@ @COMP_RUBY@ @COMP_PYTHON@
+ install-data-local:
+ 	$(AM_V_GEN)test -f ${builddir}/perl-piped/Makefile \
+            && ( cd ${builddir}/perl-piped \
+-	        && $(MAKE) install ) \
++	        && $(MAKE) pure_install ) \
+ 	   || true
+ 	$(AM_V_GEN)test -f ${builddir}/perl-shared/Makefile \
+            && ( cd ${builddir}/perl-shared \
+-                && $(MAKE) install ) \
++                && $(MAKE) pure_install ) \
+            || true
+ 	$(AM_V_GEN)test -f ${builddir}/ruby/Makefile \
+            && ( cd ${builddir}/ruby \
