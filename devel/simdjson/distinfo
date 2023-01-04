@@ -1,3 +1,5 @@
-TIMESTAMP = 1667150945
-SHA256 (simdjson-simdjson-v3.0.0_GH0.tar.gz) = e6dd4bfaad2fd9599e6a026476db39a3bb9529436d3508ac3ae643bc663526c5
-SIZE (simdjson-simdjson-v3.0.0_GH0.tar.gz) = 1628275
+TIMESTAMP = 1672730752
+SHA256 (simdjson-simdjson-v3.0.1_GH0.tar.gz) = 156b1bc5eb0561b2bd166b46d191fd3d95a3e709cc63761477d3b7aec2b6e9ed
+SIZE (simdjson-simdjson-v3.0.1_GH0.tar.gz) = 1630050
+SHA256 (simdjson-simdjson-data-a5b13ba_GH0.tar.gz) = ecac9f00c960381e132632e44063f385c6513283305ccd6794c24590d561bbc9
+SIZE (simdjson-simdjson-data-a5b13ba_GH0.tar.gz) = 6639897
