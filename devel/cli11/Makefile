@@ -1,6 +1,6 @@
 PORTNAME=	cli11
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://github.com/CLIUtils/CLI11
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
+TEST_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs \
+		catch>0:devel/catch # fails with catch2-3.x, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267078
 
 USES=		cmake:testing compiler:c++11-lang
 
