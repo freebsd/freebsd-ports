@@ -1,5 +1,5 @@
 PORTNAME=	mdal
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
