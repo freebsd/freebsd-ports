@@ -1140,6 +1140,7 @@
     SUBDIR += superlu
     SUBDIR += superlu-dist
     SUBDIR += symengine
+    SUBDIR += symfpu
     SUBDIR += symmetrica
     SUBDIR += symphony
     SUBDIR += sympol
