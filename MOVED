@@ -17749,3 +17749,11 @@ math/cvc3|math/cvc5|2023-01-04|CVC3 was succeeded by CVC4 and CVC5
 devel/caf|devel/actor-framework|2023-01-08|Merge duplicates into devel/actor-framework that is a full software name
 net/nebula|security/nebula|2023-01-09|Remove duplicate
 security/kc24|security/kc|2023-01-13|kc24 was a transient package to easy database migration. Rename to original name
+devel/llvm70||2023-01-15|Removed old llvm ports
+devel/llvm80||2023-01-15|Removed old llvm ports
+devel/llvm90||2023-01-15|Removed old llvm ports
+devel/android-tools-simpleperf||2023-01-15|Depends on removed old llvm ports
+devel/ccls||2023-01-15|Depends on removed old llvm ports
+devel/f18||2023-01-15|Depends on removed old llvm ports
+devel/xtoolchain-llvm80||2023-01-15|Depends on removed old llvm ports
+devel/xtoolchain-llvm90||2023-01-15|Depends on removed old llvm ports

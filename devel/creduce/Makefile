@@ -7,10 +7,13 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Produces small test cases
 WWW=		https://embed.cs.utah.edu/creduce/
 
-LLVM_VER=	80
-BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
-RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER} \
-		topformflat:devel/delta \
+# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268745
+BROKEN=		Depends on removed LLVM port devel/llvm80
+
+# LLVM_VER=	80
+# BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+# RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER} 
+BUILD_DEPENDS=	topformflat:devel/delta \
 		astyle:devel/astyle \
 		p5-Benchmark-Timer>=0:devel/p5-Benchmark-Timer \
 		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \

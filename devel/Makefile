@@ -153,7 +153,6 @@
     SUBDIR += ammonite
     SUBDIR += amqp-cpp
     SUBDIR += android-tools
-    SUBDIR += android-tools-simpleperf
     SUBDIR += anjuta
     SUBDIR += antlr
     SUBDIR += antlr3
@@ -338,7 +337,6 @@
     SUBDIR += ccache-static
     SUBDIR += cccc
     SUBDIR += ccdoc
-    SUBDIR += ccls
     SUBDIR += ccrtp
     SUBDIR += cctz
     SUBDIR += cdash
@@ -625,7 +623,6 @@
     SUBDIR += eventxx
     SUBDIR += exercisix
     SUBDIR += exomizer
-    SUBDIR += f18
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
@@ -1473,9 +1470,6 @@
     SUBDIR += llvm13
     SUBDIR += llvm14
     SUBDIR += llvm15
-    SUBDIR += llvm70
-    SUBDIR += llvm80
-    SUBDIR += llvm90
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -7527,8 +7521,6 @@
     SUBDIR += xtl
     SUBDIR += xtl-quant-stack
     SUBDIR += xtoolchain-llvm-devel
-    SUBDIR += xtoolchain-llvm80
-    SUBDIR += xtoolchain-llvm90
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash
