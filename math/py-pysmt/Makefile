@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}z3-solver>0:math/py-z3-solver@${PY_FLAVOR} \
 		z3>0:math/z3 \
-		cvc4>0:math/cvc4
+		cvc5>0:math/cvc5 # CVC4 was replaced with CVC5 - tests are now broken untile this is resolved: https://github.com/pysmt/pysmt/issues/744
 
 USES=		python:3.5+
 USE_GITHUB=	yes
