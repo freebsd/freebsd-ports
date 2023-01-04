@@ -43,4 +43,10 @@ LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
 HARFBUZZ_CMAKE_BOOL=	WITH_HARFBUZZ
 HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
+
 .include <bsd.port.mk>
