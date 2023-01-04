@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230104:
+  AFFECTS: users of mail/spamassassin
+  AUTHOR: cy@freebsd.org
+
+  As of spamassassin 4.0.0 (3fdfceb36029) the deprecated HashCash plug-in
+  was finally removed. Users using the HashCash plug-in will need to
+  remove references to it.
+
 20221226:
   AFFECTS: users of sysutils/zrepl
   AUTHOR: driesm@FreeBSD.org
