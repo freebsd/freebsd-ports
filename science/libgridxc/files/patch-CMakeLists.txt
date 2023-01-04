@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2023-01-04 21:32:59 UTC
++++ CMakeLists.txt
+@@ -128,11 +128,11 @@ install(
+   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${module-dir}"
+ )
+ # Package license files
+-install(
+-  FILES
+-  "COPYING"
+-  DESTINATION "${CMAKE_INSTALL_DATADIR}/licenses/${PROJECT_NAME}"
+-)
++#install(
++#  FILES
++#  "COPYING"
++#  DESTINATION "${CMAKE_INSTALL_DATADIR}/licenses/${PROJECT_NAME}"
++#)
+ 
+ add_subdirectory("docs")
+ 
