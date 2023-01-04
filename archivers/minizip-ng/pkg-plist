@@ -23,5 +23,5 @@ lib/cmake/minizip-ng/minizip-ng-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/minizip-ng/minizip-ng.cmake
 lib/libminizip-ng.so
 lib/libminizip-ng.so.3
-lib/libminizip-ng.so.3.0.7
+lib/libminizip-ng.so.3.0.8
 libdata/pkgconfig/minizip-ng.pc
