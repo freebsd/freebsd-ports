@@ -47,6 +47,7 @@ share/awesome/lib/vicious/templates/async.lua
 share/awesome/lib/vicious/templates/sync.lua
 share/awesome/lib/vicious/tools/headergen
 share/awesome/lib/vicious/tools/luacheckrc
+share/awesome/lib/vicious/widgets/amdgpu_linux.lua
 share/awesome/lib/vicious/widgets/bat_freebsd.lua
 share/awesome/lib/vicious/widgets/bat_linux.lua
 share/awesome/lib/vicious/widgets/bat_openbsd.lua
