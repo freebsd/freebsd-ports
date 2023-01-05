@@ -9,11 +9,10 @@ WWW=		https://github.com/guillaumegomez/process-viewer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
-		libgtk-4.so:x11-toolkits/gtk40
+LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
 USES=		cargo gnome
-USE_GNOME=	cairo gdkpixbuf2 glib20 pango
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40 pango
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	guillaumegomez
