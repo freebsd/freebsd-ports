@@ -128,6 +128,7 @@
     SUBDIR += itinerary
     SUBDIR += jjclient
     SUBDIR += jlj
+    SUBDIR += jot
     SUBDIR += just
     SUBDIR += kaddressbook
     SUBDIR += kalarm

@@ -1,0 +1,6 @@
+Jot is a feature-stripped version of Obsidian focused on rapid note management
+through the terminal.
+It uses the same format of storage as Obsidian, i.e. markdown files for notes,
+and local folders for vaults (and sub-folders).
+Commands that encompass all basic needs are included. Each command has an alias
+(two letter abbreviation) to further increase rapidity.
