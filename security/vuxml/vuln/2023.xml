@@ -1,3 +1,34 @@
+  <vuln vid="59c284f4-8d2e-11ed-9ce0-b42e991fc52e">
+    <topic> net-mgmt/cacti is vulnerable to remote command injection </topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>1.2.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cacti team reports:</p>
+	<blockquote cite="https://github.com/Cacti/cacti/security/advisories/GHSA-6p93-p743-35gf">
+          <p>
+	    A command injection vulnerability allows an
+	    unauthenticated user to execute arbitrary code on a server
+	    running Cacti, if a specific data source was selected for
+	    any monitored device.
+          </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-46169</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-46169</url>
+    </references>
+    <dates>
+      <discovery>12/05/2022</discovery>
+      <entry>2023-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="541696ed-8d12-11ed-af80-ecf4bbc0bda0">
     <topic>devel/viewvc-devel is vulnerable to cross-site scripting</topic>
     <affects>
