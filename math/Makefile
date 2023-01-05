@@ -263,7 +263,6 @@
     SUBDIR += ctl-sat
     SUBDIR += cudd
     SUBDIR += curv
-    SUBDIR += cvc3
     SUBDIR += cvc5
     SUBDIR += dbcsr
     SUBDIR += deal.ii
