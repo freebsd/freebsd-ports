@@ -99,12 +99,12 @@ DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
-_KDE_3d=		6
-_KDE_base=		177
+_KDE_3d=		0
+_KDE_base=		157
 _KDE_charts=		0
 _KDE_connectivity=	5
 _KDE_datavis3d=		0
-_KDE_declarative=	25
+_KDE_declarative=	21
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
 _KDE_imageformats=	6
@@ -124,11 +124,11 @@ _KDE_sensors=		0
 _KDE_serialbus=		0
 _KDE_serialport=	0
 _KDE_speech=		1
-_KDE_svg=		9
+_KDE_svg=		8
 _KDE_tools=		1
 _KDE_translations=	0
 _KDE_virtualkeyboard=	0
-_KDE_wayland=		58
+_KDE_wayland=		57
 _KDE_webchannel=	3
 _KDE_webglplugin=	0
 _KDE_websockets=	2
@@ -436,10 +436,10 @@ _sub_need_add=
 _sub_need_remove=	\#\#
 .    else
 _sub_need_add=		\#\#
-_sub_need_remove=	
+_sub_need_remove=
 .    endif
-# If a port installs Qt version-specific binaries (e.g. "designer" which 
-# existed as a Qt4 application and exists as a Qt5 application and will 
+# If a port installs Qt version-specific binaries (e.g. "designer" which
+# existed as a Qt4 application and exists as a Qt5 application and will
 # probably be a Qt6 application) the port should set `QT_BINARIES=yes`.
 .    if defined(QT_BINARIES)
 _sub_need_bin=
@@ -449,7 +449,7 @@ _sub_need_bin=		\#\#
 .    if ${QT_MODNAME} == core
 # QtCore (e.g. devel/qt5-core) is the one that starts the header,
 # and is also the one that can clean it up when deinstalled.
-_sub_need_clean=	
+_sub_need_clean=
 .    else
 _sub_need_clean=	\#\#
 .    endif
