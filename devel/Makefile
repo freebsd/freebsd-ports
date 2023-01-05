@@ -563,6 +563,7 @@
     SUBDIR += dulwich
     SUBDIR += dupl
     SUBDIR += duplo
+    SUBDIR += dura
     SUBDIR += dwarf2json
     SUBDIR += dwarfdump
     SUBDIR += dwarves
