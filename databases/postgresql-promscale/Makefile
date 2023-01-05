@@ -11,6 +11,7 @@ WWW=		https://www.timescale.com/promscale
 LICENSE=	PostgreSQL
 
 ONLY_FOR_ARCHS=	aarch64 amd64
+BROKEN=		fails to build using Rust 1.65.0 or newer, PR 267851
 
 RUN_DEPENDS=	timescaledb>0:databases/timescaledb
 BUILD_DEPENDS=	bash>0:shells/bash
