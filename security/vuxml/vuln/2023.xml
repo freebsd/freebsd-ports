@@ -1,3 +1,31 @@
+  <vuln vid="541696ed-8d12-11ed-af80-ecf4bbc0bda0">
+    <topic>devel/viewvc-devel is vulnerable to cross-site scripting</topic>
+    <affects>
+      <package>
+	<name>py37-viewvc-devel</name>
+	<name>py38-viewvc-devel</name>
+	<name>py39-viewvc-devel</name>
+	<range><lt>1.3.0-20230104</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>C. Michael Pilato reports:</p>
+	<blockquote cite="https://github.com/viewvc/viewvc/releases/tag/1.1.30">
+	  <p>security fix: escape revision view copy paths (#311) [CVE-2023-22464]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-22464</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-22464</url>
+    </references>
+    <dates>
+      <discovery>2023-01-04</discovery>
+      <entry>2023-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b2eac07-8b4d-11ed-8b23-a0f3c100ae18">
     <topic>rxvt-unicode is vulnerable to a remote code execution</topic>
     <affects>
