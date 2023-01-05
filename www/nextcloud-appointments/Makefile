@@ -1,5 +1,5 @@
 PORTNAME=	appointments
-PORTVERSION=	1.14.7
+PORTVERSION=	1.14.8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/raw/${DISTVERSIONPREFIX}${DISTVERSION}/build/artifacts/appstore/
 PKGNAMEPREFIX=	nextcloud-
