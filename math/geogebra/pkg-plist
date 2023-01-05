@@ -13,13 +13,10 @@ share/icons/hicolor/scalable/apps/geogebra.svg
 %%DATADIR%%/geogebra/geogebra_main.jar
 %%DATADIR%%/geogebra/geogebra_properties.jar
 %%DATADIR%%/geogebra/gluegen-rt-natives-linux-amd64.jar
-%%DATADIR%%/geogebra/gluegen-rt-natives-linux-i586.jar
 %%DATADIR%%/geogebra/gluegen-rt.jar
-%%DATADIR%%/geogebra/javagiac-linux32.jar
 %%DATADIR%%/geogebra/javagiac-linux64.jar
 %%DATADIR%%/geogebra/jlatexmath.jar
 %%DATADIR%%/geogebra/jogl.all-natives-linux-amd64.jar
-%%DATADIR%%/geogebra/jogl.all-natives-linux-i586.jar
 %%DATADIR%%/geogebra/jogl.all.jar
 share/mime/packages/geogebra-mime.xml
 @dir share/mime/packages
