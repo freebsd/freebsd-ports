@@ -1,5 +1,5 @@
 PORTNAME=	blis
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	math
 
@@ -66,6 +66,6 @@ USE_GCC=	yes
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libblis.so.3.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libblis.so.4.0.0
 
 .include <bsd.port.post.mk>
