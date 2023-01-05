@@ -588,6 +588,7 @@
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += ytree
+    SUBDIR += zine
     SUBDIR += zoneinfo
 
 .include <bsd.port.subdir.mk>
