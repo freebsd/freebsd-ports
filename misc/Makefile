@@ -469,6 +469,7 @@
     SUBDIR += ringtonetools
     SUBDIR += rname
     SUBDIR += rpl
+    SUBDIR += rsclock
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-dotenv-rails-rails4
