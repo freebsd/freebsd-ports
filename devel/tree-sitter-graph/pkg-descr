@@ -1,0 +1,2 @@
+The `tree-sitter-graph` library and app defines a DSL for constructing arbitrary
+graph structures from source code that has been parsed using tree-sitter.
