@@ -1,5 +1,5 @@
 PORTNAME=	deck
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
