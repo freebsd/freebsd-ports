@@ -1,6 +1,5 @@
 PORTNAME=	viewvc
-DISTVERSION=	1.3.0-20201006
-PORTREVISION=	1
+DISTVERSION=	1.3.0-20230104
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -11,10 +10,10 @@ WWW=		https://www.viewvc.org/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		cpe python:3.6+
+USES=		apache:run,24+ cpe python:3.6+
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
-GH_TAGNAME=	c93d9da79c31457ecb0a771ff52d28353dc6e878
+GH_TAGNAME=	a239c4a93093d9f3e0e34ea4d254bde463ad38b1
 USE_RC_SUBR=	viewvc
 
 NO_BUILD=		yes
@@ -31,7 +30,6 @@ APMOD_DESC=		depend on Apache module
 
 MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
 
-APACHE_USE=		APACHE_RUN=24+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}
 
