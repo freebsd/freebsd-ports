@@ -33,4 +33,5 @@ man/man1/remind.1.gz
 %%DATADIR%%/lang/pl.rem
 %%DATADIR%%/lang/pt.rem
 %%DATADIR%%/lang/ro.rem
+%%DATADIR%%/seasons.rem
 %%DATADIR%%/site/README
