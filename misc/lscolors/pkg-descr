@@ -1,0 +1,2 @@
+lscolors is a tool and a library for colorizing paths according to
+the `LS_COLORS` environment variable.

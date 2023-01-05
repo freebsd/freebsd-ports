@@ -239,6 +239,7 @@
     SUBDIR += locale-en_DK
     SUBDIR += localedata
     SUBDIR += logsurfer
+    SUBDIR += lscolors
     SUBDIR += lv
     SUBDIR += lxde-common
     SUBDIR += lxi-tools
