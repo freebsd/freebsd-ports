@@ -374,6 +374,7 @@
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += posixtestsuite
+    SUBDIR += pqrs
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += ptsort
