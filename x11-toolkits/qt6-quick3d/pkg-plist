@@ -601,6 +601,15 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/gridgeometry.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/gridgeometry16.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/gridgeometry@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/heightfieldgeometry.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/heightfieldgeometry16.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/heightfieldgeometry@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/instancemodel.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/instancemodel16.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/instancemodel@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/instancerepeater.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/instancerepeater16.png
+%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/instancerepeater@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/lookatnode.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/lookatnode16.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/lookatnode@2x.png
@@ -716,6 +725,9 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/model-shape-16px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/model-shape-24px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/model-shape-24px@2x.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/particle-custom-shape-16px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/particle-custom-shape-24px.png
+%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/particle-custom-shape-24px@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/particle-shape-16px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/particle-shape-24px.png
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/images/particle-shape-24px@2x.png
@@ -839,6 +851,9 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/designer/images/cube.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/cube16.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/cube@2x.png
+%%QT_QMLDIR%%/QtQuick3D/designer/images/cubemaptexture.png
+%%QT_QMLDIR%%/QtQuick3D/designer/images/cubemaptexture16.png
+%%QT_QMLDIR%%/QtQuick3D/designer/images/cubemaptexture@2x.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/custommaterial.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/custommaterial16.png
 %%QT_QMLDIR%%/QtQuick3D/designer/images/custommaterial@2x.png
