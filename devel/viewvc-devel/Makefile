@@ -10,7 +10,7 @@ WWW=		https://www.viewvc.org/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		apache:run,24+ cpe python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
 GH_TAGNAME=	a239c4a93093d9f3e0e34ea4d254bde463ad38b1
@@ -29,6 +29,7 @@ WEBSRV_DESC=		Enable web server support
 APMOD_DESC=		depend on Apache module
 
 MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
+APACHE_USE=		APACHE_RUN=24+
 
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}
