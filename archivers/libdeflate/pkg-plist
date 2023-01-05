@@ -1,0 +1,13 @@
+bin/libdeflate-gunzip
+bin/libdeflate-gzip
+include/libdeflate.h
+lib/cmake/libdeflate/libdeflate-config-version.cmake
+lib/cmake/libdeflate/libdeflate-config.cmake
+lib/cmake/libdeflate/libdeflate-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libdeflate/libdeflate-targets.cmake
+lib/libdeflate.a
+lib/libdeflate.so
+lib/libdeflate.so.0
+libdata/pkgconfig/libdeflate.pc
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
