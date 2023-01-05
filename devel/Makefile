@@ -3806,6 +3806,7 @@
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
+    SUBDIR += patsh
     SUBDIR += pcc-libs
     SUBDIR += pcg-cpp
     SUBDIR += pcl
