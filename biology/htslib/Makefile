@@ -1,5 +1,5 @@
 PORTNAME=	htslib
-DISTVERSION=	1.15
+DISTVERSION=	1.16
 CATEGORIES=	biology devel
 # Github generated distfiles are incomplete, so use custom tarball
 MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
