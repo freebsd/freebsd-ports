@@ -1,0 +1,179 @@
+PORTNAME=	diswall
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+CATEGORIES=	security
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Distributed firewall
+WWW=		https://diswall.stream
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo sqlite
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dis-works
+GH_PROJECT=	diswall-rs
+
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.7.6 \
+		async-channel-1.6.1 \
+		async-task-4.1.0 \
+		atomic-waker-1.0.0 \
+		autocfg-1.1.0 \
+		base64-0.13.0 \
+		base64-url-1.4.10 \
+		base64ct-1.1.1 \
+		bitflags-1.3.2 \
+		block-buffer-0.9.0 \
+		blocking-1.1.0 \
+		bumpalo-3.9.1 \
+		byteorder-1.4.3 \
+		cache-padded-1.2.0 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		chunked_transfer-1.4.0 \
+		concurrent-queue-1.2.2 \
+		const-oid-0.6.2 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.1 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.2 \
+		crossbeam-utils-0.8.7 \
+		curve25519-dalek-3.2.0 \
+		data-encoding-2.3.2 \
+		der-0.4.5 \
+		digest-0.9.0 \
+		ed25519-1.4.0 \
+		ed25519-dalek-1.0.1 \
+		event-listener-2.5.2 \
+		fastrand-1.7.0 \
+		flate2-1.0.23 \
+		form_urlencoded-1.0.1 \
+		futures-core-0.3.21 \
+		futures-io-0.3.21 \
+		futures-lite-1.12.0 \
+		generic-array-0.14.5 \
+		getopts-0.2.21 \
+		getrandom-0.2.5 \
+		hashbrown-0.11.2 \
+		hostname-0.3.1 \
+		idna-0.2.3 \
+		instant-0.1.12 \
+		itoa-1.0.1 \
+		js-sys-0.3.56 \
+		json-0.12.4 \
+		lazy_static-1.4.0 \
+		libc-0.2.133 \
+		lock_api-0.4.6 \
+		log-0.4.17 \
+		lru-0.7.6 \
+		match_cfg-0.1.0 \
+		matches-0.1.9 \
+		memchr-2.4.1 \
+		memoffset-0.6.5 \
+		miniz_oxide-0.5.1 \
+		nats-0.23.0 \
+		nix-0.25.0 \
+		nkeys-0.2.0 \
+		nuid-0.3.2 \
+		num_threads-0.1.5 \
+		once_cell-1.9.0 \
+		opaque-debug-0.3.0 \
+		openssl-probe-0.1.5 \
+		parking-2.0.0 \
+		parking_lot-0.12.0 \
+		parking_lot_core-0.9.3 \
+		pem-rfc7468-0.2.4 \
+		percent-encoding-2.1.0 \
+		pin-project-lite-0.2.8 \
+		pin-utils-0.1.0 \
+		pkcs8-0.7.6 \
+		pkg-config-0.3.25 \
+		ppv-lite86-0.2.16 \
+		proc-macro2-1.0.36 \
+		quote-1.0.15 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.5.1 \
+		rand_core-0.6.3 \
+		redox_syscall-0.2.11 \
+		regex-1.5.5 \
+		regex-syntax-0.6.25 \
+		ring-0.16.20 \
+		rustls-0.19.1 \
+		rustls-0.20.6 \
+		rustls-native-certs-0.5.0 \
+		rustls-pemfile-0.2.1 \
+		ryu-1.0.9 \
+		schannel-0.1.19 \
+		scopeguard-1.1.0 \
+		sct-0.6.1 \
+		sct-0.7.0 \
+		security-framework-2.6.1 \
+		security-framework-sys-2.6.1 \
+		serde-1.0.137 \
+		serde_derive-1.0.137 \
+		serde_json-1.0.81 \
+		serde_nanos-0.1.2 \
+		serde_repr-0.1.7 \
+		sha2-0.9.9 \
+		signatory-0.23.2 \
+		signature-1.5.0 \
+		simplelog-0.12.0 \
+		smallvec-1.8.0 \
+		spin-0.5.2 \
+		spki-0.4.1 \
+		sqlite-0.27.0 \
+		sqlite3-src-0.4.0 \
+		sqlite3-sys-0.14.0 \
+		subtle-2.4.1 \
+		syn-1.0.92 \
+		synstructure-0.12.6 \
+		termcolor-1.1.3 \
+		time-0.3.9 \
+		time-macros-0.2.4 \
+		tinyvec-1.5.1 \
+		tinyvec_macros-0.1.0 \
+		toml-0.5.9 \
+		typenum-1.15.0 \
+		unicode-bidi-0.3.7 \
+		unicode-normalization-0.1.19 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.2 \
+		untrusted-0.7.1 \
+		ureq-2.4.0 \
+		url-2.2.2 \
+		version_check-0.9.4 \
+		waker-fn-1.1.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.79 \
+		wasm-bindgen-backend-0.2.79 \
+		wasm-bindgen-macro-0.2.79 \
+		wasm-bindgen-macro-support-0.2.79 \
+		wasm-bindgen-shared-0.2.79 \
+		web-sys-0.3.56 \
+		webpki-0.21.4 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.3 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
+		zeroize-1.5.5 \
+		zeroize_derive-1.3.2
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
