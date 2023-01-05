@@ -1,6 +1,6 @@
 PORTNAME=	simpleitk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,8 @@ BROKEN_i386=	clang consistently runs out of memory
 
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libhdf5.so:science/hdf5 \
-		libITKCommon-${ITK_VER}.so:science/InsightToolkit
+		libITKCommon-${ITK_VER}.so:science/InsightToolkit \
+		libvnl.so:misc/vxl
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++14-lang eigen:3 lua:53 # tests fail to configure due to GTest::GTest related issues, see also https://github.com/SimpleITK/SimpleITK/issues/1765
@@ -29,9 +30,11 @@ CMAKE_OFF=	WRAP_DEFAULT
 CMAKE_OFF+=	BUILD_TESTING BUILD_EXAMPLES
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DSimpleITK_LUA_EXECUTABLE=${LUA_CMD}
-CMAKE_TESTING_ON=	BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING # tests fail to find GTest, see https://github.com/SimpleITK/SimpleITK/issues/1807
 
 PLIST_SUB+=	VER=${DISTVERSION:R}
+
+BINARY_ALIAS=	git=false
 
 post-install: # remove contentless docs
 	@${RM} -r ${STAGEDIR}${PREFIX}/share
