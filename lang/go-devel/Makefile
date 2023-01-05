@@ -1,5 +1,5 @@
 PORTNAME=	go
-DISTVERSION?=	g20221207
+DISTVERSION?=	g20230104
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES?=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
@@ -35,8 +35,8 @@ CPE_VENDOR=	golang
 .ifndef MASTERDIR
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-# go1.20rc1
-GH_TAGNAME=	9f0234214473dfb785a5ad84a8fc62a6a395cbc3
+# go1.20rc2
+GH_TAGNAME=	32593a91927dbb891e00a5a94abb04105f6a8aa8
 .endif
 
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
@@ -108,6 +108,8 @@ do-install:
 		pkg/obj pkg/bootstrap pkg/${OPSYS:tl}_${GOARCH_${ARCH}}/cmd
 	@${MKDIR} ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}
 	@${CP} -a ${WRKSRC}/* ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}/bin/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}/pkg/tool/${OPSYS:tl}_${GOARCH_${ARCH}}/*
 .for f in go gofmt
 	${LN} -sf ../go${GO_SUFFIX}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}${GO_SUFFIX}
 	@${ECHO_CMD} bin/${f}${GO_SUFFIX} >> ${TMPPLIST}
