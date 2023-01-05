@@ -13,7 +13,7 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
  xcb_dep = dependency('xcb', required: get_option('xwayland'))
  
  if get_option('xwayland').enabled() and not have_xwlr
---- src/meson.build.orig	2022-11-07 12:16:30 UTC
+--- src/meson.build.orig	2023-01-05 22:30:24 UTC
 +++ src/meson.build
 @@ -7,7 +7,7 @@ executable('Hyprland', src,
      server_protos,
@@ -22,5 +22,5 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
 -    wlroots.get_variable('wlroots'),
 +    wlroots,
      dependency('cairo'),
-     dependency('pango'),
-     dependency('pangocairo'),
+     dependency('libdrm'),
+     dependency('egl'),

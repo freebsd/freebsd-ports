@@ -58,9 +58,9 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      // XWayland
      LISTENER(readyXWayland);
---- src/events/Monitors.cpp.orig	2022-12-06 13:15:18 UTC
+--- src/events/Monitors.cpp.orig	2023-01-05 22:30:24 UTC
 +++ src/events/Monitors.cpp
-@@ -266,10 +266,11 @@ void Events::listener_monitorFrame(void* owner, void* 
+@@ -265,10 +265,11 @@ void Events::listener_monitorFrame(void* owner, void* 
                  damageBlinkCleanup = 0;
          }
  
@@ -76,15 +76,15 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
      }
  
      g_pHyprOpenGL->end();
-@@ -354,11 +355,4 @@ void Events::listener_monitorDestroy(void* owner, void
-             pMostHzMonitor = pMonitorMostHz;
-         }
+@@ -339,11 +340,4 @@ void Events::listener_monitorDestroy(void* owner, void
+ 
+         std::erase_if(g_pCompositor->m_vRealMonitors, [&](std::shared_ptr<CMonitor>& el) { return el.get() == pMonitor; });
      }
 -}
 -
 -void Events::listener_monitorStateRequest(void* owner, void* data) {
 -    const auto PMONITOR = (CMonitor*)owner;
--    const auto E = (wlr_output_event_request_state*)data;
+-    const auto E        = (wlr_output_event_request_state*)data;
 -
 -    wlr_output_commit_state(PMONITOR->output, E->state);
  }
