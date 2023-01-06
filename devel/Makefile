@@ -7353,6 +7353,7 @@
     SUBDIR += ta-lib
     SUBDIR += tablist
     SUBDIR += tabulate
+    SUBDIR += tagref
     SUBDIR += tailor
     SUBDIR += talloc
     SUBDIR += tarpaulin

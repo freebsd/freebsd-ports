@@ -1,0 +1,8 @@
+tagref helps to maintain code references in codebases.
+
+Tagref ensures such references remain valid. If someone tries to delete or
+rename the tag, Tagref will complain. More precisely, it checks the following:
+1. References actually point to tags. A tag cannot be deleted or renamed
+   without updating the references that point to it.
+2. Tags are distinct. There is never any ambiguity about which tag is being
+   referenced.
