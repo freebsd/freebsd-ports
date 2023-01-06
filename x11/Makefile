@@ -475,6 +475,7 @@
     SUBDIR += xconsole
     SUBDIR += xcursorgen
     SUBDIR += xcut
+    SUBDIR += xdg-desktop-portal-gtk
     SUBDIR += xdg-desktop-portal-hyprland
     SUBDIR += xdg-desktop-portal-wlr
     SUBDIR += xdialog
