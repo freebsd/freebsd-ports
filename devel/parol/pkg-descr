@@ -1,0 +1,15 @@
+parol is a LL(k) parser generator for Rust.
+
+It's an installable command line tool that can generate complete parsers from
+a single grammar description file including all AST data types you would
+otherwise had to design by yourself. `parol` does this solely by analyzing your
+language's grammar.
+
+You can control the process of AST type generation. First you can mark elements
+for omission in your AST. Also you can specify your own types for language
+elements.
+
+Language description and language implementation is strictly separated in
+`parol`. Thus you can design your language's grammar without any need to process
+anything because generated parsers function by default as acceptors. This
+empowers you to do a real rapid prototyping of your grammar.
