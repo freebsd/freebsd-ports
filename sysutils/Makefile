@@ -1398,6 +1398,7 @@
     SUBDIR += tdir
     SUBDIR += tealdeer
     SUBDIR += tenshi
+    SUBDIR += tere
     SUBDIR += terraform
     SUBDIR += terraform-docs
     SUBDIR += terraform-provider-gridscale

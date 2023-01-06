@@ -1,0 +1,5 @@
+`tere` is a terminal file explorer. It is a faster alternative to using `cd`
+and `ls` to browse folders in your terminal. `tere` only really does one thing:
+it provides a TUI for efficiently navigating to a folder, and then prints the
+path to that folder when you exit. By configuring your shell to `cd` to the
+printed folder, you can move around in your filesystem very quickly.
