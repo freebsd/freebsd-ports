@@ -1387,6 +1387,7 @@
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += sysvbanner
+    SUBDIR += szyszka
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
     SUBDIR += tarsnap-gui
