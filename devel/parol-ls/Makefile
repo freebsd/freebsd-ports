@@ -1,0 +1,163 @@
+PORTNAME=	parol-ls
+DISTVERSION=	g20221230
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Language server for Parol, a LL(k) parser generator
+WWW=		https://github.com/jsinger67/parol
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/../../LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/../../LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jsinger67
+GH_PROJECT=	parol
+GH_TAGNAME=	e0c4a1d
+
+WRKSRC_SUBDIR=	crates/parol-ls
+
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		ahash-0.7.6 \
+		aho-corasick-0.7.20 \
+		anyhow-1.0.68 \
+		assert_cmd-2.0.7 \
+		atty-0.2.14 \
+		backtrace-0.3.66 \
+		bitflags-1.3.2 \
+		bstr-1.1.0 \
+		cc-1.0.77 \
+		cfg-if-1.0.0 \
+		clap-4.0.26 \
+		clap_derive-4.0.21 \
+		clap_lex-0.3.0 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-utils-0.8.14 \
+		ctor-0.1.26 \
+		darling-0.14.2 \
+		darling_core-0.14.2 \
+		darling_macro-0.14.2 \
+		derive-new-0.5.9 \
+		derive_builder-0.12.0 \
+		derive_builder_core-0.12.0 \
+		derive_builder_macro-0.12.0 \
+		diff-0.1.13 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.8.0 \
+		env_logger-0.10.0 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.8.0 \
+		fnv-1.0.7 \
+		form_urlencoded-1.1.0 \
+		function_name-0.3.0 \
+		function_name-proc-macro-0.3.0 \
+		getrandom-0.2.8 \
+		gimli-0.26.2 \
+		hashbrown-0.12.3 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		humantime-2.1.0 \
+		id_tree-1.8.0 \
+		id_tree_layout-2.0.4 \
+		ident_case-1.0.1 \
+		idna-0.3.0 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.3 \
+		is-terminal-0.4.1 \
+		is_ci-1.1.1 \
+		itertools-0.10.5 \
+		itoa-1.0.4 \
+		libc-0.2.137 \
+		linux-raw-sys-0.1.3 \
+		log-0.4.17 \
+		lsp-server-0.6.0 \
+		lsp-types-0.93.2 \
+		memchr-2.5.0 \
+		miette-5.5.0 \
+		miette-derive-5.5.0 \
+		miniz_oxide-0.5.4 \
+		object-0.29.0 \
+		once_cell-1.16.0 \
+		os_str_bytes-6.4.1 \
+		output_vt100-0.1.3 \
+		owo-colors-3.5.0 \
+		percent-encoding-2.2.0 \
+		ppv-lite86-0.2.17 \
+		predicates-2.1.4 \
+		predicates-core-1.0.5 \
+		predicates-tree-1.0.7 \
+		pretty_assertions-1.3.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.47 \
+		quote-1.0.21 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rand_regex-0.15.1 \
+		redox_syscall-0.2.16 \
+		regex-1.7.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.28 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.21 \
+		rustix-0.36.4 \
+		ryu-1.0.11 \
+		serde-1.0.147 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.89 \
+		serde_repr-0.1.9 \
+		smawk-0.3.1 \
+		snowflake-1.3.0 \
+		strsim-0.10.0 \
+		supports-color-1.3.1 \
+		supports-hyperlinks-1.2.0 \
+		supports-unicode-1.0.2 \
+		syn-1.0.103 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		terminal_size-0.1.17 \
+		termtree-0.4.0 \
+		textwrap-0.15.2 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		ume-0.1.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.5 \
+		unicode-linebreak-0.1.4 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		url-2.3.1 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0 \
+		xml_writer-0.4.0 \
+		yansi-0.5.1
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

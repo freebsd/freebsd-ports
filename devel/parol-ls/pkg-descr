@@ -1,0 +1,4 @@
+Language server for parol, a LL(k) parser generator for Rust.
+
+It can be used with software that supports language server
+protocol.

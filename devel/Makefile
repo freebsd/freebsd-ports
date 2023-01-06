@@ -3806,6 +3806,7 @@
     SUBDIR += papilio-loader
     SUBDIR += parallel-hashmap
     SUBDIR += parol
+    SUBDIR += parol-ls
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
