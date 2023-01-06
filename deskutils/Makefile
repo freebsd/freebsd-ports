@@ -238,6 +238,7 @@
     SUBDIR += showdown
     SUBDIR += sigi
     SUBDIR += simpleagenda
+    SUBDIR += skim
     SUBDIR += sliderule
     SUBDIR += solanum
     SUBDIR += sowon
