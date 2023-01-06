@@ -1,5 +1,5 @@
 PORTNAME=	bottom
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -24,9 +24,9 @@ PLIST_FILES=	bin/btm \
 OPTIONS_DEFINE=	DOCS
 
 # Build manpages and shell completion
-CARGO_ENV+= 	BTM_GENERATE=true
+CARGO_ENV+=	BTM_GENERATE=true
 
-GEN_DIR= 	${WRKDIR}/bottom-*/target/tmp/bottom
+GEN_DIR=	${WRKDIR}/bottom-*/target/tmp/bottom
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/btm
