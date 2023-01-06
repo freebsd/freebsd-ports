@@ -74,6 +74,7 @@
     SUBDIR += azpainterb
     SUBDIR += barcode
     SUBDIR += batik
+    SUBDIR += bgfx
     SUBDIR += birdfont
     SUBDIR += bitmap
     SUBDIR += blend2d
