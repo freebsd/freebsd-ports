@@ -35,6 +35,7 @@ GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.enums.xml \
 		org.freedesktop.Tracker.gschema.xml
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+CFLAGS+=	-Wno-int-conversion
 
 PLIST_SUB=	LIBVER=0.304.0
 
