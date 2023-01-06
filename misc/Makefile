@@ -497,6 +497,7 @@
     SUBDIR += shc
     SUBDIR += shuffle
     SUBDIR += shuffle-db
+    SUBDIR += silicon
     SUBDIR += since
     SUBDIR += skyutils
     SUBDIR += slides

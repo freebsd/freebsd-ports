@@ -1,0 +1,203 @@
+PORTNAME=	silicon
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.1
+CATEGORIES=	misc
+PKGNAMESUFFIX=	-code-visualizer
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Create beautiful image of your source code
+WWW=		https://github.com/Aloxaf/silicon
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libonig.so:devel/oniguruma
+
+USES=		cargo python:3.6+ xorg
+USE_XORG=	xcb
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Aloxaf
+
+CARGO_CRATES=	ab_glyph_rasterizer-0.1.7 \
+		adler-1.0.2 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.65 \
+		approx-0.5.1 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		base64-0.13.0 \
+		bincode-1.3.3 \
+		bitflags-1.3.2 \
+		block-0.1.6 \
+		bytemuck-1.12.1 \
+		byteorder-1.4.3 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		clap-2.34.0 \
+		clipboard-0.5.0 \
+		clipboard-win-2.2.0 \
+		clipboard-win-4.4.2 \
+		cmake-0.1.48 \
+		cocoa-0.24.0 \
+		cocoa-foundation-0.1.0 \
+		color_quant-1.1.0 \
+		const-cstr-0.3.0 \
+		conv-0.3.3 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		core-graphics-0.22.3 \
+		core-graphics-types-0.1.1 \
+		core-text-19.2.0 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.11 \
+		crossbeam-utils-0.8.12 \
+		custom_derive-0.1.7 \
+		dirs-4.0.0 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.3.7 \
+		dirs-sys-next-0.1.2 \
+		dlib-0.5.0 \
+		dwrote-0.11.0 \
+		either-1.8.0 \
+		env_logger-0.9.1 \
+		error-code-2.3.1 \
+		fastrand-1.8.0 \
+		flate2-1.0.24 \
+		float-ord-0.2.0 \
+		fnv-1.0.7 \
+		font-kit-0.11.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		freetype-0.7.0 \
+		freetype-sys-0.13.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.7 \
+		harfbuzz-sys-0.5.0 \
+		hashbrown-0.12.3 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		humantime-2.1.0 \
+		image-0.24.4 \
+		imageproc-0.23.0 \
+		indexmap-1.9.1 \
+		instant-0.1.12 \
+		itertools-0.10.5 \
+		itoa-1.0.4 \
+		jpeg-decoder-0.2.6 \
+		lazy_static-1.4.0 \
+		libc-0.2.135 \
+		libloading-0.7.3 \
+		line-wrap-0.1.1 \
+		linked-hash-map-0.5.6 \
+		log-0.4.17 \
+		malloc_buf-0.0.6 \
+		matrixmultiply-0.3.2 \
+		memoffset-0.6.5 \
+		miniz_oxide-0.5.4 \
+		nalgebra-0.30.1 \
+		num-0.4.0 \
+		num-bigint-0.4.3 \
+		num-complex-0.4.2 \
+		num-integer-0.1.45 \
+		num-iter-0.1.43 \
+		num-rational-0.4.1 \
+		num-traits-0.2.15 \
+		num_cpus-1.13.1 \
+		num_threads-0.1.6 \
+		objc-0.2.7 \
+		objc-foundation-0.1.1 \
+		objc_id-0.1.1 \
+		once_cell-1.15.0 \
+		onig-6.4.0 \
+		onig_sys-69.8.1 \
+		os_info-3.5.1 \
+		owned_ttf_parser-0.6.0 \
+		paste-1.0.9 \
+		pasteboard-0.1.3 \
+		pathfinder_geometry-0.5.1 \
+		pest-2.4.0 \
+		pkg-config-0.3.25 \
+		plist-1.3.1 \
+		png-0.17.6 \
+		ppv-lite86-0.2.16 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.46 \
+		quote-1.0.21 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_distr-0.2.2 \
+		rand_hc-0.2.0 \
+		rawpointer-0.2.1 \
+		rayon-1.5.3 \
+		rayon-core-1.9.3 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-syntax-0.6.27 \
+		remove_dir_all-0.5.3 \
+		rustc_version-0.3.3 \
+		rusttype-0.9.2 \
+		ryu-1.0.11 \
+		safe_arch-0.6.0 \
+		safemem-0.3.3 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-0.11.0 \
+		semver-parser-0.10.2 \
+		serde-1.0.145 \
+		serde_derive-1.0.145 \
+		serde_json-1.0.86 \
+		shell-words-1.1.0 \
+		simba-0.7.2 \
+		str-buf-1.0.6 \
+		strsim-0.8.0 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.102 \
+		syntect-5.0.0 \
+		tempfile-3.3.0 \
+		term_size-0.3.2 \
+		termcolor-1.1.3 \
+		textwrap-0.11.0 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
+		time-0.3.15 \
+		ttf-parser-0.6.2 \
+		typenum-1.15.0 \
+		ucd-trie-0.1.5 \
+		unicode-ident-1.0.5 \
+		unicode-segmentation-1.10.0 \
+		unicode-width-0.1.10 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wide-0.7.5 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wio-0.2.2 \
+		x11-clipboard-0.3.3 \
+		xcb-0.8.2 \
+		xml-rs-0.8.4 \
+		yaml-rust-0.4.5 \
+		yeslogic-fontconfig-sys-3.2.0 \
+		pathfinder_simd@git+https://github.com/servo/pathfinder\#9e0331742dedfed41d9e7791a9afbead0e0fbcd5
+
+PLIST_FILES=	bin/${PORTNAME}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
