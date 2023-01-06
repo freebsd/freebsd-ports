@@ -259,6 +259,7 @@
     SUBDIR += dc3dd
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
+    SUBDIR += ddh
     SUBDIR += ddpt
     SUBDIR += ddrescue
     SUBDIR += debhelper
