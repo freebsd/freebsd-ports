@@ -623,6 +623,7 @@
     SUBDIR += evemu
     SUBDIR += eventxx
     SUBDIR += exercisix
+    SUBDIR += exomizer
     SUBDIR += f18
     SUBDIR += f77flow
     SUBDIR += fam
