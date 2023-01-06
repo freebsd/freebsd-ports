@@ -7,7 +7,6 @@ bin/garage
 %%DOCSDIR%%/book/connect/apps/index.md
 %%DOCSDIR%%/book/connect/backup.md
 %%DOCSDIR%%/book/connect/cli.md
-%%DOCSDIR%%/book/connect/code.md
 %%DOCSDIR%%/book/connect/fs.md
 %%DOCSDIR%%/book/connect/repositories.md
 %%DOCSDIR%%/book/connect/websites.md
@@ -37,7 +36,6 @@ bin/garage
 %%DOCSDIR%%/book/reference-manual/cli.md
 %%DOCSDIR%%/book/reference-manual/configuration.md
 %%DOCSDIR%%/book/reference-manual/layout.md
-%%DOCSDIR%%/book/reference-manual/routing.md
 %%DOCSDIR%%/book/reference-manual/s3-compatibility.md
 %%DOCSDIR%%/book/working-documents/_index.md
 %%DOCSDIR%%/book/working-documents/compatibility-target.md

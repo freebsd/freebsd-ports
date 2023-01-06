@@ -1,6 +1,5 @@
 PORTNAME=	garage
-DISTVERSION=	0.7.2
-PORTREVISION=	6
+DISTVERSION=	0.8.1
 CATEGORIES=	www
 MASTER_SITES=	https://git.deuxfleurs.fr/Deuxfleurs/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -18,39 +17,53 @@ LIB_DEPENDS=	libsodium.so:security/libsodium
 USES=		cargo pkgconfig
 CARGO_ENV+=	SODIUM_USE_PKG_CONFIG=1
 CARGO_INSTALL_PATH=	src/garage
-CARGO_CRATES=	aho-corasick-0.7.18 \
+CARGO_CRATES=	addr2line-0.17.0 \
+		adler-1.0.2 \
+		ahash-0.7.6 \
+		ahash-0.8.0 \
+		aho-corasick-0.7.18 \
+		ansi_term-0.12.1 \
 		anyhow-1.0.56 \
 		arc-swap-1.5.0 \
 		arrayvec-0.5.2 \
 		assert-json-diff-2.0.1 \
+		async-compression-0.3.10 \
 		async-stream-0.3.3 \
 		async-stream-impl-0.3.3 \
 		async-trait-0.1.52 \
 		atty-0.2.14 \
+		autocfg-0.1.8 \
 		autocfg-1.1.0 \
-		aws-endpoint-0.8.0 \
-		aws-http-0.8.0 \
-		aws-sdk-s3-0.8.0 \
-		aws-sig-auth-0.8.0 \
-		aws-sigv4-0.8.0 \
-		aws-smithy-async-0.38.0 \
-		aws-smithy-client-0.38.0 \
-		aws-smithy-eventstream-0.38.0 \
-		aws-smithy-http-0.38.0 \
-		aws-smithy-http-tower-0.38.0 \
-		aws-smithy-types-0.38.0 \
-		aws-smithy-xml-0.38.0 \
-		aws-types-0.8.0 \
+		aws-endpoint-0.49.0 \
+		aws-http-0.49.0 \
+		aws-sdk-s3-0.19.0 \
+		aws-sig-auth-0.49.0 \
+		aws-sigv4-0.49.0 \
+		aws-smithy-async-0.49.0 \
+		aws-smithy-checksums-0.49.0 \
+		aws-smithy-client-0.49.0 \
+		aws-smithy-eventstream-0.49.0 \
+		aws-smithy-http-0.49.0 \
+		aws-smithy-http-tower-0.49.0 \
+		aws-smithy-types-0.49.0 \
+		aws-smithy-xml-0.49.0 \
+		aws-types-0.49.0 \
+		backoff-0.4.0 \
+		backtrace-0.3.66 \
 		base64-0.13.0 \
+		bincode-1.3.3 \
 		bitflags-1.3.2 \
 		blake2-0.9.2 \
 		block-buffer-0.9.0 \
+		block-buffer-0.10.2 \
 		bumpalo-3.9.1 \
+		bytemuck-1.9.1 \
 		byteorder-1.4.3 \
-		bytes-0.6.0 \
-		bytes-1.1.0 \
+		bytes-1.2.0 \
 		bytes-utils-0.1.2 \
+		bytesize-1.1.0 \
 		cc-1.0.73 \
+		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.19 \
@@ -62,34 +75,36 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.2 \
+		crc32c-0.6.3 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.4 \
 		crossbeam-epoch-0.9.8 \
+		crossbeam-queue-0.1.2 \
+		crossbeam-utils-0.6.6 \
 		crossbeam-utils-0.8.8 \
+		crypto-common-0.1.6 \
 		crypto-mac-0.8.0 \
-		crypto-mac-0.10.1 \
 		crypto-mac-0.11.1 \
 		ct-logs-0.8.0 \
-		darling-0.13.1 \
-		darling_core-0.13.1 \
-		darling_macro-0.13.1 \
+		darling-0.14.1 \
+		darling_core-0.14.1 \
+		darling_macro-0.14.1 \
 		dashmap-4.0.2 \
 		derivative-2.2.0 \
 		digest-0.9.0 \
+		digest-0.10.3 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		doc-comment-0.3.3 \
 		dyn-clone-1.0.5 \
 		either-1.6.1 \
 		encoding_rs-0.8.30 \
 		env_logger-0.7.1 \
-		err-derive-0.2.4 \
 		err-derive-0.3.1 \
+		fallible-iterator-0.2.0 \
+		fallible-streaming-iterator-0.1.9 \
 		fastrand-1.7.0 \
 		fixedbitset-0.4.1 \
 		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		fs2-0.4.3 \
 		fuchsia-cprng-0.1.1 \
@@ -103,40 +118,44 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		futures-task-0.3.21 \
 		futures-util-0.3.21 \
 		fxhash-0.2.1 \
-		garage_model-0.5.1 \
-		garage_rpc-0.5.1 \
-		garage_table-0.5.1 \
-		garage_util-0.5.1 \
 		generic-array-0.14.5 \
 		gethostname-0.2.3 \
 		getrandom-0.2.5 \
+		gimli-0.26.2 \
 		git-version-0.3.5 \
 		git-version-macro-0.3.5 \
 		h2-0.3.12 \
 		hashbrown-0.11.2 \
+		hashlink-0.7.0 \
 		heck-0.3.3 \
 		heck-0.4.0 \
+		heed-0.11.0 \
+		heed-traits-0.8.0 \
+		heed-types-0.8.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
 		hexdump-0.1.1 \
-		hmac-0.10.1 \
 		hmac-0.11.0 \
-		http-0.2.6 \
-		http-body-0.4.4 \
+		hmac-0.12.1 \
+		http-0.2.8 \
+		http-body-0.4.5 \
 		http-range-0.1.5 \
+		http-range-header-0.3.0 \
 		httparse-1.6.0 \
 		httpdate-0.3.2 \
 		httpdate-1.0.2 \
 		humantime-1.3.0 \
 		hyper-0.14.18 \
 		hyper-rustls-0.22.1 \
+		hyper-rustls-0.23.0 \
 		hyper-timeout-0.4.1 \
-		hyper-tls-0.5.0 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		indexmap-1.8.0 \
 		instant-0.1.12 \
+		ipnet-2.5.0 \
 		ipnetwork-0.18.0 \
+		isolang-1.0.0 \
 		itertools-0.4.19 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
@@ -144,64 +163,74 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		js-sys-0.3.56 \
 		json-patch-0.2.6 \
 		jsonpath_lib-0.3.0 \
-		k8s-openapi-0.13.1 \
-		kube-0.62.0 \
-		kube-client-0.62.0 \
-		kube-core-0.62.0 \
-		kube-derive-0.62.0 \
-		kube-runtime-0.62.0 \
+		k8s-openapi-0.16.0 \
+		kube-0.75.0 \
+		kube-client-0.75.0 \
+		kube-core-0.75.0 \
+		kube-derive-0.75.0 \
+		kube-runtime-0.75.0 \
 		kuska-handshake-0.2.0 \
 		kuska-sodiumoxide-0.2.5-0 \
 		lazy_static-1.4.0 \
 		libc-0.2.121 \
 		libsodium-sys-0.2.7 \
+		libsqlite3-sys-0.24.2 \
 		linked-hash-map-0.5.4 \
+		lmdb-rkv-sys-0.11.2 \
 		lock_api-0.4.6 \
 		log-0.4.16 \
+		matchers-0.1.0 \
 		matches-0.1.9 \
 		md-5-0.9.1 \
-		md5-0.7.0 \
+		md-5-0.10.1 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
 		mime-0.3.16 \
 		minimal-lexical-0.2.1 \
+		miniz_oxide-0.5.4 \
 		mio-0.8.2 \
 		miow-0.3.7 \
+		mktemp-0.4.1 \
 		multer-2.0.2 \
 		multimap-0.8.3 \
-		native-tls-0.2.8 \
-		netapp-0.3.1 \
-		netapp-0.4.4 \
+		netapp-0.5.2 \
 		nom-7.1.1 \
 		ntapi-0.3.7 \
+		num-0.2.1 \
+		num-bigint-0.2.6 \
+		num-complex-0.2.4 \
 		num-integer-0.1.44 \
+		num-iter-0.1.43 \
+		num-rational-0.2.4 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
 		num_threads-0.1.5 \
+		object-0.29.0 \
 		once_cell-1.10.0 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.38 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.18.0+1.1.1n \
-		openssl-sys-0.9.72 \
 		opentelemetry-0.17.0 \
 		opentelemetry-contrib-0.9.0 \
 		opentelemetry-otlp-0.10.0 \
 		opentelemetry-prometheus-0.10.0 \
 		ordered-float-2.10.0 \
 		os_str_bytes-6.0.1 \
+		page_size-0.4.2 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.0 \
 		parking_lot_core-0.8.5 \
 		parking_lot_core-0.9.1 \
-		pem-0.8.3 \
+		parse_duration-2.1.1 \
+		pem-1.1.0 \
 		percent-encoding-2.1.0 \
 		petgraph-0.6.0 \
-		pin-project-0.4.29 \
-		pin-project-1.0.10 \
-		pin-project-internal-0.4.29 \
-		pin-project-internal-1.0.10 \
-		pin-project-lite-0.2.8 \
+		phf-0.7.24 \
+		phf_codegen-0.7.24 \
+		phf_generator-0.7.24 \
+		phf_shared-0.7.24 \
+		pin-project-1.0.12 \
+		pin-project-internal-1.0.12 \
+		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.24 \
 		pnet_base-0.28.0 \
@@ -212,7 +241,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.36 \
+		proc-macro2-1.0.46 \
 		prometheus-0.13.0 \
 		prost-0.9.0 \
 		prost-build-0.9.0 \
@@ -221,29 +250,43 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		protobuf-2.27.1 \
 		quick-error-1.2.3 \
 		quick-xml-0.21.0 \
-		quote-1.0.16 \
-		rand-0.5.6 \
+		quote-1.0.21 \
+		rand-0.6.5 \
 		rand-0.8.5 \
+		rand_chacha-0.1.1 \
 		rand_chacha-0.3.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
 		rand_core-0.6.3 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
 		redox_syscall-0.2.11 \
 		redox_users-0.4.2 \
 		regex-1.5.5 \
+		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
+		reqwest-0.11.12 \
 		ring-0.16.20 \
 		rmp-0.8.10 \
-		rmp-serde-0.14.4 \
 		rmp-serde-0.15.5 \
 		roxmltree-0.14.1 \
 		rusoto_core-0.48.0 \
 		rusoto_credential-0.48.0 \
 		rusoto_signature-0.48.0 \
+		rusqlite-0.27.0 \
+		rustc-demangle-0.1.21 \
 		rustc_version-0.4.0 \
 		rustls-0.19.1 \
+		rustls-0.20.6 \
 		rustls-native-certs-0.5.0 \
+		rustls-native-certs-0.6.2 \
+		rustls-pemfile-1.0.1 \
 		rustversion-1.0.6 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
@@ -252,6 +295,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		schemars_derive-0.8.8 \
 		scopeguard-1.1.0 \
 		sct-0.6.1 \
+		sct-0.7.0 \
+		secrecy-0.8.0 \
 		security-framework-2.6.1 \
 		security-framework-sys-2.6.1 \
 		semver-1.0.6 \
@@ -261,15 +306,18 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		serde_derive-1.0.137 \
 		serde_derive_internals-0.25.0 \
 		serde_json-1.0.81 \
+		serde_urlencoded-0.7.1 \
 		serde_yaml-0.8.23 \
+		sha1-0.10.4 \
 		sha2-0.9.9 \
+		sha2-0.10.2 \
+		sharded-slab-0.1.4 \
 		shlex-1.1.0 \
 		signal-hook-registry-1.4.0 \
+		siphasher-0.2.3 \
 		slab-0.4.5 \
 		sled-0.34.7 \
 		smallvec-1.8.0 \
-		snafu-0.6.10 \
-		snafu-derive-0.6.10 \
 		socket2-0.4.4 \
 		spin-0.5.2 \
 		spin-0.9.2 \
@@ -280,6 +328,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		structopt-derive-0.4.18 \
 		subtle-2.4.1 \
 		syn-1.0.94 \
+		synchronoise-1.0.0 \
 		synstructure-0.12.6 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
@@ -287,15 +336,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		textwrap-0.15.0 \
 		thiserror-1.0.31 \
 		thiserror-impl-1.0.31 \
+		thread_local-1.1.4 \
 		time-0.1.44 \
 		time-0.3.9 \
+		timeago-0.3.1 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		tokio-1.17.0 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-1.7.0 \
-		tokio-native-tls-0.3.0 \
 		tokio-rustls-0.22.0 \
+		tokio-rustls-0.23.4 \
 		tokio-stream-0.1.8 \
 		tokio-util-0.6.9 \
 		tokio-util-0.7.0 \
@@ -303,23 +354,28 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tonic-0.6.2 \
 		tonic-build-0.6.2 \
 		tower-0.4.12 \
-		tower-http-0.1.3 \
+		tower-http-0.3.3 \
 		tower-layer-0.3.1 \
 		tower-service-0.3.1 \
 		tracing-0.1.32 \
 		tracing-attributes-0.1.20 \
 		tracing-core-0.1.23 \
 		tracing-futures-0.2.5 \
+		tracing-log-0.1.3 \
+		tracing-subscriber-0.3.11 \
 		treediff-3.0.2 \
 		try-lock-0.2.3 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.7 \
+		unicode-ident-1.0.5 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		untrusted-0.7.1 \
 		url-2.2.2 \
+		uuid-0.8.2 \
+		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
@@ -328,11 +384,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.79 \
 		wasm-bindgen-backend-0.2.79 \
+		wasm-bindgen-futures-0.4.29 \
 		wasm-bindgen-macro-0.2.79 \
 		wasm-bindgen-macro-support-0.2.79 \
 		wasm-bindgen-shared-0.2.79 \
 		web-sys-0.3.56 \
 		webpki-0.21.4 \
+		webpki-0.22.0 \
 		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -344,6 +402,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		windows_i686_msvc-0.32.0 \
 		windows_x86_64_gnu-0.32.0 \
 		windows_x86_64_msvc-0.32.0 \
+		winreg-0.10.1 \
 		xml-rs-0.8.4 \
 		xmlparser-0.13.3 \
 		xxhash-rust-0.8.4 \
