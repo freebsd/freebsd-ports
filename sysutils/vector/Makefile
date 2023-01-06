@@ -558,6 +558,10 @@ CARGO_CRATES=	adler-0.2.3 \
 		rlua@git+https://github.com/kyren/rlua\#25bd7e6bffef9597466a98bfca80a3056c9e6320 \
 		tracing-futures,tracing-tower@git+https://github.com/tokio-rs/tracing?rev=65547d8809fcc726b8187db85b23c42e32ef5dce\#65547d8809fcc726b8187db85b23c42e32ef5dce
 
+# Fixes: error: the linked panic runtime `panic_unwind` is not compiled with
+# this crate's panic strategy `abort`
+LTO_UNSAFE=	yes
+
 post-extract:
 	${RMDIR} ${WRKSRC_wasmtime}/crates/wasi-common/WASI
 	${MV} ${WRKSRC_wasi_wasmtime} ${WRKSRC_wasmtime}/crates/wasi-common/WASI
