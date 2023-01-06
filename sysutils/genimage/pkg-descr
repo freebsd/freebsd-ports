@@ -1,0 +1,8 @@
+genimage is a tool to generate multiple filesystem and flash/disk images
+from a given root filesystem tree. genimage is intended to be run in a
+fakeroot environment. It also supports creating flash/disk images out of
+different file-system images and files.
+
+Configuration is done in a config file parsed by libconfuse. Options like the
+path to tools can be given via environment variables, the config file or from
+commandline switches.

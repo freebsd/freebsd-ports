@@ -472,6 +472,7 @@
     SUBDIR += gdisk
     SUBDIR += gdmap
     SUBDIR += gdu
+    SUBDIR += genimage
     SUBDIR += genisoimage
     SUBDIR += geomWatch
     SUBDIR += getdelta
