@@ -1,7 +1,6 @@
 PORTNAME=	ab-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,8 +10,7 @@ WWW=		https://github.com/alexheretic/ab-av1
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
-		SvtAv1EncApp:multimedia/svt-av1
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		cargo
 USE_GITHUB=	yes
