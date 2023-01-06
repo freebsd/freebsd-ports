@@ -15,6 +15,10 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	latex-lsp
 
+# Fixes: error: the linked panic runtime `panic_unwind` is not compiled with
+# this crate's panic strategy `abort`
+LTO_UNSAFE=	yes
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 PORTDOCS=	CHANGELOG.md README.md docs/*
