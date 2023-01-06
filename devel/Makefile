@@ -147,6 +147,7 @@
     SUBDIR += ald
     SUBDIR += allegro
     SUBDIR += allegro5
+    SUBDIR += amber
     SUBDIR += aml
     SUBDIR += ammonite
     SUBDIR += amqp-cpp
