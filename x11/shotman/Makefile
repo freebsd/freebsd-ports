@@ -1,14 +1,10 @@
 PORTNAME=	shotman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/commit/
-PATCHFILES+=	020226f74730.patch:-p1 # manpage
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Uncompromising screenshot GUI for Wayland
