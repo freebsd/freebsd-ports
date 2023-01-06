@@ -1,0 +1,222 @@
+PORTNAME=	veryl
+DISTVERSIONPREFIX=	veryl-v
+DISTVERSION=	0.1.3
+CATEGORIES=	cad
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Veryl: A modern Hardware Description Language (HDL)
+WWW=		https://github.com/dalance/veryl
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/../../LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/../../LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dalance
+
+WRKSRC_SUBDIR=	crates/veryl
+
+CARGO_CRATES=	addr2line-0.19.0 \
+		adler-1.0.2 \
+		ahash-0.7.6 \
+		aho-corasick-0.7.20 \
+		anes-0.1.6 \
+		async-trait-0.1.60 \
+		atty-0.2.14 \
+		auto_impl-0.5.0 \
+		autocfg-1.1.0 \
+		backtrace-0.3.67 \
+		bitflags-1.3.2 \
+		bumpalo-3.11.1 \
+		bytes-1.3.0 \
+		cast-0.3.0 \
+		cc-1.0.78 \
+		cfg-if-1.0.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clap-3.2.23 \
+		clap-4.0.32 \
+		clap_derive-4.0.21 \
+		clap_lex-0.2.4 \
+		clap_lex-0.3.0 \
+		console-0.15.2 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.13 \
+		crossbeam-utils-0.8.14 \
+		darling-0.14.2 \
+		darling_core-0.14.2 \
+		darling_macro-0.14.2 \
+		dashmap-5.4.0 \
+		derive_builder-0.12.0 \
+		derive_builder_core-0.12.0 \
+		derive_builder_macro-0.12.0 \
+		either-1.8.0 \
+		encode_unicode-0.3.6 \
+		env_logger-0.10.0 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		fnv-1.0.7 \
+		form_urlencoded-1.1.0 \
+		function_name-0.3.0 \
+		function_name-proc-macro-0.3.0 \
+		futures-0.3.25 \
+		futures-channel-0.3.25 \
+		futures-core-0.3.25 \
+		futures-io-0.3.25 \
+		futures-macro-0.3.25 \
+		futures-sink-0.3.25 \
+		futures-task-0.3.25 \
+		futures-util-0.3.25 \
+		getrandom-0.2.8 \
+		gimli-0.27.0 \
+		half-1.8.2 \
+		hashbrown-0.12.3 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		httparse-1.8.0 \
+		humantime-2.1.0 \
+		id_tree-1.8.0 \
+		id_tree_layout-2.0.4 \
+		ident_case-1.0.1 \
+		idna-0.3.0 \
+		indexmap-1.9.2 \
+		io-lifetimes-1.0.3 \
+		is-terminal-0.4.2 \
+		is_ci-1.1.1 \
+		itertools-0.10.5 \
+		itoa-1.0.5 \
+		js-sys-0.3.60 \
+		lazy_static-1.4.0 \
+		libc-0.2.139 \
+		linux-raw-sys-0.1.4 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		lsp-types-0.93.2 \
+		memchr-2.5.0 \
+		memoffset-0.7.1 \
+		miette-5.5.0 \
+		miette-derive-5.5.0 \
+		miniz_oxide-0.6.2 \
+		mio-0.8.5 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		object-0.30.0 \
+		once_cell-1.16.0 \
+		oorandom-11.1.3 \
+		os_str_bytes-6.4.1 \
+		owo-colors-3.5.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.5 \
+		parol-0.15.1 \
+		parol-macros-0.1.0 \
+		parol_runtime-0.11.2 \
+		percent-encoding-2.2.0 \
+		pin-project-1.0.12 \
+		pin-project-internal-1.0.12 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		plotters-0.3.4 \
+		plotters-backend-0.3.4 \
+		plotters-svg-0.3.3 \
+		ppv-lite86-0.2.17 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.49 \
+		quote-1.0.23 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rand_regex-0.15.1 \
+		rayon-1.6.1 \
+		rayon-core-1.10.1 \
+		redox_syscall-0.2.16 \
+		regex-1.7.0 \
+		regex-syntax-0.6.28 \
+		ropey-1.5.0 \
+		rustc-demangle-0.1.21 \
+		rustix-0.36.5 \
+		ryu-1.0.12 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-1.0.16 \
+		serde-1.0.151 \
+		serde_derive-1.0.151 \
+		serde_json-1.0.91 \
+		serde_repr-0.1.10 \
+		signal-hook-registry-1.4.0 \
+		similar-2.2.1 \
+		slab-0.4.7 \
+		smallvec-1.10.0 \
+		smawk-0.3.1 \
+		snowflake-1.3.0 \
+		socket2-0.4.7 \
+		str_indices-0.4.1 \
+		strsim-0.10.0 \
+		supports-color-1.3.1 \
+		supports-hyperlinks-1.2.0 \
+		supports-unicode-1.0.2 \
+		syn-1.0.107 \
+		termcolor-1.1.3 \
+		terminal_size-0.1.17 \
+		textwrap-0.15.2 \
+		textwrap-0.16.0 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		tinytemplate-1.2.1 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.23.0 \
+		tokio-macros-1.8.2 \
+		tokio-util-0.7.4 \
+		toml-0.5.10 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
+		tower-lsp-0.17.0 \
+		tower-lsp-macros-0.6.0 \
+		tower-service-0.3.2 \
+		tracing-0.1.37 \
+		tracing-core-0.1.30 \
+		ume-0.1.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.6 \
+		unicode-linebreak-0.1.4 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		url-2.3.1 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0 \
+		xml_writer-0.4.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

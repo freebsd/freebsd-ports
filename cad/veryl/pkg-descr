@@ -1,0 +1,15 @@
+Veryl is a modern hardware description language.
+
+This project is under the exploration phase of language design.
+
+Features:
+
+* Symplified syntax
+    * Based on SystemVerilog / Rust
+* Transpiler to SystemVerilog
+    * Human readable output
+    * Interoperability with SystemVerilog
+* Integrated Tools
+    * Semantic checker
+    * Source code formatter
+    * Language server

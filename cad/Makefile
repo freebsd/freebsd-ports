@@ -140,6 +140,7 @@
     SUBDIR += verilator
     SUBDIR += verilog-mode.el
     SUBDIR += veroroute
+    SUBDIR += veryl
     SUBDIR += xcircuit
     SUBDIR += xyce
     SUBDIR += yosys
