@@ -1,5 +1,5 @@
 PORTNAME=	bsddialog
-PORTVERSION=	0.3
+PORTVERSION=	0.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
@@ -10,7 +10,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	968e494d54862d1672ad439a6d02ec791976c004
+GL_COMMIT=	372e26cef89af5e681acd2d6fec01ba8f77f3c64
 
 LIBDIR=		${WRKSRC}/lib
 HEADERS=	${LIBDIR}/bsddialog.h ${LIBDIR}/bsddialog_progressview.h \
