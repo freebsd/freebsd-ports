@@ -35,6 +35,9 @@ PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		share/pixmaps/net.veloren.veloren.png
 PORTDATA=	*
 
+# Fixes error "Instruction does not dominate all uses!"
+LTO_UNSAFE=	yes
+
 # https://gitlab.com/veloren/veloren/issues/264
 CARGO_ENV+=		RUSTC_BOOTSTRAP=1
 # XXX https://github.com/rust-lang/cargo/issues/4101
