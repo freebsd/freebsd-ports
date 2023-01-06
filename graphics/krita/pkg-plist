@@ -173,6 +173,9 @@ lib/libkritacolord.so.%%SHLIB_VER%%
 lib/libkritacommand.so
 lib/libkritacommand.so.%%SHLIB_SHVER%%
 lib/libkritacommand.so.%%SHLIB_VER%%
+lib/libkritaexifcommon.so
+lib/libkritaexifcommon.so.%%SHLIB_SHVER%%
+lib/libkritaexifcommon.so.%%SHLIB_VER%%
 lib/libkritaflake.so
 lib/libkritaflake.so.%%SHLIB_SHVER%%
 lib/libkritaflake.so.%%SHLIB_VER%%
@@ -1101,7 +1104,6 @@ share/locale/uz/LC_MESSAGES/krita.mo
 share/locale/uz@cyrillic/LC_MESSAGES/krita.mo
 share/locale/vi/LC_MESSAGES/krita.mo
 share/locale/wa/LC_MESSAGES/krita.mo
-share/locale/x-test/LC_MESSAGES/krita.mo
 share/locale/xh/LC_MESSAGES/krita.mo
 share/locale/zh_CN/LC_MESSAGES/krita.mo
 share/locale/zh_TW/LC_MESSAGES/krita.mo
