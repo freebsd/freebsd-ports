@@ -49,6 +49,7 @@
     SUBDIR += gtksourceview5
     SUBDIR += gtksourceviewmm3
     SUBDIR += guile-gnome-platform
+    SUBDIR += imgui
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
