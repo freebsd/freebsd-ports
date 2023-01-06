@@ -1,0 +1,7 @@
+star-history is a command line program to generate a graph showing number of
+GitHub stars of a user, org or repo over time.
+
+star-history requires a token for accessing GitHub's GraphQL API. Head to go to
+https://github.com/settings/tokens and click "Generate new token". The default
+public access permission is sufficient - you can leave all the checkboxes
+empty. Save the generated token somewhere like ~/.githubtoken.

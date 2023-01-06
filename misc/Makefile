@@ -508,6 +508,7 @@
     SUBDIR += solarized
     SUBDIR += sshbuddy
     SUBDIR += sssnips
+    SUBDIR += star-history
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += susv4

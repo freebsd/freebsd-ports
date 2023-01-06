@@ -1,0 +1,163 @@
+PORTNAME=	star-history
+DISTVERSION=	1.0.8
+CATEGORIES=	misc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Graph history of GitHub stars of a user or repo over time
+WWW=		https://github.com/dtolnay/star-history
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dtolnay
+
+CARGO_CRATES=	android_system_properties-0.1.5 \
+		anyhow-1.0.68 \
+		autocfg-1.1.0 \
+		base64-0.13.1 \
+		bitflags-1.3.2 \
+		bstr-0.2.17 \
+		bumpalo-3.11.1 \
+		bytes-1.3.0 \
+		cc-1.0.78 \
+		cfg-if-1.0.0 \
+		chrono-0.4.23 \
+		codespan-reporting-0.11.1 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		cxx-1.0.85 \
+		cxx-build-1.0.85 \
+		cxxbridge-flags-1.0.85 \
+		cxxbridge-macro-1.0.85 \
+		encoding_rs-0.8.31 \
+		fastrand-1.8.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.1.0 \
+		futures-channel-0.3.25 \
+		futures-core-0.3.25 \
+		futures-io-0.3.25 \
+		futures-sink-0.3.25 \
+		futures-task-0.3.25 \
+		futures-util-0.3.25 \
+		h2-0.3.15 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.2.6 \
+		http-0.2.8 \
+		http-body-0.4.5 \
+		httparse-1.8.0 \
+		httpdate-1.0.2 \
+		hyper-0.14.23 \
+		hyper-tls-0.5.0 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
+		idna-0.3.0 \
+		indexmap-1.9.2 \
+		instant-0.1.12 \
+		ipnet-2.7.0 \
+		itoa-1.0.5 \
+		js-sys-0.3.60 \
+		lazy_static-1.4.0 \
+		libc-0.2.139 \
+		link-cplusplus-1.0.8 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		mime-0.3.16 \
+		mio-0.8.5 \
+		native-tls-0.2.11 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		once_cell-1.17.0 \
+		opener-0.5.0 \
+		openssl-0.10.45 \
+		openssl-macros-0.1.0 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.80 \
+		percent-encoding-2.2.0 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.26 \
+		proc-macro2-1.0.49 \
+		quote-1.0.23 \
+		redox_syscall-0.2.16 \
+		regex-automata-0.1.10 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.11.13 \
+		ryu-1.0.12 \
+		schannel-0.1.20 \
+		scratch-1.0.3 \
+		security-framework-2.7.0 \
+		security-framework-sys-2.6.1 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
+		serde_urlencoded-0.7.1 \
+		slab-0.4.7 \
+		socket2-0.4.7 \
+		syn-1.0.107 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		time-0.1.45 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.24.0 \
+		tokio-native-tls-0.3.0 \
+		tokio-util-0.7.4 \
+		tower-service-0.3.2 \
+		tracing-0.1.37 \
+		tracing-core-0.1.30 \
+		try-lock-0.2.3 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.6 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		url-2.3.1 \
+		vcpkg-0.2.15 \
+		want-0.3.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-futures-0.4.33 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.0 \
+		winreg-0.10.1
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
