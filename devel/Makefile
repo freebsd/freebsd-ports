@@ -829,6 +829,7 @@
     SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
+    SUBDIR += gitoxide
     SUBDIR += gitqlient
     SUBDIR += gittrac
     SUBDIR += gitty
