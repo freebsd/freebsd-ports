@@ -8,12 +8,3 @@
    add_definitions(-Wsign-compare)
    add_definitions(-Wconversion)
    add_definitions(-Wno-sign-conversion)
-@@ -58,7 +57,7 @@ endif()
- LIST (APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
- 
- option(ENABLE_PLUGIN_LOADING "Support loading of plugins" ON)
--set(PLUGIN_DIRECTORY "/usr/local/lib/libheif" CACHE STRING "Plugin install directory")
-+set(PLUGIN_DIRECTORY "${CMAKE_INSTALL_LIBDIR}/libheif" CACHE STRING "Plugin install directory")
- 
- macro(plugin_option variableName packageName displayName displayType defaultPlugin)
-     option(WITH_${variableName} "Build ${displayName} ${displayType}" ON)
