@@ -1,5 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.8
+DISTVERSION=	1.0.9
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,6 +49,7 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		h2-0.3.15 \
 		hashbrown-0.12.3 \
 		hermit-abi-0.2.6 \
+		home-0.5.4 \
 		http-0.2.8 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
@@ -99,6 +100,7 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		serde_derive-1.0.152 \
 		serde_json-1.0.91 \
 		serde_urlencoded-0.7.1 \
+		serde_yaml-0.9.16 \
 		slab-0.4.7 \
 		socket2-0.4.7 \
 		syn-1.0.107 \
@@ -109,17 +111,18 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		time-0.1.45 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.24.0 \
+		tokio-1.24.1 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.7.4 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.30 \
-		try-lock-0.2.3 \
+		try-lock-0.2.4 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
+		unsafe-libyaml-0.2.5 \
 		url-2.3.1 \
 		vcpkg-0.2.15 \
 		want-0.3.0 \
