@@ -1,0 +1,19 @@
+--- src/polkitbackend/meson.build.orig	2022-10-26 12:12:24 UTC
++++ src/polkitbackend/meson.build
+@@ -30,7 +30,6 @@ c_flags = [
+   '-DPACKAGE_DATA_DIR="@0@"'.format(pk_prefix / pk_datadir),
+   '-DPACKAGE_SYSCONF_DIR="@0@"'.format(pk_prefix / pk_sysconfdir),
+   '-D_XOPEN_SOURCE=700',
+-  '-D_GNU_SOURCE=1',
+ ]
+ 
+ if js_engine == 'duktape'
+@@ -61,7 +60,7 @@ libpolkit_backend = static_library(
+ 
+ install_data(
+   '50-default.rules',
+-  install_dir: pk_pkgdatadir / 'rules.d',
++  install_dir: pk_pkgsysconfdir / 'rules.d',
+ )
+ 
+ program = 'polkitd'
