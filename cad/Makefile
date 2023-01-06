@@ -131,6 +131,7 @@
     SUBDIR += sumo
     SUBDIR += surelog
     SUBDIR += svlint
+    SUBDIR += svls
     SUBDIR += sweethome3d
     SUBDIR += tkgate
     SUBDIR += tochnog

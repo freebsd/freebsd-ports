@@ -1,0 +1,4 @@
+svls is a SystemVerilog language server.
+
+Feature:
+* Linter based on svlint
