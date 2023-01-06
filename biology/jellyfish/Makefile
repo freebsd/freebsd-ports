@@ -1,7 +1,7 @@
 PORTNAME=		Jellyfish
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.3.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		biology
 MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v2.3.0/	# Custom distfile reduces dependencies
 DISTNAME=		${PORTNAME:tl}-${DISTVERSION}
