@@ -1,12 +1,5 @@
---- ../DESCRIPTION.orig	2022-10-24 04:22:27.000000000 -0500
-+++ ../DESCRIPTION	2022-11-30 19:04:20.442043000 -0600
-@@ -1,5 +1,5 @@
- name: statistics-bootstrap
--version: 5.0.1
-+version: 5.0.2
- date: 2022-10-10
- author: Andrew Penn <andy.c.penn@gmail.com>
- maintainer: Andrew Penn <andy.c.penn@gmail.com>
+--- ../DESCRIPTION.orig	2023-01-07 14:03:43.882585000 -0600
++++ ../DESCRIPTION	2023-01-07 14:04:00.559805000 -0600
 @@ -11,4 +11,4 @@
   of the bootstrap are included that improve the coverage and 
   accuracy of bootstrap confidence intervals for small samples.
