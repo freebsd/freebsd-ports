@@ -1,5 +1,6 @@
 PORTNAME=	szyszka
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	tor-browser
 DISTVERSION=	12.0-2
+PORTREVISION=	1
 CATEGORIES=	www net security wayland
 MASTER_SITES=	https://dist.torproject.org/torbrowser/12.0/
 DISTNAME=	src-firefox-tor-browser-102.5.0esr-${DISTVERSION}-build1
