@@ -999,6 +999,7 @@
     SUBDIR += recoverjpeg
     SUBDIR += renrot
     SUBDIR += repng2jpeg
+    SUBDIR += resvg
     SUBDIR += rgbpaint
     SUBDIR += rigsofrods-caelum
     SUBDIR += rigsofrods-pagedgeometry
