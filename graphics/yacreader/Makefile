@@ -1,14 +1,6 @@
 PORTNAME=	yacreader
-DISTVERSION=	9.10.0
-PORTREVISION=	3
+DISTVERSION=	9.11.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a35cb979e4d3.patch:-p1 # https://github.com/YACReader/yacreader/pull/350
-PATCHFILES+=	be85954b0c42.patch:-p1 # https://github.com/YACReader/yacreader/pull/356
-PATCHFILES+=	0574f2d345c2.patch:-p1 # https://github.com/YACReader/yacreader/pull/356
-PATCHFILES+=	d4f12ff066f1.patch:-p1 # https://github.com/YACReader/yacreader/pull/356
-PATCHFILES+=	06d744e88bf7.patch:-p1 # https://github.com/YACReader/yacreader/pull/356
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Yet another comic reader
