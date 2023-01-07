@@ -1,24 +1,42 @@
---- meson.build.orig	2022-07-31 10:16:29 UTC
+--- meson.build.orig	2022-12-25 18:17:02 UTC
 +++ meson.build
 @@ -3,9 +3,7 @@ srcdir = meson.source_root()
  
  srcdir = meson.source_root()
  
--txt = run_command('git', '--git-dir=' + srcdir + '/.git', 'rev-parse', 'HEAD').stdout().strip()
--dirty = run_command(srcdir + '/git-dirty.sh').stdout().strip()
+-txt = run_command('git', '--git-dir=' + srcdir + '/.git', 'rev-parse', 'HEAD', check:false).stdout().strip()
+-dirty = run_command(srcdir + '/git-dirty.sh', check:false).stdout().strip()
 -add_global_arguments('-DBUILD_ID="' + txt + dirty + '"', language : 'c')
 +add_global_arguments('-DBUILD_ID="\\0"', language : 'c')
  
  conf_data = configuration_data()
  conf_data.set('VERSION', meson.project_version())
-@@ -158,6 +156,10 @@ if compiler.has_header('fcntl.h')
- 
- if compiler.has_header('fcntl.h')
+@@ -171,6 +169,10 @@ endif
      conf_data.set('HAVE_FCNTL_H', 1)
-+endif
-+
-+if compiler.has_header('execinfo.h')
-+    conf_data.set('HAVE_EXECINFO_H', 1)
  endif
  
++if compiler.has_header('execinfo.h')
++    conf_data.set('HAVE_EXECINFO_H', 1)
++endif
++
  if compiler.has_header('libgen.h')
+     conf_data.set('HAVE_LIBGEN_H', 1)
+ endif
+@@ -838,7 +840,7 @@ endif
+     conf_data.set('HAVE_ICONV', 1)
+ endif
+ 
+-if conf_data.get('CONFIG_OS_DOS') or compiler.has_function('alloca', prefix: '#include <alloca.h>')
++if conf_data.get('CONFIG_OS_DOS') or compiler.has_function('alloca', prefix: '#include <stdlib.h>')
+     conf_data.set('HAVE_ALLOCA', 1)
+ endif
+ 
+@@ -854,7 +856,7 @@ endif
+     conf_data.set('HAVE_GNUTLS_CERTIFICATE_SET_X509_SYSTEM_TRUST', 1)
+ endif
+ 
+-if compiler.has_function('mkstemps', prefix: '#include <stdlib.h>', args: '-D_GNU_SOURCE')
++if compiler.has_function('mkstemps', prefix: '#include <unistd.h>')
+     conf_data.set('HAVE_MKSTEMPS', 1)
+ endif
+ 
