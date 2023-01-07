@@ -270,6 +270,7 @@ libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/aa_DJ/LC_MESSAGES/synfig.mo
 share/locale/ar/LC_MESSAGES/synfig.mo
+share/locale/ar_EG/LC_MESSAGES/synfig.mo
 share/locale/bs/LC_MESSAGES/synfig.mo
 share/locale/ca/LC_MESSAGES/synfig.mo
 share/locale/ca@valencia/LC_MESSAGES/synfig.mo
