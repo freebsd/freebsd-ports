@@ -1,5 +1,5 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.43
+DISTVERSION=	2.5.46hf1
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake:insource,testing localbase:ldflags # tests fail in outsource build, see https://github.com/veg/hyphy/issues/1528
 
@@ -23,6 +24,6 @@ AVX_DESC=	Advanced vector extensions support
 
 AVX_CMAKE_OFF=	-DNOAVX:BOOL=ON
 
-# 2 tests fail, see https://github.com/veg/hyphy/issues/1529
+# All tests pass as of DISTVERSION=2.5.46hf1
 
 .include <bsd.port.mk>
