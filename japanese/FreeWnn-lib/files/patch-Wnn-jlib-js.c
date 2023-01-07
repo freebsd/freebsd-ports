@@ -1,12 +1,6 @@
-Index: Wnn/jlib/js.c
-===================================================================
-RCS file: /home/cvs/private/hrs/freewnn/Wnn/jlib/js.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.3
-diff -u -p -r1.1.1.1 -r1.3
---- Wnn/jlib/js.c	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ Wnn/jlib/js.c	2 Jan 2010 11:51:21 -0000	1.3
-@@ -110,8 +110,7 @@ static WNN_JSERVER_ID *current_js = NULL
+--- Wnn/jlib/js.c.orig	2005-04-10 15:26:37 UTC
++++ Wnn/jlib/js.c
+@@ -110,8 +110,7 @@ static WNN_JSERVER_ID *current_js = NULL;
  
  /*      Packet Buffers          */
  static unsigned char snd_buf[S_BUF_SIZ];        /** 送信 **/
@@ -16,7 +10,7 @@ diff -u -p -r1.1.1.1 -r1.3
  
  #if defined(EAGAIN)
  # if defined(EWOULDBLOCK)
-@@ -130,11 +129,10 @@ static int rbc = -1;                    
+@@ -130,11 +129,10 @@ static int rbc = -1;                    /** 受信バッフ
  static void connect_timeout ();
  static int _get_server_name ();
  static int writen ();
@@ -42,7 +36,14 @@ diff -u -p -r1.1.1.1 -r1.3
 -  struct sockaddr_un saddr;             /** ソケット **/
 -  char *sock_name = NULL;
 -  saddr.sun_family = AF_UNIX;
--
++#if !defined(AF_UNIX)
++	return -1;
++#else
++	int sd;
++	struct sockaddr_un saddr;
++	char *sock_name = NULL;
++	saddr.sun_family = AF_UNIX;
+ 
 -  /* find socket name from table by lang */
 -  if (lang && *lang)
 -    {
@@ -56,14 +57,6 @@ diff -u -p -r1.1.1.1 -r1.3
 -      sock_name = sockname;     /* Jserver */
 -    }
 -  strcpy (saddr.sun_path, sock_name);
-+#if !defined(AF_UNIX)
-+	return -1;
-+#else
-+	int sd;
-+	struct sockaddr_un saddr;
-+	char *sock_name = NULL;
-+	saddr.sun_family = AF_UNIX;
-+
 +	/* find socket name from table by lang */
 +	if (lang && *lang) {
 +		if ((sock_name = get_unixdomain_of_serv_defs(lang)) == NULL)
@@ -95,13 +88,6 @@ diff -u -p -r1.1.1.1 -r1.3
 +	if (connect(sd, (struct sockaddr *)&saddr, SUN_LEN(&saddr)) == ERROR) {
  #if DEBUG
 -      xerror ("jslib:Can't connect unix domain socket.\n");
--#endif
--      close (sd);
--      return -1;
--    }
--  return sd;
--#else
--  return -1;
 +		xerror ("jslib:Can't connect unix domain socket.\n");
 +#endif /* DEBUG */
 +		close (sd);
@@ -110,6 +96,13 @@ diff -u -p -r1.1.1.1 -r1.3
 +
 +	return sd;
  #endif
+-      close (sd);
+-      return -1;
+-    }
+-  return sd;
+-#else
+-  return -1;
+-#endif
  }
  
  static int
@@ -117,7 +110,10 @@ diff -u -p -r1.1.1.1 -r1.3
 -     register char *server;
 -     register char *lang;
 -     register int timeout;
--{
++cd_open_in(const char *server,
++	   const char *lang,
++	   const int timeout)
+ {
 -  int sd;
 -#ifdef INET6
 -  struct addrinfo hints, *res, *res0;
@@ -133,26 +129,12 @@ diff -u -p -r1.1.1.1 -r1.3
 -  char pserver[64];
 -  char sserver[64];
 -  char *serv_name = NULL;
--
--  serverNO = _get_server_name (server, pserver);
-+cd_open_in(const char *server,
-+	   const char *lang,
-+	   const int timeout)
-+{
 +	int sd;
-+
+ 
+-  serverNO = _get_server_name (server, pserver);
 +	struct addrinfo hints, *res, *res0;
 +	struct sockaddr sa;
 +	char sbuf[NI_MAXSERV];
-+
-+	int error;
-+
-+	struct servent *sp = NULL;
-+	int serverNO, port_num;
-+	int ret;
-+	char pserver[NI_MAXHOST];
-+	char sserver[NI_MAXHOST];
-+	char *serv_name = NULL;
  
 -  /* find service name from table by lang */
 -  if (lang && *lang)
@@ -199,6 +181,15 @@ diff -u -p -r1.1.1.1 -r1.3
 -  error = getaddrinfo(pserver, sport, &hints, &res0);
 -  if (error)
 -    {
++	int error;
++
++	struct servent *sp = NULL;
++	int serverNO, port_num;
++	int ret;
++	char pserver[NI_MAXHOST];
++	char sserver[NI_MAXHOST];
++	char *serv_name = NULL;
++
  #if DEBUG
 -      xerror (gai_strerror(error));
 +	fprintf(stderr, "cd_open_in: Enter: server=%s, lang=%s\n",
@@ -255,17 +246,16 @@ diff -u -p -r1.1.1.1 -r1.3
 +#if DEBUG
 +	fprintf(stderr, "cd_open_in: fixed serverNO=%d\n", serverNO);
  #endif
--
++	memset(&hints, 0, sizeof(hints));
++	hints.ai_family = PF_UNSPEC;
++	hints.ai_socktype = SOCK_STREAM;
++	sprintf(sbuf, "%d", serverNO);
+ 
 -  if (timeout != 0 && timeout > 0)
 -    {
 -      signal (SIGALRM, connect_timeout);
 -      alarm (timeout);
 -    }
-+	memset(&hints, 0, sizeof(hints));
-+	hints.ai_family = PF_UNSPEC;
-+	hints.ai_socktype = SOCK_STREAM;
-+	sprintf(sbuf, "%d", serverNO);
-+
 +	error = getaddrinfo(pserver, sbuf, &hints, &res0);
 +	if (error) {
 +		xerror(gai_strerror(error));
@@ -304,7 +294,6 @@ diff -u -p -r1.1.1.1 -r1.3
 -	xerror ("jslib:Can't connect inet6 socket.\n");
 -#else
 -      xerror ("jslib:Can't connect inet socket.\n");
--#endif
 +				case AF_INET6:
 +					xerror ("jslib:Can't create inet6 socket.\n");
  #endif
@@ -334,7 +323,7 @@ diff -u -p -r1.1.1.1 -r1.3
 +				case AF_INET6:
 +					fprintf(stderr, "jslib:Can't connect inet6 socket. (sd=%d)\n", sd);
 +					break;
-+#endif
+ #endif
 +				default:
 +					xerror("jslib:Cannot connect.  Unknown socket type.\n");
 +					break;
@@ -358,14 +347,14 @@ diff -u -p -r1.1.1.1 -r1.3
 -	xerror ("jslib:Can't create inet socket.\n");
 -      else if (res->ai_family == AF_INET6)
 -	xerror ("jslib:Can't create inet6 socket.\n");
--#endif
++			fprintf(stderr, "connect: sd=%d\n", sd);
+ #endif
 -      }
 -    }
 -  }
 -  freeaddrinfo(res0);
 -  if (sd == ERROR) {
-+			fprintf(stderr, "connect: sd=%d\n", sd);
- #endif
+-#endif
 -      return -1;
 -    }
 -  return sd;
@@ -561,7 +550,8 @@ diff -u -p -r1.1.1.1 -r1.3
 +#if DEBUG_IO
 +				fprintf(stderr,
 +					"writen: failed. errno=%d\n", errno);
-+#endif
+ #endif
+-  return (0);
 +				daemon_dead();
 +				return -1;
 +			}
@@ -571,8 +561,7 @@ diff -u -p -r1.1.1.1 -r1.3
 +	sbp = snd_buf;
 +#if DEBUG_IO
 +	fprintf (stderr, "jslib:writen=%d\n", total);
- #endif
--  return (0);
++#endif
 +	return 0;
  }
  
@@ -683,7 +672,6 @@ diff -u -p -r1.1.1.1 -r1.3
 -  while (*p)
 -    put1com (*p++);
 -  put1com (0);
--}
 +	if (p == NULL) {
 +		put1com(0x00);
 +		return;
@@ -694,13 +682,13 @@ diff -u -p -r1.1.1.1 -r1.3
 +	while (*p)
 +		put1com(*p++);
 +	put1com(0);
-+}
-+
+ }
+ 
+-/**     サーバから1バイト受ける **/
 +static unsigned char rcv_buf[R_BUF_SIZ];
 +static unsigned char *rbp = rcv_buf;
 +static unsigned char *rp = rcv_buf;
- 
--/**     サーバから1バイト受ける **/
++
  static int
 -get1com ()
 +rcv_flush()
@@ -712,11 +700,35 @@ diff -u -p -r1.1.1.1 -r1.3
 -      while (1)
 -        {
 -          errno = 0;
--#ifdef HAVE_RECV
++#if DEBUG_IO
++	fprintf(stderr, "rcv_flush\n");
++#endif
++	rbp = rp = &rcv_buf[0];
++	return 0;
++}
++
++static unsigned int
++get1com()
++{
++	int n;
++
++#if DEBUG_IO
++	fprintf(stderr, "get1com: Enter\n");
++#endif
++	if (rp == rbp) {
++		/* rp == rbp case; no data in rcv_buf */
++
++		rbp = rp = rcv_buf;
++
++		while (rbp == rp) {
++			errno = 0;
+ #ifdef HAVE_RECV
 -          rbc = recv (current_sd, rcv_buf, R_BUF_SIZ, 0);
--#else
++			n = recv(current_sd, rcv_buf, sizeof(rcv_buf), 0);
+ #else
 -          rbc = read (current_sd, rcv_buf, R_BUF_SIZ);
--#endif
++			n = read(current_sd, rcv_buf, sizeof(rcv_buf));
+ #endif
 -          if (rbc <= 0)
 -            {
 -              if (ERRNO_CHECK (errno))
@@ -743,56 +755,13 @@ diff -u -p -r1.1.1.1 -r1.3
 -          fprintf (stderr, "jslib:read:rbc=%d\n", rbc);
 -/*      dmp(rcv_buf,rbc); */
 +#if DEBUG_IO
-+	fprintf(stderr, "rcv_flush\n");
++			fprintf(stderr, "recvloop: n=%d\n", n);
  #endif
 -          break;
 -        }
 -    }
 -  rbc--;
 -  return rcv_buf[rbp++] & 0xFF;
-+	rbp = rp = &rcv_buf[0];
-+	return 0;
- }
- 
--/**     サーバから2バイト受ける **/
--static int
--get2com ()
-+static unsigned int
-+get1com()
- {
--  register int h;
--  h = get1com ();
--  return (h << 8) | get1com ();
--}
-+	int n;
- 
--/**     サーバから4バイト受ける **/
--static int
--get4com ()
--{
--  register int h1, h2, h3;
--  h1 = get1com () << 24;
--  h2 = get1com () << 16;
--  h3 = get1com () << 8;
--  return h1 | h2 | h3 | get1com ();
-+#if DEBUG_IO
-+	fprintf(stderr, "get1com: Enter\n");
-+#endif
-+	if (rp == rbp) {
-+		/* rp == rbp case; no data in rcv_buf */
-+
-+		rbp = rp = rcv_buf;
-+
-+		while (rbp == rp) {
-+			errno = 0;
-+#ifdef HAVE_RECV
-+			n = recv(current_sd, rcv_buf, sizeof(rcv_buf), 0);
-+#else
-+			n = read(current_sd, rcv_buf, sizeof(rcv_buf));
-+#endif
-+#if DEBUG_IO
-+			fprintf(stderr, "recvloop: n=%d\n", n);
-+#endif
 +			if (n == 0) {
 +				if (ERRNO_CHECK(errno)) {
 +					continue;
@@ -829,12 +798,18 @@ diff -u -p -r1.1.1.1 -r1.3
 +	}
 +#endif
 +	return (*(rbp++) & 0xff);
-+}
-+
+ }
+ 
+-/**     サーバから2バイト受ける **/
+-static int
+-get2com ()
 +/* get two bytes */
 +static unsigned int
 +get2com()
-+{
+ {
+-  register int h;
+-  h = get1com ();
+-  return (h << 8) | get1com ();
 +	unsigned int h;
 +#if DEBUG_IO
 +	fprintf(stderr, "get2com: Enter\n");
@@ -846,12 +821,20 @@ diff -u -p -r1.1.1.1 -r1.3
 +	fprintf(stderr, "get2com: [%04x]\n", h);
 +#endif
 +	return h;
-+}
-+
+ }
+ 
+-/**     サーバから4バイト受ける **/
+-static int
+-get4com ()
 +/* get four bytes */
 +static unsigned int
 +get4com()
-+{
+ {
+-  register int h1, h2, h3;
+-  h1 = get1com () << 24;
+-  h2 = get1com () << 16;
+-  h3 = get1com () << 8;
+-  return h1 | h2 | h3 | get1com ();
 +	unsigned int h;
 +#if DEBUG_IO
 +	fprintf(stderr, "get4com: Enter\n");
@@ -921,42 +904,17 @@ diff -u -p -r1.1.1.1 -r1.3
 -js_open_lang (server, lang, timeout)
 -     register char *server, *lang;
 -     register int timeout;
--{
--  char *new_js;
--  char host[WNN_HOSTLEN], user[WNN_ENVNAME_LEN];
--  int x;
 +js_open_lang (char *server,
 +	      char *lang,
 +	      int timeout)
-+{
+ {
+-  char *new_js;
+-  char host[WNN_HOSTLEN], user[WNN_ENVNAME_LEN];
+-  int x;
 +	char *new_js;
 +	char host[WNN_HOSTLEN];
 +	char user[WNN_ENVNAME_LEN];
 +	int x;
-+
-+	if (wnn_msg_cat == NULL) {
-+		char nlspath[MAXPATHLEN];
-+		strcpy (nlspath, LIBDIR);
-+		strcat (nlspath, "/%L/%N");
-+		wnn_msg_cat = msg_open ("libwnn.msg", nlspath, lang);
-+		if (wnn_msg_cat == NULL) {
-+			fprintf (stderr,
-+				 "libwnn: Cannot open message file for libwnn.a\n");
-+		}
-+	}
-+
-+	if (!(new_js = (char *) malloc (sizeof (WNN_JSERVER_ID)))) {
-+		wnn_errorno = WNN_ALLOC_FAIL;
-+		return NULL;
-+	}
-+
-+	current_js = (WNN_JSERVER_ID *) new_js;
-+	if (server == NULL) {
-+		current_js->js_name[0] = '\0';
-+	} else {
-+		strncpy(current_js->js_name, server, sizeof (current_js->js_name) - 1);
-+		current_js->js_name[sizeof (current_js->js_name) - 1] = '\0';
-+	}
  
 -  if (wnn_msg_cat == NULL)
 -    {
@@ -987,6 +945,30 @@ diff -u -p -r1.1.1.1 -r1.3
 -    }
 -  current_js->js_dead = 0;
 -  current_js->js_dead_env_flg = 0;
++	if (wnn_msg_cat == NULL) {
++		char nlspath[MAXPATHLEN];
++		strcpy (nlspath, LIBDIR);
++		strcat (nlspath, "/%L/%N");
++		wnn_msg_cat = msg_open ("libwnn.msg", nlspath, lang);
++		if (wnn_msg_cat == NULL) {
++			fprintf (stderr,
++				 "libwnn: Cannot open message file for libwnn.a\n");
++		}
++	}
++
++	if (!(new_js = (char *) malloc (sizeof (WNN_JSERVER_ID)))) {
++		wnn_errorno = WNN_ALLOC_FAIL;
++		return NULL;
++	}
++
++	current_js = (WNN_JSERVER_ID *) new_js;
++	if (server == NULL) {
++		current_js->js_name[0] = '\0';
++	} else {
++		strncpy(current_js->js_name, server, sizeof (current_js->js_name) - 1);
++		current_js->js_name[sizeof (current_js->js_name) - 1] = '\0';
++	}
++
 +	current_js->js_dead = 0;
 +	current_js->js_dead_env_flg = 0;
  /*
@@ -1096,6 +1078,15 @@ diff -u -p -r1.1.1.1 -r1.3
  }
  
  
+@@ -979,7 +1026,7 @@ js_disconnect (env)
+      free((char *)env);
+    */
+   set_current_js (env->js_id);
+-  handler_of_jserver_dead (NULL);
++  handler_of_jserver_dead (-1);
+   snd_env_head (&tmp_env, JS_DISCONNECT);
+   snd_flush ();
+   x = get4com ();
 @@ -2988,29 +3035,25 @@ get_serv_defs (lang, cnt)
  }
  
