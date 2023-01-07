@@ -185,6 +185,7 @@
     SUBDIR += sredird
     SUBDIR += sunxi-tools
     SUBDIR += suscan
+    SUBDIR += suwidgets
     SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser
