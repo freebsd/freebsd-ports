@@ -1,0 +1,5 @@
+Ox is a code editor. It was written in Rust using ANSI escape sequences.
+It assists developers with programming by providing several tools to speed up
+and make programming easier and a refreshing alternative to heavily bloated
+and resource hungry editors such as VS Code and JetBrains. Ox is lightweight
+so it can be used on older computers.

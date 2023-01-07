@@ -219,6 +219,7 @@
     SUBDIR += o
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
+    SUBDIR += ox
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
