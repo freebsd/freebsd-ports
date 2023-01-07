@@ -168,6 +168,7 @@
     SUBDIR += sdr-wspr
     SUBDIR += ser2net
     SUBDIR += serialoverip
+    SUBDIR += sigutils
     SUBDIR += sms_client
     SUBDIR += smstools3
     SUBDIR += snap7
