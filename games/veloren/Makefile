@@ -1,7 +1,8 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.0
-CATEGORIES=	games # wayland: depends on https://gitlab.com/veloren/veloren/-/issues/1567
+PORTREVISION=	1
+CATEGORIES=	games wayland
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
 .endif
