@@ -139,6 +139,7 @@
     SUBDIR += acme
     SUBDIR += acsccid
     SUBDIR += activitymail
+    SUBDIR += actor-framework
     SUBDIR += adacurses
     SUBDIR += aegis
     SUBDIR += agar
