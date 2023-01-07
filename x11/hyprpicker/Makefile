@@ -23,6 +23,12 @@ LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
+OPTIONS_DEFINE=	CLIPBOARD
+OPTIONS_DEFAULT=CLIPBOARD
+
+CLIPBOARD_DESC=		Copy to clipboard support
+CLIPBOARD_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
+
 post-patch:
 # Extract (snapshot) version from the port instead of Git
 	@${REINPLACE_CMD} -i .nogit -e '/Get git info/,/^#$$/d' \
