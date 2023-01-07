@@ -10,6 +10,8 @@ WWW=		https://www.replibyte.com/docs/introduction
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_i386=	error: unsupported platform; error[E0308]: mismatched type, see https://github.com/Qovery/Replibyte/issues/255
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qovery
