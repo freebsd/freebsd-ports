@@ -595,6 +595,7 @@ bin/imrotate
 bin/imstack
 bin/imstat
 bin/imupsam
+bin/init_user_dotfiles.py
 bin/inspec
 bin/lesion_align
 bin/make_pq_script.py
