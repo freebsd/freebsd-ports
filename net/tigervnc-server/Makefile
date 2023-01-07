@@ -1,4 +1,4 @@
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
@@ -23,7 +23,6 @@ USE_GL+=	gl
 USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont2 \
 		xkbfile xorg-macros xorgproto xrandr xrender xtrans xtst
 
-SHEBANG_LANG=	bash
 SHEBANG_FILES=	unix/vncserver/vncsession-start.in
 BINARY_WRAPPERS=	gm4
 
@@ -39,20 +38,31 @@ GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 PAM_CMAKE_BOOL=	ENABLE_PAM
 
 CONFIGURE_ARGS+=	\
-		--prefix=${PREFIX} --mandir=${PREFIX}/share/man/ \
+		--prefix=${PREFIX} --mandir=${MANPREFIX}/share/man \
 		--docdir=${PREFIX}/share/doc/${PORTNAME}/ --with-pic --without-dtrace \
 		--disable-static --disable-dri --disable-unit-tests \
 		--disable-xinerama --disable-xvfb --disable-xnest --disable-xorg \
 		--disable-dmx --disable-xwin --disable-xephyr --disable-kdrive \
 		--disable-config-dbus --disable-config-hal \
 		--disable-dri2 --enable-install-libxf86config --enable-glx \
-		--with-default-font-path="catalogue:${LOCALBASE}/share/fonts,built-ins" \
 		--with-xkb-path=${LOCALBASE}/share/X11/xkb \
 		--with-xkb-bin-directory=${LOCALBASE}/bin \
 		--with-serverconfig-path=${LOCALBASE}/lib/X11 \
 		--disable-selective-werror \
 		--disable-xwayland \
 		--with-fontrootdir=${LOCALBASE}/share/fonts
+
+FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
+FONTPATHD?=	${PREFIX}/etc/X11/fontpath.d
+DEFAULT_FONTPATH_LIST= \
+	${FONTPATH_ROOT}/misc/  \
+	${FONTPATH_ROOT}/TTF/ \
+	${FONTPATH_ROOT}/OTF/ \
+	${FONTPATH_ROOT}/Type1/ \
+	${FONTPATH_ROOT}/100dpi/ \
+	${FONTPATH_ROOT}/75dpi/ \
+	catalogue:${FONTPATHD}
+CONFIGURE_ARGS+=	--with-default-font-path="${DEFAULT_FONTPATH_LIST:ts,}"
 
 CFLAGS+=	-I${LOCALBASE}/include/libdrm
 
@@ -77,12 +87,13 @@ post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SHELL=${LOCALBASE}/bin/bash
+	@cd ${WRKSRC}/unix/xserver/ && \
+	    ${DO_MAKE_BUILD} SHELL=${LOCALBASE}/bin/bash ${ALL_TARGET}
 
 post-install:
-	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/Xvnc ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/libvnc.so
-	@${INSTALL_SCRIPT} ${FILESDIR}/vncserver.ports ${STAGEDIR}${PREFIX}/bin/vncserver
+	cd ${WRKSRC}/unix/xserver/hw/vnc/ && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-strip
+	${INSTALL_SCRIPT} ${FILESDIR}/vncserver.ports ${STAGEDIR}${PREFIX}/bin/vncserver
 
 .include "${.CURDIR}/Makefile.common.mk"
 
