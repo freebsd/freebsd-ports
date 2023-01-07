@@ -74,6 +74,7 @@ CLD2_CONFIGURE_ENV=	CLD2_CFLAGS="-I${LOCALBASE}/include" \
 			CLD2_LIBS="-L${LOCALBASE}/lib -lcld2"
 CLD2_LIB_DEPENDS=	libcld2.so:devel/cld2
 HTTP_DESC=		Enable HTTP support
+HTTP_IMPLIES=		SQLITE
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
 			libshp.so:devel/shapelib \
@@ -92,6 +93,7 @@ IDLED_CONFIGURE_ENABLE=	idled
 LDAP_DESC=		Enable LDAP support (experimental)
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
+LDAP_CONFIGURE_OFF=	--without-ldap
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
 MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
@@ -101,12 +103,15 @@ NNTP_DESC=		Enable NNTP support
 NNTP_CONFIGURE_ENABLE=	nntp
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--without-pgsql
 REPLICATION_DESC=	Enable replication (experimental)
 REPLICATION_CONFIGURE_ENABLE=replication
 SRS_DESC=		Enable Sender Rewriting Scheme support
 SRS_CONFIGURE_ENABLE=	srs
 SRS_LIB_DEPENDS=	libsrs2.so:mail/libsrs2
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
+SQLITE_CONFIGURE_OFF=	--without-sqlite
 SQLITE_BROKEN_OFF=	SQLITE is required
 SQUAT_DESC=		Enable Squat support
 SQUAT_CONFIGURE_OFF=	--disable-squat
@@ -170,10 +175,6 @@ INSTALL_TARGET=	install-strip
 REINPLACE_ARGS=	-i ''
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
-USES+=	sqlite
-.endif
 
 .if !${PORT_OPTIONS:MGSSAPI_BASE} && !${PORT_OPTIONS:MGSSAPI_HEIMDAL} && \
     !${PORT_OPTIONS:MGSSAPI_MIT}
