@@ -184,6 +184,7 @@
     SUBDIR += splat
     SUBDIR += sredird
     SUBDIR += sunxi-tools
+    SUBDIR += suscan
     SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser

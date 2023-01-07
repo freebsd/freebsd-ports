@@ -1,0 +1,9 @@
+Suscan is a realtime DSP processing library. It provides a set of useful
+abstractions to perform dynamic digital signal analysis and demodulation.
+
+Suscan offers features like:
+* Multicore-friendly signal processing, based on worker threads
+* Generic ASK, FSK, PSK and audio demodulators
+* An extensible codec interface
+* Configuration file API (XML)
+* Source API based on SoapySDR
