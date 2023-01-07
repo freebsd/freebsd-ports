@@ -1,12 +1,10 @@
 bin/ETL-config
 include/ETL/ETL/_angle.h
 include/ETL/ETL/_bezier.h
-include/ETL/ETL/_bezier_angle.h
 include/ETL/ETL/_boxblur.h
 include/ETL/ETL/_bspline.h
 include/ETL/ETL/_calculus.h
 include/ETL/ETL/_curve_func.h
-include/ETL/ETL/_fixed.h
 include/ETL/ETL/_gaussian.h
 include/ETL/ETL/_handle.h
 include/ETL/ETL/_hermite.h
@@ -26,7 +24,6 @@ include/ETL/ETL/calculus
 include/ETL/ETL/clock
 include/ETL/ETL/etl_config.h
 include/ETL/ETL/etl_profile.h
-include/ETL/ETL/fixed
 include/ETL/ETL/gaussian
 include/ETL/ETL/handle
 include/ETL/ETL/hermite
