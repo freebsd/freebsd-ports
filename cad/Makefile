@@ -125,6 +125,7 @@
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
     SUBDIR += scotch
+    SUBDIR += silice
     SUBDIR += solvespace
     SUBDIR += sp2sp
     SUBDIR += spice

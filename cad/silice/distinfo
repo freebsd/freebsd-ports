@@ -1,0 +1,9 @@
+TIMESTAMP = 1673143292
+SHA256 (sylefeb-Silice-g20221229-6a2beda_GH0.tar.gz) = 5577d91ccac7e26204a034d262faa6107bbf06fdefe7107b3a5670364384f59c
+SIZE (sylefeb-Silice-g20221229-6a2beda_GH0.tar.gz) = 42949179
+SHA256 (sylefeb-LibSL-small-b1942d5_GH0.tar.gz) = dbea9ba30c4e40e3e9e6da840e90eb9e0a91b0355dc3ae0e72602d70d718d8fd
+SIZE (sylefeb-LibSL-small-b1942d5_GH0.tar.gz) = 72760
+SHA256 (sylefeb-tinygpus-e6429ac_GH0.tar.gz) = 5e1cdfae1b81402acbeb118f350537599fd74cb8e2bc486ea6cb753ffe8f0d05
+SIZE (sylefeb-tinygpus-e6429ac_GH0.tar.gz) = 1435993
+SHA256 (ultraembedded-fat_io_lib-0ef5c2b_GH0.tar.gz) = a88b5a3b0707931e7b2689d8f886b7dac53c9c4262aa9b3938d91a065c114079
+SIZE (ultraembedded-fat_io_lib-0ef5c2b_GH0.tar.gz) = 52464
