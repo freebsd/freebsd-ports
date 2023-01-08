@@ -1,7 +1,7 @@
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libcoinasl.so:math/asl \
 		libCoinUtils.so:math/coinutils \
 		libcolamd.so:math/suitesparse-colamd \
-		libcoinmumps.so:math/ipopt \
+		libcoinmumps.so:math/coin-or-mumps \
 		libcxsparse.so:math/suitesparse-cxsparse \
 		libemon.so:math/lemon \
 		libflann_cpp.so:math/flann \
