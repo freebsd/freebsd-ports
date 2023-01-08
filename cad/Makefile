@@ -102,6 +102,7 @@
     SUBDIR += pdnmesh
     SUBDIR += py-cadquery
     SUBDIR += py-cq-editor
+    SUBDIR += py-edalize
     SUBDIR += py-ezdxf
     SUBDIR += py-gdspy
     SUBDIR += py-gmsh

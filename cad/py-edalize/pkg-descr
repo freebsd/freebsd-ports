@@ -1,0 +1,3 @@
+Edalize is an award winning Python library for interacting with EDA tools.
+It can create project files for supported tools and run them in batch or
+GUI mode (where supported).
