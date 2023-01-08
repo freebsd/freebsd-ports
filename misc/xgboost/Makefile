@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ BROKEN_armv7=	compilation fails: non-constant-expression cannot be narrowed from
 BROKEN_i386=	compilation fails: non-constant-expression cannot be narrowed from type 'unsigned long long' to 'size_t', see https://github.com/dmlc/xgboost/issues/8489
 
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lang localbase:ldflags
 USE_LDCONFIG=	yes
