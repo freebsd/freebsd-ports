@@ -1,6 +1,7 @@
 PORTNAME=	semaphore
 PORTVERSION=	2.8.77
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -10,10 +11,10 @@ WWW=		https://ansible-semaphore.github.io/semaphore/
 LICENSE=	MIT
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
 
-RUN_DEPENDS=	ansible:sysutils/ansible \
+RUN_DEPENDS=	ansible:sysutils/py-ansible-core@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		go:modules
+USES=		go:modules python:env
 USE_GITHUB=	yes
 USE_RC_SUBR=	semaphore
 
