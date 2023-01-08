@@ -111,6 +111,7 @@
     SUBDIR += py-pyfda
     SUBDIR += py-pygmsh
     SUBDIR += py-pymtl
+    SUBDIR += py-vunit-hdl
     SUBDIR += python-gdsii
     SUBDIR += qcad
     SUBDIR += qcsxcad
