@@ -17747,3 +17747,4 @@ textproc/elasticsearch6||2023-01-01|Has expired: No longer maintained and suppor
 japanese/ja-tex-xdvik|print/tex-xdvik|2023-01-02|pTeX support has been integrated
 math/cvc4|math/cvc5|2023-01-03|CVC4 was succeeded by CVC5
 math/cvc3|math/cvc5|2023-01-04|CVC3 was succeeded by CVC4 and CVC5
+devel/caf|devel/actor-framework|2023-01-08|Merge duplicates into devel/actor-framework that is a full software name

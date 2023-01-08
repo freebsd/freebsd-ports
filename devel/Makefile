@@ -315,7 +315,6 @@
     SUBDIR += byaccj
     SUBDIR += c2mdoc
     SUBDIR += c4core
-    SUBDIR += caf
     SUBDIR += calibrator
     SUBDIR += caliper
     SUBDIR += capnproto
