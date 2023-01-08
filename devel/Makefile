@@ -800,6 +800,7 @@
     SUBDIR += git-absorb
     SUBDIR += git-bug
     SUBDIR += git-cinnabar
+    SUBDIR += git-cliff
     SUBDIR += git-codereview
     SUBDIR += git-cola
     SUBDIR += git-cvs
