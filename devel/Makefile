@@ -817,6 +817,7 @@
     SUBDIR += git-subrepo
     SUBDIR += git-svn
     SUBDIR += git-town
+    SUBDIR += git-workspace
     SUBDIR += gitaly
     SUBDIR += gitflow
     SUBDIR += gitg
