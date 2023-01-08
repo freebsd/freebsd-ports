@@ -99,6 +99,7 @@
     SUBDIR += explosions
     SUBDIR += ezc3d
     SUBDIR += far2l
+    SUBDIR += fastscapelib
     SUBDIR += felis
     SUBDIR += figlet
     SUBDIR += figlet-fonts
