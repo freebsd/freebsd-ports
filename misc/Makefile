@@ -399,6 +399,7 @@
     SUBDIR += py-emoji
     SUBDIR += py-ezc3d
     SUBDIR += py-fast-histogram
+    SUBDIR += py-fastscapelib
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gluoncv
