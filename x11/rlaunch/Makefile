@@ -3,6 +3,9 @@ DISTVERSION=	1.3.13
 PORTREVISION=	1
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/PonasKovas/rlaunch/commit/
+PATCHFILES=	2f73499553d4a14840ed4e092a0c93fe1e928c64.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, light-weight and modern application launcher for X11
 WWW=		https://github.com/PonasKovas/rlaunch
