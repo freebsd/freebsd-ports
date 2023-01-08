@@ -1181,6 +1181,7 @@
     SUBDIR += radreport
     SUBDIR += radsecproxy
     SUBDIR += radvd
+    SUBDIR += rathole
     SUBDIR += rclone
     SUBDIR += rclone-browser
     SUBDIR += rdapper
