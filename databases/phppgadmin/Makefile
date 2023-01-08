@@ -1,13 +1,13 @@
 PORTNAME=	phppgadmin
-DISTVERSIONPREFIX=	REL_
-DISTVERSION=	7-13-0
-PORTREVISION=	1
+PORTVERSION=	7.14.3
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-mod
 CATEGORIES=	databases www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
-WWW=		http://phppgadmin.sourceforge.net/
+WWW=		https://github.com/ReimuHakurei/phpPgAdmin
 
 LICENSE=	GPLv2
 
@@ -15,6 +15,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe tar:bzip2 php:web,flavors shebangfix
 USE_GITHUB=	yes
+GH_ACCOUNT=	ReimuHakurei
+WRKSRC=		${WRKDIR}/phpPgAdmin-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session mbstring
