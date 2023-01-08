@@ -1,5 +1,5 @@
 bin/reggae
-%%ETCDIR%%.conf.sample
+@sample %%ETCDIR%%.conf.sample
 man/man1/reggae-ansible.1.gz
 man/man1/reggae-chef.1.gz
 man/man1/reggae-init.1.gz
