@@ -1,5 +1,5 @@
 PORTNAME=	compat.el
-DISTVERSION=	29.1.0.1
+DISTVERSION=	29.1.1.0
 CATEGORIES=	misc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -24,10 +24,9 @@ PORTDOCS=	NEWS.org README.md
 
 OPTIONS_DEFINE=	DOCS
 
-ELISP_FILES=	compat-24.el compat-25.el compat-25.elc compat-26.el \
-		compat-26.elc compat-27.el compat-27.elc compat-28.el \
-		compat-28.elc compat-29.el compat-29.elc compat-font-lock.el \
-		compat-help.el compat-macs.el compat.el compat.elc
+ELISP_FILES=	compat-25.el compat-25.elc compat-26.el compat-26.elc \
+		compat-27.el compat-27.elc compat-28.el compat-28.elc \
+		compat-29.el compat-29.elc compat-macs.el compat.el compat.elc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat
