@@ -1,0 +1,139 @@
+PORTNAME=	languageclient-neovim
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.153
+CATEGORIES=	editors
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Language Server Protocol (LSP) support for vim and neovim
+WWW=		https://github.com/autozimu/LanguageClient-neovim
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	autozimu
+GH_PROJECT=	LanguageClient-neovim
+
+CARGO_CRATES=	adler32-1.0.3 \
+		aho-corasick-0.7.6 \
+		ansi_term-0.11.0 \
+		antidote-1.0.0 \
+		arc-swap-0.3.11 \
+		atty-0.2.13 \
+		autocfg-0.1.5 \
+		backtrace-0.3.34 \
+		backtrace-sys-0.1.31 \
+		bitflags-1.1.0 \
+		cc-1.0.40 \
+		cfg-if-0.1.9 \
+		chrono-0.4.7 \
+		clap-2.33.0 \
+		crc32fast-1.2.0 \
+		crossbeam-channel-0.3.9 \
+		crossbeam-utils-0.6.6 \
+		diff-0.1.11 \
+		dtoa-0.4.4 \
+		either-1.5.2 \
+		failure-0.1.5 \
+		failure_derive-0.1.5 \
+		filetime-0.2.5 \
+		flate2-1.0.11 \
+		fnv-1.0.6 \
+		fsevent-0.4.0 \
+		fsevent-sys-2.0.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.1.28 \
+		glob-0.3.0 \
+		heck-0.3.1 \
+		humantime-1.2.0 \
+		idna-0.2.0 \
+		inotify-0.6.1 \
+		inotify-sys-0.1.3 \
+		iovec-0.1.2 \
+		itertools-0.8.0 \
+		itoa-0.4.4 \
+		jsonrpc-core-13.0.0 \
+		kernel32-sys-0.2.2 \
+		lazy_static-1.3.0 \
+		lazycell-1.2.1 \
+		libc-0.2.62 \
+		linked-hash-map-0.5.2 \
+		log-0.4.8 \
+		log-mdc-0.1.0 \
+		log4rs-0.8.3 \
+		lsp-types-0.60.0 \
+		maplit-1.0.1 \
+		matches-0.1.8 \
+		memchr-2.2.1 \
+		miniz-sys-0.1.12 \
+		miniz_oxide-0.3.2 \
+		mio-0.6.19 \
+		mio-extras-2.0.5 \
+		miow-0.2.1 \
+		net2-0.2.33 \
+		notify-4.0.12 \
+		num-integer-0.1.41 \
+		num-traits-0.2.8 \
+		ordered-float-1.0.2 \
+		pathdiff-0.1.0 \
+		percent-encoding-2.1.0 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.1 \
+		quick-error-1.2.2 \
+		quote-0.6.13 \
+		quote-1.0.2 \
+		redox_syscall-0.1.56 \
+		regex-1.2.1 \
+		regex-syntax-0.6.11 \
+		rustc-demangle-0.1.16 \
+		ryu-1.0.0 \
+		same-file-1.0.5 \
+		serde-1.0.99 \
+		serde-value-0.5.3 \
+		serde_derive-1.0.99 \
+		serde_json-1.0.40 \
+		serde_repr-0.1.5 \
+		serde_yaml-0.8.9 \
+		shellexpand-1.0.0 \
+		slab-0.4.2 \
+		smallvec-0.6.10 \
+		strsim-0.8.0 \
+		structopt-0.2.18 \
+		structopt-derive-0.2.18 \
+		syn-0.15.44 \
+		syn-1.0.3 \
+		synstructure-0.10.2 \
+		textwrap-0.11.0 \
+		thread-id-3.3.0 \
+		thread_local-0.3.6 \
+		time-0.1.42 \
+		traitobject-0.1.0 \
+		typemap-0.3.3 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.8 \
+		unicode-segmentation-1.3.0 \
+		unicode-width-0.1.5 \
+		unicode-xid-0.1.0 \
+		unicode-xid-0.2.0 \
+		unsafe-any-0.4.2 \
+		url-2.1.0 \
+		vec_map-0.8.1 \
+		walkdir-2.2.9 \
+		winapi-0.2.8 \
+		winapi-0.3.7 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.2 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		ws2_32-sys-0.2.1 \
+		yaml-rust-0.4.3
+
+PLIST_FILES=	bin/languageclient
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/languageclient
+
+.include <bsd.port.mk>
