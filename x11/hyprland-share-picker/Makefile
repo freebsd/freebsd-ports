@@ -1,5 +1,5 @@
 PORTNAME=	hyprland-share-picker
-PORTVERSION=	s20221213
+PORTVERSION=	s20230108
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 USE_QT=		qmake:build buildtools:build core gui wayland:run widgets
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	xdg-desktop-portal-hyprland
-GH_TAGNAME=	101b58d
+GH_TAGNAME=	b03b1c2
 WRKSRC_SUBDIR=	${PORTNAME}
 LDFLAGS+=	-Wl,--as-needed # GL
 PLIST_FILES=	bin/${PORTNAME}
