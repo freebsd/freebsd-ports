@@ -4698,6 +4698,7 @@
     SUBDIR += py-iopath
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
+    SUBDIR += py-ipydatawidgets
     SUBDIR += py-ipykernel
     SUBDIR += py-ipympl
     SUBDIR += py-ipyparallel
