@@ -1,0 +1,344 @@
+PORTNAME=	shadowsocks-rust
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.15.2
+CATEGORIES=	net
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Rust port of shadowsocks
+WWW=		https://shadowsocks.org/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	shadowsocks
+
+CARGO_CRATES=	aead-0.5.1 \
+		aes-0.8.2 \
+		aes-gcm-0.10.1 \
+		aes-gcm-siv-0.11.1 \
+		aho-corasick-0.7.20 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.66 \
+		arc-swap-1.5.1 \
+		arrayref-0.3.6 \
+		arrayvec-0.7.2 \
+		async-trait-0.1.60 \
+		autocfg-1.1.0 \
+		base16ct-0.1.1 \
+		base64-0.13.1 \
+		base64ct-1.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		blake3-1.3.3 \
+		block-buffer-0.10.3 \
+		bloomfilter-1.0.9 \
+		boxfnonce-0.1.1 \
+		build-time-0.1.2 \
+		bumpalo-3.11.1 \
+		byte_string-1.0.0 \
+		byteorder-1.4.3 \
+		bytes-1.3.0 \
+		cc-1.0.78 \
+		ccm-0.5.0 \
+		cfg-if-1.0.0 \
+		chacha20-0.9.0 \
+		chacha20poly1305-0.10.1 \
+		checked_int_cast-1.0.0 \
+		chrono-0.4.23 \
+		cipher-0.4.3 \
+		clap-4.0.29 \
+		clap_lex-0.3.0 \
+		cmake-0.1.49 \
+		codespan-reporting-0.11.1 \
+		const-oid-0.9.1 \
+		constant_time_eq-0.2.4 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.5 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-utils-0.8.14 \
+		crypto-bigint-0.4.9 \
+		crypto-common-0.1.6 \
+		ctr-0.9.2 \
+		cxx-1.0.83 \
+		cxx-build-1.0.83 \
+		cxxbridge-flags-1.0.83 \
+		cxxbridge-macro-1.0.83 \
+		daemonize-0.4.1 \
+		data-encoding-2.3.3 \
+		der-0.6.1 \
+		derivative-2.2.0 \
+		destructure_traitobject-0.2.0 \
+		digest-0.10.6 \
+		directories-4.0.1 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
+		ecdsa-0.14.8 \
+		ed25519-1.5.2 \
+		elliptic-curve-0.12.3 \
+		enum-as-inner-0.5.1 \
+		env_logger-0.10.0 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		etherparse-0.13.0 \
+		fastrand-1.8.0 \
+		filetime-0.2.19 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.1.0 \
+		fs_extra-1.2.0 \
+		fsevent-sys-4.1.0 \
+		futures-0.3.25 \
+		futures-channel-0.3.25 \
+		futures-core-0.3.25 \
+		futures-executor-0.3.25 \
+		futures-io-0.3.25 \
+		futures-macro-0.3.25 \
+		futures-sink-0.3.25 \
+		futures-task-0.3.25 \
+		futures-util-0.3.25 \
+		generic-array-0.14.6 \
+		getrandom-0.2.8 \
+		ghash-0.5.0 \
+		h2-0.3.15 \
+		hashbrown-0.12.3 \
+		heck-0.4.0 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		hkdf-0.12.3 \
+		hmac-0.12.1 \
+		hostname-0.3.1 \
+		http-0.2.8 \
+		http-body-0.4.5 \
+		httparse-1.8.0 \
+		httpdate-1.0.2 \
+		humantime-2.1.0 \
+		hyper-0.14.23 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
+		idna-0.2.3 \
+		idna-0.3.0 \
+		indexmap-1.9.2 \
+		inotify-0.9.6 \
+		inotify-sys-0.1.5 \
+		inout-0.1.3 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.3 \
+		ioctl-sys-0.6.0 \
+		ipconfig-0.3.1 \
+		ipnet-2.7.0 \
+		iprange-0.6.7 \
+		is-terminal-0.4.1 \
+		itoa-1.0.4 \
+		jemalloc-sys-0.5.2+5.3.0-patched \
+		jemallocator-0.5.0 \
+		js-sys-0.3.60 \
+		json5-0.4.1 \
+		kqueue-1.0.7 \
+		kqueue-sys-1.0.3 \
+		lazy_static-1.4.0 \
+		libc-0.2.138 \
+		libmimalloc-sys-0.1.28 \
+		link-cplusplus-1.0.7 \
+		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.1.4 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		log-mdc-0.1.0 \
+		log4rs-1.2.0 \
+		lru-cache-0.1.2 \
+		lru_time_cache-0.11.11 \
+		managed-0.8.0 \
+		match_cfg-0.1.0 \
+		matches-0.1.9 \
+		md-5-0.10.5 \
+		memchr-2.5.0 \
+		memoffset-0.7.1 \
+		mimalloc-0.1.32 \
+		mio-0.8.5 \
+		native-tls-0.2.11 \
+		nix-0.26.1 \
+		notify-5.0.0 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.14.0 \
+		once_cell-1.16.0 \
+		opaque-debug-0.3.0 \
+		openssl-0.10.44 \
+		openssl-macros-0.1.0 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.79 \
+		ordered-float-2.10.0 \
+		os_str_bytes-6.4.1 \
+		p256-0.11.1 \
+		p384-0.11.2 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.5 \
+		percent-encoding-2.2.0 \
+		pest-2.5.1 \
+		pest_derive-2.5.1 \
+		pest_generator-2.5.1 \
+		pest_meta-2.5.1 \
+		pin-project-1.0.12 \
+		pin-project-internal-1.0.12 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		pkcs8-0.9.0 \
+		pkg-config-0.3.26 \
+		poly1305-0.8.0 \
+		polyval-0.6.0 \
+		ppv-lite86-0.2.17 \
+		proc-macro2-1.0.47 \
+		qrcode-0.12.0 \
+		quick-error-1.2.3 \
+		quote-1.0.21 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.7.0 \
+		regex-syntax-0.6.28 \
+		remove_dir_all-0.5.3 \
+		resolv-conf-0.7.0 \
+		ring-0.16.20 \
+		ring-compat-0.5.1 \
+		rpassword-7.2.0 \
+		rpmalloc-0.2.2 \
+		rpmalloc-sys-0.2.3+b097fd0 \
+		rtoolbox-0.0.1 \
+		rustix-0.36.5 \
+		rustls-0.20.7 \
+		rustls-native-certs-0.6.2 \
+		rustls-pemfile-1.0.1 \
+		ryu-1.0.11 \
+		same-file-1.0.6 \
+		schannel-0.1.20 \
+		scopeguard-1.1.0 \
+		scratch-1.0.2 \
+		sct-0.7.0 \
+		sec1-0.3.0 \
+		security-framework-2.7.0 \
+		security-framework-sys-2.6.1 \
+		sendfd-0.4.3 \
+		serde-1.0.151 \
+		serde-value-0.7.0 \
+		serde_derive-1.0.151 \
+		serde_json-1.0.91 \
+		serde_urlencoded-0.7.1 \
+		serde_yaml-0.8.26 \
+		sha1-0.10.5 \
+		shadowsocks-crypto-0.5.1 \
+		signal-hook-registry-1.4.0 \
+		signature-1.6.4 \
+		siphasher-0.3.10 \
+		slab-0.4.7 \
+		smallvec-1.10.0 \
+		smoltcp-0.8.2 \
+		snmalloc-rs-0.3.3 \
+		snmalloc-sys-0.3.3 \
+		socket2-0.4.7 \
+		spin-0.5.2 \
+		spin-0.9.4 \
+		spki-0.6.0 \
+		static_assertions-1.1.0 \
+		strsim-0.10.0 \
+		subtle-2.4.1 \
+		syn-1.0.105 \
+		sysexits-0.3.4 \
+		tcmalloc-0.3.0 \
+		tcmalloc-sys-0.3.0 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		terminal_size-0.2.3 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		thread-id-4.0.0 \
+		time-0.1.45 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.23.0 \
+		tokio-macros-1.8.2 \
+		tokio-native-tls-0.3.0 \
+		tokio-rustls-0.23.4 \
+		tokio-tfo-0.2.0 \
+		tokio-util-0.6.10 \
+		tokio-util-0.7.4 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
+		tower-service-0.3.2 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
+		tracing-core-0.1.30 \
+		trust-dns-proto-0.22.0 \
+		trust-dns-resolver-0.22.0 \
+		try-lock-0.2.3 \
+		tun-0.5.4 \
+		typemap-ors-1.0.0 \
+		typenum-1.16.0 \
+		ucd-trie-0.1.5 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.5 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		universal-hash-0.5.0 \
+		unsafe-any-ors-1.0.0 \
+		untrusted-0.7.1 \
+		url-2.3.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		want-0.3.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.6 \
+		widestring-0.5.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.0 \
+		winreg-0.10.1 \
+		xdg-2.4.1 \
+		yaml-rust-0.4.5 \
+		zeroize-1.5.7
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+EXECUTABLES=	sslocal ssmanager ssserver ssservice ssurl
+
+.for e in ${EXECUTABLES}
+PLIST_FILES+=	bin/${e}
+.endfor
+
+post-install:
+.for e in ${EXECUTABLES}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${e}
+.endfor
+
+.include <bsd.port.mk>
