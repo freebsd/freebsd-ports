@@ -5573,6 +5573,7 @@
     SUBDIR += py-wsme
     SUBDIR += py-xarray
     SUBDIR += py-xarray-einstats
+    SUBDIR += py-xarray-simlab
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg
