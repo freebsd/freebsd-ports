@@ -1,5 +1,5 @@
 PORTNAME=	quickqanava
-PORTVERSION=	0.1
+DISTVERSION=	2.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -16,10 +16,10 @@ USE_QT=		core declarative gui network quickcontrols2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cneben
 GH_PROJECT=	QuickQanava
-GH_TAGNAME=	ab88d77ec62175b9fd499a154ffaf92f7bf23989
 
-# There are no releases, even though the project is years old,
-# and the site mentions "alpha, pre-1.0". Once there's an actual
-# release, can switch to DISTVERSION and release-tarballs.
+post-stage:
+	${RMDIR} ${STAGEDIR}/${PREFIX}/${QT_QMLDIR_REL}/QuickQanava/gtpo
+	${RMDIR} ${STAGEDIR}/${PREFIX}/${QT_QMLDIR_REL}/QuickQanava/bezier/include
+	${RMDIR} ${STAGEDIR}/${PREFIX}/${QT_QMLDIR_REL}/QuickQanava/bezier
 
 .include <bsd.port.mk>
