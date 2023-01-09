@@ -499,6 +499,7 @@
     SUBDIR += ndpi
     SUBDIR += ndproxy
     SUBDIR += neatvnc
+    SUBDIR += nebula
     SUBDIR += nemesis
     SUBDIR += nepenthes
     SUBDIR += net6
