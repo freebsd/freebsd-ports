@@ -97,13 +97,9 @@ index b91d9c1..a97e6eb 100755
  echo If gfx/graphite2/src/files.mk has changed, please make corresponding
 diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
 index 3180257..4587a3b 100644
---- gfx/harfbuzz/README-mozilla
-+++ gfx/harfbuzz/README-mozilla
-@@ -21,3 +21,8 @@ from within the gfx/harfbuzz directory.
- 
- If the collection of source files changes, manual updates to moz.build may be
- needed as we don't use the upstream makefiles.
-+
+--- /dev/null
++++ gfx/harfbuzz/README-mozilla.fbsd
+@@ -0,0 +1,4 @@
 +The in-tree copy may be omitted during build by --with-system-harfbuzz.
 +Make sure to keep pkg-config version check within toolkit/moz.configure in sync
 +with checkout version or increment latest tag by one if it's not based
