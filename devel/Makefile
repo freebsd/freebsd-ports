@@ -5462,6 +5462,7 @@
     SUBDIR += py-traceback2
     SUBDIR += py-traitlets
     SUBDIR += py-traits
+    SUBDIR += py-traittypes
     SUBDIR += py-transaction
     SUBDIR += py-transitions
     SUBDIR += py-tree-format

@@ -1,0 +1,7 @@
+The traittypes package provides a reference implementation of trait types for
+common data structures used in the scipy stack such as
+* numpy arrays
+* pandas and xarray data structures
+which are out of the scope of the main traitlets project but are a common
+requirement to build applications with traitlets in combination with the scipy
+stack.
