@@ -1,0 +1,11 @@
+Qdrant is a vector similarity search engine and vector database.
+
+It provides a production-ready service with a convenient API to store,
+search, and manage points - vectors with an additional payload.
+Qdrant is tailored to extended filtering support. It makes it useful for all
+sorts of neural-network or semantic-based matching, faceted search, and other
+applications.
+
+With Qdrant, embeddings or neural network encoders can be turned into
+full-fledged applications for matching, searching, recommending, and much
+more.
