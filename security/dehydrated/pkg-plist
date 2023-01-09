@@ -1,8 +1,18 @@
 bin/dehydrated
-man/man1/dehydrated.1.gz
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/domains.txt.sample
 @sample %%ETCDIR%%/hook.sh.sample
 etc/periodic/weekly/000.dehydrated
+man/man1/dehydrated.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/dns-verification.md
+%%PORTDOCS%%%%DOCSDIR%%/domains_txt.md
+%%PORTDOCS%%%%DOCSDIR%%/ecc.md
+%%PORTDOCS%%%%DOCSDIR%%/hook_chain.md
+%%PORTDOCS%%%%DOCSDIR%%/per-certificate-config.md
+%%PORTDOCS%%%%DOCSDIR%%/staging.md
+%%PORTDOCS%%%%DOCSDIR%%/tls-alpn.md
+%%PORTDOCS%%%%DOCSDIR%%/troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/wellknown.md
 @dir %%ETCDIR%%/.acme-challenges
 @dir %%WWWDIR%%
