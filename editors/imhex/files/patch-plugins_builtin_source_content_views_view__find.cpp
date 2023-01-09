@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/views/view_find.cpp.orig	2022-10-08 08:03:47 UTC
+--- plugins/builtin/source/content/views/view_find.cpp.orig	2023-01-05 08:53:49 UTC
 +++ plugins/builtin/source/content/views/view_find.cpp
-@@ -153,34 +153,87 @@ namespace hex::plugin::builtin {
+@@ -153,34 +153,86 @@ namespace hex::plugin::builtin {
      }
  
      template<typename Type, typename StorageType>
@@ -16,14 +16,12 @@
 +        } catch (...) {
              return { false, { }, 0 };
 +        }
- 
--        if (value < std::numeric_limits<Type>::min() || value > std::numeric_limits<Type>::max())
 +        if (value < std::numeric_limits<Type>::lowest() || value > std::numeric_limits<Type>::max())
-             return { false, { }, 0 };
++            return { false, { }, 0 };
  
-         return { true, value, sizeof(Type) };
-     }
- 
++        return { true, value, sizeof(Type) };
++    }
++
 +    template<typename Type, typename StorageType>
 +    static std::tuple<bool, i64, size_t> parseNumericValue_i(const std::string &string) {
 +        static_assert(sizeof(StorageType) >= sizeof(Type));
@@ -35,12 +33,12 @@
 +            return { false, { }, 0 };
 +        }
 +
-+        if (value < std::numeric_limits<Type>::lowest() || value > std::numeric_limits<Type>::max())
-+            return { false, { }, 0 };
-+
-+        return { true, value, sizeof(Type) };
-+    }
-+
+         if (value < std::numeric_limits<Type>::lowest() || value > std::numeric_limits<Type>::max())
+             return { false, { }, 0 };
+ 
+         return { true, value, sizeof(Type) };
+     }
+ 
 +    template<typename Type, typename StorageType>
 +    static std::tuple<bool, float, size_t> parseNumericValue_f(const std::string &string) {
 +        static_assert(sizeof(StorageType) >= sizeof(Type));
@@ -102,7 +100,7 @@
              default:    return { false, { }, 0 };
          }
      }
-@@ -293,7 +346,7 @@ namespace hex::plugin::builtin {
+@@ -293,7 +345,7 @@ namespace hex::plugin::builtin {
  
          auto occurrence = reader.begin();
          while (true) {
@@ -111,7 +109,7 @@
              if (occurrence == reader.end())
                  break;
  
-@@ -377,8 +430,12 @@ namespace hex::plugin::builtin {
+@@ -377,8 +429,12 @@ namespace hex::plugin::builtin {
          reader.seek(searchRegion.getStartAddress());
          reader.setEndAddress(searchRegion.getEndAddress());
  
