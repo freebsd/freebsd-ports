@@ -1000,6 +1000,7 @@
     SUBDIR += renrot
     SUBDIR += repng2jpeg
     SUBDIR += resvg
+    SUBDIR += resvg-capi
     SUBDIR += rgbpaint
     SUBDIR += rigsofrods-caelum
     SUBDIR += rigsofrods-pagedgeometry
