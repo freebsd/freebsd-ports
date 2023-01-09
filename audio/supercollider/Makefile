@@ -1,9 +1,12 @@
 PORTNAME=	supercollider
 DISTVERSION=	3.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/supercollider/supercollider/releases/download/Version-${PORTVERSION}/
 DISTNAME=	SuperCollider-${PORTVERSION}-Source
+
+PATCH_SITES=	https://github.com/supercollider/supercollider/commit/
+PATCHFILES=	b9dd70c4c8d61c93d7a70645e0bd18fa76e6834e.patch:-p1
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Programming language for real time audio synthesis
