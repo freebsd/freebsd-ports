@@ -1,6 +1,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://zrepl.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:modules ncurses
 USE_RC_SUBR=	zrepl
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
@@ -26,21 +27,6 @@ OPTIONS_DEFAULT=	MANPAGES
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.5,1:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_USES=		gmake python:build,3.6+
 MANPAGES_PLIST_FILES=	man/man1/zrepl.1.gz
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=		ncurses
-.else
-USES+=		ncurses:port
-CFLAGS+=	-I${LOCALBASE}/include/ncurses
-.endif
-
-.if ${OPSYS} == "FreeBSD"
-SUB_LIST+=	DAEMON_LOGGING="-S -l \$${zrepl_facility} -s \$${zrepl_priority} -T \$${name}"
-.else
-SUB_LIST+=	DAEMON_LOGGING=""
-.endif
 
 post-build-MANPAGES-on:
 	@${MAKE_CMD} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} man
