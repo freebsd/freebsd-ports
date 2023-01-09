@@ -1,5 +1,5 @@
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20221215
+PORTVERSION=	0.0.20230105
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,7 @@ USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GL=		gbm
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	1512ef6
+GH_TAGNAME=	5098730
 
 # libyuv cloned from https://chromium.googlesource.com/libyuv/libyuv
 # when updating port check if hash tag in the submodule was updated
