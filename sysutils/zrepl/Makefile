@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	ZFS dataset replication tool
 WWW=		https://zrepl.github.io/
 
