@@ -1,6 +1,5 @@
 PORTNAME=	bwm-ng
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.gropp.org/bwm-ng/
 
@@ -8,10 +7,12 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Small and simple bandwidth monitor
 WWW=		https://www.gropp.org/?id=projects&sub=bwm-ng
 
+LICENSE=	GPLv2+
+
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 GNU_CONFIGURE=	yes
-USES=		ncurses pkgconfig
+USES=		autoreconf ncurses pkgconfig
 USE_CSTD=	gnu89
 PLIST_FILES=	bin/bwm-ng man/man1/bwm-ng.1.gz
 
