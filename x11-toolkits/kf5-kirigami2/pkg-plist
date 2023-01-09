@@ -146,7 +146,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/IconPropertiesGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/MenuIcon.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotification.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotificationsManager.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/qmldir
 share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
