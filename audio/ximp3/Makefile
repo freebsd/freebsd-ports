@@ -9,6 +9,9 @@ COMMENT=	Simple console MP3 player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATE=	Abandonware and obsolete, uses old decoder library and no ID3v2 support
+EXPIRATION_DATE=2023-03-09
+
 GNU_CONFIGURE=	yes
 PORTDOCS=	*
 
