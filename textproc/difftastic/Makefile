@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.40.0
-PORTREVISION=	1
+DISTVERSION=	0.41.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -22,9 +21,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bumpalo-3.9.1 \
+		bumpalo-3.11.1 \
 		bytecount-0.6.2 \
-		cc-1.0.73 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		clap-3.1.18 \
 		clap_lex-0.2.0 \
@@ -70,8 +69,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		quick-error-1.2.3 \
 		quote-1.0.18 \
 		radix-heap-0.4.2 \
-		rayon-1.5.3 \
-		rayon-core-1.9.3 \
+		rayon-1.6.1 \
+		rayon-core-1.10.1 \
 		regex-1.5.6 \
 		regex-syntax-0.6.26 \
 		rustc-hash-1.1.0 \
