@@ -31,7 +31,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BatchDrake
 GH_PROJECT=	SigDigger
 
-CXXFLAGS+=	-I${WRKSRC}/include \
-		-I${LOCALBASE}/include/SuWidgets # workaround for https://github.com/BatchDrake/SigDigger/issues/197
+QMAKE_ARGS=	SUWIDGETS_PREFIX=${LOCALBASE}
 
 .include <bsd.port.mk>
