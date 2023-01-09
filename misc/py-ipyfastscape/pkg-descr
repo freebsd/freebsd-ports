@@ -1,0 +1,11 @@
+Ipyfastscape is interactive widgets for topographic data analysis and modelling
+in Jupyter notebooks.
+
+While ipyfastscape is tightly integrated with fastscape, it also integrates very
+well with any data in the form of an xarray dataset or any model created with
+xarray-simlab.
+
+The widgets available here are built on top of libraries of the jupyter's widget
+ecosystem such as ipywidgets and ipygany. You can reuse those high-level UI
+components as-is within notebooks (embedded mini-apps) or for building
+interactive dashboards that you can then publish as standalone web applications.

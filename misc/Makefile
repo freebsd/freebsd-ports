@@ -407,6 +407,7 @@
     SUBDIR += py-halo
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
+    SUBDIR += py-ipyfastscape
     SUBDIR += py-kartograph
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
