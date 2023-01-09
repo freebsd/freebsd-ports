@@ -1,5 +1,5 @@
   <vuln vid="59c284f4-8d2e-11ed-9ce0-b42e991fc52e">
-    <topic> net-mgmt/cacti is vulnerable to remote command injection </topic>
+    <topic>net-mgmt/cacti is vulnerable to remote command injection</topic>
     <affects>
       <package>
 	<name>cacti</name>
@@ -10,12 +10,12 @@
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>cacti team reports:</p>
 	<blockquote cite="https://github.com/Cacti/cacti/security/advisories/GHSA-6p93-p743-35gf">
-          <p>
+	<p>
 	    A command injection vulnerability allows an
 	    unauthenticated user to execute arbitrary code on a server
 	    running Cacti, if a specific data source was selected for
 	    any monitored device.
-          </p>
+	</p>
 	</blockquote>
       </body>
     </description>
@@ -24,8 +24,9 @@
       <url>https://nvd.nist.gov/vuln/detail/CVE-2022-46169</url>
     </references>
     <dates>
-      <discovery>12/05/2022</discovery>
+      <discovery>2022-12-05</discovery>
       <entry>2023-01-05</entry>
+      <modified>2023-01-09</modified>
     </dates>
   </vuln>
 
@@ -122,4 +123,3 @@
       <entry>2023-01-02</entry>
     </dates>
   </vuln>
-
