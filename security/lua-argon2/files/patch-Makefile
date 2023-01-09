@@ -1,0 +1,22 @@
+--- Makefile.orig	2018-06-11 02:10:23 UTC
++++ Makefile
+@@ -1,8 +1,7 @@
+ LIB_NAME = argon2
+
+-CC      ?= gcc
+-LDFLAGS ?= -shared
+-CFLAGS  ?= -O2 -fPIC -ansi -Wall -Werror -Wpedantic
++LDFLAGS += -shared
++CFLAGS  += -fPIC -std=c11 -Wall -Wpedantic
+
+ PREFIX        ?= /usr/local
+ ARGON2_INCDIR ?= $(PREFIX)/include
+@@ -17,7 +16,7 @@ BUILD_LDFLAGS = -L$(ARGON2_LIBDIR) -largon2
+ all: $(LIB_NAME).so
+
+ $(LIB_NAME).so: $(LIB_NAME).o
+-	$(CC) $(LDFLAGS) -o $@ $< $(BUILD_LDFLAGS)
++	$(CC) $(LDFLAGS) -o $@ $(LIB_NAME).o $(BUILD_LDFLAGS)
+
+ $(LIB_NAME).o: src/$(LIB_NAME).c
+	$(CC) $(CFLAGS) -c $< -o $@ $(BUILD_CFLAGS)

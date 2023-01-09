@@ -1,0 +1,2 @@
+Lua C binding for the Argon2 password hashing function. Compatible with Lua 5.x
+and LuaJIT.

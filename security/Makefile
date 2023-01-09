@@ -333,6 +333,7 @@
     SUBDIR += linux-c7-trousers
     SUBDIR += local-php-security-checker
     SUBDIR += logcheck
+    SUBDIR += lua-argon2
     SUBDIR += lua-bcrypt
     SUBDIR += luasec
     SUBDIR += lxqt-openssh-askpass
