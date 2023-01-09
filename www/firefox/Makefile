@@ -1,7 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	108.0.2
-PORTREVISION=	1
-# DISTVERSIONSUFFIX=	b9
+DISTVERSION=	109.0
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
@@ -13,12 +11,12 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.85:security/nss \
+		nss>=3.86:security/nss \
 		icu>=71.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=5.3.1:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.37:graphics/png \
+		png>=1.6.39:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
 		libvpx>=1.12.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
