@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.6.0
+PORTVERSION=	15.6.4
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -192,7 +192,7 @@ MY_DEPENDS=	git>=2.37.0:devel/git \
 	rubygem-sentry-sidekiq>=5.1.1<5.2:devel/rubygem-sentry-sidekiq \
 	rubygem-pg_query>=2.2<3:databases/rubygem-pg_query \
 	rubygem-premailer-rails-rails61>=1.10.3<1.11:mail/rubygem-premailer-rails-rails61 \
-	rubygem-gitlab-labkit>=0.28.0<0.29:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=0.29.0<0.30:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.16.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.15<4.0:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails61>=7.0<8:devel/rubygem-rails-i18n-rails61 \
@@ -277,7 +277,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	7f1a7c62df90aa19155a623b4e6cae73c5d5fc0b
+GL_COMMIT=	201805ee2af83fc75bb50ee8a10aa24f563bb2f4
 
 USERS=	git
 GROUPS=	git
