@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.1.34
-PORTREVISION=	1
+DISTVERSION=	7.2.2.56
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -48,7 +47,7 @@ USE_QT=		qmake:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
 GH_PROJECT=	DocumentServer
-GH_TAGNAME=	v7.2.1
+GH_TAGNAME=	v7.2.2
 GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:core-fonts:v${DISTVERSION}:corefonts/core-fonts \
 		ONLYOFFICE:dictionaries:v${DISTVERSION}:dictionaries/dictionaries \
@@ -97,7 +96,7 @@ PLUGIN_VERSION=	7.2.0.8
 # node version used with "npm install pkg@5.5.1"
 NODE_VERSION_PKGFETCH=	16.13.0
 # node version used in the ports tree
-NODE_VERSION_PORTS=	16.16.0
+NODE_VERSION_PORTS=	16.19.0
 
 MAKE_ENV=	BUILD_NUMBER="1" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
