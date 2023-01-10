@@ -1,14 +1,14 @@
---- Makefile.orig	2022-11-11 19:21:41 UTC
+--- Makefile.orig	2022-11-21 09:43:30 UTC
 +++ Makefile
-@@ -548,7 +548,6 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -542,7 +542,6 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
- ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
+ ${RUBY_BUNDLE_FILE}: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
 -	${Q}cd ${GITALY_RUBY_DIR} && bundle install
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -593,7 +592,7 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
+@@ -583,7 +582,7 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
  	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
  	@ # GNU build-id from the empty string and causing guaranteed collisions.
  	${Q}GO_BUILD_ID=$$(go tool buildid "$<" || openssl rand -hex 32) && \
@@ -17,7 +17,7 @@
  	if test "${OS}" = "Linux"; then \
  		go run "${SOURCE_DIR}"/tools/replace-buildid \
  			-input "$<" -input-build-id "${TEMPORARY_BUILD_ID}" \
-@@ -619,7 +618,6 @@ ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_
+@@ -609,7 +608,6 @@ ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_
  ${BUILD_DIR}/intermediate/gitaly:            remove-legacy-go-mod ${GITALY_PACKED_EXECUTABLES}
  ${BUILD_DIR}/intermediate/praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
  ${BUILD_DIR}/intermediate/gitaly-git2go:     GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
