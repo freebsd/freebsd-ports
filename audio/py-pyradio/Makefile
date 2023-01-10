@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.8.9.32
+DISTVERSION=	0.8.9.34
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,7 +40,8 @@ MPV_DESC=	Mpv media player support
 VLC_DESC=	VLC media player support
 
 DOCS_PLIST_FILES=	man/man1/pyradio.1.gz \
-			man/man1/pyradio_rb.1.gz
+			man/man1/pyradio_rb.1.gz \
+			man/man1/pyradio_server.1.gz
 MPLAYER_RUN_DEPENDS+=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
 VLC_RUN_DEPENDS+=	vlc:multimedia/vlc
