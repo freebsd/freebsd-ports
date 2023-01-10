@@ -2,6 +2,9 @@ PORTNAME=	prison
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	graphics kde kde-frameworks
 
+PATCH_SITES=	https://invent.kde.org/frameworks/prison/-/commit/
+PATCHFILES=	14fb6f0a31373b242bdeb18cf9f3a36441bf86b5.diff:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	API to produce barcodes
 

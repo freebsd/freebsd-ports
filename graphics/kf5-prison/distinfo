@@ -1,3 +1,5 @@
-TIMESTAMP = 1670664074
+TIMESTAMP = 1673341411
 SHA256 (KDE/frameworks/5.101.0/prison-5.101.0.tar.xz) = b54fcf84d18f24562e74e0bfa252a51ff09dd0a1ab81f5919053e4e868b5cdf6
 SIZE (KDE/frameworks/5.101.0/prison-5.101.0.tar.xz) = 54912
+SHA256 (KDE/frameworks/5.101.0/14fb6f0a31373b242bdeb18cf9f3a36441bf86b5.diff) = ea74092ce0ebb02bdd919a19bb8aa5795fd4c91c20d5f02243429ace24bb34a0
+SIZE (KDE/frameworks/5.101.0/14fb6f0a31373b242bdeb18cf9f3a36441bf86b5.diff) = 641
