@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2023-06-20 14:36:16.000000000 +0100
++++ CMakeLists.txt	2024-07-10 12:38:54.718849000 +0100
+@@ -28,7 +28,7 @@
+ if (QT_MAJOR_VERSION EQUAL "5")
+     find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED X11Extras)
+ endif()
+-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Activities Auth IdleTime Config DBusAddons Solid I18n GlobalAccel KIO NotifyConfig DocTools Crash Notifications Kirigami2 KCMUtils)
++find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Activities Auth IdleTime Config DBusAddons Solid I18n GlobalAccel KIO NotifyConfig Crash Notifications Kirigami2 KCMUtils)
+ find_package(KF5Screen CONFIG REQUIRED)
+ find_package(LibKWorkspace CONFIG REQUIRED)
+ 
+@@ -98,8 +98,6 @@
+ 
+ add_subdirectory(daemon)
+ add_subdirectory(kcmodule)
+-add_subdirectory(doc)
+-kdoctools_install(po)
+ 
+ ecm_qt_install_logging_categories(
+         EXPORT POWERDEVIL
