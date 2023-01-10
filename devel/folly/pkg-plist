@@ -390,6 +390,7 @@ include/folly/experimental/io/AsyncIoUringSocketFactory.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
+include/folly/experimental/io/IoUringBase.h
 include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
@@ -464,6 +465,7 @@ include/folly/fibers/TimedMutex.h
 include/folly/fibers/WhenN-inl.h
 include/folly/fibers/WhenN.h
 include/folly/fibers/async/Async.h
+include/folly/fibers/async/AsyncStack.h
 include/folly/fibers/async/Baton.h
 include/folly/fibers/async/Collect-inl.h
 include/folly/fibers/async/Collect.h
