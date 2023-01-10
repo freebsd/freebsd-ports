@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-sidekiq-fetcher
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,8 @@ WWW=		https://github.com/TEA-ebook/sidekiq-reliable-fetch
 
 LICENSE=	RUBY
 
-RUN_DEPENDS=	rubygem-sidekiq64>=6.1<7:devel/rubygem-sidekiq64
+RUN_DEPENDS=	rubygem-json>=2.5:devel/rubygem-json \
+		rubygem-sidekiq>=6.1<7:devel/rubygem-sidekiq
 
 USES=		gem
 USE_RUBY=	yes
