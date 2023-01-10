@@ -1,4 +1,4 @@
-TIMESTAMP = 1669104852
+TIMESTAMP = 1673377887
 SHA256 (libreoffice/libreoffice-7.4.3.2.tar.xz) = ffbcbb182e2296ec68ea2ec46bce80a40d53540729c00280ad541cd83c69db3b
 SIZE (libreoffice/libreoffice-7.4.3.2.tar.xz) = 263885136
 SHA256 (libreoffice/libreoffice-help-7.4.3.2.tar.xz) = d08f4a2f16fb375903270facab527e28de57deb9ba452f9d449d5271d0f118a2
@@ -49,3 +49,5 @@ SHA256 (libreoffice/pdfium-5058.tar.bz2) = eaf4ce9fad32b5d951c524139df23119b66c6
 SIZE (libreoffice/pdfium-5058.tar.bz2) = 9771391
 SHA256 (libreoffice/185d60944ea767075d27247c3162b3bc-unowinreg.dll) = eafde646a7dbe46d20c291685b0beac2382174d78d66ee990e229a1bf6e6cec6
 SIZE (libreoffice/185d60944ea767075d27247c3162b3bc-unowinreg.dll) = 12288
+SHA256 (libreoffice/15e5d86cc55ad94ac946e04d5e25b84be5810970.diff) = 8c7262f8439bce704d4344d59c632a781a60901470b3265d31748cfed1620570
+SIZE (libreoffice/15e5d86cc55ad94ac946e04d5e25b84be5810970.diff) = 1272

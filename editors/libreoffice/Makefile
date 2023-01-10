@@ -10,6 +10,10 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	libreoffice
 EXTRACT_ONLY:=	${DISTFILES}
 
+#ZXing 2.0.0
+PATCH_SITES+=	https://github.com/LibreOffice/core/commit/
+PATCHFILES+=	15e5d86cc55ad94ac946e04d5e25b84be5810970.diff:-p1
+
 COMMENT=	Full integrated office productivity suite
 WWW?=		https://www.libreoffice.org/
 
