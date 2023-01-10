@@ -17,10 +17,10 @@ include/msgpack/version_master.h
 include/msgpack/vrefbuffer.h
 include/msgpack/zbuffer.h
 include/msgpack/zone.h
-lib/cmake/msgpack/msgpack-config-version.cmake
-lib/cmake/msgpack/msgpack-config.cmake
-lib/cmake/msgpack/msgpack-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/msgpack/msgpack-targets.cmake
+lib/cmake/msgpackc/msgpackc-config-version.cmake
+lib/cmake/msgpackc/msgpackc-config.cmake
+lib/cmake/msgpackc/msgpackc-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/msgpackc/msgpackc-targets.cmake
 lib/libmsgpackc.a
 lib/libmsgpackc.so
 lib/libmsgpackc.so.2
