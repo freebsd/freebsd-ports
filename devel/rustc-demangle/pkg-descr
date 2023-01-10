@@ -1,0 +1,4 @@
+Library that demangles for Rust symbols.
+
+The library is written in Rust.
+This port has it's C/C++ API.

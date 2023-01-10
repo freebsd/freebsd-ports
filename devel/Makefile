@@ -7243,6 +7243,7 @@
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen
     SUBDIR += rust-cbindgen
+    SUBDIR += rustc-demangle
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += sabre
