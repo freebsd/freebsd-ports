@@ -3,10 +3,10 @@
 { type: install
   message: <<EOM
 Emacs is now built with native compilation enabled by default, which
-requires GCC version 11 or newer.  It is known that some elisp
-applications don't work correctly when compiled.  You can work any
-such issues by disabling native compilation using the following
-steps.
+requires GCC version 11 or later.  However, it is known that some
+elisp applications don't work correctly when compiled.  You can work
+around any such issues by disabling native compilation using the
+following steps.
 
 1. Add the following lines at the top of your Emacs configuration:
 
@@ -31,10 +31,11 @@ EOM
 }
 { type: upgrade
   message: <<EOM
-Emacs is now built with native compilation enabled, however it is
-known that some elisp applications don't work correctly when compiled.
-You can work any such issues by disabling native compilation using
-the following steps.
+Emacs is now built with native compilation enabled by default, which
+requires GCC version 11 or later.  However, it is known that some
+elisp applications don't work correctly when compiled.  You can work
+around any such issues by disabling native compilation using the
+following steps.
 
 1. Add the following lines at the top of your Emacs configuration:
 
