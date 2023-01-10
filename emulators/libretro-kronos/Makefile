@@ -1,5 +1,6 @@
 PORTNAME=	libretro-kronos
 PORTVERSION=	2.1.5.20210601
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -8,8 +9,6 @@ WWW=		https://fcare.github.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/yabause/COPYING
-
-LIB_DEPENDS=	libGL.so:graphics/mesa-libs
 
 # standalone version uses solely cmake, whereas the retroarch core uses both
 # cmake and gmake
