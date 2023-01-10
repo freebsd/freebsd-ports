@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
-DISTVERSION=	15.5.6
-PORTREVISION=	2
+DISTVERSION=	15.6.0
+PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -16,25 +16,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.36.1:devel/git \
+MY_DEPENDS=	git>=2.37.0:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
 		rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.23<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport61>=6.1.6<6.2:devel/rubygem-activesupport61 \
-		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
-		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.2<4.2.8:www/rubygem-gitlab-gollum-lib \
-		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc142>=1.42.0<2:net/rubygem-grpc142 \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
-		rubygem-faraday1>=1.0.1<2:www/rubygem-faraday1 \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
 		rubygem-gitaly>=15.5.0<15.6:net/rubygem-gitaly \
-		rubygem-gitlab-labkit>=0.25.0<1:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.28<1:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.15<10:devel/rubygem-licensee \
-		rubygem-google-protobuf>=3.21.7<3.22:devel/rubygem-google-protobuf \
+		rubygem-google-protobuf>=3.21.9<3.22:devel/rubygem-google-protobuf \
 		rubygem-license_finder>=7.0<8:devel/rubygem-license_finder \
-		rubygem-redis4>=4.7<5:databases/rubygem-redis4
+		rubygem-redis4>=4.8.0<5:databases/rubygem-redis4
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
@@ -54,7 +50,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	0380747ae595f37abb31ea65cca426b256733ae7
+GL_COMMIT=	35525237b47fcc0e4b2b34502a851e1ea1fdd8a4
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
