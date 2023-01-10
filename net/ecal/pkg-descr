@@ -1,0 +1,9 @@
+The enhanced Communication Abstraction Layer (eCAL) is a middleware that enables
+scalable, high performance interprocess communication on a single computer node
+or between different nodes in a computer network. eCAL uses a publish-subscribe
+pattern to automatically connect different nodes in the network.
+
+eCAL automatically chooses the best available data transport mechanism for each
+link:
+* Shared memory for local communication (incredible fast!)
+* UDP for network communication

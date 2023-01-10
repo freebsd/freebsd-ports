@@ -1,0 +1,60 @@
+PORTNAME=	ecal
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.11.1
+CATEGORIES=	net devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Enhanced Communication Abstraction Layer
+WWW=		https://eclipse-ecal.github.io/ecal/index.html
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BUILD_DEPENDS=	asio>0:net/asio \
+		termcolor>0:devel/termcolor
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfmt.so:devel/libfmt \
+		libfineftp-server.so:ftp/fineftp-server \
+		libftxui-component.so:devel/ftxui \
+		libhdf5.so:science/hdf5 \
+		libprotobuf.so:devel/protobuf \
+		libqwt6.so:x11-toolkits/qwt6 \
+		libspdlog.so:devel/spdlog \
+		libtinyxml2.so:textproc/tinyxml2 \
+		libyaml-cpp.so:devel/yaml-cpp
+		# binaries aren't linked with libfineftp-server.so, see https://github.com/continental/ecal/issues/381; same with libcurl.so
+
+USES=		cmake desktop-file-utils localbase:ldflags qt:5 shared-mime-info
+USE_QT=		core gui widgets buildtools:build qmake:build
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	eclipse-ecal
+GH_TUPLE=	eclipse-ecal:tcp_pubsub:f59da78:tcp_pubsub/thirdparty/tcp_pubsub \
+		brofield:simpleini:17e8f9f:simpleini/thirdparty/simpleini \
+		steinwurf:recycle:c542570:recycle/thirdparty/recycle \
+		xguerin:tclap:349170a:tclap/thirdparty/tclap
+
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_SAMPLES \
+		ECAL_THIRDPARTY_BUILD_SPDLOG ECAL_THIRDPARTY_BUILD_TINYXML2 ECAL_THIRDPARTY_BUILD_FINEFTP ECAL_THIRDPARTY_BUILD_TERMCOLOR \
+		ECAL_THIRDPARTY_BUILD_FTXUI ECAL_THIRDPARTY_BUILD_GTEST ECAL_THIRDPARTY_BUILD_PROTOBUF \
+		ECAL_THIRDPARTY_BUILD_CURL ECAL_THIRDPARTY_BUILD_HDF5 ECAL_THIRDPARTY_BUILD_YAML-CPP ECAL_THIRDPARTY_BUILD_UDPCAP \
+		CPACK_PACK_WITH_INNOSETUP
+CMAKE_ARGS=	-DGIT_REVISION_MAJOR=5 \
+		-DGIT_REVISION_MINOR=11 \
+		-DGIT_REVISION_PATCH=1 \
+		-Dasio_INCLUDE_DIR=${LOCALBASE}/include \
+		-Dqwt_INCLUDE_DIR=${LOCALBASE}/include/qt5/qwt6 \
+		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt6.so
+
+CXXFLAGS+=	-pthread # see https://github.com/eclipse-ecal/ecal/issues/933
+
+PLIST_SUB=	VERSION=${DISTVERSION}
+
+CONFLICTS_BUILD=	tclap simpleini # epub isn't compatible with tclap-1.4rc1, epub isn't compatible with simpleini, because some header isn't installed
+
+post-install: # not sure why isn't this installed automatically
+	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/libsys_core.so ${STAGEDIR}${PREFIX}/lib
+
+.include <bsd.port.mk>
