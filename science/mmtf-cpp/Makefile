@@ -30,6 +30,8 @@ post-patch: # correct paths of test data to be accessible to the test executable
 		s|\.\./submodules/mmtf_spec|${WRKSRC}/submodules/mmtf_spec|g; \
 		s|\.\./temporary_test_data|${WRKSRC}/temporary_test_data|g' \
 		${WRKSRC}/tests/mmtf_tests.cpp
+	@${REINPLACE_CMD} -e '/find_package/s|msgpack|msgpackc-cxx|' \
+		${WRKSRC}/CMakeLists.txt
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} include ${STAGEDIR}${PREFIX}
