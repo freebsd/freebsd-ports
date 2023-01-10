@@ -1,3 +1,62 @@
+  <vuln vid="7b929503-911d-11ed-a925-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>109.0.5414.74</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>109.0.5414.74</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2023/01/stable-channel-update-for-desktop.html">
+	  <p>This release contains 17 security fixes, including:</p>
+	  <ul>
+	    <li>[1353208] High CVE-2023-0128: Use after free in Overview Mode. Reported by Khalil Zhani on 2022-08-16</li>
+	    <li>[1382033] High CVE-2023-0129: Heap buffer overflow in Network Service. Reported by asnine on 2022-11-07</li>
+	    <li>[1370028] Medium CVE-2023-0130: Inappropriate implementation in Fullscreen API. Reported by Hafiizh on 2022-09-30</li>
+	    <li>[1357366] Medium CVE-2023-0131: Inappropriate implementation in iframe Sandbox. Reported by NDevTK on 2022-08-28</li>
+	    <li>[1371215] Medium CVE-2023-0132: Inappropriate implementation in Permission prompts. Reported by Jasper Rebane (popstonia) on 2022-10-05</li>
+	    <li>[1375132] Medium CVE-2023-0133: Inappropriate implementation in Permission prompts. Reported by Alesandro Ortiz on 2022-10-17</li>
+	    <li>[1385709] Medium CVE-2023-0134: Use after free in Cart. Reported by Chaoyuan Peng (@ret2happy) on 2022-11-17</li>
+	    <li>[1385831] Medium CVE-2023-0135: Use after free in Cart. Reported by Chaoyuan Peng (@ret2happy) on 2022-11-18</li>
+	    <li>[1356987] Medium CVE-2023-0136: Inappropriate implementation in Fullscreen API. Reported by Axel Chong on 2022-08-26</li>
+	    <li>[1399904] Medium CVE-2023-0137: Heap buffer overflow in Platform Apps. Reported by avaue and Buff3tts at S.S.L. on 2022-12-10</li>
+	    <li>[1346675] Low CVE-2023-0138: Heap buffer overflow in libphonenumber. Reported by Michael Dau on 2022-07-23</li>
+	    <li>[1367632] Low CVE-2023-0139: Insufficient validation of untrusted input in Downloads. Reported by Axel Chong on 2022-09-24</li>
+	    <li>[1326788] Low CVE-2023-0140: Inappropriate implementation in File System API. Reported by harrison.mitchell, cybercx.com.au on 2022-05-18</li>
+	    <li>[1362331] Low CVE-2023-0141: Insufficient policy enforcement in CORS. Reported by scarlet on 2022-09-12</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0128</cvename>
+      <cvename>CVE-2023-0129</cvename>
+      <cvename>CVE-2023-0130</cvename>
+      <cvename>CVE-2023-0131</cvename>
+      <cvename>CVE-2023-0132</cvename>
+      <cvename>CVE-2023-0133</cvename>
+      <cvename>CVE-2023-0134</cvename>
+      <cvename>CVE-2023-0135</cvename>
+      <cvename>CVE-2023-0136</cvename>
+      <cvename>CVE-2023-0137</cvename>
+      <cvename>CVE-2023-0138</cvename>
+      <cvename>CVE-2023-0139</cvename>
+      <cvename>CVE-2023-0140</cvename>
+      <cvename>CVE-2023-0141</cvename>
+      <url>https://chromereleases.googleblog.com/2023/01/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-01-10</discovery>
+      <entry>2023-01-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59c284f4-8d2e-11ed-9ce0-b42e991fc52e">
     <topic>net-mgmt/cacti is vulnerable to remote command injection</topic>
     <affects>
