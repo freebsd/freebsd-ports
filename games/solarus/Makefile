@@ -1,12 +1,11 @@
 PORTNAME=	solarus
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Zelda-like 2D game engine
-WWW=		http://wiki.solarus-games.org/doku.php
+WWW=		https://www.solarus-games.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -22,7 +21,7 @@ USES=		cmake:noninja compiler:c++11-lib gl openal qmake qt:5 sdl xorg
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	solarus-games
-GL_COMMIT=	f43727b232b3ed13d98440a845e2a29e470e4f0d
+GL_COMMIT=	21a378a7858460809ffef1c96a07a493d709730c
 
 MAKE_ARGS+=	DESTDIR=${STAGEDIR}
 USE_QT=		buildtools:build core gui linguisttools:build widgets
@@ -39,7 +38,7 @@ OPTIONS_DEFAULT_powerpc64le=	LUAJIT
 
 LUAJIT_CMAKE_BOOL=	SOLARUS_USE_LUAJIT
 LUAJIT_DESC=	Use LuaJIT instead of standard Lua
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_USES=	luajit
 LUAJIT_USES_OFF=	lua:51
 
 CMAKE_ARGS+=	-DSOLARUS_MANUAL_INSTALL_DESTINATION:STRING="man"
