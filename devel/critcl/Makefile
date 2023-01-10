@@ -1,6 +1,6 @@
 PORTNAME=	critcl
-PORTVERSION=	3.1.18.1
-PORTREVISION=	1
+PORTVERSION=	3.2
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -17,13 +17,13 @@ BROKEN_riscv64=		fails to package: callback.so: no such file or directory
 RUN_DEPENDS=	${LOCALBASE}/lib/Trf/pkgIndex.tcl:devel/tcl-trf	\
 		${LOCALBASE}/lib/tcllib/cmdline/pkgIndex.tcl:devel/tcllib
 
-USES+=		tcl
+USES+=		tcl:86+
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-kupries
 
 TEST_TARGET=	test
 
-PLIST_SUB+=	VER=${PORTVERSION:R} \
+PLIST_SUB+=	VER=${PORTVERSION} \
 		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/:S/aarch64/arm/:S/mips64/mips/:C/powerpc64.*/powerpc/}
 PORTDOCS=	*
 
@@ -36,7 +36,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/lib/critcl/Config
 
 do-install:
-	(cd ${WRKSRC} && ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib)
+	(cd ${WRKSRC} && ${TCLSH} build.tcl install --prefix ${PREFIX} --exec-prefix ${PREFIX} --dest-dir ${STAGEDIR})
 	${INSTALL_MAN} ${WRKSRC}/embedded/man/files/critcl_*.n	\
 		${STAGEDIR}${MANPREFIX}/man/mann/
 
