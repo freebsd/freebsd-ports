@@ -1,6 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,7 +40,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		clap_lex-0.2.4 \
 		clap_mangen-0.1.11 \
 		codespan-reporting-0.11.1 \
-		config-0.13.2 \
+		config-0.13.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		form_urlencoded-1.1.0 \
 		generic-array-0.14.6 \
 		getrandom-0.2.8 \
-		git-conventional-0.12.0 \
+		git-conventional-0.12.1 \
 		git2-0.15.0 \
 		glob-0.3.0 \
 		globset-0.4.9 \
@@ -86,8 +86,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		itoa-1.0.4 \
 		jobserver-0.1.25 \
 		js-sys-0.3.60 \
-		lazy-regex-2.3.1 \
-		lazy-regex-proc_macros-2.3.1 \
+		lazy-regex-2.4.1 \
+		lazy-regex-proc_macros-2.4.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.137 \
 		libgit2-sys-0.14.0+1.5.0 \
@@ -102,7 +102,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		nom-7.1.1 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
-		once_cell-1.16.0 \
+		once_cell-1.17.0 \
 		os_str_bytes-6.4.0 \
 		output_vt100-0.1.3 \
 		parse-zoneinfo-0.3.0 \
@@ -144,9 +144,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		scratch-1.0.2 \
 		sct-0.7.0 \
 		semver-1.0.14 \
-		serde-1.0.147 \
-		serde_derive-1.0.147 \
-		serde_json-1.0.88 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
 		serde_regex-1.1.0 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
@@ -154,17 +154,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		slug-0.1.4 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
-		syn-1.0.103 \
+		syn-1.0.107 \
 		tera-1.17.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.2.2 \
 		textwrap-0.16.0 \
-		thiserror-1.0.37 \
-		thiserror-impl-1.0.37 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		thread_local-1.1.4 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.9 \
+		toml-0.5.10 \
 		typenum-1.15.0 \
 		ucd-trie-0.1.5 \
 		uncased-0.9.7 \
@@ -180,7 +180,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		untrusted-0.7.1 \
-		update-informer-0.5.0 \
+		update-informer-0.6.0 \
 		ureq-2.5.0 \
 		url-2.3.1 \
 		vcpkg-0.2.15 \
