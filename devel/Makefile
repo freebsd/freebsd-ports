@@ -706,6 +706,7 @@
     SUBDIR += fstrm
     SUBDIR += ftjam
     SUBDIR += ftnchek
+    SUBDIR += ftxui
     SUBDIR += fuel
     SUBDIR += functionalplus
     SUBDIR += fungw
