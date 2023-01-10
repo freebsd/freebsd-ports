@@ -1,7 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.1.8
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,11 +24,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.20 \
 		anes-0.1.6 \
-		async-trait-0.1.60 \
+		async-trait-0.1.61 \
 		atty-0.2.14 \
 		auto_impl-0.5.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
+		bimap-0.6.2 \
 		bitflags-1.3.2 \
 		bumpalo-3.11.1 \
 		bytes-1.3.0 \
@@ -44,7 +44,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		clap_derive-4.0.21 \
 		clap_lex-0.2.4 \
 		clap_lex-0.3.0 \
-		console-0.15.2 \
+		console-0.15.4 \
 		criterion-0.4.0 \
 		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.6 \
@@ -77,6 +77,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		futures-util-0.3.25 \
 		getrandom-0.2.8 \
 		gimli-0.27.0 \
+		glob-0.3.1 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
@@ -109,8 +110,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		mio-0.8.5 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
-		object-0.30.0 \
-		once_cell-1.16.0 \
+		object-0.30.1 \
+		once_cell-1.17.0 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.4.1 \
 		owo-colors-3.5.0 \
@@ -139,17 +140,17 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rayon-1.6.1 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
-		regex-1.7.0 \
+		regex-1.7.1 \
 		regex-syntax-0.6.28 \
-		ropey-1.5.0 \
+		ropey-1.5.1 \
 		rustc-demangle-0.1.21 \
-		rustix-0.36.5 \
+		rustix-0.36.6 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		semver-1.0.16 \
-		serde-1.0.151 \
-		serde_derive-1.0.151 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
 		serde_json-1.0.91 \
 		serde_repr-0.1.10 \
 		signal-hook-registry-1.4.0 \
@@ -174,7 +175,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.23.0 \
+		tokio-1.24.1 \
 		tokio-macros-1.8.2 \
 		tokio-util-0.7.4 \
 		toml-0.5.10 \
