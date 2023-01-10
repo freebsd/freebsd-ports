@@ -1,7 +1,6 @@
 PORTNAME=	gitoxide
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	git-repository-v
+DISTVERSION=	0.32.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,8 +24,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.20 \
 		anes-0.1.6 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.66 \
-		arc-swap-1.5.1 \
+		anyhow-1.0.68 \
+		arc-swap-1.6.0 \
 		arrayvec-0.7.2 \
 		async-attributes-1.1.2 \
 		async-channel-1.8.0 \
@@ -37,7 +36,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		async-net-1.7.0 \
 		async-std-1.12.0 \
 		async-task-4.3.0 \
-		async-trait-0.1.59 \
+		async-trait-0.1.60 \
 		atoi-2.0.0 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
@@ -46,7 +45,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
 		blocking-1.3.0 \
-		bstr-1.0.1 \
+		bstr-1.1.0 \
 		btoi-0.4.2 \
 		bumpalo-3.11.1 \
 		bytecount-0.6.3 \
@@ -59,7 +58,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		cassowary-0.3.0 \
 		cast-0.3.0 \
 		castaway-0.2.2 \
-		cc-1.0.77 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.0 \
 		ciborium-io-0.2.0 \
@@ -73,7 +72,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		compact_str-0.6.1 \
 		concurrent-queue-2.0.0 \
 		conpty-0.3.0 \
-		console-0.15.2 \
+		console-0.15.3 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
@@ -104,7 +103,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
 		doc-comment-0.3.3 \
-		document-features-0.2.6 \
+		document-features-0.2.7 \
 		either-1.8.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
@@ -136,7 +135,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		generic-array-0.14.6 \
 		getopts-0.2.21 \
 		getrandom-0.2.8 \
-		git-conventional-0.12.0 \
+		git-conventional-0.12.1 \
 		git2-0.15.0 \
 		gloo-timers-0.2.5 \
 		h2-0.3.15 \
@@ -168,21 +167,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		io-lifetimes-1.0.3 \
 		ipconfig-0.3.1 \
 		ipnet-2.7.0 \
-		is-terminal-0.4.1 \
+		is-terminal-0.4.2 \
 		is_ci-1.1.1 \
 		itertools-0.10.5 \
-		itoa-1.0.4 \
+		itoa-1.0.5 \
 		jobserver-0.1.25 \
 		js-sys-0.3.60 \
 		jwalk-0.8.1 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.138 \
+		libc-0.2.139 \
 		libgit2-sys-0.14.0+1.5.0 \
 		libz-ng-sys-1.1.8 \
 		libz-sys-1.1.8 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.1.3 \
+		linux-raw-sys-0.1.4 \
 		litrs-0.2.3 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
@@ -207,14 +206,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		nix-0.26.1 \
 		nom-7.1.1 \
 		num-traits-0.2.15 \
-		num_cpus-1.14.0 \
+		num_cpus-1.15.0 \
 		num_threads-0.1.6 \
-		once_cell-1.16.0 \
+		once_cell-1.17.0 \
 		oorandom-11.1.3 \
-		openssl-0.10.44 \
+		openssl-0.10.45 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.79 \
+		openssl-sys-0.9.80 \
 		os_str_bytes-6.4.1 \
 		output_vt100-0.1.3 \
 		owo-colors-3.5.0 \
@@ -236,13 +235,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.47 \
-		prodash-22.1.0 \
+		proc-macro2-1.0.49 \
+		prodash-23.0.0 \
 		ptyprocess-0.3.0 \
 		pulldown-cmark-0.9.2 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
-		quote-1.0.21 \
+		quote-1.0.23 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -258,21 +257,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
 		rustc-hash-1.1.0 \
-		rustix-0.36.5 \
+		rustix-0.36.6 \
 		rustls-0.20.7 \
 		rustls-pemfile-1.0.1 \
-		rustversion-1.0.9 \
-		ryu-1.0.11 \
+		rustversion-1.0.11 \
+		ryu-1.0.12 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
-		semver-1.0.14 \
-		serde-1.0.150 \
-		serde_derive-1.0.150 \
-		serde_json-1.0.89 \
+		semver-1.0.16 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
 		serde_urlencoded-0.7.1 \
 		serial_test-0.9.0 \
 		serial_test_derive-0.9.0 \
@@ -291,15 +290,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		symlink-0.1.0 \
-		syn-1.0.105 \
+		syn-1.0.107 \
 		tabled-0.8.0 \
 		tar-0.4.38 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
 		textwrap-0.16.0 \
-		thiserror-1.0.37 \
-		thiserror-impl-1.0.37 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
@@ -310,7 +308,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		tokio-native-tls-0.3.0 \
 		tokio-rustls-0.23.4 \
 		tokio-util-0.7.4 \
-		toml-0.5.9 \
+		toml-0.5.10 \
 		toml_edit-0.14.4 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
@@ -326,7 +324,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.8 \
 		unicode-bom-1.1.4 \
-		unicode-ident-1.0.5 \
+		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.0 \
 		unicode-width-0.1.10 \
