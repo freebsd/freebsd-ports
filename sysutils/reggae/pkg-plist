@@ -68,6 +68,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/mk/service.mk
 %%DATADIR%%/mk/shell.mk
 %%DATADIR%%/mk/use.mk
+%%DATADIR%%/scripts/apply-proxy.sh
 %%DATADIR%%/scripts/bhyve-init.sh
 %%DATADIR%%/scripts/cbsd-init.sh
 %%DATADIR%%/scripts/chef-provision.sh
