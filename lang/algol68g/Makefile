@@ -1,5 +1,5 @@
 PORTNAME=	algol68g
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	lang
 MASTER_SITES=	https://jmvdveer.home.xs4all.nl/
 
