@@ -36,7 +36,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/etc/frr/support_bundle_commands.conf ${STAGEDIR}${ETCDIR}/
 .else
 
-BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libyang.so.2:net/libyang2 \
 		libcares.so:dns/c-ares \
