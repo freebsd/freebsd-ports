@@ -5763,6 +5763,7 @@
     SUBDIR += readline
     SUBDIR += rebar
     SUBDIR += rebar3
+    SUBDIR += recycle
     SUBDIR += redasm
     SUBDIR += redo
     SUBDIR += regexx
