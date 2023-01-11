@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230227:
+  AFFECTS: users of mail/py-spf-engine
+  AUTHOR: yasu@FreeBSD.org
+
+  Default configuration file path of pyspf-milter has changed. Since
+  it looks for ${PREFIX}/etc/etc/pyspf-milter/pyspf-milter.conf now,
+  you should edit the file if you run pyspf-milter. Alternatively you
+  can specify other configuration file path by setting
+  pyspf_milter_conffile variable in /etc/rc.conf.
+
 20230222:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org

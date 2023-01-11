@@ -1,0 +1,67 @@
+--- data/share/doc/python-policyd-spf/README.per_user_whitelisting.orig	2022-11-26 19:39:57 UTC
++++ data/share/doc/python-policyd-spf/README.per_user_whitelisting
+@@ -11,7 +11,7 @@ The Postfix RESTRICTION_CLASS_README opens with the fo
+ illustrating the use of different restrictions for different
+ recipients.
+ 
+-    /etc/postfix/main.cf:
++    %%PREFIX%%/etc/postfix/main.cf:
+         smtpd_restriction_classes = restrictive, permissive
+         # With Postfix < 2.3 specify reject_unknown_client.
+         restrictive = reject_unknown_sender_domain
+@@ -21,9 +21,9 @@ recipients.
+         smtpd_recipient_restrictions
+             permit_mynetworks
+             reject_unauth_destination
+-            check_recipient_access hash:/etc/postfix/recipient_access
++            check_recipient_access hash:%%PREFIX%%/etc/postfix/recipient_access
+ 
+-    /etc/postfix/recipient_access:
++    %%PREFIX%%/etc/postfix/recipient_access:
+         joe@my.domain        permissive
+         jane@my.domain        restrictive
+ 
+@@ -31,21 +31,21 @@ The example below illustrates using this policy-spf da
+ Postfix "check_policy_service" access restriction to apply the
+ "permissive" restriction only to messages getting SPF Pass.
+ 
+-    /etc/python-policyd-spf/policyd-spf.conf:
++    %%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf:
+         HELO_pass_restriction = spf_fin, passed_spf
+         Mail_From_pass_restriction = spf_fin, passed_spf
+ 
+-    /etc/python-policyd-spf/policyd-spf-fin.conf:
++    %%PREFIX%%/etc/python-policyd-spf/policyd-spf-fin.conf:
+         HELO_reject = False
+         Mail_From_reject = False
+ 
+-    /etc/postfix/master.cf:
++    %%PREFIX%%/etc/postfix/master.cf:
+         policyd-spf  unix  -       n       n       -       0       spawn
+             user=nobody argv=/usr/bin/policyd-spf
+         policyd-spf-fin unix  -    n       n       -       0       spawn
+-            user=nobody argv=/usr/bin/policyd-spf /etc/python-policyd-spf/policyd-spf-fin.conf
++            user=nobody argv=%%PREFIX%%/bin/policyd-spf %%PREFIX%%/etc/python-policyd-spf/policyd-spf-fin.conf
+ 
+-    /etc/postfix/main.cf:
++    %%PREFIX%%/etc/postfix/main.cf:
+         spf_fin = check_policy_service unix:private/policyd-spf-fin
+ 
+         smtpd_restriction_classes = restrictive, permissive, spf_fin, passed_spf
+@@ -56,7 +56,7 @@ Postfix "check_policy_service" access restriction to a
+         permissive = permit
+ 
+         passed_spf
+-            check_recipient_access hash:/etc/postfix/recipient_access
++            check_recipient_access hash:%%PREFIX%%/etc/postfix/recipient_access
+             restrictive
+ 
+         smtpd_recipient_restrictions             permit_mynetworks
+@@ -67,6 +67,6 @@ Postfix "check_policy_service" access restriction to a
+         policyd-spf_time_limit = 3600
+         policyd-spf-fin_time_limit = 3600
+ 
+-    /etc/postfix/recipient_access:
++    %%PREFIX%%/etc/postfix/recipient_access:
+         joe@my.domain        permissive
+         jane@my.domain        restrictive
