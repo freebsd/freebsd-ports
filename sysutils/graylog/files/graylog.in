@@ -45,6 +45,10 @@
 # graylog_log_config (string):
 #   Default value: %%ETCDIR%%/server/log4j2.xml
 #   Path to the Graylog Server logfile
+#
+# graylog_java_home (path):
+#   Default value: %%JAVA_HOME%%
+#   Set it to the root of the JDK to use.
 
 . /etc/rc.subr
 
@@ -63,6 +67,7 @@ load_rc_config $name
 : ${graylog_logs_dir:="%%GRAYLOG_LOGS_DIR%%"}
 : ${graylog_run_dir:="/var/run/graylog"}
 : ${graylog_log_config:="%%ETCDIR%%/log4j2.xml"}
+: ${graylog_java_home:="%%JAVA_HOME%%"}
 
 java_options=" \
     -Djava.awt.headless=true \
@@ -102,6 +107,8 @@ command_args=" \
     -jar ${graylog_dir}/graylog.jar server \
     --no-pid-file \
     --configfile ${graylog_config}"
+
+export JAVA_HOME=${graylog_java_home}
 
 required_files="%%LOCALBASE%%/bin/java ${graylog_config}"
 
