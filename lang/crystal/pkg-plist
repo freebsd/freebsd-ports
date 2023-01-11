@@ -100,8 +100,9 @@ lib/crystal/compiler/crystal/interpreter/local_vars_gatherer.cr
 lib/crystal/compiler/crystal/interpreter/multidispatch.cr
 lib/crystal/compiler/crystal/interpreter/op_code.cr
 lib/crystal/compiler/crystal/interpreter/primitives.cr
-lib/crystal/compiler/crystal/interpreter/prompt.cr
+lib/crystal/compiler/crystal/interpreter/pry_reader.cr
 lib/crystal/compiler/crystal/interpreter/repl.cr
+lib/crystal/compiler/crystal/interpreter/repl_reader.cr
 lib/crystal/compiler/crystal/interpreter/to_bool.cr
 lib/crystal/compiler/crystal/interpreter/value.cr
 lib/crystal/compiler/crystal/loader.cr
@@ -250,7 +251,6 @@ lib/crystal/compiler/crystal/tools/typed_def_processor.cr
 lib/crystal/compiler/crystal/types.cr
 lib/crystal/compiler/crystal/util.cr
 lib/crystal/compiler/crystal/warnings.cr
-lib/crystal/compiler/crystal/zero_one_or_many.cr
 lib/crystal/compiler/requires.cr
 lib/crystal/complex.cr
 lib/crystal/compress/deflate/deflate.cr
@@ -285,6 +285,7 @@ lib/crystal/crystal/compiler_rt/fixint.cr
 lib/crystal/crystal/compiler_rt/float.cr
 lib/crystal/crystal/compiler_rt/mul.cr
 lib/crystal/crystal/compiler_rt/multi3.cr
+lib/crystal/crystal/compiler_rt/pow.cr
 lib/crystal/crystal/compiler_rt/shift.cr
 lib/crystal/crystal/datum.cr
 lib/crystal/crystal/digest/md5.cr
@@ -326,6 +327,7 @@ lib/crystal/crystal/system/process.cr
 lib/crystal/crystal/system/random.cr
 lib/crystal/crystal/system/socket.cr
 lib/crystal/crystal/system/thread.cr
+lib/crystal/crystal/system/thread_condition_variable.cr
 lib/crystal/crystal/system/thread_linked_list.cr
 lib/crystal/crystal/system/thread_mutex.cr
 lib/crystal/crystal/system/time.cr
@@ -372,6 +374,7 @@ lib/crystal/crystal/system/wasi/process.cr
 lib/crystal/crystal/system/wasi/random.cr
 lib/crystal/crystal/system/wasi/socket.cr
 lib/crystal/crystal/system/wasi/thread.cr
+lib/crystal/crystal/system/wasi/thread_condition_variable.cr
 lib/crystal/crystal/system/wasi/thread_mutex.cr
 lib/crystal/crystal/system/wasi/user.cr
 lib/crystal/crystal/system/wasi/wasi.cr
@@ -391,6 +394,7 @@ lib/crystal/crystal/system/win32/process.cr
 lib/crystal/crystal/system/win32/random.cr
 lib/crystal/crystal/system/win32/socket.cr
 lib/crystal/crystal/system/win32/thread.cr
+lib/crystal/crystal/system/win32/thread_condition_variable.cr
 lib/crystal/crystal/system/win32/thread_mutex.cr
 lib/crystal/crystal/system/win32/time.cr
 lib/crystal/crystal/system/win32/visual_studio.cr
@@ -1058,6 +1062,7 @@ lib/crystal/lib_c/x86_64-windows-msvc/c/memoryapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/minwinbase.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/mswsock.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/ntsecapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/process.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/processenv.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/processthreadsapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/profileapi.cr
@@ -1219,8 +1224,12 @@ lib/crystal/range.cr
 lib/crystal/range/bsearch.cr
 lib/crystal/reference.cr
 lib/crystal/regex.cr
+lib/crystal/regex/engine.cr
 lib/crystal/regex/lib_pcre.cr
+lib/crystal/regex/lib_pcre2.cr
 lib/crystal/regex/match_data.cr
+lib/crystal/regex/pcre.cr
+lib/crystal/regex/pcre2.cr
 lib/crystal/semantic_version.cr
 lib/crystal/set.cr
 lib/crystal/signal.cr

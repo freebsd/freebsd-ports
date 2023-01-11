@@ -1,5 +1,5 @@
 PORTNAME=	crystal
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.0
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -56,7 +56,7 @@ OPTIONS_DEFAULT=	INTERPRETER
 
 INTERPRETER_DESC=	Enable interpreter (experimental)
 
-DEBUG_VARS=		opt_flags+="--debug"
+DEBUG_VARS=		opt_flags+="--debug" strip=
 DEBUG_VARS_OFF=		opt_flags+="--release --no-debug"
 INTERPRETER_MAKE_ARGS=	interpreter=1
 STATIC_MAKE_ARGS=	static=1

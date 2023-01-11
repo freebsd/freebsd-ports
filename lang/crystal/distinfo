@@ -1,7 +1,7 @@
-TIMESTAMP = 1667561344
+TIMESTAMP = 1673436303
 SHA256 (crystal/crystal-1.5.1-aarch64-llvm14.tar.xz) = 62617bf7a6d38d5a980672559b680818bf35803252f69bb6ecfb33377c3b2a88
 SIZE (crystal/crystal-1.5.1-aarch64-llvm14.tar.xz) = 2085460
-SHA256 (crystal/crystal-lang-crystal-1.6.2_GH0.tar.gz) = fbbff8f975a2627ac3f42208362365668fb08a33637f424e0c2c0e51b1f37cfa
-SIZE (crystal/crystal-lang-crystal-1.6.2_GH0.tar.gz) = 3060644
+SHA256 (crystal/crystal-lang-crystal-1.7.0_GH0.tar.gz) = f49682fc79e4a71e2682189a1aaa95406b1ba21f8e2a0bcecdcd311acdc4b251
+SIZE (crystal/crystal-lang-crystal-1.7.0_GH0.tar.gz) = 3121283
 SHA256 (crystal/crystal-1.5.1-amd64-llvm14.tar.xz) = abd7cd2a798b9184d6cbb600fde29a55e196a03974c164ceac1713be264fb7ac
 SIZE (crystal/crystal-1.5.1-amd64-llvm14.tar.xz) = 2608988
