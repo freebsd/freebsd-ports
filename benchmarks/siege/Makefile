@@ -1,5 +1,5 @@
 PORTNAME=	siege
-PORTVERSION=	4.1.5
+PORTVERSION=	4.1.6
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://download.joedog.org/siege/ \
 		http://fossies.org/linux/www/
