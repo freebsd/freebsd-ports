@@ -1,3 +1,110 @@
+  <vuln vid="53caf29b-9180-11ed-acbe-b42e991fc52e">
+    <topic>cassandra3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cassandra3</name>
+	<range><lt>3.11.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cassandra tema reports:</p>
+	<blockquote cite="https://gitbox.apache.org/repos/asf?p=cassandra.git;a=blob_plain;f=CHANGES.txt;hb=refs/tags/cassandra-3.11.14">
+	  <p>This release contains 6 security fixes including</p>
+	  <ul>
+	      <li>CVE-2022-24823: When Netty's multipart decoders are used local information disclosure can occur via the local system temporary directory</li>
+	      <li>CVE-2020-7238: Netty 4.1.43.Final allows HTTP Request Smuggling because it mishandles Transfer-Encoding whitespace (such as a [space]Transfer-Encoding:chunked line) and a later Content-Length header.</li>
+	      <li>CVE-2019-2684: Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Java SE</li>
+	      <li>CVE-2022-25857: The package org.yaml:snakeyaml from 0 and before 1.31 are vulnerable to Denial of Service (DoS) due missing to nested depth limitation for collections.</li>
+	      <li>CVE-2022-42003: In FasterXML jackson-databind, resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled.</li>
+	      <li>CVE-2022-42004: In FasterXML jackson-databind, resource exhaustion can occur because of a lack of a check in BeanDeserializer._deserializeFromArray to prevent use of deeply nested arrays.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24823</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24823</url>
+      <cvename>CVE-2020-7238</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7238</url>
+      <cvename>CVE-2019-2684</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2684</url>
+      <cvename>CVE-2022-25857</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25857</url>
+      <cvename>CVE-2022-42003</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42003</url>
+      <cvename>CVE-2022-42004</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42004</url>
+    </references>
+    <dates>
+      <discovery>2023-01-11</discovery>
+      <entry>2023-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60624f63-9180-11ed-acbe-b42e991fc52e">
+    <topic>cassandra3 -- arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>cassandra3</name>
+	<range><lt>3.11.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marcus Eriksson reports:</p>
+	<blockquote cite="https://lists.apache.org/thread/y4nb9s4co34j8hdfmrshyl09lokm7356">
+	  <p>
+	  When running Apache Cassandra with
+	  the following configuration:
+	  enable_user_defined_functions: true
+	  enable_scripted_user_defined_functions: true
+	  enable_user_defined_functions_threads: false
+	  it is possible for an attacker to execute arbitrary code on
+	  the host. The attacker would need to have enough permissions
+	  to create user defined functions in the cluster to be able
+	  to exploit this.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44521</cvename>
+      <url>https://www.cvedetails.com/cve/CVE-2021-44521</url>
+    </references>
+    <dates>
+      <discovery>2022-02-11</discovery>
+      <entry>2023-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b3fd12ea-917a-11ed-acbe-b42e991fc52e">
+    <topic>cassandra3 -- jBCrypt integer overflow</topic>
+    <affects>
+      <package>
+	<name>cassandra3</name>
+	<range><lt>3.11.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>mindrot project reports:</p>
+	<blockquote cite="http://www.mindrot.org/projects/jBCrypt/news/rel04.html">
+	  <p>There is an integer overflow that
+	  occurs with very large log_rounds values, first reported by
+	  Marcus Rathsfeld.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0886</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0886</url>
+    </references>
+    <dates>
+      <discovery>2015-01-30</discovery>
+      <entry>2023-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9fa7b139-c1e9-409e-bed0-006aadcf5845">
     <topic>xorg-server -- Multiple security issues in X server extensions</topic>
     <affects>
