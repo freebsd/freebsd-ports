@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230111:
+  AFFECTS: users of sysutils/graylog
+  AUTHOR: dch@freebsd.org
+
+  Graylog 5.x and higher effectively constrains ElasticSearch
+  dependencies, and in most cases will force a migration to
+  OpenSearch 2.x, now available in ports. Plan accordingly.
+
 20230104:
   AFFECTS: users of mail/spamassassin
   AUTHOR: cy@freebsd.org
