@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	KDAB
 GH_PROJECT=	KDDockWidgets
 
-CMAKE_TESTING_ON=	KDDockWidgets_TESTS # tests aren't built, see https://github.com/KDAB/KDDockWidgets/issues/333
+CMAKE_TESTING_ON=	KDDockWidgets_TESTS KDDockWidgets_DEVELOPER_MODE
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
