@@ -1,6 +1,6 @@
 PORTNAME=	filament
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.0
+DISTVERSION=	1.31.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
 BUILD_DEPENDS=	bash:shells/bash \
 		evdev-proto>0:devel/evdev-proto
 
-USES=		cmake compiler:c++17-lang localbase:ldflags sdl shebangfix xorg
+USES=		cmake compiler:c++17-lang localbase:ldflags python:build sdl shebangfix xorg
 USE_SDL=	sdl2
 USE_XORG=	x11
 
@@ -29,6 +29,7 @@ SHEBANG_FILES=	build/launch-c.in build/launch-cxx.in
 CMAKE_OFF=	USE_STATIC_LIBCXX FILAMENT_ENABLE_JAVA
 CMAKE_ARGS+=	-DDIST_DIR="." # prevent subdirectory for libraries
 CMAKE_ARGS+=	-DUSE_CCACHE:BOOL=${CCACHE_ENABLED:tu}
+CMAKE_ARGS+=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 LDFLAGS+=	-lexecinfo -lSDL2
 
@@ -37,6 +38,8 @@ OPTIONS_SUB=		yes
 
 SAMPLES_DESC=		Build samples
 SAMPLES_CMAKE_OFF=	-DFILAMENT_SKIP_SAMPLES=ON
+
+# gltf_viewer is broken with the Vulkan backend, see https://github.com/google/filament/issues/6445
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/proc/self/exe"|"/proc/curproc/file"|' ${WRKSRC}/libs/utils/src/linux/Path.cpp
