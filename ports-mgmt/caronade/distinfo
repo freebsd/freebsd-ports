@@ -1,5 +1,5 @@
-TIMESTAMP = 1637597627
+TIMESTAMP = 1673454151
 SHA256 (go/ports-mgmt_caronade/caronade-v0.5.0/v0.5.0.mod) = fe0ce810176ddc1c5c17a935348e9ab1df3ca2addee1442804d71354cd66d9ce
 SIZE (go/ports-mgmt_caronade/caronade-v0.5.0/v0.5.0.mod) = 151
-SHA256 (go/ports-mgmt_caronade/caronade-v0.5.0/v0.5.0.zip) = 6dfcc267033c4cd2552ce1a254f78cff77fa1f6ac4d56a8d8f91bbc6a757f844
-SIZE (go/ports-mgmt_caronade/caronade-v0.5.0/v0.5.0.zip) = 79528
+SHA256 (go/ports-mgmt_caronade/caronade-v0.5.0/v0.5.0.zip) = 0aebde6f5ff225ff263a8e4d18432fbf4b9384afc1319948065a2665b03e3ce0
+SIZE (go/ports-mgmt_caronade/caronade-v0.5.0/v0.5.0.zip) = 79900

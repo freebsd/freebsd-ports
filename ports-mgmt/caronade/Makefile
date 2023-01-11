@@ -1,12 +1,12 @@
 PORTNAME=	caronade
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.5.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Small and light tool to help with FreeBSD Ports CI
-WWW=		https://github.com/decke/caronade
+WWW=		https://codeberg.org/decke/caronade
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	sassc:textproc/sassc
 USES=		go:modules,no_targets
 USE_RC_SUBR=	caronade
 
-GO_MODULE=	github.com/decke/caronade
+GO_MODULE=	codeberg.org/decke/caronade
 
 MAKE_ENV+=	GO_BUILDFLAGS="${GO_BUILDFLAGS}"
 
