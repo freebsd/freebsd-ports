@@ -1,5 +1,5 @@
-TIMESTAMP = 1652780969
-SHA256 (zig-0.9.1.tar.xz) = 38cf4e84481f5facc766ba72783e7462e08d6d29a5d47e3b75c8ee3142485210
-SIZE (zig-0.9.1.tar.xz) = 13940828
-SHA256 (zig-freebsd-x86_64-0.9.1.tar.xz) = 4e06009bd3ede34b72757eec1b5b291b30aa0d5046dadd16ecb6b34a02411254
-SIZE (zig-freebsd-x86_64-0.9.1.tar.xz) = 39028848
+TIMESTAMP = 1668959257
+SHA256 (zig-0.10.0.tar.xz) = d8409f7aafc624770dcd050c8fa7e62578be8e6a10956bca3c86e8531c64c136
+SIZE (zig-0.10.0.tar.xz) = 14530912
+SHA256 (zig-freebsd-x86_64-0.10.0.tar.xz) = dd77afa2a8676afbf39f7d6068eda81b0723afd728642adaac43cb2106253d65
+SIZE (zig-freebsd-x86_64-0.10.0.tar.xz) = 44056504
