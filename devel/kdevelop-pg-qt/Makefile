@@ -4,6 +4,9 @@ CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
 
+PATCH_SITES=	https://invent.kde.org/kdevelop/kdevelop-pg-qt/-/commit/
+PATCHFILES=	918d863f179fcb5d5620eb99757802f5abee8280.diff:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parser-generator from KDevplatform
 WWW=		https://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
