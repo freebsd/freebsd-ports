@@ -1,6 +1,6 @@
 PORTNAME=	globalprotect-openconnect
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.7
+DISTVERSION=	1.4.9
 CATEGORIES=	security
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,9 +10,10 @@ WWW=		https://github.com/yuezk/GlobalProtect-openconnect
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libopenconnect.so:security/openconnect
+LIB_DEPENDS=	libopenconnect.so:security/openconnect \
+		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake:noninja qt:5
+USES=		cmake:noninja desktop-file-utils qt:5
 USE_GITHUB=	yes
 USE_QT=		buildtools core dbus declarative gui location network printsupport qmake:build webchannel webengine websockets widgets
 
