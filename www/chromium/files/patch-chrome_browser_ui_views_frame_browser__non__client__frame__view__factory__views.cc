@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2022-10-24 13:33:33 UTC
+--- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2023-01-11 09:17:16 UTC
 +++ chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
 @@ -16,7 +16,7 @@
  #include "chrome/browser/ui/views/frame/glass_browser_frame_view.h"
@@ -25,5 +25,5 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (browser_view->browser()->is_type_picture_in_picture()) {
-     return std::make_unique<PictureInPictureBrowserFrameView>(frame,
-                                                               browser_view);
+     auto view =
+         std::make_unique<PictureInPictureBrowserFrameView>(frame, browser_view);

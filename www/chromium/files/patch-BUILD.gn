@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2022-11-30 08:12:58 UTC
+--- BUILD.gn.orig	2023-01-11 09:17:16 UTC
 +++ BUILD.gn
-@@ -59,7 +59,7 @@ declare_args() {
+@@ -60,7 +60,7 @@ declare_args() {
    root_extra_deps = []
  }
  
@@ -9,7 +9,7 @@
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -89,7 +89,6 @@ group("gn_all") {
+@@ -90,7 +90,6 @@ group("gn_all") {
      "//codelabs",
      "//components:components_unittests",
      "//components/gwp_asan:gwp_asan_unittests",
@@ -17,7 +17,7 @@
      "//net:net_unittests",
      "//sandbox:sandbox_unittests",
      "//services:services_unittests",
-@@ -430,7 +429,7 @@ group("gn_all") {
+@@ -434,7 +433,7 @@ group("gn_all") {
      ]
    }
  
@@ -26,7 +26,7 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -632,6 +631,15 @@ group("gn_all") {
+@@ -637,6 +636,15 @@ group("gn_all") {
      deps += [ "//gpu/tools/compositor_model_bench" ]
    }
  
@@ -42,7 +42,7 @@
    if (is_mac) {
      deps += [
        "//third_party/breakpad:crash_inspector",
-@@ -680,7 +688,7 @@ group("gn_all") {
+@@ -685,7 +693,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -51,7 +51,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1107,7 +1115,7 @@ if (!is_ios) {
+@@ -1115,7 +1123,7 @@ if (!is_ios) {
      ]
    }
  
@@ -60,7 +60,7 @@
      # WPT Webdriver tests runner
      # chrome/test/chromedriver/test/run_webdriver_tests.py
      script_test("webdriver_wpt_tests") {
-@@ -1202,7 +1210,7 @@ if (!is_ios) {
+@@ -1211,7 +1219,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1211,7 +1219,7 @@ if (!is_ios) {
+@@ -1220,7 +1228,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1655,7 +1663,7 @@ group("chromium_builder_perf") {
+@@ -1660,7 +1668,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

@@ -1,16 +1,18 @@
---- third_party/libsync/src/sync.c.orig	2022-02-07 13:39:41 UTC
+--- third_party/libsync/src/sync.c.orig	2023-01-11 09:17:16 UTC
 +++ third_party/libsync/src/sync.c
-@@ -17,7 +17,9 @@
+@@ -17,7 +17,11 @@
   */
  
  #include <fcntl.h>
-+#if !defined(__OpenBSD__)
++#if defined(__OpenBSD__)
++#include <stdlib.h>
++#else
  #include <malloc.h>
 +#endif
  #include <stdint.h>
  #include <string.h>
  #include <errno.h>
-@@ -29,6 +31,12 @@
+@@ -29,6 +33,12 @@
  
  #include <sync/sync.h>
  

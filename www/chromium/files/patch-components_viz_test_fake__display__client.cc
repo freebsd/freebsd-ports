@@ -1,7 +1,7 @@
---- components/viz/test/fake_display_client.cc.orig	2022-02-28 16:54:41 UTC
+--- components/viz/test/fake_display_client.cc.orig	2023-01-11 09:17:16 UTC
 +++ components/viz/test/fake_display_client.cc
-@@ -25,7 +25,7 @@ void FakeDisplayClient::CreateLayeredWindowUpdater(
-     mojo::PendingReceiver<mojom::LayeredWindowUpdater> receiver) {}
+@@ -27,7 +27,7 @@ void FakeDisplayClient::AddChildWindowToBrowser(
+     gpu::SurfaceHandle child_window) {}
  #endif
  
 -#if BUILDFLAG(IS_LINUX)

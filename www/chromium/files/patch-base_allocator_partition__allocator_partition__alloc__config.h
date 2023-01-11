@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_config.h.orig	2022-10-24 13:33:33 UTC
+--- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-01-11 09:17:16 UTC
 +++ base/allocator/partition_allocator/partition_alloc_config.h
-@@ -76,7 +76,7 @@ static_assert(sizeof(void*) != 8, "");
+@@ -84,7 +84,7 @@ static_assert(sizeof(void*) != 8, "");
  
  // POSIX is not only UNIX, e.g. macOS and other OSes. We do use Linux-specific
  // features such as futex(2).
@@ -9,7 +9,7 @@
  #define PA_HAS_LINUX_KERNEL
  #endif
  
-@@ -197,7 +197,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -216,7 +216,7 @@ constexpr bool kUseLazyCommit = false;
  
  // On these platforms, lock all the partitions before fork(), and unlock after.
  // This may be required on more platforms in the future.
@@ -18,7 +18,7 @@
  #define PA_HAS_ATFORK_HANDLER
  #endif
  
-@@ -238,7 +238,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -257,7 +257,7 @@ constexpr bool kUseLazyCommit = false;
  //
  // Also enabled on ARM64 macOS, as the 16kiB pages on this platform lead to
  // larger slot spans.
