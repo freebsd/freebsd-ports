@@ -1,15 +1,15 @@
---- media/base/media_switches.h.orig	2022-11-30 08:12:58 UTC
+--- media/base/media_switches.h.orig	2023-01-11 09:17:16 UTC
 +++ media/base/media_switches.h
-@@ -214,7 +214,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamFor
+@@ -217,7 +217,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamFor
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseFakeDeviceForMediaStream);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseMediaHistoryStore);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseR16Texture);
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoDecodeLinux);
+ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoDecodeLinuxGL);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoEncodeLinux);
- MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiIgnoreDriverChecks);
-@@ -319,11 +319,11 @@ MEDIA_EXPORT extern const base::FeatureParam<
+@@ -328,11 +328,11 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kDeprecateLowUsageCodecs);
  #endif
  

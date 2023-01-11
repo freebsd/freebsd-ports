@@ -1,7 +1,7 @@
---- components/device_signals/test/signals_contract.cc.orig	2022-11-30 08:12:58 UTC
+--- components/device_signals/test/signals_contract.cc.orig	2023-01-11 09:17:16 UTC
 +++ components/device_signals/test/signals_contract.cc
-@@ -164,7 +164,7 @@ GetSignalsContract() {
-       base::BindRepeating(VerifyUnset, names::kSecureBootEnabled);
+@@ -190,7 +190,7 @@ GetSignalsContract() {
+       base::BindRepeating(VerifyUnset, names::kCrowdStrike);
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

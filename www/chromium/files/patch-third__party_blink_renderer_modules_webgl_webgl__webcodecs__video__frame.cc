@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc.orig	2022-11-30 08:12:58 UTC
+--- third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc.orig	2023-01-11 09:17:16 UTC
 +++ third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc
-@@ -101,7 +101,7 @@ bool WebGLWebCodecsVideoFrame::Supported(WebGLRenderin
+@@ -102,7 +102,7 @@ bool WebGLWebCodecsVideoFrame::Supported(WebGLRenderin
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

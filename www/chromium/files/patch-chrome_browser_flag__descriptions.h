@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2022-11-30 08:12:58 UTC
+--- chrome/browser/flag_descriptions.h.orig	2023-01-11 09:17:16 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -3779,7 +3779,7 @@ extern const char kSearchWebInSidePanelDescription[];
+@@ -3693,7 +3693,7 @@ extern const char kSearchWebInSidePanelDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  extern const char kQuickCommandsName[];
  extern const char kQuickCommandsDescription[];
  
-@@ -3796,7 +3796,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
+@@ -3710,7 +3710,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
  extern const char kWebBluetoothConfirmPairingSupportDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -18,7 +18,7 @@
  extern const char kOzonePlatformHintChoiceDefault[];
  extern const char kOzonePlatformHintChoiceAuto[];
  extern const char kOzonePlatformHintChoiceX11[];
-@@ -3812,18 +3812,18 @@ extern const char kForcePasswordInitialSyncWhenDecrypt
+@@ -3723,18 +3723,18 @@ extern const char kForcePasswordInitialSyncWhenDecrypt
  extern const char kForcePasswordInitialSyncWhenDecryptionFailsDescription[];
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -40,7 +40,7 @@
  extern const char kFollowingFeedSidepanelName[];
  extern const char kFollowingFeedSidepanelDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -3900,7 +3900,7 @@ extern const char kElasticOverscrollDescription[];
+@@ -3809,7 +3809,7 @@ extern const char kElasticOverscrollDescription[];
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2022-11-30 08:12:58 UTC
+--- base/process/process_metrics.h.orig	2023-01-11 09:17:16 UTC
 +++ base/process/process_metrics.h
 @@ -36,7 +36,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include <string>
  #include <utility>
  #include <vector>
-@@ -52,7 +52,7 @@ class Value;
+@@ -51,7 +51,7 @@ class Value;
  // Full declaration is in process_metrics_iocounters.h.
  struct IoCounters;
  
@@ -18,7 +18,7 @@
  // Minor and major page fault counts since the process creation.
  // Both counts are process-wide, and exclude child processes.
  //
-@@ -107,7 +107,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -106,7 +106,7 @@ class BASE_EXPORT ProcessMetrics {
    // convenience wrapper for CreateProcessMetrics().
    static std::unique_ptr<ProcessMetrics> CreateCurrentProcessMetrics();
  
@@ -27,7 +27,7 @@
    // Resident Set Size is a Linux/Android specific memory concept. Do not
    // attempt to extend this to other platforms.
    BASE_EXPORT size_t GetResidentSetSize() const;
-@@ -165,7 +165,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -164,7 +164,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -36,7 +36,7 @@
    // Emits the cumulative CPU usage for all currently active threads since they
    // were started into the output parameter (replacing its current contents).
    // Threads that have already terminated will not be reported. Thus, the sum of
-@@ -248,7 +248,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -224,7 +224,7 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -45,7 +45,7 @@
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
  
-@@ -269,7 +269,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -245,7 +245,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif  // !BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -54,16 +54,7 @@
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
  #if BUILDFLAG(IS_APPLE)
-@@ -280,7 +280,7 @@ class BASE_EXPORT ProcessMetrics {
- #endif
- 
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
--    BUILDFLAG(IS_AIX)
-+    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
-   CPU::CoreType GetCoreType(uint32_t core_index);
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
-         // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_AIX)
-@@ -294,9 +294,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -264,9 +264,7 @@ class BASE_EXPORT ProcessMetrics {
    // Used to store the previous times and CPU usage counts so we can
    // compute the CPU usage between calls.
    TimeTicks last_cpu_time_;
@@ -73,7 +64,7 @@
  
  #if BUILDFLAG(IS_WIN)
    TimeTicks last_cpu_time_for_precise_cpu_usage_;
-@@ -304,7 +302,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -274,7 +272,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -82,7 +73,7 @@
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
-@@ -347,7 +345,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
+@@ -317,7 +315,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_AIX) || \
@@ -91,7 +82,7 @@
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
-@@ -382,7 +380,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -352,7 +350,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -100,7 +91,7 @@
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
    // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
-@@ -397,7 +395,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -367,7 +365,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -109,7 +100,7 @@
    int buffers = 0;
    int cached = 0;
    int active_anon = 0;
-@@ -434,7 +432,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
+@@ -404,7 +402,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -118,7 +109,7 @@
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
-@@ -622,7 +620,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -592,7 +590,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

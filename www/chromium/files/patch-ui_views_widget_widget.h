@@ -1,6 +1,6 @@
---- ui/views/widget/widget.h.orig	2022-10-24 13:33:33 UTC
+--- ui/views/widget/widget.h.orig	2023-01-11 09:17:16 UTC
 +++ ui/views/widget/widget.h
-@@ -402,7 +402,7 @@ class VIEWS_EXPORT Widget : public internal::NativeWid
+@@ -408,7 +408,7 @@ class VIEWS_EXPORT Widget : public internal::NativeWid
      // If set, the widget was created in headless mode.
      bool headless_mode = false;
  

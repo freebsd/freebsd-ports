@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2022-11-30 08:12:58 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2023-01-11 09:17:16 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -32,7 +32,7 @@
+@@ -31,7 +31,7 @@
  #include "components/reporting/util/statusor.h"
  #endif
  
@@ -27,7 +27,7 @@
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -634,7 +634,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -636,7 +636,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  
