@@ -1,5 +1,5 @@
 PORTNAME=	libucl
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	textproc devel
 
 MAINTAINER=	bofh@FreeBSD.org
