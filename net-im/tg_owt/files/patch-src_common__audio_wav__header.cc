@@ -1,4 +1,4 @@
---- src/common_audio/wav_header.cc.orig	2022-02-09 19:21:53 UTC
+--- src/common_audio/wav_header.cc.orig	2023-01-05 05:48:49 UTC
 +++ src/common_audio/wav_header.cc
 @@ -26,10 +26,6 @@
  namespace webrtc {
@@ -11,7 +11,7 @@
  #pragma pack(2)
  struct ChunkHeader {
    uint32_t ID;
-@@ -119,9 +115,22 @@ uint32_t PackFourCC(char a, char b, char c, char d) {
+@@ -113,9 +109,22 @@ uint32_t PackFourCC(char a, char b, char c, char d) {
    return packed_value;
  }
  
