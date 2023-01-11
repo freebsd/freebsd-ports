@@ -1,6 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.16
-PORTREVISION=	2
+DISTVERSION=	0.9.17
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -40,8 +39,8 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
 
-OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
-OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
 .if ${FLAVOR:U} == nopulse
 OPTIONS_EXCLUDE=PULSEAUDIO
 .endif
@@ -81,6 +80,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-keyboard-state.5.gz \
 			man/man5/${PORTNAME}-memory.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
+			man/man5/${PORTNAME}-mpris.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
 			man/man5/${PORTNAME}-pulseaudio.5.gz \
 			man/man5/${PORTNAME}-river-mode.5.gz \
@@ -104,6 +104,10 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 MPD_DESC=		Music Player Daemon support
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 MPD_MESON_ENABLED=	mpd
+
+MPRIS_DESC=		Media Player Remote Interfacing Specification via playerctl
+MPRIS_LIB_DEPENDS=	libplayerctl.so:multimedia/playerctl
+MPRIS_MESON_ENABLED=	mpris
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	pulseaudio
