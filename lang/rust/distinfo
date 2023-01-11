@@ -1,6 +1,6 @@
-TIMESTAMP = 1671182054
-SHA256 (rust/rustc-1.66.0-src.tar.xz) = 0dc176e34fae9871f855a6ba4cb30fa19d69c5b4428d29281a07419c4950715c
-SIZE (rust/rustc-1.66.0-src.tar.xz) = 141582844
+TIMESTAMP = 1673442892
+SHA256 (rust/rustc-1.66.1-src.tar.xz) = 07ac4e6c93e0d8ecfaf3b86c4c78bbbde3f5be675f0334e7fb343cb4a0b81ebe
+SIZE (rust/rustc-1.66.1-src.tar.xz) = 141692940
 SHA256 (rust/2022-11-03/rustc-1.65.0-aarch64-unknown-freebsd.tar.xz) = fb7c58730dde8e40f831116090bda88b7708f78bbb64cafa7d7f9b0b493ef8f4
 SIZE (rust/2022-11-03/rustc-1.65.0-aarch64-unknown-freebsd.tar.xz) = 40676092
 SHA256 (rust/2022-11-03/rust-std-1.65.0-aarch64-unknown-freebsd.tar.xz) = 695a5ac1b0dc4e008685b19324b70da757435288455432cc09ebe25cba16e161
