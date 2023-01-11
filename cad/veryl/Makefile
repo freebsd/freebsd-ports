@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.1.8
+DISTVERSION=	0.1.13
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.20 \
 		anes-0.1.6 \
-		async-trait-0.1.61 \
+		async-trait-0.1.60 \
 		atty-0.2.14 \
 		auto_impl-0.5.0 \
 		autocfg-1.1.0 \
