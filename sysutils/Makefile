@@ -968,6 +968,7 @@
     SUBDIR += pc-networkmanager
     SUBDIR += pcapfix
     SUBDIR += pciutils
+    SUBDIR += pcns
     SUBDIR += pcpustat
     SUBDIR += pdixtract
     SUBDIR += pdsh
