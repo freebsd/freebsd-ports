@@ -2,7 +2,7 @@ PORTNAME=	raven
 PORTVERSION=	6.10.0
 PORTREVISION=	1
 CATEGORIES=	devel python
-#MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pi@FreeBSD.org
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/raven/
 LICENSE=	BSD2CLAUSE
 
 USES=		python:3.6+
-# either CHEESESHOP or github, whatever is newer
+# either PYPI or github, whatever is newer
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry
 GH_PROJECT=	raven-python

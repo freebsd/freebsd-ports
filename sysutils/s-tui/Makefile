@@ -1,7 +1,7 @@
 PORTNAME=	s-tui
 PORTVERSION=	1.1.4
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stress Terminal UI, Terminal-based CPU stress and monitoring utility

@@ -1,7 +1,7 @@
 PORTNAME=	snakemake
 DISTVERSION=	6.15.5
 CATEGORIES=	misc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Workflow management system

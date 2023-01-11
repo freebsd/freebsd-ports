@@ -1,7 +1,7 @@
 PORTNAME=	portgraph
 PORTVERSION=	0.0.1
 CATEGORIES=	ports-mgmt python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Create a dependencies graph of a(all) port(s)

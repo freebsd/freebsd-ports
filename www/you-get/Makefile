@@ -1,7 +1,7 @@
 PORTNAME=	you-get
 PORTVERSION=	0.4.1620
 CATEGORIES=	www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dumb downloader that scrapes the web

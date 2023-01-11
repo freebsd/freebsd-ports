@@ -1,7 +1,7 @@
 PORTNAME=	archey4
 PORTVERSION=	4.13.4
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple system information tool written in Python

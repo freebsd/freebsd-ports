@@ -1,7 +1,7 @@
 PORTNAME=	jupyter-server
 PORTVERSION=	1.19.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jupyter_server-${PORTVERSION}

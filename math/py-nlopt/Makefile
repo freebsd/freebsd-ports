@@ -1,7 +1,7 @@
 PORTNAME=	nlopt
 DISTVERSION=	2.7.1
 CATEGORIES=	math
-#MASTER_SITES=	CHEESESHOP # https://github.com/DanielBok/nlopt-python/issues/15
+#MASTER_SITES=	PYPI # https://github.com/DanielBok/nlopt-python/issues/15
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -2,7 +2,7 @@ PORTNAME=	pyEDFlib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.30
 CATEGORIES=	misc
-#MASTER_SITES=	CHEESESHOP # PyPI version fails: https://github.com/holgern/pyedflib/issues/168
+#MASTER_SITES=	PYPI # PyPI version fails: https://github.com/holgern/pyedflib/issues/168
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,7 +1,7 @@
 PORTNAME=	translate-toolkit
 PORTVERSION=	3.7.4
 CATEGORIES=	textproc
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools and API for translation and localization engineering

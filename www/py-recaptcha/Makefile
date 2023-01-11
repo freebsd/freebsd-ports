@@ -2,7 +2,7 @@ PORTNAME=	recaptcha
 PORTVERSION=	1.0.6
 PORTREVISION=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	CHEESESHOP/source/r/recaptcha-client
+MASTER_SITES=	PYPI/source/r/recaptcha-client
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-client-${PORTVERSION}
 

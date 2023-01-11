@@ -1,7 +1,7 @@
 PORTNAME=	pydeps
 DISTVERSION=	1.11.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Display Python module dependencies

@@ -2,7 +2,7 @@ PORTNAME=	pgxnclient
 PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Command line tool to interact with the PostgreSQL Extension Network

@@ -1,7 +1,7 @@
 PORTNAME=	mathlibtools
 DISTVERSION=	1.2.0
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lean prover mathlib supporting tools

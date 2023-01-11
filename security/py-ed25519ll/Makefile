@@ -2,7 +2,7 @@ PORTNAME=	ed25519ll
 PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	security
-#MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	PYPI
 # bitbucket master contains py3 fixes made after last tagged release
 MASTER_SITES=	https://bitbucket.org/dholth/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

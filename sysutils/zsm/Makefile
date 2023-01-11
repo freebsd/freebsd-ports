@@ -1,7 +1,7 @@
 PORTNAME=	zsm
 PORTVERSION=	0.4.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	mattias.lindvall@gmail.com
 COMMENT=	ZFS Snapshot Manager

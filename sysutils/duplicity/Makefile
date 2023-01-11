@@ -1,7 +1,7 @@
 PORTNAME=	duplicity
 PORTVERSION=	0.8.23
 CATEGORIES=	sysutils
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG

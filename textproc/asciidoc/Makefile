@@ -2,7 +2,7 @@ PORTNAME=	asciidoc
 PORTVERSION=	10.2.0
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://github.com/asciidoc-py/asciidoc-py/raw/${PORTVERSION}/doc/:manpage
 DISTFILES=	asciidoc-${PORTVERSION}${EXTRACT_SUFX} \
 		a2x.1.txt:manpage

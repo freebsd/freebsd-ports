@@ -1,7 +1,7 @@
 PORTNAME=	git-review
 DISTVERSION=	2.3.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Allow to push code to review and interact with a Gerrit server

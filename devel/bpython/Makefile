@@ -1,7 +1,7 @@
 PORTNAME=	bpython
 PORTVERSION=	0.23
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://bpython-interpreter.org/releases/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 

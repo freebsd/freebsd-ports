@@ -1,7 +1,7 @@
 PORTNAME=	dosage
 DISTVERSION=	2.17
 CATEGORIES=	deskutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Application to keep a local mirror of web comics

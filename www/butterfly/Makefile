@@ -2,7 +2,7 @@ PORTNAME=	butterfly
 PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web terminal based on websocket and tornado

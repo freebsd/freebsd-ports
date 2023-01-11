@@ -1,7 +1,7 @@
 PORTNAME=	lookatme
 PORTVERSION=	2.5.5
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Interactive, terminal-based markdown presenter

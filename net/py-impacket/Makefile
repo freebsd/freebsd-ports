@@ -2,7 +2,7 @@ PORTNAME=	impacket
 PORTVERSION=	0.9.17
 PORTREVISION=	1
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://github.com/CoreSecurity/impacket/releases/download/impacket_${PORTVERSION:S,.,_,g}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

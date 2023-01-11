@@ -1,7 +1,7 @@
 PORTNAME=	artifacts
 PORTVERSION=	20210620
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

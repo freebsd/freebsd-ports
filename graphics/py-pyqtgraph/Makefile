@@ -2,7 +2,7 @@ PORTNAME=	pyqtgraph
 DISTVERSION=	0.13.1
 PORTREVISION=	1
 CATEGORIES=	graphics science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 PATCH_SITES=	https://github.com/pyqtgraph/pyqtgraph/commit/

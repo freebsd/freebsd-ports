@@ -1,7 +1,7 @@
 PORTNAME=	socketio-client
 PORTVERSION=	0.6.7
 CATEGORIES=	net devel python
-MASTER_SITES=	CHEESESHOP/source/s/socketIO-client/
+MASTER_SITES=	PYPI/source/s/socketIO-client/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	socketIO_client-${PORTVERSION}
 

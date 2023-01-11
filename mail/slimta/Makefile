@@ -1,7 +1,7 @@
 PORTNAME=	slimta
 PORTVERSION=	0.8.1
 CATEGORIES=	mail
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Configurable MTA based on the python-slimta libraries

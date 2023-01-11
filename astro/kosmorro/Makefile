@@ -1,7 +1,7 @@
 PORTNAME=	kosmorro
 PORTVERSION=	0.10.11
 CATEGORIES=	astro python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Ephemerides computation

@@ -1,7 +1,7 @@
 PORTNAME=	urh
 DISTVERSION=	2.9.3
 CATEGORIES=	misc hamradio python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal Radio Hacker: investigate wireless protocols like a boss
