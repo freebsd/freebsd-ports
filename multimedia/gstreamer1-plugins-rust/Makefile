@@ -63,7 +63,7 @@ SODIUM_MESON_OFF=	-Dsodium=disabled
 
 post-patch:
 # Make each cargo subcommand very verbose
-	@${REINPLACE_CMD} -e "/'cargo'/s/]/, '--verbose', '--verbose'&/" \
+	@${REINPLACE_CMD} -Ee "/cargo.*'c?(build|test)'/s/]/, '--verbose', '--verbose'&/" \
 		${WRKSRC}/cargo_wrapper.py
 
 post-install:
