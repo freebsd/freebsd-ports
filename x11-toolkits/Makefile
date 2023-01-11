@@ -53,6 +53,7 @@
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
+    SUBDIR += kddockwidgets
     SUBDIR += kf5-attica
     SUBDIR += kf5-kcompletion
     SUBDIR += kf5-kconfigwidgets
