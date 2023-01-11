@@ -331,3 +331,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.36.1.crate) = c811ca4a8c853ef420abd859
 SIZE (rust/crates/windows_x86_64_msvc-0.36.1.crate) = 661999
 SHA256 (rust/crates/windows_x86_64_msvc-0.42.0.crate) = f40009d85759725a34da6d89a94e63d7bdc50a862acf0dbc7c8e488f1edcb6f5
 SIZE (rust/crates/windows_x86_64_msvc-0.42.0.crate) = 659377
+SHA256 (4ec3bb5bf198.patch) = df83d9e9784818b43ef0f84962d1e314a84879ab562c89f528680f921279b804
+SIZE (4ec3bb5bf198.patch) = 2845
