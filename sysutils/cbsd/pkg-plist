@@ -96,6 +96,8 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-13.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-13.1
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-13.2
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-13.3
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-14
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-14.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-12.2
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-12.3
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13
@@ -222,6 +224,7 @@ cbsd/etc/defaults/vm-linux-Alpine-extended-3.conf
 cbsd/etc/defaults/vm-linux-Alpine-standart-3.conf
 cbsd/etc/defaults/vm-linux-Android-x86.conf
 cbsd/etc/defaults/vm-linux-ArchLinux-x86-2022.conf
+cbsd/etc/defaults/vm-linux-ArchLinux-x86-2023.conf
 cbsd/etc/defaults/vm-linux-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
@@ -553,13 +556,12 @@ cbsd/share/FreeBSD-jail-puppet-skel/etc/motd.template
 cbsd/share/FreeBSD-jail-puppet-skel/etc/passwd
 cbsd/share/FreeBSD-jail-puppet-skel/etc/pwd.db
 cbsd/share/FreeBSD-jail-puppet-skel/etc/rc.conf
-cbsd/share/FreeBSD-jail-puppet-skel/etc/rc.d/puppetstart
 cbsd/share/FreeBSD-jail-puppet-skel/etc/spwd.db
 cbsd/share/FreeBSD-jail-puppet-skel/root/.bashrc
 cbsd/share/FreeBSD-jail-puppet-skel/root/.cshrc
-cbsd/share/FreeBSD-jail-puppet-skel/usr/local/etc/puppet/auth.conf-dist
-cbsd/share/FreeBSD-jail-puppet-skel/usr/local/etc/puppet/puppet.conf
-cbsd/share/FreeBSD-jail-puppet-skel/usr/local/etc/puppet/puppet.conf-dist
+cbsd/share/FreeBSD-jail-puppet-system-skel/master_create.d/puppet-apply
+cbsd/share/FreeBSD-jail-puppet-system-skel/puppet/hieradata/common.yaml
+cbsd/share/FreeBSD-jail-puppet-system-skel/puppet/manifest/init.pp
 cbsd/share/FreeBSD-jail-skel/etc/crontab
 cbsd/share/FreeBSD-jail-skel/etc/group
 cbsd/share/FreeBSD-jail-skel/etc/login.conf
