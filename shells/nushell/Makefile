@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.73.0
-PORTREVISION=	2
+DISTVERSION=	0.74.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +22,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-stdlib-0.2.2 \
 		alphanumeric-sort-1.4.4 \
 		android_system_properties-0.1.5 \
+		anes-0.1.6 \
 		ansi-str-0.5.0 \
 		ansi-str-0.7.2 \
 		ansitok-0.2.0 \
@@ -73,8 +73,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		chrono-humanize-0.2.2 \
 		chrono-tz-0.6.3 \
 		chrono-tz-build-0.0.3 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
 		clang-sys-1.4.0 \
-		clap-2.34.0 \
+		clap-3.2.23 \
+		clap_lex-0.2.4 \
 		codepage-0.1.1 \
 		comfy-table-6.1.2 \
 		console-0.15.2 \
@@ -86,8 +90,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cortex-m-0.7.6 \
 		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
-		criterion-0.3.6 \
-		criterion-plot-0.4.5 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
 		critical-section-0.2.7 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
@@ -236,6 +240,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		linux-raw-sys-0.0.46 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
+		lru-0.8.1 \
 		lscolors-0.12.0 \
 		lz4-1.24.0 \
 		lz4-sys-1.9.4 \
@@ -248,10 +253,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		memchr-2.5.0 \
 		memmap2-0.5.7 \
 		memoffset-0.6.5 \
-		meval-0.2.0 \
 		miette-5.3.0 \
 		miette-derive-5.3.0 \
 		mime-0.3.16 \
+		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
 		mio-0.6.23 \
@@ -267,7 +272,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		new_debug_unreachable-1.0.4 \
 		nix-0.25.0 \
 		nodrop-0.1.14 \
-		nom-1.2.4 \
 		nom-7.1.1 \
 		nom-supreme-0.8.0 \
 		notify-4.0.17 \
@@ -291,11 +295,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		omnipath-0.1.1 \
 		once_cell-1.16.0 \
 		oorandom-11.1.3 \
+		open-3.2.0 \
 		openssl-0.10.42 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.22.0+1.1.1q \
 		openssl-sys-0.9.76 \
+		os_str_bytes-6.4.1 \
 		output_vt100-0.1.3 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
@@ -342,7 +348,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		polars-time-0.25.1 \
 		polars-utils-0.25.1 \
 		pori-0.0.0 \
-		powierza-coefficient-1.0.1 \
+		powierza-coefficient-1.0.2 \
 		ppv-lite86-0.2.16 \
 		precomputed-hash-0.1.1 \
 		predicates-2.1.1 \
@@ -417,7 +423,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-parser-0.10.2 \
 		seq-macro-0.3.1 \
 		serde-1.0.145 \
-		serde_cbor-0.11.2 \
 		serde_derive-1.0.145 \
 		serde_ini-0.2.0 \
 		serde_json-1.0.85 \
@@ -470,8 +475,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		terminal_size-0.1.17 \
 		terminal_size-0.2.1 \
 		termtree-0.2.4 \
-		textwrap-0.11.0 \
 		textwrap-0.15.1 \
+		textwrap-0.16.0 \
 		thin-slice-0.1.1 \
 		thiserror-1.0.37 \
 		thiserror-impl-1.0.37 \
@@ -483,7 +488,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		titlecase-2.2.0 \
-		tokio-1.21.2 \
+		tokio-1.24.1 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.7.4 \
 		toml-0.5.9 \
@@ -500,6 +505,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ucd-trie-0.1.5 \
 		umask-2.0.0 \
 		uncased-0.9.7 \
+		unicase-2.6.0 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.4 \
 		unicode-linebreak-0.1.4 \
@@ -546,6 +552,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.43.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
 		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
 		windows_aarch64_msvc-0.42.0 \
