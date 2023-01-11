@@ -1,5 +1,5 @@
 PORTNAME=	fastapi
-PORTVERSION=	0.81.0
+PORTVERSION=	0.89.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +11,13 @@ WWW=		https://github.com/tiangolo/fastapi
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic>=1.6.2:devel/py-pydantic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}starlette>=0.19.1:www/py-starlette@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}starlette>=0.22:www/py-starlette@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
 CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
