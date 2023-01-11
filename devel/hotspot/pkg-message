@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Currently hotspot can only be useful if the mock 'perf' command is
+provided that would present performance data in perf format.
+
+This is probably not hard at a basic level.
+EOM
+}
+]
