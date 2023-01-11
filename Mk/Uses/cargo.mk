@@ -203,7 +203,7 @@ CARGO_INSTALL_ARGS+=	--debug
 .  endif
 
 .  if ${_CARGO_CRATES:Mcmake}
-BUILD_DEPENDS+=	cmake:devel/cmake
+BUILD_DEPENDS+=	cmake:devel/cmake-core
 .  endif
 
 .  if ${_CARGO_CRATES:Mgettext-sys}
