@@ -1,6 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
 
 WRKSRC_SUBDIR=	git-cliff
+CARGO_CARGOLOCK=	${WRKSRC}/../Cargo.lock
 
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.19 \
