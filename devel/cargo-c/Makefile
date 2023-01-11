@@ -1,10 +1,14 @@
 PORTNAME=	cargo-c
 DISTVERSION=	0.9.15
 DISTVERSIONSUFFIX=	+cargo-0.67
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
+
+PATCH_SITES=	https://github.com/lu-zero/${PORTNAME}/commit/
+PATCHFILES+=	4ec3bb5bf198.patch:-p1 # https://github.com/lu-zero/cargo-c/pull/303
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Cargo C-ABI helpers
