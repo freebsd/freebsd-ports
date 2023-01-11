@@ -1,3 +1,49 @@
+  <vuln vid="3a023570-91ab-11ed-8950-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.7.0</ge><lt>15.7.2</lt></range>
+	<range><ge>15.6.0</ge><lt>15.6.4</lt></range>
+	<range><ge>6.6.0</ge><lt>15.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/01/09/security-release-gitlab-15-7-2-released/">
+	  <p>Race condition on gitlab.com enables verified email forgery and third-party account hijacking</p>
+	  <p>DOS and high resource consumption of Prometheus server through abuse of Grafana integration proxy endpoint</p>
+	  <p>Maintainer can leak sentry token by changing the configured URL</p>
+	  <p>Maintainer can leak masked webhook secrets by changing target URL of the webhook</p>
+	  <p>Cross-site scripting in wiki changes page affecting self-hosted instances running without strict CSP</p>
+	  <p>Group access tokens continue to work after owner loses ability to revoke them</p>
+	  <p>Users' avatar disclosure by user ID in private GitLab instances</p>
+	  <p>Arbitrary Protocol Redirection in GitLab Pages</p>
+	  <p>Regex DoS due to device-detector parsing user agents</p>
+	  <p>Regex DoS in the Submodule Url Parser</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4037</cvename>
+      <cvename>CVE-2022-3613</cvename>
+      <cvename>CVE-2022-4365</cvename>
+      <cvename>CVE-2022-4342</cvename>
+      <cvename>CVE-2022-3573</cvename>
+      <cvename>CVE-2022-4167</cvename>
+      <cvename>CVE-2022-3870</cvename>
+      <cvename>CVE-2023-0042</cvename>
+      <cvename>CVE-2022-4131</cvename>
+      <cvename>CVE-2022-3514</cvename>
+      <url>https://about.gitlab.com/releases/2023/01/09/security-release-gitlab-15-7-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-01-09</discovery>
+      <entry>2023-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7b929503-911d-11ed-a925-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
