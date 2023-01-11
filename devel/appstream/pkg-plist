@@ -6,6 +6,7 @@ include/appstream/as-agreement.h
 include/appstream/as-artifact.h
 include/appstream/as-branding.h
 include/appstream/as-bundle.h
+include/appstream/as-category-gir.h
 include/appstream/as-category.h
 include/appstream/as-checksum.h
 include/appstream/as-component.h
@@ -19,6 +20,7 @@ include/appstream/as-image.h
 include/appstream/as-issue.h
 include/appstream/as-launchable.h
 include/appstream/as-metadata.h
+include/appstream/as-pool-gir.h
 include/appstream/as-pool.h
 include/appstream/as-provided.h
 include/appstream/as-relation.h
@@ -36,7 +38,7 @@ include/appstream/as-version.h
 include/appstream/as-video.h
 lib/girepository-1.0/AppStream-1.0.typelib
 lib/libappstream.so
-lib/libappstream.so.0.15.5
+lib/libappstream.so.0.15.6
 lib/libappstream.so.4
 libdata/pkgconfig/appstream.pc
 man/man1/appstreamcli.1.gz
@@ -63,6 +65,7 @@ share/locale/fr/LC_MESSAGES/appstream.mo
 share/locale/gd/LC_MESSAGES/appstream.mo
 share/locale/gl/LC_MESSAGES/appstream.mo
 share/locale/he/LC_MESSAGES/appstream.mo
+share/locale/hi/LC_MESSAGES/appstream.mo
 share/locale/hr/LC_MESSAGES/appstream.mo
 share/locale/hu/LC_MESSAGES/appstream.mo
 share/locale/id/LC_MESSAGES/appstream.mo
