@@ -1,5 +1,5 @@
 PORTNAME=	shibboleth-sp
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
