@@ -3,7 +3,7 @@ DISTVERSION=	7.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 
-MAINTAINER=	me@emilengler.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic window manager for X11 based on evilwm
 WWW=		https://github.com/leahneukirchen/cwm
 
