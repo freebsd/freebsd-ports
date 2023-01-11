@@ -1058,6 +1058,11 @@ _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 # make -C /usr/ports/category/port/.
 .CURDIR:=		${.CURDIR:tA}
 
+# Ensure .CURDIR doesn't contain a colon, which breaks makefile targets
+.if ${.CURDIR:S/:/\:/g} != ${.CURDIR}
+.error The current directory path contains ':', this is not supported
+.endif
+
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
 
