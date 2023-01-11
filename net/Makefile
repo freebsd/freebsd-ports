@@ -346,6 +346,7 @@
     SUBDIR += lambdamoo
     SUBDIR += landrop
     SUBDIR += latd
+    SUBDIR += lavinmq
     SUBDIR += ldap-stats
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff

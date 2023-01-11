@@ -1,0 +1,10 @@
+@dir(lavinmq,lavinmq,750) %%ETCDIR%%
+@dir(lavinmq,lavinmq,750) /var/db/lavinmq
+@dir(lavinmq,lavinmq,750) /var/log/lavinmq
+@sample %%ETCDIR%%/config.ini.sample
+bin/lavinmq
+bin/lavinmqctl
+bin/lavinmqperf
+man/man1/lavinmq.1.gz
+man/man1/lavinmqctl.1.gz
+man/man1/lavinmqperf.1.gz

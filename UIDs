@@ -260,7 +260,7 @@ _arti:*:311:311::0:0:Arti Daemon:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 _fastdfs:*:313:313::0:0:FastDFS Owner:/nonexistent:/usr/sbin/nologin
 promscale:*:314:314::0:0:Promscale:/nonexistent:/usr/sbin/nologin
-# free: 315
+lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
 # free: 316
 # free: 317
 # free: 318

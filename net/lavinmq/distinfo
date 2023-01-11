@@ -1,0 +1,17 @@
+TIMESTAMP = 1672656176
+SHA256 (cloudamqp-lavinmq-v1.0.0-beta.8_GH0.tar.gz) = e0c7a90bc0b240f2dcf118a9c922c4b0ee604f19dfb2ed0b7137cb73af8abe3b
+SIZE (cloudamqp-lavinmq-v1.0.0-beta.8_GH0.tar.gz) = 707858
+SHA256 (84codes-http-protection-893a191d55e301e0df96d6dd0f7d72c527bddeb8_GH0.tar.gz) = eba9fed6dff8ed2b1322ca57b5bdd1e6d4afe49367ca84f38cd0cd7c062dab93
+SIZE (84codes-http-protection-893a191d55e301e0df96d6dd0f7d72c527bddeb8_GH0.tar.gz) = 10307
+SHA256 (84codes-systemd.cr-v2.0.0_GH0.tar.gz) = 4dd0c6f838542f97338866aef36de7b464c06112c4434e4db48aa65586b68ef3
+SIZE (84codes-systemd.cr-v2.0.0_GH0.tar.gz) = 4339
+SHA256 (cloudamqp-amq-protocol.cr-v1.1.2_GH0.tar.gz) = 23c1f3bd2c611a4249fc4a5438db2d68d647dfef900138675aabdc0e4a122ca5
+SIZE (cloudamqp-amq-protocol.cr-v1.1.2_GH0.tar.gz) = 15611
+SHA256 (cloudamqp-amqp-client.cr-v1.0.9_GH0.tar.gz) = 9c7cbcd390b353ac9e138d669ec251236341c0f8ccf18b190f37b46f16a5c0d8
+SIZE (cloudamqp-amqp-client.cr-v1.0.9_GH0.tar.gz) = 19647
+SHA256 (luislavena-radix-v0.4.1_GH0.tar.gz) = 5f207eb769101d94726eb476eb5f9b4603482c7941396ab4c85866722b7497b1
+SIZE (luislavena-radix-v0.4.1_GH0.tar.gz) = 13847
+SHA256 (schovi-baked_file_system-v0.10.0_GH0.tar.gz) = ea63c25b5327817bb494edb3e74950a42a4a50efc25e8035292f15f1e3039a50
+SIZE (schovi-baked_file_system-v0.10.0_GH0.tar.gz) = 56007
+SHA256 (tbrand-router.cr-v0.2.8_GH0.tar.gz) = a64540dbd57bc2feba50a432b37d3647f4ab72ee16058746623f3f024b5f3f25
+SIZE (tbrand-router.cr-v0.2.8_GH0.tar.gz) = 5132
