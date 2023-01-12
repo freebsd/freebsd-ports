@@ -62,6 +62,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/understand-your-setup-size.md
 %%PORTDOCS%%%%DOCSDIR%%/keyConcepts.excalidraw
 %%PORTDOCS%%%%DOCSDIR%%/keyConcepts.md
 %%PORTDOCS%%%%DOCSDIR%%/keyConcepts_counter.png
@@ -88,6 +89,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password-profile.png
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password-save-password.png
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/restore-password.png
+%%PORTDOCS%%%%DOCSDIR%%/operator/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/README.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/VictoriaMetrics-Operator.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/additional-scrape.MD
@@ -107,5 +109,6 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/operator/vmalertmanager-configuration.MD
 %%PORTDOCS%%%%DOCSDIR%%/relabeling.md
 %%PORTDOCS%%%%DOCSDIR%%/sd_configs.md
+%%PORTDOCS%%%%DOCSDIR%%/stream-aggregation.md
 %%PORTDOCS%%%%DOCSDIR%%/url-examples.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
