@@ -1,6 +1,6 @@
 PORTNAME=	llvm
-DISTVERSION=	15.0.6
-PORTREVISION=	1
+DISTVERSION=	15.0.7
+PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}${RCDIR}/
