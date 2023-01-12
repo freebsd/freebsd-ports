@@ -1,7 +1,11 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.238
+PORTREVISION=	1
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f4d438f73a52.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/5098
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Validation layers for the Vulkan graphics API
