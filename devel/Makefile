@@ -5397,6 +5397,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-speg
     SUBDIR += py-spyder-kernels
+    SUBDIR += py-spyder-unittest
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
