@@ -1,3 +1,45 @@
+  <vuln vid="76e2fcce-92d2-11ed-a635-080027f5fec9">
+    <topic>emacs -- arbitary shell command execution vulnerability of ctags</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<name>emacs-canna</name>
+	<name>emacs-nox</name>
+	<range><lt>28.2_2,3</lt></range>
+      </package>
+      <package>
+	<name>emacs-devel</name>
+	<name>emacs-devel-nox</name>
+	<range><lt>30.0.50.202211128,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>lu4nx reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2022-45939">
+	  <p>
+	    GNU Emacs through 28.2 allows attackers to execute
+	    commands via shell metacharacters in the name of a
+	    source-code file, because lib-src/etags.c uses the system
+	    C library function in its implementation of the ctags
+	    program. For example, a victim may use the "ctags *"
+	    command (suggested in the ctags documentation) in a
+	    situation where the current working directory has contents
+	    that depend on untrusted input.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-45939</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-45939</url>
+    </references>
+    <dates>
+      <discovery>2022-11-28</discovery>
+      <entry>2023-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="53caf29b-9180-11ed-acbe-b42e991fc52e">
     <topic>cassandra3 -- multiple vulnerabilities</topic>
     <affects>
