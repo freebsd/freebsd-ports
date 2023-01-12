@@ -198,7 +198,7 @@ CMAKE_ARGS+=		-DWITH_GHOST_DEBUG:BOOL=ON
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
-CMAKE_ARGS+=	-DWITH_CPU_SSE:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_CPU_SIMD:BOOL=OFF
 .endif
 
 post-patch:
