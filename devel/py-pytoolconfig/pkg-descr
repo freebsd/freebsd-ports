@@ -1,0 +1,3 @@
+The goal of this project is to manage configuration for python tools,
+such as black and rope and add support for a pyproject.toml
+configuration file.
