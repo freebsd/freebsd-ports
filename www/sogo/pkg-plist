@@ -6,6 +6,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/DOMNode+SOGo.
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/EOBitmaskQualifier.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/EOQualifier+SOGoCacheObject.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/GCSSpecialQueries+SOGoCacheObject.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/JWT.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/LDAPSource.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/LDAPSourceSchema.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSArray+DAV.h
@@ -38,6 +39,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoDAVAuthen
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoDateFormatter.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoDefaultsSource.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoDomainDefaults.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoEmptyAuthenticator.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoGCSFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoLDAPDefaults.h
@@ -739,8 +741,8 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.7
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.7.0
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.8
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -1954,6 +1956,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgPlaceholder.directive.
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgQrCode.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgResetOnDisabled.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgRippleClick.directive.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgRippleClick.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSearch.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSelectOnly.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSubscribe.directive.js
