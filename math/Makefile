@@ -167,6 +167,7 @@
     SUBDIR += amgcl
     SUBDIR += analitza
     SUBDIR += ann
+    SUBDIR += annoy
     SUBDIR += antic
     SUBDIR += apache-commons-math
     SUBDIR += apc
