@@ -1,6 +1,6 @@
-TIMESTAMP = 1672348002
-SHA256 (obsproject-obs-studio-28.1.2_GH0.tar.gz) = c51c72945867cd9862ba663b01cc8313153a0249dd3df0626e63fc5d82a84b39
-SIZE (obsproject-obs-studio-28.1.2_GH0.tar.gz) = 18859931
+TIMESTAMP = 1673489332
+SHA256 (obsproject-obs-studio-29.0.0_GH0.tar.gz) = 05c5ae05a6085a792ce7fc131a92fe4a78adf90310d2d2da51a5e418720ab993
+SIZE (obsproject-obs-studio-29.0.0_GH0.tar.gz) = 18894364
 SHA256 (obsproject-obs-amd-encoder-d5a136c6834c39293ad749cf8f07bdaa772fe44b_GH0.tar.gz) = 6cfae1f4d378124d9621bde29d9ff5d49134dabcd1f17aad048f77e103ddee14
 SIZE (obsproject-obs-amd-encoder-d5a136c6834c39293ad749cf8f07bdaa772fe44b_GH0.tar.gz) = 347479
 SHA256 (obsproject-obs-browser-e2310b02df3e6c184fe6eb6608244a82e37f582e_GH0.tar.gz) = 6cfaa245da01f7d25f46c9823c6ff6cebe38599f699b98b46498f627ba904591

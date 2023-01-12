@@ -1,10 +1,8 @@
 PORTNAME=	obs-studio
-DISTVERSION=	28.1.2
-PORTREVISION=	3
+DISTVERSION=	29.0.0
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	1b8a69557113.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7943
 PATCHFILES+=	e221bf8eedfc.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7989
 PATCHFILES+=	0dcc3a1696c0.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7986
 PATCHFILES+=	2cebc65ad7f8.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
@@ -44,6 +42,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libxcb-render-util.so:x11/xcb-util-renderutil \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
+		libva.so:multimedia/libva \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
@@ -78,7 +77,8 @@ GH_TUPLE=	obsproject:obs-amd-encoder:d5a136c6834c39293ad749cf8f07bdaa772fe44b:ob
 
 CMAKE_ON=	UNIX_STRUCTURE
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
-		-DQT_VERSION=6
+		-DQT_VERSION=6 \
+		-DPython_EXECUTABLE="${PYTHON_CMD}"
 
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
