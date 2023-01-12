@@ -8,6 +8,11 @@
 #    pkg-.*
 #
 
+common_functions="$(realpath "$(dirname "$0")")/common.sh"
+if [ -r "${common_functions}" ]; then
+	. "${common_functions}"
+fi
+
 category_regex="($(make -VSUBDIR | sed 's# #\|#g'))"
 newish_files=$(git diff --name-only --cached --diff-filter=ACR | grep -E "^${category_regex}/[^/]+/[^/]+$")
 
@@ -19,12 +24,12 @@ if [ $? -eq 0 ] ; then
 		file=$(echo "${newish_file}" | awk -F '/' '{print $3}')
 		valid=$(echo "${file}" | grep -Eq '^((Makefile|distinfo|pkg-)(.*))|(.*\.mk)$')
 		if [ $? -ne 0 ] ; then
-			echo "[pre-commit] ERROR: invalid file '${file}' in '${category}/${port}'"
+			pre_commit_error "ERROR: invalid file '${file}' in '${category}/${port}'"
 			status=1
 		fi
 	done
 fi
 if [ ${status} -eq 1 ] ; then
-	echo "             Consider moving non-standard files to files/ or force-ignore this hook."
+	error "             Consider moving non-standard files to files/ or force-ignore this hook."
 	exit 1
 fi

@@ -3,17 +3,22 @@
 # Check that PORTEPOCH is not being dropped, and is non-decreasing
 #
 
+common_functions="$(realpath "$(dirname "$0")")/common.sh"
+if [ -r "${common_functions}" ]; then
+	. "${common_functions}"
+fi
+
 check_epoch() {
 	local makefile="$1"
 	local old_epoch=$(git diff --cached -U0 "${makefile}" | grep '^-PORTEPOCH.*=' | grep -oE '[0-9]+')
 	local new_epoch=$(git diff --cached -U0 "${makefile}" | grep '^+PORTEPOCH.*=' | grep -oE '[0-9]+')
 	if [ -z "${new_epoch}" -a -n "${old_epoch}" ] ; then
-		echo "[pre-commit] dropped PORTEPOCH ${old_epoch} in ${makefile}"
+		pre_commit_error "dropped PORTEPOCH ${old_epoch} in ${makefile}"
 		exit 1
 	fi
 	if [ -n "${old_epoch}" ] ; then
 		if [ ${new_epoch} -lt ${old_epoch} ] ; then
-			echo "[pre-commit] PORTEPOCH decreasing from ${old_epoch} to ${new_epoch} in ${makefile}"
+			pre_commit_error "PORTEPOCH decreasing from ${old_epoch} to ${new_epoch} in ${makefile}"
 			exit 2
 		fi
 	fi
