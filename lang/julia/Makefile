@@ -1,5 +1,5 @@
 PORTNAME=	julia
-DISTVERSION=	1.8.4
+DISTVERSION=	1.8.5
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
