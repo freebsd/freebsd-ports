@@ -33,7 +33,7 @@ SUB_LIST=	APPDIR=${_APPDIR} \
 		ERL_PATH=${LOCALBASE}/lib/erlang${_ERLVER}/bin/erl \
 		PORTNAME=${PORTNAME} \
 		RELDIR=${_RELDIR} \
-		WWWDIR=${_WWWDIR}
+		WWWDIR=${WWWDIR}
 PLIST_SUB=	VERSION=${DISTVERSION}
 
 HAS_CONFIGURE=	yes
@@ -65,8 +65,8 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_jiffy_c__src_double-conversion_strtod
 
 post-patch:
 	@${REINPLACE_CMD} \
-	    -e 's,$$COUCHDB_USER,${USERS},g' \
-	    -e 's,$$LOG_FILE,${_LOGFILE},g' \
+	    -e 's,%%COUCHDB_USER%%,${USERS},g' \
+	    -e 's,%%LOG_FILE%%,${_LOGFILE},g' \
 	    -e 's,%%APPDIR%%,${_APPDIR},g' \
 	    -e 's,%%DATADIR%%,${_DATADIR},g' \
 	    -e 's,%%DBDIR%%,${_DBDIR},g' \
