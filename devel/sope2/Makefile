@@ -1,5 +1,6 @@
 PORTNAME=		sope2
 PORTVERSION=		2.4.3
+PORTREVISION=		1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -44,6 +45,9 @@ MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/sope-core/NGStreams/configure
+.for f in config.guess config.sub
+	@${CP} ${TEMPLATES}/$f ${WRKSRC}/sope-core/NGStreams/
+.endfor
 
 post-patch-LDAP-off:
 	@${REINPLACE_CMD} -e '/checkLinking "ldap"/d' ${WRKSRC}/configure
