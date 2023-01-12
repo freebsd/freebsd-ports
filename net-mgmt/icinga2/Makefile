@@ -4,6 +4,9 @@ DISTVERSION=	2.13.5
 PORTREVISION=	0
 CATEGORIES=	net-mgmt
 
+PATCH_SITES+=	https://github.com/Icinga/icinga2/commit/
+PATCHFILES+=	dd51997c73c6b4b328e3ad006eb8c86678001780.patch:-p1
+
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
 WWW=		https://www.icinga.org/icinga2/
