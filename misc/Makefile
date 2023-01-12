@@ -236,6 +236,7 @@
     SUBDIR += libutf
     SUBDIR += libxdf
     SUBDIR += lifelines
+    SUBDIR += lightgbm
     SUBDIR += lingoteach
     SUBDIR += locale-en_DK
     SUBDIR += localedata
