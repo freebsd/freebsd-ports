@@ -31,7 +31,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 BUILD_DEPENDS=
 
-USES=		cmake compiler:c++11-lib cpe shebangfix
+USES=		cmake compiler:c++17-lang cpe shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 _USES_PYTHON?=	python:build,3.6+
 USES+=		${_USES_PYTHON}
@@ -100,6 +100,7 @@ OPTIONS_EXCLUDE_armv7=	COMPILER_RT FLANG OPENMP
 OPTIONS_EXCLUDE_i386=	FLANG OPENMP
 OPTIONS_EXCLUDE_powerpc=	FLANG OPENMP
 OPTIONS_EXCLUDE_riscv64=	LLDB
+OPTIONS_EXCLUDE_FreeBSD_12=	OPENMP
 .endif
 OPTIONS_SUB=	yes
 _ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD LLDB MLIR \
@@ -421,7 +422,7 @@ post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
-.if ${SNAPDATE} == 20230103
+.if ${SNAPDATE} == 20230109
 	# expected to be temporary
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/flang-new \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/flang

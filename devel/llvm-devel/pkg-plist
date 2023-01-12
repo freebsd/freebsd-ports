@@ -454,6 +454,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/AvoidDoWhileCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/AvoidGotoCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/AvoidNonConstGlobalVariablesCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/AvoidReferenceCoroutineParametersCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/InitVariablesCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/InterfacesGlobalInitCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/MacroUsageCheck.h
@@ -4050,6 +4051,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/SlowMPInt.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/SliceAnalysis.h
+%%MLIR%%llvm-devel/include/mlir/Analysis/SymbolTableAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/AsmParser/AsmParser.h
 %%MLIR%%llvm-devel/include/mlir/AsmParser/AsmParserState.h
 %%MLIR%%llvm-devel/include/mlir/AsmParser/CodeComplete.h
@@ -4706,6 +4708,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/SPIRV/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/SPIRV/Transforms/Passes.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/SPIRV/Transforms/SPIRVConversion.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/SPIRV/Transforms/SPIRVWebGPUTransforms.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/SPIRV/Utils/LayoutUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Shape/Analysis/ShapeMappingAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Shape/IR/Shape.h
@@ -4820,6 +4823,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Transforms/Passes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Utils/DiagnosedSilenceableFailure.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Utils/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Utils/DialectUtilsEnums.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Utils/DialectUtilsEnums.h.inc
