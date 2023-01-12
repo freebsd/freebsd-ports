@@ -410,6 +410,7 @@
     SUBDIR += py-huepy
     SUBDIR += py-ipyfastscape
     SUBDIR += py-kartograph
+    SUBDIR += py-lightgbm
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
     SUBDIR += py-molequeue
