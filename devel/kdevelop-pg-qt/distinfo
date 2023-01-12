@@ -1,5 +1,3 @@
-TIMESTAMP = 1673420365
-SHA256 (KDE/kdevelop/kdevelop-pg-qt-2.2.1.tar.xz) = c13931788ac9dc02188cdd9c6e71e164ae81b4568b048748652bbf6fa4a9c62b
-SIZE (KDE/kdevelop/kdevelop-pg-qt-2.2.1.tar.xz) = 660904
-SHA256 (KDE/kdevelop/918d863f179fcb5d5620eb99757802f5abee8280.diff) = 847144b7d7fc465a01e6c0be541b7bcee567f6999851c25032bdb19410807f21
-SIZE (KDE/kdevelop/918d863f179fcb5d5620eb99757802f5abee8280.diff) = 3832
+TIMESTAMP = 1673503552
+SHA256 (KDE/kdevelop/kdevelop-pg-qt-2.2.2.tar.xz) = 3d56604c479f8f04ae32a523ee91f3078c717117d0deb39e973e22494cbb65f1
+SIZE (KDE/kdevelop/kdevelop-pg-qt-2.2.2.tar.xz) = 660708

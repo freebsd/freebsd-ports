@@ -1,11 +1,8 @@
 PORTNAME=	kdevelop-pg-qt
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
-
-PATCH_SITES=	https://invent.kde.org/kdevelop/kdevelop-pg-qt/-/commit/
-PATCHFILES=	918d863f179fcb5d5620eb99757802f5abee8280.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parser-generator from KDevplatform
