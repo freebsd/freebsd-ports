@@ -1,6 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.9
-PORTREVISION=	1
+DISTVERSION=	1.0.10
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,10 +30,10 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		codespan-reporting-0.11.1 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
-		cxx-1.0.85 \
-		cxx-build-1.0.85 \
-		cxxbridge-flags-1.0.85 \
-		cxxbridge-macro-1.0.85 \
+		cxx-1.0.86 \
+		cxx-build-1.0.86 \
+		cxxbridge-flags-1.0.86 \
+		cxxbridge-macro-1.0.86 \
 		encoding_rs-0.8.31 \
 		fastrand-1.8.0 \
 		fnv-1.0.7 \
@@ -62,7 +61,7 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		idna-0.3.0 \
 		indexmap-1.9.2 \
 		instant-0.1.12 \
-		ipnet-2.7.0 \
+		ipnet-2.7.1 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
@@ -93,7 +92,7 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.13 \
 		ryu-1.0.12 \
-		schannel-0.1.20 \
+		schannel-0.1.21 \
 		scratch-1.0.3 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
@@ -140,20 +139,14 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.36.1 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.36.1 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.36.1 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.36.1 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.42.0 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1 \
 		winreg-0.10.1
 
 OPENSSLINC=	/usr/include
