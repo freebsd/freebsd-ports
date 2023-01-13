@@ -1,7 +1,8 @@
 PORTNAME=	cryptopp
 PORTVERSION=	8.7.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.cryptopp.com/
+MASTER_SITES=	https://github.com/weidai11/${PORTNAME}/releases/download/CRYPTOPP_${PORTVERSION:S/./_/g}/ \
+		http://www.cryptopp.com/
 DISTNAME=	cryptopp${PORTVERSION:S/.//g}
 
 MAINTAINER=	jhale@FreeBSD.org
