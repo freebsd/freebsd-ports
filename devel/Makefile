@@ -931,6 +931,7 @@
     SUBDIR += hcs12mem
     SUBDIR += heaptrack
     SUBDIR += heimdall
+    SUBDIR += heirloom-devtools
     SUBDIR += hexcompare
     SUBDIR += hexd
     SUBDIR += hgreviewboard
