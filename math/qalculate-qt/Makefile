@@ -1,5 +1,5 @@
 PORTNAME=	qalculate-qt
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	${FLAVOR:S/qt//}
