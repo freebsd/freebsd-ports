@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pkgutil_resolve_name-${DISTVERSION}
 
 MAINTAINER=	otis@FreeBSD.org
-COMMENT=	Backport of Python 3.9’s pkgutil.resolve_name
+COMMENT=	Backport of pkgutil.resolve_name from Python 3.9
 WWW=		https://github.com/graingert/pkgutil-resolve-name
 
 LICENSE=	MIT
