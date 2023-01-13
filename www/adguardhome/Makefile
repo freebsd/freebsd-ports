@@ -1,6 +1,7 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.107.21
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +28,8 @@ GO_BUILDFLAGS=  -ldflags="-s -w -X github.com/AdguardTeam/AdGuardHome/internal/v
 DEV_UPDATE_MODE=	no
 
 USER=		root # it has to run as root because it listens on the privileged DNS port
-SUB_LIST=	USER=${USER}
+GROUP=		wheel
+SUB_LIST=	USER=${USER} GROUP=${GROUP}
 USE_RC_SUBR=	${PORTNAME}
 
 CPE_VENDOR=	adguard

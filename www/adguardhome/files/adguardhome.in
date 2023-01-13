@@ -14,12 +14,26 @@ rcvar=adguardhome_enable
 
 load_rc_config $name
 
-adguardhome_enable=${adguardhome_enable:-"NO"}
+: ${adguardhome_enable:=NO}
+: ${adguardhome_config:=/usr/local/etc/AdGuardHome.yaml}
+: ${adguardhome_user:=%%USER%%}
+: ${adguardhome_group:=%%GROUP%%}
+: ${adguardhome_work_dir:=/var/db/adguardhome}
 
 logfile="/var/log/${name}.log"
 
 procname=%%PREFIX%%/bin/adguardhome
 command="/usr/sbin/daemon"
-command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/adguardhome"
+command_args="-u ${adguardhome_user} -o ${logfile} -t ${name} %%PREFIX%%/bin/adguardhome -c ${adguardhome_config} -w ${adguardhome_work_dir}"
+
+start_precmd="${name}_prestart"
+
+adguardhome_prestart()
+{
+    if [ ! -d ${adguardhome_work_dir} ]; then
+        install -d -m 0750 -o ${adguardhome_user} -g ${adguardhome_group} \
+            ${adguardhome_work_dir}
+    fi
+}
 
 run_rc_command "$1"
