@@ -1,6 +1,5 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.8
-PORTREVISION=	1
+DISTVERSION=	5.9.9
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -35,7 +34,8 @@ CONFIGURE_ARGS=	--disable-gmp \
 		--enable-openssl \
 		--enable-whitelist \
 		--with-group=wheel \
-		--with-lib-prefix=${PREFIX}
+		--with-lib-prefix=${PREFIX} \
+		--with-printf-hooks=builtin
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
