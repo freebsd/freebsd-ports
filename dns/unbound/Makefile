@@ -1,5 +1,5 @@
 PORTNAME=	unbound
-DISTVERSION=	1.17.0
+DISTVERSION=	1.17.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/
 
@@ -90,8 +90,8 @@ THREADS_CONFIGURE_WITH=		pthreads
 
 post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
-	@${REINPLACE_CMD} -e 's|if test ! -e $$(DESTDIR)$$(configfile); then || ; \
-		s|$$(configfile); fi|$$(configfile).sample|' \
+	@${REINPLACE_CMD} -e 's|if test ! -e "$$(DESTDIR)$$(configfile)"; then || ; \
+		s|$$(configfile)"; fi|$$(configfile).sample"|' \
 		${WRKSRC}/Makefile.in
 
 post-patch-FILTER_AAAA-on:
