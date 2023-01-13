@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.h.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.h.orig	2023-01-13 08:56:02 UTC
 +++ chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.h
 @@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h"
@@ -18,9 +18,9 @@
    void OnCloudReportingLaunched(
        enterprise_reporting::ReportScheduler* report_scheduler) override;
    void UploadToReportingServer(
-@@ -41,7 +41,7 @@ class BrowserCrashEventRouter
-       nullptr;
-   raw_ptr<policy::ChromeBrowserCloudManagementController> controller_ = nullptr;
+@@ -42,7 +42,7 @@ class BrowserCrashEventRouter
+   raw_ptr<policy::ChromeBrowserCloudManagementController, DanglingUntriaged>
+       controller_ = nullptr;
  
 -#if !BUILDFLAG(IS_FUCHSIA)
 +#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_BSD)

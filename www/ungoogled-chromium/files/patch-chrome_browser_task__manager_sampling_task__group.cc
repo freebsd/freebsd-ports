@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_group.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/task_manager/sampling/task_group.cc.orig	2023-01-13 08:56:02 UTC
 +++ chrome/browser/task_manager/sampling/task_group.cc
-@@ -37,7 +37,7 @@ const int kBackgroundRefreshTypesMask =
+@@ -38,7 +38,7 @@ const int kBackgroundRefreshTypesMask =
  #if BUILDFLAG(IS_WIN)
      REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME |
  #endif  // BUILDFLAG(IS_WIN)
@@ -9,7 +9,7 @@
      REFRESH_TYPE_FD_COUNT |
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
  #if BUILDFLAG(ENABLE_NACL)
-@@ -122,7 +122,7 @@ TaskGroup::TaskGroup(
+@@ -123,7 +123,7 @@ TaskGroup::TaskGroup(
  #if BUILDFLAG(ENABLE_NACL)
        nacl_debug_stub_port_(nacl::kGdbDebugStubPortUnknown),
  #endif  // BUILDFLAG(ENABLE_NACL)
@@ -18,7 +18,7 @@
        open_fd_count_(-1),
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
        idle_wakeups_per_second_(-1),
-@@ -141,7 +141,7 @@ TaskGroup::TaskGroup(
+@@ -142,7 +142,7 @@ TaskGroup::TaskGroup(
                              weak_ptr_factory_.GetWeakPtr()),
          base::BindRepeating(&TaskGroup::OnIdleWakeupsRefreshDone,
                              weak_ptr_factory_.GetWeakPtr()),
@@ -27,7 +27,7 @@
          base::BindRepeating(&TaskGroup::OnOpenFdCountRefreshDone,
                              weak_ptr_factory_.GetWeakPtr()),
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-@@ -321,7 +321,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
+@@ -322,7 +322,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
  #endif  // BUILDFLAG(ENABLE_NACL)
  

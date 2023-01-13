@@ -1,15 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-12-02 17:56:32 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-01-13 08:56:02 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -36,7 +36,7 @@
-     // shipped stable can have its runtime flag removed soon after.
-     status: {
-       valid_values: ["stable", "experimental", "test"],
--      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux"]
-+      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux", "OpenBSD", "FreeBSD"]
-     },
- 
-     // "implied_by" or "depends_on" specifies relationship to other features:
-@@ -1205,7 +1205,7 @@
+@@ -1255,7 +1255,7 @@
        depends_on: ["FileSystemAccessLocal"],
        status: {"Android": "test", "default": "stable"},
        origin_trial_feature_name: "FileHandling",
@@ -18,16 +9,7 @@
        base_feature: "FileHandlingAPI",
      },
      {
-@@ -2680,7 +2680,7 @@
-     {
-       name: "U2FSecurityKeyAPI",
-       origin_trial_feature_name: "U2FSecurityKeyAPI",
--      origin_trial_os: ["win", "mac", "linux", "chromeos"],
-+      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
-       origin_trial_type: "deprecation",
-     },
-     {
-@@ -2695,7 +2695,7 @@
+@@ -2811,7 +2811,7 @@
      {
        name: "UnrestrictedSharedArrayBuffer",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -36,7 +18,7 @@
      },
      {
        name: "URLPatternCompareComponent",
-@@ -2715,7 +2715,7 @@
+@@ -2831,7 +2831,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
@@ -45,7 +27,7 @@
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -2843,12 +2843,12 @@
+@@ -2993,12 +2993,12 @@
        name: "WebAppUrlHandling",
        status: "experimental",
        origin_trial_feature_name: "WebAppUrlHandling",
@@ -59,4 +41,4 @@
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
        status: "stable",
      },
-     {
+     // WebAuth is disabled on Android versions prior to N (7.0) due to lack of

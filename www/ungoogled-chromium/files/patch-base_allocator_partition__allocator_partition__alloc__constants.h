@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-12-02 17:56:32 UTC
+--- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2023-01-13 08:56:02 UTC
 +++ base/allocator/partition_allocator/partition_alloc_constants.h
 @@ -91,7 +91,7 @@ PartitionPageShift() {
    return 18;  // 256 KiB
@@ -9,7 +9,7 @@
  PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR PA_ALWAYS_INLINE size_t
  PartitionPageShift() {
    return PageAllocationGranularityShift() + 2;
-@@ -270,7 +270,7 @@ constexpr size_t kNumPools = 3;
+@@ -274,7 +274,7 @@ constexpr size_t kNumPools = 3;
  // Special-case Android and iOS, which incur test failures with larger
  // pools. Regardless, allocating >8GiB with malloc() on these platforms is
  // unrealistic as of 2022.
