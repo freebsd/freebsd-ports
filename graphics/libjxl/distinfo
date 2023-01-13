@@ -1,9 +1,9 @@
-TIMESTAMP = 1663763390
-SHA256 (libjxl-libjxl-v0.7.0_GH0.tar.gz) = 3114bba1fabb36f6f4adc2632717209aa6f84077bc4e93b420e0d63fa0455c5e
-SIZE (libjxl-libjxl-v0.7.0_GH0.tar.gz) = 1505917
-SHA256 (jbeich-skcms-6437475_GH0.tar.gz) = 6818ea7aa053a964d1795d6d1d3c5e2aad5d30dff9817c8e604e324ef643ec01
-SIZE (jbeich-skcms-6437475_GH0.tar.gz) = 9200034
-SHA256 (libjxl-testdata-d81acac_GH0.tar.gz) = ae76a2bf3cbbeb927ad2570f08da6cfb0157ac8d3284ba5003848d1514489909
-SIZE (libjxl-testdata-d81acac_GH0.tar.gz) = 26789139
+TIMESTAMP = 1673608669
+SHA256 (libjxl-libjxl-v0.8.0rc1_GH0.tar.gz) = a94f3a011b0238d20c9dab3f7c5e6cfcc7bd669f2d9fd9aec89b8a43c51ba7f5
+SIZE (libjxl-libjxl-v0.8.0rc1_GH0.tar.gz) = 1611950
+SHA256 (jbeich-skcms-b25b07b_GH0.tar.gz) = 3e1ce9bb99269f1093d1e4e04bcbdbbecf0920a0c67abace278e37c61b93fb0e
+SIZE (jbeich-skcms-b25b07b_GH0.tar.gz) = 10041269
+SHA256 (libjxl-testdata-d6168ff_GH0.tar.gz) = ed133d390a516ff9f52f17ec4c43d15d735d99a39f39b76c17b5f4084ae15c40
+SIZE (libjxl-testdata-d6168ff_GH0.tar.gz) = 67547424
 SHA256 (webmproject-sjpeg-868ab55_GH0.tar.gz) = ffe757b376fed2fd94473f8625c25f82a3a23aa317fb1bbf1ac8159b6e0a7726
 SIZE (webmproject-sjpeg-868ab55_GH0.tar.gz) = 2472084
