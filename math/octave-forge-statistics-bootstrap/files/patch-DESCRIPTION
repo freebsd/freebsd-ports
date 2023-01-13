@@ -1,8 +1,0 @@
---- ../DESCRIPTION.orig	2023-01-07 14:03:43.882585000 -0600
-+++ ../DESCRIPTION	2023-01-07 14:04:00.559805000 -0600
-@@ -11,4 +11,4 @@
-  of the bootstrap are included that improve the coverage and 
-  accuracy of bootstrap confidence intervals for small samples.
- License: GPLv3+
--depends: octave (>= 6.1.0), statistics (>= 1.5.0)
-+Depends: octave (>= 6.1.0), statistics (>= 1.5.0)
