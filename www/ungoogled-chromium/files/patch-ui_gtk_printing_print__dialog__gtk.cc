@@ -1,6 +1,6 @@
---- ui/gtk/printing/print_dialog_gtk.cc.orig	2022-12-02 17:56:32 UTC
+--- ui/gtk/printing/print_dialog_gtk.cc.orig	2023-01-13 08:56:02 UTC
 +++ ui/gtk/printing/print_dialog_gtk.cc
-@@ -400,7 +400,7 @@ void PrintDialogGtk::ShowDialog(
+@@ -402,7 +402,7 @@ void PrintDialogGtk::ShowDialog(
    GtkPrintCapabilities cap = static_cast<GtkPrintCapabilities>(
        GTK_PRINT_CAPABILITY_GENERATE_PDF | GTK_PRINT_CAPABILITY_PAGE_SET |
        GTK_PRINT_CAPABILITY_COPIES | GTK_PRINT_CAPABILITY_COLLATE |

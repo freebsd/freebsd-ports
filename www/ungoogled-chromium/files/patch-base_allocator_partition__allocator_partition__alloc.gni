@@ -1,0 +1,11 @@
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-01-13 08:56:02 UTC
++++ base/allocator/partition_allocator/partition_alloc.gni
+@@ -121,7 +121,7 @@ assert(
+     "Missing dangling pointer checks feature for its performance experiment")
+ 
+ declare_args() {
+-  enable_pkeys = is_linux && target_cpu == "x64"
++  enable_pkeys = (is_linux && !is_bsd) && target_cpu == "x64"
+ }
+ assert(!enable_pkeys || (is_linux && target_cpu == "x64"),
+        "Pkeys are only supported on x64 linux")

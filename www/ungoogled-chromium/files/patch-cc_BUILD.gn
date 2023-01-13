@@ -1,4 +1,4 @@
---- cc/BUILD.gn.orig	2022-12-02 17:56:32 UTC
+--- cc/BUILD.gn.orig	2023-01-13 08:56:02 UTC
 +++ cc/BUILD.gn
 @@ -666,7 +666,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
@@ -9,7 +9,7 @@
      data_deps = [ "//third_party/mesa_headers" ]
    }
  }
-@@ -894,7 +894,6 @@ cc_test("cc_unittests") {
+@@ -893,7 +893,6 @@ cc_test("cc_unittests") {
    data = [ "//components/viz/test/data/" ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",

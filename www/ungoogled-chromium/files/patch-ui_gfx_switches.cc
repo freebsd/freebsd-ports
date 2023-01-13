@@ -1,6 +1,6 @@
---- ui/gfx/switches.cc.orig	2022-10-01 07:40:07 UTC
+--- ui/gfx/switches.cc.orig	2023-01-13 08:56:02 UTC
 +++ ui/gfx/switches.cc
-@@ -26,7 +26,7 @@ const char kForcePrefersReducedMotion[] = "force-prefe
+@@ -33,7 +33,7 @@ const char kForcePrefersReducedMotion[] = "force-prefe
  // Run in headless mode, i.e., without a UI or display server dependencies.
  const char kHeadless[] = "headless";
  

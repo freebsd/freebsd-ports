@@ -1,11 +1,11 @@
---- gpu/command_buffer/service/shared_image/gl_texture_image_backing.cc.orig	2022-12-02 17:56:32 UTC
+--- gpu/command_buffer/service/shared_image/gl_texture_image_backing.cc.orig	2023-01-13 08:56:02 UTC
 +++ gpu/command_buffer/service/shared_image/gl_texture_image_backing.cc
-@@ -345,7 +345,7 @@ void GLTextureImageBacking::InitializeGLTexture(
+@@ -346,7 +346,7 @@ void GLTextureImageBacking::InitializeGLTexture(
  }
  
  void GLTextureImageBacking::CreateEGLImage() {
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(USE_OZONE)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(USE_OZONE) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_BSD)
    SharedContextState* shared_context_state = factory()->GetSharedContextState();
    ui::ScopedMakeCurrent smc(shared_context_state->context(),
                              shared_context_state->surface());
