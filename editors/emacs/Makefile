@@ -186,7 +186,7 @@ MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 MODULES_CONFIGURE_WITH=		modules
 MOTIF_USES=			motif
 MOTIF_CONFIGURE_ON=		--with-x-toolkit=motif
-NATIVECOMP_USE=			GCC=11+
+NATIVECOMP_USE=			GCC=yes
 NATIVECOMP_CONFIGURE_WITH=	native-compilation
 NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
 OSS_CONFIGURE_ON=		--with-sound=oss
