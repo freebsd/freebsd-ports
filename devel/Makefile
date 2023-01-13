@@ -704,6 +704,7 @@
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
     SUBDIR += fstrm
+    SUBDIR += fsx
     SUBDIR += ftjam
     SUBDIR += ftnchek
     SUBDIR += ftxui
