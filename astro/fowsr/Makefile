@@ -1,5 +1,6 @@
 PORTNAME=	fowsr
 PORTVERSION=	${FILEVER}
+PORTREVISION=	1
 CATEGORIES=	astro
 
 MAINTAINER=	netchild@FreeBSD.org
@@ -20,7 +21,7 @@ USES=		gmake dos2unix
 PLIST_FILES=	bin/fowsr
 
 post-patch:
-	${REINPLACE_CMD} 's:gcc:${CC}:g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's:gcc:${CC} ${CFLAGS}:g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} 's:/usr/bin/fowsr:fowsr:g ; s://var//://var/tmp//:g' \
 	    ${WRKSRC}/*.sh ${WRKSRC}/fowsr.c
 
