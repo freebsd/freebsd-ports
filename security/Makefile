@@ -238,7 +238,7 @@
     SUBDIR += isnprober
     SUBDIR += john
     SUBDIR += kbfsd
-    SUBDIR += kc24
+    SUBDIR += kc
     SUBDIR += kdbxviewer
     SUBDIR += keepass
     SUBDIR += keepass-plugin-keepassrpc

@@ -1,19 +1,17 @@
 PORTNAME=		kc
-PORTVERSION=		2.4.2
-PORTREVISION=	3
+PORTVERSION=		2.5.1
 CATEGORIES=		security
-PKGNAMESUFFIX=		24
 
 MAINTAINER=		leva@ecentrum.hu
 COMMENT=		Console based password storing application
-WWW=		https://github.com/levaidaniel/kc
+WWW=			https://github.com/levaidaniel/kc
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
 LIB_DEPENDS=		libxml2.so:textproc/libxml2
 
-CONFLICTS=		kc
+CONFLICTS=		kc24
 
 OPTIONS_DEFINE=		PCRE SCRYPT
 OPTIONS_DEFAULT=	PCRE SCRYPT LIBEDIT
@@ -35,11 +33,15 @@ USES+=			pkgconfig ncurses ssl uidfix
 USE_GITHUB=		yes
 GH_ACCOUNT=		levaidaniel
 
-PLIST_FILES=		bin/kc man/man1/kc.1.gz
+PLIST_FILES=		bin/kc man/man1/kc.1.gz share/doc/kc/Changelog.md
 
 MAKE_ENV+=		BUNDLED_BCRYPT=y
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lncursesw|${NCURSESLIBS}|' ${WRKSRC}/Makefile
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changelog.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

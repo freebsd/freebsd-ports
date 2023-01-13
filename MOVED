@@ -11524,7 +11524,6 @@ www/qupzilla-qt5|www/falkon|2019-03-03|Has expired: Project continues as www/fal
 databases/puppetdb-terminus4|databases/puppetdb-terminus5|2019-03-03|Has expired: Puppet 4 has reached EOL
 sysutils/bacula-client|sysutils/bacula9-client|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
 net-mgmt/nagios-check_bacula|net-mgmt/nagios-check_bacula9|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
-security/kc|security/kc24|2019-03-03|Has expired: Versions 2.4.x use incompatible database format
 sysutils/bacula-server|sysutils/bacula9-server|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
 sysutils/bacula-docs|sysutils/bacula9-docs|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-docs
 sysutils/bacula-client-static|sysutils/bacula9-client-static|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
@@ -17749,3 +17748,4 @@ math/cvc4|math/cvc5|2023-01-03|CVC4 was succeeded by CVC5
 math/cvc3|math/cvc5|2023-01-04|CVC3 was succeeded by CVC4 and CVC5
 devel/caf|devel/actor-framework|2023-01-08|Merge duplicates into devel/actor-framework that is a full software name
 net/nebula|security/nebula|2023-01-09|Remove duplicate
+security/kc24|security/kc|2023-01-13|kc24 was a transient package to easy database migration. Rename to original name
