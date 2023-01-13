@@ -239,6 +239,7 @@
     SUBDIR += p5-Nagios-Plugin-Beanstalk
     SUBDIR += p5-Nagios-Plugin-LDAP
     SUBDIR += p5-Nagios-Plugins-Memcached
+    SUBDIR += p5-Nagios-Plugin_check_raid
     SUBDIR += p5-Net-ACL
     SUBDIR += p5-Net-Abuse-Utils
     SUBDIR += p5-Net-Abuse-Utils-Spamhaus
