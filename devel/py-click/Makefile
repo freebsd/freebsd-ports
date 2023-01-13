@@ -1,6 +1,5 @@
 PORTNAME=	click
-PORTVERSION=	8.0.3
-PORTREVISION=	1
+PORTVERSION=	8.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +11,10 @@ WWW=		https://github.com/mitsuhiko/click
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
-
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		python:3.7+
+USE_PYTHON=	autoplist distutils pytest
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -p no:warnings
 
 .include <bsd.port.pre.mk>
 
