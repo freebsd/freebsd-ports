@@ -1,6 +1,5 @@
 PORTNAME=	handbrake
-DISTVERSION=	1.5.1
-PORTREVISION=	3
+DISTVERSION=	1.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -45,14 +44,15 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:3.6+,build
 
-CONTRIB_FILES=	fdk-aac-2.0.1.tar.gz \
-		ffmpeg-4.4.1.tar.bz2 \
-		libbluray-1.3.0.tar.bz2 \
+CONTRIB_FILES=	SVT-AV1-v1.4.1.tar.gz \
+		fdk-aac-2.0.2.tar.gz \
+		ffmpeg-5.1.2.tar.bz2 \
+		libbluray-1.3.4.tar.bz2 \
 		libdvdnav-6.1.1.tar.bz2 \
-		libdvdread-6.1.1.tar.bz2 \
-		dav1d-0.9.2.tar.bz2 \
-		x265_3.5.tar.gz \
-		zimg-3.0.3.tar.gz
+		libdvdread-6.1.3.tar.bz2 \
+		dav1d-1.0.0.tar.bz2 \
+		x265-snapshot-20221130-12747.tar.gz \
+		zimg-3.0.4.tar.gz
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
@@ -121,9 +121,7 @@ pre-configure:
 	cd ${DISTDIR}/${DIST_SUBDIR} && \
 	    ${INSTALL_DATA} ${CONTRIB_FILES} \
 	    ${WRKSRC}/download
-# Following patches reduces warnings with clang.
-	${CP} ${FILESDIR}/P00-freebsd-libavutil-x86-asm-h.patch ${WRKSRC}/contrib/ffmpeg
-	${CP} ${FILESDIR}/P01-freebsd-ifo_types.h.patch ${WRKSRC}/contrib/libdvdread
+
 # for powerpc64
 # picked from multimedia/ffmpeg/files/patch-libswscale_ppc_yuv2rgb__altivec.c
 	${CP} ${FILESDIR}/P02-freebsd-ppc-libswscale.patch ${WRKSRC}/contrib/ffmpeg
