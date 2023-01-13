@@ -31,4 +31,6 @@ GH_TUPLE=	KDAB:perfparser:d84473c:perfparser/3rdparty/perfparser \
 
 CMAKE_ARGS=	-DCMAKE_MODULE_PATH=${LOCALBASE}/share/ECM/find-modules
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].*$$ # prevent tags like 'continuous'
+
 .include <bsd.port.mk>
