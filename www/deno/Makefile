@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.1
-PORTREVISION=	1
+DISTVERSION=	1.29.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -90,7 +89,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		clap_lex-0.1.1 \
 		clipboard-win-4.4.2 \
 		codespan-reporting-0.11.1 \
-		console_static_text-0.3.3 \
+		console_static_text-0.3.4 \
 		const-oid-0.9.0 \
 		convert_case-0.4.0 \
 		copyless-0.1.5 \
@@ -119,12 +118,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dashmap-5.4.0 \
 		data-encoding-2.3.2 \
 		data-url-0.2.0 \
-		debug_unreachable-0.1.1 \
-		deno_ast-0.21.0 \
-		deno_doc-0.51.0 \
-		deno_emit-0.12.0 \
-		deno_graph-0.39.0 \
-		deno_lint-0.35.0 \
+		deno_ast-0.23.2 \
+		deno_doc-0.52.0 \
+		deno_emit-0.13.0 \
+		deno_graph-0.41.0 \
+		deno_lint-0.37.0 \
 		deno_task_shell-0.8.2 \
 		der-0.6.0 \
 		derive_more-0.99.17 \
@@ -139,8 +137,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dprint-core-0.60.0 \
 		dprint-plugin-json-0.17.0 \
 		dprint-plugin-markdown-0.15.1 \
-		dprint-plugin-typescript-0.79.0 \
-		dprint-swc-ext-0.5.0 \
+		dprint-plugin-typescript-0.80.2 \
+		dprint-swc-ext-0.6.0 \
 		dyn-clone-1.0.9 \
 		dynasm-1.2.3 \
 		dynasmrt-1.2.3 \
@@ -152,11 +150,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-as-inner-0.5.1 \
 		enum_kind-0.2.1 \
 		env_logger-0.9.0 \
-		errno-0.1.8 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
-		eszip-0.31.0 \
+		escape8259-0.5.2 \
+		eszip-0.32.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
@@ -238,7 +236,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		js-sys-0.3.60 \
 		jsonc-parser-0.21.0 \
 		junction-0.2.0 \
-		kernel32-sys-0.2.2 \
 		khronos-egl-4.1.0 \
 		kqueue-1.0.6 \
 		kqueue-sys-1.0.3 \
@@ -336,7 +333,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.47 \
 		profiling-1.0.6 \
-		pty-0.2.2 \
+		pty2-0.1.0 \
 		pulldown-cmark-0.9.2 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
@@ -372,6 +369,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustls-0.20.6 \
 		rustls-native-certs-0.6.2 \
 		rustls-pemfile-1.0.1 \
+		rustversion-1.0.11 \
 		rustyline-10.0.0 \
 		rustyline-derive-0.7.0 \
 		ryu-1.0.11 \
@@ -416,29 +414,29 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		string_enum-0.3.2 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
-		swc_atoms-0.4.23 \
-		swc_bundler-0.192.45 \
-		swc_common-0.29.10 \
+		swc_atoms-0.4.32 \
+		swc_bundler-0.193.30 \
+		swc_common-0.29.25 \
 		swc_config-0.1.4 \
 		swc_config_macro-0.1.0 \
-		swc_ecma_ast-0.94.14 \
-		swc_ecma_codegen-0.127.23 \
+		swc_ecma_ast-0.95.9 \
+		swc_ecma_codegen-0.128.15 \
 		swc_ecma_codegen_macros-0.7.1 \
-		swc_ecma_dep_graph-0.94.19 \
-		swc_ecma_loader-0.41.11 \
-		swc_ecma_parser-0.122.19 \
-		swc_ecma_transforms_base-0.111.33 \
-		swc_ecma_transforms_classes-0.100.32 \
+		swc_ecma_dep_graph-0.95.13 \
+		swc_ecma_loader-0.41.26 \
+		swc_ecma_parser-0.123.13 \
+		swc_ecma_transforms_base-0.112.19 \
+		swc_ecma_transforms_classes-0.101.19 \
 		swc_ecma_transforms_macros-0.5.0 \
-		swc_ecma_transforms_optimization-0.167.26 \
-		swc_ecma_transforms_proposal-0.144.20 \
-		swc_ecma_transforms_react-0.155.21 \
-		swc_ecma_transforms_typescript-0.159.22 \
-		swc_ecma_utils-0.105.24 \
-		swc_ecma_visit-0.80.14 \
+		swc_ecma_transforms_optimization-0.168.21 \
+		swc_ecma_transforms_proposal-0.145.20 \
+		swc_ecma_transforms_react-0.156.20 \
+		swc_ecma_transforms_typescript-0.160.21 \
+		swc_ecma_utils-0.106.15 \
+		swc_ecma_visit-0.81.9 \
 		swc_eq_ignore_macros-0.1.1 \
-		swc_fast_graph-0.17.11 \
-		swc_graph_analyzer-0.18.11 \
+		swc_fast_graph-0.17.26 \
+		swc_graph_analyzer-0.18.28 \
 		swc_macros_common-0.3.6 \
 		swc_visit-0.5.3 \
 		swc_visit_macros-0.5.4 \
@@ -500,7 +498,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.4 \
 		universal-hash-0.5.0 \
-		unreachable-0.1.1 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
 		urlpattern-0.2.0 \
@@ -510,7 +507,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		v8-0.60.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		void-1.0.2 \
 		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
 		walkdir-2.3.2 \
@@ -531,9 +527,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wgpu-types-0.13.2 \
 		which-4.3.0 \
 		widestring-0.5.1 \
-		winapi-0.2.8 \
 		winapi-0.3.9 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
