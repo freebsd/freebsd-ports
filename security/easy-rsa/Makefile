@@ -1,5 +1,5 @@
 PORTNAME=	easy-rsa
-DISTVERSION=	3.1.1
+DISTVERSION=	3.1.2
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/ \
 		LOCAL/mandree/
