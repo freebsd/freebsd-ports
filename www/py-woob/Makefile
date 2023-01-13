@@ -1,5 +1,5 @@
 PORTNAME=	woob
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ WWW=		https://woob.tech/
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
@@ -33,9 +34,6 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-PYDISTUTILS_BUILDARGS=	${CONFIGURE_ARGS}
-PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} ${CONFIGURE_ARGS}
-
 OPTIONS_DEFINE=		CLICOLOR NSS RTMPDUMP
 OPTIONS_DEFAULT=	CLICOLOR NSS
 
@@ -48,7 +46,6 @@ NSS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|/etc/ssl/certs|${LOCALBASE}/etc/ssl|g' ${WRKSRC}/woob/browser/nss.py
 
 .include <bsd.port.mk>
