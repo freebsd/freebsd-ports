@@ -1,7 +1,7 @@
-TIMESTAMP = 1670619645
-SHA256 (go/www_pydio-cells/pydio-cells-v4.0.5_GH0/v4.0.5.mod) = 83f5062dbb19e3a163d67f48807f45f06b8edf2b3239f8b1f520e97feb9ff4b0
-SIZE (go/www_pydio-cells/pydio-cells-v4.0.5_GH0/v4.0.5.mod) = 25373
-SHA256 (go/www_pydio-cells/pydio-cells-v4.0.5_GH0/v4.0.5.zip) = 78618e86a5344d9d7a7e0b838e0df95d3cc49f16db2d16641b7a3b4f2ad7625c
-SIZE (go/www_pydio-cells/pydio-cells-v4.0.5_GH0/v4.0.5.zip) = 58799516
-SHA256 (go/www_pydio-cells/pydio-cells-v4.0.5_GH0/pydio-cells-v4.0.5_GH0.tar.gz) = 89930338cdb3a648da5328157d767cea00b7cd5d87f9d3ec699d8c317afbb951
-SIZE (go/www_pydio-cells/pydio-cells-v4.0.5_GH0/pydio-cells-v4.0.5_GH0.tar.gz) = 53254386
+TIMESTAMP = 1673637075
+SHA256 (go/www_pydio-cells/pydio-cells-v4.0.6_GH0/v4.0.6.mod) = f40d6a87dfdc10eb34c0ef4e51e3a10b72da0d96fe4db4a420aaf23b562dcaa7
+SIZE (go/www_pydio-cells/pydio-cells-v4.0.6_GH0/v4.0.6.mod) = 25301
+SHA256 (go/www_pydio-cells/pydio-cells-v4.0.6_GH0/v4.0.6.zip) = c9abc796d025b40ca1049a065fb87c469e8ee21cfc9cd0a2a7f2a3c1044917de
+SIZE (go/www_pydio-cells/pydio-cells-v4.0.6_GH0/v4.0.6.zip) = 58822844
+SHA256 (go/www_pydio-cells/pydio-cells-v4.0.6_GH0/pydio-cells-v4.0.6_GH0.tar.gz) = e688f094c48cdf4d0a963ae1dfa5dd0cd888bee9f004c26c525128791cba6664
+SIZE (go/www_pydio-cells/pydio-cells-v4.0.6_GH0/pydio-cells-v4.0.6_GH0.tar.gz) = 53272546
