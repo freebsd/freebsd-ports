@@ -227,6 +227,7 @@
     SUBDIR += nagios-check_postgres_replication
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
+    SUBDIR += nanodbc
     SUBDIR += neo4j
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
