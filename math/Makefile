@@ -1152,6 +1152,7 @@
     SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += teyjus
+    SUBDIR += the-algorithms-c++
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
     SUBDIR += tlapack
