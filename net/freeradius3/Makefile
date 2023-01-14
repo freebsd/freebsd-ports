@@ -2,6 +2,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${DISTVERSION:S/./_/g}/ \
 		https://freeradius.org/ftp/pub/radius/%SUBDIR%/ \
@@ -314,6 +315,6 @@ post-build:
 	@${FIND} ${WRKSRC}/build/bin -type f -exec ${STRIP_CMD} {} \;
 
 post-install:
-	${MKDIR} ${STAGEDIR}/var/run/radiusd
+	${MKDIR} ${STAGEDIR}/var/run/radiusd ${STAGEDIR}/var/log/radacct
 
 .include <bsd.port.post.mk>
