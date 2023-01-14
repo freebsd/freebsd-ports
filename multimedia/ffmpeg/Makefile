@@ -80,11 +80,6 @@ OPTIONS_EXCLUDE+=	KLVANC
 OPTIONS_EXCLUDE+=	OPENVINO
 .endif
 
-.if !exists(${.CURDIR:H:H}/science/tensorflow)
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d8c0bbb0aa4
-OPTIONS_EXCLUDE+=	TENSORFLOW
-.endif
-
 OPTIONS_RADIO=	RTMP SSL
 OPTIONS_RADIO_RTMP=	GCRYPT GMP LIBRTMP
 OPTIONS_RADIO_SSL=	GNUTLS MBEDTLS OPENSSL
@@ -490,7 +485,7 @@ SVTVP9_PATCHFILES=	master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:s
 .endif
 
 # tensorflow
-TENSORFLOW_LIB_DEPENDS=	libtensorflow.so:science/tensorflow
+TENSORFLOW_LIB_DEPENDS=	libtensorflow.so:science/py-tensorflow
 TENSORFLOW_CONFIGURE_ENABLE=	libtensorflow
 
 # tesseract
