@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/sandbox/BUILD.gn.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/sandbox/BUILD.gn
+@@ -36,7 +36,7 @@ group("sandbox") {
+       "//sandbox/mac:system_services",
+       "//sandbox/mac/mojom",
+     ]
+-  } else if (is_linux || is_chromeos || is_android) {
++  } else if ((is_linux && !is_bsd) || is_chromeos || is_android) {
+     public_deps = [ "//sandbox/linux:sandbox" ]
+   }
+ }

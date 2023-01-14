@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/BUILD.gn.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/BUILD.gn
+@@ -29,8 +29,12 @@ component("memory_instrumentation") {
+     sources += [ "os_metrics_win.cc" ]
+   }
+ 
+-  if (is_android || is_linux || is_chromeos) {
++  if ((is_android || is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "os_metrics_linux.cc" ]
++  }
++
++  if (is_bsd) {
++    sources += [ "os_metrics_bsd.cc" ]
+   }
+ 
+   if (is_fuchsia) {

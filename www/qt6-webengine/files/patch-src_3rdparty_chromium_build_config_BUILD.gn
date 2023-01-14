@@ -1,0 +1,22 @@
+--- src/3rdparty/chromium/build/config/BUILD.gn.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/build/config/BUILD.gn
+@@ -222,13 +222,17 @@ config("default_libs") {
+       "CoreText.framework",
+       "Foundation.framework",
+     ]
+-  } else if (is_linux || is_chromeos) {
++  } else if ((is_linux && !is_bsd) || is_chromeos) {
+     libs = [
+       "dl",
+       "pthread",
+       "rt",
+     ]
+-  }
++  } else if (is_bsd) {
++    libs = [
++      "pthread",
++    ]
++ }
+ }
+ 
+ group("common_deps") {

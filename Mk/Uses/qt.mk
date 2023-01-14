@@ -133,7 +133,7 @@ _QT_MK_POST_INCLUDED=	qt.mk
 _USE_QT_COMMON=		3d charts datavis3d declarative doc imageformats multimedia \
 			networkauth quick3d quicktimeline remoteobjects scxml \
 			sensors serialbus serialport svg virtualkeyboard wayland \
-			webchannel websockets
+			webchannel webengine websockets
 
 _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
 			declarative-test designer diag examples gamepad \
@@ -142,7 +142,7 @@ _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
 			qdbus qdbusviewer qdoc qdoc-data qev qmake quickcontrols \
 			quickcontrols2 script scripttools speech sql sql-mysql sql-odbc \
 			sql-pgsql sql-sqlite2 sql-sqlite3 sql-tds testlib uiplugin \
-			uitools webengine webglplugin webkit websockets-qml webview \
+			uitools webglplugin webkit websockets-qml webview \
 			widgets x11extras xml xmlpatterns
 .  if ${ARCH} == amd64 || ${ARCH} == i386
 _USE_QT5_ONLY+=		sql-ibase
@@ -365,7 +365,7 @@ qt-webchannel_PORT=	www/${_QT_RELNAME}-webchannel
 qt-webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so
 
 qt-webengine_PORT=	www/${_QT_RELNAME}-webengine
-qt-webengine_LIB=	libQt${_QT_LIBVER}WebEngine.so
+qt-webengine_LIB=	libQt${_QT_LIBVER}WebEngineCore.so
 
 qt-webglplugin_PORT=     www/${_QT_RELNAME}-webglplugin
 qt-webglplugin_PATH=     ${LOCALBASE}/${QT_PLUGINDIR_REL}/platforms/libqwebgl.so

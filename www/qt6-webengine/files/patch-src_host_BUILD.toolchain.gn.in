@@ -1,0 +1,13 @@
+--- src/host/BUILD.toolchain.gn.in.orig	2022-11-08 21:18:48 UTC
++++ src/host/BUILD.toolchain.gn.in
+@@ -6,7 +6,9 @@ gcc_toolchain("@GN_TOOLCHAIN@") {
+   ld = "@CMAKE_CXX_COMPILER@"
+   ar = "@CMAKE_AR@"
+   nm = "@CMAKE_NM@"
+-  extra_cppflags = ""
++  extra_cppflags = "%%CPPFLAGS%%"
++  extra_cxxflags = "%%CXXFLAGS%%"
++  extra_ldflags = "%%LDFLAGS%%"
+   toolchain_args = {
+     current_os = "@GN_OS@"
+     current_cpu = "@GN_CPU@"

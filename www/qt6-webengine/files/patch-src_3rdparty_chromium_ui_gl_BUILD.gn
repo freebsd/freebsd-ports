@@ -1,0 +1,35 @@
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/ui/gl/BUILD.gn
+@@ -165,8 +165,6 @@ jumbo_component("gl") {
+     defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
+   }
+ 
+-  include_dirs = [ "//third_party/mesa_headers" ]
+-
+   all_dependent_configs = [ ":gl_config" ]
+ 
+   public_configs = [ "//third_party/khronos:khronos_headers" ]
+@@ -183,7 +181,6 @@ jumbo_component("gl") {
+   ]
+   public_deps = [
+     "//base",
+-    "//third_party/mesa_headers",
+     "//ui/events/platform",
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+@@ -437,7 +434,6 @@ jumbo_component("gl") {
+       data_deps += [
+         "//third_party/angle:libEGL",
+         "//third_party/angle:libGLESv2",
+-        "//third_party/mesa_headers",
+       ]
+       if (enable_swiftshader) {
+         data_deps += [
+@@ -693,7 +689,6 @@ test("gl_unittests") {
+ 
+   data_deps = [
+     "//testing/buildbot/filters:gl_unittests_filters",
+-    "//third_party/mesa_headers",
+   ]
+ 
+   # TODO(https://crbug.com/789065): this must be moved to Ozone.

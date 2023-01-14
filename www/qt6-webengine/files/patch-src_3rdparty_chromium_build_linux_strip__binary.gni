@@ -1,0 +1,15 @@
+--- src/3rdparty/chromium/build/linux/strip_binary.gni.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/build/linux/strip_binary.gni
+@@ -20,7 +20,11 @@ template("strip_binary") {
+                            "testonly",
+                          ])
+   action("${target_name}") {
+-    eu_strip_binary = "//buildtools/third_party/eu-strip/bin/eu-strip"
++    if (is_bsd) {
++      eu_strip_binary = "//buildtools/freebsd/strip"
++    } else {
++      eu_strip_binary = "//buildtools/third_party/eu-strip/bin/eu-strip"
++    }
+     script = "//build/linux/strip_binary.py"
+ 
+     if (defined(invoker.stripped_binary_output)) {

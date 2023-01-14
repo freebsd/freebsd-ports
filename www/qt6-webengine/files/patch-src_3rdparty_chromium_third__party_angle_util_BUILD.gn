@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/angle/util/BUILD.gn.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/third_party/angle/util/BUILD.gn
+@@ -203,7 +203,7 @@ foreach(is_shared_library,
+     ]
+     libs = []
+ 
+-    if (is_linux || is_chromeos) {
++    if ((is_linux || is_chromeos) && !is_bsd) {
+       libs += [
+         "rt",
+         "dl",
