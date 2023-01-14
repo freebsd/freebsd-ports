@@ -124,7 +124,7 @@ VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VULKAN_DESC=		Vulkan renderer
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
-WEBENGINE_DESC=		Web applet support (implies ${NLS_IMPLIES})
+WEBENGINE_DESC=		Web applet support (implies ${WEBENGINE_IMPLIES})
 WEBENGINE_USE=		QT=webengine
 WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
 WEBENGINE_IMPLIES=	GUI
