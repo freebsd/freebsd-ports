@@ -872,6 +872,12 @@ do-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
 	@${SED} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../bin/|bin/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../include/|include/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../lib/|lib/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../libdata/|libdata/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../libexec/|libexec/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../sbin/|sbin/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
 		-e 's|\,.*$$||' \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}.dist-info/RECORD >> ${_PYTHONPKGLIST}
 .    endif
