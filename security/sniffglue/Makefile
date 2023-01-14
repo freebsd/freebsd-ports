@@ -11,7 +11,6 @@ WWW=		https://github.com/kpcyrd/sniffglue
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 LIB_DEPENDS=	libpcap.so:net/libpcap
 
 USES=		cargo
