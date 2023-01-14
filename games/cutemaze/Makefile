@@ -1,8 +1,7 @@
 PORTNAME=	cutemaze
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Simple, top-down game in which mazes are randomly generated
@@ -16,7 +15,6 @@ USE_GL=		opengl
 USE_QT=		base svg tools:build
 
 PORTDOCS=	ChangeLog README
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
