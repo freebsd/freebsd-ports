@@ -1,3 +1,33 @@
+  <vuln vid="847f16e5-9406-11ed-a925-3065ec8fd3ec">
+    <topic>security/tor -- SOCKS4(a) inversion bug</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.4.7.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="https://gitlab.torproject.org/tpo/core/tor/-/issues/40730">
+	  <p>TROVE-2022-002: The SafeSocks option for SOCKS4(a) is inverted leading to SOCKS4 going through</p>
+	  <p>This is a report from hackerone:<br/>
+	     We have classified this as medium considering that tor was not defending in-depth for dangerous SOCKS request and so any user relying on SafeSocks 1 to make sure they don't link DNS leak and their Tor traffic wasn't safe afterall for SOCKS4(a).
+	     Tor Browser doesn't use SafeSocks 1 and SOCKS4 so at least the likely vast majority of users are not affected.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://hackerone.com/bugs?subject=torproject&amp;report_id=1784589</url>
+      <url>https://gitlab.torproject.org/tpo/core/tor/-/issues/40730</url>
+    </references>
+    <dates>
+      <discovery>2023-01-12</discovery>
+      <entry>2023-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76e2fcce-92d2-11ed-a635-080027f5fec9">
     <topic>emacs -- arbitary shell command execution vulnerability of ctags</topic>
     <affects>
