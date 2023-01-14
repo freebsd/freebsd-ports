@@ -6,7 +6,7 @@ MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Wonderful Sega Genesis/MegaDrive emulator
-WWW=		http://dgen.sourceforge.net/
+WWW=		https://dgen.sourceforge.net/
 
 USE_SDL=	sdl
 USE_GL=		glu
