@@ -1,6 +1,5 @@
 PORTNAME=	gottet
-PORTVERSION=	1.2.1
-DISTVERSIONSUFFIX=	-src
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
 
@@ -14,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lib gl qt:6 tar:bzip2
 USE_GL=		opengl
 USE_QT=		base tools:build
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
