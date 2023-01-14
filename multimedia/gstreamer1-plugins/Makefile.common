@@ -38,6 +38,7 @@ BASE_GST_ALL_PLUGINS+= \
 		tests \
 		theora \
 		tools \
+		tremor \
 		typefind \
 		video \
 		videoconvert \
