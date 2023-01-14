@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -55,6 +55,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libqrcodegencpp.so:graphics/qr-code-generator \
+		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
@@ -105,7 +106,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	dragonbox-1.1.0.tar.gz:src
+DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -170,6 +171,7 @@ GNOME_USE=	GNOME=dconf
 GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=	GNOME=gtk30
 
+GTK4_BROKEN=		GTK4 is still experimental and breaks in compat code
 GTK4_CONFIGURE_ENABLE=	gtk4
 GTK4_USE=	GNOME=gtk40
 
@@ -291,6 +293,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-gpgmepp \
 		--with-system-libfixmath=no \
 		--with-system-libs \
+		--with-system-libtiff \
 		--with-system-libxml \
 		--with-system-mdds \
 		--with-system-nss \
