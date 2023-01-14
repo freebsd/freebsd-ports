@@ -1,0 +1,85 @@
+From f172fdbb77c422e27d3b7530f3fe95b98d1608e7 Mon Sep 17 00:00:00 2001
+From: Simon Kelley <simon@thekelleys.org.uk>
+Date: Wed, 11 Jan 2023 23:23:40 +0000
+Subject: [PATCH] Fix bug which can break the invariants on the order of a hash
+ chain.
+
+If there are multiple cache records with the same name but different
+F_REVERSE and/or F_IMMORTAL flags, the code added in fe9a134b could
+concievable break the REVERSE-FORWARD-IMMORTAL order invariant.
+
+Reproducing this is damn near impossible, but it is responsible
+for rare and otherwise inexplicable reversion between 2.87 and 2.88
+which manifests itself as a cache internal error. All observed
+cases have depended on DNSSEC being enabled, but the bug could in
+theory manifest itself without DNSSEC
+
+Thanks to Timo van Roermund for reporting the bug and huge
+efforts to isolate it.
+---
+ CHANGELOG   | 16 +++++++++++++++-
+ src/cache.c | 14 +++++++++-----
+ 2 files changed, 24 insertions(+), 6 deletions(-)
+
+diff --git a/CHANGELOG b/CHANGELOG
+index 0f36a0f..d6e6753 100644
+--- a/CHANGELOG
++++ b/CHANGELOG
+@@ -1,6 +1,20 @@
++version 2.98
++        Fix bug introduced in 2.88 (commit fe91134b) which can result
++	in corruption of the DNS cache internal data structures and
++	logging of "cache internal error". This has only been seen
++	in one place in the wild, and it took considerable effort
++	to even generate a test case to reproduce it, but there's
++	no way to be sure it won't strike, and the effect to to break
++	the cache badly. Installations with DNSSEC enabled are more
++	likely to see the problem, but not running DNSSEC does not
++	guarantee that it won't happen. Thanks to Timo van Roermund
++	for reporting the bug and for his great efforts in chasing
++	it down.
++	
++	
+ version 2.88
+ 	Fix bug in --dynamic-host when an interface has /16 IPv4
+-	address. Thanks to Mark Dietzer for spotting this.
++  	address. Thanks to Mark Dietzer for spotting this.
+ 	
+ 	Add --fast-dns-retry option. This gives dnsmasq the ability
+ 	to originate retries for upstream DNS queries itself, rather
+diff --git a/src/cache.c b/src/cache.c
+index 42283bc..0a5fd14 100644
+--- a/src/cache.c
++++ b/src/cache.c
+@@ -236,19 +236,23 @@ static void cache_hash(struct crec *crecp)
+ 
+   char *name = cache_get_name(crecp);
+   struct crec **up = hash_bucket(name);
+-
+-  if (!(crecp->flags & F_REVERSE))
++  unsigned int flags = crecp->flags & (F_IMMORTAL | F_REVERSE);
++  
++  if (!(flags & F_REVERSE))
+     {
+       while (*up && ((*up)->flags & F_REVERSE))
+ 	up = &((*up)->hash_next); 
+       
+-      if (crecp->flags & F_IMMORTAL)
++      if (flags & F_IMMORTAL)
+ 	while (*up && !((*up)->flags & F_IMMORTAL))
+ 	  up = &((*up)->hash_next);
+     }
+ 
+-  /* Preserve order when inserting the same name multiple times. */
+-  while (*up && hostname_isequal(cache_get_name(*up), name))
++  /* Preserve order when inserting the same name multiple times.
++     Do not mess up the flag invariants. */
++  while (*up &&
++	 hostname_isequal(cache_get_name(*up), name) &&
++	 flags == ((*up)->flags & (F_IMMORTAL | F_REVERSE)))
+     up = &((*up)->hash_next);
+   
+   crecp->hash_next = *up;
+-- 
+2.20.1
+
