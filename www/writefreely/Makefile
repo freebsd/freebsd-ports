@@ -1,7 +1,7 @@
 PORTNAME=	writefreely
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc
 MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks
 DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks

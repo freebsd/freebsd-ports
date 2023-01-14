@@ -1,6 +1,6 @@
 PORTNAME=	logstash-forwarder
 PORTVERSION=	0.4.0.20150507
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	cheffo@freebsd-bg.org
