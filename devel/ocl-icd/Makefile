@@ -12,12 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	opencl>3.0:devel/opencl
 
-USES=		autoreconf gmake libtool localbase:ldflags pathfix
+USES=		autoreconf gmake libtool localbase:ldflags pathfix ruby:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OCL-dev
-USE_RUBY=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-DCL_TARGET_OPENCL_VERSION=300

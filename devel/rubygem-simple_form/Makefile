@@ -17,7 +17,6 @@ PORTSCOUT=	ignore:1
 
 USES=		cpe gem
 CPE_VENDOR=	plataformatec
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

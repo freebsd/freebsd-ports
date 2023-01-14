@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-http-accept>=1.7.0:www/rubygem-http-accept \
 		rubygem-netrc>=0.8<1:net/rubygem-netrc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

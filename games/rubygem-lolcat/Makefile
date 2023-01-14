@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-manpages>=0.6.1<0.7:devel/rubygem-manpages \
 
 USES=		gem
 
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

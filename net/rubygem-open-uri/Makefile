@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-stringio>=0:devel/rubygem-stringio \
 		rubygem-uri>=0:net/rubygem-uri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

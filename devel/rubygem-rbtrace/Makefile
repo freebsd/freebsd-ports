@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-ffi>=1.0.6:devel/rubygem-ffi \
 		rubygem-msgpack>=0.4.3:devel/rubygem-msgpack \
 		rubygem-optimist>=3.0.0:devel/rubygem-optimist
 
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/rbtrace

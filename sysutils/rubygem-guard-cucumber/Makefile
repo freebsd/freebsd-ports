@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-cucumber>=3.1:devel/rubygem-cucumber \
 		rubygem-nenv>=0.1:devel/rubygem-nenv
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

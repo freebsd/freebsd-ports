@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-actionpack61>=5<8:www/rubygem-actionpack61 \
 		rubygem-redis4>3.0.0<6.0.0:databases/rubygem-redis4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

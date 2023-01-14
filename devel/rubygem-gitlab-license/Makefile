@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	bash>0:shells/bash
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 SHEBANG_FILES=	bin/setup
 
 NO_ARCH=	yes

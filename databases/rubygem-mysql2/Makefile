@@ -11,6 +11,5 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem mysql ssl
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

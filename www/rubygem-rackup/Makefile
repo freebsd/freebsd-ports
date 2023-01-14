@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-rack>=3.0.0.beta1,3:www/rubygem-rack \
 		rubygem-webrick>0:www/rubygem-webrick
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/rackup
 

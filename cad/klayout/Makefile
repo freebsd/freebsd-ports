@@ -13,11 +13,10 @@ BROKEN_i386=	type 'hash<long long>' does not provide a call operator
 BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
 BROKEN_sparc64=	does not compile on sparc64: gcc bug
 
-USES=		compiler:c++0x gmake gl python qt:5
+USES=		compiler:c++0x gmake gl python ruby qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	KLayout
 USE_GL=		gl
-USE_RUBY=	yes
 USE_QT=		core buildtools designer gui multimedia network printsupport \
 		qmake sql svg testlib uitools widgets xml xmlpatterns
 USE_LDCONFIG=	yes

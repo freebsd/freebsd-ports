@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-colored2>=3.1.2:textproc/rubygem-colored2 \
 		rubygem-puppet_forge>=2.3.0:sysutils/rubygem-puppet_forge
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

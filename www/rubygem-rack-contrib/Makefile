@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-rack22>=2.0,3<3,3:www/rubygem-rack22
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

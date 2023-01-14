@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-pdf-reader>=2.0<3:print/rubygem-pdf-reader \
 		rubygem-prawn>=2.2<3:print/rubygem-prawn
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

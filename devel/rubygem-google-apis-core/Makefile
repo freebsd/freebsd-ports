@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
 		rubygem-webrick>=0:www/rubygem-webrick
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-molinillo>=0.6<1:devel/rubygem-molinillo \
 		rubygem-semverse>=1.1<4.0:devel/rubygem-semverse
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

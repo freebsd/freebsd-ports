@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1:devel/rubygem-concurrent-ruby \
 		rubygem-zeitwerk>=2.1:devel/rubygem-zeitwerk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

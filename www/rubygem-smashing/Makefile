@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-coffee-script>=2.4<3:devel/rubygem-coffee-script \
 		rubygem-thor>=1.0<2:devel/rubygem-thor
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

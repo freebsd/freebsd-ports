@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rails50>=0:www/rubygem-rails50
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

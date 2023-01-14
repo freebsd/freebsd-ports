@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-faraday>=1.9<3:www/rubygem-faraday \
 		rubygem-grpc>=1.36<2:net/rubygem-grpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

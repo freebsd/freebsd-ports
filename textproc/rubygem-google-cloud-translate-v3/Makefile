@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-gapic-common>=0.10<2.0:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

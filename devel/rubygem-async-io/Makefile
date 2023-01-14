@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-async>=0:devel/rubygem-async
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

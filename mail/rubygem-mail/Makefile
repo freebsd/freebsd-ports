@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-mini_mime>=0.1.1:mail/rubygem-mini_mime
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

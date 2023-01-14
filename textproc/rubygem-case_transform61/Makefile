@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-activesupport61>0:devel/rubygem-activesupport61
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

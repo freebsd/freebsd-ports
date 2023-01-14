@@ -9,7 +9,6 @@ WWW=		https://github.com/romanbsd/fast-stemmer
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

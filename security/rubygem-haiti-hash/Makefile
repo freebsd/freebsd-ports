@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-docopt>=0.6<1:devel/rubygem-docopt \
 		rubygem-paint>=2.2<3:devel/rubygem-paint
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-llhttp-ffi>=0.4.0<0.5:www/rubygem-llhttp-ffi
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

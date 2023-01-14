@@ -19,7 +19,6 @@ RUN_DEPENDS+=	rubygem-ruby-augeas>0:textproc/rubygem-ruby-augeas \
 
 USES=		cpe gem
 CPE_VENDOR=	puppet
-USE_RUBY=	yes
 
 CONFLICTS_INSTALL=	facter # bin/facter
 

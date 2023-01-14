@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3
 
 USES=		gem gnome
 USE_GNOME=	gtksourceview4
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

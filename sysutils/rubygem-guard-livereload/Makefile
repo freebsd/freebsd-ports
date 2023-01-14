@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-em-websocket>=0.5<1:www/rubygem-em-websocket \
 		rubygem-multi_json>=1.8<2:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

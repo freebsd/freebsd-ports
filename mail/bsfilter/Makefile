@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	rubygem-gdbm>=2.0.0,2:databases/rubygem-gdbm
 
 NO_BUILD=	yes
-USE_RUBY=	yes
-USES=		shebangfix tar:tgz
+USES=		ruby shebangfix tar:tgz
 SHEBANG_FILES=	bsfilter/bsfilter
 
 OPTIONS_DEFINE=	EXAMPLES

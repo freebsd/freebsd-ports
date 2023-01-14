@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

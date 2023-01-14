@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport50>=0:devel/rubygem-activesupport50 \
 		rubygem-railties50>=0:www/rubygem-railties50
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

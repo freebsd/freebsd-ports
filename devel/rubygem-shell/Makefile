@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-e2mmap>=0:devel/rubygem-e2mmap \
 		rubygem-sync>=0:devel/rubygem-sync
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

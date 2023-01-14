@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-ruby_parser>=3.0<4:devel/rubygem-ruby_parser
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

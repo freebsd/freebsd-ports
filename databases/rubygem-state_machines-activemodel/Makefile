@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activemodel60>=5.1:databases/rubygem-activemodel60 \
 		rubygem-state_machines>=0.5.0:devel/rubygem-state_machines
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

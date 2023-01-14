@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-clutter>=${PORTSVERSION}:graphics/rubygem-clutter \
 		rubygem-gstreamer>=${PORTVERSION}:multimedia/rubygem-gstreamer
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

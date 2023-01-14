@@ -15,6 +15,5 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-autoprefixer-rails>=5.2.1:textproc/rubygem-autoprefixer-rai
 		rubygem-sassc>=2.0.0:textproc/rubygem-sassc
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

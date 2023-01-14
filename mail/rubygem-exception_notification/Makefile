@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-actionmailer52>=5.2<8:mail/rubygem-actionmailer52 \
 		rubygem-activesupport52>=5.2<8:devel/rubygem-activesupport52
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

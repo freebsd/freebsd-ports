@@ -13,9 +13,7 @@ WWW=		http://www.rubyist.net/~rubikitch/computer/rttool/index.en.html
 
 LICENSE=	RUBY
 
-USE_RUBY=	yes
-USES=		shebangfix
-USE_RUBY_SETUP=	yes
+USES=		ruby:setup shebangfix
 
 SHEBANG_FILES=	bin/rt/* lib/rt/*
 RUBY_MODNAME=	rt

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-bindata>=2.4<3:devel/rubygem-bindata \
 		rubygem-openssl-signature_algorithm>=1.0<2:security/rubygem-openssl-signature_algorithm
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

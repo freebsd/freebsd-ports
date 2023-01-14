@@ -15,7 +15,6 @@ RUN_DEPENDS=	git>=1.6:devel/git \
 		rubygem-rchardet>=1.8<2:textproc/rubygem-rchardet
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

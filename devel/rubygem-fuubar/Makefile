@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-rspec-core>=3.0:devel/rubygem-rspec-core \
 		rubygem-ruby-progressbar>=1.4:devel/rubygem-ruby-progressbar
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

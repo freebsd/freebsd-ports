@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-redis-client>=0.10:databases/rubygem-redis-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-childprocess>=0.5<5.0:devel/rubygem-childprocess \
 		rubygem-websocket>=1.0<2:www/rubygem-websocket
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

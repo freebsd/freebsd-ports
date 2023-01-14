@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-json-canonicalization>=0.3<1:devel/rubygem-json-canonicaliz
 		rubygem-rdf>=3.2.9<4:www/rubygem-rdf
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

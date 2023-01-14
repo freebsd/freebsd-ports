@@ -14,7 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-uri>=0:net/rubygem-uri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

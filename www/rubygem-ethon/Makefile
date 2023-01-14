@@ -14,7 +14,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	rubygem-ffi>=1.15.0:devel/rubygem-ffi
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

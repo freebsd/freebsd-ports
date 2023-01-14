@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-temple>=0.7.6:devel/rubygem-temple \
 		rubygem-tilt>=2.0.6:devel/rubygem-tilt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

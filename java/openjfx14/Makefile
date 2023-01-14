@@ -73,12 +73,12 @@ TEST_VARS=	AWT_TEST=true FULL_TEST=true
 WEBKIT_IMPLIES=	MEDIA
 WEBKIT_BUILD_DEPENDS=	cmake:devel/cmake-core
 WEBKIT_LIB_DEPENDS=	libicui18n.so:devel/icu
-WEBKIT_USES=	bison gmake gperf perl5 python:3.5+,build
+WEBKIT_USES=	bison gmake gperf perl5 python:3.5+,build ruby:build
 WEBKIT_USE=	GNOME=libxslt,libxml2 \
 		PERL5=build \
 		RUBY=yes \
 		XORG=xcomposite,xdamage,xfixes,xrender,xt
-WEBKIT_VARS=	RUBY_NO_RUN_DEPENDS=yes COMPILE_WEBKIT=true
+WEBKIT_VARS=	COMPILE_WEBKIT=true
 
 # Move Gradle's home below ${WRKDIR} instead of using ${HOME}/.gradle
 _GRADLE_ENV=	CC=${WRKDIR}/bin/ccwrapper \

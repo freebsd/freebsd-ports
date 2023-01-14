@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activemodel61>=0:databases/rubygem-activemodel61 \
 		rubygem-simpleidn>=0:dns/rubygem-simpleidn
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

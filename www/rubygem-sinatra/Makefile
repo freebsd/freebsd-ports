@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-mustermann>=3.0<4:devel/rubygem-mustermann \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

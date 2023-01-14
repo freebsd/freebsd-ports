@@ -8,7 +8,6 @@ COMMENT=	Profile your Ruby application
 WWW=		https://github.com/ruby/profile
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

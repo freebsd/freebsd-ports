@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/scanf
 LICENSE=	BSD2CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

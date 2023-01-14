@@ -9,7 +9,6 @@ WWW=		https://github.com/funny-falcon/bin_utils
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

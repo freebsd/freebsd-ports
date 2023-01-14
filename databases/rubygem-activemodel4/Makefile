@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4
 		rubygem-builder>=3.1<4:devel/rubygem-builder
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

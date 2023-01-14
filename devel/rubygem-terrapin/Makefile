@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-climate_control>=0.0.3:devel/rubygem-climate_control
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

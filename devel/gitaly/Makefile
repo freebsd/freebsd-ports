@@ -38,8 +38,7 @@ RUN_DEPENDS=	${MY_DEPENDS} \
 		gitlab-shell>=13.22.1:devel/gitlab-shell
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		cpe gmake go:modules,no_targets pkgconfig
-USE_RUBY=	yes
+USES=		cpe gmake go:modules,no_targets pkgconfig ruby
 
 CPE_VENDOR=	gitlab
 

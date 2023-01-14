@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-google-cloud-core>=1.6<2:net/rubygem-google-cloud-core \
 		rubygem-google-cloud-translate-v3>=0.0<2.0:textproc/rubygem-google-cloud-translate-v3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

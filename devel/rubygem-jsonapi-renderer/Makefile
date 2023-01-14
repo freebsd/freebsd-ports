@@ -10,7 +10,6 @@ WWW=		https://github.com/jsonapi-rb/jsonapi-renderer
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

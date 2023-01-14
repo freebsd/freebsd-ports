@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-sass>=3.4<4:textproc/rubygem-sass
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

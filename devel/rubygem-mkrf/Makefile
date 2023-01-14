@@ -9,7 +9,6 @@ WWW=		http://mkrf.rubyforge.org/
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem python
 
 .include <bsd.port.mk>

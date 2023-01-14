@@ -17,7 +17,6 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--use-system-libraries
 

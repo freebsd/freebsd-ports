@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/nats-pure
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

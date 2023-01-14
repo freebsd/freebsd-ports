@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 
 USES=		gem gnome
 USE_GNOME=	gtk40
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

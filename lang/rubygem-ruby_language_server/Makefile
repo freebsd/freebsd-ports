@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-activerecord61>=6.1<7:databases/rubygem-activerecord61 \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

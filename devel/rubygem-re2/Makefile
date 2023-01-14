@@ -14,6 +14,5 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libre2.so:devel/re2
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

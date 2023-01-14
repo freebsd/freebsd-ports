@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-google-apis-dns_v1>=0.1<1:dns/rubygem-google-apis-dns_v1 \
 		rubygem-zonefile>=1.04<2:dns/rubygem-zonefile
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ RUN_DEPENDS=	nmap:security/nmap
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

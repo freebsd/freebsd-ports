@@ -10,7 +10,6 @@ WWW=		https://github.com/remvee/exifr
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

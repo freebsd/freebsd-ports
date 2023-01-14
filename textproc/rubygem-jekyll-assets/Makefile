@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-activesupport5>=5.0<6:devel/rubygem-activesupport5 \
 		rubygem-sprockets3>=3.3<4.1:devel/rubygem-sprockets3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

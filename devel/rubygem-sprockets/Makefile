@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-rack22>=1,3<3,3:www/rubygem-rack22
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

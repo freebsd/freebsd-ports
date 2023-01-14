@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

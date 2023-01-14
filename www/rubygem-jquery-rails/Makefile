@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-rails-dom-testing>=1<3:textproc/rubygem-rails-dom-testing \
 		rubygem-thor>=0.14<2.0:devel/rubygem-thor
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

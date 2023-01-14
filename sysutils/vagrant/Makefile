@@ -43,11 +43,10 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-winrm-fs>=1.3.4<2:sysutils/rubygem-winrm-fs \
 		rubygem-winrm>=2.3.4<3:sysutils/rubygem-winrm
 
-USES=		cpe shebangfix
+USES=		cpe ruby shebangfix
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-USE_RUBY=	yes
 GEM_ENV+=	RB_USER_INSTALL=yes
 
 SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \

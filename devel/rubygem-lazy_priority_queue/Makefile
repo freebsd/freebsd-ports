@@ -10,7 +10,6 @@ WWW=		https://github.com/matiasbattocchia/lazy_priority_queue
 LICENSE=	BSD2CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

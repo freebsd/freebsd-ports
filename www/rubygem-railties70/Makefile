@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-zeitwerk>=2.5<3:devel/rubygem-zeitwerk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

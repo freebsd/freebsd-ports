@@ -12,7 +12,6 @@ WWW=		https://github.com/seattlerb/zentest
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

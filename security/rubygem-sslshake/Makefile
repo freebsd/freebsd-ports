@@ -10,7 +10,6 @@ WWW=		https://github.com/arlimus/sslshake
 LICENSE=	MPL20
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-shoulda-context>=2.0<3:devel/rubygem-shoulda-context \
 		rubygem-shoulda-matchers>=4.0<5:devel/rubygem-shoulda-matchers
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

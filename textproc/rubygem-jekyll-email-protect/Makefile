@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-jekyll>=3.0:www/rubygem-jekyll
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

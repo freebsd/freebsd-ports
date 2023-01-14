@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
 		rubygem-rbvmomi>=1.9<4:net/rubygem-rbvmomi
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

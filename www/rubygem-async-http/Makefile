@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async \
 		rubygem-traces>=0.8.0:devel/rubygem-traces
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

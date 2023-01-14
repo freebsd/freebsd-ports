@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-connection_pool>=0:net/rubygem-connection_pool
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

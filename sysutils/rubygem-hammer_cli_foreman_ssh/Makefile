@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-hammer_cli>=0.0.6:sysutils/rubygem-hammer_cli \
 		rubygem-net-ssh-multi>=1.2.1:security/rubygem-net-ssh-multi
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

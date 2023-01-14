@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-pry>=0.9<1:devel/rubygem-pry \
 		rubygem-slop3>=3.0<4:devel/rubygem-slop3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

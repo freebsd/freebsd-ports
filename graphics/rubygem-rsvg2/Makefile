@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 
 USES=		gem gnome
 USE_GNOME=	librsvg2
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

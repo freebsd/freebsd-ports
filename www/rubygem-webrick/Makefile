@@ -12,7 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

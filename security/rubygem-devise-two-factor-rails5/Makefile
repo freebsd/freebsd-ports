@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-activesupport5>=0<7.1:devel/rubygem-activesupport5 \
 		rubygem-rotp>=6.0<7:devel/rubygem-rotp
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

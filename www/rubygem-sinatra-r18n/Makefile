@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-r18n-core>=5.0<6:devel/rubygem-r18n-core \
 		rubygem-sinatra2>=1.3<3:www/rubygem-sinatra2
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

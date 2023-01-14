@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-kramdown>=1.16.2<3.0:textproc/rubygem-kramdown \
 		rubygem-tty-screen>=0.8<1:devel/rubygem-tty-screen
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -9,7 +9,6 @@ WWW=		https://github.com/hpricot/hpricot
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

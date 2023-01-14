@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-ffi>0:devel/rubygem-ffi \
 		rubygem-ffi-win32-extensions>0:devel/rubygem-ffi-win32-extensions
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

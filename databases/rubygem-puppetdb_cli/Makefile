@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-cri>=2.15<3:devel/rubygem-cri \
 		rubygem-pl-puppetdb-ruby>=2.0.3<2.1:databases/rubygem-pl-puppetdb-ruby
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

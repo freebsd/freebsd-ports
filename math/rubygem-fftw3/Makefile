@@ -10,7 +10,6 @@ WWW=		http://ruby.gfd-dennou.org/products/ruby-fftw3/
 RUN_DEPENDS=	rubygem-narray>0:math/rubygem-narray
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

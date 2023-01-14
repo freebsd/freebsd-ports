@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-railties61>=0:www/rubygem-railties61 \
 		rubygem-sprockets-rails-rails61>=0:devel/rubygem-sprockets-rails-rails61
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

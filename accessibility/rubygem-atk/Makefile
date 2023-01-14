@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USES=		gem gnome
 USE_GNOME=	atk
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

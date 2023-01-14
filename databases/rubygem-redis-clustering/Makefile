@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-redis>=${PORTVERSION}:databases/rubygem-redis \
 		rubygem-redis-cluster-client>=0.3.7:databases/rubygem-redis-cluster-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-webrick>=1.7.0<1.8:www/rubygem-webrick
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

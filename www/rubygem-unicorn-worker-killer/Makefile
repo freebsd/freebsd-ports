@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-get_process_mem>=0<1:devel/rubygem-get_process_mem \
 		rubygem-unicorn>=4<7:www/rubygem-unicorn
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

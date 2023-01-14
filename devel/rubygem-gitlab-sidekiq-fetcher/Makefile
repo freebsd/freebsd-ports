@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-json>=2.5:devel/rubygem-json \
 		rubygem-sidekiq>=6.1<7:devel/rubygem-sidekiq
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

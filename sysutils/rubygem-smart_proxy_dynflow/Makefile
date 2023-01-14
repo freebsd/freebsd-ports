@@ -16,7 +16,6 @@ RUN_DEPENDS=	foreman-proxy>=1.12.0:net/foreman-proxy \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

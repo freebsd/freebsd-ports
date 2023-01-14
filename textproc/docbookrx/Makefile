@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rake:devel/rubygem-rake \
 		rubygem-rspec>=1.2.2:devel/rubygem-rspec
 RUN_DEPENDS=	rubygem-nokogiri>=1.8:textproc/rubygem-nokogiri
 
-USE_RUBY=	yes
+USES=	ruby
 USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DOCS

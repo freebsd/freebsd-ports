@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-debug_inspector>=0.0.1:devel/rubygem-debug_inspector
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

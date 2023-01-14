@@ -14,6 +14,5 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 RUN_DEPENDS=	rubygem-debugger-ruby_core_source>=1.3:devel/rubygem-debugger-ruby_core_source
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

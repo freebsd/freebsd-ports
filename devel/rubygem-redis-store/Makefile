@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-redis4>=4<5:databases/rubygem-redis4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

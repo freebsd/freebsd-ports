@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-multipart-post>=1.2<3:www/rubygem-multipart-post
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

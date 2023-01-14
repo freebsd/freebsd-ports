@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-haml>=2.0.3:www/rubygem-haml \
 		rubygem-merb-core>=1.1.3<1.2:www/rubygem-merb-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -8,7 +8,6 @@ COMMENT=	Maintain semantic versions
 WWW=		https://github.com/haf/semver
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

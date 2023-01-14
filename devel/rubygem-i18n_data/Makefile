@@ -10,7 +10,6 @@ WWW=		https://github.com/grosser/i18n_data
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

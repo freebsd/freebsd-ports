@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-faraday>=0.17.3<3.0:www/rubygem-faraday \
 		rubygem-rack>=1.2,3<4,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

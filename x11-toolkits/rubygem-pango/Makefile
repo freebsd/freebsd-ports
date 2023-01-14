@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 
 USES=		gem gnome
 USE_GNOME=	pango
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

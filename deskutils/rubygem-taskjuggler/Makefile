@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-mail>=2.7.1,2<3,2:mail/rubygem-mail \
 		rubygem-term-ansicolor>=1.7.1<2:devel/rubygem-term-ansicolor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

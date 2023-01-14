@@ -22,7 +22,7 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-webrick>=1.7:www/rubygem-webrick \
 		curl:ftp/curl
 
-USES=		shebangfix tar:bzip2
+USES=		ruby shebangfix tar:bzip2
 
 OPTIONS_DEFINE=	BMC PUPPET7
 BMC_DESC=	Depend on rubyipmi and redfish_client for BMC support
@@ -31,7 +31,6 @@ PUPPET7_DESC=	Depend on Puppet 7
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	foreman-proxy
-USE_RUBY=	yes
 
 FOREMAN_PROXY_USER?=	foreman_proxy
 FOREMAN_PROXY_GROUP?=	foreman_proxy

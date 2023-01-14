@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-rb-fsevent>=0.9.4<1:devel/rubygem-rb-fsevent \
 		rubygem-rb-inotify>=0.9.7<1:devel/rubygem-rb-inotify
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -10,7 +10,6 @@ WWW=		https://github.com/bdewater/android_key_attestation
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

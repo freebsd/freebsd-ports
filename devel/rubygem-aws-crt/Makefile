@@ -14,7 +14,6 @@ BUILD_DEPENDS=	cmake:devel/cmake-core
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
 #NO_ARCH=	yes
 

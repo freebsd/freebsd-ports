@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-matrix>=0:math/rubygem-matrix
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

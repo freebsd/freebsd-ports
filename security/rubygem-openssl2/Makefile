@@ -16,7 +16,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ipaddr>=0:net/rubygem-ipaddr
 
 USES=		cpe gem ssl
-USE_RUBY=	yes
 
 CPE_VENDOR=	ruby-lang
 

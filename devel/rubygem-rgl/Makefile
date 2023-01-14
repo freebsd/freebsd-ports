@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-pairing_heap>=0.3.0:devel/rubygem-pairing_heap \
 		rubygem-stream>=0.5.3<0.6:devel/rubygem-stream
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

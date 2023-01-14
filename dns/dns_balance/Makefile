@@ -9,8 +9,7 @@ WWW=		https://www.netlab.cs.tsukuba.ac.jp/~yokota/izumi/dns_balance/
 
 LICENSE=	BSD2CLAUSE
 
-USE_RUBY=	yes
-USES=		shebangfix tar:xz
+USES=		ruby shebangfix tar:xz
 USE_RC_SUBR=	dns_balance
 
 NO_BUILD=	yes

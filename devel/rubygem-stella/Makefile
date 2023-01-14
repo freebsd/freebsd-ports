@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-benelux>=0.6.1:devel/rubygem-benelux \
 		rubygem-yajl-ruby>=0.7.9:devel/rubygem-yajl-ruby
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

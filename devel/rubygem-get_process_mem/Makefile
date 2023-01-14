@@ -11,7 +11,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-ffi>=1.0<2:devel/rubygem-ffi
 
-USE_RUBY=	yes
 USES=		gem
 
 NO_ARCH=	yes

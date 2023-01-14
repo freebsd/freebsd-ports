@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-protocol-http>=0.23<1:www/rubygem-protocol-http \
 		rubygem-rack>=1.0,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

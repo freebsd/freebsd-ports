@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-nanoc-checking>=1.0:www/rubygem-nanoc-checking \
 		rubygem-nanoc-core>=4.11:www/rubygem-nanoc-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -47,7 +47,6 @@ RUN_DEPENDS=	rubygem-actioncable61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-webrick>=0:www/rubygem-webrick
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-timeout>=0:devel/rubygem-timeout
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

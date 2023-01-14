@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-fileutils>=0:devel/rubygem-fileutils
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

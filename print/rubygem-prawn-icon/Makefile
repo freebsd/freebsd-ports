@@ -16,7 +16,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-prawn>=1.1.0<3.0.0:print/rubygem-prawn
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.10:devel/rubygem-eventmachine
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

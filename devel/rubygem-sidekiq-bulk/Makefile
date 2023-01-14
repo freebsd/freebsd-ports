@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-sidekiq>=0:devel/rubygem-sidekiq
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

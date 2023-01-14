@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-rack16>=1.1.0:www/rubygem-rack16 \
 		rubygem-ruby-openid>=2.1.8:net/rubygem-ruby-openid
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -10,6 +10,5 @@ WWW=		https://github.com/ruby/bigdecimal
 LICENSE=	RUBY
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

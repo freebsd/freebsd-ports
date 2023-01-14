@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-debase-ruby_core_source>=0.10.16<0.10.17_99:devel/rubygem-d
 		rubygem-msgpack>=0:devel/rubygem-msgpack
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/ddtracerb
 

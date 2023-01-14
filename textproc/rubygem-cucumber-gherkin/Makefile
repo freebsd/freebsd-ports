@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-cucumber-messages19>=19.1.4<20:devel/rubygem-cucumber-messages19
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

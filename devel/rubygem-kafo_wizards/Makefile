@@ -12,7 +12,6 @@ LICENSE=	GPLv3+
 RUN_DEPENDS=	rubygem-highline>=0<3:devel/rubygem-highline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

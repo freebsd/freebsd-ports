@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activerecord4>=0:databases/rubygem-activerecord4 \
 		rubygem-kaminari-core>=${PORTVERSION}:www/rubygem-kaminari-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

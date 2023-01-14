@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

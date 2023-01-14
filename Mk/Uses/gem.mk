@@ -19,6 +19,9 @@ IGNORE= Incorrect 'USES+= gem:${gem_ARGS}' usage: argument [${arg}] is not recog
 .    endif
 .  endfor
 
+# "USES=gem" implies "USES=ruby"
+.include "${USESDIR}/ruby.mk"
+
 PKGNAMEPREFIX?=	rubygem-
 EXTRACT_SUFX=	.gem
 EXTRACT_ONLY=

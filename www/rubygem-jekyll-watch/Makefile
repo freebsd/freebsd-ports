@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-listen>=3.0<4:devel/rubygem-listen
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

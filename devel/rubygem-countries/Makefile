@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-i18n_data>=0.10.0<0.11.0:devel/rubygem-i18n_data \
 		rubygem-unicode_utils>=1.4<2:devel/rubygem-unicode_utils
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

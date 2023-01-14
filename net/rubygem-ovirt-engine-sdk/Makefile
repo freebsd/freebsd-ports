@@ -16,6 +16,5 @@ RUN_DEPENDS=	rubygem-json>=1<3:devel/rubygem-json
 
 USES=		gem gnome
 USE_GNOME=	libxml2
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

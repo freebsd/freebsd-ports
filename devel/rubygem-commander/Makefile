@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-highline>=2.0.0<2.1:devel/rubygem-highline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

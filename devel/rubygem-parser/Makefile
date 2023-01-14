@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ast>=2.4.1<2.5:devel/rubygem-ast
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

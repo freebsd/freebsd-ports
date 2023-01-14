@@ -41,7 +41,6 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-web-console2>=2.1.2:devel/rubygem-web-console2
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

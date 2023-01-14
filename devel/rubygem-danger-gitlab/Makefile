@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-danger>=0:devel/rubygem-danger \
 		rubygem-gitlab>=0.9.2:devel/rubygem-gitlab
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

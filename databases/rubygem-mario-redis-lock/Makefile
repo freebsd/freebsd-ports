@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-redis>=3.0.5:databases/rubygem-redis
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

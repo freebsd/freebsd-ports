@@ -24,7 +24,6 @@ RUN_DEPENDS=	rubygem-faraday-em_http>=1.0<2:www/rubygem-faraday-em_http \
 		rubygem-ruby2_keywords>=0.0.4:devel/rubygem-ruby2_keywords
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

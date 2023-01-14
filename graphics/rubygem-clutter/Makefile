@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,7 +12,6 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 PORTSCOUT=	limit:^2\.[0-9]*

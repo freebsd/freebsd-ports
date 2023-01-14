@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-fast_gettext1>=1.1<2:devel/rubygem-fast_gettext1 \
 		rubygem-locale>=0:devel/rubygem-locale
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

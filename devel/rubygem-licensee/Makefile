@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-dotenv>=2.0<3:misc/rubygem-dotenv \
 		rubygem-thor>=0.19<2.0:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

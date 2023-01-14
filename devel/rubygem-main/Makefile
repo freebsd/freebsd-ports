@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-arrayfields>=4.7.4<5:devel/rubygem-arrayfields \
 		rubygem-map>=6.1.0<7:devel/rubygem-map
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

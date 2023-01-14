@@ -13,6 +13,5 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

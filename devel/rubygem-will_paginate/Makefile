@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
 CPE_VENDOR=	mislav_marohnic
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

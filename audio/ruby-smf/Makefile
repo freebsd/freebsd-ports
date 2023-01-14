@@ -12,9 +12,7 @@ WWW=		http://www.funaba.org/code #smf
 
 LICENSE=	BSD2CLAUSE
 
-USE_RUBY=	yes
-USES=		shebangfix
-USE_RUBY_SETUP=	yes
+USES=		ruby:setup shebangfix
 RUBY_SETUP=	install.rb
 SHEBANG_FILES=	sample/*.rb
 

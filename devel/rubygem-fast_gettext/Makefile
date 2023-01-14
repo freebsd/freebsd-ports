@@ -10,7 +10,6 @@ WWW=		https://github.com/grosser/fast_gettext
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

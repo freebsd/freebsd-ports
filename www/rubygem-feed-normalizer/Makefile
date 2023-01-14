@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-hpricot>=0.6:www/rubygem-hpricot \
 		rubygem-simple-rss>=1.1:www/rubygem-simple-rss
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

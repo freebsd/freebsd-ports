@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-simpleidn>=0.1<1:dns/rubygem-simpleidn
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

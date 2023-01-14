@@ -55,9 +55,7 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
 		-DWITH_BUNDLED_SSL=OFF
 
 MRUBY_CMAKE_BOOL=	WITH_MRUBY
-MRUBY_USES=		bison
-MRUBY_USE=		ruby=yes
-MRUBY_VARS=		RUBY_NO_RUN_DEPENDS=yes
+MRUBY_USES=		bison ruby:build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \

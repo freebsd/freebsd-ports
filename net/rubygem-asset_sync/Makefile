@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activemodel4>=4.1.0:databases/rubygem-activemodel4 \
 		rubygem-unf>=0:textproc/rubygem-unf
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

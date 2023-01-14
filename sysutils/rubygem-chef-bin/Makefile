@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-chef>=${PORTVERSION}:sysutils/rubygem-chef
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

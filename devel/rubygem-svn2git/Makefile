@@ -14,7 +14,6 @@ RUN_DEPENDS=	git>0:devel/git
 CONFLICTS_INSTALL=	svn2git
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 PLIST_FILES=	bin/svn2git
 

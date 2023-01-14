@@ -41,7 +41,7 @@ SUGGEST_DESC=	Suggestions support
 MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
 RUBY_RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
-RUBY_USE=		RUBY=yes
+RUBY_USES=		ruby
 RUBY_CONFIGURE_ON=	--enable-mruby
 SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack-c \

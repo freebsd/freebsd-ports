@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-mime-types>=3.0:misc/rubygem-mime-types \
 
 USES=		cpe gem
 CPE_VENDOR=	john_nunemaker
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

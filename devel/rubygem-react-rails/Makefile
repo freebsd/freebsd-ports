@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-babel-transpiler>=0.7.0:textproc/rubygem-babel-transpiler \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

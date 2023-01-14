@@ -15,8 +15,7 @@ BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
 USES=		gem
-USE_RUBY=	yes
-#USE_RUBY_EXTCONF=	yes
+#USES+=	ruby:extconf
 #RUBY_EXTCONF_SUBDIRS=	ext/oj-introspect
 
 .include <bsd.port.mk>

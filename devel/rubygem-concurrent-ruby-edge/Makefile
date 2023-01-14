@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1.6<1.2:devel/rubygem-concurrent-ruby
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

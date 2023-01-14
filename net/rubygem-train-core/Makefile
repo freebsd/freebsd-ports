@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5<3:www/rubygem-addressable \
 		rubygem-net-ssh6>=2.9<8.0:security/rubygem-net-ssh6
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,6 +12,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

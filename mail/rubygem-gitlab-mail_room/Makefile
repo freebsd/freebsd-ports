@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-io-wait01>=0.1.0<0.2:devel/rubygem-io-wait01 \
 		rubygem-oauth2>=1.4.4<3:net/rubygem-oauth2
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

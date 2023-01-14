@@ -12,7 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 SHEBANG_FILES=	examples/linux-listener-stats.rb
 

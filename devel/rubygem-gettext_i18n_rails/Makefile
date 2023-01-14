@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 RUN_DEPENDS=	rubygem-fast_gettext>=0.9.0:devel/rubygem-fast_gettext
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

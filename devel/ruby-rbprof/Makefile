@@ -14,9 +14,7 @@ OPTIONS_DEFINE=	DOCS
 #RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:devel/ruby-unit \
 #		${RUBY_SITELIBDIR}/aspectr.rb:devel/ruby-aspectr
 
-USES=		dos2unix
-
-USE_RUBY=	yes
+USES=		dos2unix ruby
 
 NO_BUILD=	yes
 

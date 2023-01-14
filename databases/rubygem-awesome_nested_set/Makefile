@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activerecord4>=4.0.0<7.1:databases/rubygem-activerecord4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

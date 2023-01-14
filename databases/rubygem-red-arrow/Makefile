@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-bigdecimal>=2.0.3:math/rubygem-bigdecimal \
 		rubygem-pkg-config>=0:devel/rubygem-pkg-config \
 
 USES=		gem localbase
-USE_RUBY=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 

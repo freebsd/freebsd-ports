@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-net-http-persistent>=3.0.0<5.0:www/rubygem-net-http-persistent
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

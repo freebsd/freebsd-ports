@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-coffee-script-source>=0:devel/rubygem-coffee-script-source 
 		rubygem-execjs>=0:devel/rubygem-execjs
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

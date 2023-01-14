@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-unf>=0.0.5<1.0.0:textproc/rubygem-unf
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

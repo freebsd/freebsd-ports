@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-hashie>=3.4.6:devel/rubygem-hashie \
 		rubygem-rack-protection>=0:www/rubygem-rack-protection
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

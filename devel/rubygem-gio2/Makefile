@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-fiddle>=0:devel/rubygem-fiddle \
 
 USES=		gem gnome
 USE_GNOME=	glib20
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

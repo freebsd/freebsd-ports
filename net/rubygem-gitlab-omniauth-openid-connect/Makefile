@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.7<3.0:www/rubygem-addressable \
 		rubygem-openid_connect>=1.2<2.0:net/rubygem-openid_connect
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

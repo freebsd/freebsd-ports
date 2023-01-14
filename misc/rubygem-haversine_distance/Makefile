@@ -10,7 +10,6 @@ WWW=		https://github.com/jirapong/haversine_distance
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

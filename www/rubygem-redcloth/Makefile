@@ -11,7 +11,6 @@ WWW=		https://redcloth.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_RUBY=	yes
 USES=		cpe gem
 CPE_VENDOR=	promptworks
 

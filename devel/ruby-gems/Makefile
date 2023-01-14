@@ -15,8 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/MIT.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe tar:tgz
-USE_RUBY=	yes
+USES=		cpe ruby tar:tgz
 
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
 GEMS_ENV=	GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}

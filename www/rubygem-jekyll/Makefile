@@ -27,7 +27,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-webrick>=1.7<2:www/rubygem-webrick
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

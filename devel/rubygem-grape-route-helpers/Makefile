@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

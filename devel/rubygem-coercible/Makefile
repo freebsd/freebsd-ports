@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.1:devel/rubygem-descendants_tracker
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

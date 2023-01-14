@@ -12,7 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/GNU
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
 USES=		gem ssl
 
 .include <bsd.port.mk>

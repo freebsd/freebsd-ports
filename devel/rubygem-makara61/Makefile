@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-activerecord61>0:databases/rubygem-activerecord61
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

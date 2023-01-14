@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-grape>=0:devel/rubygem-grape \
 		rubygem-newrelic_rpm>=0:devel/rubygem-newrelic_rpm
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

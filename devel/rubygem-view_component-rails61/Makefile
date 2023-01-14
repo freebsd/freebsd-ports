@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=5<8:devel/rubygem-activesupport61 \
 		rubygem-method_source>=1.0<2:devel/rubygem-method_source
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

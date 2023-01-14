@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-asciidoctor>=1.5.6<3.0.0:textproc/rubygem-asciidoctor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 # TODO: find a better way to do this
 # Copy all header file, as it is required by rubygem-oj-introspect

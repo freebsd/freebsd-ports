@@ -334,7 +334,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-xray>=1<2:devel/rubygem-aws-sdk-xray
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-protocol-hpack>=1.4<2:www/rubygem-protocol-hpack \
 		rubygem-protocol-http>=0.18<1:www/rubygem-protocol-http
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

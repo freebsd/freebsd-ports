@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.3.4:www/rubygem-addressable \
 		rubygem-http_parser.rb>=0.6.0:net/rubygem-http_parser.rb
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

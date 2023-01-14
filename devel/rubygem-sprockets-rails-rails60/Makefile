@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-actionpack60>=5.2:www/rubygem-actionpack60 \
 		rubygem-sprockets3>=3.0.0:devel/rubygem-sprockets3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

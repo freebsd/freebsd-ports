@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem python shebangfix
-USE_RUBY=	yes
 
 SHEBANG_FILES=	vendor/gprof2dot/gprof2dot.py \
 		vendor/gprof2dot/hotshotmain.py \

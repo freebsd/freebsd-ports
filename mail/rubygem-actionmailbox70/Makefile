@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-net-smtp>=0:mail/rubygem-net-smtp
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

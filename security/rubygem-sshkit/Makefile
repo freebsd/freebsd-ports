@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-net-scp>=1.1.2:security/rubygem-net-scp \
 		rubygem-net-ssh>=2.8.0,2:security/rubygem-net-ssh
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

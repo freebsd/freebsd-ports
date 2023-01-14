@@ -12,8 +12,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake
 
-USES=		compiler:c11 pkgconfig tar:tbz2 xorg
-USE_RUBY=	yes
+USES=		compiler:c11 pkgconfig ruby tar:tbz2 xorg
 USE_XORG=	x11 xft xinerama xpm xrandr xtst
 
 MAKE_CMD=	rake -v

@@ -16,7 +16,6 @@ BROKEN_RUBY30=	yes
 BROKEN_RUBY31=	yes
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/ferret-browser
 

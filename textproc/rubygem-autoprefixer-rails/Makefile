@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-execjs>=2<3:devel/rubygem-execjs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

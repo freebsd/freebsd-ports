@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpafe.so:devel/libpafe
 
-USE_RUBY=		yes
-USE_RUBY_EXTCONF=	yes
+USES=	ruby:extconf
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/pasori.so
 

@@ -20,7 +20,6 @@ RUN_DEPENDS=	gsed:textproc/gsed \
 		rubygem-powerbar>=0:devel/rubygem-powerbar
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

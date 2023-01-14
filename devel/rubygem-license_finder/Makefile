@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-xml-simple>=1.1.9<1.2:textproc/rubygem-xml-simple
 
 USES=		gem python:run shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

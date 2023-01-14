@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-css_parser>=1.4<2:textproc/rubygem-css_parser \
 		rubygem-nokogiri>=1.8<2:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

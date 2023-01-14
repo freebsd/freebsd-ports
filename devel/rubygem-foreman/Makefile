@@ -10,7 +10,6 @@ WWW=		https://github.com/ddollar/foreman
 LICENSE=	MIT
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

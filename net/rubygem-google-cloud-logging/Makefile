@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-stackdriver-core>=1.3<2:net/rubygem-stackdriver-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

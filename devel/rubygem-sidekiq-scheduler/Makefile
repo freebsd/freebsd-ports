@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-redis>=4.2.0:databases/rubygem-redis \
 		rubygem-tilt>=1.4.0:devel/rubygem-tilt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

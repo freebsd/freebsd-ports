@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:textproc/rubygem-diff-lcs \
 		rubygem-highline>=1.4.0:devel/rubygem-highline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

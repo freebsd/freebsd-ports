@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-histogram>=0:graphics/rubygem-histogram \
 		rubygem-rmagick>=4.2:graphics/rubygem-rmagick
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

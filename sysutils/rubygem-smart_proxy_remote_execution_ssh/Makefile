@@ -16,7 +16,6 @@ RUN_DEPENDS=	foreman-proxy>=1.12.0:net/foreman-proxy \
 		rubygem-smart_proxy_dynflow>=0.8<1:sysutils/rubygem-smart_proxy_dynflow
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

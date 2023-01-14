@@ -14,7 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-date>=0:devel/rubygem-date
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

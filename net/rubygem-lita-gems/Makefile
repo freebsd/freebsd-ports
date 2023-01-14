@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-gems>=0.8.0:devel/rubygem-gems \
 		rubygem-lita>=2.6:net-im/rubygem-lita
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

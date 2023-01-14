@@ -13,6 +13,5 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri \
 		rubygem-rest-client>=2.0<3:www/rubygem-rest-client
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

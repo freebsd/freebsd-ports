@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-addressable>=2.8:www/rubygem-addressable
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

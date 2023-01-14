@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-google-cloud-spanner-v1>=0.2<1:net/rubygem-google-cloud-spanner-v1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

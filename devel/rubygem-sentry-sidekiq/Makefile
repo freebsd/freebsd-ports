@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-sentry-ruby-core>=5.1.1<5.2:devel/rubygem-sentry-ruby-core 
 		rubygem-sidekiq>=3.0:devel/rubygem-sidekiq
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activemodel5>=4:databases/rubygem-activemodel5 \
 		rubygem-hashie>=0:devel/rubygem-hashie
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-celluloid>=0.17.2:devel/rubygem-celluloid \
 		rubygem-timers>=4.1.1:devel/rubygem-timers
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

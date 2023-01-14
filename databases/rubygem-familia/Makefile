@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-gibbler>=0.8.6:devel/rubygem-gibbler \
 		rubygem-uri-redis>=0.4.2:net/rubygem-uri-redis
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

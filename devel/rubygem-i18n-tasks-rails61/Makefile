@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=4.0.2:devel/rubygem-activesupport61 \
 		rubygem-terminal-table>=1.5.1:textproc/rubygem-terminal-table
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

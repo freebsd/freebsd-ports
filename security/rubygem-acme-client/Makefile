@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-faraday>=1.0<3.0.0:www/rubygem-faraday \
 		rubygem-faraday-retry1>=1.0<2:www/rubygem-faraday-retry1
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

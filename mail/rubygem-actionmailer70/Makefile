@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-rails-dom-testing-rails70>=2.0<3:textproc/rubygem-rails-dom-testing-rails70
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

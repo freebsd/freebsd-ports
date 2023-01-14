@@ -13,10 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	rubygem-curses>=1.3.1:devel/rubygem-curses
 
-USES=		shebangfix
+USES=		ruby shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pistos
-USE_RUBY=	yes
 SHEBANG_FILES=	bin/${PORTNAME}
 
 NO_ARCH=	yes

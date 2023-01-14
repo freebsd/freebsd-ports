@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-mono_logger>=1.0<2:devel/rubygem-mono_logger \
 		rubygem-rufus-scheduler>=3.2<4:devel/rubygem-rufus-scheduler
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

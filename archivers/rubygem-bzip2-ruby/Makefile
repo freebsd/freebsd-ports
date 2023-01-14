@@ -11,7 +11,6 @@ WWW=		https://github.com/brianmario/bzip2-ruby
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

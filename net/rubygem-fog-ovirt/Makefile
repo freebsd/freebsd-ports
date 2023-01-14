@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
 		rubygem-ovirt-engine-sdk>=4.3.1:net/rubygem-ovirt-engine-sdk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

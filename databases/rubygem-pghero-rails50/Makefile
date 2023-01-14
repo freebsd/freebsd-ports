@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activerecord50>=5:databases/rubygem-activerecord50
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

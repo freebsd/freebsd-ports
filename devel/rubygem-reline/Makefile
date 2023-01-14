@@ -15,7 +15,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-io-console>=0.5<1:devel/rubygem-io-console
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

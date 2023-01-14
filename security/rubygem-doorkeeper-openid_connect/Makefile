@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-doorkeeper>=5.2<5.6:security/rubygem-doorkeeper \
 		rubygem-json-jwt115>=1.11:www/rubygem-json-jwt115
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

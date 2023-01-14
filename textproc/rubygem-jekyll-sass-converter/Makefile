@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-sassc>=2.1.0<3.0:textproc/rubygem-sassc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

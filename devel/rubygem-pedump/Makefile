@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-awesome_print>=0:devel/rubygem-awesome_print \
 		rubygem-zhexdump>=0.0.2:devel/rubygem-zhexdump
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

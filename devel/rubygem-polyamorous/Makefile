@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-activerecord52>=5.2.1:databases/rubygem-activerecord52
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

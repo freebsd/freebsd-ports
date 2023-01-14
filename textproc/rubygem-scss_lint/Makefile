@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-sass>=3.5.5<4:textproc/rubygem-sass
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

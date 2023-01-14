@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 		rubygem-gio2>=${PORTVERSION}:devel/rubygem-gio2
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -18,8 +18,7 @@ LIB_DEPENDS+=	libao.so:audio/libao \
 		libvorbis.so:audio/libvorbis
 RUN_DEPENDS=	id3v2:audio/id3v2
 
-USES=		compiler:c11 gmake ncurses tar:bzip2
-USE_RUBY=	yes
+USES=		compiler:c11 gmake ncurses ruby tar:bzip2
 MAKE_ARGS=	CC="${CC}"
 CFLAGS+=	-fcommon
 

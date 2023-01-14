@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-elasticsearch-api>=6:textproc/rubygem-elasticsearch-api
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

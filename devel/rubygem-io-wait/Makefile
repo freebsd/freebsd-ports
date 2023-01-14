@@ -12,6 +12,5 @@ LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

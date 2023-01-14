@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-json>=1.1.1:devel/rubygem-json \
 		rubygem-oauth>=0.4.1:net/rubygem-oauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

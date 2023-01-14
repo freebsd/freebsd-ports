@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-asciidoctor>=2.0<3:textproc/rubygem-asciidoctor \
 		rubygem-treetop>=1.6.0<1.7:devel/rubygem-treetop
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

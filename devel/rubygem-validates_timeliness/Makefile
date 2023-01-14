@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activemodel61>=6.0.0<7:databases/rubygem-activemodel61 \
 		rubygem-timeliness>=0.3.10<1:devel/rubygem-timeliness
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-bindata>=0:devel/rubygem-bindata \
 		rubygem-windows_error>=0:devel/rubygem-windows_error
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 SHEBANG_FILES=	examples/delete_file.rb \
 		examples/net_share_enum_all.rb \
 		examples/pipes.rb \

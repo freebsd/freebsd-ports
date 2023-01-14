@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rdoc>=5.0:devel/rubygem-rdoc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

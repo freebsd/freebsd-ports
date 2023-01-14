@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-guess_html_encoding>=0.0.4:devel/rubygem-guess_html_encodin
 		rubygem-nokogiri>=1.6.0:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/readability

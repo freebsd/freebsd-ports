@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-httpclient>=2.8<3:www/rubygem-httpclient \
 		rubygem-multi_json>=1.7<2:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

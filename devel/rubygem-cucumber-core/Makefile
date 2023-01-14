@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-cucumber-gherkin23>=23.0.1<24:textproc/rubygem-cucumber-ghe
 		rubygem-cucumber-tag-expressions>=4.1.0<5:devel/rubygem-cucumber-tag-expressions
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

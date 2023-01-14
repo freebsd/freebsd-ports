@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-temple>=0.8.2:devel/rubygem-temple \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/hamlit
 

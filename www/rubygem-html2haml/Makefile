@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-erubis>=2.7.0<2.8:www/rubygem-erubis \
 		rubygem-ruby_parser>=3.5<4:devel/rubygem-ruby_parser
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

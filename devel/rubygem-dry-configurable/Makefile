@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-dry-core>=1.0<2:devel/rubygem-dry-core \
 		rubygem-zeitwerk>=2.6<3:devel/rubygem-zeitwerk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

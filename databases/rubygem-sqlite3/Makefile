@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		gem
-USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
 

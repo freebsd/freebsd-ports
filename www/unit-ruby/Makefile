@@ -10,7 +10,7 @@ RUN_DEPENDS=	rackup:www/rubygem-rack22 \
 
 PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
-USE_RUBY=	yes
+USES=	ruby
 
 CFLAGS+=	-fdeclspec
 

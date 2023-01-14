@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activemodel4>=4.0.1<5.0:databases/rubygem-activemodel4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

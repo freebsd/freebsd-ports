@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-builder>=3.2<4:devel/rubygem-builder \
 		rubygem-optimist>=3.0<4:devel/rubygem-optimist
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

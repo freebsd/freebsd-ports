@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-cbor>=0.5.9<0.6:devel/rubygem-cbor \
 		rubygem-openssl-signature_algorithm>=1.0<2:security/rubygem-openssl-signature_algorithm
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

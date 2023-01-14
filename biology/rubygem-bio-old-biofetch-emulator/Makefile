@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-bio>=1.4.2:biology/rubygem-bio
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

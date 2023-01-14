@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-numerizer>=0.2<1.0:devel/rubygem-numerizer
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

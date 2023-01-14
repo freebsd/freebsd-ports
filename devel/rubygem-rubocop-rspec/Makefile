@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.md
 RUN_DEPENDS=	rubygem-rubocop>=1.33<2:devel/rubygem-rubocop
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

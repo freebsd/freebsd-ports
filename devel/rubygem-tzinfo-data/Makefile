@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-tzinfo>=1.0.0:devel/rubygem-tzinfo
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

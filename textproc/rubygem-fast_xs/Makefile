@@ -11,7 +11,6 @@ WWW=		http://fast-xs.rubyforge.org/
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

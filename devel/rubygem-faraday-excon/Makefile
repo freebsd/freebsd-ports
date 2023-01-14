@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-excon>=0.27.4:devel/rubygem-excon \
 		rubygem-faraday>=2.0<3:www/rubygem-faraday
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

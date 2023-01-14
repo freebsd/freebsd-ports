@@ -11,7 +11,6 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

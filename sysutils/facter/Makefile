@@ -23,10 +23,9 @@ CONFLICTS_INSTALL=	rubygem-facter
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-USES=		cmake:noninja compiler:c++11-lib cpe ssl
+USES=		cmake:noninja compiler:c++11-lib cpe ruby ssl
 CPE_VENDOR=	puppet
 USE_LDCONFIG=	yes
-USE_RUBY=	yes
 CMAKE_ARGS+=	-DMAN_PATH=${MANPREFIX}/man
 CMAKE_OFF=	ENABLE_CXX_WERROR
 

@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-execjs>=0.3.0<3:devel/rubygem-execjs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

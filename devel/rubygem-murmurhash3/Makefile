@@ -9,7 +9,6 @@ WWW=		https://github.com/funny-falcon/murmurhash3-ruby
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

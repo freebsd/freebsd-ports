@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-get_process_mem>=0.2.5<0.3:devel/rubygem-get_process_mem \
 		rubygem-yajl-ruby>=1.4.1<1.5:devel/rubygem-yajl-ruby
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

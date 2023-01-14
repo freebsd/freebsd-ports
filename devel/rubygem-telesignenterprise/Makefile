@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-telesign>=2.2.3<2.3:devel/rubygem-telesign
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

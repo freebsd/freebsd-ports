@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/serialport
 LICENSE=	GPLv2
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 SHEBANG_FILES=	test/set_readtimeout.rb
 
 .include <bsd.port.mk>

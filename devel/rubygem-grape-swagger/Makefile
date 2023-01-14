@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-grape>=1.3<2:devel/rubygem-grape
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

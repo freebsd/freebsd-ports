@@ -11,10 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
+USES=	ruby
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	libc6-shim
-USE_RUBY=	yes
 
 PORTSCOUT=	ignore:1
 

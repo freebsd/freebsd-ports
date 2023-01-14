@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-delayer>=1.0.0:devel/rubygem-delayer
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

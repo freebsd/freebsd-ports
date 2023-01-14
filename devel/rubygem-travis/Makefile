@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-faraday1>=1.0<2:www/rubygem-faraday1 \
 		rubygem-pusher-client>=0.4<1:www/rubygem-pusher-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

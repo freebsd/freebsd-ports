@@ -14,6 +14,5 @@ LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	rubygem-stringio>=0:devel/rubygem-stringio
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

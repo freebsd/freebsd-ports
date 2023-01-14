@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

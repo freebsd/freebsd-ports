@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-android_key_attestation>=0.3.0<0.4:security/rubygem-android
 		rubygem-tpm-key_attestation>=0.10.0<0.11:security/rubygem-tpm-key_attestation
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 SHEBANG_FILES=	script/ci/install-openssl script/ci/install-ruby
 
 NO_ARCH=	yes

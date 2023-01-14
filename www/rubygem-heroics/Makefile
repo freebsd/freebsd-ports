@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-erubis>=2.0<3:www/rubygem-erubis \
 		rubygem-multi_json>=1.9.2:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

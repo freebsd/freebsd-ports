@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-rex-random_identifier>=0:security/rubygem-rex-random_identi
 		rubygem-ruby-rc4>=0:security/rubygem-ruby-rc4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

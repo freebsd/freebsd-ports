@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-atomic>=1.0.0:devel/rubygem-atomic \
 		rubygem-redis>=0:databases/rubygem-redis
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-buftok>=0.2<1:devel/rubygem-buftok \
 		rubygem-simple_oauth>=0.2<1:net/rubygem-simple_oauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

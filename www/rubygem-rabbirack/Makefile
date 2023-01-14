@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-haml>0:www/rubygem-haml \
 		rubygem-sinatra>0:www/rubygem-sinatra
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem gettext
 PLIST_FILES=	bin/rabbirack
 

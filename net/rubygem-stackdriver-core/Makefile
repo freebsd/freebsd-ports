@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-google-cloud-core>=1.2<2:net/rubygem-google-cloud-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -22,6 +22,5 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 
 CONFIGURE_ARGS=	--use-system-libraries
 USES=		gem pkgconfig
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -15,7 +15,6 @@ LIB_DEPENDS=	libproj.so:graphics/proj
 RUN_DEPENDS=	rubygem-rgeo>=2.0<3:science/rubygem-rgeo
 
 USES=		gem
-USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--with-proj-dir=${LOCALBASE}
 

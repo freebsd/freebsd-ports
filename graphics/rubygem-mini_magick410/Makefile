@@ -19,7 +19,6 @@ IMAGEMAGICK6_DESC=	Use ImageMagick 6.x (graphics/ImageMagick6*)
 IMAGEMAGICK7_DESC=	Use ImageMagick 7.x (graphics/ImageMagick7*)
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

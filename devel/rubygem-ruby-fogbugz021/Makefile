@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-crack>=0.4:devel/rubygem-crack
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PORTSCOUT=	limit:^0\.2\.1

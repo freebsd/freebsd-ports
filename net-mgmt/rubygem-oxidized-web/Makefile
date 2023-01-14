@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-sinatra1>=1.4.6:www/rubygem-sinatra1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

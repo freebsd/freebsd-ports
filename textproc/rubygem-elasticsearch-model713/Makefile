@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=3:devel/rubygem-activesupport61 \
 		rubygem-hashie>=0:devel/rubygem-hashie
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

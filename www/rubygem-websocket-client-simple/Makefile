@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-event_emitter>=0:devel/rubygem-event_emitter \
 		rubygem-websocket>=0:www/rubygem-websocket
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

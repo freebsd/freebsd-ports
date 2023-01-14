@@ -10,6 +10,5 @@ WWW=		https://yhbt.net/kgio/
 LICENSE=	LGPL21+
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

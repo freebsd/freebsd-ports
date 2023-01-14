@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
 LIB_DEPENDS=	libqdbm.so:databases/qdbm
 
-USES=		iconv shebangfix
+USES=		iconv ruby shebangfix
 SHEBANG_FILES=	curia/rbcrtest depot/rbdptest myrbdoc villa/rbvltest
-USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ruby
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

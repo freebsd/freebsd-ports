@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/UNLICENSE
 RUN_DEPENDS=	rubygem-link_header>=0.0.8<1:www/rubygem-link_header
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

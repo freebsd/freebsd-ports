@@ -49,7 +49,6 @@ RUN_DEPENDS=	rubygem-actioncable5>=${PORTVERSION}:www/rubygem-actioncable5 \
 		rubygem-web-console3-rails5>=3.5.0:devel/rubygem-web-console3-rails5
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

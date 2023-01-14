@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-aws-eventstream>=1.0.2<2:devel/rubygem-aws-eventstream \
 		rubygem-jmespath>=1.6.1<2:devel/rubygem-jmespath
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

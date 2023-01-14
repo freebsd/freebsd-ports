@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-erubi>=1.8<2:www/rubygem-erubi \
 		rubygem-winrm>=2.0<3:sysutils/rubygem-winrm
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-json>=2.3<3:devel/rubygem-json \
 		rubygem-unicode-display_width>=1.4.0<3.0:devel/rubygem-unicode-display_width
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

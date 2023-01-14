@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-rails_serve_static_assets>=0:www/rubygem-rails_serve_static
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

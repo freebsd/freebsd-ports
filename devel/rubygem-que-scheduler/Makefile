@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport70>=5.0:devel/rubygem-activesupport70 \
 		rubygem-que>=0.14<3.0.0:devel/rubygem-que
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 CONFLICTS_INSTALL=	rubygem-github-markup*
 

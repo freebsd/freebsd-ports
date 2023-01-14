@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-grape>=0:devel/rubygem-grape \
 		rubygem-rack>=0,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

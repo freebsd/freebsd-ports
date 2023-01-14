@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-eventmachine>=1.0<2:devel/rubygem-eventmachine \
 		rubygem-twitter-stream>=0.1<1:net/rubygem-twitter-stream
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

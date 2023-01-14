@@ -10,7 +10,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Ruby library provides HTML/URI/shell escaping functions
 WWW=		http://www.a-k-r.org/escape/
 
-USE_RUBY=	yes
+USES=	ruby
 NO_BUILD=	yes
 
 DOCS=	ChangeLog README

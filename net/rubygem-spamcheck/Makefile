@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-grpc142>=1.0<2.0:net/rubygem-grpc142
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

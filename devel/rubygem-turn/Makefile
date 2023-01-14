@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-ansi>=0:devel/rubygem-ansi \
 		rubygem-minitest>=4:devel/rubygem-minitest
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

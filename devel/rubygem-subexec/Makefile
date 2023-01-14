@@ -10,7 +10,6 @@ WWW=		https://github.com/nulayer/subexec
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-enumerable-statistics>=2.0.1:math/rubygem-enumerable-statistics
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

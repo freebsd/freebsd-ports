@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-activerecord50>=4.2<8:databases/rubygem-activerecord50 \
 		rubygem-flipper>=${PORTVERSION}<0.26:devel/rubygem-flipper
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

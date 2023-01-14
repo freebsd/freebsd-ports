@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-connection_pool>=2.2.5<3:net/rubygem-connection_pool \
 		rubygem-redis4>=4.5.0<5:databases/rubygem-redis4
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

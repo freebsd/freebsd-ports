@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-gettext>=3.0.2:devel/rubygem-gettext \
 		rubygem-rails52>=3.2.0:www/rubygem-rails52
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

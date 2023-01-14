@@ -9,7 +9,6 @@ WWW=		https://rubygems.org/gems/snmp
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

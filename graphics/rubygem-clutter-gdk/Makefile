@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-clutter>=${PORTVERSION}:graphics/rubygem-clutter \
 		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-declarative>=0<0.1.0:devel/rubygem-declarative \
 		rubygem-uber>=0<0.2.0:devel/rubygem-uber
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

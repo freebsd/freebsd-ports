@@ -10,7 +10,6 @@ WWW=		https://github.com/opscode/libyajl2-gem
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-flowdock>=0.7<1:www/rubygem-flowdock \
 		rubygem-multi_json>=0:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

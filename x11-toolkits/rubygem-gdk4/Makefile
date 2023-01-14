@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 
 USES=		gem gnome pkgconfig
 USE_GNOME=	gtk40
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

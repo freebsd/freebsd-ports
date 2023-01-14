@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-erubi>=1.0.0<2.0.0:www/rubygem-erubi \
 		rubygem-sanitize>=0<7:textproc/rubygem-sanitize
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

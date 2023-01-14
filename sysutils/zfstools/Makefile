@@ -13,13 +13,12 @@ WWW=		https://github.com/bdrewery/zfstools
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		shebangfix
+USES=		ruby shebangfix
 SHEBANG_FILES=	bin/*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bdrewery
 
-USE_RUBY=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

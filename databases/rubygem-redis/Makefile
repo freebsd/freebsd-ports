@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-redis-client>=0.9.0:databases/rubygem-redis-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

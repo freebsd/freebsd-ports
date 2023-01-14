@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-builder>=2.0.0:devel/rubygem-builder \
 		rubygem-byebug>=0:devel/rubygem-byebug
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

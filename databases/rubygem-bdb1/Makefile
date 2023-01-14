@@ -11,7 +11,6 @@ WWW=		https://github.com/knu/ruby-bdb1
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	examples/*.rb
 

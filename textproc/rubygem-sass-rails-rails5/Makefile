@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-sassc-rails-rails5>=2.1.1<3:textproc/rubygem-sassc-rails-rails5
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

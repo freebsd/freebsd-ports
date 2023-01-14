@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=4.2:devel/rubygem-activesupport60 \
 		yarn:www/yarn
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

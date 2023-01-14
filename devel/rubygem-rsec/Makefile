@@ -10,7 +10,6 @@ WWW=		https://github.com/luikore/rsec/
 LICENSE=	RUBY
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

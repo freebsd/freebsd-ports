@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/Licence.md
 RUN_DEPENDS=	rubygem-mime-types-data>=3.2015<4:misc/rubygem-mime-types-data
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

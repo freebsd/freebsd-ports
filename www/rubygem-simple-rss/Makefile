@@ -9,7 +9,6 @@ WWW=		https://github.com/cardmagic/simple-rss
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

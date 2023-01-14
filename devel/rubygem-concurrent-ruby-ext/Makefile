@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-concurrent-ruby>=${PORTVERSION}:devel/rubygem-concurrent-ruby
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

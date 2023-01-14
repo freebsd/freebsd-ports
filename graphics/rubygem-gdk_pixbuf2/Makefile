@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-gio2>=${PORTVERSION}:devel/rubygem-gio2
 
 USES=		gem gnome
 USE_GNOME=	gdkpixbuf2
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

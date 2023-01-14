@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-chunky_png>=1.0:graphics/rubygem-chunky_png \
 	rubygem-rqrcode_core>=1.0:www/rubygem-rqrcode_core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

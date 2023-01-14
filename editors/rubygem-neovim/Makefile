@@ -18,7 +18,6 @@ TEST_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-rspec>=0:devel/rubygem-rspec
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

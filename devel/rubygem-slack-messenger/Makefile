@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/slack-messenger
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

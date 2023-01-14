@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-railties4>=4.0.0:www/rubygem-railties4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

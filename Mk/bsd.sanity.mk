@@ -161,6 +161,10 @@ DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or 
 DEV_ERROR+=	"USE_FPC=yes is no longer supported, please use USES=fpc"
 .endif
 
+.if ! empty(USES:Mruby) && ! empty(USES:Mgem)
+DEV_ERROR=	"'USES=gem' implies 'USES=ruby'. You should not specify both of them"
+.endif
+
 .for _type in EXAMPLES DOCS
 .  if defined(PORT${_type}) && empty(_REALLY_ALL_POSSIBLE_OPTIONS:M${_type})
 DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is present."
@@ -203,7 +207,9 @@ SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		INSTALLS_EGGINFO USE_DOS2UNIX NO_STAGE USE_RUBYGEMS USE_GHOSTSCRIPT \
 		USE_GHOSTSCRIPT_BUILD USE_GHOSTSCRIPT_RUN USE_AUTOTOOLS APACHE_PORT \
 		USE_FPC_RUN WANT_FPC_BASE WANT_FPC_ALL USE_QT4 USE_QT5 QT_NONSTANDARD \
-		XORG_CAT CARGO_USE_GITHUB CARGO_USE_GITLAB CARGO_GIT_SUBDIR
+		XORG_CAT CARGO_USE_GITHUB CARGO_USE_GITLAB CARGO_GIT_SUBDIR \
+		USE_RUBY USE_RUBY_EXTCONF USE_RUBY_SETUP RUBY_NO_BUILD_DEPENDS \
+		RUBY_NO_RUN_DEPENDS
 SANITY_DEPRECATED=	MLINKS \
 			USE_MYSQL WANT_MYSQL_VER \
 			PYDISTUTILS_INSTALLNOSINGLE \
@@ -294,6 +300,11 @@ XORG_CAT_ALT=		USES=xorg-cat:${XORG_CAT}
 CARGO_USE_GITHUB_ALT=	CARGO_CRATES \(regenerate it with make cargo-crates\)
 CARGO_USE_GITLAB_ALT=	CARGO_CRATES \(regenerate it with make cargo-crates\)
 CARGO_GIT_SUBDIR_ALT=	CARGO_CRATES \(regenerate it with make cargo-crates\)
+USE_RUBY_ALT=		USES=ruby
+USE_RUBY_EXTCONF_ALT=	USES=ruby:extconf
+USE_RUBY_SETUP_ALT=	USES=ruby:setup
+RUBY_NO_BUILD_DEPENDS_ALT=	USES=ruby:run
+RUBY_NO_RUN_DEPENDS_ALT=	USES=ruby:build
 
 .for a in ${SANITY_DEPRECATED}
 .  if defined(${a})

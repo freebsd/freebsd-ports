@@ -101,12 +101,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-xmlrpc>=0:net/rubygem-xmlrpc \
 		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
-USES=		cpe go:run python shebangfix
+USES=		cpe go:run python ruby shebangfix
 CPE_VENDOR=	rapid7
 USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
-USE_RUBY=	yes
 
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-prawn-core>=0:print/rubygem-prawn-core
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

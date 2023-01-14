@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-peek-rails52>=0:devel/rubygem-peek-rails52
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

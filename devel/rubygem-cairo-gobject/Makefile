@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-cairo>=1.16.2:graphics/rubygem-cairo \
 
 USES=		gem gnome
 USE_GNOME=	cairo glib20
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

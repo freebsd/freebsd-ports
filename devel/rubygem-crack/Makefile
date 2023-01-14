@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		cpe gem
 CPE_VENDOR=	john_nunemaker
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

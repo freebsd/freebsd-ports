@@ -12,6 +12,5 @@ LICENSE=	MIT
 BROKEN_RUBY27=	yes
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

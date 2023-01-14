@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-activesupport5>=${PORTVERSION}:devel/rubygem-activesupport5
 		rubygem-rails-html-sanitizer>=1.0.3<2:textproc/rubygem-rails-html-sanitizer
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

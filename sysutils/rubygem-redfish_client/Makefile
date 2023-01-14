@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-excon>=0.60:devel/rubygem-excon \
 		rubygem-server_sent_events>=0.1:devel/rubygem-server_sent_events
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-rb-fsevent>=0.10.3<1:devel/rubygem-rb-fsevent \
 		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

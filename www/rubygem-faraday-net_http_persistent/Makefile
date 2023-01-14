@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-faraday>=2.5<3:www/rubygem-faraday \
 		rubygem-net-http-persistent>=4.0<5:www/rubygem-net-http-persistent
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

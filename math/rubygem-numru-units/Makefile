@@ -9,7 +9,6 @@ WWW=		https://www.gfd-dennou.org/arch/ruby/products/numru-units/
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

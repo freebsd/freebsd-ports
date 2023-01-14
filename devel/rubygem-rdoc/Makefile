@@ -14,7 +14,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.rdoc
 RUN_DEPENDS=	rubygem-psych>=4.0.0:textproc/rubygem-psych
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

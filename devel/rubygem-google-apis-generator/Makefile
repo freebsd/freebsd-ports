@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=5.0:devel/rubygem-activesupport60 \
 		rubygem-thor>=0.20<2:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

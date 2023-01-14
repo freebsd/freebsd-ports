@@ -24,7 +24,6 @@ RUN_DEPENDS=	rubygem-fog-core210>=0<2.3:devel/rubygem-fog-core210 \
 		rubygem-google-cloud-env>=1.2<2:net/rubygem-google-cloud-env
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

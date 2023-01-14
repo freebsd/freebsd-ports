@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-protocol-http>=0.2<1:www/rubygem-protocol-http \
 		rubygem-protocol-http1>=0.2<1:www/rubygem-protocol-http1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

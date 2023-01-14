@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-io-like>=0.3.0<0.4:devel/rubygem-io-like
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

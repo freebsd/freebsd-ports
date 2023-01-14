@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-sync>=0:devel/rubygem-sync
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

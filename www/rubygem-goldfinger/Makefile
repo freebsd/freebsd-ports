@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5<3:www/rubygem-addressable \
 		rubygem-oj>=3.0<4:devel/rubygem-oj
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

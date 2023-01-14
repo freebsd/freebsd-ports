@@ -17,7 +17,6 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-googleapis-common-protos-types>=1.0<2:devel/rubygem-googleapis-common-protos-types
 
 USES=		cpe gem gmake pkgconfig
-USE_RUBY=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=4.0:devel/rubygem-activesupport60 \
 		rubygem-elasticsearch-dsl>=0:textproc/rubygem-elasticsearch-dsl
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

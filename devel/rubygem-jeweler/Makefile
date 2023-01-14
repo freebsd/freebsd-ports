@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-semver2>=0:devel/rubygem-semver2
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

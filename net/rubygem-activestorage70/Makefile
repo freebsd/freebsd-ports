@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-mini_mime>=1.1.0:mail/rubygem-mini_mime
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

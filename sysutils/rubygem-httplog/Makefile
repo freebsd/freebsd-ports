@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-rack>=2.0,3:www/rubygem-rack \
 		rubygem-rainbow>=2.0.0:devel/rubygem-rainbow
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

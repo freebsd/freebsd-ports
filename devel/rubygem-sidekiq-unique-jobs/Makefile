@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-brpoplpush-redis_script>=0.1.1<2.0.0:databases/rubygem-brpo
 		rubygem-thor>=0.20<3.0:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

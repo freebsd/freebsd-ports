@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-chef-config>=0:sysutils/rubygem-chef-config \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 
