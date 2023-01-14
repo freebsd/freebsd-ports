@@ -1,5 +1,5 @@
 PORTNAME=	cospend
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	finance www editors
 MASTER_SITES=	https://github.com/eneiluj/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 
