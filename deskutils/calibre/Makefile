@@ -1,6 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	5.44.0
-PORTREVISION=	8
+PORTVERSION=	6.11.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -11,7 +10,7 @@ WWW=		https://calibre-ebook.com/
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libpoppler-qt5.so:graphics/poppler-qt5 \
+		libpoppler-qt6.so:graphics/poppler-qt6 \
 		libwmflite.so:graphics/libwmf \
 		libchm.so:misc/chmlib \
 		libicudata.so:devel/icu \
@@ -20,7 +19,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libhunspell-1.7.so:textproc/hunspell \
 		libhyphen.so:textproc/hyphen \
-		libstemmer.so:textproc/snowballstemmer
+		libstemmer.so:textproc/snowballstemmer \
+		libxkbcommon.so:x11/libxkbcommon \
+		libuchardet.so:textproc/uchardet
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
@@ -30,7 +31,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser@${PY_FLAVOR} \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf
+		${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf \
+		${LOCALBASE}/bin/cmake:devel/cmake-core
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}css-parser>=1.0.4:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
@@ -46,7 +48,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=0:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cchardet>=0:textproc/py-cchardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.8:textproc/py-feedparser@${PY_FLAVOR} \
@@ -56,12 +57,12 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf
 
 USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags \
-		pkgconfig pyqt:5 python:3.8+ qt:5 shared-mime-info shebangfix \
+		pkgconfig pyqt:6 python:3.8+ qt:6 shared-mime-info shebangfix \
 		ssl tar:xz xorg
 USE_RC_SUBR=	calibre
 SUB_LIST+=	PYTHON_VERSION=${PYTHON_VERSION}
-USE_PYQT=	pyqt5 pysip qtbuilder sip webengine
-USE_QT=		buildtools:build core dbus gui qmake:build widgets
+USE_PYQT=	pyqt6 pysip qtbuilder sip webengine
+USE_QT=		base
 USE_GL=		egl gl
 USE_GNOME=	glib20
 USE_XORG=	xrender xext x11
@@ -94,6 +95,9 @@ post-patch:
 		${WRKSRC}/setup/install.py \
 		${WRKSRC}/src/calibre/gui2/dialogs/custom_recipes.py \
 		${WRKSRC}/src/calibre/gui2/preferences/tweaks.py
+
+do-configure:
+	# do nothing
 
 do-build:
 	@${MKDIR} ${WRKDIR}/calibre-config ${WRKDIR}/xdg-config
