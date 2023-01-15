@@ -455,6 +455,8 @@ include/agrum/PRM/utils_prm.h
 include/agrum/PRM/utils_prm_tpl.h
 include/agrum/agrum.h
 include/agrum/config.h
+include/agrum/tools/core/AVLTree.h
+include/agrum/tools/core/AVLTree_tpl.h
 include/agrum/tools/core/IThreadNumberManager.h
 include/agrum/tools/core/approximations/IApproximationSchemeConfiguration.h
 include/agrum/tools/core/approximations/IApproximationSchemeConfiguration_inl.h
@@ -525,6 +527,8 @@ include/agrum/tools/core/sequence.h
 include/agrum/tools/core/sequence_tpl.h
 include/agrum/tools/core/set.h
 include/agrum/tools/core/set_tpl.h
+include/agrum/tools/core/sharedAVLTree.h
+include/agrum/tools/core/sharedAVLTree_tpl.h
 include/agrum/tools/core/signal/listener.h
 include/agrum/tools/core/signal/listener_inl.h
 include/agrum/tools/core/signal/signaler.h
@@ -543,8 +547,11 @@ include/agrum/tools/core/smallobjectallocator/fixedAllocator.h
 include/agrum/tools/core/smallobjectallocator/fixedAllocator_inl.h
 include/agrum/tools/core/smallobjectallocator/smallObjectAllocator.h
 include/agrum/tools/core/smallobjectallocator/smallObjectAllocator_inl.h
+include/agrum/tools/core/sortedPriorityQueue.h
+include/agrum/tools/core/sortedPriorityQueue_tpl.h
 include/agrum/tools/core/splay.h
 include/agrum/tools/core/splay_tpl.h
+include/agrum/tools/core/staticInitializer.h
 include/agrum/tools/core/threadData.h
 include/agrum/tools/core/threadExecutor.h
 include/agrum/tools/core/threadExecutorBase.h
@@ -677,6 +684,8 @@ include/agrum/tools/graphicalModels/variableNodeMap.h
 include/agrum/tools/graphicalModels/variableNodeMap_inl.h
 include/agrum/tools/graphs/DAG.h
 include/agrum/tools/graphs/DAG_inl.h
+include/agrum/tools/graphs/PDAG.h
+include/agrum/tools/graphs/PDAG_inl.h
 include/agrum/tools/graphs/algorithms/DAGCycleDetector.h
 include/agrum/tools/graphs/algorithms/DAGCycleDetector_inl.h
 include/agrum/tools/graphs/algorithms/binaryJoinTreeConverter.h
