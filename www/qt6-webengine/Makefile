@@ -15,6 +15,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -124,7 +125,8 @@ post-patch:
 		${WRKSRC}/src/host/BUILD.toolchain.gn.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp \
-		${WRKSRC}/src/3rdparty/chromium/third_party/wayland/features.gni
+		${WRKSRC}/src/3rdparty/chromium/third_party/wayland/features.gni \
+		${WRKSRC}/src/3rdparty/chromium/ui/events/ozone/layout/xkb/xkb_keyboard_layout_engine.cc
 
 pre-configure:
 # We used to remove bundled libraries to be sure that webengine uses
