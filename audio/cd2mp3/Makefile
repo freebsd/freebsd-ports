@@ -11,6 +11,9 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 WWW=		https://BSDforge.com/projects/audio/cd2mp3
 
+DEPRECATED=	Depends on deprecated port audio/dagrab, consider using audio/abcde or audio/cyanrip
+EXPIRATION_DATE=2023-03-31
+
 RUN_DEPENDS=	lame:audio/lame \
 		dagrab:audio/dagrab
 
