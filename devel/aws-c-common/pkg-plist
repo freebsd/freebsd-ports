@@ -83,6 +83,7 @@ lib/aws-c-common/cmake/aws-c-common-config.cmake
 lib/aws-c-common/cmake/shared/aws-c-common-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-common/cmake/shared/aws-c-common-targets.cmake
 lib/cmake/AwsCFlags.cmake
+lib/cmake/AwsCRuntime.cmake
 lib/cmake/AwsCheckHeaders.cmake
 lib/cmake/AwsFeatureTests.cmake
 lib/cmake/AwsFindPackage.cmake
