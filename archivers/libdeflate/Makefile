@@ -1,10 +1,7 @@
 PORTNAME=	libdeflate
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	98174ac5e6fe2a806923bcb6bfa24cdbf32c79d0.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, whole-buffer DEFLATE-based compression library
