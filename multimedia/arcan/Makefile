@@ -40,8 +40,7 @@ OPTIONS_SUB=	yes
 ESPEAK_LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-MANPAGES_USES=		ruby
-MANPAGES_VARS=		RUBY_NO_RUN_DEPENDS=yes
+MANPAGES_USES=		ruby:build
 
 LUAJIT_DESC=		Use LuaJIT instead of standard Lua
 LUAJIT_USES=		luajit
