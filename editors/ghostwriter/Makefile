@@ -11,9 +11,25 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
-USES=		compiler:c++11-lang desktop-file-utils kde:5 pkgconfig qmake qt:5
-USE_QT=		core gui svg webchannel webengine widgets buildtools:build \
-		linguisttools:build
+FLAVORS=	qt5 qt6
+FLAVOR?=	${FLAVORS:[0]}
+qt5_PKGNAMESUFFIX=
+qt6_PKGNAMESUFFIX=	-qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}
+
+USES=		compiler:c++11-lang desktop-file-utils kde:5 pkgconfig qmake
+
+.if ${FLAVOR} == qt5
+USES+=		qt:5
+USE_QT=		buildtools:build core gui linguisttools:build svg \
+		webchannel webengine widgets
+RCCREGEXP=	\/lib\/qt5\/bin\/rcc
+.else
+USES+=		qt:6
+USE_QT=		5compat base svg tools webchannel webengine
+RCCREGEXP=	\/libexec\/qt6\/rcc
+.endif
 
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
@@ -23,7 +39,7 @@ KDE_INVENT=	151268bcfdca57bba4944caa7172dde9549f0622 office
 post-configure:
 	@${REINPLACE_CMD} -e 's|^\(build/release/qrc_QtAwesomeFree.cpp:[^\\]*\)\\|\1|' \
 		-e '/3rdparty\/QtAwesome\/fonts\/Font/d' \
-		-e '/\/lib\/qt5\/bin\/rcc \\/d' \
+		-e '/${RCCREGEXP} \\/d' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
