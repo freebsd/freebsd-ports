@@ -1,47 +1,29 @@
---- configure.orig	2014-04-30 13:56:20.982115758 +0000
-+++ configure	2014-04-30 13:56:44.128114528 +0000
-@@ -15038,7 +15038,7 @@
-     conftest$ac_exeext conftest.$ac_ext
- if test $have_res_init = no ; then
-     save_LIBS=$LIBS
--    LIBS="$LIBS -lresolv"
-+    LIBS="$LIBS"
-     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- #include <resolv.h>
-@@ -16088,7 +16088,7 @@
-   $as_echo_n "(cached) " >&6
- else
+--- configure.orig	2023-06-10 11:48:17 UTC
++++ configure
+@@ -16081,7 +16081,7 @@
+ fi
+         BALSA_WEB_EXTENSIONS="${libdir}/${PACKAGE}"
+ 
+-        CPPFLAGS="$CPPFLAGS -DBALSA_WEB_EXTENSIONS=\\\"$BALSA_WEB_EXTENSIONS\\\""
++        CPPFLAGS="$CPPFLAGS -DBALSA_WEB_EXTENSIONS=\\\"$BALSA_WEB_EXTENSIONS\\\""
+         for ac_prog in python-html2text  \
+                        html2markdown     \
+                        html2markdown.py2 \
+@@ -16501,7 +16501,7 @@
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lldap -llber -lresolv $LIBS"
 +LIBS="-lldap -llber $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16122,7 +16122,7 @@
+@@ -16534,7 +16534,7 @@
  
- $as_echo "#define ENABLE_LDAP 1" >>confdefs.h
+ printf "%s\n" "#define ENABLE_LDAP 1" >>confdefs.h
  
 -              LIBS="-lldap -llber -lresolv $LIBS"
 +              LIBS="-lldap -llber $LIBS"
- else
+ else $as_nop
    as_fn_error $? "*** You enabled LDAP but ldap library is not found." "$LINENO" 5
  fi
-@@ -18071,8 +18071,6 @@
- 
- 
- 
--$as_echo "#define _XOPEN_SOURCE 500" >>confdefs.h
--
- ac_fn_c_check_decl "$LINENO" "localtime_r" "ac_cv_have_decl_localtime_r" "#include <time.h>
- "
- if test "x$ac_cv_have_decl_localtime_r" = xyes; then :
-@@ -18339,7 +18337,7 @@
-   INSTALL_MIME_ICONS_FALSE=
- fi
- 
--HICOLOR_ICON_DIR=`$PKG_CONFIG --variable=prefix gtk+-3.0`/share/icons/hicolor
-+HICOLOR_ICON_DIR=/usr/local/share/icons/hicolor
- 
- 
- 

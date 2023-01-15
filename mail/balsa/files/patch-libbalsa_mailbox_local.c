@@ -1,6 +1,6 @@
---- libbalsa/mailbox_local.c.orig	2009-05-23 03:02:12.000000000 -0400
-+++ libbalsa/mailbox_local.c	2009-12-25 12:39:52.000000000 -0500
-@@ -440,7 +440,7 @@ libbalsa_mailbox_local_load_config(LibBa
+--- libbalsa/mailbox_local.c.orig	2009-05-23 03:02:12 UTC
++++ libbalsa/mailbox_local.c
+@@ -468,7 +468,7 @@
  
  typedef struct {
      GArray * array;
