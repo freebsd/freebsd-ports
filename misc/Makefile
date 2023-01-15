@@ -195,6 +195,7 @@
     SUBDIR += jargon
     SUBDIR += jbidwatcher
     SUBDIR += jojodiff
+    SUBDIR += json-tui
     SUBDIR += kbdscan
     SUBDIR += kcd
     SUBDIR += kde-thumbnailer-chm
