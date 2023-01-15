@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2022-12-22 14:14:32 UTC
++++ CMakeLists.txt
+@@ -114,11 +114,13 @@ if (NOT PHASAR_IN_TREE)
+   set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+ endif()
+ 
++if (FALSE)
+ if (LLVM_ENABLE_LIBCXX)
+   set(PHASAR_STD_FILESYSTEM c++fs)
+ else()
+   set(PHASAR_STD_FILESYSTEM stdc++fs)
+ endif()
++endif()
+ 
+ ### Adding external libraries
+ # Threads
+@@ -334,7 +336,7 @@ install(DIRECTORY utils/
+ 
+ # Install the Phasar config files into ~/.config/phasar/
+ install(DIRECTORY config/
+-  DESTINATION $ENV{HOME}/.config/phasar
++  DESTINATION etc/phasar
+   PATTERN "config/*"
+   PERMISSIONS OWNER_WRITE OWNER_READ
+               GROUP_WRITE GROUP_READ
