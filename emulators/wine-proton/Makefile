@@ -103,7 +103,7 @@ PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
 
 .include <bsd.port.pre.mk>
 
-.if (${LLVM_DEFAULT} == 90 || ${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
+.if (${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
 _LLVM_VERSION=	12
 .else
 _LLVM_VERSION=	${LLVM_DEFAULT}
