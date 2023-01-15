@@ -1,5 +1,6 @@
 PORTNAME=	unbound
 DISTVERSION=	1.17.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/
 
@@ -32,15 +33,16 @@ PORTDOCS=	CNAME-basedRedirectionDesignNotes.pdf CREDITS Changelog \
 		ietf67-design-02.pdf requirements.txt
 
 OPTIONS_DEFINE=		DEP-RSA1024 DNSCRYPT DNSTAP DOCS DOH ECDSA EVAPI \
-			FILTER_AAAA GOST HIREDIS LIBEVENT MUNIN_PLUGIN PYTHON \
-			SUBNET TFOCL TFOSE THREADS
-OPTIONS_DEFAULT=	DNSCRYPT DOH ECDSA GOST LIBEVENT THREADS
+			DYNLIB FILTER_AAAA GOST HIREDIS LIBEVENT MUNIN_PLUGIN \
+			PYTHON SUBNET TFOCL TFOSE THREADS
+OPTIONS_DEFAULT=	DNSCRYPT DOH DYNLIB ECDSA GOST LIBEVENT THREADS
 OPTIONS_SUB=		yes
 
 DEP-RSA1024_DESC=	Deprecate the use of RSA 1024 keys
 DNSCRYPT_DESC=		Enable dnscrypt support
 DNSTAP_DESC=		Enable dnstap logging support
 DOH_DESC=		Enable DNS-over-HTTPS support
+DYNLIB_DESC=		Enable dynamic (shared) library support
 ECDSA_DESC=		Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 EVAPI_DESC=		(Experimental) pluggable event based libunbound API support
 FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
@@ -63,6 +65,7 @@ DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DOH_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
 DOH_CONFIGURE_ON=		--with-libnghttp2
+DYNLIB_CONFIGURE_ON=		--with-dynlibmodule
 ECDSA_CONFIGURE_ENABLE=		ecdsa
 ECDSA_VARS=			DEPENDS_ARGS+=WITH_ECDSA=yes
 EVAPI_CONFIGURE_ENABLE=		event-api
