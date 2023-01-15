@@ -988,6 +988,7 @@
     SUBDIR += ignition-tools
     SUBDIR += ikos
     SUBDIR += imake
+    SUBDIR += imtui
     SUBDIR += inastemp
     SUBDIR += include-what-you-use
     SUBDIR += indi
