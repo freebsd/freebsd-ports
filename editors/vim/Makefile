@@ -139,7 +139,7 @@ PYTHON_CONFIGURE_ENABLE=	python3interp
 PYTHON_CONFIGURE_WITH=	python3-command=${PYTHON_CMD}
 
 RUBY_CONFIGURE_ENABLE=	rubyinterp
-RUBY_USE=		RUBY=yes
+RUBY_USES=		ruby
 
 SCHEME_DESC=		MzScheme (Racket) bindings
 SCHEME_CONFIGURE_ENABLE=mzschemeinterp

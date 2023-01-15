@@ -76,7 +76,6 @@ WEBKIT_LIB_DEPENDS=	libicui18n.so:devel/icu
 WEBKIT_USES=	bison gmake gperf perl5 python:3.5+,build ruby:build
 WEBKIT_USE=	GNOME=libxslt,libxml2 \
 		PERL5=build \
-		RUBY=yes \
 		XORG=xcomposite,xdamage,xfixes,xrender,xt
 WEBKIT_VARS=	COMPILE_WEBKIT=true
 
