@@ -1,5 +1,5 @@
 PORTNAME=	openhantek
-DISTVERSION=	3.3.1
+DISTVERSION=	3.3.2.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
