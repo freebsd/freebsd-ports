@@ -45,7 +45,7 @@ CPP=		${LOCALBASE}/bin/clang-cpp${_LLVM_VERSION}
 CC=		${LOCALBASE}/bin/clang${_LLVM_VERSION}
 CXX=		${LOCALBASE}/bin/clang++${_LLVM_VERSION}
 BUILD_DEPENDS+=	llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
-.if (${LLVM_DEFAULT} == 90 || ${LLVM_DEFAULT} == 10)
+.if ${LLVM_DEFAULT} == 10
 _LLVM_VERSION=	11
 .else
 _LLVM_VERSION=	${LLVM_DEFAULT}
