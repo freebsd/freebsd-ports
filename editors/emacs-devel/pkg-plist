@@ -3591,6 +3591,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/rust-ts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/rust-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.el.gz
