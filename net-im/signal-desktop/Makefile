@@ -1,15 +1,16 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.0
+DISTVERSION=	6.2.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn \
 		LOCAL/mikael/signal-desktop/:electron_gyp \
 		LOCAL/mikael/signal-desktop/:npm \
-		LOCAL/mikael/signal-desktop/:sqlite
+		https://build-artifacts.signal.org/desktop/:sqlcipher
 DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:yarn \
 		signal-desktop-${DISTVERSION}-electron-gyp-cache.tar.gz:electron_gyp \
 		signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm \
-		sqlcipher.tar.gz:sqlite
+		sqlcipher-4.5.2--3.0.7-4587e88a4219cb76fd595a5b73f82bfd919b235d75626f40783525f4f58a7503.tar.gz:sqlcipher
+		
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Cross-platform centralized encrypted messaging service
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		app-builder>0:devel/app-builder \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		npm:www/npm-node16 \
-		openssl>0:security/openssl \
+		${LOCALBASE}/lib/libcrypto.a:security/openssl-devel \
 		vips>0:graphics/vips \
 		yarn:www/yarn-node16
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
@@ -64,7 +65,8 @@ MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER
 		PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/.cache \
 		PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true \
 		PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true \
-		USE_SYSTEM_APP_BUILDER=true
+		USE_SYSTEM_APP_BUILDER=true \
+		SOURCE_DATE_EPOCH=${_BUILD_DATE}
 
 # Don't download electron binary distribution on electron node_modules installation
 MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
@@ -82,7 +84,7 @@ ELECTRON_VER_MAJOR=	21
 # ll work/.cache/yarn/v6 | egrep "ringrtc|signal-client|npm-better-sqlite3|esbuild-freebsd-64"
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.21.1-381d6162ae0e7719dc625780c1d6c3f9f558c33d-integrity
 NPM_RINGRTC_DIR=	npm-ringrtc-2.22.0-9a9d9fbc1ca43e7a0707a960ce9642dbf82dc64a/
-NPM_SQLITE3_DIR=	npm-better-sqlite3-7.5.1-afdbd49cf18d0046d7385ca4d23da20c66f00d50/
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.0.3-c279ca3f1d1e7f6554d2a629d717e96e1ec45809-integrity/
 NPM_PLAYWRITE_DIR=	npm-playwright-core-1.17.1-a16e0f89284a0ed8ae6d77e1c905c84b8a2ba022-integrity
 NPM_ESBUILD_VERS=	0.15.8
 
@@ -92,10 +94,6 @@ APP_OUT_DIR=		linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
 
 PLIST_SUB=		NODE_ARCH=${NODE_ARCH} \
 			SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
-
-post-patch:
-	${REINPLACE_CMD} "s#%%EPOCH%%#${_BUILD_DATE}#" \
-		${WRKSRC}/ts/scripts/get-expire-time.ts
 
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
@@ -116,11 +114,9 @@ do-build:
 	${CP} ${LOCALBASE}/lib/libringrtc.so \
 		${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
 
-	# sqlcipher.tar.gz requires git-lfs to fetch, just copy a previously downloaded one (I've had to use ubuntu for that,
-	# as I didn't manage to do it with FreeBSD, see https://github.com/signalapp/Signal-Desktop/blob/development/CONTRIBUTING.md for instructions)
-	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/better-sqlite3/deps
-	${CP} ${DISTDIR}/sqlcipher.tar.gz \
-		${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/better-sqlite3/deps/sqlcipher.tar.gz
+	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/@signalapp/better-sqlite3/deps
+	${CP} ${DISTDIR}/sqlcipher-4.5.2--3.0.7-4587e88a4219cb76fd595a5b73f82bfd919b235d75626f40783525f4f58a7503.tar.gz \
+		${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/@signalapp/better-sqlite3/deps/sqlcipher.tar.gz
 
 	# patch-package can't patch playwright-core, patch the yarn cache instead
 	${CP} ${FILESDIR}/playwrigth-registry.js \

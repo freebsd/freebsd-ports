@@ -166,23 +166,3 @@
    windowIcon = join(__dirname, '../images/signal-logo-desktop-linux.png');
  } else {
    windowIcon = join(__dirname, '../build/icons/png/512x512.png');
---- ts/scripts/get-expire-time.ts.orig	2022-02-16 15:11:39.000000000 +0000
-+++ ts/scripts/get-expire-time.ts	2022-02-25 12:31:18.650062000 +0000
-@@ -2,15 +2,12 @@
- // SPDX-License-Identifier: AGPL-3.0-only
- 
- import { join } from 'path';
--import { execSync } from 'child_process';
- import { writeFileSync } from 'fs';
- 
- import { DAY } from '../util/durations';
- 
--const unixTimestamp = parseInt(
--  execSync('git show -s --format=%ct').toString('utf8'),
--  10
--);
-+const unixTimestamp = %%EPOCH%%;
-+
- const buildCreation = unixTimestamp * 1000;
- 
- const buildExpiration = buildCreation + DAY * 90;

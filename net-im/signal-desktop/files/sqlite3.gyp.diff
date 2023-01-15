@@ -1,17 +1,17 @@
---- npm-better-sqlite3-7.5.1-afdbd49cf18d0046d7385ca4d23da20c66f00d50/node_modules/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
-+++ npm-better-sqlite3-7.5.1-afdbd49cf18d0046d7385ca4d23da20c66f00d50/node_modules/better-sqlite3/deps/sqlite3.gyp
-@@ -95,6 +95,14 @@
-             ]
-           }
-         },
+--- npm-@signalapp-better-sqlite3-8.0.3-c279ca3f1d1e7f6554d2a629d717e96e1ec45809-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
++++ npm-@signalapp-better-sqlite3-8.0.3-c279ca3f1d1e7f6554d2a629d717e96e1ec45809-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp
+@@ -92,6 +92,14 @@
+             'libraries': [
+               # This statically links libcrypto, whereas -lcrypto would dynamically link it
+               '<(SHARED_INTERMEDIATE_DIR)/sqlite3/OpenSSL-mac-<(target_arch)/libcrypto.a'
++            ]
++          }
++        },
 +        'OS == "freebsd"', {
 +          'link_settings': {
 +            'libraries': [
 +              # This statically links libcrypto, whereas -lcrypto would dynamically link it
 +              '/usr/local/lib/libcrypto.a'
-+            ]
-+          }
-+        },
-         { # Linux
-           'link_settings': {
-             'libraries': [
+             ]
+           }
+         },
