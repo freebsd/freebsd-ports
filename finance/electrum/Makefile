@@ -1,5 +1,5 @@
 PORTNAME=	electrum
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.3
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
