@@ -1,6 +1,5 @@
 PORTNAME=	wallutils
-DISTVERSION=	5.12.4
-PORTREVISION=	1
+DISTVERSION=	5.12.5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,12 +22,12 @@ GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xml
 		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:image:e7cb96979f69:golang_image/vendor/golang.org/x/image \
-		golang:net:58aab5ef257a:golang_net/vendor/golang.org/x/net \
-		golang:sys:84dc82d7e875:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		golang:image:v0.3.0:golang_image/vendor/golang.org/x/image \
+		golang:net:a158d28d115b:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.6.0:golang_text/vendor/golang.org/x/text \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.17:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		stretchr:powerwalk:bceb9d014549:stretchr_powerwalk/vendor/github.com/stretchr/powerwalk \
