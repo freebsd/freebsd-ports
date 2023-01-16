@@ -1,5 +1,5 @@
 PORTNAME=	sphinx
-PORTVERSION=	4.5.0
+PORTVERSION=	5.1.1
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-applehelp>=0:textproc/py-sphin
 		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-qthelp>=0:textproc/py-sphinxcontrib-qthelp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docutils>=0.14<0.18,1:textproc/py-docutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.18.1<0.20,1:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snowballstemmer>=1.1:textproc/py-snowballstemmer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}alabaster>=0.7<0.8:textproc/py-alabaster@${PY_FLAVOR} \
