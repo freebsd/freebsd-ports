@@ -1,7 +1,7 @@
 PORTNAME=	sfcgal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases math graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org

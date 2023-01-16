@@ -1,6 +1,6 @@
 PORTNAME=	libixion
 PORTVERSION=	0.17.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://kohei.us/files/ixion/src/
 

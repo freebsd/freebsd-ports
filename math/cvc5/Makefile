@@ -1,6 +1,7 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
 DISTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES+=	http://www.antlr3.org/download/:antlr3
 DISTFILES+=	antlr-3.4-complete.jar:antlr3
