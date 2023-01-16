@@ -1,5 +1,6 @@
 PORTNAME=	xwallpaper
 DISTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/stoeckmann/xwallpaper/releases/download/v${DISTVERSION}/
 
@@ -17,5 +18,9 @@ LIB_DEPENDS=	libpixman-1.so:x11/pixman \
 USES=		autoreconf jpeg pkgconfig xorg tar:xz
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=bin/xwallpaper \
+			man/man1/xwallpaper.1.gz \
+			share/zsh/site-functions/_xwallpaper
 
 .include <bsd.port.mk>
