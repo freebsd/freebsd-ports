@@ -1,6 +1,6 @@
---- 3rd/luamake/compile/ninja/freebsd.ninja.orig	2022-08-25 08:15:47 UTC
+--- 3rd/luamake/compile/ninja/freebsd.ninja.orig	2023-01-16 17:59:05 UTC
 +++ 3rd/luamake/compile/ninja/freebsd.ninja
-@@ -1,7 +1,7 @@
+@@ -2,7 +2,7 @@ ninja_required_version = 1.7
  builddir = build/freebsd
  bin = $builddir/bin
  obj = $builddir/obj
@@ -9,7 +9,7 @@
  luamake = luamake
  rule c_source_bee
    command = $cc -MMD -MT $out -MF $out.d  -O2 -Wall -Werror $
-@@ -23,7 +23,7 @@ build $obj/source_bee/format.obj: cxx_source_bee $
+@@ -24,7 +24,7 @@ build $obj/source_bee/format.obj: cxx_source_bee $
  build $obj/source_bee/os.obj: cxx_source_bee 3rd/bee.lua/bee/nonstd/fmt/os.cc
  rule cxx_source_bee_1
    command = $cc -MMD -MT $out -MF $out.d -std=c++17 -O2 -Wall -Werror $
@@ -18,7 +18,7 @@
    description = Compile C++ $out
    deps = gcc
    depfile = $out.d
-@@ -49,7 +49,7 @@ build $obj/source_bee/path_helper.obj: cxx_source_bee_
+@@ -50,7 +50,7 @@ build $obj/source_bee/path_helper.obj: cxx_source_bee_
  rule cxx_source_bee_2
    command = $cc -MMD -MT $out -MF $out.d -std=c++17 -O2 -Wall -Werror $
      -fvisibility=hidden -I3rd/bee.lua/3rd/lua-seri -I3rd/bee.lua $
@@ -27,7 +27,7 @@
    description = Compile C++ $out
    deps = gcc
    depfile = $out.d
-@@ -79,7 +79,7 @@ build $obj/source_lua/utf8_crt.obj: c_source_lua $
+@@ -80,7 +80,7 @@ build $obj/source_lua/utf8_crt.obj: c_source_lua $
      3rd/bee.lua/3rd/lua/utf8_crt.c
  rule c_source_lua_1
    command = $cc -MMD -MT $out -MF $out.d  -O2 -Wall -Werror -DMAKE_LIB $
@@ -36,7 +36,7 @@
    description = Compile C   $out
    deps = gcc
    depfile = $out.d
-@@ -96,8 +96,7 @@ build $obj/source_bootstrap/main.obj: cxx_source_boots
+@@ -98,8 +98,7 @@ build $obj/source_bootstrap/main.obj: cxx_source_boots
  build $obj/source_bootstrap/progdir.obj: cxx_source_bootstrap $
      3rd/bee.lua/bootstrap/progdir.cpp
  rule link_luamake
@@ -46,9 +46,9 @@
    description = Link    Exe $out
  build $bin/luamake: link_luamake $obj/source_bootstrap/main.obj $
      $obj/source_bootstrap/progdir.obj $obj/source_bee/lua-seri.obj $
-@@ -138,4 +137,4 @@ build luamake: copy | $bin/luamake
- build copy_script: phony $bin/main.lua
+@@ -142,4 +141,4 @@ build copy_script: phony $bin/main.lua
  build test: phony $obj/test.stamp
  build copy_luamake: phony luamake
--default test copy_luamake
-+default copy_luamake
+ build notest: phony copy_luamake
+-default test notest
++default notest
