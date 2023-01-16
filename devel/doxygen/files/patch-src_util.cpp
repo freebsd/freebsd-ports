@@ -1,4 +1,4 @@
---- src/util.cpp.orig	2022-08-26 07:34:22 UTC
+--- src/util.cpp.orig	2022-12-25 18:59:09 UTC
 +++ src/util.cpp
 @@ -30,6 +30,7 @@
  #include <cinttypes>
@@ -8,7 +8,7 @@
  #include "md5.h"
  
  #include "regex.h"
-@@ -3715,26 +3716,18 @@ QCString convertNameToFile(const QCString &name,bool a
+@@ -3754,26 +3755,18 @@ QCString convertNameToFile(const QCString &name,bool a
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
@@ -40,7 +40,7 @@
    }
    //printf("*** convertNameToFile(%s)->%s\n",qPrint(name),qPrint(result));
    return result;
-@@ -7389,6 +7382,11 @@ QCString removeEmptyLines(const QCString &s)
+@@ -7429,6 +7422,11 @@ QCString removeEmptyLines(const QCString &s)
  QCString removeEmptyLines(const QCString &s)
  {
    BufStr out(s.length()+1);

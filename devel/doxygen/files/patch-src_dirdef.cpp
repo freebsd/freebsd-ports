@@ -1,4 +1,4 @@
---- src/dirdef.cpp.orig	2022-08-11 20:14:32 UTC
+--- src/dirdef.cpp.orig	2022-12-18 12:21:42 UTC
 +++ src/dirdef.cpp
 @@ -14,6 +14,7 @@
   */

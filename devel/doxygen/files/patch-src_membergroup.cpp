@@ -1,4 +1,4 @@
---- src/membergroup.cpp.orig	2022-08-11 20:14:32 UTC
+--- src/membergroup.cpp.orig	2022-09-18 12:47:12 UTC
 +++ src/membergroup.cpp
 @@ -15,6 +15,8 @@
   *

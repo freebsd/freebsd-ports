@@ -1,7 +1,7 @@
---- src/dotgraph.cpp.orig	2022-08-11 20:14:32 UTC
+--- src/dotgraph.cpp.orig	2022-12-25 19:00:20 UTC
 +++ src/dotgraph.cpp
-@@ -16,6 +16,7 @@
- #include <sstream>
+@@ -15,6 +15,7 @@
+ 
  #include <mutex>
  #include <regex>
 +#include <sys/types.h>

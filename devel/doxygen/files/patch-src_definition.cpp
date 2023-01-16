@@ -1,4 +1,4 @@
---- src/definition.cpp.orig	2022-08-23 13:47:08 UTC
+--- src/definition.cpp.orig	2022-12-25 19:21:45 UTC
 +++ src/definition.cpp
 @@ -7,6 +7,7 @@
  #include <stdio.h>

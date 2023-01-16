@@ -1,4 +1,4 @@
---- src/memberdef.cpp.orig	2022-08-11 20:14:32 UTC
+--- src/memberdef.cpp.orig	2022-12-26 12:52:22 UTC
 +++ src/memberdef.cpp
 @@ -17,6 +17,7 @@
  #include <stdio.h>
@@ -8,7 +8,7 @@
  
  #include "md5.h"
  #include "memberdef.h"
-@@ -4118,10 +4119,8 @@ void MemberDefImpl::setAnchor()
+@@ -4149,10 +4150,8 @@ void MemberDefImpl::setAnchor()
    }
  
    // convert to md5 hash
