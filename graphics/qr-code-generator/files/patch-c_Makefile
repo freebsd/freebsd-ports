@@ -1,5 +1,5 @@
 Based on https://github.com/nayuki/QR-Code-generator/pull/72
---- c/Makefile.orig	2019-10-14 00:20:16 UTC
+--- c/Makefile.orig	2023-01-16 09:13:33 UTC
 +++ c/Makefile
 @@ -29,11 +29,13 @@
  # - CFLAGS: Any extra user-specified compiler flags (can be blank).
@@ -12,12 +12,11 @@ Based on https://github.com/nayuki/QR-Code-generator/pull/72
  # CFLAGS += -g -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -fsanitize=undefined,address
  
 +# Version information
-+VERSION = 1.6.0
++VERSION = %%VERSION%%
  
  # ---- Controlling make ----
  
-@@ -51,18 +53,45 @@ CFLAGS += -std=c99 -O
- # ---- Targets to build ----
+@@ -52,17 +54,44 @@ CFLAGS += -std=c99 -O
  
  LIB = qrcodegen
 -LIBFILE = lib$(LIB).a
@@ -28,7 +27,7 @@ Based on https://github.com/nayuki/QR-Code-generator/pull/72
 +REAL_NAME = $(LIBFILE).$(VERSION)
 +HEADERS = qrcodegen.h
  LIBOBJ = qrcodegen.o
- MAINS = qrcodegen-demo qrcodegen-test qrcodegen-worker
+ MAINS = qrcodegen-demo qrcodegen-test
  
 +# define paths to install
 +INCLUDEDIR ?= $(DESTDIR)/usr/include/qrcodegen
@@ -64,9 +63,9 @@ Based on https://github.com/nayuki/QR-Code-generator/pull/72
 +
  # Executable files
  %: %.o $(LIBFILE)
- 	$(CC) $(CFLAGS) -o $@ $< -L . -l $(LIB)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $< -L . -l $(LIB)
 @@ -72,12 +101,15 @@ qrcodegen-test: qrcodegen-test.c $(LIBOBJ:%.o=%.c)
- 	$(CC) $(CFLAGS) -DQRCODEGEN_TEST -o $@ $^
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -DQRCODEGEN_TEST -o $@ $^
  
  # The library
 -$(LIBFILE): $(LIBOBJ)
