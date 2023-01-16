@@ -1,6 +1,7 @@
 PORTNAME=	git-branchless
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -348,6 +349,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		zeroize-1.5.7
 
 PLIST_FILES=	bin/${PORTNAME}
+
+# sys-info-0.9.1 crate fix: https://github.com/FillZpp/sys-info-rs/issues/80 (same as in devel/git-delta)
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/get_cpu/s|unsigned long|uint64_t|' \
+		-e '/get_proc_total/s|unsigned long|uint64_t|' \
+			${WRKSRC}/cargo-crates/sys-info-*/c/*.[ch]
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
