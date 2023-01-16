@@ -1,7 +1,7 @@
 PORTNAME=	givaro
 PORTVERSION=	4.1.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	pi@FreeBSD.org
@@ -24,12 +24,13 @@ TEST_TARGET=	check
 USE_GITHUB=	yes
 GH_ACCOUNT=	linbox-team
 
-#OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 DOCS_CONFIGURE_ON=	--enable-doc --with-docdir=${DOCSDIR}
+DOCS_USE=		TEX=base:build,dvipsk:build,latex:build,pdftex:build
 
 post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${DOCSDIR}/givaro-dev-html
