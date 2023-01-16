@@ -1,5 +1,5 @@
 PORTNAME=	docutils
-PORTVERSION=	0.17.1
+PORTVERSION=	0.19
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -12,7 +12,7 @@ WWW=		http://docutils.sourceforge.net/
 LICENSE=	BSD2CLAUSE GPLv3+ PD PSFL
 LICENSE_COMB=	multi
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
