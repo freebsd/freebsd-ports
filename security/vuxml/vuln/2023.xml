@@ -1,3 +1,49 @@
+  <vuln vid="5fa68bd9-95d9-11ed-811a-080027f5fec9">
+    <topic>redis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.0.8</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.8.20230116</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/releases/tag/7.0.8">
+	  <dl>
+	    <dt>CVE-2022-35977</dt>
+	    <dd>
+	      Integer overflow in the Redis SETRANGE and SORT/SORT_RO
+	      commands can drive Redis to OOM panic.
+	    </dd>
+	    <dt>CVE-2023-22458</dt>
+	    <dd>
+	      Integer overflow in the Redis HRANDFIELD and ZRANDMEMBER
+	      commands can lead to denial-of-service.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35977</cvename>
+      <cvename>CVE-2023-22458</cvename>
+      <url>https://github.com/redis/redis/releases/tag/7.0.8</url>
+    </references>
+    <dates>
+      <discovery>2023-01-16</discovery>
+      <entry>2023-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d9e9439-959e-11ed-b464-b42e991fc52e">
     <topic>security/keycloak -- Multiple possible DoS attacks</topic>
     <affects>
