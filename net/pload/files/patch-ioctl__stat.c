@@ -1,5 +1,5 @@
---- ioctl_stat.c.orig	2000-02-01 02:11:24.000000000 -0500
-+++ ioctl_stat.c	2009-06-15 15:30:03.000000000 -0400
+--- ioctl_stat.c.orig	2000-02-01 07:11:24 UTC
++++ ioctl_stat.c
 @@ -30,6 +30,12 @@
  #include <fcntl.h>		/* open */
  #include <sys/ioctl.h>		/* ioctl */
@@ -26,7 +26,7 @@
  #	endif	/* linux && __GLIBC__ < 2 */
  #else	/* STREAMS */			/* Solaris, SunOS, OSF/1, SVR4 */
  #	include <net/ppp_defs.h>
-@@ -61,8 +69,18 @@
+@@ -61,8 +69,18 @@ void getsocket(if_data *ifd)
  void ioctl_stat(if_data *ifd)
  {
  	struct ifreq ifr;
@@ -46,7 +46,7 @@
  	if (!ifd->s) getsocket(ifd);
  	
  	memset(&ifr, 0, sizeof(ifr));
-@@ -76,7 +94,9 @@
+@@ -76,7 +94,9 @@ void ioctl_stat(if_data *ifd)
  		return;
  	}
  	
@@ -56,7 +56,7 @@
  
  #ifdef linux
  	req.stats_ptr = (caddr_t) &req.stats;
-@@ -84,18 +104,36 @@
+@@ -84,18 +104,36 @@ void ioctl_stat(if_data *ifd)
  #define ifr_name ifr__name
  #endif	
  
