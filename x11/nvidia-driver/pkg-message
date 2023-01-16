@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Please add the line
+vbe_max_resolution="720p"
+to /boot/loader.conf to put vt into the vbe framebuffer mode that would
+allow terminals to work simultaneously with graphics.
+EOM
+}
+]
