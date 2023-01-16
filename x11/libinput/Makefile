@@ -1,5 +1,5 @@
 PORTNAME=	libinput
-DISTVERSION=	1.22.0
+DISTVERSION=	1.22.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	x11@FreeBSD.org
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	fc59e574e050c502c9a3adefacf97babf3d09c7a
+GL_COMMIT=	d9f45fd1261da85b4eb44f8aa82e1500b99f303b
 
 CPE_VENDOR=	freedesktop
 

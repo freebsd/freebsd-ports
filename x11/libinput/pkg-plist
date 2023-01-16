@@ -52,6 +52,7 @@ man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-contour.quirks
 %%DATADIR%%/30-vendor-cypress.quirks
 %%DATADIR%%/30-vendor-elantech.quirks
+%%DATADIR%%/30-vendor-glorious.quirks
 %%DATADIR%%/30-vendor-ibm.quirks
 %%DATADIR%%/30-vendor-kensington.quirks
 %%DATADIR%%/30-vendor-logitech.quirks
