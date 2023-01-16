@@ -92,7 +92,6 @@
     SUBDIR += shx
     SUBDIR += sonarr
     SUBDIR += tooth
-    SUBDIR += tootle
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff
