@@ -13,7 +13,7 @@ BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		python:3.8+
+USES=		python:3.8-3.11  # upper bound inherited from math/py-numpy
 USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
@@ -67,6 +67,7 @@ post-install:
 		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_python*.so.${PORTVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_numpy*.so.${BOOST_SHARED_LIB_VER}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_python*.so.${BOOST_SHARED_LIB_VER}
 
 .include <bsd.port.post.mk>
