@@ -1888,6 +1888,7 @@
     SUBDIR += sdocbook-xml
     SUBDIR += sdom
     SUBDIR += senna
+    SUBDIR += sentencepiece
     SUBDIR += sgmlformat
     SUBDIR += sgmls
     SUBDIR += sgrep
