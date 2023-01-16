@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	2.8.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
@@ -18,8 +18,10 @@ GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
 USE_LDCONFIG=	yes
 
-NUT_USER?=	uucp
-NUT_GROUP?=	uucp
+NUT_USER?=	nut
+NUT_GROUP?=	nut
+USERS=		${NUT_USER}
+GROUPS=		${NUT_GROUP}
 STATEDIR?=	/var/db/nut
 PLIST_SUB+=	NUT_USER=${NUT_USER}
 PLIST_SUB+=	NUT_GROUP=${NUT_GROUP}

@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230116:
+  AFFECTS: users of sysutils/nut and sysutils/nut-devel
+  AUTHOR: cy@freebsd.org
+
+  As of PR/268960 Network UPS Tools will now run under its own UID and GID
+  instead of uucp. Users who wish to continue using the uucp user and
+  group may add NUT_USER=uucp and NUT_GROUP=uucp to their make.conf.
+
 20230111:
   AFFECTS: users of sysutils/graylog
   AUTHOR: dch@freebsd.org
