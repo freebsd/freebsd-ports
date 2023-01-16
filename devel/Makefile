@@ -7251,6 +7251,7 @@
     SUBDIR += rustc-demangle
     SUBDIR += rvi
     SUBDIR += rvm
+    SUBDIR += rxcpp
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += samurai
