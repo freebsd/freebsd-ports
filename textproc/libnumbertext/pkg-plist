@@ -20,6 +20,7 @@ libdata/pkgconfig/libnumbertext.pc
 %%DATADIR%%/eo.sor
 %%DATADIR%%/es.sor
 %%DATADIR%%/et.sor
+%%DATADIR%%/fa.sor
 %%DATADIR%%/fi.sor
 %%DATADIR%%/fr.sor
 %%DATADIR%%/ga.sor
@@ -40,6 +41,7 @@ libdata/pkgconfig/libnumbertext.pc
 %%DATADIR%%/mr.sor
 %%DATADIR%%/ms.sor
 %%DATADIR%%/mt.sor
+%%DATADIR%%/mul.sor
 %%DATADIR%%/nl.sor
 %%DATADIR%%/no.sor
 %%DATADIR%%/pl.sor
