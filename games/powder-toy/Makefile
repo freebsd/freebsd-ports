@@ -1,6 +1,7 @@
 PORTNAME=	powder-toy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	97.0.352
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -43,13 +44,14 @@ do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/resources/powder.desktop ${STAGEDIR}${PREFIX}/share/applications/uk.co.powdertoy.tpt.desktop  # as mentioned in appdata
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
 	${INSTALL_DATA} ${BUILD_WRKSRC}/resources/appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/powder-toy.appdata.xml
-.for s in 16 32 48 256
+.for s in 16 24 32 48 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
-	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe${${s} == 256:?:_${s}}.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/powder-toy.png
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_32.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_16.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_32.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/24x24/apps/powder-toy.png # for e.g. lxpanel
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_32.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/powder-toy.png
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
