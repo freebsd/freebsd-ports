@@ -1,5 +1,5 @@
 PORTNAME=	sphinx-tabs
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ WWW=		https://github.com/executablebooks/sphinx-tabs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.17.0,1<0.18,1:textproc/py-docutils@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.17.0,1<0.20,1:textproc/py-docutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0<3.2.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=2,1<6,1:textproc/py-sphinx@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0,1:textproc/py-docutils@${PY_FLAVOR} \
