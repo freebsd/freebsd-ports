@@ -13,6 +13,8 @@ WWW=		https://github.com/PonasKovas/rlaunch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails, see https://github.com/PonasKovas/rlaunch/issues/16
+
 USES=		cargo
 
 USE_GITHUB=	yes
