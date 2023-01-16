@@ -546,6 +546,7 @@
     SUBDIR += luminance-qt5
     SUBDIR += lux
     SUBDIR += lximage-qt
+    SUBDIR += magnum
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += mandelbulber
