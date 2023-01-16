@@ -1,7 +1,7 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,9 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
-		libgmp.so:math/gmp
+		libgmp.so:math/gmp \
+		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++14-lang llvm:min=15,max=15
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
@@ -77,8 +78,6 @@ FLINT_LIB_DEPENDS=	libflint.so:math/flint2 \
 PIRANHA_DESC=		piranha
 PIRANHA_CMAKE_ON=	-DINTEGER_CLASS:STRING=piranha
 PIRANHA_BUILD_DEPENDS=	piranha>0:math/piranha
-
-LLVM_VERSION=	13 # ${LLVM_DEFAULT} - llvm-90 fails for some reason
 
 do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 	@cd ${BUILD_WRKSRC} && \
