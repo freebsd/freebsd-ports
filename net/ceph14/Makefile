@@ -12,6 +12,8 @@ WWW=		https://ceph.com/
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN=		Not compatible with Boost-1.81
+
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
