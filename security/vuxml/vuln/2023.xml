@@ -1,3 +1,45 @@
+  <vuln vid="9d9e9439-959e-11ed-b464-b42e991fc52e">
+    <topic>security/keycloak -- Multiple possible DoS attacks</topic>
+    <affects>
+      <package>
+	<name>keycloak</name>
+	<range><lt>20.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CIRCL reports:</p>
+	<blockquote cite="https://cve.circl.lu/cve/CVE-2022-41966">
+	    <ul>
+	      <li>CVE-2022-41966: XStream serializes Java objects to XML
+	      and back again.
+	      Versions prior to 1.4.20 may allow a remote attacker
+	      to terminate the application with a stack
+	      overflow error, resulting in a denial of
+	      service only via manipulation the
+	      processed input stream.
+	      </li>
+	      <li>CVE-2022-40151: If the parser is running on user
+	      supplied input, an attacker may supply content that
+	      causes the parser to crash by stackoverflow. This
+	      effect may support a denial of service attack.
+	      </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-40151</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40151</url>
+      <cvename>CVE-2022-41966</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-41966</url>
+    </references>
+    <dates>
+      <discovery>2022-09-07</discovery>
+      <entry>2023-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="847f16e5-9406-11ed-a925-3065ec8fd3ec">
     <topic>security/tor -- SOCKS4(a) inversion bug</topic>
     <affects>
