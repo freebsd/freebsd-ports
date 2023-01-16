@@ -17113,7 +17113,6 @@ graphics/photoflow||2022-05-06|Unmaintainer upstream, has been broken for months
 textproc/redisearch16||2022-05-09|Has expired. Use textproc/redisearch or textproc/redisearch20
 devel/git-arc|devel/freebsd-git-devtools|2022-05-13|Renamed because more tools are now included
 graphics/magnum-examples||2022-05-17|Has expired: Depends on broken graphics/magnum
-graphics/magnum-plugins||2022-05-17|Has expired: Depends on broken graphics/magnum
 graphics/magnum-extras||2022-05-17|Has expired: Depends on broken graphics/magnum
 math/pantheon-calculator|math/elementary-calculator|2022-05-18|Switch to reverse domain name notation
 mail/p5-MIME-Fast||2022-05-19|Depends on long deprecated gmime-2.2
