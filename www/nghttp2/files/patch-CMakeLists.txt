@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-12-24 08:52:48 UTC
++++ CMakeLists.txt
+@@ -505,7 +505,7 @@ set(PKGLIBDIR "${CMAKE_INSTALL_FULL_LIBDIR}/${CMAKE_PR
+ 
+ install(FILES README.rst DESTINATION "${CMAKE_INSTALL_DOCDIR}")
+ 
+-add_subdirectory(lib)
++#add_subdirectory(lib)
+ #add_subdirectory(lib/includes)
+ add_subdirectory(third-party)
+ add_subdirectory(src)

@@ -5,23 +5,11 @@
 %%APP%%bin/nghttpd
 %%APP%%bin/nghttpx
 @sample etc/nghttpx/nghttpx.conf.sample
-%%ASIO%%include/nghttp2/asio_http2.h
-%%ASIO%%include/nghttp2/asio_http2_client.h
-%%ASIO%%include/nghttp2/asio_http2_server.h
-%%ASIO%%lib/libnghttp2_asio.a
-%%ASIO%%lib/libnghttp2_asio.so
-%%ASIO%%lib/libnghttp2_asio.so.1
-%%ASIO%%lib/libnghttp2_asio.so.1.0.0
-%%ASIO%%libdata/pkgconfig/libnghttp2_asio.pc
 man/man1/h2load.1.gz
 man/man1/nghttp.1.gz
 man/man1/nghttpd.1.gz
 man/man1/nghttpx.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-cl.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-cl2.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-sv.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-sv2.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deflate
