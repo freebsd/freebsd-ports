@@ -1,0 +1,7 @@
+Ping, but with a graph.
+
+Comes with the following super-powers:
+
+  * Graph the ping time for multiple hosts
+  * Graph the execution time for commands via the --cmd flag
+  * Custom colours
