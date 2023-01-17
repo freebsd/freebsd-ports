@@ -326,7 +326,6 @@ share/cmake/Ptex/ptex-exports.cmake
 %%PORTDOCS%%%%DOCSDIR%%/nav_h.png
 %%PORTDOCS%%%%DOCSDIR%%/nav_hd.png
 %%PORTDOCS%%%%DOCSDIR%%/open.png
-%%PORTDOCS%%%%DOCSDIR%%/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/ptex_2CMakeLists_8txt.html
 %%PORTDOCS%%%%DOCSDIR%%/splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/splitbard.png
