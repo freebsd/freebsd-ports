@@ -1,5 +1,6 @@
 PORTNAME=	tox
 PORTVERSION=	3.28.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +36,9 @@ NO_ARCH=	yes
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.12:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
+.if ${PYTHON_REL} >= 30700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR}
+.endif
 # tox.ini clobbers our pytest arguments
 post-extract:
 	${RM} ${WRKSRC}/tox.ini
