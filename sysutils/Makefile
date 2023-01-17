@@ -32,6 +32,7 @@
     SUBDIR += alfio
     SUBDIR += am-utils
     SUBDIR += amazon-ssm-agent
+    SUBDIR += amazon-ssm-plugin
     SUBDIR += amdmsrtweaker
     SUBDIR += amrstat
     SUBDIR += amtc
