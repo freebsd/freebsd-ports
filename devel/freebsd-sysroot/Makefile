@@ -77,6 +77,7 @@ _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAV
 _SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd12.3
 _SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd12.3-gnueabihf
 _SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.1 # secure-plt
+_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.1 # elfv2
 
 .if make(distclean) || make(makesum)
 MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
