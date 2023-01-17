@@ -1,3 +1,3 @@
-TIMESTAMP = 1665073086
-SHA256 (MediaInfo_CLI_22.09_GNU_FromSource.tar.xz) = 02070e50a9cde50180a31c0529435a0ac4fdc0cc823982395833472c6ef464e9
-SIZE (MediaInfo_CLI_22.09_GNU_FromSource.tar.xz) = 3337624
+TIMESTAMP = 1672601994
+SHA256 (libmediainfo_22.12.tar.xz) = 0fc6d32f06d6ce5e144074d2e57e0db8dfa4e38e752d3123ada27ccaf89634bc
+SIZE (libmediainfo_22.12.tar.xz) = 1893340
