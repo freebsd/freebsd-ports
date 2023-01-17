@@ -1,3 +1,4 @@
-TIMESTAMP = 1674590602
-SHA256 (rubygem/rack-3.0.4.gem) = 93008e4e29af4ac220ec19ed814f288f0cc27e14b1a4b27216e6e4b7e1e73cf6
-SIZE (rubygem/rack-3.0.4.gem) = 108032
+TIMESTAMP = 1674089849
+SHA256 (rubygem/rack-3.0.4.1.gem) = 6fe0042b786617e966ebc082f76dba624f5167f70acb741209805b216e0d07d7
+SIZE (rubygem/rack-3.0.4.1.gem) = 108032
+
