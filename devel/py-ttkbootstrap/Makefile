@@ -1,5 +1,5 @@
 PORTNAME=	ttkbootstrap
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
