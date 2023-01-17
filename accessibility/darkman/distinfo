@@ -1,4 +1,4 @@
-TIMESTAMP = 1669145549
+TIMESTAMP = 1673950448
 SHA256 (adrg-xdg-v0.3.3_GH0.tar.gz) = 07493a0702766a2f713321928a0f304c34f900dee445f5de3a4e43c715d2e21d
 SIZE (adrg-xdg-v0.3.3_GH0.tar.gz) = 16502
 SHA256 (go-check-check-41f04d3bba15_GH0.tar.gz) = 2d5b1036909b241e44f0d6a7cfa936cf9f875efb4f0af077cd61585c6d0c0432
@@ -13,5 +13,5 @@ SHA256 (kr-pretty-v0.2.0_GH0.tar.gz) = 6dc2207cfe03d3b9d65460cbada52c533ed273726
 SIZE (kr-pretty-v0.2.0_GH0.tar.gz) = 8760
 SHA256 (sj14-astral-v0.1.2_GH0.tar.gz) = e3305b66e64505f763ff5d87b31bef8dae78a0780ad93864d09341aebdd7466a
 SIZE (sj14-astral-v0.1.2_GH0.tar.gz) = 266290
-SHA256 (WhyNotHugo-darkman-227df1b16cfda5a2c6e8916cf9c51f40d827fabc_GL0.tar.gz) = f7716b37cd6c6fc6854ae40f471d61c7bb5d194d5326d92617585da0f0f4577a
-SIZE (WhyNotHugo-darkman-227df1b16cfda5a2c6e8916cf9c51f40d827fabc_GL0.tar.gz) = 24107
+SHA256 (WhyNotHugo-darkman-788453c1ce5b75530810860a552688b19b9b9e99_GL0.tar.gz) = 8cc85a3b71a07abc299ad6c356311119f9bf3f3b946f85a629e4ddd6141fdc16
+SIZE (WhyNotHugo-darkman-788453c1ce5b75530810860a552688b19b9b9e99_GL0.tar.gz) = 23437

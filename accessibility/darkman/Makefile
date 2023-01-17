@@ -1,6 +1,6 @@
 PORTNAME=	darkman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.2
 CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ GH_TUPLE=	adrg:xdg:v0.3.3:adrg_xdg/vendor/github.com/adrg/xdg \
 		kr:pretty:v0.2.0:kr_pretty/vendor/github.com/kr/pretty \
 		sj14:astral:v0.1.2:sj14_astral/vendor/github.com/sj14/astral
 GL_ACCOUNT=	WhyNotHugo
-GL_COMMIT=	227df1b16cfda5a2c6e8916cf9c51f40d827fabc
+GL_COMMIT=	788453c1ce5b75530810860a552688b19b9b9e99
 GO_TARGET=	./cmd/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/dbus-1/services/nl.whynothugo.darkman.service \
