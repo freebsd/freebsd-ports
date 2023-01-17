@@ -1,9 +1,11 @@
 PORTNAME=	talk
-PORTVERSION=	15.0.1
+PORTVERSION=	15.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im www
 DISTNAME=	spreed-${DISTVERSIONPREFIX}${DISTVERSION}
 DIST_SUBDIR=	nextcloud
+
+MASTER_SITES?=   https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Online meeting app for Nextcloud
@@ -14,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NEXTCLOUD_RUN_DEPENDS=	25
 
 WRKSRC=		${WRKDIR}/spreed
+WWWDIR=		${NEXTCLOUD_APPSDIR}/spreed
 
 USES=		cpe nextcloud php:flavors
 
