@@ -1,0 +1,45 @@
+PORTNAME=	kube-apiserver
+PORTVERSION=	1.26.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	net
+
+MAINTAINER=	loic.blot@unix-experience.fr
+COMMENT=	Kubernetes API service
+WWW=		https://github.com/kubernetes/kubernetes
+
+LICENSE=	APACHE20
+
+USES=		cpe go
+CPE_VENDOR=	jenkins
+CPE_PRODUCT=	kubernetes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kubernetes
+GH_PROJECT=	kubernetes
+
+BUILD_DATE=	$$(date +'%Y-%m-%dT%H:%M:%SZ')
+
+GO_PKGNAME=	k8s.io/kubernetes
+GO_TARGET=	${GO_PKGNAME}/cmd/kube-apiserver
+GO_BUILDFLAGS=	-ldflags="-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.buildDate=${BUILD_DATE} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.buildDate=${BUILD_DATE} \
+      		-X k8s.io/client-go/pkg/version.buildDate=${BUILD_DATE} \
+      		-X k8s.io/component-base/version.buildDate=${BUILD_DATE} \
+		-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.gitMinor=${PORTVERSION:R:E} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.gitMinor=${PORTVERSION:R:E} \
+      		-X k8s.io/client-go/pkg/version.gitMinor=${PORTVERSION:R:E} \
+      		-X k8s.io/component-base/version.gitMinor=${PORTVERSION:R:E} \
+		-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.gitMajor=${PORTVERSION:R:R} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.gitMajor=${PORTVERSION:R:R} \
+      		-X k8s.io/client-go/pkg/version.gitMajor=${PORTVERSION:R:R} \
+      		-X k8s.io/component-base/version.gitMajor=${PORTVERSION:R:R} \
+		-X k8s.io/kubernetes/vendor/k8s.io/client-go/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+      		-X k8s.io/kubernetes/vendor/k8s.io/component-base/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+      		-X k8s.io/client-go/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+      		-X k8s.io/component-base/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION}"
+
+USE_RC_SUBR=    kube-apiserver
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>
