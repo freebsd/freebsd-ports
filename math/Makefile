@@ -182,6 +182,7 @@
     SUBDIR += asl
     SUBDIR += asymptote
     SUBDIR += atlas
+    SUBDIR += audi
     SUBDIR += barvinok
     SUBDIR += basic-stats
     SUBDIR += bcal
