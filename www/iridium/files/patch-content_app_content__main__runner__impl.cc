@@ -1,7 +1,7 @@
---- content/app/content_main_runner_impl.cc.orig	2022-12-06 08:09:13 UTC
+--- content/app/content_main_runner_impl.cc.orig	2023-01-17 19:19:00 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -135,13 +135,13 @@
- #include "base/posix/global_descriptors.h"
+ #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
 -#if !BUILDFLAG(IS_MAC)
@@ -27,7 +27,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -382,7 +386,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -361,7 +365,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -36,7 +36,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -418,7 +422,7 @@ void PreloadLibraryCdms() {
+@@ -397,7 +401,7 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
@@ -45,7 +45,7 @@
  void PreSandboxInit() {
    // Pre-acquire resources needed by BoringSSL. See
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
-@@ -441,6 +445,11 @@ void PreSandboxInit() {
+@@ -420,6 +424,11 @@ void PreSandboxInit() {
    }
  #endif
  
@@ -57,7 +57,7 @@
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -623,7 +632,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
+@@ -602,7 +611,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -66,7 +66,7 @@
    PreSandboxInit();
  #endif
  
-@@ -817,11 +826,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -796,11 +805,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -80,7 +80,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1007,6 +1015,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -982,6 +990,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
    }
  #endif
  
@@ -97,7 +97,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -1070,7 +1088,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1045,7 +1063,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
            process_type);
      }
  
@@ -106,7 +106,7 @@
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -1103,6 +1121,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1078,6 +1096,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

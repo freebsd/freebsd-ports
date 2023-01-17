@@ -1,6 +1,6 @@
---- content/public/browser/render_process_host.h.orig	2022-12-06 08:09:13 UTC
+--- content/public/browser/render_process_host.h.orig	2023-01-17 19:19:00 UTC
 +++ content/public/browser/render_process_host.h
-@@ -53,7 +53,7 @@
+@@ -54,7 +54,7 @@
  #include "content/public/browser/android/child_process_importance.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "media/mojo/mojom/stable/stable_video_decoder.mojom-forward.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -618,7 +618,7 @@ class CONTENT_EXPORT RenderProcessHost : public IPC::S
+@@ -629,7 +629,7 @@ class CONTENT_EXPORT RenderProcessHost : public IPC::S
        const blink::StorageKey& storage_key,
        mojo::PendingReceiver<blink::mojom::WebSocketConnector> receiver) = 0;
  

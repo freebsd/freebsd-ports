@@ -1,6 +1,6 @@
---- third_party/angle/BUILD.gn.orig	2022-12-06 08:09:13 UTC
+--- third_party/angle/BUILD.gn.orig	2023-01-17 19:19:00 UTC
 +++ third_party/angle/BUILD.gn
-@@ -265,7 +265,6 @@ config("extra_warnings") {
+@@ -276,7 +276,6 @@ config("extra_warnings") {
        "-Wtautological-type-limit-compare",
        "-Wundefined-reinterpret-cast",
        "-Wunneeded-internal-declaration",
@@ -8,7 +8,7 @@
        "-Wsuggest-destructor-override",
        "-Wsuggest-override",
  
-@@ -443,7 +442,7 @@ angle_static_library("angle_common") {
+@@ -459,7 +458,7 @@ angle_static_library("angle_common") {
      all_dependent_configs = [ ":angle_disable_pool_alloc" ]
    }
  
@@ -17,7 +17,7 @@
      libs = [ "dl" ]
    }
  
-@@ -574,6 +573,9 @@ angle_static_library("angle_gpu_info_util") {
+@@ -601,6 +600,9 @@ angle_static_library("angle_gpu_info_util") {
          "Xi",
          "Xext",
        ]
@@ -27,7 +27,7 @@
      }
  
      if (angle_use_wayland && angle_has_build) {
-@@ -1094,12 +1096,12 @@ if (angle_use_wayland) {
+@@ -1104,12 +1106,12 @@ if (angle_use_wayland) {
          "wayland-client",
          "wayland-egl",
        ]

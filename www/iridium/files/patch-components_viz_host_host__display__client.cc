@@ -1,6 +1,6 @@
---- components/viz/host/host_display_client.cc.orig	2022-03-28 18:11:04 UTC
+--- components/viz/host/host_display_client.cc.orig	2023-01-17 19:19:00 UTC
 +++ components/viz/host/host_display_client.cc
-@@ -61,7 +61,7 @@ void HostDisplayClient::CreateLayeredWindowUpdater(
+@@ -66,7 +66,7 @@ void HostDisplayClient::AddChildWindowToBrowser(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
