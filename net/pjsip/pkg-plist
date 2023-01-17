@@ -249,6 +249,7 @@ include/pjnath/stun_transaction.h
 include/pjnath/turn_session.h
 include/pjnath/turn_sock.h
 include/pjnath/types.h
+include/pjnath/upnp.h
 include/pjsip-simple/errno.h
 include/pjsip-simple/evsub.h
 include/pjsip-simple/evsub_msg.h
