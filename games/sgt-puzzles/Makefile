@@ -1,5 +1,5 @@
 PORTNAME=	puzzles
-PORTVERSION=	20230110
+PORTVERSION=	20230117
 CATEGORIES=	games
 # upstream does not preserve older versions, mirroring is mandatory
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
@@ -21,7 +21,7 @@ USES=		cmake gnome perl5 pkgconfig
 USE_PERL5=	build
 CMAKE_ARGS=	-DNAME_PREFIX:STRING=sgt-
 
-COMMITHASH=	e66d027
+COMMITHASH=	1dc1ed7
 
 DATADIR=	${PREFIX}/share/sgt-puzzles
 PORTDATA=	*
