@@ -812,7 +812,7 @@ opensearch:*:855:855::0:0:opensearch user:/nonexistent:/usr/sbin/nologin
 # free: 863
 # free: 864
 # free: 865
-# free: 866
+homebridge:*:866:866::0:0:Homebridge user:/nonexistent:/usr/sbin/nologin
 # free: 867
 # free: 868
 keyd:*:869:869::0:0:Key remapping daemon for evdev:/nonexistent:/usr/sbin/nologin
