@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -12,26 +12,31 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		desktop-file-utils pkgconfig qt:5
 GNU_CONFIGURE=	yes
 USE_QT=		buildtools:build linguisttools:build qmake:build \
-		concurrent core gui opengl printsupport widgets
+		concurrent core gui opengl network printsupport widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq
 GH_PROJECT=	XPEViewer ${GH_SUBDIR}
-GH_TAGNAME=	851bd20:c 7041d09:fd ef61592:fw f1c190b:f 8a59a1e:sa \
-		c7a1c8c:ss 5c13737:xa bd1d8fc:xc d6e3eeb:xcf 3de4ac6:xdex \
-		568419a:xd 87f781b:xdw 65db43d:xdv d20e51b:xew \
-		a314278:xfi 33a3ccb:xhw 4f785b5:xhe fd3e26d:xhv \
-		382a8b6:xmmw ee01f8d:xo 87672e3:xp f20ba0f:xq a803f01:xs \
-		5f5c94c:xst 3b45183:s
+GH_TAGNAME=	fee875c:c d55bbc5:fd d016978:fw 8734c1f:f 3085682:sa \
+		d47ee1a:ss b3b2a0e:xaw 25fbd58:xa c4bb949:xc 24d3559:xcf \
+		eaa05c8:xdex 09da781:xd 1e0a59b:xdw 75200aa:xdv \
+		5c41416:xew f631741:xfi 0813fdd:xhw e18a5ae:xhe \
+		f2af7f8:xhv 0cad087:xidb 8b6ef00:xmmw ed26781:xot \
+		f0c7af4:xo 2dc4373:xp 2290f6a:xq 1774308:xs \
+		1c55034:xst 0adeea3:xsw d6312c6:s
 GH_SUBDIR=	Controls:c FormatDialogs:fd FormatWidgets:fw Formats:f \
-		SpecAbstract:sa StaticScan:ss XArchive:xa XCapstone:xc \
-		XCppfilt:xcf XDEX:xdex XDemangle:xd XDemangleWidget:xdw \
-		XDisasmView:xdv XEntropyWidget:xew XFileInfo:xfi \
-		XHashWidget:xhw XHexEdit:xhe XHexView:xhv \
-		XMemoryMapWidget:xmmw XOptions:xo XPDF:xp XQwt:xq \
-		XShortcuts:xs XStyles:xst signatures:s
+		SpecAbstract:sa StaticScan:ss XAboutWidget:xaw XArchive:xa \
+		XCapstone:xc XCppfilt:xcf XDEX:xdex XDemangle:xd \
+		XDemangleWidget:xdw XDisasmView:xdv XEntropyWidget:xew \
+		XFileInfo:xfi XHashWidget:xhw XHexEdit:xhe XHexView:xhv \
+		XInfoDB:xidb XMemoryMapWidget:xmmw XOnlineTools:xot \
+		XOptions:xo XPDF:xp XQwt:xq XShortcuts:xs XStyles:xst \
+		XSymbolsWidget:xsw signatures:s
 
 post-extract:
 	@${CHMOD} +x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/checking for Qt5Sql/,+70d' ${WRKSRC}/configure
 
 post-build:
 	@cd ${WRKSRC}/gui_source && ${LUPDATE} gui_source_tr.pro
