@@ -977,6 +977,7 @@
     SUBDIR += py-primecountpy
     SUBDIR += py-primme
     SUBDIR += py-pyFFTW
+    SUBDIR += py-pyaudi
     SUBDIR += py-pybloom
     SUBDIR += py-pyclipper
     SUBDIR += py-pycosat
